@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 5586c788f4ae5c61b3b94f93b4180fc293d7e179
+source-git-commit: a8f6bb8c3e35f4c17812ef944440210b7fe3f87b
 workflow-type: tm+mt
-source-wordcount: '2101'
+source-wordcount: '2104'
 ht-degree: 1%
 
 ---
@@ -101,7 +101,7 @@ Adobe Experience Platform Web SDK har utvecklats för följande personer:
 
 ## Hur får jag tillgång till Adobe Experience Platform Web SDK?
 
-Web SDK är för närvarande tillgängligt för allmänheten och kan användas för att skicka data till Adobe Experience Cloud-produkter. Möjligheten att skicka data till tredjepartslösningar kommer inom den närmaste framtiden. SDK är kostnadsfritt, hanteras av Adobe utan kostnad och kan laddas ned så att du kan ha det på dina egna servrar, om du vill, utan kostnad. För att Adobe-servrar ska kunna hantera inkommande data som kommer från SDK måste du ha tillgång till konfigurationer för dataström och Adobe Experience Platform XDM-schemaverktyget. Om du vill få åtkomst kontaktar du din Customer Success Manager (CSM) för att starta förfrågningsprocessen.
+Web SDK är för närvarande tillgängligt för allmänheten och kan användas för att skicka data till Adobe Experience Cloud-produkter. Möjligheten att skicka data till tredjepartslösningar kommer inom den närmaste framtiden. Det kostar inget för SDK och Adobe står för det gratis. Om det behövs kan du ladda ned det och lägga det på dina egna servrar utan kostnad. För att Adobe-servrar ska kunna hantera inkommande data som kommer från SDK måste du ha tillgång till konfigurationer för dataström och Adobe Experience Platform XDM-schemaverktyget. Om du vill få åtkomst kontaktar du ditt Adobe-kontoteam för att starta processen.
 
 ## Vilka användningsfall stöds för närvarande av Web SDK?
 
@@ -156,9 +156,9 @@ Ja, för närvarande använder Web SDK var som helst mellan en och sju cookies b
 | **Namn** | **maxAge** | **Egen ålder** | **Beskrivning** |
 |---|---|---|---|
 | **kndct_orgid_identity** | 34128000 | 395 dagar | I identitetscookie lagras ECID och annan information om ECID. |
-| **kndctr_original_medgivande_check** | 7200 | 2 timmar | Den här cookien lagrar användarens medgivandeinställning för webbplatsen. |
+| **kndctr_original_medgivande_check** | 7200 | 2 timmar | Denna cookie lagrar användarens medgivandeinställning för webbplatsen. |
 | **kndctr_orgid_medgivande** | 15552000 | 180 dagar | Denna sessionsbaserade cookie signalerar till servern att leta upp serversidan för medgivandeinställningar. |
-| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar Experience Edge-regionen som betjänar den aktuella användarens önskemål. Regionen används i URL-sökvägen så att Experience Edge kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
+| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar Experience Edge-regionen som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Experience Edge kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
 | **mbox** | 63072000 | 2 år | Den här cookien visas när inställningen för målmigrering är true. Detta tillåter att målet [mbox cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) anges av Web SDK. |
 | **mboxEdgeCluster** | 1800 | 30 minuter | Den här cookien visas när inställningen för målmigrering är true. Med denna cookie kan Web SDK kommunicera rätt edge-kluster till at.js så att Target-profiler kan vara synkroniserade när användare navigerar på en webbplats. |
 | **AMCV_###@AdobeOrg** | 34128000 | 395 dagar | Denna cookie visas bara när ID-migrering på Adobe Experience Platform Web SDK är aktiverat. Denna cookie är användbar vid övergång till Web SDK medan vissa delar av webbplatsen fortfarande använder visitor.js. Se [idMigrationEnabled-dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#identity-options) om du vill läsa mer om den här inställningen. |

@@ -3,9 +3,9 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '834'
+source-wordcount: '835'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ När du har skickat data till Edge-nätverket kan du aktivera Adobe-lösningar f
 
 ## Förutsättningar
 
-* Adobe Experience Platform Collection Enterprise (kontakta er kontoansvarige för att få prisuppgifter)
+* Adobe Experience Platform Collection Enterprise (kontakta ditt Adobe-kontoteam för att få priser)
 * Vidarebefordran av händelser i Adobe Experience Platform
 * Adobe Experience Platform Web eller Mobile SDK, konfigurerad att skicka data till Edge Network
 * Mappa data till Experience Data Model (XDM) (Den här mappningen kan göras med taggar)

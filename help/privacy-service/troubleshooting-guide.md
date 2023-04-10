@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Felsökningsguide för Privacy Service
 description: Det här dokumentet innehåller svar på vanliga frågor om Privacy Service samt information om vanliga fel i API:t.
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: fc115801ac8e75cd58356060ad98f1e340d2494a
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
 source-wordcount: '914'
 ht-degree: 0%
@@ -69,7 +69,7 @@ Adobe stöder inte användning av [!DNL Privacy Service] för att radera data so
 
 Begäran om sekretess är tidskänslig och har fyllts i med avseende på tillämplig integritetslagstiftning. inlämning av ansökningar som inte är registrerade eller behandlade som ger tillgång till eller tar bort uppgifter påverkar alla [!DNL Privacy Service] kunder och möjlighet att [!DNL Privacy Service] stödja lämpliga rättsliga tidslinjer. Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten.
 
-Kontakta din kontoansvarige (CDM) för att koordinera och göra en insats för att ta bort eventuella PII- eller dataproblem.
+Kontakta kontoteamet på Adobe för att koordinera och vidta åtgärder för att ta bort eventuella PII- eller dataproblem.
 
 ## Hur får jag information om status för min sekretessförfrågan eller mitt jobb?
 

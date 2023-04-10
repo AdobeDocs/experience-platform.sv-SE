@@ -2,9 +2,9 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '2537'
+source-wordcount: '2539'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ I den här självstudien används användargränssnittet för datainsamling för
 
 Se guiden [hantera behörigheter för datainsamling](./permissions.md) om du vill lära dig hur du ger åtkomst till egendomar och egendomsrättigheter.
 
-Om du vill använda de olika datainsamlingsprodukterna som nämns i den här guiden måste du även ha tillgång till datastreams och möjlighet att skapa och hantera scheman. Om du behöver ha tillgång till någon av dessa funktioner kontaktar du din CSM för att få den åtkomst du behöver. Observera att om du inte har köpt Adobe Experience Platform ger Adobe dig tillgång till SDK utan extra kostnad.
+Om du vill använda de olika datainsamlingsprodukterna som nämns i den här guiden måste du även ha tillgång till datastreams och möjlighet att skapa och hantera scheman. Om du behöver tillgång till någon av dessa funktioner kontaktar du ditt Adobe-kontoteam för att få den åtkomst du behöver. Observera att om du inte har köpt Adobe Experience Platform ger Adobe dig tillgång till SDK utan extra kostnad.
 
 Om du redan har tillgång till Platform måste du se till att du har alla [behörigheter](../access-control/home.md#permissions) under följande kategorier aktiverade:
 
@@ -101,7 +101,7 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 
 Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen. Här kan du välja ett befintligt datastam från listan som du vill redigera eller skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
 
-![Datastreams](./images/e2e/datastreams.png)
+![Dataströmmar](./images/e2e/datastreams.png)
 
 Konfigurationskraven för en datastream beror på vilka produkter och funktioner du skickar data till. Mer information om konfigurationsalternativen för respektive produkt finns i [datastreams - översikt](../edge/datastreams/overview.md).
 

@@ -2,9 +2,9 @@
 title: (Beta) Experience Cloud Publiker
 description: Lär dig hur du delar segment från Experience Platform till olika Experience Platform-lösningar.
 last-substantial-update: 2023-01-25T00:00:00Z
-source-git-commit: 32222aa1c96537b51cd0db35d9cdabce9210f64a
+source-git-commit: a8f6bb8c3e35f4c17812ef944440210b7fe3f87b
 workflow-type: tm+mt
-source-wordcount: '1479'
+source-wordcount: '1476'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,7 @@ Note: briefly talk about when to share segments to these destinations using the 
 
 ### För kunder som använder den gamla segmentdelningslösningen
 
-Om ni redan delar segment från Experience Platform till Audience Manager och andra Experience Cloud-lösningar via [integrering av äldre segmentdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-in-aam)måste du kontakta antingen kundtjänst eller din Customer Success Manager för att inaktivera den gamla integreringen. Kundtjänst- och kundsupportteam måste registrera en Jira-biljett (se mallbiljett AAM-52354) för att inaktivera integreringen.
+Om ni redan delar segment från Experience Platform till Audience Manager och andra Experience Cloud-lösningar via [integrering av äldre segmentdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)måste du kontakta antingen kundtjänst eller ditt Adobe-kontoteam för att inaktivera integreringen. Kundtjänst- och Adobe-kontoteam måste registrera en Jira-biljett (se mallbiljett AAM-52354) för att inaktivera integreringen.
 
 Den tid det tar att lösa avprovisioneringsbiljetten för betakunder är sex arbetsdagar eller mindre. När den befintliga integreringen har inaktiverats kan du fortsätta till [skapa en anslutning](#connect) via självbetjäningskortet.
 

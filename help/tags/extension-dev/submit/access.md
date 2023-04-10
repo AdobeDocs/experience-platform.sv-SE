@@ -2,9 +2,9 @@
 title: Bevilja användaråtkomst
 description: Konfigurera teammedlemmens tagga användarkonton och behörigheter i Adobe Experience Platform.
 exl-id: c7235e50-13b3-4487-b171-873063875621
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: b0615a2fd2bd9d9dd729d506f71ce4a91c64a4fd
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '218'
 ht-degree: 1%
 
 ---
@@ -23,4 +23,4 @@ För att en användare ska kunna komma åt taggfunktioner måste administratöre
 
 ## Bekräfta etablering
 
-När ditt företag har fått tillgång till taggar och dina användare är konfigurerade enligt beskrivningen ovan, bör du kunna komma åt användargränssnittet för datainsamling och användargränssnittet för Experience Platform från [Adobe Experience Cloud Dashboard](https://experience.adobe.com/). Om du fortfarande inte kan komma åt något av användargränssnitten efter att du har slutfört de ovanstående stegen kontaktar du Adobe supportrepresentanter.
+När ditt företag har fått tillgång till taggar och dina användare är konfigurerade enligt beskrivningen ovan, bör du kunna komma åt användargränssnittet för datainsamling och användargränssnittet för Experience Platform från [Adobe Experience Cloud Dashboard](https://experience.adobe.com/). Om du fortfarande inte kan komma åt något av användargränssnitten efter att du har slutfört stegen ovan kontaktar du ditt Adobe-kontoteam eller kundtjänst.

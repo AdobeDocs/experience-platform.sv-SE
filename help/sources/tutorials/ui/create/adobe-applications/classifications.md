@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Skapa en Adobe Analytics-källanslutning för klassificeringsdata i användargränssnittet
 type: Tutorial
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '630'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Sandboxes]](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-Data Connector för Analytics-klassificeringar kräver att dina data har migrerats till den nya [!DNL Classifications] Adobe Analytics infrastruktur före användning. Kontakta Adobe Customer Success Manager för att bekräfta migreringsstatusen för dina data.
+Data Connector för Analytics-klassificeringar kräver att dina data har migrerats till den nya [!DNL Classifications] Adobe Analytics infrastruktur före användning. Kontakta Adobe-kontoteamet om du vill bekräfta migreringsstatusen för dina data.
 
 ## Välj klassificeringar
 

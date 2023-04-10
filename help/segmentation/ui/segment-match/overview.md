@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
 workflow-type: tm+mt
 source-wordcount: '1919'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Du måste ange en medgivandekonfiguration och ange standardvärdet till antingen
 
 Kontrollen av godkännande av anmälan och avanmälan avgör om du kan arbeta med samtycke att dela användardata som standard. Om standardinställningen för medgivandekonfigurationen är inställd på `opt-out`kan användardata delas, såvida inte användaren uttryckligen avanmäler sig. Om standardvärdet är `opt-in`kan användardata inte delas, såvida inte användaren uttryckligen väljer att göra det.
 
-Standardkonfiguration för samtycke för [!DNL Segment Match] är inställd på `opt-out`. Om du vill tillämpa en anmälningsmodell för dina data skickar du en e-postförfrågan till kontohanteraren för Adobe.
+Standardkonfiguration för samtycke för [!DNL Segment Match] är inställd på `opt-out`. Om du vill tillämpa en anmälningsmodell för dina data skickar du en e-postförfrågan till ditt Adobe-kontoteam.
 
 Mer information om `share` det attribut som används för att ange medgivandevärde för datadelning finns i följande dokumentation om [sekretess- och innehållsfältgrupp](../../../xdm/field-groups/profile/consents.md). Mer information om den specifika fältgrupp som används för att samla in och använda konsumentens samtycke till insamling och användning av data som rör sekretess, personalisering och marknadsföring finns i följande [Godkännande av GitHub för inställningar för sekretess, personalisering och marknadsföring](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent/consent-preferences.schema.md).
 
