@@ -2,7 +2,7 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: fcc8e794bdfc3c6287d12c35e7d837d2f697239c
+source-git-commit: 6538599e10d4980c3890a8fba65c8ef51c24496a
 workflow-type: tm+mt
 source-wordcount: '2145'
 ht-degree: 0%
@@ -165,7 +165,7 @@ Välj sedan listrutan bredvid **[!UICONTROL Save to Library]** och markera **[!U
 
 Upprepa dessa steg för alla andra metakonverteringshändelser som du vill konfigurera.
 
-#### Datalagerkonfiguration
+#### Datalagerkonfiguration {#configuration}
 
 >[!IMPORTANT]
 >
