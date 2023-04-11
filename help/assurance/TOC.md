@@ -1,13 +1,13 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform Assurance
-breadcrumb-title: Assurance Guide
-user-guide-description: Med Adobe Experience Platform Assurance kan ni inspektera, bevisa, simulera och validera hur ni samlar in data eller levererar upplevelser i era mobilapplikationer.
+breadcrumb-title: Användarhandbok om Assurance
+user-guide-description: Med Adobe Experience Platform Assurance kan du inspektera, korrekturläsa, simulera och validera hur du samlar in data eller levererar upplevelser i dina mobilapplikationer.
 feature: Assurance
 source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
 workflow-type: tm+mt
 source-wordcount: '65'
-ht-degree: 15%
+ht-degree: 64%
 
 ---
 
