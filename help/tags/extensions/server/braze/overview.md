@@ -2,9 +2,9 @@
 keywords: tillägg för händelsevidarebefordran;braze;braze event forward extension
 title: Vidarekoppling av hjärnhändelse
 description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Adobe Experience Edge Network-händelser till Braze.
-source-git-commit: 88e589eb17c249a8bdc82fe7a041a5581a60c7e6
+source-git-commit: 6815b5eb0426efd1dde901db1e8b86e86615530a
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1735'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 - Målgruppsanpassa användare för marknadsförings- och kampanjkampanjer för att öka antalet återkommande kunder.
 - Studera användarbeteenden och mönster för att inrikta er på specifika målgrupper med anpassade meddelanden, vilket kan öka intäkterna.
 
-The [!DNL Braze Track Events API] [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [[!DNL Braze User Identify]](https://www.braze.com/docs/api/endpoints/user_data/post_user_identify) och [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) API:er.
+The [!DNL Braze Track Events API] [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [[!DNL Braze User Track]](https://www.braze.com/docs/api/endpoints/user_data/post_user_track) API.
 
 Det här dokumentet beskriver tilläggets användningsfall, hur du installerar det i biblioteken för vidarebefordring av händelser och hur du använder dess funktioner vid en vidarebefordring av händelser [regel](../../../ui/managing-resources/rules.md).
 
