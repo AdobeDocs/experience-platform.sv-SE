@@ -3,10 +3,10 @@ keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cl
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: 5a9b7af3b009f8529f2e473b17f77c54de35003e
+source-git-commit: 017ccadc1689663059aa1214c5440549b509e81b
 workflow-type: tm+mt
-source-wordcount: '2372'
-ht-degree: 0%
+source-wordcount: '2527'
+ht-degree: 1%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 >Observera skillnaden mellan den här anslutningen och den andra [[!DNL Salesforce Marketing Cloud] anslutning](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) som finns i katalogavsnittet E-postmarknadsföring. Med den andra Salesforce Marketing Cloud-anslutningen kan du exportera filer till en angiven lagringsplats, medan detta är en API-baserad direktuppspelningsanslutning.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [!DNL Salesforce Marketing Cloud] [uppdatera kontakter](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API, som gör att du kan lägga till kontakter/uppdatera kontaktdata för ditt företags behov efter att ha aktiverat dem i en ny [!DNL Salesforce Marketing Cloud] segment.
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [!DNL Salesforce Marketing Cloud] [uppdatera kontakter](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API, som gör att du kan **lägga till kontakter och uppdatera kontaktdata** efter att ha aktiverat dem i en ny [!DNL Salesforce Marketing Cloud] segment.
 
 [!DNL Salesforce Marketing Cloud] använder OAuth 2 med klientautentiseringsuppgifter som autentiseringsmekanism för att kommunicera med [!DNL Salesforce Marketing Cloud] API. Instruktioner för hur du autentiserar [!DNL Salesforce Marketing Cloud] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
@@ -92,7 +92,7 @@ Anteckna vad som står nedan innan du autentiserar dig för [!DNL (API) Salesfor
 | Klient-ID | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | r23kxxxxxxxx0z05xxxxxx |
 | Klienthemlighet | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | ipxxxxxxxxxxT4xxxxxxxxxx |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Guardrails {#guardrails}
 
@@ -124,7 +124,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Salesforce Marketing Cloud] uppdateras med motsvarande segmentstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [segmentplanering](#schedule-segment-export-example) steg.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 
@@ -260,3 +260,20 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 
 * [!DNL Salesforce Marketing Cloud] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html)
 * [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) förklarar hur kontakter uppdateras med den angivna informationen i de angivna attributgrupperna.
+
+### Changelog {#changelog}
+
+I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
+
++++ Visa ändringslogg
+
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| Februari 2023 | Dokumentationsuppdatering | Vi har uppdaterat [Förutsättningar i (API) Salesforce Marketing Cloud](#prerequisites-destination) avsnitt som ska innehålla en referenslänk som anropar den [!DNL Salesforce Marketing Cloud Account Engagement] är en obligatorisk prenumeration för att använda den här destinationen. |
+| Februari 2023 | Funktionsuppdatering | Vi har åtgärdat ett problem där en felaktig konfiguration i målet orsakade att ett felaktigt JSON skickades till Salesforce. Detta resulterade i att ett stort antal identiteter inte kunde aktiveras. (PLATIR-26299) |
+| Januari 2023 | Dokumentationsuppdatering | <ul><li>Vi har uppdaterat [Förutsättningar [!DNL Salesforce]](#prerequisites-destination) för att ta reda på att attribut måste skapas i [!DNL Salesforce] sida. Det här avsnittet innehåller nu detaljerade anvisningar om hur du gör det och de bästa sätten att namnge attributen i [!DNL Salesforce]. (PLATIR-25602)</li><li>Vi har lagt till tydliga instruktioner om hur du använder mappnings-ID för varje aktiverat segment i [segmentplanering](#schedule-segment-export-example) steg. (PLATIR-25602)</li></ul> |
+| Oktober 2022 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
+
+{style="table-layout:auto"}
+
++++
