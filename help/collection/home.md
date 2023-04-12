@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över datainsamling
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 13c02dd5930905e3851ff147c0ea4d914e3dc6c7
 workflow-type: tm+mt
-source-wordcount: '514'
+source-wordcount: '516'
 ht-degree: 3%
 
 ---
@@ -25,7 +25,7 @@ Datainsamlingen fokuserar på att upptäcka och göra inkapslade datauppsättnin
 
 * [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
 * [Taggar](../tags/home.md)
-* [Datastreams](../edge/datastreams/overview.md)
+* [Dataströmmar](../edge/datastreams/overview.md)
 * [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
 * [Webb-SDK för Adobe Experience Platform](../edge/home.md)
 * [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
@@ -63,7 +63,7 @@ Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerst
 
 >[!NOTE]
 >
->Vidarebefordran av händelser är en betalfunktion som endast ingår i Adobe Real-time Customer Data Platform Connections-erbjudandet.
+>Vidarebefordran av händelser är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
 
 ## Nästa steg
 
