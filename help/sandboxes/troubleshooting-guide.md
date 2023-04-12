@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för sandlådor
 description: Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform.
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '855'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,7 @@ Sandlådor är isolerade partitioner av en enda plattformsinstans, där varje sa
 
 ## Vilken är standardproduktionssandlådan?
 
-Standardproduktionssandlådan är den första produktionssandlådan som skapas när en IMS-organisation etableras första gången. Med standardproduktionssandlådan kan du importera eller använda data från plattformen, samt acceptera begäranden som inte innehåller värden för ett sandlådenamn eller ett sandbox-ID. Standardproduktionssandlådan kan återställas men inte tas bort.
+Standardproduktionssandlådan är den första produktionssandlådan som skapas när en organisation etableras första gången. Med standardproduktionssandlådan kan du importera eller använda data från plattformen, samt acceptera begäranden som inte innehåller värden för ett sandlådenamn eller ett sandbox-ID. Standardproduktionssandlådan kan återställas men inte tas bort.
 
 ## Hur många produktionssandlådor kan jag ha?
 
@@ -63,7 +63,7 @@ Du kan uppdatera titeln för en produktionssandlåda. Det går dock inte att byt
 
 ## Hur många utvecklingssandlådor kan jag ha?
 
-Experience Platform tillåter för närvarande att maximalt 75 sandlådor totalt (produktion och utveckling) är aktiva inom en enda IMS-organisation.
+Experience Platform tillåter för närvarande att maximalt 75 sandlådor (produktion och utveckling) är aktiva i en enda organisation.
 
 Utvecklingssandlådor har stöd för både återställnings- och borttagningsfunktioner.
 

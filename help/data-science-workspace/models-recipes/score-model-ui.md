@@ -5,9 +5,9 @@ title: Posta en modell i användargränssnittet för datavetenskapen
 type: Tutorial
 description: Du kan göra poängsättningen i Adobe Experience Platform Data Science Workspace genom att mata in indata i en befintlig utbildad modell. Resultat av poängsättningen lagras och kan visas i en angiven utdatamängd som en ny grupp.
 exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '618'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I den här självstudiekursen visas de steg som krävs för att göra en modell 
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
 Den här självstudiekursen kräver en utbildad modell. Om du inte har någon tränad modell följer du [utbilda och utvärdera en modell i användargränssnittet](./train-evaluate-model-ui.md) självstudiekurs innan du fortsätter.
 

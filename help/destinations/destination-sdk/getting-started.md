@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '608'
 ht-degree: 2%
 
 ---
@@ -17,13 +17,13 @@ På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Exper
 
 ## Terminologi {#terminology}
 
-I den här handboken används plattformsspecifika begrepp, som IMS-organisation och sandlådor. Läs [Experience Platform ordlista](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) för definitioner av dessa och andra termer.
+I den här handboken används plattformsspecifika begrepp, som organisation och sandlådor. Läs [Experience Platform ordlista](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) för definitioner av dessa och andra termer.
 
 ## Hämta nödvändiga autentiseringsuppgifter {#obtain-authentication-credentials}
 
 Destinationen SDK använder [Adobe I/O](https://www.adobe.io/) gateway för autentisering. Om du vill göra API-anrop till Destinationens SDK slutpunkter måste du ange vissa rubriker i dina API-anrop. Samarbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](https://developer.adobe.com/console).
 
-Om du vill anropa Destination SDK API-slutpunkter följer du [Självstudiekurs om autentisering av Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Starta självstudiekursen från &quot;[Generera en API-nyckel, IMS-org-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot; steg. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK-API-anrop, vilket visas nedan:
+Om du vill anropa Destination SDK API-slutpunkter följer du [Självstudiekurs om autentisering av Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Starta självstudiekursen från &quot;[Generera en API-nyckel, organisations-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot; steg. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK-API-anrop, vilket visas nedan:
 
 * `x-api-key: {API_KEY}`, även kallat klient-ID
 * `x-gw-ims-org-id: {ORG_ID}`, även kallat organisations-ID

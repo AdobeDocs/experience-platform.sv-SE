@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utvärdera händelser i nära realtid med strömmande segmentering
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 1c4da50b2c211aae06d6702d75e5650447fae0eb
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1971'
+source-wordcount: '1967'
 ht-degree: 0%
 
 ---
@@ -102,7 +102,7 @@ Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i
 
 ## Hämta alla segment som är aktiverade för direktuppspelningssegmentering
 
-Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom IMS-organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
+Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
@@ -126,7 +126,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med segment i IMS-organisationen som är aktiverade för direktuppspelningssegmentering.
+Ett lyckat svar returnerar en array med segment i organisationen som är aktiverade för direktuppspelningssegmentering.
 
 ```json
 {
@@ -307,7 +307,7 @@ Ett lyckat svar returnerar information om den nyligen skapade segmentdefinitione
 
 ## Aktivera schemalagd utvärdering {#enable-scheduled-segmentation}
 
-När utvärdering av direktuppspelning har aktiverats måste en baslinje skapas (efter vilken segmentet alltid är uppdaterat). Schemalagd utvärdering (även kallad schemalagd segmentering) måste först aktiveras för att systemet automatiskt ska kunna utföra baselering. Med schemalagd segmentering kan IMS-organisationen följa ett återkommande schema för att automatiskt köra exportjobb för att utvärdera segment.
+När utvärdering av direktuppspelning har aktiverats måste en baslinje skapas (efter vilken segmentet alltid är uppdaterat). Schemalagd utvärdering (även kallad schemalagd segmentering) måste först aktiveras för att systemet automatiskt ska kunna utföra baselering. Med schemalagd segmentering kan organisationen följa ett återkommande schema för att automatiskt köra exportjobb för att utvärdera segment.
 
 >[!NOTE]
 >
@@ -353,7 +353,7 @@ curl -X POST \
 | `properties` | **(Obligatoriskt)** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
 | `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Använda `["*"]` säkerställer att alla segment ingår. |
 | `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i bilagan på [cron, uttrycksformat](./schedules.md#appendix) i dokumentationen om scheman inom segmentering. |
-| `state` | *(Valfritt)* Sträng som innehåller schemats tillstånd. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En IMS-organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
+| `state` | *(Valfritt)* Sträng som innehåller schemats tillstånd. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
 
 **Svar**
 

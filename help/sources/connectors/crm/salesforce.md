@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Salesforce Source Connector - översikt
 description: Lär dig hur du ansluter Salesforce till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -62,14 +62,14 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 | `IMS` | Identity Management System (IMS) utgör ramverket för autentisering till Adobes tjänster. Med avseende på [!DNL Marketo], är det här värdet fast och ställs alltid in på: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
 | `IMS_ORG` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen om [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md) för instruktioner om hur du hämtar `{ORG_ID}` information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `SANDBOX_NAME` | Namnet på den virtuella sandlådepartition som du använder. | `prod` |
-| `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i IMS-organisationen. | `b2bcdpproductiontest` |
+| `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i din organisation. | `b2bcdpproductiontest` |
 | `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Detta värde är fast och ställs alltid in på: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
 | `munchkinId` | Unikt ID för din [!DNL Marketo] konto. Se självstudiekursen om [autentisera [!DNL Marketo] instance](../adobe-applications/marketo/marketo-auth.md) om du vill ha information om hur du hämtar `munchkinId`. | `123-ABC-456` |
 | `sfdc_org_id` | Organisations-ID för din [!DNL Salesforce] konto. Se följande [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1) om du vill ha mer information om hur du skaffar [!DNL Salesforce] organisations-ID. | `00D4W000000FgYJUA0` |
 | `has_abm` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Account-Based Marketing]. | `false` |
 | `has_msi` | Ett booleskt värde som anger om du prenumererar på [!DNL Marketo Sales Insight]. | `false` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Köra skript
 

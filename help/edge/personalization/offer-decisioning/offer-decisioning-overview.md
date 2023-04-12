@@ -3,9 +3,9 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '863'
 ht-degree: 1%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Offer decisioning i Adobe Experience Platform Web SDK är tillgänglig i ett tidigt skede för vissa användare. Den här funktionen är inte tillgänglig för alla IMS-organisationer.
+>Offer decisioning i Adobe Experience Platform Web SDK är tillgänglig i ett tidigt skede för vissa användare. Den här funktionen är inte tillgänglig för alla organisationer.
 
 Adobe Experience Platform [!DNL Web SDK] kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av användargränssnittet (UI) eller API:erna för Offera decisioningen.
 
 ## Förutsättningar
 
-* IMS-organisation är aktiverad för kantbeslut
+* Organisationen är aktiverad för kantbeslut
 * Erbjudanden, skapade aktiviteter
 * Datastream publiceras
 

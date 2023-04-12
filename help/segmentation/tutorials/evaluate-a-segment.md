@@ -5,9 +5,9 @@ title: Utvärdera och få åtkomst till segmentresultat
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segment och får åtkomst till segmentresultat med Adobe Experience Platform Segmenteringstjänstens API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1608'
+source-wordcount: '1607'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Om du ännu inte har slutfört [skapa ett segment med segmenterings-API](./creat
 
 ## Schemalagd utvärdering {#scheduled-evaluation}
 
-Med hjälp av schemalagd utvärdering kan din IMS-organisation skapa ett återkommande schema som automatiskt kör exportjobb.
+Med schemalagd utvärdering kan din organisation skapa ett återkommande schema för att automatiskt köra exportjobb.
 
 >[!NOTE]
 >

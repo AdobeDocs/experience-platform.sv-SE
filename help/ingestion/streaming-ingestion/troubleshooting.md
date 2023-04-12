@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för direktuppspelning av inmatningsproblem
 description: Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform.
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1018'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Om synkron validering inte stöds för den begärda platsen returneras ett 501-f
 
 ### Hur ser jag till att data bara samlas in från betrodda källor?
 
-[!DNL Experience Platform] har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras IMS Organization ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till [!DNL Platform], se guiden på [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
+[!DNL Experience Platform] har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras organisations-ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till [!DNL Platform], se guiden på [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
 
 ### Vad är fördröjningen för direktuppspelning av data till? [!DNL Real-Time Customer Profile]?
 

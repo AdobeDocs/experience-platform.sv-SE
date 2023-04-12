@@ -5,9 +5,9 @@ title: Skapa en datahanteringsprincip i API:t
 type: Tutorial
 description: Lär dig hur du skapar en datahanteringsprincip med hjälp av API:t för principtjänsten.
 exl-id: 8483f8a1-efe8-4ebb-b074-e0577e5a81a4
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1199'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ GET /marketingActions/custom
 
 **Begäran**
 
-Följande begäran använder `marketingActions/custom` slutpunkt, som hämtar en lista över alla marknadsföringsåtgärder som definieras av din IMS-organisation.
+Följande begäran använder `marketingActions/custom` slutpunkt, som hämtar en lista över alla marknadsföringsåtgärder som definierats av din organisation.
 
 ```shell
 curl -X GET \

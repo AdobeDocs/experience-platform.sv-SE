@@ -5,9 +5,9 @@ title: Utbildning och utvärdering av en modell med Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudiekursen visas hur du skapar, utbilda och utvärderar en modell med API-anrop för Sensei Machine Learning.
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1235'
+source-wordcount: '1227'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Följ [Självstudiekurs om autentisering med Experience Platform API](https://ww
 Från självstudiekursen bör du nu ha följande värden:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+- `{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
 - `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 - Länka till en dockningsbild av en intelligent tjänst
@@ -65,7 +65,7 @@ curl -X POST \
 ```
 
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Konfigurationen av vår MLInstance. Exemplet vi använder i vår självstudiekurs visas här:
 
@@ -176,7 +176,7 @@ curl -X POST \
   -d `{JSON PAYLOAD}`
 ```
 
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Experimentera med objekt som skapas. Exemplet vi använder i vår självstudiekurs visas här:
@@ -232,7 +232,7 @@ curl -X POST \
   -d '{JSON_PAYLOAD}`
 ```
 
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Datauppsättning som ska bokföras. Exemplet vi använder i vår självstudiekurs visas här:
@@ -320,7 +320,7 @@ curl -X POST \
 ```
 
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: För att kunna genomföra en utbildning måste du inkludera följande i brödtexten:
@@ -391,7 +391,7 @@ curl -X GET \
 `{EXPERIMENT_ID}`: Det ID som representerar Experimenten.\
 `{EXPERIMENT_RUN_ID}`: Det ID som representerar Experimentkörningen.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 **Svar**
@@ -454,7 +454,7 @@ curl -X GET \
 
 `{EXPERIMENT_RUN_ID}`: Det ID som motsvarar den Experimentkörning som du vill använda som mål. Detta finns i svaret när du skapar en Experiment Run.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
 
 Svaret representerar den tränade modell som skapades.
 
@@ -501,7 +501,7 @@ curl -X DELETE \
 
 `{EXPERIMENT_ID}`: Det ID som motsvarar Experimenten.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
 
 >[!NOTE]
 >

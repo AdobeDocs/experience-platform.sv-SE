@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: ca92839bd2a775ae323da5d5d0750b2026f8052d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1616'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -207,7 +207,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Ett namn för konfigurationen. Se till att du kommer ihåg det här värdet eftersom det kommer att behövas för att kontrollera konfigurationens status på en [senare steg](#check-status). Värdet är skiftlägeskänsligt. |
 | `type` | Konfigurationstypen. Måste anges till `BYOK_CONFIG`. |
-| `imsOrgId` | Ditt IMS-organisations-ID. Detta måste vara samma värde som anges i `x-gw-ims-org-id` header. |
+| `imsOrgId` | Ditt organisations-ID. Detta måste vara samma värde som anges i `x-gw-ims-org-id` header. |
 | `configData` | Innehåller följande information om konfigurationen:<ul><li>`providerType`: Måste anges till `AZURE_KEYVAULT`.</li><li>`keyVaultKeyIdentifier`: Det nyckelvalv-URI som du kopierade [tidigare](#send-to-adobe).</li></ul> |
 
 **Svar**

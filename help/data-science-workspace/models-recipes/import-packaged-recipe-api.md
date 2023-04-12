@@ -5,9 +5,9 @@ title: Importera en paketerad mottagare med Sensei Machine Learning API
 type: Tutorial
 description: I den här självstudien används API:t för inlärning i Sensei Machine för att skapa en motor, som också kallas Recept i användargränssnittet.
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1006'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Den här självstudien kräver en paketerad mottagarfil i form av en Docker-URL.
 Den här självstudiekursen kräver att du har slutfört [Autentisering till Adobe Experience Platform, självstudiekurs](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa [!DNL Platform] API:er. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.
-- `{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+- `{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
 - `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.
 
 ## Skapa en motor

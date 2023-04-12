@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över sandlådor
 description: Sandlådor är virtuella partitioner i en enda instans av Experience Platform, vilket möjliggör smidig integrering med utvecklingsprocessen i era program för digitala upplevelser.
 exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1004'
+source-wordcount: '1001'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ Sandlådor är virtuella partitioner i en enda instans av Experience Platform, v
 
 En Experience Platform-instans har stöd för flera produktions- och utvecklingssandlådor, där varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datamängder, profiler och så vidare). Dessutom har både produktions- och utvecklingssandlådor en återställningsfunktion som tar bort alla kundskapade resurser från sandlådan. Utvecklingssandlådor kan inte konverteras till produktionssandlådor.
 
-En standardlicens för Experience Platform ger dig totalt fem sandlådor, som du kan klassificera som  eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor. Dessa ytterligare sandlådor kan användas för att skapa både produktions- och utvecklingssandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
+En standardlicens för Experience Platform ger dig totalt fem sandlådor, som du kan klassificera som  eller utveckling. Du kan licensiera ytterligare paket om 10 sandlådor, upp till totalt högst 75 sandlådor. Dessa ytterligare sandlådor kan användas för att skapa både produktions- och utvecklingssandlådor. Kontakta din företagsadministratör eller din säljare på Adobe för mer information.
 
-Slutligen är standardproduktionssandlådan den första produktionssandlådan som skapas när en IMS-organisation skapas. Med standardproduktionssandlådan kan du importera eller använda data från plattformen, samt acceptera begäranden som inte innehåller värden för ett sandlådenamn eller ett sandbox-ID.
+Slutligen är standardproduktionssandlådan den första produktionssandlådan som skapas när en organisation skapas för första gången. Med standardproduktionssandlådan kan du importera eller använda data från plattformen, samt acceptera begäranden som inte innehåller värden för ett sandlådenamn eller ett sandbox-ID.
 
 >[!NOTE]
 >
@@ -42,7 +42,7 @@ Slutligen är standardproduktionssandlådan den första produktionssandlådan so
 Sammanfattningsvis ger sandlådor följande fördelar:
 
 * **Hantering av programlivscykler**: Skapa separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
-* **Projekt- och varumärkeshantering**: Tillåt att flera projekt körs parallellt inom samma IMS-organisation, samtidigt som isolering och åtkomstkontroll tillhandahålls. Framtida versioner kommer att ge stöd för driftsättning i flera regioner.
+* **Projekt- och varumärkeshantering**: Tillåt att flera projekt körs parallellt inom samma organisation, samtidigt som isolering och åtkomstkontroll tillhandahålls. Framtida versioner kommer att ge stöd för driftsättning i flera regioner.
 * **Flexibla ekosystem för utveckling**: Tillhandahåll sandlådor på ett smidigt, skalbart och kostnadseffektivt sätt för prospektering, aktivering och demonstrationssyften.
 
 ## Åtkomstkontroll för sandlådor

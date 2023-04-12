@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för segmentexportjobb
 description: Exportjobb är asynkrona processer som används för att behålla målgruppsmedlemmar i datauppsättningar. Du kan använda slutpunkten /export/job i Adobe Experience Platform Segmentation Service API, som gör att du kan hämta, skapa och avbryta exportjobb med programkod.
 exl-id: 5b504a4d-291a-4969-93df-c23ff5994553
-source-git-commit: d28cebaf4b9fe5c35240e28653e99424db08d9d2
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1631'
+source-wordcount: '1629'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experienc
 
 ## Hämta en lista med exportjobb {#retrieve-list}
 
-Du kan hämta en lista över alla exportjobb för din IMS-organisation genom att göra en GET-förfrågan till `/export/jobs` slutpunkt.
+Du kan hämta en lista över alla exportjobb för din organisation genom att göra en GET-förfrågan till `/export/jobs` slutpunkt.
 
 **API-format**
 
@@ -46,7 +46,7 @@ GET /export/jobs?status={STATUS}
 
 **Begäran**
 
-Följande begäran hämtar de två sista exportjobben inom IMS-organisationen.
+Följande begäran hämtar de två sista exportjobben i din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/export/jobs?limit=2 \

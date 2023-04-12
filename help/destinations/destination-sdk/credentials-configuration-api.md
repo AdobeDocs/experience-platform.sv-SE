@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/credentials`.
 title: API-åtgärder för slutpunkt för autentiseringsuppgifter
 exl-id: 89957f38-e7f4-452d-abc0-0940472103fe
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '791'
 ht-degree: 2%
 
 ---
@@ -132,7 +132,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 | `servicePrincipalKey` | Sträng | Azure Service Principal Key för Azure Data Lake Storage |
 | `connectionString` | Sträng | Anslutningssträng för Azure Blob Storage |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -140,7 +140,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om konfigurationen f�
 
 ## Visa autentiseringskonfigurationer {#retrieve-list}
 
-Du kan hämta en lista över alla autentiseringskonfigurationer för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/credentials` slutpunkt.
+Du kan hämta en lista över alla autentiseringskonfigurationer för din organisation genom att göra en GET-förfrågan till `/authoring/credentials` slutpunkt.
 
 **API-format**
 
@@ -151,7 +151,7 @@ GET /authoring/credentials
 
 **Begäran**
 
-Följande begäran hämtar listan med autentiseringskonfigurationer som du har åtkomst till, baserat på konfigurationen för IMS-organisationen och sandlådan.
+Följande begäran hämtar listan med autentiseringskonfigurationer som du har åtkomst till, baserat på konfigurationen för organisationen och sandlådan.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials \
@@ -163,7 +163,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 **Svar**
 
-Följande svar returnerar HTTP-status 200 med en lista över de autentiseringsuppgifter som du har åtkomst till, baserat på IMS-organisationens ID och det sandlådenamn som du använde. Ett `instanceId` motsvarar mallen för en autentiseringskonfiguration. Svaret kortas av för att vara kortfattat.
+Följande svar returnerar HTTP-status 200 med en lista över de autentiseringsuppgifter som du har åtkomst till, baserat på det organisations-ID och sandlådenamn som du använde. Ett `instanceId` motsvarar mallen för en autentiseringskonfiguration. Svaret kortas av för att vara kortfattat.
 
 ```json
 {

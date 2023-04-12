@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2180'
+source-wordcount: '2176'
 ht-degree: 0%
 
 ---
@@ -204,7 +204,7 @@ Det här felmeddelandet visas när en `graph-type` frågeparametern har fått et
 }
 ```
 
-Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
+Det här felmeddelandet visas när din organisation inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
 
 ### Gatewaytjänstens token är inte giltig
 
@@ -264,7 +264,7 @@ När [!DNL Identity Service] består av en identitet. Identitetens ID och tillh�
 }
 ```
 
-Det här felmeddelandet visas när IMS-organisationen inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
+Det här felmeddelandet visas när din organisation inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
 
 ### Internt serverfel
 
@@ -330,7 +330,7 @@ Det här felet visas när de första 100 raderna i en batch inte visade några i
 }
 ```
 
-Det här felet visas när en inkapslad post visar en identitet vars associerade namnutrymme inte finns eller inte är tillgängligt för IMS-organisationen.
+Det här felet visas när en inkapslad post visar en identitet vars associerade namnutrymme inte finns eller inte är tillgängligt för din organisation.
 
 ### Hoppar över batchinmatning eftersom IMS-organisation inte har etablerats för privat identitetsdiagram
 
@@ -342,7 +342,7 @@ Det här felet visas när en inkapslad post visar en identitet vars associerade 
 }
 ```
 
-Vid inmatning av batchdata visas det här felmeddelandet när IMS-organisationen inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
+Vid inmatning av batchdata visas det här felmeddelandet när din organisation inte har tilldelats rätt behörigheter för [!DNL Identity Service]. Kontakta systemadministratören för att lösa problemet.
 
 ### Internt fel
 

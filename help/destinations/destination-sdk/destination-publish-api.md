@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/Destations/publish`.
 title: API-slutpunktsåtgärder för publiceringsmål
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 1fb0fde2054528679235268ae96e3b7e78de80ef
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '770'
 ht-degree: 1%
 
 ---
@@ -67,7 +67,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `destinationId` | Sträng | Mål-ID för målkonfigurationen som du skickar för publicering. Hämta mål-ID:t för en målkonfiguration med [API-referens för destinationskonfiguration](./destination-configuration-api.md#retrieve-list). |
 | `destinationAccess` | Sträng | Använd `ALL` för att din destination ska visas i katalogen för alla Experience Platform-kunder. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -75,7 +75,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om din målpublicerin
 
 ## Lista målpubliceringsbegäranden {#retrieve-list}
 
-Du kan hämta en lista över alla mål som skickats in för publicering för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/destinations/publish` slutpunkt.
+Du kan hämta en lista över alla mål som skickats in för publicering för din organisation genom att göra en GET-förfrågan till `/authoring/destinations/publish` slutpunkt.
 
 **API-format**
 
@@ -85,7 +85,7 @@ GET /authoring/destinations/publish
 
 **Begäran**
 
-Följande begäran hämtar listan över mål som skickats in för publicering som du har tillgång till, baserat på IMS-organisationens och sandlådekonfigurationens.
+Följande begäran hämtar listan över mål som skickats in för publicering som du har tillgång till, baserat på organisation och sandlådekonfiguration.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
@@ -97,7 +97,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 **Svar**
 
-Följande svar returnerar HTTP-status 200 med en lista över mål som skickats in för publicering som du har tillgång till, baserat på IMS-organisations-ID:t och det sandlådenamn som du använde. Ett `configId` motsvarar publiceringsbegäran för ett mål.
+Följande svar returnerar HTTP-status 200 med en lista över mål som skickats in för publicering som du har tillgång till, baserat på det organisations-ID och sandlådans namn som du använde. Ett `configId` motsvarar publiceringsbegäran för ett mål.
 
 ```json
 {
@@ -125,7 +125,7 @@ Följande svar returnerar HTTP-status 200 med en lista över mål som skickats i
 | `publishDetailsList.destinationType` | Sträng | Typ av mål. Värden kan vara `DEV` och `PUBLIC`. `DEV` motsvarar destinationen i din Experience Platform-organisation. `PUBLIC` motsvarar målet som du har skickat in för publicering. Tänk på de här två alternativen i Git-termer, där `DEV` versionen representerar din lokala redigeringsgren och `PUBLIC` version representerar fjärrhuvudgrenen. |
 | `publishDetailsList.publishedDate` | Sträng | Det datum då målet skickades för publicering, i epoktid. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Hämta status för en specifik målpubliceringsbegäran {#get}
 

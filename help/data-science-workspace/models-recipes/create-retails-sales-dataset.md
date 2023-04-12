@@ -3,11 +3,11 @@ keywords: Experience Platform;butiksrecept;Data Science Workspace;populära ämn
 solution: Experience Platform
 title: Skapa schema och datauppsättning för butiksförsäljning
 type: Tutorial
-description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din IMS-organisation på Experience Platform.
+description: I den här självstudiekursen får du de krav och resurser som krävs för alla andra självstudiekurser i Adobe Experience Platform Data Science Workspace. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din organisation på Experience Platform.
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
@@ -15,12 +15,12 @@ ht-degree: 0%
 
 # Skapa försäljningsschema och datauppsättning för återförsäljning
 
-I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När allt är klart är Retail Sales-schemat och datauppsättningarna tillgängliga för dig och medlemmar i din IMS-organisation den [!DNL Experience Platform].
+I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När du är klar är schema och datauppsättningar för detaljhandelsförsäljning tillgängliga för dig och medlemmar i din organisation den [!DNL Experience Platform].
 
 ## Komma igång
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
-- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 - Behörighet att skapa [!DNL Experience Platform] API-anrop. Slutför [Autentisera och få åtkomst till Adobe Experience Platform API:er](https://www.adobe.com/go/platform-api-authentication-en) självstudiekurs för att få tillgång till följande värden för att slutföra den här självstudiekursen:
    - Behörighet: `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`

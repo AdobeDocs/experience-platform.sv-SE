@@ -4,9 +4,9 @@ title: API-slutpunkt för sammanslagningsprinciper
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2472'
+source-wordcount: '2468'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Cu
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
-Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API-åtkomstmöjligheter [!DNL Profile] data kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
+Sammanslagningsprinciper är privata för din organisation, vilket gör att du kan skapa olika profiler för att sammanfoga scheman på de specifika sätt som du behöver. Alla API-åtkomstmöjligheter [!DNL Profile] data kräver en sammanfogningsprincip, men ett standardvärde kommer att användas om det inte uttryckligen anges. [!DNL Platform] innehåller en standardprincip för sammanfogning, eller så kan du skapa en sammanfogningsprincip för en specifik XDM-schemaklass (Experience Data Model) och markera den som standard för din organisation.
 
 Även om varje organisation kan ha flera sammanfogningsprinciper per per schemaklass, kan varje klass bara ha en standardsammanfogningsprincip. Alla sammanfogningsprinciper som anges som standard används om namnet på schemaklassen anges och en sammanfogningsprincip krävs men inte anges.
 
@@ -37,7 +37,7 @@ Sammanslagningsprinciper är privata för IMS-organisationen, vilket gör att du
 
 För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att ett segment ska kunna aktiveras på kanten (markeras som ett kantsegment) måste det vara kopplat till en sammanfogningspolicy som är markerad som aktiv på kanten. Om ett segment **not** som är knutna till en sammanfogningsprincip som är markerad som aktiv på kanten markeras segmentet inte som aktivt på kanten och markeras som ett direktuppspelningssegment.
 
-Dessutom kan varje IMS-organisation bara ha **en** sammanfogningsprincip som är aktiv vid sidan. Om en sammanfogningsprincip är aktiv på kant kan den användas för andra system på kanten, t.ex. Edge Profile, Edge Segmentation och Destinations on Edge.
+Dessutom kan varje organisation endast ha **en** sammanfogningsprincip som är aktiv vid sidan. Om en sammanfogningsprincip är aktiv på kant kan den användas för andra system på kanten, t.ex. Edge Profile, Edge Segmentation och Destinations on Edge.
 
 ### Slutför policyobjekt för sammanfogning
 
@@ -193,7 +193,7 @@ Om du vill veta mer om XDM och arbeta med scheman i Experience Platform börjar 
 
 ## Åtkomst till sammanfogningsprinciper {#access-merge-policies}
 
-Använda [!DNL Real-Time Customer Profile] API, `/config/mergePolicies` Med slutpunkten kan du utföra en uppslagsbegäran för att visa en specifik sammanfogningsprincip utifrån dess ID, eller få tillgång till alla sammanfogningsprinciper i din IMS-organisation, filtrerade efter specifika villkor. Du kan också använda `/config/mergePolicies/bulk-get` slutpunkt för att hämta flera sammanfogningsprinciper efter deras ID. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
+Använda [!DNL Real-Time Customer Profile] API, `/config/mergePolicies` Med slutpunkten kan du utföra en sökbegäran för att visa en specifik sammanfogningsprincip utifrån dess ID, eller få tillgång till alla sammanfogningsprinciper i organisationen, filtrerade efter specifika villkor. Du kan också använda `/config/mergePolicies/bulk-get` slutpunkt för att hämta flera sammanfogningsprinciper efter deras ID. Steg för att utföra dessa anrop beskrivs i följande avsnitt.
 
 ### Åtkomst till en sammanfogningsprincip via ID
 
@@ -347,7 +347,7 @@ Se [komponenter i sammanfogningsprinciper](#components-of-merge-policies) i bör
 
 ### Lista flera sammanfogningsprinciper efter villkor
 
-Du kan visa flera sammanfogningsprinciper inom IMS-organisationen genom att skicka en GET-förfrågan till `/config/mergePolicies` slutpunkt och valfria frågeparametrar för att filtrera, ordna och numrera svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). Om du anropar den här slutpunkten utan parametrar hämtas alla kopplingsprofiler som är tillgängliga för organisationen.
+Du kan visa flera samkörningsprinciper inom organisationen genom att skicka en GET-förfrågan till `/config/mergePolicies` slutpunkt och valfria frågeparametrar för att filtrera, ordna och numrera svaret. Flera parametrar kan inkluderas, avgränsade med et-tecken (&amp;). Om du anropar den här slutpunkten utan parametrar hämtas alla kopplingsprofiler som är tillgängliga för organisationen.
 
 **API-format**
 

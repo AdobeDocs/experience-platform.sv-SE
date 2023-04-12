@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profil- och identitetstjänsten med API
 type: Tutorial
 description: I den här självstudiekursen visas hur du aktiverar en datauppsättning för användning med kundprofil och identitetstjänst i realtid med Adobe Experience Platform API:er.
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1072'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 |---|---|
 | `schemaRef.id` | ID för [!DNL Profile]-aktiverat schema som datauppsättningen baseras på. |
-| `{TENANT_ID}` | Namnutrymmet i [!DNL Schema Registry] som innehåller resurser som tillhör din IMS-organisation. Se [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] för mer information. |
+| `{TENANT_ID}` | Namnutrymmet i [!DNL Schema Registry] som innehåller resurser som tillhör din organisation. Se [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] för mer information. |
 
 **Svar**
 
@@ -220,6 +220,7 @@ curl -X PATCH \
 Begärandetexten innehåller en `path` till två typer av taggar, `unifiedProfile` och `unifiedIdentity`. The `value` av var och en är arrayer som innehåller strängen `enabled:true`.
 
 **Svar**
+
 En lyckad PATCH-begäran returnerar HTTP-status 200 (OK) och en array som innehåller ID:t för den uppdaterade datauppsättningen. Detta ID ska matcha det som skickades i PATCH-begäran. The `unifiedProfile` och `unifiedIdentity` taggar har nu lagts till och datauppsättningen är aktiverad för användning av profiltjänster och identitetstjänster.
 
 ```json

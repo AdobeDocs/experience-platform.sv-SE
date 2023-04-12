@@ -5,9 +5,9 @@ title: Infoga data i Experience Platform
 type: Tutorial
 description: Med Adobe Experience Platform kan du enkelt importera data som gruppfiler i form av Parquet-filer eller data som följer ett känt Experience Data Model-schema (XDM).
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1261'
+source-wordcount: '1259'
 ht-degree: 0%
 
 ---
@@ -18,13 +18,13 @@ Med Adobe Experience Platform kan du enkelt importera data till [!DNL Platform] 
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
 Om du hellre vill importera data med hjälp av API:er för datainmatning börjar du med att läsa [Utvecklarhandbok för batchintag](../batch-ingestion/api-overview.md).
 
 ## Arbetsytan Datauppsättningar
 
-Arbetsytan Datauppsättningar i [!DNL Experience Platform] gör att du kan visa och hantera alla datauppsättningar som din IMS-organisation har skapat, samt skapa nya.
+Arbetsytan Datauppsättningar i [!DNL Experience Platform] gör att du kan visa och hantera alla datauppsättningar som din organisation har skapat, samt skapa nya.
 
 Visa arbetsytan Datauppsättningar genom att klicka **[!UICONTROL Datasets]** i den vänstra navigeringen. Arbetsytan Datauppsättningar innehåller en lista med datauppsättningar, inklusive kolumner som visar namn, skapade (datum och tid), källa, schema och senaste batchstatus samt datum och tid då datauppsättningen senast uppdaterades.
 

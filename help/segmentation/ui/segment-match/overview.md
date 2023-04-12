@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1919'
+source-wordcount: '1918'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ Det finns två behörigheter associerade med [!DNL Segment Match]:
 
 | Behörighet | Beskrivning |
 | --- | --- |
-| Hantera anslutningar för målgruppsdelning | Med den här behörigheten kan du slutföra partnerhandskakningsprocessen som ansluter två IMS-organisationer för att aktivera [!DNL Segment Match] flöden. |
+| Hantera anslutningar för målgruppsdelning | Med den här behörigheten kan du slutföra partnerhandskakningsprocessen, som kopplar samman två organisationer för att aktivera [!DNL Segment Match] flöden. |
 | Hantera målgruppsresurser | Med den här behörigheten kan du skapa, redigera och publicera feeds (det datapaket som används för [!DNL Segment Match]) med aktiva partners (partners som administratörsanvändaren har anslutit till **[!UICONTROL Audience Share Connections]** åtkomst). |
 
 Se [åtkomstkontroll - översikt](../../../access-control/home.md) för mer information om åtkomstkontroll och behörigheter.

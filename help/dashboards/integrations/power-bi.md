@@ -2,16 +2,16 @@
 title: Power BI-rapportmallar för plattformsinstrumentpaneler
 description: Använd rapportmallar för att utforska Experience Platform data med Power BI.
 exl-id: fb98a79f-3d82-4e11-b08a-b7cb06414462
-source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1443'
+source-wordcount: '1442'
 ht-degree: 0%
 
 ---
 
 # Power BI-rapportmallar för instrumentpaneler
 
-Med rapportmallsfunktionen i Power BI kan du skapa övertygande rapporter med data från Adobe Experience Platform. Den smidiga installationsprocessen installerar automatiskt standardwidgetar för kundprofil, segmentering och mål i realtid. Installationen kopplar även Power BI till dina datamodeller så att du enkelt kan anpassa och utöka rapportmallarna. Dessa rapporter kan delas av hela organisationen utan att mottagarna behöver inloggningsuppgifter för din IMS-organisation på plattformen.
+Med rapportmallsfunktionen i Power BI kan du skapa övertygande rapporter med data från Adobe Experience Platform. Den smidiga installationsprocessen installerar automatiskt standardwidgetar för kundprofil, segmentering och mål i realtid. Installationen kopplar även Power BI till dina datamodeller så att du enkelt kan anpassa och utöka rapportmallarna. Dessa rapporter kan delas av hela organisationen utan att mottagarna behöver autentiseringsuppgifter för din organisation på Platform.
 
 Det här dokumentet innehåller anvisningar om hur du ansluter Adobe Experience Platform till Power BI-programmet och använder rapportmallar för att dela viktiga plattformsdata med externa användare.
 

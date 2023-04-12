@@ -4,9 +4,9 @@ description: Med segmentering kan ni skapa segment och målgrupper utifrån era 
 title: Övervaka dataflöden för segment i användargränssnittet
 type: Tutorial
 exl-id: 32fd2ba1-0ff0-4ea7-8d55-80d53eebc02f
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1783'
+source-wordcount: '1779'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segments"
 >title="Segment"
->abstract="Vyn Segment innehåller information om alla IMS-organisationens segment, med ytterligare information om aktiverings- och utvärderingsjobben."
+>abstract="Vyn Segment innehåller information om alla era segment, med ytterligare information om deras aktiverings- och utvärderingsjobb."
 
 Så här öppnar du **[!UICONTROL Segments]** kontrollpanel, välja **[!UICONTROL Monitoring]** i den vänstra navigeringen. På **[!UICONTROL Monitoring]** väljer du **[!UICONTROL Segments]** kort.
 
@@ -48,7 +48,7 @@ Instrumentpanelen innehåller mätvärden för både segment och segmentjobb. So
 >
 >För närvarande är det bara segment som aktiveras för [batchvis (filbaserat) mål](../../destinations/destination-types.md#file-based) stöds för kontrollpanelen för övervakningssegment.
 
-![Segmentkontrollpanelen. Information om de olika segmenten i IMS-organisationen och sandlådan visas.](../assets/ui/monitor-segments/segment-monitoring-dashboard.png)
+![Segmentkontrollpanelen. Information om de olika segmenten i organisationen och sandlådan visas.](../assets/ui/monitor-segments/segment-monitoring-dashboard.png)
 
 Följande mått är tillgängliga för den här instrumentpanelsvyn:
 
@@ -109,7 +109,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Dataflow run start]** | Datum och tid då aktiveringsjobbet startades. |
 | **[!UICONTROL Dataflow run end]** | Datum och tid då aktiveringsjobbet avslutades. |
 | **[!UICONTROL Dataflow run ID]** | ID för det aktuella aktiveringsjobbet. |
-| **[!UICONTROL IMS org ID]** | ID för den IMS-organisation som aktiveringsjobbet tillhör. |
+| **[!UICONTROL IMS org ID]** | ID för organisationen som aktiveringsjobbet tillhör. |
 | **[!UICONTROL Destination name]** | Namnet på målet som data aktiveras till. |
 
 Under mätvärdena visas en växel som du kan använda för att välja mellan körningsfel i dataflödet och segmenten.
@@ -151,7 +151,7 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Job type]** | Typ av segmentjobb. I det här fallet blir det alltid ett segmentutvärderingsjobb. |
 | **[!UICONTROL Evaluation type]** | Typen av utvärdering som görs. Detta kan vara **[!UICONTROL Batch]** eller **[!UICONTROL Streaming]**. |
 | **[!UICONTROL Job ID]** | ID för utvärderingsjobbet. |
-| **[!UICONTROL IMS org ID]** | ID:t för den IMS-organisation som utvärderingsjobbet tillhör. |
+| **[!UICONTROL IMS org ID]** | ID:t för organisationen som utvärderingsjobbet tillhör. |
 | **[!UICONTROL Segment name]** | Namnet på det segment som utvärderas. |
 | **[!UICONTROL Segment ID]** | ID:t för det segment som utvärderas. |
 

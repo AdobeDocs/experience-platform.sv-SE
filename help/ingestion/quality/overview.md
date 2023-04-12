@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datakvalitet
 description: Följande dokument innehåller en sammanfattning av de kontroller och valideringsbeteenden som stöds för import av grupper och direktuppspelning i Adobe Experience Platform.
 exl-id: 7ef40859-235a-4759-9492-c63e5fd80c8e
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '423'
 ht-degree: 3%
 
 ---
@@ -49,7 +49,7 @@ Följande valideringar görs för direktuppspelning:
 | Schema | Ser till att schemat är **not** tom och innehåller en referens till unionsschemat enligt följande: `"meta:immutableTags": ["union"]` |
 | `identityField` | Ser till att alla giltiga identitetsbeskrivningar definieras. |
 | JSON | Ser till att JSON är giltig. |
-| IMS-organisation | Ser till att den angivna IMS-organisationen är en giltig organisation. |
+| Organisation | Ser till att den listade organisationen är en giltig organisation. |
 | Källnamn | Ser till att namnet på datakällan anges. |
 | Datauppsättning | Ser till att datauppsättningen är angiven, aktiverad och inte har tagits bort. |
 | Sidhuvud | Ser till att rubriken är angiven och giltig. |

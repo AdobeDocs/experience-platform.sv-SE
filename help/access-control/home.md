@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1393'
+source-wordcount: '1391'
 ht-degree: 1%
 
 ---
@@ -55,7 +55,7 @@ I [!DNL Admin Console], tilldelas användare behörigheter genom användning av 
 
 ## Sandlådor och behörigheter
 
-Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils behörigheter ger profilens användare åtkomst till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din IMS-organisationsadministratör eller din Adobe-säljare om du vill ha mer information.
+Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils behörigheter ger profilens användare åtkomst till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din organisations administratör eller din säljare på Adobe för mer information.
 
 Mer information om sandlådor i [!DNL Experience Platform], se [översikt över sandlådor](../sandboxes/home.md).
 
@@ -114,7 +114,7 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 | [!DNL Destinations] | [!UICONTROL Destination Authoring] | Möjlighet att skapa destinationer med [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL Manage Sources] | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
 | [!DNL Data Ingestion] | [!UICONTROL View Sources] | Skrivskyddad åtkomst till tillgängliga källor i **[!UICONTROL Catalog]** och autentiserade källor i **[!UICONTROL Browse]** -fliken. |
-| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | Åtkomst att skapa, acceptera och avvisa partnerhandskakningar för att ansluta två IMS-organisationer och aktivera [!DNL Segment Match] flöden. |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | Tillgång till att skapa, acceptera och avböja partnerhandskakningar för att ansluta två organisationer och aktivera [!DNL Segment Match] flöden. |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share] | Tillgång till att läsa, skapa, redigera och publicera [!DNL Segment Match] flöden med aktiva partners. |
 | [!DNL Data Science Workspace] | [!UICONTROL Manage Data Science Workspace] | Åtkomst att läsa, skapa, redigera och ta bort i [!DNL Data Science Workspace]. |
 | Datastyrning | [!UICONTROL Apply Data Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |

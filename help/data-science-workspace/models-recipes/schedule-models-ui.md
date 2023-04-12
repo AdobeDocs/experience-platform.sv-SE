@@ -5,9 +5,9 @@ title: Schemalägg en modell i gränssnittet för datavetenskapen
 type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du skapa schemalagda kurser i maskininlärning. Genom att automatisera utbildnings- och poängprocessen kan du behålla och förbättra en tjänsts effektivitet genom att hålla jämna steg med era datamönster.
 exl-id: 51f6f328-7c63-4de1-9184-2ba526bb82e2
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här självstudiekursen går igenom stegen för att konfigurera utbildnings-
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
 Den här självstudiekursen kräver en befintlig tjänst. Om du inte har någon hjälpmedelstjänst att arbeta med kan du skapa en genom att följa självstudiekursen för [publicera en modell som en tjänst](./publish-model-service-ui.md).
 

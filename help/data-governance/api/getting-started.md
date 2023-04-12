@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med API:t för principtjänsten
 description: Med hjälp av API:t för principtjänst kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för principtjänsten.
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '443'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 I [!DNL Policy Service] API, alla policyer och marknadsföringsåtgärder kallas antingen `core` eller `custom` resurser.
 
-`core` är de som definieras och bibehålls av Adobe, medan `custom` är resurser som skapats och underhålls av organisationen och därför är unika och synliga endast för IMS-organisationen. Listans- och uppslagsåtgärder (`GET`) är de enda operationerna som tillåts på `core` resurser, medan åtgärder för listning, sökning och uppdatering (`POST`, `PUT`, `PATCH`och `DELETE`) finns för `custom` resurser.
+`core` är de som definieras och bibehålls av Adobe, medan `custom` är resurser som skapats och underhålls av organisationen och därför är unika och synliga enbart för organisationen. Listans- och uppslagsåtgärder (`GET`) är de enda operationerna som tillåts på `core` resurser, medan åtgärder för listning, sökning och uppdatering (`POST`, `PUT`, `PATCH`och `DELETE`) finns för `custom` resurser.
 
 ## Nästa steg
 

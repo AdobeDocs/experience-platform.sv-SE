@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Modellredigering med Adobe Experience Platform Platform SDK
 description: I den här självstudien får du information om hur du konverterar data_access_sdk_python till den nya Python-plattformen_sdk i både Python och R.
 exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '489'
 ht-degree: 5%
 
 ---
@@ -21,7 +21,7 @@ Den här självstudiekursen innehåller information om konvertering `data_access
 
 ## Bygg autentisering {#build-authentication}
 
-Autentisering krävs för att anropa [!DNL Adobe Experience Platform]och består av API-nyckel, IMS Org ID, en användartoken och en tjänsttoken.
+Autentisering krävs för att anropa [!DNL Adobe Experience Platform]och består av API-nyckel, organisations-ID, en användartoken och en tjänsttoken.
 
 ### Python
 
@@ -31,7 +31,7 @@ Om du använder Jupyter Notebook, ska du använda koden nedan för att skapa `cl
 client_context = PLATFORM_SDK_CLIENT_CONTEXT
 ```
 
-Om du inte använder Jupyter Notebook eller behöver ändra IMS-organisationen använder du följande kodexempel:
+Om du inte använder Jupyter Notebook eller behöver ändra organisation använder du följande kodexempel:
 
 ```python
 from platform_sdk.client_context import ClientContext
@@ -54,7 +54,7 @@ py_run_file("../.ipython/profile_default/startup/platform_sdk_context.py")
 client_context <- py$PLATFORM_SDK_CLIENT_CONTEXT
 ```
 
-Om du inte använder Jupyter Notebook eller behöver ändra IMS-organisationen använder du följande kodexempel:
+Om du inte använder Jupyter Notebook eller behöver byta organisation använder du följande kodexempel:
 
 ```r
 library(reticulate)
@@ -79,7 +79,7 @@ Om lästiden är för lång kan du försöka med att använda något av följand
 
 >[!NOTE]
 >
->IMS-organisationen anges i `client_context`.
+>Organisationen finns inom `client_context`.
 
 ### Python
 
@@ -195,7 +195,7 @@ df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 
 >[!NOTE]
 >
->IMS-organisationen anges i `client_context`.
+>Organisationen finns inom `client_context`.
 
 Om du vill skriva data i Python och R använder du ett av följande exempel:
 

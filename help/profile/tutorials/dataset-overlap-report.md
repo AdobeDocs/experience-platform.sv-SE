@@ -4,9 +4,9 @@ title: Generera överlappningsrapport för datauppsättning
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att generera överlappningsrapporten för datauppsättningen med hjälp av kundprofils-API:t i realtid.
 exl-id: 90894ed3-b09e-435d-a9e3-18fd6dc8e907
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '884'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Nödvändiga rubriker för alla API-anrop i den här självstudiekursen är:
 
 * `Authorization: Bearer {ACCESS_TOKEN}`: The `Authorization` header kräver en åtkomsttoken som föregås av ordet `Bearer`. Ett nytt åtkomsttokenvärde måste genereras var 24:e timme.
 * `x-api-key: {API_KEY}`: The `API Key` kallas också `Client ID` och är ett värde som bara behöver genereras en gång.
-* `x-gw-ims-org-id: {ORG_ID}`: The `IMS Org` kallas även `Organization ID` och behöver bara genereras en gång.
+* `x-gw-ims-org-id: {ORG_ID}`: Organisations-ID behöver bara genereras en gång.
 
 När du har slutfört självstudiekursen för autentisering och samlat in värden för de huvuden som behövs kan du börja ringa anrop till Real-Time Customer API.
 

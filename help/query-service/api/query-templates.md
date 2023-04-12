@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågemallar för API-slutpunkt
 description: Den här guiden beskriver de olika API-anrop för frågemallar som du kan göra med hjälp av API:t för frågetjänsten.
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: ee6a54aeba4ddfeb98ee5e11283c299f00969a53
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '890'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Se [Dokumentation för UI-frågemallar](../ui/query-templates.md) om du vill ha 
 
 ### Hämta en lista med frågemallar
 
-Du kan hämta en lista med alla frågemallar för din IMS-organisation genom att göra en GET-förfrågan till `/query-templates` slutpunkt.
+Du kan hämta en lista med alla frågemallar för din organisation genom att göra en GET-förfrågan till `/query-templates` slutpunkt.
 
 **API-format**
 
@@ -47,7 +47,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågema
 
 **Begäran**
 
-Följande begäran hämtar den senaste frågemallen som skapats för din IMS-organisation.
+Följande begäran hämtar den senaste frågemallen som har skapats för din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limit=1
@@ -59,7 +59,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limi
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar för den angivna IMS-organisationen. Följande svar returnerar den senaste frågemallen som skapats för din IMS-organisation.
+Ett godkänt svar returnerar HTTP-status 200 med en lista över frågemallar för den angivna organisationen. Följande svar returnerar den senaste frågemallen som har skapats för din organisation.
 
 ```json
 {

@@ -5,9 +5,9 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1227'
+source-wordcount: '1225'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ I den här självstudiekursen beskrivs hur du samlar in de nödvändiga autentis
 
 För att kunna anropa Experience Platform API:er måste du ha följande:
 
-* En IMS-organisation med tillgång till Adobe Experience Platform.
+* En organisation med tillgång till Adobe Experience Platform.
 * En Admin Console-administratör som kan lägga till dig som utvecklare och som användare för en produktprofil.
 
 Du måste också ha en Adobe ID för att slutföra kursen. Om du inte har någon Adobe ID kan du skapa en med följande steg:
@@ -54,7 +54,7 @@ När du har utsetts till utvecklare kan du börja skapa integreringar i [Adobe D
 
 Dina [!DNL Admin Console] måste administratören också lägga till dig som användare i samma produktprofil. Se guiden [hantera användargrupper i [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html) för mer information.
 
-## Generera en API-nyckel, IMS-org-ID och klienthemlighet {#api-ims-secret}
+## Generera en API-nyckel, organisations-ID och klienthemlighet {#api-ims-secret}
 
 >[!NOTE]
 >

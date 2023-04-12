@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med Real-time Customer Data Platform B2B Edition
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1195'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Sedan använder Bodea-marknadsföraren [Marketo Engage-kontakt](../sources/conne
 
 Om du vill skapa en anslutning mellan ett Marketo-konto och en plattform måste du hämta autentiseringsuppgifter. Se [guide om hur du får inloggningsuppgifter för Marketo-källanslutning](../sources/connectors/adobe-applications/marketo/marketo-auth.md) för detaljerade anvisningar.
 
-När autentiseringsuppgifterna har inhämtats skapar Bodea-marknadsföraren en anslutning mellan Marketo-kontot och deras plattforms-IMS-organisation. I dokumentationen finns instruktioner om [hur du ansluter ett Marketo-konto med hjälp av plattformsgränssnittet](../sources/tutorials/ui/create/adobe-applications/marketo.md).
+När du har fått inloggningsuppgifter skapar Bodea-marknadsföraren en anslutning mellan Marketo-kontot och deras plattformsorganisation. I dokumentationen finns instruktioner om [hur du ansluter ett Marketo-konto med hjälp av plattformsgränssnittet](../sources/tutorials/ui/create/adobe-applications/marketo.md).
 
 Marketo Engage-källkopplingen har en automatisk mappningsfunktion som gör det enklare att mappa alla dina datafält till de nya scheman.
 

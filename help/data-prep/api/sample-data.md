@@ -3,10 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;api guide;e
 solution: Experience Platform
 title: Exempel på API-slutpunkt för data
 description: Du kan använda ändpunkten "/samples" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsexempeldata.
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 0%
+source-wordcount: '399'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ Exempeldata kan användas när du skapar ett schema för mappningsuppsättningen
 
 ## Visa exempeldata
 
-Du kan hämta en lista över alla mappningsexempeldata för din IMS-organisation genom att göra en GET-förfrågan till `/samples` slutpunkt.
+Du kan hämta en lista över alla mappningsexempeldata för din organisation genom att göra en GET-förfrågan till `/samples` slutpunkt.
 
 **API-format**
 
@@ -34,7 +34,7 @@ GET /samples?limit={LIMIT}&start={START}
 
 **Begäran**
 
-Följande begäran hämtar de två sista mappningsexempeldata inom IMS-organisationen.
+Följande begäran hämtar de två sista mappningsexempeldata inom din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2&start=0 \

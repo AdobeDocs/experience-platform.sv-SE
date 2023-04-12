@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med självbetjäningskällor (batch-SDK)
 description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med självbetjäningskällor (Batch SDK).
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 2a5d545db18a5dd33c5ff2ac5c543ec35db4ca00
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '386'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Med självbetjäningskällor (Batch SDK) kan du integrera din egen REST-baserade
 
 ## Förutsättningar
 
-Om du vill använda självbetjäningskällor (Batch SDK) måste du se till att du har tillgång till en IMS-organisationssandlåda som har etablerats med Adobe Experience Platform-källor.
+Om du vill använda självbetjäningskällor (Batch SDK) måste du se till att du har tillgång till en sandlåda för en organisation som har etablerats med Adobe Experience Platform-källor.
 
 Handboken kräver även en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 

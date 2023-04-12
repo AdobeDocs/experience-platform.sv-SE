@@ -1,9 +1,10 @@
 ---
 title: Exportera API-slutpunkt
 description: Med slutpunkten /export i API:t för schemaregister kan du dela XDM-resurser mellan sandlådor.
-source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
+exl-id: 1dcbfa59-af98-4db5-b6f4-f848e5bf5e81
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '410'
 ht-degree: 0%
 
 ---
@@ -32,7 +33,7 @@ GET /rpc/export/{RESOURCE_ID}
 | --- | --- |
 | `{RESOURCE_ID}` | The `meta:altId` eller URL-kodad `$id` för den XDM-resurs som du vill exportera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -50,7 +51,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen ett objekt som skapats av en innehavare `Property` datatypen som `Restaurant` fältgruppen används, medan det andra objektet är `Restaurant` själva fältgruppen. Nyttolasten kan sedan användas för [importera resursen](#import) till en annan sandlåda eller IMS-organisation.
+Ett lyckat svar returnerar en array med objekt, som representerar mål-XDM-resursen och alla dess beroende resurser. I det här exemplet är det första objektet i arrayen ett objekt som skapats av en innehavare `Property` datatypen som `Restaurant` fältgruppen används, medan det andra objektet är `Restaurant` själva fältgruppen. Nyttolasten kan sedan användas för [importera resursen](#import) till en annan sandlåda eller organisation.
 
 Observera att alla instanser av resursens klient-ID ersätts med `<XDM_TENANTID_PLACEHOLDER>`. Detta gör att schemaregistret automatiskt kan använda rätt klient-ID för resurserna beroende på var de skickas i det efterföljande importanropet.
 

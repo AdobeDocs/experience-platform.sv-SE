@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Vanliga frågor om segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: cfa9db16-0bc3-4d25-914d-0d923eccb5a3
-source-git-commit: 823eb549e5514a3201ba68ed395c69e202cb747f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Inga kund- eller segmentdata flyttas över sandlådor för att få fram dessa up
 
 Detta är en envägsprocess, vilket innebär att de ursprungliga förhasrade identifierarna inte visas och inte kan bakåtkompileras.
 
-Dessa datastrukturer har unika egenskaper som gör det möjligt för ingenjörer att utföra union- och skärningsåtgärder mellan dem, även om den kodade informationen är kraftigt komprimerad eller hash-kodad. Dessa åtgärder tillåter [!DNL Segment Match] för att få den uppskattade skärningspunkten mellan två datastrukturer som består av ID:n från två olika sandlådor utan att behöva jämföra de faktiska värdena. Sedan [!DNL Segment Match] endast använder datastrukturerna, lämnar ID:n aldrig sina respektive IMS-organisationers profillager för uppskattningsändamål. På så sätt kan Adobe uppfylla kundernas sekretess- och säkerhetskrav och samtidigt erbjuda mycket exakta beräkningsverktyg som vägleder datasamarbetsavtalen.
+Dessa datastrukturer har unika egenskaper som gör det möjligt för ingenjörer att utföra union- och skärningsåtgärder mellan dem, även om den kodade informationen är kraftigt komprimerad eller hash-kodad. Dessa åtgärder tillåter [!DNL Segment Match] för att få den uppskattade skärningspunkten mellan två datastrukturer som består av ID:n från två olika sandlådor utan att behöva jämföra de faktiska värdena. Sedan [!DNL Segment Match] endast använder datastrukturerna, lämnar ID:n aldrig sina respektive organisationers profilarkiv för skattningsändamål. På så sätt kan Adobe uppfylla kundernas sekretess- och säkerhetskrav och samtidigt erbjuda mycket exakta beräkningsverktyg som vägleder datasamarbetsavtalen.
 
 ## Hur ser det ut när du anger vilka identiteter som ska ta emot ID:n för det delade segmentet?
 
@@ -31,4 +31,4 @@ Dessa datastrukturer har unika egenskaper som gör det möjligt för ingenjörer
 
 Dataöverföringsprocessen mellan de krypterade identiteterna i två olika organisationer utförs i en neutral datormiljö. Dataöverföringsjobbet ägs av Adobe, och de organisationer som deltar i partnerskapet har inte tillgång till den här miljön och de får inte heller tillgång till några loggar som kan vara ett resultat av dataöverföringsjobbet.
 
-Det enda segmentmedlemskapet är inkapslat i IMS-organisationens överlappande profilfragment för en mottagare och ingen ytterligare identitet överförs från den avsändande IMS-organisationen till den mottagande IMS-organisationen. Ingen vanlig text, personligt identifierbar information (PII) läses av dataöverföringsjobbet eftersom [!DNL Segment Match] tillåter endast överlappningar på SHA256-krypterade namnutrymmen (e-post/telefon) när data är PII. Resultaten lagras aldrig i datormiljön.
+Det enda segmentmedlemskapet är inkapslat i en mottagarorganisations överlappande profilfragment och ingen ytterligare identitet överförs från avsändarorganisationen till mottagarorganisationen. Ingen vanlig text, personligt identifierbar information (PII) läses av dataöverföringsjobbet eftersom [!DNL Segment Match] tillåter endast överlappningar på SHA256-krypterade namnutrymmen (e-post/telefon) när data är PII. Resultaten lagras aldrig i datormiljön.

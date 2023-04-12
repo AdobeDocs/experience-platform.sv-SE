@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2412'
+source-wordcount: '2411'
 ht-degree: 1%
 
 ---
@@ -549,7 +549,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. |
+| `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i din organisation. |
 | `{SCHEMA_ID}` | ID:t för schemat som du har skapat. |
 
 ### Skapa batch

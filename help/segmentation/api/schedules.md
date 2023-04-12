@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmenteringsjobb en gång om dagen.
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: e24a2ba0321ebaa8e91f96477f58bfa4915f47ce
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2011'
+source-wordcount: '2009'
 ht-degree: 1%
 
 ---
@@ -52,7 +52,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den angivna IMS-organisationen som JSON.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över scheman för den angivna organisationen som JSON.
 
 >[!NOTE]
 >
@@ -274,7 +274,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till &quot;/state&quot;. |
-| `value` | Det uppdaterade värdet för schemats tillstånd. Värdet kan antingen anges som aktivt eller inaktivt för att aktivera eller inaktivera schemat. Observera att du **inte** inaktivera ett schema om IMS-organisationen har aktiverats för direktuppspelning. |
+| `value` | Det uppdaterade värdet för schemats tillstånd. Värdet kan antingen anges som aktivt eller inaktivt för att aktivera eller inaktivera schemat. Observera att du **inte** inaktivera ett schema om organisationen har aktiverats för direktuppspelning. |
 
 **Svar**
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 9aa86b8d541836504be6b8667a2e069116c6002c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1261'
+source-wordcount: '1258'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experienc
 
 ## Hämta en lista med segmentdefinitioner {#list}
 
-Du kan hämta en lista över alla segmentdefinitioner för din IMS-organisation genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
+Du kan hämta en lista över alla segmentdefinitioner för din organisation genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
@@ -46,7 +46,7 @@ GET /segment/definitions?{QUERY_PARAMETERS}
 
 **Begäran**
 
-Följande begäran hämtar de två sista segmentdefinitionerna som publicerats i IMS-organisationen.
+Följande begäran hämtar de två sista segmentdefinitionerna som publicerats i organisationen.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 \
@@ -58,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitioner för den angivna IMS-organisationen som JSON.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitioner för den angivna organisationen som JSON.
 
 ```json
 {

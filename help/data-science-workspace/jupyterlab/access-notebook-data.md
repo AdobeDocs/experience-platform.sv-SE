@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Dataåtkomst i Jupyterlab-anteckningsböcker
 description: Den här guiden fokuserar på hur du använder Jupyter-anteckningsböcker, som är byggda i Data Science Workspace, för att få tillgång till dina data.
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '3224'
+source-wordcount: '3222'
 ht-degree: 8%
 
 ---
@@ -519,7 +519,7 @@ df1.show(10)
 | df1 | En variabel som representerar den Pandas-dataram som används för att läsa och skriva data. |
 | user-token | Din användartoken som hämtas automatiskt med `clientContext.getUserToken()`. |
 | service-token | Din tjänsttoken som hämtas automatiskt med `clientContext.getServiceToken()`. |
-| ims-org | Ditt IMS-organisations-ID som hämtas automatiskt med `clientContext.getOrgId()`. |
+| ims-org | Ditt organisations-ID som hämtas automatiskt med `clientContext.getOrgId()`. |
 | api-key | Din API-nyckel som hämtas automatiskt med `clientContext.getApiKey()`. |
 
 >[!TIP]
@@ -571,7 +571,7 @@ df1.write.format("com.adobe.platform.query")
 | df1 | En variabel som representerar den Pandas-dataram som används för att läsa och skriva data. |
 | user-token | Din användartoken som hämtas automatiskt med `clientContext.getUserToken()`. |
 | service-token | Din tjänsttoken som hämtas automatiskt med `clientContext.getServiceToken()`. |
-| ims-org | Ditt IMS-organisations-ID som hämtas automatiskt med `clientContext.getOrgId()`. |
+| ims-org | Ditt organisations-ID som hämtas automatiskt med `clientContext.getOrgId()`. |
 | api-key | Din API-nyckel som hämtas automatiskt med `clientContext.getApiKey()`. |
 
 >[!TIP]

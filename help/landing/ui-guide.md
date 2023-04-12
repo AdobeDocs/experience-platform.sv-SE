@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience Platform - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1751'
+source-wordcount: '1737'
 ht-degree: 0%
 
 ---
@@ -29,13 +29,13 @@ Kontrollpanelen för mätvärden innehåller kort som ger dig information om dat
 
 ![](images/user-guide/homepage-dashboard.png)
 
-The **[!UICONTROL Datasets]** visas antalet datauppsättningar i IMS-organisationen. Numret uppdateras när en ny datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
+The **[!UICONTROL Datasets]** -avsnittet visar antalet datauppsättningar inom organisationen. Numret uppdateras när en ny datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
 
-The **[!UICONTROL Profiles]** visas det totala antalet personer med profiler inom IMS-organisationen, exklusive profilfragment. Det totala antalet personer representerar den totala adresserbara publiken och uppdateras en gång var 24:e timme. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
+The **[!UICONTROL Profiles]** visar det totala antalet personer med profiler inom organisationen, exklusive profilfragment. Det totala antalet personer representerar den totala adresserbara publiken och uppdateras en gång var 24:e timme. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
 
-The **[!UICONTROL Segments]** visar det totala antalet segment som skapats i IMS-organisationen. Numret uppdateras när ett nytt segment skapas. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+The **[!UICONTROL Segments]** visar det totala antalet segment som har skapats i organisationen. Numret uppdateras när ett nytt segment skapas. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-The **[!UICONTROL Destinations]** visar det totala antalet destinationer som skapats för IMS-organisationen. Numret uppdateras när ett nytt mål skapas. Mer information om destinationer finns i [destinationer, översikt](../destinations/home.md).
+The **[!UICONTROL Destinations]** visar det totala antalet destinationer som skapats för organisationen. Numret uppdateras när ett nytt mål skapas. Mer information om destinationer finns i [destinationer, översikt](../destinations/home.md).
 
 ### Senaste data
 
@@ -43,13 +43,13 @@ Den senaste datapanelen innehåller information om nyligen skapade datauppsättn
 
 ![](images/user-guide/homepage-recent.png)
 
-The **[!UICONTROL Recent datasets]** I listas de fem senast skapade datauppsättningarna i din IMS-organisation. Den här listan uppdateras varje gång en ny datauppsättning skapas. Du kan välja en datauppsättning i listan om du vill visa mer information om den angivna datauppsättningen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade datauppsättningar. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
+The **[!UICONTROL Recent datasets]** i listas de fem senast skapade datauppsättningarna i din organisation. Den här listan uppdateras varje gång en ny datauppsättning skapas. Du kan välja en datauppsättning i listan om du vill visa mer information om den angivna datauppsättningen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade datauppsättningar. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
 
-The **[!UICONTROL Recent sources]** I listas de fem senast skapade källanslutningarna i IMS-organisationen. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade källanslutningar. Mer information om källor finns i [källöversikt](../sources/home.md).
+The **[!UICONTROL Recent sources]** i listas de fem senast skapade källanslutningarna i din organisation. Listan uppdateras varje gång en ny källkoppling skapas. Du kan välja en källanslutning i listan om du vill visa mer information om den angivna kopplingen eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade källanslutningar. Mer information om källor finns i [källöversikt](../sources/home.md).
 
-The **[!UICONTROL Recent segments]** I listas de fem senast skapade segmentdefinitionerna i IMS-organisationen. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** om du vill se en lista över alla segmentdefinitioner som har skapats. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+The **[!UICONTROL Recent segments]** i listas de fem senast skapade segmentdefinitionerna i din organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** om du vill se en lista över alla segmentdefinitioner som har skapats. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-The **[!UICONTROL Recent destinations]** i listas de fem senast skapade destinationerna inom IMS-organisationen. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade mål. Mer information om destinationer finns i [destinationer, översikt](../destinations/home.md).
+The **[!UICONTROL Recent destinations]** i listas de fem senast skapade destinationerna inom din organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade mål. Mer information om destinationer finns i [destinationer, översikt](../destinations/home.md).
 
 ### Rekommenderad utbildning
 
@@ -59,23 +59,23 @@ The **[!UICONTROL Recommended learning]** innehåller länkar till användbar do
 
 ## Övre navigeringsfältet
 
-Det övre navigeringsfältet i plattformsgränssnittet visar den IMS-organisation som du är inloggad på och innehåller flera viktiga kontroller.
+I det övre navigeringsfältet i plattformsgränssnittet visas den organisation som du är inloggad på och det finns flera viktiga kontroller.
 
 Till vänster i navigeringsfältet finns Adobe Experience Platform logotyp. När du väljer den här logotypen kommer du tillbaka till startskärmen för användargränssnittet för plattformen.
 
 ![](./images/user-guide/homepage-top-nav-bar.png)
 
-### IMS-organisationsväljare
+### Organisationsväljare
 
-Det första objektet till höger i det övre navigeringsfältet är **IMS-organisationsväljare**.
+Det första objektet till höger i det övre navigeringsfältet är **Organisationsväljare**.
 
 ![](./images/user-guide/homepage-ims-org-switcher.png)
 
-Om du väljer väljaren öppnas en listruta med IMS-organisationer som du har tillgång till, om det finns några. Om du vill växla till en annan IMS-organisation väljer du ett alternativ i listan.
+När du väljer väljaren öppnas en listruta med organisationer som du har tillgång till, om det finns några. Om du vill byta till en annan organisation väljer du ett alternativ i listan.
 
 ### Byt program
 
-Nästa objekt till höger om den övre navigeringen är **programväljare**, som representeras av ![programväljare](./images/user-guide/app-switcher-icon.png) ikon. När du väljer den här ikonen kan du växla mellan Adobe-program som din IMS-organisation har tillgång till, till exempel Experience Platform, Analytics (Analyser), Assets (Resurser) och andra.
+Nästa objekt till höger om den övre navigeringen är **programväljare**, som representeras av ![programväljare](./images/user-guide/app-switcher-icon.png) ikon. När du väljer den här ikonen kan du växla mellan Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics (Analyser), Assets (Resurser) och andra.
 
 ### Hjälp om 
 

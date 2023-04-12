@@ -5,9 +5,9 @@ title: Direktuppspela postdata med API:er för direktuppspelning
 type: Tutorial
 description: Den här självstudiekursen hjälper dig att börja använda API:er för direktuppspelning, som ingår i API:erna för Adobe Experience Platform datainmatningstjänst.
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1024'
 ht-degree: 0%
 
 ---
@@ -128,7 +128,7 @@ Ett lyckat svar returnerar HTTP-status 201 med information om ditt nyligen skapa
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Mer information om klient-ID finns i [guide för schemaregister](../../xdm/api/getting-started.md#know-your-tenant-id). |
+| `{TENANT_ID}` | Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i din organisation. Mer information om klient-ID finns i [guide för schemaregister](../../xdm/api/getting-started.md#know-your-tenant-id). |
 
 Observera `$id` och `version` -attribut, eftersom båda dessa kommer att användas när du skapar datauppsättningen.
 

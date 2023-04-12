@@ -6,9 +6,9 @@ description: I Adobe Experience Platform är beräknade attribut funktioner som 
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
 hide: true
 hidefromtoc: true
-source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2274'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,7 @@ curl -X POST \
 | `name` | Namnet på det beräknade attributfältet, som en sträng. |
 | `path` | Sökvägen till fältet som innehåller det beräknade attributet. Den här sökvägen finns i `properties` schemats attribut och ska INTE innehålla fältnamnet i sökvägen. Utelämna de olika nivåerna i `properties` attribut. |
 | `{TENANT_ID}` | Om du inte känner till ditt klient-ID kan du följa stegen för att hitta ditt innehavar-ID i [Utvecklarhandbok för schemaregister](../../xdm/api/getting-started.md#know-your-tenant_id). |
-| `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom IMS-organisationen att fastställa rätt beräknat attribut att använda. |
+| `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom organisationen att fastställa rätt beräknat attribut att använda. |
 | `expression.value` | Ett giltigt [!DNL Profile Query Language] (PQL). Beräknade attribut har för närvarande stöd för följande funktioner: sum, count, min, max och boolesk. En lista med exempeluttryck finns i [exempel på PQL-uttryck](expressions.md) dokumentation. |
 | `schema.name` | Den klass som schemat som innehåller det beräknade attributfältet baseras på. Exempel: `_xdm.context.experienceevent` för ett schema baserat på klassen XDM ExperienceEvent. |
 

@@ -2,16 +2,16 @@
 title: Företagets slutpunkt
 description: Lär dig hur du anropar slutpunkten /companies i Reactor API.
 exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '239'
 ht-degree: 1%
 
 ---
 
 # Företagets slutpunkt
 
-Ett företag representerar en kundorganisation, vanligtvis en verksamhet. I Reactor API matchar de här företagen 1:1 med IMS Organization ID. API-användare har bara insyn i de företag som de har tillgång till. Ett företag kan innehålla många [egenskaper](./properties.md). En egenskap tillhör exakt ett företag.
+Ett företag representerar en kundorganisation, vanligtvis en verksamhet. I Reactor API matchar dessa företag 1:1 med organisations-ID. API-användare har bara insyn i de företag som de har tillgång till. Ett företag kan innehålla många [egenskaper](./properties.md). En egenskap tillhör exakt ett företag.
 
 The `/companies` -slutpunkten i Reaktors API gör att du kan hämta de företag som du har tillgång till i ditt upplevelseprogram via programkod.
 
@@ -121,7 +121,7 @@ GET /companies/{COMPANY_ID}
 | --- | --- |
 | `{COMPANY_ID}` | The `id` värdet på det företag du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

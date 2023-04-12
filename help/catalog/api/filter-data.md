@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Filtrera katalogdata med hjälp av frågeparametrar
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2121'
+source-wordcount: '2120'
 ht-degree: 0%
 
 ---
@@ -206,7 +206,7 @@ Vissa katalogobjekt stöder användning av en `tags` -attribut. Taggar kan bifog
 Det finns några begränsningar att tänka på när du använder taggar:
 
 * De enda katalogobjekt som för närvarande stöder taggar är datamängder, grupper och anslutningar.
-* Taggnamnen är unika för din IMS-organisation.
+* Taggnamnen är unika för din organisation.
 * Adobe kan använda taggar för vissa beteenden. Namnen på dessa taggar har prefixet&quot;adobe&quot; som standard. Därför bör du undvika den här regeln när du deklarerar taggnamn.
 * Följande taggnamn är reserverade för användning i [!DNL Experience Platform]och kan därför inte deklareras som ett taggnamn för din organisation:
    * `unifiedProfile`: Det här taggnamnet är reserverat för datauppsättningar som ska importeras av [[!DNL Real-Time Customer Profile]](../../profile/home.md).

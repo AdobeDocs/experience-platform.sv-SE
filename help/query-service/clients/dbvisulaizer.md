@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla DbVisualizer till frågetjänsten
 description: Det här dokumentet går igenom stegen för att ansluta DbVisualizer till Adobe Experience Platform Query Service.
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 106a2e4606e94f71d6359cf947e05f193c19c660
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Det här dokumentet innehåller stegen för att ansluta [!DNL DbVisualizer] data
 
 Den här guiden kräver att du redan har tillgång till [!DNL DbVisualizer] och känner till hur man navigerar i gränssnittet. Ladda ned [!DNL DbVisualizer] eller för mer information, se [officiell [!DNL DbVisualizer] dokumentation](https://www.dbvis.com/download/).
 
-Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL  DbVisualizer] för Experience Platform måste du ha tillgång till arbetsytan Frågor i användargränssnittet för plattformen. Kontakta IMS-organisationens administratör om du inte har tillgång till arbetsytan Frågor.
+Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL  DbVisualizer] för Experience Platform måste du ha tillgång till arbetsytan Frågor i användargränssnittet för plattformen. Kontakta din organisationsadministratör om du inte har tillgång till arbetsytan Frågor.
 
 ## Skapa en databasanslutning {#connect-database}
 

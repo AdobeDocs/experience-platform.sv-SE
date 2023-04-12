@@ -5,9 +5,9 @@ title: Posta en modell med API:t för Sensei Machine Learning
 type: Tutorial
 description: I den här självstudiekursen får du lära dig hur du använder Sensei Machine Learning-API:erna för att skapa en Experiment och en Experimentrunda.
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '550'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{JSON_PAYLOAD}`: Objekt för experimentkörning som ska skickas. Exemplet vi använder i vår självstudiekurs visas här:
@@ -122,7 +122,7 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.\
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
 `{API_KEY}`: Ditt specifika API-nyckelvärde som finns i din unika Adobe Experience Platform-integrering.\
 `{EXPERIMENT_ID}`: Det ID som motsvarar den experiment som du vill använda som mål. Det här finns i svaret när du skapar din Experiment.\
@@ -187,7 +187,7 @@ curl -X GET \
 
 `{EXPERIMENT_ID}`: Det ID som motsvarar det Experiment som Kör finns under.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
 
 Eftersom det finns flera Experiment Runs för en viss Experiment har det returnerade svaret en array med Run ID:n.
 
@@ -230,7 +230,7 @@ curl -X DELETE \
 
 `{EXPERIMENT_ID}`: Det ID som motsvarar Experimenten.\
 `{ACCESS_TOKEN}`: Ditt specifika värde för innehavartoken som tillhandahålls efter autentisering.\
-`{ORG_ID}`: Dina IMS-organisationsuppgifter finns i din unika Adobe Experience Platform-integrering.
+`{ORG_ID}`: Dina organisationsuppgifter finns i din unika Adobe Experience Platform-integration.
 
 >[!NOTE]
 >

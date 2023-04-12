@@ -5,9 +5,9 @@ title: Hämtning av misslyckade batchar med API:t för dataåtkomst
 type: Tutorial
 description: I den här självstudiekursen beskrivs steg för hur du hämtar information om en misslyckad batch med hjälp av API:er för datainmatning.
 exl-id: 5fb9f28d-091e-4124-8d8e-b8a675938d3a
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '645'
 ht-degree: 0%
 
 ---
@@ -194,9 +194,9 @@ Det här avsnittet innehåller information om andra typer av fel som kan uppstå
 
 Precis som tidsstämpelfelet i det föregående exempelflödet beror dessa fel på felaktigt formaterad XDM. Felmeddelandena varierar beroende på vad problemet är. Därför kan inget specifikt felexempel visas.
 
-### IMS-organisations-ID saknas eller är ogiltigt
+### Organisations-ID saknas eller är ogiltigt
 
-Det här felet visas om IMS-organisations-ID:t saknas i nyttolasten och är ogiltigt.
+Detta fel visas om organisations-ID:t saknas i nyttolasten och är ogiltigt.
 
 ```json
 {

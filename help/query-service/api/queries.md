@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågar API-slutpunkt
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 08e19149a84273231c6261d2a4e09584dfb6e38d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Följande avsnitt går igenom anrop som du kan göra med `/queries` slutpunkt i 
 
 ### Hämta en lista med frågor
 
-Du kan hämta en lista över alla frågor för din IMS-organisation genom att göra en GET-förfrågan till `/queries` slutpunkt.
+Du kan hämta en lista över alla frågor för din organisation genom att göra en GET-förfrågan till `/queries` slutpunkt.
 
 **API-format**
 
@@ -46,7 +46,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 
 **Begäran**
 
-Följande begäran hämtar den senaste frågan som skapats för din IMS-organisation.
+Följande begäran hämtar den senaste frågan som har skapats för din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
@@ -58,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-status 200 med en lista över frågor för den angivna IMS-organisationen som JSON. Följande svar returnerar den senaste frågan som skapats för din IMS-organisation.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över frågor för den angivna organisationen som JSON. Följande svar returnerar den senaste frågan som skapats för din organisation.
 
 ```json
 {

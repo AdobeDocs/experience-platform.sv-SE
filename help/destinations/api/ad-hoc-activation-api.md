@@ -5,9 +5,9 @@ title: Aktivera målgruppssegment för batchdestinationer via ad hoc-aktiverings
 description: I den här artikeln beskrivs hela arbetsflödet för aktivering av målgruppssegment via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e t
 
 Innan du kan ringa anrop till Adobe Experience Platform API:er måste du kontrollera att du uppfyller följande krav:
 
-* Du har ett IMS-organisationskonto med tillgång till Adobe Experience Platform.
+* Du har ett organisationskonto med tillgång till Adobe Experience Platform.
 * Ditt Experience Platform-konto har `developer` och `user` roller har aktiverats för Adobe Experience Platform API-produktprofilen. Kontakta [Admin Console](../../access-control/home.md) administratör för att aktivera de här rollerna för ditt konto.
 * Du har en Adobe ID. Om du inte har någon Adobe ID går du till [Adobe Developer Console](https://developer.adobe.com/console) och skapa ett nytt konto.
 
@@ -169,7 +169,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/d
 | <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera segment för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i [dokumentation om målarbetsyta](/help/destinations/ui/destinations-workspace.md#browse). |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de segment som du vill aktivera till det valda målet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Begäran med export-ID:n (ska bli inaktuell) {#request-deprecated}
 
@@ -207,7 +207,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de segment som du vill aktivera till det valda målet. |
 | <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [segmentexport](../../segmentation/api/export-jobs.md#retrieve-list) jobb. Se [Steg 4: Hämta det senaste segmentexportjobb-ID:t](#segment-export-id) för instruktioner om hur du hittar detta ID. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Svar {#response}
 
@@ -231,7 +231,7 @@ Ett lyckat svar returnerar HTTP-status 200.
 | `order` | ID:t för det mål som segmentet aktiverades till. |
 | `statusURL` | Status-URL för aktiveringsflödet. Du kan följa flödets förlopp med [API för flödestjänst](../../sources/tutorials/api/monitor.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## API-felhantering {#api-error-handling}
 

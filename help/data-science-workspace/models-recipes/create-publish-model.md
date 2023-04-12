@@ -5,9 +5,9 @@ title: Skapa och publicera en maskininlärningsmodell
 type: Tutorial
 description: I följande guide beskrivs de steg som krävs för att skapa och publicera en maskininlärningsmodell.
 exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ I följande guide beskrivs de steg som krävs för att skapa och publicera en ma
 
 Innan du startar den här självstudiekursen måste du ha följande krav:
 
-- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+- Åtkomst till [!DNL Adobe Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
 - Alla självstudiekurser för Data Science Workspace använder Lumas benägenhetsmodell. Du måste ha skapat [Modellscheman och datauppsättningar för luma-benägenhet](./create-luma-data.md).
 
@@ -79,7 +79,7 @@ Om du vill veta hur du kan göra en modellpoäng kan du gå till en modell [Sjä
 
 ## Publicera en poängsatt modell som en tjänst
 
-Med Data Science Workspace kan du publicera din tränade modell som en tjänst. Detta gör det möjligt för användare i IMS-organisationen att få fram data utan att behöva skapa egna modeller.
+Med Data Science Workspace kan du publicera din tränade modell som en tjänst. Detta gör det möjligt för användare i organisationen att få fram data utan att behöva skapa egna modeller.
 
 Om du vill veta hur du publicerar en modell som en tjänst går du till [Självstudiekurs om användargränssnitt](./publish-model-service-ui.md) eller [API, genomgång](./publish-model-service-api.md).
 

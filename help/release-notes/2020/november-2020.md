@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2161'
-ht-degree: 2%
+source-wordcount: '2159'
+ht-degree: 3%
 
 ---
 
@@ -34,7 +34,7 @@ Uppdateringar av befintliga funktioner:
 
 ## Adobe Experience Platform Data Lake-migrering {#migration}
 
-Medan Adobe migrerar datasjön från Gen1 till Gen2 kan användare läsa från datasjön, men alla funktioner som skriver till datasjön påverkas. Adobe kommer att kontakta systemadministratörer för att diskutera effekten av migreringen i detalj och för att bekräfta migreringsdatum och -tider för specifika IMS-organisationer.
+Medan Adobe migrerar datasjön från Gen1 till Gen2 kan användare läsa från datasjön, men alla funktioner som skriver till datasjön påverkas. Adobe kommer att kontakta systemadministratörer för att i detalj diskutera migreringens konsekvenser och bekräfta migreringsdatum och -tider för specifika organisationer.
 
 Mer information finns i [Migreringsguide för datasjöer](../../landing/adls2-gen2-migration.md).
 
@@ -92,7 +92,7 @@ Mer information finns i [översikt över sandlådor](../../sandboxes/home.md).
 
 Mer information finns i [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
-## Datavetenskapens arbetsyta {#dsw}
+## Arbetsyta för datavetenskap {#dsw}
 
 Data Science Workspace använder maskininlärning och artificiell intelligens för att skapa insikter utifrån era data. Data Science Workspace är integrerat i Adobe Experience Platform och hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över alla Adobe-lösningar. Ett sätt som Data Science Workspace kan åstadkomma detta är genom att använda [!DNL JupyterLab]. [!DNL JupyterLab] är ett webbaserat användargränssnitt för [[!DNL Project Jupyter]](https://jupyter.org/) och är nära integrerat i Adobe Experience Platform. Den ger en interaktiv utvecklingsmiljö där datavetare kan arbeta med [!DNL Jupyter] bärbara datorer, kod och data.
 
@@ -213,7 +213,7 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, som JSON eller Parquet, under dataöverföringsprocessen. Se självstudiekursen på [konfigurera ett dataflöde för molnlagringsanslutningar i användargränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för mer information. |
 | API-stöd för mappning i strömningskällor | Nu kan du använda API:er för att utföra mappningsfunktioner med direktuppspelningskällor. |
 | API-stöd för anpassade avgränsare för molnlagringskällor | Nu kan du samla in filer som inte är CSV-avgränsade med molnlagringskällor. Du kan använda valfri kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla platta filer i alla format. |
-| Stöd för sandlåda i Adobe Audience Manager Connector | Kopplingen Audience Manager är nu sandlådebaserad. Användare kan aktivera kopplingen för att dirigera datauppsättningar från Audience Manager till valfri sandlåda (inklusive icke-produktionssandlådor). Konfigurationen är begränsad till en sandlåda per IMS-organisation. |
+| Stöd för sandlåda i Adobe Audience Manager Connector | Kopplingen Audience Manager är nu sandlådebaserad. Användare kan aktivera kopplingen för att dirigera datauppsättningar från Audience Manager till valfri sandlåda (inklusive icke-produktionssandlådor). Konfigurationen är begränsad till en sandlåda per organisation. |
 | UX-förbättringar | Filbaserad inmatning är nu tillgängligt via källkatalogen. |
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).

@@ -2,9 +2,9 @@
 title: API-guide för reaktor
 description: Med Reactor API kan utvecklare programmässigt hantera alla resurser för taggar i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 153eab11-db08-499e-80d1-c56f254372ce
-source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1082'
+source-wordcount: '1081'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 ## Företag
 
-Ett företag representerar organisationen för en tagg-användare, vanligtvis ett företag. De här företagen matchar 1:1 med IMS-organisations-ID:n. API-användare kan bara se vilka företag de har åtkomst till.
+Ett företag representerar organisationen för en tagg-användare, vanligtvis ett företag. De här företagen matchar 1:1 med organisations-ID:n. API-användare kan bara se vilka företag de har åtkomst till.
 
 Se [slutpunktsguide för företag](./endpoints/companies.md) om du vill lära dig hur du visar tillgängliga företag i API:t.
 

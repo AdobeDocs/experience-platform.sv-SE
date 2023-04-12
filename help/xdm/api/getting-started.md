@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med API:t för schemaregister
 description: Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna till innan du försöker anropa API:t för schemaregister.
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1350'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Lär känna ditt TENANT_ID {#know-your-tenant_id}
 
-I hela API-guiderna ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i IMS-organisationen. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-förfrågan:
+I hela API-guiderna ser du referenser till en `TENANT_ID`. Detta ID används för att säkerställa att de resurser du skapar namnges korrekt och finns i din organisation. Om du inte känner till ditt ID kan du få åtkomst till det genom att utföra följande GET-förfrågan:
 
 **API-format**
 
@@ -168,7 +168,7 @@ GET /global/classes
 
 ### Klientbehållaren
 
-Inte för att förväxlas med din unika `TENANT_ID`, `tenant` container innehåller alla klasser, fältgrupper, datatyper, scheman och beskrivningar som definieras av en IMS-organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra IMS-organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i dialogrutan `tenant` behållare.
+Inte för att förväxlas med din unika `TENANT_ID`, `tenant` behållare innehåller alla klasser, fältgrupper, datatyper, scheman och beskrivningar som definierats av en organisation. De är unika för varje organisation, vilket innebär att de inte är synliga eller hanterbara av andra organisationer. Du kan utföra alla CRUD-åtgärder (GET, POST, PUT, PATCH, DELETE) mot resurser som du skapar i dialogrutan `tenant` behållare.
 
 Ett exempel på ett anrop som använder `tenant` container skulle se ut så här:
 
@@ -212,7 +212,7 @@ I följande tabell visas kompatibla `Accept` rubrikvärden, inklusive de med ver
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` attribut och `allOf` löstes. Beskrivningar ingår. |
 | `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` och `allOf` har åtgärdats, har rubriker och beskrivningar. Föråldrade fält indikeras med en `meta:status` attribut för `deprecated`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

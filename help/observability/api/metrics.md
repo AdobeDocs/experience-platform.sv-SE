@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för mått
 description: Lär dig hur du hämtar mätvärden för observerbarhet i Experience Platform med API:t för observabilitetsinsikter.
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1409'
+source-wordcount: '1384'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ curl -X POST \
 | `aggregator` | Anger den aggregeringsfunktion som ska användas för att gruppera poster med flera serier till enstaka resultat. Detaljerad information om tillgängliga aggregatorer finns i [OpenTSDB-dokumentation](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 | `downsample` | Ett valfritt fält som gör att du kan ange en aggregeringsfunktion för att minska samplingsfrekvensen för mätdata genom att sortera fält i intervall (eller&quot;bucket&quot;). Intervallet för nedsampling bestäms av `granularity` -egenskap. Mer information om nedsampling finns i [OpenTSDB-dokumentation](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -180,7 +180,7 @@ Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och
 | `groupBy` | Om flera datauppsättningar har angetts i `filter` för ett mätresultat och `groupBy` alternativet var inställt på true i begäran, kommer det här objektet att innehålla ID:t för datauppsättningen som motsvarar `dps` egenskapen gäller för.<br><br>Om objektet är tomt i svaret visas motsvarande `dps` egenskapen gäller för alla datauppsättningar som finns i `filters` array (eller alla datauppsättningar i [!DNL Platform] om inga filter har angetts). |
 | `dps` | Returnerade data för angivet mått, filter och tidsintervall. Varje nyckel i det här objektet representerar en tidsstämpel med ett motsvarande värde för det angivna måttet. Tidsperioden mellan varje datapunkt beror på `granularity` det värde som anges i begäran. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Bilaga
 
@@ -211,7 +211,7 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Data I
 | **timeseries.data.collection.inlet.success** | Totalt antal lyckade HTTP-anrop till ett dataintag eller till alla datainmatningar. | Intag-ID |
 | **timeseries.data.collection.inlet.error** | Totalt antal misslyckade HTTP-anrop till en datainmatning eller till alla datainmatningar. | Intag-ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### [!DNL Identity Service] {#identity}
 
@@ -223,11 +223,11 @@ I följande tabell visas mätvärden för Adobe Experience Platform [!DNL Identi
 | timeseries.identity.dataset.recordfailed.count | Antal poster som misslyckades av [!DNL Identity Service], för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 | timeseries.identity.dataset.namespacecode.recordfailed.count | Antal Identity-poster som misslyckades av ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
 | timeseries.identity.dataset.namespacecode.recordskipped.count | Antal Identitetsposter som hoppats över av ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
-| timeseries.identity.graph.imsorg.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din IMS-organisation. | Ej tillämpligt |
+| timeseries.identity.graph.imsorg.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation. | Ej tillämpligt |
 | timeseries.identity.graph.imsorg.namespacecode.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för ett namnutrymme. | Namnområdes-ID (**Obligatoriskt**) |
-| timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för IMS-organisationen för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**Obligatoriskt**) |
+| timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | Antal unika identiteter som lagras i identitetsdiagrammet för din organisation för en viss grafikstyrka (&quot;unknown&quot;,&quot;svag&quot; eller&quot;strong&quot;). | Diagramstyrka (**Obligatoriskt**) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### [!DNL Real-Time Customer Profile] {#profile}
 
@@ -239,7 +239,7 @@ Följande tabell visar mätvärden för [!DNL Real-Time Customer Profile].
 | timeseries.profiles.dataset.recordsuccess.count | Antal poster som skrivits till datakällan per [!DNL Profile], för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 | timeseries.profiles.dataset.batchsuccess.count | Antal [!DNL Profile] batchar som har kapslats för en datauppsättning eller för alla datauppsättningar. | Datauppsättnings-ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Felmeddelanden
 
@@ -272,9 +272,9 @@ Svar från `/metrics` slutpunkten kan returnera felmeddelanden under vissa förh
 | Egenskap | Beskrivning |
 | --- | --- |
 | `title` | En sträng som innehåller felmeddelandet och den möjliga orsaken till felet. |
-| `report` | Innehåller sammanhangsbaserad information om felet, inklusive den sandlåda och den IMS-organisation som används i åtgärden som utlöste felet. |
+| `report` | Innehåller sammanhangsbaserad information om felet, inklusive den sandlåda och organisation som används i åtgärden som utlöste felet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 I följande tabell visas de olika felkoderna som kan returneras av API:t:
 
@@ -284,6 +284,6 @@ I följande tabell visas de olika felkoderna som kan returneras av API:t:
 | `INSGHT-1001-400` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av en felaktig begäran eller att själva frågan inte kunde tolkas. Kontrollera att din begäran är korrekt formaterad innan du försöker igen. |
 | `INSGHT-1001-500` | Mätningsfrågan misslyckades | Det uppstod ett fel när mätdatabasen skulle frågas på grund av ett serverfel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
 | `INSGHT-1002-500` | Tjänstfel | Begäran kunde inte behandlas på grund av ett internt fel. Försök igen. Om problemet kvarstår kan du kontakta Adobe support. |
-| `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav finns i `x-sandbox-name` header representerar en giltig, aktiverad sandlåda för din IMS-organisation innan du försöker utföra begäran igen. |
+| `INSGHT-1003-401` | Valideringsfel för sandlådan | Begäran kunde inte behandlas på grund av ett valideringsfel i sandlådan. Kontrollera att namnet på sandlådan som du angav finns i `x-sandbox-name` header representerar en giltig, aktiverad sandlåda för din organisation innan du försöker utföra begäran igen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

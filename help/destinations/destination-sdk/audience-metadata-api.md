@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten "/authoring/audition-templates".
 title: API-åtgärder för målgruppsmetadata
 exl-id: 3444da8c-b2be-4254-980a-8cce7560134d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '873'
 ht-degree: 2%
 
 ---
@@ -196,7 +196,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | `validations.field` | Sträng | Anger om valideringar ska köras för fält innan API-anrop görs till målet. Du kan till exempel använda `{{validations.accountId}}` för att validera användarens konto-ID. |
 | `validations.regex` | Sträng | Anger hur fältet ska struktureras för att valideringen ska gå igenom. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -318,7 +318,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 ## Hämta en lista med målgruppsmallar {#retrieve-list}
 
-Du kan hämta en lista över alla målgruppsmallar för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/audience-templates` slutpunkt.
+Du kan hämta en lista över alla målgruppsmallar för din organisation genom att göra en GET-förfrågan till `/authoring/audience-templates` slutpunkt.
 
 **API-format**
 
@@ -329,7 +329,7 @@ GET /authoring/audience-templates
 
 **Begäran**
 
-Följande begäran hämtar listan med målgruppsmallar som du har tillgång till, baserat på konfigurationen för IMS-organisationen och sandlådan.
+Följande begäran hämtar listan med målgruppsmallar som du har tillgång till, baserat på konfigurationen för organisationen och sandlådan.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-templates \
@@ -341,7 +341,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 **Svar**
 
-Följande svar returnerar HTTP-status 200 med en lista över målgruppsmetadatamallar som du har tillgång till, baserat på det IMS-organisations-ID och sandlådenamn som du använde. Ett `instanceId` motsvarar mallen för ett mål. Svaret kortas av för att vara kortfattat.
+Följande svar returnerar HTTP-status 200 med en lista över målgruppsmetadatamallar som du har tillgång till, baserat på det organisations-ID och sandlådans namn som du använde. Ett `instanceId` motsvarar mallen för ett mål. Svaret kortas av för att vara kortfattat.
 
 ```json
 {

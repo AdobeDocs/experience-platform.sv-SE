@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1497'
 ht-degree: 1%
 
 ---
@@ -56,7 +56,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna IMS-organisationen som JSON. Svaret varierar dock beroende på antalet segment i segmentjobbet.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna organisationen som JSON. Svaret varierar dock beroende på antalet segment i segmentjobbet.
 
 **Mindre än eller lika med 1 500 segment i segmentjobbet**
 

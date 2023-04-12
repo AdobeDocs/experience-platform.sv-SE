@@ -5,16 +5,16 @@ title: Skapa webbscheman och datauppsättningar för Luma
 type: Tutorial
 description: I den här självstudiekursen får du tillgång till de förutsättningar och resurser som krävs för Lumas modell för benägenhet för demo.
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '465'
 ht-degree: 0%
 
 ---
 
 # Skapa scheman och datauppsättningar för Luma-benägenhetsmodellen
 
-I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När detta är klart är följande scheman och datauppsättningar tillgängliga för dig och din IMS-organisation.
+I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När detta är klart är följande scheman och datauppsättningar tillgängliga för dig och din organisation.
 
 **Scheman:**
 

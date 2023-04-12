@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 81b53d2bd84eacb32999b957bee9b5e9aa77d5f7
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1898'
+source-wordcount: '1870'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Scheman definierar en statisk vy av datatabeller, men ger inga specifika detaljer om hur data som baseras på dessa scheman (till exempel datauppsättningar) kan relateras till varandra. Med Adobe Experience Platform kan du beskriva dessa relationer och andra tolka metadata om ett schema med hjälp av beskrivningar.
 
-Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika för IMS-organisationen och alla beskrivningsåtgärder utförs i klientbehållaren.
+Schemabeskrivare är metadata på tenant-nivå, vilket innebär att de är unika för din organisation och att alla beskrivningsåtgärder utförs i innehavarbehållaren.
 
 Varje schema kan ha en eller flera schemabeskrivningsentiteter tillämpade. Varje schemabeskrivningsentitet innehåller en beskrivning `@type` och `sourceSchema` som den är tillämplig på. När dessa beskrivningar har tillämpats gäller de alla datauppsättningar som har skapats med schemat.
 
@@ -60,7 +60,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Observera att `
 | `application/vnd.adobe.xdm+json` | Returnerar en array med expanderade beskrivningsobjekt |
 | `application/vnd.adobe.xdm-v2+json` | Detta `Accept` sidhuvudet måste användas för att sidindelningsfunktionerna ska kunna användas. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -98,7 +98,7 @@ GET /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | The `@id` för den beskrivning som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -207,7 +207,7 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | The `@id` för den beskrivning som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -264,7 +264,7 @@ DELETE /tenant/descriptors/{DESCRIPTOR_ID}
 | --- | --- |
 | `{DESCRIPTOR_ID}` | The `@id` för den beskrivning som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -318,7 +318,7 @@ En identitetsbeskrivning signalerar att[!UICONTROL sourceProperty]&quot; i &quot
 | `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på `xdm:namespace` används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Egen namnbeskrivning {#friendly-name}
 
@@ -359,7 +359,7 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
 | `meta:enum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` kan användas för att lägga till föreslagna värden för fältet i segmenteringsgränssnittet. Det är viktigt att notera att `meta:enum` deklarerar inte en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` direkt via en PATCH-begäran till fältets överordnade resurs. |
 | `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Relationsbeskrivning
 
@@ -389,7 +389,7 @@ Relationsbeskrivare beskriver en relation mellan två olika scheman, aktiverade 
 | `xdm:destinationVersion` | Huvudversionen av referensschemat. |
 | `xdm:destinationProperty` | Valfri sökväg till ett målfält i referensschemat. Om den här egenskapen utelämnas härleds målfältet av alla fält som innehåller en matchande identitetsbeskrivning för referens (se nedan). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Referens för identitetsbeskrivning
 
@@ -413,7 +413,7 @@ Referensidentitetsbeskrivningar ger en referenskontext till den primära identit
 | `xdm:sourceProperty` | Sökväg till fältet i källschemat som ska användas för att referera till referensschemat. Ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (till exempel `/personalEmail/address` i stället för `/properties/personalEmail/properties/address`). |
 | `xdm:identityNamespace` | Identitetsnamnområdeskoden för egenskapen source. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Borttagen fältbeskrivning
 
@@ -435,4 +435,4 @@ Du kan [ta bort ett fält i en anpassad XDM-resurs](../tutorials/field-deprecati
 | `xdm:sourceVersion` | Den version av schemat som du tillämpar beskrivningen på. Ska anges till `1`. |
 | `xdm:sourceProperty` | Sökvägen till egenskapen i schemat som du tillämpar beskrivningen på. Om du vill tillämpa beskrivningen på flera egenskaper kan du ange en lista med sökvägar i form av en array (till exempel `["/firstName", "/lastName"]`). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

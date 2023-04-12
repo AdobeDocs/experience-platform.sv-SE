@@ -1,9 +1,10 @@
 ---
 title: Importera API-slutpunkt
-description: Med slutpunkten /import i API:t för schemaregister kan du dela XDM-resurser mellan IMS-organisationer och sandlådor.
-source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
+description: Med slutpunkten /import i API:t för schemaregister kan du dela XDM-resurser mellan organisationer och sandlådor.
+exl-id: 30613535-4770-4f9c-9061-8e3efaf4de48
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
@@ -186,7 +187,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista över de importerade resurserna med rätt innehavar-ID och IMS-organisationsvärden.
+Ett godkänt svar returnerar en lista över de importerade resurserna med rätt värden för innehavar-ID och organisation.
 
 ```json
 [

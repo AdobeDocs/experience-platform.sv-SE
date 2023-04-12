@@ -3,22 +3,22 @@ keywords: Experience Platform;publicera en modell;Data Science Workspace;populä
 solution: Experience Platform
 title: Publicera en modell som en tjänst i gränssnittet för datavetenskapen
 type: Tutorial
-description: Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller.
+description: Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i organisationen kan få sina data poäng utan att behöva skapa egna modeller.
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
 
 # Publicera en modell som en tjänst i gränssnittet för datavetenskapen
 
-Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i IMS-organisationen kan få sina data poäng utan att behöva skapa egna modeller.
+Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i organisationen kan få sina data poäng utan att behöva skapa egna modeller.
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
 Den här självstudiekursen kräver en befintlig modell med en lyckad utbildning. Om du inte har någon publicerbar modell följer du [Utbildning och utvärdering av en modell i användargränssnittet](./train-evaluate-model-ui.md) självstudiekurs innan du fortsätter.
 

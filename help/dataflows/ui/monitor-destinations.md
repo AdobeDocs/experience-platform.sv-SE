@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 133b3e6b8074bab52f23330ac8d3efc468f29d55
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '3079'
+source-wordcount: '3078'
 ht-degree: 0%
 
 ---
@@ -289,7 +289,7 @@ Om du vill visa mer information om en viss dataflödeskörning väljer du filtre
 På sidan med information om dataflödeskörning visas mer specifik information om dataflödet, förutom informationen som visas i listan över dataflödeskörningar:
 
 - **[!UICONTROL Dataflow run ID]**: ID för dataflödet.
-- **[!UICONTROL IMS org ID]**: Den IMS-organisation som dataflödet tillhör.
+- **[!UICONTROL IMS org ID]**: Den organisation som dataflödet tillhör.
 - **[!UICONTROL Last updated]**: Den tidpunkt då dataflödeskörningen senast uppdaterades.
 
 På informationssidan kan du växla mellan körningsfel och segment i dataflöden. Det här alternativet är bara tillgängligt för dataflöden som körs i batchmål.

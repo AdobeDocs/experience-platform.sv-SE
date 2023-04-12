@@ -2,9 +2,9 @@
 title: Profilslutpunkt
 description: Lär dig hur du anropar slutpunkten /profiles i Reaktors API.
 exl-id: d0434098-f49a-45f3-9772-488bd3c134aa
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '169'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 I Reactor API representerar en profil en Adobe Experience Platform-användare. Reaktors-API:t underhåller inte sin egen databas med användare och behörigheter, utan bygger i stället på Adobe-ID:n som hanteras av [Adobe system för identitetshantering (IMS)](https://helpx.adobe.com/enterprise/using/identity.html).
 
-En profil innehåller all information om den inloggade användaren, inklusive alla IMS-organisationer de tillhör, de produktprofiler de tillhör inom varje organisation och de rättigheter de har från varje produktprofil.
+En profil innehåller all information om den inloggade användaren, inklusive alla organisationer som användaren tillhör, produktprofiler som han/hon tillhör i varje organisation samt rättigheter som han/hon har från varje produktprofil.
 
 ## Komma igång
 
@@ -51,14 +51,14 @@ Ett godkänt svar returnerar informationen om profilen.
     "id": "UR0bd696624e844d6ba5bfc248ba1eca11",
     "type": "users",
     "attributes": {
-      "active_org": "{IMS_ORG_1}",
+      "active_org": "{ORG_1}",
       "expires_in": 0,
       "display_name": "John Smith",
       "job_function": null,
       "email": "jsmith@example.com",
       "organizations": {
-        "{IMS_ORG_1}": {
-          "name": "Example IMS Org A",
+        "{ORG_1}": {
+          "name": "Example organization A",
           "admin": true,
           "active": true,
           "login_companies": [
@@ -73,8 +73,8 @@ Ett godkänt svar returnerar informationen om profilen.
           ],
           "tenant_id": "{TENANT_ID_1}"
         },
-        "{IMS_ORG_2}": {
-          "name": "Example IMS Org B",
+        "{ORG_2}": {
+          "name": "Example organization B",
           "admin": false,
           "active": false,
           "login_companies": [

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för åtkomstkontroll
 description: Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i Adobe Experience Platform.
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '402'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Det här dokumentet innehåller svar på vanliga frågor om åtkomstkontroll i A
 
 ## Var hittar jag mina nuvarande åtkomstbehörigheter?
 
-Om du är systemadministratör, produktadministratör eller produktprofiladministratör för din IMS-organisation kan du visa din tilldelade produktprofil och de behörigheter den ger inom Adobe Admin Console. Se [användarhandbok för åtkomstkontroll](./ui/overview.md) för instruktioner om hur du navigerar i [!DNL Admin Console] för att visa en produktprofils behörigheter.
+Om du är systemadministratör, produktadministratör eller produktprofiladministratör för din organisation kan du visa din tilldelade produktprofil och de behörigheter den ger inom Adobe Admin Console. Se [användarhandbok för åtkomstkontroll](./ui/overview.md) för instruktioner om hur du navigerar i [!DNL Admin Console] för att visa en produktprofils behörigheter.
 
 Om du inte är administratör kan du fortfarande visa dina nuvarande åtkomstbehörigheter genom att skicka en begäran till `/acl/effective-policies` slutpunkt i åtkomstkontrolls-API. Se avsnittet&quot;Visa gällande profiler&quot; i [Utvecklarhandbok för åtkomstkontroll](./api/effective-policies.md) för mer information.
 

@@ -2,9 +2,9 @@
 title: Autentisering
 description: Lär dig hur du konfigurerar autentisering för Adobe Experience Platform Edge Network Server API.
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '632'
 ht-degree: 1%
 
 ---
@@ -32,7 +32,7 @@ API-anrop från en privat server på `server.adobedc.net` ska alltid vara autent
 
 Innan du kan ringa samtal till [!DNL Server API]kontrollerar du att följande krav uppfylls:
 
-* Du har ett IMS-organisationskonto med tillgång till Adobe Experience Platform.
+* Du har ett organisationskonto med tillgång till Adobe Experience Platform.
 * Ditt Experience Platform-konto har `developer` och `user` roller har aktiverats för Adobe Experience Platform API-produktprofilen. Kontakta [Admin Console](../access-control/home.md) administratör för att aktivera de här rollerna för ditt konto.
 * Du har en Adobe ID. Om du inte har någon Adobe ID går du till [Adobe Developer Console](https://developer.adobe.com/console) och skapa ett nytt konto.
 

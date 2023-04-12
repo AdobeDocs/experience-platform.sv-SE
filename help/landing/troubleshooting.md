@@ -7,10 +7,10 @@ landing-page-description: Hitta svar på vanliga frågor och en användarhandbok
 short-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1868'
+ht-degree: 4%
 
 ---
 
@@ -32,9 +32,9 @@ Format varierar beroende på [!DNL Platform] API används. Det bästa sättet at
 
 Mer information om hur du formaterar API-begäranden finns i guiden Komma igång-guide för plattforms-API [läsa exempel-API-anrop](./api-guide.md#sample-api) -avsnitt.
 
-## Vad är min IMS-organisation? {#what-is-my-ims-organization}
+## Vad är min organisation? {#what-is-my-ims-organization}
 
-En IMS-organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en IMS-organisation har rätt att [!DNL Experience Platform]kan den ge utvecklare åtkomst. IMS-organisations-ID (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): i **Integreringar** flik, navigera till **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur man autentiserar sig [!DNL Platform], se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
+En organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en organisation har rätt att [!DNL Experience Platform]kan den ge utvecklare åtkomst. Organisations-ID (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): i **Integreringar** flik, navigera till **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur man autentiserar sig [!DNL Platform], se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## Var hittar jag min API-nyckel? {#where-can-i-find-my-api-key}
 
@@ -42,7 +42,7 @@ En API-nyckel krävs som huvud i alla API-begäranden. Den finns på [Adobe Deve
 
 ## Hur får jag en åtkomsttoken? {#how-do-i-get-an-access-token}
 
-Åtkomsttoken krävs i auktoriseringshuvudet för alla API-anrop. De kan genereras med en `curl` -kommando, förutsatt att du har tillgång till en integrering för en IMS-organisation. Åtkomsttoken är bara giltiga i 24 timmar. Därefter måste en ny token skapas för att du ska kunna fortsätta använda API:t. Mer information om hur du genererar åtkomsttoken finns i [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
+Åtkomsttoken krävs i auktoriseringshuvudet för alla API-anrop. De kan genereras med ett CURL-kommando, förutsatt att du har tillgång till en integrering för en organisation. Åtkomsttoken är bara giltiga i 24 timmar. Därefter måste en ny token skapas för att du ska kunna fortsätta använda API:t. Mer information om hur du genererar åtkomsttoken finns i [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## Hur använder jag frågeparametrar? {#how-do-i-user-query-parameters}
 
@@ -151,7 +151,7 @@ Det här felmeddelandet visas när värdet för den angivna API-nyckelrubriken (
 }
 ```
 
-Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`) saknas i en API-begäran. Kontrollera att rubriken är inkluderad i ID:t för IMS-organisationen innan du försöker igen.
+Det här felmeddelandet visas när ett organisationshuvud (`x-gw-ims-org-id`) saknas i en API-begäran. Se till att rubriken är inkluderad i din organisations ID innan du försöker igen.
 
 ### Profilen är inte giltig {#profile-is-not-valid}
 
@@ -162,7 +162,7 @@ Det här felmeddelandet visas när en IMS-organisationshuvud (`x-gw-ims-org-id`)
 }
 ```
 
-Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` header) inte har rätt att ringa [!DNL Experience Platform] API:er för IMS-organisationen som finns i `x-gw-ims-org-id` header. Kontrollera att du har angett rätt ID för IMS-organisationen i sidhuvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` header) inte har rätt att ringa [!DNL Experience Platform] API:er för organisationen som anges i `x-gw-ims-org-id` header. Kontrollera att du har angett rätt ID för din organisation i huvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
 ### Fel vid uppdatering av tagg {#refresh-etag-error}
 
@@ -199,7 +199,7 @@ Det här felmeddelandet visas när en POST-, PUT eller PATCH-begäran saknar ell
 ```
 
 Det här felmeddelandet visas i något av följande två fall:
-- Om IMS-organisationshuvudet är felaktigt eller har fel format (`x-gw-ims-org-id`) skickas i en API-begäran. Kontrollera att rätt ID för IMS-organisationen finns med innan du försöker igen.
+- När ett fel eller ett felaktigt format organisations-ID-huvud (`x-gw-ims-org-id`) skickas i en API-begäran. Kontrollera att rätt ID för din organisation finns med innan du försöker igen.
 - När ditt konto (som representeras av de angivna autentiseringsuppgifterna) inte är associerat med en produktprofil för Experience Platform. Följ stegen på [generera autentiseringsuppgifter](./api-authentication.md#authentication-for-each-session) i självstudiekursen för autentisering av plattforms-API för att lägga till plattform i ditt konto och uppdatera dina autentiseringsuppgifter i enlighet med detta.
 
 ## Felsökningskatalog för tjänst {#service-troubleshooting-directory}

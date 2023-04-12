@@ -2,9 +2,9 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: ec4d064f90348f9eafb1d0fe4b9df5e102295507
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '882'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ Mer information om hur utgivarens identifierare fungerar i Google Ad Manager 360
 
 >[!IMPORTANT]
 >
->Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Ad Manager 360] kontakta din Adobe-representant och uppge [!DNL IMS Organization ID].
+>Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Ad Manager 360] kontakta din Adobe-representant och uppge [!DNL organization ID].
 
 The [!DNL Google Ad Manager 360] destinationsexport [!DNL CSV] filer till [!DNL Google Cloud Storage] bucket. När du har exporterat [!DNL CSV] -filer måste du importera dem till [!DNL Google Ad Manager 360] konto.
 
@@ -37,7 +37,7 @@ Observera följande information som är specifik för [!DNL Google Ad Manager 36
 |---|---|---|
 | PPID | [!DNL Publisher provided ID] | Välj den här målidentiteten för att skicka målgrupper till [!DNL Google Ad Manager 360] |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -48,7 +48,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med tillämpliga schemafält (till exempel ditt PPID), som du väljer på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 

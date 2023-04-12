@@ -1,9 +1,10 @@
 ---
 title: Egenskaper
 description: Läs om hur tillägg, miljöer och bibliotek är organiserade och grupperade för din organisation i Adobe Experience Platform.
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1153'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 ## Webbegenskaper
 
@@ -24,7 +25,7 @@ En mobil egenskapstyp kan innehålla flera program. I en mobil egenskap kan du t
 
 ## Bästa tillvägagångssätt för att planera egenskaper {#best-practices-for-planning-properties}
 
-Varje taggimplementering i Adobe Experience Platform kan vara mycket annorlunda. De har ett stort antal datainsamlingsbehov, variabel användning, tillägg, tredjepartstaggar, andra system och tekniker, människor, team, geografiska regioner osv. Du bör strukturera egenskaperna på ett sätt som matchar arbetsflödet och processerna i IMS-organisationen.
+Varje taggimplementering i Adobe Experience Platform kan vara mycket annorlunda. De har ett stort antal datainsamlingsbehov, variabel användning, tillägg, tredjepartstaggar, andra system och tekniker, människor, team, geografiska regioner osv. Du bör strukturera egenskaperna på ett sätt som överensstämmer med organisationens arbetsflöde och processer.
 
 Tänk på följande när du planerar egenskaper:
 
@@ -36,7 +37,7 @@ Tänk på följande när du planerar egenskaper:
 
 ### Kodstruktur
 
-Webbplatserna är baserade på HTML, mobilprogram med kod.  Om de underliggande HTML-mallarna eller kodebaserna är desamma för flera webbplatser och program kan du använda en enda taggegenskap för att hantera flera webbplatser eller appar.
+Webbplatserna bygger på HTML, mobilappar på kod.  Om de underliggande HTML-mallarna eller kodebaserna är desamma för flera webbplatser och program kan det vara bra att använda en taggegenskap för att hantera flera webbplatser eller appar.
 
 ### Data
 
@@ -48,7 +49,7 @@ Om dina datainsamlingsbehov är unika för varje webbplats eller program kan det
 
 ### Variabler
 
-Liknar data, är variablerna som du anger i dina [!DNL Analytics] och andra tillägg mycket lika, lite lika eller unika?
+Liknar data, är variablerna som du anger i [!DNL Analytics] och andra tillägg som är mycket lika, lite lika eller unika?
 
 Om du till exempel använder eVar27 för samma källvärde på alla webbplatser och i alla program kan det vara bra att gruppera dessa webbplatser och program tillsammans så att du kan ange de gemensamma variablerna i bara en egenskap.
 
@@ -58,19 +59,19 @@ Om du till exempel använder eVar27 för samma källvärde på alla webbplatser 
 
 Om tilläggen, taggarna och systemen som du ska distribuera är mycket lika för alla dina webbplatser och program, kanske du vill inkludera dem i samma egenskap.
 
-Om du bara distribuerar [!DNL Adobe Analytics] på en plats eller i ett program, och dina andra tillägg och taggar också är unika, kanske du vill skapa separata egenskaper så att du får mer kontroll.
+Om du distribuerar [!DNL Adobe Analytics] på endast en plats eller i ett program, och dina andra tillägg och taggar också är unika, kanske du vill skapa separata egenskaper så att du får mer kontroll.
 
-Om du till exempel distribuerar [!DNL Adobe Analytics], [!DNL Target] och samma tillägg från tredje part till alla dina webbplatser eller program är det en anledning att gruppera dem tillsammans.
+Om du till exempel distribuerar [!DNL Adobe Analytics], [!DNL Target], och samma tillägg från andra tillverkare på alla webbplatser och i alla program, vilket är en anledning till att gruppera dem tillsammans.
 
 ### Personer
 
 Behöver de enskilda, team och organisationer som arbetar i Adobe Experience Platform tillgång till alla era webbplatser och applikationer, några av dem eller bara en?
 
-Med funktionerna för användarhantering kan du tilldela olika roller till olika personer för alla dina egenskaper, eller per egenskap. Om någon har tillräcklig behörighet kan den personen utföra administrativa åtgärder för alla egenskaper i den plattformens IMS-organisation. Alla andra roller kan tilldelas per egenskap. Du kan även dölja en egenskap för vissa användare (icke-administratörer) genom att inte ge dem någon roll i den egenskapen.
+Med funktionerna för användarhantering kan du tilldela olika roller till olika personer för alla dina egenskaper, eller per egenskap. Om någon har tillräcklig behörighet kan den personen utföra administrativa åtgärder för alla egenskaper i den plattformsorganisationen. Alla andra roller kan tilldelas per egenskap. Du kan även dölja en egenskap för vissa användare (icke-administratörer) genom att inte ge dem någon roll i den egenskapen.
 
 ## Egenskapssida
 
-En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. För webben finns det bara en publiceringsinbäddningskod per egenskap. För mobilen finns det ett konfigurationsprogram-ID per egenskap.
+En egenskap är en samling regler, dataelement, konfigurerade tillägg, miljöer och bibliotek. För webben finns det bara en publicerad inbäddningskod per egenskap. För mobilen finns det ett konfigurationsprogram-ID per egenskap.
 
 En egenskap kan vara en gruppering av en eller flera domäner och underdomäner. Du kan hantera och spåra dessa resurser på liknande sätt. Anta till exempel att du har flera webbplatser som är baserade på en mall och vill spåra samma resurser på alla. Du kan använda en egenskap på flera domäner.
 
@@ -94,9 +95,9 @@ I det här avsnittet finns anvisningar om hur du skapar och konfigurerar en tagg
 >
 >Endast en användare med tillräcklig behörighet kan skapa en egenskap. Se [Användarhantering](user-permissions.md).
 
-Innan du börjar bör du läsa igenom [Bästa tillvägagångssätt för att planera egenskaper](companies-and-properties.md#best-practices-for-planning-properties) för egenskaper.
+Granska [Bästa tillvägagångssätt för att planera egenskaper](companies-and-properties.md#best-practices-for-planning-properties) för egenskaper.
 
-Navigera till din företagssida och välj sedan **[!UICONTROL Add Property]** eller välj en befintlig egenskap i listan och välj **[!UICONTROL Configure]**.
+Navigera till din företagssida och välj **[!UICONTROL Add Property]** eller välj en befintlig egenskap i listan och markera **[!UICONTROL Configure]**.
 
 ![](../../images/property-settings.png)
 
@@ -111,7 +112,7 @@ Följ instruktionerna för att skapa en webbegenskap.
    **Domäner:** Bas-URL:en för alla webbplatser som du planerar att distribuera den här egenskapen till
 
 1. (Avancerat) **[!UICONTROL Run rule components in sequence]** Markera den här kryssrutan om du vill att villkor och åtgärder ska vänta på att den föregående ska slutföras innan de körs
-1. (Avancerat) **[!UICONTROL Return an empty string for missing data elements:]** Om du refererar till ett dataelement som inte finns i ett bibliotek returnerar det normalt `undefined`.  Markera den här kryssrutan om du vill att scenariot ska returnera en tom sträng i stället.
+1. (Avancerat) **[!UICONTROL Return an empty string for missing data elements:]** Om du refererar till ett dataelement som inte finns i ett bibliotek, returnerar det vanligtvis `undefined`.  Markera den här kryssrutan om du vill att scenariot ska returnera en tom sträng i stället.
 1. (Avancerat) **[!UICONTROL Configure for extension development:]** Markera den här kryssrutan om du tänker installera utvecklingstillägg som utvecklas aktivt av ditt företag
 1. Välj **[!UICONTROL Save]**.
 
@@ -122,7 +123,7 @@ Följ instruktionerna för att skapa en mobil egenskap.
 1. Fyll i fälten:
 
    * **Namn:** Namnet på din egenskap.
-   * **Sekretess:** Som standard är sekretessinställningen Inaktiverad, vilket innebär att du vill att SDK ska samla in och skicka data till lösningar. Om du väljer Avanmäl dig kommer SDK som standard INTE att skicka data till lösningar. Om du väljer Okänd som inställning kräver SDK att programmet först uppmanar användaren att tillåta datainsamling och delning.
+   * **Integritet:** Som standard är sekretessinställningen Vald i, vilket innebär att du vill att SDK ska samla in och skicka data till lösningar. Om du väljer Avanmäl dig kommer SDK som standard INTE att skicka data till lösningar. Om du väljer Okänd som inställning kräver SDK att programmet först uppmanar användaren att tillåta datainsamling och delning.
 
       >[!NOTE]
       >

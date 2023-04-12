@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten "/authoring/destination-servers". Servern och mallspecifikationerna för ditt mål kan konfigureras i Adobe Experience Platform Destination SDK via den gemensamma slutpunkten `/authoring/destination-servers`.
 title: API-åtgärder för målserverns slutpunkt
 exl-id: a144b0fb-d34f-42d1-912b-8576296e59d2
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1355'
 ht-degree: 1%
 
 ---
@@ -74,7 +74,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `httpTemplate.requestBody.value` | Sträng | *Obligatoriskt.* Den här strängen är den teckenescape-konverterade version som transformerar data för plattformskunder till det format som tjänsten förväntar sig. <br> <ul><li> Mer information om hur du skriver mallen finns i [Använda mallavsnitt](./message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standard, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). </li><li> Ett exempel på en enkel omformning finns i [Profilattribut](./message-format.md#attributes) omformning. </li></ul> |
 | `httpTemplate.contentType` | Sträng | *Obligatoriskt.* Den innehållstyp som servern accepterar. Detta värde är mest sannolikt `application/json`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -603,7 +603,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserver
 
 ## Visa målserverkonfigurationer {#retrieve-list}
 
-Du kan hämta en lista över alla målserverkonfigurationer för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/destination-servers` slutpunkt.
+Du kan hämta en lista över alla målserverkonfigurationer för din organisation genom att göra en GET-förfrågan till `/authoring/destination-servers` slutpunkt.
 
 **API-format**
 
@@ -613,7 +613,7 @@ GET /authoring/destination-servers
 
 **Begäran**
 
-Följande begäran hämtar listan över målserverkonfigurationer som du har åtkomst till, baserat på IMS-organisationens och sandlådekonfigurationer.
+Följande begäran hämtar listan över målserverkonfigurationer som du har åtkomst till, baserat på konfiguration av organisation och sandlåda.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination-servers \
@@ -625,7 +625,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 **Svar**
 
-Följande svar returnerar HTTP-status 200 med en lista över målserverkonfigurationer som du har tillgång till, baserat på det IMS-organisations-ID och sandlådans namn som du använde. Ett `instanceId` motsvarar mallen för en målserver. Svaret kortas av för att vara kortfattat.
+Följande svar returnerar HTTP-status 200 med en lista över målserverkonfigurationer som du har åtkomst till, baserat på det organisations-ID och sandlådans namn som du använde. Ett `instanceId` motsvarar mallen för en målserver. Svaret kortas av för att vara kortfattat.
 
 ```json
 {

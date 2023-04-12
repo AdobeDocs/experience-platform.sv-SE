@@ -2,9 +2,9 @@
 title: B2B-namnutrymmen och scheman
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: fa3f937862dd8b6078f73b2a172b3fb5db652dc7
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1717'
 ht-degree: 1%
 
 ---
@@ -47,10 +47,10 @@ Följande tabell innehåller exempelvärden samt ytterligare information om hur 
 | `IMS` | Identity Management System (IMS) utgör ramverket för autentisering till Adobes tjänster. Med avseende på [!DNL Marketo], är det här värdet fast och ställs alltid in på: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
 | `IMS_ORG` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen om [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../../landing/postman.md) för instruktioner om hur du hämtar `{ORG_ID}` information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `SANDBOX_NAME` | Namnet på den virtuella sandlådepartition som du använder. | `prod` |
-| `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i IMS-organisationen. | `b2bcdpproductiontest` |
+| `TENANT_ID` | Ett ID som används för att se till att de resurser du skapar namnges korrekt och finns i din organisation. | `b2bcdpproductiontest` |
 | `PLATFORM_URL` | URL-slutpunkten som du gör API-anrop till. Detta värde är fast och ställs alltid in på: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Köra skript
 
@@ -90,7 +90,7 @@ Följande tabell innehåller information om den underliggande inställningen fö
 | B2B Marketing List-medlem | `b2b_marketing_list_member` | `B2B_MARKETING_LIST_MEMBER` |
 | B2B-konto, personrelation | `b2b_account_person_relation` | `B2B_ACCOUNT_PERSON` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## B2B-scheman
 
@@ -119,7 +119,7 @@ Följande tabell innehåller information om de underliggande inställningarna f�
 | B2B-verksamhet | [XDM ExperienceEvent](../../../../xdm/classes/experienceevent.md) | <ul><li>Besök WebPage</li><li>Nytt lead</li><li>Konvertera lead</li><li>Lägg till i lista</li><li>Ta bort från lista</li><li>Lägg till i affärsmöjlighet</li><li>Ta bort från affärsmöjlighet</li><li>Formuläret har fyllts i</li><li>Länkklickningar</li><li>E-post levererad</li><li>E-post öppnad</li><li>E-post klickad</li><li>E-post studsade</li><li>Mjuk e-poststudsning</li><li>Avbeställ e-post</li><li>Poängen har ändrats</li><li>Affärsmöjligheten har uppdaterats</li><li>Status i kampanjförloppet har ändrats</li><li>Personidentifierare</li><li>Marketo Web URL</li><li>Intressant stund</li><li>Ring webkrok</li><li>Ändra kampanjslut</li><li>Intäktsfas ändrad</li><li>Sammanfoga leads</li><li>E-post skickad</li><li>Ändra kampanjström</li><li>Lägg till i kampanj</li></ul> | Aktiverad | `personKey.sourceKey` fältgrupp för personidentifierare | B2B-person | Ingen | Ingen | **Första relationen**<ul><li>`listOperations.listKey.sourceKey` fält</li><li>Typ: en-till-en</li><li>Referensschema: B2B-marknadsföringslista</li><li>Namnutrymme: B2B-marknadsföringslista</li></ul>**Andra relationen**<ul><li>`opportunityEvent.opportunityKey.sourceKey` fält</li><li>Typ: en-till-en</li><li>Referensschema: B2B-säljprojekt</li><li>Namnutrymme: B2B-säljprojekt</li></ul>**Tredje relationen**<ul><li>`leadOperation.campaignProgression.campaignKey.sourceKey` fält</li><li>Typ: en-till-en</li><li>Referensschema: B2B-kampanj</li><li>Namnutrymme: B2B-kampanj</li></ul> | `ExperienceEvent` skiljer sig från entiteter. Identiteten för upplevelsehändelsen är den person som utförde aktiviteten. |
 | B2B-konto, personrelation | [XDM Business Account Person Relation](../../../../xdm/classes/b2b/business-account-person-relation.md) | Identitetskarta | Aktiverad | `accountPersonKey.sourceKey` i basklassen | B2B-konto, personrelation | Ingen | Ingen | **Första relationen**<ul><li>`personKey.sourceKey` i basklassen</li><li>Typ: Många-till-ett</li><li>Referensschema: B2B-person</li><li>Namnutrymme: B2B-person</li><li>Destinationsegenskap: `b2b.personKey.SourceKey`</li><li>Relationsnamn från aktuellt schema: Folk</li><li>Relationsnamn från referensschema: Konto</li></ul>**Andra relationen**<ul><li>`accountKey.sourceKey` i basklassen</li><li>Typ: Många-till-ett</li><li>Referensschema: B2B-konto</li><li>Namnutrymme: B2B-konto</li><li>Destinationsegenskap: `accountKey.sourceKey`</li><li>Relationsnamn från aktuellt schema: Konto</li><li>Relationsnamn från referensschema: Folk</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

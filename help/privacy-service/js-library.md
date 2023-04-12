@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över JavaScript-biblioteket Adobe Privacy
 description: Med Adobe Privacy JavaScript Library kan du hämta registrerade identiteter för användning i Privacy Service.
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1006'
 ht-degree: 4%
 
 ---
@@ -207,7 +207,7 @@ Nedan följer en lista över godkända konfigurationsparametrar för Adobe-lösn
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `imsOrgID` | Ditt IMS-organisations-ID. |
+| `imsOrgID` | Ditt organisations-ID. |
 
 **Adobe Target**
 

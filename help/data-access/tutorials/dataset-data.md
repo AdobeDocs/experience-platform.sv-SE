@@ -5,9 +5,9 @@ title: Visa datauppsättningsdata med API:t för dataåtkomst
 type: Tutorial
 description: Lär dig hur du hittar, får tillgång till och hämtar data som lagras i en datauppsättning med hjälp av API:t för dataåtkomst i Adobe Experience Platform. Du kommer också att få en introduktion till några av de unika funktionerna i API:t för dataåtkomst, till exempel sidindelning och partiella nedladdningar.
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1390'
+source-wordcount: '1388'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Innan du kan börja använda [!DNL Data Access] API, du måste identifiera plats
 
 En omfattande lista med slutpunkter i [!DNL Catalog] API, se [API-referens](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
-## Hämta en lista över batchar under IMS-organisationen
+## Hämta en lista över batchar i din organisation
 
 Använda [!DNL Catalog] API, du kan returnera en lista över grupper under din organisation:
 
@@ -84,7 +84,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches/' \
 
 **Svar**
 
-Svaret innehåller ett objekt som listar alla batchar som hör till IMS-organisationen, där varje toppnivåvärde representerar en batch. De enskilda batchobjekten innehåller information om den specifika gruppen. Svaret nedan har minimerats för utrymme.
+Svaret innehåller ett objekt som listar alla batchar som hör till organisationen, där varje toppnivåvärde representerar en batch. De enskilda batchobjekten innehåller information om den specifika gruppen. Svaret nedan har minimerats för utrymme.
 
 ```json
 {

@@ -1,13 +1,13 @@
 ---
 title: Platstips
 description: I den här artikeln beskrivs hur platstips fungerar i Edge Network Server API, så att slutanvändarförfrågningar alltid kan dirigeras till samma server.
-source-git-commit: 7f1d8fba34c5478f0d6e727a5a52af642852c9dd
+exl-id: 8cd2f8e2-2065-4b7e-8d35-4ed1a716f1b3
+source-git-commit: 2c7a5f007189d897ed32302a2a80c1e16af6af80
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
-
 
 # Platstips
 
@@ -62,4 +62,4 @@ POST 'https://edge.adobedc.net/ee/{LOCATION_HINT}/v2/interact?dataStreamId={Data
 
 För att säkerställa att det platstips som returneras av Edge Network finns kvar under hela sessionen kan du lagra platstipsvärdet i en cookie, tillsammans med cookie-livstiden som finns i `ttlSeconds` fält (vanligtvis 1 800 sekunder).
 
-Precis som med de flesta cookies bör du förlänga den här cookie-filens livstid varje gång ett svar från Edge Network uppstår. Använd cookie-namnet för att säkerställa maximal kompatibilitet med Web SDK `kndctr_{IMSORG}_AdobeOrg_cluster`. IMS-organisationsnummer avslutas vanligtvis med `@AdobeOrg`. The `@` värdet måste konverteras till ett understreck för att cookien ska ha rätt format.
+Precis som med de flesta cookies bör du förlänga den här cookie-filens livstid varje gång ett svar från Edge Network uppstår. Använd cookie-namnet för att säkerställa maximal kompatibilitet med Web SDK `kndctr_{IMSORG}_AdobeOrg_cluster`. Organisations-ID:n avslutas vanligtvis med `@AdobeOrg`. The `@` värdet måste konverteras till ett understreck för att cookien ska ha rätt format.

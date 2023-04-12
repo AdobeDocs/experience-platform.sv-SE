@@ -5,9 +5,9 @@ title: Importera en paketerad mottagare i gränssnittet för datavetenskapen
 type: Tutorial
 description: I den här självstudiekursen får du information om hur du konfigurerar och importerar ett paketerat recept med hjälp av det angivna exemplet på detaljhandelsförsäljning. I slutet av den här självstudiekursen kan du skapa, utbilda och utvärdera en modell i Adobe Experience Platform Data Science Workspace.
 exl-id: 2556e1f0-3f9c-4884-a699-06c041d5c4d1
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1738'
+source-wordcount: '1737'
 ht-degree: 0%
 
 ---
@@ -112,7 +112,7 @@ Nedan visas ett exempel på en konfigurationsfil som visar standardutbildnings- 
 | `ACP_DSW_INPUT_FEATURES` | Sträng | Lista med kommaavgränsade inmatningsschemaattribut. |
 | `ACP_DSW_TARGET_FEATURES` | Sträng | Lista med kommaseparerade utdataschemaattribut. |
 | `ACP_DSW_FEATURE_UPDATE_SUPPORT` | Boolean | Avgör om in- och utdatafunktionerna kan ändras |
-| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i IMS-organisationen. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant_id) för att hitta ditt klientorganisations-ID. |
+| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i din organisation. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant_id) för att hitta ditt klientorganisations-ID. |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | Sträng | Det indatarema som används för utbildning av en modell. Lämna detta tomt när du importerar i användargränssnittet, ersätt med utbildningsschemat-ID när du importerar med API. |
 | `evaluation.labelColumn` | Sträng | Kolumnetikett för utvärderingsvisualiseringar. |
 | `evaluation.metrics` | Sträng | Kommaavgränsad lista med mätvärden som ska användas för att utvärdera en modell. |

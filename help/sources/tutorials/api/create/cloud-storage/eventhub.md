@@ -5,9 +5,9 @@ title: Skapa en källanslutning för Azure Event Hubs med API:t för Flow Servic
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Skapa en källanslutning
 
-En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
+En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
 Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
 

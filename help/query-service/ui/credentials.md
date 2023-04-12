@@ -2,11 +2,11 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;query editor;Query Editor;Query editor;Query editor;
 solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
-description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation.
+description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: d86e1118fc8886f3a55b0224a2e065b33d96daf2
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1292'
+source-wordcount: '1291'
 ht-degree: 0%
 
 ---

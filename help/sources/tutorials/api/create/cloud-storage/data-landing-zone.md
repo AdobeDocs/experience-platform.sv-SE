@@ -5,9 +5,9 @@ title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Fl
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1249'
+source-wordcount: '1248'
 ht-degree: 1%
 
 ---
@@ -452,7 +452,7 @@ Ett svar returnerar strukturen för den efterfrågade filen, inklusive filnamn o
 
 ## Skapa en källanslutning
 
-En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
+En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
 Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
 

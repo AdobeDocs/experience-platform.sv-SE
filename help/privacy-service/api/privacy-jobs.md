@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Sekretessjobb API-slutpunkt
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 21347074ed6160511888d4b543133dfd1ec4d35c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1547'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 **Begäran**
 
-Följande begäran hämtar en numrerad lista över alla jobb inom en IMS-organisation, med början från den tredje sidan med sidstorleken 50.
+Följande begäran hämtar en sidnumrerad lista över alla jobb i en organisation, med början från den tredje sidan med sidstorleken 50.
 
 ```shell
 curl -X GET \
@@ -159,7 +159,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det är **obligatoriskt** som en av identifierarna använder `imsOrgId` som `namespace`, med `value` som innehåller det unika ID:t för IMS-organisationen. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalifierare (till exempel `Campaign`), som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
+| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det är **obligatoriskt** som en av identifierarna använder `imsOrgId` som `namespace`, med `value` som innehåller det unika ID:t för din organisation. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalifierare (till exempel `Campaign`), som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
 | `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Beroende på vilka åtgärder du vill utföra måste den här arrayen innehålla `access`, `delete`eller båda.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, a `value`och en namnutrymmeskvalificerare (`type`). Se [appendix](appendix.md) om du vill ha mer information om dessa obligatoriska egenskaper.</li></ul> Mer detaljerad information om `users` och `userIDs`, se [felsökningsguide](../troubleshooting-guide.md#user-ids). |
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Se avsnittet om [godkända produktvärden](appendix.md) i bilagan för mer information. |
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |

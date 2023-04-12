@@ -2,12 +2,12 @@
 keywords: Experience Platform;home;populära topics;identity service api;identity service developguide;region
 solution: Experience Platform
 title: API-guide för identitetstjänst
-description: Med Identity Service API kan utvecklare hantera identifieringen av era kunder i realtid över olika enheter, kanaler och nära nog alla kanaler med hjälp av identitetsdiagram i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med Identity Service API kan utvecklare hantera identifieringen av era kunder i realtid över olika enheter, kanaler och nära nog alla kanaler med hjälp av identitetsdiagram i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: d612af38-4648-4c3e-8cfd-3f306c9370e1
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '767'
-ht-degree: 0%
+source-wordcount: '764'
+ht-degree: 2%
 
 ---
 
@@ -51,7 +51,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ### Regionbaserad routning
 
-The [!DNL Identity Service] API använder regionspecifika slutpunkter som kräver att en `{REGION}` som en del av sökvägen till begäran. Under etableringen av din IMS-organisation bestäms en region och lagras i din IMS-organisationsprofil. Om du använder rätt region för varje slutpunkt säkerställs att alla begäranden som görs med [!DNL Identity Service] API dirigeras till rätt region.
+The [!DNL Identity Service] API använder regionspecifika slutpunkter som kräver att en `{REGION}` som en del av sökvägen till begäran. Under etableringen av organisationen bestäms en region och lagras i din organisationsprofil. Om du använder rätt region för varje slutpunkt säkerställs att alla begäranden som görs med [!DNL Identity Service] API dirigeras till rätt region.
 
 Det finns för närvarande två regioner som stöds av [!DNL Identity Service] API:er: VA7 och NLD2.
 
@@ -66,7 +66,7 @@ Tabellen nedan visar exempelsökvägar som använder regioner:
 >
 >Begäranden som görs utan att ange en region kan leda till att anrop dirigeras till fel region eller orsaka att anrop misslyckas oväntat.
 
-Om du inte kan hitta regionen i din IMS-organisationsprofil kontaktar du systemadministratören för att få hjälp.
+Om du inte kan hitta regionen i din organisationsprofil kontaktar du systemadministratören för att få hjälp.
 
 ## Använda [!DNL Identity Service] API
 

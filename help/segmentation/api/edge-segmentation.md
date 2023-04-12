@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Kantsegmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 1c4da50b2c211aae06d6702d75e5650447fae0eb
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1185'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,7 @@ En segmentdefinition **not** aktiveras för kantsegmentering i följande scenari
 
 ## Hämta alla segment som är aktiverade för kantsegmentering
 
-Du kan hämta en lista över alla segment som är aktiverade för kantsegmentering inom IMS-organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
+Du kan hämta en lista över alla segment som är aktiverade för kantsegmentering inom organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
@@ -90,7 +90,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med segment i IMS-organisationen som är aktiverade för kantsegmentering. Mer detaljerad information om den returnerade segmentdefinitionen finns i [slutpunktsguide för segmentdefinitioner](./segment-definitions.md).
+Ett lyckat svar returnerar en array med segment i organisationen som är aktiverade för kantsegmentering. Mer detaljerad information om den returnerade segmentdefinitionen finns i [slutpunktsguide för segmentdefinitioner](./segment-definitions.md).
 
 ```json
 {

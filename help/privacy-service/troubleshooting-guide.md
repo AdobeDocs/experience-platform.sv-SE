@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för Privacy Service
 description: Det här dokumentet innehåller svar på vanliga frågor om Privacy Service samt information om vanliga fel i API:t.
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '914'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -107,7 +107,7 @@ I följande tabell beskrivs några vanliga fel i [!DNL Privacy Service], med bes
 | Ogiltigt namnutrymme | Ett angivet ID-namnområde för ett användar-ID var ogiltigt. Se avsnittet om [standardidentitetsnamnutrymmen](./api/appendix.md#standard-namespaces) i [!DNL Privacy Service] API-guide för en lista över godkända namnutrymmen. Om du använder ett anpassat namnutrymme kontrollerar du att du anger ID:n `type` egenskapen &quot;custom&quot;. |
 | Delvis slutförd | Jobbet slutfördes, men vissa data var inte tillämpliga för den angivna begäran och hoppades över. |
 | Data har inte det format som krävs. | Ett eller flera av datavärdena för det angivna programmet var felaktigt formaterade. Mer information finns i jobbinformationen. |
-| IMS-organisationen har inte etablerats. | Det här meddelandet visas när din IMS-organisation inte har etablerats för [!DNL Privacy Service]. Kontakta administratören om du vill ha mer information. |
+| IMS-organisationen har inte etablerats. | Det här meddelandet visas när din organisation inte har etablerats för [!DNL Privacy Service]. Kontakta administratören om du vill ha mer information. |
 | Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att använda [!DNL Privacy Service]. Kontakta administratören för att få åtkomst. |
 | Ett problem uppstod vid överföring och arkivering av åtkomstdata. | När det här felet inträffar överför du åtkomstdata igen och försöker igen. |
 | Arbetsbelastningen har överskridits för den aktuella dokumenthastighetsgränsen. | Minska överföringshastigheten och försök igen när felet inträffar. |

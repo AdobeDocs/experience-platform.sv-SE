@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över frågetjänsten
 description: Det här dokumentet innehåller en översikt över frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform importerar data från en mängd olika källor. En stor
 
 ## Använda [!DNL Query Service]
 
-[!DNL Query Service] innehåller ett användargränssnitt och ett RESTful API från vilket du kan skapa SQL-frågor för att bättre analysera dina data. Med användargränssnittet kan du skriva och köra frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i din IMS-organisation. Användargränssnittet är avsett att användas som en sandlåda för att testa dina frågor innan de körs på din bredare datauppsättning. Mer information om hur du använder den interaktiva tjänsten i [!DNL Platform] finns i [Användargränssnittshandbok för frågetjänsten](ui/overview.md). RESTful API har en liknande upplevelse, vilket gör att du kan skriva och köra frågor programmatiskt, schemalägga frågor för framtida bruk och upprepning samt skapa mallar för frågor som du vill skriva. Mer information om hur du använder [!DNL Query Service] API finns i [Handbok för frågetjänstutvecklare](api/getting-started.md).
+[!DNL Query Service] innehåller ett användargränssnitt och ett RESTful API från vilket du kan skapa SQL-frågor för att bättre analysera dina data. Med användargränssnittet kan du skriva och köra frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Användargränssnittet är avsett att användas som en sandlåda för att testa dina frågor innan de körs på din bredare datauppsättning. Mer information om hur du använder den interaktiva tjänsten i [!DNL Platform] finns i [Användargränssnittshandbok för frågetjänsten](ui/overview.md). RESTful API har en liknande upplevelse, vilket gör att du kan skriva och köra frågor programmatiskt, schemalägga frågor för framtida bruk och upprepning samt skapa mallar för frågor som du vill skriva. Mer information om hur du använder [!DNL Query Service] API finns i [Handbok för frågetjänstutvecklare](api/getting-started.md).
 
 ## [!DNL Query Service] och [!DNL Experience Platform] tjänster
 

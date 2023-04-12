@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2064'
+source-wordcount: '2063'
 ht-degree: 0%
 
 ---
@@ -177,7 +177,7 @@ Det här felmeddelandet visas när du försöker skapa en resurs med en titel so
 
 Det här felmeddelandet visas när du försöker skapa en resurs med felaktigt namngivna fält eller lägga till felaktigt namngivna fält i en befintlig resurs.
 
-Resurser som definieras av din IMS-organisation måste namnge sina fält under ditt innehavar-ID för att undvika konflikter med andra bransch- och leverantörsresurser. När du skapar ett schema med standardfältgrupper måste alla anpassade fält som du lägger till i strukturen för dessa fältgrupper också namnges under ditt klient-ID.
+Resurser som definieras av din organisation måste namnge sina fält under ditt innehavar-ID för att undvika konflikter med andra bransch- och leverantörsresurser. När du skapar ett schema med standardfältgrupper måste alla anpassade fält som du lägger till i strukturen för dessa fältgrupper också namnges under ditt klient-ID.
 
 >[!NOTE]
 >

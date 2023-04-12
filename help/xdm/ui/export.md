@@ -1,21 +1,21 @@
 ---
 solution: Experience Platform
 title: Exportera XDM-scheman i användargränssnittet
-description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller IMS-organisation i Adobe Experience Platform användargränssnitt.
+description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '481'
 ht-degree: 0%
 
 ---
 
 # Exportera XDM-scheman i användargränssnittet
 
-Alla resurser i schemabiblioteket finns i en specifik sandlåda i en IMS-organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och IMS-organisationer.
+Alla resurser i schemabiblioteket finns i en specifik sandlåda i en organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer.
 
-För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Experience Platform UI kan du generera en exportnyttolast för alla scheman i schemabiblioteket. Denna nyttolast kan sedan användas i ett anrop till API:t för schemaregister för att importera schemat (och alla beroende resurser) till en målsandlåda och IMS-organisation.
+För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Experience Platform UI kan du generera en exportnyttolast för alla scheman i schemabiblioteket. Denna nyttolast kan sedan användas i ett anrop till API:t för schemaregister för att importera schemat (och alla beroende resurser) till en målsandlåda och en målorganisation.
 
 >[!NOTE]
 >
@@ -23,7 +23,7 @@ För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Expe
 
 ## Förutsättningar
 
-Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller IMS-organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
+Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
 
 ## Generera en exportnyttolast
 
@@ -201,14 +201,14 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
 ]
 ```
 
-Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan är &quot;[!DNL Loyalty details]&quot; egen fältgrupp och &quot;[!DNL Loyalty Members]schemat ingår. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och IMS-organisationer.
+Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan är &quot;[!DNL Loyalty details]&quot; egen fältgrupp och &quot;[!DNL Loyalty Members]schemat ingår. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och organisationer.
 
 Observera att varje instans av organisationens klientorganisations-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du importerar schemat i nästa steg.
 
 ## Importera resursen med API:t
 
-När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-förfrågan till `/rpc/import` slutpunkt i API:t för schemaregistret. Se [importera slutpunktsguide](../api/import.md) om du vill ha mer information om hur du konfigurerar anropet för att skicka schemat till önskad IMS-organisation och sandlåda.
+När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-förfrågan till `/rpc/import` slutpunkt i API:t för schemaregistret. Se [importera slutpunktsguide](../api/import.md) om du vill ha information om hur du konfigurerar anropet för att skicka schemat till önskad organisation och sandlåda.
 
 ## Nästa steg
 
-Genom att följa den här guiden har du exporterat ett XDM-schema till en annan IMS-organisation eller sandlåda. Mer information om funktionerna i [!UICONTROL Schemas] Gränssnittet, se [[!UICONTROL Schemas] Översikt över användargränssnittet](./overview.md).
+Genom att följa den här guiden har du exporterat ett XDM-schema till en annan organisation eller sandlåda. Mer information om funktionerna i [!UICONTROL Schemas] Gränssnittet, se [[!UICONTROL Schemas] Översikt över användargränssnittet](./overview.md).

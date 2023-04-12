@@ -4,9 +4,9 @@ title: API-slutpunkt för profilexportjobb
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1519'
+source-wordcount: '1517'
 ht-degree: 0%
 
 ---
@@ -180,7 +180,7 @@ Ett lyckat svar returnerar en datauppsättning ifylld med profildata som anges i
 
 ## Visa alla exportjobb
 
-Du kan returnera en lista över alla exportjobb för en viss IMS-organisation genom att göra en GET-förfrågan till `export/jobs` slutpunkt. Begäran stöder även frågeparametrar `limit` och `offset`, vilket visas nedan.
+Du kan returnera en lista över alla exportjobb för en viss organisation genom att utföra en GET-begäran till `export/jobs` slutpunkt. Begäran stöder även frågeparametrar `limit` och `offset`, vilket visas nedan.
 
 **API-format**
 
@@ -209,7 +209,7 @@ curl -X GET \
 
 **Svar**
 
-Svaret innehåller en `records` -objekt som innehåller de exportjobb som har skapats av IMS-organisationen.
+Svaret innehåller en `records` -objekt som innehåller de exportjobb som har skapats av organisationen.
 
 ```json
 {

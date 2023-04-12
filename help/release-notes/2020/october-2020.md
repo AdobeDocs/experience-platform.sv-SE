@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 exl-id: 89f5e2bd-8892-4d3f-a3fe-5433bb5ece7a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1016'
-ht-degree: 1%
+source-wordcount: '1015'
+ht-degree: 2%
 
 ---
 
@@ -16,13 +16,13 @@ ht-degree: 1%
 
 **Releasedatum: 14 oktober 2020**
 
-- [Dataprep](#data-prep)
+- [Dataförberedelse](#data-prep)
 - [Kundprofil i realtid](#profile)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 - [Tid till värde](#time-to-value)
 
-## Dataprep {#data-prep}
+## Dataförberedelse {#data-prep}
 
 Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
@@ -41,7 +41,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| API-tillägg för förhandsgranskning av profil | API för förhandsgranskning av profil (`/previewsamplestatus`) kan nu visa en uppdelning av det totala antalet profilfragment i hela IMS-organisationen samt visa distributionen av profilfragment över identitetsnamnutrymmen. |
+| API-tillägg för förhandsgranskning av profil | API för förhandsgranskning av profil (`/previewsamplestatus`) kan nu visa en uppdelning av det totala antalet profilfragment i hela organisationen samt visa distributionen av profilfragment i olika identitetsnamnutrymmen. |
 | Uppdateringar av unionens schemavy | I användargränssnittet i Experience Platform är det enklare att hitta information om alla scheman och datauppsättningar som bidrar till unionsschemat samt attribut för ytnycklar som identitets- och relationsfält. Dessa uppdateringar förbättrar möjligheten att felsöka och verifiera att profiler är korrekt konfigurerade, identiteterna är korrekt sammanfogade och data har importerats. |
 
 Mer information om [!DNL Real-Time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Översikt över kundprofiler i realtid](../../profile/home.md).

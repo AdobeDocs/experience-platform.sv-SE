@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;api;API;XDM;XDM system;experience data model;Experience data model;experience data model;data model;data model;data model;schema register;schemaregister;
 solution: Experience Platform
 title: API-guide för schemaregister
-description: Med API:t för schemaregister kan utvecklare programmässigt hantera alla scheman och relaterade XDM-resurser (Experience Data Model) inom Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med API:t för schemaregister kan utvecklare programmässigt hantera alla scheman och relaterade XDM-resurser (Experience Data Model) inom Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1118'
-ht-degree: 0%
+source-wordcount: '1116'
+ht-degree: 1%
 
 ---
 
@@ -71,7 +71,7 @@ Se [Slutpunktshandbok för CSV-konvertering till schema](./export.md) för mer i
 
 ## Exportera {#export}
 
-Med API:t för schemaregister kan du överföra och dela XDM-resurser mellan sandlådor och IMS-organisationer. För alla scheman, fältgrupper och datatyper kan du generera en exportnyttolast som innehåller resursstrukturen och eventuella beroende resurser. Denna nyttolast kan sedan användas för att importera resursen till en målsandlåda och IMS-organisation.
+Med API:t för schemaregister kan du överföra och dela XDM-resurser mellan sandlådor och organisationer. För alla scheman, fältgrupper och datatyper kan du generera en exportnyttolast som innehåller resursstrukturen och eventuella beroende resurser. Denna nyttolast kan sedan användas för att importera resursen till en målsandlåda och en målorganisation.
 
 Se [slutpunktsguide för export](./export.md) om du vill ha mer information om hur du skapar en exportnyttolast för en befintlig XDM-resurs.
 

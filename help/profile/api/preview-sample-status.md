@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förha
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: a6173860adda4bd71c94750e5cce6dd4cbe820c6
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '2869'
+source-wordcount: '2868'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Profilantal och profiler efter namnutrymmesmått är också tillgängliga i [!UI
 
 ## Visa senaste exempelstatus {#view-last-sample-status}
 
-Du kan göra en GET-förfrågan till `/previewsamplestatus` slutpunkt för att visa information om det senaste slutförda exempeljobbet som kördes för din IMS-organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler eller det totala antalet profiler som din organisation har i Experience Platform.
+Du kan göra en GET-förfrågan till `/previewsamplestatus` slutpunkt för att visa information om det senaste slutförda exempeljobbet som kördes för din organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler eller det totala antalet profiler som din organisation har i Experience Platform.
 
 Profilantalet genereras efter sammanfogning av profilfragment till en enda profil för varje enskild kund. När profilfragment sammanfogas returnerar de med andra ord antalet &quot;1&quot;-profiler eftersom de alla är relaterade till samma individ.
 

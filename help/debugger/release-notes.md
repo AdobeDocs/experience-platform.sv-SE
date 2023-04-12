@@ -4,9 +4,9 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: 96a092efe5ceefeb7b6c3ddd9845d78b8862ac68
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '429'
 ht-degree: 2%
 
 ---
@@ -57,7 +57,7 @@ ht-degree: 2%
 ## Version 1.1.0 - 5 oktober 2021
 
 * Visualisering av fjärrfelsökning - Ordna fjärrfelsökningshändelserna i ett visuellt flödesschema i Adobe Experience Platform Web SDK > Edge Transactions.
-* Kräv att den IMS-organisation för Adobe Experience Platform Web SDK som används på sidan matchar den inloggade organisationen när en ny fjärrfelsökningssession startas.
+* Kräv att den Adobe Experience Platform Web SDK-organisation som används på sidan matchar den inloggade organisationen när en ny fjärrfelsökningssession startas.
 * Visa endast kanttransaktioner för den anslutna fliken. Målspårningsloggar är fortfarande tillgängliga i avsnittet Loggar > Edge.
 * Tillåt att olika ID-konfigurationer för dataström åsidosätts för varje instans av Adobe Experience Platform Web SDK på sidan. Växla till Lägg till felsökning aktiverat.
 * Ett problem har korrigerats där Adobe Target trace-token inte alltid skickades med fjärrfelsökningssessioner för Adobe Experience Platform Web SDK.

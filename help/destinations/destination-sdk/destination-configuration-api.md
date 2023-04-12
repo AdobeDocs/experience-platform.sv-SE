@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med API-slutpunkten `/authoring/destination`.
 title: Slutpunktsåtgärder för mål-API
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 59ac7749d788d8527da3578ec140248f7acf8e98
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2536'
 ht-degree: 1%
 
 ---
@@ -180,7 +180,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Använd den här parametern för att ange om du vill att de exporterade profilerna ska samlas i grupper av en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
 | `aggregation.configurableAggregation.aggregationKey.groups` | Sträng | Se parameter i exempelkonfiguration [här](./destination-configuration.md#example-configuration). Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål av grupper med identitetsnamnutrymme. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett samtal till din destination och e-postmeddelanden i ett annat genom att använda konfigurationen i exemplet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -443,7 +443,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målkonfig
 
 ## Visa målkonfigurationer {#retrieve-list}
 
-Du kan hämta en lista över alla destinationskonfigurationer för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/destinations` slutpunkt.
+Du kan hämta en lista över alla destinationskonfigurationer för din organisation genom att göra en GET-förfrågan till `/authoring/destinations` slutpunkt.
 
 **API-format**
 
@@ -454,7 +454,7 @@ GET /authoring/destinations
 
 **Begäran**
 
-Följande begäran hämtar listan över målkonfigurationer som du har åtkomst till, baserat på IMS-organisationens och sandlådekonfigurationer.
+Följande begäran hämtar listan över målkonfigurationer som du har åtkomst till, baserat på konfigurationen för organisationen och sandlådan.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations \
@@ -466,7 +466,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 **Svar**
 
-Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer som du har åtkomst till, baserat på IMS-organisationens ID och det sandlådenamn som du använde. Ett `instanceId` motsvarar mallen för ett mål. Svaret kortas av för att vara kortfattat.
+Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer som du har åtkomst till, baserat på det organisations-ID och sandlådenamn som du använde. Ett `instanceId` motsvarar mallen för ett mål. Svaret kortas av för att vara kortfattat.
 
 ```json
 {
@@ -604,7 +604,7 @@ Följande svar returnerar HTTP-status 200 med en lista över målkonfigurationer
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform-segmentnamnet. |
 | `segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](./audience-metadata-management.md) används för detta mål. Om du vill konfigurera en metadatamall för målgrupper läser du [API-referens för målgruppsmetadata](./audience-metadata-api.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Uppdatera en befintlig målkonfiguration {#update}
 

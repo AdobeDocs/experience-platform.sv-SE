@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Självbetjänade källor (Batch SDK) API-guide
 description: Det här dokumentet innehåller en översikt över processen att skapa en ny källa, inklusive steg för hur du hämtar, skriver och skickar en ny anslutningsspecifikation med API:t för Flow Service.
 exl-id: 7e827989-207b-41e2-84d6-5ecb754bebb6
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ The [!DNL Flow Service] API har flera slutpunkter som gör att du kan hantera an
 
 Det första steget när du konfigurerar en ny källa är att skapa en ny anslutningsspecifikation.
 
-Anslutningsspecifikationerna returnerar en källas kopplingsegenskaper. De innehåller autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningar och ett fast anslutningsspecifikations-ID som tilldelats en viss källa. Anslutningsspecifikationerna är innehavar- och IMS-organisationstjänster. En typisk anslutningsspecifikation innehåller grundläggande information om en viss källa samt tre olika avsnitt: `authSpec`, `sourceSpec`och `exploreSpec`.
+Anslutningsspecifikationerna returnerar en källas kopplingsegenskaper. De innehåller autentiseringsspecifikationer som relaterar till att skapa bas- och källanslutningar och ett fast anslutningsspecifikations-ID som tilldelats en viss källa. Anslutningsspecifikationerna är innehavar- och organisationsagnostiker. En typisk anslutningsspecifikation innehåller grundläggande information om en viss källa samt tre olika avsnitt: `authSpec`, `sourceSpec`och `exploreSpec`.
 
 Detaljerade anvisningar finns i handboken på [skapa en ny anslutningsspecifikation](./create.md). Information om egenskaper och värden som används för en anslutningsspecifikation, inklusive information om konfigurering av autentisering, källa och utforska specifikationer, finns i [konfigurationsalternativdokument](../config/config.md).
 

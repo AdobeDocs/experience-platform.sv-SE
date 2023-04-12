@@ -2,22 +2,22 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Välj en produktprofil för att redigera åtkomstkontrollsbehörigheter
-description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en IMS-organisation som har ett abonnemang på Experience Platform.
+description: Det här dokumentet innehåller de steg som krävs för att bläddra på arbetsytan för åtkomstkontroll. Om du vill konfigurera åtkomstkontroll för Experience Platform via Adobe Admin Console måste du vara administratör för en organisation som har ett abonnemang på Experience Platform.
 exl-id: 1d3c894e-b412-43ba-ba91-ddfa35303d73
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '311'
+source-wordcount: '305'
 ht-degree: 2%
 
 ---
 
 # Välj en produktprofil för att hantera dess åtkomstkontrollbehörigheter
 
-För att konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en IMS-organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för IMS-organisationer, men du måste ha behörighet som systemadministratör, produktadministratör eller produktprofiladministratör för att kunna konfigurera åtkomstkontroll. Se Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) för mer information.
+För att konfigurera åtkomstkontroll för [!DNL Experience Platform] via Adobe Admin Console måste du vara administratör för en organisation som har en prenumeration på [!DNL Experience Platform]. Adobe stöder flexibla administratörshierarkier för organisationer, men du måste ha behörighet som systemadministratör, produktadministratör eller produktprofiladministratör för att kunna konfigurera åtkomstkontroll. Se Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) för mer information.
 
 Om du inte har administratörsbehörighet kontaktar du systemadministratören för att få åtkomst.
 
-När du har administratörsbehörighet går du till [Adobe Admin Console](https://adminconsole.adobe.com) och logga in med dina inloggningsuppgifter för Adobe. När du är inloggad visas **[!UICONTROL Overview]** visas för den IMS-organisation som du har administratörsbehörighet för. På den här sidan visas de produkter som din IMS-organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i IMS-organisationen som helhet. Välj **[!UICONTROL Adobe Experience Platform]** för att öppna arbetsytan för åtkomstkontroll för plattformsintegreringen.
+När du har administratörsbehörighet går du till [Adobe Admin Console](https://adminconsole.adobe.com) och logga in med dina inloggningsuppgifter för Adobe. När du är inloggad visas **[!UICONTROL Overview]** visas för den organisation som du har administratörsbehörighet för. På den här sidan visas de produkter som din organisation prenumererar på, tillsammans med andra kontroller för att lägga till användare och administratörer i organisationen som helhet. Välj **[!UICONTROL Adobe Experience Platform]** för att öppna arbetsytan för åtkomstkontroll för plattformsintegreringen.
 
 ![produkt](../images/select-product.png)
 

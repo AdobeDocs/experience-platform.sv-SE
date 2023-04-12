@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Anslut Aqua Data Studio till Query Service
 description: Det här dokumentet går igenom stegen för att ansluta Aqua Data Studio med Adobe Experience Platform Query Service.
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: 3ffb535e9a6648f037678acebba0de5f2088e79e
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här guiden kräver att du redan har åtkomst till [!DNL Aqua Data Studio] o
 >
 >Det finns [!DNL Windows] och [!DNL macOS] versioner av [!DNL Aqua Data Studio]. Skärmbilder i den här guiden har tagits med [!DNL macOS] datorprogram. Det kan finnas små skillnader i användargränssnittet mellan versionerna.
 
-Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL Aqua Data Studio] till Experience Platform måste du ha tillgång till [!UICONTROL Queries] i plattformsgränssnittet. Kontakta IMS-organisationens administratör om du inte har tillgång till [!UICONTROL Queries] arbetsyta.
+Hämta nödvändiga autentiseringsuppgifter för anslutning [!DNL Aqua Data Studio] till Experience Platform måste du ha tillgång till [!UICONTROL Queries] i plattformsgränssnittet. Kontakta din organisations administratör om du inte har tillgång till [!UICONTROL Queries] arbetsyta.
 
 ## Registrera servern {#register-server}
 

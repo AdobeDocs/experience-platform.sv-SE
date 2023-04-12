@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identitetsdata för sekretessförfrågningar
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar dataåtgärder och använder Adobe-tekniker för att effektivt hämta lämplig identitetsinformation för kundsekretessförfrågningar.
 exl-id: 43b0292a-ea4d-4858-b584-ba71029724f6
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '645'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Det här dokumentet innehåller allmän vägledning om hur du konfigurerar data�
 
 När en kund kan interagera med ert varumärke via flera olika kanaler kan det vara svårt att kombinera de olika identifierare som registreras från dessa många interaktioner. Detta kan i sin tur göra det svårt att avgöra vilka data som tillhör en viss person i [!DNL Experience Cloud] program.
 
-När du till exempel hanterar kunddataförfrågningar i [!DNL Privacy Service]kan en identitet representera ett cookie-värde som anges under en Adobe-kontrollerad domän, ett cookie-värde under en tredjepartsdomän och delas med Adobe, eller en anpassad identifierare som du uttryckligen definierar inom IMS-organisationen.
+När du till exempel hanterar kunddataförfrågningar i [!DNL Privacy Service]kan en identitet representera ett cookie-värde som anges under en Adobe-kontrollerad domän, ett cookie-värde under en tredjepartsdomän och delas med Adobe, eller en anpassad identifierare som du uttryckligen definierar inom din organisation.
 
 Varje identitet som skickas till [!DNL Privacy Service] åtföljs av ett namnutrymme som innehåller ett sammanhang där identitetsvärdet kopplas till ursprungssystemet. Ett namnutrymme kan representera ett allmänt koncept, t.ex. en e-postadress (&quot;E-post&quot;) eller associera identiteten med ett visst program, t.ex. ett Adobe Advertising Cloud-id (&quot;AdCloud&quot;) eller ett Adobe Target-id (&quot;TNTID&quot;).
 

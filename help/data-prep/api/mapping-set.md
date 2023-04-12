@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för mappningsuppsättningar
 description: Du kan använda slutpunkten "/mappingSets" i Adobe Experience Platform API för att hämta, skapa, uppdatera och validera mappningsuppsättningar programmatiskt.
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '852'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Mappningsuppsättningar kan användas för att definiera hur data i ett källsch
 
 ## Listmappningsuppsättningar
 
-Du kan hämta en lista över alla mappningsuppsättningar för din IMS-organisation genom att göra en GET-förfrågan till `/mappingSets` slutpunkt.
+Du kan hämta en lista över alla mappningsuppsättningar för din organisation genom att göra en GET-förfrågan till `/mappingSets` slutpunkt.
 
 **API-format**
 
@@ -40,7 +40,7 @@ GET /mappingSets?limit={LIMIT}&start={START}&expandSchema={EXPAND_SCHEMA}
 
 **Begäran**
 
-Följande begäran hämtar de två sista mappningsuppsättningarna inom IMS-organisationen.
+Följande begäran hämtar de två sista mappningsuppsättningarna i din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/mappingSets?limit=2&start=0 \

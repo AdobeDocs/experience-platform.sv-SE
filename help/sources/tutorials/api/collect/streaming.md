@@ -5,9 +5,9 @@ title: Skapa ett direktuppspelat dataflöde för rådata med API:t för flödest
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1098'
 ht-degree: 0%
 
 ---
@@ -204,7 +204,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den nya datauppsä
 
 ## Skapa en målanslutning {#target-connection}
 
-Målanslutningar skapar och hanterar en målanslutning till plattformen eller någon plats där de överförda data landas. Målanslutningar innehåller information om datamål, dataformat och det anslutnings-ID som krävs för att skapa ett dataflöde. Målanslutningens instanser är specifika för en klientorganisation och IMS-organisation.
+Målanslutningar skapar och hanterar en målanslutning till plattformen eller någon plats där de överförda data landas. Målanslutningar innehåller information om datamål, dataformat och det anslutnings-ID som krävs för att skapa ett dataflöde. Målanslutningens instanser är specifika för en klientorganisation och organisation.
 
 Om du vill skapa en målanslutning skickar du en POST till `/targetConnections` slutpunkt för [!DNL Flow Service] API. Som en del av begäran måste du ange dataformatet, `dataSetId` hämtat i föregående steg och det fasta ID för anslutningsspecifikation som är knutet till [!DNL Data Lake]. Detta ID är `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 

@@ -5,9 +5,9 @@ title: Utbildning och utvärdering av en modell i användargränssnittet för da
 type: Tutorial
 description: I Adobe Experience Platform Data Science Workspace skapas en maskininlärningsmodell genom att en befintlig Recipe som är lämplig för modellens avsikt läggs till. Modellen är sedan utbildad och utvärderad för att optimera dess driftseffektivitet och effektivitet genom att finjustera de tillhörande hyperparametrarna. Recept kan återanvändas, vilket innebär att flera modeller kan skapas och skräddarsys för specifika syften med en enda Recept.
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1078'
+source-wordcount: '1076'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Den här självstudiekursen går igenom stegen för att skapa, utbilda och utvä
 
 ## Komma igång
 
-Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en IMS-organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
+Du måste ha tillgång till [!DNL Experience Platform]. Om du inte har tillgång till en organisation i [!DNL Experience Platform]bör du kontakta systemadministratören innan du fortsätter.
 
 Den här självstudiekursen kräver en befintlig recept. Om du inte har någon recept följer du [Importera en paketerad mottagare i användargränssnittet](./import-packaged-recipe-ui.md) självstudiekurs innan du fortsätter.
 
@@ -120,7 +120,7 @@ Ytterligare parametrar bestämmer modellens tekniska egenskaper:
 | `ACP_DSW_INPUT_FEATURES` | Sträng | Lista med kommaavgränsade inmatningsschemaattribut. |
 | `ACP_DSW_TARGET_FEATURES` | Sträng | Lista med kommaseparerade utdataschemaattribut. |
 | `ACP_DSW_FEATURE_UPDATE_SUPPORT` | Boolean | Avgör om in- och utdatafunktionerna kan ändras |
-| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i IMS-organisationen. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant_id) för att hitta ditt klientorganisations-ID. |
+| `tenantId` | Sträng | Detta ID garanterar att de resurser du skapar namnges korrekt och finns i din organisation. [Följ stegen här](../../xdm/api/getting-started.md#know-your-tenant_id) för att hitta ditt klientorganisations-ID. |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | Sträng | Det indatarema som används för utbildning av en modell. |
 | `evaluation.labelColumn` | Sträng | Kolumnetikett för utvärderingsvisualiseringar. |
 | `evaluation.metrics` | Sträng | Kommaavgränsad lista med mätvärden som ska användas för att utvärdera en modell. |

@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1035'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,7 @@ När du skapar jobbförfrågningar i användargränssnittet måste du välja **[
 
 ## Ta bort bearbetning av begäran
 
-När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är associerade med en viss IMS-organisation bort.
+När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Privacy Service], [!DNL Platform] skickar bekräftelse till [!DNL Privacy Service] att begäran har tagits emot och att data som påverkas har markerats för borttagning. Borttagningen av den enskilda identiteten baseras på det angivna namnutrymmet och/eller ID-värdet. Dessutom tas alla sandlådor som är kopplade till en viss organisation bort.
 
 Beroende på om du även har inkluderat kundprofil i realtid (`ProfileService`) och datasjön (`aepDataLake`) som produkter i din sekretesspolicy för identitetstjänst (`identity`) tas olika datauppsättningar som är relaterade till identiteten bort från systemet vid potentiellt olika tidpunkter:
 

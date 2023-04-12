@@ -3,9 +3,9 @@ keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattfo
 title: Real-Time CDP B2B Edition - översikt
 description: Översikt över Real-Time Customer Data Platform B2B Edition-konto
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1082'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ När det implementeras korrekt spåras personer som använder unika primära ide
 
 ## B2B-källor
 
-Plattformen gör det möjligt att importera data från externa källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. The [!DNL Marketo] Med -källa kan du strömma B2B-data till plattformen och hålla dessa data uppdaterade med plattformsanslutna program. Det stöder valfritt antal förekomster av [!DNL Marketo] (vilket är fördelaktigt för stora företag med flera instanser) och samlas i en enda IMS-organisation där data sammanfogas.
+Plattformen gör det möjligt att importera data från externa källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. The [!DNL Marketo] Med -källa kan du strömma B2B-data till plattformen och hålla dessa data uppdaterade med plattformsanslutna program. Det stöder valfritt antal förekomster av [!DNL Marketo] (vilket är fördelaktigt för stora företag med flera instanser) och samlas i en enda organisation där data sammanfogas.
 
 >[!NOTE]
 >
@@ -75,7 +75,7 @@ För företag med mer än en CRM kan Real-Time CDP B2B Edition konfigurera måla
 
 ## Nästa steg
 
-Nu när ni bättre förstår fördelarna för marknadsförarna som Real-Time CDP B2B Edition erbjuder och skillnaderna mellan den och Real-Time CDP kan ni lära er hur ni använder dessa funktioner i er egen IMS-organisation.
+Nu när ni får en bättre förståelse för fördelarna för marknadsförarna som Real-Time CDP B2B Edition erbjuder och skillnaderna mellan den och Real-Time CDP kan ni lära er hur ni använder dessa funktioner i er egen organisation.
 
 Följande dokumentation hjälper dig att komma igång:
 

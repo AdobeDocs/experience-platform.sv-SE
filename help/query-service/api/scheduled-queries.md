@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Slutpunkt för scheman
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1132'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Nu när du förstår vilka rubriker du ska använda kan du börja ringa till [!D
 
 ### Hämta en lista med schemalagda frågor
 
-Du kan hämta en lista över alla schemalagda frågor för din IMS-organisation genom att göra en GET-förfrågan till `/schedules` slutpunkt.
+Du kan hämta en lista över alla schemalagda frågor för din organisation genom att göra en GET-förfrågan till `/schedules` slutpunkt.
 
 **API-format**
 
@@ -45,7 +45,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista schemala
 
 **Begäran**
 
-Följande begäran hämtar den senaste schemalagda frågan som skapats för din IMS-organisation.
+Följande begäran hämtar den senaste schemalagda frågan som har skapats för din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
@@ -57,7 +57,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över schemalagda frågor för den angivna IMS-organisationen. Följande svar returnerar den senaste schemalagda frågan som skapats för din IMS-organisation.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över schemalagda frågor för den angivna organisationen. Följande svar returnerar den senaste schemalagda frågan som skapats för din organisation.
 
 ```json
 {

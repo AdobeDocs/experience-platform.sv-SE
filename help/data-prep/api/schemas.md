@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;api guide;s
 solution: Experience Platform
 title: API-slutpunkt för scheman
 description: Du kan använda ändpunkten "/schemas" i Adobe Experience Platform API för att hämta, skapa och uppdatera scheman för användning med Mapper in Platform.
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '611'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Scheman kan användas med Mapper för att säkerställa att data som du har inh�
 
 ## Hämta alla scheman
 
-Du kan hämta en lista över alla tillgängliga mappningsscheman för din IMS-organisation genom att göra en GET-förfrågan till `/schemas` slutpunkt.
+Du kan hämta en lista över alla tillgängliga mappningsscheman för din organisation genom att göra en GET-förfrågan till `/schemas` slutpunkt.
 
 **API-format**
 
@@ -43,7 +43,7 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 
 **Begäran**
 
-Följande begäran hämtar de två senast skapade schemana för din IMS-organisation.
+Följande begäran hämtar de två senast skapade schemana för din organisation.
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0&limit=2 \

@@ -5,9 +5,9 @@ title: Skapa en Amazon Kinesis-källanslutning med API:t för flödestjänsten
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till en Amazon Kinesis-källa med API:t för Flow Service.
 exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '729'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Skapa en källanslutning {#source}
 
-En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och IMS-organisation.
+En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och det källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
 Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
 

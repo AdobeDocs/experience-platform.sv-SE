@@ -2,9 +2,9 @@
 title: Komma igång med Reactor API
 description: Lär dig hur du kommer igång med Reaktors-API, inklusive steg för att generera nödvändiga inloggningsuppgifter.
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '1050'
+source-wordcount: '1049'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Med Adobe Developer Console måste du generera följande tre autentiseringsuppgi
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-Din IMS-organisations ID (`{ORG_ID}`) och API-nyckel (`{API_KEY}`) kan återanvändas i framtida API-anrop efter att de ursprungligen har skapats. Din åtkomsttoken (`{ACCESS_TOKEN}`) är tillfälligt och måste genereras om var 24:e timme.
+Organisationens ID (`{ORG_ID}`) och API-nyckel (`{API_KEY}`) kan återanvändas i framtida API-anrop efter att de ursprungligen har skapats. Din åtkomsttoken (`{ACCESS_TOKEN}`) är tillfälligt och måste genereras om var 24:e timme.
 
 Stegen för att generera dessa värden beskrivs närmare nedan.
 

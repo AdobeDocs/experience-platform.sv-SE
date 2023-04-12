@@ -2,9 +2,9 @@
 title: Metodtips för dataresursorganisation i frågetjänsten
 description: I det här dokumentet beskrivs ett logiskt sätt att ordna data så att de blir lätta att använda med frågetjänsten.
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: d3ea7ee751962bb507c91e1afea0da35da60a66d
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '786'
 ht-degree: 0%
 
 ---
@@ -129,7 +129,7 @@ dataset3| table
 
 ## Uppdatera eller ta bort dataresurser från en databehållare
 
-När mängden dataresurser i IMS-organisationen (eller sandlådan) växer blir det nödvändigt att uppdatera eller ta bort dataresurser från en databehållare. Du kan ta bort enskilda resurser från organisationsbehållaren genom att referera till rätt databas- och schemanamn med punktnotation. Tabell och vy (`t1` och `v1` respektive) läggs till i `databaseA.schema1` i det första exemplet tas bort med syntaxen i följande exempel.
+När mängden dataresurser i organisationen (eller sandlådan) växer blir det nödvändigt att uppdatera eller ta bort dataresurser från en databehållare. Du kan ta bort enskilda resurser från organisationsbehållaren genom att referera till rätt databas- och schemanamn med punktnotation. Tabell och vy (`t1` och `v1` respektive) läggs till i `databaseA.schema1` i det första exemplet tas bort med syntaxen i följande exempel.
 
 ```sql
 ALTER TABLE databaseA.schema2.t1 REMOVE SCHEMA databaseA.schema2;
@@ -138,7 +138,7 @@ ALTER VIEW databaseA.schema2.v1 REMOVE SCHEMA databaseA.schema2;
 
 ### Ta bort dataresurser
 
-The [DROP TABLE](../sql/syntax.md#drop-table) funktionen tar bara fysiskt bort en dataresurs från [!DNL Data Lake] när en enda referens till tabellen finns i alla databaser i IMS-organisationen.
+The [DROP TABLE](../sql/syntax.md#drop-table) funktionen tar bara fysiskt bort en dataresurs från [!DNL Data Lake] när en enda referens till tabellen finns i alla databaser i organisationen.
 
 ```sql
 DROP TABLE databaseA.schema2.t1;

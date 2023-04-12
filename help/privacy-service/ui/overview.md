@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över användargränssnittet i Privacy Service
 description: Kom igång med att använda Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '203'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ Privacy Servicens gränssnitt [!DNL Privacy Service] gör att ni kan samordna f�
 
 >[!IMPORTANT]
 >
->Du måste ha en Adobe ID för att kunna autentisera [!DNL Privacy Service] Gränssnitt. Dessutom måste du ha systemadministratörsbehörighet inom IMS-organisationen.
+>Du måste ha en Adobe ID för att kunna autentisera [!DNL Privacy Service] Gränssnitt. Dessutom måste du ha behörighet som systemadministratör inom din organisation.
 
 Logga in på [Adobe Experience Cloud](https://experience.adobe.com/) och markera **[!UICONTROL Privacy UI]** på snabbmenyn.
 
