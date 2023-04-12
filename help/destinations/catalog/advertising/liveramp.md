@@ -3,9 +3,9 @@ title: (Alfa) [!DNL LiveRamp SFTP] anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 hidefromtoc: true
 hide: true
-source-git-commit: 875610178449ddade78462dc74ea4e3dbadb2907
+source-git-commit: b308def0e9b9643cfc1dcc8ac7db19eb733750ea
 workflow-type: tm+mt
-source-wordcount: '1634'
+source-wordcount: '1647'
 ht-degree: 0%
 
 ---
@@ -224,7 +224,7 @@ Som en följd av att dataflödeskörningar genereras för en grupp segment som a
 
 När dina data har exporterats till [!DNL LiveRamp - SFTP] måste du överföra data till [!DNL LiveRamp] plattform.
 
-Se **Nästa steg** i [hämta in data i LiveRamp](https://docs.liveramp.com/connect/en/getting-your-data-into-liveramp.html) dokumentation för fler instruktioner.
+Mer information om hur du överför filer från [!DNL LiveRamp - SFTP] lagring till [!DNL LiveRamp] kan du läsa följande dokumentation: [Att tänka på vid överföring av den första filen till en publik](https://docs.liveramp.com/connect/en/considerations-when-uploading-the-first-file-to-an-audience.html#considerations-when-uploading-the-first-file-to-an-audience).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
