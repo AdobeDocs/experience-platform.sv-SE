@@ -4,13 +4,13 @@ solution: Experience Platform
 title: Adobe Experience Platform FAQ and Troubleshooting Guide
 description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 landing-page-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
-short-description: Find answers to frequently asked questions and a guide for troubleshooting common errors in Experience Platform.
+short-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
 source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
 workflow-type: tm+mt
-source-wordcount: '1861'
-ht-degree: 3%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
