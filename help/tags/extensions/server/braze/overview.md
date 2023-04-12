@@ -2,7 +2,8 @@
 keywords: tillägg för händelsevidarebefordran;braze;braze event forward extension
 title: Vidarekoppling av hjärnhändelse
 description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Adobe Experience Edge Network-händelser till Braze.
-source-git-commit: 6815b5eb0426efd1dde901db1e8b86e86615530a
+last-substantial-update: 2023-03-29T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
 source-wordcount: '1735'
 ht-degree: 1%
@@ -132,7 +133,7 @@ Användarattribut kan vara ett JSON-objekt som innehåller fält som skapar elle
 | [!UICONTROL Country] | Land som en sträng i [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. |
 | [!UICONTROL Language] | Språk som sträng i [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. |
 | [!UICONTROL Date of Birth] | Sträng i formatet &quot;YYY-MM-DD&quot; (t.ex. 1980-12-21). |
-| [!UICONTROL Time Zone] | Tidszonsnamn från [IANA-tidszonsdatabas](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (t.ex. ’America/New_York’ eller ’Eastern Time (USA &amp; Kanada)’). |
+| [!UICONTROL Time Zone] | Tidszonsnamn från [IANA-tidszonsdatabas](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (t.ex. &#39;America/New_York&#39; eller &#39;Eastern Time (USA &amp; Kanada)&#39;). |
 | [!UICONTROL Facebook] | Hash som innehåller något av id (sträng), gillar (strängmatris), num_ativ (heltal). |
 | [!UICONTROL Twitter] | Hash som innehåller något av id (heltal), screen_name (sträng, Twitter handle), follow_count (heltal), kompis_count (heltal), statuses_count(heltal). |
 
@@ -191,7 +192,7 @@ Användarattribut kan vara ett JSON-objekt som innehåller fält som skapar elle
 | [!UICONTROL Country] | Land som en sträng i [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. |
 | [!UICONTROL Language] | Språk som sträng i [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. |
 | [!UICONTROL Date of Birth] | Sträng i formatet &quot;YYY-MM-DD&quot; (t.ex. 1980-12-21). |
-| [!UICONTROL Time Zone] | Tidszonsnamn från [IANA-tidszonsdatabas](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (t.ex. ’America/New_York’ eller ’Eastern Time (USA &amp; Kanada)’). |
+| [!UICONTROL Time Zone] | Tidszonsnamn från [IANA-tidszonsdatabas](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (t.ex. &#39;America/New_York&#39; eller &#39;Eastern Time (USA &amp; Kanada)&#39;). |
 | [!UICONTROL Facebook] | Hash som innehåller något av id (sträng), gillar (strängmatris), num_ativ (heltal). |
 | [!UICONTROL Twitter] | Hash som innehåller något av id (heltal), screen_name (sträng, Twitter handle), follow_count (heltal), kompis_count (heltal), statuses_count(heltal). |
 

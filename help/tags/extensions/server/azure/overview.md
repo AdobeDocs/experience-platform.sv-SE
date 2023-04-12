@@ -2,9 +2,10 @@
 title: Microsoft Azure-tilläggsöversikt
 description: Läs mer om Microsoft Azure-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2337d99d-861e-44e7-94ed-ba21ef28d815
-source-git-commit: f6c11fadc0d8019044fbdd2923af00ce18ce39e1
+last-substantial-update: 2022-11-23T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -53,7 +54,7 @@ Den högra panelen uppdateras och visar konfigurationsalternativ för hur data s
 | [!UICONTROL SAS Access Key] | Primärnyckeln för auktoriseringsregeln för delad åtkomst för hela din [!DNL Event Hubs] namnutrymme eller den specifika händelsehubbsinstans som du vill skicka data till. Se avsnittet om bilagan [hämta SAS-auktoriseringsvärden](#sas) för mer information. |
 | [!UICONTROL Partition ID] | [!DNL Event Hubs] låter dig [skicka händelser direkt till specifika partitioner](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/event-hubs/partitioning-in-event-hubs-and-kafka). Om du vill använda den här funktionen anger du ID:t för den partition som du vill ta emot händelserna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Data**
 
@@ -61,7 +62,7 @@ Den högra panelen uppdateras och visar konfigurationsalternativ för hur data s
 | --- | --- |
 | [!UICONTROL Payload] | Det här fältet innehåller de data som ska vidarebefordras till [!DNL Event Hubs]. Data kan vara ett JSON-objekt, en sträng eller ett dataelement. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 När du är klar väljer du **[!UICONTROL Keep Changes]** för att lägga till åtgärden i regelkonfigurationen. När du är nöjd med regeln väljer du **[!UICONTROL Save to Library]**.
 

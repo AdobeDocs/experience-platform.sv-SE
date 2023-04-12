@@ -2,9 +2,10 @@
 title: AWS Extension - översikt
 description: Läs mer om AWS-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 826a96aa-2d64-4a8b-88cf-34a0b6c26df5
-source-git-commit: b4ff3dbc9c62dceefdf2b842cafa65132dde41fc
+last-substantial-update: 2022-11-23T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '791'
 ht-degree: 0%
 
 ---
@@ -59,7 +60,7 @@ Den högra panelen uppdateras och visar konfigurationsalternativ för hur data s
 | [!UICONTROL AWS Region] | The [!DNL AWS] region där [!DNL Kinesis] dataström skapas. |
 | [!UICONTROL Partition Key] | The [partitionsnyckel](https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key) som tillägget ska använda när data skickas till dataströmmen.<br><br>[!DNL Kinesis Data Streams] delar upp de dataposter som tillhör en ström i flera delningar. Den använder den partitionsnyckel som skickas med varje datapost för att avgöra vilken del en viss datapost tillhör.<br><br>En bra partitionsnyckel för att distribuera kunder kan vara kundnumret, eftersom det är olika för varje kund. En dålig partitionsnyckel kan ha sitt postnummer eftersom de alla kan finnas i samma område som närliggande. I allmänhet bör du välja en partitionsnyckel som har det högsta intervallet av olika möjliga värden. Se [!DNL AWS] artikel om [skala [!DNL Kinesis] dataströmmar](https://aws.amazon.com/blogs/big-data/under-the-hood-scaling-your-kinesis-data-streams/) om du vill ha tips om hur du hanterar partitionsnycklar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **[!UICONTROL Data]**
 
@@ -67,7 +68,7 @@ Den högra panelen uppdateras och visar konfigurationsalternativ för hur data s
 | --- | --- |
 | [!UICONTROL Payload] | Det här fältet innehåller de data som ska vidarebefordras till [!DNL Kinesis] dataström, i JSON-format.<br><br>Under **[!UICONTROL Raw]** kan du klistra in JSON-objektet direkt i det angivna textfältet, eller så kan du välja dataelementsikonen (![Ikon för datauppsättning](../../../images/extensions/server/aws/data-element-icon.png)) för att välja från en lista med befintliga dataelement som ska representera nyttolasten.<br><br>Du kan också använda **[!UICONTROL JSON Key-Value Pairs Editor]** för att manuellt lägga till nyckelvärdepar via en UI-redigerare. Varje värde kan representeras av en rådatainmatning, eller ett dataelement kan markeras i stället. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 När du är klar väljer du **[!UICONTROL Keep Changes]** för att lägga till åtgärden i regelkonfigurationen. När du är nöjd med regeln väljer du **[!UICONTROL Save to Library]**.
 

@@ -2,9 +2,10 @@
 title: Google Ads Enhanced Conversions Extension
 description: Läs mer om tillägget Google Ads Enhanced Conversions för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+last-substantial-update: 2022-11-23T00:00:00Z
+source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1204'
 ht-degree: 0%
 
 ---
@@ -59,7 +60,7 @@ Installationsdialogrutan visas. Här väljer du **[!UICONTROL Add Account]** och
 | Konto-ID | Dina [!DNL Google Ads] konto-ID. Logga in på [!DNL Google Ads] och navigera till: **[!DNL Tools and Settings]** > **[!DNL Conversions]** > **[!DNL Select a conversion action]** > **[!DNL Tag Setup]** > **[!DNL Install the Tag yourself]**. Konto-ID-strängen finns i kodfragmentfönstret som börjar med `AW-` eller `d`. |
 | Produkt | Välj **[!UICONTROL Google Ads (AdWords)]**. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 När du är klar väljer du **[!UICONTROL Add Account]** väljer **[!UICONTROL Save]**.
 
