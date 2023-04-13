@@ -2,7 +2,7 @@
 title: Referens för tillägg för händelsevidarebefordran
 description: Hitta dokumentation för tillägg för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: 30ac89d9af3e1d69c464650879d239a8c3edb525
+source-git-commit: e0c1b4e2cc7444ab97d0eae6ff4f3455b0017d4a
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 0%
@@ -14,6 +14,13 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+<div id="recs-overview-body-1"></div>
+<div id="recs-overview-body-2"></div>
+<div id="recs-overview-body-3"></div>
+<div id="recs-overview-body-4"></div>
+<div id="recs-overview-body-5"></div>
+<div id="recs-overview-body-6"></div>
 
 Här följer en lista med dokumentation för tillägg för vidarebefordran av händelser på servern. En lista över tillgängliga klienttillägg finns i [tagg extensions reference](../client/overview.md) i stället.
 
