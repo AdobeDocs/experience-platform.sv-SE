@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Profile
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiles
-source-git-commit: 81d219116479aa71e9540e4efa636bec8dea5d23
+source-git-commit: 9de3af9402a245779cfaf765c40bb54da57b91e2
 workflow-type: tm+mt
-source-wordcount: '138'
-ht-degree: 18%
+source-wordcount: '124'
+ht-degree: 19%
 
 ---
 
@@ -30,11 +30,6 @@ ht-degree: 18%
 * Profilgränssnitt {#ui}
    * [[!DNL Profile] Användargränssnittsguide](ui/user-guide.md)
    * [[!DNL Profile] anpassning av detaljer](ui/profile-customization.md)
-* (Alfa) Beräknade attribut {#computed-attributes}
-   * [Översikt](computed-attributes/overview.md)
-   * [API för beräknade attribut](computed-attributes/ca-api.md)
-   * [Konfigurera ett beräknat attributfält](computed-attributes/configure-api.md)
-   * [Exempeluttryck](computed-attributes/expressions.md)
 * Sammanfoga profiler {#merge-policies}
    * [Översikt](merge-policies/overview.md)
    * [API för sammanslagningsprinciper](api/merge-policies.md)

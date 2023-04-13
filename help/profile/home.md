@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 737a67b7e30f770d65751b1a924d8378af8bde52
+source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
 workflow-type: tm+mt
-source-wordcount: '2098'
+source-wordcount: '1991'
 ht-degree: 0%
 
 ---
@@ -90,13 +90,13 @@ En av de viktigaste funktionerna i [!DNL Real-Time Customer Profile] är möjlig
 
 Läs mer om fackliga scheman, inklusive hur du får tillgång till fackliga scheman i användargränssnittet på [gränssnittshandbok för union av schema](ui/union-schema.md).
 
-### (Alfa) Beräknade attribut
+<!-- ### (Alpha) Computed attributes
 
 >[!IMPORTANT]
 >
->Funktionen för beräknade attribut är alfavärden. Dokumentationen och funktionerna kan komma att ändras.
+>Computed attribute functionality is in alpha. The documentation and functionality are subject to change.
 
-Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Mer information om beräknade attribut, inklusive hur rollberäknade attribut fungerar i Adobe Experience Platform, får du om du börjar med att läsa [översikt över beräknade attribut](computed-attributes/overview.md).
+Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). -->
 
 ## Profiler och segment
 
