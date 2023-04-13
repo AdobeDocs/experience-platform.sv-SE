@@ -5,7 +5,7 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 6aff88c0bc5cd15b8b3ffb32458402e1edc873c8
+source-git-commit: 3bc750b5e1cf47cbca6b037d099936c80c926cf8
 workflow-type: tm+mt
 source-wordcount: '2741'
 ht-degree: 0%
@@ -163,7 +163,7 @@ Som standard genereras benägenhetspoäng för alla profiler såvida inte en st�
 
 ### Anpassade händelser (*valfri*) {#custom-events}
 
-Om du har ytterligare information förutom [standardhändelsefält](../input-output.md#standard-events) som används av kundens AI för att generera benägenhetspoäng, finns ett anpassat händelsealternativ. Om du använder det här alternativet kan du lägga till ytterligare händelser som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och bidra till mer korrekta resultat. Om den datamängd du har valt innehåller anpassade händelser som har definierats i ditt schema, kan du lägga till dem i din instans.
+Om du har ytterligare information förutom [standardhändelsefält](../data-requirements.md#standard-events) som används av kundens AI för att generera benägenhetspoäng, finns ett anpassat händelsealternativ. Om du använder det här alternativet kan du lägga till ytterligare händelser som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och bidra till mer korrekta resultat. Om den datamängd du har valt innehåller anpassade händelser som har definierats i ditt schema, kan du lägga till dem i din instans.
 
 >[!NOTE]
 >
@@ -187,7 +187,7 @@ När du är klar väljer du **[!UICONTROL Next]** i det övre högra hörnet fö
 
 ### Egna profilattribut (*valfri*)
 
-Du kan definiera viktiga profildatauppsättningsfält (med tidsstämplar) i dina data utöver de [standardhändelsefält](../input-output.md#standard-events) används av kundens AI för att generera benägenhetspoäng. Om du använder det här alternativet kan du lägga till ytterligare profilattribut som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och ge mer korrekta resultat. Om du dessutom lägger till anpassade profilattribut kan kundens AI bättre visa hur specifika profiler hamnar i en benägenhetsklocka.
+Du kan definiera viktiga profildatauppsättningsfält (med tidsstämplar) i dina data utöver de [standardhändelsefält](../data-requirements.md#standard-events) används av kundens AI för att generera benägenhetspoäng. Om du använder det här alternativet kan du lägga till ytterligare profilattribut som du anser vara inflytelserika, vilket kan förbättra modellens kvalitet och ge mer korrekta resultat. Om du dessutom lägger till anpassade profilattribut kan kundens AI bättre visa hur specifika profiler hamnar i en benägenhetsklocka.
 
 >[!NOTE]
 >

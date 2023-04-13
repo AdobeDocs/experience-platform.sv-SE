@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förbered data för användning i intelligenta tjänster
 description: För att Intelligent Services ska kunna hitta insikter från era marknadsföringshändelsedata måste data anrikas semantiskt och underhållas i en standardstruktur. Intelligenta tjänster använder XDM-scheman (Experience Data Model) för att uppnå detta.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 87a8ad253abb219662034652b5f8c4fabfa40484
 workflow-type: tm+mt
 source-wordcount: '2923'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Det här dokumentet innehåller allmän vägledning om hur du mappar data om mar
 
 Om du t.ex. använder AI för att förutsäga sannolikheten för att köpa en produkt behöver modellen för AI för kunden både exempel på lyckade köpvägar och exempel på misslyckade sökvägar. Detta beror på att kundens AI under modellutbildning ser ut att förstå vilka händelser och resor som leder till ett köp. Detta omfattar även de åtgärder som vidtas av kunder som inte har köpt något, t.ex. en person som avbrutit sin resa genom att lägga en artikel i kundvagnen. Dessa kunder kan uppvisa liknande beteenden, men kundens AI kan ge insikter och fördjupa de viktigaste skillnaderna och faktorerna som leder till en högre benägenhetspoäng. På samma sätt kräver Attribution AI både typer av händelser och resor för att visa mått som kontaktytans effektivitet, toppkonverteringsvägar och uppdelning efter kontaktytpunktsposition.
 
-Fler exempel och information om krav på historiska data finns på [Kund-AI](./customer-ai/input-output.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements) Krav på historiska data i dokumentationen för in-/utdata.
+Fler exempel och information om krav på historiska data finns på [Kund-AI](./customer-ai/data-requirements.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements) Krav på historiska data i dokumentationen för in-/utdata.
 
 ### Riktlinjer för att fästa data
 
@@ -39,7 +39,7 @@ Förberedelseprocessen varierar beroende på om dina data lagras i Adobe Experie
 
 Om dina data lagras utanför Experience Platform måste du mappa dina data till de obligatoriska och relevanta fälten i en [Consumer ExperienceEvent-schema](#cee-schema). Schemat kan utökas med anpassade fältgrupper för att bättre kunna samla in kunddata. När den har mappats kan du skapa en datauppsättning med hjälp av ditt Consumer ExperienceEvent-schema och [importera data till plattformen](../ingestion/home.md). CEE-datauppsättningen kan sedan väljas när en [!DNL Intelligent Service].
 
-Beroende på [!DNL Intelligent Service] som du vill använda kan olika fält vara obligatoriska. Observera att det är bäst att lägga till data i ett fält om du har tillgängliga data. Mer information om obligatoriska fält finns på [Attribution AI](./attribution-ai/input-output.md) eller [Kund-AI](./customer-ai/input-output.md) input/output guide.
+Beroende på [!DNL Intelligent Service] som du vill använda kan olika fält vara obligatoriska. Observera att det är bäst att lägga till data i ett fält om du har tillgängliga data. Mer information om obligatoriska fält finns på [Attribution AI](./attribution-ai/input-output.md) eller [Kund-AI](./customer-ai/data-requirements.md) guide för datakrav.
 
 ### Adobe Analytics datagenerering {#analytics-data}
 
@@ -65,7 +65,7 @@ GROUP BY channel.typeAtSource
 
 >[!IMPORTANT]
 >
->Adobe Analytics Connector tar upp till fyra veckor på sig att fylla i data baklänges. Om du nyligen har upprättat en anslutning bör du kontrollera att datauppsättningen har den minsta datalängd som krävs för kunden eller Attribution AI. Granska avsnittet med historiska data i [Kund-AI](./customer-ai/input-output.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements)och verifiera att ni har tillräckligt med data för ert förutsägelsemål.
+>Adobe Analytics Connector tar upp till fyra veckor på sig att fylla i data baklänges. Om du nyligen har upprättat en anslutning bör du kontrollera att datauppsättningen har den minsta datalängd som krävs för kunden eller Attribution AI. Granska avsnittet med historiska data i [Kund-AI](./customer-ai/data-requirements.md#data-requirements) eller [Attribution AI](./attribution-ai/input-output.md#data-requirements)och verifiera att ni har tillräckligt med data för ert förutsägelsemål.
 
 ### Adobe Audience Manager dataförberedelse (endast kundens AI) {#AAM-data}
 
@@ -75,7 +75,7 @@ När källkopplingen direktuppspelar data i Experience Platform kan du välja Ad
 
 >[!IMPORTANT]
 >
->Om du nyligen har konfigurerat en koppling bör du verifiera att datauppsättningen har den minsta tillåtna längden data. Granska avsnittet med historiska data i [indata-/utdataredok](./customer-ai/input-output.md) för kundens AI, och verifiera att ni har tillräckligt med data för ert förutsägelsemål.
+>Om du nyligen har konfigurerat en koppling bör du verifiera att datauppsättningen har den minsta tillåtna längden data. Granska avsnittet med historiska data i [indata-/utdataredok](./customer-ai/data-requirements.md) för kundens AI, och verifiera att ni har tillräckligt med data för ert förutsägelsemål.
 
 ### [!DNL Experience Platform] dataförberedelse
 
@@ -367,5 +367,5 @@ Detta dokument innehåller allmän vägledning om hur du förbereder dina data f
 
 När du har fyllt i en datauppsättning med kundupplevelsedata kan du använda [!DNL Intelligent Services] för att skapa insikter. Se följande dokument för att komma igång:
 
-* [Översikt över Attribution AI](./attribution-ai/overview.md)
-* [Översikt över AI för kunder](./customer-ai/overview.md)
+* [Översikt över AI för attribuering](./attribution-ai/overview.md)
+* [Översikt över AI för kundbenägenhet](./customer-ai/overview.md)

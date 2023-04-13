@@ -5,7 +5,7 @@ feature: Customer AI
 title: Komma igång med AI
 description: Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster.
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
-source-git-commit: 596921163bf64d11545dcde49039bcdd07c253dd
+source-git-commit: 3bc750b5e1cf47cbca6b037d099936c80c926cf8
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 0%
@@ -49,4 +49,4 @@ Den här guiden innehåller exempel på API-anrop som visar hur du formaterar di
 
 ## Nästa steg
 
-När du är klar med stegen som beskrivs i dokumentet ovan kan du gå till [Indata och utdata](./input-output.md) dokumentation. I det här dokumentet ges en kort översikt över vilka typer av data som används och produceras i kundens AI.
+När du är klar med stegen som beskrivs i dokumentet ovan kan du gå till [Indata och utdata](./data-requirements.md) dokumentation. I det här dokumentet ges en kort översikt över vilka typer av data som används och produceras i kundens AI.

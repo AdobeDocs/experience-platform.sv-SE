@@ -6,7 +6,7 @@ title: Felsökning av kund-AI
 description: Hitta svar på vanliga fel i kundens AI.
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 3bc750b5e1cf47cbca6b037d099936c80c926cf8
 workflow-type: tm+mt
 source-wordcount: '494'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Om du får felmeddelandet &quot;[!UICONTROL Model Quality is poor. We recommend 
 Börja med att kontrollera att era data är korrekta. Det är viktigt att dina data innehåller de fält som behövs för prediktiva resultat.
 
 - Kontrollera om din datauppsättning har de senaste datumen. Kunds-AI antar alltid att data är aktuella när modellen aktiveras.
-- Kontrollera om det finns data som saknas i det definierade förutsägelsefönstret och berättigandefönstret. Dina data behöver fyllas i utan luckor. Kontrollera även att datauppsättningen uppfyller [Krav på AI-historik för kunder](./input-output.md#data-requirements).
+- Kontrollera om det finns data som saknas i det definierade förutsägelsefönstret och berättigandefönstret. Dina data behöver fyllas i utan luckor. Kontrollera även att datauppsättningen uppfyller [Krav på AI-historik för kunder](./data-requirements.md#data-requirements).
 - Kontrollera om det finns data som saknas i e-handel, program, webb och sökning i egenskaperna för schemafält.
 
 Om dina data inte verkar vara problemet kan du försöka ändra villkoren för berättigandepopulation för att begränsa modellen till vissa profiler (till exempel `_experience.analytics.customDimensions.eVars.eVar142` finns under de senaste 56 dagarna). Detta begränsar populationen och storleken på de data som används i utbildningsfönstret.
