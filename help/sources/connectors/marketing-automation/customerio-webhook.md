@@ -1,8 +1,10 @@
 ---
 title: Customer.io Source Overview
 description: Lär dig hur du ansluter Customer.io till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att utnyttja webbhooks
-badge: "Beta"
-source-git-commit: 9d6a4b5f60f7895e2c1833493926db147064f3f1
+badge: Beta
+last-substantial-update: 2023-03-29T00:00:00Z
+exl-id: 0f4ee106-c22b-465c-9c5e-83709e8424f5
+source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
 workflow-type: tm+mt
 source-wordcount: '389'
 ht-degree: 0%
@@ -57,4 +59,3 @@ Dokumentationen nedan innehåller information om hur du skapar en [!DNL Customer
 ### Anslut [!DNL Customer.io] till plattform med användargränssnittet {#connect-to-platform-using-ui}
 
 * [Skapa en källanslutning och ett dataflöde som ger [!DNL Customer.io] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/customerio-webhook.md)
-

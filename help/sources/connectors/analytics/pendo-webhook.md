@@ -1,8 +1,10 @@
 ---
 title: Översikt över Pendo-källa
 description: Lär dig hur du ansluter Pendo till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att använda webbhooks
-badge: "Beta"
-source-git-commit: 24691e3ded33c3af31fd0cee107f2f3ca898585f
+badge: Beta
+last-substantial-update: 2023-03-29T00:00:00Z
+exl-id: 376f18ef-1eea-4c42-8041-6fadb5906e9b
+source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
@@ -50,4 +52,3 @@ Dokumentationen nedan innehåller information om hur du skapar en [!DNL Pendo] d
 ### Anslut [!DNL Pendo] till plattform med användargränssnittet {#connect-to-platform-using-ui}
 
 * [Skapa en källanslutning att hämta [!DNL Pendo] data till plattformen via användargränssnittet](../../tutorials/ui/create/analytics/pendo-webhook.md)
-

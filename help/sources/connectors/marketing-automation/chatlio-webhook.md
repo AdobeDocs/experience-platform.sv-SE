@@ -1,8 +1,10 @@
 ---
 title: Chatlio Source Overview
 description: Lär dig hur du ansluter Chatlio till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att utnyttja webbhooks
-badge: "Beta"
-source-git-commit: 2c13cb5a951a3144d0047b567194732acdc35dab
+badge: Beta
+last-substantial-update: 2023-03-29T00:00:00Z
+exl-id: 4a71d1dc-e0eb-443e-a956-8caa0e82fa18
+source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 0%
@@ -55,4 +57,3 @@ Dokumentationen nedan innehåller information om hur du skapar en [!DNL Chatlio]
 ### Anslut [!DNL Chatlio] till plattform med användargränssnittet {#connect-to-platform-using-ui}
 
 * [Skapa en källanslutning att hämta [!DNL Chatlio] data till plattformen via användargränssnittet](../../tutorials/ui/create/marketing-automation/chatlio-webhook.md)
-
