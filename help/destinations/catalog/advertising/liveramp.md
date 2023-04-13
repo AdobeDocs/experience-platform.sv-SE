@@ -3,7 +3,7 @@ title: (Alfa) [!DNL LiveRamp SFTP] anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 hidefromtoc: true
 hide: true
-source-git-commit: b308def0e9b9643cfc1dcc8ac7db19eb733750ea
+source-git-commit: 367ef59f623acc38e636a6cae0c85f186eaccfda
 workflow-type: tm+mt
 source-wordcount: '1647'
 ht-degree: 0%
@@ -91,7 +91,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 >id="platform_destinations_liveramp_subkey"
 >title="ID för krypteringsundernyckel"
 >abstract="Det undernyckel-ID som används för kryptering, baserat på den offentliga krypteringsnyckeln för LiveRamp. Det här fältet är obligatoriskt om du har angett en krypteringsnyckel i autentiseringssteget."
->additional-url="https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key" text="Lär dig hur du hämtar undernyckel-ID:t."
+>additional-url="https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key" text="Lär dig hur du hämtar undernyckel-ID:t"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
