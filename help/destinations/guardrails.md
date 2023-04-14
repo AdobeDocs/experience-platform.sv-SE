@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 1132c5166f1271f1b8eb0c618b83d028b413b991
 workflow-type: tm+mt
-source-wordcount: '1198'
+source-wordcount: '1177'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ Skyddskassorna nedan gäller vanligtvis aktivering via [alla måltyper](/help/de
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Hård | För närvarande går det bara att exportera *profilpostattribut* till destinationer. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
 | Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Inte tillgängligt | Hård | För närvarande är det **not** kan exporteras *matris- eller mappattribut* till destinationer. Undantaget till den här regeln är [identitetskarta](/help/xdm/field-groups/profile/identitymap.md), som exporteras både i direktuppspelande och filbaserade aktiveringar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Aktivering av strömning {#streaming-activation}
 
@@ -58,7 +58,7 @@ Skyddskassorna nedan gäller aktivering via [mål för direktuppspelning](/help/
 | --- | --- | --- | --- |
 | Antal aktiveringar (HTTP-meddelanden med profilexporter) per sekund | Ej tillämpligt | – | Det finns för närvarande ingen gräns för hur många meddelanden per sekund som skickas från Experience Platform till partnermålens API-slutpunkter. <br> Eventuella begränsningar eller latenser bestäms av slutpunkten där Experience Platform skickar data. Se även till att kontrollera [katalog](/help/destinations/catalog/overview.md) målsidan som du ansluter och aktiverar data till. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Batchaktivering (filbaserad) {#batch-file-based-activation}
 
@@ -70,7 +70,7 @@ Skyddskassorna nedan gäller aktivering via [batchvis (filbaserat) mål](/help/d
 | Maximalt antal segment som kan exporteras vid en given timme | 100 | Mjuk | Rekommendationen är att lägga till högst 100 segment i batchmåldataflöden. |
 | Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Hård | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [planeringsavsnitt](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) av självstudiekursen om aktivering av batchdestinationer. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Ad hoc-aktivering {#ad-hoc-activation}
 
@@ -81,7 +81,7 @@ Skyddsritningarna nedan gäller för [ad hoc-aktivering](/help/destinations/api/
 | Aktiverade segment per ad hoc-aktiveringsjobb | 80 | Hård | För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 segment. Om du försöker aktivera fler än 80 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner. |
 | Samtidiga ad hoc-aktiveringsjobb per segment | 1 | Hård | Kör inte mer än ett samtidiga ad hoc-aktiveringsjobb per segment. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Aktivering av mål för kantanpassning {#edge-destinations-activation}
 
@@ -90,10 +90,10 @@ Skyddskassorna nedan gäller aktivering via [mål för kantanpassning](/help/des
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Maximalt antal [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) mål | 10 | Mjuk | Du kan konfigurera dataflöden till 10 anpassade mål för personalisering per sandlåda. |
-| Maximalt antal attribut som mappats till ett personaliseringsmål per sandlåda | 20 | Hård | Högst 20 attribut kan mappas i ett dataflöde till ett personaliseringsmål per sandlåda. |
+| Maximalt antal attribut som mappats till ett personaliseringsmål per sandlåda | 30 | Hård | Högst 30 attribut kan mappas i ett dataflöde till ett personaliseringsmål per sandlåda. |
 | Maximalt antal segment mappade till ett enskilt [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) mål | 50 | Mjuk | Du kan aktivera maximalt 50 segment i ett aktiveringsflöde till ett enda Adobe Target-mål. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Destinationens SDK skyddsräcken {#destination-sdk-guardrails}
 
@@ -104,7 +104,7 @@ Skyddskassorna nedan gäller aktivering via [mål för kantanpassning](/help/des
 | Maximalt antal [privata anpassade destinationer](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | Mjuk | Du kan skapa högst 5 privata anpassade direktuppspelnings- eller gruppmål med hjälp av Destination SDK. Kontakta en kundtjänstrepresentant om du behöver skapa fler än fem sådana destinationer. |
 | Profilexportpolicy för Destination SDK | <ul><li>`maxBatchAgeInSecs` (minst 1 800 och högst 3 600)</li><li>`maxNumEventsInBatch` (minimum 1.000, max 10.000)</li></ul> | Hård | När du använder [konfigurerbar aggregering](/help/destinations/destination-sdk/destination-configuration.md#configurable-aggregation) för ditt mål bör du tänka på de lägsta och högsta värden som avgör hur ofta HTTP-meddelanden skickas till ditt API-baserade mål och hur många profiler meddelandena ska innehålla. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Princip för målbegränsning och återförsök {#destination-throttling-and-retry-policy}
 
@@ -114,7 +114,7 @@ Uppgifter om begränsningströsklar eller begränsningar för angivna destinatio
 | --- | --- |
 | Företagsmål (HTTP API, Amazon Kinesis, Azure EventHubs) | På 95 % av tiden försöker Experience Platform att erbjuda en genomströmningslatens på mindre än 10 minuter för meddelanden som skickats utan fel med en hastighet på mindre än 10 000 förfrågningar per sekund för varje dataflöde till en företagsdestination. <br> Om det uppstår fel på begäranden till ditt företags mål, lagrar Experience Platform de misslyckade förfrågningarna och försöker skicka dem till din slutpunkt två gånger. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Gardrutor för andra Experience Platform-tjänster {#guardrails-other-services}
 
