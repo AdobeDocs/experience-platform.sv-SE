@@ -4,7 +4,7 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 12bae2f5b3dd04eaf72e736cb1ddca4bdd0a9d52
+source-git-commit: fb1a8f3a8f78578a0c7d6b8ab4feb60d8c5da1af
 workflow-type: tm+mt
 source-wordcount: '1072'
 ht-degree: 2%
@@ -144,6 +144,7 @@ ht-degree: 2%
       * [Oraclena svarssystemanslutning](./catalog/email-marketing/oracle-responsys.md)
       * [(API) Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud-exact-target.md)
       * [(Filer) Salesforce Marketing Cloud-anslutning](./catalog/email-marketing/salesforce-marketing-cloud.md)
+      * [[!DNL Salesforce Marketing Cloud Account Engagement]](./catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md)
       * [SendGrid-anslutning](./catalog/email-marketing/sendgrid.md)
    * Märkordstillägg {#launch-extensions}
       * [Översikt över taggtillägg](./catalog/launch-extensions/overview.md)
