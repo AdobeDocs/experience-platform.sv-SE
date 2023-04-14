@@ -2,9 +2,9 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 5e6fa112ccca7405c3dfd0653d3d6cad8b9ed2af
+source-git-commit: 1b4554e204663d40c3a18da792614305abb7d296
 workflow-type: tm+mt
-source-wordcount: '1129'
+source-wordcount: '1177'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,15 @@ Du kan kopiera frågans SQL till Urklipp från den här vyn. Kopiera frågan gen
 
 ### Kör information för frågor med anonymt block {#anonymous-block-queries}
 
-Frågor som använder anonyma block för att bilda SQL-satser separeras till sina individuella frågor. På så sätt kan du inspektera körningsinformationen för varje frågeblock individuellt.
+Frågor som använder anonyma block för att bilda SQL-satser separeras till sina individuella underfrågor. På så sätt kan du inspektera körningsinformationen för varje frågeblock individuellt.
+
+>[!NOTE]
+>
+>Körningsinformationen för ett anonymt block som använder DROP-kommandot kommer att **not** rapporteras som en separat underfråga. Separata körningsdetaljer finns tillgängliga för CTAS-frågor, ITAS-frågor och COPY-satser som används som anonyma blockunderfrågor. Körningsinformation för DROP-kommandot stöds för närvarande inte.
 
 Anonyma block markeras med en `$$` prefix före frågan. Se [anonymt blockdokument](../essential-concepts/anonymous-block.md) om du vill veta mer om anonyma block i frågetjänsten.
 
-Anonyma blockfrågor har tabbar till vänster om körningsstatusen. Välj en flik för att visa körningsinformation.
+Anonyma blockunderfrågor har tabbar till vänster om körningsstatusen. Välj en flik för att visa körningsinformation.
 
 ![Översikt över frågekörningen som visar en anonym blockfråga. Flerfrågeflikarna markeras.](../images/ui/monitor-queries/anonymous-block-overview.png)
 
