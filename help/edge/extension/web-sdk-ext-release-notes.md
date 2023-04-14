@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 2b8307422e4f073451c23ae9b35061d845f0893c
+source-git-commit: 52c6420a7fba6474dd2e9e97c9b2f49b5208be1d
 workflow-type: tm+mt
-source-wordcount: '1588'
+source-wordcount: '1611'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.16.1 - 14 april 2023
+
+* Korrigerade ett problem med XDM-objekt och variabeldataelement där du inte kunde välja ett schema från en icke-standardsandlåda.
 
 ## Version 2.16.0 - 30 mars 2023
 
