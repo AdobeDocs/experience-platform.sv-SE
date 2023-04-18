@@ -2,9 +2,9 @@
 title: Versionsinformation om Google Data Layer Extension
 description: Den senaste versionsinformationen om taggtillägget Google Data Layer i Adobe Experience Platform.
 exl-id: 740b6e3a-d469-475d-9523-03b0b48b11c8
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 0b9fa104777f21fc9bc893784ae3155d887a48d2
 workflow-type: tm+mt
-source-wordcount: '61'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,27 @@ ht-degree: 0%
 
 ## Version 1.0.4
 
-* Allmän betaversion av tillägget
+* Allmän betaversion av tillägget.
 
 ## Version 1.0.6
 
-* En åtgärd har lagts till för att återställa datalagret till det beräknade läget
-* Åtgärda buggar i dataelement som förhindrade att värden hämtades från det beräknade tillståndet
+* Tillägg av åtgärd för att återställa datalagret till det beräknade läget.
+* Åtgärda buggar i dataelement som förhindrar hämtning av värden från det beräknade läget.
+
+## Version 1.1.1
+
+En avsevärd förbättring och felkorrigering som är resultatet av betatestningsfeedback.
+
+* Korrigerar ett problem där ett tomt dataelement för Google datalagertillägg som används i en regel som inte är datalager (t.ex. inläst bibliotek) returnerar datalagret, inte det beräknade läget.
+* Korrigerar ett problem där datalagrets beräknade tillstånd inte överfördes från hjälpen i händelser vid tidpunkten för händelseutlösandet, utan i stället vid tidpunkten för regelkörningen.
+* Lägger till en växlingsknapp i dataelementsdialogrutan där användaren kan välja om endast värden från händelser ska returneras.
+* Åtgärdar ett problem där händelsehistoriken inte fångades upp korrekt av regelhändelseavlyssnare.
+* Förbättrad mindre kodskärpa.
+
+## Version 1.2.0
+
+* Lägger till en åtgärd som ska skickas till datalagret med hjälp av en multifältdialogruta med nyckelvärden.
+* Korrigerar ett fel som förhindrade att tillägget lästes in när taggar distribuerades synkront.
+* Korrigerar ett fel som orsakade ett fel när ett dataelement sparades under vissa omständigheter.
+* Lägger till dokumentation i händelsedialogrutan som förklarar användningen av händelseobjektet Tags.
+* Lägger till en varning om oändliga slingor i händelsedialogrutan.
