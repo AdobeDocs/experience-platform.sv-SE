@@ -5,9 +5,9 @@ title: Allmänna riktlinjer för frågekörning i frågetjänsten
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: adf8da46d09c60b86df16493043efeacbdd24fe2
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1067'
 ht-degree: 2%
 
 ---
@@ -324,7 +324,6 @@ Genom att läsa det här dokumentet har du fått en del viktiga synpunkter när 
 Fler exempel på frågor som kan användas i Query Service finns i följande dokumentation:
 
 - [Analysinsikter](../use-cases/analytics-insights.md)
-- [Aktivitetsanalys med Adobe Target](../use-cases/activity-analysis-with-adobe-target.md)
 - [Skapa en trendrapport över händelser](../use-cases/trended-report-of-events.md)
 - [Visa en sammanslagningsrapport för en besökare](../use-cases/roll-up-report-of-a-visitor.md)
 - [Visa en användares sidvyer](../use-cases/list-visitor-sessions.md)
