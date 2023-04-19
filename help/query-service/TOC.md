@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: 83d1889450ba292573a6f995120691fc57cb6cfa
+source-git-commit: adf8da46d09c60b86df16493043efeacbdd24fe2
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '270'
 ht-degree: 14%
 
 ---
@@ -31,7 +31,6 @@ ht-degree: 14%
       - [Skapa decimalbaserade härledda attribut](data-distiller/derived-attributes/decile-based-derived-attributes.md)
 - Användningsfall {#use-cases}
    - [Övergiven surfning](use-cases/abandoned-browse.md)
-   - [Aktivitetsanalys med Adobe Target](use-cases/activity-analysis-with-adobe-target.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
    - [Punktfiltrering](use-cases/bot-filtering.md)
    - [Skapa en trendrapport över händelser](use-cases/trended-report-of-events.md)
