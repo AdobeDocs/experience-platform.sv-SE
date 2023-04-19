@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Textnärvaro och optisk teckenigenkänning
 description: I API:t för innehållstaggning kan OCR-tjänsten (Text Presence/Optical Character Recognition) visa om det finns text i en viss bild. Om det finns text kan OCR returnera texten.
 exl-id: 85b976a7-0229-43e9-b166-cdbd213b867f
-source-git-commit: b124ed97da8bde2a7fc4f10d350c81a47e096f29
+source-git-commit: 82722ddf7ff543361177b555fffea730a7879886
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 2%
@@ -110,7 +110,7 @@ Ett godkänt svar returnerar texten som upptäcktes i `tags` lista för varje bi
       "tags": [
         {
           "text": "yosemite",
-          "relevance": 0.05604639115920341
+          "relevance": 0.06
         }
       ],
       "request_element_id": 0

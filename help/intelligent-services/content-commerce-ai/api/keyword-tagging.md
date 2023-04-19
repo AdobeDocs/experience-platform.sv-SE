@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Nyckelordstaggning i API:t för innehållstaggar
 description: När tjänsten Nyckelordstaggar anges i ett textdokument extraheras automatiskt nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne. För att kunna extrahera nyckelord används en kombination av nyckelordsigenkänning (NER) och nyckelordstaggalgoritmer som inte övervakas.
 exl-id: 56a2da96-5056-4702-9110-a1dfec56f0dc
-source-git-commit: a42bb4af3ec0f752874827c5a9bf70a66beb6d91
+source-git-commit: 7c8c1d69f4c4e0a1374603d541b634ac7f64ab38
 workflow-type: tm+mt
-source-wordcount: '450'
-ht-degree: 3%
+source-wordcount: '447'
+ht-degree: 2%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 När nyckelordstaggningstjänsten ges ett textdokument extraheras nyckelord eller nyckelfraser som bäst beskriver dokumentets ämne. För att kunna extrahera nyckelord används en kombination av nyckelordsigenkänning (NER) och nyckelordstaggalgoritmer som inte övervakas.
 
-I följande tabell visas de namngivna entiteter som [!DNL Content Tagging] har identifierat:
+I följande tabell visas de namngivna entiteter som [!DNL Content Tagging] kan identifiera:
 
 | Enhetsnamn | Beskrivning |
 | --- | --- |
@@ -86,15 +86,18 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 -F 'infile_1=@simple-text.pdf'
 ```
 
+**Indataparametrar**
+
 | Egenskap | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| `application-id` | ID:t för det skapade programmet. | Ja |
 | `top_n` | Antal resultat som ska returneras. 0, för att returnera alla resultat. Vid användning tillsammans med tröskelvärde är antalet returnerade resultat mindre än någon av gränserna. | Nej |
 | `min_relevance` | Tröskelvärde under vilket resultat måste returneras. Exkludera parametern för att returnera alla resultat. | Nej |
 | `min_key_phrase_length` | Minsta antal ord som krävs i nyckelfraserna. | Nej |
 | `max_key_phrase_length` | Maximalt antal ord som krävs i nyckelfraserna. | Nej |
 | `last_semantic_unit_type` | Returnera endast semantiska enheter upp till den angivna nivån i det hierarkiska svaret. &quot;key_phrase&quot; returnerar endast nyckelfraser, &quot;linked_entity&quot; returnerar endast nyckelfraser och motsvarande länkade entiteter, och &quot;concept&quot; returnerar nyckelfraser, länkade entiteter och koncept. | Nej |
 | `entity_types` | Typer av entiteter som ska returneras som nyckelfraser. | Nej |
+
+**Dokumentobjekt**
 
 | Namn | Datatyper | Obligatoriskt | Standard | Värden | Beskrivning |
 | -----| --------- | -------- | ------- | ------ | ----------- |
