@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Färgtaggning i API:t för innehållstaggar
 description: När en bild anges kan du med tjänsten Färgtaggning beräkna histogrammet för pixelfärger och sortera dem efter dominerande färger i grupper.
 exl-id: 6b3b6314-cb67-404f-888c-4832d041f5ed
-source-git-commit: e6ea347252b898f73c2bc495b0324361ee6cae9b
+source-git-commit: fd8891bdc7d528e327d2a72c2427f7bbc6dc8a03
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '653'
 ht-degree: 2%
 
 ---
@@ -21,11 +21,11 @@ Den här metoden extraherar ett färghistogram i hela bilden.
 
 **Färgtaggning (med mask)**
 
-Den här metoden använder en djupinlärningsbaserad förgrundsextraherare för att identifiera objekt i förgrunden. När förgrundsobjekten har extraherats beräknas ett histogram över de dominerande färgerna för båda, för- och bakgrundsregionerna, tillsammans med hela bilden.
+Den här metoden använder en djupinlärningsbaserad förgrundsextraherare för att identifiera objekt i förgrunden. När förgrundsobjekten har extraherats beräknas ett histogram över de dominerande färgerna för både förgrunds- och bakgrundsregionerna, tillsammans med hela bilden.
 
 **Tonextrahering**
 
-Förutom varianterna ovan kan man konfigurera tjänsten så att den hämtar ett histogram med toner för:
+Utöver de varianter som nämns ovan kan du konfigurera tjänsten så att den hämtar ett histogram med toner för:
 
 - Den övergripande bilden (när en fullständig bildvariant används)
 - Den övergripande bilden samt för- och bakgrundsregionerna (när du använder varianten med maskering)
@@ -161,7 +161,7 @@ Observera att resultatet här har extraherad färg på det&quot;övergripande&qu
 
 **Begäran - maskerad bildvariant**
 
-I följande exempelbegäran används maskeringsmetoden för färgtaggning. Vi aktiverar detta genom att ställa in `enable_mask` parameter till `true` i begäran.
+I följande exempelbegäran används maskeringsmetoden för färgtaggning. Det här är aktiverat genom att ställa in `enable_mask` parameter till `true` i begäran.
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
@@ -202,7 +202,9 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 -F 'infile_1=@1431RDMJANELLERAWJACKE_2.jpg'
 ```
 
->Obs! Dessutom ställer vi in `retrieve_tone` parameter till `true` i ovanstående begäran. Detta gör att vi kan hämta ett histogram för tonfördelning över varma, neutrala och svala toner i bildens övergripande, för- och bakgrundsregioner.
+>[!NOTE]
+>
+>Dessutom finns `retrieve_tone` parametern är också inställd på `true` i ovanstående begäran. Detta gör att vi kan hämta ett histogram för tonfördelning över varma, neutrala och svala toner i bildens övergripande, för- och bakgrundsregioner.
 
 **Response - maskerad bildvariant**
 
@@ -352,16 +354,16 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v2/predict \
 }]
 ```
 
-Förutom färgerna från den övergripande bilden kan du nu även se färger från förgrunds- och bakgrundsregionerna. Eftersom vi aktiverar tonhämtning för vart och ett av de ovanstående områdena kan vi även hämta ett tonhistogram.
+Förutom färgerna från den övergripande bilden kan du nu även se färger från förgrunds- och bakgrundsregionerna. Eftersom tonhämtning är aktiverad för vart och ett av de ovanstående områdena kan du även hämta en tons histogram.
 
 **Indataparametrar**
 
 | Namn | Datatyper | Obligatoriskt | Standard | Värden | Beskrivning |
 | --- | --- | --- | --- | --- | --- |
-| `documents` | array (Document-Object) | Ja | – | Se nedan | Lista med json-element där varje objekt i listan representerar ett dokument. |
+| `documents` | array (Document-Object) | Ja | – | Se nedan | Lista med JSON-element där varje objekt i listan representerar ett dokument. |
 | `top_n` | tal | Nej | 0 | Icke-negativt heltal | Antal resultat som ska returneras. 0, för att returnera alla resultat. Vid användning tillsammans med tröskelvärde blir antalet returnerade resultat mindre än någon av gränserna. |
 | `min_coverage` | tal | Nej | 0.05 | Realnummer | Tröskelvärde för täckning över vilket resultaten måste returneras. Exkludera parameter för att returnera alla resultat. |
-| `resize_image` | tal | Nej | True | Sant/falskt | Om indatabildens storlek ska ändras eller inte. Som standard ändras bildens storlek till 320*320 pixlar innan färgextraheringen utförs. I felsökningssyfte kan vi även tillåta att koden körs på en fullständig bild genom att ange värdet False. |
+| `resize_image` | tal | Nej | True | Sant/falskt | Om indatabildens storlek ska ändras eller inte. Som standard ändras bildens storlek till 320*320 pixlar innan färgextraheringen utförs. I felsökningssyfte kan vi även tillåta att koden körs på en fullständig bild genom att ställa in den på `False`. |
 | `enable_mask` | tal | Nej | Falskt | Sant/falskt | Aktiverar/inaktiverar färgextrahering |
 | `retrieve_tone` | tal | Nej | Falskt | Sant/falskt | Aktiverar/inaktiverar tonextrahering |
 
@@ -369,7 +371,7 @@ Förutom färgerna från den övergripande bilden kan du nu även se färger fr�
 
 | Namn | Datatyper | Obligatoriskt | Standard | Värden | Beskrivning |
 | -----| --------- | -------- | ------- | ------ | ----------- |
-| `repo:path` | string | – | – | – | Försignerad URL för det dokument från vilket nyckelfraser ska extraheras. |
-| `sensei:repoType` | string | – | – | HTTPS | Typ av rapport där dokumentet lagras. |
-| `sensei:multipart_field_name` | string | – | – | – | Använd detta när du skickar dokumentet som ett multipart-argument i stället för att använda försignerade URL:er. |
-| `dc:format` | string | Ja | – | &quot;text/plain&quot;,<br>&quot;application/pdf&quot;,<br>&quot;text/pdf&quot;,<br>&quot;text/html&quot;,<br>&quot;text/rtf&quot;,<br>&quot;application/rtf&quot;,<br>&quot;application/msword&quot;,<br>&quot;application/vnd.openxmlformats-officedocument.wordprocesingml.document&quot;,<br>&quot;application/mspowerpoint&quot;,<br>&quot;application/vnd.ms-powerpoint&quot;,<br>&quot;application/vnd.openxmlformats-officedocument.presentationml.presentation&quot; | Dokumentkodningen kontrolleras mot tillåtna indatakodningstyper innan den bearbetas. |
+| `repo:path` | string | – | – | – | Dokumentets försignerade URL. |
+| `sensei:repoType` | string | – | – | HTTPS | Typ av rapport där bilden lagras. |
+| `sensei:multipart_field_name` | string | – | – | – | Använd detta när du skickar bildfilen som ett multipart-argument i stället för att använda försignerade URL:er. |
+| `dc:format` | string | Ja | – | &quot;image/jpg&quot;,<br>&quot;image/jpeg&quot;,<br>&quot;image/png&quot;,<br>&quot;image/tiff&quot; | Bildkodningen kontrolleras mot tillåtna indatakodningstyper innan den bearbetas. |
