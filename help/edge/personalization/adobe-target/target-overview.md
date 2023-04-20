@@ -3,9 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 5a048505be139b58dbb3bf85120df5e3cc46881e
 workflow-type: tm+mt
-source-wordcount: '1266'
+source-wordcount: '1311'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,10 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->The [Adobe Target-dokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/aep-implementation/aep-web-sdk.html?lang=en) innehåller information som är specifik för Platform Web SDK när det gäller Target-funktioner.
+>Lär dig hur du migrerar målinsimplementeringen till Platform Web SDK med [Migrera mål från at.js 2.x till Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) självstudiekurs.
+>
+>Lär dig implementera Target för första gången med [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) självstudiekurs. Mer information om Target finns i självstudieavsnittet med namnet [Konfigurera Target med Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
@@ -35,7 +38,7 @@ Följande diagram hjälper dig att förstå arbetsflödet i [!DNL Target] och [!
 
 ![Diagram över Adobe Target edge-beslut med Platform Web SDK](./assets/target-platform-web-sdk.png)
 
-| Utlysning | Detaljer |
+| Utlysning | Information |
 | --- | --- |
 | 1 | Enheten läser in [!DNL Platform Web SDK]. The [!DNL Platform Web SDK] skickar en begäran till edge-nätverket med XDM-data, DataStreams Environment ID, inskickade parametrar och Customer ID (valfritt). Sidan (eller behållarna) är fördold. |
 | 2 | edge-nätverket skickar begäran till edge-tjänsterna för att berika den med besökar-ID, samtycke och annan kontextinformation för besökare, som geopositionering och enhetsvänliga namn. |
@@ -168,9 +171,9 @@ The [!DNL Platform Web SDK] gör att du kan uppdatera profilen till [!DNL Target
 
 Så här uppdaterar du en [!DNL Target] kontrollerar du att profildata skickas med följande:
 
-* Under `“data {“`
-* Under `“__adobe.target”`
-* Prefix `“profile.”` t.ex. enligt nedan
+* Under `"data {"`
+* Under `"__adobe.target"`
+* Prefix `"profile."` t.ex. enligt nedan
 
 | Nyckel | Typ | Beskrivning |
 | --- | --- | --- |
