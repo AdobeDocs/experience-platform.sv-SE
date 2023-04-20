@@ -2,9 +2,9 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: ea480854c6058d84615b66a7df2d7c8fbd619bab
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '903'
 ht-degree: 1%
 
 ---
@@ -83,6 +83,11 @@ Mer information om dessa värden finns i [Google Cloud Storage HMAC-nycklar](htt
 
 ### Fyll i målinformation {#destination-details}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_gam360_appendSegmentID"
+>title="Lägg till segment-ID till segmentnamn"
+>abstract="Välj det här alternativet om du vill att segmentnamnet i Google Ad Manager 360 ska innehålla segment-ID:t från Experience Platform: `Segment Name (Segment ID)`"
+
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
@@ -93,6 +98,12 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på [!DNL Google] konto:
    * Använd `AdX buyer` for [!DNL Google AdX]
    * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
+
+<!--
+
+*  **[!UICONTROL Append segment ID to segment name]**: Select this option to have the segment name in Google Ad Manager 360 include the segment ID from Experience Platform, like this: `Segment Name (Segment ID)`
+
+-->
 
 ### Aktivera aviseringar {#enable-alerts}
 
