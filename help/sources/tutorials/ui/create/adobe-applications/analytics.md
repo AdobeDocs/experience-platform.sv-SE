@@ -1,13 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Analytics-källkoppling;Analytics-kontakt;Analytics-källa;analytics
-solution: Experience Platform
+keywords: Experience Platform;populära ämnen;Analyskällkoppling;Analyskontakt;Analyskälla;analys;filtrering;filtrering för profil;kundprofil i realtid;filter;filterprofildata;radfiltrering;filtrering på kolumnnivå
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
-type: Tutorial
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 9c2ede973aa4348f15362ba80fdcd7a231577909
+source-git-commit: 23a99a46cfd6e42dd0f4815bb972dbe46104b60f
 workflow-type: tm+mt
-source-wordcount: '2230'
+source-wordcount: '2245'
 ht-degree: 0%
 
 ---
