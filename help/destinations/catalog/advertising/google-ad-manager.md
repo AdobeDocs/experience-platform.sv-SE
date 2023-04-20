@@ -5,8 +5,8 @@ description: Google Ad Manager, tidigare DoubleClick for Publishers eller Double
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
 source-git-commit: ea480854c6058d84615b66a7df2d7c8fbd619bab
 workflow-type: tm+mt
-source-wordcount: '879'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
