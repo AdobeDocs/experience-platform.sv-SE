@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 10edb5dfd9ce99b69cf5bb014f4903942c9bff3e
+source-git-commit: 33a660800e3202d9969c4e44eba8419e22db57a3
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '968'
 ht-degree: 8%
 
 ---
@@ -90,7 +90,8 @@ ht-degree: 8%
       - [Snowflake-kontakt](connectors/databases/snowflake.md)
       - [Teradata Vantage-kontakt](connectors/databases/teradata-vantage.md)
    - eCommerce {#ecommerce}
-      - [Förminska koppling](connectors/ecommerce/shopify.md)
+      - [Förminska](connectors/ecommerce/shopify.md)
+      - [Förminska strömning](connectors/ecommerce/shopify-streaming.md)
    - Lokalt system {#local-system}
       - [Anslutning för lokal filöverföring](connectors/local-system/local-file-upload.md)
    - Automatisering av marknadsföring {#marketing-automation}
@@ -167,6 +168,7 @@ ht-degree: 8%
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - eCommerce {#ecommerce}
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
+         - [Förminska strömning](tutorials/api/create/ecommerce/shopify-streaming.md)
       - Automatisering av marknadsföring {#marketing-automation}
          - [Chatlio](tutorials/api/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/api/create/marketing-automation/customerio-webhook.md)
@@ -284,6 +286,7 @@ ht-degree: 8%
          - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
       - eCommerce {#ecommerce}
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
+         - [Förminska strömning](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - Lokalt system {#local-system}
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Automatisering av marknadsföring {#marketing-automation}
