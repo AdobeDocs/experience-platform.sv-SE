@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 379a3769965bb425ca2c8df195b99a98f0b5398d
+source-git-commit: b1e9b781f3b78a22b8b977fe08712d2926254e8c
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '1178'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Du kan konfigurera olika filformateringsalternativ för exporterade filer med hj
 * To configure file formatting options for exported files by using the Experience Platform Flow Service API, read [Flow Service API - Destinations](https://developer.adobe.com/experience-platform-apis/references/destinations/).
 -->
 
-## Filformateringskonfiguration {#file-configuration}
+## Filformateringskonfiguration för CSV-filer {#file-configuration}
 
 Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help/destinations/ui/connect-destination.md) arbetsflöde. Välj **Datatyp: Segment** och **Filtyp: CSV** för att visa de filformateringsinställningar som är tillgängliga för den exporterade filen `CSV` filer.
 
@@ -41,7 +41,12 @@ Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help
 
 ### Avgränsare {#delimiter}
 
-Anger en avgränsare för varje fält och värde. Tillgängliga alternativ är:
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_delimiter"
+>title="Avgränsare"
+>abstract="Använd den här kontrollen för att ange en avgränsare för varje fält och värde. I dokumentationen finns exempel för varje markering."
+
+Använd den här kontrollen om du vill ange en avgränsare för varje fält och värde i de exporterade CSV-filerna. Tillgängliga alternativ är:
 
 * Colon `(:)`
 * Komma `(,)`
@@ -49,29 +54,108 @@ Anger en avgränsare för varje fält och värde. Tillgängliga alternativ är:
 * Semikolon `(;)`
 * Tabb `(\t)`
 
-### Citattecken
+#### Exempel
 
-Anger ett enskilt tecken som används för att undvika citattecken där avgränsaren kan vara en del av värdet.
+Visa exemplen nedan för innehållet i de exporterade CSV-filerna med var och en av valen i användargränssnittet.
 
-### Escape-tecken
+* Exempelutdata med **[!UICONTROL Colon `(:)`]** markerat: `male:John:Doe`
+* Exempelutdata med **[!UICONTROL Comma `(,)`]** markerat: `male,John,Doe`
+* Exempelutdata med **[!UICONTROL Pipe `(|)`]** markerat: `male|John|Doe`
+* Exempelutdata med **[!UICONTROL Semicolon `(;)`]** markerat: `male;John;Doe`
+* Exempelutdata med **[!UICONTROL Tab `(\t)`]** markerat: `male \t John \t Doe`
 
-Anger ett enskilt tecken som används för att undvika citattecken i ett redan citattecken.
+### Citattecken {#quote-character}
 
-### Tomt värde för utdata
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_quoteCharacter"
+>title="Citattecken"
+>abstract="Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade strängar. I dokumentationen finns exempel för varje markering."
 
-Anger strängbeteckningen för ett tomt värde.
+Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade strängar. Tillgängliga alternativ är:
 
-### Utdata för null-värde
+* **[!UICONTROL Null Character (\0000)]**. Använd det här alternativet om du vill ta bort dubbla citattecken från exporterade CSV-filer.
+* **[!UICONTROL Double Quotes (")]**. Använd det här alternativet om du vill behålla dubbla citattecken i dina exporterade CSV-filer.
 
-Anger strängbeteckningen för ett null-värde i de exporterade filerna.
+#### Exempel
 
-Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`
-Exempelutdata med **&quot;&quot;** markerat: `male,"",TestLastName`
-Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`
+Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
 
-### Komprimeringsformat
+* Exempelutdata med **[!UICONTROL Null Character (\0000)]** markerat: `Test,John,LastName`
+* Exempelutdata med **[!UICONTROL Double Quotes (")]** markerat: `"Test","John","LastName"`
 
-Anger vilken komprimeringskodek som ska användas när data sparas i filen. De alternativ som stöds är GZIP och NONE.
+### Escape-tecken {#escape-character}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_escapeCharacter"
+>title="Escape-tecken"
+>abstract="Anger ett enskilt tecken som används för att undvika citattecken i ett redan citattecken. I dokumentationen finns exempel för varje markering."
+
+Använd det här alternativet om du vill ange ett enskilt tecken för att undvika citattecken inuti ett redan citattecken. Det här alternativet är till exempel användbart när du har en sträng omsluten av citattecken där en del av strängen redan omsluts av citattecken. Med det här alternativet anger du vilket tecken som ska ersätta de inre dubbla citattecknen med. Tillgängliga alternativ är:
+
+* Snedstreck `(\)`
+* Enskilt citattecken `(')`
+
+#### Exempel
+
+Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
+
+* Exempelutdata med **[!UICONTROL Back slash `(\)`]** markerat: `"Test,\"John\",LastName"`
+* Exempelutdata med **[!UICONTROL Single quote `(')`]** markerat: `"Test,'"John'",LastName"`
+
+### Tomt värde för utdata {#empty-value-output}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_emptyValueOutput"
+>title="Tomt värde för utdata"
+>abstract="Använd det här alternativet om du vill ange hur tomma värden ska visas i de exporterade CSV-filerna. I dokumentationen finns exempel för varje markering."
+
+Använd den här kontrollen för att ange strängbeteckningen för ett tomt värde. Det här alternativet avgör hur tomma värden representeras i dina exporterade CSV-filer. Tillgängliga alternativ är:
+
+* **[!UICONTROL null]**
+* **&quot;&quot;**
+* **[!UICONTROL Empty string]**
+
+#### Exempel
+
+Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
+
+* Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett null-värde.
+* Exempelutdata med **&quot;&quot;** markerat: `male,"",TestLastName`. I det här fallet omformar Experience Platform det tomma värdet till ett par dubbla citattecken.
+* Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet behåller Experience Platform det tomma värdet och exporterar det som det är (utan dubbla citattecken).
+
+>[!TIP]
+>
+>Skillnaden mellan utdata för tomt värde och utdata för null-värde i avsnittet nedan är att ett tomt värde har ett faktiskt värde som är tomt. NULL-värdet har inget värde alls. Tänk dig det tomma värdet som ett tomt glas på bordet och att null-värdet inte har glaset över huvud taget på bordet.
+
+### Utdata för null-värde {#null-value-output}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_nullValueOutput"
+>title="Utdata för null-värde"
+>abstract="Använd den här kontrollen för att ange strängbeteckningen för ett null-värde i de exporterade filerna. I dokumentationen finns exempel för varje markering."
+
+Använd den här kontrollen för att ange strängbeteckningen för ett null-värde i de exporterade filerna. Det här alternativet avgör hur null-värden återges i dina exporterade CSV-filer. Tillgängliga alternativ är:
+
+* **[!UICONTROL null]**
+* **&quot;&quot;**
+* **[!UICONTROL Empty string]**
+
+#### Exempel
+
+Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsammans med varje val i användargränssnittet.
+
+* Exempelutdata med **[!UICONTROL null]** markerat: `male,NULL,TestLastName`. I det här fallet sker ingen omformning och CSV-filen innehåller null-värdet.
+* Exempelutdata med **&quot;&quot;** markerat: `male,"",TestLastName`. I det här fallet ersätter Experience Platform null-värdet med dubbla citattecken runt en tom sträng.
+* Exempelutdata med **[!UICONTROL Empty string]** markerat: `male,,TestLastName`. I det här fallet ersätter Experience Platform null-värdet med en tom sträng (utan dubbla citattecken).
+
+### Komprimeringsformat {#compression-format}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_csvOptions_compressionFormat"
+>title="Komprimeringsformat"
+>abstract="Anger vilken komprimeringstyp som ska användas när data sparas i filen. De alternativ som stöds är GZIP och NONE. I dokumentationen finns exempel för varje markering."
+
+Anger vilken komprimeringstyp som ska användas när data sparas i filen. De alternativ som stöds är GZIP och NONE. Det här alternativet avgör om du ska exportera komprimerade filer eller inte.
 
 ### Kodning
 
