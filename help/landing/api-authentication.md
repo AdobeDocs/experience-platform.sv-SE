@@ -5,10 +5,10 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: fa4786b081b46c8f3c0030282ae3900891fbd652
 workflow-type: tm+mt
-source-wordcount: '1225'
-ht-degree: 1%
+source-wordcount: '1498'
+ht-degree: 2%
 
 ---
 
@@ -198,8 +198,70 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 [Postman](https://www.postman.com/) är ett populärt verktyg som gör att utvecklare kan utforska och testa RESTful API:er. Detta [Medellång post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) I beskrivs hur du kan konfigurera Postman så att det automatiskt utför JWT-autentisering och använder det för att använda Platform API:er.
 
+## Åtkomstkontroll för utvecklare och API med Experience Platform behörigheter
+
+>[!NOTE]
+>
+>Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
+
+Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha utvecklar- och användarbehörigheter för en produktprofil för Experience Platform i Adobe Admin Console.
+
+### Lägg till utvecklare i produktprofilen
+
+Gå till [[!DNL Admin Console]](https://adminconsole.adobe.com/) och logga in med din Adobe ID.
+
+Välj **[!UICONTROL Products]** väljer **[!UICONTROL Adobe Experience Platform]** i produktlistan.
+
+![Produktlista på Admin Console](././images/api-authentication/products.png)
+
+På fliken **[!UICONTROL Product Profiles]** väljer du **[!UICONTROL AEP-Default-All-Users]**. Du kan också använda sökfältet för att söka efter produktprofilen genom att ange namnet.
+
+![Sök efter produktprofilen](././images/api-authentication/select-product-profile.png)
+
+Välj **[!UICONTROL Developers]** tabbtangenten och sedan **[!UICONTROL Add Developer]**.
+
+![Lägg till utvecklare från fliken Utvecklare](././images/api-authentication/add-developer1.png)
+
+Ange utvecklarens **[!UICONTROL Email or username]**. Ett giltigt [!UICONTROL Email or username] visar utvecklarinformationen. Välj **[!UICONTROL Save]**.
+
+![Lägg till utvecklare via e-post eller användarnamn](././images/api-authentication/add-developer-email.png)
+
+Utvecklaren har lagts till och visas på [!UICONTROL Developers] -fliken.
+
+![Utvecklare som listas på fliken Utvecklare](././images/api-authentication/developer-added.png)
+
+### Konfigurera ett API
+
+En utvecklare kan lägga till och konfigurera ett API i ett projekt i Adobe Developer Console.
+
+Välj projektet och välj sedan **[!UICONTROL Add API]**.
+
+![Lägg till API i ett projekt](././images/api-authentication/add-api-project.png)
+
+I **[!UICONTROL Add an API]** dialogrutenvälj **[!UICONTROL Adobe Experience Platform]** väljer **[!UICONTROL Experience Platform API]**.
+
+![Lägg till ett API i Experience Platform](././images/api-authentication/add-api-platform.png)
+
+I **[!UICONTROL Configure API]** skärm, välja **[!UICONTROL AEP-Default-All-Users]**.
+
+### Tilldela API till en roll
+
+En systemadministratör kan tilldela API:er till roller i användargränssnittet i Experience Platform.
+
+Välj **[!UICONTROL Permissions]** och den roll du vill lägga till API:t i. Välj **[!UICONTROL API credentials]** tabbtangenten och sedan **[!UICONTROL Add API credentials]**.
+
+![Fliken API-autentiseringsuppgifter i den valda rollen](././images/api-authentication/api-credentials.png)
+
+Välj det API som du vill lägga till i rollen och välj sedan **[!UICONTROL Save]**.
+
+![Lista över tillgängliga API:er för val](././images/api-authentication/select-api.png)
+
+Du kommer tillbaka till [!UICONTROL API credentials] -fliken, där det nya API:t visas.
+
+![Fliken API-autentiseringsuppgifter med nyligen tillagt API](././images/api-authentication/api-credentials-with-added-api.png)
+
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du samlat in och testat dina autentiseringsuppgifter för plattforms-API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentation](../landing/documentation/overview.md).
 
-Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen kräver många plattforms-API:er även en giltig `{SANDBOX_NAME}` anges som rubrik. Se [översikt över sandlådor](../sandboxes/home.md) för mer information.
+Förutom de autentiseringsvärden du har samlat in i den här självstudiekursen kräver många plattforms-API:er även en giltig `{SANDBOX_NAME}` anges som rubrik. Se [översikten över sandlådor](../sandboxes/home.md) för mer information.
