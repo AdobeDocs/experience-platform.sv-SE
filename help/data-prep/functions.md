@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: da7eff7966679635efa71cbbd33768ef4f412241
+source-git-commit: cce2d7b4f950248807bd700bae5e371418df634d
 workflow-type: tm+mt
-source-wordcount: '4557'
+source-wordcount: '4591'
 ht-degree: 2%
 
 ---
@@ -235,6 +235,7 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 |  -funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | Skapar ett pseudoslumpmässigt ID. |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
+| `fpid_to_ecid ` | Den här funktionen tar en FPID-sträng och konverterar den till ett ECID som ska användas i Adobe Experience Platform- och Adobe Experience Cloud-program. | <ul><li>STRING: **Obligatoriskt** Den FPID-sträng som ska konverteras till ECID.</li></ul> | `fpid_to_ecid(STRING)` | `fpid_to_ecid("4ed70bee-b654-420a-a3fd-b58b6b65e991")` | `"28880788470263023831040523038280731744"` |
 
 {style="table-layout:auto"}
 
