@@ -2,18 +2,15 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle service cloud
 title: Översikt över källanslutning för Oracle Service Cloud
 description: Lär dig hur du ansluter Oracle Service Cloud till Adobe Experience Platform med API:er eller användargränssnittet.
-source-git-commit: 078a266967cd7b0818f958283a58a8af4c886a21
+exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
+source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
 
-# (Beta) Oracle Service Cloud-källa
-
->[!NOTE]
->
->Oraclets Service Cloud-källa är i betaversion. Se [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Oracle Service Cloud-källa
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

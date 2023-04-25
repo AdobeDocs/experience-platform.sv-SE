@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;ontrust;OneTrust
 solution: Experience Platform
-title: (Beta) Skapa en OneTrust-källanslutning i användargränssnittet
+title: Skapa en OneTrust-källanslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en OneTrust-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 6af0604d-cbb6-4c8e-b017-3eb82ec6ee1c
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 35095ec8c22106ba0a8f11e0a970ed7989a7f06c
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa en [!DNL OneTrust Integration] källanslutning i användargränssnittet
+# Skapa en [!DNL OneTrust Integration] källanslutning i användargränssnittet
 
 >[!NOTE]
 >
->The [!DNL OneTrust Integration] källan är i betaversion. Dess funktioner och dokumentation kan komma att ändras. Mer information om hur du använder betamärkta källor finns i [källöversikt](../../../../home.md#terms-and-conditions).
+>The [!DNL OneTrust Integration] Källan stöder endast konsumtion av medgivanden och inställningsdata och inte cookies.
 
 Den här självstudiekursen innehåller steg för att skapa en [[!DNL OneTrust Integration]](https://my.onetrust.com/s/contactsupport?language=en_US) källanslutning för inmatning av både historiska och schemalagda medgivandedata i Adobe Experience Platform med hjälp av användargränssnittet för plattformen.
 
@@ -36,7 +36,7 @@ För att kunna ansluta [!DNL OneTrust Integration] till Platform måste du ange 
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| Värdnamn | Den miljö som [!DNL OneTrust Integration] data måste hämtas från. | `https://uat.onetrust.com/` |
+| Värdnamn | Den miljö som [!DNL OneTrust Integration] data måste hämtas från. | `app.onetrust.com` |
 | Test-URL för auktorisering | (Valfritt) URL:en för auktoriseringstestet används för att validera autentiseringsuppgifter när en basanslutning skapas. Om inget anges kontrolleras autentiseringsuppgifterna automatiskt när du skapar en källanslutning i stället. |  |
 | Åtkomsttoken | Åtkomsttoken som motsvarar din [!DNL OneTrust Integration] konto. | `ZGFkZDMyMjFhMmEyNDQ2ZGFhNTdkZjNkZjFmM2IyOWE6QjlUSERVUTNjOFVsRmpEZTJ6Vk9oRnF3Sk8xNlNtcm4=` |
 
@@ -48,13 +48,13 @@ Mer information om dessa autentiseringsuppgifter finns i [[!DNL OneTrust Integra
 >
 >The [!DNL OneTrust Integration] API-specifikationer delas med Adobe för datainhämtning.
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] visas en mängd olika källor som du kan använda för att skapa ett konto.
+Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta för en katalog med källor i Experience Platform.
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+Använd *[!UICONTROL Categories]* meny för att filtrera källor efter kategori. Du kan också ange ett källnamn i sökfältet för att hitta en viss källa från katalogen.
 
-Under *[!UICONTROL Consent & Preferences]* kategori, välj [!DNL OneTrust Integration]och sedan markera **[!UICONTROL Add data]**.
+Gå till [!UICONTROL Consent & Preferences] kategori för [!DNL OneTrust Integration] källkort. Börja genom att välja **[!UICONTROL Add data]**.
 
-![katalog](../../../../images/tutorials/create/onetrust/catalog.png)
+![Experience Platform-katalogen för gränssnittskällor.](../../../../images/tutorials/create/onetrust/catalog.png)
 
 The **[!UICONTROL Connect OneTrust Integration account]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -62,13 +62,13 @@ The **[!UICONTROL Connect OneTrust Integration account]** visas. På den här si
 
 Om du vill använda ett befintligt konto väljer du [!DNL OneTrust Integration] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
-![befintlig](../../../../images/tutorials/create/onetrust/existing.png)
+![Det befintliga kontoautentiseringssteget i källarbetsflödet.](../../../../images/tutorials/create/onetrust/existing.png)
 
 ### Nytt konto
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn, en valfri beskrivning och dina uppgifter. När du är klar väljer du **[!UICONTROL Connect to source]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![new](../../../../images/tutorials/create/onetrust/new.png)
+![Det nya kontoautentiseringssteget i källarbetsflödet.](../../../../images/tutorials/create/onetrust/new.png)
 
 ## Nästa steg
 

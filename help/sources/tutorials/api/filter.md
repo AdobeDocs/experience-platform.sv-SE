@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;Flödestjänst-API;källor;Källor
 title: Filtrera radnivådata för en källa med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
-source-git-commit: 122f6bda2fbcf72bf098b972ff7b081f4c5e3388
+exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
+source-git-commit: da6f5a79b1ee16fb0d44a5c2990ed1b8be1f99e2
 workflow-type: tm+mt
 source-wordcount: '785'
 ht-degree: 1%
@@ -13,7 +14,14 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Stöd för filtrering av data på radnivå för en källa finns för närvarande bara för [[!DNL Google BigQuery]](../../connectors/databases/bigquery.md) och [[!DNL Snowflake]](../../connectors/databases/snowflake.md) källor.
+>Stöd för filtrering av data på radnivå är för närvarande bara tillgängligt för följande källor:
+>
+>* [Google BigQuery](../../connectors/databases/bigquery.md)
+>* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
+>* [Salesforce](../../connectors/crm/salesforce.md)
+>* [Salesforce Marketing Cloud](../../connectors/marketing-automation/salesforce-marketing-cloud.md)
+>* [Snowflake](../../connectors/databases/snowflake.md)
+
 
 I den här självstudien beskrivs hur du filtrerar radnivådata för en källa med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -103,7 +111,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 | `attributes.filterAtSource.columnNameEscapeChar` | Anger vilket tecken som ska användas för att undvika kolumner. |
 | `attributes.filterAtSource.valueEscapeChar` | Anger hur värden ska omges när en SQL-fråga skrivs. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Jämförelseoperatörer
 
@@ -118,7 +126,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 | `like` | Filtrera genom att använda i en `WHERE` -sats för att söka efter ett angivet mönster. |
 | `in` | Filtrerar efter om egenskapen ligger inom ett angivet intervall. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Ange filtervillkor för förtäring
 

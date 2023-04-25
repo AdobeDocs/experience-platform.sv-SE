@@ -2,9 +2,9 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 35298fc6b3e272c1b7b14cfa17713d18427ba2ce
+source-git-commit: 83ce7d46e4e64fbe961c964ed5a17ec12a7ec15f
 workflow-type: tm+mt
-source-wordcount: '1042'
+source-wordcount: '1112'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,12 @@ Den förväntade fördröjningen för Analytics Data on Platform beskrivs i tabe
 | Nya data till Data Lake | &lt; 90 minuter |
 | Bakgrundsfyllning av mindre än 10 miljarder händelser | &lt; 4 veckor |
 
-Bakåt i analyser blir standardvärdet 13 månader. Den gräns på 10 miljarder händelser som nämns i tabellen ovan är strikt relaterad till förväntad fördröjning.
+Analysens bakgrundsfyllning för produktionssandlådor är som standard 13 månader. För Analytics-data i icke-produktionssandlådor anges backfill till tre månader. Den gräns på 10 miljarder händelser som nämns i tabellen ovan är strikt relaterad till förväntad fördröjning.
+
+När du skapar ett datakällflöde för Analytics i en produktionssandlåda skapas två dataflöden:
+
+* Ett dataflöde som gör en 13-månaders efterfyllning av historiska rapportsvitdata till datasjön. Det här dataflödet avslutas när bakgrundsfyllningen är slutförd.
+* Ett dataflöde som skickar livedata till sjön och till [!DNL Real-Time Customer Profile]. Det här dataflödet körs kontinuerligt.
 
 >[!NOTE]
 >

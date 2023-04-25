@@ -1,10 +1,9 @@
 ---
 title: Skapa en anslutning och ett dataflöde för att förminska direktuppspelningen i användargränssnittet
 description: Lär dig hur du skapar en Shopify Streaming-källanslutning och ett dataflöde med hjälp av användargränssnittet för plattformen
-badge: "Beta"
-hidefromtoc: y
-hide: y
-source-git-commit: 279d8e307c8ca5a799a47c6f903b9a082d9cf034
+badge: Beta
+exl-id: 3368ecf6-0c61-49ce-bc9c-29ee50b3f037
+source-git-commit: feb05d5bddc4135c5fe14d3ec5d8fad62c5e2236
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 0%
@@ -95,4 +94,3 @@ Gå till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapad
 ## Nästa steg
 
 Genom att följa den här självstudiekursen har du upprättat en källanslutning och ett dataflöde till din [!DNL Shopify Streaming] konto. Instruktioner om hur du ansluter [!DNL Shopify Streaming] med API:t, läs självstudiekursen om [skapa en källanslutning och ett dataflöde för direktuppspelning [!DNL Shopify] data med API:t för Flow Service](../../../api/create/ecommerce/shopify-streaming.md).
-

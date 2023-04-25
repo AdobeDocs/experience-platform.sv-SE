@@ -2,18 +2,15 @@
 keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle service cloud
 title: Skapa en Oracle Service Cloud-källanslutning med API:t för flödestjänst
 description: Lär dig hur du ansluter Adobe Experience Platform till Oracle Service Cloud med API:t för flödestjänst.
-source-git-commit: 078a266967cd7b0818f958283a58a8af4c886a21
+exl-id: 00c0bc9c-a740-4bab-a882-2cfed8abe758
+source-git-commit: 1695b7d638feb648d5cd7af07879f3ed13f938eb
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '527'
 ht-degree: 1%
 
 ---
 
-# (Beta) Skapa en källanslutning till Oracle Service Cloud med [!DNL Flow Service] API
-
->[!NOTE]
->
->Oraclets Service Cloud-källa är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en Oracle Service Cloud-källanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

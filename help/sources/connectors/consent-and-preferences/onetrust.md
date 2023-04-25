@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;OneTrust;ontrust;medgivande;samtycke och inställningar;efterlevnad
 solution: Experience Platform
-title: (Beta) OneTrust Integration Source Connector - översikt
+title: OneTrust Integration Source Connector - översikt
 description: Lär dig hur du ansluter OneTrust Integration till Adobe Experience Platform med API:er eller användargränssnittet.
 exl-id: f2229d4d-8aa6-483a-9156-403309f80007
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9846dc24321d7b32a110cfda9df3511b1e3a82ed
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL OneTrust Integration] källa
+# [!DNL OneTrust Integration] källa
 
 >[!NOTE]
 >
->The [!DNL OneTrust Integration] källan är i betaversion. Dess funktioner och dokumentation kan komma att ändras. Mer information om hur du använder betamärkta källor finns i [källöversikt](../../home.md#terms-and-conditions).
+>The [!DNL OneTrust Integration] Källan stöder endast konsumtion av medgivanden och inställningsdata och inte cookies.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
