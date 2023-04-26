@@ -2,9 +2,9 @@
 title: Referens för taggtillägg
 description: Hitta dokumentation för taggtillägg i Adobe Experience Platform.
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: ccfc46714069e8c29f1777dea5ba73e318c0a4a6
+source-git-commit: 9d9e02c2a4f628ebe04aaa63942e830f3354729f
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '714'
 ht-degree: 2%
 
 ---
@@ -32,6 +32,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Adobe Analytics &amp; Salesforce](https://exchange.adobe.com/apps/ec/101530)*
 * [Adobe Analytics produktsträng](./product-string/overview.md)
 * [Adobe Analytics Product String Builder](https://exchange.adobe.com/apps/ec/101461)*
+* [Adobe Analytics via Adobe Experience Platform Web SDK](https://exchange.adobe.com/apps/ec/108985/search-discovery-for-adobe-analytics-via-aep-web-sdk)*
 * [Adobe Audience Manager](./audience-manager/overview.md)
 * [Adobe-klientdatalager](./client-data-layer/overview.md)
 * [Adobe ContextHub](./contexthub/overview.md)
