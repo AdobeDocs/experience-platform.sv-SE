@@ -2,9 +2,9 @@
 title: Användardefinierade kontrollpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: a0be2f8625ca60f9c8f355c1230a889002436d6d
+source-git-commit: 8507ecceca47fac3d321b89e4fed018ee9784777
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1533'
 ht-degree: 0%
 
 ---
@@ -112,6 +112,20 @@ Genom att lägga till ett attribut som ett filter kan du välja vilka värden so
 
 ![Filterdialogrutan för att filtrera värden från widgeten.](./images/user-defined-dashboards/filter-dialog.png)
 
+#### Filtrera bort historiska data {#filter-historical-data}
+
+Lägg till `date_key` attribut som ett filter och markera **[!UICONTROL Recent date]** följt av **[!UICONTROL Apply]**. Det här filtret ser till att de data som används för att härleda insikter hämtas från den senaste ögonblicksbilden av systemet.
+
+![The [!UICONTROL Filter: date_key] dialogruta med [!UICONTROL Recent date] och [!UICONTROL Apply] markerad.](./images/user-defined-dashboards/recent-date.png)
+
+Du kan också skapa en egen punkt för att filtrera data efter. Välj **[!UICONTROL Select dates]** för att utöka dialogrutan med en lista över tillgängliga datum. Använd **[!UICONTROL Select all]** om du vill aktivera eller inaktivera alla tillgängliga alternativ, eller markera kryssrutan för varje dag för sig. Äntligen väljer du **[!UICONTROL Apply]** för att bekräfta dina val.
+
+>[!NOTE]
+>
+>Om `date_key` -attributet har redan lagts till som ett filter, markera ellipsen följt av **[!UICONTROL Edit]** i listrutan för att ändra filterperioden.
+
+![The [!UICONTROL Filter: date_key] med individuella dagkryssrutor både markerade och avmarkerade.](./images/user-defined-dashboards/select-dates.png)
+
 ### Widget-egenskaper
 
 Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) i den högra listen för att öppna egenskapspanelen. I [!UICONTROL Properties] anger du ett namn för widgeten på panelen [!UICONTROL Widget title] textfält.
@@ -135,6 +149,22 @@ Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj
 ![Den användardefinierade kontrollpanelen med en anpassad widget och knappen Spara markerad.](./images/user-defined-dashboards/user-defined-dashboard.png)
 
 För att säkerställa att varje fråga för en Adobe Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
+
+### Duplicera en widget
+
+När du har skapat en widget kan du duplicera hela widgeten och anpassa dess attribut för att skapa en unik widget utan att behöva börja från början. Om du vill duplicera en widget navigerar du först till instrumentpanelsinventeringen. Välj sedan instrumentpanelens namn i lagerlistan. Din anpassade kontrollpanel visas.
+
+![Plattformsgränssnittet med instrumentpaneler och ett anpassat instrumentpanelsnamn markerat.](./images/user-defined-dashboards/dashbaord-inventory.png)
+
+Välj pennikonen (![En pennikon.](./images/user-defined-dashboards/edit-icon.png)) längst upp till höger på din anpassade kontrollpanel för att gå till redigeringsläget.
+
+![En anpassad kontrollpanel med pennikonen markerad.](./images/user-defined-dashboards/edit-mode.png)
+
+Sedan markerar du ellipserna i det övre högra hörnet i widgeten som du vill kopiera, följt av **[!UICONTROL Duplicate]** i listan med tillgängliga alternativ.
+
+![En widget i en användardefinierad kontrollpanel med ellipserna och widgeten Duplicera markerad.](./images/user-defined-dashboards/duplicate.png)
+
+En dubblettwidget visas på den användardefinierade kontrollpanelen. Markera ellipserna för den nya widgeten, följt av **[!UICONTROL Edit]**, för att anpassa din nya widget.
 
 ## Nästa steg och ytterligare resurser
 
