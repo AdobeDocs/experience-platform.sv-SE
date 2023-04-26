@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: e29bff2b8c576f92d239bb6c855710142df8db57
+source-git-commit: f8ef0c6fb949cb5c9071e84d88a9151a5558848f
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '1266'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,8 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Kontrollpaneler](#dashboards)
 - [Dataförberedelse](#data-prep)
+- [Datainsamling](#data-collection)
+- [Mål ](#destinations)
 - [Experience Data Model](#xdm)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
@@ -49,6 +51,60 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 {style="table-layout:auto"}
 
 Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).
+
+## Datainsamling {#data-collection}
+
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| IP-adressofuscation för datastreams | Nu kan du definiera IP-obfusionsalternativ på hel- eller partiell datastream-nivå i [användargränssnitt för konfiguration av datastream](../../edge/datastreams/configure.md). <br><br>Inställningen för IP-förfalskning på datastream-nivå har företräde framför IP-förfalskning som har konfigurerats i Adobe Target och Audience Manager. <br><br>Data som skickas till Adobe Analytics påverkas inte av datastream-nivån [!UICONTROL IP Obfuscation] inställning. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner.<br><br> Mer information om IP-förfalskning och instruktioner om hur du konfigurerar den finns i [konfigurationsdokumentation för datastream](../../edge/datastreams/configure.md#advanced-options). |
+| Åsidosättningar av dataströmskonfiguration | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Att åsidosätta datastream-konfigurationer är en tvåstegsprocess. Först måste du definiera åsidosättningar av dataströmskonfigurationer i användargränssnittet för datastreams. Sedan måste du skicka åsidosättningarna till Edge Network via ett Web SDK-kommando. |
+
+{style="table-layout:auto"}
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya destinationer** {#new-destinations}
+
+| Destination | Beskrivning |
+| ----------- | ----------- |
+| [[!DNL Salesforce Marketing Cloud Account Engagement] anslutning](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) | Använd Salesforce Marketing Cloud Account Engagement (tidigare Pardot) för att hämta, spåra, poängsätta och betygsätta leads. Använd den här destinationen för B2B-ärenden som omfattar flera avdelningar och beslutsfattare som kräver längre försäljnings- och beslutscykler. |
+
+{style="table-layout:auto"}
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Dataflödesövervakning för [!DNL Custom Personalization] och [!DNL Adobe Commerce] mål | <p> Nu kan du se aktiveringsstatistik för [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md), [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) och [Anpassad personalisering med attribut](../../destinations/catalog/personalization/custom-personalization.md) anslutningar. </p> <p>![Adobe Commerce, bild](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce metrics"){width="100" zoomable="yes"}</p>  Se [Övervaka dataflöden på arbetsytan Destinationer](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace) för mer information. |
+| Nytt **[!UICONTROL Append segment ID to segment name]** fält för [!DNL Google Ad Manager] och [!DNL Google Ad Manager 360] mål | Nu kan du ha segmentnamnet i [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) och [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) inkludera segment-ID från Experience Platform, så här: `Segment Name (Segment ID)`. |
+
+{style="table-layout:auto"}
+
+<!--
+
+| New **[!UICONTROL Append segment ID to segment name]** field for the [!DNL Google Ad Manager] and [!DNL Google Ad Manager 360] destinations | You can now have the segment name in [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) and [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) include the segment ID from Experience Platform, like this: `Segment Name (Segment ID)`. |
+| Scheduled audience backfills | <p>For the [!DNL Google Display & Video 360] destination, the activation of audience backfills to the destination is scheduled to occur 24-48 hours after a segment is first mapped to a destination connection. This update is in response to Google's policy to wait 24 hours until ingesting data and will improve match rates between Real-time CDP and [!DNL Google Display & Video 360].</p> <p>Note that this is a backend configuration applicable to this destination only and that is unrelated to any customer-configurable scheduling options in the UI.</p> |
+
+-->
+
+
+**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
+
+- Vi har åtgärdat ett problem i **Undantagna identiteter** rapportmått för filbaserad destinationsexport. Kunderna fick alla exporterade ID:n från den aktiverade exporten som förväntat. Men **Undantagna identiteter** rapportmåttet i användargränssnittet visade felaktigt ett stort antal utelämnade identiteter på grund av felaktigt antal identiteter som aldrig skulle exporteras. (PLAT-149774)
+- Vi har åtgärdat ett problem i schemaläggningssteget i aktiveringsarbetsflödet. För mål som kräver ett mappnings-ID kunde kunderna inte lägga till ett mappnings-ID för segment som lagts till i befintliga målanslutningar. (PLAT-148808)
+
+<!--
+- We have fixed an issue with the beta SFTP destination where the port number was previously hardcoded to 22. The port is now configurable for this destination. 
+
+-->
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
