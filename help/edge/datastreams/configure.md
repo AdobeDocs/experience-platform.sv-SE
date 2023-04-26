@@ -1,11 +1,11 @@
 ---
 title: Konfigurera ett datastream
-description: Koppla samman integreringen av SDK för Experience Platform på klientsidan med Adobe-produkter och tredjepartsdestinationer.
+description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: aa271fed242d03ecac6025721c2566a3b550b6bb
+source-git-commit: 611b80f2444ea86ef008f761c5d46976c55b864d
 workflow-type: tm+mt
-source-wordcount: '1564'
-ht-degree: 1%
+source-wordcount: '1905'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ Du kan skapa och hantera datastölar i användargränssnittet för datainsamling
 
 ![Fliken Datastreams i användargränssnittet för datainsamling](../assets/datastreams/configure/datastreams-tab.png)
 
-The [!UICONTROL Datastreams] På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
+The **[!UICONTROL Datastreams]** På -fliken visas en lista med befintliga dataströmmar, inklusive deras egna namn, ID och senaste ändringsdatum. Välj namnet på en datastream som [visa information och konfigurera tjänster](#view-details).
 
 Välj ikonen &quot;mer&quot; (**...**) för en viss datastream för att visa fler alternativ. Välj **[!UICONTROL Edit]** för att uppdatera [grundläggande konfiguration](#configure) för datastream, eller välj **[!UICONTROL Delete]** för att ta bort datastream.
 
@@ -43,7 +43,8 @@ Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller f
 
 | Inställning | Beskrivning |
 | --- | --- |
-| [!UICONTROL Geo Location] | Avgör om Geo-sökningar utförs baserat på användarens IP-adress. Standardinställningen **[!UICONTROL None]** inaktiverar alla Geo-sökningar, medan **[!UICONTROL City]** -inställningen ger GPS-koordinater två decimaler. |
+| [!UICONTROL Geo Location] | Avgör om sökningar efter geopositionering sker baserat på användarens IP-adress. Standardinställningen **[!UICONTROL None]** inaktiverar sökningar efter geopositionering, medan **[!UICONTROL City]** -inställningen ger GPS-koordinater två decimaler. Geolokalisering inträffar före [!UICONTROL IP Obfuscation] och påverkas inte av  [!UICONTROL IP Obfuscation] inställning. |
+| [!UICONTROL IP Obfuscation] | Anger vilken typ av IP-ofuscation som ska användas för datastream. All bearbetning som baseras på kundens IP-adress påverkas av IP-begränsningsinställningen. Detta inkluderar alla Experience Cloud-tjänster som tar emot data från ditt datastream. <p>Tillgängliga alternativ:</p> <ul><li>**[!UICONTROL None]**: Inaktiverar IP-förvrängning. Den fullständiga användarens IP-adress skickas via datastream.</li><li>**[!UICONTROL Partial]**: För IPv4-adresser döljer den sista oktetten i användarens IP-adress. För IPv6-adresser döljer de sista 80 bitarna i adressen. <p>Exempel:</p> <ul><li>IPv4: `1.2.3.4` -> `1.2.3.0`</li><li>IPv6: `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `2001:0db8:1345:0000:0000:0000:0000:0000`</li></ul></li><li>**[!UICONTROL Full]**: Fokuserar hela IP-adressen. <p>Exempel:</p> <ul><li>IPv4: `1.2.3.4` -> `0.0.0.0`</li><li>IPv6: `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `::/128`</li></ul></li></ul> IP-försvårande effekter på andra Adobe-produkter: <ul><li>**Adobe Target**: Datastream-nivån [!UICONTROL IP obfuscation] inställningen har företräde framför alla IP-felsökningsalternativ som har angetts i Adobe Target. Om till exempel datastream-nivån [!UICONTROL IP obfuscation] option is set to **[!UICONTROL Full]** och Adobe Target IP-felsökningsalternativ är inställt på **[!UICONTROL Last octet obfuscation]** får Adobe Target en fullständigt okomplicerad IP-adress. Läs Adobe Target-dokumentationen på [IP-förvrängning](https://developer.adobe.com/target/before-implement/privacy/privacy/) och [geolokalisering](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=en) för mer information.</li><li>**Audience Manager**: Inställningen för IP-ofusacering på datastream-nivå har företräde framför alla IP-ofusceringsalternativ som har angetts i Audience Manager, och den tillämpas på alla IP-adresser. Alla sökningar efter geopositionering som gjorts av Audience Manager påverkas av datastream-nivån [!UICONTROL IP obfuscation] alternativ. En sökning efter geopositionering i Audience Manager, som baseras på en helt okomplicerad IP-adress, resulterar i en okänd region och inga segment som baseras på resulterande geopositioneringsdata realiseras. Läs Audience Manager-dokumentationen på [IP-förvrängning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/ip-obfuscation.html?lang=en) för mer information.</li><li>**Adobe Analytics**: Data som skickas till Adobe Analytics påverkas inte av datastream-nivån [!UICONTROL IP Obfuscation] inställning. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner. Se Adobe Analytics [dokumentation](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/general-acct-settings-admin.html) om du vill ha mer information om hur du aktiverar IP-förfalskning i Analytics.</li></ul> |
 | [!UICONTROL First Party ID Cookie] | När det här alternativet är aktiverat anger den här inställningen att Edge Network ska referera till en angiven cookie när en [enhets-ID för första part](../identity/first-party-device-ids.md)i stället för att leta upp det här värdet i identitetskartan.<br><br>När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras. |
 | [!UICONTROL Third Party ID Sync] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. När den här inställningen är aktiverad kan du ange vilken ID-synkroniseringsbehållare som ska köras för den här datastream-filen. |
 | [!UICONTROL Access Type] | Definierar autentiseringstypen som Edge Network accepterar för datastream. <ul><li>**[!UICONTROL Mixed Authentication]**: När det här alternativet är markerat godkänns både autentiserade och oautentiserade begäranden i Edge Network. Välj det här alternativet när du tänker använda Web SDK eller [Mobile SDK](https://aep-sdks.gitbook.io/docs/), tillsammans med [Server-API](../../server-api/overview.md). </li><li>**[!UICONTROL Authenticated Only]**: När det här alternativet är markerat accepterar Edge Network endast autentiserade begäranden. Välj det här alternativet när du bara vill använda server-API:t och vill förhindra att oautentiserade begäranden behandlas av Edge Network.</li></ul> |
