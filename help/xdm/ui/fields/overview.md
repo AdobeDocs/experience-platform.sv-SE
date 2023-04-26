@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: f1a8bcc7c1ba33d74e1f687b4cfd83bddce2fadc
+source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
-source-wordcount: '1332'
+source-wordcount: '1339'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översik
 
 Om du vill definiera nya XDM-fält i användargränssnittet måste du först öppna ett schema i [!DNL Schema Editor]. Beroende på vilka scheman som är tillgängliga för dig i [!DNL Schema Library]kan du välja att [skapa ett nytt schema](../resources/schemas.md#create) eller [välj ett befintligt schema att redigera](../resources/schemas.md#edit).
 
-När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till eller redigera fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
+När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
@@ -53,10 +53,10 @@ I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera i
 | Fältegenskap | Beskrivning |
 | --- | --- |
 | [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra program längre fram i kedjan<br><br>Namnet ska helst skrivas i camelCase. Den kan innehålla alfanumeriska tecken, bindestreck eller understreck, men den **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktig**: `_fieldName`</li></ul> |
-| [!UICONTROL Display name] | Ett visningsnamn för fältet. Det här namnet kommer att användas för att representera fältet på arbetsytan i Schemaredigeraren. |
+| [!UICONTROL Display name] | Ett visningsnamn för fältet. Det här namnet kommer att användas för att representera fältet på arbetsytan i Schemaredigeraren. Fältnamnet kan ändras till visningsnamnet med [växla visningsnamn](../resources/schemas.md#display-name-toggle). |
 | [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja något av [standardtyper av skalärbilder](../../schema/field-constraints.md) stöds av XDM, eller ett av flera fält [datatyper](../resources/data-types.md) som tidigare har definierats i [!DNL Schema Registry].<br><br>Du kan också välja **[!UICONTROL Advanced type search]** om du vill söka efter och filtrera befintliga datatyper och hitta den önskade typen enklare. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Du kan även tillhandahålla ett tillval som är läsbart för människor **[!UICONTROL Description]** till fältet för att ge mer kontext till fältets avsedda användningsfall.
 
@@ -96,7 +96,7 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 | [!UICONTROL Exclusive minimum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen visas[!UICONTROL Minimum value]&quot; (icke-exklusiv) begränsning måste lämnas tom. |
 | [!UICONTROL Exclusive maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen visas[!UICONTROL Maximum value]&quot; (icke-exklusiv) begränsning måste lämnas tom. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Speciella fälttyper {#special}
 

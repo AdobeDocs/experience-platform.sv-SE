@@ -4,9 +4,9 @@ title: Exportera XDM-scheman i användargränssnittet
 description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '488'
 ht-degree: 0%
 
 ---
@@ -25,17 +25,17 @@ För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Expe
 
 Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
 
-## Generera en exportnyttolast
+## Generera en exportnyttolast {#generate-export-payload}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. I [!UICONTROL Schemas] på arbetsytan, leta reda på schemat som du vill exportera och öppna det i [!DNL Schema Editor].
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. I [!UICONTROL Schemas] på arbetsytan väljer du raden för det schema som du vill exportera för att visa schemainformation i den högra sidofältet.
 
 >[!TIP]
 >
 >Se guiden [utforska XDM-resurser](./explore.md) om du vill ha mer information om hur du hittar den XDM-resurs du söker.
 
-När du har öppnat schemat väljer du **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../images/ui/export/icon.png)) längst upp till höger på arbetsytan.
+Välj sedan **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../images/ui/export/icon.png)) bland de tillgängliga alternativen.
 
-![](../images/ui/export/copy-json.png)
+![Arbetsytan Scheman med en schemarad och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/copy-json.png)
 
 Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För &quot;[!DNL Loyalty Members]&quot; som visas ovan genereras följande JSON:
 

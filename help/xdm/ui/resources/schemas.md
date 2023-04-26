@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 3dffa9687f3429b970e8fceebd6864a5b61ead21
+source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
 workflow-type: tm+mt
-source-wordcount: '3118'
+source-wordcount: '3247'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,18 @@ Om du vill redigera ett befintligt schema väljer du **[!UICONTROL Browse]** och
 
 När du har valt ett schema visas [!DNL Schema Editor] visas med schemats struktur på arbetsytan. Nu kan du [lägg till fältgrupper](#add-field-groups) till schemat (eller [lägg till enskilda fält](#add-individual-fields) från dessa grupper), [redigera fältvisningsnamn](#display-names), eller [redigera befintliga anpassade fältgrupper](./field-groups.md#edit) om schemat använder något.
 
+## Växla visningsnamn {#display-name-toggle}
+
+För enkelhetens skull kan du växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen i Schemaredigeraren. Tack vare den här flexibiliteten blir det enklare att hitta och redigera dina scheman. Växlingsknappen finns längst upp till höger i vyn Schemaredigeraren.
+
+>[!NOTE]
+>
+>Ändringen från fältnamn till visningsnamn är helt kosmetisk och påverkar inte längre några resurser längre fram i kedjan.
+
+![Schemaredigeraren med [!UICONTROL Show display names for fields] markerad.](../../images/ui/resources/schemas/display-name-toggle.png)
+
+Visningsnamnen för standardfältgrupper genereras av systemet men kan anpassas enligt beskrivningen i [visningsnamn](#display-names) -avsnitt. Visningsnamn visas i flera olika gränssnittsvyer, inklusive mappning och förhandsvisningar av datauppsättningar. Standardinställningen är inaktiverad och fältnamnen visas med sina ursprungliga värden.
+
 ## Lägga till fältgrupper i ett schema {#add-field-groups}
 
 >[!NOTE]
@@ -65,7 +77,7 @@ När du har valt ett schema visas [!DNL Schema Editor] visas med schemats strukt
 
 När du har öppnat ett schema i [!DNL Schema Editor]kan du lägga till fält i schemat med hjälp av fältgrupper. Börja genom att välja **[!UICONTROL Add]** nästa **[!UICONTROL Field groups]** till vänster.
 
-![](../../images/ui/resources/schemas/add-field-group-button.png)
+![Schemaredigeraren med [!UICONTROL Add] från [!UICONTROL Field groups] -avsnittet markerat.](../../images/ui/resources/schemas/add-field-group-button.png)
 
 En dialogruta visas med en lista över fältgrupper som du kan välja för schemat. Eftersom fältgrupper endast är kompatibla med en klass, visas endast de fältgrupper som är associerade med schemats valda klass. Som standard sorteras listade fältgrupper baserat på hur populära de är i din organisation.
 
