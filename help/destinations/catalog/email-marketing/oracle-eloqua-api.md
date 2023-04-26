@@ -2,9 +2,10 @@
 title: (API) Oraclena Eloqua-anslutning
 description: Med API-Oraclet Eloqua kan du exportera dina kontouppgifter och aktivera dem i Oracle Eloqua efter dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: e8aa09545c95595e98b4730188bd8a528ca299a9
+exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
+source-git-commit: 3d54b89ab5f956710ad595a0e8d3567e1e773d0a
 workflow-type: tm+mt
-source-wordcount: '1575'
+source-wordcount: '2053'
 ht-degree: 0%
 
 ---
@@ -34,14 +35,20 @@ Se dokumentationen för Experience Platform för [Schemafältgrupp för detaljer
 
 För att kunna exportera data från Platform till [!DNL Oracle Eloqua] konto du behöver ha [!DNL Oracle Eloqua] konto.
 
+Dessutom behöver du åtminstone *&quot;Avancerade användare - marknadsföringsbehörigheter&quot;* för [!DNL Oracle Eloqua] -instans. Se *&quot;Säkerhetsgrupper&quot;* i [Skyddad användaråtkomst](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/SecurityOverview/SecuredUserAccess.htm) sida för vägledning. Åtkomsten krävs för att målet ska kunna programmera [fastställa din bas-URL](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/DeterminingBaseURL.html) när [!DNL Oracle Eloqua] API.
+
 #### Samla [!DNL Oracle Eloqua] autentiseringsuppgifter {#gather-credentials}
 
 Anteckna vad som står nedan innan du autentiserar dig för [!DNL Oracle Eloqua] mål:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
+| `Company Name` | Företagsnamnet som är associerat med din [!DNL Oracle Eloqua] konto. <br>Du kommer senare att använda `Company Name` och [!DNL Oracle Eloqua] `Username` som en sammanfogad sträng som ska användas som **[!UICONTROL Username]** när [autentiserar mot målet](#authenticate). |
 | `Username` | Användarnamnet för [!DNL Oracle Eloqua] konto. |
 | `Password` | Lösenordet för [!DNL Oracle Eloqua] konto. |
+| `Pod` | [!DNL Oracle Eloqua] har stöd för flera datacenter, där var och en har ett unikt domännamn. [!DNL Oracle Eloqua] hänvisar till dessa som&quot;poder&quot;, det finns för närvarande sju totalt - p01, p02, p03, p04, p06, p07 och p08. Logga in på för att ta reda på vilken POD du är på [!DNL Oracle Eloqua] och notera URL:en i webbläsaren när du har loggat in. Om webbläsarens URL-adress till exempel är `secure.p01.eloqua.com` din `pod` är `p01`. Se [fastställa din POD](https://community.oracle.com/topliners/discussion/4470225/determining-your-pod-number-for-oracle-eloqua) sida för ytterligare vägledning. |
+
+Se [Logga in på [!DNL Oracle Eloqua]](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-user/Help/Administration/Tasks/SigningInToEloqua.htm#Signing) för vägledning.
 
 ## Guardrails {#guardrails}
 
@@ -88,9 +95,14 @@ Inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** sök efter [!DNL (
 
 ### Autentisera till mål {#authenticate}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_apioracleeloqua_companyname_username"
+>title="Företag\Användarnamn"
+>abstract="Fyll i det här fältet med ditt företagsnamn och ditt användarnamn från Oraclet Eloqua i formuläret `{COMPANY_NAME}\{USERNAME}`"
+
 Fyll i de obligatoriska fälten nedan. Se [Samla [!DNL Oracle Eloqua] autentiseringsuppgifter](#gather-credentials) för vägledning.
 * **[!UICONTROL Password]**: Lösenordet för [!DNL Oracle Eloqua] konto.
-* **[!UICONTROL Username]**: Användarnamnet för [!DNL Oracle Eloqua] konto.
+* **[!UICONTROL Username]**: En sammanfogad sträng som består av [!DNL Oracle Eloqua] Företagsnamn och [!DNL Oracle Eloqua] Användarnamn.<br>Det sammanfogade värdet har formen av `{COMPANY_NAME}\{USERNAME}`.<br> Observera att du inte ska använda klammerparenteser eller mellanslag och bevara `\`. <br>Till exempel om [!DNL Oracle Eloqua] Företagsnamnet är `MyCompany` och [!DNL Oracle Eloqua] Användarnamnet är `Username`, det sammanfogade värde som du kommer att använda i **[!UICONTROL Username]** fältet är `MyCompany\Username`.
 
 Om du vill autentisera mot målet väljer du **[!UICONTROL Connect to destination]**.
 ![Skärmbild av användargränssnittet för plattformen som visar hur man autentiserar.](../../assets/catalog/email-marketing/oracle-eloqua-api/authenticate-destination.png)
@@ -99,11 +111,18 @@ Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** stat
 
 ### Fyll i målinformation {#destination-details}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_apioracleeloqua_pod"
+>title="Pod"
+>abstract="Om du vill hitta ditt podnummer loggar du in på Oracle Eloqua. Anteckna URL-adressen i webbläsaren när du har loggat in. "
+>additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge Base - ta reda på ditt Pod-nummer"
+
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 ![Skärmbild för användargränssnittet för plattformen som visar målinformationen.](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
+* **[!UICONTROL Pod]**: För att få `pod` du är på, logga in på [!DNL Oracle Eloqua] och notera URL:en i webbläsaren när du har loggat in. Om webbläsarens URL-adress till exempel är `secure.p01.eloqua.com` den `pod` värdet du måste välja är `p01`. Se [Samla [!DNL Oracle Eloqua] autentiseringsuppgifter](#gather-credentials) för ytterligare vägledning.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -193,3 +212,18 @@ Mer information finns i [!DNL Oracle Eloqua] dokumentation:
 
 * [Oracle Eloqua Marketing Automation](https://docs.oracle.com/en/cloud/saas/marketing/eloqua.html)
 * [REST API för tjänsten Oracle Eloqua Marketing Cloud](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/rest-endpoints.html)
+
+### Changelog
+
+I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
+
++++ Visa ändringslogg
+
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| April 2023 | Dokumentationsuppdatering | <ul><li>Vi har uppdaterat [användningsfall](#use-cases) med ett tydligare exempel på när kunderna skulle kunna dra nytta av detta mål.</li> <li>Vi har uppdaterat [mappning](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li> <li>Vi har uppdaterat [Anslut till målet](#connect) med ett exempel på hur det sammanfogade värdet för **[!UICONTROL Username]** fält med [!DNL Oracle Eloqua] Företagsnamn och [!DNL Oracle Eloqua] Användarnamn. (PLATIR-28343)</li><li>Vi har uppdaterat [Samla [!DNL Oracle Eloqua] autentiseringsuppgifter](#gather-credentials) och [Fyll i målinformation](#destination-details) avsnitt med vägledning om [!DNL Oracle Eloqua] **[!UICONTROL Pod]** markering. The *&quot;Pod&quot;* -värdet används av målet för att skapa bas-URL:en för API-anropen. The [[!DNL Oracle Eloqua] krav](#prerequisites-destination) har även uppdaterats med vägledning om tilldelning *&quot;Avancerade användare - marknadsföringsbehörigheter&quot;* som krävs *&quot;Säkerhetsgrupper&quot;* för [!DNL Oracle Eloqua] -instans.</li></ul> |
+| Mars 2023 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
+
+{style="table-layout:auto"}
+
++++
