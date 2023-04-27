@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8b77b3a91d8724591ec389aa214c81c4bef6baf8
+source-git-commit: 7c4bdee9f8599e27ffab776c4df5083d2e29e26c
 workflow-type: tm+mt
-source-wordcount: '1364'
+source-wordcount: '1413'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan s
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Användardefinierade kontrollpaneler | Nu kan du **filtrera historiska data** utifrån widgetens insikter och använd antingen senaste data eller en anpassad analysperiod.<br>Du kan också göra det nu **duplicera dina befintliga widgetar**. Genom att anpassa en dubblett och redigera deras attribut kan du undvika att starta om från början när du skapar en ny, unik widget. |
+| Användardefinierade kontrollpaneler | Nu kan du **filtrera historiska data** utifrån widgetens insikter och använd antingen senaste data eller en anpassad analysperiod. Se [användardefinierad handbok för kontrollpaneler](../../dashboards/user-defined-dashboards.md#filter-historical-data) för mer information.<br>Du kan också göra det nu **duplicera dina befintliga widgetar**. Genom att anpassa en dubblett och redigera deras attribut kan du undvika att starta om från början när du skapar en ny, unik widget. Läs [guide för duplicering av widget](../../dashboards/user-defined-dashboards.md#duplicate-a-widget) om du vill veta mer. |
 
 {style="table-layout:auto"}
 
@@ -107,7 +107,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Växla visningsnamn | Schemaredigeraren har nu en funktion för att växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen. Tack vare den här flexibiliteten blir det enklare att hitta och redigera dina scheman. Visningsnamnen för standardfältgrupper genereras av systemet men kan vid behov anpassas via användargränssnittet. |
+| Växla visningsnamn | Schemaredigeraren har nu en funktion för att växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen.<br>![Schemaredigeraren med växlingsknappen för visningsnamn markerad.](../../xdm/images/ui/resources/schemas/display-name-toggle.png "Växla mellan visningsnamn för Schemaredigeraren"){width="100" zoomable="yes"}<br>Tack vare den här flexibiliteten blir det enklare att hitta och redigera dina scheman. Visningsnamnen för standardfältgrupper genereras av systemet men kan vid behov anpassas via användargränssnittet. Läs [visa namnväxlingsdokumentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle) om du vill veta mer. |
 
 {style="table-layout:auto"}
 
