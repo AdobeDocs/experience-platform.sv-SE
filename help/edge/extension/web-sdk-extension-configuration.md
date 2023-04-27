@@ -2,9 +2,9 @@
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
 description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 3ab02646968222c0ad09c1d8ce8fda04de7aaac6
+source-git-commit: ce2e80a7ea7385be98bbcda6a0704cd0814c62b2
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '1125'
 ht-degree: 0%
 
 ---
@@ -102,6 +102,23 @@ SDK kan automatiskt samla in länkklicksinformation åt dig. Som standard är de
 ### [!UICONTROL Automatically collected context data]
 
 Som standard samlar SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe kan du hitta den [här](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, kan du ändra de här alternativen.
+
+## [!UICONTROL Datastream Configuration Overrides]
+
+Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK.
+
+Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena, utan att du behöver skapa ett nytt datastream eller ändra dina befintliga inställningar.
+
+Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
+
+1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../datastreams/configure.md).
+2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av taggtillägget Web SDK.
+
+Se datastream [dokumentation om åsidosättning av konfiguration](../datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
+
+Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando kan du konfigurera åsidosättningarna på taggtilläggsskärmen som visas nedan.
+
+![Bild som visar åsidosättningar av dataströmskonfigurationer på tilläggssidan för Web SDK-taggen.](../assets/extension/overview/datastream-overrides.png)
 
 ## [!UICONTROL Advanced Settings]
 

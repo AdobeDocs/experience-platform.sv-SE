@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
-source-git-commit: f8ef0c6fb949cb5c9071e84d88a9151a5558848f
+exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
+source-git-commit: ce2e80a7ea7385be98bbcda6a0704cd0814c62b2
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1277'
 ht-degree: 2%
 
 ---
@@ -60,7 +61,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Funktion | Beskrivning |
 | --- | --- |
 | IP-adressofuscation för datastreams | Nu kan du definiera IP-obfusionsalternativ på hel- eller partiell datastream-nivå i [användargränssnitt för konfiguration av datastream](../../edge/datastreams/configure.md). <br><br>Inställningen för IP-förfalskning på datastream-nivå har företräde framför IP-förfalskning som har konfigurerats i Adobe Target och Audience Manager. <br><br>Data som skickas till Adobe Analytics påverkas inte av datastream-nivån [!UICONTROL IP Obfuscation] inställning. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner.<br><br> Mer information om IP-förfalskning och instruktioner om hur du konfigurerar den finns i [konfigurationsdokumentation för datastream](../../edge/datastreams/configure.md#advanced-options). |
-| Åsidosättningar av dataströmskonfiguration | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Att åsidosätta datastream-konfigurationer är en tvåstegsprocess. Först måste du definiera åsidosättningar av dataströmskonfigurationer i användargränssnittet för datastreams. Sedan måste du skicka åsidosättningarna till Edge Network via ett Web SDK-kommando. |
+| [Åsidosättningar av dataströmskonfiguration](../../edge/datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Att åsidosätta datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../edge/datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](../../edge/extension/web-sdk-extension-configuration.md).</li></ol> |
 
 {style="table-layout:auto"}
 

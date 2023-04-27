@@ -3,9 +3,9 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 9b108d0e1722ea1b895c08fd7f42104a0d0da5df
+source-git-commit: a6948e3744aa754eda22831a7e68b847eb904e76
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1194'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,12 @@ alloy("sendEvent", {
 
 ### Åsidosätta datauppsättnings-ID
 
+>[!IMPORTANT]
+>
+>The `datasetId` som stöds av `sendEvent` kommandot har tagits bort. Om du vill åsidosätta ett datauppsättnings-ID använder du [konfigurationsåsidosättningar](../datastreams/overrides.md) i stället.
+
 I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange `datasetId` på `sendEvent` kommando:
+
 
 
 ```javascript

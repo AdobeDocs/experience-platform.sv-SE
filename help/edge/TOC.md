@@ -5,10 +5,10 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: b53be9f2f2d55d5f9e8081fb0ca6732dcc2a8c11
+source-git-commit: 5a64beb2f5826bda585111e9ce7f760b939bf9b9
 workflow-type: tm+mt
-source-wordcount: '209'
-ht-degree: 21%
+source-wordcount: '212'
+ht-degree: 20%
 
 ---
 
@@ -30,6 +30,7 @@ ht-degree: 21%
 * Dataströmmar {#datastreams}
    * [Översikt](./datastreams/overview.md)
    * [Konfigurera ett datastream](./datastreams/configure.md)
+   * [Konfigurera åsidosättningar av datastream](./datastreams/overrides.md)
    * [Dataförberedelse för datainsamling](./datastreams/data-prep.md)
    * Databerikning {#data-enrichment}
       * [Väderdata av väderkanalen](./datastreams/data-enrichment/weather.md)
