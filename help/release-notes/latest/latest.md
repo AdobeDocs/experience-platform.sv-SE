@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ce2e80a7ea7385be98bbcda6a0704cd0814c62b2
+source-git-commit: efd69011f1ba81ece0a1c270cc71b9706ab7b88f
 workflow-type: tm+mt
-source-wordcount: '1276'
+source-wordcount: '1288'
 ht-degree: 2%
 
 ---
@@ -82,7 +82,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
 | Dataflödesövervakning för [!DNL Custom Personalization] och [!DNL Adobe Commerce] mål | <p> Nu kan du se aktiveringsstatistik för [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md), [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) och [Anpassad personalisering med attribut](../../destinations/catalog/personalization/custom-personalization.md) anslutningar. </p> <p>![Adobe Commerce, bild](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce metrics"){width="100" zoomable="yes"}</p>  Se [Övervaka dataflöden på arbetsytan Destinationer](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace) för mer information. |
-| Nytt **[!UICONTROL Append segment ID to segment name]** fält för [!DNL Google Ad Manager] och [!DNL Google Ad Manager 360] mål | Nu kan du ha segmentnamnet i [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) och [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) inkludera segment-ID från Experience Platform, så här: `Segment Name (Segment ID)`. |
+| Nytt **[!UICONTROL Append segment ID to segment name]** fält för [!DNL Google Ad Manager] och [!DNL Google Ad Manager 360] mål | <p>Nu kan du ha segmentnamnet i [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) och [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) inkludera segment-ID från Experience Platform, så här: `Segment Name (Segment ID)`.</p><p>![Lägg till bild för segment-ID](/help/destinations/assets/common/append-segment-id-to-segment-name.png "Nytt Lägg till segment-ID till segmentnamnsfält "){width="100" zoomable="yes"}</p> |
 
 {style="table-layout:auto"}
 
@@ -97,7 +97,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
 - Vi har åtgärdat ett problem i **Undantagna identiteter** rapportmått för filbaserad destinationsexport. Kunderna fick alla exporterade ID:n från den aktiverade exporten som förväntat. Men **Undantagna identiteter** rapportmåttet i användargränssnittet visade felaktigt ett stort antal utelämnade identiteter på grund av felaktigt antal identiteter som aldrig skulle exporteras. (PLAT-149774)
-- Vi har åtgärdat ett problem i schemaläggningssteget i aktiveringsarbetsflödet. För mål som kräver ett mappnings-ID kunde kunderna inte lägga till ett mappnings-ID för segment som lagts till i befintliga målanslutningar. (PLAT-148808)
+- Vi har åtgärdat ett problem i **Schemaläggning** steg i aktiveringsarbetsflödet. För mål som kräver ett mappnings-ID kunde kunderna inte lägga till ett mappnings-ID för segment som lagts till i befintliga målanslutningar. (PLAT-148808)
 
 <!--
 - We have fixed an issue with the beta SFTP destination where the port number was previously hardcoded to 22. The port is now configurable for this destination. 
