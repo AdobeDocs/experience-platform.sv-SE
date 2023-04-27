@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättig
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 5b5afceff59105eb6e0d17e22c2810a5c25ae760
+source-git-commit: fd594e19e13ca6e7f9f92674107d8ac6dabac9d6
 workflow-type: tm+mt
-source-wordcount: '2133'
+source-wordcount: '2169'
 ht-degree: 1%
 
 ---
@@ -122,8 +122,6 @@ Profilarkivet består av följande komponenter:
 
 {style="table-layout:auto"}
 
-
-
 #### Dispositionsrapporter för profilarkiv
 
 Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet är uppbyggt. Dessa rapporter hjälper er att fatta välgrundade beslut om hur och var era Experience Event-utgångsdatum ska anges för att optimera er licensanvändning:
@@ -132,6 +130,10 @@ Det finns ett antal rapporter som hjälper dig att förstå hur profilarkivet ä
 * **API för identitetsöverlappningsrapport**: Visar de identitetsnamnutrymmen som bidrar mest till din adresserbara publik. Se självstudiekursen om [generera rapporten om identitetsöverlappning](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) för mer information.
 <!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
+
+#### Förfallodatum för pseudonyma profildata {#pseudonymous-profile-expirations}
+
+Med den här funktionen kan du automatiskt ta bort inaktuella pseudonyma profiler från profilarkivet. Mer information om den här funktionen finns i [Översikt över förfallodatum för pseudonyma profildata](../../profile/pseudonymous-profiles.md).
 
 #### Förfallodatum för upplevelsehändelser {#event-expirations}
 
@@ -144,7 +146,7 @@ Nedan följer en lista över rekommenderade metoder som du kan följa för att s
 * Använd [kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md) för att följa upp och övervaka trender för kundanvändning. På så sätt kan du ligga steget före eventuella överbelastningar som kan uppstå.
 * Konfigurera [filter för förtäring](#ingestion-filters) genom att identifiera de händelser som krävs för er segmentering och personalisering. Detta gör att du bara kan skicka viktiga händelser som krävs för dina användningsfall.
 * Se till att du bara har [aktiverade datauppsättningar för profil](#ingestion-filters) som krävs för er segmenterings- och personaliseringsanvändning.
-* Konfigurera en [Förfallotid för upplevelsehändelse](#event-expirations) för högfrekventa data som webbdata.
+* Konfigurera [Förfallodatum för upplevelsehändelser](#event-expirations) och [Förfallodatum för pseudonyma profildata](#pseudonymous-profile-expirations) för högfrekventa data som webbdata.
 * Kontrollera regelbundet [Kompositionsrapporter för profil](#profile-store-composition-reports) för att förstå din profilbutikskomposition. På så sätt kan ni förstå vilka datakällor som bidrar mest till er licensanvändning.
 
 ## Sammanfattning av funktioner och tillgänglighet {#feature-summary}
