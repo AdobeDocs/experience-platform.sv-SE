@@ -3,9 +3,9 @@ keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Displ
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
+source-git-commit: 326127996a27df41383ef67da765f7b0818f17f2
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '967'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 Observera följande information som är specifik för [!DNL Google Display & Video 360] mål:
 
 * Aktiverade målgrupper skapas programmatiskt i Google.
-* [!DNL Platform] innehåller för närvarande inga mätvärden som validerar den lyckade aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
+* aktivering av eftersläpningar i målgruppen [!DNL Google Display & Video 360] målet är planerat att inträffa 24-48 timmar efter det att ett segment först har mappats till en målanslutning. Uppdateringen är ett svar på Google policy att vänta i 24 timmar tills data har importerats och är avsedd att förbättra matchningsfrekvensen mellan CDP i realtid och [!DNL Google Display & Video 360]. Observera att detta är en backend-konfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.
 
 >[!IMPORTANT]
 >
@@ -61,8 +61,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Innan du skapar [!DNL Google Display & Video 360] på Platform måste du kontakta Google för att få Adobe att finnas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till tillåtelselista. Kontakta Google och lämna följande information:
 
-* **Konto-ID**: Adobe konto-ID hos Google. Konto-ID: 87933855.
-* **Kund-ID**: Adobe kundkonto-ID hos Google. Kund-ID: 89690775.
+* **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
+* **Kund-ID**: Adobe kund-ID med Google. Kund-ID: 89690775.
 * **Din kontotyp**: use **[!DNL Invite advertiser]** för att tillåta att målgrupper delas endast till ett visst varumärke i ditt Display &amp; Video 360-konto eller använder **[!DNL Invite partner]** så att målgrupper kan delas med alla varumärken i ert Display &amp; Video 360-konto.
 
 ## Anslut till målet {#connect}

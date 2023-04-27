@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: efd69011f1ba81ece0a1c270cc71b9706ab7b88f
+source-git-commit: 8b77b3a91d8724591ec389aa214c81c4bef6baf8
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1365'
 ht-degree: 2%
 
 ---
@@ -83,16 +83,9 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | ----------- | ----------- |
 | Dataflödesövervakning för [!DNL Custom Personalization] och [!DNL Adobe Commerce] mål | <p> Nu kan du se aktiveringsstatistik för [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md), [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) och [Anpassad personalisering med attribut](../../destinations/catalog/personalization/custom-personalization.md) anslutningar. </p> <p>![Adobe Commerce, bild](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce metrics"){width="100" zoomable="yes"}</p>  Se [Övervaka dataflöden på arbetsytan Destinationer](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace) för mer information. |
 | Nytt **[!UICONTROL Append segment ID to segment name]** fält för [!DNL Google Ad Manager] och [!DNL Google Ad Manager 360] mål | <p>Nu kan du ha segmentnamnet i [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) och [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) inkludera segment-ID från Experience Platform, så här: `Segment Name (Segment ID)`.</p><p>![Lägg till bild för segment-ID](/help/destinations/assets/common/append-segment-id-to-segment-name.png "Nytt Lägg till segment-ID till segmentnamnsfält "){width="100" zoomable="yes"}</p> |
+| Schemalagda efterfyllningar av målgrupper | <p>För [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) är aktiveringen av målgruppens efterfyllningar till målet planerad till 24-48 timmar efter att ett segment först har mappats till en målanslutning. Uppdateringen är ett svar på Google policy att vänta i 24 timmar tills data har importerats och kommer att förbättra matchningsfrekvensen mellan realtidskodskiften och [!DNL Google Display & Video 360].</p> <p>Observera att detta är en backend-konfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.</p> |
 
 {style="table-layout:auto"}
-
-<!--
-
-| New **[!UICONTROL Append segment ID to segment name]** field for the [!DNL Google Ad Manager] and [!DNL Google Ad Manager 360] destinations | You can now have the segment name in [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) and [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) include the segment ID from Experience Platform, like this: `Segment Name (Segment ID)`. |
-| Scheduled audience backfills | <p>For the [!DNL Google Display & Video 360] destination, the activation of audience backfills to the destination is scheduled to occur 24-48 hours after a segment is first mapped to a destination connection. This update is in response to Google's policy to wait 24 hours until ingesting data and will improve match rates between Real-time CDP and [!DNL Google Display & Video 360].</p> <p>Note that this is a backend configuration applicable to this destination only and that is unrelated to any customer-configurable scheduling options in the UI.</p> |
-
--->
-
 
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 

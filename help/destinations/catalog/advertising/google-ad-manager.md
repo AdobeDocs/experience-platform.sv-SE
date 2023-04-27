@@ -3,10 +3,10 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: ea480854c6058d84615b66a7df2d7c8fbd619bab
+source-git-commit: 5174c65970aa8df9bc3f2c8d612c26c72c20e81f
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '900'
+ht-degree: 1%
 
 ---
 
@@ -86,12 +86,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 * **[!UICONTROL Account Type]**: Välj ett alternativ beroende på ditt konto hos Google:
    * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
    * Använd `AdX buyer` for [!DNL Google AdX]
-
-<!--
-
-*  **[!UICONTROL Append segment ID to segment name]**: Select this option to have the segment name in Google Ad Manager include the segment ID from Experience Platform, like this: `Segment Name (Segment ID)`
-
--->
+* **[!UICONTROL Append segment ID to segment name]**: Välj det här alternativet om du vill att segmentnamnet i Google Ad Manager ska innehålla segment-ID:t från Experience Platform: `Segment Name (Segment ID)`.
 
 >[!NOTE]
 >
