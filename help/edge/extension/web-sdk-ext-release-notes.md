@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: ccd02ea014d514b56a8e1bd540bb2c2c4bb2eb1b
+source-git-commit: 952ffa14537058ad03121747846a96c7c978b833
 workflow-type: tm+mt
 source-wordcount: '1645'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Ex
 
 **Nya funktioner**
 
-* Stöd för åsidosättande av datastream-konfiguration har lagts till.
+* Stöd för [åsidosättningar av konfiguration av datastream](../datastreams/overrides.md).
 * Lägg till borttagningsmeddelande i `datasetId` på `sendEvent` -kommando.
 
 **Korrigeringar och förbättringar**

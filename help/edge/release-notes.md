@@ -3,7 +3,7 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: ccd02ea014d514b56a8e1bd540bb2c2c4bb2eb1b
+source-git-commit: 952ffa14537058ad03121747846a96c7c978b833
 workflow-type: tm+mt
 source-wordcount: '1517'
 ht-degree: 1%
@@ -20,7 +20,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 
 **Nya funktioner**
 
-* Stöd för åsidosättande av datastream-konfiguration har lagts till.
+* Stöd för [åsidosättningar av konfiguration av datastream](datastreams/overrides.md).
 
 ## Version 2.15.0 - 30 mars 2023
 
