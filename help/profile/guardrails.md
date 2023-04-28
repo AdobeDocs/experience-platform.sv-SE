@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimal systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1c092cd66a8a96623359a0e56de76e2a3d077c8d
+source-git-commit: 8ee68e5416c28a08dffc358dad70055e9b4cdd28
 workflow-type: tm+mt
-source-wordcount: '1982'
+source-wordcount: '1980'
 ht-degree: 4%
 
 ---
@@ -48,6 +48,8 @@ Det finns två typer av standardgränser i det här dokumentet:
 
 Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprofildata i realtid. Mer information om primära enheter och dimensionsenheter finns i avsnittet om [enhetstyper](#entity-types) i tillägget.
 
+![Ett diagram som visar olika skyddsutkast för profildata i Adobe Experience Platform.](./images/guardrails/profile-guardrails.png)
+
 ### Garantier för primära enheter
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
@@ -61,7 +63,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 | Array-kardinalitet i ExperienceEvent | &lt;=10 | Mjuk | Den optimala arraykardinaliteten i en ExperienceEvent (tidsseriedata) är &lt;=10. |
 | Identitetsantal för individuell profil identitetsdiagram | 50 | Hård | **Det högsta antalet identiteter i ett identitetsdiagram för en enskild profil är 50.** Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Dimensionens skyddsräcken
 
@@ -71,7 +73,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 | Inga kapslade relationer | 0 | Mjuk | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
 | JSON-djup för primärt ID-fält | 4 | Mjuk | Rekommenderat maximalt JSON-djup för det primära ID-fältet är 4. Det innebär att du inte ska välja ett fält som primärt ID i ett kapslat schema om det är mer än fyra nivåer djupt. Ett fält på den fjärde kapslade nivån kan användas som primärt ID. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Begränsningar för datastorlek
 
@@ -92,7 +94,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 | Antal inkapslade Profile- eller ExperienceEvent-batchar per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om du samlar in ytterligare batchar påverkas systemets prestanda. |
 | Antal ExperienceEvents per profilpost | 5000 | Mjuk | **Det högsta antalet ExperienceEvents per profilpost är 5 000.** Profiler med fler än 5 000 ExperienceEvents kommer att **not** beaktas för segmentering. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Dimensionens skyddsräcken
 
@@ -102,7 +104,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 | Datamängder per dimensionellt entitetsschema | 5 | Mjuk | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
 | Inkapslade batchar för Dimension per dag | 4 per enhet | Mjuk | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Skyddsritningar för segmentering
 
@@ -115,7 +117,7 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 | Direktuppspelningssegment per sandlåda | 500 | Mjuk | En organisation kan ha fler än 500 direktuppspelningssegment totalt, förutsatt att det finns färre än 500 direktuppspelningssegment i varje enskild sandlåda. Om du försöker skapa fler direktuppspelningssegment kan det påverka systemets prestanda. |
 | Gruppsegment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 gruppsegment totalt, förutsatt att det finns mindre än 4000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment kan det påverka systemets prestanda. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Bilaga
 
