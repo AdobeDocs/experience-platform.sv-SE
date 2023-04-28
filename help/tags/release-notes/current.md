@@ -2,14 +2,22 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 3ebf8df16f88660eab481bd0a0ba88816b470255
+source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '796'
 ht-degree: 2%
 
 ---
 
 # Versionsinformation om taggar och vidarebefordran av händelser
+
+## 26 april 2023
+
+* **OAuth JWT Secret**: The [OAuth JWT Secret](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) gör att kunder kan använda Adobe och Google Service Token för att stödja interaktioner mellan server och server vid händelsevidarebefordran.
+
+Följande nya tillägg har släppts:
+
+* **[!DNL Pinterest Conversions API]extension**: The [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Pinterest] i form av händelser på serversidan med [!DNL Pinterest Conversions API].
 
 ## 29 mars 2023
 
