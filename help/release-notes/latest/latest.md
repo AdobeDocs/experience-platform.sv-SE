@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7c4bdee9f8599e27ffab776c4df5083d2e29e26c
+source-git-commit: a8e59d6386a51c4d5d3173be16ee45311f8d2929
 workflow-type: tm+mt
 source-wordcount: '1413'
 ht-degree: 2%
@@ -122,6 +122,8 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Förfallodatum för pseudonyma profiler | Nu kan pseudonyma profildata förfalla. Den här versionen tar kontinuerligt bort inaktuella pseudonyma profiler från din Experience Platform-instans när den har aktiverats. Läs mer om den här funktionen och pseudonyma profiler i [Förfalloguide för pseudonyma profildata](../../profile/pseudonymous-profiles.md). |
+
+{style="table-layout:auto"}
 
 ## Källor {#sources}
 
