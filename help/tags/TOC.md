@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 9d9e02c2a4f628ebe04aaa63942e830f3354729f
+source-git-commit: 24220c24af89e3eabc3d21854c1f70a418b2da59
 workflow-type: tm+mt
-source-wordcount: '981'
+source-wordcount: '982'
 ht-degree: 14%
 
 ---
@@ -229,6 +229,8 @@ ht-degree: 14%
       * [!DNL Mixpanel] {#mixpanel}
          * [Översikt](./extensions/server/mixpanel/overview.md)
       * [Pega Customer Decision Hub](https://exchange.adobe.com/apps/ec/107597)
+      * [!DNL Pinterest] {#pinterest}
+         * [Översikt](./extensions/server/pinterest/overview.md)
       * [API för fäst konvertering](https://exchange.adobe.com/apps/ec/108550)
       * [!DNL Splunk] {#splunk}
          * [Översikt](./extensions/server/splunk/overview.md)
