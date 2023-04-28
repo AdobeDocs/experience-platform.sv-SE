@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
+source-git-commit: 3594b20ee495dadf91d745958eac1a06647cae24
 workflow-type: tm+mt
-source-wordcount: '1483'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -110,6 +110,26 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Funktion | Beskrivning |
 | --- | --- |
 | Växla visningsnamn | Schemaredigeraren har nu en funktion för att växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen.<br>![Schemaredigeraren med växlingsknappen för visningsnamn markerad.](../../xdm/images/ui/resources/schemas/display-name-toggle.png "Växla mellan visningsnamn för Schemaredigeraren"){width="100" zoomable="yes"}<br>Tack vare den här flexibiliteten blir det enklare att hitta och redigera dina scheman. Visningsnamnen för standardfältgrupper genereras av systemet men kan vid behov anpassas via användargränssnittet. Läs [visa namnväxlingsdokumentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle) om du vill veta mer. |
+
+{style="table-layout:auto"}
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Schema | [[!UICONTROL Adobe Target Classification Fields]](https://github.com/adobe/xdm/pull/1719/files) | Ett nytt XDM-schema för målklassificeringsdatamängder som innehåller en uppsättning metadatafält för att klassificera Target-aktiviteter och -upplevelser. |
+
+{style="table-layout:auto"}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Fältgrupp | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1696/files) | En fältgrupp för kontotillägg för kundprofil i realtid har lagts till som gör det möjligt för användare att lägga till segmentmedlemskap i en kontounion. |
+| Schema | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1696/files) | Fältgruppen Beräknade attribut som används av kundprofilen i realtid har uppdaterats till ett skrivskyddat globalt schema. |
+| Fältgrupp | Flera | Flera händelser har lagts till som fält för [[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/pull/1718/files). |
+| Fältgrupp | Profillojalitetsinformation | [Titeln har åtgärdats](https://github.com/adobe/xdm/pull/1717/files) for `xdm:upgradeDate` från&quot;Programnamn&quot; till&quot;Uppgraderingsdatum&quot;. |
+| Fältgrupp | Flera | Flera fält från [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1714/files) har uppdaterats för att ta bort den dubbla kapslade hierarkin. |
 
 {style="table-layout:auto"}
 
