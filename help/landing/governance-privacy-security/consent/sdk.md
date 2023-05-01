@@ -2,9 +2,9 @@
 title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: dc269f952d0970cb5be1b28ab91c6006de975df3
 workflow-type: tm+mt
-source-wordcount: '1344'
+source-wordcount: '1320'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,6 @@ När du har skapat ett nytt dataflöde eller valt ett befintligt som du vill red
 | Datastream-fält | Värde |
 | --- | --- |
 | [!UICONTROL Sandbox] | Namnet på plattformen [sandlåda](../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
-| [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om [skapa en direktuppspelningsanslutning](../../../ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt inlopp för direktuppspelning. |
 | [!UICONTROL Event Dataset] | An [!DNL XDM ExperienceEvent] datauppsättning som du planerar att skicka händelsedata till med SDK. Du måste tillhandahålla en händelsedatamängd för att kunna skapa ett plattformsdatastam, men observera att data som skickas via händelser inte hanteras i arbetsflöden för efterföljande tillämpning. |
 | [!UICONTROL Profile Dataset] | The [!DNL Profile]-aktiverad datauppsättning med kundmedgivandefält som du har skapat [tidigare](#prerequisites). |
 
