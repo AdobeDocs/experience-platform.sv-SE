@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Privacy Service och Experience Cloud
 description: Det här dokumentet innehåller en referens för hur du konfigurerar olika Experience Cloud-program för sekretessrelaterade åtgärder.
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 4a078a09da131260fa44b64cd5f707482afdce04
 workflow-type: tm+mt
-source-wordcount: '888'
-ht-degree: 5%
+source-wordcount: '892'
+ht-degree: 7%
 
 ---
 
@@ -33,7 +33,7 @@ Här följer en lista med [!DNL Experience Cloud] program som är integrerade me
 | Program | Åtkomst/borttagning | Avanmäl dig från försäljningen | Ta bort beteende | Dokumentation och andra överväganden |
 | --- | :---: | :---: | --- | --- |
 | Adobe Advertising Cloud | ✓ | ✓ | Den registrerades cookie-ID eller enhets-ID tas bort från systemet tillsammans med alla kostnads-, klick- och intäktsdata som är kopplade till cookien. | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[Dokumentation för avanmälan av försäljning för CCPA](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
-| Adobe Analytics | ✓ | ✓ | If `analyticsDeleteMethod` utelämnas eller anges till `anonymize` När en sekretessförfrågan görs görs alla data som refereras av den angivna samlingen med användar-ID anonyma. If `analyticsDeleteMethod` är inställd på `purge`, tas alla data bort helt. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>[!DNL Analytics] hanterar avanmälningsbegäranden med [sekretessrapporteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/consent-variables.html)</li></ul> |
+| Adobe Analytics | ✓ | ✓ | Adobe Analytics har verktyg som används för att etikettera data utifrån känslighet och avtalsbegränsningar. Etiketter är ett viktigt steg för:<ol><li>Identifiera registrerade personer.</li><li>Avgör vilka data som ska returneras som en del av en åtkomstbegäran.</li><li>Identifierar datafält som måste tas bort som en del av en raderingsbegäran.</li></ol> | <ul><li>[Arbetsflöde för sekretess](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/an-gdpr-workflow.html)</li><li>[Analysemärkning](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/data-governance/data-labels/gdpr-labels.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | Alla egenskaper och segment som är associerade med Audience Manager-ID:t som ingår i begäran tas bort. Dessutom är respektive identifierare för den enskilda personen avanmäld från ytterligare datainsamling och respektive ID-mappningar tas bort. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[Dokumentation om avanmälan](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
 | Adobe Campaign Standard | ✓ | ✓ | Den registrerades lagrade data tas bort från systemet. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=sv)</li><li>[Dokumentation om avanmälan](../segmentation/consents.md)</li></ul> |
 | Adobe kundattribut (CRS) | ✓ | Ej tillämpligt | Den registrerades attribut tas bort från systemet. | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>Kundattribut har inte möjlighet att överföra data, och därför kan du inte avanmäla dig från försäljning.</li></ul> |
@@ -42,7 +42,7 @@ Här följer en lista med [!DNL Experience Cloud] program som är integrerade me
 | Adobe Target | ✓ | Ej tillämpligt | Alla data som är kopplade till den registrerade personens ID tas bort från deras besökarprofil. Aggregerade eller anonyma uppgifter som inte identifierar den enskilda personen eller som på annat sätt är orelaterade (t.ex. innehållsdata) gäller inte för borttagningsförfrågningar. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
 | Marketo Engage | ✓ | Ej tillämpligt | Den registrerades lagrade data tas bort från systemet. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/privacy-requests.html)</li><li>[!DNL Marketo] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Självbetjäningsprogram {#self-serve}
 
@@ -58,4 +58,4 @@ Här följer en lista med [!DNL Experience Cloud] program som inte är integrera
 | [Taggar i Adobe Experience Platform](../tags/ui/client-side/consent.md) | Hur utvecklare kan använda tillägg och regelbyggaren för att definiera lösningar för anmälan och avanmälan. |
 | [Workfront](https://www.workfront.com/privacy-notice) | Läs om hur Workfront samlar in personuppgifter och hur den registrerade kan skicka in en begäran om integritet via ett formulär. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
