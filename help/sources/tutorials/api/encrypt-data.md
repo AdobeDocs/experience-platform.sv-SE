@@ -3,7 +3,8 @@ title: Krypterad datainmatning
 description: Med Adobe Experience Platform kan du importera krypterade filer via batchkällor i molnet.
 hide: true
 hidefromtoc: true
-source-git-commit: a1babf70a7a4e20f3e535741c95ac927597c9f48
+exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
+source-git-commit: 8531459da97be648d0a63ffc2af77ce41124585d
 workflow-type: tm+mt
 source-wordcount: '967'
 ht-degree: 0%
@@ -24,7 +25,7 @@ Processen för krypterad datainmatning är följande:
 
 >[!IMPORTANT]
 >
->Den största tillåtna storleken för en krypterad fil är 100 MB. Du kan t.ex. mata in data som är 2 GB i ett enda dataflöde, men en enskild fil i dessa data får inte överskrida 100 MB.
+>Den största tillåtna storleken för en krypterad fil är 1 GB. Du kan till exempel importera 2 GB data i en enda dataflödeskörning, men en enskild fil i dessa data får inte överstiga 1 GB.
 
 Det här dokumentet innehåller anvisningar om hur du genererar ett krypteringsnyckelpar för att kryptera dina data och importerar krypterade data till Experience Platform med hjälp av molnlagringskällor.
 
