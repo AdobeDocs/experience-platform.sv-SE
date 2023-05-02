@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
-source-git-commit: 52fe0ef2ab195756c381b3ef0a5792dffe459b8d
+source-git-commit: 956ac5d210d54526e886e57b8ea37ab4b3fbab8a
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -196,9 +196,6 @@ Hämta dataflödes-ID för anslutningen > hämta målanslutnings-ID > PATCH för
 PATCH /targetConnections/{TARGET_CONNECTION_ID}
 ```
 
->[!ENDSHADEBOX]
-
-
 >[!BEGINTABS]
 
 >[!TAB Amazon S3]
@@ -244,11 +241,11 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du ka
 }
 ```
 
->[!TAB Google Ad Manager 360]
+>[!TAB Google Ad Manager och Google Ad Manager 360]
 
 **Begäran**
 
-Följande begäran uppdaterar parametrarna för en [[!DNL Google Ad Manager 360] mål](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) anslutning för att lägga till det nya tilläggets segment-ID i segmentnamnsfältet.
+Följande begäran uppdaterar parametrarna för en [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) eller [[!DNL Google Ad Manager 360] mål](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) anslutning för att lägga till den nya [**[!UICONTROL Append segment ID to segment name]**](/help/release-notes/2023/april-2023.md#destinations) fält.
 
 ```shell
 curl -X PATCH \
@@ -328,6 +325,8 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du ka
 
 >[!ENDTABS]
 
+>[!ENDSHADEBOX]
+
 ## Redigera grundläggande anslutningskomponenter (autentiseringsparametrar och andra komponenter) {#patch-base-connection}
 
 Komponenterna i en basanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] mål kan du uppdatera åtkomstnyckeln och den hemliga nyckeln till [!DNL Amazon S3] plats.
@@ -340,11 +339,13 @@ Kom ihåg att du fick ditt grundläggande anslutnings-ID i ett tidigare steg nä
 >
 >The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av basanslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av en flödenhet, till exempel dataflöde, basanslutning och andra.
 >
-> Om du vill hämta den senaste versionen av taggvärdet gör du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}` slutpunkt, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
+> Om du vill hämta den senaste versionen av Etag-värdet gör du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}` slutpunkt, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
 
 Nedan visas några exempel på hur du uppdaterar parametrar i basanslutningsspecifikationen för olika typer av destinationer. Men den allmänna regeln för uppdatering av parametrar för alla mål är följande:
 
 Hämta dataflödes-ID för anslutningen > hämta basanslutnings-ID > PATCH för basanslutningen med uppdaterade värden för de önskade parametrarna.
+
+>[!BEGINSHADEBOX]
 
 **API-format**
 
@@ -440,6 +441,8 @@ Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad 
 ```
 
 >[!ENDTABS]
+
+>[!ENDSHADEBOX]
 
 ## API-felhantering {#api-error-handling}
 
