@@ -2,10 +2,10 @@
 title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: 3197eddcf9fef2870589fdf9f09276a333f30cd1
+source-git-commit: 55f1eafa68124b044d20f8f909f6238766076a7a
 workflow-type: tm+mt
-source-wordcount: '1273'
-ht-degree: 0%
+source-wordcount: '1405'
+ht-degree: 1%
 
 ---
 
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 [[!DNL Zendesk]](https://www.zendesk.com) är en kundtjänstlösning och ett säljverktyg.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Zendesk] Kontakt-API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/), för att skapa och uppdatera identiteter inom ett segment som kontakter inom [!DNL Zendesk].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Zendesk] Kontakt-API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/), till **skapa och uppdatera identiteter** inom ett segment som kontakter inom [!DNL Zendesk].
 
 [!DNL Zendesk] använder lagervariabler som en autentiseringsmekanism för att kommunicera med [!DNL Zendesk] Kontakter-API. Instruktioner för hur du autentiserar [!DNL Zendesk] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Du kan skapa segment utifrån offlinedata och skicka dessa segment till [!DNL Zendesk], som visas i användarnas flöden så snart segment och profiler uppdateras i Adobe Experience Platform.
+Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en sömlös och personaliserad upplevelse för sina kunder. Avdelningen kan skapa segment utifrån sina egna offlinedata för att skapa nya användarprofiler eller uppdatera befintlig profilinformation från olika interaktioner (t.ex. inköp, returer osv.) och skicka segmenten från Adobe Experience Platform till [!DNL Zendesk]. Den uppdaterade informationen finns i [!DNL Zendesk] säkerställer att kundtjänstpersonalen har den senaste informationen om kunden omedelbart tillgänglig, vilket ger snabbare svar och lösningar.
 
 ## Förutsättningar {#prerequisites}
 
@@ -118,17 +118,15 @@ Koppla XDM-fälten till [!DNL Zendesk] målfält, följ dessa steg:
 
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
 1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select attributes]** och välj XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
-1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet eller välj **[!UICONTROL Select custom attributes]** och välj ett attribut efter behov.
-   * Upprepa dessa steg för att lägga till följande mappningar mellan XDM-profilschemat och ditt [!DNL Zendesk] instans: |Källfält|Målfält| Obligatoriskt| |—|—|—| |`xdm: person.name.lastName`|`Attribute: last_name` <br>eller `Attribute: name`| Ja | |`IdentityMap: Email`|`Identity: email`| Ja |
+1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en målidentitet eller välj **[!UICONTROL Select attributes]** och välj ett av de schemaattribut som stöds.
+   * Upprepa dessa steg om du vill lägga till följande obligatoriska mappningar, du kan även lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL Zendesk] instans: |Källfält|Målfält| Obligatoriskt| |—|—|—| |`xdm: person.name.lastName`|`xdm: last_name`| Ja | |`IdentityMap: Email`|`Identity: email`| Ja | |`xdm: person.name.firstName`|`xdm: first_name`| |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
       ![Skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/crm/zendesk/mappings.png)
 
-      >[!IMPORTANT]
-      >
-      >Både målfältsmappningar är obligatoriska och obligatoriska för [!DNL Zendesk] till jobbet.
-      >
-      >Mappningen för *Efternamn* eller *Namn* krävs annars [!DNL Zendesk] API svarar inte med något fel och alla attributvärden som skickas ignoreras.
+>[!IMPORTANT]
+>
+>The `Attribute: last_name` och `Identity: email` målmappningar är obligatoriska för det här målet. Om mappningarna saknas ignoreras alla andra mappningar och skickas inte till [!DNL Zendesk].
 
 När du är klar med mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -167,3 +165,18 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 Ytterligare användbar information från [!DNL Zendesk] dokumentationen nedan:
 * [Ring ditt första samtal](https://developer.zendesk.com/documentation/sales-crm/first-call/)
 * [Anpassade fält](https://developer.zendesk.com/api-reference/sales-crm/requests/#custom-fields)
+
+### Changelog
+
+I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
+
++++ Visa ändringslogg
+
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| April 2023 | Dokumentationsuppdatering | <ul><li>Vi har uppdaterat [användningsfall](#use-cases) med ett tydligare exempel på när kunderna skulle kunna dra nytta av detta mål.</li> <li>Vi har uppdaterat [mappning](#mapping-considerations-example) för att spegla de nödvändiga mappningarna. The `Attribute: last_name` och `Identity: email` målmappningar är obligatoriska för det här målet. Om mappningarna saknas ignoreras alla andra mappningar och skickas inte till [!DNL Zendesk].</li> <li>Vi har uppdaterat [mappning](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li></ul> |
+| Mars 2023 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
+
+{style="table-layout:auto"}
+
++++
