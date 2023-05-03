@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: cd99ccb7b026565814dd6f268b2a92dda34bc7f0
+source-git-commit: 8bbac729324ad5bd701f8609c443092ddb045b96
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1315'
 ht-degree: 1%
 
 ---
@@ -14,16 +14,11 @@ ht-degree: 1%
 **Releasedatum: 26 oktober 2022**
 
 - [Kundhanterade nycklar](#cmk)
-
-Uppdateringar av befintliga funktioner i Adobe Experience Platform:
-
-- [Versionsinformation för Adobe Experience Platform](#adobe-experience-platform-release-notes)
-   - [Kundhanterade nycklar {#cmk}](#customer-managed-keys-cmk)
-   - [Datainsamling {#data-collection}](#data-collection-data-collection)
-   - [\[!DNL Destinations\] {#destinations}](#dnl-destinations-destinations)
-   - [Experience Data Model (XDM) {#xdm}](#experience-data-model-xdm-xdm)
-   - [Frågetjänst {#query-service}](#query-service-query-service)
-   - [Källor {#sources}](#sources-sources)
+- [Datainsamling](#data-collection)
+- [Mål ](#destinations)
+- [Experience Data Model](#xdm)
+- [Frågetjänst](#query-service)
+- [Källor](#sources-sources)
 
 ## Kundhanterade nycklar {#cmk}
 

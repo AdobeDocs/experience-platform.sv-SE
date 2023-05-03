@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3594b20ee495dadf91d745958eac1a06647cae24
+source-git-commit: da28de44fc8ab37d530c2f9b3c167e365f00dca6
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1814'
+ht-degree: 2%
 
 ---
 
@@ -20,6 +20,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Datainsamling](#data-collection)
 - [Mål ](#destinations)
 - [Experience Data Model](#xdm)
+- [Real-Time Customer Data Platform](#rtcdp)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
 
@@ -134,6 +135,19 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 {style="table-layout:auto"}
 
 Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+
+## Real-Time Customer Data Platform
+
+Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time CDP]) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-Time CDP] kombinerar flera datakällor för företag för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Förbättrad startsida för Real-Time CDP | The [Real-Time CDP hemsida](https://experience.adobe.com) har förbättrats med en uppdaterad stil och förbättrade prestanda. Hemsidan är nu behörighetsmedveten och visar widgetar som är relevanta för de funktioner du har tillgång till. Mer information finns i [Översikt över kontrollpanelen för Real-Time CDP hemsida](../../rtcdp/home-page-dashboards.md). |
+| Självidentifieringsundersökning | Självidentifieringsundersökningen är ett kort frågeformulär som presenteras på Adobe Experience Platform användargränssnittets hemsida. Använd självidentifieringsundersökningen för att bygga upp din personliga profil för Experience Platform och få anpassade riktlinjer baserade på dina val. Mer information finns i [självidentifieringsöversikt](../../landing/self-identification.md). |
+
+Mer information om [!DNL Real-Time CDP], se [[!DNL Real-Time CDP] översikt](../../rtcdp/overview.md).
 
 ## Kundprofil i realtid {#profile}
 
