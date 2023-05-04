@@ -1,10 +1,10 @@
 ---
 title: Åtkomst till ECID
-description: Lär dig hur du får åtkomst till Experience Cloud ID (ECID) i Adobe Experience Platform-taggar
+description: Lär dig hur du får åtkomst till Experience Cloud-ID från Data Prep eller Taggar
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: db7700d5c504e484f9571bbb82ff096497d0c96e
+source-git-commit: dee04f2cdeb9057ac10e27a17f9db3f065712618
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
@@ -12,22 +12,38 @@ ht-degree: 0%
 
 # Åtkomst till ECID
 
-The [!DNL Experience Cloud ID (ECID)] är en beständig Experience Cloud-ID som kan hjälpa dig att identifiera besökare på webbplatsen. Under vissa omständigheter, till exempel när du skickar identifieraren till en tredjepartsplattform, kan du behöva åtkomst till [!DNL ECID].
+The [!DNL Experience Cloud Identity (ECID)] är en beständig identifierare som tilldelas en användare när de besöker webbplatsen. Under vissa omständigheter kanske du föredrar att få åtkomst till [!DNL ECID] (till exempel för att skicka det till en tredje part). Ett annat användningsfall är att ställa in [!DNL ECID] i ett anpassat XDM-fält, förutom att det finns i identitetskartan.
 
-Så här öppnar du [!DNL ECID] inom -taggar, följ stegen nedan:
+Du kan få åtkomst till ECID via [Dataförberedelse för datainsamling](../datastreams/data-prep.md) (rekommenderas) eller via taggar.
+
+## Åtkomst till ECID via Data Prep (föredragen metod) {#accessing-ecid-data-prep}
+
+Om du vill ställa in ECID i ett anpassat XDM-fält kan du göra detta genom att ställa in `source` till följande sökväg:
+
+```js
+xdm.identityMap.ECID[0].id
+```
+
+Ställ sedan in målet på en XDM-sökväg där fältet är av typen `string`.
+
+![](./assets/access-ecid-data-prep.png)
+
+## Taggar
+
+Om du behöver komma åt [!DNL ECID] på klientsidan använder du taggarna som beskrivs nedan.
 
 1. Kontrollera att egenskapen är konfigurerad med [sekvensering av regelkomponenter](../../tags/ui/managing-resources/rules.md#sequencing) aktiverat.
-2. Skapa en ny regel.
-3. Lägg till en [!UICONTROL Library Loaded] till regeln.
-4. Lägg till en [!UICONTROL Custom Condition] åtgärd för regeln, med följande kod (förutsatt att namnet som du har konfigurerat för SDK-instansen är `alloy`):
+1. Skapa en ny regel.
+1. Lägg till en [!UICONTROL Library Loaded] till regeln.
+1. Lägg till en [!UICONTROL Custom Condition] åtgärd för regeln med följande kod (förutsatt att namnet som du har konfigurerat för SDK-instansen är `alloy`):
 
-   ```javascript
-   return alloy("getIdentity")
-       .then(function(result) {
-           _satellite.setVar("ECID", result.identity.ECID);
-       });
+   ```js
+    return alloy("getIdentity")
+      .then(function(result) {
+        _satellite.setVar("ECID", result.identity.ECID);
+      });
    ```
 
-5. Spara regeln.
+1. Spara regeln.
 
-Nu bör du kunna komma åt [!DNL ECID] i efterföljande regler, använda `%ECID%` eller `_satellite.getVar("ECID")`, ungefär som hur du kommer åt andra dataelement.
+Du bör sedan kunna komma åt [!DNL ECID] i efterföljande regler använda `%ECID%` eller `_satellite.getVar("ECID")`på samma sätt som andra dataelement.
