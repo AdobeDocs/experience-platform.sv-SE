@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google ads;Google Ads;Google ads;ads
 title: Skapa en Google Ads Base Connection med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Google Ads med API:t för Flow Service.
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-source-git-commit: 56419f41188c9bfdbeda7dde680f269b980a37f0
+source-git-commit: 7c77b0dc658ad45a25f4ead4e14f5826701cf645
 workflow-type: tm+mt
-source-wordcount: '698'
+source-wordcount: '747'
 ht-degree: 0%
 
 ---
@@ -36,6 +35,7 @@ För att [!DNL Flow Service] Om du vill ansluta till Google Ads måste du ange v
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `clientCustomerId` | Klientens kund-ID är det kontonummer som motsvarar det Google Ads-klientkonto som du vill hantera med API:t för Google Ads. Detta ID följer mallen för `123-456-7890`. |
+| `loginCustomerId` | Kund-ID för inloggning är det kontonummer som motsvarar ditt Google Ads Manager-konto och används för att hämta rapportdata från en viss kund. Mer information om användar-ID för inloggning finns i [API-dokumentation för Google Ads](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
 | `developerToken` | Med utvecklartoken får du tillgång till Google Ads API. Du kan använda samma utvecklartoken för att göra förfrågningar mot alla dina Google Ads-konton. Hämta din utvecklartoken från [logga in på ditt chefskonto](https://ads.google.com/home/tools/manager-accounts/) och sedan navigera till [!DNL API Center] sida. |
 | `refreshToken` | Uppdateringstoken är en del av [!DNL OAuth2] autentisering. Med denna token kan du återskapa dina åtkomsttoken när de har upphört att gälla. |
 | `clientId` | Klient-ID används tillsammans med klienthemligheten som en del av [!DNL OAuth2] autentisering. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för Google. |
@@ -79,6 +79,7 @@ curl -X POST \
           "specName": "Basic Authentication",
           "params": {
               "clientCustomerID": "{CLIENT_CUSTOMER_ID}",
+              "loginCustomerID": "{LOGIN_CUSTOMER_ID}",
               "developerToken": "{DEVELOPER_TOKEN}",
               "authenticationType": "{AUTHENTICATION_TYPE}"
               "clientId": "{CLIENT_ID}",
@@ -96,6 +97,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --------- | ----------- |
 | `auth.params.clientCustomerID` | Kund-ID för ditt Google Ads-konto. |
+| `auth.params.loginCustomerID` | Det användar-ID som motsvarar ditt Google Ads Manager-konto. |
 | `auth.params.developerToken` | Utvecklartoken för ditt Google Ads-konto. |
 | `auth.params.refreshToken` | Uppdateringstoken för ditt Google Ads-konto. |
 | `auth.params.clientID` | Klient-ID för ditt Google Ads-konto. |
