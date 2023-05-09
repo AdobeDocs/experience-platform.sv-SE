@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: cce2d7b4f950248807bd700bae5e371418df634d
+source-git-commit: a89faf5f1d1befdc057cd872fcd190703c620c2d
 workflow-type: tm+mt
-source-wordcount: '4591'
+source-wordcount: '4916'
 ht-degree: 2%
 
 ---
@@ -246,6 +246,8 @@ Alla användaragentfunktioner i tabellen nedan kan returnera något av följande
 * Telefon - En mobil enhet med liten skärm (vanligen &lt; 7 tum)
 * Mobil - En mobil enhet som ännu inte har identifierats. Den här mobila enheten kan vara en eReader, en surfplatta, en telefon, en klocka osv.
 
+Mer information om enhetsfältvärden finns i [lista med enhetsfältvärden](#device-field-values) i bilagan till det här dokumentet.
+
 >[!NOTE]
 >
 >Rulla åt vänster/höger för att visa hela innehållet i tabellen.
@@ -343,5 +345,36 @@ Tabellen nedan visar en lista med reserverade tecken och motsvarande kodade teck
 | ^ | %5E |
 | ` | %60 |
 | ~ | %7E |
+
+{style="table-layout:auto"}
+
+### Enhetsfältvärden {#device-field-values}
+
+Tabellen nedan visar en lista med enhetsfältvärden och motsvarande beskrivningar.
+
+| Enhet | Beskrivning |
+| --- | --- |
+| Skrivbord | En stationär eller bärbar typ av enhet. |
+| Anonymiserad | En anonym enhet. I vissa fall är dessa `useragents` som har ändrats av en anonymiseringsprogramvara. |
+| Okänd | En okänd enhet. Dessa är vanligtvis `useragents` som inte innehåller någon information om enheten. |
+| Mobil | En mobil enhet som ännu inte har identifierats. Den här mobila enheten kan vara en eReader, en surfplatta, en telefon, en klocka osv. |
+| Tablet | En mobil enhet med stor skärm (vanligtvis > 7 tum). |
+| Telefon | En mobil enhet med liten skärm (vanligen &lt; 7 tum). |
+| Titta | En mobil enhet med en liten skärm (vanligen &lt; 2 tum). Dessa enheter fungerar normalt som en extra skärm för en typ av telefon/surfplatta. |
+| Förstärkt verklighet | En mobil enhet med AR-funktioner. |
+| Virtuell verklighet | En mobil enhet med VR-funktioner. |
+| eReader | En enhet som liknar en surfplatta, men vanligtvis med en [!DNL eInk] skärm. |
+| Rutan Ange överkant | En ansluten enhet som tillåter interaktion via en skärm i tv-storlek. |
+| TV | En enhet som liknar digitalboxen, men är inbyggd i tv:n. |
+| Hemutrustning | En (vanligtvis stor) hemutrustning, som ett kylskåp. |
+| Spelkonsol | Ett fast spelsystem som [!DNL Playstation] eller en [!DNL XBox]. |
+| Handdatorspelskonsol | Ett mobilt spelsystem som [!DNL Nintendo Switch]. |
+| Voice | En röststyrd enhet som en [!DNL Amazon Alexa] eller en [!DNL Google Home]. |
+| Bil | En fordonsbaserad webbläsare. |
+| Robot | Robotar som besöker en webbplats. |
+| Robot Mobile | Robotar som besöker en webbplats men som anger att de vill bli synliga som mobilbesökare. |
+| Robot Imitator | Robotar som besöker en webbplats och låtsas vara robotar som [!DNL Google], men det gör de inte. **Anteckning**: I de flesta fall är Robot Imitators robotar. |
+| Cloud | Ett molnbaserat program. Detta är varken robotar eller hackare, men är program som måste anslutas. Detta inkluderar [!DNL Mastodon] servrar. |
+| Hacker | Det här enhetsvärdet används om skript upptäcks i `useragent` sträng. |
 
 {style="table-layout:auto"}
