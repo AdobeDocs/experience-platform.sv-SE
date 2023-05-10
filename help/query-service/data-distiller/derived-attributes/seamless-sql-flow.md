@@ -1,9 +1,10 @@
 ---
 title: Sömlöst SQL-flöde för härledda attribut
 description: SQL för frågetjänsten har utökats för att ge sömlöst stöd för härledda attribut. Lär dig hur du använder det här SQL-tillägget för att skapa ett härlett attribut som är aktiverat för profilen och hur du använder attributet för kundprofil och segmenteringstjänst i realtid.
-source-git-commit: 1ff66d0ac8e0491a6db518545d122555d9d54c75
+exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
+source-git-commit: 6202b1a5956da83691eeb5422d3ebe7f3fb7d974
 workflow-type: tm+mt
-source-wordcount: '1192'
+source-wordcount: '1238'
 ht-degree: 1%
 
 ---
@@ -40,6 +41,16 @@ Använd en CTAS-fråga (Create Table as Select) för att skapa en datauppsättni
 CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> primary identity namespace <your_namespace>, [field_name2 <your_data_type>]) [WITH(LABEL='PROFILE')];
 ```
 
+De datatyper som stöds är: boolesk, date, datetime, text, float, bigint, integer, map, array och struct/row.
+
+SQl-kodlåset nedan innehåller exempel på hur datatyperna structure/row, map och array definieras. Rad ett visar radsyntaxen. Rad två demonstrerar mappningssyntax och rad tre, matrissyntax.
+
+```sql {line-numbers="true"}
+ROW (Column_name <data_type> [, column name <data_type> ]*)
+MAP <data_type, data_type>
+ARRAY <data_type>
+```
+
 Datamängder kan också aktiveras för profiler via plattformens användargränssnitt. Mer information om hur du markerar en datauppsättning som aktiverad för profilen finns i [aktivera en datauppsättning för kundprofildokumentation i realtid](../../../catalog/datasets/user-guide.md#enable-profile).
 
 I exempelfrågan nedan visas `decile_table` datauppsättningen skapas med `id` som den primära identitetskolumnen och har namnutrymmet `IDFA`. Den har även ett fält med namnet `decile1Month` av kartdatatypen. Tabellen som skapades (`decile_table`) är aktiverat för profilen.
@@ -48,12 +59,6 @@ I exempelfrågan nedan visas `decile_table` datauppsättningen skapas med `id` s
 CREATE TABLE decile_table (id text PRIMARY KEY NAMESPACE 'IDFA', 
             decile1Month map<text, integer>) WITH (label='PROFILE');
 ```
-
-<!--        decile3Month map<text, integer>,
-            decile6Month map<text, integer>,
-            decile9month map<text, integer>,
-            decile12month map<text, integer>,
-            decilelifetime map<text, integer> -->
 
 När frågan har körts returneras datauppsättnings-ID:t till konsolen, vilket visas i exemplet nedan.
 
