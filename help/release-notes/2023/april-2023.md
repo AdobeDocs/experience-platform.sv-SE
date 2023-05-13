@@ -2,14 +2,18 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: da28de44fc8ab37d530c2f9b3c167e365f00dca6
+source-git-commit: c95d2ab1a6f104c18c491d3a533ee2c304a0aa68
 workflow-type: tm+mt
-source-wordcount: '1815'
+source-wordcount: '2068'
 ht-degree: 2%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
+
+>[!IMPORTANT]
+>
+>Från och med 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Mer information om den här ändringen finns i [Segmenteringstjänstavsnitt](#segmentation).
 
 **Releasedatum: 26 april 2023**
 
@@ -22,6 +26,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Experience Data Model](#xdm)
 - [Real-Time Customer Data Platform](#rtcdp)
 - [Kundprofil i realtid](#profile)
+- [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
 ## Kontrollpaneler {#dashboards}
@@ -160,6 +165,20 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | Förfallodatum för pseudonyma profiler | Nu kan pseudonyma profildata förfalla. Den här versionen tar kontinuerligt bort inaktuella pseudonyma profiler från din Experience Platform-instans när den har aktiverats. Läs mer om den här funktionen och pseudonyma profiler i [Förfalloguide för pseudonyma profildata](../../profile/pseudonymous-profiles.md). |
 
 {style="table-layout:auto"}
+
+## Segmenteringstjänst {#segmentation}
+
+[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Segmentmedlemskapskarta | Som en uppföljning av det föregående meddelandet i februari den 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`.<br/><br/> Den här förändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på `Existing` status. Om så är fallet för dig, se över era integreringar längre fram i kedjan. Om du är intresserad av att identifiera nyligen kvalificerade profiler längre än en viss tid, vänligen väl använda en kombination av `Realized` status och `lastQualificationTime` i din medlemskarta. Mer information får du av Adobe. |
+
+{style="table-layout:auto"}
+
+Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
 
 ## Källor {#sources}
 
