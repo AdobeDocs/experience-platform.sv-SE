@@ -2,9 +2,9 @@
 description: På den här sidan beskrivs hur du autentiserar och börjar använda Adobe Experience Platform Destination SDK. Det innehåller instruktioner om hur du får inloggningsuppgifter för Adobe I/O, ett sandlådenamn och åtkomstkontrollbehörighet för målredigering.
 title: Komma igång med Destination SDK
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '625'
 ht-degree: 2%
 
 ---
@@ -56,7 +56,7 @@ Adobe Exchange-teamet tillhandahåller ditt sandlådenamn, som du måste använd
 
 ## Rollbaserad åtkomstkontroll (RBAC) {#rbac}
 
-Använda Destination SDK-API-slutpunkterna som beskrivs i [referensdokumentation](./configuration-options.md)behöver du **[!UICONTROL Destination Authoring]** behörighet för åtkomstkontroll. Arbeta med Adobe Exchange-teamet för att få den här behörigheten tilldelad dig i [Adobe Admin Console](https://adminconsole.adobe.com/).
+Använda Destination SDK-API-slutpunkterna som beskrivs i [referensdokumentation](functionality/configuration-options.md)behöver du **[!UICONTROL Destination Authoring]** behörighet för åtkomstkontroll. Arbeta med Adobe Exchange-teamet för att få den här behörigheten tilldelad dig i [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 ![Behörighet för målredigering](./assets/destination-authoring-permission.png)
 
@@ -68,7 +68,7 @@ Mer information finns i följande dokument för Experience Platform Access Contr
 
 ## Ytterligare överväganden {#additional-considerations}
 
-* Alla ändringar du gör i målkonfigurationer, oavsett om du skapar eller redigerar en destinationskonfiguration, måste granskas och godkännas av Adobe. Ändringarna återspeglas i destinationerna först när granskningen är klar.
+* För produkterade/publika destinationer måste alla ändringar som du gör i destinationskonfigurationer, oavsett om du skapar eller redigerar en destinationskonfiguration, granskas och godkännas av Adobe. Ändringarna återspeglas i destinationerna först när granskningen är klar. Detta gäller inte privata destinationer som bara är tillgängliga för dig.
 * Endast användare som tillhör samma organisation och har åtkomst till sandlådan kan redigera målkonfigurationen.
 
 ## Nästa steg {#next-steps}
@@ -77,8 +77,8 @@ Genom att följa stegen i den här artikeln fick du inloggningsuppgifter för Ad
 
 * Läs följande konfigurationsguider, beroende på måltyp:
 
-   * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./configure-destination-instructions.md)
-   * [Använd Destination SDK för att konfigurera ett filbaserat mål](./configure-file-based-destination-instructions.md)
+   * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](guides/configure-destination-instructions.md)
+   * [Använd Destination SDK för att konfigurera ett filbaserat mål](guides/configure-file-based-destination-instructions.md)
 
 * För alla åtgärder, se [API-dokumentation för målredigering](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
 * Använd [Postman-samling för målredigerings-API](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera destinationen med Destination SDK API-slutpunkterna. Om du vill komma igång med Postman går du till [steg för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).

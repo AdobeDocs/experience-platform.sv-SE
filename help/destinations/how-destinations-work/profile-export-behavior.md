@@ -1,7 +1,8 @@
 ---
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
-source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
+exl-id: 2be62843-0644-41fa-a860-ccd65472562e
+source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
 workflow-type: tm+mt
 source-wordcount: '2933'
 ht-degree: 0%
@@ -26,16 +27,16 @@ Experience Platform mål exporterar data till API-baserade integreringar som HTT
 
 Den process som används för att samla profiler i HTTPS-meddelanden innan de skickas till mål-API-slutpunkter anropas *mikrobatchbearbetning*.
 
-Ta [Facebook](/help/destinations/catalog/social/facebook.md) med *[konfigurerbar aggregering](/help/destinations/destination-sdk/destination-configuration.md#configurable-aggregation)* som exempel - data skickas på ett aggregerat sätt, där destinationstjänsten tar alla inkommande data från profiltjänsten uppströms och samlar in dem med något av följande, innan de skickas till Facebook:
+Ta [Facebook](/help/destinations/catalog/social/facebook.md) med *[konfigurerbar aggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* som exempel - data skickas på ett aggregerat sätt, där destinationstjänsten tar alla inkommande data från profiltjänsten uppströms och samlar in dem med något av följande, innan de skickas till Facebook:
 
 * Antal poster (högst 10 000) eller
 * Tidsfönsterintervall (30 minuter)
 
 Vilken tröskel som helst som uppnås först utlöser en export till Facebook. Så i [!DNL Facebook Custom Audiences] På kontrollpanelen kan du se målgrupper som kommer från Experience Platform i 10 000 poststeg. Du kanske ser 10 000 poster var 10-15:e minut eftersom data bearbetas och slås samman snabbare än 30 minuters exportintervall och skickas snabbare, så ungefär var 10-15:e minut tills alla poster har bearbetats. Om det inte finns tillräckligt med poster för att kunna skapa en 10 000-batch skickas det aktuella antalet poster som det är när tidsfönstrets tröskelvärde uppnås, så att du kanske också ser mindre grupper som skickas till Facebook.
 
-Som ett annat exempel kan du titta på [HTTP API-mål](/help/destinations/catalog/streaming/http-destination.md), som har *[bästa ansträngningsaggregering](/help/destinations/destination-sdk/destination-configuration.md#best-effort-aggregation)* profil, med `maxUsersPerRequest: 10`. Detta innebär att högst tio profiler slås samman innan ett HTTP-anrop utlöses till det här målet, men Experience Platform försöker skicka profiler till målet så fort som måltjänsten får uppdaterad information om omvärdering från en tjänst i det övre flödet.
+Som ett annat exempel kan du titta på [HTTP API-mål](/help/destinations/catalog/streaming/http-destination.md), som har *[bästa ansträngningsaggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* profil, med `maxUsersPerRequest: 10`. Detta innebär att högst tio profiler slås samman innan ett HTTP-anrop utlöses till det här målet, men Experience Platform försöker skicka profiler till målet så fort som måltjänsten får uppdaterad information om omvärdering från en tjänst i det övre flödet.
 
-Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeringsprincipen ska konfigureras så att den bäst uppfyller hastighetsbegränsningarna för API-slutpunkterna längre fram i kedjan. Läs mer om [aggregeringsprincip](/help/destinations/destination-sdk/destination-configuration.md#aggregation) i Destinationens SDK dokumentation.
+Aggingsprincipen kan konfigureras och målutvecklare kan bestämma hur aggregeringsprincipen ska konfigureras så att den bäst uppfyller hastighetsbegränsningarna för API-slutpunkterna längre fram i kedjan. Läs mer om [aggregeringsprincip](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) i Destinationens SDK dokumentation.
 
 ## Exportmål för direktuppspelningsprofil (företag) {#streaming-profile-destinations}
 

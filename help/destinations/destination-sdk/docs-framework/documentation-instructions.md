@@ -2,7 +2,7 @@
 title: Dokumentera destinationen i Adobe Experience Platform
 description: Stegvisa instruktioner om hur du skapar en dokumentationssida för destinationen i Adobe Experience Platform
 exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
-source-git-commit: dd4a150351b5e0c41586cf663324aeb345a896e4
+source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Om du vill skapa dokumentation för destinationen måste du [skapa en gaffel](ht
 
 Adobe har fyllt i en [dokumentmall](./self-service-template.md) för dig. Nedan finns instruktioner om hur du redigerar mallen och öppnar en pull-begäran. Dokumentationsteamet på Adobe granskar och publicerar dokumentationen för ditt nya mål.
 
-[Hämta mallen här](assets/yourdestination-template.zip) och zippa upp filen för att extrahera `yourdestination.md` -fil.
+[Hämta mallen här](../assets/docs-framework/yourdestination-template.zip) och zippa upp filen för att extrahera `yourdestination.md` -fil.
 
 Instruktioner om hur du använder mallen för att skapa dokumentationssidan finns nedan.
 

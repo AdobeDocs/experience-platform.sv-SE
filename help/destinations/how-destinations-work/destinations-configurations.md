@@ -1,13 +1,13 @@
 ---
 title: Konfigurerbara och gemensamma exportinställningar för destinationer
 description: Lär dig vilka exportinställningar i destinationer som kan konfigureras på en målnivå och som är fasta och inte kan redigeras.
-source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
+exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
+source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
 workflow-type: tm+mt
 source-wordcount: '845'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurerbara och gemensamma exportinställningar för destinationer
 
@@ -32,7 +32,7 @@ Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer o
 Målutvecklare kan använda [Destination SDK](/help/destinations/destination-sdk/overview.md) för att skapa anpassade eller producerade (privata eller offentliga) destinationer. Destination SDK ger utvecklare stor flexibilitet att konfigurera destinationer baserat på funktionaliteten i senare led i API-slutpunkterna och filmottagningssystemen. Baserat på de underordnade funktionerna har målutvecklare följande konfigurationsalternativ tillgängliga när de konfigurerar ett mål med Destination SDK:
 
 * Avgör vilka attribut och identiteter som kan exporteras från Experience Platform till målet. Avgör också vilka identiteter som krävs av deras mål för att dataexporten ska lyckas.
-* Ange en aggregeringsprincip som bestämmer hur lång tid Experience Platform ska vänta när HTTP-meddelanden som ska skickas till API-integreringar samlas in. Målutvecklare kan konfigurera olika aggregeringstyper för att avgöra hur många profiler som ska inkluderas i utgående HTTP-meddelanden och hur länge Experience Platform ska vänta tills HTTP-meddelandet skickas. Här finns omfattande information om [konfigurationsalternativ för aggregeringsprincip](/help/destinations/destination-sdk/destination-configuration.md#aggregation) som är tillgängliga för målutvecklare i Destinationens SDK dokumentation.
+* Ange en aggregeringsprincip som bestämmer hur lång tid Experience Platform ska vänta när HTTP-meddelanden som ska skickas till API-integreringar samlas in. Målutvecklare kan konfigurera olika aggregeringstyper för att avgöra hur många profiler som ska inkluderas i utgående HTTP-meddelanden och hur länge Experience Platform ska vänta tills HTTP-meddelandet skickas. Här finns omfattande information om [konfigurationsalternativ för aggregeringsprincip](../destination-sdk/functionality/destination-configuration/aggregation-policy.md) som är tillgängliga för målutvecklare i Destinationens SDK dokumentation.
 * Kontrollera om HTTP-meddelandeexport ska innehålla profiler som är kvalificerade för segment, som tas bort från segment eller båda.
 * Avgör vilka filnamn och filformateringskonfigurationer som ska vara tillgängliga för användare vid export av filer.
 

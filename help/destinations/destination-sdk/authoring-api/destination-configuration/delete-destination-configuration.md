@@ -1,0 +1,72 @@
+---
+description: Den här sidan innehåller exempel på det API-anrop som används för att ta bort en befintlig målkonfiguration via Adobe Experience Platform Destination SDK.
+title: Ta bort en målkonfiguration
+source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+workflow-type: tm+mt
+source-wordcount: '278'
+ht-degree: 1%
+
+---
+
+
+# Ta bort en målkonfiguration
+
+Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att ta bort en befintlig målkonfiguration med hjälp av `/authoring/destinations` API-slutpunkt.
+
+>[!IMPORTANT]
+>
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+
+## Komma igång med API-åtgärder för målkonfiguration {#get-started}
+
+Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+
+## Ta bort en målkonfiguration {#delete}
+
+Du kan ta bort en [befintlig](create-destination-configuration.md) målserverkonfiguration genom att göra en `DELETE` begäran till `/authoring/destinations` slutpunkt med `{INSTANCE_ID}`för den målkonfiguration som du vill ta bort.
+
+>[!TIP]
+>
+>**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations`
+
+Så här hämtar du en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målkonfiguration](retrieve-destination-configuration.md).
+
+**API-format**
+
+```http
+DELETE /authoring/destinations/{INSTANCE_ID}
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{INSTANCE_ID}` | The `ID` för den målkonfiguration som du vill ta bort. |
+
++++Begäran
+
+```shell
+curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destinations/{INSTANCE_ID} \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
++++svar
+
+Ett lyckat svar returnerar HTTP-status 200 tillsammans med ett tomt HTTP-svar.
+
+
+## API-felhantering {#error-handling}
+
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
+
+## Nästa steg
+
+När du har läst det här dokumentet kan du nu ta bort en befintlig målkonfiguration via Destinationen SDK `/authoring/destinations` API-slutpunkt.
+
+Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
+
+* [Skapa en målkonfiguration](create-destination-configuration.md)
+* [Hämta en målkonfiguration](retrieve-destination-configuration.md)
+* [Uppdatera en målkonfiguration](update-destination-configuration.md)
+

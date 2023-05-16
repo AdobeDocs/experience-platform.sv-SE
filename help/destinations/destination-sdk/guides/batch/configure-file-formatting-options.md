@@ -1,9 +1,10 @@
 ---
 description: Konfigurera filformateringsalternativ för filbaserade mål
 title: Lär dig hur du använder Destination SDK för att konfigurera filformateringsalternativ för filbaserade mål.
-source-git-commit: 9b4c7da5aa02ae27608c2841b1d825445ac3015e
+exl-id: e61c7989-1123-4b3b-9781-a6097cd0e2b4
+source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '902'
 ht-degree: 0%
 
 ---
@@ -22,18 +23,14 @@ Innan du går vidare till stegen nedan ska du läsa [Komma igång med Destinatio
 
 Adobe rekommenderar också att du läser och bekanta dig med följande dokumentation innan du fortsätter:
 
-* Alla tillgängliga filformateringsalternativ beskrivs utförligt i dialogrutan [filformatskonfiguration](../../server-and-file-configuration.md#file-configuration) -avsnitt.
-* Slutför steg till [konfigurera ett filbaserat mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md) med Destination SDK.
+* Alla tillgängliga filformateringsalternativ beskrivs utförligt i dialogrutan [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) -avsnitt.
+* Slutför steg till [konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md) med Destination SDK.
 
 ## Skapa en server- och filkonfiguration {#create-server-file-configuration}
 
 Börja med att använda `/destination-server` slutpunkt för att avgöra vilka filformateringsalternativ du vill ställa in för de exporterade filerna.
 
 Nedan visas ett exempel på en målserverkonfiguration för en [!DNL Amazon S3] mål, med flera filformateringsalternativ markerade.
-
->[!TIP]
->
->Som en påminnelse finns alla tillgängliga filformateringsalternativ dokumenterade i [filformatskonfiguration](../../server-and-file-configuration.md#file-configuration) -avsnitt.
 
 **API-format**
 
@@ -115,13 +112,13 @@ När du har lagt till önskade filformateringsalternativ till målservern och fi
 
 I det här steget kan du gruppera de visade alternativen i vilken ordning du vill, du kan skapa anpassade grupperingar, listrutefält och villkorliga grupperingar baserat på de valda filtyperna. Alla dessa inställningar visas i inspelningen och i avsnitten längre fram nedan.
 
-![Skärminspelning med olika filformateringsalternativ för gruppfiler.](/help/destinations/destination-sdk/assets/guides/batch/file-formatting-options.gif)
+![Skärminspelning med olika filformateringsalternativ för gruppfiler.](../../assets/guides/batch/file-formatting-options.gif)
 
 ### Ordna filformateringsalternativen {#ordering}
 
 Den ordning i vilken du lägger till filformateringsalternativen som kunddatafält i målkonfigurationen återspeglas i användargränssnittet. Konfigurationen nedan återspeglas till exempel i användargränssnittet, där alternativen visas i ordningen **[!UICONTROL Delimiter]**, **[!UICONTROL Quote Character]**, **[!UICONTROL Escape Character]**, **[!UICONTROL Empty Value]**, **[!UICONTROL Null Value]**.
 
-![Bild som visar ordningen för filformateringsalternativ i användargränssnittet för Experience Platform.](/help/destinations/destination-sdk/assets/guides/batch/file-formatting-order.png)
+![Bild som visar ordningen för filformateringsalternativ i användargränssnittet för Experience Platform.](../../assets/guides/batch/file-formatting-order.png)
 
 ```json
         {
@@ -246,38 +243,43 @@ Du kan gruppera flera filformateringsalternativ i ett avsnitt. När du konfigure
 
 Om du vill göra det använder du `"type": "object"` för att skapa en grupp och samla in önskade filformateringsalternativ i en `properties` parameter, som visas i exemplet nedan, där grupperingen **[!UICONTROL CSV Options]** markeras.
 
-```json
-        {
-            "name": "csvOptions",
-            "title": "CSV Options",
-            "description": "Select your CSV options",
-            "type": "object",
-            "properties": [
-                {
-                    "name": "delimiter",
-                    "title": "Delimiter",
-                    "description": "Select your Delimiter",
-                    "type": "string",
-                    "isRequired": false,
-                    "default": ",",
-                    "namedEnum": [
-                        {
-                            "name": "Comma (,)",
-                            "value": ","
-                        },
-                        {
-                            "name": "Tab (\\t)",
-                            "value": "\t"
-                        }
-                    ],
-                    "readOnly": false,
-                    "hidden": false
-                },
-
+```json {line-numbers="true" start-number="100" highlight="106-128"}
+"customerDataFields":[
 [...]
+{
+   "name":"csvOptions",
+   "title":"CSV Options",
+   "description":"Select your CSV options",
+   "type":"object",
+   "properties":[
+      {
+         "name":"delimiter",
+         "title":"Delimiter",
+         "description":"Select your Delimiter",
+         "type":"string",
+         "isRequired":false,
+         "default":",",
+         "namedEnum":[
+            {
+               "name":"Comma (,)",
+               "value":","
+            },
+            {
+               "name":"Tab (\\t)",
+               "value":"\t"
+            }
+         ],
+         "readOnly":false,
+         "hidden":false
+      },
+      [...]
+   ]
+}
+[...]
+]
 ```
 
-![Bild som visar CSV-alternativgrupperingen i användargränssnittet.](/help/destinations/destination-sdk/assets/guides/batch/file-formatting-grouping.png)
+![Bild som visar CSV-alternativgrupperingen i användargränssnittet.](../../assets/guides/batch/file-formatting-grouping.png)
 
 ### Skapa listruteväljare för filformateringsalternativen {#dropdown-selectors}
 
@@ -285,27 +287,44 @@ I situationer där du vill att användarna ska kunna välja mellan flera alterna
 
 Om du vill göra det använder du `namedEnum` enligt nedan och konfigurera `default` värdet för de alternativ som användaren kan välja.
 
-```json
+```json {line-numbers="true" start-number="100" highlight="114-124"}
+[...]
+"customerDataFields":[
+[...]
 {
-   "name": "delimiter",
-   "type": "string",
-   "title": "Delimiter",
-   "description": "Select your Delimiter",
-   "namedEnum": [
-   {
-      "name": "Comma (,)",
-      "value": ","
-   },
-   {
-      "name": "Tab (\\t)",
-      "value": "\t"
-   }
-   ],
-   "default": ","
-},
+   "name":"csvOptions",
+   "title":"CSV Options",
+   "description":"Select your CSV options",
+   "type":"object",
+   "properties":[
+      {
+         "name":"delimiter",
+         "title":"Delimiter",
+         "description":"Select your Delimiter",
+         "type":"string",
+         "isRequired":false,
+         "default":",",
+         "namedEnum":[
+            {
+               "name":"Comma (,)",
+               "value":","
+            },
+            {
+               "name":"Tab (\\t)",
+               "value":"\t"
+            }
+         ],
+         "readOnly":false,
+         "hidden":false
+      },
+      [...]
+   ]
+}
+[...]
+]
 ```
 
-![Skärminspelning som visar ett exempel på listruteväljare som har skapats med den konfiguration som visas ovan.](/help/destinations/destination-sdk/assets/guides/batch/dropdown-options-file-formatting.gif)
+![Skärminspelning som visar ett exempel på listruteväljare som har skapats med den konfiguration som visas ovan.](../../assets/guides/batch/dropdown-options-file-formatting.gif)
 
 ### Skapa formateringsalternativ för villkorsstyrda filer {#conditional-options}
 
@@ -466,7 +485,7 @@ I ett större sammanhang kan du se `conditional` fält som används i målkonfig
 
 Nedan visas den resulterande gränssnittsskärmen baserat på konfigurationen ovan. När användaren väljer filtypen CSV visas ytterligare filformateringsalternativ som refererar till CSV-filtypen i användargränssnittet.
 
-![Skärminspelning som visar alternativet för villkorsstyrd filformatering för CSV-filer.](/help/destinations/destination-sdk/assets/guides/batch/conditional-file-formatting.gif)
+![Skärminspelning som visar alternativet för villkorsstyrd filformatering för CSV-filer.](../../assets/guides/batch/conditional-file-formatting.gif)
 
 ### Fullständig API-begäran som innehåller alla alternativ som visas ovan
 
@@ -485,7 +504,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 {
   "name": "My S3 Destination",
   "description": "Test destination",
-  "releaseNotes": "Test destination",
   "status": "TEST",
   "sources": [
     "UNIFIED_PROFILE"
@@ -713,7 +731,7 @@ Om du vill belysa begränsningen bör du överväga att exportera en fil med fö
 | Michael | ros | USA | NY |
 | James | Smith |  | null |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Detta resulterar i utdata enligt nedan. Observera hur null-värdet från tabellen felaktigt exporteras som ett escape-citattecken.
 

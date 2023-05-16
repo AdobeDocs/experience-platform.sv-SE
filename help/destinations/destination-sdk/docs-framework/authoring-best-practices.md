@@ -2,7 +2,7 @@
 title: Bästa tillvägagångssätt
 description: Lär dig vilka regler och tips du bör följa när du skapar en dokumentationssida för målet, så att du kan vara säker på att den uppfyller Adobe Experience Platform kvalitetsstandarder för dokumentation.
 exl-id: b12059f1-6635-41cd-acc5-6ff471111164
-source-git-commit: 0b9b724c2530e43ce681011d12fc1341148ddbf5
+source-git-commit: e239de97a26ea2ff36bb74390e249851a13d2e13
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 0%
@@ -31,7 +31,7 @@ Den här sidan beskriver regler som du bör följa när [skapa din måldokumenta
 * Håll dina meningar korta och kom till saken snabbt. Om din mening är längre än 20 ord eller använder flera kommatecken kan du dela upp den i olika meningar. Meningar som är längre än 20 ord kan vara särskilt komplicerade för läsarna.
 * Var inte överdrivet artig. Undvik att använda &quot;please&quot; eller &quot;snälla do ...&quot; i teknisk dokumentation.
 
-## Länkar {#linking}
+## Länkning {#linking}
 
 Följ den angivna dokumentationsmallen och redigera inte de befintliga länkarna i mallen. När nya länkar tas med, läs [använda länkar i dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en) i medverkarhandboken.
 
@@ -56,5 +56,5 @@ Följ den angivna dokumentationsmallen och redigera inte de befintliga länkarna
 
 ## Process {#process}
 
-* The [dokumentmall](./self-service-template.md) uppdateras sällan, baserat på feedback från partner. Innan du börjar skapa dokumentation för destinationen bör du kontrollera att du har laddat ned [senaste versionen av mallen](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
+* The [dokumentmall](./self-service-template.md) uppdateras sällan, baserat på feedback från partner. Innan du börjar skapa dokumentation för destinationen bör du kontrollera att du har laddat ned [senaste versionen av mallen](../assets/docs-framework/yourdestination-template.zip).
 * Skriv dokumentationen och skapa en begäran om dokumentationsinstruktion (PR) från en gren i ditt gaffel *annan än huvudgrenen*. Se Skicka-målet för granskning när du redigerar i [GitHub-gränssnitt](./use-github-interface-to-create-documentation.md#submit-review) eller in [din lokala miljö](./work-in-local-environment.md#submit-review).

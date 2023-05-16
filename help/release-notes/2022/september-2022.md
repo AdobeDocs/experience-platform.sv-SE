@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 3d829018b527aacb81c16db5e889b2e50f625e28
+source-git-commit: 8904d44cc8d289d103ec6d65116b8385ed615c4d
 workflow-type: tm+mt
 source-wordcount: '2889'
 ht-degree: 2%
@@ -126,7 +126,7 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| Destination SDK | Destination SDK ger nu fullt stöd för partners och kunder som skapar batchvis (eller filbaserat) producerade eller privata destinationer. Mer information finns på följande dokumentationssidor: <ul><li>[Översikt över Destination SDK](/help/destinations/destination-sdk/overview.md)</li><li>[Konfigurera ett filbaserat mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Konfigurera filformateringsalternativ för filbaserade mål](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[Testa dina filbaserade mål](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
+| Destination SDK | Destination SDK ger nu fullt stöd för partners och kunder som skapar batchvis (eller filbaserat) producerade eller privata destinationer. Mer information finns på följande dokumentationssidor: <ul><li>[Översikt över Destination SDK](../../destinations/destination-sdk/overview.md)</li><li>[Konfigurera ett filbaserat mål](../../destinations/destination-sdk/guides/configure-file-based-destination-instructions.md)</li><li>[Konfigurera filformateringsalternativ för filbaserade mål](../../destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)</li><li>[Testa dina filbaserade mål](../../destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)</li></ul> |
 
 {style="table-layout:auto"}
 

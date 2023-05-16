@@ -2,9 +2,9 @@
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ.
 title: Konfigurera ett Amazon S3-mål med anpassade filnamn och formateringsalternativ.
 exl-id: eed73572-5050-44fa-ba16-90729c65495e
-source-git-commit: 04e4b0f6b6d84d04d0a24a462383420ebd9a2daf
+source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
 workflow-type: tm+mt
-source-wordcount: '734'
+source-wordcount: '700'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,19 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassad [filformateringsalternativ](/help/destinations/destination-sdk/server-and-file-configuration.md#file-configuration) och en egen [filnamnskonfiguration](/help/destinations/destination-sdk/file-based-destination-configuration.md#file-name-configuration).
+På den här sidan beskrivs hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassad [filformateringsalternativ](configure-file-formatting-options.md) och en egen [filnamnskonfiguration](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
 
 På den här sidan visas alla konfigurationsalternativ som är tillgängliga för Amazon S3-destinationer. Du kan redigera konfigurationerna som visas i stegen nedan eller ta bort vissa delar av konfigurationerna efter behov.
 
+Detaljerade beskrivningar av parametrarna nedan finns i [konfigurationsalternativ i mål-SDK](../../functionality/configuration-options.md).
+
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen nedan ska du läsa [Komma igång med Destination SDK](/help/destinations/destination-sdk/getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
+Innan du går vidare till stegen nedan ska du läsa [Komma igång med Destination SDK](../../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
 
 ## Steg 1: Skapa en server- och filkonfiguration {#create-server-file-configuration}
 
-Börja med att använda `/destination-server` slutpunkt för att skapa en server- och filkonfiguration. Mer information om parametrarna i HTTP-begäran finns i [server- och filkonfigurationsspecifikationer för filbaserade mål](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example) och associerade [filformateringskonfigurationer](/help/destinations/destination-sdk/server-and-file-configuration.md#file-configuration).
+Börja med att använda `/destination-server` slutpunkt till [skapa en server- och filkonfiguration](../../authoring-api/destination-server/create-destination-server.md).
 
 **API-format**
 
@@ -34,7 +36,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **Begäran**
 
 Följande begäran skapar en ny målserverkonfiguration, konfigurerad med parametrarna som anges i nyttolasten.
-Nedan finns en allmän Amazon S3-konfiguration med anpassad [CSV-filformatering](/help/destinations/destination-sdk/server-and-file-configuration.md#file-configuration) konfigurationsparametrar som användare kan definiera i användargränssnittet för Experience Platform.
+Nedan finns en allmän Amazon S3-konfiguration med anpassad [CSV-filformatering](../../functionality/destination-server/file-formatting.md) konfigurationsparametrar som användare kan definiera i användargränssnittet för Experience Platform.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \
@@ -127,12 +129,6 @@ När du har skapat målservern och filformateringskonfigurationen i föregående
 
 Ansluta serverkonfigurationen i [steg 1](#create-server-file-configuration) till den här målkonfigurationen, ersätt `destinationServerId` värdet i API-begäran nedan med värdet som du fick när du skapade målservern i [steg 1](#create-server-file-configuration).
 
-Detaljerade beskrivningar av parametrarna nedan finns på följande sidor:
-
-* [Autentiseringskonfiguration](/help/destinations/destination-sdk/authentication-configuration.md#s3)
-* [Konfiguration av batchmål](/help/destinations/destination-sdk/file-based-destination-configuration.md#batch-configuration)
-* [Filbaserade API-åtgärder för målkonfiguration](/help/destinations/destination-sdk/destination-configuration-api.md#create-file-based)
-
 **API-format**
 
 ```http
@@ -152,7 +148,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 {
    "name":"Amazon S3 destination with custom file formatting options and custom file name configuration",
    "description":"Amazon S3 destination with custom file formatting options and custom file name configuration",
-   "releaseNotes":"Amazon S3 destination with custom file formatting options and custom file name configuration",
    "status":"TEST",
    "customerAuthenticationConfigurations":[
       {
@@ -418,9 +413,9 @@ Ett lyckat svar returnerar den nya målkonfigurationen, inklusive den unika iden
 
 Baserat på ovanstående konfigurationer kommer Experience Platform-katalogen nu att visa ett nytt privat destinationskort som du kan använda.
 
-![Skärminspelning som visar målkatalogsidan med ett valt målkort.](../../assets/destination-card.gif)
+![Skärminspelning som visar målkatalogsidan med ett valt målkort.](../../assets/guides/batch/destination-card.gif)
 
-Observera hur alternativen i [aktiveringsarbetsflöde för filbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md) matchar alternativen som du valde i målkonfigurationen.
+Observera hur alternativen i [aktiveringsarbetsflöde för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) matchar alternativen som du valde i målkonfigurationen.
 
 När du fyller i information om målet bör du tänka på hur fälten som visas är anpassade datafält som du ställer in i konfigurationen.
 
@@ -428,13 +423,13 @@ När du fyller i information om målet bör du tänka på hur fälten som visas 
 >
 >Den ordning i vilken du lägger till anpassade datafält i målkonfigurationen visas inte i användargränssnittet. De anpassade datafälten visas alltid i den ordning som visas i skärminspelningen nedan.
 
-![fylla i målinformation](../../assets/file-configuration-options.gif)
+![fylla i målinformation](../../assets/guides/batch/file-configuration-options.gif)
 
 När du schemalägger exportintervall bör du tänka på hur fälten visas i `batchConfig` konfiguration.
-![alternativ för exportplanering](../../assets/file-export-scheduling.png)
+![alternativ för exportplanering](../../assets/guides/batch/file-export-scheduling.png)
 
 När du visar alternativen för filnamnskonfiguration bör du tänka på hur fälten som visas representerar `filenameConfig` alternativ som du ställer in i konfigurationen.
-![konfigurationsalternativ för filnamn](../../assets/file-naming-options.gif)
+![konfigurationsalternativ för filnamn](../../assets/guides/batch/file-naming-options.gif)
 
 Om du vill justera något av de fält som nämns ovan upprepar du [steg ett](#create-server-file-configuration) och [två](#create-destination-configuration) för att ändra konfigurationerna efter dina behov.
 
@@ -444,7 +439,7 @@ Om du vill justera något av de fält som nämns ovan upprepar du [steg ett](#cr
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-När du har konfigurerat målet använder du [målpublicerings-API](/help/destinations/destination-sdk/destination-publish-api.md) för att skicka in din konfiguration till Adobe för granskning.
+När du har konfigurerat målet använder du [målpublicerings-API](../../publishing-api/create-publishing-request.md) för att skicka in din konfiguration till Adobe för granskning.
 
 ## Steg 5: (Valfritt) Dokumentera destinationen {#document-destination}
 
@@ -452,8 +447,8 @@ När du har konfigurerat målet använder du [målpublicerings-API](/help/destin
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](/help/destinations/destination-sdk/overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](/help/destinations/destination-sdk/docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md).
+Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI) som skapar en [produktionsintegrering](../../overview.md#productized-custom-integrations), använder du [självbetjäningsdokumentationsprocess](../../docs-framework/documentation-instructions.md) för att skapa en produktdokumentationssida för destinationen i [Experience Platform destinationskatalog](../../../catalog/overview.md).
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa den här artikeln kan du nu skapa en egen [!DNL Amazon S3] mål genom att använda Destination SDK. Sedan kan ditt team använda [aktiveringsarbetsflöde för filbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md) för att exportera data till målet.
+Genom att läsa den här artikeln kan du nu skapa en egen [!DNL Amazon S3] mål genom att använda Destination SDK. Sedan kan ditt team använda [aktiveringsarbetsflöde för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) för att exportera data till målet.

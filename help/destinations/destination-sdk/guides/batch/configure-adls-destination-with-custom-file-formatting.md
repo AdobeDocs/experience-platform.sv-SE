@@ -2,9 +2,9 @@
 description: Lär dig hur du använder Destination SDK för att konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
 title: Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration.
 exl-id: cb67b126-cd30-4fb7-b67e-c15dc7daef73
-source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
+source-git-commit: d47c82339afa602a9d6914c1dd36a4fc9528ea32
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du använder Destination SDK för att konfigurera [!DNL Azure Data Lake Storage] mål med anpassad [filformateringsalternativ](../../server-and-file-configuration.md#file-configuration) och en egen [filnamnskonfiguration](../../file-based-destination-configuration.md#file-name-configuration).
+På den här sidan beskrivs hur du använder Destination SDK för att konfigurera [!DNL Azure Data Lake Storage] mål med anpassad [filformateringsalternativ](configure-file-formatting-options.md) och en egen [filnamnskonfiguration](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
 
 På den här sidan visas alla konfigurationsalternativ som är tillgängliga för Azure Data Lake Storage-mål. Du kan redigera konfigurationerna som visas i stegen nedan eller ta bort vissa delar av konfigurationerna efter behov.
+
+Detaljerade beskrivningar av parametrarna nedan finns i [konfigurationsalternativ i mål-SDK](../../functionality/configuration-options.md).
 
 ## Förutsättningar {#prerequisites}
 
@@ -23,7 +25,7 @@ Innan du går vidare till stegen nedan ska du läsa [Komma igång med Destinatio
 
 ## Steg 1: Skapa en server- och filkonfiguration {#create-server-file-configuration}
 
-Börja med att använda `/destination-server` slutpunkt för att skapa en server- och filkonfiguration. Mer information om parametrarna i HTTP-begäran finns i [server- och filkonfigurationsspecifikationer för filbaserade mål](../../server-and-file-configuration.md#adls-example) och associerade [filformateringskonfigurationer](../../server-and-file-configuration.md#file-configuration).
+Börja med att använda `/destination-server` slutpunkt till [skapa en server- och filkonfiguration](../../authoring-api/destination-server/create-destination-server.md).
 
 **API-format**
 
@@ -34,7 +36,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 **Begäran**
 
 Följande begäran skapar en ny målserverkonfiguration, konfigurerad med parametrarna som anges i nyttolasten.
-Nedan finns en allmän [!DNL Azure Data Lake Storage] konfiguration, med anpassad [CSV-filformatering](../../server-and-file-configuration.md#file-configuration) konfigurationsparametrar som användare kan definiera i användargränssnittet för Experience Platform.
+Nedan finns en allmän [!DNL Azure Data Lake Storage] konfiguration, med anpassad [CSV-filformatering](../../functionality/destination-server/file-formatting.md) konfigurationsparametrar som användare kan definiera i användargränssnittet för Experience Platform.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-server \
@@ -47,7 +49,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 {
    "name":"Azure Data Lake Storage server with custom file formatting options",
    "description":"Azure Data Lake Storage server with custom file formatting options",
-   "releaseNotes":"Azure Data Lake Storage server with custom file formatting options",
    "destinationServerType":"FILE_BASED_ADLS_GEN2",
    "fileBasedAdlsGen2Destination":{
       "path":{
@@ -126,12 +127,6 @@ När du har skapat målservern och filformateringskonfigurationen i föregående
 
 Ansluta serverkonfigurationen i [steg 1](#create-server-file-configuration) till den här målkonfigurationen, ersätt `destinationServerId` värdet i API-begäran nedan med värdet som du fick när du skapade målservern i [steg 1](#create-server-file-configuration).
 
-Detaljerade beskrivningar av parametrarna nedan finns på följande sidor:
-
-* [Autentiseringskonfiguration](../../authentication-configuration.md#adls)
-* [Konfiguration av batchmål](../../file-based-destination-configuration.md#batch-configuration)
-* [Filbaserade API-åtgärder för målkonfiguration](../../destination-configuration-api.md#create-file-based)
-
 **API-format**
 
 ```http
@@ -151,7 +146,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 {
    "name":"Azure Data Lake Storage destination with custom file formatting options and custom file name configuration",
    "description":"Azure Data Lake Storage destination with custom file formatting options and custom file name configuration",
-   "releaseNotes":"Azure Data Lake Storage destination with custom file formatting options and custom file name configuration",
    "status":"TEST",
    "customerAuthenticationConfigurations":[
       {
@@ -406,9 +400,9 @@ Ett lyckat svar returnerar den nya målkonfigurationen, inklusive den unika iden
 
 Baserat på ovanstående konfigurationer kommer Experience Platform-katalogen nu att visa ett nytt privat destinationskort som du kan använda.
 
-![Skärminspelning som visar målkatalogsidan med ett valt målkort.](../../assets/adls-destination-card.gif)
+![Skärminspelning som visar målkatalogsidan med ett valt målkort.](../../assets/guides/batch/adls-destination-card.gif)
 
-Observera hur alternativen i [aktiveringsarbetsflöde för filbaserade mål](/help/destinations/ui/activate-batch-profile-destinations.md) matchar alternativen som du valde i målkonfigurationen.
+Observera hur alternativen i [aktiveringsarbetsflöde för filbaserade mål](../../../ui/activate-batch-profile-destinations.md) matchar alternativen som du valde i målkonfigurationen.
 
 När du fyller i information om målet bör du tänka på hur fälten som visas är anpassade datafält som du ställer in i konfigurationen.
 
@@ -416,13 +410,13 @@ När du fyller i information om målet bör du tänka på hur fälten som visas 
 >
 >Den ordning i vilken du lägger till anpassade datafält i målkonfigurationen visas inte i användargränssnittet. De anpassade datafälten visas alltid i den ordning som visas i skärminspelningen nedan.
 
-![fylla i målinformation](../../assets/file-configuration-options.gif)
+![fylla i målinformation](../../assets/guides/batch/file-configuration-options.gif)
 
 När du schemalägger exportintervall bör du tänka på hur fälten visas i `batchConfig` konfiguration.
-![alternativ för exportplanering](../../assets/file-export-scheduling.png)
+![alternativ för exportplanering](../../assets/guides/batch/file-export-scheduling.png)
 
 När du visar alternativen för filnamnskonfiguration bör du tänka på hur fälten som visas representerar `filenameConfig` alternativ som du ställer in i konfigurationen.
-![konfigurationsalternativ för filnamn](../../assets/file-naming-options.gif)
+![konfigurationsalternativ för filnamn](../../assets/guides/batch/file-naming-options.gif)
 
 Om du vill justera något av de fält som nämns ovan upprepar du [steg ett](#create-server-file-configuration) och [två](#create-destination-configuration) för att ändra konfigurationerna efter dina behov.
 
@@ -432,7 +426,7 @@ Om du vill justera något av de fält som nämns ovan upprepar du [steg ett](#cr
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-När du har konfigurerat målet använder du [målpublicerings-API](../../destination-publish-api.md) för att skicka in din konfiguration till Adobe för granskning.
+När du har konfigurerat målet använder du [målpublicerings-API](../../publishing-api/create-publishing-request.md) för att skicka in din konfiguration till Adobe för granskning.
 
 ## Steg 5: (Valfritt) Dokumentera destinationen {#document-destination}
 

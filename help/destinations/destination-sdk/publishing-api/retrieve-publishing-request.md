@@ -1,0 +1,186 @@
+---
+description: Den här sidan innehåller exempel på API-anropet som används för att hämta information om en destinationspubliceringsbegäran via Adobe Experience Platform Destination SDK.
+title: Hämta en publiceringsbegäran för mål
+source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
+workflow-type: tm+mt
+source-wordcount: '834'
+ht-degree: 2%
+
+---
+
+
+# Hämta en publiceringsbegäran för mål
+
+>[!IMPORTANT]
+>
+>Du behöver bara använda den här API-slutpunkten om du skickar en produkterad (offentlig) destination som ska användas av andra Experience Platform-kunder. Om du skapar ett privat mål för eget bruk behöver du inte skicka målet formellt med publicerings-API:t.
+
+>[!IMPORTANT]
+>
+>**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations/publish`
+
+När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering. Läs [Skicka för granskning av ett mål som skapats i Destination SDK](../guides/submit-destination.md) för alla andra steg som du måste göra som en del av målöverföringsprocessen.
+
+Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
+
+* Som Destination SDK partner vill ni att alla kunder i Experience Platform ska kunna använda er av den producerade destinationen,
+* Du skapar *alla uppdateringar* till dina konfigurationer. Konfigurationsuppdateringar visas endast i målet när du har skickat in en ny publiceringsbegäran som har godkänts av Experience Platform-teamet.
+
+>[!IMPORTANT]
+>
+>Alla parameternamn och värden som stöds av Destinationen SDK är **skiftlägeskänslig**. Undvik skiftlägeskänslighetsfel genom att använda parameternamn och värden exakt som de visas i dokumentationen.
+
+## Komma igång med API-åtgärder för målpublicering {#get-started}
+
+Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+
+## Lista målpubliceringsbegäranden {#retrieve-list}
+
+Du kan hämta en lista över alla mål som skickats in för publicering för din IMS-organisation genom att göra en GET-förfrågan till `/authoring/destinations/publish` slutpunkt.
+
+**API-format**
+
+Använd följande API-format för att hämta alla publiceringsbegäranden för ditt konto.
+
+```http
+GET /authoring/destinations/publish
+```
+
+Använd följande API-format för att hämta en specifik publiceringsbegäran, som definieras av `{DESTINATION_ID}` parameter.
+
+```http
+GET /authoring/destinations/publish/{DESTINATION_ID}
+```
+
+**Begäran**
+
+Följande två begäranden hämtar alla publiceringsbegäranden för din IMS-organisation, eller en viss publiceringsbegäran, beroende på om du har godkänt `DESTINATION_ID` -parametern i begäran.
+
+Välj varje flik nedan för att visa motsvarande nyttolast.
+
+>[!BEGINTABS]
+
+>[!TAB Hämta alla publiceringsbegäranden]
+
++++Begäran
+
+Följande begäran hämtar listan över publiceringsbegäranden som du har skickat, baserat på [!DNL IMS Org ID] och sandlådekonfiguration.
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
++++
+
++++svar
+
+Följande svar returnerar HTTP-status 200 med en lista över alla mål som skickats in för publicering som du har tillgång till, baserat på IMS-organisations-ID:t och namnet på den sandlåda som du använde. Ett `configId` motsvarar publiceringsbegäran för ett mål.
+
+```json
+{
+   "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
+   "publishDetailsList":[
+      {
+         "configId":"ab41387c0-4772-4709-a3ce-6d5fee654520",
+         "allowedOrgs":[
+            "716543205DB85F7F0A495E5B@AdobeOrg"
+         ],
+         "status":"TEST",
+         "destinationType":"DEV"
+      },
+      {
+         "configId":"cd568c67-f25e-47e4-b9a2-d79297a20b27",
+         "allowedOrgs":[
+            "*"
+         ],
+         "status":"DEPRECATED",
+         "destinationType":"PUBLIC",
+         "publishedDate":1630525501009
+      },
+      {
+         "configId":"ef6f07154-09bc-4bee-8baf-828ea9c92fba",
+         "allowedOrgs":[
+            "*"
+         ],
+         "status":"PUBLISHED",
+         "destinationType":"PUBLIC",
+         "publishedDate":1630531586002
+      }
+   ]
+}
+```
+
+| Parameter | Typ | Beskrivning |
+|---------|----------|------|
+| `destinationId` | Sträng | Mål-ID för målkonfigurationen som du har skickat in för publicering. |
+| `publishDetailsList.configId` | Sträng | Det unika ID:t för målpubliceringsbegäran för det skickade målet. |
+| `publishDetailsList.allowedOrgs` | Sträng | Returnerar de Experience Platform-organisationer som målet är tillgängligt för. <br> <ul><li> För `"destinationType": "PUBLIC"`returneras `"*"`, vilket innebär att destinationen är tillgänglig för alla Experience Platform-organisationer.</li><li> För `"destinationType": "DEV"`returnerar den här parametern organisations-ID:t för organisationen som du använde för att redigera och testa målet.</li></ul> |
+| `publishDetailsList.status` | Sträng | Status för målpubliceringsbegäran. Möjliga värden är `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. Destinationer med värdet `PUBLISHED` är direktsända och kan användas av Experience Platform-kunder. |
+| `publishDetailsList.destinationType` | Sträng | Typ av mål. Värden kan vara `DEV` och `PUBLIC`. `DEV` motsvarar destinationen i din Experience Platform-organisation. `PUBLIC` motsvarar målet som du har skickat in för publicering. Tänk på de här två alternativen i Git-termer, där `DEV` versionen representerar din lokala redigeringsgren och `PUBLIC` version representerar fjärrhuvudgrenen. |
+| `publishDetailsList.publishedDate` | Sträng | Det datum då målet skickades för publicering, i epoktid. |
+
+{style="table-layout:auto"}
+
++++
+
+>[!TAB Hämta en specifik publiceringsbegäran]
+
++++Begäran
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations/publish/{DESTINATION_ID} \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+| Parameter | Beskrivning |
+| -------- | ----------- |
+| `{DESTINATION_ID}` | ID:t för destinationen som du vill hämta publiceringsstatusen för. |
+
++++
+
++++svar
+
+Om du har passerat en `DESTINATION_ID` i API-anropet returnerar svaret HTTP-status 200 med detaljerad information om den angivna målpubliceringsbegäran.
+
+```json
+{
+   "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
+   "publishDetailsList":[
+      {
+         "configId":"123cs780-ce29-434f-921e-4ed6ec2a6c35",
+         "allowedOrgs": [
+            "*"
+         ],    
+         "status":"PUBLISHED",
+         "destinationType": "PUBLIC",
+         "publishedDate":"1630617746"
+      }
+   ]
+}
+```
+
+| Parameter | Typ | Beskrivning |
+|---------|----------|------|
+| `destinationId` | Sträng | Mål-ID för målkonfigurationen som du har skickat in för publicering. |
+| `publishDetailsList.configId` | Sträng | Det unika ID:t för målpubliceringsbegäran för det skickade målet. |
+| `publishDetailsList.allowedOrgs` | Sträng | Returnerar de Experience Platform-organisationer som målet är tillgängligt för. <br> <ul><li> För `"destinationType": "PUBLIC"`returneras `"*"`, vilket innebär att destinationen är tillgänglig för alla Experience Platform-organisationer.</li><li> För `"destinationType": "DEV"`returnerar den här parametern organisations-ID:t för organisationen som du använde för att redigera och testa målet.</li></ul> |
+| `publishDetailsList.status` | Sträng | Status för målpubliceringsbegäran. Möjliga värden är `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. Destinationer med värdet `PUBLISHED` är direktsända och kan användas av Experience Platform-kunder. |
+| `publishDetailsList.destinationType` | Sträng | Typ av mål. Värden kan vara `DEV` och `PUBLIC`. `DEV` motsvarar destinationen i din Experience Platform-organisation. `PUBLIC` motsvarar målet som du har skickat in för publicering. Tänk på de här två alternativen i Git-termer, där `DEV` versionen representerar din lokala redigeringsgren och `PUBLIC` version representerar fjärrhuvudgrenen. |
+| `publishDetailsList.publishedDate` | Sträng | Det datum då målet skickades för publicering, i epoktid. |
+
+{style="table-layout:auto"}
+
++++
+
+>[!ENDTABS]
+
+## API-felhantering
+
+Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.

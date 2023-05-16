@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: eb261675ffbd131a00aaa5d526d03e966b94c7c7
+source-git-commit: 36d4908fc19916c5e107eb4883d741ba1904b5a4
 workflow-type: tm+mt
-source-wordcount: '1074'
+source-wordcount: '1178'
 ht-degree: 2%
 
 ---
@@ -196,44 +196,34 @@ ht-degree: 2%
 * Destination SDK {#destination-sdk}
    * [Översikt](./destination-sdk/overview.md)
    * [Krav för integrering](./destination-sdk/integration-prerequisites.md)
-   * [Komma igång](./destination-sdk/getting-started.md)
-   * Destination SDK {#functionality}
-      * [Konfigurationsalternativ](./destination-sdk/configuration-options.md)
-      * [Konfiguration för direktuppspelningsmål](./destination-sdk/destination-configuration.md)
-      * [Filbaserad målkonfiguration](./destination-sdk/file-based-destination-configuration.md)
-      * [Serverspecifikationer och mallspecifikationer för direktuppspelningsmål](./destination-sdk/server-and-template-configuration.md)
-      * [Filbaserad målserver och filspecifikationer](./destination-sdk/server-and-file-configuration.md)
-      * [Meddelandeformat](./destination-sdk/message-format.md)
-      * [Hantering av målgruppsmetadata](./destination-sdk/audience-metadata-management.md)
-      * Autentisering {#authentication}
-         * [Autentiseringskonfiguration](./destination-sdk/authentication-configuration.md)
-         * [OAuth 2-autentisering](./destination-sdk/oauth2-authentication.md)
-      * Utvecklarverktyg {#developer-tools}
-         * [Skapa och testa en meddelandeomformningsmall](./destination-sdk/create-template.md)
-         * [Testa målkonfigurationen](./destination-sdk/test-destination.md)
-   * API-åtgärder {#api}
-      * [API-referens för Destination SDK (målredigering)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
-      * [API-åtgärder för destinationsslutpunkt](./destination-sdk/destination-configuration-api.md)
-      * [API-åtgärder för målserverns slutpunkt](./destination-sdk/destination-server-api.md)
-      * [API-åtgärder för målgruppsmetadata](./destination-sdk/audience-metadata-api.md)
-      * [API-åtgärder för slutpunkt för autentiseringsuppgifter](./destination-sdk/credentials-configuration-api.md)
-      * [Publicera API-åtgärder för slutpunkt](./destination-sdk/destination-publish-api.md)
-      * Referens för utvecklingsverktyg {#developer-tools-reference}
-         * API för testning av direktuppspelningsmål {#streaming-destination-testing-api}
-            * [Hämta API-åtgärder för exempelmallar](./destination-sdk/sample-template-api.md)
-            * [API-åtgärder för återgivningsmall](./destination-sdk/render-template-api.md)
-            * [API-åtgärder för måltestning](./destination-sdk/destination-testing-api.md)
-            * [API-åtgärder för generering av exempelprofiler](./destination-sdk/sample-profile-generation-api.md)
-         * Filbaserat API för måltestning {#file-based-destination-testing-api}
-            * [Översikt över API för filbaserad destinationstestning](./destination-sdk/file-based-destination-testing-overview.md)
-            * [Generera exempelprofiler baserat på ett källschema](./destination-sdk/file-based-sample-profile-generation-api.md)
-            * [Testa ditt filbaserade mål med exempelprofiler](./destination-sdk/file-based-destination-testing-api.md)
-            * [Visa detaljerade aktiveringsresultat](./destination-sdk/file-based-destination-results-api.md)
-            * [Validera mallsidiga kundfält](./destination-sdk/file-based-render-template-api.md)
+   * [Komma igång med Destination SDK](./destination-sdk/getting-started.md)
+   * Funktionalitet {#functionality}
+      * [Konfigurationsalternativ](./destination-sdk/functionality/configuration-options.md)
+      * Målserverkomponenter {#destination-server}
+         * [Serverspecifikationer](./destination-sdk/functionality/destination-server/server-specs.md)
+         * [Mallspecifikationer](./destination-sdk/functionality/destination-server/templating-specs.md)
+         * [Meddelandeformat](./destination-sdk/functionality/destination-server/message-format.md)
+         * [Omformningsfunktioner som stöds](./destination-sdk/functionality/destination-server/supported-functions.md)
+         * [Filformateringskonfiguration](./destination-sdk/functionality/destination-server/file-formatting.md)
+      * Målkonfigurationskomponenter {#destination-configuration}
+         * [Konfiguration av kundautentisering](./destination-sdk/functionality/destination-configuration/customer-authentication.md)
+         * [OAuth2-autentisering](./destination-sdk/functionality/destination-configuration/oauth2-authentication.md)
+         * [Kunddatafält](./destination-sdk/functionality/destination-configuration/customer-data-fields.md)
+         * [Gränssnittsattribut](./destination-sdk/functionality/destination-configuration/ui-attributes.md)
+         * [Konfiguration av partnerschema](./destination-sdk/functionality/destination-configuration/schema-configuration.md)
+         * [Konfiguration av namnutrymme för identitet](./destination-sdk/functionality/destination-configuration/identity-namespace-configuration.md)
+         * [Mappningskonfigurationer som stöds](./destination-sdk/functionality/destination-configuration/supported-mapping-configurations.md)
+         * [Destinationsleverans](./destination-sdk/functionality/destination-configuration/destination-delivery.md)
+         * [Konfiguration av målgruppsmetadata](./destination-sdk/functionality/destination-configuration/audience-metadata-configuration.md)
+         * [Samlingsprincip](./destination-sdk/functionality/destination-configuration/aggregation-policy.md)
+         * [Batchkonfiguration](./destination-sdk/functionality/destination-configuration/batch-configuration.md)
+         * [Krav på historisk profil](./destination-sdk/functionality/destination-configuration/historical-profile-qualifications.md)
+      * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/functionality/rate-limiting-retry-policy.md)
+      * [Hantering av målgruppsmetadata](./destination-sdk/functionality/audience-metadata-management.md)
    * Användarhandböcker {#guides}
-      * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/configure-destination-instructions.md)
-      * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/configure-file-based-destination-instructions.md)
-      * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/submit-destination.md)
+      * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/guides/configure-destination-instructions.md)
+      * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/guides/configure-file-based-destination-instructions.md)
+      * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/guides/submit-destination.md)
       * Konfigurera filbaserade mål {#configure-file-based-destinations}
          * [Konfigurera filformateringsalternativ](/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md)
          * [Konfigurera ett Amazon S3-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
@@ -242,9 +232,45 @@ ht-degree: 2%
          * [Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
          * [Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och konfiguration av anpassade filnamn](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
          * [Konfigurera ett SFTP-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
-   * Referens {#reference}
-      * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/rate-limiting-retry-policy.md)
-      * [Omformningsfunktioner som stöds](./destination-sdk/supported-functions.md)
+   * API-referens för målredigering {#authoring-api}
+      * [API-referens för Destination SDK (målredigering)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * Åtgärder på målservern {#server-operations}
+         * [Skapa en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/create-destination-server.md)
+         * [Hämta en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/retrieve-destination-server.md)
+         * [Uppdatera en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/update-destination-server.md)
+         * [Ta bort en målserverkonfiguration](./destination-sdk/authoring-api/destination-server/delete-destination-server.md)
+      * Åtgärder för destinationskonfiguration {#destination-operations}
+         * [Skapa en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/create-destination-configuration.md)
+         * [Hämta en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/retrieve-destination-configuration.md)
+         * [Uppdatera en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/update-destination-configuration.md)
+         * [Ta bort en målkonfiguration](./destination-sdk/authoring-api/destination-configuration/delete-destination-configuration.md)
+   * API-referens för målgruppsmetadata {#audience-template-api}
+      * [Skapa en målgruppsmall](./destination-sdk/metadata-api/create-audience-template.md)
+      * [Hämta en målgruppsmall](./destination-sdk/metadata-api/retrieve-audience-template.md)
+      * [Uppdatera en målgruppsmall](./destination-sdk/metadata-api/update-audience-template.md)
+      * [Ta bort en målgruppsmall](./destination-sdk/metadata-api/delete-audience-template.md)
+   * API-referens för konfiguration av autentiseringsuppgifter {#credentials-api}
+      * [Skapa en konfiguration för autentiseringsuppgifter](./destination-sdk/credentials-api/create-credential-configuration.md)
+      * [Hämta en konfiguration för autentiseringsuppgifter](./destination-sdk/credentials-api/retrieve-credential-configuration.md)
+      * [Uppdatera en konfiguration för autentiseringsuppgifter](./destination-sdk/credentials-api/update-credential-configuration.md)
+      * [Ta bort en autentiseringskonfiguration](./destination-sdk/credentials-api/delete-credential-configuration.md)
+   * API-referens för måltestning {#testing-api}
+      * API för testning av direktuppspelningsmål {#streaming-destinations}
+         * [API-översikt för testning av direktuppspelningsmål](./destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md)
+         * [Generera exempelprofiler baserat på ett källschema](./destination-sdk/testing-api/streaming-destinations/sample-profile-generation-api.md)
+         * [Generera en omformningsmall för exempelmeddelanden ](./destination-sdk/testing-api/streaming-destinations/sample-template-api.md)
+         * [Validera exporterad profilstruktur](./destination-sdk/testing-api/streaming-destinations/render-template-api.md)
+         * [Testa strömningsmålet med exempelprofiler](./destination-sdk/testing-api/streaming-destinations/destination-testing-api.md)
+         * [Skapa och testa en meddelandeomformningsmall](./destination-sdk/testing-api/streaming-destinations/create-template.md)
+      * Filbaserat API för måltestning {#batch-destinations}
+         * [Översikt över API för filbaserad destinationstestning](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md)
+         * [Generera exempelprofiler baserat på ett källschema](./destination-sdk/testing-api/batch-destinations/file-based-sample-profile-generation-api.md)
+         * [Testa ditt filbaserade mål med exempelprofiler](./destination-sdk/testing-api/batch-destinations/file-based-destination-testing-api.md)
+         * [Visa detaljerade aktiveringsresultat](./destination-sdk/testing-api/batch-destinations/file-based-destination-results-api.md)
+         * [Validera mallsidiga kundfält](./destination-sdk/testing-api/batch-destinations/file-based-render-template-api.md)
+   * API-referens för målpublicering {#publishing-api}
+      * [Skapa en publiceringsbegäran för mål](./destination-sdk/publishing-api/create-publishing-request.md)
+      * [Hämta en publiceringsbegäran för mål](./destination-sdk/publishing-api/retrieve-publishing-request.md)
    * Dokumentera destinationen {#document-destination}
       * [Dokumentera destinationen i Adobe Experience Platform](./destination-sdk/docs-framework/documentation-instructions.md)
       * [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)

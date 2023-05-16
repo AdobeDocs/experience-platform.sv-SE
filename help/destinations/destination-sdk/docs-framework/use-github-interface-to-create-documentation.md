@@ -1,8 +1,8 @@
 ---
-title: 'Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida '
+title: Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida
 description: Instruktionerna på den här sidan visar hur du använder GitHub-webbgränssnittet för att skapa en dokumentationssida för ditt Experience Platform-mål och skicka den för granskning.
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
-source-git-commit: 1bbff0fa54f1b7ef1ee70efd2a85cd43b34b2f5a
+source-git-commit: e239de97a26ea2ff36bb74390e249851a13d2e13
 workflow-type: tm+mt
 source-wordcount: '780'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida {#github-interface}
 
-Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR). Innan du går igenom de steg som anges här bör du läsa [Dokumentera ditt mål i Adobe Experience Platform Destinations](./documentation-instructions.md).
+Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att skapa dokumentation och skicka en pull-begäran (PR). Innan du går igenom de steg som anges här bör du kontrollera att du läser [Dokumentera destinationen i Adobe Experience Platform Destinations](./documentation-instructions.md).
 
 >[!TIP]
 >
@@ -23,37 +23,37 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 
 ## Konfigurera din GitHub-redigeringsmiljö {#set-up-environment}
 
-1. Navigera till `https://github.com/AdobeDocs/experience-platform.en` i webbläsaren.
-2. Om du vill [förgrening](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Förgrening** enligt nedan. Detta skapar en kopia av databasen Experience Platform i ditt eget GitHub-konto.
+1. I webbläsaren går du till `https://github.com/AdobeDocs/experience-platform.en`.
+2. Till [gaffel](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) databasen klickar du på **Gaffel** enligt nedan. Detta skapar en kopia av databasen Experience Platform i ditt eget GitHub-konto.
 
-   ![Dokumentationsarkiv för Adobe](./assets/ssd-fork-repository.gif)
+   ![Dokumentationsarkiv för Adobe](../assets/docs-framework/ssd-fork-repository.gif)
 
 3. Skapa en ny gren för ditt projekt i databasens gaffel, så som visas nedan. Använd den här nya grenen för ditt arbete.
 
-   ![Skapa ny GitHub-gren](./assets/new-branch-github.gif)
+   ![Skapa ny GitHub-gren](../assets/docs-framework/new-branch-github.gif)
 
-4. Navigera till `experience-platform.en/help/destinations/catalog/[...]`, där `[...]` är den önskade kategorin för ditt mål, i mappstrukturen GitHub för den förankrade databasen. Om du till exempel lägger till ett anpassningsmål i Experience Platform väljer du kategorin `personalization`. Välj **Lägg till fil > Skapa ny fil**.
+4. I mappstrukturen GitHub för den förankrade databasen navigerar du till `experience-platform.en/help/destinations/catalog/[...]`, där `[...]` är den önskade kategorin för destinationen. Om du till exempel lägger till ett anpassningsmål till Experience Platform väljer du `personalization` kategori. Välj **Lägg till fil > Skapa ny fil**.
 
-   ![Lägg till ny fil](./assets/github-navigate-and-create-file.gif)
+   ![Lägg till ny fil](../assets/docs-framework/github-navigate-and-create-file.gif)
 
-5. Ange ett namn på målet `YOURDESTINATION.md`, där YOURDESTINATION är namnet på målet i Adobe Experience Platform. Om ditt företag till exempel heter Moviestar skulle du namnge filen `moviestar.md`.
+5. Namnge målet `YOURDESTINATION.md`, där YOURDESTINATION är namnet på destinationen i Adobe Experience Platform. Om ditt företag till exempel heter Moviestar skulle du namnge filen `moviestar.md`.
 
 ## Skriv dokumentationssidan för ditt mål {#author-documentation}
 
-1. Du skapar innehållet på målsidan baserat på självbetjäningsmallen [för dokumentationen](./self-service-template.md). **[Ladda](assets/yourdestination-template.zip)** ned mallen och zippa upp den för att extrahera  `.md` filmallen.
-2. Klistra in och redigera innehållet i mallen med relevant information om målet i en markeringsredigerare online, till exempel [dillinger.io](https://dillinger.io/). Följ instruktionerna i mallen för mer information om vad du ska fylla i och vilka stycken som kan tas bort.
+1. Du skapar innehållet på målsidan baserat på [självbetjäningsmall för dokumentation](./self-service-template.md). **[Hämta](../assets/docs-framework/yourdestination-template.zip)** mallen och zippa upp den för att extrahera `.md` filmall.
+2. Klistra in och redigera innehållet i mallen med relevant information om destinationen i en markeringsredigerare online, som [dillinger.io](https://dillinger.io/). Följ instruktionerna i mallen för mer information om vad du ska fylla i och vilka stycken som kan tas bort.
 
    >[!TIP]
    >
    >Du kan när som helst stänga webbläsarfönstret och öppna det igen senare. Ditt arbete sparas automatiskt och väntar på dig när du öppnar webbläsaren igen.
 3. Kopiera innehållet från markeringsredigeraren till den nya filen i GitHub.
-4. För skärmbilder eller bilder som du tänker använda använder du GitHub-gränssnittet för att överföra filerna till `experience-platform.en/help/destinations/assets/catalog/[...]`, där `[...]` är den önskade kategorin för målet. Om du till exempel lägger till ett anpassningsmål i Experience Platform väljer du kategorin `personalization`. Du måste länka till bilderna från sidan som du redigerar. Se [instruktioner om hur du länkar till bilder](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en#link-to-images).
+4. Använd GitHub-gränssnittet för att överföra filerna till `experience-platform.en/help/destinations/assets/catalog/[...]`, där `[...]` är den önskade kategorin för destinationen. Om du till exempel lägger till ett anpassningsmål till Experience Platform väljer du `personalization` kategori. Du måste länka till bilderna från sidan som du redigerar. Se [anvisningar om hur du länkar till bilder](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en#link-to-images).
 
-   ![Överför bild till GitHub](./assets/upload-image.gif)
+   ![Överför bild till GitHub](../assets/docs-framework/upload-image.gif)
 
 5. När du är klar sparar du filen i din gren.
 
-![Bekräfta skapande av fil](./assets/ssd-confirm-file-creation.png)
+![Bekräfta skapande av fil](../assets/docs-framework/ssd-confirm-file-creation.png)
 
 ## Skicka in din dokumentation för granskning {#submit-review}
 
@@ -61,26 +61,26 @@ Instruktionerna nedan visar hur du använder GitHub-webbgränssnittet för att s
 >
 >Observera att det inte finns något du kan bryta här. Genom att följa instruktionerna i det här avsnittet föreslår du bara en uppdatering av dokumentationen. Den föreslagna uppdateringen kommer att godkännas eller redigeras av Adobe Experience Platform dokumentationsteam.
 
-1. När du har sparat filen och överfört de önskade bilderna kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Kontrollera att den gren du arbetade med är markerad och välj **Contribute > Öppna pull-begäran**.
+1. När du har sparat filen och överfört de önskade bilderna kan du öppna en pull-begäran (PR) för att sammanfoga din arbetsgren med den överordnad grenen i dokumentationsdatabasen för Adobe. Se till att grenen du arbetade med är markerad och väljer **Contribute > Öppna pull-begäran**.
 
-![Skapa pull-begäran](./assets/ssd-create-pull-request-1.gif)
+![Skapa pull-begäran](../assets/docs-framework/ssd-create-pull-request-1.gif)
 
-1. Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR:en som beskriver uppdateringen och välj **Skapa pull-begäran**. Då öppnas en PR som sammanfogar arbetsgrenen i din gaffel till den överordnad grenen i Adobe-databasen.
+1. Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning till PR, som beskriver uppdateringen och välj **Skapa pull-begäran**. Då öppnas en PR som sammanfogar arbetsgrenen i din gaffel till den överordnad grenen i Adobe-databasen.
 
    >[!TIP]
    >
-   >Låt kryssrutan **Tillåt redigeringar av underhållare** vara markerad så att dokumentationsteamet på Adobe kan göra ändringar i PR-dokumentet.
+   >Lämna **Tillåt redigeringar av underhållare** kryssrutan markerad så att dokumentationsteamet på Adobe kan göra ändringar i PR.
 
-   ![Skapa pull-begäran till Adobe-dokumentationsarkivet](./assets/ssd-create-pull-request-2.png)
+   ![Skapa pull-begäran till Adobe-dokumentationsarkivet](../assets/docs-framework/ssd-create-pull-request-2.png)
 
 1. Nu visas ett meddelande som uppmanar dig att signera Adobe Contributor License Agreement (CLA). Detta är ett obligatoriskt steg. När du har signerat CLA-avtalet uppdaterar du PR-sidan och skickar pull-begäran.
 
-1. Du kan bekräfta att pull-begäran har skickats genom att granska fliken **Pull-begäranden** i `https://github.com/AdobeDocs/experience-platform.en`.
+1. Du kan bekräfta att pull-begäran har skickats genom att granska **Dra in begäranden** tabba in `https://github.com/AdobeDocs/experience-platform.en`.
 
-   ![PR lyckades](./assets/ssd-pr-successful.png)
+   ![PR lyckades](../assets/docs-framework/ssd-pr-successful.png)
 
 1. Tack! Dokumentationsteamet på Adobe kommer att nå ut i PR om det skulle behövas ändringar och informera dig om när dokumentationen kommer att publiceras.
 
 >[!TIP]
 >
->Om du vill lägga till bilder och länkar i din dokumentation och om du vill ha andra frågor om Markdown, ska du läsa [Använda Markdown](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en) i Adobe samarbetshandbok.
+>Om du vill lägga till bilder och länkar till din dokumentation och om du vill ha andra frågor om Markdown läser du [Använda markering](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en) i Adobe samarbetsvägledning.

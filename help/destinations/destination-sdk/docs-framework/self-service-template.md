@@ -2,7 +2,7 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+source-git-commit: 1773edff56059cf5bc57ebaaa133216423fcfe10
 workflow-type: tm+mt
 source-wordcount: '1497'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >* Fyll i alla avsnitt i den här mallen i den ordning som de beskrivs i mallen.
->* Den här mallen uppdateras sällan baserat på feedback från partner. Innan du börjar skapa dokumentation för destinationen bör du kontrollera att du har laddat ned [senaste versionen av mallen](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
+>* Den här mallen uppdateras sällan baserat på feedback från partner. Innan du börjar skapa dokumentation för destinationen bör du kontrollera att du har laddat ned [senaste versionen av mallen](../assets/docs-framework/yourdestination-template.zip).
 
 
 ## Översikt {#overview}
@@ -103,7 +103,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-![Exempelbild som visar hur man autentiserar till målet](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
+![Exempelbild som visar hur man autentiserar till målet](../assets/docs-framework/authenticate-destination.png)
 
 * **[!UICONTROL Bearer token]**: Fyll i bearer-token för att autentisera mot målet.
 
@@ -113,7 +113,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Exempelbild som visar hur du fyller i detaljer för destinationen](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
+![Exempelbild som visar hur du fyller i detaljer för destinationen](../assets/docs-framework/configure-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.

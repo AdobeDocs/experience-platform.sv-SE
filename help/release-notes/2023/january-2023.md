@@ -1,9 +1,10 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
-source-git-commit: 6388c72aa0be8f5f91efaaa6a0edd22f3eb99de8
+exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
+source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
 workflow-type: tm+mt
-source-wordcount: '2358'
+source-wordcount: '2340'
 ht-degree: 3%
 
 ---
@@ -38,7 +39,7 @@ Attribution AI används för att attribuera krediter till kontaktytor som leder 
 | HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Attribution AI och vissa andra Experience Platform-baserade tillämpningar. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
 | Redigera kolumner för extra poängdatauppsättning | Nu kan du lägga till eller ta bort ytterligare spaltdatakolumner (rapportkolumner) när du redigerar befintliga modeller. Detta utökar flexibiliteten i attribueringspoängen för att ge dig insikter om ytterligare dimensioner efter att en modell redan har skapats. Se [Användargränssnittshandbok för attribuering](../../intelligent-services/attribution-ai/user-guide.md) om du vill veta mer. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se [AI-/ML-tjänster](../../intelligent-services/attribution-ai/overview.md) för mer information.
 
@@ -52,7 +53,7 @@ Kundens AI för Real-time Customer Data Platform används för att generera anpa
 | ------- | ----------- |
 | HIPAA-beredskap | Vårdsköldens kunder kan nu ta emot, använda, underhålla eller överföra skyddad hälsoinformation i Customer AI för Real-time Customer Data Platform och vissa andra Experience Platform-baserade tillämpningar. Sjukvården är avsedd för vårdkunder som antingen är en enhet som omfattas av avtalet eller en affärsassociation enligt HIPAA. Mer information finns i dokumentationen om [HIPAA och Adobe Products and Services](https://www.adobe.com/trust/compliance/hipaa-ready.html) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se [AI-/ML-tjänster](../../intelligent-services/customer-ai/overview.md) för mer information.
 
@@ -66,7 +67,7 @@ Med Adobe Assurance kan ni inspektera, bevisa, simulera och validera hur ni saml
 | ------- | ----------- |
 | Valideringsredigerare | Nya förbättringar av valideringsredigeraren har lagts till. Dessa förbättringar omfattar valideringskolumner, nya kodbyggningsverktyg och förbättrade vyer. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om Assurance finns i [Assurance-dokumentation](https://developer.adobe.com/client-sdks/documentation/platform-assurance/).
 
@@ -81,7 +82,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Ny hemskärm | Startsidan för användargränssnittet för datainsamling har uppdaterats med information om introduktion och länkar som effektiviserar produktiviteten. Det inkluderar:<ol><li>Dokumentation och rekommenderade arbetsflöden för att komma igång</li><li>Senaste egenskaper, regler och dataelement</li><li>Populära tillägg</li><li>Nya tilläggsuppdateringar med en snabbinstallationsfunktion</li></ol> |
 | Skicka data till [!DNL Google Ads] använda händelsevidarebefordran | Nu kan du använda [[!DNL Google Ads Enhanced Conversions] API-tillägg](../../tags/extensions/server/google-ads-enhanced-conversions/overview.md) för vidarebefordran av händelser, i kombination med [Google Oauth 2 - hemligheter](../../tags/ui/event-forwarding/secrets.md#google-oauth2)för att på ett säkert sätt skicka data på serversidan till [!DNL Google Ads] i realtid. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Destinationer (uppdaterad 2 februari) {#destinations}
 
@@ -101,7 +102,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | ----------- | ----------- |
 | Förbättrad policy för betald mediamarknadsföring för integrering med direktuppspelningsmål | An [förbättrat genomförande av godkännandepolicyer](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) på [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations) för aktivering av betalmedia. När profiler inte längre är kvalificerade för en samtyckespolicy kommunicerar Experience Platform nu aktivt sin policy till direktuppspelningsdestinationer. <br> <b>Anteckning</b>: Den här funktionen är endast tillgänglig för kunder som har **[!UICONTROL Privacy and Security Shield]** och **[!UICONTROL Healthcare Shield]**. |
 | Nya avgränsningsalternativ för målanslutningar för betmolnlagring | Tre nya avgränsningsalternativ (Kolon `:`, rörform, semikolon `;`) finns nu för de nya lagringsplatserna i betmolnet - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md). <br> Läs om vilka funktioner som stöds [filformateringsalternativ](/help/destinations/ui/batch-destinations-file-formatting-options.md) för filbaserade mål. |
-| Ny valfri parameter finns i [kunddatafält](/help/destinations/destination-sdk/destination-configuration.md#customer-data-fields) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. <br> Till exempel **[!UICONTROL Integration alias]** i [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
+| Ny valfri parameter finns i [kunddatafält](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md) konfigurationer i [Destination SDK](/help/destinations/destination-sdk/overview.md) | `unique`: Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. <br> Till exempel **[!UICONTROL Integration alias]** i [[!UICONTROL Custom Personalization]](/help/destinations/catalog/personalization/custom-personalization.md#parameters) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
 
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
@@ -160,7 +161,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Fältgrupp | [[!UICONTROL Weather Triggers]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/severe-triggers.schema.json) | The `weatherTriggers` fältet är nu kapslat under `weather` -objekt. |
 | Fältgrupp | [[!UICONTROL XDM Related Business Accounts]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account/related-accounts.schema.json) | Fältgruppen är nu stabil. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
@@ -190,7 +191,7 @@ Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och 
 | Utgångsdatum för externt medlemskap | Som standard behålls medlemskap för externa målgrupper i 30 dagar. Om du vill behålla dem längre använder du `validUntil` när målgruppsdata hämtas. |
 | Utgångsdatum för plattformsgenererat segmentmedlemskap | Alla segmentmedlemskap som finns i `Exited` i mer än 30 dagar, baserat på `lastQualificationTime` kan tas bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
 
