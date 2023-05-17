@@ -3,9 +3,10 @@ solution: Experience Platform
 title: API-migreringsguide för molnlagringsmål
 description: Lär dig mer om förändringarna i arbetsflödet för att aktivera molnlagringsmål som en del av migreringen till de nya målkorten för molnlagring med ytterligare funktioner.
 type: Tutorial
-source-git-commit: 6ed78a96f099fb4552716ac4a598c43f4d65cf37
+exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
+source-git-commit: 8ca63586855f2c62231662906646eb8abcfdcc0e
 workflow-type: tm+mt
-source-wordcount: '1446'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
@@ -82,7 +83,7 @@ De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connect
 
 | [!DNL Amazon S3] | Äldre | Nytt |
 |---------|----------|---------|
-| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 269ba276-16fc-47db-92b0-c1049a3c131f |
+| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 1a0514a6-33d4-4c7f-aff8-594799c47549 |
 | Anslutningsspecifikation | 4890fc95-5a1f-4983-94bb-e060c08e3f81 | 4fce964d-3f37-408f-9778-e597338a21ee |
 
 Se alla exempel på tidigare och nya basanslutningar och målanslutningar för [!DNL Amazon S3] på flikarna nedan. De parametrar som krävs för att skapa basanslutningar för [!DNL Amazon S3] destinationerna ändras inte.
@@ -254,7 +255,7 @@ De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connect
 
 | [!DNL Azure Blob] | Äldre | Nytt |
 |---------|----------|---------|
-| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 95bd8965-fc8a-4119-b9c3-944c2c2df6d2 |
+| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 752d422f-b16f-4f0d-b1c6-26e448e3b388 |
 | Anslutningsspecifikation | e258278b-a4cf-43ac-b158-4fa0ca0d948b | 6d6b59bf-fb58-4107-9064-4d246c0e5bb2 |
 
 Se alla exempel på tidigare och nya basanslutningar och målanslutningar för [!DNL Azure Blob] på flikarna nedan. Parametrarna som krävs för att skapa basanslutningar för Azure Blob-mål ändras inte.
@@ -426,7 +427,7 @@ De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connect
 
 | SFTP | Äldre | Nytt |
 |---------|----------|---------|
-| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 354d6aad-4754-46e4-a576-1b384561c440 |
+| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | fd36aaa4-bf2b-43fb-9387-43785eeb799 |
 | Anslutningsspecifikation | 64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0 | 36965a81-b1c6-401b-99f8-22508f1e6a26 |
 
 Förutom den uppdaterade flödes- och anslutningsspecifikationen ovan, finns det ändringar i parametrarna som krävs när du skapar SFTP-basanslutningar.
