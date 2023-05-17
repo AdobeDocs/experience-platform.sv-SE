@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Datamodell för detaljhandeln
 description: Se en standardiserad datamodell för detaljhandeln som är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
 exl-id: 40cbb243-668b-4280-815f-1f94a06b6b87
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 5ceb261dbf1cac58d0cfe620875b8fa7c761abf2
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '456'
 ht-degree: 1%
 
 ---
@@ -45,6 +45,4 @@ Följande tabell visar de rekommenderade klasserna och schemafältgrupperna för
 | Öka lojalitetsdata (partnerdata) för att öka relevant produktinformation över webben, e-post och digitala marknadsföringskanaler. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Webbinformation](../../field-groups/event/web-details.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li><li>**[Produkt](../../classes/product.md)**:<ul><li>[Produktkatalog](../../field-groups/product/product-catalog.md)</li><li>[Produktkategori](../../field-groups/product/product-category.md)</li></ul></li></ul> |
 | Återmarknadsför övergivna kundvagnar via automatiserade och personaliserade e-postmeddelanden. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Handelsinformation](../../field-groups/event/commerce-details.md)</li><li>[Webbinformation](../../field-groups/event/web-details.md)</li></ul></li><li>**[Produkt](../../classes/product.md)**:<ul><li>[Produktkatalog](../../field-groups/product/product-catalog.md)</li><li>[Produktkategori](../../field-groups/product/product-category.md)</li></ul></li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
-
-*\*Medan en standardproduktklass planeras för en framtida release måste produktscheman i stället byggas med en anpassad klass. Du måste därför manuellt skapa strukturen för schemaklassen samt strukturen för de fältgrupper som du lägger till i den. Se avsnittet om [skapa en anpassad klass](../../ui/resources/classes.md#create) i XDM UI-guiden för mer information.*
+{style="table-layout:auto"}

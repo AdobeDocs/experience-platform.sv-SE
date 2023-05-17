@@ -3,9 +3,9 @@ keywords: Experience Platform;fråga;frågetjänst;felsökning;skyddsförslag;ri
 title: Guardsutkast för frågetjänsten
 description: Det här dokumentet innehåller information om användningsgränser för frågetjänstdata som hjälper dig att optimera användningen av frågan.
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 5ceb261dbf1cac58d0cfe620875b8fa7c761abf2
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1004'
 ht-degree: 1%
 
 ---
@@ -34,8 +34,6 @@ Innan du fortsätter med det här dokumentet bör du ha god förståelse för de
 
 Bilden nedan sammanfattar hur funktionerna i tjänsten Query är paketerade och licensierade:
 
-![Ett diagram som förklarar distributionen och paketeringen av Query Service-funktioner i samband med licensiering.](./images/guardrails/query-capabilities.png)
-
 ## Begränsningstyper
 
 Det finns två typer av standardgränser i det här dokumentet:
@@ -62,7 +60,7 @@ Tabellerna nedan innehåller de rekommenderade säkerhetsgränserna och beskrivn
 | Klientanslutning och utdatagräns för resultat | Klientanslutning<ul><li>Frågegränssnitt (100 rader)</li><li>Tredjepartsklient (50 000)</li><li>[!DNL PostgresSQL] klient (50 000)</li></ul> | Hård | Resultatet av en fråga kan tas emot på följande sätt:<ul><li>Användargränssnitt för frågetjänst</li><li>Tredjepartsklient</li><li>[!DNL PostgresSQL] klient</li></ul>Obs! Om du lägger till en begränsning i antalet utdata kan resultatet bli snabbare. Till exempel: `LIMIT 5`, `LIMIT 10`och så vidare. |
 | Resultat returnerade via | Klientgränssnitt | Ej tillämpligt | Detta definierar hur resultaten görs tillgängliga för användarna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Gruppfrågor**
 
@@ -76,7 +74,7 @@ Tabellerna nedan innehåller de rekommenderade säkerhetsgränserna och beskrivn
 | Klientanslutning och utdatagräns | Klientanslutning<ul><li>Frågegränssnitt (ingen övre gräns till rader)</li><li>Tredjepartsklient (ingen övre gräns för rader)</li><li>[!DNL PostgresSQL] klient (ingen övre gräns till rader)</li><li>REST API:er (ingen övre gräns för rader)</li></ul> | Hård | Resultatet av en fråga kan göras tillgängligt på följande sätt:<ul><li>Kan lagras som härledda datauppsättningar</li><li>Kan infogas i befintliga härledda datauppsättningar</li></ul>Obs! Det finns ingen övre gräns för antal poster från frågeresultatet. |
 | Resultat returnerade via | Datauppsättning | Ej tillämpligt | Detta definierar hur resultaten görs tillgängliga för användarna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Query Accelerated Store {#query-accelerated-store}
 
@@ -86,7 +84,7 @@ Tabellen nedan innehåller de rekommenderade gränserna för skyddsutkast och en
 |---|---|---|---|
 | Frågesamtidighet | 4 | Hård | För att säkerställa att frågor om aggregerade data via rapporterings-API:t (inklusive frågor som förbättrar datamodeller som Real-Time CDP datamodeller) har de resurser som krävs för att kunna köras effektivt, spårar API:t resursanvändning genom att tilldela kortplatser för samtidig användning till varje fråga. Systemet placerar frågor i en kö och väntar tills kortplatser för samtidig användning blir tillgängliga eller kan hanteras från cachen. Högst fyra samtidiga frågekortplatser är tillgängliga vid en given tidpunkt.<br>Om du får åtkomst till rapporterings-API:t via ett BI-verktyg och behöver mer samtidighet, krävs en BI-server. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 
