@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: c95d2ab1a6f104c18c491d3a533ee2c304a0aa68
+source-git-commit: 963fc5e31e1728a8a1a7e94bc0cc47d010347325
 workflow-type: tm+mt
-source-wordcount: '2068'
+source-wordcount: '2057'
 ht-degree: 2%
 
 ---
@@ -190,7 +190,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| API-stöd för filtrering av radnivådata för Microsoft Dynamics, Salesforce CRM och Salesforce Marketing Cloud | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för källorna i Microsoft Dynamics, Salesforce CRM och Salesforce Marketing Cloud. Läs guiden på [filtrera data för en källa med API](../../sources/tutorials/api/filter.md) för mer information. |
+| API-stöd för filtrering av radnivådata för Salesforce CRM-källan. | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för Salesforce CRM-källan. Läs guiden på [filtrera data för en källa med API](../../sources/tutorials/api/filter.md) för mer information. |
 | Betaversion av Shopify Streaming | The [Förminska strömningskälla](../../sources/connectors/ecommerce/shopify-streaming.md) finns nu i betaversion. Använd Shopify Streaming-källan för att strömma data från ditt Shopify-partnerkonto till Experience Platform. |
 | Allmän tillgänglighet för OneTrust-integrering | The [OneTrust Integration-källa](../../sources/connectors/consent-and-preferences/onetrust.md) är nu GA. Använd OneTrust Integration-källan för att skicka data om samtycke och inställningar från OneTrust Integration-kontot till Experience Platform. |
 | Allmän tillgänglighet för Oracle Service Cloud | The [Oracle Service Cloud-källa](../../sources/connectors/customer-success/oracle-service-cloud.md) är nu GA. Använd Oraclets Service Cloud-källa för att skicka Oracle Service Cloud-data till Experience Platform. |
