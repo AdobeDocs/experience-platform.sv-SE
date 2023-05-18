@@ -5,9 +5,9 @@ feature: Customer AI
 title: Datastyrning i kundens AI
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
 exl-id: de0836a4-7bc2-4f9c-95a9-c01dd9e2b03f
-source-git-commit: f0bd35d8fb592900c61ed4a1a74d05901bc32810
+source-git-commit: 0fcdb358882fba7f7923e5d6fc1a947699276e18
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '302'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Tack vare den här integreringen kan ni hantera regelefterlevnaden effektivare. 
 
 ## Samtyckesprincip {#consent-policy}
 
-Kunds-AI följer dina önskemål om samtycke. När du har konfigurerat din policy för samtycke och aktiverat den enligt vad som anges här, kommer kundens AI att respektera de data för medgivande som samlats in från dig. Endast godkända data används för bedömning av modellen i efterföljande körningar av modellen. De nya poängen ersätter de gamla poängen och kan användas vid segmentering. Den här funktionen är endast tillgänglig för kunder som har skölden för hälso- och sjukvård samt för kunder som har skölden för skydd av privatlivet och privatlivet.
+Kunds-AI följer dina önskemål om samtycke. När du har [konfigurera och aktivera din policy för samtycke](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html?lang=en#consent-policy), kommer kundens AI att respektera de data ni samlar in. Endast godkända data används för bedömning av modellen i efterföljande körningar av modellen. De nya poängen ersätter de gamla poängen och kan användas vid segmentering. Den här funktionen är för närvarande endast tillgänglig för kunder som har skölden för hälso- och sjukvård samt för kunder som har skölden för skydd av privatlivet och privatlivet.
 
 Du kan läsa mer om den här funktionen här:
 
