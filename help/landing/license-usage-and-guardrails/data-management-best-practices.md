@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;datahantering;licensberättigande;licensiering;bästa praxis
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: fd594e19e13ca6e7f9f92674107d8ac6dabac9d6
+source-git-commit: 225fee7e2addf5067cb13da11615f6acff62ed72
 workflow-type: tm+mt
-source-wordcount: '2169'
+source-wordcount: '2203'
 ht-degree: 1%
 
 ---
@@ -106,6 +105,7 @@ Injektionsfilter gör att du bara kan hämta in de data som behövs för dina an
 | Stöd för att aktivera/inaktivera datauppsättningar för profil | Om du vill importera data till kundprofilen i realtid måste du aktivera en datauppsättning för användning i profilarkivet. Om du gör det läggs till [!DNL Addressable Audience] och [!DNL Profile Richness] rättigheter. När en datauppsättning inte längre behövs för att använda kundprofiler kan du inaktivera datauppsättningens integrering till Profil för att säkerställa att dina data fortfarande är licenskompatibla. Se guiden [aktivera och inaktivera datauppsättningar för profil](../../catalog/datasets/enable-for-profile.md) för mer information. |
 | SDK för webb och SDK för mobiler | Det finns två typer av data som samlas in via webb och Mobile SDK: data som samlas in automatiskt och data som uttryckligen samlas in av din utvecklare. Om du vill hantera licenskompatibiliteten bättre kan du inaktivera automatisk datainsamling i SDK-konfigurationen via kontextinställningen. Anpassade data kan också tas bort eller inte ställas in av utvecklaren. Se guiden [konfigurera SDK-grunder](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) för mer information. |
 | Undantag för vidarebefordrande data på serversidan | Om du skickar data till plattformen med hjälp av vidarebefordran på serversidan kan du utesluta vilka data som skickas genom att antingen ta bort mappningen i en regelåtgärd för att exkludera den i alla händelser, eller genom att lägga till villkor i regeln så att endast data aktiveras för vissa händelser. Läs dokumentationen om [händelser och villkor](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)) för mer information. |
+| Filtrera data på källnivå | Du kan använda logiska operatorer och jämförelseoperatorer för att filtrera radnivådata från dina källor innan du skapar en anslutning och hämtar data till Experience Platform. Mer information finns i guiden [filtrera data på radnivå för en källa med [!DNL Flow Service] API](../../sources/tutorials/api/filter.md). |
 
 {style="table-layout:auto"}
 
