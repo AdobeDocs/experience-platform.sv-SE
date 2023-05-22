@@ -4,78 +4,78 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 88bfcdef65b4a938d573b1beb1952c7e030ebc13
 workflow-type: tm+mt
-source-wordcount: '1391'
+source-wordcount: '1414'
 ht-degree: 1%
 
 ---
 
 # Översikt över åtkomstkontroll
 
-Åtkomstkontroll för [!DNL Experience Platform] tillhandahålls via [Adobe Admin Console](https://adminconsole.adobe.com). Den här funktionen utnyttjar produktprofiler i [!DNL Admin Console]som länkar användare med behörigheter och sandlådor.
+Åtkomstkontroll för Adobe Experience Platform ges via **[!UICONTROL Permissions]** in [Adobe Experience Cloud](https://experience.adobe.com/). Den här funktionen utnyttjar roller och principer som länkar användare med behörigheter och sandlådor.
 
 ## Åtkomststyrningshierarki och arbetsflöde
 
-För att konfigurera åtkomstkontroll för [!DNL Experience Platform]måste du ha administratörsbehörighet för en organisation som har en [!DNL Experience Platform] produktintegrering. Den minsta rollen som beviljar eller återkallar behörigheter är en administratör för produktprofilen. Andra administratörsroller som kan hantera behörigheter är produktadministratörer (kan hantera alla profiler i en produkt) och systemadministratörer (utan begränsningar). Se Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) för mer information.
+Om du vill konfigurera åtkomstkontroll för Experience Platform måste du ha system- eller produktadministratörsbehörighet för en organisation som har en Experience Platform-produkt. Minimirollen som kan bevilja eller återkalla behörigheter är en produktadministratör. Andra administratörsroller som kan hantera behörigheter är systemadministratörer (inga begränsningar). Se Adobe Help Center artikel om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) för mer information.
 
 >[!NOTE]
 >
->Från och med nu avser alla omnämnanden av&quot;administratör&quot; i det här dokumentet en administratör för en produktprofil eller en senare (enligt ovan).
+>Från och med nu avser alla omnämnanden av&quot;administratör&quot; i det här dokumentet en produktadministratör eller en senare (enligt ovan).
 
 Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörigheter kan sammanfattas på följande sätt:
 
 - När du har licensierat Adobe Experience Platform, eller en program-/apptjänst som använder Experience Platform, skickas ett e-postmeddelande till administratören som anges under licensieringen.
 - Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och markerar **Adobe Experience Platform** i produktlistan på översiktssidan.
-- Administratören kan visa standardinställningarna [produktprofiler](#product-profiles) eller skapa nya kundproduktprofiler efter behov.
-- Administratören kan redigera behörigheter och användare för befintliga produktprofiler.
-- När administratören skapar eller redigerar en produktprofil lägger administratören till användare i profilen med hjälp av **[!UICONTROL users]** och ger behörighet till dessa användare (till exempel &quot;[!UICONTROL Read Datasets]&quot; eller &quot;[!UICONTROL Manage Schemas]&quot;) genom att gå till **[!UICONTROL permissions]** -fliken. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma behörighetsflik.
-- När användare loggar in på [!DNL Experience Platform] användargränssnitt, deras åtkomst till [!DNL Platform] funktioner styrs av de behörigheter som har tilldelats dem från steg 2. Om en användare t.ex. inte har[!UICONTROL View Datasets]&quot; behörighet, **[!UICONTROL Datasets]** -fliken på sidomenyn visas inte för den användaren.
+- För att ge Experience Platform åtkomst måste administratören lägga till användare i standardproduktprofilen: `AEP-Default-All-Users`.
+- Administratören kan skapa nya roller eller redigera behörigheter och användare för befintliga roller i Experience Platform.
+- När administratören skapar eller redigerar en roll lägger administratören till användare i rollen med **[!UICONTROL users]** och ger behörighet till dessa användare (till exempel &quot;[!UICONTROL Read Datasets]&quot; eller &quot;[!UICONTROL Manage Schemas]&quot;) genom att redigera rollens behörigheter. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma redigeringsalternativ.
+- När användare loggar in i användargränssnittet i Experience Platform styrs deras åtkomst till Experience Platform av de behörigheter som de har fått från föregående steg. Om en användare till exempel inte har [!UICONTROL View Datasets] behörighet, **[!UICONTROL Datasets]** -fliken på sidomenyn visas inte för den användaren.
 
-Detaljerade anvisningar om hur du hanterar åtkomstkontroll i [!DNL Experience Platform], se [användarhandbok för åtkomstkontroll](./ui/overview.md).
+Mer information om hur du hanterar åtkomstkontroll i Experience Platform finns i [användarhandbok för åtkomstkontroll](./ui/overview.md).
 
-Alla samtal till [!DNL Experience Platform] API:er valideras för behörigheter och returnerar fel om lämpliga behörigheter inte hittas i den aktuella användarkontexten. Elementen döljs eller ändras i användargränssnittet beroende på vilka behörigheter den aktuella användaren har.
+Alla anrop till Experience Platform API:er valideras för behörigheter och returnerar fel om lämpliga behörigheter inte hittas i den aktuella användarkontexten. Elementen döljs eller ändras i användargränssnittet beroende på vilka behörigheter den aktuella användaren har.
 
-## Adobe Admin Console
+## Behörigheter {#platform-permissions}
 
-Adobe Admin Console är en central plats för hantering av Adobe produktberättiganden och åtkomst för din organisation. Via konsolen kan du ge grupper av användare åtkomstbehörigheter för olika [!DNL Platform] funktioner, som[!UICONTROL Manage Datasets]&quot;, &quot;[!UICONTROL View Datasets]&quot;, eller &quot;[!UICONTROL Manage Profiles]&quot;.
+[!UICONTROL Permissions] tillhandahåller en central plats för hantering av åtkomst till Experience Platform för din organisation. Via [!UICONTROL Permissions]kan du ge användargrupper åtkomstbehörigheter för olika Experience Platform-funktioner, som [!UICONTROL Manage Datasets], [!UICONTROL View Datasets], eller [!UICONTROL Manage Profiles].
 
-### Produktprofiler
+### Roller
 
-I [!DNL Admin Console], tilldelas användare behörigheter genom användning av produktprofiler. Med produktprofiler kan du bevilja behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som de har tilldelats via produktprofiler. Användare kan tilldelas till en eller flera produktprofiler som tillhör din organisation.
+I [!UICONTROL Roles] används roller. Med roller kan du tilldela behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som tilldelats dem via roller. Användare kan tilldelas till en eller flera roller som tillhör din organisation.
 
-### Standardproduktprofiler
+### Standardroller
 
-[!DNL Experience Platform] levereras med två förkonfigurerade standardproduktprofiler. Följande tabell visar vad som anges i respektive standardprofil, inklusive vilken sandlåda de beviljar åtkomst till samt de behörigheter de ger inom den sandlådans omfång.
+Experience Platform har två förkonfigurerade standardroller. Följande tabell visar vad som anges i respektive standardprofil, inklusive vilken sandlåda de beviljar åtkomst till samt de behörigheter de ger inom den sandlådans omfång.
 
-| Produktprofil | Sandlådeåtkomst | Behörigheter |
+| Roll | Sandlådeåtkomst | Behörigheter |
 | --- | --- | --- |
-| Standardproduktion, all åtkomst | Produktion | Alla behörigheter som gäller för [!DNL Experience Platform], förutom för sandlådeadministration. |
+| Standardproduktion, all åtkomst | Produktion | Alla behörigheter som gäller för Experience Platform, förutom sandlådeadministration. |
 | Sandlådeadministratörer | Ej tillämpligt | Ger endast åtkomst till sandlådeadministrationsbehörigheter. |
 
 ## Sandlådor och behörigheter
 
-Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En produktprofils behörigheter ger profilens användare åtkomst till [!DNL Platform] funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din organisations administratör eller din säljare på Adobe för mer information.
+Sandlådor som inte är produktionssandlådor är en form av datavirtualisering som gör att du kan isolera data från andra sandlådor och som vanligtvis används för utvecklingsexperiment, testning och testning. En rolls behörigheter ger rollens användare åtkomst till Experience Platform-funktioner i sandlådemiljöer som de har beviljats åtkomst till. En standardlicens för Experience Platform ger dig fem sandlådor (en och fyra icke-produktioner). Du kan lägga till paket med tio icke-produktionssandlådor, upp till totalt högst 75 sandlådor. Kontakta din organisations administratör eller din säljare på Adobe för mer information.
 
-Mer information om sandlådor i [!DNL Experience Platform], se [översikt över sandlådor](../sandboxes/home.md).
+Mer information om sandlådor i Experience Platform finns i [översikt över sandlådor](../sandboxes/home.md).
 
 ### Åtkomst till sandlådor
 
-Åtkomst till sandlådor hanteras via produktprofiler. Detaljerade steg om hur du aktiverar åtkomst till en sandlåda för en produktprofil finns i [användarhandbok för åtkomstkontroll](./ui/overview.md).
+Åtkomst till sandlådor hanteras via roller. Detaljerade steg om hur du aktiverar åtkomst till en sandlåda för en roll finns i [guide för attributbaserade åtkomstkontrollsroller](./abac/ui/roles.md).
 
-Användare kan beviljas åtkomst till en eller flera sandlådor i en produktprofil. Om en användare ingår i två eller flera produktprofiler får den användaren tillgång till alla sandlådor som ingår i de profilerna.
+Användare kan beviljas åtkomst till en eller flera sandlådor i en roll. Om en användare ingår i två eller flera roller får den användaren åtkomst till alla sandlådor som ingår i de rollerna.
 
 Med behörigheten&quot;Sandlådehantering&quot; kan användare hantera, visa och återställa sandlådor.
 
-### Behörigheter {#permissions}
+### Resursbehörigheter {#permissions}
 
-På fliken Behörigheter i en produktprofil visas de sandlådor och behörigheter som är aktiva för den profilen:
+Resursen [!UICONTROL Permissions] -fliken i en roll visar de sandlådor och behörigheter som är aktiva för den rollen:
 
 ![permissions-overview](./images/permissions.png)
 
-Behörigheter som ges via [!DNL Admin Console] sorteras efter kategori, med vissa behörigheter som ger åtkomst till flera lågnivåfunktioner.
+Behörigheter som beviljas via resursbehörigheterna sorteras efter kategori, med vissa behörigheter som ger åtkomst till flera lågnivåfunktioner.
 
-Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Platform] i [!DNL Admin Console], med beskrivningar av [!DNL Platform] funktioner som de ger åtkomst till. Detaljerade anvisningar om hur du lägger till behörigheter i en produktprofil finns i [användarhandbok för åtkomstkontroll](./ui/overview.md).
+I följande tabell visas de behörigheter som är tillgängliga för Experience Platform i rollen, med beskrivningar av de specifika Experience Platform-funktioner som de ger åtkomst till. Detaljerade anvisningar om hur du lägger till behörigheter i en roll finns i [guide för attributbaserade åtkomstkontrollsroller](./abac/ui/roles.md).
 
 | Kategori | Behörighet | Beskrivning |
 | --- | --- | --- |
@@ -128,4 +128,4 @@ Följande tabell visar de tillgängliga behörigheterna för [!DNL Experience Pl
 
 ## Nästa steg
 
-Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i [!DNL Experience Platform]. Du kan nu fortsätta till [användarhandbok för åtkomstkontroll](./ui/overview.md) för detaljerade steg om hur du använder [!DNL Admin Console] för att skapa produktprofiler och tilldela behörigheter för [!DNL Platform].
+Genom att läsa den här guiden har du lagts till i huvudprinciperna för åtkomstkontroll i Experience Platform. Du kan nu fortsätta till [användarhandbok för attributbaserad åtkomstkontroll](./abac/overview.md) för detaljerade steg om hur du använder Experience Cloud för att skapa roller och tilldela behörigheter till Experience Platform.
