@@ -1,25 +1,20 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;salesforce marketing cloud;Salesforce Marketing Cloud;marketing automation
 solution: Experience Platform
 title: Salesforce Marketing Cloud källöversikt
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 997a9dc70145a8cfd5d6da20ba788a4610e5c257
 workflow-type: tm+mt
-source-wordcount: '351'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Salesforce Marketing Cloud]
-
->[!NOTE]
->
->The [!DNL Salesforce Marketing Cloud] källan är i betaversion. Se [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# [!DNL Salesforce Marketing Cloud]
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[!DNL Experience Platform] har stöd för inmatning av data från automatiserade system för marknadsföring från tredje part. Stöd för leverantörer av automatiserad marknadsföring innefattar [!DNL Salesforce Marketing Cloud].
+Experience Platform stöder inmatning av data från externa automatiseringssystem. Stöd för leverantörer av automatiserad marknadsföring innefattar [!DNL Salesforce Marketing Cloud].
 
 ## Förutsättningar
 
@@ -28,9 +23,13 @@ Innan du kan ansluta [!DNL Salesforce Marketing Cloud] från källa till plattfo
 * `campaign_read`
 * `list_and_subscribers_read`
 
-Du kan begära omfång genom att ringa `v2/userinfo` resursen för [!DNL Salesforce Marketing Cloud] API. Se [[!DNL Salesforce Marketing Cloud] Dokument för API-integreringsbehörigheter](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/data-access-permissions.html) om du vill ha vägledning om hur du begär och jämför omfattningar.
+Du kan begära omfång genom att ringa `v2/userinfo` resursen för [!DNL Salesforce Marketing Cloud] API. Se [[!DNL Salesforce Marketing Cloud] Dokument för API-integreringsbehörigheter](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/data-access-permissions.html>) om du vill ha vägledning om hur du begär och jämför omfattningar.
 
-Mer information om omfattningar inklusive en lista över deras relaterade behörigheter och beteenden finns i detta [[!DNL Salesforce Marketing Cloud] REST API-dokument](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-permissions-and-scopes.html).
+Mer information om omfattningar inklusive en lista över deras relaterade behörigheter och beteenden finns i detta [[!DNL Salesforce Marketing Cloud] REST API-dokument](<https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rest-permissions-and-scopes.html>).
+
+>[!IMPORTANT]
+>
+>Inmatning av anpassade objekt stöds för närvarande inte av [!DNL Salesforce Marketing Cloud] källintegration.
 
 ## IP-adress tillåtelselista
 
