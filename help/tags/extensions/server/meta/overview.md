@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: 6538599e10d4980c3890a8fba65c8ef51c24496a
+source-git-commit: f5a9e8cb5cdbff485bc7d50e9567b0236ae5872e
 workflow-type: tm+mt
-source-wordcount: '2145'
+source-wordcount: '2257'
 ht-degree: 0%
 
 ---
@@ -24,6 +24,10 @@ Vi rekommenderar starkt att du använder [!DNL Meta Pixel] och [!DNL Conversions
 >Avsnittet på [deduplicering av händelser](#deduplication) längre fram i det här dokumentet beskriver stegen för att säkerställa att samma händelse inte används två gånger, eftersom den kan tas emot både från webbläsaren och servern.
 
 För att kunna använda [!DNL Conversions API] måste du ha tillgång till händelsevidarebefordran och ha en giltig [!DNL Meta] konto med tillgång till [!DNL Ad Manager] och [!DNL Event Manager]. Du måste kopiera ID:t för en befintlig [[!DNL Meta Pixel]](https://www.facebook.com/business/help/952192354843755?id=1205376682832142) (eller [skapa en ny [!DNL Pixel]](https://www.facebook.com/business/help/952192354843755) i stället) så att tillägget kan konfigureras för ditt konto.
+
+>[!INFO]
+>
+>Om du tänker använda det här tillägget med mobilappsdata, eller om du även arbetar med offlinehändelsedata i [!DNL Meta] -kampanjer måste ni skapa datauppsättningen via en befintlig app och välja **Skapa från ett pixel-ID** när du uppmanas till det. Se artikeln [Bestäm vilket datamängdsalternativ som passar ditt företag](https://www.facebook.com/business/help/5270377362999582?id=490360542427371) för mer information. Se [Konverterings-API för apphändelser](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events) -dokument för alla obligatoriska och valfria parametrar för appspårning.
 
 ## Installera tillägget
 
@@ -45,7 +49,7 @@ Tillägget är installerat och du kan nu använda dess funktioner i reglerna fö
 
 ## Konfigurera en regel för vidarebefordran av händelser {#rule}
 
-I det här avsnittet beskrivs hur du använder [!DNL Conversions API] tillägg i en allmän regel för vidarebefordran av händelser. I praktiken bör du konfigurera flera regler för att skicka alla godkända [standardhändelser](https://developers.facebook.com/docs/meta-pixel/reference) via [!DNL Meta Pixel] och [!DNL Conversions API].
+I det här avsnittet beskrivs hur du använder [!DNL Conversions API] tillägg i en allmän regel för vidarebefordran av händelser. I praktiken bör du konfigurera flera regler för att skicka alla godkända [standardhändelser](https://developers.facebook.com/docs/meta-pixel/reference) via [!DNL Meta Pixel] och [!DNL Conversions API]. Information om mobilappsdata finns i obligatoriska fält, appdatafält, kundinformationsparametrar och anpassad datainformation [här](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events).
 
 >[!NOTE]
 >
