@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 33a660800e3202d9969c4e44eba8419e22db57a3
+source-git-commit: 1a6282104af60d66c54bfb20c3c4e8eb74427461
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '974'
 ht-degree: 8%
 
 ---
@@ -326,6 +326,7 @@ ht-degree: 8%
    - [Ta bort konton](tutorials/ui/delete-accounts.md)
    - [Ta bort dataflöden](tutorials/ui/delete.md)
    - [Prenumerera på källvarningar](tutorials/ui/alerts.md)
+   - [Spara ett dataflöde som ett utkast](tutorials/ui/draft.md)
 - Självbetjänade källor (batch-SDK) {#sdk}
    - [Översikt](sources-sdk/overview.md)
    - Konfigurera anslutningsspecifikationen {#config}
