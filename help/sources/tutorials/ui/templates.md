@@ -1,18 +1,16 @@
 ---
-description: Adobe Experience Platform tillhandahåller förkonfigurerade mallar som du kan använda för att snabba upp dataöverföringsprocessen. Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, mappningsregler, identiteter, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform.
-title: (Beta) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+description: Lär dig hur du använder mallar i Adobe Experience Platform användargränssnitt för att snabba upp dataöverföringsprocessen för B2B-data.
+title: Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
 badge1: "Beta"
-hide: true
-hidefromtoc: true
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: c4cb3783cbbab6f9bf25ffaa5b27a200c555b181
+source-git-commit: 91d6832231d75c9dd23e91a5f1152eac61558fc5
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1511'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+# Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
 
 >[!IMPORTANT]
 >
@@ -132,7 +130,7 @@ När du är klar med att konfigurera ditt intag väljer du **[!UICONTROL Finish]
 
 The [!UICONTROL Review template assets] visas de resurser som genereras automatiskt som en del av mallen. På den här sidan kan du visa de automatiskt genererade scheman, datauppsättningar, identitetsnamnutrymmen och dataflöden som är kopplade till din källanslutning. Det kan ta upp till fem minuter att generera alla resurser. Om du väljer att lämna sidan får du ett meddelande som returneras när resurserna är klara. Du kan granska resurserna när de har skapats och göra ytterligare konfigurationer av dataflödet när som helst.
 
-Automatiskt genererade dataflöden är aktiverade som standard. Markera ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Preview mappings]** om du vill visa de mappningsuppsättningar som har skapats för dataflödet.
+Som standard är automatiskt genererade dataflöden inställda på ett utkasttillstånd för att tillåta ytterligare anpassning av konfigurationer, som mappningsregler eller schemalagda frekvenser. Markera ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Preview mappings]** om du vill visa de mappningsuppsättningar som har skapats för ditt utkast till dataflöde.
 
 ![Ett rullgardinsfönster med alternativet Förhandsvisa mappningar markerat.](../../images/tutorials/templates/preview.png)
 
@@ -146,18 +144,44 @@ Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automati
 
 ![Ett rullgardinsfönster med alternativet för att uppdatera dataflöden markerat.](../../images/tutorials/templates/update.png)
 
+>[!TIP]
+>
+>Du kommer åt ditt utkast via [!UICONTROL Dataflows] katalogsida på arbetsytan för källor. Välj **[!UICONTROL Dataflows]** i den övre rubriken och välj sedan det dataflöde som du vill uppdatera i listan.
+>
+>![En lista med befintliga dataflöden i dataflödeskatalogen på källarbetsytan.](../../images/tutorials/templates/dataflows.png)
+
+### Publicera dataflödet
+
+Börja publiceringsprocessen genom att gå igenom källarbetsflödet. När du har valt [!UICONTROL Update dataflow]går du till *[!UICONTROL Add data]* steg i arbetsflödet. Välj **[!UICONTROL Next]** för att fortsätta.
+
+![Steget Lägg till data för ett utkast](../../images/tutorials/templates/continue-draft.png)
+
+Bekräfta sedan dataflödesinformationen och konfigurera inställningarna för feldiagnostik, partiell import och varningsmeddelanden. När du är klar väljer du **[!UICONTROL Next]**.
+
+![Dataflödets detaljsteg för ett utkast av dataflöde.](../../images/tutorials/templates/dataflow-detail.png)
+
+>[!NOTE]
+>
+>Du kan välja **[!UICONTROL Save as draft]** när som helst för att stoppa och spara de ändringar du har gjort i dataflödet.
+
+Mappningssteget visas. Under det här steget kan du konfigurera om mappningskonfigurationerna för ditt dataflöde. En omfattande guide om förinställningsfunktionerna för data som används för mappning finns på [gränssnittsguide för dataförberedelser](../../../data-prep/ui/mapping.md).
+
+![Mappningssteget för ett utkast av dataflöde.](../../images/tutorials/templates/mapping.png)
+
+Granska slutligen informationen om dataflödet och välj **[!UICONTROL Save & ingest]** för att publicera utkastet.
+
+![Granskningssteget för ett utkast till dataflöde.](../../images/tutorials/templates/review.png)
+
 ## Nästa steg
 
 Genom att följa den här självstudiekursen har du nu skapat dataflöden och resurser som scheman, datauppsättningar och identitetsnamnutrymmen med hjälp av mallar. Allmän information om källor finns på [källöversikt](../../home.md).
 
-## Bilaga
+## Varningar och meddelanden {#alerts-and-notifications}
 
-I följande avsnitt finns ytterligare information om mallar.
-
-### Använd meddelandepanelen för att gå tillbaka till granskningssidan
-
-Mallar stöds av Adobe Experience Platform-varningar och du kan använda meddelandepanelen för att få uppdateringar om statusen för dina resurser och även för att gå tillbaka till granskningssidan.
+Mallar stöds av Adobe Experience Platform Alerts och du kan använda meddelandepanelen för att få uppdateringar om statusen för dina resurser och även för att gå tillbaka till granskningssidan.
 
 Välj meddelandeikonen i det övre huvudet i plattformsanvändargränssnittet och välj sedan statusaviseringen för att se vilka resurser du vill granska.
 
 ![Meddelandepanelen i plattformsgränssnittet med ett meddelande som varnar om ett misslyckat dataflöde markerat.](../../images/tutorials/templates/notifications.png)
+
+Du kan uppdatera aviseringsinställningarna för dina mallar så att du kan ta emot både e-post- och plattformsmeddelanden om status för dina dataflöden. Mer information om hur du konfigurerar varningar finns i guiden på [prenumerera på aviseringar för källdataflöden](../ui/alerts.md).
