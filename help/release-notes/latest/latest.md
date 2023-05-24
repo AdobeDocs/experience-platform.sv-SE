@@ -1,11 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation från april 2023 för Adobe Experience Platform.
+description: Versionsinformation från maj 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: e3fc587d924b2183806918f91e5ae3aa3fee52f3
+source-git-commit: 85401e3abfd7d5d1d84e082d20a1a064760c4e19
 workflow-type: tm+mt
-source-wordcount: '2067'
-ht-degree: 2%
+source-wordcount: '1068'
+ht-degree: 3%
 
 ---
 
@@ -13,50 +13,27 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Från och med 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Mer information om den här ändringen finns i [Segmenteringstjänstavsnitt](#segmentation).
+>Som en förberedelse för den allmänt tillgängliga funktionen Audience Portal uppdaterar Adobe Experience Platform användningen av&quot;målgrupper&quot; och&quot;segment&quot; i systemet och dokumentationen.
+>
+>- **Målgrupp**: En uppsättning personer, konton, hushåll eller andra enheter som delar gemensamma egenskaper och beteenden.
+>
+>- **Segmentdefinition**: I Adobe Experience Platform används de regler som beskriver en målgrupps viktigaste egenskaper eller beteenden. Termen kallades tidigare bara&quot;segment&quot;.
+>
+>- **Segment**: Att dela upp profiler i olika målgrupper. Termen&quot;segment&quot; används nu uteslutande som verb.
+>
+>- **Segmentering**: Identifiering och uttrycksfullgörande av egenskaperna hos de profiler som ska grupperas tillsammans för att producera ett antal resultat, till exempel en målgrupp.
+>
+>I Adobe Experience Platform-gränssnittet kommer du att se&quot;Segment&quot; ersatt med&quot;Publiker&quot; för att återspegla den nya vägen för målgruppsframtagning och -hantering.
 
-**Releasedatum: 26 april 2023**
+**Lanseringsdatum: 24 maj 2023**
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Kontrollpaneler](#dashboards)
-- [Dataförberedelse](#data-prep)
 - [Datainsamling](#data-collection)
-- [Mål ](#destinations)
-- [Experience Data Model](#xdm)
-- [Real-Time Customer Data Platform](#rtcdp)
-- [Kundprofil i realtid](#profile)
-- [Segmenteringstjänst](#segmentation)
+- [Datastyrning](#data-governance)
+- [Datainmatning](#data-ingestion)
+- [Frågetjänst](#query-service)
 - [Källor](#sources)
-
-## Kontrollpaneler {#dashboards}
-
-Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
-
-**Nya eller uppdaterade funktioner** {#dashboards-new-updated-features}
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Användardefinierade kontrollpaneler | Nu kan du **filtrera historiska data** utifrån widgetens insikter och använd antingen senaste data eller en anpassad analysperiod. Se [användardefinierad handbok för kontrollpaneler](../../dashboards/user-defined-dashboards.md#filter-historical-data) för mer information.<br>Du kan också göra det nu **duplicera dina befintliga widgetar**. Genom att anpassa en dubblett och redigera deras attribut kan du undvika att starta om från början när du skapar en ny, unik widget. Läs [guide för duplicering av widget](../../dashboards/user-defined-dashboards.md#duplicate-a-widget) om du vill veta mer. |
-
-{style="table-layout:auto"}
-
-Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
-
-## Dataförberedelse {#data-prep}
-
-Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
-
-**Uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Uppdateringar av bakåtfyllnadsperiod för Adobe Analytics i icke-produktionssandlådor | Förifyllningsperioden för Adobe Analytics i icke-produktionssandlådor har reducerats till tre månader. Backfill för produktionssandlådor är desamma vid 13 månader. Den här ändringen gäller endast för nya flöden och påverkar inte befintliga flöden. Mer information finns i [Adobe Analytics - översikt](../../sources/connectors/adobe-applications/analytics.md). |
-| Ny mappningsfunktion som konverterar FPID-strängar till ECID | Använd `fpid_to_ecid` funktion för att konvertera FPID-strängar till ECID för användning i Experience Platform och Experience Cloud. Mer information finns i [Handbok för dataprefixfunktioner](../../data-prep/functions.md). |
-
-{style="table-layout:auto"}
-
-Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).
 
 ## Datainsamling {#data-collection}
 
@@ -66,123 +43,56 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| IP-adressofuscation för datastreams | Nu kan du definiera IP-obfusionsalternativ på hel- eller partiell datastream-nivå i [användargränssnitt för konfiguration av datastream](../../edge/datastreams/configure.md). <br><br>Inställningen för IP-förfalskning på datastream-nivå har företräde framför IP-förfalskning som har konfigurerats i Adobe Target och Audience Manager. <br><br>Data som skickas till Adobe Analytics påverkas inte av datastream-nivån [!UICONTROL IP Obfuscation] inställning. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner.<br><br> Mer information om IP-förfalskning och instruktioner om hur du konfigurerar den finns i [konfigurationsdokumentation för datastream](../../edge/datastreams/configure.md#advanced-options). |
-| [Åsidosättningar av dataströmskonfiguration](../../edge/datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Att åsidosätta datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../edge/datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](../../edge/extension/web-sdk-extension-configuration.md).</li></ol> |
-| OAuth JWT Secret | The [OAuth JWT Secret](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html?lang=en) gör att kunder kan använda Adobe och Google Service Token för att stödja interaktioner mellan server och server vid händelsevidarebefordran. |
-| [!DNL Pinterest Conversions API] extension | The [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Pinterest] i form av händelser på serversidan med [!DNL Pinterest Conversions API]. |
+| [!DNL Twitter] API-tillägg för konverteringar | The [[!DNL Twitter] Konverterings-API](../../tags/extensions/server/twitter/overview.md) tillägg för händelsevidarebefordran gör att du kan vidarebefordra händelsedatadriven i realtid för händelsekonverteringar med [!DNL Twitter] Konverterings-API. |
+| Sökvägshjälp för dataelement | Bestämma sökvägen för dataelementet i [Kärntillägg](../../tags/extensions/client/core/overview.md) är nu enklare än någonsin. Den här förbättringen innehåller ett guidat formulär som hjälper dig att välja och formatera rätt dataelementsökväg. |
 
 {style="table-layout:auto"}
 
-## Mål  {#destinations}
+Läs mer om datainsamlingar i [datainsamling, översikt](../../tags/home.md).
 
-[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+## Datastyrning {#data-governance}
 
-**Nya destinationer** {#new-destinations}
+Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
 
-| Destination | Beskrivning |
-| ----------- | ----------- |
-| [[!DNL Salesforce Marketing Cloud Account Engagement] anslutning](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) | Använd Salesforce Marketing Cloud Account Engagement (tidigare Pardot) för att hämta, spåra, poängsätta och betygsätta leads. Använd den här destinationen för B2B-ärenden som omfattar flera avdelningar och beslutsfattare som kräver längre försäljnings- och beslutscykler. |
+**Nya funktioner**
 
-{style="table-layout:auto"}
-
-**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
-
-| Funktionalitet | Beskrivning |
-| ----------- | ----------- |
-| Dataflödesövervakning för [!DNL Custom Personalization] och [!DNL Adobe Commerce] mål | <p> Nu kan du se aktiveringsstatistik för [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md), [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) och [Anpassad personalisering med attribut](../../destinations/catalog/personalization/custom-personalization.md) anslutningar. </p> <p>![Adobe Commerce, bild](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce metrics"){width="100" zoomable="yes"}</p>  Se [Övervaka dataflöden på arbetsytan Destinationer](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace) för mer information. |
-| Nytt **[!UICONTROL Append segment ID to segment name]** fält för [!DNL Google Ad Manager] och [!DNL Google Ad Manager 360] mål | <p>Nu kan du ha segmentnamnet i [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) och [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) inkludera segment-ID från Experience Platform, så här: `Segment Name (Segment ID)`.</p><p>![Lägg till bild för segment-ID](/help/destinations/assets/common/append-segment-id-to-segment-name.png "Nytt Lägg till segment-ID till segmentnamnsfält "){width="100" zoomable="yes"}</p> |
-| Schemalagda efterfyllningar av målgrupper | <p>För [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) är aktiveringen av målgruppens efterfyllningar till målet planerad till 24-48 timmar efter att ett segment först har mappats till en målanslutning. Uppdateringen är ett svar på Google policy att vänta i 24 timmar tills data har importerats och kommer att förbättra matchningsfrekvensen mellan realtidskodskiften och [!DNL Google Display & Video 360].</p> <p>Observera att detta är en backend-konfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.</p> |
+| Funktion | Beskrivning |
+| --- | --- |
+| Borttagning av etiketter på datamängdsnivå | Möjligheten att använda etiketter på enskilda fält har flyttats från datauppsättningar till scheman. På så sätt kan ni centralisera hanteringen av fältetiketter för datastyrning, samtycke och åtkomstkontroll. Tidigare tillämpade etiketter för datamängdsfält stöds tillfälligt via användargränssnittet i Experience Platform. Befintliga etiketter för datamängdsfält måste migreras manuellt till schemafältetiketterna senast den 31 maj 2024. Läs [handbok för hela datastyrningen](../../data-governance/e2e.md) för mer information om etikettmigrering. |
 
 {style="table-layout:auto"}
 
-**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
+Läs mer om datastyrning i [datastyrningsöversikt](../../data-governance/home.md).
 
-- Vi har åtgärdat ett problem i **Undantagna identiteter** rapportmått för filbaserad destinationsexport. Kunderna fick alla exporterade ID:n från den aktiverade exporten som förväntat. Men **Undantagna identiteter** rapportmåttet i användargränssnittet visade felaktigt ett stort antal utelämnade identiteter på grund av felaktigt antal identiteter som aldrig skulle exporteras. (PLAT-149774)
-- Vi har åtgärdat ett problem i **Schemaläggning** steg i aktiveringsarbetsflödet. För mål som kräver ett mappnings-ID kunde kunderna inte lägga till ett mappnings-ID för segment som lagts till i befintliga målanslutningar. (PLAT-148808)
+## Datainmatning {#data-ingestion}
 
-<!--
-- We have fixed an issue with the beta SFTP destination where the port number was previously hardcoded to 22. The port is now configurable for this destination. 
-
--->
-
-Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
-
-## Experience Data Model (XDM) {#xdm}
-
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och all fördröjning. Du kan importera med hjälp av API:er för gruppbearbetning eller direktuppspelning, med hjälp av Adobe-byggda källor, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Växla visningsnamn | Schemaredigeraren har nu en funktion för att växla mellan de ursprungliga fältnamnen och de mer läsbara visningsnamnen.<br>![Schemaredigeraren med växlingsknappen för visningsnamn markerad.](../../xdm/images/ui/resources/schemas/display-name-toggle.png "Växla mellan visningsnamn för Schemaredigeraren"){width="100" zoomable="yes"}<br>Tack vare den här flexibiliteten blir det enklare att hitta och redigera dina scheman. Visningsnamnen för standardfältgrupper genereras av systemet men kan vid behov anpassas via användargränssnittet. Läs [visa namnväxlingsdokumentation](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/schemas.html#display-name-toggle) om du vill veta mer. |
+| Tillgång till mallar för dataöverföring | Med mallar för dataöverföring får dataarkitekter och ingenjörer standardmallar och automatiseringsverktyg som snabbar upp dataöverföringsprocessen, inklusive skapande av scheman och datamängder samt konfiguration av mappningsregler. Mallar för dataöverföring är tillgängliga för [[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md), [[!DNL Salesforce]](../../sources/connectors/crm/salesforce.md) och [[!DNL Microsoft Dynamics]](../../sources/connectors/crm/ms-dynamics.md) källor. Mer information finns i guiden [använda mallar i användargränssnittet](../../sources/tutorials/ui/templates.md). |
 
-{style="table-layout:auto"}
+Läs mer om dataöverföring i [dataöverföring - översikt](../../ingestion/home.md).
 
-**Nya XDM-komponenter**
+## Frågetjänst {#query-service}
 
-| Komponenttyp | Namn | Beskrivning |
-| --- | --- | --- |
-| Schema | [[!UICONTROL Adobe Target Classification Fields]](https://github.com/adobe/xdm/pull/1719/files) | Ett nytt XDM-schema för målklassificeringsdatamängder som innehåller en uppsättning metadatafält för att klassificera Target-aktiviteter och -upplevelser. |
-
-{style="table-layout:auto"}
-
-**Uppdaterade XDM-komponenter**
-
-| Komponenttyp | Namn | Beskrivning |
-| --- | --- | --- |
-| Fältgrupp | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1696/files) | En fältgrupp för kontotillägg för kundprofil i realtid har lagts till som gör det möjligt för användare att lägga till segmentmedlemskap i en kontounion. |
-| Schema | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1696/files) | Fältgruppen Beräknade attribut som används av kundprofilen i realtid har uppdaterats till ett skrivskyddat globalt schema. |
-| Fältgrupp | Flera | Flera händelser har lagts till som fält för [[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/pull/1718/files). |
-| Fältgrupp | Profillojalitetsinformation | [Titeln har åtgärdats](https://github.com/adobe/xdm/pull/1717/files) for `xdm:upgradeDate` från&quot;Programnamn&quot; till&quot;Uppgraderingsdatum&quot;. |
-| Fältgrupp | Flera | Flera fält från [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1714/files) har uppdaterats för att ta bort den dubbla kapslade hierarkin. |
-
-{style="table-layout:auto"}
-
-Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/home.md).
-
-## Real-Time Customer Data Platform
-
-Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time CDP]) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-Time CDP] kombinerar flera datakällor för företag för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
-
-**Nya funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Förbättrad startsida för Real-Time CDP | The [Real-Time CDP hemsida](https://experience.adobe.com) har förbättrats med en uppdaterad stil och förbättrade prestanda. Hemsidan är nu behörighetsmedveten och visar widgetar som är relevanta för de funktioner du har tillgång till. Mer information finns i [Översikt över kontrollpanelen för Real-Time CDP hemsida](../../rtcdp/home-page-dashboards.md). |
-| Självidentifieringsundersökning | Självidentifieringsundersökningen är ett kort frågeformulär som presenteras på Adobe Experience Platform användargränssnittets hemsida. Använd självidentifieringsundersökningen för att bygga upp din personliga profil för Experience Platform och få anpassade riktlinjer baserade på dina val. Mer information finns i [självidentifieringsöversikt](../../landing/self-identification.md). |
-
-Mer information om [!DNL Real-Time CDP], se [[!DNL Real-Time CDP] översikt](../../rtcdp/overview.md).
-
-## Kundprofil i realtid {#profile}
-
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med kundprofilen i realtid kan ni se en helhetsbild av varje enskild kund som kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Med hjälp av profilen kan ni sammanställa kunddata i en enhetlig vy som ger ett användbart, tidsstämplat konto för varje kundinteraktion.
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL data lake]. Du kan ansluta alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att matas in i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
-| ------- | ----------- |
-| Förfallodatum för pseudonyma profiler | Nu kan pseudonyma profildata förfalla. Den här versionen tar kontinuerligt bort inaktuella pseudonyma profiler från din Experience Platform-instans när den har aktiverats. Läs mer om den här funktionen och pseudonyma profiler i [Förfalloguide för pseudonyma profildata](../../profile/pseudonymous-profiles.md). |
+| --- | --- |
+| Beräkna kolumnnivåstatistik för ADLS-datauppsättningar | The `ANALYZE TABLE` kommandot har utökats med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon. Du kan nu beräkna statistik för en delmängd av en ADLS-datauppsättning eller för vissa kolumner i den datauppsättningen. Mer information finns i [beräkningsguide för datauppsättningsstatistik](../../query-service/essential-concepts/dataset-statistics.md). |
 
 {style="table-layout:auto"}
 
-## Segmenteringstjänst {#segmentation}
-
-[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
-
-**Nya eller uppdaterade funktioner**
-
-| Funktion | Beskrivning |
-| ------- | ----------- |
-| Segmentmedlemskapskarta | Som en uppföljning av det föregående meddelandet i februari den 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`.<br/><br/> Den här förändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på `Existing` status. Om så är fallet för dig, se över era integreringar längre fram i kedjan. Om du är intresserad av att identifiera nyligen kvalificerade profiler längre än en viss tid, vänligen väl använda en kombination av `Realized` status och `lastQualificationTime` i din medlemskarta. Mer information får du av Adobe. |
-
-{style="table-layout:auto"}
-
-Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
+Läs mer om Query Services i [Översikt över frågetjänsten](../../query-service/home.md).
 
 ## Källor {#sources}
 
-Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor som Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
+Adobe Experience Platform kan importera data från externa källor och göra det möjligt att strukturera, etikettera och förbättra dessa data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, tredjepartsprogram och ditt CRM-system.
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
@@ -190,11 +100,15 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| API-stöd för filtrering av radnivådata för Microsoft Dynamics, Salesforce CRM och Salesforce Marketing Cloud | Använd logiska operatorer och jämförelseoperatorer för att filtrera radnivådata för källorna i Microsoft Dynamics, Salesforce CRM och Salesforce Marketing Cloud. Läs guiden på [filtrera data för en källa med API](../../sources/tutorials/api/filter.md) för mer information. |
-| Betaversion av Shopify Streaming | The [Förminska strömningskälla](../../sources/connectors/ecommerce/shopify-streaming.md) finns nu i betaversion. Använd Shopify Streaming-källan för att strömma data från ditt Shopify-partnerkonto till Experience Platform. |
-| Allmän tillgänglighet för OneTrust-integrering | The [OneTrust Integration-källa](../../sources/connectors/consent-and-preferences/onetrust.md) är nu GA. Använd OneTrust Integration-källan för att skicka data om samtycke och inställningar från OneTrust Integration-kontot till Experience Platform. |
-| Allmän tillgänglighet för Oracle Service Cloud | The [Oracle Service Cloud-källa](../../sources/connectors/customer-success/oracle-service-cloud.md) är nu GA. Använd Oraclets Service Cloud-källa för att skicka Oracle Service Cloud-data till Experience Platform. |
+| Utökat API-stöd för utkastläge | Du kan nu pausa och spara förloppet under källarbetsflödet när du använder [!DNL Flow Service] API när som helst. Använd `mode=draft` för att spara bas-, käll- och målanslutningar som utkast. Alla utkastenheter kan granskas för att slutföras vid ett senare tillfälle. Läs guiden på [ange [!DNL Flow Service] enheter till ett utkastläge](../../sources/tutorials/api/draft.md) för mer information. |
+| Allmän tillgänglighet till [!DNL Salesforce Marketing Cloud] källa | The [[!DNL Salesforce Marketing Cloud source] är nu med i GA](../../sources/connectors/marketing-automation/salesforce-marketing-cloud.md). Använd den här källan för att ta med [!DNL Salesforce Marketing Cloud] data till Experience Platform. |
+| [!DNL Google Ads] autentiseringsuppdateringar | Du kan nu ange ett användar-ID för inloggningskund när du autentiserar [!DNL Google Ads] källkonto för att hämta rapportdata från en viss driftskund. Läs [[!DNL Google Ads] källdokumentation](../../sources/connectors/advertising/ads.md) för mer information. |
+| [!DNL Google PubSub] autentiseringsuppdateringar | Nu kan du definiera behörigheter för dina [!DNL Google PubSub] källa när du skapar ett nytt konto. Använd projektbaserad autentisering för att tillåta åtkomst på rotnivå eller använd ämne- och prenumerationsbaserad autentisering för att begränsa åtkomst till ett visst ämne och en viss prenumerationsström. Läs [[!DNL Google PubSub] källdokumentation](../../sources/connectors/cloud-storage/google-pubsub.md) för mer information. |
+| Nya parametrar för sidnumreringsfält för `type=PAGE` i självbetjäningskällor (batch-SDK) | Du kan nu använda `initialPageIndex` och `endPageIndex` när du integrerar en källa med `type=PAGE` via Batch SDK. <ul><li>`initialPageIndex`: Med den här parametern kan du definiera det sidnummer som sidnumreringen börjar från. </li><li>`endPageIndex`: Med den här parametern kan du skapa ett slutvillkor och stoppa sidnumreringen.</li></ul> Mer information om de nya parametrarna finns i [Självbetjänad SDK-dokumentation för batchkällor](../../sources/sources-sdk/config/sourcespec.md#page). |
+| Gränssnittsstöd för utkastläge | Du kan nu pausa och spara förloppet under källarbetsflödet via användargränssnittet. Du kan välja **[!UICONTROL Save as draft]** under arbetsflödets dataflödesdetaljer, mappning och schemaläggning för att spara dataflödet som ett utkast för senare slutförande. Läs guiden på [spara dataflöden som utkast i användargränssnittet](../../sources/tutorials/ui/draft.md) för mer information. |
 
 {style="table-layout:auto"}
 
 Läs mer om källor i [källöversikt](../../sources/home.md).
+
+<!-- | API support for streaming data from a [!DNL Snowflake] database | You can now stream data from a [[!DNL Snowflake] source](../../sources/connectors/databases/snowflake.md) using the [!DNL Flow Service] API. | -->
