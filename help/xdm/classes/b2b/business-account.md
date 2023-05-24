@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över XDM Business Acc
 exl-id: abe4c919-a680-4aad-918e-6e56cae8bd4d
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,6 @@ ht-degree: 0%
 | `_id` | Sträng | En unik identifierare för posten. Detta är ett systemgenererat värde som är skilt från `accountKey` identifierare. |
 | `isDeleted` | Boolean | Anger om den här kontoentiteten har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

@@ -6,7 +6,7 @@ last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
 source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1134'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i [!DNL LINE] mål. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

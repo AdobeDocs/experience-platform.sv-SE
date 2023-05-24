@@ -6,7 +6,7 @@ last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
 source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
 workflow-type: tm+mt
-source-wordcount: '1723'
+source-wordcount: '1720'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Dynamics 365] uppdateras med motsvarande segmentstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [segmentplanering](#schedule-segment-export-example) steg.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

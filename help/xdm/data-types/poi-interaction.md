@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över XDM-datatypen Po
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '173'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 | `poiEntries` | Objekt | Beskriver hur många gånger en person har angett POI. Innehåller två egenskaper: <ul><li>`id`: En unik identifierare för måttet.</li><li>`value`: Åtgärdens kvantifierbara värde.</li></ul> |
 | `poiExits` | Objekt | Beskriver hur många gånger en person har lämnat POI. Innehåller två egenskaper: <ul><li>`id`: En unik identifierare för måttet.</li><li>`value`: Åtgärdens kvantifierbara värde.</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

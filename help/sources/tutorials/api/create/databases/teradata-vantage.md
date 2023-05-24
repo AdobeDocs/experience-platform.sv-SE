@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;Teradata Vantage
 title: Skapa en Teradata Vantage-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Teradata Vantage med API:t för Flow Service.
-source-git-commit: f140dac67ccd09ec1e6cab794f53e0090af55442
+exl-id: 88707dca-3c7a-43c7-9d71-473ad9715fc6
+source-git-commit: 322b9aa5b817276eb4b56daf6e410944591c1d51
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 0%

@@ -3,8 +3,8 @@ title: Översikt över Integritetskonsolen
 description: Lär dig övervaka dina sekretessrelaterade arbetsflöden i Adobe Experience Platform användargränssnitt.
 source-git-commit: 1fac36a0fd767add92283cd256d8bcea783ecf3b
 workflow-type: tm+mt
-source-wordcount: '394'
-ht-degree: 1%
+source-wordcount: '391'
+ht-degree: 2%
 
 ---
 
@@ -38,7 +38,7 @@ Funktionen för varje widget beskrivs nedan:
 | De flesta aktiva användarna | Visar de mest aktiva plattformsanvändarna i organisationen enligt [granskningsloggar](./audit-logs/overview.md) för den markerade tidsramen. Använd listrutan för att ändra tidsramen mellan de senaste 7 dagarna, 14 dagar och 30 dagarna. |
 | Personförfrågningar | Visar antalet förfrågningar från registrerade som skickats in och fyllts i av [Privacy Service](../../privacy-service/home.md) för en viss dag. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Använda fallstödlinjer
 
@@ -54,4 +54,4 @@ Mer information om de olika plattformstjänsterna som är kopplade till fall av 
 * [Granskningsloggar](./audit-logs/overview.md)
 * [Datastyrning](../../data-governance/home.md)
 * [Datahygien](../../hygiene/home.md)
-* [Privacy Service](../../privacy-service/home.md)
+* [Integritetstjänst](../../privacy-service/home.md)

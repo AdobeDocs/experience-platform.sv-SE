@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM (O
 exl-id: abfc6d53-ffe6-4692-ad65-03d556831fa0
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '182'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 2%
 | `purchaseID` | Sträng | En unik identifierare som säljaren har tilldelat detta inköp eller kontrakt. Eftersom detta definieras av säljaren finns det ingen garanti för att ID:t är unikt. |
 | `purchaseOrderNumber` | Sträng | Den unika identifierare som tilldelats av köparen för detta inköp eller kontrakt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

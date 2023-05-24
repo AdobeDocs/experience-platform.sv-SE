@@ -1,9 +1,10 @@
 ---
 title: Borttagningar i identitetstjänsten
 description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform och för att skapa klarhet om hur identitetsdiagram kan påverkas.
-source-git-commit: da1ce4560d28d43db47318883f9656cebb2eb487
+exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '1203'
+source-wordcount: '1194'
 ht-degree: 0%
 
 ---
@@ -40,14 +41,14 @@ Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan från för
 
 Tabellen nedan innehåller en beskrivning av borttagningen av enstaka identiteter i Privacy Servicen:
 
-| Ta bort en identitet | Privacy Service |
+| Ta bort en identitet | Integritetstjänst |
 | --- | --- |
 | Godkända användningsfall | Endast förfrågningar om dataintegritet (GDPR, CCPA). |
 | Beräknad fördröjning | Dagar till veckor |
 | Tjänster som påverkas | Genom att ta bort en identitet i Privacy Service kan du välja om data ska tas bort från identitetstjänsten, kundprofilen i realtid eller datavjön. |
 | Borttagningsmönster | Ta bort en identitet från identitetstjänsten. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Borttagning av datauppsättning
 
@@ -70,7 +71,7 @@ Tabellen nedan innehåller en beskrivning av skillnaderna mellan borttagning av 
 | Tjänster som påverkas | Borttagning av datauppsättningar via katalogtjänsten tar bort data från identitetstjänsten, kundprofilen i realtid och datasjön. | Borttagning av datauppsättningar via datahygien tar bort data från identitetstjänsten, kundprofilen i realtid och datasjön. |
 | Borttagningsmönster | Ta bort länkade identiteter från identitetstjänsten som upprättats av en viss datauppsättning. | Ta bort länkade identiteter från identitetstjänsten som upprättats av en viss datauppsättning, baserat på förfalloschema. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Olika tillstånd för identitetsdiagram efter borttagning
 
@@ -84,7 +85,7 @@ Nedan visas en översikt över de potentiella konsekvenser som borttagningar kan
 | Fullständig borttagning | Ett diagram måste ha minst två länkade identiteter för att kunna finnas. Om en borttagningsbegäran leder till att alla befintliga länkar i ett diagram tas bort, tas diagrammet bort helt. |
 | Ingen ändring | Ett diagram påverkas inte om en viss borttagningsbegäran innehåller en identitet eller datauppsättning som inte är associerad med någon medlem i diagrammet. Dessutom uppdateras inte ett diagram även om borttagningsbegäran tar bort en länk mellan en datauppsättning eller en kombination av identitetsdatauppsättning, eftersom länken upprättades av en annan länk som inte togs bort. Det innebär att om det finns en länk i två olika datauppsättningar kommer diagrammet inte att uppdateras eftersom bara en av datauppsättningarna tas bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

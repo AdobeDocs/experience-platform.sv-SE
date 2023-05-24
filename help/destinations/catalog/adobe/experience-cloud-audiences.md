@@ -2,13 +2,13 @@
 title: (Beta) Experience Cloud Publiker
 description: Lär dig hur du delar segment från Experience Platform till olika Experience Platform-lösningar.
 last-substantial-update: 2023-01-25T00:00:00Z
-source-git-commit: a8f6bb8c3e35f4c17812ef944440210b7fe3f87b
+exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1476'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) [!UICONTROL Experience Cloud Audiences] anslutning
 

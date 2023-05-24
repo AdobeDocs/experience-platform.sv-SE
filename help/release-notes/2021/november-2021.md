@@ -5,7 +5,7 @@ exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '799'
-ht-degree: 1%
+ht-degree: 9%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Nya funktioner i Adobe Experience Platform:
 
-- [Real-time Customer Data Platform B2B Edition](#B2B)
+- [Real-Time Customer Data Platform B2B-utgåva](#B2B)
 - [(Beta) Aktivera målgruppssegment till batchmål via ad hoc-aktiverings-API](#ad-hoc-activation)
 
 ## Uppdateringar av befintliga funktioner
@@ -27,7 +27,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Attribution AI](#attribution-ai)
 - [Kund-AI](#customer-ai)
 
-### Real-time Customer Data Platform B2B Edition {#B2B}
+### Real-Time Customer Data Platform B2B-utgåva {#B2B}
 
 **Releasedatum: 12 november 2021**
 
@@ -70,7 +70,7 @@ Med API:t för ad hoc-aktivering kan marknadsförare programmässigt aktivera m�
 
 ### Attribution AI {#attribution-ai}
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 
 | Funktion | Beskrivning |
 |-----------|---------------|
@@ -81,7 +81,7 @@ Mer information om Attribution AI finns i [Attribution AI](../../intelligent-ser
 
 ### Kund-AI {#customer-ai}
 
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 **Uppdaterade funktioner**
 

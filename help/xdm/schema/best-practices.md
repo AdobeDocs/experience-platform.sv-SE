@@ -6,7 +6,7 @@ description: Detta dokument innehåller en introduktion till XDM-scheman (Experi
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
 source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
-source-wordcount: '2718'
+source-wordcount: '2709'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ När du har skapat en ERD för att identifiera de enheter du vill ta med [!DNL P
 | Sök enheter | Sökentiteter representerar begrepp som kan relatera till en enskild person, men som inte kan användas direkt för att identifiera den enskilda personen. Enheter som omfattas av denna kategori bör representeras av scheman baserade på **egna klasser** och är länkade till profiler och händelser via [schemarelationer](../tutorials/relationship-ui.md). |
 | Händelseentiteter | Händelseenheter representerar koncept som relaterar till åtgärder som en kund kan vidta, systemhändelser eller andra koncept där du kan vilja spåra ändringar över tid. Enheter som omfattas av denna kategori bör representeras av scheman baserade på **[!DNL XDM ExperienceEvent]class**. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Överväganden för entitetssortering
 
@@ -88,7 +88,7 @@ Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det 
 | 1234567 | Lägg till | 486502 | 1 | 1 okt 10:41 |
 | 1234567 | Lägg till | 910482 | 5 | 3 okt 2:15 PM |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 #### Användningsexempel för segmentering
 
@@ -131,7 +131,7 @@ I följande tabell visas några vanliga entitetsrelationer och de kategorier som
 | Kunder- och förmånskonton | En till en | En enskild kund kan bara ha ett förmånskonto, och vice versa. Eftersom relationen är en-till-en representerar både kunder och lojalitetskonton profilentiteter. |
 | Kunder och prenumerationer | En till många | En enskild kund kan ha många prenumerationer. Eftersom företaget bara är berört med en kunds aktuella prenumerationer är kunderna en profilenhet, medan prenumerationer är en sökenhet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Fördelar och nackdelar med olika enhetsklasser {#pros-and-cons}
 

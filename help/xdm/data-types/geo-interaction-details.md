@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över XDM-datatypen Ge
 exl-id: c05b098b-3f12-4283-a6d5-5ebf96b9828d
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '148'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 | `deviceGeoAccuracy` | Dubbel | Noggrannheten hos geomätningsanordningen eller -mekanismen, mätt i meter. |
 | `distanceToCenter` | Dubbel | Avståndet till geocentrum i fråga om en geocirkel, mätt i meter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

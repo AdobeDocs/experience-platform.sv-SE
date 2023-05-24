@@ -2,29 +2,29 @@
 keywords: Experience Platform;hem;populära ämnen;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;placing;
 title: Fältgruppen Bokningsreservationsschema
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Bokningsreservation.
-source-git-commit: d230cfa9e74eb96aa44e8b83ca8f2306db4ba4ec
+exl-id: f0eafc83-21f1-483d-9397-1133e3777699
+source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '667'
 ht-degree: 2%
 
 ---
 
-
 # [!UICONTROL Lodging Reservation] schemafältgrupp
 
-[!UICONTROL Lodging Reservation] är en standardgrupp för schemafält för den  [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) klass som används för att samla in information om en reservation.
+[!UICONTROL Lodging Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en reservation.
 
-Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details] och innehåller alla samma fält under ett enskilt fält av objekttyp, `reservations`. Förutom dessa generiska fält innehåller [!UICONTROL Lodging Reservation] även matrisen `lodgingReservations`. Den här arrayen med objekt används för att beskriva en eller flera reservationer med egenskaper som är unika för inlämning.
+Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa allmänna fält [!UICONTROL Lodging Reservation] innehåller `lodgingReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med egenskaper som är unika för inlämning.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `lodgingReservations`-arrayen. Mer information om de andra fälten under `reservations`-objektet finns i [[!UICONTROL Reservation Details]-fältgruppsreferensen](./reservation-details.md).
+>Det här dokumentet innehåller information om `lodgingReservations` array. För information om andra fält som anges i `reservations` objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
 
 ![Struktur för bokföringsreservation](../../images/field-groups/lodging-reservation/structure.png)
 
 ## `lodgingReservations`
 
-`lodgingReservations` är en array med objekt som representerar en lista med bokningar. Om en reservationshändelse innehåller reservationer på flera olika hotell längs en resa, kan till exempel dessa reservationer listas som enskilda objekt under `lodgingReservations` för en enda händelse.
+`lodgingReservations` är en array med objekt som representerar en lista med bokningar. Om en bokningshändelse omfattar reservationer på flera olika hotell längs en resa, kan dessa reservationer till exempel anges som enskilda objekt under `lodgingReservations` för en enda händelse.
 
 Strukturen för varje objekt som anges under `lodgingReservations` anges nedan.
 
@@ -68,7 +68,7 @@ Strukturen för varje objekt som anges under `lodgingReservations` anges nedan.
 | `smoking` | Boolean | Anger om rummet tillåter rökning. |
 | `tripType` | Sträng | Anger om reservationen gäller en enkelriktad resa, en rundtur eller en flerstadstrafik. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

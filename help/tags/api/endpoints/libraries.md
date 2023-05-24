@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /libraries i Reactor API.
 exl-id: 0f7bc10f-2e03-43fa-993c-a2635f4d0c64
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '1584'
+source-wordcount: '1521'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ GET /properties/{PROPERTY_ID}/libraries
 | --- | --- |
 | `PROPERTY_ID` | The `id` av den egendom som äger biblioteken. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -161,7 +161,7 @@ GET /libraries/{LIBRARY_ID}
 | --- | --- |
 | `LIBRARY_ID` | The `id` för det bibliotek som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -272,7 +272,7 @@ POST /properties/{PROPERTY_ID}/libraries
 | --- | --- |
 | `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar biblioteket under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -300,7 +300,7 @@ curl -X POST \
 | `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för biblioteket. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `libraries`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -423,7 +423,7 @@ POST /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 | `{LIBRARY_ID}` | ID:t för det bibliotek som du vill lägga till resurser i. |
 | `{RESOURCE_TYPE}` | Den typ av resurs som du lägger till i biblioteket. Följande värden accepteras: <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -456,7 +456,7 @@ curl -X POST \
 | `id` | ID:t för resursen som du lägger till i biblioteket. |
 | `type` | Den typ av resurs som du lägger till i biblioteket. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -496,7 +496,7 @@ PATCH /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 | `{LIBRARY_ID}` | ID:t för det bibliotek vars relationer du vill ersätta. |
 | `{RESOURCE_TYPE}` | Den typ av resurs som du ersätter. Följande värden accepteras: <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -525,7 +525,7 @@ curl -X PATCH \
 | `id` | ID:t för resursen som du lägger till i biblioteket. |
 | `type` | Den typ av resurs som du lägger till i biblioteket. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -561,7 +561,7 @@ DELETE /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 | `{LIBRARY_ID}` | ID för det bibliotek vars resurser du vill ta bort. |
 | `{RESOURCE_TYPE}` | Den typ av resurs som du tar bort. Följande värden accepteras: <ul><li>`data_elements`</li><li>`extensions`</li><li>`rules`</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -590,7 +590,7 @@ curl -X DELETE \
 | `id` | ID för resursen som du tar bort från biblioteket. |
 | `type` | Den typ av resurs som du tar bort från biblioteket. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -622,7 +622,7 @@ POST /libraries/{LIBRARY_ID}/relationships/environment
 | --- | --- |
 | `{LIBRARY_ID}` | ID:t för det bibliotek som du vill tilldela. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -647,7 +647,7 @@ curl -X POST \
 | `id` | ID för miljön som du tilldelar biblioteket till. |
 | `type` | Måste anges till `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -680,7 +680,7 @@ PATCH /libraries/{LIBRARY_ID}
 | --- | --- |
 | `LIBRARY_ID` | The `id` för det bibliotek som du vill gå över till. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -710,7 +710,7 @@ curl -X PATCH \
 | `id` | The `id` för det bibliotek som du vill uppdatera. Det här bör matcha `{LIBRARY_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `libraries`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -816,7 +816,7 @@ POST /libraries/{LIBRARY_ID}/builds
 | --- | --- |
 | `LIBRARY_ID` | The `id` för det bibliotek som du vill publicera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -927,7 +927,7 @@ GET  /libraries/{LIBRARY_ID}/data_elements
 | --- | --- |
 | `{LIBRARY_ID}` | The `id` i biblioteket vars dataelement du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1068,7 +1068,7 @@ GET  /libraries/{LIBRARY_ID}/extensions
 | --- | --- |
 | `{LIBRARY_ID}` | The `id` för det bibliotek vars tillägg du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1199,7 +1199,7 @@ GET  /libraries/{LIBRARY_ID}/rules
 | --- | --- |
 | `{LIBRARY_ID}` | The `id` för det bibliotek vars regler du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1312,7 +1312,7 @@ GET  /libraries/{LIBRARY_ID}/environment
 | --- | --- |
 | `{LIBRARY_ID}` | The `id` för det bibliotek vars miljö du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1424,7 +1424,7 @@ GET  /libraries/{LIBRARY_ID}/property
 | --- | --- |
 | `{LIBRARY_ID}` | The `id` för det bibliotek vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1547,7 +1547,7 @@ GET  /libraries/{LIBRARY_ID}/upstream_library
 | --- | --- |
 | `{LIBRARY_ID}` | The `id` för det bibliotek vars överordnade bibliotek du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

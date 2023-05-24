@@ -2,7 +2,8 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 title: Skapa en trendrapport över händelser
 description: Lär dig hur du skriver frågor som använder Experience Events för att skapa en trendrapport med händelser över ett visst datumintervall, grupperade efter datum.
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+exl-id: 8f7ed5b5-c265-4a1e-a360-4293d1e86e97
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '379'
 ht-degree: 0%

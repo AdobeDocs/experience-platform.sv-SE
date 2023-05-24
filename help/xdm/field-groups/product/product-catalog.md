@@ -1,25 +1,25 @@
 ---
-title: Product Catalog Schema Field Group
-description: This document provides an overview of the Product Catalog schema field group.
-source-git-commit: 9c06c58553aef4937454ced82d3e89867b5567b7
+title: Fältgrupp för produktkatalogschema
+description: Det här dokumentet innehåller en översikt över schemafältgruppen för produktkataloger.
+exl-id: 91971a0c-a93a-4032-a2f2-0a99e4940bac
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '82'
+source-wordcount: '79'
 ht-degree: 3%
 
 ---
 
+# [!UICONTROL Product Catalog] schemafältgrupp
 
-# [!UICONTROL Product Catalog]
-
-[!UICONTROL Product Catalog][[!UICONTROL Product]](../../classes/product.md)
+[!UICONTROL Product Catalog] är en standardgrupp för schemafält för [[!UICONTROL Product] class](../../classes/product.md) som hämtar egenskaper som är relaterade till en produktkatalog.
 
 ![](../../images/field-groups/product/product-catalog.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `productCatalogDescription` | Sträng | A description for the product catalog. |
-| `productCatalogName` | Sträng | The name of the product catalog. |
+| `productCatalogDescription` | Sträng | En beskrivning av produktkatalogen. |
+| `productCatalogName` | Sträng | Namnet på produktkatalogen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-catalog.schema.json)
+Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-catalog.schema.json).

@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
-title: Adobe Experience Platform - översikt
+title: Översikt över Adobe Experience Platform
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
 source-git-commit: 48e050718b665bc297f97bf1b90a6f4517dd3af5
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '437'
+ht-degree: 2%
 
 ---
 

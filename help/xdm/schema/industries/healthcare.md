@@ -1,7 +1,8 @@
 ---
 title: Datamodell ERD för hälso- och sjukvård
 description: Visa ett diagram över företagsrelationer som beskriver en standardiserad datamodell för hälso- och sjukvården. Den här datamodellen är kompatibel med Experience Data Model (XDM) för användning i Adobe Experience Platform.
-source-git-commit: 721059a87347e371228d00edeac141afa894af47
+exl-id: ebcf97ec-f5a4-46e5-b1ad-c80d55aa2c6e
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
 source-wordcount: '547'
 ht-degree: 1%

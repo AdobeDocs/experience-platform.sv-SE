@@ -6,7 +6,7 @@ description: Lär dig hur namnavstånd i Experience Data Model (XDM) gör att du
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
 source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '631'
+source-wordcount: '628'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undan
 | `https://ns.adobe.com/vendorA/product/stockNumber` | Fält som tillhandahålls av leverantörsresurser använder sina egna unika namnutrymmen. I det här exemplet `https://ns.adobe.com/vendorA/product` är leverantörens namnutrymme, och `stockNumber` är fältnamnet. |
 | `tenantId:internalSku` | Fält som definieras av din organisation använder ditt unika klientorganisations-ID som namnutrymme. I det här exemplet `tenantId` är innehavarens namnutrymme (`https://ns.adobe.com/tenantId`), och `internalSku` är fältnamnet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Kompatibilitetsläge {#compatibility}
 

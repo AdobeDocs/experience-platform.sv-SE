@@ -1,13 +1,13 @@
 ---
 title: Konfigurera åsidosättningar av datastream
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
-source-git-commit: ce2e80a7ea7385be98bbcda6a0704cd0814c62b2
+exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
+source-git-commit: d76d596818db67c99aca0606b6b6fb1a9aa977aa
 workflow-type: tm+mt
 source-wordcount: '927'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera åsidosättningar av datastream
 
@@ -233,4 +233,3 @@ Exemplen ovan genererar ett [!DNL Edge Network] nyttolast som ser ut så här:
   }
 }
 ```
-

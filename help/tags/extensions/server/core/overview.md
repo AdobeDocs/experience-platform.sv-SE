@@ -199,7 +199,7 @@ getDataElementValue('productName')
 return getDataElementValue('section').concat(getDataElementValue('pName')); 
 ```
 
-#### Bana
+#### Sökväg
 
 En sökväg till ett nyckelvärdepar för en händelse som skickas till Adobe Experience Platform Edge Network kan refereras med hjälp av datatypen Path.
 

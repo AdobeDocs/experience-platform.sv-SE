@@ -5,7 +5,7 @@ description: Braze är en heltäckande plattform för kundengagemang som driver 
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsd
 |---|---|---|
 | external_id | Egen [!DNL Braze] identifierare som stöder mappning av alla identiteter. | Du kan skicka alla [identity](../../../identity-service/namespaces.md) till [!DNL Braze] mål, förutsatt att du mappar det till [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -53,7 +53,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.[!DNL Adobe Experience Platform] segment exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över XDM-datatypen f�
 exl-id: 056fdb5b-6782-4e29-9d62-90b270c05795
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '350'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ De värden som registreras i den här datatypen kan skilja sig från produktpost
 | `quantity` | [!UICONTROL Integer] | Antalet enheter som kunden har angett att de behöver av produkten. |
 | `unitOfMeasureCode` | [!UICONTROL String] | Standarden [måttenhetskod](https://ucum.org/ucum) för produkten i fråga `quantity` -egenskap. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen för postadresser finns i den offentliga XDM-databasen:
 

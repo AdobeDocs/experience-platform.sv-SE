@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: 12c9fef5-4f9e-49b5-894f-f4938bb95c23
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '298'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 1%
 | `tier` | Sträng | Hämtar den lojalitetsprogramnivå som personen är registrerad i. |
 | `upgradeDate` | Sträng | Det datum då förmånsmedlemmen uppgraderades till sin senaste nivånivå. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

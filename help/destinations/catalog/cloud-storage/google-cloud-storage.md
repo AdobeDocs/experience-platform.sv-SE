@@ -4,7 +4,7 @@ description: Lär dig hur du ansluter till Google Cloud-lagring och aktiverar se
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
 source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '858'
+source-wordcount: '855'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment, tillsammans med tillämpliga schemafält, som de har valts på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar för att ansluta [!DNL Google Cloud Storage] konto {#prerequisites}
 

@@ -2,13 +2,13 @@
 keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
 description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
-source-git-commit: 27da0f8d7896fd32e8a1b828630db7e5e08185c2
+exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
+source-git-commit: 4ef83c152c4649721c6a424f3ba47b7c6bbfef3f
 workflow-type: tm+mt
-source-wordcount: '1658'
+source-wordcount: '1655'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Outreach] anslutning
 
@@ -86,7 +86,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | <ul><li> Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Outreach] uppdateras med motsvarande segmentstatus från Platform, baserat på [!UICONTROL Mapping ID] det värde som anges under [segmentplanering](#schedule-segment-export-example) steg.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li> Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

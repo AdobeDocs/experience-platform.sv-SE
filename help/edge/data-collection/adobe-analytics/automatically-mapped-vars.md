@@ -6,7 +6,7 @@ keywords: adobe analytics;variables;analytics;automatic map;automatically mapped
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
 source-git-commit: dcbe4c1b5a085878562990ed2db8e5cb27b93e28
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '915'
 ht-degree: 4%
 
 ---
@@ -106,4 +106,4 @@ Nedan finns en lista med variabler som Adobe Experience Platform Edge Network au
 | web.webPageDetails.siteSection | ch | Mappning av parametern CHANNEL för parametern AppMeasurement-fråga. |
 | web.webReferrer.URL | r | AppMeasurement-frågeparameterns REFERRER-mappning. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

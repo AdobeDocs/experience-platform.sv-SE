@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över de konfiguration
 exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '294'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Anslutningsspecifikationerna returnerar en källas kopplingsegenskaper. De inneh
 | `sourceSpec` | The `sourceSpec` arrayen innehåller allmän information om en källa, inklusive information om attribut som krävs för att visa källan i gränssnittet, dokumentationslänk och parametrar för sidnumrering, rubrik, brödtext och schemaläggning. Dessutom `sourceSpec` beskriver schemat för de parametrar som krävs för att skapa en källanslutning från en basanslutning och som är nödvändiga för att skapa en källanslutning. |
 | `exploreSpec` | The `exploreSpec` -arrayen definierar de parametrar som krävs för att utforska och inspektera objekt som finns i källan. The `exploreSpec` definierar också det svarsformat som returneras när objekt utforskas och inspekteras. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Fyll i värden för anslutningsspecifikation
 

@@ -2,7 +2,8 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 title: Visa en sammanslagningsrapport för en specifik besökare
 description: Följande dokument innehåller exempel på frågor som innehåller Experience Events i Adobe Experience Platform Query Service.
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+exl-id: 1348503f-65c1-41f9-b111-1284a49449a1
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%

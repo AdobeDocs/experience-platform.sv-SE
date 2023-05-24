@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: c236d0d4-27bd-45d7-a912-d0e93a609254
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `consentStrings` | Array med [Samtyckessträngar](../../data-types/consent-string.md) | En array med strängvärden för samtycke som är associerade med händelsen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se guiden [Stöd för IAB TCF 2.0 i Platform](../../../landing/governance-privacy-security/consent/iab/overview.md) om du vill ha mer information om hur den här fältgruppen används. Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
 

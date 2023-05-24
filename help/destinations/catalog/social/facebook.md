@@ -5,7 +5,7 @@ description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpass
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '1821'
+source-wordcount: '1818'
 ht-degree: 1%
 
 ---
@@ -57,7 +57,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Krav för facebook-konton {#facebook-account-prerequisites}
 

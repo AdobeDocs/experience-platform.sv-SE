@@ -6,7 +6,7 @@ description: En referens för fälttypsbegränsningar i Experience Data Model (X
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '605'
 ht-degree: 2%
 
 ---
@@ -146,7 +146,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL Boolean] | Typ: `BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
 | [!UICONTROL Map] | `MAP`-annoterad grupp<br><br>(`<key-type>` måste vara `STRING`) | `MapType`<br><br>(`keyType` måste vara `StringType`) | `java.util.Map` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Scala, .NET och CosmosDB {#scala}
 
@@ -163,7 +163,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL Boolean] | `Boolean` | `System.Boolean` | `Boolean` |
 | [!UICONTROL Map] | `Map` | (Ej tillämpligt) | `object` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### MongoDB, Aerospike och Protobuf 2 {#mongo}
 
@@ -180,7 +180,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | [!UICONTROL Boolean] | `bool` | `Integer`<br>(0/1 binärt) | `bool` |
 | [!UICONTROL Map] | `object` | `map` | `map<key_type, value_type>` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Definiera XDM-fälttyper i API {#define-fields}
 

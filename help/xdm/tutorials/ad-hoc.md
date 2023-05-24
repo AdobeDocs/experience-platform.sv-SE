@@ -7,7 +7,7 @@ type: Tutorial
 exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '819'
 ht-degree: 1%
 
 ---
@@ -85,7 +85,7 @@ curl -X POST \
 | `$ref` | Databeteendet för den nya klassen. För ad hoc-klasser måste det här värdet anges till `https://ns.adobe.com/xdm/data/adhoc`. |
 | `properties._adhoc` | Ett objekt som innehåller anpassade fält för klassen, uttryckt som nyckelvärdepar med fältnamn och datatyper. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -148,7 +148,7 @@ Ett godkänt svar returnerar informationen om den nya klassen och ersätter `pro
 | --- | --- |
 | `$id` | En URI som fungerar som en skrivskyddad, systemgenererad unik identifierare för den nya ad hoc-klassen. Det här värdet används i nästa steg när du skapar ett ad hoc-schema. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Skapa ett ad hoc-schema
 
@@ -241,7 +241,7 @@ GET /tenant/schemas/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det ad hoc-schema som du vill komma åt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

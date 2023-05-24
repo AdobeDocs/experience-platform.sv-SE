@@ -1,7 +1,8 @@
 ---
 title: Skapa en källanslutning till SugarCRM-konton och kontakter i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till SugarCRM-konton och kontakter med hjälp av Adobe Experience Platform användargränssnitt.
-source-git-commit: d4b5c3b897371eea591925d071afc120a3f246d7
+exl-id: 45840d7e-4c19-4720-8629-be446347862d
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 1%

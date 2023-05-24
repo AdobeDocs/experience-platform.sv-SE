@@ -6,7 +6,7 @@ hide: true
 hidefromtoc: true
 source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1011'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ curl -X POST \
 | `description` | En beskrivning av postborttagningsbegäran. |
 | `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av en [identity namespace](../../identity-service/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>If `datasetId` anger en enda datauppsättning, varje enhet under `identities` måste använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>If `datasetId` är inställd på `ALL`, `identities` arrayen är inte begränsad till ett enda namnutrymme eftersom varje datamängd kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, enligt rapporter från [Identitetstjänst](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -118,7 +118,7 @@ Ett godkänt svar returnerar informationen om postborttagningen.
 | `createdBy` | Användaren som skapade borttagningsordningen. |
 | `datasetId` | ID:t för den datauppsättning som är föremål för begäran. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Hämta status för en postborttagning (#lookup)
 
@@ -134,7 +134,7 @@ GET /workorder/{WORK_ORDER_ID}
 | --- | --- |
 | `{WORK_ORDER_ID}` | The `workorderId` av den post som du letar upp. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -211,7 +211,7 @@ PUT /workorder{WORK_ORDER_ID}
 | --- | --- |
 | `{WORK_ORDER_ID}` | The `workorderId` av den post som du letar upp. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -233,7 +233,7 @@ curl -X GET \
 | `displayName` | Ett uppdaterat visningsnamn för postborttagningsbegäran. |
 | `description` | En uppdaterad beskrivning av postborttagningsbegäran. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -285,4 +285,4 @@ Ett godkänt svar returnerar informationen om postborttagningen.
 | `datasetId` | ID:t för den datauppsättning som är föremål för begäran. Om begäran gäller alla datauppsättningar anges värdet till `ALL`. |
 | `productStatusDetails` | En array som visar den aktuella statusen för processer som är relaterade till begäran. Varje arrayobjekt innehåller följande egenskaper:<ul><li>`productName`: Namnet på den underordnade tjänsten.</li><li>`productStatus`: Aktuell bearbetningsstatus för begäran från den underordnade tjänsten.</li><li>`createdAt`: En tidsstämpel som anger när den senaste statusen bokfördes av tjänsten.</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

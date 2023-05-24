@@ -4,7 +4,7 @@ description: Lär dig grunderna i hur du konfigurerar hemligheter i Reaktors API
 exl-id: 0298c0cd-9fba-4b54-86db-5d2d8f9ade54
 source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1228'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ Det finns för närvarande tre hemliga typer som stöds angivna i `type_of` attr
 | `simple-http` | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
 | `oauth2-client_credentials` | Innehåller flera attribut som stöder [OAuth](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation. Vidarebefordran av händelser ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig inom ett angivet intervall. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Den här guiden ger en översikt på hög nivå över hur du konfigurerar hemligheter för användning vid vidarebefordran av händelser. Detaljerad vägledning om hur du hanterar hemligheter i Reaktors-API:t, inklusive exempel-JSON för en hems struktur, finns i [Slutpunktshandbok för hemligheter](../endpoints/secrets.md).
 
@@ -42,7 +42,7 @@ Hemligheter med en `type_of` värde för `token` kräver endast ett attribut und
 | --- | --- | --- |
 | `token` | Sträng | En hemlig token som förstås av målsystemet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Token lagras som ett statiskt värde, och därför är hemligheten `expires_at` och `refresh_at` egenskaper anges till `null` när hemligheten skapas.
 
@@ -55,7 +55,7 @@ Hemligheter med en `type_of` värde för `simple-http` kräver följande attribu
 | `username` | Sträng | Ett användarnamn. |
 | `password` | Sträng | Ett lösenord. Detta värde ingår inte i API-svaret. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 När hemligheten skapas byts de två attributen ut med en BASE64-kodning av `username:password`. Efter utbytet är hemligheten `expires_at` och `refresh_at` egenskaper anges till `null`.
 

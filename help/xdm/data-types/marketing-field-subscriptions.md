@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över det allmänna in
 exl-id: 170ea6ca-77fc-4b0a-87f9-6d4b6f32d953
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
 | `time` | DateTime | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. |
 | `val` | Sträng | Kundens val av preferens för detta marknadsföringsärende. Se [nästa avsnitt](#val) för godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `val` {#val}
 
@@ -49,7 +49,7 @@ I följande tabell visas godkända värden för `val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `subscriptions` {#subscriptions}
 
@@ -99,7 +99,7 @@ Följande JSON representerar ett exempel på ett marknadsföringsfält för en m
 | `topics` | En array med strängar som representerar intressanta områden som en kund prenumererar på, som kan användas för att skicka relevant innehåll till dem. |
 | `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel som anger när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Ytterligare resurser
 

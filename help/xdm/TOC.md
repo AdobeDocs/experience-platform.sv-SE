@@ -107,7 +107,7 @@ ht-degree: 11%
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
    * [B2B-källa](./data-types/b2b-source.md)
-   * [Handel](./data-types/commerce.md)
+   * [Commerce](./data-types/commerce.md)
    * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
    * [Valuta](./data-types/currency.md)

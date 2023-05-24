@@ -2,13 +2,13 @@
 title: Marketo Measure Ultimate-mål
 description: Lär dig hur du ansluter och aktiverar data till Marketo Measure Ultimate-målet.
 last-substantial-update: 2023-03-07T00:00:00Z
-source-git-commit: c2c7a4cd860fed2c8124fe46fe3fd405ba49ecf4
+exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '635'
 ht-degree: 0%
 
 ---
-
 
 # Marketo Measure Ultimate Destination {#mmu-destination}
 
@@ -83,5 +83,3 @@ Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att dat
 ## Dataanvändning och styrning {#data-usage-governance}
 
 Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](/help/data-governance/home.md).
-
-

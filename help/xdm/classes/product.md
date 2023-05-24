@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över produktklassen i
 exl-id: 911680ae-b761-4945-9ad3-0233eaea89b0
 source-git-commit: fdd68e5a94d841992a6f8abe10f3cffe0ebb6794
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '205'
 ht-degree: 2%
 
 ---
@@ -26,7 +26,7 @@ I Experience Data Model (XDM) är [!UICONTROL Product] klassen hämtar den minst
 | `productName` | Sträng | Produktens namn. |
 | `productRating` | Sträng | Kundens recensionsbedömning av produkten. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kompatibla fältgrupper {#field-groups}
 

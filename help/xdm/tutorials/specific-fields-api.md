@@ -1,7 +1,8 @@
 ---
 title: Lägg till specifika fält i ett schema med API:t för schemaregistret
 description: Lär dig hur du lägger till enskilda fält från befintliga fältgrupper i ett XDM-schema (Experience Data Model) med API:t för schemaregistret.
-source-git-commit: 4bcd949e901c11bb933000f7ae76f17134dda496
+exl-id: 696cce2b-bbde-416a-9f52-12ab4da9c2c6
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '629'
 ht-degree: 1%

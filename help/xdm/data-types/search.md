@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM (S
 exl-id: 9893cb67-b0c7-4f91-a0d4-96f7b87d9510
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '179'
 ht-degree: 2%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 2%
 | `searchEngineID` | Sträng | Programspecifik identifierare som används för att identifiera sökmotorn. |
 | `slot` | Sträng | Det namngivna avsnittet på sidan där sökresultatet visades. Värdet för den här egenskapen måste vara lika med ett av de kända enum-värden som du definierar, till exempel `top`, `side`, eller `bottom`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

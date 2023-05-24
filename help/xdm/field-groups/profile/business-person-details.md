@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '584'
+source-wordcount: '581'
 ht-degree: 2%
 
 ---
@@ -56,7 +56,7 @@ ht-degree: 2%
 | `isDeleted` | Boolean | Anger om den här personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 | `organizations` | Array med strängar | En lista med organisationsnamn där personen arbetar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

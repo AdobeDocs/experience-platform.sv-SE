@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '218'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 | `phonenumberid` | [Identitet](../../data-types/identity.md) | Telefonnummer-ID. |
 | `tntid` | [Identitet](../../data-types/identity.md) | Slutanvändar-ID för Adobe Target. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

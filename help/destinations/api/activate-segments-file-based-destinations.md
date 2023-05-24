@@ -3,7 +3,8 @@ solution: Experience Platform
 title: Aktivera segment till filbaserade mål med hjälp av API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '4331'
 ht-degree: 0%

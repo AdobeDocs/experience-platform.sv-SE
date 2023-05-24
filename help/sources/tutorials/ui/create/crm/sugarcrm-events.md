@@ -1,7 +1,8 @@
 ---
 title: Skapa en källanslutning för SugarCRM-händelser i användargränssnittet
 description: Lär dig hur du skapar en källanslutning för SugarCRM-händelser med hjälp av Adobe Experience Platform-gränssnittet.
-source-git-commit: 17d8a6517686ee2459955f766d75980b41851320
+exl-id: db346ec0-2c57-4b82-8a39-f15d4cd377d4
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '642'
 ht-degree: 1%

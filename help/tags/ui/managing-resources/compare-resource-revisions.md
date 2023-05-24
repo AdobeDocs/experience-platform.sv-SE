@@ -1,7 +1,8 @@
 ---
 title: Jämför resursändringar
 description: Lär dig hur du visar ändringshistoriken för en taggresurs i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 95b22641-9f6f-4aac-a727-d99098f040a4
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -12,17 +13,17 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Jämför resursrevisioner för att se historiken för en enskild resurs.  Du kan jämföra resursens aktuella tillstånd med äldre versioner eller jämföra den publicerade versionen av en resurs med den senaste uppsättning ändringar som har sparats.
 
 ## Starta en jämförelse
 
-Att starta en jämförelse är detsamma för alla resurstyper.  Öppna redigeringsvyn för en enskild resurs och leta sedan upp ikonen med tre punkter bredvid knappen **[!UICONTROL Save]** för att visa tillgängliga åtgärder för den resursen.  Välj **[!UICONTROL Compare Revisions]** i listan.
+Att starta en jämförelse är detsamma för alla resurstyper.  Öppna redigeringsvyn för en enskild resurs och leta sedan upp ikonen med tre punkter bredvid ikonen **[!UICONTROL Save]** om du vill visa tillgängliga åtgärder för resursen.  Välj **[!UICONTROL Compare Revisions]** från listan.
 
 ![Starta en jämförelse för ett tillägg](../../images/compare-initiate-extension.png)
 
-För tillägg öppnar du detaljvyn genom att klicka på knappen **[!UICONTROL Configure]** när du visar listan över installerade tillägg.  För dataelement och regler väljer du ett i listan.
+För tillägg öppnar du detaljvyn genom att välja **[!UICONTROL Configure]** när du visar en lista över installerade tillägg.  För dataelement och regler väljer du ett i listan.
 
 ## Använda Jämförelsevisning
 
@@ -32,7 +33,7 @@ Till vänster kan du välja mellan alla befintliga versioner att jämföra med&q
 
 ![Jämföra versioner av Analytics-tillägget](../../images/compare-interpret-extension.png)
 
-Välj **[!UICONTROL Use These Changes]** om du vill kopiera inställningarna från den valda revisionen (vänster) till den senaste versionen (höger).  Detta kopierar inställningarna från den gamla versionen till de senaste osparade ändringarna.  Om du vill att dessa ändringar ska fastna ska du se till att **[!UICONTROL Save]** är klar när du har avslutat jämförelsevyn.
+Välj **[!UICONTROL Use These Changes]** om du vill kopiera inställningarna från den valda revisionen (vänster) till den senaste versionen (höger).  Detta kopierar inställningarna från den gamla versionen till de senaste osparade ändringarna.  Om du vill att de här ändringarna ska fastna, se till att **[!UICONTROL Save]** när du har avslutat jämförelsevyn.
 
 >[!TIP]
 >Enskilda resurser kan ha både attribut och inställningar.  Dessa inställningar lagras som ett JSON-block, som är ett strukturerat sätt att lagra data, men tillräckligt flexibelt så att tilläggsutvecklare kan placera det de behöver för att få sina tillägg att göra vad de vill.
@@ -48,8 +49,8 @@ I Jämförelsevisning markeras skillnader mellan inställningsversioner.  Tillä
 
 Ovanför ser du följande ändringar:
 
-* Tillägget [!DNL Adobe Analytics] uppdateras till en ny version, vilket anges av de orange versionsnumren högst upp.
-* `orgID` och `currencyCode` ändras till de inställningar som anges av utökningen av den orangefärgade delen i inställningarna.
+* The [!DNL Adobe Analytics] tillägget uppdateras till en ny version, vilket anges av det orange versionsnumret högst upp.
+* The `orgID` och `currencyCode` ändras till de inställningar som anges av utökningen av den orangefärgade delen i inställningarna.
 
 ## Jämföra dataelement
 
@@ -80,9 +81,9 @@ Ovanför ser du följande ändringar:
 
 * Regelnamnet har ändrats från Analytics (Analys) till Baseline Analytics (Baslinjeanalys), vilket anges av den orange raden med Name (Namn).
 * Villkoret &quot;Core - Domain&quot; lades till, vilket anges av den orange &quot;+&quot;-ikonen och komponentens tillägg på den högra sidan.
-* Åtgärden &quot;[!DNL Adobe Analytics] - Rensa variabler&quot; har tagits bort, vilket anges av den orangefärgade &quot;-&quot;-ikonen och komponentens frånvaro på den högra sidan.
-* Åtgärden &quot;[!DNL Adobe Analytics] - Ange variabler&quot; ändrades, vilket anges av den orangefärgade linjen mellan komponentversionerna på vänster och höger sida. Den här linjen är rak om komponentordningen inte har ändrats.
-* Åtgärden &quot;[!DNL Adobe Analytics] - Ange variabler&quot; och åtgärdsordningen &quot;[!DNL Adobe Analytics] - Skicka fyr&quot; har ändrats, vilket indikeras av de kurvor som förbinder de olika versionerna av komponenterna på vänster och höger sida
+* The &quot;[!DNL Adobe Analytics] - Åtgärden Rensa variabler har tagits bort, vilket anges av den orangefärgade &quot;-&quot; ikonen och frånvaron av komponenten på den högra sidan.
+* The &quot;[!DNL Adobe Analytics] - Åtgärden Ange variabler har ändrats, vilket anges av den orange linjen mellan komponentversionerna på vänster och höger sida. Den här linjen är rak om komponentordningen inte har ändrats.
+* The &quot;[!DNL Adobe Analytics] - Ange variabler och[!DNL Adobe Analytics] - Åtgärdsordningen Skicka signal har ändrats, vilket indikeras av de böjda linjerna som förbinder de olika komponentversionerna på vänster och höger sida
 
 Om du vill visa specifika ändringar i en av regelkomponenterna markerar du den specifika komponent som du vill visa.  Linjen ändras till blå när du för musen över den.
 

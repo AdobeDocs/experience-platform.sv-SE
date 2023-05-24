@@ -6,7 +6,7 @@ exl-id: 39634bde-8858-44a6-b39a-776846654fc1
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '342'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -39,7 +39,7 @@ Den attributbaserade åtkomstkontrollsarbetsytan för Adobe Experience Cloud vis
 
 ![flash-select-roles](../../images/flac-ui/flac-select-roles.png)
 
-Den här användarhandboken fokuserar på hur du använder [!DNL Experience Cloud] för att tilldela behörigheter för plattformen. Mer allmän information om navigering finns i [!DNL Admin Console], se [Användarhandbok för Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
+Den här användarhandboken fokuserar på hur du använder [!DNL Experience Cloud] för att tilldela behörigheter för plattformen. Mer allmän information om navigering finns i [!DNL Admin Console], se [Användarhandbok för Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
 ## Nästa steg
 

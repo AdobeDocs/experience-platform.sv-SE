@@ -4,7 +4,7 @@ description: Skapa målgrupper utifrån kundlistor, personer som har besökt er 
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '678'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ I [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.
 | IDFA | [!DNL Apple ID for Advertisers] | Mappa *IDFA* källans ID-namnområde till målidentitetsfältet *pinterest_målgrupp*. Identiteter särskiljs och löses vid datainhämtning till Pinterest. |
 | E-POST | E-postadresser (klartext eller hashas med SHA256-algoritmen) | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. <br> Mappa *E-post* eller *Email_LC_SHA256* källans ID-namnområde till målidentitetsfältet *pinterest_målgrupp*. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -47,7 +47,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Pinterest kundlista. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Användningsexempel {#use-cases}
 

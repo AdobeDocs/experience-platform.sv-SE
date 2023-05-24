@@ -7,7 +7,7 @@ exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '1291'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -57,7 +57,7 @@ Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utf�
 3. [Konfigurera båda **Sandlådor** och **Hantera integrering av frågetjänst** behörigheter](../../access-control/ui/permissions.md) för produktprofilen.
 4. [Lägga till en ny användare i en produktprofil](../../access-control/ui/users.md) så att de får sina konfigurerade behörigheter.
 5. [Lägg till användaren som produktprofiladministratör](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) för att tillåta att konton skapas för alla aktiva produktprofiler.
-6. [Lägg till användaren som produktprofilutvecklare](https://helpx.adobe.com/enterprise/using/manage-developers.html) för att skapa en integrering.
+6. [Lägg till användaren som produktprofilutvecklare](https://helpx.adobe.com/se/enterprise/using/manage-developers.html) för att skapa en integrering.
 
 Mer information om hur du tilldelar behörigheter finns i dokumentationen om [åtkomstkontroll](../../access-control/home.md).
 

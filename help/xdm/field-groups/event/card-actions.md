@@ -1,33 +1,34 @@
 ---
-title: Card Actions Schema Field Group
-description: This document provides an overview of the Card Actions schema field group.
-source-git-commit: eaea904ddda6b7ffee6f52cd4af897c2a8885714
+title: Fältgrupp för kortåtgärdsschema
+description: Det här dokumentet innehåller en översikt över schemafältgruppen Kortåtgärder.
+exl-id: 49851544-9118-4b73-b1d1-4cf49b3f1dee
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '186'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL Card Actions]
+# [!UICONTROL Card Actions] schemafältgrupp
 
-[!UICONTROL Card Actions][[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) `personalFinances.cardActions`
+[!UICONTROL Card Actions] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `personalFinances.cardActions` till ett schema, som innehåller information om en kortåtgärd som korttyp, aktiveringsstatus och låsstatus.
 
 ![](../../images/field-groups/card-actions.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `cardActivated` | Integer | Tracks when the card has been successfully activated. |
-| `cardActivationStart` | Integer | Tracks when the card activation process has been started. |
-| `cardCancelled` | Integer | Tracks when a card has been cancelled. |
-| `cardControlsLocked` | Integer | Tracks when a card&#39;s controls have been locked. |
-| `cardControlsUnlocked` | Integer | Tracks when a card&#39;s controls have been unlocked. |
-| `cardID` | Sträng | The identifier for the card being activated. This value might be different from the card number. |
-| `cardLocked` | Integer | Tracks when a card has been locked. |
-| `cardOrderNew` | Integer | Tracks when a card has been requested. |
-| `cardOrderType` | Sträng | The type of card order associated with a card order event. |
-| `cardType` | Sträng | The type of card. |
-| `cardUnlocked` | Integer | Tracks when a card has been unlocked. |
+| `cardActivated` | Heltal | Spårar när kortet har aktiverats. |
+| `cardActivationStart` | Heltal | Spårar när kortaktiveringen har startats. |
+| `cardCancelled` | Heltal | Spårar när ett kort har annullerats. |
+| `cardControlsLocked` | Heltal | Spårar när ett korts kontroller har låsts. |
+| `cardControlsUnlocked` | Heltal | Spårar när ett kort har låsts upp. |
+| `cardID` | Sträng | Identifieraren för kortet som aktiveras. Detta värde kan skilja sig från kortnumret. |
+| `cardLocked` | Heltal | Spårar när ett kort har låsts. |
+| `cardOrderNew` | Heltal | Spårar när ett kort har begärts. |
+| `cardOrderType` | Sträng | Den typ av kortorder som är associerad med en kortorderhändelse. |
+| `cardType` | Sträng | Typ av kort. |
+| `cardUnlocked` | Heltal | Spårar när ett kort har låsts upp. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json)
+Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-card-actions.schema.json).

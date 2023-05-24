@@ -2,14 +2,13 @@
 title: Single-page Application Implementation för Adobe Experience Platform Web SDK
 description: Lär dig hur du skapar en single page application (SPA)-implementering av Adobe Experience Platform Web SDK med Adobe Target.
 keywords: mål;adobe target;xdm views; vyer;program för en sida;SPA;SPA livscykel;klientsida;AB-testning;AB;Experience targeting;XT;VEC
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: cc48c375-36b9-433e-b45f-60e6c6ea4883
+source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
 workflow-type: tm+mt
 source-wordcount: '1665'
 ht-degree: 0%
 
 ---
-
 
 # Programimplementering på en sida
 
@@ -39,7 +38,7 @@ När du har navigerat till hemsidan befordrar en hjältebild en påskaffär samt
 
 ![](assets/example-views.png)
 
-När kunden blir mer intresserad av de produkter som företaget säljer bestämmer de sig för att klicka på länken **Produkter**. På samma sätt som hemsidan kan hela produktwebbplatsen definieras som en vy. Den här vyn kan heta&quot;products-all&quot;.
+När kunden blir mer intresserad av de produkter som företaget säljer bestämmer de sig för att klicka på **Produkter** länk. På samma sätt som hemsidan kan hela produktwebbplatsen definieras som en vy. Den här vyn kan heta&quot;products-all&quot;.
 
 ![](assets/example-products-all.png)
 
@@ -47,11 +46,11 @@ Eftersom en vy kan definieras som en hel webbplats eller som en grupp visuella e
 
 ![](assets/example-products.png)
 
-När kunden bestämmer sig för att klicka på knappen **Läs in mer** för att utforska fler produkter på webbplatsen ändras inte webbplatsens URL i det här fallet, men en vy kan skapas här för att representera endast den andra produktraden som visas. Vynamnet kan vara&quot;products-page-2&quot;.
+När kunden bestämmer sig för att klicka på **Läs mer** om du vill utforska fler produkter på webbplatsen ändras inte webbplatsens URL i det här fallet, men en vy kan skapas här för att representera endast den andra produktraden som visas. Vynamnet kan vara&quot;products-page-2&quot;.
 
 ![](assets/example-load-more.png)
 
-Kunden bestämmer sig för att köpa några produkter från sajten och går vidare till kassan. På utcheckningssajten får kunden möjlighet att välja normal leverans eller expressleverans. En vy kan vara vilken grupp som helst av visuella element på en webbplats, så en vy kan skapas för leveransinställningar och kallas&quot;Leveransinställningar&quot;.
+Kunden bestämmer sig för att köpa några produkter från sajten och går vidare till kassan. På kassan får kunden möjlighet att välja normal leverans eller expressleverans. En vy kan vara vilken grupp som helst av visuella element på en webbplats, så en vy kan skapas för leveransinställningar och kallas&quot;Leveransinställningar&quot;.
 
 ![](assets/example-check-out.png)
 
@@ -63,7 +62,7 @@ XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra 
 
 1. Installera [Adobe Experience Platform Web SDK](../../fundamentals/installing-the-sdk.md)
 2. Bestäm alla XDM-vyer i ditt enkelsidiga program som du vill anpassa.
-3. När du har definierat XDM-vyerna implementerar du funktionen `sendEvent()` med `renderDecisions` inställd på `true` och motsvarande XDM-vy i Single Page-programmet för att kunna leverera AB- eller XT VEC-aktiviteter. XDM-vyn måste skickas i `xdm.web.webPageDetails.viewName`. I det här steget kan marknadsförarna använda Visual Experience Composer för att starta A/B- och XT-tester för dessa XDM.
+3. När du har definierat XDM-vyerna kan du implementera `sendEvent()` function with `renderDecisions` ange till `true` och motsvarande XDM-vy i Single Page-programmet. XDM-vyn måste skickas `xdm.web.webPageDetails.viewName`. I det här steget kan marknadsförarna använda Visual Experience Composer för att starta A/B- och XT-tester för dessa XDM.
 
    ```javascript
    alloy("sendEvent", { 
@@ -80,11 +79,11 @@ XDM-vyer kan användas i Adobe Target för att marknadsförarna ska kunna köra 
 
 >[!NOTE]
 >
->Vid det första `sendEvent()`-anropet hämtas och cachelagras alla XDM-vyer som ska återges för slutanvändaren. Efterföljande `sendEvent()` anrop med skickade XDM-vyer läses från cachen och återges utan ett serveranrop.
+>På första `sendEvent()` anrop kommer alla XDM-vyer som ska återges för slutanvändaren att hämtas och cachelagras. Efterföljande `sendEvent()` anrop med skickade XDM-vyer läses från cachen och återges utan ett serveranrop.
 
 ## `sendEvent()` funktionsexempel
 
-I det här avsnittet finns tre exempel som visar hur du anropar funktionen `sendEvent()` i React för en hypotetisk e-SPA.
+I det här avsnittet beskrivs tre exempel på hur du anropar `sendEvent()` i React för en hypotetisk SPA.
 
 ### Exempel 1: Startsida för A/B-test
 
@@ -92,7 +91,7 @@ Marknadsföringsteamet vill köra A/B-tester på hela hemsidan.
 
 ![](assets/use-case-1.png)
 
-Om du vill köra A/B-tester på hela hemplatsen måste `sendEvent()` anropas med XDM `viewName` inställt på `home`:
+För att köra A/B-tester på hela hemplatsen `sendEvent()` måste anropas med XDM `viewName` ange till `home`:
 
 ```jsx
 function onViewChange() { 
@@ -132,7 +131,7 @@ history.listen(onViewChange);
 
 ### Exempel 2: Personaliserade produkter
 
-Marknadsföringsteamet vill anpassa den andra produktraden genom att ändra prisetikettens färg till rött efter att en användare har klickat på **Läs in mer**.
+Marknadsföringsteamet vill personalisera den andra produktraden genom att ändra prisetikettens färg till röd efter att användaren har klickat **Läs mer**.
 
 ![](assets/use-case-2.png)
 
@@ -170,11 +169,11 @@ class Products extends Component {
 
 ### Exempel 3: Inställningar för A/B-testleverans
 
-Marknadsföringsteamet vill köra ett A/B-test för att se om ändring av knappens färg från blå till röd när **expressleverans** är valt kan öka konverteringsgraden (i stället för att knappfärgen ska vara blå för båda leveransalternativen).
+Marknadsföringsteamet vill köra ett A/B-test för att se om färg på knappen ska ändras från blå till röd när **Express Delivery** är markerat kan öka konverteringen (till skillnad från att knappfärgen är blå för båda leveransalternativen).
 
 ![](assets/use-case-3.png)
 
-Om du vill anpassa innehållet på webbplatsen beroende på vilken leveransinställning som har valts, kan du skapa en vy för varje leveransinställning. När **Normal leverans** är markerat kan vyn heta &quot;checkout-normal&quot;. Om **Express Delivery** är markerat kan vyn heta &quot;checkout-express&quot;.
+Om du vill anpassa innehållet på webbplatsen beroende på vilken leveransinställning som har valts, kan du skapa en vy för varje leveransinställning. När **Normal leverans** är markerat kan du ge vyn namnet&quot;checkout-normal&quot;. If **Express Delivery** är markerat kan du ge vyn namnet&quot;checkout-express&quot;.
 
 ```jsx
 function onViewChange(viewName) { 
@@ -217,11 +216,11 @@ class Checkout extends Component {
 
 ## Använda Visual Experience Composer för en SPA
 
-När du har definierat dina XDM-vyer och implementerat `sendEvent()` med de XDM-vyer som har skickats in, kan VEC identifiera dessa vyer och låta användare skapa åtgärder och ändringar för A/B- eller XT-aktiviteter.
+När du har definierat dina XDM-vyer och implementerat dem `sendEvent()` med dessa XDM-vyer skickade kan VEC identifiera dessa vyer och låta användare skapa åtgärder och ändringar för A/B- eller XT-aktiviteter.
 
 >[!NOTE]
 >
->Om du vill använda VEC för SPA måste du installera och aktivera antingen [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
+>Om du vill använda VEC för SPA måste du installera och aktivera [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Krom](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension.
 
 ### Panelen Ändringar
 
@@ -229,7 +228,7 @@ På panelen Ändringar visas de åtgärder som har skapats för en viss vy. Alla
 
 ![](assets/modifications-panel.png)
 
-### Åtgärder
+### Instruktioner
 
 Om du klickar på en åtgärd markeras elementet på platsen där den här åtgärden ska tillämpas. Varje VEC-åtgärd som skapas under en vy har följande ikoner: **Information**, **Redigera**, **Klona**, **Flytta** och **Ta bort**. Dessa ikoner förklaras närmare i följande tabell.
 
@@ -239,8 +238,8 @@ Om du klickar på en åtgärd markeras elementet på platsen där den här åtg�
 |---|---|
 | Information | Visar information om åtgärden. |
 | Redigera | Gör att du kan redigera åtgärdens egenskaper direkt. |
-| Klona | Klona åtgärden till en eller flera vyer som finns på panelen Ändringar eller till en eller flera vyer som du har bläddrat till och navigerat till i VEC. Åtgärden behöver inte nödvändigtvis finnas på panelen Ändringar.<br/><br/>**Obs!** När en kloningsåtgärd har utförts måste du navigera till vyn i VEC via Browse för att se om den klonade åtgärden var en giltig åtgärd. Om åtgärden inte kan tillämpas på vyn visas ett fel. |
-| Flytta | Flyttar åtgärden till en sidinläsningshändelse eller någon annan vy som redan finns på panelen Ändringar.<br/><br/>**Sidinläsningshändelse:** Alla åtgärder som motsvarar sidinläsningshändelsen tillämpas på den första sidinläsningen i webbprogrammet. <br/><br/>**Obs**! När du har flyttat måste du navigera till vyn i VEC via Browse för att se om flyttningen var en giltig åtgärd. Om åtgärden inte kan tillämpas på vyn visas ett fel. |
+| Klona | Klona åtgärden till en eller flera vyer som finns på panelen Ändringar eller till en eller flera vyer som du har bläddrat till och navigerat till i VEC. Åtgärden behöver inte nödvändigtvis finnas på panelen Ändringar.<br/><br/>**Obs!** När en klonåtgärd har utförts måste du navigera till VEC via Browse (Visa i VEC) för att se om den klonade åtgärden var en giltig åtgärd. Om åtgärden inte kan tillämpas på vyn visas ett fel. |
+| Flytta | Flyttar åtgärden till en sidinläsningshändelse eller någon annan vy som redan finns på panelen Ändringar.<br/><br/>**Sidinläsningshändelse:** Alla åtgärder som motsvarar sidans load-händelse tillämpas på den första sidinläsningen i webbprogrammet. <br/><br/>**Obs!** När flyttningen är klar måste du navigera till vyn i VEC via Browse för att se om flyttningen var en giltig åtgärd. Om åtgärden inte kan tillämpas på vyn visas ett fel. |
 | Ta bort | Tar bort åtgärden. |
 
 ## Använda VEC för SPA exempel
@@ -251,24 +250,24 @@ I det här avsnittet beskrivs tre exempel på hur du använder Visual Experience
 
 Tidigare i det här dokumentet definierades en vy med namnet&quot;home&quot; för hela hemsidan. Nu vill marknadsföringsteamet uppdatera vyn&quot;home&quot; på följande sätt:
 
-* Ändra knapparna **Lägg till i kundvagnen** och **Gilla** till en ljusare resurs av blått. Detta bör inträffa vid sidinläsning eftersom det handlar om att ändra sidhuvudets komponenter.
-* Ändra etiketten **Senaste produkter för 2019** till **Värdprodukter för 2019** och ändra textfärgen till lila.
+* Ändra **Lägg i kundvagnen** och **Gilla** till en ljusare del av blått. Detta bör inträffa vid sidinläsning eftersom det handlar om att ändra sidhuvudets komponenter.
+* Ändra **Senaste produkterna för 2019** etikett till **De hetaste produkterna för 2019** och ändra textfärgen till lila.
 
-Om du vill göra de här uppdateringarna i VEC-vyn väljer du **Disponera** och tillämpar ändringarna på hemvyn.
+Om du vill göra uppdateringarna i VEC väljer du **Disponera** och tillämpa dessa ändringar i hemvyn.
 
 ![](assets/vec-home.png)
 
 ### Exempel 2: Ändra produktetiketter
 
-I vyn&quot;products-page-2&quot; vill marknadsföringsteamet ändra etiketten **Price** till **Försäljningspris** och ändra etikettfärgen till röd.
+Marknadsföringsteamet vill ändra **Pris** etikett till **Försäljningspris** och ändra etikettfärgen till röd.
 
 Följande steg krävs för att göra uppdateringarna i VEC:
 
 1. Välj **Bläddra** i VEC.
-2. Välj **Produkter** i den översta navigeringen på webbplatsen.
-3. Välj **Läs in mer** en gång för att visa den andra produktraden.
+2. Välj **Produkter** i webbplatsens övre navigering.
+3. Välj **Läs mer** en gång för att visa den andra produktraden.
 4. Välj **Disponera** i VEC.
-5. Använd åtgärder för att ändra textetiketten till **Försäljningspris** och färgen till röd.
+5. Använd åtgärder för att ändra textetiketten på **Försäljningspris** och färgen till rött.
 
 ![](assets/vec-products-page-2.png)
 
@@ -281,13 +280,13 @@ Följande steg krävs för att göra uppdateringarna i VEC:
 1. Välj **Bläddra** i VEC.
 2. Lägg produkter i kundvagnen på sajten.
 3. Välj kundvagnsikonen i webbplatsens övre högra hörn.
-4. Välj **Checka ut din beställning**.
-5. Välj alternativknappen **Express Delivery** under **Leveransinställningar**.
+4. Välj **Kolla din beställning**.
+5. Välj **Express Delivery** alternativknapp under **Leveransinställningar**.
 6. Välj **Disponera** i VEC.
-7. Ändra knappfärgen **Betala** till röd.
+7. Ändra **Betala** knappfärg till rött.
 
 >[!NOTE]
 >
->Vyn&quot;checkout-express&quot; visas inte på panelen Modifications (Ändringar) förrän alternativknappen **Express Delivery** är markerad. Detta beror på att `sendEvent()`-funktionen körs när alternativknappen **Express Delivery** är markerad, och att VEC därför inte känner till vyn &quot;checkout-express&quot; förrän alternativknappen är markerad.
+>Vyn&quot;checkout-express&quot; visas inte på panelen Modifications förrän **Express Delivery** alternativknappen är markerad. Det beror på att `sendEvent()` funktionen körs när **Express Delivery** alternativknappen är markerad och därför känner VEC inte till vyn &quot;checkout-express&quot; förrän alternativknappen är markerad.
 
 ![](assets/vec-delivery-preference.png)

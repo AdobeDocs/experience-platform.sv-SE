@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM (P
 exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '334'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 3%
 | `nationality` | Sträng | Det rättsliga förhållandet mellan en person och deras stat representerat med ISO 3166-1 Alpha-2-koden. Egenskapens format måste överensstämma med det här reguljära uttrycket `^[A-Z]{2}$`. |
 | `taxId` | Sträng | Personens skatte- eller skatte-ID, t.ex. TIN (Taxpayer Identification Number) i USA eller Certificado de Identificación Fiscal (CIF/NIF) i Spanien. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

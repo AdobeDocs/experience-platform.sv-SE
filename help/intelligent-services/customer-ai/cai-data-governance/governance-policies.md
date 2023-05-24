@@ -3,13 +3,13 @@ keywords: Experience Platform;användarhandbok;kundhandbok;populära ämnen;åtk
 feature: Customer AI
 title: Styrningsprinciper för AI för kunder
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt.
-source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
+exl-id: be3eca3a-0ea1-4b84-9454-675a4f9ac71e
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '186'
 ht-degree: 0%
 
 ---
-
 
 # Styrningspolitik
 

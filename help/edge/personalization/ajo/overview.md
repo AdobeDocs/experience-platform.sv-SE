@@ -2,8 +2,8 @@
 title: Använda Adobe Journey Optimizer med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Journey Optimizer
 keywords: ajo;ajo web;adobe travel optimizer;renderDecision;surfaces;Decision;propositions;scope;schema
-exl-id: e608952c-9598-11ed-b382-d72064651cac
-source-git-commit: 1b0f1e2e1625f6994a6e09bd086e4b63a3e8d4ab
+exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '416'
 ht-degree: 0%
@@ -148,5 +148,3 @@ Exempel på Journey Optimizer-innehåll:
 Om du vill felsöka Adobe Journey Optimizer personaliseringsimplementeringar använder du [[!DNL Web SDK] felsökning](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/debugging.html). [!DNL Adobe Journey Optimizer] felsökningsspårningar är tillgängliga vid felsökning med [[!DNL Adobe Experience Platform Assurance]](https://developer.adobe.com/client-sdks/documentation/platform-assurance/). Sök efter händelser med `AJO:` prefix.
 
 ![trust-ajo-trace](./assets/assurance-ajo-trace.png)
-
-

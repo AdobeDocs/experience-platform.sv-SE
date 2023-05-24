@@ -6,7 +6,7 @@ description: I följande dokument beskrivs hur du skapar en anslutningsspecifika
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '797'
 ht-degree: 1%
 
 ---
@@ -39,13 +39,13 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 | Artefakter (filnamn) | Beskrivning | Exempel |
 | --- | --- | --- |
 | {your_source} | Namnet på källan. Den här mappen bör innehålla alla artefakter som hör till källan i din privata Git-databas. | `mailchimp-members` |
-| {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Reklam</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-handel</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Anteckning**: Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera detta. | `mailchimp-members-category.txt` Ange källans kategori i filen, som: `marketingAutomation`. |
+| {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Advertising</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-handel</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Anteckning**: Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera detta. | `mailchimp-members-category.txt` Ange källans kategori i filen, som: `marketingAutomation`. |
 | {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som ni kan använda för att [!DNL Mailchimp Members] data till Experience Platform. |
 | {your_source}-icon.svg | Bilden som ska användas för att representera källan i katalogen för Experience Platform-källor. Den här ikonen måste vara en SVG-fil. |
 | {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Mailchimp-medlemmar |
 | {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `mailchimp-members-connectionSpec.json` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!TIP]
 >

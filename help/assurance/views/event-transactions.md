@@ -1,13 +1,13 @@
 ---
 title: Vyn Händelsetransaktioner
 description: Den här vägledningen innehåller detaljerad information om vyn Händelsetransaktioner i Adobe Experience Platform Assurance.
-source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
+exl-id: ad97f2c1-5bbc-49e2-8378-edcb8af149a3
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '675'
 ht-degree: 0%
 
 ---
-
 
 # Vyn Händelsetransaktioner
 

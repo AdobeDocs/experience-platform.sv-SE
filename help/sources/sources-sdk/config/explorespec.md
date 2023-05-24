@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över de konfiguration
 exl-id: 423a7e56-9dd1-4071-bd26-ee4f9f206122
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '258'
+source-wordcount: '255'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,7 @@ Utforska specifikationerna och definiera de parametrar som krävs för att utfor
 | `responseSpec.schema.properties.columns.items.properties.name` | Visar filens namn. |
 | `responseSpec.schema.properties.columns.items.properties.name.type` | Definierar datatypen för filnamnet. | `string` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

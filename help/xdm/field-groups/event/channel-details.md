@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: b8ec2f57-6882-466e-9b22-61fb2178fb1e
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '139'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `channel` | [Experience channel](../../data-types/experience-channel.md) | Ett objekt som beskriver produktreturer, garantiregistrering och kundvagns-/orderprocesser. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

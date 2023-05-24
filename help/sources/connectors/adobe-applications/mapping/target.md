@@ -6,7 +6,7 @@ description: Lär dig hur du mappar Adobe Target-händelsefält till ett XDM-sch
 exl-id: dab08ab6-6c1c-460a-bb52-8dcdb5709a34
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '482'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -87,4 +87,4 @@ I följande tabell beskrivs fälten i ett Experience Event-schema (*XDM Experien
 | `identityMap.TNTID` | `tntId.mboxPC` |
 | `identityMap.ECID` | `marketingCloudVisitorId` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

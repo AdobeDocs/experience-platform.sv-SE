@@ -6,7 +6,7 @@ description: Med slutpunkten /schemas i API:t för schemaregister kan du program
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1441'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ GET /{CONTAINER_ID}/schemas?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som innehåller de scheman som du vill hämta: `global` för scheman som skapats av Adobe eller `tenant` för scheman som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -61,7 +61,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Acce
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, med det ursprungliga `$ref` och `allOf` ingår. (Gräns: 300) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -112,7 +112,7 @@ GET /{CONTAINER_ID}/schemas/{SCHEMA_ID}
 | `{CONTAINER_ID}` | Behållaren som innehåller det schema som du vill hämta: `global` för ett schema som skapats av Adobe eller `tenant` för ett schema som ägs av din organisation. |
 | `{SCHEMA_ID}` | The `meta:altId` eller URL-kodad `$id` av schemat som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -139,7 +139,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Alla sökförfr
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
 | `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` och `allOf` har åtgärdats, har rubriker och beskrivningar. Föråldrade fält indikeras med en `meta:status` attribut för `deprecated`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -236,7 +236,7 @@ curl -X POST \
 | --- | --- |
 | `allOf` | En array med objekt, där varje objekt refererar till en klass eller fältgrupp vars fält schemat implementerar. Varje objekt innehåller en enda egenskap (`$ref`) vars värde representerar `$id` för den klass eller fältgrupp som det nya schemat kommer att implementera. En klass måste anges, med noll eller flera ytterligare fältgrupper. I ovanstående exempel är det enda objektet i `allOf` är schemats klass. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -297,7 +297,7 @@ PUT /tenant/schemas/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | The `meta:altId` eller URL-kodad `$id` av schemat som du vill skriva om. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -380,7 +380,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det schema som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -471,7 +471,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det schema som du vill aktivera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -554,7 +554,7 @@ DELETE /tenant/schemas/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för det schema som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

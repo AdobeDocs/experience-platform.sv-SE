@@ -6,7 +6,7 @@ description: Lär dig hur du definierar ett arrayfält i användargränssnittet 
 exl-id: 9ac55554-c29b-40b2-9987-c8c17cc2c00c
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '350'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Ytterligare konfigurationskontroller för arrayer är följande:
 | [!UICONTROL Maximum length] | Det maximala antalet objekt som matrisen måste innehålla för att importen ska lyckas. |
 | [!UICONTROL Unique items only] | Om inställt på &quot;[!UICONTROL True]&quot; måste varje objekt i arrayen vara unikt för att importen ska lyckas. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 När du är klar med att konfigurera fältet väljer du **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
 

@@ -2,7 +2,8 @@
 keywords: insikter;customer ai;customer ai insights;CAI query service;customer ai queries;customer ai scores
 title: Granskningsloggsöversikt i kundens AI
 description: Lär dig hur du visar och hanterar granskningsloggar i kundens AI.
-source-git-commit: 6f386d859b8553050ead266fad0e473c7cf7095e
+exl-id: f5b2d0b0-b6ae-4ccc-b4c9-ac9cc6078d81
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '279'
 ht-degree: 0%

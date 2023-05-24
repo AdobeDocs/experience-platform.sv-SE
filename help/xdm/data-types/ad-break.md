@@ -1,9 +1,10 @@
 ---
 title: Datatyp för annonsbrytning
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Ad break Experience Data Model).
-source-git-commit: 77fb3e348c2298fc5c325fcf2d3408da084b2b19
+exl-id: dfe0c386-8459-440d-95b5-b2139fac0fc3
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '121'
 ht-degree: 2%
 
 ---
@@ -20,7 +21,7 @@ ht-degree: 2%
 | `_id` | Sträng | En unik identifierare för annonsbrytningen. |
 | `offset` | Heltal | Förskjutningen i sekunder för annonsbrytningen från början av det primära innehållet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

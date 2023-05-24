@@ -5,7 +5,7 @@ description: Lär dig hur du definierar ett obligatoriskt XDM-fält i användarg
 exl-id: 3a5885a0-6f07-42f3-b521-053083d5b556
 source-git-commit: fe3d9a3fc473e7ca13f0e0c2f222bcc1b1a991c4
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '356'
 ht-degree: 0%
 
 ---

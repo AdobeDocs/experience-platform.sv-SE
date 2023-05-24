@@ -5,7 +5,7 @@ description: Skicka smidigt data från Adobe till Airship som målgruppstaggar f
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '910'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare som används i målet för Airship-taggar. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Tagggrupper
 

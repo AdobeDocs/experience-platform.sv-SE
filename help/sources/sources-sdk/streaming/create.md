@@ -3,9 +3,10 @@ title: Skapa en ny anslutningsspecifikation för Streaming SDK med API:t för Fl
 description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 hide: true
 hidefromtoc: true
-source-git-commit: 6b78ed695bca5912c9af4371a8423fdcd7471bde
+exl-id: ad8f6004-4e82-49b5-aede-413d72a1482d
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '748'
 ht-degree: 0%
 
 ---
@@ -44,7 +45,7 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 | {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Medallia |
 | {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `medallia-connectionSpec.json` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!TIP]
 >

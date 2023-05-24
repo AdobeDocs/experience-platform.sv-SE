@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här funktionen är för närvarande i betaversion och din organisation kanske inte har tillgång till den än. Funktionen och dokumentationen kan komma att ändras.
+>Den här funktionen är för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionen och dokumentationen kan komma att ändras.
 
 The **[!UICONTROL Monitoring]** I användargränssnittet för datainsamling kan du övervaka användningsmönster, fel och beräkningstid för egenskaper för vidarebefordran av händelser. Den här guiden ger en översikt på hög nivå över hur du visar och förstår de rapporter som visas på fliken.
 

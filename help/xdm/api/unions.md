@@ -6,7 +6,7 @@ description: Med slutpunkten /union i API:t för schemaregister kan du programm�
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Acce
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar en fullständig JSON-klass för varje resurs, med ursprunglig `$ref` och `allOf` ingår. (Gräns: 300) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -108,7 +108,7 @@ GET /tenant/schemas/{UNION_ID}
 | --- | --- |
 | `{UNION_ID}` | URL-kodad `$id` URI för den union som du vill söka efter. URI:er för föreningsscheman läggs till med &quot;__union&quot;. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -131,7 +131,7 @@ Följande accepterande huvuden är tillgängliga för fackschemasökningar:
 | `application/vnd.adobe.xed+json; version=1` | Raw med `$ref` och `allOf`. Innehåller rubriker och beskrivningar. |
 | `application/vnd.adobe.xed-full+json; version=1` | `$ref` attribut och `allOf` löstes. Innehåller rubriker och beskrivningar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -196,7 +196,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 | --- | --- |
 | `{CLASS_ID}` | The `$id` för den klass vars unionsaktiverade scheman du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -219,7 +219,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Acce
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar det fullständiga JSON-schemat för varje resurs, med det ursprungliga `$ref` och `allOf` ingår. (Gräns: 300) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 

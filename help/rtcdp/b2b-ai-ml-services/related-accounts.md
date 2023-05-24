@@ -5,8 +5,8 @@ description: En översikt och mer information om kontofunktionen i Experience Pl
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
 source-git-commit: 5d1488b26391d8ac758a2968194a6d070ad5b561
 workflow-type: tm+mt
-source-wordcount: '427'
-ht-degree: 3%
+source-wordcount: '424'
+ht-degree: 4%
 
 ---
 
@@ -24,7 +24,7 @@ B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara 
 | 4 | Acme Consulting Service | `http://www.acme.com/consulting` | Technology Consulting | NY | (212)471-0904 | x |
 | 5 | Acme IT |  |  | CA |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Med relaterade konton [!DNL Real-Time CDP B2B] visar nu en lista över konton som liknar det konto du bläddrar i.
 

@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: 597629c8-7f41-4c1c-95b6-aed5e16cee72
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '325'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 0%
 | `webinarConfirmationUrl` | [!UICONTROL String] | Webbinariets bekräftelse-URL för kampanjmedlemmen. |
 | `webinarRegistrationID` | [!UICONTROL String] | Registrerings-ID för webbinariet för kampanjmedlemmen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

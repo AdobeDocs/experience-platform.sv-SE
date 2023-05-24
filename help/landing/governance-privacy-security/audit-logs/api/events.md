@@ -4,7 +4,7 @@ description: Lär dig hur du hämtar granskningshändelser i Experience Platform
 exl-id: c365b6d8-0432-41a5-9a07-44a995f69b7d
 source-git-commit: c7887391481def872c40dd6ed1193bf562b9d0cf
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -156,4 +156,4 @@ Ett lyckat svar returnerar de resulterande datapunkterna för de mätvärden och
 | `action` | Den typ av åtgärd som spelades in för händelsen. En åtgärd kan vara något av följande: <ul><li>`Add` </li><li>`Create` </li><li>`Dataset activate` </li><li>`Dataset remove` </li><li>`Delete` </li><li>`Disable for profile` </li><li>`Enable` </li><li>`Enable for profile` </li><li>`Profile activate` </li><li>`Profile remove` </li><li>`remove` </li><li>`reset` </li><li>`segment activate` </li><li>`segment remove` </li><li>`update` </li></ul> |
 | `status` | Åtgärdens status. En status kan vara något av följande: </li><li>`Allow` </li><li>`Deny` </li><li>`Failure` </li><li>`Success` </li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

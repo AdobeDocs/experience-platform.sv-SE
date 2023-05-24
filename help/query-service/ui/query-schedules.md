@@ -1,7 +1,8 @@
 ---
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '723'
 ht-degree: 0%
@@ -38,7 +39,7 @@ Sidan med schemainformation visas. På den här sidan kan du välja frekvens fö
 
 Du kan välja följande alternativ för **[!UICONTROL Frequency]**:
 
-- **[!UICONTROL Hourly]**: Den schemalagda frågan kommer att köras varje timme för den datumperiod du har valt.
+- **[!UICONTROL Hourly]**: Den schemalagda frågan körs varje timme för den datumperiod du har valt.
 - **[!UICONTROL Daily]**: Den schemalagda frågan kommer att köras var X:e dag vid den tidpunkt och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
 - **[!UICONTROL Weekly]**: Den valda frågan körs på de veckodagar, tidpunkter och datumperioder som du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
 - **[!UICONTROL Monthly]**: Den valda frågan kommer att köras varje månad på den dag, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
@@ -67,5 +68,3 @@ Välj ett schema bland raderna i tillgängliga scheman. Du kan använda växling
 Välj **[!UICONTROL Delete a schedule]** om du vill ta bort det inaktiverade schemat.
 
 ![Arbetsytan för scheman med Inaktivera schema och Ta bort schema markerat.](../images/ui/query-schedules/delete-schedule.png)
-
-

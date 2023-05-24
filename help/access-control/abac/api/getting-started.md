@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Attributbaserad åtkomstkontroll;attributbaserad åtkomstkontroll
 title: Komma igång med det attributbaserade API:t för åtkomstkontroll
-description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och åtkomstprinciper i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och åtkomstprinciper i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: d1a66afa-dff4-49d7-b57c-527f05977155
 source-git-commit: 54e15234d1b1050ea2cdb8b7d37c79a133a339f1
 workflow-type: tm+mt
 source-wordcount: '330'
-ht-degree: 0%
+ht-degree: 4%
 
 ---
 

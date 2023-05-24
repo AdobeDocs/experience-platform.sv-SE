@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;källor;API;utforska;flödestjänst
 title: Utforska en tabellkälla med API:t för flödestjänsten
 description: I den här självstudien används API:t för Flow Service för att utforska innehållet och strukturen i en tabellbaserad källa.
-source-git-commit: 1333eac5e022ef32f051120496154a88e2f9324e
+exl-id: 0c7a5b8a-2071-4ac2-b2d1-c5534e7c7d9c
+source-git-commit: 3bdeec8284873b8d9368f833b24e9922ed489019
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 1%
@@ -15,7 +16,7 @@ I den här självstudiekursen beskrivs hur du utforskar och förhandsgranskar st
 
 >[!NOTE]
 >
-> För att kunna utforska datatabellerna måste du redan ha ett giltigt ID för basanslutning för en tabellkälla. Om du inte har det här ID:t kan du följa de här självstudiekurserna för hur du skapar ett grundläggande anslutnings-ID för en tabellkälla: <ul><li>[Reklam](../../../home.md#advertising)</li><li>[CRM](../../../home.md#customer-relationship-management)</li><li>[Nöjda kunder](../../../home.md#customer-success)</li><li>[Databas](../../../home.md#database)</li><li>[E-handel](../../../home.md#ecommerce)</li><li>[Automatisering av marknadsföring](../../../home.md#marketing-automation)</li><li>[Betalningar](../../../home.md#payments)</li><li>[Protokoll](../../../home.md#protocols)</li></ul>
+> För att kunna utforska datatabellerna måste du redan ha ett giltigt ID för basanslutning för en tabellkälla. Om du inte har det här ID:t kan du följa de här självstudiekurserna för hur du skapar ett grundläggande anslutnings-ID för en tabellkälla: <ul><li>[Advertising](../../../home.md#advertising)</li><li>[CRM](../../../home.md#customer-relationship-management)</li><li>[Nöjda kunder](../../../home.md#customer-success)</li><li>[Databas](../../../home.md#database)</li><li>[E-handel](../../../home.md#ecommerce)</li><li>[Automatisering av marknadsföring](../../../home.md#marketing-automation)</li><li>[Betalningar](../../../home.md#payments)</li><li>[Protokoll](../../../home.md#protocols)</li></ul>
 
 ## Komma igång
 

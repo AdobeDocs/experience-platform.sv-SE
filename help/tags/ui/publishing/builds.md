@@ -1,7 +1,8 @@
 ---
 title: Bygger
 description: Lär dig mer om byggkoncept och hur de fungerar i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: af899282-aa2d-4395-8dbd-18d91be3f041
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '787'
 ht-degree: 0%
@@ -12,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Ett bygge är den uppsättning filer som innehåller all kod som körs på klientenheten.
 
 Det är en sammansatt av de ändringar som du har angett i ditt bibliotek samt allt som har skickats, godkänts eller publicerats före det.
 
-Bygget består av kodfiler på klientsidan som refererar till varandra. Dessa filer levereras till din värdplats med den miljö och värd som du har valt för biblioteket. Koden som du distribuerar på din plats pekar på samma plats så att filerna kan läsas in när en användare kommer åt din plats eller ditt program.
+Bygget består av kodfiler på klientsidan som refererar till varandra. Dessa filer levereras till din värdplats med den miljö och värddator som du har valt för biblioteket. Koden som du distribuerar på din plats pekar på samma plats så att filerna kan läsas in när en användare kommer åt din plats eller ditt program.
 
 ## Filinnehåll
 
@@ -41,7 +42,7 @@ De mindre filerna innehåller kod och konfiguration för enskilda åtgärder som
 
 Standardfilformatet för byggen är ett paket med filer som innehåller all kod som krävs för att dina tillägg, dataelement och regler ska kunna köras på det sätt som du vill.
 
-I vissa fall kanske du föredrar ett ZIP-arkiv av filerna i stället för den körbara kodfilen på klientsidan. Du kan till exempel skapa ett arkiv om du själv är värd för ditt bygge och vill använda bygget i en annan distribution. Om du anger något i den självhanterade sökvägen till biblioteksfältet kan du spara din miljö. Tillsammans med den nya koden blir en länk till den arkiverade nedladdningen tillgänglig. När biblioteket har byggts kan du distribuera en ZIP-fil till Akamai och hämta den från `assets.adobedtm.com/...`.
+I vissa fall kanske du föredrar ett ZIP-arkiv av filerna i stället för den körbara kodfilen på klientsidan. Du kan till exempel skapa ett arkiv om du själv är värd för ditt bygge och vill använda bygget i en annan distribution. Om du anger något i den självhanterade sökvägen till biblioteksfältet kan du spara din miljö. Tillsammans med den nya koden blir en länk till den arkiverade nedladdningen tillgänglig. När biblioteket har byggts kan du distribuera en zip-fil till Akamai och hämta den från `assets.adobedtm.com/...`.
 
 >[!NOTE]
 >
@@ -75,6 +76,6 @@ Om du vill se den ominifierade koden tar du bort .min från filnamnet:
 
 Om en tilläggsutvecklare tillhandahåller minierad kod med sitt tillägg, tillhandahåller inte Platform icke-minified-kod i den icke-minifierade versionen. På samma sätt gäller att om en plattformsanvändare placerar minierad kod i en anpassad kodruta så är koden fortfarande minifierad i icke-minifierade byggen. Platform tar inte bort någonting från miniatyrerna.
 
-Mer information om miniatyrbilder finns i [den här artikeln om staplingssökväg](https://blog.stackpath.com/glossary/minification/).
+Mer information om miniatyrbilder finns i [den här staplingsbanans artikel](https://blog.stackpath.com/glossary/minification/).
 
 När du skapar en version skapas det ominifierade biblioteket först och sedan minimeras hela biblioteket samtidigt.

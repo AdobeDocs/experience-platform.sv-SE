@@ -5,7 +5,7 @@ description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalo
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
 source-git-commit: 69e1f065cb3b302c4b144f39c84179075379f648
 workflow-type: tm+mt
-source-wordcount: '1108'
+source-wordcount: '1102'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ Målkorten innehåller alternativ för primär och sekundär kontroll. De primä
 | [!UICONTROL View dataflows] | Visa dataaktiveringsflödena som finns för ett mål. |
 | [!UICONTROL View documentation] | Öppnar en länk till dokumentationssidan för det specifika målet, för mer information och för att hjälpa dig att konfigurera det. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ![Kontroll av destinationskortet](../assets/ui/workspace/destination-card-options.png)
 
@@ -84,7 +84,7 @@ The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som 
 | [!UICONTROL Destinations] | Representerar antalet unika slutförda måldataflöden som är kopplade till grundläggande information som skapats för ett mål. |
 | [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## [!UICONTROL Browse] {#browse}
 
@@ -126,4 +126,4 @@ The **[!UICONTROL System View]** I visas en grafisk representation av de aktiver
 
 Välj något av de mål som visas på sidan och klicka på **[!UICONTROL View dataflows]** om du vill visa information om alla anslutningar som du har konfigurerat för varje mål.
 
-![Dataflöden2](../assets/ui/workspace/data-flows2.png)
+![Data-flows2](../assets/ui/workspace/data-flows2.png)

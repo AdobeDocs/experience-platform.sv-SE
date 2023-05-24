@@ -1,7 +1,8 @@
 ---
 title: Bibliotek
 description: Lär dig mer om taggbibliotek och hur de fungerar i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 4d6f86e6-5684-4635-aaf1-87ba10cd7d94
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 1%
@@ -12,7 +13,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Ett bibliotek är en uppsättning instruktioner för hur tillägg, dataelement och regler interagerar med varandra när de har distribuerats. När du skapar ett bibliotek anger du vilka ändringar du vill göra i biblioteket. Vid byggtillfället kombineras dessa ändringar med allt som har skickats, godkänts eller publicerats i tidigare bibliotek.
 
@@ -28,9 +29,9 @@ Bibliotek måste tilldelas till en miljö innan de kan kompileras till ett bygge
 
 Så här skapar du ett bibliotek:
 
-1. Öppna fliken [!UICONTROL Publishing].
+1. Öppna [!UICONTROL Publishing] -fliken.
 
-   På sidan [!UICONTROL Publishing] visas Dev-biblioteken och du kan skicka dem för godkännande, flytta dem till mellanlagring eller publicera dem i produktion.
+   The [!UICONTROL Publishing] På sidan visas Dev-biblioteken och du kan skicka in dem för godkännande, flytta dem till mellanlagring eller publicera dem i produktion.
 
 1. Välj **[!UICONTROL Add New Library]**.
 
@@ -39,7 +40,7 @@ Så här skapar du ett bibliotek:
 1. Namnge biblioteket.
 1. Tilldela biblioteket till en Dev-miljö.
 1. Lägg till en ändring i biblioteket.
-Om du vill lägga till ett objekt markerar du **[!UICONTROL Add a Change]** och väljer sedan de objekt som du vill lägga till. Alla objekt som har redigerats eller tagits bort kan läggas till i det valda biblioteket.
+Om du vill lägga till ett objekt väljer du **[!UICONTROL Add a Change]** väljer du sedan de objekt som du vill lägga till. Alla objekt som har redigerats eller tagits bort kan läggas till i det valda biblioteket.
 
    ![](../../images/library-add-change.jpg)
 
@@ -58,7 +59,7 @@ När ett bibliotek har skapats använder du listrutan för det biblioteket för 
 
 * **Redigera**: Med det här alternativet kan du ändra bibliotekskonfigurationen.
 
-* **Build for Development**: Det här alternativet kompilerar en bygge och distribuerar den till den tilldelade miljön.
+* **Bygg för utveckling**: Det här alternativet kompilerar en bygge och distribuerar den till den tilldelade miljön.
 
 * **Skicka för godkännande**: Med det här alternativet blir biblioteket tillgängligt för en godkännare så att det kan flyttas till nästa steg i publiceringsprocessen.
 
@@ -70,10 +71,10 @@ När ett bibliotek har skapats använder du listrutan för det biblioteket för 
 
 Om du vill lägga till i ett bibliotek utför du följande steg.
 
-1. Installera de [tillägg](../managing-resources/extensions/overview.md) som du vill lägga till.
-1. Skapa [dataelementen](../managing-resources/data-elements.md) och reglerna som du vill lägga till.
-1. Öppna fliken **[!UICONTROL Publishing]**.
-1. Markera [biblioteket](libraries.md) som du vill ändra och välj sedan **[!UICONTROL Edit]**.
+1. Installera [tillägg](../managing-resources/extensions/overview.md) du vill lägga till.
+1. Skapa [dataelement](../managing-resources/data-elements.md) och regler som du vill lägga till.
+1. Öppna **[!UICONTROL Publishing]** -fliken.
+1. Välj [bibliotek](libraries.md) du vill ändra och sedan markera **[!UICONTROL Edit]**.
 1. Använd knapparna för regler, dataelement och tillägg för att markera de objekt som du vill lägga till i biblioteket.
 1. Spara ändringarna.
 
@@ -89,7 +90,7 @@ Om du vill ta bort något från ett bibliotek måste du inaktivera det och sedan
 
 1. Inaktivera de tillägg som du vill ta bort, tillsammans med eventuella dataelement och regler som är beroende av dessa tillägg.
 1. Inaktivera de dataelement och regler som du vill ta bort.
-1. Öppna fliken **[!UICONTROL Publishing]**.
+1. Öppna **[!UICONTROL Publishing]** -fliken.
 1. Markera det bibliotek som du vill ändra.
 1. Använd knapparna för regler, dataelement och tillägg för att markera de inaktiverade objekt som du vill ta bort från biblioteket.
 1. Spara ändringarna.
@@ -98,7 +99,7 @@ Om du vill ta bort något från ett bibliotek måste du inaktivera det och sedan
 
 Om du vill redigera biblioteksalternativen utför du följande steg.
 
-1. Välj ett bibliotek och välj **[!UICONTROL Edit]** för att visa biblioteksändringar. Alla ändringar visas i listan [!UICONTROL Library Contents].
+1. Välj ett bibliotek och markera **[!UICONTROL Edit]** för att visa biblioteksändringar. Alla ändringar visas i [!UICONTROL Library Contents] lista.
 
    ![](../../images/library-contents.jpg)
 
@@ -106,7 +107,7 @@ Om du vill redigera biblioteksalternativen utför du följande steg.
 
    ![](../../images/library-contents-revision.jpg)
 
-1. Välj om du vill visa **alla** objekt eller **ändrade** objekt.
+1. Välj om du vill visa **Alla** objekt eller **Ändrad** objekt.
 1. Markera revisionen och välj sedan **[!UICONTROL Select Revision]**.
 1. Välj antingen **[!UICONTROL Add a Change]** eller **[!UICONTROL Add All Changed Resources]**.
 
@@ -114,12 +115,12 @@ Om du vill redigera biblioteksalternativen utför du följande steg.
 
 Biblioteken innehåller en uppsättning ändringar som du vill göra i din distribuerade kod. Active Library gör detta enklare så att du snabbt kan iterera igenom ändringarna och se effekten.
 
-Tillägg, regler och dataelement kan nu sparas direkt i det bibliotek du arbetar i. Om det behövs kan en ny version också skapas eller till och med ett nytt bibliotek från listrutan [!UICONTROL Active Library].
+Tillägg, regler och dataelement kan nu sparas direkt i det bibliotek du arbetar i. Om det behövs kan en ny version också skapas eller till och med ett nytt bibliotek från [!UICONTROL Active Library] nedrullningsbar meny.
 
 Följande lista innehåller mer information om hur du hanterar ett aktivt bibliotek.
 
 1. [Skapa ett nytt bibliotek](libraries.md#create-a-library).
-1. Gå till [Regler](../managing-resources/rules.md), [Dataelement](../managing-resources/data-elements.md) eller [Tillägg](../managing-resources/extensions/overview.md).
+1. Gå till [Regler](../managing-resources/rules.md), [Dataelement](../managing-resources/data-elements.md), eller [Tillägg](../managing-resources/extensions/overview.md).
 1. Välj ditt aktiva bibliotek.
 1. Gör ändringarna och spara och bygg sedan biblioteket.
 1. Testa ändringarna och upprepa stegen efter behov.

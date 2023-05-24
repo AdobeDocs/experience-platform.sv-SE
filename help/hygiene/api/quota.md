@@ -4,7 +4,7 @@ description: Med slutpunkten /quota i Data Hygiene API kan du övervaka din data
 exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
 source-git-commit: 1c6a5df6473e572cae88a5980fe0db9dfcf9944e
 workflow-type: tm+mt
-source-wordcount: '350'
+source-wordcount: '347'
 ht-degree: 1%
 
 ---
@@ -83,4 +83,4 @@ Ett lyckat svar returnerar detaljerna om dina datahygien.
 | --- | --- |
 | `quotas` | Visar kvotinformation för varje datahygien-jobbtyp. Varje kvotobjekt innehåller följande egenskaper:<ul><li>`name`: Typ av datahygien:<ul><li>`expirationDatasetQuota`: Utgångsdatum för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li></ul></li><li>`description`: En beskrivning av jobbtypen för datahygien.</li><li>`consumed`: Antalet jobb av den här typen som körs under den aktuella månadsperioden.</li><li>`quota`: Kvotgränsen för den här jobbtypen. För postborttagningar och uppdateringar representerar detta antalet jobb som kan köras för varje månadsperiod. För datauppsättningens förfallodatum representerar detta antalet jobb som kan vara aktiva samtidigt vid en given tidpunkt.</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

@@ -6,7 +6,7 @@ description: Med slutpunkten /behaviors i API:t för schemaregister kan du hämt
 exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '423'
 ht-degree: 1%
 
 ---
@@ -101,7 +101,7 @@ GET /global/behaviors/{BEHAVIOR_ID}
 | --- | --- |
 | `{BEHAVIOR_ID}` | The `meta:altId` eller URL-kodad `$id` av beteendet du vill hitta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

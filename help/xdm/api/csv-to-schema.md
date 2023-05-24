@@ -4,7 +4,7 @@ description: Med slutpunkten /rpc/csv2schema i API:t för schemaregister kan du 
 exl-id: cf08774a-db94-4ea1-a22e-bb06385f8d0e
 source-git-commit: b4c186c8c40d1372fb5011f49979523e1201fb0b
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '854'
 ht-degree: 5%
 
 ---
@@ -49,7 +49,7 @@ Om du vill använda den här slutpunkten måste du först skapa en CSV-fil med l
 | 22 | `$ref` | (Se beskrivning) | Obligatoriskt om `dataType` är inställd på `object` och `properties` är inte definierad. Detta definierar `$id` av det refererade objektet för objekttypen (t.ex. `https://ns.adobe.com/xdm/context/person`). |
 | 23 | `comment` | Valfritt | När `isIgnored` är inställd på `true`, används den här kolumnen för att ange schemats rubrikinformation. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se följande [CSV-mall](../assets/sample-csv-template.csv) för att avgöra hur CSV-filen ska formateras.
 

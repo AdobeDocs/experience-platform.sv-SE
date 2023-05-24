@@ -6,8 +6,8 @@ description: Dokumentet innehåller en översikt över XDM-datatypen Browser Det
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '262'
-ht-degree: 4%
+source-wordcount: '259'
+ht-degree: 5%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 4%
 | `viewportHeight` | Heltal | Den lodräta storleken i pixlar i fönstret som händelsen visades inuti. För en webbvyhändelse är detta höjden på webbläsarens visningsruta. |
 | `viewportWidth` | Heltal | Den vågräta storleken i pixlar på fönstret där händelsen visades. För en webbvyhändelse är detta bredden på webbläsarens visningsruta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

@@ -5,7 +5,7 @@ description: Adobe Target är en applikation som innehåller AI-baserade persona
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
 source-git-commit: f97b667f8d4dc311683b018bb1c1792aae871648
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '998'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!DNL Profile request]** | Du begär alla segment som är mappade i Adobe Target-målet för en enskild profil. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Användningsfall {#use-cases}
 

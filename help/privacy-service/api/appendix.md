@@ -6,8 +6,8 @@ description: Det här dokumentet innehåller ytterligare information om hur du a
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
-source-wordcount: '485'
-ht-degree: 3%
+source-wordcount: '476'
+ht-degree: 4%
 
 ---
 
@@ -33,7 +33,7 @@ I följande tabell beskrivs flera vanliga, fördefinierade identitetstyper som �
 | [!DNL Google] Annons-ID | `GAID` | `20914` |
 | [!DNL Windows] AID | `WAID` | `8` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -55,7 +55,7 @@ När du anger en `namespace` värdet i [!DNL Privacy Service] API, en **namnutry
 | `analytics` | Ett anpassat namnutrymme som mappas internt i [!DNL Analytics], inte i namnområdestjänsten. Detta skickas in direkt enligt den ursprungliga begäran, utan något namnområdes-ID |
 | `target` | Ett anpassat namnutrymme som tolkas internt av [!DNL Target], inte i namnområdestjänsten. Detta skickas in direkt enligt den ursprungliga begäran, utan något namnområdes-ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Godkända produktvärden
 
@@ -75,4 +75,4 @@ I följande tabell visas godkända värden för att ange en Adobe-produkt i `inc
 | Identitetstjänst | `identity` |
 | Marketo Engage | `marketo` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

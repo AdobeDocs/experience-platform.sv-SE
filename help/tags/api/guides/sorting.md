@@ -1,7 +1,8 @@
 ---
 title: Sorteringssvar i Reaktors-API
 description: Lär dig hur du filtrerar resultat när du visar resurser i Reactor API.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: 49dcf0b6-4ce8-41d9-9e3a-e44f5c0ff905
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '123'
 ht-degree: 0%
@@ -10,25 +11,22 @@ ht-degree: 0%
 
 # Sortera svar i Reactor API
 
-Genom att visa slutpunkter i Reaktors API kan du sortera returnerade resurser baserat på angivna attribut. Du kan konfigurera sorteringsordningen för svaret genom att ange en `sort`-parameter i sökvägen för begäran.
+Genom att visa slutpunkter i Reaktors API kan du sortera returnerade resurser baserat på angivna attribut. Du kan konfigurera sorteringsordningen för svaret genom att ange en `sort` -parametern i begärandesökvägen.
 
 ## Sortera stigande
 
-Resurserna kan sorteras efter ett attribut i stigande ordning genom att ange
-det attribut som ska sorteras och prefixera det med en `+`:
+Resurserna kan sorteras efter ett attribut i stigande ordning genom att ange vilket attribut de ska sorteras efter och sedan prefixera det med en `+`:
 
 `GET /companies/:company_id/properties?sort=+name`
 
 ## Sortera fallande
 
-Resurserna kan sorteras efter ett attribut i fallande ordning genom att ange
-det attribut som ska sorteras och prefixera det med en `-`:
+Resurserna kan sorteras efter ett attribut i fallande ordning genom att ange vilket attribut de ska sorteras efter och sedan prefixera det med en `-`:
 
 `GET /companies/:company_id/properties?sort=-name`
 
 ## Flera sorters
 
-Om du vill sortera efter flera värden anger du sorteringsdirektiven som kommaavgränsade
-lista:
+Om du vill sortera efter flera värden anger du sorteringsdirektiven som en kommaavgränsad lista:
 
 `GET /companies/:company_id/properties?sort=+name,-org_id`

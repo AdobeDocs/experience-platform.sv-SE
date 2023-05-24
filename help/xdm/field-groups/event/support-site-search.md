@@ -1,23 +1,24 @@
 ---
-title: Support Site Search Schema Field Group
-description: This document provides an overview of the Support Site Search schema field group.
-source-git-commit: 760b82c89730a74ca5f5dd331d543f43eec1e0d6
+title: Fältgrupp för webbplatssökningens schema
+description: Det här dokumentet innehåller en översikt över schemafältgruppen Support Site Search.
+exl-id: 7bd442f0-f85c-491f-91ad-8b14b4b431eb
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '85'
+source-wordcount: '82'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL Support Site Search]
+# [!UICONTROL Support Site Search] schemafältgrupp
 
-[!UICONTROL Support Site Search][[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) `siteKnowledge.supportSiteSearch`
+[!UICONTROL Support Site Search] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Den ger en `siteKnowledge.supportSiteSearch` till ett schema som samlar in information om en sökning på en supportwebbplats.
 
 ![](../../images/field-groups/support-site-search.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `supportSiteSearch` | [[!UICONTROL Internal Site Search]](../../data-types/internal-site-search.md) | Captures the details about the search event. |
+| `supportSiteSearch` | [[!UICONTROL Internal Site Search]](../../data-types/internal-site-search.md) | Hämtar information om söktiden. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-support-site-search.schema.json)
+Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-support-site-search.schema.json).

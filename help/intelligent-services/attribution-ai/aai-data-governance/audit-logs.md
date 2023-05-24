@@ -2,7 +2,8 @@
 keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribueringsfrågor;attribueringspoäng
 title: Granskningsloggar i Attribution AI Översikt
 description: Lär dig hur du visar och hanterar granskningsloggar i Attribution AI.
-source-git-commit: a68d4634c6341f27673fdd70d96f7e214032b5a9
+exl-id: 83c55dbc-f03d-4bda-ae07-68b7914483c8
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '268'
 ht-degree: 0%
@@ -22,4 +23,3 @@ I grundläggande bemärkelse anger en granskningslogg vem som utförde vilken å
 När funktionen är aktiverad för din organisation samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt.
 
 För att kunna visa och exportera granskningsloggar måste du ha beviljats åtkomstkontrollbehörighet för granskningsloggar i Adobe Console. Läs mer om hur du hanterar enskilda behörigheter för Attribution AI i [dokumentation om åtkomstkontroll](../aai-data-governance/access-controls.md).
-

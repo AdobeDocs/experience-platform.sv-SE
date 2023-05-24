@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-guide för principtjänst
-description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
 source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
 workflow-type: tm+mt
 source-wordcount: '545'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -27,7 +27,7 @@ Med etiketter för dataanvändning kan du kategorisera datauppsättningar och f�
 
 Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrning är åtgärder som [!DNL Experience Platform] dataanvändare kan använda, som din organisation vill begränsa dataanvändningen för. Detaljerad information om hur du arbetar med marknadsföringsåtgärder finns i [slutpunktsguide för marknadsföringsåtgärder](./marketing-actions.md).
 
-## Profiler
+## Policyer
 
 Datastyrningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom [!DNL Experience Platform].
 

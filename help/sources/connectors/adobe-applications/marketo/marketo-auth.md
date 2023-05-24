@@ -83,7 +83,7 @@ The **[!DNL Installed services]** sidan innehåller en lista över befintliga tj
 
 Ange ett beskrivande visningsnamn för den nya tjänsten och välj sedan **[!DNL Custom]** från **[!DNL Service]** nedrullningsbar meny. Ange en lämplig beskrivning och välj sedan den användare som du vill tilldela från **[!DNL API Only User]** nedrullningsbar meny. När du har fyllt i de nödvändiga uppgifterna väljer du **[!DNL Create]** för att skapa en ny anpassad tjänst.
 
-![skapa](../images/marketo/create.png)
+![create](../images/marketo/create.png)
 
 ## Hämta klient-ID och klienthemlighet
 

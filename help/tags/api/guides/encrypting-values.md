@@ -1,23 +1,23 @@
 ---
 title: Krypteringsvärden
 description: Lär dig hur du krypterar känsliga värden när du använder Reactor API.
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: d89e7f43-3bdb-40a5-a302-bad6fd1f4596
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
 # Krypteringsvärden
 
-När du använder taggar i Adobe Experience Platform kräver vissa arbetsflöden att du anger känsliga värden (till exempel en privat nyckel när du levererar bibliotek till miljöer via värdar). Dessa fullmakters känsliga karaktär gör det nödvändigt
-säker överföring och lagring.
+När du använder taggar i Adobe Experience Platform kräver vissa arbetsflöden att du anger känsliga värden (till exempel en privat nyckel när du levererar bibliotek till miljöer via värdar). Den känsliga karaktären hos dessa autentiseringsuppgifter kräver säker överföring och lagring.
 
 I det här dokumentet beskrivs hur du krypterar känsliga värden med [GnuPG-kryptering](https://www.gnupg.org/gph/en/manual/x110.html) (kallas även GPG) så att bara taggsystemet kan läsa dem.
 
 ## Hämta den offentliga GPG-nyckeln och kontrollsumman
 
-När du har [laddat ned](https://gnupg.org/download/) och installerat den senaste versionen av GPG måste du hämta den offentliga GPG-nyckeln för taggproduktionsmiljön:
+Efter [nedladdning](https://gnupg.org/download/) och installera den senaste versionen av GPG måste du skaffa den offentliga GPG-nyckeln för taggarnas produktionsmiljö:
 
 * [GPG-tangent](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg)
 * [Kontrollsumma](https://github.com/adobe/reactor-developer-docs/blob/master/files/launch%40adobe.com_pub.gpg.sum)
@@ -36,7 +36,7 @@ gpg --import {KEY_NAME}
 | --- | --- |
 | `{KEY_NAME}` | Namnet på filen med den offentliga nyckeln. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Exempel**
 
@@ -46,7 +46,7 @@ gpg --import launch@adobe.com_pub.gpg
 
 ## Kryptera värden
 
-När du har lagt till nyckeln i nyckelkedjan kan du börja kryptera värden med flaggan `--encrypt`. Följande skript visar hur det här kommandot fungerar:
+När du har lagt till nyckeln i nyckelkedjan kan du börja kryptera värden med `--encrypt` flagga. Följande skript visar hur det här kommandot fungerar:
 
 ```shell
 echo -n 'Example value' | gpg --armor --encrypt -r "Tags Data Encryption <launch@adobe.com>"
@@ -54,12 +54,12 @@ echo -n 'Example value' | gpg --armor --encrypt -r "Tags Data Encryption <launch
 
 Det här kommandot kan delas upp enligt följande:
 
-* Indata skickas till kommandot `gpg`.
+* Indata skickas till `gpg` -kommando.
 * `--armor` skapar ASCII-upphöjda utdata i stället för binära. Detta gör det enklare att överföra värdet via JSON.
 * `--encrypt` instruerar GPG att kryptera data.
-* `-r` anger mottagaren för data. Endast mottagaren (den som har den privata nyckeln som motsvarar den offentliga nyckeln) får dekryptera data. Mottagarnamnet för den önskade nyckeln kan hittas genom att undersöka utdata för `gpg --list-keys`.
+* `-r` anger mottagaren för data. Endast mottagaren (den som har den privata nyckeln som motsvarar den offentliga nyckeln) får dekryptera data. Mottagarnamnet för den önskade nyckeln kan hittas genom att undersöka utdata från `gpg --list-keys`.
 
-Ovanstående kommando använder den offentliga nyckeln för `Tags Data Encryption <launch@adobe.com>` för att kryptera värdet `Example value` i ASCII-upphöjt format.
+Ovanstående kommando använder den offentliga nyckeln för `Tags Data Encryption <launch@adobe.com>` för att kryptera värdet, `Example value`, i ASCII-format.
 
 Kommandots utdata skulle likna följande:
 
@@ -83,8 +83,7 @@ OUoIPf4KxTaboHZOEy32ZBng5heVrn4i9w==
 -----END PGP MESSAGE-----
 ```
 
-Dessa utdata kan endast dekrypteras av system som har den privata nyckeln som
-motsvarar den offentliga `Tags Data Encryption <launch@adobe.com>`-nyckeln.
+Dessa utdata kan endast dekrypteras av system som har den privata nyckel som motsvarar `Tags Data Encryption <launch@adobe.com>` offentlig nyckel.
 
 Detta utdatavärde är det värde som ska anges i en när data skickas till Reactor API. Systemet lagrar krypterade utdata och dekrypterar dem tillfälligt efter behov. Systemet dekrypterar till exempel värdautentiseringsuppgifterna tillräckligt länge för att initiera en anslutning till servern och tar sedan omedelbart bort alla spår av det dekrypterade värdet.
 

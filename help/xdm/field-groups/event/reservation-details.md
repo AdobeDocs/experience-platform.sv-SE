@@ -2,19 +2,19 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;reservation details;
 title: Fältgrupp för reservationsdetaljschema
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Reservationsdetaljer.
-source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
+exl-id: 06f9ee37-9879-4db2-af68-9336366f7521
+source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
 workflow-type: tm+mt
-source-wordcount: '325'
+source-wordcount: '322'
 ht-degree: 1%
 
 ---
 
-
 # [!UICONTROL Reservation Details] schemafältgrupp
 
-[!UICONTROL Reservation Details] är en standardgrupp för schemafält för den  [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) klass som används för att samla in information om en reservation, inklusive längd, ändring, återbetalningsstatus och antal rum.
+[!UICONTROL Reservation Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en reservation, inklusive längd, ändring, återbetalningsstatus och antal rum.
 
-Fältgruppen innehåller ett enskilt fält av objekttyp, `reservations`. Egenskaperna i det här objektet förklaras nedan.
+Fältgruppen innehåller ett enda fält av objekttyp, `reservations`. Egenskaperna i det här objektet förklaras nedan.
 
 ![Struktur för reservationsinformation](../../images/field-groups/reservation-details.png)
 
@@ -37,7 +37,7 @@ Fältgruppen innehåller ett enskilt fält av objekttyp, `reservations`. Egenska
 | `startDate` | DateTime | Startdatum för hämtning, utgående eller incheckning av reservationen. |
 | `triptype` | Sträng | Anger om reservationen gäller en enkelriktad resa, en rundtur eller en flerstadstrafik. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
@@ -46,7 +46,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
 ## Branschspecifika bokningsfältgrupper
 
-Det finns flera andra standardfältgrupper som utökar [!UICONTROL Reservation Details]-schemat för branschspecifika användningsfall. Mer information finns i följande dokumentation:
+Det finns flera andra standardfältgrupper som utökar [!UICONTROL Reservation Details] för branschspecifika användningsfall. Mer information finns i följande dokumentation:
 
 * [[!UICONTROL Dining Reservation]](./dining-reservation.md)
 * [[!UICONTROL Flight Reservation]](./flight-reservation.md)

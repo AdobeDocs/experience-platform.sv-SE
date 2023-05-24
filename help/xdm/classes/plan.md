@@ -1,9 +1,10 @@
 ---
 title: Plan, klass
 description: Det här dokumentet innehåller en översikt över klassen Plan i Experience Data Model (XDM).
-source-git-commit: cf39f943e27cd11b0eabbc344774fa12482a8f92
+exl-id: ccff962d-3104-482c-8d65-d2bd2602a9be
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---
@@ -20,6 +21,6 @@ I Experience Data Model (XDM) är [!UICONTROL Plan] klassen innehåller den mins
 | `planId` | [!UICONTROL String] | En unik identifierare för planen. |
 | `planName` | [!UICONTROL String] | Namnet på planen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Klassen kan utökas med [[!UICONTROL Healthcare Plan Details] fältgrupp](../field-groups/plan/healthcare-plan-details.md) Beskriv närmare uppgifter om en sjukförsäkringsplan.

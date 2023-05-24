@@ -5,7 +5,7 @@ description: Trade Desk är en självbetjäningsplattform för annonsköpare som
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '637'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Tra
 | IDFA | [!DNL Apple ID for Advertisers] |
 | The Trade Desk ID | Advertiser ID i Trade Desk-plattformen |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -45,7 +45,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 

@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över webbsidans infor
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '401'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ Datatypen är avsedd för fullständig sidinformation och inledande sidinläsnin
 | `siteSection` | Sträng | Det normativa namnet på det webbplatsavsnitt där den här webbsidan finns. Detta kan användas för att klassificera eller kategorisera interaktionen. |
 | `viewName` | Sträng | Vyns namn på en sida. Den här egenskapen används vanligtvis för enkelsidiga program eller sidor med tabbar eller kontroller som ändrar större delen av sidlayouten. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

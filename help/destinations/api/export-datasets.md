@@ -3,7 +3,8 @@ solution: Experience Platform
 title: (Beta) Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
-source-git-commit: d0de642eb6118e6597925c12c76917ffa98c3a5a
+exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '3333'
 ht-degree: 0%

@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /data_elements i Reaktors-API:t
 exl-id: ea346682-441b-415b-af06-094158eb7c71
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '1411'
+source-wordcount: '1369'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ GET /properties/{PROPERTY_ID}/data_elements
 | --- | --- |
 | `PROPERTY_ID` | The `id` för den egenskap som äger dataelementen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -186,7 +186,7 @@ GET /data_elements/{DATA_ELEMENT_ID}
 | --- | --- |
 | `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -316,7 +316,7 @@ POST /properties/{PROPERTY_ID}/data_elements
 | --- | --- |
 | `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar dataelementet under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -364,7 +364,7 @@ curl -X POST \
 | `attributes.clean_text` | Ett booleskt värde som anger om inledande och avslutande blanksteg ska tas bort från dataelementvärdet innan det lagras. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `data_elements`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -482,7 +482,7 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 | --- | --- |
 | `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -512,7 +512,7 @@ curl -X PATCH \
 | `id` | The `id` för det dataelement som du vill uppdatera. Det här bör matcha `{DATA_ELEMENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `data_elements`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -632,7 +632,7 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 | --- | --- |
 | `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill ändra. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -664,7 +664,7 @@ curl -X PATCH \
 | `id` | The `id` för det dataelement som du vill ändra. Det här bör matcha `{DATA_ELEMENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som revideras. För den här slutpunkten måste värdet vara `data_elements`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -782,7 +782,7 @@ DELETE /data_elements/{DATA_ELEMENT_ID}
 | --- | --- |
 | `DATA_ELEMENT_ID` | The `id` för det dataelement som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -822,7 +822,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/libraries
 | --- | --- |
 | `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars bibliotek du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -944,7 +944,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/revisions
 | --- | --- |
 | `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars revideringar du vill lista. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1178,7 +1178,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/extension
 | --- | --- |
 | `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars tillägg du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1298,7 +1298,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/origin
 | --- | --- |
 | `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars ursprung du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1428,7 +1428,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/property
 | --- | --- |
 | `{DATA_ELEMENT_ID}` | The `id` för det dataelement vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

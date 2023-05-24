@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över XDM Business Mar
 exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '315'
+source-wordcount: '312'
 ht-degree: 1%
 
 ---
@@ -31,6 +31,6 @@ ht-degree: 1%
 | `marketingListMemberID` | Sträng | Ett unikt ID för medlemsenheten för marknadsföringslistan. |
 | `personId` | Sträng | Ett unikt ID för personen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

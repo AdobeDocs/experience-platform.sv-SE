@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: 744557be-0297-453f-9134-9d0f4ef2df4d
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '172'
+source-wordcount: '169'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 1%
 | `newDeviceID` | Sträng | ID:t för den nya enheten som handlas för. |
 | `originalDeviceID` | Sträng | ID för enheten som handlas. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

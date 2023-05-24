@@ -5,7 +5,7 @@ description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
 source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ![Profilbaserad export av Amazon S3](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
 

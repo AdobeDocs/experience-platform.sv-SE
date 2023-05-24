@@ -3,7 +3,8 @@ title: Självbetjäningsmall för direktuppspelning av SDK-gränssnitt
 description: Lär dig hur du hämtar strömmande data från en källa till Adobe Experience Platform med användargränssnittet.
 hide: true
 hidefromtoc: true
-source-git-commit: eba86ab8aa7d4deac967f5dfb13b2a691bc7c773
+exl-id: 82254be0-fa31-4114-a0ec-179a990e0904
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 0%

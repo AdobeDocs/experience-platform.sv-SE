@@ -9,13 +9,13 @@ exl-id: e02bc318-fbff-4a19-980a-d5c0a21ca300
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '259'
-ht-degree: 2%
+ht-degree: 6%
 
 ---
 
 # Adobe Experience Platform Debugger - översikt
 
-Adobe Experience Platform Debugger-tillägget för [Krom](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) och [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-experience-platform-dbg/) undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Adobe Experience Cloud-lösningar implementeras.
+Adobe Experience Platform Debugger-tillägget för [Krom](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) och [Firefox](https://addons.mozilla.org/sv-SE/firefox/addon/adobe-experience-platform-dbg/) undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Adobe Experience Cloud-lösningar implementeras.
 
 Du kan använda Platform Debugger tillsammans med andra Adobe-aktiveringslösningar för att utföra följande:
 

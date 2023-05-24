@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
 source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '869'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur 
 | `event1to100`<br><br>`event101to200`<br><br>`event201to300`<br><br>`event301to400`<br><br>`event401to500`<br><br>`event501to100`<br><br>`event601to700`<br><br>`event701to800`<br><br>`event801to900`<br><br>`event901to1000` | Objekt | Fältgruppen innehåller objektfält för att fånga upp till 1 000 anpassade händelser. Se [underavsnitt nedan](#events) för mer information om dessa fält. |
 | `session` | Objekt | Hämtar information om sessionen som utlöste händelsen. Se [underavsnitt nedan](#session) om du vill ha mer information om objektets innehåll. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `customDimensions` {#custom-dimensions}
 
@@ -51,7 +51,7 @@ Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur 
 | `postalCode` | Sträng | Ett postnummer som kunden angett. |
 | `stateProvince` | Sträng | En klienttillhandahållen stat eller provinsplats. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `endUser` {#end-user}
 

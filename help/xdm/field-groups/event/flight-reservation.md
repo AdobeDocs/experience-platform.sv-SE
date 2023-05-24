@@ -2,29 +2,29 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;flight;
 title: Fältgrupp för flygbokningsschema
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Flight Reservation.
-source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
+exl-id: df4bb525-c2d3-4e1d-921f-903142a570ac
+source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '639'
 ht-degree: 2%
 
 ---
 
-
 # [!UICONTROL Flight Reservation] schemafältgrupp
 
-[!UICONTROL Flight Reservation] är en standardgrupp för schemafält för den  [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) klass som används för att samla in information om en flygreservation.
+[!UICONTROL Flight Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en flygreservation.
 
-Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details] och innehåller alla samma fält under ett enskilt fält av objekttyp, `reservations`. Förutom dessa generiska fält innehåller [!UICONTROL Flight Reservation] även matrisen `flightReservations`. Den här objektmatrisen används för att beskriva en eller flera reservationer med egenskaper som är unika för flygresor.
+Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa allmänna fält [!UICONTROL Flight Reservation] innehåller `flightReservations` array. Den här objektmatrisen används för att beskriva en eller flera reservationer med egenskaper som är unika för flygresor.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `flightReservations`-arrayen. Mer information om de andra fälten under `reservations`-objektet finns i [[!UICONTROL Reservation Details]-fältgruppsreferensen](./reservation-details.md).
+>Det här dokumentet innehåller information om `flightReservations` array. För information om andra fält som anges i `reservations` objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
 
 ![Flygreservationsstruktur](../../images/field-groups/flight-reservation/structure.png)
 
 ## `flightReservations`
 
-`flightReservations` är en array med objekt som representerar en lista med flygbokningar. Om en reservationshändelse innehåller reservationer för flera anslutningsflygningar på en resa, kan dessa reservationer till exempel listas som enskilda objekt under `flightReservations` för en enda händelse.
+`flightReservations` är en array med objekt som representerar en lista med flygbokningar. Om en bokningshändelse omfattar reservationer för flera anslutande flygningar på en resa, kan dessa reservationer till exempel anges som enskilda objekt under `flightReservations` för en enda händelse.
 
 Strukturen för varje objekt som anges under `flightReservations` anges nedan.
 
@@ -61,7 +61,7 @@ Strukturen för varje objekt som anges under `flightReservations` anges nedan.
 | `ticketNumber` | Sträng | Reservationsnumret eller identifieraren. |
 | `tripType` | Sträng | Anger om reservationen gäller en enkelriktad resa, en rundtur eller en flerstadstrafik. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Busi
 exl-id: d816b0f9-fd37-45da-aa55-247f7f662da0
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '302'
 ht-degree: 2%
 
 ---
@@ -33,6 +33,6 @@ ht-degree: 2%
 | `opportunityStage` | Sträng | Affärsmöjlighetens försäljningsstadium. |
 | `opportunityType` | Sträng | Typ av affärsmöjlighet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

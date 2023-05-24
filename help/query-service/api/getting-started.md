@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Fråga
 solution: Experience Platform
 title: API-guide för frågetjänst
-description: Med API:t för frågetjänsten kan utvecklare fråga sina Adobe Experience Platform-data med hjälp av standard-SQL. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med API:t för frågetjänsten kan utvecklare fråga sina Adobe Experience Platform-data med hjälp av standard-SQL. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 2f4a156b-5623-419a-a9b2-72310f755708
 source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
 workflow-type: tm+mt
 source-wordcount: '399'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 

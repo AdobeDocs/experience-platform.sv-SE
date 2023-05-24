@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '163'
+source-wordcount: '160'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 1%
 | `mobilePhone` | [Telefonnummer](../../data-types/phone-number.md) | Beskriver personens mobiltelefonnummer. |
 | `personalEmail` | [E-postadress](../../data-types/email-address.md) | Beskriver personens e-postadress. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

@@ -5,7 +5,7 @@ description: Skicka smidigt data från Adobe till Airship som målgruppsattribut
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '939'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Aktivera attribut {#enable-attributes}
 

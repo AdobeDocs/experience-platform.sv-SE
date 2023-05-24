@@ -7,7 +7,7 @@ type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
 source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3392'
 ht-degree: 0%
 
 ---
@@ -130,7 +130,7 @@ Tabellen nedan innehåller anslutningsspecifikations-ID:n för vanliga gruppmål
 | [!DNL Salesforce Marketing Cloud] | `f599a5b3-60a7-4951-950a-cc4115c7ea27` |
 | SFTP | `64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till [!DNL Experience Platform] data {#connect-to-your-experience-platform-data}
 
@@ -174,7 +174,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -227,7 +227,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `baseConnectionId` | Använd det grundläggande anslutnings-ID som du fick i föregående steg. |
 | `data.format` | `CSV` är för närvarande det enda filexportformat som stöds. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -531,7 +531,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `auth.specname` | Anger målets autentiseringsformat. Om du vill ta reda på ditt måls specName utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `authSpec.name` i svaret. <br> För Adobe Campaign-mål kan du till exempel använda något av `S3`, `SFTP with Password`, eller `SFTP with SSH Key`. |
 | `params` | Beroende på vilket mål du ansluter till måste du ange olika obligatoriska autentiseringsparametrar. För Amazon S3-anslutningar måste du ange ditt åtkomst-ID och din hemliga nyckel till din Amazon S3-lagringsplats. <br> Om du vill ta reda på vilka parametrar som krävs för destinationen utför du en [GET-anrop till slutpunkten för anslutningsspecifikationer](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec), med anslutningsspecifikationen för den önskade destinationen. Leta efter parametern `authSpec.spec.required` i svaret. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -848,7 +848,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `params.path` | För S3-anslutningar anger du den filsökväg på lagringsplatsen dit filerna ska exporteras. |
 | `params.format` | `CSV` är för närvarande den enda filexporttyp som stöds. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -1041,7 +1041,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då segmentmedlemmar slutar att exporteras till målet. |
 | `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar i segmentet ska genereras och exporteras till målet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!TIP]
 >

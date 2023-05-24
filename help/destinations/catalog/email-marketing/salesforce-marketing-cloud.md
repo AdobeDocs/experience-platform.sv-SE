@@ -5,7 +5,7 @@ description: Salesforce Marketing Cloud är en digital marknadsföringssvit som 
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
 source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
 workflow-type: tm+mt
-source-wordcount: '615'
+source-wordcount: '612'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## IP-adress tillåtelselista {#allow-list}
 

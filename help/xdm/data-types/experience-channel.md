@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen Experi
 exl-id: 209654f7-0bde-439a-989c-ce2e41599105
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '267'
+source-wordcount: '264'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ Det finns flera olika upplevelsekanaler, var och en med olika begränsningar fö
 | `mode` | Sträng | Hur upplevelser levereras i den här kanalen. |
 | `typeAtSource` | Sträng | Ett anpassat namn för kanalen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

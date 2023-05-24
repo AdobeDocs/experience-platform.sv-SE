@@ -4,7 +4,7 @@ description: Lär dig hur fel hanteras i Reactor API.
 exl-id: 336c0ced-1067-4519-94e1-85aea700fce6
 source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '1068'
+source-wordcount: '1062'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Felsvar syftar till att anpassa [JSON:API-felspecifikation](http://jsonapi.org/f
 | `source` | Ett objekt som innehåller referenser till felets källa, eventuellt inklusive någon av följande medlemmar:<ul><li>`pointer`: a [JSON-pekare (RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901) sträng som refererar till den associerade entiteten i begärandedokumentet (som `/data` för ett primärt dataobjekt, eller `/data/attributes/title` för ett specifikt attribut).</li></ul> |
 | `meta` | Ett objekt som innehåller metadata om felet som inte är standard. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Felreferens
 
@@ -78,7 +78,7 @@ I följande tabell visas de olika fel som API:t kan returnera.
 | `ims-session-error` | Det har uppstått ett problem med den inloggade sessionen. Logga ut och logga in igen. |
 | `internal-error` | Ett internt fel inträffade. Vänta några minuter och försök igen. Kontakta kundtjänst om problemet kvarstår. |
 | `invalid-data_element` | Ett ogiltigt dataelement kan inte läggas till i ett bibliotek. |
-| `invalid-embed_code` | Antingen är detta inte en giltig inbäddningskod eller så försöker du länka den till en utvecklings- eller staging-miljö. Inbäddningskoder för dynamisk tagghantering (DTM) kan bara länkas till produktionsmiljöer. |
+| `invalid-embed_code` | Antingen är detta inte en giltig inbäddningskod eller så försöker du länka den till en utvecklings- eller staging-miljö. Inbäddningskoder för dynamiska Tag Management (DTM) kan bara länkas till produktionsmiljöer. |
 | `invalid-extension` | Ett ogiltigt tillägg kan inte läggas till i ett bibliotek. |
 | `invalid-extension_package_id` | Du kan bara ändra vissa av objektegenskaperna i ett tilläggspaket. Du försökte ändra en av de som inte är tillåtna. |
 | `invalid-new-owner-org-id` | Org-ID:t som du försökte tilldela är inte ett giltigt Org-ID. |
@@ -107,4 +107,4 @@ I följande tabell visas de olika fel som API:t kan returnera.
 | `upgraded-extension-required` | När du har installerat en tilläggsuppgradering måste du inkludera den i alla bibliotek tills uppgraderingen når Production. Det enda undantaget är om tillägget inte har publicerats än. |
 | `upstream-build-required` | Det krävs en lyckad version av det överordnade biblioteket innan du kan skapa det här. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

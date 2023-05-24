@@ -1,13 +1,13 @@
 ---
 title: Meddelandevy i appen
 description: Den här vägledningen innehåller information om vyn Meddelanden i appen i Adobe Experience Platform Assurance.
-source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
+exl-id: 6131289a-aebb-4b3a-9045-4b2cf23415f8
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '656'
 ht-degree: 1%
 
 ---
-
 
 # Vyn Meddelanden i appen i Assurance
 

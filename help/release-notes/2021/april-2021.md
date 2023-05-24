@@ -8,7 +8,7 @@ exl-id: cc78e48a-3578-4c55-ae86-1946d62bddb9
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '888'
-ht-degree: 1%
+ht-degree: 8%
 
 ---
 
@@ -51,7 +51,7 @@ Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlig
 
 ### Kund-AI
 
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
@@ -63,7 +63,7 @@ Mer information om datauppsättningar som stöds finns i [[!DNL Intelligent Serv
 
 ### Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 
 | Funktion | Beskrivning |
 | ------- | ----------- |

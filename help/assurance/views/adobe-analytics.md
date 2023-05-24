@@ -1,13 +1,13 @@
 ---
 title: Adobe Analytics View in Assurance
 description: Den här guiden förklarar hur du använder Adobe Analytics med Adobe Experience Platform Assurance.
-source-git-commit: 07dc01c11c79ac2dad05d89309cabb5715c0b63c
+exl-id: e5cc72b0-d6d6-430b-9321-4835c1f77581
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '359'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # Adobe Analytics-vy i Assurance
 

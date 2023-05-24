@@ -6,7 +6,7 @@ description: Med slutpunkten /audilog i API:t för schemaregister kan du hämta 
 exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ GET /rpc/auditlog/{RESOURCE_ID}
 | --- | --- |
 | `{RESOURCE_ID}` | The `meta:altId` eller URL-kodad `$id` för den resurs vars granskningslogg du vill hämta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -125,4 +125,4 @@ Ett lyckat svar returnerar en kronologisk lista över ändringar som gjorts i re
 | `path` | A [JSON-pekare](../../landing/api-fundamentals.md#json-pointer) en sträng som anger sökvägen till det specifika fält som har ändrats eller lagts till. |
 | `value` | Värdet som tilldelats det nya eller uppdaterade fältet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

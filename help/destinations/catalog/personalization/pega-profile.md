@@ -2,13 +2,13 @@
 title: Pega Profile Connector
 description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofildesignern för att importera profildata regelbundet från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+exl-id: f422f21b-174a-4b93-b05d-084b42623314
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1054'
 ht-degree: 0%
 
 ---
-
 
 # Pega Profile Connector
 
@@ -51,7 +51,7 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 |---|---|
 | *CustomerID* | Vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och Adobe Experience Platform |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 
@@ -131,6 +131,3 @@ Se [Importera datajobb](https://academy.pega.com/topic/import-data-jobs/v1) in [
 ## Dataanvändning och styrning {#data-usage-governance}
 
 Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, se [Datastyrning - översikt](/help/data-governance/home.md).
-
-
-

@@ -1,7 +1,8 @@
 ---
 title: Ta bort resurser från ett bibliotek
 description: Lär dig hur du tar bort resurser från ett taggbibliotek.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: ad1dd093-962c-4f6d-85eb-c5ed1b644927
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 0%
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 När du inte längre vill att en resurs ska ha en effekt i ett bygge måste du ta bort den från biblioteket som innehåller resursen och skapa ett nytt bygge.
 
@@ -48,7 +49,7 @@ Du måste i stället inaktivera resursen. Den här inaktiveringen är en ändrin
    1. Välj resursen i listvyn.
    1. Välj **[!UICONTROL Disable]**.
 1. Skapa ett nytt utvecklingsbibliotek.
-1. Lägg till `latest`-versionen av den inaktiverade resursen.
+1. Lägg till `latest` version av den inaktiverade resursen.
 1. Spara och bygg.
 1. Följ den normala processen för att marknadsföra bibliotek till produktion.
 1. Publicera i produktion för att ta bort resursen.

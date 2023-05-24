@@ -1,9 +1,10 @@
 ---
 title: Datatyp för kontoinformation
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Account Details Experience Data Model).
-source-git-commit: 77fb3e348c2298fc5c325fcf2d3408da084b2b19
+exl-id: 17254393-263e-4000-9bd2-815a9e842533
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '427'
 ht-degree: 4%
 
 ---
@@ -37,7 +38,7 @@ ht-degree: 4%
 | `twitterHandleUrl` | Sträng | En webbplatslänk till organisationens twitter-referens. |
 | `website` | Sträng | URL till organisationens webbplats. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

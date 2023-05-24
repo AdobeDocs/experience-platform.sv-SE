@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;
 title: Försök igen med misslyckade dataflödeskörningar
 description: I den här självstudien beskrivs hur du provar misslyckade dataflöden på nytt med API:t för Flow Service
-source-git-commit: dfb95f457d7ddb730950159165ed85b2f532f9ab
+exl-id: b9abc737-9a57-47e6-98ab-6d6c44f38d17
+source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
 source-wordcount: '258'
 ht-degree: 1%

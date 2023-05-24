@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: 52a4fee8-d7f4-4f27-8e26-0c132985eb84
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '330'
+source-wordcount: '327'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `identityPrivacyInfo` | Mappa | Ett mappningsobjekt som associerar en kunds individuella identitetsvärden med olika TCF-medgivandesträngar. Ett exempel på objektets struktur ges nedan. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 I följande JSON visas strukturen för `identityPrivacyInfo` karta.
 

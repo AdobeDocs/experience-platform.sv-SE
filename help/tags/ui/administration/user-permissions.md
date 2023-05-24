@@ -4,7 +4,7 @@ description: Lär dig mer om de olika typerna av behörigheter som är tillgäng
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
 source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
-source-wordcount: '1308'
+source-wordcount: '1299'
 ht-degree: 1%
 
 ---
@@ -58,7 +58,7 @@ I följande tabell visas de tillgängliga egenskapsrättigheterna och de funktio
 | **Hantera tillägg** | Detta gör att du kan utföra följande åtgärder: <ul><li>Installera nya tillägg för en egenskap</li><li>Ändra konfigurationen för ett redan installerat tillägg</li><li>Ta bort ett tillägg</li></ul>Mer information finns i översiktsdokumentationen för tillägg. [mer information om tillägg](../managing-resources/extensions/overview.md). Den här rollen tillhör vanligen IT eller marknadsföring, beroende på din organisation. |
 | **Hantera miljöer** | På så sätt kan du skapa och ändra miljöer. Se [miljödokumentation](../publishing/environments.md) för mer information. Den här rollen tillhör vanligtvis IT-gruppen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Företagsrättigheter
 
@@ -70,7 +70,7 @@ Företagsrättigheter gäller för behörigheter som sträcker sig över flera e
 | **Utveckla tillägg** | Ger möjlighet att skapa och ändra tilläggspaket som ägs av företaget, inklusive privata releaser och förfrågningar om allmän spridning. |
 | **Hantera appkonfigurationer** | Detta gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden.  På så sätt kan du hantera de appar som Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple push-meddelandetjänst. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Totalt antal användarbehörigheter
 
@@ -117,7 +117,7 @@ Följande tabell innehåller några exempel på vilka typer av roller du kan ha 
 | Extension Developer | Utvecklar tillägg och kan skicka för godkännande, men kan inte publicera eller lägga till dem i befintliga egenskaper. | Ta med automatiskt | <ul><li>Utveckla</li></ul> | <ul><li>Hantera egenskaper</li><li>Utveckla tillägg</li></ul> |
 | Superanvändaren | Gör allt. | Ta med automatiskt | <ul><li>Utveckla</li><li>Godkänn</li><li>Publicera</li><li>Hantera tillägg</li><li>Hantera miljöer</li></ul> | <ul><li>Hantera egenskaper</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

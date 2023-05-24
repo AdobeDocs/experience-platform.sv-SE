@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /extensions i Reaktors API.
 exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '941'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ GET properties/{PROPERTY_ID}/extensions
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars tillägg du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -172,7 +172,7 @@ GET /extensions/{EXTENSION_ID}
 | --- | --- |
 | `EXTENSION_ID` | The `id` för det tillägg som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -292,7 +292,7 @@ POST /properties/{PROPERTY_ID}/extensions
 | --- | --- |
 | `PROPERTY_ID` | The `id` av egenskapen som du vill installera tillägget under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -330,7 +330,7 @@ curl -X POST \
 | `attributes.enabled` | Ett booleskt värde som anger om tillägget är aktiverat. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -438,7 +438,7 @@ PATCH /extensions/{EXTENSION_ID}
 | --- | --- |
 | `EXTENSION_ID` | The `id` för det tillägg som du vill ändra. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -470,7 +470,7 @@ curl -X PATCH \
 | `attributes` | De attribut som du vill ändra. För tillägg kan du ändra deras `delegate_descriptor_id`, `enabled`och `settings` attribut. |
 | `meta.action` | Måste inkluderas med värdet `revise` när du gör en revidering. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -578,7 +578,7 @@ DELETE /extensions/{EXTENSION_ID}
 | --- | --- |
 | `EXTENSION_ID` | The `id` för det tillägg som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -618,7 +618,7 @@ GET  /extensions/{EXTENSION_ID}/libraries
 | --- | --- |
 | `{EXTENSION_ID}` | The `id` för det tillägg vars bibliotek du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -740,7 +740,7 @@ GET  /extensions/{EXTENSION_ID}/revisions
 | --- | --- |
 | `{EXTENSION_ID}` | The `id` för det tillägg vars ändringar du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -954,7 +954,7 @@ GET  /extensions/{EXTENSION_ID}/extension_package
 | --- | --- |
 | `{EXTENSION_ID}` | The `id` för det tillägg vars tillägg du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1189,7 +1189,7 @@ GET  /extensions/{EXTENSION_ID}/origin
 | --- | --- |
 | `{EXTENSION_ID}` | The `id` för tillägget vars ursprung du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1309,7 +1309,7 @@ GET  /extensions/{EXTENSION_ID}/property
 | --- | --- |
 | `{EXTENSION_ID}` | The `id` för det tillägg vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

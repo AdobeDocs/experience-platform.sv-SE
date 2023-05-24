@@ -6,7 +6,7 @@ description: Med slutpunkten /sampledata i API:t för schemaregister kan du gene
 exl-id: 424d33ca-0624-4891-bf83-044ac2861579
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '315'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ GET /rpc/sampledata/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | The `meta:altId` eller URL-kodad `$id` för schemat som du vill generera exempeldata för. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

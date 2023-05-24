@@ -1,7 +1,8 @@
 ---
 title: Bakåtkompatibilitetsstandard
 description: Läs om den bakåtkompatibla standarden i Adobe Experience Platform som säkerställer att uppdaterade versioner av taggtillägg är kompatibla med tidigare versioner.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 325390f1-88c7-4b9e-a484-5442ca649bdf
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '833'
 ht-degree: 0%
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 Uppdateringar av ett taggtillägg i Adobe Experience Platform måste vara bakåtkompatibla med tidigare versioner av tillägget. Detta innebär att
 

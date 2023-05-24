@@ -1,9 +1,10 @@
 ---
 title: Fältgrupp för sjukvårdssystem
 description: Detta dokument ger en översikt över fältgruppen för hälso- och sjukvårdsmedicin.
-source-git-commit: 3b0c85eb5184dd116b1013e617cf528080fa0656
+exl-id: 3423d067-fe8c-44e5-a6f9-ce0458d26ebc
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '205'
 ht-degree: 3%
 
 ---
@@ -29,6 +30,6 @@ ht-degree: 3%
 | `status` | Sträng | En generell status som anger om läkemedlet eller läkemedlet är aktivt eller inte. |
 | `volume` | Dubbel | Läkemedlets volym. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/fieldgroups/medication/healthcare-medication.schema.json).

@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /search i Reactor API.
 exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -100,7 +100,7 @@ curl -X POST \
 | `sort` | En array med objekt som anger i vilken ordning resultaten ska sorteras. Varje objekt måste innehålla en enda egenskap: nyckeln representerar fältsökvägen som ska sorteras efter och värdet representerar sorteringsordningen (`asc` för stigande, `desc` för fallande). |
 | `resource_types` | En array med strängar som anger de specifika resurstyper som ska sökas igenom. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 

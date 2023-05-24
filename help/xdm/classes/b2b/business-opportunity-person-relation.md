@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Busi
 exl-id: 7be193d2-52eb-4b28-953b-5e0fc21d8f93
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '341'
 ht-degree: 1%
 
 ---
@@ -33,6 +33,6 @@ ht-degree: 1%
 | `personID` | Sträng | En unik identifierare för personen i affärsmöjlighetsrelationen. |
 | `personRole` | Sträng | Personens roll i relationen affärsmöjlighet-person. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

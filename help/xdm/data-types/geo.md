@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen Geo XD
 exl-id: d0eef943-ef86-4abd-8a51-dc45f2ed782d
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '198'
+source-wordcount: '195'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 3%
 | `postalCode` | Sträng | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
 | `stateProvince` | Sträng | Delstaten eller provinsdelen av observationen. Formatet följer [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html) standard. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

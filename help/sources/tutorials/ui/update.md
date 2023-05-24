@@ -8,7 +8,7 @@ exl-id: de264bd4-fe3d-4622-9f24-f1612d8334c9
 source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
 workflow-type: tm+mt
 source-wordcount: '435'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -45,7 +45,7 @@ Välj den källa som du vill arbeta med för att visa en lista över dess befint
 
 En nedrullningsbar meny visas med alternativ för att **[!UICONTROL Add data]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]**. Välj **[!UICONTROL Edit details]** på menyn för att uppdatera ditt konto.
 
-![uppdatera](../../images/tutorials/update/update.png)
+![update](../../images/tutorials/update/update.png)
 
 The **[!UICONTROL Edit account details]** kan du uppdatera ett kontos namn, beskrivning och inloggningsuppgifter. När du har uppdaterat den önskade informationen väljer du **[!UICONTROL Save]**.
 

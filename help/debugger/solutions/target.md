@@ -1,9 +1,10 @@
 ---
 title: Testa en Adobe Target-implementering med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Adobe Experience Platform Debugger för att testa och felsöka en webbplats som är aktiverad med Adobe Target.
-source-git-commit: 1ce7ac78936040d76faa3a58b92333a737fbeb66
+exl-id: f99548ff-c6f2-4e99-920b-eb981679de2d
+source-git-commit: c3b5b63767a934be16a479d04853e1250b3bf775
 workflow-type: tm+mt
-source-wordcount: '1220'
+source-wordcount: '1211'
 ht-degree: 0%
 
 ---
@@ -37,7 +38,7 @@ Information om implementeringens globala konfiguration visas högst upp i målvy
 | Namn på global begäran | Namnet på [global mbox](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/?) för Target-implementeringen, standardnamnet är `target-global-mbox`. |
 | Sidinläsningshändelse | Ett booleskt värde som anger om en [sidinläsningshändelse](https://developer.adobe.com/target/implement/client-side/atjs/how-atjs-works/how-atjs-works/#atjs-2x-diagrams) har ägt rum. Sidinläsningshändelser stöds bara för at.js 2.x. För versioner som inte är kompatibla är standardvärdet `None`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## [!DNL Network Requests] {#network}
 
@@ -93,7 +94,7 @@ Följande värden hämtas:
 | [!DNL vst] | The [API-konfiguration för Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/configurations/function-vars.html). |
 | [!DNL webGLRenderer] | Anger information om WebGL-renderaren som används på sidan, om tillämpligt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Om du vill visa information om en parameter för en viss nätverkshändelse markerar du tabellcellen i fråga. En pover med mer information om parametern visas, inklusive en beskrivning och dess värde. Om värdet är ett JSON-objekt innehåller dialogrutan en fullt navigerbar vy av objektets struktur.
 
@@ -111,4 +112,4 @@ Välj **[!DNL Configuration]** om du vill aktivera eller inaktivera ett urval av
 | [!DNL Target Diable] | När det här alternativet är aktiverat inaktiveras alla Target-funktioner på sidan. Detta kan användas för att avgöra om ett Target-specifikt erbjudande är orsaken till problemet på sidan. |
 | [!DNL Target Trace] | **Anteckning**: Du måste vara inloggad för att kunna aktivera den här funktionen.<br><br>När det här alternativet är aktiverat skickas spårningstoken med varje begäran och ett spårningsobjekt returneras i varje svar. `at.js` tolkar svaret `window.__targetTraces`. Varje trace-objekt innehåller samma information som [[!DNL Network Requests] tab], with the following additions:<ul><li>En ögonblicksbild av en profil som gör att du kan se attribut före och efter en begäran.</li><li>Matchade och omatchade [verksamhet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html), som visar varför den aktuella profilen var eller inte var kvalificerad för vissa aktiviteter.<ul><li>Detta kan hjälpa till att identifiera vilka målgrupper en profil kvalificerar sig för vid en viss tidpunkt och varför.</li><li>Måldokumenten innehåller mer information om olika aktivitetstyper</li></ul></li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

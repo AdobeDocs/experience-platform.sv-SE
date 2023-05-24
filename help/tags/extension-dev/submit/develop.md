@@ -19,7 +19,7 @@ Ett taggtillägg ska betraktas som en (liten) produkt med egna krav. Om du fasts
 
 Med den kunskapen kan du planera vilka komponenter som ska ingå i tillägget.
 
-## Stödlinjer
+## Användarhandböcker
 
 Med en plan på plats kan dessa guider hjälpa dig att förstå utvecklingsprocessen för tillägg:
 

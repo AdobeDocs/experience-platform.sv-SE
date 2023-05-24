@@ -4,7 +4,7 @@ description: Läs mer om Splunk-tillägget för händelsevidarebefordran i Adobe
 exl-id: 653b5897-493b-44f2-aeea-be492da2b108
 source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1033'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Marknadsföringsteamen kan använda tillägget för följande användningsområd
 | Kundbeteendeanalys | Organisationer kan samla in data om kundinteraktionshändelser från sin webbplats och vidarebefordra relevanta händelser till Splunk. Marknads- och analysteam kan sedan utföra efterföljande analyser inom Splunk-plattformen för att förstå viktiga användarinteraktioner och beteenden. Splunk-plattformen kan användas för att generera diagram, instrumentpaneler eller andra visualiseringar för att informera affärsintressenter. |
 | Skalbar sökning på stora datamängder | Organisationer kan samla in transaktions- eller konverteringsdata som händelsedata från webbplatsen och vidarebefordra händelser till Splunk. Analysteam kan sedan utnyttja Splunk skalbara indexeringsfunktioner för att filtrera och bearbeta stora datamängder för att ta fram affärsinsikter och fatta välgrundade beslut. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 

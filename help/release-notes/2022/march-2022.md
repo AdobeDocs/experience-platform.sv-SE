@@ -4,8 +4,8 @@ description: Versionsinformation mars 2022 för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '1193'
-ht-degree: 1%
+source-wordcount: '1175'
+ht-degree: 2%
 
 ---
 
@@ -37,7 +37,7 @@ Med Experience Platform kan du granska användaraktivitet för olika tjänster o
 | Granskningsloggar för datauppsättning, schema, klass, fältgrupp, datatyp, sandlåda, mål, segment, sammanfogningsprincip, beräknat attribut, produktprofil och konto (Adobe) | Detta är de resurser som registreras av granskningsloggar. Om funktionen är aktiverad samlas granskningsloggarna automatiskt in när aktiviteten inträffar. Du behöver inte aktivera loggsamling manuellt. |
 | Exportera granskningsloggar | Granskningsloggarna kan hämtas som en `CSV` eller `JSON` -fil. De genererade filerna sparas direkt på datorn. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om granskningsloggar i Platform finns i [granskningsloggar - översikt](../../landing/governance-privacy-security/audit-logs/overview.md).
 
@@ -67,7 +67,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 | --- | --- |
 | Nya varningsregler | Det finns nu två nya varningsregler för källor som rör dataöverföring. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om varningar i Platform finns i [varningsöversikt](../../observability/alerts/overview.md).
 
@@ -88,7 +88,7 @@ På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din or
 | Osegmenterade profiler efter identitetswidget | Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
 | widgeten Enstaka identitetsprofiler | Den här widgeten innehåller information om organisationens profiler som bara har en typ av ID som skapar deras identitet, antingen ett e-postmeddelande eller ett ECID. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om profilpaneler finns i [Översikt över kontrollpaneler för profiler](../../dashboards/guides/profiles.md).
 
@@ -102,7 +102,7 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 | --- | --- |
 | Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Se [dokumentation för standardwidget](../../dashboards/guides/destinations.md#standard-widgets) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om kontrollpaneler för destinationer i plattformen finns i [Översikt över kontrollpaneler för destinationer](../../dashboards/guides/destinations.md).
 
@@ -115,7 +115,7 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 | Funktion | Beskrivning |
 | --- | --- |
 | Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geo location, first-party ID cookie, and third-party ID sync. Se avsnittet om [konfigurera ett datastream](../../edge/datastreams/overview.md#create) i användargränssnittsguiden för datastreams om du vill ha mer information. |
-| [API för Edge Network Server](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som stöder en rad olika fall av datainsamling, personalisering, annonsering och marknadsföring. |
+| [Server-API för Edge Network](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som stöder en rad olika fall av datainsamling, personalisering, annonsering och marknadsföring. |
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 
@@ -129,7 +129,7 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 | --- | --- |
 | `table_exists` | Det nya funktionskommandot används för att bekräfta om det finns en tabell eller inte i systemet. Kommandot returnerar ett booleskt värde: `true` om tabellen **gör** finns, och `false` om tabellen **not** finns. Se [SQL-syntaxdokumentation](../../query-service/sql/syntax.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om tillgängliga funktioner finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
@@ -147,6 +147,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Allmän tillgänglighet för nya [!DNL Oracle Eloqua] källa | Nu kan du använda [!DNL Oracle Eloqua] källa till smidig import av data från [!DNL Oracle Eloqua] -instans (konto, kampanj, kontakter) till Platform. Läs dokumentationen om [skapa [!DNL Oracle Eloqua] källanslutning](../../sources/connectors/marketing-automation/oracle-eloqua.md) för mer information. |
 | API-förbättringar för [!DNL Data Landing Zone] | The [!DNL Data Landing Zone] -källan har nu stöd för automatisk identifiering av filegenskaper när du använder [!DNL Flow Service] API. Läs dokumentationen om [skapa [!DNL Data Landing Zone] källanslutning](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).

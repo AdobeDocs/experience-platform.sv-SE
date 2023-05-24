@@ -13,7 +13,7 @@ ht-degree: 5%
 
 # Skapa modeller med Adobe Experience Platform [!DNL Platform] SDK
 
-Den här självstudiekursen innehåller information om konvertering `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
+Den här självstudiekursen innehåller information om hur du konverterar `data_access_sdk_python` till nya Python `platform_sdk` i både Python och R. I den här självstudiekursen finns information om följande åtgärder:
 
 - [Bygg autentisering](#build-authentication)
 - [Grundläggande läsning av data](#basic-reading-of-data)

@@ -1,9 +1,10 @@
 ---
 title: Schemafältgrupp för systeminformation
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Sektionsverktygsinformation.
-source-git-commit: 3937963ceee8502b0669a3f007fd38ecf2824e9b
+exl-id: 472c0a3f-efda-49af-9490-f2de90b348c0
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '194'
+source-wordcount: '191'
 ht-degree: 2%
 
 ---
@@ -23,6 +24,6 @@ ht-degree: 2%
 | `name` | Sträng | Platsverktygets namn, till exempel chatbot, survey och så vidare. |
 | `section` | Sträng | Den relevanta delen av sitetool som huvud eller sub. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json).

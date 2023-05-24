@@ -4,7 +4,7 @@ description: Zendesk-tillägg för händelsevidarebefordran för Adobe Experienc
 exl-id: 22e94699-5b84-4a73-b007-557221d3e223
 source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1263'
 ht-degree: 4%
 
 ---
@@ -26,7 +26,7 @@ Du måste även samla in följande information för din Zendesk-konfiguration:
 | Underdomän | Under registreringsprocessen finns en unik **underdomän** har skapats specifikt för kontot. Se [Zendesk-dokumentation](https://developer.zendesk.com/documentation/ticketing/working-with-oauth/creating-and-using-oauth-tokens-with-the-api/) för mer information. | `xxxxx.zendesk.com` (där `xxxxx` är värdet som angavs när kontot skapades) |
 | API-token | Zendesk använder bearer-tokens som en autentiseringsmekanism för att kommunicera med Zendesk API. Generera en API-token när du har loggat in på Zendesk-portalen. Se [Zendesk-dokumentation](https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token) för mer information. | `cwWyOtHAv12w4dhpiulfe9BdZFTz3OKaTSzn2QvV` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Slutligen måste du skapa en händelsevidarebefordringshemlighet för API-token. Ange hemlig typ till **[!UICONTROL Token]** och ange värdet till den API-token som du hämtade från din Zendesk-konfiguration. Läs dokumentationen om [hemligheter vid vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) om du vill ha mer information om hur du konfigurerar hemligheter.
 
@@ -78,7 +78,7 @@ Följande nycklar kan refereras i `event` objekt vid mappning till dataelement:
 | `created_at` | Sträng | `arc.event.xdm.timestamp` | En ISO-8601-tidsstämpel som visar när händelsen skapades. | Nej | (Ej tillämpligt) |
 | `properties` | Objekt | `arc.event.xdm._extconndev.EventProperties` | Ett anpassat JSON-objekt med information om händelsen. | Ja | (Ej tillämpligt) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -99,7 +99,7 @@ Följande nycklar kan refereras i `profile` objekt vid mappning till dataelement
 | `identifiers` | Array | `arc.event.xdm._extconndev.identifiers` | En array som innehåller minst en identifierare. Varje identifierare består av en typ och ett värde. | Ja | Se [Zendesk-dokumentation](https://developer.zendesk.com/api-reference/custom-data/profiles_api/profiles_api/#identifiers-array) för mer information om `identifiers` array. Alla fält och värden måste vara unika. |
 | `attributes` | Objekt | `arc.event.xdm._extconndev.attrbutes` | Ett objekt som innehåller användardefinierade egenskaper för personen. | Nej | Se [Zendesk-dokumentation](https://developer.zendesk.com/documentation/custom-data/profiles/anatomy-of-a-profile/#attributes) om du vill ha mer information om profilattribut. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Validera data i Zendesk {#validate}
 
@@ -125,7 +125,7 @@ Zendesk [!DNL Events API] kan hantera följande antal begäranden per minut:
 | [!DNL Enterprise] | 750 |
 | [!DNL Enterprise Plus] | 1000 |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se [Zendesk-dokumentation](https://developer.zendesk.com/api-reference/ticketing/account-configuration/usage_limits/#:~:text=API%20requests%20made%20by%20Zendesk%20apps%20are%20subject,sources%20for%20the%20account%2C%20including%20internal%20product%20requests.) för mer information om dessa gränser.
 
@@ -141,7 +141,7 @@ När tillägget används eller konfigureras kan felen nedan returneras av Zendes
 | 403 | **Otillräckliga behörigheter:** Det här felet inträffar när det inte finns tillräcklig behörighet för att komma åt resursen. | Verifiera att de nödvändiga behörigheterna har angetts. | `{"error": [{"code":"PermissionDenied","title": "Insufficient permisssions to perform operation"}]}` |
 | 429 | **För många förfrågningar:** Det här felet inträffar när postgränsen för slutpunktsobjektet har överskridits. | Se avsnittet ovan på [begärandebegränsningar](#limits) för uppgifter om tröskelvärden per gräns. | `{"error": [{"code":"TooManyRequests","title": "Too Many Requests"}]}` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

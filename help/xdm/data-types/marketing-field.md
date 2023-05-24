@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM f�
 exl-id: d4c53885-f34f-4721-aa34-1fe02dc7006f
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '656'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 | `time` | DateTime | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. |
 | `val` | Sträng | Kundens val av preferens för detta marknadsföringsärende. I tabellen nedan finns godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 I följande tabell visas godkända värden för `val`:
 
@@ -46,7 +46,7 @@ I följande tabell visas godkända värden för `val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

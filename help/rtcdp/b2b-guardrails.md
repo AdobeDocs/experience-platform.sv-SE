@@ -2,12 +2,12 @@
 keywords: profil;kundprofil i realtid;felsökning;skyddsprofiler;riktlinjer;gräns;enhet;primär enhet;dimension;RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp;b2b;cdp;
 title: StandardguarDRAG för Real-time Customer Data Platform B2B Edition
 type: Documentation
-description: Adobe Experience Platform använder en hybriddatamodell med hög denormalisering som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardgränser för användning och frekvens som hjälper dig att modellera data för optimala systemprestanda med Adobe Real-time Customer Data Platform B2B Edition.
+description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardgränser för användning och frekvens som hjälper dig att modellera data för optimala systemprestanda med Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
 source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
 workflow-type: tm+mt
 source-wordcount: '1651'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -63,7 +63,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 | --- | --- | --- | --- |
 | Inga kapslade äldre relationer | 0 | Mjuk | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
 | Endast B2B-objekt kan ingå i många-till-ett-relationer | 0 | Hård | Systemet stöder endast många-till-ett-relationer mellan B2B-objekt. Mer information om många-till-ett-relationer finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
-| Maximalt djup för kapslade relationer mellan B2B-objekt | 3 | Hård | Det maximala djupet för kapslade relationer mellan B2B-objekt är 3. Det innebär att du i ett mycket kapslat schema inte ska ha någon relation mellan B2B-objekt som är kapslade mer än tre nivåer djupa. |
+| Maximalt djup för kapslade relationer mellan B2B-objekt | 3 | Hård | Det maximala djupet för kapslade relationer mellan B2B-objekt är 3. Det innebär att du inte bör ha någon relation mellan B2B-objekt som är kapslade mer än tre nivåer i ett mycket kapslat schema. |
 
 ## Begränsningar för datastorlek
 

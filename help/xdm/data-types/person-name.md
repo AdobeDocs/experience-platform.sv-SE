@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM f�
 exl-id: 5cf55fb1-b6b0-4d1c-93c3-7e2b7766599e
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Dessutom innehåller datatypen ett antal valfria egenskaper som kan användas i 
 | `middleName` | Mellannamn, alternativa namn eller ytterligare namn som anges mellan förnamnet och efternamnet. |
 | `suffix` | En grupp bokstäver efter en persons namn som ger ytterligare information (t.ex. `Jr.`, `Sr.`, `M.D.`, `PhD`, `I`, `II`, `III`och så vidare). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om personnamnets datatyp finns i den offentliga XDM-databasen:
 

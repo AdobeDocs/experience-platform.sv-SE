@@ -7,7 +7,6 @@ doc-type: video
 activity: understand
 thumbnail: 27361.jpg
 exl-id: f59bf52a-13fe-4b84-81d6-518b9b081151
-translation-type: tm+mt
 source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
 source-wordcount: '77'

@@ -1,13 +1,13 @@
 ---
 title: Push-felsökningsvy
 description: Den här vägledningen innehåller information om vyn Push Debug (Push Debug) i Adobe Experience Platform Assurance.
-source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
+exl-id: a9558ee2-2e80-4b0d-ab45-2020be85e634
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '912'
 ht-degree: 0%
 
 ---
-
 
 # Push-felsökningsvy
 

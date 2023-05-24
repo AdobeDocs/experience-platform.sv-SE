@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM f�
 exl-id: 94457fe5-80bc-4822-9f6c-48f77d56c89b
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
 | `statusReason` | En beskrivning av den aktuella `status`. |
 | `street1` - `street4` | Dessa fyra fält är avsedda att innehålla information om gatuminivå, lägenhetsnummer, gatunummer och gatunamn. `street2` till `street4` är valfria. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen för postadresser finns i den offentliga XDM-databasen:
 

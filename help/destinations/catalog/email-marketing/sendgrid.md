@@ -5,7 +5,7 @@ description: Med SendGrid-målet kan du exportera dina egna data och aktivera de
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1512'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ SendGrid stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs m
 |---|---|---|
 | e-post | E-postadress | Observera att både oformaterad text och SHA256-hashade e-postadresser stöds av [!DNL Adobe Experience Platform]. Om källfältet för Experience-plattformen innehåller ohashade attribut ska du kontrollera **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.<br/><br/> Observera att **SendGrid** stöder inte hash-kodade e-postadresser, så endast oformaterade textdata utan omformning skickas till målet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Användningsfall {#use-cases}
 

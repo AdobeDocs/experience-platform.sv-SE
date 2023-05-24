@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM (C
 exl-id: c9cc569b-1a91-4a6e-8bfd-7f8ec07d01d4
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 0%
 | `purchases` | [[!UICONTROL Measure]](./measure.md) | Används för att spåra när en order har godkänts. Inköpshändelsen är den enda nödvändiga åtgärden i en handelskonvertering. Inköpshändelsen måste ha en produktlista som refereras. |
 | `saveForLaters` | [[!UICONTROL Measure]](./measure.md) | En produktlista sparas för framtida bruk, till exempel önskelista. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

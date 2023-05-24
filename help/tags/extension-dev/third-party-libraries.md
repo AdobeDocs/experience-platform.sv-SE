@@ -1,7 +1,8 @@
 ---
 title: Implementera tredjepartsbibliotek
 description: Lär dig mer om de olika metoderna för att lagra bibliotek från tredje part i dina Adobe Experience Platform-taggtillägg.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: d8eaf814-cce8-499d-9f02-b2ed3c5ee4d0
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '1330'
 ht-degree: 0%
@@ -12,19 +13,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Ett av de främsta syftena med taggtillägg i Adobe Experience Platform är att göra det möjligt att enkelt implementera befintlig marknadsföringsteknologi (bibliotek) på er webbplats. Genom att använda tillägg kan du implementera bibliotek från tredjepartsnätverk för innehållsleverans (CDN) utan att behöva redigera webbplatsens HTML manuellt.
+Ett av de främsta syftena med taggtillägg i Adobe Experience Platform är att göra det möjligt att enkelt implementera befintlig marknadsföringsteknologi (bibliotek) på er webbplats. Genom att använda tillägg kan du implementera bibliotek från tredjepartsnätverk för innehållsleverans (CDN) utan att behöva redigera HTML för webbplatsen manuellt.
 
 Det finns flera metoder för att hantera tredjepartsbibliotek (leverantörsbibliotek) inom tilläggen. I det här dokumentet finns en översikt över de olika implementeringsmetoderna, inklusive för- och nackdelarna med dem.
 
 ## Förutsättningar
 
-Det här dokumentet kräver en fungerande förståelse för tillägg i taggar, inklusive vad de kan göra och hur de är sammansatta. Mer information finns i [översikten över tilläggsutveckling](./overview.md).
+Det här dokumentet kräver en fungerande förståelse för tillägg i taggar, inklusive vad de kan göra och hur de är sammansatta. Se [översikt över tilläggsutveckling](./overview.md) för mer information.
 
 ## Inläsningsprocess för baskod
 
-Förutom taggsammanhanget är det viktigt att förstå hur marknadsföringsteknologier normalt läses in på en webbplats. Tredjepartsbiblioteksleverantörer tillhandahåller ett kodfragment (som kallas baskod) som måste bäddas in i webbplatsens HTML-kod för att bibliotekets funktioner ska kunna läsas in.
+Förutom taggarna är det viktigt att förstå hur marknadsföringsteknologier normalt läses in på en webbplats. Tredjepartsbiblioteksleverantörer tillhandahåller ett kodfragment (som kallas baskod) som måste bäddas in i HTML på webbplatsen för att bibliotekets funktioner ska kunna läsas in.
 
 I allmänhet utförs en del av följande process av baskoder för marknadsföringsteknologier när de läses in på din webbplats:
 
@@ -38,7 +39,7 @@ När inläsningen av biblioteket är klar ersätts den globala funktionen med en
 
 ### Exempel på baskod
 
-Följande JavaScript är ett exempel på en obegränsad baskod för [Pinterest-konverteringstaggen](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?), som senare kommer att användas som referens i det här dokumentet för att visa hur baskoden kan anpassas för olika implementeringsstrategier med taggar:
+Följande JavaScript är ett exempel på en ominifierad baskod för [Pinterest-konverteringstagg](https://developers.pinterest.com/docs/ad-tools/conversion-tag/?), som senare kommer att användas som referens i det här dokumentet för att visa hur baskoden kan anpassas för olika implementeringsstrategier med taggar:
 
 ```js
 !function(scriptUrl) {
@@ -64,7 +65,7 @@ pintrk('load', 'YOUR_TAG_ID');
 pintrk('page');
 ```
 
-Sammanfattningsvis ger baskoden ovan ett [omedelbart anropat funktionsuttryck (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) som skapar en global funktion som kan interagera med biblioteket (`window.pintrk`). Den tilldelar även variabeln `scriptURL` värdet `https://s.pinimg.com/ct/core.js`, som är den plats där biblioteket finns. Som tidigare nämnts överförs alla funktioner som anropas innan biblioteket har lästs in till en kö (`window.pintrk.queue`) som ska köras i sekvens när biblioteket är tillgängligt.
+Sammanfattningsvis ger baskoden ovan en [direkt anropat funktionsuttryck (IIFE)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) som skapar en global funktion som kan interagera med biblioteket (`window.pintrk`). Dessutom tilldelas en `scriptURL` varierar värdet för `https://s.pinimg.com/ct/core.js`, som är den plats där biblioteket finns. Så som förklarats ovan kommer alla funktioner som anropas innan biblioteket har lästs in att placeras i en kö (`window.pintrk.queue`) som ska köras i följd när biblioteket är tillgängligt.
 
 Följande del av baskoden är mest relevant när det gäller att förstå hur biblioteket läses in på din plats:
 
@@ -79,11 +80,11 @@ firstScriptElement.parentNode.insertBefore(
 );
 ```
 
-Baskoden skapar ett skriptelement, ställer in det att läsas in asynkront och ställer in URL:en `src` till `https://s.pinimg.com/ct/core.js`. Sedan läggs skriptelementet till i dokumentet genom att det infogas före det första skriptelementet som redan finns i dokumentet.
+Baskoden skapar ett skriptelement, ställer in det att läsas in asynkront och ställer in `src` URL till `https://s.pinimg.com/ct/core.js`. Sedan läggs skriptelementet till i dokumentet genom att det infogas före det första skriptelementet som redan finns i dokumentet.
 
 ## Alternativ för taggimplementering
 
-I avsnitten nedan visas olika sätt att läsa in leverantörsbibliotek i dina tillägg med hjälp av Pinterest baskod som visades tidigare som exempel. I vart och ett av dessa exempel skapas en [åtgärdstyp för ett webbtillägg](./web/action-types.md) som läser in biblioteket på webbplatsen.
+I avsnitten nedan visas olika sätt att läsa in leverantörsbibliotek i dina tillägg med hjälp av Pinterest baskod som visades tidigare som exempel. I vart och ett av dessa exempel ingår att skapa en [åtgärdstyp för ett webbtillägg](./web/action-types.md) som läser in biblioteket på din webbplats.
 
 >[!NOTE]
 >
@@ -136,9 +137,9 @@ module.exports = function() {
 };
 ```
 
-Om du vill kan du vidta ytterligare åtgärder för att omfaktorisera implementeringen. Eftersom variablerna `scriptElement` och `firstScriptElement` nu omfattar den exporterade funktionen, kan du ta bort IIFE eftersom dessa variabler inte riskerar att bli globala.
+Om du vill kan du vidta ytterligare åtgärder för att omfaktorisera implementeringen. Sedan variablerna `scriptElement` och `firstScriptElement` är nu omfång för den exporterade funktionen, du kan ta bort ICFE eftersom dessa variabler inte riskerar att bli globala.
 
-Dessutom innehåller taggar flera [kärnmoduler](./web/core.md) som är verktyg som alla tillägg kan använda. Modulen `@adobe/reactor-load-script` läser in ett skript från en fjärrplats genom att skapa ett skriptelement och lägga till det i dokumentet. Genom att använda den här modulen för skriptinläsningsprocessen kan du omfaktorisera åtgärdskoden ytterligare:
+Dessutom innehåller taggar flera [kärnmoduler](./web/core.md) som alla tillägg kan använda. I synnerhet `@adobe/reactor-load-script` Modulen läser in ett skript från en fjärrplats genom att skapa ett skriptelement och lägga till det i dokumentet. Genom att använda den här modulen för skriptinläsningsprocessen kan du omfaktorisera åtgärdskoden ytterligare:
 
 ```js
 var loadScript = require('@adobe/reactor-load-script');
@@ -169,9 +170,9 @@ För att åtgärda detta kan du välja att inkludera leverantörsbiblioteket som
 >
 >I vissa fall kan leverantörsbiblioteket läsa in ytterligare kod från tredjepartsservrar, vilket är fallet med Pinterest leverantörsbibliotek. I dessa fall kanske inte alla riskrelaterade problem kan lösas helt genom att du paketerar leverantörsbiblioteket med ditt tillägg.
 
-För att implementera detta måste du först hämta leverantörsbiblioteket till din dator. I Pinterest finns leverantörsbiblioteket på [https://s.pinimg.com/ct/core.js](https://s.pinimg.com/ct/core.js). När du har hämtat filen måste du placera den i tilläggsprojektet. I exemplet nedan heter filen `pinterest.js` och finns i en `vendor`-mapp i projektkatalogen.
+För att implementera detta måste du först hämta leverantörsbiblioteket till din dator. I Pinterest finns leverantörsbiblioteket på [https://s.pinimg.com/ct/core.js](https://s.pinimg.com/ct/core.js). När du har hämtat filen måste du placera den i tilläggsprojektet. I exemplet nedan namnges filen `pinterest.js` och finns i `vendor` i projektkatalogen.
 
-När biblioteksfilen finns i ditt projekt måste du uppdatera ditt [tilläggsmanifest](./manifest.md) (`extension.json`) för att ange att leverantörsbiblioteket ska levereras tillsammans med huvudtaggbiblioteket. Detta gör du genom att lägga till sökvägen till biblioteksfilen i en `hostedLibFiles`-array:
+När biblioteksfilen finns i projektet måste du uppdatera [tilläggsmanifest](./manifest.md) (`extension.json`) för att ange att leverantörsbiblioteket ska levereras tillsammans med huvudtaggbiblioteket. Det gör du genom att lägga till sökvägen till biblioteksfilen i en `hostedLibFiles` array:
 
 ```json
 {
@@ -179,7 +180,7 @@ När biblioteksfilen finns i ditt projekt måste du uppdatera ditt [tilläggsman
 }
 ```
 
-Slutligen måste du konfigurera åtgärdskoden så att leverantörsbiblioteket läses in från samma server som är värd för huvudbiblioteket. I exemplet nedan används den åtgärdskod som är inbyggd i [föregående avsnitt](#vendor-host) som startpunkt. Om du använder [turbinobjektet](./turbine.md) måste du skicka filnamnet (utan sökväg) för leverantörsfilen så här:
+Slutligen måste du konfigurera åtgärdskoden så att leverantörsbiblioteket läses in från samma server som är värd för huvudbiblioteket. I exemplet nedan används den åtgärdskod som är inbyggd i [föregående avsnitt](#vendor-host) som startpunkt. Använda [turbinobjekt](./turbine.md)måste du skicka leverantörsfilens filnamn (utan sökväg) på följande sätt:
 
 ```js
 var loadScript = require('@adobe/reactor-load-script');
@@ -206,7 +207,7 @@ Observera att när du använder den här metoden måste du uppdatera din hämtad
 
 Du kan kringgå behovet av att läsa in leverantörsbiblioteket helt genom att bädda in bibliotekskoden direkt i själva åtgärdskoden, vilket gör den till en del av huvudtaggbiblioteket. Om du använder den här metoden ökar huvudbibliotekets storlek, men du behöver inte göra ytterligare en HTTP-begäran för att hämta en separat fil.
 
-Med hjälp av den åtgärdskod som är inbyggd i [föregående avsnitt](#vendor-host) som utgångspunkt kan du ersätta raden där skriptet läses in med innehållet i själva skriptet:
+Använda den inbyggda åtgärdskoden i [föregående avsnitt](#vendor-host) Som utgångspunkt kan du ersätta raden där skriptet läses in med innehållet i själva skriptet:
 
 ```js
 module.exports = function() {

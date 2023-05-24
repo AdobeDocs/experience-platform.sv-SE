@@ -1,26 +1,27 @@
 ---
-title: Financial Account Data Type
-description: This document provides an overview of the Financial Account XDM data type.
-source-git-commit: 32d8798d426696d8fd4ace4c53a8bf9b4db26b61
+title: Datatyp för finansiellt konto
+description: Det här dokumentet innehåller en översikt över datatypen XDM för det finansiella kontot.
+exl-id: badf9b20-d397-4b46-b045-19c69806fe8e
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '98'
+source-wordcount: '95'
 ht-degree: 1%
 
 ---
 
-# [!UICONTROL Financial Account]
+# [!UICONTROL Financial Account] datatyp
 
-[!UICONTROL Financial Account]
+[!UICONTROL Financial Account] är en standard-XDM-datatyp som beskriver information om ett finansiellt konto, inklusive typ, ägare och aktuellt saldo.
 
 ![](../images/data-types/financial-account.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `currentAccountBalance` | [[!UICONTROL Currency]](./currency.md) | The current balance of the account. |
-| `financialAccountId` | [!UICONTROL String] | A unique ID for the account. |
-| `financialAccountName` | [!UICONTROL String] | The name assigned to the account. |
-| `financialAccountType` | [!UICONTROL String] | The type of financial account, such as checking, savings, or retirement. |
+| `currentAccountBalance` | [[!UICONTROL Currency]](./currency.md) | Kontots aktuella saldo. |
+| `financialAccountId` | [!UICONTROL String] | Ett unikt ID för kontot. |
+| `financialAccountName` | [!UICONTROL String] | Namnet som tilldelats kontot. |
+| `financialAccountType` | [!UICONTROL String] | Typ av konto, t.ex. kontroll, sparande eller återlösen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/financial-account.schema.json)
+Mer information om datatypen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/financial-account.schema.json).

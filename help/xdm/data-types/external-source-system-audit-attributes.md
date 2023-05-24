@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM (E
 exl-id: ebdd8707-9675-4232-a5b7-4e4a481d706a
 source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '201'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 1%
 | `lastUpdatedDate` | DateTime | Det senaste uppdateringsdatumet för källsystemet. |
 | `lastViewedDate` | DateTime | Det senast visade datumet för källsystemet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

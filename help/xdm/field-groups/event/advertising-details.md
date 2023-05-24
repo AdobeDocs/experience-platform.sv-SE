@@ -1,9 +1,10 @@
 ---
 title: Fältgrupp för reklaminformationsschema
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Advertising Details.
-source-git-commit: 77fb3e348c2298fc5c325fcf2d3408da084b2b19
+exl-id: 25de09bd-eedd-489c-9cd5-8acd0c52ddbe
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '976'
 ht-degree: 1%
 
 ---
@@ -31,7 +32,7 @@ ht-degree: 1%
 | `timePlayed` | [[!UICONTROL Measure]](../../data-types/measure.md) | Den tid som en slutanvändare tillbringar med en viss medieresurs med tidsangivelser. |
 | `downloadedPlayback` | Boolean | När inställt på `true`, anger att träffen genereras på grund av att en hämtad annonssession spelas upp. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `adAssetReference` {#adAssetReference}
 
@@ -51,7 +52,7 @@ The `adAssetReference` -objektet hämtar resursinformation om annonsen.
 | `placementID` | Sträng | Annonsens placerings-ID. |
 | `siteID` | Sträng | ID för annonsplatsen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `adAssetViewDetails` {#adAssetViewDetails}
 
@@ -65,7 +66,7 @@ The `adAssetViewDetails` -objektet hämtar visningsinformation för annonsuppspe
 | `index` | Heltal | Indexvärdet för annonsen inuti den överordnade annonsbrytningen. Den första annonsen har till exempel ett index `0` och den andra annonsen har index `1`. |
 | `playerName` | Sträng | Namnet på spelaren som ansvarar för att återge annonsen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `adViewability` {#adViewability}
 
@@ -97,6 +98,6 @@ The `adViewability` -objektet hämtar det antal visningar som slutanvändarna se
 | `viewportHeight` | Heltal | Fönstrets lodräta storlek (i pixlar) som upplevelsen visades i vid körning. För en webbvyhändelse anger det här värdet höjden på webbläsarens visningsruta. |
 | `viewportWidth` | Heltal | Fönstrets vågräta storlek (i pixlar) som upplevelsen visades i vid körning. För en webbvyhändelse anger det här värdet bredden på webbläsarens visningsruta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-advertising.schema.json).

@@ -3,7 +3,8 @@ title: Använd den senaste kvalificeringstiden för XDM-attributet i det nya bet
 description: Lär dig hur du använder XDM-attributet för senaste kvalificeringstid i de nya betmolnlagringsmålen
 hidefromtoc: y
 hide: y
-source-git-commit: 03031dcaad82932f92e76177adf3b55447c3c153
+exl-id: d077ea10-5ff2-4acc-8ee6-78ea6cd752d1
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '332'
 ht-degree: 0%

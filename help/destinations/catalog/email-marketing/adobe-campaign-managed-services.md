@@ -4,7 +4,7 @@ description: Adobe Campaign Managed Cloud Services är en plattform för att des
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
 source-git-commit: ef49bebb96afb9b25430fcc69f8ba91305ad6697
 workflow-type: tm+mt
-source-wordcount: '1332'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -61,7 +61,7 @@ Resultatet är flerkanalskampanjer som är mer enhetliga över hela Adobe Experi
 | GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -72,7 +72,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

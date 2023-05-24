@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över XDM Business Cam
 exl-id: a39eac7d-46ee-4e9c-a1c0-4dbb63f2c813
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '219'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 | `personKey` | [[!UICONTROL B2B Source]](../../data-types/b2b-source.md) | En sammansatt identifierare för den person som är medlem i den associerade kampanjen. |
 | `_id` | Sträng | En unik identifierare för posten. Detta är ett systemgenererat värde som är skilt från `campaignMemberID`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet läser du i handboken [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md)
 

@@ -4,8 +4,8 @@ description: Versionsinformation från augusti 2022 för Adobe Experience Platfo
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
 source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
 workflow-type: tm+mt
-source-wordcount: '2062'
-ht-degree: 1%
+source-wordcount: '2035'
+ht-degree: 3%
 
 ---
 
@@ -30,7 +30,7 @@ AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att
 
 ### Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 
 **Uppdaterade funktioner**
 
@@ -38,7 +38,7 @@ Attribution AI används för att attribuera krediter till kontaktytor som leder 
 | ------- | ----------- |
 | Stöd för sekretess | <ul><li> Attribution AI har nu stöd för att definiera användarroller och åtkomstprinciper som ska hanteras [behörigheter](../../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li><li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut, som kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li><li>Attribution AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in konsumentförfrågningar om åtkomst och ta bort sina data i datasjön, identitetstjänst och kundprofil i realtid.  </li><li>Alla datauppsättningar som används för in-/utdata av modeller följer riktlinjerna för plattformen. Plattformsdatakryptering gäller för data i vila och under överföring. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md).</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Anteckning**: Attribution AI kommer inte att vara tillgänglig för befintliga vårdkunder förrän ytterligare varningar om detta.
 
@@ -54,7 +54,7 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 | ------- | ----------- |
 | Stöd för sekretess | <ul><li> Kundens AI har nu stöd för att definiera användarroller och åtkomstprinciper för att hantera [behörigheter](../../../help/access-control/abac/ui/permissions.md) för funktioner och objekt i ett produktprogram. </li><li>Granskningsloggresurser registreras automatiskt när aktiviteten utförs.</li><li> Via [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md)kan administratörer styra åtkomsten till specifika objekt och/eller funktioner baserat på vissa attribut. Dessa attribut kan läggas till i ett objekt, t.ex. etiketter. Administratörer kan också definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.</li><li>Kund-AI utnyttjar plattformsdatauppsättningar. För att ge stöd åt konsumenträttigheter som ett varumärke kan ta emot bör varumärken använda Platform Privacy Service för att skicka in konsumentförfrågningar om åtkomst och ta bort sina data i datasjön, identitetstjänst och kundprofil i realtid. </li><li>Alla datauppsättningar som används för in-/utdata av modeller följer riktlinjerna för plattformen. Plattformsdatakryptering gäller för data i vila och under överföring. Läs mer om [datakryptering](../../../help/landing/governance-privacy-security/encryption.md).</li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Anteckning**: Kundens AI kommer inte att vara tillgängligt för befintliga kunder inom hälso- och sjukvården förrän ytterligare varningar.
 
@@ -82,7 +82,7 @@ Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../das
 | --- | --- |
 | Stöd för inmatning av poster med varningar | Dataprep lokaliserar nu varningar (icke-kritiska fel) till fälten och tillåter att resten av raden importeras. Alla mappningsomformningsfel rapporteras nu som varningar och rader som är delvis inkapslade betraktas som lyckade, med en varning.  Övervakning stöds även för poster med varningar och diagnostikinformation. Det går för närvarande bara att få del av poster med varningar att strömma data. Läs dokumentationen om [importera poster med varningar](../../sources/tutorials/ui/monitor-streaming.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
@@ -96,7 +96,7 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 | ----------- | ----------- |
 | (Beta) Attributbaserat personaliseringsstöd för personaliseringsmål | I betaversionen av attributbaserad personalisering ser du två nya kort i [målkatalog](../../destinations/catalog/overview.md): <ul><li>**[!UICONTROL Adobe Target V2]**: Den här kopplingen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Utöver de funktioner som finns på Adobe Target V1-kortet lägger Target V2-kontakten till en [mappningssteg](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till Adobe Target, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.</li><li>**[!UICONTROL Custom Personalization With Attributes]**: Den här kopplingen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Förutom funktionerna i **[!UICONTROL Custom Personalization]**, **[!UICONTROL Custom Personalization With Attributes]** tillägg av en valfri [mappningssteg](../../destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till ditt anpassade personaliseringsmål, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.</li></ul> <br> Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization With Attributes]** mål kräver att du använder [API för Edge Network Server](../../server-api/overview.md) för datainsamling. Dessutom måste alla Server-API-anrop göras i en [autentiserad kontext](../../server-api/authentication.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Nya destinationer**
 
@@ -104,7 +104,7 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 | ----------- | ----------- |
 | [[!DNL Outreach]](../..//destinations/catalog/crm/outreach.md) | [[!DNL Outreach]](https://www.outreach.io/) är en plattform för säljavdelning med de flesta interaktionsdata för B2B-köpare i världen och betydande investeringar i egna AI-tekniker för att omvandla säljdata till intelligens. [!DNL Outreach] hjälper organisationer att automatisera säljengagemanget och agera utifrån intäktsanalys för att förbättra sin effektivitet, förutsägbarhet och tillväxt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
@@ -119,7 +119,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Klass | [[!UICONTROL AJO Entity Class]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | En postbaserad klass för att skapa uppslagsscheman för Adobe Journey Optimizer. |
 | Fältgrupp | [[!UICONTROL Workfront Work Objects]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | En omslutningsfältgrupp som refererar till alla objektspecifika fältgrupper på den lägre nivån för Adobe Workfront. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Uppdaterade XDM-komponenter**
 
@@ -135,7 +135,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Datatyper och fältgrupper | (Flera) | Flera mediedatatyper och fältgrupper har nya fält och uppdaterade beskrivningar. Se följande [pull-förfrågan](https://github.com/adobe/xdm/pull/1582/files) för mer information. |
 | (Alla) | (Flera) | Alla schemaobjekt som innehåller `enum` fältet innehåller nu även en motsvarande `meta:enum` fält för att ange visningsvärden för varje begränsning. Se följande [pull-förfrågan](https://github.com/adobe/xdm/pull/1601/files) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
@@ -148,7 +148,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 | Hög gräns för sammanslagningsprinciper | Platform kommer nu att tillämpa en hård begränsning av **fem** sammanfogningsprinciper per per sandlåda. Om din sandlåda har fler än fem samkörningsprinciper kommer du att **not** kan skapa nya sammanfogningsprinciper tills sandlådan har färre än fem sammanfogningsprinciper. |
 | Rensning av kanter för överblivna profiler | För alla organisationer tar nu profiltjänsten bort vänsterkantsattribut i användaraktivitetsområdet dagligen för att ge en mer korrekt återgivning av dina profiler i systemet. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort och påverkar profiler som sammanfogas från datauppsättningar där `com_adobe_aep_profile_region_dataset` markeras som `true`. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilräknaren&quot; i profilkontrollpanelen, eftersom dessa mått inkluderade attributfragment med vänsterkant före den här versionen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Om du vill veta mer om kundprofilen i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med profildata, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 
@@ -179,6 +179,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | [!DNL Teradata Vantage] källa (beta) | Använd [!DNL Teradata Vantage] källa till import av data från hybridmiljöer med flera moln till Experience Platform. Mer information finns i dokumentationen för [[!DNL Teradata Vantage] källa](../../sources/connectors/databases/teradata-vantage.md). |
 | Stöd för olika regioner för Adobe Analytics | Du kan nu importera rapportsviter från valfri region (USA, Storbritannien eller Singapore). Rapportsviterna måste mappas till samma organisation som den Experience Platform Sandbox-instans i vilken källanslutningen skapas. Mer information finns i guiden [skapa en Adobe Analytics-källanslutning i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/analytics.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).

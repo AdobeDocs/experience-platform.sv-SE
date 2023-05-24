@@ -1,27 +1,27 @@
 ---
-title: Product Category Schema Field Group
-description: This document provides an overview of the Product Category schema field group.
-source-git-commit: 9c06c58553aef4937454ced82d3e89867b5567b7
+title: Fältgrupp för produktkategorischema
+description: Det här dokumentet innehåller en översikt över schemafältgruppen för produktkategorier.
+exl-id: 80825bcf-e646-426b-a3d6-f6759f6cd5cf
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '98'
+source-wordcount: '95'
 ht-degree: 5%
 
 ---
 
+# [!UICONTROL Product Category] schemafältgrupp
 
-# [!UICONTROL Product Category]
-
-[!UICONTROL Product Category][[!UICONTROL Product]](../../classes/product.md)
+[!UICONTROL Product Category] är en standardgrupp för schemafält för [[!UICONTROL Product] class](../../classes/product.md) som hämtar egenskaper som hör till en produkts kategori.
 
 ![](../../images/field-groups/product/product-category.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `productCategoryDescription` | Sträng | A description for the product category. |
-| `productCategoryName` | Sträng | The name of the product category. |
-| `productSubcategoryDescription` | Sträng | A description for the product subcategory. |
-| `productSubcategoryName` | Sträng | The name of the product subcategory. |
+| `productCategoryDescription` | Sträng | En beskrivning av produktkategorin. |
+| `productCategoryName` | Sträng | Namnet på produktkategorin. |
+| `productSubcategoryDescription` | Sträng | En beskrivning av produktunderkategorin. |
+| `productSubcategoryName` | Sträng | Namnet på produktunderkategorin. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json)
+Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/product/product-category.schema.json).

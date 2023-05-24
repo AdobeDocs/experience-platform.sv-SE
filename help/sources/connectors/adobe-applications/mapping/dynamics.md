@@ -5,7 +5,7 @@ description: Tabellerna nedan innehåller mappningarna mellan källfälten i Mic
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
 source-git-commit: a278f27223c9a5d0b97a0aa6b5d943caf5f6b10e
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '541'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `salutation` | `person.name.courtesyTitle` |
 | `telephone1` | `workPhone.number` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Leads {#leads}
 
@@ -96,7 +96,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
 | `salutation` | `person.name.courtesyTitle` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Konton {#accounts}
 
@@ -133,7 +133,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `websiteurl` | `accountOrganization.website` |
 | `concat(accountid,"@${CRM_ORG_ID}.Dynamics")` | `accountKey.sourceKey` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Möjligheter {#opportunities}
 
@@ -157,7 +157,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `salesstage` | `opportunityStage` |
 | `stepname` | `nextStep` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kontaktroller för affärsmöjlighet {#opportunity-contact-roles}
 
@@ -175,7 +175,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `record1objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record1objecttypecode` källfält, se [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
 | `record2objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record2objecttypecode` källfält, se [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kampanjer {#campaigns}
 
@@ -200,7 +200,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `utcconversiontimezonecode` | `timeZone` |
 | `utcconversiontimezonecode` | `timezoneName` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Marknadsföringslista {#marketing-list}
 
@@ -215,7 +215,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Medlemmar i marknadsföringslistan {#marketing-list-members}
 
@@ -229,7 +229,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `iif(listid != null && listid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", listid, "sourceKey", concat(listid,"@${CRM_ORG_ID}.Dynamics")), null)` | `marketingListKey` |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Bilaga
 

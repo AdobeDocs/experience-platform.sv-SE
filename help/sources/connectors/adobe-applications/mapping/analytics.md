@@ -6,7 +6,7 @@ description: Med Adobe Experience Platform kan ni importera Adobe Analytics-data
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '3431'
+source-wordcount: '3419'
 ht-degree: 0%
 
 ---
@@ -122,7 +122,7 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | videopausetime | media.mediaTimed.pauseTime | Objekt | <!-- MISSING --> | {id (sträng), value (number)} |
 | videosekunderIncelastcall | media.mediaTimed.primaryAssetViewDetails.sessionTimeout | heltal |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Dela mappningsfält
 
@@ -134,7 +134,7 @@ Dessa fält har en enda källa, men mappa till **flera** XDM-platser.
 | mobileosversion | environment.operatingSystem, environment.operatingSystemVersion | string | Mobil operativsystemversion. |
 | videoadlength | advertising.adAssetReference._xmpDM.duration | heltal | Längd på videoreklam. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Genererade mappningsfält
 
@@ -194,7 +194,7 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | videokort | media.mediaTimed.mediaChapter.chapterAssetReference._xmpDM.duration | heltal | Namnet på videokapitlet. |
 | videolängd | media.mediaTimed.primaryAssetReference._xmpDM.duration | heltal | Videons längd. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Avancerade mappningsfält
 
@@ -274,4 +274,4 @@ Följande tabell innehåller kolumner som visar namnet på analysfältet (*Analy
 | besök_search_engine | _experience.analytics.session.search.searchEngine | string | Numeriskt ID för besökets första sökmotor. |
 | besök_start_time_gmt | _experience.analytics.session.timestamp | heltal | Tidsstämpel för besökets första träff i Unix-tid. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

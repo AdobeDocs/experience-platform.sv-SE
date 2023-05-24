@@ -4,8 +4,8 @@ description: Versionsinformation från april 2022 för Adobe Experience Platform
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '2793'
-ht-degree: 1%
+source-wordcount: '2781'
+ht-degree: 4%
 
 ---
 
@@ -21,7 +21,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [[!DNL Data Prep]](#data-prep)
 - [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
-- [Real-time Customer Data Platform B2B Edition](#B2B)
+- [Real-Time Customer Data Platform B2B-utgåva](#B2B)
 - [Källor](#sources)
 
 ## [!DNL Dashboards] {#dashboards}
@@ -55,7 +55,7 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 | ------- | --------- | ----------- |
 | Rensning av överblivet profilsegmentmedlemskap | Profiler och licensanvändning | Profiltjänsten tar nu bort kvarvarande segment dagligen för att ge en mer korrekt återgivning av dina profiler i systemet. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilantalet&quot;-måttet på kontrollpanelen för profiler, eftersom dessa mått inkluderade kvarvarande segment före den här versionen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)och [[!DNL Segments]](../../dashboards/guides/segments.md) instrumentpaneler.
 
@@ -126,7 +126,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | --- | --- |
 | Lägga till eller ta bort enskilda standardfält för ett schema | Nu kan du lägga till delar av standardfältgrupper i scheman, vilket ger större flexibilitet för de fält du väljer att ta med utan att du behöver skapa anpassade resurser från grunden.<br><br>Nu kan du även definiera egna ad hoc-fält direkt i schemastrukturen och tilldela dem till en ny eller befintlig anpassad fältgrupp utan att behöva skapa eller redigera fältgruppen i förväg.<br><br>Se guiden [skapa och redigera scheman i användargränssnittet](../../xdm/ui/resources/schemas.md) om du vill ha mer information om de nya arbetsflödena. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Nya XDM-komponenter**
 
@@ -151,7 +151,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Tillägg (Workfront) | [[!UICONTROL Work Program Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/program.schema.json) | Hämtar information om ett arbetsprogram. |
 | Tillägg (Workfront) | [[!UICONTROL Work Project Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/project.schema.json) | Hämtar information om ett arbetsprojekt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Uppdaterade XDM-komponenter**
 
@@ -167,7 +167,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Tillägg (Workfront) | [[!UICONTROL Work Task Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/task.schema.json) | Flera fält har lagts till. |
 | Tillägg (Workfront) | [[!UICONTROL Work Object]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobject.schema.json) | Nya fält för överordnad objekttyp och anpassade formulärfält. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
 
@@ -177,7 +177,7 @@ AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att
 
 ### Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
 
 **Uppdaterade funktioner**
 
@@ -189,7 +189,7 @@ Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] 
 
 ### Kund-AI
 
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 
 **Uppdaterade funktioner**
 
@@ -200,7 +200,7 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 
 Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] översikt](../../intelligent-services/home.md).
 
-## Real-time Customer Data Platform B2B Edition {#B2B}
+## Real-Time Customer Data Platform B2B-utgåva {#B2B}
 
 Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time CDP) och är särskilt framtagen för marknadsförare som använder en tjänstmodell som bygger på business-to-business. Den sammanför data från flera källor och kombinerar dem i en enda vy över personer och kontoprofiler. Tack vare dessa enhetliga data kan marknadsförarna inrikta sig exakt på specifika målgrupper och engagera dessa målgrupper i alla tillgängliga kanaler.
 

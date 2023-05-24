@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /environment i Reactor API.
 exl-id: 4c22f799-8338-4cf0-980a-3900d725ab5d
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '1002'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Miljöer finns i tre typer (eller faser), där varje typ har en egen gräns för
 | Mellanlagring | Ett |
 | Produktion | Ett |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Dessa miljötyper har liknande beteende, men används i olika stadier av [arbetsflöde för taggpublicering](../../ui/publishing/publishing-flow.md).
 
@@ -52,7 +52,7 @@ GET /properties/{PROPERTY_ID}/environments
 | --- | --- |
 | `PROPERTY_ID` | The `id` av den egendom som äger miljöerna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -176,7 +176,7 @@ GET /environments/{ENVIRONMENT_ID}
 | --- | --- |
 | `ENVIRONMENT_ID` | The `id` av miljön som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -285,7 +285,7 @@ POST /properties/{PROPERTY_ID}/environments
 | --- | --- |
 | `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar miljön under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -330,7 +330,7 @@ curl -X POST \
 | `id` | The `id` av miljön som du vill uppdatera. Det här bör matcha `{ENVIRONMENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -427,7 +427,7 @@ PATCH /environments/{ENVIRONMENT_ID}
 | --- | --- |
 | `ENVIRONMENT_ID` | The `id` av miljön som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -457,7 +457,7 @@ curl -X PATCH \
 | `id` | The `id` av miljön som du vill uppdatera. Det här bör matcha `{ENVIRONMENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -554,7 +554,7 @@ DELETE /environments/{ENVIRONMENT_ID}
 | --- | --- |
 | `ENVIRONMENT_ID` | The `id` av miljön som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -590,7 +590,7 @@ GET  /environments/{ENVIRONMENT_ID}/builds
 | --- | --- |
 | `{ENVIRONMENT_ID}` | The `id` av miljön vars byggen du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -707,7 +707,7 @@ GET  /environments/{ENVIRONMENT_ID}/host
 | --- | --- |
 | `{ENVIRONMENT_ID}` | The `id` i den miljö vars värd du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -774,7 +774,7 @@ GET  /environments/{ENVIRONMENT_ID}/library
 | --- | --- |
 | `{ENVIRONMENT_ID}` | The `id` i den miljö vars bibliotek du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -889,7 +889,7 @@ GET  /environments/{ENVIRONMENT_ID}/property
 | --- | --- |
 | `{ENVIRONMENT_ID}` | The `id` för miljön vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

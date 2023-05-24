@@ -7,7 +7,7 @@ exl-id: 1ab5a436-c5dd-4e7a-aba1-549f0613f224
 source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
 workflow-type: tm+mt
 source-wordcount: '855'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -81,7 +81,7 @@ Experience Platform är byggt för att berika applikationer för digitala upplev
 
 För att tillgodose behovet av flexibilitet i utvecklingen tillhandahåller Experience Platform sandlådor som delar upp en enda plattformsinstans i separata virtuella miljöer för att hjälpa er att utveckla era program för digitala upplevelser baserat på er egen utvecklingslivscykel.
 
-Se [översikt över sandlådor](../../sandboxes/home.md) för mer information.
+Se [översikten över sandlådor](../../sandboxes/home.md) för mer information.
 
 ## Nästa steg
 

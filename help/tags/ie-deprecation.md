@@ -1,7 +1,8 @@
 ---
 title: Stöd för sluttaggar i Internet Explorer 10 och 11
 description: Adobe Experience Platform tillhandahåller inte längre uppdateringsstöd för taggar i Internet Explorer 10 och 11.
-source-git-commit: 0103f1af37dc202087d3c81d495de88d3de7c377
+exl-id: 35491c80-2a8a-4e07-baa7-a5db373b6852
+source-git-commit: 44e056407f5089c927752f00cc6bf173d7640b83
 workflow-type: tm+mt
 source-wordcount: '354'
 ht-degree: 0%

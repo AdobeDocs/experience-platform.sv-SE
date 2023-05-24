@@ -4,7 +4,7 @@ description: Använd Pega Customer Decision Hub-destinationen i Adobe Experience
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
 source-git-commit: ae00b113308354e98f4448d2544e2a6e475c384e
 workflow-type: tm+mt
-source-wordcount: '986'
+source-wordcount: '980'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 |---|---|
 | *CustomerID* | Vanlig användaridentifierare som unikt identifierar en profil i [!DNL Pega Customer Decision Hub] och Adobe Experience Platform |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -60,7 +60,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Exportera alla medlemmar i ett segment med identifierare (*CustomerID*), attribut (efternamn, förnamn, plats osv.) och segmentmedlemskapsdata. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform, baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Mer information finns i [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

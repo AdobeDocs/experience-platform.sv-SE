@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: c5cc36d9530ff6fbb52a1995844f495b38e938b3
+source-git-commit: 24220c24af89e3eabc3d21854c1f70a418b2da59
 workflow-type: tm+mt
-source-wordcount: '983'
+source-wordcount: '982'
 ht-degree: 14%
 
 ---
@@ -234,8 +234,6 @@ ht-degree: 14%
       * [API för fäst konvertering](https://exchange.adobe.com/apps/ec/108550)
       * [!DNL Splunk] {#splunk}
          * [Översikt](./extensions/server/splunk/overview.md)
-      * [!DNL Twitter] {#twitter}
-         * [Översikt](./extensions/server/twitter/overview.md)
       * [!DNL Zendesk] Händelse-API {#zendesk}
          * [Översikt](./extensions/server/zendesk/overview.md)
 * Tilläggsutveckling {#extension-dev}

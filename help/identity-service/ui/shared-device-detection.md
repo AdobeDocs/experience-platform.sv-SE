@@ -7,7 +7,7 @@ hidefromtoc: true
 exl-id: 36318163-ba07-4209-b1be-dc193ab7ba41
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1328'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med
 | Namnområde för användaridentitet | Namnområdet för användaridentitet representerar den autentiserade (inloggade) användaren av en delad enhet. |
 | Senaste autentiserade användare | Den senast autentiserade användaren representerar den användare som senast loggade in på en enhet, om en enhet loggas in med flera konton. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 [!DNL Shared Device Detection] skapar två namnutrymmen: den **Namnområde för delad identitet** och **Namnområde för användaridentitet**.
 

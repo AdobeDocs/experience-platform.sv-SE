@@ -6,7 +6,7 @@ type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
 source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1383'
 ht-degree: 0%
 
 ---
@@ -232,7 +232,7 @@ Ett godkänt svar returnerar information om den nyligen skapade fältgruppen.
 | --- | --- |
 | `$id` | Den skrivskyddade, systemgenererade unika identifieraren för den nya fältgruppen. Tar formen av en URI. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Spela in `$id` URI för fältgruppen, som ska användas i nästa steg när fältgruppen läggs till i källschemat.
 
@@ -250,7 +250,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 | --- | --- |
 | `{SCHEMA_ID}` | URL-kodad `$id` URI eller `meta:altId` för källschemat. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -281,7 +281,7 @@ curl -X PATCH \
 | `path` | Sökvägen till schemafältet där den nya resursen ska läggas till. När du lägger till fältgrupper i scheman måste värdet vara /allOf/-. |
 | `value.$ref` | The `$id` för den fältgrupp som ska läggas till. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -385,7 +385,7 @@ curl -X POST \
 | `sourceProperty` | Sökvägen till fältet i källschemat som ska användas för att referera till referensschemats primära identitet. |
 | `xdm:identityNamespace` | Referensfältets identitetsnamnområde. Detta måste vara samma namnutrymme som referensschemats primära identitet. Se [Översikt över namnutrymmet identity](../../identity-service/home.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -446,7 +446,7 @@ curl -X POST \
 | `xdm:destinationVersion` | Referensschemats versionsnummer. |
 | `xdm:destinationProperty` | Sökvägen till det primära identitetsfältet i referensschemat. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Svar
 

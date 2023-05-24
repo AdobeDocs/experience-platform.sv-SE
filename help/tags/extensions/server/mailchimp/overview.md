@@ -9,8 +9,8 @@ topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
 source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
 workflow-type: tm+mt
-source-wordcount: '1290'
-ht-degree: 1%
+source-wordcount: '1287'
+ht-degree: 2%
 
 ---
 
@@ -126,7 +126,7 @@ Tabellen nedan innehåller mer information om varje möjligt värde.
 | `isSyncing` | `arc.event.xdm._tenant.isSyncing`<br /> eller<br /> `arc.event.data._tenant.isSyncing` | boolesk | Händelser skapade med `is_syncing` ange till `true` **inte** aktivera automatisering | Nej |  |
 | `occurredAt` | `arc.event.xdm._tenant.occuredAt`<br /> eller `arc.event.data._tenant.occuredAt` | Sträng | En ISO 8601-tidsstämpel för när händelsen inträffade | Nej |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!IMPORTANT]
 >  

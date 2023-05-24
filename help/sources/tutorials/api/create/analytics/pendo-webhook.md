@@ -1,8 +1,9 @@
 ---
 title: Skapa en källanslutning och ett dataflöde för Pendo med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till Pendo med API:t för Flow Service.
-badge: "Beta"
-source-git-commit: c35daa60db315f1ed04ed6424464f1ae7bfb4243
+badge: Beta
+exl-id: 12b0295d-4b26-4eb7-a02a-a01d825d2a1e
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1459'
 ht-degree: 0%

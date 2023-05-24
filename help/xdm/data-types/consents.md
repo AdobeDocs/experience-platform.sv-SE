@@ -5,7 +5,7 @@ description: Datatypen Godkännande av sekretess, personalisering och marknadsf�
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '2015'
+source-wordcount: '1991'
 ht-degree: 0%
 
 ---
@@ -141,7 +141,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `adID`
 
@@ -159,7 +159,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 | `idType` | Typ av annons-ID, antingen `IDFA` för Apple ID för annonsörer eller `GAID` för Google Advertiser ID, även känt som Android Advertiser ID (AAID). |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `share`
 
@@ -175,7 +175,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 | --- | --- |
 | `val` | Kunden har gett sitt medgivande för det här användningsärendet. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `personalize` {#personalize}
 
@@ -200,7 +200,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 | `content` | Representerar kundens önskemål om personaliserat innehåll på er webbplats eller i er tillämpning. |
 | `val` | Personalisering som kunden har tillhandahållit för det angivna användningsfallet. I de fall där kunden inte behöver uppmanas att ge sitt samtycke, ska värdet i detta fält ange grunden för personaliseringen. Se [appendix](#choice-values) för godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `marketing` {#marketing}
 
@@ -236,7 +236,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 | `time` | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. Observera att om tidsstämpeln för en enskild inställning är densamma som den som anges under `metadata`, ska det här fältet inte ställas in för den inställningen. |
 | `reason` | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### `metadata`
 
@@ -252,7 +252,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 | --- | --- |
 | `time` | En ISO 8601-tidsstämpel för senaste gången som något av kundens samtycke och inställningar uppdaterades. Det här fältet kan användas i stället för att tidsstämplar tillämpas på enskilda inställningar för att minska inläsningen och komplexiteten. Tillhandahåller en `time` värdet under en enskild inställning åsidosätter `metadata` tidsstämpel för den aktuella inställningen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Inhämta data med datatypen {#ingest}
 
@@ -292,7 +292,7 @@ I följande tabell visas godkända värden för `val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Godkända värden för `preferred` {#preferred-values}
 
@@ -314,7 +314,7 @@ I följande tabell visas godkända värden för `preferred`:
 | `none` | Ingen föredragen kanal. |
 | `unknown` | Den önskade kanalen är okänd. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Fullständig [!UICONTROL Consents and Preferences] schema {#full-schema}
 

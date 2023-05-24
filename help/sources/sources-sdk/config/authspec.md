@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över de konfiguration
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '519'
 ht-degree: 1%
 
 ---
@@ -130,7 +130,7 @@ En OAuth2-uppdateringskod ger säker åtkomst till ett program genom att generer
 | `authSpec.spec.properties.requestParameterOverride` | Gör att du kan ange autentiseringsparametrar som ska åsidosättas vid autentisering. |
 | `authSpec.spec.required` | Visar de autentiseringsuppgifter som krävs för att autentisera. | `accessToken` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 
 ### Grundläggande autentisering
@@ -177,7 +177,7 @@ Grundläggande autentisering är en autentiseringstyp som gör att du kan komma 
 | `authSpec.spec.properties.password` | Kontolösenordet som är kopplat till programmet. |
 | `authSpec.spec.required` | Anger de fält som krävs som obligatoriska värden som ska anges i Platform. | `username` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exempel på autentiseringsspecifikation
 

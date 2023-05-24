@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över XDM-datatypen Po
 exl-id: cab5463b-97a0-400d-a00c-0cd8bf9301a5
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '189'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 3%
 | `poiID` | Sträng | En unik identifierare för POI. |
 | `type` | Sträng | Den allmänna typen av POI med ett typningsschema som valts av administratören för POI-definitionerna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

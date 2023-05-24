@@ -4,7 +4,7 @@ description: Aktivera profiler för riktade medieundersökningar och insamling a
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
 source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1064'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ Medallia stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs m
 | e-post | E-postadress | Välj e-postmålets identitet när du vill skicka enkäter om e-postinbjudan. När en profil är associerad med flera e-postadresser utlöser MediaMedia inbjudan till endast det första e-postmeddelandet. |
 | telefon | Telefonnummer hashas i E.164-format | Välj telefonens målidentitet när du vill skicka SMS-baserade enkäter. Telefonnumret måste vara i E.164-format, som innehåller ett plustecken (+), en internationell landskod, en lokal områdeskod och ett telefonnummer. Till exempel: (+)(landskod)(riktnummer)(telefonnummer). När en profil är associerad med flera telefonnummer kommer Media att utlösa inbjudan endast till det första telefonnumret. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla nykvalificerade medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

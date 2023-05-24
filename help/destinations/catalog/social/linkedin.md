@@ -5,7 +5,7 @@ description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpass
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1003'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 | IDFA | Apple ID för annonsörer | Välj den här målidentiteten när din källidentitet är ett IDFA-namnutrymme. |
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text och hashad e-post. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -45,7 +45,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med identifierarna (namn, telefonnummer och andra) som används i [!DNL LinkedIn Matched Audiences] mål. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Krav för linkedIn-konton {#LinkedIn-account-prerequisites}
 

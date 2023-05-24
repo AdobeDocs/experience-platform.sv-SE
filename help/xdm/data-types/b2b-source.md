@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över datatypen B2B So
 exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
 source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '261'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ The [!UICONTROL B2B Source] Med datatypen kan du använda ett enhets ursprunglig
 | `sourceKey` | Sträng | En unik identifierare som består av `sourceId`, `sourceInstanceId`och `sourceType` sammanfogade i följande format: `[sourceID]@[sourceInstanceID].[sourceType]`.<br><br>Vissa källkopplingar som Marketo sammanfogar det här värdet automatiskt för vissa identifierare. Andra måste sammanfogas manuellt med [Dataprep `concat` function](../../data-prep/functions.md#string), till exempel: `concat(id,"@${ORG_ID}.Marketo")` |
 | `sourceType` | Sträng | Namnet på plattformen som innehåller källdata. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

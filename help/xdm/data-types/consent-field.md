@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över XDM-datatypen f�
 exl-id: f1f14eb7-21dd-45ca-8fb4-68f397cfa697
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '597'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 | --- | --- | --- |
 | `val` | Sträng | Kunden har gett sitt medgivande för det här användningsärendet. I tabellen nedan finns godkända värden och definitioner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 I följande tabell visas godkända värden för `val`:
 
@@ -42,7 +42,7 @@ I följande tabell visas godkända värden för `val`:
 | `VI` | Enskilda personers vitala intressen | Insamling av uppgifter för det särskilda ändamålet krävs för att skydda den enskildes vitala intressen. |
 | `PI` | Offentligt intresse | Insamling av uppgifter för det angivna ändamålet krävs för att utföra en uppgift i allmänhetens intresse eller vid utövandet av offentlig makt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

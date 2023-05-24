@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /builds i Reactor API.
 exl-id: 476abea0-efff-478a-b87f-ef6b91bfcca5
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '803'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ GET /libraries/{LIBRARY_ID}/builds
 | --- | --- |
 | `LIBRARY_ID` | The `id` för det bibliotek vars byggen du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -158,7 +158,7 @@ GET /builds/{BUILD_ID}
 | --- | --- |
 | `BUILD_ID` | The `id` av det bygge som du vill leta upp. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -260,7 +260,7 @@ POST /libraries/{LIBRARY_ID}/builds
 | --- | --- |
 | `LIBRARY_ID` | The `id` i biblioteket som du definierar bygget under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -362,7 +362,7 @@ PATCH /builds/{BUILD_ID}
 | --- | --- |
 | `BUILD_ID` | The `id` av det bygge som du vill publicera på nytt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -392,7 +392,7 @@ curl -X PATCH \
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `builds`. |
 | `meta.action` | Den typ av åtgärd från PATCH som ska utföras. Måste anges till `republish`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -489,7 +489,7 @@ GET  /builds/{BUILD_ID}/data_elements
 | --- | --- |
 | `{BUILD_ID}` | The `id` för det bygge vars dataelement du vill lista. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -630,7 +630,7 @@ GET  /builds/{BUILD_ID}/extensions
 | --- | --- |
 | `{BUILD_ID}` | The `id` för det bygge vars tillägg du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -761,7 +761,7 @@ GET  /builds/{BUILD_ID}/rules
 | --- | --- |
 | `{BUILD_ID}` | The `id` för det bygge vars regler du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -874,7 +874,7 @@ GET  /builds/{BUILD_ID}/library
 | --- | --- |
 | `{BUILD_ID}` | The `id` av bygget vars bibliotek du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -987,7 +987,7 @@ GET  /builds/{BUILD_ID}/environment
 | --- | --- |
 | `{BUILD_ID}` | The `id` för den byggnad vars miljö du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Busi
 exl-id: 510c5608-054d-4bed-91eb-22d84b5dc625
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '292'
 ht-degree: 1%
 
 ---
@@ -29,6 +29,6 @@ ht-degree: 1%
 | `marketingListID` | Sträng | Ett unikt ID för marknadsföringslistentiteten. |
 | `marketingListName` | Sträng | Marknadsföringslistans namn. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

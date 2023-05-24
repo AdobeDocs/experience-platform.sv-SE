@@ -2,7 +2,8 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 title: Visa en användares sidvyer
 description: Lär dig hur du skriver frågor som använder Experience Events för att skapa en lista över de 100 senaste sidorna som en angiven användare har använt.
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+exl-id: d831910d-d3a4-4a5a-b897-b09f0546dab0
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '266'
 ht-degree: 0%

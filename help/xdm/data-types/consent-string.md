@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över datatypen Consen
 exl-id: 288ec79e-074a-4d72-9c5f-e9cd8485b804
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '197'
+source-wordcount: '194'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
 | `containsPersonalData` | Boolean | När det här fältet är sant betyder det att den här medgivandesträngen måste bearbetas för att medgivandet ska kunna verkställas. |
 | `gdprApplies` | Boolean | När det här fältet är sant innebär det att samtycke kommer med personuppgifter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

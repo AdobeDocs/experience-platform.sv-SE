@@ -4,7 +4,7 @@ description: Lär dig hur du filtrerar resultat när du visar resurser i Reactor
 exl-id: 8a91f3dd-4ead-4a10-abb1-e71acb0d73b6
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '553'
 ht-degree: 1%
 
 ---
@@ -38,7 +38,7 @@ GET {ENDPOINT}?filter[{ATTRIBUTE_NAME}]={OPERATOR} {VALUE}
 | `{OPERATOR}` | Operatorn som bestämmer hur resultaten utvärderas mot den angivna `{VALUE}`. Operatorer som stöds listas i [appendix-avsnitt](#supported-operators). |
 | `{VALUE}` | Värdet som returnerade resultat ska jämföras med. Vid jämförelse av likhet med `EQ` måste värdet vara en exakt, skiftlägeskänslig matchning för att kunna inkluderas i svaret. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

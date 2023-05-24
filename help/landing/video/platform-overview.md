@@ -7,7 +7,6 @@ doc-type: video
 activity: understand
 thumbnail: 32797.jpg
 exl-id: 6ed25b0c-ac12-4572-8d3d-39e0eb3e2112
-translation-type: tm+mt
 source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
 source-wordcount: '55'
@@ -19,6 +18,6 @@ ht-degree: 0%
 
 I den här videon får du en snabb introduktion till Experience Platform och en översikt över några av de affärsutmaningar som det löser.
 
-Om du vill veta mer börjar du med att läsa översikten [Experience Platform](../home.md).
+Om du vill veta mer börjar du med att läsa [Experience Platform - översikt](../home.md).
 
 >[!VIDEO](https://video.tv.adobe.com/v/32797?quality=12&learn=on)

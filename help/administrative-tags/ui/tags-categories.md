@@ -2,7 +2,8 @@
 keywords: Experience Platform;taggar kategorier;taggar;
 title: Märkordskategorier
 description: Det här dokumentet innehåller information om hur du hanterar enhetliga taggkategorier i Adobe Experience Cloud
-source-git-commit: 6f9787909b8155d2bf032b4a42483f2cb4d44eb4
+exl-id: 0369d4e1-c091-4702-890a-3882a4916217
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 0%

@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /hosts i Reaktors API.
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
 source-git-commit: 905384b3190cd55e7caa9c4560d6b2774280eee7
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '797'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ GET /properties/{PROPERTY_ID}/hosts
 | --- | --- |
 | `PROPERTY_ID` | The `id` av den egendom som äger värdarna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -123,7 +123,7 @@ GET /hosts/{HOST_ID}
 | --- | --- |
 | `HOST_ID` | The `id` för värden som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -190,7 +190,7 @@ POST /properties/{PROPERTY_ID}/hosts
 | --- | --- |
 | `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar värden under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -232,7 +232,7 @@ curl -X POST \
 | `attributes.username` | Ett valfritt användarnamn för autentisering. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `hosts`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -292,7 +292,7 @@ PATCH /hosts/{HOST_ID}
 | --- | --- |
 | `HOST_ID` | The `id` för värden som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -322,7 +322,7 @@ curl -X PATCH \
 | `id` | The `id` för den värddator som du vill uppdatera. Det här bör matcha `{HOST_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `hosts`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -378,7 +378,7 @@ DELETE /hosts/{HOST_ID}
 | --- | --- |
 | `HOST_ID` | The `id` för värden som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -414,7 +414,7 @@ GET /hosts/{HOST_ID}/property
 | --- | --- |
 | `{HOST_ID}` | The `id` för den värd vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

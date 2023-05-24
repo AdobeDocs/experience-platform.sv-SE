@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller riktlinjer för hur man skyddar mot
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
 source-git-commit: 582f6ffdea6fa1978f6af6f0f0f92e50a12f6200
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---

@@ -8,7 +8,7 @@ exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '1887'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -70,7 +70,7 @@ Mer information finns i [Real-time Customer Data Platform metrics overview](../.
 
 I november-versionen stöder Adobe Real-time Customer Data Platform följande destinationer:
 
-* Reklam: [!DNL Google]
+* Advertising: [!DNL Google]
 * E-postmarknadsföring: Adobe Campaign, [!DNL Salesforce Marketing Cloud], [!DNL Responsys], [!DNL Oracle Eloqua]
 
 Se [målkatalog](../../destinations/catalog/overview.md) för information om var och en av destinationerna.
@@ -111,7 +111,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] gör det möjligt för d
 | Funktion | Beskrivning |
 | -----------| ---------- |
 | Dataåtkomst med [!DNL Platform] SDK | Färdiga recept och startböcker för bärbara datorer i [!DNL Python] nu använda [!DNL Platform] SDK för åtkomst av data. |
-| Stöd för sandlådor | Stöd för kommande sandlådefunktioner (som för närvarande är i betaversion), inklusive möjligheten att isolera bärbara datorer och recept till utvecklings- eller produktionssandlådor. Se [översikt över sandlådor](../../sandboxes/home.md) för mer information. |
+| Stöd för sandlådor | Stöd för kommande sandlådefunktioner (som för närvarande är i betaversion), inklusive möjligheten att isolera bärbara datorer och recept till utvecklings- eller produktionssandlådor. Se [översikten över sandlådor](../../sandboxes/home.md) för mer information. |
 
 Mer information finns i [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md).
 

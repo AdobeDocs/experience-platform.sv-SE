@@ -5,7 +5,7 @@ exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
 source-wordcount: '497'
-ht-degree: 0%
+ht-degree: 3%
 
 ---
 
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse för hur du anvä
 Den här självstudien kräver även att du har installerat webbläsartillägget Platform Debugger. Felsökningsprogrammet för plattformen är bara tillgängligt för Chrome- och Firefox-webbläsare. Använd någon av följande länkar för att installera tillägget innan du startar självstudiekursen:
 
 * [Felsökning för plattformen för Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
-* [Felsökning för plattformen i Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-experience-platform-dbg/)
+* [Felsökning för plattformen i Firefox](https://addons.mozilla.org/sv-SE/firefox/addon/adobe-experience-platform-dbg/)
 
 ## Open Platform Debugger på din webbplats
 

@@ -61,7 +61,7 @@ Med tillägg kan ni tillgodose olika kundbehov. Exempel på användningsområden
 
 Tillägg kan delas in i följande kategorier i Plattform:
 
-- [Reklam](../advertising/overview.md)
+- [Advertising](../advertising/overview.md)
 - [Analytics ](../analytics/overview.md)
 - [Datahanteringsplattform](../data-management/overview.md)
 - [E-postmarknadsföringsmål](../email-marketing/overview.md)

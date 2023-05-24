@@ -183,7 +183,7 @@ Om du vill lägga till eller ta bort segment väljer du **[!UICONTROL Create fee
 
 Listan med segment visas. Härifrån kan du lägga till nya segment i din feed och du kan använda högerspåret för att ta bort segment som du inte längre behöver. När du är klar med att hantera segmenten i din feed väljer du **[!UICONTROL Next]** och följ sedan stegen ovan för att slutföra den uppdaterade feeden.
 
-![uppdatera](./images/update.png)
+![update](./images/update.png)
 
 >[!NOTE]
 >

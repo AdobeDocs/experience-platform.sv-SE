@@ -4,7 +4,7 @@ description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer E
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
 source-git-commit: e68bbc07f7d2e4e05b725cbef37a1810a5825742
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '827'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ På så sätt kan marknadsförarna skicka segment som skapats i Adobe Experience
 | ECID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras till av följande alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/ecid.md) för mer information. |
 | E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Attribut som stöds {#supported-attributes}
 
@@ -61,7 +61,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (e-post, ECID) som används i [!DNL Marketo Engage] mål. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Ställ in mål och aktivera segment {#set-up}
 

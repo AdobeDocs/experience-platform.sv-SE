@@ -16,4 +16,4 @@ ht-degree: 0%
 >
 >Adobe Experience Platform [!DNL Web SDK] är för närvarande i betaversion och är inte tillgängligt för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
-I webbläsare som är inbäddade i mobilprogram fungerar SDK precis som i en vanlig webbläsare. Du bör dock se till att besökar-ID:t skickas från mobilprogrammet till webbplatsen via URL:en. Den här processen beskrivs i dokumentationen för [Experience SDK för mobilen](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html).
+I webbläsare som är inbäddade i mobilprogram fungerar SDK precis som i en vanlig webbläsare. Du bör dock se till att besökar-ID:t skickas från mobilprogrammet till webbplatsen via URL:en. Denna process beskrivs i dokumentationen för [Experience SDK for Mobile](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html).

@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Expe
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
 source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '1797'
+source-wordcount: '1791'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ The [!DNL XDM ExperienceEvent] klassen innehåller flera tidsserierelaterade fä
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas på rätt sätt [Kundprofil i realtid](../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
 | `timestamp`<br>**(Obligatoriskt)** | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Den här tidsstämpeln måste finnas tidigare. Se avsnittet nedan [tidsstämplar](#timestamps) för bästa praxis för användning av detta fält. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Bästa tillvägagångssätt för händelsemodellering
 
@@ -144,7 +144,7 @@ I följande tabell visas godkända värden för `eventType`och deras definitione
 | `web.webinteraction.linkClicks` | En länk har markerats en eller flera gånger. |
 | `web.webpagedetails.pageViews` | En webbsida har fått en eller flera vyer. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Föreslagna värden för `producedBy` {#producedBy}
 

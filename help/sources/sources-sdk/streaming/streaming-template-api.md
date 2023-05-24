@@ -3,7 +3,8 @@ title: Självbetjäningsmall för direktuppspelning av SDK API
 description: Lär dig hur du hämtar strömmande data från en källa till Adobe Experience Platform med API:t för Flow Service.
 hide: true
 hidefromtoc: true
-source-git-commit: eb317f38499a32b1a6eb072ec74e68cdfebf994f
+exl-id: a06384a2-cd99-456d-9f00-babcf3f7b7d9
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1699'
 ht-degree: 0%

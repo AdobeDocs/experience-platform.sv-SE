@@ -1,9 +1,10 @@
 ---
 title: Medicinaklass
 description: Det här dokumentet innehåller en översikt över klassen Medication i Experience Data Model (XDM).
-source-git-commit: cf39f943e27cd11b0eabbc344774fa12482a8f92
+exl-id: e5786241-dd6e-450f-98c8-2de46affb3e2
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '142'
 ht-degree: 0%
 
 ---
@@ -20,6 +21,6 @@ I Experience Data Model (XDM) är [!UICONTROL Medication] Klassen innehåller de
 | `medicationId` | [!UICONTROL String] | En unik identifierare för medicineringen. |
 | `medicationName` | [!UICONTROL String] | Läkemedlets namn. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Klassen kan utökas med [[!UICONTROL Healthcare medication] fältgrupp](../field-groups/medication/healthcare-medication.md) för att beskriva mer ingående detaljer om läkemedlet eller läkemedlet.

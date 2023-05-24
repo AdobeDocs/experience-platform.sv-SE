@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Indi
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ The [!DNL XDM Individual Profile] klassen innehåller flera systemgenererade vä
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kompatibla fältgrupper {#field-groups}
 

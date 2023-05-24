@@ -4,7 +4,7 @@ description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga dataupp
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '1456'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ GET /ttl?{QUERY_PARAMETERS}
 | --- | --- |
 | `{QUERY_PARAMETERS}` | En lista med valfria frågeparametrar, med flera parametrar avgränsade med `&` tecken. Vanliga parametrar inkluderar `size` och `page` för sidnumrering. En fullständig lista över frågeparametrar som stöds finns i [appendix-avsnitt](#query-params). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -106,7 +106,7 @@ Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följ
 | `totalRecords` | Antalet datauppsättningsförfallodatum som matchade listanropets parametrar. |
 | `ttlDetails` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallodatum finns i svarsavsnittet för att skapa en [uppslagsanrop](#lookup). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Söka efter en förfallotid för en datauppsättning {#lookup}
 
@@ -122,7 +122,7 @@ GET /ttl/{DATASET_ID}
 | --- | --- |
 | `{DATASET_ID}` | ID:t för den datauppsättning vars förfallodatum du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -167,7 +167,7 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum.
 | `displayName` | Visningsnamnet för förfallobegäran. |
 | `description` | En beskrivning av förfallobegäran. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Förfallotaggar för katalog
 
@@ -230,7 +230,7 @@ curl -X PUT \
 | `displayName` | Ett visningsnamn för förfallobegäran. |
 | `description` | En valfri beskrivning av förfallobegäran. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -260,7 +260,7 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum, me
 | `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
 | `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Avbryt förfallodatum för en datauppsättning {#delete}
 
@@ -280,7 +280,7 @@ DELETE /ttl/{EXPIRATION_ID}
 | --- | --- |
 | `{EXPIRATION_ID}` | The `workorderId` av datauppsättningens förfallodatum som du vill avbryta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -313,7 +313,7 @@ GET /ttl/{DATASET_ID}?include=history
 | --- | --- |
 | `{DATASET_ID}` | ID:t för den datauppsättning vars förfallohistorik du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -377,7 +377,7 @@ Ett svar returnerar information om datauppsättningens förfallodatum, med en `h
 | `imsOrg` | Organisationens ID. |
 | `history` | Visar historiken för uppdateringar för förfallodatumet som en array med objekt, där varje objekt innehåller `status`, `expiry`, `updatedAt`och `updatedBy` attribut för förfallodatum vid tidpunkten för uppdateringen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Bilaga
 
@@ -402,4 +402,4 @@ Följande tabell visar de tillgängliga frågeparametrarna när [ange förfallod
 | `completedDate` / `completedToDate` / `completedFromDate` | Matchar förfallotider som har slutförts under det angivna intervallet. | `completedToDate=2021-11-11-06:00` |
 | `expiryDate` / `expiryToDate` / `expiryFromDate` | Matchar förfallodatum som ska verkställas, eller som redan har körts, under det angivna intervallet. | `expiryFromDate=2099-01-01&expiryToDate=2100-01-01` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

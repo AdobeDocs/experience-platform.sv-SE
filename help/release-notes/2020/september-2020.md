@@ -80,7 +80,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Profilvisningsprogram | Profilvisningsprogrammet i plattformsgränssnittet har uppdaterats till att vara en kontrollpanel med fullständig anpassning. Användaren kan nu göra följande: <ul><li>Uppdatera de valda standardattributen och anpassade attribut i widgeten för grundläggande information.</li><li>Skapa, redigera och ta bort anpassade widgetar</li><li>Ändra storlek på och ordna om widgetar</li></ul> |
+| Profilvisningsprogram | Profilvisningsprogrammet i plattformsgränssnittet har uppdaterats till att vara en kontrollpanel med fullständig anpassning. Användaren kan nu göra följande: <ul><li>Uppdatera de valda standardattributen och anpassade attributen i widgeten för grundläggande information.</li><li>Skapa, redigera och ta bort anpassade widgetar</li><li>Ändra storlek på och ordna om widgetar</li></ul> |
 
 Mer information om [!DNL Real-Time Customer Profile], inklusive självstudiekurser och metodtips för att arbeta med [!DNL Profile] data, läs [Översikt över kundprofiler i realtid](../../profile/home.md).
 

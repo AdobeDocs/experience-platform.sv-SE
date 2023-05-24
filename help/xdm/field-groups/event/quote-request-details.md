@@ -1,27 +1,28 @@
 ---
-title: Quote Request Details Schema Field Group
-description: This document provides an overview of the Quote Request Details schema field group.
-source-git-commit: 32d8798d426696d8fd4ace4c53a8bf9b4db26b61
+title: Schemafältgrupp för offertförfrågningsinformation
+description: Det här dokumentet innehåller en översikt över schemafältgruppen Information om offertförfrågan.
+exl-id: 19be76fa-d212-4b00-815a-d3869c1054e2
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Quote Request Details]
+# [!UICONTROL Quote Request Details] schemafältgrupp
 
-[!UICONTROL Quote Request Details][[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) `quotes`
+[!UICONTROL Quote Request Details] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md). Fältgruppen innehåller en `quotes` invänder mot ett schema som innehåller information om förfrågningsprocessen för olika typer av offerter, inklusive försäkringsbrev, hälso- och sjukvård, tillverkningsorder och hightech-order.
 
 ![](../../images/field-groups/quote-request-details.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `discount` | [[!UICONTROL Currency]](../../data-types/currency.md) | The discount amount for a quote displayed to a visitor. |
-| `premium` | [[!UICONTROL Currency]](../../data-types/currency.md) | The premium amount for a quote displayed to a visitor. |
-| `location` | [!UICONTROL String] | The postal code used for finding retailers near the visitor&#39;s location. |
-| `requestID` | [!UICONTROL String] | A unique identifier for the quote request. |
-| `selectedRetailer` | [!UICONTROL String] | The selected retailer for the quote request, if applicable. |
+| `discount` | [[!UICONTROL Currency]](../../data-types/currency.md) | Rabattbeloppet för en offert som visas för en besökare. |
+| `premium` | [[!UICONTROL Currency]](../../data-types/currency.md) | Premiumbeloppet för en offert som visas för en besökare. |
+| `location` | [!UICONTROL String] | Postnumret som används för att hitta återförsäljare nära besökarens plats. |
+| `requestID` | [!UICONTROL String] | En unik identifierare för offertförfrågan. |
+| `selectedRetailer` | [!UICONTROL String] | Den valda återförsäljaren för anbudsförfrågan, om tillämpligt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-quote-request-details.schema.json)
+Mer information om fältgruppen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/experience-event/experienceevent-quote-request-details.schema.json).

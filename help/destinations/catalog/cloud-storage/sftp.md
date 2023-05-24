@@ -5,7 +5,7 @@ description: Skapa en utgående liveanslutning till SFTP-servern för att regelb
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
 source-git-commit: cb0b80f79a849d81216c5500c54b62ac5d85e2f6
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '820'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ![Profilbaserad SFTP-exporttyp](../../assets/catalog/cloud-storage/sftp/catalog.png)
 

@@ -6,7 +6,7 @@ description: Ge användare möjlighet att visa, redigera och uppdatera kontrollp
 exl-id: 2e50790f-b3ab-4851-a9a5-7cb98bf98ce3
 source-git-commit: fa4fc154f57243250dec9bdf9557db13ef7768e8
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '610'
 ht-degree: 6%
 
 ---
@@ -59,7 +59,7 @@ Följande åtkomstkontrollsmatris innehåller en beskrivning av vilka behörighe
 | [!DNL Profiles],<br/>[!DNL Segments],<br/>[!DNL Destinations] instrumentpaneler.<br/>Möjlighet att redigera widgetscheman och lägga till nya attribut för anpassning av widgetar | **Kontrollpanel som är standard för hantering krävs** | **OBLIGATORISKT (för varje instrumentpanel)** | Ej tillämpligt | Ej tillämpligt |
 | [!DNL License Usage Dashboard] | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | AKTIVERAT |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Lägg till behörigheter i din produktprofil
 

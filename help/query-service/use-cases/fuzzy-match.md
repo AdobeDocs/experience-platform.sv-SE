@@ -1,9 +1,10 @@
 ---
 title: Fuzzy Match in Query Service
 description: Lär dig hur du utför en matchning av plattformsdata som kombinerar resultat från flera datauppsättningar genom att i princip matcha en valfri sträng.
-source-git-commit: 633210fe5e824d8686a23b877a406db3780ebdd4
+exl-id: ec1e2dda-9b80-44a4-9fd5-863c45bc74a7
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '813'
 ht-degree: 0%
 
 ---
@@ -363,5 +364,3 @@ WHERE
 {})
 '''.format(matching_sql))
 ```
-
-

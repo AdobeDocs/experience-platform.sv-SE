@@ -49,7 +49,7 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 
 Mer information om datastyrning finns i [Datastyrning - översikt](../../data-governance/home.md).
 
-## Dataintag {#ingestion}
+## Datainmatning {#ingestion}
 
 Adobe Experience Platform har en omfattande uppsättning funktioner för att importera alla typer av data och fördröjningar. Adobe Experience Platform [!DNL Data Ingestion] innehåller flera alternativ för inmatning av data, bland annat API:er för grupper av filer, API:er för direktuppspelning, inbyggda Adobe-anslutningar, dataintegrationspartners eller Adobe Experience Platform användargränssnitt.
 

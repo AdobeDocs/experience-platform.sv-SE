@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /secrets i Reaktors API.
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
 source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
 workflow-type: tm+mt
-source-wordcount: '1286'
+source-wordcount: '1247'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ GET /properties/{PROPERTY_ID}/secrets
 | --- | --- |
 | `{PROPERTY_ID}` | ID för egenskapen vars hemligheter du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -129,7 +129,7 @@ GET /environments/{ENVIRONMENT_ID}/secrets
 | --- | --- |
 | `{ENVIRONMENT_ID}` | ID:t för den miljö vars hemligheter du vill lista. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -225,7 +225,7 @@ GET /secrets/{SECRET_ID}
 | --- | --- |
 | `{SECRET_ID}` | ID:t för hemligheten som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -314,7 +314,7 @@ POST /properties/{PROPERTY_ID}/secrets
 | --- | --- |
 | `{PROPERTY_ID}` | ID:t för egenskapen som du vill definiera hemligheten under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -357,7 +357,7 @@ curl -X POST \
 | `relationships.environment` | Varje hemlighet måste kopplas till en miljö när den skapas. The `data` objektet i den här egenskapen måste innehålla `id` av den miljö som hemligheten tilldelas, tillsammans med en `type` värde för `environments`. |
 | `type` | Den typ av resurs som skapas. Värdet måste vara `secrets`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -435,7 +435,7 @@ PATCH /secrets/{SECRET_ID}
 | --- | --- |
 | `{SECRET_ID}` | ID för `oauth2` hemlighet som du vill testa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -468,7 +468,7 @@ curl -X PATCH \
 | `id` | ID:t för hemligheten som du testar. Detta måste matcha det ID som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som används. Måste anges till `secrets`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -552,7 +552,7 @@ PATCH /secrets/{SECRET_ID}
 | --- | --- |
 | `{SECRET_ID}` | ID:t för hemligheten som du vill försöka igen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -585,7 +585,7 @@ curl -X PATCH \
 | `id` | ID:t för hemligheten som du försöker igen. Detta måste matcha det ID som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som används. Måste anges till `secrets`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -771,7 +771,7 @@ DELETE /secrets/{SECRET_ID}
 | --- | --- |
 | `{SECRET_ID}` | ID:t för hemligheten som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -809,7 +809,7 @@ GET /secrets/{SECRET_ID}/notes
 | --- | --- |
 | `{SECRET_ID}` | ID för hemligheten vars anteckningar du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -888,7 +888,7 @@ GET /secrets/{SECRET_ID}/environment
 | --- | --- |
 | `{SECRET_ID}` | ID för hemligheten vars miljö du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -997,7 +997,7 @@ GET /secrets/{SECRET_ID}/property
 | --- | --- |
 | `{SECRET_ID}` | ID:t för hemligheten vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

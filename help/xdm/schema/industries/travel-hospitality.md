@@ -5,7 +5,7 @@ description: Visa en datamodell (ERD) som beskriver en standardiserad datamodell
 exl-id: 4d454160-9066-4702-815b-9509942f709e
 source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
@@ -43,4 +43,4 @@ Följande tabell visar de rekommenderade klasserna och schemafältgrupperna för
 | Merförsäljning av hotell och andra bofasta attraktioner till marknadsgäster och gäster med kommande hotellbokningar. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Reservationsinformation](../../field-groups/event/reservation-details.md)</li><li>[Bostadsreservation](../../field-groups/event/lodging-reservation.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Kontaktinformation, privat](../../field-groups/profile/personal-contact-details.md)</li><li>[Kontaktinformation, arbete](../../field-groups/profile/work-contact-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li></ul> |
 | Merförsäljning av flyg och andra boendeattraktioner till marknadsgäster och gäster med kommande hotellbokningar. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Reservationsinformation](../../field-groups/event/reservation-details.md)</li><li>[Flygreservation](../../field-groups/event/flight-reservation.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Kontaktinformation, privat](../../field-groups/profile/personal-contact-details.md)</li><li>[Kontaktinformation, arbete](../../field-groups/profile/work-contact-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

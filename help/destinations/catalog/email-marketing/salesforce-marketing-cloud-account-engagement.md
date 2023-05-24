@@ -2,7 +2,8 @@
 title: Salesforce Marketing Cloud Account Engagement
 description: Lär dig hur du använder Salesforce Marketing Cloud Account Engagement (tidigare Pardot)-målet för att exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud Account Engagement för dina affärsbehov.
 last-substantial-update: 2023-04-14T00:00:00Z
-source-git-commit: 65feb905bfa7d663d1d463d94af428a04dc55b01
+exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
+source-git-commit: 86feee5981aaa81d4c1f97ff8aaf303b2aacd977
 workflow-type: tm+mt
 source-wordcount: '1536'
 ht-degree: 1%

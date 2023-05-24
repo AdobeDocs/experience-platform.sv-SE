@@ -2,14 +2,13 @@
 title: Interagera med flera egenskaper i Adobe Experience Platform Web SDK
 description: Lär dig hur du interagerar med flera Experience Platform Web SDK-egenskaper.
 keywords: flera egenskaper;konfigurera;sendEvent;edgeConfigId;orgId;
-translation-type: tm+mt
-source-git-commit: b865b7fb940ca2d5f8b44f71eb58e62e3473f52d
+exl-id: e07afb0d-3490-414f-bc9c-f71bc04fe664
+source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
 
 ---
-
 
 # Interagera med flera egenskaper
 
@@ -19,7 +18,7 @@ I vissa fall kanske du vill interagera med två olika egenskaper på samma sida.
 * Datadelningsrelationer mellan flera företag
 * Kunder som testar nya Adobe-lösningar och inte vill störa sin befintliga implementering
 
-Med SDK kan du skapa en separat instans för varje egenskap genom att lägga till ett annat namn till arrayen i baskoden. Följande exempel innehåller två namn, `mycustomname1` och `mycustomname2`.
+Med SDK kan du skapa en separat instans för varje egenskap genom att lägga till ett annat namn till arrayen i baskoden. I följande exempel finns två namn: `mycustomname1` och `mycustomname2`.
 
 ```markup
 <script>
@@ -31,9 +30,9 @@ Med SDK kan du skapa en separat instans för varje egenskap genom att lägga til
 <script src="alloy.js" async></script>
 ```
 
-Därför skapar skriptet två instanser av SDK. Den globala funktionen för interaktion med den första instansen heter `mycustomname1` och den globala funktionen för interaktion med den andra instansen heter `mycustomname2`.
+Därför skapar skriptet två instanser av SDK. Den globala funktionen för interaktion med den första instansen heter `mycustomname1` och den globala funktionen för interaktion med den andra instansen namnges `mycustomname2`.
 
-Genom att skapa två separata instanser kan varje instans konfigureras för en annan egenskap. All kommunikation eller databeständighet som inträffar på grund av interaktion med `mycustomname1` hålls isolerad från `mycustomname2`.
+Genom att skapa två separata instanser kan varje instans konfigureras för en annan egenskap. All kommunikation eller databeständighet som sker på grund av interaktion med `mycustomname1` hålls isolerad från `mycustomname2`.
 
 I följande exempel kan du köra kommandon med var och en av instanserna:
 
@@ -61,8 +60,8 @@ mycustomname2("sendEvent", {
 });
 ```
 
-Var noga med att köra kommandot `configure` för varje instans innan du kör andra kommandon på samma instans.
+Var noga med att köra `configure` -kommando för varje instans innan andra kommandon körs på samma instans.
 
 ## Begränsningar
 
-För att undvika konflikter med cookies kan bara en instans av Adobe Experience Platform [!DNL Web SDK] på en sida ha en viss `edgeConfigId`. På samma sätt kan bara en instans av Adobe Experience Platform [!DNL Web SDK] ha en viss `orgId`.
+För att undvika konflikter med cookies är det bara en instans av Adobe Experience Platform [!DNL Web SDK] på en sida kan ha en viss `edgeConfigId`. På samma sätt är det bara en instans av Adobe Experience Platform [!DNL Web SDK] kan ha en viss `orgId`.

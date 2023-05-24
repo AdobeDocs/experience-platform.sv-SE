@@ -1,41 +1,42 @@
 ---
-title: Internal Site Search Data Type
-description: This document provides an overview of the Internal Site Search XDM data type.
-source-git-commit: eaea904ddda6b7ffee6f52cd4af897c2a8885714
+title: Intern webbplatssökdatatyp
+description: Det här dokumentet innehåller en översikt över XDM-datatypen för intern webbplatssökning.
+exl-id: 3cab9445-f641-4a44-9699-cd8a62da8a61
+source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
 workflow-type: tm+mt
-source-wordcount: '375'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Internal Site Search]
+# [!UICONTROL Internal Site Search] datatyp
 
-[!UICONTROL Internal Site Search]
+[!UICONTROL Internal Site Search] är en standard-XDM-datatyp som beskriver en intern webbplatssökning, inklusive alla relaterade sökbeteenden och detaljer.
 
 ![](../images/data-types/internal-site-search.png)
 
-| Property | Data type | Beskrivning |
+| Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `autoCompleteClicked` | [!UICONTROL Boolean] | Indicates whether a visitor used a suggested or autocompleted search value to execute the search. |
-| `autoCompleteTypedValue` | [!UICONTROL String] | For autocomplete scenarios, users sometimes abandon their search and select a specific term from the dropdown. This value tracks what the user started to type in order to generate the specific set of suggested search terms. |
-| `autoCompleteValue` | [!UICONTROL String] | For autocomplete scenarios, users sometimes abandon their search and select a specific term from the dropdown menu. This value is used to track the specific terms selected. |
-| `instances` | [!UICONTROL Integer] | The number of times the internal site search occurred. |
-| `locationInPage` | [!UICONTROL String] | When multiple search boxes exist on the page, this value should be used to identify the specific location the user used to search. |
-| `nullInstances` | [!UICONTROL Integer] | The number of times the internal site search occurred that provided zero results. |
-| `numberOfResults` | [!UICONTROL Integer] | The total number of search results returned. |
-| `postalCode` | [!UICONTROL String] | The postal code used for the search, if applicable. |
-| `productFindingMethods` | [!UICONTROL String] | The internal site search term value with merchandising binding. This value indicates what term was searched for immediately before viewing a product. |
-| `radiusDistance` | [!UICONTROL Integer] | `radiusType` |
-| `radiusType` | [!UICONTROL Integer] | `radiusDistance` |
-| `refinementInstances` | [!UICONTROL Integer] | The number of times the internal site search was refined. |
-| `refinementType` | Array of strings | Lists the refinement types applied to the search results. Examples include department, brand, price, in-store, review rating, color, material, and so on. |
-| `refinementValue` | [!UICONTROL String] | The value that the search was refined to. |
-| `resultsPageNumber` | [!UICONTROL Integer] | For paginated search results, this value tracks the page of results the visitor is viewing. |
-| `resultsPerPage` | [!UICONTROL Integer] | For paginated search results, this value tracks the number of search results displayed per page. |
-| `searchType` | [!UICONTROL String] | Captures the method of search being executed, if applicable. Examples could include a type-ahead search, directly typed search, or any other type of custom search functionality a site might have. |
-| `sortOrder` | [!UICONTROL String] | `sortType` |
-| `term` | [!UICONTROL String] | The internal site search term entered by the visitor. |
+| `autoCompleteClicked` | [!UICONTROL Boolean] | Anger om en besökare använde ett föreslaget eller automatiskt ifyllt sökvärde för att köra sökningen. |
+| `autoCompleteTypedValue` | [!UICONTROL String] | I scenarier där användaren fyller i automatiskt kan det hända att användaren avbryter sökningen och väljer en specifik term i listrutan. Det här värdet spårar vad användaren har börjat skriva för att kunna generera den specifika uppsättningen föreslagna söktermer. |
+| `autoCompleteValue` | [!UICONTROL String] | I scenarier där användaren fyller i automatiskt kan det hända att användaren avbryter sökningen och väljer en specifik term i listrutan. Det här värdet används för att spåra de specifika termer som valts. |
+| `instances` | [!UICONTROL Integer] | Antalet gånger som den interna webbplatssökningen gjordes. |
+| `locationInPage` | [!UICONTROL String] | När det finns flera sökrutor på sidan bör det här värdet användas för att identifiera den plats som användaren använde för att söka. |
+| `nullInstances` | [!UICONTROL Integer] | Antalet gånger som den interna webbplatssökningen gjordes som gav noll resultat. |
+| `numberOfResults` | [!UICONTROL Integer] | Det totala antalet returnerade sökresultat. |
+| `postalCode` | [!UICONTROL String] | Postnummer som används för sökningen, om tillämpligt. |
+| `productFindingMethods` | [!UICONTROL String] | Det interna söktermvärdet för webbplatsen med försäljningsbindning. Det här värdet anger vilken term som sökdes efter omedelbart innan en produkt visades. |
+| `radiusDistance` | [!UICONTROL Integer] | Kombinerat med `radiusType`anger det markerade avståndet för sökradien. |
+| `radiusType` | [!UICONTROL Integer] | Den valda avståndstypen för `radiusDistance`, antingen engelska mil eller kilometer. |
+| `refinementInstances` | [!UICONTROL Integer] | Antalet gånger som den interna webbplatssökningen har förfinats. |
+| `refinementType` | Array med strängar | Visar de förfiningstyper som använts på sökresultaten. Exempel är avdelning, varumärke, pris, butiker, recensioner, färg, material och så vidare. |
+| `refinementValue` | [!UICONTROL String] | Värdet som sökningen förfinades till. |
+| `resultsPageNumber` | [!UICONTROL Integer] | För sidnumrerade sökresultat spårar det här värdet den resultatsida som besökaren visar. |
+| `resultsPerPage` | [!UICONTROL Integer] | För sidnumrerade sökresultat spårar det här värdet antalet sökresultat som visas per sida. |
+| `searchType` | [!UICONTROL String] | Hämtar den sökmetod som körs, om tillämpligt. Exempel kan vara typsnittssökning, direkttypsökning eller någon annan typ av anpassad sökfunktion som en webbplats kan ha. |
+| `sortOrder` | [!UICONTROL String] | Kombinerat med `sortType`, anger sorteringsordningen för sökresultaten, antingen stigande eller fallande. |
+| `term` | [!UICONTROL String] | Den interna sökterm som anges av besökaren. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-[](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/internal-site-search.schema.json)
+Mer information om datatypen finns i [publik XDM-databas](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/internal-site-search.schema.json).

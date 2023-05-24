@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /app_configurations i Reactor A
 exl-id: 88a1ec36-b4d2-4fb6-92cb-1da04268492a
 source-git-commit: 36320addc790e844a1102314890e8692841dc5d0
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '565'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ GET /companies/{COMPANY_ID}/app_configurations
 | --- | --- |
 | `COMPANY_ID` | The `id` i [företag](./companies.md) som äger appkonfigurationerna. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -113,7 +113,7 @@ GET /app_configurations/{APP_CONFIGURATION_ID}
 | --- | --- |
 | `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -178,7 +178,7 @@ POST /companies/{COMPANY_ID}/app_configurations
 | --- | --- |
 | `COMPANY_ID` | The `id` i [företag](./companies.md) som du definierar appkonfigurationen under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -217,7 +217,7 @@ curl -X POST \
 | `key_type` | Representerar det protokoll som en push-tjänstleverantör stöder och fastställer formatet för `push_credential` -objekt. I takt med att protokollen utvecklas för meddelandetjänster finns det nya `key_type` -värden skapas som stöd för de uppdaterade protokollen. |
 | `push_credential` | Det faktiska autentiseringsvärdet, som är krypterat i vila. Det här fältet dekrypteras vanligtvis inte eller inkluderas i API-svar. Endast vissa Adobe-tjänster kan få ett svar som innehåller en dekrypterad push-autentiseringsuppgift. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -270,7 +270,7 @@ PATCH /app_configurations/{APP_CONFIGURATION_ID}
 | --- | --- |
 | `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -301,7 +301,7 @@ curl -X PATCH \
 | `id` | The `id` för den programkonfiguration som du vill uppdatera. Det här bör matcha `{APP_CONFIGURATION_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `app_configurations`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -354,7 +354,7 @@ DELETE /app_configurations/{APP_CONFIGURATION_ID}
 | --- | --- |
 | `APP_CONFIGURATION_ID` | The `id` för den programkonfiguration som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

@@ -3,7 +3,8 @@ keywords: tillägg för händelsevidarebefordring;blandpanel;tillägg för händ
 title: API-tillägg för händelsespårning i Mixpanel Track
 description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Adobe Experience Edge Network-händelser till Mixpanel.
 last-substantial-update: 2023-03-29T00:00:00Z
-source-git-commit: 1c417744518a7ac7cfb9c65d6af8219dcbc70d46
+exl-id: 21e2e0fa-4949-4be4-859f-d449d21d8f41
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '929'
 ht-degree: 1%

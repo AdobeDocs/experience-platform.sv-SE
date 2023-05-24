@@ -1,7 +1,8 @@
 ---
 title: Komma igång med API för granskningsfråga
 description: Med API:t för granskningsfråga kan du hämta mätdata för olika Adobe Experience Platform-funktioner. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för granskningsfråga.
-source-git-commit: 5b3459711f41430977f9d7b06f8b35801739207c
+exl-id: 20eab0a8-98f7-4fee-8f91-88324e54ab18
+source-git-commit: c2c5778e0a3fff7f488ad7a672123c813cca59f1
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 0%

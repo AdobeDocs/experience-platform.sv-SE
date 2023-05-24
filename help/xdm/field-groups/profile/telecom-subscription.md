@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över schemafältgrupp
 exl-id: 00c20081-09d0-425c-9894-0f957558bd43
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '698'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ Fältgruppen innehåller ett enda fält av objekttyp, `telecomSubscription`, var
 | `bundleName` | Sträng | Hämtar namnet på alla typer av prenumerationspaket där kunden är registrerad, till exempel `Internet + Media`. |
 | `primaryPartyID` | Sträng | En identifierare för den primära person som ansvarar för prenumerationen, som vanligtvis kan vara enhetens telefonnummer. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 
@@ -55,7 +55,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | `selfSetup` | Boolean | Anger om en kund är berättigad till internetinstallation utan att ha besökt en tekniker. |
 | `uploadSpeed` | Heltal | Den maximala överföringshastigheten för prenumerationen, i MB. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `landlineSubscription` {#landlineSubscription}
 
@@ -78,7 +78,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | `unlimitedLocalCalling` | Boolean | Anger om landnätsprenumerationen har ett obegränsat antal lokala telefonsamtal. |
 | `voicemail` | Boolean | Anger om funktionen för fasta prenumerationer innehåller röstmeddelanden. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `mediaSubscription` {#mediaSubscription}
 
@@ -92,7 +92,7 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | `subscriptionDetails` | [[!UICONTROL Telecom Subscription]](../../data-types/telecom-subscription.md) | Beskriver allmän information om prenumerationen, inklusive prenumerationslängd, avgifter, status med mera. |
 | `channels` | Heltal | Antalet kanaler som ingår i medieprenumerationen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `mobileSubscription` {#mobileSubscription}
 
@@ -108,4 +108,4 @@ Mer information om fältgruppen finns i den offentliga XDM-databasen:
 | `planLevel` | Sträng | Namnet på den mobilplan som har tilldelats den här prenumerationen. |
 | `portedNumber` | Boolean | Anger om kunden portar sitt nummer från en annan leverantör. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

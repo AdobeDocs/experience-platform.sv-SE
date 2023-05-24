@@ -6,7 +6,7 @@ description: Med slutpunkten /fieldGroups i API:t för schemaregister kan du pro
 exl-id: d26257e4-c7d5-4bff-b555-7a2997c88c74
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1195'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ GET /{CONTAINER_ID}/fieldgroups?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som du vill hämta fältgrupper från: `global` för fältgrupper som skapats av Adobe eller `tenant` för fältgrupper som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -61,7 +61,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Acce
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar fullständig JSON-fältgrupp för varje resurs, med ursprunglig `$ref` och `allOf` ingår. (Gräns: 300) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -124,7 +124,7 @@ GET /{CONTAINER_ID}/fieldgroups/{FIELD_GROUP_ID}
 | `{CONTAINER_ID}` | Behållaren som innehåller den fältgrupp som du vill hämta: `global` för en fältgrupp som skapats av Adobe eller `tenant` för en fältgrupp som ägs av din organisation. |
 | `{FIELD_GROUP_ID}` | The `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -150,7 +150,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Alla sökförfr
 | `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` och `allOf` lösta, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -404,7 +404,7 @@ PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 | --- | --- |
 | `{FIELD_GROUP_ID}` | The `meta:altId` eller URL-kodad `$id` för den fältgrupp som du vill skriva om. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -589,7 +589,7 @@ PATCH /tenant/fieldgroups/{FIELD_GROUP_ID}
 | --- | --- |
 | `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för den fältgrupp som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -728,7 +728,7 @@ DELETE /tenant/fieldgroups/{FIELD_GROUP_ID}
 | --- | --- |
 | `{FIELD_GROUP_ID}` | URL-kodad `$id` URI eller `meta:altId` för den fältgrupp som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

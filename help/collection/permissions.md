@@ -2,9 +2,9 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: e24cb8ad6b714a60363bcbec26e453f6445af1ac
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1274'
 ht-degree: 3%
 
 ---
@@ -41,6 +41,11 @@ Behörigheter under Adobe Experience Platform innefattar åtkomst till datastrea
 
 {style="table-layout:auto"}
 
+<!-- (Feature not yet available?)
+| Dashboards | Manage Custom Dashboards | |
+| Dashboards | View Custom Dashboards | |
+-->
+
 ### Behörigheter för Adobe Experience Platform Data Collection
 
 Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten till taggar och funktioner för vidarebefordran av händelser, inklusive egenskaper, tillägg och miljöer. Anvisningar om hur du konfigurerar behörigheter för Adobe Experience Platform Data Collection finns i [avsnitt nedan](#manage).
@@ -49,7 +54,6 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 | --- | --- | --- |
 | Plattformar | Webb | Ger åtkomst till [webbegenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
 | Plattformar | Mobil | Ger åtkomst till [mobila egenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
-| Plattformar | Edge | Ger åtkomst till [Kantegenskaper för händelsevidarebefordring](../tags/ui/event-forwarding/getting-started.md) i kombination med andra egenskapsrättigheter. |
 | Egenskaper | (Ej tillämpligt) | Beroende på vilka egenskaper som har skapats under din organisation kan du styra åtkomsten till var och en av dem via den här behörighetskategorin i Admin Console.<br><br>En användares tilldelade egenskapsrättigheter gäller bara för de egenskaper som de har beviljats åtkomst till via den här behörighetskategorin. |
 | Egendomsrättigheter | Godkänn | Ger möjlighet att godkänna ett biblioteksbygge som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
 | Egendomsrättigheter | Utveckla | Ger möjlighet att utveckla ett bibliotek som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
@@ -68,16 +72,16 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 
 ## Hantera behörigheter {#manage}
 
-Tillstånd för datainsamling hanteras med två produktbeteckningar: **Adobe Experience Platform** och **Adobe Experience Platform Data Collection**.
+Som framgår av föregående avsnitt hanteras behörigheter för datainsamling genom två produktbeteckningar i Admin Console: **Adobe Experience Platform** och **Adobe Experience Platform Data Collection**.
 
-Se underavsnitten nedan för steg om hur du hanterar behörigheter för respektive produkt i Admin Console:
+Logga in på [Admin Console](https://adminconsole.adobe.com/) och markera **[!UICONTROL Products]** i den övre navigeringen. Här väljer du produktkort för de behörigheter du vill konfigurera. Se underavsnitten nedan för steg om hur du hanterar behörigheter för respektive produkt i Admin Console:
 
 * [Adobe Experience Platform permissions](#manage-platform)
 * [Behörigheter för Adobe Experience Platform Data Collection](#manage-collection)
 
 ### Hantera behörigheter i Adobe Experience Platform {#manage-platform}
 
-Från **[!UICONTROL Permissions]** i Adobe Experience Platform väljer du den roll du vill redigera.
+Från **[!UICONTROL Products]** visa i Admin Console, markera **[!UICONTROL Adobe Experience Platform Data Collection]**. Välj den produktprofil som du vill redigera behörigheter för och navigera sedan till **[!UICONTROL Permissions]** -fliken.
 
 För att få åtkomst till datainsamlingsfunktionerna måste du aktivera alla behörigheter i **[!UICONTROL Sandboxes]**, **[!UICONTROL Data Modeling]**, **[!UICONTROL Identity Management]** och **[!UICONTROL Data Collection]** kategorier.
 
@@ -91,7 +95,7 @@ Se [gränssnittsguide för åtkomstkontroll](../access-control/ui/overview.md) o
 
 ### Hantera behörigheter i Adobe Experience Platform Data Collection {#manage-collection}
 
-Om du vill hantera behörigheterna loggar du in på Admin Console och väljer **[!UICONTROL Products]** i den övre navigeringen och välj **[!UICONTROL Adobe Experience Platform Data Collection]**.
+Från **[!UICONTROL Products]** visa i Admin Console, markera **[!UICONTROL Adobe Experience Platform Data Collection]**.
 
 ![Bild som visar produktkortet för datainsamling i Admin Console](./images/permissions/data-collection-card.png)
 

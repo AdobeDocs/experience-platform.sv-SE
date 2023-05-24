@@ -5,7 +5,7 @@ description: Visa ett entitetsrelationsdiagram (ERD) som beskriver en standardis
 exl-id: 96f267ce-a177-4384-a512-841c89d942ba
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '378'
 ht-degree: 0%
 
 ---
@@ -43,4 +43,4 @@ Följande tabell visar de rekommenderade klasserna och schemafältgrupperna för
 | Återmarknadsför övergivna varukorgar genom relevanta annonser och automatiserade personaliserade e-postmeddelanden. Utelämna annonser när de konverteras. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[[!UICONTROL Commerce Details]](../../field-groups/event/upsell-details.md) (För att fånga upp kundvagnsöverläggningar)</li></ul></li><li>**[[!UICONTROL XDM Individual Profile]](../../classes/individual-profile.md)**:<ul><li>[[!UICONTROL Telecom Subscription]](../../field-groups/profile/telecom-subscription.md)</li><li>[[!UICONTROL Demographic Details]](../../field-groups/profile/demographic-details.md)</li><li>[[!UICONTROL Personal Contact Details]](../../field-groups/profile/personal-contact-details.md)</li></ul></li></ul> |
 | När en kund markeras som trolig att försvinna (baserat på en medarbetarinteraktion eller en automatiserad maskininlärningsalgoritm) skickar du kundinformationen till digitala och icke-digitala kanaler. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[[!UICONTROL Campaign Marketing Details]](../../field-groups/event/campaign-marketing-details.md)</li><li>[[!UICONTROL Channel Details]](../../field-groups/event/channel-details.md)</li><li>En anpassad fältgrupp som innehåller anpassat innehåll</li></ul></li><li>**[[!UICONTROL XDM Individual Profile]](../../classes/individual-profile.md)**:<ul><li>[[!UICONTROL Demographic Details]](../../field-groups/profile/demographic-details.md)</li><li>[[!UICONTROL Personal Contact Details]](../../field-groups/profile/personal-contact-details.md)</li></ul></li></ul> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

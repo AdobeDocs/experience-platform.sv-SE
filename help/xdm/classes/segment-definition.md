@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över segmentdefinitio
 exl-id: c0f7b04c-2266-4d08-89a1-67ba758a51a7
 source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '366'
 ht-degree: 0%
 
 ---
@@ -34,4 +34,4 @@ ht-degree: 0%
 | `segmentStatus` | Status för segmentet från det externa systemet. Följande värden accepteras: <ul><li>`ACTIVE`</li><li>`INACTIVE`</li><li>`DELETED`</li><li>`DRAFT`</li><li>`REVOKED`</li></ul> |
 | `version` | Det senaste versionsnumret för segmentdefinitionen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

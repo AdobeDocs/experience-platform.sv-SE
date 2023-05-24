@@ -5,7 +5,7 @@ description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonse
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
 source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '592'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Mic
 |---|---|
 | MAID | Microsoft Advertising ID |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -43,7 +43,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till [!DNL Microsoft Bing] mål. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 

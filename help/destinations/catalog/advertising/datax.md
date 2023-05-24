@@ -4,7 +4,7 @@ description: DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är v
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
 source-git-commit: 0580816c471400ba17eddcb6b1a9dfbf01797938
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '758'
 ht-degree: 1%
 
 ---
@@ -63,7 +63,7 @@ Läs mer om [Taxonomimetadata](https://developer.verizonmedia.com/datax/guide/ta
 |---------|----------|---------|
 | 429 För många begäranden | Hastighetsgränsen har överskridits per timme **(Gräns: 100)** | Antal begäranden som tillåts i en timme per provider. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -75,7 +75,7 @@ Läs mer om [Taxonomimetadata](https://developer.verizonmedia.com/datax/guide/ta
 | GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -86,7 +86,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (Email, GAID, IDFA) som används i Verizon Media-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Användningsexempel {#use-cases}
 

@@ -1,13 +1,13 @@
 ---
 title: Adobe Analytics for Streaming Media View in Assurance
 description: Den här guiden förklarar hur du använder Adobe Analytics för direktuppspelande media med Adobe Experience Platform Assurance.
-source-git-commit: 07dc01c11c79ac2dad05d89309cabb5715c0b63c
+exl-id: 9a9c2c64-e9ed-4d58-b936-d802f1c3b7d3
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '399'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # Adobe Analytics for Streaming Media view in Assurance
 

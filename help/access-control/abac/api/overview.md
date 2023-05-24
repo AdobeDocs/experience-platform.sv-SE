@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;api;attributbaserad åtkomstkontroll;Attributbaserad åtkomstkontroll
 solution: Experience Platform
 title: Attributbaserad API-guide för åtkomstkontroll
-description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och åtkomstprinciper i Adobe Experience Platform. Följ den här vägledningen när du vill lära dig hur du utför nyckelåtgärder med API:t.
+description: Med det attributbaserade API:t för åtkomstkontroll kan du programmässigt hantera roller och åtkomstprinciper i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
 source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
 workflow-type: tm+mt
 source-wordcount: '450'
-ht-degree: 0%
+ht-degree: 4%
 
 ---
 
@@ -27,7 +27,7 @@ Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunkts
 
 Roller definierar åtkomsten som en administratör, en specialist eller en slutanvändare har till resurser i organisationen. I en rollbaserad miljö för åtkomstkontroll är etableringen av användaråtkomst grupperad genom vanliga ansvarsområden och behov. En roll har en given uppsättning behörigheter och medlemmar i organisationen kan tilldelas till en eller flera roller, beroende på vilket synområde eller vilken skrivbehörighet de behöver. Se [rollslutpunktshandbok](./roles.md) om du vill ha mer information om hur du arbetar med roller i API:t.
 
-## Profiler
+## Policyer
 
 Profiler är satser som sammanför attribut för att fastställa tillåtna och otillåtna åtgärder. Profiler kan antingen vara lokala eller globala och kan åsidosätta andra profiler. The `/policies` kan du programmässigt hantera principer i organisationen. Se [stödlinje för principslutpunkt](./policies.md) om du vill ha mer information om hur du arbetar med principer i API:t.
 

@@ -6,7 +6,7 @@ description: Med slutpunkten /datatypes i API:t för schemaregister kan du progr
 exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
 source-git-commit: 342da62b83d0d804b31744a580bcd3e38412ea51
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1215'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ GET /{CONTAINER_ID}/datatypes?{QUERY_PARAMS}
 | `{CONTAINER_ID}` | Behållaren som du vill hämta datatyper från: `global` för datatyper som skapats av Adobe eller `tenant` för datatyper som ägs av din organisation. |
 | `{QUERY_PARAMS}` | Valfria frågeparametrar för att filtrera resultat efter. Se [appendix-dokument](./appendix.md#query) för en lista över tillgängliga parametrar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -61,7 +61,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Följande `Acce
 | `application/vnd.adobe.xed-id+json` | Returnerar en kort sammanfattning av varje resurs. Det här är det rekommenderade huvudet för att lista resurser. (Gräns: 300) |
 | `application/vnd.adobe.xed+json` | Returnerar en fullständig JSON-datatyp för varje resurs, med ursprunglig `$ref` och `allOf` ingår. (Gräns: 300) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -112,7 +112,7 @@ GET /{CONTAINER_ID}/datatypes/{DATA_TYPE_ID}
 | `{CONTAINER_ID}` | Behållaren som innehåller den datatyp som du vill hämta: `global` för en datatyp som skapats av Adobe eller `tenant` för en datatyp som ägs av din organisation. |
 | `{DATA_TYPE_ID}` | The `meta:altId` eller URL-kodad `$id` av den datatyp som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -138,7 +138,7 @@ Svarsformatet beror på `Accept` huvud som skickades i begäran. Alla sökförfr
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` och `allOf` lösta, inga titlar eller beskrivningar. |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` och `allOf` åtgärdade, beskrivningar inkluderades. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -369,7 +369,7 @@ PUT /tenant/datatypes/{DATA_TYPE_ID}
 | --- | --- |
 | `{DATA_TYPE_ID}` | The `meta:altId` eller URL-kodad `$id` av den datatyp som du vill skriva om. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -500,7 +500,7 @@ PATCH /tenant/data type/{DATA_TYPE_ID}
 | --- | --- |
 | `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` av den datatyp som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -639,7 +639,7 @@ DELETE /tenant/datatypes/{DATA_TYPE_ID}
 | --- | --- |
 | `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` av den datatyp som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

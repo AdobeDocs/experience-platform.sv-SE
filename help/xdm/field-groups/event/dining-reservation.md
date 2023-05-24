@@ -2,29 +2,29 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;matning;
 title: Fältgrupp för matreservationsschema
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Dining Reservation.
-source-git-commit: d230cfa9e74eb96aa44e8b83ca8f2306db4ba4ec
+exl-id: 672b7a77-c433-4502-a1ad-a17c811b253e
+source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '449'
 ht-degree: 2%
 
 ---
 
-
 # [!UICONTROL Dining Reservation] schemafältgrupp
 
-[!UICONTROL Dining Reservation] är en standardgrupp för schemafält för den  [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) klass som används för att hämta information om en matreservation.
+[!UICONTROL Dining Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en matreservation.
 
-Fältgruppen är ett tillägg till fältgruppen [!UICONTROL Reservation Details] och innehåller alla samma fält under ett enskilt fält av objekttyp, `reservations`. Förutom dessa generiska fält innehåller [!UICONTROL Dining Reservation] även matrisen `diningReservations`. Den här arrayen med objekt används för att beskriva en eller flera reservationer med restaurangspecifika egenskaper.
+Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa allmänna fält [!UICONTROL Dining Reservation] innehåller `diningReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med restaurangspecifika egenskaper.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `diningReservations`-arrayen. Mer information om de andra fälten under `reservations`-objektet finns i [[!UICONTROL Reservation Details]-fältgruppsreferensen](./reservation-details.md).
+>Det här dokumentet innehåller information om `diningReservations` array. För information om andra fält som anges i `reservations` objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
 
 ![Reservationsstruktur för matning](../../images/field-groups/dining-reservation/structure.png)
 
 ## `diningReservations`
 
-`diningReservations` är en array med objekt som representerar en lista med matsalternativ. Om en reservationshändelse innehåller reservationer på flera olika restauranger vid olika tidpunkter på dagen, kan dessa reservationer till exempel listas som enskilda objekt under `diningReservations` för en enda händelse.
+`diningReservations` är en array med objekt som representerar en lista med matsalternativ. Om en bokningshändelse innehåller reservationer på flera olika restauranger vid olika tidpunkter på dagen, kan exempelvis dessa reservationer listas som enskilda objekt under `diningReservations` för en enda händelse.
 
 Strukturen för varje objekt som anges under `diningReservations` anges nedan.
 
@@ -57,7 +57,7 @@ Strukturen för varje objekt som anges under `diningReservations` anges nedan.
 | `specialOccasion` | Boolean | Anger om reservationen görs för ett särskilt tillfälle. |
 | `status` | Heltal | Status för matreservationen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

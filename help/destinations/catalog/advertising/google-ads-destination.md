@@ -5,7 +5,7 @@ description: Google Ads, som tidigare kallades Google AdWords, är en onlinerekl
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
 source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '919'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ Observera följande information som är specifik för [!DNL Google Ads] mål:
 | MAID | Microsoft Advertising ID. Detta ID identifierar unikt enheter som kör Windows 10. |  |
 | Amazon Fire TV-ID | Detta ID identifierar Amazon Fire TV-program unikt. |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -52,7 +52,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till Google-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 

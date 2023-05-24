@@ -4,8 +4,8 @@ description: Lär dig hur resursrelationer etableras i Reactor API, inklusive re
 exl-id: 23976978-a639-4eef-91b6-380a29ec1c14
 source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '807'
-ht-degree: 0%
+source-wordcount: '762'
+ht-degree: 1%
 
 ---
 
@@ -40,7 +40,7 @@ POST /properties/{PROPERTY_ID}/{RESOURCE_TYPE}
 | `{PROPERTY_ID}` | ID för egenskapen som resursen tillhör. |
 | `{RESOURCE_TYPE}` | Den typ av resurs som ska skapas. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -89,7 +89,7 @@ curl -X POST \
 | `id` | Unikt ID för en resurs. Varje `id` måste åtföljas av ett syskon `type` egenskap, som anger resurstypen i fråga. |
 | `type` | Resurstypen som refereras av ett jämlikt objekt `id` fält. Godkända värden är `data_elements`, `rules`, `extensions`och `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Skapa en relation utifrån URL {#url}
 
@@ -136,7 +136,7 @@ curl -X POST \
 | `id` | Unikt ID för en resurs. Varje `id` måste åtföljas av ett syskon `type` egenskap, som anger resurstypen i fråga. |
 | `type` | Resurstypen som refereras av ett jämlikt objekt `id` fält. Godkända värden är `data_elements`, `rules`, `extensions`och `environments`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Relationskrav per resurs {#requirements}
 
@@ -153,7 +153,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `property` | ✓ |  |  |
 | `entity` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Bygger
 
@@ -166,7 +166,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `library` | ✓ |  |  |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Återanrop
 
@@ -174,7 +174,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | :--- | :---: | :---: | :---: |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Företag
 
@@ -182,7 +182,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | :--- | :---: | :---: | :---: |
 | `properties` |  |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Dataelement
 
@@ -197,7 +197,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `updated_with_extension` | ✓ |  |  |
 | `updated_with_extension_package` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Miljöer
 
@@ -208,7 +208,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `host` | ✓ | ✓ |  |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Tillägg
 
@@ -222,7 +222,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `extension_package` | ✓ | ✓ |  |
 | `updated_with_extension_package` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Värdar
 
@@ -230,7 +230,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | :--- | :---: | :---: | :---: |
 | `property` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Bibliotek
 
@@ -246,7 +246,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `property` | ✓ |  |  |
 | `last_build` |  |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Anteckningar
 
@@ -254,7 +254,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | :--- | :---: | :---: | :---: |
 | `resource` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Egenskaper
 
@@ -268,7 +268,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `extensions` |  |  |  |
 | `extensions` |  |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Regelkomponenter
 
@@ -283,7 +283,7 @@ I följande tabeller beskrivs de tillgängliga relationerna för varje resurstyp
 | `rules` | ✓ | ✓ |  |
 | `revisions` | ✓ |  |  |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ### Regler
 

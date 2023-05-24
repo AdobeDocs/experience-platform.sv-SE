@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /properties i Reactor API.
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
 source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1104'
 ht-degree: 1%
 
 ---
@@ -47,7 +47,7 @@ GET /companies/{COMPANY_ID}/properties
 | --- | --- |
 | `COMPANY_ID` | The `id` för det företag som äger de egenskaper som du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -271,7 +271,7 @@ GET /properties/{PROPERTY_ID}
 | --- | --- |
 | `PROPERTY_ID` | The `id` för egenskapen som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -394,7 +394,7 @@ POST /company/{COMPANY_ID}/properties
 | --- | --- |
 | `COMPANY_ID` | The `id` för företaget som du definierar egendomen under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -437,7 +437,7 @@ curl -X POST \
 | `attributes.undefined_vars_return_empty` | Ett booleskt värde som anger om odefinierade variabler ska returneras som tomma för den här egenskapen. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `properties`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -548,7 +548,7 @@ PATCH /properties/{PROPERTY_ID}
 | --- | --- |
 | `PROPERTY_ID` | The `id` för egenskapen som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -581,7 +581,7 @@ curl -X PATCH \
 | `id` | The `id` för egenskapen som du vill uppdatera. Det här bör matcha `{PROPERTY_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `properties`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -692,7 +692,7 @@ DELETE /properties/{PROPERTY_ID}
 | --- | --- |
 | `PROPERTY_ID` | The `id` för egenskapen som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -732,7 +732,7 @@ GET  /properties/{PROPERTY_ID}/callbacks
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars återanrop du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -807,7 +807,7 @@ GET  /properties/{PROPERTY_ID}/data_elements
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars dataelement du vill lista. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -948,7 +948,7 @@ GET  /properties/{PROPERTY_ID}/environments
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för den egenskap vars miljöer du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1068,7 +1068,7 @@ GET  /properties/{PROPERTY_ID}/extensions
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars tillägg du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1199,7 +1199,7 @@ GET  /properties/{PROPERTY_ID}/hosts
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars värdar du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1277,7 +1277,7 @@ GET  /properties/{PROPERTY_ID}/rules
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars regler du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1390,7 +1390,7 @@ GET /properties/{PROPERTY_ID}/company
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` av den egendom vars företag du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

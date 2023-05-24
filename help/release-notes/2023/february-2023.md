@@ -1,10 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, februari 2023
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
-source-git-commit: 0935a50527800b255901f8047051c47b45ab33b8
+exl-id: 1c30a646-d9f8-4749-ac25-40bc48365a40
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
-source-wordcount: '1276'
-ht-degree: 2%
+source-wordcount: '1252'
+ht-degree: 3%
 
 ---
 
@@ -35,7 +36,7 @@ Med Adobe Assurance kan ni inspektera, bevisa, simulera och validera hur ni saml
 | ------- | ----------- |
 | Offentliga API:er | API:erna för Adobe Assurance är nu tillgängliga. Assurance-API:erna är en samling API:er som gör det möjligt för användare att testa och felsöka sina egna webb- och mobilappar när de är utrustade med Adobe Assurance-tillägget med Mobile SDK. Läs mer om API:erna för försäkringar i [Översikt över Assurance API](https://developer.adobe.com/adobe-assurance-public-apis/). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om Assurance finns i [Assurance-dokumentation](https://developer.adobe.com/client-sdks/documentation/platform-assurance/).
 
@@ -49,7 +50,7 @@ Mer information om Assurance finns i [Assurance-dokumentation](https://developer
 | ----------- | ----------- |
 | [Förbättrad profil för samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) för integrering med [filbaserade (batch) mål](/help/destinations/destination-types.md#file-based) | <p> När profiler inte längre är kvalificerade för en samtyckespolicy meddelar Experience Platform nu aktivt sin policy att avsluta sina filbaserade destinationer. Detta följer [från februari 2023](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality) av samma funktionalitet för direktuppspelningsdestinationer. </p> <p> <b>Anteckning</b>: Den här funktionen är endast tillgänglig för kunder som har **[!UICONTROL Privacy and Security Shield]** och **[!UICONTROL Healthcare Shield]**. </p> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Ny eller uppdaterad dokumentation** {#destinations-new-updated-documentation}
 
@@ -69,7 +70,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | --- | --- |
 | Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Nya XDM-komponenter**
 
@@ -77,7 +78,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | --- | --- | --- |
 | Klass | [[!UICONTROL XDM Individual Prospect Profile]](https://github.com/adobe/xdm/pull/1669/files) | Klassen XDM Individual Prospect Profile innehåller ID:n som tillhandahålls av partner. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Uppdaterade XDM-komponenter**
 
@@ -89,7 +90,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Fältgrupp | [!UICONTROL Adobe CJM ExperienceEvent - Message interaction detail] | [De tomma `meta:enum` egenskapen togs bort](https://github.com/adobe/xdm/pull/1668/files) från URL:en [!UICONTROL Tracking Type] fält. |
 | Datatyp | [!UICONTROL Media information] | [Regex-mönstret från `videoSegment` egenskap i [!UICONTROL Media information] datatypen har tagits bort](https://github.com/adobe/xdm/pull/1667/files). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om XDM in Platform finns i [XDM - systemöversikt](../../xdm/home.md). &#x200B;
 
@@ -106,7 +107,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden med [växla funktionen för automatisk komplettering av frågeredigeraren](../../query-service/ui/user-guide.md#auto-complete). Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. |
 | Datauppsättningsexempel | Ange en samplingsfrekvens i din fråga och [använda datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval](../../query-service/essential-concepts/dataset-samples.md)eller skapa villkorliga exempel baserat på specifika villkor. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
@@ -121,7 +122,7 @@ Real-Time CDP B2B Edition bygger på Real-time Customer Data Platform (Real-Time
 | --- | --- |
 | Aktivera tjänsten för relaterade konton | Med den nya växlingsfunktionen kan du aktivera den relaterade kontotjänsten på ditt konto. Mer information finns i guiden [aktivera tjänsten för relaterade konton](../../rtcdp/b2b-ai-ml-services/related-accounts.md#enable). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Läs mer om Real-Time CDP B2B Edition i [Real-Time CDP B2B Edition - översikt](../../rtcdp/overview.md).
 
@@ -139,6 +140,6 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | Infoga anpassade aktivitetsdata från [!DNL Marketo] | Nu kan du hämta anpassade aktivitetsdata från [!DNL Marketo] -instans till Experience Platform. Om du vill importera anpassade aktivitetsdata måste du skapa anpassade aktivitetsfältgrupper i B2B-aktivitetsschemat och skapa ett dataflöde med aktivitetsdatauppsättningen. När dataflödet är klart innehåller den inkapslade datauppsättningen både standardaktiviteter och anpassade aktiviteter från din [!DNL Marketo] -instans. Du kan sedan använda [Frågetjänst](../../query-service/home.md) för att få tillgång till dina anpassade aktivitetsposter på Platform. Mer information finns i guiden [skapa ett dataflöde för anpassade aktivitetsdata](../../sources/tutorials/ui/create/adobe-applications/marketo-custom-activities.md). |
 | Exkludera ej begärda konton från [!DNL Marketo] | Du kan nu konfigurera om du vill exkludera eller ta med ej ianspråktagna konton från inmatningen när du skapar ett dataflöde för företagsdata. Mer information finns i guiden [skapa en källanslutning och ett dataflöde för [!DNL Marketo]](../../sources/tutorials/ui/create/adobe-applications/marketo.md). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Läs mer om källor i [källöversikt](../../sources/home.md).

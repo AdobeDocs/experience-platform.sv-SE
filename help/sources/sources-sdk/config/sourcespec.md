@@ -5,7 +5,7 @@ description: Det här dokumentet innehåller en översikt över de konfiguration
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
 source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
 workflow-type: tm+mt
-source-wordcount: '1690'
+source-wordcount: '1687'
 ht-degree: 0%
 
 ---
@@ -265,7 +265,7 @@ Se [appendix](#source-spec) för ett exempel på en fullt ifylld källspecifikat
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleEndParamFormat` | Definierar det format som stöds för `scheduleEndParamName`. | `yyyy-MM-ddTHH:mm:ssZ` |
 | `sourceSpec.spec.properties` | Definierar de parametrar som användaren anger för att hämta resursvärden. | Se [ytterligare resurser](#user-input) för ett exempel på användarangivna parametrar för `spec.properties`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Ytterligare resurser {#appendix}
 

@@ -4,7 +4,7 @@ description: Lär dig hur du ansluter till Data Landing Zone för att aktivera s
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
 source-git-commit: 6fbf1b87becebee76f583c6e44b1c42956e561ab
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1136'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med tillämpliga schemafält (till exempel ditt PPID), som du väljer på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Förutsättningar {#prerequisites}
 

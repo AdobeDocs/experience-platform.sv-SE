@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över XDM-datatypen f�
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 | `statusReason` | En beskrivning av den aktuella `status`. |
 | `type` | Hur kontot är kopplat till personen (t.ex. `work` eller `personal`). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 
 Mer information om datatypen för e-postadresser finns i den offentliga XDM-databasen:

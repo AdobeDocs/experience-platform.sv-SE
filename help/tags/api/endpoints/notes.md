@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /notes i Reactor API.
 exl-id: fa3bebc0-215e-4515-87b9-d195c9ab76c1
 source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '527'
+source-wordcount: '515'
 ht-degree: 1%
 
 ---
@@ -58,7 +58,7 @@ GET /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 | `RESOURCE_TYPE` | Den typ av resurs som du hämtar anteckningar för. Måste vara något av följande värden: <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
 | `RESOURCE_ID` | The `id` för den specifika resurs vars anteckningar du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -133,7 +133,7 @@ GET /notes/{NOTE_ID}
 | --- | --- |
 | `NOTE_ID` | The `id` som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -200,7 +200,7 @@ POST /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 | `RESOURCE_TYPE` | Den typ av resurs som du skapar en anteckning för. Måste vara något av följande värden: <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
 | `RESOURCE_ID` | The `id` av den specifika resurs som du vill skapa en anteckning för. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -228,7 +228,7 @@ curl -X POST \
 | `type` | **(Obligatoriskt)** Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `notes`. |
 | `attributes.text` | **(Obligatoriskt)** Den text som innehåller anteckningen. Varje anteckning är begränsad till 512 Unicode-tecken. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 

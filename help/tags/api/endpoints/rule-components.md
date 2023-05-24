@@ -4,7 +4,7 @@ description: Lär dig hur du anropar /rule_components-slutpunkten i Reactor API.
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
 source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1152'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Regelkomponenter har tre grundläggande typer:
 | Villkor | Ett villkor är en utvärdering av om vissa kriterier uppfylls innan några åtgärder utförs. När en händelse inträffar utvärderas villkoren. Regelns åtgärder körs bara om alla villkor uppfylls. |
 | Instruktioner | Detta är de åtgärder som du vill att regeln faktiskt ska utföra, som att skicka en Adobe Analytics-fyr, hämta ett anpassat besökar-ID eller bränna en viss ruta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 En regelkomponent tillhör exakt en regel. En regel kan (och bör) ha många regelkomponenter.
 
@@ -49,7 +49,7 @@ GET /rules/{RULE_ID}/rule_components
 | --- | --- |
 | `RULE_ID` | The `id` för den regel vars komponenter du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -188,7 +188,7 @@ GET /rule_components/{RULE_COMPONENT_ID}
 | --- | --- |
 | `RULE_COMPONENT_ID` | The `id` för regelkomponenten som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -312,7 +312,7 @@ POST /properties/{PROPERTY_ID}/rule_components
 | --- | --- |
 | `PROPERTY_ID` | The `id` för egenskapen som du definierar regelkomponenten under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -369,7 +369,7 @@ curl -X POST \
 | `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Regeln som den här komponenten definieras under.</li></ol>Mer allmän information om relationer finns i [relationshandbok](../guides/relationships.md). |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rule_components`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -485,7 +485,7 @@ PATCH /rule_components/{RULE_COMPONENT_ID}
 | --- | --- |
 | `RULE_COMPONENT_ID` | The `id` för regelkomponenten som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -516,7 +516,7 @@ curl -X PATCH \
 | `id` | The `id` för regelkomponenten som du vill uppdatera. Det här bör matcha `{RULE_COMPONENT_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `rule_components`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -628,7 +628,7 @@ DELETE /rule_components/{RULE_COMPONENT_ID}
 | --- | --- |
 | `RULE_COMPONENT_ID` | The `id` för regelkomponenten som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -668,7 +668,7 @@ GET  /rule_components/{RULE_COMPONENT_ID}/rules
 | --- | --- |
 | `{RULE_COMPONENT_ID}` | The `id` för regelkomponenten vars regler du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -772,7 +772,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/extension
 | --- | --- |
 | `{RULE_COMPONENT_ID}` | The `id` för regelkomponenten vars tillägg du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -892,7 +892,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/origin
 | --- | --- |
 | `{RULE_COMPONENT_ID}` | The `id` för regelkomponenten vars ursprung du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

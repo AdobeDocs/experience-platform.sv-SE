@@ -2,7 +2,8 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;experience event queries;experience event query;Experience Event query;
 title: Visa besökare efter antal sidvisningar
 description: Lär dig hur du skriver frågor som använder Experience Events för att hämta en lista över besökare ordnade efter antalet sidvisningar.
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+exl-id: 6e8eed0c-838e-4cd0-ae8c-453114fbf4ea
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 0%

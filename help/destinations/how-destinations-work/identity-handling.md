@@ -1,7 +1,8 @@
 ---
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
-source-git-commit: 372231ab4fc1148c1c2c0c5fdbfd3cd5328b17cc
+exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '1157'
 ht-degree: 0%

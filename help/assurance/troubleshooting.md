@@ -1,13 +1,13 @@
 ---
 title: Adobe Experience Platform Assurance - felsökningsguide
 description: I det här dokumentet beskrivs lösningar på vanliga problem när du använder Adobe Experience Platform Assurance.
-source-git-commit: 07dc01c11c79ac2dad05d89309cabb5715c0b63c
+exl-id: 8078e6f6-ca18-4939-a417-40ebf5a52e24
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 1%
 
 ---
-
 
 # Felsöka Adobe Experience Platform Assurance
 

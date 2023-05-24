@@ -54,7 +54,7 @@ DIL är för närvarande inställt på att avfyras automatiskt om det placeras p
 
 Använd [Anmälningsobjekt för Adobe](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html) för att kontrollera aktiveringen av den här taggen i samråd med er plattform för hantering av samtycke.
 
-## Målgrupp
+## Target
 
 Adobe Experience Platform utlöses inte [!DNL Target] automatiskt. [!DNL Target] utlöses bara om du uttryckligen säger det i en regelåtgärd. Använd regelvillkoren för att avgöra när och vad som ska utlösas. Om du till exempel vill använda cookies för att bestämma anmälningsstatus anger du ett dataelement som ska läsa den cookien och använder den som ett villkor i regeln för att avgöra när inläsningen ska starta [!DNL Target] åtgärd.
 

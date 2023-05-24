@@ -4,7 +4,7 @@ description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adob
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
 source-git-commit: f5270d1d1b9697173bc60d16c94c54d001ae175a
 workflow-type: tm+mt
-source-wordcount: '1776'
+source-wordcount: '1773'
 ht-degree: 0%
 
 ---
@@ -219,9 +219,9 @@ För att illustrera denna process bör du överväga ett scenario där en kund s
 | Fjärde besök | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid att ta bort ECID på grund av webbläsarprincipen. Precis som vid det föregående besöket beror FPID fortfarande på hur det var inställt. Nu genereras samma ECID som vid det föregående besöket. Användaren uppfattar Experience Platform och Experience Cloud som samma användare som vid det föregående besöket. |
 | Femte besök | Mellan den fjärde och femte besöken rensade slutanvändaren alla cookies i sin webbläsare. Ett nytt FPID genereras och används för att skapa ett nytt ECID. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
-## Vanliga frågor och svar 
+## Vanliga frågor och svar
 
 Nedan följer en lista med svar på vanliga frågor om enhets-ID:n från första part.
 

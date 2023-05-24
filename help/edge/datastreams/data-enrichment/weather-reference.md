@@ -1,13 +1,13 @@
 ---
 title: Mappningar av väderdatafält
 description: Referenssida för tillgängliga väderdatafält som är tillgängliga som en del av integreringen med väderkanalen.
-source-git-commit: 3e5ca8fe67e5ad9ce0fe70d0c9f1e2fbc20cee17
+exl-id: bc0f158b-f9d0-424a-aa21-953e8380473f
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '10825'
 ht-degree: 0%
 
 ---
-
 
 # Mappningar av väderdatafält
 

@@ -4,7 +4,7 @@ description: Lär dig hur du anropar /rules-slutpunkten i Reactor API.
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
 source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '931'
+source-wordcount: '898'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ GET /properties/{PROPERTY_ID}/rules
 | --- | --- |
 | `PROPERTY_ID` | The `id` för egenskapen vars komponenter du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -158,7 +158,7 @@ GET /rules/{RULE_ID}
 | --- | --- |
 | `RULE_ID` | The `id` av regeln som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -260,7 +260,7 @@ POST /properties/{PROPERTY_ID}/rules
 | --- | --- |
 | `PROPERTY_ID` | The `id` för egenskapen som du definierar en regel under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -288,7 +288,7 @@ curl -X POST \
 | `attributes.enabled` | Ett booleskt värde som anger om regeln är aktiverad. |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rules`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -382,7 +382,7 @@ PATCH /rules/{RULE_ID}
 | --- | --- |
 | `RULE_ID` | The `id` av regeln som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -412,7 +412,7 @@ curl -X PATCH \
 | `id` | The `id` för regeln som du vill uppdatera. Det här bör matcha `{RULE_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `rules`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -502,7 +502,7 @@ DELETE /rules/{RULE_ID}
 | --- | --- |
 | `RULE_ID` | The `id` av regeln som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -542,7 +542,7 @@ GET  /rules/{RULE_ID}/libraries
 | --- | --- |
 | `{RULE_ID}` | The `id` för regeln vars bibliotek du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -664,7 +664,7 @@ GET  /rules/{RULE_ID}/revisions
 | --- | --- |
 | `{RULE_ID}` | The `id` för regeln vars ändringar du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -842,7 +842,7 @@ GET /rules/{RULE_ID}/origin
 | --- | --- |
 | `{RULE_ID}` | The `id` för den regel vars ursprung du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -944,7 +944,7 @@ GET /rules/{RULE_ID}/property
 | --- | --- |
 | `{RULE_ID}` | The `id` för den regel vars egenskap du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

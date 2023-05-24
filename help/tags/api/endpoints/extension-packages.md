@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /extension_packages i Reactor A
 exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
 source-git-commit: 8862a911f09d47c3a2260faba045f3c79826b52c
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '939'
 ht-degree: 1%
 
 ---
@@ -249,7 +249,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}
 | --- | --- |
 | `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -717,7 +717,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 | --- | --- |
 | `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -956,7 +956,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 | --- | --- |
 | `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill ska släppas privat. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1201,7 +1201,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 | --- | --- |
 | `EXTENSION_PACKAGE_ID` | The `id` för tilläggspaketet som du vill avbryta. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -1294,7 +1294,7 @@ GET /extension_packages/{EXTENSION_PACKAGE_ID}/versions
 | --- | --- |
 | `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket vars versioner du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

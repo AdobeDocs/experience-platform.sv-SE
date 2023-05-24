@@ -7,7 +7,7 @@ description: I den här självstudiekursen beskrivs stegen för hur du skapar et
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
 source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
 workflow-type: tm+mt
-source-wordcount: '3801'
+source-wordcount: '3798'
 ht-degree: 0%
 
 ---
@@ -218,7 +218,7 @@ När du definierar fält i [!DNL Schema Editor]Det finns dock ytterligare altern
 | [!UICONTROL Identity] | Anger att det här fältet är ett identitetsfält. Mer information om identitetsfält finns [senare i den här självstudiekursen](#identity-field). |
 | [!UICONTROL Relationship] | När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. The [!UICONTROL Relationship] -begränsning anger att det här fältet refererar till den primära identiteten för ett schema baserat på en annan klass, vilket innebär en relation mellan de två schemana. Se självstudiekursen om [definiera en relation](./relationship-ui.md) för mer information. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

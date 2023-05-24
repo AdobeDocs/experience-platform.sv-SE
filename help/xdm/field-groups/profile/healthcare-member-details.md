@@ -1,9 +1,10 @@
 ---
 title: Informationsschemagrupp för sjukvårdsmedlemmar
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för information om sjukvårdsmedlemmar.
-source-git-commit: a51079ff1686ecae3e5fe9f0170b28bc16bcef86
+exl-id: 43ba025e-2acf-4cb7-8487-e6c7c7240867
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '630'
 ht-degree: 1%
 
 ---
@@ -27,7 +28,7 @@ ht-degree: 1%
 | `personalEmail` | [[!UICONTROL Email address]](../../data-types/email-address.md) | Personens personliga e-postadress. |
 | `shippingAddress` | [[!UICONTROL Postal address]](../../data-types/postal-address.md) | Personens leveransadress. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `memberDetails` {#memberDetails}
 
@@ -53,7 +54,7 @@ ht-degree: 1%
 | `preferredAvailability` | Sträng | Personens önskade tillgänglighet för dag och tid för en avtalad tid. |
 | `primaryMemberID` | Sträng | En unik identifierare för den primära prenumeranten om personen är beroende. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

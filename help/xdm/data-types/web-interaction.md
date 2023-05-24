@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen Experi
 exl-id: 772d96c5-9fa3-4fed-8b38-16b8e7101743
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '182'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
 | `name` | Sträng | Det normativa namn som används för den här webblänken. Detta används i klassificeringssyfte. |
 | `type` | Sträng | Länktypen. Den här egenskapen måste vara lika med ett av följande enum-värden: <li> `download` </li> <li> `exit` </li> <li> `other` </li> |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

@@ -5,7 +5,7 @@ description: Den här handboken innehåller exempel på HTTP-begäranden och sva
 exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
 source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
 workflow-type: tm+mt
-source-wordcount: '2667'
+source-wordcount: '2661'
 ht-degree: 0%
 
 ---
@@ -553,7 +553,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/alert-subscriptions
 | `subscriptions.inContextNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. A `true` Värdet bekräftar att varningar ska lämnas via användargränssnittet. A `false` värdet ser till att användarna inte meddelas via den kanalen. |
 | `subscriptions.emailNotifications` | Ett booleskt värde som avgör hur användarna får varningsmeddelanden. A `true` värdet bekräftar att aviseringar ska skickas via e-post. A `false` värdet ser till att användarna inte meddelas via den kanalen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -643,7 +643,7 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 | `path` | Det här värdet relaterar till namnutrymmet i slutpunkten. För närvarande är det enda godkända värdet `/status`. |
 | `value` | I en lyckad PATCH-begäran ändras `status` Varningens värde. Godkända värden är `enable` eller `disable`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 

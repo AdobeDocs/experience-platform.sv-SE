@@ -4,7 +4,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Busi
 exl-id: 4e3228a1-74be-43af-b355-45d84afb1611
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '219'
 ht-degree: 2%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 2%
 | `campaignName` | Sträng | Namnet på kampanjen. |
 | `campaignType` | Sträng | Kampanjtypen eller målgruppen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet läser du i handboken [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md)
 

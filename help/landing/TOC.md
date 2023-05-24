@@ -5,8 +5,8 @@ breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Lär dig hur Experience Platform kan leverera personanpassade upplevelser till dina kunder i realtid.
 source-git-commit: bc781aadb620ad4b383d441d36e39626b0875901
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '258'
+ht-degree: 18%
 
 ---
 

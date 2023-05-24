@@ -1,7 +1,8 @@
 ---
 title: Webbtilläggsflöde
 description: Lär dig hur webbtilläggskomponenter interagerar med varandra vid körning i Adobe Experience Platform.
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 90a0c64c-d240-4e2c-876b-22f05d6f3f82
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
 I webbtillägg har varje händelse, villkor, åtgärd och dataelementtyp både en vy där användarna kan ändra inställningar och en biblioteksmodul för att agera utifrån de användardefinierade inställningarna.
 
@@ -26,8 +27,8 @@ I följande diagram ser du länken mellan händelser, villkor och åtgärder i r
 
 Regelbearbetningsflödet innehåller följande faser:
 
-1. Metoderna `settings` och `trigger` tillhandahålls till händelsbiblioteket vid start.
-1. När händelsebiblioteksmodulen fastställer att händelsen har inträffat anropar händelsbiblioteket `trigger`.
-1. Taggar skickar `settings` till regelns villkorsbiblioteksmoduler där villkoren utvärderas.
+1. The `settings` och `trigger` -metoden anges till händelsbiblioteksmodulen vid start.
+1. När händelsebiblioteksmodulen avgör om händelsen har inträffat, anropar händelsbiblioteket modulen `trigger`.
+1. Taggar passerar `settings` till regelns villkorsbiblioteksmoduler där villkoren utvärderas.
 1. Varje villkorsbiblioteksmodul returnerar om ett villkor utvärderas till true.
 1. Om alla villkor godkänns körs regelns åtgärder.

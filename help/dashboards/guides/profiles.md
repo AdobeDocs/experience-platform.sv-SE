@@ -292,7 +292,7 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 
 ### [!UICONTROL Audiences] {#audiences}
 
-Den här widgeten visar det totala antalet segment som är klara att aktiveras enligt den valda sammanfogningsprincipen som tillämpas på dina profildata.
+Den här widgeten innehåller det totala antalet segment som är klara att aktiveras enligt den valda sammanfogningsprincipen som tillämpas på dina profildata.
 
 Välj **[!UICONTROL Audiences]** för att navigera till [!UICONTROL Segments] kontrollpanel [!UICONTROL Browse] -fliken. Därifrån visas en lista med alla segmentdefinitioner för din organisation.
 

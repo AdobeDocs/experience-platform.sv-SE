@@ -1,7 +1,8 @@
 ---
 title: Ange primära identiteter i en ad hoc-datauppsättning
 description: Med Adobe Experience Platform Query Service kan du ange en identitet eller en primär identitet för ad hoc-schemadatasfält direkt via SQL ALTER TABLE-kommandot. Dokumentet förklarar hur du använder kommandot ALTER TABLE för att ange en primär identitet eller sekundär identitet.
-source-git-commit: bf51fc3e0c9635c0555f87f3389fb4a9542c092d
+exl-id: b8e6b87e-c6e5-4688-a936-a3a1510a3c5b
+source-git-commit: d9c3ccdf0c0e191af1ab18e894688f301378156d
 workflow-type: tm+mt
 source-wordcount: '445'
 ht-degree: 0%

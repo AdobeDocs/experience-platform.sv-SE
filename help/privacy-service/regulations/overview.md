@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över de olika sekrete
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Genom att använda [Adobe Experience Platform Privacy Service](../home.md)stöde
 | PDPA (Thailand) | The [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter. |
 | VCDPA (Virginia) | The [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) ger Virginias invånare nya rättigheter till dataintegritet (&quot;konsumenter&quot;), inklusive rätten att få tillgång till, radera och rätta personuppgifter. Konsumenterna har också rätt att välja bort försäljning av personuppgifter, välja bort profilering baserad på personuppgifter och behandling av personliga reklamändamål. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Nästa steg
 

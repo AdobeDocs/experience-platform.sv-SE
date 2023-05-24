@@ -12,7 +12,7 @@ ht-degree: 5%
 
 # Automatiskt insamlad information
 
-Adobe Experience Platform Web SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med alternativet `context` i kommandot `configure`. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
+Adobe Experience Platform Web SDK samlar automatiskt in ett antal informationsdelar utan specialkonfigurationer. Den här informationen kan dock inaktiveras om det behövs med `context` i `configure` -kommando. [Se Konfigurera SDK](../fundamentals/configuring-the-sdk.md). Nedan finns en lista över dessa informationsdelar. Namnet inom parentes anger den sträng som ska användas när kontexten konfigureras.
 
 ## Enhet (`device`)
 
@@ -98,7 +98,7 @@ När det fristående biblioteket används är värdet helt enkelt biblioteksvers
 | ------------------------------------------------ | ------------ |
 | `events[].xdm.implementationDetails.environment` | `browser` |
 
-Den miljö där data samlades in. Det här är alltid inställt på `browser`.
+Den miljö där data samlades in. Detta är alltid inställt på `browser`.
 
 ## Montera kontext (`placeContext`)
 

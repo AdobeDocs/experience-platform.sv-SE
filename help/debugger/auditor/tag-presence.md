@@ -4,7 +4,7 @@ description: Lär dig hur granskaren testar taggnärvaro i Adobe Experience Plat
 exl-id: 8f01f89e-2a3b-41bc-b971-f3c60d0ae3fa
 source-git-commit: 10a5605c40143b58f6ba0108cc087956aa929866
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '572'
 ht-degree: 5%
 
 ---
@@ -34,4 +34,4 @@ Taggnärvaro-tester utvärderar om vissa taggar finns på sidan och om de finns 
 | Mål - kod finns | 5 | Adobe Target ska definieras i DOM. | Installera den senaste versionen av Target (at.js). <br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/target/using/implement-target/implementing-target.html) |
 | Mål - Biblioteket har lästs in i `<head>` | 4 | Målbiblioteket ska läsas in i `<head>` -tagg. | Kontrollera att målbiblioteket har lästs in i `<head>` -tagg. <br><br>[Ytterligare information](https://experienceleague.adobe.com/docs/target/using/implement-target/implementing-target.html) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

@@ -3,7 +3,8 @@ keywords: ta bort destinationskonto, destinationskonton, ta bort konton
 title: Ta bort destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort målkonton i användargränssnittet i Adobe Experience Platform
-source-git-commit: f31b54622c63f96fb8fa727f80dda295a926e2c7
+exl-id: 9b39ba4b-19a4-48a8-a6f1-f860777cdb9e
+source-git-commit: 2ea56957e122140fbc68c727e36666f8f9a71dd8
 workflow-type: tm+mt
 source-wordcount: '296'
 ht-degree: 1%

@@ -4,7 +4,7 @@ description: Lär dig mer om turbinobjektet, en kostnadsfri variabel som ger inf
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
 source-git-commit: 27dd38cc509040ea9dc40fc7030dcdec9a182d55
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad referens till terminologiska ändringar.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Objektet `turbine` är en &quot;fri variabel&quot; inom omfånget för tilläggets biblioteksmoduler. Den innehåller information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform och är alltid tillgänglig för biblioteksmoduler utan att använda `require()`.
+The `turbine` är en&quot;kostnadsfri variabel&quot; inom omfånget för tilläggets biblioteksmoduler. Den innehåller information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform och är alltid tillgänglig för biblioteksmoduler utan att använda `require()`.
 
 ## `buildInfo`
 
@@ -35,11 +35,11 @@ console.log(turbine.buildInfo.turbineBuildDate);
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `turbineVersion` | Den [turbinversion](https://www.npmjs.com/package/@adobe/reactor-turbine) som används i det aktuella biblioteket. |
-| `turbineBuildDate` | ISO 8601-datumet när den version av [turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) som används inuti behållaren skapades. |
+| `turbineVersion` | The [Turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) version som används i det aktuella biblioteket. |
+| `turbineBuildDate` | ISO 8601-datumet när versionen av [Turbin](https://www.npmjs.com/package/@adobe/reactor-turbine) som användes inuti behållaren skapades. |
 | `buildDate` | ISO 8601-datumet när det aktuella biblioteket skapades. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `environment`
 
@@ -59,15 +59,15 @@ console.log(turbine.environment.stage);
 | Egenskap | Beskrivning |
 | --- | --- |
 | `id` | Miljöns ID. |
-| `stage` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging` och `production`. |
+| `stage` | Den miljö som det här biblioteket skapades för. Möjliga värden är `development`, `staging`och `production`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## `debugEnabled`
 
 Ett booleskt värde som anger om taggfelsökning är aktiverat.
 
-Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` för att vara säker på att dina meddelanden bara skrivs ut till konsolen när taggfelsökning är aktiverat.
+Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` för att vara säker på att dina meddelanden bara skrivs ut till konsolen när taggfelsfunktionen är aktiverad.
 
 ## `getDataElementValue`
 
@@ -83,9 +83,9 @@ Returnerar värdet för ett dataelement.
 var extensionSettings = turbine.getExtensionSettings();
 ```
 
-Returnerar inställningsobjektet som senast sparades från vyn [tilläggskonfiguration](./configuration.md).
+Returnerar inställningsobjektet som senast sparades från [tilläggskonfiguration](./configuration.md) vy.
 
-Observera att värden inom de returnerade inställningsobjekten kan komma från dataelement. Därför kan anrop till `getExtensionSettings()` vid olika tidpunkter ge olika resultat om dataelementens värden har ändrats. Om du vill få de senaste värdena väntar du så länge som möjligt innan du ringer `getExtensionSettings()`.
+Observera att värden inom de returnerade inställningsobjekten kan komma från dataelement. På grund av detta, ringa `getExtensionSettings()` vid olika tidpunkter kan ge olika resultat om dataelementens värden har ändrats. Vänta så länge som möjligt innan du ringer för att få de senaste värdena `getExtensionSettings()`.
 
 ## `getHostedLibFileUrl` {#get-hosted-lib-file}
 
@@ -96,7 +96,7 @@ loadScript(turbine.getHostedLibFileUrl('AppMeasurement.js')).then(function() {
 })
 ```
 
-Egenskapen [hostedLibFiles](./manifest.md) kan definieras inuti tilläggsmanifestet för att kunna vara värd för olika filer tillsammans med taggens körningsbibliotek. Den här modulen returnerar den URL där den angivna biblioteksfilen finns.
+The [hostedLibFiles](./manifest.md) -egenskapen kan definieras inuti tilläggsmanifestet för att kunna lagra olika filer tillsammans med taggens körningsbibliotek. Den här modulen returnerar den URL där den angivna biblioteksfilen finns.
 
 ## `getSharedModule` {#shared}
 
@@ -104,7 +104,7 @@ Egenskapen [hostedLibFiles](./manifest.md) kan definieras inuti tilläggsmanifes
 var mcidInstance = turbine.getSharedModule('adobe-mcid', 'mcid-instance');
 ```
 
-Hämtar en modul som har delats från ett annat tillägg. Om ingen matchande modul hittas returneras `undefined`. Mer information om delade moduler finns i [Implementera delade moduler](./web/shared.md).
+Hämtar en modul som har delats från ett annat tillägg. Om ingen matchande modul hittas `undefined` kommer att returneras. Se [Implementera delade moduler](./web/shared.md) om du vill ha mer information om delade moduler.
 
 ## `logger`
 
@@ -112,20 +112,20 @@ Hämtar en modul som har delats från ett annat tillägg. Om ingen matchande mod
 turbine.logger.error('Error!');
 ```
 
-Loggningsverktyget används för att logga meddelanden till konsolen. Meddelanden visas bara i konsolen om användaren har aktiverat felsökning. Det rekommenderade sättet att aktivera felsökning är att använda [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj?src=propaganda). Alternativt kan användaren köra följande kommando `_satellite.setDebug(true)` i webbläsarens utvecklarkonsol. Loggaren har följande metoder:
+Loggningsverktyget används för att logga meddelanden till konsolen. Meddelanden visas bara i konsolen om användaren har aktiverat felsökning. Det rekommenderade sättet att aktivera felsökning är att använda [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj?src=propaganda). Användaren kan också köra följande kommando `_satellite.setDebug(true)` i webbläsarens utvecklarkonsol. Loggaren har följande metoder:
 
 * `logger.log(message: string)`: Loggar ett meddelande till konsolen.
 * `logger.info(message: string)`: Loggar ett informationsmeddelande till konsolen.
 * `logger.warn(message: string)`: Loggar ett varningsmeddelande till konsolen.
 * `logger.error(message: string)`: Loggar ett felmeddelande till konsolen.
-* `logger.debug(message: string)`: Loggar ett felsökningsmeddelande till konsolen. (Synligt bara när `verbose`-loggning är aktiverad i webbläsarkonsolen.)
+* `logger.debug(message: string)`: Loggar ett felsökningsmeddelande till konsolen. (Synligt endast när `verbose` loggning är aktiverat i webbläsarkonsolen.)
 * `logger.deprecation(message: string)`: Loggar ett varningsmeddelande till konsolen oavsett om taggfelsfunktionen är aktiverad av användaren eller inte.
 
 ## `onDebugChanged`
 
-Genom att skicka en återanropsfunktion till `turbine.onDebugChanged`, kommer taggarna att anropa återanropet när felsökningen är aktiverad. Taggar skickar ett booleskt värde till återanropsfunktionen som är true om felsökning var aktiverat eller false om felsökning var inaktiverad.
+Genom att skicka en callback-funktion till `turbine.onDebugChanged`, kommer taggar att anropa återanropet när felsökning är aktiverat. Taggar skickar ett booleskt värde till återanropsfunktionen som är true om felsökning var aktiverat eller false om felsökning var inaktiverad.
 
-Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` och -taggar så att dina meddelanden bara skrivs ut till konsolen när taggfelsökning är aktiverat.
+Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` och taggarna ser till att dina meddelanden bara skrivs ut på konsolen när taggfelsfunktionen är aktiverad.
 
 ## `propertySettings` {#property-settings}
 

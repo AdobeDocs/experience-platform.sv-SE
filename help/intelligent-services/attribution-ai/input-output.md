@@ -49,7 +49,7 @@ Du kan konfigurera kontaktpunkterna med hjälp av de fält som rekommenderas ned
 | Marketing.trackingCode | Pekpunkt |
 | Marketing.campaignname | Pekpunkt |
 | Marketing.campaigngroup | Pekpunkt |
-| Handel | Konvertering |
+| Commerce | Konvertering |
 
 Attributen körs vanligtvis på konverteringskolumner som order, inköp och utcheckningar under&quot;handel&quot;. Kolumnerna för&quot;channel&quot; och&quot;marketing&quot; används för att definiera kontaktytor för Attribution AI (till exempel `channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`). För optimala resultat och insikter rekommenderar vi att du inkluderar så många konverterings- och kontaktpunktskolumner som möjligt. Dessutom är du inte begränsad till bara de ovanstående kolumnerna. Du kan inkludera andra rekommenderade eller anpassade kolumner som en konvertering eller kontaktytpunktsdefinition.
 

@@ -4,7 +4,7 @@ description: Adobe Advertising Cloud DSP är en integrerad destination för Adob
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
 source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1011'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Adobe Advertising Cloud DSP-målet stöder aktivering av identiteter som beskriv
 |---|---|---|
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Experience Platform har stöd för både oformaterad text och SHA256-hashed-e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** att Experience Platform automatiskt ska hash-koda data vid aktiveringen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -58,7 +58,7 @@ I följande tabell finns information om exporttyp och frekvens för destinatione
 | Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (målgrupp) med de identifierare (e-post eller hashade e-post) som används i Advertising Cloud DSP-målet. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Anslut till målet {#connect}
 

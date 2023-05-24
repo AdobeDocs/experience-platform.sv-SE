@@ -4,7 +4,7 @@ description: Lär dig hur du anropar slutpunkten /callback i Reactor API.
 exl-id: dd980f91-89e3-4ba0-a6fc-64d66b288a22
 source-git-commit: 7f3b9ef9270b7748bc3366c8c39f503e1aee2100
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '600'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ GET  /properties/{PROPERTY_ID}/callbacks
 | --- | --- |
 | `{PROPERTY_ID}` | The `id` för egenskapen vars återanrop du vill visa. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -130,7 +130,7 @@ GET /callbacks/{CALLBACK_ID}
 | --- | --- |
 | `CALLBACK_ID` | The `id` för det återanrop som du vill söka efter. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -194,7 +194,7 @@ POST /properties/{PROPERTY_ID}/callbacks
 | --- | --- |
 | `PROPERTY_ID` | The `id` i [property](./properties.md) som du definierar återanropet under. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -223,7 +223,7 @@ curl -X POST \
 | `url` | URL-målet för återanropsmeddelandet. URL:en måste använda HTTPS-protokolltillägget. |
 | `subscriptions` | En array med strängar som anger de granskningshändelsetyper som kommer att utlösa återanropet. Se [slutpunktsguide för granskningshändelser](./audit-events.md) för en lista över möjliga händelsetyper. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -275,7 +275,7 @@ PATCH /callbacks/{CALLBACK_ID}
 | --- | --- |
 | `CALLBACK_ID` | The `id` för det återanrop som du vill uppdatera. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 
@@ -310,7 +310,7 @@ curl -X PATCH \
 | `id` | The `id` för det återanrop som du vill uppdatera. Det här bör matcha `{CALLBACK_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `callbacks`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Svar**
 
@@ -363,7 +363,7 @@ DELETE /callbacks/{CALLBACK_ID}
 | --- | --- |
 | `CALLBACK_ID` | The `id` för det återanrop som du vill ta bort. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 **Begäran**
 

@@ -4,7 +4,7 @@ description: I följande dokument beskrivs vilka funktioner och produkter som ä
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
 source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
 workflow-type: tm+mt
-source-wordcount: '720'
+source-wordcount: '714'
 ht-degree: 2%
 
 ---
@@ -41,7 +41,7 @@ Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de 
 | Övervakningskapacitet | Ja | Ja |
 | Inställningskapacitet för frågeavisering | Nej | Ja |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Åtkomstkontroll
 
@@ -58,7 +58,7 @@ Följande tabell visar effekterna av [!DNL Manage Queries] behörighet:
 | [!DNL Manage Queries] (utan behörighet att skriva data) | Ger åtkomst till att köra ad hoc-frågor |
 | [!DNL Manage Queries] (med behörighet att skriva data) | Ger åtkomst till att köra batchfrågor |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Stöd för sandlådor
 

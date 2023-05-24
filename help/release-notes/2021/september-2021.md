@@ -5,7 +5,7 @@ exl-id: 96375409-803f-45af-805e-900207d972e4
 source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
 workflow-type: tm+mt
 source-wordcount: '377'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
-- [Dataintag](#ingestion)
+- [Datainmatning](#ingestion)
 - [[!DNL Data Prep]](#data-prep)
 - [Källor](#sources)
 
-## Dataintag {#ingestion}
+## Datainmatning {#ingestion}
 
 Adobe Experience Platform datainmatning representerar de olika metoder som används för att importera data från olika källor och hur data lagras i datasjön för användning av plattformstjänster längre fram i kedjan.
 

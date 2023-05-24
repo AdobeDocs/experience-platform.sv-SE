@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen Device
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '326'
+source-wordcount: '323'
 ht-degree: 3%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 3%
 | `typeID` | Sträng | En identifierare för enheten. Detta kan vara en identifierare från DeviceAtlas eller en annan tjänst som identifierar den maskinvara som används. |
 | `typeIDService` | Sträng | Namnutrymmet för den tjänst som används för att identifiera enhetstypen. Se [appendix](#typeIDService) om du vill ha information om godkända värden. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om fältgruppen finns i den offentliga XDM-databasen:
 

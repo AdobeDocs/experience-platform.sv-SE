@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över klassen XDM Indi
 exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '247'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
 | `proximity` | Sträng | Beräknat avstånd från beacon. Se [appendix](#proximity) för godkända värden och definitioner. |
 | `proximityUUID` | Sträng | En UUID för närhet (Universally Unique Identifier) är en speciell typ av identifierare som används för att skilja beacons i nätverket från alla andra beacons i nätverk utanför din kontroll. UUID för närhet konfigureras till en fyr som ska överföras till mobila enheter inom räckhåll för att identifiera en organisations fyrar. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

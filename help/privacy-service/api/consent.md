@@ -6,7 +6,7 @@ description: Lär dig hur du hanterar förfrågningar om kundsamtycke för Exper
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
 source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '244'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ curl -X POST \
 | `nameSpace` | Varje objekt i `entities` arrayen måste innehålla en av [standardidentitetsnamnutrymmen](./appendix.md#standard-namespaces) känns igen av Privacy Service-API:t. |
 | `values` | En array med värden för varje användare, som motsvarar den angivna `nameSpace`. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >

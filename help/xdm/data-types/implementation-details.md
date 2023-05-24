@@ -1,9 +1,10 @@
 ---
 title: Typ av implementeringsinformation
 description: Det här dokumentet innehåller en översikt över datatypen Experience Data Model (XDM) för implementeringsinformation.
-source-git-commit: 77fb3e348c2298fc5c325fcf2d3408da084b2b19
+exl-id: d3d16bae-196b-489d-8590-fd22150eedf1
+source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
 workflow-type: tm+mt
-source-wordcount: '123'
+source-wordcount: '120'
 ht-degree: 3%
 
 ---
@@ -20,7 +21,7 @@ ht-degree: 3%
 | `name` | Sträng | Identifieraren för SDK eller slutpunkten. Alla SDK:er eller slutpunkter identifieras via en URI, inklusive tillägg. |
 | `version` | Sträng | Versionen av API eller SDK. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

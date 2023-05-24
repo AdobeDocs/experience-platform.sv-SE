@@ -4,7 +4,7 @@ description: Lär dig hur granskaren testar konfigurationer i Adobe Experience P
 exl-id: 92b07224-57f1-4891-9923-aa079945e6bc
 source-git-commit: 797d4f305b4a6884ada4e0619beadff6a45ab42d
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '737'
 ht-degree: 4%
 
 ---
@@ -34,4 +34,4 @@ Konfigurationstester söker efter specifika inställningar, värden eller potent
 | Mål - mboxDefault föregår mboxCreate | 5 | Den korrekta användningen av mboxCreate ser ut ungefär så här:<br><br> `<div class="mboxDefault"><!-Customer content--></div><script>mboxCreate('myMboxName')</script>` | Var noga med att inkludera en  `<div class="mboxDefault"></div>` -tagg innan mboxCreate() anropas. at.js kommer inte att lägga till en åt dig.<br><br>[Ytterligare information](https://developer.adobe.com/target/implement/client-side/) |
 | Mål - Giltig DOCTYPE | 5 | En ogiltig DOCTYPE upptäcktes. Inga lådor kommer att utlösas i det här scenariot.  För at.js måste DOCTYPE vara i standardläge, annars fungerar inte Target. | Uppdatera DOCTYPE på sidan.<br><br>[Ytterligare information](https://developer.adobe.com/target/implement/client-side/atjs/target-atjs-faq/) |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}

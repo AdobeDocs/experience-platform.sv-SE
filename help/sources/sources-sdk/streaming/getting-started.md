@@ -3,7 +3,8 @@ title: Komma igång med självbetjäningskällor (Streaming SDK)
 description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med hjälp av självbetjäningskällor (Streaming SDK).
 hide: true
 hidefromtoc: true
-source-git-commit: 7744fef9751212a40f8f20df52812d38130c42fc
+exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
+source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
 workflow-type: tm+mt
 source-wordcount: '534'
 ht-degree: 0%

@@ -2,7 +2,8 @@
 keywords: Experience Platform;hem;populära ämnen;etikettidentiteter
 title: Märk ett fält som en identitet i användargränssnittet
 description: Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av identitetstjänsten. Identitetens namnutrymme anges som en del av fältets etikett.
-source-git-commit: ae51c9bd07944f26be2809a6d15f9d9e8c2fd5a1
+exl-id: c3097030-0242-404f-9e4c-72a7fa574011
+source-git-commit: 44e056407f5089c927752f00cc6bf173d7640b83
 workflow-type: tm+mt
 source-wordcount: '201'
 ht-degree: 0%

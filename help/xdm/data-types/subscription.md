@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM (S
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '412'
 ht-degree: 8%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 8%
 | `topUp` | Sträng | Beskriver de överenskomna villkoren för hur förbrukningsaspekter av en prenumeration återköps under en faktureringsperiod. |
 | `type` | Sträng | Rättighetens omfattning i förhållande till hur många personer som omfattas av prenumerationen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen finns i den offentliga XDM-databasen:
 

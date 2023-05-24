@@ -5,7 +5,7 @@ description: Tabellerna nedan innehåller mappningarna mellan Salesforce-källf�
 exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
 source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '479'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 | `Title` | `extendedWorkDetails.jobTitle` |
 | `"Contact"` | `b2b.personType` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Lead {#lead}
 
@@ -123,7 +123,7 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 | `"Lead"` | `b2b.personType` |
 | `iif(ConvertedContactId != null && ConvertedContactId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", ConvertedContactId, "sourceKey", concat(ConvertedContactId,"@${CRM_ORG_ID}.Salesforce")), null)` | `personComponents.sourceConvertedContactKey` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Konto {#account}
 
@@ -179,7 +179,7 @@ Läs [Översikt över XDM Business Account-detaljer](../../../../xdm/classes/b2b
 | `Type` | `accountType` |
 | `Website` | `accountOrganization.website` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Möjligheter {#opportunity}
 
@@ -220,7 +220,7 @@ Läs [Översikt över affärsmöjligheter i XDM](../../../../xdm/classes/b2b/bus
 | `Type` | `opportunityType` |
 | `CurrencyIsoCode` | `opportunityAmount.currencyCode` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kontaktroll för affärsmöjlighet {#opportunity-contact-role}
 
@@ -246,7 +246,7 @@ Läs [Översikt över klassen XDM Business Opportunity Person Relation](../../..
 | `concat(OpportunityId,"@${CRM_ORG_ID}.Salesforce")` | `opportunityKey.sourceKey` |
 | `Role` | `personRole` |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Campaign {#campaign}
 

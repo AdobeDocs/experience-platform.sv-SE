@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en översikt över datatypen XDM f�
 exl-id: b84e48f9-bbb4-4b8b-9476-4bc1c455ecfd
 source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
 workflow-type: tm+mt
-source-wordcount: '209'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 | `statusReason` | En beskrivning av aktuell status. |
 | `validity` | Telefonnumrets tekniska korrekthet. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Mer information om datatypen för telefonnummer finns i den offentliga XDM-databasen:
 

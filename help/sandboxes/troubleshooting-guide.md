@@ -7,7 +7,7 @@ exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
 source-wordcount: '855'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -15,11 +15,11 @@ ht-degree: 1%
 
 Det här dokumentet innehåller svar på vanliga frågor om sandlådor i Adobe Experience Platform. För frågor och felsökning som rör andra plattformstjänster, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
 
-Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Se [översikt över sandlådor](home.md) för mer information.
+Sandlådor delar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser. Se [översikten över sandlådor](home.md) för mer information.
 
 ## Vad är en sandlåda?
 
-Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Se [översikt över sandlådor](home.md) för mer information.
+Sandlådor är virtuella partitioner i en enda instans av Experience Platform. Varje sandlåda har ett eget oberoende bibliotek med plattformsresurser (inklusive scheman, datauppsättningar, profiler och så vidare). Allt innehåll och alla åtgärder som vidtas i en sandlåda begränsas till enbart den sandlådan och påverkar inte några andra sandlådor. Se [översikten över sandlådor](home.md) för mer information.
 
 ## Vilka typer av sandlådor är tillgängliga och vilka är skillnaderna? {#sandbox-types}
 
@@ -37,7 +37,7 @@ Det finns två typer av sandlådor i Experience Platform:
    * Ett batchsegmenteringsjobb per dag, per utvecklingssandlåda.
    * Ett genomsnitt på 120 [!DNL Profile] API-anrop, per [!DNL Profile], per år (mäts kumulativt i alla dina godkända utvecklingssandlådor.
 
-Se [översikt över sandlådor](./home.md) för mer information.
+Se [översikten över sandlådor](./home.md) för mer information.
 
 ## Kan jag få åtkomst till en resurs från mer än en sandlåda?
 

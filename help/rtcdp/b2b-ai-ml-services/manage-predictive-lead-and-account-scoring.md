@@ -134,8 +134,8 @@ Du kommer tillbaka till **[!UICONTROL Services]** där du inte längre kan se po
 | 402 | FEL 402. Leads-AI-pipeline har stoppats: det finns inte tillräckligt med giltiga kontakter för att göra en kontaktbedömning. Antal kontakter: {}. |
 | 403 | FEL 403. Leads-AI-pipeline har stoppats: inte tillräckligt med aktivitetsvolym för modellutbildning. Antal händelser: {}. |
 | 404 | FEL 404. Leads-AI-pipeline har stoppats: inte tillräckligt många konverteringar för modellutbildning. Antal konverteringar: {}. |
-| 405 | FEL 405. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Only {} percent of accounts has activity. |
-| 406 | FEL 406. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Only {} percent of contacts has activity. |
+| 405 | FEL 405. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Endast {} procent av kontona har aktivitet. |
+| 406 | FEL 406. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Endast {} procent av kontakterna har aktivitet. |
 | 407 | FEL 407. Leads-AI-pipeline har stoppats: typer av bedömningsdataaktiviteter matchar inte utbildningsdata. |
 | 408 | FEL 408. Leads-AI-pipeline har stoppats: Felfrekvensen är för hög för aktivitetsfunktioner. Frekvens saknas: {}. |
 | 409 | FEL 409. Leads-AI-pipeline har stoppats: för lågt test auc. Testa auc: {}. |

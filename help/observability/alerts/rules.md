@@ -6,8 +6,8 @@ feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
 source-git-commit: 6650894c145fd1f42731fd5ed8aeb6e38062aa61
 workflow-type: tm+mt
-source-wordcount: '961'
-ht-degree: 0%
+source-wordcount: '943'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +17,7 @@ Adobe Experience Platform innehåller flera fördefinierade varningsregler som d
 
 När [visa varningsregler i plattformsgränssnittet](./ui.md)kan du prenumerera på varje regel separat. När du prenumererar på aviseringar via [I/O-händelsemeddelanden](./subscribe.md)Men varningsreglerna är ordnade i olika prenumerationspaket. I tabellerna nedan visas varje regel med sitt motsvarande I/O Event-prenumerationsnamn.
 
-## Dataintag
+## Datainmatning
 
 Följande varningsregler gäller [Dataintag](../../ingestion/home.md) och  [källor](../../sources/home.md):
 
@@ -29,7 +29,7 @@ Följande varningsregler gäller [Dataintag](../../ingestion/home.md) och  [käl
 | Körningsfördröjningar för källflöde, fel och fel | Fördröjning av intag | Den här varningen utlöses när ett batchmatningsflöde tar längre tid än 150 minuter att bearbeta. |
 | Körningsfördröjningar för källflöde, fel och fel | Inmatningsfel | Den här varningen utlöses när förhållandet mellan misslyckade poster och alla poster överstiger ett tröskelvärde på 0,5 %. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 Om du tidigare har prenumererat på följande larmtyp får du inte längre några varningar eftersom den här varningen har tagits bort:
 
@@ -37,7 +37,7 @@ Om du tidigare har prenumererat på följande larmtyp får du inte längre någr
 | --- | --- | --- |
 | Körningsfördröjningar för källflöde, fel och fel | Brist på intag | Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Identitetstjänst
 
@@ -50,7 +50,7 @@ Följande varningsregler gäller [Identitetstjänst](../../identity-service/home
 | Fördröjningar för identitetsmatning, fel och fel | Körningsfördröjning för identitetstjänstens flöde | Den här varningen utlöses när en körning av en identitetstjänst tar längre tid än 150 minuter att bearbeta. |
 | Fördröjningar för identitetsmatning, fel och fel | Körningsfel för identitetstjänstens flöde | Den här varningen utlöses när ett fel inträffar när data hämtas till identitetstjänsten. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Kundprofil i realtid
 
@@ -63,7 +63,7 @@ Följande varningsregler gäller [Kundprofil i realtid](../../profile/home.md):
 | Fördröjningar för profilinmatning, fel och fel | Körningsfördröjning för profilflöde | Den här varningen utlöses när det tar längre tid än 150 minuter att läsa in data från datasjön till profilen. |
 | Fördröjningar för profilinmatning, fel och fel | Körningsfel för profilflöde | Den här varningen utlöses när ett fel inträffar när data hämtas till profilen. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Segmentering
 
@@ -77,7 +77,7 @@ Följande varningsregler gäller [Segmenteringstjänst](../../segmentation/home.
 | Förseningar, fel och fel i segmentutvärderingsjobb | Fel i segmentjobb | Den här varningen utlöses när ett segmentutvärderingsjobb resulterar i ett fel. |
 | Förseningar, fel och fel i segmentutvärderingsjobb | Segmentdefinition inaktiverad | Den här varningen utlöses när en segmentdefinition inaktiveras på grund av ett internt fel. Detta ger automatiskt ett krigsrum för en Adobe-tekniker att undersöka problemet. Denna varning är endast avsedd att vara informativ och kräver inga åtgärder från dig. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Mål 
 
@@ -91,7 +91,7 @@ Följande varningsregler gäller [mål](../../destinations/home.md):
 | Körningsfördröjningar för målflöde, fel och fel | Körningsfel för målflöde | Den här varningen utlöses när ett fel inträffar när ett segment aktiveras till ett mål. |
 | Körningsfördröjningar för målflöde, fel och fel | Överskridningsgraden överskrider tröskelvärdet | Den här varningen utlöses när förhållandet mellan överhoppade ID:n och totalt ID:n överskrider ett tröskelvärde. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 ## Frågetjänst
 
