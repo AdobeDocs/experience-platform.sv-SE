@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: f0cd059683531993398f0a81d6eda486276853e2
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
@@ -122,9 +122,9 @@ Om du vill aktivera en datauppsättning för profilen har du åtkomst till dess 
 
 ![Profilväxlingen är markerad på sidan med datauppsättningsinformation.](../images/datasets/user-guide/enable-dataset-profiles.png)
 
-## Hantera och tillämpa datastyrning på en datauppsättning
+## Hantera och tillämpa datastyrning på en datauppsättning {#manage-and-enforce-data-governance}
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på datauppsättningar.
+Dataanvändningsetiketter, som används på schemanivå, gör att du kan kategorisera datamängder och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på scheman för spridning till datauppsättningar.
 
 ## Ta bort en datauppsättning {#delete}
 

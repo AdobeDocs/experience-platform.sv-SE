@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datauppsättningar - översikt
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '843'
 ht-degree: 2%
 
 ---
@@ -37,15 +37,13 @@ Adobe Experience Platform datainmatning representerar de olika metoder som [!DNL
 
 Se [Översikt över datainmatning](../../ingestion/home.md) för mer information.
 
-## Använda användningsetiketter på datauppsättningar
+## Etiketter som tillämpas på datauppsättningar från scheman
 
-Med Adobe Experience Platform Data Governance kan ni hantera kunddata för att säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Med ramverket för datastyrning kan du använda användningsetiketter för att kategorisera data enligt de användningsprinciper som gäller för dessa data.
+Med Adobe Experience Platform Data Governance kan ni hantera kunddata för att säkerställa efterlevnad av regler, begränsningar och policyer som gäller för dataanvändning. Med ramverket för datastyrning kan du använda användningsetiketter för att kategorisera data enligt de användningsprinciper som gäller för dessa data. Etiketter kan användas på enskilda scheman, fält inom dessa scheman och hela enskilda datauppsättningar. När etiketter används direkt i ett schema sprids dessa etiketter till alla befintliga och framtida datauppsättningar som baseras på det schemat.
 
 >[!IMPORTANT]
 >
->Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
-
-Dataanvändningsetiketter kan användas på hela datauppsättningar eller enskilda datauppsättningsfält. Etiketter som läggs till på datauppsättningsnivå ärvs av alla fält i den datauppsättningen.
+>Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Se avsnittet om [migrera tidigare använda etiketter](../../data-governance/e2e.md#migrate-labels) för instruktioner om hur man gör detta.
 
 Se [Datastyrning - översikt](../../data-governance/home.md) för mer information om tjänsten. Anvisningar om hur du arbetar med användningsetiketter i [!DNL Platform]finns i följande handledningar:
 

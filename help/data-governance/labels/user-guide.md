@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 1a4e71ee07900fb4f1581274f740ddb96cb93289
+source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -16,73 +16,31 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_description"
 >title="Styrd dataanvändning i plattformen"
->abstract="<h2>Beskrivning</h2><p>Med ramverket för datastyrning i Experience Platform kan ni märka attribut och datauppsättningar enligt dataanvändningsbegränsningar och skapa policyer som identifierar och följer dessa begränsningar för specifika marknadsföringsåtgärder.</p>"
+>abstract="<h2>Beskrivning</h2><p>Med ramverket för datastyrning i Experience Platform kan ni märka attribut och scheman enligt dataanvändningsbegränsningar och skapa policyer som identifierar och följer dessa begränsningar för specifika marknadsföringsåtgärder.</p>"
 
 Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnitt.
 
-## Hantera etiketter på datauppsättningsnivå
+## Hantera etiketter på schemanivå
 
->[!IMPORTANT]
->
->Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
+För att kunna hantera dataanvändningsetiketter på schemanivå måste du välja ett befintligt schema eller skapa ett nytt. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Schemas]** till vänster för att öppna **[!UICONTROL Schemas]** arbetsyta. På den här sidan visas alla scheman som du har skapat och användbar information om varje schema.
 
-För att kunna hantera dataanvändningsetiketter på datauppsättningsnivå måste du välja en befintlig datauppsättning eller skapa en ny. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Datasets]** till vänster för att öppna **[!UICONTROL Datasets]** arbetsyta. På den här sidan visas alla skapade datauppsättningar som tillhör din organisation, tillsammans med användbar information om varje datauppsättning.
+![Adobe Experience Platform-gränssnittet med fliken Schema markerad.](../images/labels/schema-tab.png)
 
-![Fliken Datauppsättning i arbetsytan Data](../images/labels/datasets-tab.png)
+I nästa avsnitt beskrivs hur du skapar ett nytt schema som du kan använda etiketter på. Om du vill redigera etiketter för ett befintligt schema väljer du schemat i listan och går vidare till [lägga till etiketter för dataanvändning i schemat](#add-labels).
 
-I nästa avsnitt beskrivs hur du skapar en ny datauppsättning som du kan använda etiketter på. Om du vill redigera etiketter för en befintlig datauppsättning markerar du datauppsättningen i listan och går vidare till [lägga till dataanvändningsetiketter i datauppsättningen](#add-labels).
+### Skapa ett nytt schema
 
-### Skapa en ny datauppsättning
+Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av **[!UICONTROL Schemas]** arbetsyta. Se guiden [hur du skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create) för fullständiga instruktioner. Du kan också [skapa ett schema med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) vid behov.
 
->[!NOTE]
->
->I det här exemplet skapas en datauppsättning med en förkonfigurerad [!DNL Experience Data Model] (XDM) schema. Mer information om XDM-scheman finns i [XDM - systemöversikt](../../xdm/home.md) och [grunderna för schemakomposition](../../xdm/schema/composition.md).
+### Lägg till etiketter för dataanvändning i schemat {#add-labels-to-schema}
 
-Om du vill skapa en ny datauppsättning väljer du **[!UICONTROL Create Dataset]** i det övre högra hörnet av **[!UICONTROL Datasets]** arbetsyta.
+När du har skapat ett nytt schema eller valt ett befintligt schema i listan i [!UICONTROL Browse] -fliken i [!UICONTROL Schemas] på arbetsytan väljer du ett fält från schemat i Schemaredigeraren. I [!UICONTROL Field properties] sidlist, välj **[!UICONTROL Apply Access and Data Governance Labels]**.
 
-![](../images/labels/create-dataset.png)
+![Fliken Struktur på arbetsytan Scheman som visar hur ditt schema ser ut med etiketterna Använd åtkomst och Datastyrning markerade.](../images/labels/schema-label-governance.png)
 
-The **[!UICONTROL Create Dataset]** visas. Här väljer du **[!UICONTROL Create Dataset from Schema]**.
+En dialogruta visas där du kan använda och hantera dataanvändningsetiketter på schemanivå och fältnivå. Se självstudiekursen för XDM för fullständiga instruktioner om [hur du lägger till eller redigerar dataanvändningsetiketter för XDM-scheman](../../xdm/tutorials/labels.md#select-schema-field).
 
-![Skapa datauppsättning från schema](../images/labels/create-from-dataset.png)
-
-The **[!UICONTROL Select Schema]** visas, där alla tillgängliga scheman som du kan använda för att skapa en datauppsättning visas. Markera alternativknappen bredvid ett schema för att markera det. The **[!UICONTROL Schemas]** till höger visas ytterligare information om det valda schemat. När du har valt ett schema väljer du **[!UICONTROL Next]**.
-
-![Välj datauppsättningsschema](../images/labels/select-schema.png)
-
-The **[!UICONTROL Configure Dataset]** visas. Ange ett namn (obligatoriskt) och en beskrivning (valfritt, men rekommenderas) för den nya datauppsättningen och välj sedan **[!UICONTROL Finish]**.
-
-![Konfigurera datauppsättning med namn och beskrivning](../images/labels/configure-dataset.png)
-
-The **[!UICONTROL Dataset Activity]** visas med information om den nya datauppsättningen. I det här exemplet heter datauppsättningen&quot;Loyalty Members&quot;, vilket innebär att den översta navigeringen visar **Datamängder > Förmånsmedlemmar**.
-
-![Sidan Datauppsättningsaktivitet](../images/labels/dataset-created.png)
-
-### Lägg till dataanvändningsetiketter i datauppsättningen {#add-labels}
-
-När du har skapat en ny datauppsättning eller valt en befintlig datauppsättning i listan i **[!UICONTROL Datasets]** arbetsyta, välja **[!UICONTROL Data Governance]** för att öppna **[!UICONTROL Data Governance]** arbetsyta. På arbetsytan kan du hantera dataanvändningsetiketter på datauppsättningsnivå och fältnivå.
-
-![Fliken Datamängdsstyrning](../images/labels/dataset-governance.png)
-
-Om du vill redigera dataanvändningsetiketter på datauppsättningsnivå börjar du med att välja pennikonen bredvid datauppsättningsnamnet.
-
-![Redigera etiketter på datauppsättningsnivå](../images/labels/dataset-level-edit.png)
-
-The **[!UICONTROL Edit Governance Labels]** öppnas. I dialogrutan markerar du rutorna bredvid de etiketter du vill använda på datauppsättningen. Kom ihåg att dessa etiketter ärvs av alla fält i datauppsättningen. The **[!UICONTROL Applied Labels]** sidhuvudet uppdateras när du markerar varje ruta och visar de etiketter du har valt. När du har markerat de önskade etiketterna väljer du **[!UICONTROL Save Changes]**.
-
-![Tillämpa styrningsetiketter på datauppsättningsnivå](../images/labels/apply-labels-dataset.png)
-
-The **[!UICONTROL Data Governance]** arbetsytan visas igen med etiketter som du har använt på datauppsättningsnivå. Du kan också se att etiketterna ärvs ned till vart och ett av fälten i datauppsättningen.
-
-![Datauppsättningsetiketter ärvda av fält](../images/labels/dataset-labels-applied.png)
-
-Observera att ett&quot;x&quot; visas bredvid etiketterna på datauppsättningsnivå, vilket gör att du kan ta bort etiketterna. De ärvda etiketterna bredvid varje fält har inte något &quot;x&quot; bredvid sig och visas&quot;nedtonade&quot; utan möjlighet att ta bort eller redigera. Det beror på att **ärvda fält är skrivskyddade**, vilket innebär att de inte kan tas bort på fältnivå.
-
-The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som standard, vilket gör att du kan se alla etiketter som ärvs ned från datauppsättningen till dess fält. Om du växlar av inaktiveringen döljs alla ärvda etiketter i datauppsättningen.
-
-![Dölj ärvda etiketter](../images/labels/inherited-labels.png)
-
-## Hantera etiketter på datamängdsfältnivå {#manage-labels-at-dataset-field-level}
+### Lägga till etiketter för dataanvändning i en viss datauppsättning {#add-labels-to-dataset}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"
@@ -91,31 +49,55 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 
 >[!IMPORTANT]
 >
->Användning av etiketter på datamängdsfältnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
+>Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. I dokumentationen finns instruktioner om [hur du migrerar tidigare använda etiketter från datauppsättningen till schemanivån](../e2e.md#migrate-labels).
 
-Fortsätta arbetsflödet för [lägga till och redigera etiketter för dataanvändning på datauppsättningsnivå](#add-labels)kan du också hantera fältetiketter i **[!UICONTROL Data Governance]** arbetsyta för den datauppsättningen.
+Etiketter kan användas på hela datauppsättningen från **[!UICONTROL Data Governance]** -fliken i **[!UICONTROL Datasets]** arbetsyta. På arbetsytan kan du hantera dataanvändningsetiketter på datauppsättningsnivå.
 
-Om du vill använda dataanvändningsetiketter på ett enskilt fält markerar du kryssrutan bredvid fältnamnet och väljer sedan **[!UICONTROL Edit Governance Labels]**.
+![The [!UICONTROL Data Governance] -fliken i [!UICONTROL Datasets] arbetsyta med datastyrning markerad.](../images/labels/dataset-governance.png)
 
-![Redigera fältetiketter](../images/labels/field-label-edit.png)
+Om du vill redigera dataanvändningsetiketter på datauppsättningsnivå börjar du med att välja pennikonen (![En pennikon.](../images/labels/edit-icon.png)) på datamängdens rad.
 
-The **[!UICONTROL Edit Governance Labels]** visas. I dialogrutan visas rubriker med markerade fält, tillämpade etiketter och ärvda etiketter. Observera att de ärvda etiketterna (C2 och C5) är nedtonade i dialogrutan. De är skrivskyddade etiketter som ärvs från datauppsättningsnivån och kan därför bara redigeras på datauppsättningsnivå.
+![The [!UICONTROL Data Governance] -fliken i [!UICONTROL Datasets] arbetsytan med ikonen Redigera penna markerad.](../images/labels/dataset-level-edit.png)
 
-![Redigera styrningsetiketter för ett enskilt fält](../images/labels/field-label-inheritance.png)
+The **[!UICONTROL Edit Governance Labels]** öppnas. I dialogrutan markerar du rutorna bredvid de etiketter du vill använda på datauppsättningen. Kom ihåg att dessa etiketter ärvs av alla fält i datauppsättningen. The **[!UICONTROL Applied Labels]** sidhuvudet uppdateras när du markerar varje ruta och visar de etiketter du har valt. När du har markerat de önskade etiketterna väljer du **[!UICONTROL Save Changes]**.
 
-Välj etiketter på fältnivå genom att markera kryssrutan bredvid varje etikett som du vill använda. När du väljer etiketter visas **[!UICONTROL Applied Labels]** huvuduppdateringar för att visa etiketter som används i fälten som visas i **[!UICONTROL Selected Fields]** header. När du har valt etiketter på fältnivå väljer du **[!UICONTROL Save Changes]**.
+![Dialogrutan Redigera styrningsetiketter med kryssrutorna Etikett och Spara ändringar markerade.](../images/labels/apply-labels-dataset.png)
 
-![Använda etiketter på fältnivå](../images/labels/apply-labels-field.png)
+The **[!UICONTROL Data Governance]** arbetsytan visas igen med de etiketter som du har använt på datauppsättningsnivå i den första raden i tabellen. Du kan också se etiketterna, som anges med enskilda kort, som ärvs ned till vart och ett av fälten i datauppsättningen.
 
-The **[!UICONTROL Data Governance]** arbetsytan visas igen, där de markerade fältetiketterna visas på raden bredvid fältnamnet. Observera att fältnivåetiketten har ett &quot;x&quot; bredvid sig, vilket gör att du kan ta bort etiketten.
+![The [!UICONTROL Data Governance] -fliken i [!UICONTROL Datasets] arbetsyta med tillämpade etiketter på datauppsättningsnivå och ärvda etiketter för datauppsättningsfält markerade.](../images/labels/applied-dataset-labels.png)
 
-![Fält som visar etiketter på fältnivå](../images/labels/field-labels-applied.png)
+### Ta bort etiketter från en datauppsättning {#remove-labels-from-a-dataset}
 
-Du kan upprepa de här stegen om du vill fortsätta lägga till och redigera etiketter på fältnivå för ytterligare fält, inklusive markera flera fält för att använda etiketter på fältnivå samtidigt.
+Etiketter som läggs till på datauppsättningsnivå har &quot;x&quot; bredvid kortet. På så sätt kan du ta bort etiketterna från hela datauppsättningen. Ärvda etiketter bredvid varje fält saknar&quot;x&quot; och visas&quot;nedtonade&quot;. Dessa **ärvda etiketter är skrivskyddade**, vilket innebär att de inte kan tas bort eller redigeras på fältnivå.
 
-![Markera flera fält om du vill använda etiketter på fältnivå samtidigt.](../images/labels/multiple-fields.png)
+<!-- ## View labels at the dataset field level {#view-labels-at-dataset-field-level} -->
 
-Det är viktigt att komma ihåg att arv endast flyttas från den översta nivån nedåt (datamängd → fält), vilket innebär att etiketter som används på fältnivå inte sprids till andra fält eller datamängder.
+<!-- To view labels inherited by the dataset from the schema level, select **[!UICONTROL Datasets]** to navigate to the datasets workspace and select the relevant dataset from the list. 
+
+![The Browse tab of the Datasets workspace with Datasets highlighted in the left sidebar.](../images/labels/dataset-navigation.png)
+
+Next, select the **[!UICONTROL Data Governance]** tab to show the labels that have been applied to the dataset. You can also see that the labels are inherited down to each of the fields within the dataset.
+
+![Dataset Labels inherited by fields](../images/labels/dataset-labels-applied.png)
+
+The inherited labels beside each field do not have an "x" next to them and appear "greyed out" with no ability to remove or edit. This is because **inherited fields are read-only**, meaning they cannot be removed at the field level. -->
+
+<!--Beleive can cut above here  -->
+
+The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som standard, vilket gör att du kan se alla etiketter som ärvts ned från schemat till dess fält. Om du växlar av inaktiveringen döljs alla ärvda etiketter i datauppsättningen.
+
+![Fliken Datastyrning på arbetsytan Datauppsättningar med växeln Visa ärvda etiketter markerad.](../images/labels/inherited-labels.png)
+
+<!-- Labels applied to the dataset appear in read-only form within the **[!UICONTROL Data Governance]** view for that dataset. 
+
+![The Data Governance tab of the Datasets workspace with labels highlighted.](../images/labels/read-only-governance-labels.png) -->
+
+>[!NOTE]
+>
+>Etiketter som tillämpades innan funktionen för datauppsättningsetiketter var föråldrad kan tas bort från datauppsättningen genom att hitta den relevanta datauppsättningen och välja ikonen för att avbryta på etiketten.
+>![Fliken Datastyrning på arbetsytan Datauppsättningar med en borttagbar etikett markerad.](../images/labels/remove-governance-labels.png)
+>I dokumentationen finns instruktioner om [hur du migrerar tidigare använda etiketter från datauppsättningen till schemanivån](../e2e.md#migrate-labels).
 
 ## Hantera etiketter på schemanivå
 
@@ -132,25 +114,25 @@ Se självstudiekursen om [hantera etiketter på schemanivå](../../xdm/tutorials
 
 Du kan skapa egna anpassade användningsetiketter i **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Gränssnitt. Välj **[!UICONTROL Policies]** i den vänstra navigeringen väljer du **[!UICONTROL Labels]** om du vill visa en lista med befintliga etiketter. Här väljer du **[!UICONTROL Create label]**.
 
-![](../images/labels/create-label-btn.png)
+![Arbetsytan Profiler med Skapa profil markerad.](../images/labels/create-label-btn.png)
 
 The **[!UICONTROL Create label]** visas. Här anger du följande information för den nya etiketten:
 
-* **[!UICONTROL Identifier]**: En unik identifierare för etiketten. Detta värde används för uppslagsändamål och bör därför vara kort och koncist.
-* **[!UICONTROL Name]**: Ett visningsnamn för etiketten.
+* **[!UICONTROL Name]**: En unik identifierare för etiketten. Detta värde används för uppslagsändamål och bör därför vara kort och koncist.
+* **[!UICONTROL Friendly name]**: Ett visningsnamn för etiketten.
 * **[!UICONTROL Description]**: (Valfritt) En beskrivning av etiketten som ger ytterligare kontext.
 
 När du är klar väljer du **[!UICONTROL Create]**.
 
-![](../images/labels/create-label.png)
+![Dialogrutan Skapa etikett med Skapa markerat på arbetsytan Profiler.](../images/labels/create-label-dialog.png)
 
 Dialogrutan stängs och den nya anpassade etiketten visas i listan under **[!UICONTROL Labels]** -fliken.
 
-![](../images/labels/label-created.png)
+![Fliken Etiketter på arbetsytan Profiler med den nya anpassade etiketten markerad.](../images/labels/label-created.png)
 
 Etiketten kan nu väljas under **[!UICONTROL Custom Labels]** när du redigerar användningsetiketter för datauppsättningar och fält, eller när du skapar dataanvändningsprinciper.
 
-<img src="../images/labels/add-custom-label.png" width="600" /><br>
+![Dialogrutan Tillämpa åtkomst- och datastyrningsetiketter med anpassade etiketter markerade.](../images/labels/add-custom-label.png)
 
 ## Nästa steg
 
@@ -158,8 +140,10 @@ Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå
 
 Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i [dataanvändningsprinciper - översikt](../policies/overview.md).
 
-## Ytterligare resurser
+<!-- The workflow of this video is now outdated. This can be enabled once the video has been updated
 
-Följande video är avsedd att ge stöd för din förståelse av datastyrning och visar hur du använder etiketter på en datamängd och enskilda fält.
+## Additional resources
 
->[!VIDEO](https://video.tv.adobe.com/v/29709?quality=12&enable10seconds=on&speedcontrol=on)
+The following video is intended to support your understanding of Data Governance, and outlines how to apply labels to a dataset and individual fields.
+
+>[!VIDEO](https://video.tv.adobe.com/v/29709?quality=12&enable10seconds=on&speedcontrol=on) -->

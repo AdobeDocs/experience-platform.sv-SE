@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för principtjänst
 description: Med API:t för principtjänsten kan utvecklare hantera dataanvändningsetiketter och principer i Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 23c05670-7107-4b96-bc24-0a51b5d267b2
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: 0c09db51d97bc0cf321c5d2fd57c42d194b25d5f
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '547'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till 
 
 ## Etiketter
 
-Med etiketter för dataanvändning kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa tillvägagångssätt uppmuntrar till etikettdata så snart de hämtas in till [!DNL Experience Platform]eller så snart data blir tillgängliga för användning i [!DNL Platform]. Du kan skapa, visa, redigera och ta bort etiketter med `/labels` slutpunkt. Om du vill veta hur du använder den här slutpunkten går du till [slutpunktshandbok för etiketter](./labels.md).
+Använd dataanvändningsetiketter på scheman för att kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa tillvägagångssätt uppmuntrar till etikettdata så snart de hämtas in till [!DNL Experience Platform]eller så snart data blir tillgängliga för användning i [!DNL Platform]. Du kan skapa, visa, redigera och ta bort etiketter med `/labels` slutpunkt. Om du vill veta hur du använder den här slutpunkten går du till [slutpunktshandbok för etiketter](./labels.md).
 
 ## Marknadsföringsåtgärder
 
@@ -44,7 +44,7 @@ Om du vill veta mer om hur du hanterar principer i API:t kan du läsa [stödlinj
 
 ## Utvärdering
 
-När dataanvändningsetiketterna har tillämpats på [!DNL Platform] datauppsättningar och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, så att ni kan tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser.
+När dataanvändningsetiketter har tillämpats på plattformsscheman och dataanvändningspolicyer har definierats för marknadsföringsåtgärder mot dessa etiketter, kan ni med datastyrningsfunktionerna tillämpa dessa policyer och förhindra dataåtgärder som utgör policyöverträdelser.
 
 The [!DNL Policy Service] API innehåller slutpunkter som gör att du kan testa marknadsföringsåtgärder mot datauppsättningar eller godtyckliga kombinationer av dataanvändningsetiketter för att kontrollera om några policyöverträdelser inträffar. Baserat på API-svaret kan du sedan skapa protokoll i ditt upplevelseprogram för att säkerställa regelefterlevnad för dataanvändning. Se [guide för utvärderingsslutpunkter](./evaluation.md) för mer information.
 

@@ -2,9 +2,9 @@
 title: Handbok för hela datastyrningen
 description: Följ hela processen för att tillämpa begränsningar för användning av data för fält och datauppsättningar i Adobe Experience Platform.
 exl-id: f18ae032-027a-4c97-868b-e04753237c81
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1810'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 För att kunna styra vilka marknadsföringsåtgärder som kan utföras på vissa datauppsättningar och fält i Adobe Experience Platform måste du ställa in följande:
 
-1. [Använd etiketter](#labels) till de datauppsättningar och fält vars användning du vill begränsa.
+1. [Använd etiketter](#labels) till schemafälten eller hela datauppsättningar, vars användning du vill begränsa.
 1. [Konfigurera och aktivera policyer för datastyrning](#policy) som avgör vilka typer av märkta data som kan användas för vissa marknadsföringsåtgärder.
 1. [Använd marknadsföringsåtgärder på era destinationer](#destinations) ange vilka policyer som gäller för data som skickas till dessa destinationer.
 
@@ -32,6 +32,12 @@ Den här guiden går igenom hela processen med att konfigurera och verkställa e
 
 ## Använd etiketter {#labels}
 
+>[!IMPORTANT]
+>
+>Etiketter kan inte längre användas på enskilda fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Du kan dock fortfarande märka en hel datauppsättning med etiketter. Etiketter som tidigare använts på enskilda datauppsättningsfält stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Se avsnittet om [migrera tidigare använda etiketter](#migrate-labels) för instruktioner om hur man gör detta.
+
+Du kan [använda etiketter i ett schema](#schema-labels) så att alla datauppsättningar som baseras på det schemat ärver samma etiketter. På så sätt kan ni hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på ett och samma ställe. Genom att tillämpa begränsningar för dataanvändning på schemanivå sprids effekten nedåt till alla datauppsättningar som baseras på det schemat. Etiketter som används på schemafältnivå stöder användningsfall för datastyrning och kan upptäckas på arbetsytan Datamängder [!UICONTROL Data Governance] under [!UICONTROL Field Name] kolumn som skrivskyddade etiketter.
+
 Om det finns en viss datauppsättning som du vill använda begränsningar för dataanvändning på kan du [tillämpa etiketter direkt på den datauppsättningen](#dataset-labels) eller specifika fält i datauppsättningen.
 
 Du kan också [använda etiketter i ett schema](#schema-labels) så att alla datauppsättningar som baseras på det schemat ärver samma etiketter.
@@ -40,27 +46,19 @@ Du kan också [använda etiketter i ett schema](#schema-labels) så att alla dat
 >
 >Mer information om olika etiketter för dataanvändning och deras avsedda användning finns i [referens till etiketter för dataanvändning](./labels/reference.md). Om de tillgängliga kärnetiketterna inte täcker alla dina önskade användningsfall kan du [definiera egna etiketter](./labels/user-guide.md#manage-custom-labels) också.
 
-### Tillämpa etiketter på en datauppsättning {#dataset-labels}
+### Tillämpa etiketter på en hel datauppsättning {#dataset-labels}
 
 Välj **[!UICONTROL Datasets]** i den vänstra navigeringen markerar du namnet på datauppsättningen som du vill använda etiketter på. Du kan också använda sökfältet för att begränsa listan med visade datauppsättningar.
 
-![Bild som visar en datauppsättning som väljs i plattformens användargränssnitt](./images/e2e/select-dataset.png)
+![Fliken Bläddra på arbetsytan Datauppsättningar med datauppsättningar och en datauppsättningsrad markerad.](./images/e2e/select-dataset.png)
 
-Informationsvyn för datauppsättningen visas. Välj **[!UICONTROL Data governance]** om du vill visa en lista över datauppsättningens fält och eventuella etiketter som redan har tillämpats på dem. Markera kryssrutorna intill de fält som du vill lägga till etiketter i och markera sedan **[!UICONTROL Edit governance labels]** i rätt spår.
+Informationsvyn för datauppsättningen visas. Välj **[!UICONTROL Data governance]** om du vill visa en lista över datauppsättningens fält och eventuella etiketter som redan har tillämpats på dem. Markera pennikonen om du vill redigera datauppsättningsrubrikerna.
 
-![Bild som visar flera datamängdsfält som har valts för etikettering](./images/e2e/dataset-field-label.png)
+![Fliken Datastyrning för lojalitetsmedlemsdatauppsättningen med pennikonen markerad.](./images/e2e/edit-dataset-labels.png)
 
->[!NOTE]
->
->Om du vill lägga till etiketter i hela datauppsättningen markerar du kryssrutan bredvid **[!UICONTROL Field name]** markera alla fält innan du markerar **[!UICONTROL Edit governance labels]**.
->
->![Bild som visar alla fält markerade för en datauppsättning](./images/e2e/label-whole-dataset.png)
+The [!UICONTROL Edit governance labels] visas. Välj lämplig styrningsetikett och välj **[!UICONTROL Save]**.
 
-I nästa dialogruta väljer du de etiketter som du vill använda i datauppsättningsfälten som du valde tidigare. När du är klar väljer du **[!UICONTROL Save changes]**.
-
-![Bild som visar alla fält markerade för en datauppsättning](./images/e2e/save-dataset-labels.png)
-
-Följ stegen ovan för att tillämpa etiketter på olika fält (eller olika datauppsättningar) efter behov. När du är klar kan du fortsätta till nästa steg i [aktivera policyer för datastyrning](#policy).
+![Dialogrutan Redigera styrningsetiketter med kryssrutan Etikett och Spara markerad.](./images/e2e/edit-dataset-governance-labels.png)
 
 ### Tillämpa etiketter på ett schema {#schema-labels}
 
@@ -72,9 +70,9 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen väljer du det schema
 >
 >![Bild som visar en länk till en datauppsättnings schema](./images/e2e/schema-from-dataset.png)
 
-Schemats struktur visas i Schemaredigeraren. Här väljer du **[!UICONTROL Labels]** om du vill visa en listvy över schemats fält och de etiketter som redan har tillämpats på dem. Markera kryssrutorna intill de fält som du vill lägga till etiketter i och markera sedan **[!UICONTROL Edit governance labels]** i rätt spår.
+Schemats struktur visas i Schemaredigeraren. Här väljer du **[!UICONTROL Labels]** om du vill visa en listvy över schemats fält och de etiketter som redan har tillämpats på dem. Markera kryssrutorna intill de fält som du vill lägga till etiketter i och markera sedan **[!UICONTROL Apply access and data governance labels]** i rätt spår.
 
-![Bild som visar ett enskilt schemafält som markeras för styrningsetiketter](./images/e2e/schema-field-label.png)
+![Fliken Etiketter på arbetsytan Schema med ett enda schemafält markerat och etiketterna Använd åtkomst och datastyrning markerade.](./images/e2e/schema-field-label.png)
 
 >[!NOTE]
 >
@@ -82,11 +80,30 @@ Schemats struktur visas i Schemaredigeraren. Här väljer du **[!UICONTROL Label
 >
 >![Bild som visar pennikonen som väljs i vyn Schemaetiketter](./images/e2e/label-whole-schema.png)
 
-I nästa dialogruta väljer du de etiketter som du vill använda på schemafälten som du valde tidigare. När du är klar väljer du **[!UICONTROL Save]**.
+The [!UICONTROL Apply access and data governance labels] visas. Markera etiketterna som du vill använda i det valda schemafältet. När du är klar väljer du **[!UICONTROL Save]**.
 
-![Bild som visar flera etiketter som läggs till i ett schemafält](./images/e2e/save-schema-labels.png)
+![Dialogrutan Använd åtkomst- och datastyrningsetiketter visar flera etiketter som läggs till i ett schemafält.](./images/e2e/save-schema-labels.png)
 
 Följ stegen ovan för att tillämpa etiketter på olika fält (eller olika scheman) efter behov. När du är klar kan du fortsätta till nästa steg i [aktivera policyer för datastyrning](#policy).
+
+### Migrera etiketter som tidigare använts på datauppsättningsnivå {#migrate-labels}
+
+Välj **[!UICONTROL Dataset]** i den vänstra navigeringen markerar du namnet på datauppsättningen som du vill migrera etiketter från. Du kan också använda sökfältet för att begränsa listan med visade datauppsättningar.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med datauppsättningen lojalitetsmedlemmar markerad.](./images/e2e/select-dataset.png)
+
+Informationsvyn för datauppsättningen visas. Välj **[!UICONTROL Data governance]** om du vill visa en lista över datauppsättningens fält och eventuella etiketter som redan har tillämpats på dem. Markera ikonen för att avbryta bredvid etiketter som du vill ta bort från ett fält. En bekräftelsedialogruta visas. Välj [!UICONTROL Remove label] för att bekräfta dina val.
+
+![Fliken Datastyrning på arbetsytan Datauppsättningar med en etikett för ett fält som är markerat för borttagning.](./images/e2e/remove-label.png)
+
+När du har tagit bort etiketten från datauppsättningsfältet går du till Schemaredigeraren och lägger till etiketten i schemat. Instruktioner om hur du gör detta finns i [avsnitt om att använda etiketter i ett schema](#schema-labels).
+
+>[!TIP]
+>
+>Du kan välja schemanamnet i den högra listen, följt av länken i dialogrutan som visas för att navigera till rätt schema.
+>![Fliken Datastyrning på arbetsytan Datauppsättningar med schemanamnet i sidofältet och dialoglänken markerad.](./images/e2e/navigate-to-schema.png)
+
+När du har migrerat de nödvändiga etiketterna kontrollerar du att du har rätt [datastyrningsprinciper har aktiverats](#policy).
 
 ## Aktivera datastyrningsprinciper {#policy}
 

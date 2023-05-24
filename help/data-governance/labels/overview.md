@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över dataanvändningsetiketter
 description: Läs om hur dataanvändningsetiketter används för att säkerställa regelefterlevnad för datastyrning i Adobe Experience Platform.
 exl-id: 4f113000-b9a1-4dfb-9502-6a5d08f0b26f
-source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
+source-git-commit: 5d34781e06c0fa8bfd2e52f73e336d92d16192f6
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -57,21 +57,17 @@ Du kan hantera dataanvändningsetiketter med [!DNL Experience Platform] API:er e
 
 ### Använda gränssnittet
 
-The **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Med användargränssnittet kan du visa och hantera etiketter och anpassade etiketter för din organisation. Du kan använda **[!UICONTROL Schemas]** arbetsyta till [använda etiketter i XDM-scheman (Experience Data Model)](../../xdm/tutorials/labels.md)eller så kan du använda **[!DNL Datasets]** arbetsyta till [tillämpa etiketter på datauppsättningar](./user-guide.md) i stället.
+The **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Med användargränssnittet kan du visa och hantera etiketter och anpassade etiketter för din organisation. Du kan använda **[!UICONTROL Schemas]** arbetsyta till [använda etiketter i XDM-scheman (Experience Data Model)](../../xdm/tutorials/labels.md)eller lära dig hur [skapa och hantera egna etiketter i[!UICONTROL Policies] UI](./user-guide.md) genom att läsa användarhandboken för dataanvändningsetiketter i stället.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprinciper för data måste du använda etiketter i schemat som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
+>Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Se avsnittet om [migrera tidigare använda etiketter](../e2e.md#migrate-labels) för instruktioner om hur man gör detta.
 
 ### Använda API:er
 
 The `/labels` slutpunkt i [API för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) Med kan du programmässigt hantera dataanvändningsetiketter, inklusive skapa anpassade etiketter. Se [slutpunktshandbok för etiketter](../api/labels.md) för mer information.
 
 The [API för datauppsättningstjänst](https://www.adobe.io/experience-platform-apis/references/dataset-service/) används för att hantera etiketter för datauppsättningar och fält. Se guiden [hantera datauppsättningsrubriker](./dataset-api.md) för mer information.
-
->[!NOTE]
->
->Användning av etiketter på datauppsättningsnivå stöds bara för datastyrningsanvändning. Om du försöker skapa åtkomstprofiler för data måste du [lägg till etiketter i schemat](../../xdm/tutorials/labels.md) som datauppsättningen baseras på. Se översikten på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
 
 ## Nästa steg
 

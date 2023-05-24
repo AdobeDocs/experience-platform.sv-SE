@@ -2,9 +2,9 @@
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: c35c270afca57cb96228cea29fd5a39ec6615332
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '770'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Alla data som hämtas till Adobe Experience Platform begränsas av XDM-scheman (
 
 En etikett som används i ett schemafält anger de användningsprinciper som gäller för data i det specifika fältet.
 
-Även om etiketter kan tillämpas på enskilda datauppsättningar (och fält i dessa datauppsättningar), kan du även använda etiketter på schemanivå. När etiketter används direkt i ett schema sprids dessa etiketter till alla befintliga och framtida datauppsättningar som baseras på det schemat.
+Etiketter kan användas på enskilda scheman och fält i dessa scheman. När etiketter används direkt i ett schema sprids dessa etiketter till alla befintliga och framtida datauppsättningar som baseras på det schemat.
 
 Dessutom sprids alla fältetiketter som du lägger till i ett schema till alla andra scheman som använder samma fält från en delad klass eller fältgrupp. Detta bidrar till att säkerställa att användningsreglerna för liknande fält är konsekventa i hela datamodellen.
 
@@ -46,11 +46,11 @@ Om du vill redigera etiketterna för ett enskilt fält kan du markera fältet p�
 
 ![Välj ett fält på arbetsytan i Schemaredigeraren](../images/tutorials/labels/manage-access.png)
 
-Du kan också välja **[!UICONTROL Labels]** väljer du önskat fält i listan och väljer **[!UICONTROL Edit governance labels]** i rätt spår.
+Du kan också välja **[!UICONTROL Labels]** väljer du önskat fält i listan och väljer **[!UICONTROL Apply Access and Data Governance Labels]** i rätt spår.
 
 ![Välj ett fält på menyn [!UICONTROL Labels] tab](../images/tutorials/labels/select-field-on-labels-tab.png)
 
-Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![](../images/tutorials/labels/pencil-icon.png)) bredvid schemats namn under **[!UICONTROL Labels]** -fliken.
+Om du vill redigera etiketterna för hela schemat går du till **[!UICONTROL Labels]** markerar du kryssrutan under filterikonen. Detta markerar alla tillgängliga fält i schemat. Nästa, välj **[!UICONTROL Apply Access and Data Governance Labels]** i rätt spår.
 
 ![Välj schemanamnet på menyn [!UICONTROL Labels] tab](../images/tutorials/labels/select-schema-on-labels-tab.png)
 
@@ -60,11 +60,11 @@ Om du vill redigera etiketterna för hela schemat väljer du pennikonen (![](../
 >
 >![Ansvarsfriskrivning för etikettanvändning](../images/tutorials/labels/disclaimer.png)
 
-## Redigera etiketterna för schemat eller fältet
+## Redigera etiketterna för schemat eller fältet {#edit-labels}
 
 En dialogruta visas där du kan redigera etiketterna för det markerade fältet. Om du har valt ett enskilt fält av objekttyp visas de underfält som de tillämpade etiketterna ska sprida sig till i den högra listen.
 
-![Markerade fält visas](../images/tutorials/labels/edit-labels.png)
+![Dialogrutan Tillämpa åtkomst- och datastyrningsetiketter med markerade fält markerade.](../images/tutorials/labels/edit-labels.png)
 
 >[!NOTE]
 >
@@ -72,19 +72,19 @@ En dialogruta visas där du kan redigera etiketterna för det markerade fältet.
 
 Använd den visade listan för att välja de etiketter som du vill lägga till i schemat eller fältet. När du väljer etiketter visas **[!UICONTROL Applied labels]** så att de etiketter som har markerats hittills visas.
 
-![Använda etiketter visas](../images/tutorials/labels/applied-labels.png)
+![Dialogrutan Tillämpa åtkomst- och datastyrningsetiketter med de använda etiketterna markerade.](../images/tutorials/labels/applied-labels.png)
 
 Om du vill filtrera de visade etiketterna efter typ väljer du önskad kategori i den vänstra listen. Om du vill skapa en ny egen etikett väljer du **[!UICONTROL Create label]**.
 
-![Filtrera visade etiketter eller skapa en ny etikett](../images/tutorials/labels/filter-and-create-custom.png)
+![Dialogrutan Använd åtkomst- och datastyrningsetiketter med ett etiketttypsfilter tillämpat och Skapa etikett markerat.](../images/tutorials/labels/filter-and-create-custom.png)
 
 När du är nöjd väljer du **[!UICONTROL Save]** för att tillämpa dem på fältet eller schemat.
 
-![Spara de markerade etiketterna](../images/tutorials/labels/save-labels.png)
+![Dialogrutan Använd åtkomst- och datastyrningsetiketter med Spara markerad.](../images/tutorials/labels/save-labels.png)
 
 The **[!UICONTROL Labels]** visas igen och visar de använda etiketterna för schemat.
 
-![Fältetiketter används](../images/tutorials/labels/field-labels-added.png)
+![Fliken Etiketter på arbetsytan för scheman med de använda fältetiketterna markerade.](../images/tutorials/labels/field-labels-added.png)
 
 ## Nästa steg
 

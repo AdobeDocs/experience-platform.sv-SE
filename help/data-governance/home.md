@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datastyrning - översikt
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1490'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ Ramverket för datastyrning består av tre nyckelelement: Etiketter, profiler oc
 
 ## Dataanvändningsetiketter
 
-Med datastyrning kan datasegmentering tillämpa användningsetiketter på datauppsättnings- och fältnivå för att kategorisera data efter vilken typ av profiler som används.
+Med datastyrning kan datasegmentering tillämpa användningsetiketter på schemafältnivå och datauppsättningsnivå för att kategorisera data efter den typ av principer som gäller.
 
 Ramverket för datastyrning innehåller fördefinierade etiketter för dataanvändning som kan användas för att kategorisera data på tre sätt:
 
@@ -75,11 +75,11 @@ Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer
 
 Se översikten på [etiketter för dataanvändning](./labels/overview.md) för mer information.
 
-## Dataanvändningspolicyer
+## Dataanvändningspolicyer {#data-usage-policies}
 
 För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste dataanvändningsprinciper implementeras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data i [!DNL Experience Platform].
 
-Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att personligt identifierbar information (PII) inte kan exporteras och att en I-etikett (identitetsdata) har tillämpats på datauppsättningen. [!DNL Policy Service] förhindrar alla åtgärder som skulle exportera den här datauppsättningen till ett mål från en annan leverantör. Om någon av dessa åtgärder skulle utföras skickar Policy Service ett meddelande om att en dataanvändningsprincip har överträtts.
+Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som anger att personligt identifierbar information (PII) inte kan exporteras, och en I-etikett (identitetsdata) har tillämpats på datauppsättningen. [!DNL Policy Service] förhindrar alla åtgärder som skulle exportera den här datauppsättningen till ett mål från en annan leverantör. Om någon av dessa åtgärder skulle utföras skickar Policy Service ett meddelande om att en dataanvändningsprincip har överträtts.
 
 Det finns två typer av principer:
 
@@ -100,7 +100,7 @@ Detta dokument gav en introduktion på hög nivå till ramverket för datastyrni
 
 Följande avsnitt innehåller ytterligare information om datastyrning.
 
-### Terminologi inom datastyrning
+### Terminologi inom datastyrning {#data-governance-terminology}
 
 I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för datastyrning.
 
@@ -111,13 +111,14 @@ I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för da
 | **Datastyrning** | Datastyrning omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och företagspolicyer när det gäller dataanvändning. |
 | **Dataförvaltare** | Dataförvaltningarna är den person som ansvarar för förvaltning, tillsyn och verkställighet av en organisations datatillgångar. En dataförvaltare säkerställer också att policyer för datastyrning skyddas och upprätthålls så att de följer myndighetsregler och organisationsregler. |
 | **Dataanvändningsetiketter** | Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer. |
-| **Datauppsättningsetiketter** | Etiketter kan läggas till i en datauppsättning. Alla fält i en datauppsättning ärver datauppsättningens etiketter. |
-| **Fältetiketter** | Fältetiketter är datastyrningsetiketter som antingen ärvs från en datamängd eller tillämpas direkt på ett fält.  Datastyrningsetiketter som används i ett fält ärvs inte upp till en datamängd. |
+| **Datauppsättningsetiketter** | Etiketter kan läggas till i ett schema. Alla fält i en datauppsättning ärver schemats etiketter. |
+| **Fältetiketter** | Fältetiketter är datastyrningsetiketter som antingen ärvs från ett schema eller används direkt i ett fält. Datastyrningsetiketter som används i ett fält ärvs inte upp till schemanivå. |
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
 | **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls: data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen) och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser. |
 | **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramen, är en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
 | **Policy** | I ramverket för datastyrning är en regel som beskriver vilken typ av marknadsföringsåtgärder som tillåts eller inte tillåts att vidtas för specifika data. |
+| **Schemaetiketter** | Hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på schemanivå. Detta föreslår etiketterna till alla datauppsättningar som använder det schemat. |
 | **Känsliga etiketter** | Känsliga S-etiketter används för att kategorisera data som du, och din organisation, anser vara känsliga. |
 
 ## Ytterligare resurser
@@ -126,6 +127,8 @@ Följande video är avsedd att ge stöd för din förståelse av ramverket för 
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
-I följande video visas en introduktion till olika datastyrningsfunktioner i Experience Platform.
+<!-- A key section of the video is now outdated due to the deprecation of the dataset field level labelling feature.
 
->[!VIDEO](https://video.tv.adobe.com/v/36653?quality=12&enable10seconds=on&speedcontrol=on)
+The following video provides an introduction to various Data Governance features in Experience Platform.
+
+>[!VIDEO](https://video.tv.adobe.com/v/36653?quality=12&enable10seconds=on&speedcontrol=on) -->
