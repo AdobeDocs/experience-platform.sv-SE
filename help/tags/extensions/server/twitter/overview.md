@@ -2,7 +2,8 @@
 keywords: tillägg för händelsevidarebefordran;twitter;twitter tillägg för händelsevidarebefordran
 title: Twitter-tillägg för händelsevidarebefordran
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Twitter för dina verksamhetsbehov.
-source-git-commit: d51dae024da0cce770be91601c52b8c2958c3f64
+last-substantial-update: 2023-05-24T00:00:00Z
+source-git-commit: c5cc36d9530ff6fbb52a1995844f495b38e938b3
 workflow-type: tm+mt
 source-wordcount: '1098'
 ht-degree: 2%
