@@ -1,13 +1,13 @@
 ---
 title: Adobe Experience Platform Assurance-användaråtkomst
 description: I den här guiden beskrivs hur du behåller användaråtkomst till Adobe Experience Platform Assurance genom att hantera det via Admin Console.
-source-git-commit: 6aee145c6c778730d1c2728d7463e8b54a7aab8e
+exl-id: b26ff857-5486-4391-b5a0-1e5cb05a1f11
+source-git-commit: 95e5dad03741d06ee33a10c48b481b792140f7f1
 workflow-type: tm+mt
-source-wordcount: '245'
+source-wordcount: '203'
 ht-degree: 2%
 
 ---
-
 
 # Användaråtkomst
 
@@ -19,32 +19,14 @@ ht-degree: 2%
 
 För att få eller bibehålla oavbruten tillgång till Assurance måste följande steg utföras i Admin Console:
 
-## Skapa en produktprofil
+## Lägga till användare i Experience Platform via en produktprofil
 
->[!NOTE]
->
->Om du använder en befintlig profil kan du hoppa till nästa avsnitt.
+Om du vill lägga till en användare i en produktprofil loggar du in på Admin Console och väljer **Lägg till användare**.
 
-Logga in på [Admin Console](https://adminconsole.adobe.com/) och skapa en ny produktprofil för Adobe Experience Platform.
+![Knappen Lägg till användare är markerad.](./images/get-access/product-profile-add-users.png)
 
-Välj **Produkter** följt av Adobe Experience Platform produktkort.
+The **Lägg till användare i ditt team** visas. I den här dialogrutan kan du ange information om den användare som du vill lägga till. Ange användarens e-postadress, förnamn (valfritt) och efternamn (valfritt).
 
-![Adobe Experience Platform Assurance-analysvy](./images/get-access/analytics-view.png)
+Välj pennikonen för att välja produkter och användargrupper. Här väljer du **Adobe Experience Platform** sedan **AEP-Default-All-Users**, följt av **Spara**.
 
-## Lägga till användare i produktprofilen
-
-Ange ett namn och välj **Spara**.
-
->[!NOTE]
->
->Produktprofilen som du tänker använda för Assurance-åtkomst gör **not** kräver ytterligare behörigheter.
-
-![Adobe Experience Platform produktprofil](./images/get-access/product-profile.png)
-
-Nu när du har skapat produktkortet kan du tilldela användare till Adobe Experience Platform produktprofil. Välj **Produkter** tabbtecken, följt av **Tilldela användare** på Adobe Experience Platform-kortet.
-
-![Tilldela användare till produktprofil](./images/get-access/assign-users.png)
-
-Lägg till en eller flera användare i produktprofilen och spara.
-
-![Lägga till användare i produktprofilen](./images/get-access/add-users.png)
+![Dialogrutan som visar hur du lägger till produktprofilen visas.](./images/get-access/product-profile-add-profile.png)
