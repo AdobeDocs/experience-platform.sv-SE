@@ -2,10 +2,10 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 876339019b324d4483152ed6f24bd6ad749ea7ba
 workflow-type: tm+mt
-source-wordcount: '1280'
-ht-degree: 2%
+source-wordcount: '1289'
+ht-degree: 3%
 
 ---
 
@@ -19,7 +19,7 @@ I den här handboken visas hur du hanterar behörigheter för datainsamlingsfunk
 
 Om du vill konfigurera åtkomstkontroll för datainsamling måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Adobe Experience Platform Data Collection. Minimirollen som kan bevilja eller återkalla behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (inga begränsningar). Läs artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) i administrationshandboken för Adobe Enterprise om du vill ha mer information.
 
-I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i [Användarhandbok för Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
+I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i [Användarhandbok för Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
 
 ## Tillgängliga behörigheter
 
@@ -39,7 +39,7 @@ Behörigheter under Adobe Experience Platform innefattar åtkomst till datastrea
 | Datainsamling | Hantera datastreams | Ger möjlighet att visa, skapa och redigera [datastreams](../edge/datastreams/overview.md). |
 | Datainsamling | Visa datastreams | Ger skrivskyddad åtkomst till datastreams. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 <!-- (Feature not yet available?)
 | Dashboards | Manage Custom Dashboards | |
@@ -54,6 +54,7 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 | --- | --- | --- |
 | Plattformar | Webb | Ger åtkomst till [webbegenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
 | Plattformar | Mobil | Ger åtkomst till [mobila egenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
+| Plattformar | Edge | Ger åtkomst till [Kantegenskaper för händelsevidarebefordring](../tags/ui/event-forwarding/getting-started.md) i kombination med andra egenskapsrättigheter. |
 | Egenskaper | (Ej tillämpligt) | Beroende på vilka egenskaper som har skapats under din organisation kan du styra åtkomsten till var och en av dem via den här behörighetskategorin i Admin Console.<br><br>En användares tilldelade egenskapsrättigheter gäller bara för de egenskaper som de har beviljats åtkomst till via den här behörighetskategorin. |
 | Egendomsrättigheter | Godkänn | Ger möjlighet att godkänna ett biblioteksbygge som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
 | Egendomsrättigheter | Utveckla | Ger möjlighet att utveckla ett bibliotek som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
@@ -64,7 +65,7 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 | Företagsrättigheter | Utveckla tillägg | Ger möjlighet att skapa och ändra tilläggspaket som ägs av organisationen, inklusive privata releaser och förfrågningar om allmän spridning. |
 | Företagsrättigheter | Hantera tillägg | Detta tillstånd gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden. På så sätt kan du hantera de appar som Adobe Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification-tjänsten. |
 
-{style=&quot;table-layout:auto&quot;}
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
