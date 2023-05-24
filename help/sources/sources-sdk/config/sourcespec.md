@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera källspecifikationer för självbetjäningskällor (batch-SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: b1173adb0e0c3a6460b2cb15cba9218ddad7abcb
 workflow-type: tm+mt
-source-wordcount: '1687'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -439,9 +439,11 @@ The `PAGE` sidnumreringstypen gör att du kan gå igenom returdata efter antal s
 ```json
 "paginationParams": {
   "type": "PAGE",
-  "limitName": "records",
-  "limitValue": "100",
-  "pageParamName": "pageIndex",
+  "limitName": "pageSize",
+  "limitValue": 100,
+  "initialPageIndex": 1,
+  "endPageIndex": "headers.x-pagecount",
+  "pageParamName": "pageNumber",
   "maximumRequest": 10000
 }
 ```
@@ -451,8 +453,13 @@ The `PAGE` sidnumreringstypen gör att du kan gå igenom returdata efter antal s
 | `type` | Den typ av sidnumrering som används för att returnera data. |
 | `limitName` | Namnet på gränsen genom vilken API:t kan ange antalet poster som ska hämtas på en sida. |
 | `limitValue` | Antalet poster som ska hämtas på en sida. |
+| `initialPageIndex` | (Valfritt) Det inledande sidindexet definierar det sidnummer från vilket sidnumreringen börjar. Det här fältet kan användas för källor där sidnumreringen inte börjar från 0. Om inget anges används standardvärdet 0 för det inledande sidindexet. Det här fältet förväntar sig ett heltal. |
+| `endPageIndex` | (Valfritt) Med hjälp av indexvärdet för slutsidan kan du skapa ett slutvillkor och stoppa sidnumreringen. Det här fältet kan användas när standardslutvillkoren för att stoppa sidnumrering inte är tillgängliga. Det här fältet kan också användas om antalet sidor som ska hämtas eller det sista sidnumret anges via svarshuvudet, som är vanligt när du använder `PAGE` typnumrering. Värdet för indexvärdet för slutsidan kan antingen vara det sista sidnumret eller ett strängtypsuttryck från svarshuvudet. Du kan till exempel använda `headers.x-pagecount` om du vill tilldela slutsidesindex till `x-pagecount` från svarshuvuden. **Anteckning**: `x-pagecount` är ett obligatoriskt svarshuvud för vissa källor och innehåller värdet för antal sidor som ska importeras. |
 | `pageParamName` | Namnet på den parameter som du måste lägga till i frågeparametrar för att kunna gå igenom olika sidor i returdata. Till exempel: `https://abc.com?pageIndex=1` skulle returnera den andra sidan av en API:s returnyttolast. |
 | `maximumRequest` | Det maximala antalet begäranden som en källa kan göra för en given inkrementell körning. Den aktuella standardgränsen är 10000. |
+
+{style="table-layout:auto"}
+
 
 #### `NONE`
 
