@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: adf8da46d09c60b86df16493043efeacbdd24fe2
+source-git-commit: a2b4ddae00ecdf33a12119810eca1ed19ace0c2f
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '273'
 ht-degree: 14%
 
 ---
@@ -89,6 +89,7 @@ ht-degree: 14%
    - [Inkrementell inläsning](essential-concepts/incremental-load.md)
    - [Datadeduplicering](essential-concepts/deduplication.md)
    - [Datauppsättningsexempel](essential-concepts/dataset-samples.md)
+   - [Datauppsättningsstatistikberäkning](essential-concepts/dataset-statistics.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)

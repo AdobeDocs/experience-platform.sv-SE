@@ -4,10 +4,10 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 3907efa2e8c20671e283c1e5834fc7224ee12f9e
+source-git-commit: 2a5dd20d99f996652de5ba84246c78a1f7978693
 workflow-type: tm+mt
-source-wordcount: '3406'
-ht-degree: 2%
+source-wordcount: '3706'
+ht-degree: 1%
 
 ---
 
@@ -568,7 +568,7 @@ Om du vill returnera värdet för en inställning använder du `SET [property ke
 
 Underavsnitten nedan täcker [!DNL PostgreSQL] kommandon som stöds av frågetjänsten.
 
-### ANALYSERA TABELL
+### ANALYSERA TABELL {#analyze-table}
 
 The `ANALYZE TABLE` kommandot beräknar statistik för en tabell på den accelererade lagringsplatsen. Statistiken beräknas på utförda CTAS- eller ITAS-frågor för en given tabell på accelererad butik.
 
@@ -591,6 +591,61 @@ Nedan följer en lista över statistiska beräkningar som är tillgängliga efte
 | `min` | Det minsta värdet från den analyserade tabellen. |
 | `mean` | Genomsnittsvärdet för den analyserade tabellen. |
 | `stdev` | Standardavvikelsen för den analyserade tabellen. |
+
+#### FÖRETAGSSTATISTIK {#compute-statistics}
+
+Nu kan du beräkna kolumnnivåstatistik på [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon. Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
+
+`COMPUTE STATISTICS` utökar `ANALYZE TABLE` -kommando. Men `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i data warehouse-tabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller.
+
+**Exempel**
+
+```sql
+ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS  FOR COLUMNS (commerce, id, timestamp);
+```
+
+>[!NOTE]
+>
+>`FILTER CONTEXT` beräknar statistik på en delmängd av datauppsättningen baserat på det angivna filtervillkoret, och `FOR COLUMNS` anger specifika kolumner för analys.
+
+Konsolutdata visas enligt nedan.
+
+```console
+  Statistics ID 
+------------------
+ ULKQiqgUlGbTJWhO
+(1 row)
+```
+
+Du kan sedan använda det returnerade statistikens ID för att söka efter den beräknade statistiken med `SHOW STATISTICS` -kommando.
+
+```sql
+SHOW STATISTICS FOR <statistics_ID>
+```
+
+>[!NOTE]
+>
+>`COMPUTE STATISTICS` stöder inte datatyperna array eller map. Du kan ange en `skip_stats_for_complex_datatypes` flagga som ska meddelas eller felas om indatabildrutan har kolumner med arrayer och mappningsdatatyper. Som standard är flaggan inställd på true. Använd följande kommando om du vill aktivera meddelanden eller fel: `SET skip_stats_for_complex_datatypes = false`.
+
+Se [dokumentation om datauppsättningsstatistik](../essential-concepts/dataset-statistics.md) för mer information.
+
+#### TABLESAMPLE {#tablesample}
+
+Adobe Experience Platform Query Service innehåller exempeldatauppsättningar som en del av de ungefärliga frågebearbetningsfunktionerna.
+Datauppsättningsexempel används bäst när du inte behöver ett exakt svar för en sammanställningsåtgärd över en datauppsättning. Med den här funktionen kan du utföra mer effektiva undersökande frågor på stora datamängder genom att skicka en ungefärlig fråga för att returnera ett ungefärligt svar.
+
+Exempeldatauppsättningar skapas med enhetliga slumpmässiga urval från befintliga [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar där endast en procentandel av posterna från originalet används. Exempelfunktionen för datauppsättningar utökar `ANALYZE TABLE` med `TABLESAMPLE` och `SAMPLERATE` SQL-kommandon.
+
+I exemplen nedan visar rad 1 hur du beräknar ett 5 %-prov av tabellen. Rad 2 visar hur du beräknar ett 5 %-prov från en filtrerad vy av data i tabellen.
+
+**exempel**
+
+```sql {line-numbers="true"}
+ANALYZE TABLE tableName TABLESAMPLE SAMPLERATE 5;
+ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-01-01')) TABLESAMPLE SAMPLERATE 5:
+```
+
+Se [exempeldokumentation för datauppsättning](../essential-concepts/dataset-samples.md) för mer information.
 
 ### BÖRJA
 
