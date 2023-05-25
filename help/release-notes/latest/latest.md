@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från maj 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fea5fdf4b4982b59fb1c4954b8f81e131af9955b
+source-git-commit: e705d6c38bc1a81ee5d2c31a3097e1dba8f5cf7f
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1353'
 ht-degree: 3%
 
 ---
@@ -33,6 +33,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Datastyrning](#data-governance)
 - [Datainmatning](#data-ingestion)
 - [Mål ](#destinations)
+- [Identitetstjänst](#identity-service)
 - [Frågetjänst](#query-service)
 - [Källor](#sources)
 
@@ -108,6 +109,18 @@ Läs mer om dataöverföring i [dataöverföring - översikt](../../ingestion/ho
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
+## Identitetstjänst {#identity-service}
+
+Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+**Uppdateringsfunktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Stöd för partner-ID:n i Adobe Experience Cloud-program | Partner-ID:n är nu tillgängliga i identitetstjänsten. Partner-ID:n är identifierare som används av datapartners för att representera människor. I Real-time Customer Data Platform används partner-ID:n i första hand för att öka målgruppsaktiveringen och för att berika data. Partner-ID:n lagras inte i identitetsdiagrammet. Mer information finns i dokumentationen om [identitetstyper](../../identity-service/namespaces.md#identity-types). |
+
+Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md)
+
 ## Frågetjänst {#query-service}
 
 Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL data lake]. Du kan ansluta alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att matas in i kundprofilen i realtid.
@@ -132,6 +145,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
+| API-stöd för strömning av data från en [!DNL Snowflake] databas | Nu kan du strömma data från en [[!DNL Snowflake] källa](../../sources/connectors/databases/snowflake-streaming.md) med [!DNL Flow Service] API. |
 | Utökat API-stöd för utkastläge | Du kan nu pausa och spara förloppet under källarbetsflödet när du använder [!DNL Flow Service] API när som helst. Använd `mode=draft` för att spara bas-, käll- och målanslutningar som utkast. Alla utkastenheter kan granskas för att slutföras vid ett senare tillfälle. Läs guiden på [ange [!DNL Flow Service] enheter till ett utkastläge](../../sources/tutorials/api/draft.md) för mer information. |
 | Allmän tillgänglighet till [!DNL Salesforce Marketing Cloud] källa | The [[!DNL Salesforce Marketing Cloud source] är nu med i GA](../../sources/connectors/marketing-automation/salesforce-marketing-cloud.md). Använd den här källan för att ta med [!DNL Salesforce Marketing Cloud] data till Experience Platform. |
 | [!DNL Google Ads] autentiseringsuppdateringar | Du kan nu ange ett användar-ID för inloggningskund när du autentiserar [!DNL Google Ads] källkonto för att hämta rapportdata från en viss driftskund. Läs [[!DNL Google Ads] källdokumentation](../../sources/connectors/advertising/ads.md) för mer information. |
@@ -142,5 +156,3 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 {style="table-layout:auto"}
 
 Läs mer om källor i [källöversikt](../../sources/home.md).
-
-<!-- | API support for streaming data from a [!DNL Snowflake] database | You can now stream data from a [[!DNL Snowflake] source](../../sources/connectors/databases/snowflake.md) using the [!DNL Flow Service] API. | -->
