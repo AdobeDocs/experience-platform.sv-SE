@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 1839e67d86a04762d93a5c35050e261fb1d1cf50
+source-git-commit: b8764b4b39aba43687c7ac0540d392a3aa808df4
 workflow-type: tm+mt
-source-wordcount: '2271'
+source-wordcount: '2175'
 ht-degree: 0%
 
 ---
@@ -120,49 +120,54 @@ Plattformen identifierar automatiskt dina mappningsuppsättningar för eventuell
 
 ![mappning](../../../../images/tutorials/create/analytics/mapping.png)
 
-Om det finns egna namnkonflikter mellan din käll-Report Suite och ditt valda schema kan du fortsätta med ditt [!DNL Analytics] dataflöde, bekräfta att fältbeskrivningarna inte kommer att ändras. Du kan också välja att skapa ett nytt schema med en tom uppsättning beskrivningar.
-
-Välj **[!UICONTROL Next]** för att fortsätta.
-
-![försiktighet](../../../../images/tutorials/create/analytics/caution.png)
+>[!TIP]
+>
+>Om det finns egna namnkonflikter mellan din käll-Report Suite och ditt valda schema kan du fortsätta med ditt [!DNL Analytics] dataflöde, bekräfta att fältbeskrivningarna inte kommer att ändras. Du kan också välja att skapa ett nytt schema med en tom uppsättning beskrivningar.
 
 #### Anpassade mappningar
 
-Om du vill använda förinställningsfunktioner för data och lägga till ny mappning eller beräknade fält för anpassade attribut väljer du **[!UICONTROL View custom mappings]**.
+Du kan använda funktionen Dataförinställning för att lägga till ny anpassad mappning eller beräknade fält för anpassade attribut. Om du vill lägga till anpassade mappningar väljer du **[!UICONTROL Custom]**.
 
-![view-custom-mapping](../../../../images/tutorials/create/analytics/view-custom-mapping.png)
+![anpassad](../../../../images/tutorials/create/analytics/custom.png)
 
-Nästa, välj **[!UICONTROL Add new mapping]**.
-
-Beroende på dina behov kan du välja **[!UICONTROL Add new mapping]** eller **[!UICONTROL Add calculated field]** från alternativen som visas.
-
-![add-new-mapping](../../../../images/tutorials/create/analytics/add-new-mapping.png)
-
-En tom mappningsuppsättning visas. Välj mappningsikonen för att lägga till ett källfält.
-
-![select-source-field](../../../../images/tutorials/create/analytics/select-source-field.png)
-
-Du kan använda gränssnittet för att navigera i källschemastrukturen och identifiera det nya källfältet som du vill använda. När du har valt det källfält som du vill mappa väljer du **[!UICONTROL Select]**.
-
-![select-mapping](../../../../images/tutorials/create/analytics/select-mapping.png)
-
-Välj sedan mappningsikonen under [!UICONTROL Target Field] för att mappa det valda källfältet till rätt målfält.
-
-![select-target-field](../../../../images/tutorials/create/analytics/select-target-field.png)
-
-På samma sätt som källschemat kan du använda gränssnittet för att navigera i målschemastrukturen och välja det målfält som du vill mappa till. När du har valt rätt målfält väljer du **[!UICONTROL Select]**.
-
-![select-target-mapping](../../../../images/tutorials/create/analytics/select-target-mapping.png)
-
-Välj **[!UICONTROL Next]** för att fortsätta.
-
-![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png)
+Beroende på dina behov kan du välja **[!UICONTROL Add new mapping]** eller **[!UICONTROL Add calculated field]** och fortsätta att skapa anpassade mappningar för dina anpassade attribut. Omfattande anvisningar om hur du använder dataförinställningsfunktioner finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
 
 I följande dokumentation finns mer information om dataprep, beräkningsfält och mappningsfunktioner:
 
 * [Översikt över datapreflight](../../../../../data-prep/home.md)
 * [Funktioner för datapersonmappning](../../../../../data-prep/functions.md)
 * [Lägg till beräknade fält](../../../../../data-prep/ui/mapping.md#calculated-fields)
+
+<!-- 
+To use Data Prep functions and add new mapping or calculated fields for custom attributes, select **[!UICONTROL View custom mappings]**.
+
+![view-custom-mapping](../../../../images/tutorials/create/analytics/view-custom-mapping.png)
+
+Next, select **[!UICONTROL Add new mapping]**.
+
+Depending on your needs, you can select either **[!UICONTROL Add new mapping]** or **[!UICONTROL Add calculated field]** from the options that appear. 
+
+![add-new-mapping](../../../../images/tutorials/create/analytics/add-new-mapping.png)
+
+An empty mapping set appears. Select the mapping icon to add a source field.
+
+![select-source-field](../../../../images/tutorials/create/analytics/select-source-field.png)
+
+You can use the interface to navigate through the source schema structure and identify the new source field that you want to use. Once you have selected the source field that you want to map, select **[!UICONTROL Select]**.
+
+![select-mapping](../../../../images/tutorials/create/analytics/select-mapping.png)
+
+Next, select the mapping icon under [!UICONTROL Target Field] to map your selected source field to its appropriate target field.
+
+![select-target-field](../../../../images/tutorials/create/analytics/select-target-field.png)
+
+Similar to the source schema, you can use the interface to navigate through the target schema structure and select the target field you want to map to. Once you have selected the appropriate target field, select **[!UICONTROL Select]**.
+
+![select-target-mapping](../../../../images/tutorials/create/analytics/select-target-mapping.png)
+
+With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
+
+![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png) -->
 
 ### Filtrera efter kundprofil i realtid {#filtering-for-profile}
 
