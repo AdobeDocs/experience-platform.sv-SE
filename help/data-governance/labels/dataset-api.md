@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter för datauppsättningar med API:er
 description: Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata.
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: 1f7a1bcf5aaf694ca2d3416c9c98f37b66adc69f
+source-git-commit: 9f3fa696ed60ce85fa93515e39716d89ec80f1ec
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1151'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Exemplet på en begäran om POST nedan uppdaterar hela datauppsättningen med en
 
 >[!NOTE]
 >
->Om det finns etiketter för den aktuella datauppsättningen kan nya etiketter bara läggas till via en PUT-begäran, vilket kräver en `If-Match` header. När etiketterna har lagts till i en datauppsättning kan du `etag` tilldelas ett värde som kan användas för att uppdatera eller ta bort etiketterna vid ett senare tillfälle.
+>Om det finns etiketter för den aktuella datauppsättningen kan nya etiketter bara läggas till via en PUT-begäran, vilket kräver en `If-Match` header. När etiketterna har lagts till i en datauppsättning är den senaste `etag` värdet krävs för att uppdatera eller ta bort etiketterna vid ett senare tillfälle.
 
 Om du vill hämta den senaste versionen av datauppsättningens etikett skapar du en [Begäran om GET](#look-up) till `/datasets/{DATASET_ID}/labels` slutpunkt. Det aktuella värdet returneras i svaret under ett `etag` header. När du uppdaterar befintliga datauppsättningsrubriker är det bästa sättet att först utföra en sökbegäran för datauppsättningen för att hämta den senaste `etag` värdet innan du använder värdet i `If-Match` huvud för din efterföljande begäran från PUT.
 
