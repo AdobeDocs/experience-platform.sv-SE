@@ -2,7 +2,7 @@
 title: Metodtips för dataresursorganisation i frågetjänsten
 description: I det här dokumentet beskrivs ett logiskt sätt att ordna data så att de blir lätta att använda med frågetjänsten.
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 6e2be299e3c1c0dfa2832ead22cdeaea0ca83591
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 0%
@@ -45,13 +45,13 @@ När ett schema har skapats för att fungera som en behållare för dataresurser
 Följande exempel lägger till `dataset1`, `dataset2`, `dataset3` och `v1` till `databaseA.schema1` behållare som skapades i föregående exempel.
 
 ```SQL
-ALTER TABLE dataset1 SET SCHEMA databaseA.schema1;
+ALTER TABLE dataset1 ADD SCHEMA databaseA.schema1;
  
-ALTER TABLE dataset2 SET SCHEMA databaseA.schema1;
+ALTER TABLE dataset2 ADD SCHEMA databaseA.schema1;
  
-ALTER TABLE dataset3 SET SCHEMA databaseA.schema1;
+ALTER TABLE dataset3 ADD SCHEMA databaseA.schema1;
  
-ALTER VIEW v1  SET SCHEMA databaseA.schema1;
+ALTER VIEW v1  ADD SCHEMA databaseA.schema1;
 ```
 
 ## Åtkomst till dataresurser från databehållaren

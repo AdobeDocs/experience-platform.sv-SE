@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 2a5dd20d99f996652de5ba84246c78a1f7978693
+source-git-commit: c42a7cd46f79bb144176450eafb00c2f81409380
 workflow-type: tm+mt
-source-wordcount: '3706'
+source-wordcount: '3761'
 ht-degree: 1%
 
 ---
@@ -570,7 +570,11 @@ Underavsnitten nedan täcker [!DNL PostgreSQL] kommandon som stöds av frågetj�
 
 ### ANALYSERA TABELL {#analyze-table}
 
-The `ANALYZE TABLE` kommandot beräknar statistik för en tabell på den accelererade lagringsplatsen. Statistiken beräknas på utförda CTAS- eller ITAS-frågor för en given tabell på accelererad butik.
+The `ANALYZE TABLE` kommandot utför en distributionsanalys och statistiska beräkningar för den namngivna tabellen eller tabellerna. Användning av `ANALYZE TABLE` varierar beroende på om datauppsättningarna lagras på [accelererad butik](#compute-statistics-accelerated-store) eller [Data Lake](#compute-statistics-data-lake). Mer information om hur de används finns i respektive avsnitt.
+
+#### DATORSTATISTIK på den accelererade butiken {#compute-statistics-accelerated-store}
+
+The `ANALYZE TABLE` kommandot beräknar statistik för en tabell på den accelererade lagringsplatsen. Statistiken beräknas på utförda CTAS- eller ITAS-frågor för en given tabell på den accelererade butiken.
 
 **Exempel**
 
@@ -592,9 +596,9 @@ Nedan följer en lista över statistiska beräkningar som är tillgängliga efte
 | `mean` | Genomsnittsvärdet för den analyserade tabellen. |
 | `stdev` | Standardavvikelsen för den analyserade tabellen. |
 
-#### FÖRETAGSSTATISTIK {#compute-statistics}
+#### COMPUTE STATISTICS on the data Lake {#compute-statistics-data-lake}
 
-Nu kan du beräkna kolumnnivåstatistik på [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon. Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
+Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon. Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
 
 `COMPUTE STATISTICS` utökar `ANALYZE TABLE` -kommando. Men `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i data warehouse-tabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller.
 
