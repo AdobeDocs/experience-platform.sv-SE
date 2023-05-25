@@ -2,7 +2,7 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
+source-git-commit: c54fa206b673868ca3d0ccfa5b0936b83cfd3ed4
 workflow-type: tm+mt
 source-wordcount: '2933'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Ta [Facebook](/help/destinations/catalog/social/facebook.md) med *[konfigurerbar
 * Antal poster (högst 10 000) eller
 * Tidsfönsterintervall (30 minuter)
 
-Vilken tröskel som helst som uppnås först utlöser en export till Facebook. Så i [!DNL Facebook Custom Audiences] På kontrollpanelen kan du se målgrupper som kommer från Experience Platform i 10 000 poststeg. Du kanske ser 10 000 poster var 10-15:e minut eftersom data bearbetas och slås samman snabbare än 30 minuters exportintervall och skickas snabbare, så ungefär var 10-15:e minut tills alla poster har bearbetats. Om det inte finns tillräckligt med poster för att kunna skapa en 10 000-batch skickas det aktuella antalet poster som det är när tidsfönstrets tröskelvärde uppnås, så att du kanske också ser mindre grupper som skickas till Facebook.
+Vilken tröskel som helst som uppnås först utlöser en export till Facebook. Så i [!DNL Facebook Custom Audiences] på kontrollpanelen kan ni se målgrupper som kommer från Experience Platform i 10 000 rekordsteg. Du kanske ser 10 000 poster var 10-15:e minut eftersom data bearbetas och slås samman snabbare än 30 minuters exportintervall och skickas snabbare, så ungefär var 10-15:e minut tills alla poster har bearbetats. Om det inte finns tillräckligt med poster för att kunna skapa en 10 000-sats, skickas det aktuella antalet poster som det är när tidsfönstrets tröskelvärde uppnås, så du kan se även mindre grupper skickade till Facebook.
 
 Som ett annat exempel kan du titta på [HTTP API-mål](/help/destinations/catalog/streaming/http-destination.md), som har *[bästa ansträngningsaggregering](../destination-sdk/functionality/destination-configuration/aggregation-policy.md)* profil, med `maxUsersPerRequest: 10`. Detta innebär att högst tio profiler slås samman innan ett HTTP-anrop utlöses till det här målet, men Experience Platform försöker skicka profiler till målet så fort som måltjänsten får uppdaterad information om omvärdering från en tjänst i det övre flödet.
 
