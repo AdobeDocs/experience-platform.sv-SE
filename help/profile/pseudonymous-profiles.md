@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Förfallodatum för pseudonyma profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 07ed7eb9644b2e8cc4da02743c48037afc247614
+source-git-commit: 207cddae6b632866d564729de49d28fc5c29ef7f
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '923'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,8 @@ I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla
 
 ### Vad är några kavattar du bör vara medveten om innan du använder pseudonyma profildata?
 
-- Förfallodatum för pseudonyma profildata kommer att köras på **produktion** sandlåda.
+- Förfallodatum för pseudonyma profildata körs på en **sandlåda** nivå. Du kan välja att ha olika konfigurationer för produktions- och utvecklingssandlådor.
 - När du har aktiverat den här funktionen är det **permanent**. Det finns **no** hur du återställer eller återställer borttagna profiler.
 - Det här är **not** ett engångsrensningsjobb. Pseudonyma profildata upphör att gälla en gång om dagen och profiler som matchar kundens indata tas bort.
 - **Alla** profiler som definieras som pseudonyma profiler påverkas av att pseudonyma profildata upphör att gälla. Det gör det **not** spelar någon roll om profilen bara är Experience Event eller om den bara innehåller profilattribut.
 - Rensningen kommer att **endast** inträffar i profilen. Identitetstjänsten kan fortsätta att visa borttagna identiteter i diagrammet efter rensningen om profilen har två eller flera associerade pseudonyma identiteter (till exempel `AAID` och `ECID`). Denna diskrepans kommer att åtgärdas inom den närmaste framtiden.
-
