@@ -3,7 +3,8 @@ solution: Experience Platform
 title: Salesforce Marketing Cloud källöversikt
 description: Lär dig hur du ansluter Salesforce Marketing Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
-source-git-commit: 997a9dc70145a8cfd5d6da20ba788a4610e5c257
+last-substantial-update: 2023-03-25T00:00:00Z
+source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
 workflow-type: tm+mt
 source-wordcount: '334'
 ht-degree: 0%

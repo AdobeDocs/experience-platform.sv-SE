@@ -2,9 +2,8 @@
 title: Översikt över Pendo-källa
 description: Lär dig hur du ansluter Pendo till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att använda webbhooks
 badge: Beta
-last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 376f18ef-1eea-4c42-8041-6fadb5906e9b
-source-git-commit: 0cc4eab97dcd56d2b1d679cf5f35932976d22634
+source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%

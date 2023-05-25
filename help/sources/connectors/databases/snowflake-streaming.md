@@ -3,7 +3,8 @@ title: Översikt över källkopplingen för direktuppspelning i Snowflake
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att importera strömmande data från din Snowflake-instans till Adobe Experience Platform
 badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
-source-git-commit: 8ca051a92a7f39bb6ec496693fada6a0f4414754
+last-substantial-update: 2023-05-25T00:00:00Z
+source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
 workflow-type: tm+mt
 source-wordcount: '685'
 ht-degree: 1%
