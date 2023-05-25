@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: aed521bf50c301148c10b98021f1a3df0ed45278
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1416'
 ht-degree: 1%
 
 ---
@@ -48,6 +48,10 @@ The **[!UICONTROL Expiring credentials]** innehåller följande information:
 
 Du kan använda autentiseringsuppgifter som inte upphör att gälla för att konfigurera en mer permanent anslutning till en extern klient.
 
+>[!NOTE]
+>
+>Giltiga autentiseringsuppgifter har följande begränsningar:<br><ul><li>Användarna måste logga in med sitt användarnamn och lösenord som består av `{technicalAccountId}:{credential}`. Mer information finns i [Generera autentiseringsuppgifter](#generate-credentials) -avsnitt.</li><li>När inloggningsuppgifterna skapas skapas en ny roll med en uppsättning grundläggande behörigheter som gör att användare kan visa scheman och datauppsättningar. Behörigheten för att hantera frågor har även tilldelats den här rollen för användning med frågetjänsten.</li><li>Tredjepartsklienter kan fungera annorlunda än väntat när frågeobjekt listas. Vissa tredjepartsklienter, till exempel [!DNL DB Visualizer] I visas inte vynamnet i den vänstra panelen. Visningsnamnet är dock tillgängligt om det anropas i en SELECT-fråga. På samma sätt [!DNL PowerUI] kanske inte visar de temporära vyer som har skapats via SQL som ska väljas för att skapa instrumentpaneler.</li></ul>
+
 ### Förutsättningar
 
 Innan du kan generera autentiseringsuppgifter som inte förfaller måste du utföra följande steg i Adobe Admin Console:
@@ -63,7 +67,7 @@ Mer information om hur du tilldelar behörigheter finns i dokumentationen om [å
 
 Alla behörigheter som krävs har nu konfigurerats i Adobe Developer Console så att användaren kan använda funktionen för förfalloinloggningsuppgifter.
 
-### Generera autentiseringsuppgifter
+### Generera autentiseringsuppgifter {#generate-credentials}
 
 Om du vill skapa en uppsättning med autentiseringsuppgifter som inte upphör att gälla går du tillbaka till användargränssnittet för plattformen och väljer **[!UICONTROL Queries]** från vänster navigering för att komma åt [!UICONTROL Queries] arbetsyta. Välj sedan **[!UICONTROL Credentials]** följt av **[!UICONTROL Generate credentials]**.
 
