@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Salesforce;salesforce;fältmappning;fältmappning;mappning;markering;B2B;b2b
 title: Mappningsfält för Microsoft Dynamics
 description: Tabellerna nedan innehåller mappningarna mellan källfälten i Microsoft Dynamics och deras motsvarande XDM-fält.
 exl-id: 32f51761-5de3-4192-8f23-c1412ca12c08
-source-git-commit: a278f27223c9a5d0b97a0aa6b5d943caf5f6b10e
+source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---

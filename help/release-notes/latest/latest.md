@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från maj 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: e705d6c38bc1a81ee5d2c31a3097e1dba8f5cf7f
+source-git-commit: fc886dc0d7abb1df76c12edc423bc788b443a788
 workflow-type: tm+mt
-source-wordcount: '1353'
+source-wordcount: '1354'
 ht-degree: 3%
 
 ---
@@ -117,7 +117,7 @@ Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era k
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för partner-ID:n i Adobe Experience Cloud-program | Partner-ID:n är nu tillgängliga i identitetstjänsten. Partner-ID:n är identifierare som används av datapartners för att representera människor. I Real-time Customer Data Platform används partner-ID:n i första hand för att öka målgruppsaktiveringen och för att berika data. Partner-ID:n lagras inte i identitetsdiagrammet. Mer information finns i dokumentationen om [identitetstyper](../../identity-service/namespaces.md#identity-types). |
+| Stöd för partner-ID:n i Adobe Experience Cloud-program [!BADGE Beta]{type=Informative} | Partner-ID:n är nu tillgängliga i identitetstjänsten. Partner-ID:n är identifierare som används av datapartners för att representera människor. I Real-time Customer Data Platform används partner-ID:n i första hand för att öka målgruppsaktiveringen och för att berika data. Partner-ID:n lagras inte i identitetsdiagrammet. Mer information finns i dokumentationen om [identitetstyper](../../identity-service/namespaces.md#identity-types). |
 
 Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md)
 

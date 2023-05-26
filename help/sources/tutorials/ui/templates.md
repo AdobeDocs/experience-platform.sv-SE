@@ -3,14 +3,19 @@ description: Lär dig hur du använder mallar i Adobe Experience Platform använ
 title: Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 91d6832231d75c9dd23e91a5f1152eac61558fc5
+source-git-commit: 41694a96272819652c7176793f94a2de620d1d7a
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1558'
 ht-degree: 0%
 
 ---
 
-# Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+# Skapa ett källdataflöde med hjälp av mallar i användargränssnittet {#create-a-sources-dataflow-using-templates-in-the-ui}
+
+>[!CONTEXTUALHELP]
+>id="platform_sources_marketo_mapping"
+>title="Mallar för källor i plattformens användargränssnitt"
+>abstract="Mallar innehåller automatiskt genererade resurser som scheman, datauppsättningar, identiteter, mappningsregler, identitetsnamnutrymmen och dataflöden som du kan använda när du hämtar data från en källa till Experience Platform. Du kan uppdatera automatiskt genererade resurser för anpassning så att de passar dina användningsexempel."
 
 >[!IMPORTANT]
 >

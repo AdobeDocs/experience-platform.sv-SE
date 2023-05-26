@@ -4,19 +4,14 @@ solution: Experience Platform
 title: Mappningsfält för Marketo Engage-källan
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
 workflow-type: tm+mt
-source-wordcount: '919'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
 
 # [!DNL Marketo Engage] fältkopplingar {#marketo-engage-field-mappings}
-
->[!CONTEXTUALHELP]
->id="platform_sources_marketo_mapping"
->title="Marketo källfältsmappningar"
->abstract="Om du vill upprätta en källanslutning mellan Marketo och Platform måste Marketo källdatafält mappas till rätt mål-XDM-fält innan de hämtas till Platform."
 
 Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo] datauppsättningar och deras motsvarande XDM-fält (Experience Data Model).
 
