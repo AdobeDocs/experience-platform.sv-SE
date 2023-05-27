@@ -2,14 +2,18 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: c7f09da40d2ea84de6f21669bdda16c0175a63c1
+source-git-commit: 626330395c2d6b813d5d2157e92ada77ab4f96b1
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '839'
 ht-degree: 2%
 
 ---
 
 # Versionsinformation om taggar och vidarebefordran av händelser
+
+>[!IMPORTANT]
+>
+>Om du flyttar framåt taggar och versionsinformation för vidarebefordran av händelser kommer de inte längre att finnas på den här sidan. Läs den senaste [Versionsinformation för Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/release-notes/latest.html?lang=en#data-collection) för detaljerade taggar och uppdateringar för händelsevidarebefordran.
 
 ## 26 april 2023
 
