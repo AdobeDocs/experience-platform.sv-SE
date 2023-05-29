@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;Google Ads;Google ads
 title: Google Ads Source Overview
 description: Lär dig hur du ansluter Google Ads till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: 1f6257e0-213c-4723-a240-511c11c5833c
-source-git-commit: b732fa1f4afb71e7b8c3276335b371d0f8ef888d
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '233'
 ht-degree: 0%

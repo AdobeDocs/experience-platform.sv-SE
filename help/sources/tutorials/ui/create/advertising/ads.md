@@ -2,7 +2,7 @@
 title: Skapa en Google Ads Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Google Ads-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: ac87434c857a39f4be3714cba57519cbb4fa54a6
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '664'
 ht-degree: 0%

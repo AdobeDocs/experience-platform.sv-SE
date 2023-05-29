@@ -3,7 +3,7 @@ keywords: Experience Platform;hemmabruk;populära ämnen;
 title: (Beta) Adobe Workfront Source
 description: Adobe Workfront är en arbetsstyrningsapplikation för marknadsföring som hjälper er att hantera hela arbetscykeln på ett och samma ställe. Workfront innehåller rapporterings- och analysverktyg som ni kan använda för att bättre förstå och optimera arbetsflödet i organisationen.
 exl-id: ea714278-d84d-4929-9a34-81fc5fb70871
-source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '281'
 ht-degree: 0%

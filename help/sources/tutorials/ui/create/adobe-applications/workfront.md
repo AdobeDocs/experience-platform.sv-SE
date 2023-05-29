@@ -3,7 +3,7 @@ keywords: Experience Platform;hemmabruk;populära ämnen;
 title: (Beta) Skapa en Adobe Workfront-källanslutning i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en Adobe Workfront-källanslutning för att överföra dina Workfront-data till Adobe Experience Platform med användargränssnittet.
 exl-id: f82e852a-c9d1-4ecc-bc54-2b39d3b4cc1e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '751'
 ht-degree: 0%

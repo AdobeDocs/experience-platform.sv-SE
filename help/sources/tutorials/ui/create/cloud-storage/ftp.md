@@ -5,7 +5,7 @@ title: Skapa en FTP-källanslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en FTP-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 8e505ead-4bae-43fe-830b-75620e8fba28
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%

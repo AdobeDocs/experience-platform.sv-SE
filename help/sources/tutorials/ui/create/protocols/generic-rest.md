@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;Allmänt REST API
 title: Skapa en allmän REST API-källanslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en allmän REST API-källanslutning med Adobe Experience Platform UI.
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '610'
 ht-degree: 1%

@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: (Beta) Skapa en källanslutning och ett dataflöde för blandpanelen med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Mixpanel med API:t för Flow Service.
 exl-id: 804b876d-6fd5-4a28-b33c-4ecab1ba3333
-source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '2050'
 ht-degree: 0%

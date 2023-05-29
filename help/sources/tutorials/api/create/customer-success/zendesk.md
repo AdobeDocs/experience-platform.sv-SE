@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa ett dataflöde för Zendesk med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Zendesk med API:t för Flow Service.
 exl-id: 3e00e375-c6f8-407c-bded-7357ccf3482e
-source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '1996'
 ht-degree: 0%

@@ -5,7 +5,7 @@ title: Skapa en Apache Hive på Azure HDInsights-källanslutning i gränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Apache Hive på Azure HDInsights-källanslutningen med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 3eb3cb02-9867-451a-b847-ab895310eedf
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 1%

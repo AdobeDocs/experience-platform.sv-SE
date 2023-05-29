@@ -5,7 +5,7 @@ description: Lär dig hur du ansluter Oraclena till Adobe Experience Platform me
 hide: true
 hidefromtoc: true
 exl-id: 806ae7e2-d4af-47d5-a3aa-561b69acc836
-source-git-commit: 784ec5f799c591185620e8376a6980b4930d914a
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '274'
 ht-degree: 0%

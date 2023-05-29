@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Allmän REST API Source Connector - översikt
 description: Lär dig hur du ansluter det allmänna REST API:t till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: e3449e33-7261-4aa2-bce9-5530eb4fcc68
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '228'
 ht-degree: 0%

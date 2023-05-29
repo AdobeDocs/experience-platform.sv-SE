@@ -2,7 +2,7 @@
 title: Skapa en källanslutning och ett dataflöde för SugarCRM-händelser med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till SugarCRM-händelser med API:t för Flow Service.
 exl-id: 12d08010-569c-4111-ba95-697c6ce6f637
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
 source-wordcount: '2009'
 ht-degree: 0%

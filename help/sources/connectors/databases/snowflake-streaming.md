@@ -4,9 +4,9 @@ description: Lär dig hur du skapar en källanslutning och ett dataflöde för a
 badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
+source-git-commit: e37c00863249e677f1645266859bf40fe6451827
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '684'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >* The [!DNL Snowflake] strömningskällan är i betaversion. Läs [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
->* The [!DNL Snowflake] Källa för direktuppspelning finns i källkatalogen för kunder som har köpt Real-Time CDP Ultimate.
+>* The [!DNL Snowflake] strömningskälla är tillgänglig i API:t för kunder som har köpt Real-Time CDP Ultimate.
 
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
