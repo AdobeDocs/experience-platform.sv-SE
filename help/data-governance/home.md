@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Datastyrning - översikt
 description: Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom Experience Platform på olika nivåer, bland annat i fråga om katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: d45c813cf660d9bf738d09101536f1dfb41a1505
+source-git-commit: e6f003a058f50454a6fd4923510976973c6946fb
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '1513'
 ht-degree: 0%
 
 ---
@@ -127,8 +127,6 @@ Följande video är avsedd att ge stöd för din förståelse av ramverket för 
 
 >[!VIDEO](https://video.tv.adobe.com/v/29708?quality=12&enable10seconds=on&speedcontrol=on)
 
-<!-- A key section of the video is now outdated due to the deprecation of the dataset field level labelling feature.
+I följande video visas riktlinjer för hur du använder dataanvändningsetiketter på dina scheman och datauppsättningar i Experience Platform.
 
-The following video provides an introduction to various Data Governance features in Experience Platform.
-
->[!VIDEO](https://video.tv.adobe.com/v/36653?quality=12&enable10seconds=on&speedcontrol=on) -->
+>[!VIDEO](https://video.tv.adobe.com/v/29709/?learn=on)
