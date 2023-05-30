@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Webbläsare och språkstöd för användargränssnittet i Experience Platform
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 74e6c2a56da8455bbecd301ed7e5ad10c0366dc5
 workflow-type: tm+mt
-source-wordcount: '246'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,13 @@ Plattformsgränssnittet finns för närvarande på följande språk:
 * Engelska
 * Franska
 * Tyska
+* Spanska
 * Japanska
+* Italienska
+* Koreanska
+* Kinesiska (taiwanesiska)
+* Kinesiska (traditionell)
+* Brasilianska
 
 ### Ändra standardspråk
 
