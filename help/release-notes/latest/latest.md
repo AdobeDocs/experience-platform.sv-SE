@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från maj 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 43f505c6d3871e6ebc7d644aef6ec3b71f9fc2bc
+source-git-commit: c2b9f01453ecbc3348675e59b75c81280eded5f8
 workflow-type: tm+mt
-source-wordcount: '1535'
+source-wordcount: '1541'
 ht-degree: 3%
 
 ---
@@ -121,7 +121,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | --- | --- | --- |
 | Fältgrupp | (Flera) | Flera fält för [Erbjudandeartikel](https://github.com/adobe/xdm/pull/1720/files) uppdaterades för att ta bort en dubbel hierarki från schemat. |
 | Fältgrupp | [[!UICONTROL XDM Individual Prospect Profile]](https://github.com/adobe/xdm/pull/1721/files) | The `partnerProspect` för metadatataggar lades till i [!UICONTROL XDM Individual Prospect Profile] klassen. |
-| Datatyper | (Flera) | Flera fält har lagts till för [!UICONTROL Media details information] datatyp. |
+| Datatyper | (Flera) | Flera fält har lagts till för [[!UICONTROL Media details information]](https://github.com/adobe/xdm/pull/1716/files) datatyp. |
 | Datatyper | [[!UICONTROL Session details information]](https://github.com/adobe/xdm/pull/1716/files) | Ett nytt fält lades till för att ange om en omdirigering inträffade. |
 | Fältgrupp | [[!UICONTROL MediaAnalytics Interaction Details]](https://github.com/adobe/xdm/pull/1716/files) | Ett nytt fält som är relaterat till medierapportering har lagts till. |
 
