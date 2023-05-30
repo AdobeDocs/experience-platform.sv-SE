@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
+source-git-commit: 765079f084dce316d321fbac5aee9e387373ba00
 workflow-type: tm+mt
-source-wordcount: '1339'
+source-wordcount: '1430'
 ht-degree: 2%
 
 ---
@@ -86,7 +86,7 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 
 | Fältegenskap | Kompatibla typer | Beskrivning |
 | --- | --- | --- |
-| [!UICONTROL Default value] | [!UICONTROL String], [!UICONTROL Double], [!UICONTROL Long], [!UICONTROL Integer], [!UICONTROL Short], [!UICONTROL Byte], [!UICONTROL Boolean] | Ett standardvärde som tilldelas det här fältet om inget annat värde anges under importen. Värdet måste överensstämma med fältets valda typ. |
+| [!UICONTROL Default value] | [!UICONTROL String], [!UICONTROL Double], [!UICONTROL Long], [!UICONTROL Integer], [!UICONTROL Short], [!UICONTROL Byte], [!UICONTROL Boolean] | Ett standardvärde som tilldelas det här fältet om inget annat värde anges vid inmatningen. Värdet måste överensstämma med fältets valda typ.<br><br>Standardvärdena sparas inte i datauppsättningen vid tidpunkten för inmatningen eftersom de kan ändras över tid. De standardvärden som anges i schemat härleds av plattformstjänster och program som är längre fram i kedjan när de läser data från datauppsättningen. Om attributet har ett NULL-värde när data efterfrågas med hjälp av tjänsten Query, men standardvärdet är inställt på `5` på schemanivå förväntas frågetjänsten returnera `5` i stället för NULL. Observera att detta för närvarande inte är enhetligt i alla AEP-tjänster. |
 | [!UICONTROL Pattern] | [!UICONTROL String] | A [reguljärt uttryck](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) att värdet för detta fält måste överensstämma med för att kunna accepteras vid förtäring. |
 | [!UICONTROL Format] | [!UICONTROL String] | Välj i en lista över fördefinierade format för strängar som värdet måste överensstämma med. Tillgängliga format: <ul><li>[[!UICONTROL date-time]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL email]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL hostname]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL Minimum length] | [!UICONTROL String] | Det minsta antalet tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
