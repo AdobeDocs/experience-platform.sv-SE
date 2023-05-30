@@ -5,9 +5,9 @@ solution: Experience Platform
 title: Uppdatera ett källanslutningsdataflöde i användargränssnittet
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: cef5c203acf3318445399669336166e6627ebe66
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '760'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,12 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Källor](../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Uppdatera dataflöden
+## Uppdatera dataflöden {#update-dataflows}
+
+>[!CONTEXTUALHELP]
+>id="platform_sources_dataflows_daysRemaining"
+>title="Utgångsdatum för datauppsättning"
+>abstract="Den här kolumnen anger antalet dagar som måldatauppsättningen har kvar innan den automatiskt upphör att gälla.<br>Ett dataflöde misslyckas om måldatauppsättningen har upphört att gälla. För att förhindra att ett dataflöde misslyckas kontrollerar du att måldatauppsättningen är inställd på att förfalla på rätt datum. Mer information om hur du uppdaterar förfallodatum finns i dokumentationen."
 
 Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. Välj **[!UICONTROL Dataflows]** i det övre sidhuvudet för att visa en lista över befintliga dataflöden.
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: f0cd059683531993398f0a81d6eda486276853e2
+source-git-commit: 11d6cf09dede8c7c14bbbcd3c109e703a5d053de
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,11 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 >title="Negativa tal i datauppsättningsaktivitet"
 >abstract="Negativa tal i importerade poster innebär att en användare har tagit bort vissa batchar i ett valt tidsintervall."
 >text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_browse_daysRemaining"
+>title="Utgångsdatum för datauppsättning"
+>abstract="Den här kolumnen anger antalet dagar som måldatauppsättningen har kvar innan den automatiskt upphör att gälla."
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna **[!UICONTROL Datasets]** kontrollpanel. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
