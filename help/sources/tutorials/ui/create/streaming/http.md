@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;skapa direktuppspelningsanslutning;ui guide;självstudiekurs;skapa en direktuppspelningsanslutning;direktuppspelningsproblem;intag;
-solution: Experience Platform
 title: Skapa en HTTP API Streaming Connection med användargränssnittet
-type: Tutorial
 description: Den här gränssnittshandboken hjälper dig att skapa en direktuppspelningsanslutning med Adobe Experience Platform.
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: de721d204cda8e55c72ac5f530b89b2275d94306
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '935'
 ht-degree: 0%
 
 ---
@@ -71,7 +68,7 @@ När dina data har överförts kan du använda den högra sidan av gränssnittet
 
 The [!UICONTROL Mapping] visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
 
-Parquet-filer måste vara XDM-kompatibla och kräver inte att du konfigurerar mappningen manuellt, medan CSV-filer kräver att du uttryckligen konfigurerar mappningen, men tillåter dig att välja vilka källdatafält som ska mappas. Om JSON-filer markeras som XDM-klagomål behöver du inte konfigurera manuellt. Om den inte är markerad som XDM-kompatibel måste du explicit konfigurera mappningen.
+The [!DNL HTTP API] har stöd för att lägga in JSON-filer. JSON-filer behöver inte konfigureras manuellt om de är markerade som XDM-kompatibla. Annars måste du konfigurera mappningen explicit.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
@@ -88,7 +85,6 @@ Om du vill använda en befintlig datauppsättning väljer du **[!UICONTROL Exist
 ![befintlig datamängd](../../../../images/tutorials/create/http/existing-dataset.png)
 
 ### Mappa standardfält
-
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
 
