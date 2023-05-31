@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
 title: Webbläsare och språkstöd för användargränssnittet i Experience Platform
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 74e6c2a56da8455bbecd301ed7e5ad10c0366dc5
+source-git-commit: 20cb7afe6338f1ca79e86558f1f0cbec54790212
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '234'
 ht-degree: 0%
 
 ---
@@ -42,9 +41,9 @@ Plattformsgränssnittet finns för närvarande på följande språk:
 * Japanska
 * Italienska
 * Koreanska
-* Kinesiska (taiwanesiska)
+* Kinesiska (förenklad)
 * Kinesiska (traditionell)
-* Brasilianska
+* Brasiliansk portugisiska
 
 ### Ändra standardspråk
 
