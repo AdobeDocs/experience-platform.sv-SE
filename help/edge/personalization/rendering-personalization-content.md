@@ -3,7 +3,7 @@ title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
 description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
 keywords: personalisering;renderDecision;sendEvent;DecisionScopes;propositions;
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: c75a8bdeaba67259b5f4b4ce025d5e128d763040
+source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
 workflow-type: tm+mt
 source-wordcount: '962'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Adobe Experience Platform Web SDK stöder hämtning av personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html), [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html).
 
-Dessutom hanterar Web SDK personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../../destinations/ui/configure-personalization-destinations.md).
+Dessutom hanterar Web SDK personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../../destinations/ui/activate-edge-personalization-destinations.md).
 
 Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) och Adobe Journey Optimizer [WebbCampaign-användargränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) kan hämtas och återges automatiskt av SDK. Innehåll som skapats i Adobe Target [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
 

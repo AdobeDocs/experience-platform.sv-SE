@@ -3,7 +3,7 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 25f1b2197e5b10b04668d16bff3a6ce48cfad5fc
+source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
 workflow-type: tm+mt
 source-wordcount: '713'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Segmentexportdestinationer tar emot data från Experience Platform segment. Dess
 
 De främsta målsättningarna för personalisering i Experience Platform är bland annat [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassat personaliseringsmål](/help/destinations/catalog/personalization/custom-personalization.md). Genom att använda dessa destinationer kan ni möjliggöra användning av samma sida och nästa sida för personalisering för era kunder.
 
-Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](/help/destinations/ui/configure-personalization-destinations.md).
+Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](/help/destinations/ui/activate-edge-personalization-destinations.md).
 
 ## Profilexport och segmentexportdestinationer - videoöversikt {#video}
 

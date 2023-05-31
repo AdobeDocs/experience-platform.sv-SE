@@ -3,33 +3,31 @@ keywords: personalisering, destination, upplevelseplattform anpassad destination
 title: Anpassad personaliseringsanslutning
 description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 09e81093c2ed2703468693160939b3b6f62bc5b6
+source-git-commit: 1ffcbabe29994fb881ff622394d669c4340c94f1
 workflow-type: tm+mt
-source-wordcount: '1254'
-ht-degree: 0%
+source-wordcount: '843'
+ht-degree: 1%
 
 ---
+
 
 # Anpassad personaliseringsanslutning {#custom-personalization-connection}
 
 ## Destinationsändringslogg {#changelog}
 
-Med betaversionen av **[!UICONTROL Custom personalization]** målanslutning, du kanske ser två **[!UICONTROL Custom personalization]** i målkatalogen.
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| Maj 2023 | Funktioner och dokumentationsuppdatering | Från om med maj 2023 **[!UICONTROL Custom personalization]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
 
-The **[!UICONTROL Custom Personalization With Attributes]** är för närvarande i betaversion och endast tillgängligt för ett visst antal kunder. Förutom funktionerna i **[!UICONTROL Custom Personalization]**, **[!UICONTROL Custom Personalization With Attributes]** tillägg av en valfri [mappningssteg](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till ditt anpassade personaliseringsmål, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.
+{style="table-layout:auto"}
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization With Attributes]** mål kräver att du använder [API för Edge Network Server](/help/server-api/overview.md) för datainsamling. Dessutom måste alla Server-API-anrop göras i en [autentiserad kontext](../../../server-api/authentication.md).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization]** mål kräver att du använder [API för Edge Network Server](/help/server-api/overview.md) när målet för attributbaserad personalisering konfigureras. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../../server-api/authentication.md).
 >
->Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API på två sätt:
+><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API:t genom att lägga till en integration på serversidan.
 >
-> * Lägg till en integration på serversidan som hämtar attribut via Server-API:t.
-> * Uppdatera klientsidans konfiguration med en anpassad JavaScript-kod för att hämta attribut via Server-API:t.
->
-> Om du inte uppfyller kraven ovan kommer personaliseringen endast att baseras på segmentmedlemskap, vilket är identiskt med den upplevelse som finns i **[!UICONTROL Custom Personalization]** koppling.
-
-![Bild av de två anpassade målkorten för personalisering i en sida vid sida-vy.](../../assets/catalog/personalization/custom-personalization/custom-personalization-side-by-side-view.png)
+><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på segmentmedlemskap.
 
 ## Översikt {#overview}
 
@@ -41,35 +39,14 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 
 >[!IMPORTANT]
 >
->Innan du skapar en anpassad personaliseringsanslutning ska du läsa guiden om hur du [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
+>Innan du skapar en anpassad personaliseringsanslutning ska du läsa guiden om hur du [aktivera målgruppsdata för att kanalisera personaliseringsmål](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
-**Profilbegäran** - du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan konfigureras för olika [Datasamlingsdatamängder för Adobe](../../../edge/datastreams/overview.md).
-
-## Användningsfall {#use-cases}
-
-The [!DNL Custom Personalization Connection] gör att du kan använda dina egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom företagsspecifika system (t.ex. intern CMS), och samtidigt utnyttja datainsamling och segmenteringsfunktioner i Experience Platform Edge Network, för att ge en djupare personaliseringsupplevelse.
-
-De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
-
-För att möjliggöra detta behöver kunderna ett snabbt och smidigt sätt att hämta segmentinformation från Experience Platform och skicka denna information till sina utsedda system som de har konfigurerat som anpassade personaliseringsanslutningar i användargränssnittet i Experience Platform.
-
-Dessa system kan vara externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs över kundernas webb- och mobilsajter.
-
-### Personalisering på samma sida {#same-page}
-
-En användare besöker en sida på webbplatsen. Kunden kan använda den aktuella sidbesöksinformationen (till exempel URL, webbläsarspråk, inbäddad produktinformation) för att välja nästa åtgärd/beslut (till exempel personalisering) med hjälp av den anpassade personaliseringsanslutningen för andra plattformar än Adobe (till exempel [!DNL Pega], [!DNL Optimizely], osv.).
-
-### Anpassa nästa sida {#next-page}
-
-En användare besöker Sida A på din webbplats. Utifrån denna interaktion har användaren kvalificerat sig för en uppsättning segment. Användaren klickar sedan på en länk som tar dem från sida A till sida B. Segmenten som användaren hade kvalificerat sig för under den föregående interaktionen på sida A, tillsammans med profiluppdateringarna som bestäms av det aktuella webbplatsbesöket, kommer att användas för att driva nästa åtgärd/beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
-
-### Anpassa nästa session {#next-session}
-
-En användare besöker flera sidor på webbplatsen. Baserat på dessa interaktioner har användaren kvalificerat sig för en uppsättning segment. Användaren avbryter sedan den aktuella webbläsarsessionen.
-
-Följande dag kommer användaren tillbaka till samma kundwebbplats. De segment som de kvalificerat sig för under den tidigare interaktionen med alla besökta webbplatser, tillsammans med profiluppdateringar som bestäms av det aktuella webbplatsbesöket, kommer att användas för att välja nästa åtgärd/beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
+| Objekt | Typ | Anteckningar |
+---------|----------|---------|
+| Exporttyp | **[!DNL Profile request]** | Du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan konfigureras för olika [Datasamlingsdatamängder för Adobe](../../../edge/datastreams/overview.md). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## Anslut till målet {#connect}
 
@@ -106,7 +83,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-profile-request-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och segment för kantanpassning](../../ui/activate-edge-personalization-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Exporterade data {#exported-data}
 

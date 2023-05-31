@@ -3,9 +3,9 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: f97b667f8d4dc311683b018bb1c1792aae871648
+source-git-commit: bee1bf0ec9cbf35ea7303921059068c01cb9f54a
 workflow-type: tm+mt
-source-wordcount: '998'
+source-wordcount: '893'
 ht-degree: 0%
 
 ---
@@ -14,18 +14,21 @@ ht-degree: 0%
 
 ## Destinationsändringslogg {#changelog}
 
->[!IMPORTANT]
->
->I betaversionen av den förbättrade Adobe Target V2-målanslutningen kan det hända att du ser två Adobe Target-kort i målkatalogen.
->Adobe Target V2-målanslutningen är för närvarande i betaversion och är endast tillgänglig för ett visst antal kunder. Utöver de funktioner som finns på Adobe V1-kortet lägger Target V2-kontakten till en [mappningssteg](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) till aktiveringsarbetsflödet, som gör att du kan mappa profilattribut till Adobe Target, vilket möjliggör attributbaserad personalisering på samma sida och nästa sida.
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| April 2023 | Funktioner och dokumentationsuppdatering | Från och med april 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
 
-![Bild av de två Adobe Target-målkorten i en sida vid sida-vy.](/help/destinations/assets/catalog/personalization/adobe-target-connection/adobe-target-side-by-side-view.png)
+{style="table-layout:auto"}
 
 ## Översikt {#overview}
 
 Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 
 Adobe Target är en personaliseringsanslutning i Adobe Experience Platform destinationskatalog.
+
+Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-anslutningen i Experience Platform.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 ## Förutsättningar {#prerequisites}
 
@@ -37,7 +40,7 @@ Om du konfigurerar Adobe Target-anslutningen utan att använda ett datastream-ID
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. För personalisering på samma sida och nästa sida krävs att du använder ett dataström-ID när du konfigurerar Adobe Target-anslutningen.
+>Innan du skapar en [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. För personalisering på samma sida och nästa sida krävs att du använder ett dataström-ID när du konfigurerar Adobe Target-anslutningen.
 
 ### Krav i Adobe Target {#prerequisites-in-adobe-target}
 
@@ -58,12 +61,6 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
-
-## Användningsfall {#use-cases}
-
-**Anpassa en startsidesbanderoll**
-
-Ett uthyrnings- och säljföretag vill skräddarsy sin hemsida med en banderoll som bygger på kundsegmentets kvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dem till Adobe Target som målinriktningskriterier för sitt Target-erbjudande.
 
 ## Anslut till målet {#connect}
 
@@ -92,7 +89,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 | Ingen datastream har valts | Datastream har valts |
 |---|---|
-| <ul><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md) stöds inte.</li><li>Du kan bara dela segment till Adobe Target-anslutningen för *standardproduktionssandlåda*.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/configure-personalization-destinations.md) stöds.</li><li>Segmentdelning stöds för andra sandlådor.</li></ul> |
+| <ul><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds inte.</li><li>Du kan bara dela segment till Adobe Target-anslutningen för *standardproduktionssandlåda*.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds.</li><li>Segmentdelning stöds för andra sandlådor.</li></ul> |
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -106,7 +103,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-profile-request-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-edge-personalization-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
 
 ## Exporterade data {#exported-data}
 
