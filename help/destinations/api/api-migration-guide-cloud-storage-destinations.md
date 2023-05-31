@@ -4,9 +4,9 @@ title: API-migreringsguide för molnlagringsmål
 description: Lär dig mer om förändringarna i arbetsflödet för att aktivera molnlagringsmål som en del av migreringen till de nya målkorten för molnlagring med ytterligare funktioner.
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 8ca63586855f2c62231662906646eb8abcfdcc0e
+source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1418'
 ht-degree: 0%
 
 ---
@@ -433,7 +433,6 @@ De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connect
 Förutom den uppdaterade flödes- och anslutningsspecifikationen ovan, finns det ändringar i parametrarna som krävs när du skapar SFTP-basanslutningar.
 
 * Tidigare krävde basanslutningen för SFTP-mål en `host` parameter. Den här parametern har nu bytt namn till `domain`.
-* För autentisering med SSH-nyckelalternativet krävde autentiseringsparametrarna i basanslutningen en `port` alternativ. Den här parametern är nu föråldrad och behövs inte längre.
 
 Se alla exempel på tidigare och nya basanslutningar och målanslutningar för SFTP på flikarna nedan, med de rader som ändras markerade. Parametrarna som krävs för att skapa målanslutningar för SFTP-mål ändras inte.
 
@@ -567,7 +566,8 @@ Se alla exempel på tidigare och nya basanslutningar och målanslutningar för S
       "authorizedDate": "2022-06-02",
       "domain": "ftp-out.demdex.com",
       "username": "DPID12345",
-      "password": "<your-password>"
+      "password": "<your-password>",
+      "port": 22      
     }
   },
   "encryption": {

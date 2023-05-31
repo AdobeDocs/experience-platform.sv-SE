@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postadresser;salesforce;salesforce-mål
 title: Salesforce Marketing Cloud-anslutning
 description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
+source-git-commit: ba4090d95a4a476e76d946e36f8370202f26d23e
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '705'
 ht-degree: 0%
 
 ---
@@ -53,15 +53,15 @@ Detta mål stöder följande anslutningstyper:
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
 * För **[!UICONTROL SFTP with Password]** anslutningar måste du ange:
-   * [!UICONTROL Domain]
-   * [!UICONTROL Port]
-   * [!UICONTROL Username]
-   * [!UICONTROL Password]
+   * **[!UICONTROL Domain]**: IP-adressen eller domännamnet för ditt SFTP-konto;
+   * **[!UICONTROL Port]**: Den port som används av SFTP-lagringsplatsen;
+   * **[!UICONTROL Username]**: Användarnamn för att logga in på din SFTP-lagringsplats.
+   * **[!UICONTROL Password]**: Lösenordet för att logga in på din SFTP-lagringsplats.
 * För **[!UICONTROL SFTP with SSH Key]** anslutningar måste du ange:
-   * [!UICONTROL Domain]
-   * [!UICONTROL Port]
-   * [!UICONTROL Username]
-   * [!UICONTROL SSH Key]
+   * **[!UICONTROL Domain]**: IP-adressen eller domännamnet för ditt SFTP-konto;
+   * **[!UICONTROL Port]**: Den port som används av SFTP-lagringsplatsen;
+   * **[!UICONTROL Username]**: Användarnamn för att logga in på din SFTP-lagringsplats.
+   * **[!UICONTROL SSH Key]**: Den privata SSH-nyckeln som används för att logga in på din SFTP-lagringsplats. Den privata nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad.
 
 * Du kan även bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering med PGP/GPG till dina exporterade filer under **[!UICONTROL Key]** -avsnitt. Din offentliga nyckel måste skrivas som en [!DNL Base64] kodad sträng.
 * **[!UICONTROL Name]**: Välj ett relevant namn för destinationen.

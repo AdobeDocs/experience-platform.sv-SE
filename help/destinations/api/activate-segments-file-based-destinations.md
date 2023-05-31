@@ -4,9 +4,9 @@ title: Aktivera segment till filbaserade mål med hjälp av API:t för Flow Serv
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 5ab72c11a5fd73f10eef6b7bb3e0d3386098748e
 workflow-type: tm+mt
-source-wordcount: '4331'
+source-wordcount: '4436'
 ht-degree: 0%
 
 ---
@@ -956,7 +956,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     "params": {
       "domain": "<Add domain>",
       "username": "<Add username>",
-      "password": "<Add password>"
+      "password": "<Add password>",
+      "port": "<Add port>"      
     }
   },
   "connectionSpec": {
@@ -965,6 +966,16 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
   }
 }'
 ```
+
+| Egenskap | Beskrivning |
+| --------- | ----------- |
+| `specName` | Använd `SFTP with Password`. |
+| `domain` | IP-adressen eller domännamnet för din SFTP-lagringsplats. |
+| `username` | Användarnamnet som du vill logga in på din SFTP-lagringsplats. |
+| `password` | Lösenordet för att logga in på din SFTP-lagringsplats. |
+| `port` | Den port som används av din SFTP-lagringsplats. |
+
+{style="table-layout:auto"}
 
 +++
 
@@ -991,7 +1002,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
     "params": {
       "domain": "<Add domain>",
       "username": "<Add username>",
-      "sshKey": "<Add SSH key>"
+      "sshKey": "<Add SSH key>",
+      "port": "<Add port>"
     }
   },
   "connectionSpec": {
@@ -1000,6 +1012,16 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
   }
 }'
 ```
+
+| Egenskap | Beskrivning |
+| --------- | ----------- |
+| `specName` | Använd `SFTP with Password`. |
+| `domain` | IP-adressen eller domännamnet för din SFTP-lagringsplats. |
+| `username` | Användarnamnet som du vill logga in på din SFTP-lagringsplats. |
+| `sshKey` | Den privata SSH-nyckeln som används för att logga in på din SFTP-lagringsplats. Den privata nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad. |
+| `port` | Den port som används av din SFTP-lagringsplats. |
+
+{style="table-layout:auto"}
 
 +++
 

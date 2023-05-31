@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: b1e9b781f3b78a22b8b977fe08712d2926254e8c
+source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
 workflow-type: tm+mt
-source-wordcount: '1178'
+source-wordcount: '1188'
 ht-degree: 0%
 
 ---
@@ -111,8 +111,8 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 
 Använd den här kontrollen för att ange strängbeteckningen för ett tomt värde. Det här alternativet avgör hur tomma värden representeras i dina exporterade CSV-filer. Tillgängliga alternativ är:
 
-* **[!UICONTROL null]**
-* **&quot;&quot;**
+* **[!UICONTROL Null (null)]**
+* **Tom sträng med dubbla citattecken (&quot;&quot;)**
 * **[!UICONTROL Empty string]**
 
 #### Exempel
@@ -136,8 +136,8 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 
 Använd den här kontrollen för att ange strängbeteckningen för ett null-värde i de exporterade filerna. Det här alternativet avgör hur null-värden återges i dina exporterade CSV-filer. Tillgängliga alternativ är:
 
-* **[!UICONTROL null]**
-* **&quot;&quot;**
+* **[!UICONTROL Null (null)]**
+* **Tom sträng med dubbla citattecken (&quot;&quot;)**
 * **[!UICONTROL Empty string]**
 
 #### Exempel
