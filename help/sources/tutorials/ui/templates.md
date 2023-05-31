@@ -3,9 +3,9 @@ description: Lär dig hur du använder mallar i Adobe Experience Platform använ
 title: Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: 41694a96272819652c7176793f94a2de620d1d7a
+source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '2215'
 ht-degree: 0%
 
 ---
@@ -91,6 +91,83 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 >[!ENDTABS]
 
 ### Välj mallar
+
+När ditt konto är autentiserat kan du nu välja den mall som du vill använda för ditt dataflöde.
+
++++[!DNL Marketo Engage] mallar I följande tabell finns mallarna för [!DNL Marketo Engage] källa.
+
+| [!DNL Marketo Engage] mallar | Beskrivning |
+| --- | --- |
+| Aktiviteter | Mallen för aktiviteter innehåller händelsebaserade ögonblicksbilder av aktiviteter som e-postinteraktioner, webbplatsinteraktioner och försäljningssamtal. |
+| Företag | I företagsmallen hämtas företagskontoinformation som företagsinformation, plats och faktureringsinformation. |
+| Namngivna konton | Mallen Namngivna konton innehåller information om konton som har fastställts som målkonton att fortsätta. |
+| Möjligheter | Mallen Affärsmöjligheter innehåller affärsmöjlighetsinformation som typ, försäljningsfas och relaterade konton. |
+| Roller för säljprojektskontakt | Mallen Roller för säljprojektskontakt innehåller information om rollerna för leads som är associerade med en viss affärsmöjlighet. |
+| Personer | Mallen Personer innehåller attribut för enskilda personer, t.ex. demografisk information, kontaktinformation och medgivanden. |
+| Programmedlemskap | Mallen för programmedlemskap innehåller information om kontakter som är kopplade till en företagskampanj, inklusive vårdstånd och kontaktsvar. |
+| Program | Mallen Program innehåller information om företagskampanjer, som status, kanaler, tidslinjer och kostnader. |
+| Statiska listmedlemskap | Mallen Statiska listmedlemskap samlar relationerna mellan människor och deras medlemskap i statiska listor. |
+| Statiska listor | Mallen Statisk lista innehåller instansierade listor med personer för olika användningsområden. |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Salesforce] B2B-mallar Följande tabell visar vilka B2B-mallar som är tillgängliga för [!DNL Salesforce] källa.
+
+| [!DNL Salesforce] B2B-mallar | Beskrivning |
+| --- | --- |
+| Kontokontaktrelation | Mallen för kontokontaktrelation hämtar relationen mellan en kontakt och ett eller flera konton. |
+| Konton | Kontomallen innehåller företagskontoinformation som företagsinformation, plats och faktureringsinformation. |
+| Kampanjmedlemmar | Mallen Kampanjmedlemmar fångar relationen mellan en enskild lead eller kontakt och en specifik [!DNL Salesforce] kampanj. |
+| Kampanjer | I Campaigns-mallen samlas information om företagskonton in, t.ex. företagsinformation, plats och faktureringsinformation. |
+| Kontakter | Kontaktmallen hämtar attribut för kontakter, t.ex. demografisk information, kontaktinformation och relaterade affärsenheter. |
+| Leads | Mallen Leads innehåller attribut för leads som demografisk information, kontaktinformation och relaterade affärsenheter. |
+| Möjligheter | Mallen Affärsmöjligheter innehåller affärsmöjlighetsinformation som typ, försäljningsfas och relaterat konto. |
+| Roller för säljprojektskontakt | Mallen Roller för säljprojektskontakt innehåller information om rollerna för leads som är associerade med en viss affärsmöjlighet. |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Salesforce] B2C-mallar Följande tabell visar vilka B2C-mallar som är tillgängliga för [!DNL Salesforce] källa.
+
+| [!DNL Salesforce] B2C-mallar | Beskrivning |
+| --- | --- |
+| Kontakt | Kontaktmallen hämtar attribut för kontakter, t.ex. demografisk information, kontaktinformation och relaterade affärsenheter. |
+| Lead | Leadmallen hämtar attribut för leads, t.ex. demografisk information, kontaktinformation och relaterade affärsenheter. |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Microsoft Dynamics] B2B-mallar Följande tabell visar vilka B2B-mallar som är tillgängliga för [!DNL Microsoft Dynamics] källa.
+
+| [!DNL Microsoft Dynamics] B2B-mallar | Beskrivning |
+| --- | --- |
+| Konton | Kontomallen innehåller företagskontoinformation som företagsinformation, plats och faktureringsinformation. |
+| Kampanjer | I Campaigns-mallen samlas information om företagskonton in, t.ex. företagsinformation, plats och faktureringsinformation. |
+| Kontakter | Kontaktmallen hämtar attribut för kontakter, t.ex. demografisk information, kontaktinformation och relaterade affärsenheter. |
+| Leads | Mallen Leads innehåller attribut för leads som demografisk information, kontaktinformation och relaterade affärsenheter. |
+| Marknadsföringslista | Mallen Marknadsföringslista innehåller en grupp befintliga eller potentiella kunder som skapats för en marknadsföringskampanj eller andra försäljningssyften. |
+| Medlemmar i marknadsföringslista | Medlemmar i marknadsföringslistan samlar in information om en viss typ av kundpost, t.ex. leads, konton eller kontakter, i en marknadsföringslista. |
+| Möjligheter | Mallen Affärsmöjligheter innehåller affärsmöjlighetsinformation som typ, försäljningsfas och relaterat konto. |
+| Roller för säljprojektskontakt | Mallen Roller för säljprojektskontakt innehåller information om rollerna för leads som är associerade med en viss affärsmöjlighet. |
+
+{style="table-layout:auto"}
+
++++
+
++++[!DNL Microsoft Dynamics] B2C-mallar Följande tabell visar vilka B2C-mallar som är tillgängliga för [!DNL Microsoft Dynamics] källa.
+
+| [!DNL Microsoft Dynamics] B2C-mallar | Beskrivning |
+| --- | --- |
+| Kontakt | Kontaktmallen hämtar attribut för kontakter, t.ex. demografisk information, kontaktinformation och relaterade affärsenheter. |
+| Lead | Leadmallen hämtar attribut för leads, t.ex. demografisk information, kontaktinformation och relaterade affärsenheter. |
+
+{style="table-layout:auto"}
+
++++
 
 Beroende på vilken affärstyp du har valt visas en lista med mallar. Välj förhandsvisningsikonen ![förhandsgranskningsikon](../../images/tutorials/templates/preview-icon.png) bredvid ett mallnamn om du vill förhandsgranska exempeldata från mallen.
 
