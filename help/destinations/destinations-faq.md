@@ -3,10 +3,10 @@ keywords: Destinationer. frågor, Frågor och svar. faq, mål faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: abb6b598a2ec1f7589cb99204b6ccc2d4b55b5ec
 workflow-type: tm+mt
-source-wordcount: '861'
-ht-degree: 4%
+source-wordcount: '1361'
+ht-degree: 3%
 
 ---
 
@@ -104,3 +104,53 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 **Vilken typ av identiteter kan jag aktivera i [!DNL LinkedIn]?**
 
 [!DNL LinkedIn Matched Audiences] har stöd för aktivering av följande identiteter: hash-kodade e-postmeddelanden, [!DNL GAID]och [!DNL IDFA].
+
+## Personalisering på samma sida och nästa sida via Adobe Target och anpassade anpassningsmål {#same-next-page-personalization}
+
+**Måste jag använda Experience Platform Web SDK för att skicka målgrupper och attribut till Adobe Target?**
+
+Nej, [Web SDK](../edge/home.md) behöver inte aktivera målgrupper till [Adobe Target](catalog/personalization/adobe-target-connection.md).
+
+Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=en) används i stället för Web SDK, men endast nästa sessionspersonalisering stöds.
+
+För [personalisering på samma sida och nästa sida](ui/activate-edge-personalization-destinations.md) användningsfall måste du använda antingen [Web SDK](../edge/home.md) eller [API för Edge Network Server](../server-api/overview.md). Läs dokumentationen om [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md) om du vill ha mer information om implementeringen.
+
+**Finns det någon gräns för hur många attribut jag kan skicka från Real-time Customer Data Platform till Adobe Target eller ett anpassat anpassningsmål?**
+
+Ja, personalisering på samma sida och nästa sida stöder maximalt 30 attribut per sandlåda när målgrupper aktiveras till Adobe Target eller anpassade personaliseringsmål. Läs mer om aktiveringsskydd i [dokumentation för skyddsutkast](guardrails.md#edge-destinations-activation).
+
+**Vilka typer av attribut stöds för aktivering (t.ex. arrayer, kartor etc.)?**
+
+För närvarande stöds endast bladnivåattribut för aktivering.
+
+<!-- **Is there a limit on the number of audiences that can be activated to Adobe Target and Custom Personalization destinations?**
+
+Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more information on activation guardrails, see the [default guardrails for activation](guardrails.md#edge-destinations-activation). -->
+
+**När jag har skapat en målgrupp i Experience Platform, hur lång tid tar det för den målgruppen att bli tillgänglig för kantsegmentering?**
+
+Målgruppsdefinitioner sprids till [Edge Network](../edge/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som skulle ha kvalificerat sig för målgruppen missas.
+
+**Var kan jag se de aktiverade attributen i Adobe Target?**
+
+Attribut kommer att vara tillgängliga för användning i Target i [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=en) erbjudanden.
+
+**Kan jag skapa ett mål utan ett datastream och sedan lägga till ett datastream till samma mål vid en senare tidpunkt?**
+
+Detta stöds för närvarande inte via målgränssnittet. Om du behöver hjälp kan du kontakta din Adobe-representant.
+
+**Vad händer om jag tar bort ett Adobe Target-mål?**
+
+När du tar bort ett mål tas alla målgrupper och attribut som är mappade under målet bort från Adobe Target och de tas även bort från Edge Network.
+
+**Fungerar integreringen med Edge Network Server API?**
+
+Ja, API:t för Edge Network Server fungerar med målet för anpassad anpassning. Eftersom profilattribut kan innehålla känsliga data, kräver Custom Personalization-målet att du använder Edge Network Server API för datainsamling för att skydda dessa data. Dessutom måste alla API-anrop göras i en [autentiserad kontext](../server-api/authentication.md).
+
+**Jag kan bara ha en kopplingsregel som är aktiv i farten. Kan jag bygga målgrupper som använder en annan sammanslagningspolicy och ändå skicka dem till Adobe Target som strömningssegment?**
+
+Nej. Alla målgrupper som du vill aktivera för Adobe Target måste använda en [sammanfogningsprincip](../profile/merge-policies/ui-guide.md).
+
+**Tillämpas etiketter och tvångsåtgärder (DULE) och godkännandeprinciper för dataanvändning?**
+
+Ja. The [Datastyrnings- och godkännandeprinciper](../data-governance/home.md) som har skapats och associerats med de valda marknadsföringsåtgärderna styr aktiveringen av de valda attributen.
