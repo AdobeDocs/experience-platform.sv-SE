@@ -3,9 +3,9 @@ keywords: Amazon S3;S3-mål;s3;amazon s3
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: a07557ec398631ece0c8af6ec7b32e0e8593e24b
+source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '937'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
 * **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Amazon S3 beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Amazon S3 beta]** mål.
-
+* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat. Det här alternativet är bara tillgängligt för **[!UICONTROL Amazon S3 beta]** mål.
 
 >[!TIP]
 >

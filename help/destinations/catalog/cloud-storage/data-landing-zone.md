@@ -2,9 +2,9 @@
 title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera segment och exportera datauppsättningar.
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 6fbf1b87becebee76f583c6e44b1c42956e561ab
+source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1162'
 ht-degree: 0%
 
 ---
@@ -137,6 +137,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
 * **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna.
+* 
+   * **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat.
 
 ### Aktivera aviseringar {#enable-alerts}
 
