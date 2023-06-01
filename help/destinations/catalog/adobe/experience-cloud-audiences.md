@@ -3,9 +3,9 @@ title: (Beta) Experience Cloud Publiker
 description: Lär dig hur du delar segment från Experience Platform till olika Experience Platform-lösningar.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 017c8bbc19845c0f60040ba2995b5dd2b0299a8b
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '1543'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,14 @@ Observera följande kända begränsningar och viktiga hänvisningar i betaversio
 * När du ansluter till målet kan du se ett alternativ för att [aktivera dataflödesaviseringar](#enable-alerts). Visas i användargränssnittet, men **alternativet aktivera aviseringar stöds inte** i betaversionen.
 * **Backfills stöds inte**. Den första exporten till Audience Manager eller andra lösningar från Experience Cloud omfattar inte en historisk population av segmenten.
 * I betaversionen kan du skapa **en enda målanslutning till målgruppen Experience Cloud**, i alla sandlådor som tillhör din Experience Platform-organisation.
-* Det finns en **fyra timmars fördröjning** mellan den tidpunkt då data aktiveras i Experience Platform och den tidpunkt då data är klara att användas i Audience Manager och andra Experience Cloud-lösningar.
+
+### Latens vid aktivering av målgrupper {#audience-activation-latency}
+
+Det finns fyra timmars fördröjning mellan den tidpunkt då målgrupperna först aktiveras i Experience Platform och den tidpunkt då de är klara att användas i Audience Manager och andra Experience Cloud-lösningar för vissa användningsfall.
+
+Det kan ta upp till 24 timmar för målgrupper att vara fullt tillgängliga i Audience Manager för alla användningsfall och upp till 48 timmar för målgrupper från Experience Cloud att visas i Audience Manager-rapporter.
+
+Metadata, till exempel segmentnamn, är tillgängliga i Audience Manager inom några minuter efter att du har konfigurerat exporten till målgruppen Experience Cloud.
 
 ## Identiteter som stöds {#supported-identities}
 
