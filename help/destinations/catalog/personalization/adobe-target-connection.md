@@ -3,7 +3,7 @@ keywords: målinriktad personalisering, destination, mål för upplevelseplattfo
 title: Adobe Target-anslutning
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: bee1bf0ec9cbf35ea7303921059068c01cb9f54a
+source-git-commit: 6ac48762dc9ea1cb77b04651275a3846411449ea
 workflow-type: tm+mt
 source-wordcount: '893'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| April 2023 | Funktioner och dokumentationsuppdatering | Från och med april 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
+| Maj 2023 | Funktioner och dokumentationsuppdatering | Från om med maj 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
 
 {style="table-layout:auto"}
 
