@@ -1,11 +1,10 @@
 ---
-keywords: SFTP;sftp
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 47e0dfb59edca58e205cb478e9ee624659753ab9
+source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '851'
 ht-degree: 0%
 
 ---
@@ -106,8 +105,7 @@ När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du fö
 * **[!UICONTROL Folder path]**: Ange sökvägen till mappen på SFTP-platsen dit filerna ska exporteras.
 * **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål.
-* 
-   * **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål.
+* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål.
 
 ## Aktivera segment till den här destinationen {#activate}
 

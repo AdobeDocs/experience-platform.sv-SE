@@ -1,11 +1,10 @@
 ---
-keywords: Azure Blob;Blob destination;s3;azure blob destination
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 55f72e4f229e18648e0e745a2a60e9add50455b0
+source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '898'
 ht-degree: 0%
 
 ---
@@ -95,8 +94,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Container]**: ange namnet på [!DNL Azure Blob Storage] behållare som ska användas av det här målet.
 * **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Azure Blob beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Azure Blob beta]** mål.
-* 
-   * **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat. Det här alternativet är bara tillgängligt för **[!UICONTROL Azure Blob beta]** mål.
+* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat. Det här alternativet är bara tillgängligt för **[!UICONTROL Azure Blob beta]** mål.
 
 ### Aktivera aviseringar {#enable-alerts}
 
