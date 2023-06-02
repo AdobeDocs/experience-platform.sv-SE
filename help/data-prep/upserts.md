@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till profiltjänsten med dataprep
 description: Det här dokumentet innehåller information om hur du skickar uppdateringar (del av rad) till profiltjänsten med hjälp av Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: d167975c9c7a267f2888153a05c5857748367822
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1177'
 ht-degree: 0%
 
 ---
@@ -37,20 +37,20 @@ Den här översikten kräver en fungerande förståelse av följande komponenter
 
 Direktuppspelande överföringar i [!DNL Data Prep] fungerar på följande sätt:
 
-* Du måste först skapa och aktivera en datauppsättning för [!DNL Profile] förbrukning. Se guiden [aktivera en datauppsättning för [!DNL Profile]](../catalog/datasets/enable-for-profile.md) för mer information,
-* Om nya identiteter måste länkas måste du också skapa ytterligare en datauppsättning **med samma schema** som [!DNL Profile] datauppsättning,
+* Du måste först skapa och aktivera en datauppsättning för [!DNL Profile] förbrukning. Se guiden [aktivera en datauppsättning för [!DNL Profile]](../catalog/datasets/enable-for-profile.md) för mer information.
+* Om nya identiteter måste länkas måste du också skapa ytterligare en datauppsättning **med samma schema** som [!DNL Profile] datauppsättning.
 * När datauppsättningarna har förberetts måste du skapa ett dataflöde som mappar din inkommande begäran till [!DNL Profile] datauppsättning,
 * Därefter måste du uppdatera den inkommande begäran så att de nödvändiga rubrikerna inkluderas. Dessa rubriker definierar:
-   * Den dataåtgärd som krävs för att utföras med [!DNL Profile]: `create`, `merge`och `delete`;
+   * Den dataåtgärd som krävs för att utföras med [!DNL Profile]: `create`, `merge`och `delete`.
    * Den valfria identitetsåtgärden som ska utföras med [!DNL Identity Service]: `create`.
 
 ### Konfigurera identitetsdatauppsättningen
 
 Om nya identiteter måste länkas måste du skapa och skicka ytterligare en datauppsättning i den inkommande nyttolasten. När du skapar en identitetsdatauppsättning måste du se till att följande krav uppfylls:
 
-* Identitetsdatauppsättningen måste ha sitt associerade schema som [!DNL Profile] datauppsättning. Om scheman inte överensstämmer kan det leda till inkonsekvent systembeteende.
-* Du måste dock se till att identitetsdatauppsättningen skiljer sig från [!DNL Profile] datauppsättning. Om datauppsättningarna är desamma skrivs data över i stället för uppdaterade.
-* När den första datauppsättningen måste aktiveras för [!DNL Profile], identitetsdatauppsättningen **bör inte** aktiveras för [!DNL Profile]. Annars skrivs data också över i stället för att uppdateras.
+* Identitetsdatauppsättningen måste ha sitt associerade schema som [!DNL Profile] datauppsättning. Om scheman inte matchar kan det leda till inkonsekvent systembeteende.
+* Du måste dock se till att identitetsdatauppsättningen skiljer sig från [!DNL Profile] datauppsättning. Om datauppsättningarna är desamma skrivs data över i stället för att uppdateras.
+* När den första datauppsättningen måste aktiveras för [!DNL Profile], identitetsdatauppsättningen **ska inte aktiveras** for [!DNL Profile]. Annars skrivs data också över i stället för att uppdateras. Identitetsdatauppsättningen **ska vara aktiverat** for [!DNL Identity Service].
 
 #### Obligatoriska fält i scheman som är associerade med identitetsdatauppsättningen {#identity-dataset-required-fileds}
 
@@ -64,9 +64,17 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
   -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-    "tags":{
-        "acp_validationContext": ["disabled"]
-        }
+    "tags": {
+        "acp_validationContext": [
+            "disabled"
+        ],
+        "unifiedProfile": [
+            "enabled:false"
+        ],
+        "unifiedIdentity": [
+            "enabled:true"
+        ]
+    }
 }'
 ```
 
