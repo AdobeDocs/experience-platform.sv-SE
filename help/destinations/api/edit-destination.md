@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
-source-git-commit: 956ac5d210d54526e886e57b8ea37ab4b3fbab8a
+source-git-commit: 2afe330176c2b7734c38cf47be79960175060824
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1572'
 ht-degree: 0%
 
 ---
@@ -329,11 +329,11 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du ka
 
 ## Redigera grundläggande anslutningskomponenter (autentiseringsparametrar och andra komponenter) {#patch-base-connection}
 
-Komponenterna i en basanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] mål kan du uppdatera åtkomstnyckeln och den hemliga nyckeln till [!DNL Amazon S3] plats.
+Redigera basanslutningen när du vill uppdatera autentiseringsuppgifterna för ett mål. Komponenterna i en basanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] mål kan du uppdatera åtkomstnyckeln och den hemliga nyckeln till [!DNL Amazon S3] plats.
 
 Om du vill uppdatera komponenterna för en basanslutning utför du en PATCH-förfrågan till `/connections` slutpunkt när du anger ditt grundläggande anslutnings-ID, version och de nya värden som du vill använda.
 
-Kom ihåg att du fick ditt grundläggande anslutnings-ID i ett tidigare steg när du inspekterade ett befintligt dataflöde till önskat mål.
+Kom ihåg att du fick ditt grundläggande anslutnings-ID i en [föregående steg](#look-up-dataflow-details)när du inspekterade ett befintligt dataflöde till det önskade målet för parametern `baseConnection`.
 
 >[!IMPORTANT]
 >
