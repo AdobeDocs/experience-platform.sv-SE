@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
+source-git-commit: 1690a73cf709594b82469e95aba64231cf216d96
 workflow-type: tm+mt
-source-wordcount: '1326'
+source-wordcount: '1405'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,15 @@ ht-degree: 0%
 
 Den här användarhandboken innehåller steg för att arbeta med dataanvändningsetiketter i [!DNL Experience Platform] användargränssnitt.
 
+## Hantera etiketter {#manage-labels}
+
+Om du vill använda etiketter på dina data måste du ha **[!UICONTROL Manage Usage Labels]** behörighet för användning i produktionssandlådan. Om du vill skapa en anpassad etikett måste du även ha administratörsbehörighet för produktprofilen. Varje organisation har bara en lista över tillämpliga etiketter, och för närvarande stöds inte borttagning av etiketter.
+
+Se guiden om hur man [konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) eller [åtkomstkontroll - översikt](../../access-control/home.md) om du vill ha mer information om hur du tilldelar en behörighet. Kontakta din organisations administratör om du inte har tillgång till Admin Console för din organisation.
+
 ## Hantera etiketter på schemanivå
+
+Du kan lägga till etiketter direkt i ett eller flera scheman inom det schemat. Alla fält som används på schemanivå sprids till alla datauppsättningar som baseras på det schemat.
 
 För att kunna hantera dataanvändningsetiketter på schemanivå måste du välja ett befintligt schema eller skapa ett nytt. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Schemas]** till vänster för att öppna **[!UICONTROL Schemas]** arbetsyta. På den här sidan visas alla scheman som du har skapat och användbar information om varje schema.
 
@@ -32,7 +40,7 @@ I nästa avsnitt beskrivs hur du skapar ett nytt schema som du kan använda etik
 
 Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av **[!UICONTROL Schemas]** arbetsyta. Se guiden [hur du skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create) för fullständiga instruktioner. Du kan också [skapa ett schema med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) vid behov.
 
-### Lägg till etiketter för dataanvändning i schemat {#add-labels-to-schema}
+### Lägga till dataanvändningsetiketter i ett schema {#add-labels-to-schema}
 
 När du har skapat ett nytt schema eller valt ett befintligt schema i listan i [!UICONTROL Browse] -fliken i [!UICONTROL Schemas] på arbetsytan väljer du ett fält från schemat i Schemaredigeraren. I [!UICONTROL Field properties] sidlist, välj **[!UICONTROL Apply Access and Data Governance Labels]**.
 
@@ -98,12 +106,6 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 >Etiketter som tillämpades innan funktionen för datauppsättningsetiketter var föråldrad kan tas bort från datauppsättningen genom att hitta den relevanta datauppsättningen och välja ikonen för att avbryta på etiketten.
 >![Fliken Datastyrning på arbetsytan Datauppsättningar med en borttagbar etikett markerad.](../images/labels/remove-governance-labels.png)
 >I dokumentationen finns instruktioner om [hur du migrerar tidigare använda etiketter från datauppsättningen till schemanivån](../e2e.md#migrate-labels).
-
-## Hantera etiketter på schemanivå
-
-Du kan lägga till etiketter direkt i ett eller flera scheman inom det schemat. Alla fält som används på schemanivå sprids till alla datauppsättningar som baseras på det schemat.
-
-Se självstudiekursen om [hantera etiketter på schemanivå](../../xdm/tutorials/labels.md) för mer information.
 
 ## Hantera anpassade etiketter {#manage-custom-labels}
 
