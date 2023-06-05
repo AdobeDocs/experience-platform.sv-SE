@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera etiketter
 description: Det här dokumentet innehåller information om hur du hanterar etiketter via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
-source-git-commit: 38447348bc96b2f3f330ca363369eb423efea1c8
+source-git-commit: 4069924b4c4000192dff1f89e5cf9a9412bcd95c
 workflow-type: tm+mt
-source-wordcount: '165'
+source-wordcount: '179'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Med etiketter kan du kategorisera datauppsättningar och fält utifrån de anvä
 
 >[!NOTE]
 >
->Du måste ha administratörsbehörighet för att skapa en anpassad etikett. Det går för närvarande inte att ta bort etiketter.
+>Det finns en enda lista med etiketter för en hel organisation. Om du vill skapa en egen etikett måste du **[!UICONTROL Manage Usage Labels]** behörigheter i produktionssandlådan. Etikettborttagning stöds för närvarande inte.
 
 Om du vill skapa en ny etikett väljer du **[!UICONTROL Labels]** i sidlisten och välj **[!UICONTROL Create Label]**.
 
