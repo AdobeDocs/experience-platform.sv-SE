@@ -3,10 +3,10 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: 60bab17d2ecb2e68bf500aea2d68587a125b35bb
 workflow-type: tm+mt
-source-wordcount: '491'
-ht-degree: 2%
+source-wordcount: '520'
+ht-degree: 1%
 
 ---
 
@@ -31,7 +31,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
-| Antal identiteter i ett diagram | 150 | Gränsen tillämpas på sandlådenivå. Identitetsdiagrammet uppdateras inte när gränsen har nåtts. **Anteckning**: Det maximala antalet identiteter i ett identitetsdiagram **för en enskild sammanfogad profil** är 50. Sammanfogade profiler som baseras på identitetsdiagram med fler än 50 identiteter ingår inte i kundprofilen i realtid. Mer information finns i guiden [skyddsutkast för profildata](../profile/guardrails.md). |
+| Antal identiteter i ett diagram | 150 | Gränsen tillämpas på sandlådenivå. När antalet identiteter har nått 150 eller fler, läggs inga nya identiteter till och identitetsdiagrammet uppdateras inte. Diagram kan visa identiteter som är större än 150 som ett resultat av länkning av ett eller flera diagram med mindre än 150 identiteter. **Anteckning**: Det maximala antalet identiteter i ett identitetsdiagram **för en enskild sammanfogad profil** är 50. Sammanfogade profiler som baseras på identitetsdiagram med fler än 50 identiteter ingår inte i kundprofilen i realtid. Mer information finns i guiden [skyddsutkast för profildata](../profile/guardrails.md). |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
 | Antal diagram | Ingen | Det finns inga gränser för hur många identitetsdiagram du kan skapa. |
