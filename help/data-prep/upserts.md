@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;strömning;upsert;strömning upsert
-title: Skicka uppdateringar av delar av rader till profiltjänsten med dataprep
-description: Det här dokumentet innehåller information om hur du skickar uppdateringar (del av rad) till profiltjänsten med hjälp av Data Prep.
+title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
+description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: d167975c9c7a267f2888153a05c5857748367822
+source-git-commit: 15aa27e19f287a39242860b91eedae87aace3d27
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1175'
 ht-degree: 0%
 
 ---
 
-# Skicka uppdateringar av delar av rader till [!DNL Profile Service] använda [!DNL Data Prep]
+# Skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] använda [!DNL Data Prep]
 
-Direktuppspelande överföringar i [!DNL Data Prep] kan du skicka uppdateringar av delar av rader till [!DNL Profile Service] data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran.
+Direktuppspelande överföringar i [!DNL Data Prep] kan du skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran.
 
-Genom att direktuppspela uppladdningar kan du behålla dataformatet samtidigt som du översätter dessa data till [!DNL Profile Service] PATCH begär vid förtäring. Baserat på de indata du anger, [!DNL Data Prep] gör att du kan skicka en enda API-nyttolast och översätta data till båda [!DNL Profile Service] PATCH och [!DNL Identity Service] SKAPA förfrågningar.
+Genom att direktuppspela uppladdningar kan du behålla dataformatet samtidigt som du översätter dessa data till [!DNL Real-Time Customer Profile] PATCH begär vid förtäring. Baserat på de indata du anger, [!DNL Data Prep] gör att du kan skicka en enda API-nyttolast och översätta data till båda [!DNL Real-Time Customer Profile] PATCH och [!DNL Identity Service] SKAPA förfrågningar.
 
 Det här dokumentet innehåller information om hur du direktuppspelar överföringar i [!DNL Data Prep].
 
@@ -110,19 +110,19 @@ I följande exempel visas ett exempel på en inkommande nyttolaststruktur som sk
 | `imsOrgId` | Det ID som motsvarar din organisation. |
 | `datasetId` | ID för [!DNL Profile]-aktiverade måldatauppsättningar för ditt dataflöde. **Anteckning**: Detta är samma ID som [!DNL Profile]-aktiverat måldatauppsättnings-ID hittades i ditt dataflöde. |
 | `operations` | Den här parametern visar de åtgärder som [!DNL Data Prep] baseras på den inkommande begäran. |
-| `operations.data` | Definierar de åtgärder som måste utföras i [!DNL Profile Service]. |
+| `operations.data` | Definierar de åtgärder som måste utföras i [!DNL Real-Time Customer Profile]. |
 | `operations.identity` | Definierar de åtgärder som tillåts på data av [!DNL Identity Service]. |
 | `operations.identityDatasetId` | (Valfritt) ID:t för identitetsdatauppsättningen som krävs bara om nya identiteter måste länkas. |
 
 #### Åtgärder som stöds
 
-Följande åtgärder stöds av [!DNL Profile Service]:
+Följande åtgärder stöds av [!DNL Real-Time Customer Profile]:
 
 | Användning | Beskrivning |
 | --- | --- | 
-| `create` | Standardåtgärden. Detta genererar en XDM-metod för att skapa en enhet för [!DNL Profile Service]. |
-| `merge` | Detta genererar en XDM-entitetsuppdateringsmetod för [!DNL Profile Service]. |
-| `delete` | Detta genererar en XDM-metod för entitetsborttagning för [!DNL Profile Service] och permanent tar bort data från [!DNL Profile Store]. |
+| `create` | Standardåtgärden. Detta genererar en XDM-metod för att skapa en enhet för [!DNL Real-Time Customer Profile]. |
+| `merge` | Detta genererar en XDM-entitetsuppdateringsmetod för [!DNL Real-Time Customer Profile]. |
+| `delete` | Detta genererar en XDM-metod för entitetsborttagning för [!DNL Real-Time Customer Profile] och permanent tar bort data från [!DNL Profile Store]. |
 
 Följande åtgärder stöds av [!DNL Identity Service]:
 
@@ -132,7 +132,7 @@ Följande åtgärder stöds av [!DNL Identity Service]:
 
 ### Nyttolast utan identitetskonfiguration
 
-Om nya identiteter inte behöver länkas kan du utelämna `identity` och `identityDatasetId` parametrar i operationerna. Om du gör det skickas endast data till [!DNL Profile Service] och hoppar över [!DNL Identity Service]. Se nyttolasten nedan för ett exempel:
+Om nya identiteter inte behöver länkas kan du utelämna `identity` och `identityDatasetId` parametrar i operationerna. Om du gör det skickas endast data till [!DNL Real-Time Customer Profile] och hoppar över [!DNL Identity Service]. Se nyttolasten nedan för ett exempel:
 
 ```shell
 {
@@ -157,7 +157,7 @@ För XDM-uppdateringar måste schemat aktiveras för [!DNL Profile] och innehål
 
 ### Ange ett statiskt fält som primärt identitetsfält i XDM-schemat
 
-I exemplet nedan `state`, `homePhone.number` och andra attribut ersätts med sina respektive givna värden i [!DNL Profile] med den primära identiteten för `sampleEmail@gmail.com`. Ett uppdateringsmeddelande för en XDM-enhet genereras sedan av direktuppspelningen [!DNL Data Prep] -komponenten. [!DNL Profile Service] bekräftar sedan att XDM-uppdateringsmeddelandet ska infoga profilposten.
+I exemplet nedan `state`, `homePhone.number` och andra attribut ersätts med sina respektive givna värden i [!DNL Profile] med den primära identiteten för `sampleEmail@gmail.com`. Ett uppdateringsmeddelande för en XDM-enhet genereras sedan av direktuppspelningen [!DNL Data Prep] -komponenten. [!DNL Real-Time Customer Profile] bekräftar sedan att XDM-uppdateringsmeddelandet ska infoga profilposten.
 
 >[!NOTE]
 >
@@ -206,7 +206,7 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 ### Ange ett av identitetsfälten som primär identitet via fältgruppen för identitetsmappning i XDM-schemat
 
-I det här exemplet innehåller rubriken `operations` attributet med `identity` och `identityDatasetId` egenskaper. Detta gör att data kan sammanfogas med [!DNL Profile Service] och även för identiteter som ska skickas till [!DNL Identity Service].
+I det här exemplet innehåller rubriken `operations` attributet med `identity` och `identityDatasetId` egenskaper. Detta gör att data kan sammanfogas med [!DNL Real-Time Customer Profile] och även för identiteter som ska skickas till [!DNL Identity Service].
 
 ```shell
 curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec3583275ffce4880ffc482be5a9d810c4b' \
@@ -255,10 +255,10 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
 
 Följande visar en lista med kända begränsningar att tänka på vid direktuppspelning med [!DNL Data Prep]:
 
-* Metoden för direktuppspelning av överföringar bör endast användas när partiella raduppdateringar skickas till [!DNL Profile Service]. Uppdateringar av delar av rader är **not** som konsumeras av en datasjö.
+* Metoden för direktuppspelning av överföringar bör endast användas när partiella raduppdateringar skickas till [!DNL Real-Time Customer Profile]. Uppdateringar av delar av rader är **not** som konsumeras av en datasjö.
 * Metoden för att skicka direktuppspelning stöder inte uppdatering, ersättning och borttagning av identiteter. Nya identiteter skapas om de inte finns. Därför är `identity` måste alltid anges för att skapa. Om en identitet redan finns är åtgärden no-op.
 * Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) och [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till [!DNL Profile Service] data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep] funktioner, läs [[!DNL Data Prep] översikt](./home.md). Så här använder du mappningsuppsättningar i [!DNL Data Prep] API, läs [[!DNL Data Prep] utvecklarhandbok](./api/overview.md).
+Genom att läsa det här dokumentet bör du nu förstå hur du direktuppspelar överföringar i [!DNL Data Prep] för att skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] data, samtidigt som du skapar och länkar identiteter med en enda API-begäran. Mer information om andra [!DNL Data Prep] funktioner, läs [[!DNL Data Prep] översikt](./home.md). Så här använder du mappningsuppsättningar i [!DNL Data Prep] API, läs [[!DNL Data Prep] utvecklarhandbok](./api/overview.md).
