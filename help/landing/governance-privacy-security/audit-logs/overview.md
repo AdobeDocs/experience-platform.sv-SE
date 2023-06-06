@@ -2,9 +2,9 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: 7bb81a103c6b2a7d0baec22c927f575764bc3730
 workflow-type: tm+mt
-source-wordcount: '1135'
+source-wordcount: '1264'
 ht-degree: 3%
 
 ---
@@ -79,13 +79,13 @@ För att kunna visa och exportera granskningsloggar måste du ha **[!UICONTROL V
 
 Du kan visa granskningsloggar för olika Experience Platform-funktioner i **[!UICONTROL Audits]** i plattformsgränssnittet. På arbetsytan visas en lista med inspelade loggar. Som standard sorteras de från senaste till senaste.
 
-![Kontrollpanel för granskningsloggar](../../images/audit-logs/audits.png)
+![Kontrollpanelen Granskningar markerar Granskningar på den vänstra menyn.](../../images/audit-logs/audits.png)
 
 Granskningsloggarna sparas i 365 dagar efter vilka de kommer att tas bort från systemet. Därför kan du bara gå tillbaka under en period på högst 365 dagar. Om du behöver data som är längre än 365 dagar bör du exportera loggar med en regelbunden mellanrum för att uppfylla dina interna policykrav.
 
 Välj en händelse i listan om du vill visa information om händelsen i den högra listen.
 
-![Händelseinformation](../../images/audit-logs/select-event.png)
+![Granskar fliken Aktivitetslogg på kontrollpanelen med panelen med händelseinformation markerad.](../../images/audit-logs/select-event.png)
 
 ### Filtrera granskningsloggar
 
@@ -95,31 +95,43 @@ Eftersom det här är en ny funktion går de data som visas endast tillbaka till
 
 Markera trattecknet (![Filterikon](../../images/audit-logs/icon.png)) för att visa en lista med filterkontroller för att begränsa resultatet. Endast de 1000 sista posterna visas oavsett vilket filter du har valt.
 
-![Filter](../../images/audit-logs/filters.png)
+![Kontrollpanelen Granskningar med den filtrerade aktivitetsloggen markerad.](../../images/audit-logs/filters.png)
 
 Följande filter är tillgängliga för granskningshändelser i användargränssnittet:
 
 | Filter | Beskrivning |
 | --- | --- |
 | [!UICONTROL Category] | Använd listrutan för att filtrera de resultat som visas med [kategori](#category). |
-| [!UICONTROL Action] | Filtrera efter åtgärd. Endast för närvarande [!UICONTROL Create] och [!UICONTROL Delete] kan filtreras. |
+| [!UICONTROL Action] | Filtrera efter åtgärd. De åtgärder som är tillgängliga för respektive tjänst visas i resurstabellen ovan. |
 | [!UICONTROL User] | Ange hela användar-ID:t (till exempel `johndoe@acme.com`) för att filtrera efter användare. |
 | [!UICONTROL Status] | Filtrera efter om åtgärden tilläts (slutförd) eller nekades på grund av brist på [åtkomstkontroll](../../../access-control/home.md) behörigheter. |
 | [!UICONTROL Date] | Välj ett startdatum och/eller ett slutdatum för att definiera ett datumintervall som resultaten ska filtreras efter. Data kan exporteras med en 90-dagars uppslagsperiod (till exempel 2021-12-15 till 2022-03-15). Detta kan skilja sig åt beroende på händelsetyp. |
 
 Om du vill ta bort ett filter väljer du &quot;X&quot; på ikonen för pilen för filtret i fråga eller väljer **[!UICONTROL Clear all]** om du vill ta bort alla filter.
 
-![Rensa filter](../../images/audit-logs/clear-filters.png)
+![Kontrollpanelen Granskningar med ett tydligt filter markerat.](../../images/audit-logs/clear-filters.png)
+
+Returnerade granskningsloggdata innehåller följande information om alla frågor som uppfyller de valda filtervillkoren.
+
+| Kolumnnamn | Beskrivning |
+|---|---|
+| [!UICONTROL Timestamp] | Exakt datum och tid för åtgärden som utfördes i en `month/day/year hour:minute AM/PM` format. |
+| [!UICONTROL Asset Name] | Värdet för [!UICONTROL Asset Name] fältet beror på vilken kategori som valts som filter. |
+| [!UICONTROL Category] | Det här fältet matchar den kategori som har valts i listrutan för filter. |
+| [!UICONTROL Action] | Vilka åtgärder som är tillgängliga beror på vilken kategori som valts som filter. |
+| [!UICONTROL User] | Det här fältet innehåller användar-ID:t som körde frågan. |
+
+![Kontrollpanelen Granskningar med den filtrerade aktivitetsloggen markerad.](../../images/audit-logs/filtered.png)
 
 ### Exportera granskningsloggar
 
 Om du vill exportera den aktuella listan med granskningsloggar väljer du **[!UICONTROL Download log]**.
 
-![Hämtningslogg](../../images/audit-logs/download.png)
+![Kontrollpanelen Granskningar med [!UICONTROL Download log] markerad.](../../images/audit-logs/download.png)
 
 Välj önskat format i dialogrutan som visas (antingen **[!UICONTROL CSV]** eller **[!UICONTROL JSON]**) och sedan väljer **[!UICONTROL Download]**. Webbläsaren hämtar den genererade filen och sparar den på datorn.
 
-![Välj hämtningsformat](../../images/audit-logs/select-download-format.png)
+![Dialogrutan för val av filformat med [!UICONTROL Download] markerad.](../../images/audit-logs/select-download-format.png)
 
 ## Hantera granskningsloggar i API
 
