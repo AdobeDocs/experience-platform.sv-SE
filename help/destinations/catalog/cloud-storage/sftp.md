@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 5af201858e00f5ccdee4d68f04d37bc5f69caf9c
 workflow-type: tm+mt
-source-wordcount: '851'
+source-wordcount: '930'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >Med betaversionen av exportdataset och de förbättrade funktionerna för filexport kan du nu se två [!DNL SFTP] i målkatalogen.
 >* Om du redan exporterar filer till **[!UICONTROL SFTP]** mål: Skapa nya dataflöden för nya **[!UICONTROL SFTP beta]** mål.
->* Om du ännu inte har skapat några dataflöden till **[!UICONTROL SFTP]** mål, använd den nya **[!UICONTROL SFTP beta]** exportera filer till **[!UICONTROL SFTP]**.
+>* Om du ännu inte har skapat några dataflöden till **[!UICONTROL SFTP]** mål, använd det nya **[!UICONTROL SFTP beta]** exportera filer till **[!UICONTROL SFTP]**.
 
 
 ![Bild av de två SFTP-målkorten i en sida vid sida-vy.](../../assets/catalog/cloud-storage/sftp/two-sftp-destination-cards.png)
@@ -36,6 +36,11 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 >[!IMPORTANT]
 >
 > Experience Platform stöder dataexport till SFTP-servrar, men de rekommenderade molnlagringsplatserna för dataexport är [!DNL Amazon S3] och [!DNL SFTP].
+
+## Anslut till SFTP via API eller gränssnitt {#connect-api-or-ui}
+
+* Läs avsnitten om hur du ansluter till din SFTP-lagringsplats med hjälp av användargränssnittet för plattformen [Anslut till målet](#connect) och [Aktivera segment till den här destinationen](#activate) nedan.
+* Om du vill ansluta till din SFTP-lagringsplats via programkod läser du [Aktivera segment för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -70,12 +75,13 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >title="Privat SSH-nyckel"
 >abstract="Den privata SSH-nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad."
 
-Om du väljer **[!UICONTROL Basic authentication]** skriv för att ansluta till din SFTP-plats:
+Om du väljer **[!UICONTROL SFTP with password]** autentiseringstyp för att ansluta till din SFTP-plats:
 
 ![Grundläggande autentisering för SFTP-mål](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
-* **[!UICONTROL Host]**: Adress till din SFTP-lagringsplats.
+* **[!UICONTROL Domain]**: Adress till din SFTP-lagringsplats.
 * **[!UICONTROL Username]**: Användarnamn för att logga in på din SFTP-lagringsplats.
+* **[!UICONTROL Port]**: Den port som används av SFTP-lagringsplatsen;
 * **[!UICONTROL Password]**: Lösenordet för att logga in på din SFTP-lagringsplats.
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
@@ -100,7 +106,7 @@ När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du fö
 
 ![Tillgänglig målinformation för SFTP-mål](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
-* **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera destinationen i användargränssnittet i Experience Platform.
+* **[!UICONTROL Name]**: Ange ett namn som gör det lättare att identifiera destinationen i användargränssnittet i Experience Platform.
 * **[!UICONTROL Description]**: Ange en beskrivning av destinationen.
 * **[!UICONTROL Folder path]**: Ange sökvägen till mappen på SFTP-platsen dit filerna ska exporteras.
 * **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL SFTP beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
@@ -117,12 +123,15 @@ Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activat
 
 ## (Beta) Exportera datauppsättningar {#export-datasets}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
 
 ## Exporterade data {#exported-data}
 
 För [!DNL SFTP] mål, Platform skapar en `.csv` filen på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i segmentaktiveringssjälvstudiekursen.
 
-## IP-adress tillåtelselista
+## IP-adress tillåtelselista {#ip-address-allow-list}
 
 Se [IP-adress tillåtelselista för SFTP-mål](ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i ett tillåtelselista.

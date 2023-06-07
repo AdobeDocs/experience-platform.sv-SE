@@ -2,9 +2,9 @@
 title: (Beta) Azure Data Lake Storage Gen2-anslutning
 description: Lär dig hur du ansluter till Azure Data Lake Storage Gen2 för att aktivera segment och exportera datauppsättningar.
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,11 @@ ht-degree: 0%
 ## Översikt {#overview}
 
 Läs den här sidan om du vill veta mer om hur du skapar en utgående liveanslutning till [[!DNL Azure Data Lake Storage Gen2]](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) ([!DNL ADLS Gen2]) Data Lake för att regelbundet exportera datafiler från Experience Platform.
+
+## Anslut till [!DNL ADLS Gen2] lagring via API eller användargränssnitt {#connect-api-or-ui}
+
+* Ansluta till [!DNL ADLS Gen2] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera segment till den här destinationen](#activate) nedan.
+* Ansluta till [!DNL ADLS Gen2] lagringsplats programmatiskt, läs [Aktivera segment för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -87,7 +92,10 @@ I **[!UICONTROL Mapping]** kan du välja vilka attribut- och identitetsfält som
 
 ## (Beta) Exportera datauppsättningar {#export-datasets}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
 
 ## Validera slutförd dataexport {#exported-data}
 

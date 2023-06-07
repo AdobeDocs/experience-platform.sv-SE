@@ -2,9 +2,9 @@
 title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera segment och exportera datauppsättningar.
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '1229'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,11 @@ ht-degree: 0%
 
 Plattformen har en strikt TTL-regel (time-to-live) på sju dagar för alla filer som överförs till en [!DNL Data Landing Zone] behållare. Alla filer tas bort efter sju dagar.
 
+## Anslut till [!UICONTROL Data Landing Zone] lagring via API eller användargränssnitt {#connect-api-or-ui}
+
+* Ansluta till [!UICONTROL Data Landing Zone] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera segment till den här destinationen](#activate) nedan.
+* Ansluta till [!UICONTROL Data Landing Zone] lagringsplats programmatiskt, läs [Aktivera segment för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
@@ -43,7 +48,7 @@ Observera följande krav som måste vara uppfyllda innan du kan använda [!DNL D
 
 ### Koppla samman [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer]
 
-Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone] behållare. Börja använda [!DNL Data Landing Zone], måste du först hämta dina inloggningsuppgifter och ange dem i [!DNL Azure Storage Explorer]och koppla samman [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer].
+Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone] behållare. Börja använda [!DNL Data Landing Zone], måste du först hämta dina inloggningsuppgifter och ange dem i [!DNL Azure Storage Explorer]och koppla samman [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer].
 
 I [!DNL Azure Storage Explorer] Välj anslutningsikonen i det vänstra navigeringsfältet. The **Välj resurs** visas så att du kan ansluta till dem. Välj **[!DNL Blob container]** för att ansluta till [!DNL Data Landing Zone] lagring.
 
@@ -83,7 +88,7 @@ curl -X GET \
 
 **Svar**
 
-Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusive din nuvarande `SASToken` och `SASUri`, samt `storageAccountName` som motsvarar behållaren för landningszonen.
+Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusive din nuvarande `SASToken` och `SASUri`och `storageAccountName` som motsvarar behållaren för landningszonen.
 
 ```json
 {
@@ -163,7 +168,10 @@ I **[!UICONTROL Mapping]** kan du välja vilka attribut- och identitetsfält som
 
 ## (Beta) Exportera datauppsättningar {#export-datasets}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
 
 ## Validera slutförd dataexport {#exported-data}
 

@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: d30cd0729aa13044d8e7009fde5cae846e7a2864
+source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '1001'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,11 @@ Förbättringar i nya [!DNL Amazon S3] omfattar följande destinationskort:
 ## Översikt {#overview}
 
 Skapa en utgående liveanslutning till din [!DNL Amazon S3] för att med jämna mellanrum exportera datafiler från Adobe Experience Platform till dina egna S3-butiker.
+
+## Anslut till [!DNL Amazon S3] lagring via API eller användargränssnitt {#connect-api-or-ui}
+
+* Ansluta till [!DNL Amazon S3] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera segment till den här destinationen](#activate) nedan.
+* Ansluta till [!DNL Amazon S3] lagringsplats programmatiskt, läs [Aktivera segment för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -132,7 +137,10 @@ Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activat
 
 ## (Beta) Exportera datauppsättningar {#export-datasets}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md).
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
 
 ## Exporterade data {#exported-data}
 
