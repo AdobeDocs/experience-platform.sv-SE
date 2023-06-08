@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 96434c83b3d8757872439b58b5c450955c0ed652
+source-git-commit: e5a1b57bc81b27d0e61c3c1ecc10156c10dd3f6e
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 
 Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper väljer du **[!UICONTROL Regulation Type]** och välj önskad regel i listan.
 
-![Regeltyp, listruta](../images/user-guide/regulation.png)
+![Privacy Service Console med listrutan Regeltyp.](../images/user-guide/regulation.png)
 
 När du ändrar regeltypen uppdateras instrumentpanelen så att alla åtgärder, filter, widgetar och dialogrutor för att skapa jobb som gäller för den valda förordningen visas.
 

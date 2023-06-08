@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: a1628df7d0eefc795d1eaeefce842a65c7133322
+source-git-commit: ed9ab1f2a4b4466841b3bedef48a6e0a07ec3d10
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1724'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,19 @@ Beroende på om du är en del av betatestningspolicyn för samtycke, händer nå
 
 * Om du inte är en del av betaversionen kommer du omedelbart till arbetsflödet för [skapa en datastyrningspolicy](#create-governance-policy).
 * Om du är en del av betaversionen visas en dialogruta med ett extra alternativ för att [skapa en medgivandeprincip](#consent-policy).
-   ![](../images/policies/choose-policy-type.png)
+  ![](../images/policies/choose-policy-type.png)
+
+### Använd datastyrning och godkännandeprinciper tillsammans {#combine-policies}
+
+>[!NOTE]
+>
+>Samtyckesregler är för närvarande endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Adobe Privacy &amp; Security Shield.
+
+Regler för styrning och samtycke kan användas tillsammans för att skapa robusta regler för styrning av målgrupper som mappas till en destination. Samtyckesregler är inkluderande till sin natur, vilket innebär att de avgör vilka profiler som kan inkluderas i varje marknadsföringsupplevelse. På samma sätt utesluter styrningsprinciper användning av specifika märkta attribut från konfigurering för aktivering.
+
+Genom att använda det här beteendet kan du skapa en kombination av profiler och regler för samtycke som innehåller rätt profiler, men förhindrar att du tar med data som strider mot de angivna organisationsreglerna. Ett exempel är när man vill utesluta känsliga data från att inkluderas, men ändå kan rikta sig till godkända användare för marknadsföring via sociala medier. Nödvändiga steg för detta scenario beskrivs i informationsbilden nedan.
+
+![En infografisk beskrivning av stegen för att använda styrnings- och godkännandepolicyer tillsammans för att skapa robusta regler för att styra målgrupper.](../images/policies/governance-and-consent-policies-infographic.png)
 
 ### Skapa en datastyrningspolicy {#create-governance-policy}
 
