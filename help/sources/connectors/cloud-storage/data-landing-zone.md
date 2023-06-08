@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Källa för datallandningszon
 description: Lär dig hur du ansluter Data Landing Zone till Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
+source-git-commit: c2cc734d4a5c86fecbd0dabdfe63c896f0fe0f54
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '869'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Nedan följer en lista över begränsningar som du måste ta hänsyn till när d
 - Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000`, som är giltigt i NTFS-filnamn, är inte giltiga Unicode-tecken. Dessutom kan vissa ASCII- eller Unicode-tecken, som kontrolltecken (som `0x00` till `0x1F`, `\u0081`och så vidare) tillåts inte heller. Information om regler för Unicode-strängar i HTTP/1.1 finns i [RFC 2616, avsnitt 2.2: Grundregler](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
 - Följande filnamn är inte tillåtna: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (.).
 
-## Hantera innehållet i [!DNL Data Landing Zone]
+## Hantera innehållet i din Data Landing Zone{#manage-the-contents-of-your-data-landing-zone}
 
 Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/features/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone] behållare.
 
@@ -162,3 +162,8 @@ Dokumentationen nedan innehåller information om hur du hämtar data från [!DNL
 
 - [Anslut [!DNL Data Landing Zone] till plattform med användargränssnittet](../../tutorials/ui/create/cloud-storage/data-landing-zone.md)
 - [Skapa ett dataflöde för en molnlagringsanslutning i användargränssnittet](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+
+>[!IMPORTANT]
+>
+>Privata länkar stöds för närvarande inte vid anslutning till Experience Platform med [!DNL Data Landing Zone]. De enda metoder som stöds för åtkomst är de metoder som anges [här](#manage-the-contents-of-your-data-landing-zone).
+
