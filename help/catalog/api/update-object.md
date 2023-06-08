@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Uppdatera ett katalogobjekt
 description: Du kan uppdatera en del av ett Catalog-objekt genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller information om hur du använder fält och JSON Patch-notation för att utföra PATCH-åtgärder på katalogobjekt.
 exl-id: 315de212-bf4d-40d5-a54f-9602a26d6852
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
 source-wordcount: '361'
 ht-degree: 1%
@@ -34,7 +34,7 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
@@ -83,7 +83,7 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**

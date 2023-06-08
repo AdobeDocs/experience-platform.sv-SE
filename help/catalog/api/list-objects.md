@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Lista katalogobjekt
 description: Du kan hämta en lista över alla tillgängliga objekt av en viss typ via ett enda API-anrop. Det bästa sättet är att ta med filter som begränsar svarsstorleken.
 exl-id: 2c65e2bc-4ddd-445a-a52d-6ceb1153ccea
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
 source-wordcount: '242'
 ht-degree: 0%
@@ -24,7 +24,7 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Se guiden [filtrera katalogdata](filter-data.md) för mer information. |
 
 **Begäran**

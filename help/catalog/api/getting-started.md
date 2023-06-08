@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för katalogtjänst
 description: Med Catalog Service API kan utvecklare hantera datauppsättningsmetadata i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 812fcdae-ed0e-4f2b-84d7-26f2f79e71b9
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 07451b8ab4bcb7ca43ad0c8a821478b2c9682894
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '595'
 ht-degree: 2%
 
 ---
@@ -63,6 +63,6 @@ Eftersom vissa frågor kan göra API:t mycket belastat har globala begränsninga
 
 Det här dokumentet innehöll de nödvändiga kunskaperna som krävs för att ringa till [!DNL Catalog] API. Du kan nu gå vidare till exempelsamtalen i den här utvecklarhandboken och följa med i instruktionerna för dessa.
 
-De flesta exemplen i den här handboken använder `/dataSets` slutpunkt, men principerna kan tillämpas på andra slutpunkter inom [!DNL Catalog] (till exempel `/batches` och `/accounts`). Se [API-referens för katalogtjänst](https://www.adobe.io/experience-platform-apis/references/catalog/) för en fullständig lista över alla anrop och åtgärder som är tillgängliga för varje slutpunkt.
+De flesta exemplen i den här handboken använder `/dataSets` slutpunkt, men principerna kan tillämpas på andra slutpunkter inom [!DNL Catalog] (till exempel `/batches`). Se [API-referens för katalogtjänst](https://www.adobe.io/experience-platform-apis/references/catalog/) för en fullständig lista över alla anrop och åtgärder som är tillgängliga för varje slutpunkt.
 
 Ett stegvis arbetsflöde som visar hur [!DNL Catalog] API:t är involverat i datainmatning, se självstudiekursen om [skapa en datauppsättning](../datasets/create.md).

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa en datauppsättning med API:er
 description: Det här dokumentet innehåller allmänna steg för att skapa en datauppsättning med Adobe Experience Platform API:er och fylla i datauppsättningen med hjälp av en fil.
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: e2f16f532b98e6948ffd7f331e630137b3972f0f
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1303'
 ht-degree: 0%
 
 ---
@@ -45,9 +45,7 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 >
 >Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
-
-* Innehållstyp: application/json
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare `Content-Type: application/json` header. För JSON+PATCH-begäranden gäller följande: `Content-Type` bör `application/json-patch+json`.
 
 ## Självstudiekurs
 
@@ -254,7 +252,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt som innehåller information om den nyligen skapade gruppen, inklusive dess `id`, en skrivskyddad, systemgenererad sträng.
+Ett lyckat svar returnerar HTTP-status 201 (Skapad) och ett svarsobjekt. Svarsobjektet består av en array som innehåller ID:t för den nyligen skapade batchen i formatet `"@/batches/{BATCH_ID}"`. Batch-ID är en skrivskyddad, systemgenererad sträng som används för att referera till batchen i API-anrop.
 
 ```JSON
 {
@@ -355,12 +353,12 @@ En slutförd batch returnerar en tom svarstext och HTTP-status 200 (OK).
 
 ## Bildskärmsingång
 
-Beroende på storleken på data tar batcharna olika lång tid att importera. Du kan övervaka en grupps status genom att lägga till en `batch` begärandeparameter som innehåller batchens ID till en `GET /batches` begäran. API:t avsöker datauppsättningen för batchens status från att ha fått det tills `status` i svaret anger att åtgärden har slutförts (&quot;lyckats&quot; eller&quot;misslyckats&quot;).
+Beroende på storleken på data tar batcharna olika lång tid att importera. Du kan övervaka status för en batch genom att lägga till en batch-ID till en `GET /batches` begäran.
 
 **API-format**
 
 ```HTTP
-GET /batches?batch={BATCH_ID}
+GET /batches/{BATCH_ID}
 ```
 
 | Parameter | Beskrivning |

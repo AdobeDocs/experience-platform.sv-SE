@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Katalogtjänst - översikt
 description: Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i Data Lake som filer och kataloger, men i Catalog finns metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
 exl-id: ef0c173b-607b-41b8-8676-c54ae9472e23
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 0ebe9eadb1bce6252b43a50af009ce1b0f6e5d6e
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '694'
 ht-degree: 0%
 
 ---
@@ -53,10 +53,7 @@ I följande tabell visas de olika objekttyper som stöds av [!DNL Catalog]:
 
 | Objekt | API-slutpunkt | Definition |
 |---|---|---|
-| Konto | `/accounts` | Autentiseringsuppgifter måste anges när du skapar källanslutningar. Ett konto representerar en samling autentiseringsuppgifter som användes för att skapa en anslutning av en viss typ. Varje anslutning har en uppsättning unika parametrar som bevaras av [!DNL Catalog] och säkras i [!DNL Azure Key Vault]. |
 | Grupp | `/batches` | Batchar är dataenheter som består av en eller flera filer som ska importeras som en enda enhet. Ett batchobjekt i [!DNL Catalog] sammanfattar batchens användningsmått (t.ex. antalet poster som bearbetas eller storleken på disken) och kan även innehålla länkar till datauppsättningar, vyer och andra resurser som påverkades av batchåtgärden. |
-| Anslutning | `/connections` | En anslutning är en enda instans av en källanslutning som är unik för din organisation och konfigurerad med lämpliga autentiseringsuppgifter för anslutningstypen. |
-| Koppling | `/connectors` | Kopplingar definierar hur källanslutningar ska samla in data från andra Adobe-program (t.ex. Adobe Analytics och Adobe Audience Manager), molnlagringskällor från tredje part (t.ex. [!DNL Azure Blob], [!DNL Amazon S3], FTP-servrar och SFTP-servrar) och CRM-system från tredje part (som [!DNL Microsoft Dynamics] och [!DNL Salesforce]). |
 | Datauppsättning | `/dataSets` | En datauppsättning är en lagrings- och hanteringskonstruktion som används för datainsamling (vanligtvis en tabell) som innehåller ett schema (kolumner) och fält (rader). Se [datauppsättningar, översikt](./datasets/overview.md) för mer information. |
 | Datauppsättningsfil | `/datasetFiles` | Datauppsättningsfiler representerar datablock som har sparats på [!DNL Platform]. Som poster för litterala filer är det här du kan hitta filens storlek, antalet poster som den innehåller och en referens till den grupp som importerade filen. |
 

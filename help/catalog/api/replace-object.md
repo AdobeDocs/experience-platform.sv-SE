@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Ersätta ett katalogobjekt
 description: Du kan skriva över innehållet i ett Catalog-objekt med hjälp av en PUT-begäran, där hela resursen ersätts med nyttolasten för begäran.
 exl-id: cd98d13c-5261-4bff-b5db-af5f06d093c9
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
 workflow-type: tm+mt
 source-wordcount: '173'
 ht-degree: 0%
@@ -27,7 +27,7 @@ PUT /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska ersättas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska ersättas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
@@ -45,7 +45,6 @@ curl -X PUT \
   -d '{
         "name": "New Dataset Name",
         "description": "New description for dataset",
-        "state": "DRAFT",
         "tags": {
             "adobe/pqs/table": [
                 "sample_dataset"

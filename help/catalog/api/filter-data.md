@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Filtrera katalogdata med hjälp av frågeparametrar
 description: Med Catalog Service API kan svarsdata filtreras med hjälp av frågeparametrar. En del av de bästa sätten för Catalog är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra prestanda generellt.
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 24db94b959d1bad925af1e8e9cbd49f20d9a46dc
 workflow-type: tm+mt
-source-wordcount: '2120'
+source-wordcount: '2099'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ GET /{OBJECT_TYPE}?limit={LIMIT}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{LIMIT}` | Ett heltal som anger antalet objekt som ska returneras, från 1 till 100. |
 
 **Begäran**
@@ -79,7 +79,7 @@ Ett godkänt svar returnerar en lista med datauppsättningar, begränsad till de
 
 The `properties` parameterfiltrerar svarsobjekt så att bara en uppsättning angivna egenskaper returneras. Parametern kan ställas in så att den returnerar en eller flera egenskaper.
 
-The `properties` parametern accepterar bara objektegenskaper på den översta nivån, vilket innebär att du kan använda filter för följande exempelobjekt `name`, `description`och `subItem`, men INTE för `sampleKey`.
+The `properties` -parametern kan acceptera alla nivåobjektsegenskaper. `sampleKey` kan extraheras med `?properties=subItem.sampleKey`.
 
 ```json
 {
@@ -103,7 +103,7 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY}` | Namnet på ett attribut som ska inkluderas i svarstexten. |
 | `{OBJECT_ID}` | Unik identifierare för en specifik [!DNL Catalog] objekt som hämtas. |
 
@@ -172,7 +172,7 @@ GET /{OBJECT_TYPE}?start={OFFSET}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OFFSET}` | Ett heltal som anger antalet objekt som svaret ska förskjutas med. |
 
 **Begäran**
@@ -228,17 +228,6 @@ Nedan visas ett exempel på en datauppsättning som innehåller en `tags` -egens
         },
         "name": "Sample Dataset",
         "description": "Same dataset containing sample data.",
-        "dule": {
-            "identity": [
-                "I1"
-            ]
-        },
-        "statsCache": {},
-        "state": "DRAFT",
-        "lastBatchId": "ca12b29612bf4052872edad59573703c",
-        "lastBatchStatus": "success",
-        "lastSuccessfulBatch": "ca12b29612bf4052872edad59573703c",
-        "namespace": "{NAMESPACE}",
         "createdUser": "{CREATED_USER}",
         "createdClient": "{CREATED_CLIENT}",
         "updatedUser": "{UPDATED_USER}",
@@ -264,7 +253,7 @@ GET /{OBJECT_TYPE}?tags={TAG_NAME}:*
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li></ul> |
 | `{TAG_NAME}` | Namnet på taggen som ska filtreras efter. |
 | `{TAG_VALUE}` | Värdet på taggen som ska filtreras efter. Stöder jokertecken (`*`). |
 
@@ -304,8 +293,6 @@ Ett godkänt svar returnerar en lista med datauppsättningar som innehåller `sa
                     "Example tag value"
                 ]
             },
-            "dule": {},
-            "statsCache": {}
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.0",
@@ -327,8 +314,6 @@ Ett godkänt svar returnerar en lista med datauppsättningar som innehåller `sa
                     "2.0"
                 ]
             },
-            "dule": {},
-            "statsCache": {}
     }
 }
 ```
@@ -375,8 +360,6 @@ Ett svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angi
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.0",
@@ -387,8 +370,6 @@ Ett svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angi
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     }
 }
 ```
@@ -412,7 +393,7 @@ GET /{OBJECT_TYPE}?orderBy={PROPERTY_NAME_1},desc:{PROPERTY_NAME_2}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Den typ av katalogobjekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY_NAME}` | Namnet på en egenskap som resultaten ska sorteras efter. |
 
 **Begäran**
@@ -443,8 +424,6 @@ Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.3",
@@ -455,8 +434,6 @@ Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     },
     "5cd3a129ec106214b722a939": {
             "version": "1.0.2",
@@ -467,8 +444,6 @@ Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     }
 }
 ```
@@ -499,7 +474,7 @@ GET /{OBJECT_TYPE}?{PROPERTY_NAME}=!{VALUE_1},{VALUE_2},{VALUE_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY_NAME}` | Namnet på den egenskap vars värde du vill filtrera efter. |
 | `{VALUE}` | Ett egenskapsvärde som avgör vilka resultat som ska inkluderas (eller exkluderas, beroende på frågan). |
 
@@ -531,8 +506,6 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.3",
@@ -543,8 +516,6 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     }
 }
 ```
@@ -553,7 +524,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
 
 The `property` frågeparametern ger större flexibilitet för egenskapsbaserad filtrering än enkla filter. Förutom att filtrera baserat på om en egenskap har ett visst värde, kan `property` parametern kan använda andra jämförelseoperatorer (till exempel&quot;mer än&quot;)`>`) och &quot;mindre än&quot; (`<`)) samt reguljära uttryck för att filtrera efter egenskapsvärden. Det kan också filtrera efter om en egenskap finns eller inte, oavsett dess värde.
 
-The `property` parametern accepterar bara objektegenskaper på den översta nivån, vilket innebär att du för följande exempelobjekt kan filtrera efter egenskap för `name`, `description`och `subItem`, men INTE för `sampleKey`.
+The `property` -parametern kan acceptera alla nivåobjektsegenskaper. `sampleKey` kan användas för filtrering med `?properties=subItem.sampleKey`.
 
 ```json
 {
@@ -575,7 +546,7 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{CONDITION}` | Ett villkorsuttryck som anger vilken egenskap som ska efterfrågas och hur dess värde ska utvärderas. Nedan finns exempel. |
 
 Värdet för `property` -parametern stöder flera olika typer av villkorsuttryck. I följande tabell visas den grundläggande syntaxen för uttryck som stöds:
@@ -624,8 +595,6 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     },
     "5b1e3c867e6d2600003d5b49": {
             "version": "1.0.6",
@@ -636,8 +605,6 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     },
     "5cd3a129ec106214b722a939": {
             "version": "1.0.4",
@@ -648,8 +615,6 @@ Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnumme
             "createdClient": "{API_KEY}",
             "createdUser": "{USER_ID}",
             "updatedUser": "{USER_ID}",
-            "dule": {},
-            "statsCache": {}
     }
 }
 ```
