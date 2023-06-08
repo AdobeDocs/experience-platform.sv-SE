@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
-title: Spelböcker - översikt
+title: Använd översikt över fallspelningsböcker
 description: Lär dig använda funktionen Använd fallspelsböcker i Experience Platform för att komma igång med olika användningsområden för marknadsföring
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 63ea852ca9f9a45d1c071fd1033cbd44cbb427c6
+source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -18,8 +18,8 @@ ht-degree: 0%
 Det här hittar du i handboken:
 
 * **[Översikt över användningsfall för spelböcker](#overview)**
-* [Visa en spelbok och generera resurser](ui-guide.md#view-playbook-generate-assets)
-* [Aktivera, använda och återanvända en instans av en spelningsbok ](ui-guide.md#enable-playbook)
+* [Upptäck rätt spelningsbok](/help/use-case-playbooks/playbooks/discover.md)
+* [Skapa, dela och återanvända spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md)
 * [Felsökning och kända begränsningar](troubleshooting.md)
 
 >[!ENDSHADEBOX]
@@ -46,9 +46,9 @@ Skapa en instans av en spelbok för att generera specifika resurser som scheman,
 
 Några [!UICONTROL Use Case Playbooks] är skräddarsydda för CDP-användning i realtid medan andra passar bäst för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet.
 
-## Användargränssnittsguide
+## Användargränssnittsguider
 
-När du har bestämt dig för vilken spelbok du vill använda väljer du den i användargränssnittet och börjar med den. Läs användargränssnittsguiden på [aktivera och återanvända spelningsböcker](/help/use-case-playbooks/playbooks/ui-guide.md) om du vill ha fullständig information om hur du skapar instanser och får ut det mesta av en spelbok.
+När du har bestämt dig för vilken spelbok du vill använda väljer du den i användargränssnittet och börjar med den. Läs användargränssnittets riktlinjer på [hur du identifierar rätt spelbok](/help/use-case-playbooks/playbooks/discover.md) för dig och [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) om du vill ha fullständig information om hur du skapar instanser och får ut det mesta av en spelbok.
 
 ## Felsökning och kända begränsningar
 
