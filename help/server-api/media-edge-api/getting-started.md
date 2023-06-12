@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
 exl-id: null
-source-git-commit: f040ba6d1403da4212fe279e32316bac995905b2
+source-git-commit: 8592bcc7a6d6700ec9b689b98d07a15f0b9301b2
 workflow-type: tm+mt
-source-wordcount: '914'
+source-wordcount: '937'
 ht-degree: 1%
 
 ---
@@ -206,6 +206,8 @@ I ovanstående exempelbegäran är det samma `sessionId` som returneras i det f�
 
 Mer information om parametrar och exempel för Buffer Start-slutpunkten finns i Media Edge Swagger-filen.
 
+Svaret är 200 och innehåller inget innehåll.
+
 ## Spela upp händelsebegäran
 
 Play-händelsen skickas när mediespelaren ändrar sitt läge till&quot;uppspelning&quot; från ett annat läge, till exempel&quot;buffring&quot;,&quot;pausad&quot; eller&quot;fel&quot;. Om du vill göra en begäran om uppspelningshändelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
@@ -236,6 +238,8 @@ curl -X 'POST' \
   ]
 }'
 ```
+
+Svaret är 200 och innehåller inget innehåll.
 
 Mer information om parametrar och exempel för uppspelningsslutpunkter finns i Media Edge Swagger-filen.
 
@@ -270,7 +274,7 @@ curl -X 'POST' \
 }'
 ```
 
-Mer information om parametrar och exempel för sessionens slutpunkt finns i Media Edge Swagger-filen.
+Svaret är 200 och innehåller inget innehåll.
 
 ## Svarskoder
 
