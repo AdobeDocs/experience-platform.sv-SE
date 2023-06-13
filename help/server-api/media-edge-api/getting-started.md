@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
 exl-id: null
-source-git-commit: 8592bcc7a6d6700ec9b689b98d07a15f0b9301b2
+source-git-commit: 696ddd93d87601f9f6dedfd651ee12573dc4990a
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '963'
 ht-degree: 1%
 
 ---
@@ -101,18 +101,18 @@ curl -i --request POST '{uri}/ee/va/v1/sessionStart?configId={dataStreamId}' \
 
 I exempelbegäran ovan är `eventType` värdet innehåller prefixet `media` enligt [Experience Data Model (XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) för att ange domäner.
 
-Datatypsmappning för `eventType` i exemplet ovan är följande (rapportfält ska inte finnas i nyttolasten):
+Datatypsmappning för `eventType` i exemplet ovan är följande:
 
-| eventType | datatyper | enbart rapportfält (ignoreras) |
-| -------- | ------ | ---------- |
-| mediaSessionStart | sessionDetails | ID, adCount, AverageMinuteAudience, ChapterCount, estimedStreams, hasPauseImpachedStreams, hasProgress10, hasProgress25, hasProgress50, hasProgress75, hasProgress95, hasSegmentView, isCompleted, isDownloaded, isFederated, isPlate ayed, isViewed, pauseCount, pauseTime, secondsSinceLastCall, segment, timePlayed, totalTimePlayed, uniqueTimePlayed, pev3, pccr |
-| media.chapterStart | chapterDetails | ID, isCompleted, isStarted, timePlayayed |
-| media.adBreakStart | advertisingPodDetails | ID |
-| media.adStart | advertisingDetails | ID, isCompleted, isStarted, timePlayayed |
-| media.error | errorDetails | – |
-| media.statesUpdate | statesStart: Array[playerStateData], statesEnd: Array[playerStateData] | playerStateData.isSet, playerStateData.count, playerStateData.time |
-| media.sessionStart, media.chapterStart, media.adStart | customMetadata | – |
-| alla | qoeDataDetails | bitrateAverage, bitrateAverageBucket, bitrateChangeCount, bufferCount, bufferTime, errorCount, externalErrors, hasBitrateChangeImpachedStreams, hasBufferImpachedStreams, hasDroppedFrameImpachedStreams, hasErrorImpachedStreams, hasStallImpachedStreams, isDropped BeforeStart, mediaSdkErrors, playerSdkErrors, stallCount, stallTime |
+| eventType | datatyper |
+| -------- | ------ |
+| mediaSessionStart | [sessionDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/sessiondetails.schema.md) |
+| media.chapterStart | [chapterDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/chapterdetails.schema.md) |
+| media.adBreakStart | [advertisingPodDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/advertisingpoddetails.schema.md) |
+| media.adStart | [advertisingDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/advertisingdetails.schema.md) |
+| media.error | [errorDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/errordetails.schema.md) |
+| media.statesUpdate | [statesStart](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmstatesstart): Array[playerStateData], [statesEnd](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmstatesend): Array[playerStateData] |
+| media.sessionStart, media.chapterStart, media.adStart | [customMetadata](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmcustommetadata) |
+| alla | [qoeDataDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/qoedatadetails.schema.md) |
 
 ### Exempel på svar
 

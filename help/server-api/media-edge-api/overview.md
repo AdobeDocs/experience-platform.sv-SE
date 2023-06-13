@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge.
 exl-id: null
-source-git-commit: f040ba6d1403da4212fe279e32316bac995905b2
+source-git-commit: 696ddd93d87601f9f6dedfd651ee12573dc4990a
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '391'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ Media Edge-API:er bygger på Adobe Experience Platform (AEP) för att tillhandah
 
 ## Optimera dataflöden för mediespårning
 
-Båda [Media Collection](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en&amp;media-tracking-data-flows) API:er och API:er för Media Edge tillhandahåller mediespårningsdata som RESTful-tjänster. Men att använda tjänsten Media Edge har följande fördelar:
+Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en&amp;media-tracking-data-flows) och Media Edge API:er tillhandahåller mediespårningsdata som RESTful-tjänster. Men att använda tjänsten Media Edge har följande fördelar:
 
 * Det är det enklaste sättet att införliva XDM-scheman i dataflödet.
 
@@ -33,14 +33,14 @@ Båda [Media Collection](https://experienceleague.adobe.com/docs/media-analytics
 
 * Den spårar mediahändelser mest effektivt.
 
-I följande tabell visas den bästa Adobe API-tjänsten för olika medieanalysfall:
+I följande tabell visas en möjlig Adobe API-tjänst för olika medieanalysfall:
 
-| Användningsfall | Plattform | API-tjänst |
-| -------- | ------ | ---------- |
-| CJA | AEP | Media Edge |
-| CDP + CJA | AEP | Media Edge |
-| Analytics + CJA | AEP | Media Edge |
-| Äldre analys | Ej tillämpligt | Media Collection |
+| Användningsfall | API-tjänst |
+| -------- | ------ |
+| AEP-lösning (CJA, RTDCP, AJO, etc.) | Media Edge |
+| CDP + CJA | Media Edge |
+| Adobe Analytics + AEP | Media Edge |
+| Endast Adobe Analytics (spårning redan) | Media Collection |
 
 >[!NOTE]
 >
