@@ -5,7 +5,7 @@ title: Infoga data i Experience Platform
 type: Tutorial
 description: Med Adobe Experience Platform kan du enkelt importera data som gruppfiler i form av Parquet-filer eller data som följer ett känt Experience Data Model-schema (XDM).
 exl-id: a4a7358d-b117-4d81-8cb0-3dbbfeccdcbd
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8351f6907a0dc4a4bba01c7f6e9dec7c376c8575
 workflow-type: tm+mt
 source-wordcount: '1259'
 ht-degree: 0%
@@ -110,7 +110,7 @@ Börja lägga till data i datauppsättningen genom att klicka på **[!UICONTROL 
 
 ![Fliken Lägg till data](../images/tutorials/ingest-batch-data/drag-and-drop.png)
 
-## Överföra en fil
+## Överföra en fil {#upload-file}
 
 När du har dragit och släppt (eller bläddrat och valt) en Parquet- eller JSON-fil som du vill överföra, [!DNL Platform] börjar bearbeta filen omedelbart och **[!UICONTROL Uploading]** visas på **[!UICONTROL Add Data]** som visar förloppet för filöverföringen.
 

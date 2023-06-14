@@ -1,17 +1,17 @@
 ---
-title: (Beta) Komplettera förstahandsprofiler med attribut som tillhandahålls av partner
-description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i kundbasen och optimera målgrupperna bättre
+title: (Beta) Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
+description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 500475af5e7c80e670324a5c70ed18cc813199be
+source-git-commit: 2a072ce9351a84263a50597967b994162de18d81
 workflow-type: tm+mt
-source-wordcount: '1058'
+source-wordcount: '1072'
 ht-degree: 0%
 
 ---
 
-# Komplettera förstahandsprofiler med attribut som tillhandahålls av partner
+# Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
 
 >[!AVAILABILITY]
 >
@@ -40,7 +40,7 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 1. Som **kund** licensierar du attribut från **datapartner**.
 2. Som **kund** kan ni utöka profildata och styrningsmodell för att passa **partner**-provided-attribut.
-3. Som **kund** kan ni ta med er de målgrupper ni vill ska anlända till dataparten. Vanligtvis är dessa målgrupper inmatade med identifierare som PII-element (Personally Identiitable Information) som e-post, namn, adress och andra.
+3. Som **kund** kan ni ta med er de målgrupper ni vill ska berikas med datapartnern. Vanligtvis är dessa målgrupper inmatade med identifierare som PII-element (Personally Identiitable Information) som e-post, namn, adress och andra.
 4. The **partner** lägger till licensierade attribut för de profiler som de kan matcha mot. Alternativt kan du [Partner-ID](/help/identity-service/namespaces.md) kan inkluderas och importeras i partneromfångets ID-namnutrymme.
 5. Som **kund** läser du in attribut från datapartnern i kundprofiler i Real-Time CDP.
 
@@ -50,15 +50,15 @@ Läs igenom avsnitten nedan som innehåller länkar till ytterligare dokumentati
 
 ### Licensattribut från partnern {#license-attributes-from-partner}
 
-Detta steg ingår i förutsättningarna och Adobe antar att ni har rätt avtalsavtal med betrodda dataleverantörer för att förstärka era förstahandsprofiler.
+Det här steget beskrivs i [krav](#prerequisites-and-planning) och Adobe antar att ni har rätt avtalsavtal med betrodda dataleverantörer för att utöka era förstahandsprofiler.
 
 ### Utöka era profildata och styrningsmodeller för att passa partnertillhandahållna attribut. {#extend-governance-model}
 
 Nu utökar ni datahanteringsramverket i Real-Time CDP för att passa partnerattribut.
 
-Du kan skapa ett nytt schema för **[!UICONTROL XDM Individual Profile]** eller utöka ett befintligt schema av samma typ för att inkludera attribut som tillhandahålls av partner. Adobe rekommenderar starkt att du skapar ett nytt schema med en ny uppsättning fältgrupper som bäst representerar de extra attributen från dataleverantören. Detta garanterar att dina datascheman är rena och kan utvecklas oberoende av varandra.
+Du kan skapa ett nytt schema för **[!UICONTROL XDM Individual Profile]** eller utöka ett befintligt schema av samma typ för att inkludera attribut som tillhandahålls av partner. Adobe rekommenderar starkt att du skapar ett nytt schema med en ny uppsättning fältgrupper som bäst representerar de extra attributen från dataleverantören. Detta garanterar att dina dataram är rena och kan utvecklas oberoende av varandra.
 
-Om du vill inkludera attribut som tillhandahålls av partner i ett schema kan du antingen skapa en ny fältgrupp med de attribut du förväntar dig, eller så kan du använda en av de färdiga fältgrupperna som tillhandahålls av Adobe.
+Om du vill inkludera attribut som tillhandahålls av partner i ett schema kan du antingen skapa en ny fältgrupp med de attribut du förväntar dig, eller så kan du använda en av de förkonfigurerade fältgrupperna som tillhandahålls av Adobe.
 
 Läs dokumentationssidorna nedan för mer information:
 
@@ -79,7 +79,7 @@ Commenting out links for now
 I det här steget bör du också tänka på hur er datastyrningsmodell ändras när ni utökar er datahanteringsstrategi så att den omfattar data från tredje part från partnern. Ta en titt på vad du bör tänka på i dokumentationslänkarna nedan:
 
 * (**Kommer snart**) Förvara tredjepartsdata i en separat datauppsättning så att det blir enkelt att ta bort dem och ångra integreringar.
-* (**Kommer snart**) Använd TTL (Time-to-live) på datauppsättningen för klienter som köpt tillägget för datahygien.
+* (**Kommer snart**) Använd [TTL (Time-to-live)](/help/hygiene/ui/dataset-expiration.md) på datauppsättningen för kunder som köpt tillägget för datahygien.
 * (**Kommer snart**) Var försiktig när du skapar härledda datauppsättningar som hämtar in data från tredje part, eftersom den enda lösningen för att ta bort data från tredje part är att ta bort hela den härledda datauppsättningen när de har blandats ihop.
 
 >[!TIP]
@@ -87,10 +87,9 @@ I det här steget bör du också tänka på hur er datastyrningsmodell ändras n
 >Om du väljer att komplettera dina kundprofiler med en personbaserad identifierare från dataleverantören kan du skapa en ny identitetstyp av typen **[[!UICONTROL Partner ID]](/help/identity-service/namespaces.md)**.
 >
 >Läs mer om partner-ID i [Avsnitt för identitetstyper](/help/identity-service/namespaces.md).
-> Läs om [definiera identitetsfält](/help/xdm/ui/fields/identity.md) i användargränssnittet i Experience Platform.
+>Läs om [definiera identitetsfält](/help/xdm/ui/fields/identity.md) i användargränssnittet i Experience Platform.
 
-
-### Exportera målgrupper som du vill ska kunna berikas genom PII (Personlig identifierbar information) eller hash-PII {#export-audiences}
+### Exportera målgrupper som du vill ska berikas när du stänger av Personal Identified Information (PII) eller hashed-PII {#export-audiences}
 
 Exportera de målgrupper som ni vill att partnern ska berika. Använd molnlagringsdestinationer som tillhandahålls av CDP i realtid, till exempel Amazon S3 eller SFTP. Läs följande dokumentationssidor för att slutföra det här steget:
 
@@ -99,10 +98,9 @@ Exportera de målgrupper som ni vill att partnern ska berika. Använd molnlagrin
 * Så här gör du [ansluta till ett mål](/help/destinations/ui/connect-destination.md)
 * Så här gör du [exportera data till ett molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md)
 
+### Din datapartner bifogar licensierade attribut för de profiler som de kan matcha mot {#partner-appends-attributes}
 
-### Partnern bifogar licensierade attribut för de profiler som de kan matcha mot {#partner-appends-attributes}
-
-I det här steget lägger partnern till licensierade attribut för den exporterade målgruppen. Utdata är vanligtvis tillgängliga som en platt fil som kan importeras tillbaka till Real-Time CDP.
+I det här steget lägger din datapartner till licensierade attribut för den exporterade målgruppen. Utdata är vanligtvis tillgängliga som en platt fil som kan importeras tillbaka till Real-Time CDP. Läs mer om [importera filer till Real-Time CDP](/help/ingestion/tutorials/ingest-batch-data.md#upload-file).
 
 ### Real-Time CDP lägger in berikade attribut i kundprofilen {#ingest-data}
 
@@ -117,7 +115,7 @@ Några rekommenderade källanslutningar för detta ändamål kan vara:
 
 Observera följande begränsningar när du utforskar användningsfallet som beskrivs på den här sidan:
 
-Om du väljer att använda partner-ID:n ska du vara medveten om att dessa ID:n inte används när du skapar dina [identitetsdiagram](/help/identity-service/ui/identity-graph-viewer.md).
+* Om du väljer att använda partner-ID:n ska du vara medveten om att dessa ID:n inte används när du skapar dina [identitetsdiagram](/help/identity-service/ui/identity-graph-viewer.md).
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 
