@@ -3,9 +3,9 @@ keywords: Experience Platform;mediekant;populära ämnen;datumintervall
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Felsökningsguide för Media Edge API:er
-source-git-commit: b4687fa7f1a2eb8f206ad41eae0af759b0801b83
+source-git-commit: f723114eebc9eb6bfa2512b927c5055daf97188b
 workflow-type: tm+mt
-source-wordcount: '677'
+source-wordcount: '678'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Den här guiden innehåller felsökningsanvisningar för hur du hanterar fel och
 
 ## Använda felsvarshjälpmedel
 
-Felen åtföljs av ett svarstext som innehåller ett felobjekt för att underlätta felsökningen. I det här fallet innehåller svarstexten information om problem, som definieras av [RFC 7807 Probleminformation för HTTP-API:er](https://datatracker.ietf.org/doc/html/rfc7807). För att förbättra API-användarupplevelsen är probleminformationen beskrivande (informationen om matrisnycklarna visas med JsonPath till det saknade eller ogiltiga fältet). De är också kumulativa (alla ogiltiga fält rapporteras i samma begäran).
+För att felsöka misslyckade svar åtföljs felen av en svarsbrödtext som innehåller ett felobjekt. I det här fallet innehåller svarstexten information om problem, som definieras av [RFC 7807 Probleminformation för HTTP-API:er](https://datatracker.ietf.org/doc/html/rfc7807). För att förbättra API-användarupplevelsen är probleminformationen beskrivande (informationen om matrisnycklarna visas med JsonPath till det saknade eller ogiltiga fältet). De är också kumulativa (alla ogiltiga fält rapporteras i samma begäran).
 
 
 ## Valideringssessionen startar
@@ -110,17 +110,17 @@ Följande tabell innehåller anvisningar för hur du hanterar statussvarsfel:
 
 | Felkod | Beskrivning |
 | ---------- | --------- |
-| 4xx - felaktig begäran | De flesta 4xx-fel (t.ex. 400, 403, 404) bör inte provas igen av användaren. Om du försöker igen kommer det inte att gå att svara. Användaren bör åtgärda felet innan han eller hon försöker utföra begäran igen. Händelser som resulterar i 4xx-statuskoder spåras inte, vilket kan påverka exaktheten för data i sessioner som har tagit emot 4xx-svar. |
-| 410 borta | Anger att sessionen som är avsedd för spårning inte längre beräknas på serversidan. Den vanligaste orsaken till detta är att sessionen är längre än 24 timmar. När du har fått 410 försöker du starta en ny session och spåra den. |
+| 4xx - felaktig begäran | De flesta 4xx-fel (t.ex. `400`, `403`, `404`) ska inte göras om av användaren. Om du försöker igen kommer det inte att gå att svara. Användaren bör åtgärda felet innan han eller hon försöker utföra begäran igen. Händelser som resulterar i 4xx-statuskoder spåras inte, vilket kan påverka exaktheten för data i sessioner som har tagit emot 4xx-svar. |
+| 410 borta | Anger att sessionen som är avsedd för spårning inte längre beräknas på serversidan. Den vanligaste orsaken till detta är att sessionen är längre än 24 timmar. Efter att ha fått `410`, försök starta en ny session och spåra den. |
 | 429 För många begäranden | Den här svarskoden anger att servern hastighetsbegränsar förfrågningarna. Följ **Försök igen efter** instruktionerna i svarshuvudet noggrant. Alla svar som returneras måste innehålla HTTP-svarskoden med en domänspecifik felkod. |
-| 500 Internt serverfel | 500 fel är generiska fel som fångar upp alla. 500 fel får inte provas igen, förutom 502, 503 och 504. |
-| 502 Ogiltig gateway | Den här felkoden anger att servern, när den fungerar som en gateway, fick ett ogiltigt svar från överordnade servrar. Detta kan inträffa på grund av nätverksproblem mellan servrar. Det temporära nätverksproblemet kan lösa sig så att du kan försöka lösa problemet genom att försöka igen. |
-| Tjänsten är inte tillgänglig | Felkoden anger att tjänsten inte är tillgänglig för tillfället. Detta kan inträffa under underhållsperioder. Mottagare med 503 fel kan försöka utföra begäran igen, men bör även följa **Försök igen efter** rubrikinstruktioner. |
+| 500 Internt serverfel | `500` fel är generiska fel som fångar upp alla. `500` fel får inte provas igen, förutom `502`, `503` och `504`. |
+| 502 Ogiltig gateway | Den här felkoden anger att servern, när den fungerar som en gateway, fick ett ogiltigt svar från överordnade servrar. Detta kan inträffa på grund av nätverksproblem mellan servrar. Det temporära nätverksproblemet kan lösa sig själv, så om du försöker igen kan problemet lösas. |
+| 503 Tjänsten är inte tillgänglig | Felkoden anger att tjänsten inte är tillgänglig för tillfället. Detta kan inträffa under underhållsperioder. Mottagare av `503` fel kan försöka utföra begäran igen, men bör även följa **Försök igen efter** rubrikinstruktioner. |
 
 
-Köa händelser när sessionssvaren är långsamma
+## Köa händelser när sessionssvaren är långsamma
 
-När en mediaspårningssession har startats kan mediespelaren utlösas innan svaret för sessionsstart returneras (med parametern för sessions-ID) från serverdelen. Om detta inträffar måste programmet placera eventuella spårningshändelser i kö som kommer mellan sessionsbegäran och dess svar. När sessionssvaret kommer, bör du först bearbeta händelser som står i kö och sedan börja bearbeta live-händelser.
+När en mediaspårningssession har startats kan mediespelaren utlösas innan svaret för sessionsstart returneras (med parametern för sessions-ID) från serverdelen. Om detta inträffar måste programmet placera eventuella spårningshändelser i kö som kommer mellan sessionsstartbegäran och dess svar. När sessionssvaret kommer, bör du först bearbeta händelser som står i kö och sedan börja bearbeta live-händelser.
 
 För bästa resultat bör du kontrollera referensspelaren i distributionen för att få anvisningar om hur du hanterar händelser innan du får ett sessions-ID.
 

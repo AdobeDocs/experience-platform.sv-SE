@@ -3,9 +3,9 @@ keywords: Experience Platform;mediekant;populära ämnen;datumintervall
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
-source-git-commit: b4687fa7f1a2eb8f206ad41eae0af759b0801b83
+source-git-commit: 4f60b00026a226aa6465b2c21b3c2198962a1e3b
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '979'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ Den här handboken innehåller anvisningar om hur du utför framgångsrika initi
 * sessionComplete
 * statesUpdate
 
-Varje händelse har en egen slutpunkt. Alla Media Edge API-slutpunkter är POST-metoder med JSON-begärandeinstanser för händelsedata. Mer information om Media Edge API-slutpunkter, parametrar och exempel finns i Media Edge Swagger-filen.
+Varje händelse har en egen slutpunkt. Alla Media Edge API-slutpunkter är POST-metoder med JSON-begärandeinstanser för händelsedata. Mer information om Media Edge API-slutpunkter, parametrar och exempel finns i [Media Edge Swagger-fil](swagger.md).
 
 Den här guiden visar hur du spårar följande händelser efter att du har startat sessionen:
 
@@ -43,7 +43,7 @@ Den här guiden visar hur du spårar följande händelser efter att du har start
 
 ## Implementera API
 
-Förutom smärre skillnader i modell och sökvägar som anropas, är Media Edge API samma som Media Collection API. Implementeringsinformationen för Media Collection gäller även fortsättningsvis för Media Edge API, vilket beskrivs i följande dokumentation:
+Förutom smärre skillnader i anropad modell och sökväg har Media Edge API samma implementering som Media Collection API. Implementeringsinformationen för Media Collection gäller även fortsättningsvis för Media Edge API, vilket beskrivs i följande dokumentation:
 
 * [Ställa in HTTP-begärantypen i spelaren](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [Skicka ping-händelser](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
@@ -61,7 +61,7 @@ Om du vill starta mediesessionen på servern använder du slutpunkten för sessi
 
 Innan du gör sessionsstartbegäran behöver du följande:
 
-* The `datastreamId` är en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du en `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/configure.html?lang=en).
+* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du en `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/configure.html?lang=en).
 
 * Ett JSON-objekt för den begärda nyttolasten som innehåller de minsta data som krävs (som visas i exempelbegäran nedan).
 
@@ -98,7 +98,7 @@ curl -i --request POST '{uri}/ee/va/v1/sessionStart?configId={dataStreamId}' \
 }'
 ```
 
-I exempelbegäran ovan är `eventType` värdet innehåller prefixet `media` enligt [Experience Data Model (XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) för att ange domäner.
+I exempelbegäran ovan är `eventType` värdet innehåller prefixet `media.` enligt [Experience Data Model (XDM)](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) för att ange domäner.
 
 Datatypsmappning för `eventType` i exemplet ovan är följande:
 
@@ -165,14 +165,14 @@ x-content-type-options: nosniff
 
 I exempelsvaret ovan är `sessionId` visas som `af8bb22766e458fa0eef98c48ea42c9e351c463318230e851a19946862020333`. Du kommer att använda detta ID i efterföljande händelsebegäranden som en obligatorisk parameter.
 
-Mer information om parametrar och exempel för sessionens startslutpunkt finns i Media Edge Swagger-filen.
+Mer information om parametrar och exempel för sessionens startslutpunkt finns i [Media Edge Swagger](swagger.md) -fil.
 
 Mer information om XDM-mediedataparametrar finns i [Informationsschema för mediainformation](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmplayhead).
 
 
 ## Buffertstarthändelsebegäran
 
-Buffertens starthändelse signalerar när buffringen startar i mediespelaren. Buffertåterupptagning är inte en händelse i API-tjänsten. i stället härleds när en play-händelse skickas efter Buffer Start. Om du vill göra en begäran om en Buffer Start-händelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
+Buffertens starthändelse signalerar när buffringen startar i mediespelaren. Buffertåterupptagning är inte en händelse i API-tjänsten. i stället dras den slutsatsen när en play-händelse skickas efter Buffer Start. Om du vill göra en begäran om en Buffer Start-händelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/bufferStart \`
 
@@ -201,11 +201,12 @@ curl -X 'POST' \
 }'
 ```
 
-I ovanstående exempelbegäran är det samma `sessionId` som returneras i det föregående anropet används som obligatorisk parameter i Buffer Start-begäran.
-
-Mer information om parametrar och exempel för Buffer Start-slutpunkten finns i Media Edge Swagger-filen.
+I exempelbegäran ovan är det samma `sessionId` som returneras i det föregående anropet används som obligatorisk parameter i Buffer Start-begäran.
 
 Svaret är 200 och innehåller inget innehåll.
+
+Mer information om parametrar och exempel för Buffer Start-slutpunkten finns i [Media Edge Swagger](swagger.md) -fil.
+
 
 ## Spela upp händelsebegäran
 
@@ -240,7 +241,7 @@ curl -X 'POST' \
 
 Svaret är 200 och innehåller inget innehåll.
 
-Mer information om parametrar och exempel för uppspelningsslutpunkter finns i Media Edge Swagger-filen.
+Mer information om parametrar och exempel för Play-slutpunkter finns i [Media Edge Swagger](swagger.md) -fil.
 
 ## Sessionens slutförda händelsebegäran
 
@@ -275,6 +276,8 @@ curl -X 'POST' \
 
 Svaret är 200 och innehåller inget innehåll.
 
+Mer information om parametrar och exempel för slutpunkten för sessionens slut finns i [Media Edge Swagger](swagger.md) -fil.
+
 ## Svarskoder
 
 I följande tabell visas möjliga svarskoder från API-begäranden för Media Edge:
@@ -282,10 +285,10 @@ I följande tabell visas möjliga svarskoder från API-begäranden för Media Ed
 | Status | Beskrivning |
 | ---------- | --------- |
 | 200 | Sessionen har skapats |
-| 207 | Problem med en av tjänsterna som ansluter till Experience Edge Network (se mer i felsökningsguiden) |
+| 207 | Problem med en av tjänsterna som ansluter till Experience Edge Network (se mer i [felsökningsguide](troubleshooting.md)) |
 | 400-nivå | Felaktig begäran |
 | 500-nivå | Serverfel |
 
-Mer information om hur du hanterar fel och misslyckade svarskoder finns i felsökningsguiden för Media Edge.
+Mer information om hur du hanterar fel och misslyckade svarskoder finns i [Felsökningsguide för Media Edge](troubleshooting.md).
 
 

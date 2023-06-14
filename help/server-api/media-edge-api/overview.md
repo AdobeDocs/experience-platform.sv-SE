@@ -3,9 +3,9 @@ keywords: Experience Platform;mediekant;populära ämnen;datumintervall
 solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge.
-source-git-commit: 9d535c8d6524d61612581fbf82986bc5c5cf52de
+source-git-commit: 4f60b00026a226aa6465b2c21b3c2198962a1e3b
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '396'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ Media Edge-API:er bygger på Adobe Experience Platform (AEP) för att tillhandah
 
 * Med [Customer Journey Analytics (CJA)](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=en), kan kunderna få detaljerade detaljer om varaktighet, start och stopp för att utvärdera och kombinera för mediemätningar. Kunder som migrerar från Adobe Analytics har alla rapporteringsmått tillgängliga i CJA.
 
-* Med [Adobe Real-time Customer Data Platform (CDP)](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv), kan kunderna utöka sina realtidsprofiler med medieförbrukningsdata.
+* Med [Adobe Real-time Customer Data Platform (RTCDP)](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv), kan kunderna utöka sina realtidsprofiler med medieförbrukningsdata.
 
 * Med [Adobe Journey Optimizer (AJO)](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=en)kan kunderna optimera flerkanalskampanjer och automatisera resor med mediekonsumtionssignaler.
 
@@ -30,7 +30,7 @@ Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-an
 
 * Samtal dirigeras från en mediespelare direkt till [Experience Edge Platform Network](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=en).
 
-* Den spårar mediahändelser mest effektivt.
+* Den spårar mediahändelser effektivt med ett minimum av serveröverskridande anrop.
 
 I följande tabell visas en möjlig Adobe API-tjänst för olika medieanalysfall:
 
@@ -51,7 +51,7 @@ I följande bild visas dataflödena för de två API-tjänsterna:
 ![Dataflöden för medieanalys](../assets/edge-api-dataflow.png)
 
 
-Mer information om hur du använder Media Edge API:er finns i dokumentationen om att komma igång.
+Mer information om hur du använder Media Edge API:er finns i [Komma igång med dokumentation](getting-started.md).
 
 Mer information om hur du arbetar med Platform Edge finns i [Installera Media Analytics med Experience Platform Edge](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html?lang=en).
 
