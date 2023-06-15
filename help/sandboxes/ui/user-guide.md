@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 70bbfd4e2971367c9b7b88bd4bc7985d9e6fbb1e
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '926'
 ht-degree: 2%
 
 ---
@@ -77,7 +77,30 @@ När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas i
 
 >[!WARNING]
 >
->Nedan följer en lista med undantag som kan hindra dig från att återställa standardproduktionssandlådan eller en användarskapad produktionssandlåda: <ul><li>Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i sandlådan också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) -funktion.</li><li>Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i sandlådan också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv).</li><li>Standardproduktionssandlådan kan inte återställas om den innehåller data för både CDA- och PBD-funktioner.</li><li>En användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan återställas efter ett varningsmeddelande.</li></ul>
+>Nedan följer en lista med undantag som kan hindra dig från att återställa standardproduktionssandlådan eller en användarskapad produktionssandlåda:
+>* Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i sandlådan också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) -funktion.
+>* Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i sandlådan också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv).
+>* Standardproduktionssandlådan kan inte återställas om den innehåller data för både CDA- och PBD-funktioner.
+>* En användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan återställas efter ett varningsmeddelande.
+>* Innan du initierar en sandlådeåterställning måste du ta bort dina kompositioner manuellt för att se till att de associerade målgruppsdata rensas ordentligt.
+
+### Ta bort målgruppskompositioner
+
+Målgruppskomposition är för närvarande inte integrerat med funktionen för återställning av sandlådor, så målgrupper måste tas bort manuellt innan de kan utföra återställningen av sandlådan.
+
+Välj **[!UICONTROL Audiences]** i den vänstra navigeringen och välj **[!UICONTROL Compositions]**.
+
+![The [!UICONTROL Compositions] i [!UICONTROL Audiences] arbetsyta.](../images/ui/audiences.png)
+
+Välj sedan ellipsen (`...`) bredvid den första målgruppen och sedan välja **[!UICONTROL Delete]**.
+
+![Målgruppsmenyn som framhäver [!UICONTROL Delete] alternativ.](../images/ui/delete-composition.png)
+
+En bekräftelse på att borttagningen lyckades visas och du återgår till **[!UICONTROL Compositions]** -fliken.
+
+Upprepa stegen ovan med alla kompositioner. Detta tar bort alla målgrupper från målgruppslagret. När alla målgrupper har tagits bort kan du fortsätta att återställa sandlådan.
+
+### Återställa en sandlåda
 
 Om du återställer en produktions- eller utvecklingssandlåda tas alla resurser som är kopplade till den sandlådan (scheman, datauppsättningar o.s.v.) bort, samtidigt som sandlådans namn och associerade behörigheter behålls. Den här&quot;rena&quot; sandlådan är fortfarande tillgänglig under samma namn för användare som har åtkomst till den.
 
