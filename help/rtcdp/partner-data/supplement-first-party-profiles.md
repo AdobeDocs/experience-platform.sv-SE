@@ -4,9 +4,9 @@ description: Lär er hur ni kompletterar förstahandsprofiler med attribut från
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 2a072ce9351a84263a50597967b994162de18d81
+source-git-commit: 019ebe0c1cf11a7fb30dced1e10b511bab9b5100
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1074'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Commenting out links for now
 I det här steget bör du också tänka på hur er datastyrningsmodell ändras när ni utökar er datahanteringsstrategi så att den omfattar data från tredje part från partnern. Ta en titt på vad du bör tänka på i dokumentationslänkarna nedan:
 
 * (**Kommer snart**) Förvara tredjepartsdata i en separat datauppsättning så att det blir enkelt att ta bort dem och ångra integreringar.
-* (**Kommer snart**) Använd [TTL (Time-to-live)](/help/hygiene/ui/dataset-expiration.md) på datauppsättningen för kunder som köpt tillägget för datahygien.
+* (**Kommer snart**) Använd [förfallodatum för datauppsättning](/help/hygiene/ui/dataset-expiration.md) funktioner i datauppsättningen för kunder som köpt tillägget för datahygien.
 * (**Kommer snart**) Var försiktig när du skapar härledda datauppsättningar som hämtar in data från tredje part, eftersom den enda lösningen för att ta bort data från tredje part är att ta bort hela den härledda datauppsättningen när de har blandats ihop.
 
 >[!TIP]
