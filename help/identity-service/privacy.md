@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen
 title: Behandling av sekretessförfrågningar i identitetstjänsten
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för identitetstjänsten.
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: 1930d235b57b59f9967f9f53c8c1faf25cea9051
+source-git-commit: 74ef1e24c2b40103ac6cafdfd22cb6036cdbfd3e
 workflow-type: tm+mt
-source-wordcount: '1015'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
@@ -110,9 +110,9 @@ Beroende på om du även har inkluderat kundprofil i realtid (`ProfileService`) 
 
 | Produkter som ingår | Effekter |
 | --- | --- |
-| `identity` endast | Den angivna identiteten tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilen som skapats från det identitetsdiagrammet finns fortfarande kvar, men uppdateras inte eftersom nya data har importerats eftersom identitetsassociationerna nu har tagits bort. De data som är associerade med profilen finns också kvar i datasjön. |
+| `identity` endast | Den angivna identiteten tas bort så snart Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilen som skapats från det identitetsdiagrammet finns fortfarande kvar, men uppdateras inte eftersom nya data har importerats eftersom identitetsassociationerna nu har tagits bort. De data som är associerade med profilen finns också kvar i datasjön. |
 | `identity` och `ProfileService` | Den angivna identiteten tas bort så snart Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
-| `identity` och `aepDataLake` | Den angivna identiteten tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilen som skapats från det identitetsdiagrammet finns fortfarande kvar, men uppdateras inte eftersom nya data har importerats eftersom identitetsassociationerna nu har tagits bort.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
+| `identity` och `aepDataLake` | Den angivna identiteten tas bort så snart Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilen som skapats från det identitetsdiagrammet finns fortfarande kvar, men uppdateras inte eftersom nya data har importerats eftersom identitetsassociationerna nu har tagits bort.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
 | `identity`, `ProfileService`och `aepDataLake` | Den angivna identiteten tas bort så snart Platform skickar en bekräftelse på att begäran om borttagning togs emot.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
 
 Se [[!DNL Privacy Service] dokumentation](../privacy-service/home.md#monitor) för mer information om spårning av jobbstatus.
