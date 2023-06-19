@@ -2,9 +2,9 @@
 title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: cdbbd7fa3e8c0a2128823db7279dcb606f3c74db
+source-git-commit: f8ccf9303fbcb010225881942de5e672b4111072
 workflow-type: tm+mt
-source-wordcount: '2282'
+source-wordcount: '2268'
 ht-degree: 0%
 
 ---
@@ -110,9 +110,9 @@ Inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**, sök efter [!DNL 
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och väljer **[!UICONTROL Connect to destination]**.
 
-| [!DNL Mailchimp] mål | [!DNL Mailchimp] |
+| Fält | Beskrivning |
 | --- | --- |
-| **[!UICONTROL Username]** | Dina [!DNL Salesforce Marketing Cloud] domänprefix. <br>Om din domän till exempel är<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exactarget.com*,<br> du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som användarnamnsvärde. |
+| **[!UICONTROL Username]** | Dina [!DNL Mailchimp Interest Categories] användarnamn. |
 | **[!UICONTROL Password]** | Dina [!DNL Mailchimp] **API-nyckel** som du hade noterat i [Samla [!DNL Mailchimp] autentiseringsuppgifter](#gather-credentials) -avsnitt.<br> Din API-nyckel har formen av `{KEY}-{DC}`, där `{KEY}` refererar till värdet som anges nedåt i [[!DNL Mailchimp] API-nyckel](#gather-credentials) och `{DC}` refererar till [[!DNL Mailchimp] datacenter](#identify-data-center). <br>Du kan antingen ange `{KEY}` eller hela formuläret.<br> Om API-nyckeln till exempel är <br>*`0123456789abcdef0123456789abcde-us14`*,<br> du kan ange antingen *`0123456789abcdef0123456789abcde`*eller *`0123456789abcdef0123456789abcde-us14`*som värdet. |
 
 {style="table-layout:auto"}
