@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 9866833bbc5fab789ec3ccb90422a3176aec84da
+source-git-commit: b5a6853c13b151a8754245cd4316a0de75e23e82
 workflow-type: tm+mt
-source-wordcount: '981'
-ht-degree: 8%
+source-wordcount: '988'
+ht-degree: 7%
 
 ---
 
@@ -61,6 +61,7 @@ ht-degree: 8%
       - [OneTrust-integrering](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
+      - [SAP Hybris-koppling](connectors/crm/sap-hybris.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
@@ -138,6 +139,7 @@ ht-degree: 8%
          - [OneTrust-integrering](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
+         - [SAP Hybris](tutorials/api/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
          - [SugarCRM-konton och kontakter](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM-händelser](tutorials/api/create/crm/sugarcrm-events.md)
@@ -258,6 +260,7 @@ ht-degree: 8%
          - [OneTrust-integrering](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
+         - [SAP Hybris](tutorials/ui/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
          - [SugarCRM-konton och kontakter](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM-händelser](tutorials/ui/create/crm/sugarcrm-events.md)
