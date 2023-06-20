@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;bigquery;Google;google;Google BigQuery
-solution: Experience Platform
 title: Skapa en Google BigQuery Base-anslutning med API:t för Flow Service
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Google BigQuery med API:t för Flow Service.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
-source-git-commit: 997423f7bf92469e29c567bd77ffde357413bf9e
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '534'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Google BigQuery] basanslutning med [!DNL Flow Service] API
+
+>[!IMPORTANT]
+>
+>The [!DNL Google BigQuery] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 

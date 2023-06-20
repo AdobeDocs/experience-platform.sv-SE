@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Google Big Query;google big query;GBQ;gbq
-solution: Experience Platform
 title: Skapa en Google Big Query Source-anslutning i användargränssnittet
-type: Tutorial
 description: Lär dig hur du skapar en Google Big Query-källanslutning med Adobe Experience Platform-gränssnittet.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 3c0902de-48b9-42d8-a4bd-0213ca85fc7f
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '436'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Google Big Query] källanslutning i användargränssnittet
+
+>[!IMPORTANT]
+>
+>The [!DNL Google BigQuery] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. Den här självstudiekursen innehåller steg för att skapa en [!DNL Google Big Query] källanslutning med hjälp av användargränssnittet för plattformen.
 

@@ -1,15 +1,20 @@
 ---
 title: Skapa en Google PubSub Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: 79149274c28507041ad89be9d7afdefaedb6aaa0
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '973'
+source-wordcount: '991'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Google PubSub] källanslutning i användargränssnittet
+
+>[!IMPORTANT]
+>
+>The [!DNL Google PubSub] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Google PubSub] (nedan kallad[!DNL PubSub]&quot;) med användargränssnittet för plattformen.
 

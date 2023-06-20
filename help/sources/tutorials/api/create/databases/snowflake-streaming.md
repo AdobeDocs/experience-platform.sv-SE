@@ -3,9 +3,9 @@ title: Anslut ditt Snowflake Streaming-konto till Adobe Experience Platform
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake Streaming med API:t för Flow Service.
 badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
-source-git-commit: 8bc232034301fa713f61bd3f11fbde122afcdcf9
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '830'
 ht-degree: 1%
 
 ---
@@ -15,8 +15,7 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >* The [!DNL Snowflake] strömningskällan är i betaversion. Läs [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
->* API-stöd för [!DNL Snowflake] strömningskälla är endast tillgänglig för kunder som har köpt Real-Time CDP Ultimate.
-
+>* The [!DNL Snowflake] strömningskälla är tillgänglig i API:t för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Den här självstudiekursen innehåller steg för hur du ansluter och direktuppspelar data från [!DNL Snowflake] till Adobe Experience Platform med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 

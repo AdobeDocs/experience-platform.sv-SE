@@ -3,15 +3,20 @@ keywords: Experience Platform;hemanvändare;populära ämnen;Amazon Redshift;Ama
 solution: Experience Platform
 title: Översikt över Snowflake Source Connector
 description: Lär dig hur du ansluter Snowflake till Adobe Experience Platform med API:er eller användargränssnittet.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: df066463-1ae6-4ecd-ae0e-fb291cec4bd5
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
 # [!DNL Snowflake] källa
+
+>[!IMPORTANT]
+>
+>The [!DNL Snowflake] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

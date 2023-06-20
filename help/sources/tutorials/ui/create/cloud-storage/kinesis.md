@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Amazon Kinesis;amazon kinesis;Kinesis;kinesis
-solution: Experience Platform
 title: Skapa en Amazon Kinesis Source Connection i användargränssnittet
-type: Tutorial
 description: Lär dig hur du skapar en källanslutning till Amazon Kinesis med Adobe Experience Platform gränssnitt.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4152e48b-bec7-4b05-a172-eea71c9d9880
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '448'
+source-wordcount: '455'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Amazon Kinesis] källanslutning i användargränssnittet
+
+>[!IMPORTANT]
+>
+>The [!DNL Amazon Kinesis] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Källkopplingar i Adobe Experience Platform gör det möjligt att importera externt källkodsdata på schemalagd basis. Den här självstudiekursen innehåller steg för hur du autentiserar en [!DNL Amazon Kinesis] (nedan kallad [!DNL "Kinesis"]) med hjälp av [!DNL Platform] användargränssnitt.
 

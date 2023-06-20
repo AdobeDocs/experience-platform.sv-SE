@@ -1,17 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Azure synapse Analytics;azure synapse analytics;Synapse;synapse
-solution: Experience Platform
 title: azure synapse Analytics Source Connector - översikt
 description: Lär dig hur du ansluter Azure synapse Analytics till Adobe Experience Platform med API:er eller användargränssnittet.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 5b94ae74-e5a7-40e9-a952-41eddf06dcde
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '240'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
 
-# [!DNL Azure Synapse Analytics] koppling
+# [!DNL Azure Synapse Analytics] källa
+
+>[!IMPORTANT]
+>
+>The [!DNL Azure Synapse Analytics] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

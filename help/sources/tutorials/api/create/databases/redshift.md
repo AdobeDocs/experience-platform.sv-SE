@@ -1,18 +1,20 @@
 ---
-keywords: Experience Platform;hemanvändare;populära ämnen;rödskift;Redshift;Amazon Redshift;amazon redshift
-solution: Experience Platform
 title: Skapa en Amazon Redshift Base-anslutning med API:t för flödestjänsten
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Amazon Redshift med API:t för Flow Service.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 2728ce08-05c9-4dca-af1d-d2d1b266c5d9
-source-git-commit: 90eb6256179109ef7c445e2a5a8c159fb6cbfe28
+source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '508'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Amazon Redshift] basanslutning med [!DNL Flow Service] API
+
+>[!IMPORTANT]
+>
+>The [!DNL Amazon Redshift] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
@@ -34,6 +36,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Amazon Redshift]måste du an
 | **Autentiseringsuppgifter** | **Beskrivning** |
 | -------------- | --------------- |
 | `server` | Servern som är kopplad till din [!DNL Amazon Redshift] konto. |
+| `port` | TCP-porten som [!DNL Amazon Redshift] servern använder för att avlyssna klientanslutningar. |
 | `username` | Användarnamnet som är associerat med din [!DNL Amazon Redshift] konto. |
 | `password` | Lösenordet som är kopplat till [!DNL Amazon Redshift] konto. |
 | `database` | The [!DNL Amazon Redshift] databas som du använder. |
@@ -67,34 +70,36 @@ Följande begäran skapar en basanslutning för [!DNL Amazon Redshift]:
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "amazon-redshift base connection",
-        "description": "base connection for amazon-redshift,
-        "auth": {
-            "specName": "Basic Authentication",
-            "params": {
-                "server": "{SERVER}",
-                "database": "{DATABASE}",
-                "password": "{PASSWORD}",
-                "username": "{USERNAME}"
-            }
-        },
-        "connectionSpec": {
-            "id": "3416976c-a9ca-4bba-901a-1f08f66978ff",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "amazon-redshift base connection",
+      "description": "base connection for amazon-redshift,
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "server": "{SERVER}",
+              "port": "{PORT},
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "database": "{DATABASE}"
+          }
+      },
+      "connectionSpec": {
+          "id": "3416976c-a9ca-4bba-901a-1f08f66978ff",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
 | ------------- | --------------- |
 | `auth.params.server` | Dina [!DNL Amazon Redshift] server. |
+| `auth.params.port` | TCP-porten som [!DNL Amazon Redshift] servern använder för att avlyssna klientanslutningar. |
 | `auth.params.database` | Databasen som är associerad med din [!DNL Amazon Redshift] konto. |
 | `auth.params.password` | Lösenordet som är kopplat till [!DNL Amazon Redshift] konto. |
 | `auth.params.username` | Användarnamnet som är associerat med din [!DNL Amazon Redshift] konto. |
