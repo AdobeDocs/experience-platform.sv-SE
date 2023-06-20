@@ -1,9 +1,8 @@
 ---
-keywords: Experience Platform;mediekant;populära ämnen;datumintervall
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Med Media Edge API:er kan utvecklare samla in data för Media Edge Analytics och Customer Journey Analytics.
-source-git-commit: b4687fa7f1a2eb8f206ad41eae0af759b0801b83
+source-git-commit: 6570149298defe1aeb0c3e35cb71e166aeb7a3f7
 workflow-type: tm+mt
 source-wordcount: '82'
 ht-degree: 0%
@@ -15,6 +14,7 @@ ht-degree: 0%
 
 Det här dokumentet innehåller en OAS-referens (JSON Open API Specification) eller &quot;Swagger&quot;-referens. Du kan kopiera och klistra in den här specifikationen i ett återgivningsverktyg, till exempel editor.swagger.io, för att visa API-information för Media Edge. Specifikationen innehåller parametrar, exempel och schema för varje slutpunkt.
 
++++ Markera för att visa och kopiera Open API-specifikationen
 
 ```
 {
@@ -3908,3 +3908,5 @@ Det här dokumentet innehåller en OAS-referens (JSON Open API Specification) el
   }
 }
 ```
+
++++

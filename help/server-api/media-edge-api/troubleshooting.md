@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;mediekant;populära ämnen;datumintervall
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Felsökningsguide för Media Edge API:er
-source-git-commit: f723114eebc9eb6bfa2512b927c5055daf97188b
+source-git-commit: ff4bc64843e3d05277f56ab67b60400fb9e65c4f
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '669'
 ht-degree: 0%
 
 ---
@@ -22,7 +21,7 @@ För att felsöka misslyckade svar åtföljs felen av en svarsbrödtext som inne
 
 ## Valideringssessionen startar
 
-De flesta problem med att skapa sessionsstartbegäranden resulterar i ett 207 Multi-Status-svar.
+De flesta problem med begäran om sessionsstart resulterar i ett 207 Multi-Status-svar.
 Nyttolasten liknar de icke-allvarliga felen i Experience Edge Network Server API. Alla Media Analytics-fel har följande typ:  `https://ns.adobe.com/aep/errors/va-edge-0XXX-XXX`. Siffrorna som visas i svaret motsvarar felstatusen.
 
 I följande exempel visas en svarstext för en sessionsstartbegäran som båda saknar ett obligatoriskt fält och har ett ogiltigt.

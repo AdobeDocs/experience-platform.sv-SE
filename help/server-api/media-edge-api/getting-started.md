@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;mediekant;populära ämnen;datumintervall
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
-source-git-commit: 4f60b00026a226aa6465b2c21b3c2198962a1e3b
+source-git-commit: 6570149298defe1aeb0c3e35cb71e166aeb7a3f7
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '960'
 ht-degree: 1%
 
 ---
@@ -13,49 +12,49 @@ ht-degree: 1%
 
 # Komma igång med API för Media Edge
 
-Den här handboken innehåller anvisningar om hur du utför framgångsrika initiala interaktioner med Media Edge API-tjänsten. Detta inkluderar att starta en mediesession och sedan spåra händelser som skickats till en Adobe Experience Platform-lösning (AEP) som Customer Journey Analytics (CJA). Media Edge API-tjänsten initieras med sessionens startslutpunkt. När sessionen har startats kan en eller flera av följande händelser spåras:
+Den här handboken innehåller anvisningar om hur du utför framgångsrika initiala interaktioner med Media Edge API-tjänsten. Detta inkluderar att starta en mediesession och sedan spåra händelser som skickats till en Adobe Experience Platform-lösning som Customer Journey Analytics (CJA). Media Edge API-tjänsten initieras med sessionens startslutpunkt. När sessionen har startats kan en eller flera av följande händelser spåras:
 
-* play
-* ping
-* bitrateChange
-* bufferStart
-* pauseStart
-* adBreakStart
-* adStart
-* adComplete
-* adSkip
-* adBreakComplete
-* chapterStart
-* chapterComplete
-* kapitelSkip
-* error
-* sessionEnd
-* sessionComplete
-* statesUpdate
+* `play`
+* `ping`
+* `bitrateChange`
+* `bufferStart`
+* `pauseStart`
+* `adBreakStart`
+* `adStart`
+* `adComplete`
+* `adSkip`
+* `adBreakComplete`
+* `chapterStart`
+* `chapterComplete`
+* `chapterSkip`
+* `error`
+* `sessionEnd`
+* `sessionComplete`
+* `statesUpdate`
 
 Varje händelse har en egen slutpunkt. Alla Media Edge API-slutpunkter är POST-metoder med JSON-begärandeinstanser för händelsedata. Mer information om Media Edge API-slutpunkter, parametrar och exempel finns i [Media Edge Swagger-fil](swagger.md).
 
 Den här guiden visar hur du spårar följande händelser efter att du har startat sessionen:
 
-* Buffertstart
-* Spela upp
-* Sessionen slutförd
+* [Buffertstart](#buffer-start-event-request)
+* [Spela upp](#play-event-request)
+* [Sessionen slutförd](#session-complete-event-request)
 
-## Implementera API
+## Implementera API {#implement-api}
 
-Förutom smärre skillnader i anropad modell och sökväg har Media Edge API samma implementering som Media Collection API. Implementeringsinformationen för Media Collection gäller även fortsättningsvis för Media Edge API, vilket beskrivs i följande dokumentation:
+Förutom smärre skillnader i anropad modell och sökväg har Media Edge API samma implementering som [Media Collection API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en). Implementeringsinformationen för Media Collection gäller även fortsättningsvis för Media Edge API, vilket beskrivs i följande dokumentation:
 
 * [Ställa in HTTP-begärantypen i spelaren](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [Skicka ping-händelser](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [Timeoutvillkor](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-timeout.html?lang=en)
 * [Kontrollera händelseordningen](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-ctrl-order.html?lang=en)
 
-## Behörighet
+## Behörighet {#authorization}
 
 Media Edge API:er kräver för närvarande inte auktoriseringshuvuden i sina begäranden.
 
 
-## Startar sessionen
+## Startar sessionen {#start-session}
 
 Om du vill starta mediesessionen på servern använder du slutpunkten för sessionsstart. Ett lyckat svar innehåller `sessionId`, som är en obligatorisk parameter för efterföljande händelsebegäranden.
 
@@ -104,7 +103,7 @@ Datatypsmappning för `eventType` i exemplet ovan är följande:
 
 | eventType | datatyper |
 | -------- | ------ |
-| mediaSessionStart | [sessionDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/sessiondetails.schema.md) |
+| media.SessionStart | [sessionDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/sessiondetails.schema.md) |
 | media.chapterStart | [chapterDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/chapterdetails.schema.md) |
 | media.adBreakStart | [advertisingPodDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/advertisingpoddetails.schema.md) |
 | media.adStart | [advertisingDetails](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/advertisingdetails.schema.md) |
@@ -170,7 +169,7 @@ Mer information om parametrar och exempel för sessionens startslutpunkt finns i
 Mer information om XDM-mediedataparametrar finns i [Informationsschema för mediainformation](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/mediadetails.schema.md#xdmplayhead).
 
 
-## Buffertstarthändelsebegäran
+## Buffertstarthändelsebegäran {#buffer-start}
 
 Buffertens starthändelse signalerar när buffringen startar i mediespelaren. Buffertåterupptagning är inte en händelse i API-tjänsten. i stället dras den slutsatsen när en play-händelse skickas efter Buffer Start. Om du vill göra en begäran om en Buffer Start-händelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
 
@@ -208,7 +207,7 @@ Svaret är 200 och innehåller inget innehåll.
 Mer information om parametrar och exempel för Buffer Start-slutpunkten finns i [Media Edge Swagger](swagger.md) -fil.
 
 
-## Spela upp händelsebegäran
+## Spela upp händelsebegäran {#play-event}
 
 Play-händelsen skickas när mediespelaren ändrar sitt läge till&quot;uppspelning&quot; från ett annat läge, till exempel&quot;buffring&quot;,&quot;pausad&quot; eller&quot;fel&quot;. Om du vill göra en begäran om uppspelningshändelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
 
@@ -243,7 +242,7 @@ Svaret är 200 och innehåller inget innehåll.
 
 Mer information om parametrar och exempel för Play-slutpunkter finns i [Media Edge Swagger](swagger.md) -fil.
 
-## Sessionens slutförda händelsebegäran
+## Sessionens slutförda händelsebegäran {#session-complete}
 
 Händelsen Slutför session skickas när slutet av huvudinnehållet nås. Om du vill göra en begäran om att slutföra en session använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
 
@@ -289,6 +288,9 @@ I följande tabell visas möjliga svarskoder från API-begäranden för Media Ed
 | 400-nivå | Felaktig begäran |
 | 500-nivå | Serverfel |
 
-Mer information om hur du hanterar fel och misslyckade svarskoder finns i [Felsökningsguide för Media Edge](troubleshooting.md).
+## Mer hjälp om den här funktionen
+
+* [Felsökningsguide för Media Edge](troubleshooting.md)
+* [Översikt över API för Media Edge](overview.md)
 
 
