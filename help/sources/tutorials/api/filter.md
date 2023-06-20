@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;flödestjänst;Flödestjänst
 title: Filtrera radnivådata för en källa med API:t för flödestjänsten
 description: I den här självstudiekursen beskrivs hur du filtrerar data på källnivå med API:t för Flow Service
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: 963fc5e31e1728a8a1a7e94bc0cc47d010347325
+source-git-commit: b0e2fc4767fb6fbc90bcdd3350b3add965988f8f
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '782'
 ht-degree: 1%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 1%
 >Stöd för filtrering av data på radnivå är för närvarande bara tillgängligt för följande källor:
 >
 >* [Google BigQuery](../../connectors/databases/bigquery.md)
+>* [Microsoft Dynamics](../../connectors/crm/ms-dynamics.md)
 >* [Salesforce](../../connectors/crm/salesforce.md)
 >* [Snowflake](../../connectors/databases/snowflake.md)
-
 
 I den här självstudien beskrivs hur du filtrerar radnivådata för en källa med hjälp av [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

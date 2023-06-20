@@ -1,22 +1,24 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Snowflake;snowflake
-solution: Experience Platform
 title: Skapa en Snowflake-basanslutning med API:t för flödestjänsten
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake med API:t för Flow Service.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: 6b9e5da9e552d93ff174d1d65dabb0ffd3128c1a
+source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '589'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Snowflake] basanslutning med [!DNL Flow Service] API
 
+>[!IMPORTANT]
+>
+>The [!DNL Snowflake] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Snowflake] med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Snowflake] med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## Komma igång
 
@@ -42,10 +44,15 @@ För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange fö
 | `database` | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | `username` | Användarnamnet för [!DNL Snowflake] konto. |
 | `password` | Lösenordet för [!DNL Snowflake] användarkonto. |
+| `role` | Den standardroll för åtkomstkontroll som ska användas i [!DNL Snowflake] session. Rollen ska vara en befintlig roll som redan har tilldelats den angivna användaren. Standardrollen är `PUBLIC`. |
 | `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Snowflake] är `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
 Mer information om hur du kommer igång finns i [[!DNL Snowflake] dokument](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
+
+>[!NOTE]
+>
+>Du måste ange `PREVENT_UNLOAD_TO_INLINE_URL` flagga till `FALSE` för att tillåta att data tas bort från [!DNL Snowflake] databas till Experience Platform.
 
 ## Skapa en basanslutning
 

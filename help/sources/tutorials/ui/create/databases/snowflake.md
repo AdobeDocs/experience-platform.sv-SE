@@ -1,17 +1,21 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Snowflake
 title: Skapa en Snowflake-källanslutning i användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar en Snowflake-källanslutning med Adobe Experience Platform användargränssnitt.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: ed92bdcd965dc13ab83649aad87eddf53f7afd60
+source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '490'
 ht-degree: 2%
 
 ---
 
 # Skapa en [!DNL Snowflake] källanslutning i användargränssnittet
+
+>[!IMPORTANT]
+>
+>The [!DNL Snowflake] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Snowflake] källanslutning med Adobe Experience Platform användargränssnitt.
 
@@ -33,9 +37,14 @@ För att få åtkomst till ditt Snowflake-konto på [!DNL Platform]måste du ang
 | Databas | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | Användarnamn | Användarnamnet för [!DNL Snowflake] konto. |
 | Lösenord | Lösenordet för [!DNL Snowflake] användarkonto. |
+| Roll | Den standardroll för åtkomstkontroll som ska användas i [!DNL Snowflake] session. Rollen ska vara en befintlig roll som redan har tilldelats den angivna användaren. Standardrollen är `PUBLIC`. |
 | Anslutningssträng | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 
 Mer information om dessa värden finns i [det här Snowflake-dokumentet](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
+
+>[!NOTE]
+>
+>Du måste ange `PREVENT_UNLOAD_TO_INLINE_URL` flagga till `FALSE` för att tillåta att data tas bort från [!DNL Snowflake] databas till Experience Platform.
 
 ## Anslut ditt Snowflake-konto
 
