@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: b5a6853c13b151a8754245cd4316a0de75e23e82
+source-git-commit: 68c6d579d43b4137e3107d3ab102300dc8304c90
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '991'
 ht-degree: 7%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 7%
       - [Analyskälla](connectors/adobe-applications/analytics.md)
       - [Audience Manager source](connectors/adobe-applications/audience-manager.md)
       - [Adobe Campaign Managed Cloud Services-källa](connectors/adobe-applications/campaign.md)
+      - [Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
       - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
       - [Workfront-källa](connectors/adobe-applications/workfront.md)
