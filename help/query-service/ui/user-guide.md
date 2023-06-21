@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 90829713e85e930e4fd6a32b0dbd38aeb837b84e
+source-git-commit: ff4b528a0456f46d8c99e5921cfc99b197956ba6
 workflow-type: tm+mt
-source-wordcount: '1652'
+source-wordcount: '1626'
 ht-degree: 0%
 
 ---
@@ -113,11 +113,7 @@ På den här panelen visas även användbara metadata som den senaste gången fr
 
 Frågor som har sparats som en mall kan schemaläggas från Frågeredigeraren. På så sätt kan du automatisera körningar av frågor med en anpassad stängsel. Du kan schemalägga frågor baserat på frekvens, datum och tid och även välja en utdatamängd för dina resultat om det behövs. Frågescheman kan också inaktiveras eller tas bort via användargränssnittet.
 
-Scheman ställs in från frågeredigeraren. Nedan följer en lista över begränsningar för schemalagda frågor när du använder Frågeredigeraren. De gäller inte för [!DNL Query Service] API:
-
-- Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts.
-- Du **inte** lägga till ett schema i en parametriserad fråga.
-- Schemalagda frågor **inte** innehåller ett anonymt block.
+Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Detta gäller inte för [!DNL Query Service] API:
 
 Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågescheman i användargränssnittet](./query-schedules.md). Du kan även läsa mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
 
