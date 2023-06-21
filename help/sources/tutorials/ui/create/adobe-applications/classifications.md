@@ -5,10 +5,10 @@ solution: Experience Platform
 title: Skapa en Adobe Analytics-källanslutning för klassificeringsdata i användargränssnittet
 type: Tutorial
 exl-id: d606720d-f1ca-47cc-919b-643a8fc61e07
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: fcebef97ba9cc667f80afd55980c5460912a56fb
 workflow-type: tm+mt
-source-wordcount: '630'
-ht-degree: 0%
+source-wordcount: '599'
+ht-degree: 1%
 
 ---
 
@@ -30,7 +30,7 @@ Data Connector för Analytics-klassificeringar kräver att dina data har migrera
 
 Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan markera **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. The **[!UICONTROL Catalog]** visas tillgängliga källor för att skapa inkommande anslutningar. Varje källkort visar ett alternativ för att antingen konfigurera ett nytt konto eller lägga till data till ett befintligt konto.
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
+Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också söka efter den specifika källa som du vill arbeta med med sökalternativet.
 
 Under **[!UICONTROL Adobe applications]** väljer du **[!UICONTROL Adobe Analytics]** och välj **[!UICONTROL Add data]** för att börja arbeta med data från analysklassificeringar.
 
@@ -72,12 +72,7 @@ Välj **[!UICONTROL Target dataset]** du vill komma åt.
 
 The **[!UICONTROL Dataset activity]** sidan visar information om den valda måldatauppsättningen, inklusive information om dess batchstatus, datauppsättnings-ID och schema.
 
->[!IMPORTANT]
->
->Även om det går att ta bort datauppsättningar för andra källanslutningar stöds det för närvarande inte för datakopplingen för analysklassificeringar. Om du tar bort en datauppsättning av misstag, kontakta Adobe kundtjänst.
-
 ![](../../../../images/tutorials/create/classifications/dataset.png)
-
 
 ## Nästa steg
 
