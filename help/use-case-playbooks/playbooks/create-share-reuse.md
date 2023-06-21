@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Skapa, dela och återanvända spelningsboksinstanser
 description: Lär dig hur du skapar, delar och återanvänder spelningsboksinstanser för att få fram ett marknadsföringsexempel.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
+source-git-commit: e61e200b148e4d17041b3711bd63c796a44b05c8
 workflow-type: tm+mt
 source-wordcount: '708'
 ht-degree: 0%
@@ -64,11 +64,11 @@ Beteendet som beskrivs ovan gäller för alla resurser som skapas, förutom sche
 >
 >När objekt har genererats kan du fortsätta att testa dem i utvecklingssandlådorna genom att lägga till data. Du kan testa resurserna så länge du vill i utvecklingssandlådan och du kan replikera resurslogiken (segmentdefinitioner, resor, scheman och så vidare) i produktionssandlådan när du är klar.
 
-### Återanvänd spelningsböcker {#reuse-playbooks}
+## Återanvänd spelningsböcker {#reuse-playbooks}
 
 Genom att skapa flera instanser av samma spelningsbok kan du implementera samma användningsfall senare, utan att ändra informationen om den tidigare implementeringen av användningsexemplet.
 
-### Dela spelboken och de genererade resurserna med andra teammedlemmar {#share-playbook}
+## Dela spelboken och de genererade resurserna med andra teammedlemmar {#share-playbook}
 
 Du kan dela den genererade instansen och resurserna med andra teammedlemmar. Om du vill göra det kopierar du URL-länken från webbläsaren och delar den med ditt team för att ge dem en översikt över de genererade resurserna.
 

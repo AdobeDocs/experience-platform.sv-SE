@@ -3,10 +3,10 @@ solution: Experience Platform
 title: Använd översikt över fallspelningsböcker
 description: Lär dig använda funktionen Använd fallspelsböcker i Experience Platform för att komma igång med olika användningsområden för marknadsföring
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
+source-git-commit: 896ca002b34e79bd464467011875a54acd5c187c
 workflow-type: tm+mt
-source-wordcount: '389'
-ht-degree: 0%
+source-wordcount: '391'
+ht-degree: 1%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 0%
 Det här hittar du i handboken:
 
 * **[Översikt över användningsfall för spelböcker](#overview)**
+* [Kom igång](/help/use-case-playbooks/playbooks/get-started.md)
 * [Upptäck rätt spelningsbok](/help/use-case-playbooks/playbooks/discover.md)
 * [Skapa, dela och återanvända spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md)
 * [Felsökning och kända begränsningar](troubleshooting.md)
