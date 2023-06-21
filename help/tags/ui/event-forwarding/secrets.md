@@ -2,9 +2,9 @@
 title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
+source-git-commit: a863d65c3e6e330254a58aa822383c0847b0e5f5
 workflow-type: tm+mt
-source-wordcount: '1672'
+source-wordcount: '2037'
 ht-degree: 0%
 
 ---
@@ -13,14 +13,15 @@ ht-degree: 0%
 
 Vid vidarebefordran av händelser är en hemlighet en resurs som representerar autentiseringsuppgifter för ett annat system, vilket möjliggör säkert datautbyte. Det går bara att skapa hemligheter i egenskaper för vidarebefordran av händelser.
 
-Det finns för närvarande tre hemliga typer som stöds:
+Följande hemliga typer stöds för närvarande:
 
 | Hemlig typ | Beskrivning |
 | --- | --- |
-| [!UICONTROL Token] | En enda teckensträng som representerar ett autentiseringstokenvärde som är känt och begripligt för båda systemen. |
+| [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation för användning i [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) och [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
 | [!UICONTROL OAuth 2] | Innehåller flera attribut som stöder [tilldelningstyp för klientautentiseringsuppgifter](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) för [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
-| [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation för användning i [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) och [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
+| [!UICONTROL OAuth 2 JWT] | Innehåller flera attribut som stöder JSON Web Token-profil (JWT) för [OAuth 2.0-auktorisering](https://datatracker.ietf.org/doc/html/rfc7523#section-2.1) bidrag. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
+| [!UICONTROL Token] | En enda teckensträng som representerar ett autentiseringstokenvärde som är känt och begripligt för båda systemen. |
 
 {style="table-layout:auto"}
 
@@ -73,6 +74,7 @@ Här skiljer sig stegen för att skapa hemligheten åt beroende på vilken typ a
 * [[!UICONTROL Token]](#token)
 * [[!UICONTROL HTTP]](#http)
 * [[!UICONTROL OAuth 2]](#oauth2)
+* [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
 
 ### [!UICONTROL Token] {#token}
@@ -116,6 +118,40 @@ Om uppdateringsförskjutningen till exempel är inställd på standardvärdet `1
 När du är klar väljer du **[!UICONTROL Create Secret]** för att spara hemligheten.
 
 ![Spara OAuth 2-förskjutning](../../images/ui/event-forwarding/secrets/oauth-secret-4.png)
+
+### [!UICONTROL OAuth 2 JWT] {#oauth2jwt}
+
+Om du vill skapa en OAuth 2 JWT-hemlighet väljer du **[!UICONTROL OAuth 2 JWT]** från **[!UICONTROL Type]** listruta.
+
+![The [!UICONTROL Create Secret] med OAuth 2 JWT-hemlighet markerad i [!UICONTROL Type] listruta.](../../images/ui/event-forwarding/secrets/oauth-jwt-secret.png)
+
+>[!NOTE]
+>
+>De enda [!UICONTROL Algorithm] som för närvarande stöds för signering av JWT är RS256.
+
+I fälten som visas nedan anger du [!UICONTROL Issuer], [!UICONTROL Subject], [!UICONTROL Audience], [!UICONTROL Custom Claims], [!UICONTROL TTL]väljer du [!UICONTROL Algorithm] i listrutan. Ange sedan [!UICONTROL Private Key Id]och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] fältet är inte ett obligatoriskt fält. Om ett värde anges byts JWT ut mot en åtkomsttoken. Hemligheten kommer att uppdateras enligt `expires_in` attribut från svaret och [!UICONTROL Refresh Offset] värde. Om inget värde anges är den hemlighet som skickas till kanten JWT. Den gemensamma arbetsgruppen kommer att uppdateras i enlighet med [!UICONTROL TTL] och [!UICONTROL Refresh Offset] värden.
+
+![The [!UICONTROL Create Secret] med ett urval av inmatningsfält markerat.](../../images/ui/event-forwarding/secrets/oauth-jwt-information.png)
+
+Under **[!UICONTROL Credential Options]** kan du ange andra alternativ för autentiseringsuppgifter, till exempel `jwt_param` i form av nyckelvärdepar. Om du vill lägga till fler nyckelvärdepar väljer du **[!UICONTROL Add another]**.
+
+![The [!UICONTROL Create Secret] tabbmarkera [!UICONTROL Credential Options] fält.](../../images/ui/event-forwarding/secrets/oauth-jwt-credential-options.png)
+
+Slutligen kan du konfigurera **[!UICONTROL Refresh Offset]** värdet för hemligheten. Detta anger antalet sekunder innan token upphör att gälla som systemet utför en automatisk uppdatering. Motsvarande tid i timmar och minuter visas till höger om fältet och uppdateras automatiskt när du skriver.
+
+![The [!UICONTROL Create Secret] tabbmarkera [!UICONTROL Refresh Offset] fält.](../../images/ui/event-forwarding/secrets/oauth-jwt-refresh-offset.png)
+
+Om uppdateringsförskjutningen till exempel är inställd på standardvärdet `1800` (30 minuter) och åtkomsttoken har en `expires_in` värde för `3600` (en timme) uppdateras hemligheten automatiskt om en timme.
+
+>[!IMPORTANT]
+>
+>En OAuth 2 JWT-hemlighet kräver minst 30 minuter mellan uppdateringarna och måste också vara giltig i minst en timme. Den här begränsningen ger dig minst 30 minuter att ingripa om det uppstår problem med den genererade token.
+>
+>Om förskjutningen till exempel är inställd på `1800` (30 minuter) och åtkomsttoken har en `expires_in` av `2700` (45 minuter), skulle bytet misslyckas på grund av att den resulterande skillnaden är mindre än 30 minuter.
+
+När du är klar väljer du **[!UICONTROL Create Secret]** för att spara hemligheten.
+
+![The [!UICONTROL Create Secret] tabbmarkering [!UICONTROL Create Secret]](../../images/ui/event-forwarding/secrets/oauth-jwt-create-secret.png)
 
 ### [!UICONTROL Google OAuth 2] {#google-oauth2}
 
