@@ -1,12 +1,12 @@
 ---
 title: Krypterad datainmatning
-description: Med Adobe Experience Platform kan du importera krypterade filer via batchkällor i molnet.
+description: Lär dig hur du importerar krypterade filer via molnlagringsbatchkällor med API:t.
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: 8531459da97be648d0a63ffc2af77ce41124585d
+source-git-commit: f0e518459eca72d615b380d11cabee6c1593dd9a
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '1017'
 ht-degree: 0%
 
 ---
@@ -40,6 +40,29 @@ Den här självstudiekursen kräver att du har en fungerande förståelse för f
 ### Använda plattforms-API:er
 
 Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
+
+### Filtillägg som stöds för krypterade filer
+
+Listan över filtillägg som stöds för krypterade filer är följande:
+
+* .csv
+* .tsv
+* .json
+* .parquet
+* .csv.gpg
+* .tsv.gpg
+* .json.gpg
+* .parquet.gpg
+* .csv.pgp
+* .tsv.pgp
+* .json.pgp
+* .parquet.pgp
+* .gpg
+* .pgp
+
+>[!NOTE]
+>
+>Krypterad filinmatning i Adobe Experience Platform Sources stöder openPGP och inte någon specifik tillverkarspecifik version av PGP.
 
 ## Skapa krypteringsnyckelpar {#create-encryption-key-pair}
 
@@ -112,11 +135,11 @@ När du har skapat en basanslutning måste du sedan följa de steg som beskrivs 
 >[!NOTE]
 >
 >Du måste ha följande för att kunna skapa ett dataflöde för krypterad datainmatning:
+>
 >* [ID för offentlig nyckel](#create-encryption-key-pair)
 >* [Källanslutnings-ID](../api/collect/cloud-storage.md#source)
 >* [Målanslutnings-ID](../api/collect/cloud-storage.md#target)
 >* [Mappnings-ID](../api/collect/cloud-storage.md#mapping)
-
 
 Om du vill skapa ett dataflöde skickar du en POST till `/flows` slutpunkt för [!DNL Flow Service] API. Om du vill importera krypterade data måste du lägga till en `encryption` till `transformations` -egenskapen och inkludera `publicKeyId` som skapades i ett tidigare steg.
 
