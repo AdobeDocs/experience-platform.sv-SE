@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 852e0a87b93e640298c38aef7b3f1c255bf18896
+source-git-commit: 0d931c90b6321d93eec9da16f360a3ecd2fd8f14
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '1000'
 ht-degree: 14%
 
 ---
@@ -221,6 +221,8 @@ ht-degree: 14%
       * [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)
       * Google Ads Enhanced Conversions {#google-ads-enhanced-conversions}
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
+      * Google Cloud Platform {#google-cloud-platform}
+         * [Översikt](./extensions/server/google-cloud-platform/overview.md)
       * [!DNL Mailchimp] Edge {#mailchimp}
          * [Översikt](./extensions/server/mailchimp/overview.md)
       * [!DNL Meta Conversions API] {#meta}
@@ -233,6 +235,8 @@ ht-degree: 14%
       * [!DNL Pinterest] {#pinterest}
          * [Översikt](./extensions/server/pinterest/overview.md)
       * [API för fäst konvertering](https://exchange.adobe.com/apps/ec/108550)
+      * [Snowflake] {#snowflake}
+         * [Översikt](./extensions/server/snowflake/overview.md)
       * [!DNL Splunk] {#splunk}
          * [Översikt](./extensions/server/splunk/overview.md)
       * [!DNL Twitter] {#twitter}
