@@ -1,29 +1,33 @@
 ---
-keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
-title: Introduktion till beräknade attribut
-type: Documentation
+title: Översikt över beräknade attribut
 description: Beräknade attribut är funktioner för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
-exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
-hide: true
-hidefromtoc: true
-source-git-commit: 5ae7ddbcbc1bc4d7e585ca3e3d030630bfb53724
+badge: "Beta"
+source-git-commit: 3b4e1e793a610c9391b3718584a19bd11959e3be
 workflow-type: tm+mt
-source-wordcount: '725'
-ht-degree: 0%
+source-wordcount: '961'
+ht-degree: 1%
 
 ---
 
-# (Alfa) Översikt över beräknade attribut
+# Översikt över beräknade attribut
 
 >[!IMPORTANT]
 >
->Funktionen för beräknade attribut är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+>Beräknade attribut finns för närvarande **beta** och är **not** som är tillgängliga för alla användare.
 
-Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
+Personalisering baserad på användarbeteende är ett viktigt krav för marknadsförarna att maximera personaliseringens effekt. Anpassa till exempel marknadsföringsmejl med den senast visade produkten för att öka konverteringen, eller personalisera webbsidan baserat på det totala antalet köp som görs av användarna för att öka kundlojaliteten.
 
-Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Dessa beräknade attributvärden kan sedan visas i en profil, användas för att skapa ett segment eller nås via ett antal olika åtkomstmönster.
+Beräknade attribut hjälper dig att snabbt konvertera profilbeteendedata till aggregerade värden på profilnivå utan att vara beroende av tekniska resurser för:
 
-Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut har i Adobe Experience Platform.
+- Aktivera riktad personalisering med aktivering av beteendeaggregat till Real-time Customer Data Platform destinationer, användning i Adobe Journey Optimizer eller i segmentering
+- Standardisering av aggregerade profilbeteendedata för användning på olika plattformar och i olika appar
+- Bättre datahantering med konsolidering av data från gamla profithändelser till meningsfulla beteendeinsikter
+
+Dessa aggregat beräknas baserat på profilaktiverade Experience Event-datamängder som importerats till Adobe Experience Platform. Varje beräknat attribut är ett profilattribut som har skapats i ditt profilunionsschema och grupperas under fältgruppen &quot;Beräknat attribut&quot; i ditt unionsschema.
+
+Exempel på användningsområden är att personalisera annonser med namnet på den senast visade produkten för personer som inte har köpt något de senaste 7 dagarna. Personalisera marknadsföringsmejl med totala belöningspoäng kommer att gratulera användarna till att de befordrats till en premiumnivå eller beräkna livstidsvärdet för varje kund för att få en bättre målgruppsanpassning.
+
+Den här guiden hjälper dig att bättre förstå vilken roll beräknade attribut har inom plattformen, förutom att förklara grunderna för beräknade attribut.
 
 ## Förstå beräknade attribut
 
@@ -31,28 +35,55 @@ Med Adobe Experience Platform kan du enkelt importera och sammanfoga data från 
 
 En del av den information som samlas in i profilen är lätt att förstå när datafälten läses direkt (t.ex.&quot;förnamn&quot;) medan andra data kräver att man utför flera beräkningar eller använder andra fält och värden för att kunna generera informationen (t.ex.&quot;köpsumma för livstid&quot;). För att göra dessa data enklare att förstå i en överblick [!DNL Platform] I kan du skapa beräknade attribut som automatiskt utför dessa referenser och beräkningar och returnerar värdet i lämpligt fält.
 
-Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut. Uttryck kan definieras på flera olika sätt, så att du kan ange att en regel endast utvärderar inkommande händelser, inkommande händelse- och profildata eller inkommande händelse, profildata och historiska händelser.
+Beräknade attribut inkluderar att skapa ett uttryck, eller &quot;rule&quot;, som fungerar på inkommande data och lagrar resultatvärdet i ett profilattribut. Uttryck kan definieras på flera olika sätt, så att du kan ange vilka händelser som ska aggregeras på, sammanställningsfunktioner eller svarstider.
 
-### Användningsfall
+### Funktioner
 
-Användningsexempel för beräknade attribut kan omfatta allt från enkla beräkningar till mycket komplexa referenser. Här följer några exempel på hur du kan använda beräknade attribut:
+Med beräknade attribut kan du definiera händelseaggregat på ett självbetjäningssätt genom att utnyttja fördefinierade funktioner. Information om dessa funktioner finns nedan:
 
-1. **[!UICONTROL Percentages]:** Ett enkelt beräknat attribut kan inkludera att ta två numeriska fält på en post och dela dem för att skapa en procentsats. Du kan t.ex. ta det totala antalet e-postmeddelanden som skickas till en individ och dividera det med antalet e-postmeddelanden personen öppnar. Om du tittar på det resulterande attributfältet visar det snabbt hur många procent av det totala antalet e-postmeddelanden som öppnats av den enskilda personen.
-1. **[!UICONTROL Application use]:** Ett annat exempel är möjligheten att samla det antal gånger en användare öppnar ditt program. Genom att spåra det totala antalet öppna applikationer, baserat på enskilda öppna händelser, kan ni leverera specialerbjudanden eller meddelanden till användarna på deras 100:e öppna sida, vilket främjar ett djupare engagemang i ert varumärke.
-1. **[!UICONTROL Lifetime values]:** Det kan vara svårt att samla in löpande summor, t.ex. ett livstidsvärde för en kund. Detta kräver att historiksumman uppdateras varje gång en ny köphändelse inträffar. Med ett beräknat attribut kan ni göra detta mycket enklare genom att behålla livstidsvärdet i ett enda fält som uppdateras automatiskt efter varje lyckad köphändelse som gäller kunden.
+|  -funktion | Beskrivning | Datatyper som stöds | Exempel på användning |
+| -------- | ----------- | -------------------- | ------------- |
+| SUM | En funktion som **summor** det angivna värdet för kvalificerade händelser. | Heltal, siffror, långa | Summan av alla inköp de senaste 7 dagarna |
+| COUNT | En funktion som **antal** antalet händelser som har inträffat för den angivna regeln. | Ej tillämpligt | Antal inköp de senaste tre månaderna |
+| MIN | En funktion som hittar **minimum** värdet för de kvalificerade händelserna. | Heltal, siffror, lång tid, tidsstämplar | Första inköpsdata de senaste 7 dagarna<br/>Minsta orderbelopp de senaste fyra veckorna |
+| MAX | En funktion som hittar **maximum** värdet för de kvalificerade händelserna. | Heltal, siffror, lång tid, tidsstämplar | Senaste inköpsdata de senaste 7 dagarna<br/>Högsta orderbelopp de senaste fyra veckorna |
+| MOST_RECENT | En funktion som söker efter det angivna attributvärdet från den senaste kvalificerade händelsen. | Alla primitiva värden, arrayer med primitiva värden | Den senaste produkten har visats de senaste 7 dagarna |
 
-## Kända begränsningar
+### Återställningsperioder
 
-### Försenad tillgänglighet för nya beräknade attribut
+Beräknade attribut beräknas gruppvis, vilket gör att du kan hålla aggregaten aktuella och använda de senaste händelserna. För att stödja dessa nära realtidsscenarier varierar uppdateringsfrekvensen beroende på händelseuppslagsperioden.
 
-Tillgängligheten för nya beräknade attribut kan fördröjas upp till 2 timmar efter att motsvarande schemaattribut har lagts till i unionsschemat.
+Uppslagsperioden refererar till den tid som granskas när Experience Events för det beräknade attributet sammanställs. Den här tidsperioden kan definieras i timmar, dagar, veckor eller månader.
 
-Fördröjningen beror på den aktuella cachelagringskonfigurationen. Efter alfa kan cachens uppdateringsfrekvens ökas.
+Uppdateringsfrekvensen avser den frekvens med vilken de beräknade attributen uppdateras. Värdet beror på uppslagsperioden och ställs in automatiskt.
 
-### Beroendespårning i segment
+| Återställningsperiod | Uppdateringsfrekvens |
+| --------------- | ----------------- |
+| Upp till 24 timmar | Varje timme |
+| Upp till 7 dagar | Dagligen |
+| Upp till 4 veckor | Veckovis |
+| Upp till 6 månader | Månadsvis |
 
-Schemaattribut som redan har använts i ett segmentdefinitionsuttryck men senare konverterats till ett beräknat attribut spåras inte som ett beroende för det segmentet.
+Om det beräknade attributet till exempel har en summeringsperiod på de senaste 7 dagarna, beräknas det här värdet baserat på värdena för de senaste 7 dagarna och uppdateras sedan dagligen.
 
-Eftersom inget beroende har identifierats utvärderas inte det associerade beräknade attributet automatiskt av Experience Platform varje gång segmentdefinitionen utvärderas.
+>[!NOTE]
+>
+>Både veckor och månader anses vara **kalenderveckor** och **kalendermånader** när det används i händelsesökningar.
 
-Alternativt kan skapandet av beräknade attribut hanteras med en specifik schemafältgrupp som lägger till nya beräknade attribut som inte står i konflikt med befintliga attribut. Ett annat alternativ är att återskapa segmentet med rätt beroendespårning för de nya beräknade attributen.
+**Snabb uppdatering**
+
+>[!IMPORTANT]
+>
+>Högst **fem** kan ha snabb uppdatering aktiverad för attribut, per sandlåda.
+
+Snabb uppdatering gör att du kan uppdatera dina attribut. Om du aktiverar det här alternativet kan du uppdatera dina beräknade attribut dagligen, även under längre uppslagsperioder. På så sätt kan du reagera nära i realtid på användaraktiviteter. Det här värdet gäller endast för beräknade attribut med en uppslagsperiod som är större än en vecka.
+
+>[!NOTE]
+>
+>Om du aktiverar snabb uppdatering kommer det att variera varaktigheten för din händelsesökning, eftersom uppslagsperioden rullar varje vecka eller månad.
+>
+>Om du till exempel skapar ett beräknat attribut med en uppslagsperiod på två veckor med snabb uppdatering aktiverat, innebär det att den inledande uppslagsperioden är två veckor. För varje daglig uppdatering kommer dock uppslagsperioden att innehålla händelser från den extra dagen. Det här tillagda antalet dagar fortsätter tills nästa kalendervecka startar, där uppslagsfönstret rullar över och återgår till två veckor.
+
+## Nästa steg
+
+Läs mer om hur du skapar och hanterar beräknade attribut i [API-guide för beräknade attribut](./api.md) eller [gränssnittshandbok för beräknade attribut](./ui.md).

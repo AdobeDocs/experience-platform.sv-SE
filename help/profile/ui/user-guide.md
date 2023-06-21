@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 98854811e57c621a1c8de9146231f54c96e37a5d
 workflow-type: tm+mt
-source-wordcount: '1875'
+source-wordcount: '1929'
 ht-degree: 0%
 
 ---
@@ -175,6 +175,14 @@ Från huvudsidan **[!UICONTROL Profiles]** väljer du **[!UICONTROL Union Schema
 Mer information om fackliga scheman finns på [gränssnittshandbok för union av schema](union-schema.md).
 
 ![Fliken Unionens schema är markerad. Unionsscheman som tillhör organisationen visas.](../images/user-guide/union-schema.png)
+
+## Beräknade attribut {#computed-attributes}
+
+Från huvudsidan **[!UICONTROL Profiles]** väljer du **[!UICONTROL Computed attributes]** om du vill visa en lista med beräknade attribut som tillhör din organisation.
+
+Mer information om beräknade attribut finns i [översikt över beräknade attribut](../computed-attributes/overview.md). Mer information om hur du använder beräknade attribut i plattformsgränssnittet finns i [gränssnittshandbok för beräknade attribut](../computed-attributes/ui.md).
+
+BILD
 
 ## Nästa steg
 

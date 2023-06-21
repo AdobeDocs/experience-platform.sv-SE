@@ -5,7 +5,7 @@ description: Målgruppsslutpunkten i Adobe Experience Platform Segmentation Serv
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
 hide: true
 hidefromtoc: true
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+source-git-commit: f75c2c7ff07974cd0f2a5a8cc3e990c7f3eaa0a3
 workflow-type: tm+mt
 source-wordcount: '1515'
 ht-degree: 0%
@@ -62,7 +62,7 @@ Följande par med begäran/svar används när `withMetrics` frågeparametern fin
 Följande begäran hämtar de fem senaste målgrupperna som skapats i din organisation.
 
 ```shell
-curl -X GET https: //platform.adobe.io/data/core/ups/audiences?limit=5 \
+curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=5 \
  -H 'Authorization:  Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id:  {IMS_ORG}' \
  -H 'x-api-key:  {API_KEY}' \
@@ -684,7 +684,7 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | -------- | ----------- | 
 | `audienceId` | Målgruppens ID. Detta används av externa målgrupper |
 | `name` | Publiken. |
-| `namespace` |  |
+| `namespace` | |
 | `description` | En beskrivning av publiken. |
 | `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalAudience`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalAudience` avser en publik som inte genererats i Platform. |
 | `lifecycle` | Status för målgruppen. Möjliga värden är `draft`, `published`, `inactive`och `archived`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras, `inactive` när målgruppen inte längre är aktiv, och `archived` om målgruppen tas bort. |
