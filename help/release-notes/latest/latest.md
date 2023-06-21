@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation juni 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 72a1ab9203d7cafac5d445f5ca3d2e65bcd1a45c
+source-git-commit: b9d78cd726430b0c7690fdb814d0888aaad832f6
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '755'
 ht-degree: 3%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Tillägg | [!DNL Google Cloud Platform] tillägg för händelsevidarebefordran | The [[!DNL Google Cloud Platform]](../../tags/extensions/server/google-cloud-platform/overview.md) tillägg för händelsevidarebefordran gör att du kan vidarebefordra händelsedata till Google för aktivering via [!DNL Google Pub/Sub]. |
 | Tillägg | [!DNL Cloud connector for Google Analytics 4 (ga4)] extension | The [[!DNL Cloud connector for Google Analytics 4 (ga4)]](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.109820.html) tillägg för händelsevidarebefordran gör att du kan spåra analyser via den nya [!DNL Google Analytics 4 (ga4)] standard. |
 | Hemlighet | OAuth 2 JWT Secret | The [OAuth 2 JWT Secret](../../tags/ui/event-forwarding/secrets.md) kan du använda Adobe och [!DNL Google] Tjänsttoken som stöder server-server-interaktioner vid händelsevidarebefordran. |
-| Taggar och händelsevidarebefordran | Användarattribuering | Användarattribuering levererar viktiga aktivitetsdata i hela [Taggar](../../tags/home.md) och [Vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) Gränssnitt.<br><br>Informationen innehåller vem som gjort vilka ändringar och vid vilken tidpunkt. Dessa data visas i gränssnittet Taggar och Händelsevidarebefordran på följande skärmar:<br><br>* Egenskapsöversikt<br><br><ul><li> Egenskapsöversikt</li><li> Installerade tillägg</li><li>Jämför och granska regler</li><li>Jämför dataelement</li><li>Jämför tillägg</li><li>Biblioteksresursändringar</li><li>Biblioteket skapades och publicerades senast</li></ul> |
+| Taggar och händelsevidarebefordran | Användarattribuering | Användarattribuering levererar viktiga aktivitetsdata i hela [Taggar](../../tags/home.md) och [Vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) Gränssnitt.<br><br>Informationen innehåller vem som gjort vilka ändringar och vid vilken tidpunkt. Dessa data visas i gränssnittet Taggar och Händelsevidarebefordran på följande skärmar:<br><ul><li> Egenskapsöversikt</li><li> Installerade tillägg</li><li>Jämför och granska regler</li><li>Jämför dataelement</li><li>Jämför tillägg</li><li>Biblioteksresursändringar</li><li>Biblioteket skapades och publicerades senast</li></ul> |
 
 {style="table-layout:auto"}
 
