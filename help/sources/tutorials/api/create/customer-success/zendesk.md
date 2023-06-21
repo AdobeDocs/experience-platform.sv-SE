@@ -1,23 +1,17 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-solution: Experience Platform
 title: Skapa ett dataflöde för Zendesk med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Zendesk med API:t för Flow Service.
 exl-id: 3e00e375-c6f8-407c-bded-7357ccf3482e
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '1996'
+source-wordcount: '1966'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa ett dataflöde för [!DNL Zendesk] med [!DNL Flow Service] API
+# Skapa ett dataflöde för [!DNL Zendesk] med [!DNL Flow Service] API
 
->[!NOTE]
->
->The [!DNL Zendesk] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
-
-I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [!DNL Zendesk] data till plattformen med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [!DNL Zendesk] data till plattformen med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## Komma igång
 

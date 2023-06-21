@@ -1,20 +1,16 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;
-title: (Beta) Översikt över källkoppling för blandpanel
+title: Översikt över källkoppling för blandpanel
 description: Lär dig hur du ansluter Mixpanel till Adobe Experience Platform med API:er eller användargränssnittet.
+last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 7eb605f6-8580-40b7-a9b3-96b9c3444f5d
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '449'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Mixpanel]
-
->[!NOTE]
->
->The [!DNL Mixpanel] källan är i betaversion. Se [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# [!DNL Mixpanel]
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

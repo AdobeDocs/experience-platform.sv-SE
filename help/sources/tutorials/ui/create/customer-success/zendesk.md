@@ -1,20 +1,15 @@
 ---
-keywords: Experience Platform;Zendesk;sources;connectors;source connectors;sources sdk;sdk;SDK;zendesk;Zendesk
 title: Skapa en anslutning till Zendesk-källa i användargränssnittet
 description: Lär dig hur du skapar en Zendesk-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '742'
 ht-degree: 3%
 
 ---
 
-# (Beta) Skapa en [!DNL Zendesk] källanslutning i användargränssnittet
-
->[!NOTE]
->
->The [!DNL Zendesk] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en [!DNL Zendesk] källanslutning i användargränssnittet
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Zendesk] källanslutning med Adobe Experience Platform användargränssnitt.
 

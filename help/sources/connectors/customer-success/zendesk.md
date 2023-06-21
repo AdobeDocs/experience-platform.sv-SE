@@ -1,21 +1,16 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Zendesk;zendesk
-solution: Experience Platform
 title: Översikt över Zendesk Source Connector
 description: Lär dig hur du ansluter Zendesk till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
+last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 9f245783-949d-4f40-9cf3-8991b4b6d780
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Zendesk]
-
->[!NOTE]
->
->The [!DNL Zendesk] källan är i betaversion. Se [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# [!DNL Zendesk]
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -40,7 +35,7 @@ I det här avsnittet beskrivs nödvändiga steg som måste utföras för att aut
 
 ![Zendesk API-token](../../images/tutorials/create/zendesk/zendesk-api-tokens.png)
 
-Se [[!DNL Zendesk documentation on subdomains]](https://support.zendesk.com/hc/en-us/articles/4409381383578-Where-can-I-find-my-Zendesk-subdomain-) om du vill ha information om hur du hämtar din underdomän. Mer information om hur du genererar API-token finns i [[!DNL Zendesk] guide för generering av en ny API-token](https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token).
+Se [[!DNL Zendesk documentation on subdomains]](<https://support.zendesk.com/hc/en-us/articles/4409381383578-Where-can-I-find-my-Zendesk-subdomain->) om du vill ha information om hur du hämtar din underdomän. Mer information om hur du genererar API-token finns i [[!DNL Zendesk] guide för generering av en ny API-token](<https://support.zendesk.com/hc/en-us/articles/4408889192858-Generating-a-new-API-token>).
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL Zendesk] till Plattform med API:er eller användargränssnittet:
 

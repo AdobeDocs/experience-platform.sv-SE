@@ -1,20 +1,15 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
-title: (Beta) Skapa en källanslutning och ett dataflöde för blandpanelen med API:t för Flow Service
+title: Skapa en källanslutning och ett dataflöde för blandpanelen med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Mixpanel med API:t för Flow Service.
 exl-id: 804b876d-6fd5-4a28-b33c-4ecab1ba3333
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
 workflow-type: tm+mt
-source-wordcount: '2050'
+source-wordcount: '2019'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa en källanslutning och ett dataflöde för [!DNL Mixpanel] med [!DNL Flow Service] API
-
->[!NOTE]
->
->The [!DNL Mixpanel] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en källanslutning och ett dataflöde för [!DNL Mixpanel] med [!DNL Flow Service] API
 
 I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [!DNL Mixpanel] data till Adobe Experience Platform med [API för flödestjänst](https://developer.adobe.com/experience-platform-apis/references/flow-service/).
 
