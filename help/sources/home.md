@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 6e663e428eebcea92f94111708686d80cf63a988
+source-git-commit: f3d70e986148d39429f394a60d12686617e3fd3d
 workflow-type: tm+mt
 source-wordcount: '1294'
 ht-degree: 0%
@@ -63,6 +63,7 @@ Experience Platform stöder inmatning av data från en analysplattform från tre
 
 - [[!DNL Mixpanel]](connectors/analytics/mixpanel.md)
 - [[!DNL Pendo]](connectors/analytics/pendo-webhook.md)
+- [[!DNL RainFocus]](connectors/analytics/rainfocus.md)
 
 ### molnlagring {#cloud-storage}
 
@@ -128,7 +129,7 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 - [[!DNL Oracle]](connectors/databases/oracle.md)
 - [[!DNL Phoenix]](connectors/databases/phoenix.md)
 - [[!DNL PostgreSQL]](connectors/databases/postgres.md)
-- [[!DNL Snowflake Streaming]](connectors/databases//snowflake-streaming.md)
+- [[!DNL Snowflake (Streaming)]](connectors/databases//snowflake-streaming.md)
 - [[!DNL Snowflake]](connectors/databases/snowflake.md)
 - [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md)
 
@@ -137,7 +138,7 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 Experience Platform stöder inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
-- [[!DNL Shopify Streaming]](connectors/ecommerce/shopify-streaming.md)
+- [[!DNL Shopify (Streaming)]](connectors/ecommerce/shopify-streaming.md)
 
 ### Lokalt system {#local-system}
 

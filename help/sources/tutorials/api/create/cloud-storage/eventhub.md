@@ -3,9 +3,9 @@ title: Skapa en källanslutning för Azure Event Hubs med API:t för Flow Servic
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: b76bc6ddb0d49bbd089627c8df8b31703d0e50b1
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '773'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,10 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 ## Skapa en källanslutning
 
+>[!TIP]
+>
+>An [!DNL Event Hubs] konsumentgrupp kan bara användas för ett enda flöde vid en given tidpunkt.
+
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
 Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
@@ -154,7 +158,7 @@ curl -X POST \
 | `params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
 | `params.dataType` | Den här parametern definierar vilken typ av data som importeras. Datatyper som stöds är: `raw` och `xdm`. |
 | `params.reset` | Den här parametern definierar hur data läses. Använd `latest` för att börja läsa från de senaste data och använda `earliest` för att börja läsa från de första tillgängliga data i strömmen. Den här parametern är valfri och används som standard `earliest` om ej tillhandahållet. |
-| `params.consumerGroup` | Publicerings- eller prenumerationsmekanismen som ska användas för [!DNL Event Hubs]. Den här parametern är valfri och används som standard `$Default` om ej tillhandahållet. Se detta [[!DNL Event Hubs] guide om händelsekonsumenter](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers) för mer information. |
+| `params.consumerGroup` | Publicerings- eller prenumerationsmekanismen som ska användas för [!DNL Event Hubs]. Den här parametern är valfri och används som standard `$Default` om ej tillhandahållet. Se detta [[!DNL Event Hubs] guide om händelsekonsumenter](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers) för mer information. **Anteckning**: An [!DNL Event Hubs] konsumentgrupp kan bara användas för ett enda flöde vid en given tidpunkt. |
 
 ## Nästa steg
 
