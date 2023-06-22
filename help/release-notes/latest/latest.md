@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation juni 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a03d0eeab5ca42225705fdeab692020b1641395d
+source-git-commit: e56a6c2bac46778afcc24db8d51e77ec3700dd96
 workflow-type: tm+mt
-source-wordcount: '1042'
+source-wordcount: '1514'
 ht-degree: 2%
 
 ---
@@ -18,6 +18,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Autentisering till Experience Platform API:er](#authentication-platform-apis)
 - [Datainsamling](#data-collection)
 - [Mål ](#destinations)
+- [Experience Data Model (XDM)](#xdm)
 - [Frågetjänst](#query-service)
 - [Källor](#sources)
 
@@ -75,6 +76,45 @@ Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
 -->
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Tillägg (Prospect-Profile) | [[!UICONTROL Adobe Unified Profile Service Prospect-Profile Union Extension]](https://github.com/adobe/xdm/pull/1735/files) | Obligatoriska fält har lagts till för det prospekt-profilerade unionsschemat. |
+| Tillägg | [[!UICONTROL Decisioning Asset]](https://github.com/adobe/xdm/pull/1732/files) | Lägg till en datatyp som representerar resurser som används vid beslut. [!UICONTROL Decisioning Asset] innehåller en referens till resurser som används för att återge `decisionItems`. |
+| Datatyp | [[!UICONTROL Commerce]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL Commerce] lagrar poster som rör köp- och säljverksamhet. |
+| Fältgrupp | [[!UICONTROL Profile Partner Enrichment(Sample)]](https://github.com/adobe/xdm/pull/1747/files) | Ett exempelschema lades till för profilpartnerberikning. |
+| Fältgrupp | [[!UICONTROL Partner Prospect Details(Sample)]](https://github.com/adobe/xdm/pull/1747/files) | Ett exempelschema har lagts till för profiltillägg för potentiell kund för dataleverantör. |
+| Datatyp | [[!UICONTROL Commerce Scope]](https://github.com/adobe/xdm/pull/1747/files) | [!UICONTROL Commerce Scope] identifierar var en händelse inträffade. I butiksvyn, till exempel butiken eller webbplatsen. |
+| Datatyp | [[!UICONTROL Billing]](https://github.com/adobe/xdm/pull/1734/files) | Faktureringsinformation, för en eller flera betalningar, lades till i [!UICONTROL Commerce] schema. |
+
+{style="table-layout:auto"}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Uppdatera beskrivning |
+| --- | --- | --- |
+| Fältgrupp | [[!UICONTROL MediaAnalytics Interaction Details]](https://github.com/adobe/xdm/pull/1736/files) | Ändrad `bitrateAverageBucket` från 100 till 800-899. |
+| Datatyp | [[!UICONTROL Qoe Data details information]](https://github.com/adobe/xdm/pull/1736/files) | Ändrad `bitrateAverageBucket` datatyp till sträng. |
+| Fältgrupp | [[!UICONTROL Segment Membership Details]](https://github.com/adobe/xdm/pull/1735/files) | Tillagd i klassen Prospect Profile. |
+| Schema | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1735/files) | Identitetskarta har lagts till i [!UICONTROL Computed Attributes System Schema]. |
+| Datatyp | [[!UICONTROL Content Delivery Network]](https://github.com/adobe/xdm/pull/1733/files) | Fält tillagt i [!UICONTROL Session details information] för att beskriva det leveransnätverk som används. |
+| Tillägg | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1731/files) | Identitetskarta har lagts till i [!UICONTROL Adobe Unified Profile Service Account Union Extension]. |
+| Datatyp | [[!UICONTROL Order]](https://github.com/adobe/xdm/pull/1730/files) | `discountAmount` lades till i [!UICONTROL Order]. Detta visar skillnaden mellan det ordinarie orderpriset och specialpriset. Det gäller hela beställningen och inte enskilda produkter. |
+| Schema | [[!UICONTROL AEP Hygiene Operation Request]](https://github.com/adobe/xdm/pull/1728/files) | The `targetServices` fältet lades till för att ge namn på tjänster som bearbetar datahygien. |
+| Datatyp | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/pull/1727/files) | `currencyCode` har lagts till i leveransinformationen för en eller flera produkter. Det är en alfabetisk ISO 4217-valutakod som används för att prissätta produkten. |
+| Datatyp | [[!UICONTROL Application]](https://github.com/adobe/xdm/pull/1726/files) | The `language` -fältet lades till för att ge användaren språkliga, geografiska eller kulturella preferenser till programmet. |
+| Tillägg | [[!UICONTROL AJO Entity Fields]](https://github.com/adobe/xdm/pull/1746/files) | [!UICONTROL AJO Timestamp Entity] lades till för att ange tidpunkten när meddelandet senast ändrades. |
+| Datatyp | (Flera) | [Flera mediedetaljer har tagits bort](https://github.com/adobe/xdm/pull/1739/files) i flera datatyper för att vara konsekventa. |
+
+{style="table-layout:auto"}
+
+Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md)
 
 ## Frågetjänst {#query-service}
 
