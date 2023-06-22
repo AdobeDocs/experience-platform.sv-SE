@@ -1,33 +1,36 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Autentisera;åtkomst
 solution: Experience Platform
 title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: fa4786b081b46c8f3c0030282ae3900891fbd652
+source-git-commit: cf8450bd7382169d8e62b62f03dd861ca61c7be3
 workflow-type: tm+mt
-source-wordcount: '1498'
-ht-degree: 2%
+source-wordcount: '2148'
+ht-degree: 1%
 
 ---
 
 
 # Autentisera och få åtkomst till Experience Platform-API:er
 
-Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er. I slutet av den här självstudiekursen kommer du att ha genererat följande autentiseringsuppgifter som krävs för alla API-anrop för plattformen:
+Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er. I slutet av den här självstudiekursen kommer du att ha genererat eller samlat in följande autentiseringsuppgifter som krävs som huvuden i alla API-anrop för plattformen:
 
 * `{ACCESS_TOKEN}`
 * `{API_KEY}`
 * `{ORG_ID}`
 
-För att skydda program och användare måste alla förfrågningar till Adobe I/O API:er autentiseras och auktoriseras med standarder som OAuth och JSON Web Tokens (JWT). En JWT används tillsammans med klientspecifik information för att generera din personliga åtkomsttoken.
+>[!TIP]
+>
+>Förutom de tre autentiseringsuppgifterna ovan kräver många plattforms-API:er även en giltig `{SANDBOX_NAME}` anges som rubrik. Se [översikt över sandlådor](../sandboxes/home.md) för mer information om sandlådor och [slutpunkt för sandlådehantering](/help/sandboxes/api/sandboxes.md#list) dokumentation som innehåller information om hur du listar de sandlådor som är tillgängliga för din organisation.
 
-I den här självstudiekursen beskrivs hur du samlar in de nödvändiga autentiseringsuppgifterna för att autentisera API-anrop för plattformar, enligt följande flödesschema:
+För att skydda program och användare måste alla förfrågningar till Experience Platform API:er autentiseras och auktoriseras med standarder som OAuth.
+
+I den här självstudiekursen beskrivs hur du samlar in nödvändiga inloggningsuppgifter för att autentisera API-anrop för plattformar, enligt vad som beskrivs i nedanstående flödesschema. Du kan samla de flesta nödvändiga autentiseringsuppgifter i den första engångsinställningen. Åtkomsttoken måste dock uppdateras var 24:e timme.
 
 ![](./images/api-authentication/authentication-flowchart.png)
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 För att kunna anropa Experience Platform API:er måste du ha följande:
 
@@ -40,21 +43,21 @@ Du måste också ha en Adobe ID för att slutföra kursen. Om du inte har någon
 2. Välj **[!UICONTROL Create a new account]**.
 3. Slutför registreringsprocessen.
 
-## Få utvecklare och användare åtkomst till Experience Platform
+## Få utvecklare och användare åtkomst till Experience Platform {#gain-developer-user-access}
 
 Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha utvecklar- och användarbehörigheter för en produktprofil för Experience Platform i Adobe Admin Console.
 
-### Få utvecklaråtkomst
+### Få utvecklaråtkomst {#gain-developer-access}
 
 Kontakta en [!DNL Admin Console] administratör i din organisation för att lägga till dig som utvecklare i en Experience Platform-produktprofil med hjälp av [[!DNL Admin Console]](https://adminconsole.adobe.com/). Se [!DNL Admin Console] dokumentation för specifika instruktioner om hur man [hantera utvecklaråtkomst för produktprofiler](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
 
 När du har utsetts till utvecklare kan du börja skapa integreringar i [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Dessa integreringar är en pipeline från externa program och tjänster till Adobe-API:er.
 
-### Få användaråtkomst
+### Få användaråtkomst {#gain-user-access}
 
 Dina [!DNL Admin Console] måste administratören också lägga till dig som användare i samma produktprofil. Se guiden [hantera användargrupper i [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html) för mer information.
 
-## Generera en API-nyckel, organisations-ID och klienthemlighet {#api-ims-secret}
+## Generera en API-nyckel (klient-ID) och ett företags-ID {#generate-credentials}
 
 >[!NOTE]
 >
@@ -62,7 +65,7 @@ Dina [!DNL Admin Console] måste administratören också lägga till dig som anv
 
 När du har fått utvecklare och användare åtkomst till Platform via [!DNL Admin Console]är nästa steg att skapa `{ORG_ID}` och `{API_KEY}` autentiseringsuppgifter i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
 
-### Lägga till Experience Platform i ett projekt
+### Lägga till Experience Platform i ett projekt {#add-platform-to-project}
 
 Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och logga in med din Adobe ID. Följ sedan instruktionerna i självstudiekursen på [skapa ett tomt projekt](https://developer.adobe.com/developer-console/docs/guides/projects/projects-empty/) i dokumentationen för Adobe Developer Console.
 
@@ -72,36 +75,91 @@ När du har skapat ett nytt projekt väljer du **[!UICONTROL Add API]** på **[!
 
 The **[!UICONTROL Add an API]** visas. Markera produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** före markering **[!UICONTROL Next]**.
 
-![](./images/api-authentication/platform-api.png)
+![Välj Experience Platform API.](./images/api-authentication/platform-api.png)
 
-Följ instruktionerna som beskrivs i självstudiekursen om [lägga till ett API i ett projekt med ett tjänstkonto (JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) (från steget Konfigurera API) för att slutföra processen.
+>[!TIP]
+>
+>Välj **[!UICONTROL View docs]** alternativ för att navigera i ett separat webbläsarfönster till det fullständiga [Referenshandbok för Experience Platform API](https://developer.adobe.com/experience-platform-apis/).
+
+### Välj autentiseringstypen OAuth Server-till-server {#select-oauth-server-to-server}
+
+Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst till Experience Platform-API:t.
 
 >[!IMPORTANT]
 >
->I ett visst steg under den process som är länkad ovan hämtar webbläsaren automatiskt en privat nyckel och ett tillhörande offentligt certifikat. Observera var den här privata nyckeln lagras på din dator, eftersom den krävs i ett senare steg i den här självstudiekursen.
+>Välj **[!UICONTROL OAuth Server-to-Server]** som den enda metoden som kan användas för att gå framåt. The **[!UICONTROL Service Account (JWT)]** -metoden är inaktuell. Även om integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025 rekommenderar Adobe starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Generera en JSON-webbtoken (JWT)](#jwt).
 
-### Samla in inloggningsuppgifter
+![Välj Experience Platform API.](./images/api-authentication/oauth-authentication-method.png)
+
+### Välj produktprofiler för integreringen {#select-product-profiles}
+
+Välj sedan de produktprofiler som ska gälla för din integrering.
+Integreringens tjänstkonto får tillgång till detaljerade funktioner via de produktprofiler som väljs här.
+
+Observera att för att få tillgång till vissa funktioner i Platform måste du också ha en systemadministratör som ger dig de nödvändiga attributbaserade behörigheterna för åtkomstkontroll. Läs mer i avsnittet [Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll](#get-abac-permissions).
+
+>[!TIP]
+>
+Kontakta systemadministratören om du vill se en viss produktprofil här. Systemadministratörer kan visa och hantera API-autentiseringsuppgifter i behörighetsvyn. Mer information finns i avsnittet [Lägg till utvecklare i produktprofilen](#add-developers-to-product-profile).
+
+![Välj produktprofiler för din integrering.](./images/api-authentication/select-product-profiles.png)
+
+Välj **[!UICONTROL Save configured API]** när du är redo.
+
+En genomgång av de steg som beskrivs ovan för att konfigurera en integrering med API:t för Experience Platform finns också i videosjälvstudien nedan:
+
+>[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on)
+
+### Samla in inloggningsuppgifter {#gather-credentials}
 
 När API:t har lagts till i projektet **[!UICONTROL Experience Platform API]** På projektsidan visas följande autentiseringsuppgifter som krävs för alla anrop till API:er för Experience Platform:
+
+![Integreringsinformation när du har lagt till ett API i Developer Console.](./images/api-authentication/api-integration-information.png)
 
 * `{API_KEY}` ([!UICONTROL Client ID])
 * `{ORG_ID}` ([!UICONTROL Organization ID])
 
+<!--
+
 ![](././images/api-authentication/api-key-ims-org.png)
 
-Utöver de ovanstående inloggningsuppgifterna behöver du även de genererade **[!UICONTROL Client Secret]** för ett framtida steg. Välj **[!UICONTROL Retrieve client secret]** för att visa värdet och sedan kopiera det för senare bruk.
+<!--
+
+In addition to the above credentials, you also need the generated **[!UICONTROL Client Secret]** for a future step. Select **[!UICONTROL Retrieve client secret]** to reveal the value, and then copy it for later use.
 
 ![](././images/api-authentication/client-secret.png)
 
-## Generera en JSON-webbtoken (JWT) {#jwt}
+-->
+
+## Generera en åtkomsttoken {#generate-access-token}
+
+Nästa steg är att skapa en `{ACCESS_TOKEN}` autentiseringsuppgifter för användning i API-anrop för plattformar. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Platform API:er. Välj **[!UICONTROL Generate access token]**, vilket visas nedan.
+
+![Visa hur du genererar åtkomsttoken](././images/api-authentication/generate-access-token.gif)
+
+>[!TIP]
+>
+Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om [använda Postman för att autentisera och testa API-anrop](#use-postman).
+
+## [!BADGE Föråldrat]{type=negative} Generera en JSON-webbtoken (JWT) {#jwt}
+
+>[!WARNING]
+>
+JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med [OAuth Server-till-Server-autentiseringsmetod](#select-oauth-server-to-server). Adobe rekommenderar också att du migrerar dina befintliga integreringar till OAuth-metoden. Läs följande viktiga dokumentation:
+> 
+* [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
+* [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
+* [Fördelar med att använda inloggningsmetoden OAuth Server-till-Server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#why-oauth-server-to-server-credentials)
+
++++ Visa inaktuell information
 
 Nästa steg är att generera en JSON Web Token (JWT) baserat på dina kontouppgifter. Detta värde används för att generera `{ACCESS_TOKEN}` autentiseringsuppgifter för användning i API-anrop för plattformen, som måste genereras om var 24:e timme.
 
 >[!IMPORTANT]
 >
->I den här självstudiekursen beskrivs hur du skapar en JWT-fil i Developer Console i stegen nedan. Denna genereringsmetod bör dock endast användas för testning och utvärdering.
+I den här självstudiekursen beskrivs hur du skapar en JWT-fil i Developer Console i stegen nedan. Denna genereringsmetod bör dock endast användas för testning och utvärdering.
 >
->För normal användning måste JWT genereras automatiskt. Mer information om programmässig generering av JWT finns i [autentiseringsguide för tjänstkonto](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) på Adobe Developer.
+För normal användning måste JWT genereras automatiskt. Mer information om programmässig generering av JWT finns i [autentiseringsguide för tjänstkonto](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) på Adobe Developer.
 
 Välj **[!UICONTROL Service Account (JWT)]** i den vänstra navigeringen väljer du **[!UICONTROL Generate JWT]**.
 
@@ -115,7 +173,7 @@ Sidan uppdateras för att visa den genererade JWT-filen tillsammans med ett exem
 
 ![](././images/api-authentication/copy-jwt.png)
 
-## Generera en åtkomsttoken
+**Generera en åtkomsttoken**
 
 När du har genererat en JWT-fil kan du använda den i ett API-anrop för att generera `{ACCESS_TOKEN}`. Till skillnad från värdena för `{API_KEY}` och `{ORG_ID}`måste en ny token genereras var 24:e timme för att du ska kunna fortsätta använda Platform API:er.
 
@@ -139,7 +197,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 >[!NOTE]
 >
->Du kan använda samma API-nyckel, klienthemlighet och JWT för att generera en ny åtkomsttoken för varje session. Detta gör att du kan automatisera genereringen av åtkomsttoken i dina program.
+Du kan använda samma API-nyckel, klienthemlighet och JWT för att generera en ny åtkomsttoken för varje session. Detta gör att du kan automatisera genereringen av åtkomsttoken i dina program.
 
 **Svar**
 
@@ -157,18 +215,22 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 | `access_token` | Den genererade `{ACCESS_TOKEN}`. Detta värde, prefixat med ordet `Bearer`, krävs som `Authentication` header för alla API-anrop för plattformen. |
 | `expires_in` | Antalet millisekunder som återstår tills åtkomsttoken upphör att gälla. När värdet når 0 måste en ny åtkomsttoken genereras för att du ska kunna fortsätta använda Platform API:er. |
 
-## Testa autentiseringsuppgifter
++++
 
-När du har samlat in alla tre nödvändiga autentiseringsuppgifter kan du försöka göra följande API-anrop. Det här samtalet listar alla standarder [!DNL Experience Data Model] (XDM)-klasser som är tillgängliga för din organisation.
+## Testa autentiseringsuppgifter {#test-credentials}
+
+När du har samlat in alla tre nödvändiga autentiseringsuppgifter - åtkomsttoken, API-nyckel och organisations-ID - kan du försöka göra följande API-anrop. Det här samtalet listar alla standarder [!DNL Experience Data Model] (XDM)-klasser som är tillgängliga för din organisation. Importera och köra samtalet i [Postman](#use-postman).
+
+>[!BEGINSHADEBOX]
 
 **Begäran**
 
 ```SHELL
 curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/classes \
   -H 'Accept: application/vnd.adobe.xed-id+json' \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {ORG_ID}'
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}'
 ```
 
 **Svar**
@@ -194,19 +256,53 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 }
 ```
 
-## Använd Postman för att autentisera och testa API-anrop
+>[!ENDSHADEBOX]
 
-[Postman](https://www.postman.com/) är ett populärt verktyg som gör att utvecklare kan utforska och testa RESTful API:er. Detta [Medellång post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) I beskrivs hur du kan konfigurera Postman så att det automatiskt utför JWT-autentisering och använder det för att använda Platform API:er.
+>[!IMPORTANT]
+>
+Samtalet ovan räcker för att testa dina autentiseringsuppgifter, men tänk på att du inte kommer att kunna komma åt eller ändra flera resurser utan rätt attributbaserade åtkomstkontrollbehörighet. Läs mer i [Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll](#get-abac-permissions) -avsnitt.
 
-## Åtkomstkontroll för utvecklare och API med Experience Platform behörigheter
+## Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll {#get-abac-permissions}
+
+Om du vill få åtkomst till eller ändra flera resurser i Experience Platform måste du ha rätt åtkomstkontrollbehörighet. Systemadministratörer kan ge dig [behörigheter du behöver](/help/access-control/ui/permissions.md). Hämta mer information om [hantera API-autentiseringsuppgifter för en roll](/help/access-control/abac/ui/permissions.md#manage-api-credentials-for-role).
+
+Detaljerad information om hur en systemadministratör kan ge de behörigheter som krävs för att få åtkomst till plattformsresurser via API finns också i videosjälvstudien nedan:
+
+>[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on&t=159)
+
+## Använd Postman för att autentisera och testa API-anrop {#use-postman}
+
+[Postman](https://www.postman.com/) är ett populärt verktyg som gör att utvecklare kan utforska och testa RESTful API:er. Du kan använda Experience Platform Postman-samlingar och miljöer för att snabba upp arbetet med Experience Platform API:er. Läs mer om [med Postman i Experience Platform](/help/landing/postman.md) och komma igång med samlingar och miljöer.
+
+Detaljerad information om hur du använder Postman med Experience Platform i samlingar och miljöer finns också i videosjälvstudierna nedan:
+
+**Hämta och importera en Postman-miljö som kan användas med Experience Platform API:er**
+
+>[!VIDEO](https://video.tv.adobe.com/v/28832/?learn=on&t=106)
+
+**Använd en Postman-samling för att generera åtkomsttoken**
+
+Ladda ned [Identity Management Service Postman Collection](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims) och se videon nedan för att lära dig hur du skapar åtkomsttoken.
+
+>[!VIDEO](https://video.tv.adobe.com/v/29698/?learn=on)
+
+**Ladda ned Experience Platform API Postman-samlingar och interagera med API:erna**
+
+>[!VIDEO](https://video.tv.adobe.com/v/29704/?learn=on)
+
+<!--
+This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) describes how you can set up Postman to automatically perform JWT authentication and use it to consume Platform APIs.
+-->
+
+## Systemadministratörer: Bevilja utvecklare och API-åtkomstkontroll med Experience Platform-behörigheter {#grant-developer-and-api-access-control}
 
 >[!NOTE]
 >
->Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
+Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
 
 Innan du skapar integreringar på Adobe Developer Console måste ditt konto ha utvecklar- och användarbehörigheter för en produktprofil för Experience Platform i Adobe Admin Console.
 
-### Lägg till utvecklare i produktprofilen
+### Lägg till utvecklare i produktprofilen {#add-developers-to-product-profile}
 
 Gå till [[!DNL Admin Console]](https://adminconsole.adobe.com/) och logga in med din Adobe ID.
 
@@ -260,7 +356,15 @@ Du kommer tillbaka till [!UICONTROL API credentials] -fliken, där det nya API:t
 
 ![Fliken API-autentiseringsuppgifter med nyligen tillagt API](././images/api-authentication/api-credentials-with-added-api.png)
 
-## Nästa steg
+## Ytterligare resurser {#additional-resources}
+
+Se de ytterligare resurserna nedan för att få hjälp med att komma igång med Experience Platform API:er
+
+* [Autentisera och få åtkomst till Experience Platform API:er](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html) videosjälvstudiekurser
+* [Identity Management Service Postman Collection](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims) för generering av åtkomsttoken
+* [Experience Platform API Postman Collections](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform)
+
+## Nästa steg {#next-steps}
 
 Genom att läsa det här dokumentet har du samlat in och testat dina autentiseringsuppgifter för plattforms-API:er. Du kan nu följa med i de exempel på API-anrop som finns i [dokumentation](../landing/documentation/overview.md).
 
