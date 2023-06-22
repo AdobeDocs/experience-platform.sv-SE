@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Vanliga frågor
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
 workflow-type: tm+mt
-source-wordcount: '4365'
+source-wordcount: '4291'
 ht-degree: 1%
 
 ---
@@ -277,7 +277,7 @@ SELECT count(1) FROM myTableName
 
 Du bör även läsa dokumentationen om hur du utför [schemalagda frågor i användargränssnittet](./ui/user-guide.md#scheduled-queries) och via [API](./api/scheduled-queries.md).
 
-Nedan följer en lista med överväganden för schemalagda frågor när du använder [!DNL Query Editor]. De gäller inte för [!DNL Query Service] API:<br/>Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts.<br/>Du **inte** lägga till ett schema i en parametriserad fråga.<br/>Schemalagda frågor **inte** innehåller ett anonymt block.<br/>Du kan bara schemalägga **en** frågemall med hjälp av användargränssnittet. Om du vill lägga till fler scheman i en frågemall måste du använda API:t. Om ett schema redan har lagts till med API:t kan du inte lägga till fler scheman med hjälp av gränssnittet.
+Tänk på det när du använder [!DNL Query Editor] Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Detta gäller inte för [!DNL Query Service] API.
 +++
 
 ### Vad betyder felet &quot;Sessionsgräns nådd&quot;?
