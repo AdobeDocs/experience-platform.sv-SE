@@ -1,9 +1,9 @@
 ---
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
-source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
+source-git-commit: d927f1f98c1f3a42907501921fcd2367241fa625
 workflow-type: tm+mt
-source-wordcount: '648'
+source-wordcount: '683'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,10 @@ Använd `'$'` för att ange en frågeparameter i frågan i textredigeraren. Läg
 
 Om du tar bort en parameter och försöker köra frågan igen när den redan har körts visas ett felmeddelande i [!UICONTROL Query parameters] för att varna dig.
 
+>[!NOTE]
+>
+>Om frågan inte innehåller några parametrar kan du ändå ange onödiga parametrar i Frågeredigeraren. Frågeredigeraren ignorerar alla onödiga nyckelvärdepar och påverkar inte körningen eller resultatet av frågan.
+
 ![Frågeredigeraren med ett tomt värdefält och frågeparameterfelet markerat.](../images/ui/parameterized-queries/query-parameter-error.png)
 
 ## Använd frågeloggsdetaljer för att kontrollera parametervärden {#check-parameter-values}
@@ -77,4 +81,4 @@ Parametervärden sparas när du schemalägger en parametriserad fråga. Om du vi
 
 Genom att läsa det här dokumentet har du lärt dig att parametrisera frågor i Adobe Experience Platform-gränssnittet och använda dem i schemalagda frågekörningar. Dokumentet visade också hur loggarna skulle kontrolleras för parametervärden som används i frågekörningar.
 
-Om du inte redan har det rekommenderar vi att du läser guiden på [övervaka schemalagda frågor](./monitor-queries.md) för att få en bättre förståelse för statusen för alla frågejobb via plattformens användargränssnitt.
+Därefter rekommenderar vi att du läser guiden [övervaka schemalagda frågor](./monitor-queries.md) för att få en bättre förståelse för statusen för alla frågejobb via plattformens användargränssnitt.
