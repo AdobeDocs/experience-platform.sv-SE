@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 8d612c826164bab48a78d04649c5cca27e5797b0
+source-git-commit: d145aa43274c9406e1ff8d96513667edaa7d07bf
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1676'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.19.0 - 21 juni 2023
+
+* The **[!UICONTROL Variable]** dataelement och **[!UICONTROL Update Variable]** åtgärder är nu allmänt tillgängliga.
 
 ## Version 2.18.0 - 18 maj 2023
 
