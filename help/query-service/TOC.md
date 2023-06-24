@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: a2b4ddae00ecdf33a12119810eca1ed19ace0c2f
+source-git-commit: 9fe547e6270b4ede3151158e3b474f8c3dfd2297
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '278'
 ht-degree: 14%
 
 ---
@@ -60,6 +60,7 @@ ht-degree: 14%
    - [Översikt över användargränssnittet](ui/overview.md)
    - [Användarhandbok för Frågeredigeraren](ui/user-guide.md)
    - [Frågemallar](ui/query-templates.md)
+   - [Parameteriserade frågor (begränsade)](ui/parameterized-queries.md)
    - [Frågescheman](ui/query-schedules.md)
    - [Frågeloggar](ui/query-logs.md)
    - [Övervaka schemalagda frågor](ui/monitor-queries.md)
@@ -86,6 +87,7 @@ ht-degree: 14%
    - [Arbeta med kapslade datastrukturer](essential-concepts/nested-data-structures.md)
    - [Förenkla kapslade datastrukturer](essential-concepts/flatten-nested-data.md)
    - [Anonymt block](essential-concepts/anonymous-block.md)
+   - [Textbunden mall](essential-concepts/inline-templates.md)
    - [Inkrementell inläsning](essential-concepts/incremental-load.md)
    - [Datadeduplicering](essential-concepts/deduplication.md)
    - [Datauppsättningsexempel](essential-concepts/dataset-samples.md)
