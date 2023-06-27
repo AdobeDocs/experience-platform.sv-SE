@@ -4,9 +4,9 @@ title: (Beta) Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 4873af44f623082375fe4b2caa82475e2ba5b808
 workflow-type: tm+mt
-source-wordcount: '3333'
+source-wordcount: '3510'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,6 @@ ht-degree: 0%
 >* Funktionen för att exportera datauppsättningar finns för närvarande i Beta och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 >* Den här betafunktionen stöder export av första generationens data, enligt definitionen i Real-time Customer Data Platform [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 >* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
-
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att använda [!DNL Flow Service API] till export [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, till exempel [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage].
 
@@ -48,7 +47,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Experience Platform datasets]](/help/catalog/datasets/overview.md): Alla data som har importerats till Adobe Experience Platform lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna exportera datauppsättningar till molnlagringsmål i Platform.
+I följande avsnitt finns ytterligare information som du måste känna till för att kunna exportera datauppsättningar till molnlagringsmål i Platform.
 
 ### Nödvändiga behörigheter {#permissions}
 
@@ -2315,6 +2314,29 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 >[!ENDSHADEBOX]
 
 Du hittar information om [olika parametrar som returneras av API:t för dataflöde](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflow-runs/operation/getFlowRuns) i API-referensdokumentationen.
+
+## Verifiera datauppsättningsexport {#verify}
+
+När du exporterar datauppsättningar skapas en `.json` eller `.parquet` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska placeras på din lagringsplats enligt det exportschema som du angav när [skapa ett dataflöde](#create-dataflow).
+
+Experience Platform skapar en mappstruktur på den lagringsplats du angav, där den sparar de exporterade datauppsättningsfilerna. En ny mapp skapas för varje exporttid enligt mönstret nedan:
+
+`folder-name-you-provided/datasetID/exportTime=YYYYMMDDHHMM`
+
+Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade filnamnen är unika.
+
+### Exempeldatauppsättningsfiler {#sample-files}
+
+De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel [.parquet-fil](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json-fil](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
+
+#### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
+
+I steget till [skapa en målanslutning](#create-target-connection)kan du välja vilka exporterade datauppsättningsfiler som ska komprimeras.
+
+Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
+
+* När du exporterar komprimerade JSON-filer är det exporterade filformatet `json.gz`
+* Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
 
 ## API-felhantering {#api-error-handling}
 

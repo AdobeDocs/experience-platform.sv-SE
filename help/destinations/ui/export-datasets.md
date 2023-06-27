@@ -3,9 +3,9 @@ title: (Beta) Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: d0de642eb6118e6597925c12c76917ffa98c3a5a
+source-git-commit: d9b59b8a331511e87171f3b9d1163d452ba469be
 workflow-type: tm+mt
-source-wordcount: '1300'
+source-wordcount: '1366'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,6 @@ ht-degree: 0%
 >* Funktionen för att exportera datauppsättningar finns för närvarande i Beta och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 >* Den här betafunktionen stöder export av första generationens data, enligt definitionen i Real-time Customer Data Platform [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 >* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime och Ultimate. Kontakta din Adobe-representant om du vill ha mer information.
-
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, till exempel [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage] genom att använda användargränssnittet för Experience Platform.
 
@@ -135,11 +134,22 @@ Standardfilnamnet genereras slumpmässigt och säkerställer att de exporterade 
 
 De här filerna finns i din lagringsplats, vilket är en bekräftelse på att exporten lyckades. Om du vill veta hur de exporterade filerna är strukturerade kan du hämta ett exempel [.parquet-fil](../assets/common/part-00000-tid-253136349007858095-a93bcf2e-d8c5-4dd6-8619-5c662e261097-672704-1-c000.parquet) eller [.json-fil](../assets/common/part-00000-tid-4172098795867639101-0b8c5520-9999-4cff-bdf5-1f32c8c47cb9-451986-1-c000.json).
 
+#### Komprimerade datauppsättningsfiler {#compressed-dataset-files}
+
+I [ansluta till målarbetsflöde](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options)kan du välja vilka exporterade datauppsättningsfiler som ska komprimeras, vilket visas nedan:
+
+![Filtyp och komprimeringsval vid anslutning till ett mål för export av datauppsättningar.](/help/destinations/assets/ui/export-datasets/compression-format-datasets.gif)
+
+Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
+
+* När du exporterar komprimerade JSON-filer är det exporterade filformatet `json.gz`
+* Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
+
 ## Ta bort datauppsättning från mål {#remove-dataset}
 
 Så här tar du bort en datauppsättning från ett befintligt dataflöde:
 
-1. Logga in på [Experience Platform UI](https://platform.adobe.com/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre sidhuvudet för att visa befintliga måldataflöden.
+1. Logga in på [Experience Platform UI](https://experience.adobe.com/platform/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre sidhuvudet för att visa befintliga måldataflöden.
 
    ![Målvyn med en målanslutning visas och resten suddigt.](../assets/ui/export-datasets/browse-dataset-connections.png)
 
