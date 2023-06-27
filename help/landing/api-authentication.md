@@ -4,9 +4,9 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: cf8450bd7382169d8e62b62f03dd861ca61c7be3
+source-git-commit: 361f409c7aeee2e3e789bb263eca7c59b73db8ec
 workflow-type: tm+mt
-source-wordcount: '2148'
+source-wordcount: '2149'
 ht-degree: 1%
 
 ---
@@ -87,7 +87,7 @@ Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst
 
 >[!IMPORTANT]
 >
->Välj **[!UICONTROL OAuth Server-to-Server]** som den enda metoden som kan användas för att gå framåt. The **[!UICONTROL Service Account (JWT)]** -metoden är inaktuell. Även om integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025 rekommenderar Adobe starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Generera en JSON-webbtoken (JWT)](#jwt).
+>Välj **[!UICONTROL OAuth Server-to-Server]** eftersom det här är den enda metod som stöds för att gå framåt. The **[!UICONTROL Service Account (JWT)]** -metoden är inaktuell. Även om integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025 rekommenderar Adobe starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Generera en JSON-webbtoken (JWT)](#jwt).
 
 ![Välj Experience Platform API.](./images/api-authentication/oauth-authentication-method.png)
 

@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 6e569ca3f83b374f88ca46fd8f2c40bbed203527
+source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1003'
 ht-degree: 14%
 
 ---
@@ -279,7 +279,7 @@ ht-degree: 14%
    * [Bakåtkompatibilitetsstandard](./extension-dev/backwards-compatibility.md)
 * Reactor API {#api}
    * [Översikt](./api/overview.md)
-   * [Komma igång](./api/getting-started.md)
+   * [Autentisera och få åtkomst till Reactor API](./api/getting-started.md)
    * Slutpunkter {#endpoints}
       * [Företag](./api/endpoints/companies.md)
       * [Egenskaper](./api/endpoints/properties.md)
