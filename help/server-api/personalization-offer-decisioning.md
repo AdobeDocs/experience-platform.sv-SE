@@ -2,9 +2,9 @@
 title: Personalisering via Offer decisioning
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser via Offer decisioning.
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 3047a03e7a911c48a6d4e4c07117af45fa78f678
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 API:t för Edge Network Server kan leverera personaliserade upplevelser som hanteras i [offer decisioning](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=en) till webbkanalen.
 
 [!DNL Offer Decisioning] har stöd för ett icke-visuellt gränssnitt för att skapa, aktivera och leverera aktiviteter och personaliseringsupplevelser.
+
+## Förutsättningar {#prerequisites}
+
+Personalisering via [!DNL Offer Decisioning] kräver att du har åtkomst till [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) innan du konfigurerar integreringen.
 
 ## Konfigurera ditt datastream {#configure-your-datastream}
 
