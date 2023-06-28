@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: db7700d5c504e484f9571bbb82ff096497d0c96e
+source-git-commit: 19430906e5e97732f88bfe13501c4a75f9338a07
 workflow-type: tm+mt
-source-wordcount: '611'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Observera att när du öppnar vissa fält i schemat, som `web.webPageDetails.URL
 >
 >Fyll bara i de uppgifter du är intresserad av att samla in. Allt som inte fylls i utelämnas när data skickas till lösningarna.
 
-## (Beta) Variabel {#variable}
+## Variabel {#variable}
 
 >[!IMPORTANT]
 >
