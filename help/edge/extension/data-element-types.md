@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 19430906e5e97732f88bfe13501c4a75f9338a07
+source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -13,10 +13,6 @@ ht-degree: 0%
 # Dataelementtyper
 
 När du ställt in [åtgärdstyper](action-types.md) i [Adobe Experience Platform Web SDK-taggtillägg](web-sdk-extension-configuration.md)måste du konfigurera dina dataelementtyper. Den här sidan beskriver de tillgängliga elementtyperna.
-
-## ID för händelsesammanfogning {#event-merge-id}
-
-Det här dataelementet tillhandahåller ett ID för händelsesammanfogning när det används. Ingen konfiguration behövs för det här dataelementet. Det angivna dataelementet ändras inte förrän besökaren lämnar sidan eller tills **[!UICONTROL Reset Event Merge ID]** åtgärdstypen används.
 
 ## Identitetskarta {#identity-map}
 

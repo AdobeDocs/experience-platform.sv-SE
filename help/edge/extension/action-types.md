@@ -3,9 +3,9 @@ title: Åtgärdstyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika åtgärdstyperna i taggtillägget Adobe Experience Platform Web SDK.
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 19430906e5e97732f88bfe13501c4a75f9338a07
+source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -27,17 +27,13 @@ Det finns några andra fält i åtgärdstypen Skicka händelse som också kan va
 - **Data:** Data som inte matchar ett XDM-schema kan skickas med det här fältet. Det här fältet är användbart om du försöker uppdatera en Adobe Target-profil eller skicka Target Recommendations-attribut. Se exempel i vår [dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en).<!--- **Merge ID:** If you would like to specify a merge ID for your event, you can do so in this field. Please note that the solutions downstream are not able to merge your event data at this time. -->
 - **Datauppsättnings-ID:** Om du behöver skicka data till en annan datauppsättning än den som du angav i din datastream, kan du ange detta datauppsättnings-ID här.
 - **Dokumentet tas bort:** Om du vill vara säker på att händelserna når servern även om användaren navigerar bort från sidan, ska du kontrollera **[!UICONTROL Document will unload]** kryssrutan. Detta gör att händelser kan nå servern, men svaren ignoreras.
-- **Återge beslut om visuell personalisering:** Om du vill återge anpassat innehåll på sidan ska du kontrollera **[!UICONTROL Render visual personalization decisions]** kryssrutan. Du kan också ange beslutsomfattningar och/eller ytor om det behövs. Se [personaliseringsdokumentation](../personalization/rendering-personalization-content.md#automatically-rendering-content) om du vill ha mer information om återgivning av personaliserat innehåll.
+- **Återge beslut om visuell personalisering:** Om du vill återge anpassat innehåll på sidan ska du kontrollera **[!UICONTROL Render visual personalization decisions]** kryssrutan. Du kan också ange beslutsomfattningar och/eller ytor om det behövs. Se [personaliseringsdokumentation](../personalization/rendering-personalization-content.md#automatically-rendering-content) om du vill ha mer information om återgivning av anpassat innehåll.
 
 ## Ange samtycke {#set-consent}
 
 När du har fått ditt samtycke från din användare måste du meddela Adobe Experience Platform Web SDK genom att använda åtgärdstypen &quot;Ange samtycke&quot;. För närvarande stöds två typer av standarder: &quot;Adobe&quot; och &quot;IAB TCF.&quot; Se [Stöd för inställningar för kundsamtycke](../consent/supporting-consent.md). När du använder Adobe version 2.0 stöds bara ett dataelementvärde. Du måste skapa ett dataelement som matchar det godkända objektet.
 
 I den här åtgärden får du även ett valfritt fält där du kan inkludera en identitetskarta så att identiteter kan synkroniseras när du har fått ditt samtycke. Synkronisering är användbart när medgivandet har konfigurerats som Väntande eller Ut eftersom det är sannolikt det första anropet som utlöses.
-
-## Återställ ID för händelsesammanfogning {#reset-event-merge-id}
-
-Om du vill återställa ditt ID för händelsesammanfogning på sidan kan du göra det med den här åtgärden. Om du vill återställa ditt ID väljer du det sammanfognings-ID som du vill återställa och startar åtgärden efter behov.
 
 ## Uppdatera variabel {#update-variable}
 
