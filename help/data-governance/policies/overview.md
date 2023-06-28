@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över dataanvändningsprinciper
 description: Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Adobe Experience Platform.
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: f292e87bb5f944a636521344b28cf02c746c0f6c
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
@@ -94,6 +94,7 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 | Kombinera med direkt identifierbara data | En åtgärd som kombinerar all personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data. |
 | Målgruppsövergripande | En åtgärd som använder data för annonsanpassning mellan webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen. |
 | Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
+| Dataexport | En åtgärd som exporterar data till valfri plats eller destination utanför produkter och tjänster från Adobe. Du kan till exempel hämta data till din lokala dator, kopiera data från skärmen, schemalägga leverans av data till en plats utanför Adobe, schemalagda projekt i Customer Journey Analytics, hämta rapporter, rapportering-API och så vidare. |
 | E-postmarknadsföring | En åtgärd som använder data i e-postriktade kampanjer. |
 | Exportera till tredje part | En åtgärd som exporterar data till processorer och enheter som inte har direkta relationer med kunder. Många dataleverantörer har villkor i avtalen som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. |
 | Annonsering på plats | En åtgärd som använder data för annonser på plats, inklusive urval och leverans av annonser på organisationens webbplatser eller i appar, eller för att mäta leveransen och effektiviteten av sådana annonser. |
