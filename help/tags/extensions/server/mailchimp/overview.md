@@ -7,7 +7,7 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '1287'
 ht-degree: 2%
@@ -103,7 +103,7 @@ Tillägget är nu installerat och konfigurerat för att användas i din egenskap
 
 ## Datainsamling
 
-När du använder det här tillägget i en [regel](../../../ui/managing-resources/rules.md), finns det flera datavärden som tillägget skickar till Mailchimp för varje händelse. För en vanlig implementering kan du konfigurera [Adobe Experience Platform Web SDK-tillägg](../../client/sdk/overview.md) för att skicka data till [!DNL Platform Edge Network] som används av tillägget i egenskapen för händelsens vidarebefordring.
+När du använder det här tillägget i en [regel](../../../ui/managing-resources/rules.md), finns det flera datavärden som tillägget skickar till Mailchimp för varje händelse. För en vanlig implementering kan du konfigurera [Adobe Experience Platform Web SDK-tillägg](../../client/web-sdk/overview.md) för att skicka data till [!DNL Platform Edge Network] som används av tillägget i egenskapen för händelsens vidarebefordring.
 
 De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data eller data som inte är XDM-data. Läs mer om [skicka XDM-data](../../../../edge/fundamentals/tracking-events.md#sending-non-xdm-data).
 

@@ -5,10 +5,10 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 2c8ac35e9bf72c91743714da1591c3414db5c5e9
+source-git-commit: 2772660936444e39124a75deda6f78d97f7793f2
 workflow-type: tm+mt
-source-wordcount: '1003'
-ht-degree: 14%
+source-wordcount: '1025'
+ht-degree: 13%
 
 ---
 
@@ -96,8 +96,16 @@ ht-degree: 14%
          * [Versionsinformation](./extensions/client/id-service/release-notes.md)
       * Adobe Experience Platform Demo {#platform-demo}
          * [Översikt](./extensions/client/platform-demo/overview.md)
-      * Webb-SDK för Adobe Experience Platform {#sdk}
-         * [Översikt](./extensions/client/sdk/overview.md)
+      * Webb-SDK för Adobe Experience Platform {#web-sdk}
+         * [Översikt](./extensions/client/web-sdk/overview.md)
+         * [Konfigurera SDK-taggtillägget för webben](./extensions/client/web-sdk/web-sdk-extension-configuration.md)
+         * [Händelsetyper](./extensions/client/web-sdk/event-types.md)
+         * [Åtgärdstyper](./extensions/client/web-sdk/action-types.md)
+         * [Dataelementtyper](./extensions/client/web-sdk/data-element-types.md)
+         * [Åtkomst till ECID](./extensions/client/web-sdk/accessing-the-ecid.md)
+         * [Plugin-program för Web SDK](./extensions/client/web-sdk/web-sdk-plugins.md)
+         * [Versionsinformation för Web SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
+         * [Versionsinformation om plugin-program för Web SDK](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
       * Adobe Experience Manager resursinsikter {#asset-insights}
          * [Översikt](./extensions/client/asset-insights/overview.md)
          * [Versionsinformation](./extensions/client/asset-insights/release-notes.md)
@@ -138,9 +146,6 @@ ht-degree: 14%
       * Plugin-program för vanlig analys {#plugins}
          * [Översikt](./extensions/client/plugins/overview.md)
          * [Versionsinformation](./extensions/client/plugins/release-notes.md)
-      * Vanliga SDK-plugin-program för webben {#web-sdk-plugins}
-         * [Översikt](./extensions/client/web-sdk-plugins/overview.md)
-         * [Versionsinformation](./extensions/client/web-sdk-plugins/release-notes.md)
       * [Concat](https://exchange.adobe.com/apps/ec/104690)
       * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)
       * [Cookie-innehållshantering av användarcentrics CMP v2](https://exchange.adobe.com/apps/ec/107037)

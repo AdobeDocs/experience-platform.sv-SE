@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Direktuppspelning - översikt
 description: Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '348'
 ht-degree: 0%
@@ -57,4 +57,4 @@ Tabellen nedan visar vägledning om gränsen per sekund för direktuppspelning v
 
 ## Adobe Experience Platform-tillägg
 
-Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. The [!DNL Experience Platform] tillägg innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsinmatning till [!DNL Experience Platform]. Besök [Experience Platform-tillägg](../../tags/extensions/client/sdk/overview.md) mer information.
+Du kan använda Adobe Experience Platform-tillägget för att skapa en ny direktuppspelningsanslutning. The [!DNL Experience Platform] tillägg innehåller åtgärder för att skicka beacons som är formaterade i [!DNL Experience Data Model] (XDM) för realtidsinmatning till [!DNL Experience Platform]. Besök [Experience Platform-tillägg](../../tags/extensions/client/web-sdk/overview.md) mer information.

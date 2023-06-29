@@ -3,7 +3,7 @@ title: Använda Adobe Journey Optimizer med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Journey Optimizer
 keywords: ajo;ajo web;adobe travel optimizer;renderDecision;surfaces;Decision;propositions;scope;schema
 exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '416'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
    })
    ```
 
-3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i `personalization.surfaces` alternativ för `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] åtgärd](../../extension/action-types.md#send-event) konfiguration av Web SDK-tillägget.
+3. Du kan också ange ytterligare ytor i händelserna. Som standard genererar Web SDK automatiskt webbytan för den aktuella webbsidan och tar med den i begäran till Edge Network. Om det behövs kan ytterligare ytor inkluderas i begäran genom att ange dessa i `personalization.surfaces` alternativ för `sendEvent` eller i motsvarande **[!UICONTROL Surfaces]** [[!UICONTROL Send event] åtgärd](../../../tags/extensions/client/web-sdk/action-types.md#send-event) konfiguration av Web SDK-tillägget.
 
    ```javascript
    alloy("sendEvent", {

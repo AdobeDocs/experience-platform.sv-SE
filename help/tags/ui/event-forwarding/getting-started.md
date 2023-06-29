@@ -3,7 +3,7 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '835'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste data skickas till Adobe Experience Platform Edge Network med ett eller flera av följande tre alternativ:
 
-* [Webb-SDK för Adobe Experience Platform](../../extensions/client/sdk/overview.md)
+* [Webb-SDK för Adobe Experience Platform](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
 * [Server-till-server-API](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-apis/dcs-s2s.html?lang=en)
 
@@ -99,7 +99,7 @@ Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
 Skapa din egenskap i **[!UICONTROL Tags]** arbetsyta och sedan navigera till **[!UICONTROL Extensions]** och välj tillägget Experience Platform Web SDK i katalogen för att konfigurera och installera det.
 
-Se [Dokumentation för Web SDK-tillägg](../../extensions/client/sdk/overview.md) för mer information om konfigurationsalternativ.
+Se [Dokumentation för Web SDK-tillägg](../../extensions/client/web-sdk/overview.md) för mer information om konfigurationsalternativ.
 
 ## Skapa en taggregel för att skicka data till Platform Web SDK
 

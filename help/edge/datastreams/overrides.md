@@ -2,9 +2,9 @@
 title: Konfigurera åsidosättningar av datastream
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
 exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
-source-git-commit: 621dd1dbf99720604f797b97a5e31e090456cdf3
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '950'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
 
 1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](configure.md).
-2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](../extension/web-sdk-extension-configuration.md).
+2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
 I den här artikeln förklaras den kompletta processen för åsidosättning av datastream-konfigurationen för alla typer av åsidosättningar som stöds.
 
@@ -91,7 +91,7 @@ Nu bör åsidosättningar av ID-synkroniseringsbehållare konfigureras. Nu kan d
 
 >[!NOTE]
 >
->Som ett alternativ till att skicka konfigurationsåsidosättningar via Web SDK-kommandon kan du lägga till konfigurationsåsidosättningar i Web SDK [taggtillägg](../extension/web-sdk-extension-configuration.md).
+>Som ett alternativ till att skicka konfigurationsåsidosättningar via Web SDK-kommandon kan du lägga till konfigurationsåsidosättningar i Web SDK [taggtillägg](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
 Efter [konfigurera åsidosättningar av datastream](#configure-overrides) i användargränssnittet för datainsamling kan du nu skicka åsidosättningarna till Edge Network via Web SDK.
 

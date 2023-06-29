@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Demo Extension - översikt
 description: Läs mer om Adobe Experience Platform Demo i Adobe Experience Platform.
 exl-id: 4bafa132-0d21-4140-ab46-f09cc20bce6f
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '1052'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Utbyggnaden har ersatts med [Adobe Experience Platform Web SDK](../sdk/overview.md).
+>Utbyggnaden har ersatts med [Adobe Experience Platform Web SDK](../web-sdk/overview.md).
 
 Funktionerna i det här tillägget porteras till ett nytt tillägg. Här är en snabb jämförelse av aktuella funktioner.
 
@@ -26,11 +26,11 @@ Funktionerna i det här tillägget porteras till ett nytt tillägg. Här är en 
 | Stöd för anpassade kund-ID:n | Stöd för anpassade användar-ID:n |
 | Användargränssnitt för klientmappning för XDM | Bygg i ECID (No need for visitor.js) |
 | Möjlighet att skapa en direktuppspelningsanslutning | Stöd för deltagande |
-|  | XDM-stöd som dataelement |
-|  | Stöd för första parts domän |
-|  | Inbyggda felsökningsverktyg |
-|  | Samlar automatiskt in webbläsarsammanhang |
-|  | Helt öppen källkod |
+| | XDM-stöd som dataelement |
+| | Stöd för första parts domän |
+| | Inbyggda felsökningsverktyg |
+| | Samlar automatiskt in webbläsarsammanhang |
+| | Helt öppen källkod |
 
 
 ## Konfigurera Adobe Experience Platform-tillägget

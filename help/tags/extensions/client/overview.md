@@ -2,7 +2,7 @@
 title: Referens för taggtillägg
 description: Hitta dokumentation för taggtillägg i Adobe Experience Platform.
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 9d9e02c2a4f628ebe04aaa63942e830f3354729f
+source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 2%
@@ -39,7 +39,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Adobe Experience Manager Forms](https://exchange.adobe.com/apps/ec/107493)*
 * [Adobe Experience Cloud ID-tjänst](./id-service/overview.md)
 * [Adobe Experience Platform Demo](./platform-demo/overview.md)
-* [Webb-SDK för Adobe Experience Platform](./sdk/overview.md)
+* [Webb-SDK för Adobe Experience Platform](./web-sdk/overview.md)
 * [Adobe Experience Manager resursinsikter](./asset-insights/overview.md)
 * [Adobe Fonts](https://exchange.adobe.com/apps/ec/101538)*
 * [Adobe Media Analytics för ljud och video](./media-analytics/overview.md)
@@ -65,7 +65,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Cheetah Experiences](https://exchange.adobe.com/apps/ec/102759)*
 * [Clicktale](https://exchange.adobe.com/apps/ec/100082)*
 * [Plugin-program för vanlig analys](./plugins/overview.md)
-* [Vanliga SDK-plugin-program för webben](./web-sdk-plugins/overview.md)
+* [Vanliga SDK-plugin-program för webben](./web-sdk/web-sdk-plugins.md)
 * [Concat](https://exchange.adobe.com/apps/ec/104690)*
 * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)*
 * [Cookie-innehållshantering av användarcentrics CMP v2](https://exchange.adobe.com/apps/ec/*107037)
