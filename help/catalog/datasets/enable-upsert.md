@@ -4,9 +4,9 @@ title: Aktivera en datauppsättning för profiluppdateringar med API:er
 type: Tutorial
 description: I den här självstudiekursen visas hur du använder Adobe Experience Platform API:er för att aktivera en datauppsättning med"upsert"-funktioner för att uppdatera kundprofildata i realtid.
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
+source-git-commit: 6985ebf8705130636abdc50b5c3f50299a60f2aa
 workflow-type: tm+mt
-source-wordcount: '1050'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Den här självstudiekursen handlar om hur du aktiverar en datauppsättning med&
 
 >[!NOTE]
 >
->Arbetsflödet för att infoga fungerar bara för gruppinmatning. Direktinmatning är **not** stöds.
+>Arbetsflödet som beskrivs i den här självstudiekursen fungerar bara för batchinmatning. För direktuppspelande ingessionsöverföringar, se guiden på [skicka uppdateringar av delar av rader till kundprofilen i realtid med Data Prep](../../data-prep/upserts.md).
 
 ## Komma igång
 
