@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 13912d8f5488aaa9ffa79021b67607fe5eec0732
+source-git-commit: eef0b50b12b0e3be34ad519f2d106392c23b7d69
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '550'
 ht-degree: 0%
 
 ---
@@ -45,10 +45,6 @@ Observera att när du öppnar vissa fält i schemat, som `web.webPageDetails.URL
 >Fyll bara i de uppgifter du är intresserad av att samla in. Allt som inte fylls i utelämnas när data skickas till lösningarna.
 
 ## Variabel {#variable}
-
->[!IMPORTANT]
->
->Detta är för närvarande en betafunktion som kan komma att ändras. Framtida versioner kan innehålla helt nya versioner.
 
 Ett annat sätt att skapa XDM-objekt är att använda **[!UICONTROL Variable]** dataelement. När XDM-objektets dataelement skapas när det refereras, till exempel inuti en `sendEvent` kommandot, **[!UICONTROL Variable]** dataelement kan uppdateras via [!UICONTROL Update variable] åtgärder. Om du vill använda dataelementet markerar du rätt Adobe Experience Platform-sandlåda och -schema.
 
