@@ -2,7 +2,7 @@
 title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera segment och exportera datauppsättningar.
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: cf89f40625bedda633ad26cf3e882983600f0d52
+source-git-commit: 5daa92b2f488b4acb825215f4da92af51bcf7c61
 workflow-type: tm+mt
 source-wordcount: '1342'
 ht-degree: 0%
@@ -61,7 +61,7 @@ När du har valt anslutningsmetod måste du ange en **visningsnamn** och **[!DNL
 
 >[!BEGINSHADEBOX]
 
-### Hämta autentiseringsuppgifterna för din [!DNL Data Landing Zone]
+### Hämta autentiseringsuppgifterna för din [!DNL Data Landing Zone] {#retrieve-dlz-credentials}
 
 Du måste använda plattforms-API:erna för att hämta [!DNL Data Landing Zone] autentiseringsuppgifter. API-anropet för att hämta dina autentiseringsuppgifter beskrivs nedan. Mer information om hur du hämtar de värden som krävs för rubrikerna finns i [Komma igång med Adobe Experience Platform API:er](/help/landing/api-guide.md) guide.
 
@@ -112,7 +112,7 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 
 {style="table-layout:auto"}
 
-## Uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter
+### Uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter {#update-dlz-credentials}
 
 Du kan även uppdatera dina autentiseringsuppgifter när du vill. Du kan uppdatera din `SASToken` genom att göra en POST-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
 
