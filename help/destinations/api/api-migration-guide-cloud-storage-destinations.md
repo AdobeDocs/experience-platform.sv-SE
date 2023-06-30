@@ -4,7 +4,7 @@ title: API-migreringsguide för molnlagringsmål
 description: Lär dig mer om förändringarna i arbetsflödet för att aktivera molnlagringsmål som en del av migreringen till de nya målkorten för molnlagring med ytterligare funktioner.
 type: Tutorial
 exl-id: 4acaf718-794e-43a3-b8f0-9b19177a2bc0
-source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
+source-git-commit: b651d15260adbcd37fa396fa0b325a9674a92133
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 0%
@@ -16,7 +16,6 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >* Funktionerna som beskrivs på den här sidan är tillgängliga för kunder som har köpt paketen Real-Time CDP Prime och Ultimate. Kontakta din Adobe-representant om du vill ha mer information.
-
 
 ## Migreringskontext {#migration-context}
 
@@ -783,7 +782,7 @@ Meddelande i konfigurationsexemplet nedan om hur `profileSelectors` fält har er
 
 ## Tidslinje för migrering och åtgärdsobjekt {#timeline-and-action-items}
 
-Migreringen av tidigare dataflöden till nya målkort för [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-destinationer inträffar så snart din organisation är redo att migrera och inte senare än **30 juni 2023**.
+Migreringen av tidigare dataflöden till nya målkort för [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-destinationer inträffar så snart din organisation är redo att migrera och inte senare än **26 juli 2023**.
 
 Du får påminnelser från Adobe när migreringsdatumet närmar sig. Läs avsnittet Åtgärdsobjekt nedan som förberedelse för migreringen.
 
@@ -791,11 +790,11 @@ Du får påminnelser från Adobe när migreringsdatumet närmar sig. Läs avsnit
 
 Som förberedelse för migreringen av [!DNL Amazon S3], [!DNL Azure Blob], och SFTP-molnlagringsmål till de nya korten, förbered dig för att uppdatera dina skript och automatiska API-anrop enligt nedan.
 
-1. Uppdatera eventuella befintliga skript eller automatiska API-anrop [!DNL Amazon S3], [!DNL Azure Blob], eller SFTP molnlagringsmål senast den 30 juni 2023. Alla automatiserade API-anrop eller skript som utnyttjar de gamla anslutningsspecifikationerna eller flödesspecifikationerna måste uppdateras till de nya anslutningsspecifikationerna eller flödesspecifikationerna.
-2. Kontakta din kontorepresentant på Adobe när dina skript har uppdaterats före 30 juni.
+1. Uppdatera eventuella befintliga skript eller automatiska API-anrop [!DNL Amazon S3], [!DNL Azure Blob], eller SFTP-molnlagringsmål senast 26 juli 2023. Alla automatiserade API-anrop eller skript som utnyttjar de gamla anslutningsspecifikationerna eller flödesspecifikationerna måste uppdateras till de nya anslutningsspecifikationerna eller flödesspecifikationerna.
+2. Kontakta din kontorepresentant på Adobe när dina skript har uppdaterats före den 26 juli.
 3. Till exempel `targetConnectionSpecId` kan användas som en flagga för att avgöra om dataflödet har migrerats till det nya målkortet. Du kan uppdatera dina skript med en `if` villkor för att undersöka de gamla och uppdaterade målanslutningsspecifikationerna i `flow.inheritedAttributes.targetConnections[0].connectionSpec.id` och avgöra om ditt dataflöde har migrerats. Du kan se de gamla och nya anslutningsspecifikations-ID:n i de specifika avsnitten på den här sidan för varje mål.
 4. Ditt Adobe-kontoteam får mer information om när dataflödena kommer att migreras.
-5. Efter den 30 juni migreras alla dataflöden. Alla dina befintliga dataflöden har nu nya flödesentiteter (anslutningsspecifikationer, flödesspecifikationer, basanslutningar och målanslutningar). Alla skript eller API-anrop på din sida som använder de äldre flödesentiteterna slutar att fungera.
+5. Efter den 26 juli migreras alla dataflöden. Alla dina befintliga dataflöden har nu nya flödesentiteter (anslutningsspecifikationer, flödesspecifikationer, basanslutningar och målanslutningar). Alla skript eller API-anrop på din sida som använder de äldre flödesentiteterna slutar att fungera.
 
 ## Andra migreringsfaktorer {#other-considerations}
 
