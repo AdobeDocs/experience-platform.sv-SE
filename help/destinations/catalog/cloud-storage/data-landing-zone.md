@@ -2,9 +2,9 @@
 title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera segment och exportera datauppsättningar.
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
+source-git-commit: cf89f40625bedda633ad26cf3e882983600f0d52
 workflow-type: tm+mt
-source-wordcount: '1229'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 0%
 >
 >* Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Data Landing Zone] kontakta din Adobe-representant och uppge [!DNL Organization ID].
 >* Dokumentationssidan refererar till [!DNL Data Landing Zone] *mål*. Det finns också en [!DNL Data Landing Zone] *källa* i källkatalogen. Mer information finns i [[!DNL Data Landing Zone] källa](/help/sources/connectors/cloud-storage/data-landing-zone.md) dokumentation.
-
 
 
 ## Översikt {#overview}
@@ -72,6 +71,12 @@ Du måste använda plattforms-API:erna för att hämta [!DNL Data Landing Zone] 
 GET /data/foundation/connectors/landingzone/credentials?type=dlz_destination
 ```
 
+| Frågeparametrar | Beskrivning |
+| --- | --- |
+| `dlz_destination` | The `dlz_destination` -typ gör att API:t kan skilja en målbehållare för en landningszon från andra typer av behållare som är tillgängliga för dig. |
+
+{style="table-layout:auto"}
+
 **Begäran**
 
 I följande exempel på begäran hämtas autentiseringsuppgifter för en befintlig landningszon.
@@ -104,6 +109,52 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 | `containerName` | Namnet på din landningszon. |
 | `SASToken` | Den delade åtkomstsignaturtoken för din landningszon. Strängen innehåller all information som krävs för att godkänna en begäran. |
 | `SASUri` | Den delade åtkomstsignaturens URI för din landningszon. Den här strängen är en kombination av URI:n till den landningszon som du autentiseras mot och dess motsvarande SAS-token, |
+
+{style="table-layout:auto"}
+
+## Uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter
+
+Du kan även uppdatera dina autentiseringsuppgifter när du vill. Du kan uppdatera din `SASToken` genom att göra en POST-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
+
+**API-format**
+
+```http
+POST /data/foundation/connectors/landingzone/credentials?type=dlz_destination&action=refresh
+```
+
+| Frågeparametrar | Beskrivning |
+| --- | --- |
+| `dlz_destination` | The `dlz_destination` -typ gör att API:t kan skilja en målbehållare för en landningszon från andra typer av behållare som är tillgängliga för dig. |
+| `refresh` | The `refresh` kan du återställa dina inloggningsuppgifter för landningszonen och automatiskt generera en ny `SASToken`. |
+
+{style="table-layout:auto"}
+
+**Begäran**
+
+Följande begäran uppdaterar dina inloggningsuppgifter för landningszonen.
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/connectors/landingzone/credentials?type=dlz_destination&action=refresh' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+```
+
+**Svar**
+
+Följande svar returnerar uppdaterade värden för `SASToken` och `SASUri`.
+
+```json
+{
+    "containerName": "dlz-user-container",
+    "SASToken": "sv=2020-04-08&si=dlz-9c4d03b8-a6ff-41be-9dcf-20123e717e99&sr=c&sp=racwdlm&sig=JbRMoDmFHQU4OWOpgrKdbZ1d%2BkvslO35%2FXTqBO%2FgbRA%3D",
+    "storageAccountName": "dlblobstore99hh25i3dflek",
+    "SASUri": "https://dlblobstore99hh25i3dflek.blob.core.windows.net/dlz-user-container?sv=2020-04-08&si=dlz-9c4d03b8-a6ff-41be-9dcf-20123e717e99&sr=c&sp=racwdlm&sig=JbRMoDmFHQU4OWOpgrKdbZ1d%2BkvslO35%2FXTqBO%2FgbRA%3D"
+}
+```
 
 >[!ENDSHADEBOX]
 
