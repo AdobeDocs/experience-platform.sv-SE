@@ -2,9 +2,9 @@
 title: Händelsevidarebefordringstillägg för Google Cloud-plattform
 description: Det här tillägget för vidarebefordran av Adobe Experience Platform-händelser skickar Adobe Experience Edge Network-händelser till Google Cloud Platform.
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: d1a34a98efd24a20dc53544eeb0d79490aaf31e7
+source-git-commit: 7e26ebe6d40796174ca48367f826c7c6f1512abf
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '531'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ The [!DNL Google Cloud Platform] [händelsevidarebefordran](../../../ui/event-fo
 
 ## Förutsättningar
 
-För att kunna använda det här tillägget måste du ha en [!DNL Google Cloud Platform] konto med ett befintligt [!DNL Cloud Pub/Sub] ämne. Om du inte har en befintlig dataström kan du läsa [!DNL AWS] dokumentation om [skapa en ny dataström med [!DNL AWS] Management Console](https://docs.aws.amazon.com/streams/latest/dev/how-do-i-create-a-stream.html).
+För att kunna använda det här tillägget måste du ha en [!DNL Google Cloud Platform] konto med ett befintligt [!DNL Cloud Pub/Sub] ämne. Om du inte har något ämne som redan finns kan du läsa [[!DNL Google Cloud Platform]](https://cloud.google.com/pubsub/docs/create-topic) dokumentation om hur du skapar och hanterar ämnen.
 
 ### Skapa en hemlighet och ett dataelement
 
