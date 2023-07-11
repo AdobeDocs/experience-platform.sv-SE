@@ -3,16 +3,16 @@ keywords: tillägg för händelsevidarebefordran;twitter;twitter tillägg för h
 title: Twitter-tillägg för händelsevidarebefordran
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Twitter för dina verksamhetsbehov.
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: c5cc36d9530ff6fbb52a1995844f495b38e938b3
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1101'
 ht-degree: 2%
 
 ---
 
 # [!DNL Twitter] tillägg för händelsevidarebefordran
 
-[[!DNL Twitter]](https://www.twitter.com) är en onlinetjänst för sociala medier och sociala nätverk, där användarna publicerar och interagerar med 280-teckenlånga meddelanden som kallas tweets. Användare kan interagera med Twitter via en webbläsare, mobil klientprogramvara eller via programmering via [API:er](https://developer.twitter.com/en/docs/twitter-api)
+[[!DNL Twitter]](https://twitter.com/i/flow/login) är en onlinetjänst för sociala medier och sociala nätverk, där användarna publicerar och interagerar med 280-teckenlånga meddelanden som kallas tweets. Användare kan interagera med Twitter via en webbläsare, mobil klientprogramvara eller via programmering via [API:er](https://developer.twitter.com/en/docs/twitter-api)
 
 The [!DNL Twitter] API för webbkonverteringar [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Twitter]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i din händelsevidarebefordran [regler](../../../ui/managing-resources/rules.md).
 
@@ -32,7 +32,7 @@ Mer information om användningsfall för [!DNL Twitter], se [[!DNL Twitter] anv�
 
 Du måste ha en giltig [!DNL Twitter] för att kunna använda tillägget. Gå till [[!DNL Twitter] registreringssida](https://help.twitter.com/en/using-twitter/create-twitter-account) för att registrera och skapa ett konto om du inte redan har ett.
 
-Du måste konfigurera ditt konto som [!DNL Twitter] utvecklarkonto. Information om hur du registrerar dig som utvecklare finns i [[!DNL Twitter] utvecklarkonto](https://developer.twitter.com/en/support/twitter-api/developer-account).
+Du måste konfigurera ditt konto som [!DNL Twitter] utvecklarkonto. Information om hur du registrerar dig som utvecklare finns i [[!DNL Twitter] utvecklarkonto](https://developer.twitter.com/en/support/twitter-api/developer-account1).
 
 ### API-skyddsutkast {#guardrails}
 
@@ -44,10 +44,10 @@ För att ansluta Experience Platform till [!DNL Twitter]krävs följande indata:
 
 | Nyckeltyp | Beskrivning |
 | --- | --- |
-| Konsumentnyckel | &#x200B; Programmets API-nyckel för åtkomst till [!DNL Twitter] API. Se [!DNL Twitter] dokumentation om [api-nycklar och hemligheter](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret) för vägledning. |  |
+| Konsumentnyckel | &#x200B; Programmets API-nyckel för åtkomst till [!DNL Twitter] API. Se [!DNL Twitter] dokumentation om [api-nycklar och hemligheter](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret) för vägledning. | |
 | Konsumenthemlighet | API-hemligheten ger din app åtkomst till [!DNL Twitter] API. Se [!DNL Twitter] dokumentation om [api-nycklar och hemligheter](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/api-key-and-secret) för vägledning. |
 | Tokenhemlighet | Den tokenhemlighet som inte förfaller för din app, som används för autentisering till [!DNL Twitter] API via OAuth. Se [!DNL Twitter] dokumentation om [hämta åtkomsttoken](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens) för vägledning. |
-| Åtkomsttoken | Åtkomsttoken för din app som inte förfaller, som används för autentisering till [!DNL Twitter] API via OAuth. Se [!DNL Twitter] dokumentation om [hämta åtkomsttoken](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens) för vägledning. |
+| Åtkomsttoken | Den åtkomsttoken för din app som inte förfaller, som används för autentisering till [!DNL Twitter] API via OAuth. Se [!DNL Twitter] dokumentation om [hämta åtkomsttoken](https://developer.twitter.com/en/docs/authentication/oauth-1-0a/obtaining-user-access-tokens) för vägledning. |
 | Pixel-ID | The [!DNL Twitter] Pixel är en webbplatstagg som implementeras på din webbplats för att spåra webbplatsåtgärder eller konverteringar. Se [!DNL Twitter] dokumentation om [konverteringsspårning för webbplatser](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html) för vägledning. |
 
 ## Installera och konfigurera [!DNL Twitter] extension {#install}

@@ -4,7 +4,7 @@ title: Vidarekoppling av hjärnhändelse
 description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Adobe Experience Edge Network-händelser till Braze.
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 297f48f8-2c3b-41c2-8820-35f4558c67b3
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
 source-wordcount: '1735'
 ht-degree: 1%
@@ -59,7 +59,7 @@ För att ansluta Edge Network till [!DNL Braze]krävs följande indata:
 
 | Nyckeltyp | Beskrivning | Exempel |
 | --- | --- | --- |
-| [!DNL Braze] Instans | REST-slutpunkten som är associerad med [!DNL Braze] konto. Se [!DNL Braze] dokumentation om [instanser](https://www.braze.com/docs/user_guide/administrative/access_braze/braze_instances) för vägledning. | `https://rest.iad-03.braze.com` |
+| [!DNL Braze] Instans | REST-slutpunkten som är associerad med [!DNL Braze] konto. Se [!DNL Braze] dokumentation om [instanser](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) för vägledning. | `https://rest.iad-03.braze.com` |
 | API-nyckel | The [!DNL Braze] API-nyckel som är associerad med [!DNL Braze] konto. <br/>Se [!DNL Braze] dokumentation om [REST API-nyckel](https://www.braze.com/docs/api/basics/#rest-api-key) för vägledning. | `YOUR-BRAZE-REST-API-KEY` |
 
 ### Skapa en hemlighet
@@ -108,8 +108,8 @@ Skapa en ny händelsevidarebefordring när du har installerat tillägget [regel]
 | Indata | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
 | [!UICONTROL Event Name &#x200B;] | Händelsens namn. | Ja |
-| [!UICONTROL Event Time ] | Datum-tid som sträng i ISO 8601 eller i `yyyy-MM-dd'T'HH:mm:ss:SSSZ` format. | Ja |
-| [!UICONTROL App Identifier] | Programidentifieraren eller <strong>app_id</strong> är en parameter som associerar aktivitet med ett specifikt program i appgruppen. Det anger vilket program i appgruppen du interagerar med. Läs mer om [API-identifierartyper](https://www.braze.com/docs/api/identifier_types/). |  |
+| [!UICONTROL Event Time] | Datum-tid som sträng i ISO 8601 eller i `yyyy-MM-dd'T'HH:mm:ss:SSSZ` format. | Ja |
+| [!UICONTROL App Identifier] | Programidentifieraren eller <strong>app_id</strong> är en parameter som associerar aktivitet med ett specifikt program i appgruppen. Det anger vilket program i appgruppen du interagerar med. Läs mer om [API-identifierartyper](https://www.braze.com/docs/api/identifier_types/). | |
 | [!UICONTROL Event Properties &#x200B;] | Ett JSON-objekt som innehåller anpassade egenskaper för händelsen. |  |
 
 {style="table-layout:auto"}
@@ -124,12 +124,12 @@ Användarattribut kan vara ett JSON-objekt som innehåller fält som skapar elle
 
 | Användarattribut | Beskrivning |
 | --- | --- |
-| [!UICONTROL First Name] |  |
-| [!UICONTROL Last Name] |  |
-| [!UICONTROL Phone] |  |
-| [!UICONTROL Email] |  |
+| [!UICONTROL First Name] | |
+| [!UICONTROL Last Name] | |
+| [!UICONTROL Phone] | |
+| [!UICONTROL Email] | |
 | [!UICONTROL Gender] | En av följande strängar: &quot;M&quot;, &quot;F&quot;, &quot;O&quot; (övrigt), &quot;N&quot; (ej tillämpligt), &quot;P&quot; (säg inte). |
-| [!UICONTROL City] |  |
+| [!UICONTROL City] | |
 | [!UICONTROL Country] | Land som en sträng i [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. |
 | [!UICONTROL Language] | Språk som sträng i [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. |
 | [!UICONTROL Date of Birth] | Sträng i formatet &quot;YYY-MM-DD&quot; (t.ex. 1980-12-21). |
@@ -164,11 +164,11 @@ Skapa en ny händelsevidarebefordring när du har installerat tillägget [regel]
 | Indata | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
 | [!UICONTROL Product ID &#x200B;] | Identifierare för inköpet. (t.ex. produktnamn eller produktkategori) | Ja |
-| [!UICONTROL Purchase Time ] | Datum-tid som sträng i ISO 8601 eller i `yyyy-MM-dd'T'HH:mm:ss:SSSZ` format. | Ja |
+| [!UICONTROL Purchase Time] | Datum-tid som sträng i ISO 8601 eller i `yyyy-MM-dd'T'HH:mm:ss:SSSZ` format. | Ja |
 | [!UICONTROL Currency &#x200B;] | Valuta som en sträng i [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) Alfabetiskt valutakodformat. | Ja |
 | [!UICONTROL Price &#x200B;] | Pris. | Ja |
-| [!UICONTROL Quantity &#x200B;] | Om inget anges blir standardvärdet 1. Det högsta värdet måste vara lägre än 100. |  |
-| [!UICONTROL App Identifier] | Programidentifieraren eller <strong>app_id</strong> är en parameter som associerar aktivitet med ett specifikt program i appgruppen. Det anger vilket program i appgruppen du interagerar med. Läs mer om [API-identifierartyper](https://www.braze.com/docs/api/identifier_types/). |  |
+| [!UICONTROL Quantity &#x200B;] | Om inget anges blir standardvärdet 1. Det högsta värdet måste vara lägre än 100. | |
+| [!UICONTROL App Identifier] | Programidentifieraren eller <strong>app_id</strong> är en parameter som associerar aktivitet med ett specifikt program i appgruppen. Det anger vilket program i appgruppen du interagerar med. Läs mer om [API-identifierartyper](https://www.braze.com/docs/api/identifier_types/). | |
 | [!UICONTROL Purchase Properties &#x200B;] | Ett JSON-objekt som innehåller anpassade egenskaper för köpet. |  |
 
 {style="table-layout:auto"}
@@ -183,12 +183,12 @@ Användarattribut kan vara ett JSON-objekt som innehåller fält som skapar elle
 
 | Användarattribut | Beskrivning |
 | --- | --- |
-| [!UICONTROL First Name] |  |
-| [!UICONTROL Last Name] |  |
-| [!UICONTROL Phone] |  |
-| [!UICONTROL Email] |  |
+| [!UICONTROL First Name] | |
+| [!UICONTROL Last Name] | |
+| [!UICONTROL Phone] | |
+| [!UICONTROL Email] | |
 | [!UICONTROL Gender] | En av följande strängar: &quot;M&quot;, &quot;F&quot;, &quot;O&quot; (övrigt), &quot;N&quot; (ej tillämpligt), &quot;P&quot; (säg inte). |
-| [!UICONTROL City] |  |
+| [!UICONTROL City] | |
 | [!UICONTROL Country] | Land som en sträng i [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format. |
 | [!UICONTROL Language] | Språk som sträng i [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. |
 | [!UICONTROL Date of Birth] | Sträng i formatet &quot;YYY-MM-DD&quot; (t.ex. 1980-12-21). |

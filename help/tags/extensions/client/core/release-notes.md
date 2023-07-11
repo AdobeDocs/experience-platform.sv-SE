@@ -2,9 +2,9 @@
 title: Versionsinformation för huvudtillägget
 description: Den senaste versionsinformationen om Core-tillägget i Adobe Experience Platform.
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 0955646164269d868be5161a117c6e12dbd9a4cb
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '1654'
+source-wordcount: '1644'
 ht-degree: 2%
 
 ---
@@ -123,7 +123,7 @@ v2.0.4
 
 v1.9.0
 
-* **Ny åtgärd för direktutlösare** - Core-tillägget innehåller nu en ny åtgärdstyp som kallas `Trigger Direct Call`.  Detta kan användas när du vill aktivera en regel för direktsamtal via en åtgärd från en annan regel. Den mappas direkt till `_satellite.track()` -metod. Tusen tack till [Jan Exner](https://twitter.com/jexner) för detta bidrag.
+* **Ny åtgärd för direktutlösare** - Core-tillägget innehåller nu en ny åtgärdstyp som kallas `Trigger Direct Call`.  Detta kan användas när du vill aktivera en regel för direktsamtal via en åtgärd från en annan regel. Den mappas direkt till `_satellite.track()` -metod. Tusen tack till Jan Exner för detta bidrag.
 
 ## 8 december 2020
 
@@ -169,13 +169,13 @@ v1.7.3
 
 v1.7.0
 
-* **Åtkomst till `event` Variabel inom dataelement för anpassad kod** - Du kan nu referera till händelsen inifrån ett anpassat kodelement när den körs inom en regels kontext. Objektet innehåller användbar information om händelsen som utlöste regeln. Tusen tack till [Stewart Schilling](https://twitter.com/sdi_stewart) för detta bidrag.
+* **Åtkomst till `event` Variabel inom dataelement för anpassad kod** - Du kan nu referera till händelsen inifrån ett anpassat kodelement när den körs inom en regels kontext. Objektet innehåller användbar information om händelsen som utlöste regeln. Stewart Schilling för detta bidrag.
 
 ## 7 oktober 2019
 
 v1.6.2
 
-* **Ny typ av konstantdataelement** - Core-tillägget innehåller nu en ny dataelementtyp som kallas `Constant`.  Detta kan användas när du behöver lagra ett konstant värde som ska refereras till i olika villkor, åtgärder eller anpassad kod. Tusen tack till [Jan Exner](https://twitter.com/jexner) för detta bidrag.
+* **Ny typ av konstantdataelement** - Core-tillägget innehåller nu en ny dataelementtyp som kallas `Constant`.  Detta kan användas när du behöver lagra ett konstant värde som ska refereras till i olika villkor, åtgärder eller anpassad kod. Tusen tack till Jan Exner för detta bidrag.
 
 ## 11 september 2019
 

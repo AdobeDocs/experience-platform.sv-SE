@@ -4,9 +4,9 @@ title: API-tillägg för händelsespårning i Mixpanel Track
 description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Adobe Experience Edge Network-händelser till Mixpanel.
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 21e2e0fa-4949-4be4-859f-d449d21d8f41
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
 workflow-type: tm+mt
-source-wordcount: '929'
+source-wordcount: '926'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Analysteam kan sedan utnyttja [!DNL Mixpanel's] funktioner för att bearbeta dat
 
 Mer information om användningsfall för [!DNL Mixpanel]finns i följande dokumentation:
 
-* [Ny på [!DNL Mixpanel]](https://help.mixpanel.com/hc/en-us/sections/360008533532-New-to-Mixpanel)
+* [Ny på [!DNL Mixpanel]](https://docs.mixpanel.com/docs)
 * [Vad är  [!DNL Mixpanel]?](https://developer.mixpanel.com/docs)
 * [12 must-try [!DNL Mixpanel] funktioner](https://mixpanel.com/blog/12-things-you-probably-didnt-know-you-could-do-with-mixpanel/)
 
@@ -80,10 +80,10 @@ Börja skapa en ny regel i egenskapen för vidarebefordran av händelser. Under 
 | --- | --- | --- |
 | [!UICONTROL Project Token] | Det här fältet ska mappas till den projekttoken som är kopplad till din [!DNL Mixpanel] konto. | Ja |
 | [!UICONTROL Event Type] | Händelsens namn. | Ja |
-| [!UICONTROL Event Time] | Händelsens tid. |  |
-| [!UICONTROL Mixpanel Distinct ID] | Den unika identifieraren för användaren som utförde händelsen. |  |
-| [!UICONTROL Insert ID] | En unik identifierare för händelsen som används för borttagning av dubbletter. |  |
-| [!UICONTROL Event Properties] | Ett JSON-objekt som innehåller anpassade egenskaper för händelsen. Välj mellan att tillhandahålla rå JSON eller att använda en förenklad uppsättning indata för nyckelvärden. |  |
+| [!UICONTROL Event Time] | Händelsens tid. | |
+| [!UICONTROL Mixpanel Distinct ID] | Den unika identifieraren för användaren som utförde händelsen. | |
+| [!UICONTROL Insert ID] | En unik identifierare för händelsen som används för borttagning av dubbletter. | |
+| [!UICONTROL Event Properties] | Ett JSON-objekt som innehåller anpassade egenskaper för händelsen. Välj mellan att tillhandahålla rå JSON eller att använda en förenklad uppsättning indata för nyckelvärden. | |
 
 >[!NOTE]
 >
