@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;datatyp;datatyper;Datatyper;Datatyp;Segmenteringsdatatyper;Segmentering;segmentering;Segmenteringstjänst;Segmenteringstjänstens datatyper;
 solution: Experience Platform
 title: Datatyper som stöds i segmenteringstjänsten
 description: Alla XDM-datatyper (Experience Data Model) stöds i segmenteringstjänsten för Adobe. Reglerna som utgör en segmentdefinition är kontextualiserade med följande datatyper.
 exl-id: 73f932a7-f864-4566-ade7-c148a12dc83c
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '490'
 ht-degree: 1%
 
 ---
@@ -17,7 +16,7 @@ Alla XDM-datatyper (Experience Data Model) stöds i Adobe Experience Platform se
 
 ## Strängdata
 
-Segmentdefinitioner använder strängdata för att definiera icke-numeriska begränsningar för segmentgrupper, som&quot;namn på land&quot; eller&quot;lojalitetsprogramnivå&quot;.
+Segmentdefinitioner använder strängdata för att definiera icke-numeriska begränsningar för målgrupper, till exempel&quot;landsnamn&quot; eller&quot;lojalitetsprogramnivå&quot;.
 
 Strängdata inkluderas i segmentdefinitioner med hjälp av logiska, inkluderande/exklusiva och jämförelsesatser. När ett strängattribut har lagts till i segmentdefinitionen kan du använda strängrelevanta satser för att utvärdera det mot andra strängfält.
 
@@ -33,7 +32,7 @@ Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinition
 
 | Exempelfält | Datumrelevanta kontoutdrag | Tidslinje |
 | ------------- | ------------------------ | --------- |
-| person.firstPurchase | `today`, `yesterday`, `this month`, `this year` | Relevant för den dag segmentet skapades. |
+| person.firstPurchase | `today`, `yesterday`, `this month`, `this year` | Relevant för den dag då segmentdefinitionen skapades. |
 | person.lastPurchase | `in last`, `during`, `before`, `after`, `within` | Relevant inom en given vecka/månad. |
 
 ## Experience Events
@@ -45,19 +44,19 @@ Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper
 | Nyckelord | Använd |
 | ------- | --- |
 | Inkludera/exkludera | Beskriver hur händelsen beter sig genom att data inkluderas eller utelämnas. |
-| Alla | Hjälper till att bestämma antalet kvalificerade segment. |
+| Alla | Hjälper till att bestämma antalet kvalificerade segmentdefinitioner. |
 | Växlingsknappen Använd tidsregel | Innehåller datumdata. |
 | Lika med, är inte lika med, börjar med, startar inte med, slutar med, slutar inte med, innehåller, inte innehåller, finns, finns inte | Innehåller strängdata. |
 
 ### Dela målgrupper
 
-Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i det nya segmentet.
+Externa målgrupper kan också användas som komponenter i en ny segmentdefinition och lägga till deras attributregler i de nya segmentdefinitionerna.
 
 För närvarande stöds endast Adobe Audience Manager som extern publik, och ytterligare källor aktiveras i framtiden. Mer information om hur du använder Adobe Audience Manager målgrupper med Platform finns i [guide för målgruppsdelning i Adobe Audience Manager-dokumentationen](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html).
 
-### Segmentdelning
+### Segmentdefinitionsdelning
 
-Segment som skapats i Platform kan användas i andra [Adobe Experience Cloud bastjänster](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
+Segmentdefinitioner som har skapats i Platform kan användas i andra [Adobe Experience Cloud bastjänster](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html). Om du vill aktivera den här funktionen måste du kontakta din lösningsarkitekt eller din konsult.
 
 ## Andra datatyper
 

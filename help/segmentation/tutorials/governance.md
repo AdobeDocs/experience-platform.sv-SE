@@ -1,20 +1,19 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;efterlevnad av dataanvändning;framtvinga efterlevnad av dataanvändning;Segmenteringstjänst;segmentering;Segmentering;
 solution: Experience Platform
 title: Tvinga regelefterlevnad för dataanvändning för ett målgruppssegment med API:er
 type: Tutorial
-description: Den här självstudiekursen beskriver stegen för att implementera efterlevnad av dataanvändning för målgruppssegment för kundprofiler i realtid med API:er.
+description: I den här självstudiekursen beskrivs stegen för att implementera segmentdefinitioner för dataanvändning med API:er.
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1355'
 ht-degree: 0%
 
 ---
 
-# Använd API:er för att säkerställa att data används korrekt för ett målgruppssegment
+# Använd API:er för att säkerställa att data används korrekt för en segmentdefinition
 
-Den här självstudiekursen handlar om hur du kontrollerar att dataanvändningen följs för [!DNL Real-Time Customer Profile] målgruppssegment med API:er.
+I den här självstudiekursen beskrivs stegen för hur du kontrollerar att segmentdefinitioner följs med hjälp av API:er.
 
 ## Komma igång
 
@@ -57,7 +56,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Söka efter en sammanfogningsprincip för en segmentdefinition {#merge-policy}
 
-Det här arbetsflödet börjar med att man får åtkomst till ett känt målgruppssegment. Segment som är aktiverade för användning i [!DNL Real-Time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentet, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
+Arbetsflödet börjar med att en känd segmentdefinition används. Segmentdefinitioner som är aktiverade för användning i [!DNL Real-Time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentdefinitionen, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
 Använda [!DNL Segmentation] API kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
 
@@ -367,20 +366,20 @@ Med hjälp av data som returneras i API-svaret kan du skapa protokoll i ditt upp
 
 ## Filtrera datafält
 
-Om ditt målgruppssegment inte klarar utvärderingen kan du justera data som ingår i segmentet på något av de två sätt som beskrivs nedan.
+Om segmentdefinitionen inte godkänns i utvärderingen kan du justera data som ingår i segmentdefinitionen med någon av de två metoder som beskrivs nedan.
 
 ### Uppdatera segmentdefinitionens sammanfogningsprincip
 
 Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de datauppsättningar och fält som inkluderas när segmentjobbet körs. Se avsnittet om [uppdatera en befintlig kopplingsprofil](../../profile/api/merge-policies.md#update) i självstudiekursen om API-sammanslagningsprinciper om du vill ha mer information.
 
-### Begränsa specifika datafält när segmentet exporteras
+### Begränsa specifika datafält när segmentdefinitionen exporteras
 
-När du exporterar ett segment till en datauppsättning med [!DNL Segmentation] API, du kan filtrera data som ingår i exporten med hjälp av `fields` parameter. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
+När en segmentdefinition exporteras till en datauppsättning med [!DNL Segmentation] API, du kan filtrera data som ingår i exporten med hjälp av `fields` parameter. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
 
-Tänk dig ett segment som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, `fields` parametern skulle innehålla enbart fältet&quot;C&quot;. Om du gör det exkluderas fälten A och B när du exporterar segmentet.
+Överväg en segmentdefinition som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, `fields` parametern skulle innehålla enbart fältet&quot;C&quot;. Om du gör det exkluderas fälten&quot;A&quot; och&quot;B&quot; när segmentdefinitionen exporteras.
 
-Se avsnittet om [exportera ett segment](./evaluate-a-segment.md#export) i segmenteringsjälvstudiekursen för mer information.
+Se avsnittet om [exportera en segmentdefinition](./evaluate-a-segment.md#export) i segmenteringsjälvstudiekursen för mer information.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du tittat på etiketterna för dataanvändning som är kopplade till ett målgruppssegment och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om datastyrning i [!DNL Experience Platform], läs översikten för [Datastyrning](../../data-governance/home.md).
+Genom att följa den här självstudiekursen har du hittat etiketterna för dataanvändning som är kopplade till en segmentdefinition och testat dem för policyöverträdelser mot specifika marknadsföringsåtgärder. Mer information om datastyrning i [!DNL Experience Platform], läs översikten för [Datastyrning](../../data-governance/home.md).

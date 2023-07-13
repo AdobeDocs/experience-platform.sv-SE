@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;segmentering;segmenteringstjänst;felsökning;API;seg;segment;segment;search;segment search;
 title: API-slutpunkt för segmentsökning
 description: I API:t för Adobe Experience Platform segmenteringstjänst används segmentsökning för att söka efter fält som finns i olika datakällor och returnera dem i nära realtid. Den här handboken innehåller information som hjälper dig att förstå segmentsökning bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1201'
-ht-degree: 0%
+source-wordcount: '1196'
+ht-degree: 1%
 
 ---
 
@@ -37,8 +36,8 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} representerar schemaklassvärdet som är associerat med sökobjekten. För närvarande, endast `_xdm.context.segmentdefinition` stöds. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} representerar en fråga som uppfyller Microsoft implementering av [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts är alla poster associerade med `schema.name` kommer att returneras. En mer detaljerad förklaring finns i [appendix](#appendix) av det här dokumentet. |
+| `schema.name={SCHEMA}` | **(Obligatoriskt)** Plats {SCHEMA} representerar schemaklassvärdet som är associerat med sökobjekten. För närvarande, endast `_xdm.context.segmentdefinition` stöds. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Plats {SEARCH_TERM} representerar en fråga som uppfyller Microsoft implementering av [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts är alla poster associerade med `schema.name` kommer att returneras. En mer detaljerad förklaring finns i [appendix](#appendix) av det här dokumentet. |
 
 **Begäran**
 
@@ -97,12 +96,12 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller schemaklassvärdet som är associerat med sökobjekten. För närvarande, endast `_xdm.context.segmentdefinition` stöds. |
-| `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
-| `s={SEARCH_TERM}` | *(Valfritt)* Där {SEARCH_TERM} innehåller en fråga som uppfyller Microsoft implementering av [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts är alla poster associerade med `schema.name` kommer att returneras. En mer detaljerad förklaring finns i [appendix](#appendix) av det här dokumentet. |
+| `schema.name={SCHEMA}` | **(Obligatoriskt)** Plats {SCHEMA} innehåller det schemaklassvärde som är associerat med sökobjekten. För närvarande, endast `_xdm.context.segmentdefinition` stöds. |
+| `namespace={NAMESPACE}` | **(Obligatoriskt)** Plats {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
+| `s={SEARCH_TERM}` | *(Valfritt)* Plats {SEARCH_TERM} innehåller en fråga som överensstämmer med Microsoft implementering av [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Om ingen sökterm har angetts är alla poster associerade med `schema.name` kommer att returneras. En mer detaljerad förklaring finns i [appendix](#appendix) av det här dokumentet. |
 | `entityId={ENTITY_ID}` | *(Valfritt)* Begränsar sökningen till i den angivna mappen, som anges med {ENTITY_ID}. |
-| `limit={LIMIT}` | *(Valfritt)* Där {LIMIT} representerar antalet sökresultat som ska returneras. Standardvärdet är 50. |
-| `page={PAGE}` | *(Valfritt)* Där {PAGE} representerar det sidnummer som används för att sidnumrera resultatet av den sökta frågan. Observera att sidnumret börjar på **0**. |
+| `limit={LIMIT}` | *(Valfritt)* Plats {LIMIT} representerar antalet sökresultat som ska returneras. Standardvärdet är 50. |
+| `page={PAGE}` | *(Valfritt)* Plats {PAGE} representerar det sidnummer som används för att sidnumrera resultatet av den sökta frågan. Observera att sidnumret börjar på **0**. |
 
 
 **Begäran**
@@ -168,8 +167,8 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | Parametrar | Beskrivning |
 | ---------- | ----------- | 
-| `schema.name={SCHEMA}` | **(Obligatoriskt)** Där {SCHEMA} innehåller schemaklassvärdet som är associerat med sökobjekten. För närvarande, endast `_xdm.context.segmentdefinition` stöds. |
-| `namespace={NAMESPACE}` | **(Obligatoriskt)** Där {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
+| `schema.name={SCHEMA}` | **(Obligatoriskt)** Plats {SCHEMA} innehåller det schemaklassvärde som är associerat med sökobjekten. För närvarande, endast `_xdm.context.segmentdefinition` stöds. |
+| `namespace={NAMESPACE}` | **(Obligatoriskt)** Plats {NAMESPACE} innehåller det namnutrymme som du vill söka i. |
 | `entityId={ENTITY_ID}` | **(Obligatoriskt)** ID:t för det sökobjekt som du vill hämta strukturinformationen om, angivet med {ENTITY_ID}. |
 
 **Begäran**
@@ -223,9 +222,9 @@ När du har läst den här guiden får du nu en bättre förståelse för hur se
 
 ## Bilaga {#appendix}
 
-I följande avsnitt finns mer information om hur söktermer fungerar. Sökfrågor skrivs på följande sätt: `s={FieldName}:{SearchExpression}`. Om du till exempel vill söka efter ett segment med namnet AAM eller [!DNL Platform]använder du följande sökfråga: `s=segmentName:AAM%20OR%20Platform`.
+I följande avsnitt finns mer information om hur söktermer fungerar. Sökfrågor skrivs på följande sätt: `s={FieldName}:{SearchExpression}`. Om du till exempel vill söka efter en segmentdefinition med namnet AAM eller [!DNL Platform]använder du följande sökfråga: `s=segmentName:AAM%20OR%20Platform`.
 
-> !![NOTE] För bästa praxis bör sökuttrycket vara HTML-kodat, som i exemplet ovan.
+>  För bästa praxis bör sökuttrycket vara HTML-kodat, som i exemplet ovan.
 
 ### Sökfält {#search-fields}
 
@@ -235,16 +234,16 @@ I följande tabell visas de fält som kan genomsökas i sökfrågeparametern.
 | ---------- | ----------- |
 | folderId | Mappen eller mapparna som har mapp-ID:t för den angivna sökningen. |
 | folderLocation | Platsen eller platserna som har mapplatsen för den angivna sökningen. |
-| parentFolderId | Segmentet eller mappen som har det överordnade mapp-ID som du har angett för sökningen. |
-| segmentId | Segmentet matchar segment-ID:t för den angivna sökningen. |
-| segmentName | Segmentet matchar segmentnamnet i den angivna sökningen. |
-| segmentDescription | Segmentet matchar segmentbeskrivningen i den angivna sökningen. |
+| parentFolderId | Segmentdefinitionen eller mappen som har det överordnade mapp-ID som du har angett för sökningen. |
+| segmentId | Segmentdefinitionen som matchar segment-ID:t för den angivna sökningen. |
+| segmentName | Segmentdefinitionen som matchar segmentnamnet i den angivna sökningen. |
+| segmentDescription | Segmentdefinitionen som matchar segmentbeskrivningen för den angivna sökningen. |
 
 ### Sökuttryck {#search-expression}
 
 I följande tabell visas hur sökfrågor fungerar när du använder API:t för segmentsökning.
 
->!![NOTE] Följande exempel visas i ett format som inte är HTML-kodat för bättre tydlighet. För bästa praxis bör du koda sökuttrycket med HTML.
+>  Följande exempel visas i ett format som inte är HTML-kodat för bättre tydlighet. För bästa praxis bör du koda sökuttrycket med HTML.
 
 | Exempel på sökuttryck | Beskrivning |
 | ------------------------- | ----------- |

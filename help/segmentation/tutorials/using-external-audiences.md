@@ -1,45 +1,50 @@
 ---
-keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: Importera och använda externa målgrupper
 description: Följ den här självstudiekursen för att lära dig hur du använder externa målgrupper med Adobe Experience Platform.
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 57586104f1119f5cda926faf286c1663fbb0b240
+hide: true
+hidefromtoc: true
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1681'
 ht-degree: 0%
 
 ---
 
 # Importera och använda externa målgrupper
 
-Adobe Experience Platform har stöd för import av externa målgrupper, som sedan kan användas som komponenter för en ny segmentdefinition. Det här dokumentet innehåller en självstudiekurs om hur du konfigurerar Experience Platform för att importera och använda externa målgrupper.
+>[!IMPORTANT]
+>
+>Dokumentationen innehåller information från en tidigare version av publikens dokumentation och är därför inaktuell.
+
+Adobe Experience Platform stöder import av externa användare, som sedan kan användas som komponenter för en ny publik. Det här dokumentet innehåller en självstudiekurs om hur du konfigurerar Experience Platform för att importera och använda externa målgrupper.
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Segmenteringstjänst](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+- [Segmenteringstjänst](../home.md): Gör att ni kan bygga målgrupper utifrån kundprofildata i realtid.
 - [Kundprofil i realtid](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [Datauppsättningar](../../catalog/datasets/overview.md): Konstruktionen för lagring och hantering av databeständighet i Experience Platform.
 - [Direktinmatning](../../ingestion/streaming-ingestion/overview.md): Hur Experience Platform importerar och lagrar data från klient- och serverenheter i realtid.
 
-### Segmentdata kontra segmentmetadata
+### Målgrupper jämfört med segmentdefinitioner
 
-Innan du börjar importera och använda externa målgrupper är det viktigt att förstå skillnaden mellan segmentdata och segmentmetadata.
+Innan du börjar importera och använda externa målgrupper är det viktigt att förstå skillnaden mellan målgrupper och segmentdefinitioner.
 
-Segmentdata avser de profiler som uppfyller kriterierna för att kvalificera segment, och är därför en del av målgruppen.
+Publiken refererar till den grupp profiler som du försöker filtrera mot. När du använder segmentdefinitioner kan du skapa en målgrupp genom att skapa en segmentdefinition som filtrerar dina profiler till den delmängd som uppfyller kriterierna för segmentkvalificering.
 
-Metadata för segment är information om själva segmentet, som innehåller namn, beskrivning, uttryck (om tillämpligt), datum då segmentet skapades, datum för senaste ändring och ett ID. ID:t länkar segmentmetadata till de enskilda profiler som uppfyller segmentkvalificeringen och är en del av den slutliga målgruppen.
+Segmentdefinitioner innehåller information som namn, beskrivning, uttryck (om tillämpligt), skapandedatum, senaste ändringsdatum och ett ID. ID:t länkar segmentmetadata till de enskilda profiler som uppfyller segmentkvalificeringen och är en del av den slutliga målgruppen.
 
-| Segmentdata | Segmentmetadata |
-| ------------ | ---------------- |
-| Profiler som uppfyller kraven för segment | Information om själva segmentet |
+| Målgrupper | Segmentdefinition |
+| --------- | ---------------- |
+| Den grupp med profiler som du försöker hitta. När du använder segmentdefinitioner innebär det att det är den grupp av profiler som uppfyller villkoren för segment. | Den grupp regler som används för att segmentera målgruppen du söker. |
 
 ## Skapa ett identitetsnamnutrymme för den externa målgruppen
 
-Det första steget för att använda externa målgrupper är att skapa ett identitetsnamnutrymme. Med identitetsnamnutrymmen kan plattformen associera varifrån ett segment kommer.
+Det första steget för att använda externa målgrupper är att skapa ett identitetsnamnutrymme. Med identitetsnamnutrymmen kan plattformen associera var en målgrupp kommer ifrån.
 
 Följ instruktionerna i [guide för identitetsnamnutrymme](../../identity-service/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
 

@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Segmenteringstjänst för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om segmenteringstjänst
-user-guide-description: Bygg segment och generera målgrupper utifrån data från kundprofil i realtid.
+user-guide-description: Bygg målgrupper utifrån era kundprofildata i realtid med segmentdefinitioner som genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 0a3dbb49948278f4fd12737938ad00f2f7abb681
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 20%
+source-wordcount: '176'
+ht-degree: 14%
 
 ---
 
@@ -30,7 +30,7 @@ ht-degree: 20%
    - [Direktuppspelningssegmentering](api/streaming-segmentation.md)
 - Segmenteringsgränssnitt {#ui}
    - [Översikt](ui/overview.md)
-   - [Audience Builder](ui/audience-builder.md)
+   - [Målgruppssammansättning](ui/audience-composition.md)
    - [Kontrollpanel för segment](ui/segment-dashboard.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Kantsegmentering](ui/edge-segmentation.md)
@@ -65,5 +65,6 @@ ht-degree: 20%
    - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
+- [Frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;direktuppspelningssegmentering;Kontinuerlig utvärdering;
 solution: Experience Platform
 title: Utvärdera händelser i nära realtid med strömmande segmentering
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1967'
+source-wordcount: '1992'
 ht-degree: 0%
 
 ---
@@ -25,14 +24,14 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 >
 >Direktuppspelningssegmentering fungerar på alla data som har importerats från en direktuppspelningskälla. Segment som importerats med hjälp av en batchbaserad källa utvärderas nightly, även om det kvalificerar för direktuppspelningssegmentering.
 >
->Dessutom kan segment som utvärderas med direktuppspelningssegmentering avvika från det idealiska och det faktiska medlemskapet om segmentet är baserat på ett annat segment som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
+>Dessutom kan segmentdefinitioner som utvärderas med direktuppspelningssegmentering avvika mellan det ideala och det faktiska medlemskapet om segmentdefinitionen baseras på en annan segmentdefinition som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
 
 ## Komma igång
 
 Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa målgrupper med hjälp av segmentdefinitioner och andra externa källor från [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ringa [!DNL Platform] API:er.
@@ -69,7 +68,7 @@ Ytterligare rubriker kan behövas för att slutföra specifika begäranden. De r
 >
 >Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om att aktivera schemalagd segmentering finns i [aktivera avsnitt för schemalagd segmentering](#enable-scheduled-segmentation)
 
-För att ett segment ska kunna utvärderas med hjälp av direktuppspelningssegmentering måste frågan följa följande riktlinjer.
+För att en segmentdefinition ska kunna utvärderas med hjälp av direktuppspelningssegmentering måste frågan följa följande riktlinjer.
 
 | Frågetyp | Information |
 | ---------- | ------- |
@@ -98,15 +97,15 @@ Observera att följande riktlinjer gäller vid direktuppspelningssegmentering:
 
 Om en segmentdefinition ändras så att den inte längre uppfyller villkoren för direktuppspelningssegmentering, kommer segmentdefinitionen automatiskt att växla från&quot;direktuppspelning&quot; till&quot;Gruppering&quot;.
 
-Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i realtid. Om en publik inte längre kvalificerar sig för ett segment blir det därför omedelbart okvalificerat. Om segmentdefinitionen till exempel frågar efter&quot;Alla användare som har köpt röda skor de senaste tre timmarna&quot;, efter tre timmar, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att vara okvalificerade.
+Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i realtid. Om en profil inte längre kvalificerar sig för en segmentdefinition blir den därför omedelbart okvalificerad. Om segmentdefinitionen till exempel frågar efter&quot;Alla användare som har köpt röda skor de senaste tre timmarna&quot;, efter tre timmar, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att vara okvalificerade.
 
-## Hämta alla segment som är aktiverade för direktuppspelningssegmentering
+## Hämta alla segmentdefinitioner aktiverade för direktuppspelningssegmentering
 
-Du kan hämta en lista över alla segment som är aktiverade för direktuppspelningssegmentering inom organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
+Du kan hämta en lista över alla segmentdefinitioner som är aktiverade för direktuppspelningssegmentering inom organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
 **API-format**
 
-Om du vill hämta direktuppspelningsaktiverade segment måste du ta med frågeparametern `evaluationInfo.continuous.enabled=true` i sökvägen till begäran.
+Om du vill hämta definitioner för direktuppspelningsaktiverade segment måste du ta med frågeparametern `evaluationInfo.continuous.enabled=true` i sökvägen till begäran.
 
 ```http
 GET /segment/definitions?evaluationInfo.continuous.enabled=true
@@ -126,7 +125,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en array med segment i organisationen som är aktiverade för direktuppspelningssegmentering.
+Ett lyckat svar returnerar en array med segmentdefinitioner i organisationen som är aktiverade för direktuppspelningssegmentering.
 
 ```json
 {
@@ -213,9 +212,9 @@ Ett lyckat svar returnerar en array med segment i organisationen som är aktiver
 }
 ```
 
-## Skapa ett direktuppspelningsaktiverat segment
+## Skapa en segmentdefinition som kan direktuppspelas
 
-Ett segment aktiveras automatiskt för direktuppspelning om det matchar ett av [segmenteringstyper för direktuppspelning som listas ovan](#query-types).
+En segmentdefinition aktiveras automatiskt för direktuppspelning om den matchar en av [segmenteringstyper för direktuppspelning som listas ovan](#query-types).
 
 **API-format**
 
@@ -261,7 +260,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->Det här är en standardbegäran om att skapa ett segment. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om [skapa ett segment](../tutorials/create-a-segment.md).
+>Detta är en standardbegäran om att skapa en segmentdefinition. Mer information om hur du skapar en segmentdefinition finns i självstudiekursen om [skapa en segmentdefinition](../tutorials/create-a-segment.md).
 
 **Svar**
 
@@ -307,7 +306,7 @@ Ett lyckat svar returnerar information om den nyligen skapade segmentdefinitione
 
 ## Aktivera schemalagd utvärdering {#enable-scheduled-segmentation}
 
-När utvärdering av direktuppspelning har aktiverats måste en baslinje skapas (efter vilken segmentet alltid är uppdaterat). Schemalagd utvärdering (även kallad schemalagd segmentering) måste först aktiveras för att systemet automatiskt ska kunna utföra baselering. Med schemalagd segmentering kan organisationen följa ett återkommande schema för att automatiskt köra exportjobb för att utvärdera segment.
+När utvärderingen av direktuppspelning har aktiverats måste en baslinje skapas (efter vilken segmentdefinitionen alltid är aktuell). Schemalagd utvärdering (även kallad schemalagd segmentering) måste först aktiveras för att systemet automatiskt ska kunna utföra baselering. Med schemalagd segmentering kan organisationen följa ett återkommande schema för att automatiskt köra exportjobb för att utvärdera segmentdefinitioner.
 
 >[!NOTE]
 >
@@ -351,7 +350,7 @@ curl -X POST \
 | `name` | **(Obligatoriskt)** Schemats namn. Måste vara en sträng. |
 | `type` | **(Obligatoriskt)** Jobbtypen i strängformat. De typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | **(Obligatoriskt)** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
-| `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Använda `["*"]` säkerställer att alla segment ingår. |
+| `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Använda `["*"]` säkerställer att alla segmentdefinitioner ingår. |
 | `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i bilagan på [cron, uttrycksformat](./schedules.md#appendix) i dokumentationen om scheman inom segmentering. |
 | `state` | *(Valfritt)* Sträng som innehåller schemats tillstånd. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
 
@@ -422,9 +421,9 @@ Samma åtgärd kan användas för att inaktivera ett schema genom att ersätta v
 
 ## Nästa steg
 
-Nu när du har aktiverat både nya och befintliga segment för direktuppspelningssegmentering och aktiverat schemalagd segmentering för att utveckla en baslinje och utföra återkommande utvärderingar, kan du börja skapa direktuppspelningsaktiverade segment för din organisation.
+Nu när du har aktiverat både nya och befintliga segmentdefinitioner för direktuppspelningssegmentering och aktiverat schemalagd segmentering för att utveckla en baslinje och utföra återkommande utvärderingar, kan du börja skapa segmentdefinitioner som är aktiverade för din organisation.
 
-Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Adobe Experience Platform användargränssnitt kan du gå till [Användarhandbok för Segment Builder](../ui/segment-builder.md).
+Om du vill veta hur du utför liknande åtgärder och arbetar med segmentdefinitioner med Adobe Experience Platform användargränssnitt går du till [Användarhandbok för Segment Builder](../ui/segment-builder.md).
 
 ## Bilaga
 
@@ -432,26 +431,26 @@ I följande avsnitt visas vanliga frågor om direktuppspelningssegmentering:
 
 ### Händer direktuppspelningssegmentering&quot;utan kvalificering&quot; också i realtid?
 
-I de flesta fall sker icke-kvalificering av direktuppspelad segmentering i realtid. Det gör emellertid direktuppspelningssegment som använder segment av segment **not** diskvalificera i realtid, utan att kvalificera sig efter 24 timmar.
+I de flesta fall sker icke-kvalificering av direktuppspelad segmentering i realtid. Det gör emellertid definitioner av direktuppspelade segment som använder segment av segment **not** diskvalificera i realtid, utan att kvalificera sig efter 24 timmar.
 
 ### Vilka data fungerar direktuppspelningssegmentering på?
 
 Direktuppspelningssegmentering fungerar på alla data som har importerats från en direktuppspelningskälla. Segment som importerats med hjälp av en batchbaserad källa utvärderas nightly, även om det kvalificerar för direktuppspelningssegmentering. Händelser som direktuppspelas i systemet med en tidsstämpel som är äldre än 24 timmar kommer att bearbetas i det efterföljande batchjobbet.
 
-### Hur definieras segment som grupp- eller direktuppspelningssegmentering?
+### Hur definieras segmentdefinitioner som grupp- eller direktuppspelningssegmentering?
 
-Ett segment definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
+En segmentdefinition definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segmentdefinitioner som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
 
-Observera att om ett segment innehåller **båda** en `inSegment` -uttryck och en direkt händelsekedja kan den inte kvalificera för direktuppspelningssegmentering. Om du vill att det här segmentet ska vara kvalificerat för direktuppspelningssegmentering bör du göra den direkta single-event-kedjan till ett eget segment.
+Observera att om ett segment innehåller **båda** en `inSegment` -uttryck och en direkt händelsekedja kan den inte kvalificera för direktuppspelningssegmentering. Om du vill att den här segmentdefinitionen ska vara giltig för direktuppspelningssegmentering, bör du göra den direkta single-event-kedjan till en egen segmentdefinition.
 
-### Varför ökar antalet&quot;totala kvalificerade&quot; segment medan antalet under&quot;De senaste X dagarna&quot; är noll i segmentinformationsavsnittet?
+### Varför fortsätter antalet&quot;totala kvalificerade&quot; segmentdefinitioner att öka medan antalet under&quot;Senaste X dagarna&quot; är noll i avsnittet med segmentdefinitionsdetaljer?
 
-Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
+Antalet totala kvalificerade segmentdefinitioner hämtas från det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegmentdefinitioner. Det här värdet visas för både gruppsegmentsdefinitioner och segmentdefinitioner för direktuppspelning.
 
-Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Detta värde är **endast** visas för direktuppspelningssegment. Detta resulterar i att detta värde **kan** visas som 0 för gruppsegment.
+Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Detta värde är **endast** visas för definitioner av direktuppspelningssegment. Detta resulterar i att detta värde **kan** visa som 0 för gruppsegmentsdefinitioner.
 
-Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för det segmentet.
+Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för den segmentdefinitionen.
 
-### Hur lång tid tar det innan ett segment blir tillgängligt?
+### Hur lång tid tar det innan en segmentdefinition är tillgänglig?
 
-Det tar upp till en timme innan ett segment är tillgängligt.
+Det tar upp till en timme innan en segmentdefinition är tillgänglig.

@@ -1,22 +1,15 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;målgrupper;målgrupp;API;api;
 title: Målgrupps-API-slutpunkt
-description: Målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API gör att ni kan hantera målgrupper för er organisation programmatiskt.
+description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-hide: true
-hidefromtoc: true
-source-git-commit: f75c2c7ff07974cd0f2a5a8cc3e990c7f3eaa0a3
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1515'
+source-wordcount: '2124'
 ht-degree: 0%
 
 ---
 
 # Målgruppsslutpunkt
-
->[!IMPORTANT]
->
->Målgruppens slutpunkt är för närvarande i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 En publik är en samling personer som har liknande beteenden och/eller egenskaper. Dessa samlingar med personer kan genereras antingen med Adobe Experience Platform eller från externa källor. Du kan använda `/audiences` -slutpunkten i segmenterings-API, som gör att du kan hämta, skapa, uppdatera och ta bort målgrupper med programkod.
 
@@ -47,35 +40,28 @@ Följande frågeparametrar kan användas när en lista över målgrupper hämtas
 | `property` | Ett filter som gör att du kan ange målgrupper som **exakt** matchar ett attributvärde. Detta skrivs i formatet `property=` | `property=audienceId==test-audience-id` |
 | `name` | Ett filter som gör att du kan ange målgrupper vars namn **innehåller** det angivna värdet. Det här värdet är inte skiftlägeskänsligt. | `name=Sample` |
 | `description` | Ett filter som gör att du kan ange målgrupper vars beskrivningar **innehåller** det angivna värdet. Det här värdet är inte skiftlägeskänsligt. | `description=Test Description` |
-| `withMetrics` | Ett filter som returnerar mätvärden utöver målgrupperna. | `property=withMetrics==true` |
-
->[!IMPORTANT]
->
->För målgrupper returneras mätvärden under `metrics` och innehåller information om antal profiler, hur tidsstämplar skapas och uppdateras.
-
-**Inga mått**
-
-Följande par med begäran/svar används när `withMetrics` frågeparametern finns inte.
 
 **Begäran**
 
-Följande begäran hämtar de fem senaste målgrupperna som skapats i din organisation.
+Följande begäran hämtar de två sista målgrupperna som skapats i din organisation.
+
++++En exempelbegäran om att hämta en lista över målgrupper.
 
 ```shell
-curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=5 \
- -H 'Authorization:  Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id:  {IMS_ORG}' \
- -H 'x-api-key:  {API_KEY}' \
- -H 'x-sandbox-name:  {SANDBOX_NAME}'
+curl -X GET https: //platform.adobe.io/data/core/ups/audiences?limit=2 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**Svar** {#no-metrics}
++++
+
+**Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som skapats i din organisation som JSON.
 
->[!NOTE]
->
->Följande svar har trunkerats för space och visar endast den första målgruppen som returneras.
++++Ett exempelsvar som innehåller de två senast skapade målgrupperna som tillhör din organisation
 
 ```json
 {
@@ -133,15 +119,56 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som sk
             ],
             "dependencies": [],
             "type": "SegmentDefinition",
+            "originName": "REAL_TIME_CUSTOMER_PROFILE",
             "overridePerformanceWarnings": false,
             "createdBy": "{CREATED_BY_ID}",
-            "lifecycle": "published",
+            "lifecycleState": "published",
             "labels": [
                 "core/C1"
             ],
             "namespace": "AEPSegments"
+        },
+        {
+            "id": "32a83b5d-a118-4bd6-b3cb-3aee2f4c30a1",
+            "audienceId": "test-external-audience-id",
+            "name": "externalSegment1",
+            "namespace": "aam",
+            "imsOrgId": "{ORG_ID}",
+            "sandbox":{
+                "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+                "sandboxName": "prod",
+                "type": "production",
+                "default": true
+            },
+            "isSystem": false,
+            "description": "Last 30 days",
+            "type": "ExternalSegment",
+            "originName": "CUSTOM_UPLOAD",
+            "lifecycleState": "published",
+            "createdBy": "{CREATED_BY_ID}",
+            "datasetId": "6254cf3c97f8e31b639fb14d",
+            "labels":[
+                "core/C1"
+            ],
+            "linkedAudienceRef": {
+                "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
+            },
+            "creationTime": 1642745034000000,
+            "updateEpoch": 1649926314,
+            "updateTime": 1649926314000,
+            "createEpoch": 1642745034
         }
-    ]
+    ],
+    "_page":{
+      "totalCount": 111,
+      "pageSize": 2,
+      "next": "1"
+   },
+   "_links":{
+      "next":{
+         "href":"@/audiences?start=1&limit=2&totalCount=111"
+      }
+   }
 }
 ```
 
@@ -156,145 +183,17 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som sk
 | `description` | Båda | En beskrivning av publiken. |
 | `expression` | Plattformsgenererad | PQL-uttrycket (Profile Query Language) för målgruppen. Mer information om PQL-uttryck finns i [Guide för PQL-uttryck](../pql/overview.md). |
 | `mergePolicyId` | Plattformsgenererad | ID för den sammanfogningsprincip som målgruppen är kopplad till. Mer information om kopplingsprofiler finns i [guide för sammanslagningsprinciper](../../profile/api/merge-policies.md). |
-| `evaluationInfo` | Plattformsgenererad | Visar hur målgruppen kommer att utvärderas. Möjliga bedömningsmetoder är batch, streaming eller edge. Mer information om utvärderingsmetoderna finns i [segmenteringsöversikt](../home.md) |
+| `evaluationInfo` | Plattformsgenererad | Visar hur målgruppen kommer att utvärderas. Möjliga utvärderingsmetoder är batch, synkron (direktuppspelning) eller kontinuerlig (kant). Mer information om utvärderingsmetoderna finns i [segmenteringsöversikt](../home.md) |
 | `dependents` | Båda | En array med målgrupps-ID:n som är beroende av den aktuella målgruppen. Detta används om du skapar en målgrupp som är ett segment i ett segment. |
 | `dependencies` | Båda | En array med målgrupps-ID:n som målgruppen är beroende av. Detta används om du skapar en målgrupp som är ett segment i ett segment. |
-| `type` | Båda | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalAudience`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalAudience` avser en publik som inte genererats i Platform. |
+| `type` | Båda | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
+| `originName` | Båda | Ett fält som refererar till namnet på målgruppens ursprung. För plattformsgenererade målgrupper kommer det här värdet att `REAL_TIME_CUSTOMER_PROFILE`. För målgrupper som genereras i Audience Orchestration kommer det här värdet att `AUDIENCE_ORCHESTRATION`. För målgrupper som genereras i Adobe Audience Manager kommer det här värdet att `AUDIENCE_MANAGER`. För andra externt genererade målgrupper kommer det här värdet att `CUSTOM_UPLOAD`. |
 | `createdBy` | Båda | ID för den användare som skapade målgruppen. |
 | `labels` | Båda | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
 | `namespace` | Båda | Det namnutrymme som målgruppen tillhör. Möjliga värden är `AAM`, `AAMSegments`, `AAMTraits`och `AEPSegments`. |
-| `audienceMeta` | Extern | Externt skapade metadata från externt skapade målgrupper. |
+| `linkedAudienceRef` | Båda | Ett objekt som innehåller identifierare för andra målgruppsrelaterade system. |
 
-**Med mätvärden**
-
-Följande par med begäran/svar används när `withMetrics` frågeparametern finns.
-
-**Begäran**
-
-Följande begäran hämtar de fem senaste målgrupperna, med mätvärden, som skapats i din organisation.
-
-```shell
-curl -X GET https://platform.adobe.io/data/core/ups/audiences?propoerty=withMetrics==true&limit=5&sort=totalProfiles:desc \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper, med mätvärden, för den angivna organisationen som JSON.
-
->[!NOTE]
->
->Följande svar har trunkerats för space och visar endast den första målgruppen som returneras.
-
-```json
-{
-    "children": [
-        {
-            "id": "60ccea95-1435-4180-97a5-58af4aa285ab",
-            "audienceId": "60ccea95-1435-4180-97a5-58af4aa285ab",
-            "schema": {
-                "name": "_xdm.context.profile"
-            },
-            "ttlInDays": 60,
-            "profileInstanceId": "ups",
-            "imsOrgId": "{ORG_ID}",
-            "sandbox": {
-                "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-                "sandboxName": "prod",
-                "type": "production",
-                "default": true
-            },
-            "isSystem": false,
-            "name": "People who ordered in the last 30 days",
-            "description": "Last 30 days",
-            "expression": {
-                "type": "PQL",
-                "format": "pql/text",
-                "value": "workAddress.country = \"US\""
-            },
-            "mergePolicyId": "ef006bbe-750e-4e81-85f0-0c6902192dcc",
-            "evaluationInfo": {
-                "batch": {
-                    "enabled": false
-                },
-                "continuous": {
-                    "enabled": true
-                },
-                "synchronous": {
-                    "enabled": false
-                }
-            },
-            "dataGovernancePolicy": {
-                "excludeOptOut": true
-            },
-            "creationTime": 1650374572000,
-            "updateEpoch": 1650374573,
-            "updateTime": 1650374573000,
-            "createEpoch": 1650374572,
-            "_etag": "\"33120d7c-0000-0200-0000-625eb7ad0000\"",
-            "dependents": [],
-            "definedOn": [
-                {
-                    "meta: resourceType": "unions",
-                    "meta: containerId": "tenant",
-                    "$ref": "https: //ns.adobe.com/xdm/context/profile__union"
-                }
-            ],
-            "dependencies": [],
-            "metrics": {
-                "type": "export",
-                "jobId": "test-job-id",
-                "id": "32a83b5d-a118-4bd6-b3cb-3aee2f4c30a1",
-                "data": {
-                    "totalProfiles": 11200769,
-                    "totalProfilesByNamespace": {
-                        "crmid": 11400769
-                    },
-                    "totalProfilesByStatus": {
-                        "realized": 11400769
-                    }
-                },
-                "createEpoch": 1653583927,
-                "updateEpoch": 1653583927
-            },
-            "type": "SegmentDefinition",
-            "overridePerformanceWarnings": false,
-            "createdBy": "{CREATED_BY_ID}",
-            "lifecycle": "published",
-            "labels": [
-                "core/C1"
-            ],
-            "namespace": "AEPSegments"
-        }
-   ],
-   "_page": {
-      "totalCount": 111,
-      "pageSize": 5,
-      "next": "1"
-   },
-   "_links": {
-      "next": {
-         "href": "@/audiences?start=1&limit=5&totalCount=111"
-      }
-   }
-}
-```
-
-Följande listegenskaper **exklusiv** till `withMetrics` svar. Om du vill veta mer om standardmålgruppsegenskaperna kan du läsa [föregående avsnitt](#no-metrics).
-
-| Egenskap | Beskrivning |
-| -------- | ----------- |
-| `metrics.imsOrgId` | Målgruppens organisations-ID. |
-| `metrics.sandbox` | Sandlådeinformationen som är relaterad till målgruppen. |
-| `metrics.jobId` | ID:t för segmentjobbet som bearbetar målgruppen. |
-| `metrics.type` | Segmentjobbtypen. Detta kan antingen vara `export` eller `batch_segmentation`. |
-| `metrics.id` | Målgruppens ID. |
-| `metrics.data` | Mätvärden som är relaterade till publiken. Detta inkluderar information som det totala antalet profiler som ingår i målgruppen, det totala antalet profiler per namnområde och det totala antalet profiler per status. |
-| `metrics.createEpoch` | En tidsstämpel som visas när målgruppen skapades. |
-| `metrics.updateEpoch` | En tidsstämpel som visas när målgruppen senast uppdaterades. |
++++
 
 ## Skapa en ny målgrupp {#create}
 
@@ -307,6 +206,12 @@ POST /audiences
 ```
 
 **Begäran**
+
+>[!BEGINTABS]
+
+>[!TAB Plattformsgenererad publik]
+
++++ Ett exempel på en förfrågan om att skapa en plattformsgenererad publik
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/audiences
@@ -330,7 +235,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
         },
         "labels": [
           "core/C1"
-        ]
+        ],
+        "ttlInDays": 60
     }'
 ```
 
@@ -338,12 +244,70 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | -------- | ----------- | 
 | `name` | Publiken. |
 | `description` | En beskrivning av publiken. |
-| `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalAudience`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalAudience` avser en publik som inte genererats i Platform. |
+| `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
 | `expression` | PQL-uttrycket (Profile Query Language) för målgruppen. Mer information om PQL-uttryck finns i [Guide för PQL-uttryck](../pql/overview.md). |
 | `schema` | Målgruppens XDM-schema (Experience Data Model). |
 | `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
+| `ttlInDays` | Representerar målgruppens utgångsvärde i dagar. |
+
++++
+
+>[!TAB Externt genererad publik]
+
++++ En exempelbegäran för att skapa en externt genererad publik
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/audiences
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+ -d '{
+        "audienceId":"test-external-audience-id",
+        "name":"externalAudience",
+        "namespace":"aam",
+        "description":"Last 30 days",
+        "type":"ExternalSegment",
+        "originName":"CUSTOM_UPLOAD",
+        "lifecycleState":"published",
+        "datasetId":"6254cf3c97f8e31b639fb14d",
+        "labels":[
+            "core/C1"
+        ],
+        "linkedAudienceRef":{
+            "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
+        }
+    }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- | 
+| `audienceId` | Ett användarangivet ID för målgruppen. |
+| `name` | Publiken. |
+| `namespace` | Namnutrymmet för målgruppen. |
+| `description` | En beskrivning av publiken. |
+| `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
+| `originName` | Namnet på målgruppens ursprung. För externt genererade målgrupper är standardvärdet för detta `CUSTOM_UPLOAD`. Andra värden som stöds är `REAL_TIME_CUSTOMER_PROFILE`, `CUSTOM_UPLOAD`, `AUDIENCE_ORCHESTRATION`och `AUDIENCE_MATCH`. |
+| `lifecycleState` | Ett valfritt fält som bestämmer det inledande tillståndet för den målgrupp du försöker skapa. Värden som stöds är `draft`, `published`och `inactive`. |
+| `datasetId` | ID:t för datauppsättningen där data som omfattar målgruppen kan hittas. |
+| `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
+| `audienceMeta` | Metadata som tillhör den externt genererade målgruppen. |
+| `linkedAudienceRef` | Ett objekt som innehåller identifierare för andra målgruppsrelaterade system. Detta kan omfatta följande: <ul><li>`flowId`: Detta ID används för att ansluta målgruppen till det dataflöde som användes för att hämta målgruppsdata. Mer information om vilka ID:n som krävs finns i [skapa en dataflödesguide](../../sources/tutorials/api/collect/cloud-storage.md).</li><li>`aoWorkflowId`: Detta ID används för att ansluta målgruppen till en relaterad publikorchestration-komposition.&lt;/li/> <li>`payloadFieldGroupRef`: Detta ID används för att referera till XDM-fältgruppsschemat som beskriver målgruppens struktur. Mer information om fältets värde finns i [Slutpunktshandbok för XDM-fältgrupp](../../xdm/api/field-groups.md).</li><li>`audienceFolderId`: Detta ID används för att referera till målgruppens mapp-ID i Adobe Audience Manager. Mer information om detta API finns i [Adobe Audience Manager API-guide](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API).</ul> |
+
++++
+
+>[!ENDTABS]
 
 **Svar**
+
+Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppen.
+
+>[!BEGINTABS]
+
+>[!TAB Plattformsgenererad publik]
+
++++Ett exempelsvar när du skapar en plattformsgenererad publik.
 
 ```json
 {
@@ -399,15 +363,58 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
     ],
     "dependencies": [],
     "type": "SegmentDefinition",
+    "originName": "REAL_TIME_CUSTOMER_PROFILE",
     "overridePerformanceWarnings": false,
     "createdBy": "{CREATED_BY_ID}",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "labels": [
       "core/C1"
     ],
     "namespace": "AEPSegments"
 }
 ```
+
++++
+
+>[!TAB Externt genererad publik]
+
++++Ett exempelsvar när du skapar en externt genererad publik.
+
+```json
+{
+   "id": "322f9f62-cd27-11ec-9d64-0242ac120002",
+   "audienceId": "test-external-audience-id",
+   "name": "externalAudience",
+   "namespace": "aam",
+   "imsOrgId": "{ORG_ID}",
+   "sandbox":{
+      "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+      "sandboxName": "prod",
+      "type": "production",
+      "default": true
+   },
+   "isSystem": false,
+   "description": "Last 30 days",
+   "type": "ExternalSegment",
+   "originName": "CUSTOM_UPLOAD",
+   "lifecycleState": "published",
+   "createdBy": "{CREATED_BY_ID}",
+   "datasetId": "6254cf3c97f8e31b639fb14d",
+   "labels": [
+      "core/C1"
+   ],
+   "linkedAudienceRef": {
+      "flowId": "4685ea90-d2b6-11ec-9d64-0242ac120002"
+   },
+   "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
+   "creationTime": 1650251290000,
+   "updateEpoch": 1650251290,
+   "updateTime": 1650251290000,
+   "createEpoch": 1650251290
+}
+```
+
++++
 
 ## Söka efter en viss målgrupp {#get}
 
@@ -417,15 +424,15 @@ Du kan söka efter detaljerad information om en viss målgrupp genom att göra e
 
 ```http
 GET /audiences/{AUDIENCE_ID}
-GET /audiences/{AUDIENCE_ID}?property=withmetrics==true
 ```
 
 | Parameter | Beskrivning |
 | --------- | ----------- | 
-| `{AUDIENCE_ID}` | ID:t för den målgrupp du försöker hämta. |
-| `property=withmetrics==true` | En valfri frågeparameter som du kan använda om du vill hämta en angiven målgrupp med målgruppsmåtten. |
+| `{AUDIENCE_ID}` | ID:t för den målgrupp du försöker hämta. Observera att detta är `id` field, and is **not** den `audienceId` fält. |
 
 **Begäran**
+
++++En exempelbegäran för att hämta en målgrupp
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180-97a5-58af4aa285ab \
@@ -435,11 +442,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgruppen. Svaret varierar beroende på om målgruppen genereras med Adobe Experience Platform eller externa källor.
 
-**Plattformsgenererad**
+>[!BEGINTABS]
+
+>[!TAB Plattformsgenererad publik]
+
++++Ett exempelsvar när en plattformsgenererad publik hämtas.
 
 ```json
 {
@@ -497,7 +510,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
     "type": "SegmentDefinition",
     "overridePerformanceWarnings": false,
     "createdBy": "{CREATED_BY_ID}",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "labels": [
         "core/C1"
     ],
@@ -505,13 +518,17 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
 }
 ```
 
-**Externt genererad**
++++
+
+>[!TAB Externt genererad publik]
+
++++Ett samplingssvar när en externt genererad publik hämtas.
 
 ```json
 {
-    "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
+    "id": "60ccea95-1435-4180-97a5-58af4aa285ab",
     "audienceId": "test-external-audience-id",
-    "name": "externalSegment1",
+    "name": "externalAudience",
     "namespace": "aam",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -520,10 +537,10 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
         "type": "production",
         "default": true
     },
-    "isSystem":false,
+    "isSystem": false,
     "description": "Last 30 days",
     "type": "ExternalSegment",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "labels": [
@@ -537,6 +554,10 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
 }
 ```
 
++++
+
+>[!ENDTABS]
+
 ## Uppdatera ett fält i en målgrupp {#update-field}
 
 Du kan uppdatera fälten för en viss målgrupp genom att göra en PATCH-förfrågan till `/audiences` slutpunkt och ange ID för den målgrupp som du vill uppdatera i sökvägen för begäran.
@@ -549,9 +570,11 @@ PATCH /audiences/{AUDIENCE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill uppdatera. |
+| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill uppdatera. Observera att detta är `id` field, and is **not** den `audienceId` fält. |
 
 **Begäran**
+
++++Ett exempel på en begäran om att uppdatera ett fält i en målgrupp.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -580,9 +603,13 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-45
 | `path` | Sökvägen till det fält som du vill uppdatera. |
 | `value` | Värdet som du vill uppdatera fältet till. |
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdaterade målgruppen.
+
++++Ett exempelsvar när ett fält uppdateras i en målgrupp.
 
 ```json
 {
@@ -639,13 +666,15 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
     "type": "SegmentDefinition",
     "overridePerformanceWarnings": false,
     "createdBy": "{CREATED_BY_ID}",
-    "lifecycle": "active",
+    "lifecycleState": "active",
     "labels": [
       "core/C1"
     ],
     "namespace": "AEPSegments"
 }
 ```
+
++++
 
 ## Uppdatera en målgrupp {#put}
 
@@ -657,7 +686,13 @@ Du kan uppdatera (skriva över) en viss målgrupp genom att göra en PUT-förfr�
 PUT /audiences/{AUDIENCE_ID}
 ```
 
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill uppdatera. Observera att detta är `id` field, and is **not** den `audienceId` fält. |
+
 **Begäran**
+
++++Ett exempel på en förfrågan om att uppdatera en hel publik.
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -667,14 +702,14 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
-    "audienceId":"test-external-audience-id",
-    "name":"new externalSegment",
-    "namespace":"aam",
-    "description":"Last 30 days",
-    "type":"ExternalSegment",
-    "lifecycle":"published",
-    "datasetId":"6254cf3c97f8e31b639fb14d",
-    "labels":[
+    "audienceId": "test-external-audience-id",
+    "name": "New external audience",
+    "namespace": "aam",
+    "description": "Last 30 days",
+    "type": "ExternalSegment",
+    "lifecycleState": "published",
+    "datasetId": "6254cf3c97f8e31b639fb14d",
+    "labels": [
         "core/C1"
     ]
 }' 
@@ -682,24 +717,28 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
-| `audienceId` | Målgruppens ID. Detta används av externa målgrupper |
+| `audienceId` | Målgruppens ID. För externt genererade målgrupper kan det här värdet anges av användaren. |
 | `name` | Publiken. |
-| `namespace` | |
+| `namespace` | Namnutrymmet för målgruppen. |
 | `description` | En beskrivning av publiken. |
-| `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalAudience`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalAudience` avser en publik som inte genererats i Platform. |
-| `lifecycle` | Status för målgruppen. Möjliga värden är `draft`, `published`, `inactive`och `archived`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras, `inactive` när målgruppen inte längre är aktiv, och `archived` om målgruppen tas bort. |
+| `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
+| `lifecycleState` | Status för målgruppen. Möjliga värden är `draft`, `published`och `inactive`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras, och `inactive` när målgruppen inte längre är aktiv. |
 | `datasetId` | ID:t för datauppsättningen som målgruppsdata kan hittas. |
 | `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
+
++++
 
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterade målgrupp. Observera att informationen om er målgrupp varierar beroende på om det är en plattformsgenererad publik eller en externt genererad målgrupp.
 
++++Ett exempelsvar när en hel publik uppdateras.
+
 ```json
 {
     "id": "4afe34ae-8c98-4513-8a1d-67ccaa54bc05",
     "audienceId": "test-external-audience-id",
-    "name": "new externalSegment",
+    "name": "New external audience",
     "namespace": "aam",
     "imsOrgId": "{ORG_ID}",
     "sandbox": {
@@ -710,7 +749,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
     },
     "description": "Last 30 days",
     "type": "ExternalSegment",
-    "lifecycle": "published",
+    "lifecycleState": "published",
     "createdBy": "{CREATED_BY_ID}",
     "datasetId": "6254cf3c97f8e31b639fb14d",
     "_etag": "\"f4102699-0000-0200-0000-625cd61a0000\"",
@@ -720,6 +759,8 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
     "createEpoch": 1650251290
 }
 ```
+
++++
 
 ## Ta bort en målgrupp {#delete}
 
@@ -733,18 +774,305 @@ DELETE /audiences/{AUDIENCE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill ta bort. |
+| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill ta bort. Observera att detta är `id` field, and is **not** den `audienceId` fält. |
 
 **Begäran**
+
++++ Ett exempel på begäran om att ta bort en målgrupp.
 
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/ups/audiences/60ccea95-1435-4180-97a5-58af4aa285ab5 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
++++
+
 **Svar**
 
 Ett lyckat svar returnerar HTTP-status 204 utan något meddelande.
+
+## Hämta flera målgrupper {#bulk-get}
+
+Du kan hämta flera målgrupper genom att göra en POST-förfrågan till `/audiences/bulk-get` slutpunkt och ange ID:n för de målgrupper du vill hämta.
+
+**API-format**
+
+```http
+POST /audiences/bulk-get
+```
+
+**Begäran**
+
++++ En exempelbegäran för hämtning av flera målgrupper.
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-get
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d ' {
+    "ids": [
+        {
+            "id": "72c393ea-caed-441a-9eb6-5f66bb1bd6cd"
+        },
+        {
+            "id": "QU9fLTEzOTgzNTE0MzY0NzY0NDg5NzkyOTkx_6ed34f6f-fe21-4a30-934f-6ffe21fa3075"
+        }
+    ]
+ }
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 2007 med information om de begärda målgrupperna.
+
++++ Ett exempelsvar när du hämtar flera målgrupper.
+
+```json
+{
+   "results":{
+      "72c393ea-caed-441a-9eb6-5f66bb1bd6cd":{
+         "id": "72c393ea-caed-441a-9eb6-5f66bb1bd6cd",
+         "audienceId": "72c393ea-caed-441a-9eb6-5f66bb1bd6cd",
+         "schema": {
+            "name": "_xdm.context.profile"
+         },
+         "ttlInDays": 30,
+         "imsOrgId": "{ORG_ID}",
+         "sandbox": {
+            "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "sandboxName": "prod",
+            "type": "production",
+            "default": true
+         },
+         "name": "Sample audience",
+         "expression": {
+            "type": "pql",
+            "format": "pql/text",
+            "value": "_id = \"abc\""         
+        },
+         "mergePolicyId": "87c94d51-239c-4391-932c-29c2412100e5",
+         "evaluationInfo": {
+            "batch": {
+               "enabled": false
+            },
+            "continuous": {
+               "enabled": true
+            },
+            "synchronous": {
+               "enabled": false
+            }
+         },
+         "ansibleUiEnabled": false,
+         "dataGovernancePolicy": {
+            "excludeOptOut": true
+         },
+         "creationTime": 1623889553000000,
+         "updateEpoch": 1674646369,
+         "updateTime": 1674646369000,
+         "createEpoch": 1623889552,
+         "_etag": "\"61030ec7-0000-0200-0000-63d113610000\"",
+         "dependents": [],
+         "definedOn": [
+            {
+               "meta:resourceType": "unions",
+               "meta:containerId": "tenant",
+               "$ref": "https://ns.adobe.com/xdm/context/profile__union"
+            }
+         ],
+         "dependencies": [],
+         "type": "SegmentDefinition",
+         "state": "enabled",
+         "overridePerformanceWarnings": false,
+         "lastModifiedBy": "{CREATED_ID}",
+         "lifecycleState": "published",
+         "namespace": "AEPSegments",
+         "isSystem": false,
+         "saveSegmentMembership": true,
+         "originName": "REAL_TIME_CUSTOMER_PROFILE"
+      },
+      "QU9fLTEzOTgzNTE0MzY0NzY0NDg5NzkyOTkx_6ed34f6f-fe21-4a30-934f-6ffe21fa3075":{
+         "id": "QU9fLTEzOTgzNTE0MzY0NzY0NDg5NzkyOTkx_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+         "name": "label test24764489707692",
+         "namespace": "AO",
+         "imsOrgId": "{ORG_ID}",
+         "sandbox":{
+            "sandboxId": "6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "sandboxName": "prod",
+            "type": "production",
+            "default": true
+         },
+         "type": "ExternalSegment",
+         "lifecycleState": "published",
+         "sourceId": "source-id",
+         "createdBy": "{USER_ID}",
+         "datasetId": "62bf31a105e9891b63525c92",
+         "_etag": "\"3100da6d-0000-0200-0000-62bf31a10000\"",
+         "creationTime": 1656697249000,
+         "updateEpoch": 1656697249,
+         "updateTime": 1656697249000,
+         "createEpoch": 1656697249,
+         "audienceId": "test-audience-id",
+         "isSystem": false,
+         "saveSegmentMembership": true,
+         "linkedAudienceRef": {
+            "aoWorkflowId": "62bf31858e87e34c8364befa"
+         },
+         "originName": "AUDIENCE_ORCHESTRATION"
+      }
+   }
+}
+```
+
++++
+
+## Uppdatera flera målgrupper {#bulk-patch}
+
+Du kan uppdatera profilen och antalet poster för flera målgrupper genom att göra en POST-förfrågan till `/audiences/bulk-patch-metric` slutpunkt och ange ID:n för de målgrupper som du vill uppdatera.
+
+**API-format**
+
+```http
+POST /audiences/bulk-patch-metric
+```
+
+**Begäran**
+
++++ Ett exempel på en förfrågan om att uppdatera flera målgrupper.
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-patch-metric
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d ' {
+    "jobId": "12345",
+    "jobType": "AO",
+    "resources": [
+        {
+            "audienceId": "QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "namespace": "AAMTraits",
+            "operations": [
+                {
+                    "op": "add",
+                    "path": "/metrics/data",
+                    "value": {
+                        "totalProfiles": 11037
+                    }
+                },
+            ]
+        },
+        {
+            "audienceId": "QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+            "namespace": "AAMTraits",
+            "operations": [
+                {
+                    "op": "add",
+                    "path": "/metrics/data",
+                    "value": {
+                        "totalProfiles": 523
+                    }
+                }
+            ]
+        }
+    ]
+    }
+```
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Beskrivning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jobId</code></td>
+<td>ID för det jobb som ska köra uppdateringen.</td>
+</tr>
+<tr>
+<td><code>jobType</code></td>
+<td>Den typ av jobb som ska köra uppdateringen. Värdet kan vara <code>export</code> eller <code>AO</code>.</td>
+</tr>
+<tr>
+<td><code>audienceId</code></td>
+<td>ID för de målgrupper som du vill uppdatera. Observera att detta är <code>audienceId</code> värde, och <strong>not</strong> den <code>id</code> målgruppernas värde.</td>
+</tr>
+<tr>
+<td><code>namespace</code></td>
+<td>Namnutrymmet för den målgrupp som du vill uppdatera.</td>
+</tr>
+<tr>
+<td><code>operations</code></td>
+<td>Ett objekt som innehåller den information som används för att uppdatera målgruppen.</td>
+</tr>
+<tr>
+<td><code>operations.op</code></td>
+<td>Den åtgärd som används för korrigeringen. Vid uppdatering av flera målgrupper är det här värdet <strong>alltid</strong> <code>add</code>.</td>
+</tr>
+<tr>
+<td><code>operations.path</code></td>
+<td>Sökvägen för det fält som ska uppdateras. För närvarande stöds bara två sökvägar: <code>/metrics/data</code> när du uppdaterar <strong>profil</strong> räkna och <code>/recordMetrics/data</code> när du uppdaterar <strong>record</strong> antal.</td>
+</tr>
+<tr>
+<td><code>operations.value</code></td>
+<td>
+Värdet på fältet som ska uppdateras. När du uppdaterar profilantalet ser det här värdet ut så här: 
+<pre>
+{ "totalProfiles": 123456 }
+</pre>
+När du uppdaterar antalet poster ser det här värdet ut så här: 
+<pre>
+{ "recordCount": 123456 }
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 2007 med information om de uppdaterade målgrupperna.
+
++++ Ett exempelsvar för uppdatering av flera målgrupper.
+
+```json
+{
+   "resources":[
+      {
+         "audienceId":"QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+
+         "namespace": "AAMTraits",
+         "status":200
+      },
+      {
+         "audienceId":"QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1vcmlnaW4tdGVzdDE_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
+
+         "namespace": "AAMTraits",
+         "status":200
+      }
+   ]
+}
+```
+
+| Parameter | Beskrivning |
+| --------- | ----------- |
+| `status` | Status för den uppdaterade publiken. Om den returnerade statusen är 200 har målgruppen uppdaterats. Om målgruppen inte kunde uppdateras returneras ett fel som förklarar varför målgruppen inte uppdaterades. |
+
++++
+
+## Nästa steg
+
+När du har läst den här guiden får du nu en bättre förståelse för hur du skapar, hanterar och tar bort målgrupper med Adobe Experience Platform API. Mer information om målgruppshantering med användargränssnittet finns i [gränssnittsguide för segmentering](../ui/overview.md).

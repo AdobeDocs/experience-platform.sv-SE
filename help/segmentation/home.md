@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;segmentering;segmentering;segmenttjänst;segment;segment;segment;segment;segment
 solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1629'
 ht-degree: 0%
 
 ---
 
 # [!DNL Segmentation Service] översikt
 
-Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa segment och generera målgrupper från [!DNL Real-Time Customer Profile] data. Dessa segment är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
+Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper med hjälp av segmentdefinitioner eller andra källor från [!DNL Real-Time Customer Profile] data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
 
 Dokumentet innehåller en översikt över [!DNL Segmentation Service] och den roll den spelar i Adobe Experience Platform.
 
 ## Komma igång med [!DNL Segmentation Service]
 
-Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
+Du bör förstå följande nyckeltermer som används i det här dokumentet:
 
 - **Segmentering**: Att dela upp en stor grupp individer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper som delar liknande egenskaper och kommer att reagera på liknande sätt som marknadsföringsstrategier.
-- **Segmentdefinition**: Den regeluppsättning som används för att beskriva nyckelegenskaper eller beteenden för en målgrupp. När reglerna i en segmentdefinition är färdiga används de för att avgöra vilka målgruppsmedlemmar som är kvalificerade för ett segment.
-- **Målgrupp**: Den resulterande uppsättningen profiler som uppfyller villkoren för en segmentdefinition.
+- **Målgrupp**: En samling personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med hjälp av segmentdefinitioner (plattformsgenererad publik) eller från externa källor (externt genererad publik).
+- **Segmentdefinition**: Regeluppsättningen som Adobe Experience Platform använder för att beskriva viktiga egenskaper eller beteenden hos en målgrupp.
 
 ## Så här fungerar segmentering
 

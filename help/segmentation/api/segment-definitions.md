@@ -1,19 +1,18 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;segmentdefinition;segmentdefinitioner;api;API;
 solution: Experience Platform
 title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1209'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för segmentdefinitioner
 
-Med Adobe Experience Platform kan du skapa segment som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
+Med Adobe Experience Platform kan du skapa segmentdefinitioner som definierar en grupp med specifika attribut eller beteenden från en grupp profiler. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Segmentdefinitioner används på profiler för att skapa målgrupper. Det här objektet (segmentdefinitionen) kallas också för ett PQL-predikat. PQL-predikat definierar reglerna för segmentdefinitionen baserat på villkor som relaterar till data från poster eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
 
 Den här handboken innehåller information som hjälper dig att förstå segmentdefinitioner bättre och innehåller exempel på API-anrop för att utföra grundläggande åtgärder med API:t.
 
@@ -199,15 +198,14 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `name` | **Obligatoriskt.** Ett unikt namn som ska referera till segmentet. |
-| `description` | En beskrivning av segmentdefinitionen som du skapar. |
-| `evaluationInfo` | Den typ av segment som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` att vara sant. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` att vara sant. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` att vara sant. Om det lämnas tomt skapas segmentet som **batch** segment. |
-| `schema` | **Obligatoriskt.** Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
-| `expression` | **Obligatoriskt.** En entitet som innehåller fältinformation om segmentdefinitionen. |
+| `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
+| `description` | (Valfritt.) En beskrivning av segmentdefinitionen som du skapar. |
+| `evaluationInfo` | (Valfritt.) Den typ av segmentdefinition som du skapar. Om du vill skapa ett gruppsegment anger du `evaluationInfo.batch.enabled` att vara sant. Om du vill skapa ett direktuppspelningssegment anger du `evaluationInfo.continuous.enabled` att vara sant. Om du vill skapa ett kantsegment anger du `evaluationInfo.synchronous.enabled` att vara sant. Om den lämnas tom skapas segmentdefinitionen som **batch** segment. |
+| `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
+| `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
 | `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
-| `description` | En läsbar beskrivning av definitionen. |
 
 <!-- >[!NOTE]
 >
@@ -339,7 +337,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat ID för segmentdefinitionen. |
-| `name` | Ett unikt namn som ska referera till segmentet. |
+| `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
 | `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
@@ -472,7 +470,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | Ett systemgenererat skrivskyddat ID för segmentdefinitionen. |
-| `name` | Ett unikt namn som ska referera till segmentet. |
+| `name` | Ett unikt namn som ska referera till segmentdefinitionen. |
 | `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
@@ -487,7 +485,7 @@ Du kan begära att få ta bort en viss segmentdefinition genom att göra en DELE
 
 >[!NOTE]
 >
-> Du kommer att **not** kan ta bort ett segment som används i en målaktivering.
+> En segmentdefinition som används i en målaktivering **inte** tas bort.
 
 **API-format**
 

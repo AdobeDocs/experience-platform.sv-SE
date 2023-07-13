@@ -1,28 +1,27 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Segmenteringstjänst;segmentering;Segmentering;skapa en datauppsättning;exportera målgruppssegment;exportsegment;
 solution: Experience Platform
-title: Skapa en datauppsättning för export av ett målgruppssegment
+title: Skapa en datauppsättning för export av en publik
 type: Tutorial
-description: I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av användargränssnittet i Experience Platform.
+description: Lär dig hur du skapar en datauppsättning som kan användas för att exportera en målgrupp med hjälp av användargränssnittet i Experience Platform.
 exl-id: 1cd16e43-b050-42ba-a894-d7ea477b65f3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '705'
 ht-degree: 0%
 
 ---
 
-# Skapa en datauppsättning för att exportera ett målgruppssegment
+# Skapa en datauppsättning för att exportera en målgrupp
 
-[!DNL Adobe Experience Platform] gör att ni kan segmentera kundprofiler i målgrupper baserat på specifika attribut. När ett segment har skapats kan du exportera den målgruppen till en datauppsättning där den kan nås och hanteras. För att exporten ska lyckas måste datauppsättningen konfigureras korrekt.
+[!DNL Adobe Experience Platform] gör att ni kan segmentera kundprofiler i målgrupper baserat på specifika attribut. När en segmentdefinition har skapats kan du exportera den resulterande målgruppen till en datauppsättning där den kan nås och hanteras. För att exporten ska lyckas måste datauppsättningen konfigureras korrekt.
 
-I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera ett målgruppssegment med hjälp av [!DNL Experience Platform] Gränssnitt.
+I den här självstudiekursen går du igenom de steg som krävs för att skapa en datauppsättning som kan användas för att exportera en målgrupp med [!DNL Experience Platform] Gränssnitt.
 
-Den här självstudiekursen är direkt relaterad till de steg som beskrivs i självstudiekursen om [utvärdera och komma åt segmentresultat](./evaluate-a-segment.md). Självstudiekursen för segmentutvärdering innehåller steg för att skapa en datauppsättning med [!DNL Catalog Service] API, medan den här självstudiekursen beskriver steg för att skapa en datauppsättning med [!DNL Experience Platform] Gränssnitt.
+Den här självstudiekursen är direkt relaterad till de steg som beskrivs i självstudiekursen om [utvärdera och få tillgång till segmenteringsresultat](./evaluate-a-segment.md). Självstudiekursen för utvärdering av segmentdefinition innehåller steg för att skapa en datauppsättning med [!DNL Catalog Service] API, medan den här självstudiekursen beskriver steg för att skapa en datauppsättning med [!DNL Experience Platform] Gränssnitt.
 
 ## Komma igång
 
-För att kunna exportera ett segment måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema]. Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar fälten för alla scheman som delar samma klass. Mer information om unionsscheman finns i handboken om [grunderna för schemakomposition](../../xdm/schema/composition.md#union).
+För att kunna exportera en målgrupp måste datauppsättningen baseras på [!DNL XDM Individual Profile Union Schema]. Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar fälten för alla scheman som delar samma klass. Mer information om unionsscheman finns i handboken om [grunderna för schemakomposition](../../xdm/schema/composition.md#union).
 
 Om du vill visa unionsscheman i användargränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen väljer du **[!UICONTROL Union Schema]** enligt nedan.
 
@@ -70,7 +69,7 @@ På nästa skärm måste du ge datauppsättningen ett namn. Du kan också lägga
 
 * Datauppsättningsnamnen ska vara korta och beskrivande så att datauppsättningen kan hittas i biblioteket senare.
 * Datauppsättningsnamnen måste vara unika, vilket innebär att de också måste vara tillräckligt specifika för att de inte ska återanvändas i framtiden.
-* Det är bäst att ge ytterligare information om datauppsättningen med hjälp av beskrivningsfältet, eftersom det kan hjälpa andra användare att skilja mellan datauppsättningar i framtiden.
+* Du bör ange ytterligare information om datauppsättningen med beskrivningsfältet, eftersom det kan hjälpa andra användare att skilja mellan datauppsättningar i framtiden.
 
 När datauppsättningen har ett namn och en beskrivning väljer du **[!UICONTROL Finish]**.
 
@@ -86,6 +85,6 @@ Den högra listen innehåller information om din nya datauppsättning, t.ex. dat
 
 ## Nästa steg
 
-Nu när du har skapat en datauppsättning baserad på [!DNL XDM Individual Profile Union Schema]kan du använda datauppsättnings-ID:t för att fortsätta [utvärdera och komma åt segmentresultat](./evaluate-a-segment.md) självstudiekurs.
+Nu när du har skapat en datauppsättning baserad på [!DNL XDM Individual Profile Union Schema]kan du använda datauppsättnings-ID:t för att fortsätta [utvärdera och komma åt segmentdefinitionsresultat](./evaluate-a-segment.md) självstudiekurs.
 
-Nu kan du gå tillbaka till självstudiekursen för utvärdering av segmentresultat och hämta information från [skapa profiler för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) steg i exporten av ett segmentarbetsflöde.
+Gå tillbaka till självstudiekursen för att utvärdera segmentdefinitionsresultat och fortsätt med [skapa profiler för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) steg för export av ett målgruppsarbetsflöde.

@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;segmentjobb;segmentjobb;API;api;
 solution: Experience Platform
 title: API-slutpunkt för segmentjobb
 description: Segmentjobbens slutpunkt i Adobe Experience Platform Segmentation Service API gör att du kan hantera segmentjobb för din organisation programmatiskt.
 exl-id: 105481c2-1c25-4f0e-8fb0-c6577a4616b3
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1497'
-ht-degree: 1%
+source-wordcount: '1505'
+ht-degree: 0%
 
 ---
 
@@ -56,11 +55,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna organisationen som JSON. Svaret varierar dock beroende på antalet segment i segmentjobbet.
+Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentjobb för den angivna organisationen som JSON. Svaret varierar dock beroende på antalet segmentdefinitioner i segmentjobbet.
 
-**Mindre än eller lika med 1 500 segment i segmentjobbet**
+**Mindre än eller lika med 1 500 segmentdefinitioner i segmentjobbet**
 
-Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständig lista över alla segment i `children.segments` -attribut.
+Om du har färre än 1 500 segmentdefinitioner som körs i segmentjobbet visas en fullständig lista över alla segmentdefinitioner i `children.segments` -attribut.
 
 >[!NOTE]
 >
@@ -166,9 +165,9 @@ Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständ
 }
 ```
 
-**Mer än 1 500 segment**
+**Mer än 1 500 segmentdefinitioner**
 
-Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segments` attribut kommer att visas `*`, vilket anger att alla segment utvärderas.
+Om du har fler än 1500 segmentdefinitioner som körs i segmentjobbet kan du `children.segments` attribut kommer att visas `*`, vilket anger att alla segmentdefinitioner utvärderas.
 
 >[!NOTE]
 >
@@ -272,8 +271,8 @@ Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segm
 | `metrics.totalTime` | Ett objekt som innehåller information om när segmenteringsjobbet påbörjades och avslutades samt den totala tiden. |
 | `metrics.profileSegmentationTime` | Ett objekt som innehåller information om de tidpunkter då segmenteringsutvärderingen påbörjades och avslutades samt den totala tiden. |
 | `metrics.segmentProfileCounter` | Antalet profiler som kvalificerats per segment. |
-| `metrics.segmentedProfileByNamespaceCounter` | Antalet profiler som är kvalificerade för varje identitetsnamnutrymme per segment. |
-| `metrics.segmentProfileByStatusCounter` | Antalet profiler för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet profiler som kvalificerar sig för segmentet.</li><li>&quot;exited&quot; - antalet profilsegment som inte längre finns i segmentet.</li></ul> |
+| `metrics.segmentedProfileByNamespaceCounter` | Antalet profiler som är kvalificerade för varje identitetsnamnutrymme per segmentdefinitionsbas. |
+| `metrics.segmentProfileByStatusCounter` | Antalet profiler för varje status. Följande tre statusvärden stöds: <ul><li>&quot;real&quot; - antalet profiler som kvalificerar sig för segmentdefinitionen.</li><li>&quot;exited&quot; - Antalet profiler som inte längre finns i segmentdefinitionen.</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | Det totala antalet sammanfogade profiler per sammanfogningspolicy. |
 
 ## Skapa ett nytt segmentjobb {#create}
@@ -286,9 +285,9 @@ Du kan skapa ett nytt segmentjobb genom att göra en POST-förfrågan till `/seg
 POST /segment/jobs
 ```
 
-När du skapar ett nytt segmentjobb skiljer sig förfrågningen och svaret åt beroende på antalet segment i segmentjobbet.
+När du skapar ett nytt segmentjobb skiljer sig förfrågan och svaret åt beroende på antalet segmentdefinitioner i segmentjobbet.
 
-**Mindre än eller lika med 1 500 segment i segmentjobbet**
+**Mindre än eller lika med 1 500 segmentdefinitioner i segmentjobbet**
 
 **Begäran**
 
@@ -411,13 +410,13 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | `segments.segment.id` | ID:t för segmentdefinitionen som du angav. |
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
 
-**Mer än 1 500 segment**
+**Mer än 1 500 segmentdefinitioner**
 
 **Begäran**
 
 >[!NOTE]
 >
->Du kan skapa ett segmentjobb med fler än 1 500 segment, men det här är **rekommenderas inte**.
+>Du kan skapa ett segmentjobb med fler än 1 500 segmentdefinitioner, men det här är **rekommenderas inte**.
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
@@ -440,7 +439,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `schema.name` | Namnet på schemat för segmenten. |
+| `schema.name` | Namnet på schemat för segmentdefinitionerna. |
 | `segments.segmentId` | När du kör ett segmentjobb med mer än 1 500 segment måste du skicka `*` som det segment-ID som anger att du vill köra ett segmenteringsjobb med alla segment. |
 
 **Svar**
@@ -528,7 +527,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet som nyligen skapades. |
 | `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat kommer statusen alltid att vara `NEW`. |
 | `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
-| `segments.segment.id` | The `*` innebär att segmentjobbet körs för alla segment i organisationen. |
+| `segments.segment.id` | The `*` betyder att segmentjobbet körs för alla segmentdefinitioner i organisationen. |
 
 ## Hämta ett specifikt segmentjobb {#get}
 
@@ -556,11 +555,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna segmentjobbet.  Svaret varierar dock beroende på antalet segment i segmentjobbet.
+Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det angivna segmentjobbet.  Svaret varierar dock beroende på antalet segmentdefinitioner i segmentjobbet.
 
-**Mindre än eller lika med 1 500 segment i segmentjobbet**
+**Mindre än eller lika med 1 500 segmentdefinitioner i segmentjobbet**
 
-Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständig lista över alla segment i `children.segments` -attribut.
+Om du har färre än 1 500 segmentdefinitioner som körs i segmentjobbet visas en fullständig lista över alla segmentdefinitioner i `children.segments` -attribut.
 
 ```json
 {
@@ -622,9 +621,9 @@ Om du har färre än 1 500 segment som körs i segmentjobbet visas en fullständ
 }
 ```
 
-**Mer än 1 500 segment**
+**Mer än 1 500 segmentdefinitioner**
 
-Om du har fler än 1 500 segment som körs i segmentjobbet kan du `children.segments` attribut kommer att visas `*`, vilket anger att alla segment utvärderas.
+Om du har fler än 1500 segmentdefinitioner som körs i segmentjobbet kan du `children.segments` attribut kommer att visas `*`, vilket anger att alla segmentdefinitioner utvärderas.
 
 ```json
 {
@@ -744,7 +743,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben. Värdet för `children.segments` Attributet skiljer sig åt beroende på om segmentjobbet körs i mer än 1 500 segment.
+Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentjobben. Värdet för `children.segments` Attributet skiljer sig åt beroende på om segmentjobbet körs för mer än 1 500 segmentdefinitioner.
 
 >[!NOTE]
 >

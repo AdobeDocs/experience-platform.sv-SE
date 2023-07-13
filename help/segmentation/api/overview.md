@@ -1,28 +1,27 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;API;api;
 title: API-guide för segmenteringstjänst
 description: Med API:t för segmenteringstjänsten kan utvecklare programmässigt hantera segmenteringsåtgärder i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '497'
-ht-degree: 3%
+source-wordcount: '560'
+ht-degree: 2%
 
 ---
 
 # API-guide för segmenteringstjänst
 
-[!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
+Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa målgrupper med hjälp av segmentdefinitioner eller andra källor i Adobe Experience Platform från er [!DNL Real-Time Customer Profile] data.
 
 The [!DNL Segmentation Service] API har flera slutpunkter som gör att du kan hantera din segmentering programmatiskt i [!DNL Experience Platform]. I det här översiktsdokumentet finns introduktioner på hög nivå för var och en av dessa slutpunkter samt länkar till tillhörande slutpunktsguider för mer information. Innan du läser de enskilda slutpunktsstödlinjerna, se [komma igång-guide](./getting-started.md) om du vill ha viktig information om obligatoriska rubriker, läsa exempel-API-anrop med mera.
 
 Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder, se [API-referens för segmenteringstjänst](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
-<!-- ## Audiences
+## Målgrupper
 
-Audiences are a collection of people who share similar behaviors and/or characteristics. These can be generated either by using Platform or from external sources. You can use the `/audiences` endpoint to retrieve all audiences, create a new audience, retrieve details of a specific audience, update a specific audience, or delete a specific audience.
+Målgrupper är en samling personer som delar liknande beteenden och/eller egenskaper. Dessa kan genereras antingen med Platform eller från externa källor. Du kan använda `/audiences` slutpunkt för att hämta alla målgrupper, skapa en ny målgrupp, hämta information om en viss målgrupp, uppdatera en viss målgrupp eller ta bort en viss målgrupp.
 
-For more information on using this endpoint, please read the [audiences endpoint guide](./audiences.md). -->
+Mer information om hur du använder den här slutpunkten finns i [slutpunktsguide för målgrupper](./audiences.md).
 
 ## Exportera jobb
 
@@ -46,13 +45,13 @@ Mer information om hur du använder den här slutpunkten finns i [slutpunktshand
 
 ## Segmentdefinitioner
 
-Segmentdefinitioner definierar vilka profiler som ska ingå i vilka målgruppssegment. Du kan använda `/segment/definitions` slutpunkt för att hantera segmentdefinitioner.
+Segmentdefinitioner definierar vilka profiler som ska ingå i vilken målgrupp. Du kan använda `/segment/definitions` slutpunkt för att hantera segmentdefinitioner.
 
 Mer information om hur du använder den här slutpunkten finns i [slutpunktsguide för segmentdefinitioner](./segment-definitions.md).
 
 ## Segmentjobb
 
-Segmentjobb bearbetar tidigare etablerade segmentdefinitioner för att generera ett målgruppssegment. Du kan använda `/segment/jobs` slutpunkt för att hantera segmentjobb.
+Segmentjobb bearbetar tidigare etablerade segmentdefinitioner för att generera en målgrupp. Du kan använda `/segment/jobs` slutpunkt för att hantera segmentjobb.
 
 Mer information om hur du använder den här slutpunkten finns i [slutpunktsguide för segmentjobb](./segment-jobs.md).
 

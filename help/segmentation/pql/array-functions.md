@@ -1,13 +1,12 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profile Query Language;matrisfunktioner;matris;
 solution: Experience Platform
 title: Array-, List- och Set PQL-funktioner
 description: PQL (Profile Query Language) har funktioner som underlättar interaktion med arrayer, listor och strängar.
 exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '767'
-ht-degree: 2%
+source-wordcount: '750'
+ht-degree: 3%
 
 ---
 

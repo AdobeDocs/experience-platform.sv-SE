@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;kantsegmentering;Segmentering;Segmenteringstjänst;segmenteringstjänst;ui guide;streaming edge;
 solution: Experience Platform
 title: Användargränssnittshandbok för kantsegmentering
-description: Kantsegmentering är möjligheten att utvärdera segment i plattformen direkt, vilket möjliggör användning av samma sida och nästa sida.
+description: Lär dig hur du använder kantsegmentering för att utvärdera segmentdefinitioner i plattformar direkt, vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '932'
 ht-degree: 0%
 
 ---
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Kantsegmentering är nu allmänt tillgängligt för alla plattformsanvändare. Om du skapade kantsegment under betaversionen kommer dessa segment att fortsätta fungera.
+>Kantsegmentering är nu allmänt tillgängligt för alla plattformsanvändare. Om du skapade definitioner för kantsegment under betaversionen kommer dessa segmentdefinitioner att fortsätta att fungera.
 
 Kantsegmentering är möjligheten att omedelbart utvärdera segment i Adobe Experience Platform [på kanten](../../edge/home.md), vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 
@@ -52,19 +51,19 @@ En fråga kan utvärderas med kantsegmentering om den uppfyller något av villko
 | Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. | Personer som bor i USA och som är i segmentet &quot;befintligt&quot;. | `homeAddress.countryCode = "US" and inSegment("existing segment")` |
 | Fråga som refererar till en karta | En segmentdefinition som refererar till en egenskapskarta. | Personer som har lagt till i kundvagnen baserat på externa segmentdata. | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
 
-En segmentdefinition **not** aktiveras för kantsegmentering i följande scenarier:
+En segmentdefinition **not** aktiveras för kantsegmentering i följande scenario:
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
-   - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
+   - Om segmentdefinitionen i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
 
 ## Nästa steg
 
-Den här guiden förklarar hur du utvärderar segment med kantsegmentering på Adobe Experience Platform. Mer information om hur du använder användargränssnittet i Experience Platform finns i [Användarhandbok för segmentering](./overview.md). Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Experience Platform API:er kan du gå till [API-guide för kantsegmentering](../api/edge-segmentation.md).
+Den här guiden förklarar hur du utvärderar segmentdefinitioner med kantsegmentering i Adobe Experience Platform. Mer information om hur du använder användargränssnittet i Experience Platform finns i [Användarhandbok för segmentering](./overview.md). Om du vill veta hur du utför liknande åtgärder och arbetar med segmentdefinitioner med Experience Platform API:er kan du gå till [API-guide för kantsegmentering](../api/edge-segmentation.md).
 
 ## Bilaga
 
 I följande avsnitt visas vanliga frågor om kantsegmentering:
 
-### Hur lång tid tar det innan ett segment blir tillgängligt i Edge Network?
+### Hur lång tid tar det innan en segmentdefinition är tillgänglig i Edge Network?
 
-Det tar upp till en timme för ett segment att vara tillgängligt på Edge Network.
+Det tar upp till en timme innan en segmentdefinition är tillgänglig i Edge Network.

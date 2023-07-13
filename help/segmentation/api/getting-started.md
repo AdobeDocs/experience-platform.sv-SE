@@ -4,20 +4,20 @@ solution: Experience Platform
 title: Komma igång med segmenteringstjänstens API
 description: Följande dokumentation innehåller ytterligare information som du behöver känna till för att kunna arbeta med segmenterings-API:t.
 exl-id: 41c0e50b-afed-45b8-85d7-a0c84ae090f5
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '355'
 ht-degree: 0%
 
 ---
 
 # Komma igång med segmenteringstjänstens API {#getting-started}
 
-Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa segment och generera målgrupper i Adobe Experience Platform från era [!DNL Real-Time Customer Profile] data.
+Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa målgrupper med hjälp av segmentdefinitioner eller andra källor i Adobe Experience Platform från er [!DNL Real-Time Customer Profile] data.
 
 Utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används [!DNL Segmentation Service].
 
-- [[!DNL Segmentation]](../home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-Time Customer Profile] data.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.

@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;PQL;pql;profilfrågespråk
 solution: Experience Platform
 title: Profilfrågespråk (PQL) - översikt
 description: Den här guiden ger en allmän översikt över PQL, som beskriver riktlinjer för formatering och innehåller exempel på PQL-uttryck.
 exl-id: 4f7ab50e-89a3-42db-b74a-c6f2d86c9bcb
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '706'
 ht-degree: 1%
 
 ---
@@ -67,7 +66,6 @@ PQL har stöd för följande literaltyper:
 | Array | En datatyp som består av en grupp med andra literala värden. Här används hakparenteser för att gruppera och kommatecken för att avgränsa mellan olika värden. <br> **Obs!** Du kan inte komma åt egenskaper direkt för objekt i en array. Om du behöver komma åt en egenskap i en array är metoden som stöds alltså `select X from array where X.item = ...`. <br> PQL reserverar ordet `xEvent` för att hänvisa till en array med upplevelsehändelser som är länkade till en profil. | `[1, 4, 7]`, `["US", "CA"]` |
 | Relativa tidsreferenser | Reserverade ord som kan användas för att skapa tidsstämplar och tidsintervallreferenser. <ul><li>idag, i går, imorgon</li><li>this, last, next</li><li>före, efter, från</li><li>millisekunder, sekund(er), minut(er), timme(ar), dag(ar), vecka(er), månad(er), år, årtionde, århundraden/århundraden, millennium/millennium</li></ul> | `X.timestamp occurs before today`, `X.timestamp occurs last month`, `X.timestamp occurs <= 3 days before now` |
 
-
 ## PQL-funktioner
 
 Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklusive länkar till ytterligare dokumentation för mer information.
@@ -89,4 +87,4 @@ Följande tabell visar de olika kategorierna av PQL-funktioner som stöds, inklu
 
 ## Nästa steg
 
-Nu har du lärt dig hur man använder [!DNL Profile Query Language]kan du använda PQL när du skapar och ändrar segment. Mer information om segmentering finns i [segmenteringsöversikt](../home.md).
+Nu har du lärt dig hur man använder [!DNL Profile Query Language]kan du använda PQL när du skapar och ändrar segmentdefinitioner. Mer information om segmentering finns i [segmenteringsöversikt](../home.md).

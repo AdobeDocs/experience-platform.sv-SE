@@ -1,10 +1,9 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;strömmande segmentering;Segmentering;Segmenteringstjänst;segmenteringstjänst;ui guide;
 solution: Experience Platform
 title: Användargränssnittshandbok för direktuppspelningssegmentering
 description: Med direktuppspelningssegmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
 source-wordcount: '1483'
 ht-degree: 0%
@@ -23,7 +22,7 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 >
 >Direktuppspelningssegmentering fungerar på alla data som har importerats från en direktuppspelningskälla. Data som hämtas in med hjälp av en batchbaserad källa utvärderas nightly, även om de kvalificerar för direktuppspelningssegmentering.
 >
->Dessutom kan segment som utvärderas med direktuppspelningssegmentering avvika från det idealiska och det faktiska medlemskapet om segmentet är baserat på ett annat segment som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
+>Dessutom kan segment som utvärderas med direktuppspelningssegmentering avvika från det ideala och det faktiska medlemskapet om segmentdefinitionen baseras på en annan segmentdefinition som utvärderas med gruppsegmentering. Om till exempel segment A är baserat på segment B och segment B utvärderas med gruppsegmentering, eftersom segment B bara uppdateras var 24:e timme, kommer segment A att flyttas längre bort från de faktiska data tills det synkroniseras om med segmentet B.
 
 ## Frågetyper för direktuppspelningssegmentering {#query-types}
 
@@ -38,7 +37,7 @@ En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppf
 | En händelse | En segmentdefinition som refererar till en enda inkommande händelse utan tidsbegränsning. | ![Ett exempel på en enstaka händelse visas.](../images/ui/streaming-segmentation/incoming-hit.png) |
 | En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. | ![Ett exempel på en enstaka händelse i ett relativt tidsfönster visas.](../images/ui/streaming-segmentation/relative-hit-success.png) |
 | En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. | ![Ett exempel på en enstaka händelse med ett tidsfönster visas.](../images/ui/streaming-segmentation/historic-time-window.png) |
-| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |  |
+| Endast profil | En segmentdefinition som bara refererar till ett profilattribut. | |
 | En händelse med ett profilattribut | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. **Obs!** Frågan utvärderas omedelbart när händelsen kommer. Om en profilhändelse inträffar måste den dock vänta i 24 timmar för att införlivas. | ![Ett exempel på en enstaka händelse med ett profilattribut visas.](../images/ui/streaming-segmentation/profile-hit.png) |
 | En händelse med ett profilattribut i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. | ![Ett exempel på en enstaka händelse med ett profilattribut i ett relativt tidsfönster visas.](../images/ui/streaming-segmentation/profile-relative-success.png) |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen **var 24:e timme**. | ![Ett exempel på ett segment visas.](../images/ui/streaming-segmentation/two-batches.png) |
@@ -49,7 +48,7 @@ En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i fö
 - Segmentdefinitionen innehåller Adobe Audience Manager (AAM) segment eller egenskaper.
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
-   - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för direktuppspelningssegmentering.
+   - Om segmentdefinitionen i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för direktuppspelningssegmentering.
 
 Observera att följande riktlinjer gäller vid direktuppspelningssegmentering:
 
@@ -62,11 +61,11 @@ Om en segmentdefinition ändras så att den inte längre uppfyller villkoren fö
 
 Dessutom sker okvalificerat segment, på samma sätt som segmentkvalificering, i realtid. Om en publik inte längre kvalificerar sig för ett segment blir det därför omedelbart okvalificerat. Om segmentdefinitionen till exempel frågar efter&quot;Alla användare som har köpt röda skor de senaste tre timmarna&quot;, efter tre timmar, kommer alla profiler som ursprungligen kvalificerades för segmentdefinitionen att vara okvalificerade.
 
-## Segmentdetaljer för direktuppspelning
+## Definitionsdetaljer för direktuppspelningssegmentering
 
 När du har skapat ett direktuppspelningsaktiverat segment kan du visa information om det segmentet.
 
-![Sidan med segmentinformation visas.](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
+![Sidan med segmentdefinitionsinformation visas.](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
 I synnerhet **[!UICONTROL Total qualified]** Mätvärdet visas, vilket visar det totala antalet kvalificerade målgrupper baserat på utvärdering av grupper och direktuppspelning för det här segmentet.
 
@@ -74,7 +73,7 @@ Underliggande är ett linjediagram som visar antalet nya målgrupper som uppdate
 
 >[!NOTE]
 >
->Ett segment anses vara kvalificerat om det går från att ha ingen status till att realisera eller om det går från att avslutas till att realiseras. Ett segment anses vara okvalificerat om det går från realiserad till avslutad.
+>En segmentdefinition anses vara kvalificerad om den går från att ha ingen status till att realisera eller om den går från avslutad till realiserad. En segmentdefinition anses vara okvalificerad om den går från realiserad till avslutad.
 >
 >Mer information om de här statusvärdena finns i statustabellen i [segmenteringsöversikt](./overview.md#browse).
 
@@ -106,11 +105,11 @@ Direktuppspelningssegmentering fungerar på alla data som har importerats från 
 
 ### Hur definieras segment som grupp- eller direktuppspelningssegmentering?
 
-Ett segment definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
+En segmentdefinition definieras som grupp-, direktuppspelnings- eller kantsegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segment som ska utvärderas som en segmentdefinition för direktuppspelning finns i [frågetyper för direktuppspelningssegmentering](#query-types).
 
-Observera att om ett segment innehåller **båda** en `inSegment` -uttryck och en direkt händelsekedja kan den inte kvalificera för direktuppspelningssegmentering. Om du vill att det här segmentet ska vara kvalificerat för direktuppspelningssegmentering bör du göra den direkta single-event-kedjan till ett eget segment.
+Observera att om en segmentdefinition innehåller **båda** en `inSegment` -uttryck och en direkt händelsekedja kan den inte kvalificera för direktuppspelningssegmentering. Om du vill att den här segmentdefinitionen ska vara giltig för direktuppspelningssegmentering, bör du göra den direkta single-event-kedjan till ett eget segment.
 
-### Varför ökar antalet&quot;totala kvalificerade&quot; segment medan antalet under&quot;De senaste X dagarna&quot; är noll i segmentinformationsavsnittet?
+### Varför ökar antalet&quot;totalt kvalificerade&quot; segment medan antalet under&quot;Senaste X dagarna&quot; är noll i avsnittet med segmentdefinitionsdetaljer?
 
 Antalet kvalificerade segment baseras på det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegment. Detta värde visas för både grupp- och direktuppspelningssegment.
 
@@ -118,6 +117,6 @@ Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalif
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för det segmentet.
 
-### Hur lång tid tar det innan ett segment blir tillgängligt?
+### Hur lång tid tar det innan en segmentdefinition är tillgänglig?
 
-Det tar upp till en timme innan ett segment är tillgängligt.
+Det tar upp till en timme innan en segmentdefinition är tillgänglig.

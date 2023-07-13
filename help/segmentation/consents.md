@@ -1,17 +1,20 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;avanmälan;Segmentering;Segmenteringstjänst;segmenteringstjänst;hedersavanmälan;avanmälan;avanmälan;avanmälan;medgivande;dela;samla;
 solution: Experience Platform
 title: Hedra samtycke i segment
 description: Lär dig hur du respekterar kundernas önskemål om samtycke vid insamling och delning av personuppgifter i segmentåtgärder.
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '620'
 ht-degree: 0%
 
 ---
 
 # Följa samtycke i segment
+
+>[!NOTE]
+>
+>I den här guiden beskrivs hur du respekterar innehåll i **segmentdefinitioner**.
 
 Lagliga sekretessregler som [!DNL California Consumer Privacy Act] (CCPA) ger konsumenterna rätt att avstå från att få sina personuppgifter insamlade eller delade med tredje part. Adobe Experience Platform tillhandahåller XDM-komponenter (Experience Data Model) som är avsedda att fånga upp kundernas samtycke i realtidsdata för kundprofiler.
 
@@ -23,7 +26,7 @@ Att värna om kundens samtycke kräver förståelse för de olika [!DNL Adobe Ex
 
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 * [[!DNL Real-Time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att ni kan skapa målgruppssegment utifrån [!DNL Real-Time Customer Profile] data.
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 
 ## Schemafält för samtycke
 
@@ -35,7 +38,7 @@ När fältgruppen har lagts till i en [Profilaktiverat schema](../xdm/ui/resourc
 
 ## Hantera samtycke vid segmentering
 
-För att säkerställa att bortfallsprofiler inte inkluderas i segment måste specialfält läggas till i befintliga segment och inkluderas när nya segment skapas.
+För att säkerställa att bortfallsprofiler inte inkluderas i segmentdefinitionerna måste specialfält läggas till i befintliga segmentdefinitioner och inkluderas när nya segmentdefinitioner skapas.
 
 Stegen nedan visar hur du lägger till lämpliga fält för två typer av avanmälningsflaggor:
 
@@ -44,13 +47,13 @@ Stegen nedan visar hur du lägger till lämpliga fält för två typer av avanm�
 
 >[!NOTE]
 >
->Den här guiden fokuserar på de två avanmälningsflaggorna ovan, men du kan konfigurera dina segment så att även ytterligare godkännandesignaler inkluderas. The [referenshandbok för innehåll och inställningar](../xdm/field-groups/profile/consents.md) innehåller mer information om dessa alternativ och hur de ska användas.
+>Den här guiden fokuserar på de två avanmälningsflaggorna ovan, men du kan konfigurera dina segmentdefinitioner så att de även innehåller ytterligare godkännandesignaler. The [referenshandbok för innehåll och inställningar](../xdm/field-groups/profile/consents.md) innehåller mer information om dessa alternativ och hur de ska användas.
 
-När du skapar ett segment i användargränssnittet, under **[!UICONTROL Attributes]**, navigera till **[!UICONTROL XDM Individual Profile]** väljer **[!UICONTROL Consents and Preferences]**. Här kan du se alternativen för **[!UICONTROL Data Collection]** och **[!UICONTROL Share Data]**.
+När en segmentdefinition skapas i användargränssnittet, under **[!UICONTROL Attributes]**, navigera till **[!UICONTROL XDM Individual Profile]** väljer **[!UICONTROL Consents and Preferences]**. Här kan du se alternativen för **[!UICONTROL Data Collection]** och **[!UICONTROL Share Data]**.
 
 ![](./images/opt-outs/consents.png)
 
-Börja med att välja **[!UICONTROL Data Collection]** kategori och dra sedan **[!UICONTROL Choice Value]** i segmentbyggaren. När du lägger till attributet i segmentet kan du ange [medgivandevärden](../xdm/field-groups/profile/consents.md#choice-values) som måste inkluderas eller uteslutas.
+Börja med att välja **[!UICONTROL Data Collection]** kategori och dra sedan **[!UICONTROL Choice Value]** i segmentbyggaren. När du lägger till attributet i segmentdefinitionen kan du ange [medgivandevärden](../xdm/field-groups/profile/consents.md#choice-values) som måste inkluderas eller uteslutas.
 
 ![](./images/opt-outs/consent-values.png)
 
@@ -66,11 +69,11 @@ Under **[!UICONTROL Attributes]** i den vänstra listen, gå tillbaka till **[!U
 
 ![](./images/opt-outs/share.png)
 
-Med båda **[!UICONTROL Data Collection]** och **[!UICONTROL Share Data]** Medgivandevärden som läggs till i segmentet kommer alla kunder som har valt att inte använda sina data att uteslutas från den slutliga målgruppen. Här kan du fortsätta att anpassa segmentdefinitionen innan du väljer **[!UICONTROL Save]** för att slutföra processen.
+Med båda **[!UICONTROL Data Collection]** och **[!UICONTROL Share Data]** Medgivandevärden som läggs till i segmentdefinitionen, kommer alla kunder som har valt att inte använda sina data att uteslutas från den slutliga målgruppen. Här kan du fortsätta att anpassa segmentdefinitionen innan du väljer **[!UICONTROL Save]** för att slutföra processen.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen bör du nu få en bättre förståelse för hur ni respekterar kundens samtycke och önskemål när ni bygger segment i Experience Platform.
+Genom att följa den här självstudiekursen bör du nu få en bättre förståelse för hur du respekterar kundens samtycke och önskemål när du skapar segmentdefinitioner i Experience Platform.
 
 Mer information om att hantera samtycke i Platform finns i följande dokumentation:
 

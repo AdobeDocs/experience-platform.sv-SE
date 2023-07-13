@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hemindelning;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;kantsegmentering;Kantsegmentering;Strömningskant;
 solution: Experience Platform
 title: Kantsegmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
@@ -17,9 +16,9 @@ ht-degree: 0%
 >
 >I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med användargränssnittet finns i [gränssnittsguide för kantsegmentering](../ui/edge-segmentation.md).
 >
->Kantsegmentering är nu allmänt tillgängligt för alla plattformsanvändare. Om du skapade kantsegment under betaversionen kommer dessa segment att fortsätta fungera.
+>Kantsegmentering är nu allmänt tillgängligt för alla plattformsanvändare. Om du skapade definitioner för kantsegment under betaversionen kommer dessa segmentdefinitioner att fortsätta att fungera.
 
-Kantsegmentering är möjligheten att utvärdera segment i Adobe Experience Platform direkt, vilket möjliggör användning av samma sida och nästa sida vid personalisering.
+Kantsegmentering är möjligheten att omedelbart utvärdera segmentdefinitioner i Adobe Experience Platform, vilket möjliggör användning av samma sida och nästa sida.
 
 >[!IMPORTANT]
 >
@@ -32,7 +31,7 @@ Kantsegmentering är möjligheten att utvärdera segment i Adobe Experience Plat
 Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör kantsegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa segment och målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 Om du vill kunna anropa någon Experience Platform API-slutpunkt läser du i guiden [komma igång med plattforms-API:er](../../landing/api-guide.md) om du vill veta mer om obligatoriska rubriker och hur du läser exempel-API-anrop.

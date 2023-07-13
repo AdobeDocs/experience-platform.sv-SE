@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;segment;skapa segment;segmentering;skapa ett segment;segmenteringstjänst;
 solution: Experience Platform
-title: Skapa ett segment med hjälp av segmenteringstjänstens API
+title: Skapa en segmentdefinition med hjälp av segmenteringstjänstens API
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
 
-# Skapa ett segment med hjälp av segmenteringstjänstens API
+# Skapa en segmentdefinition med hjälp av segmenteringstjänstens API
 
 Det här dokumentet innehåller en självstudiekurs för att utveckla, testa, förhandsgranska och spara en segmentdefinition med [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md).
 
-Mer information om hur du skapar segment med användargränssnittet finns i [Segment Builder Guide](../ui/overview.md).
+Mer information om hur du skapar segmentdefinitioner med användargränssnittet finns i [Segment Builder Guide](../ui/overview.md).
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgruppssegment. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa segmentdefinitioner. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgruppssegment utifrån kundprofildata i realtid.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper med hjälp av segmentdefinitioner eller andra externa källor från kundprofildata i realtid.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API:er.
@@ -54,11 +53,11 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 ## Utveckla en segmentdefinition
 
-Det första steget i segmenteringen är att definiera ett segment, som representeras i en konstruktion som kallas segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentet baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
+Det första steget i segmenteringen är att definiera en segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentdefinitionen baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
 
-Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att ett segment ska kunna definieras korrekt.
+Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att en segmentdefinition ska kunna definieras korrekt.
 
-Mer information om hur du definierar ett segment finns i [Utvecklarhandbok för segmentdefinition](../api/segment-definitions.md#create).
+En detaljerad förklaring om hur du definierar en segmentdefinition finns i [Utvecklarhandbok för segmentdefinition](../api/segment-definitions.md#create).
 
 ## Beräkna och förhandsgranska en målgrupp {#estimate-and-preview-an-audience}
 
@@ -66,14 +65,14 @@ När du utvecklar segmentdefinitionen kan du använda verktygen för uppskattnin
 
 Genom att uppskatta och förhandsgranska målgruppen kan ni testa och optimera PQL-predikaten tills de ger önskat resultat, där de sedan kan användas i en uppdaterad segmentdefinition.
 
-Du måste utföra två steg för att förhandsgranska eller få en uppskattning av ditt segment:
+Det finns två nödvändiga steg för att förhandsgranska eller få en uppskattning av din segmentdefinition:
 
 1. [Skapa ett förhandsgranskningsjobb](#create-a-preview-job)
 2. [Visa uppskattning eller förhandsgranskning](#view-an-estimate-or-preview) med ID:t för förhandsgranskningsjobbet
 
 ### Hur uppskattningar genereras
 
-Dataprover används för att utvärdera segment och uppskatta antalet kvalificerade profiler. Nya data läses in i minnet varje morgon (mellan 12AM-2AM PT, som är 7-9AM UTC), och alla segmenteringsfrågor beräknas med hjälp av den dagens exempeldata. Alla nya fält som läggs till eller ytterligare uppgifter som samlas in kommer därför att återspeglas i beräkningarna följande dag.
+Dataexempel används för att utvärdera segmentdefinitioner och uppskatta antalet kvalificerade profiler. Nya data läses in i minnet varje morgon (mellan 12AM-2AM PT, som är 7-9AM UTC), och alla segmenteringsfrågor beräknas med hjälp av den dagens exempeldata. Alla nya fält som läggs till eller ytterligare uppgifter som samlas in kommer därför att återspeglas i beräkningarna följande dag.
 
 Samplingsstorleken beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 

@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;segmentering;Segmentering;Segmenteringstjänst;pql;PQL;Profilfrågespråk;aggregeringsfunktioner;aggregering;
 solution: Experience Platform
 title: PQL-aggregeringsfunktioner
 description: Sammanställningsfunktioner används för att gruppera flera värden inom PQL-arrayer (Profile Query Language) för att skapa ett enda sammanfattningsvärde.
 exl-id: 6c0c0f6d-98c5-4b5d-b440-3e5e18c0f34b
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '227'
 ht-degree: 3%
 
 ---
