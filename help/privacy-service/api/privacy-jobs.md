@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Sekretessjobb API-slutpunkt
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 890294f087b4aae58ec9519ab3fcfff0cc4cc12d
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '1547'
 ht-degree: 0%
@@ -165,7 +165,7 @@ curl -X POST \
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. If `priority` utelämnas, standardbeteendet är `normal`. |
 | `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. If `analyticsDeleteMethod` utelämnas, det här är standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
-| `mergePolicyId` | När sekretessförfrågningar görs för kundprofil i realtid (`profileService`) kan du också ange ID:t för [sammanfogningsprincip](../../profile/merge-policies/overview.md) som du vill använda för ID-sammanfogning. Genom att ange en kopplingsprofil kan sekretessförfrågningar innehålla segmentinformation när data returneras från en kund. Endast en sammanfogningsprincip kan anges per begäran. Om det inte finns någon sammanfogningspolicy inkluderas inte segmenteringsinformation i svaret. |
+| `mergePolicyId` | När sekretessförfrågningar görs för kundprofil i realtid (`profileService`) kan du också ange ID:t för [sammanfogningsprincip](../../profile/merge-policies/overview.md) som du vill använda för ID-sammanfogning. Genom att ange en kopplingsprofil kan sekretessförfrågningar inkludera målgruppsinformation när data returneras till en kund. Endast en sammanfogningsprincip kan anges per begäran. Om det inte finns någon sammanfogningspolicy inkluderas inte segmenteringsinformation i svaret. |
 | `regulation` **(Obligatoriskt)** | Reglerna för sekretessarbetet. Följande värden accepteras: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
 
 {style="table-layout:auto"}

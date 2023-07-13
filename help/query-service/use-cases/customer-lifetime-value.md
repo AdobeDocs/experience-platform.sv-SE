@@ -2,9 +2,9 @@
 title: Spåra datasignaler för att generera kundens livstidsvärde
 description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1269'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Följande grafik visar den cykel med datainsamling, hantering, analys och aktive
 
 ![Grund-trip-grafik av data från observation till analys till åtgärd.](../images/use-cases/infographic-use-case-cycle.png)
 
-Det här heltäckande användningsexemplet visar hur datasignaler kan hämtas och ändras för att beräkna det härledda attributet för kundens livstidsvärde. Dessa härledda attribut kan sedan tillämpas på dina Real-Time CDP-profildata och kan användas med användardefinierade instrumentpaneler för att skapa en instrumentpanel för insiktsanalys. Med Data Distiller kan ni utöka datamodellen för Real-Time CDP insights och använda det CLV-härledda attributet och instrumentpanelsinsikterna för att skapa ett nytt segment och aktivera det till önskad destination. Dessa segment kan sedan användas för att skapa högpresterande målgrupper som kan styra nästa marknadsföringskampanj.
+Det här heltäckande användningsexemplet visar hur datasignaler kan hämtas och ändras för att beräkna det härledda attributet för kundens livstidsvärde. Dessa härledda attribut kan sedan tillämpas på dina Real-Time CDP-profildata och kan användas med användardefinierade instrumentpaneler för att skapa en instrumentpanel för insiktsanalys. Med Data Distiller kan ni utöka datamodellen för Real-Time CDP insights och använda det CLV-härledda attributet och instrumentpanelsinsikterna för att skapa en ny målgrupp och aktivera den till önskat mål. Dessa högpresterande målgrupper kan sedan användas som stöd för nästa marknadsföringskampanj.
 
 Den här guiden är utformad för att hjälpa er att förstå kundupplevelsen bättre genom att mäta datasignaler över viktiga kontaktytor som driver CLV och implementerar ett liknande användningsfall i er miljö. Hela processen sammanfattas i bilden nedan.
 
@@ -28,7 +28,7 @@ Den här guiden är utformad för att hjälpa er att förstå kundupplevelsen b�
 Den här handboken kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
 * [Frågetjänst](../home.md): Innehåller ett användargränssnitt och ett RESTful API där du kan använda SQL-frågor för att analysera och förbättra dina data.
-* [Segmenteringstjänst](../../segmentation/home.md): Gör att ni kan skapa segment och generera målgrupper utifrån kundprofildata i realtid.
+* [Segmenteringstjänst](../../segmentation/home.md): Gör att ni kan generera målgrupper från era kundprofildata i realtid.
 
 ## Förutsättningar
 
@@ -71,23 +71,23 @@ Exempel på anpassade CLV-widgetar som använder decimalluckor visas nedan.
 
 ![En samling anpassade decimalbaserade CLTV-widgetar.](../images/use-cases/deciles-user-defined-dashboard.png)
 
-## Skapa och aktivera segment för att bygga högpresterande målgrupper {#create-and-activate-segments}
+## Skapa och aktivera högpresterande målgrupper {#create-and-activate-audiences}
 
-Nästa steg är att bygga segment och generera målgrupper utifrån kundprofildata i realtid. Läs användargränssnittsguiden för segmentbyggaren om du vill veta hur du [skapa och aktivera segment i plattformen](../../segmentation/ui/segment-builder.md). Handboken innehåller avsnitt om hur du:
+Nästa steg är att skapa en segmentdefinition och generera målgrupper utifrån kundprofildata i realtid. Läs användargränssnittsguiden för segmentbyggaren om du vill veta hur du [skapa och aktivera målgrupper i Platform](../../segmentation/ui/segment-builder.md). Handboken innehåller avsnitt om hur du:
 
 * Skapa segmentdefinitioner med en kombination av attribut, händelser och befintliga målgrupper som byggstenar.
-* Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmentreglerna körs.
+* Använd regelbyggarens arbetsyta och behållare för att styra i vilken ordning segmenteringsreglerna ska köras.
 * Visa uppskattningar av er presumtiva målgrupp, så att ni kan justera era segmentdefinitioner efter behov.
 * Aktivera alla segmentdefinitioner för schemalagd segmentering.
 * Aktivera angivna segmentdefinitioner för direktuppspelningssegmentering.
 
-Det finns även en [videosjälvstudiekurs om segmentbyggare](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) finns för mer information.
+Det finns även en [videosjälvstudiekurs om segmentbyggare](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-segments.html) finns för mer information.
 
-## Aktivera ditt segment för en e-postkampanj {#activate-segment-for-campaign}
+## Aktivera er målgrupp för en e-postkampanj {#activate-audience-for-campaign}
 
-När du har skapat segmentet är du redo att aktivera det till ett mål. Plattformen har stöd för ett antal e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
+När ni har byggt er målgrupp är ni redo att aktivera den till ett mål. Plattformen har stöd för ett antal e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
 
-Kontrollera [Översikt över destinationer för e-postmarknadsföring](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/overview.html?lang=en#connect-destination) för en lista över de mål som stöds som du vill exportera data till (t.ex. [Oracle Eloqua](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/email-marketing/oracle-eloqua-api.html?lang=en) sida).
+Kontrollera [Översikt över destinationer för e-postmarknadsföring](../../destinations/catalog/email-marketing/overview.md#connect-destination) för en lista över de mål som stöds som du vill exportera data till (t.ex. [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) sida).
 
 ## Se returnerade analysdata från kampanjen {#post-campaign-data-analysis}
 
@@ -95,7 +95,7 @@ Data från källor kan nu [inkrementellt bearbetade](../essential-concepts/incre
 
 När datamodellen har uppdaterats tillhandahåller dina anpassade widgetar meningsfulla signaler som gör att du kan mäta och visualisera kundens livstidsvärde.
 
-![En anpassad widget som visar antalet e-postmeddelanden som öppnas utifrån segment och e-postkampanj.](../images/use-cases/post-activation-and-email-response-kpis.png)
+![En anpassad widget som visar antalet e-postmeddelanden som öppnas utifrån målgrupp och e-postkampanj.](../images/use-cases/post-activation-and-email-response-kpis.png)
 
 Det finns en mängd visualiseringsalternativ för din anpassade analys.
 

@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
+source-git-commit: 55f86fdd4fd36d21dcbd575d6da83df18abb631d
 workflow-type: tm+mt
-source-wordcount: '2709'
+source-wordcount: '2705'
 ht-degree: 1%
 
 ---
 
 # Bästa tillvägagångssätt för datamodellering
 
-[!DNL Experience Data Model] (XDM) är det centrala ramverket som standardiserar kundupplevelsedata genom att tillhandahålla gemensamma strukturer och definitioner för användning i Adobe Experience Platform-tjänster längre fram i kedjan. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som gör att ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och uttrycka kundattribut i personaliseringssyfte.
+[!DNL Experience Data Model] (XDM) är det centrala ramverket som standardiserar kundupplevelsedata genom att tillhandahålla gemensamma strukturer och definitioner för användning i Adobe Experience Platform-tjänster längre fram i kedjan. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation som gör att ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper och uttrycka kundattribut i personaliseringssyfte.
 
 Eftersom XDM är extremt mångsidigt och anpassningsbart efter design är det därför viktigt att följa bästa praxis för datamodellering när du utformar dina scheman. Det här dokumentet beskriver de viktigaste beslut och överväganden du måste ta när du mappar kundupplevelsedata till XDM.
 
@@ -92,24 +92,24 @@ Om du vill analysera hur vissa attribut inom en enhet ändras över tid är det 
 
 #### Användningsexempel för segmentering
 
-När ni kategoriserar era enheter är det viktigt att tänka på de målgruppssegment ni kanske vill bygga för att hantera era specifika affärsanvändningsfall.
+När ni kategoriserar era enheter är det viktigt att tänka på vilka målgrupper ni kanske vill bygga för att hantera era specifika affärsanvändningsfall.
 
-Ett företag vill t.ex. känna till alla &quot;Guld&quot; eller &quot;Platinum&quot;-medlemmar i deras lojalitetsprogram som har gjort fler än fem inköp det senaste året. På grundval av denna segmentlogik kan följande slutsatser dras om hur relevanta enheter bör representeras:
+Ett företag vill t.ex. känna till alla &quot;Guld&quot; eller &quot;Platinum&quot;-medlemmar i deras lojalitetsprogram som har gjort fler än fem inköp det senaste året. På grundval av denna segmenteringslogik kan följande slutsatser dras om hur relevanta enheter bör representeras:
 
-* &quot;Gold&quot; och &quot;Platinum&quot; representerar lojalitetsstatus som gäller för en enskild kund. Eftersom segmentlogiken endast gäller kundernas aktuella lojalitetsstatus, kan dessa data modelleras som en del av ett profilschema. Om du vill spåra förändringar i lojalitetsstatus över tiden kan du även skapa ett ytterligare händelseschema för förändringar av lojalitetsstatusen.
-* Inköp är händelser som inträffar vid en viss tidpunkt och segmentlogiken gäller köphändelser inom ett angivet tidsfönster. Dessa data bör därför modelleras som ett händelseschema.
+* &quot;Gold&quot; och &quot;Platinum&quot; representerar lojalitetsstatus som gäller för en enskild kund. Eftersom segmenteringslogiken endast gäller kundernas aktuella lojalitetsstatus, kan dessa data modelleras som en del av ett profilschema. Om du vill spåra förändringar i lojalitetsstatus över tiden kan du även skapa ett ytterligare händelseschema för förändringar av lojalitetsstatusen.
+* Inköp är händelser som inträffar vid en viss tidpunkt och segmenteringslogiken gäller köphändelser inom ett angivet tidsfönster. Dessa data bör därför modelleras som ett händelseschema.
 
 #### Användningsexempel vid aktivering
 
-Förutom att ta hänsyn till användningsfall för segmentering bör du också granska användningsexemplen för aktivering för dessa segment för att identifiera ytterligare relevanta attribut.
+Förutom att ta hänsyn till användningsfall för segmentering bör ni också granska användningsexemplen för aktivering för dessa målgrupper för att identifiera ytterligare relevanta attribut.
 
-Ett företag har till exempel byggt upp ett målgruppssegment baserat på regeln att `country = US`. När segmentet sedan aktiveras för vissa efterföljande mål vill företaget filtrera alla exporterade profiler baserat på hemstatus. Därför är `state` attribut ska också hämtas i den tillämpliga profilentiteten.
+Ett företag har till exempel byggt upp en målgrupp baserat på regeln att `country = US`. När målgruppen sedan aktiveras för vissa nedladdningsmål vill företaget filtrera alla exporterade profiler baserat på hemstatus. Därför är `state` attribut ska också hämtas i den tillämpliga profilentiteten.
 
 #### Sammanställda värden
 
 Baserat på användningsfallet och detaljrikedomen i era data bör ni bestämma om vissa värden behöver föraggregeras innan de inkluderas i en profil eller en händelseenhet.
 
-Ett företag vill till exempel skapa ett segment baserat på antalet kundvagnsköp. Du kan välja att inkludera dessa data med lägsta granularitet genom att ta med varje tidsstämplad inköpshändelse som sin egen enhet. Detta kan ibland öka antalet registrerade händelser exponentiellt. Om du vill minska antalet inkapslade händelser kan du välja att skapa ett sammanställningsvärde `numberOfPurchases` över en vecklong eller månatlig period. Andra sammanställningsfunktioner som MIN och MAX kan också användas i dessa situationer.
+Ett företag vill till exempel skapa en målgrupp baserat på antalet kundvagnsköp. Du kan välja att inkludera dessa data med lägsta granularitet genom att ta med varje tidsstämplad inköpshändelse som sin egen enhet. Detta kan ibland öka antalet registrerade händelser exponentiellt. Om du vill minska antalet inkapslade händelser kan du välja att skapa ett sammanställningsvärde `numberOfPurchases` över en vecklong eller månatlig period. Andra sammanställningsfunktioner som MIN och MAX kan också användas i dessa situationer.
 
 >[!CAUTION]
 >
@@ -173,7 +173,7 @@ Det andra sättet är att använda händelsescheman för att representera prenum
 
 **Kon**
 
-* Segmenteringen blir mer komplicerad för det ursprungliga användningsfallet (som identifierar statusen för kundens senaste prenumerationer). Segmentet behöver nu ytterligare logik för att flagga den senaste prenumerationshändelsen för en kund för att kunna kontrollera dess status.
+* Segmenteringen blir mer komplicerad för det ursprungliga användningsfallet (som identifierar statusen för kundens senaste prenumerationer). Publiken behöver nu ytterligare logik för att flagga den senaste prenumerationshändelsen för en kund för att kunna kontrollera dess status.
 * Det finns en större risk för att händelser automatiskt förfaller och rensas från profilarkivet. Se guiden [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) för mer information.
 
 ## Skapa scheman baserat på dina kategoriserade entiteter

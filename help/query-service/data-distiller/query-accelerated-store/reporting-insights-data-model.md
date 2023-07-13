@@ -2,7 +2,7 @@
 title: Query Accelerated Store Reporting Insights Guide
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '1033'
 ht-degree: 0%
@@ -15,7 +15,7 @@ Med det frågeaccelererade arkivet kan du minska den tid och processorkraft som 
 
 Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../../dashboards/cdp-insights-data-model.md).
 
-Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profiler, segment och destinationer och möjliggör Real-Time CDP insiktspaneler. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka Real-Time CDP datamodeller efter behov.
+Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profiler, målgrupper och destinationer och möjliggör Real-Time CDP insiktspaneler. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka Real-Time CDP datamodeller efter behov.
 
 ## Förutsättningar
 
@@ -37,7 +37,7 @@ Till att börja med har ni en första datamodell från era källor (eventuellt f
 
 ![Ett enhetsrelationsdiagram (ERD) över användarmodellen för målgruppsinsikter.](../../images/query-accelerated-store/audience-insight-user-model.png)
 
-I det här exemplet `externalaudiencereach` tabellen/datamängden baseras på ett ID och spårar de nedre och övre gränserna för antalet matchningar. The `externalaudiencemapping` dimensionstabell/datamängd mappar det externa ID:t till ett mål och ett segment på plattformen.
+I det här exemplet `externalaudiencereach` tabellen/datamängden baseras på ett ID och spårar de nedre och övre gränserna för antalet matchningar. The `externalaudiencemapping` dimensionstabell/datamängd mappar det externa ID:t till ett mål och en målgrupp på plattformen.
 
 ## Skapa en modell för att rapportera insikter med Data Distiller
 
@@ -74,7 +74,7 @@ WITH ( DISTRIBUTION = REPLICATE ) AS
  
 CREATE TABLE IF NOT exists audienceinsight.audiencemodel.externalaudiencemapping
 WITH ( DISTRIBUTION = REPLICATE ) AS
-SELECT cast(null as int) segment_id,
+SELECT cast(null as int) audience_id,
        cast(null as int) destination_id,
        cast(null as int) ext_custom_audience_id
  WHERE false;
@@ -133,7 +133,7 @@ ext_custom_audience_id | approximate_count_upper_bound
 
 ## Utöka din datamodell med datamodellen Real-Time CDP insights
 
-Du kan utöka målgruppsmodellen med ytterligare information för att skapa en mer omfattande dimensionstabell. Du kan till exempel mappa segmentnamnet och målnamnet till den externa publikens identifierare. Det gör du genom att använda frågetjänsten för att skapa eller uppdatera en ny datauppsättning och lägga till den i målgruppsmodellen som kombinerar segment och mål med en extern identitet. Bilden nedan visar konceptet för det här datamodelltillägget.
+Du kan utöka målgruppsmodellen med ytterligare information för att skapa en mer omfattande dimensionstabell. Du kan till exempel mappa målgruppsnamnet och målnamnet till den externa målgruppsidentifieraren. Det gör du genom att använda frågetjänsten för att skapa eller uppdatera en ny datauppsättning och lägga till den i målgruppsmodellen som kombinerar målgrupper och mål med en extern identitet. Bilden nedan visar konceptet för det här datamodelltillägget.
 
 ![Ett ERD-diagram som länkar Real-Time CDP insiktsdatamodell och Query-accelererad lagringsmodell.](../../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
 
@@ -145,13 +145,13 @@ Använd frågetjänsten för att lägga till nyckelbeskrivande attribut från de
 CREATE TABLE audienceinsight.audiencemodel.external_seg_dest_map AS
   SELECT ext_custom_audience_id,
          destination_name,
-         segment_name,
+         audience_name,
          destination_status,
          a.destination_id,
-         a.segment_id
+         a.audience_id
   FROM   externalaudiencemapping AS a
-         LEFT OUTER JOIN adwh_dim_segments AS b
-                      ON ( ( a.segment_id ) = ( b.segment_id ) )
+         LEFT OUTER JOIN adwh_dim_audiences AS b
+                      ON ( ( a.audience_id ) = ( b.audience_id ) )
          LEFT OUTER JOIN adwh_dim_destination AS c
                       ON ( ( a.destination_id ) = ( c.destination_id ) );
  
@@ -170,15 +170,15 @@ Använd `SHOW datagroups;` för att bekräfta att ytterligare `external_seg_dest
 
 ## Fråga om datamodell för utökad accelererad butiksrapportering
 
-Nu när `audienceinsight` datamodellen har utökats, den är klar att efterfrågas. Följande SQL visar en lista över mappade mål och segment.
+Nu när `audienceinsight` datamodellen har utökats, den är klar att efterfrågas. Följande SQL visar en lista över mappade mål och målgrupper.
 
 ```sql
 SELECT a.ext_custom_audience_id,
        b.destination_name,
-       b.segment_name,
+       b.audience_name,
        b.destination_status,
        b.destination_id,
-       b.segment_id
+       b.audience_id
 FROM   audiencemodel.externalaudiencereach1 AS a
        LEFT OUTER JOIN audiencemodel.external_seg_dest_map AS b
                     ON ( ( a.ext_custom_audience_id ) = (
@@ -189,7 +189,7 @@ LIMIT  25;
 Frågan returnerar alla datauppsättningar i det snabblagrade arkivet:
 
 ```console
-ext_custom_audience_id | destination_name |       segment_name        | destination_status | destination_id | segment_id 
+ext_custom_audience_id | destination_name |       audience_name        | destination_status | destination_id | audience_id 
 ------------------------+------------------+---------------------------+--------------------+----------------+-------------
  23850808595110554      | FCA_Test2        | United States             | enabled            |     -605911558 | -1357046572
  23850799115800554      | FCA_Test2        | Born in 1980s             | enabled            |     -605911558 | -1224554872
@@ -211,25 +211,25 @@ ext_custom_audience_id | destination_name |       segment_name        | destinat
 
 Nu när du har skapat en anpassad datamodell är du redo att visualisera dina data med anpassade frågor och användardefinierade dashboards.
 
-Följande SQL ger en fördelning av antalet matchningar per målgrupp i ett mål och en uppdelning av varje målgrupp efter segment.
+Följande SQL ger en beskrivning av antalet matchningar efter målgrupper i ett mål och en uppdelning av målgrupperna efter målgrupp.
 
 ```sql
 SELECT b.destination_name,
        a.approximate_count_upper_bound,
-       b.segment_name
+       b.audience_name
 FROM   audiencemodel.externalaudiencereach AS a
        LEFT OUTER JOIN audiencemodel.external_seg_dest_map AS b
                     ON ( ( a.ext_custom_audience_id ) = (
                          b.ext_custom_audience_id ) )
 GROUP  BY b.destination_name,
           a.approximate_count_upper_bound,
-          b.segment_name
+          b.audience_name
 ORDER BY b.destination_name
 LIMIT  5000
 ```
 
 Bilden nedan visar ett exempel på möjliga anpassade visualiseringar med datamodellen för rapportinsikter.
 
-![Ett matchningsantal per mål- och segmentwidget som har skapats från den nya datamodellen för rapportinsikter.](../../images/query-accelerated-store/user-defined-dashboard-widget.png)
+![En matchningsmängd per mål och målgruppswidget som har skapats med den nya datamodellen för rapportinsikter.](../../images/query-accelerated-store/user-defined-dashboard-widget.png)
 
 Din anpassade datamodell finns i listan över tillgängliga datamodeller på den användardefinierade kontrollpanelens arbetsyta. Se [användardefinierad kontrollpanelguide](../../../dashboards/user-defined-dashboards.md) för vägledning om hur du använder din anpassade datamodell.

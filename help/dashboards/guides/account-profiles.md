@@ -2,7 +2,7 @@
 title: Kontrollpanelshandbok för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 79966442f5333363216da17342092a71335a14f0
 workflow-type: tm+mt
 source-wordcount: '1011'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Från [!UICONTROL Account Profiles] kontrollpanel kan du antingen [bläddra blan
 
 ## Bläddra bland kontoprofiler {#browse-account-profiles}
 
-The [!UICONTROL Browse] Med -fliken kan du söka efter och visa de skrivskyddade kontoprofiler som har hämtats till din organisation med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt. Härifrån kan du se viktig information som hör till kontoprofilen, bland annat namn, bransch, intäkter och segment.
+The [!UICONTROL Browse] Med -fliken kan du söka efter och visa de skrivskyddade kontoprofiler som har hämtats till din organisation med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt. Härifrån kan du se viktig information som hör till kontoprofilen, bland annat namn, bransch, intäkter och målgrupp.
 
 Välj [!UICONTROL Profile ID] från resultaten som visas på [!UICONTROL Browse] för att öppna [!UICONTROL Details] för kontoprofilen.
 

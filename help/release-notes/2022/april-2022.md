@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
 workflow-type: tm+mt
 source-wordcount: '2781'
 ht-degree: 4%
@@ -28,7 +28,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 Plattformen har flera instrumentpaneler där du kan visa viktig information om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
-Kontrollpanelerna tillhandahåller förkonfigurerade rapportalternativ för organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
+Instrumentpaneler tillhandahåller förkonfigurerade rapportalternativ för organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
 
 Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive instrumentpaneler. Mer information om [hur du lägger till widgetar via widgetbiblioteket](../../dashboards/customize/widget-library.md).
 
@@ -57,7 +57,7 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 
 {style="table-layout:auto"}
 
-Mer information om [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)och [[!DNL Segments]](../../dashboards/guides/segments.md) instrumentpaneler.
+Mer information om [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)och [[!DNL Segments]](../../dashboards/guides/audiences.md) instrumentpaneler.
 
 ## Dataflöden {#dataflows}
 

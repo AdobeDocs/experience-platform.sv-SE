@@ -4,9 +4,9 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: d9e10271db52f61cdc3e4adc546fe05adadb5a46
+source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
-source-wordcount: '2852'
+source-wordcount: '2846'
 ht-degree: 0%
 
 ---
@@ -49,31 +49,31 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 
 ![Översikt över kontrollpanelen Destinationer med widgeten Lägg till markerad.](../images/destinations/destinations-overview-add-widget.png)
 
-I widgetbiblioteket kan du bläddra genom urvalet av standardwidgetar och anpassade segmentwidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade målgruppswidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
 
 ## Standardwidgetar {#standard-widgets}
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera om segmenten som är tillgängliga för din dataanalys är fullständiga. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera hur fullständiga målgrupperna är för din dataanalys. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 ### Förutsättningar {#prerequisites}
 
 Innan du fortsätter med beskrivningarna av standardwidgetar bör du kontrollera att du känner till definitionerna av följande nyckeltermer som används i hela dokumentationen:
 
-* **Segment:** Ett segment är **regeluppsättningen** som innehåller attribut och händelsedata som kvalificerar ett antal profiler som målgrupp.
-* **Målgrupp**: En publik är **profiluppsättningen** som uppfyller villkoren för en segmentdefinition.
+* **Segmentdefinition:** En segmentdefinition är en **uppsättning regler** används för att beskriva en målgrupps viktigaste egenskaper eller beteenden. Dessa regler innehåller attribut och händelsedata som kvalificerar profilerna som en del av en målgrupp.
+* **Målgrupp**: En uppsättning personer, konton, hushåll eller andra enheter som delar gemensamma egenskaper och beteenden.
 * **Mappade/mappade**: Datamappning är processen att mappa källdatafält till relaterade målfält i ett mål.
 * **Identitet**: En identitet är en identifierare som unikt representerar en enskild kund, till exempel ett cookie-ID, ett enhets-ID eller ett e-post-ID.
-* **Aktivera**: Aktivera är den åtgärd som en användare vidtar för att mappa ett segment eller profiler till ett mål som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
+* **Aktivera**: Aktivera är den åtgärd som en användare vidtar för att mappa en målgrupp eller profiler till ett mål som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [[!UICONTROL Most used destinations]](#most-used-destinations)
 * [[!UICONTROL Recently created destinations]](#recently-created-destinations)
-* [[!UICONTROL Recently activated segments]](#recently-activated-segments)
-* [[!UICONTROL Recently activated segments by destination]](#recently-activated-segments-by-destination)
+* [[!UICONTROL Recently activated audiences]](#recently-activated-audiences)
+* [[!UICONTROL Recently activated audiences by destination]](#recently-activated-audiences-by-destination)
 * [[!UICONTROL Audience size trend]](#audience-size-trend)
-* [[!UICONTROL Unmapped segments by identity]](#unmapped-segments-by-identity)
-* [[!UICONTROL Mapped segments by identity]](#mapped-segments-by-identity)
+* [[!UICONTROL Unmapped audiences by identity]](#unmapped-audiences-by-identity)
+* [[!UICONTROL Mapped audiences by identity]](#mapped-audiences-by-identity)
 * [[!UICONTROL Common audiences]](#common-audiences)
 * [[!UICONTROL Mapped audiences]](#mapped-audiences)
 * [[!UICONTROL Mapped audience health]](#mapped-audience-health)
@@ -88,15 +88,15 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mostuseddestinations"
 >title="Mest använda destinationer"
->abstract="Den här widgeten visar organisationens mest aktiva mål utifrån antalet mappade segment. Siffrorna är korrekta vid tidpunkten för den senaste ögonblicksbilden. Den här rankningen ger insikt i vilka destinationer som för närvarande används samtidigt som de som kan vara underutnyttjade markeras."
+>abstract="Den här widgeten visar organisationens mest aktiva mål utifrån antalet mappade målgrupper. Siffrorna är korrekta vid tidpunkten för den senaste ögonblicksbilden. Den här rankningen ger insikt i vilka destinationer som för närvarande används samtidigt som de som kan vara underutnyttjade markeras."
 
-The **[!UICONTROL Most used destinations]** -widgeten visar organisationens främsta destinationer med antalet segment som mappas vid den senaste ögonblicksbilden. Denna rankning ger insikt i vilka destinationer som används samtidigt som de som kan vara underutnyttjade också kan visas.
+The **[!UICONTROL Most used destinations]** -widgeten visar organisationens främsta destinationer utifrån antalet mappade målgrupper, från och med den senaste ögonblicksbilden. Denna rankning ger insikt i vilka destinationer som används samtidigt som de som kan vara underutnyttjade också kan visas.
 
-Om du till exempel konfigurerade ett mål i går men inte har mappat några segment till det, kan du se att målet för närvarande är underutnyttjat.
+Om du till exempel konfigurerade ett mål i går men inte har mappat några målgrupper till det, kan du se att målet för närvarande är underutnyttjat.
 
-Antalet mappade segment som visas i kolumnen Antal segment är exakt som i den senaste ögonblicksbilden. Om du mappar ett nytt segment till målet uppdateras inte antalet förrän nästa ögonblicksbild tas.
+Antalet mappade målgrupper som visas i [!UICONTROL Audience count] -kolumnen är exakt som den senaste ögonblicksbilden. När en ny målgrupp mappas till målet uppdateras inte antalet förrän nästa ögonblicksbild tas.
 
-Om du väljer namnet på ett mål i den lista som visas på widgeten kommer du till målinformationen som länkad från **[!UICONTROL Browse]** -fliken. Du kan också välja **[!UICONTROL View All]** för att navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
+Välj namnet på ett mål i listan som visas på widgeten för att navigera till målinformationen för det aktuella målet. Du kan också välja **[!UICONTROL View All]** för att navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
 
 ![Fliken Översikt på kontrollpanelen Destinationer med widgeten Mest använda mål markerad.](../images/destinations/most-used-destinations.png)
 
@@ -117,37 +117,37 @@ Mer information om hur du konfigurerar särskilda typer av destinationer finns p
 
 ![Fliken Översikt på kontrollpanelen Destinationer med widgeten Senast skapade mål markerad.](../images/destinations/recently-created-destinations.png)
 
-### [!UICONTROL Recently activated segments] {#recently-activated-segments}
+### [!UICONTROL Recently activated audiences] {#recently-activated-audiences}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlyactivatedsegments"
->title="Nyligen aktiverade segment"
->abstract="Den här widgeten innehåller en lista över de segment som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de segment och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar."
+>title="Nyligen aktiverade målgrupper"
+>abstract="Den här widgeten innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar."
 
-The **[!UICONTROL Recently activated segments]** widgeten innehåller en lista med de segment som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de segment och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar.
+The **[!UICONTROL Recently activated audiences]** widgeten innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar.
 
-Det uppdaterade datum som visas visar den senaste gången segmentet aktiverades till målet och är exakt som den senaste ögonblicksbilden. Det innebär att om du aktiverar ett segment till målet kommer det uppdaterade datumet inte att ändras förrän nästa fixering har tagits.
+The [!UICONTROL Updated] det datum som visas visar den senaste gången målgruppen aktiverades till målet och är exakt den senaste ögonblicksbilden. Det innebär att om du aktiverar en målgrupp till målet kommer det uppdaterade datumet inte att ändras förrän nästa ögonblicksbild har tagits.
 
-Om du väljer namnet på ett segment i listan som visas på widgeten kommer du till segmentinformationen. Du kan också välja **[!UICONTROL View All]** för att navigera till fliken för segmentbläddring och sedan markera namnet på ett segment för att visa information om det.
+Om du väljer namnet på en målgrupp i listan som visas på widgeten kommer du till målgruppsinformationen. Du kan också välja **[!UICONTROL View All]** för att navigera till [!UICONTROL Audiences] [!UICONTROL Browse] och sedan markera namnet på en målgrupp för att visa informationen.
 
-Mer information om hur du arbetar med segment i Experience Platform finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
+Mer information om hur du arbetar med målgrupper i Experience Platform finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
 
-![Fliken Översikt på kontrollpanelen Destinationer med widgeten Nyligen aktiverade segment markerad.](../images/destinations/recently-activated-segments.png)
+![Fliken Översikt på kontrollpanelen Destinationer med widgeten Senast aktiverade målgrupper markerad.](../images/destinations/recently-activated-audiences.png)
 
-### [!UICONTROL Recently activated segments by destination] {#recently-activated-segments-by-destination}
+### [!UICONTROL Recently activated audiences by destination] {#recently-activated-audiences-by-destination}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_recentlyactivatedsegmentsbydestination"
->title="Nyligen aktiverade segment efter mål"
->abstract="Den här widgeten visar de fem senast aktiverade segmenten i fallande ordning enligt det mål som valts i listrutan Översikt."
+>title="Nyligen aktiverade målgrupper efter mål"
+>abstract="Den här widgeten visar de fem senast aktiverade målgrupperna i fallande ordning enligt det mål som valts i listrutan Översikt."
 
-The **[!UICONTROL Recently activated segments by destination]** visar de fem senast aktiverade segmenten i fallande ordning enligt det mål som valts i listrutan Översikt. Det liknar [!UICONTROL Recently activated segments] widget, men data visas **endast** används för det valda målet.
+The **[!UICONTROL Recently activated audiences by destination]** widgeten visar de fem senast aktiverade målgrupperna i fallande ordning enligt det mål som valts i listrutan Översikt. Det liknar [!UICONTROL Recently activated audiences] widget, men data visas **endast** används för det valda målet.
 
-Den här widgeten innehåller två mätvärden: segmentnamnet och datumet då segmentet senast aktiverades för målet. De data som visas är korrekta vid den senaste ögonblicksbilden.
+Den här widgeten innehåller två mätvärden: målgruppsnamnet och det datum då målgrupperna senast aktiverades till målet. De data som visas är korrekta vid den senaste ögonblicksbilden.
 
-Du kan visa information om ett segment genom att välja namnet på ett segment i listan som visas.
+Du kan visa information om en viss målgrupp genom att välja målgruppens namn i den lista som visas.
 
-![De senast aktiverade segmenten efter målwidget.](../images/destinations/recently-activated-segments-by-destination.png)
+![De senast aktiverade målgrupperna efter målwidget.](../images/destinations/recently-activated-audiences-by-destination.png)
 
 Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 
@@ -156,60 +156,60 @@ Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i d
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_audiencesizetrend"
 >title="Trend för målgruppsstorlek"
->abstract="Den här widgeten visar antalet profiler i segmentet som skickas till målkontot dagligen. Den första listrutan justerar tidsperioden för målgruppstrenden. Den andra widgetens listruta väljer segmentet för analys. Målet väljs i listrutan Översikt."
+>abstract="Den här widgeten visar antalet profiler i målgruppen som skickas till målkontot dagligen. Den första listrutan justerar tidsperioden för målgruppstrenden. Den andra widgetens listruta väljer målgrupp för analys. Målet väljs i listrutan Översikt."
 
-The **[!UICONTROL Audience size trend]** widgeten visar förhållandet mellan antalet profiler under en tidsperiod för ett segment som har mappats till det målkontot. Widgeten använder ett linjediagram för att illustrera antalet profiler i segmentet som skickas till målkontot dagligen.
+The **[!UICONTROL Audience size trend]** widgeten visar relationen mellan antalet profiler under en tidsperiod för en målgrupp som har mappats till det målkontot. Widgeten använder ett linjediagram för att illustrera antalet profiler i målgruppen som skickas till målkontot dagligen.
 
 En tidsperiod för målgruppstrenden under de senaste 30 dagarna, 90 dagar eller 12 månaderna kan justeras med den första listrutan.
 
-I den andra listrutan visas alla tillgängliga segment som kan skickas till det målkonto som valts högst upp på kontrollpanelen.
+I den andra listrutan visas alla tillgängliga målgrupper som kan skickas till det målkonto som valts högst upp på kontrollpanelen.
 
 ![Widgeten för målgruppsstorlekstrend.](../images/destinations/audience-size-trend.png)
 
-The **[!UICONTROL Audience size trend]** widgeten innehåller en [!UICONTROL Captions] i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter. En maskininlärningsmodell genererar automatiskt bildtexter som beskriver de viktigaste trenderna och viktiga händelser genom att analysera diagram- och segmentdata.
+The **[!UICONTROL Audience size trend]** widgeten innehåller en [!UICONTROL Captions] i widgetens övre högra hörn. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter. En maskininlärningsmodell genererar automatiskt bildtexter som beskriver viktiga trender och viktiga händelser genom att analysera diagram- och målgruppsdata.
 
 ![Dialogrutan med automatiska bildtexter för widgeten Storlekstrend för publik.](../images/destinations/audience-size-trend-captions.png)
 
-### [!UICONTROL Unmapped segments by identity] {#unmapped-segments-by-identity}
+### [!UICONTROL Unmapped audiences by identity] {#unmapped-audiences-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_unmappedsegmentsbyidentity"
->title="Omappade segment efter identitet"
->abstract="Den här widgeten visar de fem populäraste **omappad** segment rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. De filter-ID:n som visas i widgetens listruta ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan."
+>title="Omappade målgrupper efter identitet"
+>abstract="Den här widgeten visar de fem populäraste **omappad** målgrupper rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. De filter-ID:n som visas i widgetens listruta ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan."
 
-The **[!UICONTROL Unmapped segments by identity]** widgeten listar de fem populäraste **omappad** segment rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. Det markerar segment som är mest fördelaktiga att mappa till det valda målkontot baserat på det valda ID:t.
+The **[!UICONTROL Unmapped audiences by identity]** widgeten listar de fem populäraste **omappad** målgrupper rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. Det markerar målgrupper som är mest fördelaktiga att mappa till det valda målkontot baserat på det valda ID:t.
 
-De tillgängliga segmenten filtreras i listrutan Mål-ID. Filtrerings-ID:n som visas i listrutan ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan.
+Mål-ID-listrutan filtrerar de tillgängliga målgrupperna. Filtrerings-ID:n som visas i listrutan ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan.
 
-Kolumnen Identiteter räknar antalet käll-ID:n i segmentet som kan mappas till det ID som valts i listrutan för widget-ID.
+Kolumnen Identiteter räknar antalet käll-ID:n inom målgruppen som kan mappas till det ID som valts i listrutan för widget-ID.
 
-![De omappade segmenten efter identitetswidget.](../images/destinations/unmapped-segments-by-identity.png)
+![The Unmapped audiences by identity widget.](../images/destinations/unmapped-audiences-by-identity.png)
 
 Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 
-### [!UICONTROL Mapped segments by identity] {#mapped-segments-by-identity}
+### [!UICONTROL Mapped audiences by identity] {#mapped-audiences-by-identity}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedsegmentsbyidentity"
->title="Mappade segment efter identitet"
->abstract="Den här widgeten innehåller de fem främsta listorna med **mappad** segment. Listan ordnas från hög till låg enligt antalet käll-ID som finns i segmenten. Det mål-ID som ska räknas väljs i listrutan under widgetens rubrik. Mål-ID:n som är tillgängliga i widgetens listruta beror på vilket mål som valts högst upp på översiktspanelen."
+>title="Mappade målgrupper efter identitet"
+>abstract="Den här widgeten innehåller de fem främsta listorna med **mappad** målgrupper. Listan ordnas från hög till låg enligt antalet käll-ID:n som finns inom målgrupperna. Det mål-ID som ska räknas väljs i listrutan under widgetens rubrik. Mål-ID:n som är tillgängliga i widgetens listruta beror på vilket mål som valts högst upp på översiktspanelen."
 
-Den här widgeten innehåller de fem främsta listorna med **mappad** segment. Listan ordnas från hög till låg enligt antalet käll-ID som finns i segmenten. Det mål-ID som ska räknas väljs i listrutan under widgetens rubrik. Mål-ID:n som är tillgängliga i listrutan i widgeten ändras enligt det målkontofilter som valts högst upp på översiktspanelen.
+Den här widgeten innehåller de fem främsta listorna med **mappad** målgrupper. Listan ordnas från hög till låg enligt antalet käll-ID:n som finns inom målgrupperna. Det mål-ID som ska räknas väljs i listrutan under widgetens rubrik. Mål-ID:n som är tillgängliga i listrutan i widgeten ändras enligt det målkontofilter som valts högst upp på översiktspanelen.
 
-![Mappade segment efter identitetswidget.](../images/destinations/mapped-segments-by-identity.png)
+![Mappade målgrupper efter identitetswidget.](../images/destinations/mapped-audiences-by-identity.png)
 
-The **[!UICONTROL Mapped segments by identity]** widgetens högdagrar snabbt sannolikheten för att lyckas rikta in profilmöjligheter för en kampanj inom det valda målet. En effektiv riktad kampanj beror inte på antalet profiler som skickas till målet, utan snarare på antalet käll-ID:n som troligen matchas med mål-ID:n för att ge användbara och användbara data.
+The **[!UICONTROL Mapped audiences by identity]** widgetens högdagrar snabbt sannolikheten för att lyckas rikta in profilmöjligheter för en kampanj inom det valda målet. En effektiv riktad kampanj beror inte på antalet profiler som skickas till målet, utan snarare på antalet käll-ID:n som troligen matchas med mål-ID:n för att ge användbara och användbara data.
 
 ### Gemensamma målgrupper {#common-audiences}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_commonaudiences"
 >title="Gemensamma målgrupper"
->abstract="Den här widgeten innehåller en lista över de fem översta segment som är aktiverade över målkontot som är valt längst upp på sidan och det mål som är markerat i widgetens listruta. Listan över segment ordnas efter hur nyligen de har aktiverats. Det senast aktiverade segmentet visas högst upp."
+>abstract="Den här widgeten innehåller en lista över de fem populäraste målgrupperna som är aktiverade över det målkonto som valts längst upp på sidan och det mål som är markerat i widgetens listruta. Listan över målgrupper ordnas efter hur nyligen de har aktiverats. Den senast aktiverade publiken visas överst."
 
-The **[!UICONTROL Common audiences]** widgeten innehåller en lista över de fem vanligaste segment som är aktiverade över målkontot, som är valt längst upp på sidan, och det mål som är markerat i widgetens listruta. Listan över segment ordnas efter hur nyligen de har aktiverats. Det senast aktiverade segmentet visas högst upp.
+The **[!UICONTROL Common audiences]** widgeten innehåller en lista med de fem populäraste målgrupperna som är aktiverade över målkontot som är valt längst upp på sidan och det mål som är markerat i widgetens listruta. Listan över målgrupper ordnas efter hur nyligen de har aktiverats. Den senast aktiverade publiken visas överst.
 
-The [!UICONTROL AUDIENCE SIZE] kolumn innehåller det totala antalet profiler för varje listat segment.
+The [!UICONTROL AUDIENCE SIZE] kolumn innehåller det totala antalet profiler för varje angiven målgrupp.
 
 ![The Common audiences widget.](../images/destinations/common-audiences.png)
 
@@ -217,7 +217,7 @@ The [!UICONTROL AUDIENCE SIZE] kolumn innehåller det totala antalet profiler f�
 
 The [!UICONTROL Mapped audiences] visar det totala antalet mappade målgrupper som kan aktiveras för det valda målet överst på sidan.
 
-Välj **[!UICONTROL Segments]** för att navigera till instrumentpanelen för segment [!UICONTROL Browse] -fliken. På den här arbetsytan visas en lista med alla segmentdefinitioner för din organisation.
+Välj **[!UICONTROL Audiences]** för att navigera till kontrollpanelen Publiker [!UICONTROL Browse] -fliken. På den här arbetsytan visas en lista med alla segmentdefinitioner för din organisation.
 
 ![Widgeten för kartlagda målgrupper.](../images/destinations/mapped-audiences.png)
 
@@ -226,21 +226,21 @@ Välj **[!UICONTROL Segments]** för att navigera till instrumentpanelen för se
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_destinations_mappedaudiencehealth"
 >title="Hälsa för mappade målgrupper"
->abstract="Den här widgeten innehåller en lista med upp till 20 mappade segment vars totala antal profiler avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet. Den ger ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Publiken sorteras från hög till låg."
+>abstract="Den här widgeten innehåller en lista med upp till 20 mappade målgrupper vars totala antal profiler avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet. Den ger ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Publiken sorteras från hög till låg."
 
-Widgeten innehåller en lista med upp till 20 mappade segment vars totala antal profiler, per den senaste ögonblicksbilden, avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet.
+Widgeten innehåller en lista med upp till 20 mappade målgrupper vars totala antal profiler, per den senaste ögonblicksbilden, avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet.
 
 Sammanfattningsvis ger det ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Jämför om dagens målgruppsstorlek ligger utanför den historiska standardavvikelse som har setts i data under de senaste 30 dagarna.
 
 Alla målgruppsstorlekar i systemet sorteras från hög till låg målgruppsstorlek, vilket visas i [!UICONTROL LATEST SIZE] kolumn.
 
-Om antalet segmentmappade profiler ligger utanför en standardavvikelse från den genomsnittliga mappade profilstorleken under de senaste 30 dagarna, indikerar detta en avvikelse i systemet och bör undersökas.
+Om antalet mappade målgruppsprofiler ligger utanför en standardavvikelse från den genomsnittliga mappade profilstorleken under de senaste 30 dagarna, indikerar detta en avvikelse i systemet och bör undersökas.
 
-Om ett segment inom [!UICONTROL Mapped audience health] widgeten avviker med en bred marginal bör du referera till trenddiagrammet för målgruppsstorlek och leta reda på det avvikande segmentet. Trenden kan ge ytterligare insikter i segmentets hälsa.
+Om en målgrupp inom [!UICONTROL Mapped audience health] widgeten avviker med en bred marginal bör du hänvisa till trenddiagrammet för målgruppens storlek och hitta den avvikande målgruppen. Trenden kan ge ytterligare insikter om er målgrupps hälsa.
 
 >[!NOTE]
 >
->Standardstorleken för den mappade publikens hälsowidget kan förhindra tabellinformationen. Ändra storleken på widgeten för att förbättra läsbarheten för mappade segmentnamn och kolumnrubriker. Mer information om hur du använder paneler finns i dokumentationen om hur du ändrar kontrollpaneler. [hur du ändrar storlek på en widget](../customize/modify.md).
+>Standardstorleken för den mappade publikens hälsowidget kan förhindra tabellinformationen. Ändra storleken på widgeten för att förbättra läsbarheten för mappade målgruppsnamn och kolumnrubriker. Mer information om hur du använder paneler finns i dokumentationen om hur du ändrar kontrollpaneler. [hur du ändrar storlek på en widget](../customize/modify.md).
 
 ![Mappad målgruppswidget.](../images/destinations/mapped-audience-health.png)
 
@@ -273,13 +273,7 @@ Widgeten innehåller en tabell med två kolumner som visar en lista över aktiva
 
 ### [!UICONTROL Activated audiences across all destinations] {#activated-audiences-across-all-destinations}
 
-The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat.
-
->[!NOTE]
->
->Den här widgeten visar antalet målgrupper och inte antalet segment.
-
-Den här siffran motsvarar den senaste ögonblicksbilden.
+The [!UICONTROL Activated audiences across all destinations] widgeten visar det totala antalet målgrupper som har aktiverats för alla destinationer i ett enda mätresultat. Den här siffran motsvarar den senaste ögonblicksbilden.
 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
@@ -293,7 +287,7 @@ Den här widgeten ger ett enda mått för det totala antalet målgrupper som akt
 
 ![Widgeten Aktiverade målgrupper.](../images/destinations/activated-audiences.png)
 
-Välj **[!UICONTROL Audiences]** för att navigera till informationssidan på kontrollpanelen för mål. The [!UICONTROL Activation data] På -fliken visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt), samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om ett visst segment väljer du dess namn i listan.
+Välj **[!UICONTROL Audiences]** för att navigera till informationssidan på kontrollpanelen för mål. The [!UICONTROL Activation data] På -fliken visas en lista med målgrupper som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt) samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om en viss målgrupp väljer du dess namn på menyn [!UICONTROL Audience Name] kolumn.
 
 ![Sidan med information om kontrollpanelen för mål med fliken Aktiveringsdata markerad.](../images/destinations/activation-data-tab.png)
 

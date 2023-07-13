@@ -2,7 +2,7 @@
 title: Datatyp för kontoinformation
 description: Det här dokumentet innehåller en översikt över datatypen XDM (Account Details Experience Data Model).
 exl-id: 17254393-263e-4000-9bd2-815a9e842533
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: 55f86fdd4fd36d21dcbd575d6da83df18abb631d
 workflow-type: tm+mt
 source-wordcount: '427'
 ht-degree: 4%
@@ -29,7 +29,7 @@ ht-degree: 4%
 | `jigsaw` | Sträng | Data.com-nyckeln för organisationen. |
 | `linkedinPageUrl` | Sträng | En webbplatslänk till organisationens LinkedIn-konto. |
 | `logoUrl` | Sträng | En sökväg som ska kombineras med URL:en för en Salesforce-instans (till exempel `https://yourInstance.salesforce.com/`) för att generera en URL för att begära den profilbild för sociala nätverk som är kopplad till organisationen. Den skapade URL:en returnerar en HTTP-omdirigering (kod 302) till profilbilden för det sociala nätverket för organisationen. |
-| `marketSegment` | Sträng | Det namngivna marknadssegment som organisationen deltar i. Det här är ett frihandsfält och du bör använda ett strukturerat värde för frågor eller för att använda `xdm:identifier` -egenskap. |
+| `marketSegment` | Sträng | Den namngivna målgrupp som organisationen deltar i. Det här är ett frihandsfält och du bör använda ett strukturerat värde för frågor eller för att använda `xdm:identifier` -egenskap. |
 | `numberOfEmployees` | Heltal | Antalet anställda i organisationen. |
 | `organizationType` | Sträng | En etikett som beskriver typen av organisation. |
 | `primaryEmailDomain` | Sträng | Den primära e-postdomänen som organisationen använder för sin personal. |

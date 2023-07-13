@@ -2,7 +2,7 @@
 title: Översikt över datahygien
 description: Med Adobe Experience Platform Data Hygiene kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 2913e9e687843e566db4ebf2031e610d1891d4c9
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '627'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-ex
 | Begäran har skickats | 0 timmar | En datahanterare eller integritetsanalytiker skickar en begäran om att en datauppsättning ska upphöra att gälla vid en viss tidpunkt. Förfrågan visas i [!UICONTROL Data Hygiene UI] efter att den har skickats och har en väntande status fram till den schemalagda förfallotiden, efter vilken begäran kommer att köras. |
 | Datauppsättningen tas bort | 1 timme | Datauppsättningen tas bort från [lagersida för datauppsättning](../catalog/datasets/user-guide.md) i användargränssnittet. Data i datasjön tas bara bort på ett mjukt sätt, och kommer att finnas kvar tills processen är slut, varefter de kommer att tas bort. |
 | Profilantalet har uppdaterats | 30 timmar | Beroende på innehållet i den datauppsättning som tas bort kan vissa profiler tas bort från systemet om alla deras komponentattribut är kopplade till den datauppsättningen. 30 timmar efter att datauppsättningen har tagits bort återspeglas eventuella förändringar i det totala antalet profiler i [widgetar för instrumentpanel](../dashboards/guides/profiles.md#profile-count-trend) och andra rapporter. |
-| Uppdaterade segment | 48 timmar | När alla profiler som påverkas har uppdaterats, är alla relaterade [segment](../segmentation/home.md) uppdateras för att återspegla deras nya storlek. Beroende på vilken datauppsättning som har tagits bort och vilka attribut du segmenterar på, kan storleken på varje segment öka eller minska till följd av borttagningen. |
+| Målgrupper uppdaterade | 48 timmar | När alla profiler som påverkas har uppdaterats, är alla relaterade [målgrupper](../segmentation/home.md) uppdateras för att återspegla deras nya storlek. Beroende på vilken datauppsättning som har tagits bort och vilka attribut du segmenterar på, kan storleken på varje målgrupp öka eller minska till följd av borttagningen. |
 | Uppdaterade resor och destinationer | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)och [mål](../destinations/home.md) uppdateras enligt förändringar i relaterade segment. |
 | Hård borttagning slutförd | 14 dagar | Alla data som rör datauppsättningen tas bort från datasjön. The [hygienarbetsplatsens status](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
 

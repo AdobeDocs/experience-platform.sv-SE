@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 5950713c33bfb2893f24f35136acf2707ad35f1f
+source-git-commit: 04c0b19bf4ffbc0719a89f710570cc667ca5e482
 workflow-type: tm+mt
 source-wordcount: '3430'
 ht-degree: 0%
@@ -41,7 +41,7 @@ I användargränssnittet för Experience Platform väljer du **[!UICONTROL Audie
 
 The **[!UICONTROL Audiences]** Instrumentpanelen sammanfattar nyckeltal relaterade till organisationens målgruppsdata.
 
-Mer information finns på [guide för målgrupper](../../dashboards/guides/segments.md).
+Mer information finns på [guide för målgrupper](../../dashboards/guides/audiences.md).
 
 ![Målgruppspanelen visas. Den visar olika widgetar, inklusive målgruppsstorlek, profiler efter identitet, identitetsöverlappning och trenden för storleksändring för målgrupper.](../../dashboards/images/segments/dashboard-overview.png)
 

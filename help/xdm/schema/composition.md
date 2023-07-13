@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: a3f38a18693e0ef4bc93765c090eafd56dcd15d3
+source-git-commit: 4ff003b8f4e98fa7af7f12271aa990c8e5f49f14
 workflow-type: tm+mt
 source-wordcount: '4103'
 ht-degree: 0%
@@ -285,12 +285,12 @@ Mer information om hur du arbetar med [!DNL Profile], se [Översikt över kundpr
 
 Alla datafiler som är inkapslade i [!DNL Experience Platform] måste överensstämma med strukturen i ett XDM-schema. Mer information om hur du formaterar datafiler enligt XDM-hierarkier (inklusive exempelfiler) finns i dokumentet om [exempel på ETL-omformningar](../../etl/transformations.md). Allmän information om inmatning av datafiler i [!DNL Experience Platform], se [batchvis hantering - översikt](../../ingestion/batch-ingestion/overview.md).
 
-## Scheman för externa segment
+## Scheman för externa målgrupper
 
-Om du överför segment från externa system till plattformen måste du använda följande komponenter för att hämta dem i dina scheman:
+Om du samlar målgrupper från externa system i Platform måste du använda följande komponenter för att fånga dem i dina scheman:
 
 * [[!UICONTROL Segment definition] class](../classes/segment-definition.md): Använd den här standardklassen för att hämta nyckelattribut för en extern segmentdefinition.
-* [[!UICONTROL Segment Membership Details] fältgrupp](../field-groups/profile/segmentation.md): Lägg till den här fältgruppen i din [!UICONTROL XDM Individual Profile] för att koppla kundprofiler till specifika segment.
+* [[!UICONTROL Segment Membership Details] fältgrupp](../field-groups/profile/segmentation.md): Lägg till den här fältgruppen i din [!UICONTROL XDM Individual Profile] för att koppla kundprofiler till specifika målgrupper.
 
 ## Nästa steg
 

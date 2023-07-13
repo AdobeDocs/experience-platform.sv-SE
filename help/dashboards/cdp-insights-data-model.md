@@ -2,7 +2,7 @@
 title: Real-time Customer Data Platform Insights-datamodell
 description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights-datamodeller för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: cde7c99291ec34be811ecf3c85d12fad09bcc373
+source-git-commit: e55bbba92b0e3b9c86a9962ffa0131dfb7c15e77
 workflow-type: tm+mt
 source-wordcount: '1017'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights-datamodell
 
-Funktionen Real-time Customer Data Platform Insights-datamodell visar de datamodeller och SQL som används för insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa dessa SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator). Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs dokumentet med information om rapportinsikter i det accelererade arkivet om du vill veta mer [hur man bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
+Funktionen Real-time Customer Data Platform Insights-datamodell visar de datamodeller och SQL som används för insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa dessa SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator). Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs mer i dokumentationen om rapporter om snabbare arkiv om du vill veta mer [hur man bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
 
 ## Förutsättningar
 
@@ -19,7 +19,7 @@ Den här guiden kräver en fungerande förståelse av [användardefinierad panel
 
 ## Real-Time CDP insiktsrapporter och användningsexempel
 
-Real-Time CDP rapportering ger insikter i era profildata och dess relation till segment och destinationer. Olika stjärnschemamodeller utvecklades för att besvara en rad vanliga användningsfall för marknadsföring, och varje datamodell kan stödja flera användningsfall.
+Real-Time CDP rapportering ger insikter i era profildata och dess relation till målgrupper och destinationer. Olika stjärnschemamodeller utvecklades för att besvara en rad vanliga användningsfall för marknadsföring, och varje datamodell kan stödja flera användningsfall.
 
 >[!IMPORTANT]
 >
@@ -144,9 +144,9 @@ GROUP BY
 
 +++
 
-### Segmentmodell {#segment-model}
+### Målgruppsmodell {#audience-model}
 
-Segmentmodellen består av följande datamängder:
+Målgruppsmodellen består av följande datauppsättningar:
 
 - `adwh_dim_date`
 - `adwh_fact_profile_by_segment`
@@ -158,11 +158,11 @@ Segmentmodellen består av följande datamängder:
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
-![En ERD för segmentmodellen.](./images/cdp-insights/segment-model.png)
+![En ERD för målgruppsmodellen.](./images/cdp-insights/audience-model.png)
 
 #### Målgruppsstorlek - skiftläge
 
-Den logik som används för [!UICONTROL Audience size] returnerar det totala antalet sammanfogade profiler i det markerade segmentet vid tidpunkten för den senaste ögonblicksbilden. Se [[!UICONTROL Audience size] widgetdokumentation](./guides/segments.md#audience-size) för mer information.
+Den logik som används för [!UICONTROL Audience size] returnerar det totala antalet sammanfogade profiler inom den valda målgruppen vid tidpunkten för den senaste ögonblicksbilden. Se [[!UICONTROL Audience size] widgetdokumentation](./guides/audiences.md#audience-size) för mer information.
 
 Den SQL som genererar [!UICONTROL Audience size] visas i det infällbara avsnittet nedan.
 
@@ -191,7 +191,7 @@ LIMIT 20;
 
 #### Trend för ändring av målgruppsstorlek - skiftläge
 
-Den logik som används för [!UICONTROL Audience size change trend] visar en graf för en linje som visar skillnaden i det totala antalet profiler som är kvalificerade för ett visst segment mellan de senaste ögonblicksbilderna. Se [[!UICONTROL Audience size change trend] widgetdokumentation](./guides/segments.md#audience-size-change-trend) för mer information.
+Den logik som används för [!UICONTROL Audience size change trend] innehåller en graf som illustrerar skillnaden i det totala antalet profiler som är kvalificerade för en viss målgrupp mellan de senaste ögonblicksbilderna. Se [[!UICONTROL Audience size change trend] widgetdokumentation](./guides/audiences.md#audience-size-change-trend) för mer information.
 
 Den SQL som genererar [!UICONTROL Audience size change trend] visas i det infällbara avsnittet nedan.
 
@@ -212,7 +212,7 @@ GROUP BY cast(adwh_dim_segments.create_date AS date), adwh_dim_merge_policies.me
 
 #### De flesta destinationer använder versaler
 
-Den logik som används i [!UICONTROL Most used destinations] widgeten visar organisationens mest använda mål baserat på antalet segment som mappats till dem. Denna rankning ger insikt i vilka destinationer som används samtidigt som de som kan vara underutnyttjade också kan visas. Läs dokumentationen på [[!UICONTROL Most used destinations] widget](./guides/destinations.md#most-used-destinations) för mer information.
+Den logik som används i [!UICONTROL Most used destinations] widgeten visar organisationens mest använda destinationer utifrån det antal målgrupper som mappats till dem. Denna rankning ger insikt i vilka destinationer som används samtidigt som de som kan vara underutnyttjade också kan visas. Läs dokumentationen på [[!UICONTROL Most used destinations] widget](./guides/destinations.md#most-used-destinations) för mer information.
 
 Den SQL som genererar [!UICONTROL Most used destinations] visas i det infällbara avsnittet nedan.
 
@@ -237,11 +237,11 @@ FROM
 
 +++
 
-#### Nyligen aktiverade segment - användningsfall
+#### Nyligen aktiverade målgrupper - användningsfall
 
-Logiken i [!UICONTROL Recently activated segments] widgeten innehåller en lista med de segment som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de segment och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar. Se [[!UICONTROL Recently activated segments] widgetdokumentation](./guides/destinations.md#recently-activated-segments) för mer information.
+Logiken i [!UICONTROL Recently activated audiences] widgeten innehåller en lista över de målgrupper som senast har mappats till ett mål. Den här listan innehåller en ögonblicksbild av de målgrupper och mål som används aktivt i systemet och kan hjälpa till att felsöka felaktiga mappningar. Se [[!UICONTROL Recently activated audiences] widgetdokumentation](./guides/destinations.md#recently-activated-audiences) för mer information.
 
-Den SQL som genererar [!UICONTROL Recently activated segments] visas i det infällbara avsnittet nedan.
+Den SQL som genererar [!UICONTROL Recently activated audiences] visas i det infällbara avsnittet nedan.
 
 +++SQL-fråga
 
@@ -255,9 +255,9 @@ ORDER BY create_time desc, segment LIMIT 5;
 
 +++
 
-### Namespace-segment model
+### Namnområdes-målgruppsmodell
 
-Namnutrymmessegmentmodellen består av följande datamängder:
+Namnutrymmes-målgruppsmodellen består av följande datamängder:
 
 - `adwh_dim_date`
 - `adwh_dim_namespaces`
@@ -270,11 +270,11 @@ Namnutrymmessegmentmodellen består av följande datamängder:
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
-![En ERD för namnutrymmessegmentsmodellen.](./images/cdp-insights/namespace-segment-model.png)
+![En ERD för namnutrymmes-målgruppsmodellen.](./images/cdp-insights/namespace-audience-model.png)
 
-#### Profiler per identitet för ett segmentanvändningsfall
+#### Profiler per identitet för ett målgruppsärende
 
-Den logik som används i [!UICONTROL Profiles by identity] widgeten innehåller en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik för ett visst segment. Se [[!UICONTROL Profiles by identity] widgetdokumentation](./guides/segments.md#profiles-by-identity) för mer information.
+Den logik som används i [!UICONTROL Profiles by identity] widgeten innehåller en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik för en viss målgrupp. Se [[!UICONTROL Profiles by identity] widgetdokumentation](./guides/audiences.md#profiles-by-identity) för mer information.
 
 Den SQL som genererar [!UICONTROL Profiles by identity] visas i det infällbara avsnittet nedan.
 
@@ -359,9 +359,9 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 +++
 
-### Överlappa namnutrymme efter segmentmodell
+### Överlappa namnutrymme efter målgruppsmodell
 
-Namnutrymmet för överlappning efter segmentmodell består av följande datamängder:
+Namnutrymmet för överlappning efter målgruppsmodell består av följande datauppsättningar:
 
 - `adwh_dim_date`
 - `adwh_dim_overlap_namespaces`
@@ -374,11 +374,11 @@ Namnutrymmet för överlappning efter segmentmodell består av följande datamä
 
 Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
-![En ERD för det överlappande namnutrymmet efter segmentmodell.](./images/cdp-insights/overlap-namespace-by-segment-model.png)
+![En ERD för överlappningsnamnutrymmet efter målgruppsmodell.](./images/cdp-insights/overlap-namespace-by-audience-model.png)
 
-#### Användningsfall för identitetsöverlappning (segment)
+#### Användningsfall för identitetsöverlappning (målgrupper)
 
-Den logik som används i [!UICONTROL Segments] kontrollpanel [!UICONTROL Identity overlap] widgeten visar överlappningen av profiler som innehåller de två valda identiteterna för ett visst segment. Mer information finns i [[!UICONTROL Identity overlap] widgetavsnitt i [!UICONTROL Segmentation] dokumentation för kontrollpanelen](./guides/segments.md#identity-overlap).
+Den logik som används i [!UICONTROL Audiences] kontrollpanel [!UICONTROL Identity overlap] widgeten visar överlappningen av profiler som innehåller de två valda identiteterna för en viss målgrupp. Mer information finns i [[!UICONTROL Identity overlap] widgetavsnitt i [!UICONTROL Audiences] dokumentation för kontrollpanelen](./guides/audiences.md#identity-overlap).
 
 Den SQL som genererar [!UICONTROL Identity overlap] visas i det infällbara avsnittet nedan.
 

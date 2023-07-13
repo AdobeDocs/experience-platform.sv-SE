@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Vanliga frågor
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '4291'
 ht-degree: 1%
@@ -231,7 +231,7 @@ AS SELECT '1' as _id,
 
 ### Varför är det en skillnad mellan siffrorna som visas i profilgränssnittet och siffrorna som beräknas från datauppsättningen för profilexport?
 
-+++Svar Numren som visas på profilkontrollpanelen är korrekta vid den senaste ögonblicksbilden. De tal som genereras i exporttabellen är helt beroende av exportfrågan. Därför är en vanlig orsak till den här skillnaden att fråga hur många profiler som kvalificerar sig för ett visst segment.
++++Svar Numren som visas på profilkontrollpanelen är korrekta vid den senaste ögonblicksbilden. De tal som genereras i exporttabellen är helt beroende av exportfrågan. Därför är det en vanlig orsak att fråga hur många profiler som är kvalificerade för en viss målgrupp.
 
 >[!NOTE]
 >

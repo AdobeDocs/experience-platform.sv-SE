@@ -3,9 +3,9 @@ keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Exempel på användningsfall för Adobe Experience Platform Query Service
 description: Ett heltäckande exempel som demonstrerar mångsidigheten och fördelarna med Adobe Experience Platform Query Service.
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 79966442f5333363216da17342092a71335a14f0
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '707'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Det här dokumentet och den medföljande videopresentationen ger ett avancerat a
 * Olika sätt att bygga frågan baserat på din befintliga dataarkitektur.
 * Säkerställ den datakvalitet som uppfyller era behov och metoder för att minska eventuella brister.
 * Processen för att schemalägga en fråga att köras med en fast frekvens för användning längre fram i segmenteringen och destinationer för personalisering.
-* Det är enkelt för marknadsförarna att inkludera härledda attribut i sina segment tack vare kraften hos [!DNL Query Service].
+* Det är enkelt för marknadsförarna att inkludera härledda attribut i sina målgrupper tack vare kraften hos [!DNL Query Service].
 
 ## Mål {#objectives}
 
@@ -63,9 +63,9 @@ Videopresentationen nedan ger en helhetsbild av hur Experience Platform data kan
 
 ## Fördelar med [!DNL Query Service] {#benefits}
 
-Funktionerna i [!DNL Query Service] har många syften. Du kan använda den för att anpassa komplex logik för segmentering, för att beräkna olika anpassade attribut för användning längre fram i kedjan eller för att avsevärt förenkla hur du bygger upp dina segment.
+Funktionerna i [!DNL Query Service] har många syften. Ni kan använda den för att få plats med komplex logik för segmentering, för att beräkna olika anpassade attribut för användning längre fram i kedjan eller för att avsevärt förenkla hur ni bygger ut era målgrupper.
 
-[!DNL Query Service] gör att du kan inkludera begränsningar i dina frågor för att förenkla processen att bygga segment. Detta förbättrar datakvaliteten genom att säkerställa att rätt data kvalificerar sig för era segment och skapar exaktare målgrupper. Att hålla kvaliteten på frågan ger en korrekt målgrupp och bidrar till tillförlitlighet i datan. Du kan också spara målgruppen genom att skapa scheman och anpassade tabeller baserade på attribut som härletts från din fråga. En anpassad tabell kan aktiveras för profil och du kan använda dessa datapunkter för segmentering och personalisering. Den här funktionen hjälper marknadsförare som vill skapa en tydlig målgrupp av människor.
+[!DNL Query Service] gör att ni kan inkludera begränsningar i era frågor för att förenkla er målgruppsprocess. Detta förbättrar datakvaliteten genom att säkerställa att rätt data kvalificeras för era målgrupper. Att hålla kvaliteten på frågan ger en korrekt målgrupp och bidrar till tillförlitlighet i datan. Du kan också spara målgruppen genom att skapa scheman och anpassade tabeller baserade på attribut som härletts från din fråga. En anpassad tabell kan aktiveras för profil och du kan använda dessa datapunkter för segmentering och personalisering. Den här funktionen hjälper marknadsförare som vill skapa en tydlig målgrupp av människor.
 
 Genom att lägga in logik i frågan som uppfyller alla återkommande eller statiska villkor, [!DNL Query Service] extraherar arbetet med avancerad segmentering.
 

@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a28c1c00fd0b33af3b797ecf2b4d45154dedc823
+source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
-source-wordcount: '3166'
+source-wordcount: '3174'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 
 ![Panelen Profiler med widgeten markerad.](../images/profiles/profiles-overview-add-widget.png)
 
-I widgetbiblioteket kan du bläddra genom urvalet av standardwidgetar och anpassade segmentwidgetar.Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket. [lägga till en widget](../customize/widget-library.md#add-widgets).
+I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade målgruppswidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
 
 <!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
@@ -67,7 +67,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ## Bläddra bland profiler {#browse-profiles}
 
-The [!UICONTROL Browse] Med -fliken kan du söka efter och visa de skrivskyddade profiler som är inkapslade i din organisation. Härifrån kan du se viktig information som hör till profilen om deras inställningar, tidigare händelser, interaktioner och segment
+The [!UICONTROL Browse] Med -fliken kan du söka efter och visa de skrivskyddade profiler som är inkapslade i din organisation. Härifrån kan du se viktig information som hör till profilen om deras inställningar, tidigare händelser, interaktioner och målgrupper.
 
 Mer information om profilvisningsfunktionerna i plattformsgränssnittet finns i dokumentationen om [webbläsarprofiler i Adobe Real-time Customer Data Platform](../../rtcdp/profile/profile-browse.md).
 
@@ -256,9 +256,9 @@ Håll pekaren över enskilda fält för att visa en dialogruta med information o
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofiles"
 >title="Osegmenterade profiler"
->abstract="Den här widgeten visar det totala antalet profiler som inte är kopplade till något segment och representerar möjligheten till profilaktivering i hela organisationen."
+>abstract="Den här widgeten visar det totala antalet profiler som inte är kopplade till någon målgrupp och representerar möjligheten till profilaktivering i hela organisationen."
 
-The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler som inte är kopplade till något segment. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Det visar också möjligheten att utvinna profiler som inte ger tillräcklig avkastning.
+The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler som inte är kopplade till någon målgrupp. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Det visar också möjligheten att utvinna profiler som inte ger tillräcklig avkastning.
 
 ![Widgeten Osegmenterade profiler.](../images/profiles/unsegmented-profiles.png)
 
@@ -267,9 +267,9 @@ The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler so
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_unsegmentedprofilestrend"
 >title="Trend för osegmenterade profiler"
->abstract="Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden för profiler som inte är kopplade till något segment kan visas under perioderna 30 dagar, 90 dagar och 12 månader."
+>abstract="Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till någon målgrupp under en viss tidsperiod. Trenden för profiler som inte är kopplade till en viss målgrupp kan visas under perioderna 30 dagar, 90 dagar och 12 månader."
 
-The [!UICONTROL Unsegmented profiles change trend] i en widget används ett linjediagram för att illustrera antalet profiler som har lagts till sedan den senaste ögonblicksbilden som inte är kopplade till något segment. Ändringstrenden för profiler som inte är kopplade till något segment kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
+The [!UICONTROL Unsegmented profiles change trend] används ett linjediagram för att illustrera antalet profiler som lagts till sedan den senaste dagliga ögonblicksbilden som inte är kopplade till någon publik. Den föränderliga trenden för profiler som inte är kopplade till någon målgrupp kan visas över 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
 
 ![De osegmenterade profilerna ändrar trendwidgeten.](../images/profiles/unsegmented-profiles-change-trend.png)
 
@@ -292,7 +292,7 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 
 ### [!UICONTROL Audiences] {#audiences}
 
-Den här widgeten innehåller det totala antalet segment som är klara att aktiveras enligt den valda sammanfogningsprincipen som tillämpas på dina profildata.
+Den här widgeten innehåller det totala antalet målgrupper som är klara att aktiveras enligt den valda sammanfogningsprincipen som tillämpas på dina profildata.
 
 Välj **[!UICONTROL Audiences]** för att navigera till [!UICONTROL Segments] kontrollpanel [!UICONTROL Browse] -fliken. Därifrån visas en lista med alla segmentdefinitioner för din organisation.
 
@@ -311,9 +311,9 @@ The visualization allows you to monitor the overall health of audiences within A
 
 ### [!UICONTROL Audience overlap report] {#audience-overlap-report}
 
-Den här widgeten gör att målgruppen överlappar data från alla tillgängliga segment som filtreras efter sammanfogningsprincip. En lista med fem målgrupper som rangordnas mellan de högsta och de lägsta procentsatserna för överlappning finns för den sammanslagningsprincip som väljs i listrutan högst upp på skärmen. De två analyserade segmenten listas i [!UICONTROL SEGMENT A NAME] och [!UICONTROL SEGMENT B NAME] kolumner. Procentöverlappningen anges i den tredje kolumnen med 12 decimaler.
+Den här widgeten gör att data överlappar alla tillgängliga målgrupper som filtreras efter sammanfogningsprincip. En lista med fem målgrupper som rangordnas mellan de högsta och de lägsta procentsatserna för överlappning finns för den sammanslagningsprincip som väljs i listrutan högst upp på skärmen. De två analyserade målgrupperna listas i [!UICONTROL AUDIENCE A NAME] och [!UICONTROL AUDIENCE B NAME] kolumner. Procentöverlappningen anges i den tredje kolumnen med 12 decimaler.
 
-Rapporten om publiköverlappning hjälper er att skapa nya högpresterande segment. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler att eftersträva.
+Rapporten om publiköverlappning hjälper er att skapa nya högpresterande målgrupper. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler att eftersträva.
 
 Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmsläge som innehåller fler överlappande data.
 
@@ -347,23 +347,23 @@ Individuella värden för antingen mappade eller omappade målgrupper visas i en
 
 ### [!UICONTROL Audiences size] {#audiences-size}
 
-The [!UICONTROL Audiences size] widgeten innehåller en tabell med två kolumner som visar upp till 20 segment och det totala antalet målgrupper i varje segment. Listan ordnas från hög till låg enligt det totala antalet målgrupper. Det totala antalet målgrupper beror på vilken sammanfogningsprincip som används.
+The [!UICONTROL Audiences size] widgeten innehåller en tabell med två kolumner som visar namnen på upp till 20 målgrupper och det totala antalet profiler som finns i varje målgrupp. Listan ordnas från hög till låg enligt det totala antalet profiler inom målgruppen. Det totala antalet målgruppsstorlekar beror på vilken sammanfogningsprincip som används.
 
 ![Storlekswidgeten för publiker.](../images/profiles/audiences-size.png)
 
-Om du vill visa omfattande information om ett segment väljer du ett segmentnamn i listan för att navigera till [!UICONTROL Segments] [!UICONTROL Detail] sida. Genom att markera **[!UICONTROL View all segments]** från slutet av widgeten kan du navigera till [!UICONTROL Segments] [!UICONTROL Browse] för att hitta ett befintligt segment.
+Om du vill visa omfattande information om en viss målgrupp väljer du ett målgruppsnamn i listan för att navigera till [!UICONTROL Audiences] [!UICONTROL Detail] sida. Genom att markera **[!UICONTROL View all audiences]** från slutet av widgeten kan du navigera till [!UICONTROL Audiences] [!UICONTROL Browse] för att hitta en befintlig målgrupp.
 
-![Widgeten Publikens storlek med ett segmentnamn och visa all segmenttext markerad.](../images/profiles/audiences-size-view-all-segments.png)
+![Storlekswidgeten Publiker med ett publiknamn och texten Visa alla målgrupper markerad.](../images/profiles/audiences-size-view-all-audiences.png)
 
-Mer information om [[!UICONTROL Segments] [!UICONTROL  Browse] tab](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
+Mer information om [[!UICONTROL Audiences] [!UICONTROL  Browse] tab](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
 
 ### [!UICONTROL Audience overlap by merge policy] {#audience-overlap-by-merge-policy}
 
-Den här widgeten använder ett Venndiagram för att visa överlappningen mellan två markerade segment. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och segmenten för analys väljs från två listrutor i widgeten. Det totala antalet profiler i den relevanta segmentdefinitionen kan du se genom att hålla markören över en cirkel eller skärningspunkten.
+Den här widgeten använder ett Venndiagram för att visa överlappningen mellan två valda målgrupper. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och målgrupperna för analys väljs från två listrutor i widgeten. Det totala antalet profiler i den relevanta segmentdefinitionen kan du se genom att hålla markören över en cirkel eller skärningspunkten.
 
 När widgeten visar den visuella överlappningen av segmentdefinitioner kan du optimera segmenteringsstrategin genom att studera likheter mellan segmentdefinitionerna.
 
-![Kontrollpanelen Plattformsgränssnittsprofiler med listrutan för sammanslagningsprinciper och listrutorna för widgetsegment markerade.](../images/profiles/audience-overlap-by-merge-policy.png)
+![Kontrollpanelen Plattformsgränssnittsprofiler med listrutan Sammanslagningsprincip och listrutorna för widgetens målgrupp markeras.](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
 <!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}

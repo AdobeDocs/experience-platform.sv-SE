@@ -2,18 +2,18 @@
 solution: Experience Platform
 title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp av frågetjänsten
 type: Documentation
-description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som används på kontrollpaneler för profiler, segment och mål i Experience Platform.
+description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som ger möjlighet att skapa profiler, målgrupper och målpaneler i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 79966442f5333363216da17342092a71335a14f0
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
 
 # Utforska, verifiera och bearbeta dashboard-dataset med [!DNL Query Service]
 
-Adobe Experience Platform tillhandahåller viktig information om din organisations profil-, segment- och destinationsdata via kontrollpaneler som är tillgängliga i användargränssnittet för Experience Platform. Du kan sedan använda Adobe Experience Platform [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som styr dessa instrumentpaneler i datasjön.
+Adobe Experience Platform tillhandahåller viktig information om organisationens profil, målgrupp och destinationsdata via kontrollpaneler som är tillgängliga i användargränssnittet för Experience Platform. Du kan sedan använda Adobe Experience Platform [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som styr dessa instrumentpaneler i datasjön.
 
 ## Komma igång med [!DNL Query Service]
 
@@ -23,7 +23,7 @@ Mer information om [!DNL Query Service] och dess roll i Experience Platform, vä
 
 ## Åtkomst till tillgängliga datauppsättningar
 
-Du kan använda [!DNL Query Service] om du vill fråga efter rådatauppsättningar för kontrollpaneler för profil, segment och mål. Om du vill visa tillgängliga datauppsättningar väljer du **Datauppsättningar** i den vänstra navigeringen för att öppna kontrollpanelen för datauppsättningar. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
+Du kan använda [!DNL Query Service] för att fråga efter rådatauppsättningar för kontrollpaneler för profil, målgrupp och mål. Om du vill visa tillgängliga datauppsättningar väljer du **Datauppsättningar** i den vänstra navigeringen för att öppna kontrollpanelen för datauppsättningar. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
 ![Kontrollpanelen Bläddra bland datauppsättningar med fliken Datauppsättningar markerad i den vänstra navigeringen.](./images/query/browse-datasets.png)
 
@@ -64,15 +64,13 @@ The `adwh_dim_merge_policies` datauppsättningen innehåller följande fält:
 
 Den här datauppsättningen kan utforskas med hjälp av användargränssnittet i Frågeredigeraren i Experience Platform. Mer information om hur du använder Frågeredigeraren finns i [Användargränssnittshandbok för frågeredigeraren](../query-service/ui/user-guide.md).
 
-### Datamängd för segmentmetadata
+### Målgruppsmetadata
 
-Data för segmentmetadata finns tillgängliga i datasjön med metadata för varje segment i organisationen.
+Det finns en samling metadata för målgrupper i datasjön som innehåller metadata för alla era målgrupper.
 
 Namnkonventionen för den här datauppsättningen är **Segmentdefinition-Snapshot-Export** följt av ett alfanumeriskt värde. Exempel: `Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
 Om du vill förstå det fullständiga schemat för varje segmentdefinitionsögonblicksbilds exportdatauppsättning kan du förhandsgranska och utforska datauppsättningarna [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
-
-![En förhandsgranskning av datauppsättningen Segmentdefinition-Snapshot-Export.](images/query/segment-metadata.png)
 
 ### Metadatadatamängd för mål
 
@@ -92,13 +90,13 @@ Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen ka
 
 CDP Insights Data Models-funktionen visar SQL som ger insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för marknadsförings- och KPI-användningsfall.
 
-CDP-rapportering ger insikter i era profildata och dess relation till segment och destinationer. Mer information om hur du gör det finns i dokumentationen om CDP Insights-datamodellen [tillämpa CDP Insights-datamodeller på dina specifika KPI-användningsfall](./cdp-insights-data-model.md).
+CDP-rapportering ger insikter i era profildata och dess relation till målgrupper och destinationer. Mer information om hur du gör det finns i dokumentationen om CDP Insights-datamodellen [tillämpa CDP Insights-datamodeller på dina specifika KPI-användningsfall](./cdp-insights-data-model.md).
 
 ## Exempelfrågor
 
 Följande exempelfrågor innehåller exempel på SQL som kan användas i [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som ligger till grund för dina instrumentpaneler.
 
-### Antal profiler per identitet
+### Antal profiler efter identitet
 
 Denna profilinsikt ger en uppdelning av identiteter för alla sammanfogade profiler i datauppsättningen.
 
@@ -123,13 +121,13 @@ Select
         namespace;
 ```
 
-### Antal profiler per segment
+### Antal profiler per målgrupp
 
-Denna målgruppsinsikter ger det totala antalet sammanfogade profiler inom varje segment i datauppsättningen. Det här numret är resultatet av att du har tillämpat segmentsammanfogningsprincipen på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i segmentet.
+Denna målgruppsinsikter ger det totala antalet sammanfogade profiler inom varje målgrupp i datauppsättningen. Det här numret är resultatet av att målgruppssammanfogningsprincipen har tillämpats på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i målgruppen.
 
 ```sql
 Select          
-        concat_ws('-', key, source_namespace) segment_id,
+        concat_ws('-', key, source_namespace) audience_id,
         count(1) count_of_profiles
       from
         (
@@ -139,17 +137,17 @@ Select
             from
               (
                   Select
-                    explode(Segmentmembership)
+                    explode(Audiencemembership)
                   from
                     Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f
               )
         )
       group by
-      segment_id
+      audience_id
 ```
 
 ## Nästa steg
 
-Genom att läsa den här guiden kan du nu använda [!DNL Query Service] om du vill utföra flera frågor för att utforska och bearbeta de rådatauppsättningar som styr din profil, ditt segment och dina målpaneler.
+Genom att läsa den här guiden kan du nu använda [!DNL Query Service] för att utföra flera frågor för att utforska och bearbeta de rådatauppsättningar som styr er profil, målgrupp och målpaneler.
 
 Om du vill veta mer om varje kontrollpanel och dess mätvärden väljer du en kontrollpanel i listan över tillgängliga kontrollpaneler i dokumentationsnavigeringen.

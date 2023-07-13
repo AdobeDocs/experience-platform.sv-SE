@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ordlista för dataanvändningsetiketter
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
 workflow-type: tm+mt
-source-wordcount: '2108'
+source-wordcount: '2109'
 ht-degree: 1%
 
 ---
@@ -134,11 +134,11 @@ Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetensk
 
 #### C10 {#c10}
 
-Vissa datastyrningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt på segment om deras sammanfogningsprinciper använder alternativet &quot;privat diagram&quot;.
+Vissa datastyrningsprinciper begränsar användningen av sammanfogade identitetsdata för personalisering. C10-etiketten används automatiskt för målgrupper om deras sammanfogningspolicyer använder alternativet &quot;privat diagram&quot;.
 
 #### C11 {#c11}
 
-Med Adobe Experience Platform Segment Match kan ni matcha förstahandssegment med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match] -processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
+Med Adobe Experience Platform Segment Match kan ni matcha plattformsgenererade målgrupper med inställningar för sekretess och samtycke, vilket underlättar bättre profilering och insikter längre fram i kedjan. C11-etiketten anger data som inte ska användas i [!DNL Segment Match] -processer. När du har bestämt vilka datauppsättningar och/eller fält som du vill utesluta från segmentmatchning och lagt till C11-etiketten i enlighet med detta, används etiketten automatiskt av arbetsflödet för segmentmatchning.
 
 #### C12 {#c12}
 

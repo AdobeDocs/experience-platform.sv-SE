@@ -2,7 +2,7 @@
 title: Undertrycka ett XDM-fält i användargränssnittet
 description: Lär dig hur du ersätter XDM-fält (Experience Data Model) med Schemaredigeraren i Experience Platform.
 exl-id: f4c5f58a-5190-47d7-8bfc-b33ed238bf25
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 4fa98df9dcc296ba7cb141cb22df116524a0eb0c
 workflow-type: tm+mt
 source-wordcount: '679'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Experience Data Model (XDM) ger er flexibiliteten att hantera er datamodell när era affärsbehov ändras genom att ta bort schemafält efter att data har inhämtats. Oönskade fält kan vara inaktuella för att ta bort dem från användargränssnittsvyn och även dölja dem för användargränssnitten längre ned. En kryssruta i Schemaredigeraren gör det enkelt att visa inaktuella fält och, om det behövs, även ta bort inaktuella.
 
-Eftersom inaktuella fält döljs för användargränssnittet som standard effektiviserar detta ditt schema i Schemaredigeraren och förhindrar att oönskade fält läggs till i underordnade beroenden som segmentbyggaren, resedesignern och så vidare. Borttagning av fält är också bakåtkompatibelt. Andra system som använder inaktuella fält, t.ex. segment och frågor, fortsätter att utvärdera dem som de ska. Om ett inaktuellt fält används i ett befintligt segment behandlas det normalt, vilket innebär att fältet visas som förväntat i segmentbyggarbetsytan eller utvärderas baserat på data som finns i de inaktuella fälten. Detta är en fast ändring som inte påverkar befintliga dataflöden negativt.
+Eftersom inaktuella fält döljs för användargränssnittet som standard effektiviserar detta ditt schema i Schemaredigeraren och förhindrar att oönskade fält läggs till i underordnade beroenden som segmentbyggaren, resedesignern och så vidare. Borttagning av fält är också bakåtkompatibelt. Andra system som använder inaktuella fält, som målgrupper och frågor, fortsätter att utvärdera dem som de är avsedda. Om ett inaktuellt fält används i en befintlig målgrupp behandlas det normalt, vilket innebär att fältet visas som förväntat i arbetsytan i Segment Builder eller utvärderas baserat på data som är tillgängliga i de inaktuella fälten. Detta är en fast ändring som inte påverkar befintliga dataflöden negativt.
 
 >[!NOTE]
 >
@@ -37,7 +37,7 @@ Fältet har nu tagits bort från gränssnittsvyn.
 
 >[!NOTE]
 >
->När det är föråldrat visas inte längre inaktuella användargränssnitt, som kontrollpaneler för segment, Customer Journey Analytics och Adobe Journey Optimizer, som en del av arbetsflödet. Det underordnade användargränssnittet har dock möjlighet att visa borttagna fält om det behövs och fortsätta att behandla det borttagna fältet som vanligt. Mer information finns i respektive dokumentation. Frågor och segment som använder det borttagna fältet fortsätter att fungera som förväntat.
+>När det är föråldrat visas inte längre inaktuella användargränssnitt, som kontrollpaneler för segment, Customer Journey Analytics och Adobe Journey Optimizer, som en del av arbetsflödet. Det underordnade användargränssnittet har dock möjlighet att visa borttagna fält om det behövs och fortsätta att behandla det borttagna fältet som vanligt. Mer information finns i respektive dokumentation. Frågor och målgrupper som använder det borttagna fältet fortsätter att fungera som förväntat.
 
 ## Visa inaktuella fält {#show-deprecated}
 

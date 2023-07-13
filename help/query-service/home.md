@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över frågetjänsten
 description: Det här dokumentet innehåller en översikt över frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärni
 
 ### [!DNL Segmentation Service]
 
-Adobe Experience Platform [!DNL Segmentation Service] gör det möjligt för användare att dela upp sina kunder i mindre grupper som delar liknande egenskaper. Dessa segment kan sedan utvärderas för att ge bättre analys av dina [!DNL Real-Time Customer Profile] data. [!DNL Query Service] kan användas för att tillhandahålla den här analysen genom att köra frågor på segmentdata i [!DNL Data Lake]. Läs [!DNL Segmentation Service] för mer information om segmentering och [!DNL Profile Query Language] (PQL) guide för mer information om hur du analyserar segment.
+Adobe Experience Platform [!DNL Segmentation Service] gör det möjligt för användare att dela upp sina kunder i mindre grupper som delar liknande egenskaper. Dessa målgrupper kan sedan utvärderas för att ge bättre analyser på [!DNL Real-Time Customer Profile] data. [!DNL Query Service] kan användas för att tillhandahålla den här analysen genom att köra frågor om dessa målgruppsdata i [!DNL Data Lake]. Läs [!DNL Segmentation Service] för mer information om segmentering och [!DNL Profile Query Language] (PQL) guide för mer information om hur ni analyserar målgrupper.
 
 ## Användningsfall
 
@@ -41,7 +41,7 @@ Adobe Experience Platform [!DNL Segmentation Service] gör det möjligt för anv
 
 ### Adobe Analytics browse-nedläggning
 
-Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics]](./use-cases/abandoned-browse.md) data för att skapa en viss användbar målgrupp. [!DNL Query Service] använder komplex logik för segmentering för att beräkna olika anpassade attribut för användning längre fram i kedjan, eller för att avsevärt förenkla hur ni bygger upp era segment.
+Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics]](./use-cases/abandoned-browse.md) data för att skapa en viss användbar målgrupp. [!DNL Query Service] använder komplex logik för segmentering för att beräkna olika anpassade attribut för användning längre fram i kedjan, eller för att avsevärt förenkla hur ni bygger ut era målgrupper.
 
 ### Kontrollpaneler för Looker BI
 
