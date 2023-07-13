@@ -2,9 +2,9 @@
 title: Adobe Campaign Managed Cloud Services-anslutning
 description: Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring.
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: ef49bebb96afb9b25430fcc69f8ba91305ad6697
+source-git-commit: c4ead035202828a09c8c170e0a380fa49d186473
 workflow-type: tm+mt
-source-wordcount: '1326'
+source-wordcount: '1497'
 ht-degree: 0%
 
 ---
@@ -33,18 +33,24 @@ Använd Campaign för att:
 >* Datalagring på DLZ (Azure Blob Storage Data Landing Zone): 7 dagar,
 >* Aktiveringsfrekvensen är minst 3 timmar.
 
-
 ## Användningsfall {#use-cases}
 
 För att du bättre ska kunna förstå hur och när du ska använda Adobe Campaign Manage Service-målet finns ett exempel på användning som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
 
-Adobe Experience Platform skapar en kundprofil som innehåller information som identitetsdiagram, beteendedata från analyser, sammanfogar offline- och onlinedata osv. Med den här integreringen kan ni utöka de segmenteringsfunktioner som redan finns i Adobe Campaign med de målgrupper som drivs av Adobe Experience Platform, och ni kan därför aktivera dessa data i Campaign.
+* Adobe Experience Platform skapar en kundprofil som innehåller information som identitetsdiagram, beteendedata från analyser, sammanfogar offline- och onlinedata osv. Med den här integreringen kan ni utöka de segmenteringsfunktioner som redan finns i Adobe Campaign med de målgrupper som drivs av Adobe Experience Platform, och ni kan därför aktivera dessa data i Campaign.
 
-Ett sportklädföretag vill t.ex. utnyttja de smarta segmenten som drivs av Adobe Experience Platform och aktivera dem med Adobe Campaign för att nå ut till sina kunder via de olika kanaler som stöds av Adobe Campaign.
+  Ett sportklädföretag vill t.ex. utnyttja de smarta segmenten som drivs av Adobe Experience Platform och aktivera dem med Adobe Campaign för att nå ut till sina kunder via de olika kanaler som stöds av Adobe Campaign. När meddelandena har skickats vill de förbättra kundprofilen i Adobe Experience-plattformen med upplevelsedata från Adobe Campaign, till exempel skicka, öppna och klicka.
 
-När meddelandena har skickats vill de förbättra kundprofilen i Adobe Experience-plattformen med upplevelsedata från Adobe Campaign, till exempel skicka, öppna och klicka.
+  Resultatet är flerkanalskampanjer som är mer enhetliga över hela Adobe Experience Cloud-ekosystemet och en rik kundprofil som snabbt anpassar sig och lär sig.
 
-Resultatet är flerkanalskampanjer som är mer enhetliga över hela Adobe Experience Cloud-ekosystemet och en rik kundprofil som snabbt anpassar sig och lär sig.
+
+* Förutom segmentaktivering i Campaign kan ni utnyttja Adobe Campaign Managed Services-destinationen för att ta in ytterligare profilattribut som är kopplade till en profil i Adobe Experience Platform och har en synkroniseringsprocess på plats så att de uppdateras i Adobe Campaign-databasen.
+
+  Anta till exempel att du hämtar värden för anmälan och avanmälan i Adobe Experience Platform. Med den här anslutningen kan du föra över dessa värden till Adobe Campaign och ha en synkroniseringsprocess så att de uppdateras regelbundet.
+
+  >[!NOTE]
+  >
+  >Synkronisering av profilattribut är tillgängligt för profiler som redan finns i Adobe Campaign-databasen.
 
 [Läs mer om Adobe Campaign integrering med Adobe Experience Platform](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
 
@@ -92,6 +98,10 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Select instance]**: Dina **[!DNL Campaign]** marknadsinstans.
 * **[!UICONTROL Target mapping]**: Välj den målmappning som du använder i **[!DNL Adobe Campaign]** för att skicka leveranser. [Läs mer](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html).
+* **[!UICONTROL Select sync type]**:
+
+   * **[!UICONTROL Audience sync]**: Använd det här alternativet om du vill skicka över Adobe Experience Platform-målgrupper till Adobe Campaign.
+   * **[!UICONTROL Profile sync (Update only)]**: Använd det här alternativet om du vill hämta Adobe Experience Platform-profilattribut till Adobe Campaign och ha en synkroniseringsprocess så att de kan uppdateras regelbundet.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -122,6 +132,7 @@ Välj XDM-fält som ska exporteras med profilerna och mappa dem till motsvarande
    * Välj en **identifierare** (Exempel: e-postfältet) som källidentitet som unikt identifierar en profil i Adobe Experience Platform och Adobe Campaign.
 
    * Markera alla andra **XDM-källprofilattribut** som behöver exporteras till Adobe Campaign.
+
    >[!NOTE]
    >
    >Fältet&quot;segmentMembershipStatus&quot; är en obligatorisk mappning som återspeglar statusen för segmentMembership. Det här fältet läggs till som standard och kan inte ändras eller tas bort.
@@ -133,9 +144,10 @@ Välj XDM-fält som ska exporteras med profilerna och mappa dem till motsvarande
    * [Obligatoriska attribut](../../ui/activate-batch-profile-destinations.md#mandatory-attributes) se till att alla profilposter innehåller de valda attributen. Till exempel: alla exporterade profiler innehåller en e-postadress. Rekommendationen är att ställa in på obligatorisk både identitetsfältet och fältet som används som dedupliceringsnyckel.
    * [En dedupliceringsnyckel](../../ui/activate-batch-profile-destinations.md#mandatory-attributes) är en primärnyckel som bestämmer identiteten som användarna vill att deras profiler ska dedupliceras med.
 
-      >[!IMPORTANT]
-      >
-      >Kontrollera att namnet på dedupliceringsnyckelattributet matchar ett kolumnnamn för den valda målmappningen.
+     >[!IMPORTANT]
+     >
+     >Kontrollera att namnet på dedupliceringsnyckelattributet matchar ett kolumnnamn för den valda målmappningen.
+
    ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/mapping.png)
 
 1. När mappningen har utförts kan du granska och slutföra målkonfigurationen för att börja skicka data till **[!DNL Campaign]**.
@@ -153,9 +165,11 @@ Navigera till **[!UICONTROL Administration]** > **[!UICONTROL Audit]** > **[!UIC
 
 ### Få åtkomst till exporterade data {#data}
 
-Navigera till **[!UICONTROL Profile and target]** > **[!UICONTROL List]** > **[!UICONTROL AEP audiences]** för att få åtkomst till målgrupper som skapats efter att ett mål har aktiverats.
+För **[!UICONTROL Audience sync]** kan du kontrollera den exporterade publiken genom att gå till **[!UICONTROL Profile and target]** > **[!UICONTROL List]** > **[!UICONTROL AEP audiences]** -menyn.
 
 ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/campaign-audiences.png)
+
+För **[!UICONTROL Profile sync (Update only)]** uppdateras data automatiskt till Campaign-databasen för varje profil som är mål för det segment som är aktiverat i målet.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
