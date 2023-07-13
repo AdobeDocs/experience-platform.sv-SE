@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 11d6cf09dede8c7c14bbbcd3c109e703a5d053de
+source-git-commit: 127cc88735fdffa9227bdb0919ae086dbe76184d
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '2400'
 ht-degree: 0%
 
 ---
@@ -43,24 +43,90 @@ I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Datasets]** i den 
 
 ![En bild som markerar datauppsättningsobjektet i det vänstra navigeringsfältet.](../images/datasets/user-guide/browse-datasets.png)
 
-Som standard visas bara de datauppsättningar som du har kapslat in i. Om du vill se de systemgenererade datauppsättningarna aktiverar du **[!UICONTROL Show system datasets]** växla. Systemgenererade datauppsättningar används bara för att bearbeta andra komponenter. Den systemgenererade exportdatamängden för profiler används till exempel för att bearbeta kontrollpanelen för profiler.
-
-![Den växlingsknapp som låter dig välja om systemdatauppsättningar ska visas eller inte markeras.](../images/datasets/user-guide/system-datasets.png)
-
-Markera namnet på en datauppsättning för att komma åt dess **[!UICONTROL Dataset activity]** och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
+Välj namnet på en datauppsättning på menyn [!UICONTROL Browse] flik för att komma åt **[!UICONTROL Dataset activity]** och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
 
 ![Information om den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-1.png)
 ![Exempelgrupper som tillhör den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-2.png)
 
-## Förhandsgranska en datauppsättning
+## Inline-datauppsättningsåtgärder {#inline-actions}
 
-Från **[!UICONTROL Dataset activity]** skärm, välja **[!UICONTROL Preview dataset]** i skärmens övre högra hörn om du vill förhandsgranska upp till 100 rader med data. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället att förhandsvisningen inte är tillgänglig.
+Användargränssnittet för datauppsättningar erbjuder nu en samling infogade åtgärder för varje tillgänglig datauppsättning. Markera ellipsen för en datauppsättning som du vill hantera för att visa de tillgängliga alternativen på en snabbmeny. De tillgängliga åtgärderna omfattar [[!UICONTROL Preview dataset]](#preview), [[!UICONTROL Manage data and access labels]](#manage-and-enforce-data-governance), [[!UICONTROL Enable unified profile]](#enable-profile), [[!UICONTROL Manage tags]](#add-tags)och [[!UICONTROL Delete]](#delete). Mer information om de här tillgängliga åtgärderna finns i respektive avsnitt.
+
+### Lägg till datauppsättningstaggar {#add-tags}
+
+Lägg till egna taggar för att ordna datauppsättningar och förbättra sök-, filtrerings- och sorteringsfunktionerna. Från [!UICONTROL Browse] -fliken i [!UICONTROL Datasets] väljer du ellipsen för en datauppsättning som du vill hantera följt av **[!UICONTROL Manage tags]** i listrutan.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Hantera taggar markerat för den valda datauppsättningen.](../images/datasets/user-guide/manage-tags.png)
+
+The [!UICONTROL Manage tags] visas. Ange en kort beskrivning för att skapa en anpassad tagg eller välj från en befintlig tagg för att märka datauppsättningen. Välj **[!UICONTROL Save]** för att bekräfta inställningarna.
+
+![Dialogrutan Hantera taggar med anpassade taggar markerade.](../images/datasets/user-guide/manage-tags-dialog.png)
+
+The [!UICONTROL Manage tags] kan även ta bort befintliga taggar från en datauppsättning. Markera bara x bredvid taggen som du vill ta bort och markera **[!UICONTROL Save]**.
+
+När en tagg har lagts till i en datauppsättning kan datauppsättningarna filtreras baserat på motsvarande tagg. Se avsnittet om hur du [filtrera datamängder efter taggar](#enable-profile) för mer information.
+
+Mer information om hur du klassificerar affärsobjekt för enklare identifiering och kategorisering finns i handboken [hantera metadatatataxonomier](../../administrative-tags/ui/managing-tags.md). Den här guiden beskriver hur en användare med lämplig behörighet kan skapa fördefinierade taggar, tilldela kategorier till taggar och utföra alla relaterade CRUD-åtgärder för taggar och taggkategorier i plattformens användargränssnitt.
+
+## Söka efter och filtrera datamängder {#search-and-filter}
+
+Om du vill söka efter eller filtrera listan med tillgängliga datauppsättningar väljer du filterikonen (![Filterikonen.](../images/datasets/user-guide/icon.png)) längst upp till vänster på arbetsytan. En uppsättning filteralternativ i den vänstra listen visas. Det finns flera metoder för att filtrera tillgängliga datauppsättningar. Bland dessa finns: [[!UICONTROL Show System Datasets]](#show-system-datasets), [[!UICONTROL Included in profile]](#filter-profile-enabled-datasets), [[!UICONTROL Tags]](#filter-by-tag), [[!UICONTROL Creation date]](#filter-by-creation-date), [[!UICONTROL Modified date], [!UICONTROL Created by]](#filter-by-creation-date)och [[!UICONTROL Schema]](#filter-by-schema).
+
+Listan med använda filter visas ovanför de filtrerade resultaten.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med listan över använda filter markerade.](../images/datasets/user-guide/applied-filters.png)
+
+### Visa systemdatauppsättningar {#show-system-datasets}
+
+Som standard visas bara datauppsättningar som du har inkapslat data i. Om du vill se de systemgenererade datauppsättningarna väljer du **[!UICONTROL Yes]** kryssrutan i [!UICONTROL Show system datasets] -avsnitt. Systemgenererade datauppsättningar används bara för att bearbeta andra komponenter. Den systemgenererade exportdatamängden för profiler används till exempel för att bearbeta kontrollpanelen för profiler.
+
+![Filteralternativen på arbetsytan Datauppsättningar med [!UICONTROL Show system datasets] -avsnittet markerat.](../images/datasets/user-guide/show-system-datasets.png)
+
+### Filterprofilaktiverade datauppsättningar {#filter-profile-enabled-datasets}
+
+De datauppsättningar som har aktiverats för profildata används för att fylla i kundprofiler efter att data har importerats. Se avsnittet om [aktivera datauppsättningar för profil](#enable-profile) om du vill veta mer.
+
+Om du vill filtrera datauppsättningen baserat på om de har aktiverats för profilen väljer du [!UICONTROL Yes] från filteralternativen.
+
+![Filteralternativen på arbetsytan Datauppsättningar med [!UICONTROL Included in Profile] -avsnittet markerat.](../images/datasets/user-guide/included-in-profile.png)
+
+### Filtrera datauppsättningar efter tagg {#filter-by-tag}
+
+Ange ditt egna taggnamn i [!UICONTROL Tags] och sedan markera taggen i listan med tillgängliga alternativ för att söka efter och filtrera datamängder som motsvarar den taggen.
+
+![Filteralternativen på arbetsytan Datauppsättningar med [!UICONTROL Tags] inmatnings- och filterikoner är markerade.](../images/datasets/user-guide/filter-tags.png)
+
+### Filtrera datauppsättningar efter skapandedatum {#filter-by-creation-date}
+
+Datauppsättningar kan filtreras efter skapandedatum under en anpassad tidsperiod. Detta kan användas för att utesluta historiska data eller för att generera specifika kronologiska datainsikter och rapporter. Välj en [!UICONTROL Start date] och [!UICONTROL End date] genom att välja kalenderikonen för varje fält. Därefter visas bara datauppsättningar som uppfyller det villkoret på fliken Bläddra.
+
+### Filtrera datauppsättningar efter ändringsdatum {#filter-by-modified-date}
+
+På samma sätt som filtret för skapandedatum kan du filtrera dina datauppsättningar baserat på det datum då de senast ändrades. I [!UICONTROL Modified date] avsnitt, välja [!UICONTROL Start date] och [!UICONTROL End date] genom att välja kalenderikonen för varje fält. Därefter visas bara datauppsättningar som ändrats under den perioden på fliken Bläddra.
+
+### Filtrera efter schema {#filter-by-schema}
+
+Du kan filtrera datauppsättningar baserat på det schema som definierar deras struktur. Välj listruteikonen eller ange schemanamnet i textfältet. En lista över möjliga matchningar visas. Välj lämpligt schema i listan.
+
+## Sortera datauppsättningar efter skapad den {#sort}
+
+Datauppsättningar i [!UICONTROL Browse] kan sorteras efter stigande eller fallande datum. Välj [!UICONTROL Created] eller [!UICONTROL Last updated] kolumnrubriker som växlar mellan stigande och fallande. När du har valt det här alternativet visas det i kolumnen med antingen upp- eller nedpilen till sidan av kolumnrubriken.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar där kolumnen Skapat och Senast uppdaterad är markerad.](../images/datasets/user-guide/ascending-descending-columns.png)
+
+## Förhandsgranska en datauppsättning {#preview}
+
+Du kan förhandsgranska exempeldata för datauppsättningen utifrån båda de infogade alternativen i [!UICONTROL Browse] och [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] markerar du ellipserna bredvid datauppsättningsnamnet som du vill förhandsgranska. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Preview dataset]** i listan med tillgängliga alternativ. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället att förhandsvisningen inte är tillgänglig.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Förhandsgranska datauppsättning markerat för den valda datauppsättningen.](../images/datasets/user-guide/preview-dataset-option.png)
+
+Då öppnas förhandsgranskningsfönstret, där den hierarkiska vyn av datasetet visas till höger.
+
+![Dialogrutan för förhandsgranskning av datauppsättningar med information om strukturen samt exempelvärden för datauppsättningen visas.](../images/datasets/user-guide/preview-dataset.png)
+
+Alternativt kan du **[!UICONTROL Dataset activity]** skärm, välja **[!UICONTROL Preview dataset]** i skärmens övre högra hörn om du vill förhandsgranska upp till 100 rader med data.
 
 ![Knappen Förhandsgranska datauppsättning är markerad.](../images/datasets/user-guide/select-preview.png)
-
-I förhandsgranskningsfönstret visas den hierarkiska vyn av datasetens schema till höger.
-
-![En förhandsgranskning av datauppsättningen visas. Information om strukturen samt exempelvärden visas.](../images/datasets/user-guide/preview-dataset.png)
 
 För mer robusta metoder att få tillgång till dina data [!DNL Experience Platform] tillhandahåller tjänster längre fram i kedjan som [!DNL Query Service] och [!DNL JupyterLab] att utforska och analysera data. Mer information finns i följande dokument:
 
@@ -92,6 +158,8 @@ The **[!UICONTROL Configure dataset]** visas. Ange ett namn och en valfri beskri
 
 ![Konfigurationsinformation för datauppsättningen infogas. Detta innehåller information som datauppsättningens namn och beskrivning.](../images/datasets/user-guide/configure-dataset-schema.png)
 
+Datauppsättningar kan filtreras från listan med tillgängliga datauppsättningar i användargränssnittet med schemafiltret. Se avsnittet om hur du [filtrera datauppsättningar efter schema](#filter-by-schema) för mer information.
+
 ### Skapa en datauppsättning med en CSV-fil {#csv}
 
 När en datauppsättning skapas med en CSV-fil skapas ett ad hoc-schema som ger datauppsättningen en struktur som matchar den angivna CSV-filen. I **[!UICONTROL Create dataset]** skärm, välja **[!UICONTROL Create dataset from CSV file]**.
@@ -119,7 +187,11 @@ Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapsla
 
 Mer information om hur du aktiverar ett schema för [!DNL Profile], se [Användarhandbok för Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
 
-Om du vill aktivera en datauppsättning för profilen har du åtkomst till dess **[!UICONTROL Dataset activity]** och väljer **[!UICONTROL Profile]** växla i **[!UICONTROL Properties]** kolumn. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
+Du kan aktivera en datauppsättning för profil från båda de infogade alternativen i [!UICONTROL Browse] och [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] -fliken i [!UICONTROL Datasets] markerar du ellipsen för en datauppsättning som du vill aktivera för profil. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Enable unified profile]** i listan med tillgängliga alternativ.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med ellipserna och Aktivera enhetlig profil markerat.](../images/datasets/user-guide/enable-for-profile.png)
+
+Du kan även välja från datauppsättningens **[!UICONTROL Dataset activity]** väljer du **[!UICONTROL Profile]** växla i **[!UICONTROL Properties]** kolumn. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
 
 >[!NOTE]
 >
@@ -127,13 +199,23 @@ Om du vill aktivera en datauppsättning för profilen har du åtkomst till dess 
 
 ![Profilväxlingen är markerad på sidan med datauppsättningsinformation.](../images/datasets/user-guide/enable-dataset-profiles.png)
 
+Datauppsättningar som har aktiverats för profilen kan också filtreras enligt det här villkoret. Se avsnittet om hur du [filterprofilaktiverade datauppsättningar](#filter-profile-enabled-datasets) för mer information.
+
 ## Hantera och tillämpa datastyrning på en datauppsättning {#manage-and-enforce-data-governance}
+
+Du kan hantera etiketter för datastyrning för en datauppsättning genom att välja de infogade alternativen i [!UICONTROL Browse] -fliken. Markera ellipserna bredvid datauppsättningsnamnet som du vill hantera, följt av **[!UICONTROL Manage data and access labels]** i listrutan.
 
 Dataanvändningsetiketter, som används på schemanivå, gör att du kan kategorisera datamängder och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på scheman för spridning till datauppsättningar.
 
 ## Ta bort en datauppsättning {#delete}
 
-Du kan ta bort en datauppsättning genom att först komma åt den **[!UICONTROL Dataset activity]** skärm. Välj sedan **[!UICONTROL Delete dataset]** för att ta bort den.
+Du kan ta bort en datauppsättning från någon av datauppsättningens infogade åtgärder i [!UICONTROL Browse] eller längst upp till höger på [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] markerar du ellipserna bredvid datauppsättningsnamnet som du vill ta bort. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Delete]** i listrutan.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med ellipsen och alternativet Ta bort markerat för den valda datauppsättningen.](../images/datasets/user-guide/inline-delete-dataset.png)
+
+En bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för att bekräfta.
+
+Du kan också välja **[!UICONTROL Delete dataset]** från **[!UICONTROL Dataset activity]** skärm.
 
 >[!NOTE]
 >
@@ -161,7 +243,7 @@ Du kan välja en individ **[!UICONTROL Batch ID]** för att komma åt **[!UICONT
 
 ![Information om den valda gruppen visas. Detta inkluderar antalet poster som importerats, antalet poster som misslyckats, batchstatus, filstorlek, start- och sluttider för importen, data- och batch-ID:n, organisations-ID:n, datauppsättningens namn och åtkomstinformation.](../images/datasets/user-guide/batch-overview.png)
 
-Om du vill ta bort gruppen kan du göra det genom att markera **[!UICONTROL Delete batch]** som finns uppe till höger på kontrollpanelen. Om du gör det tas även posterna bort från den datauppsättning som batchen ursprungligen skapades i.
+Om du vill ta bort gruppen väljer du **[!UICONTROL Delete batch]** i den övre högra delen av instrumentpanelen. När du tar bort en batch tas även posterna bort från den datauppsättning som gruppen ursprungligen skapades i bort.
 
 ![Knappen Ta bort grupp markeras på sidan med datauppsättningsinformation.](../images/datasets/user-guide/delete-batch.png)
 
