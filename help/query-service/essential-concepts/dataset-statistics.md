@@ -1,9 +1,9 @@
 ---
 title: Dataset Statistik - beräkning
 description: I det här dokumentet beskrivs hur du beräknar kolumnnivåstatistik för ADLS-datauppsättningar (Azure Data Lake Storage) med SQL-kommandon.
-source-git-commit: c42a7cd46f79bb144176450eafb00c2f81409380
+source-git-commit: c7bc395038906e27449c82c518bd33ede05c5691
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
@@ -49,16 +49,37 @@ This second example, is a more real-world example as it uses an alias name. See 
 ANALYZE TABLE adc_geometric COMPUTE STATISTICS as <alias_name>;
 ``` -->
 
-Konsolutdata visar inte statistik som svar på kommandot för att analysera tabellberäkningsstatistik. Istället visas en radkolumn i konsolen `Statistics ID` med en unik identifierare som refererar till resultaten. När en `COMPUTE STATISTICS` -frågan, visas resultaten enligt följande:
+Konsolutdata visar inte statistik som svar på kommandot för att analysera tabellberäkningsstatistik. Istället visas en radkolumn i konsolen `Statistics ID` med en unik identifierare som refererar till resultaten. Du kan också välja att **fråga direkt på`Statistics ID`**. När en `COMPUTE STATISTICS` -frågan, visas resultaten enligt följande:
 
 ```console
 | Statistics ID    | 
 | ---------------- |
-| QqMtDfHQOdYJpZlb |
+| adc_geometric_stats_1 |
 (1 row)
 ```
 
-Om du vill se utdata måste du använda `SHOW STATISTICS` -kommando. Instruktioner på [hur statistiken visas](#show-statistics) anges senare i dokumentet.
+Du kan fråga statistikutdata direkt genom att referera till `Statistics ID` enligt nedan:
+
+```sql
+SELECT * FROM adc_geometric_stats_1; 
+```
+
+Med den här programsatsen kan du visa utdata på ungefär samma sätt som kommandot VISA STATISTIK när det används med `Statistics ID`.
+
+Du kan visa en lista med all beräknad statistik i sessionen genom att köra kommandot VISA STATISTIK. Ett exempel på hur kommandot VISA STATISTIK visas nedan.
+
+```console
+statsId | tableName | columnSet | filterContext | timestamp
+-----------+---------------+-----------+---------------------------------------+---------------
+adc_geometric_stats_1 |adc_geometric | (age) | | 25/06/2023 09:22:26
+demo_table_stats_1 | demo_table | (*) | ((age > 25)) | 25/06/2023 12:50:26
+```
+
+<!-- Commented out until the <alias_name> feature is released.
+
+To see the output, you must use the `SHOW STATISTICS` command. Instructions on [how to show the statistics](#show-statistics) are provided later in the document. 
+
+-->
 
 ## Begränsa de inkluderade kolumnerna {#limit-included-columns}
 
@@ -90,7 +111,8 @@ Du kan kombinera kolumngränsen och filtret för att skapa mycket specifika dato
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
 ```
 
-<!-- ## Create an alias name {#alias-name}
+<!-- Commented out until the <alias_name> feature is released.
+## Create an alias name {#alias-name}
 
 Since the filter condition and the column list can target a large amount of data, it is unrealistic to remember the exact values. Instead, you can provide an `<alias_name>` to store this calculated information. If you do not provide an alias name for these calculations, Query Service generates a universally unique identifier for the alias ID. You can then use this alias ID to look up the computed statistics with the `SHOW STATISTICS` command. 
 
@@ -104,22 +126,24 @@ The example below stores the output computed statistics in the `alias_name` for 
 ANALYZE TABLE adc_geometric COMPUTE STATISTICS FOR ALL COLUMNS as alias_name;
 ```
 
-The output for the above example is `SUCCESSFULLY COMPLETED, alias_name`. The console output does not display the statistics in the response of the analyze table compute statistics command. To see the output, you must use the `SHOW STATISTICS` command discussed below. -->
-
-## Visa statistik {#show-statistics}
+The output for the above example is `SUCCESSFULLY COMPLETED, alias_name`. The console output does not display the statistics in the response of the analyze table compute statistics command. To see the output, you must use the `SHOW STATISTICS` command discussed below. 
+-->
 
 <!-- Commented out until the <alias_name> feature is released.
-The alias name used in the query is available as soon as the `ANALYZE TABLE` command has been run.  -->
 
-Även med ett filtervillkor och en kolumnlista kan beräkningen ha en stor mängd data som mål. Frågetjänsten genererar en universellt unik identifierare för det statistiska ID:t som lagrar den här beräknade informationen. Du kan sedan använda detta statistikID för att söka efter den beräknade statistiken med `SHOW STATISTICS` -kommandot när som helst under sessionen.
+## Show the statistics {#show-statistics}
 
-Statistik-ID:t och den genererade statistiken är bara giltiga för den aktuella sessionen och kan inte nås mellan olika PSQL-sessioner. Den beräknade statistiken är för närvarande inte beständig. Om du vill visa statistiken använder du kommandot som visas nedan.
+The alias name used in the query is available as soon as the `ANALYZE TABLE` command has been run.  
+
+Even with a filter condition and a column list, the computation can target a large amount of data. Query Service generates a universally unique identifier for the statistics ID to store this calculated information. You can then use this statistics ID to look up the computed statistics with the `SHOW STATISTICS` command at any time within that session. 
+
+The statistics ID and the statistics generated are only valid for this particular session and cannot be accessed across different PSQL sessions. The computed statistics are not currently persistent. To display the statistics, use the command seen below.
 
 ```sql
 SHOW STATISTICS FOR <STATISTICS_ID>;
 ```
 
-En utdatafil kan se ut ungefär som i exemplet nedan.
+An output might look similar to the example below. 
 
 ```console
                          columnName                         |      mean      |      max       |      min       | standardDeviation | approxDistinctCount | nullCount | dataType  
@@ -138,6 +162,8 @@ En utdatafil kan se ut ungefär som i exemplet nedan.
  timestamp                                                  |            0.0 |            0.0 |            0.0 |               0.0 |                98.0 |         3 | Timestamp
 (12 rows)
 ```
+
+-->
 
 ## Nästa steg {#next-steps}
 
