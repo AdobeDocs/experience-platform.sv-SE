@@ -3,7 +3,7 @@ keywords: Experience Platform;hemmabruk;populära ämnen; varningar;mål
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
-source-git-commit: 3bb9858c236c91e1567fd8e78988f4049537ffe3
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '932'
 ht-degree: 0%
@@ -51,10 +51,10 @@ Aviseringar som är tillgängliga för måldataflöden beskrivs i tabellen nedan
 
 | Larm | Beskrivning |
 | --- | --- |
-| Körningsfördröjning för målflöde | Den här varningen meddelar dig när en målflödeskörning tar längre tid än 150 minuter att aktivera ett segment. |
-| Körningsfel för målflöde | Den här varningen meddelar dig när ett fel inträffar när ett segment aktiveras till ett mål. |
-| Målflödet har körts | Den här varningen meddelar dig när ett segment har aktiverats till ett mål. |
-| Start för målflödeskörning | Den här varningen meddelar dig när en målflödeskörning börjar aktivera ett segment. |
+| Körningsfördröjning för målflöde | Den här varningen meddelar dig när ett målflöde tar längre tid än 150 minuter att aktivera en målgrupp. |
+| Körningsfel för målflöde | Den här varningen meddelar dig när ett fel inträffar när en målgrupp aktiveras till ett mål. |
+| Målflödet har körts | Den här varningen meddelar dig när en målgrupp har aktiverats på ett mål. |
+| Start för målflödeskörning | Den här varningen meddelar dig när en målflödeskörning börjar aktivera en målgrupp. |
 | Överhoppad aktiveringshastighet har överskridits | Den här varningen meddelar dig när aktiveringshastigheten har överskridit 1 % av det totala antalet aktiveringar. Identiteter hoppas över under aktivering om de saknar attribut eller har samtyckesöverträdelse. |
 
 ## Få aviseringar {#receiving-alerts}

@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 07a91ef15075b6c438e85aecff12dfab704cc6a2
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '1188'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help
 > 
 >De nya molnlagringsmålen - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativen som markeras nedan.
 
-![Bild som visar några av de tillgängliga filformateringsalternativen.](/help/destinations/assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
+![Bild som visar några av de tillgängliga filformateringsalternativen.](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
 ### Avgränsare {#delimiter}
 

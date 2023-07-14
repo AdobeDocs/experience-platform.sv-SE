@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;salesforce crm;salesforce crm destination
 title: Salesforce CRM-anslutning
 description: Med Salesforce CRM-destinationen kan du exportera dina kontodata och aktivera dem i Salesforce CRM för dina affärsbehov.
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: edf49d8a52eeddea65a18c1dad0035ec7e5d2c12
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '2982'
+source-wordcount: '2981'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ ht-degree: 0%
 
 Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Salesforce composite API]](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_sobjects_collections_update.htm), som stöder båda profiltyperna som beskrivs ovan.
 
-När [aktivera segment](#activate)kan du välja mellan antingen leads eller kontakter och uppdatera attribut och segmentera data i [!DNL Salesforce CRM].
+När [aktivera segment](#activate)kan du välja mellan antingen leads eller kontakter och uppdatera attribut och målgruppsdata till [!DNL Salesforce CRM].
 
 [!DNL Salesforce CRM] använder OAuth 2 med lösenordsbeviljande som autentiseringsmekanism för att kommunicera med Salesforce REST API. Instruktioner för hur du autentiserar [!DNL Salesforce CRM] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Du kan skapa segment utifrån dina offlinedata och skicka dessa segment till Salesforce CRM, som visas i användarens flöden så snart segment och profiler uppdateras i Adobe Experience Platform.
+Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Du kan skapa målgrupper utifrån dina offlinedata och skicka dessa målgrupper till Salesforce CRM, för att kunna visa dem i användarens flöden så snart som målgrupper och profiler uppdateras i Adobe Experience Platform.
 
 ## Förutsättningar {#prerequisites}
 
@@ -70,16 +70,16 @@ Slutligen måste du se till att `password` anslaget är aktiverat i [!DNL Salesf
 
 #### Skapa anpassade fält i [!DNL Salesforce] {#prerequisites-custom-field}
 
-När segment aktiveras för [!DNL Salesforce CRM] mål måste du ange ett värde i **[!UICONTROL Mapping ID]** för varje aktiverat segment, i **[Segmentschema](#schedule-segment-export-example)** steg.
+När målgrupper aktiveras för [!DNL Salesforce CRM] mål måste du ange ett värde i **[!UICONTROL Mapping ID]** för varje aktiverad målgrupp, i **[Målgruppsschema](#schedule-segment-export-example)** steg.
 
-[!DNL Salesforce CRM] kräver att det här värdet läser och tolkar segment som kommer in från Experience Platform korrekt och uppdaterar deras segmentstatus inom [!DNL Salesforce]. Se dokumentationen för Experience Platform för [Schemafältgrupp för detaljer om segmentmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om segmentstatus.
+[!DNL Salesforce CRM] kräver att det här värdet läser och tolkar målgrupper som kommer från Experience Platform korrekt och uppdaterar deras målgruppsstatus inom [!DNL Salesforce]. Se dokumentationen för Experience Platform för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 
-För varje segment som du aktiverar från Platform till [!DNL Salesforce CRM]måste du skapa ett anpassat fält av typen `Text Area (Long)` inom [!DNL Salesforce]. Du kan definiera längden på fälttecknen i valfri storlek mellan 256 och 131 072 tecken beroende på ditt företags behov. Se [!DNL Salesforce] [Anpassade fälttyper](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5) dokumentationssida för mer information om anpassade fälttyper. Se även [!DNL Salesforce] dokumentation till [skapa anpassade fält](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) om du behöver hjälp med att skapa fält.
+För varje målgrupp som du aktiverar från Platform till [!DNL Salesforce CRM]måste du skapa ett anpassat fält av typen `Text Area (Long)` inom [!DNL Salesforce]. Du kan definiera längden på fälttecknen i valfri storlek mellan 256 och 131 072 tecken beroende på ditt företags behov. Se [!DNL Salesforce] [Anpassade fälttyper](https://help.salesforce.com/s/articleView?id=sf.custom_field_types.htm&amp;type=5) dokumentationssida för mer information om anpassade fälttyper. Se även [!DNL Salesforce] dokumentation till [skapa anpassade fält](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) om du behöver hjälp med att skapa fält.
 
 >[!IMPORTANT]
 >
 >Ta inte med blankstegstecken i fältnamnet. Använd i stället understrecket `(_)` tecken som avgränsare.
->Inom [!DNL Salesforce] du måste skapa anpassade fält med **[!UICONTROL Field Name]** som exakt matchar värdet som anges i **[!UICONTROL Mapping ID]** för varje aktiverat plattformssegment. På skärmbilden nedan visas ett anpassat fält med namnet `crm_2_seg`. Lägg till `crm_2_seg` as **[!UICONTROL Mapping ID]** för att fylla i segment från Experience Platform i detta anpassade fält.
+>Inom [!DNL Salesforce] du måste skapa anpassade fält med **[!UICONTROL Field Name]** som exakt matchar värdet som anges i **[!UICONTROL Mapping ID]** för varje aktiverat plattformssegment. På skärmbilden nedan visas ett anpassat fält med namnet `crm_2_seg`. Lägg till `crm_2_seg` as **[!UICONTROL Mapping ID]** för att fylla målgrupper från Experience Platform i detta anpassade fält.
 
 Ett exempel på hur du skapar anpassade fält i [!DNL Salesforce], *Steg 1 - Välj datatyp*visas nedan:
 ![Skärmbild för användargränssnittet i Salesforce som visar hur du skapar anpassade fält, steg 1 - Välj datatyp.](../../assets/catalog/crm/salesforce/create-salesforce-custom-field-step-1.png)
@@ -89,16 +89,14 @@ Ett exempel på hur du skapar anpassade fält i [!DNL Salesforce], *Steg 2 - Ang
 
 >[!TIP]
 >
->* Att skilja mellan anpassade fält som används för plattformssegment och andra anpassade fält i [!DNL Salesforce] du kan inkludera ett identifierbart prefix eller suffix när du skapar det anpassade fältet. I stället för `test_segment`, använda `Adobe_test_segment` eller `test_segment_Adobe`
->* Om du redan har andra anpassade fält skapade i [!DNL Salesforce]kan du använda samma namn som plattformssegmentet för att enkelt identifiera segmentet i [!DNL Salesforce].
-
+>* Att skilja mellan anpassade fält som används för plattformsanvändare och andra anpassade fält inom [!DNL Salesforce] du kan inkludera ett identifierbart prefix eller suffix när du skapar det anpassade fältet. I stället för `test_segment`, använda `Adobe_test_segment` eller `test_segment_Adobe`
+>* Om du redan har andra anpassade fält skapade i [!DNL Salesforce]kan du använda samma namn som plattformssegmentet för att enkelt identifiera målgruppen i [!DNL Salesforce].
 
 >[!NOTE]
 >
 >* Objekt i Salesforce är begränsade till 25 externa fält, se [Anpassade fältattribut](https://help.salesforce.com/s/articleView?id=sf.custom_field_attributes.htm&amp;type=5).
->* Den här begränsningen innebär att du bara kan ha högst 25 Experience Platform-segmentmedlemskap aktiva åt gången.
->* Om du har nått den här gränsen i Salesforce måste du ta bort de anpassade attribut från Salesforce som användes för att lagra segmentstatusen mot äldre segment i Experience Platform före ett nytt **[!UICONTROL Mapping ID]** kan användas.
-
+>* Den här begränsningen innebär att du bara kan ha högst 25 medlemskap för Experience Platform som är aktiva när som helst.
+>* Om du har nått den här gränsen i Salesforce måste du ta bort de anpassade attribut från Salesforce som användes för att lagra målgruppsstatusen mot äldre målgrupper inom Experience Platform före en ny **[!UICONTROL Mapping ID]** kan användas.
 
 #### Samla [!DNL Salesforce CRM] autentiseringsuppgifter {#gather-credentials}
 
@@ -106,12 +104,12 @@ Anteckna vad som står nedan innan du autentiserar dig för [!DNL Salesforce CRM
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `Username` | Dina [!DNL Salesforce] användarnamn för konto. |  |
-| `Password` | Dina [!DNL Salesforce] kontolösenord. |  |
+| `Username` | Dina [!DNL Salesforce] användarnamn för konto. | |
+| `Password` | Dina [!DNL Salesforce] kontolösenord. | |
 | `Security Token` | Dina [!DNL Salesforce] säkerhetstoken som du senare lägger till i slutet av din [!DNL Salesforce] Lösenord för att skapa en sammanfogad sträng som ska användas som **[!UICONTROL Password]** när [autentiserar mot målet](#authenticate).<br> Se [!DNL Salesforce] dokumentation till [återställa din säkerhetstoken](https://help.salesforce.com/s/articleView?id=sf.user_security_token.htm&amp;type=5) om du vill lära dig hur du genererar om det från [!DNL Salesforce] om du inte har säkerhetstoken. |  |
 | `Custom Domain` | Dina [!DNL Salesforce] domänprefix. <br> Se [[!DNL Salesforce] dokumentation](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) om du vill veta hur du får fram det här värdet från [!DNL Salesforce] gränssnitt. | Om [!DNL Salesforce] domänen är<br> *`d5i000000isb4eak-dev-ed`.my.salesforce.com*,<br> du kommer att behöva `d5i000000isb4eak-dev-ed` som värdet. |
-| `Client ID` | Din Salesforce `Consumer Key`. <br> Se [[!DNL Salesforce] dokumentation](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) om du vill veta hur du får fram det här värdet från [!DNL Salesforce] gränssnitt. |  |
-| `Client Secret` | Din Salesforce `Consumer Secret`. <br> Se [[!DNL Salesforce] dokumentation](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) om du vill veta hur du får fram det här värdet från [!DNL Salesforce] gränssnitt. |  |
+| `Client ID` | Din Salesforce `Consumer Key`. <br> Se [[!DNL Salesforce] dokumentation](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) om du vill veta hur du får fram det här värdet från [!DNL Salesforce] gränssnitt. | |
+| `Client Secret` | Din Salesforce `Consumer Secret`. <br> Se [[!DNL Salesforce] dokumentation](https://help.salesforce.com/s/articleView?id=sf.connected_app_rotate_consumer_details.htm&amp;type=5) om du vill veta hur du får fram det här värdet från [!DNL Salesforce] gränssnitt. | |
 
 ### Guardrails {#guardrails}
 
@@ -121,7 +119,7 @@ Om [!DNL Salesforce] kontoadministratören har infört IP-begränsningar, du må
 
 >[!IMPORTANT]
 >
->När [aktivera segment](#activate) du måste välja mellan *Kontakt* eller *Lead* typer. Du måste se till att era segment har rätt datamappning beroende på vilken typ som valts.
+>När [aktivera segment](#activate) du måste välja mellan *Kontakt* eller *Lead* typer. Ni måste se till att era målgrupper har rätt datamappning enligt den valda typen.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -137,8 +135,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Salesforce CRM] uppdateras med motsvarande segmentstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [segmentplanering](#schedule-segment-export-example) steg.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje målgruppsstatus i [!DNL Salesforce CRM] uppdateras med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -178,13 +176,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
@@ -207,42 +205,40 @@ Koppla XDM-fälten till [!DNL (API) Salesforce CRM] målfält, följ dessa steg:
    * Om du arbetar med *Kontakter* inom ditt segment, se objektreferensen i Salesforce för [Kontakt](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) för att definiera mappningar för de fält som ska uppdateras.
    * Du kan identifiera obligatoriska fält genom att söka efter ordet *Obligatoriskt*, som nämns i fältbeskrivningar i länken ovan.
    * Beroende på vilka fält du vill exportera eller uppdatera lägger du till mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce CRM]: |Källfält|Målfält| Anteckningar | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. Kontaktens efternamn är högst 80 tecken. |\
-      |`xdm: person.name.firstName`|`Attribute: FirstName`| Kontaktens förnamn är högst 40 tecken långt. | |`xdm: personalEmail.address`|`Attribute: Email`| Kontaktens e-postadress. |
+     |`xdm: person.name.firstName`|`Attribute: FirstName`| Kontaktens förnamn är högst 40 tecken långt. | |`xdm: personalEmail.address`|`Attribute: Email`| Kontaktens e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
-      ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-contacts.png)
+     ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-contacts.png)
 
    **Arbeta med leads**
 
    * Om du arbetar med *Leads* inom ditt segment, se objektreferensen i Salesforce för [Lead](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) för att definiera mappningar för de fält som ska uppdateras.
    * Du kan identifiera obligatoriska fält genom att söka efter ordet *Obligatoriskt*, som nämns i fältbeskrivningar i länken ovan.
    * Beroende på vilka fält du vill exportera eller uppdatera lägger du till mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce CRM]: |Källfält|Målfält| Anteckningar | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. Ledningens efternamn är högst 80 tecken. |\
-      |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. Ledarens företag. | |`xdm: personalEmail.address`|`Attribute: Email`| Leads e-postadress. |
+     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. Ledarens företag. | |`xdm: personalEmail.address`|`Attribute: Email`| Leads e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
-      ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-leads.png)
-
-
+     ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-leads.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
-### Schemalägg segmentexport och exempel {#schedule-segment-export-example}
+### Schemalägg målgruppsexport och exempel {#schedule-segment-export-example}
 
-När du utför [Schemalägg segmentexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) steg måste du manuellt mappa segment som har aktiverats från Platform till deras motsvarande anpassade fält i [!DNL Salesforce].
+När du utför [Schemalägg målgruppsexport](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa målgrupper som har aktiverats från Platform till deras motsvarande anpassade fält i [!DNL Salesforce].
 
 Det gör du genom att markera varje segment och sedan ange det anpassade fältnamnet från [!DNL Salesforce] i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** fält. Se [Skapa anpassade fält i [!DNL Salesforce]](#prerequisites-custom-field) för vägledning och bästa metoder för att skapa anpassade fält i [!DNL Salesforce].
 
-Om [!DNL Salesforce] anpassat fält är `crm_2_seg`anger du det här värdet i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** för att fylla i segment från Experience Platform i detta anpassade fält.
+Om [!DNL Salesforce] anpassat fält är `crm_2_seg`anger du det här värdet i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** för att fylla målgrupper från Experience Platform i detta anpassade fält.
 
 Ett exempel på ett anpassat fält från [!DNL Salesforce] visas nedan:
 ![[!DNL Salesforce] Skärmbild i användargränssnittet med anpassat fält.](../../assets/catalog/crm/salesforce/salesforce-custom-field.png)
 
 Ett exempel som anger platsen för [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** visas nedan:
-![Exempel på skärmbild för användargränssnittet för plattformen som visar export av Schedule-segment.](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
+![Exempel på skärmbild för användargränssnittet för plattformen som visar export av schemalagda målgrupper.](../../assets/catalog/crm/salesforce/schedule-segment-export.png)
 
 Som visas ovan [!DNL Salesforce] **[!UICONTROL Field Name]** matchar exakt värdet som anges i [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]**.
 
-Beroende på ditt sätt att arbeta kan alla aktiverade segment mappas till samma [!DNL Salesforce] anpassat fält eller till annat **[!UICONTROL Field Name]** in [!DNL Salesforce CRM]. Ett typiskt exempel baserat på bilden ovan kan vara.
+Beroende på ditt användningssätt kan alla aktiverade målgrupper mappas till samma [!DNL Salesforce] anpassat fält eller till annat **[!UICONTROL Field Name]** in [!DNL Salesforce CRM]. Ett typiskt exempel baserat på bilden ovan kan vara.
 | [!DNL Salesforce CRM] segmentnamn | [!DNL Salesforce] **[!UICONTROL Field Name]** | [!DNL Salesforce CRM] **[!UICONTROL Mapping ID]** | | — | — | — | | crm_1_seg | `crm_1_seg` | `crm_1_seg` | | crm_2_seg | `crm_2_seg` | `crm_2_seg` |
 
 Upprepa det här avsnittet för varje aktiverat plattformssegment.
@@ -257,30 +253,29 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Markera målet och validera att statusen är **[!UICONTROL enabled]**.
    ![Skärmbild av användargränssnittet för plattformen med körning av måldataflöde.](../../assets/catalog/crm/salesforce/destination-dataflow-run.png)
 
-1. Växla till **[!UICONTROL Activation data]** väljer du ett segmentnamn.
+1. Växla till **[!UICONTROL Activation data]** väljer du ett målgruppsnamn.
    ![Skärmbild för användargränssnittet för plattformen visar aktiveringsdata för destinationer.](../../assets/catalog/crm/salesforce/destinations-activation-data.png)
 
-1. Övervaka segmentsammanfattningen och se till att antalet profiler motsvarar antalet som skapas i segmentet.
+1. Övervaka målgruppssammanfattningen och se till att antalet profiler motsvarar antalet som skapas inom segmentet.
    ![Exempel på skärmbild för plattformsgränssnitt som visar segment.](../../assets/catalog/crm/salesforce/segment.png)
 
-1. Logga sedan in på Salesforce-webbplatsen och validera om profilerna från segmentet har lagts till eller uppdaterats.
+1. Logga sedan in på Salesforce-webbplatsen och validera om profilerna från målgruppen har lagts till eller uppdaterats.
 
    **Arbeta med kontakter**
 
    * Om du har valt *Kontakter* i ditt plattformssegment navigerar du till **[!DNL Apps]** > **[!DNL Contacts]** sida.
-      ![Salesforce CRM-skärmbild som visar sidan Kontakter med profilerna från segmentet.](../../assets/catalog/crm/salesforce/contacts.png)
+     ![Salesforce CRM-skärmbild som visar sidan Kontakter med profilerna från segmentet.](../../assets/catalog/crm/salesforce/contacts.png)
 
-   * Välj en *Kontakt* och kontrollera om fälten har uppdaterats. Du kan se att varje segmentstatus i [!DNL Salesforce CRM] uppdaterades med motsvarande segmentstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [segmentplanering](#schedule-segment-export-example).
-      ![Salesforce CRM-skärmbild som visar sidan Kontaktinformation med uppdaterade segmentstatusar.](../../assets/catalog/crm/salesforce/contact-info.png)
+   * Välj en *Kontakt* och kontrollera om fälten har uppdaterats. Du kan se att varje målgruppsstatus i [!DNL Salesforce CRM] uppdaterades med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example).
+     ![Salesforce CRM-skärmbild som visar sidan Kontaktinformation med uppdaterade målgruppsstatusar.](../../assets/catalog/crm/salesforce/contact-info.png)
 
    **Arbeta med leads**
 
    * Om du har valt *Leads* i ditt plattformssegment, navigera sedan till **[!DNL Apps]** > **[!DNL Leads]** sida.
-      ![Salesforce CRM-skärmbild som visar sidan Leads med profilerna från segmentet.](../../assets/catalog/crm/salesforce/leads.png)
+     ![Salesforce CRM-skärmbild som visar sidan Leads med profilerna från segmentet.](../../assets/catalog/crm/salesforce/leads.png)
 
-   * Välj en *Lead* och kontrollera om fälten har uppdaterats. Du kan se att varje segmentstatus i [!DNL Salesforce CRM] uppdaterades med motsvarande segmentstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [segmentplanering](#schedule-segment-export-example).
-      ![Salesforce CRM, bild som visar sidan Leadinformation med uppdaterade segmentstatusar.](../../assets/catalog/crm/salesforce/lead-info.png)
-
+   * Välj en *Lead* och kontrollera om fälten har uppdaterats. Du kan se att varje målgruppsstatus i [!DNL Salesforce CRM] uppdaterades med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example).
+     ![Salesforce CRM, bild som visar sidan Leadinformation med uppdaterade målgruppsstatusar.](../../assets/catalog/crm/salesforce/lead-info.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
@@ -291,8 +286,7 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 ### Okända fel påträffades när händelser skickades till målet {#unknown-errors}
 
 * När du kontrollerar ett dataflöde kan följande felmeddelande visas: `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
-
-   ![Skärmbild för användargränssnittet för plattformen visar ett fel.](../../assets/catalog/crm/salesforce/error.png)
+  ![Skärmbild för användargränssnittet för plattformen visar ett fel.](../../assets/catalog/crm/salesforce/error.png)
 
    * Kontrollera att **[!UICONTROL Mapping ID]** som du angav i aktiveringsarbetsflödet för [!DNL Salesforce CRM] målet matchar exakt värdet för den anpassade fälttyp som du skapade i [!DNL Salesforce]. Se [Skapa anpassade fält i [!DNL Salesforce]](#prerequisites-custom-field) för vägledning.
 

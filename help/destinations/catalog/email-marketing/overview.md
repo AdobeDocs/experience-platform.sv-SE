@@ -4,7 +4,7 @@ title: Översikt över destinationer för e-postmarknadsföring
 type: Tutorial
 description: Med ESP (Email Service Providers) kan ni hantera era e-postmarknadsföringsaktiviteter, t.ex. för att skicka e-postkampanjer. Lär dig vilka ESP:er som stöds som Experience Platform-mål.
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 152786e5e994a88b19ca7af8815b33be5a732852
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 2%
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 ## Översikt {#overview}
 
-Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera segment för e-postmarknadsföring.
+Med ESP (Email Service Providers) kan du hantera dina e-postmarknadsföringsaktiviteter, som att skicka e-postkampanjer med reklam. Adobe Experience Platform kan integreras med ESP:er genom att ni kan aktivera målgrupper för e-postmarknadsföringsmål.
 
 ## E-postmarknadsföringsmål som stöds {#supported-destinations}
 
@@ -34,7 +34,7 @@ Adobe Experience Platform har stöd för följande e-postmarknadsföringsmål:
 
 ## Anslut till ett nytt mål för e-postmarknadsföring {#connect-destination}
 
-För att kunna skicka segment till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
+För att kunna skicka målgrupper till e-postmarknadsföringsmål för era kampanjer måste Platform först ansluta till destinationen. Se [självstudiekurs om att skapa mål](../../ui/connect-destination.md) för detaljerad information om hur du konfigurerar ett nytt mål.
 
 ## Bästa tillvägagångssätt när ni aktiverar målgrupper för e-postmarknadsföring {#best-practices}
 
@@ -67,13 +67,13 @@ Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. N�
 
 {style="table-layout:auto"}
 
-## Aktivera segment för e-postmarknadsföringsmål {#activate}
+## Aktivera målgrupper för e-postmarknadsföringsmål {#activate}
 
 Vissa e-postmarknadsföringsmål i katalogexportprofilerna på ett direktuppspelat sätt, via en API-integrering med målet.
 
 Andra mål exporterar filer till en molnlagringsplats. När exporten är klar måste du importera data från molnlagringsplatsen till ditt e-postmarknadsföringsmål.
 
-Följ länkarna i [e-postmarknadsföringsmål som stöds](#supported-destinations) om du vill veta hur du aktiverar segment för varje e-postmarknadsföringsmål.
+Följ länkarna i [e-postmarknadsföringsmål som stöds](#supported-destinations) om du vill lära dig hur du aktiverar målgrupper för varje e-postmarknadsföringsmål.
 
 ## Ytterligare resurser {#additional-resources}
 

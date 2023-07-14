@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '955'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Airship] är den ledande plattformen för kundengagemang, som hjälper er att leverera meningsfulla, personaliserade meddelanden i alla kanaler till era användare under hela kundlivscykeln.
 
-Den här integreringen överför data från Adobe Experience Platform segment till [!DNL Airship] as [Taggar](https://docs.airship.com/guides/audience/tags/) för målinriktning eller utlösande åtgärder.
+Den här integreringen överför målgruppsdata från Adobe Experience Platform till [!DNL Airship] as [Taggar](https://docs.airship.com/guides/audience/tags/) för målinriktning eller utlösande åtgärder.
 
 Mer information om [!DNL Airship], se [Airship Docs](https://docs.airship.com).
 
@@ -27,7 +27,7 @@ Mer information om [!DNL Airship], se [Airship Docs](https://docs.airship.com).
 
 ## Förutsättningar
 
-Innan du skickar dina Adobe Experience Platform-segment till [!DNL Airship]måste du:
+Innan du kan skicka dina Adobe Experience Platform-målgrupper till [!DNL Airship]måste du:
 
 * Skapa en tagggrupp i [!DNL Airship] projekt.
 * Generera en innehavartoken för autentisering.
@@ -36,20 +36,32 @@ Innan du skickar dina Adobe Experience Platform-segment till [!DNL Airship]måst
 > 
 >Skapa en [!DNL Airship] konto via [den här signeringslänken](https://go.airship.eu/accounts/register/plan/starter/) om du inte redan gjort det.
 
+## Stöd för externa målgrupper {#external-audiences-support}
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de externa målgrupper som beskrivs i tabellen nedan.
+
+| Extern målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare som används i målet för Airship-taggar. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare som används i målet för Airship-taggar. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## Tagggrupper
 
-Segmentkonceptet i Adobe Experience Platform liknar det i [Taggar](https://docs.airship.com/guides/audience/tags/) i Airship, med små skillnader i genomförandet. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](../../../xdm/field-groups/profile/segmentation.md) till förekomsten eller frånvaron av en [!DNL Airship] -tagg. I ett plattformssegment där `xdm:status` ändringar i `realized`, läggs taggen till i [!DNL Airship] kanal eller namngiven användare som profilen är mappad till. Om `xdm:status` ändringar i `exited`, tas taggen bort.
+Målgrupper i Adobe Experience Platform liknar [Taggar](https://docs.airship.com/guides/audience/tags/) i Airship, med små skillnader i genomförandet. Den här integreringen mappar statusen för en användares [medlemskap i ett Experience Platform-segment](../../../xdm/field-groups/profile/segmentation.md) till förekomsten eller frånvaron av en [!DNL Airship] -tagg. I en publik på Platform där `xdm:status` ändringar i `realized`, läggs taggen till i [!DNL Airship] kanal eller namngiven användare som profilen är mappad till. Om `xdm:status` ändringar i `exited`, tas taggen bort.
 
 Om du vill aktivera den här integreringen skapar du en *tagggrupp* in [!DNL Airship] namngiven `adobe-segments`.
 
@@ -75,13 +87,13 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Airship Tags
 
 ### Använd skiftläge 1
 
-Återförsäljare eller underhållningsplattformar kan skapa användarprofiler för sina lojalitetskunder och skicka dessa segment till [!DNL Airship] för målgruppsanpassning av budskap i mobilkampanjer.
+Återförsäljare eller underhållningsplattformar kan skapa användarprofiler för sina lojalitetskunder och skicka dessa målgrupper till [!DNL Airship] för målgruppsanpassning av budskap i mobilkampanjer.
 
 ### Använd skiftläge 2
 
-Utlös personliga meddelanden i realtid när användare faller in i eller ut ur specifika segment inom Adobe Experience Platform.
+Trigga personliga meddelanden i realtid när användare faller in i eller ut från en viss målgrupp inom Adobe Experience Platform.
 
-En återförsäljare skapar till exempel ett jeans-specifikt segment i Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sina jeans-preferenser för ett visst varumärke.
+En återförsäljare skapar till exempel en jeans varumärkesspecifik publik i Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sina jeans-preferenser för ett visst varumärke.
 
 ## Anslut till målet {#connect}
 
@@ -111,13 +123,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsöverväganden {#mapping-considerations}
 

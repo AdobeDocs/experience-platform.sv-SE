@@ -1,12 +1,12 @@
 ---
 keywords: mobil;mål för mobilengagemang;LINE;LINE mobile engagement destination
 title: LINJEanslutning
-description: Med LINE-destinationen kan ni lägga till profiler i ert plattformssegment och leverera personaliserade upplevelser till anslutna användare.
+description: Med LINE-destinationen kan ni lägga till profiler till era plattformar och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1132'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 [[!DNL LINE]](https://line.me/en/) är en populär kommunikationsplattform som knyter samman människor, tjänster och information och har växt från en chattapp till ett nav för underhållning, sociala aktiviteter och dagliga aktiviteter.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL LINE] MeddelandeAPI](https://developers.line.biz/en/reference/messaging-api/). Du kan aktivera profiler från dina Experience Platform-segment som anslutningar i [!DNL LINE] för era behov.
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL LINE] MeddelandeAPI](https://developers.line.biz/en/reference/messaging-api/). Du kan aktivera profiler från dina Experience Platform-målgrupper som anslutningar inom [!DNL LINE] för era behov.
 
 [!DNL LINE] använder Bearer Tokens som autentiseringsmekanism för att kommunicera med [!DNL LINE] MeddelandeAPI. Instruktioner för hur du autentiserar [!DNL LINE] -instansen är längre ned, inom [Autentisera till mål](#authenticate) -avsnitt.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare kan ni inrikta er på användare i en mobil engagemangsdestination, med inbyggda segment [!DNL Adobe Experience Platform]. Dessutom kan ni leverera personaliserade upplevelser till dem utifrån deras attribut [!DNL Adobe Experience Platform] profiler så snart segment och profiler uppdateras i [!DNL Adobe Experience Platform].
+Som marknadsförare kan ni inrikta er på användare i en mobil engagemangsdestination med inbyggda målgrupper [!DNL Adobe Experience Platform]. Dessutom kan ni leverera personaliserade upplevelser till dem utifrån deras attribut [!DNL Adobe Experience Platform] profiler så snart som målgrupper och profiler uppdateras i [!DNL Adobe Experience Platform].
 
 ## Förutsättningar {#prerequisites}
 
@@ -67,8 +67,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i [!DNL LINE] mål. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i [!DNL LINE] mål. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -107,13 +107,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
@@ -129,13 +129,13 @@ Om din målidentitet är *ID för annonsörer (IFA)* nedan:
 
 ## Validera dataexport {#exported-data}
 
-Vid en lyckad dataexport från Experience Platform [!DNL LINE] målgruppen skapar en ny målgrupp inom [!DNL LINE] med det valda segmentnamnet.
+Vid en lyckad dataexport från Experience Platform [!DNL LINE] målgruppen skapar en ny målgrupp inom [!DNL LINE] med det valda målgruppsnamnet.
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. I [!DNL LINE]loggar du in på [Manager-konsol](https://manager.line.biz/).
 
-1. Navigera sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar det valda segmentet i **[!UICONTROL Audience name]** kolumn.
+1. Navigera sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar den valda publiken i **[!UICONTROL Audience name]** kolumn.
 
 1. Den uppdaterade volymen skulle matcha antalet inom segmentet.
 

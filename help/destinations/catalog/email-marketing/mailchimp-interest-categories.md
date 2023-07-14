@@ -2,9 +2,9 @@
 title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: f8ccf9303fbcb010225881942de5e672b4111072
+source-git-commit: a293df660a9b959d12bdc170d1cb69f3543a30f1
 workflow-type: tm+mt
-source-wordcount: '2268'
+source-wordcount: '2267'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 [[!DNL Mailchimp]](https://mailchimp.com) är en populär plattform för automatiserad marknadsföring och en e-postmarknadsföringstjänst som används av företag för att hantera och tala med kontakter *(kunder, kunder eller andra berörda parter)* med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 
-[!DNL Mailchimp Interest Categories] använder [målgrupper](https://mailchimp.com/help/getting-started-audience/), [grupper](https://mailchimp.com/help/getting-started-with-groups/)och intressekategorier *(kallas även gruppnamn eller gruppnamn)*. Varje [!DNL Mailchimp] grupp är en lista över intressekategorier. Kontakter är kopplade till en intressekategori när de prenumererar på en eller flera intressekategorier via ett registreringsformulär på din webbplats. Inom en målgrupp kan du också ordna kontakterna i grupper och associera dem med intressekategorier, och dessa kan sedan användas för att skapa segment. Du kan använda dessa segment för att skicka riktade kampanjer via e-post till de prenumererade kontakterna.
+[!DNL Mailchimp Interest Categories] använder [målgrupper](https://mailchimp.com/help/getting-started-audience/), [grupper](https://mailchimp.com/help/getting-started-with-groups/)och intressekategorier *(kallas även gruppnamn eller gruppnamn)*. Varje [!DNL Mailchimp] grupp är en lista över intressekategorier. Kontakter är kopplade till en intressekategori när de prenumererar på en eller flera intressekategorier via ett registreringsformulär på din webbplats. Inom en målgrupp kan du också ordna kontakterna i grupper och associera dem med intressekategorier, och dessa kan sedan användas för att skapa segment. Du kan använda dessa målgrupper för att sända riktade kampanjer via e-post till de prenumererade kontakterna.
 
 <!--
 Compared to [!DNL Mailchimp Tags] which you would use for internal classification, [!DNL Mailchimp Interest Categories] is meant to manage subscriptions to topics of interest that your contacts might be interested in. *Note, Experience Platform also has a connection for [!DNL Mailchimp Tags], you can check it out on the [[!DNL Mailchimp Tags]](/help/destinations/catalog/email-marketing/mailchimp-tags.md) page.*
 -->
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/) API att skapa [räntekategorier](https://mailchimp.com/developer/marketing/api/interest-categories/) och sedan lägga till kontakter från vart och ett av de valda plattformssegmenten i en motsvarande intressekategori. Du kan **lägg till nya kontakter** eller **uppdatera information om befintlig [!DNL Mailchimp] kontakter** sedan **lägga till eller ta bort dem från önskad grupp** inom en befintlig [!DNL Mailchimp] efter att ha aktiverat dem i ett nytt segment. [!DNL Mailchimp Interest Groups] använder de valda segmentnamnen från Platform som intressekategorier inom [!DNL Mailchimp].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [[!DNL Mailchimp batch subscribe or unsubscribe API]](https://mailchimp.com/developer/marketing/api/lists/batch-subscribe-or-unsubscribe/) API att skapa [räntekategorier](https://mailchimp.com/developer/marketing/api/interest-categories/) och sedan lägga till kontakter från var och en av de valda plattformsmålgrupperna i en motsvarande intressekategori. Du kan **lägg till nya kontakter** eller **uppdatera information om befintlig [!DNL Mailchimp] kontakter** sedan **lägga till eller ta bort dem från önskad grupp** inom en befintlig [!DNL Mailchimp] efter att ha aktiverat dem i ett nytt segment. [!DNL Mailchimp Interest Groups] använder de valda målgruppsnamnen från Platform som intressekategorier inom [!DNL Mailchimp].
 
 ## Användningsfall {#use-cases}
 
@@ -27,7 +27,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Mailchimp In
 
 ### Skicka e-post till kontakter för marknadsföringskampanjer {#use-case-send-emails}
 
-Försäljningsavdelningen på en webbplats för sportartiklar vill sända en e-postbaserad marknadsföringskampanj till en lista över kontakter som själva har identifierats som intresserade av fotboll. Listorna över kontakter delas upp som grupper i dataexporten som tas emot från webbplatsens utvecklingsteam och måste därför spåras. Teamet identifierar en befintlig [!DNL Mailchimp] målgrupp och börjar bygga upp de Experience Platform-segment där kontakterna från varje lista läggs till. När dessa segment har skickats till [!DNL Mailchimp Interest Categories], om det inte finns några kontakter i det markerade [!DNL Mailchimp] målgrupp som de läggs till i en grupp med det segmentnamn som kontakten tillhör. Om det redan finns kontakter i [!DNL Mailchimp] målgrupp eller grupp, så uppdateras deras information. När data har skickats till [!DNL Mailchimp Interest Categories]kan säljarna välja och skicka marknadsföringskampanjer via e-post till fotbollsintressegruppen i [!DNL Mailchimp] målgrupp.
+Försäljningsavdelningen på en webbplats för sportartiklar vill sända en e-postbaserad marknadsföringskampanj till en lista över kontakter som själva har identifierats som intresserade av fotboll. Listorna över kontakter delas upp som grupper i dataexporten som tas emot från webbplatsens utvecklingsteam och måste därför spåras. Teamet identifierar en befintlig [!DNL Mailchimp] målgruppen och börjar bygga upp de Experience Platform-målgrupper i vilka kontakterna från varje lista läggs till. När dessa målgrupper har skickats till [!DNL Mailchimp Interest Categories], om det inte finns några kontakter i det markerade [!DNL Mailchimp] målgrupp som de läggs till i en grupp med det målgruppsnamn som kontakten tillhör. Om det redan finns kontakter i [!DNL Mailchimp] målgrupp eller grupp, så uppdateras deras information. När data har skickats till [!DNL Mailchimp Interest Categories]kan säljarna välja och skicka marknadsföringskampanjer via e-post till fotbollsintressegruppen i [!DNL Mailchimp] målgrupp.
 
 ## Förutsättningar {#prerequisites}
 
@@ -91,8 +91,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje markerat segment i plattformen visas motsvarande [!DNL Mailchimp Interest Categories] segmentets status uppdateras med dess segmentstatus från Platform.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald publik i Platform [!DNL Mailchimp Interest Categories] segmentets status uppdateras med målgruppsstatus från Platform.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutaren uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -147,13 +147,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
@@ -195,8 +195,8 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 ![Skärmbild av gränssnittet för Mailchimp som visar sidan för målgruppsgruppen.](../../assets/catalog/email-marketing/mailchimp-interest-categories/audience-groups.png)
 
-* Markera gruppen och kontrollera om de valda segmenten skapas som kategorier med segmentnamnet från plattformen, som kan följas av ett automatiskt genererat suffix.
-   * Det här målet använder de valda segmentens namn för att skapa intressekategorin med hjälp av [[!DNL Mailchimp] Lägg till API för räntekategori](https://mailchimp.com/developer/marketing/api/interest-categories/add-interest-category/). Om du skapar ett nytt mål och aktiverar samma segment igen [!DNL Mailchimp] lägger till ett suffix för att skilja mellan befintliga och nya segment.
+* Markera gruppen och kontrollera om de valda målgrupperna har skapats som kategorier med målgruppsnamnet från Platform, som kan följas av ett automatiskt genererat suffix.
+   * Det här målet använder de valda segmentens namn för att skapa intressekategorin med hjälp av [[!DNL Mailchimp] Lägg till API för räntekategori](https://mailchimp.com/developer/marketing/api/interest-categories/add-interest-category/). Om du skapar ett nytt mål och aktiverar samma målgrupper igen, [!DNL Mailchimp] lägger till ett suffix för att skilja mellan befintliga och nya segment.
 * Kontakter vars e-postmeddelanden inte fanns i gruppen läggs till i kategorin som skapades nyligen.
 * För kontakter som redan finns i gruppen uppdateras attributfältsdata och kontakten läggs till i den nyligen skapade kategorin.
 

@@ -1,7 +1,7 @@
 ---
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '996'
 ht-degree: 1%
@@ -112,8 +112,8 @@ I exempelkonfigurationen nedan visas en konfigurerbar aggregeringskonfiguration.
 | `configurableAggregation.maxBatchAgeInSecs` | Heltal | Används i konjugering med `maxNumEventsInBatch`anger den här parametern hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <ul><li>Minsta värde (sekunder): 1800</li><li>Högsta värde (sekunder): 3600</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
 | `configurableAggregation.maxNumEventsInBatch` | Heltal | Används tillsammans med `maxBatchAgeInSecs`anger den här parametern hur många kvalificerade profiler som ska aggregeras i ett API-anrop. <ul><li>Minsta värde: 1000</li><li>Högsta värde: 10000</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
 | `configurableAggregation.aggregationKey` | – | Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. |
-| `configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ställ in den här parametern på `true` om du vill gruppera profiler som exporterats till ditt mål efter segment-ID. |
-| `configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` till `true`om du vill gruppera profiler som exporterats till ditt mål efter segment-ID och segmentstatus. |
+| `configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ställ in den här parametern på `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID. |
+| `configurableAggregation.aggregationKey.includeSegmentStatus` | Boolean | Ange både den här parametern och `includeSegmentId` till `true`om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID och målgruppsstatus. |
 | `configurableAggregation.aggregationKey.includeIdentity` | Boolean | Ställ in den här parametern på `true` om du vill gruppera profiler som exporterats till ditt mål efter identitetsnamnutrymme. |
 | `configurableAggregation.aggregationKey.oneIdentityPerGroup` | Boolean | Ange den här parametern till `true` om du vill att de exporterade profilerna ska samlas i grupper baserat på en enda identitet (GAID, IDFA, telefonnummer, e-post osv.). |
 | `configurableAggregation.aggregationKey.groups` | Array | Skapa listor med identitetsgrupper om du vill gruppera profiler som exporterats till ditt mål med grupper av identitetsnamnutrymmen. Du kan t.ex. kombinera profiler som innehåller IDFA- och GAID-mobilidentifierare i ett anrop till ditt mål och e-postmeddelanden i ett annat genom att använda konfigurationen som visas i exemplet ovan. |

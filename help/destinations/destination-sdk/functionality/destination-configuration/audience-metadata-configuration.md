@@ -1,7 +1,7 @@
 ---
 description: Lär dig konfigurera inställningar för målgruppsmetadata för mål som skapats med Destination SDK.
 title: Konfiguration av målgruppsmetadata
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '400'
 ht-degree: 1%
@@ -11,13 +11,13 @@ ht-degree: 1%
 
 # Konfiguration av målgruppsmetadata
 
-När du exporterar data från Experience Platform till destinationen kan du behöva särskilda målgruppsmetadata, som segmentnamn eller segment-ID:n, för att kunna delas mellan Experience Platform och destinationen.
+När du exporterar data från Experience Platform till målplatsen kan du behöva särskilda målgruppsmetadata, som målgruppsnamn eller målgrupps-ID:n, för att kunna delas mellan Experience Platform och målplatsen.
 
 Destination SDK innehåller verktyg som du kan använda för att skapa, uppdatera eller ta bort målgrupper programmatiskt på målplattformen.
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-destination-configuration).
 
-Du kan konfigurera metadatamallen för målgruppen via `/authoring/audience-templates` slutpunkt. När du har skapat konfigurationen av målgruppsmetadata kan du använda `/authoring/destinations` slutpunkt för att konfigurera `audienceMetadataConfig` -avsnitt. I det här avsnittet anges vilka segmentmetadata som ska mappas till målgruppsmallen.
+Du kan konfigurera metadatamallen för målgruppen via `/authoring/audience-templates` slutpunkt. När du har skapat konfigurationen av målgruppsmetadata kan du använda `/authoring/destinations` slutpunkt för att konfigurera `audienceMetadataConfig` -avsnitt. I det här avsnittet anges vilka målgruppsmetadata som ska mappas till målgruppsmallen.
 
 På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
@@ -41,7 +41,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ## Parametrar som stöds {#supported-parameters}
 
-När du skapar din konfiguration av målgruppsmetadata kan du använda parametrarna som beskrivs i tabellen nedan för att konfigurera inställningarna för segmentmappning.
+När du skapar din konfiguration för målgruppsmetadata kan du använda de parametrar som beskrivs i tabellen nedan för att konfigurera inställningarna för målgruppsmappning.
 
 ```json
   "audienceMetadataConfig":{
@@ -54,8 +54,8 @@ När du skapar din konfiguration av målgruppsmetadata kan du använda parametra
 
 | Parameter | Typ | Beskrivning |
 |---------|----------|------|
-| `mapExperiencePlatformSegmentName` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform-segmentnamnet. |
-| `mapExperiencePlatformSegmentId` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) i målaktiveringsarbetsflödet ska vara Experience Platform segment-ID. |
+| `mapExperiencePlatformSegmentName` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgruppsnamnet. |
+| `mapExperiencePlatformSegmentId` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgrupps-ID. |
 | `mapUserInput` | Boolean | Aktiverar eller inaktiverar användarindata för [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) i målaktiveringsarbetsflödet. Om inställt på `true`, `audienceTemplateId` kan inte finnas. |
 | `audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för ditt mål. |
 

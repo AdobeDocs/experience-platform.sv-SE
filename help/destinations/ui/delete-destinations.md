@@ -4,7 +4,7 @@ title: Ta bort mål
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort ett befintligt mål i Adobe Experience Platform-gränssnittet
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: 1ef6430b6661a2b8b5aef196b75cfaf3f6220aab
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform användargränssnitt kan du ta bort befintliga anslutningar till mål.
 
-Om du tar bort ett mål tas alla befintliga dataflöden till det målet bort. Alla segment som aktiveras för de mål som du tar bort mappas inte innan dataflödet tas bort.
+Om du tar bort ett mål tas alla befintliga dataflöden till det målet bort. Alla målgrupper som aktiveras för de mål som du tar bort mappas inte innan dataflödet tas bort.
 
 Det finns två sätt att ta bort mål från [!DNL Platform] [!DNL UI]. Du kan:
 
@@ -61,11 +61,11 @@ Följ stegen nedan för att ta bort ett mål från sidan med målinformation.
 
    * Om målet har befintliga dataflöden tas du till [!UICONTROL Dataflow runs] -fliken.
 
-      ![Fliken Dataflöden körs](../assets/ui/delete-destinations/destination-details-dataflows.png)
+     ![Fliken Dataflöden körs](../assets/ui/delete-destinations/destination-details-dataflows.png)
 
    * Om målet inte har några befintliga dataflöden kommer du till en tom sida där du kan börja aktivera målgrupper.
 
-      ![Destinationsinformation](../assets/ui/delete-destinations/destination-details-empty.png)
+     ![Destinationsinformation](../assets/ui/delete-destinations/destination-details-empty.png)
 
 4. Välj **[!UICONTROL Delete]** i rätt spår.
 

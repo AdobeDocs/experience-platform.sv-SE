@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett direktuppspelningsmål
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '820'
 ht-degree: 0%
@@ -150,7 +150,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## Steg 3: Skapa meddelandeomvandlingsmall - använd mallspråk för att ange meddelandets utdataformat {#create-transformation-template}
 
-Beroende på vilka nyttolaster målet har stöd för måste du skapa en mall som omformar formatet för exporterade data från Adobe XDM-formatet till ett format som stöds av målet. Se mallexempel i avsnittet [Använda ett mallspråk för identitet, attribut och segmentmedlemskapsomvandlingar](../functionality/destination-server/message-format.md#using-templating) och använder [mallutvecklingsverktyg](../testing-api/streaming-destinations/create-template.md) tillhandahålls av Adobe.
+Beroende på vilka nyttolaster målet har stöd för måste du skapa en mall som omformar formatet för exporterade data från Adobe XDM-formatet till ett format som stöds av målet. Se mallexempel i avsnittet [Använda ett mallspråk för omvandlingar av identitet, attribut och målgruppsmedlemskap](../functionality/destination-server/message-format.md#using-templating) och använder [mallutvecklingsverktyg](../testing-api/streaming-destinations/create-template.md) tillhandahålls av Adobe.
 
 När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du till den i server- och mallkonfigurationen som du skapade i steg 1.
 
@@ -273,10 +273,10 @@ Om du valde `"authenticationRule": "PLATFORM_AUTHENTICATION"`måste du skapa en 
 
 När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
-Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
+Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
-* [Skapa en dokumentationssida för segment](/help/segmentation/ui/overview.md#create-segment)
-* [Skapa en segmentvideogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
+* [Skapa en publikdokumentationssida](/help/segmentation/ui/overview.md#create-segment)
+* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
 

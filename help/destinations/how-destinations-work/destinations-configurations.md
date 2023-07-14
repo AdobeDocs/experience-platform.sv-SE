@@ -2,7 +2,7 @@
 title: Konfigurerbara och gemensamma exportinställningar för destinationer
 description: Lär dig vilka exportinställningar i destinationer som kan konfigureras på en målnivå och som är fasta och inte kan redigeras.
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: a0400ab255b3b6a7edb4dcfd5c33a0f9e18b5157
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '845'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Läs mer om de olika alternativen och stegen i aktiveringsarbetsflödet:
 
 * [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md)
 * [Aktivera målgruppsdata för företagsdestinationer](/help/destinations/ui/activate-streaming-profile-destinations.md)
-* [Aktivera målgruppsdata för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md)
+* [Aktivera målgruppsdata för direktuppspelad målgruppsexport](/help/destinations/ui/activate-segment-streaming-destinations.md)
 * [Exportera filer on demand till batchmål](/help/destinations/ui/export-file-now.md)
 * [(Beta) Exportera datauppsättningar till molnlagringsmål](/help/destinations/ui/export-datasets.md)
 

@@ -1,11 +1,11 @@
 ---
 keywords: personalisering;personalisering
 title: Översikt över destinationer för personalisering
-description: Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
+description: Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgrupper med liknande vanor.
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: 0dbd050a9057f491537777ab539bfc687f8c89cb
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '153'
+source-wordcount: '151'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgruppssegment med liknande vanor.
+Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgrupper med liknande vanor.
 
 ## Destinationer för personalisering som stöds {#supported-destinations}
 

@@ -2,7 +2,7 @@
 description: Lär dig hur du använder API:t för måltestning för att testa omformningsmallen för målmeddelanden för direktuppspelning innan du publicerar målet.
 title: Skapa och testa en meddelandeomformningsmall
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '950'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Nedan visas hur du skapar och testar en meddelandeomformningsmall som passar in 
 
 ## Varför du måste skapa och testa en meddelandeomformningsmall {#why-create-message-transformation-template}
 
-Ett av de första stegen i att skapa destinationen i Destination SDK är att tänka på hur dataformatet för segmentmedlemskap, identiteter och profilattribut ändras när de exporteras från Adobe Experience Platform till destinationen. Hitta information om omvandlingen mellan Adobe XDM-schemat och målschemat i [meddelandeformatdokument](../../functionality/destination-server/message-format.md#using-templating).
+Ett av de första stegen i att skapa destinationen i Destination SDK är att tänka på hur dataformatet för målgruppsmedlemskap, identiteter och profilattribut ändras när de exporteras från Adobe Experience Platform till destinationen. Hitta information om omvandlingen mellan Adobe XDM-schemat och målschemat i [meddelandeformatdokument](../../functionality/destination-server/message-format.md#using-templating).
 
 För att omvandlingen ska lyckas måste du skapa en omformningsmall som liknar den i det här exemplet: [Skapa en mall som skickar segment, identiteter och profilattribut](../../functionality/destination-server/message-format.md#segments-identities-attributes).
 
@@ -38,8 +38,8 @@ Adobe har ett mallverktyg som gör att du kan skapa och testa meddelandemallen s
 Innan du är redo att skapa mallen måste du slutföra stegen nedan:
 
 1. [Skapa en målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md). Mallen som du skapar skiljer sig åt, baserat på det värde som du anger för `maxUsersPerRequest` parameter.
-   * Använd `maxUsersPerRequest=1` om du vill att ett API-anrop till målet ska innehålla en enda profil, tillsammans med dess segmentkvalifikationer, identiteter och profilattribut.
-   * Använd `maxUsersPerRequest` med ett större värde än ett om du vill att ett API-anrop till målet ska innehålla flera profiler, tillsammans med deras segmentkvalifikationer, identiteter och profilattribut.
+   * Använd `maxUsersPerRequest=1` om du vill att ett API-anrop till destinationen ska innehålla en enda profil, tillsammans med målgruppens kvalifikationer, identiteter och profilattribut.
+   * Använd `maxUsersPerRequest` med ett värde som är större än ett om du vill att ett API-anrop till destinationen ska innehålla flera profiler, tillsammans med deras målgruppskvalifikationer, identiteter och profilattribut.
 2. [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) och lägg till ID:t för målserverkonfigurationen i `destinationDelivery.destinationServerId`.
 3. [Hämta ID:t för målkonfigurationen](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) som du just har skapat, så att du kan använda det i mallverktyget.
 4. Förstå [vilka funktioner och filter du kan använda](../../functionality/destination-server/supported-functions.md) i meddelandeomformningsmallen.
@@ -100,7 +100,7 @@ Om det mål-ID du anger motsvarar en målkonfiguration med [bästa ansträngning
         {% endfor %}
         ],
         "remove": [
-        {#- Alternative syntax for filtering segments by status: -#}
+        {#- Alternative syntax for filtering audiences by status: -#}
         {% for segment in removedSegments(input.profile.segmentMembership.ups) %}
             "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
         {% endfor %}
@@ -136,7 +136,7 @@ Om det mål-ID du anger motsvarar en målservermall med [konfigurerbar aggregeri
                 {% endfor %}
                 ],
                 "remove": [
-                {#- Alternative syntax for filtering segments by status: -#}
+                {#- Alternative syntax for filtering audiences by status: -#}
                 {% for segment in removedSegments(profile.segmentMembership.ups) %}
                     "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
                 {% endfor %}

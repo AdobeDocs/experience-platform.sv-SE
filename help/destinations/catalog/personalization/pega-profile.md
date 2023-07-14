@@ -3,9 +3,9 @@ title: Pega Profile Connector
 description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofildesignern för att importera profildata regelbundet från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1053'
 ht-degree: 0%
 
 ---
@@ -94,7 +94,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 >[!TIP]
 >
->I arbetsflödet för anslutningsmål kan du skapa en anpassad mapp i din Amazon S3-lagring per exporterad segmentfil. Läs [Använd makron för att skapa en mapp på lagringsplatsen](/help/destinations/catalog/cloud-storage/overview.md#use-macros) för instruktioner.
+>I arbetsflödet för anslutningsmål kan du skapa en anpassad mapp i din Amazon S3-lagring per exporterad målgruppsfil. Läs [Använd makron för att skapa en mapp på lagringsplatsen](/help/destinations/catalog/cloud-storage/overview.md#use-macros) för instruktioner.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -102,13 +102,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
@@ -116,7 +116,7 @@ I **[!UICONTROL Mapping]** kan du välja vilka attribut- och identitetsfält som
 
 ## Validera dataexport {#exported-data}
 
-För [!DNL Pega Profile Connector] destinationer, [!DNL Platform] skapar en `.csv` i den Amazon S3-lagringsplats som du har angett. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i segmentaktiveringssjälvstudiekursen.
+För [!DNL Pega Profile Connector] destinationer, [!DNL Platform] skapar en `.csv` i den Amazon S3-lagringsplats som du har angett. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.
 
 Vid import av profildata från S3 infogas data i [!DNL Pega Customer] profildatalager. Importerade kundprofildata kan valideras i [!DNL Pega Customer Profile Designer] , vilket visas i följande bild.
 ![Bild av användargränssnittsskärmen där du kan validera Adobe profildata i kundprofildesignern](../../assets/catalog/personalization/pega-profile/pega-profile-data.png)

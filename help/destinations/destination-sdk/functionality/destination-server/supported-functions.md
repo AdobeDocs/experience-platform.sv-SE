@@ -1,7 +1,7 @@
 ---
 description: I Experience Platform Destination SDK används mallar för att skapa bläddring, vilket gör att du kan omforma de data som exporteras från Experience Platform till det format som krävs för destinationen.
 title: Omformningsfunktioner som stöds i Destinationen SDK
-source-git-commit: ab87a2b7190a0365729ba7bad472fde7a489ec02
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '579'
 ht-degree: 1%
@@ -29,7 +29,7 @@ Meddelandetransformeringsmallen används i [målserverkonfiguration](templating-
 
 Om du vill veta mer om begrepp och funktioner på den här referenssidan läser du [meddelandeformat](message-format.md) dokument först. Du måste förstå [struktur för en profil](message-format.md#profile-structure) i Experience Platform innan du kan använda [!DNL Pebble] -mallar för att omforma och exportera data.
 
-Granska mallexemplen i avsnittet innan du går vidare till funktionerna som beskrivs nedan [Använda ett mallspråk för identitet, attribut och segmentmedlemskapsomvandlingar](message-format.md#using-templating). Exemplen där börjar mycket enkelt och blir mer komplicerade.
+Granska mallexemplen i avsnittet innan du går vidare till funktionerna som beskrivs nedan [Använda ett mallspråk för omvandlingar av identitet, attribut och målgruppsmedlemskap](message-format.md#using-templating). Exemplen där börjar mycket enkelt och blir mer komplicerade.
 
 ## Stöds [!DNL Pebble] funktioner {#supported-functions}
 
@@ -46,7 +46,6 @@ Från [!DNL Pebble] taggsektion, Destinationen SDK stöder endast:
 >
 > * Ett exempel på ett arrayelement är om du tänker på identiteterna i ett [identityMap](message-format.md#identities) namnutrymme, där du kan iterera genom element som `identityMap.gaid`, `identityMap.email`eller liknande.
 > * Ett exempel på ett kartelement kan vara att tänka på [segmentMembership](message-format.md#segment-membership).
-
 
 Från [!DNL Pebble] filtersektion, Destination SDK stöder alla funktioner. Ett exempel nedan visar hur `date` -funktionen kan användas i Destinationen SDK.
 
@@ -92,7 +91,7 @@ Förutom funktionerna som finns i [!DNL Pebble]finns nedan de ytterligare funkti
 
 #### Användningsfall
 
-Dessa funktioner kan användas för att få en lista över segment som har lagts till eller tagits bort från en profil.
+Dessa funktioner kan användas för att få en lista över målgrupper som har lagts till eller tagits bort från en profil.
 
 #### Exempel
 
@@ -143,7 +142,7 @@ added: <111111><333333>; removed: <222222>
 
 <!--
 
-### Added and removed segments filters {#added-and-removed-segmnts-filters}
+### Added and removed audiences filters {#added-and-removed-segmnts-filters}
 
 #### Use case {#use-case}
 

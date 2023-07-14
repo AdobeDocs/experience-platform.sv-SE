@@ -2,7 +2,7 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 8c8026b1180775dddd9517fc88727749678a5613
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
@@ -22,7 +22,6 @@ ht-degree: 0%
 >* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter ditt ursprungliga inskick, måste du skicka in en ny begäran om målpublicering när du har gjort uppdateringarna.
 >
 >* Även efter att målet finns i Experience Platform-katalogen måste du, om du behöver göra några uppdateringar av dina konfigurationer, skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna.
-
 
 Innan destinationen kan publiceras på [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md)måste du ge Adobe viss information om destinationen och testningen du utförde för att säkerställa att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
 
@@ -46,7 +45,7 @@ Du hittar detaljerad information om varje objekt i avsnitten nedan:
 Ange en beskrivning av de användningsfall som din destination löser för Experience Platform-kunder. Dina beskrivningar kan likna användningsexempel från befintliga partners:
 
 * [Pinterest](/help/destinations/catalog/advertising/pinterest.md): Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
-* [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases): DataX-API:er är tillgängliga för annonsörer som vill rikta sig till en viss målgruppsgrupp som är avstämd från e-postadresser i Verizon Media (VMG) kan snabbt skapa ett nytt segment och skicka den önskade målgruppsgruppen med hjälp av VMG:s API i nära realtid.
+* [Yahoo Data X](/help/destinations/catalog/advertising/datax.md#use-cases): DataX-API:er är tillgängliga för annonsörer som vill rikta sig till en viss målgruppsgrupp som är avstämd från e-postadresser i Verizon Media (VMG) kan snabbt skapa en ny målgrupp och skicka den önskade målgruppsgruppen med hjälp av VMG:s API i nära realtid.
 
 ## Orsak till uppdatering {#reason-for-update}
 

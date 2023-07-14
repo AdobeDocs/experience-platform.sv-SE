@@ -3,10 +3,10 @@ keywords: mobiler, bromsa, meddelanden,
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '945'
-ht-degree: 0%
+source-wordcount: '991'
+ht-degree: 1%
 
 ---
 
@@ -24,7 +24,7 @@ Skicka profildata till [!DNL Braze]måste du först ansluta till målet.
 
 Observera följande information som är specifik för [!DNL Braze] mål:
 
-* [!DNL Adobe Experience Platform] segment exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut.
+* [!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut.
 
 >[!NOTE]
 >
@@ -32,7 +32,7 @@ Observera följande information som är specifik för [!DNL Braze] mål:
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsdestination med inbyggda segment [!DNL Adobe Experience Platform]. Dessutom vill jag leverera personaliserade upplevelser till dem utifrån deras attribut [!DNL Adobe Experience Platform] profiler så snart segment och profiler uppdateras i [!DNL Adobe Experience Platform].
+Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsdestination med inbyggda målgrupper [!DNL Adobe Experience Platform]. Dessutom vill jag leverera personaliserade upplevelser till dem utifrån deras attribut [!DNL Adobe Experience Platform] profiler så snart som målgrupper och profiler uppdateras i [!DNL Adobe Experience Platform].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -44,14 +44,26 @@ Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsd
 
 {style="table-layout:auto"}
 
+## Stöd för externa målgrupper {#external-audiences-support}
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de externa målgrupper som beskrivs i tabellen nedan.
+
+| Extern målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.[!DNL Adobe Experience Platform] segment exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.[!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -83,13 +95,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsöverväganden {#mapping-considerations}
 
@@ -142,8 +154,8 @@ Säg ditt XDM-profilschema och ditt [!DNL Braze] -instansen innehåller följand
 
 |  | XDM-profilschema | [!DNL Braze] Instans |
 |---|---|---|
-| Attribut | <ul><li>person.name.firstName</code></li><li>person.name.lastName</code></li><li>mobilePhone.number</code></li></ul> | <ul><li>FirstName</code></li><li>LastName</code></li><li>Telefonnummer</code></li></ul> |
-| Identiteter | <ul><li>E-post</code></li><li>Google Ad ID (GAID)</code></li><li>Apple ID för annonsörer (IDFA)</code></li></ul> | <ul><li>external_id</code></li></ul> |
+| Attribut | <ul><li><code>person.name.firstName</code></li><li><code>person.name.lastName</code></li><li><code>mobilePhone.number</code></li></ul> | <ul><li><code>FirstName</code></li><li><code>LastName</code></li><li><code>Telefonnummer</code></li></ul> |
+| Identiteter | <ul><li><code>E-post</code></li><li><code>Google Ad ID (GAID)</code></li><li><code>Apple ID för annonsörer (IDFA)</code></li></ul> | <ul><li><code>external_id</code></li></ul> |
 
 Den korrekta mappningen skulle se ut så här:
 
@@ -151,7 +163,7 @@ Den korrekta mappningen skulle se ut så här:
 
 ## Exporterade data {#exported-data}
 
-Verifiera om data har exporterats till [!DNL Braze] mål, kontrollera [!DNL Braze] konto. [!DNL Adobe Experience Platform] segment exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut.
+Verifiera om data har exporterats till [!DNL Braze] mål, kontrollera [!DNL Braze] konto. [!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

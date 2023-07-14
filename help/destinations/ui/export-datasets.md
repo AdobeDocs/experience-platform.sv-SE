@@ -3,7 +3,7 @@ title: (Beta) Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: d9b59b8a331511e87171f3b9d1163d452ba469be
+source-git-commit: 6627953aba4f1cd665c3d5c4bc8711c48064374f
 workflow-type: tm+mt
 source-wordcount: '1366'
 ht-degree: 0%
@@ -35,14 +35,14 @@ För närvarande kan du exportera datauppsättningar till molnlagringsmål som m
 * [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
 * [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
-## När ska segment aktiveras eller datauppsättningar exporteras {#when-to-activate-segments-or-activate-datasets}
+## När målgrupper ska aktiveras eller datauppsättningar exporteras {#when-to-activate-audiences-or-activate-datasets}
 
-Vissa filbaserade mål i Experience Platform-katalogen stöder både segmentaktivering och datauppsättningsexport.
+Vissa filbaserade mål i Experience Platform-katalogen stöder både målgruppsaktivering och datauppsättningsexport.
 
-* Överväg att aktivera segment när ni vill att era data ska struktureras i profiler grupperade efter målgruppsintressen eller kvalifikationer.
+* Överväg att aktivera målgrupper när ni vill att era data ska struktureras i profiler grupperade efter målgruppsintressen eller kvalifikationer.
 * Du kan också överväga att exportera datauppsättningar när du vill exportera rådatauppsättningar, som inte grupperas eller struktureras efter målgruppsintressen eller kvalifikationer. Du kan använda dessa data för rapportering, datavetenskapliga arbetsflöden, för att uppfylla efterlevnadskrav och många andra användningsfall.
 
-Det här dokumentet innehåller all information som behövs för att exportera datauppsättningar. Om du vill aktivera segment för molnlagring eller e-postmarknadsföring läser du [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md).
+Det här dokumentet innehåller all information som behövs för att exportera datauppsättningar. Om du vill aktivera målgrupper för molnlagring eller e-postmarknadsföring läser du [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md).
 
 ## Förutsättningar {#prerequisites}
 

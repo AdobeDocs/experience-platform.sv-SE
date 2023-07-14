@@ -3,9 +3,9 @@ title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 83778bc5d643f69e0393c0a7767fef8a4e8f66e9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1053'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Det här dokumentet är utformat för att hjälpa dig att aktivera profiler för
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan aktivera segment till [!DNL The Trade Desk]måste du kontakta [!DNL The Trade Desk] kontoansvarig för att signera CRM-introduktionskontraktet. [!DNL The Trade Desk] ger sedan tillstånd och delar ditt annonsörs-ID för att konfigurera ditt mål.
+Innan du kan aktivera målgrupper för [!DNL The Trade Desk]måste du kontakta [!DNL The Trade Desk] kontoansvarig för att signera CRM-introduktionskontraktet. [!DNL The Trade Desk] ger sedan tillstånd och delar ditt annonsörs-ID för att konfigurera ditt mål.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -73,8 +73,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (målgrupp) med de identifierare (e-post eller hashade e-post) som används i Trade Desk-målet. |
-| Exportfrekvens | **[!UICONTROL Daily Batch]** | När en profil uppdateras i Experience Platform baserat på segmentutvärdering uppdateras profilen (identiteterna) en gång om dagen nedströms till målplattformen. Läs mer om [batchexport](/help/destinations/destination-types.md#file-based). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (e-post eller hashad e-post) som används i Trade Desk-målet. |
+| Exportfrekvens | **[!UICONTROL Daily Batch]** | När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering uppdateras profilen (identiteterna) en gång om dagen nedströms till målplattformen. Läs mer om [batchexport](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
@@ -97,25 +97,25 @@ Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skap
 
 När du ansluter till målet är det helt valfritt att ange en datastyrningsprincip. Granska Experience Platform [datastyrningsöversikt](/help/data-governance/policies/overview.md) för mer information.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
-Läs [aktivera målgruppsdata till exportmål för batchprofiler](/help/destinations/ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgruppssegment till ett mål.
+Läs [aktivera målgruppsdata till exportmål för batchprofiler](/help/destinations/ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till ett mål.
 
-I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje publik som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
 
-![Skärmbild för plattformsgränssnitt för att schemalägga segmentaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
+![Skärmbild för plattformsgränssnitt för att schemalägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment1.png)
 
 >[!NOTE]
 >
->Alla segment aktiverade för [!DNL The Trade Desk] CRM-målet ställs automatiskt in på en daglig frekvens och fullständig filexport.
+>Alla målgrupper aktiverade för [!DNL The Trade Desk] CRM-målet ställs automatiskt in på en daglig frekvens och fullständig filexport.
 
-![Skärmbild för plattformsgränssnitt för att schemalägga segmentaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
+![Skärmbild för plattformsgränssnitt för att schemalägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/schedulesegment2.png)
 
 I **[!UICONTROL Mapping]** måste du välja attribut eller identitetsnamnutrymmen i källkolumnen och mappa till målkolumnen.
 
-![Skärmbild av användargränssnittet för plattformen för att kartlägga segmentaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
+![Skärmbild av användargränssnittet för plattformen för att kartlägga målgruppsaktivering.](/help/destinations/assets/catalog/advertising/tradedesk/mappingsegment1.png)
 
-Nedan visas ett exempel på korrekt identitetsmappning när segment aktiveras för [!DNL The Trade Desk] CRM-mål.
+Nedan visas ett exempel på korrekt identitetsmappning när målgrupper aktiveras för [!DNL The Trade Desk] CRM-mål.
 
 >[!IMPORTANT]
 >
@@ -133,11 +133,11 @@ Markera målfält:
 
 ## Validera dataexport {#validate}
 
-Validera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk]hittar du segmenten under datapanelen Adobe 1PD i [!DNL The Trade Desk] Plattform för datahantering (DMP). Här följer stegen för att hitta motsvarande ID i [!DNL Trade Desk] Gränssnitt:
+Validera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk]hittar du målgrupperna under dataplattan Adobe 1PD i [!DNL The Trade Desk] Plattform för datahantering (DMP). Här följer stegen för att hitta motsvarande ID i [!DNL Trade Desk] Gränssnitt:
 
 1. Klicka först på **[!UICONTROL Data]** Flikar och granska **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]** hittar du **[!UICONTROL Adobe 1PD Tile]**.
-3. Klicka på**[!UICONTROL Adobe 1PD]** sida vid sida och visar alla segment som är aktiverade för [!DNL Trade Desk] mål för annonsören. Du kan också använda sökfunktionen.
+3. Klicka på**[!UICONTROL Adobe 1PD]** så listas alla målgrupper som är aktiverade för [!DNL Trade Desk] mål för annonsören. Du kan också använda sökfunktionen.
 4. Segment-ID # från Experience Platform visas som segmentnamn i [!DNL Trade Desk] Gränssnitt.
 
 ## Dataanvändning och styrning {#data-usage-governance}

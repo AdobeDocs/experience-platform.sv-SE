@@ -1,11 +1,11 @@
 ---
 title: TikTok-anslutning
-description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert det önskade segmentet från Adobe Experience Platform till TikTok med Adobe realtidsintegrering med TikTok Ads Manager.
+description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '954'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert det önskade segmentet från Adobe Experience Platform till TikTok med Adobe realtidsintegrering med TikTok Ads Manager. Besök [TikTok hjälpcenter för företag](https://ads.tiktok.com/help/article/audiences?lang=en) för mer information.
+Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager. Besök [TikTok hjälpcenter för företag](https://ads.tiktok.com/help/article/audiences?lang=en) för mer information.
 
 >[!IMPORTANT]
 >
@@ -26,7 +26,7 @@ För att du bättre ska förstå hur och när du ska använda TikTok-destination
 
 ### Användningsfall {#use-case-1}
 
-Ett sportklädmärke vill nå befintliga kunder via sina konton för sociala medier. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till TikTok för att visa annonser i sina kunders sociala medier.
+Ett sportklädmärke vill nå befintliga kunder via sina konton för sociala medier. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till TikTok för att visa annonser i sina kunders sociala medier.
 
 ## Förutsättningar {#prerequisites}
 
@@ -51,8 +51,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i TikTok-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i TikTok-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -88,17 +88,17 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa identiteter {#map}
 
-Nedan visas ett exempel på korrekt identitetsmappning när du exporterar segment till TikTok Ads Manager.
+Nedan visas ett exempel på korrekt identitetsmappning när du exporterar målgrupper till TikTok Ads Manager.
 
 Välja källfält:
 
@@ -112,7 +112,7 @@ Markera målfält:
 
 ## Exporterade data {#exported-data}
 
-Kontrollera [!DNL TikTok Ads Manager] konto (under **Resurser > Publiker**) för att verifiera om ditt Experience Platform-segment exporterades. Publiken fylls i som en målgruppstyp: `Partner Audience`.
+Kontrollera [!DNL TikTok Ads Manager] konto (under **Resurser > Publiker**) för att bekräfta om din Experience Platform-publik har exporterats. Publiken fylls i som en målgruppstyp: `Partner Audience`.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

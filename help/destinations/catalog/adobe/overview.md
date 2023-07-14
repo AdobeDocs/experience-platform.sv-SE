@@ -3,7 +3,7 @@ keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, m�
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: e3039944fff96bbb060fd800d7bbb032084c5010
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '234'
 ht-degree: 0%
@@ -45,8 +45,8 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 * [Marketo Munchkin-tillägg](../email/marketo-munchkin.md)
 * [Marketo Web Personalization-tillägg](../personalization/marketo-web-personalization.md)
 
-## Experience Platform segmentdelning
+## Experience Platform målgruppsdelning
 
-Använd segmentdelningsfunktionen Experience Platform för att dela dina Experience Platform-segment med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i dokumentationsportalen för Audience Manager):
+Använd Experience Platform för målgruppsdelning för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i dokumentationsportalen för Audience Manager):
 
-* [Dela Experience Platform med Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* [Experience Platform kan dela med sig av sina kunder till Adobe Audience Manager, Adobe Advertising Cloud och Adobe Target via integreringen med bastjänsterna](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)

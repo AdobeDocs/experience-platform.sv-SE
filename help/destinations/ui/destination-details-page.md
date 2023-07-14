@@ -1,9 +1,9 @@
 ---
 keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
-description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen omfattar målnamn, ID, segment som mappats till målet och kontroller för att redigera aktiveringen samt för att aktivera och inaktivera dataflödet.
+description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: dcbc0c3ef87be0bc296992819c9b1bc3ba6317e4
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '882'
 ht-degree: 0%
@@ -50,8 +50,8 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 
 | Höger rälsartikel | Beskrivning |
 | --- | --- |
-| [!UICONTROL Activate segments] | Välj den här kontrollen om du vill redigera vilka segment som mappas till målet, uppdatera exportscheman eller lägga till och ta bort mappade attribut och identiteter. Visa stödlinjerna på [aktivera målgruppsdata till segmenterade direktuppspelningsmål](./activate-segment-streaming-destinations.md), [aktivera målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md)och [aktivera målgruppsdata för direktuppspelning av profilbaserade mål](./activate-streaming-profile-destinations.md) för mer information. |
-| [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappningar för segment som tidigare har aktiverats, om det finns några. |
+| [!UICONTROL Activate audiences] | Välj den här kontrollen om du vill redigera vilka målgrupper som mappas till målet, uppdatera exportscheman eller lägga till och ta bort mappade attribut och identiteter. Visa stödlinjerna på [aktivera målgruppsdata till målgruppsdirektuppspelningsmål](./activate-segment-streaming-destinations.md), [aktivera målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md)och [aktivera målgruppsdata för direktuppspelning av profilbaserade mål](./activate-streaming-profile-destinations.md) för mer information. |
+| [!UICONTROL Delete] | Gör att du kan ta bort det här dataflödet och ta bort mappar för de målgrupper som tidigare aktiverats, om det finns några. |
 | [!UICONTROL Destination name] | Det här fältet kan redigeras för att uppdatera målets namn. |
 | [!UICONTROL Description] | Det här fältet kan redigeras för att uppdatera eller lägga till en valfri beskrivning till målet. |
 | [!UICONTROL Destination] | Representerar målplattformen som målgrupperna skickas till. Se [målkatalog](../catalog/overview.md) för mer information. |
@@ -81,7 +81,6 @@ The [!UICONTROL Dataflow runs] -fliken innehåller mätdata om dataflödet som k
 >* Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md), [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) och [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md) destinationer.
 >* För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) destinationer uppskattas de värden som är relaterade till identiteter som har uteslutits, misslyckats och aktiverats. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
 
-
 ![Vy för körning av dataflöde](../assets/ui/details-page/dataflow-runs.png)
 
 ### Varaktighet för dataflöde {#dataflow-runs-duration}
@@ -98,7 +97,7 @@ Mer information finns i [dataflödet körs till direktuppspelningsmål](/help/da
 
 ### Filbaserade mål {#file-based}
 
-För dataflöden som går till filbaserade mål gäller att **[!UICONTROL Processing duration]** beror på storleken på de data som exporteras och systeminläsningen. Observera också att dataflödet går till filbaserade mål delas upp per segment.
+För dataflöden som går till filbaserade mål gäller att **[!UICONTROL Processing duration]** beror på storleken på de data som exporteras och systeminläsningen. Observera också att dataflödet går till filbaserade mål uppdelas per målgrupp.
 
 ![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 
@@ -106,11 +105,11 @@ Mer information finns i [dataflödet körs till batchbaserade (filbaserade) mål
 
 ## [!UICONTROL Activation data] {#activation-data}
 
-The [!UICONTROL Activation data] På -fliken visas en lista med segment som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt), samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om ett visst segment väljer du dess namn i listan.
+The [!UICONTROL Activation data] På -fliken visas en lista med målgrupper som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt) samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om en viss målgrupp väljer du namnet i listan.
 
 >[!TIP]
 >
->Om du vill visa och redigera information om attribut och identiteter som är mappade till ett mål väljer du **[!UICONTROL Activate segments]** i [höger räl](#right-rail).
+>Om du vill visa och redigera information om attribut och identiteter som är mappade till ett mål väljer du **[!UICONTROL Activate audiences]** i [höger räl](#right-rail).
 
 ![Batchmål för aktiveringsdatavyn](../assets/ui/details-page/activation-data-batch.png)
 
@@ -118,4 +117,4 @@ The [!UICONTROL Activation data] På -fliken visas en lista med segment som har 
 
 >[!NOTE]
 >
->Mer information om hur du utforskar detaljsidan för ett segment finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
+>Mer information om hur du utforskar en målgrupps informationssida finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).

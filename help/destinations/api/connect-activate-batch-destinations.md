@@ -5,9 +5,9 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '3392'
+source-wordcount: '3389'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ I den här självstudien visas hur du använder API:t för Flow Service för att
 
 I den här självstudiekursen används [!DNL Adobe Campaign] mål i alla exempel, men stegen är identiska för alla gruppmolnlagring och e-postmarknadsföringsmål.
 
-![Översikt - stegen för att skapa ett mål och aktivera segment](../assets/api/email-marketing/overview.png)
+![Översikt - stegen för att skapa ett mål och aktivera målgrupper](../assets/api/email-marketing/overview.png)
 
 Om du föredrar att använda användargränssnittet för plattformen för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att batchprofilera exportmål](../ui/activate-batch-profile-destinations.md) självstudiekurser.
 
@@ -35,14 +35,14 @@ Om du föredrar att använda användargränssnittet för plattformen för att an
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni bygga målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till batchdestinationer i Platform.
 
 ### Samla in nödvändiga inloggningsuppgifter {#gather-required-credentials}
 
-Om du vill slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter klara, beroende på vilken typ av mål du ansluter och aktiverar segment till.
+Om du vill slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter klara, beroende på vilken typ av mål du ansluter och aktiverar målgrupper till.
 
 * För [!DNL Amazon S3] anslutningar: `accessId`, `secretKey`
 * För [!DNL Amazon S3] anslutningar till [!DNL Adobe Campaign]: `accessId`, `secretKey`
@@ -85,7 +85,7 @@ Du hittar referensdokumentation för alla API-åtgärder i den här självstudie
 
 ![Översiktssteg för målsteg 1](../assets/api/batch-destination/step1.png)
 
-Som ett första steg bör du bestämma vilket mål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga mål som du kan ansluta och aktivera segment till. Utför följande GET-förfrågan till `connectionSpecs` slutpunkt för att returnera en lista över tillgängliga destinationer:
+Som ett första steg bör du bestämma vilket mål som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-förfrågan till `connectionSpecs` slutpunkt för att returnera en lista över tillgängliga destinationer:
 
 **API-format**
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar**
 
-Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera segment till [!DNL Adobe Campaign]söker du efter följande utdrag i svaret:
+Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera målgrupper till [!DNL Adobe Campaign]söker du efter följande utdrag i svaret:
 
 ```json
 {
@@ -886,8 +886,8 @@ curl -X POST \
 -H 'Content-Type: application/json' \
 -d  '{
    
-        "name": "Activate segments to Adobe Campaign",
-        "description": "This operation creates a dataflow which we will later use to activate segments to Adobe Campaign",
+        "name": "activate audiences to Adobe Campaign",
+        "description": "This operation creates a dataflow which we will later use to activate audiences to Adobe Campaign",
         "flowSpec": {
             "id": "{FLOW_SPEC_ID}",
             "version": "1.0"
@@ -921,7 +921,7 @@ curl -X POST \
 | `flowSpec.Id` | Använd flödets spec-ID för det batchmål som du vill ansluta till. Utför en GET-åtgärd på `flowspecs` slutpunkt, vilket visas i [API-referensdokumentation för flödesspecifikationer](https://www.adobe.io/experience-platform-apis/references/flow-service/#operation/retrieveFlowSpec). I svaret kan du söka efter `upsTo` och kopiera motsvarande ID för batchmålet som du vill ansluta till. För Adobe Campaign kan du till exempel söka efter `upsToCampaign` och kopiera `id` parameter. |
 | `sourceConnectionIds` | Använd det källanslutnings-ID som du fick i steget [Ansluta till dina Experience Platform-data](#connect-to-your-experience-platform-data). |
 | `targetConnectionIds` | Använd det ID för målanslutning som du fick i steget [Anslut till batchdestination](#connect-to-batch-destination). |
-| `transformations` | I nästa steg fyller du i det här avsnittet med de segment och profilattribut som ska aktiveras. |
+| `transformations` | I nästa steg ska du fylla i det här avsnittet med målgrupper och profilattribut som ska aktiveras. |
 
 Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
 
@@ -933,7 +933,7 @@ Som referens innehåller tabellen nedan ID:n för de vanligaste gruppmålen:
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Notera båda värdena som du behöver dem i nästa steg för att aktivera segment och exportera datafiler.
+Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Anteckna båda värdena som du behöver dem i nästa steg för att aktivera målgrupper och exportera datafiler.
 
 ```json
 {
@@ -947,11 +947,11 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Note
 
 ![Översikt över destinationssteg steg 5](../assets/api/batch-destination/step5.png)
 
-När du har skapat alla anslutningar och dataflöden kan du nu aktivera dina profildata till målplattformen. I det här steget väljer du vilka segment och vilka profilattribut som ska exporteras till målet.
+När du har skapat alla anslutningar och dataflöden kan du nu aktivera dina profildata till målplattformen. I det här steget väljer du vilka målgrupper och vilka profilattribut som ska exporteras till målet.
 
 Du kan också ange filnamnsformatet för de exporterade filerna och vilka attribut som ska användas som [dedupliceringsnycklar](../ui/activate-batch-profile-destinations.md#mandatory-keys) eller [obligatoriska attribut](../ui/activate-batch-profile-destinations.md#mandatory-attributes). I det här steget kan du även bestämma vilket schema som ska användas för att skicka data till målet.
 
-Om du vill aktivera segment till det nya målet måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera segment och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikation](https://tools.ietf.org/html/rfc6902).
+Om du vill aktivera målgrupper till ditt nya mål måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera målgrupper och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikation](https://tools.ietf.org/html/rfc6902).
 
 **API-format**
 
@@ -976,8 +976,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
         "value": {
             "type": "PLATFORM_SEGMENT",
             "value": {
-                "name": "Name of the segment that you are activating",
-                "description": "Description of the segment that you are activating",
+                "name": "Name of the audience that you are activating",
+                "description": "Description of the audience that you are activating",
                 "id": "{SEGMENT_ID}",
                 "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
                 "exportMode": "DAILY_FULL_EXPORT",
@@ -995,8 +995,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
         "value": {
             "type": "PLATFORM_SEGMENT",
             "value": {
-                "name": "Name of the segment that you are activating",
-                "description": "Description of the segment that you are activating",
+                "name": "Name of the audience that you are activating",
+                "description": "Description of the audience that you are activating",
                 "id": "{SEGMENT_ID}",
                 "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
                 "exportMode": "DAILY_FULL_EXPORT",
@@ -1026,26 +1026,26 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | Använd ID:t för dataflödet som du skapade i föregående steg i URL-adressen. |
 | `{ETAG}` | Skaffa `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Exempel på svar: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde att använda i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde. |
-| `{SEGMENT_ID}` | Ange det segment-ID som du vill exportera till det här målet. Information om hur du hämtar segment-ID:n för de segment som du vill aktivera finns i [hämta en segmentdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
+| `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper du vill aktivera finns i [hämta en målgruppsdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
 | `{PROFILE_ATTRIBUTE}` | Exempel: `"person.lastName"` |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till ett segment i ett dataflöde använder du `add` operation. |
-| `path` | Definierar den del av flödet som ska uppdateras. När du lägger till ett segment i ett dataflöde använder du den sökväg som anges i exemplet. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till en målgrupp i ett dataflöde använder du `add` operation. |
+| `path` | Definierar den del av flödet som ska uppdateras. När du lägger till en målgrupp i ett dataflöde använder du den sökväg som anges i exemplet. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
-| `id` | Ange ID:t för det segment som du lägger till i måldataflödet. |
-| `name` | *Valfritt*. Ange namnet på segmentet som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till ett segment i måldataflödet utan att ange dess namn. |
-| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för det exporterade segmentet.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på det exporterade segmentet.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i [konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i satskörningsguiden. |
+| `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
+| `name` | *Valfritt*. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
+| `filenameTemplate` | Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: Valfritt. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: Valfritt. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: Valfritt. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i [konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i satskörningsguiden. |
 | `exportMode` | Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i satskörningssjälvstudiekursen. |
-| `startDate` | Välj det datum då segmentet ska börja exportera profiler till målet. |
+| `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
 | `frequency` | Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge kan du välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du väljer `"DAILY_FULL_EXPORT"` i `frequency` väljare. <br> Obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` så att aktiveringsjobbet körs omedelbart när det dagliga gruppsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` för att få aktiveringsjobbet att köras på en fast tid. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du även lägga till en `startTime` ange vid vilken tidpunkt i UTC den dagliga exporten ska ske.</li></ul> |
-| `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då segmentmedlemmar slutar att exporteras till målet. |
-| `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till ett segment i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar i segmentet ska genereras och exporteras till målet. |
+| `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
+| `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
 
 {style="table-layout:auto"}
 
 >[!TIP]
 >
-> Se [Uppdatera komponenter i ett segment i ett dataflöde](/help/destinations/api/update-destination-dataflows.md#update-segment) om du vill lära dig hur du uppdaterar olika komponenter (filnamnsmall, exporttid och så vidare) för exporterade segment.
+> Se [Uppdatera komponenter för en målgrupp i ett dataflöde](/help/destinations/api/update-destination-dataflows.md#update-segment) om du vill lära dig hur du uppdaterar olika komponenter (filnamnsmall, exporttid och så vidare) för exporterade målgrupper.
 
 **Svar**
 
@@ -1055,7 +1055,7 @@ Leta efter ett svar från 2012. Ingen svarstext returneras. Om du vill verifiera
 
 ![Översiktssteg för målsteg 6](../assets/api/batch-destination/step6.png)
 
-Som ett sista steg i självstudiekursen bör du validera att segmenten och profilattributen verkligen har mappats korrekt till dataflödet.
+Som ett sista steg i självstudiekursen bör du validera att målgrupper och profilattribut verkligen har mappats korrekt till dataflödet.
 
 Gör följande GET-förfrågan för att validera detta:
 
@@ -1082,7 +1082,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **Svar**
 
-Det returnerade svaret ska innehålla `transformations` parametern segmenten och profilattributen som du skickade i föregående steg. Ett exempel `transformations` parametern i svaret kan se ut så här:
+Det returnerade svaret ska innehålla `transformations` anger målgrupper och profilattribut som du skickade i föregående steg. Ett exempel `transformations` parametern i svaret kan se ut så här:
 
 ```json
 "transformations":[

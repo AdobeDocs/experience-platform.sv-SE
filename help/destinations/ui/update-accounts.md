@@ -4,7 +4,7 @@ title: Uppdatera destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att uppdatera målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
-source-git-commit: f31b54622c63f96fb8fa727f80dda295a926e2c7
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '491'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Följ stegen nedan för att uppdatera anslutningsinformationen till befintliga m
 
    ![Filtrera målkonton](../assets/ui/update-accounts/filter-accounts.png)
 
-3. Markera ellipserna (`...`) bredvid namnet på kontot som du vill uppdatera. En popup-panel visas med alternativ för att **[!UICONTROL Activate segments]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Välj ![Knappen Redigera information](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Edit details]** för att redigera kontoinformationen.
+3. Markera ellipserna (`...`) bredvid namnet på kontot som du vill uppdatera. En popup-panel visas med alternativ för att **[!UICONTROL Activate audiences]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Välj ![Knappen Redigera information](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Edit details]** för att redigera kontoinformationen.
 
    ![Redigera konto](../assets/ui/update-accounts/accounts-edit.png)
 

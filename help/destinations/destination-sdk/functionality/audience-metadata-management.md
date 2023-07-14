@@ -1,9 +1,9 @@
 ---
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
-source-git-commit: e69bd819fb8ef6c2384a2b843542d1ddcea0661f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '1037'
 ht-degree: 0%
 
 ---
@@ -23,23 +23,23 @@ Beroende på din API-konfiguration kan du behöva använda slutpunkten för hant
 
 ## Användningsfall som stöds av hantering av målgruppsmetadata {#use-cases}
 
-Med stöd för målgruppsmetadata i Destination SDK kan du, när du konfigurerar Experience Platform, ge plattformsanvändare ett av flera alternativ när de mappar och aktiverar segment till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i [Konfiguration av målgruppsmetadata](../functionality/destination-configuration/audience-metadata-configuration.md) i målkonfigurationen.
+Med stöd för målgruppsmetadata i Destination SDK kan du, när du konfigurerar Experience Platform, ge plattformsanvändare ett av flera alternativ när de mappar och aktiverar målgrupper till ditt mål. Du kan styra vilka alternativ som är tillgängliga för användaren via parametrarna i [Konfiguration av målgruppsmetadata](../functionality/destination-configuration/audience-metadata-configuration.md) i målkonfigurationen.
 
 ### Använd fall 1 - Du har ett API från tredje part och användarna behöver inte ange ID för indatamappning
 
-Om du har en API-slutpunkt för att skapa/uppdatera/ta bort segment eller målgrupper kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att den matchar specifikationerna för segmentets skapa/uppdatera/ta bort-slutpunkt. Experience Platform kan programmatiskt skapa/uppdatera/ta bort segment och synkronisera metadata tillbaka till Experience Platform.
+Om du har en API-slutpunkt för att skapa/uppdatera/ta bort målgrupper eller målgrupper kan du använda metadatamallar för målgrupper för att konfigurera Destination SDK så att den matchar specifikationerna för målgruppen när du skapar/uppdaterar/tar bort slutpunkter. Experience Platform kan programmatiskt skapa/uppdatera/ta bort målgrupper och synkronisera metadata tillbaka till Experience Platform.
 
-När man aktiverar segment i användargränssnittet i Experience Platform behöver man inte fylla i ett ID-fält för segmentmappning manuellt i aktiveringsarbetsflödet.
+När man aktiverar målgrupper på Experience Platform i användargränssnittet behöver man inte fylla i fält för målgruppsmappning i aktiveringsarbetsflödet manuellt.
 
-### Använd fall 2 - Användare måste skapa ett segment i målet först och måste ange ett manuellt mappnings-ID
+### Användningsfall 2 - Användarna måste skapa en målgrupp i ditt mål först och måste ange ett manuellt ID för inmatningsmappning
 
-Om segment och andra metadata måste skapas manuellt av partners eller användare i målet, måste användarna manuellt fylla i ID-fältet för segmentmappning i aktiveringsarbetsflödet för att synkronisera segmentmetadata mellan målet och Experience Platform.
+Om målgrupper och andra metadata måste skapas manuellt av partners eller användare i målgruppen måste användarna manuellt fylla i ID-fältet för målgruppsmappning i aktiveringsarbetsflödet för att synkronisera målgruppsmetadata mellan målplatsen och Experience Platform.
 
 ![ID för indatamappning](../assets/functionality/input-mapping-id.png)
 
-### Använd fall 3 - Målet godkänner Experience Platform segment-ID, användarna behöver inte manuellt ange mappnings-ID
+### Använd fall 3 - Målet godkänner målgrupps-ID för Experience Platform, användarna behöver inte ange något ID för manuell indatamappning
 
-Om målsystemet godkänner Experience Platform segment-ID:t kan du konfigurera det i målgruppens metadatamall. Användarna behöver inte fylla i ett segmentmappnings-ID när de aktiverar ett segment.
+Om målgrupps-ID:t accepteras i målgruppssystemet kan du konfigurera det i din målgruppsmetadatamall. Användarna behöver inte fylla i ett målgruppsmappnings-ID när de aktiverar ett segment.
 
 ## Allmän och utbyggbar målgruppsmall {#generic-and-extensible}
 
@@ -525,13 +525,13 @@ Hitta beskrivningar av alla parametrar i mallen i [Skapa en målgruppsmall](../m
 
 ## Makron som används i mallar för målgruppsmetadata
 
-För att skicka information som segment-ID, åtkomsttoken, felmeddelanden med mera mellan Experience Platform och ditt API innehåller målgruppsmallarna makron som du kan använda. Läs nedan en beskrivning av makrona som används i de tre konfigurationsexemplen på den här sidan:
+För att skicka information som målgrupps-ID:n, åtkomsttoken, felmeddelanden med mera mellan Experience Platform och ditt API innehåller målgruppsmallarna makron som du kan använda. Läs nedan en beskrivning av makrona som används i de tre konfigurationsexemplen på den här sidan:
 
 | Makro | Beskrivning |
 |--- |--- |
-| `{{segment.alias}}` | Gör att du kan komma åt segmentaliaset i Experience Platform. |
-| `{{segment.name}}` | Gör att du kan komma åt segmentnamnet i Experience Platform. |
-| `{{segment.id}}` | Gör att du kan komma åt segment-ID:t i Experience Platform. |
+| `{{segment.alias}}` | Gör att du kan komma åt målgruppsalias i Experience Platform. |
+| `{{segment.name}}` | Gör att du kan komma åt målgruppsnamnet i Experience Platform. |
+| `{{segment.id}}` | Gör att du kan komma åt målgrupps-ID i Experience Platform. |
 | `{{customerData.accountId}}` | Gör att du kan komma åt det konto-ID-fält som du har konfigurerat i målkonfigurationen. |
 | `{{oauth2ServiceAccessToken}}` | Gör att du dynamiskt kan generera en åtkomsttoken baserat på din OAuth 2-konfiguration. |
 | `{{authData.accessToken}}` | Gör att du kan skicka åtkomsttoken till API-slutpunkten. Använd `{{authData.accessToken}}` om Experience Platform ska använda variabler som inte förfaller för att ansluta till ditt mål, annars använder du `{{oauth2ServiceAccessToken}}` för att generera en åtkomsttoken. |

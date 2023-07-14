@@ -1,10 +1,10 @@
 ---
 title: Pega-anslutning för kundens beslutshubb
-description: Använd Pega Customer Decision Hub-destinationen i Adobe Experience Platform för att skicka profilattribut och data om segmentmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
+description: Använd Pega Customer Decision Hub-destinationen i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: ae00b113308354e98f4448d2544e2a6e475c384e
+source-git-commit: 9ccfbeb6ef36b10b8ecbfc25797c26980e7d1dcd
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '979'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Använd [!DNL Pega Customer Decision Hub] mål i Adobe Experience Platform att skicka profilattribut och segmentmedlemskapsdata till [!DNL Pega Customer Decision Hub] för nästa bästa-åtgärd-beslut.
+Använd [!DNL Pega Customer Decision Hub] mål i Adobe Experience Platform för att skicka profilattribut och medlemsdata till [!DNL Pega Customer Decision Hub] för nästa bästa-åtgärd-beslut.
 
-Profilsegmentsmedlemskap från Adobe Experience Platform, vid inläsning till [!DNL Pega Customer Decision Hub], kan användas som prediktor i adaptiva modeller och bidra till att leverera rätt kontextuella data och beteendedata för nästa bästa åtgärd-beslut.
+Profilmedlemskap från Adobe Experience Platform, vid inläsning till [!DNL Pega Customer Decision Hub], kan användas som prediktor i adaptiva modeller och bidra till att leverera rätt kontextuella data och beteendedata för nästa bästa åtgärd-beslut.
 
 >[!IMPORTANT]
 >
@@ -31,15 +31,15 @@ En marknadsförare vill utnyttja insikter från datavetenskapens modellbaserade 
 
 ### Finansiella tjänster
 
-En marknadsförare vill optimera erbjudandena för kunder som prenumererar på eller avbeställer nyhetsbrev om pensionsavtal eller pensionsavtal. Företag inom finanssektorn kan importera flera kund-ID:n från sina egna CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka profiler som anger och avslutar segmenten till [!DNL Pega Customer Decision Hub] för NBA-beslut (next-best-action) i utgående kanaler.
+En marknadsförare vill optimera erbjudandena för kunder som prenumererar på eller avbeställer nyhetsbrev om pensionsavtal eller pensionsavtal. Företag inom finanssektorn kan importera flera kund-ID:n från sina egna CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka profiler som kommer in i och lämnar målgrupperna till [!DNL Pega Customer Decision Hub] för NBA-beslut (next-best-action) i utgående kanaler.
 
 ## Förutsättningar {#prerequisites}
 
 Innan du kan använda det här målet för att exportera data från Adobe Experience Platform måste du uppfylla följande krav i [!DNL Pega Customer Decision Hub]:
 
-* Konfigurera [Integrationskomponent för Adobe Experience Platform-profil och segmentmedlemskap](https://docs.pega.com/component/customer-decision-hub/adobe-experience-platform-profile-and-segment-membership-integration-component) i [!DNL Pega Customer Decision Hub] -instans.
+* Konfigurera [Integrationskomponent för Adobe Experience Platform profil- och målgruppsmedlemskap](https://docs.pega.com/component/customer-decision-hub/adobe-experience-platform-profile-and-segment-membership-integration-component) i [!DNL Pega Customer Decision Hub] -instans.
 * Konfigurera OAuth 2.0 [Klientregistrering med klientautentiseringsuppgifter](https://docs.pega.com/security/87/creating-and-configuring-oauth-20-client-registration) Typ av bidrag i din [!DNL Pega Customer Decision Hub] -instans.
-* Konfigurera [dataflöde vid körning i realtid](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flows) för Adobe segmentmedlemskapets dataflöde i [!DNL Pega Customer Decision Hub] -instans.
+* Konfigurera [dataflöde vid körning i realtid](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flows) för Adobe-målgruppsmedlemskapets dataflöde i [!DNL Pega Customer Decision Hub] -instans.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -57,8 +57,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Exportera alla medlemmar i ett segment med identifierare (*CustomerID*), attribut (efternamn, förnamn, plats osv.) och segmentmedlemskapsdata. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform, baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Mer information finns i [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Exportera alla medlemmar i en målgrupp med en identifierare (*CustomerID*), attribut (efternamn, förnamn, plats osv.) och information om målgruppsmedlemskap. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform, baserat på målgruppsutvärdering, skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Mer information finns i [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -90,13 +90,13 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
 * **[!UICONTROL Host Name]**: Värdnamnet för Pega-kundens beslutshubben som profilen exporteras till som json-data.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Målattribut {#attributes}
 
@@ -120,14 +120,14 @@ Markera målfält:
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
-En lyckad uppdatering av ett segmentmedlemskap för en profil skulle infoga segmentidentifieraren, namnet och statusvärdena i Pegas Marketing Segment-medlemskapets datalager. Medlemskapsinformationen är kopplad till en kund med hjälp av kundprofildesignern i [!DNL Pega Customer Decision Hub], vilket visas nedan.
-![Bild av användargränssnittsskärmen där du kan associera Adobe-segmentmedlemskapsdata till kunden med hjälp av kundprofildesignern](../../assets/catalog/personalization/pega/pega-profile-designer-associate.png)
+En lyckad uppdatering av ett målgruppsmedlemskap för en profil skulle infoga målgruppsidentifieraren, namnet och statusvärdena i Pegas medlemskapsdatabas för marknadsföringspubliker. Medlemskapsinformationen är kopplad till en kund med hjälp av kundprofildesignern i [!DNL Pega Customer Decision Hub], vilket visas nedan.
+![Bild av användargränssnittsskärmen där du kan koppla Adobe målgruppsmedlemskapsdata till kunden med hjälp av kundprofildesignern](../../assets/catalog/personalization/pega/pega-profile-designer-associate.png)
 
-Segmentmedlemskapsdata används i Pega Designer Engagement policies för nästa bästa åtgärd, vilket visas nedan.
-![Bild av gränssnittsskärmen där du kan lägga till fält för segmentmedlemskap som villkor i Pegas interaktionsregler för Designer för nästa bästa åtgärd](../../assets/catalog/personalization/pega/pega-profile-designer-engagment.png)
+Målgruppsmedlemskapsdata används i Pega Next-Best-Action Designer Engagement policies för nästa bästa åtgärd, vilket visas nedan.
+![Bild av gränssnittsskärmen där du kan lägga till fält för målgruppsmedlemskap som villkor i Pegas interaktionsregler för Designer för nästa bästa åtgärd](../../assets/catalog/personalization/pega/pega-profile-designer-engagment.png)
 
-Datafälten för medlemskap i kundsegment läggs till som prediktorer i adaptiva modeller, vilket visas nedan.
-![Bild av gränssnittsskärmen där du kan lägga till segmentmedlemsfält som prediktorer i adaptiva modeller med Predication Studio](../../assets/catalog/personalization/pega/pega-profile-designer-adaptivemodel.png)
+Datafälten för kundens målgruppsmedlemskap läggs till som prediktorer i adaptiva modeller, vilket visas nedan.
+![Bild av användargränssnittsskärmen där du kan lägga till fält för målgruppsmedlemskap som prediktorer i adaptiva modeller med Predication Studio](../../assets/catalog/personalization/pega/pega-profile-designer-adaptivemodel.png)
 
 ## Ytterligare resurser {#additional-resources}
 

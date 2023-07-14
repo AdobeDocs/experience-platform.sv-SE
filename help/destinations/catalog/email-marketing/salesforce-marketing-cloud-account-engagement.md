@@ -3,16 +3,16 @@ title: Salesforce Marketing Cloud Account Engagement
 description: Lär dig hur du använder Salesforce Marketing Cloud Account Engagement (tidigare Pardot)-målet för att exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud Account Engagement för dina affärsbehov.
 last-substantial-update: 2023-04-14T00:00:00Z
 exl-id: fca9d4f4-8717-4bfa-9992-5164ba98bea4
-source-git-commit: 86feee5981aaa81d4c1f97ff8aaf303b2aacd977
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1536'
+source-wordcount: '1535'
 ht-degree: 1%
 
 ---
 
 # [!DNL Salesforce Marketing Cloud Account Engagement] anslutning
 
-Använd [[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) *(tidigare känt som [!DNL Pardot])* mål för att fånga, spåra, poängsätta och betygsätta leads. Ni kan också utforma huvudspår för alla faser av pipeline för riktade marknadssegment och kundgrupper genom e-postdroppkampanjer och lead-hantering med hjälp av näring, poängsättning och kampanjsegmentering.
+Använd [[!DNL Salesforce Marketing Cloud Account Engagement]](https://www.salesforce.com/products/marketing-cloud/marketing-automation/) *(tidigare känt som [!DNL Pardot])* mål för att fånga, spåra, poängsätta och betygsätta leads. Ni kan också utforma huvudspår för alla faser av pipeline för riktade målgrupper och kundgrupper via e-postdroppkampanjer och lead-hantering med näring, poängsättning och kampanjsegmentering.
 
 Jämfört med [!DNL Salesforce Marketing Cloud Engagement] som är mer inriktad på **B2C** marknadsföring, [!DNL Marketing Cloud Account Engagement] är idealiskt för **B2B** använda ärenden som berör flera avdelningar och beslutsfattare och som kräver längre försäljnings- och beslutscykler. Dessutom ligger ni närmare och är bättre integrerade med CRM för att fatta lämpliga beslut om försäljning och marknadsföring. *Obs! Experience Platform har även anslutningar för [!DNL Salesforce Marketing Cloud Engagement]kan du kontrollera dem på [[!DNL Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud.md) och [[!DNL (API) Salesforce Marketing Cloud]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md) sidor.*
 
@@ -26,7 +26,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Marketing Cl
 
 ### Skicka e-post till kontakter för marknadsföringskampanjer {#use-case-send-emails}
 
-Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad marknadsföringskampanj till en välstrukturerad publik av B2B-leads. Plattformens marknadsföringsteam kan lägga till nya leads eller uppdatera befintlig lead-information via Adobe Experience Platform, skapa segment utifrån sina egna offlinedata och skicka dessa segment till [!DNL Marketing Cloud Account Engagement]som sedan kan användas för att skicka marknadsföringskampanjens e-post.
+Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad marknadsföringskampanj till en välstrukturerad publik av B2B-leads. Plattformens marknadsföringsteam kan lägga till nya leads eller uppdatera befintlig lead-information via Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Marketing Cloud Account Engagement]som sedan kan användas för att skicka marknadsföringskampanjens e-post.
 
 ## Förutsättningar {#prerequisites}
 
@@ -86,8 +86,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje markerat segment i plattformen visas motsvarande [!DNL Salesforce Marketing Cloud Account Engagement] segmentets status uppdateras med dess segmentstatus från Platform.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> För varje vald publik i Platform [!DNL Salesforce Marketing Cloud Account Engagement] segmentets status uppdateras med målgruppsstatus från Platform.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -133,13 +133,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
@@ -154,7 +154,7 @@ Koppla XDM-fälten till [!DNL Marketing Cloud Account Engagement] målfält, fö
    * Upprepa de här stegen för att lägga till mappningar mellan XDM-profilschemat och [!DNL Marketing Cloud Account Engagement]: | Källfält | Målfält | Obligatoriskt | | — | — | — | |`IdentityMap: Email`|`Identity: email`| Ja | |`xdm: MailingAddress.city`|`xdm: city`| | |`xdm: person.name.firstName`|`Attribute: firstName`| |
 
    * Ett exempel med mappningarna ovan visas nedan:
-      ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
+     ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/mappings.png)
 
 När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -162,14 +162,14 @@ När du har angett mappningarna för målanslutningen väljer du **[!UICONTROL N
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
-1. Navigera till ett av segmenten som du har markerat. Klicka på fliken **[!DNL Activation data]**.  The **[!UICONTROL Mapping ID]** kolumnen visar namnet på det anpassade fält som genereras i [!DNL Marketing Cloud Account Engagement Prospects] sida.
+1. Navigera till en av de valda målgrupperna. Klicka på fliken **[!DNL Activation data]**.  The **[!UICONTROL Mapping ID]** kolumnen visar namnet på det anpassade fält som genereras i [!DNL Marketing Cloud Account Engagement Prospects] sida.
    ![Exempel på skärmbild för plattformsgränssnitt som visar mappnings-ID för ett valt segment.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/selected-segment-mapping-id.png)
 
-1. Logga in på [[!DNL Salesforce]](https://login.salesforce.com/) webbplats. Navigera sedan till **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om prognoserna från segmentet har lagts till/uppdaterats. Du kan även använda [[!DNL Salesforce Pardot]](https://pi.pardot.com/) och få tillgång till **[!DNL Prospects]** sida.
+1. Logga in på [[!DNL Salesforce]](https://login.salesforce.com/) webbplats. Navigera sedan till **[!DNL Account Engagement]** > **[!DNL Prospects]** > **[!DNL Pardot Prospects]** och kontrollera om målgruppens potentiella kunder har lagts till/uppdaterats. Du kan även använda [[!DNL Salesforce Pardot]](https://pi.pardot.com/) och få tillgång till **[!DNL Prospects]** sida.
    ![Salesforce-användargränssnittet visar sidan Prospects.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospects.png)
 
-1. Om du vill kontrollera om potentiella kunder har uppdaterats markerar du en potentiell kund och kontrollerar om fältet för anpassad potentiell kund har uppdaterats med statusen för Experience Platform-segmentet.
-   ![Användargränssnittet i Salesforce som visar den valda sidan för potentiell kund uppdateras det anpassade fältet för potentiell kund med segmentstatusen.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospect.png)
+1. Om du vill kontrollera om potentiella kunder har uppdaterats markerar du en potentiell kund och kontrollerar om fältet för anpassad potentiell kund har uppdaterats med Experience Platform-målgruppsstatus.
+   ![Användargränssnittet i Salesforce som visar den valda sidan för potentiell kund uppdateras det anpassade fältet för potentiell kund med målgruppens status.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-account-engagement/prospect.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

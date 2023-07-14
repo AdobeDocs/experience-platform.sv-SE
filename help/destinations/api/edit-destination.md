@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
-source-git-commit: 2afe330176c2b7734c38cf47be79960175060824
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1572'
 ht-degree: 0%
@@ -245,7 +245,7 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad Etag. Du ka
 
 **Begäran**
 
-Följande begäran uppdaterar parametrarna för en [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) eller [[!DNL Google Ad Manager 360] mål](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) anslutning för att lägga till den nya [**[!UICONTROL Append segment ID to segment name]**](/help/release-notes/2023/april-2023.md#destinations) fält.
+Följande begäran uppdaterar parametrarna för en [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md) eller [[!DNL Google Ad Manager 360] mål](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) anslutning för att lägga till den nya [**[!UICONTROL Append audience ID to audience name]**](/help/release-notes/2023/april-2023.md#destinations) fält.
 
 ```shell
 curl -X PATCH \

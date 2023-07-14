@@ -1,17 +1,18 @@
 ---
 keywords: aktivera profildestinationer;aktivera destinationer;aktivera data; aktivera e-postmarknadsföringsmål, aktivera molnlagringsmål
-title: Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
+title: Aktivera målgrupper för att direktuppspela exportmål för profiler
 type: Tutorial
-description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till direktuppspelade profilbaserade mål.
+description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 5bb2981b8187fcd3de46f80ca6c892421b3590f6
+source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
 
-# Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler
+
+# Aktivera målgrupper för att direktuppspela exportmål för profiler
 
 >[!IMPORTANT]
 > 
@@ -34,35 +35,31 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
    ![Bild som visar fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate audiences]** på kortet som motsvarar destinationen där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Bild som markerar kontrollen för aktivering av segment på fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+   ![Bild som markerar kontrollen för att aktivera målgrupper på fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/activate-audiences-button.png)
 
-1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
+1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
 
    ![Bild som visar ett urval av två mål som du kan ansluta till.](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
-1. Gå till nästa avsnitt till [markera segment](#select-segments).
+1. Gå till nästa avsnitt till [välj era målgrupper](#select-audiences).
 
-## Välj segment {#select-segments}
+## Välj målgrupper {#select-audiences}
 
-Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
+Om du vill välja vilka målgrupper du vill aktivera för målet använder du kryssrutorna till vänster om målgruppsnamnen och väljer sedan **[!UICONTROL Next]**.
 
-![Markera kryssrutorna i steget Markera segment i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
+Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
+
+* **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [segmenteringsdokumentation](../../segmentation/ui/overview.md) för mer information.
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
+* Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
+
+![Markera kryssrutorna i steget Välj målgrupper i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)
 
 ## Välj profilattribut {#select-attributes}
 
 I **[!UICONTROL Mapping]** markerar du de profilattribut som du vill skicka till målmålet.
-
->[!NOTE]
->
-> Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
-
-Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
-* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
-
-![Bild som visar de förfyllda, rekommenderade attributen i mappningssteget.](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
 
 1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
 
@@ -76,14 +73,13 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 
    ![Bild som visar ett urval av XDM-fält som du kan välja som källfält.](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
-
-1. Om du vill lägga till fler mappningar upprepar du steg 1 till 3 och väljer sedan **[!UICONTROL Next]**.
+1. Om du vill lägga till fler fält upprepar du steg 1 till 3 och väljer sedan **[!UICONTROL Next]**.
 
 ## Granska {#review}
 
 På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-![Markeringssammanfattning i granskningssteget.](/help/destinations/assets/ui/activate-streaming-profile-destinations/review.png)
+![Markeringssammanfattning i granskningssteget.](../assets/ui/activate-streaming-profile-destinations/review.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
@@ -91,21 +87,21 @@ Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy 
 
 ### Kontroller av policyer för dataanvändning {#data-usage-policy-checks}
 
-I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
+I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
 
 ![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
 
-### Filtrera segment {#filter-segments}
+### Filtrera målgrupper {#filter-audiences}
 
-I det här steget kan du även använda de tillgängliga filtren på sidan för att endast visa segment vars schema eller mappning har uppdaterats som en del av det här arbetsflödet.
+I det här steget kan du även använda de tillgängliga filtren på sidan för att visa endast de målgrupper vars schema eller mappning har uppdaterats som en del av det här arbetsflödet.
 
-![Skärminspelning som visar tillgängliga segmentfilter i granskningssteget.](/help/destinations/assets/ui/activate-streaming-profile-destinations/filter-segments-review-step.gif)
+![Skärminspelning som visar tillgängliga målgruppsfilter i granskningssteget.](../assets/ui/activate-streaming-profile-destinations/filter-audiences-review-step.gif)
 
 Om du är nöjd med ditt val och inga policyöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-## Verifiera segmentaktivering {#verify}
+## Verifiera målgruppsaktivering {#verify}
 
-Dina exporterade [!DNL Experience Platform] i måldestinationen i JSON-format. Händelsen nedan innehåller till exempel e-postadressprofilattributet för en målgrupp som har kvalificerat sig för ett visst segment och avslutat ett annat segment. Identiteterna för den här potentiella kunden är ECID och e-post.
+Dina exporterade [!DNL Experience Platform] i måldestinationen i JSON-format. Händelsen nedan innehåller till exempel e-postadressattributet för en profil som har kvalificerats för en viss målgrupp och avslutat en annan målgrupp. Identiteterna för den här potentiella kunden är `ECID` och `email_lc_sha256`.
 
 ```json
 {

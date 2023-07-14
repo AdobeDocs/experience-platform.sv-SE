@@ -2,7 +2,7 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /testing/destinationInstance för att visa fullständig information om testresultaten. Denna API-slutpunkt returnerar samma resultat som du skulle få när du använde API:t för Flow Service för att övervaka dataflöden.
 title: Visa detaljerade aktiveringsresultat
 exl-id: a7b27beb-825e-47fd-8939-f499c3298f68
-source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
+source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
 workflow-type: tm+mt
 source-wordcount: '545'
 ht-degree: 1%
@@ -35,12 +35,12 @@ Innan du kan använda `/testing/destinationInstance` måste du se till att följ
 * Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform.
 * För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
 
-   ![Användargränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
+  ![Användargränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
 * Du har tidigare [testade målkonfigurationen](file-based-destination-testing-api.md)och fick ett giltigt API-svar, som innehåller `results` -egenskap. Du kommer att använda den här `results` för att ytterligare testa destinationen.
 
 ## Visa detaljerade testresultat för destinationer {#test-activation-results}
 
-När du har [har verifierat målkonfigurationen](file-based-destination-testing-api.md)kan du se de detaljerade aktiveringsresultaten genom att skicka en GET till `authoring/testing/destinationInstance/` slutpunkt och ange målinstans-ID för det mål som du testar, samt ID:n för flödeskörning för de aktiverade segmenten.
+När du har [har verifierat målkonfigurationen](file-based-destination-testing-api.md)kan du se de detaljerade aktiveringsresultaten genom att skicka en GET till `authoring/testing/destinationInstance/` slutpunkt och ange målinstans-ID för det mål som du testar, och ID:n för flödeskörning för de aktiverade målgrupperna.
 
 Du hittar den fullständiga API-URL som du behöver i `results` egenskapen som returneras i [svar på destinationstestningsanropet](file-based-destination-testing-api.md).
 
@@ -56,7 +56,7 @@ GET /authoring/testing/destinationInstance/{DESTINATION_INSTANCE_ID}/results?flo
 
 | Frågesträngsparametrar | Beskrivning |
 | -------- | ----------- |
-| `flowRunIds` | ID för flödeskörning som motsvarar de aktiverade segmenten. Du hittar ID:n för flödeskörning i dialogrutan `results` egenskapen som returneras i [svar på destinationstestningsanropet](file-based-destination-testing-api.md). |
+| `flowRunIds` | ID för flödeskörning som motsvarar de aktiverade målgrupperna. Du hittar ID:n för flödeskörning i dialogrutan `results` egenskapen som returneras i [svar på destinationstestningsanropet](file-based-destination-testing-api.md). |
 
 **Begäran**
 

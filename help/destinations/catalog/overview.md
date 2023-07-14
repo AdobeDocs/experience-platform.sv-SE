@@ -3,7 +3,7 @@ keywords: Katalog;katalog
 title: Översikt över destinationskatalogen
 description: Katalogen Destinationer innehåller en lista över tillgängliga destinationer som kan ta emot data. Dessa destinationer omfattar Adobe, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar med mera.
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: 944f307ecb4cf174c9f9818ded17546057f445e4
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 6%
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 Målkatalogen innehåller en lista över tillgängliga målplattformar som kan ta emot data. Bland målplattformarna finns Adobe-lösningar, annonsplattformar, enkätplattformar, e-postmarknadsföringsplattformar, Experience Platform-tillägg med mera.
 
-Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era segment till destinationer.
+Bläddra i katalogen för att fastställa vilka målplattformar som är bäst för era användningsfall för annonsering och personalisering, och konfigurera sedan flöden för att aktivera era målgrupper för målgrupperna.
 
 <div id="recs-overview-body-1"></div>
 <div id="recs-overview-body-2"></div>

@@ -4,7 +4,7 @@ title: Ta bort destinationskonton
 type: Tutorial
 description: I den här självstudiekursen visas stegen för att ta bort målkonton i användargränssnittet i Adobe Experience Platform
 exl-id: 9b39ba4b-19a4-48a8-a6f1-f860777cdb9e
-source-git-commit: 2ea56957e122140fbc68c727e36666f8f9a71dd8
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '296'
 ht-degree: 1%
@@ -37,7 +37,7 @@ Följ stegen nedan för att ta bort befintliga målkonton.
 
    ![Filtermål](../assets/ui/delete-accounts/filter-accounts.png)
 
-3. Markera ellipserna (`...`) bredvid namnet på det konto du vill ta bort. En popup-panel visas med alternativ för att **[!UICONTROL Activate segments]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Välj ![Knappen Ta bort](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Delete]** om du vill ta bort kontot.
+3. Markera ellipserna (`...`) bredvid namnet på det konto du vill ta bort. En popup-panel visas med alternativ för att **[!UICONTROL Activate audiences]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Välj ![Knappen Ta bort](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Delete]** om du vill ta bort kontot.
 
    ![Ta bort destinationskonto](../assets/ui/delete-accounts/delete-accounts.png)
 

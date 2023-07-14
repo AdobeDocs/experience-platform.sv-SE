@@ -1,9 +1,9 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att skapa en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Skapa en målgruppsmall
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '624'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/audience-templates`
 
-För vissa mål som skapats med Destination SDK måste du skapa en målgruppsmetadatakonfiguration för att programmässigt skapa, uppdatera eller ta bort segmentmetadata i målet. På den här sidan visas hur du använder `/authoring/audience-templates` API-slutpunkt för att skapa konfigurationen.
+För vissa mål som skapats med Destination SDK måste du skapa en konfiguration för målgruppsmetadata för att programmässigt skapa, uppdatera eller ta bort målgruppsmetadata i målet. På den här sidan visas hur du använder `/authoring/audience-templates` API-slutpunkt för att skapa konfigurationen.
 
 En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
 
@@ -190,14 +190,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | Egenskap | Typ | Beskrivning |
 | -------- | ----------- | ----------- |
 | `name` | Sträng | Namnet på målets metadatamall för målgruppen. Det här namnet visas i alla partnerspecifika felmeddelanden i användargränssnittet i Experience Platform, följt av felmeddelandet som tolkas från `metadataTemplate.create.errorSchemaMap`. |
-| `url` | Sträng | URL:en och slutpunkten för ditt API, som används för att skapa, uppdatera, ta bort eller validera målgrupper/segment på din plattform. Två branschexempel: `https://adsapi.snapchat.com/v1/adaccounts/{{customerData.accountId}}/segments` och `https://api.linkedin.com/v2/dmpSegments/{{segment.alias}}`. |
-| `httpMethod` | Sträng | Den metod som används i slutpunkten för att skapa, uppdatera, ta bort eller validera segmentet/målgruppen i ditt mål programmatiskt. Exempel: `POST`, `PUT`, `DELETE` |
+| `url` | Sträng | URL:en och slutpunkten för ditt API, som används för att skapa, uppdatera, ta bort eller validera målgrupper på din plattform. Två branschexempel: `https://adsapi.snapchat.com/v1/adaccounts/{{customerData.accountId}}/segments` och `https://api.linkedin.com/v2/dmpSegments/{{segment.alias}}`. |
+| `httpMethod` | Sträng | Den metod som används i slutpunkten för att skapa, uppdatera, ta bort eller validera målgruppen i målgruppen via programmering. Exempel: `POST`, `PUT`, `DELETE` |
 | `headers.header` | Sträng | Anger alla HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"Content-Type"` |
 | `headers.value` | Sträng | Anger värdet för HTTP-huvuden som ska läggas till i anropet till ditt API. Exempel: `"application/x-www-form-urlencoded"` |
 | `requestBody` | Sträng | Anger innehållet i meddelandetexten som ska skickas till din API. Parametrarna som ska läggas till i `requestBody` -objektet beror på vilka fält som API:t godkänner. Se till exempel [första mallexemplet](../functionality/audience-metadata-management.md#example-1) i funktionsdokumentet för målgruppsmetadata. |
 | `responseFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexempel](../functionality/audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
 | `responseFields.value` | Sträng | Ange värdet för eventuella svarsfält som API:t returnerar när det anropas. |
-| `responseErrorFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [ mallexempel](../functionality/audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
+| `responseErrorFields.name` | Sträng | Ange eventuella svarsfält som API:t returnerar när det anropas. Se till exempel [mallexempel](../functionality/audience-metadata-management.md#examples) i funktionsdokumentet för målgruppsmetadata. |
 | `responseErrorFields.value` | Sträng | Tolkar felmeddelanden som returneras på API-anropssvar från ditt mål. Dessa felmeddelanden kommer att visas för användare i användargränssnittet i Experience Platform. |
 | `validations.field` | Sträng | Anger om valideringar ska köras för fält innan API-anrop görs till målet. Du kan till exempel använda `{{validations.accountId}}` för att validera användarens konto-ID. |
 | `validations.regex` | Sträng | Anger hur fältet ska struktureras för att valideringen ska gå igenom. |

@@ -2,7 +2,7 @@
 description: Lär dig hur du använder API:t för måltestning för att generera en omformningsmall för testmeddelanden för ditt mål.
 title: Generera en omformningsmall för exempelmeddelanden
 exl-id: d18a06f7-0c3a-4b4d-a7d5-011690d00e2c
-source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 0%
@@ -29,7 +29,6 @@ Du kan hämta en exempelmall genom att göra en GET-förfrågan till `authoring/
 >[!TIP]
 >
 >* Mål-ID som du ska använda här är `instanceId` som motsvarar en målkonfiguration, skapad med `/destinations` slutpunkt. Se [hämta en destinationskonfiguration](../../authoring-api/destination-configuration/retrieve-destination-configuration.md) för mer information.
-
 
 **API-format**
 
@@ -83,7 +82,7 @@ Om det mål-ID du anger motsvarar en målkonfiguration med [bästa ansträngning
         {% endfor %}
         ],
         "remove": [
-        {#- Alternative syntax for filtering segments by status: -#}
+        {#- Alternative syntax for filtering audiences by status: -#}
         {% for segment in removedSegments(input.profile.segmentMembership.ups) %}
             "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
         {% endfor %}
@@ -119,7 +118,7 @@ Om det mål-ID du anger motsvarar en målservermall med [konfigurerbar aggregeri
                 {% endfor %}
                 ],
                 "remove": [
-                {#- Alternative syntax for filtering segments by status: -#}
+                {#- Alternative syntax for filtering audiences by status: -#}
                 {% for segment in removedSegments(profile.segmentMembership.ups) %}
                     "{{ segment.key }}"{%- if not loop.last -%},{%- endif -%}
                 {% endfor %}

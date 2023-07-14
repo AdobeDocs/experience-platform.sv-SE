@@ -3,7 +3,7 @@ keywords: Advertising Cloud;advertising cloud cloud extension; annonsmolnmål
 title: Adobe Advertising Cloud-tillägg
 description: Adobe Advertising Cloud-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Det här är [!DNL Advertising Cloud] tillägg för genomförande [!DNL Advertising Cloud] konverterings- och segmenttaggar för både DSP och sökning (DCO stöds inte för närvarande).
+Det här är [!DNL Advertising Cloud] tillägg för genomförande [!DNL Advertising Cloud] konverterings- och målgruppstaggar för både DSP och sökning (DCO stöds inte för närvarande).
 
 Adobe Advertising Cloud är ett reklamtillägg i Adobe Experience Platform.
 

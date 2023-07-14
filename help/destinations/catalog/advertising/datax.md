@@ -2,9 +2,9 @@
 title: Verizon MediaYahoo DataX-anslutning
 description: DataX är en aggregerad Verizon Media/Yahoo-infrastruktur som är värd för olika komponenter som gör att Verizon Media/Yahoo kan utbyta data med sina externa partner på ett säkert, automatiserat och skalbart sätt.
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: 0580816c471400ba17eddcb6b1a9dfbf01797938
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '756'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Läs mer om [Taxonomimetadata](https://developer.verizonmedia.com/datax/guide/ta
 
 >[!IMPORTANT]
 >
->När fler än 100 segment aktiveras till [!DNL Verizon Media/Yahoo DataX]kan du få hastighetsbegränsande fel från målet. När du aktiverar segment till det här målet ska du försöka aktivera färre än 100 segment i ett aktiveringsdataflöde. Om du behöver aktivera fler segment skapar du ett nytt mål för samma konto.
+>När fler än 100 målgrupper aktiveras till [!DNL Verizon Media/Yahoo DataX]kan du få hastighetsbegränsande fel från målet. När du aktiverar målgrupper till det här målet kan du försöka aktivera färre än 100 målgrupper i ett aktiveringsdataflöde. Om du behöver aktivera fler segment skapar du ett nytt mål för samma konto.
 
 [!DNL DataX] är avgiftsbegränsat enligt de kvotgränser för taxonomi- och målgruppsposter som anges i [DataX-dokumentation](https://developer.verizonmedia.com/datax/guide/rate-limits/).
 
@@ -83,14 +83,14 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (Email, GAID, IDFA) som används i Verizon Media-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (Email, GAID, IDFA) som används i Verizon Media-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## Användningsexempel {#use-cases}
 
-[!DNL DataX] API:er är tillgängliga för annonsörer som vill rikta sig till en viss målgruppsgrupp som är sparad med e-postadresser i [!DNL Verizon Media] (VMG) kan snabbt skapa ett nytt segment och överföra den önskade målgruppsgruppen med hjälp av VMG:s API i nära realtid.
+[!DNL DataX] API:er är tillgängliga för annonsörer som vill rikta sig till en viss målgruppsgrupp som är sparad med e-postadresser i [!DNL Verizon Media] (VMG) kan snabbt skapa en ny målgrupp och skicka den önskade målgruppen med hjälp av VMG:s API i nära realtid.
 
 ## Anslut till mål {#connect}
 
@@ -116,13 +116,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment till ett mål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur målgruppssegment aktiveras för destinationer.
+Läs [Aktivera profiler och målgrupper till ett mål](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur målgrupper aktiveras för destinationer.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

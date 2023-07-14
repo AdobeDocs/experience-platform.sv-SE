@@ -2,9 +2,9 @@
 title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: 55f1eafa68124b044d20f8f909f6238766076a7a
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '1405'
+source-wordcount: '1404'
 ht-degree: 1%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 1%
 
 [[!DNL Zendesk]](https://www.zendesk.com) är en kundtjänstlösning och ett säljverktyg.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Zendesk] Kontakt-API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/), till **skapa och uppdatera identiteter** inom ett segment som kontakter inom [!DNL Zendesk].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL Zendesk] Kontakt-API](https://developer.zendesk.com/api-reference/sales-crm/resources/contacts/), till **skapa och uppdatera identiteter** inom en målgrupp som kontakter inom [!DNL Zendesk].
 
 [!DNL Zendesk] använder lagervariabler som en autentiseringsmekanism för att kommunicera med [!DNL Zendesk] Kontakter-API. Instruktioner för hur du autentiserar [!DNL Zendesk] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
 ## Användningsfall {#use-cases}
 
-Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en sömlös och personaliserad upplevelse för sina kunder. Avdelningen kan skapa segment utifrån sina egna offlinedata för att skapa nya användarprofiler eller uppdatera befintlig profilinformation från olika interaktioner (t.ex. inköp, returer osv.) och skicka segmenten från Adobe Experience Platform till [!DNL Zendesk]. Den uppdaterade informationen finns i [!DNL Zendesk] säkerställer att kundtjänstpersonalen har den senaste informationen om kunden omedelbart tillgänglig, vilket ger snabbare svar och lösningar.
+Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en sömlös och personaliserad upplevelse för sina kunder. Avdelningen kan bygga målgrupper utifrån sina egna offlinedata för att skapa nya användarprofiler eller uppdatera befintlig profilinformation från olika interaktioner (t.ex. köp, returer etc.) och skicka dessa målgrupper från Adobe Experience Platform till [!DNL Zendesk]. Den uppdaterade informationen finns i [!DNL Zendesk] säkerställer att kundtjänstpersonalen har den senaste informationen om kunden omedelbart tillgänglig, vilket ger snabbare svar och lösningar.
 
 ## Förutsättningar {#prerequisites}
 
@@ -27,7 +27,7 @@ Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en s�
 
 Innan du aktiverar data för [!DNL Zendesk] mål, du måste ha en [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) skapad i [!DNL Experience Platform].
 
-Se Experience Platform dokumentation för [Schemafältgrupp för detaljer om segmentmedlemskap](/help/xdm/field-groups/profile/segmentation.md) om du behöver vägledning om segmentstatus.
+Se Experience Platform dokumentation för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 
 ### [!DNL Zendesk] krav {#prerequisites-destination}
 
@@ -59,8 +59,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Zendesk] uppdateras med motsvarande segmentstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [segmentplanering](#schedule-segment-export-example) steg.</li></ul> |
-| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Zendesk] uppdateras med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
+| Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -98,13 +98,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 >
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
@@ -122,7 +122,7 @@ Koppla XDM-fälten till [!DNL Zendesk] målfält, följ dessa steg:
    * Upprepa dessa steg om du vill lägga till följande obligatoriska mappningar, du kan även lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL Zendesk] instans: |Källfält|Målfält| Obligatoriskt| |—|—|—| |`xdm: person.name.lastName`|`xdm: last_name`| Ja | |`IdentityMap: Email`|`Identity: email`| Ja | |`xdm: person.name.firstName`|`xdm: first_name`| |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
-      ![Skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/crm/zendesk/mappings.png)
+     ![Skärmbild för plattformsgränssnitt med attributmappningar.](../../assets/catalog/crm/zendesk/mappings.png)
 
 >[!IMPORTANT]
 >
@@ -130,31 +130,31 @@ Koppla XDM-fälten till [!DNL Zendesk] målfält, följ dessa steg:
 
 När du är klar med mappningarna för målanslutningen väljer du **[!UICONTROL Next]**.
 
-### Schemalägg segmentexport och exempel {#schedule-segment-export-example}
+### Schemalägg målgruppsexport och exempel {#schedule-segment-export-example}
 
-I [[!UICONTROL Schedule segment export]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) steg i aktiveringsarbetsflödet måste du manuellt mappa plattformssegment till det anpassade fältattributet i [!DNL Zendesk].
+I [[!UICONTROL Schedule audience export]](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) steg i aktiveringsarbetsflödet måste du manuellt mappa Platform-målgrupper till det anpassade fältattributet i [!DNL Zendesk].
 
 Om du vill göra det markerar du varje segment och anger sedan motsvarande attribut för anpassade fält från [!DNL Zendesk] i **[!UICONTROL Mapping ID]** fält.
 
 Ett exempel visas nedan:
-![Exempel på skärmbild för användargränssnittet för plattformen som visar export av Schedule-segment.](../../assets/catalog/crm/zendesk/schedule-segment-export.png)
+![Exempel på skärmbild för användargränssnittet för plattformen som visar export av schemalagda målgrupper.](../../assets/catalog/crm/zendesk/schedule-segment-export.png)
 
 ## Validera dataexport {#exported-data}
 
 Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Välj **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och navigera till listan över destinationer.
-1. Välj sedan målet och växla till **[!UICONTROL Activation data]** väljer du ett segmentnamn.
+1. Välj sedan målet och växla till **[!UICONTROL Activation data]** väljer du ett målgruppsnamn.
    ![Skärmbild för användargränssnittet för plattformen visar aktiveringsdata för destinationer.](../../assets/catalog/crm/zendesk/destinations-activation-data.png)
 
-1. Övervaka segmentsammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
+1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet inom segmentet.
    ![Exempel på skärmbild för plattformsgränssnitt som visar segment.](../../assets/catalog/crm/zendesk/segment.png)
 
-1. Logga in på [!DNL Zendesk] webbplatsen och sedan navigera till **[!UICONTROL Contacts]** sida för att kontrollera om profilerna från segmentet har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som skapas med segmentet **[!UICONTROL Mapping ID]** och segmentstatus.
-   ![Skärmbilden Zendesk UI visar sidan Kontakter med de ytterligare fält som skapats med segmentnamnet.](../../assets/catalog/crm/zendesk/contacts.png)
+1. Logga in på [!DNL Zendesk] webbplatsen och sedan navigera till **[!UICONTROL Contacts]** sida för att kontrollera om profilerna från målgruppen har lagts till. Den här listan kan konfigureras för att visa kolumner för de ytterligare fält som skapas med målgruppen**[!UICONTROL Mapping ID]** och målgruppsstatus.
+   ![Skärmbilden Zendesk UI visar sidan Kontakter med de ytterligare fält som skapats med målgruppens namn.](../../assets/catalog/crm/zendesk/contacts.png)
 
-1. Du kan även gå ned i en individ **[!UICONTROL Person]** sidan och kontrollera **[!UICONTROL Additional fields]** där segmentnamnet och segmentstatusvärdena visas.
-   ![Skärmbilden Zendesk UI som visar sidan Person med avsnittet med ytterligare fält som visar segmentnamnet och segmentstatusvärdena.](../../assets/catalog/crm/zendesk/contact.png)
+1. Du kan även gå ned i en individ **[!UICONTROL Person]** sidan och kontrollera **[!UICONTROL Additional fields]** -sektion som visar målgruppsnamn och målgruppsstatus.
+   ![Skärmbilden Zendesk UI som visar sidan Person med de extra fälten som visar målgruppens namn och målgruppens status.](../../assets/catalog/crm/zendesk/contact.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 0%
@@ -384,10 +384,10 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 
 När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](../testing-api/batch-destinations/file-based-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
-Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar segment i Experience Platform:
+Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
-* [Skapa en dokumentationssida för segment](/help/segmentation/ui/overview.md#create-segment)
-* [Skapa en segmentvideogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
+* [Skapa en publikdokumentationssida](/help/segmentation/ui/overview.md#create-segment)
+* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
 ## Steg 6: Publicera destinationen {#publish-destination}
 

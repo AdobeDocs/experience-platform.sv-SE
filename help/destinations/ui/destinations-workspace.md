@@ -3,7 +3,7 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 69e1f065cb3b302c4b144f39c84179075379f648
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '1102'
 ht-degree: 0%
@@ -41,13 +41,13 @@ The [!DNL Platform] I användargränssnittet finns flera sök- och filteralterna
 
 ![Destinationskatalogen med ett fåtal annons- och molnlagringsdestinationer.](../assets/ui/workspace/catalog.png)
 
-Målkorten innehåller alternativ för primär och sekundär kontroll. De primära kontrollerna är [!UICONTROL Set up], [!UICONTROL Activate], [!UICONTROL Activate segments], eller [!UICONTROL Export datasets]. De sekundära kontrollerna tillåter visningsalternativ. Dessa kontroller beskrivs nedan:
+Målkorten innehåller alternativ för primär och sekundär kontroll. De primära kontrollerna är [!UICONTROL Set up], [!UICONTROL Activate], [!UICONTROL Activate audiences], eller [!UICONTROL Export datasets]. De sekundära kontrollerna tillåter visningsalternativ. Dessa kontroller beskrivs nedan:
 
 | Kontroll | Beskrivning |
 |---------|----------|
 | [!UICONTROL Set up] | Gör att du kan skapa en anslutning till målet. |
-| [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera segment eller exportera datauppsättningar till det här målet. |
-| [!UICONTROL Activate segments] | När du har upprättat en anslutning till målet kan du aktivera segment till det här målet. |
+| [!UICONTROL Activate] | När du har upprättat en anslutning till målet kan du aktivera målgrupper eller exportera datauppsättningar till det här målet. |
+| [!UICONTROL Activate audiences] | När du har upprättat en anslutning till målet kan du aktivera målgrupper till det här målet. |
 | [!UICONTROL Export datasets] | När du har upprättat en anslutning till målet kan du exportera datauppsättningar till det här målet. |
 | [!UICONTROL View account] | Visa konton som du har anslutit för ett mål. |
 | [!UICONTROL View dataflows] | Visa dataaktiveringsflödena som finns för ett mål. |
@@ -69,10 +69,9 @@ The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som 
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Aktivera kontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate segments]**/**[!UICONTROL Export datasets]**kontroll för att exportera segment eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Aktivera kontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**Kontroll för att exportera målgrupper eller datauppsättningar till det målet.
 > * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Redigera informationskontroll ](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL Edit details]**styra till [uppdatera](update-accounts.md) Information om ett befintligt destinationskonto.
 > * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [delete](delete-destination-account.md) ett befintligt destinationskonto.
-
 
 ![Fliken Konton](../assets/ui/workspace/destination-account-options.png)
 
@@ -88,27 +87,26 @@ The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som 
 
 ## [!UICONTROL Browse] {#browse}
 
-The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL Enabled/Disabled]** för att växla aktiverat anger målet som aktivt respektive inaktivt. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Segments]** > **[!UICONTROL Browse]** och välja ett segment som ska inspekteras. Se tabellen nedan för all information som finns för varje mål i [!UICONTROL Browse] tab:
+The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslutning till. Destinationer med **[!UICONTROL Enabled/Disabled]** för att växla aktiverat anger målet som aktivt respektive inaktivt. Du kan också visa de mål där data flödar genom att välja **[!UICONTROL Audiences]** > **[!UICONTROL Browse]** och välja en målgrupp att inspektera. Se tabellen nedan för all information som finns för varje mål i [!UICONTROL Browse] tab:
 
 >[!TIP]
 >
-> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Aktivera segmentkontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**kontroll för att exportera segment eller datauppsättningar till det målet.
+> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Aktivera målgruppskontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**Kontroll för att exportera målgrupper eller datauppsättningar till det målet.
 > * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
 > * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Visa i övervakningskontroll ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**för att visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
 > * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Prenumerera på aviseringar ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på aviseringar om destinationer i sitt sammanhang](alerts.md) om du vill ha detaljerad information om aviseringar om måldataflöde.
-
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
 
 | Element | Beskrivning |
 |---------|----------|
-| Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. Samma kolumn innehåller två kontroller: [!UICONTROL Activate ] och [!UICONTROL Delete destination]. |
+| Namn | Namnet som du angav för aktiveringsflödet till den här destinationen. Samma kolumn innehåller två kontroller: [!UICONTROL Activate] och [!UICONTROL Delete destination]. |
 | [!UICONTROL Last Flow Run Status] | Status för den senaste dataflödeskörningen. Se [Visa målinformation](destination-details-page.md) för mer information om dataflödeskörningar. |
 | [!UICONTROL Last Flow Run Date] | Tid och datum då den senaste dataflödeskörningen inträffade. Se [Visa målinformation](destination-details-page.md) för mer information om dataflödeskörningar. |
 | [!UICONTROL Destination] | Målplattformen som du valde för aktiveringsflödet. |
 | [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller [!DNL Azure Blob].</li><li>För reklamdestinationer i realtid: Server-till-server.</li><li>För direktuppspelningsmål: Kan [!DNL Azure Event Hubs] eller [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
-| [!UICONTROL Activation Data] | Anger antalet segment som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade segmenten. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation om du vill ha mer information om de aktiverade segmenten. |
+| [!UICONTROL Activation Data] | Anger antalet målgrupper som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade målgrupperna. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation om du vill ha mer information om de aktiverade målgrupperna. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. Välj uppåt-/nedåtpilen för att sortera aktiveringsflödena efter det senaste först eller det äldsta först. |
 | [!UICONTROL Status] | `Enabled` eller `Disabled`. Anger om data aktiveras till det här målet. |
 
@@ -116,7 +114,7 @@ Klicka på en målrad för att visa mer information om målet i den högra liste
 
 ![Klicka på målraden](../assets/ui/workspace/click-destination-row.png)
 
-Markera målnamnet om du vill visa information om de segment som har aktiverats för det här målet. Klicka **[!UICONTROL Edit activation]** om du vill ändra eller lägga till i de segment som skickas till det här målet.
+Välj målnamnet för att visa information om målgrupper som har aktiverats för det här målet. Klicka **[!UICONTROL Edit activation]** för att ändra eller lägga till i målgrupper som skickas till det här målet.
 
 ## [!UICONTROL System View] {#system-view}
 

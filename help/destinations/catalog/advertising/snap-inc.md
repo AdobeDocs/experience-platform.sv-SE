@@ -1,10 +1,10 @@
 ---
 title: Snap Inc-anslutning
-description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar målgruppssegment från Experience Platform.
+description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar dina målgrupper från Experience Platform.
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: 988ecbed3084ef162453c9f1124998c6e9ae2e45
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 ## Användningsfall {#use-cases}
 
-Med den här destinationen kan marknadsförare importera användarsegment som skapats i Experience Platform till Snapchat Ads och använda dem för att rikta sina annonser.
+Med den här destinationen kan marknadsförare importera användarmålgrupper som skapats i Experience Platform till Snapchat Ads och använda dem för att rikta sina annonser.
 
 ## Förutsättningar {#prerequisites}
 
@@ -33,7 +33,7 @@ Om du vill använda den här destinationen måste du ha ett Snapchat Ads-konto. 
 
 * Snap Inc stöder inte flera identiteter för ett visst målgruppssegment. Mappa endast en identitet när du aktiverar ett segment.
 * Snap Inc stöder inte namnbyte av segment. Om du vill byta namn på ett segment måste du inaktivera det, byta namn på det och sedan aktivera det.
-* Det går inte att definiera en kvarhållningsperiod för ett målgruppssegments medlemmar. Alla medlemmar behåller sin livstid och kommer att finnas i segmentet tills de tas bort.
+* Det går inte att definiera en kvarhållningsperiod för ett målgruppssegments medlemmar. Alla medlemmar har livstidsbehållning och kommer att finnas i målgruppen tills de tas bort.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -65,8 +65,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i *YOURDESTINATION* mål. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i *YOURDESTINATION* mål. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -98,11 +98,11 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Det annonskonto-ID som är associerat med annonskontot som du vill importera dina segment till. Mer information finns i [den här dokumentationen om Snapchat Business Help Center](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
+* **[!UICONTROL Account ID]**: Det annonskonto-ID som är associerat med annonskontot som du vill importera dina målgrupper till. Mer information finns i [den här dokumentationen om Snapchat Business Help Center](https://businesshelp.snapchat.com/s/article/biz-acct-id?language=en_US).
 
 >[!IMPORTANT]
 > 
->Om du anger ett felaktigt eller ogiltigt konto-ID för Snapchat-annonsen misslyckas segmentaktiveringen. Kontrollera att du har angett rätt ID för annonskonto.
+>Om du anger ett felaktigt eller ogiltigt konto-ID för Snapchat-annons kommer målgruppsaktiveringen att misslyckas. Kontrollera att du har angett rätt ID för annonskonto.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -110,24 +110,24 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Validera dataexport {#exported-data}
 
-Efter aktivering av segment till *Snap Inc* kommer du att kunna se segmenten i Snap Ads Managers [**Målgrupper** section](https://businesshelp.snapchat.com/s/article/audience-sharing). Så här navigerar du till det här avsnittet:
+Efter aktivering av målgrupper till *Snap Inc* kommer du att kunna se målgrupperna i Snap Ads Managers [**Målgrupper** section](https://businesshelp.snapchat.com/s/article/audience-sharing). Så här navigerar du till det här avsnittet:
 
 1. Logga in på [Snap Ads Manager](https://ads.snapchat.com/)
-2. Välj **Målgrupper** på menyn längst upp till vänster på skärmen. De segment du har aktiverat i Adobe Experience Platform visas i målgruppsbiblioteket:
+2. Välj **Målgrupper** på menyn längst upp till vänster på skärmen. Du ser vilka målgrupper du har aktiverat i Adobe Experience Platform i målgruppsbiblioteket:
 
 ![Publiker](/help/destinations/assets/catalog/advertising/snapchat-ads/audiences.png)
 
-Observera att när ett Adobe-segment först aktiveras för Snap Inc ser du det först som en tom publik. Detta beror på att Adobe Experience Platform inte exporterar medlemsdata till Snap Inc förrän segmentet utvärderas. Mer information om hur segment utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=en#evaluate-segments).
+Observera att när en Adobe-publik först aktiveras för Snap Inc ser du den först som en tom publik. Detta beror på att Adobe Experience Platform inte exporterar medlemsdata till Snap Inc förrän målgruppen utvärderas. Mer information om hur målgrupper utvärderas i Experience Platform finns i [Översikt över segmenteringstjänsten](https://experienceleague.adobe.com/docs/experience-platform/segmentation/home.html?lang=en#evaluate-segments).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

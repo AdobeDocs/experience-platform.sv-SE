@@ -3,7 +3,7 @@ keywords: destinationer;adobe experience platform;platform;mål overview;activat
 title: Översikt över mål
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 546758c419670746cf55de35cbb33131d4457cb9
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 0%
@@ -30,7 +30,7 @@ En av de viktigaste funktionerna i Platform är att inhämta era egna data och a
 ## Destinationssteg {#steps}
 
 * Välj bland en [självbetjäningskatalog](./catalog/overview.md) av alla destinationer som är tillgängliga i Platform.
-* Använd destinationer för att skicka profiler eller segment till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
+* Använd destinationer för att skicka profiler eller målgrupper till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
 ## Kontroller {#controls}
@@ -40,8 +40,8 @@ Kontrollerna i [målarbetsyta](./ui/destinations-workspace.md) kan du:
 * Bläddra i katalogen med destinationsplattformar där du kan aktivera dina data;
 * Skapa, redigera, aktivera och inaktivera dataflöden till destinationerna i katalogen,
 * Skapa ett konto på en lagringsplats eller länkplattform till kontot på målplattformen.
-* Välj vilka segment som ska aktiveras för destinationer.
-* Välj vilken [XDM-fält (Experience Data Model)](../xdm/home.md) att exportera när segment aktiveras för e-postmarknadsföring.
+* Välj vilka målgrupper som ska aktiveras för destinationer,
+* Välj vilken [XDM-fält (Experience Data Model)](../xdm/home.md) att exportera när målgrupper aktiveras till e-postmarknadsföringsmål.
 
 ## Måltyper och -kategorier {#types-and-categories}
 
@@ -56,8 +56,8 @@ Följande tabell visar vilka behörigheter och behörighetskombinationer som kr�
 | Behörighetsnivå | Beskrivning |
 | ---- | ----|
 | **[!UICONTROL Manage Destinations]** | Om du vill ansluta till mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). |
-| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Aktivera segment till mål och aktivera [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
-| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Aktivera segment till mål och dölja [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
+| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Aktivera målgrupper till destinationer och aktivera [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
+| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Så här aktiverar du målgrupper till destinationer och döljer [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
 
 {style="table-layout:auto"}
 
@@ -88,15 +88,15 @@ Mer information om datastyrning i plattformsdokumentationen finns i Datastyrning
 
 Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet för att skapa mål finns på följande sidor för de olika måltyperna i Platform:
 
-* [Annonsmål - Google Ad Manager ](./catalog/advertising/google-ad-manager.md)
+* [Annonsmål - Google Ad Manager](./catalog/advertising/google-ad-manager.md)
 * [Annonsmål - Google Ads](./catalog/advertising/google-ads-destination.md)
-* [Annonsmål - Google Display &amp; Video 360 ](./catalog/advertising/google-dv360.md)
+* [Annonsmål - Google Display &amp; Video 360](./catalog/advertising/google-dv360.md)
 * [Lagringsmål i molnet](./catalog/cloud-storage/overview.md)
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
 * [Sociala destinationer](./catalog/social/overview.md)
 
-Mer information om brott mot datapolicyer i arbetsflödet för segmentaktivering finns i **[!UICONTROL Review]** steg i följande guider:
+Mer information om brott mot datapolicyn i arbetsflödet för målgruppsaktivering finns i **[!UICONTROL Review]** steg i följande guider:
 
-* [Aktivera målgruppsdata för att direktuppspela segmentexportmål](./ui/activate-segment-streaming-destinations.md#review)
+* [Aktivera målgruppsdata för att strömma målgrupper och exportera destinationer](./ui/activate-segment-streaming-destinations.md#review)
 * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](./ui/activate-streaming-profile-destinations.md#review)
 * [Aktivera målgruppsdata för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md#review)

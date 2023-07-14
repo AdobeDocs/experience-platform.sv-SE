@@ -3,9 +3,9 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut
 description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '984'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Mer information om [!DNL Airship], se [Airship Docs](https://docs.airship.com).
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan skicka målgruppssegment till [!DNL Airship]måste du:
+Innan du kan skicka dina målgrupper till [!DNL Airship]måste du:
 
 * Aktivera attribut i [!DNL Airship] projekt.
 * Generera en innehavartoken för autentisering.
@@ -35,6 +35,18 @@ Innan du kan skicka målgruppssegment till [!DNL Airship]måste du:
 >
 >Skapa en [!DNL Airship] konto via [den här signeringslänken](https://go.airship.eu/accounts/register/plan/starter/) om du inte redan gjort det.
 
+## Stöd för externa målgrupper {#external-audiences-support}
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de externa målgrupper som beskrivs i tabellen nedan.
+
+| Extern målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
@@ -42,7 +54,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -72,7 +84,7 @@ Utnyttja profildata som samlats in inom Adobe Experience Platform för att perso
 
 ### Använd skiftläge 2
 
-Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship] och kombinera det med SDK eller [!DNL Airship] prediktiva data. En återförsäljare kan till exempel skapa ett segment med lojalitetsstatus och platsdata (attribut från Platform) och [!DNL Airship] har förutsett att data kommer att ändras för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV, och har en stor sannolikhet för att bli hackad.
+Utnyttja attribut från Adobe Experience Platform för att ytterligare berika [!DNL Airship] och kombinera det med SDK eller [!DNL Airship] prediktiva data. En återförsäljare kan till exempel skapa en målgrupp med lojalitetsstatus och platsdata (attribut från Platform) och [!DNL Airship] har förutsett att data kommer att ändras för att skicka extremt målinriktade meddelanden till användare med guldlojalitetsstatus som bor i Las Vegas, NV, och har en stor sannolikhet för att bli hackad.
 
 ## Anslut till målet {#connect}
 
@@ -102,13 +114,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsöverväganden {#mapping-considerations}
 

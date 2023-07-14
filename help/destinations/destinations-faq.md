@@ -3,9 +3,9 @@ keywords: Destinationer. frågor, Frågor och svar. faq, mål faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 784c529691f2f550176080474f5091bfb1b84279
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
-source-wordcount: '1393'
+source-wordcount: '1392'
 ht-degree: 2%
 
 ---
@@ -22,9 +22,9 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 
 +++Svar Detta är ett normalt beteende på grund av hur Experience Platform utför segmentering.
 
-Direktuppspelningssegmentering uppdaterar profilantalet för direktuppspelningssegment under hela dagen, medan batchsegmentering uppdaterar profilantalet för batchsegment en gång var 24:e timme.
+Direktuppspelningssegmentering uppdaterar profilantalet för direktuppspelade målgrupper under hela dagen, medan batchsegmentering uppdaterar profilantalet för batchmålgrupper en gång var 24:e timme.
 
-När segmentets exportschema skiljer sig från segmenteringsschemat, räknas profilen mellan användargränssnittet och det exporterade [!DNL CSV] filen kommer att vara annorlunda, särskilt när det gäller direktuppspelningssegment.
+När målgruppens exportschema skiljer sig från segmenteringsschemat räknas profilen mellan användargränssnittet och det exporterade [!DNL CSV] filen kommer att vara annorlunda, särskilt när det gäller direktuppspelande målgrupper.
 
 Se [Dokumentation för segmenteringstjänst](../segmentation/home.md) för mer information.
 +++
@@ -33,7 +33,7 @@ Se [Dokumentation för segmenteringstjänst](../segmentation/home.md) för mer i
 
 ### Vad behöver jag göra innan jag kan aktivera målgrupper i [!DNL Facebook Custom Audiences]?
 
-+++Svar Innan du kan skicka målgruppssegment till [!DNL Facebook]måste du uppfylla följande krav:
++++Svar Innan du kan skicka dina målgrupper till [!DNL Facebook]måste du uppfylla följande krav:
 
 * Dina [!DNL Facebook] användarkontot måste ha **[!DNL Manage campaigns]** behörighet aktiverad för annonskontot som du tänker använda.
 * The **Adobe Experience Cloud** företagskonto måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Se [Lägg till partners i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
@@ -91,9 +91,9 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 
 ## Google kundmatchning {#google-customer-match}
 
-### När jag exporterar segment till Google Customer Match, varför visas extra siffror i slutet av segmentnamnen i Google-gränssnittet?
+### När jag exporterar målgrupper till Google Customer Match, varför visas extra nummer i slutet av målgruppsnamnen i Google gränssnitt?
 
-+++Svar Google kräver att segmentnamnen är unika. Siffrorna du ser är [UNIX-tidsstämplar](https://www.unixtimestamp.com/) och de läggs till så att segmentnamnen förblir unika om du mappar samma segment till flera Google-mål.
++++Svar Google kräver att målgruppsnamnen är unika. Siffrorna du ser är [UNIX-tidsstämplar](https://www.unixtimestamp.com/) och de läggs till så att målgruppsnamnen förblir unika om du mappar samma målgrupp till flera Google-destinationer.
 +++
 
 ## linkedIn Matched Auditions {#linkedin}
@@ -174,7 +174,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 +++Besvara Ja, Edge Network Server API fungerar med anpassat anpassningsmål. Eftersom profilattribut kan innehålla känsliga data, kräver Custom Personalization-målet att du använder Edge Network Server API för datainsamling för att skydda dessa data. Dessutom måste alla API-anrop göras i en [autentiserad kontext](../server-api/authentication.md).
 +++
 
-### Jag kan bara ha en kopplingsregel som är aktiv i farten. Kan jag bygga målgrupper som använder en annan sammanslagningspolicy och ändå skicka dem till Adobe Target som strömningssegment?
+### Jag kan bara ha en kopplingsregel som är aktiv i farten. Kan jag bygga målgrupper som använder en annan sammanslagningspolicy och ändå skicka dem till Adobe Target som direktuppspelade målgrupper?
 
 +++Svarsnummer Alla målgrupper som du vill aktivera för Adobe Target måste använda en [sammanfogningsprincip](../profile/merge-policies/ui-guide.md).
 +++

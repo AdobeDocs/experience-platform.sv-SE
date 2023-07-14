@@ -4,7 +4,7 @@ title: Redigera aktiveringsdataflöden
 type: Tutorial
 description: Följ stegen i den här artikeln när du vill redigera ett befintligt aktiveringsdataflöde i Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '319'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Redigera aktiveringsdataflöden {#edit-activation-flows}
 
-I Adobe Experience Platform kan du redigera olika komponenter i befintliga aktiveringsdataflöden till mål, t.ex. exporterade segment och profilattribut, exportfrekvens, om aktiveringsdataflödet är aktiverat eller inaktiverat, med mera.
+I Adobe Experience Platform kan du redigera olika komponenter i befintliga aktiveringsdataflöden till mål, t.ex. exporterade målgrupper och profilattribut, exportfrekvens, om aktiveringsdataflödet är aktiverat eller inaktiverat, med mera.
 
 ## Redigera dataflöden {#edit-dataflows}
 
@@ -33,10 +33,11 @@ Följ stegen nedan för att redigera befintliga aktiveringsdataflöden:
 
 4. The **[!UICONTROL Dataflow runs]** målsidan visas med de tillgängliga kontrollerna. Nu kan du redigera flera komponenter i måldataflödet:
 
-   * Välj **[!UICONTROL Activate segments]** i den högra listen för att ändra vilka segment eller profilattribut som ska skickas till målet. Den här åtgärden tar dig till aktiveringsarbetsflödet, som skiljer sig åt beroende på måltyp. Mer information finns i stödlinjerna för:
-      * [aktivera målgruppsdata till segmenterade direktuppspelningsmål](./activate-segment-streaming-destinations.md) (t.ex. Facebook eller Twitter)
+   * Välj **[!UICONTROL Activate audiences]** till höger för att ändra vilka målgrupper eller profilattribut som ska skickas till målet. Den här åtgärden tar dig till aktiveringsarbetsflödet, som skiljer sig åt beroende på måltyp. Mer information finns i stödlinjerna för:
+      * [aktivera målgruppsdata till målgruppsdirektuppspelningsmål](./activate-segment-streaming-destinations.md) (t.ex. Facebook eller Twitter)
       * [aktivera målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md) (t.ex. Amazon S3 eller Oracle Eloqua)
       * [aktivera målgruppsdata för direktuppspelning av profilbaserade mål](./activate-streaming-profile-destinations.md) (till exempel HTTP API eller Amazon Kinesis).
+
    * Dessutom kan du redigera namnet och beskrivningen för måldataflödet.
    * Du kan använda **[!UICONTROL Enabled]/[!UICONTROL Disabled]** växla för att starta och pausa all dataexport till målet.
 

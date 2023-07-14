@@ -2,7 +2,7 @@
 title: Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: 276224303c7a65a53ff859bcbf47f64a6925bf77
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '694'
 ht-degree: 1%
@@ -67,7 +67,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att profilera mål för begäran](../../ui/activate-edge-personalization-destinations.md) för instruktioner om att aktivera målgrupper för [!DNL Commerce] mål.
+Läs [Aktivera profiler och målgrupper för att profilera mål för begäranden](../../ui/activate-edge-personalization-destinations.md) för instruktioner om att aktivera målgrupper för [!DNL Commerce] mål.
 
 ## Nästa steg i [!DNL Adobe Commerce]
 

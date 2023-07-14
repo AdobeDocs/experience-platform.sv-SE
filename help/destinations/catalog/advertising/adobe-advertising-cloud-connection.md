@@ -1,10 +1,10 @@
 ---
 title: Adobe Advertising Cloud DSP-anslutning
-description: Adobe Advertising Cloud DSP är en integrerad destination för Adobe Real-time Customer Data Platform, vilket gör att ni kan dela autentiserade förstahandssegment med godkända annonsörer och användare för kampanjaktivering.
+description: Adobe Advertising Cloud DSP är en integrerad målgrupp för Adobe Real-time Customer Data Platform, vilket gör att ni kan dela autentiserade förstahandsmålgrupper med godkända annonsörer och användare för kampanjaktivering.
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '1011'
+source-wordcount: '1009'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP) kan ni dela autentiserade förstapartssegment med godkända annonsörer och användare för kampanjaktivering med DSP. Mer information om Real-Time CDP integrering med DSP finns i [Om aktivering av autentiserade segment från målgruppskällor](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html).
+Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP) kan ni dela autentiserade förstapartsmålgrupper med godkända annonsörer och användare för kampanjaktivering med DSP. Mer information om Real-Time CDP integrering med DSP finns i [Aktivera autentiserade målgrupper från målgruppskällor](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html).
 
 >[!IMPORTANT]
 >
@@ -25,17 +25,17 @@ För att du bättre ska förstå hur och när du ska använda Advertising Cloud 
 
 ### Användning av varumärken för annonsering
 
-En webbutik vill återannonsera sina värdefulla kunder genom en webbannonskampanj utan att använda cookies för målinriktning. Återförsäljaren delar ett segment som består av det hashas-baserade e-post-ID:t för dess värdefulla kunder från dess Adobe Real-time Customer Data Platform-konto (Real-Time CDP) till dess DSP. DSP konverterar sedan hash-kodade e-post-ID:n till autentiserade [!DNL RampIDs] genom ett partnerskap mellan DSP och LiveRamp. Resultatet [!DNL RampIDs] kan användas i en webbannonskampanj för att rikta sig till målgruppen.
+En webbutik vill återannonsera sina värdefulla kunder genom en webbannonskampanj utan att använda cookies för målinriktning. Återförsäljaren delar en målgrupp bestående av de hashas-ID:n som tillhör dess värdefulla kunder från dess Adobe Real-time Customer Data Platform-konto (Real-Time CDP) till dess DSP. DSP konverterar sedan hash-kodade e-post-ID:n till autentiserade [!DNL RampIDs] genom ett partnerskap mellan DSP och LiveRamp. Resultatet [!DNL RampIDs] kan användas i en webbannonskampanj för att rikta sig till målgruppen.
 
 ### Användningsexempel
 
-En mediebyrå med ett DSP konto kör en återannonskampanj för sina kunders räkning, ett ledande varumärke inom turismbranschen. Varumärket vill rikta om alla sina gäster det senaste året med ett nytt kampanjerbjudande. Varumärket är värd för all gästinformation i [!DNL Real-Time CDP]. Varumärket kan dela ett segment som består av gästernas hash-kodade e-post-ID:n från dess [!DNL Real-Time CDP] konto hos mediebyråens DSP för att omdirigera gästerna via en mediekampanj.
+En mediebyrå med ett DSP konto kör en återannonskampanj för sina kunders räkning, ett ledande varumärke inom turismbranschen. Varumärket vill rikta om alla sina gäster det senaste året med ett nytt kampanjerbjudande. Varumärket är värd för all gästinformation i [!DNL Real-Time CDP]. Varumärket kan dela en målgrupp som består av gästernas hash-kodade e-post-ID:n [!DNL Real-Time CDP] konto hos mediebyråens DSP för att omdirigera gästerna via en mediekampanj.
 
 ## Förutsättningar {#prerequisites}
 
-* DSP på konto- och kampanjnivå för att aktivera segmentdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP kommer att utföra den här konfigurationen. [!DNL RampID] är tillgängligt via ett partnerskap mellan DSP och [!DNL LiveRamp]och du behöver inte en egen [!DNL LiveRamp] medlemskap för att använda det.
+* DSP på konto- och kampanjnivå för att möjliggöra målgruppsdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP kommer att utföra den här konfigurationen. [!DNL RampID] är tillgängligt via ett partnerskap mellan DSP och [!DNL LiveRamp]och du behöver inte en egen [!DNL LiveRamp] medlemskap för att använda det.
 * Experience Cloud organisation-ID för Experience Platform-kontot. Du kan hitta ditt ID på din [!DNL Real-Time CDP] användarprofilsida.
-* A [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) för att få segment för kampanjaktivering. Din DSP skapar källan med ditt Experience Cloud organisation-ID.
+* A [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) för att ta emot målgrupper för kampanjaktivering. Din DSP skapar källan med ditt Experience Cloud organisation-ID.
 * Källnyckeln för DSP eller annonsören, som genereras när en [[!DNL Real-Time CDP] källan skapas i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Ditt DSP kommer att dela nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, som [förklaras nedan](#authenticate).
 * Kunddata som består av e-post eller hash-kodade e-postmeddelanden.
 
@@ -55,8 +55,8 @@ I följande tabell finns information om exporttyp och frekvens för destinatione
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (målgrupp) med de identifierare (e-post eller hashade e-post) som används i Advertising Cloud DSP-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på segmentutvärdering, skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (e-post eller hashad e-post) som används i Advertising Cloud DSP-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutaren uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -91,23 +91,23 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Validera dataexport {#exported-data}
 
-Kontrollera följande om du vill verifiera att datasegmentet delades med Advertising Cloud:
+Kontrollera följande om du vill verifiera att datapubliken delats med Advertising Cloud:
 
 * Dataflödet i [!DNL Real-Time CDP] målet har slutförts.
 
-* I DSP är segmentet tillgängligt när du skapar eller redigerar en målgrupp från [!UICONTROL Audiences] > [!UICONTROL All Audiences] eller från [!UICONTROL Audience Targeting] i placeringsinställningarna. Segmentet ska vara synligt i [!UICONTROL Adobe Segments] under [!UICONTROL Real-Time CDP] mapp.
+* I DSP är målgruppen tillgänglig när du skapar eller redigerar en målgrupp från [!UICONTROL Audiences] > [!UICONTROL All Audiences] eller från [!UICONTROL Audience Targeting] i placeringsinställningarna. Publiken ska vara synlig i [!UICONTROL Adobe Segments] under [!UICONTROL Real-Time CDP] mapp.
 
-![Real-Time CDP segment DSP målgruppsinställningar](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
+![Real-Time CDP målgrupper DSP målgruppsinställningar](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/segments-in-dsp.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

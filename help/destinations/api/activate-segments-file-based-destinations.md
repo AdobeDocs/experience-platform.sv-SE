@@ -1,22 +1,21 @@
 ---
 solution: Experience Platform
-title: Aktivera segment till filbaserade mål med hjälp av API:t för Flow Service
+title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 5ab72c11a5fd73f10eef6b7bb3e0d3386098748e
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '4436'
 ht-degree: 0%
 
 ---
 
-# Aktivera segment till filbaserade mål med hjälp av API:t för Flow Service
+# Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 
 >[!IMPORTANT]
 >
 >* Den här betafunktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
-
 
 Använd de förbättrade funktionerna för filexport (som för närvarande finns i betaversion) för att få bättre anpassningsfunktioner när du exporterar filer från Experience Platform:
 
@@ -46,12 +45,12 @@ Om du redan har använt API:t för Flow Service för att exportera profiler till
 
 ## Komma igång {#get-started}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/segment-export-overview.png)
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni skapa segment och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
+* [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni bygga målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna aktivera data till filbaserade mål i Platform.
@@ -92,11 +91,11 @@ Du hittar referensdokumentation för alla API-åtgärder i den här självstudie
 
 Beskrivningar av termer som du kommer att stöta på i den här API-självstudiekursen finns i [ordlista](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) API-referensdokumentationen.
 
-## Välj mål där segment ska exporteras {#select-destination}
+## Välj mål där målgrupper ska exporteras {#select-destination}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step1.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step1.png)
 
-Innan du startar arbetsflödet för att exportera profiler, ska du identifiera anslutningsspec och flödesspec-ID för det mål som du tänker exportera segment till. Använd tabellen nedan som referens.
+Innan du startar arbetsflödet för att exportera profiler, ska du identifiera anslutningsspec och flödesspec-ID för det mål som du tänker exportera målgrupper till. Använd tabellen nedan som referens.
 
 | Destination | Anslutningsspecifikation | Flödesspecifikation |
 ---------|----------|---------|
@@ -319,13 +318,13 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDTABS]
 
-Följ stegen nedan för att konfigurera ett dataflöde för segmentexport till ett molnlagringsmål. I vissa steg skiljer sig förfrågningarna och svaren mellan de olika molnlagringsmålen. I dessa fall använder du flikarna på sidan för att hämta förfrågningar och svar som är specifika för målet som du vill ansluta och exportera segment till. Var noga med att använda rätt `connection spec` och `flow spec` för målet som du konfigurerar.
+Följ stegen nedan för att konfigurera ett dataflöde för målgruppsexport till ett molnlagringsmål. I vissa steg skiljer sig förfrågningarna och svaren mellan de olika molnlagringsmålen. I dessa fall använder du flikarna på sidan för att hämta förfrågningar och svar som är specifika för det mål som du vill ansluta och exportera målgrupper till. Var noga med att använda rätt `connection spec` och `flow spec` för målet som du konfigurerar.
 
 ## Skapa en källanslutning {#create-source-connection}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step2.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step2.png)
 
-När du har bestämt vilket mål du vill exportera segment till måste du skapa en källanslutning. The [källanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) representerar anslutningen till den interna [Experience Platform Profile Store](/help/profile/home.md#profile-data-store).
+När du har bestämt vilket mål du vill exportera målgrupper till måste du skapa en källanslutning. The [källanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) representerar anslutningen till den interna [Experience Platform Profile Store](/help/profile/home.md#profile-data-store).
 
 >[!BEGINSHADEBOX]
 
@@ -373,9 +372,9 @@ Ett godkänt svar returnerar ID:t (`id`) av den nyligen skapade källanslutninge
 
 ## Skapa en basanslutning {#create-base-connection}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step3.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step3.png)
 
-A [basanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar inloggningsuppgifterna säkert på målet. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna måste du först hämta `connection spec` för det önskade målet enligt beskrivningen i avsnittet [Välj mål där segment ska exporteras](#select-destination) och sedan titta på `authSpec` svar. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
+A [basanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar inloggningsuppgifterna säkert på målet. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna måste du först hämta `connection spec` för det önskade målet enligt beskrivningen i avsnittet [Välj mål där målgrupper ska exporteras](#select-destination) och sedan titta på `authSpec` svar. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
 
 >[!BEGINTABS]
 
@@ -1144,9 +1143,9 @@ Observera anslutnings-ID från svaret. Detta ID krävs i nästa steg när du ska
 
 ## Skapa en målanslutning {#create-target-connection}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step4.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step4.png)
 
-Därefter måste du skapa en målanslutning. [Målanslutningar](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagra exportparametrarna för de exporterade segmenten. Exportparametrar omfattar exportplats, filformat, komprimering och annan information. För CSV-filer kan du till exempel välja flera exportalternativ. Få omfattande information om alla CSV-exportalternativ som stöds i [konfigurationssida för filformatering](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+Därefter måste du skapa en målanslutning. [Målanslutningar](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagra exportparametrarna för de exporterade målgrupperna. Exportparametrar omfattar exportplats, filformat, komprimering och annan information. För CSV-filer kan du till exempel välja flera exportalternativ. Få omfattande information om alla CSV-exportalternativ som stöds i [konfigurationssida för filformatering](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 Se `targetSpec` egenskaper som anges i målets `connection spec` för att förstå vilka egenskaper som stöds för varje måltyp. Se flikarna nedan för `targetSpec` egenskaper för alla mål som stöds.
 
@@ -1156,7 +1155,7 @@ Se `targetSpec` egenskaper som anges i målets `connection spec` för att först
 
 +++[!DNL Amazon S3] - [!DNL Connection spec] visa målanslutningsparametrar
 
-Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för segmentexportdestinationer.
+Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för målgruppsexportdestinationer.
 
 ```json {line-numbers="true" start-line="1" highlight="10,56"}
 {
@@ -1214,7 +1213,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1367,7 +1366,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
 
 +++[!DNL Azure Blob Storage] - [!DNL Connection spec] visa målanslutningsparametrar
 
-Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för segmentexportdestinationer.
+Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för målgruppsexportdestinationer.
 
 ```json {line-numbers="true" start-line="1" highlight="10,44"}
 {
@@ -1413,7 +1412,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1567,7 +1566,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
 
 +++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - [!DNL Connection spec] visa målanslutningsparametrar
 
-Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för segmentexportdestinationer.
+Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för målgruppsexportdestinationer.
 
 ```json {line-numbers="true" start-line="1" highlight="10,22,37"}
 {
@@ -1606,7 +1605,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1758,7 +1757,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
 
 +++[!DNL Data Landing Zone(DLZ)] - [!DNL Connection spec] visa målanslutningsparametrar
 
-Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för segmentexportdestinationer.
+Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för målgruppsexportdestinationer.
 
 ```json {line-numbers="true" start-line="1" highlight="9,36"}
 "items": [
@@ -1796,7 +1795,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -1948,7 +1947,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
 
 +++[!DNL Google Cloud Storage] - [!DNL Connection spec] visa målanslutningsparametrar
 
-Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för segmentexportdestinationer.
+Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för målgruppsexportdestinationer.
 
 ```json {line-numbers="true" start-line="1" highlight="10,44"}
 {
@@ -1994,7 +1993,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -2147,7 +2146,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
 
 +++SFTP - [!DNL Connection spec] visa målanslutningsparametrar
 
-Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för segmentexportdestinationer.
+Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connection spec] nedan, som innehåller ytterligare information om var du hittar [!DNL target spec] parametrar i anslutningsspecifikationen. I exemplet nedan kan du också se vilka målparametrar som är *not* gäller för målgruppsexportdestinationer.
 
 ```json {line-numbers="true" start-line="1" highlight="10,37"}
 {
@@ -2186,7 +2185,7 @@ Lägg märke till de markerade raderna med textbundna kommentarer i [!DNL connec
                                 "PARQUET"
                             ]
                         },
-                        "datasetFileType": { // does not apply to segment export destinations
+                        "datasetFileType": { // does not apply to audience export destinations
                             "conditional": {
                                 "field": "flowSpec.attributes._workflow",
                                 "operator": "CONTAINS",
@@ -2891,15 +2890,15 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 >[!ENDTABS]
 
-Anteckna `target connection ID` från svaret. Detta ID krävs i nästa steg när du skapar dataflödet för att exportera segment.
+Anteckna `target connection ID` från svaret. Detta ID krävs i nästa steg när du skapar dataflödet för att exportera målgrupper.
 
 Ett godkänt svar returnerar ID:t (`id`) av den nya målkällanslutningen och `etag`. Anteckna målanslutnings-ID som du behöver det senare när du skapar dataflödet.
 
 ## Skapa ett dataflöde {#create-dataflow}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step5.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step5.png)
 
-Nästa steg i målkonfigurationen är att skapa ett dataflöde. A [dataflöde](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) binder samman enheter som skapats tidigare och innehåller även alternativ för att konfigurera segmentets exportschema. Om du vill skapa dataflödet använder du nyttolasterna nedan, beroende på vilket molnlagringsmål du vill ha, och ersätter flödenhets-ID:n från tidigare steg. Observera att du i det här steget inte lägger till någon information om attribut- eller identitetsmappning i dataflödet. Detta kommer att följa i nästa steg.
+Nästa steg i målkonfigurationen är att skapa ett dataflöde. A [dataflöde](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) binder samman enheter som skapats tidigare och innehåller även alternativ för att konfigurera målgruppens exportschema. Om du vill skapa dataflödet använder du nyttolasterna nedan, beroende på vilket molnlagringsmål du vill ha, och ersätter flödenhets-ID:n från tidigare steg. Observera att du i det här steget inte lägger till någon information om attribut- eller identitetsmappning i dataflödet. Detta kommer att följa i nästa steg.
 
 >[!BEGINTABS]
 
@@ -2907,7 +2906,7 @@ Nästa steg i målkonfigurationen är att skapa ett dataflöde. A [dataflöde](h
 
 **Begäran**
 
-+++Skapa dataflöde för segmentexport till [!DNL Amazon S3] mål - begäran
++++ Skapa dataflöde för målgruppsexport [!DNL Amazon S3] mål - begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2920,8 +2919,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an Amazon S3 cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an Amazon S3 cloud storage destination",
+    "name": "Activate audiences to an Amazon S3 cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an Amazon S3 cloud storage destination",
     "flowSpec": {
         "id": "1a0514a6-33d4-4c7f-aff8-594799c47549", // Amazon S3 flow spec ID
         "version": "1.0"
@@ -2955,7 +2954,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++Skapa dataflöde för segmentexport till [!DNL Azure Blob Storage] mål - begäran
++++ Skapa dataflöde för målgruppsexport [!DNL Azure Blob Storage] mål - begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -2968,8 +2967,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an Azure Blob Storage cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an Azure Blob Storage cloud storage destination",
+    "name": "Activate audiences to an Azure Blob Storage cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an Azure Blob Storage cloud storage destination",
     "flowSpec": {
         "id": "752d422f-b16f-4f0d-b1c6-26e448e3b388", // Azure Blob Storage flow spec ID
         "version": "1.0"
@@ -3015,7 +3014,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++Skapa dataflöde för segmentexport till [!DNL Azure Data Lake Gen 2(ADLS Gen2)] mål - begäran
++++ Skapa dataflöde för målgruppsexport [!DNL Azure Data Lake Gen 2(ADLS Gen2)] mål - begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -3028,8 +3027,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
+    "name": "Activate audiences to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an Azure Data Lake Gen 2(ADLS Gen2) cloud storage destination",
     "flowSpec": {
         "id": "17be2013-2549-41ce-96e7-a70363bec293", // Azure Data Lake Gen 2(ADLS Gen2) flow spec ID
         "version": "1.0"
@@ -3063,7 +3062,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++Skapa dataflöde för segmentexport till [!DNL Data Landing Zone] mål - begäran
++++ Skapa dataflöde för målgruppsexport [!DNL Data Landing Zone] mål - begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -3076,8 +3075,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to a Data Landing Zone cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to a Data Landing Zone cloud storage destination",
+    "name": "Activate audiences to a Data Landing Zone cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to a Data Landing Zone cloud storage destination",
     "flowSpec": {
         "id": "cd2fc47e-e838-4f38-a581-8fff2f99b63a", // Data Landing Zone flow spec ID
         "version": "1.0"
@@ -3111,7 +3110,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++Skapa dataflöde för segmentexport till [!DNL Google Cloud Storage] mål - begäran
++++ Skapa dataflöde för målgruppsexport [!DNL Google Cloud Storage] mål - begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -3124,8 +3123,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to a Google Cloud Storage cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to a Google Cloud Storage destination",
+    "name": "Activate audiences to a Google Cloud Storage cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to a Google Cloud Storage destination",
     "flowSpec": {
         "id": "585c15c4-6cbf-4126-8f87-e26bff78b657", // Google Cloud Storage flow spec ID
         "version": "1.0"
@@ -3159,7 +3158,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++Skapa dataflöde för segmentexport till SFTP-mål - begäran
++++Skapa dataflöde för målgruppsexport till SFTP-mål - begäran
 
 Lägg märke till de markerade raderna med textbundna kommentarer i exemplet med begäran som ger ytterligare information. Ta bort de textbundna kommentarerna i begäran när du kopierar och klistrar in begäran i valfri terminal.
 
@@ -3172,8 +3171,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Activate segments to an SFTP cloud storage destination",
-    "description": "This operation creates a dataflow to export segments to an SFTP cloud storage destination",
+    "name": "Activate audiences to an SFTP cloud storage destination",
+    "description": "This operation creates a dataflow to export audiences to an SFTP cloud storage destination",
     "flowSpec": {
         "id": "fd36aaa4-bf2b-43fb-9387-43785eeeb799", // SFTP flow spec ID
         "version": "1.0"
@@ -3207,14 +3206,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 Anteckna dataflödes-ID från svaret. Detta ID krävs i senare steg.
 
-### Lägga till segment i exporten
+### Lägga till målgrupper i exporten
 
-I det här steget kan du även välja vilka segment som du vill exportera till målet. Utförlig information om det här steget och formatet för begäran om att lägga till ett segment i dataflödet finns i exemplen i [Uppdatera ett måldataflöde](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById) i API-referensdokumentationen.
+I det här steget kan du även välja vilka målgrupper du vill exportera till målet. Utförlig information om det här steget och formatet för begäran om att lägga till en målgrupp i dataflödet finns i exemplen i [Uppdatera ett måldataflöde](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Dataflows/operation/patchFlowById) i API-referensdokumentationen.
 
 
 ## Ställ in attribut- och identitetsmappning {#attribute-and-identity-mapping}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step6.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step6.png)
 
 När du har skapat dataflödet måste du ange mappning för de attribut och identiteter som du vill exportera. Detta består av tre steg som anges nedan:
 
@@ -3346,7 +3345,7 @@ Svaret nedan har förkortats av kortfattad anledning.
                             "type": "string",
                             "meta:xdmType": "string",
                             "title": "First name",
-                            "description": "The first segment of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the preferred personal or given name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
+                            "description": "The first audience of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the preferred personal or given name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
                         },
                         "fullName": {
                             "type": "string",
@@ -3358,7 +3357,7 @@ Svaret nedan har förkortats av kortfattad anledning.
                             "type": "string",
                             "meta:xdmType": "string",
                             "title": "Last name",
-                            "description": "The last segment of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the inherited family name, surname, patronymic, or matronymic name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
+                            "description": "The last audience of the name in the writing order most commonly accepted in the language of the name. In many cultures this is the inherited family name, surname, patronymic, or matronymic name. The `firstName` and `lastName` properties have been introduced to maintain compatibility with existing systems that model names in a simplified, non-semantic, and non-internationalizable way. Using `xdm:fullName` is always preferable."
                         },
                         "middleName": {
                             "type": "string",
@@ -3783,7 +3782,7 @@ Inspect det svar du får när du genomför samtalet ovan. Du måste gå ned i sv
                         "exited":"Entity is exiting the segment.",
                         "realized":"Entity is entering the segment."
                      },
-                     "description":"Is the segment participation realized as part of the current request.",
+                     "description":"Is the audience participation realized as part of the current request.",
                      "meta:xdmType":"string",
                      "meta:xdmField":"xdm:status"
                   },
@@ -3844,14 +3843,14 @@ Inspect det svar du får när du genomför samtalet ovan. Du måste gå ned i sv
                            "exclusiveMinimum":0
                         }
                      },
-                     "description":"Values that are directly related with the segment realization. This payload exists with the same 'validUntil' as the segment realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
+                     "description":"Values that are directly related with the audience realization. This payload exists with the same 'validUntil' as the audience realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
                      "meta:xdmType":"object",
                      "meta:xdmField":"xdm:payload"
                   },
                   "version":{
                      "type":"string",
                      "title":"Version",
-                     "description":"The version of the segment definition used in this segment assertion. Version can be omitted in audience lists when all memberships versions are the same.",
+                     "description":"The version of the audience definition used in this audience assertion. Version can be omitted in audience lists when all memberships versions are the same.",
                      "meta:xdmType":"string",
                      "meta:xdmField":"xdm:version"
                   },
@@ -3863,7 +3862,7 @@ Inspect det svar du får när du genomför samtalet ovan. Du måste gå ned i sv
                            "type":"string",
                            "title":"Identifier",
                            "format":"uri-reference",
-                           "description":"Identity of the segment in the related namespace.",
+                           "description":"Identity of the audience in the related namespace.",
                            "meta:xdmType":"string",
                            "meta:xdmField":"@id"
                         },
@@ -3895,7 +3894,7 @@ Inspect det svar du får när du genomför samtalet ovan. Du måste gå ned i sv
                            "meta:referencedFrom":"https://ns.adobe.com/xdm/context/namespace"
                         }
                      },
-                     "description":"The identity of the segment or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
+                     "description":"The identity of the audience or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
                      "meta:status":"deprecated",
                      "meta:xdmType":"object",
                      "meta:xdmField":"xdm:segmentID",
@@ -3905,7 +3904,7 @@ Inspect det svar du får när du genomför samtalet ovan. Du måste gå ned i sv
                      "type":"string",
                      "title":"Valid until",
                      "format":"date-time",
-                     "description":"The timestamp for when the segment assertion should no longer be assumed to be valid and should either be ignored or revalidated.",
+                     "description":"The timestamp for when the audienceassertion should no longer be assumed to be valid and should either be ignored or revalidated.",
                      "meta:xdmType":"date-time",
                      "meta:xdmField":"xdm:validUntil"
                   },
@@ -3956,7 +3955,7 @@ Inspect det svar du får när du genomför samtalet ovan. Du måste gå ned i sv
                      "type":"string",
                      "title":"Last qualification time",
                      "format":"date-time",
-                     "description":"The timestamp when the assertion of segment membership was made.",
+                     "description":"The timestamp when the assertion of audience membership was made.",
                      "meta:xdmType":"date-time",
                      "meta:xdmField":"xdm:lastQualificationTime"
                   }
@@ -4070,14 +4069,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                             "version": {
                                 "meta:xdmField": "xdm:version",
                                 "meta:xdmType": "string",
-                                "description": "The version of the segment definition used in this segment assertion. Version can be omitted in audience lists when all memberships versions are the same.",
+                                "description": "The version of the audience definition used in this audience assertion. Version can be omitted in audience lists when all memberships versions are the same.",
                                 "type": "string",
                                 "title": "Version"
                             },
                             "validUntil": {
                                 "meta:xdmField": "xdm:validUntil",
                                 "meta:xdmType": "date-time",
-                                "description": "The timestamp for when the segment assertion should no longer be assumed to be valid and should either be ignored or revalidated.",
+                                "description": "The timestamp for when the audienceassertion should no longer be assumed to be valid and should either be ignored or revalidated.",
                                 "format": "date-time",
                                 "type": "string",
                                 "title": "Valid until"
@@ -4094,7 +4093,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                     "exited"
                                 ],
                                 "default": "realized",
-                                "description": "Is the segment participation realized as part of the current request.",
+                                "description": "Is the audience participation realized as part of the current request.",
                                 "type": "string",
                                 "title": "Status"
                             },
@@ -4132,7 +4131,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                     "_id": {
                                         "meta:xdmField": "@id",
                                         "meta:xdmType": "string",
-                                        "description": "Identity of the segment in the related namespace.",
+                                        "description": "Identity of the audience in the related namespace.",
                                         "format": "uri-reference",
                                         "type": "string",
                                         "title": "Identifier"
@@ -4140,7 +4139,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                 },
                                 "meta:xdmType": "object",
                                 "type": "object",
-                                "description": "The identity of the segment or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
+                                "description": "The identity of the audience or snapshot definition in with the domain of the specific system that processes that type of segment. Deprecated.",
                                 "meta:status": "deprecated",
                                 "title": "Segment ID"
                             },
@@ -4245,13 +4244,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
                                     }
                                 },
                                 "type": "object",
-                                "description": "Values that are directly related with the segment realization. This payload exists with the same 'validUntil' as the segment realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
+                                "description": "Values that are directly related with the audience realization. This payload exists with the same 'validUntil' as the audience realization. Note that the intention is that exactly one payload value be included, as indicated by the payload type. This was originally modeled using 'oneOf', but due to limitations in our tooling that was removed. This more semantically meaningful representation will be re-introduced in the future.",
                                 "title": "Payload"
                             },
                             "lastQualificationTime": {
                                 "meta:xdmField": "xdm:lastQualificationTime",
                                 "meta:xdmType": "date-time",
-                                "description": "The timestamp when the assertion of segment membership was made.",
+                                "description": "The timestamp when the assertion of audience membership was made.",
                                 "format": "date-time",
                                 "type": "string",
                                 "title": "Last qualification time"
@@ -4324,7 +4323,6 @@ Använd sedan [API för dataförberedelse](https://developer.adobe.com/experienc
 >* Det finns ett visst fall när källattributet är ett identitetsattribut och innehåller en punkt. I det här fallet måste attributet escape-konverteras med `//`, vilket markeras nedan.
 >* Observera även att även om exempelkonfigurationen nedan innehåller `Email` och `Phone_E.164`kan du bara exportera ett identitetsattribut per dataflöde.
 
-
 ```shell {line-numbers="true" start-line="1" highlight="16-38"}
 curl --location --request POST 'https://platform.adobe.io/data/foundation/conversion/mappingSets' \
 --header 'x-api-key: {API_KEY}' \
@@ -4391,7 +4389,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/conver
 
 >[!ENDSHADEBOX]
 
-Observera mappningsuppsättningens ID som du behöver i nästa steg för att uppdatera det befintliga dataflödet med mappningsuppsättnings-ID.
+Observera mappningsuppsättningens ID som du behöver i nästa steg för att uppdatera det befintliga dataflödet med mappningsuppsättnings-ID:t.
 
 Hämta sedan ID:t för det dataflöde som du vill uppdatera.
 
@@ -4449,7 +4447,7 @@ Svaret från API:t för Flow Service returnerar ID:t för det uppdaterade datafl
 
 ## Gör andra dataflödesuppdateringar {#other-dataflow-updates}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step7.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
 Om du vill göra några uppdateringar av dataflödet använder du `PATCH` operation.Du kan till exempel uppdatera dina dataflöden och välja fält som obligatoriska nycklar eller dedupliceringsnycklar.
 
@@ -4599,7 +4597,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## Validera dataflöde (hämta dataflödeskörningar) {#get-dataflow-runs}
 
-![Steg för att aktivera segment som markerar det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step8.png)
+![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step8.png)
 
 Använd API:t för dataflödeskörning om du vill kontrollera körningarna av ett dataflöde:
 
@@ -4679,7 +4677,7 @@ API-slutpunkterna i den här självstudien följer de allmänna felmeddelandepri
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du anslutit plattformen till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera segment. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
+Genom att följa den här självstudiekursen har du anslutit plattformen till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera målgrupper. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
 * [Översikt över mål](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)

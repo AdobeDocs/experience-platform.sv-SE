@@ -3,7 +3,7 @@ keywords: taggtillägg;taggtillägg;startmål; plattformstaggtillägg;plattforms
 title: Taggtillägg i Adobe Experience Platform
 description: Adobe Experience Platform erbjuder nästa generation tagghanteringsfunktioner från Adobe. Med Platform får ni ett enkelt sätt att driftsätta och hantera alla de analyser, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser.
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: fe71294cb73a25c2c4708b0a6ebe04fc2b97afdf
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '482'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Det är viktigt att skilja mellan tillägg för tagg- och händelsevidarebefordr
 
 Extensions forward raw event data to several types of destinations. Think of extensions as an **Event Forwarding** type of destination. This is a simpler type of integration with destination platforms, which only forwards raw event data. Examples of those are the [Gainsight personalization extension](../personalization/gainsight.md) or the [Confirmit Voice of the Customer extension](../voice/confirmit-digital-feedback.md).
 
-**Profile/Segment Export** destinations in Adobe Experience Platform capture event data, combine it with other data sources, apply segmentation, and export segments and qualified profiles to destinations. Examples of those are the [Amazon S3 cloud storage destination](../cloud-storage/amazon-s3.md) or the [Google Display & Video 360 advertising destination](../advertising/google-dv360.md).
+**Profile/Segment Export** destinations in Adobe Experience Platform capture event data, combine it with other data sources, apply segmentation, and export audiences and qualified profiles to destinations. Examples of those are the [Amazon S3 cloud storage destination](../cloud-storage/amazon-s3.md) or the [Google Display & Video 360 advertising destination](../advertising/google-dv360.md).
 
 ![Tag extensions compared to other destinations](../../assets/common/launch-and-other-destinations.png)
 
@@ -47,7 +47,7 @@ Extensions forward raw event data to several types of destinations. Think of ext
 
 Plattformens taggfunktioner är kostnadsfria för befintliga Experience Cloud-kunder. Systemet förenklar taggdistribution på din webbplats med lättanvända tillägg som du kan installera, konfigurera, uppdatera och ta bort. Taggar gör att det inte finns så mycket plats på webbplatsen och gör att du snabbt kan läsa in sidorna.
 
-Du kan inte aktivera segment för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [taggdokumentation](../../../tags/ui/managing-resources/rules.md).
+Du kan inte aktivera målgrupper för taggtillägg, men du kan konfigurera regler så att endast händelsedata vidarebefordras i vissa situationer. Denna kraftfulla funktion gör att du bara kan vidarebefordra händelsedata i vissa situationer, i motsats till att skicka händelsedata för varje interaktion. Mer information finns i reglerna i [taggdokumentation](../../../tags/ui/managing-resources/rules.md).
 
 ## Exempel på användningsexempel för tillägg {#extensions-use-cases}
 

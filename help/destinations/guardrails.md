@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 7c1d956e3b6a1314baa13fef823d73d42404516a
+source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
 workflow-type: tm+mt
 source-wordcount: '1177'
 ht-degree: 1%
@@ -22,7 +22,6 @@ Den här sidan innehåller standardvärden för användning och hastighetsbegrä
 >* De flesta kunder överskrider inte dessa standardgränser. Om du vill veta mer om anpassade begränsningar kontaktar du kundtjänstrepresentanten.
 >* De gränser som beskrivs i det här dokumentet förbättras ständigt. Kontrollera regelbundet om det finns uppdateringar.
 >* Beroende på vilka begränsningar som gäller i det enskilda senare ledet kan vissa destinationer ha tätare skyddsprofiler än de som finns på den här sidan. Se även till att kontrollera [katalog](/help/destinations/catalog/overview.md) målsidan som du ansluter och aktiverar data till.
-
 
 ## Begränsningstyper {#limit-types}
 
@@ -42,7 +41,7 @@ Skyddskassorna nedan gäller vanligtvis aktivering via [alla måltyper](/help/de
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximalt antal segment till ett enda mål | 250 | Mjuk | Rekommendationen är att mappa högst 250 segment till ett enda mål i ett dataflöde. <br><br> Om du behöver aktivera fler än 250 segment till ett mål kan du antingen: <ul><li> Dela upp segment som du inte längre vill aktivera, eller</li><li>Skapa ett nytt dataflöde till önskat mål och mappa segment till det nya dataflödet.</li></ul> <br> Observera att för vissa destinationer kan du vara begränsad till färre än 250 segment som är mappade till målet. Dessa destinationer beskrivs längre ned på sidan i respektive avsnitt. |
+| Maximalt antal målgrupper till ett enda mål | 250 | Mjuk | Rekommendationen är att mappa högst 250 målgrupper till ett enda mål i ett dataflöde. <br><br> Om du behöver aktivera fler än 250 målgrupper till ett mål kan du antingen: <ul><li> Dela upp målgrupper som du inte längre vill aktivera, eller</li><li>Skapa ett nytt dataflöde till önskat mål och mappa målgrupper till det nya dataflödet.</li></ul> <br> Observera att för vissa destinationer kan du vara begränsad till färre än 250 målgrupper mappade till destinationen. Dessa destinationer beskrivs längre ned på sidan i respektive avsnitt. |
 | Högsta antal destinationer | 100 | Mjuk | Rekommendationen är att skapa högst 100 destinationer som du kan ansluta och aktivera data till *per sandlåda*. [Destinationer för kantanpassning (anpassad personalisering)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade destinationerna. |
 | Maximalt antal attribut som har mappats till ett mål | 50 | Mjuk | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas i ett dataflöde till ett mål. |
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Hård | För närvarande går det bara att exportera *profilpostattribut* till destinationer. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
@@ -67,7 +66,7 @@ Skyddskassorna nedan gäller aktivering via [batchvis (filbaserat) mål](/help/d
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Aktiveringsfrekvens | En daglig fullständig export eller mer frekvent stegvis export var 3, 6, 8 eller 12 timme. | Hård | Läs [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) dokumentationsavsnitt för mer information om frekvensökningar för batchexport. |
-| Maximalt antal segment som kan exporteras vid en given timme | 100 | Mjuk | Rekommendationen är att lägga till högst 100 segment i batchmåldataflöden. |
+| Maximalt antal målgrupper som kan exporteras vid en given timme | 100 | Mjuk | Rekommendationen är att lägga till högst 100 målgrupper i batchmåldataflöden. |
 | Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Hård | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [planeringsavsnitt](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) av självstudiekursen om aktivering av batchdestinationer. |
 
 {style="table-layout:auto"}
@@ -78,8 +77,8 @@ Skyddsritningarna nedan gäller för [ad hoc-aktivering](/help/destinations/api/
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Aktiverade segment per ad hoc-aktiveringsjobb | 80 | Hård | För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 segment. Om du försöker aktivera fler än 80 segment per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner. |
-| Samtidiga ad hoc-aktiveringsjobb per segment | 1 | Hård | Kör inte mer än ett samtidiga ad hoc-aktiveringsjobb per segment. |
+| Målgrupper aktiverade per ad hoc-aktiveringsjobb | 80 | Hård | För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 målgrupper. Om du försöker aktivera fler än 80 målgrupper per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner. |
+| Samtidiga ad hoc-aktiveringsjobb per målgrupp | 1 | Hård | Kör inte mer än ett samtidiga ad hoc-aktiveringsjobb per målgrupp. |
 
 {style="table-layout:auto"}
 
@@ -91,7 +90,7 @@ Skyddskassorna nedan gäller aktivering via [mål för kantanpassning](/help/des
 | --- | --- | --- | --- |
 | Maximalt antal [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) mål | 10 | Mjuk | Du kan konfigurera dataflöden till 10 anpassade mål för personalisering per sandlåda. |
 | Maximalt antal attribut som mappats till ett personaliseringsmål per sandlåda | 30 | Hård | Högst 30 attribut kan mappas i ett dataflöde till ett personaliseringsmål per sandlåda. |
-| Maximalt antal segment mappade till ett enskilt [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) mål | 50 | Mjuk | Du kan aktivera maximalt 50 segment i ett aktiveringsflöde till ett enda Adobe Target-mål. |
+| Maximalt antal målgrupper mappade till en enda [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) mål | 50 | Mjuk | Du kan aktivera maximalt 50 målgrupper i ett aktiveringsflöde till ett enda Adobe Target-mål. |
 
 {style="table-layout:auto"}
 

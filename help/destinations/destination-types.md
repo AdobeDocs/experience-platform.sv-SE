@@ -3,7 +3,7 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '713'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Slutligen kan anslutningar också särskiljas mellan offentliga destinationer so
 
 ## Anslutningar {#connections}
 
-**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Segment Export]** och **[!DNL Edge Personalization]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera segment och kvalificerade profiler till destinationer.
+**[!UICONTROL Profile Export]**, **[!UICONTROL Streaming Audience Export]** och **[!DNL Edge Personalization]** mål i Adobe Experience Platform hämta händelsedata, kombinera dem med andra datakällor för att skapa [Kundprofil i realtid](../profile/home.md), tillämpa segmentering och exportera målgrupper och kvalificerade profiler till destinationer.
 
 ## Profilexportdestinationer {#profile-export}
 
@@ -41,7 +41,7 @@ Profilexportdestinationer tar emot rådata, ofta med e-postadress som primärnyc
 
 Använd dataanslutningarna för företag för att leverera Adobe Real-time Customer Data Platform-profiler i nära realtid till interna system eller till andra tredjepartssystem för datasynkronisering, analys och fler användningsfall för profilberikning.
 
-Dessa mål tar emot segment- och profildata som dataströmmar i Experience Platform.
+Dessa mål tar emot målgrupps- och profildata som dataströmmar från Experience Platform.
 
 Företagets mål är:
 
@@ -53,9 +53,9 @@ Företagets mål är:
 
 Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attribut. [Amazon S3](catalog/cloud-storage/amazon-s3.md) är ett exempel på ett mål där du kan exportera filer som innehåller profilexporter.
 
-## Målgrupper för direktuppspelad segmentexport {#streaming-destinations}
+## Målgrupper för direktuppspelad export {#streaming-destinations}
 
-Segmentexportdestinationer tar emot data från Experience Platform segment. Dessa mål använder segment-ID eller användar-ID. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
+Målgrupper för målgruppsexport tar emot Experience Platform-målgruppsdata. Dessa mål använder målgrupps-ID:n eller användar-ID:n. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
 
 ## Destinationer för kantanpassning {#edge-personalization-destinations}
 
@@ -63,7 +63,7 @@ De främsta målsättningarna för personalisering i Experience Platform är bla
 
 Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](/help/destinations/ui/activate-edge-personalization-destinations.md).
 
-## Profilexport och segmentexportdestinationer - videoöversikt {#video}
+## Profilexport och målgruppsexportdestinationer - videoöversikt {#video}
 
 I videon nedan beskrivs de två typerna av destinationer:
 
@@ -91,7 +91,7 @@ Med taggtillägg vidarebefordras råa händelsedata till flera typer av mål. T�
 
 Som marknadsförare kan du använda en kombination av anslutningar och tillägg för att hantera dina användningsfall.
 
-Anslutningar är användbara när det är nödvändigt att utnyttja en fullständig centraliserad kundprofil eller ett kundsegment för aktivering. Använd till exempel anslutningar om du kopplar beteendedata från ett analyssystem med överförda CRM-data för att kvalificera en användare för ett visst segment innan du levererar ett anpassat meddelande till användaren.
+Anslutningar är användbara när det är nödvändigt att utnyttja en fullständig centraliserad kundprofil eller en kundpublik för aktivering. Använd till exempel anslutningar om du kopplar beteendedata från ett analyssystem med överförda CRM-data för att kvalificera en användare för en viss målgrupp innan du levererar ett anpassat meddelande till den användaren.
 
 Tillägg är användbara när händelsedata används för att utlösa en åtgärd eller för att utföra segmentering i en extern miljö. Om beteendedata till exempel behöver vidarebefordras till ett externt system utan att kopplas till andra datakällor i filen för en viss användare.
 

@@ -2,7 +2,7 @@
 description: På den här sidan beskrivs hur du använder API-slutpunkten /sample-profiles från Destinationen SDK för att generera exempelprofiler baserat på ett källschema. Du kan använda de här exempelprofilerna för att testa din filbaserade målkonfiguration.
 title: Generera exempelprofiler baserat på ett källschema
 exl-id: aea50d2e-e916-4ef0-8864-9333a4eafe80
-source-git-commit: adf75720f3e13c066b5c244d6749dd0939865a6f
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
 source-wordcount: '651'
 ht-degree: 1%
@@ -28,7 +28,7 @@ Innan du kan använda `/sample-profiles` måste du se till att följande villkor
 * Du har skapat minst ett aktiveringsflöde för destinationen i användargränssnittet i Experience Platform. The `/sample-profiles` slutpunkten skapar profilerna baserat på det källschema som du definierade i aktiveringsflödet. Se [självstudiekurs om aktivering](../../../ui/activate-batch-profile-destinations.md) om du vill veta hur du skapar ett aktiveringsflöde.
 * För att kunna utföra API-begäran behöver du det målinstans-ID som motsvarar den målinstans som du ska testa. Hämta det målinstans-ID som du bör använda i API-anropet från webbadressen när du bläddrar i en anslutning till målet i plattformsgränssnittet.
 
-   ![Användargränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
+  ![Användargränssnittsbild som visar hur du hämtar målinstans-ID från URL:en.](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Generera exempelprofiler för måltestning {#generate-sample-profiles}
 
@@ -60,11 +60,11 @@ curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-pro
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofiler, med segmentmedlemskap, identiteter och profilattribut som motsvarar XDM-källschemat.
+Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofiler, med målgruppsmedlemskap, identiteter och profilattribut som motsvarar XDM-källschemat.
 
 >[!NOTE]
 >
-> Svaret returnerar endast segmentmedlemskap, identiteter och profilattribut som används i målinstansen. Även om källschemat innehåller andra fält ignoreras dessa.
+> Svaret returnerar endast målgruppsmedlemskap, identiteter och profilattribut som används i målinstansen. Även om källschemat innehåller andra fält ignoreras dessa.
 
 ```json
 [
@@ -105,9 +105,9 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `segmentMembership` | Ett kartobjekt som beskriver personens segmentmedlemskap. Mer information om `segmentMembership`, läsa [Information om segmentmedlemskap](../../../../xdm/field-groups/profile/segmentation.md). |
+| `segmentMembership` | Ett kartobjekt som beskriver personens målgruppsmedlemskap. Mer information om `segmentMembership`, läsa [Information om målgruppsmedlemskap](../../../../xdm/field-groups/profile/segmentation.md). |
 | `lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen är en del av segmentet.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
+| `status` | Ett strängfält som anger om målgruppsmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen är en del av segmentet.</li><li>`exited`: Profilen avslutar publiken som en del av den aktuella begäran.</li></ul> |
 | `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, se [grund för schemakomposition](../../../../xdm/schema/composition.md#identityMap). |
 
 {style="table-layout:auto"}

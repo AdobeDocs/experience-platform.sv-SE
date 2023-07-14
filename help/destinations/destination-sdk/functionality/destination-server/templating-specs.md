@@ -1,7 +1,7 @@
 ---
 description: Lär dig hur du formaterar HTTP-begäranden som skickas till slutpunkten. Använd slutpunkten /authoring/destination-servers för att konfigurera målserverns mallspecifikationer i Adobe Experience Platform Destination SDK.
 title: Mallspecifikationer för mål som skapats med Destination SDK
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 3%
@@ -46,7 +46,7 @@ Adobe använder ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.
 Mer information om omvandlingen finns på länkarna nedan:
 
 * [Meddelandeformat](message-format.md)
-* [Använda ett mallspråk för identitet, attribut och segmentmedlemskapsomvandlingar ](message-format.md#using-templating)
+* [Använda ett mallspråk för omvandlingar av identitet, attribut och målgruppsmedlemskap](message-format.md#using-templating)
 
 >[!TIP]
 >

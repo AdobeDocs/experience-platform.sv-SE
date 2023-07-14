@@ -1,9 +1,9 @@
 ---
 description: Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten. Se hur dessa komponenter tillsammans gör det möjligt för Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
 title: Konfigurationsalternativ i Destinationen SDK
-source-git-commit: 65a658208b48a50184e55a6d64cdf7ad6de0f04f
+source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---
@@ -45,14 +45,14 @@ I dokumentationen nedan finns mer information om var och en av målkonfiguration
 * [Schemakonfiguration](destination-configuration/schema-configuration.md): Lär dig hur du definierar målschemat som användare kan mappa profilattribut och identiteter till.
 * [Konfiguration av namnutrymme för identitet](destination-configuration/identity-namespace-configuration.md): Lär dig hur du konfigurerar de identiteter som stöds av ditt mål. Den här konfigurationen fyller i mål-ID:n i [mappningssteg](../../ui/activate-segment-streaming-destinations.md#mapping) i användargränssnittet i Experience Platform, där användare mappar identiteter och attribut från sina XDM-scheman till schemat i målet.
 * [Destinationsleverans](destination-configuration/destination-delivery.md): Lär dig hur du konfigurerar exakt vart exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.
-* [Konfiguration av målgruppsmetadata](destination-configuration/audience-metadata-configuration.md): Lär dig hur segmentmetadata som segmentnamn eller ID:n ska delas mellan Experience Platform och ditt mål.
+* [Konfiguration av målgruppsmetadata](destination-configuration/audience-metadata-configuration.md): Lär dig hur målgruppsmetadata som målgruppsnamn eller ID:n ska delas mellan Experience Platform och ditt mål.
 * [Samlingsprincip](destination-configuration/aggregation-policy.md): Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 * [Batchkonfiguration](destination-configuration/batch-configuration.md): Ange olika inställningar för filnamngivning och exportschemaläggning som är tillgängliga för användare vid anslutning till målet i användargränssnittet i Experience Platform.
 * [Krav på historisk profil](destination-configuration/historical-profile-qualifications.md): Lär dig mer om de historiska profilkvalifikationer som stöds av mål som skapats med Destination SDK.
 
 ## Konfiguration av målgruppsmetadata {#audience-metadata-configuration}
 
-Med den här komponenten kan du konfigurera hur målgrupper/segment skapas, uppdateras eller tas bort programmatiskt i målet. För filbaserade mål gör det möjligt att konfigurera ett meddelande så snart filerna har levererats till ditt mål. Du kan konfigurera den här funktionen via [målgruppsmallar slutpunkt](../metadata-api/create-audience-template.md).
+Med den här komponenten kan du konfigurera hur målgrupper skapas, uppdateras eller tas bort programmatiskt i ditt mål. För filbaserade mål gör det möjligt att konfigurera ett meddelande så snart filerna har levererats till ditt mål. Du kan konfigurera den här funktionen via [målgruppsmallar slutpunkt](../metadata-api/create-audience-template.md).
 
 ## Nästa steg {#next-steps}
 

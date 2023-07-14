@@ -2,7 +2,7 @@
 description: Lär dig hur du använder API:t för måltestning för att testa om ditt mål för direktuppspelning är korrekt konfigurerat och för att verifiera dataflödenas integritet till det konfigurerade målet.
 title: Testa strömningsmålet med exempelprofiler
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 0befd65b91e49cacab67c76fd9ed5d77bf790b9d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '630'
 ht-degree: 0%
@@ -26,10 +26,9 @@ Du kan använda [API för generering av exempelprofiler](sample-profile-generati
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) och [aktivera profiler och segment till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) för mer information.
+>* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) för mer information.
 > * När du har upprättat anslutningen till målet, hämta det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när [bläddra genom en anslutning till destinationen](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
-   >![Användargränssnittsbild för att hämta målinstans-ID](../../assets/testing-api/get-destination-instance-id.png)
-
+>![Användargränssnittsbild för att hämta målinstans-ID](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Komma igång med API-åtgärder för måltestning {#get-started}
 

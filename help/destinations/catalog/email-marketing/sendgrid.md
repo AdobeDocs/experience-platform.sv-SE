@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1512'
+source-wordcount: '1511'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [SendGrid](https://www.sendgrid.com) är en populär plattform för kundkommunikation för transaktions- och marknadsföringsmejl.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts), som gör att du kan exportera dina e-postprofiler från första part och aktivera dem i ett nytt SendGrid-segment för dina affärsbehov.
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts), som gör att du kan exportera dina e-postprofiler från första part och aktivera dem inom en ny SendGrid-målgrupp för dina affärsbehov.
 
 SendGrid använder API-bearer-token som en autentiseringsmekanism för att kommunicera med SendGrid API:t.
 
@@ -40,8 +40,7 @@ Innan du aktiverar data till SendGrid-målet måste du ha en [schema](https://ex
 >
 >* Det SendGrid-API som används för att skapa distributionslistan från e-postprofiler kräver att unika e-postadresser anges i varje profil. Detta är oberoende av om det används som ett värde för *e-post* eller *alternativ e-postadress*. Eftersom SendGrid-anslutningen stöder mappningar för både e-postadresser och alternativa e-postadresser måste du se till att alla e-postadresser som används är unika inom varje profil i *Datauppsättning*. Annars, när e-postprofilerna skickas till SendGrid, resulterar det i ett fel och den e-postprofilen kommer inte att finnas i dataexporten.
 >
->* Det finns för närvarande ingen funktion för att ta bort profiler från SendGrid när de tas bort från segment i Experience Platform.
-
+>* Det finns för närvarande ingen funktion för att ta bort profiler från SendGrid när de tas bort från målgrupper i Experience Platform.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -60,7 +59,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -112,29 +111,27 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](/help/destinations/ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 Se bilden nedan för mer information om det här målet.
 
-1. Markera ett eller flera segment som ska exporteras till SendGrid.
+1. Välj en eller flera målgrupper att exportera till SendGrid.
    ![](../../assets/catalog/email-marketing/sendgrid/11.jpg)
 
 1. I **[!UICONTROL Mapping]** steg, efter markering **[!UICONTROL Add new mapping]** visas mappningssidan för att mappa XDM-källfälten till API-målfälten för SendGrid. Bilderna nedan visar hur du mappar identitetsnamnutrymmen mellan Experience Platform och SendGrid. Se till att **[!UICONTROL Source field]** *E-post* ska mappas till **[!UICONTROL Target field]** *external_id* enligt nedan.
    ![](../../assets/catalog/email-marketing/sendgrid/13.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/14.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/15.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/16.jpg)
 
 1. Du kan också mappa det önskade [!DNL Adobe Experience Platform] attribut som du vill exportera till SendGrid-målet.
    ![](../../assets/catalog/email-marketing/sendgrid/17.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/18.jpg)
 
 1. När mappningarna är klara väljer du **[!UICONTROL Next]** för att gå vidare till granskningsskärmen.
@@ -155,7 +152,7 @@ Den omfattande listan över attributmappningar som stöds och som kan ställas i
 | identityMap:<br/> E-post | Identitet:<br/> external_id | Sträng | Kontaktens primära e-postadress. Detta måste vara en giltig e-postadress. | Maximal längd:<br/> 254 tecken |
 | xdm:<br/> person.name.firstName | xdm:<br/> first_name | Sträng | Kontaktens namn | Maximal längd:<br/> 50 tecken |
 | xdm:<br/> person.name.lastName | xdm:<br/> last_name | Sträng | Kontaktens familjenamn | Maximal längd:<br/> 50 tecken |
-| xdm:<br/> homeAddress.mailCode | xdm:<br/> mail_code | Sträng | Kontaktens postnummer eller annat postnummer. |  |
+| xdm:<br/> homeAddress.mailCode | xdm:<br/> mail_code | Sträng | Kontaktens postnummer eller annat postnummer. | |
 | xdm:<br/> homeAddress.stateProvince | xdm:<br/> state_Province_region | Sträng | Kontaktens delstat, provins eller region. | Maximal längd:<br/> 50 tecken |
 
 ## Validera dataexporten i SendGrid {#validate}
@@ -168,22 +165,20 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Markera målet och validera att statusen är **[!UICONTROL enabled]**.
    ![](../../assets/catalog/email-marketing/sendgrid/26.jpg)
 
-1. Växla till **[!DNL Activation data]** väljer du ett segmentnamn.
+1. Växla till **[!DNL Activation data]** väljer du ett målgruppsnamn.
    ![](../../assets/catalog/email-marketing/sendgrid/27.jpg)
 
-1. Övervaka segmentsammanfattningen och kontrollera att antalet profiler motsvarar antalet som skapas i datauppsättningen.
+1. Övervaka målgruppssammanfattningen och kontrollera att antalet profiler motsvarar antalet som skapas i datauppsättningen.
    ![](../../assets/catalog/email-marketing/sendgrid/28.jpg)
 
 1. The [SendGrid Marketing Lists > Create List API](https://docs.sendgrid.com/api-reference/lists/create-list) används för att skapa unika kontaktlistor i SendGrid genom att koppla värdet för *list_name* och tidsstämpeln för dataexporten. Navigera till SendGrid-webbplatsen och kontrollera om den nya kontaktlistan som överensstämmer med namnmönstret skapas.
    ![](../../assets/catalog/email-marketing/sendgrid/29.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/30.jpg)
 
 1. Markera den nya kontaktlistan och kontrollera om den nya e-postposten från datauppsättningen som du skapade fylls i i den nya kontaktlistan.
 
 1. Kontrollera också några e-postmeddelanden för att verifiera om fältmappningen är korrekt.
    ![](../../assets/catalog/email-marketing/sendgrid/31.jpg)
-
    ![](../../assets/catalog/email-marketing/sendgrid/32.jpg)
 
 ## Dataanvändning och styrning {#data-usage-governance}

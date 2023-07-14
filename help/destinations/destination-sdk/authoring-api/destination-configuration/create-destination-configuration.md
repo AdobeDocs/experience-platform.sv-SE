@@ -1,7 +1,7 @@
 ---
 description: Lär dig strukturera ett API-anrop för att skapa en målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Skapa en målkonfiguration
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 1%
@@ -213,10 +213,10 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Anger vilken [standardidentitetsnamnutrymmen](/help/identity-service/namespaces.md#standard) (till exempel IDFA)-kunder kan mappa till identiteten som du konfigurerar. <br> När du använder `acceptedGlobalNamespaces`kan du använda `"requiredTransformation":"sha256(lower($))"` till gemener och hash-adresser eller telefonnummer. |
 | `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in på ditt system via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du kan t.ex. markera det här alternativet om du också har markerat `authType: OAUTH2` eller `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [API för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `destinationDelivery.destinationServerId` | Sträng | The `instanceId` i [målservermall](../destination-server/create-destination-server.md) används för detta mål. |
-| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när segment aktiveras till målet. Ställ alltid in detta på `true`. |
-| `segmentMappingConfig.mapUserInput` | Boolean | Kontrollerar om segmentmappnings-ID:t i målaktiveringsarbetsflödet anges av användaren. |
-| `segmentMappingConfig.mapExperiencePlatformSegmentId` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform segment-ID:t. |
-| `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Anger om segmentmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform-segmentnamnet. |
+| `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när målgrupper aktiveras till målet. Ställ alltid in detta på `true`. |
+| `segmentMappingConfig.mapUserInput` | Boolean | Kontrollerar om målgruppsmappnings-ID:t i målaktiveringsarbetsflödet anges av användaren. |
+| `segmentMappingConfig.mapExperiencePlatformSegmentId` | Boolean | Styr om målgruppsmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform målgrupps-ID:t. |
+| `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Styr om målgruppsmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform målgruppsnamnet. |
 | `segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för detta mål. |
 | `schemaConfig.profileFields` | Array | När du lägger till fördefinierade `profileFields` som visas i konfigurationen ovan, kan användare mappa Experience Platform-attribut till de fördefinierade attributen på målsidan. |
 | `schemaConfig.profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |

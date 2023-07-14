@@ -4,7 +4,7 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 606038116391e75ba4ffc36bab11757f963a8346
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '1073'
 ht-degree: 0%
@@ -18,10 +18,9 @@ ht-degree: 0%
 >* Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 >* Om du vill ansluta till ett mål som stöder datauppsättningsexport måste du ha **[!UICONTROL Manage and Activate Dataset Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-
 ## Översikt {#overview}
 
-Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning till målplattformen. I den här artikeln beskrivs hur du konfigurerar en ny målanslutning, som du sedan kan aktivera segment eller exportera datauppsättningar till med Adobe Experience Platform användargränssnitt.
+Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning till målplattformen. I den här artikeln beskrivs hur du konfigurerar en ny målanslutning, som du sedan kan aktivera målgrupper för eller exportera datauppsättningar med Adobe Experience Platform användargränssnitt.
 
 ## Hitta önskat mål i katalogen {#setup}
 
@@ -29,23 +28,23 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
 
    ![Skärmbild av användargränssnittet i Experience Platform som visar katalogsidan för destinationer.](../assets/ui/connect-destinations/catalog.png)
 
-2. Målkorten i katalogen kan ha olika åtgärdskontroller, beroende på om du har en befintlig anslutning till målet och om destinationerna stöder aktivering av segment, export av datamängder eller båda. Du kan se någon av följande kontroller för målkort:
+2. Målkorten i katalogen kan ha olika åtgärdskontroller, beroende på om du har en befintlig anslutning till målet och om destinationerna stöder aktivering av målgrupper, export av datamängder eller båda. Du kan se någon av följande kontroller för målkort:
 
-   * **[!UICONTROL Set up]**. En anslutning måste först konfigureras till det här målet innan du kan aktivera segment eller exportera datauppsättningar.
-   * **[!UICONTROL Activate]**. En anslutning har redan konfigurerats till det här målet. Detta mål stöder segmentaktivering och datauppsättningsexport.
-   * **[!UICONTROL Activate segments]**. En anslutning har redan konfigurerats till det här målet. Detta mål stöder endast segmentaktivering.
+   * **[!UICONTROL Set up]**. En anslutning måste först konfigureras till det här målet innan du kan aktivera målgrupper eller exportera datauppsättningar.
+   * **[!UICONTROL Activate]**. En anslutning har redan konfigurerats till det här målet. Detta mål stöder målgruppsaktivering och datauppsättningsexport.
+   * **[!UICONTROL Activate audiences]**. En anslutning har redan konfigurerats till det här målet. Målet stöder endast målgruppsaktivering.
 
    Mer information om skillnaden mellan dessa kontroller finns i [Katalog](../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-   Välj antingen **[!UICONTROL Set up]**, **[!UICONTROL Activate]**, eller **[!UICONTROL Activate segments]**, beroende på vilken kontroll som är tillgänglig för dig.
+   Välj antingen **[!UICONTROL Set up]**, **[!UICONTROL Activate]**, eller **[!UICONTROL Activate audiences]**, beroende på vilken kontroll som är tillgänglig för dig.
 
    ![Skärmbild av användargränssnittet i Experience Platform som visar målkatalogsidan med kontrollen Konfigurera markerad.](../assets/ui/connect-destinations/set-up.png)
 
-   ![Skärmbild av användargränssnittet i Experience Platform som visar katalogsidan för mål med kontrollen Aktivera segment markerad.](../assets/ui/connect-destinations/activate-segments.png)
+   ![Skärmbild av användargränssnittet i Experience Platform som visar katalogsidan för destinationer med kontrollen Aktivera målgrupper markerad.](../assets/ui/connect-destinations/activate-segments.png)
 
 3. Om du valde **[!UICONTROL Set up]** går du vidare till nästa steg, till [autentisera](#authenticate) till målet.
 
-   Om du valde **[!UICONTROL Activate]**, **[!UICONTROL Activate segments]**, eller **[!UICONTROL Export datasets]** kan du nu se en lista över befintliga målanslutningar.
+   Om du valde **[!UICONTROL Activate]**, **[!UICONTROL Activate audiences]**, eller **[!UICONTROL Export datasets]** kan du nu se en lista över befintliga målanslutningar.
 
    Välj **[!UICONTROL Configure new destination]** för att upprätta en ny anslutning till målet.
 
@@ -85,11 +84,11 @@ För filbaserade mål kan du konfigurera olika inställningar för hur de export
 
 ![Bild som visar filtypsvalet och olika alternativ för CSV-filer.](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
 
-### Ställ in målanslutning för segmentaktivering eller datauppsättningsexport {#segment-activation-or-dataset-exports}
+### Ställ in målanslutning för målgruppsaktivering eller datauppsättningsexport {#segment-activation-or-dataset-exports}
 
-Vissa filbaserade mål stöder segmentaktivering och export av datauppsättningar. För dessa mål kan du välja om du vill skapa en anslutning som gör att du kan aktivera segment eller exportera datauppsättningar.
+Vissa filbaserade mål stöder målgruppsaktivering och datauppsättningsexport. För dessa mål kan du välja om du vill skapa en anslutning som gör att du kan aktivera målgrupper eller exportera datauppsättningar.
 
-![Bild som visar urvalskontrollen för datatyper, som gör det möjligt för användare att välja mellan segmentaktivering och datauppsättningsexport.](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
+![Bild som visar kontrollen för val av datatyp, som gör att användarna kan välja mellan målgruppsaktivering och datauppsättningsexport.](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
 
 ### Aktivera destinationsaviseringar {#enable-alerts}
 
@@ -113,4 +112,4 @@ Vissa filbaserade mål stöder segmentaktivering och export av datauppsättninga
 
 Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet i Experience Platform för att upprätta en anslutning till ett mål. Som en påminnelse varierar de tillgängliga och obligatoriska anslutningsparametrarna från mål till mål. Du bör även läsa måldokumentationssidan i [målkatalog](/help/destinations/catalog/overview.md) för specifik information om nödvändiga indata och tillgängliga alternativ per måltyp.
 
-Sedan kan du fortsätta till [aktivera segment](/help/destinations/ui/activation-overview.md) eller [exportera datauppsättningar](/help/destinations/ui/export-datasets.md) till destinationen.
+Sedan kan du fortsätta till [aktivera målgrupper](/help/destinations/ui/activation-overview.md) eller [exportera datauppsättningar](/help/destinations/ui/export-datasets.md) till destinationen.

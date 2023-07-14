@@ -5,7 +5,7 @@ title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 9aba3384b320b8c7d61a875ffd75217a5af04815
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
 source-wordcount: '2231'
 ht-degree: 0%
@@ -26,9 +26,9 @@ I den här självstudien visas hur du använder API-anrop för att ansluta till 
 
 I den här självstudiekursen används [!DNL Amazon Kinesis] mål i alla exempel, men stegen är identiska för [!DNL Azure Event Hubs].
 
-![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera segment](../assets/api/streaming-destination/overview.png)
+![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera målgrupper](../assets/api/streaming-destination/overview.png)
 
-Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../ui/activate-segment-streaming-destinations.md) självstudiekurser.
+Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../ui/activate-segment-streaming-destinations.md) självstudiekurser.
 
 ## Kom igång
 
@@ -42,7 +42,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-Om du vill slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter tillgängliga, beroende på vilken typ av mål du ansluter och aktiverar segment till.
+För att slutföra stegen i den här självstudiekursen bör du ha följande autentiseringsuppgifter tillgängliga, beroende på vilken typ av mål du ansluter och aktiverar målgrupper till.
 
 * För [!DNL Amazon Kinesis] anslutningar: `accessKeyId`, `secretKey`, `region` eller `connectionUrl`
 * För [!DNL Azure Event Hubs] anslutningar: `sasKeyName`, `sasKey`, `namespace`
@@ -79,7 +79,7 @@ Du hittar referensdokumentation för alla API-anrop i den här självstudiekurse
 
 ![Översiktssteg för målsteg 1](../assets/api/streaming-destination/step1.png)
 
-Som ett första steg bör du bestämma vilket mål för direktuppspelning som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga mål som du kan ansluta och aktivera segment till. Utför följande GET-förfrågan till `connectionSpecs` slutpunkt för att returnera en lista över tillgängliga destinationer:
+Som ett första steg bör du bestämma vilket mål för direktuppspelning som data ska aktiveras till. Börja med att ringa ett samtal för att begära en lista över tillgängliga destinationer som du kan ansluta och aktivera målgrupper till. Utför följande GET-förfrågan till `connectionSpecs` slutpunkt för att returnera en lista över tillgängliga destinationer:
 
 **API-format**
 
@@ -101,7 +101,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **Svar**
 
-Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera segment till [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs]söker du efter följande utdrag i svaret:
+Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras unika identifierare (`id`). Lagra värdet för destinationen som du tänker använda, vilket krävs i ytterligare steg. Om du till exempel vill ansluta och leverera målgrupper till [!DNL Amazon Kinesis] eller [!DNL Azure Event Hubs]söker du efter följande utdrag i svaret:
 
 ```json
 {
@@ -409,7 +409,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Notera båda värdena nedåt. som du kommer att göra i nästa steg, för att aktivera segment.
+Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Notera båda värdena nedåt. som ni kommer att göra i nästa steg, för att aktivera målgrupper.
 
 ```json
 {
@@ -423,9 +423,9 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet och `etag`. Note
 
 ![Översikt över destinationssteg steg 5](../assets/api/streaming-destination/step5.png)
 
-När du har skapat alla anslutningar och dataflödet kan du nu aktivera dina profildata till direktuppspelningsplattformen. I det här steget väljer du vilka segment och vilka profilattribut du skickar till målet och du kan schemalägga och skicka data till målet.
+När du har skapat alla anslutningar och dataflödet kan du nu aktivera dina profildata till direktuppspelningsplattformen. I det här steget väljer du vilka målgrupper och vilka profilattribut du skickar till målet, och du kan schemalägga och skicka data till målet.
 
-Om du vill aktivera segment till det nya målet måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera segment och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikation](https://tools.ietf.org/html/rfc6902).
+Om du vill aktivera målgrupper till ditt nya mål måste du utföra en JSON PATCH-åtgärd, som i exemplet nedan. Du kan aktivera flera målgrupper och profilattribut i ett samtal. Mer information om JSON PATCH finns i [RFC-specifikation](https://tools.ietf.org/html/rfc6902).
 
 **API-format**
 
@@ -450,8 +450,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
     "value": {
       "type": "PLATFORM_SEGMENT",
       "value": {
-        "name": "Name of the segment that you are activating",
-        "description": "Description of the segment that you are activating",
+        "name": "Name of the audience that you are activating",
+        "description": "Description of the audience that you are activating",
         "id": "{SEGMENT_ID}"
       }
     }
@@ -474,13 +474,13 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | Använd ID:t för dataflödet som du skapade i föregående steg i URL-adressen. |
 | `{ETAG}` | Skaffa `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Exempel på svar: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde att använda i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde. |
-| `{SEGMENT_ID}` | Ange det segment-ID som du vill exportera till det här målet. Information om hur du hämtar segment-ID:n för de segment som du vill aktivera finns i [hämta en segmentdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
+| `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper du vill aktivera finns i [hämta en målgruppsdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
 | `{PROFILE_ATTRIBUTE}` | Exempel: `"person.lastName"` |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till ett segment i ett dataflöde använder du `add` operation. |
-| `path` | Definierar den del av flödet som ska uppdateras. När du lägger till ett segment i ett dataflöde använder du den sökväg som anges i exemplet. |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till en målgrupp i ett dataflöde använder du `add` operation. |
+| `path` | Definierar den del av flödet som ska uppdateras. När du lägger till en målgrupp i ett dataflöde använder du den sökväg som anges i exemplet. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
-| `id` | Ange ID:t för det segment som du lägger till i måldataflödet. |
-| `name` | *Valfritt*. Ange namnet på segmentet som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till ett segment i måldataflödet utan att ange dess namn. |
+| `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
+| `name` | *Valfritt*. Ange namnet på målgruppen som du lägger till i måldataflödet. Observera att det här fältet inte är obligatoriskt och att du kan lägga till en målgrupp i måldataflödet utan att ange dess namn. |
 
 **Svar**
 
@@ -490,7 +490,7 @@ Håll utkik efter 202 OK-svar. Ingen svarstext returneras. Om du vill verifiera 
 
 ![Översiktssteg för målsteg 6](../assets/api/streaming-destination/step6.png)
 
-Som ett sista steg i självstudiekursen bör du validera att segmenten och profilattributen verkligen har mappats korrekt till dataflödet.
+Som ett sista steg i självstudiekursen bör du validera att målgrupper och profilattribut verkligen har mappats korrekt till dataflödet.
 
 Gör följande GET-förfrågan för att validera detta:
 
@@ -517,7 +517,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **Svar**
 
-Det returnerade svaret ska innehålla `transformations` parametern segmenten och profilattributen som du skickade i föregående steg. Ett exempel `transformations` parametern i svaret kan se ut så här:
+Det returnerade svaret ska innehålla `transformations` anger målgrupper och profilattribut som du skickade i föregående steg. Ett exempel `transformations` parametern i svaret kan se ut så här:
 
 ```json
 "transformations": [
@@ -563,7 +563,7 @@ Det returnerade svaret ska innehålla `transformations` parametern segmenten och
 
 >[!IMPORTANT]
 >
-> Förutom profilattributen och segmenten i steget [Aktivera data till ditt nya mål](#activate-data), exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] innehåller även information om identitetskartan. Detta representerar identiteten för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobilt ID, Google ID, e-postadress osv.). Se ett exempel nedan.
+> Förutom profilattributen och målgrupperna i steget [Aktivera data till ditt nya mål](#activate-data), exporterade data i [!DNL AWS Kinesis] och [!DNL Azure Event Hubs] innehåller även information om identitetskartan. Detta representerar identiteten för de exporterade profilerna (till exempel [ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html), mobilt ID, Google ID, e-postadress osv.). Se ett exempel nedan.
 
 ```json
 {

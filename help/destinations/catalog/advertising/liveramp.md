@@ -4,9 +4,9 @@ description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper fr�
 hidefromtoc: true
 hide: true
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: d7625018b7b36d8e9516f7884fc00b726d391103
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '1647'
+source-wordcount: '1645'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,6 @@ Använd LiveRamp-anslutningen för att ta in målgrupper från Adobe Real-time C
 >
 ><p>Målanslutningen är för närvarande i alfavärdet och är endast tillgänglig för ett begränsat antal kunder. Funktionen och dokumentationen kan komma att ändras.</p>
 &gt;<p>Slutversionen av den här målanslutningen kan kräva kundmigrering.</p>
-
 
 ## Användningsfall {#use-cases}
 
@@ -45,8 +44,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i [!DNL LiveRamp SFTP] mål. |
-| Exportfrekvens | **[!UICONTROL Daily batch]** | När profiler uppdateras i Experience Platform baserat på segmentutvärdering uppdateras profilerna (identiteterna) en gång om dagen nedströms målplattformen. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i [!DNL LiveRamp SFTP] mål. |
+| Exportfrekvens | **[!UICONTROL Daily batch]** | När profiler uppdateras i Experience Platform baserat på målgruppsutvärdering uppdateras profilerna (identiteterna) en gång om dagen nedströms målplattformen. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
 
@@ -70,7 +69,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 * **[!UICONTROL Password]**: Lösenordet för [!DNL LiveRamp SFTP] lagringsplats.
 * **[!UICONTROL PGP/GPG encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan. Om du anger en krypteringsnyckel måste du även ange en **[!UICONTROL Encryption subkey ID]** i [målinformation](#destination-details) -avsnitt.
 
-   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp/pgp-key.png)
+  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp/pgp-key.png)
 
 **SFTP med autentisering med SSH-nyckel** {#sftp-ssh}
 
@@ -83,7 +82,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 * **[!UICONTROL PGP/GPG encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Om du anger en krypteringsnyckel måste du även ange en **[!UICONTROL Encryption subkey ID]** i [målinformation](#destination-details) -avsnitt. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
-   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp/pgp-key.png)
+  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp/pgp-key.png)
 
 ### Fyll i målinformation {#destination-details}
 
@@ -110,28 +109,28 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Schemaläggning {#scheduling}
 
-I [!UICONTROL Scheduling] skapar du ett exportschema för varje segment med inställningarna nedan.
+I [!UICONTROL Scheduling] skapar du ett exportschema för varje målgrupp med inställningarna nedan.
 
 >[!IMPORTANT]
 >
->Alla segment som aktiveras för det här målet måste konfigureras med exakt samma schema, vilket visas nedan.
+>Alla målgrupper som aktiveras för detta mål måste konfigureras med exakt samma schema, vilket visas nedan.
 
 * **[!UICONTROL File export options]**: [!UICONTROL Export full files]. [Inkrementell filexport](../../ui/activate-batch-profile-destinations.md#export-incremental-files) stöds för närvarande inte för [!DNL LiveRamp] mål.
 * **[!UICONTROL Frequency]**: [!UICONTROL Daily]
-* Ställ in exporttiden på **[!UICONTROL After segment evaluation]**. Schemalagd segmentexport och [export av filer på begäran](../../ui/export-file-now.md) stöds för närvarande inte för [!DNL LiveRamp] mål.
+* Ställ in exporttiden på **[!UICONTROL After segment evaluation]**. Schemalagd målgruppsexport och [export av filer på begäran](../../ui/export-file-now.md) stöds för närvarande inte för [!DNL LiveRamp] mål.
 * **[!UICONTROL Date]**: Välj start- och sluttider för exporten.
 
-![Skärmbild av användargränssnittet för plattformen som visar segmentplaneringssteget.](../../assets/catalog/advertising/liveramp/liveramp-segment-scheduling.png)
+![Skärmbild av användargränssnittet för plattformen som visar steg för målgruppsplanering.](../../assets/catalog/advertising/liveramp/liveramp-segment-scheduling.png)
 
 Det går inte att konfigurera det exporterade filnamnet för tillfället. Alla filer som exporteras till [!DNL LiveRamp SFTP] destinationen namnges automatiskt baserat på följande mall:
 
@@ -179,28 +178,28 @@ Dina data exporteras till [!DNL LiveRamp SFTP] lagringsplats som du konfigurerad
 
 Vid export av filer till [!DNL LiveRamp SFTP] mål, Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../../profile/merge-policies/overview.md).
 
-Låt oss titta på följande segment:
+Låt oss titta på följande målgrupper:
 
-* Segment A (sammanfogningsprincip 1)
-* Segment B (sammanfogningsprincip 2)
-* Segment C (sammanfogningsprincip 1)
-* Segment D (sammanfogningsprincip 1)
+* Målgrupp A (sammanfogningsprincip 1)
+* Målgrupp B (sammanfogningspolicy 2)
+* Målgrupp C (sammanfogningspolicy 1)
+* Målgrupp D (sammanfogningspolicy 1)
 
 Plattformen exporterar två CSV-filer till [!DNL LiveRamp SFTP]:
 
-* En CSV-fil som innehåller segmenten A, C och D.
-* En CSV-fil som innehåller segment B.
+* En CSV-fil som innehåller målgrupperna A, C och D.
+* En CSV-fil som innehåller målgrupp B.
 
-Exporterade CSV-filer innehåller profiler med de valda attributen och motsvarande segmentstatus, i separata kolumner, med attributnamnet och segment-ID:n som kolumnrubriker.
+Exporterade CSV-filer innehåller profiler med de valda attributen och motsvarande målgruppsstatus, i separata kolumner, med attributnamnet och målgrupps-ID:n som kolumnrubriker.
 
-Profilerna som ingår i de exporterade filerna kan matcha ett av följande segmentkvalificeringstillstånd:
+Profilerna som ingår i de exporterade filerna kan matcha ett av följande kvalificeringstillstånd för målgruppen:
 
-* `Active`: Profilen är för närvarande kvalificerad för segmentet.
-* `Expired`: Profilen är inte längre kvalificerad för segmentet, men har tidigare kvalificerats.
-* `""`(tom sträng): Profilen har aldrig kvalificerats för segmentet.
+* `Active`: Profilen är för närvarande kvalificerad för målgruppen.
+* `Expired`: Profilen är inte längre kvalificerad för målgruppen, men har tidigare kvalificerats.
+* `""`(tom sträng): Profilen har aldrig kvalificerats för målgruppen.
 
 
-Till exempel en exporterad CSV-fil med en `email` attribut och 3 segment kan se ut så här:
+Till exempel en exporterad CSV-fil med en `email` attribut och 3 målgrupper kan se ut så här:
 
 ```csv
 email,aa2e3d98-974b-4f8b-9507-59f65b6442df,45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,7729e537-4e42-418e-be3b-dce5e47aaa1e
@@ -214,9 +213,9 @@ abc101@testemailabc.com,active,active,
 
 Eftersom Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../../profile/merge-policies/overview.md)genererar det också en separat dataflödeskörning för varje ID för sammanfogningsprincip.
 
-Det innebär att **[!UICONTROL Identities activated]** och **[!UICONTROL Profiles received]** mätvärden i [dataflödeskörningar](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) sidan sammanställs för varje grupp av segment som använder samma sammanfogningsprincip, i stället för att visas för varje segment.
+Det innebär att **[!UICONTROL Identities activated]** och **[!UICONTROL Profiles received]** mätvärden i [dataflödeskörningar](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations) sidan sammanställs för varje grupp av målgrupper som använder samma sammanfogningsprincip, i stället för att visas för varje målgrupp.
 
-Som en följd av att dataflödeskörningar genereras för en grupp segment som använder samma sammanfogningsprincip visas inte segmentnamnen i [kontrollpanel](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations).
+Som en följd av att dataflöden genereras för en grupp målgrupper som använder samma sammanfogningsprincip visas inte målgruppsnamnen i [kontrollpanel](../../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations).
 
 ![Skärmbild för användargränssnittet i Experience Platform som visar aktiverade identiteter.](../../assets/catalog/advertising/liveramp/liveramp-metrics.png)
 

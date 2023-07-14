@@ -2,11 +2,11 @@
 keywords: aktivera mål;aktivera data
 title: Aktiveringsöversikt
 type: Tutorial
-description: Lär dig hur du aktiverar målgruppsdata i Adobe Experience Platform till olika typer av destinationer.
+description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform till olika typer av destinationer.
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ Adobe Experience Platform har stöd för ett stort antal destinationer. Arbetsfl
 
 ## Aktiveringsmetoder {#activation-methods}
 
-Efter [konfigurera ditt mål](connect-destination.md)kan ni aktivera målgruppssegment på flera sätt:
+Efter [konfigurera ditt mål](connect-destination.md)kan ni aktivera målgrupper på flera sätt:
 
 ### Aktivera målgrupper från målkatalogen
 
 Mer information om hur du aktiverar målgrupper till ditt mål från målkatalogen finns i följande handböcker:
 
-* [Aktivera målgruppsdata för att direktuppspela segmentexportmål](activate-segment-streaming-destinations.md)
+* [Aktivera målgruppsdata för direktuppspelad målgruppsexport](activate-segment-streaming-destinations.md)
 * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](activate-streaming-profile-destinations.md)
 * [Aktivera målgruppsdata för att batchprofilera exportmål](activate-batch-profile-destinations.md)
 
@@ -39,22 +39,22 @@ Följ stegen nedan för att aktivera data till dina destinationer från **[!UICO
 
    ![Fliken Bläddra](../assets/ui/activation-overview/browse-tab.png)
 
-1. Hitta den målanslutning som du vill använda för att aktivera dina segment, välj de tre punkterna i dialogrutan [!UICONTROL Name] kolumn, markera **[!UICONTROL Activate segments]**.
+1. Hitta den målanslutning som du vill använda för att aktivera dina segment, välj de tre punkterna i dialogrutan [!UICONTROL Name] kolumn, markera **[!UICONTROL Activate audiences]**.
 
-   ![Knappen Aktivera segment](../assets/ui/activation-overview/activate-segments.png)
+   ![Knappen Aktivera målgrupper](../assets/ui/activation-overview/activate-segments.png)
 
 1. Beroende på vilket mål du väljer följer du de steg som beskrivs i artiklarna nedan, med början med **[!UICONTROL Select segments]** för att slutföra aktiveringsarbetsflödet:
 
-   * [Aktivera målgruppsdata för att direktuppspela segmentexportmål](activate-segment-streaming-destinations.md)
+   * [Aktivera målgruppsdata för direktuppspelad målgruppsexport](activate-segment-streaming-destinations.md)
    * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](activate-streaming-profile-destinations.md)
    * [Aktivera målgruppsdata för att batchprofilera exportmål](activate-batch-profile-destinations.md)
 
-### Aktivera målgrupper från sidan med segmentinformation {#activate-segment-details}
+### Aktivera målgrupper från sidan med målgruppsinformation {#activate-segment-details}
 
-Du kan aktivera segment till mål från sidan med segmentinformation. Se [Segmentinformation](../../segmentation/ui/overview.md#segment-details) för mer information.
+Du kan aktivera målgrupper till mål från sidan med målgruppsinformation. Se [Segmentinformation](../../segmentation/ui/overview.md#segment-details) för mer information.
 
 Beroende på det valda målet följer du stegen som beskrivs i artiklarna nedan för att slutföra aktiveringsarbetsflödet:
 
-* [Aktivera målgruppsdata för att direktuppspela segmentexportmål](activate-segment-streaming-destinations.md)
+* [Aktivera målgruppsdata för direktuppspelad målgruppsexport](activate-segment-streaming-destinations.md)
 * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](activate-streaming-profile-destinations.md)
 * [Aktivera målgruppsdata för att batchprofilera exportmål](activate-batch-profile-destinations.md)

@@ -3,9 +3,9 @@ keywords: Reklam. villkor,
 title: Kriterieanslutning
 description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 8211ca28462548e1c17675e504e6de6f5cc55e73
+source-git-commit: 9ccfbeb6ef36b10b8ecbfc25797c26980e7d1dcd
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '992'
 ht-degree: 1%
 
 ---
@@ -48,8 +48,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 | --- | --- | --- |
-| Exporttyp | Segmentexport | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i [!DNL Criteo] mål. |
-| Exportfrekvens | Direktuppspelning | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](../../destination-types.md#streaming-destinations). |
+| Exporttyp | Målgruppsexport | Du exporterar alla medlemmar i en målgrupp med identifierarna (namn, telefonnummer eller andra) som används i [!DNL Criteo] mål. |
+| Exportfrekvens | Direktuppspelning | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](../../destination-types.md#streaming-destinations). |
 
 ## Användningsfall {#use-cases}
 
@@ -61,7 +61,7 @@ Visa upp er verksamhet med relevanta produkterbjudanden och flexibla kreatörer.
 
 ### Användningsfall 2: Öka konverteringsgraden för webbplatser
 
-När besökarna lämnar er webbplats bör du påminna dem om vad de missar med återannonser som ökar konverteringsgraden genom att visa specialerbjudanden och hyperrelevanta erbjudanden, vart de än går. Koppla samman era CDP-segment i Adobe för att återengagera befintliga kunder eller inrikta er på konsumenter som liknar era mest lojala kunder.
+När besökarna lämnar er webbplats bör du påminna dem om vad de missar med återannonser som ökar konverteringsgraden genom att visa specialerbjudanden och hyperrelevanta erbjudanden, vart de än går. Koppla samman era Adobe CDP-målgrupper för att återengagera befintliga kunder eller inrikta er på konsumenter som liknar era mest lojala kunder.
 
 ## Anslut till villkor {#connect}
 
@@ -107,17 +107,17 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate-segments}
+## Aktivera målgrupper till det här målet {#activate-segments}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Exporterade data {#exported-data}
 
-Du kan se de exporterade segmenten i [Centrum för kravhantering](https://marketing.criteo.com/audience-manager/dashboard).
+Du kan se de exporterade målgrupperna i [Centrum för kravhantering](https://marketing.criteo.com/audience-manager/dashboard).
 
 Begärandetexten för att lägga till en användarprofil som tas emot av [!DNL Criteo] ser anslutningen ut ungefär så här:
 

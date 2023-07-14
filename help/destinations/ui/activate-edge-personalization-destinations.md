@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: c96a156c6c9c63d9ae875ee3808168d94ee7aeca
+source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
-source-wordcount: '1667'
+source-wordcount: '1757'
 ht-degree: 0%
 
 ---
@@ -130,6 +130,14 @@ När du är klar med kraven kan du nu välja vilket mål för kantanpassning som
 ## Välj målgrupper {#select-audiences}
 
 Använd kryssrutorna till vänster om målgruppsnamnen för att välja de målgrupper som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
+
+Om du vill välja vilka målgrupper du vill aktivera för målet använder du kryssrutorna till vänster om målgruppsnamnen och väljer sedan **[!UICONTROL Next]**.
+
+Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
+
+* **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [segmenteringsdokumentation](../../segmentation/ui/overview.md) för mer information.
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
+* Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
 ![Välj målgrupper](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
 
