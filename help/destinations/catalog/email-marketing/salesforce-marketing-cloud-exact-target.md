@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cl
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: d1bfd85bf7a318692fb6ae87e163dca105d531c6
 workflow-type: tm+mt
-source-wordcount: '2817'
+source-wordcount: '2831'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ När målgrupper aktiveras för [!DNL (API) Salesforce Marketing Cloud] mål må
 
 [!DNL Salesforce] kräver att det här värdet läser och tolkar målgrupper som kommer från Experience Platform korrekt och uppdaterar deras målgruppsstatus inom [!DNL Salesforce Marketing Cloud]. Se dokumentationen för Experience Platform för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 
-För varje målgrupp som du aktiverar från Platform till [!DNL Salesforce Marketing Cloud]måste du skapa ett attribut av typen `Text` inom [!DNL Salesforce]. Använd [!DNL Salesforce Marketing Cloud] [!DNL Contact Builder] för att skapa attribut. Attributfältsnamnen används för [!DNL (API) Salesforce Marketing Cloud] målfält och ska skapas under `[!DNL Email Demographics system attribute-set]`. Du kan definiera fälttecknet med högst 4 000 tecken, beroende på dina affärsbehov. Se [!DNL Salesforce Marketing Cloud] [Datatyper för datatillägg](https://help.salesforce.com/s/articleView?id=sf.mc_es_data_extension_data_types.htm&amp;type=5) dokumentationssida för mer information om attributtyper.
+För varje målgrupp som du aktiverar från Platform till [!DNL Salesforce Marketing Cloud]måste du skapa ett attribut av typen `Text` inom [!DNL Salesforce]. Använd [!DNL Salesforce Marketing Cloud] [!DNL Contact Builder] för att skapa attribut. Attributfältsnamnen används för [!DNL (API) Salesforce Marketing Cloud] målfält under **[!UICONTROL Mapping]** steg. Du kan definiera fälttecknet med högst 4 000 tecken, beroende på dina affärsbehov. Se [!DNL Salesforce Marketing Cloud] [Datatyper för datatillägg](https://help.salesforce.com/s/articleView?id=sf.mc_es_data_extension_data_types.htm&amp;type=5) dokumentationssida för mer information om attributtyper.
 
 Se [!DNL Salesforce Marketing Cloud] dokumentation till [skapa attribut](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) om du behöver hjälp med att skapa attribut.
 
@@ -68,7 +68,7 @@ En vy av [!DNL Salesforce Marketing Cloud] [!DNL Email Demographics] Attributupp
 
 The [!DNL (API) Salesforce Marketing Cloud] destinationen använder [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) att dynamiskt hämta attributen och deras attributuppsättningar som definierats i [!DNL Salesforce Marketing Cloud].
 
-Dessa visas i **[!UICONTROL Target field]** markeringsfönstret när du ställer in [mappning](#mapping-considerations-example) i arbetsflödet till [aktivera målgrupper till målet](#activate). Observera att endast mappningar för de attribut som definieras i [!DNL Salesforce Marketing Cloud] `[!DNL Email Demographics]` stöds.
+Dessa visas i **[!UICONTROL Target field]** markeringsfönstret när du ställer in [mappning](#mapping-considerations-example) i arbetsflödet till [aktivera målgrupper till målet](#activate).
 
 >[!IMPORTANT]
 >
@@ -90,7 +90,8 @@ Som [!DNL Salesforce Marketing Cloud] har stöd för anpassade roller beroende p
 
 Beroende på vilka roller du har [!DNL Salesforce Marketing Cloud] användaren har tilldelats, du måste även tilldela behörigheter till [!DNL Salesforce Marketing Cloud] som innehåller de fält som du vill uppdatera.
 
-Eftersom det här målet kräver åtkomst till `[!DNL Email Demographics system attribute-set]`måste du tillåta `Email` enligt nedan:
+Eftersom det här målet kräver åtkomst till `[!DNL attribute-set]`måste du tillåta dem. Till exempel för `Email` [!DNL attribute-set] du måste tillåta enligt nedan:
+
 ![Användargränssnittet i Salesforce Marketing Cloud visar e-postattributet med tillåtna behörigheter.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-permisions-list.png)
 
 Om du vill begränsa åtkomstnivån kan du även åsidosätta enskilda behörigheter genom att använda detaljerade behörigheter.
@@ -196,16 +197,22 @@ Koppla XDM-fälten till [!DNL (API) Salesforce Marketing Cloud] målfält, följ
 
 >[!IMPORTANT]
 >
->Även om attributnamnen är som du vill [!DNL Salesforce Marketing Cloud] konto, mappningar för båda `contactKey` och `personalEmail.address` är obligatoriska. Vid mappning av attribut är det bara attribut från Experience Platform `Email Demographics` ska användas i målfälten.
+>* Även om attributnamnen är som du vill [!DNL Salesforce Marketing Cloud] konto, mappningar för båda `contactKey` och `personalEmail.address` är obligatoriska.
+>
+>* Integrationen med [!DNL Salesforce Marketing Cloud] API har en sidnumreringsgräns som anger hur många attribut Experience Platform kan hämta från Salesforce. Detta innebär att **[!UICONTROL Mapping]** målfältets schema kan visa högst 2 000 attribut från ditt Salesforce-konto.
 
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
    ![Exempel på skärmbild för användargränssnittet för plattformen för att lägga till ny mappning.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/add-new-mapping.png)
 1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select attributes]** och välj XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
-1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet eller välj **[!UICONTROL Select custom attributes]** och välj ett attribut i `Email Demographics` attribut visas efter behov. The [!DNL (API) Salesforce Marketing Cloud] destinationen använder [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) för att dynamiskt hämta de attribut och deras attributuppsättningar som definierats i [!DNL Salesforce Marketing Cloud]. Dessa visas i **[!UICONTROL Target field]** när du ställer in [mappning](#mapping-considerations-example) i [aktivera målgruppsarbetsflöde](#activate). Obs! Endast mappningar för de attribut som definieras i [!DNL Salesforce Marketing Cloud] `[!DNL Email Demographics]` stöds.
+1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet eller välj **[!UICONTROL Select attributes]** och välj ett attribut bland de attributuppsättningar som visas efter behov. The [!DNL (API) Salesforce Marketing Cloud] destinationen använder [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) för att dynamiskt hämta de attribut och deras attributuppsättningar som definierats i [!DNL Salesforce Marketing Cloud]. Dessa visas i **[!UICONTROL Target field]** när du ställer in [mappning](#mapping-considerations-example) i [aktivera målgruppsarbetsflöde](#activate).
 
-   * Upprepa dessa steg för att lägga till följande mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce Marketing Cloud]: |Källfält|Målfält| Obligatoriskt| |—|—|—| |`IdentityMap: contactKey`|`Identity: salesforceContactKey`| `Mandatory` |\
-     |`xdm: person.name.firstName`|`Attribute: Email Demographics.First Name`| - |
-|`xdm: personalEmail.address`|`Attribute: Email Addresses.Email Address`| - |
+   * Upprepa dessa steg för att lägga till följande mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce Marketing Cloud]:
+
+     | Källfält | Målfält | Obligatoriskt |
+     |---|---|---|
+     | `IdentityMap: contactKey` | `Identity: salesforceContactKey` | `Mandatory` |
+     | `xdm: person.name.firstName` | `Attribute: First Name` från den önskade attributuppsättningen. | – |
+     | `xdm: personalEmail.address` | `Attribute: Email Address` från den önskade attributuppsättningen. | – |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/mappings.png)

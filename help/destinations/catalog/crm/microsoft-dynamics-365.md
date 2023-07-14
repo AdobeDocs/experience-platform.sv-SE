@@ -4,9 +4,9 @@ title: Microsoft Dynamics 365-anslutning
 description: Med Microsoft Dynamics 365-destinationen kan du exportera dina kontodata och aktivera dem i Microsoft Dynamics 365 efter dina affärsbehov.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
+source-git-commit: 416f4ff28ae5ca7ee3235f020ce012352d6002c7
 workflow-type: tm+mt
-source-wordcount: '1719'
+source-wordcount: '1859'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,10 @@ Anteckna vad som står nedan innan du autentiserar dig för [!DNL Dynamics 365] 
 | `Client ID` | The [!DNL Dynamics 365] Klient-ID för din [!DNL Azure Active Directory] program. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in) för vägledning. | `ababbaba-abab-baba-acac-acacacacacac` |
 | `Client Secret` | The [!DNL Dynamics 365] Klienthemlighet för [!DNL Azure Active Directory] program. Du använder alternativ 2 i [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#authentication-two-options). | `abcde~abcdefghijklmnopqrstuvwxyz12345678` för vägledning. |
 | `Tenant ID` | The [!DNL Dynamics 365] Klient-ID för din [!DNL Azure Active Directory] program. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in) för vägledning. | `1234567-aaaa-12ab-ba21-1234567890` |
+| `Region` | Den Microsoft-region som är associerad med URL:en för miljön.<br> Se [[!DNL Dynamics 365] dokumentation](https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions) för vägledning. | Om din domän är som nedan måste du ange det markerade värdet för CRM-fältet i den nedrullningsbara väljaren när du autentiserar till [mål](#authenticate).<br> *org57771b33.`crm`.dynamics.com*<br>  Exempel: Om ditt företag etableras i Nordamerika (NAM) är din URL `crm.dynamics.com` och du måste välja `crm`. Om ditt företag etableras i Kanada (CAN) är din URL `crm3.dynamics.com` och du måste välja `crm3`. |
 | `Environment URL` | Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/org-service/discover-url-organization-organization-service?view=op-9-1) för vägledning. | Om [!DNL Dynamics 365] domänen är som nedan, du behöver det markerade värdet.<br> *`org57771b33`.crm.dynamics.com* |
+
+{style="table-layout:auto"}
 
 ## Guardrails {#guardrails}
 
@@ -80,6 +83,8 @@ The [Begäranden om gränser och tilldelningar](https://docs.microsoft.com/en-us
 | Målidentitet | Exempel | Beskrivning | Överväganden |
 |---|---|---|---|
 | `contactId` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | Unik identifierare för en kontakt. | **Obligatoriskt**. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) för mer information. |
+
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -111,6 +116,7 @@ Fyll i de obligatoriska fälten nedan. Se [Samla in Dynamics 365-autentiseringsu
 * **[!UICONTROL Client ID]**: The [!DNL Dynamics 365] Klient-ID för din [!DNL Azure Active Directory] program.
 * **[!UICONTROL Tenant ID]**: The [!DNL Dynamics 365] Klient-ID för din [!DNL Azure Active Directory] program.
 * **[!UICONTROL Client Secret]**: The [!DNL Dynamics 365] Klienthemlighet för [!DNL Azure Active Directory] program.
+* **[!UICONTROL Region]**: Dina [[!DNL Dynamics 365]](https://learn.microsoft.com/en-us/power-platform/admin/new-datacenter-regions) Region. Exempel: Om ditt företag etableras i Nordamerika (NAM) är din URL `crm.dynamics.com` och du måste välja `crm`. Om ditt företag etableras i Kanada (CAN) är din URL `crm3.dynamics.com` och du måste välja `crm3`.
 * **[!UICONTROL Environment URL]**: Dina [!DNL Dynamics 365] Miljö-URL.
 
 Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** status med grön bockmarkering. Du kan sedan gå vidare till nästa steg.
