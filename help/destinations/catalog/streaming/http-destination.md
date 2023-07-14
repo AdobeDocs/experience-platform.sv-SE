@@ -3,9 +3,9 @@ keywords: strömning, HTTP-mål
 title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 4d1f9fa19bd35095e3ccbd8d83bcc33dcd4c45a8
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '2351'
+source-wordcount: '2406'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,23 @@ Om du vill skicka profildata till HTTP-slutpunkter måste du först [ansluta til
 
 ## Användningsfall {#use-cases}
 
-Med HTTP API-målet kan du exportera XDM-profildata och målgruppssegment till generiska HTTP-slutpunkter. Där kan du köra dina egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
+Med HTTP API-målet kan du exportera XDM-profildata och målgrupper till generiska HTTP-slutpunkter. Där kan du köra dina egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
 
 HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösningar.
+
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -35,7 +49,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
 | Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på mappningsskärmen på [arbetsflöde för målaktivering](../../ui/activate-segment-streaming-destinations.md#mapping). |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -153,12 +167,12 @@ Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
 >title="Inkludera segmentnamn"
->abstract="Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+>abstract="Växla om du vill att dataexporten ska inkludera namnen på de målgrupper som du exporterar. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmenttimestamps"
 >title="Inkludera tidsstämplar för segment"
->abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
+>abstract="Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när målgrupperna skapades och uppdaterades, samt UNIX-tidsstämpeln när målgrupperna mappades till målet för aktiveringen. Visa dokumentationen för ett dataexportexempel där det här alternativet är markerat."
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_queryparameters"
@@ -174,8 +188,8 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Headers]**: Ange eventuella anpassade rubriker som du vill ska ingå i målanropen, enligt följande format: `header1:value1,header2:value2,...headerN:valueN`.
 * **[!UICONTROL HTTP Endpoint]**: URL:en för HTTP-slutpunkten dit du vill skicka profildata.
 * **[!UICONTROL Query parameters]**: Du kan också lägga till frågeparametrar till HTTP-slutpunkts-URL:en. Formatera de frågeparametrar som du använder så här: `parameter1=value&parameter2=value`.
-* **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de segment som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
-* **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när segmenten skapades och uppdaterades, samt UNIX-tidsstämpeln när segmenten mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
+* **[!UICONTROL Include Segment Names]**: Växla om du vill att dataexporten ska inkludera namnen på de målgrupper som du exporterar. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
+* **[!UICONTROL Include Segment Timestamps]**: Växla om du vill att dataexporten ska inkludera UNIX-tidsstämpeln när målgrupperna skapades och uppdaterades, samt UNIX-tidsstämpeln när målgrupperna mappades till målet för aktiveringen. Ett exempel på en dataexport med det här alternativet markerat finns i [Exporterade data](#exported-data) vidare nedan.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -183,13 +197,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Målattribut {#attributes}
 
@@ -197,13 +211,13 @@ I [[!UICONTROL Select attributes]](../../ui/activate-streaming-profile-destinati
 
 ## Beteende vid export av profiler {#profile-export-behavior}
 
-Experience Platform optimerar beteendet för profilexport till HTTP API-målet, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter segmentkvalificering eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
+Experience Platform optimerar beteendet för profilexport till ditt HTTP API-mål, så att endast data exporteras till API-slutpunkten när relevanta uppdateringar av en profil har gjorts efter målgruppsklassificering eller andra viktiga händelser. Profiler exporteras till ditt mål i följande situationer:
 
-* Profiluppdateringen bestäms av en ändring av segmentmedlemskapet för minst ett av segmenten som är mappat till målet. Profilen har till exempel kvalificerats för ett av de segment som är mappade till målet eller har avslutat ett av de segment som är mappade till målet.
-* Profiluppdateringen bestäms av en ändring i [identitetskarta](/help/xdm/field-groups/profile/identitymap.md). En profil som redan är kvalificerad för ett av de segment som är mappade till målet har till exempel lagts till som en ny identitet i attributet för identitetskarta.
+* Profiluppdateringen bestäms av en ändring av målgruppsmedlemskap för minst en av målgrupperna som är mappad till målet. Profilen har till exempel kvalificerats för en av de målgrupper som är mappade till målet eller har avslutat en av de målgrupper som är mappade till målet.
+* Profiluppdateringen bestäms av en ändring i [identitetskarta](/help/xdm/field-groups/profile/identitymap.md). En profil som redan är kvalificerad för en av de målgrupper som är mappade till målet har till exempel lagts till som en ny identitet i attributet för identitetskarta.
 * Profiluppdateringen bestäms av en attributändring för minst ett av attributen som är mappade till målet. Ett av attributen som är mappade till målet i mappningssteget läggs till i en profil.
 
-I alla de fall som beskrivs ovan exporteras endast de profiler där relevanta uppdateringar har gjorts till ditt mål. Om ett segment som är mappat till målflödet till exempel har hundra medlemmar och fem nya profiler är kvalificerade för segmentet, kommer exporten till målet att vara inkrementell och endast innehålla de fem nya profilerna.
+I alla de fall som beskrivs ovan exporteras endast de profiler där relevanta uppdateringar har gjorts till ditt mål. Om en målgrupp som mappats till målflödet till exempel har hundra medlemmar och fem nya profiler kvalificerar sig för segmentet, kommer exporten till målplatsen att vara inkrementell och endast innehålla de fem nya profilerna.
 
 Observera att alla mappade attribut exporteras för en profil, oavsett var ändringarna finns. I exemplet ovan exporteras alltså alla mappade attribut för de fem nya profilerna även om attributen inte har ändrats.
 
@@ -213,21 +227,21 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och segment fungerar som referens för en målexport. Det innebär att om något mappat segment ändras, ändras läget (från `null` till `realized` eller från `realized` till `exiting`) eller om mappade attribut uppdateras, kommer en målexport att startas.</li><li>Eftersom identiteter för närvarande inte kan mappas till HTTP API-mål, bestämmer ändringar i en viss profil även målexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>The `segmentMembership` -objektet innehåller det segment som är mappat i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller segmentavslutshändelse. Observera att andra omappade segment för vilka profilen är kvalificerad kan ingå i målexporten, om dessa segment tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som det segment som mappas i aktiveringsdataflödet. </li><li>Alla identiteter i `identityMap` -objekt ingår också (Experience Platform stöder för närvarande inte identitetsmappning i HTTP API-målet).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och målgrupper fungerar som referens för en målexport. Det innebär att om någon mappad publik ändrar tillstånd (från `null` till `realized` eller från `realized` till `exiting`) eller om mappade attribut uppdateras, kommer en målexport att startas.</li><li>Eftersom identiteter för närvarande inte kan mappas till HTTP API-mål, bestämmer ändringar i en viss profil även målexporter.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, oavsett om det är samma värde eller inte. Det innebär att en överskrivning av ett attribut betraktas som en ändring även om värdet i sig inte har ändrats.</li></ul> | <ul><li>The `segmentMembership` -objektet innehåller den målgrupp som mappas i aktiveringsdataflödet, för vilket profilens status har ändrats efter en kvalificerings- eller målgruppsavslutningshändelse. Observera att andra omappade målgrupper som profilen är kvalificerad för kan ingå i målexporten om dessa målgrupper tillhör samma [sammanfogningsprincip](/help/profile/merge-policies/overview.md) som målgruppen mappas i aktiveringsdataflödet. </li><li>Alla identiteter i `identityMap` -objekt ingår också (Experience Platform stöder för närvarande inte identitetsmappning i HTTP API-målet).</li><li>Endast mappade attribut inkluderas i målexporten.</li></ul> |
 
 {style="table-layout:fixed"}
 
-Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre segment är markerade i dataflödet och fyra attribut är mappade till målet.
+Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrupper har valts i dataflödet och fyra attribut mappas till målet.
 
 ![Måldataflöde för HTTP API](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
-En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade segment visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som det segment som utlöste exporten. Om en profil kvalificerar sig för **Kund med DeLorean Cars** men är även medlem i **Tittat på &quot;Tillbaka till framtiden&quot;** film och **Science fiction fans** segment, kommer dessa två andra segment också att finnas i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet, om dessa delar samma sammanfogningsprincip med **Kund med DeLorean Cars** segment.
+En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som den målgrupp som utlöste exporten. Om en profil kvalificerar sig för **Kund med DeLorean Cars** men är även medlem i **Tittat på &quot;Tillbaka till framtiden&quot;** film och **Science fiction fans** segment, så kommer dessa två andra målgrupper också att vara närvarande i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet, om dessa delar samma sammanfogningsprincip med **Kund med DeLorean Cars** segment.
 
 När det gäller profilattribut kommer alla ändringar av de fyra attribut som mappas ovan att avgöra målexporten och alla de fyra mappade attributen som finns i profilen kommer att finnas i dataexporten.
 
 ## Bakgrundsfyllning av historiska data {#historical-data-backfill}
 
-När du lägger till ett nytt segment till ett befintligt mål, eller när du skapar ett nytt mål och mappningssegment till det, exporterar Experience Platform data för historiska segmentkvalificeringar till målet. Profiler som är kvalificerade för segmentet *före* segmentet lades till i målet och exporteras till målet inom ungefär en timme.
+När du lägger till en ny målgrupp till ett befintligt mål, eller när du skapar ett nytt mål och mappar målgrupper till det, exporterar Experience Platform historiska data om målgruppskvalificering till målet. Profiler som är kvalificerade för målgruppen *före* målgruppen lades till i målet och exporteras till målet inom ungefär en timme.
 
 ## Exporterade data {#exported-data}
 
@@ -288,7 +302,7 @@ Dina exporterade [!DNL Experience Platform] data får plats i [!DNL HTTP] mål i
 
 Nedan visas ytterligare exempel på exporterade data, beroende på vilka användargränssnittsinställningar du har valt i anslutningsmålflödet för **[!UICONTROL Include Segment Names]** och **[!UICONTROL Include Segment Timestamps]** alternativ:
 
-+++ Exemplet på dataexport nedan innehåller segmentnamn i `segmentMembership` section
++++ Exemplet på dataexport nedan innehåller publiknamnen i `segmentMembership` section
 
 ```json
 "segmentMembership": {
@@ -308,7 +322,7 @@ Nedan visas ytterligare exempel på exporterade data, beroende på vilka använd
 
 +++
 
-+++ Exemplet på dataexport nedan innehåller segmenttidsstämplar i `segmentMembership` section
++++ Exemplet på dataexport nedan innehåller målgruppstidsstämplar i `segmentMembership` section
 
 ```json
 "segmentMembership": {

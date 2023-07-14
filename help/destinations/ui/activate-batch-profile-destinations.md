@@ -1,34 +1,35 @@
 ---
 keywords: aktivera profildestinationer;aktivera destinationer;aktivera data; aktivera e-postmarknadsföringsmål, aktivera molnlagringsmål
-title: Aktivera målgruppsdata för att batchprofilera exportmål
+title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
-description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka segment till gruppprofilbaserade mål.
+description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 5bb2981b8187fcd3de46f80ca6c892421b3590f6
+source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
 workflow-type: tm+mt
-source-wordcount: '3495'
+source-wordcount: '3805'
 ht-degree: 0%
 
 ---
 
-# Aktivera målgruppsdata för att batchprofilera exportmål
+
+# Aktivera målgrupper för att batchprofilera exportmål
 
 >[!IMPORTANT]
 > 
-> * Aktivera data och aktivera [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
-> * Aktivera data utan att gå igenom [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+> * Aktivera målgrupper och aktivera [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+> * Så här aktiverar du målgrupper utan att gå igenom [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
 > 
 > Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 >
-> Vissa kunder som deltar i betaprogrammet för förbättrad filexport ser de nya **[!UICONTROL Mapping]** som en del av aktiveringsarbetsflödet till [nya lagringsplatser för betmoln](/help/release-notes/2022/october-2022.md#destinations). Observera också [kända begränsningar](#known-limitations) som en del av releasen.
+> Vissa kunder som deltar i betaprogrammet för förbättrad filexport ser de nya **[!UICONTROL Mapping]** som en del av aktiveringsarbetsflödet till [nya lagringsplatser för betmoln](/help/release-notes/2022/october-2022.md#destinations). Tänk på [kända begränsningar](#known-limitations) som en del av releasen.
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform batchprofilbaserade mål, som molnlagring och e-postmarknadsföringsmål.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform batchprofilbaserade destinationer, som molnlagring och e-postmarknadsföringsdestinationer.
 
 ## Förutsättningar {#prerequisites}
 
-Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ## Välj mål {#select-destination}
 
@@ -36,39 +37,48 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
    ![Färgmarkering för hur du kommer till fliken Målkatalog](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
-1. Välj **[!UICONTROL Activate segments]** på kortet som motsvarar destinationen där du vill aktivera dina segment, vilket visas i bilden nedan.
+1. Välj **[!UICONTROL Activate audiences]** på kortet som motsvarar destinationen där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Markera bilden med knappen Aktivera segment](../assets/ui/activate-batch-profile-destinations/activate-segments-button.png)
+   ![Markera bilden med knappen Aktivera målgrupper](../assets/ui/activate-batch-profile-destinations/activate-audiences-button.png)
 
-1. Markera målanslutningen som du vill använda för att aktivera dina segment och välj sedan **[!UICONTROL Next]**.
+1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
 
-   ![Bild som visar hur du väljer ett eller flera mål att aktivera segment till](../assets/ui/activate-batch-profile-destinations/select-destination.png)
+   ![Bild som visar hur du väljer ett eller flera mål för att aktivera målgrupper för](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
-1. Gå till nästa avsnitt till [markera segment](#select-segments).
+1. Gå till nästa avsnitt till [välj era målgrupper](#select-audiences).
 
-## Välj segment {#select-segments}
+## Välj målgrupper {#select-audiences}
 
-Använd kryssrutorna till vänster om segmentnamnen för att markera de segment som du vill aktivera för målet och markera sedan **[!UICONTROL Next]**.
+Om du vill välja vilka målgrupper du vill aktivera för målet använder du kryssrutorna till vänster om målgruppsnamnen och väljer sedan **[!UICONTROL Next]**.
 
-![Bildmarkering som visar hur du markerar ett eller flera segment som ska aktiveras](../assets/ui/activate-batch-profile-destinations/select-segments.png)
+Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
+* **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [segmenteringsdokumentation](../../segmentation/ui/overview.md) för mer information.
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
+* Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
-## Schemalägg segmentexport {#scheduling}
+![Bildmarkering som visar hur du väljer en eller flera målgrupper att aktivera](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
+
+>[!TIP]
+>
+>Välja målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiverar automatiskt [Välj anrikningsattribut](#select-enrichment-attributes) steg.
+
+## Schemalägg målgruppsexport {#scheduling}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule"
 >title="Schema"
 >abstract="Använd pennikonen för att ange filexportformat (fullständiga eller stegvisa filer) och exportfrekvens."
 
-[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av [!DNL CSV] filer. I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje segment som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av [!DNL CSV] filer. I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje publik som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
 
 >[!IMPORTANT]
-> 
+>
 >[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
 >
 >Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
 
-Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill skicka till målet.
+Välj **[!UICONTROL Create schedule]** som motsvarar målgruppen som du vill skicka till målet.
 
 ![Markera bilder med knappen Skapa schema](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
@@ -77,12 +87,12 @@ Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill ski
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="Alternativ för filexport"
->abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är kvalificerade för segmentet. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som är kvalificerade för segmentet sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för segmentet och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för segmentet sedan den första inkrementella filexporten."
+>abstract="Välj **Exportera fullständiga filer** om du vill exportera en fullständig ögonblicksbild av alla profiler som är tillgängliga för målgruppen. Välj **Exportera inkrementella filer** om du bara vill exportera de profiler som har anpassats till målgruppen sedan den senaste exporten. <br> Den första stegvisa filexporten innehåller alla profiler som kvalificerar sig för målgruppen och fungerar som en bakgrundsfyllning. Framtida inkrementella filer innehåller endast de profiler som är kvalificerade för målgruppen sedan den första inkrementella filexporten."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="Exportera inkrementella filer"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
->title="Aktivera efter segmentutvärdering"
+>title="Aktivera efter målgruppsutvärdering"
 >abstract="Aktiveringen körs omedelbart efter det dagliga segmenteringsjobbet. Detta garanterar att de senaste profilerna exporteras."
 
 >[!CONTEXTUALHELP]
@@ -90,7 +100,7 @@ Välj **[!UICONTROL Create schedule]** som motsvarar det segment som du vill ski
 >title="Schemalagd aktivering"
 >abstract="Aktiveringen körs vid en fast tidpunkt på dagen."
 
-Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet.
+Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för den valda publiken.
 
 ![Bild av användargränssnittet med alternativet Exportera hela filer markerat.](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
@@ -99,18 +109,18 @@ Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som i
    * **[!UICONTROL Once]**: schemalägg en enda gång vid behov av fullständig filexport.
    * **[!UICONTROL Daily]**: schemalägga fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
 
-1. Använd **[!UICONTROL Time]** växla för att välja om exporten ska ske omedelbart efter segmentutvärderingen eller enligt schema, vid en viss tidpunkt. När du väljer **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
+1. Använd **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller enligt schema, vid en viss tidpunkt. När du väljer **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
    >[!NOTE]
    >
-   >The **[!UICONTROL After segment evaluation]** det alternativ som beskrivs nedan är för närvarande endast tillgängligt för utvalda Beta-kunder.
+   >The **[!UICONTROL After segment evaluation]** det alternativ som beskrivs nedan är endast tillgängligt för utvalda Beta-kunder.
 
-   Använd **[!UICONTROL After segment evaluation]** Möjlighet att låta aktiveringsjobbet köras omedelbart efter att det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.
+   Använd **[!UICONTROL After segment evaluation]** Möjlighet att låta aktiveringsjobbet köras omedelbart efter att det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs.
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![Bild som markerar alternativet för utvärdering av After segment i aktiveringsflödet för batchmål.](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en fast tidpunkt. Detta garanterar att profildata för Experience Platform exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar.
+Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en fast tidpunkt. Med det här alternativet exporteras Experience Platform-profildata vid samma tidpunkt varje dag. De profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar.
 
    ![Bild som markerar alternativet Schemalagd i aktiveringsflödet för batchdestinationer och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -122,17 +132,17 @@ Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en
 
    >[!IMPORTANT]
    >
-   > När du väljer ett exportintervall inkluderas inte den sista dagen i intervallet i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum den 10 januari.
+   > När du väljer ett exportintervall inkluderas inte den sista dagen i intervallet i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum 10 januari.
 
 1. Välj **[!UICONTROL Create]** för att spara schemat.
 
 ### Exportera inkrementella filer {#export-incremental-files}
 
-Välj **[!UICONTROL Export incremental files]** för att starta en export där den första filen är en fullständig ögonblicksbild av alla profilkvalifikationer för det valda segmentet, och efterföljande filer är stegvisa profilkvalifikationer sedan den föregående exporten.
+Välj **[!UICONTROL Export incremental files]** för att starta en export där den första filen är en fullständig ögonblicksbild av alla profilkvalifikationer för den valda målgruppen, och efterföljande filer är stegvisa profilkvalifikationer sedan den föregående exporten.
 
 >[!IMPORTANT]
 >
->Den första exporterade stegvisa filen innehåller alla profiler som kvalificerar sig för ett segment och fungerar som en bakgrundsfyllning.
+>Den första exporterade inkrementella filen innehåller alla profiler som kvalificerar sig för en målgrupp och fungerar som en bakgrundsfyllning.
 
 ![Bild av användargränssnittet med alternativet Exportera stegvisa filer markerat.](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
@@ -151,7 +161,7 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 
    >[!IMPORTANT]
    >
-   >Den sista dagen i intervallet inkluderas inte i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum den 10 januari.
+   >Den sista dagen i intervallet inkluderas inte i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum 10 januari.
 
 1. Välj **[!UICONTROL Create]** för att spara schemat.
 
@@ -160,11 +170,11 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
 >title="Konfigurera filnamn"
->abstract="För filbaserade mål genereras ett unikt filnamn per segment. Använd filnamnsredigeraren för att skapa och redigera ett unikt filnamn eller behåll standardnamnet."
+>abstract="För filbaserade mål genereras ett unikt filnamn per målgrupp. Använd filnamnsredigeraren för att skapa och redigera ett unikt filnamn eller behåll standardnamnet."
 
-För de flesta mål består standardfilnamnen av målnamn, segment-ID och en datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna. Observera att vissa målutvecklare kan välja att visa olika alternativ för standardfilnamnstillägg för sina mål.
+För de flesta mål består standardfilnamnen av målnamn, målgrupps-ID och en datum- och tidsindikator. Du kan till exempel redigera de exporterade filnamnen för att skilja mellan olika kampanjer eller för att lägga till tiden för dataexport till filerna. Observera att vissa målutvecklare kan välja att visa olika alternativ för standardfilnamnstillägg för sina mål.
 
-Välj pennikonen för att öppna ett modalt fönster och redigera filnamnen. Filnamn får innehålla högst 255 tecken.
+Om du vill öppna ett modalt fönster och redigera filnamnen väljer du pennikonen . Filnamn får innehålla högst 255 tecken.
 
 >[!NOTE]
 >
@@ -176,17 +186,17 @@ I filnamnsredigeraren kan du välja olika komponenter att lägga till i filnamne
 
 ![Bild som visar alla tillgängliga filnamnsalternativ.](../assets/ui/activate-batch-profile-destinations/activate-workflow-configure-step-2.png)
 
-Målnamnet och segment-ID kan inte tas bort från filnamn. Utöver dessa kan du lägga till följande:
+Målnamnet och målgrupps-ID:t kan inte tas bort från filnamn. Förutom dessa alternativ kan du lägga till följande alternativ:
 
 | Filnamnsalternativ | Beskrivning |
 |---------|----------|
-| **[!UICONTROL Segment name]** | Namnet på det exporterade segmentet. |
-| **[!UICONTROL Date and time]** | Välj mellan att lägga till en `MMDDYYYY_HHMMSS` format eller en Unix 10-siffrig tidsstämpel för den tid då filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export. |
+| **[!UICONTROL Audience name]** | Namnet på den exporterade publiken. |
+| **[!UICONTROL Date and time]** | Välj mellan att lägga till en `MMDDYYYY_HHMMSS` eller en UNIX 10-siffrig tidsstämpel som anger när filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export. |
 | **[!UICONTROL Custom text]** | All egen text som du vill lägga till i filnamnen. |
-| **[!UICONTROL Destination ID]** | ID:t för måldataflödet som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
-| **[!UICONTROL Destination name]** | Namnet på måldataflödet som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Destination ID]** | ID:t för måldataflödet som du använder för att exportera målgruppen. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Destination name]** | Namnet på måldataflödet som du använder för att exportera målgruppen. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
 | **[!UICONTROL Organization name]** | Organisationens namn i Experience Platform. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
-| **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera segmentet. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera målgruppen. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
 
 {style="table-layout:auto"}
 
@@ -196,7 +206,7 @@ Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 > 
 >Om du inte markerar **[!UICONTROL Date and Time]** -komponenten kommer filnamnen att vara statiska och den nya exporterade filen kommer att skriva över den tidigare filen på lagringsplatsen vid varje export. Detta är det rekommenderade alternativet när du kör ett återkommande importjobb från en lagringsplats till en e-postmarknadsföringsplattform.
 
-När du har konfigurerat alla segment väljer du **[!UICONTROL Next]** för att fortsätta.
+När du har konfigurerat alla målgrupper väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ## Välj profilattribut {#select-attributes}
 
@@ -208,7 +218,7 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
 1. Markera pilen till höger om **[!UICONTROL Schema field]** post.
 
-   ![Bildmarkering som visar hur du väljer ett källfält.](../assets/ui/activate-batch-profile-destinations/select-target-field.png)
+   ![Bildmarkering som visar hur du väljer ett källfält.](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
 
 1. I **[!UICONTROL Select field]** markerar du de XDM-attribut eller identitetsnamnutrymmen som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
 
@@ -220,24 +230,24 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 >
 > Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
 
+![Bild som visar förifyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
+
 >[!IMPORTANT]
 >
 >På grund av en känd begränsning kan du för närvarande inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
 >
->![Skärminspelning som visar segmentmedlemskapets tillfälliga lösning i aktiveringsarbetsflödets mappningssteg.](/help/destinations/assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+>![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
 * Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
 * Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
-
-![Bild som visar förifyllda rekommenderade attribut i mappningssteget i segmentaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/mandatory-deduplication.png)
 
 ### Obligatoriska attribut {#mandatory-attributes}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
 >title="Om obligatoriska attribut"
->abstract="Välj de XDM-schemaattribut som alla exporterade profiler ska inkludera. Profiler utan den obligatoriska nyckeln exporteras inte till målet. Om du inte väljer en obligatorisk nyckel exporteras alla kvalificerade profiler oavsett deras attribut."
+>abstract="Välj de XDM-schemaattribut som alla exporterade profiler ska inkludera. Profiler utan den obligatoriska nyckeln exporteras inte till målet. Om du inte markerar en obligatorisk nyckel exporteras alla kvalificerade profiler oavsett deras attribut."
 
 Ett obligatoriskt attribut är en användaraktiverad kryssruta som ser till att alla profilposter innehåller det valda attributet. Till exempel: alla exporterade profiler innehåller en e-postadress. &#x200B;
 
@@ -356,7 +366,7 @@ Om du inte använder borttagning av dubbletter innehåller exportfilen följande
 
 ### Användning vid borttagning av dubbletter, fall 2: deduplicering baserad på ID-namnutrymme {#deduplication-use-case-2}
 
-Anta borttagning av dubbletter av [!DNL Email] -namnutrymmet innehåller exportfilen följande poster. Profil B är den senaste som kvalificerar sig för segmentet, så det är den enda som exporteras.
+Anta borttagning av dubbletter av [!DNL Email] -namnutrymmet innehåller exportfilen följande poster. Profil B är den senaste som är kvalificerad för målgruppen, så det är den enda som exporteras.
 
 | E-post* | personalEmail | firstName | lastName |
 |---|---|---|---|
@@ -365,7 +375,7 @@ Anta borttagning av dubbletter av [!DNL Email] -namnutrymmet innehåller exportf
 
 ### Användning av borttagning av dubbletter, exempel 3: deduplicering baserad på ett enda profilattribut {#deduplication-use-case-3}
 
-Anta borttagning av dubbletter av `personal Email` skulle exportfilen innehålla följande post. Profil B är den senaste som kvalificerar sig för segmentet, så det är den enda som exporteras.
+Anta borttagning av dubbletter av `personal Email` skulle exportfilen innehålla följande post. Profil B är den senaste som är kvalificerad för målgruppen, så det är den enda som exporteras.
 
 | personalEmail* | firstName | lastName |
 |---|---|---|
@@ -388,7 +398,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 > 
 >Om några dataanvändningsetiketter har tillämpats på vissa fält i en datauppsättning (i stället för på hela datauppsättningen), tillämpas dessa fältetiketter vid aktiveringen på följande villkor:
 >
->* Fälten används i segmentdefinitionen.
+>* Fälten används i målgruppsdefinitionen.
 >* Fälten konfigureras som projicerade attribut för målmålet.
 >
 > Om fältet `person.name.firstName` har vissa dataanvändningsetiketter som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
@@ -442,11 +452,11 @@ I det här steget måste du välja de profilattribut som du vill lägga till i f
 
 Den nya **[!UICONTROL Mapping]** sidan har följande kända begränsningar:
 
-#### Det går inte att välja segmentmedlemskapsattribut via mappningsarbetsflödet
+#### Målgruppsmedlemskapsattributet kan inte väljas via mappningsarbetsflödet
 
 På grund av en känd begränsning kan du för närvarande inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
 
-![Skärminspelning som visar segmentmedlemskapets tillfälliga lösning i aktiveringsarbetsflödets mappningssteg.](/help/destinations/assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
+![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
 * Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
@@ -456,17 +466,50 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 
 Det går inte att markera identitetsnamnutrymmen för export, vilket visas i bilden nedan. Om du väljer ett identitetsnamnutrymme för export visas ett fel i **[!UICONTROL Review]** steg.
 
-![Mappning som inte stöds visar identitetsexporter](/help/destinations/assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
+![Mappning som inte stöds visar identitetsexporter](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
 
 Som en tillfällig lösning kan du antingen:
 * Använd de gamla molnlagringsmålen för dataflödena där du vill inkludera identitetsnamnutrymmen i exporter
 * Överför identiteter som attribut till Experience Platform och exportera dem sedan till dina molnlagringsplatser.
 
+## Välj anrikningsattribut {#select-enrichment-attributes}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_exclude_enrichment_attributes"
+>title="Uteslut anrikningsattribut"
+>abstract="Aktivera det här alternativet om du vill exportera profilerna från de valda anpassade överförda målgrupperna till ditt mål, samtidigt som alla deras attribut utesluts."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#select-enrichment-attributes" text="Läs mer i dokumentationen"
+
+>[!IMPORTANT]
+>
+>Det här steget visas bara om du har valt **[!UICONTROL Custom upload]** målgrupper under [målgruppsval](#select-audiences) steg.
+
+Anrikningsattribut motsvarar anpassade överförda målgrupper som importerats i Experience Platform som **[!UICONTROL Custom uploads]**. I det här steget kan du välja vilka attribut du vill exportera till målet, för varje vald extern publik.
+
+![Användargränssnittsbild som visar urvalssteget för anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes-step.png)
+
+Följ stegen nedan för att välja anrikningsattribut för varje extern målgrupp:
+
+1. I **[!UICONTROL Enrichment attributes]** kolumn väljer du ![Knappen Redigera](../assets/ui/activate-batch-profile-destinations/edit-button.svg) (Redigera).
+2. Välj **[!UICONTROL Add enrichment attribute]**. Ett nytt tomt schemafält visas.
+   ![Gränssnittsbild som visar modala skärmar för anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/add-enrichment-attribute.png)
+3. Klicka på knappen till höger om det tomma fältet för att öppna fältvalsskärmen.
+4. Välj de attribut du vill exportera för målgruppen.
+   ![Användargränssnittsbild som visar listan med anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/select-enrichment-attributes.png)
+5. När du har lagt till alla attribut som du vill exportera väljer du **[!UICONTROL Save and close]**.
+6. Upprepa dessa steg för varje extern publik.
+
+Om du vill aktivera externa målgrupper till dina mål utan att exportera något attribut aktiverar du **[!UICONTROL Exclude enrichment attributes]** växla. Med det här alternativet exporteras profilerna från de externa målgrupperna, men inga av deras motsvarande attribut skickas till ditt mål.
+
+![Användargränssnittsbild som visar växlingsknappen för exkludera anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/exclude-enrichment-attributes.png)
+
+Välj **[!UICONTROL Next]** för att gå till [Granska](#review) steg.
+
 ## Granska {#review}
 
 På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-![Markeringssammanfattning i granskningssteget.](/help/destinations/assets/ui/activate-batch-profile-destinations/review.png)
+![Markeringssammanfattning i granskningssteget.](../assets/ui/activate-batch-profile-destinations/review.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
@@ -479,19 +522,19 @@ Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy 
 
 ### Kontroller av policyer för dataanvändning {#data-usage-policy-checks}
 
-I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för segmentaktivering förrän du har löst konflikten. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
+I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
 
 ![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
 
-### Filtrera segment {#filter-segments}
+### Filtrera målgrupper {#filter-audiences}
 
-I det här steget kan du även använda de tillgängliga filtren på sidan för att endast visa segment vars schema eller mappning har uppdaterats som en del av det här arbetsflödet. Du kan också växla vilka tabellkolumner som du vill se.
+I det här steget kan du även använda de tillgängliga filtren på sidan för att visa endast de målgrupper vars schema eller mappning har uppdaterats som en del av det här arbetsflödet. Du kan också växla vilka tabellkolumner som du vill se.
 
-![Skärminspelning som visar tillgängliga segmentfilter i granskningssteget.](/help/destinations/assets/ui/activate-batch-profile-destinations/filter-segments-batch-review.gif)
+![Skärminspelning som visar tillgängliga målgruppsfilter i granskningssteget.](../assets/ui/activate-batch-profile-destinations/filter-audiences-batch-review.gif)
 
 Om du är nöjd med ditt val och inga policyöverträdelser har identifierats väljer du **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-## Verifiera segmentaktivering {#verify}
+## Verifiera målgruppsaktivering {#verify}
 
 För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Experience Platform en `.csv` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna i filnamnet](#file-names):
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`

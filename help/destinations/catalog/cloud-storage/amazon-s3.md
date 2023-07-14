@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 8890fd137cfe6d35dcf6177b5516605e7753a75a
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '1057'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,6 @@ ht-degree: 0%
 >Med betaversionen av exportdataset och de förbättrade funktionerna för filexport kan du nu se två [!DNL Amazon S3] i målkatalogen.
 >* Om du redan exporterar filer till **[!UICONTROL Amazon S3]** mål, skapa nya dataflöden till den nya **[!UICONTROL Amazon S3 beta]** mål.
 >* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Amazon S3]** mål, använd den nya **[!UICONTROL Amazon S3 beta]** exportera filer till **[!UICONTROL Amazon S3]**.
-
 
 ![Bild av de två Amazon S3-målkorten sida vid sida.](../../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
 
@@ -35,8 +34,22 @@ Skapa en utgående liveanslutning till din [!DNL Amazon S3] för att med jämna 
 
 ## Anslut till [!DNL Amazon S3] lagring via API eller användargränssnitt {#connect-api-or-ui}
 
-* Ansluta till [!DNL Amazon S3] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera segment till den här destinationen](#activate) nedan.
-* Ansluta till [!DNL Amazon S3] lagringsplats programmatiskt, läs [Aktivera segment för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
+* Ansluta till [!DNL Amazon S3] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
+* Ansluta till [!DNL Amazon S3] lagringsplats programmatiskt, läs [Aktivera målgrupper för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
+
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -71,7 +84,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 * **[!DNL Amazon S3]åtkomstnyckel** och **[!DNL Amazon S3]hemlig nyckel**: I [!DNL Amazon S3], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon S3] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
-   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### Fyll i målinformation {#destination-details}
 
@@ -83,7 +96,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_folderpath"
 >title="Mappsökväg"
->abstract="Får endast innehålla tecknen A-Z, a-z, 0-9 och kan innehålla följande specialtecken: `/!-_.'()"^[]+$%.*"`. Om du vill skapa en mapp per segmentfil infogar du makrot `/%SEGMENT_NAME%` eller `/%SEGMENT_ID%` eller `/%SEGMENT_NAME%/%SEGMENT_ID%` i textfältet. Makron kan bara infogas i slutet av mappsökvägen. Visa makroexempel i dokumentationen."
+>abstract="Får endast innehålla tecknen A-Z, a-z, 0-9 och kan innehålla följande specialtecken: `/!-_.'()"^[]+$%.*"`. Om du vill skapa en mapp per målgruppsfil infogar du makrot `/%SEGMENT_NAME%` eller `/%SEGMENT_ID%` eller `/%SEGMENT_NAME%/%SEGMENT_ID%` i textfältet. Makron kan bara infogas i slutet av mappsökvägen. Visa makroexempel i dokumentationen."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="Använd makron för att skapa en mapp på lagringsplatsen"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
@@ -98,7 +111,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 >[!TIP]
 >
->I arbetsflödet för anslutningsmål kan du skapa en anpassad mapp i din Amazon S3-lagring per exporterad segmentfil. Läs [Använd makron för att skapa en mapp på lagringsplatsen](overview.md#use-macros) för instruktioner.
+>I arbetsflödet för anslutningsmål kan du skapa en anpassad mapp i din Amazon S3-lagring per exporterad målgruppsfil. Läs [Använd makron för att skapa en mapp på lagringsplatsen](overview.md#use-macros) för instruktioner.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -127,13 +140,13 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 -->
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## (Beta) Exportera datauppsättningar {#export-datasets}
 
@@ -144,4 +157,4 @@ Detta mål stöder datauppsättningsexporter. Fullständig information om hur du
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Amazon S3] destinationer, [!DNL Platform] skapar en datafil på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i segmentaktiveringssjälvstudiekursen.
+För [!DNL Amazon S3] destinationer, [!DNL Platform] skapar en datafil på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.

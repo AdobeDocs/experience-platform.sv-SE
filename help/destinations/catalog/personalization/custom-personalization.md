@@ -1,11 +1,11 @@
 ---
 keywords: personalisering, destination, upplevelseplattform anpassad destination,
 title: Anpassad personaliseringsanslutning
-description: Den här destinationen erbjuder extern personalisering, innehållshanteringssystem, annonsservrar och andra program som körs på din webbplats för att hämta segmentinformation från Adobe Experience Platform. Detta mål ger personalisering i realtid baserat på medlemskap i användarprofilsegment.
+description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 6627953aba4f1cd665c3d5c4bc8711c48064374f
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '899'
 ht-degree: 1%
 
 ---
@@ -27,11 +27,11 @@ ht-degree: 1%
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API:t genom att lägga till en integration på serversidan.
 >
-><br>Om du inte uppfyller kraven ovan baseras personaliseringen endast på segmentmedlemskap.
+><br>Om ni inte uppfyller kraven ovan kommer personaliseringen endast att baseras på målgruppsmedlemskap.
 
 ## Översikt {#overview}
 
-Det här målet är ett sätt att hämta segmentinformation från Adobe Experience Platform till externa personaliseringsplattformar, innehållshanteringssystem, annonsservrar och andra program som körs på kundens webbplatser.
+Det här målet är ett sätt att hämta målgruppsinformation från Adobe Experience Platform till externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser.
 
 ## Förutsättningar {#prerequisites}
 
@@ -41,19 +41,33 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 >
 >Innan du skapar en anpassad personaliseringsanslutning ska du läsa guiden om hur du [aktivera målgruppsdata för att kanalisera personaliseringsmål](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter.
 
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!DNL Profile request]** | Du begär alla segment som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan konfigureras för olika [Datasamlingsdatamängder för Adobe](../../../edge/datastreams/overview.md). |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!DNL Profile request]** | Du begär alla målgrupper som är mappade i det anpassade anpassningsmålet för en enda profil. Olika anpassade anpassningsmål kan konfigureras för olika [Datasamlingsdatamängder för Adobe](../../../edge/datastreams/overview.md). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 ## Anslut till målet {#connect}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_custom_personalization_datastream"
 >title="Om dataStream-ID"
->abstract="Med det här alternativet anger du i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
+>abstract="Det här alternativet avgör i vilket datainsamlingsdatastam som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Du måste konfigurera ett datastream innan du kan konfigurera målet."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="Lär dig konfigurera ett datastream"
 
 >[!IMPORTANT]
@@ -69,7 +83,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
 * **[!UICONTROL Integration alias]**: Värdet skickas till Experience Platform Web SDK som ett JSON-objektnamn.
-* **[!UICONTROL Datastream ID]**: Detta anger i vilken datainsamlingsdatastam segmenten ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/datastreams/overview.md) för mer information.
+* **[!UICONTROL Datastream ID]**: Detta anger i vilken datainsamling som målgrupperna ska inkluderas i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/datastreams/overview.md) för mer information.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -77,13 +91,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och segment för kantanpassning](../../ui/activate-edge-personalization-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Läs [Aktivera profiler och målgrupper för kantanpassning](../../ui/activate-edge-personalization-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Exporterade data {#exported-data}
 
@@ -111,7 +125,7 @@ Här är ett exempelvärde för `event.destinations` variabel:
 
 Om du inte använder [Taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du [hantera svar från händelser](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) för att se exporterade data.
 
-JSON-svaret från Adobe Experience Platform kan analyseras för att hitta motsvarande integreringsalias för det program du integrerar med Adobe Experience Platform. Segment-ID:n kan skickas till programmets kod som målparametrar. Nedan visas ett exempel på hur detta skulle se ut när det gäller målsvaret.
+JSON-svaret från Adobe Experience Platform kan analyseras för att hitta motsvarande integreringsalias för det program du integrerar med Adobe Experience Platform. Målgrupps-ID:n kan skickas till programmets kod som målparametrar. Nedan visas ett exempel på hur detta skulle se ut när det gäller målsvaret.
 
 ```
 alloy("sendEvent", {
@@ -132,11 +146,11 @@ alloy("sendEvent", {
         // Get the destination with a particular alias
         var personalizationDestinations = result.destinations.filter(x => x.alias == "personalizationAlias")
         if(personalizationDestinations.length > 0) {
-             // Code to pass the segment IDs into the system that corresponds to personalizationAlias
+             // Code to pass the audience IDs into the system that corresponds to personalizationAlias
         }
         var adServerDestinations = result.destinations.filter(x => x.alias == "adServerAlias")
         if(adServerDestinations.length > 0) {
-            // Code to pass the segment ids into the system that corresponds to adServerAlias
+            // Code to pass the audience IDs into the system that corresponds to adServerAlias
         }
      }
    })

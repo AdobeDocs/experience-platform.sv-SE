@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook-anslutning
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
+source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
 workflow-type: tm+mt
-source-wordcount: '1818'
+source-wordcount: '1868'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Aktivera profiler för [!DNL Facebook] kampanjer för målgruppsanpassning, personalisering och undertryckande baserat på hashad-e-post.
 
-Du kan använda det här målet för målgruppsanpassning över [!DNL Facebook’s] program som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network]och [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
+Du kan använda det här målet för målgruppsanpassning över [!DNL Facebook's] program som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network]och [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
 
 ![Facebook-mål i Adobe Experience Platform användargränssnitt](../../assets/catalog/social/facebook/catalog.png)
 
@@ -26,7 +26,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] m�
 
 ### Använd skiftläge 1
 
-En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga segment utifrån sina egna offlinedata och skicka dessa segment till [!DNL Facebook] social plattform, optimera deras annonsutgifter.
+En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Facebook] social plattform, optimera deras annonsutgifter.
 
 ### Använd skiftläge 2
 
@@ -34,7 +34,7 @@ Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erb
 
 För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe Experience Platform med e-postadresserna som identifierare.
 
-Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgruppssegment som de kan rikta sig till via [!DNL Facebook] mål.
+Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-ID:n och kundnivåer, för att skapa nya målgrupper som de kan rikta sig till via [!DNL Facebook] mål.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -48,30 +48,44 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare (namn, telefonnummer eller andra) som används i Facebook-målet. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
 ## Krav för facebook-konton {#facebook-account-prerequisites}
 
-Innan du kan skicka målgruppssegment till [!DNL Facebook]måste du uppfylla följande krav:
+Innan du kan skicka dina målgrupper till [!DNL Facebook]måste du uppfylla följande krav:
 
 * Dina [!DNL Facebook] användarkontot måste ha **[!DNL Manage campaigns]** behörighet aktiverad för annonskontot som du tänker använda.
 * The **Adobe Experience Cloud** företagskonto måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Se [Lägg till partners i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
-   >[!IMPORTANT]
-   >
-   > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera **Hantera kampanjer** behörighet. Behörighet krävs för [!DNL Adobe Experience Platform] integrering.
+  >[!IMPORTANT]
+  >
+  > När du konfigurerar behörigheter för Adobe Experience Cloud måste du aktivera **Hantera kampanjer** behörighet. Behörighet krävs för [!DNL Adobe Experience Platform] integrering.
 * Läs och signera [!DNL Facebook Custom Audiences] Användarvillkor. Om du vill göra det går du till `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`, där `accountID` är din [!DNL Facebook Ad Account ID].
-   >[!IMPORTANT]
-   >
-   >När du signerar [!DNL Facebook Custom Audiences] Användarvillkoren måste använda samma användarkonto som du använde för att autentisera i Facebook API.
+  >[!IMPORTANT]
+  >
+  >När du signerar [!DNL Facebook Custom Audiences] Användarvillkoren måste använda samma användarkonto som du använde för att autentisera i Facebook API.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -125,7 +139,7 @@ Innan du kan använda `Extern_ID` namnutrymme som data skickas till [!DNL Facebo
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-I videon nedan visas även hur du konfigurerar en [!DNL Facebook] mål och aktivera segment.
+I videon nedan visas även hur du konfigurerar en [!DNL Facebook] och aktivera målgrupper.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
@@ -159,12 +173,12 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="Målgruppens ursprung"
->abstract="Välj hur kunddata i segmentet ursprungligen samlades in. Data visas i Facebook när en användare anges av segmentet"
+>abstract="Välj hur kunddata i målgruppen ursprungligen samlades in. Data visas i Facebook när en användare anges av segmentet"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
@@ -185,9 +199,9 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-I **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när segment skickas till [!DNL Facebook Custom Audiences].
+I **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när målgrupper skickas till [!DNL Facebook Custom Audiences].
 
 ![Facebook Origin of Audience](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
@@ -222,11 +236,11 @@ Markera målfält:
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Facebook], innebär en lyckad aktivering att [!DNL Facebook] anpassade målgrupper skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segmentmedlemskap i målgruppen skulle läggas till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade segmenten.
+För [!DNL Facebook], innebär en lyckad aktivering att [!DNL Facebook] anpassade målgrupper skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Målgruppsmedlemskap läggs till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
 
 >[!TIP]
 >
->Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för historiska efterfyllningar av målgrupper. Alla historiska segmentkvalifikationer skickas till [!DNL Facebook] när du aktiverar segmenten till målet.
+>Integrationen mellan Adobe Experience Platform och [!DNL Facebook] har stöd för historiska efterfyllningar av målgrupper. Alla historiska kvalifikationer skickas till [!DNL Facebook] när du aktiverar målgrupperna till målet.
 
 ## Felsökning {#troubleshooting}
 

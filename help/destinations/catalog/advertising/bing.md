@@ -3,9 +3,9 @@ keywords: Reklam. Vedning.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Display Advertising.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '646'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Skicka profildata till [!DNL Microsoft Bing]måste du först ansluta till målet
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Microsoft Advertising IDs] målgruppsanpassning via webbannonsering [!DNL Microsoft Advertising] kanaler.
+Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL Microsoft Advertising IDs] målgruppsanpassning via webbannonsering [!DNL Microsoft Advertising] kanaler.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -32,16 +32,30 @@ Som marknadsförare vill jag kunna använda segment som är inbyggda i [!DNL Mic
 
 {style="table-layout:auto"}
 
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
-**[!DNL Segment Export]** - du exporterar alla medlemmar i ett segment (publik) till [!DNL Microsoft Bing] mål.
+**[!DNL Audience Export]** - du exporterar alla medlemmar i en publik till [!DNL Microsoft Bing] mål.
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till [!DNL Microsoft Bing] mål. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en publik till [!DNL Microsoft Bing] mål. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -77,22 +91,22 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_bing_mapping_id"
 >title="Mappnings-ID"
->abstract="Ange det numeriska Bing-segment-ID som du vill mappa det markerade segmentet till. Om [!UICONTROL Mapping ID] motsvarar inte ett segment-ID i Bing-målet. Du kommer inte att se förväntade målgruppsdata i ditt Bing-konto."
+>abstract="Ange det numeriska Bing-målgrupps-ID som du vill mappa det markerade segmentet till. Om [!UICONTROL Mapping ID] motsvarar inte ett målgrupps-ID i Bing-målet. Du kommer inte att se förväntade målgruppsdata i ditt Bing-konto."
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-I [Segmentschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa segmentnamnet i [!UICONTROL Mapping ID] fält. Detta garanterar att metadata för segment skickas till [!DNL Bing].
+I [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa målgruppsnamnet i [!UICONTROL Mapping ID] fält. Detta garanterar att målgruppsmetadata skickas till [!DNL Bing].
 
-![Användargränssnittsbild som visar segmentschemasskärmen med ett exempel på hur segmentnamnet mappas till Bing Mapping-ID:t.](../../assets/catalog/advertising/bing/mapping-id.png)
+![Användargränssnittsbild som visar målgruppens tidsplaneringsskärm med ett exempel på hur målgruppsnamnet mappas till Bing Mapping-ID:t.](../../assets/catalog/advertising/bing/mapping-id.png)
 
 ## Exporterade data {#exported-data}
 

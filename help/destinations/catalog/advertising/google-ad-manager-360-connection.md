@@ -2,9 +2,9 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 5174c65970aa8df9bc3f2c8d612c26c72c20e81f
+source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '980'
 ht-degree: 1%
 
 ---
@@ -36,6 +36,20 @@ Observera följande information som är specifik för [!DNL Google Ad Manager 36
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | PPID | [!DNL Publisher provided ID] | Välj den här målidentiteten för att skicka målgrupper till [!DNL Google Ad Manager 360] |
+
+{style="table-layout:auto"}
+
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -85,8 +99,8 @@ Mer information om dessa värden finns i [Google Cloud Storage HMAC-nycklar](htt
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam360_appendSegmentID"
->title="Lägg till segment-ID till segmentnamn"
->abstract="Välj det här alternativet om du vill att segmentnamnet i Google Ad Manager 360 ska innehålla segment-ID:t från Experience Platform: `Segment Name (Segment ID)`"
+>title="Bifoga målgrupps-ID till målgruppsnamn"
+>abstract="Välj det här alternativet om du vill att målgruppsnamnet i Google Ad Manager 360 ska innehålla målgrupps-ID:t från Experience Platform, enligt följande: `Audience Name (Audience ID)`"
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -98,7 +112,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Account Type]**: Välj ett alternativ, beroende på [!DNL Google] konto:
    * Använd `AdX buyer` for [!DNL Google AdX]
    * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
-* **[!UICONTROL Append segment ID to segment name]**: Välj det här alternativet om du vill att segmentnamnet i Google Ad Manager 360 ska innehålla segment-ID:t från Experience Platform: `Segment Name (Segment ID)`.
+* **[!UICONTROL Append audience ID to audience name]**: Välj det här alternativet om du vill att målgruppsnamnet i Google Ad Manager 360 ska innehålla målgrupps-ID:t från Experience Platform, enligt följande: `Audience Name (Audience ID)`.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -106,20 +120,20 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 I steget för identitetsmappning ser du följande förifyllda mappningar:
 
 | Mappning i förväg | Beskrivning |
 |---------|----------|
 | `ECID` -> `ppid` | Detta är den enda användaranpassade förifyllda mappningen. Du kan välja dina attribut eller identitetsnamnutrymmen från Platform och mappa dem till `ppid`. |
-| `metadata.segment.alias` -> `list_id` | Mappar Experience Platform-segmentnamn till segment-ID i Google. |
+| `metadata.segment.alias` -> `list_id` | Mappar målgruppsnamn i Experience Platform till målgrupps-ID:n på Google-plattformen. |
 | `iif(${segmentMembership.ups.seg_id.status}=="exited", "1","0")` -> `delete` | Anger Google när diskvalificerade användare ska tas bort från segment. |
 
 Dessa mappningar krävs av [!DNL Google Ad Manager 360] och skapas automatiskt av Adobe Experience Platform för alla [!DNL Google Ad Manager 360] anslutningar.

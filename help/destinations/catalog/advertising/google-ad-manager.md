@@ -3,9 +3,9 @@ keywords: Google ad manager;google ad;doubleClick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager-anslutning
 description: Google Ad Manager, tidigare DoubleClick for Publishers eller DoubleClick AdX, är en annonseringsplattform från Google som ger utgivaren möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 5174c65970aa8df9bc3f2c8d612c26c72c20e81f
+source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '954'
 ht-degree: 1%
 
 ---
@@ -22,8 +22,8 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] m
 
 * Aktiverade målgrupper skapas programmatiskt i [!DNL Google] plattform.
 * [!DNL Platform] innehåller för närvarande inga mätvärden som validerar den lyckade aktiveringen. Se antalet målgrupper i Google för att validera integrationen och förstå målgruppens målgruppsstorlek.
-* Efter mappning av ett segment till ett [!DNL Google Ad Manager] mål visas segmentnamnet omedelbart i [!DNL Google Ad Manager] användargränssnitt.
-* Segmentpopulationen behöver 24-48 timmar att vara [!DNL Google Ad Manager]. Dessutom måste segment ha en målgruppsstorlek på minst 50 profiler för att kunna visas i [!DNL Google Ad Manager]. Segment som är mindre än 50 profiler fylls inte i i [!DNL Google Ad Manager].
+* Efter att en målgrupp har mappats till en [!DNL Google Ad Manager] mål visas målgruppsnamnet omedelbart i [!DNL Google Ad Manager] användargränssnitt.
+* Segmentpopulationen behöver 24-48 timmar att vara [!DNL Google Ad Manager]. Dessutom måste målgrupperna ha en målgruppsstorlek på minst 50 profiler för att kunna visas i [!DNL Google Ad Manager]. Publiker som är mindre än 50 profiler fylls inte i i [!DNL Google Ad Manager].
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -41,14 +41,28 @@ Observera följande information som är specifik för [!DNL Google Ad Manager] m
 
 {style="table-layout:auto"}
 
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
+
 ## Exportera typ och frekvens {#export-type-frequency}
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Segment export]** | Du exporterar alla medlemmar i ett segment (publik) till Google-målet. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på segmentutvärdering skickar kopplingen uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp till Google-destinationen. |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -75,8 +89,8 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_gam_appendSegmentID"
->title="Lägg till segment-ID till segmentnamn"
->abstract="Välj det här alternativet om du vill att segmentnamnet i Google Ad Manager ska innehålla segment-ID:t från Experience Platform: `Segment Name (Segment ID)`"
+>title="Bifoga målgrupps-ID till målgruppsnamn"
+>abstract="Välj det här alternativet om målgruppsnamnet i Google Ad Manager ska inkludera målgrupps-ID:t från Experience Platform, så här: `Audience Name (Audience ID)`"
 
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
@@ -86,7 +100,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 * **[!UICONTROL Account Type]**: Välj ett alternativ beroende på ditt konto hos Google:
    * Använd `DFP by Google` for [!DNL DoubleClick] för utgivare
    * Använd `AdX buyer` for [!DNL Google AdX]
-* **[!UICONTROL Append segment ID to segment name]**: Välj det här alternativet om du vill att segmentnamnet i Google Ad Manager ska innehålla segment-ID:t från Experience Platform: `Segment Name (Segment ID)`.
+* **[!UICONTROL Append audience ID to audience name]**: Välj det här alternativet om målgruppsnamnet i Google Ad Manager ska inkludera målgrupps-ID:t från Experience Platform, så här: `Audience Name (Audience ID)`.
 
 >[!NOTE]
 >
@@ -98,13 +112,13 @@ Du kan aktivera varningar för att få meddelanden om dataflödets status till d
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
 >Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Se [Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../ui/activate-segment-streaming-destinations.md) om du vill ha instruktioner om hur du aktiverar målgruppssegment till det här målet.
+Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Exporterade data {#exported-data}
 
