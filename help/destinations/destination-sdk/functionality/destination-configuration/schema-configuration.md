@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+source-git-commit: 20dc7b31f75e88badac17faa542e046598632690
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1880'
 ht-degree: 1%
 
 ---
@@ -91,7 +91,10 @@ Om du vill skapa ett statiskt schema med profilattribut definierar du målattrib
       "useCustomerSchemaForAttributeMapping":false,
       "profileRequired":true,
       "segmentRequired":true,
-      "identityRequired":true
+      "identityRequired":true,
+      "segmentNamespaceAllowList": ["someNamespace"],
+      "segmentNamespaceDenyList": ["someOtherNamespace"]
+
 }
 ```
 
@@ -102,6 +105,8 @@ Om du vill skapa ett statiskt schema med profilattribut definierar du målattrib
 | `profileRequired` | Boolean | Valfritt | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målplattformen. |
 | `segmentRequired` | Boolean | Obligatoriskt | Den här parametern krävs av Destinationen SDK och ska alltid anges till `true`. |
 | `identityRequired` | Boolean | Obligatoriskt | Ange till `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i `profileFields` array. |
+| `segmentNamespaceAllowList` | Array | Valfritt | Definierar specifika målgruppsnamnutrymmen från vilka användare kan mappa målgrupper till målet. Använd den här parametern för att begränsa plattformsanvändare så att de bara kan exportera målgrupper från de målgruppsnamnutrymmen som du definierar i arrayen. Den här parametern kan inte användas tillsammans med `segmentNamespaceDenyList`.<br> <br> Exempel: `"segmentNamespaceAllowList": ["AudienceManager"]` tillåter användare att endast kartlägga målgrupper från `AudienceManager` namnutrymme till detta mål. <br> <br> Om du vill tillåta användare att exportera alla målgrupper till ditt mål, kan du ignorera den här parametern. <br> <br> Om båda `segmentNamespaceAllowList` och `segmentNamespaceDenyList` saknas i din konfiguration kan användare bara exportera målgrupper som kommer från [Segmenteringstjänst](../../../../segmentation/home.md). |
+| `segmentNamespaceDenyList` | Array | Valfritt | Begränsar användare från att mappa målgrupper till målet från de målgruppsnamnutrymmen som definieras i arrayen. Kan inte användas tillsammans med `segmentNamespaceAllowed`. <br> <br> Exempel: `"segmentNamespaceDenyList": ["AudienceManager"]` blockerar användare från att mappa målgrupper från `AudienceManager` namnutrymme till detta mål. <br> <br> Om du vill tillåta användare att exportera alla målgrupper till ditt mål, kan du ignorera den här parametern. <br> <br> Om båda `segmentNamespaceAllowed` och `segmentNamespaceDenyList` saknas i din konfiguration kan användare bara exportera målgrupper som kommer från [Segmenteringstjänst](../../../../segmentation/home.md). <br> <br> Om du vill tillåta export av alla målgrupper, oavsett ursprung, anger du `"segmentNamespaceDenyList":[]`. |
 
 {style="table-layout:auto"}
 
