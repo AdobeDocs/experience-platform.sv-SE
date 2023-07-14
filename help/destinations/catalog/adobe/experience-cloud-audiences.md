@@ -3,7 +3,7 @@ title: (Beta) Experience Cloud Publiker
 description: Lär dig dela målgrupper från Experience Platform till olika Experience Platform-lösningar.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
+source-git-commit: 1288652ca3b18b4adb357b2d8884f408725cb0a2
 workflow-type: tm+mt
 source-wordcount: '1598'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Note: briefly talk about when to share audiences to these destinations using the
 
 ### För kunder som använder en äldre lösning för målgruppsdelning
 
-Om ni redan delar målgrupper från Experience Platform till Audience Manager och andra Experience Cloud-lösningar via [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)måste du kontakta antingen kundtjänst eller ditt Adobe-kontoteam för att inaktivera integreringen. Kundtjänst- och Adobe-kontoteam måste registrera en Jira-biljett (se mallbiljett AAM-52354) för att inaktivera integreringen.
+Om ni redan delar målgrupper från Experience Platform till Audience Manager och andra Experience Cloud-lösningar via [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)måste du kontakta antingen kundtjänst eller ditt Adobe-kontoteam för att inaktivera integreringen. Kundtjänst och kontoteam på Adobe måste registrera en Jira-biljett (se mallbiljett PLAT-160986) för att inaktivera integreringen.
 
 Den tid det tar att lösa avprovisioneringsbiljetten för betakunder är sex arbetsdagar eller mindre. När den befintliga integreringen har inaktiverats kan du fortsätta till [skapa en anslutning](#connect) via självbetjäningskortet.
 
