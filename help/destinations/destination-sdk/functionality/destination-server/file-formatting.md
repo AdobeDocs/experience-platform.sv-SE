@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar filformateringsalternativ för filbaserade mål som skapats med Adobe Experience Platform Destination SDK via slutpunkten "/destination-servers".
 title: Filformateringskonfiguration
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: 5a6359e5731b36763e86eba8c79e60d74fb3b4c8
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1001'
 ht-degree: 2%
 
 ---
@@ -159,7 +159,8 @@ I konfigurationsexemplet nedan är inget av CSV-alternativen fördefinierat. The
             "templatingStrategy":"PEBBLE_V1",
             "value":"{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'emptyValue' %}{{customerData.csvOptions.emptyValue}}{% else %}{% endif %}"
          }
-      }
+      },
+      "maxFileRowCount":5000000
    }
 }
 ```
@@ -190,6 +191,7 @@ Nedan visas en fullständig referens över alla tillgängliga filformateringsalt
 | `csvOptions.timestampFormat.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger strängen som anger ett tidsstämpelformat. | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` | – | – |
 | `csvOptions.charToEscapeQuoteEscaping.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Ställer in ett enda tecken som används för att kringgå citattecknet. | `\` när escape- och citattecknen är olika. `\0` när escape- och citattecknet är detsamma. | – | – |
 | `csvOptions.emptyValue.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger strängbeteckningen för ett tomt värde. | `""` | `"emptyValue":""` --> `male,"",John` | `"emptyValue":"empty"` --> `male,empty,John` |
+| `maxFileRowCount` | Valfritt | Anger det maximala antalet rader per exporterad fil, mellan 1 000 000 och 10 000 000 rader. | 5,000,000 |
 
 {style="table-layout:auto"}
 
