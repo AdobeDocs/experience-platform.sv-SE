@@ -2,7 +2,7 @@
 title: Personalisering via Adobe Target
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target.
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 091d5440d7346861b7c882fa0a17bd03d528e438
+source-git-commit: 47cd73e45ac618a8a84aa3c47b91d5e2a107e7f4
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 0%
@@ -51,9 +51,9 @@ I följande XDM-exempel:
 
 När du skapar målgrupper i Target är följande värden tillgängliga som anpassade parametrar:
 
-* `xdm.marketing.campaignGroup`
-* `xdm.marketing.campaignName`
-* `xdm.marketing.trackingCode`
+* `marketing.campaignGroup`
+* `marketing.campaignName`
+* `marketing.trackingCode`
 
 ## Uppdateringar av målprofiler {#profile-update}
 
