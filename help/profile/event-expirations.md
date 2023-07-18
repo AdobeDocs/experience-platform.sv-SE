@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Händelseförfallodatum för upplevelser
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallotider för enskilda Experience Events i en Adobe Experience Platform-datauppsättning.
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: bb2d0075b234ec750046e1f28cac07a58a9d7e72
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Om du t.ex. angav ett förfallodatum på 30 dagar den 15 maj utförs följande s
 
 ## Effekter på segmentering
 
-För att resultaten ska bli korrekta måste du se till att sökfönstren för dina segment ligger inom gränserna för deras beroende datamängder. Om du t.ex. anger ett förfallovärde på 30 dagar och har ett segment som försöker visa data för upp till 45 dagar sedan, blir den slutliga publiken antagligen felaktig.
+För att resultaten ska bli korrekta måste du se till att sökfönstren för era målgrupper ligger inom gränserna för deras beroende datamängder. Om du t.ex. anger ett förfallodatum på 30 dagar och har en målgrupp som försöker visa data för upp till 45 dagar sedan, blir den slutliga målgruppen antagligen felaktig.
 
 Du bör därför behålla samma utgångsvärde för Experience Event för alla datauppsättningar, om det är möjligt, för att undvika att olika utgångsvärden påverkar olika datauppsättningar i segmenteringslogiken.
 

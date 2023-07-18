@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förha
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '2868'
+source-wordcount: '2863'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Resultaten av det här exempeljobbet kan visas med `/previewsamplestatus` slutpu
 
 >[!NOTE]
 >
->Det finns uppskattnings- och förhandsgranskningsslutpunkter som ingår i Adobe Experience Platform Segmentation Service API som gör att du kan visa information på sammanfattningsnivå om segmentdefinitioner så att du kan isolera den förväntade målgruppen. Om du vill ha mer information om hur du arbetar med förhandsgranskning och beräkning av slutpunkter för segment går du till [guide för förhandsgranskningar och uppskattningar av slutpunkter](../../segmentation/api/previews-and-estimates.md), en del av [!DNL Segmentation] Utvecklarhandbok för API.
+>Det finns uppskattnings- och förhandsgranskningsslutpunkter som ingår i Adobe Experience Platform Segmentation Service API som gör att du kan visa information på sammanfattningsnivå om segmentdefinitioner så att du kan isolera den förväntade målgruppen. Om du vill ha mer information om hur du arbetar med förhandsgranskning och beräkning av slutpunkter kan du gå till [guide för förhandsgranskningar och uppskattningar av slutpunkter](../../segmentation/api/previews-and-estimates.md), en del av [!DNL Segmentation] Utvecklarhandbok för API.
 
 ## Komma igång
 
@@ -592,5 +592,5 @@ Den här rapporten innehåller följande information:
 
 ## Nästa steg
 
-Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör flera rapporter på data kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen i ert segment. Läs mer om hur du arbetar med förhandsgranskning och uppskattning av segment med segmenterings-API:t på [guide för att förhandsgranska och beräkna slutpunkter](../../segmentation/api/previews-and-estimates.md).
+Nu när du vet hur du förhandsgranskar exempeldata i profilarkivet och kör flera rapporter på data kan du även använda uppskattnings- och förhandsgranskningsslutpunkterna i segmenteringstjänstens API för att visa sammanfattningsnivåinformation om segmentdefinitionerna. Denna information hjälper er att isolera den förväntade målgruppen. Läs mer om hur du arbetar med förhandsgranskningar och uppskattningar med segmenterings-API:t på [guide för att förhandsgranska och beräkna slutpunkter](../../segmentation/api/previews-and-estimates.md).
 

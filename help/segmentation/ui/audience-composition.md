@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 13492b90552d16334030792323956ea18ca928dc
+source-git-commit: b7da6f00426f8cd8e219bf6f8c8275ab3f6942ef
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1625'
 ht-degree: 0%
 
 ---
@@ -108,6 +108,64 @@ En lista med profilattribut visas. Välj den attributtyp som du vill exkludera, 
 
 ![En lista med attribut visas.](../images/ui/audience-composition/select-attribute-exclude.png)
 
+## [!UICONTROL Enrich] {#enrich-block}
+
+>[!IMPORTANT]
+>
+>I nuläget kan anrikningsattribut **endast** användas i Adobe Journey Optimizer-scenarier längre fram i kedjan.
+
+The **[!UICONTROL Enrich]** Med blocktyp kan ni berika er målgrupp med ytterligare attribut från en datauppsättning. Du kan använda dessa attribut i användningsfall för personalisering.
+
+Lägga till en **[!UICONTROL Enrich]** markerar du **+** ikon, följt av **[!UICONTROL Enrich]**.
+
+![The [!UICONTROL Enrich] är markerat.](../images/ui/audience-composition/add-enrich-block.png)
+
+The **[!UICONTROL Enrich]** -block läggs till. När det här blocket är markerat visas information om anrikningen i den högra listen. Detta inkluderar blockets etikett och datauppsättningen för anrikning.
+
+Om du vill välja den datauppsättning som ska berika publiken med väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+
+![Filterknappen är markerad. Om du väljer det här leder det dig till [!UICONTROL Select dataset] pover.](../images/ui/audience-composition/enrich-select-dataset.png)
+
+The **[!UICONTROL Select dataset]** popover visas. Välj den datauppsättning som du vill lägga till för berikning, följt av **[!UICONTROL Select]** för att lägga till datauppsättningen för berikning.
+
+![Den valda datauppsättningen har valts.](../images/ui/audience-composition/enrich-dataset-selected.png)
+
+>[!IMPORTANT]
+>
+>Den valda datauppsättningen **måste** uppfyller följande kriterier:
+>
+>- Datauppsättningen **måste** vara av posttyp.
+>   - Datauppsättningen **inte** vara av händelsetyp, vara systemgenererad eller markeras som Profil.
+>- Datauppsättningen **måste** vara 1 GB eller mindre.
+
+The **[!UICONTROL Enrichment criteria]** visas nu på den högra listen. I det här avsnittet kan du välja **[!UICONTROL Source join key]** och **[!UICONTROL Enrichment dataset join key]**, vilket gör att du kan länka datauppsättningen för berikning till den målgrupp du försöker skapa.
+
+![The [!UICONTROL Enrichment criteria] området markeras.](../images/ui/audience-composition/enrichment-criteria.png)
+
+Så här väljer du **[!UICONTROL Source join key]** väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+
+![Filterikonen för [!UICONTROL Source join key] markeras.](../images/ui/audience-composition/enrich-select-source-join-key.png)
+
+The **[!UICONTROL Select a profile attribute]** popover visas. Välj det profilattribut som du vill använda som källkopplingsnyckel, följt av **[!UICONTROL Select]** för att välja det attributet som källkopplingsnyckel.
+
+![Attributet som du vill använda som källkopplingsnyckel markeras.](../images/ui/audience-composition/enrich-select-profile-attribute.png)
+
+Så här väljer du **[!UICONTROL Enrichment dataset join key]** väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+
+![Filterikonen för [!UICONTROL Enrichment dataset join key] markeras.](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
+
+The **[!UICONTROL Enrichment attributes]** popover visas. Välj det attribut som du vill använda som kopplingsnyckel för anrikningsdatauppsättningen, följt av **[!UICONTROL Select]** att välja det attributet som kopplingsnyckel för datauppsättningen för anrikning.
+
+![Attributet som du vill använda som kopplingsnyckel för anrikningsdatauppsättningen markeras.](../images/ui/audience-composition/enrich-select-enrichment-dataset-attribute.png)
+
+Nu när du har lagt till båda dina kopplingsnycklar, **[!UICONTROL Enrichment attributes]** visas. Nu kan du lägga till det attribut du vill förbättra din publik med. Om du vill lägga till dessa attribut väljer du **[!UICONTROL Add attribute]**.
+
+![The [!UICONTROL Add attribute] knappen är markerad.](../images/ui/audience-composition/enrich-select-add-attribute.png)
+
+The **[!UICONTROL Enrichment attributes]** popover visas. Du kan välja attribut från datauppsättningen som berikar din målgrupp med, följt av **[!UICONTROL Select]** för att lägga till attribut till er målgrupp.
+
+![De anrikningsattribut du vill lägga till markeras.](../images/ui/audience-composition/enrich-add-enrichment-attributes.png)
+
 <!-- ## [!UICONTROL Join] {#join-block}
 
 The **[!UICONTROL Join]** block type allows you to add in external audiences from datasets that have not yet been processed by Adobe Experience Platform.
@@ -161,6 +219,8 @@ The **[!UICONTROL Split]** blocktyp gör att ni kan dela upp er nya målgrupp i 
 Lägga till en **[!UICONTROL Split]** markerar du **+** ikon, följt av **[!UICONTROL Split]**.
 
 ![Alternativet Dela är markerat.](../images/ui/audience-composition/add-split-block.png)
+
+När ni delar er målgrupp kan ni antingen dela efter procent eller dela efter attribut.
 
 ### Dela efter procent {#split-percentage}
 

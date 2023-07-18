@@ -6,7 +6,7 @@ product: experience platform
 type: Documentation
 description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimal systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 8ee68e5416c28a08dffc358dad70055e9b4cdd28
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '1980'
 ht-degree: 4%
@@ -30,7 +30,7 @@ Följande Experience Platform-tjänster är involverade i modellering av kundpro
 * [[!DNL Real-Time Customer Profile]](home.md): Skapa enhetliga kundprofiler med hjälp av data från flera källor.
 * [Identiteter](../identity-service/home.md): Överbrygga identiteter från olika datakällor när de hämtas till Platform.
 * [Scheman](../xdm/home.md): XDM-scheman (Experience Data Model) är det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [Segment](../segmentation/home.md): Segmenteringsmotorn i Platform används för att skapa segment utifrån era kundprofiler baserat på kundbeteenden och attribut.
+* [Målgrupper](../segmentation/home.md): Segmenteringsmotorn i Platform används för att skapa målgrupper utifrån era kundprofiler baserat på kundbeteenden och attribut.
 
 ## Begränsningstyper
 
@@ -108,14 +108,14 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 ## Skyddsritningar för segmentering
 
-Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av segment som en organisation kan skapa inom Experience Platform samt att mappa och aktivera segment till destinationer.
+De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrupper som en organisation kan skapa inom Experience Platform samt kartläggning och aktivering av målgrupper till destinationer.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Segment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 segment totalt, förutsatt att det finns mindre än 4000 segment i varje enskild sandlåda. Om du försöker skapa ytterligare segment kan det påverka systemets prestanda. |
-| Kantsegment per sandlåda | 150 | Mjuk | En organisation kan ha fler än 150 kantsegment totalt, förutsatt att det finns mindre än 150 kantsegment i varje enskild sandlåda. Försök att skapa ytterligare kantsegment kan påverka systemets prestanda. |
-| Direktuppspelningssegment per sandlåda | 500 | Mjuk | En organisation kan ha fler än 500 direktuppspelningssegment totalt, förutsatt att det finns färre än 500 direktuppspelningssegment i varje enskild sandlåda. Om du försöker skapa fler direktuppspelningssegment kan det påverka systemets prestanda. |
-| Gruppsegment per sandlåda | 4000 | Mjuk | En organisation kan ha mer än 4000 gruppsegment totalt, förutsatt att det finns mindre än 4000 gruppsegment i varje enskild sandlåda. Om du försöker skapa ytterligare gruppsegment kan det påverka systemets prestanda. |
+| Målgrupper per sandlåda | 4000 | Mjuk | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Försök att skapa fler målgrupper kan påverka systemets prestanda. |
+| Utforma målgrupper per sandlåda | 150 | Mjuk | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. |
+| Direktuppspelande målgrupper per sandlåda | 500 | Mjuk | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. |
+| Gruppera målgrupper per sandlåda | 4000 | Mjuk | En organisation kan ha fler än 4000 gruppmålgrupper totalt, förutsatt att det finns färre än 4000 gruppmålgrupper i varje enskild sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
 
 {style="table-layout:auto"}
 
@@ -137,7 +137,7 @@ Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!
 
 #### Dimension
 
-Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa segment på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering av flera enheter](../segmentation/multi-entity-segmentation.md).
+Profildatalagret som bevarar profildata är inte ett relationslager, men profilen tillåter integrering med små dimensionsenheter för att skapa målgrupper på ett förenklat och intuitivt sätt. Integrationen kallas [segmentering av flera enheter](../segmentation/multi-entity-segmentation.md).
 
 Din organisation kan också definiera XDM-klasser för att beskriva andra saker än enskilda, t.ex. butiker, produkter eller egenskaper. Dessa[!DNL XDM Individual Profile] scheman kallas&quot;dimensionsenheter&quot; (kallas även&quot;uppslagsenheter&quot;) och innehåller inte tidsseriedata. Scheman som representerar dimensionsenheter är länkade till profilentiteter genom användning av [schemarelationer](../xdm/tutorials/relationship-ui.md).
 

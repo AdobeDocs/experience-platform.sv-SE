@@ -4,7 +4,7 @@ title: Översikt över kopplingsprofiler
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en helhetsbild av era enskilda kunder. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: a8ef527a-cfee-4129-9973-e8a212a3ad1e
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '1250'
 ht-degree: 0%
@@ -60,14 +60,14 @@ När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel
 
 Stygg identitet ([!UICONTROL ID stitching]) är processen att identifiera databragment och kombinera dem till en fullständig profilpost. För att illustrera de olika sammanfogningsbeteendena bör du överväga en enskild kund som interagerar med ett varumärke med två olika e-postadresser.
 
-* **[!UICONTROL None]:** När det här alternativet är markerat sammanfogas inte ID:n. När segmentering sker kommer identiteter som kan tillhöra samma person inte att sammanfogas och segmentering kommer endast att beakta de attribut som är kopplade till varje enskilt ID när man avgör om en kund är berättigad till ett segmentmedlemskap. Detta kan leda till att en enskild kund har flera profiler och att varje profil kan kvalificera sig för olika segment, vilket resulterar i att flera marknadsföringsmeddelanden skickas till samma kund.
-* **[!UICONTROL Private graph]:** När det privata diagrammet är markerat sammanfogas flera identiteter som hör till samma individ. Detta leder till att kunden har en enda profil och möjliggör segmentering för att ta hänsyn till flera attribut från flera relaterade identiteter när man fastställer segmentens kvalifikationer. I det här scenariot har kunden sannolikt en enda profil, kvalificerar sig för ett segment baserat på en kombination av attribut mellan identiteter och får bara ett marknadsföringsmeddelande.
+* **[!UICONTROL None]:** När det här alternativet är markerat sammanfogas inte ID:n. När segmentering sker kommer identiteter som kan tillhöra samma person inte att sammanfogas och segmentering kommer endast att beakta de attribut som är kopplade till varje enskilt ID när man avgör om en kund är berättigad till medlemskap i en målgrupp. Detta kan leda till att en enskild kund har flera profiler och att varje profil kan kvalificera sig för olika målgrupper, vilket resulterar i att flera marknadsföringsmeddelanden skickas till samma kund.
+* **[!UICONTROL Private graph]:** När det privata diagrammet är markerat sammanfogas flera identiteter som hör till samma individ. Detta leder till att kunden har en enda profil och möjliggör segmentering för att ta hänsyn till flera attribut från flera relaterade identiteter när man fastställer segmentens kvalifikationer. I det här scenariot har kunden sannolikt en enda profil, kvalificerar sig för en målgrupp baserat på en kombination av attribut mellan identiteter och får bara ett marknadsföringsmeddelande.
 
-Om du vill veta mer om identiteter och deras roll när det gäller att generera profiler och segment börjar du med att läsa [Översikt över identitetstjänsten](../../identity-service/home.md).
+Om du vill veta mer om identiteter och deras roll när det gäller att generera profiler och målgrupper börjar du med att läsa [Översikt över identitetstjänsten](../../identity-service/home.md).
 
 ## Standardprincip för sammanslagning {#default-merge-policy}
 
-En organisation kan skapa en standardsammanfogningsprincip som används i organisationen när profilfragment sammanfogas. På så sätt kan användarna enkelt välja standardpolicy när de utför åtgärder i Experience Platform, t.ex. att visa kundprofiler eller skapa segment. I de flesta fall används standardprincipen för sammanfogning om inte en annan princip anges.
+En organisation kan skapa en standardsammanfogningsprincip som används i organisationen när profilfragment sammanfogas. På så sätt kan användarna enkelt välja standardpolicy när de utför åtgärder i Experience Platform, t.ex. att visa kundprofiler eller skapa målgrupper. I de flesta fall används standardprincipen för sammanfogning om inte en annan princip anges.
 
 Varje organisation kan skapa flera sammanfogningsprinciper som är relaterade till en enda XDM-schemaklass, men de kan bara ha en standardsammanfogningsprincip deklarerad för varje klass. Din organisation kan till exempel ha en standardprincip för sammanslagning som är relaterad till [!DNL XDM Individual Profile] och en annan standardpolicy för sammanfogning för en anpassad produktinventeringsklass.
 
@@ -75,7 +75,7 @@ Om du skapar en ny sammanfogningsprincip och anger den som standard, uppdateras 
 
 >[!WARNING]
 >
->Profilantal och segment med en befintlig associerad standardsammanfogningsprincip kan påverkas. Alla segment som har en standardprincip för sammanslagning kommer att uppdateras till den nya standardprincipen för sammanslagning.
+>Profilantal och målgrupper med en befintlig associerad standardsammanfogningsprincip kan påverkas. Alla målgrupper som har en standardprincip för sammanslagning kommer att uppdateras till den nya standardprincipen för sammanslagning.
 
 ## Nästa steg
 

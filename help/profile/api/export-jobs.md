@@ -4,16 +4,16 @@ title: API-slutpunkt för profilexportjobb
 type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1518'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för profilexportjobb
 
-[!DNL Real-Time Customer Profile] Med kan ni skapa en enda vy över enskilda kunder genom att sammanföra data från flera källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning. Till exempel målgruppssegment från [!DNL Profile] data kan exporteras för aktivering och profilattribut kan exporteras för rapportering.
+[!DNL Real-Time Customer Profile] Med kan ni skapa en enda vy över enskilda kunder genom att sammanföra data från flera källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning. Till exempel: [!DNL Profile] data kan exporteras för aktivering genom att målgrupper skapas, och profilattribut kan exporteras för rapportering.
 
 Det här dokumentet innehåller stegvisa instruktioner för att skapa och hantera exportjobb med [Profil-API](https://www.adobe.com/go/profile-apis-en).
 
@@ -37,7 +37,7 @@ Vid export [!DNL Profile] måste en måldatauppsättning skapas först. Det är 
 
 Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras på (`schemaRef.id` i API-exempelbegäran nedan). För att kunna exportera profildata måste datauppsättningen baseras på [!DNL XDM Individual Profile] Unionens schema (`https://ns.adobe.com/xdm/context/profile__union`). Ett unionsschema är ett systemgenererat, skrivskyddat schema som samlar in fält i scheman som delar samma klass. I det här fallet är det [!DNL XDM Individual Profile] klassen. Mer information om unionens vyscheman finns i [facksektion i grunderna för schemakompositionsguiden](../../xdm/schema/composition.md#union).
 
-Stegen som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile] Unionsschema som använder [!DNL Catalog] API. Du kan också använda [!DNL Platform] användargränssnitt för att skapa en datauppsättning som refererar till unionsschemat. Steg för att använda användargränssnittet beskrivs i [den här självstudiekursen för användargränssnitt för att exportera segment](../../segmentation/tutorials/create-dataset-export-segment.md) men gäller även här. När du är klar kan du gå tillbaka till den här självstudiekursen och fortsätta med stegen för [starta ett nytt exportjobb](#initiate).
+Stegen som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile] Unionsschema som använder [!DNL Catalog] API. Du kan också använda [!DNL Platform] användargränssnitt för att skapa en datauppsättning som refererar till unionsschemat. Steg för att använda användargränssnittet beskrivs i [den här självstudiekursen för användargränssnitt för att exportera målgrupper](../../segmentation/tutorials/create-dataset-export-segment.md) men gäller även här. När du är klar kan du gå tillbaka till den här självstudiekursen och fortsätta med stegen för [starta ett nytt exportjobb](#initiate).
 
 Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för [starta ett nytt exportjobb](#initiate).
 
@@ -132,11 +132,11 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `fields` | *(Valfritt)* Begränsar datafälten som ska inkluderas i exporten till endast de som anges i den här parametern. Om du utelämnar det här värdet inkluderas alla fält i exporterade data. |
-| `mergePolicy` | *(Valfritt)* Anger den sammanfogningsprincip som ska användas för att styra exporterade data. Inkludera den här parametern när det finns flera segment som exporteras. |
+| `mergePolicy` | *(Valfritt)* Anger den sammanfogningsprincip som ska användas för att styra exporterade data. Inkludera den här parametern när det finns flera målgrupper som exporteras. |
 | `mergePolicy.id` | ID för sammanfogningsprincipen. |
 | `mergePolicy.version` | Den specifika versionen av sammanfogningsprincipen som ska användas. Om du utelämnar det här värdet används den senaste versionen som standard. |
 | `additionalFields.eventList` | *(Valfritt)* Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`eventList.fields`: Styr fälten som ska exporteras.</li><li>`eventList.filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`eventList.filter.fromIngestTimestamp`: Filtrerar tidsseriehändelser till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
-| `destination` | **(Obligatoriskt)** Målinformation för exporterade data:<ul><li>`destination.datasetId`: **(Obligatoriskt)** ID för den datauppsättning där data ska exporteras.</li><li>`destination.segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet för `false` exporterar alla segment-ID:n till ett enda batch-ID. Värdet för `true` exporterar ett segment-ID till ett batch-ID. Observera att om du anger värdet som ska `true` kan påverka batchexportens prestanda.</li></ul> |
+| `destination` | **(Obligatoriskt)** Målinformation för exporterade data:<ul><li>`destination.datasetId`: **(Obligatoriskt)** ID för den datauppsättning där data ska exporteras.</li><li>`destination.segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet för `false` exporterar alla segmentdefinition-ID:n till ett enda batch-ID. Värdet för `true` exporterar ett segmentdefinitions-ID till ett batch-ID. Observera att om du anger värdet som ska `true` kan påverka batchexportens prestanda.</li></ul> |
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
 
 >[!NOTE]
@@ -494,6 +494,6 @@ Om du vill skapa ett exportjobb som bara innehåller händelsedata (inga profila
   }
 ```
 
-### Exportera segment
+### Exportera målgrupper
 
-Du kan också använda slutpunkten för exportjobb för att exportera målgruppssegment i stället för [!DNL Profile] data. Se guiden [exportjobb i segmenterings-API](../../segmentation/api/export-jobs.md) för mer information.
+Du kan också använda slutpunkten för exportjobb för att exportera målgrupper i stället för [!DNL Profile] data. Se guiden [exportjobb i segmenterings-API](../../segmentation/api/export-jobs.md) för mer information.

@@ -4,9 +4,9 @@ title: Användargränssnittshandbok för kopplingsprofiler
 type: Documentation
 description: När data från flera källor samlas i Experience Platform är sammanslagningsprinciper de regler som används i plattformen för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy. I den här handboken finns stegvisa instruktioner för hur du arbetar med sammanfogningsprinciper i Adobe Experience Platform användargränssnitt.
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '2195'
+source-wordcount: '2194'
 ht-degree: 0%
 
 ---
@@ -58,8 +58,8 @@ I det första steget i arbetsflödet kan du konfigurera sammanfogningsprincipen 
    * **[!UICONTROL None]**: Utför ingen identitetssammanfogning.
    * **[!UICONTROL Private Graph]**: Utför identitetssammanfogning baserat på ditt privata identitetsdiagram.
 * **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad visas en varning om att du vill ändra organisationens standardpolicy för sammanslagning. Se [sammanfogningsprinciper - översikt](overview.md) om du vill veta mer om standardprinciper för sammanfogning.
-   ![](../images/merge-policies/create-make-default.png)
-* **[!UICONTROL Active-On-Edge Merge Policy]**: En växlingsknapp som gör att du kan välja om den här sammanfogningsprincipen ska vara aktiv i kant eller inte. För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att ett segment ska kunna aktiveras på kanten (markeras som ett kantsegment) måste det vara kopplat till en sammanfogningspolicy som är markerad som aktiv på kanten. Om ett segment **not** som är knutna till en sammanfogningsprincip som är markerad som aktiv på kanten markeras segmentet inte som aktivt på kanten och markeras som ett direktuppspelningssegment. Dessutom kan varje sandlåda i en organisation bara ha **en** sammanfogningsprincip som är aktiv vid sidan.
+  ![](../images/merge-policies/create-make-default.png)
+* **[!UICONTROL Active-On-Edge Merge Policy]**: En växlingsknapp som gör att du kan välja om den här sammanfogningsprincipen ska vara aktiv i kant eller inte. För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att en målgrupp ska kunna aktiveras på kanten (markeras som en målgrupp) måste den vara kopplad till en sammanfogningspolicy som är markerad som aktiv på kanten. Om en publik **not** som är knutna till en sammanfogningspolicy som är markerad som aktiv på sidan, kommer målgruppen inte att markeras som aktiv på sidan och kommer att markeras som en målgrupp för direktuppspelning. Dessutom kan varje sandlåda i en organisation bara ha **en** sammanfogningsprincip som är aktiv vid sidan.
 
 När de obligatoriska fälten är ifyllda kan du välja **[!UICONTROL Next]** för att fortsätta med arbetsflödet.
 
@@ -193,7 +193,7 @@ När du har gjort de ändringar du behöver granskar du kopplingsprofilen och v�
 
 ## Policyöverträdelser för datastyrning
 
-När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform datastyrning och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa ett segment som aktiverades för ett mål från en annan leverantör, och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]** när du försöker spara sammanfogningsprincipen.
+När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform datastyrning och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa en målgrupp som aktiverats för ett mål från tredje part och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]** när du försöker spara sammanfogningsprincipen.
 
 Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du väljer en obehörig princip **[!UICONTROL Data lineage]** -fliken innehåller orsaken till överträdelsen och de aktiveringar som påverkas, där var och en ger mer information om hur dataanvändningsprincipen har överträtts.
 
@@ -203,4 +203,4 @@ Om du vill veta mer om hur datastyrning utförs inom Adobe Experience Platform b
 
 ## Nästa steg
 
-Nu när ni har skapat och konfigurerat sammanfogningsprinciper för er organisation kan ni använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån era profildata. Se [segmenteringsöversikt](../../segmentation/home.md) för mer information om hur du skapar och arbetar med segment med [!DNL Experience Platform] Gränssnitt och API:er.
+Nu när du har skapat och konfigurerat sammanfogningsprinciper för din organisation kan du använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgrupper utifrån dina profildata. Se [segmenteringsöversikt](../../segmentation/home.md) för mer information om hur du skapar och arbetar med målgrupper med [!DNL Experience Platform] Gränssnitt och API:er.

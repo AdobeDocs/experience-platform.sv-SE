@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;scheman;segment;segment;Membership;segment membership;Schema design;map;Map;
 solution: Experience Platform
 title: Schemafältgrupp för information om segmentmedlemskap
 description: Det här dokumentet innehåller en översikt över schemafältgruppen för segmentmedlemsdetaljer.
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 229dd08bc5d5dfab068db3be84ad20d10992fd31
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---

@@ -3,7 +3,7 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 98854811e57c621a1c8de9146231f54c96e37a5d
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '1929'
 ht-degree: 0%
@@ -134,7 +134,7 @@ Standardfälten som visas kan också ändras på organisationsnivå för att vis
 
 ![Fliken Detaljer är markerad. Profilinformationen visas.](../images/user-guide/profile-detail.png)
 
-Du kan visa ytterligare information om den enskilda kundprofilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för segmentmedlemskap som visar de segment som profilen är kvalificerad för just nu.
+Du kan visa ytterligare information om den enskilda kundprofilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för målgruppsmedlemskap som visar vilka målgrupper profilen är kvalificerad för.
 
 ### Fliken Attribut
 
@@ -152,13 +152,13 @@ Händelser kan också visas som ett JSON-objekt genom att välja att **[!UICONTR
 
 ![Fliken Händelser är markerad. Profilhändelserna visas.](../images/user-guide/events.png)
 
-### Fliken Segmentmedlemskap
+### Fliken Målgruppsmedlemskap
 
-The **[!UICONTROL Segment membership]** I visas en lista med namn och beskrivning av segment som den enskilda kundprofilen för närvarande tillhör. Listan uppdateras automatiskt när profilen kvalificerar sig eller utgår från segment. Det totala antalet segment som profilen är kvalificerad för visas till höger på fliken.
+The **[!UICONTROL Audience membership]** I visas en lista med namn och beskrivning av de målgrupper som den enskilda kundprofilen för närvarande tillhör. Listan uppdateras automatiskt när profilen kvalificerar sig eller upphör att gälla. Det totala antalet målgrupper som profilen är kvalificerad för visas till höger på fliken.
 
 Mer information om segmentering i Experience Platform finns i [Adobe Experience Platform segmenteringstjänstens dokumentation](../../segmentation/home.md).
 
-![Fliken Segmentmedlemskap är markerad. Information om profilsegmentmedlemskap visas.](../images/user-guide/segment-membership.png)
+![Fliken Målgruppsmedlemskap är markerad. Profilens medlemsinformation visas.](../images/user-guide/segment-membership.png)
 
 ## Sammanfoga profiler
 

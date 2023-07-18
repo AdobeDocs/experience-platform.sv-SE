@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: API-guide för kundprofil i realtid
 description: Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 3b4e1e793a610c9391b3718584a19bd11959e3be
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '961'
 ht-degree: 1%
 
 ---
@@ -28,7 +28,7 @@ En guide till hur du arbetar med [!DNL Real-Time Customer Profile] data i [!DNL 
 
 Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 
-Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Dessa beräknade attributvärden kan sedan visas i en profil, användas för att skapa ett segment eller nås via ett antal olika åtkomstmönster.
+Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Dessa beräknade attributvärden kan sedan visas i en profil, användas för att skapa en målgrupp eller nås via ett antal olika åtkomstmönster.
 
 Du kan skapa, visa, redigera och ta bort beräknade attribut med `ca/attributes/` slutpunkt. Mer information om hur du använder beräknade attribut finns i [översikt över beräknade attribut](../computed-attributes/overview.md). API-åtgärder finns på [API-slutpunktsguide för beräknade attribut](../computed-attributes/api.md).
 
@@ -42,7 +42,7 @@ Via Adobe Experience Platform har du åtkomst [!DNL Real-Time Customer Profile] 
 
 ## Exportjobb ([!DNL Profile] exportera) {#profile-export}
 
-[!DNL Real-Time Customer Profile] data kan exporteras till en datauppsättning för vidare bearbetning, som att exportera målgruppssegment för aktivering eller profilattribut för rapportering. Exportjobb för målgruppssegment ingår i [!DNL Adobe Experience Platform Segmentation Service] API, läs [slutpunktsguide för segmenteringsexportjobb](../../profile/api/export-jobs.md) om du vill veta mer. Stegvisa instruktioner om hur du skapar och hanterar exportjobb för profilattribut finns i [slutpunktsguide för exportjobb](export-jobs.md).
+[!DNL Real-Time Customer Profile] data kan exporteras till en datauppsättning för vidare bearbetning, till exempel exportera målgrupper för aktivering eller profilattribut för rapportering. Exportjobb för målgrupper ingår i [!DNL Adobe Experience Platform Segmentation Service] API, läs [slutpunktsguide för segmenteringsexportjobb](../../profile/api/export-jobs.md) om du vill veta mer. Stegvisa instruktioner om hur du skapar och hanterar exportjobb för profilattribut finns i [slutpunktsguide för exportjobb](export-jobs.md).
 
 ## Sammanfoga profiler {#merge-policies}
 

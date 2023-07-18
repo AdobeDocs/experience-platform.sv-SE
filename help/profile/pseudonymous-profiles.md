@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Förfallodatum för pseudonyma profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 207cddae6b632866d564729de49d28fc5c29ef7f
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '923'
 ht-degree: 0%
@@ -22,7 +22,7 @@ En profil används för att pseudonyma data ska upphöra att gälla om den uppfy
 - Identitetsnamnutrymmena för den sammanfogade profilen matchar det som kunden har angett som ett pseudonymt eller okänt ID-namnutrymme.
    - Om till exempel profilens ID-namnutrymme är `ECID`, `GAID`, eller `AAID`. Den sammanfogade profilen har inga ID:n från något annat identitetsnamnutrymme. I det här exemplet gör en sammanfogad profil **not** har antingen en e-postadress eller en CRM-identitet.
 - Ingen aktivitet har ägt rum inom en användardefinierad tidsperiod. Aktiviteten definieras antingen av de Experience Events-händelser som importeras eller av kundinitierade uppdateringar av profilattributen.
-   - En ny sidvyhändelse eller uppdatering av åldersattribut betraktas till exempel som en aktivitet. En uppdatering av segmentmedlemskapet som inte initierats av användaren är **not** betraktas som en verksamhet. För närvarande baseras spårningen på en profilnivå på tidpunkten för händelsen för Experience Events och tidpunkten för intaget av profilattribut för att beräkna när data förfaller.
+   - En ny sidvyhändelse eller uppdatering av åldersattribut betraktas till exempel som en aktivitet. En uppdatering av ett målgruppsmedlemskap som inte initierats av användaren är dock **not** betraktas som en verksamhet. För närvarande baseras spårningen på en profilnivå på tidpunkten för händelsen för Experience Events och tidpunkten för intaget av profilattribut för att beräkna när data förfaller.
 
 ## Åtkomst {#access}
 

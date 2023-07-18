@@ -4,9 +4,9 @@ title: API-slutpunkt för sammanslagningsprinciper
 type: Documentation
 description: Med Adobe Experience Platform kan ni sammanföra datafragment från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. När du sammanför dessa data är sammanslagningsprinciper de regler som används av Platform för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en enhetlig vy.
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '2468'
+source-wordcount: '2467'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Sammanslagningsprinciper är privata för din organisation, vilket gör att du k
 >
 >När du anger en ny sammanfogningsprincip som standard uppdateras automatiskt alla befintliga sammanfogningsprinciper som tidigare var inställda som standard så att de inte längre används som standard.
 
-För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att ett segment ska kunna aktiveras på kanten (markeras som ett kantsegment) måste det vara kopplat till en sammanfogningspolicy som är markerad som aktiv på kanten. Om ett segment **not** som är knutna till en sammanfogningsprincip som är markerad som aktiv på kanten markeras segmentet inte som aktivt på kanten och markeras som ett direktuppspelningssegment.
+För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att en målgrupp ska kunna aktiveras på kanten (markeras som en målgrupp) måste den vara kopplad till en sammanfogningspolicy som är markerad som aktiv på kanten. Om en publik **not** som är knutna till en sammanfogningspolicy som är markerad som aktiv på sidan, kommer målgruppen inte att markeras som aktiv på sidan och kommer att markeras som en målgrupp för direktuppspelning.
 
 Dessutom kan varje organisation endast ha **en** sammanfogningsprincip som är aktiv vid sidan. Om en sammanfogningsprincip är aktiv på kant kan den användas för andra system på kanten, t.ex. Edge Profile, Edge Segmentation och Destinations on Edge.
 
@@ -761,6 +761,6 @@ En slutförd borttagningsbegäran returnerar HTTP-status 200 (OK) och en tom sva
 
 ## Nästa steg
 
-Nu när ni vet hur ni skapar och konfigurerar sammanfogningspolicyer för er organisation kan ni använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgruppssegment utifrån era [!DNL Real-Time Customer Profile] data.
+Nu när du vet hur man skapar och konfigurerar sammanfogningspolicyer för organisationen kan du använda dem för att justera visningen av kundprofiler inom Platform och för att skapa målgrupper utifrån era [!DNL Real-Time Customer Profile] data.
 
-Se [Dokumentation för Adobe Experience Platform Segmenteringstjänst](../../segmentation/home.md) för att börja definiera och arbeta med segment.
+Se [Dokumentation för Adobe Experience Platform Segmenteringstjänst](../../segmentation/home.md) för att börja definiera och arbeta med målgrupper.

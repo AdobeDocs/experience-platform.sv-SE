@@ -4,7 +4,7 @@ title: Felsökningsguide för kundprofiler i realtid
 type: Documentation
 description: Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel när du arbetar med profildata med Adobe Experience Platform.
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
@@ -47,13 +47,13 @@ Det finns flera sätt att visa profildata, beroende på om du använder API:t el
 
 Om du känner till ID:n för de profilenheter du vill komma åt kan du använda `/entities` (Profilåtkomst) slutpunkt i profil-API för att söka efter dessa enheter. Se avsnittet om [enheter](./api/entities.md) i utvecklarhandboken för mer information.
 
-Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att komma åt de enskilda profilerna för kunder som har kvalificerat sig för ett segmentmedlemskap. Se [Översikt över segmenteringstjänsten](../segmentation/home.md) för mer information.
+Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att få tillgång till enskilda profiler för kunder som har kvalificerat sig för ett målgruppsmedlemskap. Se [Översikt över segmenteringstjänsten](../segmentation/home.md) för mer information.
 
 #### Använda gränssnittet
 
 I användargränssnittet i Experience Platform **[!UICONTROL Browse]** i **[!UICONTROL Profiles]** kan du visa det totala antalet profiler och söka efter enskilda profiler utifrån deras identitetsvärde. Se [Användarhandbok för profil](./ui/user-guide.md) för mer information.
 
-Du kan även visa en lista över dina segment under **[!UICONTROL Browse]** i **[!UICONTROL Segments]** arbetsyta. När du har valt ett segment visas ett exempel på profiler som är kvalificerade för det segmentet. Du kan sedan välja någon av profilerna i listan för att visa deras information. Se [Översikt över segmenteringsgränssnittet](../segmentation/ui/overview.md) för mer information.
+Du kan även visa en lista över dina målgrupper under **[!UICONTROL Browse]** i **[!UICONTROL Audiences]** arbetsyta. När du har valt en målgrupp visas ett exempel på profiler som är kvalificerade för den målgruppen. Du kan sedan välja någon av profilerna i listan för att visa deras information. Se [Översikt över segmenteringsgränssnittet](../segmentation/ui/overview.md) för mer information.
 
 ## Felkoder
 

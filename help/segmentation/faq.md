@@ -1,9 +1,9 @@
 ---
 title: Frågor och svar
 description: Hitta svar på vanliga frågor om målgrupper.
-source-git-commit: 562af647e21e8f9b9af495849f085e10f258952a
+source-git-commit: 4dbd20dd3ac596052a3390eb6d3731fac7095c0d
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '984'
 ht-degree: 0%
 
 ---
@@ -74,8 +74,9 @@ Komponentplaceringen följer en hård struktur enligt följande:
 
 1. Du **alltid** börja med [!UICONTROL Audience] -block för att välja din startaktivitet. Du kan ha högst **en** [!UICONTROL Audience] -block.
 2. Du kan lägga till en [!UICONTROL Exclude] -block som följer [!UICONTROL Audience] -block.
-3. Du kan lägga till en [!UICONTROL Rank] eller [!UICONTROL Split] -block. Du kan **endast** har ett av dessa block per komposition.
-4. Du **alltid** end with a [!UICONTROL Save] blockera för att rädda er målgrupp.
+3. Du kan lägga till en [!UICONTROL Enrich] -block som följer [!UICONTROL Exclude] -block.
+4. Du kan lägga till en [!UICONTROL Rank] eller [!UICONTROL Split] -block. Du kan **endast** har ett av dessa block per komposition.
+5. Du **alltid** end with a [!UICONTROL Save] blockera för att rädda er målgrupp.
 
 Mer information om hur du använder Audience Composition finns i [Användargränssnittsguide för målgruppskomposition](./ui/audience-composition.md).
 
@@ -91,7 +92,7 @@ Mer information om det delade blocket finns i [Användargränssnittsguide för m
 
 ## Kan jag använda alla segmenteringstyper i arbetsflödet Målgruppskomposition?
 
-Ja, alla segmenteringstyper (gruppsegmentering, direktuppspelningssegmentering och kantsegmentering) stöds i arbetsflödet för målgruppssammansättning. Men eftersom kompositioner för närvarande bara körs en gång per dag, även om en målgrupp som är en direktuppspelnings- eller edge-utvärderad målgrupp inkluderas, kommer resultatet att baseras på målgruppsmedlemskap när kompositionen utfördes.
+Ja, alla segmenteringstyper ([gruppsegmentering, direktuppspelningssegmentering och kantsegmentering](./home.md#evaluate-segments)) stöds i arbetsflödet Audience Composition. Men eftersom kompositioner för närvarande bara körs en gång per dag, även om en målgrupp som är en direktuppspelnings- eller edge-utvärderad målgrupp inkluderas, kommer resultatet att baseras på målgruppsmedlemskap när kompositionen utfördes.
 
 ## Hur kan jag bekräfta en profils medlemskap för en viss målgrupp?
 

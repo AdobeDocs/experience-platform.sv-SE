@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
 workflow-type: tm+mt
-source-wordcount: '1991'
+source-wordcount: '1990'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Förhållandet mellan kundprofilen i realtid och andra tjänster inom Experience
 
 ### Profilens enhetskomposition
 
-En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. När det gäller Experience Platform är den primära enheten vanligtvis en **profilentitet**, som består av egenskaper, beteenden och segmentmedlemskap för en enskild person. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
+En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. När det gäller Experience Platform är den primära enheten vanligtvis en **profilentitet**, som består av egenskaper, beteenden och målgruppsmedlemskap för en enskild person. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
 
 - **Dimensionell enhet**: Den entitet som används för att förenkla datamodelleringsprocessen för information som delas mellan händelser eller profilposter. Detta kallas även sökentitet eller klassificeringsenhet.
 - **B2B-enhet**: Enheter som beskriver profilens relation till konton och affärsmöjligheter för företag.
@@ -98,13 +98,13 @@ Läs mer om fackliga scheman, inklusive hur du får tillgång till fackliga sche
 
 Computed attributes are functions used to aggregate event-level data into profile-level attributes. These functions are automatically computed so that they can be used across segmentation, activation, and personalization. These computations help you to easily answer questions related to things like lifetime purchase value, time between purchases, or number of application opens, without requiring you to manually perform complex calculations each time the information is needed. For more information on computed attributes, including understanding the role computed attributes play within Adobe Experience Platform, please begin by reading the [computed attributes overview](computed-attributes/overview.md). -->
 
-## Profiler och segment
+## Profiler och målgrupper
 
-Adobe Experience Platform [!DNL Segmentation Service] skapar de målgrupper som behövs för att ge era enskilda kunder bättre upplevelser. När ett målgruppssegment skapas läggs ID:t för det segmentet till i listan över segmentmedlemskap för alla kvalificerande profiler. Segmentregler skapas och tillämpas på [!DNL Real-Time Customer Profile] data med RESTful API:er och användargränssnittet i Segment Builder. Om du vill veta mer om segmentering börjar du med att läsa [Översikt över segmenteringstjänsten](../segmentation/home.md).
+Adobe Experience Platform [!DNL Segmentation Service] skapar de målgrupper som behövs för att ge era enskilda kunder bättre upplevelser. När en målgrupp skapas läggs målgruppens ID till i listan över målgruppsmedlemskap för alla kvalificerande profiler. Segmentregler skapas och tillämpas på [!DNL Real-Time Customer Profile] data med RESTful API:er och användargränssnittet i Segment Builder. Om du vill veta mer om segmentering börjar du med att läsa [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 ### Direktuppspelningsuppläsning och direktuppspelningssegmentering
 
-Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. När data från profil- och tidsserier hämtas, [!DNL Real-Time Customer Profile] bestämmer sig automatiskt för att inkludera eller exkludera data från segment genom en pågående process som kallas direktuppspelningssegmentering, innan de slås samman med befintliga data och unionens vy uppdateras. Resultatet blir att ni omedelbart kan utföra beräkningar och fatta beslut för att leverera förbättrade, individanpassade upplevelser till kunderna när de interagerar med ert varumärke. När data importeras valideras de också för att säkerställa att de importeras på rätt sätt och att de överensstämmer med det schema som datauppsättningen baseras på. Mer information om vilken validering som görs under importen får du om du börjar med att läsa [kvalitetsöversikt över dataöverföring](../ingestion/quality/overview.md).
+Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. När data från profil- och tidsserier hämtas, [!DNL Real-Time Customer Profile] bestämmer sig automatiskt för att inkludera eller exkludera data från målgrupper via en pågående process som kallas direktuppspelningssegmentering, innan de slås samman med befintliga data och unionens vy uppdateras. Resultatet blir att ni omedelbart kan utföra beräkningar och fatta beslut för att leverera förbättrade, individanpassade upplevelser till kunderna när de interagerar med ert varumärke. När data importeras valideras de också för att säkerställa att de importeras på rätt sätt och att de överensstämmer med det schema som datauppsättningen baseras på. Mer information om vilken validering som görs under importen får du om du börjar med att läsa [kvalitetsöversikt över dataöverföring](../ingestion/quality/overview.md).
 
 ## Kantprojektioner
 
