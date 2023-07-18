@@ -4,9 +4,9 @@ title: Aktiveringsöversikt
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform till olika typer av destinationer.
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 771801b52b7df7029e1c6e7496dcfb563463d06e
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -49,9 +49,9 @@ Följ stegen nedan för att aktivera data till dina destinationer från **[!UICO
    * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](activate-streaming-profile-destinations.md)
    * [Aktivera målgruppsdata för att batchprofilera exportmål](activate-batch-profile-destinations.md)
 
-### Aktivera målgrupper från sidan med målgruppsinformation {#activate-segment-details}
+### Aktivera målgrupper från sidan med målgruppsinformation {#activate-audience-details}
 
-Du kan aktivera målgrupper till mål från sidan med målgruppsinformation. Se [Segmentinformation](../../segmentation/ui/overview.md#segment-details) för mer information.
+Du kan aktivera målgrupper till mål från sidan med målgruppsinformation. Se [Målgruppsinformation](../../segmentation/ui/overview.md#audience-details) för mer information.
 
 Beroende på det valda målet följer du stegen som beskrivs i artiklarna nedan för att slutföra aktiveringsarbetsflödet:
 
