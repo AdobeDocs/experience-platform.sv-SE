@@ -5,7 +5,7 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 42e59ba1c7b1980d6633ced264673afcf8d80810
+source-git-commit: fb2686eb44bbf7581120f40b241bead0e61baee9
 workflow-type: tm+mt
 source-wordcount: '1601'
 ht-degree: 0%
@@ -213,7 +213,8 @@ Om du vill ta bort profilen och alla identitetsassociationer för en viss kund m
 ### Begränsningar för sammanfogningsprincip {#merge-policy-limitations}
 
 Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas måste du se till att du använder en profil med **[!DNL None]** som [!UICONTROL ID stitching] typ. Du kan alltså inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på [!UICONTROL Private graph].
->![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
+>>
+![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
 >
 ## Nästa steg
 
