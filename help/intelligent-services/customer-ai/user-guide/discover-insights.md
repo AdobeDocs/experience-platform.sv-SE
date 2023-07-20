@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundinsikter
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Identifiera insikter med kundens AI
 description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: e4e30fb80be43d811921214094cf94331cbc0d38
+source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
 source-wordcount: '2016'
 ht-degree: 1%
@@ -77,7 +77,7 @@ Det andra sättet att visa ytterligare information för en tjänstinstans finns 
 
 ### Förhandsgranskning av AI-datauppsättning för kund
 
-Om mer än en datauppsättning används av kundens AI, finns en hyperlänk med etiketten **[!UICONTROL Multiple ]** följt av antalet datauppsättningar inom hakparentes `()` anges.
+Om mer än en datauppsättning används av kundens AI, finns en hyperlänk med etiketten **[!UICONTROL Multiple]** följt av antalet datauppsättningar inom hakparentes `()` anges.
 
 ![flera datauppsättningar](../images/insights/insights-multi-datasets.png)
 

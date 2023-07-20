@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;komma igång;kundai;populära ämnen;kundai input;customer ai output; datakrav
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Datakrav för kund-AI
 topic-legacy: Getting started
-description: Läs mer om de händelser, inmatningar och utmatningar som Kundens AI använder.
+description: Läs mer om de händelser, inmatningar och utmatningar som kunden använder.
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 5f7b602b68f5cbf4b1f4b08603757b0956e36408
+source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
 source-wordcount: '2471'
 ht-degree: 0%

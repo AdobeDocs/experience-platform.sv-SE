@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;översikt;customer ai;populära topics;customer ai overview
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Översikt över AI för kundbenägenhet
 description: Kund-AI används för att generera anpassade benägenhetspoäng som omsättning och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
 landing-page-description: Kund-AI används för att generera anpassade benägenhetspoäng som omsättning och konvertering för enskilda profiler i stor skala.
 short-description: Kund-AI används för att generera anpassade benägenhetspoäng som omsättning och konvertering för enskilda profiler i stor skala.
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: b21367814e38fb5ee017709a29b39de982d59d24
+source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
 source-wordcount: '571'
 ht-degree: 21%
