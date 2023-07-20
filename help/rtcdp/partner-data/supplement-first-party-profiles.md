@@ -4,9 +4,9 @@ description: Lär er hur ni kompletterar förstahandsprofiler med attribut från
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 019ebe0c1cf11a7fb30dced1e10b511bab9b5100
+source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
 workflow-type: tm+mt
-source-wordcount: '1074'
+source-wordcount: '1075'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Komplettera förstahandsprofiler med attribut från betrodda datapartners för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 
-![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment-use-case-overview.png)
+![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-overview.png)
 
 ## Krav och planering {#prerequisites-and-planning}
 
@@ -36,7 +36,7 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 ## Hur man uppnår detta: överblick på hög nivå {#achieve-the-use-case-high-level}
 
-![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment-use-case-steps.png)
+![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-steps.png)
 
 1. Som **kund** licensierar du attribut från **datapartner**.
 2. Som **kund** kan ni utöka profildata och styrningsmodell för att passa **partner**-provided-attribut.
