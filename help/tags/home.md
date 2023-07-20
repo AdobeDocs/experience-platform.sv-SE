@@ -2,18 +2,14 @@
 title: Översikt över taggar
 description: Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
-source-git-commit: 13c02dd5930905e3851ff147c0ea4d914e3dc6c7
+source-git-commit: 81f25e74931354003d89a57adedb578ddfe00704
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '562'
 ht-degree: 1%
 
 ---
 
 # Översikt över taggar
-
->[!NOTE]
->
->Vidarebefordran av händelser är en betalfunktion som ingår i Adobe Real-time Customer Data Platform Connections, Prime eller Ultimate.
 
 >[!NOTE]
 >
