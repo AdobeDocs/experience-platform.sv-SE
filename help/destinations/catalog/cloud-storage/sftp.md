@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f05f8cb47a1f65e8931500d7064fdce48aa53347
 workflow-type: tm+mt
-source-wordcount: '986'
+source-wordcount: '984'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_ssh"
 >title="Privat SSH-nyckel"
->abstract="Den privata SSH-nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad."
+>abstract="Den privata SSH-nyckeln måste vara en RSA-formaterad, Base64-kodad sträng och får inte vara lösenordsskyddad."
 
 Om du väljer **[!UICONTROL SFTP with password]** autentiseringstyp för att ansluta till din SFTP-plats:
 
@@ -108,7 +108,7 @@ Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansl
 * **[!UICONTROL Domain]**: Fyll i IP-adressen eller domännamnet för ditt SFTP-konto
 * **[!UICONTROL Port]**: Den port som används av SFTP-lagringsplatsen;
 * **[!UICONTROL Username]**: Användarnamn för att logga in på din SFTP-lagringsplats.
-* **[!UICONTROL SSH Key]**: Den privata SSH-nyckeln som används för att logga in på din SFTP-lagringsplats. Den privata nyckeln måste vara formaterad som en Base64-kodad sträng och får inte vara lösenordsskyddad.
+* **[!UICONTROL SSH Key]**: Den privata SSH-nyckeln som används för att logga in på din SFTP-lagringsplats. Den privata nyckeln måste vara en RSA-formaterad, Base64-kodad sträng och får inte vara lösenordsskyddad.
 * **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
