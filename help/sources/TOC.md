@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 68c6d579d43b4137e3107d3ab102300dc8304c90
+source-git-commit: cb8fd7a7e3803c356adbdf0c20cde869c1de602c
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '990'
 ht-degree: 7%
 
 ---
@@ -62,7 +62,6 @@ ht-degree: 7%
       - [OneTrust-integrering](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
-      - [SAP Hybris-koppling](connectors/crm/sap-hybris.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)
@@ -94,6 +93,7 @@ ht-degree: 7%
       - [Snowflake-kontakt](connectors/databases/snowflake.md)
       - [Teradata Vantage-kontakt](connectors/databases/teradata-vantage.md)
    - eCommerce {#ecommerce}
+      - [SAP Commerce](connectors/ecommerce/sap-commerce.md)
       - [Förminska](connectors/ecommerce/shopify.md)
       - [Förminska strömning](connectors/ecommerce/shopify-streaming.md)
    - Lokalt system {#local-system}
@@ -140,7 +140,6 @@ ht-degree: 7%
          - [OneTrust-integrering](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
-         - [SAP Hybris](tutorials/api/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
          - [SugarCRM-konton och kontakter](tutorials/api/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM-händelser](tutorials/api/create/crm/sugarcrm-events.md)
@@ -173,6 +172,7 @@ ht-degree: 7%
          - [Teradata Vantage](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - eCommerce {#ecommerce}
+         - [SAP Commerce](tutorials/api/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
          - [Förminska strömning](tutorials/api/create/ecommerce/shopify-streaming.md)
       - Automatisering av marknadsföring {#marketing-automation}
@@ -261,7 +261,6 @@ ht-degree: 7%
          - [OneTrust-integrering](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
-         - [SAP Hybris](tutorials/ui/create/crm/sap-hybris.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
          - [SugarCRM-konton och kontakter](tutorials/ui/create/crm/sugarcrm-accounts-contacts.md)
          - [SugarCRM-händelser](tutorials/ui/create/crm/sugarcrm-events.md)
@@ -293,6 +292,7 @@ ht-degree: 7%
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
       - eCommerce {#ecommerce}
+         - [SAP Commerce](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
          - [Förminska strömning](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - Lokalt system {#local-system}
