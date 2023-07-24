@@ -2,7 +2,7 @@
 title: Versionsinformation för taggar och händelsevidarebefordran
 description: Den senaste versionsinformationen om taggar och vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 626330395c2d6b813d5d2157e92ada77ab4f96b1
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '839'
 ht-degree: 2%
@@ -54,7 +54,7 @@ Nya tillägg har släppts:
 
 ## 26 oktober 2022
 
-* **Känslig datahantering för datastreams**: Datastreams utnyttjar nu flera plattformstekniker för att hantera känsliga data på ett lämpligt sätt, i enlighet med bestämmelser som HIPAA (Health Insurance Portability and Accounability Act). Se avsnittet om [hantera känsliga data i dataströmmar](../../edge/datastreams/overview.md#sensitive) för mer information.
+* **Känslig datahantering för datastreams**: Datastreams utnyttjar nu flera plattformstekniker för att hantera känsliga data på ett lämpligt sätt, i enlighet med bestämmelser som HIPAA (Health Insurance Portability and Accounability Act). Se avsnittet om [hantera känsliga data i dataströmmar](../../datastreams/overview.md#sensitive) för mer information.
 * **[!DNL Splunk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Splunk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Splunk] tilläggsöversikt](../extensions/server/splunk/overview.md) för mer information.
 * **[!DNL Zendesk]tillägg för händelsevidarebefordran**: Nu kan du skicka data till [!DNL Zendesk] med [händelsevidarebefordran](../ui/event-forwarding/overview.md) tillägg. Se [[!DNL Zendesk] tilläggsöversikt](../extensions/server/zendesk/overview.md) för mer information.
 

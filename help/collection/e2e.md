@@ -2,7 +2,7 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: f619bbf2c8d313eabc6444b4bd8c09615a00cc42
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '2539'
 ht-degree: 0%
@@ -103,7 +103,7 @@ Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen. Här kan du väl
 
 ![Dataströmmar](./images/e2e/datastreams.png)
 
-Konfigurationskraven för en datastream beror på vilka produkter och funktioner du skickar data till. Mer information om konfigurationsalternativen för respektive produkt finns i [datastreams - översikt](../edge/datastreams/overview.md).
+Konfigurationskraven för en datastream beror på vilka produkter och funktioner du skickar data till. Mer information om konfigurationsalternativen för respektive produkt finns i [datastreams - översikt](../datastreams/overview.md).
 
 ## Installera och konfigurera Web SDK {#install}
 

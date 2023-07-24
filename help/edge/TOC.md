@@ -5,10 +5,10 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: 131c33d1049b018ba21898418abefc48e2200f3f
+source-git-commit: cc864e091f5e3f338f025238572158f555c3ede9
 workflow-type: tm+mt
-source-wordcount: '194'
-ht-degree: 22%
+source-wordcount: '169'
+ht-degree: 24%
 
 ---
 
@@ -27,14 +27,6 @@ ht-degree: 22%
    * [Konfigurera en CSP](fundamentals/configuring-a-csp.md)
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)
    * [Klienttips för användaragent](fundamentals/user-agent-client-hints.md)
-* Dataströmmar {#datastreams}
-   * [Översikt](./datastreams/overview.md)
-   * [Konfigurera ett datastream](./datastreams/configure.md)
-   * [Konfigurera åsidosättningar av datastream](./datastreams/overrides.md)
-   * [Dataförberedelse för datainsamling](./datastreams/data-prep.md)
-   * Databerikning {#data-enrichment}
-      * [Väderdata av väderkanalen](./datastreams/data-enrichment/weather.md)
-      * [Mappningar av väderdatafält](./datastreams/data-enrichment/weather-reference.md)
 * Identitet {#identity}
    * [Översikt](identity/overview.md)
    * [Enhets-ID:n från första part](identity/first-party-device-ids.md)

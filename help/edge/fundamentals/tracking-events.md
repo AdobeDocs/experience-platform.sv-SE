@@ -3,7 +3,7 @@ title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: a6948e3744aa754eda22831a7e68b847eb904e76
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 0%
@@ -140,7 +140,7 @@ alloy("sendEvent", {
 
 >[!IMPORTANT]
 >
->The `datasetId` som stöds av `sendEvent` kommandot har tagits bort. Om du vill åsidosätta ett datauppsättnings-ID använder du [konfigurationsåsidosättningar](../datastreams/overrides.md) i stället.
+>The `datasetId` som stöds av `sendEvent` kommandot har tagits bort. Om du vill åsidosätta ett datauppsättnings-ID använder du [konfigurationsåsidosättningar](../../datastreams/overrides.md) i stället.
 
 I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange `datasetId` på `sendEvent` kommando:
 
@@ -254,20 +254,20 @@ Några anteckningar om `onBeforeEventSend` callback:
 
 * Händelse-XDM kan ändras under återanropet. När återanropet har returnerats skickas alla ändrade fält och värden för objekten content.xdm och content.data tillsammans med händelsen.
 
-   ```javascript
-   onBeforeEventSend: function(content){
-     //sets a query parameter in XDM
-     const queryString = window.location.search;
-     const urlParams = new URLSearchParams(queryString);
-     content.xdm.marketing.trackingCode = urlParams.get('cid')
-   }
-   ```
+  ```javascript
+  onBeforeEventSend: function(content){
+    //sets a query parameter in XDM
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    content.xdm.marketing.trackingCode = urlParams.get('cid')
+  }
+  ```
 
 * Om återanropet genererar ett undantag avbryts bearbetningen för händelsen och händelsen skickas inte.
 * Om återanropet returnerar det booleska värdet för `false`, avbryts händelsebearbetningen utan något fel och händelsen skickas inte. Den här funktionen gör att vissa händelser enkelt kan ignoreras genom att händelsedata undersöks och returneras `false` om händelsen inte ska skickas.
 
-   >[!NOTE]
-   >Tänk på att undvika att returnera false vid den första händelsen på en sida. Om du returnerar false för den första händelsen kan det påverka personaliseringen negativt.
+  >[!NOTE]
+  >Tänk på att undvika att returnera false vid den första händelsen på en sida. Om du returnerar false för den första händelsen kan det påverka personaliseringen negativt.
 
 ```javascript
    onBeforeEventSend: function(content) {

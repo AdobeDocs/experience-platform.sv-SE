@@ -2,7 +2,7 @@
 title: Autentisering
 description: Lär dig hur du konfigurerar autentisering för Adobe Experience Platform Edge Network Server API.
 exl-id: 73c7a186-9b85-43fe-a586-4c6260b6fa8c
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '632'
 ht-degree: 1%
@@ -17,7 +17,7 @@ The [!DNL Edge Network Server API] hanterar både autentiserad och oautentiserad
 
 För varje begäran [!DNL Server API] verifierar datastream [!DNL access type] inställning. Med den här inställningen kan kunderna konfigurera en datastam för att acceptera antingen autentiserade data eller både autentiserade och oautentiserade data. Som standard accepteras båda datatyperna.
 
-Mer information om hur du konfigurerar åtkomsttypen för datastream finns i dokumentationen om hur du [skapa och konfigurera ett datastream](../edge/datastreams/overview.md#create).
+Mer information om hur du konfigurerar åtkomsttypen för datastream finns i dokumentationen om hur du [skapa och konfigurera ett datastream](../datastreams/overview.md#create).
 
 Nedan visas en sammanfattning av beteendet utifrån datastream [!DNL Access Type] konfiguration och slutpunkten som begäran tas emot på.
 

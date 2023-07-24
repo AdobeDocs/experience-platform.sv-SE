@@ -2,7 +2,7 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: e24cb8ad6b714a60363bcbec26e453f6445af1ac
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1252'
 ht-degree: 3%
@@ -36,7 +36,7 @@ Behörigheter under Adobe Experience Platform innefattar åtkomst till datastrea
 | Datamodellering | Visa scheman | Ger skrivskyddad åtkomst till scheman. |
 | Identity Management | Hantera identitetsnamnutrymmen | Ger möjlighet att visa, skapa och redigera [identitetsnamnutrymmen](../identity-service/namespaces.md). |
 | Identity Management | Visa identitetsnamnutrymmen | Ger skrivskyddad åtkomst till identitetsnamnutrymmen. |
-| Datainsamling | Hantera datastreams | Ger möjlighet att visa, skapa och redigera [datastreams](../edge/datastreams/overview.md). |
+| Datainsamling | Hantera datastreams | Ger möjlighet att visa, skapa och redigera [datastreams](../datastreams/overview.md). |
 | Datainsamling | Visa datastreams | Ger skrivskyddad åtkomst till datastreams. |
 
 {style="table-layout:auto"}

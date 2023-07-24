@@ -2,9 +2,9 @@
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
-source-git-commit: 6570149298defe1aeb0c3e35cb71e166aeb7a3f7
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '959'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ Om du vill starta mediesessionen på servern använder du slutpunkten för sessi
 
 Innan du gör sessionsstartbegäran behöver du följande:
 
-* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du en `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/edge/datastreams/configure.html?lang=en).
+* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du en `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=en).
 
 * Ett JSON-objekt för den begärda nyttolasten som innehåller de minsta data som krävs (som visas i exempelbegäran nedan).
 

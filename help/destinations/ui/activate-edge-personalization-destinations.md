@@ -3,7 +3,7 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1757'
 ht-degree: 0%
@@ -80,7 +80,7 @@ När datastream konfigureras, under **[!UICONTROL Adobe Experience Platform]** s
 
 ![Datastream-konfiguration](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
-Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../edge/datastreams/configure.md#aep).
+Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../datastreams/configure.md#aep).
 
 ### Skapa en [!DNL Active-On-Edge] sammanfogningsprincip {#create-merge-policy}
 

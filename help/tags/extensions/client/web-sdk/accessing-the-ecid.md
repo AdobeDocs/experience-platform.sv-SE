@@ -2,7 +2,7 @@
 title: Åtkomst till ECID
 description: Lär dig hur du får åtkomst till Experience Cloud-ID från Data Prep eller Taggar
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '224'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 The [!DNL Experience Cloud Identity (ECID)] är en beständig identifierare som tilldelas en användare när de besöker webbplatsen. Under vissa omständigheter kanske du föredrar att få åtkomst till [!DNL ECID] (till exempel för att skicka det till en tredje part). Ett annat användningsfall är att ställa in [!DNL ECID] i ett anpassat XDM-fält, förutom att det finns i identitetskartan.
 
-Du kan få åtkomst till ECID via [Dataförberedelse för datainsamling](../../../../edge/datastreams/data-prep.md) (rekommenderas) eller via taggar.
+Du kan få åtkomst till ECID via [Dataförberedelse för datainsamling](../../../../datastreams/data-prep.md) (rekommenderas) eller via taggar.
 
 ## Åtkomst till ECID via Data Prep (föredragen metod) {#accessing-ecid-data-prep}
 

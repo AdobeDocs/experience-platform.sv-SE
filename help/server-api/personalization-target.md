@@ -2,7 +2,7 @@
 title: Personalisering via Adobe Target
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target.
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 47cd73e45ac618a8a84aa3c47b91d5e2a107e7f4
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '620'
 ht-degree: 0%
@@ -23,7 +23,7 @@ API:t för Edge Network Server kan leverera och återge personaliserade upplevel
 
 Innan du kan använda Server-API:t i kombination med Adobe Target måste du aktivera Adobe Target-anpassning för din datastream-konfiguration.
 
-Se [guide om hur du lägger till tjänster i ett datastream](../edge/datastreams/overview.md#adobe-target-settings), för detaljerad information om hur du aktiverar Adobe Target.
+Se [guide om hur du lägger till tjänster i ett datastream](../datastreams/overview.md#adobe-target-settings), för detaljerad information om hur du aktiverar Adobe Target.
 
 När du konfigurerar dataströmmen kan du (valfritt) ange värden för [!DNL Property Token], [!DNL Target Environment ID]och [!DNL Target Third Party ID Namespace].
 

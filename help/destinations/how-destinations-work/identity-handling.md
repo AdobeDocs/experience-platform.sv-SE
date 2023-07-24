@@ -2,7 +2,7 @@
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1157'
 ht-degree: 0%
@@ -82,7 +82,7 @@ Annonseringsmål som förlitar sig på cookies från tredje part (till exempel: 
 
 Dessa mål kräver att en ID-synkronisering utförs via antingen [!UICONTROL Experience Cloud ID service] eller via [!UICONTROL Experience Platform Web SDK].
 
-Om du använder [!UICONTROL Experience Platform Web SDK] och äldre [!UICONTROL Experience Cloud ID service] är inte implementerat på sidan, måste du se till att dataströmmen för den aktuella webbplatsen är aktiverad för att tillåta synkronisering av tredjeparts-ID, enligt beskrivningen i [konfigurera datastream-dokumentation](/help/edge/datastreams/configure.md#create).
+Om du använder [!UICONTROL Experience Platform Web SDK] och äldre [!UICONTROL Experience Cloud ID service] är inte implementerat på sidan, måste du se till att dataströmmen för den aktuella webbplatsen är aktiverad för att tillåta synkronisering av tredjeparts-ID, enligt beskrivningen i [konfigurera datastream-dokumentation](/help/datastreams/configure.md#create).
 
 När du konfigurerar ett datastream enligt beskrivningen i den länkade dokumentationen ovan måste du se till att **[!UICONTROL Third Party ID Sync]** reglage är aktiverat. De flesta kunder lämnar `container_id` fältet är tomt (standardvärdet är 0). Du behöver bara ändra det här värdet om din tidigare Audience Manager-implementering använde ett visst behållar-ID (observera dock att detta skulle vara den stora mängden kunder).
 

@@ -2,7 +2,7 @@
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
 description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1126'
 ht-degree: 0%
@@ -52,7 +52,7 @@ The [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillä
 
 När en begäran skickas till Adobe Experience Platform Edge Network, används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Se guiden [datastreams](../../../../edge/datastreams/overview.md) för mer information.
+Se guiden [datastreams](../../../../datastreams/overview.md) för mer information.
 
 
 ## [!UICONTROL Privacy]
@@ -112,10 +112,10 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 
 Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
 
-1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../../../edge/datastreams/configure.md).
+1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../../../datastreams/configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av taggtillägget Web SDK.
 
-Se datastream [dokumentation om åsidosättning av konfiguration](../../../../edge/datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
+Se datastream [dokumentation om åsidosättning av konfiguration](../../../../datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
 
 Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando kan du konfigurera åsidosättningarna på taggtilläggsskärmen som visas nedan.
 

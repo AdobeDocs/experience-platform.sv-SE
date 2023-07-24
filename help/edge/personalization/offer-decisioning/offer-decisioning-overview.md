@@ -3,7 +3,7 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '863'
 ht-degree: 1%
@@ -32,28 +32,28 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
 * **Beslutsomfattningar:** För Offer decisioning är beslutsomfattningar de Base64-kodade strängarna i JSON som innehåller de aktivitets- och placerings-ID som du vill att offera decisioningen ska använda för att föreslå erbjudanden.
 
-   *Beslutsomfattelse JSON:*
+  *Beslutsomfattelse JSON:*
 
-   ```json
-   {
-     "activityId":"xcore:offer-activity:11cfb1fa93381aca",
-     "placementId":"xcore:offer-placement:1175009612b0100c"
-   }
-   ```
+  ```json
+  {
+    "activityId":"xcore:offer-activity:11cfb1fa93381aca",
+    "placementId":"xcore:offer-placement:1175009612b0100c"
+  }
+  ```
 
-   *Beslutsomfattare Base64-kodad sträng:*
+  *Beslutsomfattare Base64-kodad sträng:*
 
-   ```json
-   "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
-   ```
+  ```json
+  "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
+  ```
 
-   >[!TIP]
-   >
-   >Du kan kopiera värdet för beslutsomfånget från **Översikt över aktivitet** i användargränssnittet.
+  >[!TIP]
+  >
+  >Du kan kopiera värdet för beslutsomfånget från **Översikt över aktivitet** i användargränssnittet.
 
-   ![](assets/decision-scope-copy.png)
+  ![](assets/decision-scope-copy.png)
 
-* **Datastreams:** Mer information finns i [datastreams](../../datastreams/overview.md) dokumentation.
+* **Datastreams:** Mer information finns i [datastreams](../../../datastreams/overview.md) dokumentation.
 
 * **Identitet**: Mer information finns i den här dokumentationen. [Platform Web SDK använder identitetstjänst](../../identity/overview.md).
 
@@ -61,7 +61,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
 
 Så här aktiverar du Offer decisioning:
 
-1. Aktivera Adobe Experience Platform i [datastream](../../datastreams/overview.md) och markera rutan Offer decisioning
+1. Aktivera Adobe Experience Platform i [datastream](../../../datastreams/overview.md) och markera rutan Offer decisioning
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
@@ -81,6 +81,7 @@ Så här aktiverar du Offer decisioning:
              ]
           })
          ```
+
    * Installera SDK via taggar
 
       1. [Skapa en taggegenskap](../../../tags/ui/administration/companies-and-properties.md)
@@ -101,10 +102,9 @@ Så här aktiverar du Offer decisioning:
 
          * Lägg till en SDK-sändningshändelse för en plattform och lägg till relevant `decisionScopes` till åtgärdens konfiguration
 
-            ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
+           ![send-event-action-DecisionScopes](./assets/send-event-action-decisionScopes.png)
+
       1. [Skapa och publicera ett bibliotek](../../../tags/ui/publishing/libraries.md) som innehåller alla relevanta regler, dataelement och tillägg som du har konfigurerat
-
-
 
 ## Exempelbegäranden och svar
 

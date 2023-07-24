@@ -3,7 +3,7 @@ title: Hybrid-personalisering med Web SDK och Edge Network Server API
 description: I den här artikeln visas hur du kan använda Web SDK i kombination med Server-API:t för att distribuera hybridanpassning på dina webbegenskaper.
 keywords: personalisering, Hybrid. server-api; serversidan; Hybrid-genomförande.
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '822'
 ht-degree: 2%
@@ -65,7 +65,7 @@ Server-API-begäranden krävs för att hämta förslag och skicka ett visningsme
 
 När ni implementerar hybridpersonalisering måste ni vara särskilt uppmärksamma på att sidträffar inte räknas flera gånger i Analytics.
 
-När du [konfigurera ett datastream](../datastreams/overview.md) för Analytics vidarebefordras händelser automatiskt så att sidträffar hämtas.
+När du [konfigurera ett datastream](../../datastreams/overview.md) för Analytics vidarebefordras händelser automatiskt så att sidträffar hämtas.
 
 Exemplet från den här implementeringen använder två olika datastreams:
 
@@ -162,7 +162,7 @@ curl -X POST "https://edge.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_I
 
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
-| `dataStreamId` | `String` | Ja. | ID:t för den datastream som du använder för att skicka interaktionerna till Edge Network. Se [datastreams - översikt](../datastreams/overview.md) för att lära dig hur du konfigurerar ett datastream. |
+| `dataStreamId` | `String` | Ja. | ID:t för den datastream som du använder för att skicka interaktionerna till Edge Network. Se [datastreams - översikt](../../datastreams/overview.md) för att lära dig hur du konfigurerar ett datastream. |
 | `requestId` | `String` | Nej | Ett slumpmässigt ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge-nätverk och returneras som svar. |
 
 ### Serverbaserat svar {#server-response}

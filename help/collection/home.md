@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över datainsamling
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 13c02dd5930905e3851ff147c0ea4d914e3dc6c7
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '516'
 ht-degree: 3%
@@ -25,7 +25,7 @@ Datainsamlingen fokuserar på att upptäcka och göra inkapslade datauppsättnin
 
 * [Adobe Experience Platform Edge Network](https://experienceleague.adobe.com/docs/web-sdk-learn/tutorials/introduction-to-web-sdk-and-edge-network.html)
 * [Taggar](../tags/home.md)
-* [Dataströmmar](../edge/datastreams/overview.md)
+* [Dataströmmar](../datastreams/overview.md)
 * [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
 * [Webb-SDK för Adobe Experience Platform](../edge/home.md)
 * [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
@@ -45,9 +45,9 @@ Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar åt
 
 ## Platform Edge Network och datastreams {#edge}
 
-Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../edge/datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
 
-Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Se avsnittet om [hantera känsliga data](../edge/datastreams/overview.md#sensitive) i datastreams-dokumentationen om du vill ha mer information.
+Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Se avsnittet om [hantera känsliga data](../datastreams/overview.md#sensitive) i datastreams-dokumentationen om du vill ha mer information.
 
 ![Datastreams and Adobe solutions](./images/home/adobe-solutions.png)
 

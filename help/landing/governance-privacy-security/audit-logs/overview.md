@@ -2,7 +2,7 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 7bb81a103c6b2a7d0baec22c927f575764bc3730
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1264'
 ht-degree: 3%
@@ -46,7 +46,7 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 | Beräknat attribut | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [AI-instans för kund](../../../intelligent-services/customer-ai/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li></ul> |
 | [Datauppsättning](../../../catalog/datasets/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera för [Kundprofil i realtid](../../../profile/home.md)</li><li>Inaktivera för profil</li><li>Lägg till data</li><li>Ta bort batch</li></ul> |
-| [Datastream](../../../edge/datastreams/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>[Redigera mappning](../../../edge/datastreams/data-prep.md)</li></ul> |
+| [Datastream](../../../datastreams/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>[Redigera mappning](../../../datastreams/data-prep.md)</li></ul> |
 | [Datatyper](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Destination](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
 | [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
@@ -90,6 +90,7 @@ Välj en händelse i listan om du vill visa information om händelsen i den hög
 ### Filtrera granskningsloggar
 
 >[!NOTE]
+>
 Eftersom det här är en ny funktion går de data som visas endast tillbaka till mars 2022. Beroende på vilken resurs som valts kan tidigare data vara tillgängliga från och med januari 2022.
 
 

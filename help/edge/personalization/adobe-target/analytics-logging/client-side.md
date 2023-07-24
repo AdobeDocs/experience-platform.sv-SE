@@ -5,7 +5,7 @@ seo-title: Client-side logging for A4T data in the Platform Web SDK
 seo-description: Learn how to enable client-side logging for Adobe Analytics for Target (A4T) using the Experience Platform Web SDK.
 keywords: mål;a4t;logga;web sdk;upplevelse;plattform;
 exl-id: 7071d7e4-66e0-4ab5-a51a-1387bbff1a6d
-source-git-commit: de420d3bbf35968fdff59b403a0f2b18110f3c17
+source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
 workflow-type: tm+mt
 source-wordcount: '1155'
 ht-degree: 0%
@@ -40,7 +40,7 @@ I följande underavsnitt beskrivs hur du aktiverar loggning på klientsidan för
 
 ### Aktivera loggning på klientsidan för Analytics {#enable-analytics-client-side-logging}
 
-Om du vill ta hänsyn till att Analytics-loggning på klientsidan är aktiverad för implementeringen måste du inaktivera Adobe Analytics-konfigurationen i din [datastream](../../../datastreams/overview.md).
+Om du vill ta hänsyn till att Analytics-loggning på klientsidan är aktiverad för implementeringen måste du inaktivera Adobe Analytics-konfigurationen i din [datastream](../../../../datastreams/overview.md).
 
 ![Analysdataströmskonfiguration har inaktiverats](../assets/disable-analytics-datastream.png)
 
@@ -212,8 +212,7 @@ Alla värden från `scopeDetails.characteristics.analyticsToken`, samt `scopeDet
 >
 >I implementeringsexemplen i nästa avsnitt samlas flera analystoken in iterativt. Om du vill sammanfoga en array med analystoken använder du en funktion som ser ut så här:
 >
->
-```javascript
+>```javascript
 >var concatenateAnalyticsPayloads = function concatenateAnalyticsPayloads(analyticsPayloads) {
 >   if (analyticsPayloads.size > 1) {
 >       return [].concat(analyticsPayloads).join(',');

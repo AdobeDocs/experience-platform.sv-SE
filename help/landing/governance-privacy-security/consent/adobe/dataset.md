@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Konfigurera en datauppsättning för att samla in samtycke- och inställningsdata
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -26,7 +26,6 @@ Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättnin
 >* Den standardiserade fältgruppen för samtycke
 >* En anpassad fältgrupp för samtycke som skapats av din organisation
 >* En kombination av den standardiserade fältgruppen för samtycke och ytterligare fält som tillhandahålls av en anpassad fältgrupp för samtycke
-
 
 ## Förutsättningar
 
@@ -160,7 +159,7 @@ I den högra listen väljer du **[!UICONTROL Profile]** växla.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-Datamängden har nu sparats och aktiverats för användning i [!DNL Profile]. Om du planerar att använda Platform Web SDK för att skicka data om samtycke till profilen måste du välja den här datauppsättningen som [!UICONTROL Profile Dataset] när du konfigurerar [datastream](../../../../edge/datastreams/overview.md).
+Datamängden har nu sparats och aktiverats för användning i [!DNL Profile]. Om du planerar att använda Platform Web SDK för att skicka data om samtycke till profilen måste du välja den här datauppsättningen som [!UICONTROL Profile Dataset] när du konfigurerar [datastream](../../../../datastreams/overview.md).
 
 ## Nästa steg
 

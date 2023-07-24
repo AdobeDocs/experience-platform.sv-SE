@@ -2,7 +2,7 @@
 title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: dc269f952d0970cb5be1b28ab91c6006de975df3
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '1320'
 ht-degree: 0%
@@ -24,7 +24,7 @@ I den här självstudien förutsätts det att du redan har fastställt hur data 
 
 Den här guiden följer arbetsflödet för att konfigurera SDK med hjälp av taggtillägget i användargränssnittet. Om du inte vill använda tillägget och vill bädda in den fristående versionen av SDK direkt på din webbplats kan du läsa följande dokument i stället för den här handboken:
 
-* [Konfigurera ett datastream](../../../edge/datastreams/overview.md)
+* [Konfigurera ett datastream](../../../datastreams/overview.md)
 * [Installera SDK](../../../edge/fundamentals/installing-the-sdk.md)
 * [Konfigurera SDK för medgivandekommandon](../../../edge/consent/supporting-consent.md)
 

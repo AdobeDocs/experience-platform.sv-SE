@@ -2,7 +2,7 @@
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '2889'
 ht-degree: 2%
@@ -112,7 +112,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | [[!DNL Snap Conversions API] extension](https://exchange.adobe.com/apps/ec/108550) för vidarebefordran av händelser | Nu kan du skicka data till [!DNL Snapchat Conversions API] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Mer information om hur du autentiserar och använder API:t finns i [[!DNL Snapchat Marketing API] dokumentation](https://marketingapi.snapchat.com/docs/conversion.html). |
 | [[!DNL User-Agent Client Hints] i Web SDK](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK har nu stöd för [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i [!DNL User-Agent] på ett mer sekretessbelagt sätt. |
 | [Migrering av sida vid sida för Web SDK](../../edge/home.md#migrating-to-web-sdk) | Nu kan du migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, till exempel [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av Web SDK-migrering, utan att du behöver migrera alla sidor samtidigt. |
-| [[!DNL Adobe Journey Optimizer] stöd för datastreams](../../edge/datastreams/overview.md#aep) | Adobe Experience Platform-tjänsten för datastreams har nu stöd för [!DNL Adobe Journey Optimizer]. Med det här alternativet kan du använda webb- och appbaserade inkommande kanaler i [!DNL Adobe Journey Optimizer]. |
+| [[!DNL Adobe Journey Optimizer] stöd för datastreams](../../datastreams/overview.md#aep) | Adobe Experience Platform-tjänsten för datastreams har nu stöd för [!DNL Adobe Journey Optimizer]. Med det här alternativet kan du använda webb- och appbaserade inkommande kanaler i [!DNL Adobe Journey Optimizer]. |
 
 {style="table-layout:auto"}
 

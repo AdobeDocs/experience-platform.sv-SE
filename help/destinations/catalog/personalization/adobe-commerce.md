@@ -2,7 +2,7 @@
 title: Adobe Commerce Destination Connector
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
 workflow-type: tm+mt
 source-wordcount: '694'
 ht-degree: 1%
@@ -29,7 +29,7 @@ I Experience Platform skapar du följande:
 
 - [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) om hur du skapar ett schema som innehåller handelsspecifika fältgrupper.
 - [Datauppsättning](../../../catalog/datasets/user-guide.md#create). En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling. Du skapar den här datauppsättningen från schemat som du skapade ovan.
-- [Datastream](../../../edge/datastreams/overview.md#create). ID som gör att data kan flöda från Adobe Experience Platform till andra Adobe DX-produkter. Detta ID måste kopplas till en specifik webbplats i din specifika Adobe Commerce-instans. När du skapar den här dataströmmen anger du XDM-schemat som du skapade ovan.
+- [Datastream](../../../datastreams/overview.md#create). ID som gör att data kan flöda från Adobe Experience Platform till andra Adobe DX-produkter. Detta ID måste kopplas till en specifik webbplats i din specifika Adobe Commerce-instans. När du skapar den här dataströmmen anger du XDM-schemat som du skapade ovan.
 
 När du är klar med kraven ansluter du till [!DNL Commerce] mål.
 
@@ -53,7 +53,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 - **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 - **[!UICONTROL Description]**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
 - **[!UICONTROL Integration alias]**: Värdet skickas till Experience Platform Web SDK som ett JSON-objektnamn.
-- **[!UICONTROL Datastream ID]**: Detta avgör vilken datainsamling som innehåller de målgrupper som ingår i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../edge/datastreams/overview.md) för mer information.
+- **[!UICONTROL Datastream ID]**: Detta avgör vilken datainsamling som innehåller de målgrupper som ingår i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../datastreams/overview.md) för mer information.
 
 ### Aktivera aviseringar {#enable-alerts}
 
