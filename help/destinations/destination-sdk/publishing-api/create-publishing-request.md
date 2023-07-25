@@ -1,7 +1,7 @@
 ---
 description: Lär dig hur du formaterar ett API-anrop för att skicka en begäran om målpublicering via Adobe Experience Platform Destination SDK.
 title: Skapa en publiceringsbegäran för mål
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+source-git-commit: 8ec5d450d2856b9a12457e1b1b0b46baf930253a
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
@@ -69,9 +69,13 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 {style="table-layout:auto"}
 
++++
+
 +++svar
 
 Ett lyckat svar returnerar HTTP-status 201 med information om din målpubliceringsbegäran.
+
++++
 
 ## API-felhantering
 
