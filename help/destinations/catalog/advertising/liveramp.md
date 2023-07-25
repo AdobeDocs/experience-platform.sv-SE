@@ -4,9 +4,9 @@ description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper fr�
 hidefromtoc: true
 hide: true
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
+source-git-commit: 8c9d736c8d2c45909a2915f0f1d845a7ba4d876d
 workflow-type: tm+mt
-source-wordcount: '1645'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,20 @@ Innan du skickar data från Experience Platform till [!DNL LiveRamp SFTP]behöve
 LiveRamp SFTP stöder aktivering av identiteter som PII-baserade identifierare, kända identifierare och anpassade ID:n som beskrivs i [LiveRamp-dokumentation](https://docs.liveramp.com/connect/en/identity-and-identifier-terms-and-concepts.html#known-identifiers).
 
 I [mappningssteg](#map) av aktiveringsarbetsflödet måste du definiera målmappningarna som anpassade attribut.
+
+## Målgrupper som stöds {#supported-audiences}
+
+I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+
+Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+
+Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+
+| Målgruppstyp | Beskrivning |
+---------|----------|
+| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#importing-an-audience) till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -190,7 +204,9 @@ Plattformen exporterar två CSV-filer till [!DNL LiveRamp SFTP]:
 * En CSV-fil som innehåller målgrupperna A, C och D.
 * En CSV-fil som innehåller målgrupp B.
 
-Exporterade CSV-filer innehåller profiler med de valda attributen och motsvarande målgruppsstatus, i separata kolumner, med attributnamnet och målgrupps-ID:n som kolumnrubriker.
+Exporterade CSV-filer innehåller profiler med de valda attributen och motsvarande målgruppsstatus, i separata kolumner, med attributnamnet, och `audience_namespace:audience_ID` par som kolumnrubriker, vilket visas i exemplet nedan:
+
+`ATTRIBUTE_NAME, AUDIENCE_NAMESPACE_1:AUDIENCE_ID_1, AUDIENCE_NAMESPACE_2:AUDIENCE_ID_2,..., AUDIENCE_NAMESPACE_X:AUDIENCE_ID_X`
 
 Profilerna som ingår i de exporterade filerna kan matcha ett av följande kvalificeringstillstånd för målgruppen:
 
@@ -198,11 +214,10 @@ Profilerna som ingår i de exporterade filerna kan matcha ett av följande kvali
 * `Expired`: Profilen är inte längre kvalificerad för målgruppen, men har tidigare kvalificerats.
 * `""`(tom sträng): Profilen har aldrig kvalificerats för målgruppen.
 
-
-Till exempel en exporterad CSV-fil med en `email` attribut och 3 målgrupper kan se ut så här:
+Till exempel en exporterad CSV-fil med en `email` attribut, två målgrupper som kommer från Experience Platform [Segmenteringstjänst](../../../segmentation/home.md)och en [importerad](../../../segmentation/ui/overview.md#importing-an-audience) extern publik, skulle kunna se ut så här:
 
 ```csv
-email,aa2e3d98-974b-4f8b-9507-59f65b6442df,45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,7729e537-4e42-418e-be3b-dce5e47aaa1e
+email,ups:aa2e3d98-974b-4f8b-9507-59f65b6442df,ups:45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload:7729e537-4e42-418e-be3b-dce5e47aaa1e
 abc117@testemailabc.com,active,,
 abc111@testemailabc.com,,,active
 abc102@testemailabc.com,,,active
@@ -210,6 +225,8 @@ abc116@testemailabc.com,active,,
 abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
+
+I exemplet ovan är `ups:aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups:45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` beskriver målgrupper som härrör från segmenteringstjänsten, medan `CustomerAudienceUpload:7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en publik som importerats till Platform som [anpassad överföring](../../../segmentation/ui/overview.md#importing-an-audience).
 
 Eftersom Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../../profile/merge-policies/overview.md)genererar det också en separat dataflödeskörning för varje ID för sammanfogningsprincip.
 

@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
-source-git-commit: 20dc7b31f75e88badac17faa542e046598632690
+source-git-commit: ca4fb2dce097197aa1a97e0716e6294546bfee38
 workflow-type: tm+mt
-source-wordcount: '1880'
+source-wordcount: '1886'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 Destinationen SDK stöder flera schemakonfigurationer:
 
 * Statiska scheman definieras via `profileFields` arrayen i `schemaConfig` -avsnitt. I ett statiskt schema definierar du alla målattribut som ska visas i användargränssnittet för Experience Platform i `profileFields` array. Om du behöver uppdatera ditt schema måste du [uppdatera målkonfigurationen](../../authoring-api/destination-configuration/update-destination-configuration.md).
-* Dynamiska scheman använder ytterligare en målservertyp, som kallas [dynamisk schemaserver](../../authoring-api/destination-server/create-destination-server.md), för att dynamiskt generera scheman baserat på ditt eget API. Dynamiska scheman använder inte `profileFields` array. Om du behöver uppdatera schemat behöver du inte [uppdatera målkonfigurationen](../../authoring-api/destination-configuration/update-destination-configuration.md). I stället hämtar den dynamiska schemaservern det uppdaterade schemat från ditt API.
+* Dynamiska scheman använder ytterligare en målservertyp, som kallas [dynamisk schemaserver](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers), för att dynamiskt hämta de målattribut som stöds och generera scheman baserat på ditt eget API. Dynamiska scheman använder inte `profileFields` array. Om du behöver uppdatera schemat behöver du inte [uppdatera målkonfigurationen](../../authoring-api/destination-configuration/update-destination-configuration.md). I stället hämtar den dynamiska schemaservern det uppdaterade schemat från ditt API.
 * I schemakonfigurationen kan du lägga till obligatoriska (eller fördefinierade) mappningar. Det här är mappningar som användare kan visa i plattformsgränssnittet, men de kan inte ändra dem när de konfigurerar en anslutning till ditt mål. Du kan t.ex. framtvinga att e-postadressfältet alltid skickas till målet.
 
 The `schemaConfig` -avsnittet använder flera konfigurationsparametrar, beroende på vilken typ av schema du behöver, vilket visas i avsnitten nedan.
@@ -126,7 +126,7 @@ Destination SDK stöder skapande av dynamiska partnerscheman. I motsats till ett
 
 >[!IMPORTANT]
 >
->Innan du skapar ett dynamiskt schema måste du [skapa en dynamisk schemaserver](../../authoring-api/destination-server/create-destination-server.md).
+>Innan du skapar ett dynamiskt schema måste du [skapa en dynamisk schemaserver](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers).
 
 I en dynamisk schemakonfiguration `profileFields` arrayen ersätts med `dynamicSchemaConfig` enligt nedan.
 

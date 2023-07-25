@@ -1,9 +1,9 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att skapa en målserver via Adobe Experience Platform Destination SDK.
 title: Skapa en målserverkonfiguration
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: ca4fb2dce097197aa1a97e0716e6294546bfee38
 workflow-type: tm+mt
-source-wordcount: '1623'
+source-wordcount: '1696'
 ht-degree: 6%
 
 ---
@@ -44,7 +44,11 @@ Du kan skapa en ny målserverkonfiguration genom att skapa en `POST` begäran ti
 POST /authoring/destination-servers
 ```
 
-Beroende på vilken måltyp du skapar måste du konfigurera en något annorlunda typ av målserver. Se exempel på målservrar för varje måltyp som stöds i Destinationen SDK i flikarna nedan.
+Beroende på vilken måltyp du skapar måste du konfigurera en något annorlunda typ av målserver.
+
+### Skapa statiska målservrar för schema {#static-destination-servers}
+
+Se exempel på målservrar för destinationer som använder i flikarna nedan [statiska scheman](../../functionality/destination-configuration/schema-configuration.md#attributes-schema).
 
 Exempelnyttolasterna nedan innehåller alla parametrar som stöds av varje målservertyp. Du behöver inte inkludera alla parametrar i din begäran. Nyttolasten kan anpassas efter dina behov.
 
@@ -770,6 +774,18 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserver
 
 +++
 
+>[!ENDTABS]
+
+### Skapa dynamiska målservrar för schema {#dynamic-schema-servers}
+
+Med dynamiska scheman kan du dynamiskt hämta de målattribut som stöds och generera scheman baserat på ditt eget API. Du måste konfigurera en målserver för dynamiska scheman innan du kan konfigurera schemat.
+
+Se ett exempel på en målserver på fliken nedan för mål som använder [dynamiska scheman](../../functionality/destination-configuration/schema-configuration.md#dynamic-schema-configuration).
+
+Nedan finns exempelnyttolasten med alla parametrar som krävs för en dynamisk schemaserver.
+
+>[!BEGINTABS]
+
 >[!TAB Dynamisk schemaserver]
 
 **Skapa en dynamisk schemaserver**
@@ -827,6 +843,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserverkonfigurationen.
 
 +++
+
 
 >[!ENDTABS]
 
