@@ -1,11 +1,9 @@
 ---
 title: Översikt över SAP Commerce Source
-description: Lär dig hur du ansluter SAP Commerce till Adobe Experience Platform med API:er eller användargränssnittet.
+description: Lär dig hur du ansluter SAP Commerce till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-07-26T00:00:00Z
-hide: true
-hidefromtoc: true
 badge: Beta
-source-git-commit: 99edb8b2bcd4225235038e966a367d91375c961a
+source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 1%
@@ -35,7 +33,7 @@ En lista med IP-adresser kan behöva läggas till tillåtelselista innan du kan 
 
 Innan du kan ta med [!DNL SAP Commerce] data till Experience Platform måste du först se till att du har följande:
 
-* A [!DNL SAP Subscription Billing] konto. Om du inte redan har ett giltigt faktureringskonto kontaktar du [!DNL SAP] kontoansvarig. Se [[!DNL SAP] Plattformskonfiguration](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf) för mer information.
+* A [!DNL SAP Subscription Billing] konto. Om du inte redan har ett giltigt faktureringskonto kontaktar du [!DNL SAP] kontoansvarig. Se [[!DNL SAP] Plattformskonfiguration](https://help.sap.com/doc/5fd179965d5145fbbe7f2a7aa1272338/latest/en-US/PlatformConfiguration.pdf) om du vill ha mer information.
 
 * [!DNL SAP] tjänstnyckel. The [!DNL SAP] kan du komma åt [!DNL SAP Subscription Billing] API via Experience Platform. [!DNL SAP Commerce] kräver följande:
    * Klient-ID

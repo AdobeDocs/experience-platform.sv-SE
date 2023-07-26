@@ -1,10 +1,8 @@
 ---
 title: Skapa en källanslutning och ett dataflöde för SAP Commerce med API:t för Flow Service
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att överföra SAP Commerce-data till Experience Platform med API:t för Flow Service.
-hide: true
-hidefromtoc: true
 badge: Beta
-source-git-commit: 99edb8b2bcd4225235038e966a367d91375c961a
+source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
 workflow-type: tm+mt
 source-wordcount: '2358'
 ht-degree: 0%
@@ -37,7 +35,7 @@ För att kunna ansluta [!DNL SAP Commerce] till Experience Platform måste du an
 | `clientId` | Värdet för `clientId` från tjänstnyckeln. |
 | `clientSecret` | Värdet för `clientSecret` från tjänstnyckeln. |
 | `tokenEndpoint` | Värdet för `url` från tjänstnyckeln kommer den att likna `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
-| `region` | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om `url` är `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`behöver du `eu10`. |
+| `region` | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Till exempel om `url` är `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`behöver du `eu10`. |
 
 Mer information om dessa uppgifter finns i [[!DNL SAP Commerce] dokumentation](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
 
@@ -94,7 +92,7 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID för källan. Detta ID kan hämtas när källan har registrerats och godkänts via [!DNL Flow Service] API. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
-| `auth.params.region` | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om `url` är `https://subscriptionbilling.authentication.eu10.hana.ondemand.com` du kommer att behöva `eu10`. |
+| `auth.params.region` | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om `url` är `https://subscriptionbilling.authentication.eu10.hana.ondemand.com` du behöver `eu10`. |
 | `auth.params.clientId` | Värdet för `clientId` från tjänstnyckeln. |
 | `auth.params.clientSecret` | Värdet för `clientSecret` från tjänstnyckeln. |
 | `auth.params.tokenEndpoint` | Värdet för `url` från tjänstnyckeln kommer den att likna `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
@@ -112,7 +110,7 @@ Ett lyckat svar returnerar den nyskapade basanslutningen, inklusive dess unika a
 
 ### Utforska din källa {#explore}
 
-När du har fått ditt grundläggande anslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att göra en GET-förfrågan till `/connections` slutpunkt när ditt basanslutnings-ID anges som en frågeparameter.
+När du har fått ditt grundläggande anslutnings-ID kan du nu utforska innehållet och strukturen i dina källdata genom att göra en GET-förfrågan till `/connections` slutpunkt när du anger ditt basanslutnings-ID som en frågeparameter.
 
 **API-format**
 
@@ -466,7 +464,7 @@ Ett lyckat svar returnerar en JSON-struktur som följande:
 
 +++Begäran
 
-För [!DNL SAP Commerce] Kontaktpersonens API-värde för `{SOURCE_PARAMS}` skickas som `{"object_type":"contacts"}`. När den kodas i base64 är den lika med `eyJvYmplY3RfdHlwZSI6ImNvbnRhY3RzIn0=` enligt nedan.
+För [!DNL SAP Commerce] Kontakter-API:t har värdet för `{SOURCE_PARAMS}` skickas som `{"object_type":"contacts"}`. När den kodas i base64 är den lika med `eyJvYmplY3RfdHlwZSI6ImNvbnRhY3RzIn0=` enligt nedan.
 
 ```shell
 curl -X GET \
@@ -605,10 +603,10 @@ curl -X POST \
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
 | `baseConnectionId` | Basanslutnings-ID för [!DNL SAP Commerce]. Detta ID genererades i ett tidigare steg. |
-| `connectionSpec.id` | Det ID för anslutningsspecifikation som motsvarar källan. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
 | `data.format` | Formatet på [!DNL SAP Commerce] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
 | `object_type` | [!DNL SAP Commerce] har stöd för flera API:er. För kund-API:t är `object_type` parametern ska anges till `customers`. |
-| `path` | Det får samma värde som du väljer för `object_type`. |
+| `path` | Det här får samma värde som du väljer för `object_type`. |
 
 +++
 
@@ -661,7 +659,7 @@ curl -X POST \
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
 | `baseConnectionId` | Basanslutnings-ID för [!DNL SAP Commerce]. Detta ID genererades i ett tidigare steg. |
-| `connectionSpec.id` | Det ID för anslutningsspecifikation som motsvarar källan. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
 | `data.format` | Formatet på [!DNL SAP Commerce] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
 | `object_type` | [!DNL SAP Commerce] har stöd för flera API:er. För kontakt-API:t `object_type` parametern ska anges till `contacts`. |
 | `path` | Detta får samma värde som du väljer för *`object_type`*. |
@@ -693,7 +691,7 @@ Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudie
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
 Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../../catalog/api/create-dataset.md).
 
@@ -861,7 +859,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `outputSchema.schemaRef.id` | ID för [mål-XDM-schema](#target-schema) som genererats i ett tidigare steg. |
+| `outputSchema.schemaRef.id` | ID:t för [mål-XDM-schema](#target-schema) som har genererats i ett tidigare steg. |
 | `mappings.sourceType` | Källattributtypen som mappas. |
 | `mappings.source` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.destination` | Mål-XDM-sökvägen dit källattributet mappas. |
@@ -959,7 +957,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `outputSchema.schemaRef.id` | ID för [mål-XDM-schema](#target-schema) som genererats i ett tidigare steg. |
+| `outputSchema.schemaRef.id` | ID:t för [mål-XDM-schema](#target-schema) som har genererats i ett tidigare steg. |
 | `mappings.sourceType` | Källattributtypen som mappas. |
 | `mappings.source` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.destination` | Mål-XDM-sökvägen dit källattributet mappas. |
@@ -1045,11 +1043,11 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan inkludera för att få mer information om dataflödet. |
 | `flowSpec.id` | Det ID för flödesspecifikation som krävs för att skapa ett dataflöde. Detta fasta ID är: `6499120c-0b15-42dc-936e-847ea3c24d72`. |
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som genererats i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som genererats i ett tidigare steg. |
+| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som har genererats i ett tidigare steg. |
+| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som har genererats i ett tidigare steg. |
 | `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som genererats i ett tidigare steg. |
+| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som har genererats i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 | `scheduleParams.startTime` | Den här egenskapen innehåller information om dataflödets ingsplanering. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. |
@@ -1080,7 +1078,7 @@ Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körnings
 
 ### Uppdatera ditt konto
 
-Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](../../update.md).
+Uppdatera namn, beskrivning och autentiseringsuppgifter för ditt källkonto genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](../../update.md).
 
 ### Ta bort ditt dataflöde
 
@@ -1088,4 +1086,4 @@ Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Servic
 
 ### Ta bort ditt konto
 
-Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger basanslutnings-ID för det konto du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](../../delete.md).
+Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](../../delete.md).

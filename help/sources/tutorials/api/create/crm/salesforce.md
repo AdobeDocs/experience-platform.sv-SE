@@ -5,9 +5,9 @@ title: Skapa en Salesforce-basanslutning med API:t för flödestjänsten
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 57cdcbd5018e7f57261f09c6bddf5e2a8dcfd0d5
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '498'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,8 @@ För att [!DNL Flow Service] för att ansluta till [!DNL Salesforce]måste du an
 | `username` | Användarnamnet för [!DNL Salesforce] användarkonto. |
 | `password` | Lösenordet för [!DNL Salesforce] användarkonto. |
 | `securityToken` | Säkerhetstoken för [!DNL Salesforce] användarkonto. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL AdWords] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+| `apiVersion` | (Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 Mer information om hur du kommer igång finns på [det här Salesforce-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
 
@@ -49,8 +50,7 @@ Mer information om hur du kan anropa API:er för plattformar finns i handboken [
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Salesforce] autentiseringsuppgifter som en del av parametrarna för begäran.
-
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt och ange [!DNL Salesforce] autentiseringsuppgifter i begärandetexten.
 
 **API-format**
 
@@ -64,28 +64,28 @@ Följande begäran skapar en basanslutning för [!DNL Salesforce]:
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Salesforce Connection",
-        "description": "Connection for Salesforce account",
-        "auth": {
-            "specName": "Basic Authentication",
-            "params": {
-                "username": "{USERNAME}",
-                "password": "{PASSWORD}",
-                "securityToken": "{SECURITY_TOKEN}"
-            }
-        },
-        "connectionSpec": {
-            "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Salesforce Connection",
+      "description": "Connection for Salesforce account",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {****
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "securityToken": "{SECURITY_TOKEN}"
+          }
+      },
+      "connectionSpec": {
+          "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |

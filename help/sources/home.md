@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f3d70e986148d39429f394a60d12686617e3fd3d
+source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
 workflow-type: tm+mt
 source-wordcount: '1294'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Källor i Experience Platform är grupperade i följande kategorier:
 
 ### Adobe-program {#adobe-applications}
 
-Experience Platform tillåter att data hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
+Experience Platform tillåter att data kan hämtas från andra Adobe-program, inklusive Adobe Analytics och Adobe Audience Manager. Mer information finns i följande relaterade dokument:
 
 - [Översikt över Adobe Audience Manager-källa](connectors/adobe-applications/audience-manager.md)
    - [Skapa en Adobe Audience Manager-källanslutning i användargränssnittet](./tutorials/ui/create/adobe-applications/audience-manager.md)
@@ -85,11 +85,11 @@ Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du 
 
 ### Samtycke och inställningar {#consent}
 
-Experience Platform stöder inmatning av data från en plattform för hantering av medgivanden och preferenser från tredje part. Mer information finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från en plattform för hantering av samtycke och preferenser från tredje part. Mer information finns i följande relaterade dokument:
 
 - [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md)
 
-### CRM (Customer Relationship Management) {#customer-relationship-management}
+### Kundrelationshantering (CRM) {#customer-relationship-management}
 
 CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
@@ -137,6 +137,7 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 
 Experience Platform stöder inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
+- [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md)
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 - [[!DNL Shopify (Streaming)]](connectors/ecommerce/shopify-streaming.md)
 
@@ -148,7 +149,7 @@ Experience Platform har stöd för inmatning av data från ditt lokala system. M
 
 ### Marknadsföringsautomatisering {#marketing-automation}
 
-Experience Platform stöder inmatning av data från ett system för automatisering av tredjepartsmarknadsföring. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform stöder inmatning av data från ett system för automatisering av marknadsföring från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md)
 - [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md)
@@ -175,7 +176,7 @@ Experience Platform stöder inmatning av data från strömningskällor. Mer info
 
 ### Protokoll {#protocols}
 
-Experience Platform har stöd för inmatning av data från tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
+Experience Platform har stöd för inmatning av data från ett tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
 - [[!DNL Generic OData]](connectors/protocols/odata.md)
 - [[!DNL Generic REST API]](connectors/protocols/generic-rest.md)

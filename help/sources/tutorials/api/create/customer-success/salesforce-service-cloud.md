@@ -5,9 +5,9 @@ title: Skapa en Salesforce Service Cloud-källanslutning med API:t för flödest
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Service Cloud med API:t för flödestjänst.
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 5d28db34edd377269e8710b1741098a08616ae5f
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '501'
 ht-degree: 1%
 
 ---
@@ -36,6 +36,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Salesforce Service Cloud]må
 | `username` | Användarnamnet för [!DNL Salesforce Service Cloud] användarkonto. |
 | `password` | Lösenordet för [!DNL Salesforce Service Cloud] konto. |
 | `securityToken` | Säkerhetstoken för din [!DNL Salesforce Service Cloud] konto. |
+| `apiVersion` | (Valfritt) REST API-versionen av [!DNL Salesforce Service Cloud] -instans som du använder. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce Service Cloud] är: `b66ab34-8619-49cb-96d1-39b37ede86ea`. |
 
 Mer information om hur du kommer igång finns i [det här Salesforce Service Cloud-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_iot.meta/api_iot/qs_auth_access_token.htm).
@@ -62,28 +63,28 @@ Följande begäran skapar en basanslutning för [!DNL Salesforce Service Cloud]:
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Base connection for salesforce service cloud",
-        "description": "Base connection for salesforce service cloud",
-        "auth": {
-            "specName": "Basic Authentication",
-            "params": {
-                "username": "{USERNAME}",
-                "password": "{PASSWORD}",
-                "securityToken": "{SECURITY_TOKEN}"
-            }
-        },
-        "connectionSpec": {
-            "id": "b66ab34-8619-49cb-96d1-39b37ede86ea",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Base connection for salesforce service cloud",
+      "description": "Base connection for salesforce service cloud",
+      "auth": {
+          "specName": "Basic Authentication",
+          "params": {
+              "username": "{USERNAME}",
+              "password": "{PASSWORD}",
+              "securityToken": "{SECURITY_TOKEN}"
+          }
+      },
+      "connectionSpec": {
+          "id": "b66ab34-8619-49cb-96d1-39b37ede86ea",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Parameter | Beskrivning |

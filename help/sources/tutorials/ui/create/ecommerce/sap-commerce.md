@@ -1,10 +1,8 @@
 ---
 title: Skapa en källanslutning för SAP Commerce i användargränssnittet
 description: Lär dig hur du skapar en källanslutning för SAP Commerce med hjälp av Adobe Experience Platform-gränssnittet.
-hide: true
-hidefromtoc: true
 badge: Beta
-source-git-commit: 99edb8b2bcd4225235038e966a367d91375c961a
+source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
 workflow-type: tm+mt
 source-wordcount: '989'
 ht-degree: 1%
@@ -25,7 +23,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL SAP Commerce] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/ecommerce.md).
@@ -39,13 +37,13 @@ För att kunna ansluta [!DNL SAP Commerce] till Experience Platform måste du an
 | Klient-ID | Värdet för `clientId` från tjänstnyckeln. |
 | Klienthemlighet | Värdet för `clientSecret` från tjänstnyckeln. |
 | Tokenslutpunkt | Värdet för `url` från tjänstnyckeln kommer den att likna `https://subscriptionbilling.authentication.eu10.hana.ondemand.com`. |
-| Län | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Om `url` är `https://eu10.revenue.cloud.sap/api` du kommer att behöva `eu10`. |
+| Län | Datacentrets plats. Regionen finns i `url` och har ett värde som liknar `eu10` eller `us10`. Till exempel om `url` är `https://eu10.revenue.cloud.sap/api` du behöver `eu10`. |
 
 Mer information finns i [[!DNL SAP Commerce] dokumentation](https://help.sap.com/docs/CLOUD_TO_CASH_OD/987aec876092428f88162e438acf80d6/c5fcaf96daff4c7a8520188e4d8a1843.html).
 
 ### Skapa ett plattformsschema {#create-platform-schema}
 
-Innan du skapar en [!DNL SAP Commerce] måste du också se till att du först skapar ett Experience Platform-schema som du kan använda för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
+Innan du skapar [!DNL SAP Commerce] källanslutning måste du också se till att du först skapar ett Experience Platform-schema som du kan använda för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
 
 Expandera följande avsnitt för att visa ett exempelschema.
 
@@ -156,9 +154,9 @@ The **[!UICONTROL Connect SAP Commerce account]** visas. På den här sidan kan 
 
 ### Befintligt konto {#existing-account}
 
-Om du vill använda ett befintligt konto väljer du [!DNL SAP Commerce] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL SAP Commerce] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
-![Skärmbild för användargränssnittet för plattformen som används för att ansluta SAP Commerce-kontot till ett befintligt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
+![Skärmbild för användargränssnittet för plattformen för att ansluta SAP Commerce-kontot till ett befintligt konto](../../../../images/tutorials/create/ecommerce/sap-commerce/existing.png)
 
 ### Nytt konto {#new-account}
 
@@ -179,7 +177,7 @@ Slutligen måste du välja den objekttyp som du vill importera till plattformen.
 
 >[!TAB Kunder]
 
-Välj **[!UICONTROL Customers]** som objekttyp och sedan markera **[!UICONTROL Next]**.
+Om du vill importera kunddata väljer du **[!UICONTROL Customers]** som objekttyp och sedan markera **[!UICONTROL Next]**.
 
 ![Skärmbild för användargränssnittet för SAP Commerce som visar konfigurationen med alternativet Kunder valt](../../../../images/tutorials/create/ecommerce/sap-commerce/configuration-customers.png)
 
@@ -193,7 +191,7 @@ Om du vill importera kontaktdata väljer du **[!UICONTROL Contacts]** som objekt
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL SAP Commerce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/ecommerce.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL SAP Commerce] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/ecommerce.md).
 
 ## Ytterligare resurser {#additional-resources}
 
