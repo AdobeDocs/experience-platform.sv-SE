@@ -3,7 +3,7 @@ title: (Beta) Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 6627953aba4f1cd665c3d5c4bc8711c48064374f
+source-git-commit: fadc1f5f3842c9c2e39b6204dd455621ec84ad68
 workflow-type: tm+mt
 source-wordcount: '1366'
 ht-degree: 0%
@@ -16,11 +16,11 @@ ht-degree: 0%
 >
 >* Funktionen för att exportera datauppsättningar finns för närvarande i Beta och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 >* Den här betafunktionen stöder export av första generationens data, enligt definitionen i Real-time Customer Data Platform [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime och Ultimate. Kontakta din Adobe-representant om du vill ha mer information.
+>* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
 
-I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, till exempel [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage] genom att använda användargränssnittet för Experience Platform.
+I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, som [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage] genom att använda användargränssnittet för Experience Platform.
 
-Du kan också använda API:erna för Experience Platform för att exportera datauppsättningar. Läs [API-självstudiekurs för exportdatamängder](/help/destinations/api/export-datasets.md) för mer information.
+Du kan också använda API:erna för Experience Platform för att exportera datauppsättningar. Läs [API-självstudiekurs för exportdataset](/help/destinations/api/export-datasets.md) för mer information.
 
 ## Mål som stöds {#supported-destinations}
 
@@ -46,11 +46,11 @@ Det här dokumentet innehåller all information som behövs för att exportera d
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill exportera datauppsättningar till molnlagringsmål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Du måste ha exporterat datauppsättningar till molnlagringsmål [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ### Nödvändiga behörigheter {#permissions}
 
-Om du vill exportera datauppsättningar behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+Om du vill exportera datauppsättningar måste du ha **[!UICONTROL View Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Bläddra i målkatalogen för att kontrollera att du har de behörigheter som krävs för att exportera datauppsättningar och att målet har stöd för att exportera datauppsättningar. Om ett mål har en **[!UICONTROL Activate]** eller en **[!UICONTROL Export datasets]** har du rätt behörighet.
 
@@ -64,7 +64,7 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 
 1. Välj **[!UICONTROL Activate]** eller **[!UICONTROL Export datasets]** på kortet som motsvarar målet som du vill exportera datauppsättningar till.
 
-   ![Fliken Målkatalog med aktiveringskontrollen markerad.](/help/destinations/assets/ui/export-datasets/activate-button.png)
+   ![Fliken Målkatalog med kontrollen Aktivera markerad.](/help/destinations/assets/ui/export-datasets/activate-button.png)
 
 1. Välj **[!UICONTROL Data type Datasets]** och välj den målanslutning som du vill exportera datauppsättningar till och välj sedan **[!UICONTROL Next]**.
 
@@ -72,7 +72,7 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 > 
 >Om du vill konfigurera ett nytt mål för att exportera datauppsättningar väljer du **[!UICONTROL Configure new destination]** för att aktivera [Anslut till mål](/help/destinations/ui/connect-destination.md) arbetsflöde.
 
-![Arbetsflöde för målaktivering med datauppsättningskontroll markerat.](/help/destinations/assets/ui/export-datasets/select-datatype-datasets.png)
+![Arbetsflöde för målaktivering med Datasets-kontroll markerad.](/help/destinations/assets/ui/export-datasets/select-datatype-datasets.png)
 
 1. The **[!UICONTROL Select datasets]** visas. Gå till nästa avsnitt för att [välj dina datauppsättningar](#select-datasets) för export.
 
@@ -101,10 +101,10 @@ The **[!UICONTROL Export incremental files]** alternativet väljs automatiskt. D
 
 1. Använd **[!UICONTROL Frequency]** för att välja exportfrekvens:
 
-   * **[!UICONTROL Daily]**: Schemalägg stegvis filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
+   * **[!UICONTROL Daily]**: Schemalägg inkrementell filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Hourly]**: Schemalägg stegvis filexport var 3, 6, 8 eller 12:e timme.
 
-2. Använd **[!UICONTROL Time]** väljaren för att välja tid på dagen, i [!DNL UTC] format, när exporten ska ske.
+2. Använd **[!UICONTROL Time]** väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
 3. Använd **[!UICONTROL Date]** för att välja intervallet när exporten ska ske. Observera att det inte går att ange ett slutdatum för exporten i betaversionen av funktionen. Mer information finns i [kända begränsningar](#known-limitations) -avsnitt.
 
@@ -112,7 +112,7 @@ The **[!UICONTROL Export incremental files]** alternativet väljs automatiskt. D
 
 >[!NOTE]
 > 
->För datauppsättningsexporter har filnamnen en förinställning, standardformat, som inte kan ändras. Se avsnittet [Verifiera datauppsättningsexport](#verify) för mer information och exempel på exporterade filer.
+>För datauppsättningsexporter har filnamnen en förinställning, standardformat, som inte kan ändras. Se avsnittet [Verifiera datauppsättningsexport](#verify) om du vill ha mer information och exempel på exporterade filer.
 
 ## Granska {#review}
 
@@ -147,7 +147,7 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
 ## Ta bort datauppsättning från mål {#remove-dataset}
 
-Så här tar du bort en datauppsättning från ett befintligt dataflöde:
+Följ stegen nedan för att ta bort en datauppsättning från ett befintligt dataflöde:
 
 1. Logga in på [Experience Platform UI](https://experience.adobe.com/platform/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre sidhuvudet för att visa befintliga måldataflöden.
 

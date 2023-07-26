@@ -4,7 +4,7 @@ title: (Beta) Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 4873af44f623082375fe4b2caa82475e2ba5b808
+source-git-commit: fadc1f5f3842c9c2e39b6204dd455621ec84ad68
 workflow-type: tm+mt
 source-wordcount: '3510'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >* Den här betafunktionen stöder export av första generationens data, enligt definitionen i Real-time Customer Data Platform [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
 >* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
 
-I den här artikeln förklaras vilket arbetsflöde som krävs för att använda [!DNL Flow Service API] till export [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, till exempel [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage].
+I den här artikeln förklaras vilket arbetsflöde som krävs för att använda [!DNL Flow Service API] till export [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, som [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage].
 
 >[!TIP]
 >
@@ -51,7 +51,7 @@ I följande avsnitt finns ytterligare information som du måste känna till för
 
 ### Nödvändiga behörigheter {#permissions}
 
-Om du vill exportera datauppsättningar behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+Om du vill exportera datauppsättningar måste du ha **[!UICONTROL View Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Bläddra i målkatalogen för att kontrollera att du har de behörigheter som krävs för att exportera datauppsättningar och att målet har stöd för att exportera datauppsättningar. Om ett mål har en **[!UICONTROL Activate]** eller en **[!UICONTROL Export datasets]** har du rätt behörighet.
 
@@ -103,7 +103,7 @@ Innan du startar arbetsflödet för att exportera en datauppsättning ska du ide
 
 {style="table-layout:auto"}
 
-Du behöver dessa ID:n för att skapa olika [!DNL Flow Service] enheter. Du måste även referera till delar av [!DNL Connection Spec] sig själv för att konfigurera vissa enheter så att du kan hämta [!DNL Connection Spec] från [!DNL Flow Service APIs]. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
+Du behöver dessa ID:n för att kunna skapa olika [!DNL Flow Service] enheter. Du måste även referera till delar av [!DNL Connection Spec] sig själv för att konfigurera vissa enheter så att du kan hämta [!DNL Connection Spec] från [!DNL Flow Service APIs]. Se exemplen nedan om hur du hämtar anslutningsspecifikationer för alla mål i tabellen:
 
 >[!BEGINTABS]
 
@@ -313,7 +313,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDTABS]
 
-Följ stegen nedan för att konfigurera ett datauppsättningsdataflöde till ett molnlagringsmål. I vissa steg skiljer sig förfrågningarna och svaren mellan de olika molnlagringsmålen. I dessa fall använder du flikarna på sidan för att hämta förfrågningar och svar som är specifika för målet som du vill ansluta och exportera datauppsättningar till. Var noga med att använda rätt [!DNL connection spec] och [!DNL flow spec] för målet som du konfigurerar.
+Följ stegen nedan för att konfigurera ett datauppsättningsdataflöde till ett molnlagringsmål. I vissa steg skiljer sig förfrågningarna och svaren mellan de olika molnlagringsmålen. I dessa fall använder du flikarna på sidan för att hämta förfrågningar och svar som är specifika för målet som du vill ansluta och exportera datauppsättningar till. Använd rätt [!DNL connection spec] och [!DNL flow spec] för målet som du konfigurerar.
 
 ## Hämta en lista med datauppsättningar {#retrieve-list-of-available-datasets}
 
@@ -336,7 +336,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 --header 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
 
-Observera att om du vill hämta giltiga datauppsättningar kan du [!DNL connection spec] ID som används i URL:en för begäran måste vara det specifika ID:t för datakällanslutningen för datasjön. `23598e46-f560-407b-88d5-ea6207e49db0`och de två frågeparametrarna `outputField=datasets` och `outputType=activationDatasets` måste anges. Alla andra frågeparametrar är de standardparametrar som stöds av [Katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/).
+Observera att om du vill hämta giltiga datauppsättningar kan du [!DNL connection spec] ID:t som används i URL:en för begäran måste vara det specifika ID:t för datakällanslutningen för datasjön. `23598e46-f560-407b-88d5-ea6207e49db0`och de två frågeparametrarna `outputField=datasets` och `outputType=activationDatasets` måste anges. Alla andra frågeparametrar är de standardparametrar som stöds av [Katalogtjänstens API](https://developer.adobe.com/experience-platform-apis/references/catalog/).
 
 +++
 
@@ -427,7 +427,7 @@ Information om de olika svarsparametrarna för varje returnerad datauppsättning
 
 ## Skapa en källanslutning {#create-source-connection}
 
-![Diagram som visar steg 2 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-create-source-connection.png)
+![Diagram som visar steg 2 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-create-source-connection.png)
 
 När du har hämtat listan över datauppsättningar som du vill exportera kan du skapa en källanslutning med dessa datauppsättnings-ID:n.
 
@@ -493,9 +493,9 @@ Kom ihåg följande:
 
 ## Skapa en (mål) basanslutning {#create-base-connection}
 
-![Diagram som visar steg 3 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-create-base-connection.png)
+![Diagram som visar steg 3 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-create-base-connection.png)
 
-En basanslutning lagrar autentiseringsuppgifterna på ditt mål på ett säkert sätt. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna måste du först hämta [!DNL connection spec] för det önskade målet enligt beskrivningen i avsnittet [Samla anslutningsspecifikationer och flödesspecifikationer](#gather-connection-spec-flow-spec) och sedan titta på `authSpec` svar. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
+En basanslutning lagrar autentiseringsuppgifterna på ditt mål på ett säkert sätt. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta dessa autentiseringsparametrar måste du först hämta [!DNL connection spec] för det önskade målet enligt beskrivningen i avsnittet [Samla anslutningsspecifikationer och flödesspecifikationer](#gather-connection-spec-flow-spec) och sedan titta på `authSpec` av svaret. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
 
 >[!BEGINTABS]
 
@@ -810,7 +810,7 @@ Använda de egenskaper som anges i autentiseringsspecifikationen (dvs. `authSpec
 
 **Begäran**
 
-+++[!DNL Amazon S3] - Basanslutningsbegäran
++++[!DNL Amazon S3] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -861,7 +861,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Azure Blob Storage] - Basanslutningsbegäran
++++[!DNL Azure Blob Storage] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -911,7 +911,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - Basanslutningsbegäran
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -964,7 +964,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Data Landing Zone(DLZ)] - Basanslutningsbegäran
++++[!DNL Data Landing Zone(DLZ)] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -1002,7 +1002,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Google Cloud Storage] - Basanslutningsbegäran
++++[!DNL Google Cloud Storage] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -1910,7 +1910,7 @@ Anteckna målanslutnings-ID från svaret. Detta ID krävs i nästa steg när du 
 
 ## Skapa ett dataflöde {#create-dataflow}
 
-![Diagram som visar steg 5 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-set-up-dataflow.png)
+![Diagram som visar steg 5 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-set-up-dataflow.png)
 
 Det sista steget i målkonfigurationen är att konfigurera ett dataflöde. Ett dataflöde knyter ihop enheter som skapats tidigare och innehåller även alternativ för att konfigurera exportschemat för datauppsättningar. Om du vill skapa dataflödet använder du nyttolasterna nedan, beroende på vilket molnlagringsmål du vill ha, och ersätter enhets-ID:n från tidigare steg.
 
@@ -2240,7 +2240,7 @@ Anteckna dataflödes-ID från svaret. Detta ID krävs i nästa steg när datafl�
 
 ## Hämta dataflödeskörningar {#get-dataflow-runs}
 
-![Diagram som visar steg 6 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-validate-dataflow.png)
+![Diagram som visar steg 6 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-validate-dataflow.png)
 
 Använd API:t för dataflödeskörning om du vill kontrollera körningarna av ett dataflöde:
 
