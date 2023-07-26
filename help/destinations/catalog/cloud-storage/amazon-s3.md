@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 5d318d8fa4207ece26a8b0a291d81907af029aed
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -13,24 +13,12 @@ ht-degree: 0%
 
 ## Destinationsändringslogg {#changelog}
 
->[!IMPORTANT]
->
->Med betaversionen av exportdataset och de förbättrade funktionerna för filexport kan du nu se två [!DNL Amazon S3] i målkatalogen.
->* Om du redan exporterar filer till **[!UICONTROL Amazon S3]** mål, skapa nya dataflöden till den nya **[!UICONTROL Amazon S3 beta]** mål.
->* Om du ännu inte har skapat några dataflöden till **[!UICONTROL Amazon S3]** mål, använd den nya **[!UICONTROL Amazon S3 beta]** exportera filer till **[!UICONTROL Amazon S3]**.
+Med Experience Platform-versionen från juli 2023 [!DNL Amazon S3] mål har nya funktioner enligt nedan:
 
-![Bild av de två Amazon S3-målkorten sida vid sida.](../../assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
-
-Förbättringar i nya [!DNL Amazon S3] omfattar följande destinationskort:
-
-* [Stöd för dataexport](/help/destinations/ui/export-datasets.md).
+* [!BADGE Beta]{type=Informative}[Stöd för dataexport](/help/destinations/ui/export-datasets.md).
 * Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
 * Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
 * [Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
-
-## Översikt {#overview}
-
-Skapa en utgående liveanslutning till din [!DNL Amazon S3] för att med jämna mellanrum exportera datafiler från Adobe Experience Platform till dina egna S3-butiker.
 
 ## Anslut till [!DNL Amazon S3] lagring via API eller användargränssnitt {#connect-api-or-ui}
 
@@ -105,9 +93,9 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Description]**: Ange en beskrivning av destinationen.
 * **[!UICONTROL Bucket name]**: Ange namnet på [!DNL Amazon S3] bucket som ska användas för detta mål.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
-* **[!UICONTROL File type]**: välj det format som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Amazon S3 beta]** mål. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
-* **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Det här alternativet är bara tillgängligt för **[!UICONTROL Amazon S3 beta]** mål.
-* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifest-JSON-fil som innehåller information om exportplats, exportstorlek med mera. Det här alternativet är bara tillgängligt för **[!UICONTROL Amazon S3 beta]** mål.
+* **[!UICONTROL File type]**: välj det format som Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna.
+* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifest-JSON-fil som innehåller information om exportplats, exportstorlek med mera.
 
 >[!TIP]
 >

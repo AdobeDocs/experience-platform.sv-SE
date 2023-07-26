@@ -2,24 +2,23 @@
 title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: 4b9e7c22282a5531f2f25f3d225249e4eb0e178e
+source-git-commit: f069f97e82955fbb3a02c5d6cb73420069fa5403
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1368'
 ht-degree: 0%
 
 ---
 
-# (Beta) Data Landing Zone-mål
+# Data Landing Zone-mål
 
 >[!IMPORTANT]
 >
->* Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Data Landing Zone] kontakta din Adobe-representant och uppge [!DNL Organization ID].
->* Dokumentationssidan refererar till [!DNL Data Landing Zone] *mål*. Det finns också en [!DNL Data Landing Zone] *källa* i källkatalogen. Mer information finns i [[!DNL Data Landing Zone] källa](/help/sources/connectors/cloud-storage/data-landing-zone.md) dokumentation.
+>Dokumentationssidan refererar till [!DNL Data Landing Zone] *mål*. Det finns också en [!DNL Data Landing Zone] *källa* i källkatalogen. Mer information finns i [[!DNL Data Landing Zone] källa](/help/sources/connectors/cloud-storage/data-landing-zone.md) dokumentation.
 
 
 ## Översikt {#overview}
 
-[!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform och ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformar. Du har tillgång till en [!DNL Data Landing Zone] behållare per sandlåda och den totala datavolymen för alla behållare begränsas till den totala datamängd som ingår i din licens för plattformsprodukter och -tjänster. Alla kunder med Platform och dess programtjänster som [!DNL Customer Journey Analytics], [!DNL Journey Orchestration], [!DNL Intelligent Services]och [!DNL Real-Time Customer Data Platform] har etablerats med en [!DNL Data Landing Zone] behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
+[!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformar. Du har tillgång till en [!DNL Data Landing Zone] behållare per sandlåda och den totala datavolymen för alla behållare begränsas till den totala datamängd som ingår i din licens för plattformsprodukter och -tjänster. Alla kunder med Platform och dess programtjänster som [!DNL Customer Journey Analytics], [!DNL Journey Orchestration], [!DNL Intelligent Services]och [!DNL Real-Time Customer Data Platform] har etablerats med en [!DNL Data Landing Zone] behållare per sandlåda. Du kan läsa och skriva filer till behållaren via [!DNL Azure Storage Explorer] eller kommandoradsgränssnittet.
 
 [!DNL Data Landing Zone] stöder SAS-baserad autentisering och dess data skyddas med standard [!DNL Azure Blob] Mekanismer för förvaringssäkerhet i vila och under transitering. SAS-baserad autentisering ger säker åtkomst till [!DNL Data Landing Zone] behållaren via en offentlig internetanslutning. Du behöver inte göra några nätverksändringar [!DNL Data Landing Zone] container, vilket betyder att du inte behöver konfigurera några tillåtelselista- eller korsregionsinställningar för ditt nätverk.
 
@@ -27,16 +26,16 @@ Plattformen har en strikt TTL-regel (time-to-live) på sju dagar för alla filer
 
 ## Anslut till [!UICONTROL Data Landing Zone] lagring via API eller användargränssnitt {#connect-api-or-ui}
 
-* Ansluta till [!UICONTROL Data Landing Zone] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
-* Ansluta till [!UICONTROL Data Landing Zone] lagringsplats programmatiskt, läs [Aktivera målgrupper för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
+* Ansluta till [!UICONTROL Data Landing Zone] lagringsplats med hjälp av användargränssnittet för plattformen, läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
+* Ansluta till [!UICONTROL Data Landing Zone] lagringsplats via programmering, läs [Aktivera målgrupper för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
 
-## Målgrupper som stöds {#supported-audiences}
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
 Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+Dessutom stöder denna destination även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
@@ -61,13 +60,13 @@ Observera följande krav som måste vara uppfyllda innan du kan använda [!DNL D
 
 ### Koppla samman [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer]
 
-Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone] behållare. Börja använda [!DNL Data Landing Zone], måste du först hämta dina inloggningsuppgifter och ange dem i [!DNL Azure Storage Explorer]och koppla samman [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer].
+Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-us/products/storage/storage-explorer/) för att hantera innehållet i [!DNL Data Landing Zone] behållare. Börja använda [!DNL Data Landing Zone], måste du först hämta dina inloggningsuppgifter, ange dem i [!DNL Azure Storage Explorer]och koppla samman [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer].
 
 I [!DNL Azure Storage Explorer] Välj anslutningsikonen i det vänstra navigeringsfältet. The **Välj resurs** visas så att du kan ansluta till dem. Välj **[!DNL Blob container]** för att ansluta till [!DNL Data Landing Zone] lagring.
 
 ![select-resource](/help/sources/images/tutorials/create/dlz/select-resource.png)
 
-Nästa, välj **URL för delad åtkomstsignatur (SAS)** som anslutningsmetod och välj **Nästa**.
+Nästa, välj **URL för delad åtkomstsignatur (SAS)** som anslutningsmetod och välj sedan **Nästa**.
 
 ![select-connection-method](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
 
@@ -128,7 +127,7 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 
 ### Uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter {#update-dlz-credentials}
 
-Du kan även uppdatera dina autentiseringsuppgifter när du vill. Du kan uppdatera din `SASToken` genom att göra en POST-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
+Du kan även uppdatera dina inloggningsuppgifter när du vill. Du kan uppdatera din `SASToken` genom att göra en POST-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
 
 **API-format**
 
@@ -176,7 +175,7 @@ Ange ditt visningsnamn (`containerName`) och [!DNL Data Landing Zone] SAS-URL, s
 
 ![enter-connection-info](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
 
-The **Sammanfattning** visas så att du får en översikt över dina inställningar, inklusive information om [!DNL Blob] slutpunkt och behörigheter. Välj **Anslut**.
+The **Sammanfattning** visas så att du får en översikt över dina inställningar, inklusive information om [!DNL Blob] slutpunkt och behörigheter. När du är klar väljer du **Anslut**.
 
 ![sammanfattning](/help/sources/images/tutorials/create/dlz/summary.png)
 
@@ -190,13 +189,13 @@ Med [!DNL Data Landing Zone] behållare ansluten till [!DNL Azure Storage Explor
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
 ### Autentisera till mål {#authenticate}
 
-Kontrollera att du har anslutit [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer] enligt beskrivningen i [krav](#prerequisites) -avsnitt. För [!DNL Data Landing Zone] är ett lagringsutrymme som tillhandahålls av Adobe behöver du inte utföra några ytterligare steg i användargränssnittet i Experience Platform för att autentisera mot målet.
+Kontrollera att du har anslutit din [!DNL Data Landing Zone] behållare till [!DNL Azure Storage Explorer] enligt beskrivningen i [krav](#prerequisites) -avsnitt. För [!DNL Data Landing Zone] är ett lagringsutrymme som tillhandahålls av Adobe behöver du inte utföra några ytterligare steg i användargränssnittet i Experience Platform för att autentisera mot målet.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -205,13 +204,13 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
-* **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL File type]**: välj det format som Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna.
-* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat.
+* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifest-JSON-fil som innehåller information om exportplats, exportstorlek med mera.
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -219,7 +218,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

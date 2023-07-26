@@ -1,12 +1,12 @@
 ---
-keywords: aktivera profildestinationer;aktivera destinationer;aktivera data; aktivera e-postmarknadsföringsmål, aktivera molnlagringsmål
+keywords: aktivera profilmål;aktivera mål;aktivera data; aktivera e-postmarknadsföringsmål; aktivera molnlagringsmål
 title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
+source-git-commit: 1e6cdbaa12c89dc678232245a9544bdfa81aebcf
 workflow-type: tm+mt
-source-wordcount: '3805'
+source-wordcount: '3601'
 ht-degree: 0%
 
 ---
@@ -16,16 +16,14 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
-> * Aktivera målgrupper och aktivera [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+> * Så här aktiverar du målgrupper och aktiverar [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
 > * Så här aktiverar du målgrupper utan att gå igenom [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
 > 
 > Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
->
-> Vissa kunder som deltar i betaprogrammet för förbättrad filexport ser de nya **[!UICONTROL Mapping]** som en del av aktiveringsarbetsflödet till [nya lagringsplatser för betmoln](/help/release-notes/2022/october-2022.md#destinations). Tänk på [kända begränsningar](#known-limitations) som en del av releasen.
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform batchprofilbaserade destinationer, som molnlagring och e-postmarknadsföringsdestinationer.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform batchprofilbaserade destinationer, som molnlagring och e-postmarknadsföring.
 
 ## Förutsättningar {#prerequisites}
 
@@ -107,7 +105,7 @@ Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som i
 1. Använd **[!UICONTROL Frequency]** för att välja exportfrekvens:
 
    * **[!UICONTROL Once]**: schemalägg en enda gång vid behov av fullständig filexport.
-   * **[!UICONTROL Daily]**: schemalägga fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
+   * **[!UICONTROL Daily]**: schemalägg fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
 
 1. Använd **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller enligt schema, vid en viss tidpunkt. När du väljer **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
@@ -115,7 +113,7 @@ Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som i
    >
    >The **[!UICONTROL After segment evaluation]** det alternativ som beskrivs nedan är endast tillgängligt för utvalda Beta-kunder.
 
-   Använd **[!UICONTROL After segment evaluation]** Möjlighet att låta aktiveringsjobbet köras omedelbart efter att det dagliga batchsegmenteringsjobbet för plattformen har slutförts. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs.
+   Använd **[!UICONTROL After segment evaluation]** Möjlighet att låta aktiveringsjobbet köras omedelbart efter det dagliga batchsegmenteringsjobbet för plattformen. Med det här alternativet exporteras de senaste profilerna till målet när aktiveringsjobbet körs.
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
@@ -151,7 +149,7 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
    * **[!UICONTROL Daily]**: schemalägg inkrementell filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 8 eller 12:e timme.
 
-1. Använd **[!UICONTROL Time]** väljaren för att välja tid på dagen, i [!DNL UTC] format, när exporten ska ske.
+1. Använd **[!UICONTROL Time]** väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
    >[!IMPORTANT]
    >
@@ -193,10 +191,10 @@ Målnamnet och målgrupps-ID:t kan inte tas bort från filnamn. Förutom dessa a
 | **[!UICONTROL Audience name]** | Namnet på den exporterade publiken. |
 | **[!UICONTROL Date and time]** | Välj mellan att lägga till en `MMDDYYYY_HHMMSS` eller en UNIX 10-siffrig tidsstämpel som anger när filerna genereras. Välj ett av dessa alternativ om du vill att ett dynamiskt filnamn ska skapas för varje stegvis export. |
 | **[!UICONTROL Custom text]** | All egen text som du vill lägga till i filnamnen. |
-| **[!UICONTROL Destination ID]** | ID:t för måldataflödet som du använder för att exportera målgruppen. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
-| **[!UICONTROL Destination name]** | Namnet på måldataflödet som du använder för att exportera målgruppen. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
-| **[!UICONTROL Organization name]** | Organisationens namn i Experience Platform. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
-| **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera målgruppen. <br> **Anteckning**: Det här alternativet för att lägga till filnamn är endast tillgängligt för betatestare som deltar i det förbättrade betaprogrammet för filexport. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet. |
+| **[!UICONTROL Destination ID]** | ID:t för måldataflödet som du använder för att exportera målgruppen. |
+| **[!UICONTROL Destination name]** | Namnet på måldataflödet som du använder för att exportera målgruppen. |
+| **[!UICONTROL Organization name]** | Organisationens namn i Experience Platform. |
+| **[!UICONTROL Sandbox name]** | ID:t för sandlådan som du använder för att exportera målgruppen. |
 
 {style="table-layout:auto"}
 
@@ -204,43 +202,48 @@ Välj **[!UICONTROL Apply changes]** för att bekräfta ditt val.
 
 >[!IMPORTANT]
 > 
->Om du inte markerar **[!UICONTROL Date and Time]** -komponenten kommer filnamnen att vara statiska och den nya exporterade filen kommer att skriva över den tidigare filen på lagringsplatsen vid varje export. Detta är det rekommenderade alternativet när du kör ett återkommande importjobb från en lagringsplats till en e-postmarknadsföringsplattform.
+>Om du inte markerar **[!UICONTROL Date and Time]** -komponenten kommer filnamnen att vara statiska och den nya exporterade filen kommer att skriva över den tidigare filen på lagringsplatsen vid varje export. När du kör ett återkommande importjobb från en lagringsplats till en e-postmarknadsföringsplattform rekommenderas detta.
 
-När du har konfigurerat alla målgrupper väljer du **[!UICONTROL Next]** för att fortsätta.
+När du är klar med konfigurationen av alla målgrupper väljer du **[!UICONTROL Next]** för att fortsätta.
 
-## Välj profilattribut {#select-attributes}
+## Mappning {#mapping}
 
-För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
+I det här steget måste du välja de profilattribut som du vill lägga till i filerna som exporteras till målmålet. Så här väljer du profilattribut och identiteter för export:
 
-1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
+1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new field]**.
 
-   ![Markera bilden med knappen Lägg till nytt fält.](../assets/ui/activate-batch-profile-destinations/add-new-field.png)
+   ![Lägg till ny fältkontroll som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
 
-1. Markera pilen till höger om **[!UICONTROL Schema field]** post.
+1. Markera pilen till höger om **[!UICONTROL Source field]** post.
 
-   ![Bildmarkering som visar hur du väljer ett källfält.](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
+   ![Välj källfältskontrollen som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
 
-1. I **[!UICONTROL Select field]** markerar du de XDM-attribut eller identitetsnamnutrymmen som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
+1. I **[!UICONTROL Select source field]** väljer du de profilattribut och identiteter som du vill inkludera i de exporterade filerna till målet och väljer sedan **[!UICONTROL Select]**.
 
-   ![Bild som visar de olika fälten som är tillgängliga som källfält.](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
+   >[!TIP]
+   > 
+   >Du kan använda sökfältet för att begränsa urvalet, vilket visas i bilden nedan.
 
-1. Om du vill lägga till fler mappningar upprepar du steg ett till tre.
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
 
->[!NOTE]
->
-> Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
 
-![Bild som visar förifyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
+1. Fältet som du valde för export visas nu i mappningsvyn. Om du vill kan du redigera namnet på rubriken i den exporterade filen. Det gör du genom att markera ikonen i målfältet.
 
->[!IMPORTANT]
->
->På grund av en känd begränsning kan du för närvarande inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
->
->![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/mapping-step-select-target-field.png)
 
-Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
-* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+1. I **[!UICONTROL Select target field]** skriver du in sidhuvudet i den exporterade filen och väljer **[!UICONTROL Select]**.
+
+   ![Modalt fönster med ett inskrivet eget namn för ett sidhuvud.](../assets/ui/activate-batch-profile-destinations/select-target-field-mapping.png)
+
+1. Fältet som du har valt för export visas nu i mappningsvyn och det redigerade huvudet i den exporterade filen visas.
+
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
+
+1. (Valfritt) Du kan välja att det exporterade fältet ska vara en [obligatorisk nyckel](#mandatory-keys) eller en [dedupliceringsnyckel](#deduplication-keys).
+
+   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-mandatory-deduplication-key.png)
+
+1. Om du vill lägga till fler fält för export upprepar du stegen ovan.
 
 ### Obligatoriska attribut {#mandatory-attributes}
 
@@ -249,13 +252,13 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 >title="Om obligatoriska attribut"
 >abstract="Välj de XDM-schemaattribut som alla exporterade profiler ska inkludera. Profiler utan den obligatoriska nyckeln exporteras inte till målet. Om du inte markerar en obligatorisk nyckel exporteras alla kvalificerade profiler oavsett deras attribut."
 
-Ett obligatoriskt attribut är en användaraktiverad kryssruta som ser till att alla profilposter innehåller det valda attributet. Till exempel: alla exporterade profiler innehåller en e-postadress. &#x200B;
+Ett obligatoriskt attribut är en användaraktiverad kryssruta som ser till att alla profilposter innehåller det valda attributet. Till exempel innehåller alla exporterade profiler en e-postadress. &#x200B;
 
-Du kan markera attribut som obligatoriska för att säkerställa att [!DNL Platform] exporterar bara de profiler som innehåller det specifika attributet. Det innebär att den kan användas som en extra form av filtrering. Markera ett attribut som obligatoriskt är **not** krävs.
+Du kan markera attribut som obligatoriska för att se till att [!DNL Platform] exporterar bara de profiler som innehåller det specifika attributet. Det innebär att den kan användas som en extra form av filtrering. Markera ett attribut som obligatoriskt är **not** krävs.
 
 Om du inte väljer ett obligatoriskt attribut exporteras alla kvalificerade profiler oavsett deras attribut.
 
-Vi rekommenderar att ett av attributen är [unik identifierare](../../destinations/catalog/email-marketing/overview.md#identity) från ditt schema. Mer information om obligatoriska attribut finns i avsnittet om identitet i [E-postmarknadsföringsmål](../../destinations/catalog/email-marketing/overview.md#identity) dokumentation.
+Vi rekommenderar att ett av attributen [unik identifierare](../../destinations/catalog/email-marketing/overview.md#identity) från ditt schema. Mer information om obligatoriska attribut finns i avsnittet om identitet i [E-postmarknadsföringsmål](../../destinations/catalog/email-marketing/overview.md#identity) dokumentation.
 
 ### Dedupliceringsnycklar {#deduplication-keys}
 
@@ -354,7 +357,7 @@ Låt oss titta på följande två profiler.
 }
 ```
 
-### Användning av borttagning av dubbletter, fall 1: ingen deduplicering {#deduplication-use-case-1}
+### Användning av borttagning av dubbletter, fall 1: ingen borttagning av dubbletter {#deduplication-use-case-1}
 
 Om du inte använder borttagning av dubbletter innehåller exportfilen följande poster.
 
@@ -364,7 +367,7 @@ Om du inte använder borttagning av dubbletter innehåller exportfilen följande
 | johndoe@example.com | John | D |
 
 
-### Användning vid borttagning av dubbletter, fall 2: deduplicering baserad på ID-namnutrymme {#deduplication-use-case-2}
+### Användning av deduplicering, fall 2: deduplicering baserad på identitetsnamnutrymme {#deduplication-use-case-2}
 
 Anta borttagning av dubbletter av [!DNL Email] -namnutrymmet innehåller exportfilen följande poster. Profil B är den senaste som är kvalificerad för målgruppen, så det är den enda som exporteras.
 
@@ -373,7 +376,7 @@ Anta borttagning av dubbletter av [!DNL Email] -namnutrymmet innehåller exportf
 | johndoe_1@example.com | johndoe@example.com | John | D |
 | johndoe_2@example.com | johndoe@example.com | John | D |
 
-### Användning av borttagning av dubbletter, exempel 3: deduplicering baserad på ett enda profilattribut {#deduplication-use-case-3}
+### Användning av deduplicering, exempel 3: deduplicering baserad på ett enda profilattribut {#deduplication-use-case-3}
 
 Anta borttagning av dubbletter av `personal Email` skulle exportfilen innehålla följande post. Profil B är den senaste som är kvalificerad för målgruppen, så det är den enda som exporteras.
 
@@ -382,7 +385,7 @@ Anta borttagning av dubbletter av `personal Email` skulle exportfilen innehålla
 | johndoe@example.com | John | D |
 
 
-### Användning vid borttagning av dubbletter - fall 4: deduplicering baserad på två profilattribut {#deduplication-use-case-4}
+### Användning av deduplicering, fall 4: deduplicering baserad på två profilattribut {#deduplication-use-case-4}
 
 Anta borttagning av dubbletter med den sammansatta nyckeln `personalEmail + lastName`, skulle exportfilen innehålla följande poster.
 
@@ -390,7 +393,6 @@ Anta borttagning av dubbletter med den sammansatta nyckeln `personalEmail + last
 |---|---|---|
 | johndoe@example.com | D | John |
 | johndoe@example.com | Doe | John |
-
 
 Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] eller e-postadress som en dedupliceringsnyckel för att säkerställa att alla profilposter identifieras unikt.
 
@@ -401,52 +403,7 @@ Adobe rekommenderar att du väljer ett identitetsnamnutrymme som [!DNL CRM ID] e
 >* Fälten används i målgruppsdefinitionen.
 >* Fälten konfigureras som projicerade attribut för målmålet.
 >
-> Om fältet `person.name.firstName` har vissa dataanvändningsetiketter som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningsprincipen i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
-
-## (Beta) Mappning {#mapping}
-
->[!IMPORTANT]
-> 
->Vissa betakunder kan se en förbättrad **[!UICONTROL Mapping]** som ersätter [Välj profilattribut](#select-attributes) vidare beskrivning ovan. Den här nya **[!UICONTROL Mapping]** kan du redigera rubrikerna för exporterade filer till valfritt eget namn.
-> 
-> Funktionen och dokumentationen kan komma att ändras. Kontakta din Adobe-representant eller kundtjänst om du vill ha tillgång till betaprogrammet.
-
-I det här steget måste du välja de profilattribut som du vill lägga till i filerna som exporteras till målmålet. Så här väljer du profilattribut och identiteter för export:
-
-1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new field]**.
-
-   ![Lägg till ny fältkontroll som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
-
-1. Markera pilen till höger om **[!UICONTROL Source field]** post.
-
-   ![Välj källfältskontrollen som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
-
-1. I **[!UICONTROL Select source field]** väljer du de profilattribut och identiteter som du vill inkludera i de exporterade filerna till målet och väljer sedan **[!UICONTROL Select]**.
-
-   >[!TIP]
-   > 
-   >Du kan använda sökfältet för att begränsa urvalet, vilket visas i bilden nedan.
-
-   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
-
-
-1. Fältet som du valde för export visas nu i mappningsvyn. Om du vill kan du redigera namnet på rubriken i den exporterade filen. Det gör du genom att markera ikonen i målfältet.
-
-   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/mapping-step-select-target-field.png)
-
-1. I **[!UICONTROL Select target field]** skriver du in det önskade namnet på sidhuvudet i den exporterade filen och väljer **[!UICONTROL Select]**.
-
-   ![Modalt fönster med ett inskrivet eget namn för ett sidhuvud.](../assets/ui/activate-batch-profile-destinations/select-target-field-mapping.png)
-
-1. Fältet som du har valt för export visas nu i mappningsvyn och det redigerade huvudet i den exporterade filen visas.
-
-   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
-
-1. (Valfritt) Du kan välja att det exporterade fältet ska vara en [obligatorisk nyckel](#mandatory-keys) eller en [dedupliceringsnyckel](#deduplication-keys).
-
-   ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-mandatory-deduplication-key.png)
-
-1. Om du vill lägga till fler fält för export upprepar du stegen ovan.
+> Om till exempel fältet `person.name.firstName` har vissa dataanvändningsetiketter som är i konflikt med målets marknadsföringsåtgärd, visas en överträdelse av dataanvändningspolicyn i granskningssteget. Mer information finns i [Datastyrning i Adobe Experience Platform](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
 ### Kända begränsningar {#known-limitations}
 
@@ -454,7 +411,7 @@ Den nya **[!UICONTROL Mapping]** sidan har följande kända begränsningar:
 
 #### Målgruppsmedlemskapsattributet kan inte väljas via mappningsarbetsflödet
 
-På grund av en känd begränsning kan du för närvarande inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
 
 ![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
 
@@ -471,6 +428,46 @@ Det går inte att markera identitetsnamnutrymmen för export, vilket visas i bil
 Som en tillfällig lösning kan du antingen:
 * Använd de gamla molnlagringsmålen för dataflödena där du vill inkludera identitetsnamnutrymmen i exporter
 * Överför identiteter som attribut till Experience Platform och exportera dem sedan till dina molnlagringsplatser.
+
+## Välj profilattribut {#select-attributes}
+
+>[!IMPORTANT]
+> 
+>Alla molnlagringsmål i katalogen kan visa en förbättrad [[!UICONTROL Mapping] steg](#mapping) som ersätter **[!UICONTROL Select attributes]** som beskrivs i det här avsnittet.
+>
+>Detta **[!UICONTROL Select attributes]** visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
+
+För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
+
+1. I **[!UICONTROL Select attributes]** sida, markera **[!UICONTROL Add new field]**.
+
+   ![Markering av bilder med knappen Lägg till nytt fält.](../assets/ui/activate-batch-profile-destinations/add-new-field.png)
+
+2. Markera pilen till höger om **[!UICONTROL Schema field]** post.
+
+   ![Bildmarkering som visar hur du väljer ett källfält.](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
+
+3. I **[!UICONTROL Select field]** markerar du de XDM-attribut eller identitetsnamnutrymmen som du vill skicka till målet och väljer sedan **[!UICONTROL Select]**.
+
+   ![Bild som visar de olika fälten som är tillgängliga som källfält.](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
+
+4. Om du vill lägga till fler mappningar upprepar du steg ett till tre.
+
+>[!NOTE]
+>
+> Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+
+![Bild som visar förifyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
+
+>[!IMPORTANT]
+>
+>På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+>
+>![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+
+Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
+* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
+* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
 ## Välj anrikningsattribut {#select-enrichment-attributes}
 

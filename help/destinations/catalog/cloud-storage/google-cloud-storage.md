@@ -1,36 +1,32 @@
 ---
-title: (Beta) Anslutning till Google Cloud-lagring
+title: Google Cloud-lagringsanslutning
 description: Lär dig hur du ansluter till Google Cloud Storage och aktiverar målgrupper eller exporterar datauppsättningar.
 exl-id: ab274270-ae8c-4264-ba64-700b118e6435
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: f069f97e82955fbb3a02c5d6cb73420069fa5403
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '977'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL Google Cloud Storage] anslutning
-
->[!IMPORTANT]
->
->Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Cloud Storage] kontakta din Adobe-representant och uppge [!DNL Organization ID].
+# [!DNL Google Cloud Storage] anslutning
 
 ## Översikt {#overview}
 
-Skapa en utgående liveanslutning till [!DNL Google Cloud Storage] att regelbundet exportera datafiler från Adobe Experience Platform till era egna fickor.
+Skapa en utgående liveanslutning till [!DNL Google Cloud Storage] att regelbundet exportera datafiler från Adobe Experience Platform till era egna.
 
 ## Anslut till [!DNL Google Cloud Storage] lagring via API eller användargränssnitt {#connect-api-or-ui}
 
-* Ansluta till [!DNL Google Cloud Storage] lagringsplats med hjälp av användargränssnittet för plattformen, läsa avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
-* Ansluta till [!DNL Google Cloud Storage] lagringsplats programmatiskt, läs [Aktivera målgrupper för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
+* Ansluta till [!DNL Google Cloud Storage] lagringsplats med hjälp av användargränssnittet för plattformen, läs avsnitten [Anslut till målet](#connect) och [Aktivera målgrupper till det här målet](#activate) nedan.
+* Ansluta till [!DNL Google Cloud Storage] lagringsplats via programmering, läs [Aktivera målgrupper för filbaserade mål med hjälp av API-självstudiekursen för Flow Service](../../api/activate-segments-file-based-destinations.md).
 
-## Målgrupper som stöds {#supported-audiences}
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
 Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+Dessutom stöder denna destination även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
@@ -55,7 +51,7 @@ För att kunna ansluta plattformen till [!DNL Google Cloud Storage]måste du fö
 
 ![Kontrollpanelen för Google Cloud-plattformen med molnlagring och inställningar markerade.](../../../sources/images/tutorials/create/google-cloud-storage/nav.png)
 
-The **[!UICONTROL Settings]** visas. Här kan du se information om [!DNL Google] projekt-ID och information om [!DNL Google Cloud Storage] konto. Välj **[!UICONTROL Interoperability]** i det övre sidhuvudet.
+The **[!UICONTROL Settings]** visas. Här kan du se information om [!DNL Google] projekt-ID och information om [!DNL Google Cloud Storage] konto. Om du vill komma åt inställningarna för interoperabilitet väljer du **[!UICONTROL Interoperability]** i det övre sidhuvudet.
 
 ![Fliken Interoperabilitet visas på kontrollpanelen för Google Cloud-plattformen.](../../../sources/images/tutorials/create/google-cloud-storage/project-access.png)
 
@@ -69,7 +65,7 @@ Du kan använda ditt nyligen genererade ID för åtkomstnyckel och hemlig åtkom
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](/help/destinations/ui/connect-destination.md). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -77,9 +73,9 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-* **[!UICONTROL Access key ID]**: En 61-siffrig alfanumerisk sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
-* **[!UICONTROL Secret access key]**: En 40-siffrig base64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
-* **[!UICONTROL Encryption key]**: Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
+* **[!UICONTROL Access key ID]**: En alfanumerisk sträng på 61 tecken som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
+* **[!UICONTROL Secret access key]**: En 40-tecken, base64-kodad sträng som används för att autentisera [!DNL Google Cloud Storage] konto till plattform. Mer information om hur du får fram det här värdet finns i [krav](#prerequisites) ovan.
+* **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
@@ -93,13 +89,13 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Description]**: Valfritt. Du kan till exempel ange vilken kampanj du använder det här målet för.
 * **[!UICONTROL Bucket name]**: Ange namnet på [!DNL Google Cloud Storage] bucket som ska användas för detta mål.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
-* **[!UICONTROL File type]**: väljer du vilket format Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
+* **[!UICONTROL File type]**: välj det format som Experience Platform ska använda för de exporterade filerna. När du väljer [!UICONTROL CSV] kan du också [konfigurera filformateringsalternativ](../../ui/batch-destinations-file-formatting-options.md).
 * **[!UICONTROL Compression format]**: välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna.
-* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifestfil för JSON som innehåller information om exportplats, exportstorlek och mycket annat.
+* **[!UICONTROL Include manifest file]**: aktivera det här alternativet om du vill att exporten ska innehålla en manifest-JSON-fil som innehåller information om exportplats, exportstorlek med mera.
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -107,7 +103,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
