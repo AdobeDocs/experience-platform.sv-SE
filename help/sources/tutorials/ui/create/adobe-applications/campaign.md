@@ -18,10 +18,10 @@ I den här självstudiekursen beskrivs hur du skapar en källanslutning för att
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Plattformen gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../../../home.md): Plattformen tillåter att data hämtas från olika källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Anslut Adobe Campaign Managed Cloud Services till plattform
@@ -30,7 +30,7 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet för att begränsa vilka källor som visas.
 
-Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Campaign Managed Cloud Services]** och sedan markera **[!UICONTROL Add data]**.
+Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Campaign Managed Cloud Services]** och sedan **[!UICONTROL Add data]**.
 
 ![Källkatalogen som visar Adobe Campaign Managed Cloud Services-kortet.](../../../../images/tutorials/create/campaign/catalog.png)
 
@@ -51,7 +51,7 @@ Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Ca
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_schema"
 >title="Schemanamn"
->abstract="Namnet på entiteten som definieras i Adobe Campaign-databasen."
+>abstract="Namnet på den entitet som definieras i Adobe Campaign-databasen."
 >text="Learn more in documentation"
 
 The [!UICONTROL Select data] visas, där du får ett gränssnitt för att konfigurera [!UICONTROL Adobe Campaign instance], [!UICONTROL Target mapping]och [!UICONTROL Schema name].
@@ -60,7 +60,7 @@ The [!UICONTROL Select data] visas, där du får ett gränssnitt för att konfig
 | --- | --- |
 | Adobe Campaign, instans | Namnet på den Adobe Campaign-miljöinstans som du använder. |
 | Målmappning | De tekniska objekt som används av Campaign för att leverera meddelanden och innehåller alla tekniska inställningar som krävs för att skicka leveranser. |
-| Schemanamn | Namnet på schemaentiteten som du ska hämta till plattformen. Du kan välja mellan Leveranslogg och Spårningslogg. |
+| Schemanamn | Namnet på schemaentiteten som du ska hämta till plattformen. Exempel: Leveranslogg och spårningslogg. |
 
 ![Ett gränssnitt där du kan konfigurera din Adobe Campaign-instans, målmappning och schemanamn.](../../../../images/tutorials/create/campaign/select-data.png)
 
@@ -68,7 +68,7 @@ När du har angett värden för Campaign-instansen, målmappningen och schemanam
 
 ![En förhandsgranskning av schemahierarkin samt ett exempel på datauppsättningen](../../../../images/tutorials/create/campaign/preview.png)
 
-### Använd en befintlig datauppsättning
+### Använd en befintlig datamängd
 
 The [!UICONTROL Dataflow detail] På sidan kan du välja om du vill använda en befintlig datauppsättning eller konfigurera en ny datauppsättning för dataflödet.
 
@@ -86,7 +86,7 @@ Om du vill använda en ny datauppsättning väljer du **[!UICONTROL New dataset]
 
 ### Aktivera aviseringar
 
-Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på källvarningar med hjälp av användargränssnittet](../../alerts.md).
+Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på källvarningar med användargränssnittet](../../alerts.md).
 
 När du är klar med informationen om dataflödet väljer du **[!UICONTROL Next]**.
 
@@ -110,7 +110,7 @@ När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen till den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
 När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
@@ -131,9 +131,9 @@ Välj sedan måldatauppsättningen i listan med dataflöden som visas.
 
 Sidan för datauppsättningsaktivitet visas. Härifrån kan du se information om dataflödets prestanda, bland annat hur snabbt data har importerats, slutförda batchar och misslyckade batchar.
 
-På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabeskrivningen för dataflödet, aktivera partiell import- och feldiagnostik samt lägga till nya data i datauppsättningen.
+På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabeskrivningen för ditt dataflöde, aktivera partiell import och feldiagnostik samt lägga till nya data i datauppsättningen.
 
-![Ett gränssnitt med diagram som representerar inmatningsfrekvensen för en vald datauppsättning.](../../../../images/tutorials/create/campaign/dataset-activity.png)
+![Ett gränssnitt med diagram som representerar inmatningsfrekvensen för en vald datamängd.](../../../../images/tutorials/create/campaign/dataset-activity.png)
 
 ## Nästa steg
 

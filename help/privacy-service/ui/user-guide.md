@@ -26,9 +26,9 @@ Det här dokumentet innehåller steg för att skapa och hantera sekretessförfr�
 >
 >Det finns nu en hög överföringsgräns per dag för att förhindra missbruk av tjänsten. Användare som råkar missbruka systemet kommer att ha åtkomst till tjänsten inaktiverad. Därefter kommer ett möte att hållas med dem för att diskutera deras åtgärder och hur Privacy Servicen kan användas.
 
-## Bläddra i [!DNL Privacy Service] Kontrollpanel för användargränssnitt
+## Sök i [!DNL Privacy Service] Kontrollpanel för användargränssnitt
 
-Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widgetar som gör att du kan visa statusen för dina sekretessjobb: &quot;[!UICONTROL Status Report]&quot; och &quot;[!UICONTROL Job Requests]&quot;. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
+Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widgetar som gör att du kan visa status för dina sekretessjobb: &quot;[!UICONTROL Status Report]och &quot;[!UICONTROL Job Requests]&quot;. Kontrollpanelen visar även den aktuella valda regeln för de visade jobben.
 
 ![Kontrollpanel för användargränssnitt](../images/user-guide/dashboard.png)
 
@@ -54,9 +54,9 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 
 >[!NOTE]
 >
->Se översikten på [sekretessbestämmelser](../regulations/overview.md) Mer information om den rättsliga ramen för varje förordning.
+>Se översikten på [sekretessbestämmelser](../regulations/overview.md) för mer information om den rättsliga ramen för varje förordning.
 
-Jobb för varje regel spåras separat. Om du vill växla mellan olika regeltyper väljer du **[!UICONTROL Regulation Type]** och välj önskad regel i listan.
+Jobb för varje regeltyp spåras separat. Om du vill växla mellan olika regeltyper väljer du **[!UICONTROL Regulation Type]** och välj önskad regel i listan.
 
 ![Privacy Service Console med listrutan Regeltyp.](../images/user-guide/regulation.png)
 
@@ -111,7 +111,7 @@ Om du vill hämta alla jobbdata som en CSV-fil väljer du **[!UICONTROL Export t
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_requests_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Begäranden</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. Välj <b>Överför JSON</b> och ladda upp filen. Om du inte har någon JSON-fil att överföra väljer du <b>Ladda ned Adobe-GDPR-Request.json</b> om du vill hämta en mall som du kan fylla i. Överför JSON och välj <b>Skapa</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html?lang=sv">Användarhandbok för Privacy Service</a> på Experience League.</li></ul>"
+>abstract="<ul><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html#logging-in-from-experience-platform">Begäranden</a> i den vänstra navigeringen för att öppna sekretesspolicyn och välj sedan <b>Skapa förfrågan</b>.</li><li>Härifrån kan du antingen använda begärandeverktyget eller överföra en JSON-fil med registrerade.</li><li>Om du använder begärandebyggaren väljer du jobbtyp (åtkomst och/eller borttagning) och sedan den typ av identitet som du anger (e-post, ECID eller AAID) eller anger ett anpassat ID-namnutrymme. Ange lämpliga identitetsvärden för kunderna och välj <b>Skapa</b> när du är klar.</li><li>Om du överför en JSON-fil markerar du pilen bredvid Skapa begäran. Välj i listan med alternativ <b>Överför JSON</b> och ladda upp filen. Om du inte har någon JSON-fil att överföra väljer du <b>Ladda ned Adobe-GDPR-Request.json</b> om du vill hämta en mall som du kan fylla i. Ladda upp JSON och välj <b>Skapa</b> när du är klar.</li><li>Mer hjälp om den här funktionen finns i <a href="https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/user-guide.html?lang=sv">Användarhandbok för Privacy Service</a> på Experience League.</li></ul>"
 
 >[!NOTE]
 >
@@ -126,7 +126,7 @@ Steg för att använda dessa metoder finns i följande avsnitt.
 
 ### Använda Request Builder {#request-builder}
 
-Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade förfrågningar kan det vara bättre att [överföra en JSON-fil](#json) i stället.
+Med hjälp av Request Builder kan du manuellt skapa en ny begäran om sekretessjobb i användargränssnittet. Request Builder är bäst att använda för enklare och mindre uppsättningar av begäranden eftersom Request Builder begränsar antalet begäranden som bara har ID-typ per användare. För mer komplicerade förfrågningar kan det vara bättre att [ladda upp en JSON-fil](#json) i stället.
 
 Om du vill börja använda Request Builder väljer du **[!UICONTROL Create Request]** nedanför widgeten Statusrapport till höger på skärmen.
 
@@ -160,7 +160,7 @@ Dialogrutan försvinner och det nya jobbet (eller de nya jobben) visas i widgete
 
 ### Överföra en JSON-fil {#json}
 
-När du skapar mer komplicerade begäranden, t.ex. sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
+När du skapar mer komplicerade begäranden, till exempel sådana som använder flera ID-typer för varje registrerade som behandlas, kan du skapa en begäran genom att överföra en JSON-fil.
 
 Välj pilen bredvid **[!UICONTROL Create Request]**, under widgeten Statusrapport till höger på skärmen. Välj **[!UICONTROL Upload JSON]**.
 

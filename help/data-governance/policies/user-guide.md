@@ -18,7 +18,7 @@ ht-degree: 0%
 >title="Integrera och få kundens samtycke i era profildata"
 >abstract="<h2>Beskrivning</h2><p>Med Platform kan ni integrera de data ni har samlat in från era kunder i deras respektive profiler. Du kan sedan ange profiler för samtycke för att avgöra om dessa data kan inkluderas i segment som aktiveras för vissa destinationer.</p>"
 
-Det här dokumentet innehåller information om hur du använder **[!UICONTROL Policies]** i Adobe Experience Platform användargränssnitt för att skapa och hantera dataanvändningsprinciper.
+Det här dokumentet beskriver hur du använder **[!UICONTROL Policies]** i Adobe Experience Platform användargränssnitt för att skapa och hantera dataanvändningsprinciper.
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ Handboken kräver en fungerande förståelse av följande [!DNL Experience Platf
 * [Datastyrning](../home.md)
 * [Dataanvändningspolicyer](./overview.md)
 
-## Visa befintliga profiler {#view-policies}
+## Visa befintliga policyer {#view-policies}
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Policies]** för att öppna **[!UICONTROL Policies]** arbetsyta. I **[!UICONTROL Browse]** kan du se en lista över tillgängliga profiler, inklusive tillhörande etiketter, marknadsföringsåtgärder och status.
 
@@ -51,7 +51,7 @@ Välj en listad profil för att visa dess beskrivning och typ. Om du väljer en 
 
 ## Skapa en anpassad profil {#create-policy}
 
-Om du vill skapa en ny anpassad dataanvändningsprincip väljer du **[!UICONTROL Create policy]** i det övre högra hörnet av **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta.
+Om du vill skapa en ny anpassad dataanvändarprofil väljer du **[!UICONTROL Create policy]** i det övre högra hörnet av **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta.
 
 ![](../images/policies/create-policy-button.png)
 
@@ -104,7 +104,7 @@ The **[!UICONTROL Browse]** -fliken visas igen, där den nya principen nu visas 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataUsagePolicies_instructions"
 >title="Instruktioner"
->abstract="<ul><li>Se till att du samlar in inställningsdata i dina unionskartor via OneTrust-källkopplingen eller XDM-standardschemat för samtycke.</li><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Skapa princip</a>.</li><li>Under <b>If</b> beskriver du villkoren eller åtgärderna som utlöser principkontrollen.</li><li>Under <b>Sedan</b> anger du de medgivandeattribut som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste policyn.</li><li>Välj <b>Spara</b> för att skapa profilen. Om du vill aktivera profilen väljer du <b>Status</b> till höger.</li><li>Experience Platform tillämpar automatiskt de regler för samtycke som är aktiverade när ni aktiverar segment till destinationer och ger information om hur varje policy påverkar er målgruppsstorlek.</li><li>Mer hjälp om den här funktionen finns i guiden <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#consent-policy">skapa medgivandeprinciper</a> på Experience League.</li></ul>"
+>abstract="<ul><li>Se till att du samlar in inställningsdata i dina fackliga scheman via OneTrust-källkopplingen eller XDM-standardschemat för samtycke.</li><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Skapa princip</a>.</li><li>Under <b>If</b> beskriver du villkoren eller åtgärderna som utlöser principkontrollen.</li><li>Under <b>Sedan</b> anger du de medgivandeattribut som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste policyn.</li><li>Välj <b>Spara</b> för att skapa profilen. Om du vill aktivera profilen väljer du <b>Status</b> till höger.</li><li>Experience Platform tillämpar automatiskt de regler för samtycke som är aktiverade när ni aktiverar segment till destinationer och ger information om hur varje policy påverkar er målgruppsstorlek.</li><li>Mer hjälp om den här funktionen finns i guiden <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#consent-policy">skapa medgivandeprinciper</a> på Experience League.</li></ul>"
 
 >[!IMPORTANT]
 >
@@ -114,12 +114,12 @@ Om du väljer att skapa en profil för samtycke visas en ny skärm där du kan k
 
 ![](../images/policies/consent-policy-dialog.png)
 
-Om du vill kunna använda profiler för samtycke måste du ha attribut för samtycke i dina profildata. Se guiden [behandling av samtycke i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md) för detaljerade steg om hur du inkluderar de nödvändiga attributen i ditt unionsschema.
+Om du vill kunna använda profiler för samtycke måste du ha attribut för samtycke i dina profildata. Se guiden på [behandling av samtycke i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md) för detaljerade steg om hur du inkluderar de nödvändiga attributen i ditt unionsschema.
 
 Samtyckesprinciper består av två logiska komponenter:
 
 * **[!UICONTROL If]**: Villkoret som utlöser principkontrollen. Detta kan baseras på en viss marknadsföringsåtgärd som utförs, förekomsten av vissa dataanvändningsetiketter eller en kombination av de två.
-* **[!UICONTROL Then]**: Medgivandeattributen som måste finnas för en profil som ska inkluderas i åtgärden som utlöste policyn.
+* **[!UICONTROL Then]**: Medgivandeattributen som måste finnas för en profil som ska inkluderas i den åtgärd som utlöste policyn.
 
 #### Konfigurera villkor {#consent-conditions}
 
@@ -175,7 +175,7 @@ När du har skapat och aktiverat en medgivandeprincip kan du förhandsgranska hu
 
 Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Du kan aktivera eller inaktivera profiler på **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]** markerar du knappen för att aktivera eller inaktivera profilen.
+Du kan aktivera eller inaktivera profiler på **[!UICONTROL Browse]** i **[!UICONTROL Policies]** arbetsyta. Välj en anpassad profil i listan för att visa informationen till höger. Under **[!UICONTROL Status]** markerar du växlingsknappen för att aktivera eller inaktivera profilen.
 
 ![](../images/policies/enable-policy.png)
 

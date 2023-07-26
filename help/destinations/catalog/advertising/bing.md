@@ -1,5 +1,5 @@
 ---
-keywords: Reklam. Vedning.
+keywords: Reklam.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Display Advertising.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
@@ -32,13 +32,13 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 {style="table-layout:auto"}
 
-## Målgrupper som stöds {#supported-audiences}
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
 Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+Dessutom stöder denna destination även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
@@ -67,13 +67,13 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 När du konfigurerar målet måste du ange följande information:
 
-* [!UICONTROL Account ID]: det här är din [!DNL Bing Ads CID], i heltalsformat.
+* [!UICONTROL Account ID]: det här är [!DNL Bing Ads CID], i heltalsformat.
 
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
@@ -83,11 +83,11 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Dina [!DNL Bing Ads Customer ID] (CID). Ditt CID är ett heltal som finns i URL:en när du loggar in [!DNL Microsoft Advertising].
+* **[!UICONTROL Account ID]**: din [!DNL Bing Ads Customer ID] (CID) Ditt CID är ett heltal som finns i URL:en när du loggar in [!DNL Microsoft Advertising].
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -96,17 +96,17 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 >[!CONTEXTUALHELP]
 >id="platform_destinations_bing_mapping_id"
 >title="Mappnings-ID"
->abstract="Ange det numeriska Bing-målgrupps-ID som du vill mappa det markerade segmentet till. Om [!UICONTROL Mapping ID] motsvarar inte ett målgrupps-ID i Bing-målet. Du kommer inte att se förväntade målgruppsdata i ditt Bing-konto."
+>abstract="Ange det numeriska Bing-målgrupps-ID som du vill mappa det markerade segmentet till. Om det anges [!UICONTROL Mapping ID] motsvarar inte ett målgrupps-ID i Bing-målet. Du kommer inte att se förväntade målgruppsdata i ditt Bing-konto."
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 I [Målgruppsschema](../../ui/activate-segment-streaming-destinations.md#scheduling) måste du manuellt mappa målgruppsnamnet i [!UICONTROL Mapping ID] fält. Detta garanterar att målgruppsmetadata skickas till [!DNL Bing].
 
-![Användargränssnittsbild som visar målgruppens tidsplaneringsskärm med ett exempel på hur målgruppsnamnet mappas till Bing Mapping-ID:t.](../../assets/catalog/advertising/bing/mapping-id.png)
+![Användargränssnittsbild som visar målgruppens tidsplaneringsskärm med ett exempel på hur målgruppsnamnet mappas till Bing Mapping ID.](../../assets/catalog/advertising/bing/mapping-id.png)
 
 ## Exporterade data {#exported-data}
 

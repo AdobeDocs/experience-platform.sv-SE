@@ -39,7 +39,7 @@ När du skapar scheman i användargränssnittet i Experience Platform visas list
 
 ### [!DNL Schema Library]
 
-Experience Platform har ett användargränssnitt och RESTful API från vilket du kan visa och hantera alla schemarelaterade resurser i Experience Platform **[!DNL Schema Library]**. The [!DNL Schema Library] innehåller XDM-standardkomponenter som Adobe har gjort tillgängliga för dig, samt resurser från partners och leverantörer i Experience Platform vars program du använder.
+Experience Platform har ett användargränssnitt och RESTful API som du kan använda för att visa och hantera alla schemarelaterade resurser i Experience Platform **[!DNL Schema Library]**. The [!DNL Schema Library] innehåller XDM-standardkomponenter som Adobe har gjort tillgängliga för dig, samt resurser från partners och leverantörer i Experience Platform vars program du använder.
 
 Använda [!DNL Schema Registry API] eller [!UICONTROL Schemas] i plattformsgränssnittet kan du också skapa och hantera nya scheman och resurser som är unika för din organisation.
 
@@ -53,13 +53,13 @@ Mer information om hur du hanterar och interagerar med scheman i Platform finns 
 >[!CONTEXTUALHELP]
 >id="platform_schemas_behavior"
 >title="Databeteenden"
->abstract="Data som är avsedda att användas i Experience Platform är indelade i tre beteendetyper: spela in, tidsserier och ad hoc. Registreringsscheman ger information om attributen för ett motiv, medan tidsseriescheman tar en ögonblicksbild av systemet när en åtgärd vidtas. Ad hoc-scheman hämtar fält som är namnutrymmen som bara kan användas av en enskild datauppsättning. Mer information om databeteenden i Platform finns i dokumentationen."
+>abstract="Data som är avsedda att användas i Experience Platform är grupperade i tre beteendetyper: post, tidsserie och ad hoc. Registreringsscheman ger information om attributen för ett motiv, medan tidsseriescheman tar en ögonblicksbild av systemet när en åtgärd vidtas. Ad hoc-scheman hämtar fält som är namnutrymmen som bara kan användas av en enskild datauppsättning. Mer information om databeteenden i Platform finns i dokumentationen."
 
 Data som är avsedda att användas i Experience Platform är indelade i tre beteendetyper:
 
 * **Post**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
 * **Tidsserie**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
-* **Ad hoc**: Hämtar fält som namnges för användning endast av en enda datauppsättning. Ad-hoc-scheman används i olika arbetsflöden för dataöverföring för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av källanslutningar.
+* **Ad hoc**: Hämtar fält som namnges för att endast användas av en enda datauppsättning. Ad-hoc-scheman används i olika arbetsflöden för dataöverföring för Experience Platform, inklusive inhämtning av CSV-filer och skapande av vissa typer av källanslutningar.
 
 Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskriver det minsta antal egenskaper ett schema måste innehålla för att representera ett visst databeteende.
 
@@ -67,7 +67,7 @@ Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier
 
 >[!NOTE]
 >
->Det finns inga standardklasser baserade på ad hoc-beteendet. Ad hoc-scheman genereras automatiskt av de plattformsprocesser som använder dem, men de kan också [skapas manuellt med API:t för schemaregister](./tutorials/ad-hoc.md).
+>Det finns inga standardklasser baserade på ad hoc-beteendet. Ad hoc-scheman genereras automatiskt av de plattformsprocesser som använder dem, men de kan också [manuellt skapad med API:t för schemaregister](./tutorials/ad-hoc.md).
 
 ### [!UICONTROL XDM Individual Profile] {#xdm-individual-profile}
 
@@ -91,7 +91,7 @@ Experience Events kan vara antingen explicita eller implicita. Explicit händels
 
 Se [[!UICONTROL XDM ExperienceEvent] referenshandbok](./classes/experienceevent.md) om du vill ha mer information om strukturen och användningsfallet för fälten som klassen tillhandahåller.
 
-## XDM-scheman och Experience Platform-tjänster
+## XDM-scheman och Experience Platform
 
 Experience Platform är schemagnostiskt, vilket innebär att alla scheman som uppfyller XDM-standarden görs tillgängliga för plattformstjänster. Hur olika plattformstjänster använder scheman beskrivs närmare nedan.
 
@@ -111,7 +111,7 @@ Med Adobe Experience Platform Query Service kan du använda standard-SQL för at
 
 När ett schema har disponerats och en datauppsättning har skapats som refererar till det schemat, hämtas data och lagras i datasjön. Med hjälp av frågetjänsten kan du ansluta till alla datauppsättningar i datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i realtidskundprofil.
 
-Se [Översikt över frågetjänsten](../query-service/home.md) för mer information om tjänsten.
+Se [Översikt över frågetjänsten](../query-service/home.md) om du vill ha mer information om tjänsten.
 
 ### Kundprofil i realtid
 
@@ -133,7 +133,7 @@ Adobe Experience Platform Data Science Workspace använder maskininlärning och 
 
 Med Data Science Workspace kan datavetare enkelt skapa intelligenta tjänst-API:er som bygger på maskininlärning. Dessa tjänster fungerar tillsammans med andra Adobe-lösningar, inklusive Adobe Target och Adobe Analytics Cloud, och hjälper er att automatisera personaliserade, målinriktade digitala upplevelser.
 
-Mer information om hur du använder data från Experience Platform för att ge bättre insikter finns i [Översikt över arbetsytan Datavetenskap](../data-science-workspace/home.md).
+Mer information om hur du använder data från Experience Platform för att ge bättre insikter finns i [Översikt över arbetsytan Data Science](../data-science-workspace/home.md).
 
 ## Nästa steg och ytterligare resurser
 

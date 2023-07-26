@@ -29,11 +29,11 @@ Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Ado
 
 När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet visas en lista över befintliga arbetsorder tillsammans med deras grundläggande information.
 
-![Bilden visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
+![Bild som visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
 I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsuppgifter och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
 
-![Bilden visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
+![Bild som visar [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png)
 
 Markera trattecknet (![Bild av trattsymbolen](../images/ui/browse/funnel-icon.png)) om du vill visa en lista med filter för de arbetsorder som visas.
 
@@ -69,7 +69,7 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"
 >title="Status per tjänst"
->abstract="Förfrågningar om datahygien behandlas oberoende av olika Experience Platform-tjänster. I det här avsnittet beskrivs den aktuella bearbetningsstatusen för begäran för varje tjänst. Mer information finns i användargränssnittshandboken för datahygien."
+>abstract="Förfrågningar om datahygien behandlas av flera Experience Platform-tjänster oberoende av varandra. I det här avsnittet beskrivs den aktuella bearbetningsstatusen för begäran för varje tjänst. Mer information finns i användargränssnittshandboken för datahygien."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
@@ -79,7 +79,7 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="Spela in borttagningssvar"
->abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som hjälper dig att felsöka problemet. Mer information finns i användargränssnittsguiden för datahygien."
+>abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som kan hjälpa dig att felsöka problemet. Mer information finns i användargränssnittsguiden för datahygien."
 
 Markera ID:t för en listad arbetsorder om du vill visa information om den.
 

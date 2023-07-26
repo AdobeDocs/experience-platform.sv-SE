@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # [!UICONTROL Profiles] kontrollpanel
 
-I Adobe Experience Platform användargränssnitt finns en kontrollpanel där du kan visa viktig information om ditt [!DNL Real-Time Customer Profile] data, enligt vad som tagits under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med profilkontrollpanelen i användargränssnittet, och den innehåller information om de mått som visas på kontrollpanelen.
+I Adobe Experience Platform användargränssnitt finns en kontrollpanel där du kan visa viktig information om ditt [!DNL Real-Time Customer Profile] data, som de fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du kommer åt och arbetar med profilkontrollpanelen i användargränssnittet, och den innehåller information om de mått som visas på kontrollpanelen.
 
 En översikt över alla profilfunktioner i användargränssnittet i Experience Platform finns i [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md).
 
@@ -41,7 +41,7 @@ Om du vill navigera till profilkontrollpanelen i plattformsgränssnittet väljer
 
 Du kan ändra utseendet på profilkontrollpanelen genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
+Läs mer i [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
 
 ### Lägg till widgetar {#add-widget}
 
@@ -97,13 +97,13 @@ Läs användargränssnittsguiden för unionsschemat om du vill veta mer om [visa
 
 Kontrollpanelen består av widgetar, som är skrivskyddade mått som ger viktig information om dina profildata.
 
-Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid listrutan för sammanfogningsprinciper. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
+Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid listrutan för sammanfogningsprinciper. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. Den finns inte i tidszonen för den enskilda användaren eller organisationen.
 
 ![På fliken Profiles dashboard overview med den senaste tidsstämpeln för ögonblicksbilder markerad.](../images/profiles/snapshot-timestamp.png)
 
 ## Standardwidgetar {#standard-widgets}
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mått som relaterar till dina profildata. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Läs mer om hur du skapar anpassade widgetar [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
@@ -146,7 +146,7 @@ Se [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-
 
 ### [!UICONTROL Profile count trend] {#profile-count-trend}
 
-The [!UICONTROL Profile count trend] används ett linjediagram för att illustrera trenden i det totala antalet profiler i systemet över tiden. Det totala antalet inkluderar alla profiler som importerats till systemet sedan den senaste ögonblicksbilden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
+The [!UICONTROL Profile count trend] används ett linjediagram för att illustrera trenden i det totala antalet profiler som finns i systemet över tiden. Det totala antalet inkluderar alla profiler som importerats till systemet sedan den senaste ögonblicksbilden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten.
 
 ![Trendwidgeten Profilantal.](../images/profiles/profile-count-trend.png)
 
@@ -161,7 +161,7 @@ The **[!UICONTROL Profile count change]** visar antalet sammanfogade profiler so
 
 >[!NOTE]
 >
->The [!UICONTROL Profile count change] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profile count change] widgeten ställs in på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profile count change] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] widgeten visar totalt 5 000 000 profiler.
+>The [!UICONTROL Profile count change] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profile count change] widgeten ställs in på 0. Detta görs för att undvika en topp som uppstår i samband med det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profile count change] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] skulle visa totalt 5 000 000 profiler.
 
 ![Kontrollpanelen för användargränssnittsprofiler för plattformen med widgeten för ändring av profilantal markerad.](../images/profiles/profile-count-change.png)
 
@@ -169,7 +169,7 @@ The **[!UICONTROL Profile count change]** visar antalet sammanfogade profiler so
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesaddedtrend"
->title="trender för antal profiler"
+>title="trender för antal ändringar av profiler"
 >abstract="Den här widgeten visar antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Talet beror också på vilken sammanfogningsprincip som används för profildata."
 
 The **[!UICONTROL Profiles count change trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
@@ -188,11 +188,11 @@ En maskininlärningsmodell genererar automatiskt beskrivningar av viktiga trende
 
 <!-- This widget uses a line graph to illustrate the change in number of profiles filtered by a chosen source identity and merge policy. -->
 
-Den här widgeten filtrerar profilantalet baserat på en vald källidentitet och sammanfogningsprincip, och visar sedan ändringen av antalet för en rad punkter med hjälp av ett linjediagram. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan och källans identitet och tidsperiod väljs i widgetens listruta. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader.
+Den här widgeten filtrerar profilantalet baserat på en vald källidentitet och sammanfogningsprincip, och visar sedan ändringen av antalet för en rad punkter med hjälp av ett linjediagram. Sammanslagningsprincipen väljs i översiktslistrutan högst upp på sidan, källans identitet och tidsperioden väljs i widgetens listruta. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader.
 
 Denna widget hjälper dig att hantera dina behov av målaktivering genom att visa tillväxtmönstret för profiler som filtrerats med en obligatorisk identitet.
 
-![Profilerna räknar en trend som ändras efter identitetswidget.](../images/profiles/profiles-count-change-trend-by-identity.png)
+![Profilerna räknar en trend som förändras efter identitetswidget.](../images/profiles/profiles-count-change-trend-by-identity.png)
 
 ### [!UICONTROL Profiles by identity] {#profiles-by-identity}
 
@@ -226,7 +226,7 @@ The **[!UICONTROL Identity overlap]** widgeten använder ett Venndiagram, eller 
 
 Använd widgetens listrutor för att välja de identiteter som du vill jämföra. Cirklar visar det relativa totala antalet profiler som innehåller varje identitet. Antalet profiler som innehåller båda identiteterna representeras av storleken på överlappningen mellan cirklarna. Om en kund interagerar med ert varumärke i mer än en kanal kopplas flera identiteter till den enskilda kunden, och därför är det troligt att organisationen har flera profiler som innehåller fragment från mer än en identitet.
 
-Mer information om profilfragment finns i avsnittet om [profilfragment jämfört med sammanslagna profiler](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) i realtidsöversikten över kundprofilen.
+Mer information om profilfragment finns i avsnittet [profilfragment jämfört med sammanslagna profiler](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) i realtidsöversikten över kundprofilen.
 
 Läs mer om identiteter på [Dokumentation för Adobe Experience Platform Identity Service](../../identity-service/home.md).
 
@@ -269,7 +269,7 @@ The [!UICONTROL Unsegmented Profiles] innehåller det totala antalet profiler so
 >title="Trend för osegmenterade profiler"
 >abstract="Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till någon målgrupp under en viss tidsperiod. Trenden för profiler som inte är kopplade till en viss målgrupp kan visas under perioderna 30 dagar, 90 dagar och 12 månader."
 
-The [!UICONTROL Unsegmented profiles change trend] används ett linjediagram för att illustrera antalet profiler som lagts till sedan den senaste dagliga ögonblicksbilden som inte är kopplade till någon publik. Den föränderliga trenden för profiler som inte är kopplade till någon målgrupp kan visas över 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
+The [!UICONTROL Unsegmented profiles change trend] används ett linjediagram för att illustrera antalet profiler som lagts till sedan den senaste dagliga ögonblicksbilden som inte är kopplade till någon publik. Den föränderliga trenden för profiler som inte är kopplade till någon målgrupp kan visualiseras under 30 dagar, 90 dagar och 12 månader. Tidsperioden väljs i en listruta i widgeten. Profilantalet återspeglas på y-axeln och tiden på x-axeln.
 
 ![De osegmenterade profilerna ändrar trendwidgeten.](../images/profiles/unsegmented-profiles-change-trend.png)
 
@@ -294,7 +294,7 @@ The [!UICONTROL Unsegmented Profiles by Identity] widget categorizes the total n
 
 Den här widgeten innehåller det totala antalet målgrupper som är klara att aktiveras enligt den valda sammanfogningsprincipen som tillämpas på dina profildata.
 
-Välj **[!UICONTROL Audiences]** för att navigera till [!UICONTROL Segments] kontrollpanel [!UICONTROL Browse] -fliken. Därifrån visas en lista med alla segmentdefinitioner för din organisation.
+Välj **[!UICONTROL Audiences]** navigera till [!UICONTROL Segments] kontrollpanel [!UICONTROL Browse] -fliken. Därifrån visas en lista med alla segmentdefinitioner för din organisation.
 
 ![Widgeten Publiker.](../images/profiles/audiences.png)
 
@@ -313,9 +313,9 @@ The visualization allows you to monitor the overall health of audiences within A
 
 Den här widgeten gör att data överlappar alla tillgängliga målgrupper som filtreras efter sammanfogningsprincip. En lista med fem målgrupper som rangordnas mellan de högsta och de lägsta procentsatserna för överlappning finns för den sammanslagningsprincip som väljs i listrutan högst upp på skärmen. De två analyserade målgrupperna listas i [!UICONTROL AUDIENCE A NAME] och [!UICONTROL AUDIENCE B NAME] kolumner. Procentöverlappningen anges i den tredje kolumnen med 12 decimaler.
 
-Rapporten om publiköverlappning hjälper er att skapa nya högpresterande målgrupper. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler att eftersträva.
+Rapporten om publiköverlappning hjälper er att skapa nya högpresterande målgrupper. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler som ska eftersökas.
 
-Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmsläge som innehåller fler överlappande data.
+Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmsläge som innehåller fler data om överlappande målgrupper.
 
 ![Målgruppen överlappar rapportwidgeten med Visa mer markerat .](../images/profiles/profiles-audience-overlap-report.png)
 
@@ -436,4 +436,4 @@ The three levels of completeness are:
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna hitta profilkontrollpanelen och förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om att arbeta med [!DNL Profile] data i användargränssnittet för Experience Platform, se [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md).
+Genom att följa det här dokumentet bör du nu kunna hitta profilkontrollpanelen och förstå mätvärdena som visas i de tillgängliga widgetarna. Mer information om hur du arbetar med [!DNL Profile] data i användargränssnittet för Experience Platform, se [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-guide.md).

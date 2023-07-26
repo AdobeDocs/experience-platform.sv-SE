@@ -14,29 +14,29 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->The **[!UICONTROL Export file now]** i Adobe Experience Platform finns för närvarande i Beta. Dokumentationen och funktionerna kan komma att ändras.
+>The **[!UICONTROL Export file now]** i Adobe Experience Platform finns för närvarande i Beta. Dokumentationen och funktionaliteten kan komma att ändras.
 >Kontakta din Adobe-representant för att få tillgång till den här funktionen.
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 ## **[!UICONTROL Export file now]** översikt {#overview}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_activatenow"
 >title="Exportera filen nu"
->abstract="Välj den här kontrollen om du vill leverera en fullständig filexport utöver tidigare schemalagda exporter. Filexporten utlöses omedelbart och det senaste resultatet från segmentering i Experience Platform hämtas."
+>abstract="Välj den här kontrollen om du vill leverera en fullständig filexport utöver tidigare schemalagda exporter. Filexporten utlöses omedelbart och det senaste resultatet från segmentering i Experience Platform plockas upp."
 
 I den här artikeln beskrivs hur du använder användargränssnittet i Experience Platform för att exportera filer on demand till gruppmål som [molnlagring](/help/destinations/catalog/cloud-storage/overview.md) och [e-postmarknadsföring](/help/destinations/catalog/email-marketing/overview.md) destinationer.
 
-The **[!UICONTROL Export file now]** Med -kontrollen kan du exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen. Filexporten utlöses omedelbart och det senaste resultatet från segmentering i Experience Platform hämtas.
+The **[!UICONTROL Export file now]** Med -kontrollen kan du exportera en fullständig fil utan att avbryta det aktuella exportschemat för en tidigare schemalagd målgrupp. Denna export sker utöver tidigare schemalagd export och ändrar inte exportfrekvensen för målgruppen. Filexporten utlöses omedelbart och det senaste resultatet från segmentering i Experience Platform plockas upp.
 
 Du kan också använda Experience Platform API:er för detta ändamål. Läs om [aktivera målgrupper on-demand till batchdestinationer via ad hoc-aktiverings-API](/help/destinations/api/ad-hoc-activation-api.md).
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill exportera filer on demand till gruppmål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Om du vill exportera filer on demand till batchmål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ## Så här exporterar du filer on demand {#how-to-export-files-on-demand}
 
@@ -46,7 +46,7 @@ Om du vill exportera filer on demand till gruppmål måste du ha lyckats [anslut
 
 2. Välj önskad målanslutning för att inspektera det befintliga dataflödet till målet.
 
-   ![En bild som framhäver ett filtrerat dataflöde.](../assets/ui/activate-on-demand/filtered-dataflow.png)
+   ![En bild som markerar ett filtrerat dataflöde.](../assets/ui/activate-on-demand/filtered-dataflow.png)
 
 3. Välj **[!UICONTROL Activation data]** och välja målgruppen som du vill exportera en fil till vid behov och markera **[!UICONTROL Export file now]** -kontroll för att aktivera en engångs-export som levererar en fil till batchdestinationen.
 

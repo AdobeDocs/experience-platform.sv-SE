@@ -6,7 +6,7 @@ description: Den här guiden innehåller steg för hur du arbetar med dataanvän
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
 source-git-commit: 663d1e20a7b8a56b1395047124fdf4b6fc3c214b
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1408'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ Den här användarhandboken innehåller steg för att arbeta med dataanvändning
 
 ## Hantera etiketter {#manage-labels}
 
-Om du vill använda etiketter på dina data måste du ha **[!UICONTROL Manage Usage Labels]** behörighet för användning i standardproduktionssandlådan &quot;prod&quot;. Om du vill skapa en anpassad etikett måste du även ha administratörsbehörighet för produktprofilen. Varje organisation har bara en lista över tillämpliga etiketter, och för närvarande stöds inte borttagning av etiketter.
+Om du vill använda etiketter på dina data måste du ha **[!UICONTROL Manage Usage Labels]** behörighet för användning i standardproduktionssandlådan prod. Om du vill skapa en anpassad etikett måste du även ha administratörsbehörighet för produktprofilen. Varje organisation har bara en lista över tillämpliga etiketter, och för närvarande stöds inte borttagning av etiketter.
 
-Se guiden om hur man [konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) eller [åtkomstkontroll - översikt](../../access-control/home.md) om du vill ha mer information om hur du tilldelar en behörighet. Kontakta din organisations administratör om du inte har tillgång till Admin Console för din organisation.
+Se guiden om hur man [konfigurera behörigheter](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html) eller [åtkomstkontroll - översikt](../../access-control/home.md) för mer information om hur du tilldelar en behörighet. Kontakta din organisations administratör om du inte har tillgång till Admin Console för din organisation.
 
 ## Hantera etiketter på schemanivå
 
@@ -38,7 +38,7 @@ I nästa avsnitt beskrivs hur du skapar ett nytt schema som du kan använda etik
 
 ### Skapa ett nytt schema
 
-Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av **[!UICONTROL Schemas]** arbetsyta. Se guiden [hur du skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create) för fullständiga instruktioner. Du kan också [skapa ett schema med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) vid behov.
+Om du vill skapa ett nytt schema väljer du **[!UICONTROL Create schema]** i det övre högra hörnet av **[!UICONTROL Schemas]** arbetsyta. Se guiden på [hur du skapar ett schema med Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md#create) för fullständiga instruktioner. Du kan också [skapa ett schema med API:t för schemaregister](../../xdm/tutorials/create-schema-api.md) vid behov.
 
 ### Lägga till dataanvändningsetiketter i ett schema {#add-labels-to-schema}
 
@@ -46,14 +46,14 @@ När du har skapat ett nytt schema eller valt ett befintligt schema i listan i [
 
 ![Fliken Struktur på arbetsytan Scheman som visar hur ditt schema ser ut med etiketterna Använd åtkomst och Datastyrning markerade.](../images/labels/schema-label-governance.png)
 
-En dialogruta visas där du kan använda och hantera dataanvändningsetiketter på schemanivå och fältnivå. Se självstudiekursen för XDM för fullständiga instruktioner om [hur du lägger till eller redigerar dataanvändningsetiketter för XDM-scheman](../../xdm/tutorials/labels.md#select-schema-field).
+En dialogruta visas där du kan använda och hantera dataanvändningsetiketter på schemanivå och fältnivå. Se självstudiekursen för XDM för fullständiga instruktioner om [lägga till eller redigera dataanvändningsetiketter för XDM-scheman](../../xdm/tutorials/labels.md#select-schema-field).
 
 ### Lägga till etiketter för dataanvändning i en viss datauppsättning {#add-labels-to-dataset}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_dataGovernance_instructions"
 >title="Instruktioner"
->abstract="<ol><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html">Datauppsättningar</a> i den vänstra navigeringen markerar du den datauppsättning vars data du vill begränsa.</li><li>I vyn med datauppsättningsinformation väljer du <b>Datastyrning</b> -fliken.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att märka data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen väljer du <b>Skapa princip</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Datastyrningspolicy</a>markerar du de dataanvändningsetiketter som profilen ska använda för profilen.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ol>"
+>abstract="<ol><li>Välj <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/user-guide.html">Datauppsättningar</a> i den vänstra navigeringen markerar du den datauppsättning vars data du vill begränsa.</li><li>I vyn med datauppsättningsinformation väljer du <b>Datastyrning</b> -fliken.</li><li>Markera de datauppsättningsfält som du vill begränsa och välj sedan <b>Redigera styrningsetiketter</b> för att märka data baserat på användningsbegränsningar.</li><li>När du har etiketterat dina data väljer du <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html">Profiler</a> i den vänstra navigeringen väljer du <b>Skapa princip</b>.</li><li>Välj om du vill skapa en <a href="https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/user-guide.html#create-governance-policy">Styrningspolicy för data</a>markerar du de dataanvändningsetiketter som profilen ska använda för profilen.</li><li>Välj de marknadsföringsåtgärder som profilen nekar för alla data som innehåller dessa etiketter. När profilen har skapats markerar du den i listan och aktiverar den med hjälp av växlingsknappen till höger.</li><li>För varje aktiverad princip förhindrar Platform att data som innehåller de angivna etiketterna används för definierade marknadsföringsåtgärder. Detta görs automatiskt när du försöker aktivera märkta data till ett mål med associerade marknadsföringsåtgärder (användningsfall).</li></ol>"
 
 >[!IMPORTANT]
 >
@@ -114,7 +114,7 @@ The **[!UICONTROL Show Inherited Labels]** växlingsknappen är aktiverad som st
 >title="Skapa etiketter"
 >abstract="Med etiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Platform har en standarduppsättning med etiketter som du kan använda, men du kan också skapa anpassade etiketter som är specifika för din organisation."
 
-Du kan skapa egna anpassade användningsetiketter i **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Gränssnitt. Välj **[!UICONTROL Policies]** i den vänstra navigeringen väljer du **[!UICONTROL Labels]** om du vill visa en lista med befintliga etiketter. Här väljer du **[!UICONTROL Create label]**.
+Du kan skapa egna anpassade användningsetiketter i **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Gränssnitt. Välj **[!UICONTROL Policies]** i den vänstra navigeringen väljer du **[!UICONTROL Labels]** om du vill visa en lista med befintliga etiketter. Välj **[!UICONTROL Create label]**.
 
 ![Arbetsytan Profiler med Skapa profil markerad.](../images/labels/create-label-btn.png)
 
@@ -122,7 +122,7 @@ The **[!UICONTROL Create label]** visas. Här anger du följande information fö
 
 * **[!UICONTROL Name]**: En unik identifierare för etiketten. Detta värde används för uppslagsändamål och bör därför vara kort och koncist.
 * **[!UICONTROL Friendly name]**: Ett visningsnamn för etiketten.
-* **[!UICONTROL Description]**: (Valfritt) En beskrivning av etiketten som ger ytterligare kontext.
+* **[!UICONTROL Description]**: (Valfritt) En beskrivning av etiketten för att ge ytterligare kontext.
 
 När du är klar väljer du **[!UICONTROL Create]**.
 
@@ -138,7 +138,7 @@ Etiketten kan nu väljas under **[!UICONTROL Custom Labels]** när du redigerar 
 
 ## Nästa steg
 
-Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till [!DNL Experience Platform]. Om du vill veta mer kan du börja med att läsa [dokumentation om dataöverföring](../../ingestion/home.md).
+Nu när du har lagt till etiketter för dataanvändning på data- och fältnivå kan du börja importera data till [!DNL Experience Platform]. Om du vill veta mer börjar du med att läsa [dokumentation om dataöverföring](../../ingestion/home.md).
 
 Nu kan du även definiera dataanvändningsprinciper baserat på de etiketter du har använt. Mer information finns i [dataanvändningsprinciper - översikt](../policies/overview.md).
 

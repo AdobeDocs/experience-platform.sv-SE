@@ -19,7 +19,7 @@ Med etiketter kan du kategorisera datauppsättningar och fält utifrån de anvä
 >[!CONTEXTUALHELP]
 >id="platform_abac_labelusage"
 >title="Användning av etiketter"
->abstract="Du kan använda anpassade etiketter för att använda datastyrning och åtkomstkontrollkonfigurationer på dina data."
+>abstract="Du kan använda anpassade etiketter för att använda datastyrning och åtkomstkontrollskonfigurationer på dina data."
 
 >[!NOTE]
 >

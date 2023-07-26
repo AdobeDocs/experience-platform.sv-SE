@@ -14,11 +14,11 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_reference_schema"
 >title="Referensschema"
->abstract="Välj det schema som du vill skapa en relation med. Beroende på schemaklassen kan den även ha befintliga relationer med andra entiteter i B2B-kontexten. Läs dokumentationen för att lära dig hur B2B-schemaklasser relaterar till varandra."
+>abstract="Välj det schema som du vill skapa en relation med. Beroende på schemats klass kan den även ha befintliga relationer med andra enheter i B2B-kontexten. Läs dokumentationen för att lära dig hur B2B-schemaklasser relaterar till varandra."
 
 Adobe Real-time Customer Data Platform B2B Edition innehåller flera XDM-klasser (Experience Data Model) som samlar in grundläggande B2B-datatabeller, inklusive [konton](../classes/b2b/business-account.md), [möjligheter](../classes/b2b/business-opportunity.md), [kampanjer](../classes/b2b/business-campaign.md), med mera. Genom att skapa scheman baserade på dessa klasser och aktivera dem för användning i [Kundprofil i realtid](../../profile/home.md)kan du sammanfoga data från olika källor till en enhetlig representation som kallas för ett unionsschema.
 
-Unionsscheman kan dock bara innehålla fält som hämtats av scheman som delar samma klass. Det är här som schemarelationer kommer in. Genom att implementera relationer i dina B2B-scheman kan du beskriva hur dessa affärsenheter relaterar till varandra och kan inkludera attribut från flera klasser i fall där segmentering används längre fram i kedjan.
+Unionsscheman kan dock bara innehålla fält som hämtats av scheman som delar samma klass. Det är här som schemarelationer kommer in. Genom att implementera relationer i dina B2B-scheman kan du beskriva hur dessa affärsenheter relaterar till varandra och kan inkludera attribut från flera klasser i fall där segmentering sker nedåt.
 
 I följande diagram visas ett exempel på hur de olika B2B-klasserna kan relatera till varandra i en grundläggande implementering:
 
@@ -42,7 +42,7 @@ Den här självstudiekursen kräver en fungerande förståelse av [!DNL XDM Syst
 
 ## Definiera en källa och ett referensschema
 
-Du förväntas redan ha skapat de två scheman som ska definieras i relationen. I den här självstudiekursen skapas en relation mellan affärsmöjligheter (definieras i en[!DNL Opportunities]&quot; schema) och deras associerade företagskonto (definieras i en[!DNL Accounts]&quot; schema).
+Du förväntas redan ha skapat de två scheman som ska definieras i relationen. I den här självstudiekursen skapas en relation mellan affärsmöjligheter (definieras i en[!DNL Opportunities]&quot; schema) och deras associerade företagskonto (definieras i en &quot;[!DNL Accounts]&quot; schema).
 
 Schemarelationer representeras av ett dedikerat fält i en **källschema** som refererar till det primära identitetsfältet för en **referensschema**. I följande steg: &quot;[!DNL Opportunities]&quot; fungerar som källschema, medan &quot;[!DNL Accounts]&quot; fungerar som referensschema.
 

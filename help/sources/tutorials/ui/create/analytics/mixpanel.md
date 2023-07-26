@@ -19,7 +19,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ### Samla in nödvändiga inloggningsuppgifter
@@ -49,7 +49,7 @@ The **[!UICONTROL Connect Mixpanel account]** visas. På den här sidan kan du a
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL Mixpanel] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL Mixpanel] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/mixpanel-export-events/existing.png)
 
@@ -64,12 +64,12 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 >[!CONTEXTUALHELP]
 >id="platform_sources_mixpanel_timezone"
 >title="Ange en tidszon för blandpanelsinmatning"
->abstract="Tidszonen måste vara densamma som tidszonsinställningen för profilen i Mixpanel eftersom Platform använder den angivna tidszonen för projektet för att hämta relevanta data från Mixpanel. Mixpanel justerar sin tidszon så att den överensstämmer med projektets tidszon innan händelsen spelas in i ett datalager i Mixpanel."
+>abstract="Tidszonen måste vara densamma som tidszonsinställningen för profilen i Mixpanel, eftersom Platform använder den angivna tidszonen för projektet för att hämta relevanta data från Mixpanel. Mixpanel justerar sin tidszon så att den överensstämmer med projektets tidszon innan händelsen spelas in i ett datalager i Mixpanel."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=en#project-id-and-timezone" text="Läs mer i dokumentationen"
 
 När källan har autentiserats anger du ditt projekt-ID och tidszon och väljer sedan **[!UICONTROL Select]**.
 
-Den tidszon som du anger innan du importerar [!DNL Mixpanel] data till plattformen måste vara samma som [!DNL Mixpanel] inställning för tidszon för profil. Ändringar i tidszonen för dina data kommer endast att tillämpas på nya händelser och gamla händelser kommer att finnas kvar i den tidszon som du angav tidigare. [!DNL Mixpanel] har plats för sommartid och anpassar tidsstämpeln för ditt intag på lämpligt sätt. Mer information om hur tidszoner påverkar dina data finns i [!DNL Mixpanel] guide på [hantera tidszoner för projekt](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
+Den tidszon som du anger innan du importerar [!DNL Mixpanel] data till plattformen måste vara samma som [!DNL Mixpanel] inställning för tidszon för profil. Ändringar i tidszonen för dina data kommer endast att tillämpas på nya händelser och gamla händelser kommer att finnas kvar i den tidszon som du angav tidigare. [!DNL Mixpanel] har plats för sommartid och anpassar tidsstämpeln för ditt intag på lämpligt sätt. Mer information om hur tidszoner påverkar dina data finns i [!DNL Mixpanel] stödlinje på [hantera tidszoner för projekt](https://help.mixpanel.com/hc/en-us/articles/115004547203-Manage-Timezones-for-Projects-in-Mixpanel).
 
 Efter en liten stund uppdateras rätt gränssnitt till en förhandsgranskningspanel, vilket gör att du kan kontrollera schemat innan du skapar ett dataflöde. När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -77,11 +77,11 @@ Efter en liten stund uppdateras rätt gränssnitt till en förhandsgranskningspa
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL Mixpanel] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta analysdata till plattformen](../../dataflow/analytics.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Mixpanel] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta analysdata till plattformen](../../dataflow/analytics.md).
 
 ## Ytterligare resurser {#additional-resources}
 
-Avsnitten nedan innehåller ytterligare resurser som du kan referera till när du använder [!DNL Mixpanel] källa.
+Avsnitten nedan innehåller ytterligare resurser som du kan använda när du använder [!DNL Mixpanel] källa.
 
 ### Validering {#validation}
 
@@ -103,7 +103,7 @@ Du kan verifiera dessa data mot data på [!DNL Mixpanel] > [!DNL Events] sida. S
 
 ![mixpanel-events](../../../../images/tutorials/create/mixpanel-export-events/mixpanel-events.png)
 
-### Blandpanelsschema
+### Schema för blandpanel
 
 Tabellen nedan visar vilka mappningar som stöds och som måste konfigureras för [!DNL Mixpanel].
 

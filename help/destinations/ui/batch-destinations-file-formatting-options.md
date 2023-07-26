@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->The **[!UICONTROL File formatting options]** i Adobe Experience Platform finns i betaversionen. Dokumentationen och funktionerna kan komma att ändras.
+>The **[!UICONTROL File formatting options]** i Adobe Experience Platform finns i betaversionen. Dokumentationen och funktionaliteten kan komma att ändras.
 >Kontakta din Adobe-representant för att få tillgång till den här funktionen.
 > 
 >Filformateringsalternativen som beskrivs i det här dokumentet är för närvarande bara tillgängliga för CSV-filer.
@@ -88,7 +88,7 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_escapeCharacter"
 >title="Escape-tecken"
->abstract="Anger ett enskilt tecken som används för att undvika citattecken i ett redan citattecken. I dokumentationen finns exempel för varje markering."
+>abstract="Ställer in ett enskilt tecken som används för att undvika citattecken inuti ett redan citattecken. I dokumentationen finns exempel för varje markering."
 
 Använd det här alternativet om du vill ange ett enskilt tecken för att undvika citattecken inuti ett redan citattecken. Det här alternativet är till exempel användbart när du har en sträng omsluten av citattecken där en del av strängen redan omsluts av citattecken. Med det här alternativet anger du vilket tecken som ska ersätta de inre dubbla citattecknen med. Tillgängliga alternativ är:
 
@@ -102,11 +102,11 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 * Exempelutdata med **[!UICONTROL Back slash `(\)`]** markerat: `"Test,\"John\",LastName"`
 * Exempelutdata med **[!UICONTROL Single quote `(')`]** markerat: `"Test,'"John'",LastName"`
 
-### Tomt värde för utdata {#empty-value-output}
+### Tomt värde {#empty-value-output}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_emptyValueOutput"
->title="Tomt värde för utdata"
+>title="Tomt värde"
 >abstract="Använd det här alternativet om du vill ange hur tomma värden ska visas i de exporterade CSV-filerna. I dokumentationen finns exempel för varje markering."
 
 Använd den här kontrollen för att ange strängbeteckningen för ett tomt värde. Det här alternativet avgör hur tomma värden representeras i dina exporterade CSV-filer. Tillgängliga alternativ är:
@@ -153,9 +153,9 @@ Visa exemplen nedan för innehållet från de exporterade CSV-filerna tillsamman
 >[!CONTEXTUALHELP]
 >id="platform_destinations_csvOptions_compressionFormat"
 >title="Komprimeringsformat"
->abstract="Anger vilken komprimeringstyp som ska användas när data sparas i filen. De alternativ som stöds är GZIP och NONE. I dokumentationen finns exempel för varje markering."
+>abstract="Anger vilken komprimeringstyp som ska användas när data sparas i filen. Alternativen är GZIP och NONE. I dokumentationen finns exempel för varje markering."
 
-Anger vilken komprimeringstyp som ska användas när data sparas i filen. De alternativ som stöds är GZIP och NONE. Det här alternativet avgör om du ska exportera komprimerade filer eller inte.
+Anger vilken komprimeringstyp som ska användas när data sparas i filen. Alternativen är GZIP och NONE. Det här alternativet avgör om du ska exportera komprimerade filer eller inte.
 
 ### Kodning
 
@@ -169,7 +169,7 @@ Standard är att undvika alla värden som innehåller ett citattecken.
 
 ### Radavgränsare
 
-*Visas inte i skärmbilden för användargränssnittet*. Definierar den radavgränsare som ska användas för skrivning. Maxlängden är 1 tecken.
+*Visas inte i skärmbilden för användargränssnittet*. Definierar den radavgränsare som ska användas för att skriva. Maxlängden är 1 tecken.
 
 ### Ignorera inledande blanksteg
 

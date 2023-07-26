@@ -28,17 +28,17 @@ Att ta bort poster kräver en fungerande förståelse för hur identitetsfält f
 
 Mer information om identiteter i Platform finns i följande dokumentation:
 
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system och länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-   * [Identitetsnamnutrymmen](../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en person, och är en obligatorisk komponent för varje identitetsfält.
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system, länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
+   * [Identitetsnamnutrymmen](../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en enskild person, och är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../profile/home.md): Använder identitetsdiagram för att tillhandahålla enhetliga konsumentprofiler baserade på aggregerade data från flera källor, som uppdateras i nära realtid.
 * [Experience Data Model (XDM)](../../xdm/home.md): Tillhandahåller standarddefinitioner och -strukturer för plattformsdata genom användning av scheman. Alla plattformsdatauppsättningar följer ett specifikt XDM-schema, och schemat definierar vilka fält som är identiteter.
    * [Identitetsfält](../../xdm/ui/fields/identity.md): Lär dig hur ett identitetsfält definieras i ett XDM-schema.
 
 ## Skapa en ny begäran
 
-Välj **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
+För att starta processen väljer du **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
 
-![Bilden visar [!UICONTROL Create request] knappen markeras](../images/ui/record-delete/create-request-button.png)
+![Bild som visar [!UICONTROL Create request] knapp som markeras](../images/ui/record-delete/create-request-button.png)
 
 Dialogrutan där begäran skapas visas. Som standard är **[!UICONTROL Delete consumer]** alternativet är markerat under **[!UICONTROL Requested Action]** -avsnitt. Låt alternativet vara markerat.
 
@@ -54,7 +54,7 @@ Om du väljer **[!UICONTROL Select dataset]**, markerar du databasikonen (![Bild
 
 Om du vill ta bort poster från alla datauppsättningar väljer du **[!UICONTROL All datasets]**.
 
-![Bilden visar [!UICONTROL All datasets] valt alternativ](../images/ui/record-delete/all-datasets.png)
+![Bild som visar [!UICONTROL All datasets] valt alternativ](../images/ui/record-delete/all-datasets.png)
 
 >[!NOTE]
 >
@@ -65,7 +65,7 @@ Om du vill ta bort poster från alla datauppsättningar väljer du **[!UICONTROL
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="Primär identitet"
->abstract="En primär identitet är ett attribut som kopplar en post till en konsumentprofil i Experience Platform. Det primära identitetsfältet för en datauppsättning definieras av det schema som datauppsättningen baseras på. I den här kolumnen måste du ange typen (eller namnutrymmet) för postens primära identitet, till exempel `email` för e-postadresser och `ecid` för Experience Cloud ID. Mer information finns i användargränssnittsguiden för datahygien."
+>abstract="En primär identitet är ett attribut som kopplar en post till en konsumentprofil i Experience Platform. Det primära identitetsfältet för en datauppsättning definieras av det schema som datauppsättningen baseras på. I den här kolumnen måste du ange typen (eller namnutrymmet) för postens primära identitet, till exempel `email` för mejladresser och `ecid` för Experience Cloud ID. Mer information finns i användargränssnittsguiden för datahygien."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
@@ -74,11 +74,11 @@ Om du vill ta bort poster från alla datauppsättningar väljer du **[!UICONTROL
 
 När du tar bort poster måste du ange identitetsinformation så att systemet kan avgöra vilka poster som ska tas bort. För alla datauppsättningar i plattformen tas poster bort baserat på **primär identitet** fält som definieras av datauppsättningens schema.
 
-Precis som alla identitetsfält i Platform består en primär identitet av två saker: a **type** (kallas ibland för ett id-namnutrymme) och en **value**. Identitetstypen ger kontext om hur fältet identifierar en post (t.ex. en e-postadress) och värdet representerar en posts specifika identitet för den typen (t.ex. `jdoe@example.com` för `email` identitetstyp). Vanliga fält som används som identiteter är kontoinformation, enhets-ID och cookie-ID:n.
+Precis som alla identitetsfält i Platform består en primär identitet av två saker: en **type** (kallas ibland för ett id-namnutrymme) och en **value**. Identitetstypen ger kontext om hur fältet identifierar en post (t.ex. en e-postadress) och värdet representerar en posts specifika identitet för den typen (t.ex. `jdoe@example.com` för `email` identitetstyp). Vanliga fält som används som identiteter är kontoinformation, enhets-ID och cookie-ID:n.
 
 >[!TIP]
 >
->Om du inte känner till den primära identiteten för en viss datauppsättning kan du hitta den i användargränssnittet för plattformen. I **[!UICONTROL Datasets]** väljer du datauppsättningen i listan. På informationssidan för datauppsättningen håller du pekaren över namnet på datasetens schema i den högra listen. Den primära identiteten visas tillsammans med schemanamnet och beskrivningen.
+>Om du inte känner till den primära identiteten för en viss datauppsättning kan du hitta den i användargränssnittet för plattformen. I **[!UICONTROL Datasets]** väljer du den aktuella datauppsättningen i listan. På informationssidan för datauppsättningen håller du pekaren över namnet på datasetens schema i den högra listen. Den primära identiteten visas tillsammans med schemanamnet och beskrivningen.
 >
 >![Bild som visar den primära identiteten för en datauppsättning som är markerad i användargränssnittet](../images/ui/record-delete/dataset-primary-identity.png)
 
@@ -121,7 +121,7 @@ När filen har överförts kan du fortsätta [skicka förfrågan](#submit).
 
 Om du vill ange identiteter manuellt väljer du **[!UICONTROL Add identity]**.
 
-![Bilden visar [!UICONTROL Add identity] knappen markeras](../images/ui/record-delete/add-identity.png)
+![Bild som visar [!UICONTROL Add identity] knapp som markeras](../images/ui/record-delete/add-identity.png)
 
 Det visas kontroller som gör att du kan ange identiteter en åt gången. Under **[!UICONTROL Primary Identity]** använder du listrutan för att välja identitetstyp. Under **[!UICONTROL Identity Value]**, anger det primära identitetsvärdet för posten.
 
@@ -135,7 +135,7 @@ Om du vill lägga till fler identiteter väljer du plusikonen (![Bild av plusiko
 
 När du är klar med att lägga till identiteter i begäran, under **[!UICONTROL Request settings]**, ange ett namn och en valfri beskrivning för begäran innan du väljer **[!UICONTROL Submit]**.
 
-![Bilden visar [!UICONTROL Submit] knappen markeras](../images/ui/record-delete/submit.png)
+![Bild som visar [!UICONTROL Submit] knapp som markeras](../images/ui/record-delete/submit.png)
 
 Du ombeds bekräfta listan med identiteter vars data du vill ta bort. Välj **[!UICONTROL Submit]** för att bekräfta ditt val.
 

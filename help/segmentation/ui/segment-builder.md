@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # [!DNL Segment Builder] Användargränssnittsguide
 
-[!DNL Segment Builder] innehåller en omfattande arbetsyta som du kan använda för att interagera med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
+[!DNL Segment Builder] innehåller en omfattande arbetsyta som gör att du kan arbeta med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 
 ![Användargränssnittet för segmentbyggaren visas.](../images/ui/segment-builder/segment-builder.png)
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 De grundläggande byggstenarna för segmentdefinitioner är attribut och händelser. Dessutom kan attribut och händelser i befintliga målgrupper användas som komponenter för nya definitioner.
 
-Du kan se dessa byggstenar i **[!UICONTROL Fields]** till vänster i [!DNL Segment Builder] arbetsyta. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: &quot;[!UICONTROL Attributes]&quot;, &quot;[!UICONTROL Events]&quot;, och &quot;[!UICONTROL Audiences]&quot;.
+Dessa byggstenar visas i **[!UICONTROL Fields]** till vänster i [!DNL Segment Builder] arbetsyta. **[!UICONTROL Fields]** innehåller en flik för varje huvudbyggsten: &quot;[!UICONTROL Attributes]&quot;, &quot;[!UICONTROL Events]&quot;, och &quot;[!UICONTROL Audiences]&quot;.
 
 ![Fältavsnittet i segmentbyggaren markeras.](../images/ui/segment-builder/segment-fields.png)
 
@@ -39,7 +39,7 @@ The **[!UICONTROL Attributes]** kan du bläddra [!DNL Profile] attribut som till
 
 The **[!UICONTROL Events]** kan du skapa en målgrupp baserat på händelser eller åtgärder som har utförts med [!DNL XDM ExperienceEvent] dataelement. Du kan även hitta händelsetyper på **[!UICONTROL Events]** -fliken, som är en samling vanliga händelser som gör att du kan skapa segmentdefinitioner snabbare.
 
-Förutom att kunna bläddra bland [!DNL ExperienceEvent] kan du också söka efter händelsetyper. Händelsetyper använder samma kodningslogik som [!DNL ExperienceEvents]utan att du behöver söka i [!DNL XDM ExperienceEvent] klassen letar efter rätt händelse. Om du till exempel använder sökfältet för att söka efter &quot;kundvagn&quot; returneras händelsetyperna &quot;[!UICONTROL AddCart]&quot; och &quot;[!UICONTROL RemoveCart]&quot;, som är två mycket vanliga kundvagnsåtgärder när man bygger upp segmentdefinitioner.
+Förutom att kunna bläddra bland [!DNL ExperienceEvent] kan du också söka efter händelsetyper. Händelsetyper använder samma kodningslogik som [!DNL ExperienceEvents]utan att du behöver söka i [!DNL XDM ExperienceEvent] klassen letar efter rätt händelse. Om du till exempel använder sökfältet för att söka efter &quot;kundvagn&quot; returneras händelsetyperna &quot;[!UICONTROL AddCart]och &quot;[!UICONTROL RemoveCart]&quot;, som är två mycket vanliga kundvagnsåtgärder när man bygger upp segmentdefinitioner.
 
 Du kan söka efter alla typer av komponenter genom att skriva dess namn i sökfältet, som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). Sökresultaten fylls i när hela ord anges. Du kan till exempel skapa en regel som baseras på XDM-fältet `ExperienceEvent.commerce.productViews`börjar du skriva &quot;produktvyer&quot; i sökfältet. När ordet &quot;product&quot; har skrivits in börjar sökresultaten visas. Varje resultat innehåller den objekthierarki som det hör till.
 
@@ -51,7 +51,7 @@ Sedan kan du enkelt dra och släppa [!DNL ExperienceEvents] och &quot;[!UICONTRO
 
 ![Händelseavsnittet i segmentbyggargränssnittet är markerat.](../images/ui/segment-builder/events.png)
 
-Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om[!UICONTROL Event Types]&quot; visas inte eller så kan du bara välja &quot;[!UICONTROL Any]&quot; som &quot;[!UICONTROL Event Type]&quot;, välj **kugghjulsikon** nästa **[!UICONTROL Fields]** väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikon** igen för att gå tillbaka till **[!UICONTROL Fields]** och du bör nu kunna visa flera[!UICONTROL Event Types]&quot; och schemafält, oavsett om de innehåller data eller inte.
+Som standard visas endast ifyllda schemafält från ditt datalager. Det inkluderar &quot;[!UICONTROL Event Types]&quot;. Om[!UICONTROL Event Types]&quot; visas inte eller så kan du bara välja &quot;[!UICONTROL Any]&quot; som &quot;[!UICONTROL Event Type]&quot;, välj **kugghjulsikon** nästa **[!UICONTROL Fields]** väljer **[!UICONTROL Show full XDM schema]** under **[!UICONTROL Available Fields]**. Välj **kugghjulsikon** att gå tillbaka till **[!UICONTROL Fields]** och du bör nu kunna visa flera[!UICONTROL Event Types]&quot; och schemafält, oavsett om de innehåller data eller inte.
 
 ![Alternativknappar som du kan välja mellan att bara visa fält med data eller att visa alla XDM-fält markeras.](../images/ui/segment-builder/show-populated.png)
 
@@ -63,7 +63,7 @@ När du använder data från en enda analysrapportsserie lägger Platform automa
 
 ![En bild som visar hur generiska variabler (eVars) mappas med ett användarvänligt namn.](../images/ui/segment-builder/single-report-suite.png)
 
-När du använder data från flera olika rapportsviter i Analytics, Platform **inte** lägger automatiskt till beskrivningar eller egna namn i eVars. Därför måste du mappa till XDM-fält innan du använder data från rapportsviterna i Analytics. Mer information om mappning av Analytics-variabler till XDM finns i [Anslutningsguide för Adobe Analytics](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping).
+När du använder data från flera olika rapportsviter i Analytics **inte** lägger automatiskt till beskrivningar eller egna namn i eVars. Därför måste du mappa till XDM-fält innan du använder data från rapportsviterna i Analytics. Mer information om mappning av Analytics-variabler till XDM finns i [Anslutningsguide för Adobe Analytics](../../sources/tutorials/ui/create/adobe-applications/analytics.md#mapping).
 
 Tänk dig till exempel en situation där du har två rapportsviter med följande variabler:
 
@@ -84,7 +84,7 @@ I det här fallet kan du mappa de två rapportsviterna med följande schema:
 
 >[!NOTE]
 >
->De generiska eVar fylls i men du bör **not** använda dem i segmentdefinitionerna (om det är möjligt) eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
+>De generiska eVar fylls i men du bör **not** använda dem i segmentdefinitionerna (om det är möjligt), eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
 
 När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i dina profilrelaterade arbetsflöden och segmentering.
 
@@ -95,7 +95,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 
 ### Målgrupper
 
-The **[!UICONTROL Audiences]** På -fliken visas alla målgrupper som importerats från externa källor, t.ex. Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
+The **[!UICONTROL Audiences]** På -fliken visas alla målgrupper som importerats från externa källor, som Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
 
 På **[!UICONTROL Audiences]** kan du se alla tillgängliga källor som en grupp mappar. När du markerar mapparna visas tillgängliga undermappar och målgrupper. Dessutom kan du välja mappikonen (som visas längst till höger) för att visa mappstrukturen (en bock anger den mapp du befinner dig i) och enkelt navigera tillbaka genom mapparna genom att välja namnet på en mapp i trädet.
 
@@ -109,7 +109,7 @@ Du kan också söka efter målgrupper med hjälp av sökfältet som använder [L
 
 En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med hjälp av regelbyggararbetsytan, som finns i mitten av [!DNL Segment Builder].
 
-Om du vill lägga till en ny regel i segmentdefinitionen drar du en ruta från **[!UICONTROL Fields]** och släpp det på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper: strängar, datum, [!DNL ExperienceEvents], &quot;[!UICONTROL Event Types]och målgrupper.
+Om du vill lägga till en ny regel i segmentdefinitionen drar du en ruta från **[!UICONTROL Fields]** och släpp det på regelbyggarens arbetsyta. Därefter visas sammanhangsspecifika alternativ beroende på vilken typ av data som läggs till. Tillgängliga datatyper är: strängar, datum, [!DNL ExperienceEvents], &quot;[!UICONTROL Event Types]och målgrupper.
 
 ![Den tomma arbetsytan för regelbyggaren.](../images/ui/segment-builder/rule-builder-canvas.png)
 
@@ -125,7 +125,7 @@ Om du väljer ett värde i den här listan med enum, visas värdet med en heldra
 
 ![En varning som visas om du infogar ett värde som inte ingår i uppräkningslistan.](../images/ui/segment-builder/enum-warning.png)
 
-Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Välj ![plustecken](../images/ui/segment-builder/plus-icon.png) för att visa **[!UICONTROL Add values in bulk]** pover.
+Om du skapar flera värden kan du lägga till alla samtidigt genom att använda massöverföringen. Välj ![plus-ikon](../images/ui/segment-builder/plus-icon.png) för att visa **[!UICONTROL Add values in bulk]** popover.
 
 ![Plustecknet markeras och visar den knapp som du kan välja för att få åtkomst till bulköverföringen.](../images/ui/segment-builder/add-bulk-values.png)
 
@@ -153,7 +153,7 @@ För [!DNL Platform] målgrupper skapade med [!DNL Segment Builder]kan du konver
 
 ![Den här bilden visar hur du konverterar ett målgruppsattribut till regler.](../images/ui/segment-builder/add-audience-to-segment.png)
 
-Om det uppstår konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
+Om det uppstår några konflikter när målgrupper konverteras till regler, [!DNL Segment Builder] försöker bevara de befintliga alternativen så gott de kan.
 
 ### kodvyn
 
@@ -161,7 +161,7 @@ Du kan även visa en kodbaserad version av en regel som har skapats i [!DNL Segm
 
 ![Knappen för kodvyn är markerad, vilket gör att du kan se segmentdefinitionen som PQL.](../images/ui/segment-builder/code-view.png)
 
-I kodvyn finns en knapp som gör att du kan kopiera värdet för segmentdefinitionen som ska användas i API-anrop. Om du vill hämta den senaste versionen av segmentdefinitionen måste du se till att du har sparat dina senaste ändringar i segmentdefinitionen.
+I kodvyn finns en knapp som gör att du kan kopiera värdet för segmentdefinitionen som ska användas i API-anrop. Kontrollera att du har sparat dina senaste ändringar av segmentdefinitionen för att få tillgång till den senaste versionen av segmentdefinitionen.
 
 ![Knappen Kopiera kod är markerad så att du kan ](../images/ui/segment-builder/copy-code.png)
 
@@ -224,7 +224,7 @@ När du har valt **[!UICONTROL Unwrap container]** den underordnade behållaren 
 >[!CONTEXTUALHELP]
 >id="platform_segmentation_createSegment_segmentBuilder_mergePolicies"
 >title="Sammanfoga profiler"
->abstract="En sammanfogningsprincip gör det möjligt att sammanfoga olika datauppsättningar för att skapa din profil. Plattformen har angett en standardprincip för sammanfogning eller så kan du skapa en ny standardprincip för sammanfogning i Profiler. Välj en sammanfogningspolicy som matchar ert marknadsföringssyfte för den här målgruppen."
+>abstract="En sammanfogningsprincip gör det möjligt att sammanfoga olika datauppsättningar för att skapa din profil. Plattformen har angett en standardprincip för sammanfogning eller så kan du skapa en ny standardprincip för sammanfogning i profiler. Välj en sammanfogningspolicy som matchar ert marknadsföringssyfte för den här målgruppen."
 
 [!DNL Experience Platform] gör att ni kan samla data från flera olika källor och kombinera dem för att få en fullständig bild av varje enskild kund. Sammanslagningsprinciper är reglerna som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa en profil.
 
@@ -249,7 +249,7 @@ Välj en kopplingsprincip för segmentdefinitionen genom att klicka på kugghjul
 
 När du skapar en segmentdefinition visas **[!UICONTROL Segment Properties]** -avsnittet till höger om arbetsytan visar en uppskattning av storleken på den resulterande segmentdefinitionen, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
-The **[!UICONTROL Segment Properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn, beskrivning och utvärderingstyp. Segmentdefinitionsnamn används för att identifiera en segmentdefinition bland de som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
+The **[!UICONTROL Segment Properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn, beskrivning och utvärderingstyp. Segmentdefinitionsnamn används för att identifiera din segmentdefinition bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
 När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
 
@@ -257,11 +257,11 @@ När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad f�
 
 >[!NOTE]
 >
->Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsgenereringsavsnitt](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) av självstudiekursen för att skapa segmentdefinitioner.
+>Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen, för mellan 1 och 20 miljoner enheter används 1 miljon enheter och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar för segmentdefinitioner finns i [uppskattningsgenereringsavsnitt](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) av självstudiekursen för att skapa segmentdefinitioner.
 
 Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas](../images/ui/segment-builder/segment-evaluation-select-icon.png) om du vill se en lista över tillgängliga metoder för utvärdering av segmentdefinitioner.
 
-The [!UICONTROL Evaluation method eligibility] popover visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive utvärderingsmetod finns i [direktuppspelningssegmentering](./streaming-segmentation.md#query-types) eller [kantsegmentering](./edge-segmentation.md#query-types) översikter.
+The [!UICONTROL Evaluation method eligibility] popover visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive utvärderingsmetod finns i [strömningssegmentering](./streaming-segmentation.md#query-types) eller [kantsegmentering](./edge-segmentation.md#query-types) översikter.
 
 ![Popup-fönstret för berättigande av utvärderingsmetod visas. Här visas vilka utvärderingsmetoder som är kvalificerade och inte kan användas för segmentdefinitionen.](../images/ui/segment-builder/select-evaluation-method.png)
 
