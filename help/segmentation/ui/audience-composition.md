@@ -3,14 +3,18 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: b7da6f00426f8cd8e219bf6f8c8275ab3f6942ef
+source-git-commit: 56d9d3ec5565960438540ffec867ed528b52eaf1
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1655'
 ht-degree: 0%
 
 ---
 
 # Användargränssnittsguide för målgruppskomposition
+
+>[!NOTE]
+>
+>Den här guiden förklarar hur du skapar målgrupper med Audience Composition. Om du vill lära dig hur du skapar målgrupper genom segmentdefinitioner med segmentbyggaren kan du läsa [Användargränssnittsguide för segmentbyggare](./segment-builder.md).
 
 Audience Composition har en arbetsyta för att bygga och redigera målgrupper med hjälp av block som används för att representera olika åtgärder.
 
@@ -24,7 +28,7 @@ The **[!UICONTROL Composition properties]** popover visas. Du kan infoga informa
 
 >[!NOTE]
 >
->Om du gör det **not** ger din komposition en titel, har den titeln &quot;Disposition&quot; följt av datum och tid när den skapades som standard.
+>Om du **not** ger din komposition en titel, har den titeln &quot;Disposition&quot; följt av datum och tid när den skapades som standard.
 
 När du har uppdaterat dispositionsinformationen väljer du **[!UICONTROL Save]** för att bekräfta dessa uppdateringar. Målgruppsarbetsytan visas igen.
 
@@ -40,7 +44,7 @@ När du väljer **[!UICONTROL Audience]** höger räl visar kontroller för att 
 >
 >Du kan antingen lägga till målgrupper **eller** skapa en anpassad regel. Dessa två funktioner **inte** användas tillsammans.
 
-![Information om målgruppsblock visas.](../images/ui/audience-composition/audience-block.png)
+![Information om Audience-block visas.](../images/ui/audience-composition/audience-block.png)
 
 ### [!UICONTROL Add audience] {#add-audience}
 
@@ -80,7 +84,7 @@ När du har lagt till en anpassad regel väljer du **[!UICONTROL Save]** för at
 
 The **[!UICONTROL Exclude]** Med blocktyp kan du utesluta angivna undergrupper eller attribut från din nya större publik.
 
-Lägga till en **[!UICONTROL Exclude]** markerar du **+** ikon, följt av **[!UICONTROL Exclude]**.
+Lägga till en **[!UICONTROL Exclude]** -block, markera **+** ikon, följt av **[!UICONTROL Exclude]**.
 
 ![Alternativet Uteslut är valt.](../images/ui/audience-composition/add-exclude-block.png)
 
@@ -112,19 +116,19 @@ En lista med profilattribut visas. Välj den attributtyp som du vill exkludera, 
 
 >[!IMPORTANT]
 >
->I nuläget kan anrikningsattribut **endast** användas i Adobe Journey Optimizer-scenarier längre fram i kedjan.
+>Nu kan anrikningsattribut **endast** användas i Adobe Journey Optimizer längre fram i kedjan.
 
-The **[!UICONTROL Enrich]** Med blocktyp kan ni berika er målgrupp med ytterligare attribut från en datauppsättning. Du kan använda dessa attribut i användningsfall för personalisering.
+The **[!UICONTROL Enrich]** Med blocktyp kan ni berika er målgrupp med ytterligare attribut från en datamängd. Du kan använda dessa attribut i användningsfall för personalisering.
 
-Lägga till en **[!UICONTROL Enrich]** markerar du **+** ikon, följt av **[!UICONTROL Enrich]**.
+Lägga till en **[!UICONTROL Enrich]** -block, markera **+** ikon, följt av **[!UICONTROL Enrich]**.
 
 ![The [!UICONTROL Enrich] är markerat.](../images/ui/audience-composition/add-enrich-block.png)
 
 The **[!UICONTROL Enrich]** -block läggs till. När det här blocket är markerat visas information om anrikningen i den högra listen. Detta inkluderar blockets etikett och datauppsättningen för anrikning.
 
-Om du vill välja den datauppsättning som ska berika publiken med väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+Om du vill välja den datauppsättning som ska berika publiken med väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) -ikon.
 
-![Filterknappen är markerad. Om du väljer det här leder det dig till [!UICONTROL Select dataset] pover.](../images/ui/audience-composition/enrich-select-dataset.png)
+![Filterknappen är markerad. Om du väljer det här leder det dig till [!UICONTROL Select dataset] popover.](../images/ui/audience-composition/enrich-select-dataset.png)
 
 The **[!UICONTROL Select dataset]** popover visas. Välj den datauppsättning som du vill lägga till för berikning, följt av **[!UICONTROL Select]** för att lägga till datauppsättningen för berikning.
 
@@ -138,21 +142,21 @@ The **[!UICONTROL Select dataset]** popover visas. Välj den datauppsättning so
 >   - Datauppsättningen **inte** vara av händelsetyp, vara systemgenererad eller markeras som Profil.
 >- Datauppsättningen **måste** vara 1 GB eller mindre.
 
-The **[!UICONTROL Enrichment criteria]** visas nu på den högra listen. I det här avsnittet kan du välja **[!UICONTROL Source join key]** och **[!UICONTROL Enrichment dataset join key]**, vilket gör att du kan länka datauppsättningen för berikning till den målgrupp du försöker skapa.
+The **[!UICONTROL Enrichment criteria]** -avsnittet visas nu på den högra listen. I det här avsnittet kan du välja **[!UICONTROL Source join key]** och **[!UICONTROL Enrichment dataset join key]**, vilket gör att du kan länka datauppsättningen för berikning till den målgrupp du försöker skapa.
 
 ![The [!UICONTROL Enrichment criteria] området markeras.](../images/ui/audience-composition/enrichment-criteria.png)
 
-Så här väljer du **[!UICONTROL Source join key]** väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+Så här väljer du **[!UICONTROL Source join key]** väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) -ikon.
 
-![Filterikonen för [!UICONTROL Source join key] markeras.](../images/ui/audience-composition/enrich-select-source-join-key.png)
+![Filterikonen för [!UICONTROL Source join key] är markerat.](../images/ui/audience-composition/enrich-select-source-join-key.png)
 
 The **[!UICONTROL Select a profile attribute]** popover visas. Välj det profilattribut som du vill använda som källkopplingsnyckel, följt av **[!UICONTROL Select]** för att välja det attributet som källkopplingsnyckel.
 
 ![Attributet som du vill använda som källkopplingsnyckel markeras.](../images/ui/audience-composition/enrich-select-profile-attribute.png)
 
-Så här väljer du **[!UICONTROL Enrichment dataset join key]** väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+Så här väljer du **[!UICONTROL Enrichment dataset join key]** väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) -ikon.
 
-![Filterikonen för [!UICONTROL Enrichment dataset join key] markeras.](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
+![Filterikonen för [!UICONTROL Enrichment dataset join key] är markerat.](../images/ui/audience-composition/enrich-select-enrichment-dataset-join-key.png)
 
 The **[!UICONTROL Enrichment attributes]** popover visas. Välj det attribut som du vill använda som kopplingsnyckel för anrikningsdatauppsättningen, följt av **[!UICONTROL Select]** att välja det attributet som kopplingsnyckel för datauppsättningen för anrikning.
 
@@ -190,7 +194,7 @@ Your selected audiences now appear within the right rail when the **[!UICONTROL 
 
 The **[!UICONTROL Rank]** Med blocktyp kan du rangordna och sortera profiler baserat på ett angivet attribut och inkludera dessa rankade profiler i din komposition.
 
-Lägga till en **[!UICONTROL Rank]** markerar du **+** ikon, följt av **[!UICONTROL Rank]**.
+Lägga till en **[!UICONTROL Rank]** -block, markera **+** ikon, följt av **[!UICONTROL Rank]**.
 
 ![Alternativet Rankning är valt.](../images/ui/audience-composition/add-rank-block.png)
 
@@ -198,7 +202,7 @@ När du markerar blocket visas information om rangordningen i den högra listen,
 
 ![Rankningsblocket markeras, liksom detaljerna om rangblocket.](../images/ui/audience-composition/rank.png)
 
-Om du vill välja vilket attribut som målgrupperna ska rangordnas efter väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+Om du vill välja vilket attribut som målgrupperna ska rangordnas efter väljer du ![filter](../images/ui/audience-composition/filter-attribute.png) -ikon.
 
 ![Filterikonen är markerad och visar vad du ska välja för att komma åt skärmen för val av profilattribut.](../images/ui/audience-composition/select-rank-attribute.png)
 
@@ -216,7 +220,7 @@ Dessutom kan du begränsa antalet returnerade målgrupper genom att aktivera **[
 
 The **[!UICONTROL Split]** blocktyp gör att ni kan dela upp er nya målgrupp i olika undergrupper. Du kan antingen dela den här målgruppen baserat på procent eller ett attribut.
 
-Lägga till en **[!UICONTROL Split]** markerar du **+** ikon, följt av **[!UICONTROL Split]**.
+Lägga till en **[!UICONTROL Split]** -block, markera **+** ikon, följt av **[!UICONTROL Split]**.
 
 ![Alternativet Dela är markerat.](../images/ui/audience-composition/add-split-block.png)
 
@@ -226,13 +230,13 @@ När ni delar er målgrupp kan ni antingen dela efter procent eller dela efter a
 
 Vid uppdelning efter procent delas målgrupperna slumpmässigt, baserat på antalet banor och procentandelar.
 
-Du kan t.ex. ha tre banor med olika procentandelar av profiler.
+Du kan t.ex. ha tre banor med olika profiler.
 
 ![Uppdelningen av antal sparade målgrupper och procentandelar visas.](../images/ui/audience-composition/percentages.png)
 
 ### Dela efter attribut {#split-attribute}
 
-Vid uppdelning efter attribut delas målgrupperna upp utifrån de angivna attributen. Markera attributet som ska delas med **[!UICONTROL Split]** -block, följt av ![filter](../images/ui/audience-composition/filter-attribute.png) ikon.
+Vid uppdelning efter attribut delas målgrupperna upp utifrån de angivna attributen. Markera attributet som ska delas med **[!UICONTROL Split]** -block, följt av ![filter](../images/ui/audience-composition/filter-attribute.png) -ikon.
 
 ![Filterknappen är markerad och visar hur du filtrerar efter attribut.](../images/ui/audience-composition/select-split-attribute.png)
 
@@ -260,4 +264,4 @@ Om det uppstår fel när målgruppen skapas visas ett varningsmeddelande som tal
 
 ## Nästa steg
 
-Audience Composition har ett omfattande arbetsflöde där du kan skapa målgrupper från olika blocktyper. Läs mer om andra delar av segmenteringstjänstens gränssnitt i [Användarhandbok för segmenteringstjänsten](./overview.md).
+Audience Composition har ett omfattande arbetsflöde som gör att du kan skapa målgrupper från olika blocktyper. Läs mer om andra delar av segmenteringstjänstens gränssnitt i [Användarhandbok för segmenteringstjänsten](./overview.md).

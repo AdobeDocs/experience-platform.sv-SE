@@ -3,14 +3,18 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6d33c1bd3921a754edfab227fad236caf60ac960
+source-git-commit: 56d9d3ec5565960438540ffec867ed528b52eaf1
 workflow-type: tm+mt
-source-wordcount: '3237'
+source-wordcount: '3267'
 ht-degree: 0%
 
 ---
 
 # [!DNL Segment Builder] Användargränssnittsguide
+
+>[!NOTE]
+>
+>I den här guiden beskrivs hur du skapar målgrupper genom **segmentdefinitioner** med segmentbyggaren. Läs mer om hur du skapar målgrupper med Audience Composition i [Användargränssnittsguide för målgruppskomposition](./audience-composition.md).
 
 [!DNL Segment Builder] innehåller en omfattande arbetsyta som gör att du kan arbeta med [!DNL Profile] dataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 04c0b19bf4ffbc0719a89f710570cc667ca5e482
+source-git-commit: 1314b2742af5cd281acb5f9db81eec0ccf885f77
 workflow-type: tm+mt
-source-wordcount: '3430'
+source-wordcount: '3431'
 ht-degree: 0%
 
 ---
@@ -20,14 +20,14 @@ Att arbeta med målgrupper och segmentdefinitioner kräver en förståelse för 
 
 - [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] gör att du kan segmentera data som lagras i [!DNL Experience Platform] som rör individer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper.
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att överbrygga identiteter från olika datakällor som hämtas in i [!DNL Platform].
+- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
 Du bör också förstå två nyckeltermer som används i det här dokumentet och förstå skillnaden mellan dem:
 
-- **Målgrupp**: En uppsättning personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med segmentdefinitioner eller målgruppskomposition (plattformsgenererad publik) eller från externa källor som anpassade uppladdningar (externt genererade målgrupper).
+- **Målgrupp**: En uppsättning personer som har liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med segmentdefinitioner eller målgruppskomposition (plattformsgenererad publik) eller från externa källor som anpassade uppladdningar (externt genererade målgrupper).
 - **Segmentdefinition**: De regler som Adobe Experience Platform använder för att beskriva viktiga egenskaper eller beteenden hos en målgrupp.
-- **Segment**: Att dela upp profiler i olika målgrupper.
+- **Segment**: Att separera profiler i målgrupper.
 
 ## Översikt
 
@@ -72,21 +72,21 @@ Du kan lägga till fler fält till den här visningen genom att välja ![filtera
 
 | Fält | Beskrivning |
 | ----- | ----------- |
-| [!UICONTROL Name] | Publiken. |
+| [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
 | [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
 | [!UICONTROL Created] | Datum och tid, i UTC, då målgruppen skapades. |
 | [!UICONTROL Last updated] | Datum och tid, i UTC, då målgruppen senast uppdaterades. |
 | [!UICONTROL Tags] | De användardefinierade taggar som tillhör målgruppen. Mer information om de här taggarna finns i [avsnitt om taggar](#tags). |
 | [!UICONTROL Breakdown] | Uppdelning av profilstatus för målgruppen. En mer detaljerad beskrivning av den här profilstatusuppdelningen finns nedan. |
-| [!UICONTROL Lifecycle status] | Status för målgruppen. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
+| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är `On Demand`, `Scheduled`och `Continuous`. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
-| [!UICONTROL Description] | Beskrivningen av målgruppen. |
+| [!UICONTROL Description] | Beskrivning av målgruppen. |
 | [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
 | [!UICONTROL Access labels] | Åtkomstetiketterna för målgruppen. Med åtkomstetiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Dessa etiketter kan användas när som helst, vilket ger flexibilitet i hur du vill styra data. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 
-Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör var och en av följande beräknade profilstatusar: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] tab är den mest exakta uppdelningen av segmentdefinitionsstatusen. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
+Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör följande beräknade profilstatusar: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] tab är den mest exakta uppdelningen av segmentdefinitionsstatusen. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
 
 | Status | Beskrivning |
 | ------ | ----------- |
@@ -103,9 +103,9 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | Redigera | Segmenteringstjänst | Gör att du kan öppna Segment Builder för att redigera målgruppen. Mer information om hur du använder Segment Builder finns i [Användargränssnittsguide för segmentbyggare](./segment-builder.md). |
 | Öppna komposition | Målgruppskomposition | Gör att ni kan öppna Audience-kompositionen och se er målgrupp. Mer information om publikens sammansättning finns i [gränssnittsguide för målgruppskomposition](./audience-composition.md). |
 | Aktivera till mål | Segmenteringstjänst | Gör att du kan aktivera målgruppen till ett mål. Mer information om hur man aktiverar en målgrupp finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md). |
-| Dela med partners | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Dela målgruppen med andra plattformsanvändare. Mer information om den här funktionen finns i [Översikt över segmentmatchning](./segment-match/overview.md). |
-| Hantera taggar | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan hantera användardefinierade taggar som tillhör målgruppen. Mer information om den här funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
-| Flytta till mapp | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Här kan du hantera vilken mapp målgruppen tillhör. Mer information om den här funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
+| Dela med partners | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan dela din publik med andra plattformsanvändare. Mer information om den här funktionen finns i [Översikt över segmentmatchning](./segment-match/overview.md). |
+| Hantera taggar | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan hantera användardefinierade taggar som tillhör målgruppen. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
+| Flytta till mapp | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Här kan du hantera vilken mapp målgruppen tillhör. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | Kopiera | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Duplicerar den valda målgruppen. |
 | Använd åtkomstetiketter | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan hantera åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 | Arkiv | Anpassad överföring | Arkiverar den valda målgruppen. |
@@ -125,7 +125,7 @@ Markera **[!UICONTROL Create audience]** kan ni skapa en målgrupp. Läs mer om 
 >
 > Du kommer att **not** kan ta bort en målgrupp som används i en målaktivering.
 
-### Filtrering och taggning {#manage-audiences}
+### Filtrering, mappar och taggning {#manage-audiences}
 
 För att effektivisera arbetet kan du söka efter befintliga målgrupper, lägga till användardefinierade taggar till målgrupper, placera målgrupper i mappar och filtrera de visade målgrupperna.
 
@@ -145,14 +145,14 @@ Du kan lägga till användardefinierade taggar för att bättre beskriva, hitta 
 
 Om du vill lägga till en tagg väljer du **[!UICONTROL Manage tags]** på den målgrupp du vill tagga.
 
-![The [!UICONTROL Manage tags] är markerad för en angiven målgrupp.](../images/ui/overview/browse-manage-tags.png)
+![The [!UICONTROL Manage tags] knappen är markerad för en angiven målgrupp.](../images/ui/overview/browse-manage-tags.png)
 
 The **[!UICONTROL Manage tags]** popover visas. I den här drivrutinen kan du antingen välja en kategoriserad tagg eller en okategoriserad tagg.
 
 | Tagg type | Beskrivning |
 | -------- | ----------- |
 | Kategoriserad | En tagg som skapas och hanteras av organisationens administratörer. |
-| Okategoriserad | En tagg som skapas i [!UICONTROL Manage tags] pover. Alla kan skapa eller hantera de här taggtyperna. |
+| Okategoriserad | En tagg som skapas i [!UICONTROL Manage tags] popover. Vem som helst kan skapa eller hantera de här taggtyperna. |
 
 ![The [!UICONTROL Manage tags] popover visas. Alternativen för att välja en kategoriserad eller okategoriserad markeras.](../images/ui/overview/create-tag.png)
 
@@ -160,7 +160,7 @@ När du har lagt till alla taggar som du vill bifoga till målgruppen väljer du
 
 ![På [!UICONTROL Manage tags] pover markeras de tillagda taggarna.](../images/ui/overview/created-tags.png)
 
-Mer information om hur du skapar och hanterar taggar finns i [Hantera taggar](../../administrative-tags/ui/managing-tags.md).
+Mer information om hur du skapar och hanterar taggar finns i [Hantera taggar, guide](../../administrative-tags/ui/managing-tags.md).
 
 **Mappar** {#folders}
 
@@ -204,7 +204,7 @@ Listan med tillgängliga filter visas.
 
 Om du vill ha mer information om en viss målgrupp väljer du en målgrupps namn i **[!UICONTROL Browse]** -fliken.
 
-Sidan med målgruppsinformation visas. Dessutom finns det en sammanfattning av målgruppen, information om den kvalificerade målgruppsstorleken samt vilka mål som segmentet är aktiverat för.
+Sidan med målgruppsinformation visas. Dessutom finns det en sammanfattning av målgruppen, information om den kvalificerade målgruppsstorleken samt destinationer som segmentet är aktiverat för.
 
 ![Sidan med målgruppsinformation visas. Målgruppssammanfattning, målgruppssumma och aktiverade destinationskort markeras.](../images/ui/overview/audience-details-summary.png)
 
@@ -228,7 +228,7 @@ Markera **[!UICONTROL Apply access labels]** gör att du kan hantera de åtkomst
 
 ![Sidan med målgruppsinformation visas med [!UICONTROL Open composition] markerad knapp.](../images/ui/overview/audience-details-open-composition.png)
 
-Markera **[!UICONTROL Open composition]** Med kan du visa målgruppen i Audience Composition. Mer information om Audience Composition finns i [Användargränssnittsguide för målgruppskomposition](./audience-composition.md).
+Markera **[!UICONTROL Open composition]** Med kan du visa målgruppen i Audience Composition. Läs mer om Audience Composition [Användargränssnittsguide för målgruppskomposition](./audience-composition.md).
 
 >[!TAB Anpassad överföring]
 
@@ -252,15 +252,15 @@ Markera **[!UICONTROL Edit properties]** gör att du kan redigera grundläggande
 
 The **[!UICONTROL Audience total]** visar det totala antalet profiler som är kvalificerade för målgruppen.
 
-Uppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen. För mellan 1 och 20 miljoner enheter används 1 miljon enheter. och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar finns i [uppskattningsgenereringsavsnitt](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) av självstudiekursen för att skapa målgrupper.
+Uppskattningar genereras med en provstorlek för den aktuella dagens exempeldata. Om det finns mindre än 1 miljon enheter i din profilbutik används hela datauppsättningen, för mellan 1 och 20 miljoner enheter används 1 miljon enheter och för över 20 miljoner enheter används 5 % av det totala antalet enheter. Mer information om hur du genererar uppskattningar finns i [uppskattningsgenereringsavsnitt](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) av självstudiekursen för att skapa målgrupper.
 
-**Aktiverade destinationer** {#activated-destinations}
+**Aktiverade mål** {#activated-destinations}
 
 The **[!UICONTROL Activated destinations]** visar de mål som den här målgruppen är aktiverad för.
 
 >[!NOTE]
 >
-> Destinationer är en funktion som är tillgänglig med [!DNL Adobe Real-Time Customer Data Platform]och gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [destinationer, översikt](../../destinations/home.md). Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
+> Destinationer är en funktion med [!DNL Adobe Real-Time Customer Data Platform]och gör att du kan exportera data till externa plattformar. Mer information om destinationer finns i [destinationer, översikt](../../destinations/home.md). Mer information om hur du aktiverar ett segment till ett mål finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
 
 **Profilexempel** {#profile-samples}
 
@@ -318,7 +318,7 @@ The **[!UICONTROL Import audience CSV]** arbetsflödet visas. Du kan välja en C
 
 >[!NOTE]
 >
->Den externa målgruppen **måste** har CSV-format, har **maximum** av 11 kolumner och får vara mindre än 1 GB.
+>Den externa målgruppen **måste** vara i CSV-format, har **maximum** av 11 kolumner och får vara mindre än 1 GB.
 
 När du har valt den CSV-fil som ska importeras visas en lista med exempeldata för den externt genererade målgruppen. När du har bekräftat att exempeldata är korrekta väljer du **[!UICONTROL Next]**.
 
@@ -340,13 +340,13 @@ När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Fi
 
 ## Schemalagd segmentering {#scheduled-segmentation}
 
-När målgrupperna har skapats kan du sedan utvärdera dem via on-demand eller schemalagd (kontinuerlig) utvärdering. Utvärdering innebär att flytta [!DNL Real-Time Customer Profile] data genom segmentjobb för att producera motsvarande målgrupper. När målgrupperna har skapats sparas och lagras de så att de kan exporteras med [!DNL Experience Platform] API:er.
+När målgrupperna har skapats kan du sedan utvärdera dem via on-demand eller schemalagd (kontinuerlig) utvärdering. Utvärdering innebär att flytta [!DNL Real-Time Customer Profile] data genom segmentjobb för att producera motsvarande målgrupper. När målgrupperna har skapats sparas och lagras de så att de kan exporteras med [!DNL Experience Platform] API.
 
 I On-demand-utvärderingen ingår att använda API:t för att utvärdera och bygga målgrupper efter behov, medan schemalagd utvärdering (även kallat schemalagd segmentering) gör att du kan skapa ett återkommande schema för att utvärdera målgrupper vid en viss tidpunkt (högst en gång om dagen).
 
 ### Aktivera schemalagd segmentering {#enable-scheduled-segmentation}
 
-Du kan aktivera dina målgrupper för schemalagd utvärdering med hjälp av gränssnittet eller API:t. I användargränssnittet går du tillbaka till **[!UICONTROL Browse]** tabba i **[!UICONTROL Audiences]** och aktivera **[!UICONTROL Schedule all audiences]**. Detta gör att alla målgrupper utvärderas baserat på det schema som angetts av organisationen.
+Du kan aktivera dina målgrupper för schemalagd utvärdering med hjälp av gränssnittet eller API:t. Gå tillbaka till användargränssnittet **[!UICONTROL Browse]** tabba i **[!UICONTROL Audiences]** och aktivera **[!UICONTROL Schedule all audiences]**. Detta gör att alla målgrupper utvärderas baserat på det schema som angetts av organisationen.
 
 >[!NOTE]
 >
@@ -374,8 +374,8 @@ En pover visas med en lista över alla fält som kan visas i tabellen.
 
 | Fält | Beskrivning |
 | ----- | ----------- | 
-| [!UICONTROL Name] | Publiken. |
-| [!UICONTROL Status] | Status för målgruppen. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
+| [!UICONTROL Name] | Namnet på publiken. |
+| [!UICONTROL Status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
 | [!UICONTROL Created] | Tid och datum då målgruppen skapades. |
 | [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
 | [!UICONTROL Updated] | Tid och datum då målgruppen senast uppdaterades. |
@@ -387,7 +387,7 @@ Sidan Audience Composition visas med de byggstenar som utgör målgruppen. Mer i
 
 ## Direktuppspelningssegmentering {#streaming-segmentation}
 
-Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Platform] i nära realtid, samtidigt som datamöjligheter fokuseras. Med direktuppspelningssegmentering blir det numera möjligt att kvalificera sig för segmentering allt eftersom data når [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
+Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Platform] i nära realtid, samtidigt som datamöjligheter fokuseras. Med direktuppspelningssegmentering blir det numera möjligt att kvalificera sig för segmentering när data når [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
 
 Mer information om direktuppspelningssegmentering finns i [användarhandbok för direktuppspelningssegmentering](./streaming-segmentation.md).
 
