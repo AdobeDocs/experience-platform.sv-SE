@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;flödestjänst;
 title: Försök igen med misslyckade dataflödeskörningar
-description: I den här självstudien beskrivs hur du provar misslyckade dataflöden på nytt med API:t för Flow Service
+description: Lär dig hur du försöker köra misslyckade dataflöden på nytt med API:t för Flow Service.
 exl-id: b9abc737-9a57-47e6-98ab-6d6c44f38d17
-source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
+source-git-commit: d4dba26a151619a555a69287e182ff8398cca7b4
 workflow-type: tm+mt
-source-wordcount: '258'
+source-wordcount: '273'
 ht-degree: 1%
 
 ---
@@ -22,8 +21,8 @@ I den här självstudiekursen beskrivs hur du provar misslyckade dataflöden på
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
-* [Källor](../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-* [Sandlådor](../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+* [Källor](../../home.md): Experience Platform tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Sandlådor](../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 ### Använda plattforms-API:er
 
@@ -45,6 +44,10 @@ POST /runs/{RUN_ID}/action?op=re-trigger
 | `op` | En åtgärd som avgör vilken åtgärd som ska utföras. Om du vill försöka köra ett misslyckat dataflöde igen måste du ange `re-trigger` som din åtgärd. |
 
 **Begäran**
+
+>[!NOTE]
+>
+>Du kan använda `re-trigger` åtgärden för att försöka återskapa ett lyckat dataflöde körs också, eftersom det slutförda dataflödet saknar inkapslade poster.
 
 Följande begäran försöker köra dataflödet igen för körnings-ID `4fb0418e-1804-45d6-8d56-dd51f05c0baf`.
 
