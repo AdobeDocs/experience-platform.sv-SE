@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över datainsamling
 description: Läs mer om de olika tekniker som används för att samla in data om kundupplevelser i Adobe Experience Platform.
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 998cc9a9c490124ff21fdbf5f3a7b91abef3e8b8
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '514'
 ht-degree: 3%
 
 ---
@@ -29,9 +29,10 @@ Datainsamlingen fokuserar på att upptäcka och göra inkapslade datauppsättnin
 * [Vidarebefordran av händelser](../tags/ui/event-forwarding/overview.md)
 * [Webb-SDK för Adobe Experience Platform](../edge/home.md)
 * [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
+* [Server-API för Edge Network](../server-api/overview.md)
 * [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
-* [Experience Data Model (XDM)](../xdm/home.md)
-* [Adobe Experience Platform Identity Service](../identity-service/home.md)
+* [Experience Platform Assurance](../assurance/home.md)
+
 
 Den här guiden ger en introduktion på hög nivå till datainsamling och hur den fungerar för att skicka data till Adobe Experience Cloud-produkter och program utanför Adobe via Platform Edge Network.
 
@@ -45,7 +46,7 @@ Komprimering av dessa bibliotek snabbar upp datainsamlingen och konsoliderar åt
 
 ## Platform Edge Network och datastreams {#edge}
 
-Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med taggar kan du konfigurera [datastreams](../datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
+Platform Edge Network är ett globalt, snabbt och tillförlitligt nätverk av servrar som kan ta emot och bearbeta data i otrolig skala. Med hjälp av taggar kan du konfigurera [datastreams](../datastreams/overview.md) för produkter som Adobe Target, Adobe Audience Manager och Adobe Analytics, som gör att du kan aktivera dessa produkter på serversidan utan att ändra klientkoden.
 
 Dessutom är datastreams integrerade med flera plattformsfunktioner som säkerställer att känsliga data som du skickar hanteras på rätt sätt med hänsyn till organisationens policyer och rättsliga bestämmelser. Se avsnittet om [hantera känsliga data](../datastreams/overview.md#sensitive) i datastreams-dokumentationen om du vill ha mer information.
 
