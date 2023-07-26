@@ -1,14 +1,14 @@
 ---
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
-source-git-commit: d927f1f98c1f3a42907501921fcd2367241fa625
+source-git-commit: d8845e080489af12e98badc892bb60cb9749bd47
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
 
-# Parametriserade frågor
+# Parametriserade frågor (begränsad version)
 
 >[!IMPORTANT]
 >
@@ -18,7 +18,7 @@ Frågetjänsten stöder användning av parametriserade frågor i Frågeredigerar
 
 ## Förutsättningar
 
-Läs mer i [Användargränssnittshandbok för frågeredigeraren](./user-guide.md). Frågeredigeringsguiden ger detaljerad information om hur man skriver, validerar och kör frågor om kundupplevelsedata i användargränssnittet i Experience Platform.
+Innan du fortsätter med den här guiden ska du läsa [Användargränssnittshandbok för frågeredigeraren](./user-guide.md). Frågeredigeringsguiden ger detaljerad information om hur man skriver, validerar och kör frågor om kundupplevelsedata i användargränssnittet i Experience Platform.
 
 >[!NOTE]
 >

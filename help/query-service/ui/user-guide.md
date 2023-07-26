@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: ff4b528a0456f46d8c99e5921cfc99b197956ba6
+source-git-commit: e30942aec6c66aeed8375d6221b454725f5a958d
 workflow-type: tm+mt
-source-wordcount: '1626'
+source-wordcount: '1853'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ Mer information om begrepp och funktioner i [!DNL Query Service], se [Översikt 
 
 ### Ansluter till [!DNL Query Service] {#connecting-to-query-service}
 
-[!DNL Query Editor] tar några sekunder att initiera och ansluta till [!DNL Query Service] när den öppnas. Konsolen talar om när den är ansluten, vilket visas nedan. Om du försöker köra en fråga innan redigeraren har anslutit, fördröjs körningen tills anslutningen är klar.
+[!DNL Query Editor] tar några sekunder att initiera och ansluta till [!DNL Query Service] när den öppnas. Konsolen talar om för dig när den är ansluten, vilket visas nedan. Om du försöker köra en fråga innan redigeraren har anslutit, fördröjs körningen tills anslutningen är klar.
 
 ![Frågeredigerarens konsolutdata vid den första anslutningen.](../images/ui/query-editor/connect.png)
 
 ### Hur frågor körs från [!DNL Query Editor] {#run-a-query}
 
-Frågor som körs från [!DNL Query Editor] köra interaktivt. Det innebär att om du stänger webbläsaren eller navigerar bort så avbryts frågan. Detta gäller även för frågor som skapas för att generera datauppsättningar från frågeutdata.
+Frågor som körs från [!DNL Query Editor] köra interaktivt vilket innebär att om du stänger webbläsaren eller navigerar bort så avbryts frågan. Detsamma gäller för frågor som skapas för att generera datauppsättningar från frågeutdata.
 
 ## Frågeredigering med [!DNL Query Editor] {#query-authoring}
 
@@ -37,9 +37,30 @@ Använda [!DNL Query Editor]kan du skriva, köra och spara frågor om kundupplev
 
 ### Komma åt [!DNL Query Editor] {#accessing-query-editor}
 
-I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna [!DNL Query Service] arbetsyta. Nästa, välj **[!UICONTROL Create Query]** längst upp till höger på skärmen för att börja skriva frågor. Den här länken är tillgänglig från någon av sidorna i [!DNL Query Service] arbetsyta.
+I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna [!DNL Query Service] arbetsyta. För att börja skriva frågor väljer du **[!UICONTROL Create Query]** längst upp till höger på skärmen. Den här länken är tillgänglig från någon av sidorna i [!DNL Query Service] arbetsyta.
 
 ![Översiktsfliken i arbetsytan Frågor med frågan Skapa markerad.](../images/ui/query-editor/create-query.png)
+
+### Förbättrad frågeredigerare {#enhanced-editor-toggle}
+
+>[!CONTEXTUALHELP]
+>id="platform_queryService_queryEditor_enhancedEditorToggle"
+>title="Förbättrad redigeringsfunktion"
+>abstract="Växla mellan den äldre och förbättrade versionen av Frågeredigeraren. Den äldre versionen är aktiverad som standard, men den förbättrade versionen har bättre tillgänglighet och stöd för flera teman. Mer information om dessa ändringar finns i dokumentationen."
+
+Med ett användargränssnitt kan du växla mellan den tidigare och förbättrade versionen av Frågeredigeraren. Den äldre versionen är aktiverad som standard, men den förbättrade versionen har bättre tillgänglighet och stöd för flera teman. Aktivera den förbättrade versionen för att komma åt inställningarna för Frågeredigeraren.
+
+![Frågeredigeraren med den förbättrade frågeredigeraren markerad.](../images/ui/query-editor/enhanced-query-editor-toggle.png)
+
+När du aktiverar växlingsknappen ändras redigeraren till ett ljust tema och syntaxens läsbarhet förbättras. En inställningsikon visas också ovanför inmatningsfältet i Frågeredigeraren, som innehåller det automatiska avslutningsreglaget. Från inställningsikonen kan du aktivera mörkt tema eller inaktivera/aktivera automatisk komplettering.
+
+>[!TIP]
+>
+>Med den förbättrade frågeredigeraren kan du [!UICONTROL Disable syntax auto complete] när du redigerar en fråga utan att förlora förloppet. Om du inaktiverar funktionen för automatisk komplettering när du redigerar försvinner vanligtvis alla ändringar i frågan.
+
+Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![En inställningsikon.](../images/ui/query-editor/settings-icon.png)) följt av alternativet i listrutan som visas.
+
+![Frågeredigeraren med inställningsikonen och alternativet Aktivera mörkt tema på den nedrullningsbara menyn markerat.](../images/ui/query-editor/query-editor-settings.png)
 
 ### Skriver frågor {#writing-queries}
 
@@ -59,7 +80,7 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågo
 
 ![Några tecken i SQL med listrutan Komplettera automatiskt som innehåller alternativ från Frågeredigeraren.](../images/ui/query-editor/syntax-auto.png)
 
-- **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn som du vill använda `SELECT` navigera sedan till tabellen du letar efter med piltangenterna och tryck på **Retur**. När en tabell är markerad identifieras fält i tabellen automatiskt.
+- **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn som du vill använda `SELECT` navigera sedan till tabellen du letar efter med piltangenterna och tryck på **Retur**. När en tabell har markerats identifieras fält i den tabellen automatiskt.
 
 ![Indata från Frågeredigeraren med förslag på listtabellnamn.](../images/ui/query-editor/tables-auto.png)
 
@@ -71,7 +92,7 @@ Konfigurationsinställningen som slutförs automatiskt är per användare och sp
 
 ![Frågeredigeraren med syntaxen auto-complete aktiverad.](../images/ui/query-editor/auto-complete-toggle.png)
 
-Om du inaktiverar den här funktionen hindras flera metadatakommandon från att bearbetas och ger rekommendationer som vanligtvis underlättar för författaren att redigera frågor.
+Om du inaktiverar den här funktionen hindras flera metadatakommandon från att bearbetas och ger rekommendationer som vanligtvis underlättar för författaren när han/hon redigerar frågor.
 
 När du använder växlingsknappen för att aktivera funktionen för automatisk komplettering blir förslag på tabell- och kolumnnamn samt SQL-nyckelord tillgängliga efter en kort paus. Ett meddelande om att åtgärden lyckades i konsolen under Frågeredigeraren anger att funktionen är aktiv.
 
@@ -87,7 +108,7 @@ Om du inaktiverar funktionen för automatisk komplettering måste du uppdatera s
 
 ![Bekräftelsedialogrutan för att inaktivera funktionen för automatisk komplettering.](../images/ui/query-editor/confirmation-dialog.png)
 
-Välj lämpligt alternativ för att inaktivera funktionen för automatisk komplettering.
+Om du vill inaktivera funktionen för automatisk komplettering väljer du lämpligt bekräftelsealternativ.
 
 ### Felidentifiering {#error-detection}
 
@@ -101,7 +122,7 @@ När fel upptäcks kan du visa de specifika felmeddelandena genom att hovra öve
 
 ### Frågeinformation {#query-details}
 
-Välj en sparad mall från [!UICONTROL Templates] för att visa den i frågeredigeraren. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan.
+Om du vill visa en fråga i Frågeredigeraren väljer du en sparad mall i dialogrutan [!UICONTROL Templates] -fliken. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan.
 
 ![Frågeredigeraren med frågeinformationspanelen markerad.](../images/ui/query-editor/query-details.png)
 
@@ -111,9 +132,9 @@ På den här panelen visas även användbara metadata som den senaste gången fr
 
 ### Schemalagda frågor {#scheduled-queries}
 
-Frågor som har sparats som en mall kan schemaläggas från Frågeredigeraren. På så sätt kan du automatisera körningar av frågor med en anpassad stängsel. Du kan schemalägga frågor baserat på frekvens, datum och tid och även välja en utdatamängd för dina resultat om det behövs. Frågescheman kan också inaktiveras eller tas bort via användargränssnittet.
+Frågor som har sparats som en mall kan schemaläggas från Frågeredigeraren. Med schemaläggningsfrågor kan du automatisera frågekörningar på en anpassad cache. Du kan schemalägga frågor baserat på frekvens, datum och tid och även välja en utdatamängd för dina resultat om det behövs. Frågescheman kan även inaktiveras eller tas bort via användargränssnittet.
 
-Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Detta gäller inte för [!DNL Query Service] API:
+Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Samma begränsning gäller inte för [!DNL Query Service] API:
 
 Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågescheman i användargränssnittet](./query-schedules.md). Du kan även läsa mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
 
@@ -139,7 +160,7 @@ Om en fråga har schemalagts [!UICONTROL Scheduled Queries] -fliken ger förbät
 
 ## Köra frågor med Frågeredigeraren {#executing-queries}
 
-Så här kör du en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren eller läsa in en tidigare fråga från **[!UICONTROL Log]** eller **[!UICONTROL Templates]** och markera **Spela upp**. Status för frågekörning visas i **[!UICONTROL Console]** nedan och utdata visas i **[!UICONTROL Results]** -fliken.
+Köra en fråga i [!DNL Query Editor]kan du ange SQL i redigeraren eller läsa in en tidigare fråga från **[!UICONTROL Log]** eller **[!UICONTROL Templates]** och markera **Spela upp**. Status för frågekörning visas i **[!UICONTROL Console]** nedan och utdata visas i **[!UICONTROL Results]** -fliken.
 
 ### Konsol {#console}
 
@@ -149,7 +170,7 @@ Konsolen ger information om status och funktion för [!DNL Query Service]. Konso
 
 >[!NOTE]
 >
->Konsolen visar bara fel som uppstått när en fråga kördes. Frågevalideringsfel visas inte innan en fråga körs.
+>Konsolen visar bara fel som uppstått efter körningen av en fråga. Det visar inte de frågevalideringsfel som inträffar innan en fråga körs.
 
 ### Frågeresultat {#query-results}
 
@@ -157,9 +178,9 @@ När en fråga är klar visas resultatet i **[!UICONTROL Results]** -flik, bredv
 
 ![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
 
-## Kör frågor med [!DNL Query Service] video med självstudiekurser {#query-tutorial-video}
+## Kör frågor med [!DNL Query Service] videokurs {#query-tutorial-video}
 
-I följande video visas hur du kör frågor i Adobe Experience Platform-gränssnittet och i en PSQL-klient. Dessutom visas om du använder enskilda egenskaper i ett XDM-objekt, använder funktioner som definieras av Adobe och använder CREATE TABLE AS SELECT (CTAS).
+I följande video visas hur du kör frågor i Adobe Experience Platform-gränssnittet och i en PSQL-klient. I videon visas också hur du använder enskilda egenskaper i ett XDM-objekt, Adobe-definierade funktioner och hur du använder CREATE TABLE AS SELECT-frågor (CTAS).
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
