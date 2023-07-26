@@ -1,22 +1,22 @@
 ---
 title: Dataset Statistik - beräkning
 description: I det här dokumentet beskrivs hur du beräknar kolumnnivåstatistik för ADLS-datauppsättningar (Azure Data Lake Storage) med SQL-kommandon.
-source-git-commit: c7bc395038906e27449c82c518bd33ede05c5691
+source-git-commit: 66354932ee42137ca98e7033d942556f13c64de1
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '1087'
 ht-degree: 0%
 
 ---
 
 # Datauppsättningsstatistikberäkning
 
-Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon. SQL-kommandona som beräknar datauppsättningsstatistik är ett tillägg till `ANALYZE TABLE` -kommando. Fullständig information om `ANALYZE TABLE` finns i [SQL-referensdokumentation](../sql/syntax.md#analyze-table).
+Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon SQL-kommandona som beräknar datauppsättningsstatistik är ett tillägg till `ANALYZE TABLE` -kommando. Fullständig information om `ANALYZE TABLE` finns i [SQL-referensdokumentation](../sql/syntax.md#analyze-table).
 
 >[!NOTE]
 >
->För närvarande gäller den genererade statistiken endast för den sessionen och är inte beständig mellan sessionerna. De kan inte nås över olika PSQL-sessioner.
+>Beräknad statistik lagras i temporära tabeller som har beständighet på sessionsnivå. Du kommer åt resultatet av beräkningarna när som helst under sessionen. De kan inte nås över olika PSQL-sessioner.
 
-Med `SHOW STATISTICS FOR <alias_name>` kan du se statistik som har beräknats med `ANALYZE TABLE COMPUTE STATISTICS` -kommando. Genom att kombinera dessa kommandon kan du nu beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en deluppsättning av kolumner.
+För att se statistik som har beräknats med `ANALYZE TABLE COMPUTE STATISTICS` kan du använda en SELECT-fråga för aliasnamnet eller Statistik-ID:t. Du kan också begränsa omfattningen av den statistiska analysen till antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en deluppsättning av kolumner.
 
 >[!IMPORTANT]
 >
@@ -26,11 +26,11 @@ Den här guiden hjälper dig att strukturera dina frågor så att du kan beräkn
 
 ## Beräkningsstatistik {#compute-statistics}
 
-Ytterligare konstruktioner har lagts till i `ANALYZE TABLE` kommando som gör att du kan **Beräkna statistik för en delmängd av en datauppsättning och för vissa kolumner**. För att göra detta måste du använda `ANALYZE TABLE <tableName> COMPUTE STATISTICS` format.
+Ytterligare konstruktioner har lagts till i `ANALYZE TABLE` kommando som gör att du kan **Beräkna statistik för en delmängd av en datauppsättning och för vissa kolumner**. Om du vill beräkna datauppsättningsstatistik måste du använda `ANALYZE TABLE <tableName> COMPUTE STATISTICS` format.
 
 >[!IMPORTANT]
 >
->Standardbeteendet beräknar statistik för **hel datauppsättning** och for **alla kolumner**. Om du vill beräkna statistik för alla kolumner använder du frågeformatet `ANALYZE TABLE COMPUTE STATISTICS`. Du är **not** rekommenderas att använda detta på en ADLS-datauppsättning, eftersom datauppsättningens storlek kan vara mycket stor (potentiellt antal databyte). I stället bör du alltid överväga att köra analyskommandot med `FILTERCONTEXT` och en angiven lista med kolumner. Se avsnitten om [begränsa analyserade kolumner](#limit-included-columns) och [lägga till ett filtervillkor](#filter-condition) för mer information.
+>Standardbeteendet beräknar statistik för **hel datamängd** och for **alla kolumner**. Om du vill beräkna statistik för alla kolumner använder du frågeformatet `ANALYZE TABLE COMPUTE STATISTICS`. Du är **not** rekommenderas att använda `COMPUTE STATISTICS` kommandot utan filter på en ADLS-datauppsättning, eftersom datauppsättningens storlek kan vara mycket stor (potentiellt antal databyte). I stället bör du alltid överväga att köra analyskommandot med `FILTERCONTEXT` och en angiven lista med kolumner. Se avsnitten om [begränsa analyserade kolumner](#limit-included-columns) och [lägga till ett filtervillkor](#filter-condition) för mer information.
 
 Exemplet nedan beräknar statistik för `adc_geometric` datauppsättning och för **alla** -kolumner i datauppsättningen.
 
@@ -40,16 +40,25 @@ ANALYZE TABLE adc_geometric COMPUTE STATISTICS;
 
 >[!NOTE]
 >
->`COMPUTE STATISTICS` stöder inte datatyperna array eller map. Du kan ange en `skip_stats_for_complex_datatypes` flagga som ska meddelas eller felas om indatabildrutan har kolumner med arrayer och mappningsdatatyper. Som standard är flaggan inställd på true. Använd följande kommando om du vill aktivera meddelanden eller fel: `SET skip_stats_for_complex_datatypes = false`.
+>The `COMPUTE STATISTICS` kommandot stöder inte datatyperna array eller map. Du kan ange en `skip_stats_for_complex_datatypes` flagga för att bli meddelad eller för att felsöka om indatabildrutan innehåller kolumner med arrayer och mappningsdatatyper. Som standard är flaggan inställd på true. Använd följande kommando om du vill aktivera meddelanden eller fel: `SET skip_stats_for_complex_datatypes = false`.
 
-<!-- Commented out until the <alias_name> feature is released.
-This second example, is a more real-world example as it uses an alias name. See the [alias name section](#alias-name) for more details on this feature.
+## Skapa ett aliasnamn {#alias-name}
+
+Eftersom resultatet av beräkningarna kan vara en stor mängd data är det orimligt att returnera beräknade data direkt i konsolutdata. Även om aliasnamn är valfria bör du använda dem som bästa praxis när du beräknar statistik. Ange ett aliasnamn i satsen för att beskriva resultaten i dina SQL-frågor. Alternativt kan en automatiskt genererad `Statistics ID` genereras och används för att lagra den beräknade informationen.
+
+Exemplet nedan lagrar utdata som beräknats i `alias_name` för senare referens. Aliasnamnet som används i frågan är tillgängligt för referens så snart som `ANALYZE TABLE` kommandot har körts.
 
 ```sql
-ANALYZE TABLE adc_geometric COMPUTE STATISTICS as <alias_name>;
-``` -->
+ANALYZE TABLE adc_geometric COMPUTE STATISTICS AS alias_name;
+```
 
-Konsolutdata visar inte statistik som svar på kommandot för att analysera tabellberäkningsstatistik. Istället visas en radkolumn i konsolen `Statistics ID` med en unik identifierare som refererar till resultaten. Du kan också välja att **fråga direkt på`Statistics ID`**. När en `COMPUTE STATISTICS` -frågan, visas resultaten enligt följande:
+Utdata för exemplet ovan är `SUCCESSFULLY COMPLETED, alias_name`. Konsolutdata visar inte statistik som svar på kommandot för att analysera tabellberäkningsstatistik. Om du vill se de detaljerade resultaten måste du använda en SELECT-fråga för aliasnamnet eller Statistik-ID:t.
+
+## Visa utdata för beräknad statistik {#view-output-of-computed-statistics}
+
+Om du inte anger ett aliasnamn i förväg, genererar frågetjänsten automatiskt ett namn för `Statistics ID` som följer formatet för `<tableName_stats_{incremental_number}>`. Om ett aliasnamn anges visas det i `Statistics ID` kolumn.
+
+Ett exempel på utdata från en `COMPUTE STATISTICS` frågan är följande:
 
 ```console
 | Statistics ID    | 
@@ -58,95 +67,16 @@ Konsolutdata visar inte statistik som svar på kommandot för att analysera tabe
 (1 row)
 ```
 
-Du kan fråga statistikutdata direkt genom att referera till `Statistics ID` enligt nedan:
+Då kan du **fråga den beräknade statistiken direkt** genom att referera till `Statistics ID`. Med exempelprogramsatsen nedan kan du visa utdata i sin helhet när den används med `Statistics ID` eller aliasnamnet.
 
 ```sql
 SELECT * FROM adc_geometric_stats_1; 
 ```
 
-Med den här programsatsen kan du visa utdata på ungefär samma sätt som kommandot VISA STATISTIK när det används med `Statistics ID`.
-
-Du kan visa en lista med all beräknad statistik i sessionen genom att köra kommandot VISA STATISTIK. Ett exempel på hur kommandot VISA STATISTIK visas nedan.
+Den beräknade statistiken kan se ut ungefär som i exemplet nedan.
 
 ```console
-statsId | tableName | columnSet | filterContext | timestamp
------------+---------------+-----------+---------------------------------------+---------------
-adc_geometric_stats_1 |adc_geometric | (age) | | 25/06/2023 09:22:26
-demo_table_stats_1 | demo_table | (*) | ((age > 25)) | 25/06/2023 12:50:26
-```
-
-<!-- Commented out until the <alias_name> feature is released.
-
-To see the output, you must use the `SHOW STATISTICS` command. Instructions on [how to show the statistics](#show-statistics) are provided later in the document. 
-
--->
-
-## Begränsa de inkluderade kolumnerna {#limit-included-columns}
-
-Du kan beräkna statistik för särskilda datauppsättningskolumner genom att referera till dem efter namn. Använd `FOR COLUMNS (<col1>, <col2>)` syntax för att ange specifika kolumner som mål. Exemplet nedan beräknar statistik för kolumnerna  `commerce`, `id`och `timestamp` för datauppsättningen `tableName`.
-
-```sql
-ANALYZE TABLE tableName COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
-```
-
-Du kan beräkna statistik för alla rotnivåer eller kapslade kolumner. I följande exempel visas dessa referenser.
-
-```sql
-ANALYZE TABLE adcgeometric COMPUTE STATISTICS FOR columns (commerce, commerce.purchases.value, commerce.productListAdds.value);
-```
-
-## Lägga till ett tidsstämpelfiltervillkor {#filter-condition}
-
-Du kan lägga till ett tidsstämpelfiltervillkor för att fokusera analysen av kolumnerna. Detta kan användas för att filtrera bort historiska data eller fokusera dataanalysen på en viss period. The `FILTERCONTEXT` kommandot beräknar statistik på en delmängd av datauppsättningen baserat på det filtervillkor du anger.
-
-I exemplet nedan beräknas statistik för alla kolumner för datauppsättningen `tableName`, där kolumntidsstämpeln har värden mellan det angivna intervallet för `2023-04-01 00:00:00` och `2023-04-05 00:00:00`.
-
-```sql
-ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR ALL COLUMNS;
-```
-
-Du kan kombinera kolumngränsen och filtret för att skapa mycket specifika datorfrågor för dina datauppsättningskolumner. Följande fråga beräknar till exempel statistik för kolumnerna `commerce`, `id`och `timestamp` för datauppsättningen `tableName`, där kolumntidsstämpeln har värden mellan det angivna intervallet för `2023-04-01 00:00:00` och `2023-04-05 00:00:00`.
-
-```sql
-ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
-```
-
-<!-- Commented out until the <alias_name> feature is released.
-## Create an alias name {#alias-name}
-
-Since the filter condition and the column list can target a large amount of data, it is unrealistic to remember the exact values. Instead, you can provide an `<alias_name>` to store this calculated information. If you do not provide an alias name for these calculations, Query Service generates a universally unique identifier for the alias ID. You can then use this alias ID to look up the computed statistics with the `SHOW STATISTICS` command. 
-
->[!NOTE]
->
->Although alias names are optional, you are recommended to use them as best practice.
-
-The example below stores the output computed statistics in the `alias_name` for later reference.
-
-```sql
-ANALYZE TABLE adc_geometric COMPUTE STATISTICS FOR ALL COLUMNS as alias_name;
-```
-
-The output for the above example is `SUCCESSFULLY COMPLETED, alias_name`. The console output does not display the statistics in the response of the analyze table compute statistics command. To see the output, you must use the `SHOW STATISTICS` command discussed below. 
--->
-
-<!-- Commented out until the <alias_name> feature is released.
-
-## Show the statistics {#show-statistics}
-
-The alias name used in the query is available as soon as the `ANALYZE TABLE` command has been run.  
-
-Even with a filter condition and a column list, the computation can target a large amount of data. Query Service generates a universally unique identifier for the statistics ID to store this calculated information. You can then use this statistics ID to look up the computed statistics with the `SHOW STATISTICS` command at any time within that session. 
-
-The statistics ID and the statistics generated are only valid for this particular session and cannot be accessed across different PSQL sessions. The computed statistics are not currently persistent. To display the statistics, use the command seen below.
-
-```sql
-SHOW STATISTICS FOR <STATISTICS_ID>;
-```
-
-An output might look similar to the example below. 
-
-```console
-                         columnName                         |      mean      |      max       |      min       | standardDeviation | approxDistinctCount | nullCount | dataType  
+ columnName                                                 |      mean      |      max       |      min       | standardDeviation | approxDistinctCount | nullCount | dataType  
 ------------------------------------------------------------+----------------+----------------+----------------+-------------------+---------------------+-----------+-----------
  marketing.trackingcode                                     |            0.0 |            0.0 |            0.0 |               0.0 |              1213.0 |         0 | String
  _experience.analytics.customdimensions.evars.evar13        |            0.0 |            0.0 |            0.0 |               0.0 |              8765.0 |        20 | String
@@ -163,8 +93,62 @@ An output might look similar to the example below.
 (12 rows)
 ```
 
--->
+## Visa metadata för statistisk analys {#show-statistics}
+
+Du kan använda `SHOW STATISTICS` om du vill visa metadata för alla temporära statistiktabeller som genereras i sessionen. Det här kommandot kan hjälpa dig att förfina omfattningen av din statistiska analys.
+
+Ett exempel på hur `SHOW STATISTICS` visas nedan.
+
+```console
+statsId | tableName | columnSet | filterContext | timestamp
+--------+-----------+-----------+---------------+---------------
+adc_geometric_stats_1 | adc_geometric | (age) |  | 25/06/2023 09:22:26
+demo_table_stats_1 | demo_table | (*) | ((age > 25)) | 25/06/2023 12:50:26
+age_stats | castedtitanic | (age) | ((age > 25) AND (age < 40)) | 25/06/2023 09:22:26
+```
+
+En beskrivning av metadatakolumnnamnen ges nedan.
+
+| Kolumnnamn | Beskrivning |
+|---|---|
+| `statsId` | Detta ID refererar till det temporära statistikregistret som genereras av `COMPUTE STATISTICS` -kommando. |
+| `tableName` | Den ursprungliga tabell som användes för analysen. |
+| `columnSet` | En lista med kolumner som valts ut särskilt för analys. Ett tomt värde anger att alla kolumner analyserades. Se avsnittet om [begränsa kolumner](#limit-included-columns) för mer information. |
+| `filterContext` | En lista över eventuella filter som använts på analysen. |
+| `timestamp` | Alla kronologiska filter som tillämpas på dataanalysen för att fokusera på en viss period. Se [villkorsavsnittet för tidsstämpelfilter](#filter-condition) för mer information. |
+
+Du kan använda statistikens ID eller aliasnamnet för att söka efter den beräknade statistiken med en SELECT-sats när som helst under sessionen. Statistik-ID:t och den genererade statistiken är bara giltiga för den aktuella sessionen och kan inte nås mellan olika PSQL-sessioner. Den beräknade statistiken är för närvarande inte beständig. Se avsnittet om hur du [visa utdata för din beräknade statistik](#view-output-of-computed-statistics) för mer information.
+
+## Begränsa de inkluderade kolumnerna {#limit-included-columns}
+
+Om du vill fokusera analysen kan du beräkna statistik för särskilda datauppsättningskolumner genom att referera till dem efter namn. Använd `FOR COLUMNS (<col1>, <col2>)` syntax för att ange specifika kolumner som mål. Exemplet nedan beräknar statistik för kolumnerna  `commerce`, `id`och `timestamp` för datauppsättningen `tableName`.
+
+```sql
+ANALYZE TABLE tableName COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
+```
+
+Du kan beräkna statistik för alla rotnivåer eller kapslade kolumner. I följande exempel visas dessa referenser.
+
+```sql
+ANALYZE TABLE adcgeometric COMPUTE STATISTICS FOR columns (commerce, commerce.purchases.value, commerce.productListAdds.value);
+```
+
+## Lägga till ett tidsstämpelfiltervillkor {#filter-condition}
+
+Om du vill fokusera analysen av kolumnerna baserat på kronologi kan du lägga till ett tidsstämpelfiltervillkor. Det här villkoret kan användas för att filtrera bort historiska data eller fokusera dataanalysen på en viss period. The `FILTERCONTEXT` kommandot beräknar statistik på en delmängd av datauppsättningen baserat på filtervillkoret som du anger.
+
+I exemplet nedan beräknas statistik för alla kolumner för datauppsättningen `tableName`, där kolumntidsstämpeln har värden mellan det angivna intervallet för `2023-04-01 00:00:00` och `2023-04-05 00:00:00`.
+
+```sql
+ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR ALL COLUMNS;
+```
+
+Du kan kombinera kolumngränsen och filtret för att skapa mycket specifika datorfrågor för dina datauppsättningskolumner. Följande fråga beräknar statistik för kolumnerna `commerce`, `id`och `timestamp` för datauppsättningen `tableName`, där kolumntidsstämpeln har värden mellan det angivna intervallet för `2023-04-01 00:00:00` och `2023-04-05 00:00:00`.
+
+```sql
+ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS FOR columns (commerce, id, timestamp);
+```
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa det här dokumentet får du nu en bättre förståelse för hur du genererar kolumnnivåstatistik från en ADLS-datauppsättning med en SQL-fråga. Du rekommenderas att läsa [SQl syntaxguide](../sql/syntax.md) om du vill veta mer om Adobe Experience Platform Query Service.
+Genom att läsa det här dokumentet får du nu en bättre förståelse för hur du genererar kolumnnivåstatistik från en ADLS-datauppsättning med hjälp av en SQL-fråga. Du rekommenderas att läsa [SQl syntaxguide](../sql/syntax.md) om du vill veta mer om Adobe Experience Platform Query Service.
