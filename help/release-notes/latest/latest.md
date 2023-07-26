@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation juli 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 85240b7d8f187e3d95762b9afbd8b8507869dabc
+source-git-commit: 134c18822350a0032bb9957e6e0d1ab888c6b289
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '659'
 ht-degree: 5%
 
 ---
@@ -29,6 +29,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
 | Taggar och händelsevidarebefordran | Granskningsloggar för datainsamling | Du kan nu se när en åtgärd utfördes och vem som utförde den här åtgärden över taggar och händelsevidarebefordran. Detta underlättar felsökning, korrekt styrning och intern revision. Dessa granskningsdata visas via snabbmenyer för utskjutning som även innehåller snabbåtgärder och statusuppdateringar för resurser. Dessa data visas i gränssnittet Taggar och Händelsevidarebefordran på följande skärmar:<br><ul><li>[Egenskapsöversikt](../../tags/ui/event-forwarding/overview.md#properties)</li><li>[Regler](../../tags/ui/event-forwarding/overview.md#rules)</li><li>[Dataelement](../../tags/ui/event-forwarding/overview.md#data-elements)</li><li>[Tillägg](../../tags/ui/event-forwarding/overview.md#extensions)</li><li>[Biblioteksgranskning](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-and-publish-a-library.html)</li><li>[Biblioteket skapades och publicerades senast](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-and-publish-a-library.html)</li></ul> |
+| Dataströmmar | [Geo-sökning](../../datastreams/configure.md#advanced-options) | Nu kan du konfigurera geopositionering och nätverkssökning för datastreams så att den inkluderar information som: <ul><li>Land</li><li>Postnummer</li><li>Stat/provins</li><li>DMA</li><li>Ort</li><li>Latitud </li><li>Longitud</li><li>Fraktfirma</li><li>Domän</li><li>ISP</li></ul> Du ansvarar för att säkerställa att du har fått alla tillstånd, samtycke, klargöranden och tillstånd som krävs enligt tillämpliga lagar och bestämmelser för att samla in, bearbeta och överföra personuppgifter, inklusive exakt geolokaliseringsinformation. <br> Ditt val av IP-adressofuscation påverkar inte nivån på geopositioneringsinformation som kommer att härledas från IP-adressen och skickas till dina konfigurerade Adobe-lösningar. Geoplatssökningar måste begränsas eller inaktiveras separat. <br> Se [datastreams-dokumentation](../../datastreams/configure.md#advanced-options) för mer information. |
 
 {style="table-layout:auto"}
 
