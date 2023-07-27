@@ -4,9 +4,9 @@ description: Lär dig hur du importerar krypterade filer via molnlagringsbatchk�
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: f0e518459eca72d615b380d11cabee6c1593dd9a
+source-git-commit: d05202fc1e64bbb06c886aedbe59e07c45f80686
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1343'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Med Adobe Experience Platform kan du importera krypterade filer via batchkällor
 Processen för krypterad datainmatning är följande:
 
 1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **OBS!** Den offentliga nyckeln i svaret är Base64-kodad och måste dekrypteras innan den används.
-2. Använd den offentliga nyckeln för att kryptera datafilen som du vill importera.
+2. Använd den offentliga nyckeln för att kryptera den datafil som du vill importera.
 3. Placera den krypterade filen i molnlagringen.
 4. När den krypterade filen är klar [skapa en källanslutning och ett dataflöde för molnlagringskällan](#create-a-dataflow-for-encrypted-data). När du skapar flödet måste du ange en `encryption` och inkludera ditt offentliga nyckel-ID.
 5. Experience Platform hämtar den privata nyckeln från det säkra valvet för att dekryptera data vid tidpunkten för inmatningen.
@@ -62,7 +62,7 @@ Listan över filtillägg som stöds för krypterade filer är följande:
 
 >[!NOTE]
 >
->Krypterad filinmatning i Adobe Experience Platform Sources stöder openPGP och inte någon specifik tillverkarspecifik version av PGP.
+>Krypterad filinmatning i Adobe Experience Platform Sources stöder openPGP och inte någon specifik egen version av PGP.
 
 ## Skapa krypteringsnyckelpar {#create-encryption-key-pair}
 
@@ -97,7 +97,7 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `encryptionAlgorithm` | Den typ av krypteringsalgoritm som du använder. Krypteringstyperna som stöds är `PGP` och `GPG`. |
-| `params.passPhrase` | Lösenfrasen ger ytterligare ett lager av skydd för dina krypteringsnycklar. När lösenfrasen skapas lagrar Experience Platform den i ett annat säkert valv än den offentliga nyckeln. Du måste ange en sträng som inte är tom som lösenfras. |
+| `params.passPhrase` | Lösenfrasen ger ytterligare ett lager av skydd för dina krypteringsnycklar. När lösenordet skapas lagrar Experience Platform den i ett annat säkert valv än den offentliga nyckeln. Du måste ange en sträng som inte är tom som lösenfras. |
 
 **Svar**
 
@@ -110,6 +110,65 @@ Ett lyckat svar returnerar din Base64-kodade offentliga nyckel, ditt offentliga 
     ​"expiryTime": "1684843168"
 }
 ```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `publicKey` | Den offentliga nyckeln används för att kryptera data i ditt molnlagringsutrymme. Den här nyckeln motsvarar den privata nyckel som skapades under det här steget. Men den privata nyckeln går omedelbart till Experience Platform. |
+| `publicKeyId` | Det offentliga nyckel-ID:t används för att skapa ett dataflöde och importera dina krypterade molnlagringsdata till Experience Platform. |
+| `expiryTime` | Utgångsdatumet anger förfallodatumet för ditt krypteringsnyckelpar. Det här datumet anges automatiskt till 180 dagar efter datumet för nyckelgenereringen och visas i ett enhetligt tidsstämpelformat. |
+
++++(Valfritt) Skapa nyckelpar för signaturverifiering för signerade data
+
+### Skapa kundstyrt nyckelpar
+
+Du kan också skapa ett nyckelpar för signaturverifiering för att signera och importera dina krypterade data.
+
+Under den här fasen måste du generera en egen kombination av privat nyckel och offentlig nyckel och sedan använda din privata nyckel för att signera dina krypterade data. Därefter måste du koda din offentliga nyckel i Base64 och sedan dela den till Experience Platform för att Platform ska kunna verifiera din signatur.
+
+### Dela din offentliga nyckel med Experience Platform
+
+Om du vill dela din offentliga nyckel skickar du en POST till `/customer-keys` -slutpunkten när du anger din krypteringsalgoritm och den Base64-kodade offentliga nyckeln.
+
+**API-format**
+
+```http
+POST /data/foundation/connectors/encryption/customer-keys
+```
+
+**Begäran**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/customer-keys' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+  -H 'x-sandbox-name: {{SANDBOX_NAME}}' \
+  -H 'Content-Type: application/json' 
+  -d '{
+      "encryptionAlgorithm": {{ENCRYPTION_ALGORITHM}},       
+      "publicKey": {{BASE_64_ENCODED_PUBLIC_KEY}}
+    }'
+```
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `encryptionAlgorithm` | Den typ av krypteringsalgoritm som du använder. Krypteringstyperna som stöds är `PGP` och `GPG`. |
+| `publicKey` | Den offentliga nyckel som motsvarar dina kundhanterade nycklar som används för att signera din krypterade nyckel. Nyckeln måste vara Base64-kodad. |
+
+**Svar**
+
+```json
+{    
+  "publicKeyId": "e31ae895-7896-469a-8e06-eb9207ddf1c2" 
+} 
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `publicKeyId` | Detta offentliga nyckel-ID returneras som svar på att din kundhanterade nyckel delats med Experience Platform. Du kan ange detta ID för den offentliga nyckeln som ID för signeringsverifieringsnyckel när du skapar ett dataflöde för signerade och krypterade data. |
+
++++
 
 ## Anslut molnlagringskällan till Experience Platform med [!DNL Flow Service] API
 
@@ -150,6 +209,10 @@ POST /flows
 ```
 
 **Begäran**
+
+>[!BEGINTABS]
+
+>[!TAB Skapa ett dataflöde för krypterad datainmatning]
 
 Följande begäran skapar ett dataflöde för att importera krypterade data för en molnlagringskälla.
 
@@ -206,6 +269,58 @@ curl -X POST \
 | `scheduleParams.startTime` | Starttiden för dataflödet i epok-tid. |
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`, eller `week`. |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
+
+
+>[!TAB Skapa ett dataflöde för att importera krypterade och signerade data]
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/flows' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+  -H 'x-sandbox-name: {{SANDBOX_NAME}}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "ACME Customer Data (with Sign Verification)",
+    "description": "ACME Customer Data (with Sign Verification)",
+    "flowSpec": {
+        "id": "9753525b-82c7-4dce-8a9b-5ccfce2b9876",
+        "version": "1.0"
+    },
+    "sourceConnectionIds": [
+        "655f7c1b-1977-49b3-a429-51379ecf0e15"
+    ],
+    "targetConnectionIds": [
+        "de688225-d619-481c-ae3b-40c250fd7c79"
+    ],
+    "transformations": [
+        {
+            "name": "Mapping",
+            "params": {
+                "mappingId": "6b6e24213dbe4f57bd8207d21034ff03",
+                "mappingVersion":"0"
+            }
+        },
+        {
+            "name": "Encryption",
+            "params": {
+                "publicKeyId":"311ef6f8-9bcd-48cf-a9e9-d12c45fb7a17",
+                "signVerificationKeyId":"e31ae895-7896-469a-8e06-eb9207ddf1c2"
+            }
+        }
+    ],
+    "scheduleParams": {
+        "startTime": "1675793392",
+        "frequency": "once"
+    }
+}'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `params.signVerificationKeyId` | Signeringsverifieringsnyckelns ID är samma som det offentliga nyckel-ID som hämtades efter att din Base64-kodade offentliga nyckel delats med Experience Platform. |
+
+>[!ENDTABS]
 
 **Svar**
 
