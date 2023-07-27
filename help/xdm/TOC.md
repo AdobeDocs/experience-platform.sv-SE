@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Experience Data Model-systemet (XDM)
 breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Använd XDM-klasser (Experience Data Model) och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 81b53d2bd84eacb32999b957bee9b5e9aa77d5f7
+source-git-commit: b181a6af8cb3f6ae6db28f0475b8999de2e9d8b5
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '518'
 ht-degree: 11%
 
 ---
@@ -37,6 +37,7 @@ ht-degree: 11%
    * [Plan](./classes/plan.md)
    * [Policy](./classes/policy.md)
    * [Produkt](./classes/product.md)
+   * [Prospekt](./classes/prospect.md)
    * [Provider](./classes/provider.md)
    * [Segmentdefinition](./classes/segment-definition.md)
    * B2B-klasser {#b2b}
@@ -133,7 +134,7 @@ ht-degree: 11%
    * [Nyckelvärdepar](./data-types/key-value-pair.md)
    * [Marknadsföring](./data-types/marketing.md)
    * [Mät](./data-types/measure.md)
-   * [Order](./data-types/order.md)
+   * [Beställning](./data-types/order.md)
    * [Betalningsartikel](./data-types/payment-item.md)
    * [Person](./data-types/person.md)
    * [Personnamn](./data-types/person-name.md)
