@@ -4,9 +4,9 @@ description: Lär dig hur du skapar och använder potentiella målgrupper för a
 type: Documentation
 hide: true
 hidefromtoc: true
-source-git-commit: 6a24e2fc29c8e020c7fe4ac1c1c5f9640cefb971
+source-git-commit: fff6279472607bd6e1ace21a3003ef839208d7a4
 workflow-type: tm+mt
-source-wordcount: '350'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -64,4 +64,4 @@ Läs följande falldokumentation om du vill lära dig hur du kan använda funkti
 
 ## Nästa steg
 
-<!-- After reading this guide, you now know how to create and manage your prospect audiences in Adobe Experience Platform. To learn how to activate a prospect audience to other downstream services, please read the guide on [activating prospect audiences](../../destinations/ui/activate-prospect-audiences.md). -->
+När du har läst den här guiden kan du nu skapa och hantera dina potentiella målgrupper i Adobe Experience Platform. Om du vill veta hur du aktiverar en potentiell kund till andra tjänster längre fram i kedjan kan du läsa guiden på [aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md).

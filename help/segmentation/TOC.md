@@ -4,10 +4,10 @@ user-guide-title: Segmenteringstjänst för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
-source-git-commit: 4dbd20dd3ac596052a3390eb6d3731fac7095c0d
+source-git-commit: 5fb8edd9dd664f9a0ed036d1340b5f8fcd4ba0c4
 workflow-type: tm+mt
-source-wordcount: '176'
-ht-degree: 25%
+source-wordcount: '178'
+ht-degree: 24%
 
 ---
 
@@ -34,6 +34,7 @@ ht-degree: 25%
    - [Målgruppssammansättning](ui/audience-composition.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Kantsegmentering](ui/edge-segmentation.md)
+   - [Potentiella målgrupper](ui/prospect-audience.md)
    - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
    - [Direktuppspelningssegmentering (video)](video/streaming-segmentation-overview.md)
    - [Omfaktorisering av tidsbegränsningar](ui/segment-refactoring.md)

@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Profile
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiles
-source-git-commit: 52836892736a075981ee06f28fbdf178f4492e09
+source-git-commit: 5fb8edd9dd664f9a0ed036d1340b5f8fcd4ba0c4
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 20%
+source-wordcount: '141'
+ht-degree: 19%
 
 ---
 
@@ -30,6 +30,7 @@ ht-degree: 20%
 * Profilgränssnitt {#ui}
    * [[!DNL Profile] Användargränssnittsguide](ui/user-guide.md)
    * [[!DNL Profile] anpassning av detaljer](ui/profile-customization.md)
+   * [Prospekteringsprofiler](ui/prospect-profile.md)
 * (Beta) Beräknade attribut {#computed-attributes}
    * [Översikt](computed-attributes/overview.md)
    * [API-guide för beräknade attribut](computed-attributes/api.md)
@@ -47,7 +48,7 @@ ht-degree: 20%
    * [Lägg till data i kundprofilen i realtid](tutorials/add-profile-data.md)
    * [Konfigurera en datauppsättning för profil](tutorials/dataset-configuration.md)
    * [Generera överlappningsrapport för datauppsättning](tutorials/dataset-overlap-report.md)
-   * [Fler självstudiekurser](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
+   * [Fler självstudier](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [Behandling av sekretessförfrågningar](privacy.md)
 * [[!DNL Profile] felsökningsguide](troubleshooting.md)
 * [API-referens för profil](https://www.adobe.com/go/profile-apis-en)

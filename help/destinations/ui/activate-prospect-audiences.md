@@ -1,0 +1,84 @@
+---
+title: Aktivera potentiella målgrupper till destinationer
+type: Tutorial
+hide: true
+hidefromtoc: true
+description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
+source-git-commit: e04d7a3cd75f4e61329a2de8ca5ddcc4d9518a57
+workflow-type: tm+mt
+source-wordcount: '497'
+ht-degree: 0%
+
+---
+
+
+# Aktivera potentiella målgrupper
+
+>[!AVAILABILITY]
+>
+>Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
+
+I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [potentiella målgrupper](/help/segmentation/ui/prospect-audience.md) från Adobe Experience Platform till det mål du föredrar.
+
+## Mål som stöds {#supported-destinations}
+
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och väljer **[!UICONTROL Catalog]** -fliken. Använd **[!UICONTROL Data types]** filtrera och markera **[!UICONTROL Prospects]** för att se vilka destinationer som stöder aktivering av potentiella målgrupper. För närvarande är export av potentiella kunder bara tillgängligt för [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) mål.
+
+![Destinationer som stöder datauppsättningsexport](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
+
+## Förutsättningar {#prerequisites}
+
+* Du måste först importera [profiler](/help/profile/ui/prospect-profile.md) och skapa [potentiella målgrupper](/help/segmentation/ui/prospect-audience.md) innan du kan aktivera dem för nedladdningsdestinationer.
+* Om du vill aktivera potentiella målgrupper för destinationer måste du ha anslutit till ett mål. Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda. Läs självstudiekursen om användargränssnittet [ansluta till destinationer](./connect-destination.md) för mer information.
+
+### Nödvändiga behörigheter {#permissions}
+
+För att aktivera potentiella målgrupper behöver ni **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+
+Bläddra i målkatalogen för att se till att du har de behörigheter som krävs för att aktivera potentiella målgrupper. Om ett mål har en **[!UICONTROL Activate]** har du rätt behörighet.
+
+## Välj mål {#select-destination}
+
+Följ instruktionerna för att välja ett mål där du kan exportera datauppsättningar:
+
+1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
+
+   ![Fliken Målkatalog med katalogkontrollen markerad.](/help/destinations/assets/ui/export-datasets/catalog-tab.png)
+
+2. Välj **[!UICONTROL Activate]** på kortet som motsvarar målet som du vill exportera datauppsättningar till.
+
+>[!TIP]
+>
+>De destinationer som kan exportera profilmålgrupper indikeras med en ikon i kortets övre högra hörn, liknande det mål som markeras nedan, eller så kan du använda datatypsfiltret för att endast visa destinationer som kan exportera potentiella målgrupper, som [visas längst upp på sidan](#supported-destinations).
+
+![Amazon S3-målsida som kan exportera profilmålgrupper som är markerade.](/help/destinations/assets/ui/activate-prospect-audiences/amazon-s3-icon-activate-prospect-audiences.png)
+
+1. Välj **[!UICONTROL Data type Prospects]**, följt av den målanslutning som du vill exportera datauppsättningar till och välj sedan **[!UICONTROL Next]**.
+
+>[!TIP]
+> 
+>Om du vill konfigurera ett nytt mål för att aktivera potentiella målgrupper väljer du **[!UICONTROL Configure new destination]** för att aktivera [Anslut till mål](/help/destinations/ui/connect-destination.md) arbetsflöde.
+
+![Arbetsflöde för målaktivering med Prospects Control markerat.](/help/destinations/assets/ui/activate-prospect-audiences/activate-prospects-highlighted.png)
+
+1. Gå till nästa avsnitt för att [välj era profilmålgrupper](#select-profile-audiences) för export.
+
+## Välj era potentiella målgrupper {#select-prospect-audiences}
+
+Använd kryssrutorna till vänster om namnen på de potentiella målgrupperna för att välja de målgrupper som du vill exportera till målet och välj sedan **[!UICONTROL Next]**. Observera att endast de potentiella målgrupperna visas i den här vyn och att inga andra målgrupper visas.
+
+![Arbetsflöde för dataexport med steget Välj målgrupper där du kan välja vilka målgrupper som ska exporteras.](/help/destinations/assets/ui/activate-prospect-audiences/select-prospect-audiences.png)
+
+## Schemaläggning och nästa steg
+
+För resten av aktiveringsarbetsflödet för att exportera målgrupper med potentiella kunder, läs självstudiekursen om hur du aktiverar data till filbaserade mål. Fortsätt från [schemalägg exportsteg för målgrupp](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
+
+>[!NOTE]
+>
+>Observera att i schemaläggningssteget kan du bara aktivera potentiella målgrupper med arbetsflödet [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files). Inkrementell filexport stöds inte.
+
+<!--
+
+Note that we will need to add links to other destination types here as more destinations become supported 
+
+-->

@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 002eea44dd719871d3ff1b4f1548b74efbbc7d3b
+source-git-commit: d16a4cf7db12c92ab6ead498846f17d76f6ac641
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1168'
 ht-degree: 2%
 
 ---
@@ -41,6 +41,7 @@ ht-degree: 2%
       * [Aktivera målgrupper för att direktuppspela exportmål för profiler](./ui/activate-streaming-profile-destinations.md)
       * [Aktivera målgrupper för att batchprofilera exportmål](./ui/activate-batch-profile-destinations.md)
       * [Aktivera målgrupper för att kanalisera personaliseringsmål](./ui/activate-edge-personalization-destinations.md)
+      * [Aktivera potentiella målgrupper till destinationer](./ui/activate-prospect-audiences.md)
       * [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
       * [(Beta) Exportera datauppsättningar med användargränssnittet i Experience Platform](./ui/export-datasets.md)
       * [(Beta) Använd XDM-attributet för senaste kvalificeringstid i det nya betmolnlagringsmålet](./ui/activate-last-qualification-time.md)
