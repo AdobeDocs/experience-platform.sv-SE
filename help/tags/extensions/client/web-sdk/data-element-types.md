@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 528b13aa20da62c32456e02cb2293fdded156421
+source-git-commit: 44fac57a30295b476910c0b37314eaebba175157
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '585'
 ht-degree: 0%
 
 ---
@@ -16,15 +16,21 @@ När du ställt in [åtgärdstyper](action-types.md) i [Adobe Experience Platfor
 
 ## Identitetskarta {#identity-map}
 
-Med en identitetskarta kan du skapa identiteter för besökaren på din webbsida. En identitetskarta består av namnutrymmen, som _telefon_ eller _e-post_, med varje namnutrymme som innehåller en eller flera identifierare. Om personen på webbplatsen till exempel har angett två telefonnummer bör telefonens namnutrymme innehålla två identifierare.
+Med en identitetskarta kan du skapa identiteter för besökaren på din webbsida. En identitetskarta består av namnutrymmen, som `CRMID`, `Phone` eller `Email`, med varje namnutrymme som innehåller en eller flera identifierare. Om personen på webbplatsen till exempel har angett två telefonnummer bör telefonens namnutrymme innehålla två identifierare.
 
 I [!UICONTROL Identity map] dataelement kommer du att ange följande information för varje identifierare:
 
-* **[!UICONTROL ID]**: Värdet som identifierar besökaren. Om identifieraren till exempel tillhör _telefon_ namnutrymme, [!UICONTROL ID] kan _555-555-5555_. Det här värdet härleds vanligtvis från en JavaScript-variabel eller någon annan datadel på sidan, så det är bäst att skapa ett dataelement som refererar till siddata och sedan referera till dataelementet i [!UICONTROL ID] fält i [!UICONTROL Identity map] dataelement. Om ID-värdet är allt utom en ifylld sträng när du kör på sidan, tas identifieraren automatiskt bort från identitetskartan.
+* **[!UICONTROL ID]**: Värdet som identifierar besökaren. Om identifieraren till exempel tillhör _telefon_ namnutrymme, [!UICONTROL ID] kan _555-555-555_. Det här värdet härleds vanligtvis från en JavaScript-variabel eller någon annan datadel på sidan, så det är bäst att skapa ett dataelement som refererar till siddata och sedan referera till dataelementet i [!UICONTROL ID] fält i [!UICONTROL Identity map] dataelement. Om ID-värdet är allt utom en ifylld sträng när du kör på sidan, tas identifieraren automatiskt bort från identitetskartan.
 * **[!UICONTROL Authenticated state]**: En markering som anger om besökaren är autentiserad.
-* **[!UICONTROL Primary]**: En markering som anger om identifieraren ska användas som primär identifierare för den enskilda personen. Om ingen identifierare är markerad som primär kommer ECID att användas som primär identifierare.
+* **[!UICONTROL Primary]**: Ett urval som anger om identifieraren ska användas som primär identifierare för den enskilda personen. Om ingen identifierare är markerad som primär kommer ECID att användas som primär identifierare.
 
 ![Användargränssnittsbild som visar skärmen Redigera dataelement.](assets/identity-map-data-element.png)
+
+>[!TIP]
+>
+>Adobe rekommenderar att du skickar identiteter som representerar en person, till exempel `Luma CRM Id` som primär identitet.
+>
+>Om identitetskartan innehåller personidentifieraren (t.ex. `Luma CRM Id`) blir personidentifieraren den primära identifieraren. I annat fall `ECID` blir den primära identiteten.
 
 Du bör inte ange en [!DNL ECID] när du skapar en identitetskarta. När du använder SDK [!DNL ECID] genereras automatiskt på servern och inkluderas i identitetskartan.
 
@@ -46,11 +52,11 @@ Observera att när du öppnar vissa fält i schemat, som `web.webPageDetails.URL
 
 ## Variabel {#variable}
 
-Ett annat sätt att skapa XDM-objekt är att använda **[!UICONTROL Variable]** dataelement. När XDM-objektets dataelement skapas när det refereras, till exempel inuti en `sendEvent` kommandot, **[!UICONTROL Variable]** dataelement kan uppdateras via [!UICONTROL Update variable] åtgärder. Om du vill använda dataelementet markerar du rätt Adobe Experience Platform-sandlåda och -schema.
+Ett annat sätt att skapa XDM-objekt är att använda **[!UICONTROL Variable]** dataelement. När XDM-objektets dataelement skapas när det refereras, till exempel inuti en `sendEvent` kommando, **[!UICONTROL Variable]** dataelement kan uppdateras via [!UICONTROL Update variable] åtgärder. Om du vill använda dataelementet markerar du rätt Adobe Experience Platform-sandlåda och -schema.
 
 ![Användargränssnittsbild som visar skärmen Skapa dataelement.](assets/variable-data-element.png)
 
-När du har skapat det här dataelementet kan du använda [Uppdatera variabel](./action-types.md#update-variable) åtgärder för att ändra dataelementet. Använd sedan variabeldataelementet för XDM-alternativet i skicka-händelseåtgärder.
+När du har skapat detta dataelement kan du använda [Uppdatera variabel](./action-types.md#update-variable) åtgärder för att ändra dataelementet. Använd sedan variabeldataelementet för XDM-alternativet i skicka-händelseåtgärder.
 
 ## Nästa steg {#next-steps}
 
