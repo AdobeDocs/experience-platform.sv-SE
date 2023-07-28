@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation juli 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 62a0b6327f1707fcc639a309ae7db5bf0e4c828a
+source-git-commit: 7cc7d43f6424ff91bd237235b278bf13a0add45d
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '1017'
 ht-degree: 3%
 
 ---
@@ -55,16 +55,9 @@ For more information on Data Prep, please read the [Data Prep overview](../../da
 
 **Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
-<!--
-
-LiveRamp commented out until it is officially released tomorrow
-
-| [[!DNL LiveRamp - Onboarding]](../../destinations/catalog/advertising/liveramp-onboarding.md) | New | Onboard identities from Adobe Experience Platform into [!DNL LiveRamp Connect] so that you can target users on mobile, open web, social, and [!DNL CTV] platforms, using the [!DNL Ramp ID] identifier. |
-
--->
-
 | Destination | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
+| [[!DNL LiveRamp - Onboarding]](../../destinations/catalog/advertising/liveramp-onboarding.md) | Nytt | Införliva identiteter från Adobe Experience Platform i [!DNL LiveRamp Connect] så att ni kan inrikta er på användare på mobilen, öppna webben, sociala medier och [!DNL CTV] plattformar, använda [!DNL Ramp ID] identifierare. |
 | [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | Nytt | Skapa en utgående liveanslutning till [!DNL Azure Data Lake Storage Gen2] att regelbundet exportera datafiler från Adobe Experience Platform till din egen lagringsplats. Det nya målet har förbättrad filexportfunktion och stöd för [!BADGE Beta]{type=Informative} |
 | [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | Nytt | [!DNL Data Landing Zone] är en [!DNL Azure Blob] lagringsgränssnittet som tillhandahålls av Adobe Experience Platform, vilket ger dig tillgång till en säker, molnbaserad fillagringsfunktion för att exportera filer från plattformar. Det nya målet har förbättrad filexportfunktion och stöd för [!BADGE Beta]{type=Informative} |
 | [[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | Nytt | Skapa en utgående liveanslutning till [!DNL Google Cloud Storage] att regelbundet exportera datafiler från Adobe Experience Platform till era egna. Det nya målet har förbättrad filexportfunktion och stöd för [!BADGE Beta]{type=Informative} |
