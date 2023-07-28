@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation juli 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7cc7d43f6424ff91bd237235b278bf13a0add45d
+source-git-commit: 819c4e8b4ab24d364cf6d26d3ce38d0bc372e603
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1297'
 ht-degree: 3%
 
 ---
@@ -15,10 +15,24 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
+- [Katalogtjänst](#catalog-service)
 - [Datainsamling](#data-collection)
 - [Mål ](#data-prep)
+- [Frågetjänst](#query-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## Katalogtjänst {#catalog-service}
+
+Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i Data Lake som filer och kataloger, men i Catalog finns metadata och beskrivning för dessa filer och kataloger för sökning och övervakning.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Inventeringshantering för datauppsättning | Användargränssnittet för datauppsättningar erbjuder nu en samling infogade åtgärder för att hantera dina datauppsättningar bättre. Avancerad datauppsättningshantering förbättrar arbetseffektiviteten genom att man skapar och tilldelar mappar och taggar till datauppsättningar, vilket möjliggör filtrering och förbättrad identifiering. Mer information om [infogade funktionsmakron](../../catalog/datasets/user-guide.md#inline-actions), hur [sök- och filterdatauppsättningar](../../catalog/datasets/user-guide.md#search-and-filter)och [flytta datauppsättningar till mappar](../../catalog/datasets/user-guide.md#move-to-folders). |
+
+{style="table-layout:auto"}
+
+Mer information om katalogtjänsten finns i [Katalogtjänst - översikt](../../catalog/home.md).
 
 ## Datainsamling {#data-collection}
 
@@ -84,6 +98,21 @@ Uppdateringen och den allmänna tillgänglighetsreleasen av de sex molnlagringsm
 - Ett problem med Microsoft Dynamics 365-destinationen har korrigerats. Målet har nu stöd för regional routning av data via [Regionväljare](/help/destinations/catalog/crm/microsoft-dynamics-365.md#authenticate)så att ni kan dirigera dataexporter beroende på vilken region ert företag är etablerat i inom Microsoft ekosystem. ![Ny områdesväljare markerad.](/help/release-notes/2023/assets/region-parameter-microsoft-dynamics-365.png "Ny områdesväljare markerad."){width="100" zoomable="yes"}
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
+
+## Frågetjänst {#query-service}
+
+Med frågetjänsten kan du använda standard-SQL för att fråga efter data i Adobe Experience Platform datasjön. Du kan ansluta alla datauppsättningar från datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas i rapporter, Data Science Workspace eller för att matas in i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Förbättrad frågeredigerare | Den förbättrade frågeredigeraren ger bättre tillgänglighet och stöd för flera teman. Förbättrade redigeringsinställningar gör att du kan aktivera mörka eller ljusa teman. Se [dokumentation](../../query-service/ui/user-guide.md#enhanced-editor-toggle) för mer information. |
+| Aliasnamn för beräknad statistik | Du kan nu ange ett aliasnamn som beskriver resultatet av dina beräkningar i SQL-frågor. I dokumentationen finns information om detta och andra uppdateringar av kommandot COMPUTE STATISTICS. Se [dokumentation](../../query-service/essential-concepts/dataset-statistics.md#alias-name) för mer information. |
+
+{style="table-layout:auto"}
+
+Mer information om frågetjänsten finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
