@@ -5,9 +5,9 @@ title: Skapa ett direktuppspelat dataflöde för rådata med API:t för flödest
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1124'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här självstudiekursen kräver att du har en fungerande förståelse för f
 - [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    - [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    - [Utvecklarhandbok för schemaregister](../../../../xdm/api/getting-started.md): Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar `{TENANT_ID}`, begreppet&quot;behållare&quot; och de rubriker som krävs för att göra en begäran (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
+- [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är ett arkivsystem för dataplatser och -länkar inom Experience Platform.
 - [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md): Direktuppspelning för Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 - [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
@@ -151,7 +151,7 @@ Ett lyckat svar returnerar information om det nyligen skapade schemat inklusive 
 
 ## Skapa en måldatauppsättning
 
-Med ett mål-XDM-schema skapat och dess unika `$id` du kan nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatauppsättning skickar du en POST till `dataSets` slutpunkt för [Katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), samtidigt som ID:t för målschemat anges i nyttolasten.
+Med ett mål-XDM-schema skapat och dess unika `$id` du kan nu skapa en måldatauppsättning som innehåller dina källdata. Om du vill skapa en måldatauppsättning skickar du en POST till `dataSets` slutpunkt för [Katalogtjänstens API](https://www.adobe.io/experience-platform-apis/references/catalog/), samtidigt som ID för målschemat anges i nyttolasten.
 
 **API-format**
 
@@ -246,9 +246,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `connectionSpec.id` | Anslutningsspecifikations-ID som används för att ansluta till [!DNL Data Lake]. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | Det angivna formatet för de data som du hämtar till [!DNL Data Lake]. |
-| `params.dataSetId` | ID för måldatauppsättningen som hämtades i föregående steg. |
+| `data.format` | Det angivna formatet för de data du överför till datasjön. |
+| `params.dataSetId` | ID:t för måldatauppsättningen som skapades i föregående steg. **Anteckning**: Du måste ange ett giltigt datauppsättnings-ID när du skapar en målanslutning. Ett ogiltigt datauppsättnings-ID resulterar i ett fel. |
+| `connectionSpec.id` | Det anslutnings-spec-ID som används för att ansluta till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **Svar**
 
@@ -487,4 +487,4 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 Genom att följa den här självstudiekursen har du skapat ett dataflöde för att samla in strömmande data från din strömningskontakt. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 - [Översikt över kundprofiler i realtid](../../../../profile/home.md)
-- [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+- [Översikt över arbetsytan Data Science](../../../../data-science-workspace/home.md)

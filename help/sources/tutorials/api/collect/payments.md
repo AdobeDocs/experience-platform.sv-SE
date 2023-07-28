@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för betalningskällor med API:t för flödestjänst
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Den här självstudiekursen kräver att du har en fungerande förståelse för f
 * [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
    * [Utvecklarhandbok för schemaregister](../../../../xdm/api/getting-started.md): Innehåller viktig information som du behöver känna till för att kunna utföra anrop till API:t för schemaregister. Detta inkluderar `{TENANT_ID}`, begreppet&quot;behållare&quot; och de rubriker som krävs för att göra en begäran (med särskild uppmärksamhet på rubriken Godkänn och dess möjliga värden).
-* [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är systemet för registrering av dataplatser och -länkar inom Experience Platform.
+* [[!DNL Catalog Service]](../../../../catalog/home.md): Katalog är ett arkivsystem för dataplatser och -länkar inom Experience Platform.
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md): Med API:t för gruppinmatning kan du importera data till Experience Platform som gruppfiler.
 * [Sandlådor](../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
@@ -144,7 +144,7 @@ Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudie
 
 ## Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
 Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../catalog/api/create-dataset.md).
 
@@ -193,8 +193,8 @@ curl -X POST \
 | -------- | ----------- |
 | `data.schema.id` | The `$id` av mål-XDM-schemat. |
 | `data.schema.version` | Schemats version. Det här värdet måste anges `application/vnd.adobe.xed-full+json;version=1`, som returnerar den senaste delversionen av schemat. |
-| `params.dataSetId` | ID för måldatauppsättningen. |
-| `connectionSpec.id` | Anslutningens spec-ID som används för att ansluta till Data Lake. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `params.dataSetId` | ID:t för måldatauppsättningen som skapades i föregående steg. **Anteckning**: Du måste ange ett giltigt datauppsättnings-ID när du skapar en målanslutning. Ett ogiltigt datauppsättnings-ID resulterar i ett fel. |
+| `connectionSpec.id` | Det anslutnings-spec-ID som används för att ansluta till datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **Svar**
 
@@ -696,11 +696,11 @@ Ett godkänt svar returnerar ID:t `id` av det nya dataflödet.
 
 ## Övervaka dataflödet
 
-När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [övervaka dataflöden i API ](../monitor.md)
+När dataflödet har skapats kan du övervaka de data som importeras genom det för att se information om flödeskörningar, slutförandestatus och fel. Mer information om hur du övervakar dataflöden finns i självstudiekursen om [övervaka dataflöden i API:t](../monitor.md)
 
 ## Nästa steg
 
 Genom att följa den här självstudiekursen har du skapat en källanslutning för att samla in data från ett betalningsprogram på schemalagd basis. Inkommande data kan nu användas av plattformstjänster längre fram i kedjan som [!DNL Real-Time Customer Profile] och [!DNL Data Science Workspace]. Mer information finns i följande dokument:
 
 * [Översikt över kundprofiler i realtid](../../../../profile/home.md)
-* [Översikt över arbetsytan Datavetenskap](../../../../data-science-workspace/home.md)
+* [Översikt över arbetsytan Data Science](../../../../data-science-workspace/home.md)
