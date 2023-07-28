@@ -1,10 +1,10 @@
 ---
 title: (Beta) Engagera och skaffa nya kunder genom prospektering av användningsfall
-description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospektering efter användningsfall som stöds av partnerdatastödraden i Real-Time CDP.
+description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospektering av användningsfall som stöds av partnerdatastödraden i Real-Time CDP.
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
+source-git-commit: d0227dd8dc3d79674d954899e2724d2893e16b73
 workflow-type: tm+mt
 source-wordcount: '1906'
 ht-degree: 0%
@@ -21,30 +21,30 @@ Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profil
 
 ![Kundprospektering använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-overview.png)
 
-## Krav och planering {#prerequisites-and-planning}
+## Förutsättningar och planering {#prerequisites-and-planning}
 
 När du funderar på att nå ut till och värva nya kunder genom att använda stöd för partnerdata i Real-Time CDP bör du tänka på följande under planeringsprocessen:
 
 * Hur lång tid har du på dig att förvänta dig att partnerprofiler ska importeras till Real-Time CDP och uppdateras?
 * Vilka identiteter kräver era nedströmsadresser?
-* Se till att identifierarna som hämtas är åtgärdbara längre fram i kedjan
+* Se till att identifierarna som hämtas är åtgärdbara nedåt
 * Är de partnerdata som du importerar knutna till en allmänt accepterad varaktig identifierare, till exempel personlig identifieringsinformation (PII), hashad-PII eller en partneridentifierare?
 * Vilka dataanvändningspolicyer behöver ni vara medvetna om ur partnerperspektiv och från ert eget juridiska team, sekretessteam eller efterlevnadsteam?
 
-## Hur man uppnår detta: överblick på hög nivå {#achieve-the-use-case-high-level}
+## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 
 Innan du utökar Real-Time CDP för att engagera och värva nya kunder måste du se till att använda Real-Time CDP för att skapa en stabil grund för era egna data. Arbetsflödena för att uppnå det här användningsfallet liknar arbetsflödena för att interagera med kända kunder.
 
 ![Kundprospektering använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-steps.png)
 
-1. Som **kund** licensierar du profiler för potentiella kunder från en eller flera **datapartner** för att hjälpa till att öka kundvärvningen.
-2. Som **kund** kan du utöka profildata och styrningsmodell för att kunna använda **partner**-tillhandahållen lista med profiler för potentiella kunder.
-3. Som **kund** laddar ni in profiler för potentiella kunder i Real-Time CDP och bygger styrningspolicyer för att säkerställa ansvarsfull användning.
-4. Som **kund** bygger ni fokuserade målgrupper från listan med profiler för potentiella kunder.
-5. Som **kund** aktiverar ni potentiella kunder till målgrupper som accepterar de identiteter som finns i er lista över potentiella kunder.
+1. Som en **kund** licensierar du profiler för potentiella kunder från en eller flera **datapartner** för att hjälpa till att öka kundvärvningen.
+2. Som en **kund** kan du utöka profildata och styrningsmodell för att kunna använda **partner**-lista med profiler för potentiella kunder.
+3. Som en **kund** laddar ni in profiler för potentiella kunder i Real-Time CDP och bygger styrningspolicyer för att säkerställa ansvarsfull användning.
+4. Som en **kund** bygger ni fokuserade målgrupper från listan med profiler för potentiella kunder.
+5. Som en **kund** aktiverar ni potentiella kunder till målgrupper som accepterar de identiteter som finns i er lista över potentiella kunder.
 6. Arbeta med **datapartner** för aktivering av målgrupper på sista milen till önskade betalmediematerial.
 
-## Hur man uppnår detta: Stegvisa instruktioner {#step-by-step-instructions}
+## Så här uppnår du användningsfallet: stegvisa instruktioner {#step-by-step-instructions}
 
 Läs igenom avsnitten nedan som innehåller länkar till ytterligare dokumentation för att slutföra varje steg i översikten ovan.
 
@@ -116,7 +116,7 @@ Observera att schemat ännu inte har aktiverats för profilen. Aktivera det här
 Följ stegen nedan för att göra detta:
 
 1. Navigera till schemat som du skapade och välj **[!UICONTROL Labels]** -fliken.
-2. Markera alla fält i schemat med hjälp av kryssruteknappen högst upp och klicka sedan på pennikonen till höger för att använda datastyrningsetiketter på schemat.
+2. Markera alla fält i det här schemat med kryssruteknappen högst upp och klicka sedan på pennikonen till höger för att använda datastyrningsetiketter på det här schemat.
 3. Välj **[!UICONTROL Partner Ecosystem]** Etikett från kategorierna till vänster.
 4. Välj den anropade etiketten **[!UICONTROL Third Party]** och markera **[!UICONTROL Save]**.
 5. Observera att alla fält i schemat nu innehåller etiketten som du valde i föregående steg.
@@ -172,7 +172,7 @@ När du har läst in listan över profiler från dataparten till Real-Time CDP f
 
 Om du vill se en lista över profiler för potentiella kunder går du till **[!UICONTROL Prospects]** > **[!UICONTROL Profiles]** till vänster.
 
-Observera att det kan ta upp till två timmar för de profiler för potentiella kunder som du just laddat till Real-Time CDP att visa i **[!UICONTROL Browse]** vyn Prospekt Profil. Om det visas ett meddelande på sidan om att det inte finns några profiler att söka efter just nu kan du försöka igen om en stund. Efter en stund bör profiler för potentiella kunder börja visas i **[!UICONTROL Browse]** vy.
+Observera att det kan ta upp till två timmar för de profiler för potentiella kunder som du just laddat till Real-Time CDP att visa i **[!UICONTROL Browse]** vyn Prospekt Profil. Om det visas ett meddelande på sidan om att det inte finns några profiler att bläddra bland just nu kan du försöka igen om en stund. Efter en stund bör profiler för potentiella kunder börja visas i **[!UICONTROL Browse]** vy.
 
 >[!TIP]
 >
@@ -204,11 +204,11 @@ Observera att målgruppsupplevelsen för profiler med potentiella kunder skiljer
 
 ### Aktivera profiler för potentiella kunder till mål {#activate-to-destinations}
 
-Utnyttja de potentiella målgrupperna genom att exportera dem till destinationer. För närvarande är det endast vissa destinationer som [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md) eller [!BADGE Alfa]{type=Informative}[LiveRamp](/help/destinations/catalog/advertising/liveramp.md) stöd för aktivering av profiler för potentiella kunder.
+Utnyttja målgrupperna genom att exportera dem till destinationer. För närvarande är det endast vissa destinationer som [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md) eller [!BADGE Alfa]{type=Informative}[LiveRamp](/help/destinations/catalog/advertising/liveramp-onboarding.md) stöd för aktivering av profiler för potentiella kunder.
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 
 Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
 
-* [!BADGE Beta]{type=Informative}[Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter i er kundbas och få bättre målgruppsoptimering.
+* [!BADGE Beta]{type=Informative}[Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 * (**Kommer snart**) [!BADGE Beta]{type=Informative}**Utnyttja partnerstöd** för att personalisera upplevelser på plats under besöket och för återannonsering på annan plats, utan att användaren behöver autentisera sig eller ha en tidigare historia med varumärket.
