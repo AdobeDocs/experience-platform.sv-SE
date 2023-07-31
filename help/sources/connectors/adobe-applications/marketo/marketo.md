@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage-kontakt
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: d8cd69524d984fdb828447287f3f4a4fe5913d61
+source-git-commit: f0a3486fc7df7b08a11ec7bfb041841bc2c1c9a3
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -15,25 +15,25 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[[!DNL Marketo Engage]](https://www.marketo.com/software/) (nedan kallad[!DNL Marketo]&quot;) är en komplett lösning för lead-hantering och B2B-marknadsförare som vill omvandla kundupplevelser genom att engagera sig i alla faser av komplexa inköpsresor.
+[[!DNL Marketo Engage]](https://www.marketo.com/software/) är en komplett lösning för lead-hantering och B2B-marknadsförare som vill omvandla kundupplevelser genom att engagera sig i alla faser av komplexa inköpsresor.
 
-Med [!DNL Marketo] källanslutning kan du hämta B2B-data från [!DNL Marketo] till Platform och hålla dessa data uppdaterade med plattformsanslutna program.
+Med [!DNL Marketo Engage] källanslutning kan du hämta B2B-data från [!DNL Marketo Engage] till Platform och hålla dessa data uppdaterade med plattformsanslutna program.
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B Edition kan du fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
+>Du måste ha tillgång till [Adobe Real-time Customer Data Platform B2B Edition](../../../../rtcdp/b2b-overview.md) för att använda alla Marketo-dataset för segmentering med [Kundprofil i realtid](../../../../profile/home.md). Utan Real-Time CDP B2B Edition kan du fortfarande använda Marketo-källan för att överföra data från persondata och aktivitetsdatauppsättningar till kundprofilen i realtid för segmentering.
 
-Dokumentet innehåller en översikt över [!DNL Marketo] källkoppling, inklusive information om hur anslutningen autentiseras, mappa [!DNL Marketo] fält till Experience Data Model (XDM) och anslutningsens datalatens.
-
-## Autentisera [!DNL Marketo] koppling
-
-För att kunna ansluta [!DNL Marketo] till Platform måste du först hämta värden för `munchkinId`, `clientId`och `clientSecret`.
-
-Se stegen som beskrivs i [Autentisera din Marketo-källanslutning](./marketo-auth.md) för att hämta dina inloggningsuppgifter.
+Dokumentet innehåller en översikt över [!DNL Marketo Engage] källkoppling, inklusive information om hur anslutningen autentiseras, mappa [!DNL Marketo Engage] fält till Experience Data Model (XDM) och anslutningsens datalatens.
 
 ## Ställ in organisationsmappning för Adobe
 
-Innan du kan skapa mappningsuppsättningar för [!DNL Marketo]måste du först konfigurera Organisationsmappning för Adobe. Detaljerade anvisningar om hur du slutför detta finns i handboken på [konfigurera organisationsmappning för Adobe [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
+Innan du kan skapa mappningsuppsättningar för [!DNL Marketo Engage]måste du först konfigurera Organisationsmappning för Adobe. Detaljerade anvisningar om hur du slutför detta finns i handboken [konfigurera organisationsmappning för Adobe [!DNL Marketo Engage]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
+
+## Autentisera [!DNL Marketo Engage] koppling
+
+För att kunna ansluta [!DNL Marketo Engage] till Platform måste du först hämta värden för `munchkinId`, `clientId`och `clientSecret`.
+
+Se stegen som beskrivs i [Autentisera din Marketo-källanslutning](./marketo-auth.md) för att hämta dina inloggningsuppgifter.
 
 ## Konfigurera B2B-namnutrymmen och automatisk schemagenerering
 
@@ -47,11 +47,11 @@ Genom att följa XDM-standarder kan data integreras enhetligt i plattformens eko
 
 Mer information om XDM och dess roll i Platform finns i [XDM - systemöversikt](../../../../xdm/home.md).
 
-## Fältmappning från [!DNL Marketo] till XDM
+## Fältmappning från [!DNL Marketo Engage] till XDM
 
-Så här upprättar du en källanslutning mellan [!DNL Marketo] och Platform måste Marketo källdatafält mappas till sina lämpliga mål-XDM-fält innan de hämtas till Platform.
+Skapa en källanslutning mellan [!DNL Marketo Engage] och Platform måste Marketo källdatafält mappas till sina lämpliga mål-XDM-fält innan de hämtas till Platform.
 
-Mer information om fältmappningsreglerna mellan [!DNL Marketo] datauppsättningar och plattform:
+Mer information om fältmappningsreglerna mellan [!DNL Marketo Engage] datauppsättningar och plattform:
 
 * [Aktiviteter](../mapping/marketo.md#activities)
 * [Program](../mapping/marketo.md#programs)
@@ -64,9 +64,9 @@ Mer information om fältmappningsreglerna mellan [!DNL Marketo] datauppsättning
 * [Kontaktroller för affärsmöjlighet](../mapping/marketo.md#opportunity-contact-roles)
 * [Personer](../mapping/marketo.md#persons)
 
-## Förväntad fördröjning för [!DNL Marketo] data på plattformen
+## Förväntad fördröjning för [!DNL Marketo Engage] data på plattformen
 
-I följande tabell visas den förväntade fördröjningen för hämtning [!DNL Marketo] data till plattformen, baserat på typen av förtäring och önskat mål:
+I följande tabell visas den förväntade fördröjningen för hämtning [!DNL Marketo Engage] data till plattformen, baserat på typen av förtäring och önskat mål:
 
 | Destination | Förväntad svarstid |
 | ----------- | ---------------- |
@@ -75,11 +75,11 @@ I följande tabell visas den förväntade fördröjningen för hämtning [!DNL M
 
 ## Nästa steg och ytterligare resurser
 
-I följande dokumentation finns mer information om hur du skapar en [!DNL Marketo] källanslutning:
+I följande dokumentation finns mer information om hur du skapar en [!DNL Marketo Engage] källanslutning:
 
-* Mer information om hur du ansluter [!DNL Marketo] data till plattformen, läs självstudiekursen om [skapa [!DNL Marketo] källanslutning i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).
-   * Mer information om hur du ställer in scheman och importerar anpassade aktivitetsdata finns i självstudiekursen om [skapa en källanslutning och ett dataflöde för [!DNL Marketo] anpassade aktivitetsdata](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
-* Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo], läs dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
-* Mer information om hur du hittar [!DNL Marketo] munchkin-ID och generera dina inloggningsuppgifter, läs [[!DNL Marketo] autentiseringsguide](./marketo-auth.md).
-* Mer information om mappningsregler som gäller för [!DNL Marketo] datauppsättningar, läsa dokumentationen om [[!DNL Marketo] fältkopplingar](../mapping/marketo.md).
+* Mer information om hur du ansluter [!DNL Marketo Engage] data till plattformen, läs självstudiekursen om [skapa [!DNL Marketo Engage] källanslutning i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).
+   * Mer information om hur du ställer in scheman och importerar anpassade aktivitetsdata finns i självstudiekursen om [skapa en källanslutning och ett dataflöde för [!DNL Marketo Engage] anpassade aktivitetsdata](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
+* Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo Engage], läs dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
+* Om du vill ha information om hur du hittar [!DNL Marketo Engage] munchkin-ID och generera dina inloggningsuppgifter, läs [[!DNL Marketo Engage] autentiseringsguide](./marketo-auth.md).
+* Mer information om mappningsregler som gäller för [!DNL Marketo Engage] datauppsättningar, läsa dokumentationen om [[!DNL Marketo Engage] fältkopplingar](../mapping/marketo.md).
 * Allmän information om [!DNL Real-Time Customer Data Platform B2B Edition] och dess funktioner kan du läsa dokumentationen om [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
