@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation juli 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 819c4e8b4ab24d364cf6d26d3ce38d0bc372e603
+source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
 workflow-type: tm+mt
 source-wordcount: '1297'
 ht-degree: 3%
@@ -17,7 +17,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 - [Katalogtjänst](#catalog-service)
 - [Datainsamling](#data-collection)
-- [Mål ](#data-prep)
+- [Mål ](#destinations)
 - [Frågetjänst](#query-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -95,7 +95,7 @@ Uppdateringen och den allmänna tillgänglighetsreleasen av de sex molnlagringsm
 **Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
 
 - Vi har åtgärdat ett problem med (API) Salesforce Marketing Cloud-målet där inte alla tillgängliga målattribut returnerades från Salesforce i mappningssteget. Det finns nu en [övre gräns på 2000 målattribut](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md#mapping-considerations-example) från Salesforce som kan visas.
-- Ett problem med Microsoft Dynamics 365-destinationen har korrigerats. Målet har nu stöd för regional routning av data via [Regionväljare](/help/destinations/catalog/crm/microsoft-dynamics-365.md#authenticate)så att ni kan dirigera dataexporter beroende på vilken region ert företag är etablerat i inom Microsoft ekosystem. ![Ny områdesväljare markerad.](/help/release-notes/2023/assets/region-parameter-microsoft-dynamics-365.png "Ny områdesväljare markerad."){width="100" zoomable="yes"}
+- Ett problem med Microsoft Dynamics 365-destinationen har korrigerats. Målet har nu stöd för regional routning av data via [Regionväljare](/help/destinations/catalog/crm/microsoft-dynamics-365.md#authenticate)så att ni kan dirigera dataexporter beroende på vilken region ert företag är etablerat i inom Microsoft ekosystem. <br> ![Ny områdesväljare markerad.](/help/release-notes/2023/assets/region-parameter-microsoft-dynamics-365.png "Ny områdesväljare markerad."){width="100" zoomable="yes"}
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 

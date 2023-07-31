@@ -4,18 +4,14 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 3b5f4abd516259402e9b3c4cfbcc17e32f18b6f5
 workflow-type: tm+mt
-source-wordcount: '4436'
+source-wordcount: '4409'
 ht-degree: 0%
 
 ---
 
 # Aktivera målgrupper för filbaserade mål med API:t för Flow Service
-
->[!IMPORTANT]
->
->* Den här betafunktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
 
 Använd de förbättrade funktionerna för filexport (som för närvarande finns i betaversion) för att få bättre anpassningsfunktioner när du exporterar filer från Experience Platform:
 
@@ -24,14 +20,14 @@ Använd de förbättrade funktionerna för filexport (som för närvarande finns
 * Möjlighet att välja [filtyp](/help/destinations/ui/connect-destination.md#file-formatting-and-compression-options) av den exporterade filen.
 * [Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
-Den här funktionen stöds av de sex nya betolymlagringskorten som listas nedan:
+Den här funktionen stöds av de sex molnlagringskorten som anges nedan:
 
-* [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)
-* [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)
-* [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)
-* [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog)
-* [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
-* [[!DNL (Beta) SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
+* [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)
+* [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)
+* [[!DNL Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md)
+* [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog)
+* [[!DNL Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog)
+* [[!DNL SFTP]](../../destinations/catalog/cloud-storage/sftp.md#changelog)
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att använda [API för flödestjänst](https://developer.adobe.com/experience-platform-apis/references/destinations/) om du vill exportera kvalificerade profiler från Adobe Experience Platform till någon av de molnlagringsplatser som är länkade ovan.
 
@@ -53,7 +49,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Segmentation Service]](../../segmentation/api/overview.md): [!DNL Adobe Experience Platform Segmentation Service] kan ni bygga målgrupper och generera målgrupper i [!DNL Adobe Experience Platform] från [!DNL Real-Time Customer Profile] data.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna aktivera data till filbaserade mål i Platform.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna aktivera data till filbaserade mål i Platform.
 
 ### Nödvändiga behörigheter {#permissions}
 
@@ -318,7 +314,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 >[!ENDTABS]
 
-Följ stegen nedan för att konfigurera ett dataflöde för målgruppsexport till ett molnlagringsmål. I vissa steg skiljer sig förfrågningarna och svaren mellan de olika molnlagringsmålen. I dessa fall använder du flikarna på sidan för att hämta förfrågningar och svar som är specifika för det mål som du vill ansluta och exportera målgrupper till. Var noga med att använda rätt `connection spec` och `flow spec` för målet som du konfigurerar.
+Följ stegen nedan för att konfigurera ett dataflöde för målgruppsexport till ett molnlagringsmål. I vissa steg skiljer sig förfrågningarna och svaren mellan de olika molnlagringsmålen. I dessa fall använder du flikarna på sidan för att hämta förfrågningar och svar som är specifika för det mål som du vill ansluta och exportera målgrupper till. Använd rätt `connection spec` och `flow spec` för målet som du konfigurerar.
 
 ## Skapa en källanslutning {#create-source-connection}
 
@@ -374,7 +370,7 @@ Ett godkänt svar returnerar ID:t (`id`) av den nyligen skapade källanslutninge
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step3.png)
 
-A [basanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar inloggningsuppgifterna säkert på målet. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna måste du först hämta `connection spec` för det önskade målet enligt beskrivningen i avsnittet [Välj mål där målgrupper ska exporteras](#select-destination) och sedan titta på `authSpec` svar. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
+A [basanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar inloggningsuppgifterna säkert på målet. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta dessa autentiseringsparametrar måste du först hämta `connection spec` för det önskade målet enligt beskrivningen i avsnittet [Välj mål där målgrupper ska exporteras](#select-destination) och sedan titta på `authSpec` av svaret. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
 
 >[!BEGINTABS]
 
@@ -689,7 +685,7 @@ Använda de egenskaper som anges i autentiseringsspecifikationen (dvs. `authSpec
 
 **Begäran**
 
-+++[!DNL Amazon S3] - Basanslutningsbegäran
++++[!DNL Amazon S3] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -740,7 +736,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Azure Blob Storage] - Basanslutningsbegäran
++++[!DNL Azure Blob Storage] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -790,7 +786,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - Basanslutningsbegäran
++++[!DNL Azure Data Lake Gen 2(ADLS Gen2)] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -843,7 +839,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Data Landing Zone(DLZ)] - Basanslutningsbegäran
++++[!DNL Data Landing Zone(DLZ)] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -881,7 +877,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Begäran**
 
-+++[!DNL Google Cloud Storage] - Basanslutningsbegäran
++++[!DNL Google Cloud Storage] - Bas anslutningsbegäran
 
 >[!TIP]
 >
@@ -1041,7 +1037,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ### Lägga till kryptering i exporterade filer
 
-Du kan också lägga till kryptering till de exporterade filerna. Du måste lägga till objekt från `encryptionSpecs`. Se exemplet på begäran nedan med de obligatoriska parametrarna markerade:
+Du kan också lägga till kryptering till de exporterade filerna. Du måste lägga till objekt från `encryptionSpecs`. Se exemplet nedan med obligatoriska parametrar markerade:
 
 
 >[!BEGINSHADEBOX]
@@ -4449,7 +4445,7 @@ Svaret från API:t för Flow Service returnerar ID:t för det uppdaterade datafl
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
-Om du vill göra några uppdateringar av dataflödet använder du `PATCH` operation.Du kan till exempel uppdatera dina dataflöden och välja fält som obligatoriska nycklar eller dedupliceringsnycklar.
+Använd `PATCH` operation.Du kan till exempel uppdatera dina dataflöden och välja fält som obligatoriska nycklar eller dedupliceringsnycklar.
 
 ### Lägg till en obligatorisk nyckel {#add-mandatory-key}
 

@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
 title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: 3b5f4abd516259402e9b3c4cfbcc17e32f18b6f5
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -12,9 +12,6 @@ ht-degree: 0%
 # (Beta) Konfigurera filformateringsalternativ för filbaserade mål
 
 >[!IMPORTANT]
->
->The **[!UICONTROL File formatting options]** i Adobe Experience Platform finns i betaversionen. Dokumentationen och funktionaliteten kan komma att ändras.
->Kontakta din Adobe-representant för att få tillgång till den här funktionen.
 > 
 >Filformateringsalternativen som beskrivs i det här dokumentet är för närvarande bara tillgängliga för CSV-filer.
 
@@ -35,7 +32,7 @@ Om du vill visa filformateringsalternativen startar du [ansluta till mål](/help
 >
 >Målet som du ansluter till kanske inte har alla dessa alternativ tillgängliga. Det är upp till målutvecklaren att avgöra vilka filformateringsalternativ som stöds i målet. Målutvecklaren kan avgöra vilka alternativ som är tillgängliga vid anslutning till målet. Obligatoriska alternativ är markerade med en asterisk i användargränssnittet för Experience Platform.
 > 
->De nya molnlagringsmålen - [(Beta) Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [(Beta) Azure-blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [(Beta) Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [(Beta) Data Landing Zone](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [(Beta) Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [(Beta) SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativen som markeras nedan.
+>De molnbaserade lagringsplatserna som skapats av Adobe - [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [Azure Blob](/help/destinations/catalog/cloud-storage/azure-blob.md), [Azure Data Lake Storage Gen2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Datallandningszon](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [Google Cloud-lagring](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [SFTP](/help/destinations/catalog/cloud-storage/sftp.md) - stöder för närvarande endast de sex CSV-alternativen som markeras nedan.
 
 ![Bild som visar några av de tillgängliga filformateringsalternativen.](../assets/ui/batch-destinations-file-formatting-options/file-formatting-options.png)
 
