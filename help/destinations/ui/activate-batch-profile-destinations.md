@@ -4,15 +4,19 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 1e6cdbaa12c89dc678232245a9544bdfa81aebcf
+source-git-commit: d7264d94a03f0ba19da90559b156ecaace0d8f95
 workflow-type: tm+mt
-source-wordcount: '3601'
+source-wordcount: '3515'
 ht-degree: 0%
 
 ---
 
 
 # Aktivera målgrupper för att batchprofilera exportmål
+
+>[!IMPORTANT]
+> 
+> Funktionerna som beskrivs på sidan är ännu inte allmänt tillgängliga för kunderna. Den här sidan är avsedd för Adobe-interna team som en förhandsläsning på kommande funktioner. Dela inte utanför Adobe förrän anteckningen har tagits bort.
 
 >[!IMPORTANT]
 > 
@@ -122,10 +126,6 @@ Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en
 
    ![Bild som markerar alternativet Schemalagd i aktiveringsflödet för batchdestinationer och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
-   >[!IMPORTANT]
-   >
-   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Denna begränsning kommer att åtgärdas i framtida versioner.
-
 1. Använd **[!UICONTROL Date]** för att välja dag eller intervall när exporten ska ske. För daglig export är det bästa sättet att ställa in start- och slutdatum så att de motsvarar kampanjernas längd i era nedströmsplattformar.
 
    >[!IMPORTANT]
@@ -150,10 +150,6 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
    * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 8 eller 12:e timme.
 
 1. Använd **[!UICONTROL Time]** väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
-
-   >[!IMPORTANT]
-   >
-   >På grund av hur de interna Experience Platform-processerna är konfigurerade kanske den första inkrementella eller fullständiga filexporten inte innehåller alla data för bakåtfyllnad. <br> <br> För att säkerställa en fullständig och mest aktuell dataexport med bakåtfyllnad för både fullständiga och inkrementella filer rekommenderar Adobe att du ställer in den första filexporttiden efter 12 PM GMT följande dag. Denna begränsning kommer att åtgärdas i framtida versioner.
 
 1. Använd **[!UICONTROL Date]** för att välja intervallet när exporten ska ske. Det bästa sättet är att ställa in start- och slutdatumet så att det passar kampanjernas längd på era nedströmsplattformar.
 
