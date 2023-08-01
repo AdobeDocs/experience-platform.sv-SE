@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 1314b2742af5cd281acb5f9db81eec0ccf885f77
+source-git-commit: 378b51b13547af994bd258a42d1068118d099eb4
 workflow-type: tm+mt
-source-wordcount: '3431'
+source-wordcount: '3434'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ Du kan lägga till fler fält till den här visningen genom att välja ![filtera
 | [!UICONTROL Tags] | De användardefinierade taggar som tillhör målgruppen. Mer information om de här taggarna finns i [avsnitt om taggar](#tags). |
 | [!UICONTROL Breakdown] | Uppdelning av profilstatus för målgruppen. En mer detaljerad beskrivning av den här profilstatusuppdelningen finns nedan. |
 | [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
-| [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är `On Demand`, `Scheduled`och `Continuous`. |
+| [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är `On Demand` (Gruppera), `Scheduled` (direktuppspelning), och `Continuous` (Kant). |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
 | [!UICONTROL Description] | Beskrivning av målgruppen. |
 | [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
