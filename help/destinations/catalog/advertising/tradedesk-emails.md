@@ -3,9 +3,9 @@ title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1058'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL The Trade Desk - CRM] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+>[!DNL The Trade Desk - CRM] målet i Platform är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 >
 >I och med lanseringen av EUID (European Unified ID) ser du nu två [!DNL The Trade Desk - CRM] destinationer i [målkatalog](/help/destinations/catalog/overview.md).
 >* Om du hämtar data i EU ska du använda **[!DNL The Trade Desk - CRM (EU)]** mål.
 >* Om du hämtar data i APAC- eller NAMER-regionerna använder du **[!DNL The Trade Desk - CRM (NAMER & APAC)]** mål.
 >
->Båda destinationerna i Experience Platform är för närvarande betaversioner. Dokumentationssidan skapades av *[!DNL Trade Desk]* team. Om du har frågor eller uppdateringsfrågor kontaktar du [!DNL Trade Desk] kan dokumentationen och funktionaliteten ändras.
+>Båda destinationerna i Experience Platform är för närvarande betaversioner. Målanslutningen och dokumentationssidan skapas och underhålls av *[!DNL Trade Desk]* team. Om du har frågor eller uppdateringsfrågor kontaktar du [!DNL Trade Desk] kan dokumentationen och funktionaliteten ändras.
 
 ## Översikt {#overview}
 
@@ -30,7 +30,7 @@ Det här dokumentet är utformat för att hjälpa dig att aktivera profiler för
 
 >[!TIP]
 >
->Använd [!DNL The Trade Desk] CRM-mål för CRM-datamappning, t.ex. e-postadress eller hashad e-postadress. Använd [Annan destination för Trade Desk](/help/destinations/catalog/advertising/tradedesk.md) i Adobe Experience Platform-katalogen för cookies och mappningar av enhets-ID.
+>Använd [!DNL The Trade Desk] CRM-mål för CRM-datamappning, t.ex. e-postadress eller hash-adress. Använd [Annan destination för Trade Desk](/help/destinations/catalog/advertising/tradedesk.md) i Adobe Experience Platform-katalogen för cookies och mappningar av enhets-ID.
 
 ## Förutsättningar {#prerequisites}
 
@@ -123,7 +123,7 @@ Nedan visas ett exempel på korrekt identitetsmappning när målgrupper aktivera
 
 Välja källfält:
 
-* Välj `Email` namnutrymmet eller attributet som källidentitet om du använder den oformaterade e-postadressen vid datahämtning.
+* Välj `Email` namnutrymmet eller attributet som källidentitet om du använder den oformaterade e-postadressen vid datainmatning.
 * Välj `Email_LC_SHA256` namnutrymmet eller attributet som källidentitet om du hash-kodade kundens e-postadresser när data hämtas till Platform.
 
 Markera målfält:
@@ -133,7 +133,7 @@ Markera målfält:
 
 ## Validera dataexport {#validate}
 
-Validera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk]hittar du målgrupperna under dataplattan Adobe 1PD i [!DNL The Trade Desk] Plattform för datahantering (DMP). Här följer stegen för att hitta motsvarande ID i [!DNL Trade Desk] Gränssnitt:
+Validera att data exporteras korrekt från Experience Platform och till [!DNL The Trade Desk]hittar du målgrupperna under dataplattan Adobe 1PD i [!DNL The Trade Desk] Datahanteringsplattform (DMP). Här följer stegen för att hitta motsvarande ID i [!DNL Trade Desk] Gränssnitt:
 
 1. Klicka först på **[!UICONTROL Data]** Flikar och granska **[!UICONTROL First-Party]**.
 2. Bläddra nedåt på sidan, under **[!UICONTROL Imported Data]** hittar du **[!UICONTROL Adobe 1PD Tile]**.

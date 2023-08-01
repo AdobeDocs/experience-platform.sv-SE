@@ -2,9 +2,9 @@
 title: Pega-anslutning för kundens beslutshubb
 description: Använd Pega Customer Decision Hub-destinationen i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: 9ccfbeb6ef36b10b8ecbfc25797c26980e7d1dcd
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '984'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Profilmedlemskap från Adobe Experience Platform, vid inläsning till [!DNL Pega
 
 >[!IMPORTANT]
 >
->Den här dokumentationssidan skapades av Pegasystems. Kontakta Pega direkt för frågor eller uppdateringsförfrågningar [här](mailto:support@pega.com).
+>Målanslutningen och dokumentationssidan skapas och underhålls av Pegasystems. Kontakta Pega direkt för frågor eller uppdateringsförfrågningar [här](mailto:support@pega.com).
 
 ## Användningsfall
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Customer Decision Hub] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Customer Decision Hub] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda denna destination.
 
 ### Telekommunikation
 
@@ -75,8 +75,8 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 Fyll i fälten nedan och välj **[!UICONTROL Connect to destination]**:
 
 * **[!UICONTROL Access Token URL]**: URL:en för OAuth 2-åtkomsttoken på din [!DNL Pega Customer Decision Hub] -instans.
-* **[!UICONTROL Client ID]**: The OAuth 2 [!DNL client ID] som du har skapat i [!DNL Pega Customer Decision Hub] -instans.
-* **[!UICONTROL Client Secret]**: The OAuth 2 [!DNL client secret] som du har skapat i [!DNL Pega Customer Decision Hub] -instans.
+* **[!UICONTROL Client ID]**: OAuth 2 [!DNL client ID] som du har skapat i [!DNL Pega Customer Decision Hub] -instans.
+* **[!UICONTROL Client Secret]**: OAuth 2 [!DNL client secret] som du har skapat i [!DNL Pega Customer Decision Hub] -instans.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -88,13 +88,13 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Host Name]**: Värdnamnet för Pega-kundens beslutshubben som profilen exporteras till som json-data.
+* **[!UICONTROL Host Name]**: Värdnamn för Pega-kunds beslutshubben som profilen exporteras till som json-data.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -104,11 +104,11 @@ I [[!UICONTROL Select attributes]](../../ui/activate-streaming-profile-destinati
 
 ### Mappningsexempel: aktivera profiluppdateringar i [!DNL Pega Customer Decision Hub] {#mapping-example}
 
-Nedan visas ett exempel på korrekt identitetsmappning när profiler exporteras till [!DNL Pega Customer Decision Hub].
+Nedan visas ett exempel på korrekt identitetsmappning vid export av profiler till [!DNL Pega Customer Decision Hub].
 
 Välja källfält:
 
-* Välj en identifierare (till exempel: CustomerID) som källidentitet som unikt identifierar en profil i Adobe Experience Platform och [!DNL Pega Customer Decision Hub].
+* Välj en identifierare (till exempel CustomerID) som källidentitet som unikt identifierar en profil i Adobe Experience Platform och [!DNL Pega Customer Decision Hub].
 * Välj ändringar i XDM-källprofilsattribut som behöver exporteras och uppdateras i [!DNL Pega Customer Decision Hub].
 
 Markera målfält:

@@ -4,9 +4,9 @@ description: Lär dig hur du hämtar strömmande data från en källa till Adobe
 hide: true
 hidefromtoc: true
 exl-id: 82254be0-fa31-4114-a0ec-179a990e0904
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 *När du går igenom den här mallen ersätter eller tar du bort alla stycken i kursiv stil (med början från det här).*
 
-*Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Ignorera alla instanser av UICONTROL på den här sidan. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat in den.*
+*Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Please ignore all instances of UICONTROL on this page. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat in den.*
 
 Den här självstudiekursen innehåller steg för att skapa en *DIN KÄLLA* källkoppling med hjälp av användargränssnittet för plattformen.
 
@@ -25,7 +25,7 @@ Den här självstudiekursen innehåller steg för att skapa en *DIN KÄLLA* käl
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av *DIN KÄLLA* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar*.
+>Den här källanslutnings- och dokumentationssidan skapas och underhålls av *DIN KÄLLA* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar*.
 
 ## Förutsättningar
 
@@ -64,7 +64,7 @@ Under **Direktuppspelning** kategori, välj *DIN KÄLLA* och sedan markera **[!U
 >
 >Skärmbilderna som används nedan är exempel. När du skapar din dokumentation ska du ersätta bilderna med skärmbilder av den faktiska källan. Du kan använda samma markeringsmönster och -färg, liksom samma filnamn. Kontrollera att skärmbilden fångar hela skärmen i användargränssnittet för plattformen. Mer information om hur du överför skärmbilder finns i handboken på [skicka in dokumentation för granskning](../documentation/github.md).
 
-![Katalogen för Experience Platform-källor](../assets/streaming/catalog.png)
+![Katalogen Experience Platform-källor](../assets/streaming/catalog.png)
 
 ## Markera data
 
@@ -105,7 +105,7 @@ När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen till den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
 När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** så att dataflödet kan skapas.
@@ -116,7 +116,7 @@ När du har granskat dataflödet klickar du på **[!UICONTROL Finish]** så att 
 
 När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
 
-Gå till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapade och kopierar slutpunkten från nederkanten av [!UICONTROL Properties] -panelen.
+Om du vill hämta strömningsslutpunkten går du till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapade och kopierar slutpunkten från nederkanten av [!UICONTROL Properties] -panelen.
 
 ![Slutpunkten för direktuppspelning i dataflödesaktivitet.](../assets/testing/endpoint-test.png)
 
@@ -124,7 +124,7 @@ Gå till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapad
 
 *Arbetsflöden för de återstående stegen för att skapa ett dataflöde är modulariserade. Om du vill ringa upp dig angående din källa kan du läsa avsnittet med ytterligare resurser nedan.*
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till *DIN KÄLLA* konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
+Genom att följa den här självstudien har du upprättat en anslutning till *DIN KÄLLA* konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
 
 ## Ytterligare resurser
 

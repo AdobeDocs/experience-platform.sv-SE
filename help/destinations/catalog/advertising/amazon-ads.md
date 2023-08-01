@@ -3,9 +3,9 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1373'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,11 @@ Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integreri
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av *Amazon Ads* team. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`amc-support@amazon.com`.*
+>Målanslutningen och dokumentationssidan skapas och underhålls av *Amazon Ads* team. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`amc-support@amazon.com`.*
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska förstå hur och när du ska använda *Amazon Ads* mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda *Amazon Ads* mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda denna destination.
 
 ### Aktivering och målinriktning {#activation-and-targeting}
 
@@ -43,7 +43,7 @@ The *Amazon Ads* anslutningen stöder aktivering av identiteter som beskrivs i t
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -94,7 +94,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -102,7 +102,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -116,7 +116,7 @@ Amazon Ads-anslutningen stöder hash-kodad e-postadress och hashade telefonnumme
 * Om du vill mappa hash-kodade telefonnummer väljer du `Phone_SHA256` identitetsnamnområde som ett källfält.
 * Om du vill mappa ohashade e-postadresser eller telefonnummer markerar du motsvarande ID-namnutrymmen som källfält och kontrollerar `Apply Transformation` möjlighet att låta Platform hash-koda identiteterna vid aktiveringen.
 
-Vi rekommenderar att du mappar så många fält som du har tillgängliga. Om bara ett källattribut är tillgängligt kan du mappa ett enskilt fält. Amazon Ads-målet använder alla mappade fält för mappningsändamål, vilket ger högre matchningsfrekvenser om fler fält anges. Mer information om godkända identifierare finns på [Hjälpsidan för Amazon Ads hashed-målgrupper](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
+Vi rekommenderar att du mappar så många fält du har. Om bara ett källattribut är tillgängligt kan du mappa ett enskilt fält. Amazon Ads-målet använder alla mappade fält för mappningsändamål, vilket ger högre matchningsfrekvenser om fler fält anges. Mer information om godkända identifierare finns på [Hjälpsidan för Amazon Ads hashed-målgrupper](https://advertising.amazon.com/dsp/help/ss/en/audiences#GA6BC9BW52YFXBNE).
 
 ## Exporterade data/Validera dataexport {#exported-data}
 
@@ -124,7 +124,7 @@ När målgruppen har överförts kan du validera att målgruppen har skapats och
 
 **För Amazon DSP**
 
-Navigera till ert annonsörs-ID → Publiker → Advertiser-målgrupper. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusvärdet för `Active`. Mer information om er målgruppsstorlek och räckvidd finns i den prognostiserade panelen Reach till höger om Amazon DSP användargränssnitt.
+Navigera till ert annonsörs-ID → Målgrupper → Målgrupper för annonsörer. Om målgruppen skapades och uppfyller det minsta antalet målgruppsmedlemmar visas statusvärdet för `Active`. Mer information om er målgruppsstorlek och räckvidd finns i den prognostiserade panelen Reach till höger om Amazon DSP användargränssnitt.
 
 ![Validering av målgrupp DSP Amazon](../../assets/catalog/advertising/amazon_ads_image_3.png)
 
@@ -146,7 +146,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| Maj 2023 | Funktioner och dokumentationsuppdatering | <ul><li>Stöd för markering av annonsörregion har lagts till i [arbetsflöde för målanslutning](#destination-details).</li><li>Uppdaterad dokumentation som återspeglar tillägget av Advertiser Region. Mer information om hur du väljer rätt annonsregion finns i [Amazon-dokumentation](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
+| Maj 2023 | Funktioner och dokumentation | <ul><li>Stöd för markering av reklamregion har lagts till i [arbetsflöde för målanslutning](#destination-details).</li><li>Uppdaterad dokumentation som återspeglar tillägget av Advertiser Region. Mer information om hur du väljer rätt annonsregion finns i [Amazon-dokumentation](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
 | Mars 2023 | Inledande version | Ursprunglig målrelease och dokumentation publicerad. |
 
 {style="table-layout:auto"}

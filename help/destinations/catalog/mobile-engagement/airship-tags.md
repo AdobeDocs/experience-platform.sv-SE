@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Mer information om [!DNL Airship], se [Airship Docs](https://docs.airship.com).
 
 >[!TIP]
 >
->Dokumentationssidan skapades av [!DNL Airship] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [support.airship.com](https://support.airship.com/).
+>Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Airship] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [support.airship.com](https://support.airship.com/).
 
 ## Förutsättningar
 
@@ -83,7 +83,7 @@ Klicka **[!UICONTROL Create Token]** och spara informationen konfidentiellt.
 
 ## Användningsfall
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Airship Tags] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Airship Tags] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda denna destination.
 
 ### Använd skiftläge 1
 
@@ -93,13 +93,13 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Airship Tags
 
 Trigga personliga meddelanden i realtid när användare faller in i eller ut från en viss målgrupp inom Adobe Experience Platform.
 
-En återförsäljare skapar till exempel en jeans varumärkesspecifik publik i Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sina jeans-preferenser för ett visst varumärke.
+En återförsäljare skapar t.ex. en jeans varumärkesspecifik publik i Platform. Den återförsäljaren kan nu utlösa ett mobilt meddelande så snart någon sätter sin jeans för ett visst varumärke.
 
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -107,7 +107,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-* **[!UICONTROL Bearer token]**: den innehavartoken som du skapade från [!DNL Airship] kontrollpanel.
+* **[!UICONTROL Bearer token]**: den innehavartoken som du genererade från [!DNL Airship] kontrollpanel.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -119,7 +119,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -127,7 +127,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

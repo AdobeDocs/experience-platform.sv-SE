@@ -1,11 +1,11 @@
 ---
 title: Pega Profile Connector
-description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofildesignern för att importera profildata regelbundet från Amazon S3-lagring.
+description: Använd Pega Profile Connector för Amazon S3 i Adobe Experience Platform för att exportera fullständiga eller inkrementella, eller båda, profildata till Amazon S3-molnlagring. I Pega Customer Decision Hub kan datafält schemaläggas i kundprofildesignern för att importera profildata periodiskt från Amazon S3-lagring.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: f422f21b-174a-4b93-b05d-084b42623314
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1058'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,11 @@ Denna koppling hjälper till att ställa in den inledande exporten av profildata
 
 >[!IMPORTANT]
 >
->Den här dokumentationssidan skapades av Pegasystems. Kontakta Pega direkt för frågor eller uppdateringsförfrågningar [här](mailto:support@pega.com).
+>Målanslutningen och dokumentationssidan skapas och underhålls av Pegasystems. Kontakta Pega direkt för frågor eller uppdateringsförfrågningar [här](mailto:support@pega.com).
 
 ## Användningsfall
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Pega Profile Connector] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Pega Profile Connector] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda denna destination.
 
 ### Användningsfall 1
 
@@ -36,11 +36,11 @@ En marknadsförare vill ha aktuella profildata från Adobe Experience Platform s
 
 ## Förutsättningar {#prerequisites}
 
-Innan du kan använda det här målet för att exportera data från Adobe Experience Platform och importera profiler till [!DNL Pega Customer Decision Hub]måste du uppfylla följande krav:
+Innan du kan använda det här målet för att exportera data från Adobe Experience Platform och importera profiler till [!DNL Pega Customer Decision Hub]ska du kontrollera att du uppfyller följande krav:
 
 * Konfigurera [!DNL Amazon S3] och den mappsökväg som ska användas för export och import av datafiler.
-* Konfigurera [!DNL Amazon S3] åtkomstnyckel och [!DNL Amazon S3] hemlig nyckel: I [!DNL Amazon S3], generera ett `access key - secret access key` två för att ge plattformsåtkomst till din [!DNL Amazon S3] konto.
-* Ansluta och exportera data till [!DNL Amazon S3] lagringsplats, skapa en IAM-användare (Identity and Access Management) för [!DNL Platform] in [!DNL Amazon S3] och tilldela behörigheter som `s3:DeleteObject`, `s3:GetBucketLocation`, `s3:GetObject`, `s3:ListBucket`, `s3:PutObject`, `s3:ListMultipartUploadParts`
+* Konfigurera [!DNL Amazon S3] åtkomstnyckel och [!DNL Amazon S3] hemlig nyckel: i [!DNL Amazon S3], generera ett `access key - secret access key` två för att ge plattformsåtkomst till [!DNL Amazon S3] konto.
+* Ansluta och exportera data till [!DNL Amazon S3] lagringsplats, skapa en IAM-användare för [!DNL Platform] in [!DNL Amazon S3] och tilldela behörigheter som `s3:DeleteObject`, `s3:GetBucketLocation`, `s3:GetObject`, `s3:ListBucket`, `s3:PutObject`, `s3:ListMultipartUploadParts`
 * Se till att [!DNL Pega Customer Decision Hub] -instansen har uppgraderats till version 8.8 eller senare.
 
 ## Identiteter som stöds {#supported-identities}
@@ -59,7 +59,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](../../ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
@@ -68,7 +68,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -88,7 +88,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 * **[!UICONTROL Name]**: Ange ett namn som hjälper dig att identifiera det här målet.
 * **[!UICONTROL Description]**: Ange en beskrivning av destinationen.
-* **[!UICONTROL Bucket name]**: ange namnet på [!DNL Amazon S3] bucket som ska användas för detta mål.
+* **[!UICONTROL Bucket name]**: Ange namnet på [!DNL Amazon S3] bucket som ska användas för detta mål.
 * **[!UICONTROL Folder path]**: Ange sökvägen till målmappen som ska vara värd för de exporterade filerna.
 * **[!UICONTROL Compression Type]**: Välj komprimeringstyp som GZIP eller NONE.
 
@@ -98,7 +98,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -106,7 +106,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

@@ -1,16 +1,16 @@
 ---
-title: TikTok-anslutning
+title: TikTok
 description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '959'
 ht-degree: 1%
 
 ---
 
-# TikTok-anslutning
+# TikTok
 
 ## Översikt {#overview}
 
@@ -18,7 +18,7 @@ Bygg anpassade målgrupper på TikTok med era data för målinriktning med era a
 
 >[!IMPORTANT]
 >
->Dokumentationssidan har skapats av TikTok team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [https://ads.tiktok.com/help/](https://ads.tiktok.com/help/).
+>Den här målanslutnings- och dokumentationssidan skapas och underhålls av TikTok team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [https://ads.tiktok.com/help/](https://ads.tiktok.com/help/).
 
 ## Användningsfall {#use-cases}
 
@@ -26,7 +26,7 @@ För att du bättre ska förstå hur och när du ska använda TikTok-destination
 
 ### Användningsfall {#use-case-1}
 
-Ett sportklädmärke vill nå befintliga kunder via sina konton för sociala medier. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till TikTok för att visa annonser i sina kunders sociala medier.
+Ett sportklädvarumärke vill nå befintliga kunder via sina konton för sociala medier. Kläddervarumärket kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till TikTok för att visa annonser i sina kunders sociala medier.
 
 ## Förutsättningar {#prerequisites}
 
@@ -41,7 +41,7 @@ TikTok stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer
 | GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | Telefonnummer | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform och måste vara i E.164-format. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
-| E-post | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
+| E-post | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -60,7 +60,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -84,7 +84,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -92,7 +92,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -120,4 +120,4 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 
 ## Ytterligare resurser {#additional-resources}
 
-Se [TikTok Help Center page](https://ads.tiktok.com/help/article/audiences?lang=en) för ytterligare information.
+Läs mer i [TikTok Help Center page](https://ads.tiktok.com/help/article/audiences?lang=en) om du vill ha mer information.

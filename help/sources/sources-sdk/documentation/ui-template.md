@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Självbetjäningsdokumentationsmall för användargränssnittet
 description: Lär dig hur du skapar en källanslutning till YOURSOURCE med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: 6471c0a2-22e8-4133-a76f-ee3c5c669ef8
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '713'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 *När du går igenom den här mallen ersätter eller tar du bort alla stycken i kursiv stil (med början från det här).*
 
-*Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Ignorera alla instanser av UICONTROL på den här sidan. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat in den.*
+*Börja med att uppdatera metadata (rubrik och beskrivning) högst upp på sidan. Please ignore all instances of UICONTROL on this page. Det här är en tagg som hjälper våra maskinöversättningsprocesser att översätta sidan korrekt till flera språk som stöds. Vi lägger till taggar i dokumentationen när du har skickat in den.*
 
 Den här självstudiekursen innehåller steg för att skapa en *DIN KÄLLA* källkoppling med hjälp av användargränssnittet för plattformen.
 
@@ -24,7 +24,7 @@ Den här självstudiekursen innehåller steg för att skapa en *DIN KÄLLA* käl
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av *DIN KÄLLA* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar*.
+>Den här källanslutnings- och dokumentationssidan skapas och underhålls av *DinKälla* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *Infoga länk- eller e-postadress där du kan komma åt uppdateringar*.
 
 ## Förutsättningar
 
@@ -65,7 +65,7 @@ The **[!UICONTROL Connect YOURSOURCE account]** visas. På den här sidan kan du
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du *DIN KÄLLA* konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj *DIN KÄLLA* konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../assets/ui/existing.png)
 
@@ -79,7 +79,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 
 *Arbetsflöden för de återstående stegen för att skapa ett dataflöde är modulariserade. Om du vill ringa upp dig angående din källa kan du läsa avsnittet med ytterligare resurser nedan.*
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till *DIN KÄLLA* konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
+Genom att följa den här självstudien har du upprättat en anslutning till *DIN KÄLLA* konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/crm.html).
 
 ## Ytterligare resurser
 

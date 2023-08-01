@@ -3,9 +3,9 @@ title: Översikt över källan RainFocus
 description: Lär dig hur du överför händelsehantering och analysdata från ditt RainFocus-konto till Experience Platform
 last-substantial-update: 2023-06-21T00:00:00Z
 badge: Beta
-source-git-commit: f3d70e986148d39429f394a60d12686617e3fd3d
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '998'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ Använd [!DNL RainFocus] i Adobe Experience Platform och Real-time Customer Data
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av [!DNL RainFocus] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på kundtjänst<span>@rainfocus.com eller besök [[!DNL RainFocus] Help Center](https://help.rainfocus.com/hc/en-us)
+>Den här källanslutnings- och dokumentationssidan skapas och underhålls av [!DNL RainFocus] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på kundtjänst<span>@rainfocus.com eller besök [[!DNL RainFocus] Help Center](https://help.rainfocus.com/hc/en-us)
 
 ## Förutsättningar
 
@@ -32,7 +32,7 @@ Du måste uppfylla följande krav innan du kan aktivera [!DNL RainFocus] integre
 
 >[!IMPORTANT]
 >
->Adobe har nyligen meddelat att JWT-tokens till förmån för OAuth har ersatts. Om du vill anpassa dig till ändringen [!DNL RainFocus] kommer att migreras till OAuth inom den närmaste framtiden.
+>Adobe har nyligen meddelat att JWT-tokens till förmån för OAuth har ersatts. Om du vill anpassa dig till den här ändringen, [!DNL RainFocus] kommer att migreras till OAuth inom den närmaste framtiden.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
@@ -42,7 +42,7 @@ För att kunna ansluta [!DNL RainFocus] till Experience Platform måste du ange 
 | --- | --- | --- |
 | Klient-ID | Klient-ID kan hämtas från Adobe Service Account i Adobe Developer Portal. | `b9c32a63e7d41a0f87d3e8b52a16e7a2` |
 | Klienthemlighet | Klienthemligheten kan hämtas från Adobes tjänstkonto i Adobe Developer Portal. | `k1b-p-umplcjtg_arnw-R-Bx44bybu` |
-| ID för tekniskt konto | Det tekniska konto-ID:t kan hämtas från Adobe Service Account i Adobe Developer Portal. | `B3F9D2E8A64C573D21ABFE97@techacct.adobe.com` |
+| Tekniskt konto-ID | Det tekniska konto-ID:t kan hämtas från Adobe Service Account i Adobe Developer Portal. | `B3F9D2E8A64C573D21ABFE97@techacct.adobe.com` |
 | Organisations-ID | Organisations-ID kan hämtas från Adobe Service Account i Adobe Developer Portal | `D9A6F3BCE82FD147C50E3A19@techacct.adobe.com` |
 
 ### Skapa ett XDM-schema och definiera identitetsfältet {#create-an-xdm-schema-and-define-the-identity-field}
@@ -89,7 +89,7 @@ Följande fältgrupper rekommenderas också (anges med prefix):
 
 {style="table-layout:auto"}
 
-Skapa ditt schema för [!DNL RainFocus] data, läs följande dokumentation för steg om hur du skapar ett schema med API:er eller användargränssnittet.
+Så här skapar du ett schema för [!DNL RainFocus] data, läs följande dokumentation för steg om hur du skapar ett schema med API:er eller användargränssnittet.
 
 * [Skapa schemat med användargränssnittet](../../../xdm/tutorials/create-schema-ui.md)
 * [Skapa schemat med API:t](../../../xdm/tutorials/create-schema-api.md)
@@ -104,11 +104,11 @@ Skapa ditt schema för [!DNL RainFocus] data, läs följande dokumentation för 
 
 När tjänstkontot och XDM-schemat är klara kan du nu aktivera [!DNL Integration Profile] via [!DNL RainFocus] plattform. The [!DNL Integration Profile] ansvarar för att strömma data till Experience Platform.
 
-Logga in på [[!DNL RainFocus] plattform](https://app.rainfocus.com). I den primära navigeringen väljer du **[!DNL Libraries]** och sedan markera **[!DNL Integration Profiles]**
+Logga in på [[!DNL RainFocus] plattform](https://app.rainfocus.com). I den primära navigeringen väljer du **[!DNL Libraries]** och sedan **[!DNL Integration Profiles]**
 
 ![RainFocus-användargränssnittet med bibliotek och integreringsprofiler markerade.](/help/sources/images/tutorials/create/rainfocus/rainfocus_integration-profile.png)
 
-Om du vill skapa en ny profil väljer du **(`+`)** ikon. Nästa, välj **Adobe Real-time Customer Data Platform** och sedan markera **OK**.
+Om du vill skapa en ny profil väljer du **(`+`)** -ikon. Nästa, välj **Adobe Real-time Customer Data Platform** och sedan **OK**.
 
 ![Fönstret Skapa integreringsprofil i RainFocus-gränssnittet.](/help/sources/images/tutorials/create/rainfocus/rainfocus_integration-profile-select.png)
 
@@ -116,16 +116,16 @@ Ange sedan de autentiseringsuppgifter som du har hämtat i Adobe Developer Porta
 
 * **Klient-ID**
 * **Klienthemlighet**
-* **ID för tekniskt konto**
+* **Tekniskt konto-ID**
 * **Organisations-ID**
 
 När autentiseringsuppgifterna har angetts väljer du **[!DNL Save]**.Nu bör du se det nya [!DNL Integration Profile] som anges i [!DNL RainFocus] kontrollpanel.
 
-Välj [!DNL Integration Profile] som du just skapade för att visa en lista med fördefinierade **push-typer** redan konfigurerad. Dessa är [Experience Events](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html) som kommer att skickas till Experience Platform när de inträffar.
+Välj [!DNL Integration Profile] som du just har skapat för att visa en lista med fördefinierade **push-typer** redan konfigurerad. De här är [Experience Events](https://experienceleague.adobe.com/docs/experience-platform/xdm/classes/experienceevent.html) som kommer att skickas till Experience Platform när de inträffar.
 
 ![En lista med fördefinierade push-typer i kontrollpanelen RainFocus.](/help/sources/images/tutorials/create/rainfocus/rainfocus_integration-profile-setup.png)
 
-Om du vill hämta en kopia av JSON-exempelnyttolasten väljer du **[!DNL Sample JSON Payload]**. Därefter markerar och kopierar du JSON-exempelnyttolasten och **spara den i en ny fil med filtillägget .json**. Detta kommer att användas senare i Experience Platform för [mappningskonfigurationer](../../tutorials/ui/create/analytics/rainfocus.md#mapping).
+Om du vill hämta en kopia av JSON-exempelnyttolasten väljer du **[!DNL Sample JSON Payload]**. Markera och kopiera JSON-exempelnyttolasten och **spara den i en ny fil med filtillägget .json**. Detta kommer att användas senare i Experience Platform för [mappningskonfigurationer](../../tutorials/ui/create/analytics/rainfocus.md#mapping).
 
 ![Ett exempel på JSON-nyttolast i kontrollpanelen RainFocus.](/help/sources/images/tutorials/create/rainfocus/rainfocus_integration-profile-json.png)
 

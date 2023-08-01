@@ -2,9 +2,9 @@
 title: Medieanslutning
 description: Aktivera profiler för riktade medieundersökningar och insamling av feedback för att bättre förstå kundernas behov och förväntningar.
 exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1068'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Aktivera profiler för riktade medieundersökningar och insamling av feedback f�
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av Medallia-teamet. Om du har frågor eller uppdateringsfrågor kan du kontakta dem direkt på adobe-integrations@medallia.com.
+>Målanslutningen och dokumentationssidan skapas och underhålls av Medallia-teamet. Om du har frågor eller uppdateringsfrågor kan du kontakta dem direkt på adobe-integrations@medallia.com.
 
 ## Användningsfall {#use-cases}
 
@@ -59,7 +59,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla nykvalificerade medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla nykvalificerade medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -68,7 +68,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -76,7 +76,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-* **[!UICONTROL OAuth Token Endpoint URL]**: Används vanligtvis i formatet https://instance.medallia.tld/oauth/tenant/token.
+* **[!UICONTROL OAuth Token Endpoint URL]**: Vanligtvis har formatet https://instance.medallia.tld/oauth/tenant/token.
 * **[!UICONTROL Client ID]**: Hämta material från ert medieteam.
 * **[!UICONTROL Client Secret]**: Hämta material från ert medieteam.
 
@@ -95,7 +95,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -103,7 +103,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -128,7 +128,7 @@ Vi rekommenderar starkt att du även mappar ytterligare anpassade målattribut f
 
 ## Exporterade data {#exported-data}
 
-När du har aktiverat segmenten på destinationen ska du informera ditt Media Delivery Team, som ska kunna validera exporterade data från Adobe Experience Platform till MediaMedia. Observera att undersökningar endast kan aktiveras inom media efter framgångsrik dataverifiering. Innan detta kommer uppgifterna att exporteras till Medallia, men de kommer inte att utlösa undersökningar till kunderna.
+När du har aktiverat segmenten på destinationen ska du informera ditt Media Delivery Team, som ska kunna validera exporterade data från Adobe Experience Platform till MediaMedia. Observera att enkäter endast kan aktiveras inom media efter lyckad dataverifiering. Före detta exporteras data till Medallia men kommer inte att utlösa undersökningar till kunderna.
 
 Ett exempel på JSON för exporterade data anges nedan, som använder exempelmappningen från skärmbilden ovan i **Mappa attribut och identiteter** avsnitt:
 
@@ -140,8 +140,8 @@ Ett exempel på JSON för exporterade data anges nedan, som använder exempelmap
         "aep_segments_new": ["c1c3edcc-07cb-4f66-b5dd-aff485148aba"],
         "aep_segments_existing": [],
         "aep_segments_removed": [],
-        "firstname":  “John” ,
-        "lastname":  “Smith”,
+        "firstname":  "John" ,
+        "lastname":  "Smith",
         "contactId": "jsmith120002",
     }
 ]

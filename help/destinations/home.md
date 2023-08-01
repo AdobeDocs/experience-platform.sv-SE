@@ -3,9 +3,9 @@ keywords: destinationer;adobe experience platform;platform;mål overview;activat
 title: Översikt över mål
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 54165264364d7d53da2ff822b9ceb32157900b6a
+source-git-commit: ce1aec87b827b6e8626018846bc6f438834fff54
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '884'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,12 @@ Kontrollerna i [målarbetsyta](./ui/destinations-workspace.md) kan du:
 ## Måltyper och -kategorier {#types-and-categories}
 
 Med Experience Platform kan ni aktivera data till olika typer av destinationer för att tillgodose era användningsbehov. Målen kan vara allt från API-baserade integreringar till integreringar med mottagningssystem för filer, sökmål för profiler och mycket annat. Mer information om alla tillgängliga destinationer finns i [måltyper och kategorier - översikt](./destination-types.md).
+
+## Destinationer byggda av Adobe och partnerbyggda {#adobe-and-partner-built-destinations}
+
+Vissa av anslutningarna i Experience Platform destinationskatalog byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretag som använder [Destination SDK](/help/destinations/destination-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om ett mål skapas och underhålls av partnern. Till exempel [Amazon S3-anslutning](/help/destinations/catalog/cloud-storage/amazon-s3.md) skapas av Adobe, medan [TikTok Connector](/help/destinations/catalog/social/tiktok.md) skapas och underhålls av TikTok team.
+
+För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Om du har problem med kontakter som utvecklats och underhålls av Adobe kontaktar du Adobe eller kundtjänst.
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 

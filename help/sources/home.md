@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
+source-git-commit: ce1aec87b827b6e8626018846bc6f438834fff54
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1419'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,12 @@ Med Experience Platform kan ni centralisera data som ni samlar in från olika k�
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
+
+## Källor som byggts av Adobe och av partners {#adobe-and-partner-built-sources}
+
+Vissa kopplingar i Experience Platform källkatalogen byggs och underhålls av Adobe, medan andra byggs och underhålls av partnerföretagen genom att använda [Källor SDK](/help/sources/sources-sdk/overview.md). En anteckning högst upp på dokumentationssidan för varje partnerbyggd koppling anropar om en källa skapas och underhålls av partnern. Till exempel [Amazon S3-anslutning](/help/sources/connectors/cloud-storage/s3.md) skapas av Adobe, medan [RainFocus-koppling](/help/sources/connectors/analytics/rainfocus.md) skapas och underhålls av RainFocus-teamet.
+
+För partnerskapade och underhållna anslutningar innebär detta att problem med kopplingen kan behöva lösas av partnerteamet (kontaktmetoden finns i anteckningen på dokumentationssidan). Om du har problem med kontakter som utvecklats och underhålls av Adobe kontaktar du Adobe eller kundtjänst.
 
 ## Typer av källor
 

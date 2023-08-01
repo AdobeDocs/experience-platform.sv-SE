@@ -1,11 +1,11 @@
 ---
-keywords: Reklam. villkor,
+keywords: Reklam; villkor.
 title: Kriterieanslutning
-description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
+description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 9ccfbeb6ef36b10b8ecbfc25797c26980e7d1dcd
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '997'
 ht-degree: 1%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Den här dokumentationssidan har skapats av Criteo. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Kontakta Criteo direkt om du har frågor eller uppdateringsfrågor [här](mailto:criteoTechnicalPartnerships@criteo.com).
+>Målanslutningen och dokumentationssidan skapas och underhålls av Criteo. Detta är för närvarande en betaprodukt och funktionaliteten kan komma att ändras. Kontakta Criteo direkt om du har frågor eller uppdateringsfrågor [här](mailto:criteoTechnicalPartnerships@criteo.com).
 
-Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons vid rätt tidpunkt.
+Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
 
 ## Förutsättningar {#prerequisites}
 
@@ -39,8 +39,8 @@ Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs 
 
 | Målidentitet | Beskrivning | Överväganden |
 | --- | --- | --- |
-| `email_sha256` | E-postadresser som hash-kodats med SHA-256-algoritmen | Både oformaterad text och SHA-256-hashed-e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du [!UICONTROL Apply transformation] om du vill att Platform automatiskt ska hash-koda data vid aktiveringen. |
-| `gum_id` | Kriterium [!DNL GUM] cookie-identifierare | [!DNL GUM IDs] tillåta klienterna att upprätthålla en korrespondens mellan sina system för användaridentifiering och Criteos användaridentifiering ([!DNL UID]). Om identifierartypen är `gum_id`, en extra parameter, [!DNL GUM Caller ID]måste också ingå. Kontakta er kontogrupp för att få reda på vad som är lämpligt [!DNL GUM Caller ID] eller om du vill ha mer information om detta [!DNL GUM ID] synkronisera, om det behövs. |
+| `email_sha256` | E-postadresser som hashas med SHA-256-algoritmen | Både oformaterad text och SHA-256-hashed-e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du [!UICONTROL Apply transformation] om du vill att Platform automatiskt ska hash-koda data vid aktiveringen. |
+| `gum_id` | Criteo [!DNL GUM] cookie-identifierare | [!DNL GUM IDs] tillåta klienterna att upprätthålla en korrespondens mellan sina system för användaridentifiering och Criteos användaridentifiering ([!DNL UID]). Om identifierartypen är `gum_id`, en extra parameter, [!DNL GUM Caller ID]måste också ingå. Kontakta er kontogrupp för att få reda på vad som är lämpligt [!DNL GUM Caller ID] eller om du vill ha mer information om detta [!DNL GUM ID] synkronisera, om det behövs. |
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -55,11 +55,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 För att du bättre ska förstå hur du använder [!DNL Criteo] mål, här är några mål som Adobe Experience Platform-kunder kan uppnå med [!DNL Criteo]:
 
-### Använd fall 1: Hämta trafik
+### Användningsfall 1: Hämta trafik
 
 Visa upp er verksamhet med relevanta produkterbjudanden och flexibla kreatörer. Med intelligenta produktrekommendationer kommer era annonser automatiskt att innehålla de produkter som mest troligt kommer att utlösa besök och engagemang. Flexibel målinriktning gör att ni kan bygga målgrupper utifrån Criteos uppsättning av e-handelsdata eller från era egna listor över potentiella kunder och CDP-segment för Adobe.
 
-### Användningsfall 2: Öka konverteringsgraden för webbplatser
+### Använd fall 2: Öka konverteringen av webbplatser
 
 När besökarna lämnar er webbplats bör du påminna dem om vad de missar med återannonser som ökar konverteringsgraden genom att visa specialerbjudanden och hyperrelevanta erbjudanden, vart de än går. Koppla samman era Adobe CDP-målgrupper för att återengagera befintliga kunder eller inrikta er på konsumenter som liknar era mest lojala kunder.
 
@@ -67,7 +67,7 @@ När besökarna lämnar er webbplats bör du påminna dem om vad de missar med �
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
@@ -96,14 +96,14 @@ Fyll i följande anslutningsparametrar när du har autentiserat till målet.
 
 | Fält | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
-| Namn | Ett namn som hjälper dig att identifiera det här målet i framtiden. Namnet du väljer här är [!DNL Audience] namnet i Criteo Management Center och kan inte ändras i ett senare skede. | Ja |
+| Namn | Ett namn som hjälper dig att identifiera det här målet i framtiden. Namnet som du väljer här är [!DNL Audience] namnet i Criteo Management Center och kan inte ändras i ett senare skede. | Ja |
 | Beskrivning | En beskrivning som hjälper dig att identifiera det här målet i framtiden. | Nej |
 | Annonsörs-ID | ID för er organisations Criteo Advertiser. Kontakta er kontoansvarige för ditt kriterium för att få denna information. | Ja |
-| Kriterium [!DNL GUM caller ID] | [!DNL GUM Caller ID] för er organisation. Kontakta er kontogrupp för att få reda på vad som är lämpligt [!DNL GUM Caller ID] eller om du vill ha mer information om detta [!DNL GUM] synkronisera, om det behövs. | Ja, när [!DNL GUM ID] anges som en identifierare |
+| Criteo [!DNL GUM caller ID] | [!DNL GUM Caller ID] för er organisation. Kontakta er kontogrupp för att få reda på vad som är lämpligt [!DNL GUM Caller ID] eller om du vill ha mer information om detta [!DNL GUM] synkronisera, om det behövs. | Ja, när [!DNL GUM ID] anges som en identifierare |
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -111,7 +111,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

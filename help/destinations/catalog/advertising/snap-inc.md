@@ -2,9 +2,9 @@
 title: Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar dina målgrupper från Experience Platform.
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '970'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Dokumentationssidan skapades av *Snap Inc* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *dev-support@snap.com*
+>Målanslutningen och dokumentationssidan skapas och underhålls av *Snap Inc* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *dev-support@snap.com*
 
 ## Användningsfall {#use-cases}
 
@@ -74,7 +74,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 ### Autentisera till mål {#authenticate}
 
@@ -84,7 +84,7 @@ Så här autentiserar du målet:
 2. Välj **[!UICONTROL Connect to destination]**. Du kommer att omdirigeras till följande skärm:
    ![Autentiseringsskärm 1](/help/destinations/assets/catalog/advertising/snapchat-ads/auth1.png)
 3. Ange dina autentiseringsuppgifter för Snapchat och välj **Logga in**.
-4. Du kommer att få se Snapchat-data som Adobe Experience Platform kan komma åt. Välj **Fortsätt** för att fortsätta med anslutningsprocessen.
+4. Du kommer att få se Snapchat-data som Adobe Experience Platform kan komma åt. Välj **Fortsätt** om du vill fortsätta med anslutningsprocessen.
 
 ![Autentiseringsskärm 2](/help/destinations/assets/catalog/advertising/snapchat-ads/auth2.png)
 
@@ -106,7 +106,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska fäl
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -114,7 +114,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
