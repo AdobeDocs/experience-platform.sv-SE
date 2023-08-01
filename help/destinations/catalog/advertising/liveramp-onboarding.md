@@ -3,9 +3,9 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: 5da570aaa0c6a8972d1c3d2c5b3bec9e733c1851
 workflow-type: tm+mt
-source-wordcount: '1777'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -36,9 +36,9 @@ I [mappningssteg](#map) av aktiveringsarbetsflödet måste du definiera målmapp
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+Detta mål stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av målgrupperna som beskrivs i tabellen nedan.
+Dessutom stöder denna destination även aktivering av de ytterligare målgrupper som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
@@ -129,13 +129,8 @@ Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinat
 
 I [!UICONTROL Scheduling] skapar du ett exportschema för varje målgrupp med inställningarna nedan.
 
->[!IMPORTANT]
->
->Alla målgrupper som aktiveras för detta mål måste konfigureras med exakt samma schema, vilket visas nedan.
-
 * **[!UICONTROL File export options]**: [!UICONTROL Export full files]. [Inkrementell filexport](../../ui/activate-batch-profile-destinations.md#export-incremental-files) stöds för närvarande inte för [!DNL LiveRamp] mål.
 * **[!UICONTROL Frequency]**: [!UICONTROL Daily]
-* Ställ in exporttiden på **[!UICONTROL After segment evaluation]**. Schemalagd målgruppsexport och [export av filer på begäran](../../ui/export-file-now.md) stöds för närvarande inte för [!DNL LiveRamp] mål.
 * **[!UICONTROL Date]**: Välj start- och sluttider för exporten.
 
 ![Skärmbild av användargränssnittet för plattformen som visar steg för målgruppsplanering.](../../assets/catalog/advertising/liveramp-onboarding/liveramp_scheduling_screenshot.png)
