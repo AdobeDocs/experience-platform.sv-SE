@@ -3,7 +3,7 @@ keywords: destinationer;adobe experience platform;platform;mål overview;activat
 title: Översikt över mål
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 54165264364d7d53da2ff822b9ceb32157900b6a
 workflow-type: tm+mt
 source-wordcount: '760'
 ht-degree: 0%
@@ -54,10 +54,10 @@ Målfunktionerna i Platform fungerar med Adobe Experience Platform åtkomstkontr
 Följande tabell visar vilka behörigheter och behörighetskombinationer som krävs för att utföra vissa åtgärder på mål:
 
 | Behörighetsnivå | Beskrivning |
-| ---- | ----|
-| **[!UICONTROL Manage Destinations]** | Om du vill ansluta till mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). |
+| ---- | ---- |
+| **[!UICONTROL Manage Destinations]** | Om du vill ansluta till mål behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). |
 | **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Aktivera målgrupper till destinationer och aktivera [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
-| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Så här aktiverar du målgrupper till destinationer och döljer [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
+| **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** | Så här aktiverar du målgrupper till destinationer och döljer [mappningssteg](ui/activate-batch-profile-destinations.md#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Segments without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). |
 
 {style="table-layout:auto"}
 
@@ -71,18 +71,18 @@ Med attributbaserad åtkomstkontroll kan du tillämpa mappningskonfigurationer p
 
 Mer information om hur destinationer fungerar med attributbaserade åtkomstkontroller finns i [attributbaserad åtkomstkontroll - översikt](../access-control/abac/overview.md#destinations).
 
-## Målövervakning {#destinations-monitoring}
+## Destinationsövervakning {#destinations-monitoring}
 
 När du har upprättat en anslutning till ett mål och slutfört aktiveringsarbetsflödet kan du övervaka dataexporten till mottagningssystemet. Läs [guide om övervakning av dataflöden till destinationer i användargränssnittet](/help/dataflows/ui/monitor-destinations.md) för mer information.
 
 Du kan också validera om data kommer fram till målet. De flesta måldokumentationssidor i katalogen har en *Avsnittet Validera dataexport*, vilket visar hur du kan kontrollera på målplattformen att data har hämtats in från Experience Platform.
 
-## Begränsningar för datastyrning vid aktivering av data till destinationer {#data-governance}
+## Begränsningar för datastyrning när data aktiveras till destinationer {#data-governance}
 
 Datastyrningen används för plattformsdestinationer genom:
 
 * *Marknadsföringsåtgärder* som du kan välja i arbetsflödet för att skapa destinationer,
-* *Dataanvändningspolicyer* som förhindrar att data som innehåller vissa användningsetiketter aktiveras för destinationer med vissa marknadsföringsåtgärder.
+* *Dataanvändningspolicyer* som begränsar data som innehåller vissa användningsetiketter från att aktiveras till destinationer med vissa marknadsföringsåtgärder.
 
 Mer information om datastyrning i plattformsdokumentationen finns i Datastyrning i plattformsdokumentation [marknadsföringsaktiviteter](../data-governance/policies/overview.md) och [lösa överträdelser av datapolicyer](../data-governance/enforcement/auto-enforcement.md).
 
@@ -93,7 +93,7 @@ Mer information om hur du väljer marknadsföringsåtgärder i arbetsflödet fö
 * [Annonsmål - Google Display &amp; Video 360](./catalog/advertising/google-dv360.md)
 * [Lagringsmål i molnet](./catalog/cloud-storage/overview.md)
 * [E-postmarknadsföringsmål](./catalog/email-marketing/overview.md)
-* [Sociala destinationer](./catalog/social/overview.md)
+* [Social destination](./catalog/social/overview.md)
 
 Mer information om brott mot datapolicyn i arbetsflödet för målgruppsaktivering finns i **[!UICONTROL Review]** steg i följande guider:
 
