@@ -4,16 +4,16 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
+source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
 workflow-type: tm+mt
-source-wordcount: '2846'
+source-wordcount: '2974'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL Destinations] kontrollpanel
 
-Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den fångats in under en daglig ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för mål i användargränssnittet, och den innehåller mer information om mätvärdena som visas på kontrollpanelen.
+Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om din organisations aktiva mål, som den tagits under en ögonblicksbild. I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för mål i användargränssnittet, och den innehåller mer information om mätvärdena som visas på kontrollpanelen.
 
 En översikt över destinationer samt en katalog över alla tillgängliga destinationer i Experience Platform finns på [destinationsdokumentation](../../destinations/home.md).
 
@@ -29,19 +29,19 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 
 Om du vill navigera till kontrollpanelen för mål i plattformsgränssnittet väljer du **[!UICONTROL Destinations]** i den vänstra listen väljer du **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
-Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid mållistrutan. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
+Datum och tid för den senaste ögonblicksbilden visas högst upp i [!UICONTROL Overview] bredvid mållistrutan. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. Den finns inte i tidszonen för den enskilda användaren eller organisationen.
 
 >[!NOTE]
 >
->Om din organisation är ny för Experience Platform och ännu inte har några aktiva destinationer visas kontrollpanelen Destinationer och [!UICONTROL Overview] -fliken visas inte. Välj i stället [!UICONTROL Destinations] från vänster navigering visas [!UICONTROL Catalog] -fliken. Läs mer om [!UICONTROL Catalog] -fliken, se [[!UICONTROL Destinations] arbetsytans guide](../../destinations/ui/destinations-workspace.md).
+>Om din organisation är ny för Experience Platform och ännu inte har några aktiva destinationer visas kontrollpanelen Destinationer och [!UICONTROL Overview] -fliken visas inte. I stället väljer du [!UICONTROL Destinations] från vänster navigering visas [!UICONTROL Catalog] -fliken. Läs mer om [!UICONTROL Catalog] -fliken, se [[!UICONTROL Destinations] arbetsytans guide](../../destinations/ui/destinations-workspace.md).
 
 ![Översikt över plattformsgränssnittets destinationer med den senaste ögonblicksbilden markerad.](../images/destinations/snapshot-timestamp.png)
 
 ### Ändra [!UICONTROL Destinations] kontrollpanel {#modify}
 
-Välj **[!UICONTROL Modify dashboard]** om du vill ändra utseendet på kontrollpanelen för mål. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till widgetbiblioteket. Från widgetbiblioteket kan du utforska de tillgängliga widgetarna och skapa anpassade widgetar för din organisation.
+Välj **[!UICONTROL Modify dashboard]** om du vill ändra utseendet på kontrollpanelen för mål. Ändringar i kontrollpanelen görs per användare och inte för hela organisationen. Du kan flytta, lägga till, ändra storlek på och ta bort widgetar från instrumentpanelen och komma åt widgetbiblioteket för att anpassa din instrumentpanel. Från widgetbiblioteket kan du utforska de tillgängliga widgetarna och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
+Läs mer i [ändra kontrollpaneler](../customize/modify.md) och [widgetbibliotek - översikt](../customize/widget-library.md) dokumentation som lär dig mer.
 
 ### Lägg till widgetar {#add-widget}
 
@@ -49,21 +49,34 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 
 ![Översikt över kontrollpanelen Destinationer med widgeten Lägg till markerad.](../images/destinations/destinations-overview-add-widget.png)
 
-I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade målgruppswidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade widgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+
+## Standardwidgetar {#default-widgets}
+
+En standardinläsning av widgetar tillhandahålls för alla nya instanser av Adobe Experience Platform som visar de senaste tillgängliga insikterna från dina data. Följande widgetar är förkonfigurerade i segmentvyn från början. Mer information om widgetarnas syfte och funktion finns nedan.
+
+* [[!UICONTROL Most used destinations]](#most-used-destinations)
+* [[!UICONTROL Recently created destinations]](#recently-created-destinations)
+* [[!UICONTROL Recently activated segments]](#recently-activated-segments)
+
+>[!NOTE]
+>
+>26 juli 2023, [!UICONTROL Profiles], [!UICONTROL Audiences]och [!UICONTROL Destinations] Översiktspanelerna har återställts till en ny standardinläsning av widgetar för alla användare som inte har ändrat sina vyer de senaste sex månaderna.
+>Läs dokumentationen i [Profiler](./profiles.md#default-widgets) och [Målgrupper](./audiences.md#default-widgets) standardwidgetavsnitt för information om vilka widgetar som ingår som en del av standardwidgetens inläsningar. Du kan fortsätta att anpassa dina instrumentpanelswidgetar som tidigare.
 
 ## Standardwidgetar {#standard-widgets}
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera hur fullständiga målgrupperna är för din dataanalys. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina destinationer och utvärdera hur fullständiga målgrupperna är för din dataanalys. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Läs mer om hur du skapar anpassade widgetar [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 ### Förutsättningar {#prerequisites}
 
-Innan du fortsätter med beskrivningarna av standardwidgetar bör du kontrollera att du känner till definitionerna av följande nyckeltermer som används i hela dokumentationen:
+Innan du fortsätter med beskrivningarna av standardwidgetar bör du kontrollera att du är bekant med definitionerna av följande nyckeltermer som används i hela dokumentationen:
 
 * **Segmentdefinition:** En segmentdefinition är en **uppsättning regler** används för att beskriva en målgrupps viktigaste egenskaper eller beteenden. Dessa regler innehåller attribut och händelsedata som kvalificerar profilerna som en del av en målgrupp.
 * **Målgrupp**: En uppsättning personer, konton, hushåll eller andra enheter som delar gemensamma egenskaper och beteenden.
 * **Mappade/mappade**: Datamappning är processen att mappa källdatafält till relaterade målfält i ett mål.
 * **Identitet**: En identitet är en identifierare som unikt representerar en enskild kund, till exempel ett cookie-ID, ett enhets-ID eller ett e-post-ID.
-* **Aktivera**: Aktivera är den åtgärd som en användare vidtar för att mappa en målgrupp eller profiler till ett mål som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
+* **Aktivera**: Activate är den åtgärd som en användare vidtar för att mappa en målgrupp eller profiler till ett mål som Oracle Eloqua, Google eller Salesforce Marketing Cloud.
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
@@ -96,7 +109,7 @@ Om du till exempel konfigurerade ett mål i går men inte har mappat några mål
 
 Antalet mappade målgrupper som visas i [!UICONTROL Audience count] -kolumnen är exakt som den senaste ögonblicksbilden. När en ny målgrupp mappas till målet uppdateras inte antalet förrän nästa ögonblicksbild tas.
 
-Välj namnet på ett mål i listan som visas på widgeten för att navigera till målinformationen för det aktuella målet. Du kan också välja **[!UICONTROL View All]** för att navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
+Välj namnet på ett mål i listan som visas på widgeten för att navigera till målinformationen för det aktuella målet. Du kan också välja **[!UICONTROL View All]** navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
 
 ![Fliken Översikt på kontrollpanelen Destinationer med widgeten Mest använda mål markerad.](../images/destinations/most-used-destinations.png)
 
@@ -109,9 +122,9 @@ Välj namnet på ett mål i listan som visas på widgeten för att navigera till
 
 The **[!UICONTROL Recently created destinations]** kan du visa en lista över organisationens senast konfigurerade mål.
 
-Det datum som visas motsvarar den senaste ögonblicksbilden. Om du skapar ett nytt mål kommer det alltså inte att visas i listan förrän nästa ögonblicksbild har tagits.
+Det datum som visas motsvarar den senaste ögonblicksbilden. Det innebär att om du skapar ett nytt mål kommer det inte att visas i listan förrän nästa ögonblicksbild har tagits.
 
-Om du väljer namnet på ett mål i den lista som visas på widgeten kommer du till målinformationen som länkad från **[!UICONTROL Browse]** -fliken. Du kan också välja **[!UICONTROL View All]** för att navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
+Om du väljer namnet på ett mål i den lista som visas på widgeten kommer du till målinformationen som länkad från **[!UICONTROL Browse]** -fliken. Du kan också välja **[!UICONTROL View All]** navigera till **[!UICONTROL Browse]** och sedan markera namnet på ett mål för att visa information om det.
 
 Mer information om hur du konfigurerar särskilda typer av destinationer finns på [destinationsdokumentation](../../destinations/home.md).
 
@@ -128,7 +141,7 @@ The **[!UICONTROL Recently activated audiences]** widgeten innehåller en lista 
 
 The [!UICONTROL Updated] det datum som visas visar den senaste gången målgruppen aktiverades till målet och är exakt den senaste ögonblicksbilden. Det innebär att om du aktiverar en målgrupp till målet kommer det uppdaterade datumet inte att ändras förrän nästa ögonblicksbild har tagits.
 
-Om du väljer namnet på en målgrupp i listan som visas på widgeten kommer du till målgruppsinformationen. Du kan också välja **[!UICONTROL View All]** för att navigera till [!UICONTROL Audiences] [!UICONTROL Browse] och sedan markera namnet på en målgrupp för att visa informationen.
+Om du väljer namnet på en målgrupp i listan som visas på widgeten kommer du till målgruppsinformationen. Du kan också välja **[!UICONTROL View All]** navigera till [!UICONTROL Audiences] [!UICONTROL Browse] och sedan markera namnet på en målgrupp för att visa informationen.
 
 Mer information om hur du arbetar med målgrupper i Experience Platform finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
 
@@ -177,9 +190,9 @@ The **[!UICONTROL Audience size trend]** widgeten innehåller en [!UICONTROL Cap
 >title="Omappade målgrupper efter identitet"
 >abstract="Den här widgeten visar de fem populäraste **omappad** målgrupper rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. De filter-ID:n som visas i widgetens listruta ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan."
 
-The **[!UICONTROL Unmapped audiences by identity]** widgeten listar de fem populäraste **omappad** målgrupper rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. Det markerar målgrupper som är mest fördelaktiga att mappa till det valda målkontot baserat på det valda ID:t.
+The **[!UICONTROL Unmapped audiences by identity]** widgeten listar de fem främsta **omappad** målgrupper rangordnas efter fallande identitetsantal för ett visst mål och en viss identitet. Det markerar målgrupper som är mest fördelaktiga att mappa till det valda målkontot baserat på det valda ID:t.
 
-Mål-ID-listrutan filtrerar de tillgängliga målgrupperna. Filtrerings-ID:n som visas i listrutan ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan.
+Listrutan Mål-ID filtrerar de tillgängliga målgrupperna. Filtrerings-ID:n som visas i listrutan ändras beroende på vilket målkonto som är markerat högst upp på översiktssidan.
 
 Kolumnen Identiteter räknar antalet käll-ID:n inom målgruppen som kan mappas till det ID som valts i listrutan för widget-ID.
 
@@ -230,7 +243,7 @@ Välj **[!UICONTROL Audiences]** för att navigera till kontrollpanelen Publiker
 
 Widgeten innehåller en lista med upp till 20 mappade målgrupper vars totala antal profiler, per den senaste ögonblicksbilden, avviker med en faktor på minst en standardavvikelse från de 30 dagarnas genomsnittliga målgruppsstorlek som mappas till det målet.
 
-Sammanfattningsvis ger det ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Jämför om dagens målgruppsstorlek ligger utanför den historiska standardavvikelse som har setts i data under de senaste 30 dagarna.
+Sammanfattningsvis ger det ett beräknat mått för spridning av målgruppsstorlekar från medelvärdet under de senaste 30 dagarna. Den jämför om dagens målgruppsstorlek ligger utanför den historiska standardavvikelse som har setts i data under de senaste 30 dagarna.
 
 Alla målgruppsstorlekar i systemet sorteras från hög till låg målgruppsstorlek, vilket visas i [!UICONTROL LATEST SIZE] kolumn.
 
@@ -240,7 +253,7 @@ Om en målgrupp inom [!UICONTROL Mapped audience health] widgeten avviker med en
 
 >[!NOTE]
 >
->Standardstorleken för den mappade publikens hälsowidget kan förhindra tabellinformationen. Ändra storleken på widgeten för att förbättra läsbarheten för mappade målgruppsnamn och kolumnrubriker. Mer information om hur du använder paneler finns i dokumentationen om hur du ändrar kontrollpaneler. [hur du ändrar storlek på en widget](../customize/modify.md).
+>Standardstorleken för den mappade publikens hälsowidget kan förhindra tabellinformationen. Ändra storleken på widgeten för att förbättra läsbarheten för mappade målgruppsnamn och kolumnrubriker. Mer information om hur du använder paneler finns i dokumentationen om hur du ändrar kontrollpaneler [hur du ändrar storlek på en widget](../customize/modify.md).
 
 ![Mappad målgruppswidget.](../images/destinations/mapped-audience-health.png)
 
@@ -277,7 +290,7 @@ The [!UICONTROL Activated audiences across all destinations] widgeten visar det 
 
 ![De aktiverade målgrupperna i alla målwidgetar.](../images/destinations/activated-audiences-across-all-destinations.png)
 
-Välj **[!UICONTROL Audiences]** för att navigera till destinationerna [!UICONTROL Browse] -fliken. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om [[!UICONTROL Browse] tab](../../destinations/ui/destinations-workspace.md#browse).
+Välj **[!UICONTROL Audiences]** navigera till destinationerna [!UICONTROL Browse] -fliken. Den här sidan innehåller en lista över alla aktiverade destinationer och en mängd relevanta mått. Mer information om [[!UICONTROL Browse] tab](../../destinations/ui/destinations-workspace.md#browse).
 
 Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i den här beskrivningen.
 
@@ -285,7 +298,7 @@ Se avsnittet Krav för [definitioner av termer som används](#prerequisites) i d
 
 Den här widgeten ger ett enda mått för det totala antalet målgrupper som aktiveras för ett mål.
 
-![Widgeten Aktiverade målgrupper.](../images/destinations/activated-audiences.png)
+![Widgeten Aktivera målgrupper.](../images/destinations/activated-audiences.png)
 
 Välj **[!UICONTROL Audiences]** för att navigera till informationssidan på kontrollpanelen för mål. The [!UICONTROL Activation data] På -fliken visas en lista med målgrupper som har mappats till målet, inklusive startdatum och slutdatum (om tillämpligt) samt annan relevant information för dataexporten, t.ex. exporttyp, schema och frekvens. Om du vill visa information om en viss målgrupp väljer du dess namn på menyn [!UICONTROL Audience Name] kolumn.
 

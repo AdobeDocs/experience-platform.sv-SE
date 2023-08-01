@@ -4,9 +4,9 @@ title: Publikens kontrollpanel
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om målgrupper som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
+source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
 workflow-type: tm+mt
-source-wordcount: '1969'
+source-wordcount: '2089'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Navigera till [!UICONTROL Audiences] kontrollpanelen i plattformsgränssnittet v
 
 Du kan ändra utseendet på [!UICONTROL Audiences] kontrollpanel genom att välja **[!UICONTROL Modify dashboard]**. Detta gör att du kan flytta, lägga till och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
-Se [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
+Läs mer i [ändra kontrollpaneler](../customize/modify.md) och [Översikt över widgetbiblioteket](../customize/widget-library.md) dokumentation som lär dig mer.
 
 ### Lägg till widgetar {#add-widget}
 
@@ -49,7 +49,7 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 
 ![The [!UICONTROL Audiences] instrumentpanel översikt med [!UICONTROL Add widget] markerad.](../images/audiences/audiences-overview-add-widget.png)
 
-I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade målgruppswidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade widgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
 
 ## Välj en målgrupp {#select-audience}
 
@@ -69,13 +69,27 @@ Om du vill välja en annan målgrupp väljer du listrutan bredvid målgruppens n
 
 The [!UICONTROL Audiences] Instrumentpanelen består av widgetar, som är skrivskyddade mått som ger viktig information om den valda publiken.
 
-Datum och tid för den senaste ögonblicksbilden visas högst upp på [!UICONTROL Overview] bredvid listrutan för målgrupper. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. det ligger inte i den enskilda användarens eller organisationens tidszon.
+Datum och tid för den senaste ögonblicksbilden visas högst upp på [!UICONTROL Overview] bredvid listrutan för målgrupper. Alla widgetdata är korrekta från och med det datumet och den tidpunkten. Tidsstämpeln för ögonblicksbilden anges i UTC. Den finns inte i tidszonen för den enskilda användaren eller organisationen.
 
 ![Fliken Målgruppsöversikt med en widgettidsstämpel markerad.](../images/audiences/widget-timestamp.png)
 
+## Standardwidgetar {#default-widgets}
+
+En standardinläsning av widgetar tillhandahålls för alla nya instanser av Adobe Experience Platform som visar de senaste tillgängliga insikterna från dina data. Följande widgetar är förkonfigurerade i segmentvyn från början. Mer information om widgetarnas syfte och funktion finns i respektive avsnitt.
+
+* [[!UICONTROL Audience size]](#audience-size)
+* [[!UICONTROL Audience size change trend]](#audience-size-change-trend)
+* [[!UICONTROL Identity overlap]](#identity-overlap)
+* [[!UICONTROL Profiles by identity]](#profiles-by-identity)
+
+>[!NOTE]
+>
+>26 juli 2023, [!UICONTROL Profiles], [!UICONTROL Audiences]och [!UICONTROL Destinations] Översiktspanelerna har återställts till en ny standardinläsning av widgetar för alla användare som inte har ändrat sina vyer de senaste sex månaderna.
+>Läs dokumentationen i [Profiler](./profiles.md#default-widgets) och [Destinationer](./destinations.md#default-widgets) standardwidgetavsnitt för information om vilka widgetar som ingår som en del av standardwidgetens inläsningar. Du kan fortsätta att anpassa dina instrumentpanelswidgetar som tidigare.
+
 ## Standardwidgetar {#standard-widgets}
 
-Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina målgrupper. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Om du vill veta mer om hur du skapar anpassade widgetar börjar du med att läsa [Översikt över widgetbiblioteket](../customize/widget-library.md).
+Adobe tillhandahåller flera standardwidgetar som du kan använda för att visualisera olika mätvärden som relaterar till dina målgrupper. Du kan också skapa anpassade widgetar som ska delas med din organisation med hjälp av [!UICONTROL Widget library]. Läs mer om hur du skapar anpassade widgetar [Översikt över widgetbiblioteket](../customize/widget-library.md).
 
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
@@ -114,7 +128,7 @@ The **[!UICONTROL Audience size trend]** widgeten innehåller en illustration av
 
 Den här widgeten innehåller även den automatiska [!UICONTROL Captions] där en maskininlärningsmodell analyserar diagram- och målgruppsdata och automatiskt genererar bildtexter som beskriver viktiga trender och viktiga händelser. Välj **[!UICONTROL Captions]** för att öppna dialogrutan med automatiska bildtexter.
 
-![The [!UICONTROL Audiences] I visas widgeten Storlekstrend.](../images/audiences/audience-size-trend-captions.png)
+![The [!UICONTROL Audiences] I visas widgeten Storlekstrend för målgrupper.](../images/audiences/audience-size-trend-captions.png)
 
 Dialogrutan med automatiska bildtexter öppnas och innehåller information om dina data.
 
@@ -152,9 +166,9 @@ Med den här widgeten kan du optimera din segmenteringsstrategi genom att visual
 
 Den här widgeten tabellariserar profilens överlappningsdata för en viss målgrupp. En lista med fem målgrupper som rangordnas mellan de högsta och de lägsta procentsatserna för överlappning finns för den målgrupp som valts i listrutan högst upp på skärmen. Den valda publiken finns med i [!UICONTROL AUDIENCE A NAME] kolumn. Analys av publiköverlappning tillhandahålls för den andra målgruppen som listas i [!UICONTROL AUDIENCE B NAME] kolumn. Procentöverlappningen anges i den tredje kolumnen med 12 decimaler.
 
-Rapporten om publiköverlappning hjälper er att skapa nya högpresterande målgrupper. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler att eftersträva.
+Rapporten om publiköverlappning hjälper er att skapa nya högpresterande målgrupper. Genom att observera hög procentuell överlappning kan ni hindra målgrupper och förhindra att samma målgrupp skickas till olika destinationer. De hjälper er också att identifiera dolda insikter som kan bidra till bättre segmentering. Låg procentuell överlappning hjälper till att hitta unika profiler som ska eftersökas.
 
-Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmsläge som innehåller fler överlappande data.
+Välj **[!UICONTROL View more]** om du vill öppna en dialogruta i helskärmsläge som innehåller fler data om överlappande målgrupper.
 
 ![Målgruppen överlappar rapportwidgeten med Visa mer markerat .](../images/audiences/audience-overlap-report.png)
 

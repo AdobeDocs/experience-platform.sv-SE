@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Standardwidgetar för instrumentpanel
 description: Den här guiden innehåller stegvisa instruktioner för hur du lägger till standardwidgetar på dina Adobe Experience Platform-instrumentpaneler.
 exl-id: 37353e73-b207-444a-b2b5-a20a3628086b
-source-git-commit: 0391c15e959ab25604a70c163fa7a5ed53e78993
+source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '486'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,12 @@ ht-degree: 0%
 
 I Adobe Experience Platform kan du visa och interagera med organisationens data via flera kontrollpaneler. Du kan även uppdatera vissa instrumentpaneler genom att lägga till nya widgetar i instrumentpanelsvyn. I Adobe finns ett urval av standardwidgetar som du kan välja att lägga till på dina instrumentpaneler.
 
-Den här handboken innehåller stegvisa instruktioner för hur du lägger till standardwidgetar för att anpassa [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
+The [!UICONTROL Profiles], [!UICONTROL Audiences]och [!UICONTROL Destinations] Instrumentpaneler har en standardwidget som laddas ut när en ny plattformsinstans skapas. Den här handboken innehåller stegvisa instruktioner för hur du lägger till standardwidgetar för att anpassa [!UICONTROL Profiles], [!UICONTROL Audiences]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
+
+>[!NOTE]
+>
+>26 juli 2023, [!UICONTROL Profiles], [!UICONTROL Audiences]och [!UICONTROL Destinations] Översiktspanelerna har återställts till en ny standardinläsning av widgetar för alla användare som inte har ändrat sina vyer de senaste sex månaderna.
+>Läs dokumentationen i [Profiler](../guides/profiles.md#default-widgets), [Målgrupper](../guides/audiences.md#default-widgets)och [Destinationer](../guides/destinations.md#default-widgets) standardwidgetavsnitt för information om vilka widgetar som ingår som en del av standardwidgetens inläsningar.
 
 Om du vill veta mer om anpassade widgetar kan du läsa guiden för [skapa anpassade widgetar](custom-widgets.md).
 
