@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: cb8fd7a7e3803c356adbdf0c20cde869c1de602c
+source-git-commit: 732693b34bf4425cd3a44fba5647d337588abfa0
 workflow-type: tm+mt
-source-wordcount: '990'
+source-wordcount: '987'
 ht-degree: 7%
 
 ---
@@ -24,7 +24,6 @@ ht-degree: 7%
       - [Adobe Commerce-källa](connectors/adobe-applications/commerce.md)
       - [Källa för kundattribut](connectors/adobe-applications/customer-attributes.md)
       - [Datainsamlingskälla](connectors/adobe-applications/data-collection.md)
-      - [Workfront-källa](connectors/adobe-applications/workfront.md)
       - Fältkopplingar {#mapping}
          - [Mappningar av analysfält](connectors/adobe-applications/mapping/analytics.md)
          - [Fältkopplingar i Audience Manager](connectors/adobe-applications/mapping/audience-manager.md)
@@ -42,7 +41,7 @@ ht-degree: 7%
    - Analytics {#analytics}
       - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
-      - [RainFocus](connectors/analytics/rainfocus.md)
+      - [Regnfokus](connectors/analytics/rainfocus.md)
    - molnlagring {#cloud-storage}
       - [Amazon Kinesis Connector](connectors/cloud-storage/kinesis.md)
       - [Amazon S3-anslutning](connectors/cloud-storage/s3.md)
@@ -76,7 +75,7 @@ ht-degree: 7%
       - [Apache Hive på Azure HDInsights-kontakten](connectors/databases/hive.md)
       - [Apache Spark på Azure HDInsights-kontakten](connectors/databases/spark.md)
       - [Azure Data Explorer Connector](connectors/databases/data-explorer.md)
-      - [azure synapse Analytics-kontakt](connectors/databases/synapse-analytics.md)
+      - [Azure synapse Analytics-kontakt](connectors/databases/synapse-analytics.md)
       - [Azure Table Storage-koppling](connectors/databases/ats.md)
       - [Koppling till kuchbase](connectors/databases/couchbase.md)
       - [Google BigQuery-koppling](connectors/databases/bigquery.md)
@@ -114,7 +113,7 @@ ht-degree: 7%
       - [Allmän REST API-koppling](connectors/protocols/generic-rest.md)
    - Direktuppspelning {#streaming}
       - [HTTP API-anslutning](connectors/streaming/http.md)
-- API-självstudiekurser {#api-tutorials}
+- API-självstudier {#api-tutorials}
    - Skapa en basanslutning {#create}
       - Advertising {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
@@ -155,7 +154,7 @@ ht-degree: 7%
          - [Apache Hive på Azure HDInsights](tutorials/api/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/api/create/databases/spark.md)
          - [Azure-Data Explorer](tutorials/api/create/databases/data-explorer.md)
-         - [azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/api/create/databases/ats.md)
          - [Kuchbase](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
@@ -207,7 +206,7 @@ ht-degree: 7%
       - [Samla in annonsdata](tutorials/api/collect/advertising.md)
       - [Samla in molnlagringsdata](tutorials/api/collect/cloud-storage.md)
       - [Samla in CRM-data](tutorials/api/collect/crm.md)
-      - [Samla in kunddata](tutorials/api/collect/customer-success.md)
+      - [Samla in data om kundframgångar](tutorials/api/collect/customer-success.md)
       - [Samla in databasdata](tutorials/api/collect/database-nosql.md)
       - [Samla in e-handelsdata](tutorials/api/collect/ecommerce.md)
       - [Samla in automatiserade marknadsföringsdata](tutorials/api/collect/marketing-automation.md)
@@ -233,15 +232,14 @@ ht-degree: 7%
          - [Adobe Campaign Managed Cloud Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
-         - [Marketo anpassade aktiviteter](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
-         - [Workfront](tutorials/ui/create/adobe-applications/workfront.md)
+         - [Anpassade aktiviteter för Marketo](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
       - Advertising {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
       - Analytics {#analytics}
          - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
-         - [RainFocus](tutorials/ui/create/analytics/rainfocus.md)
+         - [Regnfokus](tutorials/ui/create/analytics/rainfocus.md)
       - molnlagring {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
@@ -276,7 +274,7 @@ ht-degree: 7%
          - [Apache Hive på Azure HDInsights](tutorials/ui/create/databases/hive.md)
          - [Apache Spark på Azure HDInsights](tutorials/ui/create/databases/spark.md)
          - [Azure-Data Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure Table Storage](tutorials/ui/create/databases/ats.md)
          - [Kuchbase](tutorials/ui/create/databases/couchbase.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
@@ -314,7 +312,7 @@ ht-degree: 7%
       - Direktuppspelning {#streaming}
          - [HTTP-API](tutorials/ui/create/streaming/http.md)
    - Konfigurera ett dataflöde {#dataflow}
-      - [Annonserar anslutningsdataflöde](tutorials/ui/dataflow/advertising.md)
+      - [Annonserar dataflöde för anslutning](tutorials/ui/dataflow/advertising.md)
       - [Dataflöde för Analytics-anslutning](tutorials/ui/dataflow/analytics.md)
       - [Anslutningsdataflöde för batchmolnlagring](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [Dataflöde för direktuppspelning av molnlagring](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
@@ -326,7 +324,7 @@ ht-degree: 7%
       - [Dataflöde för automatiserad marknadsföring](tutorials/ui/dataflow/marketing-automation.md)
       - [Dataflöde för betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Dataflöde för protokollanslutning](tutorials/ui/dataflow/protocols.md)
-   - [Skapa ett källdataflöde med hjälp av mallar i användargränssnittet](tutorials/ui/templates.md)
+   - [Skapa ett källdataflöde med mallar i användargränssnittet](tutorials/ui/templates.md)
    - [Övervaka batchdataflöden](tutorials/ui/monitor.md)
    - [Övervaka strömmande dataflöden](tutorials/ui/monitor-streaming.md)
    - [Uppdatera konton](tutorials/ui/update.md)
@@ -351,14 +349,14 @@ ht-degree: 7%
       - [Skicka din källa](sources-sdk/api/submit.md)
    - Dokumentationsguide {#documentation}
       - [Dokumentera källan i Adobe Experience Platform](sources-sdk/documentation/doc-overview.md)
-      - [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](sources-sdk/documentation/github.md)
+      - [Skapa en källdokumentationssida med GitHub-webbgränssnittet](sources-sdk/documentation/github.md)
       - [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](sources-sdk/documentation/text-editor.md)
       - [API-mall för självbetjäning av dokumentation](sources-sdk/documentation/template.md)
       - [Självbetjäningsmall för dokumentation](sources-sdk/documentation/ui-template.md)
    - Strömmande SDK {#streaming-sdk}
       - [Kom igång med självbetjäningskällor (Streaming SDK)](sources-sdk/streaming/getting-started.md)
       - [Skapa en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/create.md)
-      - [Uppdatera en anslutningsspecifikation för en direktuppspelningskälla](sources-sdk/streaming/update-connection-specs.md)
+      - [Uppdatera en anslutningsspecifikation för en strömningskälla](sources-sdk/streaming/update-connection-specs.md)
       - [Uppdatera specifikationen för direktuppspelningsflödet](sources-sdk/streaming/update-flow-specs.md)
       - [Testa och skicka anslutningsspecifikationen för verifiering](sources-sdk/streaming/submit.md)
       - [Dokumentera källan (Streaming SDK)](sources-sdk/streaming/document-streaming.md)
