@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 27bff79c38395e2c2366f9bd89101eb03fcd5608
 workflow-type: tm+mt
-source-wordcount: '1676'
+source-wordcount: '1711'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,17 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.20.0 - 31 juli 2023
+
+**Nya funktioner**
+
+* Stöd för [åsidosättningar per kommando för datastream-ID](../../../../datastreams/overrides.md).
+
+**Korrigeringar och förbättringar**
+
+* Föråldrat `edgeConfigId` till förmån för `datastreamId` i SDK-konfigurationen.
+* Flera förbättringar av användarupplevelsen för datastream-konfigurationen åsidosätter användargränssnittet.
 
 ## Version 2.19.0 - 21 juni 2023
 
@@ -86,7 +97,7 @@ Innehåller version 2.12.0 av Adobe Experience Platform Web SDK Library.
 * Uppdaterade `identityMap` dataelement för att fylla i namnutrymmesalternativ baserat på de sandlådor som definieras av tilläggsinställningarna.
 * Tillagd **[!UICONTROL Redirect with identity]** åtgärd för att tillåta delning av domänöverskridande identiteter.
 * Lagt till dokumentationslänkar till `sendEvent` åtgärd.
-* Uppgraderat användargränssnittsbibliotek för React Spectrum.
+* Uppgraderat bibliotek för React Spectrum.
 * Flera förbättringar av användargränssnittet.
 
 Innehåller version 2.11.0 av Adobe Experience Platform Web SDK Library.
@@ -112,27 +123,27 @@ Innehåller version 2.10.0 av Adobe Experience Platform Web SDK Library.
 
 * Uppdatera det fördolda kodutdrag som är tillgängligt för kopiering på konfigurationssidan så att det fungerar med den uppdaterade Adobe Target VEC-redigeraren.
 
-Innehåller version 2.9.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.9.0 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.9.0 - 19 januari 2022
 
-Innehåller version 2.8.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.8.0 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.8.0 - 26 oktober 2021
 
-Innehåller version 2.7.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.7.0 av Adobe Experience Platform Web SDK Library.
 
 * Ytterligare information från Experience Edge finns i Send Event Complete-händelsen, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion. Mer information finns i [Spåra händelser.](../../../../edge/fundamentals/tracking-events.md)
 
 ## Version 2.7.3 - 7 september 2021
 
-Innehåller version 2.6.4 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.4 av Adobe Experience Platform Web SDK Library.
 
-* Det finns inte längre någon varning för borttagning av `container.buildInfo.environment.`
+* Det finns inte längre någon varning för borttagning av dubbletter `container.buildInfo.environment.`
 
 ## Version 2.7.0 - 16 augusti 2021
 
-Innehåller version 2.6.3 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.3 av Adobe Experience Platform Web SDK Library.
 
 * När du använder dataelementtypen för identitetskarta tas nu identifierare vars ID:n matchar värden som inte är ifyllda strängar automatiskt bort från identitetskartan.
 * Ett fel som uppstod när ett dataelement skulle sparas med datatypen XDM Object har korrigerats och inget schema har valts.
@@ -140,26 +151,26 @@ Innehåller version 2.6.3 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.6.2 - 4 augusti 2021
 
-Innehåller version 2.6.2 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.2 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.6.1 - 29 juli 2021
 
-Innehåller version 2.6.1 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.1 av Adobe Experience Platform Web SDK Library.
 
 ## Version 2.6.0 - 27 juli 2021
 
-Innehåller version 2.6.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.6.0 av Adobe Experience Platform Web SDK Library.
 
 * Etiketter, beskrivningar och felmeddelanden som använder termen &quot;edge configuration&quot; har ändrats till att använda termen &quot;datastream&quot; för att passa in i den senaste Adobe Experience Platform-terminologin.
 * I tilläggskonfigurationsvyn lades stöd till för hantering av ett stort antal datastreams- och datastream-miljöer.
 * I XDM-objektets dataelementvy har stöd lagts till för att hantera ett stort antal scheman.
 * En händelsetyp för Skicka händelse slutförd har lagts till, som kan användas för att köra en regel efter att en händelse har skickats till servern och ett svar har tagits emot. Mer dokumentation kommer snart.
 * Händelsetypen för Mottagna beslut har tagits bort. Använd händelsetypen Send Event Complete i stället.
-* Användargränssnittet och felhanteringen har i allmänhet förbättrats.
+* Användargränssnittet och felhanteringen har förbättrats.
 
 ## Version 2.5.0 - 1 juni 2021
 
-Innehåller version 2.5.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.5.0 av Adobe Experience Platform Web SDK Library.
 
 * Lagt till en `data` till åtgärden Skicka händelse. I kommande dokumentation beskrivs hur detta kan användas i vissa scenarier.
 * I datavyn för XDM-objektet har ett problem korrigerats där ett fel uppstod om användaren hade åtkomst till Adobe Experience Platform-sandlådor men inte till den sandlåda som konfigurerats som standard för organisationen.
@@ -167,7 +178,7 @@ Innehåller version 2.5.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.4.0 - 9 mars 2021
 
-Innehåller version 2.4.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.4.0 av Adobe Experience Platform Web SDK Library.
 
 * Tillagd [&quot;dokument tas bort&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api) kryssruta för att skicka händelseåtgärdsgränssnitt.
 * Stöd för `out` alternativ när [konfigurera standardsamtycke](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) som släpper alla händelser tills samtycke tas emot (den befintliga `pending` Alternativet placerar händelser i kö och skickar dem när de har fått sitt samtycke).
@@ -178,7 +189,7 @@ Innehåller version 2.4.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.3.0 - 4 november 2020
 
-Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
+Innehåller version 2.3.0 av Adobe Experience Platform Web SDK Library.
 
 * Stöd för att använda ett dataelement har lagts till när standardsamtycke konfigureras.
 * Lagt till möjlighet att söka efter XDM-scheman med datatypen XDM Object.
@@ -192,7 +203,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
 
 ## Version 2.1.1 - 26 augusti 2020
 
-* Korrigerar ett problem där Adobe Experience Platform-sandlådor i XDM-objektvyn visas felaktigt. Om en förväntad sandlåda inte visas i listan när du använder den här versionen av tillägget bör du kontakta Adobe Experience Platform-administratören för att kontrollera att åtkomstbehörigheterna är korrekt angivna.
+* Korrigerar ett problem där Adobe Experience Platform-sandlådor i XDM-objektvyn inte visas korrekt. Om en förväntad sandlåda inte visas i listan när du använder den här versionen av tillägget bör du kontakta Adobe Experience Platform-administratören för att kontrollera att åtkomstbehörigheterna är korrekt angivna.
 
 ## Version 2.1.0 - 5 augusti 2020
 
@@ -215,7 +226,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK-biblioteket.
 * Ändringar relaterade till `Get Decisions`:
    * Borttagen `getDecisions` -kommando.
    * Lagt till en `scopes` till `sendEvent` -kommando. Besluten returneras i `sendEvent` löst löfte.
-   * En inbyggd `__view__` omfång som resulterar i att sidans/vyns breda erbjudanden returneras. (VEC erbjuder till exempel i Target.)
+   * Lagt till en inbyggd `__view__` omfång som resulterar i att sidans/vyns breda erbjudanden returneras. (VEC erbjuder till exempel i Target.)
 Dessa beslut kommer från `sendEvent` kommando endast om `renderDecisions` är inställt på false.
    * Lagt till en `Decisions Received` som utlöses när beslut blir tillgängliga.
 * Flera personaliseringsaviseringar kombinerades under ett enda serversamtal.
@@ -223,7 +234,7 @@ Dessa beslut kommer från `sendEvent` kommando endast om `renderDecisions` är i
 * Bytt namn på `setCustomerIds` åtgärd till `syncIdentity`.
 * Lagt till en `getIdentity` -kommando. Detta kan endast användas med anpassad kod för tillfället.
 * Aktivera felsökning med `_satellite` aktiverar nu felsökning i Adobe Experience Platform Web SDK.
-* Stöd för typvärden i XDM-objektet har lagts till: Booleaner, siffror och decimaler.
+* Stöd för typvärden har lagts till i XDM-objektet: Booleans, siffror och decimaler.
 
 ## Version 0.0.10 - 16 mars 2020
 
@@ -232,12 +243,12 @@ Dessa beslut kommer från `sendEvent` kommando endast om `renderDecisions` är i
 
 ## Version 0.0.7 - 18 februari 2020
 
-* Alternativen idSyncContainerId, datasetId, schemaId, urlDestinationsEnabled och cookieDestinationsEnabled har tagits bort
+* IDSyncContainerId, datasetId, schemaId, urlDestinationsEnabled och cookieDestinationsEnabled har tagits bort
 * Stöd för bindestreck i edgeDomain-alternativvärdet har lagts till
 * Begäran som görs under ID-migrering skickas till demdex-slutpunkten för att förbättra identifieringen över domäner när ingen demdex-cookie har angetts
 * Begäran som görs under ID-migrering förväntar alltid ett svar som ser till att identitets-cookie ställs in
 * När ett ogiltigt kommando körs loggas en lista med giltiga kommandonamn i konsolen
-* En kryssruta har lagts till för att växla stöd för cookies från tredje part till taggtillägget. Detta inaktiverar anrop till demdex.net
+* En kryssruta har lagts till för att växla stöd för cookies från tredje part till taggtillägget. Detta inaktiverar samtal till demdex.net
 
 ## Version 0.0.5 - 20 december 2019
 
