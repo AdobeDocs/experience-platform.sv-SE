@@ -3,7 +3,7 @@ title: Spåra länkar med Adobe Experience Platform Web SDK
 description: Lär dig hur du skickar länkdata till Adobe Analytics med Experience Platform Web SDK
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 exl-id: d5a1804c-8f91-4083-a46e-ea8f7edf36b6
-source-git-commit: 04078a53bc6bdc01d8bfe0f2e262a28bbaf542da
+source-git-commit: edf33d0d5991aed5c0535d0e7010aef082bcf48a
 workflow-type: tm+mt
 source-wordcount: '470'
 ht-degree: 0%
@@ -12,9 +12,8 @@ ht-degree: 0%
 
 # Spåra länkar
 
-Länkar kan anges manuellt eller spåras [automatiskt](#automaticLinkTracking). Manuell spårning görs genom att informationen läggs till under `web.webInteraction` del av schemat. Det finns tre obligatoriska variabler:
+Länkar kan anges manuellt eller spåras [automatiskt](#automaticLinkTracking). Manuell spårning görs genom att informationen läggs till under `web.webInteraction` del av schemat. Det finns två obligatoriska variabler:
 
-* `web.webInteraction.name`
 * `web.webInteraction.type`
 * `web.webInteraction.linkClicks.value`
 
@@ -35,7 +34,7 @@ alloy("sendEvent", {
 });
 ```
 
-Från och med version 2.15.0 hämtar Web SDK `region` för det klickade elementet HTML. Detta aktiverar [Activity Map](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) rapportfunktioner i Adobe Analytics.
+Från och med version 2.15.0 hämtar Web SDK `region` för det klickade HTML-elementet. Detta aktiverar [Activity Map](https://experienceleague.adobe.com/docs/analytics/analyze/activity-map/activity-map.html) rapportfunktioner i Adobe Analytics.
 
 Länktypen kan vara ett av tre värden:
 
@@ -61,7 +60,7 @@ Automatisk länkspårning utförs för ankarpunkter `A` och `AREA` -taggar. Dess
 
 ### Hur märks länkar?{#labelingLinks}
 
-Länkarna är märkta som en nedladdningslänk om ankartaggen innehåller ett nedladdningsattribut eller om länken avslutas med ett populärt filtillägg. Hämtningslänkens kvalificerare kan vara [konfigurerad](../fundamentals/configuring-the-sdk.md) med ett reguljärt uttryck:
+Länkarna är märkta som en nedladdningslänk om ankartaggen innehåller ett nedladdningsattribut eller om länken avslutas med ett populärt filtillägg. Hämtningslänkens kvalificerare kan vara [konfigurerad](../fundamentals/configuring-the-sdk.md) med reguljära uttryck:
 
 ```javascript
 downloadLinkQualifier: "\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"
