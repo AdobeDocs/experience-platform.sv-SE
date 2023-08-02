@@ -3,9 +3,9 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 5da570aaa0c6a8972d1c3d2c5b3bec9e733c1851
+source-git-commit: 804cc13d9f672e87ad56b328bae73216500e07dd
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1727'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,9 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 * **[!UICONTROL Username]**: Användarnamn för [!DNL LiveRamp - Onboarding] lagringsplats.
 * **[!UICONTROL Password]**: Lösenordet för [!DNL LiveRamp - Onboarding] lagringsplats.
-* **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan. Om du anger en krypteringsnyckel måste du även ange en **[!UICONTROL Encryption subkey ID]** i [målinformation](#destination-details) -avsnitt.
-
+* **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp-onboarding/pgp-key.png)
+* **[!UICONTROL Subkey ID]**:Om du anger en krypteringsnyckel måste du även ange en kryptering **[!UICONTROL Subkey ID]**. Se [!DNL LiveRamp] [krypteringsdokumentation](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill lära dig hur du hämtar undernyckel-ID:t.
 
 **SFTP med autentisering med SSH-nyckel** {#sftp-ssh}
 
@@ -88,9 +88,9 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
    * Koppla samman [!DNL SSH] tangent till [!DNL LiveRamp - Onboarding] server måste du skicka in en biljett via [!DNL LiveRamp]vår tekniska supportportal och ange din offentliga nyckel. Mer information finns i [LiveRamp-dokumentation](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html#upload-with-an-sftp-client).
 
-* **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Om du anger en krypteringsnyckel måste du även ange en **[!UICONTROL Encryption subkey ID]** i [målinformation](#destination-details) -avsnitt. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
-
+* **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/advertising/liveramp-onboarding/pgp-key.png)
+* **[!UICONTROL Subkey ID]**:Om du anger en krypteringsnyckel måste du även ange en kryptering **[!UICONTROL Subkey ID]**. Se [!DNL LiveRamp] [krypteringsdokumentation](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill lära dig hur du hämtar undernyckel-ID:t.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -109,7 +109,6 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 * **[!UICONTROL Folder path]**: Sökvägen till [!DNL LiveRamp] `uploads` undermapp som ska vara värd för de exporterade filerna. The `uploads` läggs automatiskt till i mappsökvägen. [!DNL LiveRamp] rekommenderar att du skapar en dedikerad undermapp för leveranser från Adobe Real-Time CDP så att filerna hålls åtskilda från andra befintliga flöden och att all automatisering fungerar smidigt.
    * Om du till exempel vill exportera filerna till `uploads/my_export_folder`, skriva in `my_export_folder` i **[!UICONTROL Folder path]** fält.
 * **[!UICONTROL Compression format]**: Välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Tillgängliga alternativ är **[!UICONTROL GZIP]** eller **[!UICONTROL None]**.
-* **[!UICONTROL Encryption subkey ID]**: Den undernyckel som används för kryptering, baserat på [!DNL LiveRamp] offentlig krypteringsnyckel. Det här fältet är obligatoriskt om du har angett en krypteringsnyckel i [autentisering](#authenticate) steg. Se [!DNL LiveRamp] [krypteringsdokumentation](https://docs.liveramp.com/connect/en/encrypting-files-for-uploading.html#downloading-the-current-encryption-key) om du vill lära dig hur du hämtar undernyckel-ID:t.
 
 ### Aktivera aviseringar {#enable-alerts}
 
