@@ -1,11 +1,11 @@
 ---
-keywords: Destinationer. frågor, Frågor och svar. faq, mål faq
+keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: 810bcd011fd6e172c79f4482e047aa6e715c3918
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1528'
 ht-degree: 2%
 
 ---
@@ -29,11 +29,32 @@ När målgruppens exportschema skiljer sig från segmenteringsschemat räknas pr
 Se [Dokumentation för segmenteringstjänst](../segmentation/home.md) för mer information.
 +++
 
+### Varför ser jag låga matchningsfrekvenser när en uppdaterad målgrupp inaktiveras och återaktiveras till samma mål?
+
++++Svar
+
+Avaktiveringen och för en målgrupp från en direktuppspelningsdestination utlöser inte en återfyllning när målgruppen återaktiveras till samma direktuppspelningsmål.
+
+**Exempel**
+
+Du har aktiverat en målgrupp bestående av 10 profiler för en direktuppspelningsdestination.
+
+När ni har aktiverat målgruppen inser ni att ni vill ändra målgruppskonfigurationen, så att ni inaktiverar målgruppen och ändrar dess populationskriterier, vilket leder till en målgruppspopulation på 100 profiler.
+
+Du återaktiverar den uppdaterade målgruppen till samma mål, men eftersom ingen bakgrundsfyllning utlöses får målplatsen inte de ytterligare 90 profilerna.
+
+**Lösning**
+
+För att vara säker på att alla profiler skickas till ditt mål måste du skapa en ny målgrupp med den nya konfigurationen och sedan aktivera den till ditt mål.
+
++++
+
+
 ## [!DNL Facebook Custom Audiences] {#facebook-faq}
 
 ### Vad behöver jag göra innan jag kan aktivera målgrupper i [!DNL Facebook Custom Audiences]?
 
-+++Svar Innan du kan skicka dina målgrupper till [!DNL Facebook]måste du uppfylla följande krav:
++++Svar Innan du kan skicka dina målgrupper till [!DNL Facebook]ska du kontrollera att du uppfyller följande krav:
 
 * Dina [!DNL Facebook] användarkontot måste ha **[!DNL Manage campaigns]** behörighet aktiverad för annonskontot som du tänker använda.
 * The **Adobe Experience Cloud** företagskonto måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Se [Lägg till partners i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
@@ -45,7 +66,7 @@ Se [Dokumentation för segmenteringstjänst](../segmentation/home.md) för mer i
 
 ### Måste jag lägga till några appar eller pixlar i [!DNL Facebook] annonserarkonto?
 
-+++Svarsnummer Eftersom detta inte är en pixelbaserad integrering behöver du inte lägga till några pixlar i annonskontot.
++++Svarsnr Eftersom detta inte är en pixelbaserad integrering behöver du inte lägga till några pixlar i annonskontot.
 +++
 
 ### Hur lång tid tar det för Facebook att bearbeta information från Adobe Experience Platform?
@@ -81,7 +102,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 ### Vilken typ av identiteter kan jag aktivera i [!DNL Facebook Custom Audiences]?
 
 +++Svar
-[!DNL Facebook Custom Audiences] har stöd för aktivering av följande identiteter: hash-kodade e-postmeddelanden, hashade telefonnummer, [!DNL GAID], [!DNL IDFA]och anpassade externa ID:n.
+[!DNL Facebook Custom Audiences] stöder aktivering av följande identiteter: hash-kodade e-postmeddelanden, hash-kodade telefonnummer, [!DNL GAID], [!DNL IDFA]och anpassade externa ID:n.
 +++
 
 ### Kan jag skapa flera Facebook-mål i plattformsgränssnittet för separata Facebook-konton?
@@ -96,16 +117,16 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 +++Svar Google kräver att målgruppsnamnen är unika. Siffrorna du ser är [UNIX-tidsstämplar](https://www.unixtimestamp.com/) och de läggs till så att målgruppsnamnen förblir unika om du mappar samma målgrupp till flera Google-destinationer.
 +++
 
-## linkedIn Matched Auditions {#linkedin}
+## LinkedIn Matched Auditions {#linkedin}
 
 ### Måste jag lägga till några appar eller pixlar i [!DNL LinkedIn] annonserarkonto?
 
-+++Svarsnummer Eftersom detta inte är en pixelbaserad integrering behöver du inte lägga till några pixlar i annonskontot.
++++Svarsnr Eftersom detta inte är en pixelbaserad integrering behöver du inte lägga till några pixlar i annonskontot.
 +++
 
 ### Vad behöver jag göra innan jag kan aktivera målgrupper i [!DNL LinkedIn Matched Audiences]?
 
-+++Svar Innan du kan använda [!UICONTROL LinkedIn Matched Audience] mål, se till att [!DNL LinkedIn Campaign Manager] kontot har [!DNL Creative Manager] behörighet eller högre.
++++Svar Innan du kan använda [!UICONTROL LinkedIn Matched Audience] mål, se till att [!DNL LinkedIn Campaign Manager] kontot har [!DNL Creative Manager] behörighetsnivå eller högre.
 
 Så här redigerar du [!DNL LinkedIn Campaign Manager] användarbehörigheter, se [Lägg till, redigera och ta bort användarbehörigheter på annonskonton](https://www.linkedin.com/help/lms/answer/5753) i LinkedIn-dokumentationen.
 +++
@@ -121,7 +142,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 ### Vilken typ av identiteter kan jag aktivera i [!DNL LinkedIn]?
 
 +++Svar
-[!DNL LinkedIn Matched Audiences] har stöd för aktivering av följande identiteter: hash-kodade e-postmeddelanden, [!DNL GAID]och [!DNL IDFA].
+[!DNL LinkedIn Matched Audiences] stöder aktivering av följande identiteter: hash-kodade e-postmeddelanden, [!DNL GAID]och [!DNL IDFA].
 +++
 
 ## Personalisering på samma sida och nästa sida via Adobe Target och anpassade anpassningsmål {#same-next-page-personalization}
@@ -151,7 +172,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 ### När jag har skapat en målgrupp i Experience Platform, hur lång tid tar det för den målgruppen att bli tillgänglig för kantsegmentering?
 
-+++Besvara målgruppsdefinitioner sprids till [Edge Network](../edge/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som skulle ha kvalificerat sig för målgruppen missas.
++++Besvara målgruppsdefinitioner sprids till [Edge Network](../edge/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som är kvalificerade för målgruppen missas.
 +++
 
 ### Var kan jag se de aktiverade attributen i Adobe Target?
@@ -176,7 +197,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 ### Jag kan bara ha en kopplingsregel som är aktiv i farten. Kan jag bygga målgrupper som använder en annan sammanslagningspolicy och ändå skicka dem till Adobe Target som direktuppspelade målgrupper?
 
-+++Svarsnummer Alla målgrupper som du vill aktivera för Adobe Target måste använda en [sammanfogningsprincip](../profile/merge-policies/ui-guide.md).
++++Svarsnr Alla målgrupper som du vill aktivera för Adobe Target måste använda en [sammanfogningsprincip](../profile/merge-policies/ui-guide.md).
 +++
 
 ### Tillämpas etiketter och tvångsåtgärder (DULE) och godkännandeprinciper för dataanvändning?
