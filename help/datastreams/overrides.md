@@ -1,15 +1,15 @@
 ---
-title: Konfigurera åsidosättningar av datastream
+title: Konfigurera åsidosättningar av dataström
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
 exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 32f36d96e3aa6beb72121adcc74f2da0bd2c9473
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '976'
 ht-degree: 0%
 
 ---
 
-# Konfigurera åsidosättningar av datastream
+# Konfigurera åsidosättningar av dataström
 
 Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK.
 
@@ -21,6 +21,10 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
 
 I den här artikeln förklaras den kompletta processen för åsidosättning av datastream-konfigurationen för alla typer av åsidosättningar som stöds.
+
+>[!IMPORTANT]
+>
+>Åsidosättningar av dataström stöds endast för [Web SDK](../edge/home.md) integreringar. [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) och [Server-API](../server-api/overview.md) integreringar stöder för närvarande inte datastream-åsidosättningar.
 
 ## Konfigurera åsidosättningar av datastream i användargränssnittet för datastreams {#configure-overrides}
 
@@ -35,7 +39,7 @@ I den här artikeln förklaras den kompletta processen för åsidosättning av d
 
 Om du vill konfigurera datastream-åsidosättningar för en Adobe Target-datastream måste du först skapa en Adobe Target datastream. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med [Adobe Target](configure.md#target) service.
 
-När du har skapat datastream redigerar du [Adobe Target](configure.md#target) som du har lagt till och använder **[!UICONTROL Property Token Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan. Lägg till en egenskapstoken per rad.
+När du har skapat dataströmmen redigerar du [Adobe Target](configure.md#target) tjänster som du har lagt till och använder **[!UICONTROL Property Token Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan. Lägg till en egenskapstoken per rad.
 
 ![Skärmbilden Datastreams UI som visar Adobe Target tjänstinställningar, med åsidosättningar av egenskapstoken markerade.](assets/overrides/override-target.png)
 
@@ -47,7 +51,7 @@ Nu bör du konfigurera Adobe Target datastream-åsidosättningar. Nu kan du [ski
 
 Om du vill konfigurera datastream-åsidosättningar för en Adobe Analytics-datastream måste du först ha en [Adobe Analytics](configure.md#analytics) datastream har skapats. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med [Adobe Analytics](configure.md#analytics) service.
 
-När du har skapat datastream redigerar du [Adobe Analytics](configure.md#target) som du har lagt till och använder **[!UICONTROL Report Suite Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan.
+När du har skapat dataströmmen redigerar du [Adobe Analytics](configure.md#target) tjänster som du har lagt till och använder **[!UICONTROL Report Suite Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan.
 
 Välj **[!UICONTROL Show Batch Mode]** om du vill aktivera gruppredigering av åsidosättningar av rapportsviten. Du kan kopiera och klistra in en lista över åsidosättningar av rapportsviter och ange en rapportsvit per rad.
 
@@ -61,7 +65,7 @@ Nu bör du konfigurera Adobe Analytics datastream-åsidosättningar. Nu kan du [
 
 Om du vill konfigurera datastream-åsidosättningar för händelsedatamängder i Experience Platform måste du först ha en [Adobe Experience Platform](configure.md#aep) datastream har skapats. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med [Adobe Experience Platform](configure.md#aep) service.
 
-När du har skapat datastream redigerar du [Adobe Experience Platform](configure.md#aep) som du har lagt till och väljer **[!UICONTROL Add Event Dataset]** alternativ för att lägga till en eller flera åsidosatta händelsedatamängder, vilket visas i bilden nedan.
+När du har skapat dataströmmen redigerar du [Adobe Experience Platform](configure.md#aep) som du har lagt till och väljer **[!UICONTROL Add Event Dataset]** alternativ för att lägga till en eller flera åsidosatta händelsedatamängder, vilket visas i bilden nedan.
 
 ![Skärmbilden Datastreams UI som visar Adobe Experience Platform tjänstinställningar, med åsidosättningar av händelsedatamängd markerade.](assets/overrides/override-aep.png)
 
@@ -79,9 +83,9 @@ Använd sedan **[!UICONTROL Container ID Overrides]** för att lägga till behå
 
 >[!IMPORTANT]
 >
->Behållar-ID:n måste vara numeriska värden, som `1234567`och inte strängar, som `"1234567"`. Om du skickar ett strängvärde via Web SDK som åsidosättning av behållar-ID:n visas ett fel.
+>Behållar-ID måste vara numeriska värden, som `1234567`och inte strängar, som `"1234567"`. Om du skickar ett strängvärde via Web SDK som åsidosättning av behållar-ID:n visas ett fel.
 
-![Datastreams-gränssnittets skärmbild visar datastream-inställningarna, med åsidosättningar av synkroniseringsbehållaren för tredjeparts-ID markerade.](assets/overrides/override-container.png)
+![Användargränssnittsbild för datastreams visar datastream-inställningarna, med åsidosättningar av synkroniseringsbehållare för ID från tredje part markerade.](assets/overrides/override-container.png)
 
 När du har lagt till önskade åsidosättningar sparar du datastream-inställningarna.
 
