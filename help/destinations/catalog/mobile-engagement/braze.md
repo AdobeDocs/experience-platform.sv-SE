@@ -1,11 +1,11 @@
 ---
-keywords: mobiler, bromsa, meddelanden,
+keywords: mobil; braze; messaging;
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '990'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Skicka profildata till [!DNL Braze]måste du först ansluta till målet.
 
 ## Destinationsspecifikationer {#specifics}
 
-Observera följande information som är specifik för [!DNL Braze] mål:
+Observera följande information som gäller [!DNL Braze] mål:
 
 * [!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut.
 
@@ -44,15 +44,15 @@ Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsd
 
 {style="table-layout:auto"}
 
-## Stöd för externa målgrupper {#external-audiences-support}
+## Målgrupper {#supported-audiences}
 
-Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av de externa målgrupper som beskrivs i tabellen nedan.
+*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
 
 | Extern målgruppstyp | Beskrivning |
 ---------|----------|
-| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -62,7 +62,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.[!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut. |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (till exempel e-postadress, telefonnummer, efternamn) och/eller identiteter enligt fältmappningen.[!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -71,7 +71,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -79,7 +79,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
 
-* **[!UICONTROL Braze account token]**: Det här är din [!DNL Braze] [!DNL API] nyckel. Detaljerade instruktioner om hur du får [!DNL API] tangent här: [REST API Key Overview](https://www.braze.com/docs/api/api_key/).
+* **[!UICONTROL Braze account token]**: Detta är din [!DNL Braze] [!DNL API] -tangenten. Du hittar detaljerade instruktioner om hur du får [!DNL API] här: [REST API Key Overview](https://www.braze.com/docs/api/api_key/).
 
 ### Fyll i målinformation {#destination-details}
 
@@ -91,7 +91,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -99,7 +99,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -109,9 +109,9 @@ Skicka målgruppsdata korrekt från [!DNL Adobe Experience Platform] till [!DNL 
 
 Mappningen består av att skapa en länk mellan [!DNL Experience Data Model] (XDM) schemafält i [!DNL Platform] och deras motsvarande motsvarigheter från måldestinationen.
 
-Koppla XDM-fälten till [!DNL Braze] målfält, följ dessa steg:
+Mappa XDM-fälten korrekt till [!DNL Braze] målfält, följ dessa steg:
 
-I [!UICONTROL Mapping] steg, klicka **[!UICONTROL Add new mapping]**.
+I [!UICONTROL Mapping] klicka **[!UICONTROL Add new mapping]**.
 
 ![Lägg till mappning för Braze-mål](../../assets/catalog/mobile-engagement/braze/mapping.png)
 
@@ -120,11 +120,11 @@ I [!UICONTROL Source Field] klickar du på pilknappen bredvid det tomma fältet.
 ![Mappning av Braze-målkälla](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
 I [!UICONTROL Select source field] kan du välja mellan två kategorier med XDM-fält:
-* [!UICONTROL Select attributes]: använd det här alternativet för att mappa ett specifikt fält från XDM-schemat till en [!DNL Braze] -attribut.
+* [!UICONTROL Select attributes]: använd det här alternativet för att mappa ett specifikt fält från XDM-schemat till ett [!DNL Braze] -attribut.
 
 ![Källattribut för Braze Destination Mapping](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
-* [!UICONTROL Select identity namespace]: Använd det här alternativet för att mappa en [!DNL Platform] identity namespace to a [!DNL Braze] namnutrymme.
+* [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa en [!DNL Platform] identity namespace to a [!DNL Braze] namnutrymme.
 
 ![Namnområde för Braze Destination Source](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 

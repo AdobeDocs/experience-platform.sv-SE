@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 5d318d8fa4207ece26a8b0a291d81907af029aed
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '944'
 ht-degree: 0%
 
 ---
@@ -29,13 +29,13 @@ Med Experience Platform-versionen från juli 2023 [!DNL Amazon S3] mål har nya 
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av målgrupperna som beskrivs i tabellen nedan.
+*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
-| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

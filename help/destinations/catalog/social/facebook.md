@@ -1,11 +1,11 @@
 ---
 keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagram;messenger;facebook messenger
-title: Facebook-anslutning
+title: Facebook
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '1868'
+source-wordcount: '1869'
 ht-degree: 1%
 
 ---
@@ -22,11 +22,11 @@ Du kan använda det här målet för målgruppsanpassning över [!DNL Facebook's
 
 ## Användningsfall
 
-För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] mål, här är två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Facebook] mål, här är två exempel på användningsområden som Adobe Experience Platform-kunder kan lösa med den här funktionen.
 
 ### Använd skiftläge 1
 
-En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Facebook] social plattform, optimera deras annonsutgifter.
+En webbutik vill nå befintliga kunder via sociala plattformar och visa dem personaliserade erbjudanden baserat på deras tidigare order. Onlinebutiken kan importera e-postadresser från sin egen CRM till Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa till [!DNL Facebook] sociala plattformar, optimera deras annonsutgifter.
 
 ### Använd skiftläge 2
 
@@ -45,20 +45,20 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 | GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade telefonnummer. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i [Krav för ID-matchning](#id-matching-requirements-id-matching-requirements) och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
-## Målgrupper som stöds {#supported-audiences}
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
-| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -75,7 +75,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## Krav för facebook-konton {#facebook-account-prerequisites}
 
-Innan du kan skicka dina målgrupper till [!DNL Facebook]måste du uppfylla följande krav:
+Innan du kan skicka dina målgrupper till [!DNL Facebook]ska du kontrollera att du uppfyller följande krav:
 
 * Dina [!DNL Facebook] användarkontot måste ha **[!DNL Manage campaigns]** behörighet aktiverad för annonskontot som du tänker använda.
 * The **Adobe Experience Cloud** företagskonto måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Se [Lägg till partners i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
@@ -97,8 +97,8 @@ Beroende på vilken typ av ID som du importerar till Adobe Experience Platform m
 
 Det finns två sätt att aktivera telefonnummer i [!DNL Facebook]:
 
-* **Inmatning av råtelefonnummer**: du kan importera råa telefonnummer i [!DNL E.164] formatera till [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till `Phone_E.164` namnutrymme.
-* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du tar dig in i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hash-kodade telefonnummer till `Phone_SHA256` namnutrymme.
+* **Inmatning av telefonnummer i råformat**: du kan importera råa telefonnummer i [!DNL E.164] formatera till [!DNL Platform]. De hashas automatiskt när de aktiveras. Om du väljer det här alternativet måste du alltid importera dina råa telefonnummer till `Phone_E.164` namnutrymme.
+* **Inmatning av hashade telefonnummer**: du kan förhash-koda dina telefonnummer innan du lägger in dem i [!DNL Platform]. Om du väljer det här alternativet måste du alltid importera dina hash-kodade telefonnummer till `Phone_SHA256` namnutrymme.
 
 >[!NOTE]
 >
@@ -112,7 +112,7 @@ Om du vill veta mer om hur du importerar e-postadresser i Experience Platform ka
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
-* Trimma alla inledande och avslutande blanksteg från e-poststrängen. exempel: `johndoe@example.com`, inte `<space>johndoe@example.com<space>`;
+* Trimma alla inledande och avslutande blanksteg från e-poststrängen: `johndoe@example.com`, inte `<space>johndoe@example.com<space>`;
 * När du hash-kodar e-poststrängarna ska du se till att hash-koda den gemena strängen.
    * Exempel: `example@email.com`, inte `EXAMPLE@EMAIL.COM`;
 * Kontrollera att den hash-kodade strängen är i gemener
@@ -121,7 +121,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 
 >[!NOTE]
 >
->Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktivering.
+>Data från namnutrymmen utan hashning hashas automatiskt av [!DNL Platform] vid aktivering.
 > Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 > The **[!UICONTROL Apply transformation]** -alternativet visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
@@ -135,11 +135,11 @@ Innan du kan använda `Extern_ID` namnutrymme som data skickas till [!DNL Facebo
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
-I videon nedan visas även hur du konfigurerar en [!DNL Facebook] och aktivera målgrupper.
+I videon nedan visas även hur du konfigurerar en [!DNL Facebook] destinera och aktivera målgrupper.
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
@@ -169,7 +169,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -197,7 +197,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -223,12 +223,12 @@ Markera målfält:
 
 * Välj `Email_LC_SHA256` namespace som target identity när källnamnutrymmena antingen är `Email` eller `Email_LC_SHA256`.
 * Välj `Phone_SHA256` namespace som target identity när källnamnutrymmena antingen är `PHONE_E.164` eller `Phone_SHA256`.
-* Välj `IDFA` eller `GAID` namnutrymmen som målidentitet när källnamnutrymmena är `IDFA` eller `GAID`.
+* Välj `IDFA` eller `GAID` namnutrymmen som målidentitet när källnamnutrymmen är `IDFA` eller `GAID`.
 * Välj `Extern_ID` namespace som target identity när källnamnutrymmet är ett anpassat.
 
 >[!IMPORTANT]
 >
->Data från namnutrymmen som inte är hash-kodade hashas automatiskt av [!DNL Platform] vid aktivering.
+>Data från namnutrymmen utan hashning hashas automatiskt av [!DNL Platform] vid aktivering.
 > 
 >Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 
@@ -236,7 +236,7 @@ Markera målfält:
 
 ## Exporterade data {#exported-data}
 
-För [!DNL Facebook], innebär en lyckad aktivering att [!DNL Facebook] anpassade målgrupper skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Målgruppsmedlemskap läggs till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
+För [!DNL Facebook], innebär en lyckad aktivering att [!DNL Facebook] anpassade målgrupper skulle skapas programmatiskt i [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Målgruppsmedlemskap läggs till och tas bort eftersom användarna är kvalificerade eller diskvalificerade för de aktiverade målgrupperna.
 
 >[!TIP]
 >

@@ -3,9 +3,9 @@ title: (Beta) Experience Cloud Publiker
 description: Lär dig dela målgrupper från Experience Platform till olika Experience Platform-lösningar.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 1288652ca3b18b4adb357b2d8884f408725cb0a2
+source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
-source-wordcount: '1598'
+source-wordcount: '1599'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ Med den här målgruppen kan ni dela målgrupper från Experience Platform till 
 >[!IMPORTANT]
 >
 >* Detta mål ersätter [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#aep-segments-in-aam) från Experience Platform till olika lösningar för Experience Cloud.
->* Detta mål är för närvarande i betaversion. Dokumentationen och funktionerna kan komma att ändras.
+>* Detta mål är för närvarande i betaversion. Dokumentationen och funktionaliteten kan komma att ändras.
 
 ## Användningsexempel och fördelar {#use-cases}
 
-För att du bättre ska förstå hur och när du ska använda [!UICONTROL Experience Cloud Audiences] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda [!UICONTROL Experience Cloud Audiences] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda denna destination.
 
 ### Aktivera användningsfall för datahanteringsplattform {#dmp-use-cases}
 
@@ -35,7 +35,7 @@ I Audience Manager kan du använda Experience Platform-målgrupper för datahant
 
 ### Detaljerad kontroll över exporterade målgrupper {#segments-control}
 
-Använd den nya självbetjäningsintegrationen för målgrupper via målgruppsmålet Experience Cloud för att välja vilka målgrupper som ska exporteras till Audience Manager och utanför. På så sätt kan ni avgöra vilka målgrupper ni vill dela med andra Experience Cloud-lösningar och vilka målgrupper ni vill behålla exklusivt i Experience Platform.
+Använd den nya självbetjäningsintegreringen för målgrupper via målgruppsmålet Experience Cloud för att välja vilka målgrupper som ska exporteras till Audience Manager och utanför. På så sätt kan ni avgöra vilka målgrupper ni vill dela med andra Experience Cloud-lösningar och vilka målgrupper ni vill behålla exklusivt i Experience Platform.
 
 Tack vare den äldre integrationen av målgruppsdelning gick det inte att styra vilka målgrupper som ska exporteras till Audience Manager och vidare.
 
@@ -65,7 +65,7 @@ Note: briefly talk about when to share audiences to these destinations using the
 
 ### För kunder som använder en äldre lösning för målgruppsdelning
 
-Om ni redan delar målgrupper från Experience Platform till Audience Manager och andra Experience Cloud-lösningar via [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)måste du kontakta antingen kundtjänst eller ditt Adobe-kontoteam för att inaktivera integreringen. Kundtjänst och kontoteam på Adobe måste registrera en Jira-biljett (se mallbiljett PLAT-160986) för att inaktivera integreringen.
+Om ni redan delar målgrupper från Experience Platform till Audience Manager och andra Experience Cloud via [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)måste du kontakta antingen kundtjänst eller ditt Adobe-kontoteam för att inaktivera integreringen. Kundtjänst och kontoteam på Adobe måste registrera en Jira-biljett (se mallbiljett PLAT-160986) för att inaktivera integreringen.
 
 Den tid det tar att lösa avprovisioneringsbiljetten för betakunder är sex arbetsdagar eller mindre. När den befintliga integreringen har inaktiverats kan du fortsätta till [skapa en anslutning](#connect) via självbetjäningskortet.
 
@@ -78,11 +78,11 @@ Den tid det tar att lösa avprovisioneringsbiljetten för betakunder är sex arb
 Observera följande kända begränsningar och viktiga hänvisningar i betaversionen av Publikationskortet i Experience Cloud:
 
 * [Dataflödesövervakning](/help/dataflows/ui/monitor-destinations.md) stöds inte.
-* När du ansluter till målet kan du se ett alternativ för att [aktivera dataflödesaviseringar](#enable-alerts). Visas i användargränssnittet, men **alternativet aktivera aviseringar stöds inte** i betaversionen.
+* När du ansluter till målet visas ett alternativ för att [aktivera dataflödesaviseringar](#enable-alerts). Visas i användargränssnittet, men **alternativet aktivera aviseringar stöds inte** i betaversionen.
 * **Backfills stöds inte**. Den första exporten till Audience Manager eller andra lösningar från Experience Cloud omfattar inte en historisk målgrupp.
 * I betaversionen kan du skapa **en enda målanslutning till målgruppen Experience Cloud**, i alla sandlådor som tillhör din Experience Platform-organisation.
 
-### Latens vid aktivering av målgrupper {#audience-activation-latency}
+### Fördröjning vid aktivering av målgrupper {#audience-activation-latency}
 
 Det finns fyra timmars fördröjning mellan den tidpunkt då målgrupperna först aktiveras i Experience Platform och den tidpunkt då de är klara att användas i Audience Manager och andra Experience Cloud-lösningar för vissa användningsfall.
 
@@ -96,24 +96,24 @@ De profiler som exporteras till [!UICONTROL Experience Cloud Audiences] målet m
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| ECID | Experience Cloud ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras till av följande alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/ecid.md) för mer information. |
+| ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/ecid.md) för mer information. |
 | GAID | Google Advertising ID | Profiler som inhämtas till Experience Platform med en primär identitet för Google Advertising ID (GAID) kan exporteras till det här målet. |
 | IDFA | Apple ID för annonsörer | Profiler som inhämtas till Experience Platform med den primära identiteten Apple ID for Advertisers (IDFA) kan exporteras till den här destinationen. |
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Profiler som inhämtas till Experience Platform med en primär identitet för hash-e-postadresser kan exporteras till det här målet. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Profiler som inhämtas till Experience Platform med en primär identitet för hash-e-postadresser kan exporteras till det här målet. |
 
 {style="table-layout:auto"}
 
-## Målgrupper som stöds {#supported-audiences}
+## Målgrupper {#supported-audiences}
 
 I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
 
-Alla destinationer stöder aktivering av målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
 
-Dessutom stöder denna destination även aktivering av de målgrupper som beskrivs i tabellen nedan.
+*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
 ---------|----------|
-| Anpassade överföringar | Målgrupper som importerats till Experience Platform från CSV-filer. |
+| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -132,7 +132,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -171,7 +171,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet. Observera att nej [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) krävs och nej [planeringssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) är tillgängligt för det här målet.
 
@@ -187,7 +187,7 @@ Era Experience Platform-målgrupper visas i Audience Manager som [signaler](http
 
 Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](/help/data-governance/home.md).
 
-Datastyrning i Experience Platform genomförs av båda [etiketter för dataanvändning](/help/data-governance/labels/reference.md) och marknadsföringsåtgärder.
+Datastyrningen i Experience Platform genomförs av båda [etiketter för dataanvändning](/help/data-governance/labels/reference.md) och marknadsföringsåtgärder.
 Dataanvändningsetiketter överförs till program, men marknadsföringsåtgärder kommer inte att göra det. Det innebär att när de landar i Audience Manager kan målgrupper från Experience Platform exporteras till alla tillgängliga destinationer. I Audience Manager kan du använda [dataexportkontroller](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html?lang=en) för att blockera målgrupper från att exporteras till vissa destinationer.
 
 ### Behörighetshantering i Audience Manager
