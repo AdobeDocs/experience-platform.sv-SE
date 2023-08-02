@@ -2,9 +2,9 @@
 title: Konfigurera åsidosättningar av dataström
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
 exl-id: 7829f411-acdc-49a1-a8fe-69834bcdb014
-source-git-commit: 32f36d96e3aa6beb72121adcc74f2da0bd2c9473
+source-git-commit: b0b53d9fcf410812eee3abdbbb6960d328fee99f
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '1210'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,26 @@ I den här artikeln förklaras den kompletta processen för åsidosättning av d
 >[!IMPORTANT]
 >
 >Åsidosättningar av dataström stöds endast för [Web SDK](../edge/home.md) integreringar. [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) och [Server-API](../server-api/overview.md) integreringar stöder för närvarande inte datastream-åsidosättningar.
+><br><br>
+>Åsidosättningar av datastream bör användas när du behöver olika data som skickas till olika datastreams. Du bör inte använda datastream-åsidosättningar för användningsfall för personalisering eller för medgivandedata.
+
+## Användningsfall {#use-cases}
+
+För att du bättre ska kunna förstå hur och när du ska använda åsidosättningar av datastream finns det några användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här funktionen.
+
+**Datainsamling för flera regioner**
+
+Ett företag har olika webbplatser eller underdomäner för olika länder där de är verksamma. De har [konfigurerad](configure.md) separata datastreams med motsvarande analysspecifika rapportsviter, landspecifika Adobe Target-egenskapstoken, landsspecifika scheman, datamängder, Journey Optimizer-konfigurationer osv. Företaget har också en global uppsättning konfigurationer där alla landsspecifika data sammanställs.
+
+Genom att använda åsidosättningar av datastream kan företaget dynamiskt växla dataflödet till olika datastreams, i stället för standardbeteendet att skicka data till en datastream.
+
+Ett vanligt användningsexempel kan vara att skicka data till ett landspecifikt datastream och även skicka data till en global datastream där kunderna utför en viktig åtgärd, som att göra en beställning eller uppdatera användarprofilen.
+
+**Differentiera profiler och identiteter för olika affärsenheter**
+
+Ett företag med flera affärsenheter vill använda flera Experience Platform-sandlådor för att lagra data som är specifika för varje affärsenhet.
+
+I stället för att skicka data till en standarddatastream kan företaget använda åsidosättningar av datastream för att se till att varje affärsenhet har sin egen datastream för att ta emot data.
 
 ## Konfigurera åsidosättningar av datastream i användargränssnittet för datastreams {#configure-overrides}
 
