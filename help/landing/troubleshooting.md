@@ -7,9 +7,9 @@ landing-page-description: Hitta svar på vanliga frågor och en användarhandbok
 short-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 035fee1c3be69ff56b515251afcffaf1dff00f0d
 workflow-type: tm+mt
-source-wordcount: '1868'
+source-wordcount: '1905'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Pla
 
 Nedan följer en lista med svar på vanliga frågor om Adobe Experience Platform.
 
-## Vad är [!DNL Experience Platform] API:er? {#what-are-experience-platform-apis}
+## Vad är [!DNL Experience Platform] API? {#what-are-experience-platform-apis}
 
 [!DNL Experience Platform] erbjuder flera RESTful-API:er som använder HTTP-begäranden för åtkomst [!DNL Platform] resurser. Dessa tjänst-API:er visar flera slutpunkter och gör att du kan utföra åtgärder för att lista (GET), söka (GET), redigera (PUT och/eller PATCH) och ta bort (DELETE) resurser. Mer information om specifika slutpunkter och åtgärder som är tillgängliga för respektive tjänst finns i [API-referensdokumentation](https://www.adobe.com/go/platform-api-reference-en) på Adobe I/O.
 
@@ -34,15 +34,15 @@ Mer information om hur du formaterar API-begäranden finns i guiden Komma igång
 
 ## Vad är min organisation? {#what-is-my-ims-organization}
 
-En organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en organisation har rätt att [!DNL Experience Platform]kan den ge utvecklare åtkomst. Organisations-ID (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): i **Integreringar** flik, navigera till **Översikt** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur man autentiserar sig [!DNL Platform], se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
+En organisation är en Adobe-representation av en kund. Alla licensierade Adobe-lösningar är integrerade med den här kundorganisationen. När en organisation har rätt att [!DNL Experience Platform]kan den ge utvecklare åtkomst. Organisations-ID (`x-gw-ims-org-id`) representerar organisationen som ett API-anrop ska köras för och därför krävs som huvud i alla API-begäranden. Detta ID finns via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui): i **Integreringar** flik, navigera till **Ökning** för en viss integrering för att hitta ID:t under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur man autentiserar sig [!DNL Platform], se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## Var hittar jag min API-nyckel? {#where-can-i-find-my-api-key}
 
-En API-nyckel krävs som huvud i alla API-begäranden. Den finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). I konsolen på **Integreringar** flik, navigera till **Översikt** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur man autentiserar [!DNL Platform], se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
+En API-nyckel krävs som huvud i alla API-begäranden. Den finns på [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). I konsolen, på **Integreringar** flik, navigera till **Ökning** för en viss integrering och du hittar nyckeln under **Klientautentiseringsuppgifter**. En stegvis genomgång av hur man autentiserar [!DNL Platform], se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## Hur får jag en åtkomsttoken? {#how-do-i-get-an-access-token}
 
-Åtkomsttoken krävs i auktoriseringshuvudet för alla API-anrop. De kan genereras med ett CURL-kommando, förutsatt att du har tillgång till en integrering för en organisation. Åtkomsttoken är bara giltiga i 24 timmar. Därefter måste en ny token skapas för att du ska kunna fortsätta använda API:t. Mer information om hur du genererar åtkomsttoken finns i [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
+Åtkomsttoken krävs i auktoriseringsrubriken för alla API-anrop. De kan genereras med ett CURL-kommando, förutsatt att du har tillgång till en integrering för en organisation. Åtkomsttoken är bara giltiga i 24 timmar. Därefter måste en ny token skapas för att du ska kunna fortsätta använda API:t. Mer information om hur du genererar åtkomsttoken finns i [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## Hur använder jag frågeparametrar? {#how-do-i-user-query-parameters}
 
@@ -62,7 +62,7 @@ Mer information om vilka frågeparametrar som är tillgängliga för en viss tj�
 
 Många PATCH-åtgärder i [!DNL Platform] API:er använder [JSON-pekare](https://tools.ietf.org/html/rfc6901) strängar som anger JSON-egenskaper som ska uppdateras. Dessa inkluderas vanligtvis i begärandenyttolaster som använder [JSON Patch](https://tools.ietf.org/html/rfc6902) format. Se [Grundläggande API-guide](api-fundamentals.md) för detaljerad information om nödvändig syntax för dessa tekniker.
 
-## Kan jag använda Postman för att ringa [!DNL Platform] API:er? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
+## Kan jag använda Postman för att ringa [!DNL Platform] API? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
 [Postman](https://www.postman.com/) är ett användbart verktyg för att visualisera anrop till RESTful API:er. The [Starthandbok för att komma igång med plattforms-API](api-guide.md) innehåller en video och instruktioner för hur du importerar Postman-samlingar. Dessutom finns en lista över Postman-samlingar för varje tjänst.
 
@@ -84,13 +84,13 @@ Nedan följer en lista över fel som du kan råka ut för när du använder [!DN
 
 ## API-statuskoder {#api-status-codes}
 
-Följande statuskoder kan påträffas på alla [!DNL Experience Platform] API. Det finns en mängd orsaker till detta, och därför är de förklaringar som ges i detta avsnitt av allmän karaktär. Mer information om specifika fel i enskilda [!DNL Platform] tjänster, se [tjänstfelsökningskatalog](#service-troubleshooting-directory) nedan.
+Följande statuskoder kan påträffas på alla [!DNL Experience Platform] API. Det finns en mängd orsaker till detta, och därför är de förklaringar som ges i detta avsnitt av allmän karaktär. Mer information om specifika fel i enskilda fall [!DNL Platform] tjänster, se [tjänstfelsökningskatalog](#service-troubleshooting-directory) nedan.
 
 | Statuskod | Beskrivning | Möjliga orsaker |
 |--- | --- | ---|
-| 400 | Felaktig begäran | Begäran är felaktigt konstruerad, nyckelinformation saknas och/eller innehåller felaktig syntax. |
+| 400 | Felaktig begäran | Begäran var felaktigt konstruerad, saknade nyckelinformation och/eller innehöll felaktig syntax. |
 | 401 | Autentiseringen misslyckades | Begäran klarade inte en autentiseringskontroll. Åtkomsttoken kanske saknas eller är ogiltig. Se [OAuth-tokenfel](#oauth-token-is-missing) för mer information. |
-| 403 | Förbjuden | Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den. |
+| 403 | Förbjuden | <p>Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den.</p><p> En trolig orsak till det här felet är att du kanske inte har den nödvändiga [behörigheter för åtkomstkontroll](/help/access-control/home.md) för att få åtkomst till eller redigera resursen. Läs om [få de nödvändiga attributbaserade behörigheterna för åtkomstkontroll](/help/landing/api-authentication.md#get-abac-permissions) för att använda plattforms-API:er. </p> |
 | 404 | Hittades inte | Det gick inte att hitta den begärda resursen på servern. Resursen kan ha tagits bort eller så har den begärda sökvägen angetts felaktigt. |
 | 500 | Internt serverfel | Det här är ett serverfel. Om du gör många samtidiga anrop kanske du når API-gränsen och behöver filtrera resultaten. (Se [!DNL Catalog Service] Utvecklarhandbok för API på [filtrera data](../catalog/api/filter-data.md) om du vill veta mer.) Vänta en stund innan du försöker utföra din begäran igen och kontakta administratören om problemet kvarstår. |
 
@@ -140,7 +140,7 @@ Det här felmeddelandet visas när ett API-nyckelhuvud (`x-api-key`) saknas i en
 }
 ```
 
-Det här felmeddelandet visas när värdet för den angivna API-nyckelrubriken (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till din API-nyckel kan du hitta den i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Översikt** för en specifik integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när värdet för den angivna API-nyckelrubriken (`x-api-key`) är ogiltigt. Kontrollera att du har angett nyckeln korrekt innan du försöker igen. Om du inte känner till din API-nyckel kan du hitta den i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Ökning** för en specifik integrering för att hitta API-nyckeln under **Klientautentiseringsuppgifter**.
 
 ### Rubrik saknas {#missing-header}
 
@@ -153,7 +153,7 @@ Det här felmeddelandet visas när värdet för den angivna API-nyckelrubriken (
 
 Det här felmeddelandet visas när ett organisationshuvud (`x-gw-ims-org-id`) saknas i en API-begäran. Se till att rubriken är inkluderad i din organisations ID innan du försöker igen.
 
-### Profilen är inte giltig {#profile-is-not-valid}
+### Profilen är ogiltig {#profile-is-not-valid}
 
 ```json
 {
@@ -162,7 +162,7 @@ Det här felmeddelandet visas när ett organisationshuvud (`x-gw-ims-org-id`) sa
 }
 ```
 
-Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` header) inte har rätt att ringa [!DNL Experience Platform] API:er för organisationen som anges i `x-gw-ims-org-id` header. Kontrollera att du har angett rätt ID för din organisation i huvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Översikt** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
+Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O (identifieras av [åtkomsttoken](#how-do-i-get-an-access-token) i `Authorization` header) inte har rätt att ringa [!DNL Experience Platform] API:er för organisationen som anges i `x-gw-ims-org-id` header. Kontrollera att du har angett rätt ID för din organisation i huvudet innan du försöker igen. Om du inte känner till ditt organisations-ID kan du hitta det i [Adobe I/O Console](https://console.adobe.io): i **Integreringar** flik, navigera till **Ökning** för en specifik integrering för att hitta ID:t under **Klientautentiseringsuppgifter**.
 
 ### Fel vid uppdatering av tagg {#refresh-etag-error}
 
@@ -174,7 +174,7 @@ Det här felmeddelandet visas när integreringen mellan användare och Adobe I/O
 
 Du kan få ett taggfel om en ändring har gjorts för en käll- eller målenhet, t.ex. flöde, anslutning, källkoppling eller målanslutning av en annan API-anropare. På grund av versionsmatchningsfelet tillämpas inte den ändring du försöker göra på den senaste versionen av entiteten.
 
-För att lösa detta måste du hämta entiteten igen, se till att dina ändringar är kompatibla med den nya versionen av entiteten och sedan placera den nya taggen i `If-Match` och anropa slutligen API.
+För att lösa detta måste du hämta enheten igen, se till att dina ändringar är kompatibla med den nya versionen av enheten och sedan placera den nya taggen i `If-Match` och anropa slutligen API.
 
 ### Giltig innehållstyp har inte angetts {#valid-content-type-not-specified}
 
@@ -204,12 +204,12 @@ Det här felmeddelandet visas i något av följande två fall:
 
 ## Felsökningskatalog för tjänst {#service-troubleshooting-directory}
 
-Här följer en lista med felsökningsguider och API-referensdokumentation för [!DNL Experience Platform] API:er. Varje felsökningsguide ger svar på vanliga frågor och lösningar på problem som är specifika för enskilda användare [!DNL Platform] tjänster. API-referensdokumenten innehåller en omfattande guide till alla tillgängliga slutpunkter för varje tjänst och visar exempel på begärandetexter, svar och felkoder som du kan få.
+Här följer en lista med felsökningsguider och API-referensdokumentation för [!DNL Experience Platform] API. Varje felsökningsguide ger svar på vanliga frågor och lösningar på problem som är specifika för enskilda användare [!DNL Platform] tjänster. API-referensdokumenten innehåller en omfattande guide till alla tillgängliga slutpunkter för varje tjänst och visar exempel på begärandetexter, svar och felkoder som du kan få.
 
 | Tjänst | API-referens | Felsökning |
 | --- | --- | --- |
 | Åtkomstkontroll | [API för åtkomstkontroll](https://www.adobe.io/experience-platform-apis/references/access-control/) | [Felsökningsguide för åtkomstkontroll](../access-control/troubleshooting-guide.md) |
-| Adobe Experience Platform datainmatning | [[!DNL Batch Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) | [Felsökningsguide för batchimport](../ingestion/batch-ingestion/troubleshooting.md) |
+| Adobe Experience Platform datainmatning | [[!DNL Batch Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) | [Felsökningsguide för batchmatning](../ingestion/batch-ingestion/troubleshooting.md) |
 | Adobe Experience Platform datainmatning | [[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/) | [Felsökningsguide för direktuppspelning](../ingestion/streaming-ingestion/troubleshooting.md) |
 | Adobe Experience Platform Data Science Workspace | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] felsökningsguide](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform datastyrning | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
