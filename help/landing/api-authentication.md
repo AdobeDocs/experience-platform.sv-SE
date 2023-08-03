@@ -4,9 +4,9 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 361f409c7aeee2e3e789bb263eca7c59b73db8ec
+source-git-commit: f598c6dabe9296044055d8e961cf5177a655f5fa
 workflow-type: tm+mt
-source-wordcount: '2149'
+source-wordcount: '2125'
 ht-degree: 1%
 
 ---
@@ -36,6 +36,7 @@ För att kunna anropa Experience Platform API:er måste du ha följande:
 
 * En organisation med tillgång till Adobe Experience Platform.
 * En Admin Console-administratör som kan lägga till dig som utvecklare och som användare för en produktprofil.
+* En Experience Platform-systemadministratör som kan ge dig nödvändiga attributbaserade åtkomstkontroller för att kunna utföra läs- och skrivåtgärder på olika delar av Experience Platform via API:er.
 
 Du måste också ha en Adobe ID för att slutföra kursen. Om du inte har någon Adobe ID kan du skapa en med följande steg:
 
@@ -55,13 +56,15 @@ När du har utsetts till utvecklare kan du börja skapa integreringar i [Adobe D
 
 ### Få användaråtkomst {#gain-user-access}
 
-Dina [!DNL Admin Console] måste administratören också lägga till dig som användare i samma produktprofil. Se guiden [hantera användargrupper i [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html) för mer information.
+Dina [!DNL Admin Console] måste administratören också lägga till dig som användare i samma produktprofil. Med användaråtkomst kan du i gränssnittet se resultatet av de API-åtgärder du utför.
+
+Se guiden på [hantera användargrupper i [!DNL Admin Console]](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/user-groups.ug.html) för mer information.
 
 ## Generera en API-nyckel (klient-ID) och ett företags-ID {#generate-credentials}
 
 >[!NOTE]
 >
->Om du följer det här dokumentet från [API-guide för Privacy Service](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att skapa inloggningsuppgifter som är unika för [!DNL Privacy Service].
+>Om du följer det här dokumentet från [API-guide för Privacy Service](../privacy-service/api/getting-started.md)kan du nu gå tillbaka till den guiden för att generera unika autentiseringsuppgifter för [!DNL Privacy Service].
 
 När du har fått utvecklare och användare åtkomst till Platform via [!DNL Admin Console]är nästa steg att skapa `{ORG_ID}` och `{API_KEY}` autentiseringsuppgifter i Adobe Developer Console. Dessa autentiseringsuppgifter behöver bara genereras en gång och kan återanvändas i framtida API-anrop för plattformen.
 
@@ -71,7 +74,11 @@ Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och
 
 När du har skapat ett nytt projekt väljer du **[!UICONTROL Add API]** på **[!UICONTROL Project Overview]** skärm.
 
-![](./images/api-authentication/add-api.png)
+>[!TIP]
+>
+>Om du har etablerat dig för flera organisationer använder du organisationsväljaren i det övre högra hörnet av gränssnittet för att kontrollera att du är i den organisation du behöver.
+
+![Developer Console-skärmen med alternativet Lägg till API markerat.](./images/api-authentication/add-api.png)
 
 The **[!UICONTROL Add an API]** visas. Markera produktikonen för Adobe Experience Platform och välj sedan **[!UICONTROL Experience Platform API]** före markering **[!UICONTROL Next]**.
 
@@ -93,14 +100,16 @@ Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst
 
 ### Välj produktprofiler för integreringen {#select-product-profiles}
 
-Välj sedan de produktprofiler som ska gälla för din integrering.
-Integreringens tjänstkonto får tillgång till detaljerade funktioner via de produktprofiler som väljs här.
+I **[!UICONTROL Configure API]** skärm, välja **[!UICONTROL AEP-Default-All-Users]**.
 
-Observera att för att få tillgång till vissa funktioner i Platform måste du också ha en systemadministratör som ger dig de nödvändiga attributbaserade behörigheterna för åtkomstkontroll. Läs mer i avsnittet [Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll](#get-abac-permissions).
+<!--
+Your integration's service account will gain access to granular features through the product profiles selected here.
 
->[!TIP]
+-->
+
+>[!IMPORTANT]
 >
-Kontakta systemadministratören om du vill se en viss produktprofil här. Systemadministratörer kan visa och hantera API-autentiseringsuppgifter i behörighetsvyn. Mer information finns i avsnittet [Lägg till utvecklare i produktprofilen](#add-developers-to-product-profile).
+För att få tillgång till vissa funktioner i Platform behöver du också en systemadministratör som ger dig de nödvändiga attributbaserade behörigheterna för åtkomstkontroll. Läs mer i avsnittet [Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll](#get-abac-permissions).
 
 ![Välj produktprofiler för din integrering.](./images/api-authentication/select-product-profiles.png)
 
@@ -139,7 +148,7 @@ Nästa steg är att skapa en `{ACCESS_TOKEN}` autentiseringsuppgifter för anvä
 
 >[!TIP]
 >
-Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om [använda Postman för att autentisera och testa API-anrop](#use-postman).
+Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Läs mer om [använda Postman för att autentisera och testa API-anrop](#use-postman).
 
 ## [!BADGE Föråldrat]{type=negative} Generera en JSON-webbtoken (JWT) {#jwt}
 
@@ -191,7 +200,7 @@ curl -X POST https://ims-na1.adobelogin.com/ims/exchange/jwt \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `{API_KEY}` | The `{API_KEY}` ([!UICONTROL Client ID]) som du har hämtat i en [föregående steg](#api-ims-secret). |
+| `{API_KEY}` | The `{API_KEY}` ([!UICONTROL Client ID]) som du hämtade i en [föregående steg](#api-ims-secret). |
 | `{SECRET}` | Klienthemligheten som du hämtade i en [föregående steg](#api-ims-secret). |
 | `{JWT}` | Den JWT som du skapade i en [föregående steg](#jwt). |
 
@@ -260,7 +269,7 @@ Om ditt svar liknar det som visas nedan är dina inloggningsuppgifter giltiga oc
 
 >[!IMPORTANT]
 >
-Samtalet ovan räcker för att testa dina autentiseringsuppgifter, men tänk på att du inte kommer att kunna komma åt eller ändra flera resurser utan rätt attributbaserade åtkomstkontrollbehörighet. Läs mer i [Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll](#get-abac-permissions) -avsnitt.
+Samtalet ovan räcker för att testa dina inloggningsuppgifter, men tänk på att du inte kommer att kunna komma åt eller ändra flera resurser utan rätt attributbaserad åtkomstkontrollbehörighet. Läs mer i **Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll** nedan.
 
 ## Skaffa nödvändiga attributbaserade behörigheter för åtkomstkontroll {#get-abac-permissions}
 
@@ -294,7 +303,7 @@ Ladda ned [Identity Management Service Postman Collection](https://github.com/ad
 This [Medium post](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) describes how you can set up Postman to automatically perform JWT authentication and use it to consume Platform APIs.
 -->
 
-## Systemadministratörer: Bevilja utvecklare och API-åtkomstkontroll med Experience Platform-behörigheter {#grant-developer-and-api-access-control}
+## Systemadministratörer: Bevilja utvecklare och API-åtkomstkontroll med Experience Platform behörigheter {#grant-developer-and-api-access-control}
 
 >[!NOTE]
 >
@@ -314,7 +323,7 @@ På fliken **[!UICONTROL Product Profiles]** väljer du **[!UICONTROL AEP-Defaul
 
 ![Sök efter produktprofilen](././images/api-authentication/select-product-profile.png)
 
-Välj **[!UICONTROL Developers]** tabbtangenten och sedan **[!UICONTROL Add Developer]**.
+Välj **[!UICONTROL Developers]** tabbtangenten och sedan välja **[!UICONTROL Add Developer]**.
 
 ![Lägg till utvecklare från fliken Utvecklare](././images/api-authentication/add-developer1.png)
 
@@ -326,25 +335,31 @@ Utvecklaren har lagts till och visas på [!UICONTROL Developers] -fliken.
 
 ![Utvecklare som listas på fliken Utvecklare](././images/api-authentication/developer-added.png)
 
-### Konfigurera ett API
+<!--
 
-En utvecklare kan lägga till och konfigurera ett API i ett projekt i Adobe Developer Console.
+Commenting out this part since it duplicates information from the section Add Experience Platform to a project
 
-Välj projektet och välj sedan **[!UICONTROL Add API]**.
+### Set up an API
 
-![Lägg till API i ett projekt](././images/api-authentication/add-api-project.png)
+A developer can add and configure an API within a project in the Adobe Developer Console.
 
-I **[!UICONTROL Add an API]** dialogrutenvälj **[!UICONTROL Adobe Experience Platform]** väljer **[!UICONTROL Experience Platform API]**.
+Select your project, then select **[!UICONTROL Add API]**.
 
-![Lägg till ett API i Experience Platform](././images/api-authentication/add-api-platform.png)
+![Add API to a project](././images/api-authentication/add-api-project.png)
 
-I **[!UICONTROL Configure API]** skärm, välja **[!UICONTROL AEP-Default-All-Users]**.
+In the **[!UICONTROL Add an API]** dialog box select **[!UICONTROL Adobe Experience Platform]**, then select **[!UICONTROL Experience Platform API]**.
+
+![Add an API in Experience Platform](././images/api-authentication/add-api-platform.png)
+
+In the **[!UICONTROL Configure API]** screen, select **[!UICONTROL AEP-Default-All-Users]**.
+
+-->
 
 ### Tilldela API till en roll
 
 En systemadministratör kan tilldela API:er till roller i användargränssnittet i Experience Platform.
 
-Välj **[!UICONTROL Permissions]** och den roll du vill lägga till API:t i. Välj **[!UICONTROL API credentials]** tabbtangenten och sedan **[!UICONTROL Add API credentials]**.
+Välj **[!UICONTROL Permissions]** och den roll du vill lägga till API:t i. Välj **[!UICONTROL API credentials]** tabbtangenten och sedan välja **[!UICONTROL Add API credentials]**.
 
 ![Fliken API-autentiseringsuppgifter i den valda rollen](././images/api-authentication/api-credentials.png)
 
