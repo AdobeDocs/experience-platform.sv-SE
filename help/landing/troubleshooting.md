@@ -7,7 +7,7 @@ landing-page-description: Hitta svar på vanliga frågor och en användarhandbok
 short-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: 035fee1c3be69ff56b515251afcffaf1dff00f0d
+source-git-commit: 096b844246d194a822e4ba1811aef05e494c92be
 workflow-type: tm+mt
 source-wordcount: '1905'
 ht-degree: 4%
@@ -90,7 +90,7 @@ Följande statuskoder kan påträffas på alla [!DNL Experience Platform] API. D
 |--- | --- | ---|
 | 400 | Felaktig begäran | Begäran var felaktigt konstruerad, saknade nyckelinformation och/eller innehöll felaktig syntax. |
 | 401 | Autentiseringen misslyckades | Begäran klarade inte en autentiseringskontroll. Åtkomsttoken kanske saknas eller är ogiltig. Se [OAuth-tokenfel](#oauth-token-is-missing) för mer information. |
-| 403 | Förbjuden | <p>Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den.</p><p> En trolig orsak till det här felet är att du kanske inte har den nödvändiga [behörigheter för åtkomstkontroll](/help/access-control/home.md) för att få åtkomst till eller redigera resursen. Läs om [få de nödvändiga attributbaserade behörigheterna för åtkomstkontroll](/help/landing/api-authentication.md#get-abac-permissions) för att använda plattforms-API:er. </p> |
+| 403 | Förbjuden | Resursen hittades, men du har inte rätt autentiseringsuppgifter för att visa den. <br> En trolig orsak till det här felet är att du kanske inte har den nödvändiga [behörigheter för åtkomstkontroll](/help/access-control/home.md) för att få åtkomst till eller redigera resursen. Läs om [få de nödvändiga attributbaserade behörigheterna för åtkomstkontroll](/help/landing/api-authentication.md#get-abac-permissions) för att använda plattforms-API:er. </p> |
 | 404 | Hittades inte | Det gick inte att hitta den begärda resursen på servern. Resursen kan ha tagits bort eller så har den begärda sökvägen angetts felaktigt. |
 | 500 | Internt serverfel | Det här är ett serverfel. Om du gör många samtidiga anrop kanske du når API-gränsen och behöver filtrera resultaten. (Se [!DNL Catalog Service] Utvecklarhandbok för API på [filtrera data](../catalog/api/filter-data.md) om du vill veta mer.) Vänta en stund innan du försöker utföra din begäran igen och kontakta administratören om problemet kvarstår. |
 
