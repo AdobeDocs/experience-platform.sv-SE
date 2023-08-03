@@ -6,16 +6,16 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: f360df6273986be35340432c72d8f8620f339b67
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1267'
 ht-degree: 1%
 
 ---
 
 # Garantier för aktiveringsdata
 
-Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast förutsätts det att du har rätt [anslutna till destinationer](/help/destinations/ui/connect-destination.md).
+Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas du ha rätt [anslutna till destinationer](/help/destinations/ui/connect-destination.md).
 
 >[!NOTE]
 >
@@ -65,9 +65,9 @@ Skyddskassorna nedan gäller aktivering via [batchvis (filbaserat) mål](/help/d
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Aktiveringsfrekvens | En daglig fullständig export eller mer frekvent stegvis export var 3, 6, 8 eller 12 timme. | Hård | Läs [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) dokumentationsavsnitt för mer information om frekvensökningar för batchexport. |
+| Aktiveringsfrekvens | En daglig hel export eller mer frekvent stegvis export var 3, 6, 8 eller 12: e timme. | Hård | Läs [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) dokumentationsavsnitt för mer information om frekvensökningar för batchexport. |
 | Maximalt antal målgrupper som kan exporteras vid en given timme | 100 | Mjuk | Rekommendationen är att lägga till högst 100 målgrupper i batchmåldataflöden. |
-| Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Hård | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [planeringsavsnitt](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) av självstudiekursen om aktivering av batchdestinationer. |
+| Maximalt antal rader (poster) per fil som ska aktiveras | 5 miljoner | Hård | Adobe Experience Platform delar automatiskt upp de exporterade filerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil. Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`. Mer information finns i [schemaläggningsavsnitt](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) av självstudiekursen om aktivering av batchdestinationer. |
 
 {style="table-layout:auto"}
 
@@ -94,6 +94,101 @@ Skyddskassorna nedan gäller aktivering via [mål för kantanpassning](/help/des
 
 {style="table-layout:auto"}
 
+## [!BADGE Beta]{type=Informative} Datauppsättningsexport {#dataset-exports}
+
+Datauppsättningsexporter stöds för närvarande i en **[!UICONTROL First Full and then Incremental]** [mönster](/help/destinations/ui/export-datasets.md#scheduling). Skyddskisserna som beskrivs i det här avsnittet gäller för den första fullständiga exporten som sker efter att ett arbetsflöde för datauppsättningsexport har ställts in.
+
+| Guardrail | Gräns | Begränsa typ | Beskrivning |
+| --- | --- | --- | --- |
+| Storlek på exporterade datamängder | 5 miljarder poster | Mjuk | Gränsen som beskrivs här för datauppsättningsexport är en *mjukt skyddsräcke*. Även om användargränssnittet inte hindrar dig från att exportera datauppsättningar som är större än 5 miljarder poster, är beteendet oförutsägbart och exporten kan antingen misslyckas eller ha mycket lång exportfördröjning. |
+
+{style="table-layout:auto"}
+
+<!--
+
+### Dataset Types {#dataset-types}
+
+Datasets exported from Experience Platform can be of two types, as described below:
+
+**Timeseries**
+Timeseries datasets are also known as *XDM Experience Events* datasets in Experience Platform terminology.
+The dataset schema includes a top level *timestamp* column. Data is ingested in an append-only fashion.
+
+**Record** 
+Record datasets are also known as *XDM Individual Profile* datasets in Experience Platform terminology.
+The dataset schema does not include a top level *timestamp* column. Data is ingested in upsert fashion.
+
+The guardrails below are grouped by the format of the exported file, and then further by dataset type.
+
+**Parquet output**
+
+|Dataset type | Compression | Guardrail | Description |
+|---------|----------|---------|-----------|
+| Timeseries | N/A | Last seven days per file | The data from the last seven days only is exported. |
+| Record | N/A | Five billion records per file | Only the data from the last seven days is exported. |
+
+{style="table-layout:auto"}
+
+**JSON output**
+
+|Dataset type | Compression | Guardrail | Description |
+|---------|----------|---------|-----------|
+| Timeseries | N/A | Last seven days per file | The data from the last seven days only is exported. |
+| <p>Record</p> | <p><ul><li>Yes</li><li>No</li></ul></p> | <p><ul><li>Five billion records per compressed file</li><li>One million records per uncompressed file</li></ul></p> | <p>The record count of the dataset must be less than five billion for compressed files and one million for uncompressed files, otherwise the export fails. Reduce the size of the dataset that you are trying to export if it is larger than the allowed threshold.</p> |
+
+{style="table-layout:auto"}
+
+-->
+
+<!--
+
+<table>
+<thead>
+  <tr>
+    <th>Output format</th>
+    <th>Dataset type</th>
+    <th>Compression</th>
+    <th>Guardrail</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="2">Parquet</td>
+    <td>Timeseries</td>
+    <td>-</td>
+    <td>Last seven days per file</td>
+    <td>Only the data from the last seven days is exported.</td>
+  </tr>
+  <tr>
+    <td>Record</td>
+    <td>-</td>
+    <td>Five billion records per file</td>
+    <td>The record count of the dataset must be less than five billion, otherwise the export fails. Reduce the size of the dataset that you are trying to export if it is larger than the allowed threshold.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">JSON</td>
+    <td>Timeseries</td>
+    <td>-</td>
+    <td>Last seven days per file</td>
+    <td>Only the data from the last seven days is exported.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Record</td>
+    <td>Yes</td>
+    <td>Five billion records per file</td>
+    <td>The record count of the dataset must be less than five billion, otherwise the export fails. Reduce the size of the dataset that you are trying to export if it is larger than the allowed threshold.</td>
+  </tr>
+  <tr>
+    <td>No</td>
+    <td>One million records per file</td>
+    <td>The record count of the dataset must be less than one million, otherwise the export fails. Reduce the size of the dataset that you are trying to export if it is larger than the allowed threshold.</td>
+  </tr>
+</tbody>
+</table>
+
+-->
+
 ### Destinationens SDK skyddsräcken {#destination-sdk-guardrails}
 
 [Destination SDK](/help/destinations/destination-sdk/overview.md) är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster för Experience Platform så att målgrupps- och profildata kan skickas till slutpunkten, baserat på valfritt data- och autentiseringsformat. Skyddsritningarna nedan gäller de mål som du konfigurerar med Destination SDK.
@@ -101,7 +196,7 @@ Skyddskassorna nedan gäller aktivering via [mål för kantanpassning](/help/des
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Maximalt antal [privata anpassade destinationer](/help/destinations/destination-sdk/overview.md#productized-custom-integrations) | 5 | Mjuk | Du kan skapa högst 5 privata anpassade direktuppspelnings- eller gruppmål med hjälp av Destination SDK. Kontakta en kundtjänstrepresentant om du behöver skapa fler än fem sådana destinationer. |
-| Profilexportpolicy för Destination SDK | <ul><li>`maxBatchAgeInSecs` (minst 1 800 och högst 3 600)</li><li>`maxNumEventsInBatch` (minimum 1.000, max 10.000)</li></ul> | Hård | När du använder [konfigurerbar aggregering](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) för ditt mål bör du tänka på de lägsta och högsta värden som avgör hur ofta HTTP-meddelanden skickas till ditt API-baserade mål och hur många profiler meddelandena ska innehålla. |
+| Profilexportpolicy för Destination SDK | <ul><li>`maxBatchAgeInSecs` (minst 1 800 och högst 3 600)</li><li>`maxNumEventsInBatch` (minst 1 000, högst 10 000)</li></ul> | Hård | När du använder [konfigurerbar aggregering](destination-sdk/functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) för ditt mål bör du tänka på de lägsta och högsta värden som avgör hur ofta HTTP-meddelanden skickas till ditt API-baserade mål och hur många profiler meddelandena ska innehålla. |
 
 {style="table-layout:auto"}
 
