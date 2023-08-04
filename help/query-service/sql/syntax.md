@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c42a7cd46f79bb144176450eafb00c2f81409380
+source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
 workflow-type: tm+mt
-source-wordcount: '3761'
+source-wordcount: '3860'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ OFFSET start ]
 ```
 
-där `from_item` kan vara något av följande:
+där `from_item` kan vara något av följande alternativ:
 
 ```sql
 table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -53,7 +53,7 @@ with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 from_item [ NATURAL ] join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
 ```
 
-och `grouping_element` kan vara något av följande:
+och `grouping_element` kan vara något av följande alternativ:
 
 ```sql
 ( )
@@ -125,10 +125,9 @@ Dessutom kan du använda `HEAD` och `TAIL` som särskilda förskjutningsvärden 
 >
 >- Om den valfria reservbeteendeflaggan inte är inställd returneras ett fel.
 
-
 ### WHERE-sats
 
-Som standard används matchningar som skapats av en `WHERE` -sats på en `SELECT` -frågan är skiftlägeskänslig. Om du vill att matchningar ska vara skiftlägeskänsliga kan du använda nyckelordet `ILIKE` i stället för `LIKE`.
+Som standard används matchningar som skapats av en `WHERE` -sats på en `SELECT` -frågan är skiftlägeskänslig. Om du vill att matchningar ska vara skiftlägesokänsliga kan du använda nyckelordet `ILIKE` i stället för `LIKE`.
 
 ```sql
     [ WHERE condition { LIKE | ILIKE | NOT LIKE | NOT ILIKE } pattern ]
@@ -200,7 +199,7 @@ CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
 
 >[!NOTE]
 >
->The `SELECT` -programsats måste ha ett alias för sammanställningsfunktioner som `COUNT`, `SUM`, `MIN`och så vidare. Dessutom finns `SELECT` kan anges med eller utan parenteser (). Du kan ange en `SNAPSHOT` -sats för att läsa inkrementella deltas i måltabellen.
+>The `SELECT` -programsats måste ha ett alias för sammanställningsfunktioner som `COUNT`, `SUM`, `MIN`och så vidare. Dessutom kan du `SELECT` kan anges med eller utan parenteser (). Du kan ange en `SNAPSHOT` -sats för att läsa inkrementella deltas i måltabellen.
 
 ## INFOGA I
 
@@ -231,7 +230,7 @@ INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 > 
 > The `SELECT` programsats **får inte** omges av parenteser (). Dessutom är schemat för resultatet av `SELECT` -programsatsen måste överensstämma med den tabell som definieras i `INSERT INTO` -programsats. Du kan ange en `SNAPSHOT` -sats för att läsa inkrementella deltas i måltabellen.
 
-De flesta fält i ett riktigt XDM-schema finns inte på rotnivå och SQL tillåter inte användning av punktnotation. För att få ett realistiskt resultat med kapslade fält måste du mappa varje fält i `INSERT INTO` bana.
+De flesta fält i ett riktigt XDM-schema hittas inte på rotnivå och SQL tillåter inte användning av punktnotation. För att få ett realistiskt resultat med kapslade fält måste du mappa varje fält i `INSERT INTO` bana.
 
 Till `INSERT INTO` kapslade sökvägar använder du följande syntax:
 
@@ -454,7 +453,7 @@ $$;
 
 ## Dataresursorganisation
 
-Det är viktigt att logiskt organisera era datatillgångar inom Adobe Experience Platform dataresa när de växer. Med frågetjänsten utökas SQL-konstruktioner som gör att du logiskt kan gruppera dataresurser i en sandlåda. Med den här organisationsmetoden kan du dela datatillgångar mellan scheman utan att behöva flytta dem fysiskt.
+Det är viktigt att logiskt organisera era dataresurser inom Adobe Experience Platform dataresa när de växer. Med frågetjänsten utökas SQL-konstruktioner som gör att du logiskt kan gruppera dataresurser i en sandlåda. Med den här organisationsmetoden kan du dela datatillgångar mellan scheman utan att behöva flytta dem fysiskt.
 
 Följande SQL-konstruktioner som använder standard-SQL-syntax stöds så att du kan organisera dina data logiskt.
 
@@ -467,7 +466,7 @@ ALTER TABLE t1 ADD PRIMARY KEY (c1) NOT ENFORCED;
 ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
 ```
 
-Se guiden [logisk organisation av datatillgångar](../best-practices/organize-data-assets.md) om du vill ha mer detaljerad information om hur frågetjänsten fungerar.
+Se guiden på [logisk organisation av datatillgångar](../best-practices/organize-data-assets.md) om du vill ha mer detaljerad information om hur frågetjänsten fungerar.
 
 ## Tabellen finns
 
@@ -528,7 +527,7 @@ Exemplet returnerar följande:
 
 I det andra exemplet demonstreras konceptet och tillämpningen av `inline` funktion. Datamodellen för exemplet illustreras i bilden nedan.
 
-![Ett schemadiagram för productListItems.](../images/sql/productListItems.png)
+![Ett schema för productListItems.](../images/sql/productListItems.png)
 
 **Exempel**
 
@@ -541,7 +540,7 @@ De värden som hämtas från `source_dataset` används för att fylla i måltabe
 | SKU | upplevelse | kvantitet | priceTotal |
 |---------------------|-----------------------------------|----------|--------------|
 | product-id-1 | (&quot;(&quot;(&quot;(A,pass,B,NULL)&quot;)&quot;)&quot;)&quot; | 5 | 10.5 |
-| product-id-5 | (&quot;(&quot;(&quot;(A, pass, B,NULL)&quot;)&quot;)&quot;)&quot;) |  |  |
+| product-id-5 | (&quot;(&quot;(&quot;(A, pass, B,NULL)&quot;)&quot;)&quot;)&quot;) |          |              |
 | product-id-2 | (&quot;(&quot;(&quot;(AF, C, D,NULL)&quot;)&quot;)&quot;)&quot;) | 6 | 40 |
 | product-id-4 | (&quot;(&quot;(&quot;(BM, pass, NA,NULL)&quot;)&quot;)&quot;)&quot;) | 3 | 12 |
 
@@ -598,9 +597,9 @@ Nedan följer en lista över statistiska beräkningar som är tillgängliga efte
 
 #### COMPUTE STATISTICS on the data Lake {#compute-statistics-data-lake}
 
-Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon. Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
+Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
 
-`COMPUTE STATISTICS` utökar `ANALYZE TABLE` -kommando. Men `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i data warehouse-tabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller.
+`COMPUTE STATISTICS` utökar `ANALYZE TABLE` -kommando. Men `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i accelererade lagringstabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller.
 
 **Exempel**
 
@@ -608,28 +607,43 @@ Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADL
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS  FOR COLUMNS (commerce, id, timestamp);
 ```
 
+The `FILTER CONTEXT` kommandot beräknar statistik på en delmängd av datauppsättningen baserat på det angivna filtervillkoret. The `FOR COLUMNS` -kommandot anger specifika kolumner för analys.
+
 >[!NOTE]
 >
->`FILTER CONTEXT` beräknar statistik på en delmängd av datauppsättningen baserat på det angivna filtervillkoret, och `FOR COLUMNS` anger specifika kolumner för analys.
+>The `Statistics ID` och den genererade statistiken är bara giltig för varje session och kan inte nås mellan olika PSQL-sessioner.<br><br>Begränsningar:<ul><li>Statistisk generering stöds inte för datatyperna array eller map</li><li>Beräknad statistik bevaras inte</li></ul><br><br>Alternativ:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>Som standard är flaggan inställd på true. När statistik begärs för en datatyp som inte stöds felsöker den därför inte, utan misslyckas i stället.<br>Om du vill aktivera meddelanden om fel när statistik begärs för en datatyp som inte stöds använder du: `SET skip_stats_for_complex_datatypes = false`.
 
 Konsolutdata visas enligt nedan.
 
 ```console
-  Statistics ID 
-------------------
- ULKQiqgUlGbTJWhO
+|     Statistics ID      | 
+| ---------------------- |
+| adc_geometric_stats_1  |
 (1 row)
 ```
 
-Du kan sedan använda det returnerade statistikens ID för att söka efter den beräknade statistiken med `SHOW STATISTICS` -kommando.
+Du kan sedan ställa frågor direkt till den beräknade statistiken genom att referera till `Statistics ID`. Med exempelprogramsatsen nedan kan du visa utdata i sin helhet när den används med `Statistics ID` eller aliasnamnet. Mer information om den här funktionen finns i [dokumentation för aliasnamn](../essential-concepts/dataset-statistics.md#alias-name).
 
 ```sql
-SHOW STATISTICS FOR <statistics_ID>
+-- This statement gets the statistics generated for `alias adc_geometric_stats_1`.
+SELECT * FROM adc_geometric_stats_1;
 ```
 
->[!NOTE]
->
->`COMPUTE STATISTICS` stöder inte datatyperna array eller map. Du kan ange en `skip_stats_for_complex_datatypes` flagga som ska meddelas eller felas om indatabildrutan har kolumner med arrayer och mappningsdatatyper. Som standard är flaggan inställd på true. Använd följande kommando om du vill aktivera meddelanden eller fel: `SET skip_stats_for_complex_datatypes = false`.
+Använd `SHOW STATISTICS` om du vill visa metadata för alla temporära statistiktabeller som genereras i sessionen. Det här kommandot kan hjälpa dig att förfina omfattningen av din statistiska analys.
+
+```sql
+SHOW STATISTICS;
+```
+
+Ett exempel på VISA STATISTIK visas nedan.
+
+```console
+      statsId         |   tableName   | columnSet |         filterContext       |      timestamp
+----------------------+---------------+-----------+-----------------------------+--------------------
+adc_geometric_stats_1 | adc_geometric |   (age)   |                             | 25/06/2023 09:22:26
+demo_table_stats_1    |  demo_table   |    (*)    |       ((age > 25))          | 25/06/2023 12:50:26
+age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) | 25/06/2023 09:22:26
+```
 
 Se [dokumentation om datauppsättningsstatistik](../essential-concepts/dataset-statistics.md) för mer information.
 
@@ -638,7 +652,7 @@ Se [dokumentation om datauppsättningsstatistik](../essential-concepts/dataset-s
 Adobe Experience Platform Query Service innehåller exempeldatauppsättningar som en del av de ungefärliga frågebearbetningsfunktionerna.
 Datauppsättningsexempel används bäst när du inte behöver ett exakt svar för en sammanställningsåtgärd över en datauppsättning. Med den här funktionen kan du utföra mer effektiva undersökande frågor på stora datamängder genom att skicka en ungefärlig fråga för att returnera ett ungefärligt svar.
 
-Exempeldatauppsättningar skapas med enhetliga slumpmässiga urval från befintliga [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar där endast en procentandel av posterna från originalet används. Exempelfunktionen för datauppsättningar utökar `ANALYZE TABLE` med `TABLESAMPLE` och `SAMPLERATE` SQL-kommandon.
+Exempeldatauppsättningar skapas med enhetliga slumpmässiga urval från befintliga [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar där endast en procentandel av posterna från originalet används. Exempelfunktionen för datauppsättningar utökar `ANALYZE TABLE` med kommandot `TABLESAMPLE` och `SAMPLERATE` SQL-kommandon
 
 I exemplen nedan visar rad 1 hur du beräknar ett 5 %-prov av tabellen. Rad 2 visar hur du beräknar ett 5 %-prov från en filtrerad vy av data i tabellen.
 
@@ -947,7 +961,7 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 
 I följande tabell visas godkända datatyper för att lägga till kolumner i en tabell med [!DNL Postgres SQL], XDM och [!DNL Accelerated Database Recovery] (ADR) i Azure SQL.
 
-| — | PSQL-klient | XDM | ADR. | Beskrivning |
+| — | PSQL-klient | XML | ADR. | Beskrivning |
 |---|---|---|---|---|
 | 1 | `bigint` | `int8` | `bigint` | En numerisk datatyp som används för att lagra stora heltal mellan -9 223 372 036 854 775 807 och 9 223 372 036 854 775 807 i 8 byte. |
 | 2 | `integer` | `int4` | `integer` | En numerisk datatyp som används för att lagra heltal mellan -2 147 483 648 och 2 147 483 647 i 4 byte. |
@@ -957,7 +971,7 @@ I följande tabell visas godkända datatyper för att lägga till kolumner i en 
 | 6 | `double` | `float8` | `double precision` | `FLOAT8` och `FLOAT` är giltiga synonymer för `DOUBLE PRECISION`. `double precision` är en flyttalsdatatyp. Flyttalsvärden sparas i 8 byte. |
 | 7 | `double precision` | `float8` | `double precision` | `FLOAT8` är en giltig synonym för `double precision`.`double precision` är en flyttalsdatatyp. Flyttalsvärden sparas i 8 byte. |
 | 8 | `date` | `date` | `date` | The `date` datatypen är 4 byte-lagrade kalenderdatumvärden utan tidsstämpelinformation. Giltiga datum är från 01-01-0001 till 12-31-9999. |
-| 9 | `datetime` | `datetime` | `datetime` | En datatyp som används för att lagra en instans i tid uttryckt som ett kalenderdatum och en tidpunkt på dagen. `datetime` omfattar kvalificerare för år, månad, dag, timme, sekund och bråk. A `datetime` -deklarationen kan innehålla alla delmängder av dessa tidsenheter som är förenade i den sekvensen, eller till och med bara en enda tidsenhet. |
+| 9 | `datetime` | `datetime` | `datetime` | En datatyp som används för att lagra en instans i tid uttryckt som ett kalenderdatum och en tidpunkt på dagen. `datetime` omfattar kvalificerare för: år, månad, dag, timme, sekund och bråk. A `datetime` -deklarationen kan innehålla alla delmängder av dessa tidsenheter som är förenade i den sekvensen, eller till och med bara en enda tidsenhet. |
 | 10 | `char(len)` | `string` | `char(len)` | The `char(len)` nyckelord används för att ange att objektet är ett tecken med fast längd. |
 
 #### LÄGG TILL SCHEMA
@@ -992,7 +1006,7 @@ ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
 | ------ | ------ |
 | `table_name` | Namnet på tabellen som du redigerar. |
 | `column_name` | Namnet på den kolumn som du vill lägga till. |
-| `data_type` | Datatypen för den kolumn som du vill lägga till. Följande datatyper stöds: bigint, char, string, date, datetime, double, double precision, integer, smallint, tinyint, varchar. |
+| `data_type` | Datatypen för den kolumn som du vill lägga till. Följande datatyper stöds: bigint, char, string, date, datetime, double, precision, integer, smallint, tinyint, varchar. |
 
 ### VISA PRIMÄRNYCKLAR
 

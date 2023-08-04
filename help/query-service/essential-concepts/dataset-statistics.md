@@ -1,9 +1,9 @@
 ---
 title: Dataset Statistik - beräkning
 description: I det här dokumentet beskrivs hur du beräknar kolumnnivåstatistik för ADLS-datauppsättningar (Azure Data Lake Storage) med SQL-kommandon.
-source-git-commit: 02b0939ee8fe92580402a78c7ebb5a250902d01c
+source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
 workflow-type: tm+mt
-source-wordcount: '1087'
+source-wordcount: '1086'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ För att se statistik som har beräknats med `ANALYZE TABLE COMPUTE STATISTICS` 
 
 >[!IMPORTANT]
 >
->The `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i data warehouse-tabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller. Mer information finns i [ANALYSERA TABELLavsnittet](../sql/syntax.md#analyze-table) i SQL-syntaxguiden.
+>The `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i accelererade lagringstabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller. Mer information finns i [ANALYSERA TABELLavsnittet](../sql/syntax.md#analyze-table) i SQL-syntaxguiden.
 
 Den här guiden hjälper dig att strukturera dina frågor så att du kan beräkna kolumnstatistiken för en ADLS-datauppsättning. Med dessa kommandon kan du se statistik som genererats under sessionen via en PSQL-klient med hjälp av en SQL-fråga.
 
@@ -95,7 +95,7 @@ Den beräknade statistiken kan se ut ungefär som i exemplet nedan.
 
 ## Visa metadata för statistisk analys {#show-statistics}
 
-Du kan använda `SHOW STATISTICS` om du vill visa metadata för alla temporära statistiktabeller som genereras i sessionen. Det här kommandot kan hjälpa dig att förfina omfattningen av din statistiska analys.
+Du kan använda `SHOW STATISTICS` om du vill visa metadata för all temporär statistik som genereras i sessionen. Det här kommandot kan hjälpa dig att förfina omfattningen av din statistiska analys.
 
 Ett exempel på hur `SHOW STATISTICS` visas nedan.
 

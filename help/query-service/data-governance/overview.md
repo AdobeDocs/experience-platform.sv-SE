@@ -2,7 +2,7 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: 54a6f508818016df1a4ab2a217bc0765b91df9e9
+source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
 workflow-type: tm+mt
 source-wordcount: '2832'
 ht-degree: 0%
@@ -33,10 +33,9 @@ Datasäkerhet är processen att skydda data från obehörig åtkomst och säkers
 
 Säkerheten med avseende på frågetjänsten är indelad i följande kategorier:
 
-* [Åtkomstkontroll](#access-control): Åtkomsten styrs via roller och behörigheter, inklusive datauppsättningar och behörigheter på kolumnnivå.
-* Skydda data genom [anslutning](#connectivity): Data skyddas med hjälp av plattformsklienter och externa klienter genom att en begränsad anslutning upprättas med utgångsdatum eller ej utgångsdatum.
-* Skydda data genom [krypterings- och systemnivånycklar](#encryption): Datasäkerheten säkerställs genom kryptering när data ligger kvar.
-
+* [Åtkomstkontroll](#access-control): Åtkomsten styrs via roller och behörigheter, inklusive datauppsättnings- och kolumnnivåbehörigheter.
+* Skydda data genom [konnektivitet](#connectivity): Data skyddas via plattformsklienter och externa klienter genom att en begränsad anslutning skapas med utgångsdatum eller ej utgångsdatum.
+* Skydda data genom [krypterings- och systemnivånycklar](#encryption): Datasäkerhet säkerställs genom kryptering när data ligger kvar.
 <!-- * Securing data through [encryption and customer-managed keys (CMK)](#encryption-and-customer-managed-keys): Access controlled through encryption when data is at rest. -->
 
 ### Åtkomstkontroll {#access-control}
@@ -80,7 +79,7 @@ Med den här funktionen kan du ge åtkomsträttigheter för konfidentiella kolum
 
 När rätt åtkomstnivå har tillämpats med etiketter och roller inträffar följande systembeteende när en användare försöker få åtkomst till data som inte är tillgängliga:
 
-1. Om en användare har nekats åtkomst till en av kolumnerna i ett schema nekas användaren även behörighet att läsa eller skriva i den begränsade kolumnen. Detta gäller följande vanliga scenarier:
+1. Om en användare har nekats åtkomst till en av kolumnerna i ett schema, nekas användaren även behörighet att läsa eller skriva i den begränsade kolumnen. Detta gäller följande vanliga scenarier:
 
    * **Fall 1**: När en användare försöker köra en fråga som bara påverkar en begränsad kolumn, genereras ett fel om att kolumnen inte finns.
    * **Fall 2**: När en användare försöker köra en fråga med flera kolumner, inklusive en begränsad kolumn, returnerar systemet endast utdata för alla kolumner som inte är begränsade.
@@ -89,13 +88,13 @@ När rätt åtkomstnivå har tillämpats med etiketter och roller inträffar fö
 
 #### Åtkomstkontroller för vyer
 
-Med frågetjänsten kan du använda ANSI SQL av standardtyp för [`CREATE VIEW`](../sql/syntax.md#create-view) -programsatser. För mycket känsliga arbetsflöden med data måste du använda lämpliga kontroller när du skapar vyer.
+Med frågetjänsten kan du använda ANSI SQL av standardtyp för [`CREATE VIEW`](../sql/syntax.md#create-view) -programsatser. För mycket känsliga arbetsflöden måste du använda lämpliga kontroller när du skapar vyer.
 
 The `CREATE VIEW` nyckelordet definierar en vy av en fråga, men vyn materialiseras inte fysiskt. I stället körs frågan varje gång vyn refereras i en fråga. När en användare skapar en vy från en datauppsättning är de rollbaserade och attributbaserade åtkomstkontrollreglerna för den överordnade datauppsättningen **not** hierarkiskt tillämpad. Därför måste du uttryckligen ange behörigheter för var och en av kolumnerna när en vy skapas.
 
 #### Skapa fältbaserade åtkomstbegränsningar för accelererade datauppsättningar {#create-field-based-access-restrictions-on-accelerated-datasets}
 
-Med [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) kan du definiera användningsomfång för organisation eller data om fakta- och dimensionsdatauppsättningar i [accelererad butik](../data-distiller/query-accelerated-store/send-accelerated-queries.md). På så sätt kan administratörer hantera åtkomsten till specifika segment och bättre hantera åtkomsten för användare eller grupper av användare.
+Med [attribueringsbaserad åtkomstkontroll](../../access-control/abac/overview.md) kan du definiera användningsomfång för organisation eller data om fakta- och dimensionsdatauppsättningar i [accelererad butik](../data-distiller/query-accelerated-store/send-accelerated-queries.md). På så sätt kan administratörer hantera åtkomsten till specifika segment och bättre hantera åtkomsten för användare eller grupper av användare.
 
 Om du vill skapa fältbaserade åtkomstbegränsningar för accelererade datauppsättningar kan du använda Query Service CTAS-frågor för att skapa accelererade datauppsättningar och strukturera dessa datauppsättningar baserat på befintliga XDM-scheman eller ad hoc-scheman. Administratörer kan sedan [lägga till och redigera etiketter för dataanvändning för schemat](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) eller [ad hoc-schema](./ad-hoc-schema-labels.md#edit-governance-labels). Du kan använda, skapa och redigera etiketter i dina scheman från [!UICONTROL Labels] arbetsytan i [!UICONTROL Schemas] Gränssnitt.
 
@@ -109,17 +108,17 @@ Frågetjänsten kan nås via plattformsgränssnittet eller genom att en anslutni
 
 #### Anslutning via externa klienter
 
-Åtkomst till frågetjänsten med en tredjepartsklient kräver autentiseringsuppgifter för auktorisering. Dessa autentiseringsuppgifter är obligatoriska för att få åtkomst till frågetjänsten med någon av de kompatibla externa klienterna. Du kan ansluta till externa klienter genom att använda antingen [förfallodatum för inloggningsuppgifter](#expiring-credentials) eller [ej förfallande autentiseringsuppgifter](#non-expiring-credentials).
+Åtkomst till frågetjänsten med en tredjepartsklient kräver autentiseringsuppgifter för auktorisering. Dessa autentiseringsuppgifter är obligatoriska för att få åtkomst till tjänsten Query med någon av de kompatibla externa klienterna. Du kan ansluta till externa klienter genom att använda antingen [förfallodatum för inloggningsuppgifter](#expiring-credentials) eller [ej förfallande autentiseringsuppgifter](#non-expiring-credentials).
 
-#### Begränsad anslutningstid via utgångsdatum {#expiring-credentials}
+#### Begränsad anslutningstid via utgångsdatum för autentiseringsuppgifter {#expiring-credentials}
 
 [Utgående autentiseringsuppgifter](../ui/credentials.md) tillåter användare att skapa en tillfällig anslutning med en extern klient. Den här uppsättningen autentiseringsuppgifter är bara giltig i 24 timmar. När den här typen av autentiseringsuppgifter har upphört att gälla visas även fliken Autentiseringsuppgifter på kontrollpanelen för frågetjänsten.
 
 ![Fliken Autentiseringsuppgifter i arbetsytan för frågetjänsten med utgångsdatum markerat.](../images/data-governance/overview/expiring-credentials.png)
 
-#### Giltiga autentiseringsuppgifter {#non-expiring-credentials}
+#### Ej förfallande autentiseringsuppgifter {#non-expiring-credentials}
 
-[Giltiga autentiseringsuppgifter](../ui/credentials.md#non-expiring-credentials) gör att du kan skapa en permanent anslutning till en extern klient, vilket gör det enklare att ansluta till frågetjänsten utan att behöva ett manuellt lösenord.
+[Ej förfallande autentiseringsuppgifter](../ui/credentials.md#non-expiring-credentials) gör att du kan skapa en permanent anslutning till en extern klient, vilket gör det enklare att ansluta till frågetjänsten utan att behöva ett manuellt lösenord.
 
 Om du vill aktivera alternativet att generera autentiseringsuppgifter som inte upphör att gälla måste du följa riktlinjerna [arbetsflöde som kräver krav](../ui/credentials.md#prerequisites). Som en del av den här processen måste din organisationsadministratör konfigurera behörigheter för produktprofilen och ge administratören kontroll över vilka konton som har åtkomst till autentiseringsuppgifter som inte upphör att gälla.
 
@@ -131,7 +130,7 @@ När det obligatoriska arbetsflödet har slutförts kan behöriga användare nu 
 
 För ökad säkerhet tillhandahåller Query Service inbyggt stöd för SSL-anslutningar för kryptering av kommunikationen mellan klient och server. Plattformen har stöd för olika SSL-alternativ som passar dina datasäkerhetsbehov och som balanserar bearbetningskostnaderna för kryptering och nyckelutbyte.
 
-Se guiden för [SSL-alternativ för klientanslutningar från tredje part till frågetjänsten](../clients/ssl-modes.md) för mer information, inklusive hur du ansluter med `verify-full` SSL-parametervärde.
+Se guiden om tillgänglig [SSL-alternativ för klientanslutningar från tredje part till frågetjänsten](../clients/ssl-modes.md) för mer information, inklusive hur du ansluter med `verify-full` SSL-parametervärde.
 
 ### Kryptering {#encryption}
 
@@ -141,7 +140,7 @@ Se guiden för [SSL-alternativ för klientanslutningar från tredje part till fr
 
 Kryptering är användning av en algoritmisk process för att omvandla data till kodad och oläslig text för att säkerställa att informationen skyddas och inte är tillgänglig utan en dekrypteringsnyckel.
 
-Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med nycklar på systemnivå. Läs dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md) för mer information. Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med hjälp av nycklar på systemnivå. Läs dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md) för mer information. Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
 <!-- Data-in-transit is always HTTPS compliant and similarly when the data is at rest in the data lake, the encryption is done with Customer Management Key (CMK), which is already supported by Data Lake Management. The currently supported version is TLS1.2. -->
 
@@ -175,7 +174,7 @@ Följande tabell visar de frågekategorier som har hämtats av granskningsloggar
 
 Nedan finns en lista med tre utökade serverloggar som innehåller mer information än de som finns i frågeloggarna. De utökade loggarna finns i frågekategorierna för granskningsloggar:
 
-1. **Meta query logs**: När en fråga körs, utförs olika tillhörande underfrågor i serverdelen (som parsing). Dessa typer av frågor kallas för metadatafrågor. Deras relevanta information finns i granskningsloggarna.
+1. **Meta query logs**: När en fråga körs körs olika tillhörande underfrågor i serverdelen (som parsing). Dessa typer av frågor kallas för metadatafrågor. Deras relevanta information finns i granskningsloggarna.
 1. **Sessionsloggar**: Systemet skapar en sessionslogg för en användare när han/hon loggar in på frågetjänsten oavsett om han/hon kör en fråga eller inte.
 1. **Anslutningsloggar för klienter från tredje part**: En anslutningsgranskningslogg skapas när en användare ansluter frågetjänsten till en tredjepartsklient.
 
@@ -185,13 +184,13 @@ Se [granskningsloggar - översikt](../../landing/governance-privacy-security/aud
 
 Datastyrningsramverket i Platform erbjuder ett enhetligt sätt att på ett ansvarsfullt sätt använda data på alla Adobe-lösningar, -tjänster och -plattformar. Den koordinerar systemmetoden för att hämta in, kommunicera och använda metadata i hela Adobe Experience Cloud. Detta hjälper i sin tur de registeransvariga att märka data i enlighet med de marknadsföringsåtgärder som behövs och de begränsningar som gäller för dessa data från de planerade marknadsföringsåtgärderna. Se översikten på [etiketter för dataanvändning](../../data-governance/labels/overview.md) om du vill ha mer information om hur datastyrning gör att du kan använda dataanvändningsetiketter på datauppsättningar och fält.
 
-Det är bästa sättet att arbeta för att uppfylla alla data i varje skede av dataresan. Därför bör härledda datauppsättningar som använder ad hoc-scheman märkas på lämpligt sätt som en del av ramverket för datastyrning. Det finns två typer av härledda datauppsättningar som har formats av Query Service: datauppsättningar som använder ett standardschema och datauppsättningar som använder ett ad hoc-schema.
+Det är bästa sättet att arbeta för att uppfylla alla data i varje skede av dataresan. Därför bör härledda datauppsättningar som använder ad hoc-scheman märkas på lämpligt sätt som en del av ramverket för datastyrning. Det finns två typer av härledda datauppsättningar som har skapats av Query Service: datauppsättningar som använder ett standardschema och datauppsättningar som använder ett ad hoc-schema.
 
 >[!NOTE]
 >
 >Datauppsättningar som skapas med frågetjänsten kallas för härledda datauppsättningar.
 
-När ad hoc-scheman skapas av en enskild användare för ett specifikt ändamål namnges XDM-schemafälten för den aktuella datamängden och är inte avsedda att användas i olika datamängder. Därför visas inte ad hoc-scheman som standard i användargränssnittet för Experience Platform. Även om det inte finns någon skillnad i hur dataanvändningsetiketter används mellan både standard- och ad hoc-scheman, måste man först göra ad hoc-scheman som skapats av Query Service för etikettering synliga i plattformens användargränssnitt. Se guiden [identifiera ad hoc-scheman inom plattformsgränssnittet](./ad-hoc-schema-labels.md#discover-ad-hoc-schemas) för mer information.
+När ad hoc-scheman skapas av en enskild användare för ett specifikt ändamål namnges XDM-schemafälten för den aktuella datamängden och är inte avsedda att användas i olika datamängder. Därför visas inte ad hoc-scheman som standard i användargränssnittet för Experience Platform. Även om det inte finns någon skillnad i hur dataanvändningsetiketter används mellan både standard- och ad hoc-scheman, måste man först göra ad hoc-scheman som skapats av Query Service för etikettering synliga i plattformens användargränssnitt. Se guiden på [identifiera ad hoc-scheman inom plattformsgränssnittet](./ad-hoc-schema-labels.md#discover-ad-hoc-schemas) för mer information.
 
 När du har öppnat schemat kan du [använda etiketter på enskilda fält](../../xdm/tutorials/labels.md). När ett schema har etiketterats ärver alla datauppsättningar som härleds från det schemat dessa etiketter. Härifrån kan du ange dataanvändningsprinciper som kan begränsa dataanvändning med vissa etiketter från att aktiveras till vissa mål. Mer information finns i översikten på [dataanvändningsprinciper](../../data-governance/policies/overview.md).
 
@@ -199,19 +198,19 @@ När du har öppnat schemat kan du [använda etiketter på enskilda fält](../..
 
 [Privacy Service](../../privacy-service/home.md) hjälper er att hantera kundförfrågningar om att få tillgång till och ta bort deras data i enlighet med juridiska sekretessbestämmelser. Det gör man genom att söka efter befintliga identifierare i data och antingen få åtkomst till eller ta bort dessa data beroende på vilket sekretessjobb som begärts. Data måste vara korrekt märkta för att tjänsten ska kunna avgöra vilka fält som ska användas eller tas bort under sekretessjobb. Uppgifter som omfattas av sekretessförfrågningar måste innehålla kundidentitetsinformation för att kunna koppla de olika uppgifterna till den person som sekretessförfrågningen gäller för. Frågetjänsten kan berika de data som används med en unik identifierare för att uppfylla sekretessjobb.
 
-Sekretessförfrågningar kan skickas till datasjön eller profildatalagret. Poster som tas bort från datasjön leder inte till att profiler som gjorts från dessa poster tas bort. Ett sekretessjobb som tar bort personuppgifter från datasjön tar inte bort deras profil, så all information (som innehåller det profil-ID:t) som har infogats efter slutförandet av sekretessjobbet uppdaterar den profilen som vanligt. Detta bekräftar behovet av att korrekt identifiera data som används i särskilda scheman.
+Sekretessförfrågningar kan skickas till datasjön eller profildatalagret. Poster som tas bort från datasjön leder inte till att profiler som har gjorts från dessa poster tas bort. Ett sekretessjobb som tar bort personuppgifter från datasjön tar inte bort deras profil, så all information (som innehåller det profil-ID:t) som har infogats efter slutförandet av sekretessjobbet uppdaterar den profilen som vanligt. Detta bekräftar behovet av att korrekt identifiera data som används i särskilda scheman.
 
 Mer information om Privacy Service finns i dokumentationen [identitetsdata för sekretessförfrågningar](../../privacy-service/identity-data.md) och hur ni konfigurerar era dataåtgärder och utnyttjar Adobe-tekniker för att effektivt hämta in lämplig identitetsinformation för kundsekretessförfrågningar.
 
 Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processen för kategorisering av data och efterlevnad av regler för dataanvändning. När data har identifierats kan du med Query Service tilldela den primära identiteten till alla utdatamängder. Du **måste** lägga till identiteter i datauppsättningen för att underlätta förfrågningar om datasekretess och arbeta för att uppfylla datakraven.
 
-Schemadatafält kan anges som ett identitetsfält via användargränssnittet för plattformen och frågetjänsten gör det även möjligt att [markera de primära identiteterna med SQL-kommandot ALTER TABLE](../sql/syntax.md#alter-table). Ställa in en identitet med `ALTER TABLE` Kommandot är särskilt användbart när datauppsättningar skapas med SQL i stället för direkt från ett schema via plattformsgränssnittet. I dokumentationen finns instruktioner om hur du [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
+Schemadatafält kan anges som ett identitetsfält via användargränssnittet för plattformen och frågetjänsten gör det även möjligt att [markera de primära identiteterna med SQL-kommandot ALTER TABLE](../sql/syntax.md#alter-table). Ange en identitet med `ALTER TABLE` Kommandot är särskilt användbart när datauppsättningar skapas med SQL i stället för direkt från ett schema via plattformsgränssnittet. I dokumentationen finns instruktioner om hur du [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
 <!-- COMMENTING OUT DATA HYGEINE SECTION TEMPORARILY UNTIL IT IS GA. currently it is in Beta only.
 
 ## Data hygiene 
 
-"Data hygiene" refers to the process of repairing or removing data that may be outdated, inaccurate, incorrectly formatted, duplicated, or incomplete. It is important to ensure adequate data hygiene along every step of the data's journey and even from the initial data storage location. In Query Service, this is either the data lake or the data warehouse.
+"Data hygiene" refers to the process of repairing or removing data that may be outdated, inaccurate, incorrectly formatted, duplicated, or incomplete. It is important to ensure adequate data hygiene along every step of the data's journey and even from the initial data storage location. 
 
 It is necessary to assign an identity to a derived dataset to allow their management by the [!DNL Data Hygiene] service. Conversely, when you create aggregated data on an accelerated data store, the aggregated data cannot be used to derive the original data. As a result of this data aggregation, the need to raise data hygiene requests is eliminated. == THIS APPEARS TO BE A PRIVACY USE CASE NAD NOT DATA HYGEINE ++  this is confusing.
 
