@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK - översikt
 description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 606052562da79982cbe4977c65ecf8ab64e4fa66
 workflow-type: tm+mt
-source-wordcount: '803'
-ht-degree: 0%
+source-wordcount: '802'
+ht-degree: 1%
 
 ---
 
@@ -25,7 +25,7 @@ En steg-för-steg-guide till hur du konfigurerar Web SDK med taggar och skickar 
 [!DNL Adobe Experience Platform Web SDK] är en del av den samling som utgör [!DNL Adobe Experience Edge]. [!DNL Experience Edge] består av följande tekniker:
 
 * **[[!DNL Adobe Experience Platform Web SDK]](#overview):** JavaScript SDK och taggtillägg som dramatiskt underlättar driftsättningen [!DNL Adobe] teknik.
-* **[[!DNL Adobe Experience Platform Mobile SDK]](https://aep-sdks.gitbook.io/docs/getting-started/overview):** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
+* **[[!DNL Adobe Experience Platform Mobile SDK]](https://developer.adobe.com/client-sdks/documentation/):** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
 * **[[!DNL Adobe Experience Platform Edge Network]](../server-api/overview.md):** Ett globalt distribuerat servernätverk som möjliggör en ny metod för driftsättning [!DNL Adobe] produkter
 
 The [!DNL Adobe Experience Edge] är ett nytt ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler.
@@ -38,7 +38,7 @@ På serversidan gör en enhetlig edge-gateway och ett gemensamt ramverk för pla
 * Ändrar behovet av punktintegreringar
 * Förbättrar prestanda jämfört med gamla bibliotek
 * Minskar kostnaderna
-* Ökar innovationshastigheten
+* Ökar innovationstakten
 * Skapar hållbara konkurrensfördelar för Adobe-kunder
 
 Med ett enda konsoliderat edge-system kan kunderna hantera sina annonserings-, marknadsförings- eller personaliseringskampanjer i alla kanaler som en integrerad upplevelse. Den tillåter [!DNL Adobe] att leverera tjänster med lägre total ägandekostnad för kunderna.  Det hjälper också till att öka produktutvecklingshastigheten genom att göra realtidskanten pluggbar och tillåta [!DNL Adobe] och kunderna att snabbare lägga till nya funktioner och kunddefinierad logik i realtidssystemet.
@@ -51,7 +51,7 @@ I följande videofilm visas en översikt över Adobe Experience Platform [!DNL W
 
 ## Bibliotek som ersätts av Web SDK {#sdks}
 
-Web SDK är inte bara en wrapper runt befintliga bibliotek. Det är ett helt nytt bibliotek som skrivits från grunden för att införliva funktioner i befintliga bibliotek. Syftet är att klara utmaningar med taggar som måste aktiveras i rätt ordning, inkonsekvens med versionsproblem i biblioteket och bättre beroendehantering. Det är ett nytt sätt att implementera [!DNL Experience Cloud] och det är [öppen källkod](https://github.com/adobe/alloy).
+Web SDK är inte bara en wrapper runt befintliga bibliotek. Det är ett helt nytt bibliotek som skrivits från grunden för att införliva funktioner i befintliga bibliotek. Syftet är att klara utmaningar med taggar som måste aktiveras i rätt ordning, inkonsekvens med versionsproblem i biblioteket och bättre beroendehantering. Det är ett nytt sätt att implementera [!DNL Experience Cloud] och det [öppen källkod](https://github.com/adobe/alloy).
 
 Web SDK ersätter följande SDK:
 
@@ -86,7 +86,7 @@ Före migrering av sidor som använder [!DNL at.js] till Web SDK, se till att ak
 > * [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=en)
 > * [Stöd för CNAME och domänövergripande](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/?lang=en)
 
-När du har migrerat från at.js till Web SDK bör du ta bort `targetMigrationEnabled` från din konfiguration.
+Efter migrering från at.js till Web SDK bör du ta bort `targetMigrationEnabled` från din konfiguration.
 
 
 
