@@ -2,9 +2,9 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
+source-git-commit: c3ce6548e18078e604ecd5db276eb162935f6181
 workflow-type: tm+mt
-source-wordcount: '2832'
+source-wordcount: '3121'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ Följande kategorier är avgörande när det gäller att följa regler för data
 1. Granskning
 1. Dataanvändning
 1. Sekretess
-<!-- 1. Data hygiene -->
+1. Datahygien
 
 I det här dokumentet behandlas de olika styrområdena och det visas hur du kan underlätta datakompatibiliteten när du använder frågetjänsten. Se [styrning, integritet och säkerhet - översikt](../../landing/governance-privacy-security/overview.md) för mer omfattande information om hur Experience Platform kan hantera kunddata och säkerställa regelefterlevnad.
 
-## Säkerhet
+## Säkerhet {#security}
 
 Datasäkerhet är processen att skydda data från obehörig åtkomst och säkerställa säker åtkomst under hela dess livscykel. Säker åtkomst upprätthålls i Experience Platform genom användning av roller och behörigheter, med funktioner som rollbaserad åtkomstkontroll och attributbaserad åtkomstkontroll. Autentiseringsuppgifter, SSL och datakryptering används också för att skydda data på olika plattformar.
 
@@ -35,8 +35,7 @@ Säkerheten med avseende på frågetjänsten är indelad i följande kategorier:
 
 * [Åtkomstkontroll](#access-control): Åtkomsten styrs via roller och behörigheter, inklusive datauppsättnings- och kolumnnivåbehörigheter.
 * Skydda data genom [konnektivitet](#connectivity): Data skyddas via plattformsklienter och externa klienter genom att en begränsad anslutning skapas med utgångsdatum eller ej utgångsdatum.
-* Skydda data genom [krypterings- och systemnivånycklar](#encryption): Datasäkerhet säkerställs genom kryptering när data ligger kvar.
-<!-- * Securing data through [encryption and customer-managed keys (CMK)](#encryption-and-customer-managed-keys): Access controlled through encryption when data is at rest. -->
+* Skydda data genom [kryptering och kundhanterade nycklar (CMK)](#encryption-and-customer-managed-keys): Åtkomsten styrs genom kryptering när data ligger kvar.
 
 ### Åtkomstkontroll {#access-control}
 
@@ -132,17 +131,14 @@ För ökad säkerhet tillhandahåller Query Service inbyggt stöd för SSL-anslu
 
 Se guiden om tillgänglig [SSL-alternativ för klientanslutningar från tredje part till frågetjänsten](../clients/ssl-modes.md) för mer information, inklusive hur du ansluter med `verify-full` SSL-parametervärde.
 
-### Kryptering {#encryption}
-
-<!-- Commented out lines to be included when customer-managed keys is released. Link out to the new document. -->
-
-<!-- ### Encryption and customer-managed keys (CMK) {#encryption-and-customer-managed-keys} -->
+### Kryptering och kundhanterade nycklar (CMK) {#encryption-and-customer-managed-keys}
 
 Kryptering är användning av en algoritmisk process för att omvandla data till kodad och oläslig text för att säkerställa att informationen skyddas och inte är tillgänglig utan en dekrypteringsnyckel.
 
 Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med hjälp av nycklar på systemnivå. Läs dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md) för mer information. Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-<!-- Data-in-transit is always HTTPS compliant and similarly when the data is at rest in the data lake, the encryption is done with Customer Management Key (CMK), which is already supported by Data Lake Management. The currently supported version is TLS1.2. -->
+Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Se [kundhanterade nycklar (CMK) - dokumentation](../../landing/governance-privacy-security/customer-managed-keys.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
+
 
 ## Granskning {#audit}
 
@@ -206,14 +202,14 @@ Frågetjänstfunktioner för datastyrning förenklar och effektiviserar processe
 
 Schemadatafält kan anges som ett identitetsfält via användargränssnittet för plattformen och frågetjänsten gör det även möjligt att [markera de primära identiteterna med SQL-kommandot ALTER TABLE](../sql/syntax.md#alter-table). Ange en identitet med `ALTER TABLE` Kommandot är särskilt användbart när datauppsättningar skapas med SQL i stället för direkt från ett schema via plattformsgränssnittet. I dokumentationen finns instruktioner om hur du [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) när du använder standardscheman.
 
-<!-- COMMENTING OUT DATA HYGEINE SECTION TEMPORARILY UNTIL IT IS GA. currently it is in Beta only.
+## Datahygien {#data-hygiene}
 
-## Data hygiene 
+&quot;Datahygien&quot; avser processen att reparera eller ta bort data som kan vara inaktuella, felaktiga, felaktigt formaterade, duplicerade eller ofullständiga. Dessa processer ser till att datauppsättningarna är korrekta och konsekventa i alla system. Det är viktigt att säkerställa god datahygien under varje steg av dataresan och även från den ursprungliga platsen för datalagring. I Experience Platform Query Service är det här antingen datasjön eller det accelererade arkivet.
 
-"Data hygiene" refers to the process of repairing or removing data that may be outdated, inaccurate, incorrectly formatted, duplicated, or incomplete. It is important to ensure adequate data hygiene along every step of the data's journey and even from the initial data storage location. 
+Du kan tilldela en identitet till en härledd datauppsättning för att tillåta datahantering efter plattformens centraliserade datahygien.
 
-It is necessary to assign an identity to a derived dataset to allow their management by the [!DNL Data Hygiene] service. Conversely, when you create aggregated data on an accelerated data store, the aggregated data cannot be used to derive the original data. As a result of this data aggregation, the need to raise data hygiene requests is eliminated. == THIS APPEARS TO BE A PRIVACY USE CASE NAD NOT DATA HYGEINE ++  this is confusing.
+Omvänt kan aggregerade data inte användas för att härleda ursprungliga data när du skapar en aggregerad datauppsättning på det accelererade arkivet. Som ett resultat av denna sammanställning av data elimineras behovet av att höja förfrågningar om datahygien.
 
-An exception to this scenario is the case of deletion. If a data hygiene deletion is requested on a dataset and before the deletion is completed, another derived dataset query is executed, then the derived dataset will capture information from the original dataset. In this case, you must be mindful that if a request to delete a dataset has been sent, you must not execute any new derived dataset queries using the same dataset source. 
+Ett undantag till det här scenariot är borttagning. Om en borttagning av en datahygien begärs för en datauppsättning och innan borttagningen är slutförd körs en annan härledd datauppsättningsfråga, kommer den härledda datauppsättningen att hämta information från den ursprungliga datauppsättningen. I det här fallet måste du tänka på att om en begäran om att ta bort en datauppsättning har skickats, får du inte köra några nya härledda datauppsättningsfrågor som använder samma datakälla.
 
-See the [data hygiene overview](../../hygiene/home.md) for more information on data hygiene in Adobe Experience Platform. -->
+Se [datahygienöversikt](../../hygiene/home.md) för mer information om datatypen i Adobe Experience Platform.
