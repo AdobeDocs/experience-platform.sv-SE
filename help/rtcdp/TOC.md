@@ -4,10 +4,10 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 7dfbf7c1d9d12e8e1fb654cf357d31a91611a18e
+source-git-commit: f63cddc1158e739ce26e0ce1d3d54b491bd80c06
 workflow-type: tm+mt
-source-wordcount: '231'
-ht-degree: 25%
+source-wordcount: '242'
+ht-degree: 24%
 
 ---
 
@@ -47,17 +47,17 @@ ht-degree: 25%
 * Profiler {#profile}
    * [Profilöversikt](profile/profile-overview.md)
    * [Bläddra i profil](profile/profile-browse.md)
-* Real-Time CDP B2B Edition AI/ML-tjänster {#b2b-cdp-ai-ml}
+* Real-Time CDP B2B Edition AI-/ML-tjänster {#b2b-cdp-ai-ml}
    * [Relaterade konton](b2b-ai-ml-services/related-accounts.md)
    * [Lead till kontomatchning](b2b-ai-ml-services/lead-to-account-matching.md)
    * Prediktiv lead- och kontobedömning {#predictive-lead-and-account-scoring-intro}
       * [Översikt över prediktiv lead- och kontopoäng](b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
       * [Hantera prediktiv lead- och kontobedömning](b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md)
 * Scheman {#schemas}
-   * [Översikt över scheman](schemas/overview.md)
+   * [Schemaöversikt](schemas/overview.md)
    * [Scheman i Real-Time CDP B2B Edition](schemas/b2b.md)
 * Segment {#segmentation}
-   * [Översikt över segmentering](segmentation/segmentation-overview.md)
+   * [Översikt över segment](segmentation/segmentation-overview.md)
    * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
    * [Segmentering i Real-Time CDP B2B Edition](segmentation/b2b.md)
    * [Kund-AI](segmentation/customer-ai.md)
@@ -66,7 +66,8 @@ ht-degree: 25%
    * [Källor i Real-Time CDP B2B Edition](sources/b2b.md)
 * Användningsfall {#use-cases}
    * Användningsexempel för partnerdata {#partner-data}
-      * [Komplettera förstahandsprofiler](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
       * [Engagera och få nya kunder genom prospekteringssupport](/help/rtcdp/partner-data/prospecting.md)
+      * [Komplettera förstahandsprofiler med attribut som tillhandahålls av partner](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
+      * [Använd partnerstödd besöksigenkänning för att personalisera upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
 * [Ordlista för Experience Platform](https://www.adobe.com/go/platform-glossary-en)

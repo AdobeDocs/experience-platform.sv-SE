@@ -4,7 +4,7 @@ description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospekt
 hide: true
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: d0227dd8dc3d79674d954899e2724d2893e16b73
+source-git-commit: 2e2a473efd247cb235ee7e8f94058baa48fd1b1a
 workflow-type: tm+mt
 source-wordcount: '1906'
 ht-degree: 0%
@@ -76,7 +76,7 @@ De identitets-, datahanterings- och styrningskomponenter du kommer att använda 
 * **(Dokumentation kommer snart)** Fältgrupper som är skräddarsydda för partnerdatastöd
 * **(Dokumentation kommer snart)** Tredjepartsetiketter som du lägger till i attribut från partners
 
-#### Skapa en namnrymd för en partner-ID
+#### Skapa en namnrymd för en partner-ID {#create-partner-id-namespace}
 
 Börja med att skapa en ny identitetstyp för de profiler som du ska ta emot från partnern. För att göra detta måste du skapa ett nytt ID-namnutrymme av typen i avsnittet Identitet **[!UICONTROL Partner ID]**.
 
