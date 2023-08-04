@@ -1,16 +1,16 @@
 ---
 title: Dataset Statistik - beräkning
 description: I det här dokumentet beskrivs hur du beräknar kolumnnivåstatistik för ADLS-datauppsättningar (Azure Data Lake Storage) med SQL-kommandon.
-source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
+source-git-commit: b94536be6e92354e237b99d36af13adf5a49afa7
 workflow-type: tm+mt
-source-wordcount: '1086'
+source-wordcount: '1085'
 ht-degree: 0%
 
 ---
 
 # Datauppsättningsstatistikberäkning
 
-Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon SQL-kommandona som beräknar datauppsättningsstatistik är ett tillägg till `ANALYZE TABLE` -kommando. Fullständig information om `ANALYZE TABLE` finns i [SQL-referensdokumentation](../sql/syntax.md#analyze-table).
+Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` SQL-kommando. SQL-kommandona som beräknar datauppsättningsstatistik är ett tillägg till `ANALYZE TABLE` -kommando. Fullständig information om `ANALYZE TABLE` finns i [SQL-referensdokumentation](../sql/syntax.md#analyze-table).
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ För att se statistik som har beräknats med `ANALYZE TABLE COMPUTE STATISTICS` 
 
 >[!IMPORTANT]
 >
->The `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i accelererade lagringstabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller. Mer information finns i [ANALYSERA TABELLavsnittet](../sql/syntax.md#analyze-table) i SQL-syntaxguiden.
+>The `COMPUTE STATISTICS`, `FILTERCONTEXT`och `FOR COLUMNS` -kommandon stöds inte i accelererade lagringstabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller. Mer information finns i [ANALYSERA TABELLavsnittet](../sql/syntax.md#analyze-table) i SQL-syntaxguiden.
 
 Den här guiden hjälper dig att strukturera dina frågor så att du kan beräkna kolumnstatistiken för en ADLS-datauppsättning. Med dessa kommandon kan du se statistik som genererats under sessionen via en PSQL-klient med hjälp av en SQL-fråga.
 

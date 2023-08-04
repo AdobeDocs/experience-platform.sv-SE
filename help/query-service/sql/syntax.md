@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c05df76976e58da1f96c6e8c030c919ff5b1eb19
+source-git-commit: b94536be6e92354e237b99d36af13adf5a49afa7
 workflow-type: tm+mt
-source-wordcount: '3860'
+source-wordcount: '3863'
 ht-degree: 1%
 
 ---
@@ -597,9 +597,9 @@ Nedan följer en lista över statistiska beräkningar som är tillgängliga efte
 
 #### COMPUTE STATISTICS on the data Lake {#compute-statistics-data-lake}
 
-Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` och `SHOW STATISTICS` SQL-kommandon Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
+Nu kan du beräkna kolumnnivåstatistik för [!DNL Azure Data Lake Storage] (ADLS) datauppsättningar med `COMPUTE STATISTICS` SQL-kommando. Beräkna kolumnstatistik för antingen hela datauppsättningen, en deluppsättning av en datauppsättning, alla kolumner eller en delmängd av kolumner.
 
-`COMPUTE STATISTICS` utökar `ANALYZE TABLE` -kommando. Men `COMPUTE STATISTICS`, `FILTERCONTEXT`, `FOR COLUMNS`och `SHOW STATISTICS` -kommandon stöds inte i accelererade lagringstabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller.
+`COMPUTE STATISTICS` utökar `ANALYZE TABLE` -kommando. Men `COMPUTE STATISTICS`, `FILTERCONTEXT`och `FOR COLUMNS` -kommandon stöds inte i accelererade lagringstabeller. Dessa tillägg för `ANALYZE TABLE` -kommandon stöds för närvarande bara för ADLS-tabeller.
 
 **Exempel**
 
@@ -611,7 +611,7 @@ The `FILTER CONTEXT` kommandot beräknar statistik på en delmängd av dataupps�
 
 >[!NOTE]
 >
->The `Statistics ID` och den genererade statistiken är bara giltig för varje session och kan inte nås mellan olika PSQL-sessioner.<br><br>Begränsningar:<ul><li>Statistisk generering stöds inte för datatyperna array eller map</li><li>Beräknad statistik bevaras inte</li></ul><br><br>Alternativ:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>Som standard är flaggan inställd på true. När statistik begärs för en datatyp som inte stöds felsöker den därför inte, utan misslyckas i stället.<br>Om du vill aktivera meddelanden om fel när statistik begärs för en datatyp som inte stöds använder du: `SET skip_stats_for_complex_datatypes = false`.
+>The `Statistics ID` och den genererade statistiken är bara giltig för varje session och kan inte nås mellan olika PSQL-sessioner.<br><br>Begränsningar:<ul><li>Statistisk generering stöds inte för datatyperna array eller map</li><li>Beräknad statistik är **not** beständigt mellan sessioner.</li></ul><br><br>Alternativ:<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>Som standard är flaggan inställd på true. När statistik begärs för en datatyp som inte stöds, returneras alltså inga fel, men fält med datatyperna som inte stöds ignoreras.<br>Om du vill aktivera meddelanden om fel när statistik begärs för en datatyp som inte stöds använder du: `SET skip_stats_for_complex_datatypes = false`.
 
 Konsolutdata visas enligt nedan.
 
@@ -629,7 +629,7 @@ Du kan sedan ställa frågor direkt till den beräknade statistiken genom att re
 SELECT * FROM adc_geometric_stats_1;
 ```
 
-Använd `SHOW STATISTICS` om du vill visa metadata för alla temporära statistiktabeller som genereras i sessionen. Det här kommandot kan hjälpa dig att förfina omfattningen av din statistiska analys.
+Använd `SHOW STATISTICS` om du vill visa metadata för all temporär statistik som genereras i sessionen. Det här kommandot kan hjälpa dig att förfina omfattningen av din statistiska analys.
 
 ```sql
 SHOW STATISTICS;
