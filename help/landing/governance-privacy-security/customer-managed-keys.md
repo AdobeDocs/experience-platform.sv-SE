@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 04ed092d4514d1668068ed73a1be4400c6cd4d8e
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1772'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av sys
 
 >[!NOTE]
 >
->Data i Adobe Experience Platform datasjön och Profile Store (CosmosDB) krypteras med CMK.
+>Data i Adobe Experience Platform datasjön och Profile Store krypteras med CMK. Dessa betraktas som era primära datalager.
 
 Det här dokumentet beskriver processen för att aktivera funktionen för kundhanterade nycklar (CMK) i Platform.
 
@@ -37,16 +37,16 @@ CMK ingår i hälso- och sjukvårdsskölden och i skölden för skydd av privatl
 
 Processen är följande:
 
-1. [Konfigurera en [!DNL Azure] Nyckelvalv](#create-key-vault) baserat på organisationens policyer, och sedan [generera en krypteringsnyckel](#generate-a-key) som till slut kommer att delas med Adobe.
+1. [Konfigurera en [!DNL Azure] Key Vault](#create-key-vault) baserat på organisationens policyer, och sedan [generera en krypteringsnyckel](#generate-a-key) som till slut kommer att delas med Adobe.
 1. Använd API-anrop till [konfigurera CMK-appen](#register-app) med [!DNL Azure] tenant.
 1. Använd API-anrop till [skicka ditt krypteringsnyckel-ID till Adobe](#send-to-adobe) och starta aktiveringsprocessen för funktionen.
 1. [Kontrollera konfigurationsstatus](#check-status) för att kontrollera om CMK har aktiverats.
 
-När konfigurationen är klar krypteras alla data som är inbyggda i Platform i alla sandlådor med hjälp av [!DNL Azure] nyckelinställningar. Om du vill använda CMK använder du [!DNL Microsoft Azure] funktioner som kan vara en del av deras [förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
+När konfigurationen är klar krypteras alla data som är inbyggda i Platform i alla sandlådor med hjälp av [!DNL Azure] nyckelinställningar. Om du vill använda CMK använder du [!DNL Microsoft Azure] funktioner som kan vara en del av [offentligt förhandsvisningsprogram](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 
-## Konfigurera en [!DNL Azure] Nyckelvalv {#create-key-vault}
+## Konfigurera en [!DNL Azure] Key Vault {#create-key-vault}
 
-CMK stöder bara tangenter från en [!DNL Microsoft Azure] Nyckelvalv. För att komma igång måste du arbeta med [!DNL Azure] om du vill skapa ett nytt Enterprise-konto eller använda ett befintligt Enterprise-konto och följa stegen nedan för att skapa nyckelvalvet.
+CMK stöder bara tangenter från en [!DNL Microsoft Azure] Key Vault. För att komma igång måste du arbeta med [!DNL Azure] om du vill skapa ett nytt Enterprise-konto eller använda ett befintligt Enterprise-konto och följa stegen nedan för att skapa nyckelvalvet.
 
 >[!IMPORTANT]
 >
@@ -60,7 +60,7 @@ Logga in på [!DNL Azure] portalen och använd sökfältet för att hitta **[!DN
 
 ![Söka efter och markera nyckelvalv](../images/governance-privacy-security/customer-managed-keys/access-key-vaults.png)
 
-The **[!DNL Key vaults]** visas när du har valt tjänsten. Här väljer du **[!DNL Create]**.
+The **[!DNL Key vaults]** visas när du har valt tjänsten. Välj **[!DNL Create]**.
 
 ![Skapa nyckelvalv](../images/governance-privacy-security/customer-managed-keys/create-key-vault.png)
 
@@ -74,7 +74,7 @@ Fyll i grundläggande information för nyckelvalvet med hjälp av det angivna fo
 
 Här fortsätter du med arbetsflödet för att skapa nyckelvalv och konfigurerar de olika alternativen enligt din organisations policyer.
 
-När du har kommit till **[!DNL Review + create]** kan du granska informationen om nyckelvalvet medan det går igenom valideringen. När valideringen är klar väljer du **[!DNL Create]** för att slutföra processen.
+När du har kommit fram till **[!DNL Review + create]** kan du granska informationen om nyckelvalvet medan det går igenom valideringen. När valideringen är klar väljer du **[!DNL Create]** för att slutföra processen.
 
 ![Grundkonfiguration för nyckelvalvet](../images/governance-privacy-security/customer-managed-keys/finish-creation.png)
 
@@ -114,9 +114,9 @@ När du har konfigurerat nyckelvalvet är nästa steg att registrera dig för CM
 
 Om du registrerar CMK-appen måste du anropa API:er för plattformen. Mer information om hur du samlar in de autentiseringsrubriker som krävs för att ringa dessa samtal finns i [Autentiseringsguide för plattforms-API](../../landing/api-authentication.md).
 
-Autentiseringsguiden innehåller instruktioner om hur du genererar ett eget unikt värde för den `x-api-key` begäranhuvud, alla API-åtgärder i den här handboken använder det statiska värdet `acp_provisioning` i stället. Du måste fortfarande ange dina egna värden för `{ACCESS_TOKEN}` och `{ORG_ID}`, dock.
+Autentiseringsguiden innehåller instruktioner om hur du genererar ett eget unikt värde för den `x-api-key` begäranhuvud, används det statiska värdet för alla API-åtgärder i den här handboken `acp_provisioning` i stället. Du måste fortfarande ange dina egna värden för `{ACCESS_TOKEN}` och `{ORG_ID}`, dock.
 
-I alla API-anrop som visas i den här handboken `platform.adobe.io` används som rotsökväg, som är standard för VA7-regionen. Om din organisation använder en annan region, `platform` måste följas av ett bindestreck och regionkoden som tilldelats din organisation: `nld2` för NLD2 eller `aus5` för AUS5 (till exempel: `platform-aus5.adobe.io`). Kontakta systemadministratören om du inte känner till din organisations region.
+I alla API-anrop som visas i den här handboken `platform.adobe.io` används som rotsökväg, som är standard för VA7-regionen. Om din organisation använder en annan region `platform` måste följas av ett bindestreck och regionkoden som tilldelats din organisation: `nld2` för NLD2 eller `aus5` för AUS5 (till exempel: `platform-aus5.adobe.io`). Om du inte känner till din organisations region kontaktar du systemadministratören.
 
 ### Hämta en autentiserings-URL
 
@@ -152,7 +152,7 @@ Kopiera och klistra in `applicationRedirectUrl` till en webbläsare för att öp
 
 ### Tilldela CMK-appen till en roll {#assign-to-role}
 
-När du är klar med autentiseringsprocessen går du tillbaka till [!DNL Azure] Nyckelvalv och välj **[!DNL Access control]** i den vänstra navigeringen. Här väljer du **[!DNL Add]** följt av **[!DNL Add role assignment]**.
+När autentiseringsprocessen är klar går du tillbaka till [!DNL Azure] Nyckelvalv och välj **[!DNL Access control]** i den vänstra navigeringen. Välj **[!DNL Add]** följt av **[!DNL Add role assignment]**.
 
 ![Lägg till rolltilldelning](../images/governance-privacy-security/customer-managed-keys/add-role-assignment.png)
 
@@ -160,7 +160,7 @@ På nästa skärm får du en uppmaning om att välja en roll för uppdraget. Vä
 
 ![Välj roll](../images/governance-privacy-security/customer-managed-keys/select-role.png)
 
-På nästa skärm väljer du **[!DNL Select members]** för att öppna en dialogruta i den högra listen. Använd sökfältet för att hitta tjänstens huvudnamn för CMK-programmet och markera det i listan. När du är klar väljer du **[!DNL Save]**.
+Välj **[!DNL Select members]** för att öppna en dialogruta i den högra listen. Använd sökfältet för att hitta tjänstens huvudnamn för CMK-programmet och markera det i listan. När du är klar väljer du **[!DNL Save]**.
 
 >[!NOTE]
 >
@@ -168,7 +168,7 @@ På nästa skärm väljer du **[!DNL Select members]** för att öppna en dialog
 
 ## Aktivera krypteringsnyckelkonfigurationen i Experience Platform {#send-to-adobe}
 
-När du har installerat CMK-appen på [!DNL Azure]kan du skicka krypteringsnyckelns identifierare till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på den tangent som du vill skicka.
+Efter installation av CMK-appen på [!DNL Azure]kan du skicka krypteringsnyckelns identifierare till Adobe. Välj **[!DNL Keys]** i den vänstra navigeringen, följt av namnet på den tangent som du vill skicka.
 
 ![Välj tangent](../images/governance-privacy-security/customer-managed-keys/select-key.png)
 
@@ -242,7 +242,7 @@ Om du vill kontrollera statusen för konfigurationsbegäran kan du göra en GET-
 
 **Begäran**
 
-Du måste lägga till `name` för konfigurationen som du vill kontrollera till sökvägen (`config1` i exemplet nedan) och inkludera en `configType` frågeparameter inställd på `BYOK_CONFIG`.
+Du måste lägga till `name` för konfigurationen som du vill kontrollera till sökvägen (`config1` i exemplet nedan) och ta med en `configType` frågeparameter inställd på `BYOK_CONFIG`.
 
 ```shell
 curl -X GET \
@@ -278,16 +278,25 @@ Ett lyckat svar returnerar jobbets status.
 The `status` -attribut kan ha ett av fyra värden med följande betydelse:
 
 1. `RUNNING`: Verifierar att plattformen har åtkomst till nyckel- och nyckelvalvet.
-1. `UPDATE_EXISTING_RESOURCES`: Systemet lägger till nyckelvalvet och nyckelnamnet i datalagret över alla sandlådor i organisationen.
+1. `UPDATE_EXISTING_RESOURCES`: Nyckelvalvet och nyckelnamnet läggs till i datalagret över alla sandlådor i organisationen.
 1. `COMPLETED`: Nyckelvalvet och nyckelnamnet har lagts till i datalagret.
 1. `FAILED`: Ett problem uppstod, huvudsakligen relaterat till nyckeln, nyckelvalvet eller konfigurationen av multi-tenant-appar.
 
-## Nästa steg
+## Återkalla åtkomst {#revoke-access}
 
-Genom att utföra ovanstående steg har du aktiverat CMK för din organisation. Data som hämtas till Platform krypteras och dekrypteras nu med hjälp av nycklarna i [!DNL Azure] Nyckelvalv. Om du vill återkalla plattformsåtkomst till dina data kan du ta bort den användarroll som är associerad med programmet från nyckelvalvet i [!DNL Azure].
-
-När åtkomsten till programmet har inaktiverats kan det ta från några minuter till 24 timmar innan data inte längre är tillgängliga i Platform. Samma tidsfördröjning gäller för data som ska bli tillgängliga igen när åtkomsten till programmet återaktiveras.
+Om du vill återkalla plattformsåtkomst till dina data kan du ta bort den användarroll som är associerad med programmet från nyckelvalvet i [!DNL Azure].
 
 >[!WARNING]
 >
->När Key Vault-, Key- eller CMK-appen är inaktiverad och data inte längre är tillgängliga i Platform, kommer eventuella åtgärder som rör dessa data inte längre att vara möjliga. Se till att du förstår vilka konsekvenser det kan få om plattformsåtkomst till dina data återkallas längre fram i kedjan innan du gör några ändringar i konfigurationen.
+>Om du inaktiverar nyckelvalvet, tangenten eller CMK-appen kan det leda till en förändring. När nyckelvalvet, nyckeln eller CMK-appen är inaktiverad och data inte längre är tillgängliga i Platform, kommer eventuella åtgärder som rör dessa data inte längre att vara möjliga. Se till att du förstår vilka konsekvenser det kan få om plattformsåtkomst återkallas längre fram i kedjan innan du gör några ändringar i konfigurationen.
+
+När du har tagit bort tangentåtkomsten eller inaktiverat/tagit bort nyckeln från [!DNL Azure] nyckelvalv, det kan ta från några minuter till 24 timmar att sprida den här konfigurationen till primära datalager. Plattformsarbetsflödena omfattar även cachelagrade och tillfälliga datalager som krävs för prestanda och centrala programfunktioner. Spridningen av CMK-spärrning via sådana cachelagrade och tillfälliga butiker kan ta upp till sju dagar enligt deras arbetsflöden för databehandling. Detta innebär till exempel att kontrollpanelen Profil behåller och visar data från sitt cache-datalager och tar sju dagar att förfalla data som lagras i cache-datalager som en del av uppdateringscykeln. Samma tidsfördröjning gäller för data som ska bli tillgängliga igen när åtkomsten till programmet återaktiveras.
+
+>[!NOTE]
+>
+>Det finns två användningsspecifika undantag för sju dagars datauppsättning som förfaller på icke-primära (cachelagrade/tillfälliga) data. Mer information om dessa funktioner finns i respektive dokumentation.<ul><li>[Adobe Journey Optimizer URL Shortener](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html#message-preset-sms)</li><li>[Kantprojektioner](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html#edge-projections)</li></ul>
+
+## Nästa steg
+
+Genom att utföra ovanstående steg har du aktiverat CMK för din organisation. Data som hämtas till primära datalager krypteras och dekrypteras nu med nycklarna i [!DNL Azure] Key Vault.
+
