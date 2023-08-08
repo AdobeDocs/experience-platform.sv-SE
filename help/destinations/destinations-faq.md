@@ -3,9 +3,9 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 810bcd011fd6e172c79f4482e047aa6e715c3918
+source-git-commit: 75b9cc3e2c9a18ec8c08c9c3ca774accae31eb7e
 workflow-type: tm+mt
-source-wordcount: '1528'
+source-wordcount: '1635'
 ht-degree: 2%
 
 ---
@@ -143,6 +143,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 
 +++Svar
 [!DNL LinkedIn Matched Audiences] stöder aktivering av följande identiteter: hash-kodade e-postmeddelanden, [!DNL GAID]och [!DNL IDFA].
+
 +++
 
 ## Personalisering på samma sida och nästa sida via Adobe Target och anpassade anpassningsmål {#same-next-page-personalization}
@@ -204,3 +205,20 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 +++Besvara Ja. The [Datastyrnings- och godkännandeprinciper](../data-governance/home.md) som har skapats och associerats med de valda marknadsföringsåtgärderna styr aktiveringen av de valda attributen.
 +++
+
+### Är [!DNL Adobe Target] och [!DNL Custom Personalization] mål [!DNL HIPAA]-kompatibel?
+
++++Svar
+[!DNL Adobe Target] är inte [!DNL HIPPA]-kompatibel med [[!DNL Adobe Healthcare Shield]](https://business.adobe.com/solutions/industries/healthcare.html). Kunderna bör höra med sina egna jurister om [!DNL HIPPA]-beredskap för anpassade optimeringskanaler innan ni använder kantanpassning via [!DNL Adobe Target] eller [!DNL Custom Personalization] destinationer.
+
+I de fall där samtyckespolicyhantering måste tillämpas i stor skala måste kunderna köpa [!DNL Adobe Privacy & Security Shield]. [!DNL Adobe Privacy & Security Shield] funktioner säljs som en avancerad uppsättning funktioner och kan inte köpas separat.
+
+Den här tjänsten innehåller kundhanterade nycklar och förhöjda tröskelvärden för hantering av kundens datalängd.
+
+The [!DNL Adobe Target] och [!DNL Custom Personalization] destinationerna är integrerade med [Etiketter för dataanvändning i Experience Platform](../data-governance/labels/overview.md) och [Tvingande bekräftelsetjänst](../data-governance/enforcement/overview.md). De här funktionerna är tillgängliga för alla kunder.
+
+
+
+
++++
+
