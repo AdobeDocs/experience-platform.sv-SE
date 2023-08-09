@@ -3,9 +3,9 @@ title: Intelligent återanvändning
 description: Leverera övertygande och sammanhängande upplevelser under de viktiga konverteringstunderna för att på ett intelligent sätt engagera ovanliga kunder.
 hide: true
 hidefromtoc: true
-source-git-commit: 4f0902b874d5e8179c009ad3b603e008b9a22bb4
+source-git-commit: 290c914216c1af070e065a38f726e2028c2cea8c
 workflow-type: tm+mt
-source-wordcount: '3440'
+source-wordcount: '3426'
 ht-degree: 2%
 
 ---
@@ -110,9 +110,7 @@ Om du vill skapa ett schema följer du stegen nedan:
 
 Mer information om att skapa scheman finns i [skapa schemakurs.](/help/xdm/tutorials/create-schema-ui.md)
 
-Det finns fyra schemadesigner som används för återengagemangsresan.
-
-Varje schema kräver att specifika fält ställs in, samt vissa fält som är starkt rekommenderade.
+Det finns fyra schemadesigner som används för återengagemangsresan. Varje schema kräver att specifika fält ställs in, samt vissa fält som är starkt rekommenderade.
 
 #### Fältgruppskrav för kundattributschemat
 
@@ -315,8 +313,6 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 
 Adobe webbanslutningsschema är en [!UICONTROL XDM ExperienceEvent] schema, som innehåller följande fältgrupper:
 
-Fältgrupperna som krävs för Experience Event Schema för Adobe Analytics Data Feed är:
-
 +++Adobe Analytics ExperienceEvent-mall (fältgrupp)
 
 | Fält | Krav | Beskrivning |
@@ -382,8 +378,6 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 +++
 
 ![Adobe webbanslutningsschema markerar listan med fältgrupper.](../intelligent-re-engagement/images/adobe-web-connector.png)
-
->[!ENDTABS]
 
 ### Skapa en datauppsättning från ett schema
 
