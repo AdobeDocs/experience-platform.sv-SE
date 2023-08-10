@@ -3,9 +3,9 @@ title: Använd partnerstödd besöksidentifiering för att personalisera uppleve
 description: Lär dig hur du använder partnerstödd besöksigenkänning för att leverera personaliserade upplevelser på plats till besökarna.
 hide: true
 hidefromtoc: true
-source-git-commit: f63cddc1158e739ce26e0ce1d3d54b491bd80c06
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2386'
 ht-degree: 0%
 
 ---
@@ -191,7 +191,7 @@ Namnge dataelementet `partnerData`lämnar du [!UICONTROL extension] värde som [
 
 Ange det andra dataelementets namn för den nya variabeln `pageVisit`, ange **[!UICONTROL Extension]** till **[!UICONTROL Adobe Experience Platform]** och välja **[!UICONTROL XDM Object]** som datatyp.
 
-![Markerade markeringar för att korrekt konfigurera dataelementet pageVisit.](/help/rtcdp/assets/partner-data/onsite-personalization/page-visit-data-element.png)
+![Markerade markeringar för att konfigurera dataelementet pageVisit korrekt.](/help/rtcdp/assets/partner-data/onsite-personalization/page-visit-data-element.png)
 
 I schemat väljer du de tredjepartsattribut som motsvarar de värden som du förväntar dig från dataparten. Markera sedan alternativknappen med namnet **[!UICONTROL Provide entire object]**. Markera ikonen som ser ut som en databas och välj `partnerData` dataelement som du skapade tidigare.
 

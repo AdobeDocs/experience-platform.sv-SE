@@ -2,9 +2,9 @@
 title: Värdslutpunkt
 description: Lär dig hur du anropar slutpunkten /hosts i Reaktors API.
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
-source-git-commit: 905384b3190cd55e7caa9c4560d6b2774280eee7
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '796'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 >
 >I det här dokumentet beskrivs hur du hanterar värdar i Reaktors API. Mer allmän information om värdar för taggar finns i handboken om [Översikt över värdar](../../ui/publishing/hosts/hosts-overview.md) i publiceringsdokumentationen.
 
-I Reactor API definierar en värd ett mål där [bygga](./builds.md) kan levereras.
+I Reactor API definierar en värd ett mål där [bygg](./builds.md) kan levereras.
 
 När ett bygge begärs av en tagganvändare i Adobe Experience Platform kontrollerar systemet biblioteket för att avgöra vilken [miljö](./environments.md) biblioteket ska byggas på. Varje miljö har en relation med en värd som visar var bygget ska levereras.
 
@@ -25,7 +25,7 @@ En värd kan användas av mer än en miljö i en egenskap. Det är vanligt att h
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med värdar {#list}
 
@@ -45,7 +45,7 @@ GET /properties/{PROPERTY_ID}/hosts
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade värdar filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade värdar filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -194,7 +194,7 @@ POST /properties/{PROPERTY_ID}/hosts
 
 **Begäran**
 
-Följande begäran skapar en ny värd för den angivna egenskapen. Anropet associerar även värden med ett befintligt tillägg via `relationships` -egenskap. Se guiden [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar en ny värd för den angivna egenskapen. Anropet associerar även värden med ett befintligt tillägg via `relationships` -egenskap. Se guiden på [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
@@ -398,7 +398,7 @@ Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) utan svarstext, vil
 
 Följande anrop visar hur du hämtar relaterade resurser för en värd. När [söka efter en värd](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
 ### Söka efter den relaterade egenskapen för en värd {#property}
 

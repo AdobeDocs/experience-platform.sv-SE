@@ -1,10 +1,10 @@
 ---
 title: Slutpunkt för dataelement
-description: Lär dig hur du anropar slutpunkten /data_elements i Reaktors-API:t.
+description: Lär dig hur du anropar slutpunkten /data_elements i Reaktors API.
 exl-id: ea346682-441b-415b-af06-094158eb7c71
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1369'
+source-wordcount: '1368'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ Mer allmän information om dataelement och hur de används i taggar finns i [dat
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med dataelement {#list}
 
@@ -41,7 +41,7 @@ GET /properties/{PROPERTY_ID}/data_elements
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade dataelement filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade dataelement filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -320,7 +320,7 @@ POST /properties/{PROPERTY_ID}/data_elements
 
 **Begäran**
 
-Följande begäran skapar ett nytt dataelement för den angivna egenskapen. Anropet associerar även dataelementet med ett befintligt tillägg via `relationships` -egenskap. Se guiden [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar ett nytt dataelement för den angivna egenskapen. Anropet associerar även dataelementet med ett befintligt tillägg via `relationships` -egenskap. Se guiden på [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
@@ -356,7 +356,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för dataelementet. |
-| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** En formaterad sträng som associerar dataelementet med ett tilläggspaket. Alla dataelement måste kopplas till ett tilläggspaket när de skapas, eftersom varje tilläggspaket definierar kompatibla typer för sina delegatdataelement samt deras avsedda beteende. Se guiden [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
+| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** En formaterad sträng som associerar dataelementet med ett tilläggspaket. Alla dataelement måste kopplas till ett tilläggspaket när de skapas, eftersom varje tilläggspaket definierar kompatibla typer för sina delegatdataelement samt deras avsedda beteende. Se guiden på [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 | `attributes.default_value` | Ett standardvärde som returneras om dataelementet utvärderas till `undefined`. |
 | `attributes.enabled` | Ett booleskt värde som anger om dataelementet är aktiverat. |
@@ -516,7 +516,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett godkänt svar returnerar information om det uppdaterade dataelementet.
+Ett lyckat svar returnerar information om det uppdaterade dataelementet.
 
 ```json
 {
@@ -806,7 +806,7 @@ Dataelement är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du k
 
 Följande anrop visar hur du hämtar relaterade resurser för ett dataelement. När [söka efter ett dataelement](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
 ### Lista de relaterade biblioteken för ett dataelement {#libraries}
 
@@ -960,7 +960,7 @@ curl -X GET \
 
 **Svar**
 
-Ett lyckat svar returnerar en lista med revisioner för det angivna dataelementet.
+Ett lyckat svar returnerar en lista med revideringar för det angivna dataelementet.
 
 ```json
 {
@@ -1314,7 +1314,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar detaljerna om det angivna dataelementets ursprung.
+Ett lyckat svar returnerar detaljerna om det angivna dataelementets ursprung.
 
 ```json
 {

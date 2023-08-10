@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: c456d02e746c160c1d133d0b4358415edffaa6f8
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1744'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -17,15 +17,15 @@ Identitetsnamnutrymmen är en komponent i [[!DNL Identity Service]](./home.md) s
 
 Att arbeta med identitetsnamnutrymmen kräver förståelse för de olika Adobe Experience Platform-tjänsterna. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-Time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Real-Time Customer Profile]](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 - [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
+- [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser, som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
 
 ## Identitetsnamnutrymmen
 
 En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
 
-Två profilfragment kan till exempel innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;, vilket innebär att [!DNL Platform] kan se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för den individens identitet.
+Två profilfragment kan till exempel innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;, vilket innebär att [!DNL Platform] kan se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för den enskilda personen.
 
 ![](images/identity-service-stitching.png)
 
@@ -44,12 +44,12 @@ Följande identitetstyper är tillgängliga i [!DNL Platform]:
 | Identitetstyp | Beskrivning |
 | --- | --- |
 | Cookie-ID | Cookie-ID:n identifierar webbläsare. Dessa identiteter är viktiga för expansion och utgör huvuddelen av identitetsdiagrammet. Av naturen sjunker de dock snabbt och förlorar sitt värde över tiden. |
-| Enhets-ID | Enhetsoberoende ID:n identifierar en individ och knyter vanligtvis samman andra ID:n. Exempel är inloggnings-ID, CRM-ID och lojalitets-ID. Detta är en indikation på [!DNL Identity Service] för att hantera värdet känsligt. |
+| Enhets-ID | Enhetsoberoende ID:n identifierar en individ och knyter vanligtvis samman andra ID:n. Exempel är inloggnings-ID, CRM-ID och lojalitets-ID. Detta är en indikation på att [!DNL Identity Service] för att hantera värdet känsligt. |
 | Enhets-ID | Enhets-ID:n identifierar maskinvaruenheter som IDFA (iPhone och iPad), GAID (Android) och RIDA (Roku) och kan delas av flera personer i hushåll. |
-| E-postadress | E-postadresser är ofta kopplade till en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen omfattar personligt identifierbar information (PII). Detta är en indikation på [!DNL Identity Service] för att hantera värdet känsligt. |
+| E-postadress | E-postadresser är ofta kopplade till en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen omfattar personligt identifierbar information (PII). Detta är en indikation på att [!DNL Identity Service] för att hantera värdet känsligt. |
 | Identifierare för icke-personer | ID:n som inte är personer används för att lagra identifierare som kräver namnutrymmen men som inte är anslutna till ett personkluster. Till exempel en produkt-SKU, data relaterade till produkter, organisationer eller butiker. |
-| Partner-ID [!BADGE Beta]{type=Informative} | <ul><li>Partner-ID:n är identifierare som används av datapartners för att representera människor. Partners-ID:n är ofta pseudonyma så att de inte avslöjar en persons sanna identitet och kan vara sannolika. I Real-time Customer Data Platform används partner-ID:n i första hand för utökad målgruppsaktivering och dataredigering, och inte för att skapa länkar till identitetsdiagram.</li><li>Identitetsdiagram genereras inte vid inmatning av en identitet som innehåller ett identitetsnamnområde som har angetts som Partner ID-typ.</li><li>Om partnerdata inte importeras med identitetstypen för partner-ID kan det leda till systemdiagrambegränsningar för identitetstjänsten samt oönskad sammanslagning av profiler.</li><ul> |
-| Telefonnummer | Telefonnummer är ofta associerade med en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen är PII. Detta indikerar att [!DNL Identity Service] för att hantera värdet känsligt. |
+| Partner-ID [!BADGE Beta]{type=Informative} | <ul><li>Partner-ID:n är identifierare som används av datapartners för att representera människor. Partners-ID:n är ofta pseudonyma så att de inte avslöjar en persons sanna identitet och kan vara sannolika. I Real-time Customer Data Platform används partner-ID:n i första hand för att öka målgruppsaktiveringen och förbättra data, och inte för att skapa länkar till identitetsdiagram.</li><li>Identitetsdiagram genereras inte vid inmatning av en identitet som innehåller ett identitetsnamnområde som har angetts som Partner ID-typ.</li><li>Om partnerdata inte importeras med identitetstypen för partner-ID kan det leda till systemdiagrambegränsningar för identitetstjänsten samt oönskad sammanslagning av profiler.</li><ul> |
+| Telefonnummer | Telefonnummer är ofta associerade med en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen är PII. Detta är en indikation på [!DNL Identity Service] för att hantera värdet känsligt. |
 
 {style="table-layout:auto"}
 
@@ -65,10 +65,10 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 | Adobe Analytics (äldre ID) | Ett namnutrymme som representerar Adobe Analytics. Se följande dokument på [Adobe Analytics namnutrymmen](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html?lang=en#namespaces) för mer information. |
 | Apple IDFA (ID för annonsörer) | Ett namnutrymme som representerar Apple ID för annonsörer. Se följande dokument på [räntebaserade annonser](https://support.apple.com/en-us/HT202074) för mer information. |
 | Tjänsten Apple Push Notification | Ett namnutrymme som representerar identiteter som samlats in med tjänsten Apple Push Notification. Se följande dokument på [Tjänsten Apple Push Notification](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1) för mer information. |
-| CORE | Ett namnutrymme som representerar Adobe Audience Manager. Det här namnutrymmet kan även refereras till med det äldre namnet: &quot;Adobe AudienceManager&quot;. Se följande dokument på [Audience Manager-ID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-reference/data-privacy-ids.html?lang=en#aam-ids) för mer information. |
-| ECID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras till av följande alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](./ecid.md) för mer information. |
+| CORE | Ett namnutrymme som representerar Adobe Audience Manager. Det här namnutrymmet kan också refereras till med det äldre namnet: &quot;Adobe AudienceManager&quot;. Se följande dokument på [Audience Manager-ID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-reference/data-privacy-ids.html?lang=en#aam-ids) för mer information. |
+| ECID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](./ecid.md) för mer information. |
 | E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
-| E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Se följande dokument på [Stöd för SHA256-hashning](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) för mer information. |
+| E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Se följande dokument på [SHA256-hashstöd](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) för mer information. |
 | Firebase Cloud Messaging | Ett namnutrymme som representerar identiteter som samlats in med Google Firebase Cloud Messaging för push-meddelanden. Se följande dokument på [Google Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) för mer information. |
 | Google Ad ID (GAID) | Ett namnutrymme som representerar ett Google Advertising ID. Se följande dokument på [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) för mer information. |
 | Google Click ID | Ett namnutrymme som representerar ett Google Click-ID. Se följande dokument på [Klickspårning i Google Ads](https://developers.google.com/adwords/api/docs/guides/click-tracking) för mer information. |

@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera källspecifikationer för självbetjäningskällor (batch-SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: b1173adb0e0c3a6460b2cb15cba9218ddad7abcb
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -238,8 +238,8 @@ Se [appendix](#source-spec) för ett exempel på en fullt ifylld källspecifikat
 | `sourceSpec.attributes.uiAttributes.label` | Visar den etikett som ska användas för återgivning av källan i plattformsgränssnittet. |
 | `sourceSpec.attributes.spec.properties.urlParams` | Innehåller information om URL-resursens sökväg, metod och vilka frågeparametrar som stöds. |
 | `sourceSpec.attributes.spec.properties.urlParams.properties.path` | Definierar resurssökvägen varifrån data ska hämtas. | `/3.0/reports/${campaignId}/email-activity` |
-| `sourceSpec.attributes.spec.properties.urlParams.properties.method` | Definierar den HTTP-metod som ska användas för att begära att resursen hämtar data. | `GET`, `POST` |
-| `sourceSpec.attributes.spec.properties.urlParams.properties.queryParams` | Definierar de frågeparametrar som stöds och som kan användas för att lägga till käll-URL:en när data hämtas. **Anteckning**: Alla användartillhandahållna parametervärden måste formateras som platshållare. Exempel: `${USER_PARAMETER}`. | `"queryParams" : {"key" : "value", "key1" : "value1"}` läggs till i käll-URL:en som: `/?key=value&key1=value1` |
+| `sourceSpec.attributes.spec.properties.urlParams.properties.method` | Definierar den HTTP-metod som ska användas för att göra en begäran till resursen om att hämta data. | `GET`, `POST` |
+| `sourceSpec.attributes.spec.properties.urlParams.properties.queryParams` | Definierar de frågeparametrar som stöds och som kan användas för att lägga till käll-URL:en när data hämtas. **Anteckning**: Alla användardefinierade parametervärden måste formateras som platshållare. Exempel: `${USER_PARAMETER}`. | `"queryParams" : {"key" : "value", "key1" : "value1"}` läggs till i käll-URL:en som: `/?key=value&key1=value1` |
 | `sourceSpec.attributes.spec.properties.spec.properties.headerParams` | Definierar rubriker som måste anges i HTTP-begäran till käll-URL:en när data hämtas. | `"headerParams" : {"Content-Type" : "application/json", "x-api-key" : "key"}` |
 | `sourceSpec.attributes.spec.properties.bodyParams` | Det här attributet kan konfigureras för att skicka HTTP-brödtext via en POST-begäran. |
 | `sourceSpec.attributes.spec.properties.contentPath` | Definierar noden som innehåller listan med objekt som krävs för att kopplas till plattformen. Attributet ska följa giltig JSON-sökvägssyntax och peka på en viss array. | Visa [sektion med ytterligare resurser](#content-path) för ett exempel på resursen som finns i en innehållssökväg. |
@@ -253,8 +253,8 @@ Se [appendix](#source-spec) för ett exempel på en fullt ifylld källspecifikat
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.keepAttributes` | Med den här egenskapen kan du uttryckligen ange de enskilda attribut som du vill behålla. | `[total_items]` |
 | `sourceSpec.attributes.spec.properties.explodeEntityPath.overrideWrapperAttribute` | Med den här egenskapen kan du åsidosätta värdet för attributnamnet som du angav i `explodeEntityPath`. | `activity` |
 | `sourceSpec.attributes.spec.properties.paginationParams` | Definierar de parametrar eller fält som måste anges för att få en länk till nästa sida från användarens aktuella sidsvar, eller när en URL för nästa sida skapas. |
-| `sourceSpec.attributes.spec.properties.paginationParams.type` | Visar vilken typ av sidnumrering som stöds för källan. | <ul><li>`OFFSET`: Med den här sidnumreringstypen kan du tolka resultaten genom att ange ett index från vilken den resulterande arrayen ska startas och en gräns för hur många resultat som returneras.</li><li>`POINTER`: Med den här sidnumreringstypen kan du använda en `pointer` variabel för att peka på ett visst objekt som behöver skickas med en begäran. Sidnumreringen av pekartypen kräver en sökväg i nyttolasten som pekar på nästa sida.</li><li>`CONTINUATION_TOKEN`: Med den här sidnumreringstypen kan du lägga till en token för fråga- eller rubrikparametrar för att hämta återstående returdata från källan, som inte returnerades från början på grund av ett fördefinierat maxvärde.</li><li>`PAGE`: Med den här sidnumreringstypen kan du lägga till frågeparametern med en sidindelningsparameter för att gå igenom returdata för sidor, med början från sidan noll.</li><li>`NONE`: Den här sidnumreringstypen kan användas för källor som inte stöder någon av de tillgängliga sidnumreringstyperna. Sidnumreringstyp `NONE` returnerar hela svarsdata efter en begäran.</li></ul> |
-| `sourceSpec.attributes.spec.properties.paginationParams.limitName` | Namnet på gränsen genom vilken API:t kan ange antalet poster som ska hämtas på en sida. | `limit` eller `count` |
+| `sourceSpec.attributes.spec.properties.paginationParams.type` | Visar vilken typ av sidnumrering som stöds för källan. | <ul><li>`OFFSET`: Den här sidnumreringstypen gör att du kan tolka resultatet genom att ange ett index från vilket den resulterande arrayen ska startas och en gräns för hur många resultat som returneras.</li><li>`POINTER`: Den här sidnumreringstypen gör att du kan använda en `pointer` variabel för att peka på ett visst objekt som behöver skickas med en begäran. Sidnumreringen av pekartypen kräver en sökväg i nyttolasten som pekar på nästa sida.</li><li>`CONTINUATION_TOKEN`: Den här sidnumreringstypen gör att du kan lägga till en token för fråga- eller rubrikparametrar för att hämta återstående returdata från källan, som inte returnerades från början på grund av ett fördefinierat maxvärde.</li><li>`PAGE`: Den här sidnumreringstypen gör att du kan lägga till frågeparametern med en sidindelningsparameter för att gå igenom returdata för sidor, med början från sidan noll.</li><li>`NONE`: Den här sidnumreringstypen kan användas för källor som inte stöder någon av de tillgängliga sidnumreringstyperna. Sidnumreringstyp `NONE` returnerar hela svarsdata efter en begäran.</li></ul> |
+| `sourceSpec.attributes.spec.properties.paginationParams.limitName` | Namnet på den gräns genom vilken API:t kan ange antalet poster som ska hämtas på en sida. | `limit` eller `count` |
 | `sourceSpec.attributes.spec.properties.paginationParams.limitValue` | Antalet poster som ska hämtas på en sida. | `limit=10` eller `count=10` |
 | `sourceSpec.attributes.spec.properties.paginationParams.offSetName` | Förskjutningsattributets namn. Detta krävs om sidnumreringstypen är inställd på `offset`. | `offset` |
 | `sourceSpec.attributes.spec.properties.paginationParams.pointerPath` | Pekarens attributnamn. Detta kräver JSON-sökväg till attributet som pekar på nästa sida. Detta krävs om sidnumreringstypen är inställd på `pointer`. | `pointer` |
@@ -263,13 +263,13 @@ Se [appendix](#source-spec) för ett exempel på en fullt ifylld källspecifikat
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleEndParamName` | Definierar sluttidsparameterns namn | `before_last_changed` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleStartParamFormat` | Definierar det format som stöds för `scheduleStartParamName`. | `yyyy-MM-ddTHH:mm:ssZ` |
 | `sourceSpec.attributes.spec.properties.scheduleParams.scheduleEndParamFormat` | Definierar det format som stöds för `scheduleEndParamName`. | `yyyy-MM-ddTHH:mm:ssZ` |
-| `sourceSpec.spec.properties` | Definierar de parametrar som användaren anger för att hämta resursvärden. | Se [ytterligare resurser](#user-input) för ett exempel på användarangivna parametrar för `spec.properties`. |
+| `sourceSpec.spec.properties` | Definierar de parametrar som användaren anger för att hämta resursvärden. | Se [ytterligare resurser](#user-input) till exempel användarangivna parametrar för `spec.properties`. |
 
 {style="table-layout:auto"}
 
 ## Ytterligare resurser {#appendix}
 
-I följande avsnitt finns information om ytterligare konfigurationer som du kan göra för dina `sourceSpec`, inklusive avancerad schemaläggning och anpassade scheman.
+I följande avsnitt finns information om ytterligare konfigurationer som du kan göra för dina `sourceSpec`, inklusive avancerade scheman och anpassade scheman.
 
 ### Exempel på innehållssökväg {#content-path}
 
@@ -291,7 +291,7 @@ Här följer ett exempel på innehållet i `contentPath` egenskap i en [!DNL Mai
 
 Följande är ett exempel på en användare `spec.properties` med [!DNL MailChimp Members] anslutningsspecifikation.
 
-I det här exemplet `listId` tillhandahålls som en del av `urlParams.path`. Om du behöver hämta `listId` från en kund måste ni också definiera den som en del av `spec.properties`.
+I detta exempel `listId` tillhandahålls som en del av `urlParams.path`. Om du behöver hämta `listId` från en kund måste ni också definiera den som en del av `spec.properties`.
 
 
 ```json
@@ -401,7 +401,7 @@ En källa som stöder typen fortsättning av token för sidnumrering kan ha en s
 | --- | --- |
 | `type` | Den typ av sidnumrering som används för att returnera data. |
 | `continuationTokenPath` | Värdet som måste läggas till i frågeparametrarna för att kunna gå till nästa sida i de returnerade resultaten. |
-| `parameterType` | The `parameterType` egenskapen definierar var `parameterName` måste läggas till. The `QUERYPARAM` kan du lägga till din fråga med `parameterName`. The `HEADERPARAM` kan du lägga till `parameterName` till rubrikbegäran. |
+| `parameterType` | The `parameterType` egenskapen definierar var `parameterName` måste läggas till. The `QUERYPARAM` kan du lägga till din fråga med `parameterName`. The `HEADERPARAM` kan du lägga till `parameterName` till din rubrikförfrågan. |
 | `parameterName` | Namnet på den parameter som används för att inkludera en fortsättningssymbol. Formatet är följande: `{PARAMETER_NAME}={CONTINUATION_TOKEN}`. |
 | `delayRequestMillis` | The `delayRequestMillis` sidnumreringsegenskapen gör att du kan styra hur många begäranden som görs till källan. Vissa källor kan ha en gräns för hur många begäranden du kan göra per minut. Till exempel: [!DNL Zendesk] har en gräns på 100 begäranden per minut och definierar  `delayRequestMillis` till `850` Med kan du konfigurera källan så att den kan ringa samtal med ungefär 80 förfrågningar per minut, vilket är mycket mindre än tröskelvärdet på 100 förfrågningar per minut. |
 
@@ -451,12 +451,12 @@ The `PAGE` sidnumreringstypen gör att du kan gå igenom returdata efter antal s
 | Egenskap | Beskrivning |
 | --- | --- |
 | `type` | Den typ av sidnumrering som används för att returnera data. |
-| `limitName` | Namnet på gränsen genom vilken API:t kan ange antalet poster som ska hämtas på en sida. |
+| `limitName` | Namnet på den gräns genom vilken API:t kan ange antalet poster som ska hämtas på en sida. |
 | `limitValue` | Antalet poster som ska hämtas på en sida. |
-| `initialPageIndex` | (Valfritt) Det inledande sidindexet definierar det sidnummer från vilket sidnumreringen börjar. Det här fältet kan användas för källor där sidnumreringen inte börjar från 0. Om inget anges används standardvärdet 0 för det inledande sidindexet. Det här fältet förväntar sig ett heltal. |
+| `initialPageIndex` | (Valfritt) Det inledande sidindexet definierar det sidnummer från vilket sidnumreringen börjar. Det här fältet kan användas för källor där sidnumreringen inte börjar från 0. Om inget anges används standardvärdet 0 för det inledande sidindexet. Fältet förväntar ett heltal. |
 | `endPageIndex` | (Valfritt) Med hjälp av indexvärdet för slutsidan kan du skapa ett slutvillkor och stoppa sidnumreringen. Det här fältet kan användas när standardslutvillkoren för att stoppa sidnumrering inte är tillgängliga. Det här fältet kan också användas om antalet sidor som ska hämtas eller det sista sidnumret anges via svarshuvudet, som är vanligt när du använder `PAGE` typnumrering. Värdet för indexvärdet för slutsidan kan antingen vara det sista sidnumret eller ett strängtypsuttryck från svarshuvudet. Du kan till exempel använda `headers.x-pagecount` om du vill tilldela slutsidesindex till `x-pagecount` från svarshuvuden. **Anteckning**: `x-pagecount` är ett obligatoriskt svarshuvud för vissa källor och innehåller värdet för antal sidor som ska importeras. |
 | `pageParamName` | Namnet på den parameter som du måste lägga till i frågeparametrar för att kunna gå igenom olika sidor i returdata. Till exempel: `https://abc.com?pageIndex=1` skulle returnera den andra sidan av en API:s returnyttolast. |
-| `maximumRequest` | Det maximala antalet begäranden som en källa kan göra för en given inkrementell körning. Den aktuella standardgränsen är 10000. |
+| `maximumRequest` | Det maximala antalet begäranden som en källa kan göra för en given stegvis körning. Den aktuella standardgränsen är 10000. |
 
 {style="table-layout:auto"}
 
@@ -489,11 +489,11 @@ Med avancerad schemaläggning kan du använda uttryck och funktioner som är spe
 | Egenskap | Beskrivning |
 | --- | --- |
 | `scheduleParams.type` | Typen av schemaläggning som källan kommer att använda. Ange det här värdet till `ADVANCE` om du vill använda den avancerade schemaläggningstypen. |
-| `scheduleParams.paramFormat` | Det definierade formatet för din schemaläggningsparameter. Detta värde kan vara samma som källans `scheduleStartParamFormat` och `scheduleEndParamFormat` värden. |
+| `scheduleParams.paramFormat` | Det definierade formatet för din schemaläggningsparameter. Det här värdet kan vara samma som källans `scheduleStartParamFormat` och `scheduleEndParamFormat` värden. |
 | `scheduleParams.incremental` | Den inkrementella frågan för källan. Stegvis innebär en metod för intag där endast nya eller ändrade data har importerats. |
 | `scheduleParams.backfill` | Källans bakgrundsfyllningsfråga. Backfill avser en ingestionsmetod där historiska data är inmatade. |
 
-När du har konfigurerat din avancerade schemaläggning måste du se `scheduleParams` i avsnittet för URL-, body- eller rubrikparametrar, beroende på vad din källa stöder. I exemplet nedan `{SCHEDULE_QUERY}` är en platshållare som används för att ange var inkrementella schemaläggningsuttryck och schemaläggningsuttryck för bakåtfyllnad ska användas. Om [!DNL Zendesk] källa, `query` används i `queryParams` för att ange avancerad schemaläggning.
+När du har konfigurerat din avancerade schemaläggning måste du se `scheduleParams` i avsnittet för URL-, body- eller rubrikparametrar, beroende på vad din källa stöder. I exemplet nedan `{SCHEDULE_QUERY}` är en platshållare som används för att ange var inkrementella schemaläggningsuttryck och schemaläggningsuttryck för bakåtfyllnad ska användas. I fallet med [!DNL Zendesk] källa, `query` används i `queryParams` för att ange avancerad schemaläggning.
 
 ```json
 "urlParams": {
@@ -611,4 +611,4 @@ Följande är ett exempel på ett anpassat schema som du kan lägga till i käll
 
 ## Nästa steg
 
-När källspecifikationerna är ifyllda kan du fortsätta att konfigurera utforska specifikationerna för den källa som du vill integrera med plattformen. Se dokumentet på [konfigurera specifikationer för utforska](./explorespec.md) för mer information.
+När källspecifikationerna är ifyllda kan du fortsätta att konfigurera utforska specifikationerna för den källa som du vill integrera med plattformen. Visa dokumentet på [konfigurera specifikationer för utforska](./explorespec.md) för mer information.

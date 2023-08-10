@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Identitetsdatatyp
 description: Det här dokumentet innehåller en översikt över datatypen Identity XDM.
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '280'
 ht-degree: 2%
 
 ---
@@ -38,7 +38,7 @@ Följande avsnitt innehåller ytterligare information om [!UICONTROL Identity] d
 
 ## Godkända värden för authenticatedState {#authenticatedState}
 
-I följande tabell visas godkända värden för `authenticatedState` och deras betydelse:
+I följande tabell visas godkända värden för `authenticatedState` och deras innebörd:
 
 | Värde | Beskrivning |
 | --- | --- |

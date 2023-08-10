@@ -2,9 +2,9 @@
 title: Skapa en Marketo Engage-källanslutning och ett dataflöde för anpassade aktivitetsdata i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet för att överföra anpassade aktivitetsdata till Adobe Experience Platform.
 exl-id: 05a7b500-11d2-4d58-be43-a2c4c0ceeb87
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ Förutom [standardverksamhet](../../../../connectors/adobe-applications/mapping/
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [B2B-namnutrymmen och automatisk schemagenerering](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med verktyget för automatisk generering av B2B-namnutrymmen och scheman kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste fylla i B2B-namnutrymmen och scheman innan du skapar en [!DNL Marketo] källanslutning och dataflöde.
+* [B2B-namnutrymmen och automatisk schemagenerering](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med B2B-namnutrymmen och automatisk schemagenerering kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste fylla i B2B-namnutrymmen och scheman innan du skapar en [!DNL Marketo] källanslutning och dataflöde.
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
+   * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i gränssnittet.
 * [Identitetsnamnutrymmen](../../../../../identity-service/namespaces.md): Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] som fungerar som indikatorer för det sammanhang som en identitet hör till. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme.
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
@@ -33,7 +33,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 Det första steget till att hämta anpassade aktivitetsdata från [!DNL Marketo] till Experience Platform är att hämta API-namnet och visningsnamnet för din anpassade aktivitet.
 
-Logga in på ditt konto med [[!DNL Marketo]](https://app-sjint.marketo.com/#MM0A1) gränssnitt. I den vänstra navigeringen, under [!DNL Database Management], markera **Marketo anpassade aktiviteter**.
+Logga in på ditt konto med [[!DNL Marketo]](https://app-sjint.marketo.com/#MM0A1) gränssnitt. I vänster navigering, under [!DNL Database Management], markera **Anpassade aktiviteter för Marketo**.
 
 Gränssnittet uppdateras och visar dina anpassade aktiviteter, inklusive information om deras respektive visningsnamn och API-namn. Du kan också använda högerspåret för att välja och visa andra anpassade aktiviteter från ditt konto.
 
@@ -45,7 +45,7 @@ Välj **Fält** i det övre huvudet för att visa fälten som är kopplade till 
 
 ## Ställ in fältgrupper för anpassade aktiviteter i B2B-aktivitetsschemat
 
-I *[!UICONTROL Schemas]* kontrollpanel för användargränssnittet i Experience Platform väljer **[!UICONTROL Browse]** och sedan markera **[!UICONTROL B2B Activity]** från listan över scheman.
+I *[!UICONTROL Schemas]* kontrollpanel för användargränssnittet i Experience Platform väljer **[!UICONTROL Browse]** och sedan **[!UICONTROL B2B Activity]** från listan över scheman.
 
 >[!TIP]
 >
@@ -57,7 +57,7 @@ I *[!UICONTROL Schemas]* kontrollpanel för användargränssnittet i Experience 
 
 Lägg sedan till en ny fältgrupp i [!DNL B2B Activity] schema. Den här fältgruppen ska motsvara den anpassade aktivitet som du vill importera och ska använda den anpassade aktivitetens visningsnamn som du hämtade tidigare.
 
-Om du vill lägga till en ny fältgrupp väljer du **[!UICONTROL + Add]** bredvid *[!UICONTROL Field groups]* panel under *[!UICONTROL Composition]*.
+Välj om du vill lägga till en ny fältgrupp **[!UICONTROL + Add]** bredvid *[!UICONTROL Field groups]* panel under *[!UICONTROL Composition]*.
 
 ![Schemastrukturen.](../../../../images/tutorials/create/marketo-custom-activities/add-new-field-group.png)
 
@@ -115,7 +115,7 @@ Nästa, [ange information om dataflödet](./marketo.md#provide-dataflow-details)
 
 Mappningar för standardaktivitetsfält fylls i automatiskt, men anpassade aktivitetsfält måste mappas till motsvarande målfält manuellt.
 
-Om du vill börja mappa dina anpassade aktivitetsfält väljer du **[!UICONTROL New field type]** och sedan markera **[!UICONTROL Add new field]**.
+Om du vill mappa dina anpassade aktivitetsfält väljer du **[!UICONTROL New field type]** och sedan **[!UICONTROL Add new field]**.
 
 ![Mappningssteget med listrutan för att lägga till ett nytt fält.](../../../../images/tutorials/create/marketo-custom-activities/add-new-mapping-field.png)
 

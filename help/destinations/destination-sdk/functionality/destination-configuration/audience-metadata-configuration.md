@@ -1,9 +1,9 @@
 ---
 description: Lär dig konfigurera inställningar för målgruppsmetadata för mål som skapats med Destination SDK.
 title: Konfiguration av målgruppsmetadata
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '399'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Destination SDK innehåller verktyg som du kan använda för att skapa, uppdater
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett mål för direktuppspelning](../../guides/configure-destination-instructions.md#create-destination-configuration).
 
-Du kan konfigurera metadatamallen för målgruppen via `/authoring/audience-templates` slutpunkt. När du har skapat konfigurationen av målgruppsmetadata kan du använda `/authoring/destinations` slutpunkt för att konfigurera `audienceMetadataConfig` -avsnitt. I det här avsnittet anges vilka målgruppsmetadata som ska mappas till målgruppsmallen.
+Du kan konfigurera metadatamallen för målgruppen via `/authoring/audience-templates` slutpunkt. När du har skapat en konfiguration för målgruppsmetadata kan du använda `/authoring/destinations` slutpunkt för att konfigurera `audienceMetadataConfig` -avsnitt. I det här avsnittet anges vilka målgruppsmetadata som ska mappas till målgruppsmallen.
 
 På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
@@ -34,12 +34,12 @@ På följande API-referenssidor finns detaljerade API-anropsexempel där du kan 
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
 
-## Parametrar som stöds {#supported-parameters}
+## parametrar som stöds {#supported-parameters}
 
 När du skapar din konfiguration för målgruppsmetadata kan du använda de parametrar som beskrivs i tabellen nedan för att konfigurera inställningarna för målgruppsmappning.
 

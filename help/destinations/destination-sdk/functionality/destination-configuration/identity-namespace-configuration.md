@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '836'
 ht-degree: 1%
 
 ---
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Konfiguration av namnutrymme för identitet
 
-Experience Platform använder ID-namnutrymmen för att beskriva typen av specifika identiteter. Ett identitetsnamnutrymme som till exempel kallas `Email` identifierar ett värde som `name@email.com` som en e-postadress.
+Experience Platform använder ID-namnutrymmen för att beskriva typen av specifika identiteter. Ett identitetsnamnutrymme som till exempel kallas `Email` identifierar ett värde `name@email.com` som en e-postadress.
 
 När du skapar ett mål via Destination SDK, förutom [konfigurera ett partnerschema](schema-configuration.md) som användare kan mappa profilattribut och identiteter till, kan du även definiera de identitetsnamnutrymmen som stöds av målplattformen.
 
@@ -19,11 +19,11 @@ När du gör det kan användarna välja målidentiteter, förutom målprofilsatt
 
 Mer information om identitetsnamnutrymmen i Experience Platform finns i [dokumentation för identitetsnamnutrymmen](../../../../identity-service/namespaces.md).
 
-När du konfigurerar identitetsnamnutrymmen för ditt mål kan du finjustera den målidentitetsmappning som stöds av ditt mål, till exempel:
+När du konfigurerar identitetsnamnutrymmen för målet kan du finjustera den målidentitetsmappning som stöds av målet, till exempel:
 
 * Användare kan mappa XDM-attribut till identitetsnamnutrymmen.
-* Låt användare mappa [standardidentitetsnamnutrymmen](../../../../identity-service/namespaces.md#standard) till dina egna ID-namnutrymmen.
-* Låt användare mappa [namnutrymmen för anpassad identitet](../../../../identity-service/namespaces.md#manage-namespaces) till dina egna ID-namnutrymmen.
+* Tillåta användare att mappa [standardidentitetsnamnutrymmen](../../../../identity-service/namespaces.md#standard) till dina egna ID-namnutrymmen.
+* Tillåta användare att mappa [namnutrymmen för anpassad identitet](../../../../identity-service/namespaces.md#manage-namespaces) till dina egna ID-namnutrymmen.
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
@@ -32,7 +32,7 @@ Du kan konfigurera identitetsnamnutrymmen som stöds via `/authoring/destination
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn som stöds och som du kan använda för ditt mål. Dessutom visas vad kunderna kommer att se i plattformsgränssnittet.
+I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn som stöds och som du kan använda för ditt mål. Artikeln innehåller även information om vad kunderna kommer att se i plattformsgränssnittet.
 
 >[!IMPORTANT]
 >
@@ -42,12 +42,12 @@ I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn s
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
 
-## Parametrar som stöds {#supported-parameters}
+## parametrar som stöds {#supported-parameters}
 
 När du definierar de målidentiteter som målet stöder kan du använda parametrarna som beskrivs i tabellen nedan för att konfigurera deras beteende.
 
@@ -55,7 +55,7 @@ När du definierar de målidentiteter som målet stöder kan du använda paramet
 |---------|----------|---|------|
 | `acceptsAttributes` | Boolean | Valfritt | Anger om kunder kan mappa standardprofilattribut till identiteten som du konfigurerar. |
 | `acceptsCustomNamespaces` | Boolean | Valfritt | Anger om kunderna kan mappa anpassade ID-namnutrymmen till det ID-namnutrymme som du konfigurerar. |
-| `acceptedGlobalNamespaces` | – | Valfritt | Anger vilken [standardidentitetsnamnutrymmen](../../../../identity-service/namespaces.md#standard) (t.ex. [!UICONTROL IDFA]) kan kunderna mappa till identiteten som du konfigurerar. |
+| `acceptedGlobalNamespaces` | – | Valfritt | Anger vilken [standardidentitetsnamnutrymmen](../../../../identity-service/namespaces.md#standard) (till exempel [!UICONTROL IDFA]) kan kunderna mappa till identiteten som du konfigurerar. |
 | `transformation` | Sträng | Valfritt | Visar [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) -kryssrutan i plattformsgränssnittet när källfältet är antingen ett XDM-attribut eller ett anpassat identitetsnamnutrymme. Använd det här alternativet om du vill att användare ska kunna hash-koda källattribut vid export. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
 | `requiredTransformation` | Sträng | Valfritt | När kunderna väljer det här namnutrymmet för källidentiteten [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) kryssrutan tillämpas automatiskt på mappningen och kunderna kan inte inaktivera den. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
 

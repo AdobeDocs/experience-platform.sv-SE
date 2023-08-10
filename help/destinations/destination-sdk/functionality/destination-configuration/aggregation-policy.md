@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '995'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ När du har läst igenom det här dokumentet, se dokumentationen för [använda 
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Nej |
@@ -109,7 +109,7 @@ I exempelkonfigurationen nedan visas en konfigurerbar aggregeringskonfiguration.
 |---------|----------|------|
 | `aggregationType` | Sträng | Anger vilken typ av aggregeringsprincip som ditt mål ska använda. Aggregeringstyper som stöds: <ul><li>`BEST_EFFORT`</li><li>`CONFIGURABLE_AGGREGATION`</li></ul> |
 | `configurableAggregation.splitUserById` | Boolean | Använd den här flaggan om anropet till målet ska delas efter identitet. Ange den här flaggan som `true` om servern bara accepterar en identitet per anrop, för ett givet identitetsnamnutrymme. |
-| `configurableAggregation.maxBatchAgeInSecs` | Heltal | Används i konjugering med `maxNumEventsInBatch`anger den här parametern hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <ul><li>Minsta värde (sekunder): 1800</li><li>Högsta värde (sekunder): 3600</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
+| `configurableAggregation.maxBatchAgeInSecs` | Heltal | Används i konjugering med `maxNumEventsInBatch`anger den här parametern hur länge Experience Platform ska vänta tills ett API-anrop skickas till slutpunkten. <ul><li>Minsta värde (sekunder): 1 800</li><li>Högsta värde (sekunder): 3 600</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
 | `configurableAggregation.maxNumEventsInBatch` | Heltal | Används tillsammans med `maxBatchAgeInSecs`anger den här parametern hur många kvalificerade profiler som ska aggregeras i ett API-anrop. <ul><li>Minsta värde: 1000</li><li>Högsta värde: 10000</li></ul> Om du till exempel använder maxvärdet för båda parametrarna väntar Experience Platform antingen 3600 sekunder ELLER tills det finns 1000 kvalificerade profiler innan API-anropet görs, beroende på vilket som inträffar först. |
 | `configurableAggregation.aggregationKey` | – | Gör att du kan sammanställa de exporterade profilerna som är mappade till målet baserat på parametrarna som beskrivs nedan. |
 | `configurableAggregation.aggregationKey.includeSegmentId` | Boolean | Ställ in den här parametern på `true` om du vill gruppera profiler som exporterats till ditt mål efter målgrupps-ID. |

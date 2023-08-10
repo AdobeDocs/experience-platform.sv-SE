@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Fältgrupp för innehåll och inställningar
 description: Det här dokumentet innehåller en översikt över schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '896'
+source-wordcount: '895'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ The [!UICONTROL Consents and Preferences] fältgruppen innehåller ett enda fäl
 
 >[!TIP]
 >
->Se guiden [utforska XDM-resurser](../../ui/explore.md) om du vill ha steg om hur du söker upp en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
+>Se guiden på [utforska XDM-resurser](../../ui/explore.md) om du vill ha steg om hur du söker upp en XDM-resurs och inspekterar dess struktur i plattformens användargränssnitt.
 
 I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and Preferences] fältgruppen kan bearbeta. Information om hur du använder de flesta fält som finns i fältgruppen finns i handboken på [Datatypen Innehåll och inställningar](../../data-types/consents.md). Underavsnitten nedan fokuserar på de unika attribut som fältgruppen lägger till i datatypen.
 
@@ -95,7 +95,6 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 >* [Generera exempeldata i användargränssnittet](../../ui/sample.md)
 >* [Generera exempeldata i API](../../api/sample-data.md)
 
-
 ### `idSpecific`
 
 `idSpecific` kan användas när ett visst samtycke eller en viss preferens inte gäller för en kund, utan är begränsad till en enda enhet eller ett enda ID. En kund kan till exempel välja att inte ta emot e-post till en adress, samtidigt som e-post kan tillåtas på en annan adress.
@@ -106,7 +105,6 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 >
 >* Om kunden har valt att inte göra det på kanalnivå, finns motsvarande samtycke eller inställningar i `idSpecific` ignoreras.
 >* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, kommer motsvarande samtycke eller inställningar i `idSpecific` är stolta.
-
 
 Varje tangent i `idSpecific` -objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om namnutrymmen för identiteter finns i [Översikt över namnutrymmet identity](../../../identity-service/namespaces.md) i identitetstjänstens dokumentation.
 
@@ -141,7 +139,7 @@ Nycklarna för varje namnområdesobjekt representerar de unika identitetsvärden
 }
 ```
 
-Inom `marketing` objekten i `idSpecific` -avsnittet, `any` och `preferred` fält stöds inte. Dessa fält kan bara konfigureras på användarnivå. Dessutom är `idSpecific` marknadsföringsinställningar för `email`, `sms`och `push` stöder inte `subscriptions` fält.
+Inom `marketing` objekt som anges i `idSpecific` -avsnittet, `any` och `preferred` fält stöds inte. Dessa fält kan bara konfigureras på användarnivå. Dessutom är `idSpecific` marknadsföringsinställningar för `email`, `sms`och `push` stöder inte `subscriptions` fält.
 
 Det finns också ett samtycke som bara kan ges i `idSpecific` avsnitt: `adID`. Detta fält beskrivs i underavsnittet nedan.
 
@@ -191,4 +189,4 @@ När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bö
 
 ## Nästa steg
 
-Detta dokument innehöll strukturen och användningen av [!UICONTROL Consents and Preferences] fältgrupp. Mer information om de andra fälten i fältgruppen finns i dokumentet på sidan [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] datatyp](../../data-types/consents.md).
+Detta dokument innehöll strukturen och användningen av [!UICONTROL Consents and Preferences] fältgrupp. Mer information om de andra fälten som finns i fältgruppen finns i dokumentet på [[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] datatyp](../../data-types/consents.md).

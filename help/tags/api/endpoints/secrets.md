@@ -2,9 +2,9 @@
 title: Slutpunkt för hemlighet
 description: Lär dig hur du anropar slutpunkten /secrets i Reaktors API.
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
-source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1247'
+source-wordcount: '1246'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Den här guiden visar hur du ringer `/secrets` slutpunkt i Reactor API. En detal
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med hemligheter för en egenskap {#list-property}
 
@@ -31,7 +31,7 @@ GET /properties/{PROPERTY_ID}/secrets
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | ID för egenskapen vars hemligheter du vill visa. |
+| `{PROPERTY_ID}` | ID:t för egenskapen vars hemligheter du vill lista. |
 
 {style="table-layout:auto"}
 
@@ -433,7 +433,7 @@ PATCH /secrets/{SECRET_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SECRET_ID}` | ID för `oauth2` hemlighet som du vill testa. |
+| `{SECRET_ID}` | ID:t för `oauth2` hemlighet som du vill testa. |
 
 {style="table-layout:auto"}
 
@@ -465,7 +465,7 @@ curl -X PATCH \
 | --- | --- |
 | `attributes` | Måste innehålla `type_of` egenskap med värdet `oauth2`. |
 | `meta` | Måste innehålla `action` egenskap med värdet `test`. |
-| `id` | ID:t för hemligheten som du testar. Detta måste matcha det ID som anges i sökvägen till begäran. |
+| `id` | ID för hemligheten som du testar. Detta måste matcha det ID som anges i sökvägen till begäran. |
 | `type` | Den typ av resurs som används. Måste anges till `secrets`. |
 
 {style="table-layout:auto"}
@@ -646,7 +646,7 @@ Ett godkänt svar returnerar informationen om hemligheten, med statusen återst�
 
 ## Återauktorisera en `oauth2-google` hemlig {#reauthorize}
 
-Varje `oauth2-google` hemligheten innehåller `meta.authorization_url_expires_at` som anger när auktoriserings-URL:en upphör att gälla. Därefter måste hemligheten auktoriseras på nytt för att den ska kunna förnya autentiseringsprocessen.
+Varje `oauth2-google` hemligheten innehåller en `meta.authorization_url_expires_at` som anger när auktoriserings-URL:en upphör att gälla. Därefter måste hemligheten auktoriseras på nytt för att den ska kunna förnya autentiseringsprocessen.
 
 Återauktorisera en `oauth2-google` hemlighet, begär en hemlighet från PATCH.
 
@@ -688,7 +688,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om den uppdaterade hemligheten. Härifrån måste du kopiera och klistra in `meta.authorization_url` till en webbläsare för att slutföra auktoriseringsprocessen.
+Ett godkänt svar returnerar informationen om den uppdaterade hemligheten. härifrån måste du kopiera och klistra in `meta.authorization_url` till en webbläsare för att slutföra auktoriseringsprocessen.
 
 ```json
 {
@@ -769,7 +769,7 @@ DELETE /secrets/{SECRET_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SECRET_ID}` | ID:t för hemligheten som du vill ta bort. |
+| `{SECRET_ID}` | ID för hemligheten som du vill ta bort. |
 
 {style="table-layout:auto"}
 
@@ -807,7 +807,7 @@ GET /secrets/{SECRET_ID}/notes
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SECRET_ID}` | ID för hemligheten vars anteckningar du vill visa. |
+| `{SECRET_ID}` | ID:t för hemligheten vars anteckningar du vill visa. |
 
 {style="table-layout:auto"}
 
@@ -872,7 +872,7 @@ Ett godkänt svar returnerar en lista med anteckningar som tillhör hemligheten.
 
 Följande anrop visar hur du hämtar relaterade resurser för en hemlighet. När [hitta en hemlighet](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
 ### Söka efter en hemlighet i den relaterade miljön {#environment}
 
@@ -886,7 +886,7 @@ GET /secrets/{SECRET_ID}/environment
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{SECRET_ID}` | ID för hemligheten vars miljö du vill söka efter. |
+| `{SECRET_ID}` | ID:t för hemligheten vars miljö du vill söka efter. |
 
 {style="table-layout:auto"}
 
@@ -1013,7 +1013,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om egenskapen.
+Ett lyckat svar returnerar informationen om egenskapen.
 
 ```json
 {

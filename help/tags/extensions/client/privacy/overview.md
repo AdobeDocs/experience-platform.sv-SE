@@ -2,9 +2,9 @@
 title: Översikt över sekretesstillägg för Adobe
 description: Läs mer om taggtillägget Adobe Privacy i Adobe Experience Platform.
 exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '869'
+source-wordcount: '868'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ I den här guiden beskrivs hur du installerar och konfigurerar tillägget Sekret
 
 >[!NOTE]
 >
->Om du föredrar att installera de här funktionerna utan att använda taggar finns mer information i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) för steg om hur du implementerar med hjälp av raw-kod.
+>Om du föredrar att installera de här funktionerna utan att använda taggar, se [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) för steg om hur du implementerar med hjälp av raw-kod.
 
 ## Installera och konfigurera tillägget
 
@@ -62,7 +62,7 @@ När du har lagt till parametrar för de valda lösningarna väljer du **[!UICON
 Tillägget för sekretess i Adobe innehåller tre åtgärdstyper som kan användas i en [regel](../../../ui/managing-resources/rules.md) när en viss händelse inträffar och villkoren är uppfyllda:
 
 * **[!UICONTROL Retrieve Identities]**: Användarens lagrade identitetsinformation hämtas.
-* **[!UICONTROL Remove Identities]**: Användarens lagrade identitetsinformation har tagits bort.
+* **[!UICONTROL Remove Identities]**: Användarens lagrade identitetsinformation tas bort.
 * **[!UICONTROL Retrieve Then Remove Identities]**: Användarens lagrade identitetsinformation hämtas och tas sedan bort.
 
 För var och en av ovanstående åtgärder måste du tillhandahålla en återanrops-JavaScript-funktion som godkänner och hanterar de hämtade identitetsdata som en objektparameter. Härifrån kan du lagra dessa identiteter, visa dem eller skicka dem till [Privacy Services-API](../../../../privacy-service/api/overview.md) efter behov.
@@ -71,7 +71,7 @@ När du använder taggtillägget Sekretess för Adobe måste du ange den återan
 
 ### Definiera ett dataelement som ska hantera identiteter
 
-Börja skapa ett nytt dataelement genom att välja **[!UICONTROL Data Elements]** i den vänstra navigeringen, följt av **[!UICONTROL Add Data Element]**. När du är på konfigurationsskärmen väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Custom Code]** för elementtypen data. Här väljer du **[!UICONTROL Open Editor]** i den högra panelen.
+Börja skapa ett nytt dataelement genom att välja **[!UICONTROL Data Elements]** i den vänstra navigeringen, följt av **[!UICONTROL Add Data Element]**. När du är på konfigurationsskärmen väljer du **[!UICONTROL Core]** för tillägget och **[!UICONTROL Custom Code]** för elementtypen data. Välj **[!UICONTROL Open Editor]** i den högra panelen.
 
 ![Välj dataelementtyp](../../../images/extensions/client/privacy/data-element-type.png)
 
@@ -111,4 +111,4 @@ När du har installerat tillägget kan du inaktivera eller ta bort det. Välj **
 
 ## Nästa steg
 
-I den här handboken beskrivs användningen av taggtillägget för sekretess i Adobe i användargränssnittet. Mer information om funktionerna i tillägget, inklusive exempel på hur du använder Raw-kod, finns i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) i Privacy Servicens dokumentation.
+I den här handboken beskrivs hur du använder taggtillägget för sekretess i Adobe i användargränssnittet. Mer information om funktionerna i tillägget, inklusive exempel på hur du använder Raw-kod, finns i [Översikt över JavaScript-bibliotek för sekretess](../../../../privacy-service/js-library.md) i Privacy Servicens dokumentation.

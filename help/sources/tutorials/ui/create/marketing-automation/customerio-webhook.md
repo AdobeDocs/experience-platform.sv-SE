@@ -3,9 +3,9 @@ title: Skapa en Customer.io Source Connection och ett dataflöde i användargrä
 description: Lär dig hur du skapar en Customer.io-källanslutning med Adobe Experience Platform UI.
 badge: Beta
 exl-id: 7655a34c-808a-46e3-94e3-022a433755a4
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1186'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Förutsättningar {#prerequisites}
@@ -33,7 +33,7 @@ Följande avsnitt innehåller information om krav som måste utföras innan du k
 
 ### Exempel-JSON för att definiera källschemat för [!DNL Customer.io] {#prerequisites-json-schema}
 
-Innan du skapar en [!DNL Customer.io] källanslutning, du måste ange ett källschema. Du kan använda JSON nedan.
+Innan du skapar [!DNL Customer.io] källanslutning, du måste ange ett källschema. Du kan använda JSON nedan.
 
 ```
 {
@@ -124,7 +124,7 @@ När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen till den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
 När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
@@ -148,7 +148,7 @@ När du har hämtat ditt slutpunkts- och dataflödes-ID för direktuppspelning s
 
 ## Konfigurera webkrok för rapportering i [!DNL Customer.io] {#set-up-webhook}
 
-När webkrok-URL:en har skapats kan du nu konfigurera din rapporteringswebkrok med [!DNL Customer.io] användargränssnitt. Anvisningar om hur du konfigurerar webbhooks för rapportering finns i [[!DNL Customer.io] guide](https://customer.io/docs/webhooks/#setup) om hur du konfigurerar webbhooks.
+När webkrok-URL:en har skapats kan du nu konfigurera din rapporteringswebkrok med [!DNL Customer.io] användargränssnitt. Anvisningar om hur du konfigurerar webbhooks för rapportering finns i [[!DNL Customer.io] stödlinje](https://customer.io/docs/webhooks/#setup) om hur du konfigurerar webbhooks.
 
 I [!DNL Customer.io] användargränssnitt, ange [webkroks-URL](#get-streaming-endpoint-url) i [!DNL WEBHOOK ENDPOINT] fält.
 
@@ -156,7 +156,7 @@ I [!DNL Customer.io] användargränssnitt, ange [webkroks-URL](#get-streaming-en
 
 >[!TIP]
 >
->Du kan prenumerera på en mängd olika händelser för din rapportwebkrok. Varje händelsemeddelande hämtas till Platform när en [!DNL Customer.io] villkor för utlösare av åtgärdshändelser uppfylls. Mer information om de olika händelserna finns i [[!DNL Customer.io] dokumentation](https://customer.io/docs/webhooks/#events).
+>Du kan prenumerera på en mängd olika händelser för din rapportwebkrok. Varje händelsemeddelande hämtas till Platform när en [!DNL Customer.io] villkor för utlösare av åtgärdshändelser uppfylls. Mer information om de olika händelserna finns i [[!DNL Customer.io] dokumentation för händelser](https://customer.io/docs/webhooks/#events).
 
 ## Nästa steg {#next-steps}
 

@@ -4,16 +4,16 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som ger möjlighet att skapa profiler, målgrupper och målpaneler i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: 79966442f5333363216da17342092a71335a14f0
+source-git-commit: c431973100cc65d99d9466553fe6624ac2653d4b
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '936'
 ht-degree: 0%
 
 ---
 
 # Utforska, verifiera och bearbeta dashboard-dataset med [!DNL Query Service]
 
-Adobe Experience Platform tillhandahåller viktig information om organisationens profil, målgrupp och destinationsdata via kontrollpaneler som är tillgängliga i användargränssnittet för Experience Platform. Du kan sedan använda Adobe Experience Platform [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som styr dessa instrumentpaneler i datasjön.
+Adobe Experience Platform tillhandahåller viktig information om organisationens profil, målgrupp och destinationsdata via kontrollpaneler som är tillgängliga i användargränssnittet för Experience Platform. Du kan sedan använda Adobe Experience Platform [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som ligger till grund för dessa instrumentpaneler i datasjön.
 
 ## Komma igång med [!DNL Query Service]
 
@@ -43,7 +43,7 @@ En sidospalt med två växlar visas, [!UICONTROL Included in Profile] och [!UICO
 
 ### Datauppsättningar för profilattribut
 
-Insikter på profilkontrollpanelen är knutna till sammanfogningsprinciper som har definierats av din organisation. För varje aktiv sammanfogningsprincip finns det en profilattributdatauppsättning tillgänglig i datasjön.
+Insikter på profilkontrollpanelen är knutna till sammanslagningsprinciper som har definierats av din organisation. För varje aktiv sammanfogningsprincip finns det en profilattributdatauppsättning tillgänglig i datasjön.
 
 Namnkonventionen för dessa datauppsättningar är **Profile-Snapshot-Export** följt av ett systemgenererat slumpmässigt alfanumeriskt värde. Exempel: `Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`.
 
@@ -82,11 +82,7 @@ Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen ka
 
 ![En förhandsgranskning av DIM_Destination-datauppsättningen.](images/query/destinations-metadata.png)
 
-## (Beta) Insiktsrapporter för kunddataplattformen (CDP)
-
->[!IMPORTANT]
->
->Funktionen CDP Insights Data Models är en betaversion. Dess funktioner och dokumentation kan komma att ändras.
+## Insiktsrapporter för kunddataplattformen (CDP)
 
 CDP Insights Data Models-funktionen visar SQL som ger insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för marknadsförings- och KPI-användningsfall.
 
@@ -94,7 +90,7 @@ CDP-rapportering ger insikter i era profildata och dess relation till målgruppe
 
 ## Exempelfrågor
 
-Följande exempelfrågor innehåller exempel på SQL som kan användas i [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som ligger till grund för dina instrumentpaneler.
+Följande exempelfrågor innehåller exempel på SQL som kan användas i [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som används i dina instrumentpaneler.
 
 ### Antal profiler efter identitet
 
@@ -123,7 +119,7 @@ Select
 
 ### Antal profiler per målgrupp
 
-Denna målgruppsinsikter ger det totala antalet sammanfogade profiler inom varje målgrupp i datauppsättningen. Det här numret är resultatet av att målgruppssammanfogningsprincipen har tillämpats på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i målgruppen.
+Denna målgruppsinsikter ger det totala antalet sammanfogade profiler inom varje målgrupp i datauppsättningen. Det här numret är resultatet av att målgruppssammanfogningspolicyn har tillämpats på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person i målgruppen.
 
 ```sql
 Select          

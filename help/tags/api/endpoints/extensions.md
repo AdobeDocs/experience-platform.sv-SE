@@ -2,9 +2,9 @@
 title: Slutpunkt för tillägg
 description: Lär dig hur du anropar slutpunkten /extensions i Reaktors API.
 exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '940'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ Ett tillägg tillhör exakt en egenskap. En egenskap kan ha många tillägg, men
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med tillägg {#list}
 
@@ -37,7 +37,7 @@ GET properties/{PROPERTY_ID}/extensions
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade tillägg filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade tillägg filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -280,7 +280,7 @@ Ett godkänt svar returnerar information om tillägget.
 
 ## Skapa eller uppdatera ett tillägg {#create}
 
-Tillägg skapas genom att en referens refereras till ett [tilläggspaket](./extension-packages.md) och lägga till det installerade tillägget i en egenskap. När installationsaktiviteten har slutförts returneras ett svar som anger om tillägget har installerats korrekt.
+Tillägg skapas genom att en referens refereras till [tilläggspaket](./extension-packages.md) och lägga till det installerade tillägget i en egenskap. När installationsaktiviteten har slutförts returneras ett svar som anger om tillägget har installerats korrekt.
 
 **API-format**
 
@@ -326,7 +326,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `relationships.extension_package` | **(Obligatoriskt)** Ett objekt som refererar till ID:t för tilläggspaketet som installeras. |
-| `attributes.delegate_descriptor_id` | Om tillägget kräver anpassade inställningar, krävs även ett delegatbeskrivnings-ID. Se guiden [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
+| `attributes.delegate_descriptor_id` | Om tillägget kräver anpassade inställningar, krävs även ett delegatbeskrivnings-ID. Se guiden på [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
 | `attributes.enabled` | Ett booleskt värde som anger om tillägget är aktiverat. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 
@@ -474,7 +474,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett godkänt svar returnerar detaljerna om det ändrade tillägget, med dess `meta.latest_revision_number` egenskapen ökade med 1.
+Ett godkänt svar returnerar detaljerna om det ändrade tillägget, med dess `meta.latest_revision_number` egenskapen har ökats med 1.
 
 ```json
 {
@@ -602,7 +602,7 @@ Tillägg är&quot;betydande&quot; resurser, vilket innebär att du kan skapa och
 
 Följande anrop visar hur du hämtar relaterade resurser för ett tillägg. När [söka efter ett tillägg](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
 ### Lista relaterade bibliotek för ett tillägg {#libraries}
 
@@ -940,7 +940,7 @@ Ett godkänt svar returnerar en lista med revisioner för det angivna tillägget
 }
 ```
 
-### Söka efter ett tillägg i det relaterade tilläggspaketet {#extension}
+### Söka efter ett tilläggs relaterade tilläggspaket {#extension}
 
 Du kan leta upp tilläggspaketet som ett tillägg baseras på genom att lägga till `/extension_package` till sökvägen för en GET-begäran.
 

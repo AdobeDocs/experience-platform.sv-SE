@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera autentiseringsspecifikationer för självbetjäningskällor (batch-SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '518'
 ht-degree: 1%
 
 ---
@@ -237,4 +237,4 @@ Följande är ett exempel på en slutförd autentiseringsspecifikation som anvä
 
 ## Nästa steg
 
-När autentiseringsspecifikationerna är ifyllda kan du fortsätta att konfigurera källspecifikationerna för den källa som du vill integrera med plattformen. Se dokumentet på [konfigurera källspecifikationer](./sourcespec.md) för mer information.
+När autentiseringsspecifikationerna är ifyllda kan du fortsätta att konfigurera källspecifikationerna för den källa som du vill integrera med plattformen. Visa dokumentet på [konfigurera källspecifikationer](./sourcespec.md) för mer information.

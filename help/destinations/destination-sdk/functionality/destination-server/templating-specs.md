@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du formaterar HTTP-begäranden som skickas till slutpunkten. Använd slutpunkten /authoring/destination-servers för att konfigurera målserverns mallspecifikationer i Adobe Experience Platform Destination SDK.
 title: Mallspecifikationer för mål som skapats med Destination SDK
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '523'
 ht-degree: 3%
 
 ---
@@ -32,7 +32,7 @@ Du kan konfigurera mallspecifikationerna för ditt mål via `/authoring/destinat
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Nej |

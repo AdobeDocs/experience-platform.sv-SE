@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;DULE;Schedule
 solution: Experience Platform
 title: Komma igång med API:t för principtjänsten
-description: Med hjälp av API:t för principtjänst kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker anropa API:t för principtjänsten.
+description: Med hjälp av API:t för principtjänst kan du skapa och hantera olika resurser för Adobe Experience Platform datastyrning. Det här dokumentet innehåller en introduktion till de centrala koncept som du behöver känna till innan du försöker ringa anrop till API:t för principtjänsten.
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '443'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ The [!DNL Policy Service] Med API kan du skapa och hantera olika resurser för A
 
 Att använda utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används i arbetet med datastyrningsfunktioner. Innan du börjar arbeta med [!DNL Policy Service API], läs dokumentationen för följande tjänster:
 
-* [Datastyrning](../home.md): Den ram som [!DNL Experience Platform] regelefterlevnad för dataanvändning.
+* [Datastyrning](../home.md): Det ramverk som [!DNL Experience Platform] regelefterlevnad för dataanvändning.
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
 * [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
@@ -56,4 +56,4 @@ I [!DNL Policy Service] API, alla policyer och marknadsföringsåtgärder kallas
 
 ## Nästa steg
 
-Om du vill börja ringa anrop med hjälp av API:t för principtjänsten väljer du en av de tillgängliga slutpunktsguiderna.
+Välj en av de tillgängliga slutpunktsguiderna för att börja ringa anrop med hjälp av API:t för principtjänsten.

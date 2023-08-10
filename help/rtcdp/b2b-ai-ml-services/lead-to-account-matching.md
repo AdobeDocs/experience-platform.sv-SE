@@ -3,9 +3,9 @@ title: Lead till kontomatchning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om funktionen för att matcha lead-till-konto i Experience Platform CDP B2B.
 exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '612'
+source-wordcount: '611'
 ht-degree: 3%
 
 ---
@@ -58,7 +58,7 @@ Lead till kontomatchning gör att du kan gå med i kända personprofiler till ko
 
 ## Så fungerar det {#how-it-works}
 
-Dagliga jobb använder både deterministiska och sannolika faktorer för att matcha kända lead-profiler utan befintliga kontoassociationer. Kända lead-profiler har något av följande attribut:
+Dagliga jobb använder både deterministiska och sannolikhetsfaktorer för att matcha kända lead-profiler utan befintliga kontoassociationer. Kända lead-profiler har något av följande attribut:
 
 - b2b.companyName
 - b2b.companyWebsite
@@ -72,7 +72,7 @@ Attributen b2b.companyName, b2b.companyWebsite och b2b.personKey.sourceKey finns
 
 ![Personschema som visar attribut](/help/rtcdp/accounts/images/b2b-person-schema.png)
 
-Attributet workEmail finns som en fältgrupp på den översta nivån i B2B-personschemat.
+Attributet workEmail finns på den översta fältgruppen i B2B-personschemat.
 
 ![Schema för B2B-person som visar arbeteE-post](/help/rtcdp/accounts/images/b2b-person-workemail.png)
 
@@ -84,7 +84,7 @@ Tjänsten lead to account matching körs när en ögonblicksbild av en ny person
 
 Efter jobbkörningen sparas resultaten i en ny datamängd för den befintliga kontopersonens relation-XDM.
 
-Om du vill förhandsgranska datauppsättningen väljer du **[!UICONTROL Preview dataset]** i det övre högra hörnet.
+Om du vill förhandsgranska datauppsättningen väljer du **[!UICONTROL Preview dataset]** längst upp till höger.
 
 ![Ny datauppsättning](/help/rtcdp/accounts/images/b2b-dataset-output.png)
 

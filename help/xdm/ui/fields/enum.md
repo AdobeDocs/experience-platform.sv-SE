@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera uppräkningsfält och föreslagna värden i användargränssnittet
 description: Lär dig hur du definierar enum och föreslagna värden för strängfält i användargränssnittet för Experience Platform.
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1222'
+source-wordcount: '1221'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ När [definiera ett nytt fält](./overview.md#define) i Adobe Experience Platfor
 
 ![Bild som visar alternativet Uppräkning och föreslagna värden aktiverat för ett strängfält i användargränssnittet](../../images/ui/fields/enum/enum-options-selected.png)
 
-Det här dokumentet innehåller information om hur du definierar enum och föreslagna värden i [!UICONTROL Schemas] Arbetsytan i användargränssnittet. Titta på följande video om du vill få en snabb översikt över uppräkningar och föreslagna värden, inklusive hur du konfigurerar dem i användargränssnittet och deras underordnade effekter:
+Det här dokumentet innehåller information om hur du definierar enum och föreslagna värden i dialogrutan [!UICONTROL Schemas] Arbetsytan i användargränssnittet. Titta på följande video om du vill få en snabb översikt över uppräkningar och föreslagna värden, inklusive hur du konfigurerar dem i användargränssnittet och deras underordnade effekter:
 
 >[!VIDEO](https://video.tv.adobe.com/v/3409501/?quality=12&learn=on)
 
@@ -48,7 +48,7 @@ Arbetsytan uppdateras för att återspegla ändringarna. När du utforskar det h
 
 ## Definiera föreslagna värden {#suggested-values}
 
-Välj **[!UICONTROL Enums and Suggested Values]** väljer **[!UICONTROL Suggested Values]** om du vill att fler kontroller ska visas. Här väljer du **[!UICONTROL Add row]** om du vill lägga till föreslagna värden.
+Välj **[!UICONTROL Enums and Suggested Values]** väljer **[!UICONTROL Suggested Values]** om du vill att fler kontroller ska visas. Välj **[!UICONTROL Add row]** om du vill lägga till föreslagna värden.
 
 ![Bild som visar alternativet Föreslagna värden som valts i användargränssnittet](../../images/ui/fields/enum/suggested-add-row.png)
 

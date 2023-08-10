@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
-source-git-commit: ca4fb2dce097197aa1a97e0716e6294546bfee38
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1886'
+source-wordcount: '1885'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ När du skapar ett mål med Destination SDK kan du definiera ett eget partnersch
 När du konfigurerar partnerschemat för målet kan du finjustera den fältmappning som stöds av målplattformen, till exempel:
 
 * Tillåt användare att mappa en `phoneNumber` XDM-attribut till en `phone` attribut som stöds av målplattformen.
-* Skapa dynamiska partnerscheman som Experience Platform kan anropa dynamiskt för att hämta en lista över alla attribut som stöds i destinationen.
+* Skapa dynamiska partnerscheman som Experience Platform kan anropa dynamiskt för att hämta en lista över alla attribut som stöds i ditt mål.
 * Definiera obligatoriska fältmappningar som målplattformen kräver.
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
@@ -38,7 +38,7 @@ I den här artikeln beskrivs alla schemakonfigurationsalternativ som stöds och 
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
@@ -47,7 +47,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 Destinationen SDK stöder flera schemakonfigurationer:
 
-* Statiska scheman definieras via `profileFields` arrayen i `schemaConfig` -avsnitt. I ett statiskt schema definierar du alla målattribut som ska visas i användargränssnittet för Experience Platform i `profileFields` array. Om du behöver uppdatera ditt schema måste du [uppdatera målkonfigurationen](../../authoring-api/destination-configuration/update-destination-configuration.md).
+* Statiska scheman definieras via `profileFields` i `schemaConfig` -avsnitt. I ett statiskt schema definierar du alla målattribut som ska visas i användargränssnittet för Experience Platform i `profileFields` array. Om du behöver uppdatera ditt schema måste du [uppdatera målkonfigurationen](../../authoring-api/destination-configuration/update-destination-configuration.md).
 * Dynamiska scheman använder ytterligare en målservertyp, som kallas [dynamisk schemaserver](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers), för att dynamiskt hämta de målattribut som stöds och generera scheman baserat på ditt eget API. Dynamiska scheman använder inte `profileFields` array. Om du behöver uppdatera schemat behöver du inte [uppdatera målkonfigurationen](../../authoring-api/destination-configuration/update-destination-configuration.md). I stället hämtar den dynamiska schemaservern det uppdaterade schemat från ditt API.
 * I schemakonfigurationen kan du lägga till obligatoriska (eller fördefinierade) mappningar. Det här är mappningar som användare kan visa i plattformsgränssnittet, men de kan inte ändra dem när de konfigurerar en anslutning till ditt mål. Du kan t.ex. framtvinga att e-postadressfältet alltid skickas till målet.
 
@@ -100,11 +100,11 @@ Om du vill skapa ett statiskt schema med profilattribut definierar du målattrib
 
 | Parameter | Typ | Obligatoriskt/valfritt | Beskrivning |
 |---------|----------|------|---|
-| `profileFields` | Array | Valfritt | Definierar den array med målattribut som accepteras av målplattformen och som kunderna kan mappa sina profilattribut till. När en `profileFields` kan du utesluta `useCustomerSchemaForAttributeMapping` parametern helt och hållet. |
+| `profileFields` | Array | Valfritt | Definierar den array med målattribut som accepteras av målplattformen och som kunderna kan mappa sina profilattribut till. När en `profileFields` kan du utesluta `useCustomerSchemaForAttributeMapping` parametern helt. |
 | `useCustomerSchemaForAttributeMapping` | Boolean | Valfritt | Aktiverar eller inaktiverar mappning av attribut från kundschemat till de attribut som du definierar i `profileFields` array. <ul><li>Om inställt på `true`, visas bara källkolumnen i mappningsfältet. `profileFields` är inte tillämpliga i detta fall.</li><li>Om inställt på `false`, kan användare mappa källattribut från sitt schema till de attribut du har definierat i `profileFields` array.</li></ul> Standardvärdet är `false`. |
 | `profileRequired` | Boolean | Valfritt | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målplattformen. |
 | `segmentRequired` | Boolean | Obligatoriskt | Den här parametern krävs av Destinationen SDK och ska alltid anges till `true`. |
-| `identityRequired` | Boolean | Obligatoriskt | Ange till `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i `profileFields` array. |
+| `identityRequired` | Boolean | Obligatoriskt | Ange till `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i dialogrutan `profileFields` array. |
 | `segmentNamespaceAllowList` | Array | Valfritt | Definierar specifika målgruppsnamnutrymmen från vilka användare kan mappa målgrupper till målet. Använd den här parametern för att begränsa plattformsanvändare så att de bara kan exportera målgrupper från de målgruppsnamnutrymmen som du definierar i arrayen. Den här parametern kan inte användas tillsammans med `segmentNamespaceDenyList`.<br> <br> Exempel: `"segmentNamespaceAllowList": ["AudienceManager"]` tillåter användare att endast kartlägga målgrupper från `AudienceManager` namnutrymme till detta mål. <br> <br> Om du vill tillåta användare att exportera alla målgrupper till ditt mål, kan du ignorera den här parametern. <br> <br> Om båda `segmentNamespaceAllowList` och `segmentNamespaceDenyList` saknas i din konfiguration kan användare bara exportera målgrupper som kommer från [Segmenteringstjänst](../../../../segmentation/home.md). |
 | `segmentNamespaceDenyList` | Array | Valfritt | Begränsar användare från att mappa målgrupper till målet från de målgruppsnamnutrymmen som definieras i arrayen. Kan inte användas tillsammans med `segmentNamespaceAllowed`. <br> <br> Exempel: `"segmentNamespaceDenyList": ["AudienceManager"]` blockerar användare från att mappa målgrupper från `AudienceManager` namnutrymme till detta mål. <br> <br> Om du vill tillåta användare att exportera alla målgrupper till ditt mål, kan du ignorera den här parametern. <br> <br> Om båda `segmentNamespaceAllowed` och `segmentNamespaceDenyList` saknas i din konfiguration kan användare bara exportera målgrupper som kommer från [Segmenteringstjänst](../../../../segmentation/home.md). <br> <br> Om du vill tillåta export av alla målgrupper, oavsett ursprung, anger du `"segmentNamespaceDenyList":[]`. |
 
@@ -128,7 +128,7 @@ Destination SDK stöder skapande av dynamiska partnerscheman. I motsats till ett
 >
 >Innan du skapar ett dynamiskt schema måste du [skapa en dynamisk schemaserver](../../authoring-api/destination-server/create-destination-server.md#dynamic-schema-servers).
 
-I en dynamisk schemakonfiguration `profileFields` arrayen ersätts med `dynamicSchemaConfig` enligt nedan.
+I en dynamisk schemakonfiguration `profileFields` arrayen ersätts med `dynamicSchemaConfig` som visas nedan.
 
 ```json
 "schemaConfig":{
@@ -151,14 +151,14 @@ I en dynamisk schemakonfiguration `profileFields` arrayen ersätts med `dynamicS
 | `dynamicEnum.authenticationRule` | Sträng | Obligatoriskt | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in i systemet med någon av de autentiseringsmetoder som beskrivs [här](customer-authentication.md). </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du [skapa ett autentiseringsobjekt](../../credentials-api/create-credential-configuration.md) med API:t för autentiseringsuppgifter. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `dynamicEnum.destinationServerId` | Sträng | Obligatoriskt | The `instanceId` av din dynamiska schemaserver. Målservern innehåller API-slutpunkten som Experience Platform ska anropa för att hämta det dynamiska schemat. |
 | `dynamicEnum.value` | Sträng | Obligatoriskt | Namnet på det dynamiska schemat, enligt definitionen i den dynamiska schemaserverkonfigurationen. |
-| `dynamicEnum.responseFormat` | Sträng | Obligatoriskt | Alltid inställt på `SCHEMA` när ett dynamiskt schema definieras. |
+| `dynamicEnum.responseFormat` | Sträng | Obligatoriskt | Alltid inställt på `SCHEMA` när du definierar ett dynamiskt schema. |
 | `profileRequired` | Boolean | Valfritt | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målplattformen. |
 | `segmentRequired` | Boolean | Obligatoriskt | Den här parametern krävs av Destinationen SDK och ska alltid anges till `true`. |
-| `identityRequired` | Boolean | Obligatoriskt | Ange till `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i `profileFields` array. |
+| `identityRequired` | Boolean | Obligatoriskt | Ange till `true` om användare ska kunna mappa [identitetstyper](identity-namespace-configuration.md) från Experience Platform till de attribut du definierade i dialogrutan `profileFields` array. |
 
 {style="table-layout:auto"}
 
-## Nödvändiga mappningar {#required-mappings}
+## Obligatoriska mappningar {#required-mappings}
 
 I schemakonfigurationen kan du, förutom ditt statiska eller dynamiska schema, lägga till nödvändiga (eller fördefinierade) mappningar. Det här är mappningar som användare kan visa i plattformsgränssnittet, men de kan inte ändra dem när de konfigurerar en anslutning till ditt mål.
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera matrisfält i användargränssnittet
 description: Lär dig hur du definierar ett arrayfält i användargränssnittet för Experience Platform.
 exl-id: 9ac55554-c29b-40b2-9987-c8c17cc2c00c
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '346'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Ytterligare konfigurationskontroller för arrayer är följande:
 
 {style="table-layout:auto"}
 
-När du är klar med att konfigurera fältet väljer du **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
+När du har konfigurerat fältet väljer du **[!UICONTROL Apply]** för att tillämpa ändringen på schemat.
 
 ![](../../images/ui/fields/special/array-config.png)
 
@@ -43,4 +43,4 @@ Arbetsytan uppdateras för att återspegla ändringar som gjorts i fältet. Obse
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du definierar ett arrayfält i användargränssnittet. Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].
+I den här guiden beskrivs hur du definierar ett matrisfält i användargränssnittet. Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].

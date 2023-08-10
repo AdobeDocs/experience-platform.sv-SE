@@ -4,9 +4,9 @@ title: Publikens kontrollpanel
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om målgrupper som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2089'
+source-wordcount: '2088'
 ht-degree: 0%
 
 ---
@@ -156,7 +156,7 @@ The [!UICONTROL Audience activation order] widgeten innehåller en tabell med tr
 
 ### [!UICONTROL Audience overlap] {#audience-overlap}
 
-Den här widgeten använder ett Venndiagram för att visualisera antalet personer som matchar kriterierna för båda målgrupperna. De målgrupper som används för jämförelsen väljs i listrutan för widgetar. Det totala antalet profiler i den relevanta segmentdefinitionen kan du se genom att hålla markören över en cirkel eller skärningspunkten i Venndiagrammet.
+Den här widgeten använder ett Venndiagram för att visualisera antalet personer som matchar kriterierna för båda målgrupperna. De målgrupper som används för jämförelsen väljs i listrutan för widgetar. Det totala antalet profiler i den relevanta segmentdefinitionen kan ses genom att du håller markören över en cirkel eller skärningspunkten i Venndiagrammet.
 
 Med den här widgeten kan du optimera din segmenteringsstrategi genom att visualisera likheterna i resultaten av segmentdefinitionerna.
 

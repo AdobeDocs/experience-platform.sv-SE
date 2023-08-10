@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 exl-id: 6fb92e35-922c-47ba-8cf4-44edd92acfa1
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '716'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 
 ## [!DNL Data Prep] {#data-prep}
 
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+[!DNL Data Prep] gör att datatekniker kan mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Nya funktioner**
 
@@ -49,7 +49,7 @@ Mer information finns i [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Avancerad ID-matchning | Förbättringar av målgruppsmatchningsmöjligheterna i [!DNL Facebook Custom Audiences] och [!DNL Google Customer Match]genom att lägga till stöd för ytterligare identitetsmatchning, som externa ID:n, telefonnummer och mobila enhets-ID:n. Mer information finns i följande dokumentation: <ul><li>[Facebook](../../destinations/catalog/social/facebook.md)</li><li>[Google kundmatchningsmål](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../destinations/ui/activate-segment-streaming-destinations.md)</li></ul> |
+| Avancerad ID-matchning | Förbättringar av målgruppsmatchningsmöjligheterna i [!DNL Facebook Custom Audiences] och [!DNL Google Customer Match]genom att lägga till stöd för ytterligare identitetsmatchning, som externa ID:n, telefonnummer och mobila enhets-ID:n. Mer information finns i följande dokumentation: <ul><li>[Facebook destination](../../destinations/catalog/social/facebook.md)</li><li>[Google kundmatchningsmål](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[Aktivera målgruppsdata för att direktuppspela segmentexportmål](../../destinations/ui/activate-segment-streaming-destinations.md)</li></ul> |
 
 Mer information finns på [destinationer, översikt](../../destinations/home.md).
 

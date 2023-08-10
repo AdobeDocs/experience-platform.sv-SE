@@ -2,9 +2,9 @@
 title: Regelslutpunkt
 description: Lär dig hur du anropar /rules-slutpunkten i Reactor API.
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '896'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ En regel tillhör exakt en [property](./properties.md). En egenskap kan ha mång
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med regler {#list}
 
@@ -41,7 +41,7 @@ GET /properties/{PROPERTY_ID}/rules
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade regler filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -284,7 +284,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för regeln. |
+| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för regeln. |
 | `attributes.enabled` | Ett booleskt värde som anger om regeln är aktiverad. |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rules`. |
 
@@ -292,7 +292,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar information om den nya regeln.
+Ett godkänt svar returnerar information om den nyligen skapade regeln.
 
 ```json
 {
@@ -366,7 +366,7 @@ Ett godkänt svar returnerar information om den nya regeln.
 
 ## Lägga till händelser, villkor och åtgärder i en regel {#components}
 
-När du har [skapade en regel](#create)kan du börja bygga ut logiken genom att lägga till händelser, villkor och åtgärder (kallas gemensamt för regelkomponenter). Se avsnittet om [skapa en regelkomponent](./rule-components.md#create) i `/rule_components` Slutpunktshandbok som visar hur du gör detta i Reaktors API.
+En gång har du [skapade en regel](#create)kan du börja bygga ut logiken genom att lägga till händelser, villkor och åtgärder (kallas gemensamt för regelkomponenter). Se avsnittet om [skapa en regelkomponent](./rule-components.md#create) i `/rule_components` Slutpunktshandbok som visar hur du gör detta i Reaktors API.
 
 ## Uppdatera en regel {#update}
 
@@ -526,9 +526,9 @@ Regler är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du kan sk
 
 Följande anrop visar hur du hämtar relaterade resurser för en regel. När [hitta en regel](#lookup), listas dessa relationer under `relationships` regel.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
-### Visa en lista över relaterade bibliotek för en regel {#libraries}
+### Lista relaterade bibliotek för en regel {#libraries}
 
 Du kan lista bibliotek som använder en viss regel genom att lägga till `/libraries` till sökvägen för en sökningsbegäran.
 

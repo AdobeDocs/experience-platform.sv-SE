@@ -4,9 +4,9 @@ feature: Attribution AI
 title: Användargränssnittshandbok för Attribution AI
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: 66d20dc1141ff33211635ba74d320350f8b27fb7
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2385'
+source-wordcount: '2384'
 ht-degree: 0%
 
 ---
@@ -31,16 +31,16 @@ Du hittar **[!UICONTROL Total conversion events scored]** mätvärdena finns lä
 
 Tjänstmodeller kan redigeras, klonas och tas bort med kontrollerna till höger i användargränssnittet. Om du vill visa dessa kontroller väljer du en modell från din befintliga **[!UICONTROL Service models]**. Kontrollerna innehåller följande information:
 
-- **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstmodell. Du kan redigera namn, beskrivning, status, bedömningsfrekvens för modellen och ytterligare spalter för spaltdata.
-- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den valda servicemodellen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny modell.
-- **[!UICONTROL Delete]**: Du kan ta bort en servicemodell, inklusive eventuella historiska körningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
+- **[!UICONTROL Edit]**: Markering **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstmodell. Du kan redigera namn, beskrivning, status, bedömningsfrekvens för modellen och ytterligare spalter för spaltdata.
+- **[!UICONTROL Clone]**: Markering **[!UICONTROL Clone]** kopierar den valda tjänstmodellen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny modell.
+- **[!UICONTROL Delete]**: Du kan ta bort en servicemodell, inklusive alla historiska körningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
 - **[!UICONTROL Data source]**: En länk till den datauppsättning som används. Om mer än en datauppsättning används av Attribution AI visas&quot;Flera&quot; följt av antalet datauppsättningar. När du väljer hyperlänken visas förhandsvisningsdrivrutinen för datauppsättningar.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
 
 ![Sidruta](./images/user-guide/multiple-datasets-pane.png)
 
-- **[!UICONTROL Conversion events]**: En snabb översikt över konverteringshändelserna som konfigurerats för den här modellen.
-- **[!UICONTROL Lookback window]**: Den tidsram som du definierade visar hur många dagar före kontaktytorna för konverteringshändelsen som ingår.
+- **[!UICONTROL Conversion events]**: En snabb översikt över konverteringshändelserna som har konfigurerats för den här modellen.
+- **[!UICONTROL Lookback window]**: Den tidsram du definierade som anger hur många dagar före kontaktytorna för konverteringshändelsen som ska tas med.
 - **[!UICONTROL Touchpoints]**: En lista med alla kontaktytor som du definierade när du skapade den här modellen.
 
 ![](./images/user-guide/side_panel_2.png)
@@ -57,7 +57,7 @@ Därefter visas konfigurationssidan för Attribution AI där du kan ange ett nam
 
 <!-- https://www.adobe.com/go/aai-select-data -->
 
-Attribution AI kan efter design använda data från Adobe Analytics, Experience Event och Consumer Experience Event för att beräkna attribueringspoäng. När du väljer en datauppsättning visas bara de som är kompatibla med Attribution AI. Om du vill välja en datauppsättning väljer du (**+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Du kan också använda sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
+Attribution AI kan efter design använda data från Adobe Analytics, Experience Event och Consumer Experience Event för att beräkna attribueringspoäng. När du väljer en datauppsättning visas bara de som är kompatibla med Attribution AI. Om du vill välja en datauppsättning väljer du **+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Du kan också använda sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
 
 När du har valt de datauppsättningar du vill använda väljer du **[!UICONTROL Add]** om du vill lägga till datauppsättningarna i förhandsgranskningsfönstret för datauppsättningar.
 
@@ -67,7 +67,7 @@ Välja informationsikonen ![informationsikon](./images/user-guide/info-icon.png)
 
 ![Välj och söka efter datauppsättning](./images/user-guide/dataset-preview.png)
 
-Datauppsättningsförhandsvisningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
+Förhandsgranskningen av datauppsättningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
 
 Välj **[!UICONTROL Save]** om du vill spara dina utkast när du går vidare i arbetsflödet. Du kan också spara utkastmodellkonfigurationer och gå vidare till nästa steg i arbetsflödet. Använd **[!UICONTROL Save and continue]** för att skapa och spara utkast under modellkonfigurationer. Med den här funktionen kan du skapa och spara utkast av modellkonfigurationen och den är särskilt användbar när du måste definiera många fält i konfigurationsarbetsflödet.
 
@@ -91,13 +91,13 @@ Nu kan du koppla flera datauppsättningar till varandra baserat på identitetska
 
 >[!IMPORTANT]
 >
->Samma identitetstyp (namnutrymme) måste användas för varje datamängd som du väljer. En grön bock visas bredvid identitetstypen i identitetskolumnen som anger att datauppsättningarna är kompatibla. Om du till exempel använder namnutrymmet Telefon och `mobilePhone.number` som identifierare måste alla identifierare för de återstående datauppsättningarna innehålla och använda namnutrymmet Telefon.
+>Samma identitetstyp (namnutrymme) måste användas för varje datamängd som du väljer. En grön bock visas bredvid identitetstypen i identitetskolumnen som anger att datauppsättningarna är kompatibla. Om du till exempel använder namnutrymmet Telefon `mobilePhone.number` som identifierare måste alla identifierare för de återstående datauppsättningarna innehålla och använda namnutrymmet Telefon.
 
 Markera en identitet genom att markera det understrukna värdet i identitetskolumnen. Välj en identitetsleverantör.
 
 ![välj samma namnutrymme](./images/user-guide/aai-identity-map-save-and-exit.png)
 
-Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, en arbets- och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Det innebär att du måste välja `EMAIL (personalEmail.address)` som din identitet.
+Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, ett arbete och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Det innebär att du måste välja `EMAIL (personalEmail.address)` som din identitet.
 
 ![Datauppsättningsnyckeln är inte markerad](./images/user-guide/aai-identity-namespace.png)
 
@@ -109,7 +109,7 @@ Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rä
 
 <!-- https://www.adobe.com/go/aai-mapping -->
 
-När du är klar med att välja och lägga till datauppsättningar **Karta** konfigurationssteget visas. Attribution AI kräver att du mappar mediekanalsfältet för varje datauppsättning som du valde i föregående steg. Detta beror på att utan mediekanalmappningen mellan datauppsättningar kanske insikter som härletts från Attribution AI inte visas korrekt, vilket gör det svårt att tolka insikter. Även om bara mediekanalen krävs rekommenderar vi att du mappar några av de valfria fälten, som Media-åtgärd, Campaign-namn, Campaign-grupp och Campaign-tagg. På så sätt kan Attribution AI få tydligare insikter och optimala resultat.
+När du har valt och lagt till datauppsättningar **Karta** konfigurationssteget visas. Attribution AI kräver att du mappar mediekanalsfältet för varje datauppsättning som du valde i föregående steg. Detta beror på att utan mediekanalmappningen mellan datauppsättningar kanske insikter som härletts från Attribution AI inte visas korrekt, vilket gör det svårt att tolka insikter. Även om bara mediekanalen krävs rekommenderar vi att du mappar några av de valfria fälten, som Media-åtgärd, Campaign-namn, Campaign-grupp och Campaign-tagg. På så sätt kan Attribution AI få tydligare insikter och optimala resultat.
 
 ![mappning](./images/user-guide/mapping-save-&-exit.png)
 
@@ -125,7 +125,7 @@ Det finns tre olika typer av indata som används för att definiera händelser:
 
 ### Definiera konverteringshändelser {#define-conversion-events}
 
-Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetyp genom att välja datauppsättningen och fältet i **Välj en datauppsättning och ett fält** nedrullningsbar meny.
+Om du vill definiera en konverteringshändelse måste du ge händelsen ett namn och välja händelsetyp genom att välja datauppsättningen och fältet i **Välj en datauppsättning och ett fält** listrutemeny.
 
 ![ja, listruta](./images/user-guide/define-conversion-events.png)
 
@@ -137,7 +137,7 @@ När en händelse har valts visas en ny listruta till höger om händelsen. Den 
 
 ![ingen listruta](./images/user-guide/conversion_event_1.png)
 
-Därefter kan du välja en kombinerad datauppsättning som genereras genom att kombinera alla indatauppsättningar i föregående steg. Du kan också välja en kolumn baserad på enskilda datauppsättningar i **Välj en datauppsättning och ett fält** nedrullningsbar meny.
+Därefter kan du välja en kombinerad datauppsättning som genereras genom att kombinera alla indatauppsättningar i föregående steg. Du kan också välja en kolumn baserad på enskilda datauppsättningar i **Välj en datauppsättning och ett fält** listrutemeny.
 
 The **[!UICONTROL Add event]** och **[!UICONTROL Add Group]** -knappar används för att ytterligare definiera konverteringen. Beroende på vilken konvertering du definierar kan du behöva använda **[!UICONTROL Add event]** och **[!UICONTROL Add group]** knappar som ger ytterligare kontext.
 
@@ -163,7 +163,7 @@ När du har definierat konverteringen måste du bekräfta uppslagsfönstret. Anv
 
 ### Definiera kontaktytor
 
-När du definierar kontaktytor följer du ett arbetsflöde som liknar [definiera konverteringar](#define-conversion-events). Först måste du namnge kontaktytan och välja ett kontaktytpunktsvärde på menyn *Ange fältnamn* nedrullningsbar meny. När du har valt operatorlistrutan visas standardvärdet &quot;exists&quot;. Markera listrutan för att visa en lista med operatorer.
+När du definierar kontaktytor följer du ett arbetsflöde som liknar [definiera konverteringar](#define-conversion-events). Först måste du namnge kontaktytan och välja ett kontaktytpunktsvärde på menyn *Ange fältnamn* listrutemeny. När du har valt operatorlistrutan visas standardvärdet &quot;exists&quot;. Markera listrutan för att visa en lista med operatorer.
 
 ![operatorer](./images/user-guide/operators.png)
 
@@ -191,7 +191,7 @@ Markera **Lägg till grupp** ger dig möjlighet att skapa ytterligare fält som 
 
 >[!NOTE]
 >
->Använd strängen under *Namn på kontaktpunkt* om du vill få en snabb översikt över din kontaktyta. Observera att strängen matchar namnet på kontaktytan.
+>Använd strängen under *Kontaktpunktsnamn* om du vill få en snabb översikt över din kontaktyta. Observera att strängen matchar namnet på kontaktytan.
 
 ![](./images/user-guide/touchpoint_string.png)
 
@@ -235,7 +235,7 @@ Som standard skapas en poängdatauppsättning för varje tjänstmodell i ett sta
 
 Kundernas beteenden kan skilja sig avsevärt mellan olika länder och geografiska regioner. För globala företag kan användning av landsbaserade eller regionbaserade modeller öka attribueringsnoggrannheten. Varje region som läggs till skapar en ny modell med den regionens data.
 
-Om du vill definiera en ny region börjar du med att välja **[!UICONTROL Add region]**. Ange ett namn för regionen i behållaren som visas. Endast ett värde (&quot;placeContext.geo.countryCode&quot;) fylls i från **[!UICONTROL Enter Field Name]** listruta. Välj det här värdet.
+Om du vill definiera en ny region börjar du med att välja **[!UICONTROL Add region]**. Ange ett namn för regionen i behållaren som visas. Endast ett värde (&quot;placeContext.geo.countryCode&quot;) fylls i från **[!UICONTROL Enter Field Name]** nedrullningsbar meny. Välj det här värdet.
 
 ![Välj region att](./images/user-guide/select_region_att.png)
 
@@ -243,7 +243,7 @@ Välj sedan en operator.
 
 ![operatorn region](./images/user-guide/region_operators.png)
 
-Skriv till sist in landskoden i **[!UICONTROL Enter Field Value]** listruta.
+Skriv till sist in landskoden i **[!UICONTROL Enter Field Value]** nedrullningsbar meny.
 
 >[!NOTE]
 >
@@ -261,7 +261,7 @@ För att säkerställa att ni får den mest korrekta modellen är det viktigt at
 
 ![utbildningsfönster](./images/user-guide/training_window.png)
 
-När du har valt kursfönster väljer du **[!UICONTROL Finish]** i det övre högra hörnet. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Välj **[!UICONTROL Ok]** omdirigeras till **[!UICONTROL Service instances]** sida där du kan se tjänstinstansen.
+När du har valt kursfönster väljer du **[!UICONTROL Finish]** längst upp till höger. Ge databearbetningen lite tid. När du är klar visas en dialogruta som bekräftar att instansinställningarna är klara. Välj **[!UICONTROL Ok]** omdirigeras till **[!UICONTROL Service instances]** sida där du kan se tjänstinstansen.
 
 ![installationen slutförd](./images/user-guide/instance_setup_complete.png)
 

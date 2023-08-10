@@ -3,9 +3,9 @@ title: Skapa en Pendo-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Pendo-källanslutning med Adobe Experience Platform-gränssnittet.
 badge: Beta
 exl-id: defdec30-42af-43c8-b2eb-7ce98f7871e3
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Förutsättningar {#prerequisites}
@@ -33,7 +33,7 @@ Följande avsnitt innehåller information om krav som måste utföras innan du k
 
 ### Exempel-JSON för att definiera källschemat för [!DNL Pendo] {#prerequisites-json-schema}
 
-Innan du skapar en [!DNL Pendo] källanslutning, du måste ange ett källschema. Du kan använda JSON nedan.
+Innan du skapar [!DNL Pendo] källanslutning, du måste ange ett källschema. Du kan använda JSON nedan.
 
 ```
 {
@@ -112,7 +112,7 @@ När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen till den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
 När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
@@ -140,7 +140,7 @@ Logga sedan in på ditt konto på [[!DNL Pendo]](https://pendo.io/) och skapa en
 
 Navigera till inställningssidan för [!DNL Pendo] webkrok och ange din webkroks-URL i [!DNL URL] fält.
 
-![Skärmbilden för Pendo-gränssnittet visar webbkrokslutpunktsfältet](../../../../images/tutorials/create/analytics-pendo-webhook/webhook.png)
+![Skärmbilden för Pendo-gränssnittet visar webbkrokens slutpunktsfält](../../../../images/tutorials/create/analytics-pendo-webhook/webhook.png)
 
 >[!TIP]
 >

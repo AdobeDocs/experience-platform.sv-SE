@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1826'
+source-wordcount: '1825'
 ht-degree: 0%
 
 ---
@@ -62,9 +62,9 @@ Plattformsanvändning [Adobe Admin Console](https://adminconsole.adobe.com) prod
 
 Tillgången till attributbaserad åtkomstkontroll är begränsad för kunder som köper hälso- och sjukvård och/eller sekretessrutiner. Funktionerna är följande:
 
-* Gränssnitt för behörigheter: Tillhandahåller ett gränssnitt där du kan definiera användarroller, behörigheter och profiler för attributbaserad åtkomstkontroll.
+* Behörighetsgränssnitt: Tillhandahåller ett gränssnitt där du kan definiera användarroller, behörigheter och profiler för attributbaserad åtkomstkontroll.
 
-* Märkning: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper.
+* Etikett: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper.
 
 Administrationsarbetsflödena för alla Experience Platform-baserade program från Admin Console till det nya behörighetsgränssnittet håller på att ändras.
 
@@ -89,10 +89,9 @@ Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner 
 >
 >Sammanfattningsvis bör du tänka på följande när du arbetar med mål och attributbaserad åtkomstkontroll:
 >
->* Du kan bara aktivera segment som du har behörighet att komma åt och visa i [segmentsurfvy](/help/segmentation/ui/overview.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) aktiveringsarbetsflödet.
+>* Du kan bara aktivera segment som du har behörighet att komma åt och visa i [bläddringsvy för segment](/help/segmentation/ui/overview.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) av aktiveringsarbetsflödet.
 >* I [mappningssteg för aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)kan du bara visa och välja de fält som du har behörighet till för aktivering.
 >* När du vill aktivera ytterligare segment till ett befintligt mål där du inte har tillgång till alla fält som är mappade för export, blockeras aktiveringsarbetsflödet.
-
 
 Mer information om [!DNL Destinations], se [[!DNL Destinations] översikt](../../destinations/home.md).
 
@@ -100,7 +99,7 @@ Mer information om [!DNL Destinations], se [[!DNL Destinations] översikt](../..
 
 Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
-Som en del av den attributbaserade åtkomstkontrollen har `view-identity-graph` Med -behörighet kan du avgöra vilka användare i organisationen som har tillgång till identitetsdiagrammet via användargränssnittet eller API:erna. Mer information finns i handboken på [med identitetsdiagramvisningsprogrammet](../../identity-service/ui/identity-graph-viewer.md).
+Som en del av den attributbaserade åtkomstkontrollen har `view-identity-graph` Med -behörighet kan du avgöra vilka användare i organisationen som har tillgång till identitetsdiagrammet via användargränssnittet eller API:erna. Mer information finns i handboken [med identitetsdiagramvisningsprogrammet](../../identity-service/ui/identity-graph-viewer.md).
 
 Mer information om [!DNL Identity Service], se [[!DNL Identity Service] översikt](../../identity-service/home.md).
 
@@ -112,14 +111,14 @@ Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner 
 
 * Konfigurera användaråtkomst till specifika profilattribut baserat på roll, behörigheter och etiketter.
    * Som administratör kan du tilldela användare i din organisation att endast se profilattribut som är märkta med etiketter som användare har tillgång till och profilattribut som inte innehåller någon etikett.
-   * Som administratör kan du tilldela användare i organisationen att endast se profilattribut som är märkta med etiketter som användare har tillgång till när de skapar segment.
+   * Som administratör kan du tilldela användare i din organisation att endast se profilattribut som är märkta med etiketter som användare har tillgång till när de skapar segment.
 * Konfigurera användaråtkomst till dataförhandsgranskning genom att etikettera specifika datafält som används i datamodellens XDM-schema.
 
 Mer information om profil finns i [Profilöversikt](../../profile/home.md).
 
 ### Segmenteringstjänst
 
-[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
 Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner för att:
 
@@ -128,11 +127,11 @@ Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner 
 
 Mer information om [!DNL Segmentation Service], se [[!DNL Segmentation Service] översikt](../../segmentation/home.md).
 
-### XDM
+### XML
 
 Experience Data Model (XDM) är en öppen källkodsspecifikation som är utformad för att förbättra kraften i digitala upplevelser. Det innehåller gemensamma strukturer och definitioner för alla program som ska kommunicera med tjänster på plattformen. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
 
-Med attributbaserad åtkomstkontroll kan du
+Med attributbaserad åtkomstkontroll kan du:
 
 * [Tillämpa dataanvändningsetiketter på fältgrupper och klasser](../../xdm/tutorials/labels.md). Detta gör att flera scheman med samma fältgrupper eller klasser kan ha fält taggade med samma attribut, beroende på konfigurationen på fältgrupps- eller klassnivå.
 * Konfigurera användaråtkomst till specifika XDM-schemafält beroende på vilka behörighetsgrupper som används för roller som tilldelats användare.

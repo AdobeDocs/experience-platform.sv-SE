@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: b8764b4b39aba43687c7ac0540d392a3aa808df4
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2175'
+source-wordcount: '2174'
 ht-degree: 0%
 
 ---
@@ -27,8 +27,8 @@ Det är viktigt att förstå följande nyckeltermer som används i hela det här
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma betydelse för alla kunder och finns i [!DNL Analytics] källdata och [!DNL Analytics] schemafältgrupper.
 * **Eget attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i [!DNL Analytics]. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) för mer information om eVars.
-* **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är alla användardefinierade och betraktas varken som standardattribut eller anpassade attribut.
-* **Eget namn**: Vänliga namn är etiketter som tillhandahålls av människor för anpassade variabler i en [!DNL Analytics] implementering. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) om du vill ha mer information om egna namn.
+* **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är alla användardefinierade och betraktas inte som standardattribut eller anpassade attribut.
+* **Eget namn**: Eget namn är etiketter som tillhandahålls av människor för anpassade variabler i en [!DNL Analytics] implementering. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) om du vill ha mer information om egna namn.
 
 ## Skapa en källanslutning med Adobe Analytics
 
@@ -39,12 +39,11 @@ Det är viktigt att förstå följande nyckeltermer som används i hela det här
 >* Ett dataflöde som gör en 13-månaders efterfyllning av historiska rapportsvitdata till datasjön. Det här dataflödet avslutas när bakgrundsfyllningen är slutförd.
 >* Ett dataflöde som skickar livedata till sjön och till [!DNL Real-Time Customer Profile]. Det här dataflödet körs kontinuerligt.
 
-
 Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet för att begränsa vilka källor som visas.
 
-Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Analytics]** och sedan markera **[!UICONTROL Add data]**.
+Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe Analytics]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/analytics/catalog.png)
 
@@ -54,9 +53,9 @@ Under **[!UICONTROL Adobe applications]** kategori, välj **[!UICONTROL Adobe An
 >
 >Rapportsviterna som visas på skärmen kan komma från olika regioner. Du ansvarar för att förstå begränsningar och skyldigheter för dina data och hur du använder dessa data i Adobe Experience Platform tvärregioner. Se till att ditt företag tillåter detta.
 
-The **[!UICONTROL Analytics source add data]** innehåller en lista med [!DNL Analytics] skapa en källanslutning med rapportsvitdata.
+The **[!UICONTROL Analytics source add data]** innehåller en lista med [!DNL Analytics] skapa en källanslutning med rapportsvitsdata.
 
-En rapportsvit är en databehållare som utgör grunden för [!DNL Analytics] rapportering. En organisation kan ha många rapportsviter, som alla innehåller olika datauppsättningar.
+En rapportsvit är en behållare med data som utgör grunden för [!DNL Analytics] rapportering. En organisation kan ha många rapportsviter, som alla innehåller olika datauppsättningar.
 
 Du kan importera rapportsviter från alla regioner (USA, Storbritannien och Singapore) så länge de mappas till samma organisation som den Experience Platform sandlådeinstans i vilken källanslutningen skapas. En rapportsvit kan bara importeras med ett enda aktivt dataflöde. En rapportsvit som inte kan markeras har redan importerats, antingen i sandlådan som du använder eller i en annan sandlåda.
 
@@ -86,7 +85,7 @@ Ett standardschema skapar ett nytt schema åt dig och innehåller [!DNL Adobe An
 
 ![default-schema](../../../../images/tutorials/create/analytics/default-schema.png)
 
-Med ett anpassat schema kan du välja valfritt tillgängligt schema för [!DNL Analytics] data, förutsatt att schemat har [!DNL Adobe Analytics ExperienceEvent Template] fältgrupp. Om du vill använda ett anpassat schema väljer du **[!UICONTROL Custom schema]**.
+Med ett anpassat schema kan du välja valfritt tillgängligt schema för [!DNL Analytics] data, förutsatt att schemat har [!DNL Adobe Analytics ExperienceEvent Template] fältgrupp. Välj om du vill använda ett anpassat schema **[!UICONTROL Custom schema]**.
 
 ![anpassat schema](../../../../images/tutorials/create/analytics/custom-schema.png)
 
@@ -94,7 +93,7 @@ The [!UICONTROL Mapping] På sidan finns ett gränssnitt för att mappa källfä
 
 >[!TIP]
 >
->Endast scheman som har [!DNL Adobe Analytics ExperienceEvent Template] fältgruppen visas på schemamarkeringsmenyn. Andra scheman utelämnas. Om det inte finns några lämpliga scheman tillgängliga för dina Report Suite-data måste du skapa ett nytt schema. Detaljerade anvisningar om hur du skapar scheman finns i handboken på [skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md).
+>Endast scheman som har [!DNL Adobe Analytics ExperienceEvent Template] fältgruppen visas på schemamarkeringsmenyn. Andra scheman utelämnas. Om det inte finns några lämpliga scheman tillgängliga för dina Report Suite-data måste du skapa ett nytt schema. Detaljerade anvisningar om hur du skapar scheman finns i guiden [skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md).
 
 ![select-schema](../../../../images/tutorials/create/analytics/select-schema.png)
 
@@ -176,7 +175,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >title="Skapa filterregler"
 >abstract="Definiera filtreringsregler på rad- och kolumnnivå när du skickar data till kundprofilen i realtid. Använd filtrering på radnivå för att tillämpa villkor och ange vilka data som ska **inkludera för profilinmatning**. Använd filtrering på kolumnnivå för att markera de datakolumner som du vill använda **exkludera för profilinmatning**. Filtreringsreglerna gäller inte för data som skickas till datasjön."
 
-När du är klar med mappningarna för [!DNL Analytics] kan ni använda filtreringsregler och filtreringsvillkor för att selektivt inkludera eller exkludera data från konsumtion i realtidskundprofilen. Stöd för filtrering finns endast för [!DNL Analytics] data och data filtreras endast innan de anges [!DNL Profile.] Alla data hämtas in i sjön.
+När du är klar med mappningarna för [!DNL Analytics] kan ni använda filtreringsregler och filtreringsvillkor för att selektivt inkludera eller exkludera data från konsumtion i realtidskundprofilen. Stöd för filtrering finns endast för [!DNL Analytics] data och data filtreras endast innan de anges [!DNL Profile.] Alla data hämtas in i datasjön.
 
 #### Filtrering på radnivå
 
@@ -226,7 +225,7 @@ Om du vill lägga till en ny behållare markerar du ellipserna (`...`) längst u
 
 ![add-container](../../../../images/tutorials/create/analytics/add-container.png)
 
-När en ny behållare har lagts till väljer du **[!UICONTROL Include]** och sedan markera **[!UICONTROL Exclude]** i listrutan som visas.
+När en ny behållare har lagts till väljer du **[!UICONTROL Include]** och sedan **[!UICONTROL Exclude]** i listrutan som visas.
 
 ![exclude](../../../../images/tutorials/create/analytics/exclude.png)
 
@@ -242,9 +241,9 @@ Välj **[!UICONTROL Column filter]** från rubriken för att använda filtrering
 
 ![column-filter](../../../../images/tutorials/create/analytics/column-filter.png)
 
-Sidan uppdateras till ett interaktivt schematräd och visar dina schemaattribut på kolumnnivå. Här kan du välja de datakolumner som du vill utesluta från [!DNL Profile] intag. Du kan också expandera en kolumn och välja särskilda attribut för uteslutning.
+Sidan uppdateras till ett interaktivt schematräd och visar dina schemaattribut på kolumnnivå. Här kan du välja de datakolumner som du vill utesluta från [!DNL Profile] förtäring. Du kan också expandera en kolumn och välja särskilda attribut för uteslutning.
 
-Som standard är alla [!DNL Analytics] gå till [!DNL Profile] och den här processen gör det möjligt att undanta grenar av XDM-data från [!DNL Profile] intag.
+Som standard är alla [!DNL Analytics] gå till [!DNL Profile] och den här processen gör det möjligt att undanta grenar av XDM-data från [!DNL Profile] förtäring.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -275,7 +274,7 @@ The **Dataflöden** visas. På den här sidan finns ett par datauppsättningsfl�
 
 Kopplingen instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Backfill-data är inte konfigurerade för profil, men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
 
-Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i [Översikt över Analytics Data Connector](../../../../connectors/adobe-applications/analytics.md).
+Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i [Analytics Data Connector - översikt](../../../../connectors/adobe-applications/analytics.md).
 
 Välj det datauppsättningsflöde du vill visa i listan.
 
@@ -295,7 +294,7 @@ Om du vill ta bort ett dataflöde går du till [!UICONTROL Dataflows] och sedan 
 
 ## Nästa steg och ytterligare resurser
 
-När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är klart, [!DNL Analytics] data och användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-Time Customer Profile] och segmenteringstjänst. Mer information finns i följande dokument:
+När anslutningen har skapats skapas dataflödet automatiskt för att innehålla inkommande data och fylla i en datauppsättning med det valda schemat. Dessutom sker datainfyllning och inmatning av historiska data i upp till 13 månader. När det första intaget är slutfört, [!DNL Analytics] data och användas av plattformstjänster längre fram i kedjan, t.ex. [!DNL Real-Time Customer Profile] och segmenteringstjänst. Mer information finns i följande dokument:
 
 * [[!DNL Real-Time Customer Profile] översikt](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] översikt](../../../../../segmentation/home.md)

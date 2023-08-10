@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: 04ed092d4514d1668068ed73a1be4400c6cd4d8e
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1772'
+source-wordcount: '1771'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ När du har skapat ett nyckelvalv kan du generera en ny nyckel. Navigera till **
 
 ![Generera en nyckel](../images/governance-privacy-security/customer-managed-keys/view-keys.png)
 
-Använd det angivna formuläret för att ange ett namn för nyckeln och markera **RSA** för nyckeltypen. Som ett minimum finns **[!DNL RSA key size]** måste vara minst **3072** bitar efter behov av [!DNL Cosmos DB]. [!DNL Azure Data Lake Storage] är också kompatibelt med RSA 3027.
+Använd det angivna formuläret för att ange ett namn för nyckeln och markera **RSA** för nyckeltypen. Som ett minimum är **[!DNL RSA key size]** måste vara minst **3072** bitar efter behov av [!DNL Cosmos DB]. [!DNL Azure Data Lake Storage] är också kompatibelt med RSA 3027.
 
 >[!NOTE]
 >

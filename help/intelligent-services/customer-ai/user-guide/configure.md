@@ -5,9 +5,9 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2741'
+source-wordcount: '2740'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan k
 
 ## Skapa en instans {#set-up-your-instance}
 
-Välj **[!UICONTROL Services]** i den vänstra navigeringen. The **[!UICONTROL Services]** webbläsaren visas och alla tillgängliga tjänster visas. Välj **[!UICONTROL Open]**.
+Välj **[!UICONTROL Services]** i den vänstra navigeringen. The **[!UICONTROL Services]** webbläsaren visas och alla tillgängliga tjänster visas. I behållaren för kundens AI väljer du **[!UICONTROL Open]**.
 
 ![](../images/user-guide/navigate-to-service.png)
 
@@ -33,8 +33,8 @@ The **Kund-AI** Gränssnittet visas och visar alla tjänstinstanser.
 
 Tjänstinstanser kan redigeras, klonas och tas bort med kontrollerna till höger i användargränssnittet. Om du vill visa dessa kontroller väljer du en instans från din befintliga **[!UICONTROL Service instances]**. Kontrollerna innehåller följande:
 
-- **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
-- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den valda tjänstinstansinställningen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Edit]**: Markering **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
+- **[!UICONTROL Clone]**: Markering **[!UICONTROL Clone]** kopierar den valda tjänstinstansinställningen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar. Motsvarande utdatamängd kommer att tas bort från Platform. Poäng som synkroniserades till kundprofilen i realtid tas dock inte bort.
 - **[!UICONTROL Data source]**: En länk till den datauppsättning som används av den här instansen. Om du använder flera datauppsättningar och markerar hyperlänktexten, öppnas förhandsvisningsprogramvaran för datauppsättningen.
 - **[!UICONTROL Last run details]**: Detta visas bara när en körning misslyckas. Här visas information om varför körningen misslyckades, t.ex. felkoder.
@@ -64,7 +64,7 @@ Ange önskade värden och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
 ## Markera data {#select-data}
 
-Kunds-AI använder sig av data från Adobe Analytics, Adobe Audience Manager, Experience Events i allmänhet och Consumer Experience Event för att beräkna benägenhetspoängen. När du väljer en datauppsättning visas bara de som är kompatibla med kundens AI. Om du vill välja en datauppsättning väljer du (**+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Använd sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
+Kunds-AI använder sig av data från Adobe Analytics, Adobe Audience Manager, Experience Events i allmänhet och Consumer Experience Event för att beräkna benägenhetspoängen. När du väljer en datauppsättning visas bara de som är kompatibla med kundens AI. Om du vill välja en datauppsättning väljer du **+**) bredvid datauppsättningsnamnet eller markera kryssrutan för att lägga till flera datauppsättningar samtidigt. Använd sökalternativet för att snabbt hitta de datauppsättningar du är intresserad av.
 
 ![Välj och söka efter datauppsättning](../images/user-guide/configure-dataset-page-save-and-exit-cai.png)
 
@@ -76,7 +76,7 @@ Välja informationsikonen ![informationsikon](../images/user-guide/info-icon.png
 
 ![Välj och söka efter datauppsättning](../images/user-guide/dataset-info.png)
 
-Datauppsättningsförhandsvisningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
+Förhandsgranskningen av datauppsättningen innehåller data som senaste uppdateringstid, källschema och en förhandsgranskning av de första tio kolumnerna.
 
 Välj **[!UICONTROL Save]** om du vill spara dina utkast när du går vidare i arbetsflödet. Du kan också spara utkastmodellkonfigurationer och gå vidare till nästa steg i arbetsflödet. Använd **[!UICONTROL Save and continue]** för att skapa och spara utkast under modellkonfigurationer. Med den här funktionen kan du skapa och spara utkast av modellkonfigurationen och den är särskilt användbar när du måste definiera många fält i konfigurationsarbetsflödet.
 
@@ -100,14 +100,14 @@ Nu kan du koppla flera datauppsättningar till varandra baserat på identitetska
 
 >[!IMPORTANT]
 >
->Samma identitetstyp (namnutrymme) måste användas för varje datamängd som du väljer. En grön bock visas bredvid identitetstypen i identitetskolumnen som anger att datauppsättningarna är kompatibla. Om du till exempel använder namnutrymmet Telefon och `mobilePhone.number` som identifierare måste alla identifierare för de återstående datauppsättningarna innehålla och använda namnutrymmet Telefon.
+>Samma identitetstyp (namnutrymme) måste användas för varje datamängd som du väljer. En grön bock visas bredvid identitetstypen i identitetskolumnen som anger att datauppsättningarna är kompatibla. Om du till exempel använder namnutrymmet Telefon `mobilePhone.number` som identifierare måste alla identifierare för de återstående datauppsättningarna innehålla och använda namnutrymmet Telefon.
 
 Markera en identitet genom att markera det understrukna värdet i identitetskolumnen. Välj en identitetsleverantör.
 
 <!-- ![select same namespace](../images/user-guide/identity-type.png) -->
 [välj samma namnutrymme](../images/user-guide/cai-identity-namespace.png)
 
-Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, en arbets- och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Detta innebär att `EMAIL (personalEmail.address)` väljs som identitet.
+Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rätt identitetsfält för ditt användningsfall. Det finns till exempel två e-postidentiteter tillgängliga i e-postnamnutrymmet, ett arbete och en personlig e-postadress. Beroende på användningsfallet är det troligare att ett personligt e-postmeddelande fylls i och är mer användbart i individuella prognoser. Detta innebär att `EMAIL (personalEmail.address)` väljs som identitet.
 
 ![Datauppsättningsnyckeln är inte markerad](../images/user-guide/select-identity.png)
 
@@ -126,7 +126,7 @@ Om du vill skapa ett mål väljer du **[!UICONTROL Enter Field Name]** följt av
 <!-- ![](../images/user-guide/define-a-goal.png) -->
 ![](../images/user-guide/cai-define-a-goal.png)
 
-### Kommer att inträffa och kommer inte att inträffa
+### Inträffar och kommer inte att inträffa
 
 När du definierar ditt mål kan du välja **[!UICONTROL Will occur]** eller **[!UICONTROL Will not occur]**. Markera **[!UICONTROL Will occur]** betyder att de händelsevillkor du definierar måste uppfyllas för att en kunds händelsedata ska inkluderas i insikterna-gränssnittet.
 
@@ -171,7 +171,7 @@ Om du har ytterligare information förutom [standardhändelsefält](../data-requ
 
 ![händelsefunktion](../images/user-guide/event-feature.png)
 
-Om du vill lägga till en anpassad händelse väljer du **[!UICONTROL Add custom event]**. Därefter anger du ett anpassat händelsenamn och mappar det till händelsefältet i schemat. Anpassade händelsenamn visas i stället för fältvärdet när du tittar på inflytelserika faktorer och andra insikter. Det innebär att det anpassade händelsenamnet används i stället för händelsens ID/värde. Mer information om hur anpassade händelser visas finns i [exempelavsnitt för anpassad händelse](#custom-event). Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
+Välj om du vill lägga till en anpassad händelse **[!UICONTROL Add custom event]**. Därefter anger du ett anpassat händelsenamn och mappar det till händelsefältet i schemat. Anpassade händelsenamn visas i stället för fältvärdet när du tittar på inflytelserika faktorer och andra insikter. Det innebär att det anpassade händelsenamnet används i stället för händelsens ID/värde. Mer information om hur anpassade händelser visas finns i [exempelavsnitt för anpassad händelse](#custom-event). Dessa ytterligare anpassade händelser används av kundens AI för att förbättra modellens kvalitet och ge mer korrekta resultat.
 
 ![Eget händelsefält](../images/user-guide/custom-event.png)
 
@@ -183,7 +183,7 @@ Ange fältvärdena om den markerade operatorn kräver ett. I det här exemplet b
 
 ![Fältvärde för anpassad händelse](../images/user-guide/custom-value.png)
 
-När du är klar väljer du **[!UICONTROL Next]** i det övre högra hörnet för att fortsätta.
+När du är klar väljer du **[!UICONTROL Next]** längst upp till höger för att fortsätta.
 
 ### Egna profilattribut (*valfri*)
 
@@ -191,7 +191,7 @@ Du kan definiera viktiga profildatauppsättningsfält (med tidsstämplar) i dina
 
 >[!NOTE]
 >
->När du lägger till ett anpassat profilattribut följer du samma arbetsflöde som när du lägger till en anpassad händelse. Precis som för anpassade händelser påverkar anpassade profilattribut din modellbedömning på samma sätt. Mer information finns på [Exempel på anpassad händelse](#custom-event) -avsnitt.
+>När du lägger till ett anpassat profilattribut följer du samma arbetsflöde som när du lägger till en anpassad händelse. Ungefär som anpassade händelser påverkar anpassade profilattribut din modellbedömning på samma sätt. Mer information finns på [Exempel på anpassad händelse](#custom-event) -avsnitt.
 
 ![lägg till ett anpassat profilattribut](../images/user-guide/profile-attributes.png)
 
@@ -209,7 +209,7 @@ Du kan också välja att ta med profilattribut från den dagliga exporten av ög
 
 ### Lägga till ett eget händelseexempel {#custom-event}
 
-I följande exempel läggs ett anpassat händelse- och profilattribut till i en Kund AI-instans. Målet med kundens AI-instans är att förutsäga sannolikheten för att en kund köper en annan Luma-produkt inom de kommande 60 dagarna. Vanligtvis är produktdata länkade till en produkt-SKU. I det här fallet är SKU:n `prd1013`. När kundens AI-modell har tränats/bedömts kan denna SKU länkas till en händelse och visas som en inflytelserik faktor för en benägenhetspyts.
+I följande exempel läggs ett anpassat händelse- och profilattribut till i en Kundens AI-instans. Målet med kundens AI-instans är att förutsäga sannolikheten för att en kund köper en annan Luma-produkt inom de kommande 60 dagarna. Vanligtvis är produktdata länkade till en produkt-SKU. I det här fallet är SKU:n `prd1013`. När kundens AI-modell har tränats/bedömts kan denna SKU länkas till en händelse och visas som en inflytelserik faktor för en benägenhetspyts.
 
 Kundens AI tillämpar automatiskt generering av funktioner som&quot;Dagar sedan&quot; eller&quot;Antal&quot; mot anpassade händelser som **Se köpet**. Om den här händelsen ansågs vara en inflytelserik faktor för varför kunderna är höga, medelhöga eller låga, visar kundens AI det som `Days since prd1013 purchase` eller `Count of prd1013 purchase`. Genom att skapa detta som en anpassad händelse kan du ge händelsen ett nytt namn som gör resultatet mycket lättare att läsa. Exempel, `Days since Watch purchase`. Dessutom använder kundens AI den här händelsen i utbildningen och poängsättningen även om händelsen inte är en standardhändelse. Det innebär att du kan lägga till flera händelser som du tror kan vara inflytelserika och anpassa modellen ytterligare genom att inkludera data som reservationer, besöksloggar och andra händelser. Genom att lägga till dessa datapunkter ökar du noggrannheten och precisionen i kundens AI-modell ytterligare.
 
@@ -229,7 +229,7 @@ Om du vill konfigurera ett poängschema börjar du med att konfigurera **[!UICON
 
 Om datauppsättningen innehåller kolumner som lagts till som testdata kan du lägga till den kolumnen eller händelsen i en exkluderingslista genom att markera **[!UICONTROL Add Exclusion]** följt av att ange det fält som du vill utesluta. Detta förhindrar att händelser som uppfyller vissa villkor utvärderas när bakgrundsmusik genereras. Den här funktionen kan användas för att filtrera bort irrelevanta dataindata eller kampanjer.
 
-Om du vill exkludera en händelse väljer du **[!UICONTROL Add exclusion]** och definiera händelsen. Om du vill ta bort ett undantag markerar du ellipserna (**[!UICONTROL ...]**) till det övre högra hörnet i händelsebehållaren och välj sedan **[!UICONTROL Remove Container]**.
+Om du vill utesluta en händelse väljer du **[!UICONTROL Add exclusion]** och definiera händelsen. Om du vill ta bort ett undantag markerar du ellipserna (**[!UICONTROL ...]**) till det övre högra hörnet i händelsebehållaren och välj sedan **[!UICONTROL Remove Container]**.
 
 ![](../images/user-guide/exclusion.png)
 
@@ -241,7 +241,7 @@ När du använder AI för första gången kan du inaktivera den här funktionen 
 
 ![Växla profil](../images/user-guide/advanced-workflow-save.png)
 
-När du har angett poängschemat, inkluderar du undantag för förutsägelser och profilen växlar var du vill ha det väljer du **[!UICONTROL Finish]** i det övre högra hörnet för att skapa en AI-instans för kunden.
+När du har angett poängschemat, inkluderar du undantag för förutsägelser och profilen växlar var du vill att det ska vara väljer du **[!UICONTROL Finish]** i det övre högra hörnet för att skapa en AI-instans för kunden.
 
 Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och efterföljande körningar utförs enligt ditt definierade schema.
 
@@ -249,7 +249,7 @@ Om instansen skapas utan fel utlöses en förutsägelsekörning omedelbart och e
 >
 >Beroende på storleken på indata kan det ta upp till 24 timmar att slutföra förutsägelser.
 
-Genom att följa det här avsnittet har du konfigurerat en instans av Customer AI och utfört en förutsägelsekörning. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poängvärden om profilväxlingen är aktiverad. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudiekursen.
+Genom att följa det här avsnittet har du konfigurerat en instans av Customer AI och utfört en förutsägelsekörning. När körningen är klar fyller poängsatta insikter automatiskt i profiler med förutbestämda poängvärden om profilväxlingen är aktiverad. Vänta i upp till 24 timmar innan du fortsätter till nästa avsnitt i den här självstudien.
 
 ## Nästa steg {#next-steps}
 

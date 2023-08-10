@@ -2,16 +2,16 @@
 title: Egenskapsslutpunkt
 description: Lär dig hur du anropar slutpunkten /properties i Reactor API.
 exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
-source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1103'
 ht-degree: 1%
 
 ---
 
 # Egenskapsslutpunkt
 
-En egenskap är en behållarkonstruktion som innehåller de flesta andra resurser som finns i Reaktors-API:t. Du hanterar egenskaper programmatiskt med `/properties` slutpunkt.
+En egenskap är en behållarkonstruktion som innehåller de flesta andra resurser som är tillgängliga i Reaktors-API:t. Du hanterar egenskaper programmatiskt med `/properties` slutpunkt.
 
 I resurshierarkin är en egenskap ägare av följande:
 
@@ -31,7 +31,7 @@ Mer allmän information om egenskaper och deras roll i tagghantering finns i öv
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med egenskaper {#list}
 
@@ -51,7 +51,7 @@ GET /companies/{COMPANY_ID}/properties
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade egenskaper filtreras baserat på följande attribut:<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade egenskaper filtreras baserat på följande attribut:<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -287,7 +287,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar informationen om egenskapen.
+Ett lyckat svar returnerar informationen om egenskapen.
 
 ```json
 {
@@ -398,7 +398,7 @@ POST /company/{COMPANY_ID}/properties
 
 **Begäran**
 
-Följande begäran skapar en ny egenskap för den angivna egenskapen. Anropet associerar även egenskapen med ett befintligt tillägg via `relationships` -egenskap. Se guiden [relationer](../guides/relationships.md) för mer information.
+I följande begäran skapas en ny egenskap för den angivna egenskapen. Anropet associerar även egenskapen med ett befintligt tillägg via `relationships` -egenskap. Se guiden på [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
@@ -427,7 +427,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för egenskapen. |
+| `attributes.name` | **(Obligatoriskt)** Ett läsbart namn för egenskapen. |
 | `attributes.platform` | **(Obligatoriskt)** Plattformen för egenskapen. Kan vara antingen `web` för webbegenskaper, eller `mobile` eller `edge` för mobila egenskaper. |
 | `attributes.domains` | **(Krävs för webbegenskaper)** En array med URL-domäner för egenskapen. |
 | `attributes.development` | Ett booleskt värde som anger om det här är en utvecklingsegenskap. |
@@ -578,7 +578,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `attributes` | Ett objekt vars egenskaper representerar de attribut som ska uppdateras för egenskapen. Följande attribut kan uppdateras för en egenskap: <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | The `id` för egenskapen som du vill uppdatera. Det här bör matcha `{PROPERTY_ID}` värdet som anges i sökvägen för begäran. |
+| `id` | The `id` för den egenskap som du vill uppdatera. Det här bör matcha `{PROPERTY_ID}` värdet som anges i sökvägen för begäran. |
 | `type` | Den typ av resurs som uppdateras. För den här slutpunkten måste värdet vara `properties`. |
 
 {style="table-layout:auto"}
@@ -716,7 +716,7 @@ Egenskaperna är&quot;anmärkningsvärda&quot; resurser, vilket innebär att du 
 
 Följande anrop visar hur du hämtar relaterade resurser för en egenskap. När [söka efter en egenskap](#lookup), listas dessa relationer under `relationships` -egenskap.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
 ### Lista relaterade återanrop för en egenskap {#callbacks}
 
@@ -1054,7 +1054,7 @@ Ett lyckat svar returnerar en lista över miljöer som ägs av den angivna egens
 }
 ```
 
-### Visa en lista över relaterade tillägg för en egenskap {#extensions}
+### Lista relaterade tillägg för en egenskap {#extensions}
 
 Du kan lista [tillägg](./extensions.md) som ägs av en egendom genom att lägga till `/extensions` till sökvägen för en sökningsbegäran.
 
@@ -1197,7 +1197,7 @@ GET  /properties/{PROPERTY_ID}/hosts
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{PROPERTY_ID}` | The `id` för egenskapen vars värdar du vill visa. |
+| `{PROPERTY_ID}` | The `id` för den egenskap vars värdar du vill visa. |
 
 {style="table-layout:auto"}
 

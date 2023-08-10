@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '2159'
+source-wordcount: '2158'
 ht-degree: 3%
 
 ---
@@ -47,7 +47,7 @@ Mer information finns i [Migreringsguide för datasjöer](../../landing/adls2-ge
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Behörigheter | I [!DNL Admin Console], fliken i en [!DNL Platform] Med produktprofilen kan du anpassa vilken [!DNL Platform] funktioner är tillgängliga för de användare som är kopplade till den profilen. Tillgängliga behörighetskategorier är: **[!UICONTROL Data Modeling]**, **[!UICONTROL Data Management]**, **[!UICONTROL Profile Management]**, **[!UICONTROL Identity Management]**, **[!UICONTROL Data Monitoring]**, **[!UICONTROL Sandbox Administration]**, **[!UICONTROL Destinations]**, **[!UICONTROL Data Ingestion]**, **[!UICONTROL Data Science Workspace]**, **[!UICONTROL Query Service]** och **[!UICONTROL Data Governance]**. |
-| Åtkomst till sandlådor | The **[!UICONTROL Permissions]** en flik i en [!DNL Platform] produktprofilen kan ge användare åtkomst till specifika sandlådor. Se avsnittet om [sandlådor](#sandboxes) nedan om du vill ha mer information. |
+| Åtkomst till sandlådor | The **[!UICONTROL Permissions]** en flik i en [!DNL Platform] produktprofilen kan ge användare åtkomst till specifika sandlådor. Se avsnittet om [sandlådor](#sandboxes) nedan för mer information. |
 
 Mer information finns i [åtkomstkontroll - översikt](../../access-control/home.md).
 
@@ -59,7 +59,7 @@ Mer information finns i [åtkomstkontroll - översikt](../../access-control/home
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Centraliserat erbjudandebibliotek | Gränssnittet där du skapar och hanterar de olika elementen som utgör erbjudandena och definierar deras regler och begränsningar. |
+| Centraliserat erbjudande | Gränssnittet där du skapar och hanterar de olika elementen som utgör erbjudandena och definierar deras regler och begränsningar. |
 | Beslutsmotor för erbjudande | Beslutsmotorn för erbjudandet utnyttjar [!DNL Platform] data och [!DNL Real-Time Customer Profiles], tillsammans med erbjudandebiblioteket, för att välja rätt tidpunkt, kunder och kanaler som erbjudandena ska levereras till. |
 
 Mer information finns i [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en) dokumentation.
@@ -74,14 +74,14 @@ Mer information finns i [[!DNL Offer Decisioning]](https://experienceleague.adob
 | ------- | ----------- |
 | Produktionssandlåda | [!DNL Experience Platform] innehåller en enda produktionssandlåda som inte kan tas bort eller återställas. Det totala antalet tillgängliga sandlådor, produktion och icke-produktion, bestäms av den licensierade licensen. |
 | Sandlådor utan produktion | Flera icke-produktionssandlådor kan skapas för en enda [!DNL Platform] kan du till exempel testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka din produktionssandlåda. |
-| Sandlådeväxlare | I [!DNL Experience Platform] i användargränssnittet gör sandlådeväxlaren i skärmens övre vänstra hörn att du kan växla mellan tillgängliga sandlådor via en nedrullningsbar meny. Sandlådeväxlaren innehåller också en sökfunktion som gör att du kan filtrera igenom tillgängliga sandlådor. |
+| Sandlådeväxlare | I [!DNL Experience Platform] i användargränssnittet gör sandlådeväxlaren i skärmens övre vänstra hörn att du kan växla mellan tillgängliga sandlådor via en listruta. Sandlådeväxlaren innehåller också en sökfunktion som gör att du kan filtrera igenom tillgängliga sandlådor. |
 | `x-sandbox-name` header | Alla samtal till [!DNL Experience Platform] API:erna måste nu innehålla de nya `x-sandbox-name` header, vars värde refererar till `name` i sandlådan där åtgärden ska utföras. |
 
 Mer information finns i [översikt över sandlådor](../../sandboxes/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+[!DNL Data Prep] gör att datatekniker kan mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Nya funktioner**
 
@@ -100,9 +100,9 @@ Data Science Workspace använder maskininlärning och artificiell intelligens f�
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| [!DNL JupyterLab] Mallen Recipe Builder | Anteckningsbok för att hämta in krav på användning och versioner har uppdaterats. [!DNL Python] XML-basbilden för körningsmiljön har uppdaterats för användning [!DNL Python] 3.6.7 och [!DNL Conda] enbart miljön. |
+| [!DNL JupyterLab] Mallen Recipe Builder | Anteckningsbok för att hämta information om krav på användning och versioner har uppdaterats. [!DNL Python] XML-basbilden för körningsmiljön har uppdaterats för användning [!DNL Python] 3.6.7 och [!DNL Conda] enbart miljön. |
 
-Mer information finns i dokumentet om [skapa ett recept med Jupyter Notebooks](../../data-science-workspace/jupyterlab/create-a-model.md).
+Läs mer om [skapa ett recept med Jupyter Notebooks](../../data-science-workspace/jupyterlab/create-a-model.md).
 
 ## [!DNL Destinations] Tjänst {#destinations}
 
@@ -129,7 +129,7 @@ Mer information finns i [Översikt över destinationer](../../destinations/home.
 
 ## Intelligenta tjänster {#intelligent-services}
 
-Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskap.
 
 **Viktiga funktioner**
 
@@ -137,7 +137,7 @@ Intelligenta tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlig
 | ------- | ----------- |
 | Consumer Experience Events (CEE) dataset | När du skapar en CEE-datauppsättning har du nu stöd för att lägga till identitetsfält i datauppsättningen med Schemaredigeraren. Attribution AI- och kunds-AI använder den primära identiteten för att kombinera händelser. |
 
-Mer information finns i avsnittet om [lägga till identitetsfält i en datauppsättning](../../intelligent-services/data-preparation.md#add-identity-fields-to-the-dataset) i handboken Intelligent Services för dataförberedelse.
+Mer information finns i [lägga till identitetsfält i en datauppsättning](../../intelligent-services/data-preparation.md#add-identity-fields-to-the-dataset) i handboken Intelligent Services för dataförberedelse.
 
 ### Attribution AI
 
@@ -173,7 +173,7 @@ Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möj
 | Redigera instansnamn | Du kan ändra namnet på en befintlig Kundens AI-instans. |
 | Ändra parametrar för instanskonfiguration | Du kan nu ändra konfigurationen för en befintlig kundens AI-instans om den inte har påbörjat en poängsättning än. |
 | Kloninstans | Kopierar den valda tjänstinstansinställningen och tillåter ändringar. |
-| Tillståndsspårning | Du hittar det totala antalet profiler som Kund-AI har gjort för ditt konto i Skapa instansbehållare. |
+| Tillståndsspårning | Du kan hitta det totala antalet profiler som Kund-AI har klassificerat för ditt konto i Skapa instansbehållare. |
 | Förutsägelsemål | Flexibiliteten när det gäller att skapa ett förutsägelsemål har ökat med nya alternativ för att förutsäga om något kommer att hända eller inte. Dessutom finns alternativ för att förutsäga om alla händelser inträffar eller om någon av händelserna inträffar när flera händelser har lagts till. |
 | Influensafaktor-drilldown | De viktigaste inflytelserika faktorbuckarna innehåller nu borrningar. Nedbrytning är en djupare nivåsammanfattning av värden för var och en av de viktigaste inflytelserika faktorerna inom en benägenhetspyts. |
 
@@ -210,10 +210,10 @@ Adobe Experience Platform kan importera data från externa källor och samtidigt
 | ------- | ----------- |
 | Uppdatera anslutningsinformation | Nu kan du uppdatera namn, beskrivningar och autentiseringsuppgifter för befintliga batchanslutningar med [!DNL Flow Service] API och användargränssnittet. Mer information finns i självstudiekursen om [uppdatera anslutningar med API:t för Flow Service](../../sources/tutorials/api/update.md) och [redigera kontoinformation med användargränssnittet](../../sources/tutorials/ui/monitor.md). |
 | Ta bort anslutningar | Batchanslutningar som innehåller fel eller har blivit onödiga kan nu tas bort med [!DNL Flow Service] API och användargränssnittet. Mer information finns i självstudiekursen om [ta bort anslutningar med API:t för Flow Service](../../sources/tutorials/api/delete.md) och [ta bort konton med användargränssnittet](../../sources/tutorials/ui/delete-accounts.md). |
-| Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, som JSON eller Parquet, under dataöverföringsprocessen. Se självstudiekursen på [konfigurera ett dataflöde för molnlagringsanslutningar i användargränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för mer information. |
-| API-stöd för mappning i strömningskällor | Nu kan du använda API:er för att utföra mappningsfunktioner med direktuppspelningskällor. |
+| Hierarkisk mappning | Du kan förhandsgranska en hierarkisk källfil, till exempel JSON eller Parquet, under dataöverföringsprocessen. Se självstudiekursen om [konfigurera ett dataflöde för molnlagringsanslutningar i användargränssnittet](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) för mer information. |
+| API-stöd för mappning i strömningskällor | Nu kan du använda API:er för att utföra mappningsfunktioner med strömningskällor. |
 | API-stöd för anpassade avgränsare för molnlagringskällor | Nu kan du samla in filer som inte är CSV-avgränsade med molnlagringskällor. Du kan använda valfri kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla platta filer i alla format. |
 | Stöd för sandlåda i Adobe Audience Manager Connector | Kopplingen Audience Manager är nu sandlådebaserad. Användare kan aktivera kopplingen för att dirigera datauppsättningar från Audience Manager till valfri sandlåda (inklusive icke-produktionssandlådor). Konfigurationen är begränsad till en sandlåda per organisation. |
-| UX-förbättringar | Filbaserad inmatning är nu tillgängligt via källkatalogen. |
+| Förbättringar av UX | Filbaserad inmatning är nu tillgängligt via källkatalogen. |
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).

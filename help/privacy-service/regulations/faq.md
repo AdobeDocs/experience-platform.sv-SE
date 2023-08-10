@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Frågor och svar om sekretessregler
 description: Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregler som stöds och hur de implementeras i Adobe Experience Cloud.
 exl-id: ec553e53-664b-4e18-abb1-4e4063fdd2c9
-source-git-commit: 7e86721f6dd6fd280ae7e7e67aca21b4258ffb66
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1619'
+source-wordcount: '1618'
 ht-degree: 0%
 
 ---
 
-# Frågor och svar om sekretessbestämmelser
+# Frågor och svar om sekretesskrav
 
 Det här dokumentet innehåller svar på vanliga frågor om vilka sekretessregler som stöds och hur de implementeras i Adobe Experience Cloud.
 
@@ -43,7 +43,7 @@ Följande identifierare används ofta i Experience Cloud och kan omfattas av sek
 
 Personlig information kan också omfatta information om internetaktiviteter eller andra aktiviteter i elektroniska nätverk. Detta omfattar, men är inte begränsat till:
 
-* Webbhistorik
+* Webbläsarhistorik
 * Sökhistorik
 * Information om en kunds interaktion med en webbplats, tillämpning eller annons
 
@@ -61,16 +61,16 @@ A **datastyrenhet** är den person eller organisation som har befogenhet och
 
 **Tvetydigt (underförstått) samtycke** avser samtycke som inte uttryckligen gavs av den registrerade, men som ändå är entydigt till sin natur. Exempel: under registreringsprocessen för ett företags webbplats får man ett meddelande om att den registrerade genom att ange en e-postadress samtycker till att ta emot e-post om specialerbjudanden. Om den registrerade läser meddelandet är den positiva åtgärden att ange sin e-postadress tillräckligt för att betraktas som otvetydigt samtycke.
 
-För många förordningar som GDPR krävs explicit samtycke för att behandla känsliga personuppgifter, där det inte räcker med&quot;deltagande&quot;. För icke-känsliga uppgifter kan dock entydigt (underförstått) samtycke användas.
+För många förordningar som GDPR krävs explicit samtycke för att behandla känsliga personuppgifter, där det inte räcker med&quot;deltagande&quot;. För icke-känsliga uppgifter är dock entydigt (underförstått) samtycke godtagbart.
 
 ### Kan registrerade under en viss ålder ge sitt samtycke?
 
-Många integritetsbestämmelser föreskriver att om en registrerad är under en viss ålder kan de inte lagligen ge sitt samtycke till insamling av deras personuppgifter. Enligt vissa bestämmelser kan den som har föräldraansvar för den registrerade i dessa fall ge sitt samtycke, men inte alla. I följande tabell anges den lägsta ålder som de registrerade måste ge sitt eget samtycke till varje förordning, med anmärkningar för ytterligare information:
+Många integritetsbestämmelser föreskriver att om en registrerad är under en viss ålder kan de inte lagligen ge sitt samtycke till insamling av deras personuppgifter. Enligt vissa bestämmelser kan den person som har föräldraansvar för den registrerade i dessa fall ge sitt samtycke, men inte alla. I följande tabell anges den lägsta ålder som de registrerade måste ge sitt eget samtycke till varje förordning, med anmärkningar för ytterligare information:
 
 | Förordning | Ålder för samtycke | Anteckningar |
 | --- | --- | --- |
-| CCPA (Kalifornien) | 16 | <ul><li>Föräldratillstånd kan endast ges till registrerade personer som är 13 år eller äldre.</li><li>Insamling av personuppgifter från personer under 13 års ålder är strängt förbjuden.</li></ul> |
-| GDPR (Europeiska unionen) | 16 | <ul><li>Vissa av EU:s medlemsstater kan för detta ändamål införa en lag om en lägre ålder, dock inte lägre än 13 år.</li><li>Föräldrar måste ge sitt samtycke till alla registrerade under åldersgränsen.</li></ul> |
+| CCPA (California) | 16 | <ul><li>Föräldratillstånd kan endast ges till registrerade personer som är 13 år eller äldre.</li><li>Insamling av personuppgifter från personer under 13 års ålder är strängt förbjuden.</li></ul> |
+| GDPR (EU) | 16 | <ul><li>Vissa av EU:s medlemsstater kan för detta ändamål införa en lag om en lägre ålder, dock inte lägre än 13 år.</li><li>Föräldrar måste ge sitt samtycke till alla registrerade under åldersgränsen.</li></ul> |
 | LGPD (Brasilien) | 13 | <ul><li>Föräldrar måste ge sitt samtycke till alla registrerade under åldersgränsen.</li><li>En fysisk person som är 13 till 18 år får ge sitt samtycke så länge som behandlingen av deras personuppgifter sker i deras bästa intresse.</li></ul> |
 | PDPA (Thailand) | 10 | <ul><li>Föräldrar måste ge sitt samtycke till alla registrerade under åldersgränsen.</li></ul> |
 
@@ -86,9 +86,9 @@ Om man utgår ifrån att företaget har samlat in personuppgifter och att det ka
 
 | Förordning | Tidsram för svar | Anteckningar |
 | --- | --- | --- |
-| CCPA (Kalifornien) | 45 dagar |  |
-| GDPR (Europeiska unionen) | 30 dagar | Om begäran är komplex, eller om flera förfrågningar har gjorts av samma registrerade, kan begäran förlängas till 60 dagar. |
-| LGPD (Brasilien) | 15 dagar |  |
+| CCPA (California) | 45 dagar | |
+| GDPR (EU) | 30 dagar | Om begäran är komplex, eller om flera förfrågningar har gjorts av samma registrerade, kan begäran förlängas till 60 dagar. |
+| LGPD (Brasilien) | 15 dagar | |
 | PDPA (Thailand) | 30 dagar | Om ett företag inte kan besvara en begäran från en registrerad inom efterlevnadsperioden, kommer företaget att ha ytterligare 30 dagar från den dag då de inte kunde besvara en skriftlig begäran till den registrerade. |
 
 <!-- | New Zealand [!DNL Privacy Act] | 20 working days | | -->
@@ -103,7 +103,7 @@ Om din organisations dataåtgärder faller under jurisdiktionerna för GDPR, LGP
 
 >[!IMPORTANT]
 >
->Till skillnad från andra bestämmelser anger CCPA detta som ett krav. Det rekommenderas dock i allmänhet att ett företag måste ha en kvalificerad individuell datainsamling och lagring av konsumentdata samt svara på kundförfrågningar för att upprätthålla integritetsefterlevnad.
+>Till skillnad från andra bestämmelser anger CCPA detta som ett krav. Det rekommenderas dock i allmänhet att ett företag måste ha en kvalificerad individuell datainsamling för att kunna upprätthålla integritetsefterlevnad och lagra konsumentdata samt svara på kundfrågor.
 
 ### Hur kan jag stödja konsumentförfrågningar om jag upprätthåller data som omfattas av sekretesslagstiftningen?
 
@@ -156,4 +156,4 @@ Följande frågor gäller specifikt PDPA.
 
 ### Vad är känsliga personuppgifter?
 
-PDF-dokumentet innehåller strikta krav för insamling och lagring av känsliga personuppgifter som omfattar personuppgifter som gäller Ras eller etnisk tillhörighet, politiska åsikter, religiös eller filosofisk övertygelse, kriminalregister, fackliga medlemskap, genetiska uppgifter, biometriska uppgifter, hälsoregister, sexuell läggning eller preferenser.
+PDF-dokumentet innehåller strikta krav för insamling och lagring av känsliga personuppgifter, som omfattar personuppgifter om ras eller etnisk tillhörighet, politiska åsikter, religiös eller filosofisk övertygelse, kriminalregister, fackliga medlemskap, genetiska uppgifter, biometriska uppgifter, hälsoregister samt sexuell läggning eller sexuella preferenser.

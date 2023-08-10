@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1918'
+source-wordcount: '1917'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Med [!DNL Segment Match] du kan:
 * Hantera processen för identitetsöverlappning.
 * Visa uppskattningar före delning.
 * Använd etiketter för dataanvändning för att kontrollera om data kan delas med partners.
-* Bibehåll livscykelhanteringen för delade målgrupper efter att ha publicerat en feed och fortsätt ett dynamiskt datautbyte med möjlighet att lägga till, ta bort och ta bort delning.
+* Bibehåll livscykelhanteringen för delade målgrupper efter att ha publicerat en feed och fortsätt ett dynamiskt datautbyte genom att lägga till, ta bort och ta bort delning.
 
 [!DNL Segment Match] använder en process för identitetsöverlappning för att säkerställa att segmentdelning sker på ett säkert och sekretessfokuserat sätt. An **överlappad identitet** är en identitet som matchar både ditt segment och den valda partnerns segment. Innan ett segment delas mellan en avsändare och en mottagare kontrolleras om namnutrymmen överlappar varandra och om det finns godkännandekontroller mellan avsändaren och mottagaren/mottagarna. Båda överlappningskontrollerna måste skickas för att ett segment ska kunna delas.
 
@@ -46,7 +46,7 @@ Nedan följer en lista över namnutrymmen som stöds:
 | --------- | ----------- |
 | E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Platform erbjuder två metoder som stöder hashning vid datainsamling, via [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) och via [dataprestation](../../../data-prep/functions.md#hashing). |
 | Telefon (SHA256_E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
-| ECID | Ett namnutrymme som representerar ett Experience Cloud ID-värde (ECID). Detta namnutrymme kan även refereras till av följande alias: &quot;Adobe Marketing Cloud ID&quot;, &quot;Adobe Experience Cloud ID&quot;, &quot;Adobe Experience Platform ID&quot;. Se [ECID - översikt](../../../identity-service/ecid.md) för mer information. |
+| ECID | Ett namnutrymme som representerar ett Experience Cloud ID-värde (ECID). Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se [ECID - översikt](../../../identity-service/ecid.md) för mer information. |
 | Apple IDFA (ID för annonsörer) | Ett namnutrymme som representerar Apple ID för annonsörer. Se följande dokument på [räntebaserade annonser](https://support.apple.com/en-us/HT202074) för mer information. |
 | Google Ad ID | Ett namnutrymme som representerar ett Google Advertising ID. Se följande dokument på [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) för mer information. |
 
@@ -72,12 +72,12 @@ En lista över dataanvändningsetiketter och definitioner av dessa finns i [ordl
 
 ### Förstå [!DNL Segment Match] behörigheter
 
-Det finns två behörigheter associerade med [!DNL Segment Match]:
+Det finns två behörigheter som är associerade med [!DNL Segment Match]:
 
 | Behörighet | Beskrivning |
 | --- | --- |
 | Hantera anslutningar för målgruppsdelning | Med den här behörigheten kan du slutföra partnerhandskakningsprocessen, som kopplar samman två organisationer för att aktivera [!DNL Segment Match] flöden. |
-| Hantera målgruppsresurser | Med den här behörigheten kan du skapa, redigera och publicera feeds (det datapaket som används för [!DNL Segment Match]) med aktiva partners (partners som administratörsanvändaren har anslutit till **[!UICONTROL Audience Share Connections]** åtkomst). |
+| Hantera målgruppsresurser | Med denna behörighet kan du skapa, redigera och publicera feeds (det datapaket som används för [!DNL Segment Match]) med aktiva partners (partners som administratörsanvändaren har anslutit till **[!UICONTROL Audience Share Connections]** åtkomst). |
 
 Se [åtkomstkontroll - översikt](../../../access-control/home.md) för mer information om åtkomstkontroll och behörigheter.
 
@@ -105,11 +105,11 @@ Du kan visa en lista över anslutningar med befintliga partners i huvudgränssni
 
 ![create-connection.png](./images/establish-connection.png)
 
-Skapa en ny [!UICONTROL connect ID], markera **[!UICONTROL Regenerate]** under [!UICONTROL Share setting] och välj sedan kopieringsikonen bredvid det nyligen genererade ID:t.
+Så här skapar du en ny [!UICONTROL connect ID], markera **[!UICONTROL Regenerate]** under [!UICONTROL Share setting] och välj sedan kopieringsikonen bredvid det nyligen genererade ID:t.
 
 ![share-setting.png](./images/share-setting.png)
 
-Så här ansluter du en partner med deras [!UICONTROL connect ID]anger du deras unika ID-värde i inmatningsrutan under [!UICONTROL Connect partner] och sedan markera **[!UICONTROL Request]**.
+Så här ansluter du en partner med deras [!UICONTROL connect ID]anger du deras unika ID-värde i inmatningsrutan under [!UICONTROL Connect partner] och sedan **[!UICONTROL Request]**.
 
 ![connect-partner.png](./images/connect-partner.png)
 
@@ -165,7 +165,7 @@ När du är klar väljer du **[!UICONTROL Close]**.
 
 ![overlap-report.png](./images/overlap-report.png)
 
-Välj **[!UICONTROL Next]** för att fortsätta.
+När du har valt dina partners och visat din rapport över överlappande uppskattningar väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![share.png](./images/share.png)
 
@@ -181,7 +181,7 @@ Om du vill lägga till eller ta bort segment väljer du **[!UICONTROL Create fee
 
 ![feed-list](./images/feed-list.png)
 
-Listan med segment visas. Härifrån kan du lägga till nya segment i din feed och du kan använda högerspåret för att ta bort segment som du inte längre behöver. När du är klar med att hantera segmenten i din feed väljer du **[!UICONTROL Next]** och följ sedan stegen ovan för att slutföra den uppdaterade feeden.
+Listan med segment visas. Härifrån kan du lägga till nya segment i din feed och du kan använda högerspåret för att ta bort segment som du inte längre behöver. När du är klar med att hantera segmenten i din feed väljer du **[!UICONTROL Next]** och följ sedan de steg som beskrivs ovan för att slutföra den uppdaterade feeden.
 
 ![update](./images/update.png)
 

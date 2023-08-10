@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar filformateringsalternativ för filbaserade mål som skapats med Adobe Experience Platform Destination SDK via slutpunkten "/destination-servers".
 title: Filformateringskonfiguration
-source-git-commit: 5a6359e5731b36763e86eba8c79e60d74fb3b4c8
+source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '999'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ Du kan konfigurera filformateringsalternativen via `/authoring/destination-serve
 * [Skapa en målserverkonfiguration](../../authoring-api/destination-server/create-destination-server.md)
 * [Uppdatera en målserverkonfiguration](../../authoring-api/destination-server/update-destination-server.md)
 
-Den här sidan beskriver alla filformatsinställningar som stöds för exporterade filer `CSV` filer.
+På den här sidan beskrivs alla filformatsinställningar som stöds för exporterade filer `CSV` filer.
 
 >[!IMPORTANT]
 >
@@ -41,12 +41,12 @@ Den här sidan beskriver alla filformatsinställningar som stöds för exportera
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Nej |
 | Filbaserade (batch) integreringar | Ja |
 
-## Parametrar som stöds {#supported-parameters}
+## parametrar som stöds {#supported-parameters}
 
 Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kraven i mottagningssystemet för målfilen, för att optimera läsningen och tolkningen av de filer som tas emot från Experience Platform.
 
@@ -57,7 +57,7 @@ Du kan ändra flera egenskaper för de exporterade filerna så att de matchar kr
 
 ## CSV-alternativ där användarna inte kan välja konfigurationsalternativ {#file-configuration-templating-none}
 
-I konfigurationsexemplet nedan är alla CSV-alternativ fördefinierade. Exportinställningarna som definieras i var och en av `csvOptions` parametrar är slutgiltiga och användarna kan inte ändra dem.
+I konfigurationsexemplet nedan är alla CSV-alternativ fördefinierade. De exportinställningar som definieras i var och en av `csvOptions` parametrar är slutgiltiga och användarna kan inte ändra dem.
 
 ```json
 "fileConfigurations": {
@@ -125,7 +125,7 @@ I konfigurationsexemplet nedan är alla CSV-alternativ fördefinierade. Exportin
 
 ## CSV-alternativ där användarna kan välja konfigurationsalternativ {#file-configuration-templating-pebble}
 
-I konfigurationsexemplet nedan är inget av CSV-alternativen fördefinierat. The `value` i var och en av `csvOptions` parametrarna har konfigurerats i ett motsvarande kunddatafält via `/destinations` slutpunkt (till exempel [`customerData.quote`](../../functionality/destination-configuration/customer-data-fields.md#conditional-options) för `quote` filformateringsalternativ) och användare kan använda användargränssnittet i Experience Platform för att välja mellan de olika alternativ som du konfigurerar i motsvarande kunddatafält. Du kan se hur dessa alternativ ser ut i dialogrutan [filformateringsalternativ för filbaserade mål](../../../ui/batch-destinations-file-formatting-options.md) dokumentation.
+I konfigurationsexemplet nedan är inget av CSV-alternativen fördefinierat. The `value` i varje `csvOptions` parametrarna har konfigurerats i ett motsvarande kunddatafält via `/destinations` slutpunkt (till exempel [`customerData.quote`](../../functionality/destination-configuration/customer-data-fields.md#conditional-options) för `quote` filformateringsalternativ) och användare kan använda användargränssnittet i Experience Platform för att välja mellan de olika alternativ som du konfigurerar i motsvarande kunddatafält. Du kan se hur dessa alternativ ser ut i dialogrutan [filformateringsalternativ för filbaserade mål](../../../ui/batch-destinations-file-formatting-options.md) dokumentation.
 
 ```json
 {
@@ -175,13 +175,13 @@ Nedan visas en fullständig referens över alla tillgängliga filformateringsalt
 
 | Fält | Obligatoriskt/valfritt | Beskrivning | Standardvärde | Exempel på utdata 1 | Exempel på utdata 2 |
 |---|---|---|---|---|---|
-| `templatingStrategy` | Obligatoriskt | För varje filformateringsalternativ som du konfigurerar måste du lägga till parametern `templatingStrategy`, som kan ha två värden: <br><ul><li>`NONE`: Använd det här värdet om du inte planerar att låta användarna välja mellan olika värden för en konfiguration. Se [den här konfigurationen](#file-configuration-templating-none) till exempel där filformateringsalternativen är fasta.</li><li>`PEBBLE_V1`: Använd det här värdet om du vill att användarna ska kunna välja mellan olika värden för en konfiguration. I det här fallet måste du även skapa ett motsvarande kunddatafält i `/destination` slutpunktskonfiguration för att visa de olika alternativen för användarna i användargränssnittet. Se [den här konfigurationen](#file-configuration-templating-pebble) till exempel där användare kan välja mellan olika värden för filformateringsalternativ.</li></ul> | – | – | – |
+| `templatingStrategy` | Obligatoriskt | För varje filformateringsalternativ som du konfigurerar måste du lägga till parametern `templatingStrategy`, som kan ha två värden: <br><ul><li>`NONE`: använd det här värdet om du inte planerar att låta användarna välja mellan olika värden för en konfiguration. Se [den här konfigurationen](#file-configuration-templating-none) till exempel där filformateringsalternativen är fasta.</li><li>`PEBBLE_V1`: använd det här värdet om du vill att användarna ska kunna välja mellan olika värden för en konfiguration. I det här fallet måste du även skapa ett motsvarande kunddatafält i `/destination` slutpunktskonfiguration för att visa de olika alternativen för användarna i användargränssnittet. Se [den här konfigurationen](#file-configuration-templating-pebble) till exempel där användare kan välja mellan olika värden för filformateringsalternativ.</li></ul> | – | – | – |
 | `compression.value` | Valfritt | Komprimeringskodek som ska användas när data sparas i en fil. Värden som stöds: `none`, `bzip2`, `gzip`, `lz4`och `snappy`. | `none` | – | – |
 | `fileType.value` | Valfritt | Anger utdatafilens format. Värden som stöds: `csv`, `parquet`och `json`. | `csv` | – | – |
 | `csvOptions.quote.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger ett enskilt tecken som används för att undvika citattecken där avgränsaren kan vara en del av värdet. | `null` | – | – |
 | `csvOptions.quoteAll.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger om alla värden alltid ska omslutas av citattecken. Som standard är det bara escape-värden som innehåller ett citattecken. | `false` | `quoteAll`:`false` --> `male,John,"TestLastName"` | `quoteAll`:`true` -->`"male","John","TestLastName"` |
 | `csvOptions.delimiter.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger en avgränsare för varje fält och värde. Avgränsaren kan vara ett eller flera tecken. | `,` | `delimiter`:`,` --> `comma-separated values"` | `delimiter`:`\t` --> `tab-separated values` |
-| `csvOptions.escape.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger ett enskilt tecken som används för att undvika citattecken i ett redan citattecken. | `\` | `"escape"`:`"\\"` --> `male,John,"Test,\"LastName5"` | `"escape"`:`"'"` --> `male,John,"Test,'''"LastName5"` |
+| `csvOptions.escape.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Ställer in ett enskilt tecken som används för att undvika citattecken inuti ett redan citattecken. | `\` | `"escape"`:`"\\"` --> `male,John,"Test,\"LastName5"` | `"escape"`:`"'"` --> `male,John,"Test,'''"LastName5"` |
 | `csvOptions.escapeQuotes.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger om värden som innehåller citattecken alltid ska omslutas av citattecken. Standard är att undvika alla värden som innehåller ett citattecken. | `true` | – | – |
 | `csvOptions.header.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger om kolumnnamnen ska skrivas som den första raden i den exporterade filen. | `true` | – | – |
 | `csvOptions.ignoreLeadingWhiteSpace.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger om inledande blanksteg ska trimmas från värden. | `true` | `ignoreLeadingWhiteSpace`:`true` --> `"male","John","TestLastName"` | `ignoreLeadingWhiteSpace`:`false`--> `"    male","John","TestLastName"` |

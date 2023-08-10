@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: 857c1d4f74b6352e90f9c97ef22d686a883e3563
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '601'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ I Experience Data Model (XDM) representerar ett identitetsfält ett fält som ka
 
 Identitetsfält är en viktig komponent i hur kundidentitetsdiagram skapas i Platform, som i slutändan påverkar hur kundprofilen i realtid sammanfogar olika datablad för att få en fullständig bild av kunden. Innan du definierar identitetsfält i dina scheman ska du läsa följande dokumentation för att lära dig mer om de viktigaste tjänsterna och begreppen som rör identitetsfält:
 
-* [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Överbryggar identiteter mellan enheter och system och länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-   * [Identitetsnamnutrymmen](../../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en person, och är en obligatorisk komponent för varje identitetsfält.
+* [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Överbryggar identiteter mellan enheter och system, länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
+   * [Identitetsnamnutrymmen](../../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en enskild person, och är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../../profile/home.md): Använder kundidentitetsdiagram för att skapa en enhetlig konsumentprofil som bygger på aggregerade data från flera källor, som uppdateras i nära realtid.
 
 ## Definiera ett identitetsfält {#define-a-identity-field}
@@ -48,7 +48,7 @@ När du är klar väljer du **[!UICONTROL Apply]** för att tillämpa ändringen
 
 Arbetsytan uppdateras med ändringarna och det valda fältet får en fingeravtryckssymbol (![](../../images/ui/fields/special/identity-symbol.png)) för att ange den som en identitet. I den vänstra listen visas nu identitetsfältet under namnet på den klass eller schemafältgrupp som tillhandahåller fältet till schemat.
 
-Om fältet också har angetts som primär identitet visas den även under **[!UICONTROL Required fields]** till vänster. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
+Om fältet också har angetts som primär identitet listas det också under **[!UICONTROL Required fields]** till vänster. Om identitetsfältet är kapslat i schemastrukturen kommer alla överordnade fält också att listas efter behov.
 
 ![](../../images/ui/fields/special/identity-applied.png)
 

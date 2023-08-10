@@ -2,9 +2,9 @@
 title: Slutpunkt för regelkomponenter
 description: Lär dig hur du anropar /rule_components-slutpunkten i Reactor API.
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
-source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '1152'
+source-wordcount: '1150'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ En regelkomponent tillhandahålls av exakt en [extension](./extensions.md). Till
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 ## Hämta en lista med regelkomponenter {#list}
 
@@ -53,7 +53,7 @@ GET /rules/{RULE_ID}/rule_components
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade regelkomponenter filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade regelkomponenter filtreras baserat på följande attribut:<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -316,7 +316,7 @@ POST /properties/{PROPERTY_ID}/rule_components
 
 **Begäran**
 
-Följande begäran skapar en ny regelkomponent. I nyttolasten `relationships` -egenskapen associerar komponenten med specifika regler och ett befintligt tillägg. Se guiden [relationer](../guides/relationships.md) för mer information.
+Följande begäran skapar en ny regelkomponent. I nyttolasten `relationships` -egenskapen associerar komponenten med specifika regler och ett befintligt tillägg. Se guiden på [relationer](../guides/relationships.md) för mer information.
 
 ```shell
 curl -X POST \
@@ -359,14 +359,14 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** De typer av regelkomponenter som du kan definiera tillhandahålls av [tilläggspaket](./extension-packages.md). När du skapar en ny regelkomponent måste du ange ett delegatbeskrivnings-ID som anger vilket tilläggspaket som regelkomponenten baseras på, komponentens typ (händelse, villkor eller åtgärd) och namnet på den specifika komponenten som definieras av tillägget (till exempel händelsen&quot;Click&quot; i tillägget Core).<br><br>Se guiden [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
+| `attributes.delegate_descriptor_id` | **(Obligatoriskt)** De typer av regelkomponenter som du kan definiera tillhandahålls av [tilläggspaket](./extension-packages.md). När du skapar en ny regelkomponent måste du ange ett delegatbeskrivnings-ID som anger vilket tilläggspaket som regelkomponenten baseras på, komponentens typ (händelse, villkor eller åtgärd) och namnet på den specifika komponenten som definieras av tillägget (till exempel händelsen&quot;Click&quot; i tillägget Core).<br><br>Se guiden på [delegatbeskrivnings-ID](../guides/delegate-descriptor-ids.md) för mer information. |
 | `attributes.name` | **(Obligatoriskt)** Ett namn som kan läsas av människor för regelkomponenten. |
 | `attributes.delay_next` | Ett booleskt värde som anger om senare åtgärder ska fördröjas. |
 | `attributes.order` | Ett heltal som anger i vilken ordning komponenten ska läsas in efter typ. |
 | `attributes.rule_order` | Ett heltal som anger prioriteten för den associerade regeln som ska utlösas. |
 | `attributes.settings` | Ett inställnings-JSON-objekt representeras som en sträng. |
 | `attributes.timeout` | Ett heltal som anger timeout för åtgärden som körs i sekvens. |
-| `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Regeln som den här komponenten definieras under.</li></ol>Mer allmän information om relationer finns i [relationshandbok](../guides/relationships.md). |
+| `relationships` | Ett objekt som upprättar nödvändiga relationer för regelkomponenten. Två relationer måste upprättas: <ol><li>`extension`: Det tillägg som definierar den här regelkomponenten. Detta måste vara samma tillägg vars tilläggspaket anges av `delegate_descriptor_id`.</li><li>`rules`: Den regel som den här komponenten definieras under.</li></ol>Mer allmän information om relationer finns i [relationshandbok](../guides/relationships.md). |
 | `type` | Den typ av resurs som skapas. För den här slutpunkten måste värdet vara `rule_components`. |
 
 {style="table-layout:auto"}
@@ -652,7 +652,7 @@ Regelkomponenter är&quot;anmärkningsvärda&quot; resurser, vilket innebär att
 
 Följande anrop visar hur du hämtar relaterade resurser för en regelkomponent. När [söka efter en regelkomponent](#lookup), listas dessa relationer under `relationships` regelkomponent.
 
-Se [relationshandbok](../guides/relationships.md) för mer information om relationerna i Reactor API.
+Se [relationshandbok](../guides/relationships.md) om du vill ha mer information om relationerna i Reactor API.
 
 ### Visa relaterade regler för en regelkomponent {#rules}
 
@@ -908,7 +908,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar information om den angivna regelkomponentens ursprung.
+Ett lyckat svar returnerar information om den angivna regelkomponentens ursprung.
 
 ```json
 {

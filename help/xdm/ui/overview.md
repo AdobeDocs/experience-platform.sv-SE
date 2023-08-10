@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över schemaanvändargränssnittet
 description: Den här översikten beskriver de viktigaste funktionerna i arbetsytan Scheman i Experience Platform.
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '290'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ Om du vill komma åt arbetsytan i plattformsgränssnittet väljer du **[!UICONTR
 
 ## Komma igång
 
-Om du använder arbetsytan för första gången börjar du med guiden på [utforska befintliga resurser i användargränssnittet](./explore.md) för att bekanta dig med de olika flikarna och arbetsytan i schemat.
+Om du använder arbetsytan för första gången börjar du med guiden på [undersöka befintliga resurser i användargränssnittet](./explore.md) för att bekanta dig med de olika flikarna och arbetsytan i schemat.
 
 Vi rekommenderar även att du följer [självstudiekurs om att skapa scheman](../tutorials/create-schema-ui.md) för att skapa ett exempelschema och få en genomgång av [!DNL Schema Editor]Funktioner i processen.
 
@@ -40,4 +40,4 @@ Klasser, fältgrupper och datatyper bidrar alla till ett schema med fält. Du ka
 
 ## Nästa steg
 
-Dokumentet innehåller en introduktion till [!UICONTROL Schemas] i plattformsgränssnittet. Läs dokumentationen som är länkad i den här översikten om du vill veta mer om hur du hanterar dina scheman och andra XDM-resurser.
+Dokumentet innehåller en introduktion till [!UICONTROL Schemas] -arbetsytan i plattformsgränssnittet. Läs dokumentationen som är länkad i den här översikten om du vill veta mer om hur du hanterar dina scheman och andra XDM-resurser.

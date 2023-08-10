@@ -1,11 +1,11 @@
 ---
 title: Använd självidentifieringsundersökningen för att skapa din personliga profil för Experience Platform
-description: Lär dig använda självidentifieringsgränssnittet för att få relevant innehåll baserat på dina jobbfunktioner och relaterade mål.
+description: Lär dig hur du använder gränssnittet för självidentifieringsundersökningen för att få relevant innehåll baserat på dina jobbfunktioner och relaterade mål.
 badge: Beta
 exl-id: 80b3f55f-1eab-4a99-be75-49bd091f9739
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '547'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ Förteckningen över tillgängliga mål omfattar följande:
 * Modellera min organisations datastruktur
 * Fråga, filtrera och optimera data för att generera insikter
 * Konfigurera samtycke och dataprinciper
-* Datastyrning och integritet
+* Datastyrning och sekretess
 * Utveckla marknadsföringsstrategier
 * Skapa, hantera och segmentera målgrupper
 * Ställ in instrumentpaneler för att analysera affärspåverkan
@@ -69,7 +69,7 @@ När du är klar väljer du **[!UICONTROL Submit]**.
 
 ![Självidentifieringsundersökningen visar en lista med mål som du kan välja bland.](./images/survey/select-objectives.png)
 
-Välj **[!UICONTROL Done]**.
+När självidentifieringsundersökningen är klar väljer du **[!UICONTROL Done]**.
 
 ![Det sista bekräftelsesteget i självidentifieringsundersökningen.](./images/survey/survey-complete.png)
 
