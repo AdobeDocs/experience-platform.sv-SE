@@ -1,22 +1,18 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;enhetliga taggar;taggar;
-title: Översikt över enhetliga taggar (beta)
+title: Översikt över enhetliga taggar
 description: Det här dokumentet innehåller information om enhetliga taggar i Adobe Experience Platform
 exl-id: a19e37c3-697a-4000-9cb8-d67478b47dc6
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 6977438d57dc8e1390812e58bf039ebc60cb830d
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '578'
 ht-degree: 1%
 
 ---
 
-# Översikt över enhetliga taggar (beta)
+# Översikt över enhetliga taggar
 
->[!IMPORTANT]
->
->Enhetliga taggar finns i betaversionen. Om du vill lämna feedback markerar du knappen längst upp på sidan Taggar och admin.
-
-Taggar är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att hantera taxonomier för att klassificera affärsobjekt för enklare identifiering och kategorisering. Taggar är metadata som kan tolkas som nyckelord som kan bifogas till ett segment, en datauppsättning, en resa eller andra objekt för att göra det möjligt att söka efter det objektet och relaterade objekt. Taggar delas in i två typer: kategoriserad och okategoriserad.
+Taggar är en funktion i Adobe Experience Platform som gör det möjligt för administratörer att hantera taxonomier för att klassificera affärsobjekt för enklare identifiering och kategorisering. Taggar är metadata som kan tolkas som nyckelord som kan bifogas till ett segment, en datauppsättning, en resa eller andra objekt för att göra det möjligt att söka efter det objektet och relaterade objekt. Taggar delas in i två typer: kategoriserade och okategoriserade.
 
 För att ge ett mer sammanhang och definiera syftet med en tagg organiserar kategorier taggar i användbara uppsättningar. En administratör definierar vilka kategoriserade taggar som är tillgängliga för användare att lägga till i objekt. Nya taggar som inte innehåller kategorier kan också skapas infogade i arbetsflöden där taggar används. Dessa taggar visas i den okategoriserade delen av tagglagret. Taggar kan användas av både administratörer och användare, oavsett vem som skapade dem. Alla typer av taggar är tillgängliga för markering när du tilldelar till ett objekt, söker eller filtrerar.
 
@@ -27,7 +23,7 @@ Följande komponenter ingår när du taggar:
 | Terminologi | Definition |
 | --- | --- |
 | Arkiverad | Ett läge för en tagg som behåller aktuella associationer med objekt men begränsar taggen från att tillämpas på ytterligare objekt.  Arkiverade taggar är dolda i taggväljaren. |
-| Objekt | Ett Experience Cloud-objekt som kan ha en tagg.  Exempel: Segment, resa, datauppsättning. |
+| Objekt | Ett Experience Cloud-objekt som kan ha en tagg.  Exempel: segment, resa, datauppsättning. |
 | Tagg | Taggar är metadata och kan betraktas som nyckelord som kan kopplas till ett segment, en datauppsättning, en resa eller andra objekt för att göra det möjligt att söka efter det objektet och relaterade objekt. |
 | Kategorin Tagg | Tagga Kategorier grupperar taggar i meningsfulla uppsättningar för att ge ett större sammanhang eller beskriva syftet med taggen.  Administratörer hanterar taggkategorier och taggar inom kategorier. |
 | Okategoriserad tagg | En ny tagg som skapas online där märkord används. Dessa taggar kan skapas och användas av alla användare, men de är inte bundna till någon kategori.  Administratörer kan flytta dessa taggar till en kategori för att anpassa dem till andra liknande taggar. |
