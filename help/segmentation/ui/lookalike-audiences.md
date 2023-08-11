@@ -5,9 +5,9 @@ description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type=Caution
 hide: true
 hidefromtoc: true
-source-git-commit: d0b839dfc35ff9f8b4db34c61d2cdd820bfd448b
+source-git-commit: c4a888768015542e37290cb3c919cb60fca4e548
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '2088'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ I Adobe Experience Platform förbrukar lookalike-modellen tre olika typer av dat
 
 Alla dessa datapunkter omvandlas till nyckelvärdepar som matas in i lookalike-modellen. Endast nyckelvärdepar med en betydande procentandel av profilmatchningen behålls.
 
-Den lookalike-modellen körs ofta och skapar och återskapar de inflytelserika faktorerna och likhetsgraferna för de grundläggande målgrupperna. Du kan även göra poängbedömningar för lookalike-målgrupper ofta.
+I nuläget körs lookalike-modellen var 24:e timme, vilket skapar och återskapar inflytelserika faktorer och likhetsdiagram för baspubliken. Du kan även göra poängbedömningar för lookalike-målgrupper ofta.
 
 ## Berättiganden {#entitlements}
 
@@ -52,11 +52,26 @@ Följande berättiganden gäller för användning av lookalike-målgrupper:
 - Real-Time CDP Ultimate-kunder har rätt till **20** aktiv Look-Alike Audiences i produktionssandlådor
 - Utvecklingssandlådor är begränsade till **5** Look-Alike Audiences för alla Real-Time CDP-kunder
 
-Det finns tilläggspaket som ökar berättigandena för produktionssandlådor med 20 Look-Alike Audiences per pack.
+Tilläggspaket, som blir tillgängliga vid ett senare tillfälle, ökar berättigandena för produktionssandlådor med 20 Look-Alike Audiences per pack.
 
 Om du vill bekräfta att du har tillgång till stilliknande målgrupper kontaktar du din Adobe-representant.
 
 ## Visa lookalike-insikter {#view}
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_notEligible"
+>title="Ej berättigade"
+>abstract="Den här målgruppen är för närvarande inte berättigad till look-alike-insikter eftersom den kan ha mindre än det minsta antalet profiler som krävs för utbildning, eller så har inte profilexporten utlösts ännu."
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_processing"
+>title="Bearbetar"
+>abstract="Den här målgruppen bearbetas för närvarande. Modellen kan ta upp till 24 timmar att slutföra bearbetningen. Kontrollera igen senare."
+
+>[!CONTEXTUALHELP]
+>id="platform_audiences_lookAlike_error"
+>title="Fel"
+>abstract="Ett fel uppstod när den här modellen bearbetades. Ta bort och återskapa den här modellen eller försök igen senare."
 
 Insikter som ser likadana ut är inbyggda i sidan med målgruppsinformation. Om du vill titta på lookalike-insikterna för en viss målgrupp väljer du **[!UICONTROL Audiences]** i det vänstra navigeringsfältet, följt av **[!UICONTROL Browse]** och den målgrupp ni vill visa insikterna för.
 
@@ -68,10 +83,10 @@ Sidan med målgruppsinformation visas. Välj **[!UICONTROL Look-alike insights]*
 
 ### Likhet och räckvidd {#similarity-and-reach}
 
-<!-- >[!CONTEXTUALHELP]
+>[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_similarityAndReach"
->title="Similarity and reach"
->abstract="" -->
+>title="Likhet och räckvidd"
+>abstract="Likhets- och räckvidd-grafen ritar upp den förväntade räckvidden för en Look-Alike Audience som består av profiler över ett givet likhetspoäng. Du kan hålla pekaren över en viss punkt i diagrammet om du vill visa procentandelen likhet och det förväntade antalet profiler för den markerade punkten."
 
 Avsnittet Likhet och räckvidd visar ett diagram som ritar upp den förväntade räckvidden för en Look-Alike Audience som består av profiler över ett givet likhetspoäng. Likhetspoängen representerar **avstånd** likheter mellan basmålgruppens profil och den lookalike-liknande insiktens profil.
 
@@ -93,11 +108,11 @@ I avsnittet lookalike-målgrupper visas en lista med alla Look-Alike Audiences s
 
 ### Influensafaktorer {#influential-factors}
 
-<!-- >[!CONTEXTUALHELP]
+>[!CONTEXTUALHELP]
 >id="platform_audiences_lookAlike_influentialFactors"
->title="Influential factors"
->abstract="Influential factors are attributes, events and audience memberships that are important in explaining similarity of a profile to members of the base audience. Data usage labels and policies can be used to exclude certain data from being considered as influential factors in look-alike models."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=en#exclude" text="Exclude data" -->
+>title="Influensafaktorer"
+>abstract="Inflytelserika faktorer är attribut, händelser och målgruppsmedlemskap som är viktiga när det gäller att förklara en profils likhet med medlemmarna i den grundläggande målgruppen. Dataanvändningsetiketter och dataprofiler kan användas för att utesluta vissa data från att betraktas som inflytelserika faktorer i lookalike-modeller."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/lookalike-audiences.html?lang=en#exclude" text="Uteslut data"
 
 I avsnittet Inflytelserika faktorer visas de 100 viktigaste faktorerna som påverkar den look-alike-modellen för den valda baspubliken. Dessa inflytelserika faktorer är profilattribut, upplevelsehändelser och målgruppsmedlemskap som är de viktigaste när det gäller att förklara likheter hos den grundläggande målgruppen. Genom att förstå de viktigaste inflytelserika faktorerna kan ni personalisera ert marknadsföringsinnehåll bättre för den här målgruppen och alla lookAlike Audience ni skapar utifrån den. Observera att inte alla inflytelserika faktorer som påverkar lookalike-modellen visas.
 
