@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Översikt över arbetsytan Datavetenskap
 description: Den här guiden ger en översikt över de viktigaste begreppen för Data Science Workspace i Adobe Experience Platform.
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: fa52aa668d21f71c0da6b35c933713f068e36b28
 workflow-type: tm+mt
-source-wordcount: '2388'
+source-wordcount: '2448'
 ht-degree: 0%
 
 ---
 
-# Översikt över arbetsytan Datavetenskap
+# Översikt över arbetsytan Data Science
+
+>[!NOTE]
+>
+>Observera att det inte finns någon dokumentation om en funktion på Experience League som garanterar att den är tillgänglig för alla kunder. Den här funktionen är endast tillgänglig för befintliga kunder som har köpt en Adobe Experience Platform- eller Adobe Experience Platform Intelligence License. Läs den officiella produktbeskrivningen för att få information om funktioner och andra detaljer som är kopplade till dina köpta SKU:er/produkter.
+
 
 Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från era data. Integrerat i Adobe Experience Platform, [!DNL Data Science Workspace] hjälper er att göra prognoser med hjälp av ert innehåll och era dataresurser över olika Adobe-lösningar.
 
@@ -45,7 +50,7 @@ Innan du ger dig in på detaljerna för [!DNL Data Science Workspace]Här följe
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [!DNL Data Science Workspace] | [!DNL Data Science Workspace] inom [!DNL Experience Platform] gör det möjligt för kunder att skapa maskininlärningsmodeller med hjälp av data i [!DNL Experience Platform] och Adobe Solutions för att generera intelligenta insikter och prognoser för att skapa roliga digitala upplevelser för slutanvändarna. |
 | Artificiell intelligens | Artificiell intelligens är en teori om och utveckling av datorsystem som kan utföra uppgifter som normalt kräver mänsklig omvärldsbevakning, t.ex. visuell uppfattning, taligenkänning, beslutsfattande och översättning mellan språk. |
-| Maskinininlärning | Maskininlärning är det studieområde som gör det möjligt för datorer att lära sig utan att programmeras explicit. |
+| Maskininlärning | Maskininlärning är det studieområde som gör det möjligt för datorer att lära sig utan att programmeras explicit. |
 | [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework är ett enhetligt ramverk för maskininlärning i hela Adobe som utnyttjar data på [!DNL Experience Platform] att möjliggöra för datavetare att utveckla maskininlärningsdrivna underrättelsetjänster på ett snabbare, skalbart och återanvändbart sätt. |
 | [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM) är den standardiseringsinsats som Adobe leder för att definiera standardscheman som [!DNL Profile] och [!DNL ExperienceEvent], för Customer Experience Management. |
 | [!DNL JupyterLab] | [!DNL JupyterLab] är ett webbaserat gränssnitt med öppen källkod för Project Jupyter som är nära integrerat med [!DNL Experience Platform]. |
@@ -86,9 +91,9 @@ Vilken nivå ni än har av datavetenskap, [!DNL Data Science Workspace] hjälper
 
 Att hitta rätt data och förbereda dem är den mest arbetsintensiva delen av att bygga upp ett effektivt recept. [!DNL Data Science Workspace] och Adobe Experience Platform kommer att hjälpa er att snabbare komma från data till insikter.
 
-På Adobe Experience Platform centraliseras och lagras data i XDM:s standardiserade schema, vilket gör det enklare att hitta, förstå och rensa data. Ett enda datalager som baseras på ett gemensamt schema kan spara oräkneliga timmars datautforskande och förberedelse.
+På Adobe Experience Platform centraliseras och lagras data i XDM:s standardiserade schema, så det blir enklare att hitta, förstå och rensa data. Ett enda datalager som baseras på ett gemensamt schema kan spara oräkneliga timmars datautforskande och förberedelse.
 
-När du bläddrar ska du använda R, [!DNL Python]eller Scala med integrerad värdserver [!DNL Jupyter Notebook] för att bläddra i datakatalogen [!DNL Platform]. Om du använder något av dessa språk kan du även utnyttja [!DNL Spark] ML och TensorFlow. Börja från början eller använd någon av de mallar för bärbara datorer som finns för specifika affärsproblem.
+När du bläddrar ska du använda R, [!DNL Python]eller Scala med integrerad, värdbaserad [!DNL Jupyter Notebook] för att bläddra i datakatalogen på [!DNL Platform]. Om du använder något av dessa språk kan du även utnyttja [!DNL Spark] ML och TensorFlow. Börja från början eller använd någon av de mallar för bärbara datorer som medföljer för specifika affärsproblem.
 
 Som en del av arbetsflödet för datautforskande kan du även importera nya data eller använda befintliga funktioner för att förbereda data.
 
@@ -118,7 +123,7 @@ När du är nöjd med ditt recept är det bara några klick att skapa en intelli
 
 Datavetare kan dra nytta av nya tekniker och datauppsättningar så snart de är tillgängliga via Adobes tjänster. Genom de regelbundna uppdateringarna arbetar vi med att integrera datauppsättningar och tekniker i plattformen, så att du inte behöver göra det.
 
-### Säkerhet och sinnesfrid
+### Säkerhet och sinnesro
 
 Att skydda era data är högsta prioritet för Adobe. Adobe skyddar era data med säkerhetsprocesser och kontroller som utvecklats för att hjälpa er att följa standarder, bestämmelser och certifieringar som godkänts av branschen.
 
@@ -151,7 +156,7 @@ Om du börjar från början eller konfigurerar ett befintligt recept börjar du 
 Alla data i Adobe Experience Platform följer ett standardiserat XDM-schema, vilket eliminerar behovet av att skapa en komplex modell för att koppla samman data eller få hjälp av en datatekniker.
 
 Om du inte omedelbart hittar de data du behöver, men de finns utanför Adobe Experience Platform, är det en relativt enkel uppgift att importera ytterligare datauppsättningar, som också omvandlas till ett standardiserat XDM-schema.\
-Du kan använda [!DNL Jupyter Notebook] för att förenkla förbehandling av data - eventuellt med början från en mall för bärbara datorer eller en anteckningsbok som du tidigare har använt för benägenhet att köpa.
+Du kan använda [!DNL Jupyter Notebook] för att förenkla förbehandling av data - eventuellt med början från en mall för bärbara datorer eller en anteckningsbok som du tidigare har använt för att kunna köpa.
 
 ![](./images/home/notebook_templates-new.png)
 
@@ -173,7 +178,7 @@ När du utbildar dina modeller genereras kurser och utvärderingar. [!DNL Data S
 
 Besök antingen [API](./models-recipes/train-evaluate-model-api.md) eller [UI](./models-recipes/train-evaluate-model-ui.md) självstudiekurs om hur du utbildar och utvärderar modeller i [!DNL Data Science Workspace].
 
-### Använda modellen
+### Operationalisera modellen
 
 När du har valt det bäst utbildade receptet för att tillgodose ditt företags behov kan du skapa en intelligent tjänst i [!DNL Data Science Workspace] utan utvecklarassistans. Det är bara några klick - ingen kodning behövs. En publicerad intelligent tjänst är tillgänglig för andra medlemmar i organisationen utan att modellen behöver återskapas.
 
@@ -181,7 +186,7 @@ En publicerad intelligent tjänst är konfigurerbar för att automatiskt utbilda
 
 ## Nästa steg
 
-[!DNL Data Science Workspace] hjälper till att effektivisera och förenkla datavetenskapens arbetsflöde, från datainsamling till algoritmer till intelligenta tjänster för datavetare på alla kunskapsnivåer. Med de sofistikerade verktygen [!DNL Data Science Workspace] ger möjlighet att avsevärt förkorta tiden från data till insikter.
+[!DNL Data Science Workspace] hjälper till att effektivisera och förenkla datavetenskapens arbetsflöde, från datainsamling till algoritmer till intelligenta tjänster för datavetare på alla kunskapsnivåer. Med de avancerade verktygen [!DNL Data Science Workspace] ger möjlighet att avsevärt förkorta tiden från data till insikter.
 
 Ännu viktigare är, [!DNL Data Science Workspace] lägger datavetenskapen och algoritmisk optimeringsfunktionerna i den ledande marknadsföringsplattformen i händerna på datavetare i företag. För första gången kan företag ta med egna algoritmer till plattformen och utnyttja Adobe kraftfulla maskininlärnings- och AI-funktioner för att leverera personaliserade kundupplevelser i stor skala.
 
