@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: 004f6183f597132629481e3792b5523317b7fb2f
+source-git-commit: cf10eb11773320d10ece53f192beacc8da83e980
 workflow-type: tm+mt
 source-wordcount: '1656'
 ht-degree: 0%
@@ -22,11 +22,11 @@ Med den här funktionen kan du kategorisera schemafält, segment och så vidare 
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
+Den här självstudien kräver en fungerande förståelse av följande plattformskomponenter:
 
 * [[!DNL Experience Data Model (XDM)] System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Segmenteringsmotorn i [!DNL Platform] används för att skapa målgruppssegment utifrån era kundprofiler utifrån kundbeteenden och attribut.
 
 ### Använd ärendeöversikt
@@ -45,7 +45,7 @@ Du kommer att:
 * [Ange en etikett för rollerna för användarna](#label-roles): Använd exemplet med en vårdleverantör (ACME Business Group) vars marknadsföringsgrupp arbetar med externa byråer.
 * [Märk upp dina resurser (schemafält och segment)](#label-resources): Tilldela **[!UICONTROL PHI/ Regulated Health Data]** för att schemalägga resurser och segment.
 * 
-   * [Aktivera profilen som ska länka ihop dem: ](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och segment genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
+   * [Aktivera profilen som ska länka ihop dem:](#policy): Aktivera standardprincipen för att förhindra åtkomst till schemafält och segment genom att ansluta etiketterna på dina resurser till etiketterna i din roll. Användare med matchande etiketter får sedan tillgång till schemafältet och segmentet i alla sandlådor.
 
 ## Behörigheter
 
@@ -98,7 +98,7 @@ För att komma igång väljer du **[!UICONTROL ACME Business Group]** från **[!
 
 ![Bild som visar ACME Business Role som väljs i Roller](../images/abac-end-to-end-user-guide/abac-select-role.png)
 
-Nästa, välj **[!UICONTROL Labels]** och sedan markera **[!UICONTROL Add Labels]**.
+Nästa, välj **[!UICONTROL Labels]** och sedan **[!UICONTROL Add Labels]**.
 
 ![Bild som visar Lägg till etiketter som markeras på fliken Etiketter](../images/abac-end-to-end-user-guide/abac-select-add-labels.png)
 
@@ -114,7 +114,7 @@ En lista över alla etiketter i organisationen visas. Välj **[!UICONTROL RHD]**
 
 Nu när du har konfigurerat en användarroll med [!UICONTROL RHD] label är nästa steg att lägga till samma etikett till de resurser som du vill styra för den rollen.
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen och välj **[!UICONTROL ACME Healthcare]** från listan med scheman som visas.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen och sedan väljer **[!UICONTROL ACME Healthcare]** från listan med scheman som visas.
 
 ![Bild som visar ACME Healthcare-schemat som väljs på fliken Scheman](../images/abac-end-to-end-user-guide/abac-select-schema.png)
 
@@ -157,7 +157,7 @@ Upprepa stegen ovan med **[!UICONTROL Insulin <50]**.
 
 Standardprincipen för åtkomstkontroll använder etiketter för att definiera vilka användarroller som har åtkomst till specifika plattformsresurser. I det här exemplet nekas åtkomst till schemafält och segment i alla sandlådor för användare som inte är i en roll som har motsvarande etiketter i schemafältet.
 
-Om du vill aktivera åtkomstkontrollprincipen väljer du [!UICONTROL Permissions] i den vänstra navigeringen och välj **[!UICONTROL Policies]**.
+Om du vill aktivera åtkomstkontrollprincipen väljer du [!UICONTROL Permissions] i den vänstra navigeringen och sedan väljer **[!UICONTROL Policies]**.
 
 ![Lista över profiler som visas](../images/abac-end-to-end-user-guide/abac-policies-page.png)
 
@@ -190,7 +190,7 @@ Bekräftelse på att profilen har aktiverats har tagits emot och du återgår ti
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="Configure permissible and impermissible actions for a policy"
->abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."</br>
+>abstract="A <b>deny access to</b> policy will deny users access when the criteria is met. Combined with <b>The following being false</b> - all users will be denied access unless they meet the matching criteria set. This type of policy allows you to protect a sensitive resource and only allow access to users with matching labels. <br>A <b>permit access to</b> policy will permit users access when the criteria are met. When combined with <b>The following being true</b> - users will be given access if they meet the matching criteria set. This does not explicitly deny access to users, but adds a permit access. This type of policy allows you to give additional access to resource and in addition to those users who might already have access through role permissions."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="Edit a policy"
 
 >[!CONTEXTUALHELP]
