@@ -1,6 +1,6 @@
 ---
 title: Twitter Custom Auditions connection
-description: Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats i Adobe Experience Platform
+description: Rikta era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats i Adobe Experience Platform
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
 source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
 workflow-type: tm+mt
@@ -20,7 +20,7 @@ Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta �
 Innan du konfigurerar [!DNL Twitter Custom Audiences] ska du kontrollera att du uppfyller följande krav för Twitter.
 
 1. Dina [!DNL Twitter Ads] kontot måste vara reklamberättigat. Nytt [!DNL Twitter Ads] Konton är inte berättigade till reklam under de första två veckorna efter att de har skapats.
-2. Ditt Twitter-användarkonto som du har auktoriserat åtkomst till i [!DNL Twitter Audience Manager] måste ha *[!DNL Partner Audience Manager]* behörighet aktiverad.
+2. Ditt användarkonto för Twitterna som du har auktoriserat åtkomst till i [!DNL Twitter Audience Manager] måste ha *[!DNL Partner Audience Manager]* behörighet aktiverad.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -53,7 +53,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare som används i Twitter Custom Audiences-målet. |
+| Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en målgrupp med de identifierare som används i Twitternas anpassade målgrupper. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -64,7 +64,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Twitter Cust
 
 ### Användningsfall 1
 
-Rikta er till era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats inom Adobe Experience Platform som [!DNL List Custom Audiences] i Twitter.
+Inrikta er på era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper inom Adobe Experience Platform som [!DNL List Custom Audiences] i Twitter.
 
 ## Anslut till mål {#connect}
 
@@ -79,14 +79,14 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 1. Hitta [!DNL Twitter Custom Audiences] mål i målkatalogen och välj **[!UICONTROL Set Up]**.
 2. Välj **[!UICONTROL Connect to destination]**.
    ![Autentisera till LinkedIn](/help/destinations/assets/catalog/social/twitter/authenticate-twitter-destination.png)
-3. Ange dina Twitter-uppgifter och välj **Logga in**.
+3. Ange autentiseringsuppgifter för Twitterna och välj **Logga in**.
 
 ### Fyll i målinformation {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_twitter_accountid"
 >title="Konto-ID"
->abstract="Ditt Twitter Ads-konto-ID. Detta finns i dina Twitter Ads-inställningar."
+>abstract="Ditt konto-ID för Twitter Ads. Detta finns i Twitternas annonsinställningar."
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
@@ -114,9 +114,9 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 
 ## Ytterligare resurser {#additional-resources}
 
-När du mappar målgrupper till Twitter måste du se till att följande krav på publiknamngivning uppfylls:
+När du mappar målgrupper till Twitter måste du se till att uppfylla följande krav på publiknamngivning:
 
 1. Ge målgruppsmappningsnamn som kan läsas av människor. Vi rekommenderar att du använder samma namn som du använde för Experience Platform-segmenten.
-2. Använd inte specialtecken (+ &amp; , % : ; @ / = ? $) i publikens och målgruppens mappningsnamn. Om målgruppsnamnet för Experience Platform innehåller dessa tecken tar du bort dem innan du mappar målgruppen till ett Twitter-mål.
+2. Använd inte specialtecken (+ &amp; , % : ; @ / = ? $) i publikens och målgruppens mappningsnamn. Om målgruppsnamnet på Experience Platform innehåller dessa tecken tar du bort dem innan du mappar målgruppen till ett Twitter-mål.
 
-Mer information om [!DNL List Custom Audiences] i Twitter finns i [Twitter-dokumentation](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).
+Mer information om [!DNL List Custom Audiences] i Twitterna finns i [Twitter](https://business.twitter.com/en/help/campaign-setup/campaign-targeting/custom-audiences/lists.html).
