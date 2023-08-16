@@ -3,9 +3,9 @@ title: TikTok
 description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+source-git-commit: d9d31013d93e0e9e4e291a63840869e73d30ef01
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '986'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,9 @@ Ett sportklädvarumärke vill nå befintliga kunder via sina konton för sociala
 
 ## Förutsättningar {#prerequisites}
 
-Innan du skickar data till [!DNL TikTok Ads Manager] måste du ge Adobe Experience Platform tillåtelse att komma åt ditt annonskonto för `Audience Management`. Du kan ge tillstånd genom att ange ditt annonser-ID i Experience Platform och efter omdirigeringen för att bevilja tillstånd. Du hittar fler instruktioner i [TikTok API-dokumentation](https://ads.tiktok.com/marketing_api/docs?id=1738373141733378).
+Du måste ha [!DNL Admin] eller [!DNL Operator] åtkomst till det TikTok Ads Manager-konto som du vill skicka målgrupper till. Fler instruktioner finns på [TikTok Help Center](https://ads.tiktok.com/help/article/add-users-tiktok-business-center?lang=en).
+
+Innan du skickar data till ditt TikTok Ads Manager-konto måste du ge Adobe Experience Platform behörighet att komma åt ditt Ad-konto för `Audience Management`. Den här behörigheten kan ges av [ange ditt ID för annonshanteraren](#authenticate) i användargränssnittet i Experience Platform och ger tillstånd efter att ha omdirigerats till ditt TikTok Ads Manager-konto.
 
 ## Identiteter som stöds {#supported-identities}
 
