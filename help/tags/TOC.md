@@ -5,7 +5,7 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 2772660936444e39124a75deda6f78d97f7793f2
+source-git-commit: 1ca080f6dd62c49c1f1672ec36ce446af591b6b6
 workflow-type: tm+mt
 source-wordcount: '1025'
 ht-degree: 13%
@@ -23,7 +23,7 @@ ht-degree: 13%
    * [Översikt](./ui/managing-resources/overview.md)
    * Tillägg {#extensions}
       * [Översikt](./ui/managing-resources/extensions/overview.md)
-      * [Tilläggsuppgraderingar](./ui/managing-resources/extensions/extension-upgrade.md)
+      * [Tillägg - uppgraderingar](./ui/managing-resources/extensions/extension-upgrade.md)
    * [Dataelement](./ui/managing-resources/data-elements.md)
    * [Regler](./ui/managing-resources/rules.md)
    * [Anteckningar](./ui/managing-resources/notes.md)
@@ -45,7 +45,7 @@ ht-degree: 13%
    * [Bibliotek](./ui/publishing/libraries.md)
    * [Självvärdande bibliotek](./ui/publishing/hosts/self-hosting-libraries.md)
    * [Publicera om ett bibliotek](./ui/publishing/republish.md)
-   * [Förstklassigt CDN-stöd (beta)](./ui/publishing/premium-cdn.md)
+   * [Experience Platform-taggar (Kina)](./ui/publishing/premium-cdn.md)
 * Information på klientsidan {#client-side}
    * [Översikt](./ui/client-side/overview.md)
    * [Asynkron distribution](./ui/client-side/asynchronous-deployment.md)
@@ -75,7 +75,7 @@ ht-degree: 13%
          * [Översikt](./extensions/client/analytics/overview.md)
          * [Delade moduler](./extensions/client/analytics/shared-modules.md)
          * [Versionsinformation](./extensions/client/analytics/release-notes.md)
-      * [Adobe Analytics &amp; Adobe Target](https://exchange.adobe.com/apps/ec/105363/6sense-for-analytics-and-target)
+      * [ADOBE ANALYTICS &amp; ADOBE TARGET](https://exchange.adobe.com/apps/ec/105363/6sense-for-analytics-and-target)
       * [Adobe Analytics &amp; Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)
       * [Adobe Analytics &amp; Salesforce](https://exchange.adobe.com/apps/ec/101530)
       * Adobe Analytics produktsträng {#product-string}
@@ -103,7 +103,7 @@ ht-degree: 13%
          * [Åtgärdstyper](./extensions/client/web-sdk/action-types.md)
          * [Dataelementtyper](./extensions/client/web-sdk/data-element-types.md)
          * [Åtkomst till ECID](./extensions/client/web-sdk/accessing-the-ecid.md)
-         * [Plugin-program för Web SDK](./extensions/client/web-sdk/web-sdk-plugins.md)
+         * [Web SDK-plugin](./extensions/client/web-sdk/web-sdk-plugins.md)
          * [Versionsinformation för Web SDK-tillägg](./extensions/client/web-sdk/web-sdk-ext-release-notes.md)
          * [Versionsinformation om plugin-program för Web SDK](./extensions/client/web-sdk/web-sdk-plugins-release-notes.md)
       * Adobe Experience Manager resursinsikter {#asset-insights}
@@ -136,7 +136,7 @@ ht-degree: 13%
       * [Beemray Human Context](https://exchange.adobe.com/apps/ec/101063)
       * [Bing Ads Universal Event Tracking](https://exchange.adobe.com/apps/ec/100154)
       * [Gren](https://exchange.adobe.com/apps/ec/101382)
-      * [!DNL BrightCove] videouppföljning {#brightcove}
+      * [!DNL BrightCove] videospårning {#brightcove}
          * [Översikt](./extensions/client/brightcove/overview.md)
          * [Versionsinformation](./extensions/client/brightcove/release-notes.md)
       * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)
@@ -177,7 +177,7 @@ ht-degree: 13%
       * [!DNL Marketo Munchkin] {#marketo}
          * [Översikt](./extensions/client/marketo/overview.md)
          * [Versionsinformation](./extensions/client/marketo/release-notes.md)
-      * [Överordnad Property Manager](https://exchange.adobe.com/apps/ec/102992)
+      * [Huvudegenskapshanteraren](https://exchange.adobe.com/apps/ec/102992)
       * [!DNL Meta Pixel] {#meta}
          * [Översikt](./extensions/client/meta/overview.md)
       * [Monita](https://exchange.adobe.com/apps/ec/106544)
@@ -207,7 +207,7 @@ ht-degree: 13%
       * [Yahoo Dot](https://exchange.adobe.com/apps/ec/106062)
       * [Konverteringsspårning för text](https://exchange.adobe.com/apps/ec/103174)
       * [[!DNL Youtube] Uppspelning](https://exchange.adobe.com/apps/ec/103174)
-      * [!DNL YouTube] videouppföljning {#youtube}
+      * [!DNL YouTube] videospårning {#youtube}
          * [Översikt](./extensions/client/youtube/overview.md)
          * [Versionsinformation](./extensions/client/youtube/release-notes.md)
    * Tillägg för vidarebefordran av händelser (på serversidan) {#server}
@@ -228,7 +228,7 @@ ht-degree: 13%
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
       * Google Cloud Platform {#google-cloud-platform}
          * [Översikt](./extensions/server/google-cloud-platform/overview.md)
-      * [!DNL Mailchimp] Edge {#mailchimp}
+      * [!DNL Mailchimp] Kant {#mailchimp}
          * [Översikt](./extensions/server/mailchimp/overview.md)
       * [!DNL Meta Conversions API] {#meta}
          * [Översikt](./extensions/server/meta/overview.md)
@@ -259,7 +259,7 @@ ht-degree: 13%
       * [Utveckla ett tillägg](./extension-dev/submit/develop.md)
       * [Skapa en börslista](./extension-dev/submit/create-listing.md)
       * [Ladda upp och implementera testning från början till slut](./extension-dev/submit/upload-and-test.md)
-      * [Släpp ett tillägg](./extension-dev/submit/release.md)
+      * [Frigöra ett tillägg](./extension-dev/submit/release.md)
    * [Tilläggskonfiguration](./extension-dev/configuration.md)
    * [Extension manifest](./extension-dev/manifest.md)
    * Webbtillägg {#web}
@@ -305,7 +305,7 @@ ht-degree: 13%
       * [Sökning](./api/endpoints/search.md)
       * [Hemligheter](./api/endpoints/secrets.md)
    * Användarhandböcker {#guides}
-      * [Delegera beskrivnings-ID](./api/guides/delegate-descriptor-ids.md)
+      * [Delegera beskrivnings-ID:n](./api/guides/delegate-descriptor-ids.md)
       * [Krypteringsvärden](./api/guides/encrypting-values.md)
       * [Felhantering](./api/guides/error-handling.md)
       * [Filtrera svar](./api/guides/filtering.md)
