@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Utvärdera händelser i nära realtid med strömmande segmentering
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 23504dd0909488e2ee63bf356fba4c7f0f7320dc
 workflow-type: tm+mt
-source-wordcount: '1992'
+source-wordcount: '1956'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i [gränssnittsguide för direktuppspelningssegmentering](../ui/streaming-segmentation.md).
+>I följande dokument beskrivs hur du använder direktuppspelningssegmentering med API:t. Mer information om hur du använder direktuppspelningssegmentering med användargränssnittet finns i [gränssnittsguide för strömningssegmentering](../ui/streaming-segmentation.md).
 
 Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det möjligt för kunderna att segmentera i nära realtid samtidigt som de fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificeringen i takt med att data strömmas in i [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data skickas till [!DNL Platform], vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 
@@ -28,13 +28,13 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 
 ## Komma igång
 
-Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som är kopplade till direktuppspelningssegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa målgrupper med hjälp av segmentdefinitioner och andra externa källor från [!DNL Real-Time Customer Profile] data.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserat på aggregerade data från flera källor.
+- [[!DNL Segmentation]](../home.md): Ger möjlighet att skapa målgrupper med segmentdefinitioner och andra externa källor från [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ringa [!DNL Platform] API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ringa [!DNL Platform] API.
 
 ### Läser exempel-API-anrop
 
@@ -58,7 +58,7 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 Ytterligare rubriker kan behövas för att slutföra specifika begäranden. De rätta rubrikerna visas i vart och ett av exemplen i det här dokumentet. Var särskilt uppmärksam på exempelbegäranden för att se till att alla obligatoriska rubriker inkluderas.
 
@@ -66,7 +66,7 @@ Ytterligare rubriker kan behövas för att slutföra specifika begäranden. De r
 
 >[!NOTE]
 >
->Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om att aktivera schemalagd segmentering finns i [aktivera avsnitt för schemalagd segmentering](#enable-scheduled-segmentation)
+>Du måste aktivera schemalagd segmentering för organisationen för att direktuppspelningssegmenteringen ska fungera. Information om att aktivera schemalagd segmentering finns i [aktivera segmentering enligt schema](#enable-scheduled-segmentation)
 
 För att en segmentdefinition ska kunna utvärderas med hjälp av direktuppspelningssegmentering måste frågan följa följande riktlinjer.
 
@@ -76,8 +76,7 @@ För att en segmentdefinition ska kunna utvärderas med hjälp av direktuppspeln
 | En händelse i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse. |
 | En händelse med ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse med ett tidsfönster. |
 | Endast profil | En segmentdefinition som bara refererar till ett profilattribut. |
-| En händelse med ett profilattribut | En segmentdefinition som refererar till en enda inkommande händelse, utan tidsbegränsning, och ett eller flera profilattribut. **Obs!** Frågan utvärderas omedelbart när händelsen kommer. Om en profilhändelse inträffar måste den dock vänta i 24 timmar för att införlivas. |
-| En händelse med ett profilattribut i ett relativt tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse och ett eller flera profilattribut. |
+| En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. |
 | Segmentering | En segmentdefinition som innehåller en eller flera grupper eller direktuppspelningssegment. **Obs!** Om ett segment används, diskvalificeras profilen **var 24:e timme**. |
 | Flera händelser med ett profilattribut | En segmentdefinition som refererar till flera händelser **inom de senaste 24 timmarna** och (valfritt) har ett eller flera profilattribut. |
 
@@ -351,7 +350,7 @@ curl -X POST \
 | `type` | **(Obligatoriskt)** Jobbtypen i strängformat. De typer som stöds är `batch_segmentation` och `export`. |
 | `properties` | **(Obligatoriskt)** Ett objekt som innehåller ytterligare egenskaper som är relaterade till schemat. |
 | `properties.segments` | **(Krävs när `type` är lika med `batch_segmentation`)** Använda `["*"]` säkerställer att alla segmentdefinitioner ingår. |
-| `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i bilagan på [cron, uttrycksformat](./schedules.md#appendix) i dokumentationen om scheman inom segmentering. |
+| `schedule` | **(Obligatoriskt)** En sträng som innehåller jobbschemat. Jobb kan bara schemaläggas att köras en gång om dagen, vilket innebär att du inte kan schemalägga ett jobb att köras mer än en gång under en 24-timmarsperiod. Exemplet (`0 0 1 * * ?`) innebär att jobbet utlöses varje dag kl. 1:00:00 UTC. Mer information finns i bilagan [cron, uttrycksformat](./schedules.md#appendix) i dokumentationen om scheman inom segmentering. |
 | `state` | *(Valfritt)* Sträng som innehåller schemats tillstånd. Tillgängliga värden: `active` och `inactive`. Standardvärdet är `inactive`. En organisation kan bara skapa ett schema. Steg för att uppdatera schemat är tillgängliga senare i den här självstudiekursen. |
 
 **Svar**
@@ -429,7 +428,7 @@ Om du vill veta hur du utför liknande åtgärder och arbetar med segmentdefinit
 
 I följande avsnitt visas vanliga frågor om direktuppspelningssegmentering:
 
-### Händer direktuppspelningssegmentering&quot;utan kvalificering&quot; också i realtid?
+### Händer direktuppspelad segmentering&quot;utan kvalificering&quot; också i realtid?
 
 I de flesta fall sker icke-kvalificering av direktuppspelad segmentering i realtid. Det gör emellertid definitioner av direktuppspelade segment som använder segment av segment **not** diskvalificera i realtid, utan att kvalificera sig efter 24 timmar.
 
@@ -441,13 +440,13 @@ Direktuppspelningssegmentering fungerar på alla data som har importerats från 
 
 En segmentdefinition definieras som antingen batch- eller direktuppspelningssegmentering baserat på en kombination av frågetyp och händelsehistorikens varaktighet. En lista över vilka segmentdefinitioner som ska utvärderas som ett direktuppspelningssegment finns i [frågetyper för direktuppspelningssegmentering](#query-types).
 
-Observera att om ett segment innehåller **båda** en `inSegment` -uttryck och en direkt händelsekedja kan den inte kvalificera för direktuppspelningssegmentering. Om du vill att den här segmentdefinitionen ska vara giltig för direktuppspelningssegmentering, bör du göra den direkta single-event-kedjan till en egen segmentdefinition.
+Observera att om ett segment innehåller **båda** en `inSegment` -uttryck och en direkt händelsekedja kan den inte kvalificera sig för direktuppspelningssegmentering. Om du vill att den här segmentdefinitionen ska vara giltig för direktuppspelningssegmentering, bör du göra den direkta single-event-kedjan till en egen segmentdefinition.
 
-### Varför fortsätter antalet&quot;totala kvalificerade&quot; segmentdefinitioner att öka medan antalet under&quot;Senaste X dagarna&quot; är noll i avsnittet med segmentdefinitionsdetaljer?
+### Varför fortsätter antalet&quot;totala kvalificerade&quot; segmentdefinitioner att öka medan antalet under&quot;De senaste X dagarna&quot; är noll i avsnittet med segmentdefinitionsdetaljer?
 
 Antalet totala kvalificerade segmentdefinitioner hämtas från det dagliga segmenteringsjobbet, som omfattar målgrupper som är kvalificerade för både batch- och direktuppspelningssegmentdefinitioner. Det här värdet visas för både gruppsegmentsdefinitioner och segmentdefinitioner för direktuppspelning.
 
-Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Detta värde är **endast** visas för definitioner av direktuppspelningssegment. Detta resulterar i att detta värde **kan** visa som 0 för gruppsegmentsdefinitioner.
+Numret under de senaste X dagarna **endast** omfattar målgrupper som är kvalificerade för direktuppspelningssegmentering, och **endast** ökar om du har direktuppspelade data i systemet och den räknas in i den direktuppspelningsdefinitionen. Det här värdet är **endast** visas för definitioner av direktuppspelningssegment. Detta resulterar i att detta värde **kan** visa som 0 för gruppsegmentsdefinitioner.
 
 Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediagrammet också visar noll, har du **not** strömmade alla profiler till systemet som skulle vara kvalificerade för den segmentdefinitionen.
 
