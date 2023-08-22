@@ -4,9 +4,9 @@ description: Lär dig hur du använder AI Assistant för att navigera bland och 
 badge: Alfa
 hide: true
 hidefromtoc: true
-source-git-commit: 65abbb4dde5b83f597a3a5bfd96ce7c081c88275
+source-git-commit: ca606e4e29f4ba1df281f47a86b4e3cfa850ae35
 workflow-type: tm+mt
-source-wordcount: '2635'
+source-wordcount: '2620'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Härifrån kan du skriva in din fråga i textrutan och fråga AI-assistenten eft
 
 Tänk dig ett användningsexempel där du skapar en **Enhetshandel i händelseschema**. När du skapar ExperienceEvent-scheman stöter du på `eventType` fält. Nu kan du antingen lämna arbetsflödet och läsa dokumentationen på [grunderna i en schemakomposition](../xdm/schema/composition.md), eller så kan du använda AI-assistenten för att få svar på dina frågor direkt.
 
-Till att börja med skriver du in din fråga i textrutan. I exemplet nedan får AI-assistenten frågan:&quot;Vad är fältet eventType i ett Experience Event-schema?&quot;
+Till att börja med skriver du in din fråga i textrutan. I exemplet nedan ställs frågan: &quot;**Vad är fältet eventType i ett Experience Event-schema?**&quot;
 
 ![AI-assistenten för Experience Platform med följande fråga förberedd för fråga:&quot;Vad är fältet eventType i ett ExperienceEvent-schema?](./images/ai-assistant/question.png)
 
@@ -82,7 +82,7 @@ AI-assistenten frågar sedan efter sin kunskapsbas och beräknar ett svar. Efter
 
 Du kan lära dig mer om ett visst ämne genom att ställa en uppföljningsfråga. I nästa exempel tillfrågas AI-assistenten om hur eventType kan användas i segmentering.
 
-![En uppföljningsfråga och ett svar visas på AI-assistenten för Experience Platform.](./images/ai-assistant/follow-up-question.png)
+![En uppföljningsfråga och ett svar visas på AI-assistenten för Experience Platform.](./images/ai-assistant/follow-up-answer.png)
 
 Du kan även ställa frågor till AI Assistant om din dataanvändning. När du frågar om dataanvändning måste du vara i en aktiv sandlåda för att AI-assistenten ska kunna svara på din fråga.
 
@@ -100,15 +100,13 @@ Om du vill ge feedback väljer du antingen tummen uppåt eller tummen nedåt nä
 
 >[!ENDSHADEBOX]
 
-![AI-assistenten för Experience Platform med visningsalternativ som du kan välja efter en fråga.](./images/ai-assistant/options.png)
-
 >[!BEGINTABS]
 
 >[!TAB Visa källa]
 
 Välj **[!UICONTROL Show source]** en lista med länkar till den dokumentation som AI-assistenten refererar till för att beräkna sitt svar.
 
-![Länkarna till de citat som visas i AI-assistenten.](./images/ai-assistant/citations.png)
+![Länkarna till källan som visas i AI-assistenten.](./images/ai-assistant/show-sources.png)
 
 >[!TAB Tummen upp]
 
@@ -134,7 +132,7 @@ Välj flaggikonen om du vill visa fler rapporter om din upplevelse med hjälp av
 
 Du kan också använda de förinställda uppmaningar som AI Assistant ger för att komma igång.
 
-![De instruktioner som visas på AI-assistentpanelen.](./images/ai-assistant/ideas-to-get-started.png)
+![De instruktioner som visas på AI-assistentpanelen.](./images/ai-assistant/ideas.png)
 
 ## Ytterligare information
 
