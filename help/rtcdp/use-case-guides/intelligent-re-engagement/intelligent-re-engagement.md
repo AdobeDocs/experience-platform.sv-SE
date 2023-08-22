@@ -3,9 +3,9 @@ title: Intelligent återanvändning
 description: Leverera övertygande och sammanhängande upplevelser under de viktiga konverteringstunderna för att på ett intelligent sätt engagera ovanliga kunder.
 hide: true
 hidefromtoc: true
-source-git-commit: 43e365e20a2fd91a0e822eb6f66bb7db6fc218f5
+source-git-commit: 69d83e0ca7530f09042e0740e3f25ba92ecb24e4
 workflow-type: tm+mt
-source-wordcount: '2915'
+source-wordcount: '3374'
 ht-degree: 2%
 
 ---
@@ -30,12 +30,12 @@ Ni kommer att skapa scheman, datauppsättningar och målgrupper när ni arbetar 
 
 När du är klar med implementeringen av användningsexemplet kommer du att använda följande Real-Time CDP-funktioner och gränssnittselement (listade i den ordning som du ska använda dem). Se till att du har de nödvändiga attributbaserade behörigheterna för åtkomstkontroll i alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
-* [Adobe Real-time Customer Data Platform (Real-Time CDP)](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html) - Sammanställer data från olika datakällor för att driva kampanjen framåt. Dessa data används sedan för att skapa kampanjmålgrupper och ta fram personaliserade dataelement som används i e-postmeddelanden och webbkampanjpaneler (till exempel namn eller kontorelaterad information). CDP används också för att aktivera målgrupper via e-post och webben (via Adobe Target).
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/understanding-the-real-time-customer-data-platform.html) - Integrerar data mellan datakällor för att ge kampanjens drivkraft. Dessa data används sedan för att skapa kampanjmålgrupper och ta fram personaliserade dataelement som används i e-postmeddelanden och webbkampanjpaneler (till exempel namn eller kontorelaterad information). CDP används också för att aktivera målgrupper via e-post och webben (via [!DNL Adobe Target]).
    * [Scheman](/help/xdm/home.md)
    * [Profiler](/help/profile/home.md)
    * [Datauppsättningar](/help/catalog/datasets/overview.md)
    * [Målgrupper](/help/segmentation/home.md)
-   * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
+   * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html)
    * [Mål ](/help/destinations/home.md)
    * [Händelse- eller målutlösare](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/collect-event-data/data-collection.html)
    * [Målgrupper/evenemang](https://experienceleague.adobe.com/docs/journey-optimizer/using/audiences-profiles-identities/audiences/about-audiences.html)
@@ -49,10 +49,10 @@ Nedan visas en översikt över de tre exemplen på återengagemangsresor.
 
 >[!TAB Engagement Journey på nytt]
 
-Återengagemanget syftar till att överge produktsurfning både på webbplatsen och i mobilappen. Den här resan utlöses när en produkt har visats men inte köpts eller lagts till i kundvagnen. Varumärkesinteraktionen utlöses efter tre dagar om det inte finns några listtillägg under de senaste 24 timmarna.<p>![Kundens intelligenta resa för återengagemang på hög visuell nivå.](../intelligent-re-engagement/images/re-engagement-journey.png "Kundens intelligenta resa för återengagemang på hög visuell nivå."){width="1920" zoomable="yes"}</p>
+Återengagemanget syftar till att överge produktsurfning både på webbplatsen och i mobilappen. Den här resan utlöses när en produkt har visats men inte köpts eller lagts till i kundvagnen. Varumärkesinteraktionen utlöses efter tre dagar om det inte finns några listtillägg under de senaste 24 timmarna.<p>![Kundens intelligenta resa för återengagemang på hög visuell nivå.](../intelligent-re-engagement/images/re-engagement-journey.png "Kundens intelligenta resa för återengagemang på hög visuell nivå."){width="2560" zoomable="yes"}</p>
 
-1. Du skapar scheman och datauppsättningar som är markerade för [!UICONTROL Profile].
-2. Data samlas i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
+1. Du kan skapa scheman och datauppsättningar och sedan markera för [!UICONTROL Profile].
+2. Data integreras i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
 3. Ni läser in profiler i Real-Time CDP och bygger styrningspolicyer för att säkerställa ansvarsfull användning.
 4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har gjort ett engagemang de senaste tre dagarna.
 5. Ni skapar en resa för återengagemang i [!DNL Adobe Journey Optimizer].
@@ -61,26 +61,25 @@ Nedan visas en översikt över de tre exemplen på återengagemangsresor.
 
 >[!TAB Övergiven Cart Journey]
 
-Den övergivna kundvagnsresan avser produkter som har placerats i vagnen men ännu inte köpts på både webbplatsen och mobilappen. Betalda mediekampanjer startas och stoppas med den här metoden.<p>![Kundens övergivna kundvagnsresa en överblick på hög nivå.](../intelligent-re-engagement/images/abandoned-cart-journey.png "Kundens övergivna kundvagnsresa en överblick på hög nivå."){width="1920" zoomable="yes"}</p>
+Den övergivna kundvagnsresan avser produkter som har placerats i vagnen men ännu inte köpts på både webbplatsen och mobilappen. Betalda mediekampanjer startas och stoppas med den här metoden.<p>![Kundens övergivna kundvagnsresa en överblick på hög nivå.](../intelligent-re-engagement/images/abandoned-cart-journey.png "Kundens övergivna kundvagnsresa en överblick på hög nivå."){width="2560" zoomable="yes"}</p>
 
-1. Du skapar scheman och datauppsättningar som är markerade för [!UICONTROL Profile].
-2. Data samlas i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
+1. Du skapar scheman och datauppsättningar, [!UICONTROL Profile].
+2. Data integreras i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
 3. Ni läser in profiler i Real-Time CDP och bygger styrningspolicyer för att säkerställa ansvarsfull användning.
 4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har placerat en artikel i kundvagnen men inte slutfört köpet. The **[!UICONTROL Add to cart]** event startar en timer som väntar i 30 minuter och sedan söker efter köp. Om inget köp har gjorts **kund** läggs till i **[!UICONTROL Abandon Cart]** målgrupper.
-5. Du skapar en övergiven kundvagnsresa i Adobe Journey Optimizer
+5. Du skapar en övergiven kundvagnsresa i [!DNL Adobe Journey Optimizer].
 6. Arbeta med **datapartner** för aktivering av målgrupper till önskade betalmediematerial.
 7. [!DNL Adobe Journey Optimizer] söker efter samtycke och skickar ut de olika konfigurerade åtgärderna.
 
 >[!TAB Orderbekräftelse - Resa]
 
-Beställningsbekräftelsen fokuserar på produktinköp via webbplatsen och mobilappen.<p>![Kundorderbekräftelseresan - en överblick på hög nivå.](../intelligent-re-engagement/images/order-confirmation-journey.png "Kundorderbekräftelseresan - en överblick på hög nivå."){width="1920" zoomable="yes"}</p>
+Beställningsbekräftelsen fokuserar på produktinköp via webbplatsen och mobilappen.<p>![Kundorderbekräftelseresan - en överblick på hög nivå.](../intelligent-re-engagement/images/order-confirmation-journey.png "Kundorderbekräftelseresan - en överblick på hög nivå."){width="2560" zoomable="yes"}</p>
 
-1. Du skapar scheman och datauppsättningar som är markerade för [!UICONTROL Profile].
-2. Data samlas i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
+1. Du kan skapa scheman och datauppsättningar och sedan markera för [!UICONTROL Profile].
+2. Data integreras i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
 3. Ni läser in profiler i Real-Time CDP och bygger styrningspolicyer för att säkerställa ansvarsfull användning.
-4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har köpt något.
-5. Du skapar en bekräftelseresa i Adobe Journey Optimizer.
-6. [!DNL Adobe Journey Optimizer] skickar ett orderbekräftelsemeddelande via den önskade kanalen.
+4. Du skapar en bekräftelseresa i [!DNL Adobe Journey Optimizer].
+5. [!DNL Adobe Journey Optimizer] skickar ett orderbekräftelsemeddelande via den önskade kanalen.
 
 >[!ENDTABS]
 
@@ -94,13 +93,15 @@ När du är klar med implementeringen av användningsexemplet kommer du att anv�
 
 ### Skapa en schemadesign och ange fältgrupper
 
-Experience Data Model-resurser (XDM) hanteras i [!UICONTROL Schemas] i Adobe Experience Platform. Du kan visa och utforska kärnresurser från Adobe och skapa anpassade resurser och scheman för din organisation.
+Experience Data Model-resurser (XDM) hanteras i [!UICONTROL Schemas] arbetsyta i [!DNL Adobe Experience Platform]. Du kan se och utforska de viktigaste resurserna i [!DNL Adobe] (till exempel [!UICONTROL Field Groups]) och skapa anpassade resurser och scheman för er organisation.
 
-Mer information om att skapa scheman finns i [skapa schemakurs.](/help/xdm/tutorials/create-schema-ui.md)
+Mer information om hur du skapar [scheman](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv), läsa [skapa schemakurs.](/help/xdm/tutorials/create-schema-ui.md)
 
-Det finns fyra schemadesigner som används för återengagemangsresan. Varje schema kräver att specifika fält ställs in och vissa fält som är starkt rekommenderade.
+Det finns fyra schemadesigner som används för återanvändning. Varje schema kräver att specifika fält ställs in och vissa fält som är starkt rekommenderade.
 
 #### Kundattributschema
+
+Det här schemat används för att strukturera och referera till profildata som utgör kundinformationen. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via ditt CRM-system eller liknande system och är nödvändigt för att referera till kundinformation som används för personalisering, marknadsföringsmedgivande och förbättrade segmenteringsfunktioner.
 
 Kundattributschemat representeras av en [!UICONTROL XDM Individual Profile] -klass, som innehåller följande fältgrupper:
 
@@ -154,6 +155,8 @@ Den här fältgruppen används för bästa praxis.
 +++
 
 #### Kundens digitala transaktionsschema
+
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats och/eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via Web SDK och är nödvändigt för att kunna hänvisa till de olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online och utökade segmenteringsfunktioner.
 
 Kundens digitala transaktionsschema representeras av en [!UICONTROL XDM ExperienceEvent] -klass, som innehåller följande fältgrupper:
 
@@ -225,18 +228,9 @@ Webbinformation är en standardschemafältgrupp för klassen XDM ExperienceEvent
 | `endUserIDs._experience.emailid.authenticatedState` | Obligatoriskt | Slutanvändarens e-postadress-ID har autentiserats. |
 | `endUserIDs._experience.emailid.id` | Obligatoriskt | Slutanvändarens e-postadress-ID. |
 | `endUserIDs._experience.emailid.namespace.code` | Obligatoriskt | ID-namnområdeskod för slutanvändarens e-postadress. |
-| `endUserIDs._experience.mcid.authenticatedState` | Obligatoriskt | Autentiserat tillstånd för Adobe Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.id` | Obligatoriskt | Adobe Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.namespace.code` | Obligatoriskt | Adobe Marketing Cloud ID-namnområdeskod (MCID). |
-
-+++
-
-+++klassvärde (fältgrupp)
-
-| Fält | Krav |
-| --- | --- |
-| `eventType` | Obligatoriskt |
-| `timestamp` | Obligatoriskt |
+| `endUserIDs._experience.mcid.authenticatedState` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID) autentiserad. MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.id` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.namespace.code` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID-namnområdeskod (MCID). |
 
 +++
 
@@ -247,6 +241,8 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 +++
 
 #### Schema för offlinetransaktioner för kund
+
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på plattformar utanför webbplatsen. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] från en POS (eller liknande system) och som oftast strömmas till plattformen via en API-anslutning. Syftet är att hänvisa till olika offlinekonverteringshändelser som används för att utlösa resor, djupgående kundanalyser online och offline samt förbättrade segmenteringsfunktioner.
 
 Kundens offlinetransaktionsschema representeras av en [!UICONTROL XDM ExperienceEvent] -klass, som innehåller följande fältgrupper:
 
@@ -276,15 +272,6 @@ Kundens offlinetransaktionsschema representeras av en [!UICONTROL XDM Experience
 
 +++
 
-+++klassvärde (fältgrupp)
-
-| Fält | Krav |
-| --- | --- |
-| `eventType` | Obligatoriskt |
-| `timestamp` | Obligatoriskt |
-
-+++
-
 +++Extern källsystemsgranskningsinformation (fältgrupp)
 
 Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data Model) som samlar in granskningsinformation om ett externt källsystem.
@@ -293,7 +280,13 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 
 #### Adobe webbanslutningsschema
 
-Adobe webbanslutningsschema representeras av en [!UICONTROL XDM ExperienceEvent] -klass, som innehåller följande fältgrupper:
+>[!NOTE]
+>
+>Detta är en valfri implementering om du använder [!DNL Adobe Analytics Data Connector].
+
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats och/eller tillhörande digitala plattformar. Det här schemat liknar kundens schema för digitala transaktioner, men skiljer sig åt på så sätt att det är avsett att användas när Web SDK inte är ett alternativ för datainsamling. Därför behövs det här schemat när du använder [!DNL Adobe Analytics Data Connector] för att skicka onlinedata till [!DNL Adobe Experience Platform] antingen som primär eller sekundär datastream.
+
+The [!DNL Adobe] webbanslutningsschemat representeras av en [!UICONTROL XDM ExperienceEvent] -klass, som innehåller följande fältgrupper:
 
 +++Adobe Analytics ExperienceEvent-mall (fältgrupp)
 
@@ -338,9 +331,9 @@ Adobe webbanslutningsschema representeras av en [!UICONTROL XDM ExperienceEvent]
 | `endUserIDs._experience.emailid.authenticatedState` | Obligatoriskt | Slutanvändarens e-postadress-ID har autentiserats. |
 | `endUserIDs._experience.emailid.id` | Obligatoriskt | Slutanvändarens e-postadress-ID. |
 | `endUserIDs._experience.emailid.namespace.code` | Obligatoriskt | ID-namnområdeskod för slutanvändarens e-postadress. |
-| `endUserIDs._experience.mcid.authenticatedState` | Obligatoriskt | Autentiserat tillstånd för Adobe Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.id` | Obligatoriskt | Adobe Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.namespace.code` | Obligatoriskt | Adobe Marketing Cloud ID-namnområdeskod (MCID). |
+| `endUserIDs._experience.mcid.authenticatedState` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID) autentiserad. MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.id` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.namespace.code` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID-namnområdeskod (MCID). |
 
 +++
 
@@ -361,9 +354,9 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 
 ### Skapa en datauppsättning från ett schema
 
-En datauppsättning är en lagrings- och hanteringsstruktur för en grupp data, ofta en tabell med fält (rader) och ett schema (kolumner). Alla scheman för intelligenta återengagemangsresor har en enda datauppsättning.
+En datauppsättning är en lagrings- och hanteringsstruktur för en grupp med data. Varje schema för intelligenta återengagemangsresor har en enda datauppsättning.
 
-Mer information om hur du skapar en datauppsättning från ett schema finns i [Användargränssnittshandbok för datauppsättningar](/help/catalog/datasets/user-guide.md).
+Mer information om hur du skapar en [datauppsättning](/help/catalog/datasets/overview.md) från ett schema, läs [Användargränssnittshandbok för datauppsättningar](/help/catalog/datasets/user-guide.md).
 
 >[!NOTE]
 >
@@ -377,23 +370,23 @@ Mer information om hur du skapar en datauppsättning från ett schema finns i [A
 >
 >Att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke är ett juridiskt krav, liksom att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Experience Platform dokumentation](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html).
 
-När du skapar en väg för återengagemang måste följande policyer för medgivande beaktas och användas:
+När du skapar en väg för återengagemang bör följande policy för samtycke beaktas:
 
 * If `consents.marketing.email.val = "Y"` kan e-posta
 * If `consents.marketing.sms.val = "Y"` kan SMS
 * If `consents.marketing.push.val = "Y"` sedan Can Push
 * If `consents.share.val = "Y"` så kan annonsera
-* Behovet definierat av kundimplementeringen
 
 #### DULE-etikett och tvång
 
-Personliga e-postadresser används som direkt identifierbara data som används för att identifiera eller komma i kontakt med en viss individ i stället för en enhet.
+När du skapar en sökväg för återengagemang bör följande DULE-etiketter beaktas:
 
-* `personalEmail.address = I1`
+* Personliga e-postadresser används som direkt identifierbara data som används för att identifiera eller komma i kontakt med en viss individ i stället för en enhet.
+   * `personalEmail.address = I1`
 
 #### Marknadspolicyer
 
-Det finns inga ytterligare marknadsföringspolicyer som krävs för återengagemangsresor, men följande bör beaktas efter behov:
+Det finns inga marknadsföringspolicyer som krävs för återengagemangsresor, men följande bör beaktas efter behov:
 
 * Begränsa känsliga data
 * Begränsa annonsering på plats
@@ -405,9 +398,9 @@ Det finns inga ytterligare marknadsföringspolicyer som krävs för återengagem
 
 #### Målgruppsskapande för varumärkesåterengagemangsresor
 
-Återengagemangsresorna använder målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från er kundbas. Målgrupper kan skapas på två olika sätt i Adobe Experience Platform - antingen direkt sammansatta som målgrupper eller med plattformsbaserade segmentdefinitioner.
+Återengagemangsresorna använder målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från er kundbas. Målgrupper kan skapas på flera sätt [!DNL Adobe Experience Platform].
 
-Mer information om hur du skapar målgrupper direkt finns i [Användargränssnittsguide för målgruppskomposition](/help/segmentation/ui/audience-composition.md).
+Mer information om hur du skapar direkt [Målgrupper](/help/segmentation/home.md), läsa [Användargränssnittsguide för målgruppskomposition](/help/segmentation/ui/audience-composition.md).
 
 Mer information om hur du bygger målgrupper med hjälp av plattformsbaserade segmentdefinitioner finns i [Användargränssnittshandbok för Audience Builder](/help/segmentation/ui/segment-builder.md).
 
@@ -415,13 +408,15 @@ Mer information om hur du bygger målgrupper med hjälp av plattformsbaserade se
 
 >[!TAB Engagement Journey på nytt]
 
+Den här målgruppen har skapats som en förbättring av det klassiska&quot;Cart Abandonment&quot;-scenariot. Medan kundvagnsuppsägning vanligtvis fokuserar på ett kundvagnstillägg utan att man behöver göra ett senare inköp under en viss tidsperiod, letar denna målgrupp efter ett tidigare engagemang, särskilt de som har bläddrat efter en viss produkt men inte lagt till den i kundvagnen och inte haft någon uppföljningsaktivitet på er webbplats inom en viss tidsperiod. Den här målgruppen ser till att ert varumärke&quot;ligger överst&quot; för kunder som uppfyller detta inkluderingskriterier och kan även utnyttjas för kunder vars digitala egenskaper kan skilja sig från en traditionell e-handelsmodell.
+
 Följande händelser används för återengagemangsresan där användarna tittade på produkter online och inte lade till i kundvagnen under de kommande 24 timmarna, följt av inget varumärkesengagemang under de kommande 3 dagarna.
 
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `EventType: commerce.productViews`
    * `Timestamp: <= 24 hours before now`
-* `EventType is not: commerce.productListAdds`
+* `EventType is not: commerce.procuctListAdds`
    * `Timestamp: <= 24 hours before now, GAP(>= 3 days)`
 * `EventType: application.launch or web.webpagedetails.pageViews or commerce.purchases`
    * `Timestamp: <= 2 days before now`
@@ -432,16 +427,18 @@ Beskrivningen för återengagemangsresan visas som:
 
 >[!TAB Övergiven Cart Journey]
 
+Den här målgruppen har skapats för att stödja det klassiska&quot;Cart Abandonment&quot;-scenariot. Syftet är att hitta kunder som har lagt till en produkt i kundvagnen men i slutändan inte har lyckats med ett köp. Den här målgruppen hjälper er att inte bara hålla ert varumärke&quot;högst i sinnet&quot; för era kunder, utan även de produkter de lämnade utan ett efterföljande köp.
+
 Följande händelser används för den övergivna kundvagnsresan där användarna lade till en produkt i kundvagnen, men inte slutförde köpet eller rensade kundvagnen de senaste 24 timmarna.
 
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `EventType: commerce.productListAdds`
-   * `Timestamp: >= 30 minutes before now and <= 1440 minutes before now`
+   * `Timestamp: >= 1 days before now and <= 4 days before now `
 * `EventType: commerce.purchases`
-   * `Timestamp: <= 30 minutes before now`
+   * `Timestamp: <= 4 days before now`
 * `EventType: commerce.productListRemovals`
-   * `Timestamp: <= 30 minutes before now`
+   * `Timestamp: <= 4 days before now`
 
 Beskrivningen för den övergivna kundvagnsresan visas som:
 
@@ -453,17 +450,19 @@ Beskrivningen för den övergivna kundvagnsresan visas som:
 
 >[!NOTE]
 >
->Adobe Journey Optimizer omfattar inte allt som visas i diagrammen högst upp på den här sidan. Alla annonser för betalda medier skapas i [!UICONTROL Destinations].
+>[!DNL Adobe Journey Optimizer] omfattar inte allt som visas i diagrammen. Alla annonser för betalda medier skapas i [!UICONTROL Destinations].
 
-Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella och personaliserade upplevelser till era kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information. Nedan finns de exakta data som behövs för varje resegren.
+[[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) hjälper er att leverera sammankopplade, kontextuella och personaliserade upplevelser till era kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information. Nedan finns de exakta data som behövs för varje resegren.
 
 >[!BEGINTABS]
 
 >[!TAB Engagement Journey på nytt]
 
+Återengagemanget syftar till att överge produktsurfning både på webbplatsen och i mobilappen.<p>![Kundens intelligenta resa för återengagemang på hög visuell nivå.](../intelligent-re-engagement/images/re-engagement-journey.png "Kundens intelligenta resa för återengagemang på hög visuell nivå."){width="2560" zoomable="yes"}</p>
+
 +++Händelser
 
-* Produktvisningar
+* Händelse 1: Produktvyer
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -489,7 +488,7 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
          * `endUserIDs._experience.emailid.namespace.code`
          * `_id`
 
-* Lägg i kundvagnen
+* Händelse 2: Lägg i kundvagnen
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -516,7 +515,7 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
          * `endUserIDs._experience.emailid.namespace.code`
          * `_id`
 
-* Varumärkesengagemang
+* Händelse 3: Varumärkesengagemang
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -568,7 +567,7 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
       * `timestamp > timestamp of product last viewed`
 
    * Sök efter minst ett offlineköp sedan produkten senast visades:
-      * Schema: Kundoffline-transaktioner v.1
+      * Schema: Kundoffline-transaktioner
       * `eventType = commerce.purchases`
       * `timestamp > timestamp of product last viewed`
 
@@ -587,9 +586,11 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
 
 >[!TAB Övergiven Cart Journey]
 
+Den övergivna kundvagnsresan avser produkter som har placerats i vagnen men ännu inte köpts på både webbplatsen och mobilappen.<p>![Kundens övergivna kundvagnsresa en överblick på hög nivå.](../intelligent-re-engagement/images/abandoned-cart-journey.png "Kundens övergivna kundvagnsresa en överblick på hög nivå."){width="2560" zoomable="yes"}</p>
+
 +++Händelser
 
-* Lägg i kundvagnen
+* Händelse 2: Lägg i kundvagnen
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -616,7 +617,7 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
          * `endUserIDs._experience.emailid.namespace.code`
          * `_id`
 
-* Onlineköp
+* Evenemang 4: Onlineköp
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -642,7 +643,7 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
          * `endUserIDs._experience.emailid.namespace.code`
          * `_id`
 
-* Varumärkesengagemang
+* Händelse 3: Varumärkesengagemang
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -690,12 +691,12 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
 * AuthenticatedState in authenticated
 
 * Villkor: Offlineköp sedan vagnen senast övergavs:
-   * Schema: Kundoffline-transaktioner v.1
+   * Schema: Kundoffline-transaktioner
    * `eventType = commerce.purchases`
    * `timestamp > timestamp of cart was last abandoned`
 
 * Villkor: vagnen har rensats sedan vagnen senast övergavs:
-   * Schema: Customer Digital Transactions v.1
+   * Schema: Digitala kundtransaktioner
    * `eventType = commerce.cartCleared`
    * `cartID` (ID för vagnen)
    * `timestamp > timestamp of cart was last abandoned`
@@ -714,9 +715,11 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
 
 >[!TAB Orderbekräftelse - Resa]
 
+Beställningsbekräftelsen fokuserar på produktinköp via webbplatsen och mobilappen.<p>![Kundorderbekräftelseresan - en överblick på hög nivå.](../intelligent-re-engagement/images/order-confirmation-journey.png "Kundorderbekräftelseresan - en överblick på hög nivå."){width="2560" zoomable="yes"}</p>
+
 +++Händelser
 
-* Onlineköp
+* Evenemang 4: Onlineköp
    * Schema: Digitala kundtransaktioner
    * Fält:
       * `EventType`
@@ -763,11 +766,11 @@ Adobe Journey Optimizer hjälper er att leverera sammankopplade, kontextuella oc
 
 >[!ENDTABS]
 
-Mer information om hur du skapar resor i [Adobe Journey Optimizer], läsa [Kom igång med reseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html).
+Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer], läsa [Kom igång med reseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html).
 
 ### Konfigurera annonser för betalda medier i destinationer
 
-Målramverket används för annonser i betalda medier. När samtycke har checkats ut skickas det till de olika konfigurerade destinationerna. Till exempel direktreklam, e-post, push och SMS.
+Målramverket används för annonser i betalda medier. När samtycke har checkats ut skickas det till de olika konfigurerade destinationerna. Mer information om destinationer finns i [Översikt över destinationer](/help/destinations/home.md) -dokument.
 
 #### Data som krävs för destinationer
 
