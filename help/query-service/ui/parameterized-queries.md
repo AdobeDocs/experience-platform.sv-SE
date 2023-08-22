@@ -1,14 +1,19 @@
 ---
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
-source-git-commit: d8845e080489af12e98badc892bb60cb9749bd47
+source-git-commit: 4fc94fc39fa09756a440b5e532330cd310dd96d2
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '744'
 ht-degree: 0%
 
 ---
 
-# Parametriserade frågor (begränsad version)
+# Parametriserade frågor (begränsad version) {#parameterized-queries}
+
+>[!CONTEXTUALHELP]
+>id="platform_queryService_queryEditor_parameterizedQueries"
+>title="Parametriserade frågor"
+>abstract="Använd parametriserade frågor för att lägga till parametervärden vid körningen. På så sätt kan du arbeta med dynamiska data och återanvända frågor för olika användningsområden. Använd `'$'` för att ange en frågeparameter i frågan i textredigeraren. Lägg sedan till ett värde för nyckeln i avsnittet Frågeparametrar nedanför redigeraren."
 
 >[!IMPORTANT]
 >
