@@ -1,21 +1,16 @@
 ---
 title: Källöversikt för SugarCRM
 description: Lär dig hur du ansluter SugarCRM till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
-badge: Beta
-last-substantial-update: 2023-01-25T00:00:00Z
+last-substantial-update: 2023-08-23T00:00:00Z
 exl-id: 03fbc4e9-974d-494e-8463-756c96665fd5
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '385'
 ht-degree: 0%
 
 ---
 
-# (Beta) [!DNL SugarCRM]
-
->[!NOTE]
->
->The [!DNL SugarCRM] källan är i betaversion. Se [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# [!DNL SugarCRM]
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
@@ -29,7 +24,6 @@ The [!DNL SugarCRM] kan du importera konton, kontakter och händelsedata från f
 * [Kontakter](https://market.apidocs.sugarcrm.com/#308c5025-9478-4de3-8a41-1fc3cff1d8d1)
 * [Händelser](https://market.apidocs.sugarcrm.com/#516ec3b1-8e70-43d4-8bf2-38a2ae74c0a5)
 
-
 [!DNL SugarCRM] använder lagervariabler som en autentiseringsmekanism för att kommunicera med [!DNL SugarCRM] Konto- och kontakt-API:er och [!DNL SugarCRM] Händelse-API.
 
 ## IP-adress tillåtelselista
@@ -40,7 +34,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 Innan du kan skapa en [!DNL SugarCRM] måste du först kontrollera att du har följande:
 
-* A [!DNL SugarMarket] konto. Du måste kontakta din [!DNL SugarCRM] kontohanteraren för att erhålla en giltig [!DNL SugarMarket] om du inte redan har ett konto.
+* A [!DNL SugarMarket] konto. Du måste kontakta [!DNL SugarCRM] kontohanteraren för att erhålla en giltig [!DNL SugarMarket] om du inte redan har ett konto.
 
 * Ett unikt API-användarnamn och konto som är skilt från alla användarkonton som är kopplade till marknadsförings- eller försäljningsprocessen. Den här unika kombinationen av användarnamn och konto måste ha API-åtkomstbehörighet. Mer information om hur du skapar ett konto finns på [[!DNL SugarMarket RESTFUL API]](https://market.apidocs.sugarcrm.com/#intro) dokumentation.
 
@@ -53,6 +47,6 @@ Innan du kan skapa en [!DNL SugarCRM] måste du först kontrollera att du har f�
 
 ## Anslut [!DNL SugarCRM Events] till plattform
 
-* [Skapa en källanslutning att hämta [!DNL SugarCRM Events] data till plattformen med API:er](../../tutorials/api/create/crm/sugarcrm-events.md).
+* [Skapa en källanslutning att hämta [!DNL SugarCRM Events] data till plattformen med API:er](../../tutorials/ui/create/crm/sugarcrm-events.md).
 * [Skapa en källanslutning att hämta [!DNL SugarCRM Events] data till plattformen via användargränssnittet](../../tutorials/ui/create/crm/sugarcrm-events.md).
 * [Skapa ett dataflöde för en CRM-källanslutning i användargränssnittet](../../tutorials/ui/dataflow/crm.md)

@@ -2,18 +2,14 @@
 title: Skapa en källanslutning för SugarCRM-händelser i användargränssnittet
 description: Lär dig hur du skapar en källanslutning för SugarCRM-händelser med hjälp av Adobe Experience Platform-gränssnittet.
 exl-id: db346ec0-2c57-4b82-8a39-f15d4cd377d4
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '625'
 ht-degree: 1%
 
 ---
 
-# (Beta) Skapa en [!DNL SugarCRM Events] källanslutning i användargränssnittet
-
->[!NOTE]
->
->The [!DNL SugarCRM Events] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en [!DNL SugarCRM Events] källanslutning i användargränssnittet
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL SugarCRM Events] källanslutning med Adobe Experience Platform användargränssnitt.
 
@@ -23,7 +19,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL SugarCRM] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/crm.md).
@@ -40,7 +36,7 @@ För att kunna ansluta [!DNL SugarCRM Events] till Platform måste du ange värd
 
 ### Skapa ett plattformsschema för [!DNL SugarCRM]
 
-Innan du skapar en [!DNL SugarCRM] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
+Innan du skapar [!DNL SugarCRM] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
 
 ![Skärmbild för användargränssnittet för plattformen visar ett exempelschema för SugarCRM-händelser](../../../../images/tutorials/create/sugarcrm-events/sugarcrm-schema-events.png)
 
@@ -62,7 +58,7 @@ The **[!UICONTROL Connect SugarCRM Events account]** visas. På den här sidan k
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL SugarCRM Events] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL SugarCRM Events] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![Skärmbild för användargränssnittet för Connect SugarCRM Events-konto med ett befintligt konto](../../../../images/tutorials/create/sugarcrm-events/existing.png)
 
@@ -74,7 +70,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL SugarCRM Events] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL SugarCRM Events] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
 
 ## Ytterligare resurser
 
@@ -96,4 +92,4 @@ För att verifiera att du har konfigurerat källan och [!DNL SugarCRM Events] da
 
 >[!NOTE]
 >
->The [!DNL SugarMarket] sidor innehåller inte antalet borttagna objekt. Data som hämtas via den här källan kommer dock även att innehålla det borttagna antalet, som markeras med en borttagen flagga.
+>The [!DNL SugarMarket] Sidorna innehåller inte antalet borttagna objekt. Data som hämtas via den här källan kommer dock även att innehålla det borttagna antalet, som markeras med en borttagen flagga.

@@ -2,18 +2,14 @@
 title: Skapa en källanslutning till SugarCRM-konton och kontakter i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till SugarCRM-konton och kontakter med hjälp av Adobe Experience Platform användargränssnitt.
 exl-id: 45840d7e-4c19-4720-8629-be446347862d
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 0de4b32ac2ddc90dabefd469b6658388a4532e0d
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '739'
 ht-degree: 1%
 
 ---
 
-# (Beta) Skapa en [!DNL SugarCRM Accounts & Contacts] källanslutning i användargränssnittet
-
->[!NOTE]
->
->The [!DNL SugarCRM Accounts & Contacts] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en [!DNL SugarCRM Accounts & Contacts] källanslutning i användargränssnittet
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL SugarCRM Accounts & Contacts] källanslutning med Adobe Experience Platform användargränssnitt.
 
@@ -23,7 +19,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL SugarCRM] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/crm.md).
@@ -40,7 +36,7 @@ För att kunna ansluta [!DNL SugarCRM Accounts & Contacts] till Platform måste 
 
 ### Skapa ett plattformsschema
 
-Innan du skapar en [!DNL SugarCRM] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
+Innan du skapar [!DNL SugarCRM] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
 
 The [!DNL SugarCRM Accounts & Contacts] har stöd för flera API:er. Det innebär att du måste skapa ett separat schema, beroende på vilken objekttyp du använder. Se exemplen nedan för både konton och kontaktkartor:
 
@@ -70,7 +66,7 @@ The **[!UICONTROL Connect SugarCRM Accounts & Contacts account]** visas. På den
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL SugarCRM Accounts & Contacts] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL SugarCRM Accounts & Contacts] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![Skärmbild för användargränssnittet för Connect SugarCRM-konton och kontaktkonton med ett befintligt konto](../../../../images/tutorials/create/sugarcrm-accounts-contacts/existing.png)
 
@@ -103,7 +99,7 @@ Slutligen måste du välja den objekttyp som du vill importera till plattformen.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL SugarCRM Accounts & Contacts] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL SugarCRM Accounts & Contacts] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till plattformen](../../dataflow/crm.md).
 
 ## Ytterligare resurser
 
@@ -135,4 +131,4 @@ För att verifiera att du har konfigurerat källan och [!DNL SugarCRM Accounts &
 
 >[!NOTE]
 >
->The [!DNL SugarMarket] sidor innehåller inte antalet borttagna objekt. Data som hämtas via den här källan kommer dock även att innehålla det borttagna antalet, som markeras med en borttagen flagga.
+>The [!DNL SugarMarket] Sidorna innehåller inte antalet borttagna objekt. Data som hämtas via den här källan kommer dock även att innehålla det borttagna antalet, som markeras med en borttagen flagga.

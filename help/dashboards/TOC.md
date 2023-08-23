@@ -4,10 +4,10 @@ user-guide-title: Hjälp med kontrollpaneler i Adobe Experience Platform
 breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
-source-git-commit: c558ee6cc1c7ae36f87aaff5d40be57cfb21b2e4
+source-git-commit: 43a98526d5713ffd5917bd3986067ba483001171
 workflow-type: tm+mt
-source-wordcount: '88'
-ht-degree: 26%
+source-wordcount: '93'
+ht-degree: 24%
 
 ---
 
@@ -34,6 +34,8 @@ ht-degree: 26%
    * [Standardwidgetar](customize/standard-widgets.md)
    * [Anpassade widgetar](customize/custom-widgets.md)
    * [Redigera schema](customize/edit-schema.md)
+* Insikter - användningsfall {#insights-use-cases}
+   * [Samtyckesanalys](insights-use-cases/consent-analysis.md)
 * Programintegreringar {#integrations}
    * [Power BI](integrations/power-bi.md)
 * [Datamängder för frågeinstrumentpanelen](query.md)

@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: 9fe547e6270b4ede3151158e3b474f8c3dfd2297
+source-git-commit: a74ec87c27d3db3bcd8d0a5075a593535e3c4de1
 workflow-type: tm+mt
-source-wordcount: '278'
-ht-degree: 14%
+source-wordcount: '280'
+ht-degree: 13%
 
 ---
 
@@ -30,15 +30,16 @@ ht-degree: 14%
       - [Sömlöst SQL-flöde](data-distiller/derived-attributes/seamless-sql-flow.md)
       - [Skapa decimalbaserade härledda attribut](data-distiller/derived-attributes/decile-based-derived-attributes.md)
 - Användningsfall {#use-cases}
-   - [Övergiven surfning](use-cases/abandoned-browse.md)
+   - [Bläddra överges](use-cases/abandoned-browse.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
    - [Punktfiltrering](use-cases/bot-filtering.md)
    - [Skapa en trendrapport över händelser](use-cases/trended-report-of-events.md)
+   - [Samtyckesanalys](use-cases/consent-analysis.md)
    - [Kundens livstidsvärde](use-cases/customer-lifetime-value.md)
    - [Lövbaserade härledda attribut](use-cases/deciles-use-case.md)
-   - [Fuzzy match](use-cases/fuzzy-match.md)
+   - [Fuzzy-matchning](use-cases/fuzzy-match.md)
    - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)
-   - [Visa besökarna en lista över deras sidvyer](use-cases/visitors-by-number-of-page-views.md)
+   - [Visa besökarna i deras sidvy](use-cases/visitors-by-number-of-page-views.md)
    - [Propensionstest](use-cases/propensity-score.md)
    - [SQLAlchemy](use-cases/sqlalchemy.md)
    - [Returnera och använda försäljningsvariabler från analysdata](use-cases/merchandising-variables.md)
@@ -46,7 +47,7 @@ ht-degree: 14%
    - [Insikter om webb- och mobilanalys](use-cases/analytics-insights.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
-   - [SSL-lägen](./clients/ssl-modes.md)
+   - [SSL-läge](./clients/ssl-modes.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
    - [DbVisualizer](./clients/dbvisulaizer.md)
    - [Jupyter Notebook](clients//jupyter-notebook.md)
@@ -65,7 +66,7 @@ ht-degree: 14%
    - [Frågeloggar](ui/query-logs.md)
    - [Övervaka schemalagda frågor](ui/monitor-queries.md)
    - [Handbok för autentiseringsuppgifter](ui/credentials.md)
-   - [Generera utdatamängder från frågeresultat](ui/create-datasets.md)
+   - [Generera utdata från frågeresultat](ui/create-datasets.md)
 - API-slutpunkter för frågetjänst {#api}
    - [Komma igång](api/getting-started.md)
    - [Frågor](api/queries.md)
@@ -95,7 +96,7 @@ ht-degree: 14%
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)
-   - [Adobe-definierade funktioner](sql/adobe-defined-functions.md)
+   - [Funktioner som definieras av Adobe](sql/adobe-defined-functions.md)
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
    - [Metadata-kommandon](sql/metadata.md)
    - [Förberedda programsatser](sql/prepared-statements.md)

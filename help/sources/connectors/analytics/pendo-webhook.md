@@ -1,20 +1,15 @@
 ---
 title: Översikt över Pendo-källa
 description: Lär dig hur du ansluter Pendo till Adobe Experience Platform med hjälp av API:er eller användargränssnittet genom att använda webbhooks
-badge: Beta
 exl-id: 376f18ef-1eea-4c42-8041-6fadb5906e9b
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '370'
+source-wordcount: '352'
 ht-degree: 0%
 
 ---
 
 # [!DNL Pendo]
-
->[!NOTE]
->
->The [!DNL Pendo] källan är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 

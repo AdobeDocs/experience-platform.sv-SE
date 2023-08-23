@@ -1,20 +1,15 @@
 ---
 title: Skapa en Pendo-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Pendo-källanslutning med Adobe Experience Platform-gränssnittet.
-badge: Beta
 exl-id: defdec30-42af-43c8-b2eb-7ce98f7871e3
-source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
+source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1148'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Pendo] källanslutningsdataflöde och i användargränssnittet
-
->[!NOTE]
->
->The [!DNL Pendo] källan är i betaversion. Se [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Pendo] källanslutning och dataflöde med Adobe Experience Platform användargränssnitt.
 

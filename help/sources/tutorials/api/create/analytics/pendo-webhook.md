@@ -1,20 +1,15 @@
 ---
 title: Skapa en källanslutning och ett dataflöde för Pendo med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till Pendo med API:t för Flow Service.
-badge: Beta
 exl-id: 12b0295d-4b26-4eb7-a02a-a01d825d2a1e
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
 workflow-type: tm+mt
-source-wordcount: '1459'
+source-wordcount: '1441'
 ht-degree: 0%
 
 ---
 
 # Skapa en källanslutning och ett dataflöde för [!DNL Pendo] med API:t för Flow Service
-
->[!NOTE]
->
->The [!DNL Pendo] källan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [[!DNL Pendo]](https://Pendo.com/) händelsedata till Adobe Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -22,7 +17,7 @@ I följande självstudiekurs får du hjälp med att skapa en källanslutning och
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Källor](../../../../home.md): Experience Platform tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ## Anslut [!DNL Pendo] till plattform med [!DNL Flow Service] API {#connect-platform-to-flow-api}
@@ -69,7 +64,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
-| `connectionSpec.id` | Det ID för anslutningsspecifikation som motsvarar källan. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
 | `data.format` | Formatet på [!DNL Pendo] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
 
 **Svar**
@@ -93,7 +88,7 @@ Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudie
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
 Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
 
@@ -224,7 +219,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `outputSchema.schemaRef.id` | ID för [mål-XDM-schema](#target-schema) som genererats i ett tidigare steg. |
+| `outputSchema.schemaRef.id` | ID:t för [mål-XDM-schema](#target-schema) som har genererats i ett tidigare steg. |
 | `mappings.sourceType` | Källattributtypen som mappas. |
 | `mappings.source` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.destination` | Mål-XDM-sökvägen dit källattributet mappas. |
@@ -300,11 +295,11 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan inkludera för att få mer information om dataflödet. |
 | `flowSpec.id` | Det ID för flödesspecifikation som krävs för att skapa ett dataflöde. Detta fasta ID är: `e77fde5a-22a8-11ed-861d-0242ac120002`. |
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som genererats i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som genererats i ett tidigare steg. |
+| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som har genererats i ett tidigare steg. |
+| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som har genererats i ett tidigare steg. |
 | `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som genererats i ett tidigare steg. |
+| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som har genererats i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 
 **Svar**
@@ -441,7 +436,7 @@ Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körnings
 
 ### Uppdatera ditt konto {#update-account}
 
-Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+Uppdatera namn, beskrivning och autentiseringsuppgifter för ditt källkonto genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
 ### Ta bort ditt dataflöde {#delete-dataflow}
 
@@ -449,4 +444,4 @@ Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Servic
 
 ### Ta bort ditt konto {#delete-account}
 
-Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger basanslutnings-ID för det konto du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
