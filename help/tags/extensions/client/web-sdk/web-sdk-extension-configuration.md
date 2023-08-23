@@ -2,9 +2,9 @@
 title: Konfigurera Adobe Experience Platform Web SDK-tillägget
 description: Konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet.
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 97b435b9bcaf20be0e41150b6a7a408e083fbd61
 workflow-type: tm+mt
-source-wordcount: '1126'
+source-wordcount: '1161'
 ht-degree: 0%
 
 ---
@@ -52,14 +52,14 @@ The [!UICONTROL Edge Domain] är den domän som Adobe Experience Platform-tillä
 
 När en begäran skickas till Adobe Experience Platform Edge Network, används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
-Se guiden [datastreams](../../../../datastreams/overview.md) för mer information.
+Se guiden på [datastreams](../../../../datastreams/overview.md) för mer information.
 
 
 ## [!UICONTROL Privacy]
 
 ![](assets/privacy.png)
 
-The [!UICONTROL Privacy] I kan du konfigurera hur SDK hanterar användares medgivandesignaler från din webbplats. Det gör i synnerhet att du kan välja den standardnivå för samtycke som antas av en användare om ingen annan explicit inställning har angetts. Standardnivån för samtycke sparas inte i användarens profil. I följande tabell visas vad varje alternativ innebär:
+The [!UICONTROL Privacy] I kan du konfigurera hur SDK hanterar användares medgivandesignaler från din webbplats. Det gör i synnerhet att du kan välja den standardnivå för samtycke som antas av en användare om ingen annan explicit medgivandeinställning har angetts. Standardnivån för samtycke sparas inte i användarens profil. I följande tabell visas vad varje alternativ innebär:
 
 | [!UICONTROL Default Consent Level] | Beskrivning |
 | --- | --- |
@@ -80,7 +80,7 @@ Det här alternativet är aktiverat som standard. När den här funktionen är a
 
 ### [!UICONTROL Use third-party cookies]
 
-Med det här alternativet kan SDK försöka lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när han/hon navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kanske SDK fortfarande inte kan lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller har konfigurerats av användaren så att cookies från tredje part inte tillåts. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
+Med det här alternativet kan SDK försöka lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kanske SDK fortfarande inte kan lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller har konfigurerats av användaren så att cookies från tredje part inte tillåts. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
 ## [!UICONTROL Personalization]
 
@@ -102,7 +102,7 @@ SDK kan automatiskt samla in länkklicksinformation åt dig. Som standard är de
 
 ### [!UICONTROL Automatically collected context data]
 
-Som standard samlar SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe kan du hitta den [här](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, kan du ändra de här alternativen.
+Som standard samlar SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe finns den [här](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, kan du ändra de här alternativen.
 
 ## [!UICONTROL Datastream Configuration Overrides]
 
@@ -118,6 +118,10 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 Se datastream [dokumentation om åsidosättning av konfiguration](../../../../datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
 
 Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando kan du konfigurera åsidosättningarna på taggtilläggsskärmen som visas nedan.
+
+>[!IMPORTANT]
+>
+> Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
 
 ![Bild som visar åsidosättningar av dataströmskonfigurationer på tilläggssidan för Web SDK-taggen.](assets/datastream-overrides.png)
 
