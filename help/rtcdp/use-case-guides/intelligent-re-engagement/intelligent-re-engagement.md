@@ -3,9 +3,9 @@ title: Intelligent återanvändning
 description: Leverera övertygande och sammanhängande upplevelser under de viktiga konverteringstunderna för att på ett intelligent sätt engagera ovanliga kunder.
 hide: true
 hidefromtoc: true
-source-git-commit: 69d83e0ca7530f09042e0740e3f25ba92ecb24e4
+source-git-commit: 7de5fe7808a22137c417a4ca865d764b0814b90e
 workflow-type: tm+mt
-source-wordcount: '3374'
+source-wordcount: '3403'
 ht-degree: 2%
 
 ---
@@ -83,7 +83,7 @@ Beställningsbekräftelsen fokuserar på produktinköp via webbplatsen och mobil
 
 >[!ENDTABS]
 
-## Så här uppnår du användningsfallet: stegvisa instruktioner {#step-by-step-instructions}
+## Hur man uppnår användningsfallet {#achieve-use-case-instruction}
 
 Om du vill slutföra varje steg i översikterna ovan kan du läsa igenom avsnitten nedan som innehåller länkar till mer information och mer detaljerade anvisningar.
 
@@ -91,7 +91,7 @@ Om du vill slutföra varje steg i översikterna ovan kan du läsa igenom avsnitt
 
 När du är klar med implementeringen av användningsexemplet kommer du att använda de Real-Time CDP-funktioner och gränssnittselement som listas i början av det här dokumentet. Se till att du har de nödvändiga attributbaserade behörigheterna för åtkomstkontroll i alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
-### Skapa en schemadesign och ange fältgrupper
+### Skapa en schemadesign och ange fältgrupper {#schema-design}
 
 Experience Data Model-resurser (XDM) hanteras i [!UICONTROL Schemas] arbetsyta i [!DNL Adobe Experience Platform]. Du kan se och utforska de viktigaste resurserna i [!DNL Adobe] (till exempel [!UICONTROL Field Groups]) och skapa anpassade resurser och scheman för er organisation.
 
@@ -337,22 +337,13 @@ The [!DNL Adobe] webbanslutningsschemat representeras av en [!UICONTROL XDM Expe
 
 +++
 
-+++klassvärde (fältgrupp)
-
-| Fält | Krav |
-| --- | --- |
-| `eventType` | Obligatoriskt |
-| `timestamp` | Obligatoriskt |
-
-+++
-
 +++Extern källsystemsgranskningsinformation (fältgrupp)
 
 Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data Model) som samlar in granskningsinformation om ett externt källsystem.
 
 +++
 
-### Skapa en datauppsättning från ett schema
+### Skapa en datauppsättning från ett schema {#dataset-from-schema}
 
 En datauppsättning är en lagrings- och hanteringsstruktur för en grupp med data. Varje schema för intelligenta återengagemangsresor har en enda datauppsättning.
 
@@ -362,31 +353,31 @@ Mer information om hur du skapar en [datauppsättning](/help/catalog/datasets/ov
 >
 >På samma sätt som när du skapar ett schema måste du aktivera datauppsättningen som ska inkluderas i kundprofilen i realtid. Mer information om hur du aktiverar datauppsättningen för användning i kundprofilen i realtid finns i [skapa schemakurs.](/help/xdm/tutorials/create-schema-ui.md#profile).
 
-### Integritet, samtycke och datahantering
+### Integritet, samtycke och datahantering {#privacy-consent}
 
 #### Samtyckesprinciper
 
 >[!IMPORTANT]
 >
->Att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke är ett juridiskt krav, liksom att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Experience Platform dokumentation](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html).
+>Att ge kunderna möjlighet att säga upp prenumerationen på information från ett varumärke är ett juridiskt krav, liksom att se till att detta val respekteras. Läs mer om gällande lagstiftning i [Översikt över sekretessbestämmelser](https://experienceleague.adobe.com/docs/experience-platform/privacy/regulations/overview.html).
 
-När du skapar en väg för återengagemang bör följande policy för samtycke beaktas:
+Följande gäller när du skapar en ny engagemangsväg: [medgivandeprinciper](https://experienceleague.adobe.com/docs/platform-learn/data-collection/web-sdk/consent/overview.html) bör beaktas:
 
 * If `consents.marketing.email.val = "Y"` kan e-posta
 * If `consents.marketing.sms.val = "Y"` kan SMS
 * If `consents.marketing.push.val = "Y"` sedan Can Push
 * If `consents.share.val = "Y"` så kan annonsera
 
-#### DULE-etikett och tvång
+#### Etikett och verkställighet för datastyrning
 
-När du skapar en sökväg för återengagemang bör följande DULE-etiketter beaktas:
+Följande gäller när du skapar en ny engagemangsväg: [Etiketter för datastyrning](/help/data-governance/labels/overview.md) bör beaktas:
 
 * Personliga e-postadresser används som direkt identifierbara data som används för att identifiera eller komma i kontakt med en viss individ i stället för en enhet.
    * `personalEmail.address = I1`
 
 #### Marknadspolicyer
 
-Det finns inga marknadsföringspolicyer som krävs för återengagemangsresor, men följande bör beaktas efter behov:
+Det finns inga [marknadsföringspolicyer](/help/data-governance/policies/overview.md) som krävs för resor med återengagemang bör dock följande beaktas efter behov:
 
 * Begränsa känsliga data
 * Begränsa annonsering på plats
@@ -394,11 +385,13 @@ Det finns inga marknadsföringspolicyer som krävs för återengagemangsresor, m
 * Begränsa mål för flera webbplatser
 * Begränsa kombinationen av direkt identifierbara data med anonyma data
 
-### Skapa en målgrupp
+### Skapa en målgrupp {#create-audience}
 
 #### Målgruppsskapande för varumärkesåterengagemangsresor
 
 Återengagemangsresorna använder målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från er kundbas. Målgrupper kan skapas på flera sätt [!DNL Adobe Experience Platform].
+
+Mer information om hur du skapar en målgrupp finns i [Användargränssnittsguide för målgruppstjänst](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience).
 
 Mer information om hur du skapar direkt [Målgrupper](/help/segmentation/home.md), läsa [Användargränssnittsguide för målgruppskomposition](/help/segmentation/ui/audience-composition.md).
 
@@ -444,13 +437,17 @@ Beskrivningen för den övergivna kundvagnsresan visas som:
 
 `Include EventType = commerce.productListAdds between 30 min and 1440 minutes before now. exclude EventType = commerce.purchases 30 minutes before now OR EventType = commerce.productListRemovals AND Cart ID equals Product List Adds1 Cart ID (the inclusion event).`
 
+>[!TAB Orderbekräftelse - Resa]
+
+Den här resan kräver inte att någon målgrupp skapas.
+
 >[!ENDTABS]
 
-### Resekonfiguration i Adobe Journey Optimizer
+### Resekonfiguration i Adobe Journey Optimizer {#journey-setup}
 
 >[!NOTE]
 >
->[!DNL Adobe Journey Optimizer] omfattar inte allt som visas i diagrammen. Alla annonser för betalda medier skapas i [!UICONTROL Destinations].
+>[!DNL Adobe Journey Optimizer] omfattar inte allt som visas i diagrammen. Alla [annonser för betalda medier](/help/destinations/catalog/social/overview.md) skapas i [!UICONTROL Destinations].
 
 [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html) hjälper er att leverera sammankopplade, kontextuella och personaliserade upplevelser till era kunder. Kundresan är hela processen för en kunds interaktioner med varumärket. Varje användningsfallsresa kräver specifik information. Nedan finns de exakta data som behövs för varje resegren.
 
@@ -768,7 +765,7 @@ Beställningsbekräftelsen fokuserar på produktinköp via webbplatsen och mobil
 
 Mer information om hur du skapar resor i [!DNL Adobe Journey Optimizer], läsa [Kom igång med reseguiden](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/journey.html).
 
-### Konfigurera annonser för betalda medier i destinationer
+### Konfigurera annonser för betalda medier i destinationer {#paid-media-ads}
 
 Målramverket används för annonser i betalda medier. När samtycke har checkats ut skickas det till de olika konfigurerade destinationerna. Mer information om destinationer finns i [Översikt över destinationer](/help/destinations/home.md) -dokument.
 
@@ -787,6 +784,3 @@ Målplatser för direktuppspelad segmentexport (som Facebook, Google Customer Ma
    * [Mobil](/help/destinations/catalog/mobile-engagement/overview.md)
    * [Direktuppspelningsmål](/help/destinations/catalog/streaming/http-destination.md)
    * [Anpassad Destination SDK](/help/destinations/destination-sdk/overview.md)
-
-* Fil/schemalagd var tredje timme
-   * [E-postmarknadsföring](/help/destinations/catalog/email-marketing/overview.md)
