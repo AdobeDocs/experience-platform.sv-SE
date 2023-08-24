@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
-source-git-commit: c7cd33c5d3d18095fc525b7a8b36a06cad681200
+source-git-commit: a699f66fd48f463cc69ea0f214f487cce360615e
 workflow-type: tm+mt
 source-wordcount: '1588'
 ht-degree: 3%
@@ -63,10 +63,14 @@ Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åt
 Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
-&#x200B; | Funktion | Beskrivning | | — | — | |Medarbetaranalys och användningsfall för spårning | Lär dig hur du skapar en kontrollpanel för godkännande av olika typer av marknadsföringsanvändning för Real-Time CDP-data med [samtyckesanalys och spårningsdokument](../../dashboards/insights-use-cases/consent-analysis.md). Här beskrivs hur du skapar en målgrupp med rätt attribut för dina affärsbehov och sedan kan du få insikter genom att använda förkonfigurerade widgetar i Adobe Experience Platform användargränssnitt. Den innehåller även anvisningar om hur du skapar en egen anpassad widget med den användardefinierade funktionen för instrumentpaneler. Dokumentet omfattar användningsfall för samtyckestrender och samtycke överlappar varandra. |
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Användningsfall för analys och uppföljning av samtycke | Lär dig hur du skapar en kontrollpanel för godkännande för olika användningsområden för marknadsföring för Real-Time CDP-data med [samtyckesanalys och spårningsdokument](../../dashboards/insights-use-cases/consent-analysis.md). Här beskrivs hur du skapar en målgrupp med rätt attribut för dina affärsbehov och sedan kan du få insikter genom att använda förkonfigurerade widgetar i Adobe Experience Platform användargränssnitt. Den innehåller även anvisningar om hur du skapar en egen anpassad widget med den användardefinierade funktionen för instrumentpaneler. Dokumentet omfattar användningsfall för samtyckestrender och samtycke överlappar varandra. |
 
 {style="table-layout:auto"}
-&#x200B; För mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, börja med att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
+
+Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
