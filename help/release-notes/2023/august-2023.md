@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
-source-git-commit: b7812acf7c250621d40b152b391142050ac70e18
+source-git-commit: 5c1566bac20f7fb83a0ce48c4fe7a22e15dbeb37
 workflow-type: tm+mt
-source-wordcount: '1627'
+source-wordcount: '1628'
 ht-degree: 3%
 
 ---
@@ -36,7 +36,7 @@ Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time 
 | Funktion | Beskrivning |
 | --- | --- |
 | Handbok för användning av intelligent återanvändning | The [Intelligent återanvändning](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) ärendehandboken innehåller information om hur man återengagerar kunder som har avbrutit en konvertering innan de slutför den på ett intelligent och ansvarsfullt sätt. I den här guiden används följande exempel på resor för att återengagera kunder: <ul><li>Återengagemangsresa - Rikta in dig på kunder som inte längre surfar.</li><li>Övergiven kundvagnsresa - Rikta in dig på kunder som har lagt produkter i vagnen men ännu inte slutfört köpet.</li><li>Beställningsbekräftelseresa - Fokusera på produktinköp</li></ul> Klicka på länken för detaljerade feedback längst ned i [Handbok för användning av intelligent återanvändning](../../rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md) för att ge feedback. |
-| Prospekteringsprofiler | Utför marknadsföring i Real-Time CDP, med profiler för potentiella kunder och partner-ID:n från våra partners, för att nå nya kunder och berika era egna data: <ul><li>Kundvärvning och adresserbarhet: Dra nytta av cookiefria identifierare och hashas-PII från valfria datapartner för att nå nya nettokunder och minska beroendet av cookies från tredje part.</li><li>Fullständig trattmarknadsföring i ett enda system: Self-serve-segmentering, målgruppsurval och inbyggd aktivering för potentiella och kända kunder i ett enda system.</li><li>Grunden för förtroende: Styrd partnerdata och -profiler med patenterad dataanvändning, märkning, åtkomstkontroll och mycket mer på marknaden på ett ansvarsfullt sätt. Mer information finns i följande fallhandböcker: Handböckerna för prospektering finns nu tillgängliga. Läs fallhandböckerna om prospektering för att lära dig hur ni engagerar och förvärvar nya kunder genom prospekteringsexempel:<ul><li>[Prospektering](../../rtcdp/partner-data/prospecting.md)</li><li>[Personalisering på plats](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[Komplettera förstahandsprofiler](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[Aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
+| Stöd för partnerdata | Utför marknadsföring i Real-Time CDP, med profiler för potentiella kunder och partner-ID:n från våra partners, för att nå nya kunder och berika era egna data: <ul><li>Kundvärvning och adresserbarhet: Dra nytta av cookiefria identifierare och hashas-PII från valfria datapartner för att nå nya nettokunder och minska beroendet av cookies från tredje part.</li><li>Fullständig trattmarknadsföring i ett enda system: Self-serve-segmentering, målgruppsurval och inbyggd aktivering för potentiella och kända kunder i ett enda system.</li><li>Grunden för förtroende: Styrd partnerdata och -profiler med patenterad dataanvändning, märkning, åtkomstkontroll och mycket mer på marknaden på ett ansvarsfullt sätt. Mer information finns i följande fallhandböcker: Handböckerna för prospektering finns nu tillgängliga. Läs fallhandböckerna om prospektering för att lära dig hur ni engagerar och förvärvar nya kunder genom prospekteringsexempel:<ul><li>[Prospektering](../../rtcdp/partner-data/prospecting.md)</li><li>[Personalisering på plats](../../rtcdp/partner-data/onsite-personalization.md)</li><li>[Komplettera förstahandsprofiler](../../rtcdp/partner-data/supplement-first-party-profiles.md)</li><li>[Aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md)</li></ul> |
 
 {style="table-layout:auto"}
 
