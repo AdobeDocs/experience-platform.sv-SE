@@ -1,9 +1,7 @@
 ---
 title: Intelligent återanvändning
 description: Leverera övertygande och sammanhängande upplevelser under de viktiga konverteringstunderna för att på ett intelligent sätt engagera ovanliga kunder.
-hide: true
-hidefromtoc: true
-source-git-commit: 7de5fe7808a22137c417a4ca865d764b0814b90e
+source-git-commit: 79ba0e350d64f43558af9bc3c2ecd4ac13d11499
 workflow-type: tm+mt
 source-wordcount: '3403'
 ht-degree: 2%
@@ -12,7 +10,7 @@ ht-degree: 2%
 
 # Engagera kunderna på nytt på ett intelligent sätt för att få dem tillbaka
 
-Engagera kunder som har övergett konverteringen på nytt innan de slutför den på ett intelligent och ansvarsfullt sätt. Engagera kunderna genom upplevelser snarare än påminnelser för att öka konverteringsgraden och driva på tillväxten av kundernas livstidsvärde.
+Engagera kunder som avbrutit konverteringen på nytt innan de slutför den på ett intelligent och ansvarsfullt sätt. Engagera kunderna genom upplevelser snarare än påminnelser för att öka konverteringsgraden och driva på tillväxten av kundernas livstidsvärde.
 
 Ta hänsyn till kundernas alla egenskaper och beteenden i realtid, ta hänsyn till dem och erbjud snabb omkvalificering baserat på både online- och offlinehändelser.
 
