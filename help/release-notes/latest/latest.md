@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 8a313587a339ea775adc5422519841b1e679be7a
+source-git-commit: b7812acf7c250621d40b152b391142050ac70e18
 workflow-type: tm+mt
-source-wordcount: '1588'
+source-wordcount: '1627'
 ht-degree: 3%
 
 ---
@@ -123,6 +123,17 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
 | Klass | [[!UICONTROL XDM Individual Prospect Profile]](https://github.com/adobe/xdm/pull/1758/files) | Använd den här klassen för att ta in profiler för potentiella kunder som har hämtats från dataleverantörers toppmoderna kundvärvningsexempel. |
+
+{style="table-layout:auto"}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Uppdatera beskrivning |
+| --- | --- | --- |
+| Tillägg ([!UICONTROL Adobe Analytics ExperienceEvent Full Extension]) | [[!UICONTROL Context Data]](https://github.com/adobe/xdm/pull/1761/files) | [!UICONTROL Context Data] mappningsobjekt har lagts till i [!UICONTROL Adobe Analytics ExperienceEvent Full Extension] för att tillhandahålla kontextdata för Adobe Analytics. |
+| Fältgrupp | Flera | Flera fält har lagts till i [[!UICONTROL Enriched Event Segment Details]](https://github.com/adobe/xdm/pull/1760/files). |
+
+{style="table-layout:auto"}
 
 Mer information finns i [XDM - systemöversikt](../../xdm/home.md).
 

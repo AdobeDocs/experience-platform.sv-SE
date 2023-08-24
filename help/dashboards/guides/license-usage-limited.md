@@ -5,7 +5,7 @@ description: Adobe Experience Platform tillhandahåller en kontrollpanel där du
 type: Documentation
 hide: true
 hidefromtoc: true
-source-git-commit: c1ad20def39ef58253e8486ca4dcfcce2501510b
+source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
 workflow-type: tm+mt
 source-wordcount: '1422'
 ht-degree: 0%
@@ -68,7 +68,7 @@ Tabellen visar det primära måttet för varje produkt, eftersom varje produkt k
 
 Alla tillgängliga mått visas på [!UICONTROL Summary] -fliken. Vilka mätvärden som är tillgängliga beror på vilken produkt som är licensierad. Den här vyn innehåller **en samlad vy över alla mätvärden i alla produktions- eller utvecklingssandlådor**. Samma analysnivå erbjuds för både produktions- och utvecklingssandlådor.
 
-![Sammanfattningsvyn för en plattformsprodukt som visar alla tillgängliga mätvärden för den produkten.]()
+![Sammanfattningsvyn för en plattformsprodukt som visar alla tillgängliga mätvärden för den produkten.](../images/license-usage/summary-tab.png)
 
 På fliken Sammanfattning innehåller tabellen [!UICONTROL Metric] kolumn. Dessa beskrivningar som kan läsas av människor visar alla mätvärden som används för den typen av sandlåda.
 
@@ -78,7 +78,7 @@ Om du vill ändra vyn mellan sandlådetyperna produktion och utveckling väljer 
 
 Konsumtionsrapportering för sandlådor är kumulativ för alla sandlådor av samma typ. med andra ord, markera [!UICONTROL Production] eller [!UICONTROL Development] innehåller förbrukningsrapporter för alla produktions- respektive utvecklingssandlådor.
 
-![Sammanfattningsvyn för en plattformsprodukt med produktionssandlådor och utvecklingssandlådor markerade.](../images/license-usage/summary-tab.png)
+![Sammanfattningsvyn för en plattformsprodukt med produktionssandlådor och utvecklingssandlådor markerade.](../images/license-usage/summary-tab-sandboxes.png)
 
 >[!WARNING]
 >

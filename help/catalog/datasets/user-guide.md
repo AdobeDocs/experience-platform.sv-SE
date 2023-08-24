@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 141037fd844c78e98785ea2246026ac120961dd5
+source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
 workflow-type: tm+mt
 source-wordcount: '2581'
 ht-degree: 0%
@@ -207,7 +207,7 @@ Du kan hantera etiketter för datastyrning för en datauppsättning genom att v�
 
 Dataanvändningsetiketter, som används på schemanivå, gör att du kan kategorisera datamängder och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på scheman för spridning till datauppsättningar.
 
-### Flytta till mappar {#move-to-folders}
+## Flytta till mappar {#move-to-folders}
 
 Du kan placera datauppsättningar i mappar för bättre hantering av datauppsättningar. Om du vill flytta en datauppsättning till en mapp markerar du ellipserna (...) bredvid datauppsättningsnamnet som du vill hantera, följt av **[!UICONTROL Move to folder]** i listrutan.
 
@@ -217,7 +217,7 @@ The [!UICONTROL Move] Dialogrutan för datauppsättning till mapp visas. Markera
 
 ![The [!UICONTROL Move] datauppsättningsdialogruta med [!UICONTROL Move] markerad.](../images/datasets/user-guide/move-dialog.png)
 
->
+>[!TIP]
 >
 >Du kan också skapa mappar direkt från dialogrutan Flytta datauppsättning. Om du vill skapa en mapp väljer du ikonen Skapa mapp (![Ikonen Skapa mapp.](../images/datasets/user-guide/create-folder-icon.png)) i dialogrutans övre högra hörn.
 >
