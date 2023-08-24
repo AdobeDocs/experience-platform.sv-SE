@@ -2,9 +2,9 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 75ef9c58aa7c5f1cc628d1f13b6c5f56b362458a
+source-git-commit: fa871529a4136263399bad3200ee3888049d06a5
 workflow-type: tm+mt
-source-wordcount: '1705'
+source-wordcount: '1711'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ The [!UICONTROL Scheduled Queries] ger en översikt över alla dina schemalagda 
 
 Navigera till [!UICONTROL Scheduled Queries] flik, välja **[!UICONTROL Queries]** från vänster navigeringsfält följt av **[!UICONTROL Scheduled Queries]**
 
-![Fliken Schemalagda frågor på arbetsytan Frågor.](../images/ui/monitor-queries/scheduled-queries.png)
+![Fliken Schemalagda frågor på arbetsytan Frågor med schemalagda frågor och frågor markerade.](../images/ui/monitor-queries/scheduled-queries.png)
 
 Tabellen nedan beskriver varje tillgänglig kolumn.
 
@@ -32,7 +32,7 @@ Tabellen nedan beskriver varje tillgänglig kolumn.
 | **[!UICONTROL Name]** | Namnfältet är antingen mallnamnet eller de första tecknen i SQL-frågan. Alla frågor som skapas via gränssnittet med Frågeredigeraren får i början ett namn. Om frågan skapades med API:t blir dess namn ett fragment av den ursprungliga SQL-kod som användes för att skapa frågan. Om du vill visa en lista över alla körningar som är associerade med frågan väljer du ett objekt i [!UICONTROL Name] kolumn. Mer information finns i [fråga kör schemadetaljer](#query-runs) -avsnitt. |
 | **[!UICONTROL Template]** | Frågans mallnamn. Välj ett mallnamn för att gå till Frågeredigeraren. Frågemallen visas i Frågeredigeraren. Om det inte finns något mallnamn markeras raden med ett bindestreck och det går inte att omdirigera till Frågeredigeraren för att visa frågan. |
 | **[!UICONTROL SQL]** | Ett fragment av SQL-frågan. |
-| **[!UICONTROL Run frequency]** | Den gräns som frågan ska köras vid. De tillgängliga värdena är `Run once` och `Scheduled`. Frågor kan filtreras utifrån deras körningsfrekvens. |
+| **[!UICONTROL Run frequency]** | Den gräns som frågan är inställd på att köras vid. De tillgängliga värdena är `Run once` och `Scheduled`. Frågor kan filtreras utifrån deras körningsfrekvens. |
 | **[!UICONTROL Created by]** | Namnet på den användare som skapade frågan. |
 | **[!UICONTROL Created]** | Tidsstämpeln när frågan skapades, i UTC-format. |
 | **[!UICONTROL Last run timestamp]** | Den senaste tidsstämpeln när frågan kördes. Den här kolumnen visar om en fråga har körts enligt det aktuella schemat. |
@@ -125,7 +125,7 @@ Den här informationen finns i en tabell med fem kolumner. Varje rad betecknar e
 
 | Kolumnnamn | Beskrivning |
 |---|---|
-| **[!UICONTROL Query run ID]** | Frågekörnings-ID för daglig körning. Välj **[!UICONTROL Query run ID]** för att navigera till [!UICONTROL Query run overview]. |
+| **[!UICONTROL Query run ID]** | Frågekörnings-ID för daglig körning. Välj **[!UICONTROL Query run ID]** navigera till [!UICONTROL Query run overview]. |
 | **[!UICONTROL Query run start]** | Tidsstämpeln när frågan kördes. Tidsstämpeln är i UTC-format. |
 | **[!UICONTROL Query run complete]** | Tidsstämpeln när frågan slutfördes. Tidsstämpeln är i UTC-format. |
 | **[!UICONTROL Status]** | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
@@ -145,7 +145,7 @@ The [!UICONTROL Query run overview] ger information om enskilda körningar för 
 
 ![Skärmen med körningsinformation med översiktsavsnittet markerat.](../images/ui/monitor-queries/query-run-details.png)
 
-Avsnittet med frågans status innehåller felkoden och felmeddelandet om frågan skulle ha misslyckats.
+I avsnittet med frågestatus finns felkoden och felmeddelandet om frågan skulle ha misslyckats.
 
 ![Skärmen med körningsinformation med felavsnittet markerat.](../images/ui/monitor-queries/failed-query.png)
 
