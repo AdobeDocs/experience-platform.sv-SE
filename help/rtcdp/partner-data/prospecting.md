@@ -1,12 +1,9 @@
 ---
-title: (Beta) Engagera och skaffa nya kunder genom prospektering av användningsfall
+title: Engagera och värva nya kunder genom prospektering av användningsfall
 description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospektering av användningsfall som stöds av partnerdatastödraden i Real-Time CDP.
-hide: true
-hidefromtoc: true
-badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 2e2a473efd247cb235ee7e8f94058baa48fd1b1a
+source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
 workflow-type: tm+mt
-source-wordcount: '1906'
+source-wordcount: '1894'
 ht-degree: 0%
 
 ---
@@ -15,7 +12,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här betafunktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
+>* Den här funktionaliteten är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
 
 Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profilbas med profiler för potentiella kunder från datapartners och engagera dem i kundvärvningen eller nå nya kunder.
 
@@ -57,8 +54,8 @@ När du är klar med implementeringen av användningsexemplet kommer du att anv�
 * [Dataanvändningsetiketter](/help/data-governance/labels/overview.md)
 * [Datauppsättningar](/help/catalog/datasets/overview.md)
 * [Källor](/help/sources/home.md)
-* Profiler (länk till profiler för potentiella kunder)
-* Målgrupper (länk till potentiella målgrupper)
+* [Prospekteringsprofiler](/help/profile/ui/prospect-profile.md)
+* [Potentiella målgrupper](/help/segmentation/ui/prospect-audience.md)
 * [Mål ](/help/destinations/home.md)
 
 ### Licensiera profilinformation från partnern {#license-profiles-from-partner}
@@ -184,7 +181,7 @@ Du kan också välja vilken profil som helst för potentiell kund för vidare un
 
 ![Se hur ni inspekterar profiler för potentiella kunder.](/help/rtcdp/assets/partner-data/prospecting/inspect-prospect-profile.gif)
 
-(**Kommer snart**) Läs mer om profiler för potentiella kunder.
+Läs mer om [profiler](/help/profile/ui/prospect-profile.md).
 
 ### Skapa potentiella målgrupper {#create-prospect-audiences}
 
@@ -200,7 +197,7 @@ Observera att målgruppsupplevelsen för profiler med potentiella kunder skiljer
 * Endast utvärdering av batchprofil.
 * Har inte stöd för att bygga målgrupper baserat på tidsseriehändelser.
 
-(**Kommer snart**) Läs mer om potentiella målgrupper.
+Läs mer om [potentiella målgrupper](/help/segmentation/ui/prospect-audience.md).
 
 ### Aktivera profiler för potentiella kunder till mål {#activate-to-destinations}
 
@@ -210,5 +207,6 @@ Utnyttja målgrupperna genom att exportera dem till destinationer. För närvara
 
 Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
 
-* [!BADGE Beta]{type=Informative}[Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
-* (**Kommer snart**) [!BADGE Beta]{type=Informative}**Utnyttja partnerstöd** för att personalisera upplevelser på plats under besöket och för återannonsering på annan plats, utan att användaren behöver autentisera sig eller ha en tidigare historia med varumärket.
+* [Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
+* [Utnyttja partnerstödet för personalisering av upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.
+* [Utökad aktivering av profiler för potentiella kunder och målgrupper för potentiella kunder](/help/destinations/ui/activate-prospect-audiences.md) för att välja mål.

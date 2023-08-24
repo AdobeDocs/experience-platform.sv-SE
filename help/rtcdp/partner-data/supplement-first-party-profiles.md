@@ -1,12 +1,9 @@
 ---
-title: (Beta) Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
+title: Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
 description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
-hide: true
-hidefromtoc: true
-badgeBeta: label="Beta" type="informative" before-title="true"
-source-git-commit: 486e1390dfa0602bef15d196d4a1a5befdc9ff23
+source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
 workflow-type: tm+mt
-source-wordcount: '1075'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -15,13 +12,13 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->* Den här betafunktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
+>* Den här funktionaliteten är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
 
 Komplettera förstahandsprofiler med attribut från betrodda datapartners för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 
 ![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-overview.png)
 
-## Krav och planering {#prerequisites-and-planning}
+## Förutsättningar och planering {#prerequisites-and-planning}
 
 När du funderar på att komplettera dina egna förstahandsprofiler med attribut från datapartners, bör du diskutera och ta upp följande detaljer om dataanrikningsslingan med datapartnern:
 
@@ -32,19 +29,19 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 >[!WARNING]
 >
->De ytterligare attribut som partnern lägger in i Real-Time CDP påverkar *genomsnittlig profilrikedom*. Läs [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) för mer information om profilrikedom.
+>De ytterligare attribut som partnern lägger in i Real-Time CDP påverkar *genomsnittlig profilrikedom*. Läs [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) om du vill ha mer information om profilrikedom.
 
-## Hur man uppnår detta: överblick på hög nivå {#achieve-the-use-case-high-level}
+## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 
 ![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-steps.png)
 
-1. Som **kund** licensierar du attribut från **datapartner**.
-2. Som **kund** kan ni utöka profildata och styrningsmodell för att passa **partner**-provided-attribut.
-3. Som **kund** kan ni ta med er de målgrupper ni vill ska berikas med datapartnern. Vanligtvis är dessa målgrupper inmatade med identifierare som PII-element (Personally Identiitable Information) som e-post, namn, adress och andra.
+1. Som en **kund** licensierar du attribut från **datapartner**.
+2. Som en **kund** kan ni utöka profildata och styrningsmodell för att passa **partner**-provided-attribut.
+3. Som en **kund** kan ni ta med er de målgrupper ni vill ska berikas med datapartnern. Vanligtvis är dessa målgrupper inmatade med identifierare som PII-element (Personally Identiitable Information) som e-post, namn, adress och andra.
 4. The **partner** lägger till licensierade attribut för de profiler som de kan matcha mot. Alternativt kan du [Partner-ID](/help/identity-service/namespaces.md) kan inkluderas och importeras i partneromfångets ID-namnutrymme.
-5. Som **kund** läser du in attribut från datapartnern i kundprofiler i Real-Time CDP.
+5. Som en **kund** läser du in attribut från datapartnern i kundprofiler i Real-Time CDP.
 
-## Hur man uppnår detta: Stegvisa instruktioner {#step-by-step-instructions}
+## Så här uppnår du användningsfallet: stegvisa instruktioner {#step-by-step-instructions}
 
 Läs igenom avsnitten nedan som innehåller länkar till ytterligare dokumentation för att slutföra varje steg i översikten ovan.
 
@@ -121,5 +118,6 @@ Observera följande begränsningar när du utforskar användningsfallet som besk
 
 Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
 
-* (**Kommer snart**) [!BADGE Beta]{type=Informative}**Utnyttja partnerstöd** för att personalisera upplevelser på plats under besöket och för återannonsering på annan plats, utan att användaren behöver autentisera sig eller ha en tidigare historia med varumärket.
-* (**Kommer snart**) [!BADGE Beta]{type=Informative}**Utökad aktivering** använda partner-ID:n för att publicera ekosystem som inte accepterar PII eller hashas PII.
+* Använd datastöd från tredje part i Real-Time CDP för att [utöka er profilbas med profiler med potentiella kunder från datapartners och engagera med dem för att förvärva eller nå nya kunder](/help/rtcdp/partner-data/prospecting.md).
+* [Utnyttja partnerstödet för personalisering av upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.
+* [Utökad aktivering av profiler för potentiella kunder och målgrupper för potentiella kunder](/help/destinations/ui/activate-prospect-audiences.md) för att välja mål.

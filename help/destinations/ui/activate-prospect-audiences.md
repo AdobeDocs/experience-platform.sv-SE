@@ -1,12 +1,10 @@
 ---
 title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
-hide: true
-hidefromtoc: true
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
-source-git-commit: e04d7a3cd75f4e61329a2de8ca5ddcc4d9518a57
+source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -65,7 +63,7 @@ Följ instruktionerna för att välja ett mål där du kan exportera datauppsät
 
 ## Välj era potentiella målgrupper {#select-prospect-audiences}
 
-Använd kryssrutorna till vänster om namnen på de potentiella målgrupperna för att välja de målgrupper som du vill exportera till målet och välj sedan **[!UICONTROL Next]**. Observera att endast de potentiella målgrupperna visas i den här vyn och att inga andra målgrupper visas.
+Använd kryssrutorna till vänster om namnen på de potentiella målgrupperna för att välja de målgrupper som du vill exportera till målet och markera sedan **[!UICONTROL Next]**. Observera att endast de potentiella målgrupperna visas i den här vyn och att inga andra målgrupper visas.
 
 ![Arbetsflöde för dataexport med steget Välj målgrupper där du kan välja vilka målgrupper som ska exporteras.](/help/destinations/assets/ui/activate-prospect-audiences/select-prospect-audiences.png)
 
@@ -82,3 +80,11 @@ För resten av aktiveringsarbetsflödet för att exportera målgrupper med poten
 Note that we will need to add links to other destination types here as more destinations become supported 
 
 -->
+
+## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
+
+Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
+
+* [Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
+* Använd datastöd från tredje part i Real-Time CDP för att [utöka er profilbas med profiler med potentiella kunder från datapartners och engagera med dem för att förvärva eller nå nya kunder](/help/rtcdp/partner-data/prospecting.md).
+* [Utnyttja partnerstödet för personalisering av upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.

@@ -1,16 +1,18 @@
 ---
 title: Använd partnerstödd besöksidentifiering för att personalisera upplevelser på plats
 description: Lär dig hur du använder partnerstödd besöksigenkänning för att leverera personaliserade upplevelser på plats till besökarna.
-hide: true
-hidefromtoc: true
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 9d7e8ef99a42e804896f5c9befcf98bb1c010606
 workflow-type: tm+mt
-source-wordcount: '2386'
+source-wordcount: '2424'
 ht-degree: 0%
 
 ---
 
 # Använd partnerstödd besöksigenkänning för att personalisera upplevelser på plats
+
+>[!AVAILABILITY]
+>
+>Den här funktionaliteten är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
 
 Lär dig hur du kan använda partnerstödd igenkänning för att leverera personaliserade upplevelser till besökare på era webbegenskaper. Använd den här självstudiekursen för att förstå implementeringssekvensen för olika element i Experience Platform och andra Experience Cloud-lösningar för att visa en personaliserad upplevelse för autentiserade och oautentiserade besökare.
 
@@ -265,4 +267,4 @@ Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
 
 * [Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 * Använd datastöd från tredje part i Real-Time CDP för att [utöka er profilbas med profiler med potentiella kunder från datapartners och engagera med dem för att förvärva eller nå nya kunder](/help/rtcdp/partner-data/prospecting.md).
-* (**Kommer snart**) [!BADGE Beta]{type=Informative}**Utökad aktivering** använda partner-ID:n för att publicera ekosystem som inte accepterar PII eller hashas PII.
+* [Utökad aktivering av profiler för potentiella kunder och målgrupper för potentiella kunder](/help/destinations/ui/activate-prospect-audiences.md) för att välja mål.
