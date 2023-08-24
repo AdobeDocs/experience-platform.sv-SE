@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Hantera åtkomstkontrollprinciper
 description: Det här dokumentet innehåller information om hur du hanterar åtkomstkontrollprinciper via gränssnittet Behörigheter i Adobe Experience Cloud.
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 504c73fc73ce41f2c1b3159478fc7fe9b4d20a9d
+source-git-commit: 7cafe1f7e9dd6789db4199631cb605be666ce48a
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '577'
 ht-degree: 0%
 
 ---
@@ -116,6 +116,74 @@ You are returned to the **[!UICONTROL policies]** tab and a confirmation of dele
 
 ![flac-policy-delete-confirmation](../../images/flac-ui/flac-policy-delete-confirmation.png) -->
 
+## Konfigurera princip för en sandlåda
+
+>[!IMPORTANT]
+>
+>Som standard är [!UICONTROL Auto-include] funktionen är aktiverad för alla kunder, vilket innebär att alla sandlådor läggs till i profilen.
+
+>[!NOTE]
+>
+>The **[!UICONTROL Default-Label-Based-Access-Control-Policy]** principen är för närvarande den enda som är tillgänglig för konfiguration.
+
+Om du vill visa sandlådor som är associerade med en profil väljer du principen på menyn **[!UICONTROL Policies]** -fliken.
+
+![Profilsidan med en lista över befintliga profiler som är tillgängliga.](../../images/abac-end-to-end-user-guide/abac-policies-page.png)
+
+Välj sedan profilen och välj **[!UICONTROL Sandboxes]** -fliken. En lista över sandlådor som är associerade med profilen visas.
+
+![Profilsidan med en lista över befintliga profiler som är tillgängliga.](../../images/flac-ui/abac-policies-sandboxes-tab.png)
+
+### Lägg till princip i alla sandlådor
+
+Använd **[!UICONTROL Auto-include]** växla till **[!UICONTROL Sandboxes]** om du vill aktivera principen för alla sandlådor.
+
+![The [!UICONTROL Sandboxes] flik som visar [!UICONTROL Auto-include] växla.](../../images/flac-ui/abac-policies-auto-include.png)
+
+The **[!UICONTROL Enable Auto-include]** visas en uppmaning om att bekräfta ditt val. Välj **[!UICONTROL Enable]** för att slutföra konfigurationsinställningen.
+
+![The [!UICONTROL Enable Auto-include] markering av dialogruta [!UICONTROL Enable].](../../images/flac-ui/abac-policies-auto-include-enable.png)
+
+>[!SUCCESS]
+>
+>Principen aktiveras för alla befintliga sandlådor och läggs automatiskt till i alla nya sandlådor när de blir tillgängliga.
+
+### Lägg till princip i valda sandlådor
+
+>[!IMPORTANT]
+>
+>Framtida sandlådor inkluderas inte som standard i principen om [!UICONTROL Auto-include] växlingsknappen är inaktiverad. Du måste hantera och lägga till sandlådor manuellt i profilen.
+
+Använd **[!UICONTROL Auto-include]** växla till **[!UICONTROL Sandboxes]** om du vill inaktivera principen för alla sandlådor.
+
+![The [!UICONTROL Sandboxes] flik som visar [!UICONTROL Auto-include] växla.](../../images/flac-ui/abac-policies-auto-include.png)
+
+Från **[!UICONTROL Sandboxes]** flik, välja **[!UICONTROL Add Sandboxes]** för att välja sandlådor som den här principen ska gälla för.
+
+![The [!UICONTROL Sandboxes] -flik som visar en lista med sandlådor som har lagts till i profilen.](../../images/flac-ui/abac-policies-sandboxes-tab-add.png)
+
+En lista över sandlådor visas. Markera den sandlåda som du vill lägga till i listan. Du kan också använda sökfältet för att söka efter sandlådan. Välj **[!UICONTROL Save]**.
+
+![The [!UICONTROL Add Sandboxes] sida med en lista över befintliga sandlådor som är tillgängliga att lägga till i profilen.](../../images/flac-ui/abac-policies-sandboxes-list.png)
+
+>[!SUCCESS]
+>
+>De markerade sandlådorna har lagts till i principen.
+
+### Ta bort sandlådor från en profil
+
+Om du vill ta bort en sandlåda markerar du **X** -ikonen bredvid namnet på sandlådan.
+
+![The [!UICONTROL Sandboxes] flik som visar en lista med sandlådor, markera [!UICONTROL X] att ta bort.](../../images/flac-ui/abac-policies-remove-sandbox-x.png)
+
+The **[!UICONTROL Remove]** visas en uppmaning om att bekräfta ditt val. Välj **[!UICONTROL Confirm]** för att slutföra borttagningen.
+
+![The [!UICONTROL Remove] markering av dialogruta [!UICONTROL Confirm].](../../images/flac-ui/abac-policies-remove-sandbox.png)
+
+>[!SUCCESS]
+>
+>Den valda sandlådan har tagits bort från principen.
+
 ## Aktivera en profil
 
 Om du vill aktivera en befintlig princip väljer du den i dialogrutan **[!UICONTROL Policies]** -fliken.
@@ -137,4 +205,4 @@ Du kommer tillbaka till **[!UICONTROL policies]** och en bekräftelse på aktive
 
 ## Nästa steg
 
-När en profil är aktiverad kan du fortsätta till nästa steg i [hantera behörigheter för en roll](permissions.md).
+När en profil är aktiverad kan du gå vidare till nästa steg i [hantera behörigheter för en roll](permissions.md).
