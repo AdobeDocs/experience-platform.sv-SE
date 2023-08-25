@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
-source-git-commit: 5c1566bac20f7fb83a0ce48c4fe7a22e15dbeb37
+source-git-commit: bf4c4186ed9196e547620a91826f86aa09d683fd
 workflow-type: tm+mt
 source-wordcount: '1628'
 ht-degree: 3%
@@ -107,7 +107,6 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 | Funktion | Beskrivning |
 | --- | --- |
 | Stöd för filtrering av sekundära identiteter | Du kan nu använda Data Prep för att filtrera bort identiteter som kommer från Adobe Analytics, till exempel AAID och AACUSTOMID. Om de filtreras bort blir dessa identiteter inte inkapslade i kundprofilen i realtid. Ofiltrerade data kommer även i fortsättningen att förtäras i datasjön. |
-| Stöd för nya `correlationID` fält för Adobe Analytics | The `_experience.decisioning.propositions.scopeDetails.correlationID` -fältet är nu tillgängligt i Adobe Analytics källanslutningsschema. Det här fältet används som stöd för A4T-klassificeringar och kommer att fyllas i från och med september 2023. |
 
 {style="table-layout:auto"}
 
@@ -172,6 +171,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | --- | --- |
 | Allmän tillgänglighet för [!DNL SugarCRM] | [!DNL SugarCRM] Nu finns det källor. Använd [!DNL SugarCRM Accounts & Contacts] och [!DNL SugarCRM Events] källor som hämtar data från [!DNL SugarCRM] konto till Experience Platform. Mer information finns i [[!DNL SugarCRM] översikt](../../sources/connectors/crm/sugarcrm.md). |
 | Stöd för on-demand-inmatning för källdataflöden i användargränssnittet | Nu kan du skapa flödeskörningar på begäran för ett befintligt källdataflöde i användargränssnittet. Mer information finns i guiden [skapa ett on demand-flöde för källor med användargränssnittet](../../sources/tutorials/ui/on-demand-ingestion.md). |
+| Stöd för nya `correlationID` fält för Adobe Analytics | The `_experience.decisioning.propositions.scopeDetails.correlationID` -fältet är nu tillgängligt i Adobe Analytics källanslutningsschema. Det här fältet används som stöd för A4T-klassificeringar och kommer att fyllas i från och med september 2023. |
 
 {style="table-layout:auto"}
 
