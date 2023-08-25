@@ -1,21 +1,14 @@
 ---
 title: Klassen XDM Individual Prospect Profile
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Prospect Profile i Experience Data Model (XDM).
-badgeBeta: label="Beta" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: 83f01c58e21bc42a53e2e7a08bd7a60ef90b41e6
+source-git-commit: 437bd602462330a96f356b83d7afe922b5315d9f
 workflow-type: tm+mt
-source-wordcount: '354'
+source-wordcount: '332'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL XDM Individual Prospect Profile] class
-
->[!IMPORTANT]
->
->The [!UICONTROL XDM Individual Prospect Profile] klassen finns i betaversionen och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 I Experience Data Model (XDM) är [!UICONTROL XDM Individual Prospect Profile] klassen samlar in profiler för potentiella kunder som vanligen kommer från datapartners för att kunna användas vid kundvärvning.
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ordlista för dataanvändningsetiketter
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: d1d817646fdc943428ca13f3dd8b52725bce4921
+source-git-commit: 538c5e2c7ff3c684edf6db12087fdf0a58e40199
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2185'
 ht-degree: 1%
 
 ---
@@ -64,11 +64,7 @@ En typ av data som du anser vara känsliga kan vara olika typer av geografiska d
 | **PSPD** | Tillåtna känsliga personuppgifter (PSPD, Sensitive Personal Data) avser data som enligt avtal mellan Adobe tillåts ladda upp som anses vara&quot;känsliga&quot;,&quot;särskild datakategori&quot; eller en liknande term som används i tillämpliga lagar. Detta utesluter särskilt skyddad hälsoinformation (PHI) och andra reglerade hälsodata. |
 | **RHD** | Data som hänvisar till Skyddad hälsoinformation (PHI) eller information om en patient som enligt avtal får överföras av Adobe. |
 
-## (Beta) Etiketter för partnerekosystem {#partner}
-
->[!IMPORTANT]
->
->Etiketten för tredjepartsdata är i betaversion. Det är inte tillgängligt för alla användare och dokumentationen kan komma att ändras.
+## Etiketter för partnerekosystem {#partner}
 
 Etiketter för ekosystem för partner används för att kategorisera data som hämtas från externa källor för din organisation.
 
