@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 51f65799a45229fc810a1d41f8b40b215d3666da
+source-git-commit: 0835021523a7eb1642a6dbcb24334eac535aaa6d
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1265'
 ht-degree: 1%
 
 ---
@@ -42,8 +42,8 @@ Skyddskassorna nedan gäller vanligtvis aktivering via [alla måltyper](/help/de
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Maximalt antal målgrupper till ett enda mål | 250 | Mjuk | Rekommendationen är att mappa högst 250 målgrupper till ett enda mål i ett dataflöde. <br><br> Om du behöver aktivera fler än 250 målgrupper till ett mål kan du antingen: <ul><li> Dela upp målgrupper som du inte längre vill aktivera, eller</li><li>Skapa ett nytt dataflöde till önskat mål och mappa målgrupper till det nya dataflödet.</li></ul> <br> Observera att för vissa destinationer kan du vara begränsad till färre än 250 målgrupper mappade till destinationen. Dessa destinationer beskrivs längre ned på sidan i respektive avsnitt. |
-| Högsta antal destinationer | 100 | Mjuk | Rekommendationen är att skapa högst 100 destinationer som du kan ansluta och aktivera data till *per sandlåda*. [Destinationer för kantanpassning (anpassad personalisering)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade destinationerna. |
 | Maximalt antal attribut som har mappats till ett mål | 50 | Mjuk | Om det finns flera mål- och måltyper kan du välja profilattribut och identiteter att mappa för export. För optimala prestanda bör maximalt 50 attribut mappas i ett dataflöde till ett mål. |
+| Högsta antal destinationer | 100 | Hård | Du kan skapa högst 100 destinationer som du kan ansluta och aktivera data till, *per sandlåda*. [Destinationer för kantanpassning (anpassad personalisering)](#edge-destinations-activation) kan utgöra högst 10 av de 100 rekommenderade destinationerna. |
 | Typ av data som aktiveras för destinationer | Profildata, inklusive identiteter och identitetskarta | Hård | För närvarande går det bara att exportera *profilpostattribut* till destinationer. XDM-attribut som beskriver händelsedata stöds för närvarande inte för export. |
 | Typ av data som aktiveras för mål - stöd för matris- och mappattribut | Inte tillgängligt | Hård | För närvarande är det **not** kan exporteras *matris- eller mappattribut* till destinationer. Undantaget till den här regeln är [identitetskarta](/help/xdm/field-groups/profile/identitymap.md), som exporteras både i direktuppspelande och filbaserade aktiveringar. |
 
