@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4211a19bfd511c495d9efac898467230678aeb96
+source-git-commit: 5181d39e92fbf957f154c3b1dcf4f9af90cfeae9
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1723'
 ht-degree: 3%
 
 ---
@@ -21,6 +21,7 @@ Uppdateringar av befintliga funktioner i Adobe Experience Platform:
 - [Datainsamling](#data-collection)
 - [Datainmatning](#data-ingestion)
 - [Dataförberedelse](#data-prep)
+- [Mål ](#destinations)
 - [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
 - [Segmenteringstjänst](#segmentation)
@@ -112,6 +113,17 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 {style="table-layout:auto"}
 
 Mer information finns i [Översikt över datapreflight](../../data-prep/home.md).
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+- Nu kan du [aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md) till filbaserade mål.
+- Allmänt [aktiveringsgaranti](../../destinations/guardrails.md#general-activation-guardrails) av högst 100 destinationer per sandlåda har uppdaterats till _fast gräns_.
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Experience Data Model (XDM) {#xdm}
 
