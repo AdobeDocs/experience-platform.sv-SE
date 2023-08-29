@@ -3,7 +3,7 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 804cc13d9f672e87ad56b328bae73216500e07dd
+source-git-commit: 7ea411c9543230f254f2a0565c04f277fed2b17b
 workflow-type: tm+mt
 source-wordcount: '1727'
 ht-degree: 0%
@@ -209,7 +209,7 @@ Profilerna som ingår i de exporterade filerna kan matcha ett av följande kvali
 Till exempel en exporterad CSV-fil med en `email` attribut, två målgrupper som kommer från Experience Platform [Segmenteringstjänst](../../../segmentation/home.md)och en [importerad](../../../segmentation/ui/overview.md#importing-an-audience) extern publik, skulle kunna se ut så här:
 
 ```csv
-email,ups:aa2e3d98-974b-4f8b-9507-59f65b6442df,ups:45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload:7729e537-4e42-418e-be3b-dce5e47aaa1e
+email,ups_aa2e3d98-974b-4f8b-9507-59f65b6442df,ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e
 abc117@testemailabc.com,active,,
 abc111@testemailabc.com,,,active
 abc102@testemailabc.com,,,active
@@ -218,7 +218,7 @@ abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
 
-I exemplet ovan är `ups:aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups:45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` beskriver målgrupper som härrör från segmenteringstjänsten, medan `CustomerAudienceUpload:7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en publik som importerats till Platform som [anpassad överföring](../../../segmentation/ui/overview.md#importing-an-audience).
+I exemplet ovan är `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` beskriver målgrupper som härrör från segmenteringstjänsten, medan `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en publik som importerats till Platform som [anpassad överföring](../../../segmentation/ui/overview.md#importing-an-audience).
 
 Eftersom Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../../profile/merge-policies/overview.md)genererar det också en separat dataflödeskörning för varje ID för sammanfogningsprincip.
 
