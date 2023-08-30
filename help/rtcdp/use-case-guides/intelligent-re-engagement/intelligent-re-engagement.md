@@ -1,6 +1,6 @@
 ---
 title: Intelligent återanvändning
-description: Leverera övertygande och sammanhängande upplevelser under de viktiga konverteringstunderna för att på ett intelligent sätt engagera ovanliga kunder.
+description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 source-git-commit: 79ba0e350d64f43558af9bc3c2ecd4ac13d11499
 workflow-type: tm+mt
 source-wordcount: '3403'
