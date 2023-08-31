@@ -1,15 +1,15 @@
 ---
 description: Lär dig hur du konfigurerar filformateringsalternativ när du aktiverar data till filbaserade mål
-title: (Beta) Konfigurera filformateringsalternativ för filbaserade mål
+title: Konfigurera filformateringsalternativ för filbaserade mål
 exl-id: f59b1952-e317-40ba-81d1-35535e132a72
-source-git-commit: 3b5f4abd516259402e9b3c4cfbcc17e32f18b6f5
+source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1153'
 ht-degree: 0%
 
 ---
 
-# (Beta) Konfigurera filformateringsalternativ för filbaserade mål
+# Konfigurera filformateringsalternativ för filbaserade mål
 
 >[!IMPORTANT]
 > 

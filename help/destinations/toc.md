@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: d16a4cf7db12c92ab6ead498846f17d76f6ac641
+source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1167'
 ht-degree: 2%
 
 ---
@@ -51,7 +51,7 @@ ht-degree: 2%
    * [Redigera aktiveringsdataflöden](./ui/edit-activation.md)
    * [Ta bort mål](./ui/delete-destinations.md)
    * [Övervaka dataflöden](./ui/monitor-dataflows.md)
-   * [(Beta) Konfigurera filformateringsalternativ för filbaserade mål](./ui/batch-destinations-file-formatting-options.md)
+   * [Konfigurera filformateringsalternativ för filbaserade mål](./ui/batch-destinations-file-formatting-options.md)
    * [Prenumerera på aviseringar om destinationer i sitt sammanhang](ui/alerts.md)
 * Målkatalog {#catalog}
    * [Översikt över målkatalog](./catalog/overview.md)
@@ -89,7 +89,7 @@ ht-degree: 2%
       * [Snapchat Ads-anslutning](./catalog/advertising/snap-inc.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
       * [(Beta) The Trade Desk CRM connection](./catalog/advertising/tradedesk-emails.md)
-      * [Tillägget twitter Universal Web Site Tag](./catalog/advertising/twitter-uwt.md)
+      * [Tillägget Twitter Universal Website Tag](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX-anslutning](./catalog/advertising/datax.md)
    * Analysmål {#analytics}
       * [Översikt över Analytics-mål](./catalog/analytics/overview.md)
