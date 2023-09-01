@@ -1,15 +1,20 @@
 ---
 title: Skapa en källanslutning och ett dataflöde för Chatlio med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till Chatlio med API:t för Flow Service.
+badge: Beta
 exl-id: 867b8096-0841-4462-9888-e60c97c2115e
-source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
+source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt
-source-wordcount: '1440'
+source-wordcount: '1458'
 ht-degree: 0%
 
 ---
 
 # Skapa en källanslutning och ett dataflöde för [!DNL Chatlio] med API:t för Flow Service
+
+>[!NOTE]
+>
+>The [!DNL Chatlio] källan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 I följande självstudiekurs får du hjälp med att skapa en källanslutning och ett dataflöde som ger [[!DNL Chatlio]](https://chatlio.com/) händelsedata till Adobe Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

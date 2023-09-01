@@ -1,15 +1,20 @@
 ---
 title: Skapa en Chatlio-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Chatlio-källanslutning med Adobe Experience Platform-gränssnittet.
+badge: Beta
 exl-id: 55c10bcb-0332-45ff-970b-272d375b591d
-source-git-commit: 68c14d7b187075b4af6b019a8bd1ca2625beabde
+source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1120'
 ht-degree: 0%
 
 ---
 
 # Skapa en [!DNL Chatlio] källanslutning i användargränssnittet
+
+>[!NOTE]
+>
+>The [!DNL Chatlio] källan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Chatlio] källanslutning med Adobe Experience Platform användargränssnitt.
 
