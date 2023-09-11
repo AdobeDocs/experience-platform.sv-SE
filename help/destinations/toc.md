@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 0eb17d4d7ad9db3737a14f383bdafe40d59eb12c
+source-git-commit: 333f98a74e69f50ae356231733924d1c6793ddf1
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1170'
 ht-degree: 2%
 
 ---
@@ -83,6 +83,7 @@ ht-degree: 2%
       * [Google Gtag-tillägg](./catalog/advertising/gtag-advertising.md)
       * [LinkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [LiveRamp - Onboarding-anslutning](./catalog/advertising/liveramp-onboarding.md)
+      * [LiveRamp - Distribution Connection](./catalog/advertising/liveramp-distribution.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)

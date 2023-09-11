@@ -2,9 +2,9 @@
 title: Referens för tillägg för händelsevidarebefordran
 description: Hitta dokumentation för tillägg för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: 0d931c90b6321d93eec9da16f360a3ecd2fd8f14
+source-git-commit: c2baf3d14e57df87303aeadeed90203dcd233242
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '189'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
 
-Här följer en lista med dokumentation för tillägg för vidarebefordran av händelser på servern. En lista över tillgängliga klienttillägg finns i [tagg extensions reference](../client/overview.md) i stället.
+Här följer en lista med dokumentation för tillägg för vidarebefordran av händelser på servern. En lista över tillgängliga tillägg på klientsidan finns i [tagg extensions reference](../client/overview.md) i stället.
 
 >[!NOTE]
 >
@@ -37,7 +37,7 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 * [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)*
 * [Google Ads Enhanced Conversions](./google-ads-enhanced-conversions/overview.md)
 * [Google Cloud Platform](./google-cloud-platform/overview.md)
-* [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
+* [[!DNL Mailchimp] Kant](./mailchimp/overview.md)
 * [[!DNL Meta] Konverterings-API](./meta/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
 * [[!DNL Mixpanel]](./mixpanel/overview.md)
@@ -47,4 +47,5 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 * [Snowflake](./snowflake/overview.md)
 * [[!DNL Splunk]](./splunk/overview.md)
 * [[!DNL Twitter]](./twitter/overview.md)
+* [[!DNL Tiktok] API för webbhändelser](https://exchange.adobe.com/apps/ec/109834)*
 * [[!DNL Zendesk] Händelse-API](./zendesk/overview.md)

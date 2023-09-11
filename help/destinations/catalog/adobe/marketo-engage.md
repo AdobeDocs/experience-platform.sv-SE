@@ -2,9 +2,9 @@
 title: Marketo Engage destination
 description: Marketo Engage är den enda heltäckande CXM-lösningen (Customer Experience Management) för marknadsföring, reklam, analys och handel. Ni kan automatisera och hantera aktiviteter från CRM-ledhantering och kundengagemang till kontobaserad marknadsföring och intäktsattribuering.
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 0507fd3596246bc2ead5c212c228822bf25f94e5
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '863'
 ht-degree: 0%
 
 ---
@@ -53,13 +53,12 @@ Du kan mappa attribut från Experience Platform till alla attribut som din organ
 
 ## Målgrupper {#supported-audiences}
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Dessutom stöder denna destination även aktivering av målgrupperna som beskrivs i tabellen nedan.
-
-| Extern målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '860'
 ht-degree: 0%
 
 ---
@@ -20,15 +20,12 @@ Om du vill skicka målgruppsdata till Adobe Campaign måste du först [ansluta t
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
-
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

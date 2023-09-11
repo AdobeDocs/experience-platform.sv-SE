@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samtyckesbearbetning i Adobe Experience Platform
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -27,10 +27,10 @@ Handboken kräver en arbetsförståelse av de olika Experience Platform-tjänste
 
 * [Experience Data Model (XDM)](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [Adobe Experience Platform Identity Service](../../../../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [Kundprofil i realtid](../../../../profile/home.md): Användningsområden [!DNL Identity Service] funktioner för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. Kundprofilen i realtid hämtar data från datasjön och bevarar kundprofiler i sitt eget separata datalager.
+* [Kundprofil i realtid](../../../../profile/home.md): Använder [!DNL Identity Service] funktioner för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. Kundprofilen i realtid hämtar data från datasjön och bevarar kundprofiler i sitt eget separata datalager.
 * [Adobe Experience Platform Web SDK](../../../../edge/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
-   * [Kommandon för SDK-medgivande](../../../../edge/consent/supporting-consent.md): En översikt över de medgivande-relaterade SDK-kommandona som visas i den här handboken.
-* [Adobe Experience Platform segmenteringstjänst](../../../../segmentation/home.md): Gör att ni kan dela in kundprofildata i realtid i grupper av individer som delar liknande egenskaper och kommer att svara på liknande sätt som marknadsföringsstrategier.
+   * [Kommandon för SDK-medgivande](../../../../edge/consent/supporting-consent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
+* [Adobe Experience Platform segmenteringstjänst](../../../../segmentation/home.md): Gör att ni kan dela in kundprofildata i realtid i grupper av individer som delar liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 
 ## Sammanfattning av godkännandebearbetningsflöde {#summary}
 
@@ -63,9 +63,9 @@ Den här dialogrutan bör göra det möjligt för kunden att välja om de vill a
 
 ## Lägg till standardiserade medgivandefält i en [!DNL Profile]-aktiverad datauppsättning {#dataset}
 
-Kundens samtycke måste skickas till [!DNL Profile]-aktiverad datauppsättning vars schema innehåller tillståndsfält. Dessa fält måste ingå i samma schema och datauppsättning som du använder för att samla in attributinformation om enskilda kunder.
+Kundens samtycke måste skickas till en [!DNL Profile]-aktiverad datauppsättning vars schema innehåller tillståndsfält. Dessa fält måste ingå i samma schema och datauppsättning som du använder för att samla in attributinformation om enskilda kunder.
 
-Se självstudiekursen på [konfigurera en datauppsättning för insamling av medgivandedata](./dataset.md) för detaljerade steg om hur du lägger till de här obligatoriska fälten i en [!DNL Profile]-aktiverad datauppsättning innan du fortsätter med den här guiden.
+Se självstudiekursen på [konfigurera en datauppsättning för insamling av medgivandedata](./dataset.md) för detaljerade steg om hur du lägger till dessa obligatoriska fält i en [!DNL Profile]-aktiverad datauppsättning innan du fortsätter med den här guiden.
 
 ## Uppdatera [!DNL Profile] lägga samman profiler för att inkludera data om samtycke {#merge-policies}
 
@@ -79,21 +79,21 @@ Mer information om hur du arbetar med sammanfogningsprinciper finns i [sammanfog
 
 ## Använd data om samtycke i plattformen
 
-När ni har era datauppsättningar och sammanfogningspolicyer för att representera de obligatoriska medgivandefälten i era kundprofiler är nästa steg att överföra informationen om samtycke till plattformen.
+När ni har era datauppsättningar och sammanfogningspolicyer för att representera de obligatoriska medgivandefälten i era kundprofiler är nästa steg att föra in själva medgivandeinformationen i plattformen.
 
 I första hand bör du använda Adobe Experience Platform Web SDK för att skicka data om samtycke till plattformen när händelser om tillståndsändring upptäcks av din CMP. Om du samlar in data om samtycke på en mobilplattform bör du använda Adobe Experience Platform Mobile SDK. Du kan också välja att importera insamlade data direkt genom att mappa dem till XDM-schemat för ditt samtycke och skicka dem till plattformen via batchinmatning.
 
-Närmare information om dessa metoder finns i underavsnitten nedan.
+Detaljerad information om dessa metoder finns i underavsnitten nedan.
 
 ### Konfigurera Experience Platform Web SDK för att bearbeta medgivandedata {#web-sdk}
 
-När du har konfigurerat din CMP för att lyssna efter medgivandeändringshändelser på din webbplats kan du integrera Experience Platform Web SDK för att ta emot de uppdaterade medgivandeinställningarna och skicka dem till Platform på varje sida som läses in och närhelst en förändring av medgivandet inträffar. Se guiden [konfigurera Web SDK för att bearbeta kundens medgivandedata](../sdk.md) för mer information.
+När du har konfigurerat din CMP för att lyssna efter medgivandeändringshändelser på din webbplats kan du integrera Experience Platform Web SDK för att ta emot de uppdaterade medgivandeinställningarna och skicka dem till Platform på varje sida som läses in och närhelst en förändring av medgivandet inträffar. Se guiden på [konfigurera Web SDK för att bearbeta kundens medgivandedata](../sdk.md) för mer information.
 
 ### Konfigurera Experience Platform Mobile SDK för att bearbeta medgivandedata {#mobile-sdk}
 
 Om du behöver göra inställningar för kundgodkännande i ditt mobilprogram kan du integrera Experience Platform Mobile SDK för att hämta och uppdatera inställningar för samtycke och skicka dem till plattformen när API för samtycke anropas.
 
-I Mobile SDK-dokumentationen finns mer information om [konfigurera mobiltillägget för samtycke](https://aep-sdks.gitbook.io/docs/foundation-extensions/consent-for-edge-network) och [med API:t för samtycke](https://aep-sdks.gitbook.io/docs/foundation-extensions/consent-for-edge-network/api-reference). Mer information om hur du hanterar integritetsfrågor med Mobile SDK finns i avsnittet [Integritet och GDPR](https://aep-sdks.gitbook.io/docs/resources/privacy-and-gdpr).
+I Mobile SDK-dokumentationen finns mer information om [konfigurera mobiltillägget för samtycke](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/) och [med API:t för samtycke](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/). Mer information om hur du hanterar integritetsfrågor med Mobile SDK finns i avsnittet [Integritet och GDPR](https://developer.adobe.com/client-sdks/documentation/resources/privacy-and-gdpr/).
 
 ### Importera XDM-kompatibla data direkt {#batch}
 

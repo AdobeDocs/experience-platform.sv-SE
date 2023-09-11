@@ -4,22 +4,26 @@ title: Standardvarningsregler
 description: Detta dokument innehåller de fördefinierade varningsreglerna från Experience Platform.
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: 6650894c145fd1f42731fd5ed8aeb6e38062aa61
+source-git-commit: 9120377f5f2048579d7e2a4740cfcbc56d49d61a
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '961'
 ht-degree: 1%
 
 ---
 
 # Standardvarningsregler
 
-Adobe Experience Platform innehåller flera fördefinierade varningsregler som du kan aktivera för din organisation. Detta dokument innehåller uppgifter om dessa varningsregler som tillhandahålls av Adobe. Mer allmän information om varningar i Experience Platform finns i [varningsöversikt](./overview.md).
+Adobe Experience Platform innehåller flera fördefinierade varningsregler som du kan aktivera för din organisation. Detta dokument innehåller detaljerna om dessa varningsregler som tillhandahålls av Adobe. Mer allmän information om varningar i Experience Platform finns i [varningsöversikt](./overview.md).
 
 När [visa varningsregler i plattformsgränssnittet](./ui.md)kan du prenumerera på varje regel separat. När du prenumererar på aviseringar via [I/O-händelsemeddelanden](./subscribe.md)Men varningsreglerna är ordnade i olika prenumerationspaket. I tabellerna nedan visas varje regel med sitt motsvarande I/O Event-prenumerationsnamn.
 
 ## Datainmatning
 
-Följande varningsregler gäller [Dataintag](../../ingestion/home.md) och  [källor](../../sources/home.md):
+Följande varningsregler gäller [Inmatning av data](../../ingestion/home.md) och  [källor](../../sources/home.md):
+
+>[!NOTE]
+>
+>Direktuppspelningskällor stöds för närvarande inte av aviseringar. Du kan bara prenumerera på varningsmeddelanden för batchkällor.
 
 | Prenumeration på I/O-händelse | Varningsregel | Beskrivning |
 | --- | --- | --- |

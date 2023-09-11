@@ -2,9 +2,9 @@
 title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
-source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
+source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera
 
 ## Mål som stöds {#supported-destinations}
 
-Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och väljer **[!UICONTROL Catalog]** -fliken. Använd **[!UICONTROL Data types]** filtrera och markera **[!UICONTROL Prospects]** för att se vilka destinationer som stöder aktivering av potentiella målgrupper. För närvarande är export av potentiella kunder bara tillgängligt för [[!DNL Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) mål.
+Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och väljer **[!UICONTROL Catalog]** -fliken. Använd **[!UICONTROL Data types]** filtrera och markera **[!UICONTROL Prospects]** för att se vilka destinationer som stöder aktivering av potentiella målgrupper. För närvarande är export av potentiella målgrupper bara tillgängligt för molnlagringsdestinationer.
 
 ![Destinationer som stöder datauppsättningsexport](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
 

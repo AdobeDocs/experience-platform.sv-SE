@@ -3,9 +3,9 @@ keywords: direktuppspelning; HTTP-mål
 title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '2407'
+source-wordcount: '2386'
 ht-degree: 0%
 
 ---
@@ -30,15 +30,12 @@ HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösni
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
-
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

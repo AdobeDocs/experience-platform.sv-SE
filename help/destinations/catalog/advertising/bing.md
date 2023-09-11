@@ -3,9 +3,9 @@ keywords: Reklam.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Display Advertising.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '626'
 ht-degree: 1%
 
 ---
@@ -34,15 +34,12 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
-
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

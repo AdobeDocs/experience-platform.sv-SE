@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 2564c0cc817362536f1a8291e1c733d9efbf5a78
 workflow-type: tm+mt
-source-wordcount: '1771'
+source-wordcount: '1849'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av sys
 Det här dokumentet beskriver processen för att aktivera funktionen för kundhanterade nycklar (CMK) i Platform.
 
 ## Förutsättningar
+
+För att få tillgång till CMK-API:erna måste du tilldela [!UICONTROL Manage Customer Managed Key] behörighet och åtkomst till en produktionssandlåda till en ny eller befintlig roll som är kopplad till API-autentiseringsuppgifterna. Om du vill ge dessa API-autentiseringsuppgifter endast CMK-åtkomst rekommenderar vi att du skapar en ny CMK-administratörsroll med de nödvändiga behörigheter som nämns ovan.
+
+Mer information om hur du tilldelar roller och behörigheter i Experience Platform finns i [konfigurera behörighetsdokumentation](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/configure-permissions.html).
 
 Om du vill aktivera CMK måste du [!DNL Azure] Nyckelvalv måste konfigureras med följande inställningar:
 

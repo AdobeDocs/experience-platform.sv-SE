@@ -4,18 +4,19 @@ description: Lär dig vad API:t för Edge Network Server är och hur du kan anv�
 seo-description: Learn what the Edge Network Server API is and how you can use it.
 keywords: datainsamling;samling;Adobe Experience Platform Edge Network;server-api;
 exl-id: 46bd8798-d7f9-405b-9ca8-856ad4aa688c
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: ef77a14eb40db490682c4615d1cbafb90c7b42c2
 workflow-type: tm+mt
 source-wordcount: '271'
 ht-degree: 0%
 
 ---
 
+
 # API-översikt för Edge Network Server {#overview}
 
 Adobe Experience Platform Edge Network är ett optimerat sätt för kunder att interagera med alla Adobe Experience Cloud- och Adobe Experience Platform Edge-tjänster.
 
-The [!DNL Edge Network Server API] kan användas för en rad olika syften inom datainsamling, personalisering, annonsering och marknadsföring. The [!DNL Server API] kan användas på servrar, [!DNL IoT] enheter, digitalboxar och en mängd andra enheter.
+The [!DNL Edge Network Server API] kan användas för en rad olika syften inom datainsamling, personalisering, annonsering och marknadsföring. The [!DNL Server API] kan användas på servrar, [!DNL IoT] enheter, digitalboxar och andra enheter.
 
 Sedan [!DNL Server API] förlitar sig inte på att några bibliotek laddas, utan är ett blixtsnabbt sätt att interagera med Adobe Experience Platform Edge Network och lösningar som stöds.
 

@@ -4,14 +4,19 @@ solution: Experience Platform
 title: Skapa och redigera klasser i användargränssnittet
 description: Lär dig hur du skapar och redigerar klasser i användargränssnittet i Experience Platform.
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
-source-git-commit: 3a9b97b25980d88e0fff3d71e43407b641e6454d
+source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '946'
 ht-degree: 0%
 
 ---
 
-# Skapa och redigera klasser i användargränssnittet
+# Skapa och redigera klasser i användargränssnittet {#ui-create-and-edit}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_class_filter"
+>title="Standardklassfilter eller -filter"
+>abstract="Listan med tillgängliga klasser filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar enheter som skapats av Adobe och innehåller både XDM-klasserna Individual Profile och XDM Experience Event. Alternativet Egen visar enheter som skapats i din organisation. Mer information om hur du skapar och redigerar klasser finns i dokumentationen."
 
 I Adobe Experience Platform definierar en schemaklass beteendeaspekterna för de data som schemat ska innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
 
@@ -61,7 +66,7 @@ Om du vill redigera en befintlig klass väljer du **[!UICONTROL Browse]** och ma
 
 >[!TIP]
 >
->Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Se guiden [utforska XDM-resurser](../explore.md) för mer information.
+>Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Se guiden på [utforska XDM-resurser](../explore.md) för mer information.
 
 The [!DNL Schema Editor] visas med schemats struktur på arbetsytan. Nu kan du börja [lägga till fält i klassen](#add-fields).
 
@@ -83,7 +88,7 @@ An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den h
 
 ![](../../images/ui/resources/classes/assign-to-class.png)
 
-Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen. Fortsätt att lägga till så många fält som behövs för klassen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och klassen.
+Se guiden på [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i klassen. Fortsätt att lägga till så många fält som behövs för klassen. När du är klar väljer du **[!UICONTROL Save]** för att spara både schemat och klassen.
 
 ![](../../images/ui/resources/classes/save.png)
 
@@ -91,10 +96,10 @@ Om du tidigare har skapat scheman som använder den här klassen visas de nya f�
 
 ## Ändra klassen för ett schema {#schema}
 
-Du kan ändra schemaklassen när som helst under den inledande skapandeprocessen innan det har sparats. Se guiden [skapa och redigera scheman](./schemas.md#change-class) för mer information.
+Du kan ändra schemaklassen när som helst under den inledande skapandeprocessen innan det har sparats. Se guiden på [skapa och redigera scheman](./schemas.md#change-class) för mer information.
 
 ## Nästa steg
 
 I det här dokumentet beskrivs hur du skapar och redigerar klasser med hjälp av användargränssnittet för plattformen. Mer information om funktionerna i [!UICONTROL Schemas] arbetsytan, se [[!UICONTROL Schemas] arbetsyta - översikt](../overview.md).
 
-Så här hanterar du klasser med [!DNL Schema Registry] API, se [klassers slutpunktshandbok](../../api/classes.md).
+Så här hanterar du klasser med [!DNL Schema Registry] API, se [stödlinje för klassers slutpunkt](../../api/classes.md).

@@ -5,9 +5,9 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: cc864e091f5e3f338f025238572158f555c3ede9
+source-git-commit: 95d7b16efb638c37d8db3f56b0f3fbf6aa9d15df
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '170'
 ht-degree: 24%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 24%
 
 # Webb-SDK för Adobe Experience Platform {#edge}
 
-* [SDK för plattform](home.md)
+* [SDK för plattform - översikt](home.md)
 * Grundläggande {#fundamentals}
    * [Användningsexempel som stöds](fundamentals/supported-use-cases.md)
    * [Förutsättningar](fundamentals/prerequisite.md)
@@ -34,7 +34,7 @@ ht-degree: 24%
 * Datainsamling {#data-collection}
    * [Automatiskt insamlad information](data-collection/automatic-information.md)
    * [Spåra länkar](data-collection/track-links.md)
-   * [Samla in data om handel och produkter](data-collection/collect-commerce-data.md)
+   * [Samla in data om handel, produkter och beställningar](data-collection/collect-commerce-data.md)
    * Adobe Analytics {#adobe-analytics}
       * [Använda Adobe Analytics med Platform Web SDK](data-collection/adobe-analytics/analytics-overview.md)
       * [Mappningsanalysvariabler](data-collection/adobe-analytics/manually-mapping-variables.md)
@@ -54,12 +54,12 @@ ht-degree: 24%
          * [Översikt](personalization/adobe-target/analytics-logging/overview.md)
          * [Loggning på klientsidan](personalization/adobe-target/analytics-logging/client-side.md)
          * [Loggning på serversidan](personalization/adobe-target/analytics-logging/server-side.md)
-   * offer decisioning {#offer-decisioning}
+   * Offer decisioning {#offer-decisioning}
       * [Översikt](personalization/offer-decisioning/offer-decisioning-overview.md)
    * Adobe Journey Optimizer {#ajo}
       * [Översikt](personalization/ajo/overview.md)
 * Godkännande {#consent}
-   * [Godkännande](consent/supporting-consent.md)
+   * [Samtycke](consent/supporting-consent.md)
    * IAB Transparency och Consent Framework 2.0 {#iab-tcf}
       * [Översikt](consent/iab-tcf/overview.md)
       * [Integrera med taggar](consent/iab-tcf/with-launch.md)

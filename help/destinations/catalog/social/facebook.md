@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 37e8d36d89bf984673345743b371c31b4bb1f94d
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '1867'
 ht-degree: 1%
 
 ---
@@ -50,15 +50,12 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
-
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -113,7 +110,7 @@ Om du vill veta mer om hur du importerar e-postadresser i Experience Platform ka
 
 Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfylla följande krav:
 
-* Trimma alla inledande och avslutande blanksteg från e-poststrängen: `johndoe@example.com`, inte `<space>johndoe@example.com<space>`;
+* Trimma alla inledande och avslutande blanksteg från e-poststrängen, exempel: `johndoe@example.com`, inte `<space>johndoe@example.com<space>`;
 * När du hash-kodar e-poststrängarna ska du se till att hash-koda den gemena strängen.
    * Exempel: `example@email.com`, inte `EXAMPLE@EMAIL.COM`;
 * Kontrollera att den hash-kodade strängen är i gemener

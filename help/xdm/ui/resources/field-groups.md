@@ -4,20 +4,25 @@ solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 542ad49f475ac9586da506a8afa5408e83262121
+source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
 
-# Skapa och redigera schemafältgrupper i användargränssnittet
+# Skapa och redigera schemafältgrupper i användargränssnittet {#ui-create-and-edit}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_fieldgroup_filter"
+>title="Standardfilter eller filter för anpassad fältgrupp"
+>abstract="Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar entiteter som skapats av Adobe och alternativet Anpassad visar entiteter som skapats i din organisation. Mer information om hur du skapar och redigerar fältgrupper finns i dokumentationen."
 
 I Experience Data Model (XDM) är schemafältgrupper återanvändbara komponenter som definierar ett eller flera fält som implementerar vissa funktioner, till exempel personuppgifter, hotellinställningar eller adress. Fältgrupper är avsedda att ingå i ett schema som implementerar en kompatibel klass.
 
 En fältgrupp definierar vilka klasser den är kompatibel med, baserat på beteendet för de data som fältgruppen representerar (post- eller tidsserie). Det innebär att inte alla fältgrupper är tillgängliga för användning med alla klasser.
 
-Adobe Experience Platform erbjuder många standardfältgrupper som täcker ett brett urval av marknadsföringsfall. Men du kan också skapa och redigera egna fältgrupper för att definiera ytterligare koncept som är relaterade till din verksamhet i dina XDM-scheman. Den här guiden ger en översikt över hur du skapar, redigerar och hanterar anpassade fältgrupper för din organisation i plattformsgränssnittet.
+Adobe Experience Platform erbjuder många standardfältgrupper som täcker ett brett urval av användningsområden för marknadsföring. Men du kan också skapa och redigera egna fältgrupper för att definiera ytterligare koncept som är relaterade till din verksamhet i dina XDM-scheman. Den här guiden ger en översikt över hur du skapar, redigerar och hanterar anpassade fältgrupper för din organisation i plattformsgränssnittet.
 
 ## Förutsättningar
 
@@ -27,13 +32,13 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översik
 
 ## Skapa en ny fältgrupp {#create}
 
-Om du vill skapa en ny fältgrupp måste du först välja ett schema som fältgruppen ska läggas till i. Du kan välja att [skapa ett nytt schema](./schemas.md#create) eller [välj ett befintligt schema att redigera](./schemas.md#edit).
+Om du vill skapa en ny fältgrupp måste du först välja ett schema som fältgruppen ska läggas till i. Du kan [skapa ett nytt schema](./schemas.md#create) eller [välj ett befintligt schema att redigera](./schemas.md#edit).
 
 När du har öppnat schemat i [!DNL Schema Editor], markera **[!UICONTROL Add]** bredvid [!UICONTROL Field groups] till vänster.
 
 ![](../../images/ui/resources/field-groups/add-field-group.png)
 
-I dialogrutan som visas väljer du **[!UICONTROL Create new field group]**. Här kan du ange en **[!UICONTROL Display name]** och **[!UICONTROL Description]** för fältgruppen. När du är klar väljer du **[!UICONTROL Add field groups]**.
+I den dialogruta som visas väljer du **[!UICONTROL Create new field group]**. Här kan du ange en **[!UICONTROL Display name]** och **[!UICONTROL Description]** för fältgruppen. När du är klar väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../images/ui/resources/field-groups/create-field-group.png)
 
@@ -63,7 +68,7 @@ Om du vill lägga till fält i en anpassad fältgrupp börjar du med att välja 
 
 ![](../../images/ui/resources/field-groups/add-field.png)
 
-An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar olika fälttyper.
+An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Se guiden på [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar olika fälttyper.
 
 Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]** väljer du sedan den önskade fältgruppen i listan. Du kan börja skriva in namnet på fältgruppen för att begränsa resultatet.
 

@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
-source-git-commit: 5181d39e92fbf957f154c3b1dcf4f9af90cfeae9
+source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
 workflow-type: tm+mt
-source-wordcount: '1723'
+source-wordcount: '1724'
 ht-degree: 3%
 
 ---
@@ -119,7 +119,7 @@ Mer information finns i [Översikt över datapreflight](../../data-prep/home.md)
 
 **Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
-- Nu kan du [aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md) till filbaserade mål.
+- Nu kan du [aktivera potentiella målgrupper](../../destinations/ui/activate-prospect-audiences.md) till lagringsplatser i molnet.
 - Allmänt [aktiveringsgaranti](../../destinations/guardrails.md#general-activation-guardrails) av högst 100 destinationer per sandlåda har uppdaterats till _fast gräns_.
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).

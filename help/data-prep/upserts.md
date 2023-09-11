@@ -3,10 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: 15aa27e19f287a39242860b91eedae87aace3d27
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '1175'
-ht-degree: 0%
+source-wordcount: '1176'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Direktuppspelande överföringar i [!DNL Data Prep] kan du skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran.
 
-Genom att direktuppspela uppladdningar kan du behålla dataformatet samtidigt som du översätter dessa data till [!DNL Real-Time Customer Profile] PATCH begär vid förtäring. Baserat på de indata du anger, [!DNL Data Prep] gör att du kan skicka en enda API-nyttolast och översätta data till båda [!DNL Real-Time Customer Profile] PATCH och [!DNL Identity Service] SKAPA förfrågningar.
+Genom att direktuppspela uppladdningar kan du behålla dataformatet samtidigt som du översätter dessa data till [!DNL Real-Time Customer Profile] PATCH begär vid förtäring. Baserat på de indata du anger [!DNL Data Prep] gör att du kan skicka en enda API-nyttolast och översätta data till båda [!DNL Real-Time Customer Profile] PATCH och [!DNL Identity Service] SKAPA förfrågningar.
 
 Det här dokumentet innehåller information om hur du direktuppspelar överföringar i [!DNL Data Prep].
 
@@ -22,9 +22,9 @@ Det här dokumentet innehåller information om hur du direktuppspelar överföri
 
 Den här översikten kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [[!DNL Data Prep]](./home.md): [!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+* [[!DNL Data Prep]](./home.md): [!DNL Data Prep] gör att datatekniker kan mappa, omvandla och validera data till och från Experience Data Model (XDM).
 * [[!DNL Identity Service]](../identity-service/home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-* [Kundprofil i realtid](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [Kundprofil i realtid](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 * [Källor](../sources/home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 
 ## Använd direktuppspelande upserts i [!DNL Data Prep] {#streaming-upserts-in-data-prep}
@@ -37,9 +37,9 @@ Den här översikten kräver en fungerande förståelse av följande komponenter
 
 Direktuppspelande överföringar i [!DNL Data Prep] fungerar på följande sätt:
 
-* Du måste först skapa och aktivera en datauppsättning för [!DNL Profile] förbrukning. Se guiden [aktivera en datauppsättning för [!DNL Profile]](../catalog/datasets/enable-for-profile.md) för mer information.
+* Du måste först skapa och aktivera en datauppsättning för [!DNL Profile] förbrukning. Se guiden på [aktivera en datauppsättning för [!DNL Profile]](../catalog/datasets/enable-for-profile.md) för mer information.
 * Om nya identiteter måste länkas måste du också skapa ytterligare en datauppsättning **med samma schema** som [!DNL Profile] datauppsättning.
-* När datauppsättningarna har förberetts måste du skapa ett dataflöde som mappar din inkommande begäran till [!DNL Profile] datauppsättning,
+* När datauppsättningarna har förberetts måste du skapa ett dataflöde för att mappa din inkommande begäran till [!DNL Profile] datauppsättning,
 * Därefter måste du uppdatera den inkommande begäran så att de nödvändiga rubrikerna inkluderas. Dessa rubriker definierar:
    * Den dataåtgärd som krävs för att utföras med [!DNL Profile]: `create`, `merge`och `delete`.
    * Den valfria identitetsåtgärden som ska utföras med [!DNL Identity Service]: `create`.
@@ -108,7 +108,7 @@ I följande exempel visas ett exempel på en inkommande nyttolaststruktur som sk
 | --- | --- |
 | `flowId` | Ett unikt ID som identifierar ett dataflöde. Detta dataflödes-ID ska motsvara den källanslutning som skapats med [!DNL Amazon Kinesis], [!DNL Azure Event Hubs], eller [!DNL HTTP API]. Det här dataflödet ska även ha en [!DNL Profile]-aktiverad datauppsättning som måldatauppsättning. **Anteckning**: ID för [!DNL Profile]-aktiverad måldatauppsättning används också som `datasetId` parameter. |
 | `imsOrgId` | Det ID som motsvarar din organisation. |
-| `datasetId` | ID för [!DNL Profile]-aktiverade måldatauppsättningar för ditt dataflöde. **Anteckning**: Detta är samma ID som [!DNL Profile]-aktiverat måldatauppsättnings-ID hittades i ditt dataflöde. |
+| `datasetId` | ID:t för [!DNL Profile]-aktiverade måldatauppsättningar för ditt dataflöde. **Anteckning**: Detta är samma ID som [!DNL Profile]-aktiverat måldatauppsättnings-ID hittades i ditt dataflöde. |
 | `operations` | Den här parametern visar de åtgärder som [!DNL Data Prep] baseras på den inkommande begäran. |
 | `operations.data` | Definierar de åtgärder som måste utföras i [!DNL Real-Time Customer Profile]. |
 | `operations.identity` | Definierar de åtgärder som tillåts på data av [!DNL Identity Service]. |
@@ -126,13 +126,13 @@ Följande åtgärder stöds av [!DNL Real-Time Customer Profile]:
 
 Följande åtgärder stöds av [!DNL Identity Service]:
 
-| Användning | Beskrivningar |
+| Användning | Beskrivning |
 | --- | --- |
-| `create` | Den enda tillåtna åtgärden för den här parametern. If `create` skickas som ett värde för `operations.identity`sedan [!DNL Data Prep] genererar en XDM-entitetsskapandebegäran för [!DNL Identity Service]. Om identiteten redan finns ignoreras den. **Obs!** If `operations.identity` är inställd på `create`och sedan `identityDatasetId` måste också anges. XDM-entiteten skapar meddelanden som genererats internt av [!DNL Data Prep] kommer att genereras för detta datauppsättnings-ID. |
+| `create` | Den enda tillåtna åtgärden för den här parametern. If `create` skickas som ett värde för `operations.identity`sedan [!DNL Data Prep] genererar en XDM-entitetsskapandebegäran för [!DNL Identity Service]. Om identiteten redan finns ignoreras identiteten. **Obs!** If `operations.identity` är inställd på `create`och sedan `identityDatasetId` måste också anges. XDM-entiteten skapar meddelanden som genererats internt av [!DNL Data Prep] kommer att genereras för detta datauppsättnings-ID. |
 
 ### Nyttolast utan identitetskonfiguration
 
-Om nya identiteter inte behöver länkas kan du utelämna `identity` och `identityDatasetId` parametrar i operationerna. Om du gör det skickas endast data till [!DNL Real-Time Customer Profile] och hoppar över [!DNL Identity Service]. Se nyttolasten nedan för ett exempel:
+Om nya identiteter inte behöver länkas kan du utelämna `identity` och `identityDatasetId` parametrar i operationerna. Om du gör det skickas endast data till [!DNL Real-Time Customer Profile] och hoppar över [!DNL Identity Service]. Se nyttolasten nedan för exempel:
 
 ```shell
 {
@@ -257,7 +257,7 @@ Följande visar en lista med kända begränsningar att tänka på vid direktupps
 
 * Metoden för direktuppspelning av överföringar bör endast användas när partiella raduppdateringar skickas till [!DNL Real-Time Customer Profile]. Uppdateringar av delar av rader är **not** som konsumeras av en datasjö.
 * Metoden för att skicka direktuppspelning stöder inte uppdatering, ersättning och borttagning av identiteter. Nya identiteter skapas om de inte finns. Därför är `identity` måste alltid anges för att skapa. Om en identitet redan finns är åtgärden no-op.
-* Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) och [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
+* Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) och [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
 
 ## Nästa steg
 

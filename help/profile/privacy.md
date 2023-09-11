@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: fb2686eb44bbf7581120f40b241bead0e61baee9
+source-git-commit: f0179bacc55134241bed8de240ee632d0f38e4b6
 workflow-type: tm+mt
-source-wordcount: '1601'
+source-wordcount: '1614'
 ht-degree: 0%
 
 ---
@@ -23,6 +23,10 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 >Den här handboken beskriver bara hur du gör sekretessförfrågningar för datalagret Profil i Experience Platform. Om du även planerar att göra sekretessförfrågningar för sjön med plattformsdata, se guiden på [behandling av sekretessförfrågningar i datasjön](../catalog/privacy.md) förutom den här självstudiekursen.
 >
 >Anvisningar om hur du gör sekretessförfrågningar för andra Adobe Experience Cloud-program finns i [Privacy Service](../privacy-service/experience-cloud-apps.md).
+
+>[!IMPORTANT]
+>
+>Sekretessbegäran i den här handboken gör **not** omfattar icke-personliga B2B-enheter.
 
 ## Komma igång
 
@@ -42,7 +46,7 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Öve
 
 ## Skicka begäranden {#submit}
 
-Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med [!DNL Privacy Service] API eller gränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med [!DNL Privacy Service] API eller användargränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
 
 >[!IMPORTANT]
 >
@@ -52,7 +56,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-T
 
 ### Använda API:et
 
-När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste använda en specifik `namespace` och `type`. Ett giltigt [identity namespace](#namespaces) känns igen av [!DNL Identity Service] måste anges för `namespace` värde, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
+När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste använda en specifik `namespace` och `type`. Ett giltigt [namnutrymme för identitet](#namespaces) känns igen av [!DNL Identity Service] måste anges för `namespace` värde, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
 
 >[!NOTE]
 >
@@ -64,7 +68,7 @@ Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla p
 >
 >Se avsnittet om [profilförfrågningar och identitetsförfrågningar](#profile-v-identity) senare i det här dokumentet för mer detaljerad information om effekterna av att använda `ProfileService` och `identity` inom `include` array.
 
-Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` id namespace, and the other using a custom `Customer_ID` namnutrymme. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i `include` array:
+Följande begäran skapar ett nytt sekretessjobb för en enskild kunds data i [!DNL Profile] butik. Två identitetsvärden anges för kunden i `userIDs` array; en som använder standard `Email` id namespace, and the other using a custom `Customer_ID` namnutrymme. Den innehåller också produktvärdet för [!DNL Profile] (`ProfileService`) i `include` array:
 
 **Begäran**
 
@@ -163,9 +167,9 @@ När sekretessjobbet har slutförts för profiltjänsten returneras ett svar i J
 
 ### Använda gränssnittet
 
-När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön eller [!DNL Real-Time Customer Profile], respektive.
+När du skapar jobbförfrågningar i användargränssnittet måste du välja **[!UICONTROL AEP Data Lake]** och/eller **[!UICONTROL Profile]** under **[!UICONTROL Products]** för att bearbeta jobb för data som lagras i datasjön eller [!DNL Real-Time Customer Profile], respektive
 
-![En begäran om åtkomstjobb skapas i användargränssnittet med alternativet Profil markerat under Produkter](./images/privacy/product-value.png)
+![En begäran om åtkomstjobb skapas i användargränssnittet, med alternativet Profil markerat under Produkter](./images/privacy/product-value.png)
 
 ## Profilfragment i sekretessförfrågningar {#fragments}
 
@@ -179,7 +183,7 @@ Tänk dig till exempel en situation där du lagrar kundattributdata i tre separa
 | Datauppsättning 2 | `email_id` | `firstName`, `lastName` |
 | Datauppsättning 3 | `email_id` | `mlScore` |
 
-En av datauppsättningarna använder `customer_id` som primär identifierare, medan de andra två använder `email_id`. Om du skulle skicka en begäran om sekretess (åtkomst eller radering) använder du endast `email_id` som användar-ID, endast `firstName`, `lastName`och `mlScore` attribut skulle bearbetas, medan `address` inte påverkas.
+En av datauppsättningarna använder `customer_id` som primär identifierare, medan de andra två använder `email_id`. Om du skulle skicka en begäran om sekretess (åtkomst eller radering) använder du endast `email_id` som användar-ID, endast `firstName`, `lastName`och `mlScore` attribut skulle bearbetas, medan `address` skulle inte påverkas.
 
 För att säkerställa att dina sekretessförfrågningar behandlar alla relevanta kundattribut måste du ange de primära identitetsvärdena för alla tillämpliga datauppsättningar där dessa attribut kan lagras (upp till högst nio ID:n per kund). Se avsnittet om identitetsfält i [grunderna för schemakomposition](../xdm/schema/composition.md#identity) för mer information om fält som vanligen markeras som identiteter.
 
@@ -193,11 +197,11 @@ När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Pri
 
 Beroende på om du även har inkluderat identitetstjänsten (`identity`) och datasjön (`aepDataLake`) som produkter i din sekretesspolicy för profil (`ProfileService`) tas olika datauppsättningar som är relaterade till profilen bort från systemet vid potentiellt olika tidpunkter:
 
-| Produkter som ingår | Effekter |
+| Produkter ingår | Effekter |
 | --- | --- |
-| `ProfileService` endast | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilens identitetsdiagram finns fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De data som är associerade med profilen finns också kvar i datasjön. |
+| `ProfileService` endast | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras. De data som är associerade med profilen finns också kvar i datasjön. |
 | `ProfileService` och `identity` | Profilen och dess associerade identitetsdiagram tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
-| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilens identitetsdiagram finns fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
+| `ProfileService` och `aepDataLake` | Profilen tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning har tagits emot. Profilens identitetsdiagram finns dock fortfarande kvar och profilen kan rekonstrueras när nya data med samma identiteter importeras.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
 | `ProfileService`, `identity`och `aepDataLake` | Profilen och dess associerade identitetsdiagram tas bort omedelbart när Platform skickar en bekräftelse på att begäran om borttagning togs emot.<br><br>När Data Lake-produkten svarar att begäran har tagits emot och bearbetas, tas data som är kopplade till profilen bort utan fel och är därför inte tillgängliga för någon [!DNL Platform] service. När jobbet är klart tas data bort helt från datasjön. |
 
 Se [[!DNL Privacy Service] dokumentation](../privacy-service/home.md#monitor) för mer information om spårning av jobbstatus.
@@ -213,9 +217,9 @@ Om du vill ta bort profilen och alla identitetsassociationer för en viss kund m
 ### Begränsningar för sammanfogningsprincip {#merge-policy-limitations}
 
 Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Om du använder användargränssnittet för att bekräfta om dina sekretessförfrågningar behandlas måste du se till att du använder en profil med **[!DNL None]** som [!UICONTROL ID stitching] typ. Du kan alltså inte använda en sammanfogningsprincip där [!UICONTROL ID stitching] är inställd på [!UICONTROL Private graph].
->>
-![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
->
+
+>![Sammanfogningsprincipens ID-sammanfogning är inställd på Ingen](./images/privacy/no-id-stitch.png)
+
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Experience Platform]. Om du vill få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb kan du fortsätta att läsa dokumentationen som finns i den här handboken.

@@ -3,9 +3,9 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 5065d76ad8008988c843c88e33a25731fb5284d0
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '2286'
+source-wordcount: '2281'
 ht-degree: 2%
 
 ---
@@ -20,11 +20,11 @@ I den här artikeln finns en översikt över skillnaderna mellan `at.js` bibliot
 
 ### Installera at.js
 
-Vi låter våra kunder ladda ned biblioteket direkt från Adobe Experience Cloud på fliken Implementering. at.js-biblioteket är anpassat med inställningar som kunden har: clientCode, imsOrgId osv.
+Vi låter våra kunder ladda ned biblioteket direkt från Adobe Experience Cloud på fliken Implementering. At.js-biblioteket anpassas med inställningar som kunden har: clientCode, imsOrgId osv.
 
 ### Installera Web SDK
 
-Den färdiga versionen finns på ett CDN. Du kan referera till biblioteket på CDN direkt på din sida eller hämta och lagra det på din egen infrastruktur. Den finns i minifierade och ominifierade format. Den ominiatyrversionen är användbar i felsökningssyfte.
+Den färdiga versionen finns tillgänglig på ett CDN. Du kan referera till biblioteket på CDN direkt på din sida eller hämta och lagra det på din egen infrastruktur. Den finns i minifierade och ominifierade format. Den ominiatyrversionen är användbar i felsökningssyfte.
 
 URL-struktur: https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js OR alloy.js för den icke-minifierade versionen.
 
@@ -110,7 +110,7 @@ Använda at.js 2.x om du aktiverar inställningen `pageLoadEnabled`, kommer bibl
 
 Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) kan hämtas och återges automatiskt av SDK.
 
-Om du vill begära och automatiskt återge erbjudanden från Target använder du `sendEvent` och ange `renderDecisions` alternativ till `true`. Om du gör det tvingas SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
+Använd `sendEvent` och ange `renderDecisions` alternativ till `true`. Om du gör det tvingas SDK att automatiskt återge allt anpassat innehåll som är kvalificerat för automatisk återgivning.
 
 Exempel:
 
@@ -244,7 +244,7 @@ adobe.target.getOffers({
 
 ### Använda Web SDK
 
-Kör en `sendEvent` kommando med ett särskilt omfång under `decisionScopes`: `__view__`. Vi använder det här omfånget som en signal för att hämta alla sidladdningsaktiviteter från Target och hämta alla vyer i förväg. Web SDK kommer även att försöka utvärdera alla VEC-vybaserade aktiviteter. Inaktivering av förhämtning av vy stöds för närvarande inte i Web SDK.
+Kör en `sendEvent` kommando med specialområde under `decisionScopes`: `__view__`. Vi använder det här omfånget som en signal för att hämta alla sidladdningsaktiviteter från Target och hämta alla vyer i förväg. Web SDK kommer även att försöka utvärdera alla VEC-vybaserade aktiviteter. Inaktivering av förhämtning av vy stöds för närvarande inte i Web SDK.
 
 Om du vill få åtkomst till innehåll för personalisering kan du tillhandahålla en callback-funktion som anropas efter att SDK har fått ett lyckat svar från servern. Ditt återanrop är ett resultatobjekt som kan innehålla egenskapen propositioner som innehåller allt returnerat personaliseringsinnehåll.
 
@@ -330,7 +330,7 @@ adobe.target.getOffers({
 
 ### Använda Web SDK
 
-Du kan hämta formulärbaserade dispositionsbaserade aktiviteter med `sendEvent` och skicka mbox-namnen under `decisionScopes` alternativ. The `sendEvent` -kommandot returnerar ett löfte som löses med ett objekt som innehåller de begärda aktiviteterna/förslagen: Det är så här `propositions` ser ut så här:
+Du kan hämta formulärbaserade dispositionsbaserade aktiviteter med `sendEvent` och skicka mbox-namnen under `decisionScopes` alternativ. The `sendEvent` -kommandot returnerar ett löfte som löses med ett objekt som innehåller de begärda aktiviteterna/förslagen: Så här fungerar `propositions` ser ut så här:
 
 ```javascript
 [
@@ -447,7 +447,7 @@ alloy("sendEvent", {
 
 [Läs mer](../rendering-personalization-content.md#manually-rendering-content)
 
-## Tillämpa Target-aktiviteterna
+## Hur Target-aktiviteterna ska tillämpas
 
 ### Använda at.js
 
@@ -520,12 +520,12 @@ adobe.target.sendNotifications({
 
 Du kan spåra händelser och användaråtgärder genom att anropa `sendEvent` kommando, fylla i `_experience.decisioning.propositions` XDM-fältgrupp och inställning av `eventType` till ett av två värden:
 
-* `decisioning.propositionDisplay`: Signalerar målaktivitetens återgivning.
+* `decisioning.propositionDisplay`: Signalerar återgivningen av Target-aktiviteten.
 * `decisioning.propositionInteract`: Signalerar en användarinteraktion med aktiviteten, som ett musklick.
 
 The `_experience.decisioning.propositions` XDM-fältgruppen är en array med objekt. Egenskaperna för varje objekt hämtas från `result.propositions` som returneras i `sendEvent` kommando: `{ id, scope, scopeDetails }`
 
-**Exempel 1 - Spåra en `decisioning.propositionDisplay` händelse efter återgivning av en aktivitet**
+**Exempel 1 - Spåra `decisioning.propositionDisplay` händelse efter återgivning av en aktivitet**
 
 ```javascript
 alloy("sendEvent", {
@@ -584,7 +584,7 @@ alloy("sendEvent", {
 });
 ```
 
-**Exempel 2 - Spåra en `decisioning.propositionInteract` händelse efter att klickmätaren har inträffat**
+**Exempel 2 - Spåra `decisioning.propositionInteract` händelse när ett klickmått inträffar**
 
 ```javascript
 alloy("sendEvent", {
@@ -694,7 +694,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >Kontrollera att du använder Platform Web SDK version 2.6.0 eller senare.
 
-Svarstoken returneras som en del av `propositions` som exponeras i resultatet av `sendEvent` -kommando. Varje förslag innehåller en array med `items`och varje objekt har `meta` objekt ifyllda med svarstoken om de är aktiverade i gränssnittet för måladministratörer. [Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=en)
+Svarstoken returneras som en del av `propositions` som exponeras i resultatet av `sendEvent` -kommando. Varje förslag innehåller en array med `items`och varje objekt har en `meta` objekt ifyllda med svarstoken om de är aktiverade i gränssnittet för måladministratörer. [Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=en)
 
 **Exempel**
 
@@ -775,10 +775,10 @@ När du läser in ett asynkront Web SDK rekommenderar vi att följande utdrag ma
 
 Det finns två typer av A4T-loggning som stöds med at.js:
 
-* Loggning på klientsidan för Analytics
+* Loggning på klientsidan för analys
 * Analytics Server Side Logging
 
-#### Loggning på klientsidan för Analytics
+#### Loggning på klientsidan för analys
 
 **Exempel 1: Använda global inställning för mål**
 
@@ -850,7 +850,7 @@ Så här ser svarsnyttolasten ut:
 }
 ```
 
-Analysens nyttolast (`tnta` token) bör ingå i Analytics-träffen med [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
+Analysens nyttolast (`tnta` token) bör inkluderas i Analytics-träffen med [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
 
 #### Analytics Server Side Logging
 
@@ -865,10 +865,10 @@ Data flödar sedan enligt följande:
 
 Web SDK har även stöd för:
 
-* Loggning på klientsidan för Analytics
+* Loggning på klientsidan för analyser
 * Loggning på serversidan i Analytics
 
-#### Loggning på klientsidan för Analytics
+#### Loggning på klientsidan för analys
 
 Loggning på klientsidan för Analytics är aktiverat när Adobe Analytics är inaktiverat för den DataStream-konfigurationen.
 
@@ -1047,7 +1047,7 @@ adobe.target.getOffers({
 
 ### Använda Web SDK
 
-Om du vill skicka rekommendationsdata använder du `sendEvent` och ange `data.__adobe.target` egenskap, prefixera nyckelnamn med `entity`.
+Använd kommandot `sendEvent` och ange `data.__adobe.target` egenskap, prefixera nyckelnamn med `entity`.
 
 **Exempel**
 
@@ -1126,7 +1126,7 @@ window.targetPageParams = function() {
 
 ### Använda Web SDK
 
-Web SDK har stöd för tredjeparts-ID som mål. Det krävs dock några steg till. Innan vi ger oss in i lösningen bör vi prata lite om `identityMap`.
+Web SDK har stöd för tredjeparts-ID som mål. Det kräver dock några steg till. Innan vi ger oss in i lösningen bör vi prata lite om `identityMap`.
 Med identitetskartan kan kunderna skicka flera identiteter. Alla identiteter har ett namn. Varje namnutrymme kan ha en eller flera identiteter. En viss identitet kan markeras som primär.
 Med den här kunskapen i åtanke kan vi se vilka steg som krävs för att konfigurera web sdk så att det använder tredje parts-ID som mål.
 
@@ -1211,7 +1211,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-OBS! Vi rekommenderar att du alltid `mbox` i `mboxes` arrayen har ett eget index. Vanligtvis har den första mbox `index=0`, nästa `index=1`, osv.
+Obs! Vi rekommenderar att du `mbox` i `mboxes` arrayen har ett eget index. Vanligtvis har den första mbox `index=0`, nästa `index=1`, osv.
 
 ### Använda Web SDK
 
@@ -1225,7 +1225,7 @@ At.js visar dessa felsökningsfunktioner:
 
 * Inaktivera Mbox - Inaktivera Target från hämtning och återgivning för att kontrollera om sidan har brutits utan Target-interaktioner
 * Mbox Debug - at.js loggar varje åtgärd
-* Målspårning - med en mbox trace-token som genereras i Bullseye finns ett trace-objekt med information som ingår i beslutsprocessen under `window.___target_trace` object
+* Målspårning - med en mbox-spårningstoken som genereras i Bullseye finns ett trace-objekt med information som ingår i beslutsprocessen under `window.___target_trace` object
 
 Obs! Alla dessa felsökningsfunktioner är tillgängliga med förbättrade funktioner i [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
 
@@ -1233,7 +1233,7 @@ Obs! Alla dessa felsökningsfunktioner är tillgängliga med förbättrade funkt
 
 Du har flera felsökningsfunktioner när du använder Web SDK:
 
-* Använda [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
+* Använda [Säkerhet](../../../assurance/home.md)
 * [Felsökning för Web SDK har aktiverats](../../../edge/fundamentals/debugging.md)
 * Använd [Webbövervakningskopplingar för SDK](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
 * Använd [Adobe Experience Platform Debugger](../../../debugger/home.md)

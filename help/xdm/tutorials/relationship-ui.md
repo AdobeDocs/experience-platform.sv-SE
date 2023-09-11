@@ -5,9 +5,9 @@ title: Definiera en relation mellan två scheman med Schemaredigeraren
 description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 8b5c1776804bbacad5c3d72dd48c1716380cca79
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1140'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,10 @@ Möjligheten att förstå relationen mellan era kunder och deras interaktioner m
 
 När schemarelationer kan härledas genom användning av unionsschemat och [!DNL Real-Time Customer Profile]gäller detta endast scheman som delar samma klass. För att upprätta en relation mellan två scheman som tillhör olika klasser måste ett dedikerat relationsfält läggas till i ett källschema, som refererar till identiteten för det andra relaterade schemat.
 
+>[!NOTE]
+>
+>Om både käll- och målschemat tillhör samma klass bör ett dedikerat relationsfält **not** användas. I det här fallet använder du gränssnittet för unionsschemat för att se relationen. Instruktioner om hur du gör detta finns i [visa relationer](../../profile/ui/union-schema.md#view-relationships) i gränssnittsguiden för unionsschemat.
+
 I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i [!DNL Experience Platform] användargränssnitt. Anvisningar om hur du definierar schemarelationer med API:t finns i självstudiekursen om [definiera en relation med API:t för schemaregister](relationship-api.md).
 
 >[!NOTE]
@@ -53,7 +57,7 @@ Du förväntas redan ha skapat de två scheman som ska definieras i relationen. 
 
 >[!IMPORTANT]
 >
->För att upprätta en relation måste båda scheman ha definierade primära identiteter och vara aktiverade för [!DNL Real-Time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-ui.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med att konfigurera dina scheman därefter.
+>För att upprätta en relation måste båda scheman ha definierade primära identiteter och aktiveras för [!DNL Real-Time Customer Profile]. Se avsnittet om [aktivera ett schema för användning i profil](./create-schema-ui.md#profile) i självstudiekursen för att skapa scheman om du behöver hjälp med hur du konfigurerar dina scheman därefter.
 
 Schemarelationer representeras av ett dedikerat fält i en **källschema** som pekar på ett annat fält i ett **referensschema**. I följande steg: &quot;[!DNL Loyalty Members]&quot; blir källschemat, medan &quot;[!DNL Hotels]&quot; fungerar som referensschema.
 
@@ -79,7 +83,7 @@ Referensschemat &quot;[!DNL Hotels]&quot; är baserad på en anpassad &quot;[!DN
 
 >[!NOTE]
 >
->Det här steget krävs bara om källschemat inte har ett dedikerat fält av strängtyp som ska användas som pekare till referensschemats primära identitet. Om fältet redan är definierat i källschemat går du vidare till nästa steg i [definiera ett relationsfält](#relationship-field).
+>Det här steget krävs bara om källschemat inte har ett dedikerat fält av strängtyp som ska användas som pekare till referensschemats primära identitet. Om det här fältet redan är definierat i källschemat går du vidare till nästa steg i [definiera ett relationsfält](#relationship-field).
 
 För att kunna definiera en relation mellan två scheman måste källschemat ha ett dedikerat fält som anger referensschemats primära identitet. Du kan lägga till det här fältet i källschemat genom att skapa en ny schemafältgrupp eller utöka en befintlig.
 
@@ -111,7 +115,7 @@ Välj `preferredHotel` på arbetsytan och rulla sedan nedåt under **[!UICONTROL
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
-Välj listrutan för **[!UICONTROL Reference schema]** och välj referensschema för relationen (&quot;[!DNL Hotels]&quot; i det här exemplet). Under **[!UICONTROL Reference identity namespace]** markerar du namnområdet för referensschemats identitetsfält (i det här fallet &quot;[!DNL Hotel ID]&quot;). Välj **[!UICONTROL Apply]** när du är klar.
+Välj listrutan för **[!UICONTROL Reference schema]** och välj referensschema för relationen (&quot;[!DNL Hotels]&quot; i detta exempel). Under **[!UICONTROL Reference identity namespace]** markerar du namnområdet för referensschemats identitetsfält (i det här fallet &quot;[!DNL Hotel ID]&quot;). Välj **[!UICONTROL Apply]** när du är klar.
 
 ![](../images/tutorials/relationship/reference-schema-id-namespace.png)
 

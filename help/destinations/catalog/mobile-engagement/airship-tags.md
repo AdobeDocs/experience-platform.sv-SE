@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '950'
 ht-degree: 0%
 
 ---
@@ -38,13 +38,12 @@ Innan du kan skicka dina Adobe Experience Platform-målgrupper till [!DNL Airshi
 
 ## Målgrupper {#supported-audiences}
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Extern målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

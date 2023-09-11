@@ -1,23 +1,23 @@
 ---
-keywords: målinriktad personalisering, destination, mål för upplevelseplattform;adobe target destination;
-title: Adobe Target-anslutning
+keywords: målanpassning; mål; mål för upplevelseplattform; mål för upplevelseplattform; adobe target destination;
+title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 2005238d2e06ed91fd4b0835be38a4b7b8ecf3b4
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
 
-# Adobe Target-anslutning {#adobe-target-connection}
+# Adobe Target {#adobe-target-connection}
 
 ## Destinationsändringslogg {#changelog}
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| Juni 2023 | Funktioner och dokumentationsuppdatering | Från och med juni 2023 kan du välja den Adobe Target-arbetsyta som du vill dela målgrupper med när du konfigurerar en ny Adobe Target-målanslutning. Se [anslutningsparametrar](#parameters) för mer information. Se även självstudiekursen om [konfigurera arbetsytor](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) i Adobe Target om du vill ha mer information om arbetsytor. |
-| Maj 2023 | Funktioner och dokumentationsuppdatering | Från om med maj 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
+| Juni 2023 | Funktioner och dokumentation | Från och med juni 2023 kan du välja den Adobe Target-arbetsyta som du vill dela målgrupper med när du konfigurerar en ny Adobe Target-målanslutning. Se [anslutningsparametrar](#parameters) för mer information. Se även självstudiekursen om [konfigurera arbetsytor](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) i Adobe Target om du vill ha mer information om arbetsytor. |
+| Maj 2023 | Funktioner och dokumentation | Från maj 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
 
 {style="table-layout:auto"}
 
@@ -33,7 +33,7 @@ Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-an
 
 ## Förutsättningar {#prerequisites}
 
-### Datastream-ID {#datastream-id}
+### Dataström-ID {#datastream-id}
 
 När Adobe Target-anslutningen konfigureras till [använd ett datastream-ID](#parameters)måste du ha [Adobe Experience Platform Web SDK](../../../edge/home.md) implementerat.
 
@@ -41,9 +41,9 @@ Om du konfigurerar Adobe Target-anslutningen utan att använda ett datastream-ID
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. För personalisering på samma sida och nästa sida krävs att du använder ett dataström-ID när du konfigurerar Adobe Target-anslutningen.
+>Innan du skapar [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. För personalisering på samma sida och nästa sida krävs att du använder ett datastream-ID när du konfigurerar Adobe Target-anslutningen.
 
-### Krav i Adobe Target {#prerequisites-in-adobe-target}
+### Förutsättningar i Adobe Target {#prerequisites-in-adobe-target}
 
 I Adobe Target ska du kontrollera att din användare har:
 
@@ -51,6 +51,17 @@ I Adobe Target ska du kontrollera att din användare har:
 * The **Godkännare** [roll](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=en#roles-and-permissions).
 
 Läs mer om att bevilja behörigheter för [Mål Premium](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=en#section_8C425E43E5DD4111BBFC734A2B7ABC80) och for [Målstandard](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html?lang=en#roles-permissions).
+
+## Målgrupper {#supported-audiences}
+
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+
+{style="table-layout:auto"}
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -73,7 +84,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
@@ -91,14 +102,14 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **Namn**: Fyll i det önskade namnet för det här målet.
 * **Beskrivning**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
-* **Datastream-ID**: Detta avgör i vilken datainsamling som målgrupperna inkluderas. I den nedrullningsbara menyn visas endast datastreams som har tjänsterna Target och Adobe Experience Platform aktiverade. Se [konfigurera ett datastream](../../../datastreams/configure.md#aep) för detaljerad information om hur du konfigurerar ett datastam för Adobe Experience Platform och Adobe Target.
+* **Dataström-ID**: Detta avgör i vilken datainsamling som målgrupperna inkluderas. I den nedrullningsbara menyn visas endast datastreams som har tjänsterna Target och Adobe Experience Platform aktiverade. Se [konfigurera ett datastream](../../../datastreams/configure.md#aep) för detaljerad information om hur du konfigurerar ett datastam för Adobe Experience Platform och Adobe Target.
    * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](../../../edge/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Se tabellen nedan för mer information.
 
   | Implementering av Adobe Target (utan Web SDK) | Web SDK-implementering |
   |---|---|
-  | <ul><li>Datastream krävs inte. Adobe Target kan driftsättas via [at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=en), [serversida](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=en#server-side-implementation), eller [hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=en#hybrid-implementation) implementeringsmetoder.</li><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds inte.</li><li>Du kan bara dela målgrupper och profilattribut till Adobe Target-anslutningen för *standardproduktionssandlåda*.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> |
+  | <ul><li>Datastream krävs inte. Adobe Target kan driftsättas via [at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=en), [server-side](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=en#server-side-implementation), eller [hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=en#hybrid-implementation) implementeringsmetoder.</li><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds inte.</li><li>Du kan bara dela målgrupper och profilattribut till Adobe Target-anslutningen för *standardproduktionssandlåda*.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> |
 
-* **Arbetsyta**: Välj Adobe Target [arbetsyta](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) till vilka målgrupper ska delas. Du kan välja en arbetsyta för varje Adobe Target-anslutning. Vid aktivering dirigeras målgrupper till den valda arbetsytan enligt tillämpliga [Experience Platform-etiketter för dataanvändning](../../../data-governance/labels/overview.md).
+* **Arbetsyta**: Välj Adobe Target [arbetsyta](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=en) till vilka målgrupper ska delas. Du kan välja en arbetsyta för varje Adobe Target-anslutning. Vid aktivering dirigeras målgrupper till den valda arbetsytan enligt tillämpliga [Experience Platform-dataanvändningsetiketter](../../../data-governance/labels/overview.md).
 
 >[!NOTE]
 >
@@ -108,7 +119,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -116,7 +127,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera målgrupper för att kanalisera personaliseringsmål](../../ui/activate-edge-personalization-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

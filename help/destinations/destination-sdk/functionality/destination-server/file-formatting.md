@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du konfigurerar filformateringsalternativ för filbaserade mål som skapats med Adobe Experience Platform Destination SDK via slutpunkten "/destination-servers".
 title: Filformateringskonfiguration
-source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
+source-git-commit: 511e02f92b7016a7f07dd3808b39594da9438d15
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1004'
 ht-degree: 2%
 
 ---
@@ -178,7 +178,7 @@ Nedan visas en fullständig referens över alla tillgängliga filformateringsalt
 | `templatingStrategy` | Obligatoriskt | För varje filformateringsalternativ som du konfigurerar måste du lägga till parametern `templatingStrategy`, som kan ha två värden: <br><ul><li>`NONE`: använd det här värdet om du inte planerar att låta användarna välja mellan olika värden för en konfiguration. Se [den här konfigurationen](#file-configuration-templating-none) till exempel där filformateringsalternativen är fasta.</li><li>`PEBBLE_V1`: använd det här värdet om du vill att användarna ska kunna välja mellan olika värden för en konfiguration. I det här fallet måste du även skapa ett motsvarande kunddatafält i `/destination` slutpunktskonfiguration för att visa de olika alternativen för användarna i användargränssnittet. Se [den här konfigurationen](#file-configuration-templating-pebble) till exempel där användare kan välja mellan olika värden för filformateringsalternativ.</li></ul> | – | – | – |
 | `compression.value` | Valfritt | Komprimeringskodek som ska användas när data sparas i en fil. Värden som stöds: `none`, `bzip2`, `gzip`, `lz4`och `snappy`. | `none` | – | – |
 | `fileType.value` | Valfritt | Anger utdatafilens format. Värden som stöds: `csv`, `parquet`och `json`. | `csv` | – | – |
-| `csvOptions.quote.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger ett enskilt tecken som används för att undvika citattecken där avgränsaren kan vara en del av värdet. | `null` | – | – |
+| `csvOptions.quote.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger ett enskilt tecken som används för att undvika citattecken där avgränsaren kan vara en del av värdet. | `null` | Exempel på standardvärde: `quote.value: "u0000"` —> `male,NULJohn,LastNameNUL` | Exempel: `quote.value: "\""` —> `male,"John,LastName"` |
 | `csvOptions.quoteAll.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger om alla värden alltid ska omslutas av citattecken. Som standard är det bara escape-värden som innehåller ett citattecken. | `false` | `quoteAll`:`false` --> `male,John,"TestLastName"` | `quoteAll`:`true` -->`"male","John","TestLastName"` |
 | `csvOptions.delimiter.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Anger en avgränsare för varje fält och värde. Avgränsaren kan vara ett eller flera tecken. | `,` | `delimiter`:`,` --> `comma-separated values"` | `delimiter`:`\t` --> `tab-separated values` |
 | `csvOptions.escape.value` | Valfritt | *Endast för`"fileType.value": "csv"`*. Ställer in ett enskilt tecken som används för att undvika citattecken inuti ett redan citattecken. | `\` | `"escape"`:`"\\"` --> `male,John,"Test,\"LastName5"` | `"escape"`:`"'"` --> `male,John,"Test,'''"LastName5"` |

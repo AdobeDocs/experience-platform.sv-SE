@@ -5,9 +5,9 @@ description: Följ den här självstudiekursen för att lära dig hur du använd
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
 hide: true
 hidefromtoc: true
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c83070d85177c72b2e4c4ae472b89c08c20ee743
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1683'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ Adobe Experience Platform stöder import av externa användare, som sedan kan an
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [Segmenteringstjänst](../home.md): Gör att ni kan bygga målgrupper utifrån kundprofildata i realtid.
+- [Segmenteringstjänst](../home.md): Används för att skapa målgrupper utifrån kundprofildata i realtid.
 - [Kundprofil i realtid](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [Datauppsättningar](../../catalog/datasets/overview.md): Konstruktionen för lagring och hantering av databeständighet i Experience Platform.
@@ -46,7 +46,7 @@ Segmentdefinitioner innehåller information som namn, beskrivning, uttryck (om t
 
 Det första steget för att använda externa målgrupper är att skapa ett identitetsnamnutrymme. Med identitetsnamnutrymmen kan plattformen associera var en målgrupp kommer ifrån.
 
-Följ instruktionerna i [guide för identitetsnamnutrymme](../../identity-service/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
+Följ instruktionerna i dialogrutan för att skapa ett identitetsnamnutrymme [guide för identitetsnamnutrymme](../../identity-service/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
 
 ![Identifieraren för icke-människa markeras på spärrformen för identitetsnamnutrymmet.](../images/tutorials/external-audiences/identity-namespace-info.png)
 
@@ -54,11 +54,11 @@ Följ instruktionerna i [guide för identitetsnamnutrymme](../../identity-servic
 
 När du har skapat ett identitetsnamnutrymme måste du skapa ett nytt schema för det segment som du ska skapa.
 
-Börja med att välja **[!UICONTROL Schemas]** i det vänstra navigeringsfältet, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Här väljer du **[!UICONTROL Browse]** om du vill se ett fullständigt urval av tillgängliga schematyper.
+Börja med att välja **[!UICONTROL Schemas]** till vänster navigeringsfält, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Välj **[!UICONTROL Browse]** om du vill se ett fullständigt urval av tillgängliga schematyper.
 
 ![Både Skapa schema och Bläddra är markerade.](../images/tutorials/external-audiences/create-schema-browse.png)
 
-Eftersom du skapar en segmentdefinition, som är en fördefinierad klass, väljer du **[!UICONTROL Use existing class]**. Nu väljer du **[!UICONTROL Segment definition]** klass, följt av **[!UICONTROL Assign class]**.
+Eftersom du skapar en segmentdefinition, som är en fördefinierad klass, väljer du **[!UICONTROL Use existing class]**. Välj **[!UICONTROL Segment definition]** klass, följt av **[!UICONTROL Assign class]**.
 
 ![Segmentdefinitionsklassen är markerad.](../images/tutorials/external-audiences/assign-class.png)
 
@@ -90,13 +90,13 @@ När datauppsättningen är aktiverad kan data nu skickas till plattformen antin
 
 ### Infoga data med en batchanslutning
 
-Om du vill skapa en batchanslutning kan du följa instruktionerna i det generiska [användargränssnittshandbok för lokal filöverföring](../../sources/tutorials/ui/create/local-system/local-file-upload.md). En fullständig lista över tillgängliga källor som du kan använda importdata med finns i [källöversikt](../../sources/home.md).
+Om du vill skapa en batchanslutning kan du följa instruktionerna i det allmänna [användargränssnittshandbok för lokal filöverföring](../../sources/tutorials/ui/create/local-system/local-file-upload.md). En fullständig lista över tillgängliga källor som du kan använda importdata med finns i [källöversikt](../../sources/home.md).
 
 ### Importera data via en direktuppspelningsanslutning
 
 Om du vill skapa en direktuppspelningsanslutning följer du instruktionerna i [API, genomgång](../../sources/tutorials/api/create/streaming/http.md) eller [Självstudiekurs om användargränssnitt](../../sources/tutorials/ui/create/streaming/http.md).
 
-När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om att direktuppspela postdata](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om dataströmmar](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
 ![Slutpunkten för direktuppspelning för direktuppspelningsanslutningen markeras på sidan med källinformation.](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
@@ -146,7 +146,7 @@ Ett exempel på den externa målgruppens nyttolastmetadata visas nedan:
 | -------- | ----------- |
 | `schemaRef` | Schemat **måste** hänvisar till det tidigare skapade schemat för segmentmetadata. |
 | `datasetId` | Datauppsättnings-ID **måste** referera till den tidigare skapade datauppsättningen för det schema du just skapade. |
-| `xdmEntity._id` | ID:t **måste** referera till samma segment-ID som du använder som extern målgrupp. |
+| `xdmEntity._id` | ID:t **måste** referera till samma segment-ID som du använder som din externa målgrupp. |
 | `xdmEntity.identityMap` | Detta avsnitt **måste** innehåller den identitetsetikett som användes när det namnutrymme som skapades tidigare skapades. |
 | `{IDENTITY_NAMESPACE}` | Detta är etiketten för det identitetsnamnutrymme som skapades tidigare. Om du till exempel anropar ditt identitetsnamnutrymme &quot;externalAudience&quot;, använder du det som nyckel för arrayen. |
 | `segmentName` | Namnet på det segment som du vill att den externa målgruppen ska segmenteras av. |
@@ -167,11 +167,11 @@ Förutom att använda importerade externa målgruppsmetadata och använda dem f�
 
 ### Ställ in ett externt målschema för segmentmedlemskap
 
-Börja med att välja **[!UICONTROL Schemas]** i det vänstra navigeringsfältet, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Här väljer du **[!UICONTROL XDM Individual Profile]**.
+Börja med att välja **[!UICONTROL Schemas]** till vänster navigeringsfält, följt av **[!UICONTROL Create schema]** i det övre högra hörnet av arbetsytan Scheman. Välj **[!UICONTROL XDM Individual Profile]**.
 
 ![Området XDM Individual Profile är markerat.](../images/tutorials/external-audiences/create-schema-profile.png)
 
-Nu när schemat har skapats måste du lägga till fältgruppen för segmentmedlemskap som en del av schemat. Välj [!UICONTROL Segment Membership Details], följt av [!UICONTROL Add field groups].
+Nu när schemat har skapats måste du lägga till fältgruppen för segmentmedlemskap som en del av schemat. Gör detta genom att välja [!UICONTROL Segment Membership Details], följt av [!UICONTROL Add field groups].
 
 ![Fältgruppen Information om segmentmedlemskap är markerad.](../images/tutorials/external-audiences/segment-membership-details.png)
 
@@ -197,13 +197,13 @@ När datauppsättningen är aktiverad kan data nu skickas till plattformen antin
 
 ### Infoga data med en batchanslutning
 
-Om du vill skapa en batchanslutning kan du följa instruktionerna i det generiska [användargränssnittshandbok för lokal filöverföring](../../sources/tutorials/ui/create/local-system/local-file-upload.md). En fullständig lista över tillgängliga källor som du kan använda importdata med finns i [källöversikt](../../sources/home.md).
+Om du vill skapa en batchanslutning kan du följa instruktionerna i det allmänna [användargränssnittshandbok för lokal filöverföring](../../sources/tutorials/ui/create/local-system/local-file-upload.md). En fullständig lista över tillgängliga källor som du kan använda importdata med finns i [källöversikt](../../sources/home.md).
 
 ### Importera data via en direktuppspelningsanslutning
 
 Om du vill skapa en direktuppspelningsanslutning följer du instruktionerna i [API, genomgång](../../sources/tutorials/api/create/streaming/http.md) eller [Självstudiekurs om användargränssnitt](../../sources/tutorials/ui/create/streaming/http.md).
 
-När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om att direktuppspela postdata](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+När du har skapat en direktuppspelningsanslutning får du tillgång till din unika slutpunkt för direktuppspelning som du kan skicka data till. Läs mer om hur du skickar data till dessa slutpunkter i [självstudiekurs om dataströmmar](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
 ![Slutpunkten för direktuppspelning för direktuppspelningsanslutningen markeras på sidan med källinformation.](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
@@ -261,8 +261,8 @@ Ett exempel på nyttolasten för det externa målgruppsmedlemskapet visas nedan:
 | `datasetId` | Datauppsättnings-ID **måste** hänvisa till den tidigare skapade datauppsättningen för det medlemsschema som du just skapade. |
 | `xdmEntity._id` | Ett lämpligt ID som används för att unikt identifiera posten i datauppsättningen. |
 | `{TENANT_NAME}.identities` | Det här avsnittet används för att koppla fältgruppen för anpassade identiteter till de användare som du tidigare importerat. |
-| `segmentMembership.{IDENTITY_NAMESPACE}` | Detta är etiketten för det anpassade identitetsnamnutrymmet som skapades tidigare. Om du till exempel anropar ditt identitetsnamnutrymme &quot;externalAudience&quot;, använder du det som nyckel för arrayen. |
+| `segmentMembership.{IDENTITY_NAMESPACE}` | Det här är etiketten för det anpassade identitetsnamnutrymmet som skapades tidigare. Om du till exempel anropar ditt identitetsnamnutrymme &quot;externalAudience&quot;, använder du det som nyckel för arrayen. |
 
 >[!NOTE]
 >
->Som standard behålls medlemskap för externa målgrupper endast i 30 dagar. Om du vill behålla dem längre än 30 dagar använder du `validUntil` när ni hämtar in målgruppsdata. Mer information finns i guiden [Schemafältgrupper för detaljer om segmentmedlemskap](../../xdm/field-groups/profile/segmentation.md).
+>Som standard tas externa medlemskap bort efter 30 dagar. För att förhindra att de tas bort och sparas i mer än 30 dagar använder du `validUntil` när ni hämtar in målgruppsdata. Mer information finns i guiden [Schemafältgrupper för detaljer om segmentmedlemskap](../../xdm/field-groups/profile/segmentation.md).

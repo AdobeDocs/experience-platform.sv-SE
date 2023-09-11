@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 4ff003b8f4e98fa7af7f12271aa990c8e5f49f14
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '4103'
+source-wordcount: '4104'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Uppgifter avsedda att användas i [!DNL Experience Platform] är grupperad i tv�
 
 Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskrivs mer ingående senare i det här dokumentet.
 
-Scheman för både post- och tidsserier innehåller en karta över identiteter (`xdm:identityMap`). Det här fältet innehåller identitetsbeteckningen för ett ämne, som har ritats från fält markerade som &quot;Identitet&quot; enligt beskrivningen i nästa avsnitt.
+Scheman för både post- och tidsserier innehåller en karta över identiteter (`xdm:identityMap`). Det här fältet innehåller identitetsbeteckningen för ett ämne, som har ritats från fält som markerats som &quot;Identitet&quot; enligt beskrivningen i nästa avsnitt.
 
 ### [!UICONTROL Identity] {#identity}
 
@@ -59,14 +59,14 @@ Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data
 
 Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data har matats in infogas uppgifterna i dessa fält i[!UICONTROL Identity Graph]&quot; för den där individen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] för att ge en sammanslagen bild av varje enskild kund.
 
-Fält som vanligen markeras som &quot;[!UICONTROL Identity]&quot; inkluderar: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Du bör också ta hänsyn till unika identifierare som är specifika för din organisation, eftersom de kan vara bra &quot;[!UICONTROL Identity]även fält.
+Fält som vanligen markeras som &quot;[!UICONTROL Identity]&quot; inkludera: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Du bör också överväga unika identifierare som är specifika för din organisation, eftersom de kan vara bra &quot;[!UICONTROL Identity]även fält.
 
 Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Se översikten på [Adobe Experience Platform Identity Service](../../identity-service/home.md) om du vill veta mer om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder.
 
 Det finns två sätt att skicka identitetsdata till plattformen:
 
 1. Lägga till identitetsbeskrivningar till enskilda fält, antingen via [Gränssnittet för schemaredigeraren](../ui/fields/identity.md) eller med [API för schemaregister](../api/descriptors.md#create)
-1. Använda en [`identityMap` fält](#identityMap)
+1. Använda [`identityMap` fält](#identityMap)
 
 #### `identityMap` {#identityMap}
 
@@ -78,7 +78,7 @@ Den största nackdelen med att använda `identityMap` är att identiteter blir i
 >
 >Ett schema som använder `identityMap` kan användas som ett källschema i en relation, men kan inte användas som ett referensschema. Detta beror på att alla referensscheman måste ha en synlig identitet som kan mappas i ett referensfält i källschemat. Se användargränssnittets guide på [relationer](../tutorials/relationship-ui.md) Mer information om kraven för käll- och referensscheman.
 
-Men identitetskartor kan vara särskilt användbara om du samlar in data från källor som lagrar identiteter tillsammans (till exempel [!DNL Airship] eller Adobe Audience Manager) eller när det finns ett varierande antal identiteter för ett schema. Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/).
+Men identitetskartor kan vara särskilt användbara om du samlar in data från källor som lagrar identiteter tillsammans (till exempel [!DNL Airship] eller Adobe Audience Manager) eller när det finns ett varierande antal identiteter för ett schema. Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
 
 Ett exempel på en enkel identitetskarta skulle se ut så här:
 
@@ -141,7 +141,7 @@ Enskilda schemafält kan vara [markerat som obligatoriskt](../ui/fields/required
 >
 >Oavsett om ett schemafält krävs eller inte accepterar inte plattformen `null` eller tomma värden för inkapslade fält. Om det inte finns något värde för ett visst fält i en post eller händelse, ska nyckeln för det fältet uteslutas från inmatningsnyttolasten.
 
-#### Ange obligatoriska fält efter intag {#post-ingestion-required-fields}
+#### Ange fält som obligatoriska efter intag {#post-ingestion-required-fields}
 
 Om ett fält har använts för att importera data och inte ursprungligen ställdes in som nödvändigt, kan det fältet ha ett null-värde för vissa poster. Om du anger det här fältet som obligatoriskt för postinmatning måste alla framtida poster innehålla ett värde för det här fältet, även om historiska poster kan vara null.
 
@@ -151,7 +151,7 @@ Tänk på följande när du ställer in ett tidigare valfritt fält efter behov:
 1. Om fältet deltar i [Kundprofil i realtid](../../profile/home.md) och du exporterar data innan du ställer in dem efter behov, kan det vara null för vissa profiler.
 1. Du kan använda API:t för schemaregister för att visa en tidsstämplad ändringslogg för alla XDM-resurser i plattformen, inklusive nya obligatoriska fält. Se guiden på [slutpunkt för granskningslogg](../api/audit-log.md) för mer information.
 
-### Scheman och datainhämtning
+### Scheman och datainmatning
 
 För att kunna importera data till [!DNL Experience Platform]måste en datauppsättning först skapas. Datauppsättningar är byggstenarna för dataomvandling och -spårning för [[!DNL Catalog Service]](../../catalog/home.md)och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Se översikten på [Adobe Experience Platform datainmatning](../../ingestion/home.md) för mer information.
 
@@ -161,7 +161,7 @@ För att kunna importera data till [!DNL Experience Platform]måste en dataupps�
 
 Scheman består av följande formel:
 
-**Klass + schemafältgrupp&amp;ast; = XDM-schema**
+**Klass + schemafältgrupp; = XDM-schema**
 
 &amp;ast;Ett schema består av en klass och noll eller flera schemafältgrupper. Det innebär att du kan skapa ett datauppsättningsschema utan att använda fältgrupper alls.
 
@@ -202,7 +202,7 @@ Fältgrupper definierar vilka klasser de är kompatibla med baserat på beteende
 
 [!DNL Experience Platform] innehåller många standardfältgrupper för Adobe, samtidigt som leverantörer kan definiera fältgrupper för sina användare, och enskilda användare kan definiera fältgrupper för sina egna specifika koncept.
 
-Om du till exempel vill hämta information som &quot;[!UICONTROL First Name]&quot; och &quot;[!UICONTROL Home Address]&quot; för dina &quot;[!UICONTROL Loyalty Members]&quot;schema, du skulle kunna använda standardfältgrupper som definierar dessa vanliga begrepp. Koncept som är mer specifika för din organisation (t.ex. kundens lojalitetsprogram eller produktattribut) som kanske inte omfattas av standardfältgrupper. I det här fallet måste du definiera en egen fältgrupp för att kunna hämta informationen.
+Om du till exempel vill hämta information som &quot;[!UICONTROL First Name]och &quot;[!UICONTROL Home Address]&quot; för dina &quot;[!UICONTROL Loyalty Members]&quot;schema, du skulle kunna använda standardfältgrupper som definierar dessa vanliga begrepp. Begrepp som är mer specifika för din organisation (t.ex. kundens kundlojalitetsprogram eller produktattribut) som kanske inte omfattas av standardfältgrupper. I det här fallet måste du definiera en egen fältgrupp för att kunna hämta informationen.
 
 >[!NOTE]
 >
@@ -222,7 +222,7 @@ Den senaste listan över tillgängliga standardfältgrupper i XDM finns i [offic
 
 Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera underfält. De kan definiera flera underfält på samma sätt som fältgrupper, men den största skillnaden är att datatyper kan inkluderas var som helst i ett schema genom att lägga till dem som&quot;datatyp&quot; för ett fält. Fältgrupper är bara kompatibla med vissa klasser, men datatyper kan inkluderas i alla överordnade klasser eller fältgrupper.
 
-[!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [!DNL Schema Registry] självstudiekurser där det blir tydligare när du går igenom stegen för att definiera datatyper.
+[!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [!DNL Schema Registry] självstudiekurser, där det blir tydligare när du går igenom stegen för att definiera datatyper.
 
 I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. Ett av fälten i [!UICONTROL Demographic Details] fältgruppen använder &quot;[!UICONTROL Object]&quot;, datatyp, enligt texten efter lodstreck (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
 
@@ -263,7 +263,7 @@ Giltiga intervall för dessa skalära typer kan begränsas ytterligare till viss
 
 Scheman representerar format och struktur för data som ska hämtas in i [!DNL Platform]och byggs med en kompositionsmodell. Som tidigare nämnts består dessa scheman av en klass och noll eller flera fältgrupper som är kompatibla med den klassen.
 
-Ett schema som beskriver inköp som görs i en butik kan till exempel kallas[!UICONTROL Store Transactions]&quot;. Schemat implementerar [!DNL XDM ExperienceEvent] klass kombinerad med standard [!UICONTROL Commerce] fältgrupp och användardefinierad [!UICONTROL Product Info] fältgrupp.
+Ett schema som beskriver inköp som görs i en butik kan till exempel kallas[!UICONTROL Store Transactions]&quot;. Schemat implementerar [!DNL XDM ExperienceEvent] klass kombinerad med standard [!UICONTROL Commerce] fältgrupp och en användardefinierad [!UICONTROL Product Info] fältgrupp.
 
 Ett annat schema som spårar webbplatstrafiken kan kallas[!UICONTROL Web Visits]&quot;. Den implementerar även [!DNL XDM ExperienceEvent] -klassen, men den här tiden kombinerar standarden [!UICONTROL Web] fältgrupp.
 
@@ -301,7 +301,7 @@ Om du vill granska strukturen för de två grundläggande XDM-klasserna och dera
 * [[!DNL XDM Individual Profile]](../classes/individual-profile.md)
 * [[!DNL XDM ExperienceEvent]](../classes/experienceevent.md)
 
-The [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och tillhandahåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga. The [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners och klasser, fältgrupper, datatyper och scheman som har komponerats av medlemmar i organisationen.
+The [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och tillhandahåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga. The [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners och klasser, fältgrupper, datatyper och scheman som har disponerats av medlemmar i organisationen.
 
 För att börja komponera schemat med användargränssnittet följer du med [Schemaredigeraren, genomgång](../tutorials/create-schema-ui.md) att skapa schemat &quot;Lojalitetsmedlemmar&quot; som omnämns i hela det här dokumentet.
 
@@ -313,7 +313,7 @@ Följande avsnitt innehåller ytterligare information om principerna för schema
 
 ### Relationstabeller jämfört med inbäddade objekt {#embedded}
 
-När du arbetar med relationsdatabaser omfattar de bästa metoderna att normalisera data eller att ta en enhet och dela upp den i separata delar som sedan visas i flera tabeller. För att kunna läsa data som helhet eller uppdatera enheten måste läs- och skrivåtgärder utföras i många enskilda tabeller med JOIN.
+När du arbetar med relationsdatabaser omfattar de effektivaste strategierna att normalisera data eller att ta en enhet och dela upp den i separata delar som sedan visas i flera tabeller. För att kunna läsa data som helhet eller uppdatera enheten måste läs- och skrivåtgärder utföras i många enskilda tabeller med JOIN.
 
 Genom att använda inbäddade objekt kan XDM-scheman representera komplexa data direkt och lagra dem i självständiga dokument med en hierarkisk struktur. En av de största fördelarna med den här strukturen är att den gör det möjligt att fråga efter data utan att behöva rekonstruera enheten med dyrbara kopplingar till flera deformerade tabeller. Det finns inga hårda begränsningar för hur många nivåer din schemahierarki kan vara.
 
@@ -355,7 +355,7 @@ Fördelarna och nackdelarna med att använda frihandsfält över objekt visas ne
 
 **Proffs**:
 
-* Frihandsfält skapas direkt under schemats rotobjekt (`_tenantId`), öka synligheten.
+* Frihandsfält skapas direkt under schemats rotobjekt (`_tenantId`), vilket ökar synligheten.
 * Referenssträngar för frihandsfält brukar vara kortare när frågetjänsten används.
 
 **Kon**:

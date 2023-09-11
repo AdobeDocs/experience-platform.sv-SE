@@ -5,19 +5,18 @@ user-guide-title: Dokumentation om Edge Network Server-API
 breadcrumb-title: Dokumentation om Edge Network Server-API
 user-guide-description: Använd Edge Network Server-API:t för datainsamling, personanpassning, annonsering och marknadsföring med Experience Cloud eller Experience Platform Edge-tjänster.
 feature: Data Collection
-source-git-commit: be073dcc62f0cf5b94f94082348442e2526604a7
+source-git-commit: ef77a14eb40db490682c4615d1cbafb90c7b42c2
 workflow-type: tm+mt
-source-wordcount: '108'
-ht-degree: 37%
+source-wordcount: '99'
+ht-degree: 42%
 
 ---
 
 
 # Dokumentation om Edge Network Server-API {#edge-network-server-api}
 
-
-* [API-översikt för Edge Network Server](overview.md)
-* [Prestandaskydd för Edge Network Server API](guardrails.md)
+* [Översikt](overview.md)
+* [Prestandaskydd](guardrails.md)
 * [Autentisering](authentication.md)
 * Datainsamling {#data-collection}
    * [Datainsamling för en händelse](interactive-data-collection.md)

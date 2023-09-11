@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med Adobe Experience Platform API:er
 description: Adobe Experience Platform tillhandahåller API-tjänster som är nära kopplade till varandra. Den här handboken innehåller information om tillgängliga tjänster, nödvändiga huvuden för CRUD-åtgärder, felmeddelanden, Postman-samlingar och exempel på API-anrop.
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: c728d63c22593ca56999dd0bb6679dea7de0e00a
 workflow-type: tm+mt
-source-wordcount: '1379'
+source-wordcount: '1412'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Alla förfrågningar med en nyttolast i begärandetexten (t.ex. samtal av typen 
 
 Adobe Experience Platform API:er använder flera underliggande tekniker och syntaxer som är viktiga att förstå för att effektivt hantera plattformsresurser.
 
-Om du vill veta mer om de underliggande API-teknikerna som används i Platform, inklusive exempel på JSON-schemaobjekt, kan du besöka [Grundläggande om Experience Platform API](api-fundamentals.md) guide.
+Om du vill veta mer om de underliggande API-teknikerna som används i Platform, inklusive exempel på JSON-schemaobjekt, kan du gå till [Grundläggande om Experience Platform API](api-fundamentals.md) guide.
 
 ## Postman-samlingar för Experience Platform API:er
 
@@ -120,13 +120,14 @@ Mer information om specifika slutpunkter i plattforms-API:er, inklusive obligato
 | API-guide | Beskrivning |
 | --- | --- |
 | [[!DNL Access Control] API-guide](.././access-control/api/getting-started.md) | The [!DNL Access Control] API-slutpunkten kan hämta aktuella principer som gäller för en användare för angivna resurser inom en angiven sandlåda. Alla andra åtkomstkontrollfunktioner tillhandahålls via [Adobe Admin Console](https://adminconsole.adobe.com/). |
-| [API-guide för gruppinmatning](.././ingestion/batch-ingestion/api-overview.md) | Adobe Experience Platform [!DNL Data Ingestion] Med API kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som överensstämmer med ett känt schema i schemaregistret (XDM). |
+| [API-guide för gruppinmatning](.././ingestion/batch-ingestion/api-overview.md) | Adobe Experience Platform [!DNL Data Ingestion] Med API kan du importera data till plattformen som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i schemaregistret (XDM). |
 | [[!DNL Catalog Service] API-guide](.././catalog/api/getting-started.md) | The [!DNL Catalog Service] Med API kan utvecklare hantera datauppsättningsmetadata i Adobe Experience Platform. Detta omfattar dataplatser, bearbetningsfaser, fel som inträffade under bearbetningen samt datarapporter. |
 | [[!DNL Data Access] API-guide](.././data-access/api.md) | The [!DNL Data Access] Med API kan utvecklare hämta information om inkapslade datauppsättningar i Experience Platform. Detta inkluderar åtkomst och hämtning av datauppsättningsfiler, hämtning av rubrikinformation, listning av misslyckade och slutförda grupper samt hämtning av CSV-/Parquet-filer för förhandsgranskning. |
 | [[!DNL Dataset Service] API-guide](.././data-governance/labels/dataset-api.md) | Med API:t för datauppsättningstjänsten kan du tillämpa och redigera användningsetiketter för datauppsättningar. Den ingår i Adobe Experience Platform datakatalogfunktioner, men är skild från katalogtjänstens API, som hanterar datauppsättningsmetadata. |
+| [[!DNL Edge Network Server] API-guide](../server-api/overview.md) | The [!DNL Edge Network Server API] kan användas för en rad olika syften inom datainsamling, personalisering, annonsering och marknadsföring. The [!DNL Server API] kan användas på servrar, [!DNL IoT] enheter, digitalboxar och andra enheter. |
 | [[!DNL Identity Service] API-guide](.././identity-service/api/getting-started.md) | The [!DNL Identity Service] Med API kan utvecklare hantera enhetsoberoende, kanalövergripande och i stort sett realtidsidentifiering av kunder med hjälp av identitetsdiagram i Adobe Experience Platform. |
-| [[!DNL Observability Insights] API-guide](.././observability/api/overview.md) | [!DNL Observability Insights] är ett RESTful-API som gör att utvecklare kan visa viktiga mätvärden för observerbarhet i Adobe Experience Platform. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner. |
-| [[!DNL Policy Service] API-guide](.././data-governance/api/overview.md) <br> (Datastyrning) | The [!DNL Policy Service] Med API kan ni skapa och hantera etiketter och principer för dataanvändning för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa etiketter för dataanvändning. Om du vill använda etiketter på datauppsättningar och fält kan du läsa [[!DNL Dataset Service] API](.././data-governance/labels/dataset-api.md) guide |
+| [[!DNL Observability Insights] API-guide](.././observability/api/overview.md) | [!DNL Observability Insights] är ett RESTful-API som gör att utvecklare kan visa viktiga observationsvärden i Adobe Experience Platform. Dessa mätvärden ger insikter i statistik om plattformsanvändning, hälsokontroller för plattformstjänster, historiska trender och resultatindikatorer för olika plattformsfunktioner. |
+| [[!DNL Policy Service] API-guide](.././data-governance/api/overview.md) <br> (Datastyrning) | The [!DNL Policy Service] Med API kan ni skapa och hantera etiketter och principer för dataanvändning för att avgöra vilka marknadsföringsåtgärder som kan vidtas mot data som innehåller vissa etiketter för dataanvändning. Om du vill använda etiketter på datauppsättningar och fält kan du läsa [[!DNL Dataset Service] API](.././data-governance/labels/dataset-api.md) stödlinje |
 | [[!DNL Privacy Service] API-guide](.././privacy-service/api/getting-started.md) | The [!DNL Privacy Service] Med API kan utvecklare skapa och hantera kundförfrågningar för att få tillgång till eller ta bort sina personuppgifter mellan olika Experience Cloud-program, i enlighet med gällande sekretessbestämmelser. |
 | [[!DNL Query Service] API-guide](.././query-service/api/getting-started.md) | The [!DNL Query Service] Med API kan utvecklare fråga sina Adobe Experience Platform-data med hjälp av standard-SQL. |
 | [[!DNL Real-Time Customer Profile] API-guide](.././profile/api/overview.md) | Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visningsprofiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. |

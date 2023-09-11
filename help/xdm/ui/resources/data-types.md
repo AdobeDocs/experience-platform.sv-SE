@@ -5,14 +5,19 @@ title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1187'
 ht-degree: 0%
 
 ---
 
-# Skapa och redigera datatyper med användargränssnittet
+# Skapa och redigera datatyper med användargränssnittet {#ui-create-and-edit}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_datatype_filter"
+>title="Standarddatatypsfilter eller -filter"
+>abstract="Listan med tillgängliga datatyper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan alternativen Standard och Egen. Alternativet Standard visar entiteter som skapats av Adobe och alternativet Anpassad visar entiteter som skapats i din organisation. Mer information om hur du skapar och redigerar datatyper finns i dokumentationen."
 
 I Experience Data Model (XDM) är datatyper återanvändbara fält som innehåller flera underfält. Även om datatyperna liknar schemafältgrupper på så sätt att de medger konsekvent användning av en flerfältsstruktur, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån.
 
@@ -26,9 +31,9 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översik
 
 Även om det inte krävs för den här guiden rekommenderar vi att du också följer självstudiekursen på [skapa ett schema i användargränssnittet](../../tutorials/create-schema-ui.md) för att bekanta dig med de olika funktionerna i [!DNL Schema Editor].
 
-## Öppna [!DNL Schema Editor] för en datatyp
+## Öppna [!DNL Schema Editor] för en datatyp {#data-type}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna [!UICONTROL Schemas] väljer du **[!UICONTROL Data types]** -fliken. En lista över tillgängliga datatyper visas, inklusive de som definieras av Adobe och de som skapats av din organisation.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna [!UICONTROL Schemas] väljer du **[!UICONTROL Data types]** -fliken. En lista över tillgängliga datatyper visas, inklusive de som har definierats av Adobe och de som har skapats av din organisation.
 
 ![](../../images/ui/resources/data-types/data-types-tab.png)
 
@@ -51,7 +56,7 @@ I den här självstudien skapas en datatyp som beskriver en restaurangegenskap, 
 
 Härifrån kan du hoppa fram till [nästa avsnitt](#add-fields) för att börja lägga till fält till den nya datatypen.
 
-### Redigera en befintlig datatyp
+### Redigera en befintlig datatyp {#edit}
 
 >[!NOTE]
 >
@@ -69,7 +74,7 @@ Om du vill börja lägga till fält i datatypen väljer du **plus (+)** -ikonen 
 
 ![](../../images/ui/resources/data-types/new-field.png)
 
-Använd kontrollerna i den högra listen för att konfigurera information om det nya fältet. Se guiden [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i datatypen.
+Använd kontrollerna i den högra listen för att konfigurera information om det nya fältet. Se guiden på [definiera fält i användargränssnittet](../fields/overview.md#define) för specifika steg om hur du konfigurerar och lägger till fältet i datatypen.
 
 Datatypen Restaurant kräver ett strängfält som representerar restaurangens namn. Därför är [!UICONTROL Field name] anges som &quot;name&quot; och [!UICONTROL Type] anges som &quot;[!UICONTROL String]&quot;. Välj **[!UICONTROL Apply]** för att tillämpa ändringarna på fältet.
 
@@ -83,9 +88,9 @@ Förutom grundläggande fält kan du även kapsla in ytterligare datatyper i din
 
 ![](../../images/ui/resources/data-types/address-field.png)
 
-Detta visar hur flexibla datatyper kan vara när det gäller att beskriva dina data: datatyper kan använda fält som också är datatyper, som i sin tur kan innehålla fler datatyper, osv. På så sätt kan du abstrahera och återanvända vanliga datamönster i hela XDM-scheman, vilket gör det enklare att representera komplexa datastrukturer.
+Detta visar hur flexibla datatyper kan vara när det gäller att beskriva dina data: datatyperna kan använda fält som också är datatyper, som i sin tur kan innehålla fler datatyper, och så vidare. På så sätt kan du abstrahera och återanvända vanliga datamönster i hela XDM-scheman, vilket gör det enklare att representera komplexa datastrukturer.
 
-När du är klar med att lägga till fält till datatypen väljer du **[!UICONTROL Save]** för att spara ändringarna och lägga till datatypen i [!DNL Schema Library].
+När du har lagt till fält till datatypen väljer du **[!UICONTROL Save]** för att spara ändringarna och lägga till datatypen i [!DNL Schema Library].
 
 ## Lägg till datatypen i ett schema
 

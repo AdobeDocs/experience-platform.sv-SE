@@ -4,9 +4,9 @@ description: Lär dig hur du använder AI Assistant för att navigera bland och 
 badge: Alfa
 hide: true
 hidefromtoc: true
-source-git-commit: e84f5aff6885535b58874a4fe02db2944e1d9b7f
+source-git-commit: 55d2518cdded50bcc8d6f7cc36f29581c5e64dab
 workflow-type: tm+mt
-source-wordcount: '2622'
+source-wordcount: '2362'
 ht-degree: 0%
 
 ---
@@ -154,112 +154,55 @@ Du kan även ställa frågor till AI Assistant om din dataanvändning i följand
 
 * Attribut
 * Datauppsättningar
-* Mål 
-* Scheman
+* Destinationer (frågor om konton och vissa frågor om dataflöde kan inte besvaras just nu.)
+* Scheman (frågor om fältgrupper kan inte besvaras just nu.)
 * Segment
-* Källor
+* Källor (frågor om konton kan inte besvaras just nu.)
 
-För användningsdatafrågor kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som ligger till grund för dessa frågor uppdateras var 12 till 24:e timme. Du kan behöva formatera dina frågor som:&quot;När var segmentet med titeln? {TITLE} skapad?&quot; istället för: &quot;När var {TITLE} segmentet skapades?&quot;
+För användningsdatafrågor kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som ligger till grund för dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du kan behöva formatera dina frågor som:&quot;När var segmentet med titeln? {TITLE} skapad?&quot; istället för: &quot;När var {TITLE} segmentet skapades?&quot;
 
 Du måste logga in i en sandlåda för att få frågor om specifika data som rör objekt som scheman, datamängder, attribut, mål och segment.
 
-+++Välj för en lista över frågor om dataanvändning som stöds
+### Frågor om dataanvändning som stöds
+
++++Välj för att visa en lista över frågor om dataanvändning som stöds
 
 Nedan följer en lista över aktuella frågor om dataanvändning som stöds, grupperade efter domän.
 
->[!BEGINTABS]
-
->[!TAB Segment]
-
-* Finns det duplicerade segment?
-* Visa alla strömningssegment.
-* Är segment namngivna {SEGMENT_ID} utvärderat i batch- eller direktuppspelning?
-* Vilka segment är dubbletter?
+* Vill du lista attributen som används för det här segmentet?
 * Hur många segment finns det totalt?
-* Finns det några segment med samma namn men olika ID:n?
-* Vilken är fördelningen av utvärderingsmetoder (batch, edge, streaming) mellan segment?
 * Visa en lista över segment som senast ändrades under den senaste månaden.
 * Vilka segment har ändrats den senaste veckan?
-* Finns det några segment som inte har ändrats de senaste sex månaderna?
-* Lista segment som skapades det senaste året.
-* Visa segment som senast ändrades idag.
-* Finns det några mönster eller trender för när man ska skapa segment under det senaste året?
-* Kan du identifiera segment som inte har ändrats sedan de skapades?
-* Finns det några segment som inte har ändrats sedan de skapades?
-* Hur ser trenden ut när det gäller att skapa segment?
-* Vilken är fördelningen av datum när segmentet skapades?
-* Vilken är fördelningen av ändringsdatum för segment?
-* Vilka segment har mest användarprofiler?
-* Vilka segment har minst användarprofiler?
-* Visa alla gruppsegment.
-* Visa alla kantsegment.
-* Vilka segment aktiveras?
-* Vilka segment vidarebefordras till Facebook?
-* Är segmentet&quot;APAC-kunder&quot; batch eller direktuppspelning?
-* Hur många profiler har Active Work-segmentet?
-* Har något av mina segment 0 profiler?
-* Vilka datauppsättningar påverkar Bronze loyalty-segmentet?
-* Vilka segmentdefinitioner använder XDM-fält som innehåller &quot;kön&quot;?
-* Vilka ifyllda XDM-fält finns i strömningssegment?
-* Hur många XDM-fält finns det för alla segmentdefinitioner?
-* Vilka segment påverkar datauppsättningen&quot;Professional Users&quot;?
-* Vilka segment vidarebefordras till HTTP API?
-* Av de segment som är aktiverade, som är aktiverade till det största antalet måltyper?
+* Vad är profilantalet för {SEGMENT_NAME} segment?
+* Lista alla duplicerade segment.
+* Visa segment som skapats eller uppdaterats de senaste 7 dagarna.
+* Vilken är fördelningen av antalet profiler mellan segment?
+* Hur många fält används vid segmentering?
 * Vad är det totala antalet aktiverade segment?
-* Hur många segment aktiveras?
+* Vilka segment aktiveras?
 * Hur många duplicerade segment aktiveras?
+* Lista segment som skapades det senaste året.
+* Visa segment som senast ändrades innan {DATE}.
+* Hur många unika segmentnamn som är associerade med {SCHEMA_NAME} schema?
+* Vilka scheman används oftast för olika segment?
+* Hur många scheman har jag?
+* Vilka datauppsättningar som används {SCHEMA_NAME} schema?
+* Visa alla scheman som har ändrats under den senaste veckan.
+* Hur många scheman är profiler aktiverade?
+* Vill du visa alla scheman för upplevelsehändelseklassen?
+* Vilka datauppsättningar som hämtas till {SCHEMA_NAME} schema?
+* Hur många datauppsättningar har importerats med samma schema?
+* Hur många datauppsättningar har jag?
+* Vilka datauppsättningar används i varje segment?
+* Vilka segment använder {ATTRIBUTE_NAME} attribut?
+* Vilka scheman har {ATTRIBUTE_NAME} i dem?
+* Hur många XDM-schemaattribut används inte i några segment?
+* I vilka datauppsättningar är {ATTRIBUTE_NAME} Fyllda XDM-fält?
+* Vilka datauppsättningar har data för {ATTRIBUTE_NAME} attribut?
 * Hur många segment aktiveras för varje mål?
-* Vilka segment aktiveras för 0, 1 eller flera destinationer? Visa fördelningen.
 * Vilka segment aktiveras för det största antalet destinationer?
-* Vilka duplicerade segment är aktiverade?
-* Vilka segment aktiveras för Adobe Target?
-* Hur många gånger används varje sammanfogningsprincip i alla segment?
-
->[!TAB Scheman]
-
-* Hur många XDM-scheman har definierats?
-* Vilka är de senast skapade scheman?
-* Hur många scheman för varje XDM-klass?
-* Vilket schema använder datauppsättningen&quot;Segmentinmatning&quot;?
-* Vilka scheman används inte av några datauppsättningar?
-
->[!TAB Mål ]
-
-* Hur många destinationer finns det?
-* Vilka är de senast skapade destinationerna?
-* Vilka mål är associerade med varje segment?
-
->[!TAB Källor]
-
-* Hur många källor har skapats?
-* Vilka är de senast skapade källorna?
-* Hur många källor finns tillgängliga, uppdelade efter kategori?
-* Kan jag skapa en källanslutning från S3?
-* Vilka källor bidrog till datauppsättningen Mutual365?
-
->[!TAB Datauppsättningar]
-
-* Hur många datauppsättningar finns det?
-* Vilka är de senast skapade datauppsättningarna?
-* Vilka datauppsättningar är aktiverade för den enhetliga profilen?
-* Finns det en TTL-uppsättning för segmentinmatningsdatauppsättningen?
-* Vad är TTL-värdet för Professional-användardatauppsättningen?
-* Vilka datauppsättningar använder Professional Users-schemat?
-
->[!TAB Attribut]
-
-* Vilka XDM-fält är oftast ifyllda i alla DataSets?
-* Vilka XDM-fält och -attribut används oftast i olika scheman?
-* Vilka XDM-fält och attribut används i Professional Users-schemat?
-* Lista de attribut som används för det här segmentet med ID {SEGMENT_ID}.
-* Hur många XDM-fält används i 2+ segment?
-* Vilka fält används oftast i olika segment?
-* Finns det fält som bara används i ett segment?
-* Vilka attribut används för Bronze-segmentet?
-* Vilka attribut används inte i något segment?
-* Vilka attribut används oftast i segment?
-
->[!ENDTABS]
+* Har något av mina segment 0 profiler?
+* Hur många dataflöden har jag?
 
 +++
 
@@ -343,3 +286,5 @@ Se tabellen nedan för exempel:
 | Vad är mitt största segment? | Vad är mitt största segment? Använda data. | Tala uttryckligen om för AI-assistenten att du vill att svaret ska baseras på data. |
 | Vad är mitt största segment? | Lista mitt största segment. | Det finns tillfällen då en fråga om vad.. kan bli fel för en dokumentationsbaserad fråga. Att använda ett kommando som &quot;list&quot; är en starkare indikator på att du ställer en fråga med data i sitt sammanhang. |
 | Hur många datauppsättningar har jag? | Räkna mina datauppsättningar. | Den ursprungliga frågan fungerar för segment, men fungerar kanske inte med datauppsättningar. |
+
+

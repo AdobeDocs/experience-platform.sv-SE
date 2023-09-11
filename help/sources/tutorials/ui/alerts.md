@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen; varningar
+keywords: Experience Platform;hemmabruk;populära ämnen; larm
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på varningar i sitt sammanhang i användargränssnittet
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: 3f7f66c0d58d127299ad12027869ca0e9837f5cd
+source-git-commit: 9120377f5f2048579d7e2a4740cfcbc56d49d61a
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '830'
 ht-degree: 0%
 
 ---
@@ -48,12 +48,15 @@ Du kan aktivera varningar för dina dataflöden under [!UICONTROL Dataflow detai
 
 De tillgängliga aviseringarna för källdataflöden är:
 
+>[!NOTE]
+>
+>Direktuppspelningskällor stöds för närvarande inte av aviseringar. Du kan bara prenumerera på varningsmeddelanden för batchkällor.
+
 | Larm | Beskrivning |
 | --- | --- |
-| Start för källdataflöde | Den här varningen skickar ett meddelande när källdataflödet har startats. |
-| Slutförd körning av källdataflöde | Den här varningen skickar ett meddelande när data från källan har importerats till plattformen. |
-| Körningsfel för källdataflöde | Den här varningen skickar ett meddelande till dig om ett fel inträffar i dataflödet. |
-| ~~Källdataflöde Brist på intag~~ | ~~Den här varningen skickar ett meddelande om importen fördröjs med mer än sju timmar och inga data hämtas till Platform.~~ <br>**Obs!** Du får inte längre några varningar eftersom den här varningen har tagits bort. |
+| Kör källflöde | Den här varningen skickar ett meddelande när källdataflödet har startats. |
+| Källflöde har körts | Den här varningen skickar ett meddelande när data från källan har importerats till plattformen. |
+| Körningsfel för källflöde | Den här varningen skickar ett meddelande till dig om ett fel inträffar i dataflödet. |
 
 Välj de aviseringar du vill prenumerera på och välj sedan **[!UICONTROL Next]** för att granska och slutföra dataflödet.
 
@@ -85,7 +88,7 @@ Meddelandepanelen visas med en lista över statusuppdateringar för det dataflö
 
 ![varningsfönster](../../images/tutorials/alerts/alert-window.png)
 
-Du kan hovra över ett varningsmeddelande och markera det som läst eller välja klockikonen för att ange framtida påminnelser om dataflödets status.
+Du kan hålla muspekaren över ett varningsmeddelande för att markera dem som lästa eller välja klockikonen för att ange framtida påminnelser om dataflödets status.
 
 ![påminnelse-me](../../images/tutorials/alerts/remind-me.png)
 
@@ -113,7 +116,7 @@ Liknar gränssnittsvarningen visas [!UICONTROL Dataflow run overview] visas så 
 
 ![dataflow-overview](../../images/tutorials/alerts/dataflow-overview.png)
 
-## Prenumerera och avbeställa aviseringar
+## Prenumerera och avsluta abonnemang på aviseringar
 
 Du kan prenumerera på fler aviseringar eller avbryta prenumerationen på etablerade aviseringar för ett befintligt dataflöde i [!UICONTROL Dataflows] sida. Leta reda på det dataflöde du skapar i listan och välj sedan ellipserna (`...`) för att se en listruta med alternativ. Nästa, välj **[!UICONTROL Subscribe alerts]** om du vill ändra aviseringsinställningarna för dataflödet.
 

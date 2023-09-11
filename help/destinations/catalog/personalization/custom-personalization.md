@@ -3,9 +3,9 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '879'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ Det här målet är ett sätt att hämta målgruppsinformation från Adobe Exper
 
 ## Förutsättningar {#prerequisites}
 
-Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md) eller [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/). Du måste använda någon av dessa SDK:er för att kunna använda det här målet.
+Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md) eller [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/). Du måste använda någon av dessa SDK:er för att kunna använda det här målet.
 
 >[!IMPORTANT]
 >
@@ -43,15 +43,12 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
-
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

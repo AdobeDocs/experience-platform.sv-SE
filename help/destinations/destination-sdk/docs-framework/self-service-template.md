@@ -2,9 +2,9 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 16365865e349f8805b8346ec98cdab89cd027363
+source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
 workflow-type: tm+mt
-source-wordcount: '1614'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -74,19 +74,14 @@ För att du bättre ska förstå hur och när du ska använda *DittMål* mål, h
 
 ## Målgrupper {#supported-audiences}
 
-*Lägg till information i det här avsnittet om de målgrupper som stöds av ditt mål. Vi har förfyllt tabellen med några standardvärden. Ta bort de värden som inte gäller för målet och de värden som inte är förifyllda.*
+*Lägg till information i det här avsnittet om de målgrupper som stöds av ditt mål. Vi har förfyllt tabellen med några standardvärden. Använd `✓` och `X` för att markera om målgruppstypen stöds av det här målet.*
 
-I det här avsnittet beskrivs alla målgrupper som du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
-Detta mål stöder aktivering av alla målgrupper som genererats via Experience Platform [Segmenteringstjänst](../../../segmentation/home.md).
-
-*Om målet inte stöder aktivering av någon extern målgrupp tar du bort frasen nedan tillsammans med tabellen.*
-
-*Dessutom* stöder denna destination även aktivering av målgrupper som beskrivs i tabellen nedan.
-
-| Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Målgruppsursprung | Stöds | Beskrivning |
+---------|----------|----------|
+| [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
+| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

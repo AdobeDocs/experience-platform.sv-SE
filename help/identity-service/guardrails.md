@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 2f226ae1356733b89b10e73ef1a371c42da05295
+source-git-commit: 87138cbf041e40bfc6b42edffb16f5b8a8f5b365
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1112'
 ht-degree: 1%
 
 ---
@@ -70,7 +70,8 @@ Följande avsnitt innehåller ytterligare information om skyddsförslag för ide
 >
 > * Ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.
 > * Ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.
-
+>
+>När den här funktionen är tillgänglig kommer diagram som överskrider gränsen på 50 identiteter att minskas ned till 50 identiteter. För CDP B2C Edition i realtid kan detta resultera i en minimal ökning av antalet profiler som kvalificerar för en målgrupp, eftersom dessa profiler tidigare ignorerades från segmentering och aktivering.
 
 När ett fullständigt identitetsdiagram uppdateras, tar identitetstjänsten bort den äldsta identiteten i diagrammet innan den senaste identiteten läggs till. Detta är för att identitetsdata ska vara korrekta och relevanta. Den här borttagningsprocessen följer två huvudregler:
 
@@ -108,3 +109,8 @@ I det här exemplet tar identitetstjänsten först bort den befintliga identitet
 * I det sällsynta fallet att det finns två identiteter med samma tidsstämpel och identitetstyp sorteras ID:n baserat på [XID](./api/list-native-id.md) och genomföra radering.
 
 >[!ENDSHADEBOX]
+
+Borttagning sker endast med data i identitetstjänsten och inte med kundprofilen i realtid.
+
+* Detta beteende kan följaktligen skapa fler profiler med ett enda ECID, eftersom ECID inte längre är en del av identitetsdiagrammet.
+* För att du ska kunna hålla dig inom de adresserbara målgruppernas berättigandenummer rekommenderar vi att du aktiverar [pseudonymt utgångsdatum för profildata](../profile/pseudonymous-profiles.md) för att ta bort dina gamla profiler.

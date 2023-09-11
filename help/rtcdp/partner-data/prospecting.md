@@ -1,14 +1,14 @@
 ---
-title: Engagera och värva nya kunder genom prospektering av användningsfall
-description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospektering av användningsfall som stöds av partnerdatastödraden i Real-Time CDP.
-source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
+title: Engagera och värva nya kunder genom användningsfall för prospektering
+description: Lär dig hur ni engagerar och förvärvar nya kunder genom användningsfall för prospektering som möjliggörs av partnerdatastödet i Real-Time CDP.
+source-git-commit: 5352b461be3684ac4fe1703c916b9ec59bd14af1
 workflow-type: tm+mt
-source-wordcount: '1894'
-ht-degree: 0%
+source-wordcount: '1888'
+ht-degree: 2%
 
 ---
 
-# Engagera och värva nya kunder genom prospektering av användningsfall
+# Engagera och värva nya kunder genom användningsfall för prospektering
 
 >[!AVAILABILITY]
 >
@@ -108,7 +108,7 @@ Observera att schemat ännu inte har aktiverats för profilen. Aktivera det här
 
 #### Lägg till etiketten för datastyrning från tredje part i alla fält i schemat
 
-Överväg att lägga till etiketter för datastyrning från tredje part i alla fält som utgör schemat. Detta är viktigt för att säkerställa en ansvarsfull användning av data från tredje part och minimera risken för dataläckage. Mer information om etiketter för datastyrning från tredje part (lägg till länk till dokument av Jordan)
+Överväg att lägga till etiketter för datastyrning från tredje part i alla fält som utgör schemat. Detta är viktigt för att säkerställa en ansvarsfull användning av data från tredje part och minimera risken för dataläckage. Mer information om [etiketter för datastyrning från tredje part](../../data-governance/labels/reference.md#partner-ecosystem-labels).
 
 Följ stegen nedan för att göra detta:
 
