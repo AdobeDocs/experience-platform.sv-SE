@@ -1,11 +1,11 @@
 ---
 keywords: Reklam.
 title: Microsoft Bing-anslutning
-description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Display Advertising.
+description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising Network, inklusive webbannonsering, sökning och inbyggt material.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: 093ddd1651e15bebf73d007fb05042fbcf02c675
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '666'
 ht-degree: 1%
 
 ---
@@ -14,13 +14,15 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-The [!DNL Microsoft Bing] mål hjälper dig att skicka profildata till [!DNL Microsoft Display Advertising].
+Använd [!DNL Microsoft Bing] mål för att skicka profildata till hela [!DNL Microsoft Advertising Network], inklusive [!DNL Display Advertising], [!DNL Search]och [!DNL Native].
+
+The [!DNL Microsoft Bing] mål skapar *[!DNL Custom Audiences]* i Microsoft. Dessa finns tillgängliga båda i [!DNL Microsoft Search Network] och [!DNL Audience Network] ([!DNL Native] /[!DNL Display] /[!DNL Programmatic]) enligt listan i [Microsoft Advertising-dokumentation](https://help.ads.microsoft.com/#apex/ads/en/56892/1-500).
 
 Skicka profildata till [!DNL Microsoft Bing]måste du först ansluta till målet.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL Microsoft Advertising IDs] målgruppsanpassning via webbannonsering [!DNL Microsoft Advertising] kanaler.
+Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL Microsoft Advertising IDs] rikta sig till användare via displayannonsering eller sökannonsering över [!DNL Microsoft Advertising] kanaler.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -74,7 +76,7 @@ När du konfigurerar målet måste du ange följande information:
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md).
 
-### Anslutningsparametrar {#parameters}
+### Fyll i målinformation {#parameters}
 
 while [konfigurera](../../ui/connect-destination.md) Om du vill ange destinationen måste du ange följande information:
 
