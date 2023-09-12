@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
-title: Webbläsare och språkstöd för användargränssnittet i Experience Platform
+title: Webbläsare- och språkstöd för användargränssnittet i Experience Platform
 description: Adobe Experience Platform är det mest kraftfulla, flexibla och öppna systemet på marknaden för att bygga och hantera kompletta lösningar som ger en bättre kundupplevelse. Med Experience Platform kan organisationer centralisera och standardisera kunddata och innehåll från alla system och tillämpa datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: 1b74aede-55df-4e81-8360-e49d1932b373
-source-git-commit: 20cb7afe6338f1ca79e86558f1f0cbec54790212
+source-git-commit: 9c46f2eeb563009da52acb629796ee9992136343
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '244'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Plattformsgränssnittet är utformat för att fungera optimalt i **senaste versi
 
 | Operativsystem | Webbläsare som stöds |
 |---|---|
-| **Mac OS X** | Google Chrome, Safari, Firefox |
+| **MAC OS X** | Google Chrome, Safari, Firefox |
 | **Windows 10** | Google Chrome, Microsoft Edge, Firefox |
 | **Windows 7** | Google Chrome, Firefox |
 
@@ -51,10 +51,12 @@ Standardspråket för användargränssnittet avgörs av den region som anges i d
 
 Så här byter du språk:
 
-1. Välj det aktuella språket i sidfoten på [!DNL Experience Platform] användargränssnitt.
-2. Välj **[!UICONTROL Change Region]**.
-3. Välj region.
+1. Logga in på ditt Experience Platform-konto.
+1. Tryck `Ctrl + i` för att öppna menyn för kontoinformation.
+1. Gå till **[!UICONTROL Preferred Languages]**.
+1. Välj den första och den andra språkinställningen.
+1. Välj **[!UICONTROL Save]** och stänger fönstret.
 
 >[!NOTE]
 >
-> När du markerar ett område anges även språket för innehåll på Adobe.com.
+> När du markerar ett område anges även språket för innehållet på Adobe.com.
