@@ -3,9 +3,9 @@ title: Skapa en Google PubSub Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: b157b9147d8ea8100bcaedca272b303a3c04e71a
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '1006'
 ht-degree: 0%
 
 ---
@@ -34,8 +34,8 @@ För att kunna ansluta [!DNL PubSub] till Platform måste du ange ett giltigt v�
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | Projekt-ID | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
-| Autentiseringsuppgifter | Autentiseringsuppgiften eller det privata nyckel-ID som krävs för autentisering [!DNL PubSub]. |
-| Ämnesnamn | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Anteckning**: En enstaka [!DNL PubSub] prenumerationen kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. |
+| Referenser | Autentiseringsuppgifterna som krävs för autentisering [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
+| Ämnesnamn | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Anteckning**: En enda [!DNL PubSub] prenumerationen kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. |
 | Prenumerationsnamn | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. |
 
 Mer information om dessa värden finns i följande [PubSub-autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du använder kontobaserad autentisering för tjänster, se följande [PubSub Guide](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
@@ -60,7 +60,7 @@ The **[!UICONTROL Connect to Google PubSub]** visas. På den här sidan kan du a
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL PubSub] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL PubSub] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![Det befintliga kontovalet i källarbetsflödet.](../../../../images/tutorials/create/google-pubsub/existing.png)
 

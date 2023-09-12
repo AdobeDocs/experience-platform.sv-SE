@@ -3,9 +3,9 @@ title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: b157b9147d8ea8100bcaedca272b303a3c04e71a
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -34,9 +34,9 @@ För att [!DNL Flow Service] för att ansluta till [!DNL PubSub]måste du ange v
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
-| `credentials` | Autentiseringsuppgifter eller nyckel som krävs för autentisering [!DNL PubSub]. |
+| `credentials` | Autentiseringsuppgifterna som krävs för autentisering [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
 | `topicName` | Namnet på resursen som representerar en feed med meddelanden. Du måste ange ett ämnesnamn om du vill ge åtkomst till en viss dataström i ditt [!DNL PubSub] källa. Ämnesnamnets format är: `projects/{PROJECT_ID}/topics/{TOPIC_ID}`. |
-| `subscriptionName` | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Anteckning**: En enstaka [!DNL PubSub] prenumerationen kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. Prenumerationens namnformat är: `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}`. |
+| `subscriptionName` | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Anteckning**: En enda [!DNL PubSub] prenumerationen kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. Prenumerationens namnformat är: `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}`. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som är kopplade till att skapa bas- och källmålanslutningarna. The [!DNL PubSub] anslutningsspecifikation-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
 Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du vill använda tjänstkontobaserad autentisering läser du följande [[!DNL PubSub] guide om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
@@ -197,7 +197,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ange för att inkludera mer information om din källanslutning. |
-| `baseConnectionId` | Basanslutnings-ID för din [!DNL PubSub] källa som skapades i föregående steg. |
+| `baseConnectionId` | Basanslutnings-ID för din [!DNL PubSub] källa som genererades i föregående steg. |
 | `connectionSpec.id` | ID för fast anslutningsspecifikation för [!DNL PubSub]. Detta ID är: `70116022-a743-464a-bbfe-e226a7f8210c` |
 | `data.format` | Formatet på [!DNL PubSub] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
 | `params.topicName` | Namnet på [!DNL PubSub] ämne. I [!DNL PubSub]är ett ämne en namngiven resurs som representerar en feed med meddelanden. |
@@ -206,7 +206,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudiekurs för att skapa ett dataflöde.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudie för att skapa ett dataflöde.
 
 ```json
 {
@@ -217,4 +217,4 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL PubSub] källanslutning med [!DNL Flow Service] API. Du kan använda det här källanslutnings-ID:t i nästa självstudiekurs för att [skapa ett direktuppspelat dataflöde med [!DNL Flow Service] API](../../collect/streaming.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL PubSub] källanslutning med [!DNL Flow Service] API. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med [!DNL Flow Service] API](../../collect/streaming.md).
