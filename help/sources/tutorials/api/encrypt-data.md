@@ -4,9 +4,9 @@ description: Lär dig hur du importerar krypterade filer via molnlagringsbatchk�
 hide: true
 hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: cd8844121fef79205d57fa979ca8630fc1b1ece4
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1473'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Med Adobe Experience Platform kan du importera krypterade filer via batchkällor
 
 Processen för krypterad datainmatning är följande:
 
-1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **OBS!** Den offentliga nyckeln i svaret är Base64-kodad och måste dekrypteras innan den används.
+1. [Skapa ett krypteringsnyckelpar med Experience Platform API:er](#create-encryption-key-pair). Krypteringsnyckelparet består av en privat nyckel och en offentlig nyckel. När du har skapat den kan du kopiera eller hämta den offentliga nyckeln, tillsammans med motsvarande offentliga nyckel-ID och förfallotid. Under den här processen kommer den privata nyckeln att lagras av Experience Platform i ett säkert valv. **OBS!** Den offentliga nyckeln i svaret är Base64-kodad och måste dekrypteras innan den används.
 2. Använd den offentliga nyckeln för att kryptera den datafil som du vill importera.
 3. Placera den krypterade filen i molnlagringen.
 4. När den krypterade filen är klar [skapa en källanslutning och ett dataflöde för molnlagringskällan](#create-a-dataflow-for-encrypted-data). När du skapar flödet måste du ange en `encryption` och inkludera ditt offentliga nyckel-ID.
@@ -332,6 +332,40 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet för dina krypte
     "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
 }
 ```
+
+
+>[!BEGINSHADEBOX]
+
+**Begränsningar för återkommande intag**
+
+Krypterad datainmatning stöder inte inmatning av återkommande mappar eller mappar på flera nivåer i källor. Alla krypterade filer måste finnas i en enda mapp. Jokertecken med flera mappar i en enda källsökväg stöds inte heller.
+
+Följande är ett exempel på en mappstruktur som stöds, där källsökvägen är `/ACME-customers/*.csv.gpg`.
+
+I det här scenariot kapslas filerna i fet stil in i Experience Platform.
+
+* ACME-kunder
+   * **File1.csv.gpg**
+   * File2.json.gpg
+   * **File3.csv.gpg**
+   * File4.json
+   * **File5.csv.gpg**
+
+Följande är ett exempel på en mappstruktur som inte stöds där källsökvägen är `/ACME-customers/*`.
+
+I det här scenariot misslyckas flödeskörningen och returnerar ett felmeddelande som anger att data inte kan kopieras från källan.
+
+* ACME-kunder
+   * File1.csv.gpg
+   * File2.json.gpg
+   * Subfolder1
+      * File3.csv.gpg
+      * File4.json.gpg
+      * File5.csv.gpg
+* ACME-lojalitet
+   * File6.csv.gpg
+
+>[!ENDSHADEBOX]
 
 ## Nästa steg
 
