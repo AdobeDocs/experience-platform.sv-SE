@@ -1,26 +1,26 @@
 ---
-title: Klienttips för användaragent
-description: Lär dig hur klienttips för användaragenter fungerar i Web SDK. Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i strängen User-Agent, men på ett mer sekretessbeständigt sätt.
-keywords: användaragent;klienttips; sträng; användaragentsträng; Låg entropi. hög entropi
+title: Tips för användaragentklient
+description: Lär dig hur klienttips för användaragenter fungerar i Web SDK. Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i användaragentsträngen, men på ett mer sekretessbeständigt sätt.
+keywords: användaragent;klienttips; sträng; användaragentsträng; låg entropi; hög entropi
 exl-id: a909b1d1-be9d-43ba-bb4b-d28b0c609f65
-source-git-commit: 29679e85943f16bcb02064cc60a249a3de61e022
+source-git-commit: d856630d4c14387ad4d77a915585fe05803878fb
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1200'
 ht-degree: 2%
 
 ---
 
-# Klienttips för användaragent
+# Tips för användaragentklient
 
 ## Översikt {#overview}
 
-Varje gång en webbläsare skickar en begäran till en webbserver innehåller begärans huvud information om webbläsaren och miljön som webbläsaren körs i. Alla dessa data samlas i en sträng, som kallas [!DNL User-Agent] sträng.
+Varje gång en webbläsare skickar en begäran till en webbserver innehåller begärans huvud information om webbläsaren och miljön som webbläsaren körs i. Alla dessa data sammanställs i en sträng, som kallas användaragentsträng.
 
-Här är ett exempel på en [!DNL User-Agent] ser ut som på en begäran från en Chrome-webbläsare som körs på en [!DNL Mac OS] enhet.
+Här är ett exempel på hur en användaragentsträng ser ut på en begäran som kommer från en Chrome-webbläsare som körs på en [!DNL Mac OS] enhet.
 
 >[!NOTE]
 >
->Under årens lopp finns information om webbläsare och enheter i [!DNL User-Agent] har växt och ändrats flera gånger. I exemplet nedan visas ett urval av de vanligaste [!DNL User-Agent] information.
+>Under årens lopp har mängden webbläsarinformation och enhetsinformation som ingår i användaragentsträngen ökat och ändrats flera gånger. I exemplet nedan visas ett urval av den vanligaste användaragentinformationen.
 
 ```shell
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36`
@@ -30,41 +30,41 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 |---|---|
 | Programvarunamn | Krom |
 | Programversion | 105 |
-| Fullversion av programmet | 105.0.0.0 |
+| Fullversion | 105.0.0.0 |
 | Namn på layoutmotor | AppleWebKit |
 | Layoutmotorversion | 537.36 |
-| Operativsystem | Mac OS X |
+| Operativsystem | MAC OS X |
 | Operativsystemversion | 10.15.7 |
 | Enhet | Intel Mac OS X 10_15_7 |
 
 ## Användningsfall {#use-cases}
 
-[!DNL User-Agent] strängar har länge använts för att ge marknadsförings- och utvecklingsteam viktiga insikter i hur webbläsare, operativsystem och enheter visar webbplatsinnehåll samt hur användarna interagerar med webbplatser.
+Användaragentsträngar har länge använts för att ge marknadsförings- och utvecklingsteam viktiga insikter i hur webbläsare, operativsystem och enheter visar webbplatsinnehåll samt hur användarna interagerar med webbplatser.
 
-[!DNL User-Agent] strängar används också för att blockera skräppost och filterbottar som crawlar webbplatser för en mängd andra syften.
+Användaragentsträngar används också för att blockera skräppost och filterbottar som crawlar webbplatser för en mängd andra syften.
 
-## [!DNL User-Agent] strängar i Adobe Experience Cloud {#user-agent-in-adobe}
+## Användaragentsträngar i Adobe Experience Cloud {#user-agent-in-adobe}
 
-Adobe Experience Cloud lösningar använder [!DNL User-Agent] strängar på olika sätt.
+Adobe Experience Cloud lösningar använder användaragentsträngarna på olika sätt.
 
-* Adobe Analytics använder [!DNL User-Agent] strängar för att utöka och få ytterligare information om operativsystem, webbläsare och enheter som används för att besöka en webbplats.
-* Adobe Audience Manager och Adobe Target kvalificerar slutanvändare för segmenterings- och personaliseringskampanjer baserat på informationen från [!DNL User-Agent] sträng.
+* Adobe Analytics använder användaragentsträngen för att utöka och hämta ytterligare information om operativsystem, webbläsare och enheter som används för att besöka en webbplats.
+* Adobe Audience Manager och Adobe Target kvalificerar slutanvändare för segmenterings- och personaliseringskampanjer baserat på informationen i användaragentsträngen.
 
-## Introduktion till klienttips för användaragenten {#ua-ch}
+## Introduktion till klienttips för användaragent {#ua-ch}
 
-Under de senaste åren har webbplatsägare och marknadsföringsleverantörer använt [!DNL User-Agent] strängar tillsammans med annan information i begäranderubriker för att skapa digitala fingeravtryck. Dessa fingeravtryck kan användas som ett sätt att identifiera användare utan deras kännedom.
+Under de senaste åren har webbplatsägare och marknadsföringsleverantörer använt användaragentsträngar tillsammans med annan information i begäranderubriker för att skapa digitala fingeravtryck. Dessa fingeravtryck kan användas som ett sätt att identifiera användare utan deras kännedom.
 
-Trots det viktiga syftet med [!DNL User-Agent] strängar fungerar för webbplatsägare, webbläsarutvecklare har beslutat att ändra hur [!DNL User-Agent] strängar används för att begränsa eventuella sekretessproblem för slutanvändare.
+Trots det viktiga syftet med användaragentsträngar för webbplatsägare har webbläsarutvecklare beslutat att ändra hur användaragentsträngar fungerar, för att begränsa eventuella sekretessproblem för slutanvändare.
 
-Den lösning de utvecklade kallas [Klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör det fortfarande möjligt för webbplatser att samla in nödvändig information om webbläsare, operativsystem och enheter, samtidigt som det ger ett bättre skydd mot dolda spårningsmetoder, som fingeravtryck.
+Den lösning de utvecklade kallas [klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör det fortfarande möjligt för webbplatser att samla in nödvändig information om webbläsare, operativsystem och enheter, samtidigt som det ger ett bättre skydd mot dolda spårningsmetoder, som fingeravtryck.
 
-Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i [!DNL User-Agent] på ett mer sekretessbelagt sätt.
+Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i användaragentsträngen, men på ett mer sekretessbeständigt sätt.
 
-När moderna webbläsare skickar en användare till en webbserver är hela [!DNL User-Agent] strängen skickas vid varje begäran, oavsett om den är obligatorisk eller inte. Klienttips tvingar å andra sidan en modell där servern måste fråga webbläsaren om ytterligare information om klienten. När webbläsaren tar emot den här begäran kan den tillämpa egna profiler eller användarkonfiguration för att avgöra vilka data som returneras. I stället för att visa hela [!DNL User-Agent] som standard för alla begäranden, hanteras åtkomsten på ett explicit och spårbart sätt.
+När moderna webbläsare skickar en användare till en webbserver, skickas hela användaragentsträngen vid varje begäran, oavsett om den krävs eller inte. Klienttips tvingar å andra sidan en modell där servern måste fråga webbläsaren om ytterligare information om klienten. När webbläsaren tar emot den här begäran kan den tillämpa egna profiler eller användarkonfiguration för att avgöra vilka data som returneras. I stället för att visa hela användaragentsträngen som standard för alla begäranden, hanteras nu åtkomsten på ett explicit och spårbart sätt.
 
 ## Stöd för webbläsare {#browser-support}
 
-[Klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) introducerades med [!DNL Google Chrome ]version 89.
+[Tips för användaragentklient](https://developer.chrome.com/docs/privacy-sandbox/user-agent/) introducerades med [!DNL Google Chrome]version 89.
 
 Ytterligare Chromium-baserade webbläsare stöder API:t för klienttips, som:
 
@@ -77,7 +77,7 @@ Ytterligare Chromium-baserade webbläsare stöder API:t för klienttips, som:
 
 ## Kategorier {#categories}
 
-Det finns två kategorier med klienttips för användaragenten:
+Det finns två typer av klienttips för användaragenten:
 
 * [Tips för låg entropi-klient](#low-entropy)
 * [Tips för hög entropi-klient](#high-entropy)
@@ -120,7 +120,7 @@ The [Operativsystem](https://experienceleague.adobe.com/docs/analytics/component
 
 ### Audience Manager förlitar sig på klienttips med hög entropi {#aam}
 
-[!DNL Google] har uppdaterat [!DNL Chrome] webbläsarfunktioner för att minimera den information som samlas in via `User-Agent` header. Detta innebär att Audience Manager-kunder använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) inte längre får tillförlitlig information om egenskaper baserat på [tangenter på plattformsnivå](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=en).
+[!DNL Google] har uppdaterat [!DNL Chrome] webbläsarfunktioner för att minimera den information som samlas in via `User-Agent` header. Därför använder Audience Manager kunder som använder [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en) inte längre får tillförlitlig information om egenskaper baserat på [tangenter på plattformsnivå](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-device-targeting.html?lang=en).
 
 Audience Manager-kunder som använder plattformsnivånycklar för målinriktning måste gå över till [Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) i stället för [DIL](https://experienceleague.adobe.com/docs/audience-manager/user-guide/dil-api/dil-overview.html?lang=en)och aktivera [High Entropy Client-tips](#enabling-high-entropy-client-hints) att fortsätta att ta emot tillförlitliga uppgifter om egenskaper.
 
@@ -134,7 +134,7 @@ Om du till exempel vill hämta klienttips för hög entropi från webbegenskaper
 
 ## Exempel {#example}
 
-Klienttips som finns i rubrikerna för den första begäran som webbläsaren gör till en webbserver innehåller webbläsarvarumärket, huvudversionen av webbläsaren och en indikator på om klienten är en mobil enhet. Varje datadel får ett eget rubrikvärde i stället för att grupperas i en enda [!DNL User-Agent] sträng, enligt nedan:
+Klienttips som finns i rubrikerna för den första begäran som webbläsaren gör till en webbserver innehåller webbläsarvarumärket, huvudversionen av webbläsaren och en indikator på om klienten är en mobil enhet. Varje datadel har ett eget rubrikvärde i stället för att grupperas i en enda användaragentsträng, vilket visas nedan:
 
 ```shell
 Sec-CH-UA: "Chromium";v="101", "Google Chrome";v="101", " Not;A Brand";v="99"
@@ -150,7 +150,7 @@ Motsvarande [!DNL User-Agent] sidhuvud för samma webbläsare skulle se ut så h
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36
 ```
 
-Även om informationen är liknande innehåller den första begäran till servern klienttips. Dessa innehåller bara en delmängd av det som finns i [!DNL User-Agent] sträng. Saknas i begäran är operativsystemets arkitektur, operativsystemets fullständiga version, namnet på layoutmotorn, versionen av layoutmotorn och webbläsarversionen.
+Även om informationen är liknande innehåller den första begäran till servern klienttips. Dessa innehåller bara en delmängd av det som är tillgängligt i användaragentsträngen. Saknas i begäran är operativsystemets arkitektur, operativsystemets fullständiga version, namnet på layoutmotorn, versionen av layoutmotorn och webbläsarversionen.
 
 Vid efterföljande förfrågningar [!DNL Client Hints API] gör att webbservrar kan fråga efter ytterligare information om enheten. När dessa värden begärs, beroende på webbläsarprincipen eller användarinställningarna, kan webbläsarsvaret inkludera den informationen.
 
