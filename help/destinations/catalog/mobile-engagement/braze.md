@@ -3,9 +3,9 @@ keywords: mobil; braze; messaging;
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: e2317201ae4810734714cea6c5d172ea6a542f5b
 workflow-type: tm+mt
-source-wordcount: '981'
+source-wordcount: '1046'
 ht-degree: 1%
 
 ---
@@ -163,6 +163,14 @@ Den korrekta mappningen skulle se ut så här:
 ## Exporterade data {#exported-data}
 
 Verifiera om data har exporterats till [!DNL Braze] mål, kontrollera [!DNL Braze] konto. [!DNL Adobe Experience Platform] målgrupper exporteras till [!DNL Braze] under `AdobeExperiencePlatformSegments` -attribut.
+
+## Felsökning {#troubleshooting}
+
+**Jag fick ett timeout-fel när jag aktiverade mina målgrupper på det här målet. Vad ska jag göra?**
+
+Det kan hända att målgruppsaktiveringen till det här målet resulterar i ett timeout-fel. Detta fel indikerar inte ett aktiveringsproblem.
+
+Om du får ett timeout-fel kontrollerar du målgruppens storlek på målplattformen. Om målgruppens storlek är korrekt fungerar integreringen som förväntat.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
