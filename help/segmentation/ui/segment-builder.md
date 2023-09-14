@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 56d9d3ec5565960438540ffec867ed528b52eaf1
+source-git-commit: f3bad477156db8f8cf79582c7a6cc2562e983b63
 workflow-type: tm+mt
-source-wordcount: '3267'
+source-wordcount: '3283'
 ht-degree: 0%
 
 ---
@@ -88,16 +88,20 @@ I det här fallet kan du mappa de två rapportsviterna med följande schema:
 
 >[!NOTE]
 >
->De generiska eVar fylls i men du bör **not** använda dem i segmentdefinitionerna (om det är möjligt), eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
+>De generiska värdena för eVar fylls i men du bör **not** använda dem i segmentdefinitionerna (om det är möjligt), eftersom värdena kan betyda andra saker än vad de ursprungligen var i sina rapporter.
 
 När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i dina profilrelaterade arbetsflöden och segmentering.
 
 | Scenario | Unionens schemaupplevelse | Generisk variabel för segmentering | Segmentmappad variabel |
 | -------- | ----------------------- | ----------------------------- | ---------------------------- |
 | Ett rapportpaket | En egen namnbeskrivning ingår i generiska variabler. <br><br>**Exempel:** Sidnamn (eVar2) | <ul><li>Egen namnbeskrivning ingår i generiska variabler</li><li>Frågor använder data från den specifika datauppsättningen, eftersom det är den enda</li></ul> | Frågor kan använda Adobe Analytics-data och eventuellt andra källor. |
-| Flera rapportsviter | Inga egna namnbeskrivningar ingår i generiska variabler. <br><br>**Exempel:** eVar2 | <ul><li>Alla fält med flera beskrivningar visas som generiska. Det innebär att inga egna namn visas i användargränssnittet.</li><li>Frågor kan använda data från alla datauppsättningar som innehåller eVar, vilket kan resultera i blandade eller felaktiga resultat.</li></ul> | Frågor använder korrekt kombinerade resultat från flera datauppsättningar. |
+| Flera rapportsviter | Inga egna namnbeskrivningar ingår i generiska variabler. <br><br>**Exempel:** eVar2 | <ul><li>Alla fält med flera beskrivningar visas som generiska. Det innebär att inga egna namn visas i användargränssnittet.</li><li>Frågor kan använda data från alla datauppsättningar som innehåller eVarna, vilket kan resultera i blandade eller felaktiga resultat.</li></ul> | Frågor använder korrekt kombinerade resultat från flera datauppsättningar. |
 
 ### Målgrupper
+
+>[!NOTE]
+>
+>För målgrupper som skapats inom Platform är det bara målgrupper som har **samma** sammanfogningsprincipen visas.
 
 The **[!UICONTROL Audiences]** På -fliken visas alla målgrupper som importerats från externa källor, som Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
 
