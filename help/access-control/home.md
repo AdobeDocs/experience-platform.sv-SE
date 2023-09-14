@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 88bfcdef65b4a938d573b1beb1952c7e030ebc13
+source-git-commit: d83a5558d706e7bf059edb912f6fd43d4b66cc54
 workflow-type: tm+mt
-source-wordcount: '1414'
+source-wordcount: '1509'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörighet
 - Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och markerar **Adobe Experience Platform** i produktlistan på översiktssidan.
 - För att ge Experience Platform åtkomst måste administratören lägga till användare i standardproduktprofilen: `AEP-Default-All-Users`.
 - Administratören kan skapa nya roller eller redigera behörigheter och användare för befintliga roller i Experience Platform.
-- När administratören skapar eller redigerar en roll lägger administratören till användare i rollen med **[!UICONTROL users]** och ger behörighet till dessa användare (till exempel &quot;[!UICONTROL Read Datasets]&quot; eller &quot;[!UICONTROL Manage Schemas]&quot;) genom att redigera rollens behörigheter. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma redigeringsalternativ.
+- När administratören skapar eller redigerar en roll lägger administratören till användare i rollen med **[!UICONTROL users]** och ger behörighet till dessa användare (som[!UICONTROL Read Datasets]&quot; eller &quot;[!UICONTROL Manage Schemas]&quot;) genom att redigera rollens behörigheter. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma redigeringsalternativ.
 - När användare loggar in i användargränssnittet i Experience Platform styrs deras åtkomst till Experience Platform av de behörigheter som de har fått från föregående steg. Om en användare till exempel inte har [!UICONTROL View Datasets] behörighet, **[!UICONTROL Datasets]** -fliken på sidomenyn visas inte för den användaren.
 
 Mer information om hur du hanterar åtkomstkontroll i Experience Platform finns i [användarhandbok för åtkomstkontroll](./ui/overview.md).
@@ -42,7 +42,7 @@ Alla anrop till Experience Platform API:er valideras för behörigheter och retu
 
 ### Roller
 
-I [!UICONTROL Roles] används roller. Med roller kan du tilldela behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som tilldelats dem via roller. Användare kan tilldelas till en eller flera roller som tillhör din organisation.
+I [!UICONTROL Roles] används roller. Behörigheter tilldelas användare. Med roller kan du tilldela behörigheter till en eller flera användare, och de kan även innehålla deras åtkomst till omfattningen av de sandlådor som tilldelats dem via roller. Användare kan tilldelas till en eller flera roller som tillhör din organisation.
 
 ### Standardroller
 
@@ -100,6 +100,10 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Profile Management] | [!UICONTROL View Merge Policies] | Skrivskyddad åtkomst till tillgängliga kopplingsprofiler. |
 | [!DNL Profile Management] | [!UICONTROL Export Audience for Segment] | Möjlighet att exportera ett utvärderat målgruppssegment till en datauppsättning. |
 | [!DNL Profile Management] | [!UICONTROL Evaluate a Segment to an Audience] | Möjlighet att generera profiler för en viss målgrupp genom att utvärdera en segmentdefinition. |
+| [!DNL Profile Management] | [!UICONTROL View B2B AI] | Skrivskyddad åtkomst till inställningar och konfigurationer för alla B2B AI/ML-tjänster. |
+| [!DNL Profile Management] | [!UICONTROL Manage B2B AI] | Åtkomst att läsa, skapa, redigera och ta bort inställningar och konfigurationer för alla B2B AI/ML-tjänster. |
+| [!DNL Profile Management] | [!UICONTROL View B2B Profile] | Skrivskyddad åtkomst till B2B-entitetsprofiler (som Konto, Möjligheter och så vidare), inställningar och konfigurationer för alla B2B AI/ML-tjänster och B2B-instrumentpanelswidgetar. |
+| [!DNL Profile Management] | [!UICONTROL Manage B2B Profile] | Åtkomst för att läsa, skapa, redigera och ta bort B2B-enhetsprofiler (t.ex. konto, säljprojekt). Skrivskyddad åtkomst för inställningar och konfigurationer för alla B2B AI/ML-tjänster och B2B-instrumentpanelswidgetar. |
 | [!DNL Identity Management] | [!UICONTROL Manage Identity Namespaces] | Åtkomst för att läsa, skapa, redigera och ta bort identitetsnamnutrymmen. |
 | [!DNL Identity Management] | [!UICONTROL View Identity Namespaces] | Skrivskyddad åtkomst för identitetsnamnutrymmen. |
 | [!DNL Identity Management] | [!UICONTROL View Identity Graph] | Skrivskyddad åtkomst för identitetsdiagram. |
@@ -109,7 +113,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Destinations] | [!UICONTROL Manage Destinations] | Åtkomst att läsa, skapa och ta bort målaktiveringsflöden och destinationskonton. |
 | [!DNL Destinations] | [!UICONTROL View Destinations] | Skrivskyddad åtkomst till tillgängliga destinationer i **[!UICONTROL Catalog]** och autentiserade mål på **[!UICONTROL Browse]** -fliken. |
 | [!DNL Destinations] | [!UICONTROL Activate Destinations] | Ger användarna möjlighet att aktivera segment för befintliga destinationer. Aktiverar mappningssteget i aktiveringsarbetsflödet. Den här behörigheten kräver antingen [!UICONTROL View Destinations] eller [!UICONTROL Manage Destinations] beviljas den användare som ska aktivera data till destinationer. |
-| [!DNL Destinations] | [!UICONTROL Activate Segment without Mapping] | Ger användarna möjlighet att aktivera segment för befintliga destinationer, utan att visa [mappningssteg](../destinations/ui/activate-batch-profile-destinations.md#mapping). Användare kan lägga till och ta bort segment i aktiveringsarbetsflöden, men kan inte lägga till eller ta bort mappade attribut eller identiteter. Den här behörigheten kräver [!UICONTROL Activate Destinations] behörighet att beviljas den användare som ska aktivera data till destinationer. |
+| [!DNL Destinations] | [!UICONTROL Activate Segment without Mapping] | Ger användarna möjlighet att aktivera segment för befintliga mål utan att visa [mappningssteg](../destinations/ui/activate-batch-profile-destinations.md#mapping). Användare kan lägga till och ta bort segment i aktiveringsarbetsflöden, men kan inte lägga till eller ta bort mappade attribut eller identiteter. Denna behörighet kräver [!UICONTROL Activate Destinations] behörighet att beviljas den användare som ska aktivera data till destinationer. |
 | [!DNL Destinations] | [!UICONTROL Manage and Activate Dataset Destinations] | Möjlighet att läsa, skapa, redigera och inaktivera datauppsättningsexportflöden. Möjlighet att även aktivera data till aktiva datauppsättningar som har skapats. |
 | [!DNL Destinations] | [!UICONTROL Destination Authoring] | Möjlighet att skapa destinationer med [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL Manage Sources] | Tillgång till att läsa, skapa, redigera och inaktivera källor. |
@@ -122,7 +126,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | Datastyrning | [!UICONTROL View Data Usage Policies] | Skrivskyddad åtkomst till dataanvändningsprinciper som tillhör din organisation. |
 | Datastyrning | [!UICONTROL View User Activity Log] | Skrivskyddad åtkomst till inspelad vy [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) av plattformsaktiviteter. |
 | [!DNL Dashboards] | [!UICONTROL View License Usage Dashboard] | Skrivskyddad åtkomst för att visa kontrollpanelen för licensanvändning. |
-| [!DNL Dashboards] | [!UICONTROL Manage Standard Dashboards] | Lägg till anpassade attribut som ännu inte finns i data warehouse. |
+| [!DNL Dashboards] | [!UICONTROL Manage Standard Dashboards] | Lägg till anpassade attribut som ännu inte finns i datalagret. |
 | [!DNL Query Service] | [!UICONTROL Manage Queries] | Åtkomst att läsa, skapa, redigera och ta bort strukturerade SQL-frågor för plattformsdata. |
 | [!DNL Query Service] | [!UICONTROL Manage Query Service Integration] | Åtkomst för att skapa, uppdatera och ta bort ej förfallande autentiseringsuppgifter för åtkomst till frågetjänsten. |
 
