@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: cf10eb11773320d10ece53f192beacc8da83e980
+source-git-commit: 36e38824963139414f2803ef4127706d1e521d1a
 workflow-type: tm+mt
-source-wordcount: '1656'
+source-wordcount: '1678'
 ht-degree: 0%
 
 ---
@@ -255,3 +255,7 @@ Select **[!UICONTROL Activate]** to activate the policy, and a dialog appears wh
 Du har slutfört användningen av etiketter för en roll, schemafält och segment. Den externa byrå som tilldelats de här rollerna är begränsad från att visa dessa etiketter och deras värden i schemat, datauppsättningen och profilvyn. Dessa fält är också begränsade från att användas i segmentdefinitionen när segmentbyggaren används.
 
 Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](./overview.md).
+
+Följande video är avsedd att ge stöd för din förståelse av attributbaserad åtkomstkontroll och visar hur du konfigurerar roller, resurser och principer.
+
+>[!VIDEO](https://video.tv.adobe.com/v/345641?learn=on)
