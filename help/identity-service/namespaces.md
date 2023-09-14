@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: ac53678ca9ef51cb638590138a16a3506c6a1fc0
 workflow-type: tm+mt
-source-wordcount: '1743'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Följande identitetstyper är tillgängliga i [!DNL Platform]:
 | Enhets-ID | Enhets-ID:n identifierar maskinvaruenheter som IDFA (iPhone och iPad), GAID (Android) och RIDA (Roku) och kan delas av flera personer i hushåll. |
 | E-postadress | E-postadresser är ofta kopplade till en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen omfattar personligt identifierbar information (PII). Detta är en indikation på att [!DNL Identity Service] för att hantera värdet känsligt. |
 | Identifierare för icke-personer | ID:n som inte är personer används för att lagra identifierare som kräver namnutrymmen men som inte är anslutna till ett personkluster. Till exempel en produkt-SKU, data relaterade till produkter, organisationer eller butiker. |
-| Partner-ID [!BADGE Beta]{type=Informative} | <ul><li>Partner-ID:n är identifierare som används av datapartners för att representera människor. Partners-ID:n är ofta pseudonyma så att de inte avslöjar en persons sanna identitet och kan vara sannolika. I Real-time Customer Data Platform används partner-ID:n i första hand för att öka målgruppsaktiveringen och förbättra data, och inte för att skapa länkar till identitetsdiagram.</li><li>Identitetsdiagram genereras inte vid inmatning av en identitet som innehåller ett identitetsnamnområde som har angetts som Partner ID-typ.</li><li>Om partnerdata inte importeras med identitetstypen för partner-ID kan det leda till systemdiagrambegränsningar för identitetstjänsten samt oönskad sammanslagning av profiler.</li><ul> |
+| Partner-ID | <ul><li>Partner-ID:n är identifierare som används av datapartners för att representera människor. Partners-ID:n är ofta pseudonyma så att de inte avslöjar en persons sanna identitet och kan vara sannolika. I Real-time Customer Data Platform används partner-ID:n i första hand för att öka målgruppsaktiveringen och förbättra data, och inte för att skapa länkar till identitetsdiagram.</li><li>Identitetsdiagram genereras inte vid inmatning av en identitet som innehåller ett identitetsnamnområde som har angetts som Partner ID-typ.</li><li>Om partnerdata inte importeras med identitetstypen för partner-ID kan det leda till systemdiagrambegränsningar för identitetstjänsten samt oönskad sammanslagning av profiler.</li><ul> |
 | Telefonnummer | Telefonnummer är ofta associerade med en person och kan därför användas för att identifiera den personen i olika kanaler. Identiteter av den här typen är PII. Detta är en indikation på [!DNL Identity Service] för att hantera värdet känsligt. |
 
 {style="table-layout:auto"}
