@@ -4,7 +4,7 @@ description: Lär dig hur du använder AI Assistant för att navigera bland och 
 badge: Alfa
 hide: true
 hidefromtoc: true
-source-git-commit: 55d2518cdded50bcc8d6f7cc36f29581c5e64dab
+source-git-commit: 704d47b0e37825508705402ab2401636f46ef23f
 workflow-type: tm+mt
 source-wordcount: '2362'
 ht-degree: 0%
@@ -286,5 +286,3 @@ Se tabellen nedan för exempel:
 | Vad är mitt största segment? | Vad är mitt största segment? Använda data. | Tala uttryckligen om för AI-assistenten att du vill att svaret ska baseras på data. |
 | Vad är mitt största segment? | Lista mitt största segment. | Det finns tillfällen då en fråga om vad.. kan bli fel för en dokumentationsbaserad fråga. Att använda ett kommando som &quot;list&quot; är en starkare indikator på att du ställer en fråga med data i sitt sammanhang. |
 | Hur många datauppsättningar har jag? | Räkna mina datauppsättningar. | Den ursprungliga frågan fungerar för segment, men fungerar kanske inte med datauppsättningar. |
-
-
