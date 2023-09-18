@@ -1,20 +1,15 @@
 ---
 title: Användargränssnittshandbok för beräknade attribut
 description: Lär dig hur du skapar, visar och uppdaterar beräknade attribut med Adobe Experience Platform-gränssnittet.
-badge: "Beta"
-source-git-commit: 3b4e1e793a610c9391b3718584a19bd11959e3be
+source-git-commit: 7ed473750b673eefd84b8d727043ad6ea35c3a8e
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1360'
 ht-degree: 0%
 
 ---
 
 
 # Användargränssnittshandbok för beräknade attribut
-
->[!IMPORTANT]
->
->Beräknade attribut finns för närvarande **beta** och är **not** som är tillgängliga för alla användare.
 
 I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 
@@ -29,11 +24,11 @@ Användargränssnittshandboken kräver förståelse för de olika [!DNL Experien
 
 ## Visa beräknade attribut {#view}
 
-I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen, följt av **[!UICONTROL Computed attributes]** för att se en lista över de beräknade attributen som är tillgängliga för din organisation. Detta innehåller information om det beräknade attributets namn, beskrivning, senaste utvärderingsdatum och senaste utvärderingsstatus.
+I användargränssnittet för Experience Platform väljer du **[!UICONTROL Profiles]** i den vänstra navigeringen, följt av **[!UICONTROL Computed attributes]** om du vill se en lista över de beräknade attributen som är tillgängliga för din organisation. Detta innehåller information om det beräknade attributets namn, beskrivning, senaste utvärderingsdatum och senaste utvärderingsstatus.
 
-![The [!UICONTROL Profile] och [!UICONTROL Computed attributes] flikarna markeras och användarna får se hur de får åtkomst till sidan med beräknade attribut.](./images/ui/browse.png)
+![The [!UICONTROL Profile] -avsnittet och [!UICONTROL Computed attributes] flikarna markeras och användarna får se hur de får åtkomst till sidan med beräknade attribut.](./images/ui/browse.png)
 
-Du kan välja vilka fält som ska visas ![ikonen Konfigurera kolumner](./images/ui/configure-icon.png) för att lägga till eller ta bort de fält som du vill ska visas.
+Om du vill välja vilka fält som ska visas kan du välja ![ikonen Konfigurera kolumner](./images/ui/configure-icon.png) för att lägga till eller ta bort de fält som du vill ska visas.
 
 | Fält | Beskrivning |
 | ----- | ----------- |
@@ -44,15 +39,25 @@ Du kan välja vilka fält som ska visas ![ikonen Konfigurera kolumner](./images/
 | [!UICONTROL Last evaluation status] | Status som anger om det beräknade attributet har beräknats korrekt i den senaste utvärderingskörningen. Möjliga värden är **[!UICONTROL Success]** eller **[!UICONTROL Failed]**. |
 | [!UICONTROL Refresh frequency] | En indikation på hur ofta det beräknade attributet förväntas uppdateras. Möjliga värden är timme, dag, vecka eller månad. |
 | [!UICONTROL Fast refresh] | Ett värde som visar om snabb uppdatering har aktiverats för det här beräkningsattributet eller inte. Om snabb uppdatering är aktiverad kan det beräknade attributet uppdateras dagligen i stället för varje vecka, varannan vecka eller månad. Det här värdet gäller endast för beräknade attribut med en uppslagsperiod som är större än en vecka. |
-| [!UICONTROL Lifecycle status] | Det beräknade attributets aktuella status. Det finns tre möjliga statusar: <ul><li>**[!UICONTROL Draft]:** Det beräknade attributet gör **not** har skapat ett fält i schemat ännu. I det här läget kan det beräknade attributet redigeras. </li><li>**[!UICONTROL Published]:** Det beräknade attributet har ett fält som har skapats i schemat och är klart att användas. I det här läget är det beräknade attributet **inte** redigeras.</li><li>**[!UICONTROL Inactive]:** Det beräknade attributet är inaktiverat. Mer information om inaktiv status finns i [Vanliga frågor](./faq.md#inactive-status). </li> |
+| [!UICONTROL Lifecycle status] | Det beräknade attributets aktuella status. Det finns tre möjliga statusar: <ul><li>**[!UICONTROL Draft]:** Det beräknade attributet gör **not** har skapat ett fält i schemat ännu. I det här läget kan attributet beräknas. </li><li>**[!UICONTROL Published]:** Det beräknade attributet har ett fält som har skapats i schemat och är klart att användas. I det här läget är det beräknade attributet **inte** redigeras.</li><li>**[!UICONTROL Inactive]:** Det beräknade attributet är inaktiverat. Mer information om inaktiv status finns i [Vanliga frågor och svar](./faq.md#inactive-status). </li> |
+| [!UICONTROL Created] | En tidsstämpel som visar det datum och den tidpunkt då det beräknade attributet skapades. |
+| [!UICONTROL Last modified] | En tidsstämpel som visar det datum och den tidpunkt då det beräknade attributet senast ändrades. |
 
-Dessutom kan du välja ett beräknat attribut för att få mer detaljerad information om det. Mer information om beräknade attribut finns i [visa ett beräknat attributs informationsavsnitt](#view-details).
+Du kan även filtrera de beräknade attribut som visas baserat på livscykelstatusen. Välj ![tratt](./images/ui/filter-icon.png) -ikon.
+
+![Filterikonen är markerad.](./images/ui/select-filter.png)
+
+Nu kan du välja att filtrera de beräknade attributen efter status ([!UICONTROL Draft], [!UICONTROL Published]och [!UICONTROL Inactive]).
+
+![De alternativ som du kan filtrera de beräknade attributen med markeras. Dessa alternativ innehåller [!UICONTROL Draft], [!UICONTROL Published]och [!UICONTROL Inactive].](./images/ui/view-filters.png)
+
+Dessutom kan du välja ett beräknat attribut för att få mer detaljerad information om det. Mer information om beräknade attribut finns på sidan [visa ett beräknat attributs informationsavsnitt](#view-details).
 
 ## Skapa ett beräknat attribut {#create}
 
 Om du vill skapa ett nytt beräknat attribut väljer du **[!UICONTROL Create computed attribute]** för att ange det nya arbetsflödet för beräknade attribut.
 
-![The [!UICONTROL Create computed attributes] knappen är markerad och visar hur användarna kommer till sidan för att skapa ett beräknat attribut.](./images/ui/create.png)
+![The [!UICONTROL Create computed attributes] knappen är markerad och visar för användarna hur man kommer till sidan för att skapa ett beräknat attribut.](./images/ui/create.png)
 
 The **[!UICONTROL Create computed attribute]** visas. På den här sidan kan du lägga till grundläggande information för det beräknade attribut som du vill skapa.
 
@@ -78,7 +83,7 @@ När du har valt vilket attribut som ska användas i den beräknade attributdefi
 
 ### Använd sammanställningsfunktion
 
-Nu kan du använda en funktion för fältet från villkorliga utdata. Välj först aggregeringsfunktionstypen. Tillgängliga alternativ inkluderar [!UICONTROL Sum], [!UICONTROL Min], [!UICONTROL Max], [!UICONTROL Count]och [!UICONTROL Most Recent]. Mer information om funktionerna finns i [funktionsavsnitt](./overview.md#functions) av översikten över beräknade attribut.
+Nu kan du använda en funktion för fältet från villkorliga utdata. Välj först aggregeringsfunktionstypen. Tillgängliga alternativ inkluderar [!UICONTROL Sum], [!UICONTROL Min], [!UICONTROL Max], [!UICONTROL Count]och [!UICONTROL Most Recent]. Mer information om de här funktionerna finns i [funktionsavsnitt](./overview.md#functions) av översikten över beräknade attribut.
 
 ![De beräknade attributfunktionerna visas.](./images/ui/select-function.png)
 
@@ -86,11 +91,26 @@ När du har valt en funktion kan du välja vilket fält som ska användas. Vilka
 
 ![I det markerade fältet visas det attribut som du väljer att sammanfoga funktionen med.](./images/ui/select-eligible-field.png)
 
-### Inläsningstid
+### Varaktighet för uppslag
 
 När du har använt aggregeringsfunktionen måste du definiera uppslagsperioden för det beräknade attributet. Den här uppslagsperioden anger hur lång tid du vill samla händelser på. Den här uppslagstiden kan anges i timmar, dagar, veckor eller månader.
 
 ![Uppslagets varaktighet är markerad.](./images/ui/select-lookback-duration.png)
+
+### Snabb uppdatering {#fast-refresh}
+
+>[!CONTEXTUALHELP]
+>id="platform_profile_computedAttributes_fastRefresh"
+>title="Snabb uppdatering"
+>abstract="Snabb uppdatering gör att du kan uppdatera dina attribut. Om du aktiverar det här alternativet kan du uppdatera dina beräknade attribut dagligen, även under längre uppslagsperioder, så att du snabbt kan reagera på användaraktiviteter. Det här värdet gäller endast för beräknade attribut med en uppslagsperiod som är större än en vecka."
+
+När du använder aggregeringsfunktionen kan du aktivera snabb uppdatering om uppslagsperioden är längre än en vecka.
+
+![The [!UICONTROL Fast Refresh] är markerad.](./images/ui/enable-fast-refresh.png)
+
+Snabb uppdatering gör att du kan uppdatera dina attribut. Om du aktiverar det här alternativet kan du uppdatera dina beräknade attribut dagligen, även under längre uppslagsperioder, så att du snabbt kan reagera på användaraktiviteter.
+
+Mer information om snabb uppdatering finns i [snabbuppdateringsavsnitt](./overview.md#fast-refresh) av översikten över beräknade attribut.
 
 När de här stegen är slutförda kan du nu antingen välja att spara det beräknade attributet som ett utkast eller att publicera det direkt.
 

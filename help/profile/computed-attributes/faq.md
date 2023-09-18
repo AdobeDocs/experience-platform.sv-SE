@@ -1,20 +1,15 @@
 ---
 title: Vanliga frågor om beräknade attribut
 description: Få svar på vanliga frågor om hur du använder beräknade attribut.
-badge: "Beta"
-source-git-commit: 3b4e1e793a610c9391b3718584a19bd11959e3be
+source-git-commit: fb5d3088b9fb330153bf64125df2f739eee80518
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '848'
 ht-degree: 0%
 
 ---
 
 
 # Frågor och svar
-
->[!IMPORTANT]
->
->Beräknade attribut finns för närvarande **beta** och är **not** som är tillgängliga för alla användare.
 
 I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Nedan följer en lista med vanliga frågor om beräknade attribut.
 
@@ -36,7 +31,13 @@ Uppdateringsfrekvensen bestäms automatiskt utifrån det beräknade attributets 
 
 ## Hur påverkas beräkningarna av när Experience Event-data förfaller?
 
-Beräknade attributberäkningar baseras på den definierade uppslagsperioden och de Experience Events som ligger inom den perioden. Därför är dessa beräkningar **not** påverkas av att Experience Event-data upphör att gälla. För att dina beräknade attribut ska bli korrekta bör du dock behålla uppslagsperioden **inom** Gränserna för era data som förfaller.
+Beräknade attributberäkningar är efterfyllda för den definierade uppslagstiden i den första utvärderingen och uppdateras baserat på inkrementella händelser för efterföljande uppdateringar. Därför är dessa beräkningar **not** påverkas av att Experience Event-data upphör att gälla för gamla data efter den första utvärderingen.
+
+Om du till exempel skapar ett beräknat attribut som utvärderas månadsvis med en 3 månaders uppslagsperiod, för den första utvärderingen, beräknas det beräknade attributet för alla händelser inom den 3-månaders uppslagsperioden. Även om Experience Event-datauppsättningen har ett förfallodatum på en månad kommer dessa data att upphöra att gälla **not** påverkar den månatliga uppdateringen av beräknade attribut, eftersom nästa månads utvärderingskörning stegvis sammanställer händelser och uppdaterar beräkningen.
+
+>[!NOTE]
+>
+>Utgångna data **inte** senare fyllas i med ett beräknat attribut. Utgångsdatum för händelsedatamängd **kan** begränsade möjligheten att validera det beräknade attributets värde vid en senare tidpunkt. Om du vill validera det beräknade attributvärdet ska din uppslagsperiod vara kvar **inom** Gränserna för dataförfallodatum.
 
 ## Kan jag skapa ett beräknat attribut baserat på ett annat beräknat attribut?
 
@@ -44,7 +45,7 @@ Eftersom beräknade attribut skapas med Experience Event-fält och finns i ett P
 
 ## Finns det några begränsningar för hur många beräknade attribut jag kan skapa?
 
-Aktuellt maximalt antal **publicerad** beräknade attribut är 25.
+Ja, det finns en gräns för hur många beräknade attribut du kan skapa. Se produktbeskrivningen eller kontakta kontogruppen på Adobe för mer information.
 
 ## Kommer det att påverka nedladdningen av ett beräknat attribut?
 
@@ -52,8 +53,34 @@ Innan du inaktiverar det beräknade attributet måste du **bör** ta bort dem fr
 
 ## Vad händer när jag inaktiverar ett beräknat attribut? {#inactive-status}
 
-När ett beräknat attribut är inaktiverat eller inaktiverat uppdateras det inte längre. Därför är det här beräknade attributet **inte** användas för profilsökning eller annan nedladdning.
+När ett beräknat attribut är inaktiverat eller inaktiverat uppdateras det inte längre. Detta beräknade attribut resulterar i **inte** användas för profilsökning eller annan nedladdning.
 
 ## Hur bidrar beräknade attribut till ökat engagemang?
 
 Beräknade attribut driver profilberikning genom att samla dina händelseattribut på en sammanslagen profilnivå. Du kan till exempel anpassa e-postmeddelanden för marknadsföring med den senast visade produkten.
+
+## Hur ofta utvärderas beräknade attribut? Är detta relaterat till målgruppens utvärderingsschema?
+
+Beräknade attribut utvärderas i grupper oberoende av segmenteringsschemat. Det innebär att oavsett segmenteringstyp (gruppsegmentering eller direktuppspelningssegmentering) kommer det beräknade attributet att utvärderas enligt ett eget schema (timme, dag, vecka eller månad).
+
+När målgruppen utvärderas används **senaste** värdet för det beräknade tillgängliga attributet.
+
+## Hur interagerar beräknade attribut med målgrupper som utvärderas genom direktuppspelningssegmentering?
+
+Om en målgrupp som utvärderas med avseende på direktuppspelad segmentering använder ett beräknat attribut tar den **senaste värdet** av det beräknade attributet medan målgruppen utvärderas. Om publiken till exempel letar efter köphändelser, kommer publiken att referera till det senast utvärderade beräknade attributvärdet när köphändelsen inträffar.
+
+## Kan jag använda beräknade attribut på Edge?
+
+I likhet med andra profilattribut är beräknade attribut tillgängliga och kan användas på kanterna. Observera att beräknade attribut är **not** beräknas på kanten.
+
+## Hur används dataanvändningsetiketter på beräknade attribut?
+
+Beräknade attribut härleder automatiskt dataanvändningsetiketter från de källfält och datamängder som användes för att definiera de beräknade attributen. Detta garanterar att dina beteendedata används på rätt sätt.
+
+## Hur får jag åtkomst till beräknade attribut?
+
+För att få åtkomst till beräknade attribut måste du ha rätt behörighet. Mer information om vilka behörigheter som krävs finns i [dokumentation om åtkomstkontroll](../../access-control/home.md).
+
+## Hur använder jag beräknade attribut med Adobe Journey Optimizer?
+
+Om du vill använda beräknade attribut under resor måste du lägga till `SystemComputedAttributes` fältgrupp till datakällan Experience Platform. Mer information om hur du konfigurerar datakällan för Experience Platform finns i [Adobe Experience Platform datakällguide](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html?lang=en).

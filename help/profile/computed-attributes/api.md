@@ -1,21 +1,19 @@
 ---
 title: API-slutpunkt för beräknade attribut
 description: Lär dig hur du skapar, visar, uppdaterar och tar bort beräknade attribut med Real-Time Customer Profile API.
-badge: "Beta"
-source-git-commit: 3b4e1e793a610c9391b3718584a19bd11959e3be
+source-git-commit: e1c7d097f7ab39d05674c3dad620bea29f08092b
 workflow-type: tm+mt
-source-wordcount: '1565'
-ht-degree: 1%
+source-wordcount: '1654'
+ht-degree: 0%
 
 ---
+
 
 # API-slutpunkt för beräknade attribut
 
 >[!IMPORTANT]
 >
->Funktionen för beräknade attribut finns för närvarande i betaversionen. Dokumentationen och funktionerna kan komma att ändras.
->
->Åtkomsten till API:t är dessutom begränsad. Kontakta Adobe Support om du vill veta hur du får åtkomst till API:t för beräknade attribut.
+>Åtkomsten till API:t är begränsad. Kontakta Adobe Support om du vill veta hur du får åtkomst till API:t för beräknade attribut.
 
 Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Den här guiden innehåller exempel på API-anrop för att utföra grundläggande CRUD-åtgärder med `/attributes` slutpunkt.
 
@@ -25,7 +23,7 @@ Om du vill veta mer om beräknade attribut börjar du med att läsa [översikt �
 
 API-slutpunkten som används i den här guiden är en del av [Kundprofil-API i realtid](https://www.adobe.com/go/profile-apis-en).
 
-Läs igenom [Starthandbok för att komma igång med profil-API](../api/getting-started.md) för länkar till rekommenderad dokumentation, en guide till hur du läser de exempel-API-anrop som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
+Innan du fortsätter bör du granska [Starthandbok för att komma igång med profil-API](../api/getting-started.md) för länkar till rekommenderad dokumentation, en guide till hur du läser de exempel-API-anrop som visas i det här dokumentet samt viktig information om vilka huvuden som krävs för att anropa ett Experience Platform-API.
 
 Läs även dokumentationen för följande tjänst:
 
@@ -52,7 +50,7 @@ Följande frågeparametrar kan användas när en lista med beräknade attribut h
 | `limit` | En parameter som anger det maximala antalet objekt som returneras som en del av svaret. Det minsta värdet för den här parametern är 1 och det högsta värdet är 40. Om den här parametern inte ingår returneras som standard 20 objekt. | `limit=20` |
 | `offset` | En parameter som anger antalet objekt som ska hoppas över innan objekten returneras. | `offset=5` |
 | `sortBy` | En parameter som anger i vilken ordning de returnerade objekten sorteras. Tillgängliga alternativ inkluderar `name`, `status`, `updateEpoch`och `createEpoch`. Du kan också välja om du vill sortera i stigande eller fallande ordning genom att inte inkludera eller inkludera en `-` framför sorteringsalternativet. Som standard sorteras objekten efter `updateEpoch` i fallande ordning. | `sortBy=name` |
-| `status` | En parameter som gör att du kan filtrera efter statusen för det beräknade attributet. Tillgängliga alternativ inkluderar `draft`, `new`, `processing`, `processed`, `failed`, `disabled`och `initializing`. Det här alternativet är inte skiftlägeskänsligt. | `status=draft` |
+| `property` | En parameter som gör att du kan filtrera på olika beräknade attributfält. Egenskaper som stöds är bland annat `name`, `createEpoch`, `mergeFunction.value`, `updateEpoch`och `status`. Vilka åtgärder som stöds beror på vilken egenskap som visas. <ul><li>`name`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (!=contains()</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
 
 **Begäran**
 
@@ -107,19 +105,24 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över de tre senaste upp
                 "default": true
             },
             "path": "{TENANT_ID}/ComputedAttributes",
+            "keepCurrent": false,
             "expression": {
                 "type": "PQL",
                 "format": "pql/text",
                 "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0)",
-                "meta": " "
             },
             "mergeFunction": {
-                "value": "-"
+                "value": "SUM"
             },
             "status": "DRAFT",
             "schema": {
                 "name": "_xdm.context.profile"
             },
+            "duration": {
+                "count": 7,
+                "unit": "DAYS"
+            },
+            "lastEvaluationTs": "",
             "createEpoch": 1671223530322,
             "updateEpoch": 1673043640946,
             "createdBy": "{USER_ID}"
@@ -138,19 +141,24 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över de tre senaste upp
                 "default": true
             },
             "path": "{TENANT_ID}/ComputedAttributes",
+            "keepCurrent": true,
             "expression": {
                 "type": "PQL",
                 "format": "pql/text",
-                "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0)",
-                "meta": " "
+                "value": "xEvent[eventType.equals(\"commerce.backofficeOrderPlaced\", false)].topN(timestamp, 1).map({\"timestamp\": timestamp, \"value\": producedBy}).head()"
             },
             "mergeFunction": {
-                "value": "-"
+                "value": "MOST_RECENT"
             },
             "status": "DRAFT",
             "schema": {
                 "name": "_xdm.context.profile"
             },
+            "duration": {
+                "count": 7,
+                "unit": "DAYS"
+            },
+            "lastEvaluationTs": "",
             "createEpoch": 1671223586455,
             "updateEpoch": 1671223586455,
             "createdBy": "{USER_ID}"
@@ -173,15 +181,19 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över de tre senaste upp
                 "type": "PQL",
                 "format": "pql/text",
                 "value": "xEvent[(commerce.checkouts.value > 0.0 or commerce.purchases.value > 1.0 or commerce.order.priceTotal >= 10.0)",
-                "meta": " "
             },
             "mergeFunction": {
-                "value": "-"
+                "value": "SUM"
             },
-            "status": "DRAFT",
+            "status": "PROCESSED",
             "schema": {
                 "name": "_xdm.context.profile"
             },
+            "duration": {
+                "count": 7,
+                "unit": "DAYS"
+            },
+            "lastEvaluationTs": "2023-08-27T00:14:55.028",
             "createEpoch": 1671220358902,
             "updateEpoch": 1671220358902,
             "createdBy": "{USER_ID}"
@@ -247,16 +259,16 @@ curl -X POST https://platform.adobe.io/data/core/ca/attributes \
 | -------- | ----------- |
 | `name` | Namnet på det beräknade attributfältet, som en sträng. Namnet på det beräknade attributet får endast bestå av alfanumeriska tecken utan mellanslag eller understreck. Detta värde **måste** vara unik bland alla beräknade attribut. Det här namnet bör vara en cameraCase-version av `displayName`. |
 | `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom organisationen att fastställa rätt beräknat attribut att använda. |
-| `displayName` | Visningsnamnet för det beräknade attributet. Det här namnet visas när du anger dina beräknade attribut i Adobe Experience Platform-gränssnittet. |
+| `displayName` | Det beräknade attributets visningsnamn. Det här namnet visas när du anger dina beräknade attribut i Adobe Experience Platform-gränssnittet. |
 | `expression` | Ett objekt som representerar frågeuttrycket för det beräknade attribut som du försöker skapa. |
 | `expression.type` | Uttryckets typ. För närvarande stöds bara PQL. |
 | `expression.format` | Uttryckets format. För närvarande, endast `pql/text` stöds. |
-| `expression.value` | Värdet för uttrycket. |
-| `keepCurrent` | Ett booleskt värde som avgör om det beräknade attributets värde hålls uppdaterat eller inte. För närvarande ska värdet anges till `false`. |
+| `expression.value` | Uttryckets värde. |
+| `keepCurrent` | Ett booleskt värde som avgör om det beräknade attributets värde uppdateras eller inte med hjälp av snabb uppdatering. För närvarande ska det här värdet anges till `false`. |
 | `duration` | Ett objekt som representerar uppslagsperioden för det beräknade attributet. Uppslagsperioden representerar hur långt tillbaka som kan slås tillbaka för att beräkna det beräknade attributet. |
 | `duration.count` | Ett tal som representerar längden för uppslagsperioden. Möjliga värden beror på värdet på `duration.unit` fält. <ul><li>`HOURS`: 1-24</li><li>`DAYS`: 1-7</li><li>`WEEKS`: 1-4</li><li>`MONTHS`: 1-6</li></ul> |
 | `duration.unit` | En sträng som representerar den tidsenhet som ska användas för uppslagsperioden. Möjliga värden är: `HOURS`, `DAYS`, `WEEKS`och `MONTHS`. |
-| `status` | Status för det beräknade attributet. Möjliga värden är `DRAFT` och `NEW`. |
+| `status` | Status för beräknat attribut. Möjliga värden är `DRAFT` och `NEW`. |
 
 +++
 
@@ -294,6 +306,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om det nya beräknade
     "schema": {
         "name": "_xdm.context.profile"
     },
+    "lastEvaluationTs": "",
     "createEpoch": 1680070188696,
     "updateEpoch": 1680070188696,
     "createdBy": "{USER_ID}"
@@ -368,6 +381,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
     "schema": {
         "name": "_xdm.context.profile"
     },
+    "lastEvaluationTs": "",
     "createEpoch": 1680070188696,
     "updateEpoch": 1680070188696,
     "createdBy": "{USER_ID}"
@@ -378,13 +392,18 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 | -------- | ----------- |
 | `id` | Ett unikt, skrivskyddat, systemgenererat ID som kan användas för att referera till det beräknade attributet under andra API-åtgärder. |
 | `type` | En sträng som visar att det returnerade objektet är ett beräknat attribut. |
+| `name` | Namnet på det beräknade attributet. |
+| `displayName` | Det beräknade attributets visningsnamn. Det här namnet visas när du anger dina beräknade attribut i Adobe Experience Platform-gränssnittet. |
+| `description` | En beskrivning av det beräknade attributet. Detta är särskilt användbart när flera beräknade attribut har definierats, eftersom det kommer att hjälpa andra inom organisationen att fastställa rätt beräknat attribut att använda. |
 | `imsOrgId` | ID:t för organisationen som det beräknade attributet tillhör. |
 | `sandbox` | Sandlådeobjektet innehåller information om den sandlåda som det beräknade attributet konfigurerades i. Den här informationen hämtas från sandlådehuvudet som skickas i begäran. Mer information finns i [översikt över sandlådor](../../sandboxes/home.md). |
 | `path` | The `path` till det beräknade attributet. |
-| `expression` | Ett objekt som innehåller det beräknade attributets uttryck. |
-| `mergeFunction` | Ett objekt som innehåller sammanfogningsfunktionen för det beräknade attributet. Det här värdet baseras på motsvarande aggregeringsparameter i det beräknade attributets uttryck. |
+| `keepCurrent` | Ett booleskt värde som avgör om det beräknade attributets värde uppdateras eller inte med hjälp av snabb uppdatering. |
+| `expression` | Ett objekt som innehåller attributets uttryck. |
+| `mergeFunction` | Ett objekt som innehåller kopplingsfunktionen för det beräknade attributet. Det här värdet baseras på motsvarande aggregeringsparameter i det beräknade attributets uttryck. Möjliga värden är `SUM`, `MIN`, `MAX`och `MOST_RECENT`. |
 | `status` | Det beräknade attributets status. Detta kan vara något av följande värden: `DRAFT`, `NEW`, `INITIALIZING`, `PROCESSING`, `PROCESSED`, `FAILED`, eller `DISABLED`. |
 | `schema` | Ett objekt som innehåller information om schemat där uttrycket utvärderas i. För närvarande, endast `_xdm.context.profile` stöds. |
+| `lastEvaluationTs` | En tidsstämpel som representerar när det beräknade attributet senast utvärderades. |
 | `createEpoch` | Tiden då det beräknade attributet skapades, i sekunder. |
 | `updateEpoch` | Den tidpunkt då det beräknade attributet senast uppdaterades, i sekunder. |
 | `createdBy` | ID för den användare som skapade det beräknade attributet. |
@@ -457,6 +476,7 @@ Ett lyckat svar returnerar HTTP-status 202 med information om det borttagna ber�
     "schema": {
         "name": "_xdm.context.profile"
     },
+    "lastEvaluationTs": "",
     "createEpoch": 1681365690928,
     "updateEpoch": 1681365690928,
     "createdBy": "{USER_ID}"
@@ -491,7 +511,7 @@ PATCH /attributes/{ATTRIBUTE_ID}
 
 Följande begäran uppdaterar statusen för det beräknade attributet från `DRAFT` till `NEW`.
 
-+++ Ett exempel på en begäran om att uppdatera ett beräknat attribut.
++++ En exempelbegäran om att uppdatera ett beräknat attribut.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ca/attributes/1e8d0d77-b2bb-4b17-bbe6-2dbc08c1a631 \
@@ -548,6 +568,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen uppda
     "schema": {
         "name": "_xdm.context.profile"
     },
+    "lastEvaluationTs": "",
     "createEpoch": 1680071726825,
     "updateEpoch": 1680074429192,
     "createdBy": "{USER_ID}"
