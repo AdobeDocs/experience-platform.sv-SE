@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Adobe Campaign Managed Cloud Services;kampanj;kampanjhanterade tjänster
 title: Adobe Campaign Managed Cloud Services
-description: Lär dig hur du ansluter Campaign-hanterade Cloud Services till plattformen med användargränssnittet
+description: Lär dig hur du ansluter Campaign-hanterade Cloud Service till plattformen med användargränssnittet
 exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 39a503b14c731aeed279bbbfa8c814c2ec26ed92
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
@@ -30,17 +30,17 @@ Innan du kan skapa en källanslutning för att hämta Campaign v8 till Experienc
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [Kampanjdokumentation v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=en) om du vill ha information om hur du hämtar och installerar klientkonsolen.
+>Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [Kampanjdokumentation v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=en) för information om hur du hämtar och installerar klientkonsolen.
 
-Logga in på Campaign v8-instansen via klientkonsolen. Under [!DNL Explorer] flik, välja [!DNL Administration] och sedan markera [!DNL Configuration]. Nästa, välj [!DNL Data schemas] och sedan använda `broadLog` filter för namn eller etikett. I listan som visas väljer du källschemat för mottagarleveransloggarna med namnet `broadLogRcp`.
+Logga in på Campaign v8-instansen via klientkonsolen. Under [!DNL Explorer] flik, välja [!DNL Administration] och sedan [!DNL Configuration]. Nästa, välj [!DNL Data schemas] och sedan använda `broadLog` filter för namn eller etikett. I listan som visas väljer du källschemat för mottagarleveransloggarna med namnet `broadLogRcp`.
 
 ![Klientkonsolen för Adobe Campaign v8 med fliken Utforskaren vald, noderna Administration, Konfiguration och Data utökade och filtreringen inställd på &quot;bred&quot;.](./images/campaign/explorer.png)
 
-Välj sedan **Data** -fliken.
+Nästa steg är att välja **Data** -fliken.
 
 ![Adobe Campaign v8-klientkonsolen med datafliken vald.](./images/campaign/data.png)
 
-Högerklicka/tangentbordet i datapanelen för att öppna snabbmenyn. Här väljer du **Konfigurera lista...**
+Högerklicka/tangentbordet i datapanelen för att öppna snabbmenyn. Välj **Konfigurera lista...**
 
 ![Adobe Campaign v8-klientkonsolen med snabbmenyn öppen och alternativet Konfigurera lista markerat.](./images/campaign/configure.png)
 
@@ -75,3 +75,9 @@ Slutligen måste du skapa en datauppsättning för dina scheman. Detaljerade ins
 Nu när du har öppnat dina dataloggar i Campaign-klientkonsolen, skapat ett schema och en datauppsättning kan du nu skapa en källanslutning för att överföra dina Campaign Managed Services-data till plattformen.
 
 Detaljerade instruktioner om hur ni kan överföra leveransloggar för Campaign v8 och spårningsloggdata till Experience Platfrom finns i guiden på [skapa en Campaign Managed Services-källanslutning i användargränssnittet](../../tutorials/ui/create/adobe-applications/campaign.md).
+
+>[!IMPORTANT]
+>
+>Det finns ett versalt fall där interaktionen mellan en nyligen borttagen e-postmottagare med ett e-postmeddelande kan återimportera personuppgifter till Experience Platform. I vissa fall kan detta återaktivera marknadsföring för den användaren.
+>
+>* Det här scenariot är bara aktivt mellan den tidpunkt då en sekretessförfrågan har utförts i Experience Platform och den tidpunkt då den har utförts i Adobe Campaign Classic. När begäran har körts i Campaign finns det en kontroll som kontrollerar att posten inte exporteras till Campaign. Vänligen skicka in en GDPR-begäran på nytt efter 72 timmar efter exekveringen för att lösa detta.

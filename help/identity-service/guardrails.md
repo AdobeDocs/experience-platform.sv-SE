@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 87138cbf041e40bfc6b42edffb16f5b8a8f5b365
+source-git-commit: a9b5ab28d00941b7531729653eb630a61b5446fc
 workflow-type: tm+mt
-source-wordcount: '1112'
+source-wordcount: '1182'
 ht-degree: 1%
 
 ---
@@ -32,7 +32,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
 | (Aktuellt beteende) Antal identiteter i ett diagram | 150 | Gränsen tillämpas på sandlådenivå. När antalet identiteter har nått 150 eller fler kommer inga nya identiteter att läggas till och identitetsdiagrammet uppdateras inte. Diagram kan visa identiteter som är större än 150 som ett resultat av länkning av ett eller flera diagram med mindre än 150 identiteter. **Anteckning**: Det maximala antalet identiteter i ett identitetsdiagram **för en enskild sammanfogad profil** är 50. Sammanfogade profiler som baseras på identitetsdiagram med fler än 50 identiteter ingår inte i kundprofilen i realtid. Mer information finns i guiden [skyddsutkast för profildata](../profile/guardrails.md). |
-| (Kommande beteende) Antal identiteter i ett diagram [!BADGE Beta]{type=Informative} | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att använda en&quot;första-in-ut-mekanism&quot; och tar bort den äldsta identiteten för att skapa utrymme för den senaste identiteten. Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Läs [appendix](#appendix) för mer information om hur identitetstjänsten tar bort identiteter när gränsen har nåtts. |
+| (Kommande beteende) Antal identiteter i ett diagram [!BADGE Beta]{type=Informative} | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att använda en&quot;första-in-ut-mekanism&quot; och tar bort den äldsta identiteten för att skapa utrymme för den senaste identiteten. Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Mer information finns i avsnittet [förstå borttagningslogiken](#deletion-logic). |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
 | Antal tecken för ett namnområdes visningsnamn eller identitetssymbol | Ingen | Det finns inga gränser för hur många tecken ett namnområdes visningsnamn eller identitetssymbol får innehålla. |
@@ -50,32 +50,11 @@ Följande tabell visar befintliga regler som du måste följa för att identitet
 
 Från och med 31 mars 2023 blockerar identitetstjänsten intag av Adobe Analytics ID (AAID) för nya kunder. Den här identiteten hämtas vanligtvis via [Adobe Analytics-källa](../sources/connectors/adobe-applications/analytics.md) och [Adobe Audience Manager-källa](../sources//connectors/adobe-applications/audience-manager.md) och är redundant eftersom ECID representerar samma webbläsare. Om du vill ändra den här standardkonfigurationen kontaktar du ditt Adobe-kontoteam.
 
-## Nästa steg
-
-Mer information om [!DNL Identity Service]:
-
-* [[!DNL Identity Service] översikt](home.md)
-* [Identitetsdiagramvisningsprogram](ui/identity-graph-viewer.md)
-
-
-## Bilaga {#appendix}
-
-Följande avsnitt innehåller ytterligare information om skyddsförslag för identitetstjänsten.
-
-### [!BADGE Beta]{type=Informative} Om borttagningslogiken när ett identitetsdiagram med kapacitet uppdateras {#deletion-logic}
-
->[!IMPORTANT]
->
->Följande borttagningslogik är ett kommande beteende för identitetstjänsten. Kontakta din kontorepresentant för att begära en ändring av identitetstypen om din produktionssandlåda innehåller:
->
-> * Ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.
-> * Ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.
->
->När den här funktionen är tillgänglig kommer diagram som överskrider gränsen på 50 identiteter att minskas ned till 50 identiteter. För CDP B2C Edition i realtid kan detta resultera i en minimal ökning av antalet profiler som kvalificerar för en målgrupp, eftersom dessa profiler tidigare ignorerades från segmentering och aktivering.
+## [!BADGE Beta]{type=Informative} Om borttagningslogiken när ett identitetsdiagram med kapacitet uppdateras {#deletion-logic}
 
 När ett fullständigt identitetsdiagram uppdateras, tar identitetstjänsten bort den äldsta identiteten i diagrammet innan den senaste identiteten läggs till. Detta är för att identitetsdata ska vara korrekta och relevanta. Den här borttagningsprocessen följer två huvudregler:
 
-#### Borttagning av regel 1 prioriteras baserat på identitetstypen för ett namnutrymme
+### Borttagning av regel 1 prioriteras baserat på identitetstypen för ett namnutrymme
 
 Borttagningsprioriteten är följande:
 
@@ -83,7 +62,7 @@ Borttagningsprioriteten är följande:
 2. Enhets-ID
 3. Enhets-ID, e-post och telefon
 
-#### Regel 2 Borttagning baseras på den tidsstämpel som finns lagrad i identiteten
+### Regel 2 Borttagning baseras på den tidsstämpel som finns lagrad i identiteten
 
 Varje identitet som länkas i ett diagram har en egen motsvarande tidsstämpel. När ett fullständigt diagram uppdateras tar identitetstjänsten bort identiteten med den äldsta tidsstämpeln.
 
@@ -110,7 +89,36 @@ I det här exemplet tar identitetstjänsten först bort den befintliga identitet
 
 >[!ENDSHADEBOX]
 
+### Effekter på implementeringen
+
+I följande avsnitt beskrivs hur borttagningslogiken påverkar identitetstjänsten, kundprofilen i realtid och WebSDK.
+
+#### Identitetstjänst: Anpassade ändringar av identitetstyp för namnområde
+
+Kontakta ditt Adobe-kontoteam för att begära en ändring av identitetstypen om din produktionssandlåda innehåller:
+
+* Ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.
+* Ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.
+
+När den här funktionen är tillgänglig kommer diagram som överskrider gränsen på 50 identiteter att minskas ned till 50 identiteter. För Real-Time CDP B2C Edition kan detta resultera i en minimal ökning av antalet profiler som kvalificerar för en viss målgrupp, eftersom dessa profiler tidigare ignorerades från segmentering och aktivering.
+
+#### Kundprofil i realtid: Pseudonym profilinställning
+
 Borttagning sker endast med data i identitetstjänsten och inte med kundprofilen i realtid.
 
 * Detta beteende kan följaktligen skapa fler profiler med ett enda ECID, eftersom ECID inte längre är en del av identitetsdiagrammet.
 * För att du ska kunna hålla dig inom de adresserbara målgruppernas berättigandenummer rekommenderar vi att du aktiverar [pseudonymt utgångsdatum för profildata](../profile/pseudonymous-profiles.md) för att ta bort dina gamla profiler.
+
+#### Kundprofil och WebSDK i realtid: borttagning av primär identitet
+
+Om du vill bevara dina autentiserade händelser mot CRM-ID:t rekommenderar vi att du ändrar dina primära ID:n från ECID till CRM ID. Läs följande dokument för steg om hur du implementerar den här ändringen:
+
+* [Konfigurera identitetskarta för Experience Platform-taggar](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
+* [Identitetsdata i Experience Platform Web SDK](../edge/identity/overview.md#using-identitymap)
+
+## Nästa steg
+
+Mer information om [!DNL Identity Service]:
+
+* [[!DNL Identity Service] översikt](home.md)
+* [Identitetsdiagramvisningsprogram](ui/identity-graph-viewer.md)
