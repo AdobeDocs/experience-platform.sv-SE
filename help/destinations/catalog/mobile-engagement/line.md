@@ -4,9 +4,9 @@ title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler till era plattformar och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
 workflow-type: tm+mt
-source-wordcount: '1132'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Observera följande krav i [!DNL LINE]för att exportera data från Platform til
 
 #### Du måste ha en [!DNL LINE] konto {#prerequisites-account}
 
-Du måste registrera dig och skapa en [!DNL LINE] om du inte redan har ett konto. Så här skapar du ett konto:
+Du måste registrera dig och skapa en [!DNL LINE] om du inte redan har ett konto. Skapa ett konto:
 
 1. Navigera till [!DNL LINE] [kontoinloggning](https://account.line.biz/login?redirectUri=https%3A%2F%2Fmanager.line.biz%2F) page
 2. Välj **[!UICONTROL Create an account]**.
@@ -44,7 +44,7 @@ Så här tillåter du att plattformen får åtkomst [!DNL LINE] behöver du *[!D
 
 1. Logga in med [!DNL LINE] konto till [[!DNL LINE] Utvecklarkonsol](https://developers.line.biz/console).
 1. Gå sedan till *[!DNL Providers]* väljer du *[!DNL Provider]* av intresse och slutligen välja *MeddelandeAPI* för att komma åt inställningarna. Om du använder utvecklarkonsolen för första gången följer du [[!DNL LINE] dokumentation](https://developers.line.biz/en/docs/messaging-api/getting-started/) för att slutföra de steg som krävs för att skapa en leverantör.
-1. Till sist går du till ***[!DNL Channel access token]*** och kopiera ***[!DNL Channel access token (long-lived)]*** värde krävs inom [Autentisera till mål](#authenticate) steg.
+1. Till sist navigerar du till ***[!DNL Channel access token]*** och kopiera ***[!DNL Channel access token (long-lived)]*** värde som krävs inom [Autentisera till mål](#authenticate) steg.
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Se [[!DNL LINE] dokumentation](https://developers.line.biz/en/docs/messaging-api
 | Målidentitet | Beskrivning |
 |---|---|
 | ID för annonsörer (IFA) | Markera ID:t för annonsörer (IFA:n) som mål-ID när källidentiteten är IFA *(Apple ID för annonsörer)* eller GAID *(Google Advertising ID), namnutrymmen. |
-| Användar-ID för RAD | Välj mål-ID för UserID när käll-ID:n är LINE-användar-ID:n. |
+| Användar-ID för RAD | Välj användar-ID-målidentiteten när källidentiteterna är LINE-användar-ID:n. |
 
 ## Exportera typ och frekvens {#export-type-frequency}
 
@@ -76,7 +76,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -88,9 +88,9 @@ Om du vill autentisera mot målet väljer du **[!UICONTROL Connect to destinatio
 ![Skärmbild av användargränssnittet för plattformen som visar hur man autentiserar.](../../assets/catalog/mobile-engagement/line/authenticate-destination.png)
 
 Fyll i de obligatoriska fälten nedan.
-* **[!UICONTROL Bearer token]**: Dina [!DNL LINE Channel access token (long-lived)] från [!DNL LINE] utvecklarkonsol. Se [samla in autentiseringsuppgifter](#gather-credentials) -avsnitt.
+* **[!UICONTROL Bearer token]**: din [!DNL LINE Channel access token (long-lived)] från [!DNL LINE] utvecklarkonsol. Se [samla in autentiseringsuppgifter](#gather-credentials) -avsnitt.
 
-Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** status med grön bockmarkering. Du kan sedan gå vidare till nästa steg.
+Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** status med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -103,21 +103,22 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
->
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+> 
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa attribut och identiteter {#map}
 
-Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL LINE] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Koppla XDM-fälten till [!DNL LINE] målfält, följ dessa steg:
+Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL LINE] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Mappa XDM-fälten korrekt till [!DNL LINE] målfält, följ dessa steg:
 
 Beroende på din källidentitet måste följande namnrymder för målidentitet mappas: | Målidentitet | Källfält | Målfält | | — | — | — | | ID för annonsörer (IFA) | `IDFA` eller `GAID` | `LineId` | | Användar-ID:n för RAD | `UserID` | `LineId` |
 
@@ -137,7 +138,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 
 1. Navigera sedan till **[!UICONTROL Data Controls]** > **[!UICONTROL Audiences]** och kontrollera namnet som matchar den valda publiken i **[!UICONTROL Audience name]** kolumn.
 
-1. Den uppdaterade volymen skulle matcha antalet inom segmentet.
+1. Den uppdaterade volymen matchar antalet i segmentet.
 
 1. The *Typ* kolumn kommer att innehålla **[!UICONTROL UserID]** om de identiteter du exporterade är av typen *Användar-ID*. På samma sätt är *Typ* kolumn kommer att innehålla **[!UICONTROL Mobile ad Id]** om de identiteter du exporterade är av typen *IDFA*.
 

@@ -1,15 +1,15 @@
 ---
-title: Adobe Advertising Cloud DSP-anslutning
+title: Adobe Advertising Cloud DSP
 description: Adobe Advertising Cloud DSP är en integrerad målgrupp för Adobe Real-time Customer Data Platform, vilket gör att ni kan dela autentiserade förstahandsmålgrupper med godkända annonsörer och användare för kampanjaktivering.
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: 1c9725c108d55aea5d46b086fbe010ab4ba6cf45
+source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1042'
 ht-degree: 0%
 
 ---
 
-# Adobe Advertising Cloud DSP-anslutning
+# Adobe Advertising Cloud DSP
 
 ## Översikt {#overview}
 
@@ -17,7 +17,7 @@ Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP) kan ni dela autentiser
 
 >[!IMPORTANT]
 >
->Den här sidan skapades av DSP team. Kontakta Advertising Cloud support på `adcloud_support@adobe.com`.
+>Den här sidan skapades av DSP team. Om du har frågor eller uppdateringsfrågor kontaktar du Advertising Cloud support direkt på `adcloud_support@adobe.com`.
 
 ## Användningsfall {#use-cases}
 
@@ -33,11 +33,11 @@ En mediebyrå med ett DSP konto kör en återannonskampanj för sina kunders rä
 
 ## Förutsättningar {#prerequisites}
 
-* DSP på konto- och kampanjnivå för att möjliggöra målgruppsdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP kommer att utföra den här konfigurationen. [!DNL RampID] är tillgängligt via ett partnerskap mellan DSP och [!DNL LiveRamp]och du behöver inte en egen [!DNL LiveRamp] medlemskap för att använda det.
+* DSP på konto- och kampanjnivå för att möjliggöra målgruppsdelning med [!DNL LiveRamp RampID]som översätter kunddata till [!DNL RampIDs] för att skapa målgruppssegment. Ditt DSP-kontoteam kommer att utföra den här konfigurationen. [!DNL RampID] via ett partnerskap mellan DSP och [!DNL LiveRamp]och du behöver inte en egen [!DNL LiveRamp] medlemskap för att använda det.
 * Experience Cloud organisation-ID för Experience Platform-kontot. Du kan hitta ditt ID på din [!DNL Real-Time CDP] användarprofilsida.
 * A [[!DNL Real-Time CDP] källa i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html) för att ta emot målgrupper för kampanjaktivering. Din DSP skapar källan med ditt Experience Cloud organisation-ID.
 * Källnyckeln för DSP eller annonsören, som genereras när en [[!DNL Real-Time CDP] källan skapas i DSP](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html). Ditt DSP kommer att dela nyckeln med dig. Du kommer att använda det i Experience Platform för att skapa en målanslutning till Advertising Cloud DSP-målet, som [förklaras nedan](#authenticate).
-* Kunddata som består av e-post eller hash-kodade e-postmeddelanden.
+* Kunddata som består av e-post eller hashad e-post.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -45,7 +45,7 @@ Adobe Advertising Cloud DSP-målet stöder aktivering av identiteter som beskriv
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| email_lc_sha256 | E-postadresser som hash-kodats med SHA256-algoritmen | Experience Platform har stöd för både oformaterad text och SHA256-hashed-e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** att Experience Platform automatiskt ska hash-koda data vid aktiveringen. |
+| email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Experience Platform har stöd för både oformaterad text och SHA256-hashed-e-postadresser. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** att Experience Platform automatiskt ska hash-koda data vid aktiveringen. |
 
 {style="table-layout:auto"}
 
@@ -64,7 +64,7 @@ I följande tabell finns information om exporttyp och frekvens för destinatione
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions) för Experience Platform. Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions) för Experience Platform. Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Följ instruktionerna för att ansluta till målet [skapa en målanslutning](/help/destinations/ui/connect-destination.md) med användargränssnittet i Experience Platform. I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -87,7 +87,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -95,7 +95,8 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

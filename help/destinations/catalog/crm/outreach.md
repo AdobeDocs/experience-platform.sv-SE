@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
 description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
 workflow-type: tm+mt
-source-wordcount: '1654'
+source-wordcount: '1687'
 ht-degree: 0%
 
 ---
@@ -16,19 +16,19 @@ ht-degree: 0%
 
 [[!DNL Outreach]](https://www.outreach.io/) är en plattform för säljavdelning med de flesta interaktionsdata för B2B-köpare i världen och betydande investeringar i egna AI-tekniker för att omvandla säljdata till intelligens. [!DNL Outreach] hjälper organisationer att automatisera säljengagemanget och agera utifrån intäktsanalys för att förbättra sin effektivitet, förutsägbarhet och tillväxt.
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [Resurs-API för datauppdatering](https://api.outreach.io/api/v2/docs#update-an-existing-resource), som gör det möjligt att uppdatera identiteter inom en målgrupp som motsvarar potentiella kunder i [!DNL Outreach].
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [Resurs-API för datauppdatering](https://api.outreach.io/api/v2/docs#update-an-existing-resource), som gör det möjligt att uppdatera identiteter inom en målgrupp som motsvarar presumtiva kunder i [!DNL Outreach].
 
 [!DNL Outreach] använder OAuth 2 med auktoriseringsbidrag som autentiseringsmekanism för att kommunicera med [!DNL Outreach] [!DNL Update Resource API]. Instruktioner för hur du autentiserar [!DNL Outreach] -instansen är längre ned, inom [Autentisera till mål](#authenticate) -avsnitt.
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare kan ni leverera personaliserade upplevelser till era presumtiva kunder, baserat på attribut från deras Adobe Experience Platform-profiler. Ni kan bygga målgrupper utifrån era offlinedata och skicka dessa målgrupper till [!DNL Outreach], som visas i presumtiva kunders flöden så snart som målgrupper och profiler uppdateras i Adobe Experience Platform.
+Som marknadsförare kan ni leverera personaliserade upplevelser till era presumtiva kunder, baserat på attribut från deras Adobe Experience Platform-profiler. Ni kan bygga målgrupper utifrån era offlinedata och skicka dessa målgrupper till [!DNL Outreach], som visas i presumtiva kunder så snart som målgrupper och profiler uppdateras i Adobe Experience Platform.
 
 ## Förutsättningar {#prerequisites}
 
-### Krav för Experience Platform {#prerequisites-in-experience-platform}
+### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL Outreach] mål, du måste ha en [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) skapad i [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL Outreach] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform].
 
 Mer information finns i Adobe dokumentation [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 
@@ -40,12 +40,12 @@ Observera följande krav i [!DNL Outreach]för att exportera data från Platform
 
 Gå till [!DNL Outreach] [logga in](https://accounts.outreach.io/users/sign_in) sida för att registrera och skapa ett konto, om du inte redan har ett. Se även [!DNL Outreach] support [page](https://support.outreach.io/hc/en-us/articles/207238607-Claim-Your-Outreach-Account) för mer information.
 
-Anteckna vad som står nedan innan du autentiserar dig för [!DNL Outreach] CRM-mål:
+Anteckna nedanstående innan du autentiserar dig för [!DNL Outreach] CRM-mål:
 
 | Autentiseringsuppgifter | Beskrivning |
 |---|---|
 | E-post | Dina [!DNL Outreach] e-postadress |
-| Lösenord | Dina [!DNL Outreach] kontolösenord |
+| Lösenord | Dina [!DNL Outreach] lösenord |
 
 #### Ställ in anpassade fältetiketter {#prerequisites-custom-fields}
 
@@ -83,7 +83,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li> Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Outreach] uppdateras med motsvarande målgruppsstatus från Platform, baserat på [!UICONTROL Mapping ID] det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li> Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(t.ex. e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Outreach] uppdateras med motsvarande målgruppsstatus från Platform, baserat på [!UICONTROL Mapping ID] det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li> Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
@@ -92,7 +92,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
-> Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+> Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -104,7 +104,7 @@ Om du vill autentisera mot målet väljer du **[!UICONTROL Connect to destinatio
 
 ![Skärmbild av användargränssnittet för plattformen som visar hur man autentiserar till Outreach.](../../assets/catalog/crm/outreach/authenticate-destination.png)
 
-Du kommer att se [!DNL Outreach] inloggningssida. Ange din e-postadress.
+Du kommer att få se [!DNL Outreach] inloggningssida. Ange din e-postadress.
 
 ![Skärmbild av användargränssnittet som visar fältet som e-postindata för autentisering till utdataenheten.](../../assets/catalog/crm/outreach/authenticate-destination-login-email.png)
 
@@ -112,10 +112,10 @@ Ange sedan ditt lösenord.
 
 ![Skärmbild av användargränssnitt som visar fältet som inmatningslösenord för autentisering till utdataenhet.](../../assets/catalog/crm/outreach/authenticate-destination-login-password.png)
 
-* **[!UICONTROL Username]**: Dina [!DNL Outreach] e-postadress till konto.
-* **[!UICONTROL Password]**: Dina [!DNL Outreach] kontolösenord.
+* **[!UICONTROL Username]**: din [!DNL Outreach] e-postadress till konto.
+* **[!UICONTROL Password]**: din [!DNL Outreach] kontolösenord.
 
-Om den angivna informationen är giltig visas en **Ansluten** status med grön bockmarkering. Du kan sedan gå vidare till nästa steg.
+Om den angivna informationen är giltig visas en **Ansluten** status med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -127,7 +127,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -135,22 +135,23 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
-> Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ### Mappa överväganden och exempel {#mapping-considerations-example}
 
-Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL Outreach] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Koppla XDM-fälten till [!DNL Outreach] målfält, följ dessa steg:
+Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL Outreach] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Mappa XDM-fälten korrekt till [!DNL Outreach] målfält, följ dessa steg:
 
-1. I [!UICONTROL Mapping] steg, klicka **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
+1. I [!UICONTROL Mapping] klicka **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
    ![Skärmbild av användargränssnittet för plattformen som visar hur du lägger till ny mappning](../../assets/catalog/crm/outreach/add-new-mapping.png)
 
 1. I [!UICONTROL Select source field] väljer du **[!UICONTROL Select identity namespace]** och lägg till mappningarna.
    ![Skärmbild för användargränssnittet för plattformen med källmappning](../../assets/catalog/crm/outreach/source-mapping.png)
 
 1. I [!UICONTROL Select target field] väljer du den typ av målfält som du vill mappa källfältet till.
-   * **[!UICONTROL Select identity namespace]**: Välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
+   * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
      ![Skärmbild av användargränssnittet för plattformen som visar målmappning med OutreachId.](../../assets/catalog/crm/outreach/target-mapping.png)
 
    * Lägg till följande mappning mellan XDM-profilschemat och [!DNL Outreach] instans: |XDM-profilschema|[!DNL Outreach] Instans| Obligatorisk| |—|—|—| |`Oid`|`OutreachId`| Ja |
@@ -214,7 +215,7 @@ När du kontrollerar ett dataflöde kan följande felmeddelande visas: `Bad requ
 
 ![Skärmbilden för användargränssnittet för plattformen visar ett fel för felaktig begäran.](../../assets/catalog/crm/outreach/error.png)
 
-Kontrollera att [!UICONTROL Mapping ID] du angav i Platform för [!DNL Outreach] målgruppen är giltig och finns i [!DNL Outreach].
+Du kan åtgärda felet genom att kontrollera att [!UICONTROL Mapping ID] du angav i Platform för [!DNL Outreach] målgruppen är giltig och finns i [!DNL Outreach].
 
 ## Ytterligare resurser {#additional-resources}
 

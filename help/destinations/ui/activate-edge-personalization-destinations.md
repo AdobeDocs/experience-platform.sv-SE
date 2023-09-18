@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
 workflow-type: tm+mt
-source-wordcount: '1757'
+source-wordcount: '1790'
 ht-degree: 0%
 
 ---
@@ -27,10 +27,11 @@ Exempel på kantmål är [Adobe Target](../../destinations/catalog/personalizati
 > 
 > * Aktivera data och aktivera [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
 > * Aktivera data utan att gå igenom [mappningssteg](#mapping) i arbetsflödet behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 > 
 > Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform edge-mål. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md) och valfria [profilattributsmappning](#mapping)kan dessa mål användas för personalisering på samma sida och nästa sida på era webb- och mobilsajter.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform edge-mål. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md) och valfria [profilattributsmappning](#mapping)kan dessa mål användas för personalisering på samma sida och nästa sida på ert webb- och mobilmaterial.
 
 Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-anslutningen för kantanpassning.
 
@@ -54,7 +55,7 @@ För att möjliggöra detta behöver kunderna ett snabbt och smidigt sätt att h
 
 ### Personalisering på samma sida {#same-page}
 
-En användare besöker en sida på webbplatsen. Kunden kan använda den aktuella sidans besöksinformation (till exempel URL, webbläsarspråk, inbäddad produktinformation) för att välja nästa åtgärd/beslut (till exempel personalisering) med hjälp av [Anpassad personalisering](../catalog/personalization/custom-personalization.md) anslutning för andra plattformar än Adobe (t.ex. [!DNL Pega], [!DNL Optimizely], osv.).
+En användare besöker en sida på webbplatsen. Kunden kan använda den aktuella sidans besöksinformation (till exempel URL, webbläsarspråk, inbäddad produktinformation) för att välja nästa åtgärd/beslut (till exempel personalisering) med hjälp av [Anpassad personalisering](../catalog/personalization/custom-personalization.md) anslutning för andra plattformar än Adobe (till exempel [!DNL Pega], [!DNL Optimizely], osv.).
 
 ### Anpassa nästa sida {#next-page}
 
@@ -106,7 +107,7 @@ Följ [självstudiekurs om hur du skapar målanslutning](../ui/connect-destinati
 
 Beroende på vilket mål du konfigurerar kan du läsa följande artiklar för att få information om målspecifika krav och relaterad information:
 
-* [Adobe Target-anslutning](../catalog/personalization/adobe-target-connection.md#parameters)
+* [Adobe Target](../catalog/personalization/adobe-target-connection.md#parameters)
 * [Anpassad personaliseringsanslutning](../catalog/personalization/custom-personalization.md##parameters)
 
 ## Välj mål {#select-destination}
@@ -159,7 +160,7 @@ Det är valfritt att lägga till attribut och du kan fortsätta till nästa steg
 
 ### Välj källattribut {#select-source-attributes}
 
-Om du vill lägga till källattribut väljer du **[!UICONTROL Add new field]** kontroll på **[!UICONTROL Source field]** kolumn och sök eller navigera till önskat XDM-attributfält, enligt nedan.
+Välj knappen **[!UICONTROL Add new field]** kontroll på **[!UICONTROL Source field]** kolumn och sök eller navigera till önskat XDM-attributfält, enligt nedan.
 
 ![Skärminspelning som visar hur du väljer ett målattribut i mappningssteget](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-attribute.gif)
 
@@ -179,7 +180,7 @@ Som standard är [!UICONTROL Audience schedule] visas endast de nyvalda målgrup
 
 Om du vill se alla målgrupper som aktiveras till destinationen använder du filteralternativet och inaktiverar **[!UICONTROL Show new audiences only]** filter.
 
-![Alla målgrupper](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
+![Alla mottagare](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
 
 På **[!UICONTROL Audience schedule]** väljer du varje målgrupp och använder sedan **[!UICONTROL Start date]** och **[!UICONTROL End date]** väljare för att konfigurera tidsintervallet för att skicka data till målet.
 

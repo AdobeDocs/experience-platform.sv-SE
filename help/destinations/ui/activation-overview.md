@@ -2,11 +2,11 @@
 keywords: aktivera mål;aktivera data
 title: Aktiveringsöversikt
 type: Tutorial
-description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform till olika typer av destinationer.
+description: Lär dig hur du aktiverar målgrupper i Adobe Experience Platform till olika typer av destinationer.
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: 771801b52b7df7029e1c6e7496dcfb563463d06e
+source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '340'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,14 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Adobe Experience Platform har stöd för ett stort antal destinationer. Arbetsflödet för målgruppsaktivering varierar mellan olika mål, beroende på vilken typ av målgruppsdata de stöder och frekvensen för dataexporten.
 
 ## Aktiveringsmetoder {#activation-methods}
 
-Efter [konfigurera ditt mål](connect-destination.md)kan ni aktivera målgrupper på flera sätt:
+Efter dig [konfigurera ditt mål](connect-destination.md)kan ni aktivera målgrupper på flera sätt:
 
 ### Aktivera målgrupper från målkatalogen
 
@@ -39,7 +40,7 @@ Följ stegen nedan för att aktivera data till dina destinationer från **[!UICO
 
    ![Fliken Bläddra](../assets/ui/activation-overview/browse-tab.png)
 
-1. Hitta den målanslutning som du vill använda för att aktivera dina segment, välj de tre punkterna i dialogrutan [!UICONTROL Name] kolumn, markera **[!UICONTROL Activate audiences]**.
+1. Sök efter den målanslutning som du vill använda för att aktivera dina segment, välj de tre punkterna i dialogrutan [!UICONTROL Name] kolumn, markera **[!UICONTROL Activate audiences]**.
 
    ![Knappen Aktivera målgrupper](../assets/ui/activation-overview/activate-segments.png)
 
@@ -49,7 +50,7 @@ Följ stegen nedan för att aktivera data till dina destinationer från **[!UICO
    * [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](activate-streaming-profile-destinations.md)
    * [Aktivera målgruppsdata för att batchprofilera exportmål](activate-batch-profile-destinations.md)
 
-### Aktivera målgrupper från sidan med målgruppsinformation {#activate-audience-details}
+### Aktivera målgrupper från informationssidan för målgrupper {#activate-audience-details}
 
 Du kan aktivera målgrupper till mål från sidan med målgruppsinformation. Se [Målgruppsinformation](../../segmentation/ui/overview.md#audience-details) för mer information.
 

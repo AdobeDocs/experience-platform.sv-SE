@@ -2,9 +2,9 @@
 title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
 workflow-type: tm+mt
-source-wordcount: '1404'
+source-wordcount: '1437'
 ht-degree: 1%
 
 ---
@@ -19,13 +19,13 @@ Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnytt
 
 ## Användningsfall {#use-cases}
 
-Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en sömlös och personaliserad upplevelse för sina kunder. Avdelningen kan bygga målgrupper utifrån sina egna offlinedata för att skapa nya användarprofiler eller uppdatera befintlig profilinformation från olika interaktioner (t.ex. köp, returer etc.) och skicka dessa målgrupper från Adobe Experience Platform till [!DNL Zendesk]. Den uppdaterade informationen finns i [!DNL Zendesk] säkerställer att kundtjänstpersonalen har den senaste informationen om kunden omedelbart tillgänglig, vilket ger snabbare svar och lösningar.
+Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en sömlös och personaliserad upplevelse för sina kunder. Avdelningen kan bygga målgrupper utifrån sina egna offlinedata för att skapa nya användarprofiler eller uppdatera befintlig profilinformation från olika interaktioner (t.ex. köp, returer etc.) och skicka dessa från Adobe Experience Platform till [!DNL Zendesk]. Den uppdaterade informationen finns i [!DNL Zendesk] säkerställer att kundtjänstpersonalen har den senaste informationen om kunden omedelbart tillgänglig, vilket ger snabbare svar och lösningar.
 
 ## Förutsättningar {#prerequisites}
 
-### Krav för Experience Platform {#prerequisites-in-experience-platform}
+### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL Zendesk] mål, du måste ha en [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) skapad i [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL Zendesk] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform].
 
 Se Experience Platform dokumentation för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 
@@ -35,7 +35,7 @@ För att kunna exportera data från Platform till [!DNL Zendesk] konto du behöv
 
 #### Samla [!DNL Zendesk] autentiseringsuppgifter {#gather-credentials}
 
-Anteckna vad som står nedan innan du autentiserar dig för [!DNL Zendesk] mål:
+Anteckna nedanstående innan du autentiserar dig för [!DNL Zendesk] mål:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Zendesk] uppdateras med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(t.ex. e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Zendesk] uppdateras med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | <ul><li>Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations).</li></ul> |
 
 {style="table-layout:auto"}
@@ -68,7 +68,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -77,12 +77,12 @@ Inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** sök efter [!DNL Z
 ### Autentisera till mål {#authenticate}
 
 Fyll i de obligatoriska fälten nedan. Se [Samla [!DNL Zendesk] autentiseringsuppgifter](#gather-credentials) för vägledning.
-* **[!UICONTROL Bearer Token]**: Åtkomsttoken som du har skapat i din [!DNL Zendesk] konto.
+* **[!UICONTROL Bearer Token]**: Den åtkomsttoken som du har skapat i [!DNL Zendesk] konto.
 
 Om du vill autentisera mot målet väljer du **[!UICONTROL Connect to destination]**.
 ![Skärmbild av användargränssnittet för plattformen som visar hur man autentiserar.](../../assets/catalog/crm/zendesk/authenticate-destination.png)
 
-Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** status med grön bockmarkering. Du kan sedan gå vidare till nästa steg.
+Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** status med en grön bockmarkering. Du kan sedan gå vidare till nästa steg.
 
 ### Fyll i målinformation {#destination-details}
 
@@ -94,15 +94,16 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
->
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+> 
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -112,13 +113,13 @@ Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL Ze
 
 Attribut som anges i **[!UICONTROL Target field]** ska namnges exakt så som beskrivs i tabellen för attributmappningar eftersom dessa attribut kommer att utgöra begärandetexten.
 
-Attribut som anges i **[!UICONTROL Source field]** inte följer någon sådan begränsning. Du kan mappa den baserat på dina behov, men om dataformatet inte är korrekt när det skickas till [!DNL Zendesk] det resulterar i ett fel.
+Attribut som anges i **[!UICONTROL Source field]** inte följer någon sådan begränsning. Du kan mappa den baserat på dina behov, men om dataformatet inte är korrekt när det skickas till [!DNL Zendesk] det kommer att resultera i ett fel.
 
-Koppla XDM-fälten till [!DNL Zendesk] målfält, följ dessa steg:
+Mappa XDM-fälten korrekt till [!DNL Zendesk] målfält, följ dessa steg:
 
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
 1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select attributes]** och välj XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
-1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en målidentitet eller välj **[!UICONTROL Select attributes]** och välj ett av de schemaattribut som stöds.
+1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en målidentitet, eller välj **[!UICONTROL Select attributes]** och välj ett av de schemaattribut som stöds.
    * Upprepa dessa steg om du vill lägga till följande obligatoriska mappningar, du kan även lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och ditt [!DNL Zendesk] instans: |Källfält|Målfält| Obligatoriskt| |—|—|—| |`xdm: person.name.lastName`|`xdm: last_name`| Ja | |`IdentityMap: Email`|`Identity: email`| Ja | |`xdm: person.name.firstName`|`xdm: first_name`| |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
@@ -174,7 +175,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| April 2023 | Dokumentationsuppdatering | <ul><li>Vi har uppdaterat [användningsfall](#use-cases) med ett tydligare exempel på när kunderna skulle kunna dra nytta av detta mål.</li> <li>Vi har uppdaterat [mappning](#mapping-considerations-example) för att spegla de nödvändiga mappningarna. The `Attribute: last_name` och `Identity: email` målmappningar är obligatoriska för det här målet. Om mappningarna saknas ignoreras alla andra mappningar och skickas inte till [!DNL Zendesk].</li> <li>Vi har uppdaterat [mappning](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li></ul> |
+| April 2023 | Dokumentation - uppdatering | <ul><li>Vi uppdaterade [användningsfall](#use-cases) med ett tydligare exempel på när kunderna skulle kunna dra nytta av detta mål.</li> <li>Vi uppdaterade [mappning](#mapping-considerations-example) för att spegla de nödvändiga mappningarna. The `Attribute: last_name` och `Identity: email` målmappningar är obligatoriska för det här målet. Om mappningarna saknas ignoreras alla andra mappningar och skickas inte till [!DNL Zendesk].</li> <li>Vi uppdaterade [mappning](#mapping-considerations-example) med tydliga exempel på både obligatoriska och valfria mappningar.</li></ul> |
 | Mars 2023 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
 
 {style="table-layout:auto"}

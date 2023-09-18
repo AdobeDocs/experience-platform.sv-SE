@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postadresser;slutrutnätsmål
 title: SendGrid-anslutning
 description: Med SendGrid-målet kan du exportera dina egna data och aktivera dem i SendGrid för dina affärsbehov.
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1544'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-[SendGrid](https://www.sendgrid.com) är en populär plattform för kundkommunikation för transaktions- och marknadsföringsmejl.
+[SendGrid](https://www.sendgrid.com) är en populär plattform för kundkommunikation för transaktioner och marknadsföring.
 
 Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [[!DNL SendGrid Marketing Contacts API]](https://api.sendgrid.com/v3/marketing/contacts), som gör att du kan exportera dina e-postprofiler från första part och aktivera dem inom en ny SendGrid-målgrupp för dina affärsbehov.
 
@@ -30,11 +30,11 @@ Följande objekt krävs innan du börjar konfigurera målet.
 1. Navigera till webbplatsen SendGrid och gå till **[!DNL Settings]** > **[!DNL API Keys]** sida. Du kan även läsa [Dokumentation för SendGrid](https://app.sendgrid.com/settings/api_keys) för att få tillgång till rätt avsnitt i SendGrid-appen.
 1. Slutligen väljer du **[!DNL Create API Key]** -knappen.
    * Se [Dokumentation för SendGrid](https://docs.sendgrid.com/ui/account-and-settings/api-keys#creating-an-api-key)om du behöver hjälp med vilka åtgärder som ska utföras.
-   * Om du vill generera API-nyckeln programmatiskt kan du läsa [Dokumentation för SendGrid](https://docs.sendgrid.com/api-reference/api-keys/create-api-keys).
+   * Om du vill generera API-nyckeln via programmering kan du läsa [Dokumentation för SendGrid](https://docs.sendgrid.com/api-reference/api-keys/create-api-keys).
 
 ![](../../assets/catalog/email-marketing/sendgrid/01-api-key.jpg)
 
-Innan du aktiverar data till SendGrid-målet måste du ha en [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) skapad i [!DNL Experience Platform]. Se även [gränser](#limits) längre ned på denna sida.
+Innan du aktiverar data till SendGrid-målet måste du ha en [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform]. Se även [gränser](#limits) längre ned på denna sida.
 
 >[!IMPORTANT]
 >
@@ -58,7 +58,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med önskade schemafält (till exempel: e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -75,7 +75,7 @@ Marknadsföringsteam som använder SendGrid kan skapa en e-postlista i SendGrid 
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -107,7 +107,7 @@ while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -115,7 +115,8 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -124,7 +125,7 @@ Se bilden nedan för mer information om det här målet.
 1. Välj en eller flera målgrupper att exportera till SendGrid.
    ![](../../assets/catalog/email-marketing/sendgrid/11.jpg)
 
-1. I **[!UICONTROL Mapping]** steg, efter markering **[!UICONTROL Add new mapping]** visas mappningssidan för att mappa XDM-källfälten till API-målfälten för SendGrid. Bilderna nedan visar hur du mappar identitetsnamnutrymmen mellan Experience Platform och SendGrid. Se till att **[!UICONTROL Source field]** *E-post* ska mappas till **[!UICONTROL Target field]** *external_id* enligt nedan.
+1. I **[!UICONTROL Mapping]** steg, efter markering **[!UICONTROL Add new mapping]** visas mappningssidan som mappar XDM-källfälten till API-målfälten för SendGrid. Bilderna nedan visar hur du mappar identitetsnamnutrymmen mellan Experience Platform och SendGrid. Se till att **[!UICONTROL Source field]** *E-post* ska mappas till **[!UICONTROL Target field]** *external_id* enligt nedan.
    ![](../../assets/catalog/email-marketing/sendgrid/13.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/14.jpg)
    ![](../../assets/catalog/email-marketing/sendgrid/15.jpg)
@@ -151,7 +152,7 @@ Den omfattande listan över attributmappningar som stöds och som kan ställas i
 | xdm:<br/> homeAddress.country | xdm:<br/> land | Sträng | Kontaktens land. Kan vara ett fullständigt namn eller en förkortning. | Maximal längd:<br/> 50 tecken |
 | identityMap:<br/> E-post | Identitet:<br/> external_id | Sträng | Kontaktens primära e-postadress. Detta måste vara en giltig e-postadress. | Maximal längd:<br/> 254 tecken |
 | xdm:<br/> person.name.firstName | xdm:<br/> first_name | Sträng | Kontaktens namn | Maximal längd:<br/> 50 tecken |
-| xdm:<br/> person.name.lastName | xdm:<br/> last_name | Sträng | Kontaktens familjenamn | Maximal längd:<br/> 50 tecken |
+| xdm:<br/> person.name.lastName | xdm:<br/> last_name | Sträng | Kontaktens familj | Maximal längd:<br/> 50 tecken |
 | xdm:<br/> homeAddress.mailCode | xdm:<br/> mail_code | Sträng | Kontaktens postnummer eller annat postnummer. | |
 | xdm:<br/> homeAddress.stateProvince | xdm:<br/> state_Province_region | Sträng | Kontaktens delstat, provins eller region. | Maximal längd:<br/> 50 tecken |
 

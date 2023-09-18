@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cl
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: d1bfd85bf7a318692fb6ae87e163dca105d531c6
+source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
 workflow-type: tm+mt
-source-wordcount: '2831'
+source-wordcount: '2864'
 ht-degree: 0%
 
 ---
@@ -38,9 +38,9 @@ Försäljningsavdelningen på en uthyrningsplattform vill sända ett marknadsfö
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL (API) Salesforce Marketing Cloud] mål, du måste ha en [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) skapad i [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL (API) Salesforce Marketing Cloud] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform].
 
-### Förutsättningar [!DNL (API) Salesforce Marketing Cloud] {#prerequisites-destination}
+### Krav [!DNL (API) Salesforce Marketing Cloud] {#prerequisites-destination}
 
 Observera följande krav för att kunna exportera data från Platform till [!DNL Salesforce Marketing Cloud] konto:
 
@@ -68,13 +68,13 @@ En vy av [!DNL Salesforce Marketing Cloud] [!DNL Email Demographics] Attributupp
 
 The [!DNL (API) Salesforce Marketing Cloud] destinationen använder [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) att dynamiskt hämta attributen och deras attributuppsättningar som definierats i [!DNL Salesforce Marketing Cloud].
 
-Dessa visas i **[!UICONTROL Target field]** markeringsfönstret när du ställer in [mappning](#mapping-considerations-example) i arbetsflödet till [aktivera målgrupper till målet](#activate).
+Dessa visas i **[!UICONTROL Target field]** markeringsfönstret när du ställer in [mappning](#mapping-considerations-example) till [aktivera målgrupper till målet](#activate).
 
 >[!IMPORTANT]
 >
 >Inom [!DNL Salesforce Marketing Cloud]måste du skapa attribut med **[!UICONTROL FIELD NAME]** som exakt matchar värdet som anges i **[!UICONTROL Mapping ID]** för varje aktiverat plattformssegment. På skärmbilden nedan visas ett attribut med namnet `salesforce_mc_segment_1`. Lägg till `salesforce_mc_segment_1` as **[!UICONTROL Mapping ID]** för att fylla målgrupper från Experience Platform i detta attribut.
 
-Ett exempel på hur attribut skapas i [!DNL Salesforce Marketing Cloud]visas nedan:
+Ett exempel på hur attribut skapas i [!DNL Salesforce Marketing Cloud], visas nedan:
 ![Användargränssnittet i Salesforce Marketing Cloud med ett attribut.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
 
 >[!TIP]
@@ -85,10 +85,10 @@ Ett exempel på hur attribut skapas i [!DNL Salesforce Marketing Cloud]visas ned
 
 #### Tilldela användarroller och behörigheter i [!DNL Salesforce Marketing Cloud] {#prerequisites-roles-permissions}
 
-Som [!DNL Salesforce Marketing Cloud] har stöd för anpassade roller beroende på ditt användningsfall, bör din användare tilldelas de relevanta rollerna för att uppdatera dina attribut i din [!DNL Salesforce Marketing Cloud] attributuppsättningar. Ett exempel på roller som tilldelats en användare visas nedan:
+Som [!DNL Salesforce Marketing Cloud] har stöd för anpassade roller beroende på ditt användningsfall, bör din användare tilldelas de relevanta rollerna för att uppdatera dina attribut i din [!DNL Salesforce Marketing Cloud] attribut. Ett exempel på roller som tilldelats en användare visas nedan:
 ![Användargränssnittet Salesforce Marketing Cloud för en vald användare som visar sina tilldelade roller.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-edit-roles.png)
 
-Beroende på vilka roller du har [!DNL Salesforce Marketing Cloud] användaren har tilldelats, du måste även tilldela behörigheter till [!DNL Salesforce Marketing Cloud] som innehåller de fält som du vill uppdatera.
+Beroende på vilka roller du [!DNL Salesforce Marketing Cloud] användaren har tilldelats, du måste även tilldela behörigheter till [!DNL Salesforce Marketing Cloud] som innehåller de fält som du vill uppdatera.
 
 Eftersom det här målet kräver åtkomst till `[!DNL attribute-set]`måste du tillåta dem. Till exempel för `Email` [!DNL attribute-set] du måste tillåta enligt nedan:
 
@@ -101,11 +101,11 @@ Se [[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?lang
 
 #### Samla [!DNL Salesforce Marketing Cloud] autentiseringsuppgifter {#gather-credentials}
 
-Anteckna vad som står nedan innan du autentiserar dig för [!DNL (API) Salesforce Marketing Cloud] mål.
+Anteckna nedanstående innan du autentiserar dig för [!DNL (API) Salesforce Marketing Cloud] mål.
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| Underdomän | Se [[!DNL Salesforce Marketing Cloud domain prefix]](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/your-subdomain-tenant-specific-endpoints.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | Om [!DNL Salesforce Marketing Cloud] domänen är<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exactarget.com*, <br>du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som värdet. |
+| Underdomän | Se [[!DNL Salesforce Marketing Cloud domain prefix]](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/your-subdomain-tenant-specific-endpoints.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | Om [!DNL Salesforce Marketing Cloud] domänen är<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*, <br>du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som värdet. |
 | Klient-ID | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | r23kxxxxxxxx0z05xxxxxx |
 | Klienthemlighet | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | ipxxxxxxxxxxT4xxxxxxxxxx |
 
@@ -115,7 +115,7 @@ Anteckna vad som står nedan innan du autentiserar dig för [!DNL (API) Salesfor
 
 * Salesforce inför vissa [hastighetsbegränsningar](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rate-limiting.html).
    * Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/rate-limiting-errors.html) för att åtgärda eventuella begränsningar som kan uppstå och minska antalet fel under körningen.
-   * Se [[!DNL Salesforce Marketing Cloud] Priser](https://www.salesforce.com/editions-pricing/marketing-cloud/email/) sida till *Ladda ned jämförelsetabellen för fullversionen* som en pdf som detaljerar de begränsningar som din plan innebär.
+   * Se [[!DNL Salesforce Marketing Cloud] Engagemangspris](https://www.salesforce.com/editions-pricing/marketing-cloud/email/) sida till *Ladda ned jämförelsetabellen för fullversionen* som en pdf som detaljerar de begränsningar som din plan innebär.
    * The [API-översikt](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html) ytterligare begränsningar för sidinformation.
    * Referens [här](https://salesforce.stackexchange.com/questions/205898/marketing-cloud-api-limits) för en sida som sammanställer dessa uppgifter.
 * Antal *anpassade fält tillåtna per objekt* varierar beroende på din Salesforce Edition.
@@ -138,7 +138,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(till exempel: e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Salesforce Marketing Cloud] uppdateras med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
+| Exporttyp | **[!UICONTROL Profile-based]** | <ul><li>Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten *(t.ex. e-postadress, telefonnummer, efternamn)*, enligt fältmappningen.</li><li> Varje segmentstatus i [!DNL Salesforce Marketing Cloud] uppdateras med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** det värde som anges under [målgruppsplanering](#schedule-segment-export-example) steg.</li></ul> |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
@@ -147,7 +147,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -159,7 +159,7 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 
 | [!DNL (API) Salesforce Marketing Cloud] mål | [!DNL Salesforce Marketing Cloud] |
 | --- | --- |
-| **[!UICONTROL Subdomain]** | Dina [!DNL Salesforce Marketing Cloud] domänprefix. <br>Om din domän till exempel är <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exactarget.com*, <br> du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som värdet. |
+| **[!UICONTROL Subdomain]** | Dina [!DNL Salesforce Marketing Cloud] domänprefix. <br>Om din domän till exempel är <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*, <br> du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som värdet. |
 | **[!UICONTROL Client ID]** | Din [!DNL Salesforce Marketing Cloud] `Client ID`. |
 | **[!UICONTROL Client Secret]** | Din [!DNL Salesforce Marketing Cloud] `Client Secret`. |
 
@@ -177,15 +177,16 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
 ## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
->
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+> 
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
@@ -193,7 +194,7 @@ Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportd
 
 Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL (API) Salesforce Marketing Cloud] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet.
 
-Koppla XDM-fälten till [!DNL (API) Salesforce Marketing Cloud] målfält, följ stegen nedan.
+Mappa XDM-fälten korrekt till [!DNL (API) Salesforce Marketing Cloud] målfält, följ stegen nedan.
 
 >[!IMPORTANT]
 >
@@ -204,7 +205,7 @@ Koppla XDM-fälten till [!DNL (API) Salesforce Marketing Cloud] målfält, följ
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
    ![Exempel på skärmbild för användargränssnittet för plattformen för att lägga till ny mappning.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/add-new-mapping.png)
 1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select attributes]** och välj XDM-attributet eller välj **[!UICONTROL Select identity namespace]** och välj en identitet.
-1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet eller välj **[!UICONTROL Select attributes]** och välj ett attribut bland de attributuppsättningar som visas efter behov. The [!DNL (API) Salesforce Marketing Cloud] destinationen använder [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) för att dynamiskt hämta de attribut och deras attributuppsättningar som definierats i [!DNL Salesforce Marketing Cloud]. Dessa visas i **[!UICONTROL Target field]** när du ställer in [mappning](#mapping-considerations-example) i [aktivera målgruppsarbetsflöde](#activate).
+1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och välj en identitet eller välj **[!UICONTROL Select attributes]** och välj ett attribut bland de attributuppsättningar som visas efter behov. The [!DNL (API) Salesforce Marketing Cloud] destinationen använder [!DNL Salesforce Marketing Cloud] [!DNL Search Attribute-Set Definitions REST] [API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) för att dynamiskt hämta de attribut och deras attributuppsättningar som definierats i [!DNL Salesforce Marketing Cloud]. Dessa visas i **[!UICONTROL Target field]** popup-fönster när du ställer in [mappning](#mapping-considerations-example) i [aktivera målgruppsarbetsflöde](#activate).
 
    * Upprepa dessa steg för att lägga till följande mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce Marketing Cloud]:
 
@@ -225,7 +226,7 @@ När du utför [Schemalägg målgruppsexport](/help/destinations/ui/activate-seg
 
 Det gör du genom att markera varje segment och sedan ange namnet på attributet från [!DNL Salesforce Marketing Cloud] i [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL Mapping ID]** fält. Se [Skapa attribut i [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) för vägledning och bästa metoder för att skapa attribut i [!DNL Salesforce Marketing Cloud].
 
-Om [!DNL Salesforce Marketing Cloud] attributet är `salesforce_mc_segment_1`anger du det här värdet i [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL Mapping ID]** för att fylla målgrupper från Experience Platform i detta attribut.
+Om [!DNL Salesforce Marketing Cloud] attributet är `salesforce_mc_segment_1`anger du det här värdet i dialogrutan [!DNL (API) Salesforce Marketing Cloud] **[!UICONTROL Mapping ID]** för att fylla målgrupper från Experience Platform i detta attribut.
 
 Ett exempelattribut från [!DNL Salesforce Marketing Cloud] visas nedan:
 ![Användargränssnittet i Salesforce Marketing Cloud med ett attribut.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-custom-field.png)
@@ -259,7 +260,7 @@ Följ stegen nedan för att verifiera att du har konfigurerat målet korrekt:
 1. Logga in på [[!DNL Salesforce Marketing Cloud]](https://mc.exacttarget.com/) webbplats. Navigera sedan till **[!DNL Audience Builder]** > **[!DNL Contact Builder]** > **[!DNL All contacts]** > **[!DNL Email]** och kontrollera om profilerna från målgruppen har lagts till.
    ![Användargränssnittet i Salesforce Marketing Cloud visar sidan Kontakter med profiler som används i segmentet.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contacts.png)
 
-1. Navigera till **[!UICONTROL Email]** och verifiera om attributvärdena för profilen från målgruppen har uppdaterats. Om det lyckas ser du att varje målgrupps status [!DNL Salesforce Marketing Cloud] uppdaterades med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** värdet i [målgruppsplanering](#schedule-segment-export-example) steg.
+1. Om du vill kontrollera om några profiler har uppdaterats går du till **[!UICONTROL Email]** och verifiera om attributvärdena för profilen från målgruppen har uppdaterats. Om det lyckas ser du att varje målgrupps status [!DNL Salesforce Marketing Cloud] uppdaterades med motsvarande målgruppsstatus från Platform, baserat på **[!UICONTROL Mapping ID]** värdet i [målgruppsplanering](#schedule-segment-export-example) steg.
    ![Användargränssnittet i Salesforce Marketing Cloud visar den valda e-postsidan för kontakter med uppdaterade målgruppsstatus.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/contact-detail.png)
 
 ## Dataanvändning och styrning {#data-usage-governance}
@@ -273,7 +274,7 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 * När du kontrollerar ett dataflöde kan följande felmeddelande visas: `Unknown errors encountered while pushing events to the destination. Please contact the administrator and try again.`
   ![Skärmbild för användargränssnittet för plattformen visar ett fel.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/error.png)
 
-   * Kontrollera att **[!UICONTROL Mapping ID]** som du angav i aktiveringsarbetsflödet för [!DNL (API) Salesforce Marketing Cloud] målet matchar exakt namnet på attributet som du skapade i [!DNL Salesforce Marketing Cloud]. Se [Skapa attribut i [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) för vägledning.
+   * Du kan åtgärda felet genom att kontrollera att **[!UICONTROL Mapping ID]** som du angav i aktiveringsarbetsflödet för [!DNL (API) Salesforce Marketing Cloud] målet matchar exakt namnet på attributet som du skapade i [!DNL Salesforce Marketing Cloud]. Se [Skapa attribut i [!DNL Salesforce Marketing Cloud]](#prerequisites-custom-field) för vägledning.
 
 * När du aktiverar ett segment kan du få ett felmeddelande: `The client's IP address is unauthorized for this account. Allowlist the client's IP address...`
    * Om du vill åtgärda felet kontaktar du [!DNL Salesforce Marketing Cloud] kontoadministratör att lägga till [Experience Platform IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) till [!DNL Salesforce Marketing Cloud] kontots betrodda IP-intervall. Se [!DNL Salesforce Marketing Cloud] [IP-adresser som ska inkluderas på Tillåtelselista i Marketing Cloud](https://help.salesforce.com/s/articleView?id=sf.mc_es_ip_addresses_for_inclusion.htm&amp;type=5) dokumentation om du behöver ytterligare vägledning.
@@ -291,10 +292,10 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| April 2023 | Dokumentationsuppdatering | <ul><li>Vi korrigerade en instruktion och en referenslänk i [Förutsättningar i (API) Salesforce Marketing Cloud](#prerequisites-destination) för att ta reda på det [!DNL Salesforce Marketing Cloud Engagement] är en obligatorisk prenumeration för att använda den här destinationen. Avsnittet som tidigare felaktigt anropade att användare behöver en prenumeration på Marketing Cloud **Konto** Åtagande att fortsätta.</li> <li>Vi lade till ett avsnitt under [krav](#prerequisites) for [roller och behörigheter](#prerequisites-roles-permissions) som ska tilldelas [!DNL Salesforce] för att den här destinationen ska fungera. (PLATIR-26299)</li></ul> |
-| Februari 2023 | Dokumentationsuppdatering | Vi har uppdaterat [Förutsättningar i (API) Salesforce Marketing Cloud](#prerequisites-destination) avsnitt som ska innehålla en referenslänk som anropar den [!DNL Salesforce Marketing Cloud Engagement] är en obligatorisk prenumeration för att använda den här destinationen. |
+| April 2023 | Dokumentation - uppdatering | <ul><li>Vi korrigerade en instruktion och en referenslänk i [Förutsättningar i (API) Salesforce Marketing Cloud](#prerequisites-destination) för att ta reda på det [!DNL Salesforce Marketing Cloud Engagement] är en obligatorisk prenumeration för att använda den här destinationen. Avsnittet som tidigare felaktigt anropade att användare behöver en prenumeration på Marketing Cloud **Konto** Åtagande att fortsätta.</li> <li>Vi lade till ett avsnitt under [krav](#prerequisites) for [roller och behörigheter](#prerequisites-roles-permissions) som ska tilldelas [!DNL Salesforce] för att den här destinationen ska fungera. (PLATIR-26299)</li></ul> |
+| Februari 2023 | Dokumentation - uppdatering | Vi uppdaterade [Förutsättningar i (API) Salesforce Marketing Cloud](#prerequisites-destination) -avsnitt som ska innehålla en referenslänk som anropar den [!DNL Salesforce Marketing Cloud Engagement] är en obligatorisk prenumeration för att använda den här destinationen. |
 | Februari 2023 | Funktionsuppdatering | Vi har åtgärdat ett problem där en felaktig konfiguration i målet orsakade att ett felaktigt JSON skickades till Salesforce. Detta resulterade i att ett stort antal identiteter inte kunde aktiveras. (PLATIR-26299) |
-| Januari 2023 | Dokumentationsuppdatering | <ul><li>Vi har uppdaterat [Förutsättningar [!DNL Salesforce]](#prerequisites-destination) för att ta reda på att attribut måste skapas i [!DNL Salesforce] sida. Det här avsnittet innehåller nu detaljerade anvisningar om hur du gör det och de bästa sätten att namnge attributen i [!DNL Salesforce]. (PLATIR-25602)</li><li>Vi har lagt till tydliga instruktioner om hur du använder mappnings-ID för varje aktiverad målgrupp i [målgruppsplanering](#schedule-segment-export-example) steg. (PLATIR-25602)</li></ul> |
+| Januari 2023 | Dokumentation - uppdatering | <ul><li>Vi uppdaterade [Krav [!DNL Salesforce]](#prerequisites-destination) för att ta reda på att attribut måste skapas i [!DNL Salesforce] sida. Det här avsnittet innehåller nu detaljerade anvisningar om hur du gör det och de bästa sätten att namnge attributen i [!DNL Salesforce]. (PLATIR-25602)</li><li>Vi har lagt till tydliga instruktioner om hur du använder mappnings-ID för varje aktiverad målgrupp i [målgruppsplanering](#schedule-segment-export-example) steg. (PLATIR-25602)</li></ul> |
 | Oktober 2022 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
 
 {style="table-layout:auto"}
