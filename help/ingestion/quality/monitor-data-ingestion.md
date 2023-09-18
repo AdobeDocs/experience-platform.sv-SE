@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Övervaka datainmatning
 description: I den här användarhandboken beskrivs hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
-source-git-commit: e802932dea38ebbca8de012a4d285eab691231be
+source-git-commit: 9399a242b855e151e5822035bc952efa89fe4bf0
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '649'
 ht-degree: 0%
 
 ---
 
 # Övervaka datainmatning
 
-Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] med direktuppspelade slutpunkter i realtid.
+Med dataöverföring kan du importera data till Adobe Experience Platform. Du kan antingen använda gruppinmatning, vilket gör att du kan infoga data med olika filtyper (t.ex. CSV-filer), eller direktuppspelning, vilket gör att du kan importera data till [!DNL Platform] med direktuppspelande slutpunkter i realtid.
 
 Den här användarhandboken innehåller anvisningar om hur du övervakar data i Adobe Experience Platform användargränssnitt. Den här guiden kräver att du har en Adobe ID och tillgång till Adobe Experience Platform.
 
@@ -24,7 +24,7 @@ Den här användarhandboken innehåller anvisningar om hur du övervakar data i 
 >title="Inmatningshastighet"
 >abstract="Antalet händelser som har bearbetats per sekund."
 >text="Learn more in the documentation"
->additional-url="http://www.adobe.com/go/monitor-dataflows-en" text="Övervaka dataflöden för källor i användargränssnittet"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-sources.html" text="Övervaka dataflöden för källor i användargränssnittet"
 
 >[!TIP]
 >
@@ -40,7 +40,7 @@ Som standard visas i det övre diagrammet hur snabbt du har fått i sig något u
 
 ![](../images/quality/monitor-data-flows/events-received.png)
 
-I det nedre diagrammet visas hur många direktuppspelade händelser som har bearbetats av [!DNL Profile] de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att markera den markerade knappen.
+I det nedre diagrammet visas antalet lyckade direktuppspelade händelser per [!DNL Profile] de senaste sju dagarna. Du kan justera datumintervallet så att olika tidsperioder visas genom att markera den markerade knappen.
 
 >[!NOTE]
 >
