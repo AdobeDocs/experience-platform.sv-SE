@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: ba75669eeaef9fc023e7c33265ec1e5dbada9534
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '1745'
+source-wordcount: '1746'
 ht-degree: 0%
 
 ---
@@ -145,7 +145,7 @@ Innehåller version 2.8.0 av Adobe Experience Platform Web SDK Library.
 
 Innehåller version 2.7.0 av Adobe Experience Platform Web SDK Library.
 
-* Ytterligare information från Experience Edge finns i Send Event Complete-händelsen, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion. Mer information finns i [Spåra händelser.](../../../../edge/fundamentals/tracking-events.md)
+* Ytterligare information från Edge Network finns i Send Event Complete-händelsen, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion. Mer information finns i [Spåra händelser.](../../../../edge/fundamentals/tracking-events.md)
 
 ## Version 2.7.3 - 7 september 2021
 

@@ -4,7 +4,7 @@ description: Se hur Adobe Experience Platform Edge Network Server API identifier
 seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
 keywords: gränsnätverk;gateway;api;besökare;identifiering
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 4%
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 # Besökaridentifiering
 
-API:t för Edge Network Server har stöd för [besöksidentifiering via förstapartsens ID ([!DNL FPID])](visitor-identification-fpid.md).
+API:t för Edge Network Server stöder [besöksidentifiering via förstapartsens ID ([!DNL FPID])](visitor-identification-fpid.md).
 
 Alla användaridentiteter ska anges i `identityMap` fältgrupp. Den här fältgruppen ingår i AEP Web SDK `ExperienceEvent` blanda.
 
@@ -50,7 +50,7 @@ Det finns flera sätt att identifiera en enhet i Edge-nätverket. I tabellen ned
 -->
 
 <!--
-## Experience Edge Identity Protocol {#experience-edge-identity-protocol}
+## Edge Network Identity Protocol {#experience-edge-identity-protocol}
 
 Device identities like `ECID` must be persisted on the client device and supplied on each request in the session and across sessions. Having stable device identities across multiple sessions improves the accuracy levels in your reports and allows delivering a consistent experience to the visitors.
 
@@ -157,6 +157,6 @@ The caller must explicitly activate this functionality via the `meta.state.cooki
 
 >[!NOTE]
 >
->The `meta.state.domain` is an optional value which a caller could supply, specifying the exact domain on which the cookies should be stored. When this is missing, Experience Edge can automatically infer the top-level domain from the request. Automatic client state management via browser cookies **should never be used** in a `server` interaction.
+>The `meta.state.domain` is an optional value which a caller could supply, specifying the exact domain on which the cookies should be stored. When this is missing, the Edge Network can automatically infer the top-level domain from the request. Automatic client state management via browser cookies **should never be used** in a `server` interaction.
 
 -->

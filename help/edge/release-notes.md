@@ -3,7 +3,7 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 49624d51d6868fa951fe70b29715142b3cbad55b
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '1589'
 ht-degree: 1%
@@ -118,7 +118,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 * Optimerade vyändringshändelser för ensidesprogram. Visningsmeddelandet ingår nu i händelsen view-change när personaliserade upplevelser återges.
 * Konsolvarning har tagits bort när ingen `eventType` är närvarande.
 * Ett problem där `propositions` egenskapen returnerades endast från en `sendEvent` när upplevelser begärdes eller hämtades från cachen. The `propositions` kommer nu alltid att definieras som en array.
-* Korrigerade ett problem där dolda behållare inte visades när ett fel returnerades från Adobe Experience Edge.
+* Korrigerade ett problem där dolda behållare inte visades när ett fel returnerades från Edge Network.
 * Ett problem där interaktionshändelserna inte räknades i Adobe Target har korrigerats. Detta korrigerades genom att vynamnet lades till i XDM på web.webPageDetails.viewName.
 * Åtgärda brutna dokumentationslänkar i konsolmeddelanden.
 
@@ -130,7 +130,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 
 ## Version 2.7.0 - 26 oktober 2021
 
-* Exponera ytterligare information från Experience Edge i det returnerade värdet från `sendEvent`, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion. Mer information finns i [Spåra händelser.](fundamentals/tracking-events.md)
+* Exponera ytterligare information från Edge Network i returvärdet från `sendEvent`, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion. Mer information finns i [Spåra händelser.](fundamentals/tracking-events.md)
 
 ## Version 2.6.4 - 7 september 2021
 

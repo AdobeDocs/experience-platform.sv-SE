@@ -1,18 +1,18 @@
 ---
 keywords: tillägg för händelsevidarebefordran;pinterest;pinterest tillägg för händelsevidarebefordran
-title: Pinterest-tillägg för händelsevidarebefordran
+title: Pinterest-tillägg för händelsevidarebefordring
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du importera händelser till Pinterest för dina verksamhetsbehov.
 last-substantial-update: 2023-04-27T00:00:00Z
-source-git-commit: 87c76ef4b95bc05a64d9d124d69c2a51b7b77c08
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '1484'
+source-wordcount: '1482'
 ht-degree: 2%
 
 ---
 
-# [!DNL Pinterest] tillägg för händelsevidarebefordran
+# [!DNL Pinterest] tillägg för händelsevidarebefordring
 
-[!DNL Pinterest] är en motor för visuell identifiering som att hitta idéer som recept, heminredning, stilinspiration med mera. Det finns miljarder stift på [!DNL Pinterest], som också kan delas med andra på [!DNL Pinterest]. Du kan sammanställa användarinteraktionshändelserna och använda [!DNL Pinterest Analytics] för att förstå användarbeteenden och köra riktade annonser.
+[!DNL Pinterest] är en motor för visuell identifiering som att hitta idéer som recept, heminredning, stilinspiration med mera. Det finns miljarder stift på [!DNL Pinterest], som också kan delas med andra [!DNL Pinterest]. Du kan sammanställa användarinteraktionshändelserna och använda [!DNL Pinterest Analytics] för att förstå användarbeteende och köra riktade annonser.
 
 The [[!DNL Pinterest] Konverteringar](https://developers.pinterest.com/docs/conversions/conversion-management/) API [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) kan du utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Pinterest]. Det här dokumentet beskriver tilläggets användningsfall, hur det installeras och hur du integrerar dess funktioner i din händelsevidarebefordran [regler](../../../ui/managing-resources/rules.md).
 
@@ -22,7 +22,7 @@ The [[!DNL Pinterest] Konverteringar](https://developers.pinterest.com/docs/conv
 
 Det här tillägget bör användas om du vill använda data från Edge Network i [!DNL Pinterest] för att utnyttja sina funktioner för kundanalys.
 
-Ta till exempel ett marknadsföringsteam i en organisation. Teamet samlar in data om användarinteraktionshändelser från sin webbplats och läser in dessa i [!DNL Pinterest] med det här tillägget för händelsevidarebefordran.
+Ta till exempel ett marknadsföringsteam i en organisation. Teamet samlar in data om användarinteraktionshändelser från sin webbplats och läser in dessa i [!DNL Pinterest] med det här tillägget för vidarebefordran av händelser.
 
 Marknadsförings- och analysteam kan sedan utnyttja [!DNL Pinterest] Analysfunktioner för att förstå viktiga användarinteraktioner och beteenden, så att ni bättre kan förstå användarna och inrikta dem på riktade annonskampanjer.
 
@@ -47,7 +47,7 @@ För att ansluta Experience Platform till [!DNL Pinterest]krävs följande indat
 
 Installera tillägget genom att [skapa en egenskap för vidarebefordring av händelser](../../../ui/event-forwarding/overview.md#properties) eller välj en befintlig egenskap att redigera i stället.
 
-Välj **[!UICONTROL Extensions]**. Välj **[!UICONTROL Install]** på kortet för [!DNL Pinterest] i **[!UICONTROL Catalog]** -fliken.
+I vänster navigering väljer du **[!UICONTROL Extensions]**. Välj **[!UICONTROL Install]** på kortet för [!DNL Pinterest] i **[!UICONTROL Catalog]** -fliken.
 
 ![Katalog som visar [!DNL Pinterest] tillägg med [!UICONTROL Install] markerad.](../../../images/extensions/server/pinterest/install.png)
 
@@ -57,7 +57,7 @@ Välj **[!UICONTROL Extensions]**. Välj **[!UICONTROL Install]** på kortet fö
 >
 >Beroende på implementeringsbehoven kan du behöva skapa ett schema, dataelement och en datauppsättning innan du konfigurerar tillägget. Granska alla konfigurationssteg innan du startar för att avgöra vilka enheter du måste konfigurera för ditt användningsfall.
 
-Välj **[!UICONTROL Extensions]**. Välj **[!UICONTROL Configure]** på kortet för [!DNL Pinterest] i [!UICONTROL Installed]**.
+I vänster navigering väljer du **[!UICONTROL Extensions]**. Välj **[!UICONTROL Configure]** på kortet för [!DNL Pinterest] i [!UICONTROL Installed]**.
 
 ![[!DNL Pinterest] som visas i [!UICONTROL Install] tabba med [!UICONTROL Configure] markerad.](../../../images/extensions/server/pinterest/configure.png)
 
@@ -69,7 +69,7 @@ På nästa skärm anger du [!UICONTROL Ads Account Id] och [!UICONTROL Conversio
 
 När alla dataelement har konfigurerats kan du börja skapa regler för vidarebefordran av händelser som bestämmer när och hur händelserna ska skickas till [!DNL Pinterest].
 
-Skapa ett nytt [regel](../../../ui/managing-resources/rules.md) i egenskapen för vidarebefordran av händelser. Under **[!UICONTROL Actions]**, lägga till en ny åtgärd och ange tillägget till **[!UICONTROL Pinterest]**. Skicka Adobe Experience Edge Network-händelser till [!DNL Pinterest], ange **[!UICONTROL Action Type]** till **[!UICONTROL Send Event].**
+Skapa ett nytt [regel](../../../ui/managing-resources/rules.md) i egenskapen för vidarebefordran av händelser. Under **[!UICONTROL Actions]**, lägga till en ny åtgärd och ange tillägget till **[!UICONTROL Pinterest]**. Skicka Edge Network-händelser till [!DNL Pinterest], ange **[!UICONTROL Action Type]** till **[!UICONTROL Send Event].**
 
 ![The [!DNL Pinterest] [!UICONTROL Send Event] skapa regel.](../../../images/extensions/server/pinterest/rule.png)
 
@@ -97,7 +97,7 @@ Följande händelseegenskaper kan konfigureras:
 | Programarkiv-ID | App-ID:t för appbutiken. |
 | Programnamn | Programmets namn. |
 | Programversion | Versionen av programmet. |
-| Enhetsmärke | Varumärke för enheten som används av användaren. |
+| Enhetsmärke | Varumärke för den enhet som används av användaren. |
 | Enhetsbärare | Användarens mobiloperatör för sin enhet. |
 | Enhetsmodell | Modell för användarens enhet. |
 | Enhetstyp | Typ av enhet som används av användaren. |
@@ -131,12 +131,12 @@ De egenskaper för kundinformation som kan konfigureras är:
 | Läge | Användarens tillstånd, som anges med två bokstäver i gemener. |
 | Postnummer | Användarens postnummer, som främst används för fakturering. |
 | Land | ISO-3166-landskod med två tecken som anger användarens land. |
-| Externt ID | Unikt ID från annonsören som identifierar en användare i sitt space. Till exempel användar-ID, lojalitets-ID och så vidare. |
-| Klicka på ID | Den unika identifieraren som lagras i _epik cookie på din domän eller &amp;epik= query-parametern i URL:en. |
+| Externt ID | Unikt ID från annonsören som identifierar en användare i sitt space. Till exempel användar-ID, lojalitets-ID. |
+| Klicka på ID | Den unika identifieraren som lagras i _epik cookie på din domän eller i &amp;epik= query-parametern i URL:en. |
 
 >[!IMPORTANT]
 >
->Innan data skickas till [!DNL Pinterest] API-slutpunkten kommer tillägget att hash-koda och normalisera värdena för följande fält: E-post, telefonnummer, förnamn, efternamn, kön, födelsedatum, ort, delstat, postnummer, land och externt ID. Tillägget kommer inte att hash-koda värdet för dessa fält om det redan finns en SHA256-sträng.
+>Innan data skickas till [!DNL Pinterest] API-slutpunkten kommer tillägget att hash-koda och normalisera värdena för följande fält: E-post, Telefonnummer, Förnamn, Efternamn, Kön, Födelsedatum, Ort, Delstat, Postnummer, Land och Externt ID. Tillägget kommer inte att hash-koda värdet för dessa fält om det redan finns en SHA256-sträng.
 
 ### [!UICONTROL Custom Data]
 
@@ -144,11 +144,11 @@ Följande anpassade data kan anges för regeln:
 
 | Fältnamn | Beskrivning |
 | --- | --- |
-| Valuta | ISO-4217-valutakoden. Om detta inte anges [!DNL Pinterest] används som standard för annonserarens valuta som angavs när kontot skapades. |
+| Valuta | ISO-4217-valutakoden. Om detta inte anges, [!DNL Pinterest] används som standard för annonserarens valuta som angavs när kontot skapades. |
 | Värde | Händelsens totala värde. Accepteras som en sträng i begäran. Detta tolkas som en dubbelsiffra. |
 | Söksträng | Söksträngen som är relaterad till användarkonverteringshändelsen. |
 | Order-ID | Beställnings-ID. Skickar `order_id` hjälper [!DNL Pinterest] deduplicera händelser när det behövs. |
-| Antal produkter | Totalt antal produkter för händelsen. Exempel: det totala antalet objekt som köpts i en utcheckningshändelse. |
+| Antal produkter | Totalt antal produkter för händelsen. Det totala antalet objekt som köpts i en utcheckningshändelse. |
 | Innehålls-ID | Lista (matris) med produkt-ID:n. |
 | Innehåll | En lista (array) med objekt som innehåller information om produkter, till exempel pris och kvantitet. |
 
@@ -162,7 +162,7 @@ Om händelsesamlingen och [!DNL Experience Platform] integreringen lyckades, du 
 
 ![The [!DNL Pinterest] händelsehanterare](../../../images/extensions/server/pinterest/event-history.png)
 
-Du kan gå igenom och visa [!DNL Pinterest] händelsedatadistribution.
+Du kan gå igenom och visa [!DNL Pinterest] distribution av händelsedata.
 
 ![The [!DNL Pinterest] datadistribution](../../../images/extensions/server/pinterest/event-history-distribution.png)
 

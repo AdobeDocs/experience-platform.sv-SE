@@ -3,7 +3,7 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '2281'
 ht-degree: 2%
@@ -918,7 +918,7 @@ Loggning på analysserversidan aktiveras när Analytics är aktiverat för den D
 
 ![](assets/analytics-enabled-datastream-config.png)
 
-När loggning av analys på serversidan är aktiverat, måste A4T-nyttolasten delas med Analytics så att Analytics-rapporten visar korrekta visningar och konverteringar på Experience Edge-nivå, så att kunden inte behöver göra någon ytterligare bearbetning.
+När loggning av analys på serversidan är aktiverat, måste A4T-nyttolasten delas med Analytics så att Analytics-rapporten visar korrekta visningar och konverteringar på Edge Network-nivå, så att kunden inte behöver göra någon ytterligare bearbetning.
 
 Så här flödar data in i våra system när loggning av serveranalys är aktiverat:
 

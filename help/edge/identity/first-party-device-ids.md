@@ -2,9 +2,9 @@
 title: Första parts enhets-ID i Platform Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: f5270d1d1b9697173bc60d16c94c54d001ae175a
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '1773'
+source-wordcount: '1774'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ När du ställer in en cookie med en server som du äger kan du använda olika m
 
 ### När cookien ska ställas in
 
-FPID-cookien bör helst anges innan du skickar några begäranden till Edge Network. I scenarier där detta inte är möjligt genereras dock ett ECID fortfarande med befintliga metoder och fungerar som primär identifierare så länge som cookien finns.
+FPID-cookien bör helst anges innan du skickar några förfrågningar till Edge Network. I scenarier där detta inte är möjligt genereras dock ett ECID fortfarande med befintliga metoder och fungerar som primär identifierare så länge som cookien finns.
 
 Om man utgår ifrån att ECID så småningom påverkas av en policy för borttagning av webbläsare, men inte av FPID, kommer FPID att bli den primära identifieraren vid nästa besök och kommer att användas för att förorsaka ECID vid varje påföljande besök.
 
@@ -90,7 +90,7 @@ Om du väljer att låta Platform Edge Network läsa värdet för FPID-cookien an
 
 ### `Secure` {#secure}
 
-Cookies anges med `Secure` -attribut skickas bara till servern med en krypterad begäran via HTTPS-protokollet. Med den här flaggan kan man säkerställa att angripare inte kommer åt cookie-värdet på ett enkelt sätt. När det är möjligt är det alltid en bra idé att ställa in `Secure` flagga.
+Cookies som anges med `Secure` -attribut skickas bara till servern med en krypterad begäran via HTTPS-protokollet. Med den här flaggan kan man säkerställa att angripare inte kommer åt cookie-värdet på ett enkelt sätt. När det är möjligt är det alltid en bra idé att ställa in `Secure` flagga.
 
 ### `SameSite` {#same-site}
 
@@ -176,7 +176,7 @@ Följande `identityMap` skulle resultera i ett felsvar från Edge Network efters
 }
 ```
 
-Felsvaret som returneras av Experience Edge i det här fallet liknar följande:
+Felsvaret som returneras av Edge Network i det här fallet liknar följande:
 
 ```json
 {
@@ -201,7 +201,7 @@ Identiteter prioriteras i följande ordning:
 1. ECID ingår i `identityMap`
 1. ECID lagras i en cookie
 1. FPID ingår i `identityMap`
-1. FPID lagras i en cookie
+1. FPID som lagras i en cookie
 
 ## Migrera till enhets-ID:n från första part
 
@@ -214,8 +214,8 @@ För att illustrera denna process bör du överväga ett scenario där en kund s
 | Gå in på | Beskrivning |
 | --- | --- |
 | Första besök | Anta att du ännu inte har börjat ange FPID-cookie. Det ECID som finns i [AMCV cookie](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html#section-c55af54828dc4cce89f6118655d694c8) blir den identifierare som används för att identifiera besökaren. |
-| Andra besök | Utrullning av första parts enhets-ID-lösning har startats. Befintligt ECID finns fortfarande och fortsätter att vara den primära identifieraren för besökaridentifiering. |
-| Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid innan ECID har tagits bort på grund av webbläsarprincipen. Eftersom FPID angavs med en DNS A-post kvarstår dock FPID:t. FPID betraktas nu som det primära ID:t och används för att skicka ECID, som skrivs till slutanvändarens enhet. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
+| Andra besök | Utrullning av första parts enhets-ID-lösning har startats. Det befintliga ECID:t finns fortfarande och fortsätter att vara den primära identifieraren för besökaridentifiering. |
+| Tredje besök | Mellan det andra och tredje besöket har det gått tillräckligt lång tid innan ECID har tagits bort på grund av webbläsarprincipen. Eftersom FPID angavs med en DNS A-post kvarstår dock FPID:t. FPID betraktas nu som det primära ID:t och används för att skicka ut ECID, som skrivs till slutanvändarens enhet. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
 | Fjärde besök | Mellan det tredje och fjärde besöket har det gått tillräckligt lång tid att ta bort ECID på grund av webbläsarprincipen. Precis som vid det föregående besöket beror FPID fortfarande på hur det var inställt. Nu genereras samma ECID som vid det föregående besöket. Användaren uppfattar Experience Platform och Experience Cloud som samma användare som vid det föregående besöket. |
 | Femte besök | Mellan den fjärde och femte besöken rensade slutanvändaren alla cookies i sin webbläsare. Ett nytt FPID genereras och används för att skapa ett nytt ECID. Användaren skulle nu betraktas som en ny besökare i lösningarna Adobe Experience Platform och Experience Cloud. |
 
@@ -231,7 +231,7 @@ Begreppet dirigering är unikt i och med att det FPID som skickas till Adobe Exp
 
 ### När ska det första parts enhets-ID genereras?
 
-För att minska den potentiella besökarinflationen bör FPID genereras innan du gör din första begäran med Platform Web SDK. Om du inte kan göra detta kommer ett ECID fortfarande att genereras för den användaren och kommer att användas som primär identifierare. Det FPID som genererades kommer inte att bli den primära identifieraren förrän ECID:t inte längre finns.
+För att minska den potentiella besökarinflationen bör FPID genereras innan du gör din första begäran med Platform Web SDK. Om du inte kan göra detta kommer dock ett ECID att genereras för den användaren och användas som primär identifierare. Det FPID som genererades kommer inte att bli den primära identifieraren förrän ECID:t inte längre finns.
 
 ### Vilka datainsamlingsmetoder stöder enhets-ID:n från första part?
 

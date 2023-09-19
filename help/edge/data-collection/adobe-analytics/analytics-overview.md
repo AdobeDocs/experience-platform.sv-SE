@@ -1,11 +1,11 @@
 ---
 title: Använda Adobe Analytics med Platform Web SDK
-description: Lär dig hur du skickar data till Adobe Analytics med Adobe Experience Platform Web SDK.
+description: Lär dig skicka data till Adobe Analytics med Adobe Experience Platform Web SDK.
 keywords: adobe analytics;analytics;mapped data;mapped vars;
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: 836fa7814a6966903639e871bfaea0563847f363
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -74,4 +74,4 @@ Här är ett exempel på en bearbetningsregel som skulle använda dessa data.
 
 >[!NOTE]
 >
->Med Experience Edge-samlingen skickas alla händelser till Analytics samt till andra tjänster som du har konfigurerat för din datastream. Om du till exempel har både Analytics och Target konfigurerade som tjänster och du gör separata anrop för personalisering och för Analytics, skickas båda händelserna till Analytics och Target. Dessa händelser registreras i analysrapporter och kan påverka mätvärden som studsfrekvens.
+>Med Edge Network-samlingen skickas alla händelser till Analytics samt till andra tjänster som du har konfigurerat för din datastream. Om du till exempel har både Analytics och Target konfigurerade som tjänster och du gör separata anrop för personalisering och för Analytics, skickas båda händelserna till Analytics och Target. Dessa händelser registreras i analysrapporter och kan påverka mätvärden som studsfrekvens.

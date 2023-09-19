@@ -2,7 +2,7 @@
 title: Interaktiv datainsamling
 description: Lär dig hur Adobe Experience Platform Edge Network Server API utför interaktiv datainsamling.
 exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '138'
 ht-degree: 3%
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 ## Översikt {#overview}
 
-Slutpunkter för interaktiv datainsamling tar emot en enda händelse och används när klienten förväntar sig att ett svar returneras av Adobe Experience Platform Edge Network-servern. Dessa slutpunkter kan också returnera innehåll från andra Experience Edge-tjänster när du samlar in data.
+Slutpunkter för interaktiv datainsamling tar emot en enda händelse och används när klienten förväntar sig att ett svar returneras av Adobe Experience Platform Edge Network-servern. Dessa slutpunkter kan också returnera innehåll från andra Edge Network-tjänster när datainsamling utförs.
 
 Serversvaret innehåller en eller flera `Handle` objekt, enligt nedan.
 
@@ -63,7 +63,7 @@ curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | Parameter | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | `dataStreamId` | `String` | Ja. | Datastream-ID. |
-| `requestId` | `String` | Nej | Ange ett slumpmässigt klient-ID för korrelerande interna serverförfrågningar. Om inget anges genereras ett Edge-nätverk och returneras som svar. |
+| `requestId` | `String` | Nej | Ange ett slumpmässigt klient-ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge-nätverk och returneras som svar. |
 
 ### Svar {#response}
 

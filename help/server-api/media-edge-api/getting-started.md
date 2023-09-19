@@ -2,9 +2,9 @@
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '958'
 ht-degree: 1%
 
 ---
@@ -47,7 +47,7 @@ Förutom smärre skillnader i anropad modell och sökväg har Media Edge API sam
 * [Ställa in HTTP-begärantypen i spelaren](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [Skicka ping-händelser](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
 * [Timeoutvillkor](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-timeout.html?lang=en)
-* [Kontrollera händelseordningen](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-ctrl-order.html?lang=en)
+* [Styra händelseordningen](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-ctrl-order.html?lang=en)
 
 ## Behörighet {#authorization}
 
@@ -60,7 +60,7 @@ Om du vill starta mediesessionen på servern använder du slutpunkten för sessi
 
 Innan du gör sessionsstartbegäran behöver du följande:
 
-* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du en `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=en).
+* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=en).
 
 * Ett JSON-objekt för den begärda nyttolasten som innehåller de minsta data som krävs (som visas i exempelbegäran nedan).
 
@@ -171,7 +171,7 @@ Mer information om XDM-mediedataparametrar finns i [Informationsschema för medi
 
 ## Buffertstarthändelsebegäran {#buffer-start}
 
-Buffertens starthändelse signalerar när buffringen startar i mediespelaren. Buffertåterupptagning är inte en händelse i API-tjänsten. i stället dras den slutsatsen när en play-händelse skickas efter Buffer Start. Om du vill göra en begäran om en Buffer Start-händelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
+Buffertens starthändelse signalerar när buffringen startar i mediespelaren. Buffertåterupptagning är inte en händelse i API-tjänsten, utan kan härledas när en uppspelningshändelse skickas efter Buffertstart. Om du vill göra en begäran om en Buffer Start-händelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/bufferStart \`
 
@@ -209,7 +209,7 @@ Mer information om parametrar och exempel för Buffer Start-slutpunkten finns i 
 
 ## Spela upp händelsebegäran {#play-event}
 
-Play-händelsen skickas när mediespelaren ändrar sitt läge till&quot;uppspelning&quot; från ett annat läge, till exempel&quot;buffring&quot;,&quot;pausad&quot; eller&quot;fel&quot;. Om du vill göra en begäran om uppspelningshändelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
+Play-händelsen skickas när mediespelaren ändrar sitt läge till&quot;spela upp&quot; från ett annat läge, till exempel&quot;buffring&quot;,&quot;pausad&quot; eller&quot;fel&quot;. Om du vill göra en begäran om uppspelningshändelse använder du `sessionId` i nyttolasten för ett anrop till följande slutpunkt:
 
 **POST**  `https://edge.adobedc.net/ee-pre-prd/va/v1/play \`
 
@@ -284,11 +284,11 @@ I följande tabell visas möjliga svarskoder från API-begäranden för Media Ed
 | Status | Beskrivning |
 | ---------- | --------- |
 | 200 | Sessionen har skapats |
-| 207 | Problem med en av tjänsterna som ansluter till Experience Edge Network (se mer i [felsökningsguide](troubleshooting.md)) |
+| 207 | Problem med en av tjänsterna som ansluter till Edge Network (se mer i [felsökningsguide](troubleshooting.md)) |
 | 400-nivå | Felaktig begäran |
 | 500-nivå | Serverfel |
 
-## Mer hjälp om den här funktionen
+## Mer hjälp om funktionen
 
 * [Felsökningsguide för Media Edge](troubleshooting.md)
 * [Översikt över API för Media Edge](overview.md)

@@ -1,12 +1,12 @@
 ---
 keywords: tillägg för händelsevidarebefordring;blandpanel;tillägg för händelsesändning med mixpanel
 title: API-tillägg för händelsespårning i Mixpanel Track
-description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Adobe Experience Edge Network-händelser till Mixpanel.
+description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Edge Network-händelser till Mixpanel.
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 21e2e0fa-4949-4be4-859f-d449d21d8f41
-source-git-commit: 4f75bbfee6b550552d2c9947bac8540a982297eb
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '926'
+source-wordcount: '922'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 ## Användningsfall
 
-Det här tillägget bör användas om du vill använda data från Edge Network i [!DNL Mixpanel] för att utnyttja funktionerna för produktanalys.
+Det här tillägget bör användas om du vill använda data från Edge Network i [!DNL Mixpanel] för att dra nytta av funktionerna för produktanalys.
 
 Ta till exempel en detaljhandelsorganisation som har en flerkanalsnärvaro (webbplats och mobil). Organisationen hämtar in transaktions- eller konverteringsdata som händelsedata från sina plattformar och läser in dessa i [!DNL Mixpanel] med tillägget för händelsevidarebefordran.
 
@@ -47,12 +47,12 @@ I [!DNL Mixpanel], ett identitetskluster innehåller en samling `distinct_id` v�
 
 [!DNL Mixpanel] löser identitetsgrupper på två sätt:
 
-* **Identifiera** : [!DNL Mixpanel] kopplar den valda identifieraren till en anonym `distinct_id`. Om din webbplats har [!DNL Mixpanel] SDK är aktiverat, plattformen använder `distinct_id` tilldelas den användare som är inloggad.
+* **Identifiera** : [!DNL Mixpanel] kopplar den valda identifieraren till en anonym `distinct_id`. Om din webbplats har [!DNL Mixpanel] SDK är aktiverat, plattformen använder `distinct_id` som tilldelats den användare som är inloggad.
 * **Alias**: [!DNL Mixpanel] kombinerar två icke-anonyma `distinct id`är tillsammans om ytterligare villkor för sammanslagning är uppfyllda.
 
 >[!NOTE]
 >
->Se [!DNL Mixpanel] dokument på [identitetshantering](https://help.mixpanel.com/hc/en-us/articles/360041039771-Getting-Started-with-Identity-Management#user-identification) om du vill ha mer information om de här metoderna.
+>Se [!DNL Mixpanel] dokument på [identitetshantering](https://help.mixpanel.com/hc/en-us/articles/360041039771-Getting-Started-with-Identity-Management#user-identification) om du vill ha mer information om dessa metoder.
 >
 >Bekräfta att du har aktiverat [[!DNL Mixpanel] funktion för identitetssammanfogning](#prerequisites-mixpanel) för att säkerställa att identitetskluster löses på rätt sätt.
 
@@ -74,7 +74,7 @@ Välj **[!UICONTROL Extensions]** i den vänstra navigeringen. I **[!UICONTROL C
 
 ## Skapa en [!DNL Send Event] regel
 
-Börja skapa en ny regel i egenskapen för vidarebefordran av händelser. Under **[!UICONTROL Actions]**, lägga till en ny åtgärd och ange tillägget till **[!UICONTROL Mixpanel]**. Ange sedan åtgärdstypen till **[!UICONTROL Track Event]** skicka Adobe Experience Edge Network-händelser till [!DNL Mixpanel].
+Börja skapa en ny regel i egenskapen för vidarebefordran av händelser. Under **[!UICONTROL Actions]**, lägga till en ny åtgärd och ange tillägget till **[!UICONTROL Mixpanel]**. Ange sedan åtgärdstypen till **[!UICONTROL Track Event]** skicka Edge Network-händelser till [!DNL Mixpanel].
 
 | Indata | Beskrivning | Obligatoriskt |
 | --- | --- | --- |
@@ -105,7 +105,7 @@ Kontrollera om [!DNL Mixpanel] har sammanfogat händelserna efter inloggning ify
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du skickar konverteringshändelser till [!DNL Mixpanel] med händelsevidarebefordran. Det här tillägget för händelsevidarebefordran utnyttjar [!DNL Mixpanel] SDK och JavaScript API. Mer information om dessa underliggande tekniker finns i den officiella dokumentationen:
+I den här guiden beskrivs hur du skickar konverteringshändelser till [!DNL Mixpanel] med händelsevidarebefordran. Det här tillägget för vidarebefordring av händelser utnyttjar [!DNL Mixpanel] SDK och JavaScript API. Mer information om dessa underliggande tekniker finns i den officiella dokumentationen:
 
 * [[!DNL Mixpanel] SDK](https://developer.mixpanel.com/docs/nodejs)
 * [[!DNL Mixpanel] JavaScript API](https://developer.mixpanel.com/docs/javascript-full-api-reference#mixpanelidentify)

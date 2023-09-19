@@ -2,9 +2,9 @@
 title: Adobe Commerce Source Connector
 description: Lär dig hur du använder Adobe Commerce-källan för att skicka e-handelsdata till Experience Platform.
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -13,10 +13,10 @@ ht-degree: 0%
 
 Adobe Commerce är en flexibel B2B- och B2C-handelsplattform som gör det möjligt för handlare och varumärken att öka intäkterna genom kundcentrerade digitala handelsupplevelser på både webben och fysiska platser.
 
-Adobe Experience Platform Sources stöder integreringen av Adobe Commerce så att handlare kan skicka butiks- och back office-data till Adobe Experience Edge, så att andra Adobe Experience Cloud-produkter som Adobe Analytics och Adobe Target kan använda [!DNL Commerce] data.
+Adobe Experience Platform Sources har stöd för integrering av Adobe Commerce så att handlare kan skicka butiks- och back office-data till Experience Platform Edge Network, så att andra Adobe Experience Cloud-produkter som Adobe Analytics och Adobe Target kan använda [!DNL Commerce] data.
 
-* **Storefront-händelser**: Fånga kundinteraktioner som `View Page`, `View Product`och `Add to Cart`. För B2B-handlare fångar butikshändelser också [rekvisitionslistor](<https://experienceleague.adobe.com/docs/commerce-admin/b2b/requisition-lists/requisition-lists.html>).
-* **Back office-händelser**: Hämta information om status för en order, t.ex. om en order har placerats, annullerats, återbetalats, levererats eller slutförts.
+* **Storefront-händelser**: fånga kundinteraktioner som `View Page`, `View Product`och `Add to Cart`. För B2B-handlare fångar butikshändelser också [rekvisitionslistor](<https://experienceleague.adobe.com/docs/commerce-admin/b2b/requisition-lists/requisition-lists.html>).
+* **Back office-händelser**: Hämta information om status för en beställning, t.ex. om en beställning har placerats, annullerats, återbetalats, skickats eller slutförts.
 
 >[!NOTE]
 >
@@ -31,9 +31,9 @@ För att kunna ansluta Adobe Commerce till Experience Platform måste du ha föl
 * Åtkomst till [Tillägget Adobe Client Data Layer](../../../tags/extensions/client/client-data-layer/overview.md). Det här tillägget är nödvändigt för att samla in händelsedata för butiken.
 * Tillstånd till andra Adobe DX-produkter.
 
-## Inledande steg
+## Onboarding-steg
 
-Följ stegen nedan tillsammans med motsvarande dokumentation för att få tillgång till ditt Adobe Commerce-källkonto.
+Följ stegen nedan tillsammans med motsvarande dokumentation för att få ett fullständigt medlemskap i ditt Adobe Commerce-källkonto.
 
 * [Installera anslutningstillägget Experience Platform](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/install.html) för Adobe Commerce. Du kan hämta anslutningstillägget från [Adobe Marketplace](https://commercemarketplace.adobe.com/magento-experience-platform-connector.html).
 * När du har installerat anslutningstillägget loggar du in på ditt Adobe-konto i Experience Cloud och [bekräfta ditt organisations-ID](https://experienceleague.adobe.com/docs/core-services/interface/administration/organizations.html?lang=en#concept_EA8AEE5B02CF46ACBDAD6A8508646255). Detta ID är kopplat till ditt provisionerade Experience Cloud-företag. Den är formaterad som en 24 tecken lång alfanumerisk sträng och innehåller en obligatorisk `@AdobeOrg`.

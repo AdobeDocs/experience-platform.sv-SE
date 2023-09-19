@@ -1,14 +1,13 @@
 ---
 title: Adobe Experience Platform Web Software Development Kit (SDK) - översikt
 description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
-keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
-exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 52dbde052322a00fc33cd9f9c86ab7f92671f36a
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '776'
 ht-degree: 1%
 
 ---
+
 
 # Adobe Experience Platform Web SDK - översikt {#overview}
 
@@ -17,17 +16,15 @@ Adobe Experience Platform Web Software Development Kit (SDK) är ett JavaScript-
 * Manuell implementering med `alloy.js`. Den här användarhandboken innehåller dokumentation om den här implementeringsmetoden.
 * The [SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se [Implementera Adobe Experience Cloud med Web SDK, genomgång](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) för mer information.
 
-## Adobe Experience Edge
+## Experience Platform Edge Network
 
-Adobe Experience Platform Web SDK är en del av den samling som utgör Adobe Experience Edge. Adobe Experience Edge består av följande tekniker:
+Experience Platform Web SDK ingår i en samling verktyg som utgör Adobe Experience Platform Edge Network. Edge Network består av följande komponenter:
 
-* **[Adobe Experience Platform Web SDK](#overview):** JavaScript SDK och kodtillägg som dramatiskt förenklar driftsättningen av Adobe-tekniker.
-* **[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/):** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
-* **[Adobe Experience Platform Edge Network](../server-api/overview.md):** Ett globalt distribuerat servernätverk som möjliggör en ny metod för driftsättning [!DNL Adobe] produkter
+* **[Experience Platform Web SDK](#overview):** JavaScript SDK och kodtillägg som dramatiskt förenklar driftsättningen av Adobe-tekniker.
+* **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/):** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
+* **[Experience Platform Edge Network Server API](../server-api/overview.md):** Ett API som kan användas för en mängd olika användningsområden för datainsamling, personalisering, annonsering och marknadsföring. Server-API:t kan användas på servrar, IoT-enheter, digitalboxar och en mängd andra enheter.
 
-Adobe Experience Edge är ett ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler.
-
-[!DNL Adobe Experience Edge] har ett enda konsoliderat SDK för alla kanaler (JavaScript, Mobile, Server-side) som skickar data till en gemensam Adobe-domän (`adobedc.net`) och får en enda nyttolast för data- och upplevelseleverans.
+Edge Network är ett ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler. Den ger en enda konsoliderad SDK för alla kanaler (JavaScript, Mobile, Server-side), som skickar data till en gemensam Adobe-domän (`adobedc.net`) och får en enda nyttolast för data- och upplevelseleverans.
 
 På serversidan gör en enhetlig edge-gateway och ett gemensamt ramverk för plattformstjänster det enkelt att driftsätta nya funktioner i den här realtidsmiljön. Arkitekturen:
 

@@ -2,9 +2,9 @@
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Felsökningsguide för Media Edge API:er
-source-git-commit: ff4bc64843e3d05277f56ab67b60400fb9e65c4f
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '664'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ För att felsöka misslyckade svar åtföljs felen av en svarsbrödtext som inne
 ## Valideringssessionen startar
 
 De flesta problem med begäran om sessionsstart resulterar i ett 207 Multi-Status-svar.
-Nyttolasten liknar de icke-allvarliga felen i Experience Edge Network Server API. Alla Media Analytics-fel har följande typ:  `https://ns.adobe.com/aep/errors/va-edge-0XXX-XXX`. Siffrorna som visas i svaret motsvarar felstatusen.
+Nyttolasten liknar [Server-API](../error-handling.md)Det är icke-allvarliga fel. Alla Media Analytics-fel har följande typ:  `https://ns.adobe.com/aep/errors/va-edge-0XXX-XXX`. Siffrorna som visas i svaret motsvarar felstatusen.
 
 I följande exempel visas en svarstext för en sessionsstartbegäran som båda saknar ett obligatoriskt fält och har ett ogiltigt.
 
@@ -64,7 +64,7 @@ I exemplet ovan beskrivs båda problemen i `name` och `reason` under `details`: 
 
 ## Validera händelser
 
-De flesta ogiltiga händelseförfrågningar resulterar i ett 400 felaktigt svar på begäran. I dessa fall liknar nyttolasten allvarliga fel i Experience Edge Network Server API.
+De flesta ogiltiga händelseförfrågningar resulterar i ett 400 felaktigt svar på begäran. I dessa fall liknar nyttolasten allvarliga fel i Server-API.
 
 För händelseförfrågningar innehåller Media Edge API-tjänsten ytterligare kontroller som inte fångas in i själva XDM-modellen. Detta inkluderar en kontroll av att sökvägen `eventType` matchar nyttolasten för begäran `eventType`.
 
@@ -109,11 +109,11 @@ Följande tabell innehåller anvisningar för hur du hanterar statussvarsfel:
 
 | Felkod | Beskrivning |
 | ---------- | --------- |
-| 4xx - felaktig begäran | De flesta 4xx-fel (t.ex. `400`, `403`, `404`) ska inte göras om av användaren. Om du försöker igen kommer det inte att gå att svara. Användaren bör åtgärda felet innan han eller hon försöker utföra begäran igen. Händelser som resulterar i 4xx-statuskoder spåras inte, vilket kan påverka exaktheten för data i sessioner som har tagit emot 4xx-svar. |
+| 4xx - felaktig begäran | De flesta 4xx-fel (t.ex. `400`, `403`, `404`) ska inte göras om av användaren. Om du försöker utföra begäran igen kommer det inte att gå att svara. Användaren bör åtgärda felet innan han eller hon försöker utföra begäran igen. Händelser som resulterar i 4xx-statuskoder spåras inte, vilket kan påverka exaktheten för data i sessioner som har tagit emot 4xx-svar. |
 | 410 borta | Anger att sessionen som är avsedd för spårning inte längre beräknas på serversidan. Den vanligaste orsaken till detta är att sessionen är längre än 24 timmar. Efter att ha fått `410`, försök starta en ny session och spåra den. |
 | 429 För många begäranden | Den här svarskoden anger att servern hastighetsbegränsar förfrågningarna. Följ **Försök igen efter** instruktionerna i svarshuvudet noggrant. Alla svar som returneras måste innehålla HTTP-svarskoden med en domänspecifik felkod. |
 | 500 Internt serverfel | `500` fel är generiska fel som fångar upp alla. `500` fel får inte provas igen, förutom `502`, `503` och `504`. |
-| 502 Ogiltig gateway | Den här felkoden anger att servern, när den fungerar som en gateway, fick ett ogiltigt svar från överordnade servrar. Detta kan inträffa på grund av nätverksproblem mellan servrar. Det temporära nätverksproblemet kan lösa sig själv, så om du försöker igen kan problemet lösas. |
+| 502 Ogiltig gateway | Den här felkoden anger att servern, när den fungerar som en gateway, fick ett ogiltigt svar från överordnade servrar. Detta kan inträffa på grund av nätverksproblem mellan servrar. Det temporära nätverksproblemet kan lösa sig självt, så om du försöker igen kan problemet lösas. |
 | 503 Tjänsten är inte tillgänglig | Felkoden anger att tjänsten inte är tillgänglig för tillfället. Detta kan inträffa under underhållsperioder. Mottagare av `503` fel kan försöka utföra begäran igen, men bör även följa **Försök igen efter** rubrikinstruktioner. |
 
 

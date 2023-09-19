@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: f5a9e8cb5cdbff485bc7d50e9567b0236ae5872e
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '2257'
+source-wordcount: '2259'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,13 @@ För att kunna använda [!DNL Conversions API] måste du ha tillgång till händ
 
 >[!INFO]
 >
->Om du tänker använda det här tillägget med mobilappsdata, eller om du även arbetar med offlinehändelsedata i [!DNL Meta] -kampanjer måste ni skapa datauppsättningen via en befintlig app och välja **Skapa från ett pixel-ID** när du uppmanas till det. Se artikeln [Bestäm vilket datamängdsalternativ som passar ditt företag](https://www.facebook.com/business/help/5270377362999582?id=490360542427371) för mer information. Se [Konverterings-API för apphändelser](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events) -dokument för alla obligatoriska och valfria parametrar för appspårning.
+>Om du tänker använda det här tillägget med mobilappsdata, eller om du även arbetar med offlinehändelsedata i [!DNL Meta] -kampanjer måste ni skapa datauppsättningen via en befintlig app och välja **Skapa från ett pixel-ID** när du uppmanas till det. Se artikeln [Bestäm vilket datamängdsalternativ som passar ditt företag](https://www.facebook.com/business/help/5270377362999582?id=490360542427371) för mer information. Se [Konverterings-API för apphändelser](https://developers.facebook.com/docs/marketing-api/conversions-api/app-events) för alla obligatoriska och valfria parametrar för appspårning.
 
 ## Installera tillägget
 
-Så här installerar du [!DNL Meta Conversions API] navigerar du till användargränssnittet för datainsamling eller användargränssnittet för Experience Platform och väljer **[!UICONTROL Event Forwarding]** från vänster navigering. Här väljer du en egenskap som tillägget ska läggas till i eller skapar en ny egenskap i stället.
+Installera [!DNL Meta Conversions API] navigerar du till användargränssnittet för datainsamling eller användargränssnittet för Experience Platform och väljer **[!UICONTROL Event Forwarding]** från vänster navigering. Här väljer du en egenskap som tillägget ska läggas till i eller skapar en ny egenskap i stället.
 
-När du har markerat eller skapat den önskade egenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen väljer du **[!UICONTROL Catalog]** -fliken. Sök efter [!UICONTROL Meta Conversions API] kort, välj **[!UICONTROL Install]**.
+När du har valt eller skapat den önskade egenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen väljer du **[!UICONTROL Catalog]** -fliken. Sök efter [!UICONTROL Meta Conversions API] kort, välj **[!UICONTROL Install]**.
 
 ![The [!UICONTROL Install] knappen som markeras för [!UICONTROL Meta Conversions API] i användargränssnittet för datainsamling.](../../../images/extensions/server/meta/install.png)
 
@@ -63,8 +63,8 @@ Det visas kontroller som gör att du kan konfigurera händelsedata som ska skick
 
 | Konfig.avsnitt | Beskrivning |
 | --- | --- |
-| [!UICONTROL Server Event Parameters] | Allmän information om händelsen, inklusive tidpunkten då den inträffade och källåtgärden som utlöste den. Se [!DNL Meta] utvecklardokumentation för mer information om [standardhändelseparametrar](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event) som godkänts av [!DNL Conversions API].<br><br>Om du använder båda [!DNL Meta Pixel] och [!DNL Conversions API] om du vill skicka händelser, se till att inkludera både en **[!UICONTROL Event Name]** (`event_name`) och **[!UICONTROL Event ID]** (`event_id`) med varje händelse eftersom dessa värden används för [deduplicering av händelser](#deduplication).<br><br>Du kan också välja att **[!UICONTROL Enable Limited Data Use]** för att hjälpa till att följa kundernas avval. Se [!DNL Conversions API] dokumentation om [databearbetningsalternativ](https://developers.facebook.com/docs/marketing-apis/data-processing-options/) om du vill ha mer information om den här funktionen. |
-| [!UICONTROL Customer Information Parameters] | Användar-ID-data som används för att tilldela händelsen till en kund. Vissa av dessa värden måste hashas innan de kan skickas till API:t.<br><br>För att säkerställa en bra gemensam API-anslutning och hög händelsematchningskvalitet (EMQ) rekommenderar vi att du skickar alla [godkända parametrar för kundinformation](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) tillsammans med serverhändelser. Dessa parametrar bör också [prioriterad baserat på deras betydelse och inverkan på det epidemiologiska omvärldsbevakningen](https://www.facebook.com/business/help/765081237991954?id=818859032317965). |
+| [!UICONTROL Server Event Parameters] | Allmän information om händelsen, inklusive tidpunkten då den inträffade och källåtgärden som utlöste den. Se [!DNL Meta] utvecklardokumentation för mer information om [standardhändelseparametrar](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event) som godkänts av [!DNL Conversions API].<br><br>Om du använder båda [!DNL Meta Pixel] och [!DNL Conversions API] om du vill skicka händelser, se till att inkludera både en **[!UICONTROL Event Name]** (`event_name`) och **[!UICONTROL Event ID]** (`event_id`) med varje händelse eftersom dessa värden används för [deduplicering av händelser](#deduplication).<br><br>Du kan också välja att **[!UICONTROL Enable Limited Data Use]** för att hjälpa till att följa kundernas avval. Se [!DNL Conversions API] dokumentation om [databearbetningsalternativ](https://developers.facebook.com/docs/marketing-apis/data-processing-options/) för mer information om den här funktionen. |
+| [!UICONTROL Customer Information Parameters] | Användar-ID-data som används för att tilldela händelsen till en kund. Vissa av dessa värden måste hashas innan de kan skickas till API:t.<br><br>För att säkerställa en bra gemensam API-anslutning och hög händelsematchningskvalitet (EMQ) rekommenderar vi att du skickar alla [godkända parametrar för kundinformation](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/customer-information-parameters) tillsammans med serverhändelser. Dessa parametrar bör också [prioriterad baserat på deras betydelse och inverkan på det europeiska folkhälsoområdet](https://www.facebook.com/business/help/765081237991954?id=818859032317965). |
 | [!UICONTROL Custom Data] | Ytterligare data som ska användas för annonsleveransoptimering, tillhandahålls i form av ett JSON-objekt. Se [[!DNL Conversions API] dokumentation](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/custom-data) om du vill ha mer information om godkända egenskaper för det här objektet.<br><br>Om du skickar en köphändelse måste du använda det här avsnittet för att ange de attribut som krävs `currency` och `value`. |
 | [!UICONTROL Test Event] | Det här alternativet används för att verifiera om konfigurationen gör att serverhändelser tas emot av [!DNL Meta] som förväntat. Om du vill använda den här funktionen väljer du **[!UICONTROL Send as Test Event]** och ange sedan en testhändelsekod i indata nedan. När regeln för vidarebefordran av händelser har distribuerats och du har konfigurerat tillägget och åtgärden korrekt, bör du se aktiviteter som visas i **[!DNL Test Events]** visa i [!DNL Meta Events Manager]. |
 
@@ -74,27 +74,26 @@ När du är klar väljer du **[!UICONTROL Keep Changes]** för att lägga till �
 
 ![[!UICONTROL Keep Changes] väljs för åtgärdskonfigurationen.](../../../images/extensions/server/meta/keep-changes.png)
 
-När du är nöjd med regeln väljer du **[!UICONTROL Save to Library]**. Publicera slutligen en ny händelsevidarebefordring [bygga](../../../ui/publishing/builds.md) för att aktivera ändringar som gjorts i biblioteket.
+När du är nöjd med regeln väljer du **[!UICONTROL Save to Library]**. Publicera slutligen en ny händelsevidarebefordring [bygg](../../../ui/publishing/builds.md) för att aktivera ändringar som gjorts i biblioteket.
 
 ## Borttagning av händelser {#deduplication}
 
-Som anges i [kravsektion](#prerequisites)rekommenderar vi att du använder båda [!DNL Meta Pixel] taggtillägg och [!DNL Conversions API] tillägg för händelsevidarebefordran för att skicka samma händelser från klienten och servern i en redundant konfiguration. Detta kan hjälpa till att återställa händelser som inte har hämtats av ett tillägg eller av ett annat.
+Som nämndes i [kravsektion](#prerequisites)rekommenderar vi att du använder båda [!DNL Meta Pixel] taggtillägg och [!DNL Conversions API] tillägg för händelsevidarebefordran för att skicka samma händelser från klienten och servern i en redundant konfiguration. Detta kan hjälpa till att återställa händelser som inte har hämtats av ett tillägg eller av ett annat.
 
 Om du skickar olika händelsetyper från klienten och servern utan överlappning mellan de båda behöver du inte deduplicera. Om en enda händelse delas av båda [!DNL Meta Pixel] och [!DNL Conversions API]måste du se till att dessa redundanta händelser dedupliceras så att rapporteringen inte påverkas negativt.
 
 När du skickar delade händelser måste du se till att du inkluderar ett händelse-ID och namn för varje händelse som du skickar från både klienten och servern. När flera händelser med samma ID och namn tas emot, [!DNL Meta] använder automatiskt flera strategier för att deduplicera dem och behålla de mest relevanta data. Se [!DNL Meta] dokumentation om [deduplicering för [!DNL Meta Pixel] och [!DNL Conversions API] händelser](https://www.facebook.com/business/help/823677331451951?id=1205376682832142) om du vill ha mer information om processen.
 
-## Snabbstart: API-tillägg för meta-konvertering (beta) {#quick-start}
+## Snabbstartarbetsflöde: API-tillägg för metakonveringar (beta) {#quick-start}
 
 >[!IMPORTANT]
 >
 >* Snabbstartsfunktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
 >* Den här funktionen är avsedd för nya implementeringar och stöder för närvarande inte automatisk installation av tillägg och konfigurationer i befintliga taggar och egenskaper för händelsevidarebefordran.
 
-
 Med snabbstartsfunktionen blir det enklare och effektivare att konfigurera med Meta Conversions API och Meta Pixel-tilläggen. Det här verktyget automatiserar flera steg som utförs i taggar för Adobe och vidarebefordran av händelser, vilket avsevärt minskar konfigurationstiden.
 
-Den här funktionen installerar och konfigurerar automatiskt både Meta Conversion API och Meta Pixel-tilläggen på en nyligen genererad tagg och händelsevidarebefordringsegenskap med nödvändiga regler och dataelement. Dessutom installeras och konfigureras Experience Platform Web SDK och Datastream automatiskt. Slutligen publicerar snabbstartsfunktionen automatiskt biblioteket till den angivna URL:en i en utvecklingsmiljö, vilket möjliggör datainsamling på klientsidan och vidarebefordran av händelser på serversidan i realtid via Event Forwarding och Experience Edge.
+Den här funktionen installerar och konfigurerar automatiskt både Meta Conversion API och Meta Pixel-tilläggen på en nyligen genererad tagg och händelsevidarebefordringsegenskap med nödvändiga regler och dataelement. Dessutom installeras och konfigureras Experience Platform Web SDK och Datastream automatiskt. Slutligen publicerar snabbstartsfunktionen automatiskt biblioteket till den angivna URL:en i en utvecklingsmiljö, vilket möjliggör datainsamling på klientsidan och vidarebefordran av händelser på serversidan i realtid via händelsevidarebefordring och Experience Platform Edge Network.
 
 I följande video visas en introduktion till snabbstartsfunktionen.
 
@@ -121,13 +120,13 @@ I **[!UICONTROL Initial Setup]** genom att **[!UICONTROL Meta Pixel ID]**, **[!U
 
 ![Inledande installationsdialogruta](../../../images/extensions/server/meta/initial-setup.png)
 
-Tillåt några minuter innan den första installationen är klar och välj sedan **[!UICONTROL Next]**.
+Tillåt några minuter innan den första installationsprocessen är klar och välj sedan **[!UICONTROL Next]**.
 
 ![Bekräftelseskärmen för den första konfigurationen slutförd](../../../images/extensions/server/meta/setup-complete.png)
 
 Från **[!UICONTROL Add Code on Your Site]** kopierar koden som anges med kopian ![Kopiera](../../../images/extensions/server/meta/copy-icon.png) funktionen och klistra in den i `<head>` på källwebbplatsen. När implementeringen är klar väljer du **[!UICONTROL Start Validation]**
 
-![Lägg till kod i webbplatsdialogrutan](../../../images/extensions/server/meta/add-code-on-your-site.png)
+![Lägga till kod i webbplatsdialogrutan](../../../images/extensions/server/meta/add-code-on-your-site.png)
 
 The [!UICONTROL Validation Results] visas implementeringsresultatet för metatillägget. Välj **[!UICONTROL Next]**. Du kan även se ytterligare valideringsresultat genom att välja **[!UICONTROL Assurance]** länk.
 
@@ -141,7 +140,7 @@ Om du inte vill lägga till fler händelser väljer du **[!UICONTROL Close]**.
 
 #### Lägga till ytterligare händelser
 
-Om du vill lägga till nya händelser väljer du **[!UICONTROL Edit Your Tags Web Property]**.
+Välj om du vill lägga till nya händelser **[!UICONTROL Edit Your Tags Web Property]**.
 
 ![Dialogrutan Nästa steg som visar hur du redigerar din tagg för webbegenskaper](../../../images/extensions/server/meta/edit-your-tags-web-property.png)
 
@@ -149,7 +148,7 @@ Markera den regel som motsvarar metahändelsen som du vill redigera. Till exempe
 
 >[!NOTE]
 >
->Regeln körs inte om det inte finns någon händelse. Detta gäller alla regler med **MetaConversion_PageView** undantagsregeln.
+>Om det inte finns någon händelse körs inte den här regeln. Detta gäller alla regler med **MetaConversion_PageView** undantagsregeln.
 
 Lägg till en händelse genom att välja **[!UICONTROL Add]** under [!UICONTROL Events] rubrik.
 
@@ -179,7 +178,7 @@ Under konfigurationen tillfrågades du var datalagret finns. Som standard är de
 
 ![Information om datalagrets metadata](../../../images/extensions/server/meta/data-layer-meta.png)
 
-Detta är viktigt att förstå `MetaConversion_*` regeln använder den här datastrukturen för att skicka relevanta datadelar till [!DNL Meta Pixel] tillägg och [!DNL Meta Conversions API]. Läs dokumentationen om [standardhändelser](https://developers.facebook.com/docs/meta-pixel/reference#standard-events) för mer information om vilka data olika metahändelser kräver.
+Detta är viktigt att förstå `MetaConversion_*` regeln använder den här datastrukturen för att skicka relevanta datadelar till [!DNL Meta Pixel] tillägg och [!DNL Meta Conversions API]. Mer information finns i dokumentationen om [standardhändelser](https://developers.facebook.com/docs/meta-pixel/reference#standard-events) för mer information om vilka data olika metahändelser kräver.
 
 Om du till exempel vill använda `MetaConversion_Subscribe` regel, du måste uppdatera `window.dataLayer.meta.currency`, `window.dataLayer.meta.predicted_ltv`och `window.dataLayer.meta.value` enligt objektegenskaperna som beskrivs i dokumentationen om [standardhändelser](https://developers.facebook.com/docs/meta-pixel/reference#standard-events).
 
@@ -198,4 +197,4 @@ I den här guiden beskrivs hur du skickar händelsedata på serversidan till [!D
 * Anslut andra [!DNL Pixels] som ännu inte är anslutna till en [!DNL Conversions API] integrering.
 * Om du skickar vissa händelser exklusivt via [!DNL Meta Pixel] på klientsidan skickar du samma händelser till [!DNL Conversions API] även från serversidan.
 
-Se [!DNL Meta] dokumentation om [de bästa sätten för [!DNL Conversions API]](https://www.facebook.com/business/help/308855623839366?id=818859032317965) om du vill ha mer information om hur ni effektivt kan implementera er integrering. Mer allmän information om taggar och vidarebefordran av händelser i Adobe Experience Cloud finns i [taggöversikt](../../../home.md).
+Se [!DNL Meta] dokumentation om [de bästa sätten för [!DNL Conversions API]](https://www.facebook.com/business/help/308855623839366?id=818859032317965) om du vill ha mer information om hur ni kan implementera er integrering på ett effektivt sätt. Mer allmän information om taggar och vidarebefordran av händelser i Adobe Experience Cloud finns i [taggöversikt](../../../home.md).

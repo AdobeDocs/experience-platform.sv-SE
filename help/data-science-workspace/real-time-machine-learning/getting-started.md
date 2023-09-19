@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Komma igång med maskininlärning i realtid
 description: I följande dokument beskrivs de steg som krävs för att skapa en Machine Learning-modell i realtid i Adobe Experience Platform.
 exl-id: 90a1c580-f6e7-4517-aa1e-da5092fbc4a2
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -25,18 +25,18 @@ Handböckerna för maskininlärning i realtid kräver en fungerande förståelse
 
 - **DSL:** Domänspecifikt språk.
 - **Kant:** Machine Learning-betygstjänsten i realtid kan köras på Edge-kluster som ligger närmare dina aktiveringar och program.
-- **Hubb:** Den nuvarande alfavärdet kör tjänsten Machine Learning i realtid på Adobe Experience Platform Hub medan Experience Edge Network är under utveckling.
-- **Nod:** En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, till exempel en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden matar ut det omformade eller härledda värdet till nästa nod(er).
+- **Hubb:** Den nuvarande alfavärdet kör tjänsten Machine Learning i realtid på Adobe Experience Platform Hub medan Edge Network är under utveckling.
+- **Nod:** En nod är den grundläggande enhet som diagrammen är uppbyggda i. Varje nod utför en viss uppgift och kan kopplas ihop med hjälp av länkar för att skapa ett diagram som representerar en XML-pipeline. Uppgiften som utförs av en nod representerar en åtgärd för indata, t.ex. en omvandling av data eller schema, eller en maskininlärningskonsekvens. Noden skickar det omformade eller härledda värdet till nästa nod/noder.
 
 ## Datauppsättningar i Adobe Experience Platform
 
-Om du vill börja använda maskininlärning i realtid måste du ha tillgång till en datauppsättning. Du kan använda en extern datauppsättning och överföra den till [!DNL JupyterLab] eller skapa en ny datauppsättning i Platform om du inte redan har gjort det.
+Om du vill börja använda maskininlärning i realtid måste du ha tillgång till en datauppsättning. Du kan använda en extern datauppsättning och överföra den till din [!DNL JupyterLab] eller skapa en ny datauppsättning i Platform om du inte redan har gjort det.
 
 >[!NOTE]
 >
 >Om du redan har en datauppsättning som du vill använda kan du hoppa till [Nästa steg](#next-steps).
 
-### Använd en extern datamängd
+### Använda en extern datamängd
 
 Om du vill veta mer om hur du använder en extern datauppsättning, som att överföra data till [!DNL JupyterLab] miljö, gå till självstudiekursen om [analysera dina data med bärbara datorer](../jupyterlab/analyze-your-data.md#external-data).
 

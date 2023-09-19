@@ -2,11 +2,11 @@
 keywords: Experience Platform;utvecklarguide;Data Science Workspace;populära topics;Real time Machine Learning;
 solution: Experience Platform
 title: Machine Learning-översikt i realtid
-description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att utnyttja realtidsinterferenser och kontinuerlig inlärning på Experience Edge.
+description: Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta är möjligt genom att utnyttja realtidsinterferenser och kontinuerlig inlärning i Experience Platform Edge-nätverket.
 exl-id: 23eb1877-1bdf-4982-b58c-cfb58467035a
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '550'
 ht-degree: 1%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 1%
 >
 >Maskininlärning i realtid är inte tillgängligt för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
 
-Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att man utnyttjar realtidskonferenser och kontinuerlig inlärning på [!DNL Experience Edge].
+Maskininlärning i realtid kan dramatiskt öka relevansen i ert innehåll för digitala upplevelser för era slutanvändare. Detta blir möjligt genom att man utnyttjar realtidskonferenser och kontinuerlig inlärning på [!DNL Experience Platform Edge Network].
 
 En kombination av sömlös beräkning på både hubben och [!DNL Edge] minskar dramatiskt den latens som traditionellt används för att skapa personaliserade upplevelser som är både relevanta och responsiva. Maskininlärning i realtid ger därmed en otroligt låg latens för synkront beslutsfattande. Exempel på detta är återgivning av anpassat webbsidesinnehåll eller visning av ett erbjudande eller en rabatt för att minska bortfallet och öka antalet konverteringar i en webbutik.
 
 ## Maskininlärningsarkitektur i realtid {#architecture}
 
-I följande diagram finns en översikt över maskininlärningsarkitekturen i realtid. För närvarande har alfa en enklare version.
+I följande diagram finns en översikt över maskininlärningsarkitekturen i realtid. För närvarande har alfa en mer förenklad version.
 
 ![alfagra](../images/rtml/alpha-arch.png)
 
@@ -43,7 +43,7 @@ Skapa en maskininlärningsmodell i realtid genom att skapa den från grunden ell
 
 ### Distribution
 
-Distribuera din modell till [!DNL Experience Edge] för att skapa en Machine Learning-tjänst i realtid i [!UICONTROL Service Gallery] med API-slutpunkten för förutsägelse.
+Distribuera din modell till [!DNL Edge Network] för att skapa en Machine Learning-tjänst i realtid i [!UICONTROL Service Gallery] med API-slutpunkten för förutsägelse.
 
 ### Inledning
 
@@ -66,16 +66,15 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 > - För djupgående inlärning måste data skickas på ett sådant sätt att när `df.values` anropas och returnerar en array som accepteras av DL-modellen. Detta beror på att ONNX-modellens poängnod använder `df.values` och skickar utdata som ska poängsättas mot modellen.
 
 
-
 ### Funktioner:
 
-|  | Alfa (maj) |
+| | Alfa (maj) |
 | --- | --- |
-| **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Stöd för import av förutbildade maskininlärningsmodeller. <br> - Machine Learning SDK i realtid. <br> - Startuppsättning med redigeringsnoder. <br> - Distribueras till Adobe Experience Platform Hub. |
+| **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Import av förutbildade maskininlärningsmodeller. <br> - Machine Learning SDK i realtid. <br> - Startuppsättning med redigeringsnoder. <br> - Distribueras till Adobe Experience Platform Hub. |
 | **Tillgänglighet** | Nordamerika |
 | **Redigeringsnoder** | - Pandor <br> - ScikitLearn <br> - ONNXNode <br> - Dela <br> - ModelUpload <br> - OneHotEncoder |
 | **Körtider för poäng** | ONNX |
 
 ## Nästa steg
 
-Du kan börja med att följa följande [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för att skapa en maskininlärningsmodell i realtid.
+Du kan börja med att följa [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för att skapa en maskininlärningsmodell i realtid.

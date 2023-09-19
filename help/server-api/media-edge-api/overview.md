@@ -2,7 +2,7 @@
 solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge
-source-git-commit: ff4bc64843e3d05277f56ab67b60400fb9e65c4f
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 2%
@@ -27,7 +27,7 @@ Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-an
 
 * Det är det enklaste sättet att införliva XDM-scheman i dataflödet.
 
-* Samtal dirigeras från en mediespelare direkt till [Experience Edge Platform Network](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=en).
+* Samtal dirigeras från en mediespelare direkt till [Experience Platform Edge Network](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=en).
 
 * Den spårar mediahändelser effektivt med ett minimum av serveröverskridande anrop.
 
@@ -37,7 +37,7 @@ I följande tabell visas en möjlig Adobe API-tjänst för olika medieanalysfall
 | -------- | ----------- |
 | Adobe Experience Platform | Media Edge |
 | CDP + Customer Journey Analytics i realtid | Media Edge |
-| Adobe Analytics + Adobe Experience Platform | Media Edge |
+| ADOBE ANALYTICS + ADOBE EXPERIENCE PLATFORM | Media Edge |
 | Endast Adobe Analytics (spårning redan) | Media Collection |
 
 >[!NOTE]

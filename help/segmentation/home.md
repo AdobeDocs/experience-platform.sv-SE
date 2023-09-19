@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 44c92e2163e2b6c0c140c64bba41dfbcc15d5d7f
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1635'
 ht-degree: 0%
 
 ---
@@ -89,10 +89,10 @@ Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera e
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_edge"
 >title="Kantutvärdering"
->abstract="Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen på Experience Edge, vilket möjliggör användning av samma sida och nästa sida."
+>abstract="Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen i Edge-nätverket, vilket möjliggör användning av samma sida och nästa sida."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för kantsegmentering"
 
-Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Experience Edge](../edge/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
+Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../edge/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
 
 Läs antingen [API-dokumentation](./api/edge-segmentation.md) eller [Användargränssnittsdokumentation](./ui/edge-segmentation.md).
 
@@ -165,7 +165,7 @@ Med den avancerade segmenteringsfunktionen för flera enheter kan du utöka [!DN
 
 ## [!DNL Segmentation Service] datatyper
 
-[!DNL Segmentation Service] har stöd för flera olika primitiva och komplexa datatyper. Detaljerad information, inklusive en lista över datatyper som stöds, finns i [guide för datatyper som stöds](./data-types.md).
+[!DNL Segmentation Service] har stöd för flera olika primitiva och komplexa datatyper. Detaljerad information, inklusive en lista över vilka datatyper som stöds, finns i [guide för datatyper som stöds](./data-types.md).
 
 ## Nästa steg
 

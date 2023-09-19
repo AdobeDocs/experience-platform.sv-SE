@@ -2,7 +2,7 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: a8f6bb8c3e35f4c17812ef944440210b7fe3f87b
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '2104'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Frågor och svar
 
-Den här guiden ger svar på frågor som ofta ställs om Adobe Experience Platform Web SDK.
+Den här guiden ger svar på frågor om Adobe Experience Platform Web SDK.
 
 ## Vad är Adobe Experience Platform Web SDK?
 
@@ -62,17 +62,17 @@ Adobe Experience Platform Web SDK kan även skicka data direkt till Adobe Experi
 
 **Prestanda:** SDK för webben är mindre än för alla Adobe-bibliotek och ger avsevärt snabbare sidinläsning.
 
-**Enkelt:** Kombinationen av XDM, Web SDK, taggar, Experience Edge, Adobe Experience Cloud-lösningar och Adobe Experience Platform skapar en lättbegriplig och lättanvänd datainsamlingsberättelse.
+**Enkelt:** Kombinationen av XDM, Web SDK, taggar, Edge Network, Adobe Experience Cloud och Adobe Experience Platform skapar en lättförståelig och lättanvänd datainsamlingsberättelse.
 
-* **XDM:** Det lösningsagnostiska schema som du använder för att skicka data till Adobe. Ingen mer taggning för variabler eller rutor.
+* **XDM** Det lösningsagnostiska schema som du använder för att skicka data till Adobe. Ingen mer taggning för variabler eller rutor.
 * **Adobe Experience Platform Web SDK:** Gör det enkelt att skicka och ta emot data till Adobe Experience Platform Edge Network.
 * **Taggar:** Förenklar driftsättning och konfiguration av Web SDK (och andra JavaScript-taggar) på en plats.
-* **Experience Edge:** Skicka enkelt data till Adobe Experience Platform och lösningar i det format de behöver.
+* **Edge Network:** Skicka enkelt data till Adobe Experience Platform och lösningar i det format de behöver.
 * **Adobe Experience Platform och Adobe:** Aktivera deras värdeförslag.
 
 **Kontroll:** Eftersom alla data använder en enda och sammankopplad dataström kan ni logiskt följa och styra hur data ser ut under varje millisekund av resan, till och från program.
 
-**Modern och redo för framtiden:** Web SDK och dess anslutning till Experience Edge Network har gjort det möjligt för Adobe att avsevärt modernisera hur Adobe hanterar datainsamling, personalisering, samtycke och framtiden för cookies från tredje part. (Det aktiverar en förstahandsdomän som hanteras av Adobe.)
+**Modern och redo för framtiden:** Web SDK och dess anslutning till Edge Network har gjort det möjligt för Adobe att avsevärt modernisera hur Adobe hanterar datainsamling, personalisering, samtycke och framtiden för cookies från tredje part. (Det aktiverar en förstahandsdomän som hanteras av Adobe.)
 
 **Tid till värde:** Adobe har arbetat hårt (och kommer att fortsätta) för att göra det så enkelt som möjligt att driftsätta Web SDK via taggar och mappa klientdata till XDM. När detta arbete är klart kan alla andra Adobe-lösningar och Adobe Experience Platform-tjänster aktiveras eller inaktiveras på serversidan. Om du t.ex. använder detta för Adobe Analytics och vill aktivera Target eller Experience Platform kan du enkelt växla mellan olika datastream-konfigurationer och ljusa upp dessa användningsfall.
 
@@ -84,7 +84,7 @@ Alloy är kodnamnet för Adobe Experience Platform Web SDK. Det används i SDK:s
 
 Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience Platform Web SDK kostnadsfritt. Kunder som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman, datauppsättningar, identitetsnamnutrymmen och datastreams i användargränssnittet för datainsamlingen eller Experience Platform.
 
-Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för datainsamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
+Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för insamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
 
 ## Vem ska använda Web SDK?
 
@@ -109,7 +109,7 @@ Web SDK utvecklas snabbt. Fler användningsexempel håller på att bearbetas. Du
 
 ## Måste befintliga kunder tagga om sina webbplatser?
 
-Det beror på. Adobe Experience Platform Web SDK kan användas i två olika format. Ett dokument för framtida migrering innehåller ytterligare information.
+Det beror på. Adobe Experience Platform Web SDK kan användas i två olika format. Ett dokument för framtida migrering kommer att innehålla ytterligare information.
 
 * **Bara en annan tagg:** Om webbplatsen redan är taggad för lösningar och du inte kan tagga om, men du vill skicka data till Adobe Experience Platform Edge Network för Experience Platform eller kommande händelsevidarebefordringsfunktioner (se nedan), kan du lägga till `alloy.js` -taggen till webbplatsen, där den fungerar som&quot;bara en annan tagg&quot;.
 
@@ -143,7 +143,7 @@ Men:
 
 ## Vad innebär vidarebefordran av händelser?
 
-Om du använder våra SDK:er och skickar XDM till Experience Edge kan du med dessa nya funktioner för händelsevidarebefordran installera nya tillägg på serversidan och mappa dessa data till vad som helst - och skicka dem var som helst - från vårt edge-nätverk. Se det som&quot;datainsamling som en tjänst&quot;. Detta kommer att vara kostnadsfritt och paketeras som en del av Adobe Experience Platform.
+Om du använder våra SDK:er och skickar XDM till Edge Network kan du med dessa nya funktioner för händelsevidarebefordran installera nya tillägg på serversidan och mappa dessa data till vad som helst - och skicka dem var som helst - från vårt edge-nätverk. Se det som&quot;datainsamling som en tjänst&quot;. Detta kommer att vara kostnadsfritt och paketeras som en del av Adobe Experience Platform.
 
 ## Vad är en CNAME- eller First Party-domän och varför spelar det någon roll?
 
@@ -158,7 +158,7 @@ Ja, för närvarande använder Web SDK var som helst mellan en och sju cookies b
 | **kndct_orgid_identity** | 34128000 | 395 dagar | I identitetscookie lagras ECID och annan information om ECID. |
 | **kndctr_original_medgivande_check** | 7200 | 2 timmar | Denna cookie lagrar användarens medgivandeinställning för webbplatsen. |
 | **kndctr_orgid_medgivande** | 15552000 | 180 dagar | Denna sessionsbaserade cookie signalerar till servern att leta upp serversidan för medgivandeinställningar. |
-| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar Experience Edge-regionen som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Experience Edge kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
+| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar den Edge Network-region som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Edge Network kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
 | **mbox** | 63072000 | 2 år | Den här cookien visas när inställningen för målmigrering är true. Detta tillåter att målet [mbox cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) anges av Web SDK. |
 | **mboxEdgeCluster** | 1800 | 30 minuter | Den här cookien visas när inställningen för målmigrering är true. Med denna cookie kan Web SDK kommunicera rätt edge-kluster till at.js så att Target-profiler kan vara synkroniserade när användare navigerar på en webbplats. |
 | **AMCV_###@AdobeOrg** | 34128000 | 395 dagar | Denna cookie visas bara när ID-migrering på Adobe Experience Platform Web SDK är aktiverat. Denna cookie är användbar vid övergång till Web SDK medan vissa delar av webbplatsen fortfarande använder visitor.js. Se [idMigrationEnabled-dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#identity-options) om du vill läsa mer om den här inställningen. |

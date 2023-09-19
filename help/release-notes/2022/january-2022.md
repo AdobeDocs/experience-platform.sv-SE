@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform januari 2022
 description: Versionsinformation januari 2022 för Adobe Experience Platform.
 exl-id: 734ce1b3-e270-4c37-958c-88bcc39fbf20
-source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
+source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
 workflow-type: tm+mt
 source-wordcount: '1341'
 ht-degree: 2%
@@ -33,7 +33,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 | Funktion | Beskrivning |
 | --- | --- |
 | Nya varningsregler | Flera nya varningsregler finns nu tillgängliga för arbetsflöden som rör datainhämtning, identiteter, profiler, segmentering och aktivering. Se översikten på [varningsregler](../../observability/alerts/rules.md) för den uppdaterade listan över varningstyper. |
-| Aviseringar i sitt sammanhang för källdataflöden | Du kan nu prenumerera för att få varningsmeddelanden om status för dina dataflöden under arbetsflödet för inmatning. Mer information finns i handboken på [prenumerera på källvarningar i användargränssnittet](../../sources/tutorials/ui/alerts.md). |
+| Aviseringar i sitt sammanhang för källdataflöden | Du kan nu prenumerera för att få varningsmeddelanden om status för dina dataflöden under arbetsflödet för inmatning. Mer information finns i handboken [prenumerera på källvarningar i användargränssnittet](../../sources/tutorials/ui/alerts.md). |
 
 Mer information om varningar i Platform finns i [varningsöversikt](../../observability/alerts/overview.md).
 
@@ -51,7 +51,7 @@ Mer information om [!DNL Dashboards], se [[!DNL Dashboards] översikt](../../das
 
 ## [!DNL Data Prep] {#data-prep}
 
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+[!DNL Data Prep] gör att datatekniker kan mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Uppdaterade funktioner**
 
@@ -69,7 +69,7 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| Personalisering på samma sida och nästa sida | The [personaliseringsfunktion för samma sida och nästa sida](../../destinations/ui/activate-edge-personalization-destinations.md) ger en delad, målinriktad vy över användare för program på Experience Edge, för enhetlighet mellan marknadsförings- och kundkanaler. Den här personaliseringen är möjlig genom [Adobe Target-anslutning](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personaliseringsanslutning](../../destinations/catalog/personalization/custom-personalization.md). Information om hur du konfigurerar personaliseringskampanjer på samma sida eller nästa sida finns i [dedikerad självstudiekurs](../../destinations/ui/activate-edge-personalization-destinations.md). |
+| Personalisering på samma sida och nästa sida | The [personaliseringsfunktion för samma sida och nästa sida](../../destinations/ui/activate-edge-personalization-destinations.md) ger en delad, målinriktad vy över användare för applikationer i Edge Network, för enhetlighet mellan marknadsförings- och kundkanaler. Den här personaliseringen är möjlig genom [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personaliseringsanslutning](../../destinations/catalog/personalization/custom-personalization.md). Information om hur du konfigurerar personaliseringskampanjer på samma sida eller nästa sida finns i [dedikerad självstudiekurs](../../destinations/ui/activate-edge-personalization-destinations.md). |
 | Övervakning av batchdestinationer och segmentnivåstatistik | Funktionen för målövervakning har nu utökats från direktuppspelningsdestinationer till att även inkludera batchdestinationer och segmentnivåstatistik för era aktiveringsdata. Mer information finns i [kontrollpanel för destinationer](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard), [kontrollpanel för segmentjobb](/help/dataflows/ui/monitor-destinations.md#monitoring-segment-jobs-dashboard)och [segmentnivåvy](/help/dataflows/ui/monitor-destinations.md#segment-level-view). |
 | Schemalägg redigering i användargränssnittet för befintliga batchaktiveringsdataflöden | Den här versionen innehåller ett alternativ för att redigera schemat för dina befintliga aktiveringsdataflöden till batchdestinationer. Mer information finns i [aktivera profildata för batchprofilmål](/help/destinations/ui/activate-batch-profile-destinations.md). |
 | Förbättringar av Marketo-destinationer | Experience Platform-kunder som använder Marketo Engage kan maximera sin Marketo-databas med den nya möjligheten att föra över nya personposter till Marketo Engage från Experience Platform via [Marketo destinationskontakt](/help/destinations/catalog/adobe/marketo-engage.md). <br> När du skickar målgruppssegment från Experience Platform till Marketo Engage kan personer i segmentet som inte redan finns i Marketo Engage-databasen automatiskt läggas till i det. Mer information finns i [Överför ett Adobe Experience Platform-segment till en Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html?lang=en) (steg 9 i självstudiekursen visar hur du överför nya personposter till Marketo). |
@@ -78,7 +78,7 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 
 | Destination | Beskrivning |
 | ----------- | ----------- |
-| [Adobe Target-anslutning](../../destinations/catalog/personalization/adobe-target-connection.md) | Adobe Target är en applikation som innehåller AI-baserad personalisering och experimenterande i realtid i alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera. Adobe Target är en personaliseringsanslutning i Adobe Experience Platform. |
+| [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) | Adobe Target är en applikation som innehåller AI-baserad personalisering och experimenterande i realtid i alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera. Adobe Target är en personaliseringsanslutning i Adobe Experience Platform. |
 | [Anpassad personaliseringsanslutning](../../destinations/catalog/personalization/custom-personalization.md) | Med den här personaliseringsanslutningen kan du hämta segmentinformation från Adobe Experience Platform till externa personaliseringsplattformar, innehållshanteringssystem, annonsservrar och andra applikationer som körs på kundens webbplatser. |
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
@@ -92,7 +92,7 @@ Mer allmän information om destinationer finns i [destinationer, översikt](../.
 | Funktion | Beskrivning |
 | --- | --- |
 | Anonymt block | Med den anonyma SQL-blockkonstruktionen kan du dela upp stora datapresentationsjobb i Query Service till mindre uppgifter och sedan återanvända och köra dem i sekvens för inkrementell datainläsning. Mer information finns i [exempelfrågor för anonym blockdokumentation](../../query-service/essential-concepts/anonymous-block.md). |
-| Datauppsättningsorganisation | Tillhandahåller en sammanhängande, logisk datastruktur för att organisera dina dataresurser för användning med Query Service när mängden dataresurser i sandlådan växer. Mer information finns i [ordna dokumentation för dataresurser](../../query-service/best-practices/organize-data-assets.md). |
+| Datauppsättningsorganisation | Tillhandahåller en sammanhängande, logisk datastruktur för att organisera dina dataresurser för användning med Query Service när mängden dataresurser i sandlådan växer. Mer information finns i [ordna dokumentation för datatillgångar](../../query-service/best-practices/organize-data-assets.md). |
 
 Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).
 
@@ -110,7 +110,7 @@ Mer information om sandlådor finns i [översikt över sandlådor](../../sandbox
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
 **Nya funktioner**
 
@@ -118,7 +118,7 @@ Mer information om sandlådor finns i [översikt över sandlådor](../../sandbox
 | --- | --- |
 | Segmentmatchning | Segmentmatchning är en tjänst för datasamarbete som gör det möjligt för två eller flera plattformsanvändare att utbyta data, baserat på gemensamma identifierare, på ett säkert, styrt och sekretessvänligt sätt. Segment Match använder sekretessstandarder för Platform och personliga identifierare som hash-kodade e-postmeddelanden, hashade telefonnummer och enhetsidentifierare som IDFA och GAID. Mer information finns i [Översikt över segmentmatchning](../../segmentation/ui/segment-match/overview.md). |
 
-Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service], se [Översikt över segment](../../segmentation/home.md).
 
 ## Källor {#sources}
 
