@@ -3,9 +3,9 @@ title: LiveRamp - Distribution Connection
 description: Lär dig hur du använder LiveRamp - Distribution Connector för att aktivera målgrupper som tidigare har anslutit till LiveRamp till andra reklamdestinationer.
 hide: true
 hidefromtoc: true
-source-git-commit: c04c7ff4f1ab45d944f4ab516d7842df536fae40
+source-git-commit: 324f662dcc9718df6c81c47874c6b30235a74601
 workflow-type: tm+mt
-source-wordcount: '1431'
+source-wordcount: '1425'
 ht-degree: 5%
 
 ---
@@ -140,7 +140,9 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 >id="platform_destinations_liveramp_distribution_agreement"
 >title="Avtal om målvillkor för annonsördata"
 >abstract="Skriv in `I AGREE` för att bekräfta att du godkänner villkoren för Disneys annonsörs data."
->additional-url="https://www.disneyadvertising.com/ADVERTISER-DATA-DESTINATION-TERMS/" text="Läs avtalet"
+
+<!-- 
+>additional-url="https://www.disneyadvertising.com/ADVERTISER-DATA-DESTINATION-TERMS/" text="Read the agreement" -->
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_liveramp_distribution_disney_client"
