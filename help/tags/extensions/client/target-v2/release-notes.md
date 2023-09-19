@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: ffbb68c9c84b834984e1adb2640d8806ce9f9962
+source-git-commit: 4b87141e94681d9a9f51d4d9b2f2276ca065d6ce
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '691'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## v0.19.3 (18 september 2023)
+
+- Uppdaterat till stöd för at.js v2.10.3.
+- Korrigerade ett problem som felaktigt utlöste den anpassade händelsen vid innehållsåtergivning när inga erbjudanden renderades. Den rätta händelsen, at-content-rendering-no-offers, aktiveras nu.
+- EventToken och responseTokens har lagts till i felobjektet för den anpassade händelsen at-content-rendering-failed.
 
 ## v0.19.2 (14 februari 2023)
 
@@ -40,11 +46,11 @@ ht-degree: 0%
 - Uppdaterat till support `at.js` v2.8.1
 - Fast `pageLoad` inte mappas till `target-global-mbox` i ODD-hybridkörningsläge
 - Ett problem med analysinformation för korrigerades `mbox` förfrågan
-- Uppgraderade utvecklarberoenden för att åtgärda säkerhetsluckor
+- Uppgraderade utvecklarberoenden för att åtgärda säkerhetsproblem
 
 ## v0.17.0 (7 januari 2022)
 
-- Uppdaterat till support `at.js` v2.8.0, som nu samlar in data om funktionsanvändning och prestanda.  Personuppgifter samlas inte in. Om du vill avanmäla dig från den här funktionen anger du `telemetryEnabled` till `false` in `targetGlobalSettings`.
+- Uppdaterat till support `at.js` v2.8.0, som nu samlar in data om funktionsanvändning och prestandatelemetri.  Personuppgifter samlas inte in. Om du vill avanmäla dig från den här funktionen anger du `telemetryEnabled` till `false` in `targetGlobalSettings`.
 
 ## v0.16.0 (28 oktober 2021)
 
@@ -60,7 +66,7 @@ ht-degree: 0%
 - Svarstoken är nu tillgängliga när du använder `triggerView()`
 - Korrigerat ett fel som är relaterat till `CONTENT_RENDERING_NO_OFFERS` -händelse. Nu aktiveras det korrekt när inget innehåll returneras från Target
 - A4T-klickmätningsdetaljer returneras korrekt när förhämtningsbegäranden används
-- UUID-generering använder inte längre `Math.random()`, men förlitar sig på `window.crypto`
+- UUID-generering använder inte längre `Math.random()`, men använder `window.crypto`
 - `sessionId` Utgångsdatum för cookie-filen har utökats korrekt för varje nätverksanrop
 - Initieringen av SPA-vycachen hanteras nu korrekt och följs `viewsEnable` inställningar
 
@@ -74,7 +80,7 @@ ht-degree: 0%
 
 ## v0.14 (14 maj 2021)
 
-- Lagt till ett nytt åtgärdsinläsningsmål med [Beslut på enheten](./overview.md#load-target-with-on-device-decisioning)som läses in `at.js` 2.5 med beslutsfunktioner på enheter
+- Lagt till ett nytt åtgärdsmål med [Beslut på enheten](./overview.md#load-target-with-on-device-decisioning)som läses in `at.js` 2.5 med beslutsfunktioner på enheter
 - Uppdaterat `at.js` till 2.5
 
 
