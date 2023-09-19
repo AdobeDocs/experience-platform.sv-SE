@@ -1,24 +1,23 @@
 ---
-keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetlig profil;enhetlig profil;enhetlig;profil;rtcp;XDM-diagram
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: 5dad03dd33855b225bb67391dbc51e5b31bf4d5e
 workflow-type: tm+mt
-source-wordcount: '1990'
+source-wordcount: '1973'
 ht-degree: 0%
 
 ---
 
 # [!DNL Real-Time Customer Profile] översikt
 
-Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-Time Customer Profile]kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. [!DNL Profile] gör att ni kan sammanställa era kunddata i en enhetlig vy som ger en användbar, tidsstämplad bild av varje kundinteraktion. Den här översikten hjälper dig att förstå vilken roll du har och hur du använder [!DNL Real-Time Customer Profile] in [!DNL Experience Platform].
+Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta upplevelser för era kunder oavsett var och när de interagerar med ert varumärke. Med [!DNL Real-Time Customer Profile]kan ni få en helhetsbild av varje enskild kund genom att kombinera data från flera kanaler, inklusive online, offline, CRM och tredje part. [!DNL Profile] kan ni sammanställa era kunddata i en enhetlig vy och erbjuda en åtgärdbar, tidsstämplad översikt över varje kundinteraktion. Den här översikten hjälper dig att förstå vilken roll och användning du har [!DNL Real-Time Customer Profile] in [!DNL Experience Platform].
 
-## [!DNL Profile] i Experience Platform
+## [!DNL Profile] i EXPERIENCE PLATFORM
 
 Förhållandet mellan kundprofilen i realtid och andra tjänster inom Experience Platform framgår av följande diagram:
 
-![Förhållandet mellan kundprofilen i realtid och andra tjänster i Adobe Experience Platform. Bilden visar att Profil är en av huvudkomponenterna i Adobe Experience Platform.](images/profile-overview/profile-in-platform.png)
+![Förhållandet mellan kundprofilen i realtid och andra tjänster i Adobe Experience Platform. Bilden visar att Profil är en av Adobe Experience Platform kärnkomponenter.](images/profile-overview/profile-in-platform.png)
 
 ## Förstå profiler
 
@@ -26,7 +25,7 @@ Förhållandet mellan kundprofilen i realtid och andra tjänster inom Experience
 
 ### Profilens enhetskomposition
 
-En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. När det gäller Experience Platform är den primära enheten vanligtvis en **profilentitet**, som består av egenskaper, beteenden och målgruppsmedlemskap för en enskild person. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
+En kundprofil i realtid består av en huvudenhet som kallas **primär entitet** och olika stödjande enheter. När det gäller Experience Platform är den primära enheten vanligtvis en **profil**, som består av egenskaper, beteenden och målgruppsmedlemskap för en enskild person. Andra företag tillåter att segmenteringsmotorn använder data utanför profilens primära enhet och inkluderar följande:
 
 - **Dimensionell enhet**: Den entitet som används för att förenkla datamodelleringsprocessen för information som delas mellan händelser eller profilposter. Detta kallas även sökentitet eller klassificeringsenhet.
 - **B2B-enhet**: Enheter som beskriver profilens relation till konton och affärsmöjligheter för företag.
@@ -44,13 +43,13 @@ Dimensionerings- och B2B-enheter länkas till den primära enheten via **schemar
 
 ### Profildatalager
 
-Fast [!DNL Real-Time Customer Profile] bearbetar inkapslade data och använder Adobe Experience Platform [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, lagrar den egna data i [!DNL Profile] datalager. The [!DNL Profile] arkivet är skilt från katalogdata i datasjön och [!DNL Identity Service] data i identitetsdiagrammet.
+Fast [!DNL Real-Time Customer Profile] bearbetar insamlade data och använder Adobe Experience Platform [!DNL Identity Service] för att sammanfoga relaterade data via identitetsmappning, lagrar den egna data i [!DNL Profile] datalager. The [!DNL Profile] arkivet är skilt från katalogdata i datasjön och [!DNL Identity Service] data i identitetsdiagrammet.
 
 Profilarkivet använder en Microsoft Azure Cosmos DB-infrastruktur och Platform Data Lake använder Microsoft Azure Data Lake-lagring.
 
 ### Profilskyddsutkast
 
-Experience Platform har ett antal skyddsräcken som hjälper dig att undvika att skapa [XDM-scheman (Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda, samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsområden, finns i [Profilskyddsutkast](guardrails.md) dokumentation.
+Experience Platform har ett antal skyddsräcken som hjälper dig att undvika att skapa [XDM-scheman (Experience Data Model)](../xdm/home.md) som kundprofilen i realtid inte stöder. Detta inkluderar mjuka gränser som resulterar i försämrade prestanda, samt hårda gränser som resulterar i fel och systemfel. Mer information, inklusive en lista över riktlinjer och exempel på användningsfall, finns i [Profilskyddsutkast](guardrails.md) dokumentation.
 
 ### Kontrollpanel för profil {#profile-dashboard}
 
@@ -78,7 +77,7 @@ Alla företag vill kommunicera med sina kunder på ett sätt som känns personli
 
 ### Sammanfoga profiler
 
-När du sammanför datafragment från flera olika källor och kombinerar dem för att få en fullständig bild av varje enskild kund, är sammanfogningsprinciper reglerna som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska användas för att skapa kundprofilen.
+När du sammanför datafragment från flera olika källor och kombinerar dem för att få en fullständig bild av varje enskild kund, är sammanslagningsprinciper de regler som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska användas för att skapa kundprofilen.
 
 När det finns data som är i konflikt med varandra från flera datauppsättningar avgör kopplingsregeln hur data ska behandlas och vilket värde som ska användas. Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofiler, hantera befintliga profiler och ange en standardkopplingsprofil för organisationen.
 
@@ -100,15 +99,15 @@ Computed attributes are functions used to aggregate event-level data into profil
 
 ## Profiler och målgrupper
 
-Adobe Experience Platform [!DNL Segmentation Service] skapar de målgrupper som behövs för att ge era enskilda kunder bättre upplevelser. När en målgrupp skapas läggs målgruppens ID till i listan över målgruppsmedlemskap för alla kvalificerande profiler. Segmentregler skapas och tillämpas på [!DNL Real-Time Customer Profile] data med RESTful API:er och användargränssnittet i Segment Builder. Om du vill veta mer om segmentering börjar du med att läsa [Översikt över segmenteringstjänsten](../segmentation/home.md).
+Adobe Experience Platform [!DNL Segmentation Service] skapar de målgrupper som behövs för att ge era enskilda kunder bättre upplevelser. När en målgrupp skapas läggs målgruppens ID till i listan över målgruppsmedlemskap för alla kvalificerande profiler. Segmentregler skapas och tillämpas på [!DNL Real-Time Customer Profile] data med RESTful-API:er och segmentbyggargränssnittet. Om du vill veta mer om segmentering börjar du med att läsa [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 ### Direktuppspelningsuppläsning och direktuppspelningssegmentering
 
-Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. När data från profil- och tidsserier hämtas, [!DNL Real-Time Customer Profile] bestämmer sig automatiskt för att inkludera eller exkludera data från målgrupper via en pågående process som kallas direktuppspelningssegmentering, innan de slås samman med befintliga data och unionens vy uppdateras. Resultatet blir att ni omedelbart kan utföra beräkningar och fatta beslut för att leverera förbättrade, individanpassade upplevelser till kunderna när de interagerar med ert varumärke. När data importeras valideras de också för att säkerställa att de importeras på rätt sätt och att de överensstämmer med det schema som datauppsättningen baseras på. Mer information om vilken validering som görs under importen får du om du börjar med att läsa [kvalitetsöversikt över dataöverföring](../ingestion/quality/overview.md).
+Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. När data från profil- och tidsserier hämtas, [!DNL Real-Time Customer Profile] bestämmer sig automatiskt för att inkludera eller exkludera data från målgrupper via en pågående process som kallas direktuppspelningssegmentering, innan de slås samman med befintliga data och unionens vy uppdateras. Resultatet blir att ni omedelbart kan utföra beräkningar och fatta beslut för att leverera förbättrade, individanpassade upplevelser till kunderna när de interagerar med ert varumärke. När data importeras valideras de också för att säkerställa att de importeras korrekt och att de överensstämmer med det schema som datauppsättningen baseras på. Mer information om vilken validering som görs under importen får du genom att läsa [kvalitetsöversikt över dataöverföring](../ingestion/quality/overview.md).
 
 ## Kantprojektioner
 
-För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Till exempel använder Adobe-program som Adobe Target och Adobe Campaign kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Lär dig mer och börja arbeta med projektioner med [!DNL Real-Time Customer Profile] API, se [slutpunktsguide för kantprojektion](api/edge-projections.md).
+För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för era kunder i flera kanaler i realtid måste rätt data vara lätt tillgängliga och uppdateras kontinuerligt när förändringar sker. Adobe Experience Platform ger realtidsåtkomst till data genom att använda kanter. En kant är en geografiskt placerad server som lagrar data och som gör dem tillgängliga för program. Adobe-program som Adobe Target och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten. Lär dig mer och börja arbeta med projektioner med [!DNL Real-Time Customer Profile] API, se [slutpunktsguide för kantprojektion](api/edge-projections.md).
 
 ## Samla in data i [!DNL Profile]
 
@@ -120,7 +119,7 @@ För att kunna skapa samordnade, enhetliga och personaliserade upplevelser för 
 
 ### Profilätvärden
 
-Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Experience Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] finns det specifika profilrelaterade mätvärden som gör att du kan få insikt i hur många begäranden som kommer in, hur många som har passerat, hur stora poster som har importerats, och mycket mer. Om du vill veta mer börjar du med att läsa [API-översikt över observationsinsikter](../observability/api/overview.md)och en fullständig lista över kundprofilsmått i realtid finns i dokumentationen om [tillgängliga mått](../observability/api/metrics.md#available-metrics).
+Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Experience Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] finns det specifika profilrelaterade mätvärden som gör att du kan få insikt i hur många begäranden som kommer in, hur många som har passerat, hur stora poster som har importerats, och mycket mer. Om du vill veta mer börjar du med att läsa [API-översikt över observationsinsikter](../observability/api/overview.md)och en fullständig lista över kundprofilsmått i realtid finns i dokumentationen om [tillgängliga mätvärden](../observability/api/metrics.md#available-metrics).
 
 ## Uppdatera profilarkivdata
 
@@ -144,4 +143,4 @@ Datastyrning hanteras vid flera tillfällen. Det kan handla om att bestämma vil
 
 ## Nästa steg och ytterligare resurser
 
-Om du vill veta mer om hur du arbetar med kundprofildata i realtid med Experience Platform-gränssnittet eller profilens API börjar du med att läsa [Användargränssnittshandbok för profil](ui/user-guide.md) eller [Utvecklarhandbok för API](api/overview.md), respektive.
+Om du vill veta mer om hur du arbetar med kundprofildata i realtid med Experience Platform-gränssnittet eller profilens API börjar du med att läsa [Användargränssnittshandbok för profil](ui/user-guide.md) eller [Utvecklarhandbok för API](api/overview.md), respektive

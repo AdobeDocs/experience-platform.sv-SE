@@ -1,14 +1,13 @@
 ---
-keywords: Experience Platform;profil;kundprofil i realtid;felsökning;skyddsförslag;riktlinjer;begränsning;enhet;primär enhet;dimensionsenhet;
 title: Standardguardrutor för kundprofildata i realtid
 solution: Experience Platform
 product: experience platform
 type: Documentation
 description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimal systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: 5dad03dd33855b225bb67391dbc51e5b31bf4d5e
 workflow-type: tm+mt
-source-wordcount: '1980'
+source-wordcount: '1965'
 ht-degree: 4%
 
 ---
@@ -27,10 +26,10 @@ Det här dokumentet innehåller standardbegränsningar för användning och frek
 
 Följande Experience Platform-tjänster är involverade i modellering av kundprofildata i realtid:
 
-* [[!DNL Real-Time Customer Profile]](home.md): Skapa enhetliga kundprofiler med hjälp av data från flera källor.
-* [Identiteter](../identity-service/home.md): Överbrygga identiteter från olika datakällor när de hämtas till Platform.
+* [[!DNL Real-Time Customer Profile]](home.md): Skapa enhetliga konsumentprofiler med data från flera källor.
+* [Identiteter](../identity-service/home.md): Bridge-identiteter från olika datakällor när de hämtas till Platform.
 * [Scheman](../xdm/home.md): XDM-scheman (Experience Data Model) är det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [Målgrupper](../segmentation/home.md): Segmenteringsmotorn i Platform används för att skapa målgrupper utifrån era kundprofiler baserat på kundbeteenden och attribut.
+* [Målgrupper](../segmentation/home.md): Segmenteringsmotorn i Platform används för att skapa målgrupper utifrån era kundprofiler utifrån kundbeteenden och attribut.
 
 ## Begränsningstyper
 
@@ -65,11 +64,11 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 
 {style="table-layout:auto"}
 
-### Dimensionens skyddsräcken
+### Skyddsutkast för Dimension
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Inga tidsseriedata tillåts för icke-[!DNL XDM Individual Profile] enheter | 0 | Hård | **Tidsseriedata är inte tillåtna för icke-[!DNL XDM Individual Profile] enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med en icke-[!DNL XDM Individual Profile] ID, datauppsättningen ska inte aktiveras för [!DNL Profile]. |
+| Inga tidsseriedata är tillåtna för icke-[!DNL XDM Individual Profile] enheter | 0 | Hård | **Tidsseriedata är inte tillåtna för icke-[!DNL XDM Individual Profile] enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med en icke-[!DNL XDM Individual Profile] ID, datauppsättningen ska inte aktiveras för [!DNL Profile]. |
 | Inga kapslade relationer | 0 | Mjuk | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
 | JSON-djup för primärt ID-fält | 4 | Mjuk | Rekommenderat maximalt JSON-djup för det primära ID-fältet är 4. Det innebär att du inte ska välja ett fält som primärt ID i ett kapslat schema om det är mer än fyra nivåer djupt. Ett fält på den fjärde kapslade nivån kan användas som primärt ID. |
 
@@ -88,15 +87,15 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
 | Maximal ExperienceEvent-storlek | 10KB | Hård | **Den största tillåtna storleken för en händelse är 10 kB.** Intag fortsätter, men alla händelser som är större än 10 kB kommer att släppas. |
-| Största profilpoststorlek | 100KB | Hård | **Den maximala storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
+| Största profilpoststorlek | 100KB | Hård | **Den största tillåtna storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
 | Största profilfragmentstorlek | 50MB | Hård | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla [profilfragment](#profile-fragments) som är större än 50 MB. |
 | Maximal storlek för fillagring | 50MB | Mjuk | **Den maximala storleken för en lagrad profil är 50 MB.** Lägger till nytt [profilfragment](#profile-fragments) till en profil som är större än 50 MB kommer att påverka systemets prestanda. En profil kan till exempel innehålla ett enskilt fragment som är 50 MB eller innehålla flera fragment över flera datauppsättningar med en sammanlagd storlek på 50 MB. Om du försöker lagra en profil med ett enskilt fragment som är större än 50 MB, eller med flera fragment som är större än 50 MB i kombination, påverkas systemets prestanda. |
-| Antal inkapslade Profile- eller ExperienceEvent-batchar per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om du samlar in ytterligare batchar påverkas systemets prestanda. |
+| Antal profiler eller ExperienceEvent-batchar som har importerats per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. |
 | Antal ExperienceEvents per profilpost | 5000 | Mjuk | **Det högsta antalet ExperienceEvents per profilpost är 5 000.** Profiler med fler än 5 000 ExperienceEvents kommer att **not** beaktas för segmentering. |
 
 {style="table-layout:auto"}
 
-### Dimensionens skyddsräcken
+### Skyddsutkast för Dimension
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
@@ -129,7 +128,7 @@ The [!DNL Profile] lagringsdatamodellen består av två huvudenhetstyper: [prim�
 
 #### Primär entitet
 
-En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionsschemat för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
+En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionens schema för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
 
 Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!DNL XDM Individual Profile], medan tidsseriedata, som också kallas&quot;händelsedata&quot;, modelleras med [!DNL XDM ExperienceEvent]. När data från register och tidsserier hämtas i Adobe Experience Platform utlöses de [!DNL Real-Time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 
