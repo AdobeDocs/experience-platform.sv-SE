@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: d83a5558d706e7bf059edb912f6fd43d4b66cc54
+source-git-commit: ded4df4062197fb69b54b71ab19fa1684ce17a58
 workflow-type: tm+mt
-source-wordcount: '1509'
+source-wordcount: '1528'
 ht-degree: 1%
 
 ---
@@ -83,6 +83,8 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Alerts] | [!UICONTROL Resolve Alerts] | Tillgång till att läsa, redigera och ta bort aviseringar. |
 | [!DNL Alerts] | [!UICONTROL View Alerts] | Skrivskyddad åtkomst för aviseringar. |
 | [!DNL Alerts] | [!UICONTROL Manage Alerts] | Åtkomst för att läsa, skapa, redigera och ta bort varningshistorik. |
+| [!DNL Computed Attributes] | [!UICONTROL View Computed attributes] | Skrivskyddad åtkomst för fliken, lagret och informationen för beräknade attribut. |
+| [!DNL Computed Attributes] | [!UICONTROL Manage Computed attributes] | Åtkomst för att läsa, skapa, ta bort utkast och inaktivera beräknade attribut. |
 | [!DNL Data Hygiene] | [!UICONTROL View Data Hygiene] | Skrivskyddad åtkomst för datahygien. |
 | [!DNL Data Hygiene] | [!UICONTROL Manage Data Hygiene] | Åtkomst att läsa, skapa, redigera och ta bort datahygien. |
 | [!DNL Data Modeling] | [!UICONTROL Manage Schemas] | Åtkomst för att läsa, skapa, redigera och ta bort scheman och relaterade resurser. |
