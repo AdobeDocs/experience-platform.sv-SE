@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-slutpunkt för tillgängliga sandlådor
 description: Du kan lista de sandlådor som är tillgängliga för den aktuella användaren genom att göra en GET-begäran till den tillgängliga sandlådeslutpunkten.
 exl-id: 9b0719af-c1ca-439a-9c8b-86c7fa26a3b8
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 130f3a9b65befc1cc8cf400b8ca8ca4d6e7f71e4
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
@@ -33,7 +33,7 @@ GET /{QUERY_PARAMS}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/sandbox-management/?&limit=3&offset=1 \
+  https://platform.adobe.io/data/foundation/sandbox-management/?limit=3&offset=1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}'
