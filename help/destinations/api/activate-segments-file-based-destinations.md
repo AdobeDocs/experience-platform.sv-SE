@@ -4,16 +4,16 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 3b5f4abd516259402e9b3c4cfbcc17e32f18b6f5
+source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
 workflow-type: tm+mt
-source-wordcount: '4409'
+source-wordcount: '4392'
 ht-degree: 0%
 
 ---
 
 # Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 
-Använd de förbättrade funktionerna för filexport (som för närvarande finns i betaversion) för att få bättre anpassningsfunktioner när du exporterar filer från Experience Platform:
+Använd de förbättrade funktionerna för filexport för att få bättre anpassningsfunktioner när du exporterar filer från Experience Platform:
 
 * Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).
 * Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
@@ -35,9 +35,13 @@ I den här artikeln förklaras vilket arbetsflöde som krävs för att använda 
 >
 >Du kan också använda användargränssnittet i Experience Platform för att exportera profiler till molnlagringsmål. Läs [aktivera filbaserade mål, genomgång](/help/destinations/ui/activate-batch-profile-destinations.md) för mer information.
 
-## Migrering av API-användare {#api-migration}
+<!--
 
-Om du redan har använt API:t för Flow Service för att exportera profiler till molnlagringsplatserna Amazon S3, Azure Blob eller SFTP läser du [Guide för API-migrering](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md) för nödvändiga migreringssteg när Adobe överför användare från tidigare destinationer till nya destinationer.
+## API users migration {#api-migration}
+
+If you were already using the Flow Service API to export profiles to the Amazon S3, Azure Blob, or SFTP cloud storage destinations, read the [API migration guide](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md) for necessary migration steps as Adobe transitions users from the legacy destinations to the new destinations. 
+
+-->
 
 ## Komma igång {#get-started}
 
@@ -54,6 +58,8 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 ### Nödvändiga behörigheter {#permissions}
 
 Om du vill exportera profiler måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]** och **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+
+Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 ### Läser exempel-API-anrop {#reading-sample-api-calls}
 
@@ -370,7 +376,7 @@ Ett godkänt svar returnerar ID:t (`id`) av den nyligen skapade källanslutninge
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step3.png)
 
-A [basanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar inloggningsuppgifterna säkert på målet. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta dessa autentiseringsparametrar måste du först hämta `connection spec` för det önskade målet enligt beskrivningen i avsnittet [Välj mål där målgrupper ska exporteras](#select-destination) och sedan titta på `authSpec` av svaret. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
+A [basanslutning](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) lagrar inloggningsuppgifterna säkert på målet. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna hämtar du först `connection spec` för det önskade målet enligt beskrivningen i avsnittet [Välj mål där målgrupper ska exporteras](#select-destination) och sedan titta på `authSpec` av svaret. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
 
 >[!BEGINTABS]
 
@@ -2356,7 +2362,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Amazon S3 Beta Target Connection",
+    "name": "Amazon S3 Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -2389,7 +2395,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Amazon S3 Beta Target Connection",
+   "name":"Amazon S3 Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -2448,7 +2454,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Azure Blob Storage Beta Target Connection",
+    "name": "Azure Blob Storage Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -2481,7 +2487,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Azure Blob Storage Beta Target Connection",
+   "name":"Azure Blob Storage Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -2663,7 +2669,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Data Landing Zone Beta Target Connection",
+   "name":"Data Landing Zone Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -2755,7 +2761,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-   "name":"Google Cloud Storage Beta Target Connection",
+   "name":"Google Cloud Storage Target Connection",
    "baseConnectionId":"<FROM_STEP_CREATE_BASE_CONNECTION>",
    "params":{
       "mode":"Server-to-server",
@@ -4669,7 +4675,7 @@ Du hittar information om [olika parametrar som returneras av API:t för dataflö
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
 
 ## Nästa steg {#next-steps}
 

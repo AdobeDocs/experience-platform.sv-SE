@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 333f98a74e69f50ae356231733924d1c6793ddf1
+source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1159'
 ht-degree: 2%
 
 ---
@@ -22,15 +22,14 @@ ht-degree: 2%
    * [Profilexportbeteende för olika måltyper](./how-destinations-work/profile-export-behavior.md)
    * [Identitetshantering i arbetsflödet för målaktivering](./how-destinations-work/identity-handling.md)
 * API-självstudier {#api}
-   * [API-migreringsguide för molnlagringsmål](/help/destinations/api/api-migration-guide-cloud-storage-destinations.md)
+   * [Aktivera data till filbaserade mål med API:t för Flow Service](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
-   * [Anslut till gruppmolnlagring och e-postmarknadsföringsmål och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
+   * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
    * [(Beta) Aktivera målgrupper till batchmål via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
    * [Redigera mål](./api/edit-destination.md)
    * [Uppdatera måldataflöden](./api/update-destination-dataflows.md)
    * [Ta bort destinationskonton](./api/delete-destination-account.md)
    * [Ta bort måldataflöden](./api/delete-destination-dataflow.md)
-   * [(Beta) Aktivera data till filbaserade mål med API:t för Flow Service](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [(Beta) Exportera datauppsättningar](/help/destinations/api/export-datasets.md)
 * Användargränssnittsguider {#ui}
    * [Arbetsytan Destinationer](./ui/destinations-workspace.md)
