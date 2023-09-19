@@ -1,15 +1,19 @@
 ---
 title: Användargränssnittshandbok för beräknade attribut
 description: Lär dig hur du skapar, visar och uppdaterar beräknade attribut med Adobe Experience Platform-gränssnittet.
-source-git-commit: 7ed473750b673eefd84b8d727043ad6ea35c3a8e
+source-git-commit: 631b67eb6609381235113009acefaf0d0cd8063c
 workflow-type: tm+mt
-source-wordcount: '1360'
+source-wordcount: '1406'
 ht-degree: 0%
 
 ---
 
 
 # Användargränssnittshandbok för beräknade attribut
+
+>[!NOTE]
+>
+>För att få åtkomst till beräknade attribut måste du ha rätt behörighet (**Visa beräknade attribut** och **Hantera beräknade attribut**). Mer information om vilka behörigheter som krävs finns i [dokumentation om åtkomstkontroll](../../access-control/home.md). Läs mer om hur du tillämpar dessa behörigheter i [hantera behörighetshandbok](../../access-control/ui/permissions.md).
 
 I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 

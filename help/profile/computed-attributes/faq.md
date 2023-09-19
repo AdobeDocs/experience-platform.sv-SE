@@ -1,9 +1,9 @@
 ---
 title: Vanliga frågor om beräknade attribut
 description: Få svar på vanliga frågor om hur du använder beräknade attribut.
-source-git-commit: fb5d3088b9fb330153bf64125df2f739eee80518
+source-git-commit: 631b67eb6609381235113009acefaf0d0cd8063c
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # Frågor och svar
 
 I Adobe Experience Platform är beräknade attribut funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering. Nedan följer en lista med vanliga frågor om beräknade attribut.
+
+## Hur får jag åtkomst till beräknade attribut?
+
+För att få åtkomst till beräknade attribut måste du ha rätt behörighet (**Visa beräknade attribut** och **Hantera beräknade attribut**). Mer information om vilka behörigheter som krävs finns i [dokumentation om åtkomstkontroll](../../access-control/home.md). Läs mer om hur du tillämpar dessa behörigheter i [hantera behörighetshandbok](../../access-control/ui/permissions.md).
 
 ## Vilka datauppsättningar bidrar till beräknade attributberäkningar?
 
@@ -76,10 +80,6 @@ I likhet med andra profilattribut är beräknade attribut tillgängliga och kan 
 ## Hur används dataanvändningsetiketter på beräknade attribut?
 
 Beräknade attribut härleder automatiskt dataanvändningsetiketter från de källfält och datamängder som användes för att definiera de beräknade attributen. Detta garanterar att dina beteendedata används på rätt sätt.
-
-## Hur får jag åtkomst till beräknade attribut?
-
-För att få åtkomst till beräknade attribut måste du ha rätt behörighet. Mer information om vilka behörigheter som krävs finns i [dokumentation om åtkomstkontroll](../../access-control/home.md).
 
 ## Hur använder jag beräknade attribut med Adobe Journey Optimizer?
 
