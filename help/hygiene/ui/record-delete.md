@@ -1,60 +1,63 @@
 ---
 title: Ta bort poster
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
-exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
+source-git-commit: ccb2236fa169c26ef2f75d26776eee9f0122e92a
 workflow-type: tm+mt
-source-wordcount: '1143'
+source-wordcount: '1427'
 ht-degree: 0%
 
 ---
 
-# Ta bort poster
+# [!BADGE Beta]{type=Informative} Ta bort poster {#record-delete}
 
-The [[!UICONTROL Data Hygiene] arbetsyta](./overview.md) i Adobe Experience Platform UI kan du ta bort poster som ingår i identitetstjänsten och kundprofilen i realtid. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
+Använd [[!UICONTROL Data Lifecycle] arbetsyta](./overview.md) om du vill ta bort poster i Adobe Experience Platform utifrån deras primära identiteter. Dessa poster kan knytas till enskilda konsumenter eller andra enheter som ingår i identitetsdiagrammet.
 
 >[!IMPORTANT]
->
->Begäran om att radera poster är bara tillgänglig för organisationer som har köpt **Adobe Healthcare Shield**.
->
->
->Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
+> 
+>Funktionen Ta bort post är för närvarande i betaversionen och endast tillgänglig i en **begränsad release**. Det är inte tillgängligt för alla kunder. Begäranden om postborttagning är bara tillgängliga för organisationer i den begränsade versionen.
+> 
+> 
+>Postborttagningar är avsedda att användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Att ta bort poster kräver en fungerande förståelse för hur identitetsfält fungerar i Experience Platform. Du måste känna till de primära identitetsvärdena för de entiteter vars poster du vill ta bort, beroende på vilken datamängd (eller vilka datamängder) du tar bort dem från.
 
 Mer information om identiteter i Platform finns i följande dokumentation:
 
 * [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system, länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-   * [Identitetsnamnutrymmen](../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en enskild person, och är en obligatorisk komponent för varje identitetsfält.
+* [Identitetsnamnutrymmen](../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en enskild person, och är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../profile/home.md): Använder identitetsdiagram för att tillhandahålla enhetliga konsumentprofiler baserade på aggregerade data från flera källor, som uppdateras i nära realtid.
 * [Experience Data Model (XDM)](../../xdm/home.md): Tillhandahåller standarddefinitioner och -strukturer för plattformsdata genom användning av scheman. Alla plattformsdatauppsättningar följer ett specifikt XDM-schema, och schemat definierar vilka fält som är identiteter.
-   * [Identitetsfält](../../xdm/ui/fields/identity.md): Lär dig hur ett identitetsfält definieras i ett XDM-schema.
+* [Identitetsfält](../../xdm/ui/fields/identity.md): Lär dig hur ett identitetsfält definieras i ett XDM-schema.
 
-## Skapa en ny begäran
+## Skapa en förfrågan {#create-request}
 
-För att starta processen väljer du **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
+För att starta processen väljer du **[!UICONTROL Data Lifecycle]** i den vänstra navigeringen i plattformsgränssnittet. The [!UICONTROL Data lifecycle requests] visas. Nästa, välj **[!UICONTROL Create request]** från huvudsidan på arbetsytan.
 
-![Bild som visar [!UICONTROL Create request] knapp som markeras](../images/ui/record-delete/create-request-button.png)
+![The [!UICONTROL Data lifecycle requests] arbetsyta med [!UICONTROL Create request] markerat.](../images/ui/record-delete/create-request-button.png)
 
-Dialogrutan där begäran skapas visas. Som standard är **[!UICONTROL Delete consumer]** alternativet är markerat under **[!UICONTROL Requested Action]** -avsnitt. Låt alternativet vara markerat.
+Arbetsflödet för att skapa en begäran visas. Som standard är **[!UICONTROL Delete record]** alternativet är markerat under **[!UICONTROL Requested Action]** -avsnitt. Låt alternativet vara markerat.
 
-![Bild som visar alternativet Ta bort konsument som valts i dialogrutan Skapa](../images/ui/record-delete/consumer-action.png)
+>[!IMPORTANT]
+> 
+>Som en del av de pågående förändringarna för att förbättra effektiviteten och göra datauppsättningarna billigare kan organisationer som har flyttats till Delta-formatet ta bort data från identitetstjänsten, kundprofilen i realtid och datasjön. Den här typen av användare kallas deltmigrerad. Användare från organisationer som har deltmigrerats kan välja att ta bort poster från en enda eller alla datauppsättningar. Användare från organisationer som inte har deltmigrerats kan inte välja att ta bort poster från en enda eller alla datauppsättningar enligt bilden nedan. Om så är fallet, fortsätt med [ange identiteter](#provide-identities) i guiden.
 
-## Välj datauppsättningar
+![Arbetsflödet för att skapa begäran med [!UICONTROL Delete record] markerat och markerat alternativ.](../images/ui/record-delete/delete-record.png)
 
-Under **[!UICONTROL Consumer Details]** nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar.
+## Välj datauppsättningar {#select-dataset}
 
-Om du väljer **[!UICONTROL Select dataset]**, markerar du databasikonen (![Bild på databasikonen](../images/ui/record-delete/database-icon.png)) och en dialogruta visas där du kan välja önskad datauppsättning från listan.
+Nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar. Om det här alternativet inte är tillgängligt för dig, fortsätt med [ange identiteter](#provide-identities) i guiden.
 
-![Bild som visar dialogrutan för val av datauppsättning](../images/ui/record-delete/select-dataset.png)
+Under **[!UICONTROL Record Details]** använder du alternativknappen för att välja mellan en viss datauppsättning och alla datauppsättningar. Om du väljer **[!UICONTROL Select dataset]** fortsätter du med att välja databasikonen (![Databasikonen](../images/ui/record-delete/database-icon.png)) för att öppna en dialogruta med en lista över tillgängliga datauppsättningar. Välj önskad datauppsättning i listan följt av **[!UICONTROL Done]**.
+
+![The [!UICONTROL Select dataset] dialogruta med en datauppsättning vald och [!UICONTROL Done] markerad.](../images/ui/record-delete/select-dataset.png)
 
 Om du vill ta bort poster från alla datauppsättningar väljer du **[!UICONTROL All datasets]**.
 
-![Bild som visar [!UICONTROL All datasets] valt alternativ](../images/ui/record-delete/all-datasets.png)
+![The [!UICONTROL Select dataset] med [!UICONTROL All datasets] markerat alternativ.](../images/ui/record-delete/all-datasets.png)
 
 >[!NOTE]
 >
@@ -80,7 +83,7 @@ Precis som alla identitetsfält i Platform består en primär identitet av två 
 >
 >Om du inte känner till den primära identiteten för en viss datauppsättning kan du hitta den i användargränssnittet för plattformen. I **[!UICONTROL Datasets]** väljer du den aktuella datauppsättningen i listan. På informationssidan för datauppsättningen håller du pekaren över namnet på datasetens schema i den högra listen. Den primära identiteten visas tillsammans med schemanamnet och beskrivningen.
 >
->![Bild som visar den primära identiteten för en datauppsättning som är markerad i användargränssnittet](../images/ui/record-delete/dataset-primary-identity.png)
+>![Kontrollpanelen för datauppsättningar med en datauppsättning markerad och en schemadialogruta öppnas från panelen med datauppsättningsinformation. Datauppsättningens primära ID är markerat.](../images/ui/record-delete/dataset-primary-identity.png)
 
 Om du tar bort poster från en enskild datauppsättning måste alla identiteter som du anger ha samma typ, eftersom en datauppsättning bara kan ha en primär identitet. Om du tar bort från alla datauppsättningar kan du inkludera flera identitetstyper eftersom olika datauppsättningar kan ha olika primära identiteter.
 
@@ -91,9 +94,9 @@ Det finns två alternativ för att ange identiteter när du tar bort poster:
 
 ### Överföra en JSON-fil {#upload-json}
 
-Om du vill överföra en JSON-fil kan du dra och släppa filen i området som innehåller informationen eller välja **[!UICONTROL Choose files]** för att bläddra och välja från din lokala katalog.
+Om du vill överföra en JSON-fil kan du dra och släppa filen till det angivna området, eller välja **[!UICONTROL Choose files]** för att bläddra och välja från din lokala katalog.
 
-![Bild som visar metoderna för att överföra JSON i användargränssnittet](../images/ui/record-delete/upload-json.png)
+![Arbetsflödet för att skapa en begäran med de valda filerna och dra och släpp-gränssnittet för att överföra JSON-filer markerade.](../images/ui/record-delete/upload-json.png)
 
 JSON-filen måste formateras som en array med objekt, där varje objekt representerar en identitet.
 
@@ -121,34 +124,40 @@ När filen har överförts kan du fortsätta [skicka förfrågan](#submit).
 
 Om du vill ange identiteter manuellt väljer du **[!UICONTROL Add identity]**.
 
-![Bild som visar [!UICONTROL Add identity] knapp som markeras](../images/ui/record-delete/add-identity.png)
+![Arbetsflödet för att skapa begäran med [!UICONTROL Add identity] markerat alternativ.](../images/ui/record-delete/add-identity.png)
 
 Det visas kontroller som gör att du kan ange identiteter en åt gången. Under **[!UICONTROL Primary Identity]** använder du listrutan för att välja identitetstyp. Under **[!UICONTROL Identity Value]**, anger det primära identitetsvärdet för posten.
 
-![Bild som visar ett manuellt tillagt identitetsfält](../images/ui/record-delete/identity-added.png)
+![Arbetsflödet för att skapa en begäran med ett identitetsfält har lagts till manuellt.](../images/ui/record-delete/identity-added.png)
 
-Om du vill lägga till fler identiteter väljer du plusikonen (![Bild av plusikonen](../images/ui/record-delete/plus-icon.png)) bredvid en av raderna eller markera **[!UICONTROL Add identity]**.
+Om du vill lägga till fler identiteter väljer du plusikonen (![En plusikon.](../images/ui/record-delete/plus-icon.png)) bredvid en av raderna eller markera **[!UICONTROL Add identity]**.
 
-![Bild som visar hur du lägger till fler identiteter i begäran](../images/ui/record-delete/more-identities.png)
+![Arbetsflödet för att skapa en begäran med plusikonen och ikonen för att lägga till identitet markerad.](../images/ui/record-delete/more-identities.png)
 
 ## Skicka begäran (#submit)
 
 När du är klar med att lägga till identiteter i begäran, under **[!UICONTROL Request settings]**, ange ett namn och en valfri beskrivning för begäran innan du väljer **[!UICONTROL Submit]**.
 
-![Bild som visar [!UICONTROL Submit] knapp som markeras](../images/ui/record-delete/submit.png)
+>[!IMPORTANT]
+> 
+>Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.
 
-Du ombeds bekräfta listan med identiteter vars data du vill ta bort. Välj **[!UICONTROL Submit]** för att bekräfta ditt val.
+![Inställningarna för begäran [!UICONTROL Name] och [!UICONTROL Description] fält med [!UICONTROL Submit] markerad.](../images/ui/record-delete/submit.png)
 
-![Bild som visar bekräftelsedialogrutan](../images/ui/record-delete/confirm-request.png)
+A [!UICONTROL Confirm request] visas för att ange att identiteterna inte kan återställas när de har tagits bort. Välj **[!UICONTROL Submit]** för att bekräfta listan med identiteter vars data du vill ta bort.
 
-När begäran har skickats skapas en arbetsorder och visas på [!UICONTROL Consumer] -fliken i [!UICONTROL Data Hygiene] arbetsyta. Härifrån kan du övervaka arbetsorderns status medan den bearbetar begäran.
+![The [!UICONTROL Confirm request] -dialogrutan.](../images/ui/record-delete/confirm-request.png)
+
+När begäran har skickats skapas en arbetsorder och visas på [!UICONTROL Record] -fliken i [!UICONTROL Data Lifecycle] arbetsyta. Härifrån kan du övervaka arbetsorderns status medan den bearbetar begäran.
 
 >[!NOTE]
 >
 >Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#record-delete-transparency) om du vill ha information om hur postborttagningar bearbetas när de har körts.
 
+![The [!UICONTROL Record] -fliken i [!UICONTROL Data Lifecycle] arbetsyta med den nya begäran markerad.](../images/ui/record-delete/request-log.png)
+
 ## Nästa steg
 
-I det här dokumentet beskrivs hur du tar bort poster i användargränssnittet för Experience Platform. Mer information om hur du utför andra datahygienuppgifter i användargränssnittet finns i [översikt över användargränssnittet för datahygien](./overview.md).
+I det här dokumentet beskrivs hur du tar bort poster i användargränssnittet för Experience Platform. Mer information om hur du utför andra uppgifter för livscykelhantering i användargränssnittet finns i [Översikt över användargränssnittet för datalängd](./overview.md).
 
 Mer information om hur du tar bort poster med API:t för datahygien finns i [slutpunktsguide för arbetsorder](../api/workorder.md).
