@@ -4,29 +4,29 @@ description: Lär dig hur du skapar en källanslutning och ett dataflöde för a
 badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: 054175bd3f3aaab73c8cca249eaf1a9cdbc8deab
 workflow-type: tm+mt
-source-wordcount: '686'
-ht-degree: 1%
+source-wordcount: '710'
+ht-degree: 0%
 
 ---
 
-# [!DNL Snowflake] direktuppspelningskälla
+# [!DNL Snowflake] strömningskälla
 
 >[!IMPORTANT]
 >
->* The [!DNL Snowflake] strömningskällan är i betaversion. Läs [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>* The [!DNL Snowflake] direktuppspelningskällan är i betaversion. Läs [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 >* The [!DNL Snowflake] strömningskälla är tillgänglig i API:t för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
 Experience Platform har stöd för strömning av data från en [!DNL Snowflake] databas.
 
-## Förstå [!DNL Snowflake] direktuppspelningskälla
+## Förstå [!DNL Snowflake] strömningskälla
 
 The [!DNL Snowflake] direktuppspelningskälla fungerar genom att data läses in med jämna mellanrum genom att en SQL-fråga körs och en utdatapost skapas för varje rad i den resulterande uppsättningen.
 
-Genom att använda [!DNL Kafka Connect], [!DNL Snowflake] direktuppspelningskälla spårar den senaste posten som tas emot från varje tabell, så att den kan börja på rätt plats för nästa iteration. Källan använder den här funktionen för att filtrera data och bara hämta uppdaterade rader från en tabell i varje iteration.
+Genom att [!DNL Kafka Connect], [!DNL Snowflake] direktuppspelningskälla spårar den senaste posten som tas emot från varje tabell, så att den kan börja på rätt plats för nästa iteration. Källan använder den här funktionen för att filtrera data och bara hämta uppdaterade rader från en tabell i varje iteration.
 
 ## Förutsättningar
 
@@ -38,7 +38,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange fö
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, din region och din molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>). |
+| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, region och molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>). |
 | `warehouse` | The [!DNL Snowflake] dist.lager hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerstället är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
 | `database` | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | `username` | Användarnamnet för [!DNL Snowflake] konto. |
@@ -50,7 +50,7 @@ Mer information om autentisering finns i [[!DNL Snowflake] dokument](<https://do
 
 ### Konfigurera rollinställningar {#configure-role-settings}
 
-Du måste konfigurera behörigheter för en roll, även om den allmänna standardrollen har tilldelats, så att källanslutningen kan komma åt den relevanta rollen [!DNL Snowflake] databas, schema och tabell. De olika behörigheterna för olika [!DNL Snowflake] Enheter är följande:
+Du måste konfigurera behörigheter för en roll, även om den allmänna standardrollen har tilldelats, så att källanslutningen kan komma åt den relevanta rollen [!DNL Snowflake] databas, schema och tabell. De olika behörigheterna för olika [!DNL Snowflake] Enheter är som följer:
 
 | [!DNL Snowflake] enhet | Kräv rollprivilegium |
 | --- | --- |
@@ -74,11 +74,12 @@ Mer information om roll- och behörighetshantering finns i [[!DNL Snowflake] API
    * Du kan aktivera en `backfill` boolesk flagga för [!DNL Snowflake] när du skapar en källanslutning.
       * Om backfill är true anges värdet för timestamp.initial till 0. Detta innebär att data med en tidsstämpelkolumn som är större än 0 epok-tid hämtas.
       * Om backfill är inställd på false anges värdet för timestamp.initial till -1. Detta innebär att data med en tidsstämpelkolumn som är större än den aktuella tiden (den tid då källan börjar inhämta) hämtas.
-   * Tidsstämpelkolumnen ska formateras som typ: `TIMESTAMP_LTZ` eller `TIMESTAMP_NTZ`. Om tidsstämpelkolumnen är inställd på `TIMESTAMP_NTZ`, ska typerna lagras i UTC-tid i databasen.
+   * Tidsstämpelkolumnen ska formateras som typ: `TIMESTAMP_LTZ` eller `TIMESTAMP_NTZ`. Om tidsstämpelkolumnen är inställd på `TIMESTAMP_NTZ`, ska motsvarande tidszon som värdena lagras i skickas via `timezoneValue` parameter. Om det inte anges används UTC som standard.
+      * `TIMESTAMP_TZ` kan inte användas i en tidsstämpelkolumn eller i en mappning.
 
 ## Nästa steg
 
-I följande självstudiekurs beskrivs hur du kopplar samman [!DNL Snowflake] direktuppspelningskälla till Experience Platform med API:
+I följande självstudiekurs beskrivs hur du ansluter [!DNL Snowflake] direktuppspelningskälla till Experience Platform med API:
 
 * [Strömma data från en [!DNL Snowflake] databas till Experience Platform med API:t för Flow Service](../../tutorials/api/create/databases/snowflake-streaming.md)
 

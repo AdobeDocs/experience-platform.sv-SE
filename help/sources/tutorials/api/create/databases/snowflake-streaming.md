@@ -3,9 +3,9 @@ title: Anslut ditt Snowflake Streaming-konto till Adobe Experience Platform
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake Streaming med API:t för Flow Service.
 badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
-source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
+source-git-commit: f2c392704e0404aaff2ad569e388241c06fba902
 workflow-type: tm+mt
-source-wordcount: '830'
+source-wordcount: '867'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->* The [!DNL Snowflake] strömningskällan är i betaversion. Läs [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>* The [!DNL Snowflake] direktuppspelningskällan är i betaversion. Läs [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 >* The [!DNL Snowflake] strömningskälla är tillgänglig i API:t för användare som har köpt Real-time Customer Data Platform Ultimate.
 
 Den här självstudiekursen innehåller steg för hur du ansluter och direktuppspelar data från [!DNL Snowflake] till Adobe Experience Platform med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
@@ -26,7 +26,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-För nödvändig installation och information om [!DNL Snowflake] direktuppspelningskälla. Läs [[!DNL Snowflake] översikt över direktuppspelningskälla](../../../../connectors/databases/snowflake-streaming.md).
+För nödvändig installation och information om [!DNL Snowflake] strömningskälla. Läs [[!DNL Snowflake] översikt över direktuppspelningskälla](../../../../connectors/databases/snowflake-streaming.md).
 
 ### Använda plattforms-API:er
 
@@ -116,7 +116,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | Basanslutnings-ID för din [!DNL Snowflake] direktuppspelningskälla. |
+| `{BASE_CONNECTION_ID}` | Basanslutnings-ID för din [!DNL Snowflake] strömningskälla. |
 
 
 **Begäran**
@@ -185,18 +185,20 @@ curl -X POST \
       "params": {
           "tableName": "ACME",
           "timestampColumn": "dOb",
-          "backfill": "true"
+          "backfill": "true",
+          "timezoneValue": "PST"
       }
   }'
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `baseConnectionId` | Det autentiserade basanslutnings-ID:t för din [!DNL Snowflake] direktuppspelningskälla. Detta ID genererades i ett tidigare steg. |
-| `connectionSpec.id` | Anslutningens spec-ID för [!DNL Snowflake] direktuppspelningskälla. |
+| `baseConnectionId` | Det autentiserade basanslutnings-ID:t för din [!DNL Snowflake] strömningskälla. Detta ID genererades i ett tidigare steg. |
+| `connectionSpec.id` | Anslutningens spec-ID för [!DNL Snowflake] strömningskälla. |
 | `params.tableName` | Namnet på tabellen i [!DNL Snowflake] databas som du vill ta med till plattformen. |
 | `params.timestampColumn` | Namnet på den tidsstämpelkolumn som ska användas för att hämta inkrementella värden. |
 | `params.backfill` | En boolesk flagga som avgör om data hämtas från början (0 epok-tid) eller från den tidpunkt då källan initieras. Mer information om det här värdet finns i [[!DNL Snowflake] översikt över direktuppspelningskälla](../../../../connectors/databases/snowflake-streaming.md). |
+| `params.timezoneValue` | Tidszonsvärdet anger vilken tidszonens aktuella tid som ska hämtas när en fråga ställs till [!DNL Snowflake] databas. Den här parametern ska anges om tidsstämpelkolumnen i konfigurationen är inställd på `TIMESTAMP_NTZ`. Om ej tillhandahållet, `timezoneValue` standard är UTC. |
 
 **Svar**
 
@@ -266,9 +268,9 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `sourceConnectionIds` | Källanslutnings-ID för din [!DNL Snowflake] direktuppspelningskälla. |
-| `targetConnectionIds` | Målanslutnings-ID för din [!DNL Snowflake] direktuppspelningskälla. |
-| `flowSpec.id` | Flödesspecifikation-ID för att skapa ett dataflöde för [!DNL Snowflake] direktuppspelningskälla. Med det här flödets spec-ID kan du skapa ett direktuppspelat dataflöde med mappningsomvandlingar. Detta ID är fast och är: `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. |
+| `sourceConnectionIds` | Källanslutnings-ID för din [!DNL Snowflake] strömningskälla. |
+| `targetConnectionIds` | Målanslutnings-ID för din [!DNL Snowflake] strömningskälla. |
+| `flowSpec.id` | Flödesspecifikation-ID för att skapa ett dataflöde för en [!DNL Snowflake] strömningskälla. Med det här flödets spec-ID kan du skapa ett direktuppspelat dataflöde med mappningsomvandlingar. Detta ID är fast och är: `c1a19761-d2c7-4702-b9fa-fe91f0613e81`. |
 | `transformations.params.mappingId` | Mappnings-ID för dataflödet. |
 
 **Svar**
