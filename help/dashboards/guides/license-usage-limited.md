@@ -5,14 +5,19 @@ description: Adobe Experience Platform tillhandahåller en kontrollpanel där du
 type: Documentation
 hide: true
 hidefromtoc: true
-source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
+source-git-commit: 6a69ecebe67a156d67a324581e5b96699b96d2e6
 workflow-type: tm+mt
-source-wordcount: '1422'
+source-wordcount: '1480'
 ht-degree: 0%
 
 ---
 
 # Kontrollpanel för licensanvändning (begränsad version) {#license-usage-dashboard-limited-release}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_licenseUsage"
+>title="Kontrollpanel för licensanvändning"
+>abstract="Kontrollpanelen för licensanvändning ger dig insikt i de Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena samt din avtalade licensmängd. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
 
 >[!IMPORTANT]
 >
