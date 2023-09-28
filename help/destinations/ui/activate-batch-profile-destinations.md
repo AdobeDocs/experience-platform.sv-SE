@@ -4,9 +4,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 99ab9ed562d1959dc2bc801d563cb61d89bbde75
+source-git-commit: 47ca76c5a4129882917e96a32721b4103bb6afa3
 workflow-type: tm+mt
-source-wordcount: '3546'
+source-wordcount: '3508'
 ht-degree: 0%
 
 ---
@@ -27,11 +27,6 @@ ht-degree: 0%
 I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform batchprofilbaserade destinationer, som molnlagring och e-postmarknadsföring.
 
 ## Förutsättningar {#prerequisites}
-
->[!CONTEXTUALHELP]
->id="platform_destinations_export_arrays_flat_files"
->title="(Beta) Stöd för exportarrayer"
->abstract="(Beta) Exportera matriser med primitiva värden från Experience Platform till önskat molnlagringsmål. Den här texten kommer att uppdateras mer information. <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/license-usage-limited.html?lang=en#available-metrics">Läs mer</a>. "
 
 Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
