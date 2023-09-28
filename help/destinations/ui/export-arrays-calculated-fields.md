@@ -1,0 +1,214 @@
+---
+title: (Beta) Använd beräkningsfält för att exportera arrayer i platta filer
+type: Tutorial
+description: Lär dig hur du exporterar arrayer och beräknade fält från Real-Time CDP till batchprofilbaserade mål.
+badge: "Beta"
+source-git-commit: 79924b9a7d5114c94a004f99fb194102845b2127
+workflow-type: tm+mt
+source-wordcount: '1171'
+ht-degree: 0%
+
+---
+
+
+# (Beta) Använd beräkningsfält för att exportera arrayer i platta schemafiler {#use-calculated-fields-to-export-arrays-in-flat-schema-files}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_export_arrays_flat_files"
+>title="(Beta) Stöd för exportarrayer"
+>abstract="Exportera enkla matriser med int-, string- eller booleska värden från Experience Platform till önskat molnlagringsmål. Vissa begränsningar gäller. I dokumentationen finns omfattande exempel och funktioner som stöds."
+
+<!--
+
+additional links for contextualhelp:
+
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="Examples"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="Known limitations"
+
+-->
+
+>[!AVAILABILITY]
+>
+>* Funktionen för att exportera arrayer via beräknade fält finns för närvarande i Beta. Dokumentationen och funktionaliteten kan komma att ändras.
+
+Lär dig hur du exporterar arrayer via beräknade fält från Real-Time CDP i platta schemafiler till molnlagringsmål. Läs det här dokumentet om du vill veta mer om de användningsområden som den här funktionen har aktiverat.
+
+Få omfattande information om beräkningsfält - vad dessa är och varför de spelar någon roll. Läs de länkade sidorna nedan för en introduktion till beräknade fält i Data Prep och mer information om alla tillgängliga funktioner:
+
+* [Användargränssnittsguide och översikt](/help/data-prep/ui/mapping.md#calculated-fields)
+* [Förinställningsfunktioner för data](/help/data-prep/functions.md)
+
+>[!IMPORTANT]
+>
+>Alla funktioner ovan stöds inte *vid export av fält till molnlagringsmål* med funktionen för beräknade fält. Se [funktionsavsnitt som stöds](#supported-functions) mer information nedan.
+
+## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
+
+I Experience Platform kan du använda [XDM-scheman](/help/xdm/home.md) för att hantera olika fälttyper. Tidigare kunde du exportera enkla nyckelvärdepar, t.ex. strängar från Experience Platform till önskade mål. Ett exempel på ett sådant fält som tidigare kunde exporteras är `personalEmail.address`:`johndoe@acme.org`.
+
+Andra fälttyper i Experience Platform är arrayfält. Läs mer om [hantera matrisfält i användargränssnittet för Experience Platform](/help/xdm/ui/fields/array.md). Förutom de fälttyper som tidigare stöds kan du nu exportera arrayobjekt som: `organizations:[marketing, sales, engineering]`. Se mer nedan [omfattande exempel](#examples) av hur du kan använda olika funktioner för att komma åt element i arrayer, koppla arrayelement till en sträng och mycket mer.
+
+## Kända begränsningar {#known-limitations}
+
+Observera följande kända begränsningar för betaversionen av den här funktionen:
+
+* Export till JSON- eller Parquet-filer med hierarkiska scheman stöds inte just nu. Du kan bara exportera arrayer till platta CSV-, JSON- och Parquet-schemafiler.
+* För närvarande *du kan bara exportera enkla matriser (eller matriser med primitiva värden) till molnlagringsmål*. Det innebär att du kan exportera arrayobjekt som innehåller strängar, int eller booleska värden. Det går inte att exportera kartor eller arrayer med kartor eller objekt. Det modala fönstret för beräknade fält visar bara de arrayer som du kan exportera.
+
+## Förutsättningar {#prerequisites}
+
+Förlopp genom [aktiveringssteg för molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md) och kom till [mappning](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) steg.
+
+## Så här exporterar du beräknade fält {#how-to-export-calculated-fields}
+
+I mappningssteget för aktiveringsarbetsflödet för molnlagringsmål väljer du **[!UICONTROL (Beta) Add calculated field]**.
+
+![Lägg till beräknat fält för export](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields.png)
+
+Då öppnas ett modalt fönster där du kan välja attribut som du kan använda för att exportera attribut från Experience Platform.
+
+>[!IMPORTANT]
+>
+>Endast en del av fälten från XDM-schemat är tillgängliga i **[!UICONTROL Field]** vy. Du kan se strängvärden och arrayer med strängar, int och booleska värden. Till exempel `segmentMembership` arrayen visas inte eftersom den innehåller andra arrayvärden.
+
+![Modalt fönster 1](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-2.png)
+
+Använd till exempel `join` funktionen på `loyaltyID` så som visas nedan om du vill exportera en array med ID:n för lojalitet som en sträng sammanfogad med ett understreck i en CSV-fil. Visa [mer information om detta och andra exempel nedan](#join-function-export-arrays).
+
+![Modalt fönster 2](/help/destinations/assets/ui/export-arrays-calculated-fields/add-calculated-fields-3.png)
+
+Välj **[!UICONTROL Save]** för att behålla beräkningsfältet och återgå till mappningssteget.
+
+![Modalt fönster 3](/help/destinations/assets/ui/export-arrays-calculated-fields/save-calculated-field.png)
+
+Tillbaka i mappningssteget i arbetsflödet, fyll i **[!UICONTROL Target field]** med ett värde för den kolumnrubrik som du vill använda för det här fältet i de exporterade filerna.
+
+![Välj målfält 1](/help/destinations/assets/ui/export-arrays-calculated-fields/fill-in-target-field.png)
+
+![Välj målfält 2](/help/destinations/assets/ui/export-arrays-calculated-fields/target-field-filled-in.png)
+
+När du är klar väljer du **[!UICONTROL Next]** för att gå vidare till nästa steg i aktiveringsarbetsflödet.
+
+![Välj nästa för att fortsätta](/help/destinations/assets/ui/export-arrays-calculated-fields/select-next-to-proceed.png)
+
+## Funktioner som stöds {#supported-functions}
+
+Observera att endast följande funktioner stöds i betaversionen av beräkningsfält och matrisstöd för destinationer:
+
+* `join`
+* `coalesce`
+* `size_of`
+* `iif`
+* `index-based array access`
+* `add_to_array`
+* `to_array`
+* `first`
+* `last`
+* `sha256`
+* `md5`
+
+## Exempel på funktioner som används för att exportera arrayer {#examples}
+
+Se exempel och mer information i avsnitten nedan för några av funktionerna som listas ovan. För resten av funktionerna i listan finns mer information i [dokumentation om allmänna funktioner i avsnittet Dataprep](/help/data-prep/functions.md).
+
+### `join` funktion för att exportera arrayer {#join-function-export-arrays}
+
+Använd `join` funktion för att sammanfoga elementen i en array till en sträng med en önskad avgränsare, som `_` eller `|`.
+
+Du kan t.ex. kombinera följande XDM-fält nedan som de visas på mappningsskärmbilden med hjälp av en `join('_',loyalty.loyaltyID)` syntax:
+
+* `"organizations": ["Marketing","Sales,"Finance"]` array
+* `person.name.firstName` string
+* `person.name.lastName` string
+* `personalEmail.address` string
+
+![Mappning, bild](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-join-function.png)
+
+I det här fallet ser utdatafilen ut så här nedan. Observera hur arrayens tre element sammanfogas till en enda sträng med `_` tecken.
+
+```
+`First_Name,Last_Name,Organization
+John,Doe,"Marketing_Sales_Finance"
+```
+
+### `coalesce` funktion för att exportera arrayer {#coalesce-function-export-arrays}
+
+Använd `coalesce` -funktion för att komma åt och exportera det första icke-null-elementet i en array till en sträng.
+
+Du kan t.ex. kombinera följande XDM-fält nedan som de visas på mappningsskärmbilden med hjälp av en `coalesce(subscriptions.hasPromotion)` syntax för att returnera det första true för false-värdet i arrayen:
+
+* `"subscriptions.hasPromotion": [null, true, null, false, true]` array
+* `person.name.firstName` string
+* `person.name.lastName` string
+* `personalEmail.address` string
+
+![Skärmbild för mappning av sammanslagningsfunktion](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-coalesce-function.png)
+
+I det här fallet ser utdatafilen ut så här nedan. Lägg märke till hur det första icke-null-värdet `true` värdet i arrayen exporteras i filen.
+
+```
+First_Name,Last_Name,hasPromotion
+John,Doe,true
+```
+
+
+### `size_of` funktion för att exportera arrayer {#sizeof-function-export-arrays}
+
+Använd `size_of` för att ange hur många element som finns i en array. Om du till exempel har en `purchaseTime` arrayobjekt med flera tidsstämplar kan du använda `size_of` för att ange hur många separata inköp som gjorts av en person.
+
+Du kan t.ex. kombinera följande XDM-fält nedan så som visas på mappningsskärmbilden.
+
+* `"purchaseTime": ["1538097126","1569633126,"1601255526","1632791526","1664327526"]` matris som anger fem separata inköpstider för kunden
+* `personalEmail.address` string
+
+![Mappa skärmbild för funktionens storlek](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-size-of-function.png)
+
+I det här fallet ser utdatafilen ut så här nedan. Observera hur den andra kolumnen anger antalet element i arrayen, vilket motsvarar antalet separata inköp som kunden gör.
+
+```
+`Personal_Email,Times_Purchased
+johndoe@acme.org,"5"
+```
+
+### Indexbaserad arrayåtkomst {#index-based-array-access}
+
+Du kan komma åt ett index för en array och exportera ett enskilt objekt från arrayen. Liknar till exempel exemplet ovan för `size_of` om du bara vill få åtkomst till och exportera första gången en kund har köpt en viss produkt, kan du använda `purchaseTime[0]` att exportera det första elementet i tidsstämpeln, `purchaseTime[1]` att exportera det andra elementet i tidsstämpeln, `purchaseTime[2]` om du vill exportera det tredje elementet i tidsstämpeln och så vidare.
+
+![Mappningsskärmbild för åtkomst av index](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-index.png)
+
+I det här fallet ser utdatafilen ut så här:
+
+```
+`Personal_Email,First_Purchase
+johndoe@acme.org,"1538097126"
+```
+
+### `first` och `last` funktioner för att exportera arrayer {#first-and-last-functions-export-arrays}
+
+Använd `first` och `last` funktioner för att exportera det första eller sista elementet i en array. Du kan till exempel fortsätta med `purchaseTime` arrayobjekt med flera tidsstämplar från de föregående exemplen kan du använda dessa funktioner för att exportera den första eller sista inköpstiden som gjorts av en person.
+
+![Skärmavbildning för den första och sista funktionen](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-first-last-functions.png)
+
+I det här fallet ser utdatafilen ut så här:
+
+```
+`Personal_Email,First_Purchase, Last_Purchase
+johndoe@acme.org,"1538097126","1664327526"
+```
+
+<!--
+
+### `iif` function to export arrays {#iif-function-export-arrays}
+
+Here are some examples of how you could use the `iif` function to access and export arrays and other fields: (STILL TO DO)
+
+-->
+
+### `md5` och `sha256` hash-funktioner {#hashing-functions}
+
+Förutom de funktioner som är specifika för att exportera arrayer eller element från en array, kan du använda hash-funktioner för att hash-attribut. Om du till exempel har någon personligt identifierbar information i attribut kan du hash-koda dessa fält när du exporterar dem.
+
+Du kan hash-koda strängvärden direkt, till exempel `md5(personalEmail.address)`. Om du vill kan du även hash-koda enskilda element i arrayfält enligt följande: `md5(purchaseTime[0])`
+
+
+
