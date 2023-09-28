@@ -2,9 +2,9 @@
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '855'
 ht-degree: 0%
 
 ---
@@ -49,17 +49,45 @@ På panelen med logginformation kan du välja en ny utdatamängd och se eller ko
 >
 >Vissa frågeloggfunktioner är för närvarande i en begränsad version och inte tillgängliga för alla kunder.
 
-Du kan också välja ett frågemallsnamn i dialogrutan [!UICONTROL Name] för att navigera direkt till [!UICONTROL Query log details] vy.
+Du kan också välja ett frågemallsnamn i dialogrutan [!UICONTROL Name] kolumn som du vill navigera direkt till [!UICONTROL Query log details] vy.
 
 >[!NOTE]
 >
 >Om frågan skapades med API:t och inget mallnamn angavs under initieringen visas i stället det första dussintalet tecken i SQL-frågan.
 
-![Vyn med information om frågeloggen.](../images/ui/query-log/query-log-details.png)
+![Vyn med detaljerad information om frågeloggen.](../images/ui/query-log/query-log-details.png)
+
+## Redigera loggar {#edit-logs}
 
 Bredvid varje rads mallnamn eller SQL-kodfragment finns en pennikon (![En pennikon.](../images/ui/query-log/edit-icon.png)) som du kan använda för att navigera till Frågeredigeraren. Frågan fylls sedan i automatiskt i redigeraren för redigering.
 
 ![Arbetsytan för frågeloggen med en pennikon markerad.](../images/ui/query-log/edit-query.png)
+
+## Filterloggar {#filter-logs}
+
+Du kan filtrera listan med frågeloggar baserat på olika inställningar. Markera filterikonen (![Filterikonen.](../images/ui/query-log/filter-icon.png)) längst upp till vänster på arbetsytan för att öppna en uppsättning filteralternativ i den vänstra listen.
+
+![Arbetsytan för frågeloggen med filterikonen markerad.](../images/ui/query-log/log-filter.png)
+
+Listan med tillgängliga filter visas.
+
+![Arbetsytan för frågeloggen med filteralternativen visade och markerade.](../images/ui/query-log/log-filter-settings.png)
+
+I följande tabell visas en beskrivning av varje filter.
+
+| Filter | Beskrivning |
+| ------ | ----------- |
+| [!UICONTROL Exclude dashboard queries] | Den här kryssrutan är aktiverad som standard och utesluter loggar som genereras av frågor som används för att generera insikter. Dessa frågor genereras av systemet och döljer posterna för användargenererade loggar som krävs för övervakning, administration och felsökning. Om du vill visa systemgenererade loggar avmarkerar du kryssrutan. |
+| [!UICONTROL Start date] | Om du vill filtrera loggarna efter frågor som skapats under en viss period anger du [!UICONTROL Start] och [!UICONTROL End] datum i [!UICONTROL Start date] -avsnitt. |
+| [!UICONTROL Completed date] | Om du vill filtrera loggarna efter frågor som har slutförts under en viss period anger du [!UICONTROL Start] och [!UICONTROL End] datum i [!UICONTROL Completed date] -avsnitt. |
+| [!UICONTROL Status] | Filtrera loggar baserat på [!UICONTROL Status] Välj lämplig alternativknapp för frågan. De tillgängliga alternativen omfattar [!UICONTROL Submitted], [!UICONTROL In progress], [!UICONTROL Success]och [!UICONTROL Failed]. Du kan bara filtrera loggar baserat på ett statusvillkor åt gången. |
+| [!UICONTROL Client] | Om du vill filtrera loggar baserat på frågeklienten anger du något av följande godkända värden i fritextfältet: `API`, `Adobe Query Service UI`, eller `QsAccel`. |
+| [!UICONTROL My queries] | Använd [!UICONTROL My queries] växla för att filtrera loggarna efter frågor som du har utfört. |
+| [!UICONTROL query log ID] | Om du vill filtrera baserat på ett frågas unika logg-ID anger du logg-ID i fritextfältet. Den här informationen finns i [!UICONTROL Log details]. |
+
+Alla filter som används visas ovanför de filtrerade loggresultaten.
+
+![Fliken Logg på arbetsytan Frågor med listan över använda filter markerade.](../images/ui/query-log/applied-log-filters.png)
 
 ## Nästa steg
 

@@ -4,26 +4,36 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: e30942aec6c66aeed8375d6221b454725f5a958d
+source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
 workflow-type: tm+mt
-source-wordcount: '1853'
+source-wordcount: '2226'
 ht-degree: 0%
 
 ---
 
 # [!DNL Query Editor] Användargränssnittsguide
 
-[!DNL Query Editor] är ett interaktivt verktyg från Adobe Experience Platform [!DNL Query Service]som gör det möjligt att skriva, validera och köra frågor om kundupplevelsedata i [!DNL Experience Platform] användargränssnitt. [!DNL Query Editor] har stöd för utveckling av frågor för analys och datautforskande och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
+[!DNL Query Editor] är ett interaktivt verktyg från Adobe Experience Platform [!DNL Query Service]som gör det möjligt att skriva, validera och köra frågor om kundupplevelsedata i [!DNL Experience Platform] användargränssnitt. [!DNL Query Editor] har stöd för utveckling av frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
 Mer information om begrepp och funktioner i [!DNL Query Service], se [Översikt över frågetjänsten](../home.md). Mer information om hur du navigerar i användargränssnittet för frågetjänsten på [!DNL Platform], se [Översikt över användargränssnittet i frågetjänsten](./overview.md).
+
+>[!NOTE]
+>
+>Vissa funktioner i frågetjänsten tillhandahålls inte i den äldre versionen av Frågeredigeraren. Skärmbilderna som används i det här dokumentet tas med den förbättrade versionen av Frågeredigeraren, om inget annat anges. Se avsnittet på sidan [förbättrad frågeredigerare](#enhanced-editor-toggle) för mer information.
 
 ## Komma igång {#getting-started}
 
 [!DNL Query Editor] erbjuder flexibel körning av frågor genom att ansluta till [!DNL Query Service]och frågor körs bara när den här anslutningen är aktiv.
 
+## Komma åt [!DNL Query Editor] {#accessing-query-editor}
+
+I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna [!DNL Query Service] arbetsyta. För att börja skriva frågor väljer du **[!UICONTROL Create Query]** längst upp till höger på skärmen. Den här länken är tillgänglig från någon av sidorna i [!DNL Query Service] arbetsyta.
+
+![Översiktsfliken i arbetsytan Frågor med frågan Skapa markerad.](../images/ui/query-editor/create-query.png)
+
 ### Ansluter till [!DNL Query Service] {#connecting-to-query-service}
 
-[!DNL Query Editor] tar några sekunder att initiera och ansluta till [!DNL Query Service] när den öppnas. Konsolen talar om för dig när den är ansluten, vilket visas nedan. Om du försöker köra en fråga innan redigeraren har anslutit, fördröjs körningen tills anslutningen är klar.
+Frågeredigeraren tar några sekunder att initiera och ansluta till frågetjänsten när den öppnas. Konsolen talar om för dig när den är ansluten, vilket visas nedan. Om du försöker köra en fråga innan redigeraren har anslutit, fördröjs körningen tills anslutningen är klar.
 
 ![Frågeredigerarens konsolutdata vid den första anslutningen.](../images/ui/query-editor/connect.png)
 
@@ -31,17 +41,13 @@ Mer information om begrepp och funktioner i [!DNL Query Service], se [Översikt 
 
 Frågor som körs från [!DNL Query Editor] köra interaktivt vilket innebär att om du stänger webbläsaren eller navigerar bort så avbryts frågan. Detsamma gäller för frågor som skapas för att generera datauppsättningar från frågeutdata.
 
+Med den förbättrade versionen av Frågeredigeraren kan du skriva mer än en fråga i Frågeredigeraren och köra alla frågor sekventiellt. Se avsnittet om [köra flera sekventiella frågor](#execute-multiple-sequential-queries) för mer information.
+
 ## Frågeredigering med [!DNL Query Editor] {#query-authoring}
 
 Använda [!DNL Query Editor]kan du skriva, köra och spara frågor om kundupplevelsedata. Alla frågor har körts eller sparats i [!DNL Query Editor] är tillgängliga för alla användare i organisationen med tillgång till [!DNL Query Service].
 
-### Komma åt [!DNL Query Editor] {#accessing-query-editor}
-
-I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Queries]** i den vänstra navigeringsmenyn för att öppna [!DNL Query Service] arbetsyta. För att börja skriva frågor väljer du **[!UICONTROL Create Query]** längst upp till höger på skärmen. Den här länken är tillgänglig från någon av sidorna i [!DNL Query Service] arbetsyta.
-
-![Översiktsfliken i arbetsytan Frågor med frågan Skapa markerad.](../images/ui/query-editor/create-query.png)
-
-### Förbättrad frågeredigerare {#enhanced-editor-toggle}
+## Förbättrad frågeredigerare {#enhanced-editor-toggle}
 
 >[!CONTEXTUALHELP]
 >id="platform_queryService_queryEditor_enhancedEditorToggle"
@@ -62,7 +68,30 @@ Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![E
 
 ![Frågeredigeraren med inställningsikonen och alternativet Aktivera mörkt tema på den nedrullningsbara menyn markerat.](../images/ui/query-editor/query-editor-settings.png)
 
-### Skriver frågor {#writing-queries}
+### Kör flera sekventiella frågor {#execute-multiple-sequential-queries}
+
+Med den förbättrade versionen av Frågeredigeraren kan du skriva mer än en fråga i Frågeredigeraren och köra alla frågor sekventiellt.
+
+Körningen av flera frågor i en sekvens skapar varje loggpost. Endast resultatet av den första frågan visas dock i frågeredigeringskonsolen. Kontrollera frågeloggen om du behöver felsöka eller bekräfta de frågor som kördes. Se [dokumentation för frågeloggar](./query-logs.md) för mer information.
+
+>[!NOTE]
+> 
+>Om en CTAS-fråga körs efter den första frågan i Frågeredigeraren skapas en tabell, men det finns inga utdata i Frågeredigeringskonsolen.
+
+### Kör markerad fråga {#execute-selected-query}
+
+Om du har skrivit flera frågor men bara behöver köra en fråga, kan du markera den valda frågan och välja
+[!UICONTROL Run selected query] -ikon. Den här ikonen är som standard inaktiverad om du inte väljer en fråga i redigeraren.
+
+![Frågeredigeraren med [!UICONTROL Run selected query] är markerad.](../images/ui/query-editor/run-selected-query.png)
+
+### Resultatantal {#result-count}
+
+Frågeredigeraren har maximalt 50 000 radutdata. Endast 50 rader visas emellertid samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du **[!UICONTROL Result count]** och välj mellan värdena 50, 100, 150, 300 och 500.
+
+![Frågeredigeraren med listrutan Resultatantal markerad.](../images/ui/query-editor/result-count.png)
+
+## Skriver frågor {#writing-queries}
 
 [!UICONTROL Query Editor] är organiserat för att göra det så enkelt att skriva frågor som möjligt. Skärmbilden nedan visar hur redigeraren visas i användargränssnittet, med SQL-postfältet och **Spela upp** markerad.
 
@@ -70,7 +99,7 @@ Om du vill aktivera mörka eller ljusa teman väljer du inställningsikonen (![E
 
 För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågor med begränsningar för antalet rader som returneras. Exempel, `SELECT fields FROM table WHERE conditions LIMIT number_of_rows`. När du har verifierat att frågan ger det förväntade resultatet tar du bort gränserna och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata.
 
-### Skrivverktyg i [!DNL Query Editor] {#writing-tools}
+## Skrivverktyg i [!DNL Query Editor] {#writing-tools}
 
 - **Automatisk syntaxmarkering:** Gör det enklare att läsa och ordna SQL.
 
@@ -83,6 +112,18 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågo
 - **Tabell och fält har fyllts i automatiskt:** Börja skriva det tabellnamn som du vill använda `SELECT` navigera sedan till tabellen du letar efter med piltangenterna och tryck på **Retur**. När en tabell har markerats identifieras fält i den tabellen automatiskt.
 
 ![Indata från Frågeredigeraren med förslag på listtabellnamn.](../images/ui/query-editor/tables-auto.png)
+
+### Formatera text {#format-text}
+
+The [!UICONTROL Format text] gör din fråga mer läsbar genom att lägga till en standardiserad syntaxformatering. Välj **[!UICONTROL Format text]** för att standardisera all text i Frågeredigeraren.
+
+![Frågeredigeraren med [!UICONTROL Format text] och SQL-satserna är markerade.](../images/ui/query-editor/format-text.png)
+
+### Kopiera SQL {#copy-sql}
+
+Välj kopieringsikonen om du vill kopiera SQL från Frågeredigeraren till Urklipp. Den här kopieringsfunktionen är tillgänglig för både frågemallar och nyskapade frågor i Frågeredigeraren.
+
+![Arbetsytan Frågor med en exempelfrågemall med kopieringsikonen markerad.](../images/ui/query-editor/copy-sql.png)
 
 ### Växla mellan automatisk komplettering av användargränssnittskonfigurationen {#auto-complete}
 
