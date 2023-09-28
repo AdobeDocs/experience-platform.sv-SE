@@ -1,10 +1,10 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att skapa en målserver via Adobe Experience Platform Destination SDK.
 title: Skapa en målserverkonfiguration
-source-git-commit: 03ec0e919304c9d46ef88d606eed9e12d1824856
+source-git-commit: cadffd60093eef9fb2dcf4562b1fd7611e61da94
 workflow-type: tm+mt
-source-wordcount: '1696'
-ht-degree: 6%
+source-wordcount: '2039'
+ht-degree: 5%
 
 ---
 
@@ -844,6 +844,103 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserver
 
 +++
 
+
+>[!ENDTABS]
+
+
+### Skapa dynamiska målservrar för listrutor {#dynamic-dropdown-servers}
+
+Använd [dynamiska listrutor](../../functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) för att dynamiskt hämta och fylla i listrutor med kunddatafält, baserat på ditt eget API. Du kan till exempel hämta en lista över befintliga användarkonton som du vill använda för en målanslutning.
+
+Du måste konfigurera en målserver för dynamiska listrutor innan du kan konfigurera det dynamiska listrutan för kunddatafältet.
+
+På fliken nedan finns ett exempel på en målserver som används för att dynamiskt hämta de värden som ska visas i en listruteväljare från ett API.
+
+Nedan finns exempelnyttolasten med alla parametrar som krävs för en dynamisk schemaserver.
+
+>[!BEGINTABS]
+
+>[!TAB Dynamisk nedrullningsbar server]
+
+**Skapa en dynamisk nedrullningsbar server**
+
+Du måste skapa en dynamisk nedrullningsbar server som liknar den som visas nedan när du konfigurerar ett mål som hämtar värdena för ett nedrullningsbart kunddatafält från din egen API-slutpunkt.
+
++++Begäran
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-servers \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '
+{
+   "name":"Server for dynamic dropdown",
+   "destinationServerType":"URL_BASED",
+   "urlBasedDestination":{
+      "url":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"https://api.moviestar.com/data/{{customerData.users}}/items"
+      }
+   },
+   "httpTemplate":{
+      "httpMethod":"GET",
+      "headers":[
+         {
+            "header":"Authorization",
+            "value":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"My Bearer Token"
+            }
+         },
+         {
+            "header":"x-integration",
+            "value":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"{{customerData.integrationId}}"
+            }
+         },
+         {
+            "header":"Accept",
+            "value":{
+               "templatingStrategy":"NONE",
+               "value":"application/json"
+            }
+         }
+      ]
+   },
+   "responseFields":[
+      {
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{% set list = [] %} {% for record in response.body %} {% set list = list|merge([{'name' : record.name, 'value' : record.id }]) %} {% endfor %}{{ {'list': list} | toJson | raw }}",
+         "name":"list"
+      }
+   ]
+}
+```
+
+| Parameter | Typ | Beskrivning |
+| -------- | ----------- | ----------- |
+| `name` | Sträng | *Obligatoriskt.* Representerar ett eget namn på den dynamiska listruteservern som bara visas för Adobe. |
+| `destinationServerType` | Sträng | *Obligatoriskt.* Ange till `URL_BASED` för dynamiska nedrullningsbara servrar. |
+| `urlBasedDestination.url.templatingStrategy` | Sträng | *Obligatoriskt.* <ul><li>Använd `PEBBLE_V1` om Adobe behöver omvandla URL:en i `value` fält nedan. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`. </li><li> Använd `NONE` om ingen omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items`.</li></ul> |
+| `urlBasedDestination.url.value` | Sträng | *Obligatoriskt.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till och hämta listrutans värden. |
+| `httpTemplate.httpMethod` | Sträng | *Obligatoriskt.* Den metod som Adobe ska använda i anrop till servern. För dynamiska listruteservrar använder du `GET`. |
+| `httpTemplate.headers` | Objekt | *Optiona.l* Inkludera eventuella rubriker som krävs för att ansluta till den dynamiska listruteservern. |
+| `responseFields.templatingStrategy` | Sträng | *Obligatoriskt.* Använd `PEBBLE_V1`. |
+| `responseFields.value` | Sträng | *Obligatoriskt.* Strängen är den omformningsmall som används för att omvandla det svar som tas emot från ditt API till värden som visas i plattformens användargränssnitt. <br> <ul><li> Mer information om hur du skriver mallen finns i [Använda mallavsnitt](../../functionality/destination-server/message-format.md#using-templating). </li><li> Mer information om teckenigenkänning finns i [RFC JSON-standard, avsnitt sju](https://tools.ietf.org/html/rfc8259#section-7). |
+
+{style="table-layout:auto"}
+
++++
+
++++svar
+
+Ett lyckat svar returnerar HTTP-status 200 med information om den nya målserverkonfigurationen.
+
++++
 
 >[!ENDTABS]
 

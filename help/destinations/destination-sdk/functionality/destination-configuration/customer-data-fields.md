@@ -1,9 +1,9 @@
 ---
 description: Lär dig hur du skapar indatafält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 title: Kunddatafält
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: cadffd60093eef9fb2dcf4562b1fd7611e61da94
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1560'
 ht-degree: 1%
 
 ---
@@ -42,18 +42,18 @@ I den här artikeln beskrivs alla konfigurationstyper för kunddatafält som st�
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
 
-## Parametrar som stöds {#supported-parameters}
+## parametrar som stöds {#supported-parameters}
 
 När du skapar egna kunddatafält kan du använda de parametrar som beskrivs i tabellen nedan för att konfigurera deras beteende.
 
 | Parameter | Typ | Obligatoriskt/valfritt | Beskrivning |
 |---------|----------|------|---|
-| `name` | Sträng | Obligatoriskt | Ange ett namn för det anpassade fält som du introducerar. Det här namnet visas inte i plattformsgränssnittet, såvida inte `title` fältet är tomt eller saknas. |
+| `name` | Sträng | Obligatoriskt | Ange ett namn för det anpassade fält som du introducerar. Det här namnet visas inte i plattformens användargränssnitt, såvida inte `title` fältet är tomt eller saknas. |
 | `type` | Sträng | Obligatoriskt | Anger typen av anpassat fält som du introducerar. Godkända värden: <ul><li>`string`</li><li>`object`</li><li>`integer`</li></ul> |
 | `title` | Sträng | Valfritt | Anger fältets namn, så som det visas av kunderna i plattformsgränssnittet. Om fältet är tomt eller saknas ärver gränssnittet fältnamnet från `name` värde. |
 | `description` | Sträng | Valfritt | Ange en beskrivning för det anpassade fältet. Den här beskrivningen visas inte i plattformsgränssnittet. |
@@ -62,7 +62,7 @@ När du skapar egna kunddatafält kan du använda de parametrar som beskrivs i t
 | `enum` | Sträng | Valfritt | Återger det anpassade fältet som en listruta och visar de alternativ som är tillgängliga för användaren. |
 | `default` | Sträng | Valfritt | Definierar standardvärdet från ett `enum` lista. |
 | `hidden` | Boolean | Valfritt | Anger om kunddatafältet visas i användargränssnittet eller inte. |
-| `unique` | Boolean | Valfritt | Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. Till exempel **[!UICONTROL Integration alias]** i [Anpassad personalisering](../../../catalog/personalization/custom-personalization.md) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
+| `unique` | Boolean | Valfritt | Använd den här parametern när du behöver skapa ett kunddatafält vars värde måste vara unikt för alla måldataflöden som har konfigurerats av en användares organisation. Till exempel **[!UICONTROL Integration alias]** fältet i [Anpassad personalisering](../../../catalog/personalization/custom-personalization.md) målet måste vara unikt, vilket innebär att två separata dataflöden till det här målet inte kan ha samma värde för det här fältet. |
 | `readOnly` | Boolean | Valfritt | Anger om kunden kan ändra fältets värde eller inte. |
 
 {style="table-layout:auto"}
@@ -175,7 +175,7 @@ Konfigurationen nedan återspeglas till exempel i användargränssnittet, där a
 
 Du kan gruppera flera kunddatafält i ett avsnitt. När du konfigurerar anslutningen till målet i användargränssnittet kan användarna se och dra nytta av en visuell gruppering av liknande fält.
 
-Om du vill göra det använder du `"type": "object"` för att skapa gruppen och samla in önskade kunddatafält inom en `properties` objekt, som visas i bilden nedan, där grupperingen **[!UICONTROL CSV Options]** markeras.
+Om du vill göra det använder du `"type": "object"` för att skapa gruppen och samla in önskade kunddatafält inom en `properties` objekt, som visas i bilden nedan, där grupperingen **[!UICONTROL CSV Options]** är markerat.
 
 ```json {line-numbers="true" highlight="6-28"}
 "customerDataFields":[
@@ -216,7 +216,7 @@ Om du vill göra det använder du `"type": "object"` för att skapa gruppen och 
 
 I situationer där du vill att användarna ska kunna välja mellan flera alternativ, t.ex. vilket tecken som ska användas för att avgränsa fälten i CSV-filer, kan du lägga till nedrullningsbara fält i användargränssnittet.
 
-Om du vill göra det använder du `namedEnum` enligt nedan och konfigurera `default` värdet för de alternativ som användaren kan välja.
+Använd `namedEnum` enligt nedan och konfigurera ett `default` värdet för de alternativ som användaren kan välja.
 
 ```json {line-numbers="true" highlight="15-24"}
 "customerDataFields":[
@@ -252,6 +252,93 @@ Om du vill göra det använder du `namedEnum` enligt nedan och konfigurera `defa
 ```
 
 ![Skärminspelning som visar ett exempel på listruteväljare som har skapats med den konfiguration som visas ovan.](../../assets/functionality/destination-configuration/customer-data-fields-dropdown.gif)
+
+## Skapa dynamiska listruteväljare för kunddatafält {#dynamic-dropdown-selectors}
+
+I situationer där du vill anropa ett API dynamiskt och använda svaret för att dynamiskt fylla i alternativen i en listruta kan du använda en dynamisk listruteväljare.
+
+De dynamiska listruteväljarna ser likadana ut som [vanliga listruteväljare](#dropdown-selectors) i användargränssnittet. Den enda skillnaden är att värdena hämtas dynamiskt från ett API.
+
+Om du vill skapa en dynamisk nedrullningsbar väljare måste du konfigurera två komponenter:
+
+**Steg 1.** [Skapa en målserver](../../authoring-api/destination-server/create-destination-server.md#dynamic-dropdown-servers) med `responseFields` mall för det dynamiska API-anropet enligt nedan.
+
+```json
+{
+   "name":"Server for dynamic dropdown",
+   "destinationServerType":"URL_BASED",
+   "urlBasedDestination":{
+      "url":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":" <--YOUR-API-ENDPOINT-PATH--> "
+      }
+   },
+   "httpTemplate":{
+      "httpMethod":"GET",
+      "headers":[
+         {
+            "header":"Authorization",
+            "value":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"My Bearer Token"
+            }
+         },
+         {
+            "header":"x-integration",
+            "value":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"{{customerData.integrationId}}"
+            }
+         },
+         {
+            "header":"Accept",
+            "value":{
+               "templatingStrategy":"NONE",
+               "value":"application/json"
+            }
+         }
+      ]
+   },
+   "responseFields":[
+      {
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{% set list = [] %} {% for record in response.body %} {% set list = list|merge([{'name' : record.name, 'value' : record.id }]) %} {% endfor %}{{ {'list': list} | toJson | raw }}",
+         "name":"list"
+      }
+   ]
+}
+```
+
+**Steg 2.** Använd `dynamicEnum` som visas nedan. I exemplet nedan är `User` listrutan hämtas med den dynamiska servern.
+
+
+```json {line-numbers="true" highlight="13-21"}
+"customerDataFields": [
+  {
+    "name": "integrationId",
+    "title": "Integration ID",
+    "type": "string",
+    "isRequired": true
+  },
+  {
+    "name": "userId",
+    "title": "User",
+    "type": "string",
+    "isRequired": true,
+    "dynamicEnum": {
+      "queryParams": [
+        "integrationId"
+      ],
+      "destinationServerId": "<~dynamic-field-server-id~>",
+      "authenticationRule": "CUSTOMER_AUTHENTICATION",
+      "value": "$.list",
+      "responseFormat": "NAME_VALUE"
+    }
+  }
+]
+```
+
+Ange `destinationServerId` parameter till ID:t för målservern som du skapade i steg 1. Du kan se målserverns ID i svaret från [hämta en målserverkonfiguration](../../authoring-api/destination-server/retrieve-destination-server.md) API-anrop.
 
 ## Skapa villkorliga kunddatafält {#conditional-options}
 
@@ -453,7 +540,7 @@ Låt oss titta på följande Amazon S3-destinationskonfiguration:
 ]
 ```
 
-Den här konfigurationen uppmanar användarna att ange sina [!DNL Amazon S3] bucket name and folder path into their respective customer data fields.
+Den här konfigurationen uppmanar dina användare att ange sina [!DNL Amazon S3] bucket name and folder path into their respective customer data fields.
 
 För att Experience Platform ska kunna ansluta till [!DNL Amazon S3]måste målservern vara konfigurerad att läsa värdena från dessa två kunddatafält, vilket visas nedan:
 
@@ -476,7 +563,7 @@ Mer information om hur du konfigurerar målservern för att läsa mallsidiga fä
 
 ## Nästa steg {#next-steps}
 
-När du har läst den här artikeln bör du få en bättre förståelse för hur du kan låta användarna mata in information i användargränssnittet i Experience Platform via kunddatafält. Du vet nu också hur du väljer rätt kunddatafält för ditt användningsfall och konfigurerar, beställer och grupperar kunddatafält i plattformsgränssnittet.
+När du har läst den här artikeln bör du få en bättre förståelse för hur du kan låta dina användare mata in information i användargränssnittet i Experience Platform via kunddatafält. Du vet nu också hur du väljer rätt kunddatafält för ditt användningsfall och konfigurerar, beställer och grupperar kunddatafält i plattformsgränssnittet.
 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
