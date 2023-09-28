@@ -1,45 +1,59 @@
 ---
 title: Översikt över namnområde för identitet
-description: Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet"name@email.com" som e-postadress eller"443522" som ett numeriskt CRM-ID.
+description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: ac53678ca9ef51cb638590138a16a3506c6a1fc0
+source-git-commit: 36a42a7c3722828776495359762289d0028b6ddc
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1690'
 ht-degree: 0%
 
 ---
 
 # Översikt över namnområde för identitet
 
-Identitetsnamnutrymmen är en komponent i [[!DNL Identity Service]](./home.md) som fungerar som indikatorer för det sammanhang som en identitet hör till. De skiljer till exempel på värdet &quot;name&quot;<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID.
+Läs följande dokument om du vill veta mer om vad du kan göra med identitetsnamnutrymmen i Adobe Experience Platform Identity Service.
 
 ## Komma igång
 
-Att arbeta med identitetsnamnutrymmen kräver förståelse för de olika Adobe Experience Platform-tjänsterna. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
+Identitetsnamnutrymmen kräver förståelse för olika Adobe Experience Platform-tjänster. Innan du börjar arbeta med namnutrymmen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-Time Customer Profile]](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser, som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
+* [[!DNL Real-Time Customer Profile]](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
+* [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser, som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
 
 ## Identitetsnamnutrymmen
 
-En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
+En fullständigt kvalificerad identitet innehåller två komponenter: och **identitetsvärde** och **namnutrymme för identitet**. Om värdet för en identitet till exempel är `scott@acme.com`, ger ett namnutrymme kontext till det här värdet genom att det särskiljs som en e-postadress. På samma sätt kan ett namnutrymme skilja `555-123-456` som ett telefonnummer, och `3126ABC` som ett CRM-ID. I stort sett **ett namnutrymme ger kontext till en viss identitet**. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
 
-Två profilfragment kan till exempel innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;, vilket innebär att [!DNL Platform] kan se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för den enskilda personen.
+Två profilfragment kan t.ex. innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;. Därför kan Experience Platform se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för individen.
 
 ![](images/identity-service-stitching.png)
 
-### Identitetstyper {#identity-types}
+### Komponenter i ett namnutrymme
+
+Ett namnutrymme består av följande komponenter:
+
+* **Visningsnamn**: Det användarvänliga namnet för ett givet namnutrymme.
+* **Identitetssymbol**: En kod som används internt av identitetstjänsten för att representera ett namnutrymme.
+* **Identitetstyp**: Klassificeringen av ett givet namnutrymme.
+* **Beskrivning**: (Valfritt) All tilläggsinformation som du kan ange för ett givet namnutrymme.
+
+### Identitetstyp {#identity-type}
 
 >[!CONTEXTUALHELP]
 >id="platform_identity_create_namespace"
 >title="Ange identitetstyp"
->abstract="Identitetstypen styr om data lagras i identitetsdiagrammet eller inte. Identifierare som inte är personer kommer inte att lagras och alla andra identitetstyper kommer att lagras."
+>abstract="Identitetstypen styr om data lagras i identitetsdiagrammet eller inte. Identitetsdiagram genereras inte för följande identitetstyper: icke-personidentifierare och partner-ID."
 >text="Learn more in documentation"
 
-Data kan identifieras av flera olika identitetstyper. Identitetstypen anges när identitetsnamnutrymmet skapas och kontrollerar om data bevaras i identitetsdiagrammet och eventuella specialinstruktioner för hur data ska hanteras. Alla identitetstyper utom **Identifierare för icke-personer** följer samma beteende som när du sammanfogar ett namnutrymme med dess motsvarande ID-värde till ett identitetsdiagramkluster. Data sammanfogas inte när du använder **Identifierare för icke-personer**.
+Ett element i ett identitetsnamnutrymme är **identitetstyp**. Identitetstypen bestämmer:
 
-Följande identitetstyper är tillgängliga i [!DNL Platform]:
+* Om ett identitetsdiagram ska genereras:
+   * Identitetsdiagram genereras inte för följande identitetstyper: icke-personidentifierare och partner-ID.
+   * Identitetsdiagram genereras för alla andra identitetstyper.
+* Vilka identiteter som tas bort från identitetsdiagrammet när systemgränserna nås. Mer information finns i [skyddsutkast för identitetsdata](guardrails.md).
+
+Följande identitetstyper är tillgängliga i Experience Platform:
 
 | Identitetstyp | Beskrivning |
 | --- | --- |
@@ -88,43 +102,33 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 
 Om du vill visa identitetsnamnutrymmen i användargränssnittet väljer du **[!UICONTROL Identities]** i den vänstra navigeringen och sedan väljer **[!UICONTROL Browse]**.
 
-![bläddra](./images/browse.png)
+En katalog med namnutrymmen i organisationen visas med information om namn, identitetssymboler, senaste uppdaterade datum, motsvarande identitetstyper och beskrivning.
 
-En lista med identitetsnamnutrymmen visas i sidans huvudgränssnitt med information om namn, identitetssymboler, senaste uppdateringsdatum och om de är en standard eller ett anpassat namnutrymme. Den högra listen innehåller information om [!UICONTROL Identity graph strength].
+![En katalog med anpassade identitetsnamnutrymmen i din organisation.](./images/namespace/browse.png)
 
-![identiteter](./images/identities.png)
-
-Plattformen har även namnutrymmen för integration. Dessa namnutrymmen döljs som standard eftersom de används för att ansluta till andra system och inte för att fästa identiteter. Om du vill visa namnutrymmen för integration väljer du **[!UICONTROL View integration identities]**.
-
-![view-integration-identities](./images/view-integration-identities.png)
-
-Välj ett identitetsnamnutrymme i listan om du vill visa information om ett specifikt namnutrymme. Om du väljer ett identitetsnamnutrymme uppdateras visningen till höger så att metadata om det identitetsnamnutrymme som du har valt visas, inklusive antalet identiteter som har importerats och antalet poster som har misslyckats och hoppats över.
-
-![select-namespace](./images/select-namespace.png)
-
-## Hantera anpassade namnutrymmen {#manage-namespaces}
+## Skapa anpassade namnutrymmen {#create-namespaces}
 
 Beroende på dina organisationsdata och användningsfall kan du behöva anpassade namnutrymmen. Du kan skapa egna namnutrymmen med [[!DNL Identity Service]](./api/create-custom-namespace.md) API eller via gränssnittet.
 
-Navigera till **[!UICONTROL Identities]** arbetsyta, välja **[!UICONTROL Browse]** och sedan markera **[!UICONTROL Create identity namespace]**.
+Om du vill skapa ett eget namnutrymme väljer du **[!UICONTROL Create identity namespace]**.
 
-![select-create](./images/select-create.png)
+![Knappen Skapa ID-namnutrymme på identitetsytan.](./images/namespace/create-identity-namespace.png)
 
-The **[!UICONTROL Create identity namespace]** visas. Ange en unik **[!UICONTROL Display name]** och **[!UICONTROL Identity symbol]** och välj sedan den identitetstyp som du vill skapa. Du kan också lägga till en valfri beskrivning för att lägga till ytterligare information om namnutrymmet. Alla identitetstyper utom **Identifierare för icke-personer** följer samma mönster som när du stjäl. Om du väljer **Identifierare för icke-personer** som identitetstyp när du skapar ett namnutrymme görs ingen sammanfogning. Specifik information om varje identitetstyp finns i tabellen på [identitetstyper](#identity-types).
+The [!UICONTROL Create identity namespace] visas. Först måste du ange ett visningsnamn och en identitetssymbol för det anpassade namnutrymmet som du vill skapa. Du kan också ange en beskrivning för att lägga till mer kontext i det anpassade namnutrymmet som du skapar.
 
-När du är klar väljer du **[!UICONTROL Create]**.
+![Ett popup-fönster där du kan ange information om ditt anpassade identitetsnamnutrymme.](./images/namespace/name-and-symbol.png)
+
+Välj sedan den identitetstyp som du vill tilldela det anpassade namnutrymmet. När du är klar väljer du **[!UICONTROL Create]**.
+
+![Ett urval av identitetstyper som du kan välja mellan och tilldela till ditt anpassade identitetsnamnutrymme.](./images/namespace/select-identity-type.png)
 
 >[!IMPORTANT]
 >
->Namnutrymmen som du definierar är privata för din organisation och kräver en unik identitetssymbol för att de ska kunna skapas.
-
-![create-identity-namespace](./images/create-identity-namespace.png)
-
-På samma sätt som vanliga namnutrymmen kan du välja ett anpassat namnutrymme i **[!UICONTROL Browse]** för att visa information. Men med ett anpassat namnutrymme kan du även redigera dess visningsnamn och beskrivning från informationsfältet.
-
->[!NOTE]
+>* Namnutrymmen som du definierar är privata för din organisation och kräver en unik identitetssymbol för att de ska kunna skapas.
 >
->När ett namnutrymme har skapats kan det inte tas bort och dess identitetssymbol och typ kan inte ändras.
+>* När ett namnutrymme har skapats kan det inte tas bort och dess identitetssymbol och typ kan inte ändras.
+>
+>* Duplicerade namnutrymmen stöds inte. Du kan inte använda ett befintligt visningsnamn och en identitetssymbol när du skapar ett nytt namnutrymme.
 
 ## Namnutrymmen i identitetsdata
 

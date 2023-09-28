@@ -1,7 +1,7 @@
 ---
 title: Klassen XDM Individual Prospect Profile
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Prospect Profile i Experience Data Model (XDM).
-source-git-commit: 437bd602462330a96f356b83d7afe922b5315d9f
+source-git-commit: 7562da0f07a2109a2030653927d8d2639685e442
 workflow-type: tm+mt
 source-wordcount: '332'
 ht-degree: 0%
@@ -22,7 +22,7 @@ I Experience Data Model (XDM) är [!UICONTROL XDM Individual Prospect Profile] k
 | `_id` | [!UICONTROL String] | En unik systemgenererad strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och för att söka efter posten i underordnade tjänster.<br><br>Eftersom det här fältet genereras av systemet, ger det inget explicit värde vid datainmatning. Du kan dock välja att ange egna unika ID-värden om du vill. |
 | `createdByBatchID` | [!UICONTROL String] | ID:t för den inkapslade batchen som gjorde att posten skapades. |
 | `modifiedByBatchID` | [!UICONTROL String] | ID:t för den senaste inkapslade batchen som gjorde att posten uppdaterades. |
-| `partnerID` | [!UICONTROL String] | Vanligtvis är det en unik pseudonym identifierare som identifierar en enskild potentiell kund. Läs dokumentationen om [identitetstyper](../../identity-service/namespaces.md#identity-types) om du vill veta mer om partner-ID och andra identitetstyper som finns i Adobe Experience Platform. |
+| `partnerID` | [!UICONTROL String] | Vanligtvis är det en unik pseudonym identifierare som identifierar en enskild potentiell kund. Läs dokumentationen om [identitetstyper](../../identity-service/namespaces.md#identity-type) om du vill veta mer om partner-ID och andra identitetstyper som finns i Adobe Experience Platform. |
 | `repositoryCreatedBy` | [!UICONTROL String] | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | [!UICONTROL String] | ID för den användare som senast ändrade posten. När posten skapas `modifiedByUser` värdet anges som `createdByUser` värde. |
 
