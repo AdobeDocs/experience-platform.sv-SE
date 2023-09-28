@@ -2,9 +2,9 @@
 title: Konfigurera ett datastream
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: 705b1645eb8ca69169350c57cd28d3a1061f4928
 workflow-type: tm+mt
-source-wordcount: '2142'
+source-wordcount: '2459'
 ht-degree: 1%
 
 ---
@@ -38,9 +38,42 @@ Om du konfigurerar det här dataflödet för användning i Experience Platform o
 
 ![Grundkonfiguration för ett datastream](assets/configure/configure.png)
 
-Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller för att konfigurera datastream.
+### Konfigurera geopositionering och nätverkssökning {#geolocation-network-lookup}
 
-![Avancerade konfigurationsalternativ](assets/configure/advanced-options.png) {#advanced-options}
+Med inställningarna för geopositionering och nätverkssökning kan du definiera detaljnivån för de geografiska data och nätverksdata som du vill samla in.
+
+Expandera **[!UICONTROL Geolocation and network lookup]** för att konfigurera inställningarna som beskrivs nedan.
+
+![Skärmbild av användargränssnittet för plattformen som visar konfigurationsskärmen för dataströmmen med inställningarna för geopositionering och nätverkssökning markerade.](assets/configure/geolookup.png)
+
+| Inställning | Beskrivning |
+| --- | --- |
+| [!UICONTROL Geo Lookup] | Aktiverar sökningar efter geopositionering för de valda alternativen, baserat på besökarens IP-adress. Geolocation-sökning kräver att du inkluderar [`placeContext`](../edge/data-collection/automatic-information.md#place-context) fältgrupp i Web SDK-konfigurationen. <br> Tillgängliga alternativ <ul><li>Land</li><li>Postnummer</li><li>Stat/provins</li><li>DMA</li><li>Ort</li><li>Latitud </li><li>Longitud</li></ul>Markera **[!UICONTROL City]**, **[!UICONTROL Latitude]**, eller **[!UICONTROL Longitude]** innehåller koordinater upp till två decimalpunkter, oavsett vilka andra alternativ som är markerade. Detta betraktas som granularitet på stadsnivå. <br> <br>Om du inte markerar något alternativ inaktiveras sökningar efter geopositionering. Geolokalisering inträffar före [!UICONTROL IP Obfuscation] och påverkas inte av  [!UICONTROL IP Obfuscation] inställning. |
+| [!UICONTROL Network Lookup] | Aktiverar nätverkssökningar för de valda alternativen, baserat på besökarens IP-adress. Nätverkssökning kräver att du inkluderar [`Environment`](../edge/data-collection/automatic-information.md#environment) fältgrupp i Web SDK-konfigurationen. <br> Tillgängliga alternativ <ul><li>Fraktfirma</li><li>Domän</li><li>ISP</li></ul>Använd dessa alternativ för att ge mer information till andra tjänster om det specifika nätverk som förfrågningarna kommer från. |
+
+### Konfigurera enhetssökning {#geolocation-device-lookup}
+
+The **[!UICONTROL Device Lookup]** kan du välja granularitetsnivå för den enhetsspecifika information som du vill samla in.
+
+Expandera **[!UICONTROL Device Lookup]** för att konfigurera inställningarna som beskrivs nedan.
+
+![Skärmbild av användargränssnittet för plattformen som visar konfigurationsskärmen för dataströmmen med inställningarna för enhetssökning markerade.](assets/configure/device-lookup.png)
+
+>[!IMPORTANT]
+>
+>De inställningar som beskrivs i tabellen nedan utesluter varandra. Du kan inte välja både användaragentinformation och enhetssökningsdata samtidigt.
+
+| Inställning | Beskrivning |
+| --- | --- |
+| **[!UICONTROL Keep user agent and client hints headers]** | Välj det här alternativet om du bara vill samla in den information som lagras i användaragentsträngen. Det här är standardinställningen. |
+| **[!UICONTROL Use device lookup to collect the following information]** | Välj det här alternativet om du vill samla in en eller flera av följande enhetsspecifika information: <ul><li>**[!UICONTROL Device]** information:<ul><li>Enhetstillverkare</li><li>Enhetsmodell</li><li>Marknadsföringsnamn</li></ul></li><li>**[!UICONTROL Hardware]** information: <ul><li>Enhetstyp</li><li>Visningshöjd</li><li>Visningsbredd</li><li>Visa färgdjup</li></ul></li><li>**[!UICONTROL Browser]** information: <ul><li>Webbläsarleverantör</li><li>Webbläsarnamn</li><li>Webbläsarversion</li></ul></li><li>**[!UICONTROL Operating system]** information: <ul><li>OS-leverantör</li><li>OS-namn</li><li>OS-version</li></ul></li></ul> <br>  Det går inte att samla in information om enhetssökning tillsammans med användaragent- och klienttips. Om du väljer att samla in enhetsinformation inaktiveras samlingen av användaragent- och klienttips och vice versa. All enhetssökningsinformation lagras i `xdm:device` fältgrupp. |
+| **[!UICONTROL Do not collect any device information]** | Välj det här alternativet om du inte vill samla in någon typ av sökinformation. Ingen information om enheter, maskinvara, webbläsare eller operativsystem kommer att samlas in, inklusive inga rubriker för användaragent eller klienttips. |
+
+### Konfigurera avancerade alternativ {#@advanced-options}
+
+Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller för att konfigurera dataströmmen, till exempel IP-förfalskning, cookies för första parts-ID med mera.
+
+![Avancerade konfigurationsalternativ](assets/configure/advanced-settings.png)
 
 >[!IMPORTANT]
 >
@@ -50,14 +83,13 @@ Välj **[!UICONTROL Advanced Options]** om du vill visa ytterligare kontroller f
 
 | Inställning | Beskrivning |
 | --- | --- |
-| [!UICONTROL Geo Lookup] | Aktiverar sökningar efter geopositionering för de valda alternativen, baserat på besökarens IP-adress. Geolocation-sökning kräver att du inkluderar [`placeContext`](../edge/data-collection/automatic-information.md#place-context) fältgrupp i Web SDK-konfigurationen. <br> Tillgängliga alternativ <ul><li>Land</li><li>Postnummer</li><li>Stat/provins</li><li>DMA</li><li>Ort</li><li>Latitud </li><li>Longitud</li></ul>Markera **[!UICONTROL City]**, **[!UICONTROL Latitude]**, eller **[!UICONTROL Longitude]** innehåller koordinater upp till två decimalpunkter, oavsett vilka andra alternativ som är markerade. Detta betraktas som granularitet på stadsnivå. <br> <br>Om du inte markerar något alternativ inaktiveras sökningar efter geopositionering. Geolokalisering inträffar före [!UICONTROL IP Obfuscation] och påverkas inte av  [!UICONTROL IP Obfuscation] inställning. |
-| [!UICONTROL Network Lookup] | Aktiverar nätverkssökningar för de valda alternativen, baserat på besökarens IP-adress. Nätverkssökning kräver att du inkluderar [`Environment`](../edge/data-collection/automatic-information.md#environment) fältgrupp i Web SDK-konfigurationen. <br> Tillgängliga alternativ <ul><li>Fraktfirma</li><li>Domän</li><li>ISP</li></ul>Använd dessa alternativ för att ge mer information till andra tjänster om det specifika nätverk som förfrågningarna kommer från. |
 | [!UICONTROL IP Obfuscation] | Anger vilken typ av IP-ofuscation som ska användas för datastream. All bearbetning som baseras på kundens IP-adress påverkas av IP-begränsningsinställningen. Detta inkluderar alla Experience Cloud-tjänster som tar emot data från ditt datastream. <p>Tillgängliga alternativ</p> <ul><li>**[!UICONTROL None]**: Inaktiverar IP-förfalskning. Den fullständiga användarens IP-adress skickas via datastream.</li><li>**[!UICONTROL Partial]**: För IPv4-adresser döljer den sista oktetten i användarens IP-adress. För IPv6-adresser döljer de sista 80 bitarna i adressen. <p>Exempel:</p> <ul><li>IPv4: `1.2.3.4` -> `1.2.3.0`</li><li>IPv6: `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `2001:0db8:1345:0000:0000:0000:0000:0000`</li></ul></li><li>**[!UICONTROL Full]**: Fokuserar hela IP-adressen. <p>Exempel:</p> <ul><li>IPv4: `1.2.3.4` -> `0.0.0.0`</li><li>IPv6: `2001:0db8:1345:fd27:0000:ff00:0042:8329` -> `0:0:0:0:0:0:0:0`</li></ul></li></ul> IP-försvårande effekter på andra Adobe-produkter: <ul><li>**Adobe Target**: Datastream-nivån [!UICONTROL IP obfuscation] inställning har företräde framför alla IP-felsökningsalternativ som har angetts i Adobe Target. Om till exempel datastream-nivån [!UICONTROL IP obfuscation] option is set to **[!UICONTROL Full]** och Adobe Target IP-felsökningsalternativ är inställt på **[!UICONTROL Last octet obfuscation]** får Adobe Target en fullständigt okomplicerad IP-adress. Läs Adobe Target-dokumentationen på [IP-förvrängning](https://developer.adobe.com/target/before-implement/privacy/privacy/) och [geolokalisering](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=en) för mer information.</li><li>**Audience Manager**: Inställningen för IP-ofusacering på datastream-nivå har företräde framför alla IP-ofusceringsalternativ som har angetts i Audience Manager, och den tillämpas på alla IP-adresser. Alla sökningar efter geopositionering som gjorts av Audience Manager påverkas av datastream-nivån [!UICONTROL IP obfuscation] alternativ. En sökning efter geopositionering i Audience Manager, som baseras på en helt okomplicerad IP-adress, resulterar i en okänd region och inga segment som baseras på resulterande geopositioneringsdata kommer att realiseras. Läs Audience Manager-dokumentationen på [IP-förvrängning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/ip-obfuscation.html?lang=en) för mer information.</li><li>**Adobe Analytics**: Adobe Analytics får för närvarande de delvis dolda IP-adresserna om något annat alternativ för IP-förfalskning har valts, förutom NONE. För att Analytics ska kunna ta emot fullständigt dolda IP-adresser måste ni konfigurera IP-osäkerheten separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner. Se Adobe Analytics [dokumentation](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/general-acct-settings-admin.html) om du vill ha mer information om hur du aktiverar IP-förfalskning i Analytics.</li></ul> |
 | [!UICONTROL First Party ID Cookie] | När det här alternativet är aktiverat anger den här inställningen att Edge Network ska referera till en angiven cookie när en [enhets-ID för första part](../edge/identity/first-party-device-ids.md)i stället för att leta upp det här värdet i identitetskartan.<br><br>När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras. |
 | [!UICONTROL Third Party ID Sync] | ID-synkroniseringar kan grupperas i behållare så att olika ID-synkroniseringar kan köras vid olika tidpunkter. När den här inställningen är aktiverad kan du ange vilken ID-synkroniseringsbehållare som ska köras för den här datastream-filen. |
 | [!UICONTROL Third Party ID Sync Container ID] | Det numeriska ID:t för behållaren som ska användas för synkronisering av ID från tredje part. |
 | [!UICONTROL Container ID Overrides] | I det här avsnittet kan du definiera ytterligare behållar-ID:n för synkronisering av tredjeparts-ID som du kan använda för att åsidosätta standardbehållar-ID:n. |
 | [!UICONTROL Access Type] | Definierar den autentiseringstyp som Edge Network godkänner för datastream. <ul><li>**[!UICONTROL Mixed Authentication]**: När det här alternativet är markerat accepteras både autentiserade och oautentiserade begäranden i Edge Network. Välj det här alternativet när du tänker använda Web SDK eller [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/), med [Server-API](../server-api/overview.md). </li><li>**[!UICONTROL Authenticated Only]**: När det här alternativet är markerat accepteras endast autentiserade begäranden i Edge Network. Välj det här alternativet när du bara vill använda server-API:t och vill förhindra att oautentiserade begäranden behandlas av Edge Network.</li></ul> |
+| [!UICONTROL Media Analytics] | Välj det här alternativet om du vill aktivera bearbetning av data för direktuppspelningsspårning för Edge Network-integrering via Experience Platform SDK eller Media Edge API. Läs om Media Analytics på [dokumentation](https://experienceleague.adobe.com/docs/media-analytics/using/media-overview.html?lang=en). |
 
 Om du konfigurerar ditt datastream för Experience Platform följer du självstudiekursen på [Dataförberedelse för datainsamling](./data-prep.md) för att mappa dina data till ett plattformshändelseschema innan du återgår till den här guiden. Annars väljer du **[!UICONTROL Save]** och fortsätta till nästa avsnitt.
 
