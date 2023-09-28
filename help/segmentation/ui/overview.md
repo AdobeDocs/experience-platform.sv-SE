@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 378b51b13547af994bd258a42d1068118d099eb4
+source-git-commit: 7eaf3383bb8dde0d5918eefba1ee69caddea0c0b
 workflow-type: tm+mt
-source-wordcount: '3434'
+source-wordcount: '3594'
 ht-degree: 0%
 
 ---
@@ -62,37 +62,9 @@ Mer information finns på [guide för målgrupper](../../dashboards/guides/audie
 >title="Lägg till alla målgrupper som ska schemaläggas"
 >abstract="Gör det möjligt att inkludera alla målgrupper som utvärderats med batchsegmentering i den dagliga schemalagda uppdateringen. Inaktivera borttagning av alla målgrupper från den schemalagda uppdateringen."
 
-Välj **[!UICONTROL Browse]** om du vill se en lista över alla målgrupper för din organisation.
+Välj **[!UICONTROL Browse]** om du vill se en lista över alla målgrupper för din organisation. I den här vyn visas information om målgrupperna inklusive antal profiler, ursprung, skapad den, senaste ändringsdatum, taggar och uppdelning.
 
 ![Bläddringsskärmen visas. En lista över alla målgrupper som tillhör organisationen visas.](../images/ui/overview/audience-browse.png)
-
-I den här vyn visas information om målgrupperna inklusive antal profiler, ursprung, skapad den, senaste ändringsdatum, taggar och uppdelning.
-
-Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/overview/filter-attribute.png). Dessa ytterligare fält innehåller livscykelstatus, uppdateringsfrekvens, senast uppdaterad av, beskrivning, skapad av och åtkomstetiketter.
-
-| Fält | Beskrivning |
-| ----- | ----------- |
-| [!UICONTROL Name] | Namnet på publiken. |
-| [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
-| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
-| [!UICONTROL Created] | Datum och tid, i UTC, då målgruppen skapades. |
-| [!UICONTROL Last updated] | Datum och tid, i UTC, då målgruppen senast uppdaterades. |
-| [!UICONTROL Tags] | De användardefinierade taggar som tillhör målgruppen. Mer information om de här taggarna finns i [avsnitt om taggar](#tags). |
-| [!UICONTROL Breakdown] | Uppdelning av profilstatus för målgruppen. En mer detaljerad beskrivning av den här profilstatusuppdelningen finns nedan. |
-| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
-| [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är `On Demand` (Gruppera), `Scheduled` (direktuppspelning), och `Continuous` (Kant). |
-| [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
-| [!UICONTROL Description] | Beskrivning av målgruppen. |
-| [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
-| [!UICONTROL Access labels] | Åtkomstetiketterna för målgruppen. Med åtkomstetiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Dessa etiketter kan användas när som helst, vilket ger flexibilitet i hur du vill styra data. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
-
-Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör följande beräknade profilstatusar: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] tab är den mest exakta uppdelningen av segmentdefinitionsstatusen. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
-
-| Status | Beskrivning |
-| ------ | ----------- |
-| [!UICONTROL Realized] | Antalet profiler som **kvalificerad** för segmentet de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
-| [!UICONTROL Existing] | Antal profiler som **finns kvar** i segmentet de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
-| [!UICONTROL Exiting] | Antal profiler som **avslutad** segmentet de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
 
 Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet visas en lista med tillgängliga snabbåtgärder för målgruppen. Listan med åtgärder skiljer sig åt beroende på målgruppens ursprung.
 
@@ -110,8 +82,13 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | Använd åtkomstetiketter | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan hantera åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 | Arkiv | Anpassad överföring | Arkiverar den valda målgruppen. |
 | Ta bort | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. |
+| Lägg till i paket | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan flytta publiken mellan sandlådor. Mer information om den här funktionen finns i [verktygshandbok för sandlådor](../../sandboxes/ui/sandbox-tooling.md). |
 
-Överst på sidan finns alternativ för att lägga till alla målgrupper i ett schema, importera en målgrupp och skapa en ny målgrupp.
+>[!NOTE]
+>
+> Du kommer att **not** kan ta bort en målgrupp som används i en målaktivering.
+
+Överst på sidan finns alternativ för att lägga till alla målgrupper i ett schema, importera en målgrupp, skapa en ny målgrupp och visa en uppdelning av uppdateringsfrekvensen.
 
 Växlar **[!UICONTROL Schedule all audiences]** möjliggör schemalagd segmentering. Mer information om schemalagd segmentering finns i [avsnittet med schemalagd segmentering i den här användarhandboken](#scheduled-segmentation).
 
@@ -121,9 +98,45 @@ Markera **[!UICONTROL Create audience]** kan ni skapa en målgrupp. Läs mer om 
 
 ![Det övre navigeringsfältet på målgruppens webbsida är markerat. Det här fältet innehåller en knapp för att skapa en målgrupp och en knapp för att importera en målgrupp.](../images/ui/overview/browse-audiences-top.png)
 
->[!NOTE]
->
-> Du kommer att **not** kan ta bort en målgrupp som används i en målaktivering.
+Du kan välja **[!UICONTROL Update frequency summary]** om du vill visa ett cirkeldiagram som visar uppdateringsfrekvensen.
+
+![Knappen Uppdatera frekvenssammanfattning är markerad.](../images/ui/overview/browse-audience-update-frequency-summary.png)
+
+Cirkeldiagrammet visas med en uppdelning av målgrupperna efter uppdateringsfrekvens. Diagrammet visar det totala antalet målgrupper i mitten. Om du hovrar över de olika delarna av publiken visas antalet målgrupper som tillhör varje uppdateringsfrekvenstyp.
+
+![Diagrammet för uppdateringsfrekvens visas.](../images/ui/overview/update-frequency-chart.png)
+
+### Anpassa {#customize}
+
+Du kan lägga till fler fält i [!UICONTROL Browse] sida genom att markera ![filterattributsikonen](../images/ui/overview/filter-attribute.png). Dessa ytterligare fält innehåller livscykelstatus, uppdateringsfrekvens, senast uppdaterad av, beskrivning, skapad av och åtkomstetiketter.
+
+| Fält | Beskrivning |
+| ----- | ----------- |
+| [!UICONTROL Name] | Namnet på publiken. |
+| [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
+| [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
+| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
+| [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge]och [!UICONTROL Not Scheduled]. |
+| [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
+| [!UICONTROL Created] | Datum och tid, i UTC, då målgruppen skapades. |
+| [!UICONTROL Last updated] | Datum och tid, i UTC, då målgruppen senast uppdaterades. |
+| [!UICONTROL Tags] | De användardefinierade taggar som tillhör målgruppen. Mer information om de här taggarna finns i [avsnitt om taggar](#tags). |
+| [!UICONTROL Description] | Beskrivning av målgruppen. |
+| [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
+| [!UICONTROL Access labels] | Åtkomstetiketterna för målgruppen. Med åtkomstetiketter kan du kategorisera datauppsättningar och fält enligt de användarprofiler som gäller för dessa data. Dessa etiketter kan användas när som helst, vilket ger flexibilitet i hur du vill styra data. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
+| [!UICONTROL Breakdown] | Uppdelning av profilstatus för målgruppen. En mer detaljerad beskrivning av den här profilstatusuppdelningen finns nedan. |
+
+Om nedbrytning är markerat visas ett stolpdiagram som visar procentandelen profiler som tillhör följande beräknade profilstatusar: [!UICONTROL Realized], [!UICONTROL Existing]och [!UICONTROL Exiting]. Dessutom visas uppdelningen på [!UICONTROL Browse] tab är den mest exakta uppdelningen av segmentdefinitionsstatusen. Om det här talet skiljer sig från vad som anges på [!UICONTROL Overview] använder du siffrorna på fliken [!UICONTROL Browse] -fliken som rätt informationskälla, eftersom [!UICONTROL Overview] bara uppdateras en gång om dagen.
+
+| Status | Beskrivning |
+| ------ | ----------- |
+| [!UICONTROL Realized] | Antalet profiler som **kvalificerad** för segmentet de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
+| [!UICONTROL Existing] | Antal profiler som **finns kvar** i segmentet de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
+| [!UICONTROL Exiting] | Antal profiler som **avslutad** segmentet de senaste 24 timmarna sedan det senaste batchsegmentjobbet kördes. |
+
+När du har markerat de fält som du vill visa kan du även ändra storlek på de visade kolumnernas bredd. Du kan antingen göra detta genom att dra området mellan kolumnerna eller genom att markera ![pilikon](../images/ui/overview/arrow-icon.png) i kolumnen som du vill ändra storlek på, följt av **[!UICONTROL Resize column]**.
+
+![Kolumnknappen Ändra storlek är markerad.](../images/ui/overview/browse-audience-resize-column.png)
 
 ### Filtrering, mappar och taggning {#manage-audiences}
 
@@ -387,7 +400,7 @@ Sidan Audience Composition visas med de byggstenar som utgör målgruppen. Mer i
 
 ## Direktuppspelningssegmentering {#streaming-segmentation}
 
-Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Platform] i nära realtid, samtidigt som datamöjligheter fokuseras. Med direktuppspelningssegmentering blir det numera möjligt att kvalificera sig för segmentering när data når [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
+Direktuppspelningssegmentering är möjligheten att segmentera på [!DNL Platform] i nära realtid, samtidigt som datamöjligheter fokuseras. Med direktuppspelningssegmentering blir det numera möjligt att kvalificera sig för segmentering allt eftersom data når [!DNL Platform], vilket minskar behovet av att schemalägga och köra segmenteringsjobb.
 
 Mer information om direktuppspelningssegmentering finns i [användarhandbok för direktuppspelningssegmentering](./streaming-segmentation.md).
 
