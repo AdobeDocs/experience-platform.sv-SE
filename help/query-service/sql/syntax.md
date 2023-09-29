@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: f729c54e490afb954bb627d150e499c98d51a53d
+source-git-commit: 18b8f683726f612a5979ab724067cc9f1bfecbde
 workflow-type: tm+mt
-source-wordcount: '3923'
+source-wordcount: '4006'
 ht-degree: 1%
 
 ---
@@ -262,7 +262,7 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 
 ## SKAPA DATABAS
 
-The `CREATE DATABASE` skapar en ADLS-databas.
+The `CREATE DATABASE` skapar en ADLS-databas (Azure Data Lake Storage).
 
 ```sql
 CREATE DATABASE [IF NOT EXISTS] db_name
@@ -296,7 +296,7 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 
 ## SKAPA VY
 
-Följande syntax definierar en `CREATE VIEW` fråga:
+Följande syntax definierar en `CREATE VIEW` fråga efter en datauppsättning. Den här datauppsättningen kan vara en ADLS- eller accelererad butiksdatauppsättning.
 
 ```sql
 CREATE VIEW view_name AS select_query
@@ -313,6 +313,46 @@ CREATE VIEW view_name AS select_query
 CREATE VIEW V1 AS SELECT color, type FROM Inventory
 
 CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
+```
+
+Följande syntax definierar en `CREATE VIEW` fråga som skapar en vy i samband med en databas och ett schema.
+
+**Exempel**
+
+```sql
+CREATE VIEW db_name.schema_name.view_name AS select_query
+CREATE OR REPLACE VIEW db_name.schema_name.view_name AS select_query
+```
+
+| Parametrar | Beskrivning |
+| ------ | ------ |
+| `db_name` | Namnet på databasen. |
+| `schema_name` | Schemats namn. |
+| `view_name` | Namnet på den vy som ska skapas. |
+| `select_query` | A `SELECT` -programsats. Syntaxen för `SELECT` frågan finns i [SELECT Queries section](#select-queries). |
+
+**Exempel**
+
+```sql
+CREATE VIEW <dbV1 AS SELECT color, type FROM Inventory;
+
+CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory;
+```
+
+## VISA VYER
+
+Följande fråga visar en lista med vyer.
+
+```sql
+SHOW VIEWS;
+```
+
+```console
+ Db Name  | Schema Name | Name  | Id       |  Dataset Dependencies | Views Dependencies | TYPE
+----------------------------------------------------------------------------------------------
+ qsaccel  | profile_agg | view1 | view_id1 | dwh_dataset1          |                    | DWH
+          |             | view2 | view_id2 | adls_dataset          | adls_views         | ADLS
+(2 rows)
 ```
 
 ## DROP VIEW
