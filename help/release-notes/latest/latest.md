@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 2492651fb03e0bfc5c9f68a9b063689a1b9001a3
+source-git-commit: 05136ca1a44fa0ecbf2fd9941d047c3a0899f2d1
 workflow-type: tm+mt
-source-wordcount: '905'
-ht-degree: 3%
+source-wordcount: '1228'
+ht-degree: 2%
 
 ---
 
@@ -21,6 +21,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Larm](#alerts)
 - [Datainsamling](#data-collection)
+- [Mål ](#destinations)
 - [Identitetstjänst](#identity-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -57,6 +58,45 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 {style="table-layout:auto"}
 
 Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya eller uppdaterade destinationer** {#new-updated-destinations}
+
+| Destination | Nytt eller uppdaterat | Beskrivning |
+| ----------- |----------------|----------- |
+| [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | Nytt | [[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser ni behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundservice. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform. |
+| [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Uppdaterat | Stöd för [!DNL Dynamics 365] anpassade fältprefix för anpassade fält som inte skapades i standardlösningen i [!DNL Dynamics 365]. Ett nytt inmatningsfält, **[!UICONTROL Customization Prefix]**, har lagts till i [Fyll i målinformation](#destination-details) steg. |
+
+{style="table-layout:auto"}
+
+<!-- 
+
+
+Add these to release notes as they go out
+
+| [[!DNL Qualtrics]] | New | Use the aggregation of multiple sources of operational data in Adobe Experience Platform as an input in Qualtrics Experience ID to better understand your customers and enable targeted outreach to close the gap when it comes to understanding intent, emotion and experience drivers. | 
+| [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | New | Activate audiences previously onboarded to [!DNL LiveRamp] to premium publishers across mobile, web, display, and connected TV mediums. <br> After onboarding audiences to your [!DNL LiveRamp] account through the [LiveRamp - Onboarding](liveramp-onboarding.md) connection, use the new [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) connection to activate the audiences to downstream destinations.  |
+| [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Updated | The Experience Cloud Audiences destination is now generally available. Use this destination to activate audiences from Real-Time CDP to Audience Manager and Adobe Analytics. You need an Audience Manager license to send audiences to Adobe Analytics. |
+
+-->
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Dataexport i Real-Time CDP | The [datauppsättningsexport](../../destinations/ui/export-datasets.md) är nu allmänt tillgängliga. Se [vilka datauppsättningar du kan exportera baserat på appen Experience Platform](../../destinations/ui/export-datasets.md#datasets-to-export) du köpt och kontrollera [skyddsutkast för export av datauppsättningar](/help/destinations/guardrails.md#dataset-exports). |
+| (Beta) Stöd för export av arraytypobjekt | Exportera matriser med primitiva värden (sträng-, int- eller booleska värden) som platta schemafiler till molnlagringsplatser. Läs mer om funktionerna i [dokumentation](../../destinations/ui/export-arrays-calculated-fields.md). |
+| Dynamiska listruteväljare i Destinationen SDK | När du skapar ett mål via Destination SDK kan du nu använda [dynamiska listruteväljare](../../destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#dynamic-dropdown-selectors) om du vill fylla i fälten i en nedrullningsbar väljare med värden som hämtats från ett API. |
+
+**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
+
+- Använd [transparens](../../dataflows/ui/monitor-destinations.md#dataflow-runs-for-streaming-destinations) nu tillgängligt för företagsdestinationer ([HTTP-API](../../destinations/catalog/streaming/http-destination.md), [Amazon Kinesis](../../destinations/catalog/cloud-storage/amazon-kinesis.md) och [Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md)) på dataflödets körnivå för att övervaka aktiveringsstatistik och status i [detaljvy för dataflöde](../../dataflows/ui/monitor-destinations.md#dataflow-run-details-page), med ytterligare information via felkoder och meddelanden för felsökning.
+- När du uppdaterar namnet på målgrupper mappat till [Google Ad Manager](../../destinations/catalog/advertising/google-ad-manager.md), [Google Display &amp; Video 360](../../destinations/catalog/advertising/google-dv360.md)och andra destinationer som använder [mallar för målgruppsuppdateringar](../../destinations/destination-sdk/metadata-api/update-audience-template.md), återspeglas nu dessa namnändringar längre fram i målfönstret.
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Identitetstjänst {#identity-service}
 
