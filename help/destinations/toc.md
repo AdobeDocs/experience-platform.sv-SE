@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: a34d2823383b2954ebd824a7197b1b64dc80e219
+source-git-commit: 0ef33fda8fab14de1676fc1d8a11029439b967ad
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1164'
 ht-degree: 2%
 
 ---
@@ -57,7 +57,7 @@ ht-degree: 2%
    * [Översikt över målkatalog](./catalog/overview.md)
    * Adobe destinationer{#adobe}
       * [Översikt över destinationer i Adobe](./catalog/adobe/overview.md)
-      * [(Beta) Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
+      * [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
       * [Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
