@@ -4,7 +4,7 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som ger möjlighet att skapa profiler, målgrupper och målpaneler i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: c431973100cc65d99d9466553fe6624ac2653d4b
+source-git-commit: e808af41b0df7603ce6f44464d1e6e883d3f6208
 workflow-type: tm+mt
 source-wordcount: '936'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Du kan använda [!DNL Query Service] för att fråga efter rådatauppsättningar
 
 ![Kontrollpanelen Bläddra bland datauppsättningar med fliken Datauppsättningar markerad i den vänstra navigeringen.](./images/query/browse-datasets.png)
 
-### Systemgenererade datauppsättningar
+### Systemgenererade datauppsättningar {#system-generated-datasets}
 
 >[!IMPORTANT]
 >
@@ -41,7 +41,7 @@ En sidospalt med två växlar visas, [!UICONTROL Included in Profile] och [!UICO
 
 ![Fliken Bläddra bland datauppsättningar med växlingsknappen Visa systemdatauppsättningar markerad.](./images/query/show-system-datasets.png)
 
-### Datauppsättningar för profilattribut
+### Datauppsättningar för profilattribut {#profile-attribute-datasets}
 
 Insikter på profilkontrollpanelen är knutna till sammanslagningsprinciper som har definierats av din organisation. För varje aktiv sammanfogningsprincip finns det en profilattributdatauppsättning tillgänglig i datasjön.
 

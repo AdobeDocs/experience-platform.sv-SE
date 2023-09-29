@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: d0a9ac77346bea585691feee958e8d3b27f3f746
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Filbaserade mål tar emot `.csv` filer som innehåller profiler och/eller attrib
 
 ## Målgrupper för direktuppspelad export {#streaming-destinations}
 
-Målgrupper för målgruppsexport tar emot Experience Platform-målgruppsdata. Dessa mål använder målgrupps-ID:n eller användar-ID:n. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
+Målgrupper för målgruppsexport tar emot Experience Platform-målgruppsdata. Dessa mål använder målgrupps-ID eller användar-ID. Annonsering och sociala medier som [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md), eller [Facebook](catalog/social/facebook.md) är exempel på sådana destinationer.
 
 ## Destinationer för kantanpassning {#edge-personalization-destinations}
 
@@ -69,7 +69,7 @@ I videon nedan beskrivs de två typerna av destinationer:
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
 
-## (Beta) Exportmål för datauppsättning {#dataset-export-destinations}
+## Exportmål för datauppsättning {#dataset-export-destinations}
 
 Vissa molnlagringsmål i målkatalogen stöder datauppsättningsexporter. Använd dessa mål för att exportera rådatauppsättningar till molnlagringsplatser.
 
@@ -97,6 +97,6 @@ Tillägg är användbara när händelsedata används för att utlösa en åtgär
 
 ## Målkategorier {#categories}
 
-Anslutningarna och tilläggen i [målkatalog](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Reklam**, **molnlagring**, **Undersökningsplattformar**, **E-postmarknadsföring**, osv.), beroende på vilka marknadsföringsåtgärder de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka destinationer som ingår i varje kategori, finns i [Dokumentation för målkatalog](./catalog/overview.md).
+Anslutningarna och tilläggen i [målkatalog](https://platform.adobe.com/destination/catalog) grupperas efter målkategori (**Reklam**, **molnlagring**, **Undersökningsplattformar**, **E-postmarknadsföring**, osv.), beroende på vilka marknadsföringsåtgärder de hjälper dig att uppnå. Mer information om var och en av kategorierna, samt vilka destinationer som ingår i varje kategori, finns i [Dokumentation för destinationskatalog](./catalog/overview.md).
 
 ![Målkategorier markerade på katalogsidan.](./assets/destination-types/destination-categories-menu.png)

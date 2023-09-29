@@ -1,26 +1,65 @@
 ---
-title: (Beta) Exportera datauppsättningar till molnlagringsmål
+title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: 85bc1f0af608a7b5510bd0b958122e9db10ee27a
 workflow-type: tm+mt
-source-wordcount: '1366'
+source-wordcount: '1702'
 ht-degree: 0%
 
 ---
 
-# (Beta) Exportera datauppsättningar till molnlagringsmål
+# Exportera datauppsättningar till molnlagringsmål
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->* Funktionen för att exportera datauppsättningar finns för närvarande i Beta och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
->* Den här betafunktionen stöder export av första generationens data, enligt definitionen i Real-time Customer Data Platform [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
+>* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, som [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage] genom att använda användargränssnittet för Experience Platform.
 
 Du kan också använda API:erna för Experience Platform för att exportera datauppsättningar. Läs [API-självstudiekurs för exportdataset](/help/destinations/api/export-datasets.md) för mer information.
+
+## Tillgängliga datauppsättningar för export {#datasets-to-export}
+
+De datauppsättningar som du kan exportera varierar beroende på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), nivån (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
+
+Förstå vilka datamängdstyper du kan exportera beroende på program, produktnivå och eventuella köpta tillägg i tabellen nedan:
+
+<table>
+<thead>
+  <tr>
+    <th>Program/tillägg</th>
+    <th>Nivå</th>
+    <th>Tillgängliga datauppsättningar för export</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="2">Real-Time CDP</td>
+    <td>Prime</td>
+    <td>Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</td>
+  </tr>
+  <tr>
+    <td>Ultimate</td>
+    <td><ul><li>Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager.</li><li> Systemgenererade datauppsättningar som <a href="https://experienceleague.adobe.com/docs/experience-platform/dashboards/query.html?lang=en#profile-attribute-datasets">Profil för ögonblicksbild av datauppsättning</a>.</li></td>
+  </tr>
+  <tr>
+    <td rowspan="2">Adobe Journey Optimizer</td>
+    <td>Prime</td>
+    <td>Se <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=en"> Adobe Journey Optimizer</a> dokumentation. (uppdatera till djuplänk till AJO-tabellen eller -avsnittet för datamängder som stöds)</td>
+  </tr>
+  <tr>
+    <td>Ultimate</td>
+    <td>Se <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=en"> Adobe Journey Optimizer</a> dokumentation. (uppdatera till djuplänk till AJO-tabellen eller -avsnittet för datamängder som stöds)</td>
+  </tr>
+  <tr>
+    <td>Data Distiller</td>
+    <td>Data Distiller (tillägg)</td>
+    <td>Härledda datauppsättningar som skapats med frågetjänsten.</td>
+  </tr>
+</tbody>
+</table>
 
 ## Mål som stöds {#supported-destinations}
 
@@ -40,9 +79,9 @@ För närvarande kan du exportera datauppsättningar till molnlagringsmål som m
 Vissa filbaserade mål i Experience Platform-katalogen stöder både målgruppsaktivering och datauppsättningsexport.
 
 * Överväg att aktivera målgrupper när ni vill att era data ska struktureras i profiler grupperade efter målgruppsintressen eller kvalifikationer.
-* Du kan också överväga att exportera datauppsättningar när du vill exportera rådatauppsättningar, som inte grupperas eller struktureras efter målgruppsintressen eller kvalifikationer. Du kan använda dessa data för rapportering, datavetenskapliga arbetsflöden, för att uppfylla efterlevnadskrav och många andra användningsfall.
+* Du kan också överväga att exportera datauppsättningar när du vill exportera rådatauppsättningar, som inte grupperas eller struktureras efter målgruppsintressen eller kvalifikationer. Du kan använda dessa data för rapportering, datavetenskapliga arbetsflöden och många andra användningsområden. Som administratör, datatekniker eller analytiker kan du till exempel exportera data från Experience Platform för synkronisering med ditt datalager, använda i BI-analysverktyg, externa XML-verktyg i molnet eller lagra i ditt system för långsiktig lagring.
 
-Det här dokumentet innehåller all information som behövs för att exportera datauppsättningar. Om du vill aktivera målgrupper för molnlagring eller e-postmarknadsföring läser du [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md).
+Det här dokumentet innehåller all information som behövs för att exportera datauppsättningar. Om du vill aktivera *målgrupper* till molnlagring eller e-postmarknadsföringsmål, läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinations/ui/activate-batch-profile-destinations.md).
 
 ## Förutsättningar {#prerequisites}
 
@@ -50,7 +89,7 @@ Du måste ha exporterat datauppsättningar till molnlagringsmål [ansluten till 
 
 ### Nödvändiga behörigheter {#permissions}
 
-Om du vill exportera datauppsättningar måste du ha **[!UICONTROL View Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+Om du vill exportera datauppsättningar måste du ha **[!UICONTROL View Destinations]**, **[!UICONTROL View Datasets]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Bläddra i målkatalogen för att kontrollera att du har de behörigheter som krävs för att exportera datauppsättningar och att målet har stöd för att exportera datauppsättningar. Om ett mål har en **[!UICONTROL Activate]** eller en **[!UICONTROL Export datasets]** har du rätt behörighet.
 
@@ -106,7 +145,7 @@ The **[!UICONTROL Export incremental files]** alternativet väljs automatiskt. D
 
 2. Använd **[!UICONTROL Time]** väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
-3. Använd **[!UICONTROL Date]** för att välja intervallet när exporten ska ske. Observera att det inte går att ange ett slutdatum för exporten i betaversionen av funktionen. Mer information finns i [kända begränsningar](#known-limitations) -avsnitt.
+3. Använd **[!UICONTROL Date]** för att välja intervallet när exporten ska ske. Observera att du för närvarande inte kan ange ett slutdatum för exporten. Mer information finns i [kända begränsningar](#known-limitations) -avsnitt.
 
 4. Välj **[!UICONTROL Next]** för att spara schemat och fortsätta till **[!UICONTROL Review]** steg.
 
@@ -169,12 +208,23 @@ Följ stegen nedan för att ta bort en datauppsättning från ett befintligt dat
 
    ![Dialogruta med alternativet Bekräfta borttagning av datauppsättning från dataflödet.](../assets/ui/export-datasets/remove-dataset-confirm.png)
 
+
+## Exportberättiganden för datauppsättning {#licensing-entitlement}
+
+Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har rätt att exportera för varje Experience Platform-program, per år. Du kan till exempel visa produktbeskrivningen för Real-Time CDP [här](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
+
+Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för profilexport det större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur mycket data ni har rätt till.
+
+Om du å andra sidan köper tillägg som Data Distiller, representerar dataexportgränsen som du är berättigad till summan av produktnivån och tillägget.
+
+Du kan visa och spåra din profilexport mot avtalsgränserna på kontrollpanelen för licensiering.
+
 ## Kända begränsningar {#known-limitations}
 
-Tänk på följande begränsningar för betaversionen av datauppsättningsexporter:
+Tänk på följande begränsningar för den allmänna tillgänglighetsreleasen för datauppsättningsexporter:
 
-* Det finns för närvarande en enda behörighet (**[!UICONTROL Manage and Activate Dataset Destinations]**) som inkluderar hantering och aktivering av behörigheter för datauppsättningsmål. Dessa kontroller delas upp i framtiden i mer detaljerade behörigheter. Granska [nödvändiga behörigheter](#permissions) om du vill se en fullständig lista över behörigheter som du behöver för att exportera datauppsättningar.
 * För närvarande kan du bara exportera inkrementella filer och ett slutdatum kan inte väljas för datauppsättningsexporter.
 * De exporterade filnamnen kan för närvarande inte anpassas.
+* Datauppsättningar som skapas via API är för närvarande inte tillgängliga för export.
 * Gränssnittet blockerar för närvarande inte dig från att ta bort en datauppsättning som exporteras till ett mål. Ta inte bort datauppsättningar som exporteras till destinationer. [Ta bort datauppsättningen](#remove-dataset) från ett måldataflöde innan det tas bort.
 * Övervakningsmåtten för datauppsättningsexport är för närvarande blandade med siffrorna för profilexporter, så de återspeglar inte de verkliga exportnumren.

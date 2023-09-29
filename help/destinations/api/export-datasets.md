@@ -1,29 +1,33 @@
 ---
 solution: Experience Platform
-title: (Beta) Exportera datauppsättningar med API:t för Flow Service
+title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 3090b8a8eade564190dc32142c3fc71701007337
+source-git-commit: 28e07c464eb05ba7c20b132d430fccac15d8806e
 workflow-type: tm+mt
-source-wordcount: '3510'
+source-wordcount: '3516'
 ht-degree: 0%
 
 ---
 
-# (Beta) Exportera datauppsättningar med [!DNL Flow Service API]
+# Exportera datauppsättningar med [!DNL Flow Service API]
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->* Funktionen för att exportera datauppsättningar finns för närvarande i Beta och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
->* Den här betafunktionen stöder export av första generationens data, enligt definitionen i Real-time Customer Data Platform [produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html).
->* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime- eller Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
+>* Den här funktionaliteten är tillgänglig för kunder som har köpt Real-Time CDP Prime och Ultimate, Adobe Journey Optimizer eller Customer Journey Analytics. Kontakta din Adobe-representant om du vill ha mer information.
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att använda [!DNL Flow Service API] till export [datauppsättningar](/help/catalog/datasets/overview.md) från Adobe Experience Platform till den molnlagringsplats du föredrar, som [!DNL Amazon S3], SFTP-platser, eller [!DNL Google Cloud Storage].
 
 >[!TIP]
 >
 >Du kan också använda användargränssnittet i Experience Platform för att exportera datauppsättningar. Läs [självstudiekurs om hur du exporterar datauppsättningar](/help/destinations/ui/export-datasets.md) för mer information.
+
+## Tillgängliga datauppsättningar för export {#datasets-to-export}
+
+Vilka datauppsättningar du kan exportera beror på Experience Platform (Real-Time CDP, Adobe Journey Optimizer), nivån (Prime eller Ultimate) och eventuella tillägg som du har köpt (till exempel Data Distiller).
+
+Se [tabell på sidan för självstudiekurser för användargränssnitt](/help/destinations/ui/export-datasets.md#datasets-to-export) för att förstå vilka datauppsättningar du kan exportera.
 
 ## Mål som stöds {#supported-destinations}
 
@@ -495,7 +499,7 @@ Kom ihåg följande:
 
 ![Diagram som visar steg 3 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-create-base-connection.png)
 
-En basanslutning lagrar autentiseringsuppgifterna på ditt mål på ett säkert sätt. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta dessa autentiseringsparametrar måste du först hämta [!DNL connection spec] för det önskade målet enligt beskrivningen i avsnittet [Samla anslutningsspecifikationer och flödesspecifikationer](#gather-connection-spec-flow-spec) och sedan titta på `authSpec` av svaret. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
+En basanslutning lagrar autentiseringsuppgifterna på ditt mål på ett säkert sätt. Beroende på måltypen kan de autentiseringsuppgifter som krävs för att autentisera mot det målet variera. Om du vill hitta de här autentiseringsparametrarna hämtar du först [!DNL connection spec] för det önskade målet enligt beskrivningen i avsnittet [Samla anslutningsspecifikationer och flödesspecifikationer](#gather-connection-spec-flow-spec) och sedan titta på `authSpec` av svaret. Se flikarna nedan för `authSpec` egenskaper för alla mål som stöds.
 
 >[!BEGINTABS]
 
@@ -1142,7 +1146,7 @@ Observera anslutnings-ID från svaret. Detta ID krävs i nästa steg när du ska
 
 ## Skapa en målanslutning {#create-target-connection}
 
-![Diagram som visar steg 4 i arbetsflödet för exportdatamängder](../assets/api/export-datasets/export-datasets-api-workflow-create-target-connection.png)
+![Diagram som visar steg 4 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-create-target-connection.png)
 
 Därefter måste du skapa en målanslutning som lagrar exportparametrarna för datauppsättningarna. Exportparametrar omfattar plats, filformat, komprimering och annan information. Se `targetSpec` egenskaper som anges i målets anslutningsspecifikation för att förstå vilka egenskaper som stöds för varje måltyp. Se flikarna nedan för `targetSpec` egenskaper för alla mål som stöds.
 
@@ -1609,7 +1613,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Amazon S3 Beta Target Connection",
+    "name": "Amazon S3 Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_TARGET_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -1663,7 +1667,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --data-raw '{
-    "name": "Azure Blob Storage Beta Target Connection",
+    "name": "Azure Blob Storage Target Connection",
     "baseConnectionId": "<FROM_STEP_CREATE_TARGET_BASE_CONNECTION>",
     "params": {
         "mode": "Server-to-server",
@@ -2340,7 +2344,7 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
 
 ## Nästa steg {#next-steps}
 
