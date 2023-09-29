@@ -1,9 +1,9 @@
 ---
 title: Engagera och värva nya kunder genom användningsfall för prospektering
 description: Lär dig hur ni engagerar och förvärvar nya kunder genom användningsfall för prospektering som möjliggörs av partnerdatastödet i Real-Time CDP.
-source-git-commit: 5352b461be3684ac4fe1703c916b9ec59bd14af1
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '1906'
 ht-degree: 2%
 
 ---
@@ -40,6 +40,12 @@ Innan du utökar Real-Time CDP för att engagera och värva nya kunder måste du
 4. Som en **kund** bygger ni fokuserade målgrupper från listan med profiler för potentiella kunder.
 5. Som en **kund** aktiverar ni potentiella kunder till målgrupper som accepterar de identiteter som finns i er lista över potentiella kunder.
 6. Arbeta med **datapartner** för aktivering av målgrupper på sista milen till önskade betalmediematerial.
+
+## Videogenomgång {#video-walkthrough}
+
+Se videosjälvstudiekursen nedan för en genomgång av hur ni kan nå och engagera potentiella målgrupper:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3423071/?learn=on)
 
 ## Så här uppnår du användningsfallet: stegvisa instruktioner {#step-by-step-instructions}
 

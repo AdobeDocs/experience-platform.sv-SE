@@ -1,14 +1,14 @@
 ---
 title: Använd partnerstödd besöksidentifiering för att personalisera upplevelser på plats
-description: Lär dig hur du använder partnerstödd besöksigenkänning för att leverera personaliserade upplevelser på plats till besökarna.
-source-git-commit: 9d7e8ef99a42e804896f5c9befcf98bb1c010606
+description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '2424'
-ht-degree: 0%
+source-wordcount: '2442'
+ht-degree: 1%
 
 ---
 
-# Använd partnerstödd besöksigenkänning för att personalisera upplevelser på plats
+# Använd partnerstödd igenkänning av besökare för att personalisera upplevelser på plats
 
 >[!AVAILABILITY]
 >
@@ -49,6 +49,12 @@ För att implementera det här användningsexemplet måste du använda flera oli
    * [Kantsegmentering](/help/segmentation/ui/edge-segmentation.md)
    * [Edge Personalization-mål](/help/destinations/destination-types.md#edge-personalization-destinations)
    * [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) (eller en valfri personaliseringsplattform. Den här självstudiekursen om hur du använder Adobe Target som personaliseringsmotor)
+
+## Videogenomgång {#video-walkthrough}
+
+Se videosjälvstudiekursen nedan för en genomgång av hur ni personaliserar webbplatsupplevelser för okända besökare:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3423076/?learn=on)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 

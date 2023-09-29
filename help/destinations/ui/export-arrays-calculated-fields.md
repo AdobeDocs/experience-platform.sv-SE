@@ -3,9 +3,9 @@ title: (Beta) Använd beräkningsfält för att exportera arrayer i platta schem
 type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer i platta schemafiler från Real-Time CDP till molnlagringsmål.
 badge: "Beta"
-source-git-commit: 77fd0ace252bae66478f73a1dc4b7d4a3ccb867d
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '1198'
+source-wordcount: '1269'
 ht-degree: 0%
 
 ---
@@ -124,6 +124,19 @@ I det här fallet ser utdatafilen ut så här nedan. Observera hur arrayens tre 
 John,Doe,"Marketing_Sales_Finance"
 ```
 
+### `iif` funktion för att exportera arrayer {#iif-function-export-arrays}
+
+Använd `iif` -funktion för att exportera element i en array under vissa villkor. Du kan till exempel fortsätta med `organzations` arrayobjekt ovan kan du skriva en enkel villkorsstyrd funktion som `iif(organizations[0].equals("Marketing"), "isMarketing", "isNotMarketing")`.
+
+![Skärmavbildning för den första och sista funktionen](/help/destinations/assets/ui/export-arrays-calculated-fields/mapping-iif-function.png)
+
+I det här fallet ser utdatafilen ut så här nedan. I det här fallet är det första elementet i matrisen Marketing, så personen är medlem i marknadsföringsavdelningen.
+
+```
+`First_Name,Last_Name, Personal_Email, Is_Member_Of_Marketing_Dept
+John,Doe, johndoe@acme.org, "isMarketing"
+```
+
 ### `coalesce` funktion för att exportera arrayer {#coalesce-function-export-arrays}
 
 Använd `coalesce` -funktion för att komma åt och exportera det första icke-null-elementet i en array till en sträng.
@@ -188,14 +201,6 @@ I det här fallet ser utdatafilen ut så här:
 `Personal_Email,First_Purchase, Last_Purchase
 johndoe@acme.org,"1538097126","1664327526"
 ```
-
-<!--
-
-### `iif` function to export arrays {#iif-function-export-arrays}
-
-Here are some examples of how you could use the `iif` function to access and export arrays and other fields: (STILL TO DO)
-
--->
 
 ### `md5` och `sha256` hash-funktioner {#hashing-functions}
 

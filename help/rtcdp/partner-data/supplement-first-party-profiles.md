@@ -1,10 +1,10 @@
 ---
 title: Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
 description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
-source-git-commit: 9dd305be4dcb45c290a2b8ee0476191949369adc
+source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
 workflow-type: tm+mt
-source-wordcount: '1083'
-ht-degree: 0%
+source-wordcount: '1102'
+ht-degree: 3%
 
 ---
 
@@ -30,6 +30,12 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 >[!WARNING]
 >
 >De ytterligare attribut som partnern lägger in i Real-Time CDP påverkar *genomsnittlig profilrikedom*. Läs [Real-time Customer Data Platform produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) om du vill ha mer information om profilrikedom.
+
+## Videogenomgång {#video-walkthrough}
+
+I videosjälvstudiekursen nedan får du en genomgång av hur du kan komplettera förstahandsmålgrupper med attribut från partners:
+
+>[!VIDEO](https://video.tv.adobe.com/v/3423075/?learn=on)
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 
