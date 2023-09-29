@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Lär dig hur Experience Platform kan leverera personanpassade upplevelser till dina kunder i realtid.
-source-git-commit: 65abbb4dde5b83f597a3a5bfd96ce7c081c88275
+source-git-commit: 73f10455233be9cc3f9f15a0fe5f0398ed987be9
 workflow-type: tm+mt
-source-wordcount: '260'
-ht-degree: 18%
+source-wordcount: '281'
+ht-degree: 17%
 
 ---
 
@@ -66,7 +66,11 @@ ht-degree: 18%
          * [Händelser](./governance-privacy-security/audit-logs/api/events.md)
          * [Exportera](./governance-privacy-security/audit-logs/api/export.md)
    * [Datakryptering](./governance-privacy-security/encryption.md)
-   * [Kundhanterade nycklar](./governance-privacy-security/customer-managed-keys.md)
+   * Kundhanterade nycklar {#customer-managed-keys}
+      * [Kundhanterade nycklar](./governance-privacy-security/customer-managed-keys/overview.md)
+      * [Konfigurera ett Azure Key Vault](./governance-privacy-security/customer-managed-keys/azure-key-vault-config.md)
+      * [Använd API:t för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/api-set-up.md)
+      * [Använd användargränssnittet för att konfigurera CMK](./governance-privacy-security/customer-managed-keys/ui-set-up.md)
 * Licensanvändning och skyddsräcken {#license}
    * [Bästa praxis för tillstånd till datahantering](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)

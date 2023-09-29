@@ -2,7 +2,7 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: c3ce6548e18078e604ecd5db276eb162935f6181
+source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
 workflow-type: tm+mt
 source-wordcount: '3121'
 ht-degree: 0%
@@ -137,7 +137,7 @@ Kryptering är användning av en algoritmisk process för att omvandla data till
 
 Med datakompatibiliteten för frågetjänsten säkerställs att data alltid krypteras. Data-in-Transition är alltid HTTPS-kompatibel och data-i-rest krypteras i ett Azure Data Lake-arkiv med hjälp av nycklar på systemnivå. Läs dokumentationen om [hur data krypteras i Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md) för mer information. Mer information om hur vilande data krypteras i Azure Data Lake Storage finns i [officiell Azure-dokumentation](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
 
-Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Se [kundhanterade nycklar (CMK) - dokumentation](../../landing/governance-privacy-security/customer-managed-keys.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
+Data-in-Transition är alltid HTTPS-kompatibel och på liknande sätt när data ligger i viloläge sker krypteringen med kundhanteringsnyckeln (CMK), som redan stöds av Data Lake Management. Den version som stöds för närvarande är TLS1.2. Se [kundhanterade nycklar (CMK) - dokumentation](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill veta hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 
 
 ## Granskning {#audit}

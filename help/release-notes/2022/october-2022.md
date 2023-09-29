@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: e1deeadb98240f885e9dc95ecbc58ae48049a190
+source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
 workflow-type: tm+mt
 source-wordcount: '1146'
 ht-degree: 1%
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 Alla data som lagras på Adobe Experience Platform krypteras i viloläge med hjälp av nycklar på systemnivå. Om du använder ett program som är byggt på plattformen kan du nu välja att använda dina egna krypteringsnycklar istället, vilket ger dig större kontroll över datasäkerheten.
 
-Se översikten på [kundhanterade nycklar](../../landing/governance-privacy-security/customer-managed-keys.md) om du vill ha mer information om funktionen.
+Se översikten på [kundhanterade nycklar](../../landing/governance-privacy-security/customer-managed-keys/overview.md) om du vill ha mer information om funktionen.
 
 ## Datainsamling {#data-collection}
 
