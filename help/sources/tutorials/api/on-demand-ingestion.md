@@ -1,20 +1,16 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;flödestjänst;
-title: (Beta) Skapa en flödeskörning för behovsstyrd inmatning med API:t för flödestjänsten
-description: I den här självstudiekursen beskrivs stegen för att skapa ett flöde för on-demand-inmatning med API:t för Flow Service
+title: Skapa en flödeskörning för behovsstyrd matning med API:t för flödestjänsten
+description: Lär dig hur du skapar en flödeskörning för on-demand-inmatning med API:t för Flow Service
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 795b1af6421c713f580829588f954856e0a88277
+source-git-commit: cea12160656ba0724789db03e62213022bacd645
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '801'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa en flödeskörning för on-demand-förtäring med [!DNL Flow Service] API
-
->[!IMPORTANT]
->
->Intag på begäran finns för närvarande i betaversionen och din organisation har kanske inte tillgång till den än. Funktionerna som beskrivs i den här dokumentationen kan komma att ändras.
+# Skapa en flödeskörning för on-demand-inmatning med [!DNL Flow Service] API
 
 Flödeskörningar representerar en instans av flödeskörning. Om ett flöde till exempel är schemalagt att köras varje timme kl. 9.00, 10.00 och 11.00 har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
 
@@ -26,7 +22,7 @@ I den här självstudiekursen beskrivs hur du använder on-demand-inmatning och 
 
 >[!NOTE]
 >
->För att kunna skapa en flödeskörning måste du först ha flödes-ID:t för ett dataflöde som är schemalagt för engångsintag.
+>För att kunna skapa en flödeskörning måste du först ha flödes-ID:t för ett dataflöde som är schemalagt för engångsinmatning.
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -43,7 +39,7 @@ Om du vill skapa ett flöde för en tabellbaserad källa skickar du en POST till
 
 >[!TIP]
 >
->Tabellbaserade källor innehåller följande källkategorier: annonsering, analys, samtycke och preferenser, CRM, kundframgångar, databas, automatiserad marknadsföring, betalningar och protokoll.
+>Tabellbaserade källor omfattar följande källkategorier: annonsering, analys, samtycke och preferenser, CRM, kundframgångar, databas, automatiserad marknadsföring, betalningar och protokoll.
 
 **API-format**
 
@@ -57,7 +53,7 @@ Följande begäran skapar en flödeskörning för flödes-ID `3abea21c-7e36-4be1
 
 >[!NOTE]
 >
->Du behöver bara ange `deltaColumn` när du skapar din första flödeskörning. Efter det `deltaColumn` kommer att korrigeras som en del av `copy` förändringen i flödet och kommer att behandlas som källan till sanning. Eventuella försök att ändra `deltaColumn` värdet via flödeskörningsparametrarna resulterar i ett fel.
+>Du behöver bara ange `deltaColumn` när du skapar ditt första flöde. Efter det har `deltaColumn` kommer att korrigeras som en del av `copy` förändringen i flödet och kommer att behandlas som källan till sanning. Eventuella försök att ändra `deltaColumn` värdet via flödeskörningsparametrarna resulterar i ett fel.
 
 ```shell
 curl -X POST \
@@ -83,10 +79,10 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `flowId` | ID:t för det flöde som flödeskörningen ska skapas mot. |
-| `params.startTime` | Ett heltal som definierar körningens starttid. Värdet representeras i Unix Epooch-tid. |
-| `params.windowStartTime` | Ett heltal som definierar starttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.windowEndTime` | Ett heltal som definierar sluttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.deltaColumn` | Deltakolumnen krävs för att partitionera data och separera nyimporterade data från historiska data. **Anteckning**: The `deltaColumn` behövs bara när du skapar ditt första flöde. |
+| `params.startTime` | Den schemalagda tiden då flödeskörningen på begäran börjar. Detta värde representeras i unix-tid. |
+| `params.windowStartTime` | Det tidigaste datum och den tidigaste tid som data hämtas från. Detta värde representeras i unix-tid. |
+| `params.windowEndTime` | Datum och tid då data hämtas fram till. Detta värde representeras i unix-tid. |
+| `params.deltaColumn` | Deltakolumnen krävs för att partitionera data och separera nyimporterade data från historiska data. **Anteckning**: `deltaColumn` behövs bara när du skapar ditt första flöde. |
 | `params.deltaColumn.name` | Namnet på deltakolumnen. |
 
 **Svar**
@@ -106,7 +102,7 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | ID för den nyligen skapade flödeskörningen. Se guiden [hämta flödesspecifikationer](../api/collect/database-nosql.md#specs) för mer information om tabellbaserade körningsspecifikationer. |
+| `id` | ID för den nyligen skapade flödeskörningen. Se guiden på [hämta flödesspecifikationer](../api/collect/database-nosql.md#specs) för mer information om tabellbaserade körningsspecifikationer. |
 | `etag` | Resursversionen av flödeskörningen. |
 <!-- 
 | `createdAt` | The unix timestamp that designates when the flow run was created. |
@@ -165,9 +161,9 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `flowId` | ID:t för det flöde som flödeskörningen ska skapas mot. |
-| `params.startTime` | Ett heltal som definierar körningens starttid. Värdet representeras i Unix Epooch-tid. |
-| `params.windowStartTime` | Ett heltal som definierar starttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
-| `params.windowEndTime` | Ett heltal som definierar sluttiden för det fönster där data ska hämtas. Värdet representeras i unix-tid. |
+| `params.startTime` | Den schemalagda tiden då flödeskörningen på begäran börjar. Detta värde representeras i unix-tid. |
+| `params.windowStartTime` | Det tidigaste datum och den tidigaste tid som data hämtas från. Detta värde representeras i unix-tid. |
+| `params.windowEndTime` | Datum och tid då data hämtas fram till. Detta värde representeras i unix-tid. |
 
 **Svar**
 
@@ -187,9 +183,9 @@ Ett lyckat svar returnerar information om den nyligen skapade flödeskörningen,
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `id` | ID för den nyligen skapade flödeskörningen. Se guiden [hämta flödesspecifikationer](../api/collect/database-nosql.md#specs) för mer information om tabellbaserade körningsspecifikationer. |
+| `id` | ID för den nyligen skapade flödeskörningen. Se guiden på [hämta flödesspecifikationer](../api/collect/database-nosql.md#specs) för mer information om tabellbaserade körningsspecifikationer. |
 | `etag` | Resursversionen av flödeskörningen. |
 
 ## Övervaka flödeskörningar
 
-När flödeskörningen har skapats kan du övervaka de data som importeras genom den för att se information om flödeskörningar, slutförandestatus och fel. Om du vill övervaka ditt flöde med API kan du se självstudiekursen om [övervaka dataflöden i API ](./monitor.md). Om du vill övervaka ditt flöde med hjälp av plattformsgränssnittet läser du i handboken på [övervaka källfilsflöden med kontrollpanelen](../../../dataflows/ui/monitor-sources.md).
+När flödeskörningen har skapats kan du övervaka de data som importeras genom den för att se information om flödeskörningar, slutförandestatus och fel. Om du vill övervaka ditt flöde med API kan du se självstudiekursen om [övervaka dataflöden i API:t](./monitor.md). Om du vill övervaka ditt flöde med hjälp av plattformsgränssnittet läser du i handboken på [övervaka källfilsflöden med kontrollpanelen](../../../dataflows/ui/monitor-sources.md).

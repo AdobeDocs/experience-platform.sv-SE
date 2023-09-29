@@ -1,9 +1,9 @@
 ---
 title: Inmatning on demand för källdataflöden i användargränssnittet
 description: Lär dig hur du skapar dataflöden on demand för dina källanslutningar med användargränssnittet i Experience Platform.
-source-git-commit: ce1e6c08d1e53346c11f9746cea524689f402031
+source-git-commit: cea12160656ba0724789db03e62213022bacd645
 workflow-type: tm+mt
-source-wordcount: '475'
+source-wordcount: '471'
 ht-degree: 1%
 
 ---
@@ -44,9 +44,9 @@ Konfigurera schemat för on demand-intaget. Välj **[!UICONTROL Ingestion start 
 
 | Schemaläggningskonfiguration | Beskrivning |
 | --- | --- |
-| [!UICONTROL Ingestion start time] | Den schemalagda starttiden i UTC för när dataflödet på begäran startar. |
-| [!UICONTROL Date range start time] | Startdatum och starttid från vilket data hämtas. |
-| [!UICONTROL Date range end time] | Slutdatum och sluttid från vilket data hämtas fram till. |
+| [!UICONTROL Ingestion start time] | Den schemalagda tiden då flödeskörningen på begäran börjar. |
+| [!UICONTROL Date range start time] | Det tidigaste datum och den tidigaste tid som data hämtas från. |
+| [!UICONTROL Date range end time] | Datum och tid då data hämtas fram till. |
 
 Välj **[!UICONTROL Schedule]** och ge ett par minuter så att dataflödet kan utlösas när det behövs.
 
