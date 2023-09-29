@@ -1,11 +1,11 @@
 ---
-title: (Beta) Använd beräkningsfält för att exportera arrayer i platta filer
+title: (Beta) Använd beräkningsfält för att exportera arrayer i platta schemafiler
 type: Tutorial
-description: Lär dig hur du exporterar arrayer och beräknade fält från Real-Time CDP till batchprofilbaserade mål.
+description: Lär dig hur du använder beräkningsfält för att exportera arrayer i platta schemafiler från Real-Time CDP till molnlagringsmål.
 badge: "Beta"
-source-git-commit: 79924b9a7d5114c94a004f99fb194102845b2127
+source-git-commit: 77fd0ace252bae66478f73a1dc4b7d4a3ccb867d
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1198'
 ht-degree: 0%
 
 ---
@@ -17,15 +17,8 @@ ht-degree: 0%
 >id="platform_destinations_export_arrays_flat_files"
 >title="(Beta) Stöd för exportarrayer"
 >abstract="Exportera enkla matriser med int-, string- eller booleska värden från Experience Platform till önskat molnlagringsmål. Vissa begränsningar gäller. I dokumentationen finns omfattande exempel och funktioner som stöds."
-
-<!--
-
-additional links for contextualhelp:
-
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="Examples"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="Known limitations"
-
--->
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="Exempel"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="Kända begränsningar"
 
 >[!AVAILABILITY]
 >

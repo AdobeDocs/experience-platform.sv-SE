@@ -4,9 +4,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1107'
 ht-degree: 0%
 
 ---
@@ -15,8 +15,8 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 > 
->* Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
->* Om du vill ansluta till ett mål som stöder datauppsättningsexport måste du ha **[!UICONTROL Manage and Activate Dataset Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* Om du vill ansluta till ett mål som stöder datauppsättningsexport måste du ha **[!UICONTROL Manage and Activate Dataset Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 ## Översikt {#overview}
 
@@ -36,7 +36,7 @@ Innan du kan skicka målgruppsdata till ett mål måste du skapa en anslutning t
 
    Mer information om skillnaden mellan dessa kontroller finns i [Katalog](../ui/destinations-workspace.md#catalog) i dokumentationen för målarbetsytan.
 
-   Välj antingen **[!UICONTROL Set up]**, **[!UICONTROL Activate]**, eller **[!UICONTROL Activate audiences]**, beroende på vilken kontroll som är tillgänglig för dig.
+   Välj antingen **[!UICONTROL Set up]**, **[!UICONTROL Activate]**, eller **[!UICONTROL Activate audiences]**, beroende på vilken kontroll som är tillgänglig.
 
    ![Skärmbild av användargränssnittet i Experience Platform som visar målkatalogsidan med kontrollen Konfigurera markerad.](../assets/ui/connect-destinations/set-up.png)
 
@@ -78,17 +78,21 @@ Beroende på vilket mål du ansluter till kan du behöva ange olika typer av ans
 
 ![Bild som visar obligatoriska och valfria indataparametrar vid anslutning till en Trade Desk-destination.](../assets/ui/connect-destinations/connect-destination-trade-desk-example.png)
 
-### (Beta) Ställa in filformateringsalternativ för exporterade filer {#file-formatting-and-compression-options}
+### Ange formateringsalternativ för exporterade filer {#file-formatting-and-compression-options}
 
 För filbaserade mål kan du konfigurera olika inställningar för hur de exporterade filerna formateras och komprimeras. Mer information om alla tillgängliga formaterings- och komprimeringsalternativ finns i [Konfigurera filformateringsalternativ för filbaserade mål, genomgång](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ![Bild som visar filtypsvalet och olika alternativ för CSV-filer.](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
 
-### Ställ in målanslutning för målgruppsaktivering eller datauppsättningsexport {#segment-activation-or-dataset-exports}
+### Ställ in målanslutning för målgruppsaktivering, potentiell kundaktivering eller datauppsättningsexport {#segment-activation-or-dataset-exports}
 
-Vissa filbaserade mål stöder målgruppsaktivering och datauppsättningsexport. För dessa mål kan du välja om du vill skapa en anslutning som gör att du kan aktivera målgrupper eller exportera datauppsättningar.
+Vissa filbaserade mål stöder målgruppsaktivering för kända kunder eller potentiella kunder, liksom export av datauppsättningar. För dessa mål kan du välja om du vill skapa en anslutning som gör att du kan [aktivera målgrupper](/help/destinations/ui/activate-batch-profile-destinations.md), [prospects](/help/destinations/ui/activate-prospect-audiences.md), eller [exportera datamängder](/help/destinations/ui/export-datasets.md).
 
-![Bild som visar kontrollen för val av datatyp, som gör att användarna kan välja mellan målgruppsaktivering och datauppsättningsexport.](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
+>[!WARNING]
+>
+>När du exporterar datauppsättningar bör du tänka på att export till JSON-filer endast stöds i komprimerat läge. Exporterar till [!DNL Parquet] filer stöds i komprimerat och okomprimerat läge.
+
+![Bild som visar kontrollen för val av datatyp, som gör det möjligt för användare att välja mellan målgruppsaktivering och datauppsättningsexport.](/help/destinations/assets/ui/connect-destinations/data-type-selection.png)
 
 ### Aktivera destinationsaviseringar {#enable-alerts}
 
@@ -110,6 +114,6 @@ Vissa filbaserade mål stöder målgruppsaktivering och datauppsättningsexport.
 
 ## Nästa steg {#next-steps}
 
-Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet i Experience Platform för att upprätta en anslutning till ett mål. Som en påminnelse varierar de tillgängliga och obligatoriska anslutningsparametrarna från mål till mål. Du bör även läsa måldokumentationssidan i [målkatalog](/help/destinations/catalog/overview.md) för specifik information om nödvändiga indata och tillgängliga alternativ per måltyp.
+Genom att läsa det här dokumentet har du lärt dig hur du använder användargränssnittet i Experience Platform för att upprätta en anslutning till ett mål. Som en påminnelse varierar de tillgängliga och obligatoriska anslutningsparametrarna från mål till mål. Du bör även läsa sidan med måldokumentationen i [målkatalog](/help/destinations/catalog/overview.md) för specifik information om nödvändiga indata och tillgängliga alternativ per måltyp.
 
 Sedan kan du fortsätta till [aktivera målgrupper](/help/destinations/ui/activation-overview.md) eller [exportera datauppsättningar](/help/destinations/ui/export-datasets.md) till destinationen.

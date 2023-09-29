@@ -4,9 +4,9 @@ title: Exportera datauppsättningar med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera datauppsättningar till utvalda mål.
 type: Tutorial
 exl-id: f23a4b22-da04-4b3c-9b0c-790890077eaa
-source-git-commit: 28e07c464eb05ba7c20b132d430fccac15d8806e
+source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
 workflow-type: tm+mt
-source-wordcount: '3516'
+source-wordcount: '3538'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ I följande avsnitt finns ytterligare information som du måste känna till för
 
 ### Nödvändiga behörigheter {#permissions}
 
-Om du vill exportera datauppsättningar måste du ha **[!UICONTROL View Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+Om du vill exportera datauppsättningar måste du ha **[!UICONTROL View Destinations]**, **[!UICONTROL View Datasets]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Bläddra i målkatalogen för att kontrollera att du har de behörigheter som krävs för att exportera datauppsättningar och att målet har stöd för att exportera datauppsättningar. Om ett mål har en **[!UICONTROL Activate]** eller en **[!UICONTROL Export datasets]** har du rätt behörighet.
 
@@ -1149,6 +1149,10 @@ Observera anslutnings-ID från svaret. Detta ID krävs i nästa steg när du ska
 ![Diagram som visar steg 4 i arbetsflödet för exportdataset](../assets/api/export-datasets/export-datasets-api-workflow-create-target-connection.png)
 
 Därefter måste du skapa en målanslutning som lagrar exportparametrarna för datauppsättningarna. Exportparametrar omfattar plats, filformat, komprimering och annan information. Se `targetSpec` egenskaper som anges i målets anslutningsspecifikation för att förstå vilka egenskaper som stöds för varje måltyp. Se flikarna nedan för `targetSpec` egenskaper för alla mål som stöds.
+
+>[!WARNING]
+>
+>Export till JSON-filer stöds endast i komprimerat läge. Exporterar till [!DNL Parquet] filer stöds i komprimerat och okomprimerat läge.
 
 >[!BEGINTABS]
 
