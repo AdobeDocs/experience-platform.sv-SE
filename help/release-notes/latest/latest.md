@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c57845ab2bd9ce16fb34b6babfa90a393b101409
+source-git-commit: b20e5e52b9d7568f4e20b94064819d0bebe4c236
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '2143'
 ht-degree: 2%
 
 ---
@@ -20,9 +20,14 @@ Nya funktioner i Adobe Experience Platform:
 Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Larm](#alerts)
+- [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
+- [Datastyrning](#data-governance)
+- [Datahygien](#hygiene)
 - [Mål ](#destinations)
+- [Experience Data Model (XDM)](#xdm)
 - [Identitetstjänst](#identity-service)
+- [Frågetjänst](#query-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
@@ -44,6 +49,18 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 
 Läs mer om varningar i [[!DNL Observability Insights] översikt](../../observability/home.md).
 
+## Kontrollpaneler {#dashboards}
+
+Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilken du kan visa viktig information om organisationens data, som den har hämtats in under dagliga ögonblicksbilder.
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [Förbättring av kontrollpanelen för licensanvändning](../../dashboards/guides/license-usage.md) | Behåll kontrollen över era licensavtal med förbättrad rapportering och viktiga mätvärden för organisationens licensanvändning. Dessa förbättringar ger en hög detaljrikedom i förhållande till era användningsvärden för licenser för alla Experience Platform-produkter ni har köpt. |
+
+{style="table-layout:auto"}
+
+Mer information om kontrollpanelen för licensanvändning finns i [översikt över kontrollpanelen för licensanvändning](../../dashboards/guides/destinations.md).
+
 ## Datainsamling {#data-collection}
 
 Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
@@ -58,6 +75,35 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 {style="table-layout:auto"}
 
 Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
+
+## Datastyrning {#data-governance}
+
+Adobe Experience Platform Data Governance är en serie strategier och tekniker som används för att hantera kunddata och säkerställa att regler, begränsningar och policyer som gäller för dataanvändning följs. Det spelar en nyckelroll på olika nivåer inom Experience Platform, bland annat för katalogisering, datalinje, märkning av dataanvändning, dataåtkomstregler och åtkomstkontroll av data för marknadsföringsåtgärder.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Nya etiketter för ekosystem för partners för data från tredje part | Det finns nya etiketter för dataanvändning för anrikning och prospektering från tredje part. Se [dokumentation om etiketter på ekosystem för partners](../../data-governance/labels/reference.md#partner) för mer information. |
+
+{style="table-layout:auto"}
+
+Läs mer om datastyrning i [datastyrningsöversikt](../../data-governance/home.md).
+
+## Datahygien {#hygiene}
+
+Experience Platform har en rad funktioner för datahygien som gör att du kan hantera lagrade data genom att programmatiskt ta bort konsumentposter och datauppsättningar. Använda antingen [!UICONTROL Data Lifecycle] -arbetsytan i användargränssnittet eller genom anrop till API:t Data Hygiene kan du effektivt hantera dina datalager. Använd dessa funktioner för att säkerställa att informationen används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [!BADGE Beta]{type=Informative} | Hantera datalivscykeln i alla datalager för att uppfylla kundernas åtaganden och licensavtal med avancerade funktioner för livscykelhantering i Adobe Experience Platform: Automatiserad datamängdsförfallotid och borttagning av post.<br>Med ett automatiskt utgångsdatum kan du ta bort hela datauppsättningar och ange ett datum och en tidpunkt då datauppsättningen ska tas bort.<br>Med Ta bort post kan du ta bort enskilda konsumentprofiler genom att ange deras primära identiteter som mål. Du kan ange de primära identiteterna individuellt via användargränssnittet eller via CSV/JSON-filöverföring. Se [Dokumentation om borttagning av post](../../hygiene/ui/record-delete.md) för mer information |
+| Utgångsdatum för datauppsättning | Minimera era era data och ha full kontroll över era licensavtal med Automated Dataset Expiration. Minska datavolymer genom att ta bort hela datauppsättningar och ange datum och tid för när datauppsättningen ska tas bort. Se [dokumentation om förfallodatum för datauppsättning](../../hygiene/ui/dataset-expiration.md) för mer information. |
+
+{style="table-layout:auto"}
+
+Mer information om plattformens datahygien finns i [datahygienöversikt](../../hygiene/home.md).
 
 ## Mål  {#destinations}
 
@@ -98,6 +144,23 @@ Add these to release notes as they go out
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
+## Experience Data Model (XDM) {#xdm}
+
+XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+
+**Nya funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Snabbåtgärder som lagts till i schemaredigeraren | Nya snabbåtgärder har lagts till på arbetsytan i Schemaredigeraren. Nu kan du kopiera JSON-strukturen eller ta bort schemat direkt från redigeraren.<br>![Snabbåtgärderna i schemaredigeraren.](../2023/assets/schema-editor-copy-json.png "Schemaredigeraren med Mer och Kopiera till JSON är markerade."){width="100" zoomable="yes"} |
+| Filtrera XDM-resurser efter anpassad eller standardskapare | Listorna med tillgängliga scheman, fältgrupper, datatyper och klasser är nu förfiltrerade baserat på den metod som används för att skapa dem. På så sätt kan du filtrera resurser baserat på om de har skapats eller byggts av Adobe.<br>![Standardfilter och anpassade filter på arbetsytan Scheman.](../2023/assets/standard-and-custom-classes.png "Arbetsytan Scheman med standardfilter och anpassade filter markerade."){width="100" zoomable="yes"} <br> Se [skapa och redigera resursdokumentation](../../xdm/ui/resources/classes.md#filter.md) för mer information. |
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Uppdaterat arbetsflöde för att skapa schema | Ett nytt arbetsflöde för att skapa scheman har implementerats för att effektivisera processen. <br> ![Det nya gränssnittet för att skapa scheman.](../2023/assets/schema-class-options.png "Väljaren för ny schemainformation har markerats."){width="100" zoomable="yes"} <br> Se [dokumentation för att skapa scheman](../../xdm/ui/resources/schemas.md#create) för mer information. |
+
 ## Identitetstjänst {#identity-service}
 
 Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
@@ -112,6 +175,21 @@ Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era k
 {style="table-layout:auto"}
 
 Läs mer om identitetstjänsten i [Översikt över identitetstjänsten](../../identity-service/home.md).
+
+## Frågetjänst {#query-service}
+
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Loggfiltrering av gränssnittsuppdateringar | Förbättrad filtrering av frågeloggar ger ökad synlighet för användargenererade loggar för övervakning, administration och felsökning. Du kan filtrera listan med frågeloggar baserat på olika inställningar. <br> ![Filterinställningarna för frågeloggfilter.](../2023/assets/log-filter-settings.png "Nya frågeloggsfilter markeras."){width="100" zoomable="yes"}  <br> Se [dokumentation för frågeloggar](../../query-service/ui/query-logs.md#filter-logs) för mer information. |
+| Gränssnittsuppdateringar för flerfrågeredigeraren | Du kan nu köra flera sekventiella frågor i Frågeredigeraren eller skriva mer än en fråga och köra alla frågor på ett sekventiellt sätt. Om du vill göra frågekörningen mer flexibel kan du markera den valda frågan och välja att köra den specifika frågan oberoende av de andra. Se [Användargränssnittshandbok för frågeredigeraren](../../query-service/ui/user-guide.md#execute-multiple-sequential-queries) för mer information. |
+
+{style="table-layout:auto"}
+
+Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
