@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 05136ca1a44fa0ecbf2fd9941d047c3a0899f2d1
+source-git-commit: c57845ab2bd9ce16fb34b6babfa90a393b101409
 workflow-type: tm+mt
-source-wordcount: '1228'
+source-wordcount: '1304'
 ht-degree: 2%
 
 ---
@@ -67,8 +67,10 @@ Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
 
 | Destination | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
+| [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | Nytt | Aktivera målgrupper som tidigare gått med i [!DNL LiveRamp] till förstklassiga förlag i olika medier för mobil, webb, skärm och uppkopplad TV. <br> Efter att ni startat en målgrupp [!DNL LiveRamp] via [LiveRamp - introduktion](../../destinations/catalog/advertising/liveramp-onboarding.md) anslutning, använd den nya [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) anslutning för att aktivera målgrupperna till nedströmsdestinationer. |
 | [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | Nytt | [[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser ni behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundservice. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform. |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Uppdaterat | Stöd för [!DNL Dynamics 365] anpassade fältprefix för anpassade fält som inte skapades i standardlösningen i [!DNL Dynamics 365]. Ett nytt inmatningsfält, **[!UICONTROL Customization Prefix]**, har lagts till i [Fyll i målinformation](#destination-details) steg. |
+| [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Uppdaterat | Målgruppen Experience Cloud är nu allmänt tillgänglig. Använd det här målet för att aktivera målgrupper från Real-Time CDP till Audience Manager och Adobe Analytics. Ni behöver en licens för Audience Manager för att skicka ut målgrupper till Adobe Analytics. |
 
 {style="table-layout:auto"}
 
@@ -78,8 +80,6 @@ Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
 Add these to release notes as they go out
 
 | [[!DNL Qualtrics]] | New | Use the aggregation of multiple sources of operational data in Adobe Experience Platform as an input in Qualtrics Experience ID to better understand your customers and enable targeted outreach to close the gap when it comes to understanding intent, emotion and experience drivers. | 
-| [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | New | Activate audiences previously onboarded to [!DNL LiveRamp] to premium publishers across mobile, web, display, and connected TV mediums. <br> After onboarding audiences to your [!DNL LiveRamp] account through the [LiveRamp - Onboarding](liveramp-onboarding.md) connection, use the new [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) connection to activate the audiences to downstream destinations.  |
-| [[!DNL Experience Cloud Audiences]](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Updated | The Experience Cloud Audiences destination is now generally available. Use this destination to activate audiences from Real-Time CDP to Audience Manager and Adobe Analytics. You need an Audience Manager license to send audiences to Adobe Analytics. |
 
 -->
 
