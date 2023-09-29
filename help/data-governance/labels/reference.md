@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ordlista för dataanvändningsetiketter
 description: I det här dokumentet finns en översikt över alla dataanvändningsetiketter som för närvarande stöds av Adobe Experience Platform.
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 538c5e2c7ff3c684edf6db12087fdf0a58e40199
+source-git-commit: c55ad6c592be95b01cf7fe0b39635b478bc98be6
 workflow-type: tm+mt
-source-wordcount: '2185'
+source-wordcount: '2250'
 ht-degree: 1%
 
 ---
@@ -73,6 +73,8 @@ Den här etiketten används för att styra användningen av data om potentiella 
 | Etikett | Definition |
 | --- | --- |
 | **Tredje part** | Tredjepartsdata är data som tillhandahålls av en tredjepartsleverantör. En tredjepartsleverantör av data är en enhet som har ingått ett avtal med din organisation som tillåter dig att få tillgång till, använda, visa och överföra den tredje partens data i samarbete med plattformen. |
+| **Tredjepartsberikning** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten ska användas på tredjepartsdata som används för att berika förstahandsprofiler. |
+| **Prospektering från tredje part** | Uppgifter som samlats in av en tredjepartsorganisation och som inte är direkt relaterade till den registrerade. Etiketten bör tillämpas på data från tredje part som används som ett led i trattprospekteringen till nya nettokunder. |
 
 ## Bilaga
 

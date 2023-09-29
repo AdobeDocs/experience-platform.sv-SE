@@ -5,9 +5,9 @@ title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
+source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1300'
 ht-degree: 0%
 
 ---
@@ -33,20 +33,21 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översik
 
 ## Öppna [!DNL Schema Editor] för en datatyp {#data-type}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna [!UICONTROL Schemas] väljer du **[!UICONTROL Data types]** -fliken. En lista över tillgängliga datatyper visas, inklusive de som har definierats av Adobe och de som har skapats av din organisation.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna [!UICONTROL Schemas] väljer du **[!UICONTROL Data types]** -fliken. En lista över tillgängliga datatyper visas. Listan med datatyper filtreras automatiskt baserat på hur de skapades. Standardinställningen visar de datatyper som definieras av Adobe. Du kan även filtrera listan så att den visar de som har skapats av din organisation.
 
-![](../../images/ui/resources/data-types/data-types-tab.png)
+![The [!UICONTROL Schemas] arbetsyta med [!UICONTROL Schemas] i den vänstra navigeringen och [!UICONTROL Data types] markerad.](../../images/ui/resources/data-types/data-types-tab.png)
 
-Här finns två alternativ:
+Här har du följande alternativ:
 
 - [Skapa en ny datatyp](#create)
+- [Filtrera datatyper](#filter)
 - [Välj en befintlig datatyp att redigera](#edit)
 
 ### Skapa en ny datatyp {#create}
 
 På fliken **[!UICONTROL Data types]** väljer du **[!UICONTROL Create data type]**.
 
-![](../../images/ui/resources/data-types/create.png)
+![The [!UICONTROL Schemas] arbetsyta [!UICONTROL Data types] tabba med [!UICONTROL Create data type] markerad.](../../images/ui/resources/data-types/create.png)
 
 The [!DNL Schema Editor] visas med den aktuella strukturen för den nya datatypen på arbetsytan. Till höger om redigeraren kan du ange ett visningsnamn och en valfri beskrivning av datatypen. Se till att du anger ett unikt och koncist namn för din datatyp, eftersom det är så det identifieras när du lägger till den i ett schema.
 
@@ -56,17 +57,25 @@ I den här självstudien skapas en datatyp som beskriver en restaurangegenskap, 
 
 Härifrån kan du hoppa fram till [nästa avsnitt](#add-fields) för att börja lägga till fält till den nya datatypen.
 
+### Filtrera datatyper {#filter}
+
+Listan med tillgängliga datatyper filtreras i förväg baserat på hur de skapades. Välj alternativknappen för att välja mellan [!UICONTROL Standard] och [!UICONTROL Custom] alternativ. The [!UICONTROL Standard] alternativet visar enheter som skapats av Adobe och [!UICONTROL Custom] visas enheter som har skapats i din organisation.
+
+![The [!UICONTROL Data types] -fliken i [!UICONTROL Schemas] arbetsyta med [!UICONTROL Standard] och [!UICONTROL Custom] markerad.](../../images/ui/resources/data-types/standard-and-custom-data-types.png)
+
 ### Redigera en befintlig datatyp {#edit}
 
 >[!NOTE]
 >
 >När en befintlig datatyp används i ett schema som har aktiverats för användning i kundprofilen i realtid, kan endast icke-förstörande ändringar göras i den datatypen därefter. Se [regler för schemautveckling](../../schema/composition.md#evolution) för mer information.
 
-Endast anpassade datatyper som definieras av din organisation kan redigeras. Om du vill begränsa den visade listan väljer du filterikonen (![Filterikon](../../images/ui/resources/data-types/filter.png)) för att visa kontroller för filtrering baserat på [!UICONTROL Owner]. Välj **[!UICONTROL Customer]** om du bara vill visa anpassade datatyper som ägs av din organisation.
+Endast anpassade datatyper som definieras av din organisation kan redigeras. Välj **[!UICONTROL Custom]** om du bara vill visa anpassade datatyper som ägs av din organisation.
 
-Välj den datatyp som du vill redigera i listan för att öppna den högra listen och visa information om datatypen. Markera namnet på datatypen i den högra listen för att öppna strukturen i [!DNL Schema Editor].
+Välj den datatyp som du vill redigera i listan för att öppna den högra listen och visa information om datatypen. På informationspanelen kan du även hämta en exempelfil, kopiera JSON-strukturen eller lägga till datatypen i ett paket.
 
-![](../../images/ui/resources/data-types/edit.png)
+Markera namnet på datatypen i den högra listen för att öppna strukturen i [!DNL Schema Editor].
+
+![The [!UICONTROL Data types] -fliken i [!UICONTROL Schemas] arbetsyta med datatyp, [!UICONTROL Custom] och datatypen [!UICONTROL Name] markerad.](../../images/ui/resources/data-types/edit.png)
 
 ## Lägg till fält i datatypen {#add-fields}
 

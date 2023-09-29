@@ -4,9 +4,9 @@ title: Exportera XDM-scheman i användargränssnittet
 description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: bed627b945c5392858bcc2dce18e9bbabe8bcdb6
+source-git-commit: d25042e80ca5f655a50deac6a65ce9168225d6e6
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '561'
 ht-degree: 0%
 
 ---
@@ -23,17 +23,19 @@ För att tillgodose detta behov [!UICONTROL Schemas] Med arbetsytan i Adobe Expe
 
 ## Förutsättningar
 
-Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här guiden.
+Med plattformsgränssnittet kan du exportera XDM-resurser, men du måste använda API:t för schemaregister för att importera dessa resurser till andra sandlådor eller organisationer för att slutföra arbetsflödet. Se vägledningen på [komma igång med API:t för schemaregister](../api/getting-started.md) om du vill ha viktig information om obligatoriska autentiseringshuvuden innan du följer den här handboken.
 
 ## Generera en exportnyttolast {#generate-export-payload}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. I [!UICONTROL Schemas] på arbetsytan väljer du raden för det schema som du vill exportera för att visa schemainformation i den högra sidofältet.
+Du kan generera exportnyttolaster i plattformsgränssnittet från informationspanelen på panelen [!UICONTROL Browse] eller direkt från arbetsytan i schemat i Schemaredigeraren.
+
+Om du vill generera en exportnyttolast väljer du **[!UICONTROL Schemas]** i den vänstra navigeringen. I [!UICONTROL Schemas] på arbetsytan väljer du raden för det schema som du vill exportera för att visa schemainformation i den högra sidofältet.
 
 >[!TIP]
 >
->Se guiden [utforska XDM-resurser](./explore.md) om du vill ha mer information om hur du hittar den XDM-resurs du söker.
+>Se guiden på [utforska XDM-resurser](./explore.md) om du vill ha mer information om hur du hittar den XDM-resurs du söker.
 
-Välj sedan **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../images/ui/export/icon.png)) bland de tillgängliga alternativen.
+Nästa steg är att välja **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../images/ui/export/icon.png)) bland de tillgängliga alternativen.
 
 ![Arbetsytan Scheman med en schemarad och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/copy-json.png)
 
@@ -200,6 +202,14 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
   }
 ]
 ```
+
+Nyttolasten kan också kopieras genom att välja [!UICONTROL More] i det övre högra hörnet i Schemaredigeraren. Det finns två alternativ i en listruta: [!UICONTROL Copy JSON structure] och [!UICONTROL Delete schema].
+
+>[!NOTE]
+>
+>Ett schema kan inte tas bort när det är aktiverat för profilen eller har associerade datauppsättningar.
+
+![Schemaredigeraren med [!UICONTROL More] och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/schema-editor-copy-json.png)
 
 Nyttolasten består av en array där varje arrayobjekt är ett objekt som representerar en anpassad XDM-resurs som ska exporteras. I exemplet ovan är &quot;[!DNL Loyalty details]&quot; egen fältgrupp och &quot;[!DNL Loyalty Members]schemat ingår. Alla huvudresurser som används av schemat inkluderas inte i exporten eftersom dessa resurser är tillgängliga i alla sandlådor och organisationer.
 

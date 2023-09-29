@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera schemafältgrupper i användargränssnittet
 description: Lär dig hur du skapar och redigerar schemafältgrupper i användargränssnittet i Experience Platform.
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 51ef116ad125b0d699bf4808e3d26d3b00b743e2
+source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '950'
 ht-degree: 0%
 
 ---
@@ -45,6 +45,12 @@ I den dialogruta som visas väljer du **[!UICONTROL Create new field group]**. H
 The [!DNL Schema Editor] visas igen med den nya fältgruppen i den vänstra listen. Eftersom det här är en helt ny fältgrupp innehåller den för närvarande inga fält till schemat och arbetsytan ändras därför inte. Nu kan du börja [lägga till fält i fältgruppen](#add-fields).
 
 ![](../../images/ui/resources/field-groups/field-group-added.png)
+
+## Filtrera fältgrupper {#filter}
+
+Listan med tillgängliga fältgrupper filtreras i förväg baserat på hur de skapades. Standardinställningen visar de fältgrupper som definieras av Adobe. Du kan även filtrera listan så att den visar de som har skapats av din organisation. Välj alternativknappen för att välja mellan [!UICONTROL Standard] och [!UICONTROL Custom] alternativ. The [!UICONTROL Standard] alternativet visar enheter som skapats av Adobe och [!UICONTROL Custom] visas enheter som har skapats i din organisation.
+
+![The [!UICONTROL Field groups] -fliken i [!UICONTROL Schemas] arbetsyta med [!UICONTROL Standard] och [!UICONTROL Custom] markerad.](../../images/ui/resources/field-groups/standard-and-custom-field-groups.png)
 
 ## Redigera en befintlig fältgrupp {#edit}
 

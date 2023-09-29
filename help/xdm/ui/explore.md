@@ -5,9 +5,9 @@ title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: f08aa017b7f971a54197b95023e9331832ecb7f1
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Den här självstudiekursen beskriver stegen för att utforska befintliga schema
 
 ## Söka efter en schemaresurs {#lookup}
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. The [!UICONTROL Schemas] arbetsytan innehåller **[!UICONTROL Browse]** för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för att utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]** respektive.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen. The [!UICONTROL Schemas] arbetsytan innehåller en **[!UICONTROL Browse]** för att utforska alla scheman i organisationen, tillsammans med ytterligare dedikerade flikar för att utforska **[!UICONTROL Classes]**, **[!UICONTROL Field groups]** och **[!UICONTROL Data types]** respektive.
 
 ![](../images/ui/explore/tabs.png)
 
@@ -28,9 +28,9 @@ Filterikonen (![Filterikonbild](../images/ui/explore/icon.png)) visar kontroller
 
 Om du till exempel vill filtrera listan så att endast standarddatatyper som tillhandahålls av Adobe visas väljer du **[!UICONTROL Datatype]** och **[!UICONTROL Adobe]** under **[!UICONTROL Type]** och **[!UICONTROL Owner]** -avsnitt.
 
-The **[!UICONTROL Included in Profile]** kan du filtrera resultaten så att endast resurser som används i scheman som har aktiverats för användning i [Kundprofil i realtid](../../profile/home.md).
+The **[!UICONTROL Included in Profile]** kan du filtrera resultaten så att endast resurser som används i scheman som har aktiverats för användning i [Kundprofil i realtid](../../profile/home.md). The **[!UICONTROL Show adhoc schemas]** växlar till och filtrerar listan med scheman som har skapats med fält som namngivits för att endast användas av en enskild datauppsättning.
 
-![](../images/ui/explore/filter.png)
+![The [!UICONTROL Schemas] arbetsyta [!UICONTROL Browse] med filterpanelen markerad.](../images/ui/explore/filter.png)
 
 När resurser listas på **[!UICONTROL Classes]**, **[!UICONTROL Field groups]**, eller **[!UICONTROL Data types]** -flikar kan du välja **[!UICONTROL Adobe]** för att endast visa standardresurser eller **[!UICONTROL Customer]** om du bara vill visa resurser som har skapats av din organisation.
 
@@ -66,7 +66,7 @@ För varje fält som visas på arbetsytan visas dess motsvarande datatyp bredvid
 
 ![](../images/ui/explore/data-types.png)
 
-Alla datatyper som läggs till med hakparenteser (`[]`) representerar en array med den aktuella datatypen. En datatyp med **[!UICONTROL String]\[]** anger att fältet förväntar sig en array med strängvärden. En datatyp för **[!UICONTROL Payment Item]\[]** anger en array med objekt som följer [!UICONTROL Payment Item] datatyp.
+Alla datatyper som läggs till med hakparenteser (`[]`) representerar en array med den aktuella datatypen. Till exempel en datatyp som **[!UICONTROL String]\[]** anger att fältet förväntar sig en array med strängvärden. En datatyp för **[!UICONTROL Payment Item]\[]** anger en array med objekt som följer [!UICONTROL Payment Item] datatyp.
 
 Om ett matrisfält baseras på en objekttyp kan du markera dess ikon på arbetsytan för att visa de förväntade attributen för varje matrisobjekt.
 
@@ -86,13 +86,13 @@ Om fältet som du inspekterar är ett uppräkningsfält, visar den högra listen
 
 När du inspekterar scheman som innehåller identitetsfält visas dessa fält i den vänstra listen under den klass eller fältgrupp som tillhandahåller dem till schemat. Markera namnet på identitetsfältet i den vänstra listen för att visa fältet på arbetsytan, oavsett hur djupt det är kapslat.
 
-Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](../images/ui/explore/identity-symbol.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information, till exempel [identity namespace](../../identity-service/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
+Identitetsfält markeras på arbetsytan med en fingeravtrycksikon (![Fingeravtrycksikonbild](../images/ui/explore/identity-symbol.png)). Om du väljer identitetsfältets namn kan du visa ytterligare information, till exempel [namnutrymme för identitet](../../identity-service/namespaces.md) och om fältet är den primära identiteten för schemat eller inte.
 
 ![](../images/ui/explore/identity-field.png)
 
 >[!NOTE]
 >
->Se guiden [definiera identitetsfält](./fields/identity.md) om du vill ha mer information om identitetsfält och deras relation med plattformstjänster längre fram i kedjan.
+>Se guiden på [definiera identitetsfält](./fields/identity.md) om du vill ha mer information om identitetsfält och deras relation med plattformstjänster längre fram i kedjan.
 
 ### Relationsfält {#relationship}
 
