@@ -2,13 +2,13 @@
 title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
-source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
+exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
+source-git-commit: fdb9d7b168d6323fddaab1ac7abc44d3a390afea
 workflow-type: tm+mt
 source-wordcount: '595'
 ht-degree: 0%
 
 ---
-
 
 # Aktivera potentiella målgrupper
 
@@ -22,7 +22,7 @@ I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera
 
 Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och väljer **[!UICONTROL Catalog]** -fliken. Använd **[!UICONTROL Data types]** filtrera och markera **[!UICONTROL Prospects]** för att se vilka destinationer som stöder aktivering av potentiella målgrupper. För närvarande är export av potentiella målgrupper bara tillgängligt för molnlagringsdestinationer.
 
-![Destinationer som stöder datauppsättningsexport](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
+![Destinationer som stöder potentiella målgrupper.](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
 
 ## Förutsättningar {#prerequisites}
 

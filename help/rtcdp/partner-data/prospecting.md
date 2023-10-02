@@ -1,9 +1,10 @@
 ---
 title: Engagera och värva nya kunder genom användningsfall för prospektering
 description: Lär dig hur ni engagerar och förvärvar nya kunder genom användningsfall för prospektering som möjliggörs av partnerdatastödet i Real-Time CDP.
-source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
+exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
+source-git-commit: da7a53c1e4accdacfa55e4022c1b499f70aab8fa
 workflow-type: tm+mt
-source-wordcount: '1906'
+source-wordcount: '1913'
 ht-degree: 2%
 
 ---
@@ -207,7 +208,11 @@ Läs mer om [potentiella målgrupper](/help/segmentation/ui/prospect-audience.md
 
 ### Aktivera profiler för potentiella kunder till mål {#activate-to-destinations}
 
-Utnyttja målgrupperna genom att exportera dem till destinationer. För närvarande är det endast vissa destinationer som [Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md) eller [!BADGE Alfa]{type=Informative}[LiveRamp](/help/destinations/catalog/advertising/liveramp-onboarding.md) stöd för aktivering av profiler för potentiella kunder.
+Utnyttja målgrupperna genom att exportera dem till destinationer. För närvarande stöder endast vissa molnlagringsmål aktivering av profiler för potentiella kunder.
+
+![Destinationer som stöder potentiella målgrupper.](/help/destinations/assets/ui/activate-prospect-audiences/data-types-filter.png)
+
+[Läs mer](/help/destinations/ui/activate-prospect-audiences.md) om att aktivera potentiella kunder för molnlagringsdestinationer.
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 
