@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa en ny anslutningsspecifikation med API:t för Flow Service
 description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: f47b7f725475fc7f7fac6dd406975b46f257e390
 workflow-type: tm+mt
 source-wordcount: '797'
 ht-degree: 1%
@@ -19,7 +19,7 @@ I följande dokument beskrivs hur du skapar en anslutningsspecifikation med [!DN
 
 ## Komma igång
 
-Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Samla in artefakter
 
@@ -40,7 +40,7 @@ När du har angett den måste du strukturera din privata Git-databas så här:
 | --- | --- | --- |
 | {your_source} | Namnet på källan. Den här mappen bör innehålla alla artefakter som hör till källan i din privata Git-databas. | `mailchimp-members` |
 | {your_source}-category.txt | Kategorin som källan tillhör, formaterad som en textfil. En lista över tillgängliga källkategorier som stöds av självbetjäningskällor (Batch SDK) är: <ul><li>Advertising</li><li>Analytics </li><li>Samtycke och inställningar</li><li>CRM</li><li>Nöjda kunder</li><li>Databas</li><li>e-handel</li><li>Marknadsföringsautomatisering</li><li>Betalningar</li><li>Protokoll</li></ul> **Anteckning**: Om du tror att din källa inte passar in i någon av ovanstående kategorier kan du kontakta din Adobe-representant för att diskutera detta. | `mailchimp-members-category.txt` Ange källans kategori i filen, som: `marketingAutomation`. |
-| {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som ni kan använda för att [!DNL Mailchimp Members] data till Experience Platform. |
+| {your_source}-description.txt | En kort beskrivning av källan. | [!DNL Mailchimp Members] är en källa för automatiserad marknadsföring som ni kan använda för att ta med [!DNL Mailchimp Members] data till Experience Platform. |
 | {your_source}-icon.svg | Bilden som ska användas för att representera källan i katalogen för Experience Platform-källor. Den här ikonen måste vara en SVG-fil. |
 | {your_source}-label.txt | Källans namn så som det ska visas i katalogen Experience Platform sources. | Mailchimp-medlemmar |
 | {your_source}-connectionSpec.json | En JSON-fil som innehåller anslutningsspecifikationen för källan. Den här filen behövs inte från början eftersom du fyller i anslutningsspecifikationen när du slutför den här guiden. | `mailchimp-members-connectionSpec.json` |
@@ -444,13 +444,13 @@ När du har samlat in de nödvändiga artefakterna kopierar och klistrar du in m
 
 När du har skaffat en mall för anslutningsspecifikation kan du nu börja skapa en ny anslutningsspecifikation genom att fylla i de värden som motsvarar källan.
 
-En anslutningsspecifikation kan delas in i tre olika delar: autentiseringsspecifikationer, källspecifikationer och specifikationer.
+En anslutningsspecifikation kan delas in i tre olika delar: autentiseringsspecifikationerna, källspecifikationerna och undersökningsspecifikationerna.
 
 I följande dokument finns instruktioner om hur du fyller i värdena för varje del av en anslutningsspecifikation:
 
 * [Konfigurera autentiseringsspecifikationen](../config/authspec.md)
-* [Konfigurera källspecifikationen](../config/sourcespec.md)
-* [Konfigurera din utforskarspecifikation](../config/explorespec.md)
+* [Konfigurera din källspecifikation](../config/sourcespec.md)
+* [Konfigurera din specifikation för utforskande](../config/explorespec.md)
 
 Med informationen om din specifikation uppdaterad kan du skicka den nya anslutningsspecifikationen genom att göra en POST-förfrågan till `/connectionSpecs` slutpunkt för [!DNL Flow Service] API.
 
@@ -578,7 +578,9 @@ curl -X POST \
                   "type": "OFFSET",
                   "limitName": "count",
                   "limitValue": "100",
-                  "offSetName": "offset"
+                  "offSetName": "offset",
+                  "endConditionName": "$.hasMore",
+                  "endConditionValue": "Const:false"
               },
               "scheduleParams": {
                   "scheduleStartParamName": "since_last_changed",
@@ -767,7 +769,9 @@ Ett lyckat svar returnerar den nyligen skapade anslutningsspecifikationen, inklu
                 "type": "OFFSET",
                 "limitName": "count",
                 "limitValue": "100",
-                "offSetName": "offset"
+                "offSetName": "offset",
+                "endConditionName": "$.hasMore",
+                "endConditionValue": "Const:false"
             },
             "scheduleParams": {
                 "scheduleStartParamName": "since_last_changed",

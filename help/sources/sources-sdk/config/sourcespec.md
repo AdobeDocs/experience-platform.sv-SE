@@ -3,10 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Konfigurera källspecifikationer för självbetjäningskällor (batch-SDK)
 description: Det här dokumentet innehåller en översikt över de konfigurationer du behöver förbereda för att kunna använda självbetjäningskällor (Batch SDK).
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 1fdce7c798d8aff49ab4953298ad7aa8dddb16bd
 workflow-type: tm+mt
-source-wordcount: '1846'
-ht-degree: 0%
+source-wordcount: '2078'
+ht-degree: 1%
 
 ---
 
@@ -381,7 +381,53 @@ Följande är en färdig källspecifikation som använder [!DNL MailChimp Member
 
 Nedan följer exempel på andra sidnumreringstyper som stöds av självbetjäningskällor (Batch SDK):
 
-#### `CONTINUATION_TOKEN`
+>[!BEGINTABS]
+
+>[!TAB Förskjutning]
+
+Med den här sidnumreringstypen kan du tolka resultaten genom att ange ett index från vilken den resulterande arrayen ska startas och en gräns för hur många resultat som returneras. Exempel:
+
+```json
+"paginationParams": {
+        "type": "OFFSET",
+        "limitName": "limit",
+        "limitValue": "4",
+        "offSetName": "offset",
+        "endConditionName": "$.hasMore",
+        "endConditionValue": "Const:false"
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `type` | Den typ av sidnumrering som används för att returnera data. |
+| `limitName` | Namnet på den gräns genom vilken API:t kan ange antalet poster som ska hämtas på en sida. |
+| `limitValue` | Antalet poster som ska hämtas på en sida. |
+| `offSetName` | Förskjutningsattributets namn. Detta krävs om sidnumreringstypen är inställd på `offset`. |
+| `endConditionName` | Ett användardefinierat värde som anger villkoret som avslutar pagineringsslingan i nästa HTTP-begäran. Du måste ange det attributnamn som du vill avsluta villkoret på. |
+| `endConditionValue` | Det attributvärde som du vill placera slutvillkoret på. |
+
+>[!TAB Pekare]
+
+Med den här sidnumreringstypen kan du använda en `pointer` variabel för att peka på ett visst objekt som behöver skickas med en begäran. Sidnumreringen av pekartypen kräver en sökväg i nyttolasten som pekar på nästa sida. Exempel:
+
+```json
+{
+ "type": "POINTER",
+ "limitName": "limit",
+ "limitValue": 1,
+ "pointerPath": "paging.next"
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `type` | Den typ av sidnumrering som används för att returnera data. |
+| `limitName` | Namnet på den gräns genom vilken API:t kan ange antalet poster som ska hämtas på en sida. |
+| `limitValue` | Antalet poster som ska hämtas på en sida. |
+| `pointerPath` | Pekarens attributnamn. Detta kräver JSON-sökväg till attributet som pekar på nästa sida. |
+
+>[!TAB Kontinuationstoken]
 
 En fortsättningssymbol för numrering returnerar en strängtoken som anger att det finns fler objekt som inte kan returneras på grund av ett fördefinierat maximalt antal objekt som kan returneras i ett enda svar.
 
@@ -432,7 +478,7 @@ Följande är ett exempel på ett svar som returneras med en fortsättningstoken
 }
 ```
 
-#### `PAGE`
+>[!TAB Sida]
 
 The `PAGE` sidnumreringstypen gör att du kan gå igenom returdata efter antal sidor med början från noll. När du använder `PAGE` sidnumrering måste du ange hur många poster som ska anges på en sida.
 
@@ -461,7 +507,7 @@ The `PAGE` sidnumreringstypen gör att du kan gå igenom returdata efter antal s
 {style="table-layout:auto"}
 
 
-#### `NONE`
+>[!TAB Ingen]
 
 The `NONE` Sidnumreringstyp kan användas för källor som inte stöder någon av de tillgängliga sidnumreringstyperna. Källor som använder sidnumreringstypen för `NONE` returnera helt enkelt alla poster som går att hämta när en GET begärs.
 
@@ -470,6 +516,8 @@ The `NONE` Sidnumreringstyp kan användas för källor som inte stöder någon a
   "type": "NONE"
 }
 ```
+
+>[!ENDTABS]
 
 ### Avancerad schemaläggning för självbetjäningskällor (batch-SDK)
 
