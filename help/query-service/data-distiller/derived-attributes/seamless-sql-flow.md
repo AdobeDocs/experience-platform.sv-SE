@@ -2,7 +2,7 @@
 title: Sömlöst SQL-flöde för härledda attribut
 description: SQL för frågetjänsten har utökats för att ge sömlöst stöd för härledda attribut. Lär dig hur du använder det här SQL-tillägget för att skapa ett härlett attribut som är aktiverat för profilen och hur du använder attributet för kundprofil och segmenteringstjänst i realtid.
 exl-id: bb1a1d8d-4662-40b0-857a-36efb8e78746
-source-git-commit: 6202b1a5956da83691eeb5422d3ebe7f3fb7d974
+source-git-commit: e9c4068419b36da6ffaec67f0d1c39fe87c2bc4c
 workflow-type: tm+mt
 source-wordcount: '1238'
 ht-degree: 1%
@@ -35,15 +35,15 @@ Med frågetjänsten kan du utföra alla åtgärder som listas ovan med hjälp av
 >
 >SQL-frågan som anges nedan förutsätter att ett befintligt namnutrymme används.
 
-Använd en CTAS-fråga (Create Table as Select) för att skapa en datauppsättning, tilldela datatyper, ange en primär identitet, skapa ett schema och markera den som profilaktiverad. Exemplet med SQL-sats nedan skapar attribut och gör den tillgänglig för kunddataprofilen i realtid (Real-Time CDP). SQL-frågan kommer att följa formatet som visas i exemplet nedan:
+Använd en CTAS-fråga (Create Table as Select) för att skapa en datauppsättning, tilldela datatyper, ange en primär identitet, skapa ett schema och markera den som profilaktiverad. SQL-satsen nedan skapar attribut och gör den tillgänglig för Real-time Customer Data Platform (Real-Time CDP). SQL-frågan kommer att följa formatet som visas i exemplet nedan:
 
 ```sql
 CREATE TABLE <your_table_name> [IF NOT EXISTS] (fieldname <your_data_type> primary identity namespace <your_namespace>, [field_name2 <your_data_type>]) [WITH(LABEL='PROFILE')];
 ```
 
-De datatyper som stöds är: boolesk, date, datetime, text, float, bigint, integer, map, array och struct/row.
+De datatyper som stöds är: boolesk, date, datetime, text, float, bigint, integer, map, array och structure/row.
 
-SQl-kodlåset nedan innehåller exempel på hur datatyperna structure/row, map och array definieras. Rad ett visar radsyntaxen. Rad två demonstrerar mappningssyntax och rad tre, matrissyntax.
+SQl-kodlåset nedan innehåller exempel på hur du definierar datatyperna structure/row, map och array. Rad ett visar radsyntaxen. Rad två demonstrerar mappningssyntax och rad tre, matrissyntax.
 
 ```sql {line-numbers="true"}
 ROW (Column_name <data_type> [, column name <data_type> ]*)
@@ -75,7 +75,7 @@ Använd `label='PROFILE'` på en `CREATE TABLE` för att skapa en profilaktivera
 ALTER TABLE <your_table_name> DROP label upsert;
 ```
 
-Mer information om hur du använder [ALTER TABLE](../../sql/syntax.md#alter-table) kommando och [etikett som en del av en CTAS-fråga](../../sql/syntax.md#create-table-as-select).
+Mer information om hur du använder [ALTER TABLE](../../sql/syntax.md#alter-table) kommando [etikett som en del av en CTAS-fråga](../../sql/syntax.md#create-table-as-select).
 
 ## Konstruerar för hantering av härledda attribut via SQL
 
@@ -83,7 +83,7 @@ De funktioner som beskrivs nedan är till stor nytta när du hanterar härledda 
 
 ### Ändra befintliga datauppsättningar som ska aktiveras för profilen {#enable-existing-dataset-for-profile}
 
-SQL-konstruktionen ALTER TABLE kan användas för att aktivera befintliga datauppsättningar för profilen. Detta kräver att en profilaktiverad tagg läggs till både i schemat och i motsvarande datauppsättning.
+SQL-konstruktionen ALTER TABLE kan användas för att göra befintliga datauppsättningar aktiverade för profilen. Detta kräver att en profilaktiverad tagg läggs till både i schemat och i motsvarande datauppsättning.
 
 ```sql
 ALTER TABLE your_decile_table ADD label 'PROFILE';
@@ -93,7 +93,7 @@ ALTER TABLE your_decile_table ADD label 'PROFILE';
 >
 >Vid slutfört körning av `ALTER TABLE` returnerar konsolen `ALTER SUCCESS`.
 
-### Lägg till en primär identitet till en befintlig datauppsättning {#add-primary-identity}
+### Lägga till en primär identitet i en befintlig datauppsättning {#add-primary-identity}
 
 Markera en befintlig kolumn i en datauppsättning som en primär identitetsuppsättning, annars uppstår ett fel. Om du vill ange en primär identitet med SQL använder du frågeformatet som visas nedan.
 
@@ -197,13 +197,13 @@ Ett verkligt exempel kan se ut ungefär som det nedan.
 CREATE FIELDGROUP field_group_for_test123 (decile1Month map<text, integer>, decile3Month map<text, integer>, decile6Month map<text, integer>, decile9Month map<text, integer>, decile12Month map<text, integer>, decilelietime map<text, integer>) WITH (LABEL-'PROFILE');
 ```
 
-Slutförd körning av den här satsen returnerar det skapade fältgrupps-ID:t. Exempel `c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`.
+Den här satsen returnerar det skapade fältgrupps-ID:t. Exempel `c731a1eafdfdecae1683c6dca197c66ed2c2b49ecd3a9525`.
 
 Läs dokumentationen om hur du [skapa en ny fältgrupp i Schemaredigeraren](../../../xdm/ui/resources/field-groups.md#create) eller med [API för schemaregister](../../../xdm/api/field-groups.md#create) för mer information om alternativa metoder.
 
 ### Släpp en fältgrupp
 
-Ibland kan det vara nödvändigt att ta bort en fältgrupp från schemaregistret. Detta görs genom att köra `DROP FIELDGROUP` med fältgrupps-ID.
+Ibland kan det vara nödvändigt att ta bort en fältgrupp från schemaregistret. Detta görs genom att köra `DROP FIELDGROUP` med fältgrupps-ID:t.
 
 ```sql
 DROP FIELDGROUP [IF EXISTS] <your_field_group_id>;
@@ -217,7 +217,7 @@ DROP FIELDGROUP field_group_for_test123;
 
 >[!IMPORTANT]
 >
->Borttagning av en fältgrupp via SQL misslyckas om fältgruppen inte finns. Kontrollera att programsatsen innehåller en `IF EXISTS` för att undvika att frågan misslyckas.
+>Borttagning av en fältgrupp via SQL misslyckas om fältgruppen inte finns. Se till att programsatsen innehåller en `IF EXISTS` för att undvika att frågan misslyckas.
 
 ### Visa alla fältgruppsnamn och ID:n för tabellerna
 

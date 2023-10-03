@@ -3,7 +3,8 @@ keywords: Experience Platform;användargränssnitt;användargränssnitt;anpassni
 title: Handbok för kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
-source-git-commit: 5b3ec9aca773cf4a1ba0d4c7e432949769b942c1
+exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
+source-git-commit: e9c4068419b36da6ffaec67f0d1c39fe87c2bc4c
 workflow-type: tm+mt
 source-wordcount: '1899'
 ht-degree: 0%
@@ -19,7 +20,7 @@ ht-degree: 0%
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage] kontrollpanel. Den information som visas här fångas in under en daglig ögonblicksbild av din Platform-instans.
 
-Licensanvändningsrapporter ger en hög grad av granularitet över era användningsvärden för licenser. Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Följande Experience Platform-program kan spåras med användningsstatistik: Kunddataprofil i realtid, Adobe Journey Optimizer och Customer Journey Analytics.
+Licensanvändningsrapporter ger en hög grad av granularitet över era användningsvärden för licenser. Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Följande Experience Platform-program kan spåras med användningsstatistik: Real-time Customer Data Platform, Adobe Journey Optimizer och Customer Journey Analytics.
 
 I den här handboken beskrivs hur du får åtkomst till och arbetar med kontrollpanelen för licensanvändning i användargränssnittet och den innehåller mer information om de visualiseringar som visas på kontrollpanelen.
 
@@ -59,7 +60,7 @@ På den här kontrollpanelen visas alla licensierade Adobe Experience Platform-p
 
 >[!NOTE]
 >
->Tillägg till [!UICONTROL License Amount] som ett resultat av tillägg läggs till ovanpå [!UICONTROL License Amount] för basprodukter som Real-Time Customer Data Profile, Adobe Journey Optimizer och Customer Journey Analytics. Användningen av det licensierade beloppet (efter tilläggen) spåras genom basprodukterna. Om du till exempel köper ett paket med fem sandlådor läggs kvantiteten på fem till basproduktens. I det här fallet visas en [!UICONTROL License Amount] av ett, och användningen för det tillägget är&quot;tom&quot; när användningen spåras genom basprodukten.
+>Tillägg till [!UICONTROL License Amount] som ett resultat av tillägg läggs till ovanpå [!UICONTROL License Amount] för basprodukter som Real-time Customer Data Platform, Adobe Journey Optimizer och Customer Journey Analytics. Användningen av det licensierade beloppet (efter tilläggen) spåras genom basprodukterna. Om du till exempel köper ett paket med fem sandlådor läggs kvantiteten på fem till basproduktens. I det här fallet visas en [!UICONTROL License Amount] av ett, och användningen för det tillägget är&quot;tom&quot; när användningen spåras genom basprodukten.
 
 Tabellen visar det primära måttet för varje produkt, eftersom varje produkt kan spåra flera mätvärden.
 
