@@ -2,7 +2,7 @@
 title: Engagera och värva nya kunder genom användningsfall för prospektering
 description: Lär dig hur ni engagerar och förvärvar nya kunder genom användningsfall för prospektering som möjliggörs av partnerdatastödet i Real-Time CDP.
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: da7a53c1e4accdacfa55e4022c1b499f70aab8fa
+source-git-commit: ec6375a025833027fda01c412124321132aefd65
 workflow-type: tm+mt
 source-wordcount: '1913'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!AVAILABILITY]
 >
->* Den här funktionaliteten är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
+>* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
 
 Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profilbas med profiler för potentiella kunder från datapartners och engagera dem i kundvärvningen eller nå nya kunder.
 

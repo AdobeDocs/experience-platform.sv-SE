@@ -1,7 +1,8 @@
 ---
 title: Använd partnerstödd besöksidentifiering för att personalisera upplevelser på plats
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
-source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
+exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '2442'
 ht-degree: 1%
@@ -12,7 +13,7 @@ ht-degree: 1%
 
 >[!AVAILABILITY]
 >
->Den här funktionaliteten är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
+>Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
 
 Lär dig hur du kan använda partnerstödd igenkänning för att leverera personaliserade upplevelser till besökare på era webbegenskaper. Använd den här självstudiekursen för att förstå implementeringssekvensen för olika element i Experience Platform och andra Experience Cloud-lösningar för att visa en personaliserad upplevelse för autentiserade och oautentiserade besökare.
 

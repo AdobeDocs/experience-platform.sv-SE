@@ -1,7 +1,8 @@
 ---
 title: Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
 description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
-source-git-commit: b4a18cdf434055be81dacbf19de4dd3e3f229d19
+exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '1102'
 ht-degree: 3%
@@ -12,7 +13,7 @@ ht-degree: 3%
 
 >[!AVAILABILITY]
 >
->* Den här funktionaliteten är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, CDP i realtid, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
+>* Den här funktionen är tillgänglig för kunder som har licens för Real-Time CDP (App Service), Adobe Experience Platform Activation, Real-Time CDP, Real-Time CDP Prime, Real-Time CDP Ultimate. Läs mer om dessa paket i [produktbeskrivningar](https://helpx.adobe.com/legal/product-descriptions.html) och kontakta Adobe för mer information.
 
 Komplettera förstahandsprofiler med attribut från betrodda datapartners för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 
@@ -24,7 +25,7 @@ När du funderar på att komplettera dina egna förstahandsprofiler med attribut
 
 * Fundera på var målgruppslistan ska exporteras från Real-Time CDP och delas med dataleverantören. Platsen måste ha stöd för filexport.
 * Vilka identifierare förväntas av dataleverantören så att de kan skikta på ytterligare attribut?
-* Hur kommer filen som innehåller attribut som tillhandahållits av partner att hämtas tillbaka till CDP i realtid? Filerna kan till exempel importeras via molnlagringskällans anslutningar, som [Amazon S3](/help/sources/connectors/cloud-storage/s3.md) eller [SFTP](/help/sources/connectors/cloud-storage/sftp.md).
+* Hur kommer filen som innehåller attribut som tillhandahållits av partner att hämtas tillbaka till Real-Time CDP? Filerna kan till exempel importeras via molnlagringskällans anslutningar, som [Amazon S3](/help/sources/connectors/cloud-storage/s3.md) eller [SFTP](/help/sources/connectors/cloud-storage/sftp.md).
 * Hur lång tid har du på dig att förnya attribut som tillhandahållits av partners i Real-Time CDP?
 
 >[!WARNING]
@@ -94,7 +95,7 @@ I det här steget bör du också tänka på hur er datastyrningsmodell ändras n
 
 ### Exportera målgrupper som du vill ska berikas när du stänger av Personal Identified Information (PII) eller hashed-PII {#export-audiences}
 
-Exportera de målgrupper som ni vill att partnern ska berika. Använd molnlagringsdestinationer som tillhandahålls av CDP i realtid, till exempel Amazon S3 eller SFTP. Läs följande dokumentationssidor för att slutföra det här steget:
+Exportera de målgrupper som ni vill att partnern ska berika. Använd molnlagringsdestinationer som tillhandahålls av Real-Time CDP, till exempel Amazon S3 eller SFTP. Läs följande dokumentationssidor för att slutföra det här steget:
 
 * [Amazon S3-mål](/help/destinations/catalog/cloud-storage/amazon-s3.md) dokumentsida
 * [SFTP-mål](/help/destinations/catalog/cloud-storage/sftp.md) dokumentsida

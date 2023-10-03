@@ -2,7 +2,7 @@
 title: Konfigurerbara och gemensamma exportinställningar för destinationer
 description: Lär dig vilka exportinställningar i destinationer som kan konfigureras på en målnivå och som är fasta och inte kan redigeras.
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '845'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 När du tänker på exportbeteendet till destinationer i Experience Platform måste du överväga tre olika nivåer för vilka konfigurationer fungerar.
 
-* På en första nivå är vissa av inställningarna för profilexportbeteende och konfigurationsinställningar gemensamma för alla mål som tillhör en måltyp. De här inställningarna hänvisar till vad som utlöser en målexport och vad som ingår i en export och kan inte redigeras av målutvecklare eller CDP-användare i realtid.
+* På en första nivå är vissa av inställningarna som rör profilexportbeteende och konfigurationsinställningar gemensamma för alla mål som tillhör en måltyp. De här inställningarna hänvisar till vad som utlöser en målexport och vad som ingår i en export och kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
 * På en andra nivå kan vissa inställningar anpassas på en målnivå av målutvecklaren när måldestinationer skapas med Destination SDK.
-* På en tredje nivå finns det konfigurationsinställningar som kan ställas in av CDP-användare i realtid i aktiveringsarbetsflödena.
+* På en tredje nivå finns det konfigurationsinställningar som Real-Time CDP-användare kan ange i aktiveringsarbetsflödena.
 
 ![Bild som visar hur vanliga och konfigurerbara exportinställningar för destinationer samverkar](/help/destinations/assets/how-destinations-work/profile-export-behavior-diagram.png)
 
@@ -25,7 +25,7 @@ Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara e
 
 Beteendet för destinationsexport är konsekvent för destinationer som tillhör en destinationstyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Destinationsexporter utlöses av meddelanden om att destinationstjänsten tar emot från [tjänst för kundprofil i realtid](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=en#adobe-experience-platform-%26-applications-detailed-architecture-diagram).
 
-Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om [mönster för vanliga exportbeteenden per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller CDP-användare i realtid.
+Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om [mönster för vanliga exportbeteenden per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
 
 ## Anpassningsbara exportinställningar per målutvecklare {#customizable-settings-by-destination-developers}
 

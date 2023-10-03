@@ -1,13 +1,13 @@
 ---
 title: Utveckling från Audience Manager till Real-Time CDP
 description: Förstå vad du bör tänka på innan du planerar en migrering från Audience Manager till Real-Time CDP.
-source-git-commit: 147e95cce203933d591fc807d9d20bcbc06e68e3
+exl-id: 83ab9a5d-9abc-4072-b449-e2a9ecd48639
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '514'
 ht-degree: 0%
 
 ---
-
 
 # Utveckling från Audience Manager till Real-Time CDP
 
@@ -23,15 +23,15 @@ Tänk dessutom på de datakällor som du för närvarande använder i Audience M
 
 Adobe rekommenderar att du kategoriserar dina segment enligt följande:
 
-* Segment som kan skickas till Experience Platform via [[!UICONTROL Audience Manager Source Connector]](/help/sources/connectors/adobe-applications/audience-manager.md), eftersom de inte har några databeroenden, inga mål- eller aktiveringsproblem och deras segmenteringsregler kan skapas med CDP i realtid [segmentbyggare](/help/segmentation/ui/segment-builder.md) senare.
+* Segment som kan skickas till Experience Platform via [[!UICONTROL Audience Manager Source Connector]](/help/sources/connectors/adobe-applications/audience-manager.md), eftersom de inte har några databeroenden, inga mål- eller aktiveringsproblem och deras segmenteringsregler kan skapas via Real-Time CDP [segmentbyggare](/help/segmentation/ui/segment-builder.md) senare.
 * Segment som har regler som kan stödjas men som kan innehålla data som inte är tillgängliga i Real-Time CDP.
-* Segment som inte kan skapas i CDP i realtid och som saknar funktioner.
+* Segment som inte kan skapas i Real-Time CDP och som saknar funktioner.
 
 >[!TIP]
 >
 >Adobe Real-Time CDP erbjuder [tre typer av segmentutvärdering](/help/segmentation/home.md#evaluate-segments): [!UICONTROL Batch], [!UICONTROL Streaming]och [!UICONTROL Edge]. Kunder som använder realtidssegment i Audience Manager kan begränsas av den nuvarande begränsningen på 500 direktuppspelningssegment i Real-Time CDP. Läs mer om [skyddsräcken för segmentering](/help/profile/guardrails.md).
 
-## 2. Vilka segment som ska skickas via [!UICONTROL Audience Manager Source Connector]?
+## 2. Vilka segment som är viktiga att skicka via [!UICONTROL Audience Manager Source Connector]?
 
 Baserat på sina utvärderingskriterier kan segment som inte har några databeroenden, inga mål- eller aktiveringsproblem och deras segmenteringsregler skapas genom Real-Time CDP datainsamling som [Adobe Experience Platform Web SDK](/help/edge/web-sdk-faq.md) vid ett senare datum skickas via Audience Manager Source Connector.
 
@@ -39,15 +39,15 @@ Baserat på sina utvärderingskriterier kan segment som inte har några databero
 
 Segment som har regler som kan stödjas i Real-Time CDP men som har aktiveringsberoenden till Audience Manager kan skickas till Audience Manager via [Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md) destinationskort.
 
-## 4. Vilka destinationer har du i Audience Manager idag som du kan börja flytta till Real-Time CDP?
+## 4. Vilka destinationer har du i Audience Manager idag på plats och kan börja flytta till Real-Time CDP?
 
 Adobe rekommenderar starkt att segment aktiveras i Audience Manager till [personbaserade mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=en) få push till Real-Time CDP via [!UICONTROL Audience Manager Source Connector], för att sedan aktivera via Real-Time CDP.
 
-Alla personbaserade destinationer är tillgängliga i Audience Manager - [Facebook](/help/destinations/catalog/social/facebook.md), [[!UICONTROL Google Customer Match]](/help/destinations/catalog/advertising/google-customer-match.md), [linkedIn](/help/destinations/catalog/social/linkedin.md) - finns också i Real-Time CDP.
+Alla personbaserade destinationer är tillgängliga i Audience Manager - [Facebook](/help/destinations/catalog/social/facebook.md), [[!UICONTROL Google Customer Match]](/help/destinations/catalog/advertising/google-customer-match.md), [LinkedIn](/help/destinations/catalog/social/linkedin.md) - finns också i Real-Time CDP.
 
 Ytterligare partners inom data- och mediestrategi som [Pinterest](/help/destinations/catalog/advertising/pinterest.md), [Snapchat](/help/destinations/catalog/advertising/snap-inc.md), [TikTok](/help/destinations/catalog/social/tiktok.md), [Amazon Ads](/help/destinations/catalog/advertising/amazon-ads.md)och [[!UICONTROL The Trade Desk]](/help/destinations/catalog/advertising/tradedesk.md) är tillgängliga.
 
-Real-Time CDP stöder för närvarande fler än 60 destinationer internt i [katalog](/help/destinations/catalog/overview.md), varav över 20 är annonser eller sociala destinationer som stöder förstahandsmatchning av målgrupper.
+Real-Time CDP har för närvarande stöd för fler än 60 destinationer internt i [katalog](/help/destinations/catalog/overview.md), varav över 20 är annonser eller sociala destinationer som stöder förstahandsmatchning av målgrupper.
 
 ## Nästa steg
 

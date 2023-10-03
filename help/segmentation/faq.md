@@ -1,13 +1,13 @@
 ---
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
-source-git-commit: 9a72d85bfb592012b36826135e24d28983f92e40
+exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '1923'
 ht-degree: 1%
 
 ---
-
 
 # Frågor och svar
 
@@ -140,7 +140,7 @@ Vid den här tidpunkten, nej. Denna kapacitet bör dock vara tillgänglig inom d
 
 ### Kan jag skicka målgrupper från Audience Composition till alla destinationer och kanaler längre fram i kedjan?
 
-Vid den här tidpunkten, nej. För närvarande kan ni använda målgrupper från Audience Composition i Adobe Journey Optimizer Campaigns och CDP-destinationer i realtid. Adobe Journey Optimizer Journeys kommer att få stöd i en kommande version.
+Vid den här tidpunkten, nej. För närvarande kan ni använda målgrupper från Audience Composition i Adobe Journey Optimizer Campaigns och Real-Time CDP destinationer. Adobe Journey Optimizer Journeys kommer att få stöd i en kommande version.
 
 ### Finns det några skyddsräcken för antalet kompositioner?
 

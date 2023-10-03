@@ -3,13 +3,13 @@ solution: Experience Platform
 title: Upptäck rätt spelningsbok
 description: Lär dig hur du hittar rätt spelbok för dina användningsfall och aktiverar spelböcker.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 51e4a77472ccb560dbfa5f56011ce50932d87b64
+exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '719'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Upptäck rätt spelbok
 
@@ -23,11 +23,11 @@ Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!
 
 Använd sökfönstret och filtren som finns på sidan för att hitta rätt spelbok för ditt användningssätt.
 
-Du kan till exempel filtrera spelböcker som du kan använda baserat på den fas i marknadsföringstratten som du vill ha som mål - konvertering, engagemang eller lojalitet. Du kan även filtrera de spelböcker som visas efter den bransch du befinner dig i eller det produktberättigande som du har tillgång till - Adobe Journey Optimizer eller CDP i realtid.
+Du kan till exempel filtrera spelböcker som du kan använda baserat på den fas i marknadsföringstratten som du vill ha som mål - konvertering, engagemang eller lojalitet. Du kan också filtrera de visade spelböckerna efter vilken bransch du befinner dig i eller vilka produktberättigande du har tillgång till - Adobe Journey Optimizer eller Real-Time CDP.
 
 ![Filtrera spelböcker efter marknadsföringstratt, bransch eller produkt](/help/use-case-playbooks/assets/playbooks/ui-guide/filter-by-funnel-industry-product.gif)
 
-Du kan också använda sökfunktionen för att hitta rätt spelbok. Nedan visas ett exempel på hur du kan hitta en spelbok som hjälper dig att interagera med användare som kanske har övergett sin kundvagn.
+Du kan också använda sökfunktionen för att hitta rätt spelbok för dig. Nedan visas ett exempel på hur du kan hitta en spelbok som hjälper dig att interagera med användare som kanske har övergett sin kundvagn.
 
 ![Engagera med användare som kanske har övergett sin kundvagn.](/help/use-case-playbooks/assets/playbooks/ui-guide/engage-abandoned-cart.gif)
 
@@ -52,13 +52,13 @@ Mindmap börjar med en definition av vem som nås i användarresan och beskriver
 
 ### Sammanfattning {#summary}
 
-Inspect sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter användningsfallet som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
+Inspect i sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter det användningsfall som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
 
 | Objekt | Beskrivning |
 ---------|----------|
 | **[!UICONTROL Target audience]** | Beskriver de profiler som du vill nå genom den här användningsfallsspelboken. |
 | **[!UICONTROL Marketing Channels]** | Beskriver de kanaler som används för att nå de profiler som spelboken riktar sig till. |
-| **[!UICONTROL Technical assets]** | En lista med tekniska resurser som genereras när du har skapat instanser av spelboken. De genererade resurserna skiljer sig åt i spelboken, beroende på användningsfallet. Vissa spelböcker kan generera scheman, segment och resor. Andra kan generera destinationer. Se [Förstå genererade tillgångar](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets) mer information om hur du kan använda och återanvända genererade resurser finns i guiden om hur du skapar och återanvänder instanser. |
+| **[!UICONTROL Technical assets]** | En lista med tekniska resurser som genereras när du har skapat instanser av spelboken. De genererade resurserna skiljer sig åt i spelboken, beroende på användningsfallet. Vissa spelböcker kan generera scheman, segment och resor. Andra kan generera destinationer. Se [Förstå de genererade tillgångarna](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets) mer information om hur du kan använda och återanvända genererade resurser finns i guiden om hur du skapar och återanvänder instanser. |
 
 {style="table-layout:auto"}
 

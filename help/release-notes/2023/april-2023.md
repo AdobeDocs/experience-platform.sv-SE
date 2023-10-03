@@ -1,8 +1,8 @@
 ---
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
-exl-id: 8b8fa810-d301-43c1-98df-10d3903f3147
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '2057'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Från och med 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Mer information om den här ändringen finns i [Segmenteringstjänstavsnitt](#segmentation).
+>Från 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`. Mer information om den här ändringen finns i [Segmenteringstjänstavsnitt](#segmentation).
 
 **Releasedatum: 26 april 2023**
 
@@ -91,7 +91,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | ----------- | ----------- |
 | Dataflödesövervakning för [!DNL Custom Personalization] och [!DNL Adobe Commerce] mål | <p> Nu kan du se aktiveringsstatistik för [Adobe Commerce](/help/destinations/catalog/personalization/adobe-commerce.md), [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) och [Anpassad personalisering med attribut](../../destinations/catalog/personalization/custom-personalization.md) anslutningar. </p> <p>![Adobe Commerce, bild](/help/destinations/assets/common/adobe-commerce-metrics.png "Adobe Commerce metrics"){width="100" zoomable="yes"}</p>  Se [Övervaka dataflöden på arbetsytan Destinationer](../../dataflows/ui/monitor-destinations.md#monitor-dataflows-in-the-destinations-workspace) för mer information. |
 | Nytt **[!UICONTROL Append segment ID to segment name]** fält för [!DNL Google Ad Manager] och [!DNL Google Ad Manager 360] mål | <p>Nu kan du ha segmentnamnet i [[!DNL Google Ad Manager]](/help/destinations/catalog/advertising/google-ad-manager.md#parameters) och [[!DNL Google Ad Manager 360]](/help/destinations/catalog/advertising/google-ad-manager-360-connection.md#destination-details) inkludera segment-ID från Experience Platform, så här: `Segment Name (Segment ID)`.</p><p>![Lägg till bild för segment-ID](/help/destinations/assets/common/append-segment-id-to-segment-name.png "Nytt Lägg till segment-ID till segmentnamnsfält "){width="100" zoomable="yes"}</p> |
-| Schemalagda efterfyllningar av målgrupper | <p>För [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) är aktiveringen av målgruppens efterfyllningar till målet planerad till 24-48 timmar efter att ett segment först har mappats till en målanslutning. Uppdateringen är ett svar på Google policy att vänta i 24 timmar tills data har importerats och kommer att förbättra matchningsfrekvensen mellan realtidskodskiften och [!DNL Google Display & Video 360].</p> <p>Observera att detta är en backend-konfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.</p> |
+| Schemalagda efterfyllningar av målgrupper | <p>För [[!DNL Google Display & Video 360]](/help/destinations/catalog/advertising/google-dv360.md#specifics) är aktiveringen av målgruppens efterfyllningar till målet planerad till 24-48 timmar efter att ett segment först har mappats till en målanslutning. Uppdateringen svarar på Google policy att vänta i 24 timmar tills data har importerats och kommer att förbättra matchningsfrekvensen mellan Real-Time CDP och [!DNL Google Display & Video 360].</p> <p>Observera att detta är en backend-konfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.</p> |
 
 {style="table-layout:auto"}
 
@@ -134,7 +134,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Fältgrupp | [[!UICONTROL Adobe Unified Profile Service Account Union Extension]](https://github.com/adobe/xdm/pull/1696/files) | En fältgrupp för kontotillägg för kundprofil i realtid har lagts till som gör det möjligt för användare att lägga till segmentmedlemskap i en kontounion. |
 | Schema | [[!UICONTROL Computed Attributes System Schema]](https://github.com/adobe/xdm/pull/1696/files) | Fältgruppen Beräknade attribut som används av kundprofilen i realtid har uppdaterats till ett skrivskyddat globalt schema. |
 | Fältgrupp | Flera | Flera händelser har lagts till som fält för [[!UICONTROL Time-series Schema]](https://github.com/adobe/xdm/pull/1718/files). |
-| Fältgrupp | Profillojalitetsinformation | [Titeln har åtgärdats](https://github.com/adobe/xdm/pull/1717/files) for `xdm:upgradeDate` från&quot;Programnamn&quot; till&quot;Uppgraderingsdatum&quot;. |
+| Fältgrupp | Profilens lojalitetsinformation | [Titeln har åtgärdats](https://github.com/adobe/xdm/pull/1717/files) for `xdm:upgradeDate` från&quot;Programnamn&quot; till&quot;Uppgraderingsdatum&quot;. |
 | Fältgrupp | Flera | Flera fält från [[!UICONTROL Decision Item]](https://github.com/adobe/xdm/pull/1714/files) har uppdaterats för att ta bort den dubbla kapslade hierarkin. |
 
 {style="table-layout:auto"}
@@ -150,7 +150,7 @@ Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time 
 | Funktion | Beskrivning |
 | ------- | ----------- |
 | Förbättrad startsida för Real-Time CDP | The [Real-Time CDP hemsida](https://experience.adobe.com) har förbättrats med en uppdaterad stil och förbättrade prestanda. Hemsidan är nu behörighetsmedveten och visar widgetar som är relevanta för de funktioner du har tillgång till. Mer information finns i [Översikt över kontrollpanelen för Real-Time CDP hemsida](../../rtcdp/home-page-dashboards.md). |
-| Självidentifieringsundersökning | Självidentifieringsundersökningen är ett kort frågeformulär som presenteras på Adobe Experience Platform användargränssnittets hemsida. Använd självidentifieringsundersökningen för att bygga upp din personliga profil för Experience Platform och få anpassade riktlinjer baserade på dina val. Mer information finns i [självidentifieringsöversikt](../../landing/self-identification.md). |
+| Självidentifieringsundersökning | Självidentifieringsundersökningen är ett kort frågeformulär som presenteras på Adobe Experience Platform användargränssnittets hemsida. Använd självidentifieringsundersökningen för att bygga upp din personliga profil för Experience Platform och få anpassade riktlinjer baserade på dina val. Mer information finns i [översikt över självidentifieringsundersökning](../../landing/self-identification.md). |
 
 Mer information om [!DNL Real-Time CDP], se [[!DNL Real-Time CDP] översikt](../../rtcdp/overview.md).
 
@@ -168,17 +168,17 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 ## Segmenteringstjänst {#segmentation}
 
-[!DNL Segmentation Service] definierar en viss underuppsättning profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Segmentmedlemskapskarta | Som en uppföljning av det föregående meddelandet i februari den 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`.<br/><br/> Den här förändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på `Existing` status. Om så är fallet för dig, se över era integreringar längre fram i kedjan. Om du är intresserad av att identifiera nyligen kvalificerade profiler längre än en viss tid, vänligen väl använda en kombination av `Realized` status och `lastQualificationTime` i din medlemskarta. Mer information får du av Adobe. |
+| Segmentmedlemskapskarta | Som en uppföljning av det föregående meddelandet i februari den 15 maj 2023 `Existing` status tas bort från segmentmedlemskartan för att ta bort redundans i segmentmedlemskapets livscykel. Efter den här ändringen representeras profiler som är kvalificerade i ett segment som `Realized` och de diskvalificerade profilerna kommer även fortsättningsvis att representeras som `Exited`.<br/><br/> Den här förändringen kan påverka dig om du använder [företagsmål](../../destinations/destination-types.md#streaming-profile-export) (Amazon Kinesis, Azure Event Hubs, HTTP API) och kan ha automatiserade processer längre fram i kedjan baserat på `Existing` status. Om så är fallet för dig, se över integreringarna i senare led. Om du är intresserad av att identifiera nyligen kvalificerade profiler längre än en viss tid, vänligen väl använda en kombination av `Realized` status och `lastQualificationTime` i er medlemskarta för segment. Mer information får du av Adobe. |
 
 {style="table-layout:auto"}
 
-Mer information om [!DNL Segmentation Service], se [Översikt över segmentering](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service], se [Översikt över segment](../../segmentation/home.md).
 
 ## Källor {#sources}
 

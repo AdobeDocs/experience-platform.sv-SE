@@ -3,7 +3,7 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: d0a9ac77346bea585691feee958e8d3b27f3f746
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av 
 
 I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, datauppsättningsexport och tillägg. Det finns flera typer av anslutningsmål, så att du kan exportera data till API-baserade mål.
 
-Slutligen kan anslutningar också särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen, och privata destinationer som CDP Ultimate-kunder i realtid kan skapa för att uppfylla sina specifika exportanvändningsfall.
+Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
 
 ![Typ av destinationsdiagram.](./assets/destination-types/types-of-destinations-no-highlight.png)
 

@@ -2,13 +2,13 @@
 solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+exl-id: 55c952de-caab-4301-acf2-f7b64cebbb1c
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 2%
 
 ---
-
 
 # Översikt över API för Media Edge
 
@@ -36,7 +36,7 @@ I följande tabell visas en möjlig Adobe API-tjänst för olika medieanalysfall
 | Användningsfall | API-tjänst |
 | -------- | ----------- |
 | Adobe Experience Platform | Media Edge |
-| CDP + Customer Journey Analytics i realtid | Media Edge |
+| REAL-TIME CDP + CUSTOMER JOURNEY ANALYTICS | Media Edge |
 | ADOBE ANALYTICS + ADOBE EXPERIENCE PLATFORM | Media Edge |
 | Endast Adobe Analytics (spårning redan) | Media Collection |
 
@@ -53,7 +53,3 @@ I följande bild visas dataflödena för de två API-tjänsterna:
 * Mer information om hur du använder Media Edge API:er finns i [Komma igång med dokumentation](getting-started.md).
 
 * Mer information om hur du arbetar med Platform Edge finns i [Installera Media Analytics med Experience Platform Edge](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html?lang=en).
-
-
-
-

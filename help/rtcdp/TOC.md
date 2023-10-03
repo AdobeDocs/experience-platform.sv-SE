@@ -4,10 +4,10 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 7a977f92a81dd27c99ebe8bdf7be1a7d0425ad2a
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '250'
-ht-degree: 24%
+ht-degree: 27%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 24%
       * [Exempel](./b2b-use-case.md)
       * [Heltäckande självstudiekurs](./b2b-tutorial.md)
       * [Real-Time CDP B2B Edition - skyddsräcken](b2b-guardrails.md)
-* Audience Manager och CDP i realtid {#evolution}
+* Audience Manager och Real-Time CDP {#evolution}
    * [Utveckling från Audience Manager](aam-to-rtcdp.md)
 * Kontoprofiler {#account}
    * [Kontoprofilöversikt](accounts/account-profile-overview.md)
@@ -70,6 +70,6 @@ ht-degree: 24%
    * Användningsexempel för partnerdata {#partner-data}
       * [Engagera och få nya kunder genom prospekteringssupport](/help/rtcdp/partner-data/prospecting.md)
       * [Komplettera förstahandsprofiler med attribut som tillhandahålls av partner](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
-      * [Använd partnerstödd besöksigenkänning för att personalisera upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md)
+      * [Använd partnerstödd igenkänning av besökare för att personalisera upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
 * [Ordlista för Experience Platform](https://www.adobe.com/go/platform-glossary-en)

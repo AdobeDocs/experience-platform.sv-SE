@@ -1,8 +1,8 @@
 ---
-title: Adobe Commerce Destination Connector
+title: Adobe Commerce målanslutning
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
 source-wordcount: '694'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-The [!DNL Adobe Commerce] med målanslutning kan du välja en eller flera Real-Time CDP-målgrupper att aktivera för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan ni sedan välja de Real-Time CDP-målgrupperna för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;köp 2 få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna genom kampanjerbjudanden som alla är anpassade för Adobe Real-Time CDP målgrupper.
+The [!DNL Adobe Commerce] med målanslutning kan du välja en eller flera Real-Time CDP-målgrupper att aktivera för [!DNL Adobe Commerce] för att leverera en dynamisk personaliserad upplevelse till era kunder. Inom [!DNL Adobe Commerce]kan ni sedan välja de Real-Time CDP-målgrupperna för att personalisera unika erbjudanden i kundvagnen, till exempel&quot;Köp 2 och få 1 utan kostnad&quot;. Ni kan också visa hjältebanners och ändra produktpriserna genom kampanjerbjudanden som alla är anpassade för Adobe Real-Time CDP målgrupper.
 
 ## Förutsättningar {#prerequisites}
 
@@ -37,7 +37,7 @@ När du är klar med kraven ansluter du till [!DNL Commerce] mål.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Ansluta till [!DNL Adobe Commerce] mål:
 
@@ -52,12 +52,12 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 - **[!UICONTROL Name]**: Fyll i det önskade namnet för det här målet.
 - **[!UICONTROL Description]**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
-- **[!UICONTROL Integration alias]**: Värdet skickas till Experience Platform Web SDK som ett JSON-objektnamn.
-- **[!UICONTROL Datastream ID]**: Detta avgör vilken datainsamling som innehåller de målgrupper som ingår i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../datastreams/overview.md) för mer information.
+- **[!UICONTROL Integration alias]**: Det här värdet skickas till Experience Platform Web SDK som ett JSON-objektnamn.
+- **[!UICONTROL Datastream ID]**: Detta avgör vilka datamängder för datainsamling som innehåller de målgrupper som ingår i svaret på sidan. I den nedrullningsbara menyn visas endast datastreams som har målkonfigurationen aktiverad. Se [Konfigurera ett datastream](../../../datastreams/overview.md) för mer information.
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -65,7 +65,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera profiler och målgrupper för att profilera mål för begäranden](../../ui/activate-edge-personalization-destinations.md) för instruktioner om att aktivera målgrupper för [!DNL Commerce] mål.
 
@@ -75,7 +75,7 @@ Nu när du har konfigurerat [!DNL Commerce] i Experience Platform måste du inst
 
 ## Validera målgruppsaktivering i Commerce {#exported-data}
 
-När du har aktiverat Real-Time CDP-målgrupper för [!DNL Adobe Commerce] kommer du att se vilka målgrupper som är tillgängliga när du går till _Administratör_ sidebar, gå sedan till **[!UICONTROL Customers]** > **[!UICONTROL Real-time CDP Audience]**.
+När du har aktiverat Real-Time CDP-målgrupper för [!DNL Adobe Commerce] kommer du att se vilka målgrupper som är tillgängliga när du går till _Administratör_ sidebar, sedan går du till **[!UICONTROL Customers]** > **[!UICONTROL Real-Time CDP Audience]**.
 
 ![Real-Time CDP Auditions Dashboard](../../assets/catalog/personalization/adobe-commerce/audience-library.png)
 

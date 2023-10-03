@@ -3,19 +3,19 @@ solution: Experience Platform
 title: Använd översikt över fallspelningsböcker
 description: Lär dig använda funktionen Använd fallspelsböcker i Experience Platform för att komma igång med olika användningsområden för marknadsföring
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 896ca002b34e79bd464467011875a54acd5c187c
+exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
+source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 1%
 
 ---
-
 
 # (Beta) Använd översikt över fallspelningsböcker
 
 >[!BEGINSHADEBOX]
 
-Det här hittar du i handboken:
+Vad du hittar i den här handboken:
 
 * **[Översikt över användningsfall för spelböcker](#overview)**
 * [Kom igång](/help/use-case-playbooks/playbooks/get-started.md)
@@ -41,11 +41,11 @@ Om du väljer en spelbok för Real-Time CDP kan ditt mål vara att generera mål
 
 Om du väljer en spelbok för Adobe Journey Optimizer kan du ha som mål att skapa en kundresa i din produkt och skicka relevanta meddelanden till dina kunder.
 
-Skapa en instans av en spelbok för att generera specifika resurser som scheman, segment eller resor som är anpassade efter ditt användningssätt och som kan återanvändas i Experience Platform. Syftet med dessa objekt är att hjälpa dig att förstå alla resurser som krävs för att implementera ditt specifika användningsfall. De innehåller inga data och skapas i utvecklingssandlådor. Börja använda dessa resurser eller redigera dem innan du använder dem och dela dem med teamet i realtid med CDP eller Journey Optimizer.
+Skapa en instans av en spelbok för att generera specifika resurser som scheman, segment eller resor som är anpassade efter ditt användningssätt och som kan återanvändas i Experience Platform. Syftet med de här objekten är att hjälpa dig att förstå alla resurser som krävs för att implementera ditt specifika användningsfall. De innehåller inga data och skapas i utvecklingssandlådor. Börja använda dessa resurser eller redigera dem innan du använder dem och dela dem med ditt team i Real-Time CDP eller Journey Optimizer.
 
 ## Tillgänglighet
 
-Några [!UICONTROL Use Case Playbooks] är skräddarsydda för CDP-användning i realtid medan andra passar bäst för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet.
+Några [!UICONTROL Use Case Playbooks] är skräddarsydda för Real-Time CDP medan andra passar bäst för kunder som använder Journey Optimizer. Bläddra i katalogen och hitta de spelböcker som passar bäst för produkten och användningsexemplet.
 
 ## Användargränssnittsguider
 
