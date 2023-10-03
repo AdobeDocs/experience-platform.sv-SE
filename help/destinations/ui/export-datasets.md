@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 8b8abea65ee0448594113ca77f75b84293646146
+source-git-commit: 08463e9f14b0952fe5db177ae8b4546cc3c6cac5
 workflow-type: tm+mt
-source-wordcount: '1698'
+source-wordcount: '1672'
 ht-degree: 0%
 
 ---
@@ -47,11 +47,11 @@ Förstå vilka datamängdstyper du kan exportera beroende på program, produktni
   <tr>
     <td rowspan="2">Adobe Journey Optimizer</td>
     <td>Prime</td>
-    <td>Se <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=en"> Adobe Journey Optimizer</a> dokumentation. (uppdatera till djuplänk till AJO-tabellen eller -avsnittet för datamängder som stöds)</td>
+    <td>Se <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a> dokumentation.</td>
   </tr>
   <tr>
     <td>Ultimate</td>
-    <td>Se <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html?lang=en"> Adobe Journey Optimizer</a> dokumentation. (uppdatera till djuplänk till AJO-tabellen eller -avsnittet för datamängder som stöds)</td>
+    <td>Se <a href="https://experienceleague.adobe.com/docs/journey-optimizer/using/data-management/datasets/export-datasets.html#datasets"> Adobe Journey Optimizer</a> dokumentation.</td>
   </tr>
   <tr>
     <td>Data Distiller</td>
