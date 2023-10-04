@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b20e5e52b9d7568f4e20b94064819d0bebe4c236
+source-git-commit: 35d72969946dd79c356212ce53ee75b8c84f036c
 workflow-type: tm+mt
-source-wordcount: '2143'
+source-wordcount: '2259'
 ht-degree: 2%
 
 ---
@@ -160,6 +160,27 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Funktion | Beskrivning |
 | --- | --- |
 | Uppdaterat arbetsflöde för att skapa schema | Ett nytt arbetsflöde för att skapa scheman har implementerats för att effektivisera processen. <br> ![Det nya gränssnittet för att skapa scheman.](../2023/assets/schema-class-options.png "Väljaren för ny schemainformation har markerats."){width="100" zoomable="yes"} <br> Se [dokumentation för att skapa scheman](../../xdm/ui/resources/schemas.md#create) för mer information. |
+
+**Nya XDM-komponenter**
+
+| Komponenttyp | Namn | Beskrivning |
+| --- | --- | --- |
+| Datatyp | [[!UICONTROL Return]](https://github.com/adobe/xdm/pull/1773/files) | RMA (Return Merchandise Authorization) har utfärdats. |
+| Datatyp | [[!UICONTROL Return Item]](https://github.com/adobe/xdm/pull/1773/files) | Det returnerade objektets information i RMA (Return Merchandise Authorization). |
+
+{style="table-layout:auto"}
+
+**Uppdaterade XDM-komponenter**
+
+| Komponenttyp | Namn | Uppdatera beskrivning |
+| --- | --- | --- |
+| Tillägg | [!UICONTROL AJO Entity Fields] | The [[!UICONTROL flag for multi-variant]](https://github.com/adobe/xdm/pull/1774/files) lades till i [!UICONTROL AJO Entity Fields] för att identifiera om varianten är en multivariant eller inte. |
+| Datatyp | [!UICONTROL Product list item] | [[!UICONTROL Return Item]](https://github.com/adobe/xdm/pull/1773/files) lades till för att inkludera information om Return Merchandise Authorization. |
+| Datatyp | Beställning | [[!UICONTROL Return Info]](https://github.com/adobe/xdm/pull/1773/files) har lagts till för att inkludera den RMA (Return Merchandise Authorization) som utfärdats. |
+
+{style="table-layout:auto"}
+
+Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md)
 
 ## Identitetstjänst {#identity-service}
 
