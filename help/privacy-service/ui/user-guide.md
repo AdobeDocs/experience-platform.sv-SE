@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: e5a1b57bc81b27d0e61c3c1ecc10156c10dd3f6e
+source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
@@ -38,17 +38,18 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 
 | Gränssnittsetikett | Förordning |
 | --- | --- |
+| [!UICONTROL APA_AUS] | The [!DNL Australia Privacy Act (Privacy Act)] |
 | [!UICONTROL CPA] | The [!DNL Colorado Privacy Act] |
 | [!UICONTROL CCPA] | The [!DNL California Consumer Privacy Act] |
+| [!UICONTROL CPRA_USA] | The [!DNL California Consumer Privacy Rights Act (CPRA)] |
 | [!UICONTROL CTDPA] | The [!DNL Connecticut Data Privacy Act] |
 | [!UICONTROL GDPR] | Europeiska unionens [!DNL General Data Protection Regulation] |
-| [!UICONTROL PDPA_THA] | Thailand [!DNL Personal Data Protection Act] |
+| [!UICONTROL HIPAA_AUS] | The [!DNL Health Insurance Portability and Accountability Act] |
 | [!UICONTROL LGPD_BRA] | Brasilien [!DNL Lei Geral de Proteção de Dados] |
 | [!UICONTROL NZPA_NZL] | Nya Zeeland [!DNL Privacy Act] |
+| [!UICONTROL PDPA_THA] | Thailand [!DNL Personal Data Protection Act] |
+| [!UICONTROL UCPA] | The [!DNL Utah Consumer Privacy Act] |
 | [!UICONTROL VCDPA_USA] | The [!DNL Virginia Consumer Data Protection Act] |
-| [!UICONTROL CPRA_USA] | The [!DNL California Consumer Privacy Rights Act (CPRA)] |
-| [!UICONTROL APA_AUS] | The [!DNL Australia Privacy Act (Privacy Act)] |
-| [!UICONTROL HIPAA_AUS] | The [!DNL Health Insurance Portability and Accountability Act] |
 
 {style="table-layout:auto"}
 

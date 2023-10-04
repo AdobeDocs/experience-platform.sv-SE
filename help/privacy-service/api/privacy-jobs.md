@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Sekretessjobb API-slutpunkt
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
+source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
 workflow-type: tm+mt
 source-wordcount: '1547'
 ht-degree: 0%
@@ -36,7 +36,7 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li><li>`cpa`</li><li>`ctdpa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`pdpd_vnm`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och det högsta värdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 
@@ -74,12 +74,12 @@ Innan du skapar en ny jobbbegäran måste du först samla in identifieringsinfor
 
 >[!NOTE]
 >
->Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade. Se guiden [Privacy Service och Experience Cloud](../experience-cloud-apps.md) om du vill ha mer information om vilka identifierare som krävs för dina program. Mer allmän vägledning om hur du avgör vilka ID som ska skickas till [!DNL Privacy Service], se dokumentet på [identitetsdata i sekretessförfrågningar](../identity-data.md).
+>Kompatibla Adobe Experience Cloud-program använder olika värden för att identifiera registrerade. Se guiden på [Privacy Service och Experience Cloud](../experience-cloud-apps.md) om du vill ha mer information om vilka identifierare som krävs för dina program. Mer allmän vägledning om hur du avgör vilka ID som ska skickas till [!DNL Privacy Service], se dokumentet på [identitetsdata i sekretessförfrågningar](../identity-data.md).
 
-The [!DNL Privacy Service] API har stöd för två typer av jobbförfrågningar för personuppgifter:
+The [!DNL Privacy Service] API har stöd för två typer av jobbförfrågningar för personliga data:
 
 * [Åtkomst och/eller borttagning](#access-delete): Få åtkomst till (läsa) eller ta bort personuppgifter.
-* [Avanmäl dig från försäljning](#opt-out): Märk personuppgifter som att de inte ska säljas.
+* [Avanmäl dig från försäljning](#opt-out): Markera personuppgifter som att de inte ska säljas.
 
 >[!IMPORTANT]
 >
@@ -159,12 +159,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnutrymmet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det är **obligatoriskt** som en av identifierarna använder `imsOrgId` som `namespace`, med `value` som innehåller det unika ID:t för din organisation. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalifierare (till exempel `Campaign`), som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID:n eller andra programidentifierare. |
+| `companyContexts` **(Obligatoriskt)** | En array som innehåller autentiseringsinformation för din organisation. Varje identifierare i listan innehåller följande attribut: <ul><li>`namespace`: Namnområdet för en identifierare.</li><li>`value`: Identifierarens värde.</li></ul>Det är **obligatoriskt** som en av identifierarna använder `imsOrgId` som `namespace`, med `value` som innehåller det unika ID:t för din organisation. <br/><br/>Ytterligare identifierare kan vara produktspecifika företagskvalifierare (till exempel `Campaign`), som identifierar en integrering med ett Adobe-program som tillhör din organisation. Möjliga värden är kontonamn, klientkoder, klient-ID eller andra programidentifierare. |
 | `users` **(Obligatoriskt)** | En array som innehåller en samling med minst en användare vars information du vill komma åt eller ta bort. Högst 1 000 användar-ID kan anges i en enda begäran. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det är enkelt att referera till eller söka efter den senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Beroende på vilka åtgärder du vill utföra måste den här arrayen innehålla `access`, `delete`eller båda.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet består av en `namespace`, a `value`och en namnutrymmeskvalificerare (`type`). Se [appendix](appendix.md) om du vill ha mer information om dessa obligatoriska egenskaper.</li></ul> Mer detaljerad information om `users` och `userIDs`, se [felsökningsguide](../troubleshooting-guide.md#user-ids). |
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Se avsnittet om [godkända produktvärden](appendix.md) i bilagan för mer information. |
-| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas blir det här värdet som standard `false`. |
+| `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas används standardvärdet `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. If `priority` utelämnas, standardbeteendet är `normal`. |
-| `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. If `analyticsDeleteMethod` utelämnas, det här är standardbeteendet.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
+| `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. If `analyticsDeleteMethod` utelämnas är detta standardbeteende.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
 | `mergePolicyId` | När sekretessförfrågningar görs för kundprofil i realtid (`profileService`) kan du också ange ID:t för [sammanfogningsprincip](../../profile/merge-policies/overview.md) som du vill använda för ID-sammanfogning. Genom att ange en kopplingsprofil kan sekretessförfrågningar inkludera målgruppsinformation när data returneras till en kund. Endast en sammanfogningsprincip kan anges per begäran. Om det inte finns någon sammanfogningspolicy inkluderas inte segmenteringsinformation i svaret. |
 | `regulation` **(Obligatoriskt)** | Reglerna för sekretessarbetet. Följande värden accepteras: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
 
