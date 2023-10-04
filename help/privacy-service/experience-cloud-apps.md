@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Privacy Service och Experience Cloud
 description: Det här dokumentet innehåller en referens för hur du konfigurerar olika Experience Cloud-program för sekretessrelaterade åtgärder.
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: ed3089a86d6ef25f23e4d69eee7da800d7242545
+source-git-commit: b0b49badd46601571be59afba84fad874ca1b368
 workflow-type: tm+mt
-source-wordcount: '926'
-ht-degree: 6%
+source-wordcount: '927'
+ht-degree: 7%
 
 ---
 
@@ -38,7 +38,7 @@ Här följer en lista med [!DNL Experience Cloud] program som är integrerade me
 | Adobe Campaign Standard | ✓ | ✓ | Den registrerades lagrade data tas bort från systemet. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html?lang=sv)</li><li>[Dokumentation om avanmälan](../segmentation/consents.md)</li></ul> |
 | Adobe kundattribut | ✓ | Ej tillämpligt | Den registrerades attribut tas bort från systemet. | <ul><li>[Åtkomst/radering av dokumentation för GDPR](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/gdpr.html)</li><li>[Åtkomst-/borttagningsdokumentation för CCPA](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/ccpa.html)</li><li>Kundattribut har inte möjlighet att överföra data, och därför kan du inte avanmäla dig från försäljning.</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | När Experience Platform tar emot en begäran om borttagning från Privacy Servicen skickar Platform en bekräftelse till Privacy Servicen om att begäran har tagits emot och att data som påverkas har markerats för borttagning. Posterna tas sedan bort från datasjön eller profilarkivet när sekretessjobbet har slutförts. Innan jobbet är klart tas data bort på skärmen och är därför inte tillgängliga för någon plattformstjänst. | <ul><li>[Åtkomst-/borttagningsdokumentation för datasjön](../catalog/privacy.md)</li><li>[Åtkomst/borttagning av dokumentation för identitetstjänsten](../identity-service/privacy.md)</li><li>[Åtkomst till/radera dokumentation för kundprofil i realtid](../profile/privacy.md)</li><li>[!DNL Experience Platform] honorar [avanmälningsbegäran för målgruppssegment](../segmentation/consents.md).</li></ul> |
-| Adobe Primetime-autentisering | ✓ | Ej tillämpligt | Den registrerades lagrade data tas bort från systemet. | <ul><li>[Åtkomst/borttagning av dokumentation](https://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
+| Adobe Pass-autentisering | ✓ | Ej tillämpligt | Den registrerades lagrade data tas bort från systemet. | <ul><li>[Åtkomst/borttagning av dokumentation](https://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>Godkännandet har inte möjlighet att överföra data, och därför är begäran om att avanmäla sig från försäljning inte tillämplig.</li></ul> |
 | Adobe Target | ✓ | Ej tillämpligt | Alla data som är kopplade till den registrerade personens ID tas bort från deras besökarprofil. Aggregerade eller anonyma uppgifter som inte identifierar den enskilda personen eller som på annat sätt är orelaterade (t.ex. innehållsdata) gäller inte för borttagningsförfrågningar. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
 | Marketo Engage | ✓ | Ej tillämpligt | Den registrerades lagrade data tas bort från systemet. | <ul><li>[Åtkomst/borttagning av dokumentation](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/privacy-requests.html)</li><li>[!DNL Marketo] har inte möjlighet att överföra data, och därför är begäran om avanmälan från försäljning inte tillämplig.</li></ul> |
 

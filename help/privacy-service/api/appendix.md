@@ -4,10 +4,10 @@ solution: Experience Platform
 title: API-handbok för Privacy Service
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: b0b49badd46601571be59afba84fad874ca1b368
 workflow-type: tm+mt
 source-wordcount: '476'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -25,10 +25,10 @@ I följande tabell beskrivs flera vanliga, fördefinierade identitetstyper som �
 | --- | --- | --- |
 | E-post | `Email` | `6` |
 | Telefon | `Phone` | `7` |
-| Adobe Advertising Cloud ID | `AdCloud` | `411` |
+| ADOBE ADVERTISING CLOUD ID | `AdCloud` | `411` |
 | Adobe Audience Manager UUID | `CORE` | `0` |
 | Adobe Experience Cloud ID | `ECID` | `4` |
-| Adobe Target ID | `TNTID` | `9` |
+| ADOBE TARGET ID | `TNTID` | `9` |
 | [!DNL Apple] ID för annonsörer | `IDFA` | `20915` |
 | [!DNL Google] Annons-ID | `GAID` | `20914` |
 | [!DNL Windows] AID | `WAID` | `8` |
@@ -43,7 +43,7 @@ Du kan hämta en lista över identitetsnamnutrymmen som används av din organisa
 
 ## Namnutrymmeskvalificerare
 
-När du anger en `namespace` värdet i [!DNL Privacy Service] API, en **namnutrymmeskvalificerare** måste inkluderas i en `type` parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
+När en `namespace` värdet i [!DNL Privacy Service] API, en **namnutrymmeskvalificerare** måste inkluderas i en `type` parameter. Följande tabell visar de olika godkända namnutrymmeskvalificerarna.
 
 | Kvalificerare | Definition |
 | --------- | ---------- |
@@ -69,7 +69,7 @@ I följande tabell visas godkända värden för att ange en Adobe-produkt i `inc
 | Adobe Campaign | `campaign` |
 | Adobe Experience Platform (Data Lake) | `aepDataLake` |
 | Adobe Experience Platform (kundprofil i realtid) | `profileService` |
-| Adobe Primetime-autentisering | `primetimeAuthentication` |
+| Adobe Pass-autentisering | `primetimeAuthentication` |
 | Adobe Target | `target` |
 | Kundattribut | `CRS` |
 | Identitetstjänst | `identity` |
