@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Roller API-slutpunkt
 description: Med slutpunkten /roles i det attributbaserade åtkomstkontrolls-API:t kan du programmässigt hantera roller i Adobe Experience Platform.
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: 4b48fa5e9a1e9933cd33bf45b73ff6b0d831f06f
 workflow-type: tm+mt
-source-wordcount: '1606'
+source-wordcount: '1666'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ The `/roles` -slutpunkten i det attributbaserade API:t för åtkomstkontroll gö
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med roller {#list}
 
@@ -179,7 +179,7 @@ Ett godkänt svar returnerar information om det efterfrågade roll-ID:t, inklusi
 
 ## Söka efter ämnen efter roll-ID
 
-Du kan även hämta ämnen genom att göra en GET-förfrågan till `/roles` slutpunkt när du anger ett {ROLE_ID}.
+Du kan även hämta ämnen genom att göra en GET-förfrågan till `/roles` slutpunkt när en {ROLE_ID}.
 
 **API-format**
 
@@ -498,20 +498,18 @@ PATCH /roles/{ROLE_ID}
 Följande begäran uppdaterar de ämnen som är associerade med `{ROLE_ID}`.
 
 ```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/access-control/administration/roles/{ROLE_ID} \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
-  -d'{
-    "operations": [
-      {
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/access-control/administration/roles/<ROLE_ID>/subjects' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {IMS_ORG}' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
         "op": "add",
-        "path": "/subjects",
-        "value": "New subjects"
-      }
-    ]
-  }'
+        "path": "/user",
+        "value": "{USER ID}"
+    }
+]' 
 ```
 
 | Användning | Beskrivning |
@@ -522,37 +520,7 @@ curl -X PATCH \
 
 **Svar**
 
-Ett lyckat svar returnerar de uppdaterade objekten som är associerade med det efterfrågade roll-ID:t.
-
-```json
-{
-  "subjects": [
-    {
-      "subjectId": "string",
-      "subjectType": "user"
-    }
-  ],
-  "_page": {
-    "limit": 0,
-    "count": 0
-  },
-  "_links": {
-    "next": {
-      "href": "string",
-      "templated": true
-    },
-    "page": {
-      "href": "string",
-      "templated": true
-    }
-  }
-}
-```
-
-| Egenskap | Beskrivning |
-| --- | --- |
-| `subjectId` | ID för ett ämne. |
-| `subjectType` | Typ av ämne. |
+Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
 ## Ta bort en roll {#delete}
 
@@ -566,11 +534,11 @@ DELETE /roles/{ROLE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| {ROLE_ID} | ID:t för rollen som du vill ta bort. |
+| {ROLE_ID} | ID för rollen som du vill ta bort. |
 
 **Begäran**
 
-Följande begäran tar bort rollen med ID:t för `{ROLE_ID}`.
+Följande begäran tar bort rollen med ID för `{ROLE_ID}`.
 
 ```shell
 curl -X DELETE \
@@ -585,3 +553,34 @@ curl -X DELETE \
 Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
 
 Du kan bekräfta borttagningen genom att försöka utföra en sökning (GET) till rollen. Du får HTTP-statusen 404 (Hittades inte) eftersom rollen har tagits bort från administrationen.
+
+## Lägg till API-autentiseringsuppgifter {#apicredential}
+
+Om du vill lägga till en API-autentiseringsuppgift ska du göra en PATCH-begäran på `/roles` slutpunkt när du anger deltagarnas roll-ID.
+
+**API-format**
+
+```shell
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/access-control/administration/roles/<ROLE_ID>/subjects' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {IMS_ORG}' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    {
+        "op": "add",
+        "path": "/api-integration",
+        "value": "{TECHNICAL ACCOUNT ID}"
+    }
+]'   
+```
+
+| Användning | Beskrivning |
+| --- | --- |
+| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera rollen. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `path` | Sökvägen till den parameter som ska läggas till. |
+| `value` | Värdet som du vill lägga till parametern med. |
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
