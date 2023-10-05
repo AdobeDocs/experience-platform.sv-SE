@@ -3,9 +3,10 @@ title: Ta bort poster
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: ccb2236fa169c26ef2f75d26776eee9f0122e92a
+exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
+source-git-commit: 3bd1424c9a01733acf38f52879606596c7aeca50
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1467'
 ht-degree: 0%
 
 ---
@@ -134,13 +135,13 @@ Om du vill lägga till fler identiteter väljer du plusikonen (![En plusikon.](.
 
 ![Arbetsflödet för att skapa en begäran med plusikonen och ikonen för att lägga till identitet markerad.](../images/ui/record-delete/more-identities.png)
 
-## Skicka begäran (#submit)
+## Skicka begäran {#submit}
 
 När du är klar med att lägga till identiteter i begäran, under **[!UICONTROL Request settings]**, ange ett namn och en valfri beskrivning för begäran innan du väljer **[!UICONTROL Submit]**.
 
 >[!IMPORTANT]
 > 
->Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.
+>Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.<br>En enda begäran om radering av en post via användargränssnittet gör att du kan skicka 10 000 ID:n åt gången. The [API-metod för att ta bort poster](https://experienceleague.adobe.com/docs/experience-platform/hygiene/api/workorder.html?lang=en#create) gör att 100 000 ID kan skickas samtidigt.
 
 ![Inställningarna för begäran [!UICONTROL Name] och [!UICONTROL Description] fält med [!UICONTROL Submit] markerad.](../images/ui/record-delete/submit.png)
 

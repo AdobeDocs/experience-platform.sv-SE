@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 943d1360e80caef58d09b8502507a3ad72edda03
+source-git-commit: 5e57df3fbc22baa1c7abbb02a003ad8663aad040
 workflow-type: tm+mt
-source-wordcount: '3424'
+source-wordcount: '3522'
 ht-degree: 0%
 
 ---
@@ -45,11 +45,9 @@ Ange ett användarvänligt [!UICONTROL Schema display name] i textfältet. Ange 
 
 ![The [!UICONTROL Name and review] i [!UICONTROL Create schema] arbetsflöde med [!UICONTROL Schema display name], [!UICONTROL Description]och [!UICONTROL Finish] markerad.](../../images/ui/resources/schemas/name-and-review.png)
 
-The [!UICONTROL Schema] [!UICONTROL Browse] visas. Ditt nyligen skapade schema är nu tillgängligt för redigering i [!DNL Schema Editor] och visas i listan med tillgängliga scheman.
+The [!UICONTROL Schema] [!UICONTROL Browse] visas. Ditt nyligen skapade schema visas nu i schemabiblioteket och kan redigeras i [!DNL Schema Editor].
 
-![Schemaredigeraren visar det schema som du nyligen har skapat.](../../images/ui/resources/schemas/schema-details.png)
-
-Nu kan du börja skapa schemats struktur genom att [lägga till schemafältgrupper](#add-field-groups) i [!DNL Schema Editor].
+![Fliken Bläddra på arbetsytan Scheman som visar det schema som du nyligen har skapat.](../../images/ui/resources/schemas/example-schema.png)
 
 ## Redigera ett befintligt schema {#edit}
 
@@ -66,6 +64,14 @@ Om du vill redigera ett befintligt schema väljer du **[!UICONTROL Browse]** och
 >Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta schemat. Se guiden på [utforska XDM-resurser](../explore.md) för mer information.
 
 När du har valt ett schema visas [!DNL Schema Editor] visas med schemats struktur på arbetsytan. Nu kan du [lägg till fältgrupper](#add-field-groups) till schemat (eller [lägg till enskilda fält](#add-individual-fields) från dessa grupper), [redigera fältvisningsnamn](#display-names), eller [redigera befintliga anpassade fältgrupper](./field-groups.md#edit) om schemat använder något.
+
+## Fler åtgärder {#more}
+
+I Schemaredigeraren kan du även utföra snabba åtgärder för att kopiera JSON-strukturen för schemat eller ta bort schemat om det inte har aktiverats för kundprofilen i realtid eller har associerade datauppsättningar. Välj [!UICONTROL More] längst upp i vyn om du vill visa en listruta med snabbåtgärder.
+
+Med strukturfunktionen Kopiera JSON kan du se hur en exempelnyttolast skulle se ut när du fortfarande skapar schemat och dina dataledningar. Det är särskilt användbart i situationer där det finns komplexa objektmappningsstrukturer i schemat, till exempel en identitetskarta.
+
+![Schemaredigeraren med knappen Mer markerad och alternativen i listrutan visas.](../../images/tutorials/create-schema/more-actions.png)
 
 ## Växla visningsnamn {#display-name-toggle}
 
