@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '7973'
 ht-degree: 0%
@@ -380,6 +380,10 @@ ht-degree: 0%
 **Parquet-filer**: En Parquet-fil är ett kolumnlagringsfilformat med komplexa kapslade datastrukturer. Parquet-filer krävs för att lägga till data för att fylla i en schemadatauppsättning.
 
 **PDPA**: [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
+
+<!-- Not yet released
+**PDPD**: The [[!DNL Personal Data Protection Decree] (PDPD) 
+-->
 
 **Personaliserade erbjudanden**: Ett personaliserat erbjudande är ett anpassningsbart marknadsföringsmeddelande baserat på regler och begränsningar för behörighet.
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över sekretessbestämmelser
 description: Det här dokumentet innehåller en översikt över de olika sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 2ca946cf-94f8-4fd8-bb1a-7f06a5ab1256
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '951'
 ht-degree: 0%
@@ -33,6 +33,10 @@ Genom att använda [Adobe Experience Platform Privacy Service](../home.md)stöde
 | VCDPA (Virginia) | The [[!DNL Virginia Consumer Data Protection Act (VCDPA)]](https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307) ger Virginias invånare nya rättigheter till dataintegritet (&quot;konsumenter&quot;), inklusive rätten att få tillgång till, radera och rätta personuppgifter. Konsumenterna har också rätt att välja bort försäljning av personuppgifter, välja bort profilering baserad på personuppgifter och behandling av personliga reklamändamål. |
 
 {style="table-layout:auto"}
+
+<!-- Not yet released:
+ | PDPD (Vietnam) | The [[!DNL Personal Data Protection Decree (PDPD)]]() .... | 
+ -->
 
 ## Nästa steg
 

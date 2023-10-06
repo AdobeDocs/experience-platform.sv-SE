@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: a19f37d40b52ce41975bfc303339d2b85e12080e
+source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
 workflow-type: tm+mt
 source-wordcount: '1796'
 ht-degree: 3%
@@ -108,6 +108,10 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 ## P
 
 **PDPA**: [!DNL Personal Data Protection Act] Thailand (PDPA) infördes för att skydda thailändska dataägare från olaglig insamling, användning eller utlämnande av deras personuppgifter. Förordningen inspireras av EU:s allmänna dataskyddsförordningen och ger de thailändska medborgarna rätt att begära tillgång till eller radering av lagrade personuppgifter.
+
+<!-- Not yet released:
+**PDPD**: The [!DNL Personal Data Protection Decree] of Vietnam (PDPD) ...  
+-->
 
 **Personuppgifter**: All information som rör en fysisk person eller den registrerade, som kan användas för att direkt eller indirekt identifiera personen.
 
