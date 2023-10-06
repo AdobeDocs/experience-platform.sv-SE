@@ -2,7 +2,7 @@
 title: Förfallodatum för automatiserade datauppsättningar
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
 workflow-type: tm+mt
 source-wordcount: '792'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Det här dokumentet beskriver hur du schemalägger och automatiserar förfalloda
 
 >[!NOTE]
 >
->Datamängdens förfallodatum tar för närvarande inte bort data från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data finns kvar i Edge Network när datauppsättningen har satts till att upphöra. Detta beror på att 14-dagars servicelicensavtalet för förfallodatum för datauppsättning sammanfaller med den 14-dagars period då data finns i Edge Network innan de tas bort.
+>Datamängdens förfallodatum tar för närvarande inte bort data från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data finns kvar i Edge Network när datauppsättningen har satts till att upphöra. Detta beror på att 15-dagars servicelicensavtalet för förfallodatum för datauppsättning överlappar den 14-dagarsperiod då data finns i Edge Network innan de tas bort.
 
 ## Schemalägg ett förfallodatum för datauppsättning {#schedule-dataset-expiration}
 
