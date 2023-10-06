@@ -1,35 +1,31 @@
 ---
-title: Bläddra bland arbetsorder för datahygien
-description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för datahygien i Adobe Experience Platform användargränssnitt.
+title: Bläddra i arbetsorder för datasamling
+description: Lär dig hur du visar och hanterar befintliga arbetsbeställningar för livscykelarbete i Adobe Experience Platform användargränssnitt.
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: a20afcd95d47e38ccdec9fba9e772032e212d7a4
+source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '810'
 ht-degree: 0%
 
 ---
 
-# Bläddra bland arbetsorder för datahygien {#browse-work-orders}
+# Bläddra bland arbetsorder för livscykeln för data {#browse-work-orders}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
 >title="ID för arbetsorder"
->abstract="När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar med andra ord en specifik datahygienprocess, som omfattar dess aktuella status och andra relaterade detaljer. Varje arbetsorder tilldelas automatiskt ett eget unikt ID när den skapas."
->text="See the data hygiene UI guide to learn more."
+>abstract="När en begäran om datalängd skickas till systemet skapas en arbetsordning för att utföra den begärda uppgiften. En arbetsorder representerar med andra ord en specifik datalivscykelprocess, som inkluderar dess aktuella status och annan relaterad information. Varje arbetsorder tilldelas automatiskt ett eget unikt ID när den skapas."
+>text="See the data lifecycle UI guide to learn more."
 
->[!IMPORTANT]
->
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
-
-När en begäran om datahygien skickas till systemet skapas en arbetsorder för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datahygienprocess, t.ex. ett schemalagt utgångsdatum för datauppsättningen, som inkluderar dess aktuella status och andra relaterade detaljer.
+När en begäran om datalängd skickas till systemet skapas en arbetsordning för att utföra den begärda uppgiften. En arbetsorder representerar en specifik datalivscykelprocess, t.ex. en schemalagd förfallotid för datauppsättning, som inkluderar dess aktuella status och annan relaterad information.
 
 Den här guiden beskriver hur du visar och hanterar befintliga arbetsorder i Adobe Experience Platform användargränssnitt.
 
 ## Visa och filtrera befintliga arbetsorder
 
-När du först öppnar **[!UICONTROL Data Hygiene]** i användargränssnittet visas en lista över befintliga arbetsorder tillsammans med deras grundläggande information.
+När du först öppnar **[!UICONTROL Data Lifecycle]** i användargränssnittet visas en lista över befintliga arbetsorder tillsammans med deras grundläggande information.
 
-![Bild som visar [!UICONTROL Data Hygiene] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
+![Bild som visar [!UICONTROL Data Lifecycle] arbetsytan i plattformsgränssnittet](../images/ui/browse/work-order-list.png)
 
 I listan visas endast arbetsorder för en kategori i taget. Välj **[!UICONTROL Consumer]** om du vill visa en lista över postborttagningsuppgifter och **[!UICONTROL Dataset]** om du vill visa en lista över schemalagda förfallodatum för datauppsättningar.
 
@@ -69,17 +65,17 @@ Följande filter gäller för datauppsättningens förfallobegäranden:
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"
 >title="Status per tjänst"
->abstract="Förfrågningar om datahygien behandlas av flera Experience Platform-tjänster oberoende av varandra. I det här avsnittet beskrivs den aktuella bearbetningsstatusen för begäran för varje tjänst. Mer information finns i användargränssnittshandboken för datahygien."
+>abstract="Förfrågningar om datalivscykler behandlas oberoende av flera Experience Platform-tjänster. I det här avsnittet beskrivs den aktuella bearbetningsstatusen för begäran för varje tjänst. Mer information finns i användargränssnittshandboken för datatillgång."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
 >title="Antal identiteter"
->abstract="Antalet identiteter vars poster har begärts att uppdateras eller tas bort som en del av den här arbetsordern. De identiteter som ingår i antalet kanske inte finns i de datauppsättningar som påverkas. Mer information finns i användargränssnittshandboken för datahygien."
+>abstract="Antalet identiteter vars poster har begärts att uppdateras eller tas bort som en del av den här arbetsordern. De identiteter som ingår i antalet kanske inte finns i de datauppsättningar som påverkas. Mer information finns i användargränssnittshandboken för datatillgång."
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="Spela in borttagningssvar"
->abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som kan hjälpa dig att felsöka problemet. Mer information finns i användargränssnittsguiden för datahygien."
+>abstract="När en postborttagningsprocess får ett svar från systemet, visas dessa meddelanden under **[!UICONTROL Result]** -avsnitt. Om ett problem uppstår medan en arbetsorder bearbetas visas eventuella felmeddelanden i det här avsnittet som kan hjälpa dig att felsöka problemet. Mer information finns i användargränssnittshandboken för datalängd."
 
 Markera ID:t för en listad arbetsorder om du vill visa information om den.
 
@@ -101,7 +97,7 @@ Detaljsidan för en datauppsättnings förfallodatum innehåller information om 
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du visar och hanterar befintliga arbetsbeställningar för datahygien i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
+I den här handboken beskrivs hur du visar och hanterar befintliga arbetsorder för livscykelarbete för data i användargränssnittet för plattformen. Mer information om hur du skapar egna arbetsorder finns i följande dokumentation:
 
 * [Hantera förfallodatum för datauppsättning](./dataset-expiration.md)
-<!-- * [Manage record deletes](./record-delete.md) -->
+* [Hantera postborttagningar](./record-delete.md)

@@ -1,19 +1,15 @@
 ---
 title: API-guide för datahygien
-description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
+description: Lär dig att programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
+source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
 
 # API-guide för datahygien
-
->[!IMPORTANT]
->
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
 Med Data Hygiene API kan du programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform, samt schemalägga förfallodatum för datauppsättningar. Den här guiden beskriver de nödvändiga stegen för att använda API:t och innehåller länkar till mer slutpunktsspecifik dokumentation.
 
@@ -41,7 +37,7 @@ Det här dokumentet innehåller ett exempel-API-anrop som visar hur du formatera
 
 ## Utgångsdatum för datauppsättning
 
-En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för datauppsättningen anger du en framtida tidpunkt då datauppsättningen ska tas bort. Se [Slutpunktshandbok för datauppsättningens förfallodatum](./dataset-expiration.md) om du vill ha mer information om schemaläggning av datauppsättningens förfallodatum i API:t.
+En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en datamängd&quot;. Genom att skapa en förfallotid för en datauppsättning anger du en framtida tidpunkt då den datauppsättningen ska tas bort. Se [Slutpunktshandbok för datauppsättningens förfallodatum](./dataset-expiration.md) om du vill ha mer information om schemaläggning av datauppsättningens förfallodatum i API:t.
 
 ## Posten tas bort
 
@@ -52,12 +48,12 @@ En datamängds förfallodatum är en tidsfördröjd åtgärd,&quot;ta bort en da
 >
 >Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
 
-Med Data Hygiene API kan du ta bort alla poster som är associerade med en identitet i en eller alla datauppsättningar. Alla datahygienåtgärder som tar bort identiteter representeras av en konstruktion som kallas arbetsordning. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med postborttagningar i API:t.
+Med Data Hygiene API kan du ta bort alla poster som är associerade med en identitet i en eller alla datauppsättningar. Alla uppgifter i datalängden som tar bort identiteter representeras av en konstruktion som kallas arbetsordning. Se [slutpunktsguide för arbetsorder](./workorder.md) om du vill ha information om hur du arbetar med postborttagningar i API:t.
 
 ## Kvot
 
-Din organisation är begränsad till en förbestämd månadskvot för varje typ av datahygien, som kan variera beroende på licens. Se [kvotslutpunktshandbok](./quota.md) om du vill ha mer information om hur du ser den aktuella kvotstatusen för dina datahygienprocesser.
+Din organisation är begränsad till en fördefinierad månadskvot för varje typ av datalängd, som kan variera beroende på licens. Se [kvotslutpunktshandbok](./quota.md) om du vill ha mer information om hur du ser den aktuella kvotstatusen för datalivscykelprocesserna.
 
 ## Nästa steg
 
-I den här guiden beskrivs hur du hanterar förfrågningar om datahygien med API-anrop. Information om hur du utför dessa åtgärder i plattformsgränssnittet finns i [gränssnittshandbok för datahygien](../ui/overview.md).
+I den här handboken beskrivs hur du hanterar livscykelbegäranden om data med API-anrop. Information om hur du utför dessa åtgärder i plattformsgränssnittet finns i [användargränssnittshandbok för datalängd](../ui/overview.md).

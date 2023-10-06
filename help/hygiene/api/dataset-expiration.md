@@ -2,20 +2,16 @@
 title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
-source-wordcount: '1426'
+source-wordcount: '1402'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för förfallodatum för datauppsättning
 
->[!IMPORTANT]
->
->Datahygien i Adobe Experience Platform är för närvarande endast tillgänglig för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
-
-The `/ttl` -slutpunkten i Data Hygiene API gör att du kan schemalägga förfallodatum för datauppsättningar i Adobe Experience Platform.
+The `/ttl` kan du schemalägga förfallodatum för datauppsättningar i Adobe Experience Platform.
 
 En datamängds förfallotid är endast en tidsfördröjd borttagningsåtgärd. Datauppsättningen är inte skyddad under tiden, så den kan tas bort på annat sätt innan den upphör att gälla.
 
@@ -33,9 +29,9 @@ När borttagningen av datauppsättningen initieras markeras dess förfallojobb s
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av API:t för datahygien. Läs igenom [översikt](./overview.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden är en del av API:t för datahygien. Innan du fortsätter bör du granska [översikt](./overview.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
-## Visa förfallodatum för datauppsättning {#list}
+## Visa förfallodatum för datamängd {#list}
 
 Du kan visa alla förfallodatum för datauppsättningar för din organisation genom att göra en GET-förfrågan.
 
@@ -160,7 +156,7 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum.
 | `workorderId` | ID:t för datauppsättningens förfallodatum. |
 | `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
 | `imsOrg` | Organisationens ID. |
-| `status` | Den aktuella statusen för datauppsättningens förfallodatum. |
+| `status` | Den aktuella statusen för datauppsättningens utgångsdatum. |
 | `expiry` | Det schemalagda datumet och den schemalagda tidpunkten när datauppsättningen tas bort. |
 | `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
 | `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
@@ -255,7 +251,7 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum, me
 | `workorderId` | ID:t för datauppsättningens förfallodatum. |
 | `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
 | `imsOrg` | Organisationens ID. |
-| `status` | Den aktuella statusen för datauppsättningens förfallodatum. |
+| `status` | Den aktuella statusen för datauppsättningens utgångsdatum. |
 | `expiry` | Det schemalagda datumet och den schemalagda tidpunkten när datauppsättningen tas bort. |
 | `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
 | `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
@@ -301,7 +297,7 @@ Ett godkänt svar returnerar HTTP-status 204 (inget innehåll) och förfallodatu
 
 ## Hämta förfallostatushistoriken för en datauppsättning
 
-Du kan slå upp förfallostatushistoriken för en viss datauppsättning med hjälp av frågeparametern `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, om uppdateringar har tillämpats och om hur den har annullerats eller körts (om tillämpligt).
+Du kan slå upp förfallostatushistoriken för en viss datauppsättning med hjälp av frågeparametern `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, vilka uppdateringar som har gjorts och hur den avbryts eller körs (om tillämpligt).
 
 **API-format**
 
@@ -328,7 +324,7 @@ curl -X GET \
 
 **Svar**
 
-Ett svar returnerar information om datauppsättningens förfallodatum, med en `history` arrayen med information om dess `status`, `expiry`, `updatedAt`och `updatedBy` attribut för var och en av de inspelade uppdateringarna.
+Ett svar returnerar information om datauppsättningens förfallodatum, med en `history` arrayen med information om dess `status`, `expiry`, `updatedAt`och `updatedBy` attribut för var och en av de registrerade uppdateringarna.
 
 ```json
 {

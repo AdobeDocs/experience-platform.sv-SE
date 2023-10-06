@@ -1,15 +1,15 @@
 ---
-title: Hantera förfallodatum för datauppsättning
+title: Förfallodatum för automatiserade datauppsättningar
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 7931c8fe4a1ca5d255a80e7e6b0deb976d53c3de
+source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
 
-# Hantera förfallodatum för datauppsättning {#dataset-expiration}
+# Automatiska förfallodatum för datauppsättningar {#dataset-expiration}
 
 >[!CONTEXTUALHELP]
 >id="platform_privacyConsole_scheduleDatasetExpiration_description"
@@ -22,7 +22,7 @@ The [[!UICONTROL Data Lifecycle] arbetsyta](./overview.md) i Adobe Experience Pl
 >
 >Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
 
-Det här dokumentet beskriver hur du schemalägger och hanterar förfallodatum för datauppsättningar i plattformsgränssnittet.
+Det här dokumentet beskriver hur du schemalägger och automatiserar förfallodatum för datauppsättningar i plattformsgränssnittet.
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ Om du vill skapa en förfrågan väljer du **[!UICONTROL Create request]** från
 
 >[!IMPORTANT]
 >
-Du kan ha upp till 20 tidsplanerade utgångsdatum för datauppsättningen samtidigt. Det innebär att du kan ha 20 datauppsättningar schemalagda att tas bort när som helst. Det finns inga begränsningar för vilken tid eller vilket år som dessa förfallotider har angetts för. Om du t.ex. har 20 schemalagda förfallodatum för datauppsättningar och en datauppsättning ska tas bort i morgon, kan du inte ange fler förfallodatum förrän den datauppsättningen har tagits bort.
+Användare av Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics har 20 väntande arbetsorder för schemalagda datauppsättningar. Användare av hälso- och sjukvårdsskölden och skölden för skydd av privatlivet och privatlivet har 50 väntande schemalagda arbetsorder för förfallodatum. Det innebär att du kan ha 20 eller 50 datauppsättningar schemalagda att tas bort när som helst.<br>Om du t.ex. har 20 schemalagda förfallodatum för datauppsättningar och en datauppsättning ska tas bort i morgon, kan du inte ange fler förfallodatum förrän den datauppsättningen har tagits bort.
 
 ![The [!UICONTROL Data Lifecycle] arbetsyta med [!UICONTROL Create request] markerad.](../images/ui/ttl/create-request-button.png)
 
