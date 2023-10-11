@@ -2,20 +2,20 @@
 title: API-slutpunkt för arbetsorder
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-hide: true
-hidefromtoc: true
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 8e21bcc7b9d7fe3f4d26f80f953d454f090b0928
 workflow-type: tm+mt
-source-wordcount: '997'
+source-wordcount: '1034'
 ht-degree: 0%
 
 ---
 
-# Slutpunkt för arbetsorder
+# [!BADGE Beta]{type=Informative} Slutpunkt för arbetsorder {#work-order-endpoint}
 
 The `/workorder` -slutpunkten i Data Hygiene API gör att du kan hantera begäranden om postborttagning i Adobe Experience Platform programmässigt.
 
 >[!IMPORTANT]
+> 
+>Funktionen Ta bort post är för närvarande i betaversionen och endast tillgänglig i en **begränsad release**. Det är inte tillgängligt för alla kunder. Begäranden om postborttagning är bara tillgängliga för organisationer i den begränsade versionen.
 >
 >Borttagning av poster ska användas för datarensning, borttagning av anonyma data eller datamängning. De är **not** som ska användas för förfrågningar om registrerade rättigheter (överensstämmelse) som rör sekretessbestämmelser som den allmänna dataskyddsförordningen (GDPR). För all användning av regelefterlevnad [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) i stället.
 
