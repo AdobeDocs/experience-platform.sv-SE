@@ -2,10 +2,10 @@
 title: Konfigurera ett datastream
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 1233d9dcfefa71685e457815cb5b9d7a768b7d6e
+source-git-commit: db75771d09caef00db58073333909f730a303975
 workflow-type: tm+mt
-source-wordcount: '2501'
-ht-degree: 1%
+source-wordcount: '2597'
+ht-degree: 0%
 
 ---
 
@@ -48,12 +48,18 @@ Expandera **[!UICONTROL Geolocation and network lookup]** för att konfigurera i
 
 | Inställning | Beskrivning |
 | --- | --- |
-| [!UICONTROL Geo Lookup] | Aktiverar sökningar efter geopositionering för de valda alternativen, baserat på besökarens IP-adress. Geolocation-sökning kräver att du inkluderar [`placeContext`](../edge/data-collection/automatic-information.md#place-context) fältgrupp i Web SDK-konfigurationen. <br> Tillgängliga alternativ <ul><li>Land</li><li>Postnummer</li><li>Stat/provins</li><li>DMA</li><li>Ort</li><li>Latitud </li><li>Longitud</li></ul>Markera **[!UICONTROL City]**, **[!UICONTROL Latitude]**, eller **[!UICONTROL Longitude]** innehåller koordinater upp till två decimalpunkter, oavsett vilka andra alternativ som är markerade. Detta betraktas som granularitet på stadsnivå. <br> <br>Om du inte markerar något alternativ inaktiveras sökningar efter geopositionering. Geolokalisering inträffar före [!UICONTROL IP Obfuscation] och påverkas inte av  [!UICONTROL IP Obfuscation] inställning. |
-| [!UICONTROL Network Lookup] | Aktiverar nätverkssökningar för de valda alternativen, baserat på besökarens IP-adress. Nätverkssökning kräver att du inkluderar [`Environment`](../edge/data-collection/automatic-information.md#environment) fältgrupp i Web SDK-konfigurationen. <br> Tillgängliga alternativ <ul><li>Fraktfirma</li><li>Domän</li><li>ISP</li></ul>Använd dessa alternativ för att ge mer information till andra tjänster om det specifika nätverk som förfrågningarna kommer från. |
+| [!UICONTROL Geo Lookup] | Aktiverar sökningar efter geopositionering för de valda alternativen baserat på besökarens IP-adress. Tillgängliga alternativ är: <ul><li>**Land**: Populates `xdm.placeContext.geo.countryCode`</li><li>**Postnummer**: Populates `xdm.placeContext.geo.postalCode`</li><li>**Stat/provins**: Populates `xdm.placeContext.geo.stateProvince`</li><li>**DMA**: Populates `xdm.placeContext.geo.dmaID`</li><li>**Ort**: Populates `xdm.placeContext.geo.city`</li><li>**Latitude**: Populates `xdm.placeContext.geo._schema.latitude`</li><li>**Longitud**: Populates `xdm.placeContext.geo._schema.longitude`</li></ul>Markera **[!UICONTROL City]**, **[!UICONTROL Latitude]**, eller **[!UICONTROL Longitude]** innehåller koordinater upp till två decimalpunkter, oavsett vilka andra alternativ som är markerade. Detta betraktas som granularitet på stadsnivå.<br> <br>Om du inte väljer något alternativ inaktiveras sökningar efter geopositionering. Geolokalisering sker innan [!UICONTROL IP Obfuscation], vilket innebär att det inte påverkas av [!UICONTROL IP Obfuscation] inställning. |
+| [!UICONTROL Network Lookup] | Aktiverar nätverkssökningar för de valda alternativen baserat på besökarens IP-adress. Tillgängliga alternativ är: <ul><li>**Fraktfirma**: Populates `xdm.environment.carrier`</li><li>**Domän**: Populates `xdm.environment.domain`</li><li>**ISP**: Populates `xdm.environment.ISP`</li></ul> |
+
+Om du aktiverar något av fälten ovan för datainsamling måste du se till att du anger rätt [`context`](../edge/data-collection/automatic-information.md) arrayegenskap när [konfigurera Web SDK](../edge/fundamentals/configuring-the-sdk.md).
+
+Geoplatsens sökfält använder `context` matrissträng `"placeContext"`medan fält för nätverkssökning använder `context` matrissträng `"environment"`.
+
+Kontrollera dessutom att varje önskat XDM-fält finns i schemat. Om så inte är fallet kan du lägga till Adobe `Environment Details` fältgrupp till ditt schema.
 
 ### Konfigurera enhetssökning {#geolocation-device-lookup}
 
-The **[!UICONTROL Device Lookup]** kan du välja granularitetsnivå för den enhetsspecifika information som du vill samla in.
+The **[!UICONTROL Device Lookup]** kan du välja enhetsspecifik information som du vill samla in.
 
 Expandera **[!UICONTROL Device Lookup]** för att konfigurera inställningarna som beskrivs nedan.
 
@@ -65,9 +71,15 @@ Expandera **[!UICONTROL Device Lookup]** för att konfigurera inställningarna s
 
 | Inställning | Beskrivning |
 | --- | --- |
-| **[!UICONTROL Keep user agent and client hints headers]** | Välj det här alternativet om du bara vill samla in den information som lagras i användaragentsträngen. Det här är standardinställningen. |
-| **[!UICONTROL Use device lookup to collect the following information]** | Välj det här alternativet om du vill samla in en eller flera av följande enhetsspecifika information: <ul><li>**[!UICONTROL Device]** information:<ul><li>Enhetstillverkare</li><li>Enhetsmodell</li><li>Marknadsföringsnamn</li></ul></li><li>**[!UICONTROL Hardware]** information: <ul><li>Enhetstyp</li><li>Visningshöjd</li><li>Visningsbredd</li><li>Visa färgdjup</li></ul></li><li>**[!UICONTROL Browser]** information: <ul><li>Webbläsarleverantör</li><li>Webbläsarnamn</li><li>Webbläsarversion</li></ul></li><li>**[!UICONTROL Operating system]** information: <ul><li>OS-leverantör</li><li>OS-namn</li><li>OS-version</li></ul></li></ul> <br>  Det går inte att samla in information om enhetssökning tillsammans med användaragent- och klienttips. Om du väljer att samla in enhetsinformation inaktiveras samlingen av användaragent- och klienttips och vice versa. All enhetssökningsinformation lagras i `xdm:device` fältgrupp. |
-| **[!UICONTROL Do not collect any device information]** | Välj det här alternativet om du inte vill samla in någon typ av sökinformation. Ingen information om enheter, maskinvara, webbläsare eller operativsystem kommer att samlas in, inklusive inga rubriker för användaragent eller klienttips. |
+| **[!UICONTROL Keep user agent and client hints headers]** | Välj det här alternativet om du bara vill samla in den information som lagras i användaragentsträngen. Den här inställningen är markerad som standard. Populerar `xdm.environment.browserDetails.userAgent` |
+| **[!UICONTROL Use device lookup to collect the following information]** | Välj det här alternativet om du vill samla in en eller flera av följande enhetsspecifika information: <ul><li>**[!UICONTROL Device]** information:<ul><li>**Enhetstillverkare**: Populates `xdm.device.manufacturer`</li><li>**Enhetsmodell**: Populates `xdm.device.modelNumber`</li><li>**Marknadsföringsnamn**: Populates `xdm.device.model`</li></ul></li><li>**[!UICONTROL Hardware]** information: <ul><li>**Maskinvarutyp**: Populates `xdm.device.type`</li><li>**Visningshöjd**: Populates `xdm.device.screenHeight`</li><li>**Visningsbredd**: Populates `xdm.device.screenWidth`</li><li>**Visa färgdjup**: Populates `xdm.device.colorDepth`</li></ul></li><li>**[!UICONTROL Browser]** information: <ul><li>**Webbläsarleverantör**: Populates `xdm.environment.browserDetails.vendor`</li><li>**Webbläsarnamn**: Populates `xdm.environment.browserDetails.name`</li><li>**Webbläsarversion**: Populates `xdm.environment.browserDetails.version`</li></ul></li><li>**[!UICONTROL Operating system]** information: <ul><li>**OS-leverantör**: Populates `xdm.environment.operatingSystemVendor`</li><li>**OS-namn**: Populates `xdm.environment.operatingSystem`</li><li>**OS-version**: Populates `xdm.environment.operatingSystemVersion`</li></ul></li></ul>Det går inte att samla in information om enhetssökning tillsammans med användaragent- och klienttips. Om du väljer att samla in enhetsinformation inaktiveras samlingen av användaragent- och klienttips och vice versa. |
+| **[!UICONTROL Do not collect any device information]** | Välj det här alternativet om du inte vill samla in någon information om enhetssökning. Inga tipsdata för enheter, maskinvara, webbläsare, operativsystem, användare eller klient samlas in. |
+
+Om du aktiverar något av fälten ovan för datainsamling måste du se till att du anger rätt [`context`](../edge/data-collection/automatic-information.md) arrayegenskap när [konfigurera Web SDK](../edge/fundamentals/configuring-the-sdk.md).
+
+Enhet- och maskinvaruinformation använder `context` matrissträng `"device"`, medan information om webbläsare och operativsystem använder `context` matrissträng `"environment"`.
+
+Kontrollera dessutom att varje önskat XDM-fält finns i schemat. Om så inte är fallet kan du lägga till Adobe `Environment Details` fältgrupp till ditt schema.
 
 ### Konfigurera avancerade alternativ {#@advanced-options}
 
