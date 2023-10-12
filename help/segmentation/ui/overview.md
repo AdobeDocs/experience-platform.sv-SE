@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 7eaf3383bb8dde0d5918eefba1ee69caddea0c0b
+source-git-commit: 695a5c9b39def899c6b1f9cb169508ae0299686c
 workflow-type: tm+mt
-source-wordcount: '3594'
+source-wordcount: '3635'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 
 Växlar **[!UICONTROL Schedule all audiences]** möjliggör schemalagd segmentering. Mer information om schemalagd segmentering finns i [avsnittet med schemalagd segmentering i den här användarhandboken](#scheduled-segmentation).
 
-Markera **[!UICONTROL Import audience]** gör att du kan importera en extern målgrupp. Läs mer om hur du importerar målgrupper i avsnittet om [importera en målgrupp i användarhandboken](#import-audience).
+Markera **[!UICONTROL Import audience]** kan du importera en externt genererad publik. Läs mer om att importera målgrupper i avsnittet om [importera en målgrupp i användarhandboken](#import-audience).
 
 Markera **[!UICONTROL Create audience]** kan ni skapa en målgrupp. Läs mer om hur du skapar målgrupper i avsnittet om [skapa en målgrupp i användarhandboken](#create-audience).
 
@@ -350,6 +350,10 @@ Sidan **[!UICONTROL Review]** visas. Du kan granska informationen om den nyligen
 ![The [!UICONTROL Review] visas med information om den nyligen importerade externt genererade målgruppen.](../images/ui/overview/import-audience-review-details.png)
 
 När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Finish]** för att importera externt genererade målgrupper till Adobe Experience Platform.
+
+>[!IMPORTANT]
+>
+>Om den externt genererade publiken innehåller känslig och/eller vårdrelaterad information, **måste** lägga till nödvändiga etiketter för dataanvändning innan den aktiveras för alla destinationer. Mer information om användning av dataetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md).
 
 ## Schemalagd segmentering {#scheduled-segmentation}
 
