@@ -2,7 +2,7 @@
 title: Moengage connection
 description: Moengage är en plattform för kundengagemang som driver kundcentrerade interaktioner mellan konsumenter och varumärken i realtid.
 last-substantial-update: 2023-10-11T00:00:00Z
-source-git-commit: 3d5a3ce18e7f1c0e06246faf8ec4403871e1a1a9
+source-git-commit: 6a80089f404057b5c98764b5e0166b9afaf1a7e4
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Med Adobe är integreringen mycket enkel och intuitiv. Ta vilken användarprofil
 
 >[!IMPORTANT]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av *Moengage* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`[amc-support@amazon.com](https://help.moengage.com/hc/en-us)`.*
+>Målanslutningen och dokumentationssidan skapas och underhålls av *Moengage* team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på *`https://help.moengage.com/hc/en-us`.*
 
 ## Användningsfall {#use-cases}
 
