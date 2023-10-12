@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Frågar API-slutpunkt
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 958d5c322ff26f7372f8ab694a70ac491cbff56c
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '943'
 ht-degree: 0%
 
 ---
@@ -38,11 +38,11 @@ Här följer en lista med tillgängliga frågeparametrar för att lista frågor.
 | --------- | ----------- |
 | `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta frågan först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. De grundläggande ISO-tidsstämplarna har formatet: `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skulle skrivas som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30.00, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och markeras med suffixet &quot;Z&quot; (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
 | `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `updated`, `state`och `id`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), `>=` (större än eller lika med), `<=` (mindre än eller lika med), `==` (lika med), `!=` (inte lika med), och `~` (innehåller). Till exempel: `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar alla frågor med det angivna ID:t. |
 | `excludeSoftDeleted` | Anger om en fråga som har tagits bort ska tas med. Till exempel: `excludeSoftDeleted=false` kommer **include** mjuka borttagna frågor. (*Boolean, standardvärde: true*) |
 | `excludeHidden` | Anger om icke-användardrivna frågor ska visas. Värdet false kommer att anges **include** icke-användardrivna frågor, som CURSOR-definitioner, FETCH eller metadatafrågor. (*Boolean, standardvärde: true*) |
-| `isPrevLink` | The `isPrevLink` frågeparametern används för sidnumrering. Resultaten av API-anropet sorteras med hjälp av deras `created` tidsstämpel och `orderby` -egenskap. När du navigerar på resultatsidorna `isPrevLink` är inställt på true vid växling bakåt. Den ändrar ordningen på frågan. Se länkarna &quot;next&quot; och &quot;prev&quot; som exempel. |
+| `isPrevLink` | The `isPrevLink` frågeparametern används för sidnumrering. Resultaten av API-anropet sorteras utifrån deras `created` tidsstämpel och `orderby` -egenskap. När du navigerar på resultatsidorna `isPrevLink` är inställt på true vid växling bakåt. Den ändrar ordningen på frågan. Se länkarna &quot;next&quot; och &quot;prev&quot; som exempel. |
 
 **Begäran**
 
@@ -328,7 +328,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `op` | Den typ av åtgärd som ska utföras på resursen. Godkända värden är `cancel` och `soft_delete`. Om du vill avbryta frågan måste du ange parametern op med värdet `cancel `. Observera att en mjuk borttagningsåtgärd hindrar frågan från att returneras vid GET-begäranden, men tar inte bort den från systemet. |
+| `op` | Den typ av åtgärd som ska utföras på resursen. Godkända värden är `cancel` och `soft_delete`. Om du vill avbryta frågan måste du ange parametern op med värdet `cancel `. Observera att mjuk borttagning gör att frågan inte returneras vid GET-begäranden, men att den inte tas bort från systemet. |
 
 **Svar**
 

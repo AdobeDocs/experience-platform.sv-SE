@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för schemalagda frågor körs
 description: Följande avsnitt går igenom de olika API-anrop du kan göra för att köra schemalagda frågor med API:t för frågetjänsten.
 exl-id: 1e69b467-460a-41ea-900c-00348c3c923c
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: e9639cb90a561adc59388ac77984edaf90f4bfdd
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '774'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Här följer en lista över tillgängliga frågeparametrar för att lista körni
 | --------- | ----------- |
 | `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta körningen först och fortsätter sedan att visa de senaste resultaten<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. De grundläggande ISO-tidsstämplarna har formatet: `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skulle skrivas som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30.00, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och markeras med suffixet &quot;Z&quot; (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
 | `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `state`och `externalTrigger`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), och  `==` (lika med), och `!=` (inte lika med). Till exempel: `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` kommer att returnera alla körningar som har skapats manuellt, slutförts och skapats efter den 20 april 2019. |
 
 **Begäran**
@@ -183,7 +183,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Hämta information om en körning för en specifik schemalagd fråga
 
-Du kan hämta information om en körning för en viss schemalagd fråga genom att göra en GET-förfrågan till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkt och tillhandahåller både ID för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan hämta information om en körning för en viss schemalagd fråga genom att göra en GET-förfrågan till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkt och tillhandahåller både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 
@@ -244,7 +244,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna körni
 
 ### Stoppa omedelbart en körning för en specifik schemalagd fråga
 
-Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkt och tillhandahåller både ID för den schemalagda frågan och körningen i sökvägen för begäran.
+Du kan omedelbart stoppa en körning för en viss schemalagd fråga genom att göra en PATCH-begäran till `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` slutpunkt och tillhandahåller både ID:t för den schemalagda frågan och körningen i sökvägen för begäran.
 
 **API-format**
 

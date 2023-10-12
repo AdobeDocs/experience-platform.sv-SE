@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Frågetjänst;schemalagda frågor;schemalagd fråga;
 solution: Experience Platform
-title: Slutpunkt för scheman
+title: Slutpunkt för schema
 description: I följande avsnitt går du igenom de olika API-anrop du kan göra för schemalagda frågor med API:t för frågetjänsten.
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 958d5c322ff26f7372f8ab694a70ac491cbff56c
 workflow-type: tm+mt
-source-wordcount: '1132'
+source-wordcount: '1212'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ Här följer en lista med tillgängliga frågeparametrar för att lista schemala
 | --------- | ----------- |
 | `orderby` | Anger fältet som resultaten ska sorteras efter. De fält som stöds är `created` och `updated`. Till exempel: `orderby=created` sorterar resultaten efter att de har skapats i stigande ordning. Lägga till en `-` före skapande (`orderby=-created`) sorterar objekt efter att de har skapats i fallande ordning. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. (*Standardvärde: 20*) |
-| `start` | Förskjuter svarslistan med nollbaserad numrering. Till exempel: `start=2` kommer att returnera en lista med början från den tredje listade frågan. (*Standardvärde: 0*) |
+| `start` | Ange en tidsstämpel för ISO-format för att beställa resultaten. Om inget startdatum anges returnerar API-anropet den äldsta schemalagda frågan först och fortsätter sedan att visa de senaste resultaten.<br> ISO-tidsstämplar tillåter olika nivåer av granularitet för datum och tid. De grundläggande ISO-tidsstämplarna har formatet: `2020-09-07` för att uttrycka datumet 7 september 2020. Ett mer komplext exempel skulle skrivas som `2022-11-05T08:15:30-05:00` och motsvarar 5 november 2022, 8:15:30.00, US Eastern Standard Time. En tidszon kan anges med en UTC-förskjutning och markeras med suffixet &quot;Z&quot; (`2020-01-01T01:01:01Z`). Om ingen tidszon anges är standardvärdet noll. |
 | `property` | Filtrera resultat baserat på fält. Filtren **måste** Bli HTML rymd. Kommandon används för att kombinera flera uppsättningar filter. De fält som stöds är `created`, `templateId`och `userId`. Listan med operatorer som stöds är `>` (större än), `<` (mindre än), och `==` (lika med). Till exempel: `userId==6ebd9c2d-494d-425a-aa91-24033f3abeec` returnerar alla schemalagda frågor där användar-ID:t är angivet. |
 
 **Begäran**
@@ -349,7 +349,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 | -------- | ----------- |
 | `op` | Åtgärden som ska utföras i frågeschemat. Godkänt värde är `replace`. |
 | `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till `/state`. |
-| `value` | Det uppdaterade värdet för `/state`. Värdet kan antingen anges som `enable` eller `disable` för att aktivera eller inaktivera den schemalagda frågan. |
+| `value` | Det uppdaterade värdet för `/state`. Detta värde kan antingen anges som `enable` eller `disable` för att aktivera eller inaktivera den schemalagda frågan. |
 
 **Svar**
 
@@ -416,7 +416,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med följande meddelande
 
 ### Ta bort en angiven schemalagd fråga
 
-Du kan ta bort en angiven schemalagd fråga genom att göra en DELETE-förfrågan till `/schedules` slutpunkt och ange ID för den schemalagda fråga som du vill ta bort i sökvägen för begäran.
+Du kan ta bort en angiven schemalagd fråga genom att göra en DELETE-förfrågan till `/schedules` slutpunkt och ange ID:t för den schemalagda fråga som du vill ta bort i sökvägen för begäran.
 
 >[!NOTE]
 >
