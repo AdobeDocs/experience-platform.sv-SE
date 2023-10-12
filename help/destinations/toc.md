@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 77fd0ace252bae66478f73a1dc4b7d4a3ccb867d
+source-git-commit: c1f5c27a689e91b472d4e3c8e69e1637c12c37e4
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1170'
 ht-degree: 2%
 
 ---
@@ -158,6 +158,7 @@ ht-degree: 2%
       * [Ansluta till luftfartygets taggar](./catalog/mobile-engagement/airship-tags.md)
       * [Braze connection](./catalog/mobile-engagement/braze.md)
       * [Radanslutning](./catalog/mobile-engagement/line.md)
+      * [Moengage connection](./catalog/mobile-engagement/moengage.md)
    * Destinationer för anpassning {#personalization}
       * [Översikt över destinationer för personalisering](./catalog/personalization/overview.md)
       * [Adobe Commerce](./catalog/personalization/adobe-commerce.md)
