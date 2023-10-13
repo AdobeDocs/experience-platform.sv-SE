@@ -1,9 +1,10 @@
 ---
 title: Konfigurera ett Azure Key Vault
 description: Lär dig hur du skapar ett nytt Enterprise-konto med Azure, eller använder ett befintligt Enterprise-konto och skapar nyckelvalvet.
-source-git-commit: a0df05cde19e97d4abdad7abd19eafea8efe1096
+exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
+source-git-commit: 4ec87482c5a38404217ecd910b6a27ee2d0e00eb
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
@@ -41,6 +42,12 @@ Här fortsätter du med arbetsflödet för att skapa nyckelvalv och konfigurerar
 När du har kommit fram till **[!DNL Review + create]** kan du granska informationen om nyckelvalvet medan det går igenom valideringen. När valideringen är klar väljer du **[!DNL Create]** för att slutföra processen.
 
 ![Microsoft Azure Key Valults Review och create page with Create marked.](../../images/governance-privacy-security/customer-managed-keys/finish-creation.png)
+
+## Konfigurera åtkomst {#configure-access}
+
+Aktivera sedan Azure-rollbaserad åtkomstkontroll för ditt nyckelvalv. Välj **[!DNL Access configuration]** i [!DNL Settings] i den vänstra navigeringen väljer du **[!DNL Azure role-based access control]** för att aktivera inställningen. Det här steget är viktigt eftersom CMK-appen senare måste associeras med en Azure-roll. Tilldela en roll finns dokumenterad i båda [API](./api-set-up.md#assign-to-role) och [UI](./ui-set-up.md#assign-to-role) arbetsflöden.
+
+![The [!DNL Microsoft Azure] kontrollpanel med [!DNL Access configuration] och [!DNL Azure role-based access control] markerad.](../../images/governance-privacy-security/customer-managed-keys/access-configuration.png)
 
 ## Konfigurera nätverksalternativ {#configure-network-options}
 
