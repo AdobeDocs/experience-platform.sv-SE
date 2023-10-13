@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;datauppsättning;datauppsättning;tid att leva;ttl;tid till live;pseudonymous;pseudonymous profiles;data expiration;expiration;
 solution: Experience Platform
-title: Förfallodatum för pseudonyma profildata
+title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: b6a79952d616a6f8e6ea4b2341c24d74c482c4b8
 workflow-type: tm+mt
-source-wordcount: '923'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ Det går inte att konfigurera förfallodatum för pseudonyma profildata via plat
 
 - De identitetsnamnutrymmen som ska användas för pseudonyma profiler tas bort.
    - Till exempel: `ECID` endast, `AAID` eller en kombination av `ECID` och `AAID`.
-- Hur lång tid det tar att vänta innan en pseudonym profil tas bort. Standardrekommendationen för kunder är 14 dagar. Det här värdet kan dock variera beroende på ditt användningssätt.
+- Hur lång tid det tar innan en pseudonym profil tas bort. Standardrekommendationen för kunder är 14 dagar. Det här värdet kan dock variera beroende på ditt användningssätt.
 
 ## Frågor och svar {#faq}
 
@@ -48,7 +48,7 @@ Förfallodatum för Experience Event fungerar på en **datauppsättning** nivå.
 
 #### Identitetstyper
 
-Förfallodatum för pseudonyma profildata **endast** hanterar profiler som har identitetsdiagram som innehåller identitetsnamnutrymmen som valts av kunden, t.ex. `ECID`, `AAID`eller andra typer av cookies. Om profilen innehåller **alla** ytterligare ID-namnutrymme som **not** i kundens lista kommer profilen att **not** tas bort.
+Pseudonymt utgångsdatum för profildata **endast** hanterar profiler som har identitetsdiagram som innehåller identitetsnamnutrymmen som valts av kunden, som `ECID`, `AAID`eller andra typer av cookies. Om profilen innehåller **alla** ytterligare ID-namnutrymme som **not** i kundens lista kommer profilen att **not** tas bort.
 
 Utgångsdatum för Experience Event-data tar bort händelser **endast** baserat på händelsepostens tidsstämpel. De identitetsnamnutrymmen som ingår är **ignorerad** för utgångsändamål.
 
@@ -79,4 +79,9 @@ I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla
 - När du har aktiverat den här funktionen är det **permanent**. Det finns **no** hur du återställer eller återställer borttagna profiler.
 - Det här är **not** ett engångsrensningsjobb. Pseudonyma profildata upphör att gälla en gång om dagen och profiler som matchar kundens indata tas bort.
 - **Alla** profiler som definieras som pseudonyma profiler påverkas av att pseudonyma profildata upphör att gälla. Det gör det **not** spelar någon roll om profilen bara är Experience Event eller om den bara innehåller profilattribut.
-- Rensningen kommer att **endast** inträffar i profilen. Identitetstjänsten kan fortsätta att visa borttagna identiteter i diagrammet efter rensningen om profilen har två eller flera associerade pseudonyma identiteter (till exempel `AAID` och `ECID`). Denna diskrepans kommer att åtgärdas inom den närmaste framtiden.
+- Den här rensningen kommer att **endast** inträffar i profilen. Identitetstjänsten kan fortsätta att visa borttagna identiteter i diagrammet efter rensningen om profilen har två eller flera associerade pseudonyma identiteter (till exempel `AAID` och `ECID`). Denna diskrepans kommer att åtgärdas inom den närmaste framtiden.
+
+### Hur interagerar Pseudonymous profiler med utgångsdatum för data som skyddas av identitetstjänstdata?
+
+- Identitetstjänsten [första-in-först-ut-system för borttagning](../identity-service/guardrails.md) kan ta bort ECID:n från identitetsdiagrammet som lagras i identitetstjänsten.
+- Om raderingsbeteendet resulterar i att en ECID-profil lagras i kundprofilen i realtid (profilarkivet), kommer pseudonyma profildata att ta bort profilen från profilarkivet.

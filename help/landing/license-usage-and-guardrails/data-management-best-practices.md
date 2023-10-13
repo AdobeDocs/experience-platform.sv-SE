@@ -2,9 +2,9 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 5f21d988d7947e64378dc6f35993f2a465ad1df6
 workflow-type: tm+mt
-source-wordcount: '2202'
+source-wordcount: '2287'
 ht-degree: 1%
 
 ---
@@ -93,6 +93,12 @@ Det finns ett antal verktyg som du kan använda för att hålla dig inom dina li
 
 * [Intag](#ingestion-filters)
 * [Profilarkiv](#profile-service)
+
+### Identitetstjänst och adresserbar publik {#identity-service}
+
+Identitetsdiagram räknas inte av mot det totala adresserbara målgruppsberättigandet eftersom adresserbara målgrupper refererar till det totala antalet kundprofiler.
+
+Gränserna för identitetsdiagram kan dock påverka den adresserbara publiken på grund av delade identiteter. Om till exempel det äldsta ECID:t tas bort från diagrammet kommer ECID att finnas kvar i kundprofilen i realtid som en pseudonym profil. Du kan ange [Förfallodatum för pseudonyma profildata](../../profile/pseudonymous-profiles.md) för att kringgå detta beteende. Mer information finns i [skyddsutkast för identitetstjänstens data](../../identity-service/guardrails.md).
 
 ### Intag {#ingestion-filters}
 
