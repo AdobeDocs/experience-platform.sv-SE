@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: d55398f328f3f85ce6b32a2553e7a93df3584f02
 workflow-type: tm+mt
-source-wordcount: '2259'
+source-wordcount: '2475'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Installera [!DNL Meta Conversions API] navigerar du till användargränssnittet 
 
 När du har valt eller skapat den önskade egenskapen väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen väljer du **[!UICONTROL Catalog]** -fliken. Sök efter [!UICONTROL Meta Conversions API] kort, välj **[!UICONTROL Install]**.
 
-![The [!UICONTROL Install] knappen som markeras för [!UICONTROL Meta Conversions API] i användargränssnittet för datainsamling.](../../../images/extensions/server/meta/install.png)
+![The [!UICONTROL Install] det alternativ som väljs för [!UICONTROL Meta Conversions API] i användargränssnittet för datainsamling.](../../../images/extensions/server/meta/install.png)
 
 I konfigurationsvyn som visas måste du ange [!DNL Pixel] ID som du kopierade tidigare för att länka tillägget till ditt konto. Du kan klistra in ID:t direkt i indata eller använda ett dataelement i stället.
 
@@ -46,6 +46,30 @@ När du är klar väljer du **[!UICONTROL Save]**
 ![The [!DNL Pixel] ID som anges som ett dataelement i tilläggskonfigurationsvyn.](../../../images/extensions/server/meta/configure.png)
 
 Tillägget är installerat och du kan nu använda dess funktioner i reglerna för vidarebefordran av händelser.
+
+## Integrering med Meta Business Extension (MBE) {#mbe}
+
+Tack vare integreringen med MBE (Meta Business Extensions) kan du snabbt autentisera med ditt Meta Business Account. Detta fyller sedan i [!UICONTROL Pixel ID] och Meta Conversions API [!UICONTROL Access Token], vilket gör det enklare att installera och konfigurera API:t för metakonvertering.
+
+En dialogruta för autentisering i MBE visas när du installerar [!UICONTROL Meta Conversions API] tillägg.
+
+![The [!UICONTROL Meta Conversions API Extension] markering av installationssidor [!UICONTROL Connect to Meta].](../../../images/extensions/server/meta/mbe-extension-install.png)
+
+En dialogruta för att autentisera i MBE visas också i snabbstartsgränssnittet vid vidarebefordran av händelser.
+
+![Gränssnittet för snabbstartsarbetsflödet [!UICONTROL Connect to Meta].](../../../images/extensions/server/meta/mbe-extension-quick-start.png)
+
+## Integrering med EMQ (Event Quality Match Score) {#emq}
+
+Integrationen med EMQ (Event Quality Match Score) gör att du enkelt kan se hur effektiv implementeringen är genom att visa EMQ-poäng. Den här integreringen minimerar kontextväxling och hjälper dig att förbättra framgången för implementeringarna av Meta Conversions API. De här händelserumren visas i [!UICONTROL Meta Conversions API extension] konfigurationsskärmen.
+
+![The [!UICONTROL Meta Conversions API Extension] markering av konfigurationssida [!UICONTROL View EMQ Score].](../../../images/extensions/server/meta/emq-score.png)
+
+## Integrering med LiveRamp (Alpha) {#alpha}
+
+Integreringen med LiveRamp lägger till nya fält i API-regelkonfigurationen för metakonvertering, vilket gör det enklare för kunder att integrera med API:t för LiveRamp-konvertering. Integreringen eliminerar behovet av att du delar PII direkt med din partner eller Meta. Eftersom LiveRamp har en robust identitetsgraf har även [!UICONTROL Partner ID (alpha)] kan förbättra integreringskvaliteten genom att öka användarnas matchningsfrekvens.
+
+![Meta-vidarebefordran [!UICONTROL Rule] markering av konfigurationssida [!UICONTROL Partner Name (alpha)] och [!UICONTROL Partner ID (alpha)].](../../../images/extensions/server/meta/live-ramp.png)
 
 ## Konfigurera en regel för vidarebefordran av händelser {#rule}
 
