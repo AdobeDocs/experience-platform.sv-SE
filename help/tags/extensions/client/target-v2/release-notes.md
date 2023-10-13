@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: 4b87141e94681d9a9f51d4d9b2f2276ca065d6ce
+source-git-commit: 63839b8918d42bae91df9bac919c546c81be6363
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '729'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## v0.20.0 (9 oktober 2023)
+
+- Uppdaterat till support på at.js 2.11.0.
+- Stöd har lagts till för att ställa in anpassade Adobe Experience Platform sandboxId och sandboxName i targetGlobalSettings, som skickas till Delivery API för getOffer-/getOffers-anrop.
+- Korrigering av skugg-DOM för kedja:eq() i väljaren.
 
 ## v0.19.3 (18 september 2023)
 
