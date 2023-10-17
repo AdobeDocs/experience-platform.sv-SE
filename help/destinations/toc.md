@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: c1f5c27a689e91b472d4e3c8e69e1637c12c37e4
+source-git-commit: 461545b7d06a4c54fb4037cf1eb2ba44dd6ee7b9
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1167'
 ht-degree: 2%
 
 ---
@@ -176,7 +176,6 @@ ht-degree: 2%
       * [Pega-profilanslutning](./catalog/personalization/pega-profile.md)
    * Social destination{#social}
       * [Översikt över sociala mål](./catalog/social/overview.md)
-      * [Adobe Livefyre-tillägg](./catalog/social/adobe-livefyre.md)
       * [Facebook](./catalog/social/facebook.md)
       * [LinkedIn Matched Auditions connection](./catalog/social/linkedin.md)
       * [TikTok](./catalog/social/tiktok.md)

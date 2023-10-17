@@ -1,11 +1,11 @@
 ---
-keywords: mål;upplev molnlösningar; mål;mål; mål; annonsmoln annonsmoln, målgruppschef, adobe target destination, Mål. målgruppshanterarens destination,
+keywords: mål;Experience Cloud-lösningar; mål; mål; mål; mål; moln; annonseringsmoln; målgruppshanterare; adobe target; target; målgruppshanterare; mål; målgruppshanterare;
 title: Översikt över destinationer i Adobe
 description: Hantera kundupplevelsen genom att koppla era data i Platform till andra Adobe Experience Cloud-lösningar för annonsanpassning, personalisering, automatiserad marknadsföring med mera
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: 461545b7d06a4c54fb4037cf1eb2ba44dd6ee7b9
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '231'
 ht-degree: 0%
 
 ---
@@ -24,18 +24,17 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 
 ### Anslutningar
 
-* [Adobe Advertising Cloud DSP-anslutning](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
-* [Adobe Campaign-anslutning](../email-marketing/adobe-campaign.md)
-* [Adobe Target-anslutning](/help/destinations/catalog/personalization/adobe-target-connection.md)
+* [Adobe Advertising Cloud DSP](/help/destinations/catalog/advertising/adobe-advertising-cloud-connection.md)
+* [Adobe Campaign](../email-marketing/adobe-campaign.md)
+* [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md)
 * [(Beta) Experience Cloud målgrupper](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
-* [Marketo Engage](/help/destinations/catalog/adobe/marketo-engage.md)
+* [Marketo Engage-anslutning](/help/destinations/catalog/adobe/marketo-engage.md)
 * [Marketo Measure Ultimate-anslutning](/help/destinations/catalog/adobe/marketo-measure-ultimate.md)
 
 ### Tillägg
 
 * [Adobe Advertising Cloud-tillägg](../advertising/adobe-advertising-cloud.md)
 * [Adobe Analytics-tillägg](../analytics/adobe-analytics.md)
-* [Adobe Livefyre-tillägg](../social/adobe-livefyre.md)
 * [Adobe Media Analytics för ljud- och videotillägg](../analytics/adobe-video-analytics.md)
 * [Adobe Target-tillägg](../personalization/adobe-target.md)
 * [Adobe Target v2-tillägg](../personalization/adobe-target-v2.md)
@@ -45,7 +44,7 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 * [Marketo Munchkin-tillägg](../email/marketo-munchkin.md)
 * [Marketo Web Personalization-tillägg](../personalization/marketo-web-personalization.md)
 
-## Experience Platform målgruppsdelning
+## Experience Platform
 
 Använd Experience Platform för målgruppsdelning för att dela era Experience Platform-målgrupper med andra Adobe-destinationer. Se sidan nedan för mer information (öppnas i dokumentationsportalen för Audience Manager):
 
