@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Användarhandbok om Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
 feature: Identities
-source-git-commit: 2617d913d73dcd7dd877fe877a7b2b4d79396a5f
+source-git-commit: 03228eef47100096e98666966c4e5065eb7f478a
 workflow-type: tm+mt
-source-wordcount: '112'
-ht-degree: 25%
+source-wordcount: '129'
+ht-degree: 21%
 
 ---
 
@@ -30,6 +30,11 @@ ht-degree: 25%
    - [Identitetsdiagramvisningsprogram](ui/identity-graph-viewer.md)
    - [Delad enhetsidentifiering](ui/shared-device-detection.md)
    - [Definiera identitetsfält i användargränssnittet](ui/label-identities.md)
+- [Länkningsregler för identitetsdiagram] {#identity-graph-linking-rules}
+   - [Översikt över funktioner](./identity-graph-linking-rules/overview.md)
+   - [Exempel på scenarier](./identity-graph-linking-rules/example-scenarios.md)
+   - [Identitetstjänst och kundprofil i realtid](./identity-graph-linking-rules/identity-and-profile.md)
+   - [Identitetslänkningslogik](./identity-graph-linking-rules/identity-linking-logic.md)
 - [ECID - översikt](ecid.md)
 - [Borttagningar i identitetstjänsten](deletion.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
