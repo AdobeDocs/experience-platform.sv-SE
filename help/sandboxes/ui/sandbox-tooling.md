@@ -1,13 +1,13 @@
 ---
 title: Sandlådor
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
-source-git-commit: 900cb35f6cb758f145904666c709c60dc760eff2
+exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
+source-git-commit: 0aaba1d1ae47908ea92e402b284438accb4b4731
 workflow-type: tm+mt
-source-wordcount: '1449'
-ht-degree: 1%
+source-wordcount: '1693'
+ht-degree: 0%
 
 ---
-
 
 # [!BADGE Beta] Verktyg i sandlådan
 
@@ -21,38 +21,55 @@ ht-degree: 1%
 
 Förbättra konfigurationsnoggrannheten över sandlådor och exportera och importera smidigt sandlådekonfigurationer mellan sandlådor med sandlådeverktygen. Använd sandlådeverktyg för att minska tidsåtgången för implementeringsprocessen och flytta framgångsrika konfigurationer mellan sandlådor.
 
-Du kan använda sandlådeverktygen för att markera olika objekt och exportera dem till ett paket. Ett paket kan bestå av ett enda objekt, flera objekt eller en hel sandlåda. Alla objekt som ingår i ett paket måste komma från samma sandlåda.
+Du kan använda sandlådeverktygen för att markera olika objekt och exportera dem till ett paket. Ett paket kan bestå av ett eller flera objekt. <!--or an entire sandbox.-->Alla objekt som ingår i ett paket måste komma från samma sandlåda.
 
 ## Objekt som stöds för sandlådeverktyg {#supported-objects}
 
-I tabellen nedan visas objekt som för närvarande stöds för sandlådeverktyg:
+Verktygsfunktionen i sandlådan ger dig möjlighet att exportera [!DNL Adobe Real-Time Customer Data Platform] och [!DNL Adobe Journey Optimizer] till ett paket.
 
-| Plattform | Objekt |
-| --- | --- |
-| [!DNL Adobe Journey Optimizer] | Resor |
-| Kunddataplattform | Källor |
-| Kunddata Plattform | Segment |
-| Kunddataplattform | Identiteter |
-| Kunddataplattform | Policyer |
-| Kunddataplattform | Scheman |
-| Kunddataplattform | Datauppsättningar |
+### Real-time Customer Data Platform-objekt {#real-time-cdp-objects}
 
-Följande objekt importeras men har utkaststatus eller inaktiverad status:
+Tabellen nedan listar [!DNL Adobe Real-Time Customer Data Platform] objekt som för närvarande stöds för sandlådeverktyg:
+
+| Plattform | Objekt | Information |
+| --- | --- | --- |
+| Kunddataplattform | Källor | Källkontots autentiseringsuppgifter replikeras inte i målsandlådan av säkerhetsskäl och måste uppdateras manuellt. Källdataflödet kopieras som standard i utkaststatus. |
+| Kunddataplattform | Målgrupper | Endast **[!UICONTROL Customer Audience]** type **[!UICONTROL Segmentation service]** stöds. Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb. |
+| Kunddataplattform | Identiteter | Systemet deduplicerar Adobe standardnamnutrymmen för identiteter automatiskt när det skapas i målsandlådan. Publiker kan bara kopieras när alla attribut i målgruppsreglerna är aktiverade i unionsschemat. De scheman som behövs måste först flyttas och aktiveras för en enhetlig profil. |
+| Kunddataplattform | Scheman | Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb. Schemats enhetliga profilstatus kopieras som den är från källsandlådan. Om schemat är aktiverat för en enhetlig profil i källsandlådan flyttas alla attribut till unionsschemat. Kantfallet för schemarelationer inkluderas inte i paketet. |
+| Kunddataplattform | Datauppsättningar | Datauppsättningar kopieras med den enhetliga profilinställningen inaktiverad som standard. |
+
+Följande objekt importeras men har statusen Utkast eller Inaktiverat:
 
 | Funktion | Objekt | Status |
 | --- | --- | --- |
 | Importstatus | Källdataflöde | Utkast |
 | Importstatus | Resa | Utkast |
-| Enhetlig profil | Schema | Handikappade |
-| Enhetlig profil | Datauppsättning | Handikappade |
-| Policyer | Samtyckesprinciper | Handikappade |
+| Enhetlig profil | Datauppsättning | Enhetlig profil inaktiverad |
 | Policyer | Datastyrningspolicyer | Handikappade |
 
-De kantfall som anges nedan ingår inte i paketet:
+### Adobe Journey Optimizer-objekt {#abobe-journey-optimizer-objects}
 
-* Schemarelationer
+Tabellen nedan listar [!DNL Adobe Journey Optimizer] objekt som för närvarande stöds för sandlådeverktyg och begränsningar:
+
+| Plattform | Objekt | Information |
+| --- | --- | --- |
+| [!DNL Adobe Journey Optimizer] | Målgrupp | En målgrupp kan kopieras som ett beroende objekt i reseobjektet. Du kan välja att skapa en ny målgrupp eller återanvända en befintlig i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Schema | Scheman som används under resan kan kopieras som beroende objekt. Du kan välja att skapa ett nytt schema eller återanvända ett befintligt i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Meddelande | Meddelandena som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte. |
+| [!DNL Adobe Journey Optimizer] | Resa - arbetsytedetaljer | Återgivningen av resan på arbetsytan omfattar objekten på resan, till exempel villkor, åtgärder, händelser, läsning av målgrupper osv., som kopieras. Hoppaktiviteten tas inte med i kopian. |
+| [!DNL Adobe Journey Optimizer] | Händelse | Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Åtgärd | De åtgärder och åtgärdsdetaljer som används under resan kopieras. Den skapar alltid en ny version i målsandlådan. |
+
+Ytor (till exempel förinställningar) kopieras inte över. Systemet väljer automatiskt den närmsta möjliga matchningen i målsandlådan baserat på meddelandetyp och ytnamn. Om det inte finns några ytor i målsandlådan, kommer ytkopian att misslyckas, vilket gör att meddelandekopian misslyckas eftersom ett meddelande kräver att en yta är tillgänglig för konfiguration. I det här fallet måste minst en yta skapas för den högra kanalen i meddelandet för att kopian ska fungera.
+
+Anpassade identitetstyper stöds inte som beroende objekt när en resa exporteras.
 
 ## Exportera objekt till ett paket {#export-objects}
+
+>[!NOTE]
+>
+>Alla exportåtgärder registreras i granskningsloggarna.
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_exit_package"
@@ -120,6 +137,10 @@ Du kommer tillbaka till **[!UICONTROL Packages]** i [!UICONTROL Sandboxes] -milj
 
 ## Importera ett paket till en målsandlåda {#import-package-to-target-sandbox}
 
+>[!NOTE]
+>
+>Alla importåtgärder registreras i granskningsloggarna.
+
 Om du vill importera paketet till en målsandlåda går du till sandlådorna **[!UICONTROL Browse]** och välj plustecknet (+) bredvid namnet på sandlådan.
 
 ![Sandlådorna **[!UICONTROL Browse]** som markerar valet av importpaket.](../images/ui/sandbox-tooling/browse-sandboxes.png)
@@ -148,41 +169,47 @@ Du kommer tillbaka till [!UICONTROL Package object and dependencies] sida. Välj
 
 ![The [!UICONTROL Package object and dependencies] sidan visar en lista med resurser som ingår i paketet, med markering [!UICONTROL Finish].](../images/ui/sandbox-tooling/finish-object-dependencies.png)
 
-## Exportera och importera en hel sandlåda
-
-### Exportera en hel sandlåda {#export-entire-sandbox}
-
-Om du vill exportera en hel sandlåda går du till [!UICONTROL Sandboxes] **[!UICONTROL Packages]** och markera **[!UICONTROL Create package]**.
-
-![The [!UICONTROL Sandboxes] **[!UICONTROL Packages]** tabbmarkering [!UICONTROL Create package].](../images/ui/sandbox-tooling/create-sandbox-package.png)
-
-Välj **[!UICONTROL Entire sandbox]** för pakettypen i [!UICONTROL Create package] -dialogrutan. Ange en [!UICONTROL Package name] för ditt paket och väljer **[!UICONTROL Sandbox]** i listrutan. Äntligen väljer du **[!UICONTROL Create]** för att bekräfta tävlingsbidragen.
-
-![The [!UICONTROL Create package] dialogruta med ifyllda fält och markering [!UICONTROL Create].](../images/ui/sandbox-tooling/create-package-dialog.png)
-
-Paketet har skapats. Välj **[!UICONTROL Publish]** för att publicera paketet.
-
-![Lista över sandlådepaket som markerar det nya publicerade paketet.](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
-
-Du kommer tillbaka till **[!UICONTROL Packages]** i [!UICONTROL Sandboxes] -miljö, där du kan se det nya publicerade paketet.
-
-### Importera hela sandlådepaketet {#import-entire-sandbox-package}
-
-Om du vill importera paketet till en målsandlåda går du till [!UICONTROL Sandboxes] **[!UICONTROL Browse]** och välj plustecknet (+) bredvid namnet på sandlådan.
-
-![Sandlådorna **[!UICONTROL Browse]** som markerar valet av importpaket.](../images/ui/sandbox-tooling/browse-entire-package-sandboxes.png)
-
-Använd listrutemenyn och markera den fullständiga sandlådan med **[!UICONTROL Package name]** nedrullningsbar meny. Lägg till ett valfritt **[!UICONTROL Job name]**, som kommer att användas för framtida övervakning, väljer sedan **[!UICONTROL Next]**.
-
-![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkering](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+<!--
+## Export and import an entire sandbox 
 
 >[!NOTE]
 >
->Alla objekt skapas som nya från paketet när du importerar en hel sandlåda. Objekten finns inte med i listan [!UICONTROL Package object and dependencies] sida, eftersom det kan finnas multipler. Ett textbundet meddelande visas med information om objekttyper som inte stöds.
+>All export and import actions are recorded in the audit logs.
 
-Du kommer till [!UICONTROL Package object and dependencies] sida där du kan se antalet objekt och beroenden som är importerade och exkluderade objekt. Välj **[!UICONTROL Import]** för att slutföra paketimporten.
+### Export an entire sandbox {#export-entire-sandbox}
 
-![The [!UICONTROL Package object and dependencies] sidan visar det textbundna meddelandet om objekttyper som inte stöds, markering [!UICONTROL Import].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
+To export an entire sandbox, navigate to the [!UICONTROL Sandboxes] **[!UICONTROL Packages]** tab and select **[!UICONTROL Create package]**.
+
+![The [!UICONTROL Sandboxes] **[!UICONTROL Packages]** tab highlighting [!UICONTROL Create package].](../images/ui/sandbox-tooling/create-sandbox-package.png)
+
+Select **[!UICONTROL Entire sandbox]** for the Type of package in the [!UICONTROL Create package] dialog. Provide a [!UICONTROL Package name] for your package and select the **[!UICONTROL Sandbox]** from the dropdown. Finally, select **[!UICONTROL Create]** to confirm your entries.
+
+![The [!UICONTROL Create package] dialog showing completed fields and highlighting [!UICONTROL Create].](../images/ui/sandbox-tooling/create-package-dialog.png)
+
+The package is created successfully, select **[!UICONTROL Publish]** to publish the package.
+
+![List of sandbox packages highlighting the new published package.](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
+
+You are returned to the **[!UICONTROL Packages]** tab in the [!UICONTROL Sandboxes] environment, where you can see the new published package.
+
+### Import the entire sandbox package {#import-entire-sandbox-package}
+
+To import the package into a target sandbox, navigate to the [!UICONTROL Sandboxes] **[!UICONTROL Browse]** tab and select the plus (+) option beside the sandbox name.
+
+![The sandboxes **[!UICONTROL Browse]** tab highlighting the import package selection.](../images/ui/sandbox-tooling/browse-entire-package-sandboxes.png)
+
+Using the dropdown menu, select the full sandbox using the **[!UICONTROL Package name]** dropdown. Add an optional **[!UICONTROL Job name]**, which will be used for future monitoring, then select **[!UICONTROL Next]**.
+
+![The import details page showing the [!UICONTROL Package name] dropdown selection](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+
+>[!NOTE]
+>
+>All objects are created as new from the package when importing an entire sandbox. The objects are not listed in the [!UICONTROL Package object and dependencies] page, as there can be multiples. An inline message is displayed, advising of object types that are not supported.
+
+You are taken to the [!UICONTROL Package object and dependencies] page where you can see the number of objects and dependencies that are imported and excluded objects. From here, select **[!UICONTROL Import]** to complete the package import.
+
+ ![The [!UICONTROL Package object and dependencies] page shows the inline message of object types not supported, highlighting [!UICONTROL Import].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
+-->
 
 ## Övervaka importjobb och visa information om importobjekt
 
