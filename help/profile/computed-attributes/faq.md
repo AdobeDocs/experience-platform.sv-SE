@@ -1,13 +1,13 @@
 ---
 title: Vanliga frågor om beräknade attribut
 description: Få svar på vanliga frågor om hur du använder beräknade attribut.
-source-git-commit: 631b67eb6609381235113009acefaf0d0cd8063c
+exl-id: a4d3c06a-d135-453b-9637-4f98e62737a7
+source-git-commit: 48c728c183d6ad28cd291543a79902b16a247a5a
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '1092'
 ht-degree: 0%
 
 ---
-
 
 # Frågor och svar
 
@@ -25,9 +25,9 @@ Beräknade attribut behandlar realtidsdata om kundupplevelsehändelser som aktiv
 
 Alla XDM-fält i Experience Event-föreningsschemat kan användas för att skapa beräknade attribut.
 
-## Vad är den&quot;senaste utvärderingstiden&quot;?
+## Vad betyder&quot;senaste utvärdering&quot; och&quot;senaste utvärderingsstatus&quot;?
 
-Den senaste utvärderingstiden innebär att händelserna **föregående** till den tidsstämpeln beaktades i den senaste lyckade uppdateringen av det beräknade attributet.
+Senast utvärderad avser tidsstämpeln till vilken händelser övervägs i den senaste lyckade körningen. Senaste utvärderingsstatus avser huruvida den senaste utvärderingskörningen lyckades eller inte.
 
 ## Kan jag välja uppdateringsfrekvens? Hur bestäms det här?
 
@@ -65,9 +65,25 @@ Beräknade attribut driver profilberikning genom att samla dina händelseattribu
 
 ## Hur ofta utvärderas beräknade attribut? Är detta relaterat till målgruppens utvärderingsschema?
 
-Beräknade attribut utvärderas i grupper oberoende av segmenteringsschemat. Det innebär att oavsett segmenteringstyp (gruppsegmentering eller direktuppspelningssegmentering) kommer det beräknade attributet att utvärderas enligt ett eget schema (timme, dag, vecka eller månad).
+Beräknade attribut utvärderas i en **batch** frekvens som **oberoende** till tidsplanen för er målgrupp, målgrupp och reseutvärdering. Det innebär att oavsett segmenteringstyp (gruppsegmentering eller direktuppspelningssegmentering) kommer det beräknade attributet att utvärderas enligt ett eget schema (timme, dag, vecka eller månad).
 
-När målgruppen utvärderas används **senaste** värdet för det beräknade tillgängliga attributet.
+Första gången du utvärderar ditt beräknade attribut sker det inom 24 timmar efter **skapa**. De efterföljande batchutvärderingarna görs varje timme, dag, vecka eller månad beroende på den definierade uppslagsperioden.
+
+Om t.ex. en första utvärdering görs kl. 12 UTC den 9 oktober kommer efterföljande utvärderingar att ske vid följande tidpunkter:
+
+- Nästa dagliga uppdatering: 12:00 UTC den 10 oktober
+- Nästa veckouppdatering: 12:00 UTC den 15 oktober
+- Nästa månadsuppdatering: 12:00 UTC den 1 november
+
+>[!IMPORTANT]
+>
+>Detta är bara fallet om snabb uppdatering är **not** aktiverat. Läs mer om hur uppslagsperioden ändras när snabb uppdatering är aktiverad i [snabbuppdateringsavsnitt](./overview.md#fast-refresh).
+
+Båda **veckovis** och **månadsvis** uppdateringar görs i början av **kalendervecka** (söndagen i den nya veckan) eller början av **kalendermånad** (den första i den nya månaden), i motsats till exakt en vecka eller en månad efter första utvärderingsdatumet.
+
+>[!NOTE]
+>
+>Det beräknade attributvärdet är **not** uppdateras omedelbart i profilen efter varje utvärderingskörning. För att säkerställa att det uppdaterade värdet finns i dina profiler bör du överväga en buffert på några timmar mellan utvärderingstiden och beräknad attributanvändning. Det beräknade uppdateringsschemat för attribut är **systembestämd** och **inte** ändras. Kontakta Adobe kundtjänst om du vill ha mer information.
 
 ## Hur interagerar beräknade attribut med målgrupper som utvärderas genom direktuppspelningssegmentering?
 
