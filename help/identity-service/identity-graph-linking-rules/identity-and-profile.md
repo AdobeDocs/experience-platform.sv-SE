@@ -3,7 +3,7 @@ title: Identitetstjänst och kundprofil i realtid
 description: Läs mer om relationen mellan identitetstjänsten och kundprofilen i realtid
 hide: true
 hidefromtoc: true
-source-git-commit: 03228eef47100096e98666966c4e5065eb7f478a
+source-git-commit: 026f0dee203dd9d7f23d3343025665313692efbe
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Den här sidan förutsätter att sammanfogningsprincipen använder identitetsdiagrammet. Mer information om kopplingsprofiler i kundprofilen i realtid finns i dokumentationen om [sammanfogningsprinciper och identitetssammanfogning].
+>Den här sidan förutsätter att sammanfogningsprincipen använder identitetsdiagrammet. Mer information om kopplingsprofiler i kundprofilen i realtid finns i dokumentationen om [sammanfogningsprinciper och identitetssammanfogning](../../profile/merge-policies/overview.md#identity-stitching).
 
 Du kan använda identitetstjänsten och kundprofilen i realtid samtidigt, men de två funktionerna i Adobe Experience Platform är inte desamma.
 
