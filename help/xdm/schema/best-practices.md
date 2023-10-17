@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: 55f86fdd4fd36d21dcbd575d6da83df18abb631d
+source-git-commit: 4e87471dcfc99ff70a0d91245821e7f974973b49
 workflow-type: tm+mt
-source-wordcount: '2705'
+source-wordcount: '3035'
 ht-degree: 1%
 
 ---
@@ -21,14 +21,14 @@ Eftersom XDM är extremt mångsidigt och anpassningsbart efter design är det d�
 
 Innan du läser den här guiden ska du läsa [XDM - systemöversikt](../home.md) för en introduktion på hög nivå av XDM och dess roll i Experience Platform.
 
-Den här guiden fokuserar dessutom enbart på viktiga aspekter när det gäller schemadesign. Vi rekommenderar därför starkt att du refererar till [grunderna för schemakomposition](./composition.md) om du vill ha detaljerade förklaringar av de enskilda schemaelement som nämns i den här handboken.
+Den här guiden fokuserar dessutom enbart på viktiga aspekter när det gäller schemadesign. Vi rekommenderar därför starkt att du hänvisar till [grunderna för schemakomposition](./composition.md) om du vill ha detaljerade förklaringar av de enskilda schemaelement som nämns i den här handboken.
 
 ## Sammanfattning av bästa praxis
 
 Den rekommenderade metoden för att utforma din datamodell för användning i Experience Platform kan sammanfattas på följande sätt:
 
 1. Förstå användningsexemplen för era data.
-1. Identifiera de primära datakällor som ska hämtas till [!DNL Platform] för att hantera dessa användningsfall.
+1. Identifiera de primära datakällor som ska hämtas till [!DNL Platform] för att ta itu med dessa användningsfall.
 1. Identifiera eventuella sekundära datakällor som också kan vara av intresse. Om till exempel bara en affärsenhet i organisationen är intresserad av att portera data till [!DNL Platform]kan en liknande affärsenhet också vara intresserad av att portera liknande data i framtiden. Med dessa sekundära källor blir datamodellen standardiserad i hela organisationen.
 1. Skapa ett högnivådiagram över entitetsrelationer (ERD) för de datakällor som har identifierats.
 1. Konvertera högnivåeraktuell ERD till en [!DNL Platform]-centrerad ERD (inklusive profiler, upplevelsehändelser och sökentiteter).
@@ -45,7 +45,7 @@ Exemplet nedan representerar en förenklad ERD för ett företag som vill föra 
 
 ## Sortera entiteter i profil-, uppslags- och händelsekategorier
 
-När du har skapat en ERD för att identifiera de enheter du vill ta med [!DNL Platform]måste dessa entiteter sorteras i profil-, uppslags- och händelsekategorier:
+När du har skapat en ERD för att identifiera de enheter du vill ta med [!DNL Platform]måste de här entiteterna sorteras i kategorierna profil, sökning och händelse:
 
 | Kategori | Beskrivning |
 | --- | --- |
@@ -121,7 +121,7 @@ Kardinalerna i ERD kan även ge vissa ledtrådar om hur ni kategoriserar era era
 
 >[!NOTE]
 >
->Eftersom det inte finns någon universell strategi för att passa in alla användningsfall är det viktigt att tänka på fördelarna och nackdelarna med varje situation när enheter kategoriseras baserat på kardinalitet. Se [nästa avsnitt](#pros-and-cons) för mer information.
+>Eftersom det inte finns någon universell strategi för att passa in alla användningsfall är det viktigt att tänka på fördelarna och nackdelarna med varje situation när man kategoriserar enheter som bygger på kardinalitet. Se [nästa avsnitt](#pros-and-cons) för mer information.
 
 I följande tabell visas några vanliga entitetsrelationer och de kategorier som kan härledas från dem:
 
@@ -174,7 +174,7 @@ Det andra sättet är att använda händelsescheman för att representera prenum
 **Kon**
 
 * Segmenteringen blir mer komplicerad för det ursprungliga användningsfallet (som identifierar statusen för kundens senaste prenumerationer). Publiken behöver nu ytterligare logik för att flagga den senaste prenumerationshändelsen för en kund för att kunna kontrollera dess status.
-* Det finns en större risk för att händelser automatiskt förfaller och rensas från profilarkivet. Se guiden [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) för mer information.
+* Det finns en större risk för att händelser automatiskt förfaller och rensas från profilarkivet. Se guiden på [Förfallodatum för upplevelsehändelser](../../profile/event-expirations.md) för mer information.
 
 ## Skapa scheman baserat på dina kategoriserade entiteter
 
@@ -186,19 +186,19 @@ Kategorin som en entitet har sorterats under bör avgöra vilken XDM-klass du ba
 
 * Profilentiteter bör använda [!DNL XDM Individual Profile] klassen.
 * Händelseenheter bör använda [!DNL XDM ExperienceEvent] klassen.
-* Sökentiteter bör använda anpassade XDM-klasser som definieras av organisationen. Profil- och händelseentiteter kan sedan referera till dessa sökentiteter via schemarelationer.
+* Sökentiteter bör använda anpassade XDM-klasser som definieras av din organisation. Profil- och händelseentiteter kan sedan referera till dessa sökentiteter via schemarelationer.
 
 >[!NOTE]
 >
 >Händelseentiteter representeras nästan alltid av separata scheman, men entiteter i profilen eller uppslagskategorierna kan kombineras i ett enda XDM-schema, beroende på deras kardinalitet.
 >
->Eftersom kundentiteten till exempel har en 1:1-relation med LoyaltyAccounts-entiteten, kan schemat för kundentiteten även innehålla en `LoyaltyAccount` objekt som ska innehålla rätt lojalitetsfält för varje kund. Om relationen är en till många kan den entitet som representerar&quot;många&quot; däremot representeras av ett separat schema eller en array med profilattribut, beroende på dess komplexitet.
+>Eftersom kundentiteten till exempel har en 1:1-relation med LoyaltyAccounts-entiteten, kan schemat för kundentiteten även innehålla en `LoyaltyAccount` objekt som ska innehålla rätt lojalitetsfält för varje kund. Om relationen är en till många kan den entitet som representerar&quot;många&quot; däremot representeras av ett separat schema eller en array med profilattribut, beroende på hur komplex den är.
 
 Avsnitten nedan innehåller allmän vägledning om hur du konstruerar scheman baserade på din ERD.
 
 ### Anta en iterativ modelleringsmetod
 
-The [regler för schemautveckling](./composition.md#evolution) diktera att endast icke-förstörande ändringar kan göras i scheman när de har implementerats. När du har lagt till ett fält i ett schema och data har importerats till det fältet kan fältet alltså inte längre tas bort. Därför är det viktigt att du använder en iterativ modelleringsmetod när du först skapar dina scheman, och börjar med en förenklad implementering som successivt blir mer komplicerad över tid.
+The [regler för schemautveckling](./composition.md#evolution) diktera att endast icke-förstörande ändringar kan göras i scheman när de har implementerats. När du har lagt till ett fält i ett schema och data har importerats till det fältet kan fältet alltså inte längre tas bort. Därför är det viktigt att du använder en iterativ modelleringsmetod när du först skapar dina scheman, och börjar med en förenklad implementering som successivt blir mer komplicerad över tiden.
 
 Om du är osäker på om ett visst fält är nödvändigt för att inkluderas i ett schema är det bästa sättet att utelämna det. Om det senare fastställs att fältet är nödvändigt kan det alltid läggas till i nästa iteration i schemat.
 
@@ -228,6 +228,16 @@ För Adobe Analytics är ECID standardidentitet. Om ett ECID-värde inte anges a
 >[!IMPORTANT]
 >
 >När du använder programfältgrupper i Adobe ska inga andra fält markeras som primär identitet. Om det finns ytterligare egenskaper som måste markeras som identiteter måste de här fälten tilldelas som sekundära identiteter i stället.
+
+## Datavalideringsfält {#data-validation-fields}
+
+För att förhindra att onödiga data hämtas till Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman. Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemaläggaren för att öppna [!UICONTROL Field properties] sidofält. Läs dokumentationen om [typspecifika fältegenskaper](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/overview.html?lang=en#type-specific-properties) för exakta beskrivningar av tillgängliga fält.
+
+![Schemaredigeraren med begränsningsfälten markerade i [!UICONTROL Field properties] sidofält.](../images/best-practices/data-validation-fields.png)
+
+>[!TIP]
+>
+>Här följer en samling förslag på datamodellering när du skapar ett schema:<br><ul><li>**Överväg primära identiteter**: För Adobe-produkter som web SDK, mobile SDK, Adobe Analytics och Adobe Journey Optimizer `identityMap` fältet fungerar ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.</li><li>**Undvik användning `_id` som en identitet**: Använd inte `_id` i Experience Event-scheman som en identitet. Den är avsedd för unikt register, inte för att användas som identitet.</li><li>**Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.</li><li>**Använd mönster för enhetliga värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda [!UICONTROL Pattern] inställning för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.</li><li>**Begränsa eVars i analysschema**: Vanligtvis ska ett Analytics-schema endast ha en eVar angiven som identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.</li><li>**Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer.</li></ul>
 
 ## Nästa steg
 

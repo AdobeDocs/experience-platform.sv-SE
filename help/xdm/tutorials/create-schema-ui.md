@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: bf3099afadd6c8807060a6796cb6f37471478b44
+source-git-commit: ff49189d6f3331db5b7853be36afe0bb6176916f
 workflow-type: tm+mt
-source-wordcount: '4378'
+source-wordcount: '4391'
 ht-degree: 0%
 
 ---
@@ -201,7 +201,7 @@ Varje fält kräver följande information:
 * **[!UICONTROL Type]:** Fältets datatyp. Detta inkluderar grundläggande skalärtyper och alla datatyper som definieras i [!DNL Schema Registry]. Exempel: [!UICONTROL String], [!UICONTROL Integer], [!UICONTROL Boolean], [!UICONTROL Person], [!UICONTROL Address], [!UICONTROL Phone number], osv.
 * **[!UICONTROL Description]:** En valfri beskrivning av fältet får innehålla högst 200 tecken.
 
-Det första fältet för `loyaltyTier` objektet blir en sträng som anropas `id`, som representerar ID:t för förmånsmedlemmens aktuella nivå. Nivå-ID är unikt för varje lojalitetsmedlem, eftersom det här företaget anger olika tröskelvärden för lojalitetsskikt för varje kund baserat på olika faktorer. Ställ in det nya fältets typ till[!UICONTROL String]&quot;, och **[!UICONTROL Field properties]** -avsnittet fylls i med flera alternativ för att tillämpa begränsningar, inklusive standardvärde, format och maximal längd.
+Det första fältet för `loyaltyTier` objektet blir en sträng som anropas `id`, som representerar ID:t för förmånsmedlemmens aktuella nivå. Nivå-ID är unikt för varje lojalitetsmedlem, eftersom det här företaget anger olika tröskelvärden för lojalitetsskikt för varje kund baserat på olika faktorer. Ställ in det nya fältets typ till[!UICONTROL String]&quot;, och **[!UICONTROL Field properties]** -avsnittet fylls i med flera alternativ för att tillämpa begränsningar, inklusive standardvärde, format och maximal längd. Läs dokumentationen om [bästa praxis för datavalideringsfält](../schema/best-practices.md#data-validation-fields) om du vill veta mer.
 
 ![Schemaredigeraren med fältegenskapsvärden för det nya ID-fältet markerat.](../images/tutorials/create-schema/string-constraints.png)
 
