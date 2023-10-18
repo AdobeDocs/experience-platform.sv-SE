@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Begränsningar för XDM-fälttyp
 description: En referens för fälttypsbegränsningar i Experience Data Model (XDM), inklusive andra serialiseringsformat som de kan mappas till och hur du definierar egna fälttyper i API:t.
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: 88caea133bd2bf994587bda5b31cddd22f2c90cb
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 2%
@@ -49,7 +49,7 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td><code>"Platinum"</code></td>
     </tr>
     <tr>
-      <td>[!UICONTROL Double]</td>
+      <td>[!UICONTROL Number]</td>
       <td>
         <pre class="JSON language-JSON hljs">
 {"type": "number"}</pre>
@@ -60,7 +60,7 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
       <td>[!UICONTROL Long]</td>
       <td>
         <pre class="JSON language-JSON hljs">
-{ "type": "integer", "maximum": 9007199254740991, "minimum": -9007199254740991 }</pre>
+{"type": "integer", "maximum": 9007199254740991, "minimum": -9007199254740991 }</pre>
       </td>
       <td><code>1478108935</code></td>
     </tr>
@@ -115,7 +115,7 @@ I följande tabell visas hur varje XDM-typ representeras i JSON-schema, tillsamm
   </tbody>
 </table>
 
-**Alla datumformaterade strängar måste följa standarden ISO 8601 ([RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)).*
+**Alla datumformaterade strängar måste följa ISO 8601-standarden ([RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)).*
 
 ## Mappa XDM-typer till andra format
 
@@ -136,7 +136,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | XDM-typ | Parquet | Spark SQL | Java |
 | --- | --- | --- | --- |
 | [!UICONTROL String] | Typ: `BYTE_ARRAY`<br>Anteckning: `UTF8` | `StringType` | `java.lang.String` |
-| [!UICONTROL Double] | Typ: `DOUBLE` | `LongType` | `java.lang.Double` |
+| [!UICONTROL Number] | Typ: `DOUBLE` | `LongType` | `java.lang.Double` |
 | [!UICONTROL Long] | Typ: `INT64` | `LongType` | `java.lang.Long` |
 | [!UICONTROL Integer] | Typ: `INT32`<br>Anteckning: `INT_32` | `IntegerType` | `java.lang.Integer` |
 | [!UICONTROL Short] | Typ: `INT32`<br>Anteckning: `INT_16` | `ShortType` | `java.lang.Short` |
@@ -153,7 +153,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | XDM-typ | Scala | .NET | CosmosDB |
 | --- | --- | --- | --- |
 | [!UICONTROL String] | `String` | `System.String` | `String` |
-| [!UICONTROL Double] | `Double` | `System.Double` | `Number` |
+| [!UICONTROL Number] | `Double` | `System.Double` | `Number` |
 | [!UICONTROL Long] | `Long` | `System.Int64` | `Number` |
 | [!UICONTROL Integer] | `Int` | `System.Int32` | `Number` |
 | [!UICONTROL Short] | `Short` | `System.Int16` | `Number` |
@@ -170,7 +170,7 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 | XDM-typ | MongoDB | Aerospike | Protobuf 2 |
 | --- | --- | --- | --- |
 | [!UICONTROL String] | `string` | `String` | `string` |
-| [!UICONTROL Double] | `double` | `Double` | `double` |
+| [!UICONTROL Number] | `double` | `Double` | `double` |
 | [!UICONTROL Long] | `long` | `Integer` | `int64` |
 | [!UICONTROL Integer] | `int` | `Integer` | `int32` |
 | [!UICONTROL Short] | `int` | `Integer` | `int32` |
@@ -184,4 +184,4 @@ Avsnitten nedan beskriver hur varje XDM-typ mappar till andra vanliga serialiser
 
 ## Definiera XDM-fälttyper i API {#define-fields}
 
-Med API:t för schemaregister kan du definiera anpassade fält med hjälp av format och valfria begränsningar. Se guiden [definiera anpassade fält i API:t för schemaregister](../tutorials/custom-fields-api.md) för mer information.
+Med API:t för schemaregister kan du definiera anpassade fält med hjälp av format och valfria begränsningar. Se guiden på [definiera anpassade fält i API:t för schemaregister](../tutorials/custom-fields-api.md) för mer information.

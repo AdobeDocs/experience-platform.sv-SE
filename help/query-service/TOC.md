@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: 6c3c5e3a87773f9f58a5d61bd4bef19f4cdc2e96
+source-git-commit: f9c3e20bdfbf4aa1b206b9efe770e9950fcd62d6
 workflow-type: tm+mt
-source-wordcount: '311'
+source-wordcount: '308'
 ht-degree: 12%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 12%
       - [Sömlöst SQL-flöde](data-distiller/derived-attributes/seamless-sql-flow.md)
       - [Skapa decimalbaserade härledda attribut](data-distiller/derived-attributes/decile-based-derived-attributes.md)
    - AI/ML-rörledningar {#ml-feature-pipelines}
-      - [AI/ML-rörledningar](data-distiller/ml-feature-pipelines/overview.md)
+      - [Översikt](data-distiller/ml-feature-pipelines/overview.md)
       - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)
       - [Förberedande dataanalys](data-distiller/ml-feature-pipelines/exploratory-analysis.md)
       - [Teknikfunktioner för XML](data-distiller/ml-feature-pipelines/feature-engineering.md)
