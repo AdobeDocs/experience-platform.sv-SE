@@ -4,9 +4,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a81daa2a929505a934910892a4ad9c73e603ed9b
+source-git-commit: a854960b11cb3e56046dc9541f76c62a7e3f2f10
 workflow-type: tm+mt
-source-wordcount: '3549'
+source-wordcount: '3559'
 ht-degree: 0%
 
 ---
@@ -413,8 +413,10 @@ På grund av en känd begränsning kan du inte använda **[!UICONTROL Select fie
 ![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
+* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och nyligen **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
 * Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+
+Läs mer om [profilexportbeteende för filbaserade mål](/help/destinations/how-destinations-work/profile-export-behavior.md#file-based-destinations).
 
 #### Identitetsnamnutrymmen kan för närvarande inte väljas för export
 
