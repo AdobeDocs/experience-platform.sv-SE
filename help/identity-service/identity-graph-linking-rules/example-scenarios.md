@@ -3,17 +3,21 @@ title: Exempelscenarier för konfiguration av identitetsinställningar
 description: Lär dig mer om exempelscenarier för konfigurering av identitetsinställningar.
 hide: true
 hidefromtoc: true
-source-git-commit: bde6c96bf72bb948c149bf5dc8d35591f2586887
+badge: Alfa
+source-git-commit: 03e4cd440f8627ad837a31e1c017d0b824cafb04
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '433'
 ht-degree: 0%
 
 ---
 
 # Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram
 
-Det här dokumentet innehåller exempel på scenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
+>[!IMPORTANT]
+>
+>Länkningsregler för identitetsdiagram finns för närvarande i Alpha. Funktionen och dokumentationen kan komma att ändras.
 
+Det här dokumentet innehåller exempel på scenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
 
 ## Delad enhet
 

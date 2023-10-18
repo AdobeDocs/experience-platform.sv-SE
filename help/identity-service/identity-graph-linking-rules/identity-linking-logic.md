@@ -3,14 +3,19 @@ title: Länkningslogik för identitetstjänst
 description: Läs om hur identitetstjänsten länkar olika identiteter för att skapa en heltäckande bild av en kund.
 hide: true
 hidefromtoc: true
-source-git-commit: 03228eef47100096e98666966c4e5065eb7f478a
+badge: Alfa
+source-git-commit: 03e4cd440f8627ad837a31e1c017d0b824cafb04
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '791'
 ht-degree: 2%
 
 ---
 
 # Länkningslogik för identitetstjänst
+
+>[!IMPORTANT]
+>
+>Länkningsregler för identitetsdiagram finns för närvarande i Alpha. Funktionen och dokumentationen kan komma att ändras.
 
 En länk mellan två identiteter skapas när identitetsnamnutrymmet och identitetsvärdena matchar.
 
