@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: a74ec87c27d3db3bcd8d0a5075a593535e3c4de1
+source-git-commit: 6c3c5e3a87773f9f58a5d61bd4bef19f4cdc2e96
 workflow-type: tm+mt
-source-wordcount: '280'
-ht-degree: 13%
+source-wordcount: '311'
+ht-degree: 12%
 
 ---
 
@@ -29,6 +29,13 @@ ht-degree: 13%
       - [Översikt](data-distiller/derived-attributes/overview.md)
       - [Sömlöst SQL-flöde](data-distiller/derived-attributes/seamless-sql-flow.md)
       - [Skapa decimalbaserade härledda attribut](data-distiller/derived-attributes/decile-based-derived-attributes.md)
+   - AI/ML-rörledningar {#ml-feature-pipelines}
+      - [AI/ML-rörledningar](data-distiller/ml-feature-pipelines/overview.md)
+      - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)
+      - [Förberedande dataanalys](data-distiller/ml-feature-pipelines/exploratory-analysis.md)
+      - [Teknikfunktioner för XML](data-distiller/ml-feature-pipelines/feature-engineering.md)
+      - [Exportera data till ML-miljöer](data-distiller/ml-feature-pipelines/export-data.md)
+      - [AI/ML-arbetsflöde för berikning av data från början till slut](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
 - Användningsfall {#use-cases}
    - [Bläddra överges](use-cases/abandoned-browse.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
