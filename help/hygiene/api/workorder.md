@@ -2,9 +2,9 @@
 title: API-slutpunkt för arbetsorder
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 8e21bcc7b9d7fe3f4d26f80f953d454f090b0928
+source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1181'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ Slutpunkten som används i den här guiden är en del av API:t för datahygien. 
 ## Skapa en begäran om postborttagning {#create}
 
 Du kan ta bort en eller flera identiteter från en enskild datauppsättning eller alla datauppsättningar genom att göra en POST-förfrågan till `/workorder` slutpunkt.
+
+>[!IMPORTANT]
+> 
+>Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.<br>En enstaka [posta borttagningsbegäran via användargränssnittet](../ui/record-delete.md) kan du skicka 10 000 ID:n åt gången. API-metoden för att ta bort poster tillåter att 100 000 ID:n skickas samtidigt.<br>Det är en god vana att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
 
 **API-format**
 

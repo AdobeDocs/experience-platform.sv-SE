@@ -2,9 +2,9 @@
 title: Ta bort poster
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 566f1b6478cd0de0691cfb2301d5b86fbbfece52
+source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
 workflow-type: tm+mt
-source-wordcount: '1467'
+source-wordcount: '1498'
 ht-degree: 0%
 
 ---
@@ -42,13 +42,13 @@ Arbetsflödet för att skapa en begäran visas. Som standard är **[!UICONTROL D
 
 >[!IMPORTANT]
 > 
->Som en del av de pågående förändringarna för att förbättra effektiviteten och göra datauppsättningarna billigare kan organisationer som har flyttats till Delta-formatet ta bort data från identitetstjänsten, kundprofilen i realtid och datasjön. Den här typen av användare kallas deltmigrerad. Användare från organisationer som har deltmigrerats kan välja att ta bort poster från en enda eller alla datauppsättningar. Användare från organisationer som inte har deltmigrerats kan inte välja att ta bort poster från en enda eller alla datauppsättningar enligt bilden nedan. Om så är fallet, fortsätt med [ange identiteter](#provide-identities) i guiden.
+>Som en del av de pågående förändringarna för att förbättra effektiviteten och göra datauppsättningarna billigare kan organisationer som har flyttats till Delta-formatet ta bort data från identitetstjänsten, kundprofilen i realtid och datasjön. Den här typen av användare kallas deltmigrerad. Användare från organisationer som har deltmigrerats kan välja att ta bort poster från en enda eller alla datauppsättningar. Användare från organisationer som inte har deltmigrerats kan inte välja att ta bort poster från en enda eller alla datauppsättningar enligt bilden nedan. I det här fallet fortsätter du till [ange identiteter](#provide-identities) i guiden.
 
 ![Arbetsflödet för att skapa begäran med [!UICONTROL Delete record] markerat och markerat alternativ.](../images/ui/record-delete/delete-record.png)
 
 ## Välj datauppsättningar {#select-dataset}
 
-Nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar. Om det här alternativet inte är tillgängligt för dig, fortsätt med [ange identiteter](#provide-identities) i guiden.
+Nästa steg är att avgöra om du vill ta bort poster från en enskild datauppsättning eller alla datauppsättningar. Om det här alternativet inte är tillgängligt för dig fortsätter du till [ange identiteter](#provide-identities) i guiden.
 
 Under **[!UICONTROL Record Details]** använder du alternativknappen för att välja mellan en viss datauppsättning och alla datauppsättningar. Om du väljer **[!UICONTROL Select dataset]** fortsätter du med att välja databasikonen (![Databasikonen](../images/ui/record-delete/database-icon.png)) för att öppna en dialogruta med en lista över tillgängliga datauppsättningar. Välj önskad datauppsättning i listan följt av **[!UICONTROL Done]**.
 
@@ -139,7 +139,7 @@ När du är klar med att lägga till identiteter i begäran, under **[!UICONTROL
 
 >[!IMPORTANT]
 > 
->Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.<br>En enda begäran om radering av en post via användargränssnittet gör att du kan skicka 10 000 ID:n åt gången. The [API-metod för att ta bort poster](https://experienceleague.adobe.com/docs/experience-platform/hygiene/api/workorder.html?lang=en#create) gör att 100 000 ID kan skickas samtidigt.
+>Det finns olika gränser för det totala antalet unika ID-postborttagningar som kan skickas varje månad. Dessa begränsningar baseras på ditt licensavtal. Organisationer som har köpt alla utgåvor av Adobe Real-time Customer Data Platform och Adobe Journey Optimizer kan skicka in upp till 100 000 identitetspostborttagningar varje månad. Organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield** kan skicka in upp till 600 000 identitetsposter som tas bort varje månad.<br>En enda begäran om radering av en post via användargränssnittet gör att du kan skicka 10 000 ID:n åt gången. The [API-metod för att ta bort poster](../api/workorder.md#create) gör att 100 000 ID kan skickas samtidigt.<br>Det är en god vana att skicka så många ID:n som möjligt per begäran, upp till din ID-gräns. Om du tänker ta bort en stor mängd ID:n bör du inte skicka in en låg volym eller ett enda ID per postborttagningsbegäran.
 
 ![Inställningarna för begäran [!UICONTROL Name] och [!UICONTROL Description] fält med [!UICONTROL Submit] markerad.](../images/ui/record-delete/submit.png)
 
