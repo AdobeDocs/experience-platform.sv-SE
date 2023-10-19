@@ -1,18 +1,17 @@
 ---
 solution: Experience Platform
-title: Komma igång med API:er för Media Edge
-description: Med Media Edge API:er kan utvecklare samla in data för Media Edge Analytics och Customer Journey Analytics.
-source-git-commit: 249a12e6a079e3c99bf13bec4bf83b2a53cd522b
+title: Media Edge Open API-specifikation
+description: Det här dokumentet innehåller en OAS-referens (YAML Open API Specification) eller "Swagger". Du kan kopiera och klistra in den här specifikationen i ett återgivningsverktyg, till exempel editor.swagger.io, för att visa API-information för Media Edge. Specifikationen innehåller parametrar, exempel och schema för varje slutpunkt.
+source-git-commit: 11a9dc980b7a63549cdd9a8c9522e001faceeb56
 workflow-type: tm+mt
-source-wordcount: '82'
+source-wordcount: '107'
 ht-degree: 0%
 
 ---
 
-
 # Använda Open API-specifikationsfilen för Media Edge API:er
 
-Det här dokumentet innehåller en OAS-referens (JSON Open API Specification) eller &quot;Swagger&quot;-referens. Du kan kopiera och klistra in den här specifikationen i ett återgivningsverktyg, till exempel editor.swagger.io, för att visa API-information för Media Edge. Specifikationen innehåller parametrar, exempel och schema för varje slutpunkt.
+Det här dokumentet innehåller en OAS-referens (YAML Open API Specification) eller &quot;Swagger&quot;. Du kan kopiera och klistra in den här specifikationen i ett återgivningsverktyg, till exempel editor.swagger.io, för att visa API-information för Media Edge. Specifikationen innehåller parametrar, exempel och schema för varje slutpunkt.
 
 +++ Markera för att visa och kopiera Open API-specifikationen
 
@@ -2660,7 +2659,7 @@ Det här dokumentet innehåller en OAS-referens (JSON Open API Specification) el
     },
     "/play": {
       "post": {
-        "description": "Sent when the player changes state to "playing" from another state, such as when the on ('Playing') callback is triggered by the player. Other states from which the player moves to "playing" include "buffering", when the user resumes from "paused", when the player recovers from an error, and during autoplay."
+        "description": "Sent when the player changes state to \"playing\" from another state, such as when the on ('Playing') callback is triggered by the player. Other states from which the player moves to \"playing\" include \"buffering\", when the user resumes from \"paused\", when the player recovers from an error, and during autoplay.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3332,11 +3331,11 @@ Det här dokumentet innehåller en OAS-referens (JSON Open API Specification) el
                                     },
                                     "contentType": {
                                       "type": "string",
-                                      "description": "Available values per Stream Type: Audio - "song", "podcast", "audiobook", "radio"; Video: "VoD", "Live", "Linear", "UGC", "DVoD" Customers can provide custom values for this parameter"
+                                      "description": "Available values per Stream Type: Audio - \"song\", \"podcast\", \"audiobook\", \"radio\"; Video: \"VoD\", \"Live\", \"Linear\", \"UGC\", \"DVoD\" Customers can provide custom values for this parameter",
                                     },
                                     "friendlyName": {
                                       "type": "string",
-                                      "description": "This is the "friendly" (human-readable) name of the content"
+                                      "description": "This is the \"friendly\" (human-readable) name of the content"
                                     },
                                     "playerName": {
                                       "type": "string",
