@@ -1,17 +1,37 @@
 ---
-title: Versionsinformation om Adobe Experience Platform Debugger
+title: Versionsinformation för Adobe Experience Platform Debugger
 description: Den senaste versionsinformationen om Adobe Experience Platform Debugger.
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 70abe974aa7f94ea172d7ab90aacaf765b88de0e
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '526'
 ht-degree: 2%
 
 ---
 
-# Versionsinformation om Adobe Experience Platform Debugger
+# Versionsinformation för Adobe Experience Platform Debugger
+
+## Version 1.5.0 - 19 oktober 2023
+
+### Nya funktioner
+
+* Visa länkar till egenskaper, miljö och regler i Sammanfattning av taggar och loggar.
+
+### Korrigeringar och förbättringar
+
+* Ett problem har korrigerats där sammanfattningsdata för taggar inte skickades.
+* Ett problem har korrigerats där Assurance-sessioner skulle ge ett CORS-fel
+* Ett problem som gjorde att målspårning inte kunde visas har åtgärdats.
+* Korrigerade knappen Skicka feedback.
+* Korrigerade det saknade &quot;Datastream ID&quot; i Web SDK-sammanfattningen för version ≥2.18.0.
+* Korrigerade ett problem där Edge-loggar inte var sökbara.
+* En anteckning om ytterligare profiler för vissa kontotyper har lagts till.
+
+## Version 1.4.1 - 1 november 2022
+
+* Förbättrade prestanda på sidor med många Adobe Experience Platform Assurance-händelser.
 
 ## Version 1.4.0 - 3 oktober 2022
 
@@ -44,9 +64,9 @@ ht-degree: 2%
 * Länken Om har lagts till för att visa aktuell version och information.
 * Tillagd växel för att visa efterbearbetade träffar för Analytics-begäranden. Växeln är tillgänglig i avsnittet Analytics (Analyser).
 * Ett problem med fjärrfelsökningssession när sessionen stängdes utanför felsökaren har åtgärdats.
-* Korrigerat felmeddelande som var synligt på fliken Web SDK Edge Transactions.
+* Ett felmeddelande som var synligt på fliken Web SDK Edge Transactions har korrigerats.
 * Adobe-taggar på sidborttagningsvarning har åtgärdats när felsökaren använde _satellit-objektet.
-* Korrigerade vissa fall där en AppMeasurement-instans inte hittades på sidan.
+* Korrigerade vissa fall där det inte gick att hitta en AppMeasurementen instans på sidan.
 * Ett problem med sidanslutningen som uppstod när felsökningsfönstret öppnades för första gången har åtgärdats.
 
 ## Version 1.2.0 - 26 oktober 2021
