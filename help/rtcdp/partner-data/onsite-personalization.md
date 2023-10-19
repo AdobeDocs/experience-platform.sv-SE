@@ -2,9 +2,9 @@
 title: Använd partnerstödd besöksidentifiering för att personalisera upplevelser på plats
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: de8aeb553066405424711e75480204f6136b52ff
 workflow-type: tm+mt
-source-wordcount: '2442'
+source-wordcount: '2472'
 ht-degree: 1%
 
 ---
@@ -248,9 +248,13 @@ Indata `interact` Uppdatera sidan i sökrutan så ser du nätverksanrop från we
 
 Nu kan ni skapa och aktivera målgrupper för personalisering.
 
-#### Ställ in kantsegmentering
+#### Skapa målgrupper och skapa kantsegmentering
 
-Konfigurera [kantsegmentering](/help/segmentation/ui/edge-segmentation.md) så att besökarnas medlemskap utvärderas i realtid när de besöker er webbegenskap.
+Navigera i plattformsgränssnittet till **[!UICONTROL Customer]** > **[!UICONTROL Audiences]** och skapa en målgrupp som fångar webbplatsens besökare.
+
+![Se hur man navigerar till målgrupper.](/help/rtcdp/assets/partner-data/onsite-personalization/navigate-to-audiences.png)
+
+Ni måste skapa er målgrupp med [kantsegmentering](/help/segmentation/ui/edge-segmentation.md) så att besökarnas medlemskap utvärderas i realtid när de besöker er webbegenskap.
 
 Se även till att ställa in en [policy för aktiv-på-edge-sammanfogning](/help/destinations/ui/activate-edge-personalization-destinations.md#create-merge-policy) för de största målgrupperna.
 
