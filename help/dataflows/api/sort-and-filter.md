@@ -2,9 +2,9 @@
 title: Sorterings- och filtreringssvar i API:t för Flow Service
 description: Den här självstudiekursen beskriver syntaxen för sortering och filtrering med hjälp av frågeparametrar i API:t för Flow Service, inklusive vissa avancerade användningsfall.
 exl-id: 029c3199-946e-4f89-ba7a-dac50cc40c09
-source-git-commit: ef8db14b1eb7ea555135ac621a6c155ef920e89a
+source-git-commit: c7ff379b260edeef03f8b47f932ce9040eef3be2
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '860'
 ht-degree: 1%
 
 ---
@@ -116,7 +116,7 @@ Svaret på frågan ovan ser ut så här:
 
 ### Filterbara egenskaper efter resurs
 
-Beroende på vilken Flow Service-enhet du hämtar kan olika egenskaper användas för filtrering. Tabellerna nedan delar upp rotnivåfälten för varje resurs som vanligtvis används vid filtrering av användningsfall.
+Beroende på vilken Flow Service-enhet du hämtar kan olika egenskaper användas för filtrering. Tabellerna nedan delar upp rotnivåfälten för varje resurs som vanligtvis används vid filtrering.
 
 **`connectionSpec`**
 
@@ -194,6 +194,58 @@ Beroende på vilken Flow Service-enhet du hämtar kan olika egenskaper användas
 | `state` | `/runs?property=state==inProgress` |
 
 {style="table-layout:auto"}
+
+## Användningsfall {#use-cases}
+
+I det här avsnittet finns några specifika exempel på hur du kan använda filtrering och sortering för att returnera information om vissa anslutningar eller för att hjälpa dig med felsökningsfrågor. Om du vill att Adobe ska lägga till fler användningsområden använder du **[!UICONTROL Detailed feedback options]** på sidan för att skicka en begäran.
+
+**Filtrera så att bara anslutningar till en viss destination returneras**
+
+Du kan bara använda filter för att returnera anslutningar till vissa mål. Fråga först `connectionSpecs` slutpunkt som nedan:
+
+```http
+GET /connectionSpecs
+```
+
+Sök sedan efter det du vill `connectionSpec` genom att inspektera `name` parameter. Du kan till exempel söka efter Amazon Ads, Pega eller SFTP i dialogrutan `name` parameter. Motsvarande `id` är `connectionSpec` som du kan söka efter i nästa API-anrop.
+
+Du kan till exempel filtrera destinationerna så att endast befintliga anslutningar till Amazon S3-anslutningar returneras:
+
+```http
+GET /connections?property=connectionSpec.id==4890fc95-5a1f-4983-94bb-e060c08e3f81
+```
+
+**Filtrera för att returnera dataflöden till endast mål**
+
+När du frågar `/flows` slutpunkten kan du, i stället för att returnera alla käll- och måldataflöden, använda ett filter för att endast returnera dataflöden till mål. Om du vill göra det använder du `isDestinationFlow` som frågeparameter, enligt följande:
+
+```http
+GET /flows?property=inheritedAttributes.properties.isDestinationFlow==true
+```
+
+**Filter som returnerar dataflöden till en viss källa eller mål**
+
+Du kan filtrera dataflöden om du bara vill returnera dataflöden till ett visst mål eller från en viss källa. Du kan till exempel filtrera destinationerna så att endast befintliga anslutningar till Amazon S3-anslutningar returneras:
+
+```http
+GET /flows?property=inheritedAttributes.targetConnections[].connectionSpec.id==4890fc95-5a1f-4983-94bb-e060c08e3f81
+```
+
+**Filtrera för att hämta alla körningar av ett dataflöde under en viss tidsperiod**
+
+Du kan filtrera dataflödeskörningar av ett dataflöde så att du bara tittar på körningar under ett visst tidsintervall, som nedan:
+
+```
+GET /runs?property=flowId==<flow-id>&property=metrics.durationSummary.startedAtUTC>1593134665781&property=metrics.durationSummary.startedAtUTC<1653134665781
+```
+
+**Filter som endast returnerar felaktiga dataflöden**
+
+I felsökningssyfte kan du filtrera och se alla misslyckade dataflöden för ett visst käll- eller måldataflöde, som nedan:
+
+```http
+GET /runs?property=flowId==<flow-id>&property=metrics.statusSummary.status==Failed
+```
 
 ## Nästa steg
 
