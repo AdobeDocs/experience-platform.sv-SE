@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 56d9d3ec5565960438540ffec867ed528b52eaf1
+source-git-commit: 820ba6c9cedcb85db7ff9bc199a67e56ee628c93
 workflow-type: tm+mt
-source-wordcount: '1655'
+source-wordcount: '1668'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,10 @@ När du väljer **[!UICONTROL Audience]** höger räl visar kontroller för att 
 Lägga till målgrupper i Audience-blocket. välj **[!UICONTROL Add Audience]**.
 
 ![Knappen Lägg till målgrupp är markerad.](../images/ui/audience-composition/add-audience.png)
+
+>[!IMPORTANT]
+>
+>Observera att **endast** Målgrupper som definierats med standardprincipen för sammanslagning visas.
 
 En lista över målgrupper visas. Välj vilka målgrupper du vill inkludera, följt av **[!UICONTROL Add]** för att lägga in dem i era målgruppsblock.
 
