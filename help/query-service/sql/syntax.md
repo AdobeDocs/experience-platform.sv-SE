@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 18b8f683726f612a5979ab724067cc9f1bfecbde
+source-git-commit: 67fce2a88b4e75cfb033c6aef40afbca824c9354
 workflow-type: tm+mt
-source-wordcount: '4006'
+source-wordcount: '4134'
 ht-degree: 1%
 
 ---
@@ -375,7 +375,7 @@ DROP VIEW v1
 DROP VIEW IF EXISTS v1
 ```
 
-## Anonymt block
+## Anonymt block {#anonymous-block}
 
 Ett anonymt block består av två avsnitt: körbara avsnitt och avsnitt för undantagshantering. I ett anonymt block är det körbara avsnittet obligatoriskt. Avsnittet om undantagshantering är dock valfritt.
 
@@ -410,6 +410,109 @@ EXCEPTION
     DROP TABLE IF EXISTS tracking_email_id_incrementally;
     SELECT 'ERROR';
 $$END;
+```
+
+### Villkorliga satser i ett anonymt block {#conditional-anonymous-block-statements}
+
+Kontrollstrukturen IF-THEN-ELSE möjliggör villkorlig körning av en lista med satser när ett villkor utvärderas som TRUE. Denna kontrollstruktur är endast tillämplig inom ett anonymt block. Om den här strukturen används som ett fristående kommando resulterar det i ett syntaxfel (&quot;Ogiltigt kommando utanför det anonyma blocket&quot;).
+
+Kodfragmentet nedan visar det korrekta formatet för villkorssatserna IF-THEN-ELSE i ett anonymt block.
+
+```javascript
+IF booleanExpression THEN
+   List of statements;
+ELSEIF booleanExpression THEN 
+   List of statements;
+ELSEIF booleanExpression THEN 
+   List of statements;
+ELSE
+   List of statements;
+END IF
+```
+
+**Exempel**
+
+Exemplet nedan körs `SELECT 200;`.
+
+```sql
+$$BEGIN
+    SET @V = SELECT 2;
+    SELECT @V;
+    IF @V = 1 THEN
+       SELECT 100;
+    ELSEIF @V = 2 THEN
+       SELECT 200;
+    ELSEIF @V = 3 THEN
+       SELECT 300;
+    ELSE    
+       SELECT 'DEFAULT';
+    END IF;   
+
+ END$$;
+```
+
+Denna struktur kan användas i kombination med `raise_error();` om du vill returnera ett eget felmeddelande. Kodblocket som visas nedan avslutar det anonyma blocket med&quot;anpassat felmeddelande&quot;.
+
+**Exempel**
+
+```sql
+$$BEGIN
+    SET @V = SELECT 5;
+    SELECT @V;
+    IF @V = 1 THEN
+       SELECT 100;
+    ELSEIF @V = 2 THEN
+       SELECT 200;
+    ELSEIF @V = 3 THEN
+       SELECT 300;
+    ELSE    
+       SELECT raise_error('custom error message');
+    END IF;   
+
+ END$$;
+```
+
+#### Kapslade IF-programsatser
+
+Kapslade IF-satser stöds i anonyma block.
+
+**Exempel**
+
+```sql
+$$BEGIN
+    SET @V = SELECT 1;
+    IF @V = 1 THEN
+       SELECT 100;
+       IF @V > 0 THEN
+         SELECT 1000;
+       END IF;   
+    END IF;   
+
+ END$$; 
+```
+
+#### Undantagsblock
+
+Undantagsblock stöds i anonyma block.
+
+**Exempel**
+
+```sql
+$$BEGIN
+    SET @V = SELECT 2;
+    IF @V = 1 THEN
+       SELECT 100;
+    ELSEIF @V = 2 THEN
+       SELECT raise_error(concat('custom-error for v= ', '@V' ));
+
+    ELSEIF @V = 3 THEN
+       SELECT 300;
+    ELSE    
+       SELECT 'DEFAULT';
+    END IF;  
+EXCEPTION WHEN OTHER THEN 
+  SELECT 'THERE WAS AN ERROR';    
+ END$$;
 ```
 
 ### Auto till JSON {#auto-to-json}
