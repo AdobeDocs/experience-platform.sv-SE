@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage-kontakt
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: f0a3486fc7df7b08a11ec7bfb041841bc2c1c9a3
+source-git-commit: 50b97ebb8496636a0fccd64d57d7829b1342f87c
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '678'
 ht-degree: 0%
 
 ---
@@ -70,8 +70,12 @@ I följande tabell visas den förväntade fördröjningen för hämtning [!DNL M
 
 | Destination | Förväntad svarstid |
 | ----------- | ---------------- |
-| [!DNL Real-Time Customer Profile] | &lt; 1 minut |
+| [!DNL Real-Time Customer Profile] | &lt; 10 minuter |
 | Data Lake | &lt; 60 minuter |
+
+>[!NOTE]
+>
+>Latenssiffrorna ovan representerar förväntningar på en 95-procentig konfidensnivå. Den faktiska latensen kan variera och i sällsynta fall sträcka sig över 50 %.
 
 ## Nästa steg och ytterligare resurser
 
