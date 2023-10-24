@@ -5,9 +5,9 @@ title: Anslut Data Landing Zone till Adobe Experience Platform med API:t för Fl
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Data Landing Zone med API:t för Flow Service.
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 0089aa0d6b765645840e6954c3957282c2ad972b
 workflow-type: tm+mt
-source-wordcount: '1248'
+source-wordcount: '1304'
 ht-degree: 1%
 
 ---
@@ -74,12 +74,12 @@ Följande svar returnerar information om en landningszon, inklusive dess motsvar
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `containerName` | Namnet på den landningszon som du har hämtat. |
+| `containerName` | Namnet på den landningszon som du hämtade. |
 | `containerTTL` | Förfallotid (i dagar) som gäller för dina data inom landningszonen. Alla inom en viss landningszon ska strykas efter sju dagar. |
 
 ## Hämta [!DNL Data Landing Zone] autentiseringsuppgifter
 
-Så här hämtar du autentiseringsuppgifter för en [!DNL Data Landing Zone], gör en GET-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
+Så här hämtar du autentiseringsuppgifter för [!DNL Data Landing Zone], gör en GET-förfrågan till `/credentials` slutpunkt för [!DNL Connectors] API.
 
 **API-format**
 
@@ -103,14 +103,15 @@ curl -X GET \
 
 **Svar**
 
-Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusive din nuvarande `SASToken` och `SASUri`, samt `storageAccountName` som motsvarar behållaren för landningszonen.
+Följande svar returnerar autentiseringsuppgifter för din datalandningszon, inklusive din nuvarande `SASToken`, `SASUri`, `storageAccountName`och utgångsdatum.
 
 ```json
 {
     "containerName": "dlz-user-container",
     "SASToken": "sv=2020-04-08&si=dlz-ed86a61d-201f-4b50-b10f-a1bf173066fd&sr=c&sp=racwdlm&sig=4yTba8voU3L0wlcLAv9mZLdZ7NlMahbfYYPTMkQ6ZGU%3D",
     "storageAccountName": "dlblobstore99hh25i3dflek",
-    "SASUri": "https://dlblobstore99hh25i3dflek.blob.core.windows.net/dlz-user-container?sv=2020-04-08&si=dlz-ed86a61d-201f-4b50-b10f-a1bf173066fd&sr=c&sp=racwdlm&sig=4yTba8voU3L0wlcLAv9mZLdZ7NlMahbfYYPTMkQ6ZGU%3D"
+    "SASUri": "https://dlblobstore99hh25i3dflek.blob.core.windows.net/dlz-user-container?sv=2020-04-08&si=dlz-ed86a61d-201f-4b50-b10f-a1bf173066fd&sr=c&sp=racwdlm&sig=4yTba8voU3L0wlcLAv9mZLdZ7NlMahbfYYPTMkQ6ZGU%3D",
+    "expiryDate": "2024-01-06"
 }
 ```
 
@@ -119,6 +120,7 @@ Följande svar returnerar autentiseringsuppgifter för din landningszon, inklusi
 | `containerName` | Namnet på din landningszon. |
 | `SASToken` | Den delade åtkomstsignaturtoken för din landningszon. Strängen innehåller all information som krävs för att godkänna en begäran. |
 | `SASUri` | Den delade åtkomstsignaturens URI för din landningszon. Den här strängen är en kombination av URI:n till den landningszon som du autentiseras mot och dess motsvarande SAS-token, |
+| `expiryDate` | Det datum då din SAS-token upphör att gälla. Du måste uppdatera din token före förfallodatumet för att kunna fortsätta använda den i ditt program för att överföra data till Data Landing Zone. Om du inte uppdaterar din token manuellt före det angivna förfallodatumet uppdateras den automatiskt och en ny token skapas när GETENS inloggningsanrop utförs. |
 
 
 ## Uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter
@@ -159,7 +161,8 @@ Följande svar returnerar uppdaterade värden för `SASToken` och `SASUri`.
     "containerName": "dlz-user-container",
     "SASToken": "sv=2020-04-08&si=dlz-9c4d03b8-a6ff-41be-9dcf-20123e717e99&sr=c&sp=racwdlm&sig=JbRMoDmFHQU4OWOpgrKdbZ1d%2BkvslO35%2FXTqBO%2FgbRA%3D",
     "storageAccountName": "dlblobstore99hh25i3dflek",
-    "SASUri": "https://dlblobstore99hh25i3dflek.blob.core.windows.net/dlz-user-container?sv=2020-04-08&si=dlz-9c4d03b8-a6ff-41be-9dcf-20123e717e99&sr=c&sp=racwdlm&sig=JbRMoDmFHQU4OWOpgrKdbZ1d%2BkvslO35%2FXTqBO%2FgbRA%3D"
+    "SASUri": "https://dlblobstore99hh25i3dflek.blob.core.windows.net/dlz-user-container?sv=2020-04-08&si=dlz-9c4d03b8-a6ff-41be-9dcf-20123e717e99&sr=c&sp=racwdlm&sig=JbRMoDmFHQU4OWOpgrKdbZ1d%2BkvslO35%2FXTqBO%2FgbRA%3D",
+    "expiryDate": "2024-01-06"
 }
 ```
 
@@ -232,7 +235,7 @@ GET /connectionSpecs/{CONNECTION_SPEC_ID}/explore?objectType=file&object={OBJECT
 | --- | --- | --- |
 | `{CONNECTION_SPEC_ID}` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 | `{OBJECT_TYPE}` | Den typ av objekt som du vill komma åt. | `file` |
-| `{OBJECT}` | Sökvägen till och namnet på det objekt du vill komma åt. | `dlz-user-container/data8.csv` |
+| `{OBJECT}` | Sökvägen till och namnet på det objekt som du vill komma åt. | `dlz-user-container/data8.csv` |
 | `{FILE_TYPE}` | Filtypen. | <ul><li>`delimited`</li><li>`json`</li><li>`parquet`</li></ul> |
 | `{PREVIEW}` | Ett booleskt värde som definierar om filförhandsvisning stöds. | </ul><li>`true`</li><li>`false`</li></ul> |
 
@@ -318,7 +321,7 @@ Du kan använda `determineProperties` parameter för att automatiskt identifiera
 
 #### `determineProperties` användningsfall
 
-I följande tabell visas olika scenarier som du kan träffa på när du använder `determineProperties` eller ange information manuellt om filen.
+I följande tabell visas olika scenarier som du kan träffa på när du använder `determineProperties` frågeparameter eller ange information manuellt om filen.
 
 | `determineProperties` | `queryParams` | Svar |
 | --- | --- | --- |
@@ -445,9 +448,9 @@ Ett svar returnerar strukturen för den efterfrågade filen, inklusive filnamn o
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `properties.fileType` | Motsvarande filtyp för den efterfrågade filen. De filtyper som stöds är: `delimited`, `json`och `parquet`. |
+| `properties.fileType` | Motsvarande filtyp för den efterfrågade filen. Filtyper som stöds: `delimited`, `json`och `parquet`. |
 | `properties.compressionType` | Motsvarande komprimeringstyp som används för den efterfrågade filen. Komprimeringstyperna som stöds är: <ul><li>`bzip2`</li><li>`gzip`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
-| `properties.columnDelimiter` | Motsvarande kolumnavgränsare som används för den efterfrågade filen. Ett teckenvärde är en tillåten kolumnavgränsare. Standardvärdet är ett komma `(,)`. |
+| `properties.columnDelimiter` | Motsvarande kolumnavgränsare som används för den efterfrågade filen. Ett enda teckenvärde är en tillåten kolumnavgränsare. Standardvärdet är ett komma `(,)`. |
 
 
 ## Skapa en källanslutning
@@ -491,13 +494,13 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på [!DNL Data Landing Zone] källanslutning. |
-| `data.format` | Formatet på de data du vill hämta till plattformen. |
+| `data.format` | Formatet på de data som du vill hämta till plattformen. |
 | `params.path` | Sökvägen till filen som du vill hämta till plattformen. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar [!DNL Data Landing Zone]. Detta fasta ID är: `26f526f2-58f4-4712-961d-e41bf1ccc0e8`. |
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudiekurs för att skapa ett dataflöde.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen. Detta ID krävs i nästa självstudie för att skapa ett dataflöde.
 
 ```json
 {
@@ -508,4 +511,4 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du hämtat [!DNL Data Landing Zone] inloggningsuppgifter, utforskade filstrukturen för att hitta filen som du vill hämta till plattformen och skapade en källanslutning för att börja överföra data till plattformen. Du kan nu gå vidare till nästa självstudiekurs där du får lära dig hur [skapa ett dataflöde för att överföra molnlagringsdata till plattformen med [!DNL Flow Service] API](../../collect/cloud-storage.md).
+Genom att följa den här självstudien har du fått [!DNL Data Landing Zone] inloggningsuppgifter, utforskade filstrukturen för att hitta filen som du vill hämta till plattformen och skapade en källanslutning för att börja överföra data till plattformen. Du kan nu gå vidare till nästa självstudiekurs där du får lära dig hur [skapa ett dataflöde för att överföra molnlagringsdata till plattformen med [!DNL Flow Service] API](../../collect/cloud-storage.md).

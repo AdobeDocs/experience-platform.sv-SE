@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;Data Landing Zone;datalandnin
 title: Anslut datalandningszonen till plattformen med användargränssnittet
 description: Lär dig hur du skapar en källanslutning för en Data Landing Zone med hjälp av användargränssnittet för plattformen.
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: d57060ddeed64d3863f71ac1ea34ccc5c97265ea
+source-git-commit: 9cffd508c1bff7ce133f84ca686c414e997343b8
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '649'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [!DNL Data Landing Zone] är en säker, molnbaserad fillagringsfunktion för att överföra filer till Adobe Experience Platform. Data tas automatiskt bort från [!DNL Data Landing Zone] efter sju dagar.
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Data Landing Zone] källanslutning med hjälp av användargränssnittet för plattformen.
+Den här självstudiekursen innehåller steg för att skapa en [!DNL Data Landing Zone] källanslutning med användargränssnittet för plattformen.
 
 ## Komma igång
 
@@ -33,18 +33,18 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under [!UICONTROL cloud storage] kategori, välj [!DNL Data Landing Zone] och sedan markera **[!UICONTROL Add data]**.
+Under [!UICONTROL cloud storage] kategori, välj [!DNL Data Landing Zone] och sedan **[!UICONTROL Add data]**.
 
-![katalog](../../../../images/tutorials/create/dlz/catalog.png)
+![Källkatalogen med Data Landing Zone vald.](../../../../images/tutorials/create/dlz/catalog.png)
 
 The [!UICONTROL Add data] visas så att du får ett gränssnitt där du kan välja och förhandsgranska de data du vill hämta till plattformen.
 
 * Den vänstra delen av gränssnittet är en mappläsare som visar en lista över filer från behållaren som du sedan kan hämta till plattformen.
 * Med den högra delen av gränssnittet kan du förhandsgranska upp till 100 rader data från en kompatibel fil.
 
-Markera filen som du vill hämta till plattformen och vänta en stund tills rätt gränssnitt uppdateras till en förhandsgranskningsskärm.
+Markera filen som du vill ta med till Experience Platform och vänta en stund tills rätt gränssnitt uppdateras till en förhandsvisningsskärm.
 
-![tilläggsdata](../../../../images/tutorials/create/dlz/add-data.png)
+![Gränssnittet för att lägga till data på källarbetsytan.](../../../../images/tutorials/create/dlz/add-data.png)
 
 >[!TIP]
 >
@@ -56,7 +56,7 @@ Om du vill förhandsgranska en annan fil markerar du förhandsvisningsikonen bre
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
-![filidentifiering](../../../../images/tutorials/create/dlz/file-detection.png)
+![Förhandsgranskningssidan för data på källarbetsytan.](../../../../images/tutorials/create/dlz/file-detection.png)
 
 En detaljerad steg-för-steg-guide om hur du skapar ett dataflöde för en molnlagringskälla finns i självstudiekursen om [skapa ett molnlagringsdataflöde för att överföra data till plattformen](../../dataflow/batch/cloud-storage.md).
 
@@ -66,17 +66,17 @@ En detaljerad steg-för-steg-guide om hur du skapar ett dataflöde för en molnl
 
 I [!UICONTROL Sources catalog], under [!UICONTROL Cloud storage] väljer du ellipserna (**...**) från **[!UICONTROL Data Landing Zone]** kort. I listrutan som visas väljer du **[!UICONTROL View credentials]**.
 
-![alternativ](../../../../images/tutorials/create/dlz/options.png)
+![En lista med visningsalternativ för Data Landing Zone.](../../../../images/tutorials/create/dlz/options.png)
 
-En pover visas med ditt behållarnamn, SAS-token, lagringskontonamn och SAS-URI.
+En pover visas med ditt behållarnamn, SAS-token, lagringskontonamn, SAS-URI och förfallodatum.
 
 Välj **[!UICONTROL Refresh credentials]** och under några sekunder kan de uppdaterade inloggningsuppgifterna behandlas.
 
 >[!TIP]
 >
->Dina [!DNL Data Landing Zone] inloggningsuppgifterna är inställda på att automatiskt förfalla efter 90 dagar och du måste använda nya autentiseringsuppgifter för att återansluta till [!DNL Data Landing Zone] efter utgångsdatum. Dina dataflöden i Platform påverkas inte av att autentiseringsuppgifterna har upphört att gälla och du kan fortfarande arbeta med nya och befintliga dataflöden med dina nya autentiseringsuppgifter.
+>Dina [!DNL Data Landing Zone] inloggningsuppgifterna är inställda på att automatiskt upphöra att gälla efter 90 dagar och du måste använda nya autentiseringsuppgifter för att återansluta till [!DNL Data Landing Zone] efter förfallodatum. Dina dataflöden i Platform påverkas inte av att autentiseringsuppgifterna har upphört att gälla och du kan fortfarande arbeta med nya och befintliga dataflöden med dina nya autentiseringsuppgifter.
 
-![view-credentials](../../../../images/tutorials/create/dlz/credentials.png)
+![De autentiseringsuppgifter som är associerade med ett visst Data Landing Zone-konto.](../../../../images/tutorials/create/dlz/view-credentials.png)
 
 ## Nästa steg
 
