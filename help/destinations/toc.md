@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: c171d333569a6006d3399ede07d55ce233c166fa
+source-git-commit: 57d3e136902201f9ba9bd2f427ebe0f876900671
 workflow-type: tm+mt
-source-wordcount: '1182'
+source-wordcount: '1185'
 ht-degree: 2%
 
 ---
@@ -186,6 +186,7 @@ ht-degree: 2%
       * [IP-adress tillåtelselista för direktuppspelningsmål](./catalog/streaming/ip-address-allow-list.md)
    * Destinationer för undersökning {#survey}
       * [Översikt över undersökningsmål](./catalog/survey/overview.md)
+      * [Mål för Qualtrics Automation](./catalog/survey/qualtrics-automations.md)
       * [Mål för sidtillägg](./catalog/survey/foresee.md)
       * [InMoment-tillägg](./catalog/survey/inmoment.md)
       * [Qualtrics-tillägg för webbplatsfeedback](./catalog/survey/qualtrics.md)

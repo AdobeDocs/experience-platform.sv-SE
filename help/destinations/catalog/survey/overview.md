@@ -3,9 +3,9 @@ keywords: Undersökningsdestinationer;undersökning;förutse;instund;webbinfång
 title: Översikt över undersökningsmål
 description: Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i realtid via dataelement och delar data med Adobe Experience Platform.
 exl-id: 0358a73b-9f4a-4362-a7ed-e49ece6e5f02
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 57d3e136902201f9ba9bd2f427ebe0f876900671
 workflow-type: tm+mt
-source-wordcount: '95'
+source-wordcount: '100'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,13 @@ Plattformarna identifierar enkäthändelser, samlar in feedback från kunderna i
 
 För närvarande stöder Platform de undersökningsmål som anges nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 
+**Målanslutningar**
+
+* [Qualtrics Automations](./qualtrics-automations.md)
+
+**Tillägg**
+
 * [Foresee-tillägg](./foresee.md)
 * [InMoment-tillägg](./inmoment.md)
 * [Qualtrics-tillägg för webbplatsfeedback](./qualtrics.md)
-* [Web Intercept Surveys - QuestionPro Extension](./web-intercept-surveys.md)
+* [Web Intercept Survey - QuestionPro extension](./web-intercept-surveys.md)
