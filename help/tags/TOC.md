@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: c2baf3d14e57df87303aeadeed90203dcd233242
+source-git-commit: f63d171354e15a23c29c1e579ce816750dea3c97
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '1033'
 ht-degree: 13%
 
 ---
@@ -228,11 +228,13 @@ ht-degree: 13%
          * [Översikt](./extensions/server/google-ads-enhanced-conversions/overview.md)
       * Google Cloud Platform {#google-cloud-platform}
          * [Översikt](./extensions/server/google-cloud-platform/overview.md)
+      * [!DNL LinkedIn Conversions API] {#linkedin}
+         * [Översikt](./extensions/server/linkedin/overview.md)
       * [!DNL Mailchimp] Kant {#mailchimp}
          * [Översikt](./extensions/server/mailchimp/overview.md)
       * [!DNL Meta Conversions API] {#meta}
          * [Översikt](./extensions/server/meta/overview.md)
-      * [!UICONTROL Microsoft Azure] {#azure}
+      * [!DNL Microsoft Azure] {#azure}
          * [Översikt](./extensions/server/azure/overview.md)
       * [!DNL Mixpanel] {#mixpanel}
          * [Översikt](./extensions/server/mixpanel/overview.md)

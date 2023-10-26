@@ -2,9 +2,9 @@
 title: Konfigurera hemligheter i händelsevidarebefordran
 description: Lär dig hur du konfigurerar hemligheter i användargränssnittet för att autentisera slutpunkter som används i egenskaper för vidarebefordran av händelser.
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: a863d65c3e6e330254a58aa822383c0847b0e5f5
+source-git-commit: 592acdd45b1db5da95430b4e707cd9a2c18c1645
 workflow-type: tm+mt
-source-wordcount: '2037'
+source-wordcount: '2277'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,7 @@ Följande hemliga typer stöds för närvarande:
 | --- | --- |
 | [!UICONTROL Google OAuth 2] | Innehåller flera attribut som stöder [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation för användning i [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview) och [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview). Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL HTTP] | Innehåller två strängattribut för ett användarnamn respektive ett lösenord. |
+| [!UICONTROL [!DNL LinkedIn] OAuth 2] | Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL OAuth 2] | Innehåller flera attribut som stöder [tilldelningstyp för klientautentiseringsuppgifter](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4) för [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) autentiseringsspecifikation. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL OAuth 2 JWT] | Innehåller flera attribut som stöder JSON Web Token-profil (JWT) för [OAuth 2.0-auktorisering](https://datatracker.ietf.org/doc/html/rfc7523#section-2.1) bidrag. Systemet ber dig om den information som krävs och hanterar sedan förnyelsen av dessa token för dig med ett angivet intervall. |
 | [!UICONTROL Token] | En enda teckensträng som representerar ett autentiseringstokenvärde som är känt och begripligt för båda systemen. |
@@ -76,6 +77,7 @@ Därifrån skiljer sig stegen för att skapa hemligheten åt beroende på vilken
 * [[!UICONTROL OAuth 2]](#oauth2)
 * [[!UICONTROL OAuth 2 JWT]](#oauth2jwt)
 * [[!UICONTROL Google OAuth 2]](#google-oauth2)
+* [[!UICONTROL [!DNL LinkedIn] OAuth 2]](#linkedin-oauth2)
 
 ### [!UICONTROL Token] {#token}
 
@@ -175,6 +177,38 @@ En dialogruta visas där du kan ange autentiseringsuppgifter för ditt Google-ko
 >Om din organisation har en återautentiseringsprincip för Google Cloud-program kommer de hemligheter som skapas inte att uppdateras korrekt efter att autentiseringen har upphört att gälla (mellan 1 och 24 timmar beroende på principkonfigurationen).
 >
 >Du löser det här problemet genom att logga in på Google Admin Console och gå till **[!DNL App access control]** så att du kan markera appen för händelsevidarebefordran (Adobe Real-Time CDP Event Forwarding) som [!DNL Trusted]. Läs Google-dokumentationen på [ange sessionslängder för Google Cloud-tjänster](https://support.google.com/a/answer/9368756) för mer information.
+
+### [!UICONTROL [!DNL LinkedIn] OAuth 2] {#linkedin-oauth2}
+
+Skapa en [!DNL LinkedIn] OAuth 2-hemlighet, välj **[!UICONTROL [!DNL LinkedIn] OAuth 2]** från **[!UICONTROL Type]** nedrullningsbar meny. Nästa, välj **[!UICONTROL Create Secret]**.
+
+![The [!UICONTROL Create Secret] med [!UICONTROL Type] markerat fält.](../../images/ui/event-forwarding/secrets/linkedin-oauth.png)
+
+En pover som informerar dig om att hemligheten behöver auktoriseras manuellt via [!DNL LinkedIn]. Välj **[!UICONTROL Create & Authorize secret with [!DNL LinkedIn]]** för att fortsätta.
+
+![[!DNL LinkedIn] markering av auktoriseringspover [!UICONTROL Create & Authorize secret with [!DNL LinkedIn]].](../../images/ui/event-forwarding/secrets/linkedin-authorization.png)
+
+En dialogruta visas där du uppmanas att ange [!DNL LinkedIn] autentiseringsuppgifter. Följ instruktionerna för att ge händelsevidarebefordringsåtkomst till dina data.
+
+När auktoriseringsprocessen är klar återgår du till **[!UICONTROL Secrets]** där du kan se din nyligen skapade hemlighet. Här ser du hemlighetens status och utgångsdatum.
+
+![The [!UICONTROL Secret] som markerar den nyligen skapade hemligheten.](../../images/ui/event-forwarding/secrets/linkedin-new-secret.png)
+
+#### Återauktorisera en [!UICONTROL [!DNL LinkedIn] OAuth 2] hemlig
+
+>VIKTIGT
+>
+>Du måste omauktorisera med [!DNL LinkedIn] var 365:e dag. Om du inte ger rätt besked i tid kommer din hemlighet inte att uppdateras och [!DNL LinkedIn] konverteringsbegäranden misslyckas.
+
+Tre månader innan hemligheten kräver omauktorisering visas ett popup-fönster när du navigerar på en sida i egenskapen. Välj **[!UICONTROL Click here to go to your secrets]**.
+
+![The [!UICONTROL Property Overview] som markerar det hemliga återauktoriseringsfönstret.](../../images/ui/event-forwarding/secrets/linkedin-reauthorization-popup.png)
+
+Du omdirigeras till [!UICONTROL Secrets] -fliken. Hemligheterna på den här sidan filtreras så att de endast visar de hemligheter som behöver auktoriseras på nytt. Välj **[!UICONTROL Auth Needed]** för hemligheten du måste återauktorisera.
+
+![The [!UICONTROL Secret] tabbmarkering [!UICONTROL Auth Needed]för [!DNL LinkedIn] hemlighet.](../../images/ui/event-forwarding/secrets/linkedin-reauthorization.png)
+
+En dialogruta visas där du uppmanas att ange [!DNL LinkedIn] autentiseringsuppgifter. Följ anvisningarna för att auktorisera din hemlighet igen.
 
 ## Redigera en hemlighet
 

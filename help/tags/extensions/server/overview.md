@@ -2,9 +2,9 @@
 title: Referens för tillägg för händelsevidarebefordran
 description: Hitta dokumentation för tillägg för vidarebefordran av händelser i Adobe Experience Platform.
 exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
-source-git-commit: c2baf3d14e57df87303aeadeed90203dcd233242
+source-git-commit: f63d171354e15a23c29c1e579ce816750dea3c97
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '191'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,7 @@ Här följer en lista med dokumentation för tillägg för vidarebefordran av h�
 * [Epsilon Event API](https://exchange.adobe.com/apps/ec/109127)*
 * [Google Ads Enhanced Conversions](./google-ads-enhanced-conversions/overview.md)
 * [Google Cloud Platform](./google-cloud-platform/overview.md)
+* [[!DNL LinkedIn] Konverterings-API](./linkedin/overview.md)
 * [[!DNL Mailchimp] Kant](./mailchimp/overview.md)
 * [[!DNL Meta] Konverterings-API](./meta/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
