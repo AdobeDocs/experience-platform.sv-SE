@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från oktober 2023 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4ab89ef7cabc9d808fd9dab24b6dbe3fe23e53f3
+source-git-commit: ac7597a2e63559f3af91d559dd77f7778c9f27bb
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '766'
 ht-degree: 3%
 
 ---
@@ -16,6 +16,7 @@ ht-degree: 3%
 Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Datainsamling](#data-collection)
+- [Mål ](#destinations)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -31,6 +32,31 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Tillägg | [!DNL Meta] Förbättring av konverterings-API | Det finns tre förbättringar i [Meta Conversions API](/help/tags/extensions/server/meta/overview.md) tillägg: <ul><li>Integrering med [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe): Skapar en sömlös inloggning genom att du kan dela ditt pixelID och få åtkomst till token för Conversions API-integrering med Adobe.</li><li>Integrering med [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq): Gör det möjligt för er att leverera annonser till personer som är mer benägna att slutföra en önskad åtgärd och länka tillbaka åtgärden till de annonser som levereras.</li><li>Integrering med [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha): Gör att du kan skicka LiveRamp-ID:t i CIP-fältet, vilket eliminerar behovet av att dela PII direkt med partners eller Meta. </li></ul> |
 
 Mer information om datainsamling finns i [datainsamling, översikt](../../tags/home.md).
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Nya eller uppdaterade destinationer** {#new-updated-destinations}
+
+| Destination | Nytt eller uppdaterat | Beskrivning |
+| ----------- |----------------|----------- |
+| [[!DNL MoEngage]](/help/destinations/catalog/mobile-engagement/moengage.md) | Nytt | Använd Moengage-målet för att ansluta och mappa dina Adobe-data (användarattribut, segment och händelser) till Moengage i realtid. Sedan kan kunderna agera utifrån dessa data och leverera personaliserade, målinriktade upplevelser. |
+| [[!DNL Qualtrics Automations]](/help/destinations/catalog/survey/qualtrics-automations.md) | Nytt | Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience ID för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner. |
+
+{style="table-layout:auto"}
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Stöd för hash-funktioner i beräknade fält | Förutom de funktioner som är specifika för [exportera arrayer](../../destinations/ui/export-arrays-calculated-fields.md) eller element från en array kan du nu använda ytterligare [hash-funktioner](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) för att hash-attribut i de exporterade filerna. De hash-funktioner som stöds är: `sha`, `sha256`, `sha512`, `hash`, `md5`, `crc32`. |
+
+{style="table-layout:auto"}
+
+**Korrigeringar och förbättringar** {#destinations-fixes-and-enhancements}
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Sandlådor {#sandboxes}
 
