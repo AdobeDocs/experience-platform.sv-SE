@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från oktober 2023 för Adobe Experience Platform.
-source-git-commit: ac7597a2e63559f3af91d559dd77f7778c9f27bb
+source-git-commit: 9009f56956f0719fb80d423a14b81a6dc7115d77
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '808'
 ht-degree: 3%
 
 ---
@@ -29,6 +29,8 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
 | Tillägg | [!DNL Meta] Förbättring av konverterings-API | Det finns tre förbättringar i [Meta Conversions API](/help/tags/extensions/server/meta/overview.md) tillägg: <ul><li>Integrering med [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe): Skapar en sömlös inloggning genom att du kan dela ditt pixelID och få åtkomst till token för Conversions API-integrering med Adobe.</li><li>Integrering med [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq): Gör det möjligt för er att leverera annonser till personer som är mer benägna att slutföra en önskad åtgärd och länka tillbaka åtgärden till de annonser som levereras.</li><li>Integrering med [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha): Gör att du kan skicka LiveRamp-ID:t i CIP-fältet, vilket eliminerar behovet av att dela PII direkt med partners eller Meta. </li></ul> |
+| Tillägg | [!DNL LinkedIn] Konverterings-API | The [[!DNL LinkedIn] Konverterings-API](../../tags/extensions/server/linkedin/overview.md) kan ni utvärdera hur effektiva era marknadsföringskampanjer i LinkedIn är genom att skicka händelsedata från Experience Platform till LinkedIn. |
+| Hemlighet | [!DNL LinkedIn] OAuth 2 Secret | The [[!DNL LinkedIn] OAuth 2 Secret](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2) gör att du kan skicka serverinteraktioner till [!DNL LinkedIn] vid vidarebefordran. |
 
 Mer information om datainsamling finns i [datainsamling, översikt](../../tags/home.md).
 
