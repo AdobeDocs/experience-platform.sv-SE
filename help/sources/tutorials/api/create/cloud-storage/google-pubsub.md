@@ -3,9 +3,9 @@ title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: b157b9147d8ea8100bcaedca272b303a3c04e71a
+source-git-commit: a826bda356a7205f3d4c0e0836881530dbaaf54e
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '1153'
 ht-degree: 0%
 
 ---
@@ -31,13 +31,26 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 För att [!DNL Flow Service] för att ansluta till [!DNL PubSub]måste du ange värden för följande anslutningsegenskaper:
 
+>[!BEGINTABS]
+
+>[!TAB Projektbaserad autentisering]
+
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
+| --- | --- |
 | `projectId` | Det projekt-ID som krävs för autentisering [!DNL PubSub]. |
+| `credentials` | Autentiseringsuppgifterna som krävs för autentisering [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som är kopplade till att skapa bas- och källmålanslutningarna. The [!DNL PubSub] anslutningsspecifikation-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
+
+>[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
 | `credentials` | Autentiseringsuppgifterna som krävs för autentisering [!DNL PubSub]. Du måste se till att du skickar den fullständiga JSON-filen när du har tagit bort blanktecknen från inloggningsuppgifterna. |
 | `topicName` | Namnet på resursen som representerar en feed med meddelanden. Du måste ange ett ämnesnamn om du vill ge åtkomst till en viss dataström i ditt [!DNL PubSub] källa. Ämnesnamnets format är: `projects/{PROJECT_ID}/topics/{TOPIC_ID}`. |
 | `subscriptionName` | Namnet på [!DNL PubSub] prenumeration. I [!DNL PubSub]kan du få meddelanden genom att prenumerera på det ämne som meddelanden har publicerats i. **Anteckning**: En enda [!DNL PubSub] prenumerationen kan bara användas för ett dataflöde. Om du vill kunna skapa flera dataflöden måste du ha flera prenumerationer. Prenumerationens namnformat är: `projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}`. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer som är kopplade till att skapa bas- och källmålanslutningarna. The [!DNL PubSub] anslutningsspecifikation-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
+
+>[!ENDTABS]
 
 Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du vill använda tjänstkontobaserad autentisering läser du följande [[!DNL PubSub] guide om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
@@ -50,6 +63,10 @@ Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://c
 Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
+
+>[!TIP]
+>
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Google PubSub] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
 Det första steget i att skapa en källanslutning är att autentisera [!DNL PubSub] och generera ett anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
@@ -67,11 +84,13 @@ The [!DNL PubSub] Med -källa kan du ange vilken typ av åtkomst du vill tillåt
 POST /connections
 ```
 
-**Begäran**
-
 >[!BEGINTABS]
 
 >[!TAB Projektbaserad autentisering]
+
+Om du vill skapa en grundläggande anslutning med projektbaserad autentisering skickar du en POST till `/connections` slutpunkt och ange `projectId` och `credentials` i begärandetexten.
+
++++Begäran
 
 ```shell
 curl -X POST \
@@ -104,7 +123,26 @@ curl -X POST \
 | `auth.params.credentials` | Autentiseringsuppgifter eller nyckel som krävs för autentisering [!DNL PubSub]. |
 | `connectionSpec.id` | The [!DNL PubSub] anslutningsspec-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
+++++
+
++++svar
+
+Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta grundläggande anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
+
+```json
+{
+    "id": "4cb0c374-d3bb-4557-b139-5712880adc55",
+    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+}
+```
+
+++++
+
 >[!TAB Ämnesbaserad och prenumerationsbaserad autentisering]
+
+Om du vill skapa en grundläggande anslutning med ämne- och prenumerationsbaserad autentisering skickar du en POST till `/connections` slutpunkt och ange `credentials`, `topicName`och `subscriptionName` i begärandetexten.
+
++++Begäran
 
 ```shell
 curl -X POST \
@@ -139,9 +177,9 @@ curl -X POST \
 | `auth.params.subscriptionName` | Projekt-ID och prenumerations-ID-par för [!DNL PubSub] källa som du vill ge åtkomst till. |
 | `connectionSpec.id` | The [!DNL PubSub] anslutningsspec-ID: `70116022-a743-464a-bbfe-e226a7f8210c`. |
 
->[!ENDTABS]
++++
 
-**Svar**
++++svar
 
 Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess unika identifierare (`id`). Detta grundläggande anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
 
@@ -151,6 +189,11 @@ Ett godkänt svar returnerar information om den nya anslutningen, inklusive dess
     "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
 }
 ```
+
+++++
+
+>[!ENDTABS]
+
 
 ## Skapa en källanslutning {#source}
 

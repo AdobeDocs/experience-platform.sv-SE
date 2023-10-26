@@ -5,9 +5,9 @@ title: Skapa en Microsoft Dynamics-basanslutning med API:t för flödestjänsten
 type: Tutorial
 description: Lär dig hur du ansluter plattformen till ett Microsoft Dynamics-konto med API:t för Flow Service.
 exl-id: 423c6047-f183-4d92-8d2f-cc8cc26647ef
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '738'
 ht-degree: 1%
 
 ---
@@ -31,16 +31,26 @@ Följande avsnitt innehåller ytterligare information som du behöver känna til
 
 För att [!DNL Flow Service] för att ansluta till [!DNL Dynamics]måste du ange värden för följande anslutningsegenskaper:
 
+>[!BEGINTABS]
+
+>[!TAB Grundläggande autentisering]
+
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| `serviceUri` | Tjänstens URL [!DNL Dynamics] -instans. |
+| --- | --- |
+| `serviceUri` | Tjänst-URL:en för [!DNL Dynamics] -instans. |
 | `username` | Ditt användarnamn [!DNL Dynamics] användarkonto. |
 | `password` | Lösenordet för [!DNL Dynamics] konto. |
+
+>[!TAB Tjänstens huvudnamn och nyckelautentisering]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
 | `servicePrincipalId` | Klient-ID för din [!DNL Dynamics] konto. Detta ID krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 | `servicePrincipalKey` | Tjänstens hemliga huvudnyckel. Denna autentiseringsuppgift krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Dynamics] är: `38ad80fe-8b06-4938-94f4-d4ee80266b07`. |
 
-Mer information om hur du kommer igång finns på [this [!DNL Dynamics] dokument](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
+>[!ENDTABS]
+
+Mer information om hur du kommer igång finns i [this [!DNL Dynamics] dokument](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth).
 
 ### Använda plattforms-API:er
 
@@ -48,13 +58,23 @@ Mer information om hur du kan anropa API:er för plattformar finns i handboken [
 
 ## Skapa en basanslutning
 
+>[!TIP]
+>
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Dynamics] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
 Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Dynamics] autentiseringsuppgifter som en del av parametrarna för begäran.
 
-### Skapa en [!DNL Dynamics] basanslutning med grundläggande autentisering
+### Skapa en [!DNL Dynamics] basanslutning
 
-Skapa en [!DNL Dynamics] basanslutning med grundläggande autentisering, gör en POST-förfrågan till [!DNL Flow Service] API när du anger värden för anslutningen `serviceUri`, `username`och `password`.
+>[!TIP]
+>
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Dynamics] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+
+Det första steget i att skapa en källanslutning är att autentisera [!DNL Dynamics] och generera ett anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+
+Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Dynamics] autentiseringsuppgifter som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -62,7 +82,13 @@ Skapa en [!DNL Dynamics] basanslutning med grundläggande autentisering, gör en
 POST /connections
 ```
 
-**Begäran**
+>[!BEGINTABS]
+
+>[!TAB Grundläggande autentisering]
+
+Skapa en [!DNL Dynamics] basanslutning med grundläggande autentisering, gör en POST-förfrågan till [!DNL Flow Service] API när du anger värden för anslutningen `serviceUri`, `username`och `password`.
+
++++Begäran
 
 ```shell
 curl -X POST \
@@ -97,7 +123,9 @@ curl -X POST \
 | `auth.params.password` | Lösenordet som är kopplat till [!DNL Dynamics] konto. |
 | `connectionSpec.id` | The [!DNL Dynamics] anslutningsspecifikation-ID: `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
 
-**Svar**
++++
+
++++svar
 
 Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att undersöka ditt CRM-system i nästa steg.
 
@@ -108,42 +136,38 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
 }
 ```
 
-### Skapa en [!DNL Dynamics] basanslutning med huvudnyckelbaserad autentisering
++++
+
+>[!TAB Tjänstens huvudnyckelbaserade autentisering]
 
 Skapa en [!DNL Dynamics] basanslutning med huvudnyckelbaserad autentisering, gör en POST-förfrågan till [!DNL Flow Service] API när du anger värden för anslutningen `serviceUri`, `servicePrincipalId`och `servicePrincipalKey`.
 
-**API-format**
-
-```http
-POST /connections
-```
-
-**Begäran**
++++Begäran
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Dynamics connection",
-        "description": "Dynamics connection using key-based authentication",
-        "auth": {
-            "specName": "Service Principal Key Based Authentication",
-            "params": {
-                "serviceUri": "{SERVICE_URI}",
-                "servicePrincipalId": "{SERVICE_PRINCIPAL_ID}",
-                "servicePrincipalKey": "{SERVICE_PRINCIPAL_KEY}"
-            }
-        },
-        "connectionSpec": {
-            "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Dynamics connection",
+      "description": "Dynamics connection using key-based authentication",
+      "auth": {
+          "specName": "Service Principal Key Based Authentication",
+          "params": {
+              "serviceUri": "{SERVICE_URI}",
+              "servicePrincipalId": "{SERVICE_PRINCIPAL_ID}",
+              "servicePrincipalKey": "{SERVICE_PRINCIPAL_KEY}"
+          }
+      },
+      "connectionSpec": {
+          "id": "38ad80fe-8b06-4938-94f4-d4ee80266b07",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
@@ -153,7 +177,9 @@ curl -X POST \
 | `auth.params.servicePrincipalKey` | Tjänstens hemliga huvudnyckel. Denna autentiseringsuppgift krävs när tjänstens huvudnamn och nyckelbaserad autentisering används. |
 | `connectionSpec.id` | The [!DNL Dynamics] anslutningsspecifikation-ID: `38ad80fe-8b06-4938-94f4-d4ee80266b07` |
 
-**Svar**
++++
+
++++svar
 
 Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unika identifierare (`id`). Detta ID krävs för att undersöka ditt CRM-system i nästa steg.
 
@@ -163,6 +189,11 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
     "etag": "\"9e0052a2-0000-0200-0000-5e35tb330000\""
 }
 ```
+
++++
+
+>[!ENDTABS]
+
 
 ## Nästa steg
 

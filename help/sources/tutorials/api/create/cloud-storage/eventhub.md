@@ -3,9 +3,9 @@ title: Skapa en källanslutning för Azure Event Hubs med API:t för Flow Servic
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: b76bc6ddb0d49bbd089627c8df8b31703d0e50b1
+source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '1005'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >The [!DNL Azure Event Hubs] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-I den här självstudiekursen får du hjälp med att koppla samman [!DNL Azure Event Hubs] (nedan kallad[!DNL Event Hubs]&quot;) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+Den här självstudiekursen innehåller steg för att skapa en [!DNL Azure Event Hubs] (nedan kallad[!DNL Event Hubs]&quot;) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
@@ -31,12 +31,28 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 För att [!DNL Flow Service] för att få kontakt med [!DNL Event Hubs] måste du ange värden för följande anslutningsegenskaper:
 
+>[!BEGINTABS]
+
+>[!TAB Standardautentisering]
+
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
+| --- | --- |
 | `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `sasKey` | Primärnyckeln för [!DNL Event Hubs] namnutrymme. The `sasPolicy` som `sasKey` motsvarar måste ha `manage` rättigheter som konfigurerats för [!DNL Event Hubs] lista som ska fyllas i. |
 | `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+
+>[!TAB SAS-autentisering]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
+| `sasKey` | Primärnyckeln för [!DNL Event Hubs] namnutrymme. The `sasPolicy` som `sasKey` motsvarar måste ha `manage` rättigheter som konfigurerats för [!DNL Event Hubs] lista som ska fyllas i. |
+| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| `eventHubName` | Namnet på [!DNL Event Hubs] källa. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+
+>[!ENDTABS]
 
 Mer information om dessa värden finns i [det här händelsehubbsdokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
@@ -45,6 +61,10 @@ Mer information om dessa värden finns i [det här händelsehubbsdokumentet](htt
 Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
+
+>[!TIP]
+>
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Event Hubs] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
 Det första steget i att skapa en källanslutning är att autentisera [!DNL Event Hubs] och generera ett anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
@@ -56,32 +76,38 @@ Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` sl
 POST /connections
 ```
 
-**Begäran**
+>[!BEGINTABS]
+
+>[!TAB Standardautentisering]
+
+Om du vill skapa ett konto med standardautentisering skickar du en POST till `/connections` slutpunkt när du anger värden för `sasKeyName`, `sasKey`och `namespace`.
+
++++Begäran
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/connections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Azure Event Hubs connection",
-        "description": "Connector for Azure Event Hubs",
-        "auth": {
-            "specName": "Azure EventHub authentication credentials",
-            "params": {
-                "sasKeyName": "{SAS_KEY_NAME}",
-                "sasKey": "{SAS_KEY}",
-                "namespace": "{NAMESPACE}"
-            }
-        },
-        "connectionSpec": {
-            "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Azure Event Hubs connection",
+      "description": "Connector for Azure Event Hubs",
+      "auth": {
+          "specName": "Azure EventHub authentication credentials",
+          "params": {
+              "sasKeyName": "{SAS_KEY_NAME}",
+              "sasKey": "{SAS_KEY}",
+              "namespace": "{NAMESPACE}"
+          }
+      },
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
@@ -91,7 +117,9 @@ curl -X POST \
 | `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
 | `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
-**Svar**
++++
+
++++svar
 
 Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
 
@@ -101,6 +129,66 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
     "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
 }
 ```
+
++++
+
+>[!TAB SAS-autentisering]
+
+Om du vill skapa ett konto med SAS-autentisering skickar du en POST till `/connections` slutpunkt när du anger värden för `sasKeyName`, `sasKey`,`namespace`och `eventHubName`.
+
++++Begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Azure Event Hubs connection",
+      "description": "Connector for Azure Event Hubs",
+      "auth": {
+          "specName": "Azure EventHub authentication credentials",
+          "params": {
+              "sasKeyName": "{SAS_KEY_NAME}",
+              "sasKey": "{SAS_KEY}",
+              "namespace": "{NAMESPACE}",
+              "eventHubName": "{EVENT_HUB_NAME} 
+          }
+      },
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
+| `auth.params.sasKey` | Den genererade signaturen för delad åtkomst. |
+| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
+| `params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
+| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+
++++
+
++++svar
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
+
+```json
+{
+    "id": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+}
+```
+
++++
+
+>[!ENDTABS]
 
 ## Skapa en källanslutning
 
@@ -122,37 +210,37 @@ POST /sourceConnections
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
-    -H 'authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'content-type: application/json' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -d '{
-        "name": "Azure Event Hubs source connection",
-        "description": "A source connection for Azure Event Hubs",
-        "baseConnectionId": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
-        "connectionSpec": {
-            "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
-            "version": "1.0"
-        },
-        "data": {
-            "format": "json"
-        },
-        "params": {
-            "eventHubName": "{EVENTHUB_NAME}",
-            "dataType": "raw",
-            "reset": "latest",
-            "consumerGroup": "{CONSUMER_GROUP}"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'content-type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+      "name": "Azure Event Hubs source connection",
+      "description": "A source connection for Azure Event Hubs",
+      "baseConnectionId": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      },
+      "data": {
+          "format": "json"
+      },
+      "params": {
+          "eventHubName": "{EVENT_HUB_NAME}",
+          "dataType": "raw",
+          "reset": "latest",
+          "consumerGroup": "{CONSUMER_GROUP}"
+      }
+  }'
 ```
 
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ange för att inkludera mer information om din källanslutning. |
-| `baseConnectionId` | Anslutnings-ID för din [!DNL Event Hubs] källa som skapades i föregående steg. |
+| `baseConnectionId` | Anslutnings-ID för din [!DNL Event Hubs] källa som genererades i föregående steg. |
 | `connectionSpec.id` | ID för fast anslutningsspecifikation för [!DNL Event Hubs]. Detta ID är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
 | `data.format` | Formatet på [!DNL Event Hubs] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
 | `params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
@@ -162,4 +250,4 @@ curl -X POST \
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Event Hubs] källanslutning med [!DNL Flow Service] API. Du kan använda det här källanslutnings-ID:t i nästa självstudiekurs för att [skapa ett direktuppspelat dataflöde med [!DNL Flow Service] API](../../collect/streaming.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Event Hubs] källanslutning med [!DNL Flow Service] API. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med [!DNL Flow Service] API](../../collect/streaming.md).

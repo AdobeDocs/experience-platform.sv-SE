@@ -2,9 +2,9 @@
 title: Skapa en SFTP-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
+source-git-commit: a826bda356a7205f3d4c0e0836881530dbaaf54e
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '938'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL SFTP]måste du ange vä
 | ---------- | ----------- |
 | `host` | Namnet eller IP-adressen som är kopplad till din [!DNL SFTP] server. |
 | `port` | Den SFTP-serverport som du ansluter till. Om det inte anges används standardvärdet `22`. |
-| `username` | Användarnamnet med åtkomst till [!DNL SFTP] server. |
+| `username` | Användarnamnet med åtkomst till dina [!DNL SFTP] server. |
 | `password` | Lösenordet för [!DNL SFTP] server. |
 | `privateKeyContent` | Base64-kodat innehåll för privat SSH-nyckel. Typen av OpenSSH-nyckel måste klassificeras som antingen RSA eller DSA. |
 | `passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om `privateKeyContent` är lösenordsskyddad, måste den här parametern användas med den privata nyckelinnehållets lösenfras som värde. |
@@ -50,9 +50,13 @@ Mer information om hur du kan anropa API:er för plattformar finns i handboken [
 
 ## Skapa en basanslutning
 
+>[!TIP]
+>
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Dynamics] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-The [!DNL SFTP] Källan stöder både grundläggande autentisering och autentisering via den offentliga nyckeln för SSH. Under det här steget kan du även ange sökvägen till den undermapp som du vill ge åtkomst till.
+The [!DNL SFTP] Källan har stöd för både grundläggande autentisering och autentisering via den offentliga nyckeln för SSH. Under det här steget kan du även ange sökvägen till den undermapp som du vill ge åtkomst till.
 
 Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL SFTP] autentiseringsuppgifter som en del av parametrarna för begäran.
 
@@ -66,13 +70,11 @@ Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` sl
 POST /connections
 ```
 
-**Begäran**
-
-Följande begäran skapar en basanslutning för [!DNL SFTP]:
-
 >[!BEGINTABS]
 
 >[!TAB Grundläggande autentisering]
+
++++Begäran
 
 ```shell
 curl -X POST \
@@ -113,7 +115,24 @@ curl -X POST \
 | `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
 | `connectionSpec.id` | SFTP-serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
++++
+
++++svar
+
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska din SFTP-server i nästa självstudiekurs.
+
+```json
+{
+    "id": "bf367b0d-3d9b-4060-b67b-0d3d9bd06094",
+    "etag": "\"1700cc7b-0000-0200-0000-5e3b3fba0000\""
+}
+```
+
++++
+
 >[!TAB SSH-autentisering av offentlig nyckel]
+
++++Begäran
 
 ```shell
 curl -X POST \
@@ -154,11 +173,11 @@ curl -X POST \
 | `auth.params.passPhrase` | Lösenordsfrasen eller lösenordet för att dekryptera den privata nyckeln om nyckelfilen eller nyckelinnehållet skyddas av en lösenordsfras. Om PrivateKeyContent är lösenordsskyddat måste den här parametern användas med PrivateKeyContent-innehållets lösenfras som värde. |
 | `auth.params.maxConcurrentConnections` | Det maximala antalet samtidiga anslutningar som anges vid anslutning av plattformen till SFTP. När det här värdet är aktiverat måste det vara minst 1. |
 | `auth.params.folderPath` | Sökvägen till mappen som du vill ge åtkomst till. |
-| `connectionSpec.id` | The [!DNL SFTP] serveranslutningsspecifikation-ID: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
+| `connectionSpec.id` | The [!DNL SFTP] serveranslutningsspecifikation: `b7bf2577-4520-42c9-bae9-cad01560f7bc` |
 
->[!ENDTABS]
++++
 
-**Svar**
++++svar
 
 Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska din SFTP-server i nästa självstudiekurs.
 
@@ -168,6 +187,10 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya anslut
     "etag": "\"1700cc7b-0000-0200-0000-5e3b3fba0000\""
 }
 ```
+
++++
+
+>[!ENDTABS]
 
 ## Nästa steg
 

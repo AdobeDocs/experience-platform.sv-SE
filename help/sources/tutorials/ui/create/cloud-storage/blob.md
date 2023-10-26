@@ -2,16 +2,16 @@
 title: Skapa en Azure Blob Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Azure Blob-källanslutning med hjälp av användargränssnittet för plattformen.
 exl-id: 0e54569b-7305-4065-981e-951623717648
-source-git-commit: 922e9a26f1791056b251ead2ce2702dfbf732193
+source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '796'
 ht-degree: 1%
 
 ---
 
 # Skapa en [!DNL Azure Blob] källanslutning i användargränssnittet
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Azure Blob] (nedan kallad[!DNL Blob]&quot;) källanslutning med hjälp av användargränssnittet för plattformen.
+Den här självstudiekursen innehåller steg för att skapa en [!DNL Azure Blob] (nedan kallad[!DNL Blob]&quot;) källanslutning med användargränssnittet för plattformen.
 
 ## Komma igång
 
@@ -19,7 +19,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverket för att organisera kundupplevelsedata i Experience Platform.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL Blob] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/batch/cloud-storage.md).
@@ -28,22 +28,33 @@ Om du redan har en giltig [!DNL Blob] kan du hoppa över resten av dokumentet oc
 
 Experience Platform stöder följande filformat som kan importeras från externa lagringsplatser:
 
-* Avgränsaravgränsade värden (DSV): Du kan använda valfri kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla platta filer i alla format.
+* Avgränsaravgränsade värden (DSV): Du kan använda valfri enskild kolumnavgränsare, t.ex. tabb, komma, pipe, semikolon eller hash, för att samla in platta filer i vilket format som helst.
 * JavaScript-objektnotation (JSON): JSON-formaterade datafiler måste vara XDM-kompatibla.
 * Apache Parquet: Parquet-formaterade datafiler måste vara XDM-kompatibla.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Blob] på Platform måste du ange ett giltigt värde för följande autentiseringsuppgifter:
+För att få åtkomst till [!DNL Blob] lagringsutrymme i Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
+
+>[!BEGINTABS]
+
+>[!TAB Autentisering av anslutningssträng]
 
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
-| Anslutningssträng | En sträng som innehåller den auktoriseringsinformation som krävs för att autentisera [!DNL Blob] till Experience Platform. The [!DNL Blob] anslutningssträngsmönstret är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. Mer information om anslutningssträngar finns i [!DNL Blob] dokument på [konfigurera anslutningssträngar](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
+| --- | --- |
+| Anslutningssträng | En sträng som innehåller den auktoriseringsinformation som krävs för autentisering [!DNL Blob] till Experience Platform. The [!DNL Blob] anslutningssträngsmönstret är: `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. Mer information om anslutningssträngar finns i [!DNL Blob] dokument på [konfigurera anslutningssträngar](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string). |
+
+>[!TAB SAS-URI-autentisering]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
 | SAS-URI | Den URI för signatur för delad åtkomst som du kan använda som alternativ autentiseringstyp för att ansluta [!DNL Blob] konto. The [!DNL Blob] SAS URI-mönstret är: `https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>` Mer information finns i [!DNL Blob] dokument på [URI:er för delad åtkomstsignatur](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication). |
 | Behållare | Namnet på den behållare som du vill tilldela åtkomst till. När du skapar ett nytt konto med [!DNL Blob] kan du ange ett behållarnamn för att ange användaråtkomst till den undermapp du väljer. |
 | Mappsökväg | Sökvägen till mappen som du vill ge åtkomst till. |
 
-När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL Blob] konto till plattform.
+>[!ENDTABS]
+
+När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att ansluta [!DNL Blob] lagring i Experience Platform
 
 ## Koppla samman [!DNL Blob] konto
 
@@ -59,11 +70,15 @@ The **[!UICONTROL Connect to Azure Blob Storage]** visas. På den här sidan kan
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL Blob] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL Blob] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/blob/existing.png)
 
 ### Nytt konto
+
+>[!TIP]
+>
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Blob] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
 Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan ett namn och en valfri beskrivning av ditt nya [!DNL Blob] konto.
 
@@ -93,4 +108,4 @@ Om du vill autentisera med en signatur för delad åtkomst väljer du **[!UICONT
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL Blob] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Blob] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data från ditt molnlagringsutrymme till plattformen](../../dataflow/batch/cloud-storage.md).
