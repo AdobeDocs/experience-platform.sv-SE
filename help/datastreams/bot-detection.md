@@ -1,11 +1,11 @@
 ---
-title: Konfigurera objektidentifiering
-description: Lär dig hur du konfigurerar robotidentifiering för datastreams.
+title: Konfigurera objektidentifiering för datastreams
+description: Lär dig hur du konfigurerar identifieringen av robotar för datastreams för att särskilja mänsklig och icke-mänsklig trafik.
 hide: true
 hidefromtoc: true
-source-git-commit: 8445d530ca1241d86775ffa7fc49f49cb5a03b72
+source-git-commit: 07b3ff85c1092614a60495e73575907df36d4158
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1325'
 ht-degree: 0%
 
 ---
