@@ -1,0 +1,42 @@
+---
+title: Komma igång med sandlådeverktygets API
+description: Använd verktygs-API:t i sandlådan för att undersöka artefakter och exportera och importera en ögonblicksbild av sandlådekonfigurationer mellan sandlådor. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
+source-git-commit: bad6ad17a5f41e50b27ce44a6d52a79e2066c82f
+workflow-type: tm+mt
+source-wordcount: '314'
+ht-degree: 4%
+
+---
+
+# Komma igång med sandlådeverktygs-API {#getting-started}
+
+Den här utvecklarhandboken innehåller steg som du kan använda för att hantera paket och verktyg i Adobe Experience Platform med hjälp av sandlådeverktygets verktyg. Den innehåller även exempel på API-anrop för olika åtgärder.
+
+## Läser exempel-API-anrop {#api-calls}
+
+Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster. Exempeldata för JSON som returneras till API-svaret tillhandahålls också. Information om de konventioner som används i dokumentationen för exempel-API-anrop finns i avsnittet om [läsa exempel-API-anrop](/help/landing/troubleshooting.md#how-do-i-format-an-api-request) i felsökningsguiden för Experience Platform.
+
+## Samla in värden för obligatoriska rubriker {#headers}
+
+Den här guiden kräver att du har slutfört [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att kunna anropa API:er för plattformen. När du slutför självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla API-anrop för Experience Platform, vilket visas nedan:
+
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {ORG_ID}`
+
+Förutom autentiseringshuvuden kräver alla begäranden en rubrik som anger namnet på sandlådan som åtgärden ska utföras i:
+
+* `x-sandbox-name: {SANDBOX_NAME}`
+
+Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare en rubrik:
+
+* `Content-Type: application/json`
+
+## Nästa steg {#next-steps}
+
+Nu när du har samlat in de nödvändiga inloggningsuppgifterna kan du nu fortsätta att läsa resten av utvecklarhandboken. Varje avsnitt innehåller viktig information om deras slutpunkter och visar exempel på API-anrop för att utföra CRUD-åtgärder. Varje anrop innehåller det allmänna API-formatet, en exempelbegäran som visar nödvändiga huvuden och korrekt formaterade nyttolaster samt ett exempelsvar för ett lyckat anrop.
+
+Se följande API-självstudiekurser för att börja anropa verktygs-API:t för sandlådan:
+
+* [Slutpunkt för paket](./packages.md)
+* [Verktygsslutpunkt](./tools.md)
