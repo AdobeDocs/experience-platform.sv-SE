@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: 94651b8035677eb65f6ca9e93001b4149f8bdbd4
+source-git-commit: 76ac65730512e589e518095f9496bb309365b0c9
 workflow-type: tm+mt
-source-wordcount: '2268'
+source-wordcount: '2258'
 ht-degree: 2%
 
 ---
@@ -222,8 +222,6 @@ Mer information om frågetjänster finns i [Översikt över frågetjänsten](../
 | ------- | ----------- |
 | Anpassningsbara kolumner | Nu kan du anpassa layouten för Audience Portal med kolumner som kan storleksändras. Mer information om den här funktionen finns i [gränssnittsguide för segmentering](../../segmentation/ui/overview.md#customize). |
 | Uppdatera frekvensuppdelning | Du kan nu visa en beskrivning av uppdateringsfrekvenserna för målgrupperna i din organisation. Mer information om den här funktionen finns i [gränssnittsguide för segmentering](../../segmentation/ui/overview.md#browse). |
-
-Läs mer om källor i [källöversikt](../../sources/home.md).
 
 Läs mer om segmenteringstjänsten i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
 
