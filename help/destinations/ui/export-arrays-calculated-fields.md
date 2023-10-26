@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer i platta schemafiler från Real-Time CDP till molnlagringsmål.
 badge: Beta
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: 8b8abea65ee0448594113ca77f75b84293646146
+source-git-commit: b6bdfef8b9ac5ef03ea726d668477b8629b70b6c
 workflow-type: tm+mt
-source-wordcount: '1470'
+source-wordcount: '1488'
 ht-degree: 0%
 
 ---
@@ -216,8 +216,21 @@ I det här fallet ser utdatafilen ut så här nedan och exporterar den första o
 johndoe@acme.org,"1538097126","1664327526"
 ```
 
-### `md5` och `sha256` hash-funktioner {#hashing-functions}
+### Hash-funktioner {#hashing-functions}
 
-Förutom de funktioner som är specifika för att exportera arrayer eller element från en array, kan du använda hash-funktioner för att hash-attribut. Om du till exempel har någon personligt identifierbar information i attribut kan du hash-koda dessa fält när du exporterar dem.
+Förutom de funktioner som är specifika för att exportera arrayer eller element från en array, kan du använda hash-funktioner för att hash-formatera attribut i de exporterade filerna. Om du till exempel har någon personligt identifierbar information i attribut kan du hash-koda dessa fält när du exporterar dem.
 
-Du kan hash-koda strängvärden direkt, till exempel `md5(personalEmail.address)`. Om du vill kan du även hash-koda enskilda element i arrayfält enligt följande: `md5(purchaseTime[0])`
+Du kan hash-koda strängvärden direkt, till exempel `md5(personalEmail.address)`. Om du vill kan du även hash-koda enskilda element i arrayfält, förutsatt att elementen i arrayen är strängar, så här: `md5(purchaseTime[0])`
+
+De hash-funktioner som stöds är:
+
+|  -funktion | Exempeluttryck |
+|---------|----------|
+| `sha1` | `sha1(organizations[0])` |
+| `sha256` | `sha256(organizations[0])` |
+| `sha512` | `sha512(organizations[0])` |
+| `hash` | `hash("crc32", organizations[0], "UTF-8")` |
+| `md5` | `md5(organizations[0], "UTF-8")` |
+| `crc32` | `crc32(organizations[0])` |
+
+{style="table-layout:auto"}
