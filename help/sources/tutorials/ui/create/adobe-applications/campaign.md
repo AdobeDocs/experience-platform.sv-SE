@@ -131,7 +131,7 @@ Välj sedan måldatauppsättningen i listan med dataflöden som visas.
 
 Sidan för datauppsättningsaktivitet visas. Härifrån kan du se information om dataflödets prestanda, bland annat hur snabbt data har importerats, slutförda batchar och misslyckade batchar.
 
-På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabeskrivningen för ditt dataflöde, aktivera partiell import och feldiagnostik samt lägga till nya data i datauppsättningen.
+På den här sidan finns också ett gränssnitt där du kan uppdatera metadatabeskrivningen för dataflödet, aktivera partiell import- och feldiagnostik samt lägga till nya data i datauppsättningen.
 
 ![Ett gränssnitt med diagram som representerar inmatningsfrekvensen för en vald datamängd.](../../../../images/tutorials/create/campaign/dataset-activity.png)
 

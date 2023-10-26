@@ -54,14 +54,14 @@ I synkrona distributioner pausar webbläsaren parsning och återgivning av sidan
 
 För det första, eftersom taggbiblioteket kan slutföra inläsningen före eller efter sidans nederkant har tolkats och körts, bör du inte längre anropa `_satellite.pageBottom()` från sidkoden (`_satellite` är inte tillgängligt förrän biblioteket har lästs in). Detta förklaras i [Inläsning av taggar bäddar in kod asynkront](#loading-the-tags-embed-code-asynchronously).
 
-För det andra kan taggbiblioteket slutföra inläsningen före eller efter [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) webbläsarhändelse (DOM Ready) har inträffat.
+Därefter kan taggbiblioteket slutföra inläsningen före eller efter [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) webbläsarhändelse (DOM Ready) har inträffat.
 
 På grund av dessa två punkter är det värt att visa hur [Bibliotek inläst](../../extensions/client/core/overview.md#library-loaded-page-top), [Sidan nederst](../../extensions/client/core/overview.md#page-bottom), [DOM-klart](../../extensions/client/core/overview.md#page-bottom)och [Fönster inläst](../../extensions/client/core/overview.md#window-loaded) händelsetyper från Core-tilläggsfunktionen när du läser in ett taggbibliotek asynkront.
 
 Om taggegenskapen innehåller följande fyra regler:
 
 * Regel A: använder händelsetypen Library Loaded
-* Regel B: använder händelsetypen Sidundersida
+* Regel B: använder händelsetypen Sidunderkant
 * Regel C: använder händelsetypen DOM Ready
 * Regel D: använder händelsetypen Window Loaded
 
@@ -80,7 +80,7 @@ När du tillämpar dessa principer på din egen webbplats bör du tänka på fö
 * **En regel som använder händelsetypen Library Loaded kan köras innan datalagret har lästs in helt.**  Detta kan leda till att regelns åtgärder körs med data som saknas eftersom data ännu inte var tillgängliga på sidan. Den här typen av problem kan åtgärdas genom att du anpassar regelkonfigurationen. I stället för att ha en regel som aktiveras av händelsetypen Biblioteksinläsning kan du i stället använda händelsetypen Anpassad händelse eller Direktanrop som aktiveras av sidkoden så fort datalagret har lästs in.
 * **Händelsetypen Sidundersida ger inte särskilt mycket värde när biblioteket läses in asynkront.**  Överväg i stället att använda händelsetyperna Library Loaded, DOM Ready, Window Loaded eller någon annan.
 
-Om du ser saker som inte fungerar som de ska är det troligt att du har timingproblem att gå igenom. Distributioner som kräver exakt timing kan behöva använda händelseavlyssnare och händelsetypen Custom Event eller Direct Call för att göra implementeringarna mer robusta och konsekventa.
+Om du ser saker som inte fungerar som de ska är det troligt att du har timingproblem att gå igenom. Distributioner som kräver exakt timing kan behöva använda händelseavlyssnare och händelsetypen Custom Event eller Direct Call för att göra implementeringarna mer stabila och konsekventa.
 
 ## Inläsning av taggar bäddar in kod asynkront
 

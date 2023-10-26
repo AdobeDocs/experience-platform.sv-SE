@@ -31,14 +31,14 @@ Innan du ger dig in på detaljerna för [!DNL Identity Service]Här följer en k
 | --- | --- |
 | Identitet | En identitet är data som är unika för en enhet, vanligtvis en enskild person. En identitet, t.ex. ett inloggnings-ID, ECID eller lojalitets-ID, kallas också för en&quot;känd identitet&quot;. |
 | ECID | Experience Cloud ID (ECID) är ett delat ID-namnutrymme som används i Experience Platform- och Adobe Experience Cloud-program. ECID utgör grunden för kundidentiteten och används som primärt ID för enheter och som basnod för identitetsdiagram. Se [ECID - översikt](./ecid.md) för mer information. |
-| Namnutrymme för identitet | Ett identitetsnamnutrymme används för att skilja på kontexten eller typen för en identitet. En identitet urskiljer till exempel &quot;name<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID. Identitetsnamnutrymmen används för att leta upp enskilda identiteter och ange kontext för identitetsvärden. Detta gör att du kan avgöra att två [!DNL Profile] fragment som innehåller olika primära ID:n, men som har samma värde för `email` identitetsnamnutrymme är i själva verket samma person. Se [Översikt över namnutrymmet identity](./namespaces.md) för mer information. |
+| Namnutrymme för identitet | Ett identitetsnamnutrymme används för att skilja på kontexten eller typen för en identitet. En identitet urskiljer till exempel &quot;name<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID. Identitetsnamnutrymmen används för att leta upp enskilda identiteter och ange kontext för identitetsvärden. Detta gör att du kan avgöra att två [!DNL Profile] fragment som innehåller olika primära ID:n, men som har samma värde för `email` identitetsnamnutrymme är i själva verket samma individ. Se [Översikt över namnutrymmet identity](./namespaces.md) för mer information. |
 | Identitetsdiagram | Ett identitetsdiagram är en karta över relationer mellan olika identiteter, som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Se självstudiekursen om [med identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md) för mer information. |
 | Personligt identifierbar information (PII) | PII är information som direkt kan identifiera en kund, till exempel en e-postadress eller ett telefonnummer. PII-värden används ofta för att matcha. en kunds olika identiteter i olika system. |
 | Okända eller anonyma identiteter | Okända eller anonyma identiteter är indikatorer som isolerar enheter utan att identifiera den person som använder enheten. Okända och anonyma identiteter innehåller information som besökarens IP-adress och cookie-ID. Även om okända och anonyma identiteter kan tillhandahålla beteendedata, begränsas de tills en kund levererar sina PII-filer. |
 
 ## Vad är [!DNL Identity Service]?
 
-Varje dag interagerar kunderna med ert företag och skapar en ständigt växande relation med ert varumärke. En typisk kund kan vara aktiv i valfritt antal system i organisationens datainfrastruktur, t.ex. e-handel, lojalitet och helpdesk-system. Samma kund kan även engagera anonymt på valfritt antal enheter. [!DNL Identity Service] gör att ni kan sammanställa en komplett bild av kunden och sammanställa relaterade data som annars skulle kunna isoleras mellan olika system.
+Varje dag interagerar kunderna med ert företag och skapar en ständigt växande relation med ert varumärke. En typisk kund kan vara aktiv i valfritt antal system i organisationens datainfrastruktur, som e-handel, lojalitet och helpdesk-system. Samma kund kan även engagera anonymt på valfritt antal enheter. [!DNL Identity Service] gör att ni kan sammanställa en komplett bild av kunden och sammanställa relaterade data som annars skulle kunna isoleras mellan olika system.
 
 Ett exempel på hur en konsument kan kommunicera med ert varumärke varje dag:
 
@@ -46,12 +46,12 @@ Ett exempel på hur en konsument kan kommunicera med ert varumärke varje dag:
 - Nu visas Marys aktivitet som två separata profiler:
    - Hennes e-handelsinloggning
    - Hennes surfplatta kanske identifieras med enhets-ID
-- Mary återupptar sin surfplattesession och anger sin e-postadress när han/hon prenumererar på ditt nyhetsbrev. När du gör det läggs en ny identitet till som postdata i profilen. Som en följd av detta [!DNL Identity Service] relaterar nu Marys aktivitet på surfplattor till hennes historik för e-handelskonton.
+- Mary återupptar sin surfplattesession och anger sin e-postadress när han/hon prenumererar på ditt nyhetsbrev. När du gör det läggs en ny identitet till som postdata i profilen. Detta resulterar i [!DNL Identity Service] relaterar nu Marys aktivitet på surfplattor till hennes historik för e-handelskonton.
 - Nästa gång du klickar på hennes surfplatta kan målinnehållet återspegla Marys fullständiga profil och historia, i stället för bara en surfplatta som används av en okänd köpare.
 
 ![Identitetssammanfogning på plattform](./images/identity-service-stitching.png)
 
-I princip [!DNL Identity Service] gör att ni kan sammanställa en komplett bild av kunden och sammanställa relaterade data som annars skulle kunna spridas över olika system. Identitetsrelationerna som [!DNL Identity Service] definierar och underhåller används av kundprofilen i realtid för att skapa en fullständig bild av en kund och deras interaktioner med ert varumärke. Mer information finns i [Översikt över kundprofiler i realtid](../profile/home.md).
+I stort sett [!DNL Identity Service] gör att ni kan sammanställa en komplett bild av kunden och sammanställa relaterade data som annars skulle kunna spridas över olika system. Identitetsrelationerna som [!DNL Identity Service] definierar och underhåller används av kundprofilen i realtid för att skapa en fullständig bild av en kund och deras interaktioner med ert varumärke. Mer information finns i [Översikt över kundprofiler i realtid](../profile/home.md).
 
 ### Användningsfall
 
@@ -59,7 +59,7 @@ Exempel på [!DNL Identity Service] implementeringarna omfattar:
 
 - Ett telekomföretag kan förlita sig på värdet för&quot;telefonnummer&quot;, där ett telefonnummer hänvisar till samma person i intresse både offline och online.
 - Ett detaljhandelsföretag kan använda&quot;e-postadress&quot; i offlinedatauppsättningar och ECID i onlinedatauppsättningar på grund av den stora andelen anonyma besökare.
-- En bank kan föredra&quot;kontonummer&quot; i offlinedatauppsättningar, t.ex. filialtransaktioner. De kan vara beroende av&quot;inloggnings-ID&quot; i onlinedatauppsättningar, eftersom de flesta besökare autentiseras under besöket.
+- En bank kan föredra&quot;kontonummer&quot; i offlinedatauppsättningar, som filialtransaktioner. De kan vara beroende av&quot;inloggnings-ID&quot; i onlinedatauppsättningar, eftersom de flesta besökare autentiseras under besöket.
 - Dina kunder kan också ha unika egna ID:n, som GUID eller andra universellt unika ID:n.
 
 ## Namnutrymme för identitet {#identity-namespace}
@@ -76,7 +76,7 @@ Exempel på [!DNL Identity Service] implementeringarna omfattar:
 >abstract="Ett identitetsvärde är en identifierare som representerar en unik individ, organisation eller resurs. Kontexten eller typen av identitet som värdet representerar definieras av ett motsvarande identitetsnamnutrymme. När postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matchaNär postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matcha."
 >text="Learn more in documentation"
 
-Om du frågade en person&quot;Vad är ditt ID?&quot; utan vidare sammanhang skulle det vara svårt för dem att ge ett användbart svar. Med samma logik är ett strängvärde som representerar ett identitetsvärde, oavsett om det är ett systemgenererat ID eller en e-postadress, endast fullständigt när det levereras med en kvalificerare som ger strängvärdeskontexten: identitetsnamnutrymmet.
+Om du frågade en person&quot;Vad är ditt ID?&quot; utan vidare sammanhang skulle det vara svårt för dem att ge ett användbart svar. På samma sätt är ett strängvärde som representerar ett identitetsvärde, oavsett om det är ett systemgenererat ID eller en e-postadress, endast fullständigt när det anges med en kvalificerare som ger strängvärdeskontexten: identitetsnamnutrymmet.
 
 Era kunder kan interagera med ert varumärke genom en kombination av online- och offlinekanaler, vilket kan vara en utmaning när det gäller att kombinera dessa fragmenterade interaktioner med en enda kundidentitet.
 
@@ -84,7 +84,7 @@ Förståelse för kunden i flera olika enheter och kanaler börjar med att känn
 
 ## Identitetsdiagram
 
-Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Se självstudiekursen om [med identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md) för mer information.
+Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen, som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Se självstudiekursen om [med identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md) för mer information.
 
 Följande video är avsedd att ge stöd för din förståelse av identiteter och identitetsdiagram.
 
@@ -125,7 +125,7 @@ Alla textfält `string` i scheman som implementerar antingen post- eller tidsser
 >Array- och mappningstypsfält stöds inte och kan inte markeras och märkas som identitetsfält.
 
 I identitetsfält går det också att länka identiteter om de delar gemensamma PII-data.
-Genom att till exempel ange etiketter för telefonnummerfält som identitetsfält, [!DNL Identity Service] grafer automatiskt relationer med andra personer som använder samma telefonnummer.
+Genom att till exempel märka fält med telefonnummer som identitetsfält, [!DNL Identity Service] grafer automatiskt relationer med andra personer som använder samma telefonnummer.
 
 >[!NOTE]
 >
@@ -133,7 +133,7 @@ Genom att till exempel ange etiketter för telefonnummerfält som identitetsfäl
 
 ### Konfigurera en datauppsättning för [!DNL Identity Service]
 
-Under direktuppspelningsprocessen, [!DNL Identity Service ]hämtar automatiskt identitetsdata från post- och tidsseriedata. Innan data kan hämtas måste de aktiveras för [!DNL Identity Service]. Se självstudiekursen om  [konfigurera en datauppsättning för kundprofil och identitetstjänst i realtid med API:er](../profile/tutorials/dataset-configuration.md) för mer information.
+Under direktuppspelningsprocessen, [!DNL Identity Service]hämtar automatiskt identitetsdata från post- och tidsseriedata. Innan data kan importeras måste de dock aktiveras för [!DNL Identity Service]. Se självstudiekursen om  [konfigurera en datauppsättning för kundprofil och identitetstjänst i realtid med API:er](../profile/tutorials/dataset-configuration.md) för mer information.
 
 ### Importera data till [!DNL Identity Service]
 

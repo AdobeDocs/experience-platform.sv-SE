@@ -94,9 +94,9 @@ Varje enskild dataflödeskörning visar följande information:
 * **[!UICONTROL Records Received]**: Det totala antalet poster som tagits emot i dataflödet från en källkoppling.
 * **[!UICONTROL Records Ingested]**: Det totala antalet poster som har importerats till [!DNL Data Lake].
 * **[!UICONTROL Records with Warnings]**: Det totala antalet poster med varningar som har importerats. Alla mappartransformeringsfel rapporteras som varningar och rader som är delvis inkapslade markeras som `success` med en varning. **Anteckning**: Stöd för inmatning av poster med varningar är endast tillgängligt för strömningskällor.
-* **[!UICONTROL Records Failed]**: Antalet poster som inte har importerats till [!DNL Data Lake] på grund av fel i data.
+* **[!UICONTROL Records Failed]**: Antal poster som inte har importerats till [!DNL Data Lake] på grund av fel i data.
 * **[!UICONTROL Ingestion Rate]**: Antal poster som har importerats till [!DNL Data Lake]. Detta mått gäller när [!UICONTROL Partial Ingestion] är aktiverat.
-* **[!UICONTROL Status]**: Representerar läget för dataflödet: antingen [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] innebär att alla poster för motsvarande dataflödeskörning har bearbetats inom en timma. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts ännu.
+* **[!UICONTROL Status]**: Representerar det läge som dataflödet är i: antingen [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] innebär att alla poster för motsvarande dataflödeskörning har bearbetats inom en timma. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts ännu.
 
 The [!UICONTROL Dataflow run overview] sidan innehåller ytterligare information om dataflödet, t.ex. motsvarande körnings-ID för dataflöde, måldatauppsättning och organisations-ID.
 
@@ -118,7 +118,7 @@ Om du vill visa feldiagnostik väljer du **[!UICONTROL Preview error diagnostics
 
 ![records-with-warnings](../../images/tutorials/monitor-streaming/records-with-warnings.png)
 
-The [!UICONTROL Error diagnostics preview] I kan du förhandsgranska upp till 100 fel och/eller varningar för ditt dataflöde. Härifrån kan du även hämta manifestet för misslyckade inmatningar om du vill ha mer information, med hjälp av [!DNL Data Access] API.
+The [!UICONTROL Error diagnostics preview] I kan du förhandsgranska upp till 100 fel och/eller varningar för ditt dataflöde. Härifrån kan du även hämta manifestet för misslyckade inmatningar för mer information med hjälp av [!DNL Data Access] API.
 
 ![diagnostik](../../images/tutorials/monitor-streaming/diagnostics.png)
 

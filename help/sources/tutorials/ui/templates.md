@@ -1,6 +1,6 @@
 ---
 description: Lär dig hur du använder mallar i Adobe Experience Platform användargränssnitt för att snabba upp dataöverföringsprocessen för B2B-data.
-title: Skapa ett källdataflöde med hjälp av mallar i användargränssnittet
+title: Skapa ett källdataflöde med mallar i användargränssnittet
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
 source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
@@ -10,7 +10,7 @@ ht-degree: 0%
 
 ---
 
-# Skapa ett källdataflöde med hjälp av mallar i användargränssnittet {#create-a-sources-dataflow-using-templates-in-the-ui}
+# Skapa ett källdataflöde med mallar i användargränssnittet {#create-a-sources-dataflow-using-templates-in-the-ui}
 
 >[!CONTEXTUALHELP]
 >id="platform_sources_marketo_mapping"
@@ -35,7 +35,7 @@ Med mallar kan man
 * Minimera antalet fel som kan uppstå under den manuella dataöverföringsprocessen.
 * Uppdatera automatiskt genererade resurser när som helst för att passa dina användningsexempel.
 
-I följande självstudie beskrivs hur du använder mallar i användargränssnittet för plattformen.
+I följande självstudiekurs beskrivs hur du använder mallar i användargränssnittet för plattformen.
 
 ## Komma igång
 
@@ -66,7 +66,7 @@ Ett popup-fönster visas där du kan bläddra bland mallar eller använda befint
 * **Bläddra bland mallar**: Källmallar skapar automatiskt scheman, identiteter, datauppsättningar och dataflöden med mappningsregler åt dig. Du kan anpassa dessa resurser efter behov.
 * **Använd mina befintliga resurser**: Infoga data med befintliga datauppsättningar och scheman som du har skapat. Du kan också skapa nya datauppsättningar och scheman vid behov.
 
-Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Browse templates]** och sedan markera **[!UICONTROL Select]**.
+Om du vill använda automatiskt genererade resurser väljer du **[!UICONTROL Browse templates]** och sedan **[!UICONTROL Select]**.
 
 ![Ett popup-fönster med alternativ för att bläddra bland mallar eller använda befintliga resurser.](../../images/tutorials/templates/browse-templates.png)
 
@@ -84,7 +84,7 @@ Om du vill använda ett befintligt konto väljer du [!UICONTROL Existing account
 
 >[!TAB Skapa ett nytt konto]
 
-Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan din källanslutningsinformation och autentiseringsuppgifter för kontot. När du är klar väljer du **[!UICONTROL Connect to source]** så att den nya anslutningen kan upprättas.
+Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange sedan din källanslutningsinformation och autentiseringsuppgifter för kontot. När du är klar väljer du **[!UICONTROL Connect to source]** och ge den nya anslutningen en viss tid att upprätta.
 
 ![Autentiseringssidan för ett nytt konto med källanslutningsinformation och autentiseringsuppgifter för kontot.](../../images/tutorials/templates/new-account.png)
 
@@ -177,7 +177,7 @@ Förhandsgranskningsfönstret visas så att du kan utforska och inspektera exemp
 
 ![Fönstret med exempeldata för förhandsgranskning.](../../images/tutorials/templates/preview-sample-data.png)
 
-Välj sedan den mall du vill använda i listan. Du kan välja flera mallar och skapa flera dataflöden samtidigt. En mall kan dock bara användas en gång per konto. När du har valt mallar väljer du **[!UICONTROL Finish]** så att resurserna kan genereras en stund.
+Välj sedan den mall som du vill använda i listan. Du kan välja flera mallar och skapa flera dataflöden samtidigt. En mall kan dock bara användas en gång per konto. När du har valt mallar väljer du **[!UICONTROL Finish]** så att resurserna kan genereras en stund.
 
 Om du väljer ett eller flera objekt i listan med tillgängliga mallar kommer alla B2B-scheman och identitetsnamnutrymmen fortfarande att genereras för att säkerställa att B2B-relationer mellan scheman konfigureras korrekt.
 
@@ -222,7 +222,7 @@ En förhandsgranskningssida visas där du kan kontrollera mappningsförhållande
 
 Du kan uppdatera dataflödena när som helst efter körningen. Markera ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Update dataflow]**. Du dirigeras till arbetsflödessidan för källor där du kan uppdatera dina dataflödesdetaljer, inklusive inställningar för partiellt intag, feldiagnostik och varningsmeddelanden samt mappning av dataflöde.
 
-Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automatiskt genererade schemat. Besök guiden på [med schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md) för mer information.
+Du kan använda schemaredigeringsvyn för att göra uppdateringar i det automatiskt genererade schemat. Besök guiden [med schemaredigeraren](../../../xdm/tutorials/create-schema-ui.md) för mer information.
 
 ![Ett rullgardinsfönster med alternativet för att uppdatera dataflöden markerat.](../../images/tutorials/templates/update.png)
 

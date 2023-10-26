@@ -36,7 +36,7 @@ Du kan också använda Experience Platform API:er för detta ändamål. Läs om 
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill exportera filer on demand till batchmål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Om du vill exportera filer on demand till gruppmål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ## Så här exporterar du filer on demand {#how-to-export-files-on-demand}
 
@@ -80,7 +80,7 @@ När du använder **[!UICONTROL Export file now]** kan du stöta på något av d
 
 | Felmeddelande | Upplösning |
 |---------|----------|
-| Kör redan för att hitta rätt målgrupp `segment ID` för order `dataflow ID` med körnings-ID `flow run ID` | Det här felmeddelandet anger att ett ad hoc-aktiveringsflöde pågår för en viss målgrupp. Vänta tills jobbet är klart innan aktiveringsjobbet aktiveras igen. |
+| Kör redan för att hitta rätt målgrupp `segment ID` för order `dataflow ID` med körnings-ID `flow run ID` | Det här felmeddelandet indikerar att ett ad hoc-aktiveringsflöde pågår för en viss målgrupp. Vänta tills jobbet är klart innan aktiveringsjobbet aktiveras igen. |
 | Målgrupper `<segment name>` är inte en del av detta dataflöde eller ligger utanför schemaintervallet! | Det här felmeddelandet anger att de målgrupper du har valt att aktivera inte är mappade till dataflödet eller att aktiveringsschemat som har konfigurerats för målgrupperna antingen har upphört att gälla eller inte har startats ännu. Kontrollera om målgruppen verkligen är mappad till dataflödet och kontrollera att målgruppens aktiveringsplan överlappar dagens datum. |
 
 ## Relaterad information {#related-information}

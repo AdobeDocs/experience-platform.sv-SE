@@ -25,7 +25,7 @@ Följande hemliga typer stöds för närvarande:
 
 {style="table-layout:auto"}
 
-Den här guiden ger en översikt på hög nivå över hur du konfigurerar hemligheter för en händelsevidarebefordring ([!UICONTROL Edge]) i användargränssnittet för Experience Platform eller användargränssnittet för datainsamling.
+Den här guiden ger en översikt över hur du konfigurerar hemligheter för en händelsevidarebefordring ([!UICONTROL Edge]) i användargränssnittet för Experience Platform eller användargränssnittet för datainsamling.
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ Den här guiden ger en översikt på hög nivå över hur du konfigurerar hemlig
 
 ## Förutsättningar
 
-I den här handboken förutsätts det att du redan känner till hur du hanterar resurser för taggar och vidarebefordran av händelser i användargränssnittet, inklusive hur du skapar ett dataelement och en regel för vidarebefordran av händelser. Se guiden [hantera resurser](../managing-resources/overview.md) om du behöver en introduktion.
+I den här handboken förutsätts det att du redan känner till hur du hanterar resurser för taggar och vidarebefordran av händelser i användargränssnittet, inklusive hur du skapar ett dataelement och en regel för vidarebefordran av händelser. Se guiden på [hantera resurser](../managing-resources/overview.md) om du behöver en introduktion.
 
 Du bör också ha en fungerande förståelse för publiceringsflödet för taggar och vidarebefordran av händelser, inklusive hur du lägger till resurser i ett bibliotek och installerar ett bygge på webbplatsen för testning. Se [publicera översikt](../publishing/overview.md) för mer information.
 
@@ -43,13 +43,13 @@ Du bör också ha en fungerande förståelse för publiceringsflödet för tagga
 >id="platform_eventforwarding_secrets_environments"
 >title="Hemligheter"
 >abstract="För att en hemlighet ska kunna användas av händelsevidarebefordran måste den tilldelas en befintlig miljö. Om du inte har några miljöer skapade för egenskapen för vidarebefordring av händelser måste du konfigurera dem innan du fortsätter."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html?lang=sv-SE" text="Miljööversikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" text="Miljööversikt"
 
 Om du vill skapa en hemlighet väljer du **[!UICONTROL Event Forwarding]** i den vänstra navigeringen öppnar du sedan den händelsevidarebefordringsegenskap som du vill lägga till hemligheten under. Nästa, välj **[!UICONTROL Secrets]** i den vänstra navigeringen, följt av **[!UICONTROL Create New Secret]**.
 
 ![Skapa ny hemlighet](../../images/ui/event-forwarding/secrets/create-new-secret.png)
 
-På nästa skärm kan du konfigurera informationen om hemligheten. För att en hemlighet ska kunna användas av händelsevidarebefordran måste den tilldelas en befintlig miljö. Om du inte har skapat några miljöer för egenskapen för vidarebefordring av händelser läser du i handboken på [miljöer](../publishing/environments.md) om du vill ha mer information om hur du konfigurerar dem innan du fortsätter.
+På nästa skärm kan du konfigurera informationen om hemligheten. För att en hemlighet ska kunna användas av händelsevidarebefordran måste den tilldelas en befintlig miljö. Om du inte har skapat några miljöer för egenskapen för vidarebefordring av händelser läser du i handboken [miljöer](../publishing/environments.md) om du vill ha mer information om hur du konfigurerar dem innan du fortsätter.
 
 >[!NOTE]
 >
@@ -57,7 +57,7 @@ På nästa skärm kan du konfigurera informationen om hemligheten. För att en h
 >
 >![Inaktivera miljö](../../images/ui/event-forwarding/secrets/env-disabled.png)
 
-Under **[!UICONTROL Target Environment]** använder du listrutan för att välja den miljö som du vill tilldela hemligheten till. Under **[!UICONTROL Secret Name]**, anger ett namn för hemligheten i miljösammanhang. Det här namnet måste vara unikt för alla hemligheter under händelsevidarebefordringsegenskapen.
+Under **[!UICONTROL Target Environment]** använder du listrutan för att välja den miljö som du vill tilldela hemligheten. Under **[!UICONTROL Secret Name]**, anger ett namn för hemligheten i miljösammanhang. Det här namnet måste vara unikt för alla hemligheter under händelsevidarebefordringsegenskapen.
 
 ![Miljö och namn](../../images/ui/event-forwarding/secrets/env-and-name.png)
 
@@ -65,11 +65,11 @@ En hemlighet kan bara tilldelas till en miljö i taget, men du kan tilldela samm
 
 ![Lägg till miljö](../../images/ui/event-forwarding/secrets/add-env.png)
 
-För varje miljö som du lägger till måste du ange ett annat unikt namn för den associerade hemligheten. Om du tar bort alla tillgängliga miljöer kan du **[!UICONTROL Add Environment]** knappen kommer inte att vara tillgänglig.
+För varje miljö som du lägger till måste du ange ett annat unikt namn för den associerade hemligheten. Om du tar bort alla tillgängliga miljöer, **[!UICONTROL Add Environment]** knappen kommer inte att vara tillgänglig.
 
 ![Lägg till miljö ej tillgänglig](../../images/ui/event-forwarding/secrets/add-env-greyed.png)
 
-Här skiljer sig stegen för att skapa hemligheten åt beroende på vilken typ av hemlighet du skapar. Se underavsnitten nedan för mer information:
+Därifrån skiljer sig stegen för att skapa hemligheten åt beroende på vilken typ av hemlighet du skapar. Se underavsnitten nedan för mer information:
 
 * [[!UICONTROL Token]](#token)
 * [[!UICONTROL HTTP]](#http)
@@ -79,13 +79,13 @@ Här skiljer sig stegen för att skapa hemligheten åt beroende på vilken typ a
 
 ### [!UICONTROL Token] {#token}
 
-Om du vill skapa en tokenhemlighet väljer du **[!UICONTROL Token]** från **[!UICONTROL Type]** listruta. I **[!UICONTROL Token]** anger du den autentiseringssträng som identifieras av det system du autentiserar till. Välj **[!UICONTROL Create Secret]** för att spara hemligheten.
+Om du vill skapa en tokenhemlighet väljer du **[!UICONTROL Token]** från **[!UICONTROL Type]** nedrullningsbar meny. I **[!UICONTROL Token]** anger du den autentiseringssträng som identifieras av det system du autentiserar till. Välj **[!UICONTROL Create Secret]** för att spara hemligheten.
 
 ![Tokenhemlighet](../../images/ui/event-forwarding/secrets/token-secret.png)
 
 ### [!UICONTROL HTTP] {#http}
 
-Om du vill skapa en HTTP-hemlighet väljer du **[!UICONTROL Simple HTTP]** från **[!UICONTROL Type]** listruta. I fälten som visas nedan anger du ett användarnamn och lösenord för inloggningsuppgifterna innan du väljer **[!UICONTROL Create Secret]** för att spara hemligheten.
+Om du vill skapa en HTTP-hemlighet väljer du **[!UICONTROL Simple HTTP]** från **[!UICONTROL Type]** nedrullningsbar meny. I fälten som visas nedan anger du ett användarnamn och lösenord för inloggningsuppgifterna innan du väljer **[!UICONTROL Create Secret]** för att spara hemligheten.
 
 >[!NOTE]
 >
@@ -95,11 +95,11 @@ Om du vill skapa en HTTP-hemlighet väljer du **[!UICONTROL Simple HTTP]** från
 
 ### [!UICONTROL OAuth 2] {#oauth2}
 
-Om du vill skapa en OAuth 2-hemlighet väljer du **[!UICONTROL OAuth 2]** från **[!UICONTROL Type]** listruta. I fälten som visas nedan anger du [[!UICONTROL Client ID] och [!UICONTROL Client Secret]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] i användargränssnittet är en sammanfogning mellan auktoriseringsservervärden och tokensökvägen.
+Om du vill skapa en OAuth 2-hemlighet väljer du **[!UICONTROL OAuth 2]** från **[!UICONTROL Type]** nedrullningsbar meny. I fälten som visas nedan anger du [[!UICONTROL Client ID] och [!UICONTROL Client Secret]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] i användargränssnittet är en sammanfogning mellan auktoriseringsservervärden och tokensökvägen.
 
 ![OAuth 2-hemlighet](../../images/ui/event-forwarding/secrets/oauth-secret-1.png)
 
-Under **[!UICONTROL Credential Options]** kan du ange andra alternativ för autentiseringsuppgifter, till exempel `scope` och `audience` i form av nyckelvärdepar. Om du vill lägga till fler nyckelvärdepar väljer du **[!UICONTROL Add another]**.
+Under **[!UICONTROL Credential Options]** kan du ange andra alternativ för autentiseringsuppgifter som `scope` och `audience` i form av nyckelvärdepar. Om du vill lägga till fler nyckelvärdepar väljer du **[!UICONTROL Add another]**.
 
 ![Alternativ för autentiseringsuppgifter](../../images/ui/event-forwarding/secrets/oauth-secret-2.png)
 
@@ -121,19 +121,19 @@ När du är klar väljer du **[!UICONTROL Create Secret]** för att spara hemlig
 
 ### [!UICONTROL OAuth 2 JWT] {#oauth2jwt}
 
-Om du vill skapa en OAuth 2 JWT-hemlighet väljer du **[!UICONTROL OAuth 2 JWT]** från **[!UICONTROL Type]** listruta.
+Om du vill skapa en OAuth 2 JWT-hemlighet väljer du **[!UICONTROL OAuth 2 JWT]** från **[!UICONTROL Type]** nedrullningsbar meny.
 
-![The [!UICONTROL Create Secret] med OAuth 2 JWT-hemlighet markerad i [!UICONTROL Type] listruta.](../../images/ui/event-forwarding/secrets/oauth-jwt-secret.png)
+![The [!UICONTROL Create Secret] med OAuth 2 JWT-hemlighet markerad i [!UICONTROL Type] nedrullningsbar meny.](../../images/ui/event-forwarding/secrets/oauth-jwt-secret.png)
 
 >[!NOTE]
 >
->De enda [!UICONTROL Algorithm] som för närvarande stöds för signering av JWT är RS256.
+>De enda [!UICONTROL Algorithm] som stöds för signering av JWT är RS256.
 
-I fälten som visas nedan anger du [!UICONTROL Issuer], [!UICONTROL Subject], [!UICONTROL Audience], [!UICONTROL Custom Claims], [!UICONTROL TTL]väljer du [!UICONTROL Algorithm] i listrutan. Ange sedan [!UICONTROL Private Key Id]och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] fältet är inte ett obligatoriskt fält. Om ett värde anges byts JWT ut mot en åtkomsttoken. Hemligheten kommer att uppdateras enligt `expires_in` attribut från svaret och [!UICONTROL Refresh Offset] värde. Om inget värde anges är den hemlighet som skickas till kanten JWT. Den gemensamma arbetsgruppen kommer att uppdateras i enlighet med [!UICONTROL TTL] och [!UICONTROL Refresh Offset] värden.
+I fälten som visas nedan anger du [!UICONTROL Issuer], [!UICONTROL Subject], [!UICONTROL Audience], [!UICONTROL Custom Claims], [!UICONTROL TTL]väljer du [!UICONTROL Algorithm] i listrutan. Ange sedan [!UICONTROL Private Key Id]och [[!UICONTROL Token URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) för din OAuth-integrering. The [!UICONTROL Token URL] fältet är inte ett obligatoriskt fält. Om ett värde anges byts JWT ut mot en åtkomsttoken. Hemligheten kommer att uppdateras enligt `expires_in` attribut från svaret och [!UICONTROL Refresh Offset] värde. Om inget värde anges är den hemlighet som skickas till kanten JWT. Den gemensamma arbetsgruppen kommer att uppdateras enligt [!UICONTROL TTL] och [!UICONTROL Refresh Offset] värden.
 
 ![The [!UICONTROL Create Secret] med ett urval av inmatningsfält markerat.](../../images/ui/event-forwarding/secrets/oauth-jwt-information.png)
 
-Under **[!UICONTROL Credential Options]** kan du ange andra alternativ för autentiseringsuppgifter, till exempel `jwt_param` i form av nyckelvärdepar. Om du vill lägga till fler nyckelvärdepar väljer du **[!UICONTROL Add another]**.
+Under **[!UICONTROL Credential Options]** kan du ange andra alternativ för autentiseringsuppgifter som `jwt_param` i form av nyckelvärdepar. Om du vill lägga till fler nyckelvärdepar väljer du **[!UICONTROL Add another]**.
 
 ![The [!UICONTROL Create Secret] tabbmarkera [!UICONTROL Credential Options] fält.](../../images/ui/event-forwarding/secrets/oauth-jwt-credential-options.png)
 
@@ -155,7 +155,7 @@ När du är klar väljer du **[!UICONTROL Create Secret]** för att spara hemlig
 
 ### [!UICONTROL Google OAuth 2] {#google-oauth2}
 
-Om du vill skapa en hemlighet i Google OAuth 2 väljer du **[!UICONTROL Google OAuth 2]** från **[!UICONTROL Type]** listruta. Under **[!UICONTROL Scopes]** markerar du de Google-API:er som du vill använda den här hemligheten för att ge åtkomst till. Följande produkter stöds för närvarande:
+Om du vill skapa en hemlighet i Google OAuth 2 väljer du **[!UICONTROL Google OAuth 2]** från **[!UICONTROL Type]** nedrullningsbar meny. Under **[!UICONTROL Scopes]** markerar du de Google-API:er som du vill använda den här hemligheten för att ge åtkomst till. Följande produkter stöds för närvarande:
 
 * [Google Ads API](https://developers.google.com/google-ads/api/docs/oauth/overview)
 * [Pub/Sub API](https://cloud.google.com/pubsub/docs/reference/service_apis_overview)
@@ -197,7 +197,7 @@ Du kan försöka göra om eller uppdatera ett hemligt utbyte från redigeringssk
 | Hemlig typ | Försök igen |
 | --- | --- |
 | [!UICONTROL Token] | Välj **[!UICONTROL Exchange Secret]** för att försöka göra om det hemliga utbytet. Den här kontrollen är bara tillgänglig när det finns en miljö kopplad till hemligheten. |
-| [!UICONTROL HTTP] | Om ingen miljö är kopplad till hemligheten väljer du **[!UICONTROL Exchange Secret]** för att växla autentiseringsuppgifter till base64. Om en miljö är bifogad markerar du **[!UICONTROL Exchange and Deploy Secret]** att utbyta till base64 och driftsätta hemligheten. |
+| [!UICONTROL HTTP] | Om ingen miljö är kopplad till hemligheten väljer du **[!UICONTROL Exchange Secret]** för att växla autentiseringsuppgifter till base64. Om en miljö är bifogad markerar du **[!UICONTROL Exchange and Deploy Secret]** för att byta till base64 och driftsätta hemligheten. |
 | [!UICONTROL OAuth 2] | Välj **[!UICONTROL Generate Token]** för att växla autentiseringsuppgifter och returnera en åtkomsttoken från autentiseringsprovidern. |
 
 ## Ta bort en hemlighet
@@ -208,9 +208,9 @@ Ta bort en befintlig hemlighet i  **[!UICONTROL Secrets]** på arbetsytan marker
 
 ## Använda hemligheter i händelsevidarebefordran
 
-Om du vill använda en hemlighet vid vidarebefordran av händelser måste du först skapa en [dataelement](../managing-resources/data-elements.md) som refererar till hemligheten. När du har sparat dataelementet kan du inkludera det i händelsevidarebefordran [regler](../managing-resources/rules.md) och lägga till dessa regler i [bibliotek](../publishing/libraries.md), som i sin tur kan driftsättas på Adobe servrar som [bygga](../publishing/builds.md).
+Om du vill använda en hemlighet vid vidarebefordran av händelser måste du först skapa en [dataelement](../managing-resources/data-elements.md) som refererar till hemligheten. När du har sparat dataelementet kan du inkludera det i händelsevidarebefordran [regler](../managing-resources/rules.md) och lägga till dessa regler i [bibliotek](../publishing/libraries.md), som i sin tur kan driftsättas på Adobe servrar som [bygg](../publishing/builds.md).
 
-När du skapar dataelementet väljer du **[!UICONTROL Core]** tillägg, välj **[!UICONTROL Secret]** för elementtypen data. Den högra panelen uppdateras och innehåller listrutekontroller för att tilldela dataelementet upp till tre hemligheter: en för [!UICONTROL Development], [!UICONTROL Staging]och [!UICONTROL Production] respektive.
+Välj alternativet **[!UICONTROL Core]** tillägg, välj **[!UICONTROL Secret]** för elementtypen data. Den högra panelen uppdateras och innehåller listrutekontroller för att tilldela dataelementet upp till tre hemligheter: en för [!UICONTROL Development], [!UICONTROL Staging]och [!UICONTROL Production] respektive.
 
 ![Dataelement](../../images/ui/event-forwarding/secrets/data-element.png)
 

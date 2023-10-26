@@ -48,7 +48,7 @@ Välj den källa som du vill arbeta med för att visa en lista över de befintli
 
 En listruta visas med alternativ för att uppdatera det dataflöde du valde. Härifrån kan du välja att uppdatera ett dataflöds mappningsuppsättningar och schema för inmatning. Du kan också välja alternativ för att inspektera dataflödet på kontrollpanelen, prenumerera på aviseringar samt inaktivera eller ta bort dataflödet.
 
-Välj **[!UICONTROL Update dataflow]**.
+Om du vill uppdatera information om dataflödet väljer du **[!UICONTROL Update dataflow]**.
 
 ![update-dataflow](../../images/tutorials/update-dataflows/update-dataflow.png)
 
@@ -56,7 +56,7 @@ Välj **[!UICONTROL Update dataflow]**.
 
 The [!UICONTROL Add data] visas. Välj lämpligt dataformat för att granska innehållet i dina markerade data och välj sedan **[!UICONTROL Next]** för att fortsätta.
 
-![tilläggsdata](../../images/tutorials/update-dataflows/add-data.png)
+![add-data](../../images/tutorials/update-dataflows/add-data.png)
 
 ### Dataflödesdetaljer
 
@@ -90,7 +90,7 @@ The [!UICONTROL Scheduling] visas så att du kan uppdatera dataflödets schema f
 
 ![new-schedule](../../images/tutorials/update-dataflows/new-schedule.png)
 
-Du kan även uppdatera matningsschemat för ditt dataflöde med hjälp av det infogade uppdateringsalternativet som finns på dataflödessidan.
+Du kan även uppdatera matningsschemat för ditt dataflöde med hjälp av det infogade uppdateringsalternativet på dataflödessidan.
 
 Välj ellipserna (`...`) bredvid dataflödets namn och välj **[!UICONTROL Edit schedule]** i listrutan som visas.
 

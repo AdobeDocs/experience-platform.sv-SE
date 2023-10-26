@@ -31,7 +31,7 @@ Om du vill växla mellan sandlådor markerar du sandlådeindikatorn och väljer 
 
 ![växlargränssnitt](../images/ui/switcher-interface.png)
 
-När en sandlåda har valts uppdateras skärmen och uppdateras till den sandlåda du har valt.
+När en sandlåda är markerad uppdateras skärmen och uppdateras till den sandlåda du har markerat.
 
 ![sandlådeväxlad](../images/ui/sandbox-switched.png)
 
@@ -59,7 +59,7 @@ Om du vill skapa en ny sandlåda väljer du **[!UICONTROL Create sandbox]** i sk
 
 ![create-sandbox](../images/ui/create-sandbox.png)
 
-The **[!UICONTROL Create sandbox]** visas. Om du skapar en utvecklingssandlåda väljer du **[!UICONTROL Development]** i listrutepanelen. Om du vill skapa en ny produktionssandlåda väljer du **[!UICONTROL Production]**.
+The **[!UICONTROL Create sandbox]** visas. Om du skapar en utvecklingssandlåda väljer du **[!UICONTROL Development]** i listrutan. Om du vill skapa en ny produktionssandlåda väljer du **[!UICONTROL Production]**.
 
 ![sandlådetyp](../images/ui/sandbox-type.png)
 
@@ -78,8 +78,8 @@ När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas i
 >[!WARNING]
 >
 >Nedan följer en lista med undantag som kan hindra dig från att återställa standardproduktionssandlådan eller en användarskapad produktionssandlåda:
->* Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i sandlådan också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) -funktion.
->* Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet som finns i sandlådan också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv).
+>* Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet i sandlådan också används av Adobe Analytics för [CDA (Cross Device Analytics)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html?lang=sv) -funktion.
+>* Standardproduktionssandlådan kan inte återställas om identitetsdiagrammet i sandlådan också används av Adobe Audience Manager för [Personbaserade mål (PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv).
 >* Standardproduktionssandlådan kan inte återställas om den innehåller data för både CDA- och PBD-funktioner.
 >* En användarskapad produktionssandlåda som används för dubbelriktad segmentdelning med Adobe Audience Manager eller Audience Core Service kan återställas efter ett varningsmeddelande.
 >* Innan du initierar en sandlådeåterställning måste du ta bort dina kompositioner manuellt för att se till att de associerade målgruppsdata rensas ordentligt.
@@ -88,13 +88,13 @@ När du har skapat sandlådan uppdaterar du sidan och den nya sandlådan visas i
 
 Målgruppskomposition är för närvarande inte integrerat med funktionen för återställning av sandlådor, så målgrupper måste tas bort manuellt innan de kan utföra återställningen av sandlådan.
 
-Välj **[!UICONTROL Audiences]** i den vänstra navigeringen och välj **[!UICONTROL Compositions]**.
+Välj **[!UICONTROL Audiences]** i den vänstra navigeringen och sedan väljer **[!UICONTROL Compositions]**.
 
 ![The [!UICONTROL Compositions] i [!UICONTROL Audiences] arbetsyta.](../images/ui/audiences.png)
 
 Välj sedan ellipsen (`...`) bredvid den första målgruppen och sedan välja **[!UICONTROL Delete]**.
 
-![Målgruppsmenyn som framhäver [!UICONTROL Delete] alternativ.](../images/ui/delete-composition.png)
+![Målgruppsmenyn som markerar [!UICONTROL Delete] alternativ.](../images/ui/delete-composition.png)
 
 En bekräftelse på att borttagningen lyckades visas och du återgår till **[!UICONTROL Compositions]** -fliken.
 
@@ -104,7 +104,7 @@ Upprepa stegen ovan med alla kompositioner. Detta tar bort alla målgrupper frå
 
 Om du återställer en produktions- eller utvecklingssandlåda tas alla resurser som är kopplade till den sandlådan (scheman, datauppsättningar o.s.v.) bort, samtidigt som sandlådans namn och associerade behörigheter behålls. Den här&quot;rena&quot; sandlådan är fortfarande tillgänglig under samma namn för användare som har åtkomst till den.
 
-Markera den sandlåda som du vill återställa i listan över sandlådor. Välj **[!UICONTROL Sandbox reset]**.
+Markera den sandlåda som du vill återställa i listan över sandlådor. Välj på den högra navigeringspanel som visas **[!UICONTROL Sandbox reset]**.
 
 ![återställ](../images/ui/reset.png)
 
@@ -124,7 +124,7 @@ I det sista bekräftelsefönstret anger du namnet på sandlådan i dialogrutan o
 
 Om du tar bort en produktions- eller utvecklingssandlåda permanent tas alla resurser som är associerade med den sandlådan bort, inklusive behörigheter.
 
-Markera den sandlåda som du vill ta bort i listan över sandlådor. Välj **[!UICONTROL Delete]**.
+Markera den sandlåda som du vill ta bort i listan över sandlådor. Välj på den högra navigeringspanel som visas **[!UICONTROL Delete]**.
 
 ![delete](../images/ui/delete.png)
 

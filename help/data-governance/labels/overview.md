@@ -44,7 +44,7 @@ Mer information om hur automatisk verkställighet fungerar i Platform finns i ö
 
 [!DNL Experience Platform] kan dela segment med Adobe Audience Manager. Alla dataexportkontroller som har tillämpats på Audience Manager-segment översätts till motsvarande etiketter och marknadsföringsåtgärder som erkänns av [!DNL Experience Platform] Datastyrning.
 
-Om du vill ha en referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i [!DNL Platform], se [Audience Manager dokumentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep).
+En referens om hur specifika dataexportkontroller mappas till dataanvändningsetiketter i [!DNL Platform], se [Audience Manager dokumentation](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep).
 
 ## Hantera dataanvändningsetiketter i [!DNL Experience Platform] {#manage-labels}
 
@@ -67,7 +67,7 @@ The **[!UICONTROL Policies]** arbetsytan i [!DNL Experience Platform] Med använ
 
 The `/labels` slutpunkt i [API för principtjänst](https://www.adobe.io/experience-platform-apis/references/policy-service/) Med kan du programmässigt hantera dataanvändningsetiketter, inklusive skapa anpassade etiketter. Se [slutpunktshandbok för etiketter](../api/labels.md) för mer information.
 
-The [API för datauppsättningstjänst](https://www.adobe.io/experience-platform-apis/references/dataset-service/) används för att hantera etiketter för datauppsättningar och fält. Se guiden [hantera datauppsättningsrubriker](./dataset-api.md) för mer information.
+The [API för datauppsättningstjänst](https://www.adobe.io/experience-platform-apis/references/dataset-service/) används för att hantera etiketter för datauppsättningar och fält. Se guiden på [hantera datauppsättningsrubriker](./dataset-api.md) för mer information.
 
 ## Nästa steg
 

@@ -3,13 +3,13 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type=Caution
-source-git-commit: a44b1a1f6028e54ca23149249697dea9407bf60a
+exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2088'
 ht-degree: 0%
 
 ---
-
 
 # Guide för lookalike-målgrupper
 

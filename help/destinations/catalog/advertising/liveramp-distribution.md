@@ -1,13 +1,13 @@
 ---
 title: LiveRamp - Distribution Connection
 description: Lär dig hur du använder LiveRamp - Distribution Connector för att orkestrera och aktivera målgrupper som tidigare har anslutit till LiveRamp till reklamdestinationer längre fram i kedjan.
-source-git-commit: b97694dcf0d7fd600c6aada9600364e99ffe0902
+exl-id: 1b11a743-1ef9-4b01-90ef-cc072bc03c91
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2619'
 ht-degree: 7%
 
 ---
-
 
 # [!DNL LiveRamp - Distribution] anslutning
 

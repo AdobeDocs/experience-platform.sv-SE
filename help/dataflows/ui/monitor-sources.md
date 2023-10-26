@@ -53,13 +53,13 @@ I [Plattformsgränssnitt](https://platform.adobe.com), markera **[!UICONTROL Mon
 
 Mitten av kontrollpanelen är [!UICONTROL Source ingestion] som innehåller mått och diagram som visar data för inmatade poster och poster misslyckades.
 
-![monitorpanel](../assets/ui/monitor-sources/monitoring-dashboard.png)
+![monitor-dashboard](../assets/ui/monitor-sources/monitoring-dashboard.png)
 
 Som standard innehåller de data som visas mängder av konsumtion från de senaste 24 timmarna. Välj **[!UICONTROL Last 24 hours]** för att justera tidsramen för de poster som visas.
 
 ![ändringsdatum](../assets/ui/monitor-sources/change-date.png)
 
-Ett kalender-popup-fönster visas med alternativ för alternativa tidsramar för inmatning. Välj **[!UICONTROL Last 30 days]** och sedan markera **[!UICONTROL Apply]**
+Ett kalender-popup-fönster visas med alternativ för alternativa tidsramar för inmatning. Välj **[!UICONTROL Last 30 days]** och sedan **[!UICONTROL Apply]**
 
 ![adjust-time-frame](../assets/ui/monitor-sources/adjust-timeframe.png)
 
@@ -69,8 +69,8 @@ Diagrammen är aktiverade som standard och du kan inaktivera dem för att utöka
 
 | Intag av källa | Beskrivning |
 | ---------------- | ----------- |
-| [!UICONTROL Records ingested ] | Det totala antalet poster som har importerats. |
-| [!UICONTROL Records failed] | Det totala antalet poster som inte har importerats på grund av datafel. |
+| [!UICONTROL Records ingested] | Det totala antalet poster som har importerats. |
+| [!UICONTROL Records failed] | Det totala antalet poster som inte har importerats på grund av fel i data. |
 | [!UICONTROL Total failed dataflows] | Det totala antalet dataflöden med en `failed` status. |
 
 I listan över källinmatningar visas alla källor som innehåller minst ett befintligt konto. Listan innehåller även information om varje källas intag, antalet misslyckade poster och det totala antalet misslyckade dataflöden baserat på den tidsram som du tillämpade.
@@ -105,7 +105,7 @@ The [!UICONTROL Dataflow run details] på sidan visas information om dataflödet
 
 Bläddra nedåt om du vill se mer specifik information om felet.
 
-![dataflöde-run-details](../assets/ui/monitor-sources/dataflow-run-details.png)
+![data-low-run-details](../assets/ui/monitor-sources/dataflow-run-details.png)
 
 The [!UICONTROL Dataflow run errors] visas det specifika fel- och felkoden som resulterade i att dataflödet inte kunde hämtas. I det här scenariot uppstod ett transformeringsfel för mapparen, vilket resulterade i ett fel på 24 poster.
 
@@ -115,7 +115,7 @@ Välj **[!UICONTROL Files]** för mer information.
 
 The [!UICONTROL Files] -panelen innehåller information om filens namn och sökväg.
 
-Välj **[!UICONTROL Preview error diagnostics]**.
+Om du vill få en mer detaljerad representation av felet väljer du **[!UICONTROL Preview error diagnostics]**.
 
 ![filer](../assets/ui/monitor-sources/files.png)
 

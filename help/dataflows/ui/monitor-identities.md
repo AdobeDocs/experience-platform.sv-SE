@@ -37,7 +37,7 @@ Kontrollpanelen ger dig en visuell representation av dataaktiviteten inom identi
 >title="Information om dataflödeskörning"
 >abstract="På sidan med information om dataflödeskörning visas mer information om Identity-dataflödets körning, inklusive dess organisations-ID och dataflödes-ID."
 
-Så här öppnar du **[!UICONTROL Identities]** kontrollpanel, välja **[!UICONTROL Monitoring]** i den vänstra navigeringen. På **[!UICONTROL Monitoring]** väljer du **[!UICONTROL Identities]** kort.
+Så här öppnar du **[!UICONTROL Identities]** kontrollpanel, välja **[!UICONTROL Monitoring]** i den vänstra navigeringen. En gång på **[!UICONTROL Monitoring]** väljer du **[!UICONTROL Identities]** kort.
 
 ![Identitetskortet. Information om antalet mottagna poster, antalet importerade poster och antalet lyckade försök visas.](../assets/ui/monitor-identities/focus-card.png)
 
@@ -47,7 +47,7 @@ Instrumentpanelen i sig innehåller statistik om identitetsbearbetning. Instrume
 
 ![Kontrollpanelen Identiteter. Information om antalet mottagna poster per källa visas.](../assets/ui/monitor-identities/sources.png)
 
-The [!UICONTROL Identity processing] sidan innehåller information om poster som har importerats till [!DNL Identity Service], inklusive antal tillagda identiteter, skapade diagram och uppdaterade diagram.
+The [!UICONTROL Identity processing] sidan innehåller information om poster som kapslats till [!DNL Identity Service], inklusive antal tillagda identiteter, skapade diagram och uppdaterade diagram.
 
 Följande mått är tillgängliga för den här instrumentpanelsvyn:
 

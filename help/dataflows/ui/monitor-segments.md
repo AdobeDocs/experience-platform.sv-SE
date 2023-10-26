@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;övervakningssegment;övervaka dataflöden;dataflöden;segmentering
+keywords: Experience Platform;hemmabruk;populära ämnen;övervakningssegment;övervaka dataflöden;dataflöden;segmentering
 description: Med segmentering kan ni skapa segment och målgrupper utifrån era kundprofildata i realtid. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden under segmentering med användargränssnittet i Experience Platform.
 title: Övervaka dataflöden för segment i användargränssnittet
 type: Tutorial
@@ -23,7 +23,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 
 - [Dataflöden](../home.md): Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dataflöden konfigureras över olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar till [!DNL Identity] och [!DNL Profile]och till [!DNL Destinations].
    - [Dataflödeskörningar](../../sources/notifications.md): Dataflödeskörningar är återkommande schemalagda jobb som baseras på frekvenskonfigurationen för valda dataflöden.
-- [Segmentering](../../segmentation/home.md): Med segmentering kan ni skapa segment och målgrupper utifrån era kundprofildata i realtid.
+- [Segmentering](../../segmentation/home.md): Med segmentering kan ni skapa segment och målgrupper utifrån kundprofildata i realtid.
    - [Aktiveringsjobb](../../destinations/ui/activation-overview.md): Ett aktiveringsjobb används för att aktivera ditt segment till en angiven destination.
    - [Utvärderingsjobb](../../segmentation/tutorials/evaluate-a-segment.md#evaluate-a-segment): Ett utvärderingsjobb är en asynkron process som kör skapar ett målgruppssegment baserat på det angivna segmentet.
    - [Exportera jobb](../../segmentation/api/export-jobs.md): Ett exportjobb är en asynkron process som används för att behålla målgruppsmedlemmar i datauppsättningar.
@@ -36,7 +36,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 >title="Segment"
 >abstract="Vyn Segment innehåller information om alla era segment, med ytterligare information om deras aktiverings- och utvärderingsjobb."
 
-Så här öppnar du **[!UICONTROL Segments]** kontrollpanel, välja **[!UICONTROL Monitoring]** i den vänstra navigeringen. På **[!UICONTROL Monitoring]** väljer du **[!UICONTROL Segments]** kort.
+Så här öppnar du **[!UICONTROL Segments]** kontrollpanel, välja **[!UICONTROL Monitoring]** i den vänstra navigeringen. En gång på **[!UICONTROL Monitoring]** väljer du **[!UICONTROL Segments]** kort.
 
 ![Segmentkortet. Information om det senaste utvärderingsjobbet och det senaste exportjobbet visas.](../assets/ui/monitor-segments/segment-card-monitoring.png)
 
@@ -149,13 +149,13 @@ Följande mått är tillgängliga för den här instrumentpanelsvyn:
 | **[!UICONTROL Job start]** | Datum och tid då utvärderingsjobbet startades. |
 | **[!UICONTROL Job end]** | Datum och tid då utvärderingsjobbet avslutades. |
 | **[!UICONTROL Job type]** | Typ av segmentjobb. I det här fallet blir det alltid ett segmentutvärderingsjobb. |
-| **[!UICONTROL Evaluation type]** | Typen av utvärdering som görs. Detta kan vara **[!UICONTROL Batch]** eller **[!UICONTROL Streaming]**. |
+| **[!UICONTROL Evaluation type]** | Typen av utvärdering som görs. Detta kan vara antingen **[!UICONTROL Batch]** eller **[!UICONTROL Streaming]**. |
 | **[!UICONTROL Job ID]** | ID för utvärderingsjobbet. |
 | **[!UICONTROL IMS org ID]** | ID:t för organisationen som utvärderingsjobbet tillhör. |
 | **[!UICONTROL Segment name]** | Namnet på det segment som utvärderas. |
 | **[!UICONTROL Segment ID]** | ID:t för det segment som utvärderas. |
 
-Under segmentavsnittet visas en lista med segment som utvärderas som en del av utvärderingsjobbet. Du kan filtrera listan med segment efter namn med hjälp av sökfältet.
+Under segmentavsnittet kan du se en lista över segment som utvärderas som en del av utvärderingsjobbet. Du kan filtrera listan med segment efter namn med hjälp av sökfältet.
 
 >[!IMPORTANT]
 >
@@ -175,7 +175,7 @@ Följande mått är tillgängliga för segmentavsnittet:
 >title="Segmentjobb"
 >abstract="Vyn Segmentjobb innehåller information om utvärderings- och exportjobb för alla segment."
 
-Så här öppnar du **[!UICONTROL Segment Jobs]** kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera **[!UICONTROL Segment Jobs]**. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mätvärden och information om segmentutvärderingen och exportjobben.
+Så här öppnar du **[!UICONTROL Segment Jobs]** kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. En gång på [!UICONTROL Monitoring] sida, markera **[!UICONTROL Segment Jobs]**. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mätvärden och information om segmentutvärderingen och exportjobben.
 
 >[!NOTE]
 >

@@ -2,18 +2,14 @@
 title: Sandlådor
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 1fd523b827a591fdc04ba64a558bc178f242a450
+source-git-commit: 58fcf3cbff242f65969193fd2e3d6eea0e6539aa
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1692'
 ht-degree: 0%
 
 ---
 
-# [!BADGE Beta] Verktyg i sandlådan
-
->[!IMPORTANT]
->
->The **Verktyg i sandlådan** funktionen som beskrivs nedan är endast tillgänglig för utvalda betakunder.
+# Verktyg i sandlådan
 
 >[!NOTE]
 >

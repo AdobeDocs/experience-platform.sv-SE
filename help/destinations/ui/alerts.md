@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen; varningar;mål
+keywords: Experience Platform;startsida;populära ämnen; larm;destinationer
 description: Du kan prenumerera på aviseringar när du skapar ett dataflöde för att få varningsmeddelanden om status, lyckade eller misslyckade flödeskörningar.
 title: Prenumerera på aviseringar om destinationer i sitt sammanhang
 exl-id: 134144a0-cdfe-49a8-bd8b-e36a4f053de5
@@ -22,7 +22,7 @@ Det här dokumentet innehåller anvisningar om hur du prenumererar på meddeland
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Destinationer](../home.md): Färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+* [Destinationer](../home.md): Förbyggda integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 * [Observationer](../../observability/home.md): [!DNL Observability Insights] gör att ni kan övervaka plattformsaktiviteter med hjälp av statistiska värden och händelsemeddelanden.
    * [Varningar](../../observability/alerts/overview.md): När en viss uppsättning villkor för plattformsåtgärder har nåtts (t.ex. ett potentiellt problem när systemet överskrider ett tröskelvärde) kan Platform leverera varningsmeddelanden till alla användare i organisationen som har prenumererat på dem.
 
@@ -51,7 +51,7 @@ Aviseringar som är tillgängliga för måldataflöden beskrivs i tabellen nedan
 
 | Larm | Beskrivning |
 | --- | --- |
-| Körningsfördröjning för målflöde | Den här varningen meddelar dig när ett målflöde tar längre tid än 150 minuter att aktivera en målgrupp. |
+| Körningsfördröjning för målflöde | Den här varningen meddelar dig när en målflödeskörning tar längre tid än 150 minuter att aktivera en målgrupp. |
 | Körningsfel för målflöde | Den här varningen meddelar dig när ett fel inträffar när en målgrupp aktiveras till ett mål. |
 | Målflödet har körts | Den här varningen meddelar dig när en målgrupp har aktiverats på ett mål. |
 | Start för målflödeskörning | Den här varningen meddelar dig när en målflödeskörning börjar aktivera en målgrupp. |
@@ -61,7 +61,7 @@ Aviseringar som är tillgängliga för måldataflöden beskrivs i tabellen nedan
 
 När måldataflödet körs kan du få aviseringar via användargränssnittet eller via e-post.
 
-### Få aviseringar i användargränssnittet {#receiving-alerts-in-ui}
+### Ta emot aviseringar i användargränssnittet {#receiving-alerts-in-ui}
 
 Varningar representeras i användargränssnittet av en meddelandeikon i det övre huvudet i användargränssnittet för plattformen. Välj meddelandeikonen om du vill visa specifika varningsmeddelanden om dina dataflöden.
 
@@ -71,7 +71,7 @@ Meddelandepanelen visas med en lista över statusuppdateringar för det dataflö
 
 ![Användargränssnittsbild som visar meddelandepanelen](../assets/ui/alerts/alert-window.png)
 
-Du kan hovra över ett varningsmeddelande och markera det som läst eller välja klockikonen för att ange framtida påminnelser om dataflödets status.
+Du kan hålla muspekaren över ett varningsmeddelande för att markera dem som lästa eller välja klockikonen för att ange framtida påminnelser om dataflödets status.
 
 ![Användargränssnittsbild som visar påminnelsealternativen för meddelanden](../assets/ui/alerts/remind-me.png)
 
@@ -99,7 +99,7 @@ Liknar gränssnittsvarningen visas [!UICONTROL Dataflow run overview] visas så 
 
 ![dataflow-overview](../assets/ui/alerts/dataflow-overview.png)
 
-## Prenumerera och avbeställa aviseringar {#subscribe-and-unsubscribe}
+## Prenumerera och avsluta abonnemang på aviseringar {#subscribe-and-unsubscribe}
 
 Du kan prenumerera på fler aviseringar eller avbryta prenumerationen på etablerade aviseringar för ett befintligt måldataflöde på målplatserna [!UICONTROL Browse] sida.
 

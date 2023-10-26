@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;övervakningskonton;övervaka dataflöden;dataflöden;mål
+keywords: Experience Platform;startsida;populära ämnen;övervakningskonton;övervaka dataflöden;dataflöden;mål
 description: Med destinationer kan ni aktivera data från Adobe Experience Platform för ett oändligt antal externa partner. I den här självstudiekursen finns anvisningar om hur du kan övervaka dataflöden för dina mål med hjälp av användargränssnittet i Experience Platform.
 solution: Experience Platform
 title: Övervaka dataflöden för mål i användargränssnittet
@@ -77,8 +77,8 @@ Identiteter representerar olika aspekter av en profil. Om en profil till exempel
 
 En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
 
-- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
-- **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har hoppats över för aktivering baserat på saknade attribut och medgivandeöverträdelse.
+- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som har aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
+- **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som hoppas över för aktivering baserat på saknade attribut och medgivandeöverträdelse.
 - **[!UICONTROL Identities failed]**: Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
 
 ![Dataflödet kör detaljer för direktuppspelningsmål](../assets/ui/monitor-destinations/dataflow-runs-stream.png)
@@ -91,13 +91,13 @@ Varje enskild dataflödeskörning visar följande information:
    - För dataflöden som fortfarande körs i en **[!UICONTROL processing]** det fönster där alla mätvärden hämtas är öppet i mer än en timme för att bearbeta alla mätvärden som motsvarar dataflödeskörningen. Ett dataflöde som startades kl. 9.30 kan till exempel vara i ett bearbetningstillstånd i en timme och trettio minuter för att hämta och bearbeta alla mätvärden. När bearbetningsfönstret sedan stängs och dataflödets status uppdateras till **slutförd**, ändras den visade bearbetningstiden till en timme.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet.
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
-- **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
+- **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot samtycke.
 - **[!UICONTROL Identities failed]** Det totala antalet profilidentiteter som inte har aktiverats till målet på grund av fel.
-- **[!UICONTROL Activation rate]**: Procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Följande formel visar hur det här värdet beräknas:
-   ![Formel för aktiveringstakt](../assets/ui/monitor-destinations/activation-rate-formula.png)
-- **[!UICONTROL Status]**: Representerar läget för dataflödet: antingen [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] betyder att alla identiteter för motsvarande dataflödeskörning exporterades inom en timma. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts ännu.
+- **[!UICONTROL Activation rate]**: Procentandel mottagna identiteter som antingen har aktiverats eller hoppats över. Följande formel visar hur det här värdet beräknas:
+  ![Formel för aktiveringstakt](../assets/ui/monitor-destinations/activation-rate-formula.png)
+- **[!UICONTROL Status]**: Representerar det läge som dataflödet är i: antingen [!UICONTROL Completed] eller [!UICONTROL Processing]. [!UICONTROL Completed] betyder att alla identiteter för motsvarande dataflödeskörning exporterades inom en timma. [!UICONTROL Processing] betyder att dataflödeskörningen inte har slutförts ännu.
 
-Om du vill visa information om ett visst dataflöde väljer du körningens starttid i listan.
+Om du vill visa information om en viss dataflödeskörning väljer du körningens starttid i listan.
 
 Informationssidan för ett dataflöde innehåller ytterligare information, t.ex. antalet profiler som tagits emot, antalet aktiverade identiteter, antalet misslyckade identiteter och antalet utelämnade identiteter.
 
@@ -107,7 +107,7 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 ![Dataflödesposter för direktuppspelningsmål](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
-### Dataflödeskörningar för batchmål {#dataflow-runs-for-batch-destinations}
+### Dataflödeskörningar för batchdestinationer {#dataflow-runs-for-batch-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
@@ -132,8 +132,8 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 
 För batchdestinationer är [!UICONTROL Dataflow runs] -fliken innehåller mätdata för dina dataflödeskörningar. En lista över enskilda körningar och deras specifika mått visas tillsammans med följande summor för identiteter:
 
-- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
-- **[!UICONTROL Identities excluded]**: Antalet individuella profilidentiteter som har uteslutits från aktivering för den valda destinationen, baserat på saknade attribut och medgivande.
+- **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som har aktiverats för det valda målet. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
+- **[!UICONTROL Identities excluded]**: Antalet enskilda profilidentiteter som har uteslutits från aktivering för det valda målet, baserat på saknade attribut och medgivande.
 
 ![Dataflödeskörningsvy för batchmål](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
 
@@ -144,7 +144,7 @@ Varje enskild dataflödeskörning visar följande information:
 - **[!UICONTROL Processing time]**: Den tid det tog för dataflödet att bearbeta.
 - **[!UICONTROL Profiles received]**: Det totala antalet profiler som tagits emot i dataflödet. Det här värdet uppdateras var 60:e minut.
 - **[!UICONTROL Identities activated]**: Det totala antalet profilidentiteter som aktiverats till det valda målet som en del av dataflödeskörningen. Det här måttet inkluderar identiteter som skapas, uppdateras och tas bort från exporterade segment.
-- **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot medgivande.
+- **[!UICONTROL Identities excluded]**: Det totala antalet profilidentiteter som har uteslutits från aktivering baserat på saknade attribut och brott mot samtycke.
 - **[!UICONTROL Status]**: Representerar det läge som dataflödet är i. Det kan vara ett av tre lägen: [!UICONTROL Success], [!UICONTROL Failed]och [!UICONTROL Processing]. [!UICONTROL Success] betyder att dataflödet är aktivt och exporterar data enligt angivet schema. [!UICONTROL Failed] innebär att aktiveringen av uppgifter har avbrutits på grund av fel. [!UICONTROL Processing] betyder att dataflödet ännu inte är aktivt och vanligtvis uppstår när ett nytt dataflöde skapas.
 
 Om du vill visa information om ett specifikt dataflöde väljer du körningens starttid i listan.
@@ -161,7 +161,7 @@ På informationssidan för ett dataflöde visas mer specifik information om data
 
 ![Dataflödeskörningsinformation för batchdestinationer](../assets/ui/monitor-destinations/dataflow-batch.png)
 
-På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både de misslyckade och exkluderade identiteterna visas, inklusive felkoden och beskrivningen. Som standard visas de misslyckade identiteterna i listan. Om du vill visa utelämnade identiteter väljer du **[!UICONTROL Identities excluded]** växla.
+På informationssidan visas också en lista över misslyckade identiteter och identiteter som har utelämnats. Information om både de misslyckade och exkluderade identiteterna visas, inklusive felkoden och beskrivningen. Som standard visas de misslyckade identiteterna i listan. Om du vill visa undantagna identiteter väljer du **[!UICONTROL Identities excluded]** växla.
 
 ![Dataflödesposter för batchdestinationer](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
@@ -172,13 +172,12 @@ På informationssidan visas också en lista över misslyckade identiteter och id
 >- Funktionen för destinationsövervakning stöds för närvarande för alla destinationer i Experience Platform *utom* den [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](/help/destinations/catalog/personalization/custom-personalization.md) destinationer.
 >- För [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)och [HTTP-API](/help/destinations/catalog/streaming/http-destination.md) destinationer uppskattas de värden som är relaterade till identiteter som har uteslutits, misslyckats och aktiverats. Högre volymer av aktiveringsdata leder till större noggrannhet i mätvärdena.
 
-
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
 >title="Aktivering"
 >abstract="Målaktiveringsvyn innehåller information om segmentets aktiveringsstatus och mått från kundprofilen i realtid för att generera unika identiteter."
 
-Så här öppnar du [!UICONTROL Monitoring] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. På [!UICONTROL Monitoring] sida, markera [!UICONTROL Destinations]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mått och information om målkörningsjobb.
+Så här öppnar du [!UICONTROL Monitoring] kontrollpanel, välja **[!UICONTROL Monitoring]** (![övervakningsikon](../assets/ui/monitor-destinations/monitoring-icon.png)) i den vänstra navigeringen. En gång på [!UICONTROL Monitoring] sida, markera [!UICONTROL Destinations]. The [!UICONTROL Monitoring] Kontrollpanelen innehåller mått och information om målkörningsjobb.
 
 Använd [!UICONTROL Destinations] Instrumentpanel för att få en övergripande uppfattning om hur era aktiveringsflöden fungerar. Börja med att få samlade insikter om alla grupper och direktuppspelningsmål och fördjupa er sedan i detaljerade vyer för dataflöden, dataflöden och aktiverade segment för en djupgående genomgång av era aktiveringsdata. Skärmarna i [!UICONTROL Monitoring] Instrumentpanelen ger användbara insikter via mätvärden och felbeskrivningar som hjälper dig att felsöka problem som kan uppstå i dina aktiveringsscenarier.
 
@@ -198,7 +197,7 @@ Som standard innehåller de data som visas aktiveringsinformationen från de sen
 Använd pilikonen (![pilikon](/help/dataflows/assets/ui/monitor-destinations/chevron-up.png)) för att expandera eller stänga av korten längst upp på skärmen, som visar snabbinformation om aktiveringsdetaljer baserat på måltyp - direktuppspelning eller batch:
 
 - **[!UICONTROL Streaming activation rate]**: Representerar procentandelen mottagna identiteter som antingen har aktiverats eller hoppats över. Formeln som används för att beräkna den här procentandelen beskrivs vidare på den här sidan i [Dataflödeskörningar för direktuppspelningsmål](#dataflow-runs-for-streaming-destinations) -avsnitt.
-- **[!UICONTROL Batch failed dataflow runs]**: Representerar antalet misslyckade dataflödeskörningar under det valda tidsintervallet.
+- **[!UICONTROL Batch failed dataflow runs]**: Representerar antalet misslyckade dataflödeskörningar i det valda tidsintervallet.
 
 ![Visa eller ignorera kort överst på sidan](../assets/ui/monitor-destinations/monitoring-destinations-toggle-arrow.gif)
 
@@ -228,7 +227,7 @@ Dessutom kan du ange ett mål i sökfältet för att isolera till ett enda mål.
 
 Om du vill visa alla befintliga dataflöden för alla mål väljer du **[!UICONTROL Dataflows]**.
 
-En lista över dataflöden visas, sorterad efter den senaste dataflödeskörningen. Du kan se ytterligare information om ett specifikt dataflöde genom att leta reda på målet som du vill övervaka och välja filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) bredvid den och därefter välja filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) Förutom dataflödet vill du ha mer information om.
+En lista över dataflöden visas, sorterad efter den senaste dataflödeskörningen. Du kan se ytterligare information för ett specifikt dataflöde genom att leta reda på målet som du vill övervaka och välja filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) bredvid den och därefter välja filtret ![filter](../assets/ui/monitor-destinations/filter-add.png) Förutom dataflödet vill du ha mer information om.
 
 ![Alla dataflöden som är markerade på kontrollpanelen](../assets/ui/monitor-destinations/dashboard-dataflows.png)
 
@@ -254,7 +253,7 @@ Använd **[!UICONTROL Show failures only]** växla till att endast visa misslyck
 
 När **[!UICONTROL Segments]** när du har valt det här alternativet visas en lista över de segment som aktiverats för det valda dataflödet inom det valda tidsintervallet. Den här skärmen innehåller information på segmentnivå om aktiverade identiteter, utelämnade identiteter samt status och tid för det senaste dataflödet. Genom att granska mätvärdena för identiteter som har uteslutits och aktiverats kan du verifiera om ett segment har aktiverats eller inte.
 
-Du aktiverar till exempel ett segment som heter&quot;Lojalitetsmedlemmar i Kalifornien&quot; till Amazon S3-destinationen&quot;Lojalitetsmedlemmar i Kalifornien&quot;. Anta att det finns 100 profiler i det valda segmentet, men endast 80 av 100 profiler innehåller attribut för lojalitet-ID och att du har definierat reglerna för exportmappning som `loyalty.id` krävs. I det här fallet kommer 80 identiteter att vara aktiverade och 20 identiteter uteslutna på en segmentnivå.
+Du aktiverar till exempel ett segment som heter&quot;Lojalitetsmedlemmar i Kalifornien&quot; till Amazon S3-destinationen&quot;Lojalitetsmedlemmar i Kalifornien&quot;. Anta att det finns 100 profiler i det valda segmentet, men endast 80 av 100 profiler innehåller attribut för lojalitet-ID och att du har definierat reglerna för exportmappning som `loyalty.id` är obligatoriskt. I det här fallet kommer 80 identiteter att vara aktiverade och 20 identiteter uteslutna på en segmentnivå.
 
 >[!IMPORTANT]
 >
@@ -262,17 +261,16 @@ Du aktiverar till exempel ett segment som heter&quot;Lojalitetsmedlemmar i Kalif
 >- Vyn på segmentnivå är för närvarande bara tillgänglig för gruppmål.
 >- Mätvärden för segmentnivå registreras för att det ska gå att köra ett lyckat dataflöde. De spelas inte in för misslyckade dataflödeskörningar och uteslutna poster.
 
-
 ![Segment på dataflödespanelen](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
-I segmentnivåvyn sammanställs mätvärdena över flera dataflöden inom det valda tidsintervallet. Om det finns flera dataflödeskörningar kan du gå nedåt från segmentnivån för att se hur varje dataflödeskörning har filtrerats efter det valda segmentet.
+I segmentnivåvyn sammanställs mätvärdena över flera dataflöden inom det valda tidsintervallet. Om det finns flera dataflödeskörningar kan du gå nedåt från segmentnivån och se hur varje dataflödeskörning ser ut, filtrerat efter det valda segmentet.
 Använda filterknappen ![filter](../assets/ui/monitor-destinations/filter-add.png) för att gå ned i körningsvyn för dataflödet för varje segment i dataflödet.
 
 ### Körningssida för dataflöde {#dataflow-runs-page}
 
 På sidan för dataflöden visas information om dataflödets körningar, inklusive starttid för dataflöde, bearbetningstid, mottagna profiler, aktiverade identiteter, utelämnade identiteter, misslyckade identiteter, aktiveringsfrekvens och status.
 
-När du går ned på sidan med dataflöden körs sidan från [segmentnivåvy](#segment-level-view)har du möjlighet att filtrera dataflödet genom att välja mellan följande alternativ:
+När du går ned på sidan med dataflöden körs sidan från [segmentnivåvy](#segment-level-view)kan du filtrera dataflödet genom att välja mellan följande alternativ:
 
 - **[!UICONTROL Dataflow runs with failed identities]**: För det valda segmentet listar det här alternativet alla dataflödeskörningar som inte kunde aktiveras. Information om varför identiteter i ett visst dataflöde misslyckades finns i [informationssida för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.
 - **[!UICONTROL Dataflow runs with skipped identities]**: För det valda segmentet listar det här alternativet alla dataflöden där vissa av identiteterna inte var helt aktiverade och vissa profiler hoppades över. Information om varför identiteter i ett visst dataflöde hoppades över finns i [informationssida för dataflödeskörning](#dataflow-run-details-page) för det dataflödet.

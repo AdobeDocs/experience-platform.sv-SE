@@ -22,7 +22,7 @@ För att dataanvändningsetiketter effektivt ska stödja regelefterlevnad måste
 
 Det finns två typer av principer:
 
-* **[!UICONTROL Data governance policy]**: Begränsa aktiveringen av data baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
+* **[!UICONTROL Data governance policy]**: Begränsa dataaktiveringen baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
 * **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras för [mål](../../destinations/home.md) baserat på kundernas samtycke eller önskemål
 
 >[!NOTE]
@@ -36,7 +36,7 @@ Det här dokumentet innehåller en översikt över dataanvändningsprinciper på
 Marknadsföringsåtgärder (kallas även användningsfall för marknadsföring) inom ramen för datastyrningsramen är åtgärder som [!DNL Experience Platform] dataanvändare kan använda, som din organisation vill begränsa dataanvändningen för. En dataanvändningsprincip definieras därför enligt följande:
 
 1. En specifik marknadsföringsåtgärd
-2. De villkor under vilka åtgärden begränsas
+2. De villkor under vilka åtgärden begränsas från att utföras
 
 Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en datauppsättning till en tredjepartstjänst. Om det finns en policy som säger att vissa typer av data (t.ex. PII) inte kan exporteras, och du försöker exportera en datauppsättning som innehåller en I-etikett (identitetsdata), får du ett svar från [!DNL Policy Service] att en dataanvändningspolicy har överträtts.
 
@@ -68,7 +68,7 @@ När dataanvändningsetiketterna har tillämpats kan dataavdelningarna använda 
 >
 >Alla dataanvändningsprinciper (inklusive huvudprinciper som tillhandahålls av Adobe) inaktiveras som standard. För att en enskild princip ska kunna användas måste du manuellt aktivera den principen via API:t eller användargränssnittet.
 
-Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om [skapa och utvärdera dataanvändningsprinciper](create.md). Mer information finns i nyckelåtgärderna i [!DNL Policy Service] API, se [Utvecklarhandbok för principtjänst](../api/getting-started.md).
+Stegvisa instruktioner om hur du arbetar med marknadsföringsåtgärder och dataanvändningspolicyer i API:t finns i självstudiekursen om [skapa och utvärdera dataanvändningspolicyer](create.md). Mer information finns i nyckelåtgärderna i [!DNL Policy Service] API, se [Utvecklarhandbok för principtjänst](../api/getting-started.md).
 
 Information om hur du arbetar med marknadsföringsåtgärder och -policyer finns i [!DNL Platform] Gränssnitt, se [användarhandbok för dataanvändningsprincip](./user-guide.md).
 
@@ -93,7 +93,7 @@ Tabellen nedan beskriver de viktigaste marknadsföringsåtgärderna som tillhand
 | Analytics  | En åtgärd som använder data för analysändamål, som att mäta, analysera och rapportera om kundens användning av organisationens webbplatser eller appar. |
 | Kombinera med direkt identifierbara data | En åtgärd som kombinerar all personligt identifierbar information med anonyma data. Kontrakt för data som hämtas från annonsnätverk, annonsservrar och tredjepartsleverantörer av data innehåller ofta särskilda avtalsförbud för användning av sådana data med direkt identifierbara data. |
 | Målgruppsövergripande | En åtgärd som använder data för annonsanpassning mellan webbplatser. En kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera källor utanför platsen, kallas data mellan olika platser. Data från olika webbplatser samlas in och behandlas vanligtvis för att man ska kunna dra slutsatser om användarnas intressen. |
-| Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. Vissa avtal innehåller uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
+| Datavetenskap | En åtgärd som använder data för arbetsflöden inom datavetenskap. I vissa avtal ingår uttryckliga förbud mot dataanvändning för datavetenskap. Ibland formuleras dessa i termer som förbjuder användning av data för artificiell intelligens (AI), maskininlärning (ML) eller modellering. |
 | Dataexport | En åtgärd som exporterar data till en plats eller ett mål utanför produkter och tjänster från Adobe. Du kan till exempel hämta data till din lokala dator, kopiera data från skärmen, schemalägga leverans av data till en plats utanför Adobe, schemalagda projekt i Customer Journey Analytics, hämta rapporter, rapportering-API och så vidare. |
 | E-postmarknadsföring | En åtgärd som använder data i e-postriktade kampanjer. |
 | Exportera till tredje part | En åtgärd som exporterar data till processorer och enheter som inte har direkta relationer med kunder. Många dataleverantörer har villkor i avtalen som förbjuder export av data som de ursprungligen samlades in från. Kontrakt för sociala nätverk begränsar till exempel ofta överföringen av data som du får från dem. |

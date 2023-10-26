@@ -114,7 +114,7 @@ Genom att lägga till ett attribut som ett filter kan du välja vilka värden so
 
 #### Filtrera bort historiska data {#filter-historical-data}
 
-Lägg till `date_key` attribut som ett filter och markera **[!UICONTROL Recent date]** följt av **[!UICONTROL Apply]**. Det här filtret ser till att de data som används för att härleda insikter hämtas från den senaste ögonblicksbilden av systemet.
+Om du vill filtrera bort historiska data från de insikter som din widget genererar lägger du till `date_key` attribut som ett filter och markera **[!UICONTROL Recent date]** följt av **[!UICONTROL Apply]**. Det här filtret ser till att de data som används för att härleda insikter hämtas från den senaste ögonblicksbilden av systemet.
 
 ![The [!UICONTROL Filter: date_key] dialogruta med [!UICONTROL Recent date] och [!UICONTROL Apply] markerad.](./images/user-defined-dashboards/recent-date.png)
 
@@ -128,7 +128,7 @@ Du kan också skapa en egen punkt för att filtrera data efter. Välj **[!UICONT
 
 ### Widget-egenskaper
 
-Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) i den högra listen för att öppna egenskapspanelen. I [!UICONTROL Properties] anger du ett namn för widgeten på panelen [!UICONTROL Widget title] textfält.
+Välj egenskapsikonen (![Egenskapsikonen.](./images/user-defined-dashboards/properties-icon.png)) till höger för att öppna egenskapspanelen. I [!UICONTROL Properties] anger du ett namn för widgeten på panelen [!UICONTROL Widget title] textfält.
 
 ![Egenskapspanelen med egenskapsikonen och widgetens titelfält markerat.](./images/user-defined-dashboards/properties-panel.png)
 
@@ -136,7 +136,7 @@ På panelen för widgegenskaper kan du redigera flera aspekter av widgeten. Du h
 
 #### Spara din widget {#save-widget}
 
-När du sparar i widgetens disposition sparas widgeten lokalt på din instrumentpanel. Om du vill spara ditt arbete och återuppta det vid ett senare tillfälle väljer du **[!UICONTROL Save]**. En bockikon under widgetens namn anger att widgeten har sparats. När du är nöjd med widgeten kan du också välja **[!UICONTROL Save and close]** för att göra widgeten tillgänglig för alla andra användare med tillgång till din instrumentpanel. Välj **[!UICONTROL Cancel]** om du vill avbryta ditt arbete och återgå till din anpassade kontrollpanel.
+När du sparar i widgetens disposition sparas widgeten lokalt på din instrumentpanel. Om du vill spara ditt arbete och återuppta det vid ett senare tillfälle väljer du **[!UICONTROL Save]**. En bockikon under widgetens namn anger att widgeten har sparats. När du är nöjd med widgeten kan du också välja **[!UICONTROL Save and close]** för att göra widgeten tillgänglig för alla andra användare med tillgång till din instrumentpanel. Välj **[!UICONTROL Cancel]** om du vill avbryta ditt arbete och gå tillbaka till din anpassade kontrollpanel.
 
 ![Bekräftelse på sparande av ny widget.](./images/user-defined-dashboards/save-confirmation.png)
 

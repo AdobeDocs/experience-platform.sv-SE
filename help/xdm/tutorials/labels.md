@@ -30,7 +30,7 @@ I den här självstudiekursen beskrivs stegen för hur du lägger till etiketter
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [[!DNL Experience Data Model (XDM) System]](../home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Schemaredigerare](../ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
+   * [Schemaredigeraren](../ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md): Tillhandahåller infrastrukturen för att genomdriva begränsningar av dataanvändning för plattformsåtgärder, med hjälp av principer som definierar vilka marknadsföringsåtgärder som kan (eller inte kan) utföras på märkta data.
 
 ## Välj ett schema eller fält som etiketter ska läggas till i {#select-schema-field}
@@ -50,7 +50,7 @@ Du kan också välja **[!UICONTROL Labels]** väljer du önskat fält i listan o
 
 ![Välj ett fält på menyn [!UICONTROL Labels] tab](../images/tutorials/labels/select-field-on-labels-tab.png)
 
-Om du vill redigera etiketterna för hela schemat går du till **[!UICONTROL Labels]** markerar du kryssrutan under filterikonen. Detta markerar alla tillgängliga fält i schemat. Nästa, välj **[!UICONTROL Apply Access and Data Governance Labels]** i rätt spår.
+Redigera etiketterna för hela schemat i **[!UICONTROL Labels]** markerar du kryssrutan under filterikonen. Detta markerar alla tillgängliga fält i schemat. Nästa, välj **[!UICONTROL Apply Access and Data Governance Labels]** i rätt spår.
 
 ![Välj schemanamnet på menyn [!UICONTROL Labels] tab](../images/tutorials/labels/select-schema-on-labels-tab.png)
 
@@ -62,7 +62,7 @@ Om du vill redigera etiketterna för hela schemat går du till **[!UICONTROL Lab
 
 ## Redigera etiketterna för schemat eller fältet {#edit-labels}
 
-En dialogruta visas där du kan redigera etiketterna för det markerade fältet. Om du har valt ett enskilt fält av objekttyp visas de underfält som de tillämpade etiketterna ska sprida sig till i den högra listen.
+En dialogruta visas där du kan redigera etiketterna för det markerade fältet. Om du har valt ett enskilt fält av objekttyp visas de delfält som de tillämpade etiketterna ska sprida sig till i den högra listen.
 
 ![Dialogrutan Tillämpa åtkomst- och datastyrningsetiketter med markerade fält markerade.](../images/tutorials/labels/edit-labels.png)
 
@@ -76,7 +76,7 @@ Använd den visade listan för att välja de etiketter som du vill lägga till i
 
 Om du vill filtrera de visade etiketterna efter typ väljer du önskad kategori i den vänstra listen. Om du vill skapa en ny egen etikett väljer du **[!UICONTROL Create label]**.
 
-![Dialogrutan Använd åtkomst- och datastyrningsetiketter med ett etiketttypsfilter tillämpat och Skapa etikett markerat.](../images/tutorials/labels/filter-and-create-custom.png)
+![Dialogrutan Tillämpa åtkomst- och datastyrningsetiketter med ett etiketttypsfilter tillämpat och Skapa etikett markerat.](../images/tutorials/labels/filter-and-create-custom.png)
 
 När du är nöjd väljer du **[!UICONTROL Save]** för att tillämpa dem på fältet eller schemat.
 
@@ -88,4 +88,4 @@ The **[!UICONTROL Labels]** visas igen och visar de använda etiketterna för sc
 
 ## Nästa steg
 
-Den här guiden beskriver hur du hanterar etiketter för dataanvändning för scheman och fält. Information om hur du hanterar dataanvändningsetiketter, inklusive hur du lägger till dem i specifika datauppsättningar i stället för på schemanivå, finns i [användargränssnittshandbok för dataanvändningsetiketter](../../data-governance/labels/user-guide.md).
+I den här guiden beskrivs hur du hanterar etiketter för dataanvändning för scheman och fält. Information om hur du hanterar dataanvändningsetiketter, inklusive hur du lägger till dem i specifika datauppsättningar i stället för på schemanivå, finns i [användargränssnittshandbok för dataanvändningsetiketter](../../data-governance/labels/user-guide.md).
