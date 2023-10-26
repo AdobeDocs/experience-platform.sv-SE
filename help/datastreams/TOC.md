@@ -5,10 +5,10 @@ user-guide-title: Hjälp med dataströmmar i Adobe Experience Platform
 breadcrumb-title: Användarhandbok för dataströmmar
 user-guide-description: Lär dig hur du konfigurerar dataströmmar i Adobe Experience Platform.
 feature: Datastreams
-source-git-commit: 57867a7c78ae7f8100ead278cf901fed63780caa
+source-git-commit: 6423b6a85873c9c767264ca0e29fbebb62a14b34
 workflow-type: tm+mt
-source-wordcount: '45'
-ht-degree: 35%
+source-wordcount: '50'
+ht-degree: 32%
 
 ---
 
@@ -17,6 +17,7 @@ ht-degree: 35%
 
 * [Översikt över datastreams](overview.md)
 * [Konfigurera ett datastream](configure.md)
+* [Konfigurera objektidentifiering för datastreams](bot-detection.md)
 * [Konfigurera åsidosättningar av dataström](overrides.md)
 * [Dataförberedelse för datainsamling](data-prep.md)
 * Databerikning {#data-enrichment}
