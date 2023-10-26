@@ -2,7 +2,7 @@
 title: API-händelsevidarebefordringstillägg för LinkedIn Conversions
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du mäta resultatet av din LinkedIn-marknadsföringskampanj.
 last-substantial-update: 2023-10-25T00:00:00Z
-source-git-commit: ca65f010cda5d37c40fd57075a26e365c76bdc0b
+source-git-commit: e1ed18aa79abae70974df1845c211a00390ecca4
 workflow-type: tm+mt
 source-wordcount: '707'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Du måste skapa en konverteringsregel i [!DNL LinkedIn] kampanjannonskonto. [!DN
 
 ### Skapa en hemlighet och ett dataelement
 
-Skapa ett nytt `LinkedIn` [hemlighet för vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) och ge den ett unikt namn som betecknar den verifierande medlemmen. Detta används för att autentisera anslutningen till ditt konto samtidigt som värdet är säkert.
+Skapa ett nytt [!DNL LinkedIn] [hemlighet för vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) och ge den ett unikt namn som betecknar den verifierande medlemmen. Detta används för att autentisera anslutningen till ditt konto samtidigt som värdet är säkert.
 
 Nästa, [skapa ett dataelement](../../../ui/managing-resources/data-elements.md#create-a-data-element) med [!UICONTROL Core] tillägg och [!UICONTROL Secret] dataelementtyp som refererar till `LinkedIn` hemlighet du nyss skapade.
 
