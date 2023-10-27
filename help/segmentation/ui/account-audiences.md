@@ -2,10 +2,10 @@
 title: Målgrupper
 description: Lär dig hur du skapar och använder kontomålgrupper för att rikta in kontoprofiler på efterföljande destinationer.
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Caution"
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html"
-source-git-commit: ecc60ec2e7bf2ea02bd721eac1b101b0dc412ba0
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+source-git-commit: 77ba3bd55c2f2ac217612880b83b731919aa14af
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '585'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Målgrupper
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->Observera att målgrupper endast är tillgängliga i [B2B Edition av Real-time Customer Data Platform](../../rtcdp/b2b-overview.md). Dessutom finns det funktioner för kontomålare **begränsad tillgänglighet**.
+>Kontomålgrupper är bara tillgängliga i [B2B Edition av Real-time Customer Data Platform](../../rtcdp/b2b-overview.md). Dessutom finns det funktioner för kontomålare **begränsad tillgänglighet**. Kontakta Adobe kundtjänst eller Adobe för att få tillgång till den här funktionen.
 
 Med kontosegmentering kan Adobe Experience Platform göra marknadsföringssegmenteringen från personbaserade målgrupper till kontobaserade målgrupper så enkel och sofistikerad som möjligt.
 
@@ -69,7 +69,7 @@ Välj den målgrupp som du vill aktivera, följt av **[!UICONTROL Activate to de
 
 ![The [!UICONTROL Activate to destination] knappen markeras på snabbåtgärdsmenyn för den valda målgruppen.](../images/ui/account-audiences/activate.png)
 
-The [!UICONTROL Activate destination] visas. Mer information om aktiveringsprocessen, inklusive information om fältkopplingar, finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md).
+The [!UICONTROL Activate destination] visas. Mer information om aktiveringsprocessen, inklusive destinationer som stöds och information om fältkopplingar finns i [aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md) självstudie.
 
 ## Nästa steg {#next-steps}
 

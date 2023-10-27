@@ -4,9 +4,9 @@ title: Skapa en ny målanslutning
 type: Tutorial
 description: Lär dig hur du ansluter till ett mål i Adobe Experience Platform, aktiverar aviseringar och konfigurerar marknadsföringsåtgärder för det anslutna målet.
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: af705b8a77b2ea15b44b97ed3f1f2c5aa7433eb1
+source-git-commit: 28abc492dc3b2b89c3e79a0531b8d206af1e0590
 workflow-type: tm+mt
-source-wordcount: '1107'
+source-wordcount: '1112'
 ht-degree: 0%
 
 ---
@@ -84,9 +84,9 @@ För filbaserade mål kan du konfigurera olika inställningar för hur de export
 
 ![Bild som visar filtypsvalet och olika alternativ för CSV-filer.](/help/destinations/assets/ui/connect-destinations/file-formatting-options.png)
 
-### Ställ in målanslutning för målgruppsaktivering, potentiell kundaktivering eller datauppsättningsexport {#segment-activation-or-dataset-exports}
+### Ställ in målanslutning för målgruppsaktivering, kontoaktivering, potentiell kundaktivering eller datauppsättningsexport {#segment-activation-or-dataset-exports}
 
-Vissa filbaserade mål stöder målgruppsaktivering för kända kunder eller potentiella kunder, liksom export av datauppsättningar. För dessa mål kan du välja om du vill skapa en anslutning som gör att du kan [aktivera målgrupper](/help/destinations/ui/activate-batch-profile-destinations.md), [prospects](/help/destinations/ui/activate-prospect-audiences.md), eller [exportera datamängder](/help/destinations/ui/export-datasets.md).
+Vissa filbaserade mål stöder målgruppsaktivering för kända kunder, kontokunder eller potentiella kunder samt export av datauppsättningar. För dessa mål kan du välja om du vill skapa en anslutning som gör att du kan [aktivera målgrupper](/help/destinations/ui/activate-batch-profile-destinations.md), [konton](/help/destinations/ui/activate-account-audiences.md), [prospects](/help/destinations/ui/activate-prospect-audiences.md), eller [exportera datamängder](/help/destinations/ui/export-datasets.md).
 
 >[!WARNING]
 >
