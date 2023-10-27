@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från oktober 2023 för Adobe Experience Platform.
-source-git-commit: 9009f56956f0719fb80d423a14b81a6dc7115d77
+source-git-commit: fc0cb582d74f5ab52410991f65aa14ba05df3f97
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '948'
 ht-degree: 3%
 
 ---
@@ -14,11 +14,26 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Experience Platform:
 
+- [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
 - [Mål ](#destinations)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
+
+## Kontrollpaneler {#dashboards}
+
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Användningsstatistik för destinationer | Nya mätvärden har lagts till i kontrollpanelen för licensanvändning. The **[!UICONTROL Audience Activation Size]** och **[!UICONTROL Data Export Size]** mätvärden är ett bekvämt sätt att spåra hur mycket data du har exporterat från Platform i förhållande till dina licensanvändningsrättigheter. Se [tillgängliga mätvärden](../../dashboards/guides/license-usage.md#available-metrics) dokumentation för beskrivningar av dessa och andra användningsvärden för licenser. |
+
+{style="table-layout:auto"}
+
+Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
@@ -51,7 +66,8 @@ Mer information om datainsamling finns i [datainsamling, översikt](../../tags/h
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Stöd för hash-funktioner i beräknade fält | Förutom de funktioner som är specifika för [exportera arrayer](../../destinations/ui/export-arrays-calculated-fields.md) eller element från en array kan du nu använda ytterligare [hash-funktioner](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) för att hash-attribut i de exporterade filerna. De hash-funktioner som stöds är: `sha`, `sha256`, `sha512`, `hash`, `md5`, `crc32`. |
+| (Beta) Stöd för att hash-koda funktioner i beräknade fält | Förutom de funktioner som är specifika för [exportera arrayer](../../destinations/ui/export-arrays-calculated-fields.md) eller element från en array kan du nu använda ytterligare [hash-funktioner](../../destinations/ui/export-arrays-calculated-fields.md#hashing-functions) för att hash-attribut i de exporterade filerna. De hash-funktioner som stöds är: `sha`, `sha256`, `sha512`, `hash`, `md5`, `crc32`. |
+| (Begränsad GA) Aktivera kontomålgrupper för vissa destinationer | Real-Time CDP B2B-kunder kan nu aktivera [kontomålgrupper](../../segmentation/ui/account-audiences.md) till vissa destinationer. Mer information om den här funktionen finns i [aktivera kontomålgrupper, självstudiekurs](/help/destinations/ui/activate-account-audiences.md). |
 
 {style="table-layout:auto"}
 

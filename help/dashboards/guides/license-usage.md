@@ -4,9 +4,9 @@ title: Handbok för kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: e9c4068419b36da6ffaec67f0d1c39fe87c2bc4c
+source-git-commit: fc0cb582d74f5ab52410991f65aa14ba05df3f97
 workflow-type: tm+mt
-source-wordcount: '1899'
+source-wordcount: '1933'
 ht-degree: 0%
 
 ---
@@ -119,27 +119,29 @@ Du kan också välja **[!UICONTROL Custom date]** för att välja den tidsperiod
 
 ![Kontrollpanelens översiktsflik för licensanvändning med anpassade datumintervallalternativ markerade.](../images/license-usage/custom-date-range.png)
 
-## Tillgängliga mått
+## Tillgängliga mått {#available-metrics}
 
 Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden som gäller för flera produkter i organisationen. Tillgängliga mätvärden är:
 
 | Mått | Beskrivning |
 |---|---|
-| [!UICONTROL Data Exports] | Den totala storleken på datauppsättningar som kan exporteras till en icke-Adobe-lösning (direkt eller indirekt) under ett år. |
-| [!UICONTROL Number of AMM Models] | Antal maskininlärningsmodeller (inbyggda i Adobe Mix Modeler) som används för att mäta och/eller förutsäga ett specifikt resultat baserat på dina investeringar. |
-| [!UICONTROL Data lake storage] | Den kvantitet som används i analysdatalagret i Adobe Experience Platform. |
-| [!UICONTROL Computed Attributes] | Det totala antalet aggregerade profilbeteendedata. Sammanlagda profilbeteendedata baseras på upplevelsehändelser som konverteras till ett profilattribut och kan inkluderas i en personprofil eller en företagsprofil. |
-| [!UICONTROL Look-alike Audiences] | Antalet målgrupper som genereras genom att en befintlig konsumentmålgrupp modelleras för att identifiera personprofiler som liknar den befintliga konsumentmålgruppen. |
+| [!UICONTROL Audience Activation Size] | Den totala storleken på profiler som har aktiverats för ett filbaserat mål på ett år. Obs! Detta inkluderar inte profiler som skickas via direktuppspelningsmål. |
 | [!UICONTROL Addressable Audience] | Summan av er rätt till företagspass och rätt till rätt målgrupp. En konsumentpublik definieras som antalet personprofiler som identifieras som en&quot;konsumentpublik&quot; på försäljningsordern. En målgrupp definieras som antalet affärspersonsprofiler som identifieras som&quot;affärsmålgrupp&quot; på försäljningsordern. |
-| [!UICONTROL Number of sandboxes] | Antalet logiska separationer i instansen av en Adobe On-demand-tjänst som använder Adobe Experience Platform för att isolera data och åtgärder. |
-| [!UICONTROL Average profile richness] | Summan av alla produktionsdata som lagras i navprofiltjänsten vid någon tidpunkt, dividerat med fem gånger antalet auktoriserade personprofiler för företag. [!UICONTROL Average profile richness] är en delad funktion. |
-| [!UICONTROL Streaming Segmentation No of Packs] | Paketuppdateringssegmentmedlemskapet för en personprofil när nya data matas in i segmenteringstjänsten via ett strömningsflöde. Segmentmedlemskap utvärderas baserat på attributen för den aktuella personprofilen och värdet för den aktuella händelsen, utan hänsyn till historiskt beteende. Direktuppspelningssegmentering är en delad funktion. |
-| [!UICONTROL Consumer Audience] | Antalet personprofiler som identifieras som&quot;Konsumentpublik&quot; på försäljningsordern. |
-| [!UICONTROL CJA Rows Available] | De dagliga genomsnittliga dataraderna som är tillgängliga för analys inom Customer Journey Analytics. |
-| [!UICONTROL Profile Richness No of Packs] | En ökning av din auktoriserade genomsnittliga profilnoggrannhet med 25 kB per profil för varje ytterligare profilnoggrannhetspaket. |
 | [!UICONTROL Adhoc Query Service Users Packs] | Ett tillägg som ökar dina behörigheter för samtidiga frågetjänstanvändare med ytterligare fem samtidiga frågetjänstanvändare och ytterligare en ad hoc-fråga som körs samtidigt per paket. Flera ytterligare Ad hoc-frågeanvändarpaket kan licensieras. |
-| [!UICONTROL Engageable audience] | Det här måttet avser målgruppen med profiler som kan användas. En engagerande profil är ett register med information som representerar en individ och representeras i profiltjänsten. Dessa poster är profiler som du har försökt att använda Journey Optimizer funktioner för att skapa, fatta beslut, leverera, experimentera eller orkestrera under de senaste 12 månaderna. |
+| [!UICONTROL Average profile richness] | Summan av alla produktionsdata som lagras i navprofiltjänsten vid någon tidpunkt, dividerat med fem gånger antalet auktoriserade personprofiler för företag. [!UICONTROL Average profile richness] är en delad funktion. |
+| [!UICONTROL CJA Rows Available] | De dagliga genomsnittliga dataraderna som är tillgängliga för analys inom Customer Journey Analytics. |
+| [!UICONTROL Computed Attributes] | Det totala antalet aggregerade profilbeteendedata. Sammanlagda profilbeteendedata baseras på upplevelsehändelser som konverteras till ett profilattribut och kan inkluderas i en personprofil eller en företagsprofil. |
+| [!UICONTROL Consumer Audience] | Antalet personprofiler som identifieras som&quot;Konsumentpublik&quot; på försäljningsordern. |
+| [!UICONTROL Data Export Size] | Mängden data som skickas via datauppsättningsaktiveringar under ett år. |
+| [!UICONTROL Data Exports] | Den totala storleken på datauppsättningar som kan exporteras till en icke-Adobe-lösning (direkt eller indirekt) under ett år. |
+| [!UICONTROL Data Lake Storage] | Den kvantitet som används i analysdatalagret i Adobe Experience Platform. |
+| [!UICONTROL Engageable Audience] | Det här måttet avser målgruppen med profiler som kan användas. En engagerande profil är ett register med information som representerar en individ och representeras i profiltjänsten. Dessa poster är profiler som du har försökt att använda Journey Optimizer funktioner för att skapa, fatta beslut, leverera, experimentera eller orkestrera under de senaste 12 månaderna. |
+| [!UICONTROL Look-alike Audiences] | Antalet målgrupper som genereras genom att en befintlig konsumentmålgrupp modelleras för att identifiera personprofiler som liknar den befintliga konsumentmålgruppen. |
+| [!UICONTROL Number of AMM Models] | Antal maskininlärningsmodeller (inbyggda i Adobe Mix Modeler) som används för att mäta och/eller förutsäga ett specifikt resultat baserat på dina investeringar. |
+| [!UICONTROL Number of Sandboxes] | Antalet logiska separationer i instansen av en Adobe On-demand-tjänst som använder Adobe Experience Platform för att isolera data och åtgärder. |
+| [!UICONTROL Profile Richness No of Packs] | En ökning av din auktoriserade genomsnittliga profilnoggrannhet med 25 kB per profil för varje ytterligare profilnoggrannhetspaket. |
 | [!UICONTROL Query Service Compute Hours] | Ett mått på hur lång tid det tar för frågetjänstmotorerna att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
+| [!UICONTROL Streaming Segmentation No of Packs] | Paketuppdateringssegmentmedlemskapet för en personprofil när nya data matas in i segmenteringstjänsten via ett strömningsflöde. Segmentmedlemskap utvärderas baserat på attributen för den aktuella personprofilen och värdet för den aktuella händelsen, utan hänsyn till historiskt beteende. Direktuppspelningssegmentering är en delad funktion. |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
 
