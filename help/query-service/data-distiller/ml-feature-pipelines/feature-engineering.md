@@ -1,9 +1,9 @@
 ---
 title: Ingenjörsfunktioner för maskininlärning
 description: Lär dig hur du omvandlar data i Adobe Experience Platform till funktioner eller variabler som kan användas av en maskininlärningsmodell. Använd Data Distiller för att beräkna HTML-funktioner i stor skala och dela dem med maskininlärningsmiljön.
-source-git-commit: 12926f36514d289449cf0d141b5828df3fac37c2
+source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1161'
 ht-degree: 13%
 
 ---
@@ -67,7 +67,7 @@ Antal klasser: 50000
 
 ### Samla ihop händelser för att definiera funktioner för XML {#define-features}
 
-I följande fråga sammanställs händelserna i datauppsättningen till meningsfulla numeriska funktioner som kan användas för att utbilda en benägenhetsmodell:
+Med en lämplig fråga kan du samla ihop händelserna i datauppsättningen till meningsfulla numeriska funktioner som kan användas för att utbilda en benägenhetsmodell. Exempelhändelser visas nedan:
 
 - **Antal mejl** som har skickats i marknadsföringssyfte och tagits emot av användaren.
 - Delar av de här e-postmeddelandena som **öppnad**.
@@ -83,6 +83,8 @@ I följande fråga sammanställs händelserna i datauppsättningen till meningsf
 - Antal minuter mellan två förslag som interagerats med.
 - Antal minuter mellan två förslag som avvisats.
 - Antal minuter mellan två markerade länkar.
+
+Följande fråga sammanställer dessa händelser:
 
 +++Markera för att visa exempelfrågan
 

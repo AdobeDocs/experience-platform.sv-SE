@@ -1,20 +1,20 @@
 ---
 title: Analys av experimentella data
 description: Lär dig hur du använder Data Distiller för att utforska och analysera data från en bärbar Python-dator.
-source-git-commit: 12926f36514d289449cf0d141b5828df3fac37c2
+source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '809'
 ht-degree: 14%
 
 ---
 
 # Förberedande dataanalys
 
-Det här dokumentet innehåller några grundläggande exempel och metodtips för att använda Data Distiller för att utforska och analysera data från en Python-anteckningsbok.
+Det här dokumentet innehåller några grundläggande exempel och metodtips för att använda Data Distiller för att utforska och analysera data från en [!DNL Python] anteckningsbok.
 
 ## Komma igång
 
-Innan du fortsätter med den här guiden kontrollerar du att du har skapat en anslutning till Data Distiller i din Python-anteckningsbok. I dokumentationen finns instruktioner om hur du [ansluta en Python-anteckningsbok till Data Distiller](./establish-connection.md).
+Kontrollera att du har skapat en anslutning till Data Distiller i [!DNL Python] anteckningsbok. I dokumentationen finns instruktioner om hur du [koppla en [!DNL Python] anteckningsbok till Data Distiller](./establish-connection.md).
 
 ## Hämta grundläggande statistik {#basic-statistics}
 
@@ -90,7 +90,7 @@ sample_table_name = df_samples[df_samples["sampling_rate"] == sampling_rate]["sa
 count_query=f'''SELECT count(*) as cnt from {sample_table_name}'''
 
 df = qs_cursor.query(count_query, output="dataframe")
-# divide by the sampling rate to extrapolate to the full dataset
+# Divide by the sampling rate to extrapolate to the full dataset
 approx_count = df["cnt"].iloc[0] / (sampling_rate / 100)
 
 print(f"Approximate count: {approx_count} using {sampling_rate *10}% sample")
@@ -137,7 +137,7 @@ funnel_df
 
 ### Resultat av ritningsfråga {#plot-results}
 
-Därefter ritar du frågeresultaten med Python `plotly` bibliotek:
+Därefter ritar du frågeresultaten med [!DNL Python] `plotly` bibliotek:
 
 ```python
 import plotly.express as px
@@ -261,4 +261,4 @@ ax.set_title("Pearson Correlation of Events with the outcome event")
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du lärt dig att använda Data Distiller för att utforska och analysera data från en Python-anteckningsbok. Nästa steg på vägen från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [maskininlärningsfunktioner](./feature-engineering.md).
+Genom att läsa det här dokumentet har du lärt dig att använda Data Distiller för att utforska och analysera data från en [!DNL Python] anteckningsbok. Nästa steg på vägen från Experience Platform till anpassade modeller i maskininlärningsmiljön är att [maskininlärningsfunktioner](./feature-engineering.md).
