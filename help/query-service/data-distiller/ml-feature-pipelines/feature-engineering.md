@@ -1,7 +1,8 @@
 ---
 title: Ingenjörsfunktioner för maskininlärning
 description: Lär dig hur du omvandlar data i Adobe Experience Platform till funktioner eller variabler som kan användas av en maskininlärningsmodell. Använd Data Distiller för att beräkna HTML-funktioner i stor skala och dela dem med maskininlärningsmiljön.
-source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
+exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1161'
 ht-degree: 13%

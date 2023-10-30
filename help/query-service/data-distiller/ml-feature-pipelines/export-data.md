@@ -1,7 +1,8 @@
 ---
 title: Exportera data till externa ML-miljöer
 description: Lär dig hur du delar en förberedd utbildningsdatauppsättning, som skapats med Data Distiller, till en molnlagringsplats som din ML-miljö kan läsa för utbildning och bedömning av din modell.
-source-git-commit: a23100e8fbca93f14490e639f05991f06c113b93
+exl-id: 75022acf-fafd-41d6-8dfa-ff3fd4c4fa7e
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '548'
 ht-degree: 1%

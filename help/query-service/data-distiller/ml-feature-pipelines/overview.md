@@ -1,7 +1,8 @@
 ---
 title: AI/ML-rörledningar
 description: Lär dig hur du använder Data Distiller för att berika dina maskininlärningslinjer med funktioner som härleds från Adobe Experience Platform data. Omvandla rådata till funktioner och leverera funktionsdata för att utbilda eller poängsätta en modell som stöder era marknadsföringsexempel.
-source-git-commit: 60c5a624bfbe88329ab3e12962f129f03966ce77
+exl-id: 3b452181-e254-4155-8bf5-0990533f202d
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '453'
 ht-degree: 1%
@@ -226,6 +227,3 @@ If the connection test above is unsuccessful, you will likely get `KeyError: 'te
 - Check your `config.ini` file and make sure that your environment and credential information is correct.
 
 If your configuration is correct and you are able to successfully make calls to `aepp` methods, you may sometimes get an unsuccessful response from the Platform server. This may happen if you try to create an object in Platform that already exists, or get an object that does not exist, or attempt to send a malformed payload with a request. Most `aepp` methods make a request to an Platform API endpoint and return the response from the server. Print the response and review it to get error message from the API. This will usually give you enough information to understand the problem with the request and fix it. -->
-
-
-

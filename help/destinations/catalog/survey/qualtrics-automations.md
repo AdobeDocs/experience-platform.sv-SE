@@ -3,13 +3,13 @@ keywords: direktuppspelning, Qualtrics-mål
 title: Qualtrics Automations
 description: Synkronisera upplevelser och användbara kunddata för att låsa upp personalisering i stor skala. Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience iD för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner.
 last-substantial-update: 2023-10-25T00:00:00Z
-source-git-commit: 57d3e136902201f9ba9bd2f427ebe0f876900671
+exl-id: 3289ed4c-8542-4e22-a574-e49cc6527a24
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1132'
 ht-degree: 0%
 
 ---
-
 
 # Qualtrics Automations
 

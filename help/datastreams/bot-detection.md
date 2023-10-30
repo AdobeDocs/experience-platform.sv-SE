@@ -3,13 +3,13 @@ title: Konfigurera objektidentifiering för datastreams
 description: Lär dig hur du konfigurerar identifieringen av robotar för datastreams för att särskilja mänsklig och icke-mänsklig trafik.
 hide: true
 hidefromtoc: true
-source-git-commit: 07b3ff85c1092614a60495e73575907df36d4158
+exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '1325'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera objektidentifiering för datastreams
 
@@ -176,4 +176,3 @@ Regeln som visas i bilden nedan identifierar en robotursprungsbegäran om följa
 Begäran kommer från någon av de två IP-adresserna, `referer` sidhuvud börjar med `www.adobe.com`och `sec-ch-ua-mobile` identifierar att begäran kommer från en webbläsare på datorn.
 
 ![Bild av regel för robotidentifiering som baseras på flera villkor.](assets/bot-detection/bot-detection-multiple.png)
-

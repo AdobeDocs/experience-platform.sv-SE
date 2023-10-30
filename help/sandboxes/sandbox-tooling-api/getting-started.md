@@ -1,7 +1,8 @@
 ---
 title: Komma igång med sandlådeverktygets API
 description: Använd verktygs-API:t i sandlådan för att undersöka artefakter och exportera och importera en ögonblicksbild av sandlådekonfigurationer mellan sandlådor. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
-source-git-commit: bad6ad17a5f41e50b27ce44a6d52a79e2066c82f
+exl-id: 0b34d153-a603-4397-a375-9cc846efe23a
+source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 4%

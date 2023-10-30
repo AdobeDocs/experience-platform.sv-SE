@@ -4,7 +4,8 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Caution"
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: 77ba3bd55c2f2ac217612880b83b731919aa14af
+exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
+source-git-commit: bf4a34a0fbf59571eaea3ccbc619f9fe17d5c218
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 0%
