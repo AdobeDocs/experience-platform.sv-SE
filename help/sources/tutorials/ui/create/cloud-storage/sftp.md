@@ -2,7 +2,7 @@
 title: Skapa en SFTP-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en SFTP-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 1a00ed27-3c95-4e57-9f94-45ff256bf75c
-source-git-commit: e92471b386b857fc21947d352f1c1b88431c68bc
+source-git-commit: f6d1cc811378f2f37968bf0a42b428249e52efd8
 workflow-type: tm+mt
 source-wordcount: '796'
 ht-degree: 0%

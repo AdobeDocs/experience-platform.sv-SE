@@ -2,7 +2,7 @@
 title: Skapa en SFTP-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till en SFTP-server (Secure File Transfer Protocol) med API:t för Flow Service.
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: a826bda356a7205f3d4c0e0836881530dbaaf54e
+source-git-commit: f6d1cc811378f2f37968bf0a42b428249e52efd8
 workflow-type: tm+mt
 source-wordcount: '938'
 ht-degree: 0%
@@ -52,7 +52,7 @@ Mer information om hur du kan anropa API:er för plattformar finns i handboken [
 
 >[!TIP]
 >
->När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Dynamics] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+>När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL SFTP] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
 En basanslutning bevarar information mellan källan och plattformen, inklusive källans autentiseringsuppgifter, anslutningsstatus och ditt unika basanslutnings-ID. Med det grundläggande anslutnings-ID:t kan du utforska och navigera bland filer inifrån källan och identifiera de specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
