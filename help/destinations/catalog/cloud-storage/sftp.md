@@ -2,7 +2,7 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 93b1c26e85ddd0fa232b26712f88faa824f19f30
 workflow-type: tm+mt
 source-wordcount: '970'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 
 >[!IMPORTANT]
 >
-> Experience Platform stöder dataexport till SFTP-servrar, men de rekommenderade molnlagringsplatserna för dataexport är [!DNL Amazon S3] och [!DNL SFTP].
+> Experience Platform stöder dataexport till SFTP-servrar, men de rekommenderade molnlagringsplatserna för dataexport är [!DNL Amazon S3] och [!DNL Azure Blob].
 
 ## Ansluta till SFTP via API eller gränssnitt {#connect-api-or-ui}
 
