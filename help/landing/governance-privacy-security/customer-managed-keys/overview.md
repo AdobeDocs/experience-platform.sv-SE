@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: a81c3f220203d65ef810a92896edcfc489a0327a
+source-git-commit: 930c786db51063c55f731dc90f2ee66e98624555
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '754'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ Data som lagras på Adobe Experience Platform krypteras i vila med hjälp av sys
 >Data i Adobe Experience Platform datasjön och Profile Store krypteras med CMK. Dessa betraktas som era primära datalager.
 
 Det här dokumentet ger en översikt på hög nivå över processen för att aktivera funktionen för kundhanterade nycklar (CMK) i Platform, och den information som krävs för att slutföra dessa steg.
+
+>[!NOTE]
+>
+>För Customer Journey Analytics-kunder, följ instruktionerna i [Customer Journey Analytics dokumentation](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html?lang=en).
 
 ## Förutsättningar
 
