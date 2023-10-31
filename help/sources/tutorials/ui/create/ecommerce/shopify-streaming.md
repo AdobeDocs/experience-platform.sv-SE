@@ -2,8 +2,8 @@
 title: Skapa en anslutning och ett dataflöde för att förminska direktuppspelningen i användargränssnittet
 description: Lär dig hur du skapar en Shopify Streaming-källanslutning och ett dataflöde med hjälp av användargränssnittet för plattformen
 badge: Beta
-exl-id: 3368ecf6-0c61-49ce-bc9c-29ee50b3f037
-source-git-commit: feb05d5bddc4135c5fe14d3ec5d8fad62c5e2236
+exl-id: d53f4ab5-8bdc-4647-83d5-ee898abda0f2
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 >[!IMPORTANT]
@@ -35,7 +35,7 @@ Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan o
 
 Under **eCommerce** kategori, välj [!DNL Shopify Streaming]och sedan markera **[!UICONTROL Add data]**.
 
-![Katalogen för Experience Platform-källor](../../../../images/tutorials/create/shopify-streaming/catalog.png)
+![Katalogen Experience Platform-källor](../../../../images/tutorials/create/shopify-streaming/catalog.png)
 
 ## Markera data
 
@@ -66,7 +66,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 The [!UICONTROL Mapping] visas med ett gränssnitt för att mappa källfälten från källschemat till rätt mål-XDM-fält i målschemat.
 
-Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd du väljer. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
+Plattformen ger intelligenta rekommendationer för automatiskt mappade fält baserat på det målschema eller den datamängd som du väljer. Du kan justera mappningsreglerna manuellt så att de passar dina användningsfall. Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](https://experienceleague.adobe.com/docs/experience-platform/data-prep/ui/mapping.html).
 
 När källdata har mappats väljer du **[!UICONTROL Next]**.
 
@@ -76,7 +76,7 @@ När källdata har mappats väljer du **[!UICONTROL Next]**.
 
 The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och antalet kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen till den valda källfilen och antalet kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 
 När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att dataflödet kan skapas.
@@ -87,7 +87,7 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att data
 
 När du har skapat ett dataflöde för direktuppspelning kan du nu hämta URL:en för din slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform.
 
-Gå till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapade och kopierar slutpunkten från nederkanten av [!UICONTROL Properties] -panelen.
+Om du vill hämta strömningsslutpunkten går du till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapade och kopierar slutpunkten från nederkanten av [!UICONTROL Properties] -panelen.
 
 ![Slutpunkten för direktuppspelning i dataflödesaktivitet.](../../../../images/tutorials/create/shopify-streaming/endpoint.png)
 

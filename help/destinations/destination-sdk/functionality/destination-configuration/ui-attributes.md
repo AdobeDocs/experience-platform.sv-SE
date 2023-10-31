@@ -1,13 +1,13 @@
 ---
 description: Lär dig hur du konfigurerar gränssnittsattribut, t.ex. dokumentationslänken, målkortskategorin och målanslutningstypen och målfrekvensen, för mål som skapats med Destination SDK.
 title: Gränssnittsattribut
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: aed8d868-c516-45da-b224-c7e99e4bfaf1
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '749'
 ht-degree: 0%
 
 ---
-
 
 # Gränssnittsattribut
 
@@ -18,13 +18,13 @@ Mer information om var den här komponenten passar in i en integrering som skapa
 * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](../../guides/configure-destination-instructions.md#create-destination-configuration)
 * [Använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-destination-configuration)
 
-När [skapa ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK `uiAttributes` -avsnittet definierar följande visuella egenskaper för målkortet:
+När [skapa ett mål](../../authoring-api/destination-configuration/create-destination-configuration.md) via Destination SDK, `uiAttributes` -avsnittet definierar följande visuella egenskaper för målkortet:
 
 * URL:en till måldokumentationssidan i [målkatalog](../../../catalog/overview.md).
 * Den URL där du var värd för ikonen som ska visas på målkatalogkortet.
 * Den kategori som ditt mål ska visas under i plattformsgränssnittet.
 * Dataexportfrekvensen för destinationen.
-* Målanslutningstypen, t.ex. Amazon S3, Azure Blob osv.
+* Målanslutningstypen, t.ex. Amazon S3, Azure Blob.
 
 Du kan konfigurera gränssnittsattribut via `/authoring/destinations` slutpunkt. På följande API-referenssidor finns detaljerade API-anropsexempel där du kan konfigurera komponenterna som visas på den här sidan.
 
@@ -43,12 +43,12 @@ I den här artikeln beskrivs alla gränssnittsattribut som stöds och som du kan
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
 
-## Parametrar som stöds {#supported-parameters}
+## parametrar som stöds {#supported-parameters}
 
 ```json
 "uiAttributes":{
@@ -62,7 +62,7 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ### `documentationLink` {#documentation-link}
 
-`documentationLink` är en strängparameter som refererar till dokumentationssidan i [Målkatalog](../../../catalog/overview.md) till destinationen. Alla produktioner i Adobe Experience Platform måste ha en motsvarande dokumentationssida. [Lär dig hur du skapar en dokumentationssida för ett mål](../../docs-framework/documentation-instructions.md) till destinationen. Observera att detta inte krävs för privata/anpassade destinationer.
+`documentationLink` är en strängparameter som refererar till dokumentationssidan i [Målkatalog](../../../catalog/overview.md) till destinationen. Alla produktioner i Adobe Experience Platform måste ha en motsvarande dokumentationssida. [Lär dig hur du skapar en dokumentationssida för målet](../../docs-framework/documentation-instructions.md) till destinationen. Observera att detta inte krävs för privata/anpassade destinationer.
 
 Använd följande format: `http://www.adobe.com/go/destinations-YOURDESTINATION-en`, där `YOURDESTINATION` är namnet på destinationen. För ett mål som heter Moviestar använder du `http://www.adobe.com/go/destinations-moviestar-en`.
 
@@ -80,7 +80,7 @@ Användarna kan se och besöka din dokumentationslänk från målkatalogsidan i 
 
 Användarna kan se listan över målkategorier till vänster på skärmen i målkatalogen, som visas i bilden nedan.
 
-![Användargränssnittsbild som visar destinationskategoriplatsen.](../../assets/functionality/destination-configuration/ui-attributes-category.png)
+![Användargränssnittsbild som visar destinationskategorins plats.](../../assets/functionality/destination-configuration/ui-attributes-category.png)
 
 <!-- ### `iconUrl` {#icon-url}
 

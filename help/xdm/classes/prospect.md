@@ -1,7 +1,8 @@
 ---
 title: Klassen XDM Individual Prospect Profile
 description: Det här dokumentet innehåller en översikt över klassen XDM Individual Prospect Profile i Experience Data Model (XDM).
-source-git-commit: 7562da0f07a2109a2030653927d8d2639685e442
+exl-id: 10fd9d16-4123-4ad4-971f-b715231ee6a9
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '332'
 ht-degree: 0%

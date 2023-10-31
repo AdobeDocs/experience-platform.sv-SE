@@ -3,8 +3,8 @@ title: Förminska strömningskälla
 description: Lär dig hur du skapar en källanslutning och ett dataflöde för att importera strömmande data från Shopify-instansen till Adobe Experience Platform
 badge: Beta
 last-substantial-update: 2023-04-26T00:00:00Z
-exl-id: 4c83c08d-c744-4167-9e3b-ed9a995943f4
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+exl-id: ae991913-68b5-4bbb-b8a5-e566d67a4c1a
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Adobe Experience Platform har stöd för inmatning av data från direktuppspelni
 
 I följande avsnitt beskrivs de nödvändiga stegen som måste utföras innan du använder [!DNL Shopify Streaming] källa.
 
-Du måste ha en giltig [!DNL Shopify] partnerkonto för att ansluta till [!DNL Shopify] API:er. Om du inte redan har ett partnerkonto kan du registrera dig med [[!DNL Shopify] instrumentpanel för partners](https://www.shopify.com/partners).
+Du måste ha en giltig [!DNL Shopify] partnerkonto för att ansluta till [!DNL Shopify] API. Om du inte redan har ett partnerkonto kan du registrera dig med [[!DNL Shopify] instrumentpanel för partners](https://www.shopify.com/partners).
 
 ### Skapa ditt program
 
@@ -35,7 +35,7 @@ När appen har skapats kan du **klient-ID** och **klienthemlighet** från **klie
 
 Hämta sedan din auktoriseringskod genom att ange din domäns `myshopify.com` URL:en till webbläsaren, tillsammans med frågesträngar som definierar API-nyckeln, omfånget och omdirigerings-URI:n.
 
-Formatet för denna URL är följande:
+Formatet för den här URL:en är följande:
 
 **API-format**
 
@@ -47,7 +47,7 @@ https://{SHOP}.myshopify.com/admin/oauth/authorize?client_id={API_KEY}&scope={SC
 | --- | --- |
 | `shop` | Din underdomän `myshopify.com` URL. |
 | `api_key` | Dina [!DNL Shopify] klient-ID. Du kan hämta ditt klient-ID från **klientautentiseringsuppgifter** -fliken i [!DNL Shopify] instrumentpanel för partners. |
-| `scopes` | Vilken typ av åtkomst du vill definiera. Du kan till exempel ange omfång som `scope=write_orders,read_customers` för att tillåta behörigheter att ändra order och läsa kunder. |
+| `scopes` | Den typ av åtkomst som du vill definiera. Du kan till exempel ange omfång som `scope=write_orders,read_customers` för att tillåta behörigheter att ändra beställningar och läsa kunder. |
 | `redirect_uri` | URL:en för skriptet som ska generera åtkomsttoken. |
 
 **Begäran**
@@ -132,7 +132,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar information på din webbkrok, inklusive dess motsvarande `id`, adress och annan metadatainformation.
+Ett lyckat svar returnerar information på din webbkrok, inklusive dess motsvarande `id`och annan metadatainformation.
 
 ```json
 {
@@ -157,7 +157,7 @@ Nedan följer en lista över kända begränsningar som du kan stöta på när du
 
 * Det är inte säkert att du kan ordna leveransordningen för olika ämnen för samma resurs. Det är till exempel möjligt att en `products/update` webbkrok levereras innan `products/create` webbkrok.
 * Du kan ställa in webkroken så att den levererar webkrockhändelser till en slutpunkt minst en gång. Det innebär att en slutpunkt kan ta emot samma händelse flera gånger. Du kan söka efter duplicerade webkrockhändelser genom att jämföra `X-Shopify-Webhook-Id` huvud till tidigare händelser.
-* [!DNL Shopify] behandlar HTTP 2xx-statussvar som lyckade meddelanden. Andra statuskodssvar betraktas som misslyckanden. [!DNL Shopify] innehåller en återförsöksmekanism för misslyckade webkrockmeddelanden. Om det finns **inget svar efter att ha väntat i fem sekunder**, [!DNL Shopify] försöker ansluta igen **19 gånger** under nästa **48 timmar**. Om det fortfarande inte finns några svar i slutet av återförsöksperioden [!DNL Shopify] tar bort webkroken.
+* [!DNL Shopify] behandlar HTTP 2xx-statussvar som lyckade meddelanden. Andra statuskodssvar betraktas som misslyckanden. [!DNL Shopify] innehåller en återförsöksmekanism för misslyckade webkrockmeddelanden. Om det finns **inget svar efter fem sekunder**, [!DNL Shopify] försöker ansluta igen **19 gånger** under nästa **48 timmar**. Om det fortfarande inte finns några svar i slutet av återförsöksperioden [!DNL Shopify] tar bort webkroken.
 
 ## Nästa steg
 

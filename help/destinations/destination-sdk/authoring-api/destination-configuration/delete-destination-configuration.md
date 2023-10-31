@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på det API-anrop som används för att ta bort en befintlig målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Ta bort en målkonfiguration
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+exl-id: c7309ab7-1b8d-46d4-8017-fd4aa5918cdd
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '278'
 ht-degree: 1%
 
 ---
-
 
 # Ta bort en målkonfiguration
 
@@ -19,7 +19,7 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Ta bort en målkonfiguration {#delete}
 
@@ -29,7 +29,7 @@ Du kan ta bort en [befintlig](create-destination-configuration.md) målserverkon
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations`
 
-Så här hämtar du en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målkonfiguration](retrieve-destination-configuration.md).
+Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målkonfiguration](retrieve-destination-configuration.md).
 
 **API-format**
 
@@ -69,4 +69,3 @@ Mer information om vad du kan göra med den här slutpunkten finns i följande a
 * [Skapa en målkonfiguration](create-destination-configuration.md)
 * [Hämta en målkonfiguration](retrieve-destination-configuration.md)
 * [Uppdatera en målkonfiguration](update-destination-configuration.md)
-

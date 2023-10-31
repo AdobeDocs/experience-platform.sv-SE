@@ -1,13 +1,13 @@
 ---
 description: I Experience Platform Destination SDK används mallar för att skapa bläddring, vilket gör att du kan omforma de data som exporteras från Experience Platform till det format som krävs för destinationen.
 title: Omformningsfunktioner som stöds i Destinationen SDK
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+exl-id: 36f761c7-9d76-41fe-b05f-d4cad655ddd2
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '579'
 ht-degree: 1%
 
 ---
-
 
 # Omformningsfunktioner som stöds i Destinationen SDK
 
@@ -27,7 +27,7 @@ Meddelandetransformeringsmallen används i [målserverkonfiguration](templating-
 
 ## Förutsättningar {#prerequisites}
 
-Om du vill veta mer om begrepp och funktioner på den här referenssidan läser du [meddelandeformat](message-format.md) dokument först. Du måste förstå [struktur för en profil](message-format.md#profile-structure) i Experience Platform innan du kan använda [!DNL Pebble] -mallar för att omforma och exportera data.
+Om du vill veta mer om begreppen och funktionerna på den här referenssidan läser du [meddelandeformat](message-format.md) dokument först. Du måste förstå [profilstruktur](message-format.md#profile-structure) i Experience Platform innan du kan använda [!DNL Pebble] -mallar för att omforma och exportera data.
 
 Granska mallexemplen i avsnittet innan du går vidare till funktionerna som beskrivs nedan [Använda ett mallspråk för omvandlingar av identitet, attribut och målgruppsmedlemskap](message-format.md#using-templating). Exemplen där börjar mycket enkelt och blir mer komplicerade.
 

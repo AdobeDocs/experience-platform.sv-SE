@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att skapa en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Skapa en målgruppsmall
-source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
+exl-id: 98d30002-d462-4008-9337-7de0cd608194
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 3%
 
 ---
-
 
 # Skapa en målgruppsmall
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 För vissa mål som skapats med Destination SDK måste du skapa en konfiguration för målgruppsmetadata för att programmässigt skapa, uppdatera eller ta bort målgruppsmetadata i målet. På den här sidan visas hur du använder `/authoring/audience-templates` API-slutpunkt för att skapa konfigurationen.
 
-En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målmetadata](../functionality/audience-metadata-management.md).
 
 >[!IMPORTANT]
 >
@@ -25,7 +25,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Skapa en målgruppsmall {#create}
 

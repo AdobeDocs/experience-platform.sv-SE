@@ -3,13 +3,13 @@ solution: Experience Platform
 title: Kom igång
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 297dc9d6252d401f805fa5ebb5cf5111910286cf
+exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '300'
 ht-degree: 1%
 
 ---
-
 
 # (Beta) Kom igång
 
@@ -27,7 +27,7 @@ Du bör nu se [!UICONTROL Playbooks] i den vänstra listen under [!UICONTROL Use
 
 ![Använd fallspelningsböcker i användargränssnittet när du har skapat sandlådan.](/help/use-case-playbooks/assets/playbooks/get-started/ucp-sandbox-in-ui.png)
 
-Om du inte ser [!UICONTROL Playbooks] Använd den här länken i den vänstra listen som visas ovan `https://experience.adobe.com/#/@<YOUR_ORG>/sname:<YOUR_SANDBOX_NAME>/platform/mexp/templates` för att navigera dit direkt. I länken `<YOUR_ORG>` är namnet på din organisation och `<YOUR_SANDBOX_NAME>` är namnet på den utvecklingssandlåda som du skapade.
+Om du inte ser [!UICONTROL Playbooks] Använd den här länken i den vänstra listen som visas ovan `https://experience.adobe.com/#/@<YOUR_ORG>/sname:<YOUR_SANDBOX_NAME>/platform/mexp/templates` navigera dit direkt. I länken `<YOUR_ORG>` är namnet på din organisation och `<YOUR_SANDBOX_NAME>` är namnet på den utvecklingssandlåda som du skapade.
 
 ### Sandlådekonfiguration för Adobe Journey Optimizer-användare {#sandbox-configuration-journey-optimizer}
 

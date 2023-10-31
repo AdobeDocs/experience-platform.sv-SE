@@ -1,13 +1,13 @@
 ---
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1885'
 ht-degree: 1%
 
 ---
-
 
 # Konfiguration av partnerschema
 
@@ -18,7 +18,7 @@ När du skapar ett mål med Destination SDK kan du definiera ett eget partnersch
 När du konfigurerar partnerschemat för målet kan du finjustera den fältmappning som stöds av målplattformen, till exempel:
 
 * Tillåt användare att mappa en `phoneNumber` XDM-attribut till en `phone` attribut som stöds av målplattformen.
-* Skapa dynamiska partnerscheman som Experience Platform kan anropa dynamiskt för att hämta en lista över alla attribut som stöds i ditt mål.
+* Skapa dynamiska partnerscheman som Experience Platform kan anropa dynamiskt för att hämta en lista över alla attribut som stöds i destinationen.
 * Definiera obligatoriska fältmappningar som målplattformen kräver.
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).

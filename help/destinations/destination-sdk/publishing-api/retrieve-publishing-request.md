@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att hämta information om en destinationspubliceringsbegäran via Adobe Experience Platform Destination SDK.
 title: Hämta en publiceringsbegäran för mål
-source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
+exl-id: fceef12d-a52c-4259-a91e-7af88b132800
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '834'
 ht-degree: 2%
 
 ---
-
 
 # Hämta en publiceringsbegäran för mål
 
@@ -19,7 +19,7 @@ ht-degree: 2%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering. Läs [Skicka för granskning av ett mål som skapats i Destination SDK](../guides/submit-destination.md) för alla andra steg som du måste göra som en del av målöverföringsprocessen.
+När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering. Läs [Skicka för granskning av ett mål som skapats i Destination SDK](../guides/submit-destination.md) för alla andra steg som du måste göra som en del av målinlämningsprocessen.
 
 Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
 
@@ -32,7 +32,7 @@ Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbeg
 
 ## Komma igång med API-åtgärder för målpublicering {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Lista målpubliceringsbegäranden {#retrieve-list}
 

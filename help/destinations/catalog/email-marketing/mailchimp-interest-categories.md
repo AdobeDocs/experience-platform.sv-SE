@@ -2,7 +2,8 @@
 title: Intressekategorier för e-postmeddelanden
 description: Mailchimp (även kallat Intuit Mailchimp) är en populär automatiserad marknadsföringsplattform och en e-postmarknadsföringstjänst som används av företag för att hantera och kommunicera med kontakter (kunder, kunder eller andra berörda parter) med hjälp av e-postlistor och e-postmarknadsföringskampanjer. Använd den här kopplingen för att sortera dina kontakter baserat på deras intressen och önskemål.
 last-substantial-update: 2023-05-24T00:00:00Z
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+exl-id: bdce8295-7305-4d54-81c1-7fa3e580ce70
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2300'
 ht-degree: 0%

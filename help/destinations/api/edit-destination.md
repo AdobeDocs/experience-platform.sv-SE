@@ -3,7 +3,8 @@ solution: Experience Platform
 title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1572'
 ht-degree: 0%
@@ -24,7 +25,7 @@ Den här självstudien kräver att du har ett giltigt dataflödes-ID. Om du inte
 
 >[!NOTE]
 >
-> Villkoren *flöde* och *dataflöde* används omväxlande i den här självstudiekursen. I den här självstudiekursen har de samma betydelse.
+> Villkoren *flöde* och *dataflöde* används omväxlande i den här kursen. I den här självstudiekursen har de samma betydelse.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -63,7 +64,7 @@ Det första steget i att redigera målanslutningen är att hämta dataflödesinf
 
 >[!TIP]
 >
->Du kan använda användargränssnittet i Experience Platform för att hämta det önskade dataflödes-ID:t för ett mål. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** väljer du måldataflöde och söker efter mål-ID i den högra listen. Mål-ID är det värde som du kommer att använda som flödes-ID i nästa steg.
+>Du kan använda användargränssnittet i Experience Platform för att hämta det önskade dataflödes-ID:t för ett mål. Gå till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** markerar du måldataflödet och söker efter mål-ID:t i den högra listen. Mål-ID är det värde som du kommer att använda som flödes-ID i nästa steg.
 >
 > ![Hämta mål-ID med Experience Platform-användargränssnittet](/help/destinations/assets/api/edit-destination/get-destination-id.png)
 
@@ -226,7 +227,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -266,7 +267,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -308,7 +309,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -327,7 +328,7 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du ka
 
 >[!ENDSHADEBOX]
 
-## Redigera grundläggande anslutningskomponenter (autentiseringsparametrar och andra komponenter) {#patch-base-connection}
+## Redigera basanslutningskomponenter (autentiseringsparametrar och andra komponenter) {#patch-base-connection}
 
 Redigera basanslutningen när du vill uppdatera autentiseringsuppgifterna för ett mål. Komponenterna i en basanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] mål kan du uppdatera åtkomstnyckeln och den hemliga nyckeln till [!DNL Amazon S3] plats.
 
@@ -383,7 +384,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -425,7 +426,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -446,7 +447,7 @@ Ett lyckat svar returnerar ditt grundläggande anslutnings-ID och en uppdaterad 
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
 
 ## Nästa steg {#next-steps}
 

@@ -3,7 +3,8 @@ title: Översikt över källan RainFocus
 description: Lär dig hur du överför händelsehantering och analysdata från ditt RainFocus-konto till Experience Platform
 last-substantial-update: 2023-06-21T00:00:00Z
 badge: Beta
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+exl-id: 88e333e3-2b93-4d66-8412-efadea58ac46
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '998'
 ht-degree: 4%

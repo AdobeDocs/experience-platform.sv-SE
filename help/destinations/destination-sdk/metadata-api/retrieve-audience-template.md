@@ -1,13 +1,13 @@
 ---
 description: Den här sidan är ett exempel på det API-anrop som används för att hämta en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Hämta en målgruppsmall
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: 44f2d571-49c5-4112-b3ee-bc839f2b0874
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%
 
 ---
-
 
 # Hämta en målgruppsmall
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta en målgruppsmetadatamall med hjälp av `/authoring/audience-templates` API-slutpunkt.
 
-En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målmetadata](../functionality/audience-metadata-management.md).
 
 >[!IMPORTANT]
 >
@@ -25,7 +25,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Hämta en målgruppsmall {#retrieve}
 
@@ -196,13 +196,13 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | ID:t för målgruppsmallen som du vill hämta. |
+| `{INSTANCE_ID}` | ID för målgruppsmallen som du vill hämta. |
 
 +++
 
 +++svar
 
-Ett godkänt svar returnerar HTTP-status 200 med information om målgruppsmallen som motsvarar `{INSTANCE_ID}` på samtalet.
+Ett godkänt svar returnerar HTTP-status 200 med information om målgruppsmallen som motsvarar `{INSTANCE_ID}` anges på samtalet.
 
 ```json
 {

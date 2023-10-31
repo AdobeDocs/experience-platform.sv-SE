@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Kantsegmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 9f586b336f5cc232ac9b04a74846b7cfc2b46a71
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1179'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med användargränssnittet finns i [gränssnittsguide för kantsegmentering](../ui/edge-segmentation.md).
+>I följande dokument beskrivs hur du utför kantsegmentering med API:t. Mer information om kantsegmentering med hjälp av användargränssnittet finns i [gränssnittsguide för kantsegmentering](../ui/edge-segmentation.md).
 >
 >Kantsegmentering är nu allmänt tillgängligt för alla plattformsanvändare. Om du skapade definitioner för kantsegment under betaversionen kommer dessa segmentdefinitioner att fortsätta att fungera.
 
@@ -30,8 +30,8 @@ Kantsegmentering är möjligheten att omedelbart utvärdera segmentdefinitioner 
 
 Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Adobe Experience Platform] tjänster som rör kantsegmentering. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid, baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig konsumentprofil i realtid baserat på aggregerade data från flera källor.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Används för att bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 Om du vill kunna anropa någon Experience Platform API-slutpunkt läser du i guiden [komma igång med plattforms-API:er](../../landing/api-guide.md) om du vill veta mer om obligatoriska rubriker och hur du läser exempel-API-anrop.
@@ -47,7 +47,7 @@ För att ett segment ska kunna utvärderas med hjälp av kantsegmentering måste
 | En händelse som refererar till en profil | En segmentdefinition som refererar till ett eller flera profilattribut och en enda inkommande händelse utan tidsbegränsning. | Folk som bor i USA som besökte hemsidan. | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart")])` |
 | Negerad enkel händelse med ett profilattribut | En segmentdefinition som refererar till en negerad enkel inkommande händelse och ett eller flera profilattribut | Personer som bor i USA och har **not** besökte hemsidan. | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView")]))` |
 | En händelse i ett tidsfönster | En segmentdefinition som refererar till en enda inkommande händelse inom en angiven tidsperiod. | Personer som besökt hemsidan de senaste 24 timmarna. | `chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)])` |
-| En händelse med ett profilattribut i ett tidsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en enda inkommande händelse inom en angiven tidsperiod. | Personer som bor i USA och som har besökt hemsidan de senaste 24 timmarna. | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)])` |
+| En händelse med ett profilattribut inom ett relativt tidsfönster på mindre än 24 timmar | En segmentdefinition som refererar till en enda inkommande händelse, med ett eller flera profilattribut, och som inträffar inom ett relativt tidsfönster på mindre än 24 timmar. | Personer som bor i USA och som har besökt hemsidan de senaste 24 timmarna. | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)])` |
 | Negerad enkel händelse med ett profilattribut i ett tidsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en negerad enkel inkommande händelse inom en tidsperiod. | Personer som bor i USA och har **not** besökte hemsidan de senaste 24 timmarna. | `homeAddress.countryCode = "US" and not(chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)]))` |
 | Frekvenshändelse inom ett 24-timmarsfönster | En segmentdefinition som refererar till en händelse som inträffar ett visst antal gånger inom ett tidsfönster på 24 timmar. | Personer som besökte hemsidan **minst** fem gånger de senaste 24 timmarna. | `chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
 | Frekvenshändelse med ett profilattribut inom ett 24-timmarsfönster | En segmentdefinition som refererar till ett eller flera profilattribut och en händelse som inträffar ett visst antal gånger inom ett tidsfönster på 24 timmar. | Personer från USA som besökte hemsidan **minst** fem gånger de senaste 24 timmarna. | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
@@ -64,7 +64,7 @@ En segmentdefinition **not** aktiveras för kantsegmentering i följande scenari
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
    - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
 
-## Hämta alla segment som är aktiverade för kantsegmentering
+## Hämta alla segment aktiverade för kantsegmentering
 
 Du kan hämta en lista över alla segment som är aktiverade för kantsegmentering inom organisationen genom att göra en GET-förfrågan till `/segment/definitions` slutpunkt.
 
@@ -178,7 +178,7 @@ Ett lyckat svar returnerar en array med segment i organisationen som är aktiver
 
 ## Skapa ett segment som är aktiverat för kantsegmentering
 
-Du kan skapa ett segment som är aktiverat för kantsegmentering genom att göra en begäran om POST till `/segment/definitions` slutpunkt som matchar en av [frågetyper för kantsegmentering som listas ovan](#query-types).
+Du kan skapa ett segment som är aktiverat för kantsegmentering genom att göra en begäran om POST till `/segment/definitions` slutpunkt som matchar en av [frågetyper för kantsegmentering som anges ovan](#query-types).
 
 **API-format**
 

@@ -1,13 +1,13 @@
 ---
 description: På den här sidan visas exempel på API-anropet som används för att hämta en målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Hämta en målkonfiguration
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: aaf4cfa0-3e90-4fcc-b506-b84ff62b3027
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 0%
 
 ---
-
 
 # Hämta en målkonfiguration
 
@@ -19,7 +19,7 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Hämta en målkonfiguration {#retrieve}
 
@@ -194,7 +194,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om målkonfigurationen som motsvarar `{INSTANCE_ID}` i samtalet.
+Ett lyckat svar returnerar HTTP-status 200 med information om målkonfigurationen som motsvarar `{INSTANCE_ID}` anges i samtalet.
 
 ```json
 {

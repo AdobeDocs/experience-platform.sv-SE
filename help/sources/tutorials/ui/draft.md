@@ -1,7 +1,8 @@
 ---
 title: Utkastdataflöden i användargränssnittet
 description: Lär dig hur du sparar dataflöden som ett utkast och publicerar dem vid ett senare tillfälle när du använder arbetsytan för källor.
-source-git-commit: 5fc433f603c6e83c621df0f4a1d0aa27e18cd582
+exl-id: ee00798e-152a-4618-acb3-db40f2f55fae
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 0%
@@ -10,7 +11,7 @@ ht-degree: 0%
 
 # Utkastdataflöden i användargränssnittet
 
-Spara arbetsflödets förlopp för oavslutad datainmatning genom att ange dataflödet till utkaststatus. Du kan återuppta och slutföra de färdiga dataflödena vid ett senare tillfälle.
+Spara arbetsflödets förlopp för oavslutad datainmatning genom att ange dataflödet till utkaststatus. Du kan återuppta och slutföra dina skräddarsydda dataflöden vid ett senare tillfälle.
 
 Det här dokumentet innehåller anvisningar om hur du sparar dataflöden när du använder källarbetsytan i Adobe Experience Platform-användargränssnittet.
 
@@ -44,7 +45,7 @@ Om du vill fortsätta med utkastet väljer du ellipserna (`...`) bredvid datafl�
 
 ![Ett rullgardinsfönster med uppdateringsdataflöde valt.](../../images/tutorials/draft/update-dataflow.png)
 
-### Få åtkomst till dina utkast från källkatalogen
+### Öppna dina utkast från källkatalogen
 
 Du kan även komma åt dina utkast via dataflödeskatalogen. Välj **[!UICONTROL Dataflows]** i den övre sidhuvudet för att komma åt dataflödeskatalogen. Här hittar du ditt utkast i listan över befintliga dataflöden i organisationen och väljer ellipserna (`...`) bredvid namnet och välj **[!UICONTROL Update dataflow]**.
 
@@ -60,7 +61,7 @@ När du har bekräftat formatering, avgränsare och komprimeringstyp för dina d
 
 Bekräfta sedan dataflödesinformationen. Använd informationsgränssnittet för dataflöden för att uppdatera konfigurationer som omger dataflödets namn, beskrivning, partiellt intag, inställningar för feldiagnostik och varningsinställningar.
 
-När du är klar med dina konfigurationer väljer du **[!UICONTROL Next]** för att fortsätta.
+När du är klar med konfigurationerna väljer du **[!UICONTROL Next]** för att fortsätta.
 
 ![Dataflödesdetaljsteget i källarbetsflödet.](../../images/tutorials/draft/dataflow-detail.png)
 

@@ -1,17 +1,17 @@
 ---
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
-source-git-commit: e500d05858a3242295c6e5aac8284ad301d0cd17
+exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2237'
 ht-degree: 0%
 
 ---
 
-
 # Meddelandeformat
 
-## Förutsättningar - Adobe Experience Platform-koncept {#prerequisites}
+## Krav - Adobe Experience Platform koncept {#prerequisites}
 
 Om du vill veta mer om meddelandeformat, profilkonfiguration och transformeringsprocess på Adobe kan du bekanta dig med följande koncept för Experience Platform:
 
@@ -28,7 +28,7 @@ Om du vill veta mer om meddelandeformat, profilkonfiguration och transformerings
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja (endast steg 1 och 2 i diagrammet längre ned) |
@@ -57,9 +57,9 @@ Users who want to activate data to your destination need to map the fields in th
 
 **XDM-källschema (1)**: Det här objektet refererar till det schema som kunder använder i Experience Platform. I Experience Platform, på [mappningssteg](../../../ui/activate-segment-streaming-destinations.md#mapping) av arbetsflödet för aktivering av mål mappar kunderna fält från sitt XDM-schema till målschemat (2).
 
-**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format och de attribut som destinationen kan tolka, kan du definiera profilattribut och identiteter i mål-XDM-schemat. Du kan göra detta i destinationskonfigurationen i [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) och [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) objekt.
+**Mål-XDM-schema (2)**: Baserat på JSON-standardschemat (3) för målets förväntade format och de attribut som destinationen kan tolka, kan du definiera profilattribut och identiteter i mål-XDM-schemat. Du kan göra detta i destinationskonfigurationen i dialogrutan [schemaConfig](../../functionality/destination-configuration/schema-configuration.md) och [identityNamespaces](../../functionality/destination-configuration/identity-namespace-configuration.md) objekt.
 
-**JSON-standardschema för målprofilens attribut (3)**: Det här exemplet representerar en [JSON-schema](https://json-schema.org/learn/miscellaneous-examples.html) av alla profilattribut som din plattform stöder och deras typer (till exempel: object, string, array). Exempelfält som ditt mål kan ha stöd för `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`och så vidare. Du behöver en [omformningsmall för meddelanden](#using-templating) för att skräddarsy de data som exporteras från Experience Platform till det förväntade formatet.
+**JSON-standardschema för målprofilens attribut (3)**: Det här exemplet representerar [JSON-schema](https://json-schema.org/learn/miscellaneous-examples.html) av alla profilattribut som din plattform stöder och deras typer (t.ex. object, string, array). Exempelfält som ditt mål kan ha stöd för `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`och så vidare. Du behöver en [omformningsmall för meddelanden](#using-templating) för att skräddarsy de data som exporteras från Experience Platform till det förväntade formatet.
 
 Baserat på schemaomvandlingarna som beskrivs ovan, är det här hur en profilkonfiguration ändras mellan käll-XDM-schemat och ett exempelschema på partnersidan:
 
@@ -111,10 +111,10 @@ Profiler har tre avsnitt:
 * `identityMap` (finns alltid i en profil)
    * det här avsnittet innehåller alla identiteter som finns i profilen (e-post, Google GAID, Apple IDFA och så vidare) och som användaren har mappat för export i aktiveringsarbetsflödet.
 * attribut (beroende på målkonfigurationen kan dessa finnas i profilen). Det finns också en liten skillnad mellan fördefinierade attribut och frihandsattribut:
-   * for *frihandsattribut* innehåller de `.value` sökväg om attributet finns i profilen (se `lastName` -attribut från exempel 1). Om de inte finns med i profilen kommer de inte att innehålla `.value` sökväg (se `firstName` -attribut från exempel 1).
+   * for *frihandsattribut* innehåller de `.value` sökväg om attributet finns i profilen (se `lastName` -attribut från exempel 1). Om de inte finns med i profilen innehåller de inte `.value` sökväg (se `firstName` -attribut från exempel 1).
    * for *fördefinierade attribut*, innehåller de inte `.value` bana. Alla mappade attribut som finns i en profil finns i attributmappningen. De som inte finns kommer inte att finnas (se exempel 2 - `firstName` finns inte i profilen).
 
-Se två exempel på profiler i Experience Platform:
+Se två exempel på profiler i Experience Platform nedan:
 
 ### Exempel 1 med `segmentMembership`, `identityMap` och attribut för frihandsattribut {#example-1}
 
@@ -174,7 +174,7 @@ Se två exempel på profiler i Experience Platform:
 
 Adobe använder [Bärbara mallar](https://pebbletemplates.io/), ett mallspråk som liknar [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), för att omvandla fälten från Experience Platform XDM-schemat till ett format som stöds av ditt mål.
 
-Det här avsnittet innehåller flera exempel på hur dessa omformningar görs - från XDM-indataschemat, via mallen och från utdata i nyttolastformat som accepteras av ditt mål. Exemplen nedan presenteras av ökad komplexitet, enligt följande:
+Det här avsnittet innehåller flera exempel på hur dessa omformningar görs - från XDM-indataschemat, via mallen och från utdata i nyttolastformat som accepteras av målet. Exemplen nedan presenteras av ökad komplexitet, enligt följande:
 
 1. Exempel på enkla omformningar. Lär dig hur mallhantering fungerar med enkla omformningar för [Profilattribut](#attributes), [Målgruppsmedlemskap](#segment-membership)och [Identitet](#identities) fält.
 2. Exempel på mallar som kombinerar fälten ovan blir mer komplicerade: [Skapa en mall som skickar målgrupper och identiteter](./message-format.md#segments-and-identities) och [Skapa en mall som skickar segment, identiteter och profilattribut](#segments-identities-attributes).
@@ -609,7 +609,7 @@ Profil 2:
 
 **Resultat**
 
-The `json` nedan representerar data som exporteras från Adobe Experience Platform.
+The `json` nedan representerar de data som exporteras från Adobe Experience Platform.
 
 ```json
 {
@@ -661,7 +661,7 @@ The `json` nedan representerar data som exporteras från Adobe Experience Platfo
 
 I det här avsnittet finns ett exempel på en vanlig omvandling mellan Adobe XDM-schemat och partnermålschemat.
 
-Ett annat vanligt användningsexempel är export av data som innehåller målgruppsmedlemskap, identiteter (till exempel: e-postadress, telefonnummer, reklam-ID) och profilattribut. Se exemplet nedan om du vill exportera data på det här sättet:
+Ett annat vanligt användningsexempel är export av data som innehåller målgruppsmedlemskap, identiteter (till exempel e-postadress, telefonnummer, reklam-ID) och profilattribut. Se exemplet nedan om du vill exportera data på det här sättet:
 
 **Indata**
 
@@ -801,7 +801,7 @@ Profil 2:
 
 **Resultat**
 
-The `json` nedan representerar data som exporteras från Adobe Experience Platform.
+The `json` nedan representerar de data som exporteras från Adobe Experience Platform.
 
 ```json
 {
@@ -865,7 +865,7 @@ I meddelandeomformningsmallen kan du komma åt de aggregeringsnycklar som nämns
 
 #### Använd aggregeringsnyckeln för målgrupps-ID i mallen {#aggregation-key-segment-id}
 
-Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` till true grupperas profilerna i de HTTP-meddelanden som exporteras till ditt mål efter målgrupps-ID. Se nedan hur du kan komma åt målgrupps-ID i mallen.
+Om du [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` till true grupperas profilerna i de HTTP-meddelanden som exporteras till ditt mål efter målgrupps-ID. Se nedan hur du kan komma åt målgrupps-ID i mallen.
 
 **Indata**
 
@@ -1017,7 +1017,7 @@ När profilerna exporteras till ditt mål delas de upp i två grupper utifrån d
 
 #### Använd aggregeringsnyckeln för målgruppsalias i mallen {#aggregation-key-segment-alias}
 
-Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` Om värdet är true kan du även få åtkomst till målgruppsalias i mallen.
+Om du [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` Om värdet är true kan du även få åtkomst till målgruppsalias i mallen.
 
 Lägg till raden nedan i mallen för att komma åt de exporterade profilerna grupperade efter målgruppsalias.
 
@@ -1027,7 +1027,7 @@ customerList={{input.aggregationKey.segmentAlias}}
 
 #### Använd aggregeringsnyckeln för målgruppsstatus i mallen {#aggregation-key-segment-status}
 
-Om du använder [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` och `includeSegmentStatus` till true får du åtkomst till målgruppsstatusen i mallen. På så sätt kan du gruppera profiler i de HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
+Om du [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) och ange `includeSegmentId` och `includeSegmentStatus` till true får du åtkomst till målgruppsstatusen i mallen. På så sätt kan du gruppera profiler i de HTTP-meddelanden som exporteras till ditt mål baserat på om profilerna ska läggas till eller tas bort från segment.
 
 Möjliga värden är:
 
@@ -1043,7 +1043,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### Använd aggregering för identitetsnamnrymd i mallen {#aggregation-key-identity}
 
-Nedan visas ett exempel där [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen är inställd på att samla exporterade profiler efter identitetsnamnutrymmen, i formuläret `"namespaces": ["email", "phone"]` och `"namespaces": ["GAID", "IDFA"]`. Se `groups` -parametern i [skapa målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) dokumentation för mer information om gruppering.
+Nedan visas ett exempel där [konfigurerbar aggregering](../../functionality/destination-configuration/aggregation-policy.md#configurable-aggregation) i målkonfigurationen är inställd på att sammanfoga exporterade profiler efter identitetsnamnutrymmen, i formuläret `"namespaces": ["email", "phone"]` och `"namespaces": ["GAID", "IDFA"]`. Se `groups` -parametern i [skapa destinationskonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) dokumentation för mer information om gruppering.
 
 **Indata**
 

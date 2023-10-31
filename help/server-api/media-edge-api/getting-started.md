@@ -2,13 +2,13 @@
 solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+exl-id: 76022dea-408b-4d8e-abd4-1a6de81beceb
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '958'
 ht-degree: 1%
 
 ---
-
 
 # Komma igång med API för Media Edge
 
@@ -292,5 +292,3 @@ I följande tabell visas möjliga svarskoder från API-begäranden för Media Ed
 
 * [Felsökningsguide för Media Edge](troubleshooting.md)
 * [Översikt över API för Media Edge](overview.md)
-
-

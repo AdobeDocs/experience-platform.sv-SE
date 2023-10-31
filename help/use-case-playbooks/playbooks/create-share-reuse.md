@@ -3,13 +3,13 @@ solution: Experience Platform
 title: Skapa, dela och återanvända spelningsboksinstanser
 description: Lär dig hur du skapar, delar och återanvänder spelningsboksinstanser för att få fram ett marknadsföringsexempel.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: e61e200b148e4d17041b3711bd63c796a44b05c8
+exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
-
 
 # (Beta) Skapa, dela och återanvända spelningsboksinstanser
 
@@ -35,7 +35,7 @@ När du har skapat en instans baserad på en spelningsbok kan du anpassa den så
 
 ![Redigera namn och beskrivning för en instans.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-settings.gif)
 
-### Förstå genererade tillgångar {#understand-assets}
+### Förstå de genererade tillgångarna {#understand-assets}
 
 >[!IMPORTANT]
 >

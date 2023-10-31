@@ -1,15 +1,15 @@
 ---
 description: Lär dig hur du formaterar ett API-anrop för att skicka en begäran om målpublicering via Adobe Experience Platform Destination SDK.
-title: Skapa en publiceringsbegäran för mål
-source-git-commit: 8ec5d450d2856b9a12457e1b1b0b46baf930253a
+title: Skapa en publiceringsbegäran för destinationen
+exl-id: 913be9de-a699-4756-885d-b3761ec729cb
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
 
 ---
 
-
-# Skapa en publiceringsbegäran för mål
+# Skapa en publiceringsbegäran för destinationen
 
 >[!IMPORTANT]
 >
@@ -19,7 +19,7 @@ ht-degree: 1%
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destinations/publish`
 
-När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering. Läs [Skicka för granskning av ett mål som skapats i Destination SDK](../guides/submit-destination.md) för alla andra steg som du måste göra som en del av målöverföringsprocessen.
+När du har konfigurerat och testat destinationen kan du skicka den till Adobe för granskning och publicering. Läs [Skicka för granskning av ett mål som skapats i Destination SDK](../guides/submit-destination.md) för alla andra steg som du måste göra som en del av målinlämningsprocessen.
 
 Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbegäran när:
 
@@ -32,7 +32,7 @@ Använd API-slutpunkten för publiceringsmål för att skicka en publiceringsbeg
 
 ## Komma igång med API-åtgärder för målpublicering {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Skicka en målkonfiguration för publicering {#create}
 

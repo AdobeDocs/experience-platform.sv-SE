@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig autentiseringskonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en konfiguration för autentiseringsuppgifter
-source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
+exl-id: ebff370c-9189-48df-871f-ed0e1cd535c8
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '583'
 ht-degree: 4%
 
 ---
-
 
 # Uppdatera en konfiguration för autentiseringsuppgifter
 
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en befintlig autentiseringskonfiguration med hjälp av `/authoring/credentials` API-slutpunkt.
 
-## När ska du använda `/credentials` API-slutpunkt {#when-to-use}
+## När ska `/credentials` API-slutpunkt {#when-to-use}
 
 >[!IMPORTANT]
 >
@@ -35,7 +35,7 @@ När du använder ett globalt autentiseringssystem måste du ange `"authenticati
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Uppdatera en konfiguration för autentiseringsuppgifter {#update}
 
@@ -94,7 +94,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen av autentiseringsuppgifter.
+Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen för autentiseringsuppgifter.
 
 +++
 
@@ -131,7 +131,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen av autentiseringsuppgifter.
+Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen för autentiseringsuppgifter.
 
 +++
 
@@ -160,7 +160,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 | Parameter | Typ | Beskrivning |
 | -------- | ----------- | ----------- |
 | `username` | Sträng | Inloggningsanvändarnamn för konfiguration av autentiseringsuppgifter |
-| `sshKey` | Sträng | [!DNL SSH] nyckel för [!DNL SFTP] med [!DNL SSH] autentisering |
+| `sshKey` | Sträng | [!DNL SSH] tangent för [!DNL SFTP] med [!DNL SSH] autentisering |
 
 {style="table-layout:auto"}
 
@@ -168,7 +168,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen av autentiseringsuppgifter.
+Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen för autentiseringsuppgifter.
 
 +++
 
@@ -209,7 +209,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen av autentiseringsuppgifter.
+Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen för autentiseringsuppgifter.
 
 +++
 
@@ -244,7 +244,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 
 +++svar
 
-Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen av autentiseringsuppgifter.
+Ett lyckat svar returnerar HTTP-status 200 med information om den uppdaterade konfigurationen för autentiseringsuppgifter.
 
 +++
 

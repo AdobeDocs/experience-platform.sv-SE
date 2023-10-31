@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målserverkonfiguration
-source-git-commit: 03ec0e919304c9d46ef88d606eed9e12d1824856
+exl-id: 579d2cc1-5110-4fba-9dcc-ff4b8d259827
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1098'
 ht-degree: 8%
 
 ---
-
 
 # Uppdatera en målserverkonfiguration
 

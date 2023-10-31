@@ -1,13 +1,13 @@
 ---
 description: På den här sidan visas ett exempel på API-anropet som används för att hämta en autentiseringskonfiguration via Adobe Experience Platform Destination SDK.
 title: Hämta en konfiguration för autentiseringsuppgifter
-source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
+exl-id: cec55073-6e2f-4412-a9dd-1aeb445279c0
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '475'
 ht-degree: 0%
 
 ---
-
 
 # Hämta en konfiguration för autentiseringsuppgifter
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att hämta en autentiseringskonfiguration med `/authoring/credentials` API-slutpunkt.
 
-## När ska du använda `/credentials` API-slutpunkt {#when-to-use}
+## När ska `/credentials` API-slutpunkt {#when-to-use}
 
 >[!IMPORTANT]
 >
@@ -35,7 +35,7 @@ När du använder ett globalt autentiseringssystem måste du ange `"authenticati
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Hämta en konfiguration för autentiseringsuppgifter {#retrieve}
 

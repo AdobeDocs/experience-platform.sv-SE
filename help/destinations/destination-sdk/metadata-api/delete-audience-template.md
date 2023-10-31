@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på det API-anrop som används för att ta bort en befintlig målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Ta bort en målgruppsmall
-source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
+exl-id: 6eb07e3c-3269-4368-9b11-04bd993cc4ab
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '287'
 ht-degree: 1%
 
 ---
-
 
 # Ta bort en målgruppsmall
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att ta bort en målgruppsmall med hjälp av `/authoring/audience-templates` API-slutpunkt.
 
-En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målmetadata](../functionality/audience-metadata-management.md).
 
 >[!IMPORTANT]
 >
@@ -25,7 +25,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Ta bort en målgruppsmall {#delete}
 

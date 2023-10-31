@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att hämta en målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Hämta en målserverkonfiguration
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: 1b375343-e793-4c91-856f-af66fe71822e
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 1%
 
 ---
-
 
 # Hämta en målserverkonfiguration
 
@@ -26,7 +26,7 @@ En detaljerad beskrivning av de funktioner som används av målservrar finns i f
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Hämta en målserverkonfiguration {#retrieve}
 
@@ -225,7 +225,7 @@ Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna f�
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du hämtar en målserverkonfiguration via Destinationen SDK `/authoring/destination-servers` API-slutpunkt.
+När du har läst det här dokumentet kan du nu hämta en målserverkonfiguration via Destinationen SDK `/authoring/destination-servers` API-slutpunkt.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 

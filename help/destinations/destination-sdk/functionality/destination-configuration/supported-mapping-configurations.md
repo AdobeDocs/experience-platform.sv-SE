@@ -1,13 +1,13 @@
 ---
 description: Lär dig hur du konfigurerar målet för de identitets- och attributmappningskonfigurationer som stöds.
 title: Mappningskonfigurationer som stöds
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: a477a3f2-a229-4b22-8588-ee58bd5436c6
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '659'
 ht-degree: 0%
 
 ---
-
 
 # Mappningskonfigurationer som stöds
 

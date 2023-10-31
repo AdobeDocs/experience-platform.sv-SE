@@ -1,7 +1,8 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från augusti 2023 för Adobe Experience Platform.
-source-git-commit: 384faa13154386ef2578da4c20ab47f171aefeda
+exl-id: c67dca3a-eccb-427e-8ab3-b69c51b57938
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1724'
 ht-degree: 3%

@@ -4,7 +4,8 @@ description: Lär dig hur du skapar en källanslutning och ett dataflöde för a
 badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
-source-git-commit: 054175bd3f3aaab73c8cca249eaf1a9cdbc8deab
+exl-id: ed937689-e844-487e-85fb-e3536c851fe5
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '710'
 ht-degree: 0%
@@ -82,4 +83,3 @@ Mer information om roll- och behörighetshantering finns i [[!DNL Snowflake] API
 I följande självstudiekurs beskrivs hur du ansluter [!DNL Snowflake] direktuppspelningskälla till Experience Platform med API:
 
 * [Strömma data från en [!DNL Snowflake] databas till Experience Platform med API:t för Flow Service](../../tutorials/api/create/databases/snowflake-streaming.md)
-

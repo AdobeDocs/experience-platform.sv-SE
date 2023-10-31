@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på det API-anrop som används för att ta bort en befintlig målserverkonfiguration via Adobe Experience Platform Destination SDK.
 title: Ta bort en målserverkonfiguration
-source-git-commit: acb7075f49b4194c31371d2de63709eea7821329
+exl-id: 2322a2ce-220e-4590-a553-b15152412752
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '329'
 ht-degree: 1%
 
 ---
-
 
 # Ta bort en målserverkonfiguration
 
@@ -26,7 +26,7 @@ En detaljerad beskrivning av de funktioner som du kan ta bort via den här slutp
 
 ## Komma igång med API-åtgärder för målserver {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Ta bort en målserverkonfiguration {#delete}
 
@@ -36,7 +36,7 @@ Du kan ta bort en [befintlig](create-destination-server.md) målserverkonfigurat
 >
 >**API-slutpunkt**: `platform.adobe.io/data/core/activation/authoring/destination-servers`
 
-Så här hämtar du en befintlig målserverkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målserverkonfiguration](retrieve-destination-server.md).
+Hämta en befintlig målserverkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målserverkonfiguration](retrieve-destination-server.md).
 
 **API-format**
 
@@ -68,11 +68,10 @@ Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna f�
 
 ## Nästa steg {#next-steps}
 
-När du har läst det här dokumentet vet du nu hur du tar bort en befintlig målserver via Destinationen SDK `/authoring/destination-servers` API-slutpunkt.
+När du har läst det här dokumentet kan du nu ta bort en befintlig målserver via Destinationen SDK `/authoring/destination-servers` API-slutpunkt.
 
 Mer information om vad du kan göra med den här slutpunkten finns i följande artiklar:
 
 * [Skapa en målserverkonfiguration](create-destination-server.md)
 * [Hämta en målserverkonfiguration](retrieve-destination-server.md)
 * [Uppdatera en målserverkonfiguration](update-destination-server.md)
-

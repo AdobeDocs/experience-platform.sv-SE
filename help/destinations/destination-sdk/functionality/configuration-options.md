@@ -1,13 +1,13 @@
 ---
 description: Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten. Se hur dessa komponenter tillsammans gör det möjligt för Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
 title: Konfigurationsalternativ i Destinationen SDK
-source-git-commit: 3f31a54c0cf329d374808dacce3fac597a72aa11
+exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurationsalternativ i Destinationen SDK
 
@@ -28,8 +28,8 @@ Här anger du till exempel vilka API-slutpunkter på din sida som Experience Pla
 För filbaserade mål innehåller den här konfigurationen även de filformat och komprimeringsformat som stöds för destinationen. Du kan konfigurera funktionerna som beskrivs nedan via [slutpunkt för målservrar](../authoring-api/destination-server/create-destination-server.md).
 
 * [Serverspecifikationer](destination-server/server-specs.md): En konfigurationsmall som innehåller information om lagringsplatsen eller HTTP-slutpunkten dit data skickas.
-* [Mallspecifikationer](destination-server/templating-specs.md): I den här mallen kan du definiera hur HTTP API-begäran ska struktureras för slutpunkten, inklusive hur du omformar profilattributfält mellan XDM-schemat och det format som din plattform stöder. Använd den här informationen tillsammans med [meddelandeformat](destination-server/message-format.md) dokumentation.
-* [Meddelandeformat](destination-server/message-format.md): I det här avsnittet behandlas ingående information om vilka mallspråk som stöds, meddelandeformat och den information som krävs av Adobe för att konfigurera integreringen med din plattform. Använd den här informationen tillsammans med [mallspecifikationer](destination-server/templating-specs.md) dokumentation.
+* [Mallspecifikationer](destination-server/templating-specs.md): I den här mallen kan du definiera hur HTTP API-begäran ska struktureras för slutpunkten, inklusive hur du omformar profilattributfält mellan XDM-schemat och det format som din plattform stöder. Använd informationen tillsammans med [meddelandeformat](destination-server/message-format.md) dokumentation.
+* [Meddelandeformat](destination-server/message-format.md): I det här avsnittet beskrivs ingående information om vilka mallspråk, meddelandeformat och vilken information som Adobe behöver för att kunna konfigurera integreringen med din plattform. Använd informationen tillsammans med [mallspecifikationer](destination-server/templating-specs.md) dokumentation.
 * [Filspecifikationer](destination-server/file-formatting.md): En konfigurationsmall som innehåller filformatering och komprimeringsalternativ för gruppmålet.
 
 ## Målkonfiguration {#destination-configuration}
@@ -40,8 +40,8 @@ I dokumentationen nedan finns mer information om var och en av målkonfiguration
 
 * [Konfiguration av kundautentisering](destination-configuration/customer-authentication.md): Välj den autentiseringsmekanism som Experience Platform ska använda för att ansluta till ditt mål. Den här konfigurationen genererar [Konfigurera nytt mål](../../ui/connect-destination.md) i användargränssnittet i Experience Platform, där användare ansluter Experience Platform till konton som de har med ditt mål.
 * [OAuth2-autentisering](destination-configuration/oauth2-authentication.md): Läs om alla [!DNL OAuth2] autentiseringsflöden som stöds av Destinationen SDK och få instruktioner för att konfigurera [!DNL OAuth2] autentisering för ditt mål..
-* [Kunddatafält](destination-configuration/customer-data-fields.md): Lär dig hur du skapar indatafält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
-* [Gränssnittsattribut](destination-configuration/ui-attributes.md): Lär dig hur du konfigurerar gränssnittsattribut, t.ex. dokumentationslänken, målkortskategorin och målanslutningstypen och målfrekvensen, för mål som skapats med Destination SDK.
+* [Kunddatafält](destination-configuration/customer-data-fields.md): Lär dig hur du skapar inmatningsfält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
+* [Gränssnittsattribut](destination-configuration/ui-attributes.md): Lär dig hur du konfigurerar gränssnittsattributen, till exempel dokumentationslänken, målkortskategorin och målanslutningstypen och målfrekvensen, för mål som skapats med Destination SDK.
 * [Schemakonfiguration](destination-configuration/schema-configuration.md): Lär dig hur du definierar målschemat som användare kan mappa profilattribut och identiteter till.
 * [Konfiguration av namnutrymme för identitet](destination-configuration/identity-namespace-configuration.md): Lär dig hur du konfigurerar de identiteter som stöds av ditt mål. Den här konfigurationen fyller i mål-ID:n i [mappningssteg](../../ui/activate-segment-streaming-destinations.md#mapping) i användargränssnittet i Experience Platform, där användare mappar identiteter och attribut från sina XDM-scheman till schemat i målet.
 * [Destinationsleverans](destination-configuration/destination-delivery.md): Lär dig hur du konfigurerar exakt vart exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.

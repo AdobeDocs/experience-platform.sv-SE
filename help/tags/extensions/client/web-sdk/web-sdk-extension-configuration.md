@@ -1,13 +1,13 @@
 ---
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
-source-git-commit: ec0aa64c466a8228d49a776d27040253b5a1b196
+exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1400'
 ht-degree: 0%
 
 ---
-
 
 # Konfigurera SDK-taggtillägget för webben
 

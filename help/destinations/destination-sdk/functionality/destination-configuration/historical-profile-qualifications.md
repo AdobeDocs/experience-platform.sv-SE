@@ -1,19 +1,19 @@
 ---
 description: Lär dig mer om de historiska profilkvalifikationer som stöds av mål som skapats med Destination SDK.
 title: Krav på historisk profil
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+exl-id: 8880cff9-865b-4d45-a24d-a78e77419670
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 1%
 
 ---
 
-
 # Krav på historisk profil
 
 Alla destinationer som skapas via Destination SDK har som standard stöd för historiska profilkvalifikationer. Det innebär att när användarna först ställer in ett aktiveringsdataflöde för destinationerna innehåller den första exporten alla målgrupper som någonsin kvalificerat sig för det segmentet.
 
-Detta beteende definieras av `"backfillHistoricalProfileData":true` -parametern i målkonfigurationen.
+Det här beteendet definieras av `"backfillHistoricalProfileData":true` -parametern i målkonfigurationen.
 
 >[!IMPORTANT]
 >
@@ -23,7 +23,7 @@ Detta beteende definieras av `"backfillHistoricalProfileData":true` -parametern 
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |

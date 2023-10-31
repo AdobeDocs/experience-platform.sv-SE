@@ -2,7 +2,8 @@
 title: Anslut ditt RainFocus-konto till Experience Platform med hjälp av användargränssnittet
 description: Lär dig hur du ansluter ditt RainFocus-konto till Experience Platform med hjälp av användargränssnittet.
 badge: Beta
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+exl-id: a349e37e-9f2c-47ff-8360-ccbe578dce27
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '992'
 ht-degree: 0%

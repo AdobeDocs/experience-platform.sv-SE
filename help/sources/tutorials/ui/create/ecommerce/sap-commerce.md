@@ -2,7 +2,8 @@
 title: Skapa en källanslutning för SAP Commerce i användargränssnittet
 description: Lär dig hur du skapar en källanslutning för SAP Commerce med hjälp av Adobe Experience Platform-gränssnittet.
 badge: Beta
-source-git-commit: a848ea11e388678ade780fd81ef3ff6a3477b741
+exl-id: 6484e51c-77cd-4dbd-9c68-0a4e3372da33
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '989'
 ht-degree: 1%
@@ -249,4 +250,3 @@ Följande är ett exempel på mappningskonfigurationer för [!DNL SAP Commerce] 
 ![Mappningssteget för källarbetsflödet.](../../../../images/tutorials/create/ecommerce/sap-commerce/mapping-contacts.png)
 
 >[!ENDTABS]
-

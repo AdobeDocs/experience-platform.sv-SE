@@ -2,7 +2,8 @@
 title: Händelsevidarebefordringstillägg för Google Cloud-plattform
 description: Det här tillägget för vidarebefordran av Adobe Experience Platform-händelser skickar Edge Network-händelser till Google Cloud Platform.
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+exl-id: c5da1889-f917-42aa-b3a4-9557c31d6ee8
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 0%

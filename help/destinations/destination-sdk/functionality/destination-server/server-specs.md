@@ -1,20 +1,20 @@
 ---
 description: Lär dig hur du konfigurerar målserverspecifikationer i Adobe Experience Platform Destination SDK via slutpunkten "/authoring/destination-servers".
 title: Serverspecifikationer för mål som skapats med Destination SDK
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: 62202edb-a954-42ff-9772-863cea37a889
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '2750'
 ht-degree: 2%
 
 ---
 
-
 # Serverspecifikationer för mål som skapats med Destination SDK
 
 Målserverns specifikationer definierar vilken typ av målplattform som ska ta emot data från Adobe Experience Platform och kommunikationsparametrarna mellan plattformen och destinationen. Till exempel:
 
 * A [direktuppspelning](#streaming-example) målserverspecifikationen definierar HTTP-serverslutpunkten som tar emot HTTP-meddelanden från plattformen. Läs mer om hur du konfigurerar hur HTTP-anrop till slutpunkten formateras i [mallange specifikationer](templating-specs.md) sida.
-* An [Amazon S3](#s3-example) målserverspecifikationen definierar [!DNL S3] namn och sökväg där Plattform exporterar filerna.
+* An [Amazon S3](#s3-example) målserverns spec definierar [!DNL S3] namn och sökväg där Plattform exporterar filerna.
 * An [SFTP](#sftp-example) målserverspecifikationen definierar värdnamnet, rotkatalogen, kommunikationsporten och krypteringstypen för SFTP-servern där plattformen ska exportera filerna.
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se följande sidor med översikt över målkonfigurationen:
@@ -37,7 +37,7 @@ På den här sidan visas alla målservertyper som stöds av Destinationen SDK, m
 
 Se tabellen nedan för mer ingående information om vilka typer av integreringar som stöder de funktioner som beskrivs på den här sidan.
 
-| Integrationstyp | Funktioner |
+| Integrationstyp | Stöder funktioner |
 |---|---|
 | Integrering i realtid (direktuppspelning) | Ja |
 | Filbaserade (batch) integreringar | Ja |
@@ -53,7 +53,7 @@ Målserverparametrar har två konfigurerbara fält. Dessa alternativ avgör om d
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `templatingStrategy` | Sträng | *Obligatoriskt.* Definierar om det finns ett hårdkodat värde via `value` eller ett användarkonfigurerbart värde i användargränssnittet. Värden som stöds: <ul><li>`NONE`: Använd det här värdet när du hårdkodar parametervärdet via `value` parameter (se nästa rad). Exempel:`"value": "my-storage-bucket"`.</li><li>`PEBBLE_V1`: Använd det här värdet när du vill att användarna ska ange ett parametervärde i användargränssnittet. Exempel: `"value": "{{customerData.bucket}}"`. </li></ul> |
-| `value` | Sträng | *Obligatoriskt*. Definierar parametervärdet. Värdetyper som stöds: <ul><li>**Hårdkodat värde**: Använd ett hårdkodat värde (till exempel `"value": "my-storage-bucket"`) när du inte behöver att användarna anger ett parametervärde i användargränssnittet. När du hårdkodar ett värde `templatingStrategy` ska alltid anges till `NONE`.</li><li>**Mallvärde**: Använd ett mallsidigt värde (till exempel `"value": "{{customerData.bucket}}"`) när du vill att användarna ska ange ett parametervärde i användargränssnittet. När du använder mallsidesvärden `templatingStrategy` ska alltid anges till `PEBBLE_V1`.</li></ul> |
+| `value` | Sträng | *Obligatoriskt*. Definierar parametervärdet. Värdetyper som stöds: <ul><li>**Hårdkodat värde**: Använd ett hårdkodat värde (till exempel `"value": "my-storage-bucket"`) när du inte behöver att användarna anger ett parametervärde i användargränssnittet. När du hårdkodar ett värde `templatingStrategy` ska alltid anges till `NONE`.</li><li>**Mallvärde**: Använd ett mallbaserat värde (till exempel `"value": "{{customerData.bucket}}"`) när du vill att användarna ska ange ett parametervärde i användargränssnittet. När du använder mallsidesvärden `templatingStrategy` ska alltid anges till `PEBBLE_V1`.</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -106,7 +106,7 @@ I exemplet nedan skapar en partner en [realtid (direktuppspelning)](#streaming-e
 }
 ```
 
-Om du vill att användarna ska kunna välja ett värde i användargränssnittet för plattformen väljer du `region` -parametern måste också definieras i [målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) som ett kunddatafält, vilket visas nedan:
+Om du vill att användarna ska kunna välja ett värde i användargränssnittet för plattformen väljer du `region` -parametern måste också definieras i [destinationskonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md) som ett kunddatafält, vilket visas nedan:
 
 ```json
 "customerDataFields":[
@@ -152,7 +152,7 @@ I exemplet nedan visas ett exempel på en målserverkonfiguration för ett mål 
 | Parameter | Typ | Beskrivning |
 |---|---|---|
 | `name` | Sträng | *Obligatoriskt.* Representerar ett eget namn på servern som bara visas för Adobe. Detta namn är inte synligt för partners eller kunder. Exempel: `Moviestar destination server`. |
-| `destinationServerType` | Sträng | *Obligatoriskt.* Ange detta till `URL_BASED` för direktuppspelningsmål. |
+| `destinationServerType` | Sträng | *Obligatoriskt.* Ställ in den här till `URL_BASED` för direktuppspelningsmål. |
 | `templatingStrategy` | Sträng | *Obligatoriskt.* <ul><li>Använd `PEBBLE_V1` om du använder ett mallbaserat fält i stället för ett hårdkodat värde i `value` fält. Använd det här alternativet om du har en slutpunkt som: `https://api.moviestar.com/data/{{customerData.region}}/items`, där användarna måste välja slutpunktsområdet i plattformsgränssnittet. </li><li> Använd `NONE` om ingen mallad omformning behövs på Adobe-sidan, till exempel om du har en slutpunkt som: `https://api.moviestar.com/data/items` </li></ul> |
 | `value` | Sträng | *Obligatoriskt.* Fyll i adressen till API-slutpunkten som Experience Platform ska ansluta till. |
 
@@ -221,7 +221,7 @@ Exemplet nedan visar ett exempel på en målserverkonfiguration för ett SFTP-m�
 |---|---|---|
 | `name` | Sträng | Namnet på målservern. |
 | `destinationServerType` | Sträng | Ange det här värdet enligt målplattformen. Exportera filer till en [!DNL SFTP] mål, ange detta till `FILE_BASED_SFTP`. |
-| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `rootDirectory.value` fält.<ul><li>Om du vill att användarna ska ange sin egen rotkatalogsökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `rootDirectory.value` fält för att läsa ett användardefinierat värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad rotkatalogsökväg för din integrering, till exempel `"rootDirectory.value":"Storage/MyDirectory"`och ange det här värdet till `NONE`.</li></ul> |
+| `fileBasedSFTPDestination.rootDirectory.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `rootDirectory.value` fält.<ul><li>Om du vill att dina användare ska ange sin egen rotkatalogsökväg i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `rootDirectory.value` fält för att läsa ett användardefinierat värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder en hårdkodad rotkatalogsökväg för din integrering, till exempel `"rootDirectory.value":"Storage/MyDirectory"`och ange det här värdet till `NONE`.</li></ul> |
 | `fileBasedSFTPDestination.rootDirectory.value` | Sträng | Sökvägen till den katalog som ska vara värd för de exporterade filerna. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"value":"Storage/MyDirectory"` |
 | `fileBasedSFTPDestination.hostName.templatingStrategy` | Sträng | *Obligatoriskt*. Ange det här värdet enligt den typ av värde som används i `hostName.value` fält.<ul><li>Om du vill att dina användare ska ange sitt eget värdnamn i användargränssnittet för Experience Platform anger du det här värdet till `PEBBLE_V1`. I det här fallet måste du mallsialisera `hostName.value` fält för att läsa ett användardefinierat värde från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren. Det här användningsexemplet visas i exemplet ovan.</li><li>Om du använder ett hårdkodat värdnamn för din integrering, till exempel `"hostName.value":"my.hostname.com"`och ange det här värdet till `NONE`.</li></ul> |
 | `fileBasedSFTPDestination.hostName.value` | Sträng | Värdnamnet för SFTP-servern. Detta kan antingen vara ett mallbaserat fält som läser värdet från [kunddatafält](../destination-configuration/customer-data-fields.md) ifylld av användaren (som i exemplet ovan) eller ett hårdkodat värde, som `"hostName.value":"my.hostname.com"`. |

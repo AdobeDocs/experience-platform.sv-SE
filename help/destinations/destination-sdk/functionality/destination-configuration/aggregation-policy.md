@@ -1,13 +1,13 @@
 ---
 description: Lär dig hur du ställer in en aggregeringsprincip för att bestämma hur HTTP-begäranden till ditt mål ska grupperas och grupperas.
 title: Samlingsprincip
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+exl-id: 2dfa8815-2d69-4a22-8938-8ea41be8b9c5
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '995'
 ht-degree: 1%
 
 ---
-
 
 # Samlingsprincip
 

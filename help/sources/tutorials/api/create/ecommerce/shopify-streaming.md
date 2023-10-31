@@ -2,8 +2,8 @@
 title: Skapa en direktuppspelad källanslutning och ett dataflöde för att förminska data med API:t för flödestjänsten
 description: Lär dig hur du skapar en direktuppspelad källanslutning och ett dataflöde för att förminska data med API:t för Flow Service.
 badge: Beta
-exl-id: d44414a1-48fb-41e2-8cec-23cad867ba7d
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+exl-id: 74660e27-49c0-415f-bd85-15f9d853daee
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->The [!DNL Shopify] strömningskällan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>The [!DNL Shopify] direktuppspelningskällan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 I följande självstudie beskrivs hur du skapar en direktuppspelande källanslutning och ett dataflöde för att direktuppspela data från [[!DNL Shopify]](https://www.shopify.com/) till Adobe Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -22,7 +22,7 @@ I följande självstudie beskrivs hur du skapar en direktuppspelande källanslut
 
 Handboken kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
-* [Källor](../../../../home.md): Experience Platform tillåter att data hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Källor](../../../../home.md): Experience Platform tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Använda plattforms-API:er
@@ -73,7 +73,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ta med för att ange mer information om din källanslutning. |
-| `connectionSpec.id` | Det ID för anslutningsspecifikation som motsvarar källan. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar källan. |
 | `data.format` | Formatet på [!DNL Shopify] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
 
 **Svar**
@@ -97,7 +97,7 @@ Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudie
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
 Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../../catalog/api/create-dataset.md).
 
@@ -105,7 +105,7 @@ Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självs
 
 En målanslutning representerar anslutningen till målet där inmatade data ska lagras. Om du vill skapa en målanslutning måste du ange det fasta anslutningsspecifikations-ID som motsvarar datasjön. Detta ID är: `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-Du har nu unika identifierare, ett målschema, en måldatamängd och anslutningsspecifikations-ID till datasjön. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
+Du har nu unika identifierare, ett målschema, en måldatamängd och anslutningsspecifikations-ID:t till datasjön. Med dessa identifierare kan du skapa en målanslutning med [!DNL Flow Service] API för att ange den datauppsättning som ska innehålla inkommande källdata.
 
 **API-format**
 
@@ -210,7 +210,7 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdmSchema` | ID för [mål-XDM-schema](#target-schema) som genererats i ett tidigare steg. |
+| `xdmSchema` | ID:t för [mål-XDM-schema](#target-schema) som har genererats i ett tidigare steg. |
 | `mappings.destinationXdmPath` | Mål-XDM-sökvägen dit källattributet mappas. |
 | `mappings.sourceAttribute` | Källattributet som måste mappas till en mål-XDM-sökväg. |
 | `mappings.identity` | Ett booleskt värde som anger om mappningsuppsättningen ska markeras för [!DNL Identity Service]. |
@@ -286,11 +286,11 @@ curl -X POST \
 | `description` | Ett valfritt värde som du kan inkludera för att få mer information om dataflödet. |
 | `flowSpec.id` | Det ID för flödesspecifikation som krävs för att skapa ett dataflöde. Detta fasta ID är: `e77fde5a-22a8-11ed-861d-0242ac120002`. |
 | `flowSpec.version` | Motsvarande version av flödesspecifikations-ID. Standardvärdet är `1.0`. |
-| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som genererats i ett tidigare steg. |
-| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som genererats i ett tidigare steg. |
+| `sourceConnectionIds` | The [källanslutnings-ID](#source-connection) som har genererats i ett tidigare steg. |
+| `targetConnectionIds` | The [målanslutnings-ID](#target-connection) som har genererats i ett tidigare steg. |
 | `transformations` | Den här egenskapen innehåller de olika omformningar som behövs för att dina data ska kunna användas. Den här egenskapen krävs när data som inte är XDM-kompatibla skickas till plattformen. |
 | `transformations.name` | Det namn som tilldelats omformningen. |
-| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som genererats i ett tidigare steg. |
+| `transformations.params.mappingId` | The [mappnings-ID](#mapping) som har genererats i ett tidigare steg. |
 | `transformations.params.mappingVersion` | Motsvarande version av mappnings-ID. Standardvärdet är `0`. |
 
 **Svar**
@@ -663,7 +663,7 @@ Uppdatera information om dataflödet, t.ex. namn och beskrivning, samt körnings
 
 ### Uppdatera ditt konto
 
-Uppdatera namn, beskrivning och autentiseringsuppgifter för källkontot genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
+Uppdatera namn, beskrivning och autentiseringsuppgifter för ditt källkonto genom att utföra en PATCH-begäran till [!DNL Flow Service] API när du anger ditt grundläggande anslutnings-ID som en frågeparameter. När du gör en PATCH-begäran måste du ange källkontots unika `etag` i `If-Match` header. Fullständiga API-exempel finns i guiden [uppdatera ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/update.html).
 
 ### Ta bort ditt dataflöde
 
@@ -671,4 +671,4 @@ Ta bort dataflödet genom att göra en DELETE-förfrågan till [!DNL Flow Servic
 
 ### Ta bort ditt konto
 
-Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger basanslutnings-ID för det konto du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).
+Ta bort ditt konto genom att göra en DELETE-förfrågan till [!DNL Flow Service] API när du anger det grundläggande anslutnings-ID:t för kontot som du vill ta bort. Fullständiga API-exempel finns i guiden [ta bort ditt källkonto med API](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/delete.html).

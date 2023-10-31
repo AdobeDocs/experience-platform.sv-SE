@@ -1,7 +1,8 @@
 ---
 title: Textbundna mallar
 description: Lär dig återanvända flera villkor i flera frågor med infogade mallar.
-source-git-commit: e9deabe1e0514f44be085e558fd2fdbf54956f3e
+exl-id: 78959070-f9e5-4736-b72a-a8ef518bfa4f
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 1%
@@ -16,11 +17,11 @@ Det här dokumentet innehåller information om användning och begränsningar f�
 
 ## Förutsättningar
 
-Textbundna mallar stöds både av API:t för användargränssnittet och frågetjänsten. Läs dokumentationen om hur du gör innan du fortsätter med den här guiden [skapa en frågemall via API](../api/query-templates.md#create-a-query-template) eller med [Frågeredigeraren](../ui/user-guide.md#query-authoring).
+Textbundna mallar stöds både av API:t för användargränssnittet och frågetjänsten. Innan du fortsätter med den här guiden ska du läsa dokumentationen om hur du [skapa en frågemall via API](../api/query-templates.md#create-a-query-template) eller med [Frågeredigeraren](../ui/user-guide.md#query-authoring).
 
 ## Syntax för infogad mall {#syntax}
 
-När en fråga har sparats kallas den en mall. När mallen refererar till en annan mall i programsatsen kallas den för en infogad mall. Textbundna mallar anges i SQL med hash-symbolen (#) följt av mallnamnet. Ett exempel på den här syntaxen är `#YOUR_TEMPLATE_NAME`.
+När en fråga har sparats kallas den en mall. När mallen refererar till en annan mall i programsatsen kallas den för en infogad mall. Textbundna mallar anges i SQL med hash-symbolen (#) följt av mallnamnet. Ett exempel på denna syntax är `#YOUR_TEMPLATE_NAME`.
 
 ## Användningsfall {#use-case}
 
@@ -37,13 +38,13 @@ När frågan körs ersätter frågetjänsten mallnamnet med början från hash-s
 
 >[!NOTE]
 >
->Frågemallar kan anropa valfritt antal andra infogade mallar. Det finns ingen begränsning för hur många infogade mallar du kan anropa från en fråga. Mallar kan också kapslas i andra infogade mallar.
+>Frågemallar kan anropa valfritt antal andra infogade mallar. Det finns ingen begränsning för hur många infogade mallar du kan anropa från en enstaka fråga. Mallar kan också kapslas i andra infogade mallar.
 
-Du kan använda mallar för att lagra ett eller flera villkor. De behöver inte vara en komplett fråga själva. Om mallen innehåller en giltig fråga kan du köra frågan genom att anropa mallnamnet som föregås av en hash-symbol. Om du till exempel lagrade `SELECT * FROM JUNE_2023_LOYALTY_MEMBERS;` som en mall med namnet `JUNE_2023_LOYALTY_MEMBERS`, kommandot  `#JUNE_2023_LOYALTY_MEMBERS;` skulle köra den giltiga fråga som finns i mallen.
+Du kan använda mallar för att lagra ett eller flera villkor. De behöver inte vara en komplett fråga själva. Om mallen innehåller en giltig fråga kan du köra frågan genom att anropa mallnamnet som föregås av en hash-symbol. Om du till exempel lagrade `SELECT * FROM JUNE_2023_LOYALTY_MEMBERS;` som en mall `JUNE_2023_LOYALTY_MEMBERS`, kommandot  `#JUNE_2023_LOYALTY_MEMBERS;` skulle köra den giltiga fråga som finns i mallen.
 
 >
 >
->I Adobe Experience Platform-gränssnittet stöds textbundna mallar i form av parametriserade frågor bara på överordnad nivå. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Den underordnade mallen måste vara en statisk mall och kan inte ha dynamiska parametrar. Se [parametriserad frågedokumentation](../ui/parameterized-queries.md) om du vill veta mer.
+>I Adobe Experience Platform-användargränssnittet stöds textbundna mallar i form av parametriserade frågor bara på överordnad nivå. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Den underordnade mallen måste vara en statisk mall och kan inte ha dynamiska parametrar. Se [parametriserad frågedokumentation](../ui/parameterized-queries.md) om du vill veta mer.
 
 ## Nästa steg
 

@@ -1,13 +1,13 @@
 ---
 description: På den här sidan visas ett exempel på API-anropet som används för att ta bort en Adobe Experience Platform Destination SDK för konfiguration av autentiseringsuppgifter.
 title: Ta bort en autentiseringskonfiguration
-source-git-commit: 9e1ae44f83b886f0b5dd5a9fc9cd9b7db6154ff0
+exl-id: a540e349-043c-4f04-8ca8-f650b9943492
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '395'
 ht-degree: 0%
 
 ---
-
 
 # Ta bort en autentiseringskonfiguration
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att ta bort en autentiseringskonfiguration med hjälp av `/authoring/credentials` API-slutpunkt.
 
-## När ska du använda `/credentials` API-slutpunkt {#when-to-use}
+## När ska `/credentials` API-slutpunkt {#when-to-use}
 
 >[!IMPORTANT]
 >
@@ -35,13 +35,13 @@ När du använder ett globalt autentiseringssystem måste du ange `"authenticati
 
 ## Komma igång med API-åtgärder för autentiseringsuppgifter {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Ta bort en autentiseringskonfiguration {#delete}
 
 Du kan ta bort en [befintlig](create-credential-configuration.md) konfiguration av autentiseringsuppgifter genom att göra en `DELETE` begäran till `/authoring/credentials` slutpunkt med `{INSTANCE_ID}`av den autentiseringskonfiguration som du vill ta bort.
 
-Så här hämtar du en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en autentiseringskonfiguration](retrieve-credential-configuration.md).
+Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en autentiseringskonfiguration](retrieve-credential-configuration.md).
 
 **API-format**
 

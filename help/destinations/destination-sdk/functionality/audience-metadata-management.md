@@ -1,13 +1,13 @@
 ---
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '1037'
 ht-degree: 0%
 
 ---
-
 
 # Hantering av målgruppsmetadata
 
@@ -37,7 +37,7 @@ Om målgrupper och andra metadata måste skapas manuellt av partners eller anvä
 
 ![ID för indatamappning](../assets/functionality/input-mapping-id.png)
 
-### Använd fall 3 - Målet godkänner målgrupps-ID för Experience Platform, användarna behöver inte ange något ID för manuell indatamappning
+### Använd fall 3 - Målet godkänner målgrupps-ID för Experience Platform, användarna behöver inte ange något ID för manuell inmatning
 
 Om målgrupps-ID:t accepteras i målgruppssystemet kan du konfigurera det i din målgruppsmetadatamall. Användarna behöver inte fylla i ett målgruppsmappnings-ID när de aktiverar ett segment.
 
@@ -45,11 +45,11 @@ Om målgrupps-ID:t accepteras i målgruppssystemet kan du konfigurera det i din 
 
 För att stödja de användningsfall som listas ovan tillhandahåller Adobe en allmän mall som kan anpassas efter dina API-specifikationer.
 
-Du kan använda den generiska mallen för att [skapa en ny målgruppsmall](../metadata-api/create-audience-template.md) om ditt API stöder:
+Du kan använda den allmänna mallen för att [skapa en ny målgruppsmall](../metadata-api/create-audience-template.md) om ditt API stöder:
 
 * HTTP-metoderna: POST, GET, PUT, DELETE, PATCH
-* Autentiseringstyper: OAuth 1, OAuth 2 med uppdateringstoken, OAuth 2 med bearer-token
-* Funktionerna: skapa en målgrupp, uppdatera en målgrupp, få en målgrupp, ta bort en målgrupp, validera inloggningsuppgifterna
+* Autentiseringstyperna: OAuth 1, OAuth 2 med uppdateringstoken, OAuth 2 med bearer-token
+* Funktionerna: skapa en målgrupp, uppdatera en målgrupp, hämta en målgrupp, ta bort en målgrupp, validera inloggningsuppgifterna
 
 Teknikteamet på Adobe kan samarbeta med dig för att utöka den generiska mallen med anpassade fält om det behövs för dina användningsfall.
 
@@ -65,7 +65,7 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
 | `update` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, headers, request och response body) för att göra ett HTTP-anrop till ditt API, för att programmässigt uppdatera segment/målgrupper på din plattform och synkronisera informationen tillbaka till Adobe Experience Platform. |
 | `delete` | Innehåller alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att programmässigt ta bort segment/målgrupper på din plattform. |
 | `validate` | Kör valideringar för fält i mallkonfigurationen innan du anropar partner-API:t. Du kan till exempel validera att användarens konto-ID är korrekt angivet. |
-| `notify` | Gäller endast filbaserade mål. Inkluderar alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att meddela dig om filexporter lyckades. |
+| `notify` | Gäller endast för filbaserade mål. Inkluderar alla nödvändiga komponenter (URL, HTTP-metod, rubriker, begärande och svarstext) för att göra ett HTTP-anrop till ditt API, för att meddela dig om filexporter lyckades. |
 
 {style="table-layout:auto"}
 
@@ -178,7 +178,7 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
 }
 ```
 
-### Exempel på direktuppspelning 2 {#example-2}
+### Exempel på strömning 2 {#example-2}
 
 ```json
 {

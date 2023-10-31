@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 358daa9511f647749a8198893b712d00a5cfbc5d
 workflow-type: tm+mt
-source-wordcount: '2174'
+source-wordcount: '2360'
 ht-degree: 0%
 
 ---
@@ -264,33 +264,53 @@ The [!UICONTROL Review] visas så att du kan granska det nya Analytics-dataflöd
 
 ![recension](../../../../images/tutorials/create/analytics/review.png)
 
-### Övervaka dataflödet
+## Övervaka dataflödet {#monitor-your-dataflow}
 
-När dataflödet har skapats kan du övervaka de data som hämtas genom det. Från [!UICONTROL Catalog] skärm, välja **[!UICONTROL Dataflows]** för att visa en lista över etablerade flöden som är kopplade till ditt Analytics-konto.
+När dataflödet är klart väljer du **[!UICONTROL Dataflows]** i källkatalogen för att övervaka aktiviteten och statusen för dina data.
 
-![select-dataflows](../../../../images/tutorials/create/analytics/select-dataflows.png)
+![Källkatalogen med fliken Dataflöden markerad.](../../../../images/tutorials/create/analytics/select-dataflows.png)
 
-The **Dataflöden** visas. På den här sidan finns ett par datauppsättningsflöden, inklusive information om namn, källdata, skapandetid och status.
+En lista över befintliga Analytics-dataflöden i organisationen visas. Här väljer du en måldatauppsättning för att visa dess respektive inmatningsaktivitet.
 
-Kopplingen instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Backfill-data är inte konfigurerade för profil, men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
+![En lista över befintliga Adobe Analytics-dataflöden i din organisation.](../../../../images/tutorials/create/analytics/select-target-dataset.png)
 
-Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i [Analytics Data Connector - översikt](../../../../connectors/adobe-applications/analytics.md).
+The [!UICONTROL Dataset activity] På sidan finns information om hur data som skickas från Analytics till Experience Platform utvecklas. Gränssnittet visar mätvärden som antal importerade poster, antal inkapslade batchar och antal misslyckade batchar.
 
-Välj det datauppsättningsflöde du vill visa i listan.
+Källan instansierar två datauppsättningsflöden. Det ena flödet representerar data för bakåtfyllnad och det andra för livedata. Bakgrundsfyllningsdata är inte konfigurerade för konsumtion i realtid men skickas till datasjön för analytiska och datavetenskapliga användningsfall.
 
-![select-target-dataset](../../../../images/tutorials/create/analytics/select-target-dataset.png)
+Mer information om bakåtfyllnad, livedata och deras respektive latenser finns i [Översikt över Analytics-källa](../../../../connectors/adobe-applications/analytics.md).
 
-The **[!UICONTROL Dataset activity]** visas. På den här sidan visas hur många meddelanden som används i form av ett diagram. Välj **[!UICONTROL Data governance]** från den övre rubriken för att komma åt etikettfälten.
+![Datamängdsaktivitetssidan för en angiven måldatamängd för Adobe Analytics-data.](../../../../images/tutorials/create/analytics/dataset-activity.png)
 
-![datauppsättningsaktivitet](../../../../images/tutorials/create/analytics/dataset-activity.png)
++++Visa enskilda batchar med det äldre övervakningsgränssnittet
 
-Du kan visa ett datauppsättningsflödes ärvda etiketter från [!UICONTROL Data governance] skärm. Mer information om etikettering av data från Analytics finns på [etikettguide för dataanvändning](../../../../../data-governance/labels/user-guide.md).
+Aktivitetssidan för datauppsättningen visar ingen lista över enskilda grupper. Om du vill visa en lista med enskilda grupper väljer du ett diagram i aktivitetsgränssnittet för datauppsättningen.
 
-![data-gov](../../../../images/tutorials/create/analytics/data-gov.png)
+![Datamängdsaktivitetssidan med ett diagram valt.](../../../../images/tutorials/create/analytics/select-chart.png)
 
-Om du vill ta bort ett dataflöde går du till [!UICONTROL Dataflows] och sedan markera ellipserna (`...`) bredvid dataflödets namn och välj [!UICONTROL Delete].
+Du dirigeras till kontrollpanelen Övervakning. Nästa, välj **[!UICONTROL ONLY INGEST FAILURES: YES]** för att rensa filtret och visa en lista över enskilda batchar.
 
-![delete](../../../../images/tutorials/create/analytics/delete.png)
+![Kontrollpanelen med felfiltret valt.](../../../../images/tutorials/create/analytics/clear-filter.png)
+
+Gränssnittet uppdateras till en lista över enskilda grupper, inklusive information om deras respektive mätvärden.
+
+![Den äldre övervakningssidan för batchdata.](../../../../images/tutorials/create/analytics/batch-end-to-end.png)
+
+| Mätvärden | Beskrivning |
+| --- | --- |
+| Batch-ID | ID:t för en angiven batch. Det här värdet genereras internt. |
+| Namn på datauppsättning | Namnet på en given datauppsättning som används för Analytics-data. |
+| Källa | Källan till inkapslade data. |
+| Uppdaterat | Datumet för den senaste flödeskörningen. |
+| Poster i datauppsättning | Det totala antalet poster i datauppsättningen. **Anteckning**: Den här parametern visas ibland med statusen `in-progress`. Den här statusen anger att processen för postinmatning inte har slutförts än. |
+| Nya profilfragment | Det totala antalet nya profilfragment som har importerats. |
+| Befintliga profilfragment | Det totala antalet befintliga profilfragment. |
+| Sammanfogade identitetsposter | Det totala antalet identitetsposter som sammanfogats efter intag. |
+| Poster i profil | Det totala antalet poster som har importerats till kundprofilen i realtid. |
+
+{style="table-layout:auto"}
+
++++
 
 ## Nästa steg och ytterligare resurser
 

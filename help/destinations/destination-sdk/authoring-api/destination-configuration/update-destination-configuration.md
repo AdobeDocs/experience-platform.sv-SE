@@ -1,13 +1,13 @@
 ---
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målkonfiguration
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: d7f18689-9806-4f73-a63a-fa112569819c
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 0%
 
 ---
-
 
 # Uppdatera en målkonfiguration
 
@@ -38,7 +38,7 @@ En detaljerad beskrivning av funktionerna i en målkonfiguration finns i följan
 
 ## Komma igång med API-åtgärder för målkonfiguration {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Uppdatera en målkonfiguration {#update}
 
@@ -48,7 +48,7 @@ Du kan uppdatera en [befintlig](create-destination-configuration.md) målkonfigu
 >
 >API-slutpunkt: `platform.adobe.io/data/core/activation/authoring/destinations`
 
-Så här hämtar du en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målkonfiguration](retrieve-destination-configuration.md).
+Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se artikeln om [hämta en målkonfiguration](retrieve-destination-configuration.md).
 
 **API-format**
 
@@ -58,11 +58,11 @@ PUT /authoring/destinations/{INSTANCE_ID}
 
 | Parameter | Beskrivning |
 | -------- | ----------- |
-| `{INSTANCE_ID}` | ID:t för målkonfigurationen som du vill uppdatera. Så här hämtar du en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se [Hämta en målkonfiguration](retrieve-destination-configuration.md). |
+| `{INSTANCE_ID}` | ID:t för målkonfigurationen som du vill uppdatera. Hämta en befintlig målkonfiguration och dess motsvarande `{INSTANCE_ID}`, se [Hämta en målkonfiguration](retrieve-destination-configuration.md). |
 
 +++Begäran
 
-Följande begäran uppdaterar målet som vi skapade i [det här exemplet](create-destination-configuration.md#create) med olika `filenameConfig` alternativ.
+Följande begäran uppdaterar målet som vi skapade i [detta exempel](create-destination-configuration.md#create) med olika `filenameConfig` alternativ.
 
 ```shell {line-numbers="true" highlight="115-128"}
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations/{INSTANCE_ID} \

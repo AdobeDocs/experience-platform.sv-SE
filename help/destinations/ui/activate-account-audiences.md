@@ -5,9 +5,9 @@ description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Caution"
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: bf4a34a0fbf59571eaea3ccbc619f9fe17d5c218
+source-git-commit: 0a572c5fe612b8e0cc866b4e2287ea53a4022b1a
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '785'
 ht-degree: 0%
 
 ---
@@ -90,11 +90,11 @@ När kontomålgrupper aktiveras för **[!UICONTROL (Companies) LinkedIn Matched 
 | Källfält | Målfält |
 |---------|----------|
 | `accountName` | `companyName` |
-| `accountKey.sourceKey` | `primaryId` (välj det här fältet i dialogrutan **[!UICONTROL Select Identity namespace]** vy) |
+| `accountKey.sourceKey` | `primaryId` (välj det här fältet i dialogrutan **[!UICONTROL Select Identity namespace]** vyn, när du väljer **[!UICONTROL Target Field]**). <br> ![Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper för konton till mål.](/help/destinations/assets/ui/activate-account-audiences/identity-namespace-highlighted.png "Markera identitetsnamnområdet som är markerat i arbetsflödet för att aktivera målgrupper för konton till mål."){width="100" zoomable="yes"} |
 
 ### Tillämpning av datastyrning {#data-governance-enforcement}
 
-[Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte vid aktivering av kontomålgrupper till mål. I granskningssteget i aktiveringsarbetsflödet ser du en nedtonad kontroll för **[!UICONTROL View applicable consent policies]**.
+Godkännandet används på person- eller profilnivå för *målgrupper för kunder och potentiella kunder*. Därför bör  [utvärdering av godkännandepolicy](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte vid aktivering av kontomålgrupper till mål. I granskningssteget i aktiveringsarbetsflödet ser du en nedtonad kontroll för **[!UICONTROL View applicable consent policies]**.
 
 ![Granska steg i arbetsflödet för aktivering av målgrupper för konton med den obligatoriska kontrollen nedtonad.](/help/destinations/assets/ui/activate-account-audiences/consent-checks-greyed-out.png)
 

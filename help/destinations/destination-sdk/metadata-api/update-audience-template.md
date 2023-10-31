@@ -1,13 +1,13 @@
 ---
 description: Den här sidan är ett exempel på det API-anrop som används för att uppdatera en målgruppsmall via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målgruppsmall
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+exl-id: 8185a015-256d-46a7-af33-8475832fb6c1
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '319'
 ht-degree: 0%
 
 ---
-
 
 # Uppdatera en målgruppsmall
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Den här sidan innehåller exempel på API-begäran och nyttolast som du kan använda för att uppdatera en målgruppsmall med hjälp av `/authoring/audience-templates` API-slutpunkt.
 
-En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målgruppsmetadata](../functionality/audience-metadata-management.md).
+En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i [hantering av målmetadata](../functionality/audience-metadata-management.md).
 
 >[!IMPORTANT]
 >
@@ -25,7 +25,7 @@ En detaljerad beskrivning av de funktioner som du kan konfigurera via den här s
 
 ## Komma igång med API-åtgärder för målgruppsmallar {#get-started}
 
-Läs igenom [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Uppdatera en målgruppsmall {#create}
 

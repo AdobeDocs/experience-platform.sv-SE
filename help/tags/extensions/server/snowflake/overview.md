@@ -2,7 +2,8 @@
 title: Översikt över Snowflake
 description: Läs mer om hur du vidarebefordrar händelser i Snowflake i Adobe Experience Platform.
 last-substantial-update: 2023-06-21T00:00:00Z
-source-git-commit: fe28840fab46fadb82f1a37f972084057a00af44
+exl-id: abddf0c4-3d4c-4f66-a6e0-c10b54ea3430
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '330'
 ht-degree: 0%
@@ -11,7 +12,7 @@ ht-degree: 0%
 
 # [!DNL Snowflake] översikt
 
-[[!DNL Snowflake]](https://www.snowflake.com/en/) är ett molnbaserat data warehouse som kan lagra och analysera alla dina dataposter på ett och samma ställe. Den kan användas för datalagerhantering, datalager, datateknik, datavetenskap, dataapplikationsutveckling samt säker delning och användning av realtidsdata eller delade data.
+[[!DNL Snowflake]](https://www.snowflake.com/en/) är ett molndatalager som kan lagra och analysera alla dina dataposter på ett och samma ställe. Den kan användas för datalagerhantering, datalager, datateknik, datavetenskap, dataapplikationsutveckling samt säker delning och användning av realtidsdata eller delade data.
 
 [!DNL Snowflake] är byggd ovanpå Amazon Web Services (AWS), Microsoft Azure (Azure) och Google Cloud Platform (GCP).
 
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 Ett Snowflake-konto kan finnas på någon av följande molnplattformar:
 
-- [Amazon Web Services ([!DNL AWS])](https://aws.amazon.com/) - [!DNL AWS] är en plattform för cloud computing som erbjuder ett brett utbud av tjänster som distribuerad datorhantering, databaslagring, innehållsleverans och SaaS-integrationstjänster (Software-as-a-service) för kundrelationshantering (CRM) och resursplanering (ERP) för företag.
+- [AMAZON WEB SERVICES ([!DNL AWS])](https://aws.amazon.com/) - [!DNL AWS] är en plattform för cloud computing som erbjuder ett brett utbud av tjänster som distribuerad datorhantering, databaslagring, innehållsleverans och SaaS-integrationstjänster (Software-as-a-service) för kundrelationshantering (CRM) och resursplanering (ERP) för företag.
 
 Se [[!DNL AWS] översikt](../aws/overview.md) om du vill ha mer information om hur du installerar tillägget och konfigurerar regler för vidarebefordran av händelser.
 

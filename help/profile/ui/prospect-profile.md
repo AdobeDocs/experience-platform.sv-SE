@@ -2,13 +2,13 @@
 title: Prospekt
 description: Lär dig hur du skapar och använder profiler för potentiella kunder för att samla in information om okända kunder med hjälp av tredjepartsinformation.
 type: Documentation
-source-git-commit: 1973fbe858fc0a266936faf6060e467c108fedf6
+exl-id: 194d25d6-88ae-4a7a-9b79-39120bced5c7
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 1%
 
 ---
-
 
 # Prospekteringsprofiler
 

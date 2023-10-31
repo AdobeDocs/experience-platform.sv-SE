@@ -1,13 +1,13 @@
 ---
 description: Lär dig hur du konfigurerar målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
+source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
 workflow-type: tm+mt
 source-wordcount: '836'
 ht-degree: 1%
 
 ---
-
 
 # Konfiguration av namnutrymme för identitet
 
@@ -32,7 +32,7 @@ Du kan konfigurera identitetsnamnutrymmen som stöds via `/authoring/destination
 * [Skapa en målkonfiguration](../../authoring-api/destination-configuration/create-destination-configuration.md)
 * [Uppdatera en målkonfiguration](../../authoring-api/destination-configuration/update-destination-configuration.md)
 
-I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn som stöds och som du kan använda för ditt mål. Artikeln innehåller även information om vad kunderna kommer att se i plattformsgränssnittet.
+I den här artikeln beskrivs alla konfigurationsalternativ för identitetsnamn som stöds och som du kan använda för ditt mål. Dessutom visas vad kunderna kommer att se i plattformsgränssnittet.
 
 >[!IMPORTANT]
 >
