@@ -2,7 +2,7 @@
 title: Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper från Adobe Experience Platform till anslutna TV- och ljuddestinationer samt andra integreringar med LiveRamp RampID.
-source-git-commit: adc7e66fa17484ccb9527650f197acc29ef4d0f1
+source-git-commit: 25cda72508860b57bfa9ad0a729d0329d0f6bd1f
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 0%
@@ -48,7 +48,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att aktivera må
 
 Du kan aktivera målgrupper till anslutna TV- och ljuddestinationer genom att gå igenom en tvåstegsprocess och använda [LiveRamp - introduktion](../catalog/advertising/liveramp-onboarding.md) och [LiveRamp - Distribution](../catalog/advertising/liveramp-distribution.md) mål, vilket visas i bilden nedan.
 
-![Bild som visar arbetsflödet för aktivering av målgrupper från Real-Time CDP till kuraterade destinationer via LiveRamp.](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png)
+![Bild som visar arbetsflödet för aktivering av målgrupper från Real-Time CDP till kuraterade destinationer via LiveRamp.](../assets/ui/activate-curated-destinations-liveramp/workflow-diagram.png){width="1920" zoomable="yes"}
 
 Först exporterar ni era målgrupper från Real-Time CDP till [[!DNL LiveRamp - Onboarding]](../catalog/advertising/liveramp-onboarding.md) mål, som CSV-filer.
 
