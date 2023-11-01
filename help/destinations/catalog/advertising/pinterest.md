@@ -2,9 +2,9 @@
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '706'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats ell
 
 ## Identiteter som stöds {#supported-identities}
 
-The [!DNL Pinterest Customer List] målet har stöd för aktivering av de identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+The [!DNL Pinterest Customer List] målet har stöd för aktivering av de identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 I [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) mappa önskade identiteter till målfältet i arbetsflödet för målaktivering *pinterest_målgrupp*. Identiteter särskiljs och löses vid datainhämtning till Pinterest.
 

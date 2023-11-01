@@ -3,9 +3,9 @@ title: HubSpot-anslutning
 description: Med HubSpot-målet kan du hantera kontaktposter i ditt HubSpot-konto.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1548'
+source-wordcount: '1544'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ I avsnitten nedan finns information om alla krav som du måste ställa in i Expe
 
 ### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL HubSpot] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html?lang=en) som [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL HubSpot] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)och [målgrupper](https://experienceleague.adobe.com/docs/platform-learn/tutorials/audiences/create-audiences.html) som [!DNL Experience Platform].
 
 Se Experience Platform dokumentation för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 

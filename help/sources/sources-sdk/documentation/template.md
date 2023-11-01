@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Självbetjäningsmall för dokumentation
 description: Lär dig hur du ansluter Adobe Experience Platform till DIN KÄLLA med API:t för Flow Service.
 exl-id: c6927a71-3721-461e-9752-8ebc0b7b1cca
-source-git-commit: 1ed82798125f32fe392f2a06a12280ac61f225c6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2139'
+source-wordcount: '2135'
 ht-degree: 0%
 
 ---
@@ -299,13 +299,13 @@ För att källdata ska kunna användas i Platform måste ett målschema skapas f
 
 Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
+Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
 En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
+Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
 ### Skapa en målanslutning {#target-connection}
 

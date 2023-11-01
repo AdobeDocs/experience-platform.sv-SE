@@ -2,9 +2,9 @@
 title: Personalisering via Offer decisioning
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser via Offer decisioning.
 exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '570'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-API:t för Edge Network Server kan leverera personaliserade upplevelser som hanteras i [offer decisioning](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html?lang=en) till webbkanalen.
+Edge Network Server API kan leverera personaliserade upplevelser som hanteras i [Offer decisioning](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html) till webbkanalen.
 
-[!DNL Offer Decisioning] har stöd för ett icke-visuellt gränssnitt för att skapa, aktivera och leverera aktiviteter och personaliseringsupplevelser.
+[!DNL Offer Decisioning] har stöd för ett icke-visuellt gränssnitt för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
 
 ## Förutsättningar {#prerequisites}
 
-Personalisering via [!DNL Offer Decisioning] kräver att du har åtkomst till [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en) innan du konfigurerar integreringen.
+Personalisering via [!DNL Offer Decisioning] kräver att du har åtkomst till [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) innan du konfigurerar integreringen.
 
 ## Konfigurera ditt datastream {#configure-your-datastream}
 
@@ -35,13 +35,13 @@ Se [guide om hur du lägger till tjänster i ett datastream](../datastreams/over
 
 ## Definiera beslutsomfattningar {#creating-decision-scopes}
 
-The [!DNL Offer Decision Engine] använder Adobe Experience Platform data och [Kundprofiler i realtid](../profile/home.md), tillsammans med [!DNL Offer Library], för att leverera erbjudanden till rätt kunder och kanaler vid rätt tidpunkt.
+The [!DNL Offer Decision Engine] använder Adobe Experience Platform data och [Kundprofiler i realtid](../profile/home.md), med [!DNL Offer Library], för att leverera erbjudanden till rätt kunder och kanaler vid rätt tidpunkt.
 
 Läs mer om [!DNL Offer Decisioning Engine], se den dedikerade [dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started-decision/starting-offer-decisioning.html).
 
 Efter [konfigurera ditt datastream](#configure-your-datastream)måste ni definiera de beslutsomfattningar som ska användas i er personaliseringskampanj.
 
-[Beslutsomfattningar](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html?lang=en#add-decision-scopes) är de Base64-kodade JSON-strängarna som innehåller aktivitets- och placerings-ID:n som du vill använda [!DNL Offer Decisioning Service] att använda vid offerter.
+[Beslutsomfattningar](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html#add-decision-scopes) är de Base64-kodade JSON-strängarna som innehåller aktivitets- och placerings-ID:n som du vill använda [!DNL Offer Decisioning Service] att använda vid offerter.
 
 **Beslutsomfattelse JSON**
 
@@ -58,9 +58,9 @@ Efter [konfigurera ditt datastream](#configure-your-datastream)måste ni definie
 "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="
 ```
 
-När du har skapat dina erbjudanden och samlingar måste du definiera en [beslutsområde](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html?lang=en#add-decision-scopes).
+När du har skapat dina erbjudanden och samlingar måste du definiera en [beslutsområde](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/create-manage-activities/create-offer-activities.html#add-decision-scopes).
 
-Kopiera Base64-kodad beslutsomfattning. Du kommer att använda den i `query` objekt för Server API-begäran.
+Kopiera Base64-kodad beslutsomfattning. Du kommer att använda den i `query` -objektet för Server API-begäran.
 
 ![Användargränssnittsbild som visar användargränssnittet för Offera decisioningen och som framhäver beslutsomfånget.](assets/decision-scope.png)
 
@@ -254,7 +254,7 @@ Tabellen nedan förklarar de viktigaste elementen i den delen av svaret.
 |---|---|---|
 | `scope` | Beslutsomfattandet som hör till de föreslagna erbjudanden som returnerades. | `"scope": "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="` |
 | `activity.id` | Unikt ID för erbjudandeaktiviteten. | `"id": "xcore:offer-activity:11cfb1fa93381aca"` |
-| `placement.id` | Unikt ID för erbjudandeplaceringen. | `"id": "xcore:offer-placement:1175009612b0100c"` |
+| `placement.id` | Erbjudandets unika ID. | `"id": "xcore:offer-placement:1175009612b0100c"` |
 | `items.id` | Unikt ID för det föreslagna erbjudandet. | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
 | `schema` | Schemat för innehållet som är associerat med det föreslagna erbjudandet. | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-html"` |
 | `data.id` | Unikt ID för det föreslagna erbjudandet. | `"id": "xcore:personalized-offer:124cc332095cfa74"` |

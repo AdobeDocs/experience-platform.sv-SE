@@ -2,9 +2,9 @@
 title: Dokumentera destinationen i Adobe Experience Platform
 description: Stegvisa instruktioner om hur du skapar en dokumentationssida för destinationen i Adobe Experience Platform
 exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
-source-git-commit: ffd87573b93d642202e51e5299250a05112b6058
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---
@@ -17,15 +17,15 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Välkommen till Adobe Experience Platform!
+Välkommen till Adobe Experience Platform, jättekul!
 Att dokumentera destinationen är det sista steget innan det kan göras live i Adobe Experience Platform.
 
 I det här dokumentationsavsnittet ingår:
 
 * Stegvisa instruktioner för att skapa en dokumentationssida för det nya målet;
 * En mall som du kan fylla i för din destination;
-* [Allmänna instruktioner om hur du använder Markering](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en);
-* [Specifika anvisningar för Adobe Markdown-aromen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#custom-markdown-extensions) (Adobe Markdown-aromen påminner mycket om vanlig Markdown).
+* [Allmänna instruktioner om hur du använder Markering](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html);
+* [Specifika anvisningar för Adobe Markdown-aromen](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions) (Adobe Markdown-aromen påminner mycket om vanlig Markdown).
 * A [sida med bästa praxis](./authoring-best-practices.md) för att hjälpa dig att skapa en dokumentationssida för målsidan som uppfyller kvalitetsstandarderna för Experience Platform-dokumentationen.
 
 ## Förutsättningar {#prerequisites}
@@ -33,12 +33,12 @@ I det här dokumentationsavsnittet ingår:
 Om du vill skapa dokumentation för destinationen enligt instruktionerna i den här artikeln behöver du följande objekt:
 
 * **Ett GitHub-konto**. Registrera dig för [GitHub](https://github.com/) om du inte har något konto än.
-* **GitHub Desktop**. Om du väljer att [skapa dokumentationen i den lokala miljön](./work-in-local-environment.md)måste du använda [GitHub Desktop](https://desktop.github.com/).
+* **GitHub Desktop**. Om du väljer [skapa dokumentationen i den lokala miljön](./work-in-local-environment.md)måste du använda [GitHub Desktop](https://desktop.github.com/).
 * Din integrering med Adobe måste vara i en testfas med ditt mål som distribueras i en testmiljö i Adobe Experience Platform.
 
 ## Instruktioner på hög nivå för att skapa dokumentation för destinationen i Adobe Experience Platform {#high-level-instructions}
 
-Om du vill skapa dokumentation för destinationen måste du [skapa en gaffel](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) av Adobe Experience Platform dokumentationsarkiv och redigera [tillhandahållen dokumentationsmall](./self-service-template.md) i en ny gren. Använd mallen som tillhandahålls av Adobe för att skapa en ny målsida. Öppna en pull-begäran (PR) när du är klar. Instruktioner för att göra detta finns nedan, i [Steg för att skapa en ny målsida](./documentation-instructions.md#steps-to-create-docs-page).
+Om du vill skapa dokumentation för destinationen måste du [skapa en gaffel](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#fork-the-repository) av Adobe Experience Platform dokumentationsarkiv och redigera [tillhandahållen dokumentationsmall](./self-service-template.md) i en ny gren. Använd mallen som tillhandahålls av Adobe för att skapa en ny målsida. Öppna en pull-begäran (PR) när du är klar. Instruktioner för att göra detta finns nedan, i [Steg för att skapa en ny målsida](./documentation-instructions.md#steps-to-create-docs-page).
 
 <!--
 
@@ -59,9 +59,9 @@ Instruktioner om hur du använder mallen för att skapa dokumentationssidan finn
 
 Du kan använda GitHub-webbgränssnittet eller din lokala miljö för att skapa dokumentation för ditt nya mål i Adobe Experience Platform. Sök efter instruktioner för båda alternativen i länkarna nedan:
 
-* [Använd GitHub-webbgränssnittet för att skapa en måldokumentationssida](./use-github-interface-to-create-documentation.md)
+* [Skapa en måldokumentationssida med GitHub-webbgränssnittet](./use-github-interface-to-create-documentation.md)
 * [Skapa en måldokumentationssida med en textredigerare i den lokala miljön](./work-in-local-environment.md)
 
 ## God praxis {#best-practices}
 
-Granska [god praxis](/help/destinations/destination-sdk/docs-framework/authoring-best-practices.md) innan och medan du skapar måldokumentationssidan. Se även till att läsa [Skriftlig vägledning för Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) för fler skrivtips som Adobe dokumentationsteamet använder när de skriver dokumentation.
+Granska [god praxis](/help/destinations/destination-sdk/docs-framework/authoring-best-practices.md) innan och medan du skapar måldokumentationssidan. Se även till att läsa [Skriftlig vägledning för Adobe-dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html) för fler skrivtips som Adobe dokumentationsteamet använder när de skriver dokumentation.

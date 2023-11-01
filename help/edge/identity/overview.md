@@ -3,9 +3,9 @@ title: Identitetsdata i Platform Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 709996a837e722a79d695bf8573552f8f373850e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1417'
+source-wordcount: '1413'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Platform Web SDK tilldelar och spårar ECID:n med hjälp av cookies, med flera t
 
 När en ny användare kommer till din webbplats försöker Adobe Experience Cloud Identity Service att ange en cookie för enhetsidentifiering för den användaren. För förstagångsbesökare genereras ett ECID som returneras i det första svaret från Adobe Experience Platform Edge Network. För återkommande besökare hämtas ECID från `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie och har lagts till i nyttolasten av Edge Network.
 
-När cookie-filen som innehåller ECID har angetts kommer varje efterföljande begäran som genereras av Web SDK att innehålla ett kodat ECID i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie.
+När cookie-filen som innehåller ECID har angetts kommer varje begäran som skapas av Web SDK att innehålla ett kodat ECID i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie.
 
 När du använder cookies för enhetsidentifiering har du två alternativ för att interagera med Edge Network:
 
@@ -55,11 +55,11 @@ Om en slutanvändare besöker webbplatsen tre gånger i veckan och sedan inte å
 
 ### Enhets-ID:n från första part
 
-Om du vill ta hänsyn till effekterna av cookie-livscykler enligt ovan kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Se guiden [enhets-ID:n från första part](./first-party-device-ids.md) för mer information.
+Om du vill ta hänsyn till effekterna av cookie-livscykler enligt ovan kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Se guiden på [enhets-ID:n från första part](./first-party-device-ids.md) för mer information.
 
 ## Hämtar ECID och region för den aktuella användaren
 
-Om du vill hämta det unika ECID:t för den aktuella besökaren använder du `getIdentity` -kommando. För förstagångsbesökare som ännu inte har ett ECID genereras ett nytt ECID med det här kommandot. `getIdentity` returnerar också region-ID för besökaren.
+Om du vill hämta den aktuella besökarens unika ECID använder du `getIdentity` -kommando. För förstagångsbesökare som ännu inte har ett ECID genereras ett nytt ECID med det här kommandot. `getIdentity` returnerar också region-ID för besökaren.
 
 >[!NOTE]
 >
@@ -105,7 +105,7 @@ alloy("sendEvent", {
 >Adobe rekommenderar att du skickar namnutrymmen som representerar en person, till exempel `CRMID`, som primär identitet.
 
 
-Varje egenskap i `identityMap` representerar identiteter som tillhör en viss [identity namespace](../../identity-service/namespaces.md). Egenskapsnamnet ska vara identitetssymbolen för namnutrymmet, som du hittar i användargränssnittet i Adobe Experience Platform under &quot;[!UICONTROL Identities]&quot;. Egenskapsvärdet ska vara en array med identiteter som gäller det identitetsnamnutrymmet.
+Varje egenskap i `identityMap` representerar identiteter som tillhör en viss [namnutrymme för identitet](../../identity-service/namespaces.md). Egenskapsnamnet ska vara identitetssymbolen för namnutrymmet, som du hittar i användargränssnittet i Adobe Experience Platform under &quot;[!UICONTROL Identities]&quot;. Egenskapsvärdet ska vara en array med identiteter som gäller det identitetsnamnutrymmet.
 
 >[!IMPORTANT]
 >
@@ -117,15 +117,15 @@ Varje identitetsobjekt i identitetsarrayen innehåller följande egenskaper:
 | --- | --- | --- |
 | `id` | Sträng | **(Obligatoriskt)** Det ID som du vill ange för det angivna namnutrymmet. |
 | `authenticationState` | Sträng | **(Obligatoriskt)** Autentiseringstillståndet för ID:t. Möjliga värden är `ambiguous`, `authenticated`och `loggedOut`. |
-| `primary` | Boolean | Avgör om den här identiteten ska användas som ett primärt fragment i profilen. Som standard anges ECID som användarens primära identifierare. Om det utelämnas blir det här värdet som standard `false`. |
+| `primary` | Boolean | Avgör om den här identiteten ska användas som ett primärt fragment i profilen. Som standard anges ECID som användarens primära identifierare. Om det utelämnas används standardvärdet `false`. |
 
-Använda `identityMap` fält för att identifiera enheter eller användare leder till samma resultat som om du använder [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=en) metoden från [!DNL ID Service API]. Se [API-dokumentation för ID-tjänst](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=en) för mer information.
+Använda `identityMap` fält för att identifiera enheter eller användare leder till samma resultat som om du använder [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html) metoden från [!DNL ID Service API]. Se [API-dokumentation för ID-tjänst](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html) för mer information.
 
 ## Migrera från Visitor API till ECID
 
 När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cookies. Om du vill aktivera ECID-migrering anger du `idMigrationEnabled` -parametern i konfigurationen. ID-migrering aktiverar följande användningsfall:
 
-* När vissa sidor i en domän använder Visitor API och andra sidor använder denna SDK. Som stöd för detta fall läser SDK befintliga AMCV-cookies och skriver en ny cookie med det befintliga ECID:t. Dessutom skriver SDK AMCV-cookies så att efterföljande sidor som är instrumenterade med Visitor API har samma ECID om ECID hämtas först på en sida som är instrumenterad med SDK.
+* När vissa sidor i en domän använder Visitor API och andra sidor använder denna SDK. Som stöd för detta fall läser SDK befintliga AMCV-cookies och skriver en ny cookie med befintligt ECID. Dessutom skriver SDK AMCV-cookies så att efterföljande sidor som är instrumenterade med Visitor API har samma ECID om ECID hämtas först på en sida som är instrumenterad med SDK.
 * När Adobe Experience Platform Web SDK har konfigurerats på en sida som även har Visitor API. Om AMCV-cookien inte är inställd söker SDK efter besökar-API:t på sidan och anropar den för att hämta ECID.
 * När hela webbplatsen använder Adobe Experience Platform Web SDK och inte har något Visitor-API är det bra att migrera ECID:n så att informationen om den returnerade besökaren behålls. När SDK har distribuerats med `idMigrationEnabled` under en tidsperiod så att de flesta besökarcookies migreras kan inställningen inaktiveras.
 
@@ -135,4 +135,4 @@ När XDM-formaterade data skickas till Audience Manager måste dessa data konver
 
 ## Använd vid vidarebefordran av händelse
 
-Om du har [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) aktiverat och använder `appmeasurement.js` och `visitor.js`kan du behålla funktionen för vidarebefordran av händelser aktiverad och detta orsakar inga problem. På baksidan hämtar Adobe alla AAM segment och lägger till dem i anropet till Analytics. Om anropet till Analytics innehåller dessa segment kommer Analytics inte att anropa Audience Manager för att vidarebefordra data, så det finns ingen dubbel datainsamling. Du behöver heller inte använda platstips när du använder Web SDK eftersom samma segmenteringsslutpunkter anropas i serverdelen.
+Om du har [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) aktiverat och använder `appmeasurement.js` och `visitor.js`kan du behålla funktionen för vidarebefordran av händelser aktiverad och detta kommer inte att orsaka några problem. På baksidan hämtar Adobe alla AAM segment och lägger till dem i anropet till Analytics. Om anropet till Analytics innehåller dessa segment kommer Analytics inte att anropa Audience Manager för att vidarebefordra data, så det finns ingen dubbel datainsamling. Du behöver heller inte använda platstips när du använder Web SDK eftersom samma segmenteringsslutpunkter anropas i serverdelen.

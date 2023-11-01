@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Komma igång med API:er för Media Edge
 description: Komma igång med API:er för Media Edge
 exl-id: 76022dea-408b-4d8e-abd4-1a6de81beceb
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '958'
+source-wordcount: '946'
 ht-degree: 1%
 
 ---
@@ -42,12 +42,12 @@ Den här guiden visar hur du spårar följande händelser efter att du har start
 
 ## Implementera API {#implement-api}
 
-Förutom smärre skillnader i anropad modell och sökväg har Media Edge API samma implementering som [Media Collection API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en). Implementeringsinformationen för Media Collection gäller även fortsättningsvis för Media Edge API, vilket beskrivs i följande dokumentation:
+Förutom smärre skillnader i anropad modell och sökväg har Media Edge API samma implementering som [Media Collection API](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html). Implementeringsinformationen för Media Collection gäller även fortsättningsvis för Media Edge API, vilket beskrivs i följande dokumentation:
 
-* [Ställa in HTTP-begärantypen i spelaren](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
-* [Skicka ping-händelser](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html?lang=en)
-* [Timeoutvillkor](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-timeout.html?lang=en)
-* [Styra händelseordningen](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-ctrl-order.html?lang=en)
+* [Ställa in HTTP-begärantypen i spelaren](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html)
+* [Skicka ping-händelser](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-sed-pings.html)
+* [Timeoutvillkor](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-timeout.html)
+* [Styra händelseordningen](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-impl/mc-api-ctrl-order.html)
 
 ## Behörighet {#authorization}
 
@@ -60,7 +60,7 @@ Om du vill starta mediesessionen på servern använder du slutpunkten för sessi
 
 Innan du gör sessionsstartbegäran behöver du följande:
 
-* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=en).
+* The `datastreamId`—en obligatorisk parameter för POSTENS sessionsstartbegäran. Så här hämtar du `datastreamId`, se [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html).
 
 * Ett JSON-objekt för den begärda nyttolasten som innehåller de minsta data som krävs (som visas i exempelbegäran nedan).
 

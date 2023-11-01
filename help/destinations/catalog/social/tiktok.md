@@ -3,9 +3,9 @@ title: TikTok
 description: Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager.
 last-substantial-update: 2023-03-20T00:00:00Z
 exl-id: 7b12d17f-7d9a-4615-9830-92bffe3f6927
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1013'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager. Besök [TikTok hjälpcenter för företag](https://ads.tiktok.com/help/article/audiences?lang=en) för mer information.
+Bygg anpassade målgrupper på TikTok med era data för målinriktning med era annonskampanjer. Dessa målgrupper kan vara personer som besökt er webbplats eller interagerat med ert innehåll. Knuffa snabbt och säkert den önskade målgruppen från Adobe Experience Platform till TikTok med hjälp av Adobe realtidsintegrering med TikTok Ads Manager. Besök [TikTok hjälpcenter för företag](https://ads.tiktok.com/help/article/audiences) för mer information.
 
 >[!IMPORTANT]
 >
@@ -30,7 +30,7 @@ Ett sportklädvarumärke vill nå befintliga kunder via sina konton för sociala
 
 ## Förutsättningar {#prerequisites}
 
-Du måste ha [!DNL Admin] eller [!DNL Operator] åtkomst till det TikTok Ads Manager-konto som du vill skicka målgrupper till. Fler instruktioner finns på [TikTok Help Center](https://ads.tiktok.com/help/article/add-users-tiktok-business-center?lang=en).
+Du måste ha [!DNL Admin] eller [!DNL Operator] åtkomst till det TikTok Ads Manager-konto som du vill skicka målgrupper till. Fler instruktioner finns på [TikTok Help Center](https://ads.tiktok.com/help/article/add-users-tiktok-business-center).
 
 Innan du skickar data till ditt TikTok Ads Manager-konto måste du ge Adobe Experience Platform behörighet att komma åt ditt Ad-konto för `Audience Management`. Den här behörigheten kan ges av [ange ditt ID för annonshanteraren](#authenticate) i användargränssnittet i Experience Platform och ger tillstånd efter att ha omdirigerats till ditt TikTok Ads Manager-konto.
 
@@ -123,4 +123,4 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 
 ## Ytterligare resurser {#additional-resources}
 
-Läs mer i [TikTok Help Center page](https://ads.tiktok.com/help/article/audiences?lang=en) om du vill ha mer information.
+Läs mer i [TikTok Help Center page](https://ads.tiktok.com/help/article/audiences) om du vill ha mer information.

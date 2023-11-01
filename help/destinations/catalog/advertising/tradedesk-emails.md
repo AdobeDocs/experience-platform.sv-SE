@@ -3,9 +3,9 @@ title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1114'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ### Fyll i målinformation {#fill-in-details}
 
-Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) Om du vill ange destinationen måste du ange följande information:
+Innan du kan skicka, eller aktivera, målgruppsdata till ett mål måste du skapa en anslutning till din egen målplattform. while [konfigurera](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) Om du vill ange destinationen måste du ange följande information:
 
 * **[!UICONTROL Account Type]**: Välj **[!UICONTROL Existing Account]** alternativ.
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.

@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: 80c46748d809fe0b0367cf779f41d7851e8e62db
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1394'
+source-wordcount: '1392'
 ht-degree: 5%
 
 ---
@@ -193,7 +193,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 **Funktioner**:
 
-* Adobe Analytics-tillägget har uppdaterats till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=en#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
+* Adobe Analytics-tillägget har uppdaterats till [AppMeasurement 2.14.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.14.0) som innehåller en korrigering av ett känt clearVars-problem
 * En Exchange-länk har lagts till i tillägget. Du når Exchange-listan genom att markera listrutan och välja &quot;tilläggsinformation&quot;
 
 **Felkorrigeringar**:

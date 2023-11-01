@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2158'
-ht-degree: 3%
+source-wordcount: '2156'
+ht-degree: 2%
 
 ---
 
@@ -62,7 +62,7 @@ Mer information finns i [åtkomstkontroll - översikt](../../access-control/home
 | Centraliserat erbjudande | Gränssnittet där du skapar och hanterar de olika elementen som utgör erbjudandena och definierar deras regler och begränsningar. |
 | Beslutsmotor för erbjudande | Beslutsmotorn för erbjudandet utnyttjar [!DNL Platform] data och [!DNL Real-Time Customer Profiles], tillsammans med erbjudandebiblioteket, för att välja rätt tidpunkt, kunder och kanaler som erbjudandena ska levereras till. |
 
-Mer information finns i [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=en) dokumentation.
+Mer information finns i [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning/using/offer-decisioning-home.html?lang=sv) dokumentation.
 
 ## [!DNL Sandboxes] {#sandboxes}
 
@@ -157,7 +157,7 @@ Attribution AI, som en del av Intelligent Services är en flerkanalig algoritmis
 | Tillståndsspårning | Du kan hitta den totala mängden attribueringsinsikter som används av ditt konto i Skapa instansbehållare. |
 | Uppdelning efter position | En ny insiktsgraf som ger en analys av kontaktytor genom konvertering av banpositioner. |
 | De vanligaste konverteringsbanorna | Ett nytt insiderdiagram finns på fliken Sökvägsanalys. Diagrammet innehåller en lista över de fem populäraste konverteringssökvägarna som visar sekvensen av kontaktytor i marknadsföringskanalen som ledde till de flesta konverteringar. |
-| Pekpunktseffektivitet | Innehåller djupgående insikter om de tre viktigaste variablerna som din modell mäter kontaktytans effektivitet med. Variablerna är förhållandet mellan positiva och negativa banor, kontaktpunktseffektivitet och kontaktpunktsvolym. |
+| Pekpunktseffektivitet | Innehåller djupgående insikter om de tre viktigaste variablerna som din modell mäter kontaktytans effektivitet med. Variablerna är förhållandet mellan positiva och negativa banor, kontaktpunktseffektivitet och kontaktytpunktsvolym. |
 
 Mer information finns i [Översikt över Attribution AI](../../intelligent-services/attribution-ai/overview.md).
 

@@ -3,9 +3,9 @@ title: (API) Oraclena Eloqua-anslutning
 description: Med API-Oraclet Eloqua kan du exportera dina kontouppgifter och aktivera dem i Oracle Eloqua efter dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2085'
+source-wordcount: '2081'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad 
 
 ### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL Oracle Eloqua] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL Oracle Eloqua] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som [!DNL Experience Platform].
 
 Se dokumentationen för Experience Platform för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 

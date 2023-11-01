@@ -2,9 +2,9 @@
 title: Personalisering via Adobe Target
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target.
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-API:t för Edge Network Server kan leverera och återge personaliserade upplevelser som skapats i Adobe Target med hjälp av [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en).
+API:t för Edge Network Server kan leverera och återge personaliserade upplevelser som skapats i Adobe Target med hjälp av [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html).
 
 >[!IMPORTANT]
 >
->Personaliseringsupplevelser som skapats med [Target Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) stöds inte fullt ut av Server-API:t. Server-API:t kan **hämta** aktiviteter skapade av VEC, men Server API kan inte **återge** aktiviteter skapade av VEC. Om du vill återge aktiviteter skapade av VEC måste du implementera [hybridanpassning](../edge/personalization/hybrid-personalization.md) med Web SDK och Edge Network Server API.
+>Personaliseringsupplevelser som skapats med [Target Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) stöds inte fullt ut av Server-API:t. Server-API:t kan **hämta** aktiviteter skapade av VEC, men Server API kan inte **återge** aktiviteter skapade av VEC. Om du vill återge aktiviteter skapade av VEC måste du implementera [hybridpersonalisering](../edge/personalization/hybrid-personalization.md) med Web SDK och Edge Network Server API.
 
 ## Konfigurera ditt datastream {#configure-your-datastream}
 
@@ -25,7 +25,7 @@ Innan du kan använda Server-API:t i kombination med Adobe Target måste du akti
 
 Se [guide om hur du lägger till tjänster i ett datastream](../datastreams/overview.md#adobe-target-settings), för detaljerad information om hur du aktiverar Adobe Target.
 
-När du konfigurerar dataströmmen kan du (valfritt) ange värden för [!DNL Property Token], [!DNL Target Environment ID]och [!DNL Target Third Party ID Namespace].
+När du konfigurerar din datastream kan du (valfritt) ange värden för [!DNL Property Token], [!DNL Target Environment ID]och [!DNL Target Third Party ID Namespace].
 
 ![Användargränssnittsbild som visar konfigurationsskärmen för datastream-tjänsten, med Adobe Target markerat](assets/target-datastream.png)
 
@@ -57,7 +57,7 @@ När du skapar målgrupper i Target är följande värden tillgängliga som anpa
 
 ## Uppdateringar av målprofiler {#profile-update}
 
-The [!DNL Server API] tillåter uppdateringar av Target-profilen. Om du vill uppdatera en målprofil kontrollerar du att profildata skickas i `data` del av begäran i följande format:
+The [!DNL Server API] tillåter uppdateringar av Target-profilen. Om du vill uppdatera en Target-profil kontrollerar du att profildata skickas i `data` del av begäran i följande format:
 
 ```json
 "data":  {
@@ -273,7 +273,7 @@ Edge Network returnerar ett svar som liknar det nedan.
 
 Om besökaren kvalificerar sig för en personaliseringsaktivitet baserat på data som skickas till Adobe Target, hittar du det relevanta aktivitetsinnehållet under `handle` objekt, där typen är `personalization:decisions`.
 
-Annat innehåll returneras ibland under `handle` också. Andra innehållstyper är inte relevanta för målpersonaliseringen. Om besökaren kvalificerar sig för flera aktiviteter blir varje aktivitet en separat `personalization` -objektet i arrayen.
+Annat innehåll returneras ibland under `handle` också. Andra innehållstyper är inte relevanta för målpersonaliseringen. Om besökaren kvalificerar sig för flera aktiviteter blir varje aktivitet en separat `personalization` i arrayen.
 
 Tabellen nedan förklarar de viktigaste elementen i den delen av svaret.
 

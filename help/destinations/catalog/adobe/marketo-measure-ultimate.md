@@ -3,9 +3,9 @@ title: Marketo Measure Ultimate-mål
 description: Lär dig hur du ansluter och aktiverar data till Marketo Measure Ultimate-målet.
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '635'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Målet möjliggör dataflöden mellan företag (B2B) från Adobe Experience Plat
 För att du bättre ska förstå hur och när du ska använda Marketo Measure-destinationen finns exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen. Den här integreringen:
 
 * Uppfyller kraven på komplexa data- och resultatrapporter för stora företag.
-* Möjliggör B2B-attribueringsrapportering med flera CRM- och marknadsföringsautomatiseringssystem.
+* Möjliggör B2B-attribueringsrapportering med flera CRM- och marknadsföringssystem.
 * Gör det enkelt att lägga in kontaktpunktsdata från tredje part offline.
 
 ## Förutsättningar {#prerequisites}
@@ -40,7 +40,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Dataset export]** | Du exporterar rådatauppsättningar som inte är grupperade eller strukturerade efter målgruppsintressen eller kvalifikationer. Läs mer om [datauppsättningsexport](/help/destinations/destination-types.md#dataset-export-destinations). |
+| Exporttyp | **[!UICONTROL Dataset export]** | Du exporterar rådatamängder som inte är grupperade eller strukturerade efter målgruppsintressen eller kvalifikationer. Läs mer om [datauppsättningsexport](/help/destinations/destination-types.md#dataset-export-destinations). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Detta batchmål exporterar filer till Marketo Measure-plattformen varannan timme. Läs mer om [schemalägga datauppsättningsexporter](/help/destinations/ui/export-datasets.md#scheduling). |
 
 {style="table-layout:auto"}
@@ -49,7 +49,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som visas i avsnittet nedan.
 
@@ -64,7 +64,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 ### Aktivera aviseringar {#enable-alerts}
 
-Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på destinationsvarningar med hjälp av användargränssnittet](../../ui/alerts.md).
+Du kan aktivera varningar för att få meddelanden om dataflödets status till ditt mål. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på destinationsvarningar med användargränssnittet](../../ui/alerts.md).
 
 När du är klar med informationen för målanslutningen väljer du **[!UICONTROL Next]**.
 
@@ -72,13 +72,13 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [(Beta) Exportera datauppsättningar](/help/destinations/ui/export-datasets.md) självstudiekurs om utförliga instruktioner om hur du exporterar datauppsättningar till det här målet.
 
 ## Validera dataexport {#exported-data}
 
-Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till din [Snowflake data warehouse](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html?lang=en).
+Om du vill validera en lyckad datauppsättningsexport kan du kontrollera att datauppsättningen har gått igenom till din [Snowflake datalager](https://experienceleague.adobe.com/docs/marketo-measure/using/marketo-measure-data-warehouse/data-warehouse-access-reader-account.html).
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

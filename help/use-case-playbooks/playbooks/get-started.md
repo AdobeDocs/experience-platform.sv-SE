@@ -4,9 +4,9 @@ title: Kom igång
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 badgeBeta: label="Beta" type="Informative"
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '298'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Om du inte ser [!UICONTROL Playbooks] Använd den här länken i den vänstra li
 
 ### Sandlådekonfiguration för Adobe Journey Optimizer-användare {#sandbox-configuration-journey-optimizer}
 
-Om din organisation har licens för [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html?lang=en)måste du konfigurera kanalförinställningarna i sandlådan, som definierar de tekniska parametrar som krävs för dina meddelanden. [Lär dig hur du ställer in kanalytor i Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html).
+Om din organisation har licens för [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html)måste du konfigurera kanalförinställningarna i sandlådan, som definierar de tekniska parametrar som krävs för dina meddelanden. [Lär dig hur du ställer in kanalytor i Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html).
 
 ## Ge teamet de behörigheter som krävs {#grant-access-permissions}
 

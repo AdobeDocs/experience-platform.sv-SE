@@ -2,9 +2,9 @@
 title: Twitter Custom Auditions connection
 description: Rikta era befintliga följare och kunder i Twitter och skapa relevanta återmarknadsföringskampanjer genom att aktivera era målgrupper som skapats i Adobe Experience Platform
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '846'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ Innan du konfigurerar [!DNL Twitter Custom Audiences] ska du kontrollera att du 
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Twitter Custom Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+[!DNL Twitter Custom Audiences] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|

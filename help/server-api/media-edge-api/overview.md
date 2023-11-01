@@ -3,31 +3,31 @@ solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge
 exl-id: 55c952de-caab-4301-acf2-f7b64cebbb1c
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '381'
 ht-degree: 2%
 
 ---
 
 # Översikt över API för Media Edge
 
-Media Edge API:er bygger på Adobe Experience Platform för att tillhandahålla data för mediespårning inom ramen för [XDM-scheman](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=en#:~:text=Experience%20Data%20Model%20(XDM)%2C,the%20power%20of%20digital%20experiences). För kunder som använder Media Analytics blir följande funktioner tillgängliga:
+Media Edge API:er bygger på Adobe Experience Platform för att tillhandahålla data för mediespårning inom ramen för [XDM-scheman](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html#:~:text=Experience%20Data%20Model%20(XDM)%2C,the%20power%20of%20digital%20experiences). För kunder som använder Media Analytics blir följande funktioner tillgängliga:
 
-* Med [Adobe Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html?lang=en), kan kunderna få detaljerade detaljer om varaktighet, start och stopp för att utvärdera och kombinera för mediemätningar. Kunder som migrerar från Adobe Analytics har alla rapporteringsmått tillgängliga i Adobe Customer Journey Analytics.
+* Med [Adobe Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html), kan kunderna få detaljerade detaljer om varaktighet, start och stopp för att utvärdera och kombinera för mediemätningar. Kunder som migrerar från Adobe Analytics har alla rapporteringsmått tillgängliga i Adobe Customer Journey Analytics.
 
 * Med [Adobe Real-time Customer Data Platform](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv), kan kunderna utöka sina realtidsprofiler med medieförbrukningsdata.
 
-* Med [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html?lang=en)kan kunderna optimera flerkanalskampanjer och automatisera resor med mediekonsumtionssignaler.
+* Med [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html)kan kunderna optimera flerkanalskampanjer och automatisera resor med mediekonsumtionssignaler.
 
 
 ## Optimera dataflöden för mediespårning
 
-Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html?lang=en&amp;media-tracking-data-flows) och Media Edge API:er tillhandahåller mediespårningsdata som RESTful-tjänster. Men att använda tjänsten Media Edge har följande fördelar:
+Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html&amp;media-tracking-data-flows) och Media Edge API:er tillhandahåller mediespårningsdata som RESTful-tjänster. Men att använda tjänsten Media Edge har följande fördelar:
 
 * Det är det enklaste sättet att införliva XDM-scheman i dataflödet.
 
-* Samtal dirigeras från en mediespelare direkt till [Experience Platform Edge Network](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=en).
+* Samtal dirigeras från en mediespelare direkt till [Experience Platform Edge Network](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html).
 
 * Den spårar mediahändelser effektivt med ett minimum av serveröverskridande anrop.
 
@@ -52,4 +52,4 @@ I följande bild visas dataflödena för de två API-tjänsterna:
 
 * Mer information om hur du använder Media Edge API:er finns i [Komma igång med dokumentation](getting-started.md).
 
-* Mer information om hur du arbetar med Platform Edge finns i [Installera Media Analytics med Experience Platform Edge](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html?lang=en).
+* Mer information om hur du arbetar med Platform Edge finns i [Installera Media Analytics med Experience Platform Edge](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/implementation-edge.html).

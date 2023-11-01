@@ -3,9 +3,9 @@ title: Zendesk-anslutning
 description: Med Zendesk-destinationen kan du exportera dina kontouppgifter och aktivera dem i Zendesk efter behov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: e7fcbbf4-5d6c-4abb-96cb-ea5b67a88711
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1437'
+source-wordcount: '1433'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ Kundtjänstavdelningen på en flerkanalig B2C-plattform vill säkerställa en s�
 
 ### Förutsättningar för Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL Zendesk] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL Zendesk] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som [!DNL Experience Platform].
 
 Se Experience Platform dokumentation för [Schemafältgrupp för målgruppsmedlemskapsdetaljer](/help/xdm/field-groups/profile/segmentation.md) om ni behöver vägledning om målgruppsstatus.
 

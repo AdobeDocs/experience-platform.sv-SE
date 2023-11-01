@@ -2,7 +2,7 @@
 title: Core Extension Overview
 description: Läs mer om Core-taggtillägget i Adobe Experience Platform.
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
 source-wordcount: '5472'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Det här dokumentet innehåller information om de alternativ som är tillgängli
 
 ## Huvudtilläggshändelsetyper {#core-extension-event-types}
 
-I det här avsnittet beskrivs de händelsetyper som finns i Core-tillägget. Mer information om alternativen som kan anges för flera olika händelsetyper finns i [Alternativ](#options) -avsnitt.
+I det här avsnittet beskrivs de händelsetyper som är tillgängliga i Core-tillägget. Mer information om alternativen som kan anges för flera olika händelsetyper finns i [Alternativ](#options) -avsnitt.
 
 ### Webbläsarbaserade händelser
 
@@ -106,7 +106,7 @@ Om elementet är en ankartagg (`<a>`) för länkat innehåll kan du även ange o
 >
 >Detta alternativ bör användas med extrem försiktighet på grund av de potentiella negativa konsekvenser det kan få för användarupplevelsen om det används felaktigt.
 
-När du använder fördröjning av länkar förhindrar Platform faktiskt webbläsaren från att navigera utanför sidan. Sedan utförs en JavaScript-omdirigering till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>` -taggar där den tänkta funktionen egentligen inte navigerar användaren bort från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
+När du använder fördröjning av länkar förhindrar Plattform faktiskt webbläsaren från att navigera utanför sidan. Sedan utförs en JavaScript-omdirigering till det ursprungliga målet efter den angivna tidsgränsen. Detta är särskilt farligt när sidmarkeringen har `<a>` -taggar där den tänkta funktionen egentligen inte navigerar användaren bort från sidan. Om du inte kan lösa problemet på något annat sätt bör du vara mycket exakt med väljardefinitionen så att den här händelsen utlöses exakt där du behöver den och inte någon annanstans.
 
 Standardvärdet för fördröjning av länkar är 100 millisekunder. Observera att taggar alltid väntar på den angivna tiden och inte är kopplade till körningen av regelns åtgärder på något sätt. Det är möjligt att fördröjningen tvingar användaren att vänta längre än nödvändigt och även att fördröjningen inte är tillräckligt lång för att alla regelåtgärder ska kunna slutföras. Längre fördröjningar ger mer tid för regelkörning men försämrar även användarupplevelsen.
 
@@ -124,7 +124,7 @@ Händelsen utlöses om användaren hovrar över ett angivet element. Du måste o
 
 Händelsen utlöses om en anpassad händelsetyp inträffar. Namngivna JavaScript-funktioner som definieras någon annanstans i kodbasen kan användas som en anpassad händelsetyp. Du måste ange namnet på den anpassade händelsetypen och konfigurera andra inställningar enligt beskrivningen i [Alternativ](#options) nedan.
 
-#### Dataelementet har ändrats
+#### Dataelement ändrat
 
 Händelsen utlöses om ett angivet dataelement ändras. Du måste ange ett namn för dataelementet. Du kan markera dataelementet genom att antingen skriva dess namn i textfältet eller genom att markera dataelementsikonen till höger om textfältet och välja i en lista som finns i dialogrutan som visas.
 
@@ -132,7 +132,7 @@ Händelsen utlöses om ett angivet dataelement ändras. Du måste ange ett namn 
 
 En direktanropshändelse kringgår system för händelsidentifiering och sökning. Regler för direktsamtal är idealiska för situationer där du vill tala om för systemet exakt vad som händer. De är också idealiska när systemet inte kan identifiera någon händelse i DOM.
 
-När du definierar en direktanropshändelse måste du ange en sträng som ska fungera som den här händelsens identifierare. Om en [aktivera direktanrop](#direct-call-action) som innehåller samma identifierare utlöses, kommer alla regler för direktanropshändelser som lyssnar efter den identifieraren att köras.
+När du definierar en direktanropshändelse måste du ange en sträng som ska fungera som händelseidentifierare. Om en [aktivera direktanrop](#direct-call-action) som innehåller samma identifierare utlöses, kommer alla regler för direktanropshändelser som lyssnar efter den identifieraren att köras.
 
 ![Skärmbild av en direktanropshändelse i användargränssnittet för datainsamling](../../../images/extensions/client/core/direct-call-event.png)
 
@@ -191,21 +191,21 @@ Om du väljer det här alternativet blir följande parametrar tillgängliga:
 
 * `property=value`
 
-   Ange värdet för egenskapen
+  Ange värdet för egenskapen
 
 * Regex
 
-   Aktivera om `property=value` är ett reguljärt uttryck.
+  Aktivera om `property=value` är ett vanligt uttryck.
 
 * Lägg till
 
-   Lägg till ytterligare `property=value` par.
+  Lägg till ytterligare `property=value` par.
 
 #### Avancerade alternativ (Bubbling)
 
 * Kör den här regeln även när händelsen kommer från ett underordnat element
 * Tillåt att den här regeln körs även om händelsen redan har utlöst en regel som riktar sig till ett underordnat element
-* När regeln har körts kan du förhindra att händelsen utlöser regler för överordnade element
+* När regeln har körts kan du förhindra att händelsen utlöser regler som riktar sig mot överordnade element
 
 ## Villkorstyper för kärntillägg
 
@@ -244,7 +244,7 @@ return true;
 
 Kör regeln i en webbläsare och inspektera det loggade händelseobjektet i webbläsarens konsol. När du förstår vilken information som är tillgänglig kan du använda den för programmatisk beslutsfattande i din anpassade kod.
 
-*Villkorssekvenser*
+*Villkorssekvensering*
 
 När alternativet Kör regelkomponenter i sekvens från egenskapsinställningarna är aktiverat kan efterföljande regelkomponenter vänta medan villkoret utför en asynkron åtgärd.
 
@@ -277,7 +277,7 @@ Om du har en regel med flera villkor är det möjligt att det här villkoret ret
 
 Följande värdejämförelseoperatorer är tillgängliga:
 
-**Lika med:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript == -operatorn). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
+**Lika med:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript ==-operatorn). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
 **Är inte lika med:** Villkoret returnerar true om de två värdena inte är lika med en icke-strikt jämförelse (i JavaScript är != operator). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
@@ -337,7 +337,7 @@ Ange om besökaren ska vara en ny besökare eller en återkommande besökare fö
 Välj något av följande:
 
 * Ny besökare
-* Returnerar besökare
+* Returnerande besökare
 
 #### Sidvisningar
 
@@ -354,7 +354,7 @@ Konfigurera det antal gånger besökaren måste visa sidan innan åtgärden akti
 Utlös åtgärden om användarens antal sessioner uppfyller de angivna villkoren.
 
 1. Välj om antalet sessioner måste vara större än, lika med eller mindre än det angivna värdet.
-1. Ange antalet sessioner som avgör om villkoret är uppfyllt.
+1. Ange antalet sessioner som avgör om villkoret är uppfyllt eller inte.
 
 #### Tid på plats
 
@@ -418,7 +418,7 @@ Välj ett eller flera av följande operativsystem:
 * Blackberry
 * iOS
 * Linux
-* macOS
+* MacOS
 * Maemo
 * Symbian OS
 * Unix
@@ -550,7 +550,7 @@ I det här avsnittet beskrivs de åtgärdstyper som finns i Core-tillägget.
 >
 >ES6+ JavaScript stöds nu i anpassad kod. Observera att vissa äldre webbläsare inte stöder ES6+. Om du vill förstå hur funktionerna i ES6+ påverkas testar du mot alla webbläsare som bör stödjas.
 
-Ange koden som körs efter att händelsen har utlösts och villkoren har utvärderats.
+Ange koden som körs när händelsen har utlösts och villkoren utvärderas.
 
 1. Namnge åtgärdskoden.
 1. Välj det språk som ska användas för att definiera åtgärden:
@@ -584,7 +584,7 @@ När du använder document.write efter att en sida har lästs in uppstår vanlig
 
 #### Anpassad kodvalidering
 
-Valideraren som används i kodredigeraren är utformad för att identifiera problem med kod som skrivits av utvecklare. Kod som har genomgått en miniatyrprocess, t.ex. den AppMeasurement.js-kod som hämtats från kodhanteraren, kan felaktigt flaggas som att valideraren har problem, vilket vanligtvis kan ignoreras.
+Valideraren som används i kodredigeraren för taggar är utformad för att identifiera problem med kod som skrivits av utvecklare. Kod som har genomgått en miniatyrprocess, t.ex. AppMeasurement.js-koden som har hämtats från kodhanteraren, kan felaktigt flaggas som att valideraren har problem som vanligtvis kan ignoreras.
 
 #### Åtgärdssekvenser
 
@@ -634,9 +634,9 @@ setTimeout(function() {
 
 Den här åtgärden aktiverar alla regler som använder en specifik [direktanrop](#direct-call-event). När du konfigurerar åtgärden måste du ange identifierarsträngen för den direktanropshändelse som du vill utlösa. Du kan också skicka data till direktsamtalshändelsen via en `detail` -objekt, som kan innehålla en anpassad uppsättning nyckelvärdepar.
 
-![Skärmbild av en direktanropsåtgärd för utlösare i användargränssnittet för datainsamling](../../../images/extensions/client/core/direct-call-action.png)
+![Skärmbild av en utlösaråtgärd för direktanrop i användargränssnittet för datainsamling](../../../images/extensions/client/core/direct-call-action.png)
 
-Åtgärden mappar direkt till [`track` method](../../../ui/client-side/satellite-object.md?lang=en#track) i `satellite` -objekt, som kan nås av kod på klientsidan.
+Åtgärden mappar direkt till [`track` method](../../../ui/client-side/satellite-object.md#track) i `satellite` -objekt, som kan nås av klientkod.
 
 ## Dataelementtyper för kärntillägg
 
@@ -815,7 +815,7 @@ Endast namnavsnittet är nödvändigt och alla specialdesigners som &quot;?&quot
 
 ### Slumpmässigt tal
 
-Använd det här dataelementet för att generera ett slumpmässigt tal. Det används ofta för att ta prov på data eller skapa ID:n, till exempel ett träff-ID. Det slumpmässiga talet kan användas till att dölja eller salta känsliga data. Några exempel kan vara:
+Använd det här dataelementet för att generera ett slumpmässigt tal. Det används ofta för att ta prov på data eller skapa ID:n, till exempel ett träff-ID. Det slumpmässiga talet kan användas till att dölja eller salta känsliga data. Exempel:
 
 * Generera ett träff-ID
 * Sammanfoga numret till en användartoken eller tidsstämpel för att säkerställa unikhet
@@ -826,9 +826,9 @@ Ange minimi- och maximivärden för det slumpmässiga talet.
 
 **Standardvärden:**
 
-Minimum: 0
+Minst: 0
 
-Maximum: 1000000000
+Maximum: 100000000
 
 ### Sessionslagring
 
@@ -859,7 +859,7 @@ Några vanliga användningsområden:
 
 ### Villkorligt värde
 
-En wrapper för [Värdejämförelse](#value-comparison-value-comparison) villkor. Baserat på resultatet av jämförelsen returnerar ett av de två tillgängliga värdena i formuläret. Kan på så sätt hantera &quot;If... Sedan.. Annars..&quot; utan extra regler.
+En wrapper för [Värdejämförelse](#value-comparison-value-comparison) villkor. Baserat på resultatet av jämförelsen returnerar ett av de två tillgängliga värdena i formuläret. Kan därigenom hantera &quot;If... Sedan.. Annars..&quot; utan extra regler.
 
 ### Körningsmiljö
 
@@ -870,7 +870,7 @@ Gör att du kan välja en av följande variabler:
 * Egenskapsnamn - returnerar `_satellite.property.name` för att hämta namnet på Launch-egenskapen.
 * Egenskaps-ID - Returnerar `_satellite.property.id` för att hämta ID:t för Launch-egenskapen
 * Regelnamn - returnerar `event.$rule.name` som innehåller namnet på den körda regeln.
-* Regel-ID - returnerar `event.$rule.id` som innehåller ID:t för den körda regeln.
+* Regel-ID - returnerar `event.$rule.id` som innehåller ID för den körda regeln.
 * Händelsetyp - Returer `event.$type` som innehåller den typ av händelse som utlöste regeln.
 * Nyttolast för händelseinformation - Returer `event.detail` som innehåller nyttolasten för en anpassad händelse eller regel för direktanrop.
 * Identifierare för direktanrop - Returer `event.identifier` som innehåller identifieraren för en regel för direktsamtal.

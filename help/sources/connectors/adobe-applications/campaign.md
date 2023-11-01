@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;Adobe Campaign Managed Cloud 
 title: Adobe Campaign Managed Cloud Services
 description: Lär dig hur du ansluter Campaign-hanterade Cloud Service till plattformen med användargränssnittet
 exl-id: 8f18bf73-ebf1-4b4e-a12b-964faa0e24cc
-source-git-commit: 39a503b14c731aeed279bbbfa8c814c2ec26ed92
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Adobe Campaign Managed Cloud Services är en Managed Services-plattform för design av kundupplevelser i olika kanaler och utgör en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. Besök [Adobe Campaign v8-dokumentation](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html?lang=en) för mer information.
+Adobe Campaign Managed Cloud Services är en Managed Services-plattform för design av kundupplevelser i olika kanaler och utgör en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. Besök [Adobe Campaign v8-dokumentation](https://experienceleague.adobe.com/docs/campaign/campaign-v8/campaign-home.html?lang=sv) för mer information.
 
 Med Adobe Campaign Managed Cloud Services-källan kan du hämta leveransloggar för Adobe Campaign v8 och spåra loggdata till Adobe Experience Platform.
 
@@ -30,7 +30,7 @@ Innan du kan skapa en källanslutning för att hämta Campaign v8 till Experienc
 
 >[!IMPORTANT]
 >
->Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [Kampanjdokumentation v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html?lang=en) för information om hur du hämtar och installerar klientkonsolen.
+>Du måste ha tillgång till Adobe Campaign v8 Client Console för att kunna visa dina loggdata i Campaign. Besök [Kampanjdokumentation v8](https://experienceleague.adobe.com/docs/campaign/campaign-v8/deploy/connect.html) för information om hur du hämtar och installerar klientkonsolen.
 
 Logga in på Campaign v8-instansen via klientkonsolen. Under [!DNL Explorer] flik, välja [!DNL Administration] och sedan [!DNL Configuration]. Nästa, välj [!DNL Data schemas] och sedan använda `broadLog` filter för namn eller etikett. I listan som visas väljer du källschemat för mottagarleveransloggarna med namnet `broadLogRcp`.
 

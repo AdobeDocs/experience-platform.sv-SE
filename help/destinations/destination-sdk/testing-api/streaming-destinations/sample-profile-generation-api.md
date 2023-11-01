@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att generera exempelprofiler för ditt mål för direktuppspelning, som du kan använda i måltestning.
 title: Generera exempelprofiler baserat på ett källschema
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: c1ba465a8a866bd8bdc9a2b294ec5d894db81e11
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1010'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,13 @@ På den här sidan visas och beskrivs alla API-åtgärder som du kan utföra med
 >* generera profiler som ska användas när [skapa och testa en meddelandeomvandlingsmall](create-template.md) - genom att använda *mål-ID* som en frågeparameter.
 >* generera profiler som ska användas vid anrop till [testa om målet är korrekt konfigurerat](streaming-destination-testing-overview.md) - genom att använda *målinstans-ID* som en frågeparameter.
 
-Du kan generera exempelprofiler baserat på antingen Adobe XDM-källschemat (som används vid testning av ditt mål) eller målschemat som stöds av ditt mål (som används när du skapar mallen). Om du vill förstå skillnaden mellan källschemat och målschemat för Adobe XDM läser du översiktsavsnittet i [Meddelandeformat](../../functionality/destination-server/message-format.md) artikel.
+Du kan generera exempelprofiler baserat på antingen Adobe XDM-källschemat (som används när du testar ditt mål) eller det målschema som stöds av ditt mål (som används när du skapar mallen). Om du vill förstå skillnaden mellan källschemat och målschemat för Adobe XDM läser du översiktsavsnittet i [Meddelandeformat](../../functionality/destination-server/message-format.md) artikel.
 
 Observera att de syften för vilka exempelprofilerna kan användas inte är utbytbara. Profiler som genereras baserat på *mål-ID* kan bara användas för att skapa dina meddelandeomformningsmallar och profiler som genereras baserat på *målinstans-ID* kan bara användas för att testa målslutpunkten.
 
 ## Komma igång med API-åtgärder för generering av exempelprofiler {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Generera exempelprofiler baserat på källschemat som ska användas vid testning av målet {#generate-sample-profiles-source-schema}
 
@@ -46,8 +46,8 @@ Om du vill hämta ID:t för en målinstans måste du först skapa en anslutning 
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) för mer information.
-> * När du har upprättat anslutningen till målet, hämta det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när [bläddra genom en anslutning till destinationen](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
+>* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) för mer information.
+> * När du har upprättat anslutningen till målet, hämta det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när [bläddra genom en anslutning till destinationen](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html).
 >![Användargränssnittsbild för att hämta målinstans-ID](../../assets/testing-api/get-destination-instance-id.png)
 
 **API-format**
@@ -182,8 +182,8 @@ Ett lyckat svar returnerar HTTP-status 200 med det angivna antalet exempelprofil
 | -------- | ----------- |
 | `segmentMembership` | Ett kartobjekt som beskriver personens målgruppsmedlemskap. Mer information om `segmentMembership`, läsa [Information om målgruppsmedlemskap](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
-| `xdm:status` | Ett strängfält som anger om målgruppsmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen är en del av segmentet.</li><li>`exited`: Profilen avslutar publiken som en del av den aktuella begäran.</li></ul> |
-| `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, läsa [Grund för schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
+| `xdm:status` | Ett strängfält som anger om målgruppsmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen ingår i segmentet.</li><li>`exited`: Profilen avslutar publiken som en del av den aktuella begäran.</li></ul> |
+| `identityMap` | Ett mappningsfält som beskriver de olika identitetsvärdena för en individ, tillsammans med deras associerade namnutrymmen. Mer information om `identityMap`, läsa [Grund för schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html#identityMap). |
 
 {style="table-layout:auto"}
 

@@ -3,9 +3,9 @@ title: Skapa en källanslutning och ett dataflöde för Chatlio med API:t för f
 description: Lär dig hur du ansluter Adobe Experience Platform till Chatlio med API:t för Flow Service.
 badge: Beta
 exl-id: 867b8096-0841-4462-9888-e60c97c2115e
-source-git-commit: 8de45a54607bed17fd79bbed693666beb09c0502
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1458'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -89,13 +89,13 @@ För att källdata ska kunna användas i Platform måste ett målschema skapas f
 
 Ett mål-XDM-schema kan skapas genom att utföra en POST-begäran till [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
-Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
+Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html#create).
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
 En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
-Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html?lang=en).
+Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](https://experienceleague.adobe.com/docs/experience-platform/catalog/api/create-dataset.html).
 
 ### Skapa en målanslutning {#target-connection}
 

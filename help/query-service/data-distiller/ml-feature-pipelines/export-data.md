@@ -2,16 +2,16 @@
 title: Exportera data till externa ML-miljöer
 description: Lär dig hur du delar en förberedd utbildningsdatauppsättning, som skapats med Data Distiller, till en molnlagringsplats som din ML-miljö kan läsa för utbildning och bedömning av din modell.
 exl-id: 75022acf-fafd-41d6-8dfa-ff3fd4c4fa7e
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '546'
 ht-degree: 1%
 
 ---
 
 # Exportera data till externa ML-miljöer
 
-I det här dokumentet visas hur du delar en förberedd utbildningsdatauppsättning som skapats med Data Distiller till en molnlagringsplats som din ML-miljö kan läsa för utbildning och bedömning av din modell. Exemplet här exporterar utbildningsdata till [DLZ (Data Landing Zone)](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/create/cloud-storage/data-landing-zone.html?lang=en). Du kan ändra lagringsmålet efter behov för att arbeta med maskininlärningsmiljön.
+I det här dokumentet visas hur du delar en förberedd utbildningsdatauppsättning som skapats med Data Distiller till en molnlagringsplats som din ML-miljö kan läsa för utbildning och bedömning av din modell. Exemplet här exporterar utbildningsdata till [DLZ (Data Landing Zone)](https://experienceleague.adobe.com/docs/experience-platform/sources/api-tutorials/create/cloud-storage/data-landing-zone.html). Du kan ändra lagringsmålet efter behov för att arbeta med maskininlärningsmiljön.
 
 The [Flödestjänst för destinationer](https://developer.adobe.com/experience-platform-apis/references/destinations/) används för att slutföra funktionspipelinen genom att landa en datauppsättning med beräknade funktioner på en lämplig molnlagringsplats.
 

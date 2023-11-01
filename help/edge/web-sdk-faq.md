@@ -2,9 +2,9 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2104'
+source-wordcount: '2098'
 ht-degree: 1%
 
 ---
@@ -84,7 +84,7 @@ Alloy är kodnamnet för Adobe Experience Platform Web SDK. Det används i SDK:s
 
 Nej. Alla som använder Adobe Digital Experience kan använda Adobe Experience Platform Web SDK kostnadsfritt. Kunder som vill använda [!DNL Web SDK] måste konfigurera rätt behörigheter för att skapa scheman, datauppsättningar, identitetsnamnutrymmen och datastreams i användargränssnittet för datainsamlingen eller Experience Platform.
 
-Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för insamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
+Mer information om hur du konfigurerar dessa behörigheter finns i vår dokumentation om [behörighetshantering för insamling](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html).
 
 ## Vem ska använda Web SDK?
 
@@ -119,7 +119,7 @@ Med andra ord, om du bestämmer dig för att använda Adobe Experience Platform 
 
 ## Kan jag migrera ECID:n när jag börjar använda Alloy så att webbplatsens besökare inte börjar visas som nya besökare?
 
-Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [Identitetsdokumentation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en#id-migration) för mer information.
+Ja, Adobe Experience Platform Web SDK har en funktion för identitetsmigrering. Följ instruktionerna för ID-migrering i [Identitetsdokumentation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html#id-migration) för mer information.
 
 ## Hur skiljer sig Web SDK från taggar?
 
@@ -161,7 +161,7 @@ Ja, för närvarande använder Web SDK var som helst mellan en och sju cookies b
 | **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar den Edge Network-region som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Edge Network kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
 | **mbox** | 63072000 | 2 år | Den här cookien visas när inställningen för målmigrering är true. Detta tillåter att målet [mbox cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) anges av Web SDK. |
 | **mboxEdgeCluster** | 1800 | 30 minuter | Den här cookien visas när inställningen för målmigrering är true. Med denna cookie kan Web SDK kommunicera rätt edge-kluster till at.js så att Target-profiler kan vara synkroniserade när användare navigerar på en webbplats. |
-| **AMCV_###@AdobeOrg** | 34128000 | 395 dagar | Denna cookie visas bara när ID-migrering på Adobe Experience Platform Web SDK är aktiverat. Denna cookie är användbar vid övergång till Web SDK medan vissa delar av webbplatsen fortfarande använder visitor.js. Se [idMigrationEnabled-dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#identity-options) om du vill läsa mer om den här inställningen. |
+| **AMCV_###@AdobeOrg** | 34128000 | 395 dagar | Denna cookie visas bara när ID-migrering på Adobe Experience Platform Web SDK är aktiverat. Denna cookie är användbar vid övergång till Web SDK medan vissa delar av webbplatsen fortfarande använder visitor.js. Se [idMigrationEnabled-dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#identity-options) om du vill läsa mer om den här inställningen. |
 
 När du använder Web SDK anger Edge Network en eller flera av cookierna ovan. Edge Network ställer in alla cookies med `secure` och `sameSite="none"` attribut.
 

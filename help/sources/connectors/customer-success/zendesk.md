@@ -3,10 +3,10 @@ title: Översikt över Zendesk Source Connector
 description: Lär dig hur du ansluter Zendesk till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-06-21T00:00:00Z
 exl-id: 9f245783-949d-4f40-9cf3-8991b4b6d780
-source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '367'
-ht-degree: 0%
+source-wordcount: '365'
+ht-degree: 1%
 
 ---
 
@@ -16,7 +16,7 @@ Med Adobe Experience Platform kan data hämtas från externa källor samtidigt s
 
 Experience Platform har stöd för inhämtning av data från tredjepartsprogram. Bland leverantörerna av nöjda kunder finns [!DNL Zendesk].
 
-Detta Adobe Experience Platform [källor](https://experienceleague.adobe.com/docs/experience-platform/sources/home.html?lang=en) utnyttjar [Zendesk Search API > Exportera sökresultat](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) som returnerar användarinformation till Experience Platform från Zendesk för vidare bearbetning.
+Detta Adobe Experience Platform [källor](https://experienceleague.adobe.com/docs/experience-platform/sources/home.htmll?lang=sv) utnyttjar [Zendesk Search API > Exportera sökresultat](https://developer.zendesk.com/api-reference/ticketing/ticket-management/search/#export-search-results) som returnerar användarinformation till Experience Platform från Zendesk för vidare bearbetning.
 
 ## IP-adress tillåtelselista
 
@@ -29,7 +29,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 I det här avsnittet beskrivs nödvändiga steg som måste utföras för att autentisera [!DNL Zendesk] konto.
 
 * Det första steget för att autentisera [!DNL Zendesk] kontot är till för att säkerställa att du har [!DNL Zendesk] supportkonto. Om du inte redan har en kan du se [[!DNL Zendesk] registersida](https://www.zendesk.com/register/) för att registrera och skapa ditt Zendesk-konto.
-* När du har registrerat dig går du till [[!DNL Zendesk] webbplats](https://www.zendesk.com/login/) och **underdomän**.
+* När du har registrerat dig går du till [[!DNL Zendesk] webbplats](https://www.zendesk.com/login/) och tillhandahåller **underdomän**.
 * Nästa, välj **[!DNL Settings]** > **[!DNL Apps and Integrations]** > **[!DNL Zendesk API]**.
 * Hämta slutligen din API-token från **[!DNL API token]** -avsnitt.
 

@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1400'
+source-wordcount: '1398'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,7 @@ Du kan ange vilka element som ska döljas i den fördolda formatredigeraren. Du 
 
 ![Bild som visar inställningarna för datainsamling i Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-collection.png)
 
-* **[!UICONTROL Callback function]**: Återanropsfunktionen som finns i tillägget kallas också för [`onBeforeEventSend` function](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Edge Network. Mer detaljerad information om hur funktionen används finns [här](../../../../edge/fundamentals/tracking-events.md#modifying-events-globally).
+* **[!UICONTROL Callback function]**: Återanropsfunktionen som finns i tillägget kallas också för [`onBeforeEventSend` function](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Edge Network. Mer detaljerad information om hur funktionen används finns [här](../../../../edge/fundamentals/tracking-events.md#modifying-events-globally).
 * **[!UICONTROL Enable click data collection]**: Web SDK kan automatiskt samla in länkklickningsinformation åt dig. Som standard är den här funktionen aktiverad men kan inaktiveras med det här alternativet. Länkarna är även märkta som nedladdningslänkar om de innehåller något av de nedladdningsuttryck som finns i [!UICONTROL Download Link Qualifier] textruta. Adobe tillhandahåller vissa standardkvalificerare för nedladdningslänk. Du kan redigera dem efter behov.
 * **[!UICONTROL Automatically collected context data]**: Som standard samlar Web SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe finns den [här](../../../../edge/data-collection/automatic-information.md). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, väljer du **[!UICONTROL Specific context information]** och markera de data som du vill samla in.
 

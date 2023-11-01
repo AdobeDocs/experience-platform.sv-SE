@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cl
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: b778b7b8c79176d0962a9c757d83a749acd147b6
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2987'
+source-wordcount: '2983'
 ht-degree: 1%
 
 ---
@@ -38,7 +38,7 @@ Försäljningsavdelningen på en uthyrningsplattform vill sända ett marknadsfö
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
-Innan du aktiverar data för [!DNL (API) Salesforce Marketing Cloud] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html?lang=en)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en) som [!DNL Experience Platform].
+Innan du aktiverar data för [!DNL (API) Salesforce Marketing Cloud] mål, du måste ha [schema](/help/xdm/schema/composition.md), a [datauppsättning](https://experienceleague.adobe.com/docs/platform-learn/tutorials/data-ingestion/create-datasets-and-ingest-data.html)och [segment](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html) som [!DNL Experience Platform].
 
 ### Krav [!DNL (API) Salesforce Marketing Cloud] {#prerequisites-destination}
 

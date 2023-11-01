@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -192,7 +192,7 @@ Innehåller version 2.5.0 av Adobe Experience Platform Web SDK Library.
 
 Innehåller version 2.4.0 av Adobe Experience Platform Web SDK Library.
 
-* Tillagd [&quot;dokument tas bort&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api) kryssruta för att skicka händelseåtgärdsgränssnitt.
+* Tillagd [&quot;dokument tas bort&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#using-the-sendbeacon-api) kryssruta för att skicka händelseåtgärdsgränssnitt.
 * Stöd för `out` alternativ när [konfigurera standardsamtycke](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) som släpper alla händelser tills samtycke tas emot (den befintliga `pending` Alternativet placerar händelser i kö och skickar dem när de har fått sitt samtycke).
 * Ett verktygstips har lagts till i standardfältet för samtycke.
 * Stöd för [Adobe Consent 2.0 standard](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard).

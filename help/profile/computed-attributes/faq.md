@@ -2,9 +2,9 @@
 title: Vanliga frågor om beräknade attribut
 description: Få svar på vanliga frågor om hur du använder beräknade attribut.
 exl-id: a4d3c06a-d135-453b-9637-4f98e62737a7
-source-git-commit: 48c728c183d6ad28cd291543a79902b16a247a5a
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
@@ -99,4 +99,4 @@ Beräknade attribut härleder automatiskt dataanvändningsetiketter från de kä
 
 ## Hur använder jag beräknade attribut med Adobe Journey Optimizer?
 
-Om du vill använda beräknade attribut under resor måste du lägga till `SystemComputedAttributes` fältgrupp till datakällan Experience Platform. Mer information om hur du konfigurerar datakällan för Experience Platform finns i [Adobe Experience Platform datakällguide](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html?lang=en).
+Om du vill använda beräknade attribut under resor måste du lägga till `SystemComputedAttributes` fältgrupp till datakällan Experience Platform. Mer information om hur du konfigurerar datakällan för Experience Platform finns i [Adobe Experience Platform datakällguide](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/configure-journeys/data-source-journeys/adobe-experience-platform-data-source.html).

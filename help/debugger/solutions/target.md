@@ -2,16 +2,16 @@
 title: Testa en Adobe Target-implementering med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Adobe Experience Platform Debugger för att testa och felsöka en webbplats som är aktiverad med Adobe Target.
 exl-id: f99548ff-c6f2-4e99-920b-eb981679de2d
-source-git-commit: c3b5b63767a934be16a479d04853e1250b3bf775
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1211'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
 
 # Testa en Adobe Target-implementering med Adobe Experience Platform Debugger
 
-Adobe Experience Platform Debugger innehåller ett antal användbara verktyg för att testa och felsöka en webbplats som har verktygats med en Adobe Target-implementering. Den här guiden innehåller några vanliga arbetsflöden och metodtips för att använda Platform Debugger på en målaktiverad webbplats.
+Adobe Experience Platform Debugger har en uppsättning användbara verktyg för att testa och felsöka en webbplats som har verktygats med en Adobe Target-implementering. Den här guiden innehåller några vanliga arbetsflöden och metodtips för att använda Platform Debugger på en målaktiverad webbplats.
 
 ## Förutsättningar
 
@@ -63,13 +63,13 @@ Följande värden hämtas:
 | [!DNL Pathname] | Sökvägen till begärande-URL:en. |
 | [!DNL Hostname] | Värdnamnet för begärande-URL. |
 | [!DNL Domain] | Domänen för begärande-URL. |
-| [!DNL Timestamp] | En tidsstämpel som anger när begäran (eller händelsen) ägde rum inom webbläsarens tidszon. |
+| [!DNL Timestamp] | En tidsstämpel som anger när begäran (eller händelsen) ägde rum, inom webbläsarens tidszon. |
 | [!DNL Time Since Page Load] | Förfluten tid sedan sidan först lästes in vid tidpunkten för begäran. |
 | [!DNL Initiator] | Initieraren av begäran. Med andra ord, vem gjorde förfrågan? |
 | [!DNL clientCode] | Identifieraren för organisationens konto som identifieras av Target. |
 | [!DNL requestType] | Det API som användes för begäran. Om at.js 1.x används är värdet `/json`. Om at.js 2.x används är värdet `delivery`. |
 | [!DNL Audience Manager Blob] | Tillhandahåller information om krypterade Audience Manager-metadata som kallas&quot;blob&quot;. |
-| [!DNL Audience Location Hint] | Datainsamlingens region-ID. Detta är en numerisk identifierare för den geografiska platsen för ett visst ID-tjänstdatacenter. Mer information finns i Audience Manager-dokumentationen om [DCS-region-ID, -platser och -värdnamn](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html) och Experience Cloud Identity Service Guide på [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html?lang=en#reference-a761030ff06c4439946bb56febf42d4c). |
+| [!DNL Audience Location Hint] | Datainsamlingens region-ID. Detta är en numerisk identifierare för den geografiska platsen för ett visst ID-tjänstdatacenter. Mer information finns i Audience Manager-dokumentationen om [DCS-region-ID, -platser och -värdnamn](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html) och Experience Cloud Identity Service Guide på [`getLocationHint`](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/getlocationhint.html#reference-a761030ff06c4439946bb56febf42d4c). |
 | [!DNL Browser Height] | Webbläsarens höjd i pixlar. |
 | [!DNL Browser Time Offset] | Webbläsarens tidsförskjutning som är associerad med dess tidszon. |
 | [!DNL Browser Width] | Webbläsarens bredd i pixlar. |
@@ -78,7 +78,7 @@ Följande värden hämtas:
 | [!DNL prefetch] | Parametrarna som används i under `prefetch` bearbetning. |
 | [!DNL execute] | Parametrarna som används under `execute` bearbetning. |
 | [!DNL Experience Cloud Visitor ID] | Om något av detta upptäcks, innehåller information om [Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) som tilldelats den aktuella besökaren. |
-| [!DNL experienceCloud] | Innehåller Experience Cloud-ID:n för den här specifika användarsessionen: en A4T [ID för kompletterande data](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/before-implement.html?#section_2C1F745A2B7D41FE9E30915539226E3A)och en [besökar-ID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html). |
+| [!DNL experienceCloud] | Innehåller Experience Cloud-ID:n för den här specifika användarsessionen: A4T [ID för kompletterande data](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/before-implement.html?#section_2C1F745A2B7D41FE9E30915539226E3A)och en [besökar-ID (ECID)](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html). |
 | [!DNL id] | The [Mål-ID](https://developers.adobetarget.com/api/delivery-api/#section/Identifying-Visitors/Target-ID) för besökaren. |
 | [!DNL Mbox Host] | The [värd](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html) som Target-begäran gjordes till. |
 | [!DNL Mbox PC] | En sträng som kapslar in [`mbox`](https://developer.adobe.com/target/implement/client-side/atjs/global-mbox/global-mbox-overview/) sessions-ID och [Adobe Target Edge](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html#concept_0AE2ED8E9DE64288A8B30FCBF1040934) platstips. Det här värdet används av at.js för att säkerställa att sessionen och Edge-platsen förblir fästa. |

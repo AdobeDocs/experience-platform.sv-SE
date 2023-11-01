@@ -2,9 +2,9 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 59f7b7cd2e7c52b64ee7fdb8e33b3a0116697696
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1161'
+source-wordcount: '1159'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ Följande tabell innehåller mer information om identitetsfält i [!DNL Analytic
 | Identitetsfält | Beskrivning |
 | --- | --- |
 | AAID | AAID är den primära enhetsidentifieraren i Adobe Analytics och finns garanterat för varje händelse som skickas via [!DNL Analytics] källa. Stödet kallas ibland för *ID för äldre analys* eller som `s_vi` cookie-ID. Trots detta skapas ett AAID även om `s_vi` cookie finns inte. Stödet representeras av `post_visid_high` och `post_visid_low` kolumner i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). För en given händelse innehåller AAID-fältet en enda identitet som kan vara någon av de olika typerna som beskrivs i [ordning för operationer [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **Anteckning**: Inom en hel rapportserie kan ett AAID innehålla en blandning av typer för olika händelser. |
-| ECID | ECID (Experience Cloud-ID) är ett separat fält för enhetsidentifierare, som fylls i i Adobe Analytics när [!DNL Analytics] implementeras med Experience Cloud Identity Service. ECID kallas ibland även MCID (Marketing Cloud-ID). Om ett ECID finns för en händelse kan detta baseras på ECID beroende på om Analytics [respitperiod](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) är konfigurerad. ECID representeras av `mcvisid` i Analytics-dataflöden. Mer information om ECID finns i [ECID - översikt](../../../identity-service/ecid.md). För information om hur ECID fungerar med [!DNL Analytics], se dokumentet på [Begäranden om analyser och Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html?lang=en). |
+| ECID | ECID (Experience Cloud-ID) är ett separat fält för enhetsidentifierare, som fylls i i Adobe Analytics när [!DNL Analytics] implementeras med Experience Cloud Identity Service. ECID kallas ibland även MCID (Marketing Cloud-ID). Om ett ECID finns för en händelse kan detta baseras på ECID beroende på om Analytics [respitperiod](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) är konfigurerad. ECID representeras av `mcvisid` i Analytics-dataflöden. Mer information om ECID finns i [ECID - översikt](../../../identity-service/ecid.md). För information om hur ECID fungerar med [!DNL Analytics], se dokumentet på [Begäranden om analyser och Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html). |
 | AACUSTOMID | AACUSTOMID är ett separat identifierarfält som fylls i i Adobe Analytics baserat på användningen av `s.VisitorID` i [!DNL Analytics] implementering. AACUSTOMID representeras av `cust_visid` kolumn i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). Om det finns ett AACUSTOMID kommer stödet att baseras på AACUSTOMID eftersom AACUSTOMID överför alla andra identifierare enligt definitionen i [ordning för operationer [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). |
 
 ### Hur [!DNL Analytics] source behandlar identiteter

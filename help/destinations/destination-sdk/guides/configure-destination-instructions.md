@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett direktuppspelningsmål
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '818'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Om du vill ansluta server- och mallkonfigurationen i steg 1 till den här målko
 
 >[!IMPORTANT]
 >
->Om du vill skapa ett korrekt konfigurerat mål för realtid (direktuppspelning) *måste* lägg till minst en målidentitet i `identityNamespaces`, vilket visas nedan. Om ingen målidentitet har konfigurerats kan användarna inte fortsätta förbi [Mappningssteg](../../ui/activate-segment-streaming-destinations.md#mapping) aktiveringsarbetsflödet.
+>Om du vill skapa ett korrekt konfigurerat mål för realtid (direktuppspelning) *måste* lägg till minst en målidentitet i `identityNamespaces`, vilket visas nedan. Om ingen målidentitet har konfigurerats kan användarna inte fortsätta förbi [Mappningssteg](../../ui/activate-segment-streaming-destinations.md#mapping) av aktiveringsarbetsflödet.
 
 ```shell
 POST platform.adobe.io/data/core/activation/authoring/destinations
@@ -148,7 +148,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 }
 ```
 
-## Steg 3: Skapa meddelandeomvandlingsmall - använd mallspråk för att ange meddelandets utdataformat {#create-transformation-template}
+## Steg 3: Skapa mall för meddelandeomvandling - använd mallspråk för att ange meddelandets utdataformat {#create-transformation-template}
 
 Beroende på vilka nyttolaster målet har stöd för måste du skapa en mall som omformar formatet för exporterade data från Adobe XDM-formatet till ett format som stöds av målet. Se mallexempel i avsnittet [Använda ett mallspråk för omvandlingar av identitet, attribut och målgruppsmedlemskap](../functionality/destination-server/message-format.md#using-templating) och använder [mallutvecklingsverktyg](../testing-api/streaming-destinations/create-template.md) tillhandahålls av Adobe.
 
@@ -174,7 +174,7 @@ När du har skapat en meddelandeomformningsmall som fungerar för dig lägger du
 }
 ```
 
-## Steg 4: Skapa konfiguration för målgruppsmetadata {#create-audience-metadata-configuration}
+## Steg 4: Skapa konfiguration av målgruppsmetadata {#create-audience-metadata-configuration}
 
 För vissa destinationer kräver Destinationen SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Se [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
 
@@ -276,7 +276,7 @@ När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i för
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/overview.md#create-segment)
-* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
+* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 7: Publicera destinationen {#publish-destination}
 
@@ -300,4 +300,4 @@ Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI)
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur [skicka för granskning en produkterad destination som skapats i Destination SDK](../guides/submit-destination.md).
+Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur [skicka för granskning en produkterad målplats som skapats i Destination SDK](../guides/submit-destination.md).

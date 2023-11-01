@@ -3,9 +3,9 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: efe88b582b4539a14f32c6e2c80a8b35cde1626e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '835'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste 
 
 * [Webb-SDK för Adobe Experience Platform](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
-* [Server-till-server-API](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-apis/dcs-s2s.html?lang=en)
+* [Server till server-API](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-apis/dcs-s2s.html)
 
 >[!NOTE]
 >Platform Web SDK och Platform Mobile SDK kräver inte distribution via taggar i Adobe Experience Platform. Vi rekommenderar dock att du använder taggar för att distribuera dessa SDK:er.
@@ -64,7 +64,7 @@ I **[!UICONTROL Tags]** arbetsyta, skapa en egenskap av typen **[!UICONTROL Edge
 
 1. Välj **[!UICONTROL Save]**.
 
-När du har skapat egenskapen går du till **[!UICONTROL Environments]** för den nya egenskapen och notera miljö-ID:n. Om den Adobe-organisation som används i datastream skiljer sig från den Adobe-organisation som används vid vidarebefordran av händelser, kan du kopiera miljö-ID:t från **[!UICONTROL Environments]** och klistra in den när du skapar ett datastream. I annat fall kan du välja miljö från en nedrullningsbar meny.
+När du har skapat egenskapen går du till **[!UICONTROL Environments]** för den nya egenskapen och notera miljö-ID:n. Om den Adobe-organisation som används i datastream skiljer sig från den Adobe-organisation som används vid vidarebefordran av händelser, kan du kopiera miljö-ID:t från **[!UICONTROL Environments]** och klistra in den när du skapar ett datastream. I annat fall kan du välja miljö i en listruta.
 
 ## Skapa ett datastream
 
@@ -97,7 +97,7 @@ Observera miljö-ID:n för den nya egenskapen när du har konfigurerat den.
 
 ## Konfigurera Platform Web SDK-tillägget för att skicka data till dataströmmen som skapats tidigare
 
-Skapa din egenskap i **[!UICONTROL Tags]** arbetsyta och sedan navigera till **[!UICONTROL Extensions]** och välj tillägget Experience Platform Web SDK i katalogen för att konfigurera och installera det.
+Skapa din egenskap i dialogrutan **[!UICONTROL Tags]** arbetsyta och sedan navigera till **[!UICONTROL Extensions]** och välj tillägget Experience Platform Web SDK i katalogen för att konfigurera och installera det.
 
 Se [Dokumentation för Web SDK-tillägg](../../extensions/client/web-sdk/overview.md) för mer information om konfigurationsalternativ.
 
@@ -107,7 +107,7 @@ När ovanstående är på plats kan du skapa datadefinitioner, regler och så vi
 
 Skapa en sidinläsningsregel med hjälp av plattformens SDK-tillägg och åtgärdstypen &quot;Skicka händelse&quot;:
 
-1. Öppna **[!UICONTROL Rules]** tabbtangenten och sedan **[!UICONTROL Create New Rule]**.
+1. Öppna **[!UICONTROL Rules]** tabbtangenten och sedan välja **[!UICONTROL Create New Rule]**.
 
 1. Namnge regeln.
 

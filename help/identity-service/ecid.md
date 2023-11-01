@@ -4,9 +4,9 @@ solution: Experience Platform
 title: ECID - översikt
 description: ECID (Experience Cloud Identifier) är en modul på klientsidan som ger tillgång till identitetshantering och som tillhandahåller tre primära funktioner.
 exl-id: da7717d2-da2e-414b-978d-2eab8ff2c5a0
-source-git-commit: ad9fb0bcc7bca55da432c72adc94d49e3c63ad6e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '271'
 ht-degree: 0%
 
 ---
@@ -29,8 +29,8 @@ För att kunna identifiera dina onlineanvändare måste du ha ECID som identifie
 
 Följande dokumentation ger ytterligare resurser för att förstå ECID mellan olika plattformar och Experience Cloud-program:
 
-* Information om hur du använder ECID för webbplatsimplementering finns i dokumentationen för [Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
-* För att se hur ECID används med program och mobilt webbinnehåll, se dokumentationen för [besöksspårning mellan en app och en mobil webbsajt](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html?lang=en#sdk-reference-ios).
+* Information om hur du använder ECID för webbplatsimplementering finns i dokumentationen för [Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html).
+* För att se hur ECID används med program och mobilt webbinnehåll, se dokumentationen för [besöksspårning mellan en app och en mobil webbsida](https://experienceleague.adobe.com/docs/mobile-services/ios/sdk-reference-ios/hybrid-app.html#sdk-reference-ios).
 * Det kan vara enkelt och enkelt att driftsätta dessa verktyg om du använder [taggar](../tags/home.md).
 * Se [Privacy Service](../privacy-service/identity-data.md) för information om hur man använder ECID för att underlätta efterlevnaden av sekretessbestämmelser som GDPR.
 * Mer information om ECID med avseende på plattform finns i [Översikt över identitetstjänsten](./home.md) och [Översikt över identitetsnamnutrymmen](./namespaces.md).

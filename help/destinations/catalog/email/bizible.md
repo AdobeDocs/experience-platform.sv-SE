@@ -3,9 +3,9 @@ keywords: bizible;bizible extension;bizible destination
 title: Bizible-tillägg
 description: Bizible-tillägget är ett e-postmål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 9e45416d-b951-411c-a59f-34f84529f721
-source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '435'
 ht-degree: 0%
 
 ---
@@ -16,21 +16,21 @@ ht-degree: 0%
 
 [!DNL Bizible] är den branschledande B2B-attribueringslösningen som ger er oöverträffad insyn i era data, så att ni kan fatta smarta beslut som ger tillväxt.
 
-[!DNL Bizible] är ett e-posttillägg i Adobe Experience Platform. Mer information om Bizible finns i [Marknadsattribuering](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html?lang=en) i Bizible-översikten.
+[!DNL Bizible] är ett e-posttillägg i Adobe Experience Platform. Mer information om Bizible finns i [Marknadsattribuering](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html) i Bizible-översikten.
 
-Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [taggtillägg - översikt](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [taggtillägg - översikt](../launch-extensions/overview.md).
 
 ![Bizible-tillägg](../../assets/catalog/email/bizible/catalog.png)
 
 ## Förutsättningar {#prerequisites}
 
-Det här tillägget är tillgängligt i [!DNL Destinations] för alla kunder som har köpt Platform.
+Det här tillägget är tillgängligt i [!DNL Destinations] katalog för alla kunder som har köpt Platform.
 
 Om du vill använda det här tillägget måste du ha tillgång till taggar i Adobe Experience Platform. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde. Kontakta din organisations administratör för att få åtkomst till taggar och be dem att ge dig **[!UICONTROL manage_properties]** behörighet så att du kan installera tillägg.
 
 ## Installera tillägg {#install-extension}
 
-Så här installerar du [!DNL Bizible] tillägg:
+Installera [!DNL Bizible] tillägg:
 
 I [Plattformsgränssnitt](https://platform.adobe.com/), gå till **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**.
 
@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Du kan även installera tillägget direkt i [Användargränssnitt för datainsamling](https://experience.adobe.com/#/data-collection/). Se guiden [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) för mer information.
+Du kan även installera tillägget direkt i [Användargränssnitt för datainsamling](https://experience.adobe.com/#/data-collection/). Se guiden på [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) för mer information.
 
 ## Så här använder du tillägget {#how-to-use}
 
@@ -56,4 +56,4 @@ Du kan konfigurera, uppgradera och ta bort tillägg i användargränssnittet fö
 >
 >Om tillägget redan är installerat på en av dina egenskaper visas ändå gränssnittet **[!UICONTROL Install]** för tillägget. Starta installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
 
-Om du vill uppgradera tillägget läser du i guiden på sidan [uppgraderingsprocess för tillägg](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.
+Om du vill uppgradera ditt tillägg läser du i guiden på sidan [uppgraderingsprocess för tillägg](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.

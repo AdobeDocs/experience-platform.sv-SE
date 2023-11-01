@@ -3,9 +3,9 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: b41335ba5fd6dca422b0c19517bc32b320f1e733
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1631'
 ht-degree: 2%
 
 ---
@@ -178,7 +178,7 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 
 +++svarsnr, [Web SDK](../edge/home.md) behöver inte aktivera målgrupper till [Adobe Target](catalog/personalization/adobe-target-connection.md).
 
-Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=en) används i stället för Web SDK, men endast nästa sessionspersonalisering stöds.
+Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK, men endast nästa sessionspersonalisering stöds.
 
 För [personalisering på samma sida och nästa sida](ui/activate-edge-personalization-destinations.md) användningsfall måste du använda antingen [Web SDK](../edge/home.md) eller [API för Edge Network Server](../server-api/overview.md). Läs dokumentationen om [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md) om du vill ha mer information om implementeringen.
 +++
@@ -204,7 +204,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 ### Var kan jag se de aktiverade attributen i Adobe Target?
 
-+++svarsattribut kommer att vara tillgängliga för användning i Target i [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=en) erbjudanden.
++++svarsattribut kommer att vara tillgängliga för användning i Target i [JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html) och [HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html) erbjudanden.
 +++
 
 ### Kan jag skapa ett mål utan ett datastream och sedan lägga till ett datastream till samma mål vid en senare tidpunkt?

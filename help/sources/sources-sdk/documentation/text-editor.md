@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkopplingar;källor sdk;sdk;SDK
 solution: Experience Platform
-title: Använd en textredigerare i din lokala miljö för att skapa en källdokumentationssida
+title: Skapa en källdokumentationssida med en textredigerare i din lokala miljö
 description: Det här dokumentet innehåller anvisningar om hur du använder din lokala miljö för att skapa dokumentation för källan och skicka en pull-begäran (PR).
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Det här dokumentet innehåller anvisningar om hur du använder din lokala milj�
 
 >[!TIP]
 >
->Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown Authoring tools](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html?lang=en)</li></ul>
+>Följande dokument från Adobe medverkande kan användas som ytterligare stöd för din dokumentationsprocess: <ul><li>[Installera Git- och Markdown Authoring tools](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html)</li><li>[Konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html)</li><li>[Arbetsflöde för GitHub-bidrag för större ändringar](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/full-workflow.html)</li></ul>
 
 ## Förutsättningar
 
@@ -37,7 +37,7 @@ Om du vill klona databasen till din lokala dator väljer du **Code**. I listruta
 
 >[!TIP]
 >
->Mer information finns i självstudiekursen om [konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#create-a-local-clone-of-the-repository).
+>Mer information finns i självstudiekursen om [konfigurera Git-databasen lokalt för dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository).
 
 ![open-git-desktop](../assets/open-git-desktop.png)
 
@@ -45,7 +45,7 @@ Låt sedan GitHub Desktop klona `experience-platform.en` databas.
 
 ![kloning](../assets/cloning.png)
 
-När kloningsprocessen är klar går du till GitHub Desktop och skapar en ny gren. Välj **Överordnad** i den övre navigeringen och välj **Ny gren**
+När kloningsprocessen är klar går du till GitHub Desktop och skapar en ny gren. Välj **Master** i den övre navigeringen och välj **Ny gren**
 
 ![ny gren](../assets/new-branch.png)
 
@@ -59,9 +59,9 @@ Nästa, välj **Publicera gren**.
 
 ## Skriv dokumentationssidan för källan
 
-När databasen är klonad till din lokala dator och en ny gren skapas kan du nu börja skapa dokumentationssidan för den nya källan via [valfri textredigerare](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html?lang=en#understand-markdown-editors).
+När databasen är klonad till din lokala dator och en ny gren skapas kan du nu börja skapa dokumentationssidan för den nya källan via [valfri textredigerare](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/install-tools.html#understand-markdown-editors).
 
-Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar tillägget för redigering av Adobe Markdown. Om du vill installera tillägget startar du Visual Studio Code och väljer **Tillägg** från vänster navigering.
+Adobe rekommenderar att du använder [Visual Studio Code](https://code.visualstudio.com/) och att du installerar tillägget för redigering av Adobe Markdown. Starta Visual Studio Code och välj sedan **Tillägg** från vänster navigering.
 
 ![extension](../assets/extension.png)
 
@@ -89,7 +89,7 @@ Om du vill skapa en pull-begäran väljer du **Skapa pull-begäran**.
 
 ![create-pr-vs](../assets/create-pr-vs.png)
 
-Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR-rapporten som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med den överordnad grenen i Adobe-databasen.
+Kontrollera att bas- och jämförelsegrenarna är korrekta. Lägg till en anteckning i PR-rapporten som beskriver uppdateringen och välj sedan **Skapa pull-begäran**. Då öppnas en PR för att sammanfoga arbetsgrenen i ditt arbete med huvudgrenen i Adobe-databasen.
 
 >[!TIP]
 >

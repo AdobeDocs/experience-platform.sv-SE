@@ -2,16 +2,16 @@
 title: Första parts enhets-ID i Platform Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1774'
+source-wordcount: '1772'
 ht-degree: 0%
 
 ---
 
 # Första parts enhets-ID i Platform Web SDK
 
-Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html?lang=en) för besökare på webbplatser genom användning av cookies, för att spåra användarbeteenden. Om du vill ta hänsyn till webbläsarbegränsningar för cookie-intervall kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Dessa kallas för FPID (First-party device ID).
+Adobe Experience Platform Web SDK tilldelar [Adobe Experience Cloud ID (ECID)](https://experienceleague.adobe.com/docs/experience-platform/identity/ecid.html) för besökare på webbplatser genom användning av cookies, för att spåra användarbeteenden. Om du vill ta hänsyn till webbläsarbegränsningar för cookie-intervall kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Dessa kallas för FPID (First-party device ID).
 
 >[!NOTE]
 >

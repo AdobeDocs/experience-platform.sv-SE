@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform mars 2023
 description: Versionsinformation mars 2023 för Adobe Experience Platform.
 exl-id: 3f4d764a-77cd-4e4a-ae11-e97a23006a53
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2145'
+source-wordcount: '2143'
 ht-degree: 3%
 
 ---
@@ -47,7 +47,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nytt snabbstartarbetsflöde för Meta Conversions API (beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! The [snabbstartsarbetsflöde för Meta Conversion API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=en#quick-start) gör det möjligt för kunderna att snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
+| Nytt snabbstartarbetsflöde för Meta Conversions API (beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! The [snabbstartsarbetsflöde för Meta Conversion API](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start) gör det möjligt för kunderna att snabbt samla in och vidarebefordra händelsedata, från serversidan till Meta för annonskonverteringar med bara några få enkla steg. |
 | Nytt snabbstartarbetsflöde för Mobile SDK (beta) | Kom åt nya snabbstartarbetsflöden via&quot;Komma igång&quot; från startskärmen för datainsamling! The [snabbstartarbetsflöde för Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) gör att du snabbt kan implementera Mobile SDK och validera grundläggande mobilhändelser med bara några få enkla steg. |
 | [!DNL Braze] tillägg för händelsevidarebefordring | The [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Braze] i form av händelser på serversidan med [!DNL Braze] API:er för användarspårning. |
 | [!DNL Epsilon] tillägg för händelsevidarebefordring | The [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) kan du utnyttja händelsevidarebefordran för att samla in händelseinformation i Adobe Experience Platform Edge Network och skicka den till [!DNL Epsilon] med [!DNL Epsilon] Händelse-API. |

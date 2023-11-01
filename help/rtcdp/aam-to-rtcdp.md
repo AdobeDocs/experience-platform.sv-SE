@@ -2,10 +2,10 @@
 title: Utveckling från Audience Manager till Real-Time CDP
 description: Förstå vad du bör tänka på innan du planerar en migrering från Audience Manager till Real-Time CDP.
 exl-id: 83ab9a5d-9abc-4072-b449-e2a9ecd48639
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '514'
-ht-degree: 0%
+source-wordcount: '504'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ I takt med att ni börjar använda Adobe Real-Time CDP bör ni ta hänsyn till d
 
 ## 1. Överväg dataarkitekturen i Audience Manager
 
-När du ser på utvecklingen från Audience Manager till Real-Time CDP är det dags att analysera [Audience Manager segment](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segments-purpose.html?lang=en) och avgöra vad [signaler](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-explorer/data-explorer-understanding-signals.html?lang=en), [traits](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-details-page.html?lang=en)och [regler](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segment-builder.html?lang=en#segment-builder-section) är de som utgör de segmenten.
+När du ser på utvecklingen från Audience Manager till Real-Time CDP är det dags att analysera [Audience Manager segment](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segments-purpose.html) och avgöra vad [signaler](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-explorer/data-explorer-understanding-signals.html), [traits](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/traits/trait-details-page.html)och [regler](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/segments/segment-builder.html#segment-builder-section) är de som utgör de segmenten.
 
 Tänk dessutom på de datakällor som du för närvarande använder i Audience Manager.
 
@@ -41,7 +41,7 @@ Segment som har regler som kan stödjas i Real-Time CDP men som har aktiveringsb
 
 ## 4. Vilka destinationer har du i Audience Manager idag på plats och kan börja flytta till Real-Time CDP?
 
-Adobe rekommenderar starkt att segment aktiveras i Audience Manager till [personbaserade mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=en) få push till Real-Time CDP via [!UICONTROL Audience Manager Source Connector], för att sedan aktivera via Real-Time CDP.
+Adobe rekommenderar starkt att segment aktiveras i Audience Manager till [personbaserade mål](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html?lang=sv) få push till Real-Time CDP via [!UICONTROL Audience Manager Source Connector], för att sedan aktivera via Real-Time CDP.
 
 Alla personbaserade destinationer är tillgängliga i Audience Manager - [Facebook](/help/destinations/catalog/social/facebook.md), [[!UICONTROL Google Customer Match]](/help/destinations/catalog/advertising/google-customer-match.md), [LinkedIn](/help/destinations/catalog/social/linkedin.md) - finns också i Real-Time CDP.
 

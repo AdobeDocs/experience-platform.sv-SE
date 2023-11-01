@@ -2,18 +2,18 @@
 title: Personalisering - översikt
 description: Lär dig hur du använder API:t för Adobe Experience Platform Edge Network Server för att hämta personaliserat innehåll från personaliseringslösningar från Adobe.
 exl-id: 11be9178-54fe-49d0-b578-69e6a8e6ab90
-source-git-commit: 378f222b5c673632ce5792c52fc32410106def37
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '741'
-ht-degree: 7%
+source-wordcount: '739'
+ht-degree: 8%
 
 ---
 
 # Personalisering - översikt
 
-Med [!DNL Server API]kan ni hämta personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) och [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=en).
+Med [!DNL Server API]kan ni hämta personaliserat innehåll från personaliseringslösningar i Adobe, inklusive [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) och [Offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=sv).
 
-Dessutom finns [!DNL Server API] möjliggör personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../destinations/ui/activate-edge-personalization-destinations.md).
+Dessutom kan du [!DNL Server API] möjliggör personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../destinations/ui/activate-edge-personalization-destinations.md).
 
 När du använder Server-API:t måste du integrera det svar som personaliseringsmotorn ger med den logik som används för att återge innehåll på webbplatsen. Till skillnad från [Web SDK](../edge/home.md), [!DNL Server API] har ingen funktion för att automatiskt tillämpa innehåll som returneras av [!DNL Adobe Target] och [!DNL Offer Decisioning].
 
@@ -55,7 +55,7 @@ För att kunna hämta anpassat innehåll krävs ett explicit frågeobjekt för e
 
 | Attribut | Typ | Obligatoriskt/valfritt | Beskrivning |
 | --- | --- | --- | ---|
-| `schemas` | `String[]` | Krävs för målanpassning. Valfritt för Offer decisioning. | Lista med scheman som används i beslutet för att välja typ av returnerade erbjudanden. |
+| `schemas` | `String[]` | Krävs för målanpassning. Valfritt för Offer decisioning. | Lista över scheman som används i beslutet för att välja typ av returnerade erbjudanden. |
 | `scopes` | `String[]` | Valfritt | Förteckning över beslutsomfattningar. Högst 30 per begäran. |
 
 ## Handtagsobjektet {#handle}
@@ -117,8 +117,8 @@ Personaliserat innehåll som hämtats från personaliseringslösningar presenter
 | `payload.scope` | Sträng | Beslutets omfattning som resulterade i de föreslagna erbjudandena. |
 | `payload.scopeDetails.decisionProvider` | Sträng | Ange till `TGT` när du använder Adobe Target. |
 | `payload.scopeDetails.activity.id` | Sträng | Unikt ID för erbjudandeaktiviteten. |
-| `payload.scopeDetails.experience.id` | Sträng | Unikt ID för erbjudandeplaceringen. |
-| `items[].id` | Sträng | Unikt ID för erbjudandeplaceringen. |
+| `payload.scopeDetails.experience.id` | Sträng | Erbjudandets unika ID. |
+| `items[].id` | Sträng | Erbjudandets unika ID. |
 | `items[].data.id` | Sträng | ID för det föreslagna erbjudandet. |
 | `items[].data.schema` | Sträng | Schemat för innehållet som är associerat med det föreslagna erbjudandet. |
 | `items[].data.format` | Sträng | Formatet på innehållet som är associerat med det föreslagna erbjudandet. |
@@ -248,7 +248,7 @@ Returnerar ett `200 OK` status och en eller flera `Handle` objekt, beroende på 
 
 ## Meddelanden {#notifications}
 
-Meddelanden ska utlösas när ett förhämtat innehåll eller en förhämtad vy har besöktes eller renderats för slutanvändaren. För att meddelanden ska kunna stängas av för rätt omfång måste du hålla reda på motsvarande `id` för varje omfång.
+Meddelanden ska utlösas när ett förhämtat innehåll eller en förhämtad vy har besöktes eller renderats för slutanvändaren. För att meddelanden ska kunna stängas av för rätt omfång måste du hålla reda på motsvarande `id` för varje omfattning.
 
 Meddelanden till höger `id` För att rapporteringen ska kunna speglas på rätt sätt krävs att motsvarande omfång aktiveras.
 

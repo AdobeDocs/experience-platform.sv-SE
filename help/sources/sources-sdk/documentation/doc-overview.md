@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Dokumentera källan
 description: Det sista steget innan den nya källan kan publiceras i Adobe Experience Platform är att dokumentera den nya källan.
 exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '407'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ Den här handboken innehåller följande:
 
 * En självstudiekurs som du kan följa för att skapa en dokumentationssida för den nya källan;
 * En dokumentationsmall där du kan fylla i för den nya källan;
-* [Instruktioner om hur du använder Markdown för att skriva teknisk dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en);
-* [Instruktioner om hur du förstår Adobe Markdown-smak](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#custom-markdown-extensions).
+* [Instruktioner om hur du använder Markdown för att skriva teknisk dokumentation](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html);
+* [Instruktioner om hur du förstår Adobe Markdown-smak](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html#custom-markdown-extensions).
 
 ## Förutsättningar
 
@@ -36,7 +36,7 @@ Om du vill skapa dokumentation för din källa måste du på en hög nivå skapa
 
 ## Dokumentationsmall
 
-Du kan använda en förfylld injektionspenna. [dokumentmall](./template.md) som hjälper dig att skapa dokumentation för källan. Nedan finns instruktioner om hur du redigerar mallen och öppnar en pull-begäran. Dokumentation som skickas till den nya källan granskas och publiceras av dokumentationsteamet på Adobe.
+Du kan använda en förfylld spruta. [dokumentmall](./template.md) som hjälper dig att skapa dokumentation för källan. Nedan finns instruktioner om hur du redigerar mallen och öppnar en pull-begäran. Dokumentation som skickas till den nya källan granskas och publiceras av dokumentationsteamet på Adobe.
 
 Du kan även hämta dokumentationsmallarna nedan:
 
@@ -47,5 +47,5 @@ Du kan även hämta dokumentationsmallarna nedan:
 
 Du kan använda GitHub-webbgränssnittet eller din lokala miljö för att skapa dokumentation för den nya källan i Platform. Sök efter instruktioner för båda alternativen i länkarna nedan:
 
-* [Använd GitHub-webbgränssnittet för att skapa en källdokumentationssida](./github.md)
+* [Skapa en källdokumentationssida med GitHub-webbgränssnittet](./github.md)
 * [Använda en textredigerare i den lokala miljön för att skapa en källdokumentationssida](./text-editor.md)

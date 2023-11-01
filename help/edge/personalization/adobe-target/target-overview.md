@@ -3,9 +3,9 @@ title: Använda Adobe Target med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1309'
 ht-degree: 3%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Lär dig hur du migrerar målinsimplementeringen till Platform Web SDK med [Migrera mål från at.js 2.x till Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) självstudiekurs.
+>Lär dig hur du migrerar målinsimplementeringen till Platform Web SDK med [Migrera mål från at.js 2.x till Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html) självstudie.
 >
->Lär dig implementera Target för första gången med [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) självstudiekurs. Mer information om Target finns i självstudieavsnittet med namnet [Konfigurera Target med Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+>Lär dig implementera Target för första gången med [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) självstudie. Mer information om Target finns i självstudieavsnittet med namnet [Konfigurera Target med Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
 
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
@@ -45,7 +45,7 @@ Följande diagram hjälper dig att förstå arbetsflödet i [!DNL Target] och [!
 | 3 | edge-nätverket skickar den berikade personaliseringsbegäran till [!DNL Target] kant med besökar-ID och inskickade parametrar. |
 | 4 | Profilskript körs och matas sedan in i [!DNL Target] profillagring. Profillagring hämtar segment från [!UICONTROL Audience Library] (till exempel segment som delas från [!DNL Adobe Analytics], [!DNL Adobe Audience Manager], [!DNL Adobe Experience Platform]). |
 | 5 | Baserat på parametrar för URL-begäran och profildata, [!DNL Target] avgör vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till gränsnätverket. |
-| 6 | a. Kantnätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyerna aktiveras. <br>c. Edge-nätverket skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll, personalisering och så vidare. |
+| 6 | a. Edge-nätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyer aktiveras. <br>c. Edge-nätverket skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll, personalisering och så vidare. |
 | 7 | Edge-nätverket framåt [!UICONTROL Analytics for Target] (A4T) information (aktivitets-, upplevelse- och konverteringsmetadata) till [!DNL Analytics] kant. |
 
 ## Aktivering [!DNL Adobe Target]
@@ -53,7 +53,7 @@ Följande diagram hjälper dig att förstå arbetsflödet i [!DNL Target] och [!
 Aktivera [!DNL Target]gör du följande:
 
 1. Aktivera [!DNL Target] i [datastream](../../../datastreams/overview.md) med rätt klientkod.
-1. Lägg till `renderDecisions` till dina händelser.
+1. Lägg till `renderDecisions` alternativ för dina händelser.
 
 Du kan sedan även lägga till följande alternativ:
 
@@ -72,7 +72,7 @@ Se [Återger innehåll för personalisering](../rendering-personalization-conten
 
 ## Målgrupper i XDM
 
-När du definierar målgrupper för [!DNL Target] aktiviteter som levereras via [!DNL Platform Web SDK], [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) måste definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en [!DNL Target] målgruppsregel som definieras av XDM-data för målinriktning. Inom [!DNL Target], visas XDM-data i [!UICONTROL Audience Builder] som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
+När du definierar målgrupper för [!DNL Target] aktiviteter som levereras via [!DNL Platform Web SDK], [XML](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv) måste definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en [!DNL Target] målgruppsregel som definieras av XDM-data för målinriktning. Inom [!DNL Target], visas XDM-data i [!UICONTROL Audience Builder] som en anpassad parameter. XDM-filen serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
 
 Om du har [!DNL Target] aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil levereras de inte korrekt via SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via [!DNL Platform Web SDK] som inte kräver XDM. Dessa fält är tillgängliga i [!DNL Target] Gränssnitt som inte kräver XDM:
 
@@ -85,7 +85,7 @@ Om du har [!DNL Target] aktiviteter med fördefinierade målgrupper som använde
 * Trafikkällor
 * Tidsram
 
-Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en) i *Adobe Target Guide*.
+Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html) i *Adobe Target Guide*.
 
 ### Svarstoken
 
@@ -157,7 +157,7 @@ När automatisk återgivning är inaktiverat innehåller propositionsarrayen:
 
 #### Vid sidinläsning:
 
-* Formulärbaserad dispositionsbaserad `propositions` med `renderAttempted` flaggan är inställd på `false`
+* Formulärbaserad disposition `propositions` med `renderAttempted` flaggan är inställd på `false`
 * Visual Experience Composer-baserade förslag med `renderAttempted` flaggan är inställd på `false`
 * Visual Experience Composer-baserade förslag för en enkelsidig programvy med `renderAttempted` flaggan är inställd på `false`
 
@@ -169,11 +169,11 @@ När automatisk återgivning är inaktiverat innehåller propositionsarrayen:
 
 The [!DNL Platform Web SDK] gör att du kan uppdatera profilen till [!DNL Target] och [!DNL Platform Web SDK] som en upplevelsehändelse.
 
-Så här uppdaterar du en [!DNL Target] kontrollerar du att profildata skickas med följande:
+Uppdatera en [!DNL Target] kontrollerar du att profildata skickas med följande:
 
 * Under `"data {"`
 * Under `"__adobe.target"`
-* Prefix `"profile."` t.ex. enligt nedan
+* Prefix `"profile."` som nedan
 
 | Nyckel | Typ | Beskrivning |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ alloy("sendEvent", {
 });
 ```
 
-**Så här skickar du profilattribut till Adobe Target:**
+**Skicka profilattribut till Adobe Target:**
 
 ```js
 alloy("sendEvent", {
@@ -212,7 +212,7 @@ alloy("sendEvent", {
 
 ## Begär rekommendationer
 
-Följande tabell innehåller [!DNL Recommendations] och om vart och ett stöds via [!DNL Platform Web SDK]:
+I följande tabell visas [!DNL Recommendations] och om vart och ett stöds via [!DNL Platform Web SDK]:
 
 | Kategori | Attribut | Supportstatus |
 | --- | --- | --- |
@@ -233,7 +233,7 @@ Följande tabell innehåller [!DNL Recommendations] och om vart och ett stöds v
 |  | productPurchasedId | Stöds |
 | Sida eller artikelkategori för kategoritillhörighet | user.categoryId | Stöds |
 
-**Så här skickar du Recommendations-attribut till Adobe Target:**
+**Skicka Recommendations-attribut till Adobe Target:**
 
 ```js
 alloy("sendEvent", {
@@ -261,4 +261,4 @@ __Schema:__ Schemat för ett beslut är den typ av erbjudande som [!DNL Target].
 
 __Omfång:__ Beslutets omfattning. I [!DNL Target]är omfattningen mBox. Den globala mBox är `__view__` omfång.
 
-__XDM:__ XDM serialiseras till punktnotation och sätts sedan i [!DNL Target] som mBox-parametrar.
+__XDM__ XDM serialiseras till punktnotation och sätts sedan i [!DNL Target] som mBox-parametrar.

@@ -1,10 +1,10 @@
 ---
-description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med Destination SDK.
+description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med hjälp av Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '683'
+source-wordcount: '681'
 ht-degree: 0%
 
 ---
@@ -238,7 +238,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 }
 ```
 
-## Steg 3: Skapa konfiguration för målgruppsmetadata {#create-audience-metadata-configuration}
+## Steg 3: Skapa konfiguration av målgruppsmetadata {#create-audience-metadata-configuration}
 
 För vissa destinationer kräver Destinationen SDK att du konfigurerar en målgruppsmetadatakonfiguration för att skapa, uppdatera eller ta bort målgrupper i målgruppen. Se [Hantering av målgruppsmetadata](../functionality/audience-metadata-management.md) om du vill ha information om när du behöver konfigurera den här konfigurationen och hur du gör det.
 
@@ -387,7 +387,7 @@ När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i för
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
 * [Skapa en publikdokumentationssida](/help/segmentation/ui/overview.md#create-segment)
-* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
+* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 6: Publicera destinationen {#publish-destination}
 
@@ -411,4 +411,4 @@ Om du är en oberoende programvaruleverantör (ISV) eller systemintegratör (SI)
 >
 >Det här steget är inte nödvändigt om du skapar ett privat mål för eget bruk och inte vill publicera det i målkatalogen för andra kunder.
 
-Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur [skicka för granskning en produkterad destination som skapats i Destination SDK](../guides/submit-destination.md).
+Innan destinationen kan publiceras i Experience Platform-katalogen och vara synlig för alla Experience Platform-kunder måste du skicka in destinationen för Adobe granskning officiellt. Hitta fullständig information om hur [skicka för granskning en produkterad målplats som skapats i Destination SDK](../guides/submit-destination.md).

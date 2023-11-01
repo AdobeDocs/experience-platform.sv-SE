@@ -2,9 +2,9 @@
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '1151'
 ht-degree: 0%
 
 ---
@@ -15,15 +15,15 @@ Den här sidan beskriver hur identiteter exporteras till olika måltyper och lä
 
 >[!TIP]
 >
-> Mer information om identiteter, namnutrymmen och definitioner av identitetsrelaterade termer finns i [Översikt över identitetstjänsten](/help/identity-service/home.md).
+> Mer information om identiteter, namnutrymmen för identiteter och definitioner av identitetsrelaterade termer finns i [Översikt över identitetstjänsten](/help/identity-service/home.md).
 
-Varje mål i [katalog](/help/destinations/catalog/overview.md) är något annorlunda, så det finns ingen inställning för en storlek som passar alla för alla mål. Det finns dock några mönster som vägleder konfigurationen av destinationer och deras identitetskrav, vilket beskrivs i avsnitten nedan.
+Varje mål i dialogrutan [katalog](/help/destinations/catalog/overview.md) är något annorlunda, så det finns ingen inställning för en storlek som passar alla för alla mål. Det finns dock några mönster som vägleder konfigurationen av destinationer och deras identitetskrav, vilket beskrivs i avsnitten nedan.
 
 ## Filbaserade mål {#file-based}
 
 För [filbaserade mål](/help/destinations/destination-types.md#file-based) (till exempel [!DNL Amazon S3], SFTP, de flesta e-postmarknadsföringsmål som [!DNL Adobe Campaign], [!DNL Oracle Eloqua], [!DNL Salesforce Marketing Cloud]) är identitetsinställningarna i de flesta av dessa mål öppna, vilket innebär att du inte behöver välja någon identitet i [Välj attribut](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes) steg i gruppaktiveringsarbetsflödet.
 
-Om du väljer att lägga till identiteter i din filexport bör du tänka på att det bara är en enda identitet från [identity namespace](/help/identity-service/ui/identity-graph-viewer.md#access-identity-graph-viewer) kan markeras i en export. När du väljer en identitet för export väljs den automatiskt som [obligatoriskt attribut](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) och [dedupliceringsnyckel](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys).
+Om du väljer att lägga till identiteter i din filexport bör du tänka på att det bara är en enda identitet från [namnutrymme för identitet](/help/identity-service/ui/identity-graph-viewer.md#access-identity-graph-viewer) kan markeras i en export. När du väljer en identitet för export väljs den automatiskt som [obligatoriskt attribut](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) och [dedupliceringsnyckel](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys).
 
 ![En identitet har valts som obligatoriskt attribut och dedupliceringsnyckel.](/help/destinations/assets/how-destinations-work/selected-identity.png)
 
@@ -78,7 +78,7 @@ Observera dock att du kan använda data från antingen [privata diagram](/help/p
 
 ### Annonsmål som förlitar sig på cookie-integreringar från tredje part {#third-party-cookie-destinations}
 
-Annonseringsmål som förlitar sig på cookies från tredje part (till exempel: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google DV360], [!DNL Bing], [!DNL The Trade Desk]) kräver inte att kunderna väljer ID i aktiveringsarbetsflödet. För dessa mål, när Experience Platform ställer in ett aktiveringsarbetsflöde, söker automatiskt upp identitetsmatchningstabellen som skapats av [[!UICONTROL Experience Cloud ID service]](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=en) och exporterar alla identiteter som är tillgängliga för en profil och stöds av målet.
+Annonseringsmål som förlitar sig på cookies från tredje part (till exempel: [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google DV360], [!DNL Bing], [!DNL The Trade Desk]) kräver inte att kunderna väljer ID i aktiveringsarbetsflödet. För dessa mål, när Experience Platform ställer in ett aktiveringsarbetsflöde, söker automatiskt upp identitetsmatchningstabellen som skapats av [[!UICONTROL Experience Cloud ID service]](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html) och exporterar alla identiteter som är tillgängliga för en profil och stöds av målet.
 
 Dessa mål kräver att en ID-synkronisering utförs via antingen [!UICONTROL Experience Cloud ID service] eller via [!UICONTROL Experience Platform Web SDK].
 
@@ -88,15 +88,15 @@ När du konfigurerar ett datastream enligt beskrivningen i den länkade dokument
 
 >[!NOTE]
 >
->De flesta av dessa reklamdestinationer stöds i Audience Manager (dessa destinationstyper kallas i Audience Manager som enhetsbaserade destinationer). Se en [lista över alla enhetsbaserade destinationer i Audience Manager som stöds](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html?lang=en)). Endast ett fåtal är listade i Experience Platform. Mer information om datadelning mellan Experience Platform och Audience Manager finns i avsnittet om [möjliggöra datadelning från Experience Platform till Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=en#enable-aep-to-aam-data). För närvarande finns det ingen plan för att stödja fler cookie-destinationer från tredje part.
+>De flesta av dessa reklamdestinationer stöds i Audience Manager (dessa destinationstyper kallas i Audience Manager som enhetsbaserade destinationer). Se en [lista över alla enhetsbaserade destinationer i Audience Manager som stöds](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/device-based/device-based-destinations-list.html)). Endast ett fåtal är listade i Experience Platform. Mer information om datadelning mellan Experience Platform och Audience Manager finns i avsnittet om [möjliggöra datadelning från Experience Platform till Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#enable-aep-to-aam-data). För närvarande finns det ingen plan för att stödja fler cookie-destinationer från tredje part.
 
 ## Företagsmål {#enterprise-destinations}
 
 [Företagsmål](/help/destinations/destination-types.md#streaming-profile-export) ([!DNL Amazon Kinesis], [!DNL Azure Event Hubs], HTTP API) kräver inga specifika ID:n i dataexporten eftersom dessa är utformade för företagsintegrering. Du kan dock exportera identiteter som XDM-attribut eller från identitetskartan om du vill. Visa en [exempel på exporterade data till HTTP-målet](/help/destinations/catalog/streaming/http-destination.md#exported-data), som innehåller både `personalEmail.address` XDM-attribut och identiteter `ECID` och `email_lc_sha256` (hashade e-postadress) från identitetskartan.
 
-## Destinationer för personalisering {#personalization-destinations}
+## Destinationer för anpassning {#personalization-destinations}
 
-[Destinationer för personalisering (eller kant)](/help/destinations/destination-types.md#edge-personalization-destinations) (till exempel: Adobe Target, [!DNL Custom Personalization]) kräver inget identitetsval i aktiveringsarbetsflödet eftersom integreringen är en profilsökning. Klienten ([!DNL Target], [!DNL Web SDK], eller andra) frågar [[!UICONTROL Edge]](/help/collection/home.md#edge) och hämtar profilinformation som behövs för anpassning på plats.
+[Destinationer för personalisering (eller kant)](/help/destinations/destination-types.md#edge-personalization-destinations) (t.ex. Adobe Target, [!DNL Custom Personalization]) kräver inget identitetsval i aktiveringsarbetsflödet eftersom integreringen är en profilsökning. Klienten ([!DNL Target], [!DNL Web SDK], eller andra) frågar [[!UICONTROL Edge]](/help/collection/home.md#edge) och hämtar profilinformation som behövs för anpassning på plats.
 
 <!--
 ![Table with all supported identities](/help/destinations/assets/how-destinations-work/identities-table.png)

@@ -2,9 +2,9 @@
 title: Analys och spårning av samtycke
 description: Lär dig hur du bygger en kontrollpanel för samtyckesanalys för att spåra hur användarens samtycke har utvecklats över tid.
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1815'
+source-wordcount: '1813'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ The [!UICONTROL Subscriptions] visas. Välj och dra **[!UICONTROL Choice Value]*
 
 >[!NOTE]
 >
->Det finns en mjuk gräns för hur många målgrupper du bör skapa. Mer information finns i [dokumentation om segmenteringsskyddsutkast](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=en#segmentation-guardrails).
+>Det finns en mjuk gräns för hur många målgrupper du bör skapa. Mer information finns i [dokumentation om segmenteringsskyddsutkast](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html#segmentation-guardrails).
 
 ![The [!UICONTROL Choice Value] attributet med [!UICONTROL Yes (opt-in)] det värde som markeras i segmentbyggaren. Namnet på och beskrivningen av målgruppen markeras också.](../images/insights-use-cases/consent-analysis/choice-value.png)
 

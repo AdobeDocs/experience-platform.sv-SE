@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1176'
+source-wordcount: '1174'
 ht-degree: 1%
 
 ---
@@ -257,7 +257,7 @@ Följande visar en lista med kända begränsningar att tänka på vid direktupps
 
 * Metoden för direktuppspelning av överföringar bör endast användas när partiella raduppdateringar skickas till [!DNL Real-Time Customer Profile]. Uppdateringar av delar av rader är **not** som konsumeras av en datasjö.
 * Metoden för att skicka direktuppspelning stöder inte uppdatering, ersättning och borttagning av identiteter. Nya identiteter skapas om de inte finns. Därför är `identity` måste alltid anges för att skapa. Om en identitet redan finns är åtgärden no-op.
-* Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html?lang=en) och [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
+* Metoden för direktuppspelning stöder för närvarande inte [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/home.html) och [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
 
 ## Nästa steg
 

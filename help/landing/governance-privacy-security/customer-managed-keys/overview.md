@@ -2,9 +2,9 @@
 title: Kundhanterade nycklar i Adobe Experience Platform
 description: Lär dig hur du konfigurerar egna krypteringsnycklar för data som lagras i Adobe Experience Platform.
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: 930c786db51063c55f731dc90f2ee66e98624555
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '754'
+source-wordcount: '752'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Det här dokumentet ger en översikt på hög nivå över processen för att akt
 
 >[!NOTE]
 >
->För Customer Journey Analytics-kunder, följ instruktionerna i [Customer Journey Analytics dokumentation](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html?lang=en).
+>För Customer Journey Analytics-kunder, följ instruktionerna i [Customer Journey Analytics dokumentation](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-privacy/cmk.html).
 
 ## Förutsättningar
 

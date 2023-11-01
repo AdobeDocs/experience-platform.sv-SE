@@ -5,16 +5,16 @@ title: Skapa webbscheman och datauppsättningar för Luma
 type: Tutorial
 description: I den här självstudiekursen får du tillgång till de förutsättningar och resurser som krävs för Lumas modell för benägenhet för demo.
 exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '463'
 ht-degree: 0%
 
 ---
 
 # Skapa scheman och datauppsättningar för Luma-benägenhetsmodellen
 
-I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudiekurser. När detta är klart är följande scheman och datauppsättningar tillgängliga för dig och din organisation.
+I den här självstudiekursen får du de krav och resurser som krävs för alla andra [!DNL Adobe Experience Platform] [!DNL Data Science Workspace] självstudier. När detta är klart är följande scheman och datauppsättningar tillgängliga för dig och din organisation.
 
 **Scheman:**
 
@@ -30,7 +30,7 @@ I den här självstudiekursen får du de krav och resurser som krävs för alla 
 
 ## Hämta resurserna {#assets}
 
-I följande självstudie används en anpassad Luma-modell för köpbenägenhet. Innan du fortsätter [hämta nödvändiga resurser](https://experienceleague.adobe.com/docs/platform-learn/assets/DSW-course-sample-assets.zip?lang=en) zip-mapp. Mappen innehåller:
+I följande självstudie används en anpassad Luma-modell för köpbenägenhet. Innan du fortsätter [hämta nödvändiga resurser](https://experienceleague.adobe.com/docs/platform-learn/assets/DSW-course-sample-assets.zip) zip-mapp. Mappen innehåller:
 
 - Modell för inköpsbenägenhet
 - En anteckningsbok som används för att importera data till en utbildnings- och bedömningsdatauppsättning (en deluppsättning av Lumas webbdata)
@@ -43,7 +43,7 @@ I följande självstudie används en anpassad Luma-modell för köpbenägenhet. 
 
 ### Skapa Luma-webbdataramat och importera data
 
-För att kunna skapa en modell måste du ha en datauppsättning i Platform som används för att utbilda och bedöma modellen. Följande videosjälvstudiekurs från [Utbildning i datavetenskap](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) leder dig igenom hur du skapar Luma-schemat och importerar de data som används av modellen för inköpsbenägenhet.
+För att kunna skapa en modell måste du ha en datauppsättning i Platform som används för att utbilda och bedöma modellen. Följande videosjälvstudie från [Utbildning i datavetenskap](https://experienceleague.adobe.com/?recommended=ExperiencePlatform-U-1-2021.1.dsw) leder dig igenom hur du skapar Luma-schemat och importerar de data som används av modellen för inköpsbenägenhet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/333312)
 
@@ -55,6 +55,6 @@ Om du vill köra den bärbara datorn för recept builder eller använda API:t f�
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat de scheman och datamängder som krävs för Luma-benägenhetsmodellen. Nu kan du fortsätta med nästa självstudiekurs och skapa modellen med [recept builder bärbar dator](../jupyterlab/create-a-model.md) självstudiekurs.
+I den här självstudiekursen har du skapat de scheman och datamängder som krävs för Luma-benägenhetsmodellen. Nu kan du fortsätta med nästa självstudiekurs och skapa modellen med [recept builder bärbar dator](../jupyterlab/create-a-model.md) självstudie.
 
 Dessutom kan du utforska data med den medföljande EDA-anteckningsboken (Exploratory Data Analysis). Den här anteckningsboken kan användas för att förstå mönster i Luma-data, kontrollera datavården och sammanfattar relevanta data för den prediktiva benägenhetsmodellen. Mer information om dataanalys finns på [EDA-dokumentation](../jupyterlab/eda-notebook.md).

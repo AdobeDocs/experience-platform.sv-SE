@@ -1,11 +1,11 @@
 ---
 title: Hybrid-personalisering med Web SDK och Edge Network Server API
 description: I den här artikeln visas hur du kan använda Web SDK i kombination med Server-API:t för att distribuera hybridanpassning på dina webbegenskaper.
-keywords: personalisering, Hybrid. server-api; serversidan; Hybrid-genomförande.
+keywords: personalisering, hybrid, server-api, server-side, hybridimplementering,
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '822'
+source-wordcount: '820'
 ht-degree: 2%
 
 ---
@@ -39,7 +39,7 @@ Flödesdiagrammet nedan beskriver ordningen för de steg som vidtas för att lev
 1. Server-API:t returnerar personaliseringsinnehållet till programservern.
 1. Programservern returnerar ett HTML-svar till klientwebbläsaren med [identitets- och klustercookies](#cookies).
 1. På klientsidan visas [!DNL Web SDK] `applyResponse` anropas och skickas i sidhuvuden och brödtexten i [!UICONTROL Server API] svar från föregående steg.
-1. The [!DNL Web SDK] återger sidinläsning [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) erbjudanden automatiskt, eftersom `renderDecisions` flaggan är inställd på `true`.
+1. The [!DNL Web SDK] återger sidinläsning [[!DNL Visual Experience Composer (VEC)]](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) erbjudanden automatiskt, eftersom `renderDecisions` flaggan är inställd på `true`.
 1. Formulärbaserad [!DNL JSON] erbjudandena tillämpas manuellt via `applyPersonalization` metod, för att uppdatera [!DNL DOM] baserat på personaliseringserbjudandet.
 1. För formulärbaserade aktiviteter måste visningshändelser skickas manuellt för att ange när erbjudandet har visats. Detta görs via `sendEvent` -kommando.
 
@@ -65,17 +65,17 @@ Server-API-begäranden krävs för att hämta förslag och skicka ett visningsme
 
 När ni implementerar hybridpersonalisering måste ni vara särskilt uppmärksamma på att sidträffar inte räknas flera gånger i Analytics.
 
-När du [konfigurera ett datastream](../../datastreams/overview.md) för Analytics vidarebefordras händelser automatiskt så att sidträffar hämtas.
+När du [konfigurera ett datastream](../../datastreams/overview.md) För Analytics vidarebefordras händelser automatiskt så att sidträffar hämtas.
 
 Exemplet från den här implementeringen använder två olika datastreams:
 
 * En datastream har konfigurerats för Analytics. Datastream används för Web SDK-interaktioner.
 * En andra datastream utan någon Analytics-konfiguration. Den här datastream används för Server-API-begäranden.
 
-På så sätt registreras inga Analytics-händelser i serverbegäran, men det gör klientförfrågningarna. Detta leder till att Analytics-förfrågningar räknas korrekt.
+På så sätt registreras inga Analytics-händelser i serversidans begäran, men det gör klientsidans begäranden. Detta leder till att Analytics-förfrågningar räknas korrekt.
 
 
-## Begäran på serversidan {#server-side-request}
+## Serverbegäran {#server-side-request}
 
 Exemplet nedan visar en Server API-begäran som din programserver kan använda för att hämta personaliseringsinnehållet.
 
@@ -165,7 +165,7 @@ curl -X POST "https://edge.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_I
 | `dataStreamId` | `String` | Ja. | ID:t för den datastream som du använder för att skicka interaktionerna till Edge Network. Se [datastreams - översikt](../../datastreams/overview.md) för att lära dig hur du konfigurerar ett datastream. |
 | `requestId` | `String` | Nej | Ett slumpmässigt ID för korrelering av interna serverförfrågningar. Om inget anges genereras ett Edge-nätverk och returneras som svar. |
 
-### Serverbaserat svar {#server-response}
+### Serversidans svar {#server-response}
 
 Exemplet nedan visar hur Server-API-svaret kan se ut.
 

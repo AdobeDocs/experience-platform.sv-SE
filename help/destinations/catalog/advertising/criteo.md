@@ -3,9 +3,9 @@ keywords: Reklam; villkor.
 title: Kriterieanslutning
 description: Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter bättre upplevelser över det öppna internet. Med världens största datauppsättning för e-handel och AI av allra högsta klass ser Criteo till att alla kontaktytor under hela kundresan är personaliserade för att nå kunder med rätt annons, vid rätt tidpunkt.
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1030'
+source-wordcount: '1026'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ Kriteriet ger betrodd och slagkraftig annonsering för att ge alla konsumenter b
 
 ## Identiteter som stöds {#supported-identities}
 
-Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+Kriteriet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started).
 
 | Målidentitet | Beskrivning | Överväganden |
 | --- | --- | --- |
@@ -178,7 +178,7 @@ Begärandetexten för borttagning av användarprofil som tas emot av [!DNL Crite
 
 ## Dataanvändning och styrning {#data-usage}
 
-Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Datastyrning - översikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=en).
+Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper när data hanteras. Mer information om hur Adobe Experience Platform använder datastyrning finns i [Datastyrning - översikt](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
 
 ## Ytterligare resurser
 

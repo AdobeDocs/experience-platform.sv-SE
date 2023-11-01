@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 118ff85a9fceb8ee81dbafe2c381d365b813da29
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '854'
+source-wordcount: '848'
 ht-degree: 1%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 1%
 
 Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster för Experience Platform för att leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på valfritt data och autentiseringsformat. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 
-I dokumentationen till Destinationen SDK finns instruktioner om hur du kan använda Adobe Experience Platform Destinationen SDK för att konfigurera, testa och släppa en produktanpassad målintegration med Adobe Experience Platform, och få destinationen att bli en del av den ständigt växande målkatalogen. Genom att använda Destination SDK kan du även skapa ett eget, anpassat privat mål för att exportera data som är anpassade efter dina behov.
+I dokumentationen till Destinationen SDK finns instruktioner om hur du kan använda Adobe Experience Platform Destinationen SDK för att konfigurera, testa och släppa en produktanpassad målintegration med Adobe Experience Platform, och få destinationen att bli en del av den ständigt växande destinationskatalogen. Genom att använda Destination SDK kan du även skapa ett eget, anpassat privat mål för att exportera data som är anpassade efter dina behov.
 
-![Skärmbild från användargränssnittet i Experience Platform som visar destinationskatalogen](assets/destinations-catalog-overview.png)
+![Skärmbild från användargränssnittet i Experience Platform som visar målkatalogen](assets/destinations-catalog-overview.png)
 
 ## Producerade och anpassade integreringar {#productized-custom-integrations}
 
@@ -29,7 +29,7 @@ Som Destination SDK partner kan du dra nytta av att lägga till din produkterade
 2. Lägg in ett varumärkesprofilerat destinationskort i Experience Platform-katalogen för enklare kundkonfiguration och ökad medvetenhet.
 3. Upptäck detta som en produkterad målintegration med Adobe Experience Platform &amp; Adobe Real-time Customer Data Platform.
 
-Som Experience Platform-kund kan du också skapa en egen egen, anpassad destination som passar dina aktiveringsbehov bäst.
+Som Experience Platform-kund kan du också skapa en egen egen, anpassad destination som passar dina aktiveringsbehov.
 
 ![Översiktsdiagram som visar hur målutvecklare interagerar med Destination SDK och hur Real-Time CDP-kunder drar nytta av produktioner och privata destinationer.](assets/destination-sdk-visual.png)
 
@@ -41,7 +41,7 @@ Genom Destination SDK stöder Adobe Experience Platform realtidsintegrering (kal
 
 * Meddelandeomvandling och -aggregering
 * Bakfyllning av profil
-* Konfigurerbar integrering av metadata för att initiera målgruppsinställningar och dataöverföring
+* Konfigurerbar metadataintegrering för att initiera målgruppsinställningar och dataöverföring
 * Konfigurerbar autentisering
 * En serie test- och validerings-API:er som du kan använda för att testa och iterera i målkonfigurationerna
 
@@ -50,7 +50,7 @@ Genom Destination SDK stöder Adobe Experience Platform realtidsintegrering (kal
 Med Destination SDK kan du även konfigurera integreringar för att regelbundet exportera filer till valfri lagringsplats. Den filbaserade integrationen med Experience Platform stöder funktioner som:
 
 * Filexport i flera format som stöds (CSV, Parquet, JSON)
-* Konfigurerbara filformateringsalternativ som gör att du kan strukturera formatet för de exporterade filerna så att de uppfyller dina krav längre fram i kedjan.
+* Konfigurerbara filformateringsalternativ som gör att du kan strukturera formatet för de exporterade filerna så att de uppfyller dina senare krav.
 
 Läs om de tekniska kraven på destinationssidan i [integrationskrav](integration-prerequisites.md) artikel och läsa om alla konfigurationer som stöds i [konfigurationsalternativ](functionality/configuration-options.md) artikel
 
@@ -83,6 +83,6 @@ Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 
 Adobe rekommenderar att du läser och förstår följande Experience Platform-dokumentation:
 
-* [Översikt över Adobe Experience Platform destinationer](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=en)
-* [Grundläggande om XDM-schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en)
+* [Översikt över Adobe Experience Platform destinationer](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.htmll?lang=sv)
+* [Grundläggande om XDM-schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html)
 * [Översikt över namnområde för identitet](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv)

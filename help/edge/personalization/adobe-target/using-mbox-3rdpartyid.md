@@ -1,11 +1,11 @@
 ---
 title: Profilsynkronisering i realtid för mbox3rdPartyId
-description: Lär dig hur du använder mbox3rdPartyId med Adobe Experience Platform Web SDK.
-keywords: anpassning;mål;adobe target;renderDecision;sendEvent;mbox3rdPartyId;
+description: Lär dig använda mbox3rdPartyId med Adobe Experience Platform Web SDK.
+keywords: personalisering;mål;adobe target;renderDecision;sendEvent;mbox3rdPartyId;
 exl-id: 677d1054-0769-4ec6-811e-e02d4b247c2a
-source-git-commit: 5f2358c2e102c66a13746004ad73e2766e933705
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '161'
+source-wordcount: '159'
 ht-degree: 6%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 Mbox3rdPartyId i Adobe Target är ditt företags besökar-ID, till exempel medlemskaps-ID för ditt företags lojalitetsprogram.
 
-När en besökare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. [Läs mer](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=en#)
+När en besökare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. [Läs mer](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html#)
 
 
 ## Så här använder du `mbox3rdPartyId` med Web SDK

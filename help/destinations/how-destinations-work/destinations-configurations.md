@@ -2,9 +2,9 @@
 title: Konfigurerbara och gemensamma exportinställningar för destinationer
 description: Lär dig vilka exportinställningar i destinationer som kan konfigureras på en målnivå och som är fasta och inte kan redigeras.
 exl-id: 3f4706cb-6d51-4567-81f6-5b2bf167b576
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '845'
+source-wordcount: '843'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Den här sidan beskriver eller länkar ut till alla vanliga och konfigurerbara e
 
 ## Gemensamma exportinställningar för olika måltyper {#common-settings-across-destination-types}
 
-Beteendet för destinationsexport är konsekvent för destinationer som tillhör en destinationstyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Destinationsexporter utlöses av meddelanden om att destinationstjänsten tar emot från [tjänst för kundprofil i realtid](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html?lang=en#adobe-experience-platform-%26-applications-detailed-architecture-diagram).
+Beteendet för destinationsexport är konsekvent för destinationer som tillhör en destinationstyp med avseende på *vad som utlöser en målexport* och *vad som ingår i målexporten*. Destinationsexporter utlöses av meddelanden om att destinationstjänsten tar emot från [tjänst för kundprofil i realtid](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/platform-applications.html#adobe-experience-platform-%26-applications-detailed-architecture-diagram).
 
 Vad som ingår i målexporten varierar något mellan olika måltyper. Läs mer om [mönster för vanliga exportbeteenden per måltyp](/help/destinations/how-destinations-work/profile-export-behavior.md). Dessa inställningar kan inte redigeras av målutvecklare eller Real-Time CDP-användare.
 

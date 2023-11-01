@@ -2,9 +2,9 @@
 description: Lär dig hur du använder API:t för måltestning för att testa om ditt mål för direktuppspelning är korrekt konfigurerat och för att verifiera dataflödenas integritet till det konfigurerade målet.
 title: Testa strömningsmålet med exempelprofiler
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: d6402f22ff50963b06c849cf31cc25267ba62bb1
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '624'
 ht-degree: 0%
 
 ---
@@ -22,17 +22,17 @@ Du gör förfrågningar till testslutpunkten med eller utan att lägga till prof
 
 Du kan använda [API för generering av exempelprofiler](sample-profile-generation-api.md) för att skapa profiler som ska användas i begäranden till API:t för måltestning.
 
-## Hämta målinstans-ID {#get-destination-instance-id}
+## Så här hämtar du målinstans-ID {#get-destination-instance-id}
 
 >[!IMPORTANT]
 >
->* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) för mer information.
-> * När du har upprättat anslutningen till målet, hämta det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när [bläddra genom en anslutning till destinationen](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html?lang=en).
+>* Om du vill använda detta API måste du ha en befintlig anslutning till målet i användargränssnittet i Experience Platform. Läs [ansluta till mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) och [aktivera profiler och målgrupper till ett mål](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html) för mer information.
+> * När du har upprättat anslutningen till målet, hämta det målinstans-ID som du bör använda i API-anrop till den här slutpunkten när [bläddra genom en anslutning till destinationen](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destination-details-page.html).
 >![Användargränssnittsbild för att hämta målinstans-ID](../../assets/testing-api/get-destination-instance-id.png)
 
 ## Komma igång med API-åtgärder för måltestning {#get-started}
 
-Läs igenom [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
+Innan du fortsätter bör du granska [komma igång-guide](../../getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive hur du får nödvändig behörighet för målredigering och obligatoriska huvuden.
 
 ## Testa målkonfigurationen utan att lägga till profiler till samtalet {#test-without-adding-profiles}
 

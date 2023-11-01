@@ -2,9 +2,9 @@
 title: Skapa en Marketo Engage-källanslutning och ett dataflöde i användargränssnittet
 description: I den här självstudiekursen beskrivs hur du skapar en källanslutning och ett dataflöde i Marketo Engage i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: b271d28677543f773fe1ba471fc08574e7c5542b
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1623'
 ht-degree: 0%
 
 ---
@@ -13,25 +13,25 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Innan du skapar en [!DNL Marketo Engage] källanslutning och ett dataflöde måste du först se till att du har [mappade ditt organisations-ID i Adobe](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html?lang=en) in [!DNL Marketo]. Dessutom måste du se till att du har slutfört [automatiskt fylla i [!DNL Marketo] B2B-namnutrymmen och scheman](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) innan du skapar en källanslutning och ett dataflöde.
+>Innan du skapar [!DNL Marketo Engage] källanslutning och ett dataflöde måste du först se till att du har [mappade ditt organisations-ID i Adobe](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html) in [!DNL Marketo]. Dessutom måste du se till att du har slutfört [automatiskt fylla i [!DNL Marketo] B2B-namnutrymmen och scheman](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md) innan du skapar en källanslutning och ett dataflöde.
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Marketo Engage] (nedan kallad[!DNL Marketo]&quot;) källanslutning i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
+Den här självstudiekursen innehåller steg för att skapa en [!DNL Marketo Engage] (nedan kallad[!DNL Marketo]&quot;) i användargränssnittet för att hämta B2B-data till Adobe Experience Platform.
 
 ## Komma igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [B2B-namnutrymmen och automatisk schemagenerering](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med verktyget för automatisk generering av B2B-namnutrymmen och scheman kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste fylla i B2B-namnutrymmen och scheman innan du skapar en [!DNL Marketo] källanslutning och dataflöde.
+* [B2B-namnutrymmen och automatisk schemagenerering](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md): Med B2B-namnutrymmen och automatisk schemagenerering kan du använda [!DNL Postman] för att automatiskt generera värden för B2B-namnutrymmen och scheman. Du måste fylla i B2B-namnutrymmen och scheman innan du skapar en [!DNL Marketo] källanslutning och dataflöde.
 * [Källor](../../../../home.md): Experience Platform tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Experience Data Model (XDM)](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i användargränssnittet.
+   * [Skapa och redigera scheman i användargränssnittet](../../../../../xdm/ui/resources/schemas.md): Lär dig hur du skapar och redigerar scheman i gränssnittet.
 * [Identitetsnamnutrymmen](../../../../../identity-service/namespaces.md): Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] som fungerar som indikatorer för det sammanhang som en identitet hör till. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme.
 * [[!DNL Real-Time Customer Profile]](/help/profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Marketo] på Platform måste du ange följande värden:
+För att få åtkomst till [!DNL Marketo] på Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -77,7 +77,7 @@ Den vänstra halvan av gränssnittet är en katalogwebbläsare som visar de 10 [
 >
 >Följande självstudiekurser används för att arbeta snabbt [!UICONTROL Opportunities] som ett exempel, men stegen som beskrivs nedan gäller för någon av de 10 [!DNL Marketo] datauppsättningar.
 
-Markera den datauppsättning du vill importera först och välj sedan **[!UICONTROL Next]**.
+Markera den datauppsättning som du vill importera först och välj sedan **[!UICONTROL Next]**.
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
@@ -89,7 +89,7 @@ The [!UICONTROL Dataflow detail] kan du välja om du vill använda en befintlig 
 
 >[!BEGINTABS]
 
->[!TAB Använd en befintlig datauppsättning]
+>[!TAB Använd en befintlig datamängd]
 
 Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan. När du har valt en datauppsättning anger du ett namn och en beskrivning för dataflödet.
 
@@ -105,7 +105,7 @@ Om du vill importera till en ny datauppsättning väljer du **[!UICONTROL New da
 
 ### Aktivera [!DNL Profile] och feldiagnostik
 
-Välj sedan **[!UICONTROL Profile dataset]** växla för att aktivera datauppsättningen för [!DNL Profile]. På så sätt kan du skapa en helhetsbild av en enhets attribut och beteenden. Data från alla [!DNL Profile]-aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
+Nästa steg är att välja **[!UICONTROL Profile dataset]** växla för att aktivera datauppsättningen för [!DNL Profile]. På så sätt kan du skapa en helhetsbild av en enhets attribut och beteenden. Data från alla [!DNL Profile]-aktiverade datauppsättningar kommer att inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
 
 [!UICONTROL Error diagnostics] möjliggör detaljerad generering av felmeddelanden för alla felaktiga poster som inträffar i dataflödet, medan [!UICONTROL Partial ingestion] gör att du kan importera data som innehåller fel, upp till ett visst tröskelvärde som du manuellt anger. Se [partiell batchingång - översikt](../../../../../ingestion/batch-ingestion/partial.md) för mer information.
 
@@ -117,7 +117,7 @@ Välj sedan **[!UICONTROL Profile dataset]** växla för att aktivera datauppsä
 
 ### Aktivera aviseringar
 
-Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på källvarningar med hjälp av användargränssnittet](../../alerts.md).
+Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på källvarningar med användargränssnittet](../../alerts.md).
 
 När du är klar med informationen om dataflödet väljer du **[!UICONTROL Next]**.
 

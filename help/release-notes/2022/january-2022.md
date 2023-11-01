@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform januari 2022
 description: Versionsinformation januari 2022 för Adobe Experience Platform.
 exl-id: 734ce1b3-e270-4c37-958c-88bcc39fbf20
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '1341'
+source-wordcount: '1339'
 ht-degree: 2%
 
 ---
@@ -72,7 +72,7 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 | Personalisering på samma sida och nästa sida | The [personaliseringsfunktion för samma sida och nästa sida](../../destinations/ui/activate-edge-personalization-destinations.md) ger en delad, målinriktad vy över användare för applikationer i Edge Network, för enhetlighet mellan marknadsförings- och kundkanaler. Den här personaliseringen är möjlig genom [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personaliseringsanslutning](../../destinations/catalog/personalization/custom-personalization.md). Information om hur du konfigurerar personaliseringskampanjer på samma sida eller nästa sida finns i [dedikerad självstudiekurs](../../destinations/ui/activate-edge-personalization-destinations.md). |
 | Övervakning av batchdestinationer och segmentnivåstatistik | Funktionen för målövervakning har nu utökats från direktuppspelningsdestinationer till att även inkludera batchdestinationer och segmentnivåstatistik för era aktiveringsdata. Mer information finns i [kontrollpanel för destinationer](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard), [kontrollpanel för segmentjobb](/help/dataflows/ui/monitor-destinations.md#monitoring-segment-jobs-dashboard)och [segmentnivåvy](/help/dataflows/ui/monitor-destinations.md#segment-level-view). |
 | Schemalägg redigering i användargränssnittet för befintliga batchaktiveringsdataflöden | Den här versionen innehåller ett alternativ för att redigera schemat för dina befintliga aktiveringsdataflöden till batchdestinationer. Mer information finns i [aktivera profildata för batchprofilmål](/help/destinations/ui/activate-batch-profile-destinations.md). |
-| Förbättringar av Marketo-destinationer | Experience Platform-kunder som använder Marketo Engage kan maximera sin Marketo-databas med den nya möjligheten att föra över nya personposter till Marketo Engage från Experience Platform via [Marketo destinationskontakt](/help/destinations/catalog/adobe/marketo-engage.md). <br> När du skickar målgruppssegment från Experience Platform till Marketo Engage kan personer i segmentet som inte redan finns i Marketo Engage-databasen automatiskt läggas till i det. Mer information finns i [Överför ett Adobe Experience Platform-segment till en Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html?lang=en) (steg 9 i självstudiekursen visar hur du överför nya personposter till Marketo). |
+| Förbättringar av Marketo-destinationer | Experience Platform-kunder som använder Marketo Engage kan maximera sin Marketo-databas med den nya möjligheten att föra över nya personposter till Marketo Engage från Experience Platform via [Marketo destinationskontakt](/help/destinations/catalog/adobe/marketo-engage.md). <br> När du skickar målgruppssegment från Experience Platform till Marketo Engage kan personer i segmentet som inte redan finns i Marketo Engage-databasen automatiskt läggas till i det. Mer information finns i [Överför ett Adobe Experience Platform-segment till en Marketo Static List](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html) (steg 9 i självstudiekursen visar hur du överför nya personposter till Marketo). |
 
 **Nya destinationer**
 

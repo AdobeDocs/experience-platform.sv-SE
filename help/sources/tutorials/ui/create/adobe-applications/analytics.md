@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 358daa9511f647749a8198893b712d00a5cfbc5d
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '2360'
+source-wordcount: '2356'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,9 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
 * **Standardattribut**: Standardattribut är alla attribut som är fördefinierade av Adobe. De har samma betydelse för alla kunder och finns i [!DNL Analytics] källdata och [!DNL Analytics] schemafältgrupper.
-* **Eget attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i [!DNL Analytics]. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) för mer information om eVars.
+* **Eget attribut**: Anpassade attribut är alla attribut i den anpassade variabelhierarkin i [!DNL Analytics]. Anpassade attribut används i en Adobe Analytics-implementering för att samla in specifik information i en rapportserie, och de kan skilja sig åt när det gäller användningen från rapportsviten till rapportsviten. Anpassade attribut är eVars, props och lists. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html) för mer information om eVars.
 * **Alla attribut i anpassade fältgrupper**: Attribut som härstammar från fältgrupper som skapats av kunder är alla användardefinierade och betraktas inte som standardattribut eller anpassade attribut.
-* **Eget namn**: Eget namn är etiketter som tillhandahålls av människor för anpassade variabler i en [!DNL Analytics] implementering. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) om du vill ha mer information om egna namn.
+* **Eget namn**: Eget namn är etiketter som tillhandahålls av människor för anpassade variabler i en [!DNL Analytics] implementering. Se följande [[!DNL Analytics] dokumentation om konverteringsvariabler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html) om du vill ha mer information om egna namn.
 
 ## Skapa en källanslutning med Adobe Analytics
 
