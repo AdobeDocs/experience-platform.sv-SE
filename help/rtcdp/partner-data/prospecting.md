@@ -1,15 +1,15 @@
 ---
-title: Engagera och värva nya kunder genom användningsfall för prospektering
-description: Lär dig hur ni engagerar och förvärvar nya kunder genom användningsfall för prospektering som möjliggörs av partnerdatastödet i Real-Time CDP.
+title: Engagera och skaffa nya kunder utan att vara beroende av cookies från tredje part
+description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospektering av användningsfall, utan att förlita er på cookies från tredje part.
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: ec6375a025833027fda01c412124321132aefd65
+source-git-commit: 645295958ea6f94a9f9da13517b0fa1d02010b52
 workflow-type: tm+mt
-source-wordcount: '1913'
-ht-degree: 2%
+source-wordcount: '2030'
+ht-degree: 0%
 
 ---
 
-# Engagera och värva nya kunder genom användningsfall för prospektering
+# Engagera och skaffa nya kunder utan att vara beroende av cookies från tredje part
 
 >[!AVAILABILITY]
 >
@@ -19,9 +19,17 @@ Utnyttja datastödet från tredje part i Real-Time CDP för att utöka er profil
 
 ![Kundprospektering använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-overview.png)
 
+## Varför ska man tänka på det här användningsexemplet? {#why-this-use-case}
+
+Varumärken står samtidigt inför utmaningar när det gäller att på ett ansvarsfullt sätt genomföra kundvärvningsärenden utan att vara beroende av cookies från tredje part, begränsade budgetar och högre krav på transparens och avkastning på annonskostnaderna.
+
+Adobe Real-time Customer Data Platform kan hjälpa varumärken att på ett säkert sätt övergå från fall av användning med Data Management Platform (DMP) till alternativ som inte kräver cookies och göra detta på ett sätt som gör att man kan utveckla den fullständiga finessen och kraften hos självbetjäningssegmentering, målgruppsböjning och aktivering till ett enda system. Utan att kompromissa med Adobe fokuserar vi på ansvarsfull dataanvändning via en patenterad datastyrning och ett regelverk för samtycke.
+
+Följ till exempel de steg som beskrivs i det här fallet när du behöver köra en kampanj för att locka potentiella kunder att bli användare eller kända kunder.
+
 ## Förutsättningar och planering {#prerequisites-and-planning}
 
-När du funderar på att nå ut till och värva nya kunder genom att använda stöd för partnerdata i Real-Time CDP bör du tänka på följande under planeringsprocessen:
+När du funderar på att nå ut till och köpa nya kunder bör du tänka på följande under planeringsprocessen:
 
 * Hur lång tid har du på dig att förvänta dig att partnerprofiler ska importeras till Real-Time CDP och uppdateras?
 * Vilka identiteter kräver era nedströmsadresser?
@@ -219,5 +227,5 @@ Utnyttja målgrupperna genom att exportera dem till destinationer. För närvara
 Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
 
 * [Komplettera förstahandsprofiler med attribut från betrodda datapartners](/help/rtcdp/partner-data/supplement-first-party-profiles.md) för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
-* [Utnyttja partnerstödet för personalisering av upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.
+* [Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.
 * [Utökad aktivering av profiler för potentiella kunder och målgrupper för potentiella kunder](/help/destinations/ui/activate-prospect-audiences.md) för att välja mål.

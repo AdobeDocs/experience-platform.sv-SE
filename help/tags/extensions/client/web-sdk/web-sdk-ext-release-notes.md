@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3e572458907bf745ee8f0fb7e2db37caae79f712
 workflow-type: tm+mt
-source-wordcount: '1744'
+source-wordcount: '1794'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,20 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## Version 2.21.0 - 1 november 2023
+
+**Nya funktioner**
+
+* Tillagd `Request default personalization` alternativ för att skicka händelseåtgärd.
+* Stöd för sidhändelser över- och underkant har lagts till i åtgärden skicka händelse.
+* Tillagd `Apply propositions` åtgärd.
+* Tillagd `Evaluate rulesets` åtgärd och `Subscribe ruleset items` -händelse för meddelanden i programmet.
+* Tillagd `Decision context` för att skicka händelseåtgärd.
+
+**Korrigeringar och förbättringar**
+
+* Innehåller version 2.19.0 av Adobe Experience Platform Web SDK.
 
 ## Version 2.20.3-8 augusti 2023
 

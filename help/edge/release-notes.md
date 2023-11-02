@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3e572458907bf745ee8f0fb7e2db37caae79f712
 workflow-type: tm+mt
-source-wordcount: '1587'
+source-wordcount: '1660'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,20 @@ ht-degree: 1%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.19.0 - 1 november 2023
+
+**Nya funktioner**
+
+* Stöd för återgivning av meddelanden i appen från Adobe Journey Optimizer har lagts till.
+* Stöd för sidhändelser uppifrån och ned.
+* Tillagt&quot;defaultPersonalizationEnabled&quot;-alternativ till kommandot sendEvent för att styra begäran om det sidövergripande omfånget och standardytan.
+
+**Korrigeringar och förbättringar**
+
+* Kombinerad personalisering visar händelser tillsammans vid återgivning av flera typer av personalisering.
+* Ett problem där namn på en programvy på en sida var skiftlägeskänsliga har korrigerats.
+* Ett problem med skugg-DOM-anpassade erbjudandeväljare har korrigerats.
 
 ## Version 2.18.0 - 31 juli 2023
 

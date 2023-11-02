@@ -1,15 +1,15 @@
 ---
-title: Använd partnerstödd besöksidentifiering för att personalisera upplevelser på plats
+title: Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: de8aeb553066405424711e75480204f6136b52ff
+source-git-commit: 77eb2492259cc813db2d6c514d123fa2ad698f67
 workflow-type: tm+mt
-source-wordcount: '2472'
+source-wordcount: '2588'
 ht-degree: 1%
 
 ---
 
-# Använd partnerstödd igenkänning av besökare för att personalisera upplevelser på plats
+# Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning
 
 >[!AVAILABILITY]
 >
@@ -17,7 +17,15 @@ ht-degree: 1%
 
 Lär dig hur du kan använda partnerstödd igenkänning för att leverera personaliserade upplevelser till besökare på era webbegenskaper. Använd den här självstudiekursen för att förstå implementeringssekvensen för olika element i Experience Platform och andra Experience Cloud-lösningar för att visa en personaliserad upplevelse för autentiserade och oautentiserade besökare.
 
-![En infografik som beskriver hur ni använder attribut som tillhandahålls av partners för att leverera personaliserade upplevelser till era besökare.](/help/rtcdp/assets/partner-data/onsite-personalization/onsite-personalization-steps.png)
+![En infografik som beskriver hur ni använder attribut som tillhandahålls av partners för att leverera personaliserade upplevelser till era besökare.](/help/rtcdp/assets/partner-data/onsite-personalization/onsite-personalization-overview.png)
+
+## Varför ska man tänka på det här användningsexemplet? {#why-this-use-case}
+
+Fragmentering av digitala upplevelser när konsumenterna interagerar med varumärken på många olika sätt är mycket verkligt och blir allt svårare att lösa. De bästa strategierna för kundengagemang för sammanhängande upplevelser, målinriktade rekommendationer och skräddarsydda interaktioner begränsas alla av användarigenkänningen.
+
+Här kan partnerstödd realtidsigenkänning göra en meningsfull skillnad. Med Adobe kan identitetspartners ansluta sig till våra avancerade datainsamlingar på klientsidan och marknadsledande upplevelseoptimeringserbjudanden för att effektivt höja ribban när det gäller upplevelseleverans från första besöket och framåt, utan tidigare historik eller autentisering.
+
+Detta är särskilt värdefullt för vertikala annonser med låga autentiseringsnivåer, som konsumentförpackade varor, onlinebutiker med mera.
 
 ## Branschexempel {#industry-example}
 

@@ -2,9 +2,9 @@
 title: Komplettera förstapartsprofiler med attribut som tillhandahålls av partners
 description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: 645295958ea6f94a9f9da13517b0fa1d02010b52
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1255'
 ht-degree: 3%
 
 ---
@@ -18,6 +18,16 @@ ht-degree: 3%
 Komplettera förstahandsprofiler med attribut från betrodda datapartners för att förbättra er grund för data och få nya insikter om er kundbas och få bättre målgruppsoptimering.
 
 ![Förbättrade profiler med attribut som tillhandahålls av partners använder en omfattande visuell översikt.](/help/rtcdp/assets/partner-data/enrichment/enrichment-use-case-overview.png)
+
+## Varför ska man tänka på det här användningsexemplet? {#why-this-use-case}
+
+De flesta varumärken, även de som är fullmatade med förstahandsdata, kan dra nytta av att effektivisera sina data och få en bättre förståelse för kunderna, deras beteenden, mönster och önskemål.
+
+Adobe Real-time Customer Data Platform kan hjälpa varumärken att på ett ansvarsfullt sätt komplettera sina egna data med värdefulla insikter, identifierare och attribut från en eller flera betrodda partners.
+
+Adobe förstår att det inte finns någon strategi som passar alla och som möjliggör smidig interoperabilitet med data- och identitetspartners för att främja individanpassad och genomtänkt interaktion i alla faser av kundlivscykeln. Dessa funktioner stöds av ett betrott ramverk för datastyrning som ger en nyanserad kontroll över var och hur partnerdata används. Du kanske vill använda partnerinsikter för segmentering, men inte för personalisering.
+
+Följ till exempel de steg som beskrivs i det här användningsexemplet när du behöver förbättra dina kundregister med demografiska och avsiktliga signaler.
 
 ## Förutsättningar och planering {#prerequisites-and-planning}
 
@@ -126,5 +136,5 @@ Observera följande begränsningar när du utforskar användningsfallet som besk
 Upptäck fler användningsfall tack vare partnerdatastöd i Real-Time CDP:
 
 * Använd datastöd från tredje part i Real-Time CDP för att [utöka er profilbas med profiler med potentiella kunder från datapartners och engagera med dem för att förvärva eller nå nya kunder](/help/rtcdp/partner-data/prospecting.md).
-* [Utnyttja partnerstödet för personalisering av upplevelser på plats](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.
+* [Personalisera upplevelser på plats för okända besökare med partnerstödd besökarigenkänning](/help/rtcdp/partner-data/onsite-personalization.md) under besöket utan att användaren behöver autentisera sig eller ha en tidigare historia med ert varumärke.
 * [Utökad aktivering av profiler för potentiella kunder och målgrupper för potentiella kunder](/help/destinations/ui/activate-prospect-audiences.md) för att välja mål.
