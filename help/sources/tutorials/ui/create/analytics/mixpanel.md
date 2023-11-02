@@ -2,9 +2,9 @@
 title: Skapa en källanslutning för en blandpanel i användargränssnittet
 description: Lär dig hur du skapar en källanslutning till en blandpanel med Adobe Experience Platform-gränssnittet.
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
-source-git-commit: 6f8abca8f0db8a559fe62e6c143f2d0506d3b886
+source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '819'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]** och ange sed
 >id="platform_sources_mixpanel_timezone"
 >title="Ange en tidszon för blandpanelsinmatning"
 >abstract="Tidszonen måste vara densamma som tidszonsinställningen för profilen i Mixpanel, eftersom Platform använder den angivna tidszonen för projektet för att hämta relevanta data från Mixpanel. Mixpanel justerar sin tidszon så att den överensstämmer med projektets tidszon innan händelsen spelas in i ett datalager i Mixpanel."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=en#project-id-and-timezone" text="Läs mer i dokumentationen"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html#project-id-and-timezone" text="Läs mer i dokumentationen"
 
 När källan har autentiserats anger du ditt projekt-ID och tidszon och väljer sedan **[!UICONTROL Select]**.
 
