@@ -2,9 +2,9 @@
 title: Attributbaserad åtkomstkontroll har stöd för ad hoc-scheman
 description: En guide som begränsar åtkomsten till datafält i ad hoc-scheman som genererats via Adobe Experience Platform Query Service.
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: 91f318596bf268aa93e8b2df9c13774aab76d13a
+source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
-source-wordcount: '1028'
+source-wordcount: '1001'
 ht-degree: 0%
 
 ---
@@ -25,8 +25,8 @@ Det här dokumentet innehåller en självstudiekurs för att hantera åtkomst ti
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-* [Experience Data Model (XDM) System](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-   * [[!DNL Schema Editor]](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/overview.html): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
+* [Experience Data Model (XDM) System](../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+   * [[!DNL Schema Editor]](../../xdm/ui/overview.md): Lär dig hur du skapar och hanterar scheman och andra resurser i plattformsgränssnittet.
 * [[!DNL Data Governance]](../../data-governance/home.md): Lär dig mer [!DNL Data Governance] gör att ni kan hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning.
 * [Attributbaserad åtkomstkontroll](../../access-control/abac/overview.md): Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett ad hoc- eller reguljärt schemafält. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
@@ -70,7 +70,7 @@ The [!UICONTROL Edit labels] popover visas. I den här vyn kan du skapa eller re
 
 ![Redigeringsetiketterna poppar.](../images/data-governance/edit-labels-popover.png)
 
-Läs dokumentationen om hur du använder [skapa eller redigera etiketter för det valda schemat eller fältet](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/labels.html#edit-the-labels-for-the-schema-or-field).
+I dokumentationen finns anvisningar om hur du [skapa eller redigera etiketter för det valda schemat eller fältet](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field).
 
 >[!NOTE]
 >
@@ -94,4 +94,4 @@ Om en identitet eller primär identitet anges i ad hoc-schema, uppfyller systeme
 När du har läst det här dokumentet får du en bättre förståelse för hur du lägger till dataanvändningsetiketter i ad hoc-scheman som skapats med Query Service CTAS-frågor. Om du inte redan har gjort det kan följande dokument vara användbara för att förbättra din förståelse för datastyrning i frågetjänsten:
 
 * [Ad hoc-schematidentiteter](./ad-hoc-schema-identities.md)
-* [Datastyrning](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html)
+* [Datastyrning](../../data-governance/home.md)

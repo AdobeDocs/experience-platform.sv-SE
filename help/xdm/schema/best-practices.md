@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
-source-wordcount: '3033'
+source-wordcount: '3024'
 ht-degree: 1%
 
 ---
@@ -231,7 +231,7 @@ För Adobe Analytics är ECID standardidentitet. Om ett ECID-värde inte anges a
 
 ## Datavalideringsfält {#data-validation-fields}
 
-För att förhindra att felaktiga data hämtas till Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman. Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemaläggaren för att öppna [!UICONTROL Field properties] sidofält. Läs dokumentationen om [typspecifika fältegenskaper](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/fields/overview.html#type-specific-properties) för exakta beskrivningar av tillgängliga fält.
+För att förhindra att felaktiga data hämtas till Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman. Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemaläggaren för att öppna [!UICONTROL Field properties] sidofält. Läs dokumentationen om [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) för exakta beskrivningar av tillgängliga fält.
 
 ![Schemaredigeraren med begränsningsfälten markerade i [!UICONTROL Field properties] sidofält.](../images/best-practices/data-validation-fields.png)
 

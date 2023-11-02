@@ -2,9 +2,9 @@
 title: Slutpunkt för accelererade frågor
 description: Lär dig hur du får åtkomst till frågeflödat arkiv på ett tillståndslöst sätt för att snabbt returnera resultat baserat på aggregerade data. Det här dokumentet innehåller ett exempel på HTTP-begäran och svar för frågetjänstens accelererade frågeslutpunkt.
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: aa209dce9268a15a91db6e3afa7b6066683d76ea
+source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '559'
 ht-degree: 0%
 
 ---
@@ -83,11 +83,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/acceleated-queries
 
 | Egenskap | Beskrivning |
 |---|---|
-| `dbName` | Namnet på databasen som du gör en accelererad fråga till. Värdet för `dbName` bör ha formatet `{SANDBOX_NAME}:{ACCELERATED_STORE_DATABASE}.{ACCELERATED_STORE_SCHEMA}`. Den angivna databasen måste finnas i det accelererade arkivet, annars kommer begäran att resultera i ett fel. Du måste också se till att `x-sandbox-name` rubrik och sandlådenamn i `dbName` referera till samma sandlåda. |
+| `dbName` | Namnet på databasen som du gör en accelererad fråga till. Värdet för `dbName` bör ha formatet `{SANDBOX_NAME}:{ACCELERATED_STORE_DATABASE}.{ACCELERATED_STORE_SCHEMA}`. Den angivna databasen måste finnas i det accelererade arkivet, annars genereras ett fel. Du måste också se till att `x-sandbox-name` rubrik och sandlådenamn i `dbName` referera till samma sandlåda. |
 | `sql` | En SQL-satsträng. Den största tillåtna storleken är 100000 tecken. |
 | `templateId` | Den unika identifieraren för en fråga som skapats och sparats som en mall när en begäran om POST görs till `/templates` slutpunkt. |
 | `name` | Ett valfritt användarvänligt beskrivande namn för den accelererade frågan. |
-| `description` | En valfri kommentar om syftet med frågan för att hjälpa andra användare förstå dess syfte. Den största tillåtna storleken är 1 000 byte. |
+| `description` | En valfri kommentar om syftet med frågan för att hjälpa andra användare förstå syftet. Den största tillåtna storleken är 1 000 byte. |
 
 **Svar**
 
@@ -95,7 +95,7 @@ Ett lyckat svar returnerar HTTP-status 200 med ad hoc-schemat som skapats av fr�
 
 >[!NOTE]
 >
->Följande svar har trunkerats av kortfattade skäl.
+>Följande svar har trunkerats för att vara kortfattat.
 
 ```json
 {
@@ -212,6 +212,6 @@ Ett lyckat svar returnerar HTTP-status 200 med ad hoc-schemat som skapats av fr�
 | `resultsMeta` | Det här objektet innehåller metadata för varje kolumn som returneras i resultat, så att användarna vet namnet och typen för varje kolumn. |
 | `resultsMeta._adhoc` | Ett XDM-schema (ad hoc Experience Data Model) med fält som bara namnges av en enda datauppsättning. |
 | `resultsMeta._adhoc.type` | Datatypen för ad hoc-schemat. |
-| `resultsMeta._adhoc.meta:xdmType` | Detta är ett systemgenererat värde för XDM-fälttypen. Mer information om tillgängliga typer finns i dokumentationen om [tillgängliga XDM-typer](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/custom-fields-api.html). |
+| `resultsMeta._adhoc.meta:xdmType` | Detta är ett systemgenererat värde för XDM-fälttypen. Mer information om tillgängliga typer finns i dokumentationen om [tillgängliga XDM-typer](../../xdm/tutorials/custom-fields-api.md). |
 | `resultsMeta._adhoc.properties` | Detta är kolumnnamnen för den efterfrågade datauppsättningen. |
 | `resultsMeta._adhoc.results` | Detta är radnamnen för den efterfrågade datauppsättningen. De återspeglar var och en av de returnerade kolumnerna. |
