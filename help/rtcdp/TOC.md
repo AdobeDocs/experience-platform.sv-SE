@@ -4,10 +4,10 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 5c556d6a846c8ec97bf3aa8b6a6a6d2a64a33be5
+source-git-commit: 01fe1dd1d7df31458d4175c25928bfd12e01d654
 workflow-type: tm+mt
-source-wordcount: '254'
-ht-degree: 23%
+source-wordcount: '318'
+ht-degree: 18%
 
 ---
 
@@ -37,6 +37,14 @@ ht-degree: 23%
 * Mål {#destinations}
    * [Översikt över mål](destinations/overview.md)
    * [Destinationer i Real-Time CDP B2B Edition](destinations/b2b.md)
+* Guardrails {#guardrails}
+   * [Översikt över Real-Time CDP skyddsutkast](/help/rtcdp/guardrails/overview.md){target="_blank"}
+   * [Skyddsritningar för dataöverföring](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [Guardrails for the [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
+   * [Guardrails för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html){target="_blank"}
+   * [Guardrails för [!DNL Identity Service] data](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}
+   * [Guardrails för [!DNL Query Service]](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}
+   * [Garantier för dataaktivering via destinationer](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * Identiteter {#identity}
    * [Identiteter och identitetsnamnutrymmen](profile/identities-overview.md)
 * Sammanfoga profiler {#merge-policies}

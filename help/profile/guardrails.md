@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimal systemprestanda.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: d409c3f61824e77bfc26af577999d90d391f8a1b
+source-git-commit: ab2bb6f4cafe60aec7d8745cca9d2f7f0227a938
 workflow-type: tm+mt
-source-wordcount: '1965'
+source-wordcount: '2153'
 ht-degree: 4%
 
 ---
@@ -35,9 +35,12 @@ Följande Experience Platform-tjänster är involverade i modellering av kundpro
 
 Det finns två typer av standardgränser i det här dokumentet:
 
-* **Mjuk gräns:** Det går att gå längre än en mjuk gräns, men mjuka gränser ger en rekommenderad vägledning för systemprestanda.
+| Typ av skyddsräcke | Beskrivning |
+|----------|---------|
+| **Prestandaskydd (mjuk gräns)** | Prestandaskydd är användarbegränsningar som relaterar till omfattningen av dina användningsfall. När du överskrider prestandaskyddet kan du uppleva prestandaförsämringar och fördröjning. Adobe ansvarar inte för sådana prestandaförsämringar. Kunder som genomgående överskrider ett prestandaresäkerhetsskydd kan välja att licensiera ytterligare kapacitet för att undvika prestandaförsämringar. |
+| **Systemstyrda skyddsräcken (hård begränsning)** | Systemstyrda skyddsräcken används av Real-Time CDP gränssnitt eller API. Det här är begränsningar som du inte kan överskrida eftersom gränssnittet och API kommer att blockera dig från att göra det eller returnera ett fel. |
 
-* **Hård gräns:** En hård gräns ger ett absolut maximum.
+{style="table-layout:auto"}
 
 >[!NOTE]
 >
@@ -53,14 +56,14 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Data för klassen XDM Individuella profiler | 20 | Mjuk | Högst 20 datauppsättningar rekommenderas som utnyttjar klassen XDM Individual Profile. |
-| XDM ExperienceEvent, klassdatamängder | 20 | Mjuk | Högst 20 datauppsättningar rekommenderas som utnyttjar klassen XDM ExperienceEvent. |
-| Adobe Analytics rapportuppsättningar har aktiverats för profil | 1 | Mjuk | Högst en (1) datauppsättning för analysrapportsviten ska aktiveras för profilen. Om du försöker aktivera flera datauppsättningar i Analytics-rapportsviten för profilen kan det få oönskade konsekvenser för datakvaliteten. Mer information finns i avsnittet om [Adobe Analytics dataset](#aa-datasets) i tillägget. |
-| Relationer för flera enheter | 5 | Mjuk | Högst fem multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas. Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
-| JSON-djup för ID-fält som används i relationer med flera enheter | 4 | Mjuk | Rekommenderat maximalt JSON-djup för ett ID-fält som används i relationer med flera enheter är 4. Detta innebär att i ett mycket kapslat schema ska fält som är kapslade mer än fyra nivåer djupa inte användas som ID-fält i en relation. |
-| Matriskardinalitet i ett profilfragment | &lt;=500 | Mjuk | Den optimala arraykardinaliteten i ett profilfragment (tidsoberoende data) är &lt;=500. |
-| Array-kardinalitet i ExperienceEvent | &lt;=10 | Mjuk | Den optimala arraykardinaliteten i en ExperienceEvent (tidsseriedata) är &lt;=10. |
-| Identitetsantal för individuell profil identitetsdiagram | 50 | Hård | **Det högsta antalet identiteter i ett identitetsdiagram för en enskild profil är 50.** Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. |
+| Data för klassen XDM Individuella profiler | 20 | Prestandaskydd | Högst 20 datauppsättningar rekommenderas som utnyttjar klassen XDM Individual Profile. |
+| XDM ExperienceEvent, klassdatamängder | 20 | Prestandaskydd | Högst 20 datauppsättningar rekommenderas som utnyttjar klassen XDM ExperienceEvent. |
+| Adobe Analytics rapportuppsättningar har aktiverats för profil | 1 | Prestandaskydd | Högst en (1) datauppsättning för analysrapportsviten ska aktiveras för profilen. Om du försöker aktivera flera datauppsättningar i Analytics-rapportsviten för profilen kan det få oönskade konsekvenser för datakvaliteten. Mer information finns i avsnittet om [Adobe Analytics dataset](#aa-datasets) i tillägget. |
+| Relationer för flera enheter | 5 | Prestandaskydd | Högst fem multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas. Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
+| JSON-djup för ID-fält som används i relationer med flera enheter | 4 | Prestandaskydd | Rekommenderat maximalt JSON-djup för ett ID-fält som används i relationer med flera enheter är 4. Detta innebär att i ett mycket kapslat schema ska fält som är kapslade mer än fyra nivåer djupa inte användas som ID-fält i en relation. |
+| Matriskardinalitet i ett profilfragment | &lt;=500 | Prestandaskydd | Den optimala arraykardinaliteten i ett profilfragment (tidsoberoende data) är &lt;=500. |
+| Array-kardinalitet i ExperienceEvent | &lt;=10 | Prestandaskydd | Den optimala arraykardinaliteten i en ExperienceEvent (tidsseriedata) är &lt;=10. |
+| Identitetsantal för individuell profil identitetsdiagram | 50 | Systemstyrt skyddsräcke | **Det högsta antalet identiteter i ett identitetsdiagram för en enskild profil är 50.** Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. |
 
 {style="table-layout:auto"}
 
@@ -68,9 +71,9 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Inga tidsseriedata är tillåtna för icke-[!DNL XDM Individual Profile] enheter | 0 | Hård | **Tidsseriedata är inte tillåtna för icke-[!DNL XDM Individual Profile] enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med en icke-[!DNL XDM Individual Profile] ID, datauppsättningen ska inte aktiveras för [!DNL Profile]. |
-| Inga kapslade relationer | 0 | Mjuk | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
-| JSON-djup för primärt ID-fält | 4 | Mjuk | Rekommenderat maximalt JSON-djup för det primära ID-fältet är 4. Det innebär att du inte ska välja ett fält som primärt ID i ett kapslat schema om det är mer än fyra nivåer djupt. Ett fält på den fjärde kapslade nivån kan användas som primärt ID. |
+| Inga tidsseriedata är tillåtna för icke-[!DNL XDM Individual Profile] enheter | 0 | Systemstyrt skyddsräcke | **Tidsseriedata är inte tillåtna för icke-[!DNL XDM Individual Profile] enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med en icke-[!DNL XDM Individual Profile] ID, datauppsättningen ska inte aktiveras för [!DNL Profile]. |
+| Inga kapslade relationer | 0 | Prestandaskydd | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
+| JSON-djup för primärt ID-fält | 4 | Prestandaskydd | Rekommenderat maximalt JSON-djup för det primära ID-fältet är 4. Det innebär att du inte ska välja ett fält som primärt ID i ett kapslat schema om det är mer än fyra nivåer djupt. Ett fält på den fjärde kapslade nivån kan användas som primärt ID. |
 
 {style="table-layout:auto"}
 
@@ -86,12 +89,12 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Maximal ExperienceEvent-storlek | 10KB | Hård | **Den största tillåtna storleken för en händelse är 10 kB.** Intag fortsätter, men alla händelser som är större än 10 kB kommer att släppas. |
-| Största profilpoststorlek | 100KB | Hård | **Den största tillåtna storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
-| Största profilfragmentstorlek | 50MB | Hård | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla [profilfragment](#profile-fragments) som är större än 50 MB. |
-| Maximal storlek för fillagring | 50MB | Mjuk | **Den maximala storleken för en lagrad profil är 50 MB.** Lägger till nytt [profilfragment](#profile-fragments) till en profil som är större än 50 MB kommer att påverka systemets prestanda. En profil kan till exempel innehålla ett enskilt fragment som är 50 MB eller innehålla flera fragment över flera datauppsättningar med en sammanlagd storlek på 50 MB. Om du försöker lagra en profil med ett enskilt fragment som är större än 50 MB, eller med flera fragment som är större än 50 MB i kombination, påverkas systemets prestanda. |
-| Antal profiler eller ExperienceEvent-batchar som har importerats per dag | 90 | Mjuk | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. |
-| Antal ExperienceEvents per profilpost | 5000 | Mjuk | **Det högsta antalet ExperienceEvents per profilpost är 5 000.** Profiler med fler än 5 000 ExperienceEvents kommer att **not** beaktas för segmentering. |
+| Maximal ExperienceEvent-storlek | 10KB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för en händelse är 10 kB.** Intag fortsätter, men alla händelser som är större än 10 kB kommer att släppas. |
+| Största profilpoststorlek | 100KB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
+| Största profilfragmentstorlek | 50MB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla [profilfragment](#profile-fragments) som är större än 50 MB. |
+| Maximal storlek för fillagring | 50MB | Prestandaskydd | **Den maximala storleken för en lagrad profil är 50 MB.** Lägger till nytt [profilfragment](#profile-fragments) till en profil som är större än 50 MB kommer att påverka systemets prestanda. En profil kan till exempel innehålla ett enskilt fragment som är 50 MB eller innehålla flera fragment över flera datauppsättningar med en sammanlagd storlek på 50 MB. Om du försöker lagra en profil med ett enskilt fragment som är större än 50 MB, eller med flera fragment som är större än 50 MB i kombination, påverkas systemets prestanda. |
+| Antal profiler eller ExperienceEvent-batchar som har importerats per dag | 90 | Prestandaskydd | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. |
+| Antal ExperienceEvents per profilpost | 5000 | Prestandaskydd | **Det högsta antalet ExperienceEvents per profilpost är 5 000.** Profiler med fler än 5 000 ExperienceEvents kommer att **not** beaktas för segmentering. |
 
 {style="table-layout:auto"}
 
@@ -99,9 +102,9 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Total storlek för alla dimensionella enheter | 5GB | Mjuk | Den rekommenderade totala storleken för alla dimensionella enheter är 5 GB. Inmatning av enheter med stora dimensioner kan påverka systemets prestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
-| Datamängder per dimensionellt entitetsschema | 5 | Mjuk | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
-| Inkapslade batchar för Dimension per dag | 4 per enhet | Mjuk | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
+| Total storlek för alla dimensionella enheter | 5GB | Prestandaskydd | Den rekommenderade totala storleken för alla dimensionella enheter är 5 GB. Inmatning av enheter med stora dimensioner kan påverka systemets prestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
+| Datamängder per dimensionellt entitetsschema | 5 | Prestandaskydd | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
+| Inkapslade batchar för Dimension per dag | 4 per enhet | Prestandaskydd | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
 
 {style="table-layout:auto"}
 
@@ -111,10 +114,10 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Målgrupper per sandlåda | 4000 | Mjuk | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Försök att skapa fler målgrupper kan påverka systemets prestanda. |
-| Utforma målgrupper per sandlåda | 150 | Mjuk | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. |
-| Direktuppspelande målgrupper per sandlåda | 500 | Mjuk | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. |
-| Gruppera målgrupper per sandlåda | 4000 | Mjuk | En organisation kan ha fler än 4000 gruppmålgrupper totalt, förutsatt att det finns färre än 4000 gruppmålgrupper i varje enskild sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
+| Målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Försök att skapa fler målgrupper kan påverka systemets prestanda. |
+| Utforma målgrupper per sandlåda | 150 | Prestandaskydd | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. |
+| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. |
+| Gruppera målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 gruppmålgrupper totalt, förutsatt att det finns färre än 4000 gruppmålgrupper i varje enskild sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
 
 {style="table-layout:auto"}
 
@@ -155,3 +158,13 @@ När du sammanfogar data från flera olika källor är sammanslagningsprinciper 
 ### Adobe Analytics rapportuppsättningar av datauppsättningar i plattformen {#aa-datasets}
 
 Flera rapportsviter kan aktiveras för profilen så länge som alla datakonflikter är lösta. Du kan använda funktionen Data Prep för att lösa datakonflikter mellan eVars, Lists och Props. Läs mer om hur du använder funktionen Prep i [Användargränssnittshandbok för Adobe Analytics Connector](../sources/tutorials/ui/create/adobe-applications/analytics.md).
+
+## Nästa steg
+
+Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+
+* [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
+* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

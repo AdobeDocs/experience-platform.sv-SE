@@ -3,9 +3,9 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Det här dokumentet innehåller riktlinjer för hur man skyddar mot dataintrång i Adobe Experience Platform
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 008537dffff4cc428de9070964446f4e7ebf039f
+source-git-commit: 0e609ce278af0c93503f05778887ad1bd881524a
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,10 @@ I följande tabell visas skyddsutkast som du bör tänka på när du använder d
 
 ## Nästa steg
 
-Se följande dokumentation för mer information om data och bearbetning av skyddsutkast i Experience Platform:
+Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
 
-* [Guardrails for Real-Time Customer Profile data](../profile/guardrails.md)
-* [Garantier för identitetstjänstens data](../identity-service/guardrails.md)
+* [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
+* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)

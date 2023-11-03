@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;källor;kopplingar;källkoppl
 title: Uppdatera flödesspecifikationer med API:t för Flow Service
 description: I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med API:t för Flow Service för självbetjäningskällor (Batch SDK).
 exl-id: 67a0cd3e-ac18-43a4-aa22-8f6376d5cc3f
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 21bccacf3555881ae731d0e60ff7d7677f18732d
 workflow-type: tm+mt
 source-wordcount: '408'
 ht-degree: 0%
@@ -20,7 +20,7 @@ I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikation
 
 ## Komma igång
 
-Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Söka efter en flödesspecifikation {#lookup}
 
@@ -233,7 +233,7 @@ Ett lyckat svar returnerar detaljerna om den efterfrågade flödesspecifikatione
 
 ## Uppdatera en flödesspecifikation {#update}
 
-Du kan uppdatera fälten i en anslutningsspecifikation via en PUT-åtgärd. När du uppdaterar en anslutningsspecifikation via en PUT-begäran, måste texten innehålla alla fält som krävs för att skapa en ny anslutningsspecifikation i en POST-begäran.
+Du kan uppdatera fälten i en anslutningsspecifikation genom en PUT-åtgärd. När du uppdaterar en anslutningsspecifikation via en PUT-begäran, måste texten innehålla alla fält som krävs för att skapa en ny anslutningsspecifikation i en POST-begäran.
 
 >[!IMPORTANT]
 >
@@ -251,7 +251,7 @@ Följande begäran uppdaterar flödesspecifikationen för `6499120c-0b15-42dc-93
 
 ```shell
 PUT -X GET \
-  'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs/6499120c-0b15-42dc-936e-847ea3c24d72' \
+  'https://platform.adobe.io/data/foundation/flowservice/flowSpecs/6499120c-0b15-42dc-936e-847ea3c24d72' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
@@ -610,4 +610,4 @@ Ett godkänt svar returnerar information om den efterfrågade flödesspecifikati
 
 ## Nästa steg
 
-När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden [testa och skicka en ny källa](./submit.md) för mer information.
+När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden på [testa och skicka en ny källa](./submit.md) för mer information.

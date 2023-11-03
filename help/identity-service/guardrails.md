@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 30e927ec78a953aae8ac90829ec8b3b0475c5db4
+source-git-commit: 01fe1dd1d7df31458d4175c25928bfd12e01d654
 workflow-type: tm+mt
-source-wordcount: '1074'
+source-wordcount: '1171'
 ht-degree: 1%
 
 ---
@@ -121,3 +121,11 @@ Mer information om [!DNL Identity Service]:
 
 * [[!DNL Identity Service] översikt](home.md)
 * [Identitetsdiagramvisningsprogram](ui/identity-graph-viewer.md)
+
+Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
+
+* [Real-Time CDP skyddsräcken](/help/rtcdp/guardrails/overview.md)
+* [Latensdiagram från början till slut](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+* [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2P - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
+* [Real-time Customer Data Platform (B2B - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
