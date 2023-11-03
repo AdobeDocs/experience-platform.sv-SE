@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: f235d210682feba7617b720e514361c2862512f9
+source-git-commit: a51bc1fb536347840eef113a8649b64fbf573287
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '776'
 ht-degree: 0%
 
 ---
@@ -17,18 +17,18 @@ ht-degree: 0%
 
 ## v0.20.1 (3 november 2023)
 
-- Uppdaterat för att ge stöd för at.js 2.11.2.
+- Uppdaterat till support `at.js` 2.1.2
 - Korrigerade ett fel som orsakade inkonsekvenser i de svarstoken som skickades för anpassade händelser.
 
 ## v0.20.0 (9 oktober 2023)
 
-- Uppdaterat till support på at.js 2.11.0.
+- Uppdaterat till support `at.js` 2.11.0
 - Stöd har lagts till för att ställa in anpassade Adobe Experience Platform sandboxId och sandboxName i targetGlobalSettings, som skickas till Delivery API för getOffer-/getOffers-anrop.
 - Korrigering av skugg-DOM för kedja:eq() i väljaren.
 
 ## v0.19.3 (18 september 2023)
 
-- Uppdaterat till stöd för at.js v2.10.3.
+- Uppdaterat till support `at.js` v2.10.3.
 - Korrigerade ett problem som felaktigt utlöste den anpassade händelsen vid innehållsåtergivning när inga erbjudanden renderades. Den rätta händelsen, at-content-rendering-no-offers, aktiveras nu.
 - EventToken och responseTokens har lagts till i felobjektet för den anpassade händelsen at-content-rendering-failed.
 
@@ -66,6 +66,12 @@ ht-degree: 0%
 ## v0.16.0 (28 oktober 2021)
 
 - Uppdaterat till support `at.js` v2.7.0, nu tillgängligt för nedladdning från Adobe Target.
+
+## v0.15.2 (16 augusti 2021)
+
+- Uppdaterat till support `at.js` 2.6.1
+- Initiera On-Device-beslut vid start oberoende av sidinläsningshändelsen.
+- Enhetsbeslut kan nu användas vid första besök efter att artefakten har hämtats.
 
 ## v0.15.1 (20 juli 2021)
 
