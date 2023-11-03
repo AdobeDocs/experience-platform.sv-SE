@@ -2,7 +2,7 @@
 title: Dataelement
 description: Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
 exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 9d897602c0c83d06910b8b14a87351a9c25ab5f1
 workflow-type: tm+mt
 source-wordcount: '1601'
 ht-degree: 1%
@@ -33,7 +33,7 @@ Anta att du använder ett visst sidnamnsschema genom att referera till ett datal
 
 >[!NOTE]
 >
->Om det inte finns någon referens till ett dataelement i en regel, läses det inte in på någon sida om det inte anropas specifikt i det anpassade skriptet
+>Om det inte finns någon referens till ett dataelement i en regel, läses det inte in på någon sida såvida det inte anropas specifikt i det anpassade skriptet
 
 Dataelement fylls i med data när de används i regler eller när de anropas manuellt i ett skript. På en hög nivå:
 
@@ -56,13 +56,13 @@ Du kan använda dataelement i egna skript med `_satellite` objektsyntax:
 
 Dataelement är byggstenarna för regler. Med dataelement kan du skapa ett datalexikon (eller datamappning) med vanliga objekt på en sida, oavsett varifrån de kommer (frågesträngar, URL:er eller cookie-värden) för alla objekt som finns på webbplatsen.
 
-1. Öppna sidan Egenskaper [!UICONTROL Data Elements] tabbtangenten och sedan **[!UICONTROL Create New Data Element]**.
+1. Öppna sidan Egenskaper [!UICONTROL Data Elements] tabbtangenten och sedan välja **[!UICONTROL Create New Data Element]**.
 1. Namnge dataelementet.
 1. Välj ett tillägg och skriv.
 
    De tillgängliga elementtyperna för data bestäms av tillägget. Information om vilka typer som finns tillgängliga med Core-taggtillägget finns i [Typer av dataelement](data-elements.md#types-of-data-elements).
 
-1. Ange eventuell begärd information om den valda typen i de angivna fälten.
+1. Ange eventuell begärd information om den valda typen i fälten.
 1. (Valfritt) Ange ett standardvärde.
 
    Om du inte markerar det här alternativet finns det inget standardvärde.  De flesta användare låter detta vara i standardläge.  Olika system hanterar en tom variabel på olika sätt.  Vissa användare väljer att ange något som &quot;none&quot; eller &quot;n/a&quot; så att de kan skapa en konsekvent rapportering när dataelementet inte returnerar något värde.
@@ -78,7 +78,7 @@ Dataelement är byggstenarna för regler. Med dataelement kan du skapa ett datal
       * Värdet lagras i en JavaScript-variabel tills sidan uppdateras eller en ny sida läses in.
       * Kan skapas och anges i skript med `_satellite` objektsyntax:
 
-         `_satellite.setVar('data_element_name')`
+        `_satellite.setVar('data_element_name')`
    * Session
       * Värdena behålls i webbläsarens sessionslagring tills webbläsarfliken stängs.
       * Tillgängligt under hela webbplatsbesöket.
@@ -87,7 +87,7 @@ Dataelement är byggstenarna för regler. Med dataelement kan du skapa ett datal
 
 1. Välj **[!UICONTROL Save]**.
 
-När du skapar eller redigerar element kan du spara och bygga på [aktivt bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas. Du kan också skapa ett nytt bibliotek från [!UICONTROL Active Library] listruta.
+När du skapar eller redigerar element kan du spara och bygga på [aktivt bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas. Du kan också skapa ett nytt bibliotek från [!UICONTROL Active Library] nedrullningsbar meny.
 
 ## Typer av dataelement {#types-of-data-elements}
 
@@ -174,7 +174,7 @@ Anta att koden innehåller en JavaScript-variabel som kallas `Page_Name`, så h�
 
 Du måste ange sökvägen till variabeln när du skapar dataelementet.
 
-Om du använder ett datainsamlarobjekt som en del av datalagret använder du bara punktnotation i sökvägen för att referera till det objekt och den egenskap som du vill hämta till dataelementet, som `_myData.pageName`, eller `digitalData.pageName`, osv.
+Om du använder ett datainsamlarobjekt som en del av datalagret använder du bara punktnotation i banan för att referera till det objekt och den egenskap som du vill hämta till dataelementet, som `_myData.pageName`, eller `digitalData.pageName`, osv.
 
 #### Exempel:
 
@@ -213,7 +213,7 @@ Endast namnavsnittet är nödvändigt och alla specialdesigners som &quot;?&quot
 
 ### Slumpmässigt tal
 
-Använd det här dataelementet för att generera ett slumpmässigt tal. Det används ofta för att ta prov på data eller skapa ID:n, till exempel ett träff-ID. Det slumpmässiga talet kan också användas för att dölja eller salta känsliga data. Några exempel kan vara:
+Använd det här dataelementet för att generera ett slumpmässigt tal. Det används ofta för att ta prov på data eller skapa ID:n, till exempel ett träff-ID. Det slumpmässiga talet kan också användas för att dölja eller salta känsliga data. Exempel:
 
 * Generera ett träff-ID
 * Sammanfoga numret till en användartoken eller tidsstämpel för att säkerställa unikhet
@@ -224,13 +224,13 @@ Ange minimi- och maximivärden för det slumpmässiga talet.
 
 **Standardvärden:**
 
-Minimum: 0
+Minst: 0
 
-Maximum: 1000000000
+Maximum: 100000000
 
 ### Sessionslagring
 
-Ange namnet på sessionslagringsobjektet i [!UICONTROL Session Storage Item Name] fält.
+Ange namnet på ditt sessionslagringsobjekt i [!UICONTROL Session Storage Item Name] fält.
 
 Sessionslagring liknar lokal lagring, förutom att data tas bort efter att sessionen har avslutats, medan lokala lager eller en cookie kan behålla data.
 
