@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för beräknade attribut
 description: Lär dig hur du skapar, visar och uppdaterar beräknade attribut med Adobe Experience Platform-gränssnittet.
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: cf01c18c8ea710492c8a2c8542c8a4580d5f0dcf
 workflow-type: tm+mt
-source-wordcount: '1406'
+source-wordcount: '1488'
 ht-degree: 0%
 
 ---
@@ -147,6 +147,12 @@ När du väljer ett utkast till ett beräknat attribut visas **[!UICONTROL Edit 
 ![Sidan [!UICONTROL Edit computed attributes] visas.](./images/ui/edit.png)
 
 ## Använda beräknade attribut {#usage}
+
+>[!IMPORTANT]
+>
+>Om du använder ett beräknat attribut med **Senaste** funktion i en segmentdefinition **måste** include **båda** värdet och tidsstämpelvärdet i det beräknade attributobjektet.
+>
+>Om du till exempel skapar en segmentdefinition som söker efter&quot;Alla profiler som har en giltig e-postadress&quot; där e-postadressfältet fylls i med ett beräknat attribut med den senaste funktionen, kan du **måste** ta med både e-postadressens värde **och** e-postadressens tidsstämpel finns.
 
 När du har skapat ett beräknat attribut kan du använda **publicerad** beräknade attribut i andra tjänster i senare led. Eftersom beräknade attribut är profilattributfält som skapats i ditt profilunionsschema kan du söka efter beräknade attributvärden för en kundprofil i realtid, använda dem i en målgrupp, aktivera dem till ett mål eller använda dem för personalisering på resor i Adobe Journey Optimizer.
 

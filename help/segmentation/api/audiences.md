@@ -2,9 +2,9 @@
 title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 9277ad00f72b44d7e75e444f034c38f000e7909f
 workflow-type: tm+mt
-source-wordcount: '2124'
+source-wordcount: '1879'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ En publik är en samling personer som har liknande beteenden och/eller egenskape
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med målgrupper {#list}
 
@@ -179,12 +179,12 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över målgrupper som sk
 | `schema` | Båda | Målgruppens XDM-schema (Experience Data Model). |
 | `imsOrgId` | Båda | ID för organisationen som målgruppen tillhör. |
 | `sandbox` | Båda | Information om sandlådan som målgruppen tillhör. Mer information om sandlådor finns i [översikt över sandlådor](../../sandboxes/home.md). |
-| `name` | Båda | Publiken. |
+| `name` | Båda | Namnet på publiken. |
 | `description` | Båda | En beskrivning av publiken. |
 | `expression` | Plattformsgenererad | PQL-uttrycket (Profile Query Language) för målgruppen. Mer information om PQL-uttryck finns i [Guide för PQL-uttryck](../pql/overview.md). |
-| `mergePolicyId` | Plattformsgenererad | ID för den sammanfogningsprincip som målgruppen är kopplad till. Mer information om kopplingsprofiler finns i [guide för sammanslagningsprinciper](../../profile/api/merge-policies.md). |
+| `mergePolicyId` | Plattformsgenererad | ID:t för den sammanfogningsprincip som målgruppen är kopplad till. Mer information om sammanfogningsprinciper finns i [guide för sammanslagningsprinciper](../../profile/api/merge-policies.md). |
 | `evaluationInfo` | Plattformsgenererad | Visar hur målgruppen kommer att utvärderas. Möjliga utvärderingsmetoder är batch, synkron (direktuppspelning) eller kontinuerlig (kant). Mer information om utvärderingsmetoderna finns i [segmenteringsöversikt](../home.md) |
-| `dependents` | Båda | En array med målgrupps-ID:n som är beroende av den aktuella målgruppen. Detta används om du skapar en målgrupp som är ett segment i ett segment. |
+| `dependents` | Båda | En array med målgrupps-ID som är beroende av den aktuella målgruppen. Detta används om du skapar en målgrupp som är ett segment i ett segment. |
 | `dependencies` | Båda | En array med målgrupps-ID:n som målgruppen är beroende av. Detta används om du skapar en målgrupp som är ett segment i ett segment. |
 | `type` | Båda | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
 | `originName` | Båda | Ett fält som refererar till namnet på målgruppens ursprung. För plattformsgenererade målgrupper kommer det här värdet att `REAL_TIME_CUSTOMER_PROFILE`. För målgrupper som genereras i Audience Orchestration kommer det här värdet att `AUDIENCE_ORCHESTRATION`. För målgrupper som genereras i Adobe Audience Manager kommer det här värdet att `AUDIENCE_MANAGER`. För andra externt genererade målgrupper kommer det här värdet att `CUSTOM_UPLOAD`. |
@@ -242,7 +242,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
-| `name` | Publiken. |
+| `name` | Namnet på publiken. |
 | `description` | En beskrivning av publiken. |
 | `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
 | `expression` | PQL-uttrycket (Profile Query Language) för målgruppen. Mer information om PQL-uttryck finns i [Guide för PQL-uttryck](../pql/overview.md). |
@@ -284,7 +284,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
 | `audienceId` | Ett användarangivet ID för målgruppen. |
-| `name` | Publiken. |
+| `name` | Namnet på publiken. |
 | `namespace` | Namnutrymmet för målgruppen. |
 | `description` | En beskrivning av publiken. |
 | `type` | Ett fält som visar om målgruppen är plattformsgenererad eller är en externt genererad målgrupp. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
@@ -293,7 +293,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/audiences
 | `datasetId` | ID:t för datauppsättningen där data som omfattar målgruppen kan hittas. |
 | `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
 | `audienceMeta` | Metadata som tillhör den externt genererade målgruppen. |
-| `linkedAudienceRef` | Ett objekt som innehåller identifierare för andra målgruppsrelaterade system. Detta kan omfatta följande: <ul><li>`flowId`: Detta ID används för att ansluta målgruppen till det dataflöde som användes för att hämta målgruppsdata. Mer information om vilka ID:n som krävs finns i [skapa en dataflödesguide](../../sources/tutorials/api/collect/cloud-storage.md).</li><li>`aoWorkflowId`: Detta ID används för att ansluta målgruppen till en relaterad publikorchestration-komposition.&lt;/li/> <li>`payloadFieldGroupRef`: Detta ID används för att referera till XDM-fältgruppsschemat som beskriver målgruppens struktur. Mer information om fältets värde finns i [Slutpunktshandbok för XDM-fältgrupp](../../xdm/api/field-groups.md).</li><li>`audienceFolderId`: Detta ID används för att referera till målgruppens mapp-ID i Adobe Audience Manager. Mer information om detta API finns i [Adobe Audience Manager API-guide](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API).</ul> |
+| `linkedAudienceRef` | Ett objekt som innehåller identifierare för andra målgruppsrelaterade system. Detta kan omfatta följande: <ul><li>`flowId`: Detta ID används för att ansluta målgruppen till det dataflöde som användes för att hämta målgruppsdata. Mer information om vilka ID:n som krävs finns i [skapa en dataflödesguide](../../sources/tutorials/api/collect/cloud-storage.md).</li><li>`aoWorkflowId`: Detta ID används för att ansluta målgruppen till en relaterad publikOrchestration-komposition.&lt;/li/> <li>`payloadFieldGroupRef`: Detta ID används för att referera till XDM-fältgruppsschemat som beskriver målgruppens struktur. Mer information om fältets värde finns i [Slutpunktshandbok för XDM-fältgrupp](../../xdm/api/field-groups.md).</li><li>`audienceFolderId`: Detta ID används för att hänvisa till mapp-ID:t i Adobe Audience Manager för målgruppen. Mer information om detta API finns i [Adobe Audience Manager API-guide](https://bank.demdex.com/portal/swagger/index.html#/Segment%20Folder%20API).</ul> |
 
 +++
 
@@ -418,7 +418,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya målgruppe
 
 ## Söka efter en viss målgrupp {#get}
 
-Du kan söka efter detaljerad information om en viss målgrupp genom att göra en GET-förfrågan till `/audiences` slutpunkt och ange ID för den målgrupp som du vill hämta i sökvägen för begäran.
+Du kan söka efter detaljerad information om en viss målgrupp genom att göra en GET-förfrågan till `/audiences` slutpunkt och ange ID:t för den målgrupp som du vill hämta i sökvägen för begäran.
 
 **API-format**
 
@@ -560,7 +560,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den angivna målgr
 
 ## Uppdatera ett fält i en målgrupp {#update-field}
 
-Du kan uppdatera fälten för en viss målgrupp genom att göra en PATCH-förfrågan till `/audiences` slutpunkt och ange ID för den målgrupp som du vill uppdatera i sökvägen för begäran.
+Du kan uppdatera fälten för en viss målgrupp genom att göra en PATCH-förfrågan till `/audiences` slutpunkt och ange ID:t för den målgrupp som du vill uppdatera i sökvägen för begäran.
 
 **API-format**
 
@@ -678,7 +678,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nyligen uppdat
 
 ## Uppdatera en målgrupp {#put}
 
-Du kan uppdatera (skriva över) en viss målgrupp genom att göra en PUT-förfrågan till `/audiences` slutpunkt och ange ID för den målgrupp som du vill uppdatera i sökvägen för begäran.
+Du kan uppdatera (skriva över) en viss målgrupp genom att göra en PUT-förfrågan till `/audiences` slutpunkt och ange ID:t för den målgrupp som du vill uppdatera i sökvägen för begäran.
 
 **API-format**
 
@@ -718,11 +718,11 @@ curl -X PUT https://platform.adobe.io/data/core/ups/audiences/4afe34ae-8c98-4513
 | Egenskap | Beskrivning |
 | -------- | ----------- | 
 | `audienceId` | Målgruppens ID. För externt genererade målgrupper kan det här värdet anges av användaren. |
-| `name` | Publiken. |
+| `name` | Namnet på publiken. |
 | `namespace` | Namnutrymmet för målgruppen. |
 | `description` | En beskrivning av publiken. |
 | `type` | Ett systemgenererat fält som visar om publiken genereras av plattformen eller är en externt genererad publik. Möjliga värden är `SegmentDefinition` och `ExternalSegment`. A `SegmentDefinition` avser en publik som genererats i Platform, medan en `ExternalSegment` avser en publik som inte genererats i Platform. |
-| `lifecycleState` | Status för målgruppen. Möjliga värden är `draft`, `published`och `inactive`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras, och `inactive` när målgruppen inte längre är aktiv. |
+| `lifecycleState` | Publiken. Möjliga värden är `draft`, `published`och `inactive`. `draft` representerar när målgruppen skapas, `published` när målgruppen publiceras, och `inactive` när målgruppen inte längre är aktiv. |
 | `datasetId` | ID:t för datauppsättningen som målgruppsdata kan hittas. |
 | `labels` | Dataanvändning på objektnivå och attributbaserade etiketter för åtkomstkontroll som är relevanta för publiken. |
 
@@ -764,7 +764,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om din nya uppdaterad
 
 ## Ta bort en målgrupp {#delete}
 
-Du kan ta bort en viss målgrupp genom att göra en DELETE-förfrågan till `/audiences` slutpunkt och ange ID för den målgrupp som du vill ta bort i sökvägen för begäran.
+Du kan ta bort en viss målgrupp genom att göra en DELETE-förfrågan till `/audiences` slutpunkt och ange ID:t för den målgrupp som du vill ta bort i sökvägen för begäran.
 
 **API-format**
 
@@ -774,7 +774,7 @@ DELETE /audiences/{AUDIENCE_ID}
 
 | Parameter | Beskrivning |
 | --------- | ----------- |
-| `{AUDIENCE_ID}` | ID:t för den målgrupp som du vill ta bort. Observera att detta är `id` field, and is **not** den `audienceId` fält. |
+| `{AUDIENCE_ID}` | ID för den målgrupp som du vill ta bort. Observera att detta är `id` field, and is **not** den `audienceId` fält. |
 
 **Begäran**
 
@@ -933,145 +933,6 @@ Ett lyckat svar returnerar HTTP-status 2007 med information om de begärda målg
 
 +++
 
-## Uppdatera flera målgrupper {#bulk-patch}
-
-Du kan uppdatera profilen och antalet poster för flera målgrupper genom att göra en POST-förfrågan till `/audiences/bulk-patch-metric` slutpunkt och ange ID:n för de målgrupper som du vill uppdatera.
-
-**API-format**
-
-```http
-POST /audiences/bulk-patch-metric
-```
-
-**Begäran**
-
-+++ Ett exempel på en förfrågan om att uppdatera flera målgrupper.
-
-```shell
-curl -X POST https://platform.adobe.io/data/core/ups/audiences/bulk-patch-metric
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d ' {
-    "jobId": "12345",
-    "jobType": "AO",
-    "resources": [
-        {
-            "audienceId": "QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-            "namespace": "AAMTraits",
-            "operations": [
-                {
-                    "op": "add",
-                    "path": "/metrics/data",
-                    "value": {
-                        "totalProfiles": 11037
-                    }
-                },
-            ]
-        },
-        {
-            "audienceId": "QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-            "namespace": "AAMTraits",
-            "operations": [
-                {
-                    "op": "add",
-                    "path": "/metrics/data",
-                    "value": {
-                        "totalProfiles": 523
-                    }
-                }
-            ]
-        }
-    ]
-    }
-```
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Beskrivning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>jobId</code></td>
-<td>ID för det jobb som ska köra uppdateringen.</td>
-</tr>
-<tr>
-<td><code>jobType</code></td>
-<td>Den typ av jobb som ska köra uppdateringen. Värdet kan vara <code>export</code> eller <code>AO</code>.</td>
-</tr>
-<tr>
-<td><code>audienceId</code></td>
-<td>ID för de målgrupper som du vill uppdatera. Observera att detta är <code>audienceId</code> värde, och <strong>not</strong> den <code>id</code> målgruppernas värde.</td>
-</tr>
-<tr>
-<td><code>namespace</code></td>
-<td>Namnutrymmet för den målgrupp som du vill uppdatera.</td>
-</tr>
-<tr>
-<td><code>operations</code></td>
-<td>Ett objekt som innehåller den information som används för att uppdatera målgruppen.</td>
-</tr>
-<tr>
-<td><code>operations.op</code></td>
-<td>Den åtgärd som används för korrigeringen. Vid uppdatering av flera målgrupper är det här värdet <strong>alltid</strong> <code>add</code>.</td>
-</tr>
-<tr>
-<td><code>operations.path</code></td>
-<td>Sökvägen för det fält som ska uppdateras. För närvarande stöds bara två sökvägar: <code>/metrics/data</code> när du uppdaterar <strong>profil</strong> räkna och <code>/recordMetrics/data</code> när du uppdaterar <strong>record</strong> antal.</td>
-</tr>
-<tr>
-<td><code>operations.value</code></td>
-<td>
-Värdet på fältet som ska uppdateras. När du uppdaterar profilantalet ser det här värdet ut så här: 
-<pre>
-{ "totalProfiles": 123456 }
-</pre>
-När du uppdaterar antalet poster ser det här värdet ut så här: 
-<pre>
-{ "recordCount": 123456 }
-</pre>
-</td>
-</tr>
-</tbody>
-</table>
-
-+++
-
-**Svar**
-
-Ett lyckat svar returnerar HTTP-status 2007 med information om de uppdaterade målgrupperna.
-
-+++ Ett exempelsvar för uppdatering av flera målgrupper.
-
-```json
-{
-   "resources":[
-      {
-         "audienceId":"QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1hdWRpZW5jZS1pZA_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-
-         "namespace": "AAMTraits",
-         "status":200
-      },
-      {
-         "audienceId":"QUFNVHJhaXRzX2V4dGVybmFsU2VnbWVudC1vcmlnaW4tdGVzdDE_6ed34f6f-fe21-4a30-934f-6ffe21fa3075",
-
-         "namespace": "AAMTraits",
-         "status":200
-      }
-   ]
-}
-```
-
-| Parameter | Beskrivning |
-| --------- | ----------- |
-| `status` | Status för den uppdaterade publiken. Om den returnerade statusen är 200 har målgruppen uppdaterats. Om målgruppen inte kunde uppdateras returneras ett fel som förklarar varför målgruppen inte uppdaterades. |
-
-+++
 
 ## Nästa steg
 

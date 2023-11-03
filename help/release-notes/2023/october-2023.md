@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från oktober 2023 för Adobe Experience Platform.
 exl-id: e9cf5299-8350-4b40-8f56-05e598846875
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: f2d0848952902d94b441566da677ef174518192e
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '1062'
 ht-degree: 3%
 
 ---
@@ -47,6 +47,8 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Tillägg | [!DNL Meta] Förbättring av konverterings-API | Det finns tre förbättringar i [Meta Conversions API](/help/tags/extensions/server/meta/overview.md) tillägg: <ul><li>Integrering med [[!DNL Meta Business Extension (MBE)]](/help/tags/extensions/server/meta/overview.md#integration-with-meta-business-extension-mbe): Skapar en sömlös inloggning genom att du kan dela ditt pixelID och få åtkomst till token för Conversions API-integrering med Adobe.</li><li>Integrering med [[!DNL Event Match Quality Score (EMQ)]](/help/tags/extensions/server/meta/overview.md#integration-with-event-quality-match-score-emq): Gör det möjligt för er att leverera annonser till personer som är mer benägna att slutföra en önskad åtgärd och länka tillbaka åtgärden till de annonser som levereras.</li><li>Integrering med [[!DNL LiveRamp (Alpha)]](/help/tags/extensions/server/meta/overview.md#integration-with-liveramp-alpha): Gör att du kan skicka LiveRamp-ID:t i CIP-fältet, vilket eliminerar behovet av att dela PII direkt med partners eller Meta. </li></ul> |
 | Tillägg | [!DNL LinkedIn] Konverterings-API | The [[!DNL LinkedIn] Konverterings-API](../../tags/extensions/server/linkedin/overview.md) kan ni utvärdera hur effektiva era marknadsföringskampanjer i LinkedIn är genom att skicka händelsedata från Experience Platform till LinkedIn. |
 | Hemlighet | [!DNL LinkedIn] OAuth 2 Secret | The [[!DNL LinkedIn] OAuth 2 Secret](../../tags/ui/event-forwarding/secrets.md#linkedin-oauth-2) gör att du kan skicka serverinteraktioner till [!DNL LinkedIn] vid vidarebefordran. |
+| Vidarebefordran av händelser | Uppdatera till taggar och händelsevidarebefordran | Bevara [Taggar](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html?lang=sv) och [Vidarebefordran av händelser](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html) prestanda i Platform, endast de senaste byggnaderna för Development och Stage kommer att bevaras, både framgångsrika och misslyckade. Alla byggen som inte längre används tas bort. Dessutom har begränsning och hastighetsbegränsning implementerats för att säkerställa att ett fåtal tunga API-användningar inte försämrar API-prestanda för andra. |
+| Tillägg | Element, regler och tillägg | [Element, regler och tillägg](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/overview.html) sorteras nu i bibliotekets utdata för att säkerställa större enhetlighet mellan flera versioner och distributioner av samma bibliotek. |
 
 Mer information om datainsamling finns i [datainsamling, översikt](../../tags/home.md).
 

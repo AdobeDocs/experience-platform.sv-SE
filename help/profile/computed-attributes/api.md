@@ -2,7 +2,7 @@
 title: API-slutpunkt för beräknade attribut
 description: Lär dig hur du skapar, visar, uppdaterar och tar bort beräknade attribut med Real-Time Customer Profile API.
 exl-id: f217891c-574d-4a64-9d04-afc436cf16a9
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 94c94b8a3757aca1a04ff4ffc3c62e84602805cc
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 0%
@@ -50,7 +50,7 @@ Följande frågeparametrar kan användas när en lista med beräknade attribut h
 | `limit` | En parameter som anger det maximala antalet objekt som returneras som en del av svaret. Det minsta värdet för den här parametern är 1 och det högsta värdet är 40. Om den här parametern inte ingår returneras som standard 20 objekt. | `limit=20` |
 | `offset` | En parameter som anger antalet objekt som ska hoppas över innan objekten returneras. | `offset=5` |
 | `sortBy` | En parameter som anger i vilken ordning de returnerade objekten sorteras. Tillgängliga alternativ inkluderar `name`, `status`, `updateEpoch`och `createEpoch`. Du kan också välja om du vill sortera i stigande eller fallande ordning genom att inte inkludera eller inkludera en `-` framför sorteringsalternativet. Som standard sorteras objekten efter `updateEpoch` i fallande ordning. | `sortBy=name` |
-| `property` | En parameter som gör att du kan filtrera på olika beräknade attributfält. Egenskaper som stöds är bland annat `name`, `createEpoch`, `mergeFunction.value`, `updateEpoch`och `status`. Vilka åtgärder som stöds beror på vilken egenskap som visas. <ul><li>`name`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (!=contains()</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
+| `property` | En parameter som gör att du kan filtrera på olika beräknade attributfält. Egenskaper som stöds är bland annat `name`, `createEpoch`, `mergeFunction.value`, `updateEpoch`och `status`. Vilka åtgärder som stöds beror på vilken egenskap som visas. <ul><li>`name`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`createEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=) </li><li>`mergeFunction.value`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li><li>`updateEpoch`: `GREATER_THAN_OR_EQUALS` (&lt;=), `LESS_THAN_OR_EQUALS` (>=)</li><li>`status`: `EQUAL` (=), `NOT_EQUAL` (!=), `CONTAINS` (=contains()), `NOT_CONTAINS` (=!contains())</li></ul> | `property=updateEpoch>=1683669114845`<br/>`property=name!=testingrelease`<br/>`property=status=contains(new,processing,disabled)` |
 
 **Begäran**
 
