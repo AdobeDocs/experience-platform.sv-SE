@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: aed521bf50c301148c10b98021f1a3df0ed45278
+source-git-commit: 74e3dc2fa5fc84b5ce4b09e2adb0093ecb94bd82
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1470'
 ht-degree: 1%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 1%
 # Handbok för autentiseringsuppgifter
 
 Med Adobe Experience Platform Query Service kan du ansluta till externa klienter. Du kan ansluta till dessa externa klienter genom att använda antingen utgångsdatum eller ej utgångsdatum.
+
+>[!NOTE]
+>
+>Autentiseringspanelen är inte automatiskt tillgänglig för alla användare. Kontakta ditt Adobe-kontoteam för att be om [!UICONTROL Credentials] som ska inkluderas i arbetsytan för frågetjänsten om du behöver det. Om så krävs är denna förändring i hela organisationen och genomförs av Adobe ingenjörsteam. Det är inte en inställning som styrs av användare.
 
 ## Utgående autentiseringsuppgifter {#expiring-credentials}
 

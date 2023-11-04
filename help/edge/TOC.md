@@ -5,10 +5,10 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: f96c0a3b75239681f53ffec6184af64394e37a84
+source-git-commit: 2e47f12cde0f4c4dca89deddbf612ad3840628f0
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 24%
+source-wordcount: '181'
+ht-degree: 23%
 
 ---
 
@@ -23,6 +23,7 @@ ht-degree: 24%
    * [Konfigurera SDK](fundamentals/configuring-the-sdk.md)
    * [Kör kommandon](fundamentals/executing-commands.md)
    * [Spåra händelser](fundamentals/tracking-events.md)
+   * [Konfigurera händelserna top och bottom på sidan](fundamentals/top-bottom-page-events.md)
    * [Felsökning](fundamentals/debugging.md)
    * [Konfigurera en CSP](fundamentals/configuring-a-csp.md)
    * [Interagera med flera egenskaper](fundamentals/interacting-with-multiple-properties.md)

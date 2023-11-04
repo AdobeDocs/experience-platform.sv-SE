@@ -4,7 +4,7 @@ description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
 source-git-commit: f4c41e75eaa61878557868ffa9ce0c866eba3941
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2659'
 ht-degree: 0%
 
 ---

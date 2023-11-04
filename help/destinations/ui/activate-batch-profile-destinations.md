@@ -432,9 +432,9 @@ Som en tillfällig lösning kan du antingen:
 
 >[!IMPORTANT]
 > 
->Alla molnlagringsmål i katalogen kan visa en förbättrad [[!UICONTROL Mapping] steg](#mapping) som ersätter **[!UICONTROL Select attributes]** som beskrivs i det här avsnittet.
+Alla molnlagringsmål i katalogen kan visa en förbättrad [[!UICONTROL Mapping] steg](#mapping) som ersätter **[!UICONTROL Select attributes]** som beskrivs i det här avsnittet.
 >
->Detta **[!UICONTROL Select attributes]** visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
+Detta **[!UICONTROL Select attributes]** visas fortfarande för e-postmarknadsföringsmålen Adobe Campaign, Oracle Responsys, Oracle Eloqua och Salesforce Marketing Cloud.
 
 För profilbaserade mål måste du välja de profilattribut som du vill skicka till målmålet.
 
@@ -454,15 +454,15 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
 >[!NOTE]
 >
-> Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
 
 ![Bild som visar förifyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
 >[!IMPORTANT]
 >
->På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
 >
->![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
+![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
 * Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
@@ -470,15 +470,15 @@ Filexporter varierar på följande sätt, beroende på om `segmentMembership.sta
 
 ## Välj anrikningsattribut {#select-enrichment-attributes}
 
->[!CONTEXTUALHELP]
->id="platform_destinations_activate_exclude_enrichment_attributes"
->title="Uteslut anrikningsattribut"
->abstract="Aktivera det här alternativet om du vill exportera profilerna från de valda anpassade överförda målgrupperna till ditt mål, samtidigt som alla deras attribut utesluts."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#select-enrichment-attributes" text="Läs mer i dokumentationen"
+[!CONTEXTUALHELP]
+id="platform_destinations_activate_exclude_enrichment_attributes"
+title="Uteslut anrikningsattribut"
+abstract="Aktivera det här alternativet om du vill exportera profilerna från de valda anpassade överförda målgrupperna till ditt mål, samtidigt som alla deras attribut utesluts."
+additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#select-enrichment-attributes" text="Läs mer i dokumentationen"
 
 >[!IMPORTANT]
 >
->Det här steget visas bara om du har valt **[!UICONTROL Custom upload]** målgrupper under [målgruppsval](#select-audiences) steg.
+Det här steget visas bara om du har valt **[!UICONTROL Custom upload]** målgrupper under [målgruppsval](#select-audiences) steg.
 
 Anrikningsattribut motsvarar anpassade överförda målgrupper som importerats i Experience Platform som **[!UICONTROL Custom uploads]**. I det här steget kan du välja vilka attribut du vill exportera till målet, för varje vald extern publik.
 
@@ -509,10 +509,10 @@ På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
->[!CONTEXTUALHELP]
->id="platform_governance_policies_viewApplicableConsentPolicies"
->title="Visa tillämpliga policyer för samtycke"
->abstract="Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**, markera **[!UICONTROL View applicable consent policies]** för att se vilka regler för samtycke som tillämpas och hur många profiler som inkluderas i aktiveringen till följd av dessa. Den här kontrollen inaktiveras om ditt företag inte har tillgång till de SKU:er som nämns ovan."
+[!CONTEXTUALHELP]
+id="platform_governance_policies_viewApplicableConsentPolicies"
+title="Visa tillämpliga policyer för samtycke"
+abstract="Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**, markera **[!UICONTROL View applicable consent policies]** för att se vilka regler för samtycke som tillämpas och hur många profiler som inkluderas i aktiveringen till följd av dessa. Den här kontrollen inaktiveras om ditt företag inte har tillgång till de SKU:er som nämns ovan."
 
 Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**, markera **[!UICONTROL View applicable consent policies]** för att se vilka regler för samtycke som tillämpas och hur många profiler som inkluderas i aktiveringen till följd av dessa. Läs om [utvärdering av godkännandepolicy](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för mer information.
 

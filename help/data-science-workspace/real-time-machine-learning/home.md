@@ -11,7 +11,7 @@ ht-degree: 1%
 
 ---
 
-# Maskininlärningsöversikt i realtid (alfa)
+# Machine Learning i realtid - översikt (Alpha)
 
 >[!IMPORTANT]
 >
@@ -59,7 +59,7 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 
 >[!NOTE]
 >
-> Alfabegränsningar:
+> Begränsningar för Alpha:
 > - För närvarande stöds endast ONNX-baserade modeller.
 > - Funktioner som används i noder kan inte serialiseras. En lambda-funktion används till exempel i en Pandarod.
 > - Det finns en 20-sekunders sömn efter [!DNL Edge] distributionen görs manuellt.
@@ -68,7 +68,7 @@ Maskininlärning i realtid är för närvarande alfavärdet. Funktionerna som be
 
 ### Funktioner:
 
-| | Alfa (maj) |
+| | Alpha (maj) |
 | --- | --- |
 | **Funktioner** | - Med RTML-mallen för bärbara datorer kan du skapa, testa och distribuera en anpassad maskininlärningsmodell. <br> - Import av förutbildade maskininlärningsmodeller. <br> - Machine Learning SDK i realtid. <br> - Startuppsättning med redigeringsnoder. <br> - Distribueras till Adobe Experience Platform Hub. |
 | **Tillgänglighet** | Nordamerika |
