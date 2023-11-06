@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: d55398f328f3f85ce6b32a2553e7a93df3584f02
+source-git-commit: b11aff782a44237e6e4ae87254163713883e3ded
 workflow-type: tm+mt
-source-wordcount: '2475'
+source-wordcount: '2449'
 ht-degree: 0%
 
 ---
@@ -67,9 +67,9 @@ Integrationen med EMQ (Event Quality Match Score) gör att du enkelt kan se hur 
 
 ## Integrering med LiveRamp (Alpha) {#alpha}
 
-Integreringen med LiveRamp lägger till nya fält i API-regelkonfigurationen för metakonvertering, vilket gör det enklare för kunder att integrera med API:t för LiveRamp-konvertering. Integreringen eliminerar behovet av att du delar PII direkt med din partner eller Meta. Eftersom LiveRamp har en robust identitetsgraf har även [!UICONTROL Partner ID (alpha)] kan förbättra integreringskvaliteten genom att öka användarnas matchningsfrekvens.
+[!DNL LiveRamp] kunder som har [!DNL LiveRamp]ATS (Authenticated Traffic Solution) som distribueras på deras webbplatser kan välja att dela RampID:n som en kundinformationsparameter. Var vänlig och arbeta med [!DNL Meta] kontoteam för att gå med i Alpha för den här funktionen.
 
-![Meta-vidarebefordran [!UICONTROL Rule] markering av konfigurationssida [!UICONTROL Partner Name (alpha)] och [!UICONTROL Partner ID (alpha)].](../../../images/extensions/server/meta/live-ramp.png)
+![Vidarebefordran av Meta-händelser [!UICONTROL Rule] markering av konfigurationssida [!UICONTROL Partner Name (alpha)] och [!UICONTROL Partner ID (alpha)].](../../../images/extensions/server/meta/live-ramp.png)
 
 ## Konfigurera en regel för vidarebefordran av händelser {#rule}
 
