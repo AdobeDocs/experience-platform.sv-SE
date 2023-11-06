@@ -3,10 +3,10 @@ title: Komma igång med händelsevidarebefordran
 description: Följ den här steg-för-steg-självstudiekursen för att komma igång med att vidarebefordra event i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 45d881a810782f734ed030fbf29e802fa535400a
+source-git-commit: 05170986263b6eed2d19a65e34f70dc28eb8ba2f
 workflow-type: tm+mt
-source-wordcount: '830'
-ht-degree: 1%
+source-wordcount: '832'
+ht-degree: 2%
 
 ---
 
@@ -20,7 +20,7 @@ Om du vill använda händelsevidarebefordran i Adobe Experience Platform måste 
 
 * [Webb-SDK för Adobe Experience Platform](../../extensions/client/web-sdk/overview.md)
 * [Adobe Experience Platform Mobile SDK](https://sdkdocs.com)
-* [Server till server-API](/help/server-api/overview.md)
+* [Server-API för Edge Network](/help/server-api/overview.md)
 
 >[!NOTE]
 >Platform Web SDK och Platform Mobile SDK kräver inte distribution via taggar i Adobe Experience Platform. Vi rekommenderar dock att du använder taggar för att distribuera dessa SDK:er.
