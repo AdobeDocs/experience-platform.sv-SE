@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
+source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
 workflow-type: tm+mt
-source-wordcount: '2226'
+source-wordcount: '2242'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ Med den förbättrade versionen av Frågeredigeraren kan du skriva mer än en fr
 ## Frågeredigering med [!DNL Query Editor] {#query-authoring}
 
 Använda [!DNL Query Editor]kan du skriva, köra och spara frågor om kundupplevelsedata. Alla frågor har körts eller sparats i [!DNL Query Editor] är tillgängliga för alla användare i organisationen med tillgång till [!DNL Query Service].
+
+>[!IMPORTANT]
+>
+>Den äldre redigeraren tas bort 10-2024-01-april och är inte längre tillgänglig för användning.
 
 ## Förbättrad frågeredigerare {#enhanced-editor-toggle}
 

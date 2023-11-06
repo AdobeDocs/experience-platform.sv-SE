@@ -2,23 +2,19 @@
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
 workflow-type: tm+mt
-source-wordcount: '744'
+source-wordcount: '723'
 ht-degree: 0%
 
 ---
 
-# Parametriserade frågor (begränsad version) {#parameterized-queries}
+# Parametriserade frågor {#parameterized-queries}
 
 >[!CONTEXTUALHELP]
 >id="platform_queryService_queryEditor_parameterizedQueries"
 >title="Parametriserade frågor"
 >abstract="Använd parametriserade frågor för att lägga till parametervärden vid körningen. På så sätt kan du arbeta med dynamiska data och återanvända frågor för olika användningsområden. Använd `'$'` för att ange en frågeparameter i frågan i textredigeraren. Lägg sedan till ett värde för nyckeln i avsnittet Frågeparametrar nedanför redigeraren."
-
->[!IMPORTANT]
->
->UI-funktionen för parametriserad fråga är tillgänglig i en **Endast begränsad version** och inte är tillgängligt för alla kunder.
 
 Frågetjänsten stöder användning av parametriserade frågor i Frågeredigeraren. Med parametriserade frågor kan du nu använda platshållare för parametrar och lägga till parametervärden vid körning. Med platshållare kan du arbeta med dynamiska data där du inte vet vilka värden som kommer att vara förrän programsatsen har körts. Du kan också förbereda dina frågor i förväg och återanvända dem för liknande syften. Att återanvända frågor sparar mycket arbete eftersom du slipper skapa distinkta SQL-frågor för varje användningsfall.
 
