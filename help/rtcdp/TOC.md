@@ -4,7 +4,7 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: 01fe1dd1d7df31458d4175c25928bfd12e01d654
+source-git-commit: c6daa645743331ba6fdf8f79e432ae150ee1ff9e
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 18%
@@ -38,7 +38,7 @@ ht-degree: 18%
    * [Översikt över mål](destinations/overview.md)
    * [Destinationer i Real-Time CDP B2B Edition](destinations/b2b.md)
 * Guardrails {#guardrails}
-   * [Översikt över Real-Time CDP skyddsutkast](/help/rtcdp/guardrails/overview.md){target="_blank"}
+   * [Översikt över Real-Time CDP skyddsutkast](guardrails/overview.md)
    * [Skyddsritningar för dataöverföring](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
    * [Guardrails for the [!DNL Edge Network Server API]](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/guardrails.html){target="_blank"}
    * [Guardrails för [!DNL Real-Time Customer Profile] data och segmentering](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html){target="_blank"}
