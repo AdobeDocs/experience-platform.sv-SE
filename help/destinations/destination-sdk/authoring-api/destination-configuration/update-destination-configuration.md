@@ -2,7 +2,7 @@
 description: Den här sidan innehåller exempel på API-anropet som används för att uppdatera en befintlig målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Uppdatera en målkonfiguration
 exl-id: d7f18689-9806-4f73-a63a-fa112569819c
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 En detaljerad beskrivning av funktionerna i en målkonfiguration finns i följande artiklar:
 
 * [Konfiguration av kundautentisering](../../functionality/destination-configuration/customer-authentication.md)
-* [OAuth2-autentisering](../../functionality/destination-configuration/oauth2-authorization.md)
+* [OAuth2-auktorisering](../../functionality/destination-configuration/oauth2-authorization.md)
 * [Kunddatafält](../../functionality/destination-configuration/customer-data-fields.md)
 * [Gränssnittsattribut](../../functionality/destination-configuration/ui-attributes.md)
 * [Schemakonfiguration](../../functionality/destination-configuration/schema-configuration.md)

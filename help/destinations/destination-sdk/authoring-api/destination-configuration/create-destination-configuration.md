@@ -2,7 +2,7 @@
 description: Lär dig hur du strukturerar ett API-anrop för att skapa en målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Skapa en målkonfiguration
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '1205'
 ht-degree: 1%
@@ -16,7 +16,7 @@ Den här sidan innehåller exempel på API-begäran och nyttolast som du kan anv
 En detaljerad beskrivning av de funktioner som du kan konfigurera via den här slutpunkten finns i följande artiklar:
 
 * [Konfiguration av kundautentisering](../../functionality/destination-configuration/customer-authentication.md)
-* [OAuth2-autentisering](../../functionality/destination-configuration/oauth2-authorization.md)
+* [OAuth2-auktorisering](../../functionality/destination-configuration/oauth2-authorization.md)
 * [Kunddatafält](../../functionality/destination-configuration/customer-data-fields.md)
 * [Gränssnittsattribut](../../functionality/destination-configuration/ui-attributes.md)
 * [Schemakonfiguration](../../functionality/destination-configuration/schema-configuration.md)

@@ -2,7 +2,7 @@
 description: Destinationstjänsten i Adobe Experience Platform använder konfigurationsslutpunkter för flera komponenter som bygger upp målfunktionaliteten. Se hur dessa komponenter tillsammans gör det möjligt för Experience Platform att ansluta till målpartners, skicka anpassade meddelanden och aktivera profildata i hela det digitala ekosystemet.
 title: Konfigurationsalternativ i Destinationen SDK
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Den här konfigurationsslutpunkten innehåller grundläggande och avancerad info
 I dokumentationen nedan finns mer information om var och en av målkonfigurationskomponenterna. Du kan konfigurera funktionerna som beskrivs nedan via [målslutpunkt](../authoring-api/destination-configuration/create-destination-configuration.md).
 
 * [Konfiguration av kundautentisering](destination-configuration/customer-authentication.md): Välj den autentiseringsmekanism som Experience Platform ska använda för att ansluta till ditt mål. Den här konfigurationen genererar [Konfigurera nytt mål](../../ui/connect-destination.md) i användargränssnittet i Experience Platform, där användare ansluter Experience Platform till konton som de har med ditt mål.
-* [OAuth2-autentisering](destination-configuration/oauth2-authorization.md): Läs om alla [!DNL OAuth2] autentiseringsflöden som stöds av Destinationen SDK och få instruktioner för att konfigurera [!DNL OAuth2] autentisering för ditt mål..
+* [OAuth2-auktorisering](destination-configuration/oauth2-authorization.md): Läs om alla [!DNL OAuth2] autentiseringsflöden som stöds av Destinationen SDK och få instruktioner för att konfigurera [!DNL OAuth2] autentisering för ditt mål..
 * [Kunddatafält](destination-configuration/customer-data-fields.md): Lär dig hur du skapar inmatningsfält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 * [Gränssnittsattribut](destination-configuration/ui-attributes.md): Lär dig hur du konfigurerar gränssnittsattributen, till exempel dokumentationslänken, målkortskategorin och målanslutningstypen och målfrekvensen, för mål som skapats med Destination SDK.
 * [Schemakonfiguration](destination-configuration/schema-configuration.md): Lär dig hur du definierar målschemat som användare kan mappa profilattribut och identiteter till.

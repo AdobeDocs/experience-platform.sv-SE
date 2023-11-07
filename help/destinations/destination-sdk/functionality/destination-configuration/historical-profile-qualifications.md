@@ -2,7 +2,7 @@
 description: Lär dig mer om de historiska profilkvalifikationer som stöds av mål som skapats med Destination SDK.
 title: Krav på historisk profil
 exl-id: 8880cff9-865b-4d45-a24d-a78e77419670
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 1%
@@ -45,7 +45,7 @@ När du har läst den här artikeln bör du känna till att Experience Platform 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authorization.md)
+* [OAuth2-auktorisering](oauth2-authorization.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)

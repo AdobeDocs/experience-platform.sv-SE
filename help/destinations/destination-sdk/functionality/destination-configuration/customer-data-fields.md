@@ -2,7 +2,7 @@
 description: Lär dig hur du skapar indatafält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 title: Kunddatafält
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 1%
@@ -568,7 +568,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för hur
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authorization.md)
+* [OAuth2-auktorisering](oauth2-authorization.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)
 * [Konfiguration av namnutrymme för identitet](identity-namespace-configuration.md)

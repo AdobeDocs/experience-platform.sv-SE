@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar en autentiseringsmekanism för ditt mål och får information om vad användare ser i användargränssnittet beroende på vilken autentiseringsmetod du väljer.
 title: Konfiguration av kundautentisering
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
 workflow-type: tm+mt
 source-wordcount: '1085'
 ht-degree: 0%
@@ -26,7 +26,7 @@ När [skapa ett mål](../../authoring-api/destination-configuration/create-desti
 
 * För destinationer som använder [grundläggande autentisering](#basic)måste användare ange ett användarnamn och lösenord direkt på inloggningssidan för användargränssnittet i Experience Platform.
 * För destinationer som använder [innehavarautentisering](#bearer)måste användaren ange en innehavartoken.
-* För destinationer som använder [OAuth2-autentisering](#oauth2), dirigeras användare till målets inloggningssida där de kan logga in med sina inloggningsuppgifter.
+* För destinationer som använder [OAuth2-auktorisering](#oauth2), dirigeras användare till målets inloggningssida där de kan logga in med sina inloggningsuppgifter.
 * För [Amazon S3](#s3) mål, användare måste ange sina [!DNL Amazon S3] åtkomstnyckel och hemlig nyckel.
 * För [Azure Blob](#blob) mål, användare måste ange sina [!DNL Azure Blob] anslutningssträng.
 
@@ -233,7 +233,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för hur
 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
-* [OAuth2-autentisering](oauth2-authorization.md)
+* [OAuth2-auktorisering](oauth2-authorization.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)
