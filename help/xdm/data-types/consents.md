@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;samtyc
 title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 70ea0aa74f1874ea2772dd0d961c98d2ac1137e8
 workflow-type: tm+mt
-source-wordcount: '1990'
+source-wordcount: '2251'
 ht-degree: 0%
 
 ---
@@ -295,23 +295,23 @@ I följande tabell visas godkända värden för `val`:
 
 ### Godkända värden för `preferred` {#preferred-values}
 
-I följande tabell visas godkända värden för `preferred`:
+I följande tabell visas godkända värden för `preferred`. The `preferred` värden anger kundens föredragna kanal för att ta emot kommunikation som informerar dem om datainsamling, sekretesspolicyer och personaliseringsalternativ.
 
 | Värde | Beskrivning |
 | --- | --- |
-| `email` | E-postmeddelanden. |
-| `push` | Push-meddelanden. |
-| `inApp` | Meddelanden i appen. |
-| `sms` | SMS-meddelanden. |
-| `phone` | Telefonsamtalsinteraktioner. |
-| `phyMail` | Fysisk post. |
-| `inVehicle` | Meddelanden i fordon. |
-| `inHome` | Hemmeddelanden. |
-| `iot` | Internet of things (IoT) messages. |
-| `social` | Innehåll i sociala medier. |
-| `other` | En kanal som inte passar in i en standardkategori. |
-| `none` | Ingen föredragen kanal. |
-| `unknown` | Den önskade kanalen är okänd. |
+| `email` | Den här inställningen anger kundens samtycke till att ta emot meddelanden via e-post. |
+| `push` | Den här inställningen anger kundens samtycke till att ta emot push-meddelanden. Det här är meddelanden eller aviseringar som skickas direkt till enheten, ofta ett mobilprogram. |
+| `inApp` | Den här inställningen anger kundens samtycke till att ta emot meddelanden i appen. Dessa meddelanden levereras inom ett mobil- eller webbprogram och ger information medan användaren är aktiv i appen. |
+| `sms` | Den här inställningen anger kundens samtycke till att ta emot meddelanden via SMS (Short Message Service). Det här är textmeddelanden som skickas till mobiltelefonen. |
+| `phone` | Den här inställningen anger att kunden samtycker till att ta emot kommunikation via telefonsamtal. |
+| `phyMail` | Den här inställningen anger kundens samtycke till att ta emot material via fysisk post. |
+| `inVehicle` | Den här inställningen anger att kunden samtycker till att ta emot meddelanden när kunden är i fordonet. Dessa meddelanden kan levereras via fordonsinfogningssystem eller andra kommunikationskanaler i fordonet. |
+| `inHome` | Den här inställningen anger kundens samtycke till att ta emot meddelanden hemma. Dessa meddelanden kan levereras via smarta hemenheter eller andra hembaserade kommunikationskanaler. |
+| `iot` | Den här inställningen anger att kunden samtycker till att ta emot meddelanden som rör sakernas internet. Dessa meddelanden kan levereras via anslutna enheter och system i deras miljö. |
+| `social` | Den här inställningen anger att kunden samtycker till att ta emot kommunikation via plattformar för sociala medier. |
+| `other` | Den här inställningen omfattar kanaler som inte passar in i standardkategorier. Det representerar alternativa eller specialiserade kommunikationskanaler som kan vara specifika för ett visst företag eller en viss bransch. |
+| `none` | Den här inställningen anger att kunden inte har någon föredragen kommunikationskanal. |
+| `unknown` | Den här inställningen innebär att kundens önskade kommunikationskanal inte är känd eller inte har angetts. Detta kan inträffa om kunden inte har lämnat något uttryckligt medgivande eller någon särskild information om önskemål. |
 
 {style="table-layout:auto"}
 
