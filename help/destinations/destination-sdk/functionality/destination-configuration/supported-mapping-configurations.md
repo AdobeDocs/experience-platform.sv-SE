@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar målet för de identitets- och attributmappningskonfigurationer som stöds.
 title: Mappningskonfigurationer som stöds
 exl-id: a477a3f2-a229-4b22-8588-ee58bd5436c6
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '659'
 ht-degree: 0%
@@ -154,7 +154,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för vil
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authentication.md)
+* [OAuth2-autentisering](oauth2-authorization.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)

@@ -4,7 +4,7 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 48acb9ec2ee093c4b22176785a693b1c1ea742bd
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1201'
 ht-degree: 2%
@@ -214,7 +214,7 @@ ht-degree: 2%
          * [Filformateringskonfiguration](./destination-sdk/functionality/destination-server/file-formatting.md)
       * Målkonfigurationskomponenter {#destination-configuration}
          * [Konfiguration av kundautentisering](./destination-sdk/functionality/destination-configuration/customer-authentication.md)
-         * [OAuth2-autentisering](./destination-sdk/functionality/destination-configuration/oauth2-authentication.md)
+         * [OAuth2-auktorisering](./destination-sdk/functionality/destination-configuration/oauth2-authorization.md)
          * [Kunddatafält](./destination-sdk/functionality/destination-configuration/customer-data-fields.md)
          * [Gränssnittsattribut](./destination-sdk/functionality/destination-configuration/ui-attributes.md)
          * [Konfiguration av partnerschema](./destination-sdk/functionality/destination-configuration/schema-configuration.md)

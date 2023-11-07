@@ -2,7 +2,7 @@
 description: Lär dig konfigurera inställningar för målgruppsmetadata för mål som skapats med Destination SDK.
 title: Konfiguration av målgruppsmetadata
 exl-id: ae71df4f-b753-4084-835f-03559b4986cb
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '399'
 ht-degree: 1%
@@ -68,7 +68,7 @@ När du har läst den här artikeln bör du ha en bättre förståelse för hur 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Konfiguration av kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authentication.md)
+* [OAuth2-autentisering](oauth2-authorization.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)

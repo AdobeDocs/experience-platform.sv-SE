@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar destinationsleveransinställningarna för mål som skapats med Destination SDK, för att ange var exporterade data ska skickas och vilken autentiseringsregel som används på den plats där data ska landas.
 title: Destinationsleverans
 exl-id: ade77b6b-4b62-4b17-a155-ef90a723a4ad
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '563'
 ht-degree: 1%
@@ -108,7 +108,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för hur
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authentication.md)
+* [OAuth2-autentisering](oauth2-authorization.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Schemakonfiguration](schema-configuration.md)

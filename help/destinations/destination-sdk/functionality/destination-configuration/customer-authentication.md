@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar en autentiseringsmekanism för ditt mål och får information om vad användare ser i användargränssnittet beroende på vilken autentiseringsmetod du väljer.
 title: Konfiguration av kundautentisering
 exl-id: 3912012e-0870-47d2-9a6f-7f1fc469a781
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1085'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Konfigurera `customerAuthenticationConfigurations` via `/destinations` slutpunkt
 
 ## OAuth 2-autentisering {#oauth2}
 
-Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitternas anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns i den dedikerade [Destination SDK OAuth 2-autentiseringssida](oauth2-authentication.md).
+Användarna väljer **[!UICONTROL Connect to destination]** för att utlösa OAuth 2-autentiseringsflödet till ditt mål, vilket visas i exemplet nedan för Twitternas anpassade målgrupper. Mer information om hur du konfigurerar OAuth 2-autentisering till målslutpunkten finns i den dedikerade [Destination SDK OAuth 2-autentiseringssida](oauth2-authorization.md).
 
 ![Gränssnittsåtergivning med OAuth 2-autentisering](../../assets/functionality/destination-configuration/oauth2-authentication-ui.png)
 
@@ -233,7 +233,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för hur
 
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
-* [OAuth2-autentisering](oauth2-authentication.md)
+* [OAuth2-autentisering](oauth2-authorization.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)

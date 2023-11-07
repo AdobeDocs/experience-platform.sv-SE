@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar partnerschemat för mål som skapats med Destination SDK.
 title: Konfiguration av partnerschema
 exl-id: 0548e486-206b-45c5-8d18-0d6427c177c5
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1885'
 ht-degree: 1%
@@ -246,7 +246,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för vil
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authentication.md)
+* [OAuth2-autentisering](oauth2-authorization.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Konfiguration av namnutrymme för identitet](identity-namespace-configuration.md)

@@ -2,7 +2,7 @@
 description: Lär dig hur du konfigurerar filexportinställningar för mål som skapats med Destination SDK.
 title: Batchkonfiguration
 exl-id: 0ffbd558-a83c-4c3d-b4fc-b6f7a23a163a
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
 workflow-type: tm+mt
 source-wordcount: '1045'
 ht-degree: 3%
@@ -155,7 +155,7 @@ När du har läst den här artikeln bör du få en bättre förståelse för hur
 Mer information om de andra målkomponenterna finns i följande artiklar:
 
 * [Konfiguration av kundautentisering](customer-authentication.md)
-* [OAuth2-autentisering](oauth2-authentication.md)
+* [OAuth2-autentisering](oauth2-authorization.md)
 * [Kunddatafält](customer-data-fields.md)
 * [Gränssnittsattribut](ui-attributes.md)
 * [Schemakonfiguration](schema-configuration.md)
