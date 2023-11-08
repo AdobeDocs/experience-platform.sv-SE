@@ -2,9 +2,9 @@
 description: På den här sidan behandlas meddelandeformatet och profilomvandlingen i data som exporteras från Adobe Experience Platform till mål.
 title: Meddelandeformat
 exl-id: ab05d34e-530f-456c-b78a-7f3389733d35
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: b42ef11681bb50141c7f3dc76d8c79d71e55e73c
 workflow-type: tm+mt
-source-wordcount: '2237'
+source-wordcount: '2502'
 ht-degree: 0%
 
 ---
@@ -1203,13 +1203,18 @@ Kontexten som anges för mallen innehåller `input`  (profilerna/data som export
 
 Tabellen nedan innehåller beskrivningar av funktionerna i exemplen ovan.
 
-|  -funktion | Beskrivning |
-|---------|----------|
+|  -funktion | Beskrivning | Exempel |
+|---------|----------|----------|
 | `input.profile` | Profilen, representerad som [JsonNode](https://fasterxml.github.io/jackson-databind/javadoc/2.11/com/fasterxml/jackson/databind/node/JsonNodeType.html). Följer det XDM-schema för partner som nämns ovan på den här sidan. |
-| `destination.segmentAliases` | Mappa från målgrupps-ID:n i Adobe Experience Platform-namnområdet till målgruppsalias i partnersystemet. |
-| `destination.segmentNames` | Mappa från målgruppsnamn i Adobe Experience Platform-namnområdet till målgruppsnamn i partnersystemet. |
-| `addedSegments(listOfSegments)` | Returnerar bara de målgrupper som har status `realized`. |
-| `removedSegments(listOfSegments)` | Returnerar bara de målgrupper som har status `exited`. |
+| `hasSegments` | Den här funktionen tar en karta över ID:n för namnområdesmålgrupp som parameter. Funktionen returnerar `true` om det finns minst en publik på kartan (oavsett dess status), och `false` annars. Du kan använda den här funktionen för att bestämma om du vill iterera över en karta med målgrupper eller inte. | `hasSegments(input.profile.segmentMembership)` |
+| `destination.namespaceSegmentAliases` | Mappa från målgrupps-ID:n i ett specifikt Adobe Experience Platform-namnområde till målgruppsalias i partnerns system. | `destination.namespaceSegmentAliases["ups"]["seg-id-1"]` |
+| `destination.namespaceSegmentNames` | Mappa från målgruppsnamn i specifika Adobe Experience Platform-namnutrymmen till målgruppsnamn i partnersystemet. | `destination.namespaceSegmentNames["ups"]["seg-name-1"]` |
+| `destination.namespaceSegmentTimestamps` | Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].createdAt`: returnerar den tidpunkt då segmentet med ID:t `seg-id-1`, från `ups` namespace skapades i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1`, från `ups` namespace, was updated, in UNIX timestamp format.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1`, från `ups` namnutrymmet aktiverades till målet i UNIX-tidsstämpelformat.</li><li>`destination.namespaceSegmentTimestamps["ups"]["seg-id-1"].mappingUpdatedAt`: returnerar den tidpunkt då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
+| `addedSegments(mapOfNamespacedSegmentIds)` | Returnerar bara de målgrupper som har status `realized`, i alla namnutrymmen. | `addedSegments(input.profile.segmentMembership)` |
+| `removedSegments(mapOfNamespacedSegmentIds)` | Returnerar bara de målgrupper som har status `exited`, i alla namnutrymmen. | `removedSegments(input.profile.segmentMembership)` |
+| `destination.segmentAliases` | **Inaktuell. Ersatt av`destination.namespaceSegmentAliases`** <br><br> Mappa från målgrupps-ID:n i Adobe Experience Platform-namnområdet till målgruppsalias i partnersystemet. | `destination.segmentAliases["seg-id-1"]` |
+| `destination.segmentNames` | **Inaktuell. Ersatt av`destination.namespaceSegmentNames`** <br><br>  Mappa från målgruppsnamn i Adobe Experience Platform-namnområdet till målgruppsnamn i partnersystemet. | `destination.segmentNames["seg-name-1"]` |
+| `destination.segmentTimestamps` | **Inaktuell. Ersatt av`destination.namespaceSegmentTimestamps`** <br><br> Returnerar den tid då en målgrupp skapades, uppdaterades eller aktiverades i UNIX-tidsstämpelformat. | <ul><li>`destination.segmentTimestamps["seg-id-1"].createdAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` skapades i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].updatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` uppdaterades i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingCreatedAt`: returnerar den tid då målgruppen med ID:t `seg-id-1` har aktiverats till målet i UNIX-tidsstämpelformat.</li><li>`destination.segmentTimestamps["seg-id-1"].mappingUpdatedAt`: returnerar den tidpunkt då målgruppsaktiveringen uppdaterades på målet, i UNIX-tidsstämpelformat.</li></ul> |
 
 {style="table-layout:auto"}
 
