@@ -2,15 +2,15 @@
 keywords: Experience Platform;home;populära topics;API error codes;API error code;error code API;error codes API;API request error;API troubleshooting;API error
 solution: Experience Platform
 title: Adobe Experience Platform FAQ and Troubleshooting Guide
-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
-landing-page-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
+description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Adobe Experience Platform.
+landing-page-description: Hitta svar på vanliga frågor och en guide för felsökning av vanliga fel i Adobe Experience Platform.
 short-description: Hitta svar på vanliga frågor och en användarhandbok om felsökning av vanliga fel i Experience Platform.
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '1904'
-ht-degree: 4%
+source-wordcount: '1906'
+ht-degree: 2%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Användarhandbok om kataloger och datauppsättningar
-user-guide-description: Utforska datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i Data Lake.
+user-guide-description: Utforska datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i Data Lake och läs mer om Catalog Service-systemet.
 feature: Catalog
-source-git-commit: f456b28016af6d2978933deac68f45c2f8d37f80
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '111'
-ht-degree: 18%
+source-wordcount: '119'
+ht-degree: 5%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 18%
    * [Dataanvändningsetiketter](api/labels.md)
    * [Bilaga](api/appendix.md)
 * Datauppsättningar {#datasets}
-   * [Översikt över datauppsättningar](datasets/overview.md)
+   * [Datauppsättningar - översikt](datasets/overview.md)
    * [Användarhandbok för datauppsättningar](datasets/user-guide.md)
    * [Skapa och fylla i en datauppsättning med API:er](datasets/create.md)
    * [Aktivera en datauppsättning för profil och identitet](datasets/enable-for-profile.md)

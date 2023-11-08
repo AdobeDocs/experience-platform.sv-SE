@@ -3,15 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;dataplats;dataplats;datahante
 solution: Experience Platform
 title: Datauppsättningar - översikt
 description: Det här dokumentet innehåller en översikt på hög nivå över datauppsättningar i Experience Platform.
+user-guide-description: Få en översikt över datauppsättningar på hög nivå i Experience Platform med den här guiden. Lär dig hur du skapar dem, tillämpar begränsningar för data och importerar data till datauppsättningar här.
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: dca5c9df82434d75238a0a80f15e5562cf2fa412
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '870'
 ht-degree: 2%
 
 ---
 
-# Översikt över datauppsättningar
+# Datauppsättningar - översikt
 
 Alla data som har importerats till Adobe Experience Platform lagras i [!DNL Data Lake] som datauppsättningar. En datauppsättning är en lagrings- och hanteringskonstruktion för en datamängd, vanligtvis en tabell, som innehåller ett schema (kolumner) och fält (rader). Datauppsättningar innehåller också metadata som beskriver olika aspekter av de data som lagras.
 
@@ -25,7 +26,7 @@ Se [Katalogtjänst - översikt](../home.md) för mer information.
 
 ## Tvingande begränsningar för datauppsättningsdata
 
-[!DNL Experience Data Model] (XDM) är det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. Alla data som har importerats till [!DNL Platform] måste följa ett fördefinierat XDM-schema innan det kan sparas i [!DNL Data Lake] som en datauppsättning.
+[!DNL Experience Data Model] (XDM) är det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. Alla data som är inkapslade i [!DNL Platform] måste följa ett fördefinierat XDM-schema innan det kan sparas i [!DNL Data Lake] som en datauppsättning.
 
 Alla datauppsättningar innehåller en referens till XDM-schemat som begränsar formatet och strukturen för de data som kan lagras. Om du försöker överföra data till en datauppsättning som inte är kompatibel med datauppsättningens XDM-schema kommer det att leda till att importen misslyckas.
 
@@ -45,7 +46,7 @@ Med Adobe Experience Platform Data Governance kan ni hantera kunddata för att s
 >
 >Etiketter kan inte längre användas på fält på datauppsättningsnivå. Det här arbetsflödet har ersatts med etiketter på schemanivå. Etiketter som tidigare använts på datauppsättningens objektnivå stöds fortfarande i plattformsgränssnittet fram till den 31 maj 2024. För att etiketterna ska vara enhetliga i alla scheman måste du migrera alla etiketter som tidigare har kopplats till fält på datauppsättningsnivå till schemanivån under det kommande året. Se avsnittet om [migrera tidigare använda etiketter](../../data-governance/e2e.md#migrate-labels) för instruktioner om hur man gör detta.
 
-Se [Datastyrning - översikt](../../data-governance/home.md) för mer information om tjänsten. Anvisningar om hur du arbetar med användningsetiketter i [!DNL Platform]finns i följande handledningar:
+Se [Datastyrning - översikt](../../data-governance/home.md) om du vill ha mer information om tjänsten. Anvisningar om hur du arbetar med användningsetiketter i [!DNL Platform]finns i följande handledningar:
 
 * [Hantera etiketter i användargränssnittet](../../data-governance/labels/user-guide.md)
 * [Hantera datauppsättningsrubriker i API](../../data-governance/labels/dataset-api.md)
@@ -57,11 +58,11 @@ När datauppsättningar har använts för att lagra inkapslade data, används de
 Nedan följer en lista över tjänster längre fram i kedjan som använder datauppsättningar för olika åtgärder. Mer information finns i dokumentationen för respektive tjänst.
 
 * [[!DNL Data Access API]](../../data-access/home.md): Gör att du kan komma åt och hämta innehållet i filer som lagras i datauppsättningar.
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system och länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från [!DNL Data Lake] och behåller kundprofiler i sitt eget separata datalager.
-* [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Gör att ni kan skapa segment och generera målgrupper utifrån era [!DNL Real-Time Customer Profile] data. Dessa målgrupper kan sedan exporteras till sina egna datauppsättningar i [!DNL Data Lake].
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system, länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
+* [[!DNL Real-Time Customer Profile]](../../profile/home.md): Leveranser [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från [!DNL Data Lake] och behåller kundprofiler i sitt eget separata datalager.
+* [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Gör att ni kan skapa segment och generera målgrupper från era [!DNL Real-Time Customer Profile] data. Dessa målgrupper kan sedan exporteras till sina egna datauppsättningar i [!DNL Data Lake].
 * [Adobe Experience Platform Data Science Workspace](../../data-science-workspace/home.md): Använder maskininlärning och artificiell intelligens för att identifiera insikter i stora datamängder.
-* [Adobe Experience Platform Query Service](../../query-service/home.md): Gör att du kan använda standard-SQL för att fråga data i [!DNL Experience Platform], koppla alla datauppsättningar i [!DNL Data Lake] och hämta frågeresultat som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace], eller [!DNL Real-Time Customer Profile].
+* [Adobe Experience Platform Query Service](../../query-service/home.md): Används för att använda standard-SQL för att fråga data i [!DNL Experience Platform], koppla alla datauppsättningar i [!DNL Data Lake] och hämta frågeresultat som en ny datamängd som kan användas vid rapportering, [!DNL Data Science Workspace], eller [!DNL Real-Time Customer Profile].
 * [Adobe Experience Platform Destinationstjänst](../../destinations/home.md): Gör att du kan [exportera datamängder](/help/destinations/ui/export-datasets.md) till det molnlagringsutrymme eller e-postmarknadsföringsmål du vill ha för rapporter och datavetenskapliga aktiviteter.
 
 ## Nästa steg

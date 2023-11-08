@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Hjälp med Adobe Experience Platform Debugger
 breadcrumb-title: Användarhandbok om Adobe Experience Platform Debugger
-user-guide-description: Kontrollera om dina webbsidor innehåller problem med Experience Platform-implementeringarna.
+user-guide-description: Kontrollera om dina webbsidor innehåller problem med dina Experience Platform-implementeringar med Adobe Experience Platform Debugger för Chrome och Firefox.
 feature: Debugger
-source-git-commit: 6362cef0dc33f4b1f9cf8560dae50e602ce6ad80
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '62'
-ht-degree: 43%
+source-wordcount: '72'
+ht-degree: 22%
 
 ---
 

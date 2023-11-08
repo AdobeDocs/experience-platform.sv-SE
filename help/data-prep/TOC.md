@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Användarhandbok om dataförberedelse
-user-guide-description: Förbered inmatningen av datan i Adobe Experience Platform.
+user-guide-description: Förbered era data för konsumtion i Adobe Experience Platform och lär dig hur Data Prep kan hjälpa er att mappa, omvandla och validera data idag.
 feature: Data Prep
-source-git-commit: e96263847f53ea2c884c273fd7986855d4c478c1
+source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
-source-wordcount: '50'
-ht-degree: 38%
+source-wordcount: '64'
+ht-degree: 15%
 
 ---
 
