@@ -4,9 +4,9 @@ title: Microsoft Dynamics 365-anslutning
 description: Med Microsoft Dynamics 365-destinationen kan du exportera dina kontodata och aktivera dem i Microsoft Dynamics 365 efter dina affärsbehov.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 49bb5c95-f4b7-42e1-9aae-45143bbb1d73
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 29cf080f83adf0e7f8b3549104229e9f54c5b8d9
 workflow-type: tm+mt
-source-wordcount: '2077'
+source-wordcount: '2106'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ The [Begäranden om gränser och tilldelningar](https://docs.microsoft.com/en-us
 
 | Målidentitet | Exempel | Beskrivning | Överväganden |
 |---|---|---|---|
-| `contactId` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | Unik identifierare för en kontakt. | **Obligatoriskt**. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) för mer information. |
+| `contactid` | 7eb682f1-ca75-e511-80d4-00155d2a68d1 | Unik identifierare för en kontakt. | **Obligatoriskt**. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1) för mer information. |
 
 {style="table-layout:auto"}
 
@@ -162,23 +162,24 @@ Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL Dy
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
    ![Exempel på skärmbild för användargränssnittet för plattformen för att lägga till ny mappning.](../../assets/catalog/crm/microsoft-dynamics-365/add-new-mapping.png)
 
-1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** kategori och välj `contactId`.
+1. I **[!UICONTROL Select source field]** väljer du **[!UICONTROL Select identity namespace]** kategori och välj `contactid`.
    ![Exempel på skärmbild för plattformsgränssnitt för källmappning.](../../assets/catalog/crm/microsoft-dynamics-365/source-mapping.png)
 
 1. I **[!UICONTROL Select target field]** väljer du den typ av målfält som du vill mappa källfältet till.
    * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
-     ![Skärmbild för plattformsgränssnitt som visar målmappning för contactId.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
+     ![Skärmbild av användargränssnittet för plattformen med målmappning för kontaktpersoner.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-contactid.png)
 
-   * Lägg till följande mappning mellan XDM-profilschemat och [!DNL Dynamics 365] instans: |XDM-profilschema|[!DNL Dynamics 365] Instans| Obligatorisk| |—|—|—| |`contactId`|`contactId`| Ja |
+   * Lägg till följande mappning mellan XDM-profilschemat och [!DNL Dynamics 365] instans: |XDM-profilschema|[!DNL Dynamics 365] Instans| Obligatorisk| |—|—|—| |`contactid`|`contactid`| Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i dialogrutan **[!UICONTROL Attribute name]** fält. Se [[!DNL Dynamics 365] dokumentation](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/contact?view=op-9-1#entity-properties) om du vill ha en omfattande lista över attribut som stöds.
-     ![Skärmbild för plattformsgränssnitt som visar målmappning för LastName.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-lastname.png)
+     ![Skärmbild av användargränssnittet för plattformen med målmappning för e-post.](../../assets/catalog/crm/microsoft-dynamics-365/target-mapping-email.png)
 
      >[!IMPORTANT]
      >
-     >Om du har ett källfält för datum eller tidsstämpling som är mappat till en [!DNL Dynamics 365] [datum eller tidsstämpel](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) målfält, kontrollera att det mappade värdet inte är tomt. Om det skickade värdet är tomt kommer du att stöta på en *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`* felmeddelande och data kommer inte att uppdateras. Det här är en [!DNL Dynamics 365] begränsning.
+     > * Målfältsnamn ska finnas i `lowercase`.
+     > * Om du har ett källfält för datum- eller tidsstämpling som är mappat till en [!DNL Dynamics 365] [datum eller tidsstämpel](https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/timestampdatemapping?view=dataverse-latest) ska du se till att det mappade värdet inte är tomt. Om värdet för det exporterade fältet är tomt kommer du att få ett *`Bad request reported while pushing events to the destination. Please contact the administrator and try again.`* felmeddelande och data kommer inte att uppdateras. Det här är en [!DNL Dynamics 365] begränsning.
 
-   * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och ditt [!DNL Dynamics 365] instans: |XDM-profilschema|[!DNL Dynamics 365] Instans| |—|—| |`person.name.firstName`|`FirstName`| |`person.name.lastName`|`LastName`| |`personalEmail.address`|`Email`|
+   * Beroende på vilka värden du vill uppdatera lägger du till följande mappning mellan XDM-profilschemat och ditt [!DNL Dynamics 365] instans: |XDM-profilschema|[!DNL Dynamics 365] Instans| |—|—| |`person.name.firstName`|`firstname`| |`person.name.lastName`|`lastname`| |`personalEmail.address`|`emailaddress1`|
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/crm/microsoft-dynamics-365/mappings.png)
@@ -243,6 +244,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
+| Oktober 2023 | Dokumentation - uppdatering | Uppdaterad vägledning för att indikera alla målattributnamn ska vara i gemener i [Mappa överväganden och exempel](#mapping-considerations-example) steg. |
 | Augusti 2023 | Funktioner och dokumentation | Stöd för [!DNL Dynamics 365] anpassade fältprefix för anpassade fält som inte skapades i standardlösningen i [!DNL Dynamics 365]. Ett nytt inmatningsfält, **[!UICONTROL Customization Prefix]**, har lagts till i [Fyll i målinformation](#destination-details) steg. (PLATIR-31602). |
 | Nov 2022 | Inledande version | Ursprunglig målversion och dokumentationspublicering. |
 
