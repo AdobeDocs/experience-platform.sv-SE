@@ -2,7 +2,7 @@
 title: Intelligent återanvändning
 description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: d47ddc474fcaf19eaff8ddcd67139dec5c417720
+source-git-commit: df82431f87f725a12cbc5b8f88fff6d4cc065450
 workflow-type: tm+mt
 source-wordcount: '3569'
 ht-degree: 2%
@@ -150,6 +150,8 @@ Kundens digitala transaktionsschema representeras av en [[!UICONTROL XDM Experie
 
 +++XDM ExperienceEvent (klass)
 
+The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
+
 | Fält | Krav | Beskrivning |
 | --- | --- | --- |
 | `_id` | Obligatoriskt | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
@@ -157,8 +159,6 @@ Kundens digitala transaktionsschema representeras av en [[!UICONTROL XDM Experie
 | `eventType` | Obligatoriskt | En sträng som anger händelsens kategorityp. |
 
 +++
-
-The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
 
 +++Slutanvändar-ID-information (fältgrupp)
 
@@ -189,6 +189,8 @@ Kundens offlinetransaktionsschema representeras av en [[!UICONTROL XDM Experienc
 
 +++XDM ExperienceEvent (klass)
 
+The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
+
 | Fält | Krav | Beskrivning |
 | --- | --- | --- |
 | `_id` | Obligatoriskt | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
@@ -196,8 +198,6 @@ Kundens offlinetransaktionsschema representeras av en [[!UICONTROL XDM Experienc
 | `eventType` | Obligatoriskt | En sträng som anger händelsens kategorityp. |
 
 +++
-
-The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
 
 +++Commerce Details (fältgrupp)
 
@@ -247,6 +247,8 @@ The [!DNL Adobe] webbanslutningsschemat representeras av en [[!UICONTROL XDM Exp
 
 +++XDM ExperienceEvent (klass)
 
+The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
+
 | Fält | Krav | Beskrivning |
 | --- | --- | --- |
 | `_id` | Obligatoriskt | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
@@ -254,8 +256,6 @@ The [!DNL Adobe] webbanslutningsschemat representeras av en [[!UICONTROL XDM Exp
 | `eventType` | Obligatoriskt | En sträng som anger händelsens kategorityp. |
 
 +++
-
-The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
 
 +++Adobe Analytics ExperienceEvent-mall (fältgrupp)
 
