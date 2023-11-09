@@ -2,9 +2,9 @@
 title: Query Accelerated Store Reporting Insights Guide
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
+source-git-commit: 037ea8d11bb94e3b4f71ea301a535677b3cccdbd
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1034'
 ht-degree: 0%
 
 ---
@@ -19,15 +19,11 @@ Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profile
 
 ## Förutsättningar
 
-I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Se [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/user-defined-dashboards.md) om du vill veta mer om den här funktionen.
+I den här självstudien används användardefinierade kontrollpaneler för att visualisera data från din anpassade datamodell i plattformsgränssnittet. Se [användardefinierad dokumentation för kontrollpaneler](../../../dashboards/user-defined-dashboards.md) om du vill veta mer om funktionen.
 
 ## Komma igång
 
-Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller data från den nya plattformen. Se [packning](../../packages.md) och [skyddsräcken](../../guardrails.md#query-accelerated-store) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
-
-<!-- Document is hidden temporarily
-Please see the [packaging](../../packages.md), [guardrails](../../guardrails.md#query-accelerated-store), and [licensing](../../data-distiller/license-usage.md) documentation that relates to the Data Distiller SKU. 
--->
+Data Distiller SKU krävs för att skapa en anpassad datamodell för dina rapportinsikter och för att utöka Real-Time CDP datamodeller som innehåller data från den nya plattformen. Se [packning](../../packaging.md), [skyddsräcken](../../guardrails.md#query-accelerated-store)och  [licensiering](../../data-distiller/license-usage.md) dokumentation som relaterar till Data Distiller SKU. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
 
 ## Bygg en datamodell för rapportinsikter
 
@@ -41,7 +37,7 @@ I det här exemplet `externalaudiencereach` tabellen/datamängden baseras på et
 
 ## Skapa en modell för att rapportera insikter med Data Distiller
 
-Skapa sedan en rapportinsiktsmodell (`audienceinsight` i det här exemplet) och använda SQL-kommandot `ACCOUNT=acp_query_batch and TYPE=QSACCEL` för att säkerställa att den skapas i den accelererade butiken. Använd sedan frågetjänsten för att skapa en `audienceinsight.audiencemodel` schema för `audienceinsight` databas.
+Skapa sedan en rapportinsiktsmodell (`audienceinsight` i det här exemplet) och använda SQL-kommandot `ACCOUNT=acp_query_batch and TYPE=QSACCEL` för att säkerställa att den skapas i den accelererade butiken. Skapa sedan en `audienceinsight.audiencemodel` schema för `audienceinsight` databas.
 
 >[!NOTE]
 >
@@ -133,7 +129,7 @@ ext_custom_audience_id | approximate_count_upper_bound
 
 ## Utöka din datamodell med datamodellen Real-Time CDP insights
 
-Du kan utöka målgruppsmodellen med ytterligare information för att skapa en mer omfattande dimensionstabell. Du kan till exempel mappa målgruppsnamnet och målnamnet till den externa målgruppsidentifieraren. Det gör du genom att använda frågetjänsten för att skapa eller uppdatera en ny datauppsättning och lägga till den i målgruppsmodellen som kombinerar målgrupper och mål med en extern identitet. Bilden nedan visar konceptet för det här datamodelltillägget.
+Du kan utöka målgruppsmodellen med ytterligare information för att skapa en mer omfattande dimensionstabell. Du kan till exempel mappa målgruppsnamnet och målnamnet till den externa publikens identifierare. Det gör du genom att använda frågetjänsten för att skapa eller uppdatera en ny datauppsättning och lägga till den i målgruppsmodellen som kombinerar målgrupper och mål med en extern identitet. Bilden nedan visar konceptet för det här datamodelltillägget.
 
 ![Ett ERD-diagram som länkar Real-Time CDP insiktsdatamodell och Query-accelererad lagringsmodell.](../../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
 
@@ -170,7 +166,7 @@ Använd `SHOW datagroups;` för att bekräfta att ytterligare `external_seg_dest
 
 ## Fråga om datamodell för utökad accelererad butiksrapportering
 
-Nu när `audienceinsight` datamodellen har utökats, den är klar att efterfrågas. Följande SQL visar en lista över mappade mål och målgrupper.
+Nu när `audienceinsight` datamodellen har utökats, den är klar att läsas. Följande SQL visar en lista över mappade mål och målgrupper.
 
 ```sql
 SELECT a.ext_custom_audience_id,

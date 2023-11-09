@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: a49e0fe6c99f2874a9ca8403c4b69428826a6365
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1416'
 ht-degree: 5%
 
 ---
@@ -17,13 +17,22 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 >
 >Tillägget Analytics-taggen uppdateras ofta som svar på uppdateringar av [AppMeasurementets JavaScript-bibliotek](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Se [Versionsinformation om AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html) för närmare information om de specifika versioner som nämns nedan.
 
+## 15 september 2023
+
+**Adobe Analytics Extension 1.9.3**
+
+**Funktioner**:
+
+* Uppgraderat till [AppMeasurement till v2.25.0](https://github.com/adobe/appmeasurement/releases/tag/v2.25.0).
+
+
 ## 19 juli 2023
 
 **Adobe Analytics Extension 1.9.2**
 
 **Funktioner**:
 
-* Uppgraderat till AppMeasurement v2.24.0.
+* Uppgraderat till [AppMeasurement v2.24.0](https://github.com/adobe/appmeasurement/releases/tag/v2.24.0).
 * En valfri konfiguration har lagts till (`decodeLinkParameters` standard `false`) som avkodar URL-adresser som innehåller dubbelbyte-kodade tecken.
 
 **Felkorrigeringar**:
