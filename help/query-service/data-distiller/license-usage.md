@@ -2,8 +2,7 @@
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-recommendations: noCatalog, display
-source-git-commit: e55cada0975d771f225e829aeeeeeeb64b9acf4a
+source-git-commit: a3a2377a873c0e54ba43a60e28f922e0cb9e9d01
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
