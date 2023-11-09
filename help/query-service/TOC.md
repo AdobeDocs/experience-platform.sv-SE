@@ -4,7 +4,7 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
+source-git-commit: 533de54a0e4a48f1f95e732d8ea9b4fbe46dd241
 workflow-type: tm+mt
 source-wordcount: '310'
 ht-degree: 12%
@@ -15,7 +15,7 @@ ht-degree: 12%
 # Adobe Experience Platform Query Service {#query}
 
 - [Översikt över frågetjänsten](home.md)
-- [Paket för frågetjänst](packages.md)
+- [Frågetjänstpaket](packages.md)
 - [Skyddsutkast för frågetjänst](guardrails.md)
 - Kom igång {#get-started}
    - [Förutsättningar](get-started/prerequisites.md)
