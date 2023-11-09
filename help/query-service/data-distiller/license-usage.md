@@ -2,45 +2,32 @@
 title: Övervaka användning av batchfrågelicens
 description: Adobe Experience Platform användargränssnitt innehåller en kontrollpanel där du kan visa viktig information om hur din organisation använder din Data Distiller-licens.
 exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
-hide: true
-hidefromtoc: true
 recommendations: noCatalog, display
-source-git-commit: fa573dcf03eb711e946afe40d107871f5166ff58
+source-git-commit: e55cada0975d771f225e829aeeeeeeb64b9acf4a
 workflow-type: tm+mt
-source-wordcount: '345'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
 
-# (Alfa) Övervaka användningen av batchfrågelicenser {#monitor-license-usage}
+# Övervaka användning av batchfrågelicens {#monitor-license-usage}
 
->[!IMPORTANT]
+Kontrollpanelen för licensanvändning innehåller detaljerade rapporter om organisationens användning av frågetjänstlicenser och användningsstatistik för varje köpt produkt. Om du vill veta mer om tillgängliga mätvärden på kontrollpanelen går du till [kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md#available-metrics).
+
+Kontrollpanelen tillhandahåller användningsstatistik för varje köpt produkt, konsoliderad användning av statistik i alla produktions- eller utvecklingssandlådor samt användningsstatistik från en viss sandlåda. Den information som visas här fångas in under en daglig ögonblicksbild av din Platform-instans.
+
+>[!NOTE]
 >
->Möjligheten att övervaka användningen av batchfrågelicenser via användargränssnittet är inte tillgänglig för alla användare ännu. Den här funktionen är alfabet och testas fortfarande. Dokumentet kan komma att ändras.
-
-Adobe Experience Platform användargränssnitt (UI) är en kontrollpanel där du kan visa viktig information om användningen av frågetjänstens licens.
-
-Detaljerade instruktioner om hur du får åtkomst till och interagerar med kontrollpanelen för licensanvändning i användargränssnittet, samt hur du får mer information om tillgängliga mätvärden som visas på kontrollpanelen, finns på [kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md).
-
-Läs [översikt över instrumentpaneler](../../dashboards/home.md) om du vill se en sammanfattning av alla panelfunktioner i Experience Platform.
-
-## Widgetar {#widgets}
-
-Kontrollpanelen för licensanvändning består av widgetar som visar skrivskyddade mått med viktig information om organisationens licensanvändning. Vilka mätvärden som visas beror på organisationens specifika licensiering.
-
-Välj en alternativknapp för att välja en sandlåda för analys och använd listrutan för att välja en tidsperiod för analysen. De tillgängliga alternativen är 30 dagar, 90 dagar, 12 månader, det sista året, den fullständiga avtalsperioden eller ett anpassat datum.
+>Kontrollpanelen för licensanvändning är inte aktiverad som standard. Användarna måste beviljas behörigheten &quot;Visa kontrollpanel för licensanvändning&quot; för att kunna visa kontrollpanelen. Anvisningar om hur du beviljar åtkomstbehörigheter för att visa kontrollpanelen för licensanvändning finns i [behörighetsguide för instrumentpanel](../../dashboards/permissions.md).
 
 ## Beräkningstimmar {#compute-hours}
 
-The [!UICONTROL Compute hours] widgeten använder ett linjediagram för att visualisera organisationens batchbearbetningstid varje dag. Widgeten visar tre mätvärden som anges av en siffra i den övre vänstra delen av widgeten. Dessa är
+The [!UICONTROL Compute hours] Mätvärdet gäller endast för kunder som har Data Distiller-licens för batchfrågor. [!UICONTROL Compute hours] är den tid det tar för frågetjänstmotorerna att läsa, bearbeta och skriva in data i datasjön när en batchfråga körs.
 
-- [!UICONTROL Actual]: Det totala antalet beräkningstimmar för den tidsperiod som valts i översiktslistrutan. Det här måttet anges också i diagrammet med en heldragen linje.
-- [!UICONTROL Licensed]: Det totala antalet arbetstimmar som tillåts av din organisations licensavtal. Det här måttet visas också i diagrammet med en prickad linje.
-- [!UICONTROL Usage]: Detta är procentandelen av din användning i förhållande till den maximala beräkningstid som licensen tillåter.
-
->[!IMPORTANT]
+>[!NOTE]
 >
->The [!UICONTROL Compute hours] widgeten gäller endast för kunder som har Data Distiller-licens för batchfrågor.
+>**Data är tillgängliga med begränsningar**: Data börjar från 1 oktober 2023 utan några trender.<br>The **bakfyllning** data från avtalets startdatum är ett pågående arbete. Den förväntas vara tillgänglig i slutet av kalenderåret.
 
-![Kontrollpanelen för licensanvändning med widgeten för beräknade timmar markerad.](../images/data-distiller/compute-hours.png)
+![Kontrollpanelen för licensanvändning med måttet för antal beräknade timmar markerat.](../images/data-distiller/compute-hours.png)
 
+Mer information om vilka mätvärden som är tillgängliga för din organisation baserat på din organisations köpta licens finns i [kontrollpanel för licensanvändning](../../dashboards/guides/license-usage.md).
