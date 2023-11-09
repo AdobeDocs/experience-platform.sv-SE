@@ -1,10 +1,8 @@
 ---
 title: Krypterad datainmatning
 description: Lär dig hur du importerar krypterade filer via molnlagringsbatchkällor med API:t.
-hide: true
-hidefromtoc: true
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: cd8844121fef79205d57fa979ca8630fc1b1ece4
+source-git-commit: a92a3d4ce16e50d9eec97448e677ca603931fa44
 workflow-type: tm+mt
 source-wordcount: '1473'
 ht-degree: 0%
