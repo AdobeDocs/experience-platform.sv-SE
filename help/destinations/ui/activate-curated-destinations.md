@@ -2,9 +2,9 @@
 title: Aktivera målgrupper för kuraterade destinationer baserat på LiveRamp-identifierare
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper från Adobe Experience Platform till anslutna TV- och ljuddestinationer samt andra integreringar med LiveRamp RampID.
-source-git-commit: 25cda72508860b57bfa9ad0a729d0329d0f6bd1f
+source-git-commit: 1eb422572d95426fa8b342dc6aa79fb6125e18a1
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,12 @@ När du har exporterat dina målgrupper kan du aktivera dem med [[!DNL LiveRamp 
 >[!TIP]
 >
 >Med den här processen kan ni aktivera era målgrupper för t.ex. [[!DNL Roku]](../catalog/advertising/liveramp-distribution.md#roku), [[!DNL Disney]](../catalog/advertising/liveramp-distribution.md#disney)och mycket mer, direkt från Real-Time CDP UI, utan att du behöver logga in på [!DNL LiveRamp] aktiveringskonto.
+
+### Videosjälvstudiekurs {#video}
+
+Titta på videon nedan för att få en komplett förklaring av arbetsflödet som beskrivs på den här sidan.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3425367)
 
 ### Steg 1: Skicka era målgrupper från Experience Platform till LiveRamp via [!DNL LiveRamp - Onboarding] mål {#onboarding}
 
