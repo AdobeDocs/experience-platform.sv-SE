@@ -3,9 +3,9 @@ title: Experience Cloud-målgrupper
 description: Lär dig hur du delar målgrupper från Real-time Customer Data Platform till olika Experience Cloud-appar.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 23c4bce542bba76ea4badba43a7ce3e6f7fe9e49
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1748'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,9 @@ ht-degree: 1%
 >
 > Det här målet är tillgängligt för [Adobe Real-time Customer Data Platform Prime och Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) kunder.
 
-Använd det här målet för att aktivera målgrupper från Real-Time CDP till Audience Manager och Adobe Analytics. Ni behöver en licens för Audience Manager för att skicka ut målgrupper till Adobe Analytics.
+Använd det här målet för att aktivera målgrupper från Real-Time CDP till Audience Manager och Adobe Analytics.
+
+För att kunna skicka målgrupper till Adobe Analytics behöver ni en licens för Audience Manager. Mer information finns i [Audience Analytics - översikt](https://experienceleague.adobe.com/docs/analytics/integration/audience-analytics/mc-audiences-aam.html?lang=en).
 
 Använd direktanslutningarna från Real-Time CDP till att skicka målgrupper till andra Adobe-lösningar [Adobe Target](../personalization/adobe-target-connection.md), [Adobe Advertising](../advertising/adobe-advertising-cloud-connection.md), [Adobe Campaign](../email-marketing/adobe-campaign.md) och [Marketo Engage](../adobe/marketo-engage.md).
 
@@ -43,31 +45,37 @@ I Audience Manager kan du använda Real-Time CDP målgrupper för datahanterings
 
 ### Detaljerad kontroll över exporterade målgrupper {#segments-control}
 
-Använd den nya självbetjäningsintegreringen för målgrupper via målgruppsmålet Experience Cloud för att välja vilka målgrupper som ska exporteras till Audience Manager och utanför. På så sätt kan ni avgöra vilka målgrupper ni vill dela med andra Experience Cloud-lösningar och vilka målgrupper ni vill behålla exklusivt i Real-Time CDP.
+Om du vill välja vilka målgrupper du vill exportera till Audience Manager och utanför, använder du den nya självbetjäningsintegreringen för målgrupper via Experience Cloud-målgruppsmålet.  På så sätt kan ni avgöra vilka målgrupper ni vill dela med andra Experience Cloud-lösningar och vilka målgrupper ni vill behålla exklusivt i Real-Time CDP.
 
 Tack vare den äldre integrationen av målgruppsdelning gick det inte att styra vilka målgrupper som ska exporteras till Audience Manager och vidare.
 
+### Dela Real-Time CDP-målgrupper med Adobe Analytics {#share-audiences-with-analytics}
+
+Publiker som du skickar till målgruppen Experience Cloud visas inte automatiskt i Adobe Analytics.
+
+Innan du kan skicka målgrupper till Adobe Analytics måste du [implementera Experience Cloud Identity Service för analys och Audience Manager](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-aam-analytics.html?lang=en).
+
+>[!IMPORTANT]
+>
+>Om du vill skicka målgrupper från Real-Time CDP till Adobe Analytics via målgruppen Experience Cloud måste du ha en Audience Manager-licens.
+
 ### Dela Real-Time CDP-målgrupper med andra Experience Cloud-lösningar {#share-segments-with-other-solutions}
 
-Förutom att dela målgrupper med Audience Manager kan du med Real-Time CDP Audiences-målkortet dela målgrupper med andra Experience Cloud-lösningar som du är redo för, bland annat:
+Du kan använda målkortet Real-Time CDP Audiences för att dela målgrupper med andra Experience Cloud-lösningar.
 
-* Adobe Campaign
-* Adobe Target
-* Advertising Cloud
-* Analytics 
-* Marketo
+Adobe rekommenderar dock starkt att du använder följande dedikerade målkort om du vill dela målgrupper med dessa lösningar:
 
-<!--
-
-Note: briefly talk about when to share audiences to these destinations using the existing destination cards and when to share using the new Experience Cloud Audiences destination. 
-
--->
+* [Adobe Campaign](../email-marketing/adobe-campaign.md)
+* [Adobe Target](../personalization/adobe-target-connection.md)
+* [Advertising Cloud](../advertising/adobe-advertising-cloud-connection.md)
+* [Marketo](../adobe/marketo-engage.md)
 
 ## Förutsättningar {#prerequisites}
 
 >[!IMPORTANT]
 >
 > * Du behöver en Audience Manager-licens för att kunna aktivera [Användningsexempel för datahanteringsplattform](#dmp-use-cases) som nämns ovan.
+> * Du *do* behöver en Audience Manager-licens för att dela Real-Time CDP-målgrupper med Adobe Analytics.
 > * Du *behöver inte* en Audience Manager-licens för att dela Real-Time CDP-målgrupper med Adobe Advertising Cloud, Adobe Target, Marketo och andra Experience Cloud-lösningar som omnämns i [avsnitt ovan](#share-segments-with-other-solutions).
 
 ### För kunder som använder en äldre lösning för målgruppsdelning
@@ -78,7 +86,7 @@ Den tid det tar att lösa avprovisioneringsbiljetten är högst sex arbetsdagar.
 
 >[!IMPORTANT]
 >
->Publiken exporterar från Real-Time CDP till dina andra lösningar stoppas i tiden mellan bildupplösningen och den tidpunkt då en ny anslutning upprättas via målkortet. Du kan minimera den här driftstoppen genom att skapa anslutningen via målkortet så snart biljetten stängs.
+>Publiken exporterar från Real-Time CDP till dina andra lösningar stoppas i tiden mellan bildupplösningen och den tidpunkt då en ny anslutning upprättas via målkortet. Du kan minimera den här driftstoppen genom att skapa anslutningen via målkortet när biljetten har stängts.
 
 ## Kända begränsningar och hänvisningar {#known-limitations}
 
@@ -86,13 +94,13 @@ Observera följande kända begränsningar och viktiga pratbubblor när du använ
 
 * För närvarande stöds en målgrupp på Experience Cloud. Om du försöker konfigurera en andra målanslutning uppstår ett fel.
 * När du ansluter till målet visas ett alternativ för att [aktivera dataflödesaviseringar](../../ui/alerts.md). Visas i användargränssnittet, men **alternativet aktivera aviseringar stöds inte för närvarande**.
-* **Stöd för bakgrundsfyllning**: Den första exporten till Audience Manager eller andra lösningar från Experience Cloud omfattar en historisk målgrupp. Användare av [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam) som konfigurerar det här målet bör förvänta sig en ryggfyllningsdifferens på ungefär 6 timmar.
+* **Stöd för bakgrundsfyllning**: Den första exporten till Audience Manager eller andra lösningar från Experience Cloud omfattar en historisk målgrupp. Användare av [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam) som konfigurerar det här målet bör förvänta sig en ryggfyllningsdifferens på ungefär sex timmar.
 
 ### Fördröjning vid aktivering av målgrupper {#audience-activation-latency}
 
-Det finns fyra timmars fördröjning mellan den tidpunkt då målgrupperna först aktiveras i Real-Time CDP och den tidpunkt då de är klara att användas i Audience Manager och andra Experience Cloud-lösningar för vissa användningsfall.
+Det finns fyra timmars fördröjning mellan den tidpunkt då målgrupperna först aktiveras i Real-Time CDP och den tidpunkt då de är klara att användas i Audience Manager och andra Experience Cloud-lösningar.
 
-Det kan ta upp till 24 timmar för målgrupper att vara fullt tillgängliga i Audience Manager för alla användningsfall och upp till 48 timmar för målgrupper från Experience Cloud att visas i Audience Manager-rapporter.
+Det kan ta upp till 24 timmar för målgrupperna att vara helt tillgängliga i Audience Manager för alla användningsfall. Det kan ta upp till 48 timmar för målgrupper från Experience Cloud att visas i Audience Manager-rapporter.
 
 Metadata, till exempel målgruppsnamn, är tillgängliga i Audience Manager inom några minuter efter att du har konfigurerat exporten till målplatsen Experience Cloud.
 
@@ -111,7 +119,7 @@ De profiler som exporteras till [!UICONTROL Experience Cloud Audiences] målet m
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilken typ av målgrupp du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -127,7 +135,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 | Objekt | Typ | Anteckningar |
 |---------|----------|---------|
 | Exporttyp | **[!UICONTROL Audience export]** | Du exporterar alla medlemmar i en publik som är märkta med identiteterna som listas i avsnittet ovan. |
-| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Real-Time CDP baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
+| Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. När en profil uppdateras i Real-Time CDP baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedåt till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style="table-layout:auto"}
 
@@ -160,7 +168,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 > 
 >För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet. Observera att nej [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) krävs och nej [planeringssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) är tillgängligt för det här målet.
+Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet. Nej [mappningssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) krävs och nej [planeringssteg](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) är tillgängligt för det här målet.
 
 ## Validera dataexport {#exported-data}
 
@@ -170,9 +178,9 @@ För att validera dataexporten kan ni kontrollera att era målgrupper lyckats me
 
 Dina Real-Time CDP-målgrupper visas i Audience Manager som [signaler](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-signals), [traits](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-traits)och [segment](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-as-aam-segments). Du kan kontrollera i Audience Manager om data har visats enligt anvisningarna i dokumentationslänkarna ovan.
 
-Segmentnamn börjar fyllas i Audience Manager 15 minuter efter att målgrupperna har skickats från Real-Time CDP.
+Segmentnamnen börjar fyllas i Audience Manager 15 minuter efter att målgrupperna hade skickats från Real-Time CDP.
 
-Segmentpopulationen börjar strömma in i Audience Manager inom 6 timmar efter att ha skickats från Real-Time CDP och kommer att uppdateras var 24:e timme i Audience Manager.
+Segmentpopulationen börjar strömma in i Audience Manager inom 6 timmar efter att ha skickats från Real-Time CDP och uppdateras var 24:e timme i Audience Manager.
 
 Hela befolkningen kommer att vara synlig i Audience Manager efter 72 timmar, och populationerna fortsätter att flyta till Audience Manager om inte målgruppen tas bort från destinationen i Real-Time CDP.
 
@@ -181,7 +189,7 @@ Hela befolkningen kommer att vara synlig i Audience Manager efter 72 timmar, och
 Alla [!DNL Real-Time CDP] destinationerna är kompatibla med dataanvändningsprinciper när data hanteras. Detaljerad information om hur [!DNL Adobe Experience Platform] använder datastyrning, läs [Datastyrning - översikt](/help/data-governance/home.md).
 
 Datastyrningen i Real-Time CDP genomförs av båda [etiketter för dataanvändning](/help/data-governance/labels/reference.md) och marknadsföringsåtgärder.
-Dataanvändningsetiketter överförs till program, men marknadsföringsåtgärder kommer inte att göra det. Det innebär att när de landar i Audience Manager kan målgrupper från Real-Time CDP exporteras till alla tillgängliga destinationer. I Audience Manager kan du använda [dataexportkontroller](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html) för att blockera målgrupper från att exporteras till vissa destinationer.
+Dataanvändningsetiketter överförs till program men marknadsföringsåtgärder gör det inte. Det innebär att när de landar i Audience Manager kan målgrupper från Real-Time CDP exporteras till alla tillgängliga destinationer. I Audience Manager kan du använda [dataexportkontroller](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/data-export-controls.html) för att blockera målgrupper från att exporteras till vissa destinationer.
 
 Målgrupper markerade med [!DNL HIPAA] marknadsföringsåtgärder skickas inte från Real-Time CDP till Audience Manager.
 
@@ -191,4 +199,4 @@ Målgrupper och egenskaper i Audience Manager omfattas av [Rollbaserade åtkomst
 
 Målgrupper som exporteras från Real-Time CDP tilldelas en specifik datakälla i Audience Manager som kallas **[!UICONTROL Experience Platform Segments]**.
 
-Om du bara vill ge vissa användare åtkomst till målgrupperna kan du använda åtkomstkontroller för de målgrupper som tillhör datakällan. Du måste ange nya behörigheter för åtkomstkontroll i Audience Manager för de målgrupperna och egenskaperna som skapas från Real-Time CDP-segment.
+Om du bara vill ge vissa användare åtkomst till målgrupperna kan du använda åtkomstkontroller för de målgrupper som tillhör datakällan. Ange nya behörigheter för åtkomstkontroll i Audience Manager för dessa målgrupper och egenskaper som skapats från Real-Time CDP segment.
