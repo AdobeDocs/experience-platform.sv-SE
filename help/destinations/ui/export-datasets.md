@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 7c68b6a3b08eb47fa8c3906468dc87f3715fbe99
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1699'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,12 @@ Förstå vilka datamängdstyper du kan exportera beroende på program, produktni
   </tr>
 </tbody>
 </table>
+
+## Videosjälvstudiekurs {#video-tutorial}
+
+I videon nedan finns en komplett förklaring av arbetsflödet som beskrivs på den här sidan, fördelar med att använda exportdatauppsättningsfunktionen samt några förslag på användningsområden.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3424392/)
 
 ## Mål som stöds {#supported-destinations}
 
