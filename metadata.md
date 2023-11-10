@@ -14,7 +14,8 @@ solution: Experience Platform
 type: Documentation
 index: true
 role: Architect, Developer, Data Architect, Data Engineer, User, Admin, Leader
-source-git-commit: 3dbf99bd25bb2e3983de2ca5f0e1f20e9020ba7e
+auto-video-transcripts: true
+source-git-commit: a0617564db965a0bb70464ab0bdf85f5850bf64f
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 96%
@@ -24,7 +25,7 @@ ht-degree: 96%
 
 # Metadata för intern användning
 
-Filen metadata.md innehåller metadata på arkivnivå som skickas till användarhandbokens TOC.md-filer i arkivet. Om du vill ändra innehåll i metadata.md för någon användarhandbok gör du detta i en TOC.md-fil.
+Filen metadata.md innehåller metadata på lagringsplatsnivå som skickas till TOC.md-filer för användarhandboken i lagringsplatsen. Om du vill ändra innehållet för metadata.md för en användarhandbok gör du det i en TOC.md-fil.
 
 | metadata | vad gör den |
 |--- |--- |
