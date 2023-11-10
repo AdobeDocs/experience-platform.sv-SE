@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;produktprofil;hantera behörigheter
 solution: Experience Platform
 title: Hantera behörigheter för en produktprofil
-description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. Det här dokumentet är en guide till hur du hanterar behörigheter för en produktprofil för Platform.
+description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med hjälp av Adobe Admin Console. Det här dokumentet är en guide till hur du hanterar behörigheter för en produktprofil för Platform.
 exl-id: ca403bef-6d62-4ca9-bba6-d1280ac63171
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: 1812af74e82f3071963177356b3cd4b23ea567f5
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '329'
 ht-degree: 0%
 
 ---
@@ -17,19 +17,19 @@ Omedelbart efter [skapa en ny produktprofil](#create-a-new-product-profile)uppma
 
 ![behörigheter](../images/permissions.png)
 
-Behörigheterna är uppdelade i kategorier och listade på den här sidan. I listan visas kategorinamnet, antalet behörigheter (och hur många som är aktiva) och dess beskrivning.
+Behörigheterna är uppdelade i kategorier och listade på den här sidan. I listan visas kategorinamnet, antalet behörigheter (och hur många som är aktiva) och dess beskrivning. Se tabellen i [Resursbehörigheter](/help/access-control/home.md#permissions) för en fördelning av de behörigheter som är tillgängliga för varje roll.
 
 Välj en kategori i listan för att öppna **[!UICONTROL Edit Permissions]** sida.
 
 ![redigera-behörigheter](../images/edit-permissions.png)
 
-The **[!UICONTROL Edit Permissions]** På sidan finns en arbetsyta där du kan lägga till och ta bort behörigheter från den valda produktprofilen. Till vänster på skärmen visas en lista med behörighetskategorier. Om du väljer en kategori ändras behörigheterna som visas under **[!UICONTROL Available Permissions Items]**.
+The **[!UICONTROL Edit Permissions]** På sidan finns en arbetsyta där du kan lägga till och ta bort behörigheter från den valda produktprofilen. På skärmens vänstra sida visas en lista med behörighetskategorier. Om du väljer en kategori ändras behörigheterna som visas under **[!UICONTROL Available Permissions Items]**.
 
 Om du till exempel vill uppdatera behörigheter för datamodellering väljer du **[!UICONTROL Data Modeling]**.
 
 ![profilhantering](../images/profile-management.png)
 
-Om du vill lägga till en behörighet väljer du plugin-programmet **(+)** -ikon bredvid behörighetens namn. Du kan också välja **[!UICONTROL Add all]** om du vill lägga till alla behörigheter i den aktuella kategorin i profilen. Tillagda behörigheter visas under **[!UICONTROL Included Permission Items]**.
+Om du vill lägga till en behörighet väljer du plugin-programmet **(+)** -ikon bredvid behörighetens namn. Du kan också välja **[!UICONTROL Add all]** om du vill lägga till alla behörigheter under den aktuella kategorin i profilen. Tillagda behörigheter visas under **[!UICONTROL Included Permission Items]**.
 
 ![add-permission](../images/add-permission.png)
 
@@ -49,4 +49,4 @@ The **[!UICONTROL Permissions]** för produktprofilen visas igen och visar att d
 
 ## Nästa steg
 
-När behörigheter har fastställts kan du fortsätta till nästa steg i [hantera detaljer och tjänster för en produktprofil](details-and-services.md)
+När behörigheter har fastställts kan du gå vidare till nästa steg i [hantera detaljer och tjänster för en produktprofil](details-and-services.md)
