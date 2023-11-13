@@ -4,7 +4,7 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: 28578a7e852cbefd3c644259a4bffaed29501a9e
 workflow-type: tm+mt
 source-wordcount: '3620'
 ht-degree: 0%
@@ -30,7 +30,7 @@ I den här artikeln förklaras det arbetsflöde som krävs för att aktivera må
 
 Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
-### Filformat som stöds för export {#supported-file-formats-export}
+## Filformat som stöds för export {#supported-file-formats-export}
 
 Följande filformat stöds vid export av målgrupper:
 
