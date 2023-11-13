@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1016'
 ht-degree: 0%
 
 ---
@@ -139,7 +139,7 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## (Beta) Exportera datauppsättningar {#export-datasets}
+## Exportera datauppsättningar {#export-datasets}
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 

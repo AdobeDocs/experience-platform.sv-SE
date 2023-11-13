@@ -2,9 +2,9 @@
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## (Beta) Exportera datauppsättningar {#export-datasets}
+## Exportera datauppsättningar {#export-datasets}
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 

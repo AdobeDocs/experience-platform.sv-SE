@@ -4,9 +4,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a854960b11cb3e56046dc9541f76c62a7e3f2f10
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '3559'
+source-wordcount: '3620'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,18 @@ I den här artikeln förklaras det arbetsflöde som krävs för att aktivera må
 ## Förutsättningar {#prerequisites}
 
 Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+
+### Filformat som stöds för export {#supported-file-formats-export}
+
+Följande filformat stöds vid export av målgrupper:
+
+* CSV
+* JSON
+* Parquet
+
+Observera att när du exporterar CSV-filer får du större flexibilitet när det gäller hur du vill strukturera de exporterade filerna. Läs mer om [filformatskonfiguration för CSV-filer](/help/destinations/ui/batch-destinations-file-formatting-options.md#file-configuration).
+
+Välj önskat filformat för export när [skapa en anslutning till det filbaserade målet](/help/destinations/ui/connect-destination.md).
 
 ## Välj mål {#select-destination}
 
@@ -532,7 +544,7 @@ Om du är nöjd med ditt val och inga policyöverträdelser har identifierats v�
 
 ## Verifiera målgruppsaktivering {#verify}
 
-För e-postmarknadsföringsmål och molnlagringsmål skapar Adobe Experience Platform en `.csv` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna i filnamnet](#file-names):
+När målgrupper exporteras till molnlagringsmål skapar Adobe Experience Platform en `.csv`, `.json`, eller `.parquet` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska skapas på lagringsplatsen enligt det schema som du angav i arbetsflödet. Standardfilformatet visas nedan, men du kan [redigera komponenterna i filnamnet](#file-names):
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 Om du till exempel har valt en daglig exportfrekvens kan filerna som du får tre dagar i följd se ut så här:

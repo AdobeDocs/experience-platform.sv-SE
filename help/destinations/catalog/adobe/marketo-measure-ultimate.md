@@ -3,9 +3,9 @@ title: Marketo Measure Ultimate-mål
 description: Lär dig hur du ansluter och aktiverar data till Marketo Measure Ultimate-målet.
 last-substantial-update: 2023-03-07T00:00:00Z
 exl-id: b4220841-8908-41ff-b977-dbeebfa787c8
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 > 
 >För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-Läs [(Beta) Exportera datauppsättningar](/help/destinations/ui/export-datasets.md) självstudiekurs om utförliga instruktioner om hur du exporterar datauppsättningar till det här målet.
+Läs [Exportera datauppsättningar](/help/destinations/ui/export-datasets.md) självstudiekurs om utförliga instruktioner om hur du exporterar datauppsättningar till det här målet.
 
 ## Validera dataexport {#exported-data}
 

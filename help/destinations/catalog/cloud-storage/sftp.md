@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 93b1c26e85ddd0fa232b26712f88faa824f19f30
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '969'
 ht-degree: 0%
 
 ---
@@ -129,7 +129,7 @@ När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du fö
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## (Beta) Exportera datauppsättningar {#export-datasets}
+## Exportera datauppsättningar {#export-datasets}
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 

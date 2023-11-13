@@ -3,9 +3,9 @@ title: Azure Data Lake Storage Gen2-anslutning
 description: Lär dig hur du ansluter till Azure Data Lake Storage Gen2 för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '839'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,7 @@ I **[!UICONTROL Scheduling]** kan du [konfigurera exportschemat](/help/destinati
 
 I **[!UICONTROL Mapping]** kan du välja vilka attribut- och identitetsfält som ska exporteras för dina profiler. Du kan också välja att ändra rubrikerna i den exporterade filen till ett valfritt användarvänligt namn. Mer information finns i [mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) i självstudiekursen om att aktivera gruppdestinationer.
 
-## (Beta) Exportera datauppsättningar {#export-datasets}
+## Exportera datauppsättningar {#export-datasets}
 
 Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
