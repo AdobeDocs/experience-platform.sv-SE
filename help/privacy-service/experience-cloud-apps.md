@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service och Experience Cloud
 description: Det här dokumentet innehåller en referens för hur du konfigurerar olika Experience Cloud-program för sekretessrelaterade åtgärder.
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b73b6f1005dc8a9e647f706a1e98259131b17478
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '912'
 ht-degree: 7%
 
 ---
@@ -54,7 +54,6 @@ Här följer en lista med [!DNL Experience Cloud] program som inte är integrera
 | [Adobe Experience Manager](https://experienceleague.adobe.com/docs/experience-manager-64/managing/data-protection/data-protection-and-privacy.html) | En översikt över hur en administratör eller AEM för kundsekretess kan hantera GDPR-begäranden. |
 | [Adobe Experience Manager Livefyre](https://experienceleague.adobe.com/docs/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | Steg för att göra GDPR-åtkomst och ta bort begäranden med Livefyre. |
 | [Magento](https://devdocs.magento.com/compliance/industry-compliance.html) | Se till att Magento Commerce installationer uppfyller kraven i specifik integritetslagstiftning. |
-| [Marketo](https://www.marketo.com/company/trust/gdpr/) | Läs om hur sekretessbestämmelser gäller för Marketo. |
 | [Taggar i Adobe Experience Platform](../tags/ui/client-side/consent.md) | Hur utvecklare kan använda tillägg och regelbyggaren för att definiera lösningar för anmälan och avanmälan. |
 | [Workfront](https://www.workfront.com/privacy-notice) | Läs om hur Workfront samlar in personuppgifter och hur den registrerade kan skicka in en begäran om integritet via ett formulär. |
 
