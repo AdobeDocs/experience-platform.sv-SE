@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alfa
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 20b8433cee719329bce562069c328adb906697a0
 workflow-type: tm+mt
-source-wordcount: '791'
+source-wordcount: '794'
 ht-degree: 2%
 
 ---
@@ -150,5 +150,6 @@ At `timestamp=4`, en kund använder samma surfplatta, loggar in på sitt konto (
 Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
 
 * [Översikt över regler för länkning av identitetsdiagram](./overview.md)
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md)
 * [Identitetstjänst och kundprofil i realtid](identity-and-profile.md)

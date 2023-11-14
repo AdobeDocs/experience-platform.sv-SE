@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alfa
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 20b8433cee719329bce562069c328adb906697a0
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 0%
 ## Innehållsförteckning
 
 * [Översikt](./overview.md)
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempel på scenarier](./example-scenarios.md)
 * [Identitetstjänst och kundprofil i realtid](identity-and-profile.md)
 * [Identitetslänkningslogik](./identity-linking-logic.md)
@@ -39,13 +40,12 @@ Mer information om användningsscenarier för länkningsregler för identitetsdi
 
 Med länkningsregler för identitetsdiagram kan du:
 
-* Konfigurera gränser för att förhindra att två olika personidentifierare sammanfogas i ett identitetsdiagram, så att ett identitetsdiagram bara representerar en person.
-   * Gränserna som du konfigurerar tillämpas sedan av algoritmen för identitetsoptimering.
-* Konfigurera prioriteter för att associera online-händelser som utförs av den autentiserade personen till en viss användare.
+* Skapa ett enskilt identitetsdiagram/sammanfogad profil för varje användare genom att konfigurera unika namnutrymmen (gränser), vilket förhindrar att två olika personidentifierare sammanfogas i ett identitetsdiagram.
+* Associera online-autentiserade händelser med personen genom att konfigurera prioriteringar
 
 ### Gränser
 
-Du kan använda namnutrymmesgränser för att definiera det maximala antalet identiteter som kan finnas i ett diagram baserat på ett givet namnutrymme. Du kan till exempel ange att diagrammet ska ha högst en identitet med ett CRM ID-namnutrymme, vilket förhindrar att två olika personidentifierare sammanfogas i samma diagram.
+Ett unikt namnutrymme är en identifierare som representerar en individ, till exempel CRM-ID, inloggnings-ID och hashade e-post. Om ett namnutrymme har angetts som unikt kan ett diagram bara ha en identitet med det namnutrymmet (`limit=1`). Detta förhindrar sammanfogning av två olika personidentifierare i samma diagram.
 
 * Om en gräns inte är konfigurerad kan det leda till oönskade diagramsammanfogningar, till exempel två identiteter med ett CRM ID-namnutrymme i ett diagram.
 * Om ingen gräns är konfigurerad kan diagrammet lägga till så många namnutrymmen som behövs så länge diagrammet finns inom skyddsritningarna (50 identiteter/diagram).
@@ -60,6 +60,8 @@ Nedan följer en lista över algoritmens konsekvenser för hur anonyma händelse
 * ECID kopplas till den senast autentiserade användaren om följande villkor uppfylls:
    * Om CRM-ID sammanfogas med ECID (delad enhet).
    * Om begränsningar bara är konfigurerade till ett CRM-ID.
+
+Mer information finns i dokumentet om [algoritm för identitetsoptimering](./identity-optimization-algorithm.md).
 
 ### Prioritet
 
@@ -106,6 +108,7 @@ Om följande upplevelsehändelser är inkapslade i Experience Platform lagras pr
 
 Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
 
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md)
 * [Identitetstjänst och kundprofil i realtid](identity-and-profile.md)
 * [Identitetslänkningslogik](./identity-linking-logic.md)
