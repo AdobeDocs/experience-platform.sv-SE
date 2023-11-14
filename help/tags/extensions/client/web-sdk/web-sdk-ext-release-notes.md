@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 3e572458907bf745ee8f0fb7e2db37caae79f712
+source-git-commit: 8cec606849489ef1e8845254117d184d5dc3c70a
 workflow-type: tm+mt
-source-wordcount: '1794'
+source-wordcount: '1821'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,15 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
 
-## Version 2.21.0 - 1 november 2023
+## Version 2.21.3 - 10 november 2023
+
+Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
+
+**Korrigeringar och förbättringar**
+
+* Ett problem har korrigerats där förslagsarrayen finns i `Send event complete` händelser var alltid tomma.
+
+## Version 2.21.2 - 1 november 2023
 
 **Nya funktioner**
 
