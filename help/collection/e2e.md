@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform samlar in och överför data till andra Adobe-produkter och tredjepartsdestinationer. För att kunna skicka händelsedata från programmet till Experience Platform Edge Network är det viktigt att förstå dessa kärntekniker och hur de konfigureras för att leverera data till de mål du behöver, när du behöver det.
 
-Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med plattformens datainsamlingsfunktioner. Självstudiekursen går igenom stegen för att installera och konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling (tidigare Adobe Experience Platform Launch).
+Den här guiden innehåller en självstudiekurs på hög nivå om hur du skickar en händelse via Edge Network med hjälp av plattformens datainsamlingsfunktioner. Självstudiekursen går igenom stegen för att installera och konfigurera taggtillägget Adobe Experience Platform Web SDK i användargränssnittet för datainsamling (tidigare Adobe Experience Platform Launch).
 
 >[!NOTE]
 >
@@ -28,7 +28,7 @@ I den här självstudien används användargränssnittet för datainsamling för
 * Utveckla
 * Hantera tillägg
 
-Se guiden [hantera behörigheter för datainsamling](./permissions.md) om du vill lära dig hur du ger åtkomst till egendomar och egendomsrättigheter.
+Se guiden på [hantera behörigheter för datainsamling](./permissions.md) om du vill lära dig hur du ger åtkomst till egendomar och egendomsrättigheter.
 
 Om du vill använda de olika datainsamlingsprodukterna som nämns i den här guiden måste du även ha tillgång till datastreams och möjlighet att skapa och hantera scheman. Om du behöver tillgång till någon av dessa funktioner kontaktar du ditt Adobe-kontoteam för att få den åtkomst du behöver. Observera att om du inte har köpt Adobe Experience Platform ger Adobe dig tillgång till SDK utan extra kostnad.
 
@@ -47,7 +47,7 @@ Processen med att konfigurera datainsamling för webbplatsen kan sammanfattas p�
 1. [Skapa ett datastream](#datastream) för att konfigurera vilka mål du vill att dina data ska skickas till.
 1. [Installera och konfigurera Web SDK](#sdk) för att skicka data till dataströmmen när vissa händelser inträffar på webbplatsen.
 
-När du kan skicka data till Edge Network kan du också välja att [konfigurera vidarebefordran av händelser](#event-forwarding) om organisationen har en licens för det.
+När du kan skicka data till Edge Network kan du också välja att [konfigurera vidarebefordran av händelser](#event-forwarding) om din organisation har en licens för det.
 
 ## Skapa ett schema {#schema}
 
@@ -83,9 +83,9 @@ Om du vill lägga till fler fält i schemat kan du göra det genom att markera *
 
 >[!NOTE]
 >
->Se guiden [lägga till fältgrupper](../xdm/ui/resources/schemas.md#add-field-groups) I XDM-dokumentationen finns detaljerade anvisningar om hur du söker efter olika fältgrupper som passar dina användningsexempel.
+>Se guiden på [lägga till fältgrupper](../xdm/ui/resources/schemas.md#add-field-groups) I XDM-dokumentationen finns detaljerade anvisningar om hur du söker efter olika fältgrupper som passar dina användningsexempel.
 >
->Det bästa sättet är att bara lägga till fält för data som du planerar att skicka via Edge Network. När du har lagt till fält i ett schema och sparat det, kan endast additiva ändringar göras i schemat därefter. Se avsnittet på [regler för schemautveckling](../xdm/schema/composition.md#evolution) för mer information.
+>Det bästa sättet är att bara lägga till fält för data som du planerar att skicka via Edge Network. När du har lagt till fält i ett schema och sparat det, kan endast additiva ändringar göras i schemat därefter. Se avsnittet på sidan [regler för schemautveckling](../xdm/schema/composition.md#evolution) för mer information.
 
 När du har lagt till de fält du behöver väljer du **[!UICONTROL Save]** för att spara schemat.
 
@@ -97,7 +97,7 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 
 >[!NOTE]
 >
->Om du vill använda [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md) (förutsatt att din organisation har licens för den funktionen) måste du aktivera den för en datastream på samma sätt som du aktiverar Adobe-produkter. Information om processen finns i [senare avsnitt](#event-forwarding).
+>Om du vill använda [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md) (förutsatt att din organisation har licens för den funktionen) måste du aktivera den för en datastream på samma sätt som du aktiverar Adobe-produkter. Information om processen finns i en [senare avsnitt](#event-forwarding).
 
 Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen. Här kan du välja ett befintligt datastam från listan som du vill redigera eller skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
 
@@ -123,11 +123,11 @@ Processen kan sammanfattas enligt följande:
 1. [Installera Adobe Experience Platform Web SDK på en taggegenskap](#install-sdk) för att få tillgång till dess funktioner.
 1. [Skapa ett XDM-objektdataelement](#data-element) för att mappa variabler på webbplatsen till strukturen i XDM-schemat som du skapade tidigare.
 1. [Skapa en regel](#rule) för att tala om för SDK när data ska skickas till Edge Network.
-1. [Bygga och installera ett bibliotek](#library) för att implementera regeln på din webbplats.
+1. [Skapa och installera ett bibliotek](#library) för att implementera regeln på din webbplats.
 
 ### Installera SDK på en taggegenskap {#install-sdk}
 
-Välj **[!UICONTROL Tags]** i den vänstra navigeringen för att visa en lista med taggegenskaper. Du kan välja att redigera en befintlig egenskap om du vill, eller så kan du markera **[!UICONTROL New Property]** i stället.
+Välj **[!UICONTROL Tags]** i den vänstra navigeringen för att visa en lista med taggegenskaper. Du kan välja att redigera en befintlig egenskap om du vill, eller välja **[!UICONTROL New Property]** i stället.
 
 ![Egenskaper](./images/e2e/properties.png)
 
@@ -135,7 +135,7 @@ Om du skapar en ny egenskap anger du ett beskrivande namn och anger [!UICONTROL 
 
 ![Skapa egenskap](./images/e2e/create-property.png)
 
-Översiktssidan för egenskapen visas. Här väljer du **[!UICONTROL Extensions]** i den vänstra navigeringen väljer du **[!UICONTROL Catalog]**. Sök efter listan för Platform Web SDK (eventuellt med sökfältet för att begränsa resultatet) och välj **[!UICONTROL Install]**.
+Översiktssidan för egenskapen visas. Välj **[!UICONTROL Extensions]** i den vänstra navigeringen väljer du **[!UICONTROL Catalog]**. Sök efter listan för Platform Web SDK (eventuellt med sökfältet för att begränsa resultatet) och välj **[!UICONTROL Install]**.
 
 ![Installera Web SDK](./images/e2e/install-sdk.png)
 
@@ -169,7 +169,7 @@ Schemats struktur visas. Alla fält med en asterisk (**\***) anger fält som aut
 
 >[!NOTE]
 >
->I skärmbilden ovan visas hur du mappar en globalt tillgänglig variabel från klientsidan på webbplatsen (`cartAbandonsTotal`) till ett XDM-fält genom att referera till dess namn i [!UICONTROL Value] fält, omgivet av procenttecken (`%`).
+>På skärmbilden ovan visas hur du mappar en globalt tillgänglig variabel från klientsidan på webbplatsen (`cartAbandonsTotal`) till ett XDM-fält genom att referera till dess namn i [!UICONTROL Value] fält, omgivet av procenttecken (`%`).
 >
 >Du kan också använda andra dataelement som du redan har skapat för att fylla i dessa fält. Se referensen på [dataelement](../tags/ui/managing-resources/data-elements.md) i taggdokumentationen om du vill ha mer information.
 
@@ -200,7 +200,7 @@ Du kan ange regler för praktiskt taget alla händelser som kan inträffa på we
 </html>
 ```
 
-I användargränssnittet för datainsamling väljer du **[!UICONTROL Rules]** i den vänstra navigeringen väljer du **[!UICONTROL Create New Rule]**.
+I gränssnittet för datainsamling väljer du **[!UICONTROL Rules]** i den vänstra navigeringen väljer du **[!UICONTROL Create New Rule]**.
 
 ![Regler](./images/e2e/rules.png)
 
@@ -238,7 +238,7 @@ När du är klar med konfigurationen av regeln väljer du **[!UICONTROL Save]** 
 
 ![Spara regel](./images/e2e/save-rule.png)
 
-### Bygga och installera ett bibliotek {#library}
+### Skapa och installera ett bibliotek {#library}
 
 När regeln har konfigurerats kan du lägga till den i ett taggbibliotek, skapa biblioteket i en miljö och installera det bygget på webbplatsen.
 
@@ -268,7 +268,7 @@ När du har skapat en egenskap för vidarebefordring av händelser är nästa st
 
 På liknande sätt som tidigare måste du, när du har konfigurerat regeln, lägga till den i ett bibliotek och skapa biblioteket i en miljö.
 
-När bygget är klart är det sista steget att uppdatera den dataström du har [tidigare konfigurerad](#datastream) och aktivera vidarebefordran av händelser. Navigera till **[!UICONTROL Datastreams]** och välj den aktuella datastream i listan. Härifrån aktiverar du växlingen för att vidarebefordra händelser och anger namnen på den egenskap och miljö som du just konfigurerade.
+När bygget är klart är det sista steget att uppdatera den dataström du har [tidigare konfigurerad](#datastream) och aktivera vidarebefordran av händelser. Navigera till **[!UICONTROL Datastreams]** och välj det aktuella datastream-objektet i listan. Härifrån aktiverar du växlingen för att vidarebefordra händelser och anger namnen på den egenskap och miljö som du just konfigurerade.
 
 ![Dataström för vidarebefordran av händelser](./images/e2e/event-forwarding-datastream.png)
 

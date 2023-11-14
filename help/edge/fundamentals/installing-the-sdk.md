@@ -1,6 +1,6 @@
 ---
 title: Installera Adobe Experience Platform Web SDK
-description: Lär dig hur du installerar Experience Platform Web SDK.
+description: Lär dig installera Experience Platform Web SDK.
 keywords: web sdk-installation;installera web sdk;Internet Explorer;promise;npm-paket
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
 source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
@@ -22,9 +22,9 @@ Det finns tre sätt att använda Adobe Experience Platform Web SDK som stöds:
 
 Dokumentation om taggtillägget finns i [Dokumentation för taggar](../../tags/extensions/client/web-sdk/overview.md)
 
-## Alternativ 2: Installera den fördefinierade fristående versionen
+## Alternativ 2: Installera den färdigbyggda fristående versionen
 
-Den färdiga versionen finns på ett CDN. Du kan referera till biblioteket på CDN direkt på din sida eller hämta och lagra det på din egen infrastruktur. Den finns i minifierade och ominifierade format. Den ominiatyrversionen är användbar i felsökningssyfte.
+Den färdiga versionen finns tillgänglig på ett CDN. Du kan referera till biblioteket på CDN direkt på din sida eller hämta och lagra det på din egen infrastruktur. Den finns i minifierade och ominifierade format. Den ominiatyrversionen är användbar i felsökningssyfte.
 
 URL-struktur: https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js OR alloy.js för den icke-minifierade versionen.
 
@@ -71,7 +71,7 @@ Utöver att skapa en global funktion läser den här baskoden in ytterligare kod
 
 ### Stöd för Internet Explorer {#support-internet-explore}
 
-Denna SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. The [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) implementering som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Så här använder du SDK på [!DNL Internet Explorer]måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
+Denna SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. The [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) implementering som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Använda SDK på [!DNL Internet Explorer]måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
 För att avgöra om du redan har `window.Promise` polyfylld:
 
@@ -95,11 +95,11 @@ Den här taggen läser in ett skript som ser till att `window.Promise` är en gi
 
 ### Läsa in JavaScript-filen synkront {#loading-javascript-synchronously}
 
-Se avsnittet [Lägga till koden](#adding-the-code), kommer den baskod som du har kopierat och klistrat in på webbplatsens HTML att läsa in en extern fil. Den externa filen innehåller SDK:ns kärnfunktioner. Alla kommandon som du försöker köra när den här filen läses in är köade och bearbetas sedan när filen har lästs in. Inläsning av filen asynkront är den mest prestandametoden vid installation.
+Se avsnittet [Lägga till koden](#adding-the-code), kommer den baskod som du har kopierat och klistrat in på webbplatsens HTML att läsa in en extern fil. Den externa filen innehåller SDK:ns kärnfunktioner. Alla kommandon som du försöker köra när den här filen läses in är köade och bearbetas sedan när filen har lästs in. Inläsning av filen asynkront är den mest prestandametod som krävs för installationen.
 
 Under vissa omständigheter kanske du vill läsa in filen synkront \(mer information om dessa omständigheter beskrivs senare\). Om du gör det blockeras resten av HTML-dokumentet från att tolkas och återges av webbläsaren tills den externa filen har lästs in och körts. Denna ytterligare fördröjning innan primärt innehåll visas för användarna rekommenderas vanligtvis inte, men den kan vara bra beroende på omständigheterna.
 
-Om du vill läsa in filen synkront i stället för asynkront tar du bort `async` attribut från andra `script` tagg enligt nedan:
+Om du vill läsa in filen synkront istället för asynkront tar du bort `async` attribut från andra `script` tagg enligt nedan:
 
 ```markup
 <script>
@@ -132,7 +132,7 @@ alloy("sendEvent", { ... });
 
 >[!NOTE]
 >
->NPM-paketet bygger på CommonJS-moduler. När du använder ett paket måste du därför se till att paketet har stöd för CommonJS-moduler. Vissa paket, som [Samlad](https://rollupjs.org), kräver [plugin](https://www.npmjs.com/package/@rollup/plugin-commonjs) som har stöd för CommonJS.
+>NPM-paketet är beroende av CommonJS-moduler, och när du använder ett paket måste du därför se till att paketet har stöd för CommonJS-moduler. Vissa paket, som [Samlad](https://rollupjs.org), kräver [plugin](https://www.npmjs.com/package/@rollup/plugin-commonjs) som stöder CommonJS.
 
 ### Använda paketet som en ECMAScript 5-modul
 
@@ -145,9 +145,9 @@ alloy("sendEvent", { ... });
 
 ### Stöd för Internet Explorer
 
-Adobe Experience Platform SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. The [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) implementering som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Så här använder du SDK på [!DNL Internet Explorer]måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
+Adobe Experience Platform SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. The [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) implementering som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Använda SDK på [!DNL Internet Explorer]måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
-Ett bibliotek som man kan använda för att polyfill-löftet är en utfästelse-polyfill. Se [dokumentation för promise-polyfill](https://www.npmjs.com/package/promise-polyfill) för mer information om hur du installerar med NPM.
+Ett bibliotek som man kan använda för att polyfill-löftet är en utfästelse-polyfill. Se [dokumentation för promise-polyfill](https://www.npmjs.com/package/promise-polyfill) om du vill ha mer information om hur du installerar med NPM.
 
 >[!NOTE]
 >

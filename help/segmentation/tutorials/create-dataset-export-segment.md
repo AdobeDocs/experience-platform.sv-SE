@@ -65,7 +65,7 @@ Markera alternativknappen bredvid **[!UICONTROL XDM Individual Profile]** välje
 
 På nästa skärm måste du ge datauppsättningen ett namn. Du kan också lägga till en valfri beskrivning.
 
-**Anteckningar om datauppsättningsnamn:**
+**Kommentarer till datauppsättningsnamn:**
 
 * Datauppsättningsnamnen ska vara korta och beskrivande så att datauppsättningen kan hittas i biblioteket senare.
 * Datauppsättningsnamnen måste vara unika, vilket innebär att de också måste vara tillräckligt specifika för att de inte ska återanvändas i framtiden.
@@ -85,6 +85,6 @@ Den högra listen innehåller information om din nya datauppsättning, t.ex. dat
 
 ## Nästa steg
 
-Nu när du har skapat en datauppsättning baserad på [!DNL XDM Individual Profile Union Schema]kan du använda datauppsättnings-ID:t för att fortsätta [utvärdera och komma åt segmentdefinitionsresultat](./evaluate-a-segment.md) självstudiekurs.
+Nu när du har skapat en datauppsättning baserad på [!DNL XDM Individual Profile Union Schema]kan du använda datauppsättnings-ID:t för att fortsätta [utvärdera och komma åt segmentdefinitionsresultat](./evaluate-a-segment.md) självstudie.
 
 Gå tillbaka till självstudiekursen för att utvärdera segmentdefinitionsresultat och fortsätt med [skapa profiler för målgruppsmedlemmar](./evaluate-a-segment.md#generate-profiles) steg för export av ett målgruppsarbetsflöde.

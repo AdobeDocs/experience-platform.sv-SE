@@ -3,7 +3,7 @@ keywords: Experience Platform;insikter;kundinformation;populära ämnen;kundinsi
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
 title: Identifiera insikter med kundens AI
-description: Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
+description: Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
 workflow-type: tm+mt
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Kundens AI, som en del av de intelligenta tjänsterna, ger marknadsförarna möjlighet att utnyttja Adobe Sensei för att förutse vad kunderna kommer att göra härnäst. Kund-AI används för att generera anpassade benägenhetspoäng som omsättning och konvertering för enskilda profiler i stor skala. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbildning eller driftsättning.
 
-Det här dokumentet fungerar som en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
+Det här dokumentet är en guide för interaktion med Service Instance Insights i användargränssnittet för AI för Intelligent Services.
 
 ## Komma igång
 
@@ -24,7 +24,7 @@ För att kunna utnyttja insikter om kundens AI måste du ha en tjänstinstans me
 
 ## Översikt över tjänstinstans
 
-I [!DNL Adobe Experience Platform] Gränssnitt, välj **[!UICONTROL Services]** i den vänstra navigeringen. The *Tjänster* webbläsaren visas och visar tillgängliga intelligenta tjänster. Välj **[!UICONTROL Open]**.
+I [!DNL Adobe Experience Platform] Gränssnitt, välj **[!UICONTROL Services]** i den vänstra navigeringen. The *Tjänster* webbläsaren visas och visar tillgängliga intelligenta tjänster. I behållaren för kundens AI väljer du **[!UICONTROL Open]**.
 
 ![Åtkomst till din instans](../images/insights/navigate-to-service.png)
 
@@ -54,18 +54,18 @@ Det finns två sätt att visa tjänstinstansinformation: från kontrollpanelen e
 
 Om du vill visa en översikt över tjänstinstansinformationen på kontrollpanelen väljer du en tjänstinstansbehållare och undviker hyperlänken som är kopplad till namnet. Då öppnas en högerrät som innehåller ytterligare information. Kontrollerna innehåller följande:
 
-- **[!UICONTROL Edit]**: Markera **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
-- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
-- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive eventuella tidigare körningar.
+- **[!UICONTROL Edit]**: Markering **[!UICONTROL Edit]** gör att du kan ändra en befintlig tjänstinstans. Du kan redigera instansens namn, beskrivning och bedömningsfrekvens.
+- **[!UICONTROL Clone]**: Markering **[!UICONTROL Clone]** kopierar den valda tjänstinstansen. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Delete]**: Du kan ta bort en tjänstinstans, inklusive alla tidigare körningar.
 - **[!UICONTROL Data source]**: En länk till den datauppsättning som används av den här instansen.
-- **[!UICONTROL Run Frequency]**: Hur ofta en poängsättning äger rum och när.
+- **[!UICONTROL Run Frequency]**: Hur ofta en poängsättning görs och när.
 - **[!UICONTROL Score definition]**: En snabb översikt över målet som du konfigurerade för den här instansen.
 
 ![](../images/user-guide/service-instance-panel.png)
 
 >[!NOTE]
 >
->Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under **Information om senaste körning** i den högra listen som bara är synlig för misslyckade körningar.
+>Om en poängkörning misslyckas visas ett felmeddelande. Felmeddelandet visas under **Information om senaste körning** i den högra listen, som bara är synlig för misslyckade körningar.
 
 ![meddelande om misslyckad körning](../images/insights/failed-run.png)
 
@@ -77,7 +77,7 @@ Det andra sättet att visa ytterligare information för en tjänstinstans finns 
 
 ### Förhandsgranskning av AI-datauppsättning för kund
 
-Om mer än en datauppsättning används av kundens AI, finns en hyperlänk med etiketten **[!UICONTROL Multiple]** följt av antalet datauppsättningar inom hakparentes `()` anges.
+Om mer än en datauppsättning används av kundens AI, är en hyperlänk märkt **[!UICONTROL Multiple]** följt av antalet datauppsättningar inom hakparentes `()` anges.
 
 ![flera datauppsättningar](../images/insights/insights-multi-datasets.png)
 
@@ -89,9 +89,9 @@ Om du väljer länken för flera datauppsättningar öppnas förhandsvisningspro
 
 Om du vill redigera en instans markerar du **[!UICONTROL Edit]** i den övre högra navigeringen.
 
-![klicka på redigeringsknappen](../images/insights/edit-button.png)
+![klicka på knappen Redigera](../images/insights/edit-button.png)
 
-Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Bekräfta ändringarna och stäng dialogrutan genom att välja **[!UICONTROL Save]** i det nedre högra hörnet.
+Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status och bedömningsfrekvens. Bekräfta ändringarna och stäng dialogrutan genom att välja **[!UICONTROL Save]** längst ned till höger.
 
 ![redigera poesi](../images/insights/edit-instance.png)
 
@@ -99,10 +99,10 @@ Dialogrutan Redigera visas. Du kan redigera instansens namn, beskrivning, status
 
 The **[!UICONTROL More actions]** knappen finns i den övre högra navigeringen bredvid **[!UICONTROL Edit]**. Markera **[!UICONTROL More actions]** öppnar en listruta där du kan välja någon av följande åtgärder:
 
-- **[!UICONTROL Clone]**: Markera **[!UICONTROL Clone]** kopierar tjänstinstansens konfiguration. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
+- **[!UICONTROL Clone]**: Markering **[!UICONTROL Clone]** kopierar tjänstinstansens konfiguration. Du kan sedan ändra arbetsflödet för att göra mindre ändringar och byta namn på det som en ny instans.
 - **[!UICONTROL Delete]**: Tar bort instansen.
-- **[!UICONTROL Access scores]**: Markera **[!UICONTROL Access scores]** öppnar en dialogruta med en länk till [ladda ned poäng för kundens AI](./download-scores.md) I självstudiekursen visas även det datauppsättnings-ID som krävs för att göra API-anrop.
-- **[!UICONTROL View run history]**: En dialogruta med en lista över alla poängserier som är associerade med tjänstinstansen visas.
+- **[!UICONTROL Access scores]**: Markering **[!UICONTROL Access scores]** öppnar en dialogruta med en länk till [ladda ned poäng för kundens AI](./download-scores.md) I självstudiekursen visas även det datauppsättnings-ID som krävs för att göra API-anrop.
+- **[!UICONTROL View run history]**: En dialogruta med en lista över alla poäng som är associerade med tjänstinstansen visas.
 
 ![fler åtgärder](../images/insights/more-actions.png)
 
@@ -142,7 +142,7 @@ Dessutom kan du använda drolldowns för att jämföra en fördelningsfaktor om 
 
 ![](../images/insights/drilldown-compare.png)
 
-Du ser att det är mindre troligt att profiler med låg benägenhet att konvertera har gjort ett besök på adobe.com-webbsidorna nyligen. Faktorn&quot;Dagar sedan senaste webVisit&quot; har bara 8 % täckning jämfört med 26 % i medelstora prioritetsprofiler. Med hjälp av dessa tal kan du jämföra fördelningen inom varje hink för faktorn. Den här informationen kan användas för att dra slutsatsen att den senaste webbbesöket inte har lika stor inverkan på den låga benägenhetsknappen som den är i en större benägenhetsklocka.
+Du ser att det är mindre troligt att profiler med låg benägenhet att konvertera har gjort ett besök på adobe.com webbsidor nyligen. Faktorn&quot;Dagar sedan senaste webVisit&quot; har bara 8 % täckning jämfört med 26 % i medelstora prioritetsprofiler. Med hjälp av dessa tal kan du jämföra fördelningen inom varje hink för faktorn. Den här informationen kan användas för att dra slutsatsen att den senaste webbbesöket inte har lika stor inverkan på den låga benägenhetsknappen som den är i en större benägenhetsklocka.
 
 ### Skapa ett segment
 
@@ -156,7 +156,7 @@ Markera **[!UICONTROL Create Segment]** i någon av bucketerna för låg, medels
 
 ![Skapa ett segment](../images/insights/create-segment.png)
 
-Segmentverktyget används för att definiera ett segment. Vid val **[!UICONTROL Create Segment]** från Insights-sidan lägger Kund-AI automatiskt till den valda bukettinformationen i segmentet. Fyll i **Namn** och **Beskrivning** behållare som finns i den högra listen i användargränssnittet för segmentbyggaren. När du har gett segmentet ett namn och en beskrivning väljer du **[!UICONTROL Save]** i det övre högra hörnet.
+Segmentverktyget används för att definiera ett segment. Vid val **[!UICONTROL Create Segment]** från Insights-sidan lägger Kund-AI automatiskt till den valda bukettinformationen i segmentet. Fyll i **Namn** och **Beskrivning** behållare som finns i den högra listen i användargränssnittet för segmentbyggaren. När du har gett segmentet ett namn och en beskrivning väljer du **[!UICONTROL Save]** överst till höger.
 
 >[!NOTE]
 >
@@ -186,7 +186,7 @@ Du kan filtrera tidsramen för de förväntade och faktiska frekvenserna som vis
 
 ### Enskilda poängsättningsgrader
 
-Den nedre halvan av **[!UICONTROL Performance summary]** visar resultaten för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
+Den undre halvan av **[!UICONTROL Performance summary]** visar resultaten för varje enskild poängkörning. Välj listdatumet i det övre högra hörnet om du vill visa resultat för en annan poängkörning.
 
 Beroende på om du förutser bortfall eller konvertering kan [!UICONTROL Distribution of Scores] I diagrammet visas fördelningen av profiler som är kurvformade/konverterade och inte kurvformade/inte konverterade i varje steg.
 
@@ -211,7 +211,7 @@ Exempel på indikatorer för högkvalitetsmodeller är:
 
 ![vinstdiagram](../images/user-guide/gains-chart.png)
 
-Diagrammet över kumulativa vinster mäter andelen positiva resultat som erhållits genom målresultat över ett visst tröskelvärde. Efter att ha sorterat kunderna efter benägenhetspoäng från hög till låg delas populationen in i deciler - 10 lika stora grupper. En perfekt modell skulle fånga alla positiva utfall i de högsta poängen. En målinriktningsmetod som baslinje hämtar positiva resultat proportionellt mot gruppens storlek - 30 % av användarna fångar 30 % av resultaten.
+Diagrammet över kumulativa vinster mäter andelen positiva resultat som erhållits genom målresultat över ett visst tröskelvärde. Efter att ha sorterat kunderna efter benägenhetspoäng från hög till låg delas populationen in i deciler - 10 lika stora grupper. En perfekt modell skulle fånga alla positiva utfall i de högsta poängdecimalerna. En målinriktningsmetod som baslinje hämtar positiva resultat proportionellt mot gruppens storlek - 30 % av användarna fångar 30 % av resultaten.
 
 Exempel på indikatorer för högkvalitetsmodeller är:
 

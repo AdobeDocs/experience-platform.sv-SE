@@ -15,7 +15,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som du har upprättat med olika mål. Se [Kontoöversikt](../ui/destinations-workspace.md#accounts) för all information du kan få på varje destinationskonto.
+The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som du har upprättat med olika mål. Se [Översikt över konton](../ui/destinations-workspace.md#accounts) för all information du kan få på varje destinationskonto.
 
 I den här självstudiekursen beskrivs stegen för att ta bort destinationskonton som inte längre behövs med hjälp av användargränssnittet i Experience Platform.
 
@@ -37,7 +37,7 @@ Följ stegen nedan för att ta bort befintliga målkonton.
 
    ![Filtermål](../assets/ui/delete-accounts/filter-accounts.png)
 
-3. Markera ellipserna (`...`) bredvid namnet på det konto du vill ta bort. En popup-panel visas med alternativ för att **[!UICONTROL Activate audiences]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Välj ![Knappen Ta bort](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Delete]** om du vill ta bort kontot.
+3. Markera ellipserna (`...`) bredvid namnet på det konto du vill ta bort. En popup-panel visas med alternativ för att **[!UICONTROL Activate audiences]**, **[!UICONTROL Edit details]** och **[!UICONTROL Delete]** kontot. Välj ![Knappen Ta bort](../assets/ui/workspace/pencil-icon.png) **[!UICONTROL Delete]** för att ta bort det önskade kontot.
 
    ![Ta bort destinationskonto](../assets/ui/delete-accounts/delete-accounts.png)
 

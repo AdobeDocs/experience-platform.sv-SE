@@ -23,7 +23,7 @@ Den här guiden beskriver hur du använder Adobe Developer Console för att saml
 
 Innan du kan generera autentiseringsvärden för Reactor API måste du ha utvecklaråtkomst till Experience Platform. Följ de inledande stegen i dialogrutan för att få utvecklaråtkomst [Självstudiekurs om autentisering av Experience Platform](/help/landing/api-authentication.md). När du är klar med [Få användaråtkomst](/help/landing/api-authentication.md#gain-user-access) går du tillbaka till den här självstudiekursen för att generera de specifika autentiseringsuppgifterna för Reactor API.
 
-## Generera autentiseringsuppgifter för åtkomst {#generate-access-credentials}
+## Generera autentiseringsuppgifter {#generate-access-credentials}
 
 Med Adobe Developer Console måste du generera följande tre autentiseringsuppgifter:
 
@@ -43,7 +43,7 @@ När du har skapat ett projekt väljer du **Lägg till API** på **Projektövers
 
 ![](../images/api/getting-started/add-api-button.png)
 
-The **Lägg till ett API** visas. Välj **Experience Platform Launch API** i listan med tillgängliga API:er innan du väljer **Nästa**.
+The **Lägg till ett API** visas. Välj **EXPERIENCE PLATFORM LAUNCH API** i listan med tillgängliga API:er innan du väljer **Nästa**.
 
 ![](../images/api/getting-started/add-launch-api.png)
 
@@ -95,17 +95,17 @@ Generera en ny `{ACCESS_TOKEN}`, navigera till **[!UICONTROL Credentials]** > **
 
 ![Skärminspelning av hur och åtkomsttoken genereras i användargränssnittet för Developer Console.](/help/tags/images/api/getting-started/generate-access-token.gif)
 
-En ny åtkomsttoken genereras och en knapp för att kopiera token till Urklipp tillhandahålls. Det här värdet används för begärd auktoriseringshuvud och måste anges i formatet `Bearer {ACCESS_TOKEN}`.
+En ny åtkomsttoken genereras och en knapp för att kopiera token till Urklipp tillhandahålls. Det här värdet används för det obligatoriska auktoriseringshuvudet och måste anges i formatet `Bearer {ACCESS_TOKEN}`.
 
 #### Automatisera generering av token {#auto-token}
 
-Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om [använda Postman för att autentisera och testa API-anrop](/help/landing/api-authentication.md#use-postman) i autentiseringsguiden för Experience Platform API.
+Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Läs mer om [använda Postman för att autentisera och testa API-anrop](/help/landing/api-authentication.md#use-postman) i autentiseringsguiden för Experience Platform API.
 
 ## Testa API-autentiseringsuppgifter {#test-api-credentials}
 
 Om du följer stegen i den här självstudiekursen bör du ha giltiga värden för `{ORG_ID}`, `{API_KEY}`och `{ACCESS_TOKEN}`. Du kan nu testa dessa värden genom att använda dem i en enkel cURL-begäran till Reactor API.
 
-Börja med att göra ett API-anrop till [lista alla företag](./endpoints/companies.md#list).
+Börja med att försöka göra ett API-anrop till [lista alla företag](./endpoints/companies.md#list).
 
 >[!NOTE]
 >

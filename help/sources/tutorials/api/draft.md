@@ -1,5 +1,5 @@
 ---
-title: Skapa utkast till enhets-API:t för Flow Service
+title: Skapa utkast till enhets-API:t för Flow-tjänsten
 description: Lär dig hur du skapar utkast för din basanslutning, källanslutning, målanslutning och dataflöde med API:t för Flow Service
 exl-id: aad6a302-1905-4a23-bc3d-39e76c9a22da
 source-git-commit: ebd650355a5a4c2a949739384bfd5c8df9577075
@@ -34,9 +34,9 @@ Du måste också kontrollera om anslutningsspecifikations-ID och motsvarande fl�
 
 >[!BEGINTABS]
 
->[!TAB Sök efter anslutningsinformation]
+>[!TAB Söka efter anslutningsinformation]
 
-+++Begäran Följande begäran hämtar anslutningsinformationen för [!DNL Azure File Storage]:
++++Begäran Följande begäran hämtar anslutningsspecifikationsinformation för [!DNL Azure File Storage]:
 
 ```shell
 curl -X GET \
@@ -802,7 +802,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar målanslutnings-ID och motsvarande tagg för målanslutningen. Du kan använda det här ID:t senare för att uppdatera och publicera målanslutningen.
+Ett lyckat svar returnerar målanslutnings-ID och motsvarande tagg för utkastet till målanslutning. Du kan använda det här ID:t senare för att uppdatera och publicera målanslutningen.
 
 ```json
 {

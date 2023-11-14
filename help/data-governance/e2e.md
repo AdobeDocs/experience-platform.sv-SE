@@ -38,7 +38,7 @@ Den här guiden går igenom hela processen med att konfigurera och verkställa e
 
 Du kan [använda etiketter i ett schema](#schema-labels) så att alla datauppsättningar som baseras på det schemat ärver samma etiketter. På så sätt kan ni hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på ett och samma ställe. Genom att tillämpa begränsningar för dataanvändning på schemanivå sprids effekten nedåt till alla datauppsättningar som baseras på det schemat. Etiketter som används på schemafältnivå stöder användningsfall för datastyrning och kan upptäckas på arbetsytan Datamängder [!UICONTROL Data Governance] under [!UICONTROL Field Name] kolumn som skrivskyddade etiketter.
 
-Om det finns en viss datauppsättning som du vill använda begränsningar för dataanvändning på kan du [tillämpa etiketter direkt på den datauppsättningen](#dataset-labels) eller specifika fält i datauppsättningen.
+Om det finns en viss datauppsättning som du vill använda begränsningar för dataanvändning på kan du [tillämpa etiketter direkt på den datauppsättningen](#dataset-labels) eller specifika fält i den datauppsättningen.
 
 Du kan också [använda etiketter i ett schema](#schema-labels) så att alla datauppsättningar som baseras på det schemat ärver samma etiketter.
 
@@ -105,7 +105,7 @@ När du har tagit bort etiketten från datauppsättningsfältet går du till Sch
 
 När du har migrerat de nödvändiga etiketterna kontrollerar du att du har rätt [datastyrningsprinciper har aktiverats](#policy).
 
-## Aktivera datastyrningsprinciper {#policy}
+## Aktivera policyer för datastyrning {#policy}
 
 När du har använt etiketter på dina scheman och/eller datauppsättningar kan du skapa regler för datastyrning som begränsar de marknadsföringsåtgärder som vissa etiketter kan användas för.
 
@@ -117,13 +117,13 @@ Varje etikett har en tillhörande grundprincip som, när den är aktiverad, till
 
 Om de tillgängliga grundreglerna inte täcker alla dina användningsfall (till exempel när du använder anpassade etiketter som du har definierat under din organisation) kan du definiera en anpassad profil i stället. Från **[!UICONTROL Policies]** arbetsyta, välja **[!UICONTROL Create policy]**.
 
-![Bilden visar [!UICONTROL Create policy] som markeras i användargränssnittet](./images/e2e/create-policy.png)
+![Bild som visar [!UICONTROL Create policy] som markeras i användargränssnittet](./images/e2e/create-policy.png)
 
 En pover visas och du uppmanas att välja vilken typ av profil du vill skapa. Välj **[!UICONTROL Data governance policy]** väljer **[!UICONTROL Continue]**.
 
-![Bilden visar [!UICONTROL Data governance policy] alternativ markeras](./images/e2e/governance-policy.png)
+![Bild som visar [!UICONTROL Data governance policy] alternativ markeras](./images/e2e/governance-policy.png)
 
-På nästa skärm kan du **[!UICONTROL Name]** och valfria **[!UICONTROL Description]** för profilen. I tabellen nedan markerar du de etiketter som du vill att den här profilen ska söka efter. Detta är med andra ord de etiketter som policyn kommer att förhindra från att användas för de marknadsföringsåtgärder som du anger i nästa steg.
+På nästa skärm kan du **[!UICONTROL Name]** och valfria **[!UICONTROL Description]** för profilen. I tabellen nedan markerar du de etiketter som du vill att profilen ska kontrollera. Detta är med andra ord de etiketter som policyn kommer att förhindra från att användas för de marknadsföringsåtgärder som du anger i nästa steg.
 
 Om du markerar flera etiketter kan du använda alternativen i den högra listen för att avgöra om alla etiketter måste finnas för att principen ska kunna tillämpa användningsbegränsningar, eller om bara en av etiketterna behöver finnas. När du är klar väljer du **[!UICONTROL Next]**.
 

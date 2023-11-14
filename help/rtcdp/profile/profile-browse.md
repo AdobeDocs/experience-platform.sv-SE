@@ -35,7 +35,7 @@ Profilinformationen innehåller åtkomst till [!UICONTROL Accounts], [!UICONTROL
 
 ### Fliken Konton
 
-Välj **[!UICONTROL Accounts]** om du vill visa en lista med konton som hör till profilen. Den här listan innehåller grundläggande information från kontoprofilen, till exempel namn, webbplats och bransch för kontot, samt en länk till kontoprofilen.
+Välj **[!UICONTROL Accounts]** om du vill visa en lista med konton som hör till profilen. Den här listan innehåller grundläggande information från kontoprofilen, t.ex. namn, webbplats och bransch för kontot, samt en länk till kontoprofilen.
 
 Mer information om att visa och utforska kontoprofiler finns i [kontoprofilöversikt](../accounts/account-profile-overview.md).
 

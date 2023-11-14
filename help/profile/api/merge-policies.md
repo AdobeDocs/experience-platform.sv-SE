@@ -23,7 +23,7 @@ Om du vill arbeta med sammanfogningsprinciper med hjälp av användargränssnitt
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Komponenter i sammanfogningsprinciper {#components-of-merge-policies}
 
@@ -73,7 +73,7 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 | `imsOrgId` | Organisations-ID som den här sammanfogningsprincipen tillhör |
 | `schema.name` | Del av [`schema`](#schema) -objekt, `name` -fältet innehåller den XDM-schemaklass som sammanfogningsprincipen relaterar till. Mer information om scheman och klasser finns i [XDM-dokumentation](../../xdm/home.md). |
 | `version` | [!DNL Platform] en sparad version av sammanfogningsprincipen. Det här skrivskyddade värdet ökas stegvis när en sammanfogningsprincip uppdateras. |
-| `identityGraph` | [Identitetsdiagram](#identity-graph) objekt som anger det identitetsdiagram från vilket relaterade identiteter hämtas. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
+| `identityGraph` | [Identitetsdiagram](#identity-graph) objekt som anger det identitetsdiagram från vilket relaterade identiteter kommer att hämtas. Profilfragment som hittas för alla relaterade identiteter sammanfogas. |
 | `attributeMerge` | [Koppla attribut](#attribute-merge) objekt som anger hur sammanfogningsprincipen prioriterar profilattribut vid datakonflikter. |
 | `isActiveOnEdge` | Booleskt värde som anger om sammanfogningsprincipen kan användas på kanten. Som standard är det här värdet `false`. |
 | `default` | Booleskt värde som anger om den här sammanfogningsprincipen är standard för det angivna schemat. |
@@ -116,8 +116,8 @@ Det fullständiga principobjektet för sammanfogning representerar en uppsättni
 
 Plats `{IDENTITY_GRAPH_TYPE}` är något av följande:
 
-* **&quot;none&quot;:** Utför ingen identitetssammanfogning.
-* **&quot;pdg&quot;:** Utför identitetssammanfogning baserat på ditt privata identitetsdiagram.
+* **&quot;none&quot;:** Utför ingen identitetssammanslagning.
+* **pdg:** Utför identitetssammanfogning baserat på ditt privata identitetsdiagram.
 
 **Exempel`identityGraph`**
 
@@ -141,9 +141,9 @@ Ett profilfragment är profilinformationen för endast en identitet från listan
 
 Plats `{ATTRIBUTE_MERGE_TYPE}` är något av följande:
 
-* **`timestampOrdered`**: (standard) Prioritera profilen som uppdaterades senast. Med den här sammanfogningstypen kan du `data` inget attribut krävs.
-* **`dataSetPrecedence`**: Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder den här sammanfogningstypen `order` -attribut krävs eftersom datauppsättningarna anges i prioritetsordning.
-   * **`order`**: När &quot;dataSetPriedence&quot; används, `order` matrisen måste ha en lista med datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. The `order` arrayen listar ID:n för datauppsättningarna i prioritetsordning.
+* **`timestampOrdered`**: (standard) Prioritera den profil som uppdaterades senast. Med den här sammanfogningstypen kan du `data` inget attribut krävs.
+* **`dataSetPrecedence`**: Prioritera profilfragment baserat på den datauppsättning som de kommer från. Detta kan användas när information som finns i en datauppsättning är att föredra eller betrodd framför data i en annan datauppsättning. När du använder sammanfogningstypen `order` -attribut krävs eftersom datauppsättningarna anges i prioritetsordning.
+   * **`order`**: När&quot;dataSetPriedence&quot; används, `order` matrisen måste ha en lista med datauppsättningar. Datauppsättningar som inte ingår i listan kommer inte att sammanfogas. Datamängder måste med andra ord anges explicit för att sammanfogas till en profil. The `order` arrayen listar ID:n för datauppsättningarna i prioritetsordning.
 
 #### Exempel `attributeMerge` objekt använda `dataSetPrecedence` type
 
@@ -207,7 +207,7 @@ GET /config/mergePolicies/{mergePolicyId}
 
 | Parameter | Beskrivning |
 |---|---|
-| `{mergePolicyId}` | Identifieraren för den sammanfogningsprincip som du vill ta bort. |
+| `{mergePolicyId}` | Identifieraren för den sammanslagningsprincip som du vill ta bort. |
 
 **Begäran**
 
@@ -359,7 +359,7 @@ GET /config/mergePolicies?{QUERY_PARAMS}
 |---|---|
 | `default` | Ett booleskt värde som filtrerar resultat genom att sammanfogningsprinciperna är standard för en schemaklass eller inte. |
 | `limit` | Anger sidstorleksgränsen för att styra antalet resultat som ska inkluderas på en sida. Standardvärde: 20 |
-| `orderBy` | Anger fältet som resultaten ska sorteras efter `orderBy=name` eller `orderBy=+name` för att sortera efter namn i stigande ordning, eller `orderBy=-name`, för att sortera i fallande ordning. Om du utelämnar det här värdet blir standardsorteringen av `name` i stigande ordning. |
+| `orderBy` | Anger fältet som resultaten ska sorteras efter `orderBy=name` eller `orderBy=+name` sortera efter namn i stigande ordning, eller `orderBy=-name`, för att sortera i fallande ordning. Om du utelämnar det här värdet blir standardsorteringen av `name` i stigande ordning. |
 | `isActiveOnEdge` | Ett booleskt värde som filtrerar resulterar i om sammanfogningsprinciperna är aktiva på kanten eller inte. |
 | `schema.name` | Namnet på schemat som tillgängliga sammanfogningsprinciper ska hämtas för. |
 | `identityGraph.type` | Filtrerar resultat efter typen av identitetsdiagram. Möjliga värden är none och pdg (Private graph). |
@@ -459,7 +459,7 @@ Ett lyckat svar returnerar en numrerad lista med sammanfogningsprinciper som upp
 |---|---|
 | `_links.next.href` | En URI-adress för nästa resultatsida. Använd denna URI som begärandeparameter för ett annat API-anrop till samma slutpunkt för att visa sidan. Om det inte finns någon nästa sida blir värdet en tom sträng. |
 
-## Skapa en kopplingsprofil
+## Skapa en sammanfogningsprincip
 
 Du kan skapa en ny sammanfogningsprincip för din organisation genom att göra en POST-förfrågan till `/config/mergePolicies` slutpunkt.
 
@@ -564,7 +564,7 @@ PATCH /config/mergePolicies/{mergePolicyId}
 
 | Parameter | Beskrivning |
 |---|---|
-| `{mergePolicyId}` | Identifieraren för den sammanfogningsprincip som du vill ta bort. |
+| `{mergePolicyId}` | Identifieraren för den sammanslagningsprincip som du vill ta bort. |
 
 **Begäran**
 
@@ -740,7 +740,7 @@ DELETE /config/mergePolicies/{mergePolicyId}
 
 | Parameter | Beskrivning |
 |---|---|
-| `{mergePolicyId}` | Identifieraren för den sammanfogningsprincip som du vill ta bort. |
+| `{mergePolicyId}` | Identifieraren för den sammanslagningsprincip som du vill ta bort. |
 
 **Begäran**
 

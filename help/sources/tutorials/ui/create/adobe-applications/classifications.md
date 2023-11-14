@@ -28,15 +28,15 @@ Data Connector för Analytics-klassificeringar kräver att dina data har migrera
 
 ## Välj klassificeringar
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan markera **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. The **[!UICONTROL Catalog]** visas tillgängliga källor för att skapa inkommande anslutningar. Varje källkort visar ett alternativ för att antingen konfigurera ett nytt konto eller lägga till data till ett befintligt konto.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan **[!UICONTROL Sources]** i det vänstra navigeringsfältet för att komma åt källarbetsytan. The **[!UICONTROL Catalog]** visas tillgängliga källor för att skapa inkommande anslutningar. Varje källkort visar ett alternativ för att antingen konfigurera ett nytt konto eller lägga till data till ett befintligt konto.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också söka efter den specifika källa som du vill arbeta med med sökalternativet.
 
-Under **[!UICONTROL Adobe applications]** väljer du **[!UICONTROL Adobe Analytics]** och välj **[!UICONTROL Add data]** för att börja arbeta med data från analysklassificeringar.
+Under **[!UICONTROL Adobe applications]** -kategori väljer du **[!UICONTROL Adobe Analytics]** och välj **[!UICONTROL Add data]** för att börja arbeta med data från analysklassificeringar.
 
 ![](../../../../images/tutorials/create/classifications/catalog.png)
 
-The **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Classifications]** från den övre rubriken för att se en lista över [!DNL Classifications] datauppsättningar, inklusive information om deras dimensions-ID, rapportsvitnamn och rapportsvitens-ID.
+The **[!UICONTROL Analytics source add data]** visas. Välj **[!UICONTROL Classifications]** i den övre sidhuvudet för att se en lista över [!DNL Classifications] datauppsättningar, inklusive information om deras dimensions-ID, rapportsvitnamn och rapportsvitens-ID.
 
 Varje sida visar upp till tio olika [!DNL Classifications] datauppsättningar du kan välja bland. Välj **[!UICONTROL Next]** längst ned på sidan om du vill bläddra efter fler alternativ. Panelen till höger visar det totala antalet [!DNL Classifications] de datamängder du har valt samt deras namn. Med den här panelen kan du även ta bort [!DNL Classifications] datauppsättningar som du kan ha valt av misstag eller rensa alla markeringar med en åtgärd.
 

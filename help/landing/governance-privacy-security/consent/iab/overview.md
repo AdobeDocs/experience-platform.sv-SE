@@ -13,13 +13,13 @@ ht-degree: 0%
 
 # Stöd för IAB TCF 2.0 i Experience Platform
 
-The [!DNL Transparency & Consent Framework] (TCF), enligt riktlinjerna i [!DNL Interactive Advertising Bureau] (IAB), är en öppen standardiserad teknisk ram som är avsedd att göra det möjligt för organisationer att få, registrera och uppdatera konsumentens samtycke till behandlingen av deras personuppgifter, i enlighet med EU:s [!DNL General Data Protection Regulation] (GDPR). Den andra versionen av ramverket, TCF 2.0, ger större flexibilitet för hur konsumenter kan ge eller vägra samtycke, inklusive om och hur leverantörer kan använda vissa funktioner för databearbetning, till exempel exakt positionering.
+The [!DNL Transparency & Consent Framework] (TCF), enligt riktlinjerna i [!DNL Interactive Advertising Bureau] (IAB), är en öppen standardiserad teknisk ram som är avsedd att göra det möjligt för organisationer att få, registrera och uppdatera konsumentens samtycke till behandlingen av deras personuppgifter, i enlighet med EU:s [!DNL General Data Protection Regulation] (GDPR) Den andra versionen av ramverket, TCF 2.0, ger större flexibilitet för hur konsumenter kan ge eller vägra samtycke, inklusive om och hur leverantörer kan använda vissa funktioner för databearbetning, till exempel exakt positionering.
 
 >[!NOTE]
 >
 >Mer information om TCF 2.0 finns på [IAB Europe webbplats](https://iabeurope.eu/tcf-2-0/), inklusive supportmaterial och tekniska specifikationer.
 
-Adobe Experience Platform ingår i [IAB TCF 2.0-leverantörslista](https://iabeurope.eu/vendor-list-tcf-v2-0/), under ID:t **565**. I enlighet med kraven för TCF 2.0 kan du med hjälp av Platform samla in data om kundernas samtycke och integrera dessa i era lagrade kundprofiler. Dessa data om samtycke kan sedan beaktas för att avgöra om profiler ska inkluderas i exporterade målgruppssegment, beroende på hur de används.
+Adobe Experience Platform ingår i [IAB TCF 2.0-leverantörslista](https://iabeurope.eu/vendor-list-tcf-v2-0/), under ID **565**. I enlighet med kraven för TCF 2.0 kan du med hjälp av Platform samla in data om kundernas samtycke och integrera dessa i era lagrade kundprofiler. Dessa data om samtycke kan sedan beaktas för att avgöra om profiler ska inkluderas i exporterade målgruppssegment, beroende på hur de används.
 
 >[!IMPORTANT]
 >
@@ -39,9 +39,9 @@ Handboken kräver även en fungerande förståelse av följande plattformstjäns
 
 * [Experience Data Model (XDM)](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
 * [Adobe Experience Platform Identity Service](../../../../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [Kundprofil i realtid](../../../../profile/home.md): Utnyttja [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
+* [Kundprofil i realtid](../../../../profile/home.md): Leveranser [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
 * [Adobe Experience Platform Web SDK](../../../../edge/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
-   * [Kommandon för SDK-medgivande](../../../../edge/consent/supporting-consent.md): En översikt över de medgivande-relaterade SDK-kommandona som visas i den här handboken.
+   * [Kommandon för SDK-medgivande](../../../../edge/consent/supporting-consent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](../../../../segmentation/home.md): Dela upp [!DNL Real-Time Customer Profile] data till grupper av individer som delar liknande egenskaper och kommer att reagera på liknande sätt som marknadsföringsstrategier.
 
 Utöver de plattformstjänster som anges ovan bör du även känna till [mål](../../../../data-governance/home.md) och deras roll i plattformens ekosystem.
@@ -61,7 +61,7 @@ Plattformen gör att ni kan samla in data om kundens samtycke genom följande pr
 
 Förutom SDK-kommandon som utlöses av CMP-krokar för ändring av samtycke, kan data för samtycke även flöda in i Experience Platform via alla kundgenererade XDM-data som överförs direkt till en [!DNL Profile]-aktiverad datauppsättning.
 
-Alla segment som delas med Platform av Adobe Audience Manager (via [!DNL Audience Manager] källkoppling (eller på annat sätt) kan också innehålla data om samtycke, förutsatt att lämpliga fält har tillämpats på dessa segment genom [!DNL Experience Cloud Identity Service]. Mer information om insamling av data om samtycke finns i [!DNL Audience Manager], se dokumentet på [Adobe Audience Manager-plugin för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html).
+Alla segment som delas med Platform av Adobe Audience Manager (via [!DNL Audience Manager] källkoppling (eller på annat sätt) kan också innehålla data om samtycke, förutsatt att lämpliga fält har tillämpats på dessa segment genom [!DNL Experience Cloud Identity Service]. Mer information om insamling av data om samtycke finns i [!DNL Audience Manager], se dokumentet på sidan [Adobe Audience Manager-plugin för IAB TCF](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/consent-management/aam-iab-plugin.html).
 
 ### Efterföljande av samtycke
 
@@ -96,7 +96,7 @@ Samtyckessträngar kan bara skapas av en CMP som är registrerad med IAB TCF. Me
 
 ## Skapa datauppsättningar med TCF-medgivandefält {#datasets}
 
-Data om kundens samtycke måste skickas till datauppsättningar vars scheman innehåller TCF-medgivandefält. Se självstudiekursen på [skapa datauppsättningar för att hämta TCF 2.0-samtycke](./dataset.md) för hur du skapar den profildatauppsättning som krävs (och en valfri Experience Event-datauppsättning) innan du fortsätter med den här guiden.
+Data om kundsamtycke måste skickas till datauppsättningar vars scheman innehåller TCF-medgivandefält. Se självstudiekursen på [skapa datauppsättningar för att hämta TCF 2.0-samtycke](./dataset.md) för hur du skapar den profildatauppsättning som krävs (och en valfri Experience Event-datauppsättning) innan du fortsätter med den här guiden.
 
 ## Uppdatera [!DNL Profile] lägga samman profiler för att inkludera data om samtycke {#merge-policies}
 
@@ -127,7 +127,7 @@ När du har angett ett unikt namn för datastream väljer du växlingsknappen br
 | [!UICONTROL Sandbox] | Namnet på plattformen [sandlåda](../../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
 | [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om [skapa en direktuppspelningsanslutning](../../../../ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt inlopp för direktuppspelning. |
 | [!UICONTROL Event Dataset] | Välj [!DNL XDM ExperienceEvent] datauppsättningen som skapades i [föregående steg](#datasets). Om du tog med [[!UICONTROL IAB TCF 2.0 Consent] fältgrupp](../../../../xdm/field-groups/event/iab.md) i den här datauppsättningens schema kan du spåra händelser om samtyckesändringar över tiden med hjälp av [`sendEvent`](#sendEvent) som lagrar data i den här datauppsättningen. Kom ihåg att medgivandevärdena som lagras i den här datauppsättningen **not** som används i automatiska arbetsflöden. |
-| [!UICONTROL Profile Dataset] | Välj [!DNL XDM Individual Profile] datauppsättningen som skapades i [föregående steg](#datasets). När du svarar på CMP-krokar för ändring av samtycke med [`setConsent`](#setConsent) samlas insamlade data in i den här datauppsättningen. Eftersom den här datauppsättningen är profilaktiverad respekteras de medgivandevärden som lagras i den här datauppsättningen under automatiska arbetsflöden för verkställighet. |
+| [!UICONTROL Profile Dataset] | Välj [!DNL XDM Individual Profile] datauppsättningen som skapades i [föregående steg](#datasets). När du svarar på CMP-krokar för ändring av samtycke med [`setConsent`](#setConsent) kommer insamlade data att lagras i den här datauppsättningen. Eftersom den här datauppsättningen är profilaktiverad respekteras de medgivandevärden som lagras i den här datauppsättningen under automatiska arbetsflöden för verkställighet. |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
 
@@ -145,7 +145,7 @@ När du har skapat dataströmmen som beskrivs i föregående avsnitt kan du bör
 
 Många CMP-modeller har färdiga kopplingar som lyssnar på händelser om samtycke. När dessa händelser inträffar kan du använda `setConsent` för att uppdatera kundens data om samtycke.
 
-The `setConsent` -kommandot förväntar sig två argument: (1) en sträng som anger kommandotypen (i det här fallet &quot;setConsent&quot;) och (2) en nyttolast som innehåller `consent` -array, som måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten, som visas nedan:
+The `setConsent` -kommandot förväntar två argument: (1) en sträng som anger kommandotypen (i det här fallet &quot;setConsent&quot;) och (2) en nyttolast som innehåller en `consent` -array, som måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten, som visas nedan:
 
 ```js
 alloy("setConsent", {
@@ -190,13 +190,13 @@ OneTrust.OnConsentChanged(function () {
 
 #### Använda händelser {#sendEvent}
 
-Du kan också samla in data om TCF 2.0-samtycke för varje händelse som utlöses i Platform med `sendEvent` -kommando.
+Du kan också samla in data om TCF 2.0-samtycke för varje händelse som utlöses i Platform med hjälp av `sendEvent` -kommando.
 
 >[!NOTE]
 >
 >För att kunna använda den här metoden måste du ha lagt till fältgruppen Experience Event Privacy i din [!DNL Profile]-enabled [!DNL XDM ExperienceEvent] schema. Se avsnittet om [uppdatera ExperienceEvent-schemat](./dataset.md#event-schema) i guiden för datauppsättningsförberedelse för att få information om hur du konfigurerar detta.
 
-The `sendEvent` kommandot ska användas som ett återanrop i lämpliga händelseavlyssnare på webbplatsen. Kommandot förväntar sig två argument: (1) en sträng som anger kommandotypen (i det här fallet `sendEvent`) och (2) en nyttolast som innehåller `xdm` objekt som tillhandahåller obligatoriska fält för samtycke som JSON:
+The `sendEvent` -kommandot ska användas som ett återanrop i lämpliga händelseavlyssnare på webbplatsen. Kommandot förväntar sig två argument: (1) en sträng som anger kommandotypen (i det här fallet, `sendEvent`) och (2) en nyttolast som innehåller `xdm` objekt som tillhandahåller obligatoriska fält för medgivande som JSON:
 
 ```js
 alloy("sendEvent", {
@@ -213,7 +213,7 @@ alloy("sendEvent", {
 
 | Nyttolastegenskap | Beskrivning |
 | --- | --- |
-| `xdm.consentStrings` | En array som måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten. |
+| `xdm.consentStrings` | En array som måste innehålla minst ett objekt som innehåller obligatoriska fält för samtycke. |
 | `consentStandard` | Den standard för samtycke som används. Värdet måste anges till `IAB` för TCF 2.0-godkännandebearbetning. |
 | `consentStandardVersion` | Versionsnumret för den medgivandestandard som anges under `standard`. Värdet måste anges till `2.0` för TCF 2.0-godkännandebearbetning. |
 | `consentStringValue` | Den bas-64-kodade medgivandesträngen som genererats av CMP. |
@@ -227,7 +227,7 @@ Alla [!DNL Platform SDK] kommandon returnerar löften som anger om anropet lycka
 
 >[!NOTE]
 >
->Innan du börjar exportera segment måste du se till att dina segment innehåller alla obligatoriska fält för samtycke. Se avsnittet om [konfigurera sammanslagningsprinciper](#merge-policies) för mer information.
+>Innan du börjar exportera segment måste du se till att dina segment innehåller alla obligatoriska fält för samtycke. Se avsnittet om [konfigurera sammanfogningsprinciper](#merge-policies) för mer information.
 
 När ni har samlat in kundens medgivandedata och skapat målgruppssegment som innehåller de obligatoriska medgivandeattributen, kan ni tillämpa TCF 2.0-kompatibilitet när ni exporterar dessa segment till efterföljande destinationer.
 

@@ -24,16 +24,16 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 Den här självstudiekursen kräver en fungerande förståelse av följande plattformskomponenter:
 
-* [Källor](../../../home.md): Plattformen gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Källor](../../../home.md): Plattformen tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
 * [[!DNL Experience Data Model (XDM)] System](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Data Prep]](../../../../data-prep/home.md): Gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+* [[!DNL Data Prep]](../../../../data-prep/home.md): Tillåter datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 ## Lägg till data
 
-När du har skapat ditt e-handelskällkonto **[!UICONTROL Add data]** visas, där du får ett gränssnitt där du kan utforska e-handelskällkontots tabellhierarki.
+När du har skapat e-handelskällkontot kan du **[!UICONTROL Add data]** visas, där du får ett gränssnitt där du kan utforska e-handelskällkontots tabellhierarki.
 
 * Den vänstra halvan av gränssnittet är en webbläsare som visar en lista över datatabeller som finns i ditt konto. Gränssnittet innehåller också ett sökalternativ som gör att du snabbt kan identifiera de källdata som du tänker använda.
 * Den högra halvan av gränssnittet är en förhandsgranskningspanel som gör att du kan förhandsgranska upp till 100 rader med data.
@@ -52,7 +52,7 @@ The [!UICONTROL Dataflow detail] kan du välja om du vill använda en befintlig 
 
 ![dataflöde-detail](../../../images/tutorials/dataflow/table-based/dataflow-detail.png)
 
-### Använd en befintlig datauppsättning
+### Använd en befintlig datamängd
 
 Om du vill importera data till en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Du kan antingen hämta en befintlig datauppsättning med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga datauppsättningar i listrutan. När du har valt en datauppsättning anger du ett namn och en beskrivning för dataflödet.
 
@@ -66,7 +66,7 @@ Om du vill importera till en ny datauppsättning väljer du **[!UICONTROL New da
 
 ### Aktivera [!DNL Profile] och feldiagnostik
 
-Välj sedan **[!UICONTROL Profile dataset]** växla för att aktivera datauppsättningen för [!DNL Profile]. På så sätt kan du skapa en helhetsbild av en enhets attribut och beteenden. Data från alla [!DNL Profile]-aktiverade datauppsättningar inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
+Nästa steg är att välja **[!UICONTROL Profile dataset]** växla för att aktivera datauppsättningen för [!DNL Profile]. På så sätt kan du skapa en helhetsbild av en enhets attribut och beteenden. Data från alla [!DNL Profile]-aktiverade datauppsättningar kommer att inkluderas i [!DNL Profile] och ändringarna tillämpas när du sparar dataflödet.
 
 [!UICONTROL Error diagnostics] möjliggör detaljerad generering av felmeddelanden för alla felaktiga poster som inträffar i dataflödet, medan [!UICONTROL Partial ingestion] gör att du kan importera data som innehåller fel, upp till ett visst tröskelvärde som du manuellt anger. Se [partiell batchingång - översikt](../../../../ingestion/batch-ingestion/partial.md) för mer information.
 
@@ -74,7 +74,7 @@ Välj sedan **[!UICONTROL Profile dataset]** växla för att aktivera datauppsä
 
 ### Aktivera aviseringar
 
-Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om status för ditt dataflöde. Mer information om varningar finns i guiden [prenumerera på källvarningar med hjälp av användargränssnittet](../alerts.md).
+Du kan aktivera varningar för att få meddelanden om status för ditt dataflöde. Välj en avisering i listan om du vill prenumerera och få meddelanden om statusen för ditt dataflöde. Mer information om varningar finns i guiden på [prenumerera på källvarningar med användargränssnittet](../alerts.md).
 
 När du är klar med informationen om dataflödet väljer du **[!UICONTROL Next]**.
 
@@ -96,7 +96,7 @@ The [!UICONTROL Scheduling] visas så att du kan konfigurera ett matningsschema 
 
 >[!TIP]
 >
->Intervall och bakåtfyllnad syns inte vid engångsinmatning.
+>Intervall och bakåtfyllnad syns inte vid engångsbruk.
 
 ![schemaläggning](../../../images/tutorials/dataflow/table-based/scheduling.png)
 
@@ -110,7 +110,7 @@ Se tabellen nedan för mer information om schemaläggningskonfigurationer.
 | --- | --- |
 | Frekvens | Frekvensen med vilken ett intag sker. Valbara frekvenser inkluderar `Once`, `Minute`, `Hour`, `Day`och `Week`. |
 | Intervall | Ett heltal som anger intervallet för den valda frekvensen. Intervallets värde måste vara ett heltal som inte är noll och måste vara större än eller lika med 15. |
-| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt. Starttiden måste vara större än eller lika med den aktuella UTC-tiden. |
+| Starttid | En UTC-tidsstämpel som anger när det allra första intaget är inställt att ske. Starttiden måste vara större än eller lika med den aktuella UTC-tiden. |
 | Backfill | Ett booleskt värde som avgör vilka data som hämtas från början. Om bakåtfyllning är aktiverad, kommer alla aktuella filer i den angivna sökvägen att importeras under det första schemalagda intaget. Om underfyllning är inaktiverad importeras endast de filer som läses in mellan den första importkörningen och starttiden. Filer som lästs in före starttiden importeras inte. |
 | Läs in inkrementella data med | Ett alternativ med en filtrerad uppsättning källschemafält av typen, datumet eller tiden. Fältet som du väljer för **[!UICONTROL Load incremental data by]** måste ha sina datum/tid-värden i UTC-tidszonen för att inkrementella data ska kunna läsas in korrekt. Alla tabellbaserade batchkällor hämtar inkrementella data genom att jämföra ett deltskolumnens tidsstämpelvärde med motsvarande körningsfönster UTC-tid och sedan kopiera data från källan, om nya data hittas i UTC-tidsfönstret. |
 
@@ -120,7 +120,7 @@ Se tabellen nedan för mer information om schemaläggningskonfigurationer.
 
 The **[!UICONTROL Review]** visas så att du kan granska det nya dataflödet innan det skapas. Informationen är grupperad i följande kategorier:
 
-* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen för den valda källfilen och mängden kolumner i källfilen.
+* **[!UICONTROL Connection]**: Visar källtypen, den relevanta sökvägen till den valda källfilen och mängden kolumner i källfilen.
 * **[!UICONTROL Assign dataset & map fields]**: Visar vilken datauppsättning källdata hämtas till, inklusive det schema som datauppsättningen följer.
 * **[!UICONTROL Scheduling]**: Visar den aktiva perioden, frekvensen och intervallet för intag-schemat.
 

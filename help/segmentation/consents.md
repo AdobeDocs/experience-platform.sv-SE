@@ -16,21 +16,21 @@ ht-degree: 0%
 >
 >I den här guiden beskrivs hur du respekterar innehåll i **segmentdefinitioner**.
 
-Lagliga sekretessregler som [!DNL California Consumer Privacy Act] (CCPA) ger konsumenterna rätt att avstå från att få sina personuppgifter insamlade eller delade med tredje part. Adobe Experience Platform tillhandahåller XDM-komponenter (Experience Data Model) som är avsedda att fånga upp kundernas samtycke i realtidsdata för kundprofiler.
+Lagliga sekretessregler som [!DNL California Consumer Privacy Act] (CCPA) ger konsumenterna rätt att avstå från att få sina personuppgifter insamlade eller delade med tredje part. Adobe Experience Platform tillhandahåller XDM-komponenter (Experience Data Model) som är avsedda att fånga upp kundernas önskemål om samtycke i realtidsdata för kundprofiler.
 
 Om en kund har återkallat eller vägrat samtycke för att få sina personuppgifter delade är det viktigt att organisationen respekterar detta när den genererar målgrupper för marknadsföringsaktiviteter. I det här dokumentet beskrivs hur du integrerar värden för kundsamtycke i dina segmentdefinitioner med användargränssnittet i Experience Platform.
 
 ## Komma igång
 
-Att värna om kundens samtycke kräver förståelse för de olika [!DNL Adobe Experience Platform] tjänster. Innan du startar den här självstudiekursen bör du kontrollera följande tjänster:
+Att värna om kundens samtycke kräver en förståelse för de olika [!DNL Adobe Experience Platform] berörda tjänster. Innan du startar den här självstudiekursen bör du kontrollera följande tjänster:
 
 * [[!DNL Experience Data Model (XDM)]](../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
-* [[!DNL Real-Time Customer Profile]](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+* [[!DNL Real-Time Customer Profile]](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Adobe Experience Platform Segmentation Service]](./home.md): Används för att bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 
 ## Schemafält för samtycke
 
-För att tillgodose kundernas önskemål och önskemål är det ett av scheman som är en del av [!UICONTROL XDM Individual Profile] union-schemat måste innehålla standardfältgruppen **[!UICONTROL Consents and Preferences]**.
+För att tillgodose kundernas önskemål och önskemål är ett av scheman som ingår i [!UICONTROL XDM Individual Profile] union-schemat måste innehålla standardfältgruppen **[!UICONTROL Consents and Preferences]**.
 
 Mer information om struktur och avsedd användning för varje attribut som tillhandahålls av fältgruppen finns i [referenshandbok för innehåll och inställningar](../xdm/field-groups/profile/consents.md). Stegvisa instruktioner om hur du lägger till en fältgrupp i ett schema finns i [Användargränssnittshandbok för XDM](../xdm/ui/resources/schemas.md#add-field-groups).
 
@@ -47,7 +47,7 @@ Stegen nedan visar hur du lägger till lämpliga fält för två typer av avanm�
 
 >[!NOTE]
 >
->Den här guiden fokuserar på de två avanmälningsflaggorna ovan, men du kan konfigurera dina segmentdefinitioner så att de även innehåller ytterligare godkännandesignaler. The [referenshandbok för innehåll och inställningar](../xdm/field-groups/profile/consents.md) innehåller mer information om dessa alternativ och hur de ska användas.
+>Den här guiden fokuserar på de två avanmälningsflaggorna ovan, men du kan konfigurera dina segmentdefinitioner så att de även innehåller ytterligare godkännandesignaler. The [referenshandbok för innehåll och inställningar](../xdm/field-groups/profile/consents.md) innehåller mer information om dessa alternativ och de användningsfall de är avsedda för.
 
 När en segmentdefinition skapas i användargränssnittet, under **[!UICONTROL Attributes]**, navigera till **[!UICONTROL XDM Individual Profile]** väljer **[!UICONTROL Consents and Preferences]**. Här kan du se alternativen för **[!UICONTROL Data Collection]** och **[!UICONTROL Share Data]**.
 

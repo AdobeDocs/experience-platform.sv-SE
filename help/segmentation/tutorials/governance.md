@@ -25,10 +25,10 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 - [Datastyrning](../../data-governance/home.md): Datastyrning tillhandahåller infrastruktur för märkning och verkställighet av dataanvändning med hjälp av följande komponenter:
    - [Dataanvändningsetiketter](../../data-governance/labels/user-guide.md): Etiketter som används för att beskriva datauppsättningar och fält utifrån känslighetsnivån som deras respektive data ska hanteras med.
    - [Dataanvändningspolicyer](../../data-governance/policies/overview.md): Konfigurationer som anger vilka marknadsföringsåtgärder som tillåts för data som kategoriseras av särskilda dataanvändningsetiketter.
-   - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa dataanvändningsprinciper och förhindra dataåtgärder som utgör policyöverträdelser.
+   - [Politiska åtgärder](../../data-governance/enforcement/overview.md): Gör att du kan tillämpa regler för dataanvändning och förhindra dataåtgärder som utgör policyöverträdelser.
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API:er.
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API.
 
 ### Läser exempel-API-anrop
 
@@ -52,11 +52,11 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 ## Söka efter en sammanfogningsprincip för en segmentdefinition {#merge-policy}
 
-Arbetsflödet börjar med att en känd segmentdefinition används. Segmentdefinitioner som är aktiverade för användning i [!DNL Real-Time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentdefinitionen, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
+Det här arbetsflödet börjar med att en känd segmentdefinition används. Segmentdefinitioner som är aktiverade för användning i [!DNL Real-Time Customer Profile] innehåller ett ID för sammanfogningsprincip i segmentdefinitionen. Den här sammanfogningsprincipen innehåller information om vilka datauppsättningar som ska inkluderas i segmentdefinitionen, som i sin tur innehåller tillämpliga dataanvändningsetiketter.
 
 Använda [!DNL Segmentation] API kan du söka efter en segmentdefinition med hjälp av dess ID för att hitta den associerade sammanfogningsprincipen.
 
@@ -125,7 +125,7 @@ Ett lyckat svar returnerar informationen om segmentdefinitionen.
 
 ## Hitta källdatauppsättningarna från sammanfogningsprincipen {#datasets}
 
-Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till [!DNL Profile] API. Mer information om kopplingsprofiler finns i [slutpunktshandbok för sammanslagningsprinciper](../../profile/api/merge-policies.md).
+Sammanslagningsprinciper innehåller information om deras källdatauppsättningar, som i sin tur innehåller dataanvändningsetiketter. Du kan söka efter information om en sammanfogningsprincip genom att ange sammanfogningsprincip-ID i en GET-begäran till [!DNL Profile] API. Mer information om sammanfogningsprinciper finns i [slutpunktshandbok för sammanslagningsprinciper](../../profile/api/merge-policies.md).
 
 **API-format**
 
@@ -199,7 +199,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med dataanvändningsprincipen som du utvärderar datauppsättningarna efter. Beroende på om policyn har definierats av Adobe eller din organisation måste du använda `/marketingActions/core` eller `/marketingActions/custom`, respektive. |
+| `{MARKETING_ACTION_NAME}` | Namnet på den marknadsföringsåtgärd som är associerad med dataanvändningsprincipen som du utvärderar datauppsättningarna efter. Beroende på om policyn har definierats av Adobe eller din organisation måste du använda `/marketingActions/core` eller `/marketingActions/custom`, respektive |
 
 **Begäran**
 
@@ -227,8 +227,8 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `entityType` | Varje objekt i nyttolastarrayen måste ange vilken typ av enhet som definieras. I det här fallet kommer värdet alltid att vara &quot;dataSet&quot;. |
-| `entityID` | Varje objekt i nyttolastarrayen måste ange ett unikt ID för en datamängd. |
+| `entityType` | Varje objekt i nyttolastarrayen måste ange vilken typ av enhet som definieras. I det här fallet är värdet alltid&quot;dataSet&quot;. |
+| `entityID` | Varje objekt i nyttolastarrayen måste ange det unika ID:t för en datamängd. |
 
 **Svar**
 
@@ -370,13 +370,13 @@ Om segmentdefinitionen inte godkänns i utvärderingen kan du justera data som i
 
 ### Uppdatera segmentdefinitionens sammanfogningsprincip
 
-Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de datauppsättningar och fält som inkluderas när segmentjobbet körs. Se avsnittet om [uppdatera en befintlig kopplingsprofil](../../profile/api/merge-policies.md#update) i självstudiekursen om API-sammanslagningsprinciper om du vill ha mer information.
+Om du uppdaterar sammanfogningsprincipen för en segmentdefinition justeras de datauppsättningar och fält som inkluderas när segmentjobbet körs. Se avsnittet om [uppdatera en befintlig sammanfogningsprincip](../../profile/api/merge-policies.md#update) i självstudiekursen om API-sammanslagningsprinciper om du vill ha mer information.
 
 ### Begränsa specifika datafält när segmentdefinitionen exporteras
 
 När en segmentdefinition exporteras till en datauppsättning med [!DNL Segmentation] API, du kan filtrera data som ingår i exporten med hjälp av `fields` parameter. Alla datafält som läggs till i den här parametern inkluderas i exporten, medan alla andra datafält exkluderas.
 
-Överväg en segmentdefinition som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, `fields` parametern skulle innehålla enbart fältet&quot;C&quot;. Om du gör det exkluderas fälten&quot;A&quot; och&quot;B&quot; när segmentdefinitionen exporteras.
+Överväg en segmentdefinition som har datafält med namnen&quot;A&quot;,&quot;B&quot; och&quot;C&quot;. Om du bara vill exportera fält C, `fields` parametern skulle innehålla enbart fält C. Om du gör det exkluderas fälten&quot;A&quot; och&quot;B&quot; när segmentdefinitionen exporteras.
 
 Se avsnittet om [exportera en segmentdefinition](./evaluate-a-segment.md#export) i segmenteringsjälvstudiekursen för mer information.
 

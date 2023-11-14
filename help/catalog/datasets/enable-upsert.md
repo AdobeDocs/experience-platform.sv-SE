@@ -44,7 +44,7 @@ För att ringa [!DNL Platform] API:er måste du först slutföra [självstudieku
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare `Content-Type` header. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
 
-Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en `x-sandbox-name` huvud som anger namnet på den sandlåda som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver `x-sandbox-name` huvud som anger namnet på den sandlåda som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
 ## Skapa en datauppsättning som är aktiverad för profiluppdateringar
 
@@ -95,12 +95,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `schemaRef.id` | ID för [!DNL Profile]-aktiverat schema som datauppsättningen baseras på. |
+| `schemaRef.id` | ID:t för [!DNL Profile]-aktiverat schema som datauppsättningen baseras på. |
 | `{TENANT_ID}` | Namnutrymmet i [!DNL Schema Registry] som innehåller resurser som tillhör din organisation. Se [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] för mer information. |
 
 **Svar**
 
-Ett lyckat svar visar en array som innehåller ID:t för den nya datauppsättningen i form av `"@/dataSets/{DATASET_ID}"`.
+Ett lyckat svar visar en matris som innehåller ID:t för den nya datamängden i form av `"@/dataSets/{DATASET_ID}"`.
 
 ```json
 [
@@ -175,7 +175,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27
 }
 ```
 
-Under `tags` -egenskapen ser du att `unifiedProfile` finns med värdet `enabled:true`. Därför [!DNL Real-Time Customer Profile] är aktiverat för den här datauppsättningen.
+Under `tags` -egenskapen ser du att `unifiedProfile` finns med värdet `enabled:true`. Därför bör [!DNL Real-Time Customer Profile] är aktiverat för den här datauppsättningen.
 
 ### Inaktivera datauppsättningen för profilen
 
@@ -197,7 +197,7 @@ PATCH /dataSets/{DATASET_ID}
 
 **Begäran**
 
-Den första texten i PATCH-begäran innehåller en `path` till `unifiedProfile` och `path` till `unifiedIdentity`, ange `value` till `enabled:false` för båda dessa sökvägar för att inaktivera taggarna.
+Den första texten i PATCH-begäran innehåller en `path` till `unifiedProfile` och `path` till `unifiedIdentity`, ställer in `value` till `enabled:false` för båda dessa sökvägar för att inaktivera taggarna.
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \

@@ -48,7 +48,7 @@ Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan o
 
 Välj **[!UICONTROL Customer success]** i listan över källkategorier och välj sedan **[!UICONTROL Add data]** från [!DNL Salesforce Service Cloud] kort.
 
-![Källkatalogen i användargränssnittet i Experience Platform med källkortet i Salesforce Service Cloud markerat.](../../../../images/tutorials/create/salesforce-service-cloud/catalog.png)
+![Källkatalogen i användargränssnittet i Experience Platform med källkortet i Salesforce Service Cloud valt.](../../../../images/tutorials/create/salesforce-service-cloud/catalog.png)
 
 The **[!UICONTROL Connect to Salesforce Service Cloud]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 

@@ -21,7 +21,7 @@ Alla schemalagda frågor läggs till i listan i [!UICONTROL Scheduled queries] -
 
 ## Skapa frågescheman {#create-schedule}
 
-Om du vill lägga till ett schema i en fråga väljer du en frågemall i [!UICONTROL Templates] -fliken eller [!UICONTROL Scheduled Queries] för att gå till Frågeredigeraren.
+Om du vill lägga till ett schema i en fråga väljer du en frågemall i [!UICONTROL Templates] eller [!UICONTROL Scheduled Queries] för att gå till Frågeredigeraren.
 
 Läs mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
 
@@ -39,10 +39,10 @@ Sidan med schemainformation visas. På den här sidan kan du välja frekvens fö
 
 Du kan välja följande alternativ för **[!UICONTROL Frequency]**:
 
-- **[!UICONTROL Hourly]**: Den schemalagda frågan kommer att köras varje timme för den datumperiod du har valt.
+- **[!UICONTROL Hourly]**: Den schemalagda frågan körs varje timme för den datumperiod du har valt.
 - **[!UICONTROL Daily]**: Den schemalagda frågan kommer att köras var X:e dag vid den tidpunkt och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
-- **[!UICONTROL Weekly]**: Den valda frågan körs på de veckodagar, tidpunkter och datumperioder som du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
-- **[!UICONTROL Monthly]**: Den valda frågan kommer att köras varje månad på den dag, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
+- **[!UICONTROL Weekly]**: Den valda frågan körs på veckodagarna, tidsperioden och den datumperiod som du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
+- **[!UICONTROL Monthly]**: Den valda frågan körs varje månad på den dag, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
 - **[!UICONTROL Yearly]**: Den valda frågan kommer att köras varje år på den dag, månad, tid och den datumperiod du har valt. Observera att den valda tiden är **UTC** och inte din lokala tidszon.
 
 För utdatauppsättningen kan du antingen använda en befintlig datauppsättning eller skapa en ny datauppsättning.
@@ -71,7 +71,7 @@ När du har bekräftat alla dessa uppgifter väljer du **[!UICONTROL Save]** fö
 
 Du kan ta bort eller inaktivera ett schema från arbetsytan Scheman för en viss fråga eller från [!UICONTROL Scheduled Queries] arbetsyta som visar alla schemalagda frågor.
 
-Så här öppnar du [!UICONTROL Schedules] -fliken för den valda frågan måste du välja namnet på en frågemall från antingen [!UICONTROL Templates] -fliken eller [!UICONTROL Scheduled Queries] -fliken. Detta navigerar till frågeredigeraren för den frågan. Välj **[!UICONTROL Schedules]** för att komma åt arbetsytan för scheman.
+Så här öppnar du [!UICONTROL Schedules] -fliken för den valda frågan måste du välja namnet på en frågemall från antingen [!UICONTROL Templates] eller [!UICONTROL Scheduled Queries] -fliken. Detta navigerar till frågeredigeraren för den frågan. I frågeredigeraren väljer du **[!UICONTROL Schedules]** för att komma åt arbetsytan för scheman.
 
 Välj ett schema bland raderna i tillgängliga scheman. Du kan använda växlingsknappen för att inaktivera eller aktivera den schemalagda frågan.
 

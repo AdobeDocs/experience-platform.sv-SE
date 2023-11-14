@@ -23,7 +23,7 @@ Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översik
 
 ## Välj en resurs att lägga till fält i {#select-resource}
 
-Om du vill definiera nya XDM-fält i användargränssnittet måste du först öppna ett schema i [!DNL Schema Editor]. Beroende på vilka scheman som är tillgängliga för dig i [!DNL Schema Library]kan du välja att [skapa ett nytt schema](../resources/schemas.md#create) eller [välj ett befintligt schema att redigera](../resources/schemas.md#edit).
+Om du vill definiera nya XDM-fält i användargränssnittet måste du först öppna ett schema i [!DNL Schema Editor]. Beroende på vilka scheman som är tillgängliga i [!DNL Schema Library]kan du välja att [skapa ett nytt schema](../resources/schemas.md#create) eller [välj ett befintligt schema att redigera](../resources/schemas.md#edit).
 
 När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
 
@@ -31,7 +31,7 @@ När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till f�
 
 >[!WARNING]
 >
->Om du försöker lägga till ett fält i ett objekt som tillhandahålls av en standardfältgrupp, kommer den fältgruppen att konverteras till en anpassad fältgrupp och den ursprungliga fältgruppen kommer inte längre att vara tillgänglig. Se avsnittet om [lägga till fält i standardfältgrupper](../resources/schemas.md#custom-fields-for-standard-groups) i gränssnittshandboken för scheman för mer information.
+>Om du försöker lägga till ett fält i ett objekt som tillhandahålls av en standardfältgrupp, kommer den fältgruppen att konverteras till en anpassad fältgrupp och den ursprungliga fältgruppen kommer inte längre att vara tillgänglig. Se avsnittet om [lägga till fält i standardfältgrupper](../resources/schemas.md#custom-fields-for-standard-groups) i gränssnittshandboken för scheman om du vill ha mer information.
 
 Om du vill lägga till ett nytt fält i resursen väljer du **plus (+)** -ikonen bredvid schemats namn på arbetsytan eller bredvid det objekttypsfält som du vill definiera fältet under.
 
@@ -52,17 +52,17 @@ I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera i
 
 | Fältegenskap | Beskrivning |
 | --- | --- |
-| [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra program längre fram i kedjan<br><br>Namnet ska helst skrivas i camelCase. Den kan innehålla alfanumeriska tecken, bindestreck eller understreck, men den **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktig**: `_fieldName`</li></ul> |
+| [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra program i senare led<br><br>Namnet ska helst skrivas i camelCase. Den kan innehålla alfanumeriska tecken, bindestreck eller understreck, men den **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktig**: `_fieldName`</li></ul> |
 | [!UICONTROL Display name] | Ett visningsnamn för fältet. Det här namnet kommer att användas för att representera fältet på arbetsytan i Schemaredigeraren. Fältnamnet kan ändras till visningsnamnet med [växla visningsnamn](../resources/schemas.md#display-name-toggle). |
 | [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja något av [standardtyper av skalärbilder](../../schema/field-constraints.md) stöds av XDM, eller ett av flera fält [datatyper](../resources/data-types.md) som tidigare har definierats i [!DNL Schema Registry].<br><br>Du kan också välja **[!UICONTROL Advanced type search]** om du vill söka efter och filtrera befintliga datatyper och hitta den önskade typen enklare. |
 
 {style="table-layout:auto"}
 
-Du kan även tillhandahålla ett tillval som är läsbart för människor **[!UICONTROL Description]** till fältet för att ge mer kontext till fältets avsedda användningsfall.
+Du kan även tillhandahålla ett tillval som kan läsas av människor **[!UICONTROL Description]** till fältet för att ge mer kontext till fältets avsedda användningsfall.
 
 >[!NOTE]
 >
->Beroende på **[!UICONTROL Type]** som du har valt för fältet kan ytterligare konfigurationskontroller visas i den högra listen. Se avsnittet om [typspecifika fältegenskaper](#type-specific-properties) för mer information om dessa kontroller.
+>Beroende på **[!UICONTROL Type]** som du har valt för fältet kan ytterligare konfigurationskontroller visas i den högra listen. Se avsnittet om [typspecifika fältegenskaper](#type-specific-properties) om du vill ha mer information om dessa kontroller.
 >
 >Den högra listen innehåller även kryssrutor för att ange särskilda fälttyper. Se avsnittet om [specialfälttyper](#special) för mer information.
 
@@ -89,12 +89,12 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 | [!UICONTROL Default value] | [!UICONTROL String], [!UICONTROL Double], [!UICONTROL Long], [!UICONTROL Integer], [!UICONTROL Short], [!UICONTROL Byte], [!UICONTROL Boolean] | Ett standardvärde som tilldelas det här fältet om inget annat värde anges vid inmatningen. Värdet måste överensstämma med fältets valda typ.<br><br>Standardvärdena sparas inte i datauppsättningen vid tidpunkten för inmatningen eftersom de kan ändras över tid. De standardvärden som anges i schemat härleds av plattformstjänster och program som är längre fram i kedjan när de läser data från datauppsättningen. Om attributet har ett NULL-värde när data efterfrågas med hjälp av tjänsten Query, men standardvärdet är inställt på `5` på schemanivå förväntas frågetjänsten returnera `5` i stället för NULL. Observera att detta för närvarande inte är enhetligt i alla AEP-tjänster. |
 | [!UICONTROL Pattern] | [!UICONTROL String] | A [reguljärt uttryck](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) att värdet för detta fält måste överensstämma med för att kunna accepteras vid förtäring. |
 | [!UICONTROL Format] | [!UICONTROL String] | Välj i en lista över fördefinierade format för strängar som värdet måste överensstämma med. Tillgängliga format: <ul><li>[[!UICONTROL date-time]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL email]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL hostname]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
-| [!UICONTROL Minimum length] | [!UICONTROL String] | Det minsta antalet tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
+| [!UICONTROL Minimum length] | [!UICONTROL String] | Det minsta antal tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
 | [!UICONTROL Maximum length] | [!UICONTROL String] | Det maximala antal tecken som strängen måste innehålla för att värdet ska accepteras vid förtäring. |
-| [!UICONTROL Minimum value] | [!UICONTROL Double] | Det lägsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När du använder den här begränsningen visas[!UICONTROL Exclusive minimum value]-begränsningen måste lämnas tom. |
-| [!UICONTROL Maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När du använder den här begränsningen visas[!UICONTROL Exclusive maximum value]-begränsningen måste lämnas tom. |
-| [!UICONTROL Exclusive minimum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen visas[!UICONTROL Minimum value]&quot; (icke-exklusiv) begränsning måste lämnas tom. |
-| [!UICONTROL Exclusive maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid intag. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen visas[!UICONTROL Maximum value]&quot; (icke-exklusiv) begränsning måste lämnas tom. |
+| [!UICONTROL Minimum value] | [!UICONTROL Double] | Det lägsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När du använder den här begränsningen visas[!UICONTROL Exclusive minimum value]begränsningen &quot; måste lämnas tom. |
+| [!UICONTROL Maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, accepteras värdet. När du använder den här begränsningen visas[!UICONTROL Exclusive maximum value]begränsningen &quot; måste lämnas tom. |
+| [!UICONTROL Exclusive minimum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen visas[!UICONTROL Minimum value]&quot; (icke-exklusiv) begränsning måste lämnas tom. |
+| [!UICONTROL Exclusive maximum value] | [!UICONTROL Double] | Det högsta värdet för Double som ska accepteras vid förtäring. Om det inmatade värdet exakt matchar det som anges här, avvisas värdet. När du använder den här begränsningen visas[!UICONTROL Maximum value]&quot; (icke-exklusiv) begränsning måste lämnas tom. |
 
 {style="table-layout:auto"}
 

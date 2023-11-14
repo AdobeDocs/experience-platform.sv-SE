@@ -25,10 +25,10 @@ Om du vill veta mer om kopplingsregler och vilken roll de spelar i Experience Pl
 Handboken kräver en fungerande förståelse för flera viktiga [!DNL Experience Platform] funktioner. Innan du följer den här handboken bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil i realtid](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Aktiverar kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
 * [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
-## Visa kopplingsprinciper {#view-merge-policies}
+## Visa sammanslagningsprinciper {#view-merge-policies}
 
 I [!DNL Experience Platform] Gränssnitt, du kan börja arbeta med sammanslagningsprinciper genom att välja **[!UICONTROL Profiles]** i den vänstra navigeringen och sedan väljer du **[!UICONTROL Merge Policies]** -fliken. På den här fliken finns en lista med alla befintliga sammanfogningsprinciper för din organisation, samt information för varje sammanfogningsprincip, inklusive principnamnet, oavsett om sammanfogningsprincipen är standardprincipen för sammanfogning eller inte, samt schemaklassen som sammanfogningsprincipen gäller.
 
@@ -38,7 +38,7 @@ Om du vill välja vilka detaljer som ska visas, eller om du vill lägga till fle
 
 ![](../images/merge-policies/adjust-view.png)
 
-## Skapa en kopplingsprofil {#create-a-merge-policy}
+## Skapa en sammanfogningsprincip {#create-a-merge-policy}
 
 Om du vill skapa en ny kopplingsprofil väljer du **[!UICONTROL Create merge policy]** på fliken för sammanfogningsprinciper för att ange det nya arbetsflödet för sammanfogningsprinciper.
 
@@ -54,14 +54,14 @@ I det första steget i arbetsflödet kan du konfigurera sammanfogningsprincipen 
 
 * **[!UICONTROL Name]**: Namnet på sammanfogningsprincipen ska vara beskrivande men koncist.
 * **[!UICONTROL Schema class]**: Den XDM-schemaklass som är associerad med sammanfogningsprincipen. Detta anger schemaklassen som sammanfogningsprincipen skapas för. Organisationer kan skapa flera sammanfogningsprinciper per per schemaklass. För närvarande bara [!UICONTROL XDM Individual Profile] finns i gränssnittet. Du kan förhandsgranska unionsschemat för schemaklassen genom att välja **[!UICONTROL View Union Schema]**. Mer information finns i avsnittet om [visa unionsschemat](#view-union-schema) som följer.
-* **[!UICONTROL ID stitching]**: I det här fältet definieras hur en kunds relaterade identiteter ska fastställas. Det finns två möjliga värden för identitetssammanfogning, och det är viktigt att förstå hur den typ av identitetssammanfogning som du väljer påverkar dina data. Mer information finns i [sammanfogningsprinciper - översikt](overview.md).
-   * **[!UICONTROL None]**: Utför ingen identitetssammanfogning.
+* **[!UICONTROL ID stitching]**: Det här fältet definierar hur en kunds relaterade identiteter ska fastställas. Det finns två möjliga värden för identitetssammanfogning, och det är viktigt att förstå hur den typ av identitetssammanfogning som du väljer påverkar dina data. Mer information finns i [sammanfogningsprinciper - översikt](overview.md).
+   * **[!UICONTROL None]**: Utför ingen identitetssammanslagning.
    * **[!UICONTROL Private Graph]**: Utför identitetssammanfogning baserat på ditt privata identitetsdiagram.
-* **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad visas en varning om att du vill ändra organisationens standardpolicy för sammanslagning. Se [sammanfogningsprinciper - översikt](overview.md) om du vill veta mer om standardprinciper för sammanfogning.
+* **[!UICONTROL Default merge policy]**: En växlingsknapp som gör att du kan välja om den här sammanfogningsprincipen ska vara standard för din organisation eller inte. Om väljaren är aktiverad visas en varning om att du vill ändra organisationens standardpolicy för sammanslagning. Se [sammanfogningsprinciper - översikt](overview.md) om du vill veta mer om standardprinciper för sammanfogning.
   ![](../images/merge-policies/create-make-default.png)
 * **[!UICONTROL Active-On-Edge Merge Policy]**: En växlingsknapp som gör att du kan välja om den här sammanfogningsprincipen ska vara aktiv i kant eller inte. För att säkerställa att alla profilkonsumenter arbetar med samma vy på kanterna kan sammanfogningsprinciper markeras som aktiva på kanten. För att en målgrupp ska kunna aktiveras på kanten (markeras som en målgrupp) måste den vara kopplad till en sammanfogningspolicy som är markerad som aktiv på kanten. Om en publik **not** som är knutna till en sammanfogningspolicy som är markerad som aktiv på sidan, kommer målgruppen inte att markeras som aktiv på sidan och kommer att markeras som en målgrupp för direktuppspelning. Dessutom kan varje sandlåda i en organisation bara ha **en** sammanfogningsprincip som är aktiv vid sidan.
 
-När de obligatoriska fälten är ifyllda kan du välja **[!UICONTROL Next]** för att fortsätta med arbetsflödet.
+När de obligatoriska fälten har fyllts i kan du välja **[!UICONTROL Next]** för att fortsätta med arbetsflödet.
 
 ![En komplett konfigurationsskärm med knappen Nästa markerad.](../images/merge-policies/create-complete.png)
 
@@ -71,17 +71,17 @@ När du skapar eller redigerar en sammanfogningsprincip kan du visa det kombiner
 
 ![](../images/merge-policies/view-union-schema.png)
 
-Då öppnas [!UICONTROL View Union Schema] som visar alla scheman, identiteter och relationer som är kopplade till unionsschemat. Du kan använda dialogrutan för att utforska unionsschemat på samma sätt som du gör genom att gå till [!UICONTROL Union Schema] i [!UICONTROL Profiles] -avsnittet i plattformsgränssnittet.
+Då öppnas [!UICONTROL View Union Schema] som visar alla scheman, identiteter och relationer som är kopplade till unionsschemat. Du kan använda dialogrutan för att utforska unionsschemat på samma sätt som du använder [!UICONTROL Union Schema] i [!UICONTROL Profiles] -avsnittet i plattformsgränssnittet.
 
-Detaljerad information om fackliga scheman, inklusive hur du interagerar med dem i [!UICONTROL Union Schema] -fliken eller [!UICONTROL View Union Schema] som visas i arbetsflödet för sammanslagningsprinciper, gå till [gränssnittshandbok för union av schema](../ui/union-schema.md).
+Detaljerad information om fackliga scheman, inklusive hur du interagerar med dem i [!UICONTROL Union Schema] eller [!UICONTROL View Union Schema] som visas i arbetsflödet för sammanslagningsprinciper, gå till [gränssnittshandbok för union av schema](../ui/union-schema.md).
 
 ![](../images/merge-policies/view-union-schema-dialog.png)
 
 ## [!UICONTROL Select Profile datasets] {#select-profile-datasets}
 
-På **[!UICONTROL Select Profile datasets]** måste du välja **[!UICONTROL Merge method]** som du vill använda för sammanfogningspolicyn. Det totala antalet [!UICONTROL Profile datasets] i din organisation som relaterar till den schemaklass som valdes på föregående skärm.
+På **[!UICONTROL Select Profile datasets]** måste du välja **[!UICONTROL Merge method]** som du vill använda för din kopplingsprofil. Visas även på skärmen är det totala antalet [!UICONTROL Profile datasets] i din organisation som relaterar till den schemaklass som valdes på föregående skärm.
 
-Beroende på vilken sammanfogningsmetod du väljer sammanfogas alla profildatauppsättningar i den ordning som de senast uppdaterades (tidsstämpelsortering) eller så måste du välja vilka profildatauppsättningar som ska inkluderas i sammanfogningsprincipen och i vilken ordning de ska sammanfogas (datauppsättningsprioritet).
+Beroende på vilken sammanfogningsmetod du väljer sammanfogas alla profildatauppsättningar i den ordning som de senast uppdaterades (tidsstämpelsortering). Du kan också behöva välja vilka profildatauppsättningar som ska inkluderas i sammanfogningsprincipen och i vilken ordning de ska sammanfogas (datauppsättningsprioritet).
 
 Mer information om kopplingsmetoder finns i [sammanfogningsprinciper - översikt](overview.md).
 
@@ -91,7 +91,7 @@ Markera **[!UICONTROL Timestamp ordered]** som sammanfogningsmetoden innebär at
 
 >[!NOTE]
 >
->Siffran inom hakparentes bredvid **[!UICONTROL Profile datasets]** (t.ex. `(37)` i bilden som visas) visar det totala antalet profildatauppsättningar som kommer att inkluderas.
+>Siffran inom hakparenteser bredvid **[!UICONTROL Profile datasets]** (till exempel `(37)` i bilden som visas) visar det totala antalet profildatauppsättningar som kommer att inkluderas.
 
 ![](../images/merge-policies/timestamp-ordered.png)
 
@@ -103,7 +103,7 @@ Du kan välja upp till 50 datauppsättningar från datauppsättningslistan som s
 
 >[!NOTE]
 >
->Siffran inom hakparentes bredvid **[!UICONTROL Profile datasets]** (t.ex. `(37)` i bilden som visas) visar det totala antalet profildatamängder som är tillgängliga för urval.
+>Siffran inom hakparenteser bredvid **[!UICONTROL Profile datasets]** (till exempel `(37)` i bilden som visas) visar det totala antalet profildatamängder som är tillgängliga för markering.
 
 När datauppsättningar väljs läggs de till i **[!UICONTROL Select datasets]** så att du kan dra och släppa datauppsättningarna och ordna dem enligt dina önskemål. När datauppsättningarna justeras i listan uppdateras ordningstalet (1, 2, 3 osv.) bredvid datauppsättningen och prioriteten visas (1 ges den högsta prioriteten, 2 och framåt).
 
@@ -121,7 +121,7 @@ Om du valde **[!UICONTROL Timestamp ordered]** som sammanfogningsmetod för prof
 
 >[!NOTE]
 >
->Siffran inom hakparentes bredvid **[!UICONTROL ExperienceEvent datasets]** (t.ex. `(20)` i bilden som visas) visar det totala antalet ExperienceEvent-datauppsättningar som har skapats av din organisation och som relaterar till den schemaklass som du valde på konfigurationsskärmen för sammanfogningsprincipen.
+>Siffran inom hakparenteser bredvid **[!UICONTROL ExperienceEvent datasets]** (till exempel `(20)` i bilden som visas) visar det totala antalet ExperienceEvent-datauppsättningar som har skapats av din organisation och som relaterar till den schemaklass som du valde på konfigurationsskärmen för sammanfogningsprincipen.
 
 ![](../images/merge-policies/timestamp-experienceevent.png)
 
@@ -131,7 +131,7 @@ Om du valde **[!UICONTROL Dataset precedence]** som sammanfogningsmetod för pro
 
 >[!NOTE]
 >
->Siffran inom hakparentes bredvid **[!UICONTROL ExperienceEvent datasets]** (t.ex. `(20)` i bilden som visas) visar det totala antalet ExperienceEvent-datauppsättningar som har skapats av din organisation och som relaterar till den schemaklass som du valde på konfigurationsskärmen för sammanfogningsprincipen.
+>Siffran inom hakparenteser bredvid **[!UICONTROL ExperienceEvent datasets]** (till exempel `(20)` i bilden som visas) visar det totala antalet ExperienceEvent-datauppsättningar som har skapats av din organisation och som relaterar till den schemaklass som du valde på konfigurationsskärmen för sammanfogningsprincipen.
 
 När datauppsättningar väljs visas de i [!UICONTROL Select datasets] -avsnitt.
 
@@ -171,9 +171,9 @@ När du har slutfört arbetsflödet för att skapa en ny sammanfogningsprincip �
 
 ![](../images/merge-policies/new-merge-policy-created.png)
 
-## Redigera en kopplingsprofil
+## Redigera en sammanfogningsprincip
 
-Från [!UICONTROL Merge Policies] kan du ändra en befintlig sammanfogningsprincip som har skapats för [!DNL XDM Individual Profile] genom att välja **[!UICONTROL Policy name]** för den sammanfogningsprincip som du vill redigera.
+Från [!UICONTROL Merge Policies] kan du ändra en befintlig sammanfogningsprincip som skapats för [!DNL XDM Individual Profile] genom att välja **[!UICONTROL Policy name]** för den sammanfogningsprincip som du vill redigera.
 
 ![Landningssida för sammanslagningspolicyer](../images/merge-policies/select-edit.png)
 
@@ -193,7 +193,7 @@ När du har gjort de ändringar du behöver granskar du kopplingsprofilen och v�
 
 ## Policyöverträdelser för datastyrning
 
-När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform datastyrning och är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa en målgrupp som aktiverats för ett mål från tredje part och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]** när du försöker spara sammanfogningsprincipen.
+När du skapar eller uppdaterar en sammanfogningsprincip görs en kontroll för att avgöra om sammanfogningsprincipen bryter mot någon av de dataanvändningsprinciper som din organisation har definierat. Dataanvändningspolicyer är en del av Adobe Experience Platform datastyrning och är regler som beskriver den typ av marknadsföringsåtgärder som du har rätt att, eller är begränsad från, utföra på specifika [!DNL Platform] data. Om en sammanfogningsprincip till exempel användes för att skapa en målgrupp som aktiverats för ett mål från tredje part och din organisation har en dataanvändningsprincip som förhindrar export av specifika data till tredje part, får du ett **[!UICONTROL Data governance policy violation detected]** när du försöker spara sammanfogningsprincipen.
 
 Det här meddelandet innehåller en lista över dataanvändningsprinciper som har överträtts och gör att du kan visa information om överträdelsen genom att välja en princip i listan. När du väljer en obehörig princip **[!UICONTROL Data lineage]** -fliken innehåller orsaken till överträdelsen och de aktiveringar som påverkas, där var och en ger mer information om hur dataanvändningsprincipen har överträtts.
 

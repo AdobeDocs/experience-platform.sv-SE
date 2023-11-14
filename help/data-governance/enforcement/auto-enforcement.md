@@ -27,7 +27,7 @@ När data har märkts och dataanvändningsprinciper har definierats, kan ni se t
 
 Den här handboken kräver en fungerande förståelse av de plattformstjänster som används i automatisk tillämpning. Läs följande dokumentation om du vill veta mer innan du fortsätter med den här guiden:
 
-* [Adobe Experience Platform datastyrning](../home.md): Det ramverk som Platform använder för att genomdriva efterlevnad av dataanvändning genom användning av etiketter och policyer.
+* [Adobe Experience Platform datastyrning](../home.md): Det ramverk som Platform använder för att driva igenom efterlevnad av regler för dataanvändning genom användning av etiketter och policyer.
 * [Kundprofil i realtid](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Adobe Experience Platform segmenteringstjänst](../../segmentation/home.md): Segmenteringsmotorn i [!DNL Platform] används för att skapa målgrupper utifrån era kundprofiler utifrån kundbeteenden och attribut.
 * [Destinationer](../../destinations/home.md): Destinationer är färdiga integreringar med vanliga applikationer som möjliggör smidig aktivering av data från Platform för flerkanalskampanjer, e-postkampanjer, riktad reklam med mera.
@@ -57,7 +57,7 @@ Datalindelningen spelar en viktig roll när det gäller hur policyer tillämpas 
 
 När det gäller datastyrning gör länkning det möjligt för dataanvändningsetiketter att sprida information från scheman till tjänster i senare led som förbrukar deras data, som kundprofil i realtid och destinationer. Detta gör det möjligt att utvärdera och tillämpa principer vid flera viktiga punkter i dataöverföringen via Platform och ger kontext till datakonsumenterna om varför en policyöverträdelse inträffade.
 
-I Experience Platform gäller den politiska kontrollen följande:
+I Experience Platform berörs den politiska kontrollen av följande:
 
 1. Data hämtas till plattformen och lagras i **datauppsättningar**.
 1. Kundprofiler identifieras och konstrueras utifrån dessa datauppsättningar genom att sammanfoga datafragment enligt **sammanfogningsprincip**.
@@ -90,7 +90,7 @@ Avsnitten nedan beskriver olika policyefterlevnadsmeddelanden som visas i plattf
 
 ### Policyöverträdelse för dataanvändning {#data-usage-violation}
 
-Om en principöverträdelse inträffar från försök att aktivera en målgrupp (eller [göra ändringar i en redan aktiverad publik](#policy-enforcement-for-activated-audiences)) förhindras åtgärden och en pover visas som indikerar att en eller flera profiler har överträtts. När en överträdelse har utlösts **[!UICONTROL Save]** knappen är inaktiverad för den entitet som du ändrar tills rätt komponenter uppdateras för att uppfylla dataanvändningsprinciperna.
+Om en principöverträdelse inträffar från försök att aktivera en målgrupp (eller [göra ändringar i en redan aktiverad publik](#policy-enforcement-for-activated-audiences)) förhindras åtgärden och en pover visas som indikerar att en eller flera profiler har överträtts. När en överträdelse har utlösts **[!UICONTROL Save]** knappen är inaktiverad för den entitet som du ändrar tills rätt komponenter har uppdaterats för att uppfylla dataanvändningsprinciperna.
 
 Välj en principöverträdelse i poverarens vänstra kolumn för att visa information om den överträdelsen.
 
@@ -100,7 +100,7 @@ Välj en principöverträdelse i poverarens vänstra kolumn för att visa inform
 
 ![](../images/enforcement/violation-summary.png)
 
-Ett datalinjediagram visas nedanför sammanfattningen av överträdelser, vilket gör att du kan se vilka datauppsättningar, sammanfogningsprinciper, målgrupper och mål som berördes av överträdelsen av policyn. Enheten som du håller på att ändra markeras i diagrammet, vilket anger vilken punkt i flödet som orsakar att överträdelsen inträffar. Du kan välja ett enhetsnamn i diagrammet för att öppna informationssidan för den aktuella entiteten.
+Ett datalinjediagram visas nedanför sammanfattningen av överträdelser, vilket gör att du kan se vilka datauppsättningar, sammanfogningsprinciper, målgrupper och mål som berördes av överträdelsen. Enheten som du håller på att ändra markeras i diagrammet, vilket anger vilken punkt i flödet som orsakar att överträdelsen inträffar. Du kan välja ett enhetsnamn i diagrammet för att öppna informationssidan för den aktuella entiteten.
 
 ![](../images/enforcement/data-lineage.png)
 
@@ -120,7 +120,7 @@ Om du har [policyer för skapat samtycke](../policies/user-guide.md#consent-poli
 
 Förbättrad tillämpning av samtyckespolicy på [batch](../../destinations/destination-types.md#file-based) och [direktuppspelning](../../destinations/destination-types.md#streaming-destinations) destinationer inklusive betalmediaaktiveringar har gjorts. Den här förbättringen är tillgänglig för kunder som har skölden för skydd av privatlivet och säkerheten och hälso- och sjukvården, och tar aktivt bort profiler från batch- och strömningsdestinationer när medgivandestatusen ändras. Det garanterar också att ändringar av samtycke sprids omedelbart så att rätt målgrupp alltid målgruppsanpassas.
 
-Dessa förbättringar ger större förtroende för er marknadsföringsstrategi eftersom det eliminerar behovet av att marknadsförare manuellt lägger till medgivandeattribut i sina segmentuttryck. Detta garanterar att inga profiler oavsiktligt riktas mot marknadsföringsupplevelser när samtycke har återkallats eller inte längre är kvalificerade för en samtyckespolicy. De policyer för godkännande av marknadsföring som anger regler för hur samtycke eller inställningsdata ska hanteras i olika arbetsflöden för marknadsföring, tillämpas nu automatiskt i aktiveringsarbetsflöden i lösningar längre fram i kedjan.
+Dessa förbättringar ger större förtroende för er marknadsföringsstrategi eftersom det eliminerar behovet av att marknadsförare manuellt lägger till medgivandeattribut i sina segmentuttryck. Detta garanterar att inga profiler oavsiktligt riktas mot marknadsföringsupplevelser när samtycke har återkallats eller inte längre är kvalificerade för en samtyckespolicy. De policyer för godkännande av marknadsföring som anger regler för hur samtycke eller inställningsdata ska hanteras i olika arbetsflöden för marknadsföring, tillämpas nu automatiskt i arbetsflöden för aktivering i efterföljande lösningar.
 
 >[!NOTE]
 >
@@ -128,7 +128,7 @@ Dessa förbättringar ger större förtroende för er marknadsföringsstrategi e
 
 #### Utvärdering före aktivering
 
-När du har nått **[!UICONTROL Review]** steg när [aktivera ett mål](../../destinations/ui/activation-overview.md), markera **[!UICONTROL View applied policies]**.
+När du har kommit till **[!UICONTROL Review]** steg när [aktivera ett mål](../../destinations/ui/activation-overview.md), markera **[!UICONTROL View applied policies]**.
 
 ![Visa knapp för tillämpade profiler i arbetsflödet för aktivering av mål](../images/enforcement/view-applied-policies.png)
 

@@ -24,14 +24,14 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en [!DNL Salesforce Marketing Cloud] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [för automatiserad marknadsföring till Experience Platform med hjälp av användargränssnittet](../../dataflow/marketing-automation.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Salesforce Marketing Cloud] på Platform måste du ange följande värden:
+För att få åtkomst till [!DNL Salesforce Marketing Cloud] på Platform måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -47,7 +47,7 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i listan med kategorier. Du kan också använda sökfältet för att filtrera efter en viss källa.
 
-Under [!UICONTROL Marketing automation] kategori, välj **[!UICONTROL Salesforce Marketing Cloud]** och sedan markera **[!UICONTROL Set up]**.
+Under [!UICONTROL Marketing automation] kategori, välj **[!UICONTROL Salesforce Marketing Cloud]** och sedan **[!UICONTROL Set up]**.
 
 ![Källkatalogen med Salesforce Marketing Cloud-källan markerad.](../../../../images/tutorials/create/salesforce-marketing-cloud/catalog.png)
 

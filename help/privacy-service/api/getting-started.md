@@ -17,7 +17,7 @@ Den här guiden ger en introduktion till de centrala koncept du måste känna ti
 
 Den här guiden kräver en fungerande förståelse av [Privacy Service](../home.md) och hur det gör det möjligt att hantera förfrågningar från registrerade (kunder) i olika Adobe Experience Cloud-program.
 
-För att kunna skapa åtkomstautentiseringsuppgifter för API:t måste en administratör i organisationen tidigare ha konfigurerat produktprofiler för Privacy Service inom Adobe Admin Console. Den produktprofil som du tilldelar en API-integrering avgör vilka behörigheter som integreringen har för att komma åt Privacy Servicens funktioner. Se guiden [hantera behörigheter för Privacy Service](../permissions.md) för mer information.
+För att kunna skapa åtkomstautentiseringsuppgifter för API:t måste en administratör i organisationen tidigare ha konfigurerat produktprofiler för Privacy Service inom Adobe Admin Console. Den produktprofil som du tilldelar en API-integrering avgör vilka behörigheter som integreringen har för att komma åt Privacy Servicens funktioner. Se guiden på [hantera behörigheter för Privacy Service](../permissions.md) för mer information.
 
 ## Samla in värden för obligatoriska rubriker {#gather-values-required-headers}
 
@@ -39,7 +39,7 @@ När du har skapat ett nytt projekt väljer du **[!UICONTROL Add to Project]** o
 
 ![Det API-alternativ som väljs på menyn [!UICONTROL Add to Project] listruta från sidan med projektinformation i Developer Console](../images/api/getting-started/add-api-button.png)
 
-#### Markera Privacy Service-API {#select-privacy-service-api}
+#### Markera Privacy Service-API:t {#select-privacy-service-api}
 
 The **[!UICONTROL Add an API]** visas. Välj **[!UICONTROL Experience Cloud]** om du vill begränsa listan med tillgängliga API:er väljer du kort för **[!UICONTROL Privacy Service API]** före markering **[!UICONTROL Next]**.
 
@@ -63,7 +63,7 @@ Det sista konfigurationssteget är att välja de produktprofiler som den här in
 
 >[!NOTE]
 >
-Produktprofiler och de detaljerade behörigheter de ger skapas och hanteras av administratörer via Adobe Admin Console. Se guiden [Behörigheter för Privacy Service](../permissions.md) för mer information.
+Produktprofiler och de detaljerade behörigheter de ger skapas och hanteras av administratörer via Adobe Admin Console. Se guiden på [Behörigheter för Privacy Service](../permissions.md) för mer information.
 
 När du är klar väljer du **[!UICONTROL Save configured API]**.
 
@@ -95,7 +95,7 @@ En ny åtkomsttoken genereras och en knapp för att kopiera token till Urklipp t
 
 #### Automatisera generering av token {#auto-token}
 
-Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Mer information finns i avsnittet om [använda Postman för att autentisera och testa API-anrop](/help/landing/api-authentication.md#use-postman) i autentiseringsguiden för Experience Platform API.
+Du kan också använda en Postman-miljö och en samling för att generera åtkomsttoken. Läs mer om [använda Postman för att autentisera och testa API-anrop](/help/landing/api-authentication.md#use-postman) i autentiseringsguiden för Experience Platform API.
 
 ## Läser exempel-API-anrop {#read-sample-api-calls}
 

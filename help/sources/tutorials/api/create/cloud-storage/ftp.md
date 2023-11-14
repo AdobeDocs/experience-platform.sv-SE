@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen; Filöverföringsprotokoll; filöverföringsprotokoll
+keywords: Experience Platform;hem;populära ämnen; filöverföringsprotokoll; filöverföringsprotokoll
 solution: Experience Platform
 title: Skapa en FTP-basanslutning med API:t för Flow Service
 type: Tutorial
@@ -38,7 +38,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL FTP]måste du ange vär
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | `host` | Namnet eller IP-adressen som är kopplad till din [!DNL FTP] server. |
-| `username` | Användarnamnet med åtkomst till [!DNL FTP] server. |
+| `username` | Användarnamnet med åtkomst till dina [!DNL FTP] server. |
 | `password` | Lösenordet för [!DNL FTP] server. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL FTP] är: `fb2e94c9-c031-467d-8103-6bd6e0a432f2`. |
 
@@ -97,7 +97,7 @@ curl -X POST \
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska FTP-servern i nästa självstudiekurs.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nya anslutningen. Detta ID krävs för att utforska FTP-servern i nästa självstudie.
 
 ```json
 {

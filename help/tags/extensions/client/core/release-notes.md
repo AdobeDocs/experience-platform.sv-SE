@@ -20,7 +20,7 @@ ht-degree: 2%
 v3.4.1
 
 * Lägger till nya inbyggda delegathändelser för webben:
-   * Tangentnedtryckning
+   * Tangent
    * KeyUp
 * Lägger till möjligheten att testa mot många värden (&quot;Lägg till ett annat&quot;-alternativ) mot följande delegater:
    * Händelser
@@ -58,11 +58,11 @@ v3.2.1
 
 v3.2.0
 
-Följande ändringar infördes i dataelementet Villkorsvärde:
+Följande ändringar har införts i dataelementet Villkorsvärde:
 
 * Lägg till en kryssruta för villkorliga värden och reservvärden som gör att användaren kan välja om odefinierade värden ska vara det returnerade värdet.
 * Nummervärden visas som tal i inställningsobjektet.
-* Villkorsvärde krävs inte längre så att det kan fungera på samma sätt som reservvärdet.
+* Villkorligt värde behövs inte längre så att det kan fungera på samma sätt som reservvärdet.
 
 ## 17 september 2021
 
@@ -76,19 +76,19 @@ v3.1.0
 
 Nya dataelement lades till:
 
-* Sammanfogat objekt - Markera flera dataelement som vart och ett ska innehålla ett objekt. Objekten sammanfogas i hög grad (rekursivt) för att skapa ett nytt objekt.
+* Sammanfogat objekt - Markera flera dataelement som ska ha ett objekt. Objekten sammanfogas i hög grad (rekursivt) för att skapa ett nytt objekt.
 * Villkorsvärde - Returnera ett av två värden (conditionalValue eller fallbackValue) baserat på resultatet av jämförelsen.
-* Runtime Environment - Returnera en av följande Launch-miljövariabler: miljöfas, bibliotekets byggdatum, egenskapsnamn, egenskaps-ID, regelnamn, regel-ID, händelsetyp, händelseinformationslast, direktanropsidentifierare.
-* JavaScript-verktyg - wrapper för vanliga JavaScript-åtgärder: grundläggande strängredigering (ersätt, delsträng, regex-matchning, första och sista index, delning, segment), grundläggande arrayåtgärder (segment, join, pop, shift) och grundläggande universella åtgärder (segment, längd).
+* Runtime Environment - Returnera en av följande Launch-miljövariabler: miljöfas, bibliotekets build-datum, egenskapsnamn, egenskaps-ID, regelnamn, regel-ID, händelsetyp, händelseinformationens nyttolast, direktanropsidentifierare.
+* JavaScript-verktyg - Omslutning för vanliga JavaScript-åtgärder: grundläggande strängredigering (ersätt, delsträng, regex-matchning, första och sista indexvärde, delning, segment), grundläggande arrayåtgärder (segment, join, pop, shift) och grundläggande universella åtgärder (segment, längd).
 * Enhetsattribut - Returnera enhetsattribut som fönsterstorlek eller skärmstorlek.
 
 ## 11 augusti 2021
 
 v3.0.0
 
-* PDCL-6153: Lägger till stöd för att på ett tillförlitligt sätt hämta den fullständiga URL:en för cachelagrade anpassade kodåtgärder.
+* PDCL-6153: Lägger till stöd för att på ett tillförlitligt sätt hämta den fullständigt kvalificerade URL:en för cachelagrade anpassade kodåtgärder.
 
-v3.0.0 av Core-tillägget är kopplad till förändringar i [v27.2.0 av turbinwebbmiljön](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0), som gör att användare kan läsa in sitt bibliotek bland många värdregioner som hanteras av Adobe om användarens företag stöder Premium CDN.
+v3.0.0 av Core-tillägget är kopplat till ändringar i [v27.2.0 av turbinwebbmiljön](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0), som gör att användare kan läsa in sitt bibliotek bland många värdregioner som hanteras av Adobe om användarens företag stöder Premium CDN.
 
 Den här uppgraderingen är valfri och bakåtkompatibel för användare utan Premium CDN, och obligatorisk för kunder som har Premium CDN aktiverat på företaget.
 
@@ -115,7 +115,7 @@ v2.0.5
 
 v2.0.4
 
-* Lagt till dataelementsstöd för olika fält - Data Element-stöd har lagts till i följande händelser: Time on Page, Enters Viewport, Hover och Media Time Play. samt följande villkor: Time on Site och Value Comparison
+* Data Element-stöd för olika fält har lagts till - Data Element-stöd har lagts till i följande händelser: Time on Page, Enters Viewport, Hover och Media Time Play. Dessutom följande villkor: &#39;Time on Site&#39; och &#39;Value Comparison&#39;
 * Lägger till stöd för standardbeteendet för Ctrl/Cmd + klick och mittersta musklickning när Länka fördröjning används
 * **Markerad länkfördröjning för klickhändelsen som&quot;stöds inte längre&quot;.** - mer information finns på [Bloggen Datainsamling](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) för Adobe Experience Platform
 
@@ -148,7 +148,7 @@ v1.8.2
 v1.8.1
 
 * Korrigerade ett fel där anpassade HTML-entiteter i attribut för `script` och `style` -taggar avkodades inte korrekt innan de skrevs till sidan.&quot;
-* Korrigerade ett fel där ett fel inträffar när en extern anpassad kodsåtgärd saknar innehåll. Extern anpassad kodsåtgärd är den åtgärd som läses in från en annan fil än biblioteket (detta inträffar när händelsen som utlöser regeln inte är libraryLoaded eller pageBottom)
+* Korrigerade ett fel där ett fel inträffar när en extern anpassad kodsåtgärd inte har något innehåll. Extern anpassad kodsåtgärd är den åtgärd som läses in från en annan fil än biblioteket (detta inträffar när händelsen som utlöser regeln inte är libraryLoaded eller pageBottom)
 
 ## 6 juli 2020
 
@@ -157,7 +157,7 @@ v1.8.0
 * **Löften i anpassad kod** - Anpassade kodvillkor och JavaScript-åtgärder som inte körs i det globala omfånget kan nu returnera Promises.  Du kan använda dem om du vill att efterföljande villkor och åtgärder ska vänta på att en asynkron process i din anpassade kod slutförs innan du går vidare till nästa objekt.
 * **Återanrop i anpassade kodåtgärder för HTML** - Du kan göra samma sak med anpassade kodåtgärder i HTML med `onCustomCodeSuccess()` och `onCustomCodeFailure()` återanrop.
 
-Se [Referens för Core Extension](./overview.md) i villkor> Anpassad kod och åtgärder > Anpassad kod för mer detaljerad information.
+Läs mer i [Referens för Core Extension](./overview.md) i villkor> Anpassad kod och åtgärder > Anpassad kod för mer detaljerad information.
 
 ## 7 april 2020
 
@@ -223,7 +223,7 @@ v1.4.2
 
 ## 20 mars 2018
 
-* **Felkorrigering** - Anpassade kodfönster utlöstes `document.write` fel och inte körning i asynkrona distributioner
+* **Felkorrigering** - Anpassade kodfönster genererades `document.write` fel och inte körning i asynkrona distributioner
 * **Felkorrigering** - Huvudmoduler inkluderades inte i något bibliotek
 * **Felkorrigering** - Problem uppstod med min- och maxvärdena för datavärdet Slumpmässigt tal
 

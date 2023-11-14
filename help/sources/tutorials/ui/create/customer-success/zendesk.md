@@ -19,12 +19,12 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Zendesk] på Platform måste du ange värden för följande autentiseringsuppgifter:
+För att få åtkomst till [!DNL Zendesk] på Platform måste du ange värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -37,7 +37,7 @@ Mer information om hur du autentiserar [!DNL Zendesk] -källa, se [[!DNL Zendesk
 
 ### Skapa ett plattformsschema för [!DNL Zendesk]
 
-Innan du skapar en [!DNL Zendesk] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
+Innan du skapar [!DNL Zendesk] källanslutning måste du också se till att du först skapar ett plattformsschema som kan användas för källan. Se självstudiekursen om [skapa ett plattformsschema](../../../../../xdm/schema/composition.md) om du vill ha omfattande anvisningar om hur du skapar ett schema.
 
 Om du vill ha mer information om [!DNL Zendesk] schema krävs för [!DNL Zendesk Search API], se [gränser](#limits) nedan.
 
@@ -57,7 +57,7 @@ The **[!UICONTROL Connect Zendesk account]** visas. På den här sidan kan du an
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du *Zendesk* konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj *Zendesk* konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/zendesk/existing.png)
 
@@ -79,7 +79,7 @@ I den här självstudiekursen har du autentiserat och skapat en källanslutning 
 
 ## Ytterligare resurser
 
-Avsnitten nedan innehåller ytterligare resurser som du kan referera till när du använder [!DNL Zendesk] källa.
+Avsnitten nedan innehåller ytterligare resurser som du kan använda när du använder [!DNL Zendesk] källa.
 
 ### Validering {#validation}
 

@@ -30,7 +30,7 @@ Plattformen har flera instrumentpaneler där du kan visa viktig information om o
 
 Instrumentpaneler tillhandahåller förkonfigurerade rapportalternativ för organisationens data och är inbyggda direkt i marknadsföringsarbetsflödet inom Platform. Dessa instrumentpaneler är tillgängliga utan behov av ytterligare IT-support eller den tid och ansträngning som annars skulle behövas för att exportera och bearbeta data med ytterligare design och implementering av datalagerhantering.
 
-Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive instrumentpaneler. Mer information om [hur du lägger till widgetar via widgetbiblioteket](../../dashboards/customize/widget-library.md).
+Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive instrumentpaneler. Mer information om [lägga till widgetar via widgetbiblioteket](../../dashboards/customize/widget-library.md).
 
 **Nya widgetar**
 
@@ -53,7 +53,7 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 
 | Funktion | Kontrollpanel | Beskrivning |
 | ------- | --------- | ----------- |
-| Rensning av överblivet profilsegmentmedlemskap | Profiler och licensanvändning | Profiltjänsten tar nu bort kvarvarande segment dagligen för att ge en mer korrekt återgivning av dina profiler i systemet. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilantalet&quot;-måttet på kontrollpanelen för profiler, eftersom dessa mått inkluderade kvarvarande segment före den här versionen. |
+| Rensning av överblivet profilsegmentmedlemskap | Profiler och licensanvändning | Profiltjänsten tar nu bort kvarvarande segment dagligen för att ge en mer korrekt återgivning av dina profiler i ditt system. Den här rensningen inträffar när alla profilfragment för en viss profil har tagits bort. Detta kan visa en minskning av&quot;adresserbar målgrupp&quot;-måttet på kontrollpanelen för licensanvändning och kan visa en minskning i &quot;profilantalet&quot;-måttet på kontrollpanelen för profiler, eftersom dessa mått inkluderade kvarvarande segment före den här versionen. |
 
 {style="table-layout:auto"}
 
@@ -69,20 +69,20 @@ Dataflöden är en representation av jobb som flyttar data över plattformen. De
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontrollpanel för segment | Nu kan du använda kontrollpanelen för övervakning för att övervaka dataflöden för segment. Läs guiden om du vill veta mer [övervaka segment i användargränssnittet](../../dataflows/ui/monitor-segments.md) |
+| Kontrollpanel för segment | Nu kan du använda kontrollpanelen för övervakning för att övervaka dataflöden för segment. Mer information finns i guiden [övervaka segment i användargränssnittet](../../dataflows/ui/monitor-segments.md) |
 
 Mer allmän information om dataflöden finns i [dataflödesöversikt](../../dataflows/home.md). Mer information om segmentering finns i [segmenteringsöversikt](../../segmentation/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
-[!DNL Data Prep] gör det möjligt för datatekniker att mappa, omvandla och validera data till och från Experience Data Model (XDM).
+[!DNL Data Prep] gör att datatekniker kan mappa, omvandla och validera data till och från Experience Data Model (XDM).
 
 **Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för Adobe Analytics | Adobe Analytics-källan har nu stöd för Data Prep-funktioner, vilket gör att du kan mappa data från Analytics-rapportsviten till ett mål-XDM-schema när du skapar ett dataflöde. Se självstudiekursen om [skapa en anslutning till en Analytics-källa](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för mer information. |
-| Stöd för import av befintliga mappningsregler | Nu kan du importera mappningsregler från ett befintligt dataflöde för att snabba upp dataflödeskonfigurationerna och begränsa antalet fel. Se självstudiekursen om [importera befintliga mappningsregler](../../data-prep/ui/mapping.md) för mer information. |
+| Stöd för Adobe Analytics | Adobe Analytics-källan har nu stöd för Data Prep-funktioner, vilket gör att du kan mappa data från Analytics-rapportsviten till ett mål-XDM-schema när du skapar ett dataflöde. Se självstudiekursen om [skapa en källanslutning för analys](../../sources/tutorials/ui/create/adobe-applications/analytics.md) för mer information. |
+| Import av befintliga mappningsregler | Nu kan du importera mappningsregler från ett befintligt dataflöde för att snabba upp dataflödeskonfigurationerna och begränsa antalet fel. Se självstudiekursen om [importera befintliga mappningsregler](../../data-prep/ui/mapping.md) för mer information. |
 
 Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-prep/home.md).
 
@@ -94,14 +94,14 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> I den allmänna tillgängligheten för Enterprise-destinationsanslutningar ingår alla funktioner som tidigare fanns i betaversionen, och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [Signatur för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) med mera [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (Bärartoken, OAuth 2) i HTTP API-målet.</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (Sändande av historiska profiler som är kvalificerade för segmentet när det först aktiveras).</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och tidsstämplar för segment,</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
+| Avancerade målanslutningar för företag | Tre målanslutningar för företag är nu allmänt tillgängliga: [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)och [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> I den allmänna tillgängligheten för Enterprise-destinationsanslutningar ingår alla funktioner som tidigare fanns i betaversionen, och mycket mer: <ul><li>Nya autentiseringsfunktioner, inklusive [Signatur för delad åtkomst i Azure Event Hubs](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) med mera [autentiseringstyper](../../destinations/catalog/streaming/http-destination.md#authentication-information) (Bärartoken, OAuth 2) i HTTP API-målet.</li><li>[Bakgrundsfyllning av tidigare profildata](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) (sändning av historiska profiler som är kvalificerade för segmentet när det först aktiveras),</li><li>Data Flow Run-mätvärden stöds nu för dessa destinationer.</li><li>[Ytterligare segmentmetadata](../../destinations/catalog/streaming/http-destination.md#destination-details) ingår i datanyttolasten, inklusive segmentnamn och tidsstämplar för segment,</li><li>Stöd för [statiska IP-adresser](/help/destinations/catalog/streaming/ip-address-allow-list.md) för kunder som behöver tillåtslista Experience Platform.</li></ul> |
 | Aviseringar i sitt sammanhang för måldataflöden | Nu kan du [prenumerera på aviseringar](../../destinations/ui/alerts.md) när du skapar ett måldataflöde, för att få varningsmeddelanden om status, lyckade eller misslyckade dataflöden. Du kan välja att få aviseringar i användargränssnittet för Experience Platform eller via e-post. |
 
 ### Frisläppningsprocess för avancerade målanslutningar för företag {#release-process-enterprise-destinations}
 
 För Amazon Kinesis, Azure Event Hubs och HTTP API-destinationer visas både det tidigare Beta-målkortet och det nya allmänt tillgängliga (GA) målkortet i målkatalogen under versionsprocessen (från och med den 27 april). Alla dataflöden som konfigureras av kunder som använder betatestarna migreras inom de närmaste dagarna till GA-versionen av samma mål. Denna migrering bör vara slutförd till slutet av fredagen den 29 april. Beta-destinationerna är fortfarande synliga under denna korta tid och märkta som **Föråldrat**.
 
-Observera följande om du har använt dessa destinationer under betaversionen:
+Observera följande om du har använt dessa destinationer under betafasen:
 
 - Om du tidigare har varit i Beta med någon av de tre destinationerna behövs ingen åtgärd. Alla dataflöden som har konfigurerats som en del av betaversionen kommer att fortsätta att fungera och migreras till GA-versionen.
 - Om du vill konfigurera dessa destinationer från och med den 27 april, gör det med den nya GA-versionen av destinationerna.
@@ -112,7 +112,7 @@ Observera följande om du har använt dessa destinationer under betaversionen:
 | Destination | Beskrivning |
 | ----------- | ----------- |
 | [!DNL Criteo] | Koppla samman och aktivera data till [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) annonsplattform. |
-| [!DNL Sendgrid] | Koppla samman och aktivera data till [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) plattform för transaktions- och marknadsföringsmejl. |
+| [!DNL Sendgrid] | Koppla samman och aktivera data till [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) plattform för transaktions- och marknadsföringsmeddelanden. |
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
@@ -124,7 +124,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Lägga till eller ta bort enskilda standardfält för ett schema | Nu kan du lägga till delar av standardfältgrupper i scheman, vilket ger större flexibilitet för de fält du väljer att ta med utan att du behöver skapa anpassade resurser från grunden.<br><br>Nu kan du även definiera egna ad hoc-fält direkt i schemastrukturen och tilldela dem till en ny eller befintlig anpassad fältgrupp utan att behöva skapa eller redigera fältgruppen i förväg.<br><br>Se guiden [skapa och redigera scheman i användargränssnittet](../../xdm/ui/resources/schemas.md) om du vill ha mer information om de nya arbetsflödena. |
+| Lägga till eller ta bort enskilda standardfält för ett schema | Nu kan du lägga till delar av standardfältgrupper i scheman, vilket ger större flexibilitet för de fält du väljer att ta med utan att du behöver skapa anpassade resurser från grunden.<br><br>Nu kan du även definiera egna ad hoc-fält direkt i schemastrukturen och tilldela dem till en ny eller befintlig anpassad fältgrupp utan att behöva skapa eller redigera fältgruppen i förväg.<br><br>Se guiden på [skapa och redigera scheman i användargränssnittet](../../xdm/ui/resources/schemas.md) för mer information om de nya arbetsflödena. |
 
 {style="table-layout:auto"}
 
@@ -173,7 +173,7 @@ Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai/ml-services}
 
-AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskaplig expertis.
+AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att utnyttja artificiell intelligens och maskininlärning i kundupplevelsefall. På så sätt kan marknadsföringsanalytiker skapa prediktioner som är specifika för ett företags behov med hjälp av konfigurationer på företagsnivå utan behov av datavetenskap.
 
 ### Attribution AI
 
@@ -183,7 +183,7 @@ Attribution AI används för att attribuera krediter till kontaktpunkter som led
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI stöder följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event. Mer information om stöd för flera datauppsättningar i Attribution AI finns i [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md). |
+| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Attribution AI stöder följande scheman: Adobe Analytics, Experience Event och Consumer Experience Event. Mer information om stöd för flera datauppsättningar i Attribution AI finns i [Användarhandbok för Attribution AI](../../intelligent-services/attribution-ai/user-guide.md). |
 
 Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] översikt](../../intelligent-services/home.md).
 
@@ -195,7 +195,7 @@ Customer AI available in Real-time Customer Data Platform, is used to generate c
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Kund-AI har stöd för följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event och Adobe Audience Manager schema. Mer information om stöd för flera datauppsättningar i kundens AI finns i [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md). |
+| Stöd för flera datauppsättningar | Funktionen Multi DataSet har nu stöd för alla Experience Event-datamängder samt valet av Identity Map som identitet. Kunder kan välja identitetskartan och alla associerade ID:n så länge det finns ett gemensamt ID-namnutrymme mellan datauppsättningar. Kunds-AI stöder följande scheman: Adobe Analytics, Experience Event, Consumer Experience Event och Adobe Audience Manager schema. Mer information om stöd för flera datauppsättningar i kundens AI finns i [Användarhandbok för AI](../../intelligent-services/customer-ai/user-guide/configure.md). |
 | Nya mått för modellutvärdering i kundens AI | Nya vinstscheman i kundens AI gör det möjligt för marknadsförare att fastställa gruppstorleken utifrån sin budget och sina lönsamhetsmål. Nya Lyft-diagram mäter modellens kvalitet och ger bättre synlighet i lyften de skulle få över slumpmässig målinriktning. Mer information finns i [identifiera insikter med kundens AI](../../intelligent-services/customer-ai/user-guide/discover-insights.md) -dokument. |
 
 Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] översikt](../../intelligent-services/home.md).

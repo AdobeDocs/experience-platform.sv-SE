@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen; API-självstudiekurser; API för direktuppspelningsmål. Plattform
+keywords: Experience Platform;home;populära topics; API tutorials; streaming destination API; Platform
 solution: Experience Platform
 title: Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service i Adobe Experience Platform
 description: I det här dokumentet beskrivs hur du skapar direktuppspelningsmål med hjälp av Adobe Experience Platform API
@@ -12,13 +12,13 @@ ht-degree: 0%
 
 ---
 
-# Anslut till direktuppspelningsmål och aktivera data med API:t för Flow Service
+# Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service
 
 >[!IMPORTANT]
 > 
->Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [åtkomstkontrollbehörighet](/help/access-control/home.md#permissions).
+>Om du vill ansluta till ett mål behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions).
 >
->Om du vill aktivera data måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
+>För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions).
 >
 >Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
@@ -28,7 +28,7 @@ I den här självstudiekursen används [!DNL Amazon Kinesis] mål i alla exempel
 
 ![Översikt - stegen för att skapa ett direktuppspelningsmål och aktivera målgrupper](../assets/api/streaming-destination/overview.png)
 
-Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../ui/activate-segment-streaming-destinations.md) självstudiekurser.
+Om du föredrar att använda användargränssnittet i Platform för att ansluta till ett mål och aktivera data finns mer information i [Anslut ett mål](../ui/connect-destination.md) och [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../ui/activate-segment-streaming-destinations.md) självstudier.
 
 ## Kom igång
 
@@ -126,7 +126,7 @@ Ett lyckat svar innehåller en lista över tillgängliga destinationer och deras
 Därefter måste du ansluta till dina Experience Platform-data, så att du kan exportera profildata och aktivera dem på det önskade målet. Detta består av två ämnen som beskrivs nedan.
 
 1. Först måste du ringa ett samtal för att ge behörighet till dina data i Experience Platform genom att konfigurera en basanslutning.
-2. Med hjälp av basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
+2. Med basanslutnings-ID:t gör du sedan ett nytt anrop där du skapar en källanslutning som upprättar anslutningen till dina Experience Platform-data.
 
 
 ### Ge åtkomst till dina data i Experience Platform
@@ -269,7 +269,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{CONNECTION_SPEC_ID}`: Använd det anslutningsspec-ID som du fick i steget [Hämta listan över tillgängliga mål](#get-the-list-of-available-destinations).
-* `{AUTHENTICATION_CREDENTIALS}`: Fyll i namnet på strömningsmålet: `Aws Kinesis authentication credentials` eller `Azure EventHub authentication credentials`.
+* `{AUTHENTICATION_CREDENTIALS}`: fyll i namnet på ditt mål för direktuppspelning: `Aws Kinesis authentication credentials` eller `Azure EventHub authentication credentials`.
 * `{ACCESS_ID}`: *För [!DNL Amazon Kinesis] anslutningar.* Ditt åtkomst-ID för din lagringsplats för Amazon Kinesis.
 * `{SECRET_KEY}`: *För [!DNL Amazon Kinesis] anslutningar.* Din hemliga nyckel för din lagringsplats för Amazon Kinesis.
 * `{REGION}`: *För [!DNL Amazon Kinesis] anslutningar.* Regionen i ditt [!DNL Amazon Kinesis] konto där Platform kan strömma era data.
@@ -403,8 +403,8 @@ curl -X POST \
 }
 ```
 
-* `{FLOW_SPEC_ID}`: Flödesspecifikation-ID för profilbaserade mål är `71471eba-b620-49e4-90fd-23f1fa0174d8`. Använd det här värdet i anropet.
-* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till Experience Platform](#connect-to-your-experience-platform-data).
+* `{FLOW_SPEC_ID}`: Flödesspekt-ID för profilbaserade mål är `71471eba-b620-49e4-90fd-23f1fa0174d8`. Använd det här värdet i anropet.
+* `{SOURCE_CONNECTION_ID}`: Använd det källanslutnings-ID som du fick i steget [Anslut till din Experience Platform](#connect-to-your-experience-platform-data).
 * `{TARGET_CONNECTION_ID}`: Använd det ID för målanslutning som du fick i steget [Anslut till direktuppspelningsmål](#connect-to-streaming-destination).
 
 **Svar**
@@ -474,9 +474,9 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | --------- | ----------- |
 | `{DATAFLOW_ID}` | Använd ID:t för dataflödet som du skapade i föregående steg i URL-adressen. |
 | `{ETAG}` | Skaffa `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Exempel på svar: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde att använda i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde. |
-| `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper du vill aktivera finns i [hämta en målgruppsdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
+| `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper du vill aktivera finns i [hämta en publikdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
 | `{PROFILE_ATTRIBUTE}` | Exempel: `"person.lastName"` |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till en målgrupp i ett dataflöde använder du `add` operation. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Använd kommandot `add` operation. |
 | `path` | Definierar den del av flödet som ska uppdateras. När du lägger till en målgrupp i ett dataflöde använder du den sökväg som anges i exemplet. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
@@ -616,21 +616,21 @@ Följande gäller för den här självstudiekursen [!DNL Postman] samlingar har 
 
 Klicka [här](../assets/api/streaming-destination/DestinationPostmanCollection.zip) för att hämta samlingsarkivet.
 
-Varje samling innehåller nödvändiga begäranden och miljövariabler för [!DNL AWS Kinesis]och [!DNL Azure Event Hub], respektive.
+Varje samling innehåller nödvändiga begäranden och miljövariabler för [!DNL AWS Kinesis]och [!DNL Azure Event Hub], respektive
 
 ### Så här använder du [!DNL Postman] samlingar {#how-to-use-postman-collections}
 
 För att ansluta till målen med hjälp av den bifogade [!DNL Postman] samlingar, följ dessa steg:
 
 * Hämta och installera [!DNL Postman];
-* [Hämta](../assets/api/streaming-destination/DestinationPostmanCollection.zip) och packa upp de bifogade samlingarna,
+* [Ladda ned](../assets/api/streaming-destination/DestinationPostmanCollection.zip) och packa upp de bifogade samlingarna,
 * Importera samlingar från deras motsvarande mappar till [!DNL Postman];
 * Fyll i miljövariablerna enligt instruktionerna i denna artikel.
-* Kör [!DNL API] förfrågningar från [!DNL Postman], baserat på instruktionerna i den här artikeln.
+* Kör [!DNL API] förfrågningar från [!DNL Postman]enligt instruktionerna i den här artikeln.
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
 
 ## Nästa steg {#next-steps}
 

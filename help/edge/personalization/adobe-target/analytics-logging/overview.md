@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Logga in på Platform Web SDK för Adobe Analytics for Target (A4T)
 
-När du använder Adobe Target för personalisering kan du välja vilket system du vill använda för prestandamätning. Varje [Verksamhetens syfte?](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) gör att du kan välja mellan Target-rapportering och Adobe Analytics-rapportering.
+När du använder Adobe Target för personalisering kan du välja vilket system du vill använda för prestandamätning. Varje [Målaktivitet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) gör att du kan välja mellan Target-rapportering och Adobe Analytics-rapportering.
 
 Om du använder Analytics-rapportering måste Adobe Target förmedla följande till Analytics:
 

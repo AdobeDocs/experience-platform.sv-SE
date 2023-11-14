@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Personaliseringsplattformar samlar in data och insikter från enskilda beteenden. Dessa plattformar kan hjälpa marknadsförare att navigera i anonyma data och leverera erbjudanden eller annonser till potentiella kunder baserat på tidigare aktivitet eller som en del av målgrupper med liknande vanor.
 
-## Destinationer för personalisering som stöds {#supported-destinations}
+## Anpassningsmål som stöds {#supported-destinations}
 
 För närvarande stöder Platform de personaliseringsmål som listas nedan. Information om hur du ansluter till dessa mål finns i de enskilda länkarna:
 

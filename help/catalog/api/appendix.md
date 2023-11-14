@@ -107,6 +107,6 @@ Ibland kanske du vill validera ett objekt utan att spara informationen. Använda
 
 ## Datakomprimering
 
-Komprimering är en [!DNL Experience Platform] som sammanfogar data från små filer till större filer utan att ändra några data. Av prestandaskäl är det ibland bra att kombinera en uppsättning små filer till större filer för att ge snabbare åtkomst till data när frågor ställs.
+Komprimering är en [!DNL Experience Platform] som sammanfogar data från små filer till större filer utan att ändra några data. Av prestandaskäl kan det ibland vara bra att kombinera en uppsättning små filer till större filer för att ge snabbare åtkomst till data när frågor ställs.
 
 När filerna i en inkapslad grupp har komprimerats, associeras de [!DNL Catalog] objektet uppdateras i övervakningssyfte.

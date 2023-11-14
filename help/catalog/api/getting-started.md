@@ -15,14 +15,14 @@ ht-degree: 2%
 
 [!DNL Catalog Service] är registersystemet för dataplatser och datalinje inom Adobe Experience Platform. [!DNL Catalog] fungerar som ett metadataarkiv eller en katalog där du kan hitta information om dina data i [!DNL Experience Platform]utan att behöva komma åt själva data. Se [[!DNL Catalog] översikt](../home.md) för mer information.
 
-I den här utvecklarhandboken får du hjälp att börja använda [!DNL Catalog] API. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med [!DNL Catalog].
+Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [!DNL Catalog] API. Handboken innehåller sedan exempel på API-anrop för att utföra nyckelåtgärder med [!DNL Catalog].
 
 ## Förutsättningar
 
 [!DNL Catalog] spårar metadata för flera olika typer av resurser och åtgärder i [!DNL Experience Platform]. Den här utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används för att skapa och hantera dessa resurser:
 
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
-* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Hur [!DNL Experience Platform] importerar och lagrar data från datafiler, som CSV och Parquet.
+* [Batchförtäring](../../ingestion/batch-ingestion/overview.md): Hur [!DNL Experience Platform] importerar och lagrar data från datafiler, t.ex. CSV och Parquet.
 * [Direktinmatning](../../ingestion/streaming-ingestion/overview.md): Hur [!DNL Experience Platform] importerar och lagrar data från klient- och serverenheter i realtid.
 
 I följande avsnitt finns ytterligare information som du behöver känna till eller har till hands för att kunna ringa till [!DNL Catalog Service] API.
@@ -49,9 +49,9 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-* Innehållstyp: application/json
+* Content-Type: application/json
 
-## Bästa tillvägagångssätt för [!DNL Catalog] API-anrop
+## Bästa tillvägagångssätt för [!DNL Catalog] API-samtal
 
 Vid GET av begäranden till [!DNL Catalog] API, är det bästa sättet att ta med frågeparametrar i dina förfrågningar för att bara returnera de objekt och egenskaper som du behöver. Ofiltrerade begäranden kan göra att svarsnyttolasterna når över 3 GB, vilket kan göra den totala prestandan långsammare.
 

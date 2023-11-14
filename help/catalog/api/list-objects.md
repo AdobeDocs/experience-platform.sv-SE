@@ -25,7 +25,7 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 | Parameter | Beskrivning |
 | --- | --- |
 | `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska listas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Se guiden [filtrera katalogdata](filter-data.md) för mer information. |
+| `{FILTER}` | En frågeparameter som används för att filtrera resultaten som returneras i svaret. Flera parametrar avgränsas med et-tecken (`&`). Se guiden på [filtrera katalogdata](filter-data.md) för mer information. |
 
 **Begäran**
 
@@ -42,7 +42,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade efter frågeparametrarna i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för [!DNL Catalog] objektet i fråga, som sedan kan användas i ett annat anrop till [visa det specifika objektet](look-up-object.md) för mer information.
+Ett godkänt svar returnerar en lista med [!DNL Catalog] objekt i form av nyckelvärdepar, filtrerade efter frågeparametrarna som anges i begäran. För varje nyckelvärdepar representerar nyckeln en unik identifierare för [!DNL Catalog] objektet i fråga, som sedan kan användas i ett annat anrop till [visa det specifika objektet](look-up-object.md) för mer information.
 
 >[!NOTE]
 >

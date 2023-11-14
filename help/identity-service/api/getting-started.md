@@ -47,13 +47,13 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 ### Regionbaserad routning
 
 The [!DNL Identity Service] API använder regionspecifika slutpunkter som kräver att en `{REGION}` som en del av sökvägen till begäran. Under etableringen av organisationen bestäms en region och lagras i din organisationsprofil. Om du använder rätt region för varje slutpunkt säkerställs att alla begäranden som görs med [!DNL Identity Service] API dirigeras till rätt region.
 
-Det finns för närvarande två regioner som stöds av [!DNL Identity Service] API:er: VA7 och NLD2.
+Det finns för närvarande två regioner som stöds av [!DNL Identity Service] API: VA7 och NLD2.
 
 Tabellen nedan visar exempelsökvägar som använder regioner:
 
@@ -70,7 +70,7 @@ Om du inte kan hitta regionen i din organisationsprofil kontaktar du systemadmin
 
 ## Använda [!DNL Identity Service] API
 
-Identitetsparametrar som används i dessa tjänster kan uttryckas på ett av två sätt. sammansatt eller XID.
+Identitetsparametrar som används i dessa tjänster kan uttryckas på ett av två sätt: sammansatt eller XID.
 
 Sammansatta identiteter är konstruktioner som innehåller både ID-värdet och namnutrymmet. När du använder sammansatta identiteter kan namnutrymmet anges med antingen namn (`namespace.code`) eller ID (`namespace.id`).
 

@@ -24,7 +24,7 @@ Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättnin
 >Du kan dock även definiera egna fältgrupper för att representera samtycke enligt dina egna datamodeller. Kontakta ditt juridiska team för att få ett godkännande av en datamodell för samtycke som passar era affärsbehov, baserat på följande alternativ:
 >
 >* Den standardiserade fältgruppen för samtycke
->* En anpassad fältgrupp för samtycke som skapats av din organisation
+>* En anpassad fältgrupp för samtycke som har skapats av din organisation
 >* En kombination av den standardiserade fältgruppen för samtycke och ytterligare fält som tillhandahålls av en anpassad fältgrupp för samtycke
 
 ## Förutsättningar
@@ -32,8 +32,8 @@ Det här dokumentet innehåller steg för hur du konfigurerar en datauppsättnin
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Experience Data Model (XDM)](../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
-* [Kundprofil i realtid](../../../../profile/home.md): Konsoliderar kunddata från olika källor till en komplett, enhetlig vy och erbjuder samtidigt ett användbart, tidsstämplat konto för varje kundinteraktion.
+   * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundläggande byggstenar i XDM-scheman.
+* [Kundprofil i realtid](../../../../profile/home.md): Konsoliderar kunddata från olika källor till en komplett, enhetlig vy och erbjuder samtidigt en åtgärdbar, tidsstämplad redovisning av varje kundinteraktion.
 
 >[!IMPORTANT]
 >
@@ -41,7 +41,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 ## [!UICONTROL Consent and Preference Details] fältgruppstruktur {#structure}
 
-The [!UICONTROL Consent and Preference Details] fältgruppen tillhandahåller standardiserade medgivandefält till ett schema. För närvarande är den här fältgruppen endast kompatibel med scheman baserade på [!DNL XDM Individual Profile] klassen.
+The [!UICONTROL Consent and Preference Details] fältgruppen tillhandahåller standardiserade medgivandefält till ett schema. För närvarande är den här fältgruppen endast kompatibel med scheman som baseras på [!DNL XDM Individual Profile] klassen.
 
 Fältgruppen innehåller ett enda fält av objekttyp, `consents`, vars underegenskaper fångar upp en uppsättning standardiserade medgivandefält. Följande JSON är ett exempel på datatypen `consents` förväntar sig vid datainmatning:
 
@@ -99,23 +99,23 @@ För att kunna samla in data om samtycke med hjälp av Adobe-standarden måste d
 * [!UICONTROL Consent and Preference Details]
 * [!UICONTROL IdentityMap] (krävs om du använder Platform Web eller Mobile SDK för att skicka medgivandesignaler)
 
-Välj **[!UICONTROL Schemas]** i den vänstra navigeringen väljer du **[!UICONTROL Browse]** om du vill visa en lista med befintliga scheman. Här väljer du namnet på [!DNL Profile]-aktiverat schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Bonusmedlemmar&quot; som finns i [självstudiekurs om att skapa scheman](../../../../xdm/tutorials/create-schema-ui.md) som ett exempel.
+Välj **[!UICONTROL Schemas]** i den vänstra navigeringen väljer du **[!UICONTROL Browse]** om du vill visa en lista med befintliga scheman. Här väljer du namnet [!DNL Profile]-aktiverat schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Bonusmedlemmar&quot; som finns i [självstudiekurs om att skapa scheman](../../../../xdm/tutorials/create-schema-ui.md) som ett exempel.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/select-schema.png)
 
 >[!TIP]
 >
->Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta ditt schema. Se guiden [utforska XDM-resurser](../../../../xdm/ui/explore.md) för mer information.
+>Du kan använda arbetsytans sök- och filtreringsfunktioner för att enklare hitta ditt schema. Se guiden på [utforska XDM-resurser](../../../../xdm/ui/explore.md) för mer information.
 
 The [!DNL Schema Editor] visas med schemats struktur på arbetsytan. Välj till vänster på arbetsytan **[!UICONTROL Add]** under **[!UICONTROL Field groups]** -avsnitt.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-field-group.png)
 
-The **[!UICONTROL Add field group]** visas. Här väljer du **[!UICONTROL Consent and Preference Details]** från listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen.
+The **[!UICONTROL Add field group]** visas. Välj **[!UICONTROL Consent and Preference Details]** från listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-group-dialog.png)
 
-Leta reda på **[!UICONTROL IdentityMap]** fältgrupp från listan och markera den också. När båda fältgrupperna är listade i den högra listen väljer du **[!UICONTROL Add field groups]**.
+Gå till **[!UICONTROL IdentityMap]** fältgrupp från listan och markera den också. När båda fältgrupperna visas i den högra listen väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/identitymap.png)
 
@@ -133,7 +133,7 @@ Om det schema du redigerade används av [!UICONTROL Profile Dataset] som anges i
 
 När du har skapat ett schema med medgivandefält måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas medgivandedata. Den här datauppsättningen måste aktiveras för [!DNL Real-Time Customer Profile].
 
-Börja genom att välja **[!UICONTROL Datasets]** i den vänstra navigeringen väljer du **[!UICONTROL Create dataset]** i det övre högra hörnet.
+Börja genom att välja **[!UICONTROL Datasets]** i den vänstra navigeringen väljer du **[!UICONTROL Create dataset]** längst upp till höger.
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/create-dataset.png)
 

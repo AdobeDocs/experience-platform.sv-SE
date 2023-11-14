@@ -5,7 +5,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b71fc922-7722-4279-8fc6-e5d7735e1ebb
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '499'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ Mer information om hur du styr åtkomst för [!DNL Kinesis] dataströmmar, se f�
 
 [!DNL Kinesis] har stöd för följande iteratortyper så att du kan ange ordningen för hur data läses:
 
-| Iteratortyp | Beskrivning |
+| Iterator-typ | Beskrivning |
 | ------------- | ----------- |
 | `AT_SEQUENCE_NUMBER` | Data läses från en position som identifieras av ett visst sekvensnummer. |
 | `AFTER_SEQUENCE_NUMBER` | Data läses med början efter en position som identifieras av ett visst sekvensnummer. |

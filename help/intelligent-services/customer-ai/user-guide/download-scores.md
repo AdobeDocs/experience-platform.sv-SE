@@ -166,7 +166,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller en `_links` -objekt. I
 }
 ```
 
-## Hämta filer {#retrieving-your-files}
+## Hämta dina filer {#retrieving-your-files}
 
 Använda `href` om du anger värdet som du fick i föregående steg som ett API-anrop, gör en ny GET-förfrågan för att hämta din filkatalog.
 
@@ -192,7 +192,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 **Svar**
 
-Svaret innehåller en datamatris som kan ha en enda post eller en lista med filer som tillhör den katalogen. Exemplet nedan innehåller en lista med filer och har komprimerats för läsbarhet. I det här fallet måste du följa URL:en för varje fil för att kunna komma åt filen.
+Svaret innehåller en datamatris som kan ha en enda post, eller en lista med filer som tillhör den katalogen. Exemplet nedan innehåller en lista med filer och har komprimerats för läsbarhet. I det här fallet måste du följa URL:en för varje fil för att kunna komma åt filen.
 
 ```json
 {
@@ -239,7 +239,7 @@ Svaret innehåller en datamatris som kan ha en enda post eller en lista med file
 
 Kopiera `href` värde för alla filobjekt i `data` och gå sedan vidare till nästa steg.
 
-## Hämta fildata
+## Ladda ned fildata
 
 Om du vill hämta fildata skickar du en GET till `"href"` värde som du kopierade i föregående steg [hämta filer](#retrieving-your-files).
 
@@ -281,7 +281,7 @@ Svaret hämtar filen som du begärde i din aktuella katalog. I det här exemplet
 
 ## Hämta ett segment som konfigurerats med kundens AI {#segment}
 
-Ett annat sätt att ladda ned poängdata är att exportera målgruppen till en datauppsättning. När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är &quot;SUCCEEDED&quot;), kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras. Mer information om segmentering finns på [segmenteringsöversikt](../../../segmentation/home.md).
+Ett annat sätt att ladda ned poängdata är att exportera målgruppen till en datauppsättning. När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras. Mer information om segmentering finns på [segmenteringsöversikt](../../../segmentation/home.md).
 
 >[!IMPORTANT]
 >

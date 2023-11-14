@@ -14,7 +14,7 @@ ht-degree: 1%
 
 När du utvecklar en segmentdefinition kan du använda verktygen för uppskattning och förhandsgranskning i Adobe Experience Platform för att se information på sammanfattningsnivå för att se till att du isolerar den målgrupp du förväntar dig.
 
-* **Förhandsvisningar** tillhandahåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
+* **Förhandsgranskningar** tillhandahåller sidnumrerade listor med kvalificeringsprofiler för en segmentdefinition, så att du kan jämföra resultaten med vad du förväntar dig.
 
 * **Uppskattningar** tillhandahålla statistisk information om en segmentdefinition, t.ex. den förväntade målgruppsstorleken, konfidensintervall och felstandardavvikelse.
 
@@ -24,7 +24,7 @@ När du utvecklar en segmentdefinition kan du använda verktygen för uppskattni
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hur uppskattningar genereras
 

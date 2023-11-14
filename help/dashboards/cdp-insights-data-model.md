@@ -361,7 +361,7 @@ SELECT Sum(overlap_col1) overlap_col1,
 
 ### Överlappa namnutrymme efter målgruppsmodell
 
-Namnutrymmet för överlappning efter målgruppsmodell består av följande datauppsättningar:
+Namnutrymmet för överlappning efter målgruppsmodell består av följande datamängder:
 
 - `adwh_dim_date`
 - `adwh_dim_overlap_namespaces`

@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform har stöd för inhämtning av data från ett analysprogram från tredje part. Stöd för analysleverantörer innefattar [!DNL Mixpanel].
+Experience Platform har stöd för inmatning av data från ett analysprogram från tredje part. Stöd för analysleverantörer innefattar [!DNL Mixpanel].
 
-[[!DNL Mixpanel]](https://www.mixpanel.com) är ett produktanalysverktyg som gör det möjligt att samla in data om hur användarna interagerar med en digital produkt. Med Mixpanel kan du analysera produktdata med enkla, interaktiva rapporter som gör att du kan fråga och visualisera data med bara några klick.
+[[!DNL Mixpanel]](https://www.mixpanel.com) är ett verktyg för produktanalys som gör det möjligt att samla in data om hur användarna interagerar med en digital produkt. Med Mixpanel kan du analysera produktdata med enkla, interaktiva rapporter som gör att du kan fråga och visualisera data med bara några klick.
 
 Källor utnyttjar [Export-API för Mixpanel-händelse > Hämta](https://developer.mixpanel.com/reference/raw-event-export) för att ladda ned händelsedata när de tas emot och lagras i [!DNL Mixpanel], tillsammans med alla händelseegenskaper (inklusive `distinct_id`) och den exakta tidsstämpeln som händelsen skickades till Experience Platform. I Mixpanel används bearer-tokens som en autentiseringsmekanism för att kommunicera med API:t för händelsemport i Mixpanel.
 
@@ -28,7 +28,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 I det här avsnittet beskrivs nödvändiga steg för att slutföra autentiseringen av ditt konto och för att ta med din [!DNL Mixpanel] data till plattformen.
 
-För att skapa en [!DNL Mixpanel] källanslutning och dataflöde måste först ha ett giltigt [!DNL Mixpanel] konto. Om du inte har en giltig [!DNL Mixpanel] konto, se [Delpanelsregister](https://mixpanel.com/register/) sida för att skapa ditt konto.
+För att skapa en [!DNL Mixpanel] källanslutning och dataflöde måste du först ha ett giltigt [!DNL Mixpanel] konto. Om du inte har en giltig [!DNL Mixpanel] konto, se [Delpanelsregister](https://mixpanel.com/register/) sida för att skapa ditt konto.
 
 När du har skapat en [!DNL Mixpanel] konto, navigera till [!DNL Project Details] i [!DNL Project Seettings] sidan på [!DNL Mixpanel] Gränssnitt för att hämta ditt projekt-ID och konfigurera din tidszon.
 

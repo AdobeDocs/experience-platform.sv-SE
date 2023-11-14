@@ -110,7 +110,7 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som är associerat med [!DNL Generic REST API]. Detta fasta ID är: `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
 | `auth.specName` | Autentiseringstypen som du använder för att autentisera källan till plattformen. |
-| `auth.params.host` | Den rot-URL som används för att ansluta till din [!DNL Generic REST API] källa. |
+| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL Generic REST API] källa. |
 | `auth.params.accessToken` | Motsvarande åtkomsttoken som används för att autentisera källan. Detta krävs för OAuth-baserad autentisering. |
 
 **Svar**
@@ -170,9 +170,9 @@ curl -X POST \
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som är associerat med [!DNL Generic REST API]. Detta fasta ID är: `4e98f16f-87d6-4ef0-bdc6-7a2b0fe76e62`. |
 | `auth.specName` | Autentiseringstypen som du använder för att ansluta källan till plattformen. |
-| `auth.params.host` | Den rot-URL som används för att ansluta till din [!DNL Generic REST API] källa. |
+| `auth.params.host` | Den rot-URL som används för att ansluta till [!DNL Generic REST API] källa. |
 | `auth.params.username` | Användarnamnet som motsvarar ditt [!DNL Generic REST API] källa. Detta krävs för grundläggande autentisering. |
-| `auth.params.password` | Lösenordet som motsvarar [!DNL Generic REST API] källa. Detta krävs för grundläggande autentisering. |
+| `auth.params.password` | Lösenordet som motsvarar ditt [!DNL Generic REST API] källa. Detta krävs för grundläggande autentisering. |
 
 **Svar**
 

@@ -21,7 +21,7 @@ Innan du fortsätter med det här dokumentet bör du ha god förståelse för [F
 
 ## Ordna data i frågetjänsten
 
-I följande exempel visas vilka konstruktioner som är tillgängliga via Adobe Experience Platform Query Service för att logiskt organisera dina data med hjälp av standardsyntaxen för SQL. Du bör börja med att skapa en databas som fungerar som en behållare för dina datapunkter. En databas kan innehålla ett eller flera scheman, och varje schema kan sedan ha en eller flera referenser till en dataresurs (datauppsättningar, vyer, tillfälliga tabeller osv.). Referenserna innehåller relationer eller associationer mellan datauppsättningarna.
+I följande exempel visas vilka konstruktioner som är tillgängliga via Adobe Experience Platform Query Service för att logiskt organisera dina data med hjälp av standardsyntaxen för SQL. Du bör börja med att skapa en databas som fungerar som en behållare för dina datapunkter. En databas kan innehålla ett eller flera scheman, och varje schema kan sedan ha en eller flera referenser till en dataresurs (datauppsättningar, vyer, tillfälliga tabeller osv.). Referenserna innehåller alla relationer eller associationer mellan datauppsättningarna.
 
 Se [Användarhandbok för Frågeredigeraren](../ui/user-guide.md) om du vill ha detaljerad vägledning om hur du använder gränssnittet för frågetjänsten för att skapa SQL-frågor.
 

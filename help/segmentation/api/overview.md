@@ -11,11 +11,11 @@ ht-degree: 2%
 
 # API-guide för segmenteringstjänst
 
-Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa målgrupper med hjälp av segmentdefinitioner eller andra källor i Adobe Experience Platform från er [!DNL Real-Time Customer Profile] data.
+Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa målgrupper med hjälp av segmentdefinitioner eller andra källor i Adobe Experience Platform från [!DNL Real-Time Customer Profile] data.
 
 The [!DNL Segmentation Service] API har flera slutpunkter som gör att du kan hantera din segmentering programmatiskt i [!DNL Experience Platform]. I det här översiktsdokumentet finns introduktioner på hög nivå för var och en av dessa slutpunkter samt länkar till tillhörande slutpunktsguider för mer information. Innan du läser de enskilda slutpunktsstödlinjerna, se [komma igång-guide](./getting-started.md) om du vill ha viktig information om obligatoriska rubriker, läsa exempel-API-anrop med mera.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder, se [API-referens för segmenteringstjänst](https://www.adobe.io/experience-platform-apis/references/segmentation/).
+Se [API-referens för segmenteringstjänst](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
 ## Målgrupper
 

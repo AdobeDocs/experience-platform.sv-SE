@@ -23,7 +23,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig Google Ads-anslutning kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/advertising.md)
@@ -35,7 +35,7 @@ För att få tillgång till din Google Ads-kontoplattform måste du ange följan
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | Kund-ID för kund | Klientens kund-ID är det kontonummer som motsvarar det Google Ads-klientkonto som du vill hantera med API:t för Google Ads. Detta ID följer mallen för `123-456-7890`. |
-| ID för inloggningskund | Kund-ID för inloggning är det kontonummer som motsvarar ditt Google Ads Manager-konto och används för att hämta rapportdata från en viss kund. Mer information om användar-ID för inloggning finns i [API-dokumentation för Google Ads](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
+| ID för inloggningskund | Kund-ID för inloggning är det kontonummer som motsvarar ditt Google Ads Manager-konto och används för att hämta rapportdata från en viss kund. Mer information om användar-ID för inloggningskund finns i [API-dokumentation för Google Ads](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
 | Utvecklartoken | Med utvecklartoken får du tillgång till Google Ads API. Du kan använda samma utvecklartoken för att göra förfrågningar mot alla dina Google Ads-konton. Hämta din utvecklartoken från [logga in på ditt chefskonto](https://ads.google.com/home/tools/manager-accounts/) och sedan navigera till sidan API Center. |
 | Uppdatera token | Uppdateringstoken är en del av [!DNL OAuth2] autentisering. Med denna token kan du återskapa dina åtkomsttoken när de har upphört att gälla. |
 | Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av [!DNL OAuth2] autentisering. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för Google. |

@@ -11,7 +11,7 @@ ht-degree: 3%
 
 # Behörighetshantering för datainsamling i Experience Platform
 
-[Datainsamling i Adobe Experience Platform](./home.md) består av flera olika tekniker som samarbetar för att samla in och överföra data. Åtkomsten till dessa tekniker regleras genom detaljerade rollbaserade behörigheter i Adobe Admin Console.
+[Datainsamling i Adobe Experience Platform](./home.md) består av flera olika tekniker som arbetar tillsammans för att samla in och överföra data. Åtkomsten till dessa tekniker regleras genom detaljerade rollbaserade behörigheter i Adobe Admin Console.
 
 I den här handboken visas hur du hanterar behörigheter för datainsamlingsfunktioner.
 
@@ -25,7 +25,7 @@ I den här handboken förutsätts det att du är bekant med grundläggande produ
 
 Tillstånd för datainsamling ges via två produktbeteckningar i Admin Console: **Adobe Experience Platform** och **Adobe Experience Platform Data Collection**. I avsnitten nedan beskrivs de behörigheter som ges för respektive produkt tillsammans med beskrivningar av de specifika funktioner som de ger tillgång till.
 
-### Adobe Experience Platform permissions
+### Adobe Experience Platform-behörigheter
 
 Behörigheter under Adobe Experience Platform innefattar åtkomst till datastreams, identiteter, scheman och sandlådor. Anvisningar om hur du konfigurerar Adobe Experience Platform-behörigheter finns i [användarhandbok för åtkomstkontroll](../access-control/ui/overview.md).
 
@@ -49,7 +49,7 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 | --- | --- | --- |
 | Plattformar | Webb | Ger åtkomst till [webbegenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
 | Plattformar | Mobil | Ger åtkomst till [mobila egenskaper](../tags/ui/administration/companies-and-properties.md) i kombination med andra egenskapsrättigheter. |
-| Plattformar | Edge | Ger åtkomst till [Kantegenskaper för händelsevidarebefordring](../tags/ui/event-forwarding/getting-started.md) i kombination med andra egenskapsrättigheter. |
+| Plattformar | Kant | Ger åtkomst till [Kantegenskaper för händelsevidarebefordring](../tags/ui/event-forwarding/getting-started.md) i kombination med andra egenskapsrättigheter. |
 | Egenskaper | (Ej tillämpligt) | Beroende på vilka egenskaper som har skapats under din organisation kan du styra åtkomsten till var och en av dem via den här behörighetskategorin i Admin Console.<br><br>En användares tilldelade egenskapsrättigheter gäller bara för de egenskaper som de har beviljats åtkomst till via den här behörighetskategorin. |
 | Egendomsrättigheter | Godkänn | Ger möjlighet att godkänna ett biblioteksbygge som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
 | Egendomsrättigheter | Utveckla | Ger möjlighet att utveckla ett bibliotek som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
@@ -72,7 +72,7 @@ Tillstånd för datainsamling hanteras med två produktbeteckningar: **Adobe Exp
 
 Se underavsnitten nedan för steg om hur du hanterar behörigheter för respektive produkt i Admin Console:
 
-* [Adobe Experience Platform permissions](#manage-platform)
+* [Adobe Experience Platform-behörigheter](#manage-platform)
 * [Behörigheter för Adobe Experience Platform Data Collection](#manage-collection)
 
 ### Hantera behörigheter i Adobe Experience Platform {#manage-platform}
@@ -125,7 +125,7 @@ Produktprofilvyn visas igen med de tillagda behörigheterna.
 
 #### Tilldela användare till produktprofilen {#assign-users}
 
-Om du vill tilldela användare till produktprofilen (och ge dem profilens konfigurerade behörigheter) väljer du **[!UICONTROL Users]** tabbtecken, följt av **[!UICONTROL Add user]**.
+Om du vill tilldela användare till produktprofilen (och ge dem profilens konfigurerade behörigheter) väljer du **[!UICONTROL Users]** tabbtangenten, följt av **[!UICONTROL Add user]**.
 
 ![Bild som visar användarfliken för en produktprofil i Admin Console](./images/permissions/manage-users.png)
 

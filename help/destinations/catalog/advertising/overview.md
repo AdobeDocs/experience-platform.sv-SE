@@ -26,7 +26,7 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 
 ### Anslutningar
 
-* [Adobe Advertising Cloud-anslutning](adobe-advertising-cloud-connection.md)
+* [Adobe Advertising Cloud](adobe-advertising-cloud-connection.md)
 * [(Beta) Amazon Ads-anslutning](amazon-ads.md)
 * [(Beta) Kriterieanslutning](criteo.md)
 * [Google Display &amp; Video 360-anslutning](google-dv360.md)
@@ -47,15 +47,15 @@ Information om skillnaden mellan anslutningar och tillägg finns i [Anslutningar
 * [Tillägget Awin Advertising Conversion Tag](awin-conversiontag.md)
 * [Awin Advertising Mastertag-tillägg](awin-mastertag.md)
 * [Bing Ads Universal Event Tracking-tillägg](bing-ads.md)
-* [Filialtillägg](branch.md)
+* [Förgreningstillägg](branch.md)
 * [Dubbelklicka på FlowLight-tillägg](doubleclick-floodlight.md)
 * [Facebook Pixel-tillägg](facebook-pixel.md)
 * [Flashtalk OneTag-tillägg](flashtalking.md)
 * [Google Ads-tillägg](google-ads-extension.md)
 * [Google Gtag-tillägg](gtag-advertising.md)
-* [linkedIn Insight Tag Extension](linkedin.md)
+* [LinkedIn Insight Tag Extension](linkedin.md)
 * [Pinterest Conversion Tracking-tillägg](pinterest-extension.md)
-* [Tillägget twitter Universal Web Site Tag](twitter-uwt.md)
+* [Tillägget Twitter Universal Website Tag](twitter-uwt.md)
 
 ## Anslut till ett nytt annonsmål {#connect-destination}
 

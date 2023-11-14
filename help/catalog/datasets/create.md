@@ -23,7 +23,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API:er.
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API.
 
 ### Läser exempel-API-anrop
 
@@ -45,7 +45,7 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 >
 >Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare `Content-Type: application/json` header. För JSON+PATCH-begäranden gäller följande: `Content-Type` bör `application/json-patch+json`.
+Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare `Content-Type: application/json` header. För JSON+PATCH-begäranden visas `Content-Type` bör `application/json-patch+json`.
 
 ## Självstudiekurs
 
@@ -211,7 +211,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->I den här självstudiekursen används [Apache Parquet](https://parquet.apache.org/docs/) filformat för alla dess exempel. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md)
+>I den här självstudiekursen används [Apache Parquet](https://parquet.apache.org/docs/) för alla dess exempel. Ett exempel som använder JSON-filformatet finns i [Utvecklarhandbok för batchintag](../../ingestion/batch-ingestion/api-overview.md)
 
 **Svar**
 
@@ -336,7 +336,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{BATCH_ID}` | The `id` av gruppen du markerar som slutförd. |
+| `{BATCH_ID}` | The `id` av gruppen som du markerar som slutförd. |
 
 **Begäran**
 
@@ -456,7 +456,7 @@ Ett negativt svar returnerar ett objekt med värdet `"failed"` i `"status"` och 
 >
 >Ett rekommenderat avsökningsintervall är två minuter.
 
-## Läs data från datauppsättningen
+## Läsa data från datauppsättningen
 
 Med batch-ID kan du använda API:t för dataåtkomst för att läsa tillbaka och verifiera alla filer som överförts till gruppen. Svaret returnerar en array som innehåller en lista med fil-ID:n, där var och en refererar till en fil i gruppen.
 

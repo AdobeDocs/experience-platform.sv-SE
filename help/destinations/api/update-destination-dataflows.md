@@ -22,7 +22,7 @@ Den här självstudiekursen kräver att du har ett giltigt flödes-ID. Om du int
 
 >[!NOTE]
 >
-> Villkoren *flöde* och *dataflöde* används omväxlande i den här självstudiekursen. I den här självstudiekursen har de samma betydelse.
+> Villkoren *flöde* och *dataflöde* används omväxlande i den här kursen. I den här självstudiekursen har de samma betydelse.
 
 Den här självstudiekursen kräver även att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -385,7 +385,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. |
 | `path` | Definierar den del av flödet som ska uppdateras. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 
@@ -494,7 +494,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till en målgrupp i ett dataflöde använder du `add` operation. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Använd kommandot `add` operation. |
 | `path` | Definierar den del av flödet som ska uppdateras. När du lägger till en målgrupp i ett dataflöde använder du den sökväg som anges i exemplet. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |
 | `id` | Ange ID:t för målgruppen som du lägger till i måldataflödet. |
@@ -502,7 +502,7 @@ curl -X PATCH \
 | `filenameTemplate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Det här fältet avgör filnamnsformatet för de filer som exporteras till ditt mål. <br> Följande alternativ är tillgängliga: <br> <ul><li>`%DESTINATION_NAME%`: Obligatoriskt. De exporterade filerna innehåller målnamnet.</li><li>`%SEGMENT_ID%`: Obligatoriskt. De exporterade filerna innehåller ID:t för den exporterade publiken.</li><li>`%SEGMENT_NAME%`: **(Valfritt)**. De exporterade filerna innehåller namnet på den exporterade publiken.</li><li>`DATETIME(YYYYMMdd_HHmmss)` eller `%TIMESTAMP%`: **(Valfritt)**. Välj något av dessa två alternativ för filerna så att de innehåller den tid då de genereras av Experience Platform.</li><li>`custom-text`: **(Valfritt)**. Ersätt den här platshållaren med eventuell egen text som du vill lägga till i slutet av filnamnen.</li></ul> <br> Mer information om hur du konfigurerar filnamn finns i [konfigurera filnamn](/help/destinations/ui/activate-batch-profile-destinations.md#file-names) i satskörningsguiden. |
 | `exportMode` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj `"DAILY_FULL_EXPORT"` eller `"FIRST_FULL_THEN_INCREMENTAL"`. Mer information om de två alternativen finns i [exportera fullständiga filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) och [exportera inkrementella filer](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) i satskörningssjälvstudiekursen. |
 | `startDate` | Välj det datum då målgruppen ska börja exportera profiler till ditt mål. |
-| `frequency` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge kan du välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge kan du välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
+| `frequency` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. <br> <ul><li>För `"DAILY_FULL_EXPORT"` exportläge, du kan välja `ONCE` eller `DAILY`.</li><li>För `"FIRST_FULL_THEN_INCREMENTAL"` exportläge, du kan välja `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
 | `triggerType` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du väljer `"DAILY_FULL_EXPORT"` i `frequency` väljare. <br> Obligatoriskt. <br> <ul><li>Välj `"AFTER_SEGMENT_EVAL"` så att aktiveringsjobbet körs omedelbart när det dagliga gruppsegmenteringsjobbet för plattformen har slutförts. Detta garanterar att de senaste profilerna exporteras till ditt mål när aktiveringsjobbet körs.</li><li>Välj `"SCHEDULED"` för att få aktiveringsjobbet att köras på en fast tid. Detta säkerställer att profildata exporteras vid samma tidpunkt varje dag, men de profiler du exporterar kanske inte är de mest aktuella, beroende på om gruppsegmenteringsjobbet har slutförts innan aktiveringsjobbet startar. När du väljer det här alternativet måste du även lägga till en `startTime` ange vid vilken tidpunkt i UTC den dagliga exporten ska ske.</li></ul> |
 | `endDate` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Ej tillämpligt vid val `"exportMode":"DAILY_FULL_EXPORT"` och `"frequency":"ONCE"`. <br> Anger det datum då målgruppsmedlemmar slutar att exporteras till målet. |
 | `startTime` | För *batchdestinationer* endast. Det här fältet är endast obligatoriskt när du lägger till en målgrupp i ett dataflöde i exportmål för batchfiler som Amazon S3, SFTP eller Azure Blob. <br> Obligatoriskt. Välj den tidpunkt då filer som innehåller medlemmar av målgruppen ska skapas och exporteras till ditt mål. |
@@ -564,7 +564,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du `remove` operation. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du `remove` operation. |
 | `path` | Anger vilken befintlig målgrupp som ska tas bort från måldataflödet, baserat på indexvärdet för målgruppsväljaren. Om du vill hämta ordningen för målgrupper i ett dataflöde ska du ringa ett GET-samtal till `/flows` slutpunkt och inspektera `transformations.segmentSelectors` -egenskap. Om du vill ta bort den första målgruppen i dataflödet använder du `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
 
 
@@ -784,7 +784,7 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till ett profilattribut i ett dataflöde använder du `add` operation. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill lägga till ett profilattribut i ett dataflöde använder du `add` operation. |
 | `path` | Definierar den del av flödet som ska uppdateras. När du lägger till ett profilattribut i ett dataflöde använder du sökvägen som anges i exemplet. |
 | `value.path` | Värdet på profilattributet som du lägger till i dataflödet. |
 
@@ -838,8 +838,8 @@ curl -X PATCH \
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `op` | Åtgärdsanropet som används för att definiera åtgärden som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du `remove` operation. |
-| `path` | Anger vilket befintligt profilattribut som ska tas bort från måldataflödet, baserat på indexvärdet för målväljaren. Om du vill hämta profilattributens ordning i ett dataflöde, ska du göra ett GET-anrop till `/flows` slutpunkt och inspektera `transformations.profileSelectors` -egenskap. Om du vill ta bort den första målgruppen i dataflödet använder du `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
+| `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du `remove` operation. |
+| `path` | Anger vilket befintligt profilattribut som ska tas bort från måldataflödet, baserat på indexvärdet för målväljaren. Om du vill hämta profilattributens ordning i ett dataflöde, ska du ringa GET till `/flows` slutpunkt och inspektera `transformations.profileSelectors` -egenskap. Om du vill ta bort den första målgruppen i dataflödet använder du `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
 
 
 **Svar**
@@ -855,8 +855,8 @@ Ett lyckat svar returnerar ditt flödes-ID och en uppdaterad tagg. Du kan verifi
 
 ## API-felhantering {#api-error-handling}
 
-API-slutpunkterna i den här självstudien följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
+API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](/help/landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](/help/landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen för mer information om hur du tolkar felsvar.
 
 ## Nästa steg {#next-steps}
 
-Genom att följa den här självstudiekursen har du lärt dig hur du uppdaterar olika komponenter i ett måldataflöde, som att lägga till eller ta bort målgrupper eller profilattribut med [!DNL Flow Service] API. Mer information om destinationer finns i [destinationer, översikt](../home.md).
+Genom att följa den här självstudien har du lärt dig hur du uppdaterar olika komponenter i ett måldataflöde, som att lägga till eller ta bort målgrupper eller profilattribut med [!DNL Flow Service] API. Mer information om destinationer finns i [destinationer, översikt](../home.md).

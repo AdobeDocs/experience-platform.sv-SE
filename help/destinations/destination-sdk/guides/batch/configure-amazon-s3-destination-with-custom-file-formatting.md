@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-På den här sidan beskrivs hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassad [filformateringsalternativ](configure-file-formatting-options.md) och en egen [filnamnskonfiguration](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
+På den här sidan beskrivs hur du använder Destination SDK för att konfigurera ett Amazon S3-mål med anpassad [filformateringsalternativ](configure-file-formatting-options.md) och en [filnamnskonfiguration](../../functionality/destination-configuration/batch-configuration.md#file-name-configuration).
 
 På den här sidan visas alla konfigurationsalternativ som är tillgängliga för Amazon S3-destinationer. Du kan redigera konfigurationerna som visas i stegen nedan eller ta bort vissa delar av konfigurationerna efter behov.
 
@@ -21,7 +21,7 @@ Detaljerade beskrivningar av parametrarna nedan finns i [konfigurationsalternati
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen nedan ska du läsa [Komma igång med Destination SDK](../../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
+Innan du går vidare till stegen som beskrivs nedan, läs [Komma igång med Destination SDK](../../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
 
 ## Steg 1: Skapa en server- och filkonfiguration {#create-server-file-configuration}
 

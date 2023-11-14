@@ -16,7 +16,7 @@ Följande enhetsrelationsdiagram representerar en standardiserad datamodell för
 
 >[!NOTE]
 >
->Den rekommenderade referensmetoden är en rekommendation för hur du ska modellera dina data för det här användningsexemplet. Om du vill använda den här datamodellen i Platform måste du själv skapa de rekommenderade scheman och deras relationer. Visa guiderna för hantering [scheman](../../ui/resources/schemas.md) och [relationer](../../tutorials/relationship-ui.md) i användargränssnittet om du vill ha mer information.
+>Den rekommenderade referensmetoden är en rekommendation för hur du ska modellera dina data för det här användningsexemplet. Om du vill använda den här datamodellen i Platform måste du själv skapa de rekommenderade scheman och deras relationer. Visa guiderna för hantering [scheman](../../ui/resources/schemas.md) och [relationer](../../tutorials/relationship-ui.md) i användargränssnittet för mer information.
 
 Använd följande förklaring för att tolka denna ERD:
 
@@ -30,7 +30,7 @@ Använd följande förklaring för att tolka denna ERD:
 
 >[!NOTE]
 >
->Händelseentiteten i Experience innehåller fältet &quot;_ID&quot;, som representerar den unika identifieraren (`_id`)-attribut från klassen XDM ExperienceEvent. Se referensdokumentet på [XDM ExperienceEvent](../../classes/experienceevent.md) om du vill ha mer information om vad som förväntas för det här värdet.
+>Händelseentiteten i Experience innehåller fältet &quot;_ID&quot;, som representerar den unika identifieraren (`_id`)-attribut från klassen XDM ExperienceEvent. Se referensdokumentet på [XDM ExperienceEvent](../../classes/experienceevent.md) för mer information om vad som förväntas för det här värdet.
 
 ## [!UICONTROL Retail] användningsfall
 
@@ -43,6 +43,6 @@ Följande tabell visar de rekommenderade klasserna och schemafältgrupperna för
 | Analysera multitouch-attribuering för att förbättra marknadsföringens effektivitet. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Information om kampanjmarknadsföring](../../field-groups/event/campaign-marketing-details.md)</li><li>[Kanalinformation](../../field-groups/event/channel-details.md)</li><li>[Handelsinformation](../../field-groups/event/commerce-details.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li></ul></li></ul> |
 | Förbättra e-postrelevansen genom förbättrad segmentering mellan män och kvinnor. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Handelsinformation](../../field-groups/event/commerce-details.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li></ul></li><li>**[Produkt](../../classes/product.md)**:<ul><li>[Produktkatalog](../../field-groups/product/product-catalog.md)</li><li>[Produktkategori](../../field-groups/product/product-category.md)</li></ul></li></ul> |
 | Öka lojalitetsdata (partnerdata) för att öka relevant produktinformation över webben, e-post och digitala marknadsföringskanaler. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Webbinformation](../../field-groups/event/web-details.md)</li></ul></li><li>**[Individuell XDM-profil](../../classes/individual-profile.md)**:<ul><li>[Demografiska detaljer](../../field-groups/profile/demographic-details.md)</li><li>[Förmånsinformation](../../field-groups/profile/loyalty-details.md)</li></ul></li><li>**[Produkt](../../classes/product.md)**:<ul><li>[Produktkatalog](../../field-groups/product/product-catalog.md)</li><li>[Produktkategori](../../field-groups/product/product-category.md)</li></ul></li></ul> |
-| Återmarknadsför övergivna kundvagnar via automatiserade och personaliserade e-postmeddelanden. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Handelsinformation](../../field-groups/event/commerce-details.md)</li><li>[Webbinformation](../../field-groups/event/web-details.md)</li></ul></li><li>**[Produkt](../../classes/product.md)**:<ul><li>[Produktkatalog](../../field-groups/product/product-catalog.md)</li><li>[Produktkategori](../../field-groups/product/product-category.md)</li></ul></li></ul> |
+| Återmarknadsför övergivna varukorgar via automatiserade och personaliserade e-postmeddelanden. | <ul><li>**[XDM ExperienceEvent](../../classes/experienceevent.md)**:<ul><li>[Handelsinformation](../../field-groups/event/commerce-details.md)</li><li>[Webbinformation](../../field-groups/event/web-details.md)</li></ul></li><li>**[Produkt](../../classes/product.md)**:<ul><li>[Produktkatalog](../../field-groups/product/product-catalog.md)</li><li>[Produktkategori](../../field-groups/product/product-category.md)</li></ul></li></ul> |
 
 {style="table-layout:auto"}

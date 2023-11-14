@@ -16,7 +16,7 @@ Scheman är ett verktyg som kan användas för att automatiskt köra batchsegmen
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med scheman {#retrieve-list}
 
@@ -35,7 +35,7 @@ GET /config/schedules?limit={LIMIT}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{START}` | Anger vilken sida förskjutningen ska börja från. Som standard är det här värdet 0. |
-| `{LIMIT}` | Anger antalet returnerade scheman. Som standard är det här värdet 100. |
+| `{LIMIT}` | Anger antalet returnerade scheman. Som standard är värdet 100. |
 
 **Begäran**
 
@@ -234,9 +234,9 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om det ang
 
 ## Uppdatera information för ett specifikt schema {#update}
 
-Du kan uppdatera ett specifikt schema genom att göra en PATCH-förfrågan till `/config/schedules` slutpunkt och ange ID för det schema som du försöker uppdatera i sökvägen till begäran.
+Du kan uppdatera ett specifikt schema genom att göra en PATCH-förfrågan till `/config/schedules` slutpunkten och ange ID:t för det schema som du försöker uppdatera i sökvägen för begäran.
 
-I PATCH-begäran kan du uppdatera antingen [läge](#update-state) eller [cron-schema](#update-schedule) för ett individuellt schema.
+I PATCH kan du uppdatera antingen [läge](#update-state) eller [kreditschema](#update-schedule) för ett individuellt schema.
 
 ### Uppdatera schematillstånd {#update-state}
 
@@ -272,7 +272,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/config/schedules/4e538382-
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till &quot;/state&quot;. |
+| `path` | Sökvägen för det värde som du vill laga. I det här fallet måste du ange värdet för `path` till /state. |
 | `value` | Det uppdaterade värdet för schemats tillstånd. Värdet kan antingen anges som aktivt eller inaktivt för att aktivera eller inaktivera schemat. Observera att du **inte** inaktivera ett schema om organisationen har aktiverats för direktuppspelning. |
 
 **Svar**
@@ -364,7 +364,7 @@ Ett cron-uttryck är en sträng som består av 6 eller 7 fält. Uttrycket skulle
 
 I en cron-uttryckssträng representerar det första fältet sekunder, det andra representerar minuter, det tredje representerar timmar, det fjärde fältet representerar dag i månaden, det femte fältet representerar månad och det sjätte fältet representerar veckodag. Du kan också inkludera ett sjunde fält som representerar året.
 
-| Fältnamn | Obligatoriskt | Möjliga värden | Tillåtna specialtecken |
+| Fältnamn | Obligatoriskt | Möjliga värden | Specialtecken tillåts |
 | ---------- | -------- | --------------- | -------------------------- |
 | Sekunder | Ja | 0-59 | `, - * /` |
 | Minuter | Ja | 0-59 | `, - * /` |
@@ -376,7 +376,7 @@ I en cron-uttryckssträng representerar det första fältet sekunder, det andra 
 
 >[!NOTE]
 >
->Namnen på månaderna och veckodagarna är **not** skiftlägeskänslig. Därför `SUN` motsvarar att använda `sun`.
+>Namnen på månaderna och veckodagarna är **not** skiftlägeskänslig. Därför bör `SUN` motsvarar att använda `sun`.
 
 De specialtecken som tillåts har följande betydelse:
 
@@ -387,9 +387,9 @@ De specialtecken som tillåts har följande betydelse:
 | `-` | Det här värdet används för att ange **inkluderande** intervall för fältet. Om du till exempel placerar `9-15` i fältet timmar innebär detta att timmarna omfattar 9, 10, 11, 12, 13, 14 och 15. |
 | `,` | Det här värdet används för att ange ytterligare värden. Om du till exempel placerar `MON, FRI, SAT` veckodag innebär veckodag måndag, fredag och lördag. |
 | `/` | Det här värdet används för att ange steg. Värdet som placerats före `/` avgör varifrån det ökas, medan värdet placeras efter `/` avgör hur mycket det ökar med. Om du till exempel placerar `1/7` i minutfältet innebär det att minuterna skulle innehålla 1, 8, 15, 22, 29, 36, 43, 50 och 57. |
-| `L` | Det här värdet används för att ange `Last`och har en annan betydelse beroende på vilket fält det används av. Om den används med dagen i månadsfältet representerar den den sista dagen i månaden. Om den används med veckodagen i sig representerar den den sista veckodagen, som är lördag (`SAT`). Om den används med veckodagen i fältet tillsammans med ett annat värde representerar den sista dagen i den typen för månaden. Om du till exempel placerar `5L` på veckodagen **endast** inkluderar sista fredagen i månaden. |
+| `L` | Det här värdet används för att ange `Last`och har en annan betydelse beroende på vilket fält det används av. Om den används med dagen i månadsfältet representerar det den sista dagen i månaden. Om den används med veckodagen i sig representerar den den sista veckodagen, som är lördag (`SAT`). Om den används med veckodagen i fältet tillsammans med ett annat värde representerar den sista dagen i den typen för månaden. Om du till exempel placerar `5L` på veckodagen **endast** inkluderar sista fredagen i månaden. |
 | `W` | Det här värdet används för att ange närmaste veckodag till angiven dag. Om du till exempel placerar `18W` på dagen i månadsfältet, och den 18:e i den månaden var en lördag, skulle den på fredag utlösa den 17:e, som är den närmaste veckodagen. Om den 18:e månaden var en söndag skulle den utlösas måndag den 19:e, vilket är den närmaste veckodagen. Observera att om du skickar in `1W` på dagen i månadsfältet, och den närmast veckodagen skulle vara föregående månad, kommer händelsen fortfarande att utlösas på den närmaste veckodagen i **aktuell** månad.</br></br>Dessutom kan du kombinera `L` och `W` att skapa `LW`, vilket skulle ange den sista veckodagen i månaden. |
-| `#` | Det här värdet används för att ange veckodag n i månaden. Värdet som placerats före `#` representerar veckodagen, medan värdet placeras efter `#` anger vilken förekomst i månaden den är. Om du till exempel placerar `1#3`, utlöses händelsen den tredje söndagen i månaden. Observera att om du skickar in `X#5` och det inte finns någon femte förekomst av veckodagen den månaden, kommer händelsen **not** aktiveras. Om du till exempel placerar `1#5`, och det blir ingen femte söndag den månaden, **not** aktiveras. |
+| `#` | Det här värdet används för att ange den n:e dagen i veckan i en månad. Värdet som placerats före `#` representerar veckodagen, medan värdet placeras efter `#` anger vilken förekomst i månaden den är. Om du till exempel placerar `1#3`, utlöses händelsen den tredje söndagen i månaden. Observera att om du skickar in `X#5` och det inte finns någon femte förekomst av veckodagen den månaden, kommer händelsen **not** aktiveras. Om du till exempel placerar `1#5`, och det blir ingen femte söndag den månaden, **not** aktiveras. |
 
 ### Exempel
 
@@ -399,7 +399,7 @@ I följande tabell visas exempel på strängar för cron-uttryck och en förklar
 | ---------- | ----------- |
 | `0 0 13 * * ?` | Evenemanget utlöses klockan 12.00 varje dag. |
 | `0 30 9 * * ? 2022` | Evenemanget utlöses varje dag kl. 9.30 2022. |
-| `0 * 18 * * ?` | Evenemanget utlöses varje minut med början 18.00 och avslutning 18.59 varje dag. |
+| `0 * 18 * * ?` | Evenemanget utlöses varje minut, med början 18.00 och avslutning 18.59, varje dag. |
 | `0 0/10 17 * * ?` | Evenemanget utlöses var 10:e minut, med början 17:00 och avslutning 18:00, varje dag. |
 | `0 13,38 5 ? 6 WED` | Evenemanget utlöses kl. 5.13 och kl. 17.38 varje onsdag i juni. |
 | `0 30 12 ? * 4#3` | Evenemanget utlöses kl. 12.30 den tredje onsdagen varje månad. |

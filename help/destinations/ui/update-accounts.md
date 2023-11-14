@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som du har upprättat med olika mål. Se [Kontoöversikt](../ui/destinations-workspace.md#accounts) för all information du kan få på varje destinationskonto.
+The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som du har upprättat med olika mål. Se [Översikt över konton](../ui/destinations-workspace.md#accounts) för all information du kan få på varje destinationskonto.
 
 I den här självstudiekursen beskrivs stegen för att uppdatera information om destinationskonton med hjälp av användargränssnittet i Experience Platform.
 

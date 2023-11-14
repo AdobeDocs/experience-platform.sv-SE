@@ -12,7 +12,7 @@ ht-degree: 3%
 
 # Array-, list- och set-funktioner
 
-[!DNL Profile Query Language] (PQL) har funktioner som underlättar interaktion med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
+[!DNL Profile Query Language] (PQL) har funktioner som gör det enklare att interagera med arrayer, listor och strängar. Mer information om andra PQL-funktioner finns i [[!DNL Profile Query Language] översikt](./overview.md).
 
 ## I
 
@@ -238,7 +238,7 @@ The `topN` -funktionen används för att returnera den första `N` objekt i en a
 
 | Argument | Beskrivning |
 | --------- | ----------- |
-| `{ARRAY}` | Arrayen eller listan som ska sorteras. |
+| `{ARRAY}` | Den array eller lista som ska sorteras. |
 | `{VALUE}` | Den egenskap som arrayen eller listan ska sorteras i. |
 | `{AMOUNT}` | Antalet artiklar som ska returneras. |
 
@@ -250,7 +250,7 @@ Följande PQL-fråga returnerar de fem översta beställningarna med det högsta
 orders.topN(price, 5)
 ```
 
-## Sista `n` i array
+## Senaste `n` i array
 
 The `bottomN` -funktionen används för att returnera den sista `N` objekt i en array, när de sorteras i stigande ordning baserat på det givna numeriska uttrycket.
 
@@ -262,7 +262,7 @@ The `bottomN` -funktionen används för att returnera den sista `N` objekt i en 
 
 | Argument | Beskrivning |
 | --------- | ----------- | 
-| `{ARRAY}` | Arrayen eller listan som ska sorteras. |
+| `{ARRAY}` | Den array eller lista som ska sorteras. |
 | `{VALUE}` | Den egenskap som arrayen eller listan ska sorteras i. |
 | `{AMOUNT}` | Antalet artiklar som ska returneras. |
 
@@ -286,7 +286,7 @@ The `head` -funktionen används för att returnera det första objektet i arraye
 
 **Exempel**
 
-Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om `topN` finns i [först `n` i array](#first-n) -avsnitt.
+Följande PQL-fråga returnerar den första av de fem främsta beställningarna med det högsta priset. Mer information om `topN` -funktionen finns i [först `n` i array](#first-n) -avsnitt.
 
 ```sql
 orders.topN(price, 5).head()

@@ -20,7 +20,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Experience Platform stöder inmatning av data från en plattform för hantering av medgivanden och preferenser från tredje part. Stöd för att skapa samtycke och preferenser innefattar [!DNL OneTrust Integration].
+Experience Platform har stöd för inmatning av data från en plattform för hantering av samtycke och preferenser från tredje part. Stöd för att skapa samtycke och preferenser innefattar [!DNL OneTrust Integration].
 
 Dokumentationen nedan innehåller information om hur du ansluter [!DNL OneTrust Integration] till Plattform med API:er eller användargränssnittet:
 

@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Arbetsytan Destinationer {#destinations-workspace}
 
-I Adobe Experience Platform väljer du **[!UICONTROL Destinations]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsyta.
+I Adobe Experience Platform: **[!UICONTROL Destinations]** från det vänstra navigeringsfältet för att komma åt [!UICONTROL Destinations] arbetsyta.
 
 The [!UICONTROL Destinations] arbetsytan består av fem avsnitt, [!UICONTROL Overview], [!UICONTROL Catalog], [!UICONTROL Browse], [!UICONTROL Accounts]och [!UICONTROL System View]som beskrivs i avsnitten nedan.
 
@@ -24,7 +24,7 @@ The **[!UICONTROL Overview]** -fliken visar [!UICONTROL Destinations] kontrollpa
 
 >[!NOTE]
 >
->Om din organisation är ny i Experience Platform och ännu inte har några aktiva destinationer är [!UICONTROL Destinations] kontrollpanel och [!UICONTROL Overview] -fliken visas inte. Välj i stället [!UICONTROL Destinations] från vänster navigering visas [[!UICONTROL Catalog] tab](#catalog).
+>Om din organisation är ny i Experience Platform och ännu inte har några aktiva destinationer är [!UICONTROL Destinations] kontrollpanel och [!UICONTROL Overview] -fliken visas inte. I stället väljer du [!UICONTROL Destinations] från vänster navigering visas [[!UICONTROL Catalog] tab](#catalog).
 
 ![Fliken Översikt över kontrollpanelen Destinationer.](../../dashboards/images/destinations/dashboard-overview.png)
 
@@ -71,14 +71,14 @@ The **[!UICONTROL Accounts]** På -fliken visas information om anslutningar som 
 >
 > * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Aktivera kontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**/**[!UICONTROL Activate audiences]**/**[!UICONTROL Export datasets]**Kontroll för att exportera målgrupper eller datauppsättningar till det målet.
 > * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Redigera informationskontroll ](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL Edit details]**styra till [uppdatera](update-accounts.md) Information om ett befintligt destinationskonto.
-> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [delete](delete-destination-account.md) ett befintligt destinationskonto.
+> * Markera ellipsen (`...`) i [!UICONTROL Platform] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [delete](delete-destination-account.md) ett befintligt målkonto.
 
 ![Fliken Konton](../assets/ui/workspace/destination-account-options.png)
 
 | Element | Beskrivning |
 |---|---|
 | [!UICONTROL Platform] | Det mål som du har konfigurerat anslutningen för. |
-| [!UICONTROL Connection Type] | Representerar kontoanslutningstypen för din lagringsbucket eller destination. Beroende på målet är autentiseringsalternativen: <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller Azure Blob.</li><li>För reklamdestinationer i realtid: Server-till-server</li><li>För molnlagringsmål för Amazon S3: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li><li>OAuth 1- eller OAuth 2-autentisering</li><li>Autentisering av innehavartoken</li></ul> |
+| [!UICONTROL Connection Type] | Representerar kontoanslutningstypen för din lagringsbucket eller destination. Beroende på målet är autentiseringsalternativen: <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller Azure Blob.</li><li>För reklamdestinationer i realtid: server till server</li><li>För Amazon S3-molnlagringsmål: Åtkomstnyckel </li><li>För SFTP-molnlagringsmål: Grundläggande autentisering för SFTP</li><li>OAuth 1- eller OAuth 2-autentisering</li><li>Autentisering av innehavartoken</li></ul> |
 | [!UICONTROL Username] | Användarnamnet som du valde i dialogrutan [guide för anslutningsmål](../catalog/email-marketing/overview.md#connect-destination). |
 | [!UICONTROL Destinations] | Representerar antalet unika slutförda måldataflöden som är kopplade till grundläggande information som skapats för ett mål. |
 | [!UICONTROL Authorized] | Det datum då anslutningen till det här målet auktoriserades. |
@@ -93,7 +93,7 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 >
 > * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Aktivera målgruppskontroll ](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL Activate]**Kontroll för att exportera målgrupper eller datauppsättningar till det målet.
 > * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Ta bort kontroll ](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL Delete]**styra till [ta bort](delete-destinations.md) en befintlig anslutning till ett mål.
-> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Visa i övervakningskontroll ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**för att visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Visa i övervakningskontroll ](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL View in monitoring]**om du vill visa aktiveringsinformation för destinationen i [kontrollpanel](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
 > * Markera ellipsen (`...`) i [!UICONTROL Name] kolumn och använd ![Prenumerera på aviseringar ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL Subscribe to alerts]**för att prenumerera på aviseringar om måldataflöde. Du kan prenumerera på aviseringar för att få meddelanden om status, lyckade eller misslyckade flödeskörningar. Se [Prenumerera på aviseringar om destinationer i sitt sammanhang](alerts.md) om du vill ha detaljerad information om aviseringar om måldataflöde.
 
 ![Fliken Bläddra](../assets/ui/workspace/browse-tab.png)
@@ -104,7 +104,7 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 | [!UICONTROL Last Flow Run Status] | Status för den senaste dataflödeskörningen. Se [Visa målinformation](destination-details-page.md) för mer information om dataflödeskörningar. |
 | [!UICONTROL Last Flow Run Date] | Tid och datum då den senaste dataflödeskörningen inträffade. Se [Visa målinformation](destination-details-page.md) för mer information om dataflödeskörningar. |
 | [!UICONTROL Destination] | Målplattformen som du valde för aktiveringsflödet. |
-| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller [!DNL Azure Blob].</li><li>För reklamdestinationer i realtid: Server-till-server.</li><li>För direktuppspelningsmål: Kan [!DNL Azure Event Hubs] eller [!DNL Amazon Kinesis].</li></ul> |
+| [!UICONTROL Connection Type] | Representerar anslutningstypen för din lagringsbucket eller destination. <ul><li>För e-postmarknadsföringsmål: Kan vara S3, FTP eller [!DNL Azure Blob].</li><li>För reklamdestinationer i realtid: server till server.</li><li>För direktuppspelningsmål: Kan [!DNL Azure Event Hubs] eller [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL Username] | De kontoautentiseringsuppgifter som du har valt för målflödet. |
 | [!UICONTROL Activation Data] | Anger antalet målgrupper som aktiveras till det här målet. Välj den här kontrollen om du vill veta mer om de aktiverade målgrupperna. Se [Aktiveringsdata](/help/destinations/ui/destination-details-page.md#activation-data) på sidan med målinformation om du vill ha mer information om de aktiverade målgrupperna. |
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. Välj uppåt-/nedåtpilen för att sortera aktiveringsflödena efter det senaste först eller det äldsta först. |

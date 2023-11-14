@@ -37,7 +37,7 @@ Med datumdata kan du tilldela tidsbaserade kontexter till dina segmentdefinition
 
 ## Experience Events
 
-Som ett Adobe Experience Platform-schema [!DNL XDM ExperienceEvents] registrera explicita och implicita kundinteraktioner med [!DNL Platform]-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är fakta. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
+Som ett Adobe Experience Platform-schema [!DNL XDM ExperienceEvents] registrera explicita och implicita kundinteraktioner med [!DNL Platform]-integrerade program, inklusive en ögonblicksbild av systemet när interaktionen ägde rum. [!DNL ExperienceEvents] är faktauppgifter. Därför är de en datakälla som är tillgänglig för dig under segmentdefinitionen.
 
 Som framgår av tabellen nedan återges händelsedata med nyckelord som hjälper till att förfina händelsebeteendet och ange händelseattribut.
 

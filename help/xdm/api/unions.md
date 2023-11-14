@@ -35,7 +35,7 @@ The `segmentMembership` kartan lagrar resultatet av en utvärdering av en segmen
 
 ## Hämta en lista över föreningar {#list}
 
-När du anger `union` -taggen i ett schema, [!DNL Schema Registry] lägger automatiskt till schemat i unionen för den klass som schemat baseras på. Om det inte finns någon union för den aktuella klassen skapas en ny union automatiskt. The `$id` för unionen liknar standarden `$id` andra [!DNL Schema Registry] , där den enda skillnaden är att det finns två understreck och ordet &quot;union&quot; (`__union`).
+När du anger `union` -taggen i ett schema, [!DNL Schema Registry] lägger automatiskt till schemat i unionen för den klass som schemat baseras på. Om det inte finns någon union för den aktuella klassen skapas en ny union automatiskt. The `$id` for the union is similar to the standard `$id` andra [!DNL Schema Registry] , där den enda skillnaden är att det finns två understreck och ordet &quot;union&quot; (`__union`).
 
 Du kan visa en lista över tillgängliga fackföreningar genom att göra en GET-förfrågan till `/tenant/unions` slutpunkt.
 
@@ -91,7 +91,7 @@ Ett godkänt svar returnerar HTTP-status 200 (OK) och en `results` i svarstexten
 
 ## Slå upp en union {#lookup}
 
-Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller `$id` och, beroende på sidhuvudet Godkänn, vissa eller alla detaljer om unionen.
+Du kan visa en specifik union genom att utföra en GET-förfrågan som innehåller `$id` och, beroende på sidhuvudet Godkänn, en del eller all information om unionen.
 
 >[!NOTE]
 >
@@ -106,7 +106,7 @@ GET /tenant/schemas/{UNION_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{UNION_ID}` | URL-kodad `$id` URI för den union som du vill söka efter. URI:er för föreningsscheman läggs till med &quot;__union&quot;. |
+| `{UNION_ID}` | Den URL-kodade `$id` URI för den union som du vill söka efter. URI:er för föreningsscheman läggs till med &quot;__union&quot;. |
 
 {style="table-layout:auto"}
 

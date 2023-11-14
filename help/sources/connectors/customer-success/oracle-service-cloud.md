@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;Oracle Service Cloud;oracle service cloud
 title: Översikt över källanslutning för Oracle Service Cloud
-description: Lär dig hur du ansluter Oracle Service Cloud till Adobe Experience Platform med API:er eller användargränssnittet.
+description: Lär dig hur du ansluter Oracle Service Cloud till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: 5c914e8a-d8ed-469f-b17a-26a85705e9ef
 source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
@@ -23,7 +23,7 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 Dokumentationen nedan innehåller information om hur du ansluter Oracle Service Cloud till plattformen med API:er eller användargränssnittet:
 
-## Anslut Oracle Service Cloud till plattform med API:er
+## Koppla Oracle Service Cloud till plattformen med API:er
 
 - [Skapa en Oracle Service Cloud-basanslutning med API:t för Flow Service](../../tutorials/api/create/customer-success/oracle-service-cloud.md)
 - [Utforska datatabeller med API:t för Flow Service](../../tutorials/api/explore/tabular.md)

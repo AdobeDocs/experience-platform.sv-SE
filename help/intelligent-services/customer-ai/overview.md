@@ -52,4 +52,4 @@ Kunds-AI fungerar genom att analysera befintliga data om kundupplevelsehändelse
 
 ## Nästa steg
 
-Du kan börja med att följa följande [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina uppgifter tillgängliga går du till  [konfigurera en AI-instans för kund](./user-guide/configure.md). Här beskrivs hur du använder AI för kunder.
+Du kan börja med att följa [komma igång](./getting-started.md) guide. I den här guiden får du hjälp med att konfigurera alla nödvändiga förutsättningar för kundens AI. Om du redan har alla dina uppgifter tillgängliga går du till  [konfigurera en AI-instans för kund](./user-guide/configure.md). Här beskrivs hur du använder AI för kunder.

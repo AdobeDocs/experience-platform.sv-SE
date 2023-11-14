@@ -39,11 +39,11 @@ I det här avsnittet finns en referens för de alternativ som är tillgängliga 
 
 Om Adobe Experience Platform-tillägget inte är installerat ännu öppnar du din egenskap och väljer **[!UICONTROL Extensions > Catalog]** hovra över Adobe Experience Platform-tillägget och välj **[!UICONTROL Install]**.
 
-Om du vill konfigurera tillägget öppnar du [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**.
+Konfigurera tillägget genom att öppna [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**.
 
 ![](../../../images/adobe-experience-platform-extension-configuration.png)
 
-### Strömmande anslutning
+### Direktuppspelningsanslutning
 
 Att välja en direktuppspelningsanslutning är det första steget för dig att börja direktuppspela data till Adobe Experience Platform. Du kan välja en från kombinationsrutan för direktuppspelningsanslutning. Direktuppspelningsanslutning är ett obligatoriskt fält. Om du inte har någon direktuppspelningsanslutning kan du skapa en genom att välja **[!UICONTROL Create a streaming connection]** -knappen.
 
@@ -53,7 +53,7 @@ Om du väljer **[!UICONTROL Create a streaming connection]** ett modalt fönster
 
 Den modala innehåller fält med förifyllda värden som kan ändras efter dina behov. Om du planerar att skapa mer än en direktuppspelningsanslutning bör du vara medveten om att **[!UICONTROL Data Source]** fältet måste vara unikt. Försöker skapa en annan direktuppspelningsanslutning med en **[!UICONTROL Data Source]** som redan används på en annan anslutning kommer att misslyckas.
 
-När du har valt en slutpunkt för direktuppspelning kommer du att använda URL:en för direktuppspelningsslutpunkten och källan.
+När du har valt en slutpunkt för direktuppspelning används URL:en för direktuppspelningsslutpunkten och källan.
 
 ![](../../../images/adobe-experience-platform-streaming-endpoint-selected.png)
 
@@ -85,7 +85,7 @@ Målschemafältet innehåller sökvägen till ett XDM-fält som definierats i da
 
 ### Väljare för schemafält
 
-Tillägget ger också möjlighet att välja ett målschemafält med hjälp av en visuell väljare. Om du väljer målknappen som sitter bredvid målschemafältets indata, visas en modal där du ser datamängdens schematräd. Du kan välja ett fält och sedan välja **Välj** och indata från målschemafältet uppdateras och innehåller rätt XDM-sökväg.
+Tillägget ger också möjlighet att välja ett målschemafält med hjälp av en visuell väljare. Om du väljer målknappen som finns bredvid målschemafältets indata, visas en modal där du ser datamängdens schematräd. Du kan välja ett fält och sedan välja **Välj** och indata från målschemafältet uppdateras och innehåller rätt XDM-sökväg.
 
 ![](../../../images/adobe-experience-platform-send-beacon-schema-field-selector.png)
 
@@ -116,11 +116,11 @@ Ett identitetsavsnitt visas om schemat innehåller ett `xdm:identityMap` fält. 
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section.png)
 
-Avsnittet för identitetsmappning kan innehålla flera rader. Varje rad kan definiera en viss identitetstyp. Du kan definiera följande attribut för en identitet: type, authenticated state, primär och value.
+Avsnittet för identitetsmappning kan innehålla flera rader. Varje rad kan definiera en viss identitetstyp. Du kan definiera följande attribut för en identitet: typ, autentiserat läge, primär och värde.
 
 Om du har flera identiteter i avsnittet för identitetsmappning kan bara en identitet markeras som primär.
 
-Om du har ett schema som har ett `xdm:identityMap` och samtidigt som ett annat fält är markerat som ett primärt identitetsfält, visas inte den primära kolumnen inifrån identitetsmappningsavsnittet.
+Om du har ett schema som har ett `xdm:identityMap` och samtidigt som ett annat fält är markerat som ett primärt identitetsfält, kommer den primära kolumnen i området för identitetsmappning inte att vara synlig.
 
 ![](../../../images/adobe-experience-platform-send-beacon-identity-section-not-primary.png)
 

@@ -1,5 +1,5 @@
 ---
-keywords: taggtillägg;taggtillägg;startmål; plattformstaggtillägg;plattformstaggtillägg;platforma launchens mål
+keywords: taggtillägg;taggtillägg;startmål;plattformstaggtillägg;plattformstaggtillägg;platforma launcher
 title: Taggtillägg i Adobe Experience Platform
 description: Adobe Experience Platform erbjuder nästa generation tagghanteringsfunktioner från Adobe. Med Platform får ni ett enkelt sätt att driftsätta och hantera alla de analyser, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser.
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Tagga tillägg i Adobe Experience Platform
 
-Adobe Experience Platform erbjuder nästa generation tagghanteringsfunktioner från Adobe. Med Platform får ni ett enkelt sätt att driftsätta och hantera alla de analyser, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde.
+Adobe Experience Platform tillhandahåller nästa generation av tagghanteringsfunktioner från Adobe. Med Platform får ni ett enkelt sätt att driftsätta och hantera alla de analyser, marknadsförings- och annonstaggar som behövs för att skapa relevanta kundupplevelser. Adobe Experience Cloud-kunder får taggar som en inkluderad funktion som ger mervärde.
 
 En introduktion till taggar finns i resurserna nedan:
 
@@ -27,7 +27,7 @@ Om du vill hitta tilläggen i plattformsgränssnittet går du till **[!UICONTROL
 
 ## Så här fungerar taggtillägg {#how-extensions-work}
 
-A [taggtillägg](../../../tags/home.md#extensions) är ett kodpaket som förbättrar funktionerna för en webbplats eller mobilapp. Detta kan inkludera att skicka råhändelsedata till ett mål som [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md) men de kan också tjäna andra funktioner.
+A [taggtillägg](../../../tags/home.md#extensions) är ett kodpaket som förbättrar funktionerna för en webbplats eller mobilapp. Detta kan inkludera att skicka råhändelsedata till ett mål som [Google Analytics](/help/destinations/catalog/analytics/google-universal-analytics.md) men de kan också användas för andra funktioner.
 
 Det är viktigt att skilja mellan tillägg för tagg- och händelsevidarebefordran. De tillägg som visas i användargränssnittet för plattformsmål är *taggtillägg*. Mer information om vidarebefordran av händelser finns i översikten [skillnader mellan taggar och händelsevidarebefordran](/help/tags/ui/event-forwarding/overview.md#differences-between-event-forwarding-and-tags).
 

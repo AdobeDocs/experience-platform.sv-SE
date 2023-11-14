@@ -72,7 +72,7 @@ TBD if we keep this link but will likely remove it
 
 ## Sammanfattning av bakåtkompatibla ändringar {#summary-backwards-incompatible-changes}
 
-Med migreringen till de nya målen flödar alla era befintliga data till [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-mål tilldelas nu nya målanslutningar och basanslutningar. Steget för profilmappning ändras också. De bakåtkompatibla ändringarna sammanfattas i avsnitten nedan för varje mål. Se även [målordlista](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) om du vill ha mer information om villkoren i diagrammet nedan.
+Med migreringen till de nya destinationerna flödar alla era befintliga data till [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-mål tilldelas nu nya målanslutningar och basanslutningar. Steget för profilmappning ändras också. De bakåtkompatibla ändringarna sammanfattas i avsnitten nedan för varje mål. Se även [målordlista](https://developer.adobe.com/experience-platform-apis/references/destinations/#tag/Glossary) om du vill ha mer information om villkoren i diagrammet nedan.
 
 ![Översikt över migreringsguiden](/help/destinations/assets/api/api-migration-guide/migration-guide-diagram.png)
 
@@ -254,7 +254,7 @@ De bakåtinkompatibla ändringarna för API-användarna är uppdaterade `connect
 
 | [!DNL Azure Blob] | Äldre | Nytt |
 |---------|----------|---------|
-| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 752d422f-b16f-4f0d-b1c6-26e448e3b388 |
+| Flödesspecifikation | 71471eba-b620-49e4-90fd-23f1fa0174d8 | 752d422f-b16f-4f0d-b1c6-26e44e3b388 |
 | Anslutningsspecifikation | e258278b-a4cf-43ac-b158-4fa0ca0d948b | 6d6b59bf-fb58-4107-9064-4d246c0e5bb2 |
 
 Se alla exempel på tidigare och nya basanslutningar och målanslutningar för [!DNL Azure Blob] på flikarna nedan. Parametrarna som krävs för att skapa basanslutningar för Azure Blob-mål ändras inte.
@@ -672,9 +672,9 @@ Stegen för profilväljare på alla tre destinationerna ersätts av ett mappning
 
 ![Översikt över migreringsguiden](/help/destinations/assets/api/api-migration-guide/old-and-new-mapping-step.png)
 
-Lägg märke till hur `profileSelectors` objektet i de äldre exemplen ersätts med det nya `profileMapping` -objekt.
+Se hur `profileSelectors` -objektet i de äldre exemplen ersätts med det nya `profileMapping` -objekt.
 
-Hitta fullständig information om hur du konfigurerar `profileMapping` objekt i [API-självstudiekurs för att exportera data till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping).
+Hitta fullständig information om hur du konfigurerar `profileMapping` -objektet i [API-självstudiekurs för att exportera data till molnlagringsmål](/help/destinations/api/activate-segments-file-based-destinations.md#attribute-and-identity-mapping).
 
 >[!BEGINTABS]
 
@@ -782,7 +782,7 @@ Meddelande i konfigurationsexemplet nedan om hur `profileSelectors` fält har er
 
 ## Tidslinje för migrering och åtgärdsobjekt {#timeline-and-action-items}
 
-Migreringen av tidigare dataflöden till nya målkort för [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-destinationer inträffar så snart din organisation är redo att migrera och inte senare än **26 juli 2023**.
+Migreringen av tidigare dataflöden till nya målkort för [!DNL Amazon S3], [!DNL Azure Blob]och SFTP-destinationer inträffar så snart din organisation är redo att migrera och senast **26 juli 2023**.
 
 Du får påminnelser från Adobe när migreringsdatumet närmar sig. Läs avsnittet Åtgärdsobjekt nedan som förberedelse för migreringen.
 
@@ -792,8 +792,8 @@ Som förberedelse för migreringen av [!DNL Amazon S3], [!DNL Azure Blob], och S
 
 1. Uppdatera eventuella befintliga skript eller automatiska API-anrop [!DNL Amazon S3], [!DNL Azure Blob], eller SFTP-molnlagringsmål senast 26 juli 2023. Alla automatiserade API-anrop eller skript som utnyttjar de gamla anslutningsspecifikationerna eller flödesspecifikationerna måste uppdateras till de nya anslutningsspecifikationerna eller flödesspecifikationerna.
 2. Kontakta din kontorepresentant på Adobe när dina skript har uppdaterats före den 26 juli.
-3. Till exempel `targetConnectionSpecId` kan användas som en flagga för att avgöra om dataflödet har migrerats till det nya målkortet. Du kan uppdatera dina skript med en `if` villkor för att undersöka de gamla och uppdaterade målanslutningsspecifikationerna i `flow.inheritedAttributes.targetConnections[0].connectionSpec.id` och avgöra om ditt dataflöde har migrerats. Du kan se de gamla och nya anslutningsspecifikations-ID:n i de specifika avsnitten på den här sidan för varje mål.
-4. Ditt Adobe-kontoteam får mer information om när dataflödena kommer att migreras.
+3. Till exempel `targetConnectionSpecId` kan användas som en flagga för att avgöra om dataflödet har migrerats till det nya målkortet. Du kan uppdatera dina skript med en `if` villkor för att titta på de gamla och uppdaterade målanslutningsspecifikationerna i `flow.inheritedAttributes.targetConnections[0].connectionSpec.id` och avgöra om ditt dataflöde har migrerats. Du kan se de gamla och nya anslutningsspecifikations-ID:n i de specifika avsnitten på den här sidan för varje mål.
+4. Ditt Adobe-kontoteam kommer att få mer information om när dataflödena kommer att migreras.
 5. Efter den 26 juli migreras alla dataflöden. Alla dina befintliga dataflöden har nu nya flödesentiteter (anslutningsspecifikationer, flödesspecifikationer, basanslutningar och målanslutningar). Alla skript eller API-anrop på din sida som använder de äldre flödesentiteterna slutar att fungera.
 
 ## Andra migreringsfaktorer {#other-considerations}

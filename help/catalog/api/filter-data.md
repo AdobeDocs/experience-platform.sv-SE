@@ -15,7 +15,7 @@ ht-degree: 0%
 
 The [!DNL Catalog Service] API tillåter att svarsdata filtreras med hjälp av frågeparametrar. En del av bästa praxis för [!DNL Catalog] är att använda filter i alla API-anrop, eftersom de minskar belastningen på API:t och bidrar till att förbättra den övergripande prestandan.
 
-Det här dokumentet innehåller de vanligaste filtreringsmetoderna [!DNL Catalog] -objekt i API:t. Vi rekommenderar att du refererar till det här dokumentet när du läser [Utvecklarhandbok för kataloger](getting-started.md) om du vill veta mer om hur du interagerar med [!DNL Catalog] API. Mer allmän information om [!DNL Catalog Service], se [[!DNL Catalog] översikt](../home.md).
+Det här dokumentet innehåller de vanligaste filtreringsmetoderna [!DNL Catalog] -objekt i API:t. Du bör referera till det här dokumentet när du läser [Utvecklarhandbok för kataloger](getting-started.md) om du vill veta mer om hur du interagerar med [!DNL Catalog] API. Mer allmän information om [!DNL Catalog Service], se [[!DNL Catalog] översikt](../home.md).
 
 ## Begränsa returnerade objekt
 
@@ -160,7 +160,7 @@ Baserat på ovanstående svar kan man dra slutsatsen följande:
 
 ## Startindex för förskjutning av svarslista
 
-The `start` frågeparametern förskjuter svarslistan framåt med ett angivet nummer, med hjälp av nollbaserad numrering. Till exempel: `start=2` skulle förskjuta svaret så att det startar på det tredje listade objektet.
+The `start` frågeparametern förskjuter svarslistan framåt med ett angivet nummer, med nollbaserad numrering. Till exempel: `start=2` skulle förskjuta svaret så att det startar på det tredje listade objektet.
 
 Om `start` parametern är inte kopplad till en `limit` -parametern är det maximala antalet returnerade objekt 20.
 
@@ -272,7 +272,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar returnerar en lista med datauppsättningar som innehåller `sampleTag` med värdet &quot;123456&quot;, AND `secondTag` med vilket värde som helst. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett godkänt svar returnerar en lista med datauppsättningar som innehåller `sampleTag` med värdet &quot;123456&quot;, AND `secondTag` med vilket värde som helst. Om ingen gräns anges innehåller svaret högst 20 objekt.
 
 ```json
 {
@@ -347,7 +347,7 @@ curl -X GET \
 
 **Svar**
 
-Ett svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angivna datumintervallet. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett svar innehåller en lista med [!DNL Catalog] objekt som ligger inom det angivna datumintervallet. Om ingen gräns anges innehåller svaret högst 20 objekt.
 
 ```json
 {
@@ -411,7 +411,7 @@ curl -X GET \
 
 **Svar**
 
-Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt `orderBy` parameter. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt `orderBy` parameter. Om ingen gräns anges innehåller svaret högst 20 objekt.
 
 ```json
 {
@@ -459,9 +459,9 @@ Ett svar innehåller en lista med [!DNL Catalog] objekt som är sorterade enligt
 
 Med enkla filter kan du filtrera svar baserat på specifika egenskapsvärden. Ett enkelt filter har formen av `{PROPERTY_NAME}={VALUE}`.
 
-Frågan `name=exampleName` returnerar endast objekt vars `name` egenskapen innehåller värdet &quot;exampleName&quot;. Däremot är frågan `name=!exampleName` returnerar endast objekt vars `name` egenskapen är **not** &quot;exampleName&quot;.
+Till exempel frågan `name=exampleName` returnerar endast objekt vars `name` egenskapen innehåller värdet &quot;exampleName&quot;. Däremot är frågan `name=!exampleName` returnerar endast objekt vars `name` egenskapen är **not** exampleName.
 
-Dessutom har enkla filter stöd för att fråga efter flera värden för en enda egenskap. När flera värden anges returnerar svaret objekt vars egenskap matchar **alla** av värdena i den angivna listan. Du kan invertera en fråga med flera värden genom att använda ett prefix `!` tecken till listan, endast objekt vars egenskapsvärde är **not** i den angivna listan (t.ex. `name=!exampleName,anotherName`).
+Dessutom har enkla filter stöd för att fråga efter flera värden för en enda egenskap. När flera värden anges returnerar svaret objekt vars egenskap matchar **alla** av värdena i listan. Du kan invertera en fråga med flera värden genom att använda ett prefix `!` tecken till listan, endast objekt vars egenskapsvärde är **not** i den angivna listan (till exempel `name=!exampleName,anotherName`).
 
 **API-format**
 
@@ -493,7 +493,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar innehåller en lista med datauppsättningar, exklusive datauppsättningar vars `name` är &quot;exampleName&quot; eller &quot;anotherName&quot;. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett godkänt svar innehåller en lista med datauppsättningar, exklusive datauppsättningar vars `name` är &quot;exampleName&quot; eller &quot;anotherName&quot;. Om ingen gräns anges innehåller svaret högst 20 objekt.
 
 ```json
 {
@@ -522,7 +522,7 @@ Ett godkänt svar innehåller en lista med datauppsättningar, exklusive dataupp
 
 ### Använda `property` parameter {#using-the-property-parameter}
 
-The `property` frågeparametern ger större flexibilitet för egenskapsbaserad filtrering än enkla filter. Förutom att filtrera baserat på om en egenskap har ett visst värde, kan `property` parametern kan använda andra jämförelseoperatorer (till exempel&quot;mer än&quot;)`>`) och &quot;mindre än&quot; (`<`)) samt reguljära uttryck för att filtrera efter egenskapsvärden. Det kan också filtrera efter om en egenskap finns eller inte, oavsett dess värde.
+The `property` frågeparametern ger större flexibilitet för egenskapsbaserad filtrering än enkla filter. Förutom att filtrera baserat på om en egenskap har ett visst värde, kan `property` parametern kan använda andra jämförelseoperatorer (till exempel&quot;mer än&quot;) (`>`) och &quot;mindre än&quot; (`<`)) samt reguljära uttryck för att filtrera efter egenskapsvärden. Det kan också filtrera efter om en egenskap finns eller inte, oavsett dess värde.
 
 The `property` -parametern kan acceptera alla nivåobjektsegenskaper. `sampleKey` kan användas för filtrering med `?properties=subItem.sampleKey`.
 
@@ -549,7 +549,7 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 | `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{CONDITION}` | Ett villkorsuttryck som anger vilken egenskap som ska efterfrågas och hur dess värde ska utvärderas. Nedan finns exempel. |
 
-Värdet för `property` -parametern stöder flera olika typer av villkorsuttryck. I följande tabell visas den grundläggande syntaxen för uttryck som stöds:
+Värdet för `property` -parametern har stöd för flera olika typer av villkorsuttryck. I följande tabell visas den grundläggande syntaxen för uttryck som stöds:
 
 | Symbol(er) | Beskrivning | Exempel |
 | --- | --- | --- |
@@ -582,7 +582,7 @@ curl -X GET \
 
 **Svar**
 
-Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnummer är större än 1.0.3. Om inte en gräns också anges innehåller svaret högst 20 objekt.
+Ett godkänt svar innehåller en lista med datauppsättningar vars versionsnummer är större än 1.0.3. Om ingen gräns anges innehåller svaret högst 20 objekt.
 
 ```json
 {

@@ -17,7 +17,7 @@ ht-degree: 0%
 >
 >The [!DNL Couchbase] anslutningen är i betaversion. Se [Översikt över källor](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder beta-märkta anslutningar.
 
-Adobe Experience Platform erbjuder systemspecifik anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]så att ni kan hämta in data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasleverantörer innefattar [!DNL Couchbase].
+Adobe Experience Platform erbjuder systemspecifik anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]så att ni kan hämta in data från dessa system. Olika typer av tredjepartsdatabaser stöds, bland annat relationsdatabaser, NoSQL-databaser och datalagerarkiv. Stöd för databasleverantörer innefattar [!DNL Couchbase].
 
 ## IP-adress tillåtelselista
 

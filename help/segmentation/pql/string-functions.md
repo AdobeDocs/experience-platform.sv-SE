@@ -87,7 +87,7 @@ person.name.doesNotStartWith("Joe")
 
 ## Slutar med
 
-The `endsWith` används för att avgöra om en sträng avslutas med en angiven delsträng.
+The `endsWith` -funktionen används för att avgöra om en sträng avslutas med en angiven delsträng.
 
 **Format**
 
@@ -206,7 +206,7 @@ person.name.equals("John")
 
 ## Inte lika med
 
-The `notEqualTo` -funktionen används för att avgöra om en sträng inte är lika med den angivna strängen.
+The `notEqualTo` används för att avgöra om en sträng inte är lika med den angivna strängen.
 
 **Format**
 
@@ -239,7 +239,7 @@ The `matches` används för att avgöra om en sträng matchar ett visst reguljä
 
 **Exempel**
 
-Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med &quot;John&quot;.
+Följande PQL-fråga avgör, utan att vara skiftlägeskänslig, om personens namn börjar med&quot;John&quot;.
 
 ```sql
 person.name.matches("(?i)^John")
@@ -247,7 +247,7 @@ person.name.matches("(?i)^John")
 
 >[!NOTE]
 >
->Om du använder funktioner för reguljära uttryck som `\w`, **måste** undgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
+>Om du använder funktioner för reguljära uttryck som `\w`, du **måste** kringgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
 
 ## Grupp för reguljära uttryck
 
@@ -269,7 +269,7 @@ emailAddress.regexGroup("@(\\w+)", 1)
 
 >[!NOTE]
 >
->Om du använder funktioner för reguljära uttryck som `\w`, **måste** undgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
+>Om du använder funktioner för reguljära uttryck som `\w`, du **måste** kringgå omvänt snedstreck. I stället för att bara skriva `\w`måste du lägga till ett extra omvänt snedstreck och skriva `\\w`.
 
 ## Nästa steg
 

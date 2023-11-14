@@ -15,7 +15,7 @@ ht-degree: 2%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En lista över tillgängliga tillägg på serversidan finns i [händelsevidarebefordringstillägg, referens](../server/overview.md) i stället.
+Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En lista över tillgängliga tillägg på serversidan finns i [referens för tillägg för händelsevidarebefordring](../server/overview.md) i stället.
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Anpassa webbplatsspårning](https://exchange.adobe.com/apps/ec/103195)*
 * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)*
 * [Adobe Analytics](./analytics/overview.md)
-* [Adobe Analytics &amp; Adobe Target](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)
+* [ADOBE ANALYTICS &amp; ADOBE TARGET](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)
 * [Adobe Analytics &amp; Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)*
 * [Adobe Analytics &amp; Salesforce](https://exchange.adobe.com/apps/ec/101530)*
 * [Adobe Analytics produktsträng](./product-string/overview.md)
@@ -59,7 +59,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Beemray Human Context](https://exchange.adobe.com/apps/ec/101063)*
 * [Bing Ads Universal Event Tracking](https://exchange.adobe.com/apps/ec/100154)*
 * [Gren](https://exchange.adobe.com/apps/ec/101382)*
-* [[!DNL BrightCove] videouppföljning](./brightcove/overview.md)
+* [[!DNL BrightCove] videospårning](./brightcove/overview.md)
 * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)*
 * [Kanalkällidentifierare](https://exchange.adobe.com/apps/ec/101412)*
 * [Cheetah Experiences](https://exchange.adobe.com/apps/ec/102759)*
@@ -91,7 +91,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [KickFire](https://exchange.adobe.com/apps/ec/101621)*
 * [Mappningstabell](https://exchange.adobe.com/apps/ec/103136)*
 * [[!DNL Marketo Munchkin]](./marketo/overview.md)
-* [Överordnad Property Manager](https://exchange.adobe.com/apps/ec/102992)*
+* [Huvudegenskapshanteraren](https://exchange.adobe.com/apps/ec/102992)*
 * [Monita](https://exchange.adobe.com/apps/ec/106544)*
 * [Nielsen Digital SDK](https://exchange.adobe.com/apps/ec/101361)*
 * [OneTrust-hantering för cookies](https://exchange.adobe.com/apps/ec/100340)*
@@ -119,4 +119,4 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Yahoo Dot](https://exchange.adobe.com/apps/ec/106062)*
 * [Konverteringsspårning för text](https://exchange.adobe.com/apps/ec/103174)*
 * [[!DNL Youtube] Uppspelning](https://exchange.adobe.com/apps/ec/103174)*
-* [[!DNL YouTube] videouppföljning](./youtube/overview.md)
+* [[!DNL YouTube] videospårning](./youtube/overview.md)

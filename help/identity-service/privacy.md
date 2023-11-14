@@ -5,7 +5,7 @@ description: Adobe Experience Platform Privacy Service behandlar kundförfrågni
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
 source-git-commit: 74ef1e24c2b40103ac6cafdfd22cb6036cdbfd3e
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -40,15 +40,15 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Öve
 
 ## Skicka begäranden {#submit}
 
-Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Identity Service] med [!DNL Privacy Service] API eller gränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur du formaterar användardata korrekt i nyttolaster.
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Identity Service] med [!DNL Privacy Service] API eller användargränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur du formaterar användardata korrekt i nyttolaster.
 
 ### Använda API:et
 
-När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste använda en specifik `namespace` och `type`. Ett giltigt [identity namespace](#namespaces) känns igen av [!DNL Identity Service] måste anges för `namespace` värde, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
+När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste använda en specifik `namespace` och `type`. Ett giltigt [namnutrymme för identitet](#namespaces) känns igen av [!DNL Identity Service] måste anges för `namespace` värde, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
 
 Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. Vid förfrågningar till [!DNL Identity]måste arrayen innehålla värdet `Identity`.
 
-Följande begäran skapar ett nytt sekretessjobb under GDPR för en enskild kunds data i [!DNL Identity] butik. Två identitetsvärden anges för kunden i `userIDs` array, en som använder standarden `Email` id namespace, and the other using an `ECID` namespace, It includes the product value for [!DNL Identity] (`Identity`) i `include` array:
+Följande begäran skapar ett nytt sekretessjobb under GDPR för en enskild kunds data i [!DNL Identity] butik. Två identitetsvärden anges för kunden i `userIDs` array; en som använder standard `Email` id namespace, and the other using an `ECID` namespace, It includes the product value for [!DNL Identity] (`Identity`) i `include` array:
 
 >[!TIP]
 >
@@ -108,7 +108,7 @@ När [!DNL Experience Platform] tar emot en borttagningsbegäran från [!DNL Pri
 
 Beroende på om du även har inkluderat kundprofil i realtid (`ProfileService`) och datasjön (`aepDataLake`) som produkter i din sekretesspolicy för identitetstjänst (`identity`) tas olika datauppsättningar som är relaterade till identiteten bort från systemet vid potentiellt olika tidpunkter:
 
-| Produkter som ingår | Effekter |
+| Produkter ingår | Effekter |
 | --- | --- |
 | `identity` endast | Den angivna identiteten tas bort så snart Platform skickar en bekräftelse på att begäran om borttagning togs emot. Profilen som skapats från det identitetsdiagrammet finns fortfarande kvar, men uppdateras inte eftersom nya data har importerats eftersom identitetsassociationerna nu har tagits bort. De data som är associerade med profilen finns också kvar i datasjön. |
 | `identity` och `ProfileService` | Den angivna identiteten tas bort så snart Platform skickar en bekräftelse på att begäran om borttagning togs emot. De data som är associerade med profilen finns kvar i datasjön. |
@@ -119,4 +119,4 @@ Se [[!DNL Privacy Service] dokumentation](../privacy-service/home.md#monitor) f�
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Identity Service]. För information om behandling av sekretessförfrågningar för andra [!DNL Experience Cloud] program, se dokumentet om [[!DNL Privacy Service] and [!DNL Experience Cloud] program](../privacy-service/experience-cloud-apps.md).
+Genom att läsa det här dokumentet har du introducerat de viktiga begrepp som används för att behandla sekretessförfrågningar i [!DNL Identity Service]. För information om behandling av sekretessförfrågningar för andra [!DNL Experience Cloud] program, se dokumentet om [[!DNL Privacy Service] och [!DNL Experience Cloud] program](../privacy-service/experience-cloud-apps.md).

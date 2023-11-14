@@ -19,17 +19,17 @@ Eftersom inaktuella fält döljs för användargränssnittet som standard effekt
 >
 >Innan data hämtas till ett schema kan du ta bort onödiga fältgrupper. Läs dokumentationen om [ta bort en fältgrupp från ett schema](../ui/resources/schemas.md#remove-fields) för mer information.
 
-När data har importerats till ditt schema kan du inte längre ta bort fält från schemat utan att göra brytningsändringar. I det här fallet kan du ta bort ett oönskat fält i ett schema eller en anpassad resurs genom att använda [Schemaredigerare](./create-schema-ui.md) eller [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
+När data har importerats till ditt schema kan du inte längre ta bort fält från schemat utan att göra brytningsändringar. I det här fallet kan du ta bort ett oönskat fält i ett schema eller en anpassad resurs genom att använda [Schemaredigeraren](./create-schema-ui.md) eller [API för schemaregister](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
 I det här dokumentet beskrivs hur du ersätter fält för olika XDM-resurser med Schemaredigeraren i användargränssnittet i Experience Platform. Anvisningar om hur du tar bort ett XDM-fält med API:t finns i självstudiekursen om [ta bort ett XDM-fält med API:t för schemaregister](./field-deprecation-api.md).
 
 ## Föråldrade ett fält {#deprecate}
 
-Om du vill ta bort ett anpassat fält går du till Schemaredigeraren för det schema som du vill redigera. Markera fältet som du vill ta bort från [!UICONTROL Structure] del av arbetsytan, följt av **[!UICONTROL Deprecate]** från [!UICONTROL Field Properties].
+Om du vill ta bort ett anpassat fält går du till Schemaredigeraren för det schema som du vill redigera. Markera det fält som du vill ta bort från [!UICONTROL Structure] del av arbetsytan, följt av **[!UICONTROL Deprecate]** från [!UICONTROL Field Properties].
 
 ![Schemaredigeraren med ett fält markerat och undertryckt markerat.](../images/tutorials/field-deprecation/deprecate-single-field.png)
 
-En dialogruta visas där du kan bekräfta dina val och meddela dig att fältet kommer att tas bort från användargränssnittsvyn i unionsschemat och döljas för användargränssnitten längre fram i kedjan. Slutför åtgärden genom att välja **[!UICONTROL Confirm]**.
+En dialogruta visas där du kan bekräfta dina val och meddela dig att fältet kommer att tas bort från användargränssnittsvyn i unionsschemat och döljas för användargränssnitten längre fram. Slutför åtgärden genom att välja **[!UICONTROL Confirm]**.
 
 ![Dialogrutan Föråldrat fält med Bekräfta markerat.](../images/tutorials/field-deprecation/deprecate-field-dialog.png)
 
@@ -47,7 +47,7 @@ Det borttagna fältet visas nu i gränssnittsvyn. Välj **[!UICONTROL Save]** f�
 
 ![Schemaredigeraren med ett fält markerat, Visa inaktuella fält och Spara markerat.](../images/tutorials/field-deprecation/show-deprecated-fields.png)
 
-## Ej inaktuella fält {#undeprecate-fields}
+## Föråldrade fält {#undeprecate-fields}
 
 Ångra ett inaktuellt fält först [visa det inaktuella fältet](#show-deprecated) enligt beskrivningen ovan väljer du det borttagna fältet i redigerarens [!UICONTROL Structure] -avsnitt. Nästa, välj **[!UICONTROL Undeprecate]** från [!UICONTROL Field properties] sidebar följt av **[!UICONTROL Save]**.
 
@@ -57,8 +57,8 @@ The [!UICONTROL Undeprecate field] visas. Bekräfta ändringarna genom att välj
 
 ![The [!UICONTROL Undeprecate field] med Bekräfta markerat.](../images/tutorials/field-deprecation/undeprecate-field-dialog.png)
 
-Fältet visas nu som standard i användargränssnittsvyn och även i senare användargränssnitt. Nu kan du välja att ta bort fältet igen.
+Fältet visas nu som standard i användargränssnittsvyn och även i senare användargränssnitt. Nu kan du välja att ersätta fältet.
 
 ## Nästa steg
 
-I det här dokumentet beskrivs hur XDM-fält skrivs ut med hjälp av gränssnittet i Schemaredigeraren. Mer information om hur du konfigurerar fält för anpassade resurser finns i handboken [definiera XDM-fält i API](./custom-fields-api.md). Mer information om hur du hanterar beskrivningar finns i [slutpunktshandbok för beskrivningar](../api/descriptors.md).
+I det här dokumentet beskrivs hur XDM-fält skrivs ut med hjälp av gränssnittet i Schemaredigeraren. Mer information om hur du konfigurerar fält för anpassade resurser finns i guiden [definiera XDM-fält i API](./custom-fields-api.md). Mer information om hur du hanterar beskrivningar finns i [slutpunktshandbok för beskrivningar](../api/descriptors.md).

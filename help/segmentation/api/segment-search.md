@@ -17,7 +17,7 @@ Den här handboken innehåller information som hjälper dig att förstå segment
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 Förutom de obligatoriska rubrikerna som beskrivs i avsnittet Komma igång, kräver alla begäranden till slutpunkten för segmentsökning följande ytterligare rubrik:
 
@@ -25,7 +25,7 @@ Förutom de obligatoriska rubrikerna som beskrivs i avsnittet Komma igång, krä
 
 ### Sök i flera namnutrymmen
 
-Den här sökslutpunkten kan användas för att söka i olika namnutrymmen och returnera en lista med sökresultat. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).
+Den här sökslutpunkten kan användas för att söka i olika namnutrymmen och returnera en lista med sökräkningsresultat. Flera parametrar kan användas, avgränsade med et-tecken (&amp;).
 
 **API-format**
 
@@ -235,7 +235,7 @@ I följande tabell visas de fält som kan genomsökas i sökfrågeparametern.
 | folderId | Mappen eller mapparna som har mapp-ID:t för den angivna sökningen. |
 | folderLocation | Platsen eller platserna som har mapplatsen för den angivna sökningen. |
 | parentFolderId | Segmentdefinitionen eller mappen som har det överordnade mapp-ID som du har angett för sökningen. |
-| segmentId | Segmentdefinitionen som matchar segment-ID:t för den angivna sökningen. |
+| segmentId | Segmentdefinitionen som matchar segmentets ID i den angivna sökningen. |
 | segmentName | Segmentdefinitionen som matchar segmentnamnet i den angivna sökningen. |
 | segmentDescription | Segmentdefinitionen som matchar segmentbeskrivningen för den angivna sökningen. |
 
@@ -247,11 +247,11 @@ I följande tabell visas hur sökfrågor fungerar när du använder API:t för s
 
 | Exempel på sökuttryck | Beskrivning |
 | ------------------------- | ----------- |
-| foo | Sök efter ett ord. Detta returnerar resultaten om ordet &quot;foo&quot; finns i något av de sökbara fälten. |
-| foto OCH streck | En boolesk sökning. Detta returnerar resultat om **båda** orden &quot;foo&quot; och &quot;bar&quot; finns i något av de sökbara fälten. |
+| foo | Sök efter valfritt ord. Detta returnerar resultaten om ordet &quot;foo&quot; finns i något av de sökbara fälten. |
+| foto OCH streck | En boolesk sökning. Detta returnerar resultat om **båda** orden &quot;foo&quot; och &quot;bar&quot; finns i alla sökbara fält. |
 | foto ELLER fält | En boolesk sökning. Detta returnerar resultat om **antingen** ordet &quot;foo&quot; eller ordet &quot;bar&quot; finns i något av de sökbara fälten. |
 | foo NOT bar | En boolesk sökning. Detta returnerar resultaten om ordet &quot;foo&quot; hittas men ordet &quot;bar&quot; inte hittas i något av de sökbara fälten. |
-| namn: foto OCH streck | En boolesk sökning. Detta returnerar resultat om **båda** orden &quot;foo&quot; och &quot;bar&quot; finns i fältet &quot;name&quot;. |
+| name: foo AND bar | En boolesk sökning. Detta returnerar resultat om **båda** orden &quot;foo&quot; och &quot;bar&quot; finns i fältet &quot;name&quot;. |
 | run* | En sökning med jokertecken. Om du använder en asterisk (*) matchar 0 eller fler tecken, vilket innebär att resultatet returneras om innehållet i något av de sökbara fälten innehåller ett ord som börjar med&quot;run&quot;. Detta returnerar till exempel resultat om orden&quot;kör&quot;,&quot;kör&quot;,&quot;kör&quot; eller&quot;runner&quot; visas. |
 | kamera? | En sökning med jokertecken. Använda ett frågetecken (?) matchar endast exakt ett tecken, vilket innebär att resultatet returneras om innehållet i något av de sökbara fälten börjar med &quot;cam&quot; och en extra bokstav. Detta returnerar till exempel resultat om orden &quot;läger&quot; eller &quot;kameror&quot; visas, men returnerar inga resultat om orden &quot;kamera&quot; eller &quot;campfire&quot; visas. |
 | &quot;blått paraply&quot; | En frassökning. Detta returnerar resultaten om innehållet i något av de sökbara fälten innehåller den fullständiga frasen &quot;blue paraply&quot;. |

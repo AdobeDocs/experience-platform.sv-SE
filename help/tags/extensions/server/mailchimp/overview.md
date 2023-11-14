@@ -28,7 +28,7 @@ Det här dokumentet beskriver hur du konfigurerar tillägget och konfigurerar re
 
 I det här dokumentet förutsätts att du känner till de relevanta Mailchimp-produkter som används av tillägget. Mer information finns i hjälpdokumentationen för Mailchimp. [kampanjer](https://mailchimp.com/help/getting-started-with-campaigns/), [resor](https://mailchimp.com/help/about-customer-journeys/)och [transaktioner](https://mailchimp.com/help/transactional/).
 
-Det krävs ett Mailchimp-konto för att kunna använda det här tillägget. Du kan registrera dig för ett konto [här](https://login.mailchimp.com/signup/). Observera följande värden som kan användas i den här handboken på kontrollpanelen för Mailchimp-kontot:
+Det krävs ett Mailchimp-konto för att kunna använda det här tillägget. Du kan registrera ett konto [här](https://login.mailchimp.com/signup/). Observera följande värden som kan användas i den här handboken på kontrollpanelen för Mailchimp-kontot:
 
 - Ditt prefix för Mailchimp-domänen
 - Din API-nyckel
@@ -43,11 +43,11 @@ Beroende på din plan för Mailchimp-kontot kan du ha begränsad tillgång till 
 
 ### Domänprefix
 
-När du har loggat in på Mailchimp och landat i vyn Kontrollpanel bör webbläsarens adressfält visa en URL som `https://us11.admin.mailchimp.com` eller bara `us11.admin.mailchimp.com`. I det här exemplet är prefixet `us11` är bara en platshållare och ditt värde kommer att bli annorlunda. Registrera din URL med ditt prefix för ett senare steg.
+När du har loggat in på Mailchimp och landat i vyn Kontrollpanel bör webbläsarens adressfält visa en URL som `https://us11.admin.mailchimp.com` eller bara `us11.admin.mailchimp.com`. I det här exemplet är prefixet `us11` är bara en platshållare och ditt värde kommer att vara ett annat. Registrera din URL med ditt prefix för ett senare steg.
 
 ### API-nyckel
 
-Om du vill hitta API-nyckeln för ditt konto väljer du din profilikon i gränssnittet för Mailchimp och väljer sedan **Profil**. Du bör se en URL som `https://us11.admin.mailchimp.com/account/profile/` men med **din** prefix i stället för `us11`.
+Om du vill hitta API-nyckeln för ditt konto väljer du din profilikon i gränssnittet för Mailchimp och väljer sedan **Profil**. Du bör se en URL som `https://us11.admin.mailchimp.com/account/profile/` men med **din** i stället för `us11`.
 
 Välj **Extrafunktioner** sedan **API-nycklar**:
 
@@ -55,11 +55,11 @@ Välj **Extrafunktioner** sedan **API-nycklar**:
 
 Under **Dina API-nycklar** kan du välja en befintlig nyckel eller markera **Skapa en nyckel** för att skapa en ny. Du kan skapa en ny nyckel som ska användas specifikt med det här tillägget. Kopiera API-nyckeln och spara den i ett senare steg. Mer information finns i dokumentationen för Mailchimp om hur du [generera API-nyckeln](https://mailchimp.com/developer/marketing/guides/quick-start/#generate-your-api-key).
 
-### Målgrupps-ID och Från-adress
+### Audience ID och From address
 
 Välj **Målgrupp** i den vänstra navigeringen och sedan **Audience dashboard**. Välj sedan den målgrupp du tänker använda med det här tillägget. Mer information finns i Mailchimp-dokumentet på [skapa en målgrupp](https://mailchimp.com/help/create-audience/).
 
-När målgruppen har skapats och valts väljer du **Hantera målgrupp** listruta och välj **Inställningar**. På den här skärmen visas olika inställningar för din målgrupp.
+När målgruppen är skapad och vald väljer du **Hantera målgrupp** listruta och välj **Inställningar**. På den här skärmen visas olika inställningar för din målgrupp.
 
 Längst ned på inställningsskärmen visas `Unique id for audience [audience name]` där `[audience name]` är namnet på den verkliga målgruppen. Kopiera publikens ID och spara det för ett senare steg.
 
@@ -81,11 +81,11 @@ I det här avsnittet beskrivs stegen för hur du installerar och konfigurerar ti
 
 I en egenskap för vidarebefordring av händelser [skapa en [!UICONTROL Token] hemlig](../../../ui/event-forwarding/secrets.md#token) anropad `Mailchimp API Key`.
 
-Nästa, [skapa ett dataelement](../../../ui/managing-resources/data-elements.md#create-a-data-element) med [!UICONTROL Core] tillägg och en [!UICONTROL Secret] dataelementtyp som refererar till `Mailchimp API Key` hemlighet du nyss skapade. Retur `Mailchimp Token` som dataelementets namn.
+Nästa, [skapa ett dataelement](../../../ui/managing-resources/data-elements.md#create-a-data-element) med [!UICONTROL Core] tillägg och [!UICONTROL Secret] dataelementtyp som refererar till `Mailchimp API Key` hemlighet du nyss skapade. Retur `Mailchimp Token` som dataelementets namn.
 
 ### Installera och konfigurera tillägget
 
-I samma händelsevidarebefordringsegenskap väljer du **[!UICONTROL Extensions],** sedan **[!UICONTROL Catalog]** för att visa de tillägg som är tillgängliga för installation. Här söker du efter tillägget Mailchimp och väljer **[!UICONTROL Install]**.
+I samma händelsevidarebefordringsegenskap väljer du **[!UICONTROL Extensions],** sedan **[!UICONTROL Catalog]** för att visa de tillägg som är tillgängliga för installation. Här söker du efter Mailchimp-tillägget och väljer **[!UICONTROL Install]**.
 
 ![Installera Mailchimp-tillägg](../../../images/extensions/server/mailchimp/install.png)
 
@@ -107,7 +107,7 @@ När du använder det här tillägget i en [regel](../../../ui/managing-resource
 
 De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data eller data som inte är XDM-data. Läs mer om [skicka XDM-data](../../../../edge/fundamentals/tracking-events.md#sending-non-xdm-data).
 
-Om en kund till exempel gör ett köp eller registrerar sig för en händelse på din webbplats, kan du skicka en bekräftelse via e-post via Mailchimp med det här tillägget. När du har skickat den nödvändiga informationen från Web SDK till Edge Network utlöser tillägget e-postmeddelandet med Mailchimp.
+Om en kund till exempel gör ett köp eller registrerar sig för en händelse på din webbplats, kan du skicka ett bekräftelsemeddelande via Mailchimp med det här tillägget. När du har skickat den nödvändiga informationen från Web SDK till Edge Network utlöser tillägget e-postmeddelandet med Mailchimp.
 
 ![Lägg till händelseåtgärdskonfiguration](../../../images/extensions/server/mailchimp/action-configurations.png)
 
@@ -140,7 +140,7 @@ Du kan nu använda det här tillägget och åtgärden Lägg till händelse för 
 
 ## Dataverifiering
 
-När du arbetar med tillägg för vidarebefordran av händelser [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) är mycket användbar. I avsnittet Loggar, under Edge-loggar, kan du se de begäranden som har gjorts av reglerna för vidarebefordran av händelser när de har utlösts. Följande skärmbilder visar en begäran som görs till Mailchimp API av tillägget.
+När du arbetar med tillägg för vidarebefordran av händelser [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) är mycket användbar. I avsnittet Loggar, under Edge-loggar, kan du se de begäranden som har gjorts av reglerna för vidarebefordran av händelser när de har utlösts. På följande skärmbilder visas en begäran som görs till Mailchimp API av tillägget.
 
 ![Adobe Experience Platform Debugger](../../../images/extensions/server/mailchimp/debugger-edge-logs.png)
 

@@ -48,7 +48,7 @@ Om du vill ta hänsyn till att Analytics-loggning på klientsidan är aktiverad 
 
 För att den här rapporteringsmetoden ska fungera på rätt sätt måste du skicka [!DNL A4T] relaterade data som hämtats från [`sendEvent`](../../../fundamentals/tracking-events.md) i Analytics-träffen.
 
-När Target Edge beräknar ett svar på en offert kontrollerar det om Analytics-loggning på klientsidan är aktiverat (dvs. om Analytics är inaktiverat i din datastream). Om loggning på klientsidan är aktiverat lägger systemet till en analystoken till varje erbjudande i svaret.
+När Target Edge beräknar ett svarsförslag kontrollerar programmet om Analytics-loggning på klientsidan är aktiverat (dvs. om Analytics är inaktiverat i din datastream). Om loggning på klientsidan är aktiverat lägger systemet till en analystoken till varje erbjudande i svaret.
 
 Flödet ser ut ungefär så här:
 
@@ -204,7 +204,7 @@ Förslag för formulärbaserade Experience Composer-aktiviteter kan innehålla b
 }
 ```
 
-Alla värden från `scopeDetails.characteristics.analyticsToken`, samt `scopeDetails.characteristics.analyticsDisplayToken` (för visat innehåll) och `scopeDetails.characteristics.analyticsClickToken` (för klickvärden) är A4T-nyttolasterna som behöver samlas in och inkluderas som `tnta` -taggen i [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) ring.
+Alla värden från `scopeDetails.characteristics.analyticsToken`, samt `scopeDetails.characteristics.analyticsDisplayToken` (för visat innehåll) och `scopeDetails.characteristics.analyticsClickToken` (för klickvärden) är A4T-nyttolasterna som behöver samlas in och inkluderas som `tnta` i [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) ring.
 
 >[!IMPORTANT]
 >
@@ -229,7 +229,7 @@ I följande underavsnitt visas hur du implementerar loggning på klientsidan fö
 
 Du kan använda Web SDK för att styra hur förslag körs från [Adobe Target formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) verksamhet.
 
-När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja plattformens webb-SDK `sendEvent` och iterera genom de returnerade förslagen för att köra dem samtidigt som analystoken samlas in.
+När du begär förslag för ett specifikt beslutsomfång innehåller det returnerade förslaget en lämplig analystoken. Det bästa sättet är att kedja plattformens SDK `sendEvent` och iterera genom de returnerade förslagen för att köra dem samtidigt som analystoken samlas in.
 
 Du kan aktivera en `sendEvent` för ett formulärbaserat Experience Composer-aktivitetsomfång som detta:
 
@@ -473,7 +473,7 @@ Med Web SDK kan du hantera erbjudanden som skapats med [Visual Experience Compos
 >
 >Stegen för implementering av det här användningsexemplet liknar de steg som beskrivs i [Formulärbaserade Experience Composer-aktiviteter](#form-based-composer). Mer information finns i föregående avsnitt.
 
-När automatisk återgivning är aktiverat kan du samla in analystoken från de förslag som kördes på sidan. Det bästa sättet är att kedja plattformens webb-SDK `sendEvent` och iterera genom de returnerade förslagen för att filtrera dem som Web SDK har försökt återge.
+När automatisk återgivning är aktiverat kan du samla in analystoken från de förslag som kördes på sidan. Det bästa sättet är att kedja plattformens SDK `sendEvent` och iterera genom de returnerade förslagen för att filtrera dem som Web SDK har försökt återge.
 
 **Exempel**
 
@@ -540,4 +540,4 @@ alloy("configure", {
 
 ## Nästa steg {#next-steps}
 
-Den här guiden täcker loggning på klientsidan för A4T-data i Web SDK. Se guiden [loggning på serversidan](server-side.md) om du vill ha mer information om hur du hanterar A4T-data på Edge Network.
+Den här guiden täcker loggning på klientsidan för A4T-data i Web SDK. Se guiden på [serverloggning](server-side.md) om du vill ha mer information om hur du hanterar A4T-data på Edge Network.

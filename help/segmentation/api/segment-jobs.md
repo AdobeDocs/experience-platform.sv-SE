@@ -18,7 +18,7 @@ Den här handboken innehåller information som hjälper dig att förstå segment
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden är en del av [!DNL Adobe Experience Platform Segmentation Service] API. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Hämta en lista med segmentjobb {#retrieve-list}
 
@@ -40,8 +40,8 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `start` | Anger startförskjutningen för de returnerade segmentjobben. | `start=1` |
 | `limit` | Anger antalet segmentjobb som returneras per sida. | `limit=20` |
 | `status` | Filtrerar resultaten baserat på status. Värdena som stöds är NEW, QUEUED, PROCESSING, SUCCEED, FAILED, CANCELING, CANCELING | `status=NEW` |
-| `sort` | Beställer de returnerade segmentjobben. Skrivs i formatet `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
-| `property` | Filtrerar segmentjobb och hämtar exakta matchningar för det angivna filtret. Den kan skrivas i något av följande format: <ul><li>`[jsonObjectPath]==[value]` - filtrering på objektnyckeln</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` - filtrering i arrayen</li></ul> | `property=segments~segmentId==workInUS` |
+| `sort` | Beställer returnerade segmentjobb. Skrivs i formatet `[attributeName]:[desc|asc]`. | `sort=creationTime:desc` |
+| `property` | Filtrerar segmentjobb och hämtar exakta matchningar för angivet filter. Den kan skrivas i något av följande format: <ul><li>`[jsonObjectPath]==[value]` - filtrering på objektnyckeln</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` - filtrering i arrayen</li></ul> | `property=segments~segmentId==workInUS` |
 
 **Begäran**
 
@@ -405,7 +405,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet som nyligen skapades. |
-| `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat kommer statusen alltid att vara&quot;NYTT&quot;. |
+| `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat blir alltid statusen&quot;NYTT&quot;. |
 | `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
 | `segments.segment.id` | ID:t för segmentdefinitionen som du angav. |
 | `segments.segment.expression` | Ett objekt som innehåller information om segmentdefinitionens uttryck, skrivet i PQL. |
@@ -525,7 +525,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om ditt nyligen skapa
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `id` | En systemgenererad skrivskyddad identifierare för segmentjobbet som nyligen skapades. |
-| `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat kommer statusen alltid att vara `NEW`. |
+| `status` | Aktuell status för segmentjobbet. Eftersom segmentjobbet är nyskapat är statusen alltid `NEW`. |
 | `segments` | Ett objekt som innehåller information om segmentdefinitionerna som segmentjobbet körs för. |
 | `segments.segment.id` | The `*` betyder att segmentjobbet körs för alla segmentdefinitioner i organisationen. |
 

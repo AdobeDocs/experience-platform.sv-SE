@@ -17,7 +17,7 @@ Det här dokumentet innehåller anvisningar om hur du ansluter Adobe Experience 
 
 ## Komma igång
 
-Innan du fortsätter med den här självstudiekursen bör du ha god förståelse för [schemadisposition](../../xdm/schema/composition.md) i Experience Platform och hur attribut inkluderas i kundprofilen i realtid via [union](../../xdm/schema/composition.md#union).
+Innan du fortsätter med den här självstudiekursen bör du ha god förståelse för [schemadisposition](../../xdm/schema/composition.md) i Experience Platform, och hur attribut inkluderas i kundprofilen i realtid via [union](../../xdm/schema/composition.md#union).
 
 För att installera integreringen av Power BI-programmet måste användarna först ha fått följande plattformsbehörigheter:
 
@@ -26,7 +26,7 @@ För att installera integreringen av Power BI-programmet måste användarna för
 
 Läs mer om hur du tilldelar dessa behörigheter i [åtkomstkontroll](../../access-control/home.md) dokumentation.
 
-Du måste också ha ett Power BI-konto för att kunna följa den här självstudiekursen. Om du vill skapa ett konto går du till [Power BI homepage](https://powerbi.microsoft.com/en-us/) och följ registreringsprocessen. Användare för det här Power BI-kontot måste även aktivera **Skapa arbetsyta** inställningarna för Power BI. Den här inställningen finns i klientinställningarna för Power BI Admin Portal. Om ditt konto tillhandahålls av din klientorganisation eller arbetsgivare, kontaktar du respektive administratör för att aktivera den här inställningen.
+Du måste också ha ett Power BI-konto för att kunna följa den här självstudiekursen. Navigera till [Power BI homepage](https://powerbi.microsoft.com/en-us/) och följ registreringsprocessen. Användare för det här Power BI-kontot måste även aktivera **Skapa arbetsyta** inställningarna för Power BI. Den här inställningen finns i klientinställningarna för Power BI-administratörsportalen. Om ditt konto tillhandahålls av din klientorganisation eller arbetsgivare, kontaktar du respektive administratör för att aktivera den här inställningen.
 
 ![Power BI Admin Portal - skapa arbetsyteinställningar.](../images/power-bi/create-workspace-settings.png)
 
@@ -38,7 +38,7 @@ Du måste också ha ett Power BI-konto för att kunna följa den här självstud
 
 I plattformsgränssnittet väljer du **[!UICONTROL Dashboards]** i den vänstra navigeringen för att öppna [!UICONTROL Dashboards] arbetsyta. The [!UICONTROL Browse] -fliken visar en lista med tillgängliga instrumentpanelsvyer. Mer information om hur du visar tillgängliga instrumentpaneler finns i [lagerdokumentation](../inventory.md).
 
-Välj sedan **[!UICONTROL Integrations]** -fliken. Integreringssidan för Power BI-programmet visas. Här väljer du **[!UICONTROL Install]** för att starta installationen.
+Nästa steg är att välja **[!UICONTROL Integrations]** -fliken. Integreringssidan för Power BI-programmet visas. Välj **[!UICONTROL Install]** för att starta installationen.
 
 >[!NOTE]
 >
@@ -58,11 +58,11 @@ Det finns två obligatoriska fält när nya autentiseringsuppgifter genereras: [
 
 >[!IMPORTANT]
 >
->Om du vill skapa autentiseringsuppgifter som inte förfaller måste du ha vissa behörigheter och roller tilldelade. Behörigheterna är Hantera sandlådor och Hantera integrering av frågetjänster. Rollerna som krävs är Adobe Experience Platform admin- och utvecklarroller. Läs mer om hur du tilldelar dessa behörigheter i [åtkomstkontroll](../../access-control/home.md) dokumentation.
+>Om du vill skapa autentiseringsuppgifter som inte förfaller måste du ha vissa behörigheter och roller tilldelade. Behörigheterna som krävs är Hantera sandlådor och Hantera integrering av frågetjänster. Rollerna som krävs är Adobe Experience Platform admin- och utvecklarroller. Läs mer om hur du tilldelar dessa behörigheter i [åtkomstkontroll](../../access-control/home.md) dokumentation.
 
 Mer information om hur du genererar icke-förfallande autentiseringsuppgifter för frågetjänsten finns i [guide för ej förfallande autentiseringsuppgifter](../../query-service/ui/credentials.md#non-expiring-credentials).
 
-När du har genererat icke-utgångsdatum för första gången hämtas en JSON-fil till den datorn. Den här JSON-filen kan sedan delas med andra användare som autentiseringsuppgifter för att slutföra installationsprocessen.
+När du har genererat icke-förfallande autentiseringsuppgifter för första gången hämtas en JSON-fil till den datorn. Den här JSON-filen kan sedan delas med andra användare som autentiseringsuppgifter för att slutföra installationsprocessen.
 
 #### Använd befintliga autentiseringsuppgifter {#use-existing-credentials}
 
@@ -76,7 +76,7 @@ Välj **[!UICONTROL Upload credential file]** väljer du sedan den JSON-fil som 
 
 ![Power BI-inloggningsskärmen med knappen för att överföra autentiseringsuppgifter markerad.](../images/power-bi/upload-credential-file.png)
 
-När du har angett inloggningsuppgifterna som inte förfaller valideras de automatiskt av Platform. Ett bekräftelsemeddelande visas när valideringen har slutförts. Välj **[!UICONTROL Next]** granska medgivandeavtalet för Power BI-programmet.
+När du har angett inloggningsuppgifterna som inte upphör att gälla valideras de automatiskt av Platform. Ett bekräftelsemeddelande visas när valideringen har slutförts. Välj **[!UICONTROL Next]** granska medgivandeavtalet för Power BI-programmet.
 
 ![En skärm som inte förfaller har validerats med knappen Nästa markerad.](../images/power-bi/successfully-uploaded-credential-file.png)
 
@@ -136,7 +136,7 @@ Anpassade widgetar skapas via widgetbiblioteket. Se [Översikt över Widget Libr
 
 >[!IMPORTANT]
 >
->De nya anpassade widgetarna är **not** synkroniseras automatiskt mellan Adobe Experience Platform kontrollpaneler och rapportmallar för Power BI. Alla anpassade widgetar som skapas i plattformsgränssnittet måste återskapas manuellt i Power BI-miljön.
+>De nya anpassade widgetarna är **not** synkroniseras automatiskt mellan Adobe Experience Platform-kontrollpaneler och rapportmallar för Power BI. Alla anpassade widgetar som skapas i plattformsgränssnittet måste återskapas manuellt i Power BI-miljön.
 
 ### Återskapa din anpassade widget i Power BI-miljön
 
@@ -156,7 +156,7 @@ En bekräftelsepover visas. Välj **[!UICONTROL Delete]** för att bekräfta pro
 
 >[!IMPORTANT]
 >
->Om du tar bort kontrollpanelen för Power BI från plattformsgränssnittet gör det **not** ta bort rapportmallarna som finns i Power BI-miljön. Om du vill ta bort all information som finns i Power BIETS rapportmallar måste du logga in på ditt Power BI-konto och ta bort rapportmallarna från den miljön. När den har tagits bort kan användaren installera om Power BI-kontrollpanelen genom att följa samma installationsanvisningar som beskrivs ovan.
+>Om du tar bort kontrollpanelen för Power BI från plattformsgränssnittet gör det **not** ta bort rapportmallarna som finns i Power BI-miljön. Om du vill ta bort all information som finns i rapportmallarna för Power BI måste du logga in på ditt Power BI-konto och ta bort rapportmallarna från den miljön. När den har tagits bort kan användaren installera om Power BI-kontrollpanelen genom att följa samma installationsanvisningar som beskrivs ovan.
 
 ## Nästa steg
 

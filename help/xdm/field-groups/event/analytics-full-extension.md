@@ -44,8 +44,8 @@ Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `eVars` | Objekt | Ett objekt som hämtar upp till 250 konverteringsvariabler ([eVars](https://experienceleague.adobe.com/docs/analytics/components/dimensions/evar.html)). Objektets egenskaper är nedtonade `eVar1` till `eVar250` och godkänner bara strängar för sin datatyp. |
-| `hierarchies` | Objekt | Ett objekt som hämtar upp till fem anpassade hierarkivariabler ([Hantverkare](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html)). Objektets egenskaper är nedtonade `hier1` till `hier5`, som i sig är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan i `values`.</li><li>`values`: En avgränsad lista med namn på hierarkinivåer, som representeras som en sträng.</li></ul> |
-| `listProps` | Objekt | Ett objekt som hämtar upp till 75 [lista-proffs](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html#list-props). Objektets egenskaper är nedtonade `prop1` till `prop75`, som i sig är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan i `values`.</li><li>`values`: En avgränsad lista med värden för propen, som representeras som en sträng.</li></ul> |
+| `hierarchies` | Objekt | Ett objekt som hämtar upp till fem anpassade hierarkivariabler ([värmare](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html)). Objektets egenskaper är nedtonade `hier1` till `hier5`, som i sig är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan i `values`.</li><li>`values`: En avgränsad lista med namn på hierarkinivåer, representerat som en sträng.</li></ul> |
+| `listProps` | Objekt | Ett objekt som hämtar upp till 75 [lista-proffs](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html#list-props). Objektets egenskaper är nedtonade `prop1` till `prop75`, som i sig är objekt med följande underegenskaper:<ul><li>`delimiter`: Den ursprungliga avgränsaren som användes för att generera listan i `values`.</li><li>`values`: En avgränsad lista med värden för propen, representerad som en sträng.</li></ul> |
 | `lists` | Objekt | Ett objekt som hämtar upp till tre [listor](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html). Objektets egenskaper är nedtonade `list1` till `list3`. Var och en av dessa egenskaper innehåller en `list` array med [[!UICONTROL Key Value Pair]](../../data-types/key-value-pair.md) datatyper. |
 | `props` | Objekt | Ett objekt som hämtar upp till 75 [proppar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html). Objektets egenskaper är nedtonade `prop1` till `prop75` och godkänner bara strängar för sin datatyp. |
 | `postalCode` | Sträng | Ett postnummer som kunden angett. |
@@ -77,9 +77,9 @@ Fältgruppen innehåller en `_experience` objekt till ett schema, som i sin tur 
 
 ## Anpassade händelsefält {#events}
 
-Fältgruppen för Analytics-tillägg innehåller tio objektfält som fångar upp till 100 [anpassade händelsemått](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html) var och en, för totalt 1000 för fältgruppen.
+Fältgruppen för analystillägg innehåller tio objektfält som fångar upp till 100 [anpassade händelsemått](https://experienceleague.adobe.com/docs/analytics/components/metrics/custom-events.html) var och en, för totalt 1000 för fältgruppen.
 
-Varje händelseobjekt på den översta nivån innehåller de enskilda händelseobjekten för respektive intervall. Till exempel: `event101to200` innehåller de händelser som klistras in från `event101` till `event200`.
+Varje händelseobjekt på den översta nivån innehåller de enskilda händelseobjekten för respektive intervall. Till exempel: `event101to200` innehåller de händelser som klistras in `event101` till `event200`.
 
 Varje jämnt objekt använder [[!UICONTROL Measure]](../../data-types/measure.md) datatyp, som ger en unik identifierare och ett kvantifierbart värde.
 

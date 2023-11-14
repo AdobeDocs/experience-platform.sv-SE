@@ -47,7 +47,7 @@ Det finns flera sätt att visa profildata, beroende på om du använder API:t el
 
 Om du känner till ID:n för de profilenheter du vill komma åt kan du använda `/entities` (Profilåtkomst) slutpunkt i profil-API för att söka efter dessa enheter. Se avsnittet om [enheter](./api/entities.md) i utvecklarhandboken för mer information.
 
-Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att få tillgång till enskilda profiler för kunder som har kvalificerat sig för ett målgruppsmedlemskap. Se [Översikt över segmenteringstjänsten](../segmentation/home.md) för mer information.
+Du kan också använda API:t för Adobe Experience Platform segmenteringstjänst för att få tillgång till de enskilda profilerna för kunder som har kvalificerat sig för ett målgruppsmedlemskap. Se [Översikt över segmenteringstjänsten](../segmentation/home.md) för mer information.
 
 #### Använda gränssnittet
 
@@ -68,7 +68,7 @@ Nedan följer en lista över felmeddelanden som du kan stöta på när du arbeta
 }
 ```
 
-När ett nytt beräknat attribut skapas inträffar det här felet när systemet inte kan hitta schemat som anges i nyttolasten för begäran. Kontrollera att du har angett rätt innehavar-ID i nyttolastens `path` och att värdena för `schema.name` är ett giltigt schemanamn.
+När ett nytt beräknat attribut skapas inträffar det här felet när systemet inte kan hitta schemat som anges i nyttolasten för begäran. Kontrollera att du har angett rätt innehavar-ID i nyttolastens `path` och att värdena för `schema.name` är ett giltigt schema.
 
 Om du inte känner till ditt klient-ID kan du hämta det genom att följa stegen i [Utvecklarhandbok för schemaregister](../xdm/api/getting-started.md).
 
@@ -121,7 +121,7 @@ Det här felet inträffar när en ogiltig nyttolast anges för ett raderingssyst
 }
 ```
 
-Det här felet inträffar när det inte går att hitta en giltig grupp när en borttagningsbegäran för profildata skapas. Kontrollera att du har angett rätt ID för en profilaktiverad datauppsättning innan du försöker igen.
+Det här felet inträffar när det inte går att hitta en giltig grupp när en begäran om att ta bort profildata skapas. Kontrollera att du har angett rätt ID för en profilaktiverad datauppsättning innan du försöker igen.
 
 ### Projektionsmålet har inte skapats ännu
 
@@ -133,7 +133,7 @@ Det här felet inträffar när det inte går att hitta en giltig grupp när en b
 }
 ```
 
-Det här felet inträffar när `destinationId` tillhandahålls i `POST /config/projections` begäran är ogiltig. Kontrollera att du har angett ett giltigt mål-ID innan du försöker igen. Om du vill skapa ett nytt mål följer du de steg som beskrivs i [Profilutvecklarguide](./api/edge-projections.md#create-a-destination).
+Det här felet inträffar när `destinationId` som tillhandahålls i `POST /config/projections` begäran är ogiltig. Kontrollera att du har angett ett giltigt mål-ID innan du försöker igen. Om du vill skapa ett nytt mål följer du de steg som beskrivs i [Profilutvecklarguide](./api/edge-projections.md#create-a-destination).
 
 ### Medietypen stöds inte
 

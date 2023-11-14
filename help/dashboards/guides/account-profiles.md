@@ -19,7 +19,7 @@ En översikt över alla funktioner i användargränssnittet för kontoprofilen f
 
 Du måste ha rätt till [Adobe Real-time Customer Data Platform B2B Edition](../../rtcdp/b2b-overview.md) för att få tillgång till B2B [!UICONTROL Account Profiles] kontrollpanel.
 
-## Kontoprofildata
+## Data för kontoprofiler
 
 The [!UICONTROL Account Profiles] På kontrollpanelen visas en ögonblicksbild av enhetlig kontoinformation från olika källor över alla era marknadsföringskanaler och de olika system som organisationen för närvarande använder för att lagra kundkontoinformation.
 
@@ -35,7 +35,7 @@ Navigera till [!UICONTROL Account Profiles] kontrollpanelen i plattformsgränssn
 
 ![Plattformsgränssnittet med kontoprofiler i den vänstra navigeringen är markerat och fliken Översikt visas.](../images/account-profiles/account-profiles-dashboard.png)
 
-Från [!UICONTROL Account Profiles] kontrollpanel kan du antingen [bläddra bland de kontoprofiler som är inkapslade i din organisation](#browse-account-profiles), eller [visa alla dina kontouppgifter i en översikt med hjälp av widgetar](#standard-widgets) som visualiserar olika aspekter av data.
+Från [!UICONTROL Account Profiles] kontrollpanel kan du antingen [bläddra bland de kontoprofiler som är insamlade i din organisation](#browse-account-profiles), eller [visa alla dina kontouppgifter i en översikt med widgetar](#standard-widgets) som visualiserar olika aspekter av data.
 
 ## Bläddra bland kontoprofiler {#browse-account-profiles}
 
@@ -49,7 +49,7 @@ Kontoprofilinformationen som visas på [!UICONTROL Details] har sammanfogats fr�
 
 ## The [!UICONTROL Account Profiles] [!UICONTROL Overview] {#overview}
 
-The [!UICONTROL Overview] -fliken består av widgetar som tillhandahåller skrivskyddade mått för att förmedla viktig information om dina kontoprofiler. Välj **[!UICONTROL Modify dashboard]** för att ändra utseendet på [!UICONTROL Overview] genom att flytta och ändra storlek på widgetar.
+The [!UICONTROL Overview] -fliken består av widgetar som tillhandahåller skrivskyddade mätvärden för att förmedla viktig information om dina kontoprofiler. Välj **[!UICONTROL Modify dashboard]** för att ändra utseendet på [!UICONTROL Overview] genom att flytta och ändra storlek på widgetar.
 
 ![Fliken Översikt över kontoprofiler med kontrollpanelen Ändra markerad.](../images/account-profiles/modify-dashboard.png)
 

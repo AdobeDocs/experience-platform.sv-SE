@@ -17,16 +17,16 @@ Det här dokumentet innehåller en självstudiekurs för att utvärdera segmentd
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa målgrupper. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
-- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+- [[!DNL Real-Time Customer Profile]](../../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Används för att bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
 ### Obligatoriska rubriker
 
-Den här självstudiekursen kräver även att du har slutfört [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa [!DNL Platform] API:er. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
+Den här självstudiekursen kräver även att du har slutfört [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för att kunna ringa [!DNL Platform] API. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i alla [!DNL Experience Platform] API-anrop enligt nedan:
 
 - Behörighet: Bearer `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
@@ -42,13 +42,13 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla förfrågningar från POST, PUT och PATCH kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 ## Utvärdera en segmentdefinition {#evaluate-a-segment}
 
 När du har utvecklat, testat och sparat din segmentdefinition kan du sedan utvärdera segmentdefinitionen genom en schemalagd utvärdering eller on-demand-utvärdering.
 
-[Schemalagd utvärdering](#scheduled-evaluation) (kallas även&quot;schemalagd segmentering&quot;) kan du skapa ett återkommande schema för att köra ett exportjobb vid en viss tidpunkt, medan [on demand-utvärdering](#on-demand-evaluation) innebär att skapa ett segmentjobb för att omedelbart bygga upp målgruppen. Stegen för varje steg beskrivs nedan.
+[Schemalagd utvärdering](#scheduled-evaluation) (kallas även&quot;schemalagd segmentering&quot;) kan du skapa ett återkommande schema för att köra ett exportjobb vid en viss tidpunkt, medan [on-demand-utvärdering](#on-demand-evaluation) innebär att skapa ett segmentjobb för att omedelbart bygga upp målgruppen. Stegen för varje steg beskrivs nedan.
 
 Om du ännu inte har slutfört [skapa en segmentdefinition med segmenterings-API](./create-a-segment.md) självstudiekurs eller skapa en segmentdefinition med [Segment Builder](../ui/overview.md)gör du det innan du fortsätter med kursen.
 
@@ -128,7 +128,7 @@ I följande exempel visas vad `segmentMembership` för varje enskild profilpost 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `lastQualificationTime` | Tidsstämpeln när kontrollen av segmentmedlemskap gjordes och profilen angavs eller avslutades i segmentdefinitionen. |
-| `status` | Segmentdefinitionens deltagarstatus som en del av den aktuella begäran. Måste vara lika med ett av följande kända värden: <ul><li>`realized`: Enheten kvalificerar för segmentdefinitionen.</li><li>`exited`: Entiteten avslutar segmentdefinitionen.</li></ul> |
+| `status` | Segmentdefinitionens deltagarstatus som en del av den aktuella begäran. Måste vara lika med ett av följande kända värden: <ul><li>`realized`: Entiteten kvalificerar sig för segmentdefinitionen.</li><li>`exited`: Entiteten avslutar segmentdefinitionen.</li></ul> |
 
 >[!NOTE]
 >
@@ -136,17 +136,17 @@ I följande exempel visas vad `segmentMembership` för varje enskild profilpost 
 
 ## Åtkomst till segmentjobbresultat
 
-Resultatet av ett segmentjobb kan nås på ett av två sätt: kan du komma åt enskilda profiler eller exportera en hel publik till en datauppsättning.
+Resultatet av ett segmentjobb kan nås på ett av två sätt: du kan komma åt enskilda profiler eller exportera en hel publik till en datauppsättning.
 
 I följande avsnitt beskrivs dessa alternativ mer ingående.
 
 ## Söka efter en profil
 
-Om du vet vilken profil du vill använda kan du göra det med [!DNL Real-Time Customer Profile] API. De fullständiga stegen för att komma åt enskilda profiler finns i [Få åtkomst till kundprofildata i realtid med profils-API](../../profile/api/entities.md) självstudiekurs.
+Om du vet vilken profil du vill använda kan du göra det med [!DNL Real-Time Customer Profile] API. De fullständiga stegen för att komma åt enskilda profiler finns i [Få åtkomst till kundprofildata i realtid med profils-API](../../profile/api/entities.md) självstudie.
 
 ## Exportera ett segment {#export}
 
-När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är &quot;SUCCEEDED&quot;), kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras.
+När ett segmenteringsjobb har slutförts (värdet på `status` -attributet är &quot;SUCCEEDED&quot;) kan du exportera målgruppen till en datauppsättning där den kan nås och hanteras.
 
 Följande steg krävs för att exportera målgruppen:
 
@@ -163,8 +163,8 @@ Ett av de viktigaste övervägandena är schemat som datauppsättningen baseras 
 
 Det finns två sätt att skapa den nödvändiga datauppsättningen:
 
-- **Använda API:er:** Stegen som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile Union Schema] med [!DNL Catalog] API.
-- **Använda gränssnittet:** Så här använder du [!DNL Adobe Experience Platform] om du vill skapa en datauppsättning som refererar till unionsschemat följer du stegen i [Självstudiekurs om användargränssnitt](../ui/overview.md) och sedan gå tillbaka till den här självstudiekursen för att fortsätta [generera målgruppsprofiler](#generate-profiles).
+- **Använda API:** Stegen som följer i den här självstudiekursen visar hur du skapar en datauppsättning som refererar till [!DNL XDM Individual Profile Union Schema] med [!DNL Catalog] API.
+- **Använda gränssnittet:** Använd [!DNL Adobe Experience Platform] om du vill skapa en datauppsättning som refererar till unionsschemat följer du stegen i [Självstudiekurs om användargränssnitt](../ui/overview.md) och sedan återgå till den här självstudiekursen för att fortsätta med stegen för [generera målgruppsprofiler](#generate-profiles).
 
 Om du redan har en kompatibel datauppsättning och känner till dess ID kan du fortsätta direkt till steget för [generera målgruppsprofiler](#generate-profiles).
 
@@ -198,7 +198,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `name` | Ett beskrivande namn för datauppsättningen. |
-| `schemaRef.id` | ID för den unionsvy (schema) som datauppsättningen ska kopplas till. |
+| `schemaRef.id` | ID:t för den unionsvy (schema) som datauppsättningen ska kopplas till. |
 
 **Svar**
 
@@ -212,7 +212,7 @@ Ett lyckat svar returnerar en array som innehåller det skrivskyddade, systemgen
 
 ### Generera profiler för målgruppsmedlemmar {#generate-profiles}
 
-När du har en enhetlig datauppsättning som är beständig kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en begäran om POST till `/export/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API och ange datauppsättnings-ID och segmentdefinitionsinformation för de segmentdefinitioner som du vill exportera.
+När du har en enhetlig datauppsättning kan du skapa ett exportjobb som behåller målgruppsmedlemmarna i datauppsättningen genom att göra en POST till `/export/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API och ange datauppsättnings-ID och segmentdefinitionsinformation för de segmentdefinitioner som du vill exportera.
 
 Mer detaljerad information om hur du använder den här slutpunkten finns i [slutpunktsguide för exportjobb](../api/export-jobs.md#create)
 
@@ -224,7 +224,7 @@ Mer detaljerad information om hur du använder den här slutpunkten finns i [slu
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i [!DNL Data Lake] in [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) för att få åtkomst till data med `batchId` som är kopplad till exporten. Beroende på segmentdefinitionens storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i [!DNL Data Lake] in [!DNL Experience Platform]. Du kan sedan använda [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) för att få åtkomst till data med `batchId` som är associerad med exporten. Beroende på segmentdefinitionens storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Stegvisa instruktioner om hur du använder [!DNL Data Access] API för att få tillgång till och ladda ned batchfiler, följ [Dataåtkomst, genomgång](../../data-access/tutorials/dataset-data.md).
 

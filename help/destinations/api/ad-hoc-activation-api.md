@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >När betaversionen är klar [!DNL ad-hoc activation API] är nu allmänt tillgängligt (GA) för alla Experience Platform-kunder. I GA-versionen har API uppgraderats till version 2. Steg 4 ([Hämta det senaste målgruppens exportjobb-ID](#segment-export-id)) krävs inte längre eftersom API:t inte längre kräver export-ID:t.
 >
->Se [Kör ad hoc-aktiveringsjobbet](#activation-job) mer information finns nedan i den här självstudiekursen.
+>Se [Kör ad hoc-aktiveringsjobbet](#activation-job) mer information finns nedan i självstudiekursen.
 
 ## Översikt {#overview}
 
@@ -34,7 +34,7 @@ Bilden nedan visar det kompletta arbetsflödet för att aktivera målgrupper via
 
 ## Användningsfall {#use-cases}
 
-### Försäljning eller kampanjer i Flash
+### Flash, försäljning eller kampanjer
 
 En webbutik förbereder en begränsad försäljning och vill meddela kunderna med kort varsel. Via Experience Platform ad hoc-aktiverings-API:t kan marknadsföringsteamet exportera målgrupper on-demand och snabbt skicka e-postreklam till kundbasen.
 
@@ -51,7 +51,7 @@ IT-chefer kan använda Experience Platform ad hoc-aktiverings-API för att expor
 Tänk på följande skyddsutkast när du använder API:t för ad hoc-aktivering.
 
 * För närvarande kan varje ad hoc-aktiveringsjobb aktivera upp till 80 målgrupper. Om du försöker aktivera fler än 80 målgrupper per jobb misslyckas jobbet. Detta beteende kan komma att ändras i framtida versioner.
-* Ad hoc-aktiveringsjobb kan inte köras parallellt med schemalagda [målgrupper exporterar jobb](../../segmentation/api/export-jobs.md). Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet.
+* Ad hoc-aktiveringsjobb kan inte köras parallellt med schemalagda [målgrupper exporterar jobb](../../segmentation/api/export-jobs.md). Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet har slutförts. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet.
 * Kör inte fler än ett samtidiga ad hoc-aktiveringsjobb per målgrupp.
 
 ## Segmentering {#segmentation-considerations}
@@ -86,7 +86,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 * Innehållstyp: `application/json`
 
-## Steg 3: Skapa aktiveringsflöde i plattformsgränssnittet {#activation-flow}
+## Steg 3: Skapa aktiveringsflöde i användargränssnittet för plattformen {#activation-flow}
 
 Innan du kan aktivera målgrupper via API:t för ad hoc-aktivering måste du först ha ett aktiveringsflöde konfigurerat i plattformsgränssnittet för det valda målet.
 
@@ -95,7 +95,7 @@ Detta innefattar att starta aktiveringsarbetsflödet, välja målgrupper, konfig
 * [Använd användargränssnittet för plattformen för att skapa ett aktiveringsflöde för att batchprofilera exportdestinationer](../ui/activate-batch-profile-destinations.md)
 * [Använd API:t för Flow Service för att ansluta till exportmål för batchprofiler och aktivera data](../api/connect-activate-batch-destinations.md)
 
-## Steg 4: Hämta det senaste målgruppens exportjobb-ID (krävs inte i v2) {#segment-export-id}
+## Steg 4: Hämta det senaste målgruppsexportjobb-ID:t (krävs inte i v2) {#segment-export-id}
 
 >[!IMPORTANT]
 >
@@ -103,7 +103,7 @@ Detta innefattar att starta aktiveringsarbetsflödet, välja målgrupper, konfig
 
 När du har konfigurerat ett aktiveringsflöde för batchdestinationen börjar schemalagda segmenteringsjobb automatiskt att köras var 24:e timme.
 
-Innan du kan köra ad hoc-aktiveringsjobbet måste du skaffa ID:t för det senaste målgruppsexportjobbet. Du måste skicka detta ID i ad hoc-aktiveringsjobbbegäran.
+Innan du kan köra ad hoc-aktiveringsjobbet måste du skaffa ID:t för det senaste målgruppsexportjobbet. Du måste skicka det här ID:t i en ad hoc-aktiveringsjobbförfrågan.
 
 Följ instruktionerna som beskrivs [här](../../segmentation/api/export-jobs.md#retrieve-list) för att hämta en lista över alla målgruppsexportjobb.
 
@@ -128,7 +128,7 @@ Adobe Experience Platform kör schemalagda segmenteringsjobb en gång var 24:e t
 >
 >Observera följande engångsbegränsning: Innan du kör ett ad hoc-aktiveringsjobb måste du se till att det har gått minst 20 minuter från det att målgruppen först aktiverades enligt det schema du angav i [Steg 3 - Skapa aktiveringsflöde i plattformsgränssnittet](#activation-flow).
 
-Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet för dina målgrupper är klart. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar en **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet för att exportera en fullständig fil.
+Innan du kör ett ad hoc-aktiveringsjobb kontrollerar du att det schemalagda målgruppsexportjobbet för dina målgrupper är klart. Se [övervakning av måldataflöde](../../dataflows/ui/monitor-destinations.md) för information om hur man övervakar status för aktiveringsflöden. Om t.ex. aktiveringsdataflödet visar **[!UICONTROL Processing]** status, vänta tills den är klar innan du kör ad hoc-aktiveringsjobbet för att exportera en fullständig fil.
 
 När målgruppens exportjobb är klart kan du aktivera det.
 
@@ -205,7 +205,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 | -------- | ----------- |
 | <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera målgrupper för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i [dokumentation om målarbetsyta](/help/destinations/ui/destinations-workspace.md#browse). |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgrupper som du vill aktivera till det valda målet. |
-| <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [målexport](../../segmentation/api/export-jobs.md#retrieve-list) jobb. Se [Steg 4: Hämta det senaste målgruppens exportjobb-ID](#segment-export-id) för instruktioner om hur du hittar detta ID. |
+| <ul><li>`exportId1`</li></ul> | Det ID som returnerades i svaret från [målexport](../../segmentation/api/export-jobs.md#retrieve-list) jobb. Se [Steg 4: Hämta det senaste målgruppsexportjobb-ID:t](#segment-export-id) för instruktioner om hur du hittar detta ID. |
 
 {style="table-layout:auto"}
 
@@ -237,13 +237,13 @@ Ett lyckat svar returnerar HTTP-status 200.
 
 Destination SDK-API-slutpunkter följer de allmänna felmeddelandeprinciperna för Experience Platform API. Se [API-statuskoder](../../landing/troubleshooting.md#api-status-codes) och [fel i begäranhuvudet](../../landing/troubleshooting.md#request-header-errors) i felsökningsguiden för plattformen.
 
-### API-felkoder och meddelanden som är specifika för API:t för ad hoc-aktivering {#specific-error-messages}
+### API-felkoder och meddelanden som är specifika för API för ad hoc-aktivering {#specific-error-messages}
 
 När du använder API:t för ad hoc-aktivering kan du få felmeddelanden som är specifika för denna API-slutpunkt. Granska tabellen för att förstå hur de ska adresseras när de visas.
 
 | Felmeddelande | Upplösning |
 |---------|----------|
-| Kör redan för att hitta rätt målgrupp `segment ID` för order `dataflow ID` med körnings-ID `flow run ID` | Det här felmeddelandet anger att ett ad hoc-aktiveringsflöde pågår för en viss målgrupp. Vänta tills jobbet är klart innan aktiveringsjobbet aktiveras igen. |
+| Kör redan för att hitta rätt målgrupp `segment ID` för order `dataflow ID` med körnings-ID `flow run ID` | Det här felmeddelandet indikerar att ett ad hoc-aktiveringsflöde pågår för en viss målgrupp. Vänta tills jobbet är klart innan aktiveringsjobbet aktiveras igen. |
 | Segment `<segment name>` är inte en del av detta dataflöde eller ligger utanför schemaintervallet! | Det här felmeddelandet anger att de målgrupper du har valt att aktivera inte är mappade till dataflödet eller att aktiveringsschemat som har konfigurerats för målgrupperna antingen har upphört att gälla eller inte har startats ännu. Kontrollera om målgruppen verkligen är mappad till dataflödet och kontrollera att målgruppens aktiveringsplan överlappar dagens datum. |
 
 ## Relaterad information {#related-information}

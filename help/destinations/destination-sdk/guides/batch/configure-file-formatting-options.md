@@ -19,12 +19,12 @@ På den här sidan beskrivs hur du använder Destination SDK för att konfigurer
 
 ## Förutsättningar {#prerequisites}
 
-Innan du går vidare till stegen nedan ska du läsa [Komma igång med Destination SDK](../../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
+Innan du går vidare till stegen som beskrivs nedan, läs [Komma igång med Destination SDK](../../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er.
 
 Adobe rekommenderar också att du läser och bekanta dig med följande dokumentation innan du fortsätter:
 
 * Alla tillgängliga filformateringsalternativ beskrivs utförligt i dialogrutan [filformatskonfiguration](../../functionality/destination-server/file-formatting.md) -avsnitt.
-* Slutför steg till [konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md) med Destination SDK.
+* Slutför stegen för att [konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md) med Destination SDK.
 
 ## Skapa en server- och filkonfiguration {#create-server-file-configuration}
 
@@ -241,7 +241,7 @@ Den ordning i vilken du lägger till filformateringsalternativen som kunddatafä
 
 Du kan gruppera flera filformateringsalternativ i ett avsnitt. När du konfigurerar anslutningen till målet i användargränssnittet kan användaren se och dra nytta av en visuell gruppering av liknande fält.
 
-Om du vill göra det använder du `"type": "object"` för att skapa en grupp och samla in önskade filformateringsalternativ i en `properties` parameter, som visas i exemplet nedan, där grupperingen **[!UICONTROL CSV Options]** markeras.
+Om du vill göra det använder du `"type": "object"` för att skapa en grupp och samla in önskade filformateringsalternativ i en `properties` parameter, som visas i exemplet nedan, där grupperingen **[!UICONTROL CSV Options]** är markerat.
 
 ```json {line-numbers="true" start-number="100" highlight="106-128"}
 "customerDataFields":[
@@ -285,7 +285,7 @@ Om du vill göra det använder du `"type": "object"` för att skapa en grupp och
 
 I situationer där du vill att användarna ska kunna välja mellan flera alternativ, t.ex. vilket tecken som ska användas för att avgränsa fälten i CSV-filer, kan du lägga till nedrullningsbara fält i användargränssnittet.
 
-Om du vill göra det använder du `namedEnum` enligt nedan och konfigurera `default` värdet för de alternativ som användaren kan välja.
+Använd `namedEnum` enligt nedan och konfigurera ett `default` värdet för de alternativ som användaren kan välja.
 
 ```json {line-numbers="true" start-number="100" highlight="114-124"}
 [...]

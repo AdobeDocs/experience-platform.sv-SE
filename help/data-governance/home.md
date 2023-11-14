@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Datastyrning - översikt
 
-En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att era dataåtgärder inom [!DNL Platform] följer dataanvändningsprinciper.
+En av de viktigaste funktionerna i Adobe Experience Platform är att samla data från olika affärssystem så att marknadsförarna bättre kan identifiera, förstå och engagera sina kunder. Dessa data kan vara föremål för användarbegränsningar som fastställts av din organisation eller av juridiska bestämmelser. Det är därför viktigt att se till att era dataåtgärder inom [!DNL Platform] är kompatibla med dataanvändningsprinciper.
 
-Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
+Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 
 >[!NOTE]
 >
@@ -29,7 +29,7 @@ Som begrepp är datastyrning varken automatisk eller sker i ett vakuum. Det som 
 
 ![Roller för datastyrning](./images/overview/roles.png)
 
-### Dataförvaltare
+### Stegvis data
 
 Datastyrning är kärnan i datastyrningen. Denna roll ansvarar för att tolka förordningar, avtalsbegränsningar och policyer och tillämpa dem direkt på data. Som informerats av deras förståelse för dessa regler, begränsningar och policyer omfattar rollen som datastyrning följande:
 
@@ -45,11 +45,11 @@ Marknadsförarna är slutpunkten för datastyrning. De begär data från den inf
 * Marknadsföringsspecialister och Experience Designers använder data för att utforma nya kundupplevelser.
 
 
-## Datastyrningsramverk
+## Ramverk för datastyrning
 
 Datastyrningsramverket förenklar och effektiviserar processen att kategorisera data och skapa policyer för dataanvändning. När dataetiketter har tillämpats och dataanvändningspolicyer har införts kan marknadsföringsåtgärder utvärderas för att säkerställa korrekt dataanvändning.
 
-Ramverket för datastyrning består av tre nyckelelement: Etiketter, profiler och verkställighet.
+Det finns tre viktiga element i ramverket för datastyrning: etiketter, policyer och verkställighet.
 
 1. **Etiketter:** Klassificera data som återspeglar integritetsrelaterade överväganden och avtalsvillkor så att de överensstämmer med regler och organisationsprofiler.
 1. **Profiler:** Beskriv vilka typer av marknadsföringsåtgärder som är tillåtna eller inte får vidtas på specifika data.
@@ -69,7 +69,7 @@ Ramverket för datastyrning innehåller fördefinierade etiketter för dataanvä
 
 >[!NOTE]
 >
->Se guiden [etiketter för dataanvändning som stöds](labels/reference.md) för en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
+>Se guiden på [etiketter för dataanvändning](labels/reference.md) för en fullständig lista över tillgängliga etiketter samt definitioner för varje etiketttyp.
 
 Etiketter kan användas när som helst, vilket ger flexibilitet i hur du väljer att styra data. Bästa praxis uppmuntrar till etikettdata så snart de hämtas in till [!DNL Experience Platform]eller så snart data blir tillgängliga i [!DNL Platform].
 
@@ -83,7 +83,7 @@ Ett exempel på en marknadsföringsåtgärd kan vara en önskan att exportera en
 
 Det finns två typer av principer:
 
-* **[!UICONTROL Data governance policy]**: Begränsa aktiveringen av data baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
+* **[!UICONTROL Data governance policy]**: Begränsa dataaktiveringen baserat på den marknadsföringsåtgärd som utförs och de dataanvändningsetiketter som medföljer data i fråga.
 * **[!UICONTROL Consent policy]**: Filtrera de profiler som kan aktiveras för [mål](../destinations/home.md) baserat på kundernas samtycke eller önskemål.
 
 När dataanvändningsetiketterna har tillämpats kan datafördelare skapa profiler med [!DNL Policy Service] API eller [!DNL Experience Platform] användargränssnitt. Mer information om dataanvändningspolicyer och marknadsföringsåtgärder finns i [profiler, översikt](./policies/overview.md).
@@ -109,13 +109,13 @@ I följande tabell beskrivs nyckeltermer för datastyrning och ramverket för da
 | **Kontraktsetiketter** | Kontraktets&quot;C&quot;-etiketter används för att kategorisera data som har avtalsmässiga skyldigheter eller som är relaterade till organisationens policyer för datastyrning. |
 | **Data för flera webbplatser** | Data på olika platser är en kombination av data från flera platser, inklusive en kombination av data på plats och data utanför platsen eller en kombination av data från flera externa källor. |
 | **Datastyrning** | Datastyrning omfattar strategier och tekniker som används för att säkerställa att data överensstämmer med regler och företagspolicyer när det gäller dataanvändning. |
-| **Dataförvaltare** | Dataförvaltningarna är den person som ansvarar för förvaltning, tillsyn och verkställighet av en organisations datatillgångar. En dataförvaltare säkerställer också att policyer för datastyrning skyddas och upprätthålls så att de följer myndighetsregler och organisationsregler. |
+| **Stegvis data** | Dataförvaltningarna är den person som ansvarar för förvaltning, tillsyn och verkställighet av en organisations datatillgångar. En dataförvaltare säkerställer också att policyer för datastyrning skyddas och upprätthålls så att de följer myndighetsregler och organisationsregler. |
 | **Dataanvändningsetiketter** | Etiketter för dataanvändning ger användarna möjlighet att kategorisera data som speglar integritetsrelaterade överväganden och avtalsvillkor så att de uppfyller regler och företagspolicyer. |
 | **Datauppsättningsetiketter** | Etiketter kan läggas till i ett schema. Alla fält i en datauppsättning ärver schemats etiketter. |
 | **Fältetiketter** | Fältetiketter är datastyrningsetiketter som antingen ärvs från ett schema eller används direkt i ett fält. Datastyrningsetiketter som används i ett fält ärvs inte upp till schemanivå. |
 | **Geofence** | En geofence är en virtuell geografisk gräns, som definieras av GPS- eller RFID-teknik, som gör att programvara kan utlösa ett svar när en mobil enhet kommer in i eller lämnar ett visst område. |
 | **Identitetsetiketter** | Identitet&quot;I&quot;-etiketter används för att kategorisera data som kan identifiera eller kontakta en viss person. |
-| **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls: data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen) och används för att välja vilket innehåll eller vilka annonser som ska hanteras baserat på dessa slutsatser. |
+| **Intressebaserad målinriktning** | Intressebaserad målinriktning, som också kallas personalisering, uppstår om följande tre villkor uppfylls: data som samlas in på webbplatsen används för att dra slutsatser om en användares intresse, används i ett annat sammanhang, t.ex. på en annan webbplats eller i en app (utanför webbplatsen) och används för att välja vilket innehåll eller vilka annonser som betjänas baserat på dessa slutsatser. |
 | **Marknadsföringsåtgärd** | En marknadsföringsåtgärd, inom ramen för datastyrningsramen, är en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera överträdelser av dataanvändningspolicyer |
 | **Policy** | I ramverket för datastyrning är en regel som beskriver vilken typ av marknadsföringsåtgärder som tillåts eller inte tillåts att vidtas för specifika data. |
 | **Schemaetiketter** | Hantera etiketterna för datastyrning, samtycke och åtkomstkontroll på schemanivå. Detta föreslår etiketterna till alla datauppsättningar som använder det schemat. |

@@ -34,7 +34,7 @@ Följ stegen nedan för att redigera befintliga aktiveringsdataflöden:
 4. The **[!UICONTROL Dataflow runs]** målsidan visas med de tillgängliga kontrollerna. Nu kan du redigera flera komponenter i måldataflödet:
 
    * Välj **[!UICONTROL Activate audiences]** till höger för att ändra vilka målgrupper eller profilattribut som ska skickas till målet. Den här åtgärden tar dig till aktiveringsarbetsflödet, som skiljer sig åt beroende på måltyp. Mer information finns i stödlinjerna för:
-      * [aktivera målgruppsdata till målgruppsdirektuppspelningsmål](./activate-segment-streaming-destinations.md) (t.ex. Facebook eller Twitter)
+      * [aktivera målgruppsdata till målgruppsdirektuppspelningsmål](./activate-segment-streaming-destinations.md) (till exempel Facebook eller Twitter);
       * [aktivera målgruppsdata till batchprofilbaserade mål](./activate-batch-profile-destinations.md) (t.ex. Amazon S3 eller Oracle Eloqua)
       * [aktivera målgruppsdata för direktuppspelning av profilbaserade mål](./activate-streaming-profile-destinations.md) (till exempel HTTP API eller Amazon Kinesis).
 

@@ -29,7 +29,7 @@ Det här avsnittet innehåller information om prestanda, begränsningar och proc
 
 ### Kan jag inaktivera funktionen för automatisk komplettering i frågetjänstredigeraren?
 
-+++Svarsnummer Redigeraren stöder för närvarande inte att funktionen Komplettera automatiskt stängs av.
++++Svarsnr Redigeraren stöder för närvarande inte att funktionen Komplettera automatiskt stängs av.
 +++
 
 ### Varför blir Frågeredigeraren ibland långsam när jag skriver en fråga?
@@ -54,10 +54,10 @@ Det här avsnittet innehåller information om prestanda, begränsningar och proc
 
 ### Finns det någon gräns för datastorlek för resultatet från en fråga?
 
-+++Svarsnummer Det finns ingen gräns för datastorlek, men det finns en timeout för frågor på 10 minuter från en interaktiv session. Om frågan körs som en batch-CTAS gäller inte en 10-minuterstimeout. Se vägledningen på [interaktiv frågekörning](./best-practices/writing-queries.md#interactive-query-execution) för mer information.
++++Svarsnr Det finns ingen gräns för datastorlek, men det finns en timeout för frågor på 10 minuter från en interaktiv session. Om frågan körs som en batch-CTAS gäller inte en 10-minuterstimeout. Se vägledningen på [interaktiv frågekörning](./best-practices/writing-queries.md#interactive-query-execution) för mer information.
 +++
 
-### Hur åsidosätter jag gränsen för antalet rader i utdata från en SELECT-fråga?
+### Hur åsidosätter jag gränsen för antalet utgående rader i en SELECT-fråga?
 
 +++Svar Om du vill åsidosätta gränsen för utdataraden använder du LIMIT 0 i frågan. Exempel:
 
@@ -80,7 +80,7 @@ SELECT * FROM customers LIMIT 0;
 
 ### Finns det något problem eller någon inverkan på frågetjänstens prestanda om flera frågor körs samtidigt?
 
-+++Svarsnummer Frågetjänsten har en autoskalningsfunktion som säkerställer att samtidiga frågor inte har någon märkbar påverkan på tjänstens prestanda.
++++Svarsnr Frågetjänsten har en autoskalningsfunktion som säkerställer att samtidiga frågor inte har någon märkbar påverkan på tjänstens prestanda.
 +++
 
 ### Kan jag använda reserverade nyckelord som kolumnnamn?
@@ -95,7 +95,7 @@ SELECT * FROM customers LIMIT 0;
 - När du har loggat in i Experience Platform väljer du **[!UICONTROL Datasets]** i den vänstra navigeringen i användargränssnittet för att navigera till [!UICONTROL Datasets] kontrollpanel.
 - Datamängderna [!UICONTROL Browse] -fliken öppnas. Du kan använda sökfältet för att förfina de tillgängliga alternativen. Välj en datauppsättning i den lista som visas.
 
-![Kontrollpanelen Datamängder i plattformsgränssnittet med sökfältet och en datauppsättning markerad.](./images/troubleshooting/dataset-selection.png)
+![Kontrollpanelen för datauppsättningar i plattformsgränssnittet med sökfältet och en datauppsättning markerad.](./images/troubleshooting/dataset-selection.png)
 
 - The [!UICONTROL Datasets activity] visas. Välj **[!UICONTROL Preview dataset]** om du vill öppna en dialogruta med XDM-schemat och en tabellvy med separerade data från den markerade datauppsättningen. Mer information finns i [förhandsgranska en datauppsättningsdokumentation](../catalog/datasets/user-guide.md#preview-a-dataset)
 
@@ -110,7 +110,7 @@ Se dokumentationen för fullständig vägledning om [arbeta med kapslade datastr
 
 ### Hur snabbar jag upp en fråga i en datauppsättning som innehåller arrayer?
 
-+++Svar Om du vill förbättra prestanda för frågor om datauppsättningar som innehåller arrayer bör du [explodera i arrayen](https://spark.apache.org/docs/latest/api/sql/index.html#explode) som [CTAS-fråga](./sql/syntax.md#create-table-as-select) i runtime, och utforska den för att hitta möjligheter att förbättra bearbetningstiden.
++++Svar Om du vill förbättra prestanda för frågor om datauppsättningar som innehåller arrayer bör du [utnyttja arrayen](https://spark.apache.org/docs/latest/api/sql/index.html#explode) som [CTAS-fråga](./sql/syntax.md#create-table-as-select) i runtime och utforska den för att hitta möjligheter att förbättra bearbetningstiden.
 +++
 
 ### Varför bearbetas min CTAS-fråga fortfarande efter många timmar för ett litet antal rader?
@@ -130,7 +130,7 @@ Det kan finnas många orsaker till att en fråga har fastnat under bearbetningen
 
 ![Adobe webbplats med inloggning markerad.](./images/troubleshooting/adobe-sign-in.png)
 
-- Använd din Adobe ID och ditt lösenord som är registrerat med din Adobe-licens.
+- Använd ditt Adobe ID och lösenord som är registrerat med din licens för Adobe.
 - Välj **[!UICONTROL Help & Support]** i det övre navigeringsfältet.
 
 ![Den översta listrutan i navigeringsfältet med Hjälp och support, Enterprise Support och Kontakta oss är markerade.](./images/troubleshooting/help-and-support.png)
@@ -149,7 +149,7 @@ Se [anonym blockdokumentation](./essential-concepts/anonymous-block.md) för mer
 
 +++Svar Det finns två sätt att implementera anpassad attribuering:
 
-1. Använd en kombination av befintliga [Adobe-definierade funktioner](./sql/adobe-defined-functions.md) för att identifiera om behovet av ärendehantering är uppfyllt.
+1. Använd en kombination av befintliga [Funktioner som definieras av Adobe](./sql/adobe-defined-functions.md) för att identifiera om behovet av ärendehantering är uppfyllt.
 1. Om föregående förslag inte uppfyller ditt användningssätt bör du använda en kombination av [fönsterfunktioner](./sql/adobe-defined-functions.md#window-functions). Fönsterfunktioner tittar på alla händelser i en sekvens. De gör det även möjligt att granska historiska data och kan användas i valfri kombination.
 +++
 
@@ -164,9 +164,9 @@ Se [anonym blockdokumentation](./essential-concepts/anonymous-block.md) för mer
 
 Använd kommandot GET för att hämta flera frågor. Information om hur du anropar API:t finns i [exempeldokumentation för API-anrop](./api/queries.md#sample-api-calls).
 
-Identifiera den fråga du vill undersöka från svaret och gör en annan GET-förfrågan med hjälp av dess `id` värde. Fullständiga instruktioner finns i [hämta en fråga efter ID-dokumentation](./api/queries.md#retrieve-a-query-by-id).
+Identifiera den fråga du vill undersöka och gör en annan GET-förfrågan med hjälp av svaret `id` värde. Fullständiga instruktioner finns i [hämta en fråga efter ID-dokumentation](./api/queries.md#retrieve-a-query-by-id).
 
-Ett godkänt svar returnerar HTTP-status 200 och innehåller `errors` array. Svaret har förkortats av kortfattad anledning.
+Ett lyckat svar returnerar HTTP-status 200 och innehåller `errors` array. Svaret har förkortats av kortfattad anledning.
 
 ```json
 {
@@ -241,7 +241,7 @@ AS SELECT '1' as _id,
 
 ### Varför returnerade min fråga en tom delmängd och vad ska jag göra?
 
-+++Svar Den troligaste orsaken är att frågan är för smal i omfånget. Du bör ta bort ett avsnitt i `WHERE` tills du börjar se data.
++++Svar Den troligaste orsaken är att frågan är för smal i omfånget. Du bör systematiskt ta bort ett avsnitt i `WHERE` tills du börjar se data.
 
 Du kan också bekräfta att datauppsättningen innehåller data genom att använda en liten fråga som:
 
@@ -332,7 +332,7 @@ LIMIT 100;
 
 +++Besvara Adobe Experience Platform består av data i UTC-format (Coordinated Universal Time) för tidsstämpling. Ett exempel på UTC-formatet är `2021-12-22T19:52:05Z`
 
-Frågetjänsten stöder inbyggda SQL-funktioner för konvertering av en viss tidsstämpel till och från UTC-format. Båda `to_utc_timestamp()` och `from_utc_timestamp()` metoder har två parametrar: tidsstämpel och tidszon.
+Frågetjänsten stöder inbyggda SQL-funktioner för konvertering av en viss tidsstämpel till och från UTC-format. Båda `to_utc_timestamp()` och `from_utc_timestamp()` metoder har två parametrar: timestamp och timezone.
 
 | Parameter | Beskrivning |
 |-----------|---------------|
@@ -400,7 +400,7 @@ WHERE  timestamp >= To_timestamp('2021-01-21 12:00:00')
 
 +++Svara när du använder `CAST` om du vill konvertera en tidsstämpel måste du inkludera både datumet och **och** tid.
 
-Om du till exempel saknar tidskomponenten, som visas nedan, uppstår ett fel:
+Om du t.ex. saknar tidskomponenten, som visas nedan, uppstår ett fel:
 
 ```sql
 SELECT * FROM ABC
@@ -416,7 +416,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 
 +++
 
-### Ska jag använda jokertecken, till exempel *, för att hämta alla rader från mina datamängder?
+### Ska jag använda jokertecken som * för att hämta alla rader från mina datamängder?
 
 +++Svar Du kan inte använda jokertecken för att hämta alla data från dina rader, eftersom frågetjänsten ska behandlas som en **columnar-store** i stället för ett vanligt radbaserat lagringssystem.
 +++
@@ -469,7 +469,7 @@ WHERE T2.ID IS NULL
 
 ### Finns det en aktivitetspanel där du kan se frågeaktiviteter och status?
 
-+++Svar Det finns övervaknings- och varningsfunktioner för att kontrollera frågeaktiviteter och status. Se [Integrering av granskningslogg för frågetjänsten](./data-governance/audit-log-guide.md) och [frågeloggar](./ui/overview.md#log) dokument för mer information.
++++Svar Det finns övervaknings- och varningsfunktioner för att kontrollera frågeaktiviteter och status. Se [Integrering av granskningslogg för frågetjänsten](./data-governance/audit-log-guide.md) och [frågeloggar](./ui/overview.md#log) -dokument för mer information.
 +++
 
 ### Finns det något sätt att återställa uppdateringar? Om det till exempel finns ett fel eller om vissa beräkningar behöver konfigureras om när data skrivs tillbaka till plattformen, hur ska detta scenario hanteras?
@@ -500,7 +500,7 @@ WHERE T2.ID IS NULL
 
 ### Vilka andra alternativ finns det för att begränsa vilka data som kan nås via frågetjänsten?
 
-+++Svar Det finns tre sätt att begränsa åtkomst. De är följande:
++++Svar Det finns tre sätt att begränsa åtkomsten. De är följande:
 
 - Använd bara SELECT-programsatser och ge datauppsättningar skrivskyddad åtkomst. Tilldela även behörigheten Hantera fråga.
 - Använd SELECT/INSERT/CREATE-programsatser och ge datauppsättningar skrivbehörighet. Tilldela även behörigheten för frågehantering.
@@ -558,7 +558,7 @@ FROM <table_name>
 
 ### Kan jag extrahera innehållet i den slutliga datauppsättningen som har importerats via CTAS-frågor (förutsatt att det är större mängder data som Terabytes)?
 
-+++Svarsnummer Det finns för närvarande ingen funktion för extrahering av inkapslade data.
++++Svarsnr Det finns för närvarande ingen funktion för extrahering av inkapslade data.
 +++
 
 ### Varför returnerar inte Analytics-dataanslutningen data?
@@ -635,7 +635,7 @@ Följande tabell innehåller PSQL-felkoder och deras möjliga orsaker.
 | **28000** | Start - autentisering | Ogiltig auktoriseringstyp | Ogiltig auktoriseringstyp. Måste vara `AuthenticationCleartextPassword`. |
 | **42P12** | Start - autentisering | Inga tabeller hittades | Inga tabeller hittades för användning |
 | **42601** | Fråga | Syntaxfel | Ogiltigt kommando eller syntaxfel |
-| **42P01** | Fråga | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
+| **42P01** | Fråga | Tabellen hittades inte | Tabellen som angavs i frågan hittades inte |
 | **42P07** | Fråga | Tabellen finns | Det finns redan en tabell med samma namn (CREATE TABLE) |
 | **53400** | Fråga | LIMIT överskrider maxvärdet | Användaren angav en LIMIT-sats som är högre än 100 000 |
 | **53400** | Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
@@ -648,13 +648,13 @@ Följande tabell innehåller PSQL-felkoder och deras möjliga orsaker.
 
 ### Varför fick jag en 58000-felkod när jag använde metoden history_meta() i min tabell?
 
-+++Besvara `history_meta()` -metoden används för att komma åt en ögonblicksbild från en datauppsättning. Tidigare, om du skulle köra en fråga på en tom datauppsättning i Azure Data Lake Storage (ADLS), skulle du få en felkod på 58000 som anger att datauppsättningen inte finns. Ett exempel på det gamla systemfelet visas nedan.
++++Besvara `history_meta()` -metoden används för att få åtkomst till en ögonblicksbild från en datauppsättning. Tidigare, om du skulle köra en fråga på en tom datauppsättning i Azure Data Lake Storage (ADLS), skulle du få en felkod på 58000 som anger att datauppsättningen inte finns. Ett exempel på det gamla systemfelet visas nedan.
 
 ```shell
 ErrorCode: 58000 Internal System Error [Invalid table your_table_name. historyMeta can be used on datalake tables only.]
 ```
 
-Det här felet uppstod eftersom det inte fanns något returvärde för frågan. Detta beteende har nu åtgärdats för att returnera följande meddelande:
+Det här felet uppstod eftersom det inte fanns något returvärde för frågan. Det här beteendet har nu åtgärdats för att returnera följande meddelande:
 
 ```text
 Query complete in {timeframe}. 0 rows returned. 
@@ -669,5 +669,5 @@ Följande tabell innehåller HTTP-felkoder och deras möjliga orsaker.
 | HTTP-statuskod | Beskrivning | Möjliga orsaker |
 |------------------|-----------------------|----------------------------|
 | 400 | Felaktig begäran | Felaktig eller ogiltig fråga |
-| 401 | Autentiseringen misslyckades | Ogiltig autentiseringstoken |
+| 401 | Autentiseringen misslyckades | Ogiltig auth-token |
 | 500 | Internt serverfel | Internt systemfel |

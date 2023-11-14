@@ -2,7 +2,7 @@
 keywords: Experience Platform;komma igång;kundinformation;populära ämnen
 solution: Experience Platform, Real-Time Customer Data Platform
 feature: Customer AI
-title: Komma igång med AI
+title: Komma igång med kundens AI
 description: Den här guiden innehåller exempel på API-anrop som visar hur du formaterar dina begäranden. Det kan vara sökvägar, obligatoriska rubriker och korrekt formaterade begärandenyttolaster.
 exl-id: 90c9a83a-8e66-4239-b2d6-2049a6319b25
 source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
@@ -16,10 +16,10 @@ ht-degree: 0%
 
 Handböckerna för kundens AI kräver en fungerande förståelse för de olika plattformstjänster som används för att använda kundens AI. Läs följande dokument innan du börjar:
 
-- [Experience Data Model (XDM) - systemöversikt](../../xdm/home.md): XDM är den grundläggande miljön som [!DNL Adobe Experience Cloud]som drivs av Experience Platform för att leverera rätt budskap till rätt person, i rätt kanal, vid exakt rätt tidpunkt. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
-- [Grunderna för schemakomposition](../../xdm/schema/composition.md): Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i [!DNL Adobe Experience Platform].
-- [Byggscheman](../../xdm/tutorials/create-schema-ui.md): I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
-- [Översikt över kundprofiler i realtid](../../rtcdp/overview.md): Inbyggt [!DNL Adobe Experience Platform]Adobe Real-time Customer Data Platform (Real-Time CDP) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. Real-Time CDP kombinerar flera olika datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
+- [Experience Data Model (XDM) - systemöversikt](../../xdm/home.md): XDM är det grundläggande ramverk som [!DNL Adobe Experience Cloud]som drivs av Experience Platform för att leverera rätt budskap till rätt person, i rätt kanal, vid exakt rätt tidpunkt. Metoden som Experience Platform bygger på, XDM System, används för att driva Experience Data Model-scheman för användning av plattformstjänster.
+- [Grunderna för schemakomposition](../../xdm/schema/composition.md): Det här dokumentet innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i [!DNL Adobe Experience Platform].
+- [Byggscheman](../../xdm/tutorials/create-schema-ui.md): Den här självstudiekursen beskriver stegen för att skapa ett schema med Schemaredigeraren i Experience Platform.
+- [Översikt över kundprofiler i realtid](../../rtcdp/overview.md): Inbyggd [!DNL Adobe Experience Platform]Adobe Real-time Customer Data Platform (Real-Time CDP) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. Real-Time CDP kombinerar flera olika datakällor för företag för att skapa enhetliga profiler i realtid som kan användas för att leverera personliga personaliserade kundupplevelser i alla kanaler och enheter.
 - [Översikt över segmenteringstjänsten](../../segmentation/home.md): Segmentering är processen att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att skilja en marknadsföringsbar grupp av människor från din kundbas. I en e-postkampanj som heter&quot;Har du glömt att köpa dina smygtittare?&quot; kanske du vill ha en målgrupp med alla användare som sökte efter skor de senaste 30 dagarna, men som inte slutförde ett köp. Med olika segment kan ni fokusera på olika målgrupper och leverera en mer anpassad marknadsföringsupplevelse.
 - [Användarhandbok för Segment Builder](../../segmentation/tutorials/create-a-segment.md): Med Platform kan ni enkelt skapa och komma åt segment, samt använda olika byggstenar för att ytterligare karakterisera era era era segment.
 

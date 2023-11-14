@@ -35,7 +35,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `url` | URL:en definierar de auth-parametrar som krävs för att ansluta till [!DNL HDFS] anonymt. Mer information om hur du hämtar det här värdet finns i [this [!DNL HDFS] dokument](https://hadoop.apache.org/docs/r1.2.1/HttpAuthentication.html). |
+| `url` | URL:en definierar de auth-parametrar som krävs för att ansluta till [!DNL HDFS] anonymt. Mer information om hur du får fram det här värdet finns i [this [!DNL HDFS] dokument](https://hadoop.apache.org/docs/r1.2.1/HttpAuthentication.html). |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL AdWords] är: `54e221aa-d342-4707-bcff-7a4bceef0001`. |
 
 ### Använda plattforms-API:er

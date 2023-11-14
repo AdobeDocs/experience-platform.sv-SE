@@ -59,7 +59,7 @@ Välj vilka andra fält du vill exportera till e-postmålet i fältet Schema. N�
 | Förnamn | `person.name.firstName` |
 | Efternamn | `person.name.lastName` |
 | Telefon | `mobilePhone.number` |
-| Adress, ort | `homeAddress.city` |
+| Adress ort | `homeAddress.city` |
 | Adresstillstånd | `homeAddress.stateProvince` |
 | Adress Postnummer | `homeAddress.postalCode` |
 | Födelsedag | `person.birthDayAndMonth` |

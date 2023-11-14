@@ -23,7 +23,7 @@ Ett tilläggspaket tillhör [företag](./companies.md) av utvecklaren som skapad
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Läs igenom [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
+Slutpunkten som används i den här guiden ingår i [Reaktors-API](https://www.adobe.io/experience-platform-apis/references/reactor/). Innan du fortsätter bör du granska [komma igång-guide](../getting-started.md) om du vill ha viktig information om hur du autentiserar till API:t.
 
 Förutom att förstå hur du anropar Reactor API är det också viktigt att du förstår hur ett tilläggspaket `status` och `availability` attribut påverkar vilka åtgärder du kan utföra på den. Dessa förklaras i avsnitten nedan.
 
@@ -63,7 +63,7 @@ GET /extension_packages
 
 >[!NOTE]
 >
->Med hjälp av frågeparametrar kan listade tilläggspaket filtreras baserat på följande attribut:<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden [filtrera svar](../guides/filtering.md) för mer information.
+>Med hjälp av frågeparametrar kan listade tilläggspaket filtreras baserat på följande attribut:<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>Se guiden på [filtrera svar](../guides/filtering.md) för mer information.
 
 **Begäran**
 
@@ -484,7 +484,7 @@ POST /extension_packages
 
 **Begäran**
 
-Följande begäran skapar ett nytt tilläggspaket. Den lokala sökvägen till den paketfil som överförs refereras till som formulärdata (`package`) och därför kräver denna slutpunkt en `Content-Type` sidhuvud `multipart/form-data`.
+Följande begäran skapar ett nytt tilläggspaket. Den lokala sökvägen till den paketfil som överförs refereras till som formulärdata (`package`), och därför kräver denna slutpunkt en `Content-Type` sidhuvud `multipart/form-data`.
 
 ```shell
 curl -X POST \
@@ -954,7 +954,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill ska släppas privat. |
+| `EXTENSION_PACKAGE_ID` | The `id` för det tilläggspaket som du vill ska frisläppas privat. |
 
 {style="table-layout:auto"}
 

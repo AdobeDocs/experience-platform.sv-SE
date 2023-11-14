@@ -5,7 +5,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relational, NoSQL eller data warehouse. Stöd för databasleverantörer innefattar [!DNL Google BigQuery].
+[!DNL Experience Platform] har stöd för inmatning av data från en tredjepartsdatabas. Plattformen kan ansluta till olika typer av databaser, till exempel relationsdatabaser, NoSQL-databaser eller datalager. Stöd för databasleverantörer innefattar [!DNL Google BigQuery].
 
 ## IP-adress tillåtelselista
 
@@ -34,11 +34,11 @@ Ansluta [!DNL Google BigQuery] till Platform måste du generera värden för fö
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `project` | Projektet är en organisationsenhet på grundnivå för din [!DNL Google Cloud] resurser, inklusive [!DNL Google BigQuery]. |
+| `project` | Projektet är en organiseringsenhet på grundnivå för din [!DNL Google Cloud] resurser, inklusive [!DNL Google BigQuery]. |
 | `clientID` | Klient-ID:t är hälften av ditt [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
 | `clientSecret` | Klienthemligheten är den andra halvan av din [!DNL Google BigQuery] OAuth 2.0-autentiseringsuppgifter. |
 | `refreshToken` | Med uppdateringstoken kan du hämta nya åtkomsttoken för ditt API. Åtkomsttoken har begränsad livslängd och kan förfalla under projektets gång. Du kan använda uppdateringstoken för att autentisera och begära efterföljande åtkomsttoken för ditt projekt vid behov. |
-| `largeResultsDataSetId` | Det färdiga  [!DNL Google BigQuery] ID för datauppsättning som krävs för att aktivera stöd för stora resultatuppsättningar. |
+| `largeResultsDataSetId` | Det förskapade  [!DNL Google BigQuery] ID för datauppsättning som krävs för att aktivera stöd för stora resultatuppsättningar. |
 
 Detaljerade instruktioner om hur du genererar OAuth 2.0-autentiseringsuppgifter för [!DNL Google] API:er, se följande [[!DNL Google] Autentiseringsguide för OAuth 2.0](https://developers.google.com/identity/protocols/oauth2).
 

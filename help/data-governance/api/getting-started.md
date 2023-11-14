@@ -52,7 +52,7 @@ Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterli
 
 I [!DNL Policy Service] API, alla policyer och marknadsföringsåtgärder kallas antingen `core` eller `custom` resurser.
 
-`core` är de som definieras och bibehålls av Adobe, medan `custom` är resurser som skapats och underhålls av organisationen och därför är unika och synliga enbart för organisationen. Listans- och uppslagsåtgärder (`GET`) är de enda operationerna som tillåts på `core` resurser, medan åtgärder för listning, sökning och uppdatering (`POST`, `PUT`, `PATCH`och `DELETE`) finns för `custom` resurser.
+`core` är de som definieras och bibehålls av Adobe, medan `custom` är resurser som skapats och underhålls av organisationen och därför är unika och synliga enbart för organisationen. Listans- och uppslagsåtgärder (`GET`) är de enda åtgärder som tillåts på `core` resurser, medan åtgärder för listning, sökning och uppdatering (`POST`, `PUT`, `PATCH`och `DELETE`) finns för `custom` resurser.
 
 ## Nästa steg
 

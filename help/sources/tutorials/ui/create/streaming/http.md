@@ -20,7 +20,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 - [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
    - [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 - [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Skapa en direktuppspelningsanslutning
@@ -29,7 +29,7 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under **[!UICONTROL Streaming]** kategori, välj **[!UICONTROL HTTP API]** och sedan markera **[!UICONTROL Add data]**.
+Under **[!UICONTROL Streaming]** kategori, välj **[!UICONTROL HTTP API]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/http/catalog.png)
 
@@ -48,7 +48,7 @@ Om du skapar ett nytt konto väljer du **[!UICONTROL New account]**. Ange ett ko
 - **[!UICONTROL Authentication]:** Den här egenskapen avgör om direktuppspelningsanslutningen kräver autentisering eller inte. Autentisering säkerställer att data samlas in från betrodda källor. Om du har att göra med personligt identifierbar information (PII) ska den här egenskapen aktiveras. Som standard är den här egenskapen inaktiverad.
 - **[!UICONTROL XDM compatible]:** Den här egenskapen anger om den här direktuppspelningsanslutningen skickar händelser som är kompatibla med XDM-scheman. Som standard är den här egenskapen inaktiverad.
 
-När du är klar väljer du **[!UICONTROL Connect to source]** och sedan markera **[!UICONTROL Next]** för att fortsätta.
+När du är klar väljer du **[!UICONTROL Connect to source]** och sedan **[!UICONTROL Next]** för att fortsätta.
 
 ![nytt konto](../../../../images/tutorials/create/http/new.png)
 
@@ -58,7 +58,7 @@ När du har skapat HTTP API-anslutningen **[!UICONTROL Select data]** visas så 
 
 Välj **[!UICONTROL Upload files]** för att överföra dina data. Du kan också dra och släppa data i [!UICONTROL Drag and drop files] -avsnittet i gränssnittet.
 
-![tilläggsdata](../../../../images/tutorials/create/http/add-data.png)
+![add-data](../../../../images/tutorials/create/http/add-data.png)
 
 När dina data har överförts kan du använda den högra sidan av gränssnittet för att förhandsgranska din filhierarki. Välj **[!UICONTROL Next]** för att fortsätta.
 
@@ -68,7 +68,7 @@ När dina data har överförts kan du använda den högra sidan av gränssnittet
 
 The [!UICONTROL Mapping] visas med ett gränssnitt för att mappa källdata till en plattformsdatauppsättning.
 
-The [!DNL HTTP API] har stöd för att lägga in JSON-filer. JSON-filer behöver inte konfigureras manuellt om de är markerade som XDM-kompatibla. Annars måste du konfigurera mappningen explicit.
+The [!DNL HTTP API] har stöd för att lägga in JSON-filer. JSON-filer behöver inte konfigureras manuellt om de är markerade som XDM-kompatibla. Om inte, måste du konfigurera mappningen explicit.
 
 Välj en datauppsättning för inkommande data som ska importeras till. Du kan antingen använda en befintlig datauppsättning eller skapa en ny.
 
@@ -78,9 +78,9 @@ Om du vill skapa en ny datauppsättning väljer du **[!UICONTROL New dataset]**.
 
 ![new-dataset](../../../../images/tutorials/create/http/new-dataset.png)
 
-### Använd en befintlig datauppsättning
+### Använd en befintlig datamängd
 
-Om du vill använda en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Markera den datauppsättning som du vill använda i formuläret som visas. När du har valt en datauppsättning kan du välja om datauppsättningen ska [!DNL Profile]-enabled.
+Om du vill använda en befintlig datauppsättning väljer du **[!UICONTROL Existing dataset]**. Markera den datauppsättning som du vill använda i formuläret som visas. När du har valt en datauppsättning kan du välja om den ska vara [!DNL Profile]-enabled.
 
 ![befintlig datamängd](../../../../images/tutorials/create/http/existing-dataset.png)
 
@@ -88,7 +88,7 @@ Om du vill använda en befintlig datauppsättning väljer du **[!UICONTROL Exist
 
 Beroende på dina behov kan du välja att mappa fält direkt eller använda förinställningsfunktioner för data för att omvandla källdata för att härleda beräknade eller beräknade värden. Mer information om hur du använder mappningsgränssnittet och beräkningsfälten finns i [Användargränssnittsguide för dataprep](../../../../../data-prep/ui/mapping.md).
 
-Om du vill lägga till ett nytt källfält väljer du **[!UICONTROL Add new mapping]**.
+Välj om du vill lägga till ett nytt källfält **[!UICONTROL Add new mapping]**.
 
 ![add-new-mapping](../../../../images/tutorials/create/http/add-new-mapping.png)
 
@@ -116,7 +116,7 @@ När alla källfält har mappats till rätt mål-XDM-fält väljer du **[!UICONT
 
 The **[!UICONTROL Dataflow detail]** visas. På den här sidan kan du ange information för det skapade dataflödet genom att ange ett namn och en valfri beskrivning.
 
-När du har angett information för dataflödet väljer du **[!UICONTROL Next]**.
+När du angett information för dataflödet väljer du **[!UICONTROL Next]**.
 
 ![dataflöde-detail](../../../../images/tutorials/create/http/dataflow-detail.png)
 
@@ -139,6 +139,6 @@ När anslutningen har skapats visas informationssidan för källor. På den här
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning som gör att du kan använda direktuppspelningsslutpunkten för att få tillgång till en mängd olika [!DNL Data Ingestion] API:er. Instruktioner om hur du skapar en direktuppspelningsanslutning i API:t finns i [skapa en självstudiekurs för direktuppspelningsanslutning](../../../api/create/streaming/http.md).
+Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning som gör att du kan använda direktuppspelningsslutpunkten för att få tillgång till en mängd olika [!DNL Data Ingestion] API. Instruktioner om hur du skapar en direktuppspelningsanslutning i API:t finns i [skapa en självstudiekurs för direktuppspelningsanslutning](../../../api/create/streaming/http.md).
 
-Om du vill lära dig att strömma data till plattformen kan du läsa självstudiekursen på [data för tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen på [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md).
+Om du vill lära dig att strömma data till plattformen kan du läsa självstudiekursen på [data för tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md).

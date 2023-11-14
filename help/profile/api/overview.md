@@ -24,7 +24,7 @@ En guide till hur du arbetar med [!DNL Real-Time Customer Profile] data i [!DNL 
 
 >[!IMPORTANT]
 >
->Den beräknade attributfunktionen är i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+Den beräknade attributfunktionen är i betaversion och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
 
 Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Funktionerna beräknas automatiskt så att de kan användas för segmentering, aktivering och personalisering.
 
@@ -34,11 +34,11 @@ Du kan skapa, visa, redigera och ta bort beräknade attribut med `ca/attributes/
 
 ## Kantprojektioner {#edge-projections}
 
-Adobe Experience Platform möjliggör personalisering av kundupplevelser i realtid genom att göra data lättillgängliga på strategiskt placerade servrar som kallas&quot;kanter&quot;. The [!DNL Real-Time Customer Profile] API har slutpunkter för arbete med kanter via komponenter som kallas för &quot;projektioner&quot;. Detta inkluderar projektionskonfigurationer för att bestämma vilka data som ska projiceras för varje kant, liksom projektionsdestinationer för att definiera var projektionen ska dirigeras. Detaljerad information om hur du arbetar med kantprojektioner finns på [Projektionskonfigurationer och slutpunktsguide för destinationer](edge-projections.md).
+Adobe Experience Platform möjliggör personalisering av kundupplevelser i realtid genom att göra data lättillgängliga på strategiskt placerade servrar som kallas&quot;kanter&quot;. The [!DNL Real-Time Customer Profile] API har slutpunkter för arbete med kanter via komponenter som kallas för &quot;projektioner&quot;. Detta inkluderar projektionskonfigurationer för att bestämma vilka data som ska projiceras för varje kant, liksom projektionsdestinationer för att definiera var projektionen ska dirigeras. Detaljerad information om hur du arbetar med kantprojektioner finns på [Projektionskonfigurationer och målslutpunkter](edge-projections.md).
 
 ## Enheter ([!DNL Profile] åtkomst) {#entities}
 
-Via Adobe Experience Platform har du åtkomst [!DNL Real-Time Customer Profile] data med RESTful API:er eller användargränssnittet. Följ stegen i [slutpunktsguide för enheter](entities.md). Så här får du åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
+Via Adobe Experience Platform har du åtkomst [!DNL Real-Time Customer Profile] data med RESTful-API:er eller användargränssnittet. Följ stegen i [slutpunktsguide för enheter](entities.md). Så här får du åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
 
 ## Exportjobb ([!DNL Profile] exportera) {#profile-export}
 
@@ -46,13 +46,13 @@ Via Adobe Experience Platform har du åtkomst [!DNL Real-Time Customer Profile] 
 
 ## Sammanfoga profiler {#merge-policies}
 
-När data från olika källor samlas in i [!DNL Experience Platform], sammanfogningsprinciper är reglerna som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Använda [!DNL Real-Time Customer Profile] API kan du skapa nya sammanfogningsprinciper, hantera befintliga profiler och ange en standardsammanfogningsprincip för organisationen. Gå till [slutpunktshandbok för sammanslagningsprinciper](merge-policies.md).
+När data från olika källor samlas in i [!DNL Experience Platform], sammanfogningsprinciper är reglerna som [!DNL Platform] använder för att avgöra hur data ska prioriteras och vilka data som ska kombineras för att skapa enskilda kundprofiler. Använda [!DNL Real-Time Customer Profile] API kan du skapa nya sammanfogningsprinciper, hantera befintliga profiler och ange en standardsammanfogningsprincip för din organisation. Om du vill arbeta med sammanfogningsprinciper med API:t går du till [slutpunktshandbok för sammanslagningsprinciper](merge-policies.md).
 
 Om du vill veta mer om policyer för sammanslagning och deras roll inom Platform börjar du med att läsa [sammanfogningsprinciper - översikt](../merge-policies/overview.md).
 
 ## Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning) {#profile-preview}
 
-När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid. Resultaten av det här exempeljobbet kan visas med `/previewsamplestatus` slutpunkt, som ingår i Real-Time Customer Profile API. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättning och identitetsnamnområde, samt för att generera flera rapporter för att få synlighet i sammansättningen av organisationens profilarkiv.  Så här kommer du igång med `/profilepreviewstatus` slutpunkt, se [förhandsgranska exempelstatusslutpunktshandbok](preview-sample-status.md).
+När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid. Resultaten av det här exempeljobbet kan visas med `/previewsamplestatus` slutpunkt, som ingår i Real-Time Customer Profile API. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättning och identitetsnamnområde, samt för att generera flera rapporter för att få synlighet i sammansättningen av organisationens profilarkiv.  Kom igång med `/profilepreviewstatus` slutpunkt, se [förhandsgranska exempelstatusslutpunktshandbok](preview-sample-status.md).
 
 ## Profilsystemjobb {#profile-system-jobs}
 

@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Använda [!DNL Adobe Journey Optimizer] med [!DNL Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [WebbCampaign-användargränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)för att skapa, aktivera och leverera [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [WebbCampaign-gränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)för att skapa, aktivera och leverera [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
->Läs [Dokumentation för Adobe Journey Optimizer Web Channel](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html) för information om hur du kommer igång med [!DNL Journey Optimizer Web] skapa och rapportera upplevelser.
+>Läs [Dokumentation för Adobe Journey Optimizer Web Channel](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/get-started-web.html) för information om hur du kommer igång med [!DNL Journey Optimizer Web] skapa och rapportera.
 
 ## Terminologi {#terminology}
 
-**[!UICONTROL Surface]**: En webbyta är en webbegenskap som identifieras av en URL där [!DNL Adobe Journey Optimizer] upplevelseinnehåll levereras.
+**[!UICONTROL Surface]**: En webbyta är en webbegenskap som identifieras av en URL där [!DNL Adobe Journey Optimizer] upplevelseinnehåll kommer att levereras.
 
 **[!UICONTROL Propositions]**: I [!DNL Adobe Journey Optimizer], korrelerar förslag till upplevelsen som väljs från en [!DNL Journey Optimizer Campaign].
 
@@ -33,7 +33,7 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
    * Aktivera [!DNL Adobe Journey Optimizer] i [datastream](../../../datastreams/overview.md).
    * Aktivera [!UICONTROL Active-On-Edge Merge Policy] alternativ.
 
-2. Lägg till `renderDecisions` till dina händelser. Ange `renderDecisions` till `true` för automatisk återgivning av levererade Journey Optimizer-innehållsutkast på webbsidesytorna.
+2. Lägg till `renderDecisions` alternativ för dina händelser. Ange `renderDecisions` till `true` för automatisk återgivning av levererade Journey Optimizer-innehållsutkast på webbsidor.
 
    ```javascript
    alloy("sendEvent", {
@@ -55,7 +55,7 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
 
    ![extension-add-surface](./assets/extension-add-surface.png)
 
-   Händelseytor ingår i `query.personalization.surfaces` begärandefält:
+   Händelsetytor ingår i `query.personalization.surfaces` begärandefält:
 
    ```json
    {
@@ -84,7 +84,7 @@ Börja använda [!DNL Adobe Journey Optimizer]följer du stegen nedan.
 
 ## Skapa Adobe Journey Optimizer webbupplevelser {#create-ajo-web-experiences}
 
-Följ [skapa webbkampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign) instruktioner från [!DNL Adobe Journey Optimizer] [Web Experiences Guide](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) att skapa [!DNL Journey Optimizer Web] kampanjer och upplevelser.
+Följ [skapa webbkampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html#create-web-campaign) instruktionerna från [!DNL Adobe Journey Optimizer] [Web Experiences Guide](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) att skapa [!DNL Journey Optimizer Web] kampanjer och upplevelser.
 
 ## Återge personaliserat innehåll {#rendering-personalized-content}
 

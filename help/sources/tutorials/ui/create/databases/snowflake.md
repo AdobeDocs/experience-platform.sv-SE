@@ -6,7 +6,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
 source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '491'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ För att få åtkomst till ditt Snowflake-konto på [!DNL Platform]måste du ang
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| Konto | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, din region och din molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html). |
+| Konto | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, region och molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html). |
 | Lagerställe | The [!DNL Snowflake] dist.lager hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerstället är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
 | Databas | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | Användarnamn | Användarnamnet för [!DNL Snowflake] konto. |
@@ -52,7 +52,7 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under [!UICONTROL Databases] kategori, välj **[!UICONTROL Snowflake]** och sedan markera **[!UICONTROL Add data]**.
+Under [!UICONTROL Databases] kategori, välj **[!UICONTROL Snowflake]** och sedan **[!UICONTROL Add data]**.
 
 ![](../../../../images/tutorials/create/snowflake/catalog.png)
 

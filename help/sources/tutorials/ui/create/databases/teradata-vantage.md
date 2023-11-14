@@ -27,7 +27,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande plat
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Teradata Vantage] på Platform måste du ange följande autentiseringsvärde:
+För att få åtkomst till [!DNL Teradata Vantage] på Platform måste du ange följande autentiseringsvärde:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -41,7 +41,7 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under [!UICONTROL Databases] kategori, välj **[!UICONTROL Teradata Vantage]** och sedan markera **[!UICONTROL Add data]**.
+Under [!UICONTROL Databases] kategori, välj **[!UICONTROL Teradata Vantage]** och sedan **[!UICONTROL Add data]**.
 
 ![](../../../../images/tutorials/create/teradata/catalog.png)
 
@@ -49,7 +49,7 @@ The **[!UICONTROL Connect to Teradata Vantage]** visas. På den här sidan kan d
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du [!DNL Teradata Vantage] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL Teradata Vantage] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
 
 ![](../../../../images/tutorials/create/teradata/existing.png)
 

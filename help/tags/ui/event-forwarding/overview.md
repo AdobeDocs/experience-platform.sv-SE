@@ -20,7 +20,7 @@ ht-degree: 2%
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
 
-Med händelsevidarebefordran i Adobe Experience Platform kan du skicka insamlade händelsedata till ett mål för bearbetning på serversidan. Vidarebefordran av händelser minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser implementeras på liknande sätt som taggar, och kan omvandla och skicka data till nya destinationer, men i stället för att skicka dessa data från ett klientprogram som en webbläsare skickas de från Adobe-servrar.
+Med händelsevidarebefordran i Adobe Experience Platform kan du skicka insamlade händelsedata till ett mål för bearbetning på serversidan. Vidarebefordran av händelser minskar webbsidans och appens vikt genom att använda Adobe Experience Platform Edge Network för att utföra åtgärder som normalt utförs på klienten. Regler för vidarebefordran av händelser implementeras på ungefär samma sätt som taggar, men i stället för att skicka dessa data från ett klientprogram som en webbläsare skickas de från Adobe-servrar.
 
 Det här dokumentet innehåller en översikt på hög nivå över vidarebefordran av händelser i Platform.
 
@@ -95,11 +95,11 @@ I taggregler tokeniseras dataelement med en `%` i början och slutet av dataelem
 
 #### Regelåtgärdssekvens {#action-sequencing}
 
-The [!UICONTROL Actions] -avsnittet i en regel för vidarebefordran av händelser körs alltid sekventiellt. Om en regel till exempel har två åtgärder kommer den andra åtgärden inte att starta körningen förrän den föregående åtgärden är slutförd (och i de fall där ett svar förväntas från en slutpunkt, har den slutpunkten svarat). Kontrollera att åtgärdsordningen är korrekt när du sparar en regel. Den här körningssekvensen kan inte köras asynkront på samma sätt som den kan med taggregler.
+The [!UICONTROL Actions] -avsnittet i en regel för vidarebefordran av händelser körs alltid sekventiellt. Om en regel till exempel har två åtgärder kommer den andra åtgärden inte att starta körningen förrän den föregående åtgärden är slutförd (och i de fall där ett svar förväntas från en slutpunkt har den slutpunkten svarat). Kontrollera att åtgärdsordningen är korrekt när du sparar en regel. Den här körningssekvensen kan inte köras asynkront på samma sätt som den kan med taggregler.
 
 ## Hemligheter {#secrets}
 
-Med händelsevidarebefordran kan du skapa, hantera och lagra hemligheter som kan användas för att autentisera till de servrar som du skickar data till. Se guiden [hemligheter](./secrets.md) på olika typer av tillgängliga hemliga typer och hur de implementeras i användargränssnittet.
+Med händelsevidarebefordran kan du skapa, hantera och lagra hemligheter som kan användas för att autentisera till de servrar som du skickar data till. Se guiden på [hemligheter](./secrets.md) på olika typer av tillgängliga hemliga typer och hur de implementeras i användargränssnittet.
 
 ## Nästa steg
 

@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # [!UICONTROL Segment definition] class
 
-&quot;[!UICONTROL Segment definition]&quot; är en XDM-klass (Experience Data Model) som hämtar information om en segmentdefinition. Klassen innehåller obligatoriska fält, t.ex. ID:t och namnet på en målgrupp, samt andra valfria attribut. Den här klassen bör användas om du infogar segmentdefinitioner från externa system i Adobe Experience Platform.
+&quot;[!UICONTROL Segment definition]&quot; är en XDM-klass (Experience Data Model) som hämtar information om en segmentdefinition. Klassen innehåller obligatoriska fält, t.ex. ID:t och namnet på en målgrupp, tillsammans med andra valfria attribut. Den här klassen bör användas om du infogar segmentdefinitioner från externa system i Adobe Experience Platform.
 
 >[!NOTE]
 >
->Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. Om du vill hämta information om målgruppsmedlemskap i dina profildata använder du [Fältgrupp för information om segmentmedlemskap](../field-groups/profile/segmentation.md) i [!UICONTROL XDM Individual Profile] schema.
+>Den här klassen ska bara användas för att samla in information om själva segmentdefinitionerna. Om du vill hämta information om målgruppsmedlemskap i dina profildata använder du [Fältgrupp för detaljer för segmentmedlemskap](../field-groups/profile/segmentation.md) i [!UICONTROL XDM Individual Profile] schema.
 
 ![](../images/classes/segment-definition.png)
 

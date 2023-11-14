@@ -19,13 +19,13 @@ Mer information om hur du skapar segmentdefinitioner med användargränssnittet 
 
 ## Komma igång
 
-Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster som används för att skapa segmentdefinitioner. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
+Den här självstudiekursen kräver en fungerande förståelse för de olika [!DNL Adobe Experience Platform] tjänster för att skapa segmentdefinitioner. Innan du börjar med den här självstudiekursen bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper med hjälp av segmentdefinitioner eller andra externa källor från kundprofildata i realtid.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Används för att bygga målgrupper med segmentdefinitioner eller andra externa källor från kundprofildata i realtid.
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API:er.
+Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ringa samtal till [!DNL Platform] API.
 
 ### Läser exempel-API-anrop
 
@@ -49,11 +49,11 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 ## Utveckla en segmentdefinition
 
-Det första steget i segmenteringen är att definiera en segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentdefinitionen baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) om du vill ha mer information om hur du skriver PQL-frågor.
+Det första steget i segmenteringen är att definiera en segmentdefinition. En segmentdefinition är ett objekt som kapslar in en fråga skriven i [!DNL Profile Query Language] (PQL). Det här objektet kallas även för ett PQL-predikat. PQL-predikat definierar reglerna för segmentdefinitionen baserat på villkor som relaterar till data från post- eller tidsserier som du skickar till [!DNL Real-Time Customer Profile]. Se [PQL-guide](../pql/overview.md) för mer information om hur du skriver PQL-frågor.
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt i [!DNL Segmentation] API. Följande exempel visar hur du formaterar en definitionsbegäran, inklusive vilken information som krävs för att en segmentdefinition ska kunna definieras korrekt.
 
@@ -74,7 +74,7 @@ Det finns två nödvändiga steg för att förhandsgranska eller få en uppskatt
 
 Dataexempel används för att utvärdera segmentdefinitioner och uppskatta antalet kvalificerade profiler. Nya data läses in i minnet varje morgon (mellan 12AM-2AM PT, som är 7-9AM UTC), och alla segmenteringsfrågor beräknas med hjälp av den dagens exempeldata. Alla nya fält som läggs till eller ytterligare uppgifter som samlas in kommer därför att återspeglas i beräkningarna följande dag.
 
-Samplingsstorleken beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
+Provstorleken beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 
 | Enheter i profilarkivet | Samplingsstorlek |
 | ------------------------- | ----------- |
@@ -92,7 +92,7 @@ Detaljerade anvisningar om hur du skapar ett förhandsgranskningsjobb finns i [g
 
 ### Visa en uppskattning eller förhandsgranskning
 
-Uppskattnings- och förhandsgranskningsprocesserna körs asynkront eftersom olika frågor kan ta olika lång tid att slutföra. När en fråga har initierats kan du använda API-anrop för att hämta (GET) det aktuella läget för uppskattningen eller förhandsgranskningen medan den fortlöper.
+Uppskattnings- och förhandsgranskningsprocesserna körs asynkront eftersom olika frågor kan ta olika lång tid att slutföra. När en fråga har initierats kan du använda API-anrop för att hämta (GET) det aktuella läget för uppskattningen eller förhandsgranskningen allt eftersom den fortskrider.
 
 Använda [!DNL Segmentation Service] API, du kan söka efter ett förhandsgranskningsjobbs aktuella tillstånd med hjälp av dess ID. Om läget är &quot;RESULT_READY&quot; kan du visa resultatet. Om du vill söka efter ett förhandsgranskningsjobbs aktuella tillstånd kan du läsa avsnittet om [hämta ett förhandsgranskningsjobbavsnitt](../api/previews-and-estimates.md#get-preview) i förhandsgransknings- och uppskattningsguiden för slutpunkter. Om du vill söka efter ett uppskattningsjobbs aktuella tillstånd kan du läsa avsnittet om [hämta ett uppskattningsjobb](../api/previews-and-estimates.md#get-estimate) i förhandsgransknings- och uppskattningsguiden för slutpunkter.
 

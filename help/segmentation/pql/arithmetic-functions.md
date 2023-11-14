@@ -50,7 +50,7 @@ Följande PQL-fråga hittar produkten i lagret och priset på en produkt för at
 product.inventory * product.price
 ```
 
-## Subtrahera
+## Ta bort
 
 The `-` (subtraktion) används för att hitta skillnaden mellan två argumentuttryck.
 

@@ -26,10 +26,10 @@ I den här självstudiekursen får du hjälp med att skapa en basanslutning för
 
 Handboken kräver en fungerande förståelse av följande plattformskomponenter:
 
-* [Källor](../../../../home.md): Plattformen gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med [!DNL Platform] tjänster.
+* [Källor](../../../../home.md): Plattformen tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 
-Följande avsnitt innehåller ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Oracle Responsys] med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta till [!DNL Oracle Responsys] med [!DNL Flow Service] API.
 
 ### Samla in nödvändiga inloggningsuppgifter
 

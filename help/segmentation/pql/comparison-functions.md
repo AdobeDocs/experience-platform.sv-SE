@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: PQL-jämförelsefunktioner
-description: Jämförelsefunktioner används för att jämföra mellan olika uttryck och värden och returnerar"true" eller"false" i enlighet därmed.
+description: Jämförelsefunktioner används för att jämföra olika uttryck och värden och returnerar"true" eller"false" i enlighet med detta.
 exl-id: 15f106c7-b88b-4042-b925-703e2a309573
 source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
 workflow-type: tm+mt

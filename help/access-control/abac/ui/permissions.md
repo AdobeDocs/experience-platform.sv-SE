@@ -59,7 +59,7 @@ Etiketter visas på den här sidan. I listan visas etikettnamn, eget namn, kateg
 
 Markera etiketterna i listan som du vill lägga till i rollen och välj sedan **[!UICONTROL Save]**
 
-![flash-add-labels](../../images/flac-ui/flac-add-labels.png)
+![flac-add-labels](../../images/flac-ui/flac-add-labels.png)
 
 Tillagda etiketter visas under **[!UICONTROL Labels]** -fliken.
 
@@ -165,4 +165,4 @@ Välj pennikonen för att välja produkter och användargrupper och välj **[!UI
 
 ## Nästa steg
 
-När behörigheter har fastställts kan du fortsätta till nästa steg i [hantera användare](users.md).
+När behörigheter har fastställts kan du gå vidare till nästa steg i [hantera användare](users.md).

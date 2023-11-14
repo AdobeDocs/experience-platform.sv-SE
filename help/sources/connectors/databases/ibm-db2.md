@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Adobe Experience Platform erbjuder systemspecifik anslutningsbarhet för databasleverantörer som [!DNL Microsoft], MySQL och [!DNL Azure]. Du kan överföra data från dessa system till [!DNL Platform].
 
-Olika typer av tredjepartsdatabaser stöds, bland annat relational, NoSQL och data warehouse. Stöd för databasleverantörer innefattar IBM DB2.
+Olika typer av tredjepartsdatabaser stöds, bland annat relationsdatabaser, NoSQL-databaser och datalagerarkiv. Stöd för databasleverantörer innefattar IBM DB2.
 
 ## IP-adress tillåtelselista
 

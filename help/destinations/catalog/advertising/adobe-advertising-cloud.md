@@ -1,5 +1,5 @@
 ---
-keywords: Advertising Cloud;advertising cloud cloud extension; annonsmolnmål
+keywords: Advertising Cloud;advertising cloud extension; advertising cloud destination
 title: Adobe Advertising Cloud-tillägg
 description: Adobe Advertising Cloud-tillägget är ett reklammål i Adobe Experience Platform. Mer information om tilläggsfunktionerna finns på tilläggssidan på Adobe Exchange.
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Det här är [!DNL Advertising Cloud] tillägg för genomförande [!DNL Advertising Cloud] konverterings- och målgruppstaggar för både DSP och sökning (DCO stöds inte för närvarande).
+Det här är [!DNL Advertising Cloud] tillägg för implementering [!DNL Advertising Cloud] konverterings- och målgruppstaggar för både DSP och sökning (DCO stöds inte för närvarande).
 
 Adobe Advertising Cloud är ett reklamtillägg i Adobe Experience Platform.
 
-Målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [taggtillägg - översikt](../launch-extensions/overview.md).
+Det här målet är ett taggtillägg. Mer information om hur taggtillägg fungerar i Platform finns i [taggtillägg - översikt](../launch-extensions/overview.md).
 
 ![Adobe Advertising Cloud-tillägg](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
 
@@ -42,7 +42,7 @@ Välj taggegenskapen som du vill installera tillägget i. Du kan också skapa en
 
 Arbetsflödet tar dig till användargränssnittet för datainsamling för att slutföra installationen.
 
-Du kan även installera tillägget direkt i [Användargränssnitt för datainsamling](https://experience.adobe.com/#/data-collection/). Se guiden [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) för mer information.
+Du kan även installera tillägget direkt i [Användargränssnitt för datainsamling](https://experience.adobe.com/#/data-collection/). Se guiden på [lägga till ett nytt tillägg](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) för mer information.
 
 ## Så här använder du tillägget {#how-to-use}
 
@@ -56,4 +56,4 @@ Du kan konfigurera, uppgradera och ta bort tillägg i användargränssnittet fö
 >
 >Om tillägget redan är installerat på en av dina egenskaper visas ändå gränssnittet **[!UICONTROL Install]** för tillägget. Starta installationsarbetsflödet enligt beskrivningen i [Installera tillägg](#install-extension) för att konfigurera eller ta bort tillägget.
 
-Om du vill uppgradera tillägget läser du i guiden på sidan [uppgraderingsprocess för tillägg](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.
+Om du vill uppgradera ditt tillägg läser du i guiden på sidan [uppgraderingsprocess för tillägg](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) i taggdokumentationen.

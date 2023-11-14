@@ -87,7 +87,7 @@ The [!UICONTROL Dataflow runs] -fliken innehåller mätdata om dataflödet som k
 
 Det finns en skillnad i hur länge dataflödet visas mellan direktuppspelning och filbaserade mål.
 
-### Målgrupper för direktuppspelning {#streaming}
+### Strömmande mål {#streaming}
 
 Med **[!UICONTROL Processing duration]** som anges för de flesta direktuppspelade dataflöden är ungefär fyra timmar, vilket visas i bilden nedan, så är den faktiska bearbetningstiden för dataflödeskörningar mycket kortare. Dataflödeskörningsfönstren är öppna längre om Experience Platform behöver göra nya anrop till målet och även se till att det inte missar några senare data för samma tidsfönster.
 
@@ -97,7 +97,7 @@ Mer information finns i [dataflödet körs till direktuppspelningsmål](/help/da
 
 ### Filbaserade mål {#file-based}
 
-För dataflöden som går till filbaserade mål gäller att **[!UICONTROL Processing duration]** beror på storleken på de data som exporteras och systeminläsningen. Observera också att dataflödet går till filbaserade mål uppdelas per målgrupp.
+För dataflöden som går till filbaserade mål gäller följande: **[!UICONTROL Processing duration]** beror på storleken på de data som exporteras och systeminläsningen. Observera också att dataflödet går till filbaserade mål uppdelas per målgrupp.
 
 ![Bild av dataflödet kör sida med kolumnen Bearbetningstid markerad för ett filbaserat mål.](/help/destinations/assets/ui/details-page/processing-time-dataflow-run-file-based.png)
 

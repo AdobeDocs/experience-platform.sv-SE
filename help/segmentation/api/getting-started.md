@@ -13,11 +13,11 @@ ht-degree: 0%
 
 # Komma igång med segmenteringstjänstens API {#getting-started}
 
-Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa målgrupper med hjälp av segmentdefinitioner eller andra källor i Adobe Experience Platform från er [!DNL Real-Time Customer Profile] data.
+Adobe Experience Platform [!DNL Segmentation Service] kan ni skapa målgrupper med hjälp av segmentdefinitioner eller andra källor i Adobe Experience Platform från [!DNL Real-Time Customer Profile] data.
 
 Utvecklarhandboken kräver en fungerande förståelse av de olika [!DNL Experience Platform] tjänster som används [!DNL Segmentation Service].
 
-- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Gör att ni kan bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md): Används för att bygga målgrupper utifrån [!DNL Real-Time Customer Profile] data.
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 - [[!DNL Real-Time Customer Profile]](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 - [Sandlådor](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.

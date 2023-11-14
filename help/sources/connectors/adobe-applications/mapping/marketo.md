@@ -21,7 +21,7 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 ## Aktiviteter {#activities}
 
-The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med [program för automatisk generering av schema](../marketo/marketo-namespaces.md) därför att om du skapar nya `activities` utan att uppdatera schemat, kommer mappningsmallarna att misslyckas eftersom de nya målfälten inte kommer att finnas i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att hämtas till Platform.
+The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med [program för automatisk generering av schema](../marketo/marketo-namespaces.md) därför att om du skapar nya `activities` utan att uppdatera schemat, kommer mappningsmallarna att misslyckas eftersom de nya målfälten inte kommer att finnas i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att kapslas in i Platform.
 
 Läs dokumentationen om [Klassen XDM Experience Event](../../../../xdm/classes/experienceevent.md) för mer information om XDM-klassen och XDM-fältgrupper.
 
@@ -132,7 +132,7 @@ Läs dokumentationen om [Klassen XDM Experience Event](../../../../xdm/classes/e
 
 ## Program {#programs}
 
-Läs [Översikt över XDM Business Campaign](../../../../xdm/classes/b2b/business-campaign.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för information om företagskampanj](../../../../xdm/field-groups/b2b-campaign/details.md) guide.
+Läs [XDM Business Campaign - översikt](../../../../xdm/classes/b2b/business-campaign.md) för mer information om klassen XDM. Mer information om XDM-fältgrupper finns i [Schemafältgrupp för information om företagskampanj](../../../../xdm/field-groups/b2b-campaign/details.md) guide.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -140,7 +140,7 @@ Läs [Översikt över XDM Business Campaign](../../../../xdm/classes/b2b/busines
 | `"${MUNCHKIN_ID}"` | `campaignKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `campaignKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `campaignKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(sfdcId != null && sfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdcId, "sourceKey", concat(sfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The  `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(sfdcId != null && sfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdcId, "sourceKey", concat(sfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The  `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `name` | `campaignName` |
 | `description` | `campaignDescription` |
 | `type` | `campaignType` |
@@ -184,7 +184,7 @@ Läs [Översikt över medlemmar i XDM Business Campaign](../../../../xdm/classes
 | `webinarUrl` | `webinarConfirmationUrl` |
 | `registrationCode` | `webinarRegistrationID` |
 | `reachedSuccessDate` | `reachedSuccessDate` |
-| `iif(sfdc.crmId != null && sfdc.crmId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdc.crmId, "sourceKey", concat(sfdc.crmId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(sfdc.crmId != null && sfdc.crmId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", sfdc.crmId, "sourceKey", concat(sfdc.crmId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `sfdc.lastStatus` | `lastStatus` |
 | `sfdc.hasResponded` | `hasResponded` |
 | `sfdc.firstRespondedDate` | `firstRespondedDate` |
@@ -204,7 +204,7 @@ Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-a
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `concat(id, ".mkto_org")` | `accountKey.sourceID` |
 | `concat(id, ".mkto_org@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| <ul><li>`iif(mktoCdpExternalId != null && mktoCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", mktoCdpExternalId, "sourceKey", concat(mktoCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(msftCdpExternalId != null && msftCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", msftCdpExternalId, "sourceKey", concat(msftCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| <ul><li>`iif(mktoCdpExternalId != null && mktoCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", mktoCdpExternalId, "sourceKey", concat(mktoCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(msftCdpExternalId != null && msftCdpExternalId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", msftCdpExternalId, "sourceKey", concat(msftCdpExternalId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `billingCity` | `accountBillingAddress.city` |
@@ -275,7 +275,7 @@ Läs [Översikt över XDM-företagskonto](../../../../xdm/classes/b2b/business-a
 | `"${MUNCHKIN_ID}"` | `accountKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `concat(id, ".mkto_acct")` | `accountKey.sourceID` |
 | `concat(id, ".mkto_acct@${MUNCHKIN_ID}.Marketo")` | `accountKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
-| `iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(crmGuid != null && crmGuid != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", crmGuid, "sourceKey", concat(crmGuid,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `city` | `accountBillingAddress.city` |
@@ -340,7 +340,7 @@ Läs [Översikt över XDM Business Opportunity Person Relation](../../../../xdm/
 | `"${MUNCHKIN_ID}"` | `opportunityPersonKey.sourceInstanceID` | Värdet för `"${MUNCHKIN_ID}"` ersätts automatiskt. |
 | `id` | `opportunityPersonKey.sourceID` |
 | `concat(id,"@${MUNCHKIN_ID}.Marketo")` | `opportunityPersonKey.sourceKey` | Primär identitet. Värdet för `"${MUNCHKIN_ID}"` ersätts som en del av Utforska API. |
-| `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
+| `iif(mktoCdpSfdcId != null && mktoCdpSfdcId != "", to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", mktoCdpSfdcId, "sourceKey", concat(mktoCdpSfdcId,"@${CRM_ORG_ID}.${CRM_TYPE}")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdena för `{CRM_ORG_ID}` och `{CRM_TYPE}` ersätts automatiskt. |
 | `iif(mktoCdpOpptyId != null && mktoCdpOpptyId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", mktoCdpOpptyId, "sourceKey", concat(mktoCdpOpptyId,"@${MUNCHKIN_ID}.Marketo")), null)` | `opportunityKey` | Relation |
 | `iif(leadId != null && leadId != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", leadId, "sourceKey", concat(leadId,"@${MUNCHKIN_ID}.Marketo")), null)` | `personKey` | Relation |
 | `role` | `personRole` |
@@ -373,7 +373,7 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 | `leadPartitionId` | `b2b.personGroupID` |
 | `mktoCdpIsConverted` | `b2b.isConverted` |
 | `mktoCdpConvertedDate` | `b2b.convertedDate` |
-| <ul><li>`iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null), "sourceKey", concat(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null), "sourceKey", concat(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är den sekundära identiteten. |
+| <ul><li>`iif(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null), "sourceKey", concat(decode(sfdcType, "Contact", sfdcContactId, "Lead", sfdcLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li><li>`iif(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null) != null, to_object("sourceType", "${CRM_TYPE}", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null), "sourceKey", concat(decode(msftType, "Contact", msftContactId, "Lead", msftLeadId , null),"@${CRM_ORG_ID}.${CRM_TYPE}")), null)`</li></ul> | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `title` | `extendedWorkDetails.jobTitle` |

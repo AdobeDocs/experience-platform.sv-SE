@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # Uppdatera ett katalogobjekt
 
-Du kan uppdatera en del av en [!DNL Catalog] genom att inkludera dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller två metoder för att utföra PATCH-åtgärder på katalogobjekt:
+Du kan uppdatera en del av en [!DNL Catalog] genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller två metoder för att utföra PATCH-åtgärder på katalogobjekt:
 
 * Använda fält
 * Använda JSON Patch-notation

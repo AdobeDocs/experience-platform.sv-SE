@@ -64,11 +64,11 @@ Välj **[!UICONTROL Save]** för att installera tillägget.
 
 ### Skapa ett dataelement för att ange standardsamtycke
 
-Med SDK-tillägget installerat kan du skapa ett dataelement som representerar standardvärdet för datainsamlingsmedgivande (`collect.val`) för användarna. Detta kan vara användbart om du vill ha olika standardvärden beroende på användaren, till exempel `pending` för användare i Europeiska unionen och `in` för användare i Nordamerika.
+Med SDK-tillägget installerat kan du skapa ett dataelement som representerar standardvärdet för datainsamlingsmedgivande (`collect.val`) för dina användare. Detta kan vara användbart om du vill ha olika standardvärden beroende på användaren, till exempel `pending` för användare i Europeiska unionen och `in` för nordamerikanska användare.
 
 I det här fallet kan du implementera följande för att ange standardsamtycke baserat på användarens region:
 
-1. Ange användarens region på webbservern.
+1. Identifiera användarens region på webbservern.
 1. Före `script` -tagg (inbäddningskod) på webbsidan, återge en separat `script` tagg som anger `adobeDefaultConsent` variabel som baseras på användarens region.
 1. Konfigurera ett dataelement som använder `adobeDefaultConsent` JavaScript-variabel och använd det här dataelementet som standardvärde för samtycke för användaren.
 
@@ -154,7 +154,7 @@ alloy("setConsent", {
 
 >[!NOTE]
 >
->Om du använder andra medgivandestandarder i kombination med `Adobe` (till exempel `IAB TCF`) kan du lägga till fler objekt i `consent` för varje standard. Varje objekt måste innehålla lämpliga värden för `standard`, `version`och `value` för den standard för samtycke de representerar.
+>Om du använder andra medgivandestandarder i kombination med `Adobe` (till exempel `IAB TCF`) kan du lägga till fler objekt i `consent` arrayen för varje standard. Varje objekt måste innehålla lämpliga värden för `standard`, `version`och `value` för den standard för samtycke de representerar.
 
 Följande JavaScript innehåller ett exempel på en funktion som hanterar ändringar av medgivandeinställningar på en webbplats, som kan användas som återanrop i en händelseavlyssnare eller en CMP-krok:
 
@@ -202,7 +202,7 @@ var setConsent = function () {
 
 Alla [!DNL Platform SDK] kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se avsnittet om [hantering av lyckade eller misslyckade](../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) i guiden om hur du kör SDK-kommandon för specifika exempel.
 
-När du är klar `setConsent` anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att kontrollera om data landas i profilarkivet. Se avsnittet om [söka efter profiler utifrån identitet](../../../profile/ui/user-guide.md#browse-identity) för mer information.
+När du har gjort det `setConsent` anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att kontrollera om data landas i profilarkivet. Se avsnittet om [söka efter profiler utifrån identitet](../../../profile/ui/user-guide.md#browse-identity) för mer information.
 
 ## Nästa steg
 

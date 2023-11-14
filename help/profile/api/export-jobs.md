@@ -25,7 +25,7 @@ Förutom att skapa ett exportjobb kan du även använda [!DNL Profile] data med 
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [!DNL Real-Time Customer Profile] API. Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkterna som används i den här handboken är en del av [!DNL Real-Time Customer Profile] API. Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Skapa ett exportjobb
 
@@ -71,7 +71,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `name` | Ett beskrivande namn för datauppsättningen. |
-| `schemaRef.id` | ID för den unionsvy (schema) som datauppsättningen ska kopplas till. |
+| `schemaRef.id` | ID:t för den unionsvy (schema) som datauppsättningen ska kopplas till. |
 
 **Svar**
 
@@ -135,7 +135,7 @@ curl -X POST \
 | `mergePolicy` | *(Valfritt)* Anger den sammanfogningsprincip som ska användas för att styra exporterade data. Inkludera den här parametern när det finns flera målgrupper som exporteras. |
 | `mergePolicy.id` | ID för sammanfogningsprincipen. |
 | `mergePolicy.version` | Den specifika versionen av sammanfogningsprincipen som ska användas. Om du utelämnar det här värdet används den senaste versionen som standard. |
-| `additionalFields.eventList` | *(Valfritt)* Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`eventList.fields`: Styr fälten som ska exporteras.</li><li>`eventList.filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`eventList.filter.fromIngestTimestamp`: Filtrerar tidsseriehändelser till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
+| `additionalFields.eventList` | *(Valfritt)* Styr tidsseriens händelsefält som exporteras för underordnade eller associerade objekt genom att ange en eller flera av följande inställningar:<ul><li>`eventList.fields`: Kontrollera de fält som ska exporteras.</li><li>`eventList.filter`: Anger villkor som begränsar resultaten från associerade objekt. Förväntar ett minimivärde som krävs för export, vanligtvis ett datum.</li><li>`eventList.filter.fromIngestTimestamp`: Filtrerar händelser i tidsserier till händelser som har importerats efter den angivna tidsstämpeln. Detta är inte själva händelseläget utan själva intagningstiden för händelserna.</li></ul> |
 | `destination` | **(Obligatoriskt)** Målinformation för exporterade data:<ul><li>`destination.datasetId`: **(Obligatoriskt)** ID för den datauppsättning där data ska exporteras.</li><li>`destination.segmentPerBatch`: *(Valfritt)* Ett booleskt värde som, om det inte anges, är som standard `false`. Värdet för `false` exporterar alla segmentdefinition-ID:n till ett enda batch-ID. Värdet för `true` exporterar ett segmentdefinitions-ID till ett batch-ID. Observera att om du anger värdet som ska `true` kan påverka batchexportens prestanda.</li></ul> |
 | `schema.name` | **(Obligatoriskt)** Namnet på schemat som är associerat med datauppsättningen där data ska exporteras. |
 
@@ -403,7 +403,7 @@ curl -X GET \
 
 ## Avbryt ett exportjobb
 
-Med Experience Platform kan du avbryta ett befintligt exportjobb, vilket kan vara användbart av flera anledningar, bland annat om exportjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill avbryta ett exportjobb kan du göra en DELETE-förfrågan till `/export/jobs` slutpunkt och inkludera `id` av det exportjobb som du vill avbryta till sökvägen för begäran.
+Med Experience Platform kan du avbryta ett befintligt exportjobb, vilket kan vara användbart av flera skäl, bland annat om exportjobbet inte slutfördes eller fastnade i bearbetningsfasen. Om du vill avbryta ett exportjobb kan du göra en DELETE-förfrågan till `/export/jobs` slutpunkt och inkludera `id` av det exportjobb som du vill avbryta till sökvägen för begäran.
 
 **API-format**
 
@@ -432,7 +432,7 @@ En borttagningsbegäran returnerar HTTP-status 204 (inget innehåll) och en tom 
 
 ## Nästa steg
 
-När exporten är klar är dina data tillgängliga i Data Lake i Experience Platform. Du kan sedan använda [API för dataåtkomst](https://www.adobe.io/experience-platform-apis/references/data-access/) för att få åtkomst till data med `batchId` som är kopplad till exporten. Beroende på exportens storlek kan data vara i segment och gruppen kan bestå av flera filer.
+När exporten är klar är dina data tillgängliga i Data Lake i Experience Platform. Du kan sedan använda [API för dataåtkomst](https://www.adobe.io/experience-platform-apis/references/data-access/) för att få åtkomst till data med `batchId` som är associerad med exporten. Beroende på exportens storlek kan data vara i segment och gruppen kan bestå av flera filer.
 
 Följ de stegvisa instruktionerna om hur du använder API:t för dataåtkomst för att komma åt och hämta gruppfiler [Dataåtkomst, genomgång](../../data-access/tutorials/dataset-data.md).
 
@@ -496,4 +496,4 @@ Om du vill skapa ett exportjobb som bara innehåller händelsedata (inga profila
 
 ### Exportera målgrupper
 
-Du kan också använda slutpunkten för exportjobb för att exportera målgrupper i stället för [!DNL Profile] data. Se guiden [exportjobb i segmenterings-API](../../segmentation/api/export-jobs.md) för mer information.
+Du kan också använda slutpunkten för exportjobb för att exportera målgrupper i stället för [!DNL Profile] data. Se guiden på [exportjobb i segmenterings-API](../../segmentation/api/export-jobs.md) för mer information.

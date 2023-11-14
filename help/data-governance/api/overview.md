@@ -13,7 +13,7 @@ ht-degree: 3%
 
 # [!DNL Policy Service] API-guide
 
-Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, märkning av dataanvändning, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
+Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning. Det spelar en nyckelroll inom [!DNL Experience Platform] på olika nivåer, inklusive katalogisering, datalinje, dataanvändningsetiketter, dataanvändningspolicyer och kontroll av användningen av data för marknadsföringsåtgärder.
 
 The [!DNL Policy Service] API innehåller flera slutpunkter som gör att du kan hantera etiketter och policyer för dataanvändning programmatiskt, samt utvärdera marknadsföringsåtgärder för policyöverträdelser. Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunktshandböckerna och i [komma igång-guide](./getting-started.md) om du vill ha viktig information om obligatoriska rubriker, läsa exempel-API-anrop med mera.
 
@@ -33,7 +33,7 @@ Datastyrningspolicyer är regler som beskriver den typ av marknadsföringsåtgä
 
 >[!NOTE]
 >
->Datastyrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som avgör vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se guiden [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
+>Datastyrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som avgör vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se guiden på [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md) för mer information.
 
 En datastyrningspolicy definieras enligt följande:
 
@@ -50,4 +50,4 @@ The [!DNL Policy Service] API innehåller slutpunkter som gör att du kan testa 
 
 ## Nästa steg
 
-Börja ringa samtal med [!DNL Policy Service] API, läs [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter. Arbeta med etiketter och profiler med [!DNL Experience Platform] Gränssnittet, se [användarhandbok för etiketter](../labels/user-guide.md) och [användarhandbok](../policies/user-guide.md), respektive.
+Börja ringa samtal med [!DNL Policy Service] API, läs [komma igång-guide](./getting-started.md) Välj sedan en av slutpunktsstödlinjerna och lär dig hur du använder specifika slutpunkter. Arbeta med etiketter och profiler med [!DNL Experience Platform] Gränssnittet, se [användarhandbok för etiketter](../labels/user-guide.md) och [användarhandbok](../policies/user-guide.md), respektive

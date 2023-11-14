@@ -24,7 +24,7 @@ I följande tabell visas fälten i ett Experience Data Model (XDM) Experience Ev
 | **`dataSource`** | | Konfigurerad till &quot;1&quot; för alla klienter. |
 | `dataSource._id` | Ett systemgenererat värde som inte kan skickas med begäran. | Datakällans unika ID. Detta tillhandahålls av den person eller det system som skapade datakällan. |
 | `dataSource.code` | Ett systemgenererat värde som inte kan skickas med begäran. | En genväg till det fullständiga @id:t. Minst en av koderna eller @id kan användas. Ibland kallas den här koden för integreringskoden för datakällan. |
-| `dataSource.tags` | Ett systemgenererat värde som inte kan skickas med begäran. | Taggar används för att ange hur alias som representeras av en viss datakälla ska tolkas av program som använder dessa alias.<br><br>Exempel:<br><ul><li>`isAVID`: Datakällor som representerar besökar-ID:n för Analytics.</li><li>`isCRSKey`: Datakällor som representerar alias som ska användas som nycklar i CRS.</li></ul>Taggar anges när datakällan skapas, men de inkluderas även i pipeline-meddelanden när en viss datakälla refereras. |
+| `dataSource.tags` | Ett systemgenererat värde som inte kan skickas med begäran. | Taggar används för att ange hur alias som representeras av en viss datakälla ska tolkas av program som använder dessa alias.<br><br>Exempel:<br><ul><li>`isAVID`: Datakällor som representerar besökar-ID för Analytics.</li><li>`isCRSKey`: Datakällor som representerar alias som ska användas som nycklar i CRS.</li></ul>Taggar anges när datakällan skapas, men de inkluderas även i pipeline-meddelanden när en viss datakälla refereras. |
 | **`timestamp`** | Tidsstämpel för händelse |
 | **`channel`** | `context.channel` | Fungerar bara med visningsleverans. Alternativen är &quot;web&quot; och &quot;mobile&quot;, med &quot;web&quot; som standard. |
 | **`endUserIds`** |
@@ -68,7 +68,7 @@ I följande tabell visas fälten i ett Experience Data Model (XDM) Experience Ev
 | **`placeContext`** |
 | `placeContext.geo.id` | Slumpmässig UID (obligatoriskt) |
 | `placeContext.geo.city` | Ortsnamnet matchades baserat på begärans IP-adress. |
-| `placeContext.geo.countryCode` | Landskoden löstes utifrån den begärda IP-adressen. |
+| `placeContext.geo.countryCode` | Landskoden löstes baserat på den begärda IP-adressen. |
 | `placeContext.geo.dmaId` | Den utsedda marknadsområdeskoden löstes utifrån den begärda IP-adressen. |
 | `placeContext.geo.postalCode` | Postnumret löstes utifrån den begärda IP-adressen. |
 | `placeContext.geo.stateProvince` | Stat eller provins löstes utifrån begärans IP-adress. |

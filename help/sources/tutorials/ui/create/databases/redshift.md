@@ -5,7 +5,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4faf3200-673b-4a20-8f94-d049e800444b
 source-git-commit: a7c2c5e4add5c80e0622d5aeb766cec950d79dbb
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '475'
 ht-degree: 1%
 
 ---
@@ -24,14 +24,14 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 - [[!DNL Experience Data Model (XDM)] System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    - [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   - [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 - [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL Redshift] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/databases.md).
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Redshift] på Experience Platform måste du ange följande värden:
+För att få åtkomst till [!DNL Redshift] på Experience Platform måste du ange följande värden:
 
 | **Autentiseringsuppgifter** | **Beskrivning** |
 | -------------- | --------------- |
@@ -51,11 +51,11 @@ När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för 
 >
 >Standardkodningsstandard för [!DNL Redshift] är Unicode. Detta kan inte ändras.
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan markera **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsyta. The **[!UICONTROL Catalog]** I visas en mängd olika källor som du kan skapa ett konto med.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsyta. The **[!UICONTROL Catalog]** I visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under **[!UICONTROL Databases]** kategori, välj **[!UICONTROL Amazon Redshift]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Redshift] koppling.
+Under **[!UICONTROL Databases]** kategori, välj **[!UICONTROL Amazon Redshift]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Redshift] koppling.
 
 ![](../../../../images/tutorials/create/redshift/catalog.png)
 
@@ -69,10 +69,10 @@ Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du [!DNL Redshift] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL Redshift] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
 
 ![](../../../../images/tutorials/create/redshift/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL Redshift] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/databases.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Redshift] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till Experience Platform](../../dataflow/databases.md).

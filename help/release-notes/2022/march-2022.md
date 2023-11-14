@@ -83,10 +83,10 @@ På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din or
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Widgeten Osegmenterade profiler | Widgeten visar det totala antalet profiler som inte är kopplade till något segment. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
-| widgeten Trend för osegmenterade profiler | Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
-| Osegmenterade profiler efter identitetswidget | Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
-| widgeten Enstaka identitetsprofiler | Den här widgeten innehåller information om organisationens profiler som bara har en typ av ID som skapar deras identitet, antingen ett e-postmeddelande eller ett ECID. Se [profiler standarddokumentation för widgetar](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| Widgeten Osegmenterade profiler | Widgeten visar det totala antalet profiler som inte är kopplade till något segment. Det genererade numret är korrekt vid den senaste ögonblicksbilden och representerar möjligheten till profilaktivering i hela organisationen. Se [profiler standardwidgetdokumentation](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| widgeten Trend för osegmenterade profiler | Den här widgeten innehåller en illustration av linjediagram för antalet profiler som inte är kopplade till något segment under en viss tidsperiod. Trenden kan visualiseras under 30 dagar, 90 dagar och 12 månader. Se [profiler standardwidgetdokumentation](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| Osegmenterade profiler efter identitetswidget | Den här widgeten kategoriserar det totala antalet osegmenterade profiler efter deras unika identifierare. Data visas i ett stapeldiagram. Se [profiler standardwidgetdokumentation](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
+| widgeten Enstaka identitetsprofiler | Den här widgeten innehåller information om organisationens profiler som bara har en typ av ID som skapar deras identitet, antingen ett e-postmeddelande eller ett ECID. Se [profiler standardwidgetdokumentation](../../dashboards/guides/profiles.md#standard-widgets) för mer information. |
 
 {style="table-layout:auto"}
 
@@ -100,7 +100,7 @@ På kontrollpanelen Destinationer visas en ögonblicksbild av de destinationer s
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Se [dokumentation för standardwidget](../../dashboards/guides/destinations.md#standard-widgets) för mer information. |
+| Widgeten Antal destinationer | Widgeten visar totalt antal tillgängliga slutpunkter där en målgrupp kan aktiveras och levereras inom systemet. Detta nummer inkluderar både aktiva och inaktiva mål. Se [målstandarddokumentation för widget](../../dashboards/guides/destinations.md#standard-widgets) för mer information. |
 
 {style="table-layout:auto"}
 
@@ -114,7 +114,7 @@ Plattformen innehåller en serie teknologier som gör att ni kan samla in kundup
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geo location, first-party ID cookie, and third-party ID sync. Se avsnittet om [konfigurera ett datastream](../../datastreams/overview.md#create) i användargränssnittsguiden för datastreams om du vill ha mer information. |
+| Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geografisk plats, cookie för första parts-ID och synkronisering med tredje parts-ID. Se avsnittet om [konfigurera ett datastream](../../datastreams/overview.md#create) i användargränssnittsguiden för datastreams om du vill ha mer information. |
 | [Server-API för Edge Network](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som stöder en rad olika fall av datainsamling, personalisering, annonsering och marknadsföring. |
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
@@ -145,7 +145,7 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 | --- | --- |
 | Nu finns nya källor för B2B-användning | Du kan nu använda alla tillgängliga källor på plattformen för B2B-användning. Se [källkatalog](../../sources/home.md) för en fullständig lista över tillgängliga källor. |
 | Allmän tillgänglighet för nya [!DNL Oracle Eloqua] källa | Nu kan du använda [!DNL Oracle Eloqua] källa till smidig import av data från [!DNL Oracle Eloqua] -instans (konto, kampanj, kontakter) till Platform. Läs dokumentationen om [skapa [!DNL Oracle Eloqua] källanslutning](../../sources/connectors/marketing-automation/oracle-eloqua.md) för mer information. |
-| API-förbättringar för [!DNL Data Landing Zone] | The [!DNL Data Landing Zone] -källan har nu stöd för automatisk identifiering av filegenskaper när du använder [!DNL Flow Service] API. Läs dokumentationen om [skapa [!DNL Data Landing Zone] källanslutning](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) för mer information. |
+| API-förbättringar för [!DNL Data Landing Zone] | The [!DNL Data Landing Zone] finns nu stöd för automatisk identifiering av filegenskaper när du använder [!DNL Flow Service] API. Läs dokumentationen om [skapa [!DNL Data Landing Zone] källanslutning](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) för mer information. |
 
 {style="table-layout:auto"}
 

@@ -5,7 +5,7 @@ badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
 source-git-commit: 9a8139c26b5bb5ff937a51986967b57db58aab6c
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '535'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] för att ansluta [!DNL Google BigQuery] På Platform måste du ange följande OAuth 2.0-autentiseringsvärden:
+För att [!DNL Flow Service] ansluta [!DNL Google BigQuery] På Platform måste du ange följande OAuth 2.0-autentiseringsvärden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -39,7 +39,7 @@ För att [!DNL Flow Service] för att ansluta [!DNL Google BigQuery] På Platfor
 | `clientID` | ID-värdet som används för att generera uppdateringstoken. |
 | `clientSecret` | Det hemliga värde som används för att generera uppdateringstoken. |
 | `refreshToken` | Uppdateringstoken som hämtats från [!DNL Google] används för att auktorisera åtkomst till [!DNL Google BigQuery]. |
-| `largeResultsDataSetId` | Det färdiga  [!DNL Google BigQuery] ID för datauppsättning som krävs för att aktivera stöd för stora resultatuppsättningar. |
+| `largeResultsDataSetId` | Det förskapade  [!DNL Google BigQuery] ID för datauppsättning som krävs för att aktivera stöd för stora resultatuppsättningar. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Google BigQuery] är: `3c9b37f8-13a6-43d8-bad3-b863b941fedd`. |
 
 Mer information om dessa värden finns i [[!DNL Google BigQuery] dokument](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing).

@@ -36,7 +36,7 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 **Begäran**
 
-Följande begäran tar bort en datauppsättning vars ID har angetts i sökvägen för begäran.
+Följande begäran tar bort en datauppsättning vars ID har angetts i sökvägen till begäran.
 
 ```shell
 curl -X DELETE \

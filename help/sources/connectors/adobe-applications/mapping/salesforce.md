@@ -144,7 +144,7 @@ Läs [Översikt över XDM Business Account-detaljer](../../../../xdm/classes/b2b
 | `BillingStreet` | `accountBillingAddress.street1` |
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
 | `Description` | `accountDescription` |
-| `DunsNumber` | `accountOrganization.DUNSNumber` | data.com-funktion |
+| `DunsNumber` | `accountOrganization.DUNSNumber` | data.com |
 | `Fax` | `accountFax.number` |
 | `isDeleted` | `isDeleted` |
 | `Id` | `accountKey.sourceID` |
@@ -155,8 +155,8 @@ Läs [Översikt över XDM Business Account-detaljer](../../../../xdm/classes/b2b
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
 | `LastReferencedDate` | `extSourceSystemAudit.lastReferencedDate` |
 | `LastViewedDate` | `extSourceSystemAudit.lastViewedDate` |
-| `NaicsCode` | `accountOrganization.NAICSCode` | data.com-funktion |
-| `NaicsDesc` | `accountOrganization.NAICSDescription` | data.com-funktion |
+| `NaicsCode` | `accountOrganization.NAICSCode` | data.com |
+| `NaicsDesc` | `accountOrganization.NAICSDescription` | data.com |
 | `Name` | `accountName` |
 | `NumberOfEmployees` | `accountOrganization.numberOfEmployees` |
 | `Ownership` | `accountOwnership` |
@@ -174,7 +174,7 @@ Läs [Översikt över XDM Business Account-detaljer](../../../../xdm/classes/b2b
 | `SicDesc` | `accountOrganization.SICDescription` |
 | `Site` | `accountSite` |
 | `TickerSymbol` | `accountOrganization.tickerSymbol` |
-| `Tradestyle` | `accountTradeStyle` | data.com-funktion |
+| `Tradestyle` | `accountTradeStyle` | data.com |
 | `Type` | `accountType` |
 | `Website` | `accountOrganization.website` |
 

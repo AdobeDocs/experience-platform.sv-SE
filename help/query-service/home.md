@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # [!DNL Query Service] översikt
 
-Adobe Experience Platform importerar data från en mängd olika källor. En stor utmaning för marknadsförarna är att förstå dessa data för att få insikter om sina kunder. Adobe Experience Platform [!DNL Query Service] gör det lättare att använda standard-SQL för att fråga data i [!DNL Platform]. Använda [!DNL Query Service]kan du ansluta till valfri datauppsättning i [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för att lägga in [!DNL Real-Time Customer Profile]. Det här dokumentet innehåller en översikt över rollen för [!DNL Query Service] inom [!DNL Experience Platform].
+Adobe Experience Platform importerar data från en mängd olika källor. En stor utmaning för marknadsförarna är att förstå dessa data för att få insikter om sina kunder. Adobe Experience Platform [!DNL Query Service] gör det lättare att använda standard-SQL för att fråga data i [!DNL Platform]. Använda [!DNL Query Service]kan du ansluta till valfri datauppsättning i [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i [!DNL Real-Time Customer Profile]. Det här dokumentet innehåller en översikt över rollen för [!DNL Query Service] inom [!DNL Experience Platform].
 
-[!DNL Query Service] gör det möjligt för varumärken att koppla samman kundresan online-till-offline och förstå flerkanalsattribuering. I följande video visas hur ett upplevelseföretag kan utnyttja [!DNL Query Service] för att hantera viktiga användningsfall och hur [!DNL Query Service] fungerar.
+[!DNL Query Service] gör det möjligt för varumärken att koppla samman kundresan online-till-offline och förstå flerkanalsattribuering. I följande video visas hur ett upplevelseföretag kan utnyttja [!DNL Query Service] hantera viktiga användningsfall och hur [!DNL Query Service] fungerar.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29795?quality=12&learn=on)
 
@@ -25,7 +25,7 @@ Adobe Experience Platform importerar data från en mängd olika källor. En stor
 
 ## [!DNL Query Service] och [!DNL Experience Platform] tjänster
 
-[!DNL Query Service] interagerar och kan användas tillsammans med flera [!DNL Experience Platform] tjänster. För att få ut så mycket som möjligt av [!DNL Query Service's] vi rekommenderar att du bekanta dig med dessa tjänster och hur de interagerar med [!DNL Query Service].
+[!DNL Query Service] interagerar och kan användas tillsammans med flera [!DNL Experience Platform] tjänster. För att få ut det mesta av [!DNL Query Service's] vi rekommenderar att du bekanta dig med dessa tjänster och hur de interagerar med [!DNL Query Service].
 
 ### [!DNL Data Science Workspace]
 
@@ -45,7 +45,7 @@ Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics
 
 ### Kontrollpaneler för Looker BI
 
-Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar - inklusive beteendes-, CRM- och försäljningsdata. Använda [!DNL Experience Platform's Query Service]kan ni fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. I följande video visas värdet av att bygga instrumentpaneler i BI-verktyg (Business Intelligence) med [!DNL Query Service].
+Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Använda [!DNL Experience Platform's Query Service]kan ni fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. I följande video visas värdet av att bygga instrumentpaneler i BI-verktyg (Business Intelligence) med [!DNL Query Service].
 
 >[!VIDEO](https://video.tv.adobe.com/v/28981?quality=12&learn=on)
 

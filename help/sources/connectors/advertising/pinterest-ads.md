@@ -25,7 +25,7 @@ Experience Platform stöder inmatning av data från ett annonssystem från tredj
 
 [[!DNL Pinterest]](https://www.pinterest.com) är en motor för visuell identifiering som används för att hitta recept, heminredning, stilinspiration och andra idéer på webben. Dessa visas i liten skala med bilder, animerad GIF och videor i pinboard-format. [[!DNL Pinterest Ads]](https://ads.pinterest.com/) kan ni utöka verksamheten och nå 400 miljoner människor med [!DNL Pinterest].
 
-Med [!DNL Pinterest Ads]kan ni nå ut till användarna via riktade annonser för att identifiera och köpa era produkter. Fäst från [!DNL Pinterest Ads] sponsras för att få extra exponering i relevanta sökresultat. Användare prenumererar på [!DNL Pinterest Business] kan välja att befordra befintliga nålar med bästa prestanda, skapa en ny bild eller video eller till och med befordra en bild som har fästs från en webbplats. [!DNL Pinterest Ads] erbjuder flera annonsformat som hjälper er att uppnå era specifika kampanjmål.
+Med [!DNL Pinterest Ads]kan ni nå ut till användarna via riktade annonser för att identifiera och köpa era produkter. Fäst från [!DNL Pinterest Ads] sponsras för att få extra exponering i relevanta sökresultat. Användare som prenumererar på [!DNL Pinterest Business] kan välja att befordra befintliga nålar med bästa prestanda, skapa en ny bild eller video eller till och med befordra en bild som har fästs från en webbplats. [!DNL Pinterest Ads] erbjuder flera annonsformat som hjälper er att uppnå era specifika kampanjmål.
 
 ## [!DNL Pinterest] API:er {#pinterest-apis}
 
@@ -35,7 +35,7 @@ The [!DNL Pinterest Ads] källa utnyttjar [!DNL Pinterest] API:er för att hämt
 * [Annonsgruppsanalys](https://developers.pinterest.com/docs/api/v5/#operation/ad_groups/analytics)
 * [Annonsanalys](https://developers.pinterest.com/docs/api/v5/#operation/ads/analytics)
 
-Använd [!DNL Pinterest Ads] källa att hämta data från [!DNL Pinterest] till Experience Platform, där ni sedan kan utföra dataanalys. Data returneras från och med datumet för intag i ett föråldrat intervall på 90 dagar. [!DNL Pinterest Ads] använder lagervariabler som en autentiseringsmekanism för att kommunicera med [!DNL Pinterest] API:er.
+Använd [!DNL Pinterest Ads] källa att hämta data från [!DNL Pinterest] till Experience Platform, där ni sedan kan utföra dataanalys. Data returneras från och med datumet för intag i ett föråldrat intervall på 90 dagar. [!DNL Pinterest Ads] använder lagervariabler som en autentiseringsmekanism för att kommunicera med [!DNL Pinterest] API.
 
 ## Förutsättningar {#prerequisites}
 
@@ -55,7 +55,7 @@ För att kunna ansluta [!DNL Pinterest Ads] till Platform måste du ange värden
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| Åtkomsttoken | The [!DNL Pinterest Ads] åtkomsttoken för ditt användarkonto. Token-användarkontot måste antingen vara ägare av det angivna [!DNL Pinterest Ad] kontot eller har en av de nödvändiga roller som de tilldelats via Business Access: Administratör, analytiker eller kampanjchef. Mer information om åtkomsttoken finns i [[!DNL Pinterest] guide om hur du genererar din åtkomsttoken](https://developers.pinterest.com/docs/getting-started/set-up-app/). |
+| Åtkomsttoken | The [!DNL Pinterest Ads] åtkomsttoken för ditt användarkonto. Token-användarkontot måste antingen vara ägare av det angivna [!DNL Pinterest Ad] eller har en av de nödvändiga roller som de tilldelats via Business Access: Admin, Analyst eller Campaign Manager. Mer information om åtkomsttoken finns i [[!DNL Pinterest] guide om hur du genererar din åtkomsttoken](https://developers.pinterest.com/docs/getting-started/set-up-app/). |
 | ID för annonskonto | Den relaterade [!DNL Pinterest Ads] annonskonto-ID för din affärsenhet. Mer information om hur du hämtar ditt ID för annonskonto. Besök [[!DNL Pinterest] guide för att hitta ID:n i Ads Manager](https://help.pinterest.com/en/business/article/find-ids-in-ads-manager). |
 | Kampanj-, annonsgrupp- eller annons-ID | The `campaign`, `ad group`, eller `ad` ID:n som motsvarar ditt annonskonto-ID. Navigera till [!DNL Pinterest] sida för **Pinterest Business Hub** > **Översikt över annonskonto** > **Kampanjer** / **Annonsgrupper** / **Annonser** och kopiera de ID:n som krävs precis under namnen. |
 
@@ -65,7 +65,7 @@ För att kunna ansluta [!DNL Pinterest Ads] till Platform måste du ange värden
 
 ## Guardrails {#guardrails}
 
-I följande avsnitt finns information om säkerhetsutkast för data för [!DNL Pinterest].
+I följande avsnitt finns information om säkerhetsutkast för data [!DNL Pinterest].
 
 ### [!DNL Pinterest] datumintervall {#pinterest-date-range}
 
@@ -81,7 +81,7 @@ När du schemalägger dataflödet måste du konfigurera någon av följande inst
 | `Day` | 1 |
 | `Hour` | 24 |
 
-Om t.ex. intag är inställt den 15 mars 2023 med en frekvens- och intervallinställning konfigurerad till `Day=1` eller `Hour=24`och sedan [!DNL Pinterest] API hämtar bara data från den 15 december 2022 eftersom beräkningen är inaktuell i 90 dagar.
+Om t.ex. intag är inställt den 15 mars 2023 med en frekvens- och intervallinställning konfigurerad till `Day=1` eller `Hour=24`och sedan [!DNL Pinterest] API hämtar bara data från och med 15 december 2022 eftersom beräkningen är inaktuell i 90 dagar.
 
 ### [!DNL Pinterest] tidsintervall {#pinterest-time-range}
 
@@ -92,10 +92,10 @@ The [!DNL Pinterest] API har stöd för olika typer av tidsgranularitet för hur
 | **TOTALT** | Datamätningarna aggregeras över ett angivet datumintervall. |
 | **DAG** | Datamätningarna delas upp dagligen. |
 | **TIMME** | Datamätningarna delas upp per timme. |
-| **VECKA** | Uppgifterna delas upp varje vecka. |
-| **MÅNADSVIS** | Uppgifterna delas upp på månadsbasis. |
+| **VECKA** | Uppgifterna delas upp på veckobasis. |
+| **MÅNAD** | Uppgifterna delas upp på månadsbasis. |
 
-För Platform [!DNL Pinterest Ads] källan är internt konfigurerad till `Day`, vilket innebär att data samlas in dagligen. Använd till exempel `impressions recorded` som ett mått eftersom granulariteten är konfigurerad som en `DAY`får du `xx` intryck på `day 1`, `yy` intryck på `day 2` och så vidare.
+För plattformen [!DNL Pinterest Ads] källan är internt konfigurerad till `Day`, vilket innebär att data samlas in dagligen. Använd till exempel `impressions recorded` som ett mått eftersom granulariteten är konfigurerad som en `DAY`får du `xx` intryck på `day 1`, `yy` intryck på `day 2` och så vidare.
 
 >[!IMPORTANT]
 >

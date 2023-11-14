@@ -34,9 +34,9 @@ Om du vill använda funktionerna för att skapa och ta bort ungefärliga frågeb
 
 ![Frågeredigeraren med kommandot SET aqp=true; markerat.](../images/essential-concepts/set-session-flag.png)
 
-## Skapa ett enhetligt slumpmässigt datauppsättningsexempel {#create-a-sample}
+## Skapa ett enhetligt exempel på en slumpmässig datauppsättning {#create-a-sample}
 
-Använd `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` med ett datauppsättningsnamn för att skapa ett enhetligt slumpmässigt urval från den datauppsättningen.
+Använd `ANALYZE TABLE <table_name> TABLESAMPLE SAMPLERATE x` kommandot med ett datauppsättningsnamn för att skapa ett enhetligt slumpmässigt urval från den datauppsättningen.
 
 Samplingsfrekvensen är procentandelen poster som tagits från den ursprungliga datauppsättningen. Du kan styra samplingsfrekvensen med `TABLESAMPLE SAMPLERATE` nyckelord. I det här exemplet motsvarar värdet 5,0 en samplingsfrekvens på 50 %. Värdet 2,5 motsvarar 25 % och så vidare.
 

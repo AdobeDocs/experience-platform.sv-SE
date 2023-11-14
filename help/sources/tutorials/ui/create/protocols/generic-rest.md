@@ -27,7 +27,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande plat
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Generic REST API] på Platform måste du ange giltiga autentiseringsuppgifter för den autentiseringstyp som du väljer. Allmänt REST API har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. I följande tabeller finns information om autentiseringsuppgifter för de två autentiseringstyper som stöds.
+För att få åtkomst till [!DNL Generic REST API] på Platform måste du ange giltiga autentiseringsuppgifter för den autentiseringstyp som du väljer. Allmänt REST API har stöd för både OAuth 2-uppdateringskod och grundläggande autentisering. I följande tabeller finns information om autentiseringsuppgifter för de två autentiseringstyper som stöds.
 
 #### OAuth 2-uppdateringskod
 
@@ -57,7 +57,7 @@ Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UI
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
 
-Under [!UICONTROL Protocols] kategori, välj **[!UICONTROL Generic REST API]** och sedan markera **[!UICONTROL Add data]**.
+Under [!UICONTROL Protocols] kategori, välj **[!UICONTROL Generic REST API]** och sedan **[!UICONTROL Add data]**.
 
 ![katalog](../../../../images/tutorials/create/generic-rest/catalog.png)
 

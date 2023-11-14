@@ -1,5 +1,5 @@
 ---
-keywords: aktivera profildestinationer;aktivera destinationer;aktivera data; aktivera e-postmarknadsföringsmål, aktivera molnlagringsmål
+keywords: aktivera profilmål;aktivera mål;aktivera data; aktivera e-postmarknadsföringsmål; aktivera molnlagringsmål
 title: Aktivera målgrupper för att direktuppspela exportmål för profiler
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
@@ -27,7 +27,7 @@ I den här artikeln beskrivs det arbetsflöde som krävs för att aktivera målg
 
 ## Förutsättningar {#prerequisites}
 
-Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
+Om du vill aktivera data till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
 ## Välj mål {#select-destination}
 
@@ -37,7 +37,7 @@ Du måste ha aktiverat data till destinationer [ansluten till ett mål](./connec
 
 1. Välj **[!UICONTROL Activate audiences]** på kortet som motsvarar destinationen där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Bild som markerar kontrollen för att aktivera målgrupper på fliken för målkatalogen.](../assets/ui/activate-streaming-profile-destinations/activate-audiences-button.png)
+   ![Bild som markerar kontrollen för att aktivera målgrupper på fliken Målkatalog.](../assets/ui/activate-streaming-profile-destinations/activate-audiences-button.png)
 
 1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
 

@@ -47,9 +47,9 @@ För att ringa [!DNL Platform] API:er måste du först slutföra [självstudieku
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare `Content-Type` header. Rätt värde för den här rubriken visas vid behov i exempelbegäranden.
 
-Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver en `x-sandbox-name` huvud som anger namnet på den sandlåda som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
+Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella sandlådor. Alla förfrågningar till [!DNL Platform] API:er kräver `x-sandbox-name` huvud som anger namnet på den sandlåda som åtgärden ska utföras i. Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
-## Skapa en datauppsättning som är aktiverad för profil och identitet {#create-a-dataset-enabled-for-profile-and-identity}
+## Skapa en datauppsättning aktiverad för profil och identitet {#create-a-dataset-enabled-for-profile-and-identity}
 
 Du kan aktivera en datauppsättning för kundprofil och identitetstjänst i realtid direkt när den skapas eller när som helst efter att datauppsättningen har skapats. Om du vill aktivera en datauppsättning som redan har skapats följer du stegen för [konfigurera en befintlig datauppsättning](#configure-an-existing-dataset) hittas senare i det här dokumentet.
 
@@ -67,7 +67,7 @@ POST /dataSets
 
 **Begäran**
 
-Genom att `unifiedProfile` och `unifiedIdentity` under `tags` i begärandetexten aktiveras datauppsättningen omedelbart för [!DNL Profile] och [!DNL Identity Service], respektive. Värdena för dessa taggar måste vara en array som innehåller strängen `"enabled:true"`.
+Genom att `unifiedProfile` och `unifiedIdentity` under `tags` i begärandetexten aktiveras datauppsättningen omedelbart för [!DNL Profile] och [!DNL Identity Service], respektive Värdena för dessa taggar måste vara en array som innehåller strängen `"enabled:true"`.
 
 ```shell
 curl -X POST \
@@ -91,12 +91,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 |---|---|
-| `schemaRef.id` | ID för [!DNL Profile]-aktiverat schema som datauppsättningen baseras på. |
+| `schemaRef.id` | ID:t för [!DNL Profile]-aktiverat schema som datauppsättningen baseras på. |
 | `{TENANT_ID}` | Namnutrymmet i [!DNL Schema Registry] som innehåller resurser som tillhör din organisation. Se [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) i [!DNL Schema Registry] för mer information. |
 
 **Svar**
 
-Ett lyckat svar visar en array som innehåller ID:t för den nya datauppsättningen i form av `"@/dataSets/{DATASET_ID}"`. När du har skapat och aktiverat en datauppsättning fortsätter du med stegen för [överföra data](#upload-data-to-the-dataset).
+Ett lyckat svar visar en matris som innehåller ID:t för den nya datamängden i form av `"@/dataSets/{DATASET_ID}"`. När du har skapat och aktiverat en datauppsättning fortsätter du med stegen för [överföra data](#upload-data-to-the-dataset).
 
 ```json
 [
@@ -168,11 +168,11 @@ curl -X GET \
 }
 ```
 
-Under `tags` -egenskapen ser du att `unifiedProfile` och `unifiedIdentity` finns båda med värdet `enabled:true`. Därför [!DNL Real-Time Customer Profile] och [!DNL Identity Service] är aktiverade för den här datauppsättningen.
+Under `tags` -egenskapen ser du att `unifiedProfile` och `unifiedIdentity` finns båda med värdet `enabled:true`. Därför bör [!DNL Real-Time Customer Profile] och [!DNL Identity Service] är aktiverade för den här datauppsättningen.
 
 ### Aktivera datauppsättningen {#enable-the-dataset}
 
-Om den befintliga datauppsättningen inte har aktiverats för [!DNL Profile] eller [!DNL Identity Service]kan du aktivera det genom att göra en PATCH-begäran med datauppsättnings-ID:t.
+Om befintlig datauppsättning inte har aktiverats för [!DNL Profile] eller [!DNL Identity Service]kan du aktivera det genom att göra en PATCH-begäran med datauppsättnings-ID:t.
 
 **API-format**
 

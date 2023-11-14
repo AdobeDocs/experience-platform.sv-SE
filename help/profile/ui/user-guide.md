@@ -42,7 +42,7 @@ Mer information finns på [guide för profilkontrollpanel](../../dashboards/guid
 
 Välj **[!UICONTROL Browse]** om du vill visa flera mätvärden som är relaterade till organisationens profildata. Du kan även använda den här fliken för att bläddra i profilarkivet med hjälp av en sammanfogningsprincip eller en identitet, vilket beskrivs i nästa avsnitt i den här handboken.
 
-Till höger på sidan **[!UICONTROL Browse]** -fliken är [antal profiler](#profile-count) samt en förteckning över [profiler efter namnutrymme](#profiles-by-namespace).
+Till höger på sidan **[!UICONTROL Browse]** är [antal profiler](#profile-count) samt en förteckning över [profiler efter namnutrymme](#profiles-by-namespace).
 
 >[!NOTE]
 >
@@ -78,7 +78,7 @@ På **[!UICONTROL Browse]** kan du visa exempelprofiler med hjälp av en sammanf
 
 ### Bläddra efter [!UICONTROL Merge policy]
 
-The **[!UICONTROL Browse]** är som standard inställd på standardprincipen för sammanfogning för din organisation. Om du vill välja en annan sammanfogningsprincip väljer du `X` bredvid sammanfogningsprincipnamnet och använd sedan väljaren för att öppna **[!UICONTROL Select merge policy]** -dialogrutan.
+The **[!UICONTROL Browse]** är som standard inställd på standardprincipen för sammanfogning för din organisation. Om du vill välja en annan sammanfogningsprincip väljer du `X` bredvid sammanfogningsprincipens namn och använd sedan väljaren för att öppna **[!UICONTROL Select merge policy]** -dialogrutan.
 
 >[!NOTE]
 >
@@ -92,7 +92,7 @@ Välj en sammanfogningsprincip på **[!UICONTROL Select merge policy]** markerar
 
 Profilerna som visas representerar ett urval på upp till 20 profiler från din organisations profilbutik efter att den valda sammanfogningsprincipen har tillämpats. Exempelprofilerna för den valda sammanfogningsprincipen uppdateras när nya data läggs till i din organisations profilarkiv.
 
-Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL Profile ID]**. Mer information finns i avsnittet senare i den här guiden på [visa profilinformation](#profile-detail).
+Om du vill visa information om en av exempelprofilerna väljer du **[!UICONTROL Profile ID]**. Mer information finns i avsnittet senare i den här handboken på [visa profilinformation](#profile-detail).
 
 ![Exempelprofiler som matchar sammanfogningsprincipen visas.](../images/user-guide/sample-profiles.png)
 
@@ -104,7 +104,7 @@ På **[!UICONTROL Browse]** kan du använda ett ID-namnutrymme för att leta upp
 
 ![Väljaren för sammanfogningsprincip är markerad.](../images/user-guide/browse-by-merge-policy.png)
 
-Om det behövs använder du **[!UICONTROL Merge policy]** för att öppna **[!UICONTROL Select merge policy]** och välj den sammanfogningsprincip som du vill använda.
+Om det behövs kan du använda **[!UICONTROL Merge policy]** för att öppna **[!UICONTROL Select merge policy]** och välj den kopplingsprofil som du vill använda.
 
 ![En dialogruta där du kan välja vilken sammanfogningsprincip som ska filtreras visas.](../images/user-guide/select-merge-policy.png)
 
@@ -114,7 +114,7 @@ Du kan markera ett namnutrymme om du vill visa mer information eller välja ett 
 
 ![En dialogruta där du kan välja det identitetsnamnutrymme som ska filtreras visas.](../images/user-guide/select-identity-namespace.png)
 
-När du har valt en [!UICONTROL Identity namespace] och återgå till [!UICONTROL Browse] kan du ange en **[!UICONTROL Identity value]** relaterat till det namnutrymme som du valde.
+När du har valt en [!UICONTROL Identity namespace] och återgå till [!UICONTROL Browse] kan du ange en **[!UICONTROL Identity value]** relaterat till det namnutrymme som du har valt.
 
 >[!NOTE]
 >

@@ -32,7 +32,7 @@ Den här handboken kräver att du har en fungerande förståelse för följande 
 
 ## Förutsättningar
 
-Den här guiden kräver att du har [Data Distiller](../data-distiller/overview.md) SKU som en del av paketerbjudandet. Om du är osäker på om du har detta eller inte kan du kontakta din Adobe-representant.
+Du måste ha [Data Distiller](../data-distiller/overview.md) SKU som en del av paketerbjudandet. Om du är osäker på om du har detta eller inte kan du kontakta din Adobe-representant.
 
 ## Skapa ett härlett attribut {#create-derived-attribute}
 
@@ -64,7 +64,7 @@ Se till att du ställer in ett schema för att uppdatera din anpassade datamodel
 
 Nu när du har skapat en anpassad datamodell är du redo att visualisera dina data med anpassade frågor och användardefinierade dashboards. I den användardefinierade översikten över kontrollpaneler finns fullständig vägledning om hur du [bygga en anpassad kontrollpanel](../../dashboards/user-defined-dashboards.md). Användargränssnittshandboken innehåller information om:
 
-* Så här skapar du en widget.
+* Skapa en widget.
 * Så här använder du widgetens disposition.
 
 Exempel på anpassade CLV-widgetar som använder decimalluckor visas nedan.
@@ -85,9 +85,9 @@ Det finns även en [videosjälvstudiekurs om segmentbyggare](https://experiencel
 
 ## Aktivera er målgrupp för en e-postkampanj {#activate-audience-for-campaign}
 
-När ni har byggt er målgrupp är ni redo att aktivera den till ett mål. Plattformen har stöd för ett antal e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
+När ni har byggt er målgrupp är ni redo att aktivera den till ett mål. Plattformen har stöd för en rad e-postleverantörer (ESP) som gör att du kan hantera dina e-postmarknadsföringsaktiviteter, till exempel skicka e-postkampanjer med reklam.
 
-Kontrollera [Översikt över destinationer för e-postmarknadsföring](../../destinations/catalog/email-marketing/overview.md#connect-destination) för en lista över de mål som stöds som du vill exportera data till (t.ex. [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) sida).
+Kontrollera [Översikt över destinationer för e-postmarknadsföring](../../destinations/catalog/email-marketing/overview.md#connect-destination) för en lista över de mål som stöds som du vill exportera data till (till exempel [Oracle Eloqua](../../destinations/catalog/email-marketing/oracle-eloqua-api.md) sida).
 
 ## Se returnerade analysdata från kampanjen {#post-campaign-data-analysis}
 

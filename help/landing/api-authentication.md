@@ -6,7 +6,7 @@ description: Det här dokumentet innehåller en stegvis självstudiekurs för at
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
 source-git-commit: f598c6dabe9296044055d8e961cf5177a655f5fa
 workflow-type: tm+mt
-source-wordcount: '2125'
+source-wordcount: '2124'
 ht-degree: 1%
 
 ---
@@ -220,7 +220,7 @@ Du kan använda samma API-nyckel, klienthemlighet och JWT för att generera en n
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `token_type` | Den typ av token som returneras. För åtkomsttoken är det här värdet alltid `bearer`. |
+| `token_type` | Typen of token returneras. För åtkomsttoken är det här värdet alltid `bearer`. |
 | `access_token` | Den genererade `{ACCESS_TOKEN}`. Detta värde, prefixat med ordet `Bearer`, krävs som `Authentication` header för alla API-anrop för plattformen. |
 | `expires_in` | Antalet millisekunder som återstår tills åtkomsttoken upphör att gälla. När värdet når 0 måste en ny åtkomsttoken genereras för att du ska kunna fortsätta använda Platform API:er. |
 

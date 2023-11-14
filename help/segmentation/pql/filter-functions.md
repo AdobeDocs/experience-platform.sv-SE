@@ -47,7 +47,7 @@ The `^` (upp) kan du referera till egenskaper på den övre filternivån.
 | `{ARRAY}` | Arrayen som filtreras. |
 | `{FILTER_1}` | Filtreringens yttre lager. |
 | `{FILTER_2}` | Filtreringens inre lager |
-| `^{PROPERTY}` | Den egenskap som också filtreras. På grund av `^`kontrollerar den en egenskap som baseras på filter1. |
+| `^{PROPERTY}` | Den egenskap som också filtreras. På `^`kontrollerar den en egenskap som baseras på filter1. |
 
 **Exempel**
 

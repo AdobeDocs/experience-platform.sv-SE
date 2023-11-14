@@ -121,7 +121,7 @@ Ett lyckat svar returnerar anslutningsspecifikationerna för [!DNL Google BigQue
 | `>` | Filtrerar efter om egenskapen är större än det angivna värdet. |
 | `<=` | Filtrerar efter om egenskapen är mindre än eller lika med det angivna värdet. |
 | `>=` | Filtrerar efter om egenskapen är större än eller lika med det angivna värdet. |
-| `like` | Filtrera genom att använda i en `WHERE` -sats för att söka efter ett angivet mönster. |
+| `like` | Filter genom att användas i en `WHERE` -sats för att söka efter ett angivet mönster. |
 | `in` | Filtrerar efter om egenskapen ligger inom ett angivet intervall. |
 
 {style="table-layout:auto"}
@@ -400,7 +400,7 @@ Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen sk
 
 Det här avsnittet innehåller ytterligare exempel på olika nyttolaster för filtrering.
 
-### Singulvillkor
+### Enkelt villkor
 
 Du kan utesluta den ursprungliga `fnApply` för scenarier som bara kräver ett villkor.
 

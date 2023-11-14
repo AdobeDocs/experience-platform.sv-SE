@@ -22,7 +22,7 @@ Med RESTful API:er eller användargränssnittet kan du skapa nya kopplingsprofil
 Handboken kräver en fungerande förståelse för flera viktiga [!DNL Experience Platform] funktioner. Innan du följer den här guiden och arbetar med sammanfogningsprinciper bör du läsa dokumentationen för följande tjänster:
 
 * [Kundprofil i realtid](../home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Möjliggör kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
+* [Adobe Experience Platform Identity Service](../../identity-service/home.md): Aktiverar kundprofil i realtid genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
 * [Experience Data Model (XDM)](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata.
 
 ## Förstå kopplingsprofiler
@@ -50,7 +50,7 @@ Det finns två möjliga sammanfogningsmetoder för sammanfogningsprinciper. Var 
 
 När **[!UICONTROL Dataset precedence]** är vald som sammanfogningsmetod för en sammanfogningsprincip, kan du prioritera profilfragment baserat på den datauppsättning som de kommer från. Ett exempel är om din organisation har information i en datauppsättning som är att föredra eller lita på framför data i en annan datauppsättning.
 
-För att skapa en kopplingsprofil med **[!UICONTROL Dataset precedence]** måste du välja de profil- och ExperienceEvent-datamängder som ingår och sedan manuellt beställa profildatamängderna. När datauppsättningarna har valts och beställts får den översta datauppsättningen högsta prioritet, den andra datauppsättningen den näst högsta och så vidare.
+För att skapa en sammanfogningsprincip med **[!UICONTROL Dataset precedence]** måste du välja de profil- och ExperienceEvent-datamängder som ingår och sedan manuellt beställa profildatamängderna. När datauppsättningarna har valts och beställts får den översta datauppsättningen högsta prioritet, den andra datauppsättningen den näst högsta och så vidare.
 
 ### Tidsstämpel beställd {#timestamp-ordered}
 
@@ -58,7 +58,7 @@ När profilposter hämtas till Experience Platform hämtas en systemtidsstämpel
 
 ## Identitetssammanfogning {#id-stitching}
 
-Stygg identitet ([!UICONTROL ID stitching]) är processen att identifiera databragment och kombinera dem till en fullständig profilpost. För att illustrera de olika sammanfogningsbeteendena bör du överväga en enskild kund som interagerar med ett varumärke med två olika e-postadresser.
+Stygg identitet ([!UICONTROL ID stitching]) är processen att identifiera databragment och kombinera dem för att skapa en fullständig profilpost. För att illustrera de olika sammanfogningsbeteendena bör du överväga en enskild kund som interagerar med ett varumärke med hjälp av två olika e-postadresser.
 
 * **[!UICONTROL None]:** När det här alternativet är markerat sammanfogas inte ID:n. När segmentering sker kommer identiteter som kan tillhöra samma person inte att sammanfogas och segmentering kommer endast att beakta de attribut som är kopplade till varje enskilt ID när man avgör om en kund är berättigad till medlemskap i en målgrupp. Detta kan leda till att en enskild kund har flera profiler och att varje profil kan kvalificera sig för olika målgrupper, vilket resulterar i att flera marknadsföringsmeddelanden skickas till samma kund.
 * **[!UICONTROL Private graph]:** När det privata diagrammet är markerat sammanfogas flera identiteter som hör till samma individ. Detta leder till att kunden har en enda profil och möjliggör segmentering för att ta hänsyn till flera attribut från flera relaterade identiteter när man fastställer segmentens kvalifikationer. I det här scenariot har kunden sannolikt en enda profil, kvalificerar sig för en målgrupp baserat på en kombination av attribut mellan identiteter och får bara ett marknadsföringsmeddelande.
@@ -79,4 +79,4 @@ Om du skapar en ny sammanfogningsprincip och anger den som standard, uppdateras 
 
 ## Nästa steg
 
-När du har läst den här guiden vet du nu vilken sammanfogningspolicy som är och vilken roll de spelar i Experience Platform. För att börja arbeta med kopplingsregler i användargränssnittet i Experience Platform, se [gränssnittshandbok för sammanslagningsprinciper](ui-guide.md). Gå till [API-slutpunktshandbok för sammanslagningsprinciper](../api/merge-policies.md).
+När du har läst den här guiden vet du nu vilken sammanfogningspolicy som är och vilken roll de spelar i Experience Platform. För att börja arbeta med kopplingsregler i användargränssnittet i Experience Platform, se [gränssnittshandbok för sammanslagningsprinciper](ui-guide.md). Om du vill arbeta med sammanfogningsprinciper med API:t går du till [API-slutpunktshandbok för sammanslagningsprinciper](../api/merge-policies.md).

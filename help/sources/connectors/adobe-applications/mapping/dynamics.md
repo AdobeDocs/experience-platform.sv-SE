@@ -171,8 +171,8 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `iif(record1id != null && record1id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record1id, "sourceKey", concat(record1id,"@${CRM_ORG_ID}.Dynamics")), null)` | `opportunityKey` |
 | `iif(record2id != null && record2id != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}", "sourceID", record2id, "sourceKey", concat(record2id,"@${CRM_ORG_ID}.Dynamics")), null)` | `personKey` |
 | `connectionrole1.name` | `personRole` |
-| `record1objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record1objecttypecode` källfält, se [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
-| `record2objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record2objecttypecode` källfält, se [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
+| `record1objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record1objecttypecode` källfält, se detta [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record1objecttypecode-options). |
+| `record2objecttypecode` | *En anpassad fältgrupp måste definieras som ett målschema.* Anvisningar om hur du gör detta finns i avsnittet Bilaga [mappa ett källfält av typen picklist till ett mål-XDM-schema](#picklist-type-fields) för mer information. | För en lista över möjliga värden och värden och etiketter för `record2objecttypecode` källfält, se detta [[!DNL Microsoft Dynamics] referensdokument för anslutningsenhet](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/entities/connection?view=op-9-1#record2objecttypecode-options). |
 
 {style="table-layout:auto"}
 
@@ -184,7 +184,7 @@ Tabellerna nedan innehåller mappningarna mellan [!DNL Microsoft Dynamics] käll
 | `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
 | `concat(campaignid,"@${CRM_ORG_ID}.Dynamics")` | `campaignKey.sourceKey` | Primär identitet. Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
 | `"Dynamics"` | `campaignKey.sourceType` |
-| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är den sekundära identiteten. Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
+| `iif(campaignid != null && campaignid != "", to_object("sourceType", "Dynamics", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", campaignid, "sourceKey", concat(campaignid,"@${CRM_ORG_ID}.Dynamics")), null)` | `extSourceSystemAudit.externalKey` | The `extSourceSystemAudit.externalKey` är sekundär identitet. Värdet för `"${CRM_ORG_ID}"` ersätts automatiskt. |
 | `createdon` | `extSourceSystemAudit.createdDate` |
 | `modifiedby` | `extSourceSystemAudit.lastUpdatedBy` |
 | `modifiedon` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -253,7 +253,7 @@ Du kan använda följande alternativ för att mappa `genderCode` källfält till
 | --- | --- |
 | `decode(genderCode, "1", "male", "2", "female", "default")` | `person.gender` |
 
-I det här fallet motsvarar värdet tangenten, om tangenten finns i alternativen, eller `default`, if `default` finns och nyckeln kan inte hittas. Värdet motsvarar `null` om alternativen är `null` eller det inte finns `default` och nyckeln kan inte hittas.
+I det här fallet motsvarar värdet tangenten, om tangenten finns i alternativen, eller `default`, if `default` finns och nyckeln kan inte hittas. Värdet motsvarar `null` om alternativen är `null` eller det inte finns `default` och nyckeln hittades inte.
 
 #### Använd ett beräknat fält
 

@@ -17,9 +17,9 @@ Med API-slutpunkter för kundprofil i realtid kan du utföra grundläggande CRUD
 
 Att använda utvecklarhandboken kräver en fungerande förståelse av de olika Adobe Experience Platform-tjänster som arbetar med [!DNL Profile] data. Innan du börjar arbeta med [!DNL Real-Time Customer Profile] API, läs dokumentationen för följande tjänster:
 
-* [[!DNL Real-Time Customer Profile]](../home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [[!DNL Real-Time Customer Profile]](../home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 * [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Få en bättre bild av kunden och deras beteende genom att överbrygga identiteter mellan olika enheter och system.
-* [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md): Gör att ni kan bygga målgrupper utifrån kundprofildata i realtid.
+* [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md): Används för att skapa målgrupper utifrån kundprofildata i realtid.
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som Platform använder för att organisera kundupplevelsedata.
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
 

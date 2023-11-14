@@ -24,7 +24,7 @@ Den här självstudiekursen innehåller steg för att skapa en [[!DNL Oracle Res
 
 Handboken kräver en fungerande förståelse av följande plattformskomponenter:
 
-* [Källor](../../../../home.md): Plattformen gör att data kan hämtas från olika källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
+* [Källor](../../../../home.md): Plattformen tillåter att data hämtas från olika källor samtidigt som du får möjlighet att strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster.
 * [Sandlådor](../../../../../sandboxes/home.md): Plattformen innehåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
 Om du redan har en autentiserad [!DNL Oracle Responsys] på Platform kan du hoppa över resten av det här dokumentet och gå vidare till självstudiekursen på [skapa ett dataflöde för att ta fram automatiserade marknadsföringsdata för plattformen](../../dataflow/marketing-automation.md).
@@ -57,7 +57,7 @@ The **[!UICONTROL Connect Oracle Responsys account]** visas. På den här sidan 
 
 ### Befintligt konto
 
-Om du vill använda ett befintligt konto väljer du [!DNL Oracle Responsys] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL Oracle Responsys] konto som du vill skapa ett nytt dataflöde med och sedan välja **[!UICONTROL Next]** för att fortsätta.
 
 ![Den befintliga kontoautentiseringsskärmen för Oraclena.](../../../../images/tutorials/create/oracle-responsys/existing.png)
 

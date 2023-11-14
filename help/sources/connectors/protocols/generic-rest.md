@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
-Platform har stöd för inmatning av data från protokollprogram, inklusive [!DNL Generic REST API].
+Platform har stöd för inhämtning av data från protokollprogram, inklusive [!DNL Generic REST API].
 
 The [!DNL Generic REST API] kan du hämta data från REST-baserade program till plattformen. [!DNL Generic REST API] har stöd för både grundläggande autentisering och OAuth 2-uppdatering av kodbaserad autentisering.
 

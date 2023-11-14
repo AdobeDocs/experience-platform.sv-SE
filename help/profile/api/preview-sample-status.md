@@ -22,7 +22,7 @@ Resultaten av det här exempeljobbet kan visas med `/previewsamplestatus` slutpu
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile] API](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Profilfragment jämfört med sammanslagna profiler
 
@@ -36,7 +36,7 @@ Om du vill veta mer om profiler och deras roll i Experience Platform börjar du 
 
 ## Hur exempeljobbet utlöses
 
-Som data aktiverade för kundprofil i realtid hämtas till [!DNL Platform]lagras den i datalagret Profil. När intaget av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+Som data som är aktiverade för kundprofilen i realtid hämtas till [!DNL Platform]lagras den i datalagret Profil. När intaget av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
 
 * För **arbetsflöden för strömmande data** kontrolleras dock timvis för att avgöra om tröskelvärdet på 5 % har uppnåtts. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
 * För **batchintag**, inom 15 minuter efter att en batch har importerats till profilarkivet, körs ett jobb för att uppdatera antalet om tröskelvärdet på 5 % har uppnåtts. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
@@ -47,7 +47,7 @@ Profilantal och profiler efter namnutrymmesmått är också tillgängliga i [!UI
 
 Du kan göra en GET-förfrågan till `/previewsamplestatus` slutpunkt för att visa information om det senaste slutförda exempeljobbet som kördes för din organisation. Detta inkluderar det totala antalet profiler i exemplet, liksom antalet profiler eller det totala antalet profiler som din organisation har i Experience Platform.
 
-Profilantalet genereras efter sammanfogning av profilfragment till en enda profil för varje enskild kund. När profilfragment sammanfogas returnerar de med andra ord antalet &quot;1&quot;-profiler eftersom de alla är relaterade till samma individ.
+Profilantalet genereras efter sammanfogning av profilfragment för att skapa en enda profil för varje enskild kund. När profilfragment sammanfogas returnerar de med andra ord antalet &quot;1&quot;-profiler eftersom de alla är relaterade till samma individ.
 
 Profilantalet omfattar även både profiler med attribut (postdata) och profiler som endast innehåller tidsseriedata (händelsedata), t.ex. Adobe Analytics-profiler. Exempeljobbet uppdateras regelbundet när profildata importeras för att ge ett aktuellt totalt antal profiler inom plattformen.
 
@@ -106,7 +106,7 @@ Svaret innehåller information om det senaste slutförda exempeljobbet som körd
 | `streamingDriven` | *Detta fält har tagits bort och innehåller ingen betydelse för svaret.* |
 | `totalRows` | Totalt antal sammanfogade profiler i Experience Platform, även kallat &#39;antal profiler&#39;. |
 | `lastBatchId` | ID för senaste batchförbrukning. |
-| `status` | Status för det senaste exemplet. |
+| `status` | Status för senaste prov. |
 | `samplingRatio` | Proportionerna för de sammanslagna profilerna (`numRowsToRead`) till totalt antal sammanfogade profiler (`totalRows`), uttryckt i procent i decimalformat. |
 | `mergeStrategy` | Sammanfogningsstrategi som används i exemplet. |
 | `lastSampledTimestamp` | Senaste lyckade exempeltidsstämpel. |
@@ -124,7 +124,7 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
 
 **Begäran**
 
@@ -223,11 +223,11 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på datumet returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
 
 **Begäran**
 
-Följande begäran anger inte en `date` parametern och kommer därför att returnera den senaste rapporten.
+Följande begäran anger inte en `date` parametern och returnerar därför den senaste rapporten.
 
 ```shell
 curl -X GET \
@@ -318,7 +318,7 @@ GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
 
 **Begäran**
 
@@ -384,7 +384,7 @@ GET /previewsamplestatus/report/namespace/overlap?{QUERY_PARAMETERS}
 
 | Parameter | Beskrivning |
 |---|---|
-| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅÅ-MM-DD Exempel: `date=2024-12-31` |
+| `date` | Ange datumet för rapporten som ska returneras. Om flera rapporter kördes på samma datum returneras den senaste rapporten för det datumet. Om det inte finns någon rapport för det angivna datumet returneras ett 404-fel (Hittades inte). Om inget datum anges returneras den senaste rapporten. Format: ÅÅÅ-MM-DD. Exempel: `date=2024-12-31` |
 
 **Begäran**
 
@@ -465,7 +465,7 @@ Den här rapporten innehåller följande information:
 * Det finns 24 profiler som består av `AAID` och `ECID` ID-namnutrymmen.
 * Det finns 6 565 profiler som bara innehåller en `ECID` identitet.
 
-## Generera rapport över profiler som inte sammanfogats
+## Generera rapport över profiler som inte sammanställts
 
 Du kan få mer insyn i hur din organisations profilarkiv är uppbyggd genom den sammansatta profilrapporten. En &quot;sammanfogad&quot; profil är en profil som bara innehåller ett profilfragment. En&quot;okänd&quot; profil är en profil som associeras med pseudonyma identitetsnamnutrymmen som `ECID` och `AAID`. Okända profiler är inaktiva, vilket innebär att de inte har lagt till nya händelser under den angivna tidsperioden. I rapporten för icke sammansatta profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
 
@@ -479,7 +479,7 @@ GET /previewsamplestatus/report/unstitchedProfiles
 
 **Begäran**
 
-Följande begäran returnerar rapporten för icke sammansatta profiler.
+Följande begäran returnerar rapporten för profiler utan sammanfogning.
 
 ```shell
 curl -X GET \
@@ -553,7 +553,7 @@ En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten för icke-sa
 | `unstitchedProfiles` | Ett objekt som innehåller en uppdelning av icke sammanfogade profiler efter tidsperiod. I rapporten för icke sammansatta profiler finns en beskrivning av profiler för tidsperioderna 7, 30, 60, 90 och 120 dagar. |
 | `countOfProfiles` | Antalet profiler som inte sammanfogats för tidsperioden eller antalet profiler som inte sammanfogats för namnutrymmet. |
 | `eventsAssociated` | Antalet ExperienceEvents för tidsintervallet eller antalet händelser för namnutrymmet. |
-| `nsDistribution` | Ett objekt som innehåller enskilda identitetsnamnutrymmen med distributionen av osydda profiler och händelser för varje namnutrymme. Obs! Lägga samman summan `countOfProfiles` för varje identitetsnamnutrymme i `nsDistribution` är lika med `countOfProfiles` för tidsperioden. Detsamma gäller `eventsAssociated` per namnutrymme och totalt `eventsAssociated` per tidsperiod. |
+| `nsDistribution` | Ett objekt som innehåller enskilda identitetsnamnutrymmen med distributionen av osydda profiler och händelser för varje namnutrymme. Obs! Lägg samman summan `countOfProfiles` för varje identitetsnamnutrymme i `nsDistribution` är lika med `countOfProfiles` för tidsperioden. Detsamma gäller `eventsAssociated` per namnutrymme och totalt `eventsAssociated` per tidsperiod. |
 | `reportTimestamp` | Rapportens tidsstämpel. |
 
 ### Tolka rapporten över icke sammansatta profiler

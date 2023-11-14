@@ -26,14 +26,14 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 * [Experience Data Model (XDM) System](../../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
    * [Grunderna för schemakomposition](../../../../../xdm/schema/composition.md): Lär dig mer om de grundläggande byggstenarna i XDM-scheman, inklusive viktiga principer och bästa praxis när det gäller schemakomposition.
-   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet för Schemaredigeraren.
+   * [Schemaredigeraren, genomgång](../../../../../xdm/tutorials/create-schema-ui.md): Lär dig hur du skapar anpassade scheman med hjälp av gränssnittet i Schemaredigeraren.
 * [Kundprofil i realtid](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
 Om du redan har en giltig [!DNL Spark] kan du hoppa över resten av dokumentet och gå vidare till självstudiekursen om [konfigurera ett dataflöde](../../dataflow/databases.md)
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att komma åt [!DNL Spark] konto på [!DNL Platform]måste du ange följande värden:
+För att få åtkomst till [!DNL Spark] konto på [!DNL Platform]måste du ange följande värden:
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
@@ -47,11 +47,11 @@ Mer information om hur du kommer igång finns i [det här Spark-dokumentet](http
 
 När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL Spark] konto att ansluta till [!DNL Platform].
 
-Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan markera **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsyta. The **[!UICONTROL Catalog]** I visas en mängd olika källor som du kan skapa ett konto med.
+Logga in på [Adobe Experience Platform](https://platform.adobe.com) och sedan **[!UICONTROL Sources]** från det vänstra navigeringsfältet för att komma åt **[!UICONTROL Sources]** arbetsyta. The **[!UICONTROL Catalog]** I visas en mängd olika källor som du kan skapa ett konto med.
 
 Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under **[!UICONTROL Databases]** kategori, välj **[!UICONTROL Spark]**. Om det är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Spark] koppling.
+Under **[!UICONTROL Databases]** kategori, välj **[!UICONTROL Spark]**. Om det här är första gången du använder den här kopplingen väljer du **[!UICONTROL Configure]**. Annars väljer du **[!UICONTROL Add data]** för att skapa en ny [!DNL Spark] koppling.
 
 ![katalog](../../../../images/tutorials/create/spark/catalog.png)
 
@@ -65,10 +65,10 @@ Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account
 
 ### Befintligt konto
 
-Om du vill ansluta ett befintligt konto väljer du [!DNL Spark] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
+Välj [!DNL Spark] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
 
 ![befintlig](../../../../images/tutorials/create/spark/existing.png)
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du upprättat en anslutning till [!DNL Spark] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).
+Genom att följa den här självstudien har du upprättat en anslutning till [!DNL Spark] konto. Du kan nu fortsätta med nästa självstudiekurs och [konfigurera ett dataflöde för att hämta data till [!DNL Platform]](../../dataflow/databases.md).

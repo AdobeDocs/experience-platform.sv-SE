@@ -23,11 +23,11 @@ I den här handboken används plattformsspecifika begrepp, som organisation och 
 
 Destinationen SDK använder [Adobe I/O](https://www.adobe.io/) gateway för autentisering. Om du vill göra API-anrop till Destinationens SDK slutpunkter måste du ange vissa rubriker i dina API-anrop. Samarbeta med Adobe Exchange-teamet för att konfigurera autentisering för dig till [Adobe Developer Console](https://developer.adobe.com/console).
 
-Om du vill anropa Destination SDK API-slutpunkter följer du [Självstudiekurs om autentisering av Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Starta självstudiekursen från &quot;[Generera en API-nyckel, organisations-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot; steg. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK-API-anrop, vilket visas nedan:
+Om du vill anropa Destination SDK API-slutpunkter följer du [Självstudiekurs om autentisering av Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). Starta självstudiekursen från[Generera en API-nyckel, organisations-ID och klienthemlighet](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)&quot; steg. Adobe Exchange-teamet hanterar de föregående stegen åt dig. När du är klar med självstudiekursen för autentisering visas värdena för var och en av de obligatoriska rubrikerna i Destination SDK-API-anrop, vilket visas nedan:
 
 * `x-api-key: {API_KEY}`, även kallat klient-ID
 * `x-gw-ims-org-id: {ORG_ID}`, även kallat organisations-ID
-* `Authorization: Bearer {ACCESS_TOKEN}`. Åtkomsttoken har en förfallotid på 24 timmar, uttryckt i millisekunder, så du måste uppdatera den. Uppdatera åtkomsttoken genom att upprepa stegen som beskrivs i självstudiekursen för autentisering.
+* `Authorization: Bearer {ACCESS_TOKEN}`. Åtkomsttoken har en förfallotid på 24 timmar, uttryckt i millisekunder, så du måste uppdatera den. Om du vill uppdatera åtkomsttoken upprepar du stegen som beskrivs i självstudiekursen för autentisering.
 
 <!--
 
@@ -52,7 +52,7 @@ Alla resurser i Experience Platform är isolerade till specifika virtuella sandl
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-Adobe Exchange-teamet tillhandahåller ditt sandlådenamn, som du måste använda i anrop till Destination SDK API-slutpunkter.
+Adobe Exchange-teamet ger dig ditt sandlådenamn, som du måste använda i anrop till Destination SDK API-slutpunkter.
 
 ## Rollbaserad åtkomstkontroll (RBAC) {#rbac}
 
@@ -81,4 +81,4 @@ Genom att följa stegen i den här artikeln fick du inloggningsuppgifter för Ad
    * [Använd Destination SDK för att konfigurera ett filbaserat mål](guides/configure-file-based-destination-instructions.md)
 
 * För alla åtgärder, se [API-dokumentation för målredigering](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
-* Använd [Postman-samling för målredigerings-API](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera destinationen med Destination SDK API-slutpunkterna. Om du vill komma igång med Postman går du till [steg för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och [videoguide för att skapa Postman-miljön](https://video.tv.adobe.com/v/28832).
+* Använd [Postman-samling för målredigerings-API](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) för att konfigurera destinationen med Destination SDK API-slutpunkterna. För att komma igång med Postman, se [steg för att importera miljöer och samlingar](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) och [videoguide för Postman](https://video.tv.adobe.com/v/28832).

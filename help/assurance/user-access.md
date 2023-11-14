@@ -27,6 +27,6 @@ Om du vill lägga till en användare i en produktprofil loggar du in på Admin C
 
 The **Lägg till användare i ditt team** visas. I den här dialogrutan kan du ange information om den användare som du vill lägga till. Ange användarens e-postadress, förnamn (valfritt) och efternamn (valfritt).
 
-Välj pennikonen för att välja produkter och användargrupper. Här väljer du **Adobe Experience Platform** sedan **AEP-Default-All-Users**, följt av **Spara**.
+Välj pennikonen för att välja produkter och användargrupper. Välj **Adobe Experience Platform** sedan **AEP-Default-All-Users**, följt av **Spara**.
 
 ![Dialogrutan som visar hur du lägger till produktprofilen visas.](./images/get-access/product-profile-add-profile.png)

@@ -27,7 +27,7 @@ ht-degree: 0%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `segmentMembership` | Mappa | Ett kartobjekt som beskriver personens segmentmedlemskap. Objektets struktur beskrivs närmare nedan. |
+| `segmentMembership` | Mappa | Ett kartobjekt som beskriver personens segmentmedlemskap. Objektets struktur beskrivs i detalj nedan. |
 
 {style="table-layout:auto"}
 
@@ -72,7 +72,7 @@ Följande är ett exempel `segmentMembership` mappning som systemet har fyllt i 
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `xdm:version` | Den version av segmentet som profilen är kvalificerad för. |
+| `xdm:version` | Den version av segmentet som den här profilen är kvalificerad för. |
 | `xdm:lastQualificationTime` | En tidsstämpel från den senaste gången profilen kvalificerades för segmentet. |
 | `xdm:validUntil` | En tidsstämpel som anger när segmentmedlemskapet inte längre ska antas vara giltigt. Om det här fältet inte är inställt för externa målgrupper behålls segmentmedlemskapet endast i 30 dagar från `lastQualificationTime`. |
 | `xdm:status` | Ett strängfält som anger om segmentmedlemskapet har realiserats som en del av den aktuella begäran. Följande värden accepteras: <ul><li>`realized`: Profilen kvalificerar för segmentet.</li><li>`exited`: Profilen avslutar segmentet som en del av den aktuella begäran.</li></ul> |
