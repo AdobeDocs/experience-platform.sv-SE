@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över användargränssnittet i Privacy Service
 description: Kom igång med användargränssnittet för Privacy Service för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 20a737cf36bf08415a15db78599f36659207ace1
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '224'
 ht-degree: 1%
 
 ---
@@ -22,23 +22,24 @@ Privacy Servicens användargränssnitt [!DNL Privacy Service] gör att ni kan sa
 
 >[!NOTE]
 >
->Information om hur du hanterar kompatibilitetsbegäranden med hjälp av Privacy Services-API:t finns i [API-guide för Privacy Service](../api/overview.md).
+>Information om hur du hanterar kompatibilitetsbegäranden med hjälp av Privacy Services-API:t finns i [API-guide för Privacy Service](../api/overview.md). Visa dokumentet på [hantera behörigheter för Privacy Service](../permissions.md) för mer information.
 
 ## Logga in på [!DNL Privacy Service] UI
 
 >[!IMPORTANT]
 >
->Du måste ha en Adobe ID för att kunna autentisera [!DNL Privacy Service] Gränssnitt. Dessutom måste du ha behörighet som systemadministratör inom din organisation.
+>Du måste ha en Adobe ID för att kunna autentisera [!DNL Privacy Service] Gränssnitt.
 
 Logga in på [Adobe Experience Cloud](https://experience.adobe.com/) och markera **[!UICONTROL Privacy UI]** på snabbmenyn.
 
-![](../images/ui-overview/quick-access.png)
+![Instrumentpanelen Experience Cloud med sekretessgränssnittet markerat.](../images/ui-overview/quick-access.png)
+
 
 ### Logga in från [!DNL Experience Platform]
 
 Om du har tillgång till användargränssnittet i Adobe Experience Platform kan du även få åtkomst till [!DNL Privacy Service] Gränssnitt genom **[!UICONTROL Requests]** i den vänstra navigeringen.
 
-![](../images/ui-overview/platform.png)
+![Adobe Experience Platform-gränssnittet med begäranden markerat i det vänstra navigeringsfältet.](../images/ui-overview/platform.png)
 
 ## Nästa steg
 

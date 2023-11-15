@@ -2,26 +2,20 @@
 title: Hantera behörigheter för Privacy Service
 description: Lär dig hur du hanterar användarbehörigheter för Adobe Experience Platform Privacy Service med Adobe Admin Console.
 exl-id: 6aa81850-48d7-4fff-95d1-53b769090649
-source-git-commit: 1e164166f58540cbaaa4ad789b10cdfc40fa8a70
+source-git-commit: 20a737cf36bf08415a15db78599f36659207ace1
 workflow-type: tm+mt
-source-wordcount: '1537'
+source-wordcount: '1407'
 ht-degree: 1%
 
 ---
 
 # Hantera behörigheter för Privacy Service
 
->[!IMPORTANT]
->
->Behörigheterna för Adobe Experience Platform Privacy Service har förbättrats för att öka deras granularitet. Med dessa ändringar kan organisationsadministratörer ge fler användare åtkomst med önskad roll och behörighetsnivå. Användare av tekniska konton måste uppdatera sina behörigheter för Privacy Service eftersom den här kommande uppdateringen utgör en viktig förändring för dem. Den här behörighetsändringen verkställs på **13 april 2023**. Läs dokumentationen om [migrera äldre API-autentiseringsuppgifter](#migrate-tech-accounts) för vägledning om hur du löser detta problem.
->
->Tekniska konton är tillgängliga för företagskunder och skapas via Adobe Developers Console. En teknisk kontoinnehavares Adobe ID avslutas med `@techacct.adobe.com`. Om du är osäker på om du har ett tekniskt konto kontaktar du din organisations administratör.
-
 Åtkomst till [Adobe Experience Platform Privacy Service](./home.md) styrs av rollbaserade behörigheter i Adobe Admin Console. Genom att skapa produktprofiler som tilldelar behörigheter till användargrupper kan du bestämma vem som har åtkomst till vilka funktioner i Privacy Servicen [UI](./ui/overview.md) och [API](./api/overview.md).
 
 >[!NOTE]
 >
->När du skapar en integrering för Privacy Service-API måste du välja en befintlig produktprofil för att kunna avgöra vilka funktioner eller åtgärder som integreringen har behörighet för. Se guiden [komma igång med Privacy Services-API](./api/getting-started.md) för mer information.
+>När du skapar en integrering för Privacy Service-API måste du välja en befintlig produktprofil för att kunna avgöra vilka funktioner eller åtgärder som integreringen har behörighet för. Se guiden på [komma igång med Privacy Services-API](./api/getting-started.md) för mer information.
 
 I den här handboken visas hur du hanterar behörigheter för Privacy Service.
 
@@ -51,19 +45,19 @@ I följande tabell visas de tillgängliga behörigheterna för Privacy Service m
 
 ## Hantera behörigheter {#manage}
 
-Om du vill hantera behörigheter för Privacy Service loggar du in på [Admin Console](https://adminconsole.adobe.com/) och markera **[!UICONTROL Products]** i den övre navigeringen. Här väljer du **[!UICONTROL Adobe Experience Platform Privacy Service]**.
+Om du vill hantera behörigheter för Privacy Service loggar du in på [Admin Console](https://adminconsole.adobe.com/) och markera **[!UICONTROL Products]** i den övre navigeringen. Välj **[!UICONTROL Adobe Experience Platform Privacy Service]**.
 
-![Bild som visar Privacy Servicens produktkort i Admin Console](./images/permissions/privacy-service-card.png)
+![Admin Console med produktkortet Privacy Service markerat.](./images/permissions/privacy-service-card.png)
 
 ### Välj eller skapa en produktprofil
 
 På nästa skärm visas en lista med tillgängliga produktprofiler för Privacy Service i din organisation. Om det inte finns några produktprofiler väljer du **[!UICONTROL New Profile]** för att skapa en. Om du har flera roller eller användargrupper i organisationen som kräver olika åtkomstnivåer bör du skapa en separat produktprofil för var och en av dem.
 
-![Bild som visar produktprofiler för Privacy Service i Admin Console](./images/permissions/select-or-create-profile.png)
+![Admin Console med produktprofilen Privacy Service markerad.](./images/permissions/select-or-create-profile.png)
 
 När du har valt en produktprofil kan du använda **[!UICONTROL Permissions]** flik att starta [redigera behörigheter](#edit-permissions) för profilen eller välj **[!UICONTROL Users]** flik att starta [tilldela användare](#assign-users) till profilen.
 
-![Bild som visar fliken Behörigheter för en produktprofil Admin Console](./images/permissions/users-permissions-tabs.png)
+![Behörighetsfliken för en produktprofil Admin Console.](./images/permissions/users-permissions-tabs.png)
 
 ### Redigera behörigheter för profilen {#edit-permissions}
 
@@ -71,25 +65,25 @@ På **[!UICONTROL Permissions]** väljer du någon av de behörighetskategorier 
 
 När du redigerar behörigheter för en profil visas tillgängliga behörigheter i den vänstra kolumnen medan de som ingår i profilen visas i den högra kolumnen. Välj de angivna behörigheterna för att flytta dem mellan någon av kolumnerna.
 
-![Bild som visar tillgängliga och inkluderade behörighetskolumner](./images/permissions/edit-permissions.png)
+![De tillgängliga och inkluderade behörighetskolumnerna.](./images/permissions/edit-permissions.png)
 
 Behörigheter är ordnade i kategorier. Om du vill växla mellan kategorier väljer du önskad kategori i den vänstra navigeringen.
 
-![Bilden visar [!UICONTROL Opt Out of Sale] sektion under behörigheter](./images/permissions/switch-category.png)
+![The [!UICONTROL Opt Out of Sale] under behörigheter.](./images/permissions/switch-category.png)
 
 Välj **[!UICONTROL Save]** när du är klar med konfigurationen av behörigheter.
 
-![Bild som visar den behörighetskonfiguration som sparas för produktprofilen](./images/permissions/save-permissions.png)
+![Behörighetskonfigurationen för produktprofilen med Spara markerat.](./images/permissions/save-permissions.png)
 
 Produktprofilvyn visas igen med de tillagda behörigheterna.
 
-![Bild som visar de tillagda behörigheterna för produktprofilen](./images/permissions/permissions-added.png)
+![Tillagda behörigheter för produktprofilen.](./images/permissions/permissions-added.png)
 
 ### Tilldela användare till profilen {#assign-users}
 
-Om du vill tilldela användare till produktprofilen (och ge dem profilens konfigurerade behörigheter) väljer du **[!UICONTROL Users]** tabbtecken, följt av **[!UICONTROL Add user]**.
+Om du vill tilldela användare till produktprofilen (och ge dem profilens konfigurerade behörigheter) väljer du **[!UICONTROL Users]** tabbtangenten, följt av **[!UICONTROL Add user]**.
 
-![Bild som visar användarfliken för en produktprofil i Admin Console](./images/permissions/manage-users.png)
+![Fliken Användare för en produktprofil i Admin Console.](./images/permissions/manage-users.png)
 
 Mer information om hur du hanterar användare för en produktprofil finns i [Admin Console dokumentation](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html).
 
@@ -135,7 +129,7 @@ The [!UICONTROL Configure API] visas de tillgängliga produktprofiler som för n
 
 #### Bekräfta att inställningarna har tillämpats {#confirm-applied-settings}
 
-Bekräfta att dina inställningar har tillämpats på kontot. Återgå till [Admin Console](https://adminconsole.adobe.com/) och navigera till din nya produktprofil. Välj **[!UICONTROL API Credentials]** om du vill visa en lista med associerade projekt. Det projekt som används i Developer Console där du tilldelade produktprofilen till det tekniska kontot visas i listan med autentiseringsuppgifter. Namnet på varje API-autentiseringsuppgift består av projektnamnet med ett slumpmässigt genererat nummer som suffix till slutet. Välj en autentiseringsuppgift för att öppna [!UICONTROL Details] -panelen.
+Bekräfta att dina inställningar har tillämpats på kontot. Återgå till [Admin Console](https://adminconsole.adobe.com/) och navigera till din nya produktprofil. Välj **[!UICONTROL API Credentials]** om du vill visa en lista med associerade projekt. Det projekt som används i Developer Console där du tilldelade produktprofilen till det tekniska kontot visas i listan med autentiseringsuppgifter. Namnet på varje API-autentiseringsuppgift består av projektnamnet med ett slumpmässigt genererat nummer som suffix till slutet. Välj en referens för att öppna [!UICONTROL Details] -panelen.
 
 ![En produktprofil på Admin Console med fliken API-autentiseringsuppgifter och en rad projektautentiseringsuppgifter markerade.](./images/permissions/confirm-credentials-in-admin-console.png)
 
