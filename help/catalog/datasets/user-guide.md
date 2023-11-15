@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 25f57b1bfbcb2ec95f88afb69386a10deb600125
+source-git-commit: 859b8432986e7426b8fdcfedf1242c3269eae5f1
 workflow-type: tm+mt
-source-wordcount: '2581'
+source-wordcount: '2605'
 ht-degree: 0%
 
 ---
@@ -264,6 +264,10 @@ Du kan välja en individ **[!UICONTROL Batch ID]** för att komma åt **[!UICONT
 ![Information om den valda gruppen visas. Detta inkluderar antalet poster som importerats, antalet poster som misslyckats, batchstatus, filstorlek, start- och sluttider för importen, data- och batch-ID:n, organisations-ID:n, datauppsättningens namn och åtkomstinformation.](../images/datasets/user-guide/batch-overview.png)
 
 Om du vill ta bort gruppen väljer du **[!UICONTROL Delete batch]** i den övre högra delen av instrumentpanelen. När du tar bort en batch tas även posterna bort från den datauppsättning som gruppen ursprungligen skapades i bort.
+
+>[!NOTE]
+>
+>Om inkapslade data har aktiverats för profil och bearbetats tas inte data bort från profilarkivet om du tar bort en batch.
 
 ![Knappen Ta bort grupp markeras på sidan med datauppsättningsinformation.](../images/datasets/user-guide/delete-batch.png)
 
