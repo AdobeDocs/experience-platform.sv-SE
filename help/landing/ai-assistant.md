@@ -5,9 +5,9 @@ badge: Alfa
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: 09d17f6dad7bd7b1eda491e4fbd92e298243f3c3
+source-git-commit: e204e1cc70f0c87632f7d259194d34276f6fab72
 workflow-type: tm+mt
-source-wordcount: '2516'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -63,19 +63,19 @@ Välj **[!UICONTROL Assistant icon]** från sidhuvudet till startpanelen.
 
 ![Experience Platform användargränssnittets hemsida med assistentikonen vald.](./images/ai-assistant/ai-assistant.png)
 
-+++Använd immersivt läge
+<!-- +++Use immersive mode
 
-Används [!DNL Immersive mode] välj fokusikonen i huvudnavigeringen för assistenten.
+To use [!DNL Immersive mode] select the focus icon in the header navigation of the Assistant.
 
-![selektion](./images/ai-assistant/select-immersive.png)
+![select-immersive](./images/ai-assistant/select-immersive.png)
 
-Ett dedikerat popup-gränssnitt för Assistant visas mitt på skärmen.
+A dedicated pop-up interface for Assistant appears at the center of your screen.
 
-![immersivt läge](./images/ai-assistant/immersive-mode.png)
+![immersive-mode](./images/ai-assistant/immersive-mode.png)
 
 +++
 
-Härifrån kan du skriva in din fråga i textrutan och fråga Assistant efter koncept för data eller målgrupper. Du kan också ställa frågor om dataobjekten för att bättre förstå hur du kan använda dem för dina respektive användningsfall.
+From here, you can input your question in the text box and query Assistant for concepts regarding data or audiences. You can also ask questions about your data objects to better understand how you can use them for your respective use case.  -->
 
 ### Exempel: Använd Assistant för att snabba upp skapandet av schemat
 
@@ -97,25 +97,45 @@ Ett givet svar ger hyperlänkar till alla refererade entiteter. Välj i exemplet
 
 Assistenten ger dig ett sätt att validera svaret genom att visa dess källa. Länkar till dokumentationen tillhandahålls för konceptfrågor, medan frågor om dataanvändning kan verifieras med en SQL-fråga som visar hur svaret beräknades.
 
-![Alternativ som tillhandahålls av assistenten efter att ett svar har returnerats.](./images/ai-assistant/options-post-answer.png)
-
-#### Relaterade förslag
-
-Du kan också fördjupa dig i frågeämnet genom att välja något av de relaterade förslagen som Assistant ger.
-
-![Relaterade förslag.](./images/ai-assistant/related-suggestions.png)
+![Alternativ som tillhandahålls av assistenten efter att ett svar har returnerats.](./images/ai-assistant/options.png)
 
 #### Uppföljningsfråga
 
++++Välj för att visa ett exempel på en uppföljningsfråga
+
 Du kan lära dig mer om ett visst ämne genom att ställa en uppföljningsfråga. I nästa exempel tillfrågas assistenten om hur eventType kan användas i segmentering.
 
-![En uppföljningsfråga och ett svar som visas på assistenten för Experience Platform.](./images/ai-assistant/follow-up-answer.png)
+![En uppföljningsfråga och ett svar som visas på assistenten för Experience Platform.](./images/ai-assistant/follow-up-question.png)
+
++++
 
 #### Dataanvändningsfråga
 
++++Välj för att visa ett exempel på en fråga om dataanvändning
+
 Du kan även ställa frågor till assistenten om din dataanvändning. När du frågar om dataanvändning måste du vara i en aktiv sandlåda för att assistenten ska kunna svara på din fråga.
 
+För svar som innehåller information om dataanvändning tillhandahåller Assistant länkar till de berörda enheterna. Assistenten ger dig dessutom en förklaring av hur svaret beräknades.
+
 ![En fråga om dataanvändning där man frågar hur många segment en användare har.](./images/ai-assistant/data-usage-question.png)
+
++++
+
+#### Använd automatisk komplettering
+
++++Markera för att visa ett exempel på automatisk komplettering
+
+Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Det finns rekommendationer för att slutföra automatiskt för följande domäner: segment, scheman, datauppsättningar, källor och mål.
+
+Om du vill använda Fyll i automatiskt anger du ett plustecken (**`+`**) som en del av din fråga. Du kan också välja plustecknet (**`+`**) i textrutan. Sedan visas ett fönster med en lista över rekommenderade dataobjekt som finns i sandlådan.
+
+![](./images/ai-assistant/autocomplete-options.png)
+
+Sedan markerar du det dataobjekt som du vill fråga för att slutföra din fråga och skickar sedan din fråga.
+
+![](./images/ai-assistant/autocomplete-question.png)
+
++++
 
 ## Omfång
 
@@ -168,13 +188,9 @@ Du kan verifiera det svar som assistenten returnerar på flera olika sätt.
 
 I varje svar ger Assistant dig citat som du kan referera till för verifiering eller mer information.
 
-Välj **[!UICONTROL Show source]** en lista med länkar till dokumentation som assistenten refererar till för att beräkna sitt svar.
+Välj **[!UICONTROL Show source]** en lista med länkar till dokumentation som assistenten refererar till för att beräkna sitt svar. När du väljer en länk till den refererade dokumentationen, kommer du till det relevanta avsnittet på den aktuella sidan med den specifika informationen markerad.
 
-![Länkarna till källan som visas i assistenten.](./images/ai-assistant/sources.png)
-
-För svar som innehåller information om dataanvändning tillhandahåller Assistant länkar till de berörda enheterna. Assistenten ger dig dessutom en förklaring av hur svaret beräknades.
-
-![förklaring](./images/ai-assistant/explanation.png)
+![Länkarna till källan som visas i assistenten.](./images/ai-assistant/show-sources.png)
 
 ## Ge feedback
 
@@ -208,7 +224,7 @@ Välj ikonen med reglaget nedåt för att ge feedback på vad som kan förbättr
 
 Välj flaggikonen om du vill visa fler rapporter om din upplevelse med assistenten.
 
-![Rapportresultatfönstret.](./images/ai-assistant/report-results.png)
+![Rapportresultatfönstret.](./images/ai-assistant/flag.png)
 
 >[!ENDTABS]
 
