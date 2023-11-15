@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 7ff297973f951d7bfd940983bf4fa39dcc9f1542
+source-git-commit: f94a51e22731977e120351c3b3598570666a624d
 workflow-type: tm+mt
-source-wordcount: '1544'
+source-wordcount: '1552'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 * [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar upplevelsedata.
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 
-Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Om du vill veta hur du skapar dessa kan du läsa självstudiekursen om [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen på [data i tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md).
+Om du vill skapa en direktuppspelningsanslutning måste du dessutom ha ett mål-XDM-schema och en datauppsättning. Läs självstudiekursen om du vill veta hur du skapar dessa [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md) eller självstudiekursen [data i tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md).
 
 ### Använda plattforms-API:er
 
@@ -52,7 +52,7 @@ Följande begäran skapar en basanslutning för HTTP API.
 
 >[!BEGINTABS]
 
->[!TAB XDM]
+>[!TAB XML]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -106,10 +106,10 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `name` | Namnet på din basanslutning. Se till att namnet är beskrivande eftersom du kan använda det för att söka efter information om din basanslutning. |
+| `name` | Namnet på din basanslutning. Kontrollera att namnet är beskrivande eftersom du kan använda det för att söka efter information om din basanslutning. |
 | `description` | (Valfritt) En egenskap som du kan inkludera för att få mer information om din basanslutning. |
 | `connectionSpec.id` | Anslutningsspecifikations-ID som motsvarar HTTP API. Detta ID är `bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb`. |
-| `auth.params.dataType` | Datatypen för direktuppspelningsanslutningen. Värden som stöds är: `xdm` och `raw`. |
+| `auth.params.dataType` | Datatypen för direktuppspelningsanslutningen. Följande värden stöds: `xdm` och `raw`. |
 | `auth.params.name` | Namnet på den direktuppspelningsanslutning som du vill skapa. |
 
 **Svar**
@@ -147,7 +147,7 @@ Följande begäran skapar en autentiserad basanslutning för HTTP API.
 
 >[!BEGINTABS]
 
->[!TAB XDM]
+>[!TAB XML]
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -340,7 +340,7 @@ Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudie
 
 ### Skapa en måldatauppsättning {#target-dataset}
 
-En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), med ID:t för målschemat i nyttolasten.
+En måldatauppsättning kan skapas genom att en POST till [Katalogtjänstens API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml), som tillhandahåller målschemats ID i nyttolasten.
 
 Detaljerade anvisningar om hur du skapar en måldatauppsättning finns i självstudiekursen om [skapa en datauppsättning med API](../../../../../catalog/api/create-dataset.md).
 
@@ -562,7 +562,6 @@ Ett lyckat svar returnerar HTTP-status 201 med information om ditt nya dataflöd
 }
 ```
 
-
 ## Bokför data som ska importeras till plattformen {#ingest-data}
 
 Nu när du har skapat ditt flöde kan du skicka ditt JSON-meddelande till direktuppspelningsslutpunkten som du skapade tidigare.
@@ -576,17 +575,17 @@ POST /collection/{INLET_URL}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{INLET_URL}` | URL:en för din direktuppspelande slutpunkt. Du kan hämta den här URL:en genom att göra en GET-förfrågan till `/connections` slutpunkt när du anger ditt basanslutnings-ID. |
+| `{FLOW_ID}` | ID:t för HTTP API-direktuppspelningsdataflödet. |
 
 **Begäran**
 
 >[!BEGINTABS]
 
->[!TAB XDM]
+>[!TAB XML]
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=e5895dc9-b0c8-4431-bab7-bb0d2b4be5db \
   -H 'Content-Type: application/json' \
-  -H 'x-adobe-flow-id: f2ae0194-8bd8-4a40-a4d9-f07bdc3e6ce2' \
   -d '{
         "header": {
           "schemaRef": {
@@ -625,9 +624,8 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
 >[!TAB Rådata]
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=e5895dc9-b0c8-4431-bab7-bb0d2b4be5db \
   -H 'Content-Type: application/json' \
-  -H 'x-adobe-flow-id: 1f086c23-2ea8-4d06-886c-232ea8bd061d' \
   -d '{
       "name": "Johnson Smith",
       "location": {
@@ -669,7 +667,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om den nya informatio
 
 Genom att följa den här självstudiekursen har du skapat en HTTP-direktuppspelningsanslutning, vilket gör att du kan använda direktuppspelningsslutpunkten för att importera data till plattformen. Instruktioner om hur du skapar en direktuppspelningsanslutning i användargränssnittet finns i [skapa en självstudiekurs för direktuppspelningsanslutning](../../../ui/create/streaming/http.md).
 
-Om du vill lära dig att strömma data till plattformen kan du läsa självstudiekursen på [data för tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen på [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md).
+Om du vill lära dig att strömma data till plattformen kan du läsa självstudiekursen på [data för tidsserie för direktuppspelning](../../../../../ingestion/tutorials/streaming-time-series-data.md) eller självstudiekursen [data för direktuppspelningspost](../../../../../ingestion/tutorials/streaming-record-data.md).
 
 ## Bilaga
 
