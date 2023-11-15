@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 01fe1dd1d7df31458d4175c25928bfd12e01d654
+source-git-commit: 614fc9af8c774a1f79d0ab52527e32b2381487fa
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1233'
 ht-degree: 1%
 
 ---
@@ -32,6 +32,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
 | Antal identiteter i ett diagram | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att använda en&quot;första-in-ut-mekanism&quot; och tar bort den äldsta identiteten för att skapa utrymme för den senaste identiteten. Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Mer information finns i avsnittet [förstå borttagningslogiken](#deletion-logic). |
+| Antal länkar till en identitet för ett enskilt batchintag | 50 | En enda batch kan innehålla avvikande identiteter som orsakar oönskade diagramsammanfogningar. För att förhindra detta kommer identitetstjänsten inte att importera identiteter som redan är länkade till 50 eller fler identiteter. |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
 | Antal tecken för ett namnområdes visningsnamn eller identitetssymbol | Ingen | Det finns inga gränser för hur många tecken ett namnområdes visningsnamn eller identitetssymbol får innehålla. |
@@ -42,7 +43,7 @@ Följande tabell visar befintliga regler som du måste följa för att identitet
 
 | Namnutrymme | Valideringsregel | Systembeteende när regeln bryts |
 | --- | --- | --- |
-| ECID | <ul><li>Identitetsvärdet för ett ECID måste vara exakt 38 tecken.</li><li>Identitetsvärdet för ett ECID får endast bestå av siffror.</li></ul> | <ul><li>Om identitetsvärdet för ECID inte är exakt 38 tecken hoppas posten över.</li><li>Om identitetsvärdet för ECID innehåller icke-numeriska tecken hoppas posten över.</li></ul> |
+| ECID | <ul><li>Identitetsvärdet för ett ECID måste vara exakt 38 tecken.</li><li>Identitetsvärdet för ett ECID får endast bestå av siffror.</li><li>Identitetsvärden kan inte vara &quot;null&quot;, &quot;anonymous&quot;, &quot;invalid&quot; eller vara en tom sträng (t.ex. &quot;, &quot;&quot;, &quot;&quot;).</li></ul> | <ul><li>Om identitetsvärdet för ECID inte är exakt 38 tecken hoppas posten över.</li><li>Om identitetsvärdet för ECID innehåller icke-numeriska tecken hoppas posten över.</li><li>Identiteten kommer att blockeras från att förtäras.</li></ul> |
 | Ej ECID | Identitetsvärdet får inte vara längre än 1 024 tecken. | Om identitetsvärdet är längre än 1 024 tecken hoppas posten över. |
 
 ### Inläsning av namnområde för identitet
@@ -114,6 +115,8 @@ Om du vill bevara dina autentiserade händelser mot CRM-ID:t rekommenderar vi at
 
 * [Konfigurera identitetskarta för Experience Platform-taggar](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
 * [Identitetsdata i Experience Platform Web SDK](../edge/identity/overview.md#using-identitymap)
+
+
 
 ## Nästa steg
 
