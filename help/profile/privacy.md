@@ -5,9 +5,9 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: f0179bacc55134241bed8de240ee632d0f38e4b6
+source-git-commit: 6d9f8eceeb8fbe550b4e1e7e0964f2fff0cd3c70
 workflow-type: tm+mt
-source-wordcount: '1614'
+source-wordcount: '1728'
 ht-degree: 0%
 
 ---
@@ -46,13 +46,14 @@ Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Öve
 
 ## Skicka begäranden {#submit}
 
-Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med [!DNL Privacy Service] API eller användargränssnitt. Innan du läser dessa avsnitt bör du granska [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
+Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-Time Customer Profile] med [!DNL Privacy Service] API eller användargränssnitt. Innan du läser dessa avsnitt bör du granska, eller vara medveten om, [Privacy Services-API](../privacy-service/api/getting-started.md) eller [Privacy Servicens användargränssnitt](../privacy-service/ui/overview.md) dokumentation. Dessa dokument innehåller fullständiga anvisningar om hur du skickar in ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärda nyttolaster.
 
 >[!IMPORTANT]
 >
 >Privacy Servicen kan bara bearbeta [!DNL Profile] data med en sammanfogningsprincip som inte utför identitetssammanfogning. Se avsnittet om [begränsningar för sammanslagningsprincip](#merge-policy-limitations) för mer information.
 >
->Observera att den tid det tar att slutföra en sekretessbegäran **inte** garanteras. Om ändringar inträffar i [!DNL Profile] data medan en begäran fortfarande bearbetas, oavsett om dessa poster bearbetas eller inte kan också garanteras.
+>Observera att förfrågningar om sekretess behandlas asynkront i de lagstadgade kraven, och hur lång tid det tar att slutföra kan variera. Om ändringar inträffar i [!DNL Profile] data medan en begäran fortfarande bearbetas, är det inte säkert att dessa inkommande poster också kommer att bearbetas i den begäran. Det är bara profiler som finns i datasjön eller profilarkivet när sekretessjobbet begärs som kan tas bort. Om du importerar profildata som är relaterade till ämnet för en borttagningsbegäran under borttagningsjobbet är det inte säkert att alla profilfragment tas bort.
+>Det är ditt ansvar att vara medveten om inkommande data i plattforms- eller profiltjänsten vid tidpunkten för en borttagningsbegäran, eftersom dessa data kommer att infogas i dina postarkiv. Du måste vara försiktig med att ta in data som har tagits bort eller håller på att tas bort.
 
 ### Använda API:et
 
