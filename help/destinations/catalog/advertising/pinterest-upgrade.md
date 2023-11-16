@@ -3,9 +3,9 @@ title: Pinterest målmigrering till nytt API. Kundåtgärd krävs.
 description: Pinterest har ersatt v4-annonserings-API:t som används av Pinterest-målet i Real-Time CDP. Förstå era åtgärdsobjekt för att smidigt gå över till det nya API:t utan avbrott i era Pinterest-kampanjer.
 hide: true
 hidefromtoc: true
-source-git-commit: 10bf63677c66366c226d647b1174093c1704a8b9
+source-git-commit: dbbdb62c996466499b70990decba58ecaf1be901
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Adobe släpper ett nytt Pinterest-målkort som utnyttjar Pinterest API v5 och be
 
 ## Behöver jag göra något för att mina aktiverade målgrupper ska fungera?
 
-Ja, när Adobe har slutfört uppgraderingen (den 16 november) måste du autentisera dig på nytt för Pinterest med ditt Pinterest-annonskonto i Adobe Experience Platform. Se de detaljerade instruktionerna nedan.
+Ja, när Adobe har slutfört uppgraderingen och släpper den nya Pinterest-destinationen måste du autentisera dig på nytt till Pinterest med ditt Pinterest-annonskonto i Real-Time CDP. Se de detaljerade instruktionerna nedan.
 
 ### Återautentisera till Pinterest {#reauthenticate}
 
@@ -36,21 +36,19 @@ Ja, när Adobe har slutfört uppgraderingen (den 16 november) måste du autentis
    ![Välj redigeringsinformation](/help/destinations/assets/catalog/advertising/pinterest-migration/edit-details-pinterest.png)
 3. Välj **[!UICONTROL Reconnect OAuth]** och logga in på ditt Pinterest-konto.
    ![Välj Koppla OAuth](/help/destinations/assets/catalog/advertising/pinterest-migration/reconnect-oauth-pinterest.png)
-4. Säg till Adobe att du autentiserats på nytt för **[!UICONTROL (New) Pinterest]** mål.
+4. Gå vidare till åtgärdsobjektet i avsnittet nedan
 
 ### Inaktivera befintliga flöden till gammalt mål och aktivera flöden till nytt mål {#disable-old-enable-new-flows}
 
-Sedan måste du manuellt inaktivera befintliga flöden till det gamla kortet och aktivera flöden till det nya kortet.
-
->[!IMPORTANT]
->
->När du har autentiserat dig kan du kontakta Adobe och vi kommer att utföra detta andra steg åt dig. Om du hellre vill utföra det här steget manuellt följer du stegen nedan:
+Sedan måste du manuellt inaktivera befintliga flöden till det gamla målkortet **[!UICONTROL (Deprecating) Pinterest]** och aktivera flöden till det nya kortet **[!UICONTROL (New) Pinterest]**.
 
 1. Gå till **[!UICONTROL Destinations > Browse]** och använda filtret på skärmen för att filtrera **[!UICONTROL (New) Pinterest]** och **[!UICONTROL (Deprecating) Pinterest]** endast destinationer.
    ![Filtrera endast Pinterest-dataflöden på fliken Bläddra](/help/destinations/assets/catalog/advertising/pinterest-migration/filter-pinterest-browse.png)
-2. Markera namnet på den hyperlänkade anslutningen (lojalitetskampanjen i skärmbildsexemplet ovan) och växla till **[!UICONTROL Enable]** växla till **av** för den gamla anslutningen och till **på** för den nya anslutningen.
-   ![Aktivera/inaktivera för nya anslutningar och för gamla anslutningar](/help/destinations/assets/catalog/advertising/pinterest-migration/enable-disable-toggle.png)
-3. Jämför den aktiverade målgruppslistan i det gamla och nya dataflödet och se till att du inte har några nya målgrupper i de gamla flödena som saknas i de nya flödena.
+2. Markera namnet på den hyperlänkade anslutningen (lojalitetskampanjen i skärmbildsexemplet ovan) till **[!UICONTROL (Deprecating) Pinterest]** mål och växla **[!UICONTROL Enable]** växla till **av**.
+   ![Aktivera/inaktivera för nya anslutningar och för gamla anslutningar](/help/destinations/assets/catalog/advertising/pinterest-migration/enable-disable-toggle-old-destination.png)
+3. Markera namnet på den hyperlänkade anslutningen (lojalitetskampanjen i skärmbildsexemplet ovan) till **[!UICONTROL (New) Pinterest]** mål och växla **[!UICONTROL Enable]** växla till **på**.
+   ![Aktivera/inaktivera för nya anslutningar och för gamla anslutningar](/help/destinations/assets/catalog/advertising/pinterest-migration/enable-disable-toggle-new-destination.png)
+4. Jämför den aktiverade målgruppslistan i det gamla och nya dataflödet och se till att du inte har några nya målgrupper i de gamla flödena som saknas i de nya flödena.
 
 Inga avbrott förväntas i era kampanjer, men kom ihåg att kontrollera i Pinterest-gränssnittet att allt fungerar som förväntat.
 
@@ -58,18 +56,22 @@ Inga avbrott förväntas i era kampanjer, men kom ihåg att kontrollera i Pinter
 
 Ja, se nedan:
 
-**Senast 16 november**: Den nya destinationen är klar, och du bör se två Pinterest-kort sida vid sida i katalogen, och alla befintliga dataflöden till det aktuella Pinterest-kortet kopieras till den nya destinationen.
+**Senast 16 november 2023**: Den nya destinationen är klar, och du bör se två Pinterest-kort sida vid sida i katalogen, och alla befintliga dataflöden till det aktuella Pinterest-kortet kopieras till den nya destinationen.
 
 ![Gammalt och nytt Pinterest-mål sida vid sida](/help/destinations/assets/catalog/advertising/pinterest-migration/pinterest-two-cards-side-by-side.png)
 
 >[!IMPORTANT]
 >
->Efter den 16 november markeras det gamla Pinterest-målet **[!UICONTROL Deprecating]**. <span class="preview">Alla ändringar som du gör i dataflöden till Pinterest-destinationen (borttagen) efter den 16 november kommer att *not* överförs automatiskt till det nya Pinterest-målet. </span>
+>Efter 16 november 2023 markeras det gamla Pinterest-målet **[!UICONTROL Deprecating]**. <span class="preview">Alla ändringar som du gör i dataflöden till Pinterest-destinationen (borttagen) efter den 16 november kommer att *not* överförs automatiskt till det nya Pinterest-målet. </span>
 >Vi *rekommendera inte* som ni kan aktivera nya målgrupper för den gamla målgruppen efter den 16 november. Om du gör det måste du då följa [vanliga aktiveringssteg](/help/destinations/ui/activate-segment-streaming-destinations.md) för att lägga till målgruppen på den nya målplatsen när kundens åtgärder har vidtagits.
 
-**Senast 15 december**: <span class="preview">Kundåtgärd</span>. Du måste autentisera om till Pinterest så att det nya kortet är anslutet till Pinterest (instruktioner ovan). När du har gjort det här, kontakta oss.
+**Senast 15 december 2023**: <span class="preview">Kundåtgärd 1</span>. Du måste autentisera dig på nytt för Pinterest så att det nya kortet är anslutet till Pinterest. Visa fullständiga instruktioner i [det här avsnittet](#reauthenticate).
 
-Dataflöden till Pinterest på det gamla kortet måste inaktiveras och de på det nya kortet måste aktiveras. Du kan göra det manuellt i användargränssnittet, eller så kan du nå ut till Adobe och vi gör det åt dig.
+<span class="preview">Kundåtgärd 2</span>Du måste sedan inaktivera dataflödena till Pinterest på det gamla kortet och aktivera dataflödena på det nya kortet. Visa fullständiga instruktioner i [det här avsnittet](#disable-old-enable-new-flows).
+
+>[!IMPORTANT]
+>
+>Efter 15 december 2023 garanterar Adobe inte dataflödenas integritet **[!UICONTROL (Deprecating) Pinterest]** mål.
 
 ## Övriga punkter att notera
 
