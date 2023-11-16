@@ -2,7 +2,7 @@
 title: Adobe Commerce målanslutning
 description: Läs om hur Adobe Commerce- och Real-Time CDP-handlare kan personalisera shoppingupplevelsen genom att leverera relevant webbinnehåll och kampanjer, anpassade till kundgrupper som byggts och hanteras inom Real-Time CDP.
 exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: ddc4e877b3ae2f8b235faec1c29e71d389195e02
 workflow-type: tm+mt
 source-wordcount: '694'
 ht-degree: 1%
@@ -27,7 +27,7 @@ Om du vill använda den här målanslutningen måste du ha åtkomst till:
 
 I Experience Platform skapar du följande:
 
-- [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/experience-platform-connector/fundamentals/update-xdm.html) om hur du skapar ett schema som innehåller handelsspecifika fältgrupper.
+- [Schema](../../../xdm/schema/composition.md). Schemat som du skapar representerar de data som du tänker importera från Adobe Commerce. [Läs mer](https://experienceleague.adobe.com/docs/commerce-merchant-services/data-connection/fundamentals/update-xdm.html) om hur du skapar ett schema som innehåller handelsspecifika fältgrupper.
 - [Datauppsättning](../../../catalog/datasets/user-guide.md#create). En datauppsättning är en lagrings- och hanteringskonstruktion för en datainsamling. Du skapar den här datauppsättningen från schemat som du skapade ovan.
 - [Datastream](../../../datastreams/overview.md#create). ID som gör att data kan flöda från Adobe Experience Platform till andra Adobe DX-produkter. Detta ID måste kopplas till en specifik webbplats i din specifika Adobe Commerce-instans. När du skapar den här dataströmmen anger du XDM-schemat som du skapade ovan.
 
