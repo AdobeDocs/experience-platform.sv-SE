@@ -1,9 +1,9 @@
 ---
 title: Hantera visningshändelser i Web SDK
-description: I den här artikeln beskrivs vad som ska visas och hur de fungerar i Web SDK.
-source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
+description: I den här artikeln förklaras vad som är visningshändelser och hur du kan använda dem i Web SDK.
+source-git-commit: da506cd5de69047e326790d0fae56f76c728e7a5
 workflow-type: tm+mt
-source-wordcount: '348'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
