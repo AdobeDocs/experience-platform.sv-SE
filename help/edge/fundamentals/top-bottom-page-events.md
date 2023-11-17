@@ -1,7 +1,7 @@
 ---
 title: Använda sidhändelser uppifrån och ned
 description: I den här artikeln beskrivs hur du använder de övre och nedre delarna av sidhändelser i Web SDK.
-source-git-commit: 5322156774388a19788529aee554424b2fb5d91b
+source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
 workflow-type: tm+mt
 source-wordcount: '806'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Genom att använda sidans övre och nedre del i Web SDK kan marknadsföringsteam
 
 ## Exempel på händelsen överst på sidan {#top-of-page}
 
-Kodexemplet nedan visar ett exempel på en sidhändelsekonfiguration som begär personalisering men inte skickar visningsmeddelanden för automatiskt återgivna förslag. Visningsmeddelandena skickas som en del av händelsen längst ned på sidan.
+Kodexemplet nedan visar ett exempel på en sidhändelsekonfiguration som begär personalisering men inte gör det [skicka visningshändelser](../personalization/display-events.md#send-sendEvent-calls) för automatiskt renderade utskick. The [visningshändelser](../personalization/display-events.md#send-sendEvent-calls) kommer att skickas som en del av den nedre delen av sidan.
 
 >[!BEGINTABS]
 
@@ -52,7 +52,7 @@ alloy("sendEvent", {
 |---|---|---|
 | `type` | Obligatoriskt | Ställ in den här parametern på `decisioning.propositionFetch`. Den här speciella händelsetypen talar om för Adobe Analytics att den här händelsen ska släppas. När du använder Customer Journey Analytics kan du också ställa in ett filter för att släppa dessa händelser. |
 | `renderDecisions` | Obligatoriskt | Ställ in den här parametern på `true`. Den här parametern anger för Web SDK att återge beslut som returneras av Edge Network. |
-| `personalization.sendDisplayEvent` | Obligatoriskt | Ställ in den här parametern på `false`. Detta förhindrar att meddelanden skickas. |
+| `personalization.sendDisplayEvent` | Obligatoriskt | Ställ in den här parametern på `false`. Detta förhindrar att visningshändelser skickas. |
 
 >[!ENDTABS]
 
@@ -62,7 +62,7 @@ alloy("sendEvent", {
 
 >[!TAB Automatiskt återgivna förslag]
 
-Kodexemplet nedan visar ett exempel på en nedre sidhändelsekonfiguration som skickar visningsmeddelanden för förslag som har återgetts automatiskt på sidan men för vilka visningsmeddelanden har inaktiverats i [överst på sidan](#top-of-page) -händelse.
+Kodexemplet nedan visar ett exempel på en nedre sidhändelsekonfiguration som skickar visningshändelser för förslag som automatiskt återges på sidan men för vilka visningshändelser ignorerades i [överst på sidan](#top-of-page) -händelse.
 
 >[!NOTE]
 >
@@ -79,12 +79,12 @@ alloy("sendEvent", {
 
 | Parameter | Obligatoriskt/valfritt | Beskrivning |
 |---|---|---|
-| `personalization.includeRenderedPropositions` | Obligatoriskt | Ställ in den här parametern på `true`. Detta gör att du kan skicka visningsmeddelanden som har inaktiverats högst upp i sidhändelsen. |
+| `personalization.includeRenderedPropositions` | Obligatoriskt | Ställ in den här parametern på `true`. Detta gör att det går att skicka visningshändelser som har inaktiverats högst upp i sidhändelsen. |
 | `xdm` | Valfritt | Använd det här avsnittet om du vill inkludera alla data som behövs för sidhändelseslutet längst ned. |
 
 >[!TAB Manuellt återgivna utdrag]
 
-Kodexemplet nedan visar ett exempel på en nedre sidhändelsekonfiguration som skickar visningsmeddelanden för förslag som har återgetts manuellt på sidan (t.ex. för anpassade beslutsomfattningar eller ytor).
+Kodexemplet nedan innehåller ett exempel på en nedre sidhändelsekonfiguration som skickar visningshändelser för förslag som återges manuellt på sidan (dvs. för anpassade beslutsomfattningar eller ytor).
 
 >[!NOTE]
 >
@@ -116,7 +116,7 @@ alloy("sendEvent", {
 
 | Parameter | Obligatoriskt/valfritt | Beskrivning |
 |---|---|---|
-| `xdm._experience.decisioning.propositions` | Obligatoriskt | I det här avsnittet definieras de manuellt återgivna utdragen. Du måste inkludera förslaget `ID`, `scope`och `scopeDetails`. Läs dokumentationen om hur du [återge personalisering manuellt](../personalization/rendering-personalization-content.md#manually) om du vill ha mer information om hur du spelar in visningsmeddelanden för manuellt återgivet innehåll. Manuellt återgivet personaliseringsinnehåll måste inkluderas i slutet av sidträffen. |
+| `xdm._experience.decisioning.propositions` | Obligatoriskt | I det här avsnittet definieras de manuellt återgivna utdragen. Du måste inkludera förslaget `ID`, `scope`och `scopeDetails`. Läs dokumentationen om hur du [återge personalisering manuellt](../personalization/rendering-personalization-content.md#manually) om du vill ha mer information om hur du spelar in visningshändelser för manuellt återgivet innehåll. Manuellt återgivet personaliseringsinnehåll måste inkluderas i slutet av sidträffen. |
 | `xdm._experience.decisioning.propositionEventType` | Obligatoriskt | Ställ in den här parametern på `display: 1`. |
 | `xdm` | Valfritt | Använd det här avsnittet om du vill inkludera alla data som behövs för sidhändelseslutet längst ned. |
 
@@ -149,7 +149,7 @@ alloy("sendEvent", {
     }
 });
 
-// Bottom of page, send display notifications for the items that were rendered.
+// Bottom of page, send display events for the items that were rendered.
 // Note: You need to include the viewName in both top and bottom of page so that the
 // correct view is rendered at the top of the page, and the correct view is recorded
 // at the bottom of the page.
@@ -198,7 +198,7 @@ alloy("applyPropositions", {
     viewName: "cart"
 });
 
-// bottom of page, send display notifications for the items that were rendered.
+// bottom of page, send display events for the items that were rendered.
 // Note: You need to include the viewName in both top and bottom of page so that the
 // correct view is rendered at the top of the page, and the correct view is recorded
 // at the bottom of the page.

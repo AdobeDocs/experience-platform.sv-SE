@@ -5,10 +5,10 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: 2e47f12cde0f4c4dca89deddbf612ad3840628f0
+source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
 workflow-type: tm+mt
-source-wordcount: '181'
-ht-degree: 23%
+source-wordcount: '184'
+ht-degree: 22%
 
 ---
 
@@ -42,6 +42,7 @@ ht-degree: 23%
       * [Automatiskt mappade variabler](data-collection/adobe-analytics/automatically-mapped-vars.md)
       * [Skicka data till Analytics](data-collection/adobe-analytics/sending-data-to-analytics.md)
 * Personalisering {#personalization}
+   * [Hantera visningshändelser](personalization/display-events.md)
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
    * [Personalisering via hybridimplementering](personalization/hybrid-personalization.md)
    * [Hantera flimmer](personalization/manage-flicker.md)
