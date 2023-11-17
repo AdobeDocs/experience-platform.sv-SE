@@ -2,14 +2,19 @@
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 5cef3bbc7f2246a91ecca807825d830f240c8d45
 workflow-type: tm+mt
-source-wordcount: '706'
+source-wordcount: '814'
 ht-degree: 1%
 
 ---
 
 # [!DNL Pinterest Customer List] anslutning
+
+>[!IMPORTANT]
+>
+>* Från och med 16 november 2023 kan du se två Pinterest-kort sida vid sida i målkatalogen. Detta beror på en uppgradering av Pinterest annonsörs-API som används för att exportera data till Pinterest. Den befintliga Pinterest-målanslutningen har bytt namn till **[!UICONTROL (Deprecating) Pinterest]** och ett nytt kort **[!UICONTROL (New) Pinterest]** är nu tillgängligt för dig.
+>* Använd **[!UICONTROL (New) Pinterest]** anslutning i katalogen för alla kampanjer till Pinterest. Om du har några aktiva dataflöden till **[!UICONTROL (Deprecating) Pinterest]** mål, läs [uppgraderingsdokumentation](/help/destinations/catalog/advertising/pinterest-upgrade.md) för att förstå vad ni gör för att undvika avbrott i era kampanjer.
 
 ## Översikt {#overview}
 
@@ -71,7 +76,7 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Advertiser ID]**: Ditt Pinterest-annonserings-ID.
+* **[!UICONTROL Ad Account ID]**: Ditt Pinterest-annonserings-ID.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -95,3 +100,15 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 ## Ytterligare resurser {#additional-resources}
 
 Läs mer i [Pinterest Help Center page](https://help.pinterest.com/en/business/article/audience-targeting) om du vill ha mer information.
+
++++ Visa ändringslogg
+
+
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| November 2023 | Funktioner och dokumentation | Pinterest-målet i Real-Time CDP använder nu API:t för v5-annonsering. |
+
+{style="table-layout:auto"}
+
+
++++
