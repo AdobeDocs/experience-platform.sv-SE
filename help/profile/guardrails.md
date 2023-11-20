@@ -1,18 +1,18 @@
 ---
-title: Standardguardrutor för kundprofildata i realtid
+title: Standardgurkor för kundprofildata och segmentering i realtid
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimal systemprestanda.
+description: Läs om prestanda och systemstyrda säkerhetsutkast för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: ab2bb6f4cafe60aec7d8745cca9d2f7f0227a938
+source-git-commit: 554763cc444da0d1459b22f3f37d22b528b290e1
 workflow-type: tm+mt
-source-wordcount: '2153'
-ht-degree: 4%
+source-wordcount: '2200'
+ht-degree: 2%
 
 ---
 
-# Standardstödlinjer för [!DNL Real-Time Customer Profile] data
+# Standardstödlinjer för [!DNL Real-Time Customer Profile] data och segmentering
 
 Med Adobe Experience Platform kan ni leverera personaliserade flerkanalsupplevelser baserat på beteendeinsikter och kundattribut i form av kundprofiler i realtid. För att stödja den nya metoden för profiler använder Experience Platform en högdenormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen.
 
@@ -108,16 +108,17 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 
 {style="table-layout:auto"}
 
-## Skyddsritningar för segmentering
+## Skyddsritningar för segmentering {#segmentation-guardrails}
 
 De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrupper som en organisation kan skapa inom Experience Platform samt kartläggning och aktivering av målgrupper till destinationer.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Försök att skapa fler målgrupper kan påverka systemets prestanda. |
-| Utforma målgrupper per sandlåda | 150 | Prestandaskydd | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. |
-| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. |
+| Målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om [skapa målgrupper](/help/segmentation/ui/segment-builder.md) genom segmentbyggaren. |
+| Utforma målgrupper per sandlåda | 150 | Prestandaskydd | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [kantmålgrupper](/help/segmentation/ui/edge-segmentation.md). |
+| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelande målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
 | Gruppera målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 gruppmålgrupper totalt, förutsatt att det finns färre än 4000 gruppmålgrupper i varje enskild sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
+| Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan inte skapa fler än 50 kontomålgrupper i en sandlåda. När ni har nått 50 målgrupper i en sandlåda **[!UICONTROL Create audience]** kontrollen är inaktiverad när du försöker skapa en ny kontopublik. Läs mer om [kontomålgrupper](/help/segmentation/ui/account-audiences.md). |
 
 {style="table-layout:auto"}
 
