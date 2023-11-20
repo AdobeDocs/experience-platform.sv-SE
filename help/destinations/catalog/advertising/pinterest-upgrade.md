@@ -3,14 +3,18 @@ title: Pinterest målmigrering till nytt API. Kundåtgärd krävs.
 description: Pinterest har ersatt v4-annonserings-API:t som används av Pinterest-målet i Real-Time CDP. Förstå era åtgärdsobjekt för att smidigt gå över till det nya API:t utan avbrott i era Pinterest-kampanjer.
 hide: true
 hidefromtoc: true
-source-git-commit: dbbdb62c996466499b70990decba58ecaf1be901
+source-git-commit: 57097b785da3b516b5ce6670c0a376bd1d0fe479
 workflow-type: tm+mt
-source-wordcount: '686'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
 
 # Pinterest måluppgradering till nytt API. Kundåtgärd krävs senast 15 december 2023
+
+>[!IMPORTANT]
+>
+>Kundens åtgärder på den här sidan gäller dig om din organisation har konfigurerat dataflöden för att exportera data till Pinterest före den 16 november 2023, det datum då **[!UICONTROL (New) Pinterest]** mål, med det senaste Pinterest-API:t, lades till i målkatalogen.
 
 ## Vad händer?
 
@@ -26,7 +30,7 @@ Adobe släpper ett nytt Pinterest-målkort som utnyttjar Pinterest API v5 och be
 
 ## Behöver jag göra något för att mina aktiverade målgrupper ska fungera?
 
-Ja, när Adobe har slutfört uppgraderingen och släpper den nya Pinterest-destinationen måste du autentisera dig på nytt till Pinterest med ditt Pinterest-annonskonto i Real-Time CDP. Se de detaljerade instruktionerna nedan.
+Ja, efter 16 november 2023 måste du autentisera till det nya Pinterest-målet med ditt Pinterest-annonskonto i Real-Time CDP. Se de detaljerade instruktionerna nedan.
 
 ### Återautentisera till Pinterest {#reauthenticate}
 
