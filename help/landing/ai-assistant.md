@@ -5,7 +5,7 @@ badge: Alfa
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: afc61a5809b1dfb59b87731d835cf8a1668f79df
+source-git-commit: a0395c4d3514693d3200571496eff47768da52ba
 workflow-type: tm+mt
 source-wordcount: '2175'
 ht-degree: 0%
@@ -77,7 +77,7 @@ A dedicated pop-up interface for Assistant appears at the center of your screen.
 
 From here, you can input your question in the text box and query Assistant for concepts regarding data or audiences. You can also ask questions about your data objects to better understand how you can use them for your respective use case.  -->
 
-### Exempel: Använd Assistant för att snabba upp skapandet av schemat
+### Exempel: Använd Assistant för att snabba upp skapandet av schemat {#example-use-case}
 
 >[!NOTE]
 >
@@ -99,7 +99,7 @@ Assistenten ger dig ett sätt att validera svaret genom att visa dess källa. L�
 
 ![Alternativ som tillhandahålls av assistenten efter att ett svar har returnerats.](./images/ai-assistant/options.png)
 
-#### Uppföljningsfråga
+### Uppföljningsfråga {#follow-up-question}
 
 +++Välj för att visa ett exempel på en uppföljningsfråga
 
@@ -109,7 +109,7 @@ Du kan lära dig mer om ett visst ämne genom att ställa en uppföljningsfråga
 
 +++
 
-#### Dataanvändningsfråga
+### Dataanvändningsfråga {#data-usage-question}
 
 +++Välj för att visa ett exempel på en fråga om dataanvändning
 
@@ -121,7 +121,7 @@ För svar som innehåller information om dataanvändning tillhandahåller Assist
 
 +++
 
-#### Flera svängar
+### Flera svängar {#multi-turn}
 
 +++Markera för att visa ett exempel på flera omgångar
 
@@ -137,7 +137,7 @@ Assistenten får sedan en ny uppföljningsförfrågan. Den här gången svarar A
 
 +++
 
-#### Använd automatisk komplettering
+### Använd automatisk komplettering {#use-auto-complete}
 
 +++Markera för att visa ett exempel på automatisk komplettering
 
@@ -153,7 +153,7 @@ Sedan markerar du det dataobjekt som du vill fråga för att slutföra din fråg
 
 +++
 
-## Omfång
+## Omfång {#scope}
 
 Assistenten kan svara på frågor om Real-Time CDP och Experience Platform, liksom om din användarkontos dataanvändning. Assistenten kan även härleda kontext baserat på den gränssnittssida som du befinner dig i. Den kan identifiera
 
@@ -163,13 +163,13 @@ Assistenten kan svara på frågor om Real-Time CDP och Experience Platform, liks
 * Resursen (inklusive typ och ID) som du visar på skärmen.
 * Med tanke på att du arbetar med ett visst arbetsflöde i Experience Platform eller Real-Time CDP kan Assistant ta reda på vad du tänker.
 
-### Dokumentation
+### Dokumentation {#documentation}
 
 Dokumentationsindexet täcker för närvarande Adobe Experience Platform (Real-Time CDP och Publiker). Indexet uppdateras regelbundet.
 
 Modellen för dokumentationsåterhämtning har utbildats i Experience Platform (Real-Time CDP och Publiker). Frågor som inte omfattas av Adobe Experience Platform, t.ex. frågor om andra Adobe-produkter som Adobe Target och Creative Cloud Suite, kan inte besvaras.
 
-### Dataanvändning
+### Dataanvändning {#data-usage}
 
 Du kan även ställa frågor till assistenten om din dataanvändning i följande domäner:
 
@@ -184,7 +184,7 @@ För användningsdatafrågor kanske svaren inte speglar det aktuella läget för
 
 Du måste logga in i en sandlåda för att få frågor om specifika data som rör objekt som scheman, datamängder, attribut, mål och segment.
 
-### Exempel på frågor om dataanvändning
+### Exempel på frågor om dataanvändning {#example-data-usage-questions}
 
 +++Välj för att visa en lista med exempelfrågor om dataanvändning
 
@@ -196,11 +196,11 @@ Du måste logga in i en sandlåda för att få frågor om specifika data som rö
 
 +++
 
-## Verifiera svaret
+## Verifiera svaret {#verify-the-response}
 
 Du kan verifiera det svar som assistenten returnerar på flera olika sätt.
 
-### Citat från dokumentation
+### Citat från dokumentation {#citations}
 
 I varje svar ger Assistant dig citat som du kan referera till för verifiering eller mer information.
 
@@ -208,7 +208,7 @@ Välj **[!UICONTROL Show source]** en lista med länkar till dokumentation som a
 
 ![Länkarna till källan som visas i assistenten.](./images/ai-assistant/show-sources.png)
 
-## Ge feedback
+## Ge feedback {#feedback}
 
 >[!BEGINSHADEBOX]
 
@@ -246,11 +246,11 @@ Välj flaggikonen om du vill visa fler rapporter om din upplevelse med assistent
 
 +++
 
-## Ytterligare information
+## Ytterligare information {#additional-information}
 
 Mer information om assistenten för Experience Platform finns i det här avsnittet.
 
-### Caveats and limits
+### Caveats and limits {#caveats-and-limitations}
 
 I följande avsnitt beskrivs aktuella kavattar och begränsningar som ska beaktas när assistenten används.
 <!-- 
@@ -318,7 +318,7 @@ Assistenten kan ge ett felaktigt intryck av vad den kan göra. Följande typer a
 | &quot;Vet ni **x** språk?&quot; | Assistenten har för närvarande bara stöd för engelska, men kan svara&quot;ja&quot; på grund av att den underliggande modellen har stöd för den. |
 | &quot;Kan du göra..?&quot; | Assistenten kan svara ja, även om den inte kan det. |
 
-### Tips
+### Tips {#tips}
 
 I följande avsnitt beskrivs några tips och tillfälliga lösningar som du bör tänka på när du använder Assistant.
 
