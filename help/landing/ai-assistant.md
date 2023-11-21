@@ -5,9 +5,9 @@ badge: Alfa
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: e204e1cc70f0c87632f7d259194d34276f6fab72
+source-git-commit: afc61a5809b1dfb59b87731d835cf8a1668f79df
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2175'
 ht-degree: 0%
 
 ---
@@ -121,6 +121,22 @@ För svar som innehåller information om dataanvändning tillhandahåller Assist
 
 +++
 
+#### Flera svängar
+
++++Markera för att visa ett exempel på flera omgångar
+
+Du kan använda Assistants multibläddringsfunktioner för att få en mer naturlig konversation under upplevelsen. Assistenten kan besvara uppföljningsfrågor eftersom sammanhanget kan härledas från en tidigare interaktion.
+
+I exemplet nedan ombeds Assistant att lista de befintliga segmenten i organisationen som en uppföljning till en tidigare fråga om totalt antal segment.
+
+![](./images/ai-assistant/multi-turn-one.png)
+
+Assistenten får sedan en ny uppföljningsförfrågan. Den här gången svarar Assistant genom att lista de befintliga segmenten som sorterats efter deras respektive storlekar.
+
+![](./images/ai-assistant/multi-turn-two.png)
+
++++
+
 #### Använd automatisk komplettering
 
 +++Markera för att visa ett exempel på automatisk komplettering
@@ -174,9 +190,9 @@ Du måste logga in i en sandlåda för att få frågor om specifika data som rö
 
 | Frågetyp | Beskrivning | Exempel |
 | --- | --- | --- | 
-| Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar som används {SCHEMA_NAME} schema?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade segment?</li><li>Lista de scheman som har attribut som används i aktiverade segment.</li><li>Visa de segment som aktiveras för {DESTINATION_ACCOUNT_NAME} och har fler än 1 000 profiler.</li><li>Visa de attribut som används i aktiverade segment som har ändrats efter januari 2023.</li><li>Visa scheman som är relaterade till aktiverade segment och som skapades under det senaste året.</li></ul> |
-| Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiverade segmenten?</li><li>Hur många fält används vid segmentering?</li><li>Vilka segment aktiveras för det största antalet destinationer?</li><li>Lista duplicerade segment.</li><li>Visa de segment som är aktiverade för {DESTINATION_ACCOUNT_NAME} och rangordna dem efter profilstorlek.</li><li>Hur stor procentandel av segmenten som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Visa de fem vanligaste attributen som används i aktiverade segment baserat på deras förekomst.</li></ul> |
-| Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Visa de attribut som används för {SEGMENT_NAME}?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka segment har ändrats den senaste veckan?</li><li>Visa en lista över de segment som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många segment som har skapats från varje datauppsättning.</li><li>Visa segmentdefinitionen och ändringsdatumet för {SEGMENT_NAME}.</li></ul> |
+| Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar som används {SCHEMA_NAME} schema?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade segment?</li><li>Lista de scheman som har attribut som används i aktiverade segment.</li><li>Visa de segment som aktiveras för {DESTINATION_ACCOUNT_NAME} och har fler än 1 000 profiler.</li><li>Visa de attribut som används i aktiverade segment som har ändrats efter januari 2023.</li><li>Vilka datauppsättningar hämtas via {SOURCE_NAME}?</li><li>Vilka dataflöden som är associerade med {DATAFLOW_NAME}</li><li>Visa scheman som är relaterade till aktiverade segment och som skapades under det senaste året.</li></ul> |
+| Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiverade segmenten?</li><li>Hur många fält används vid segmentering?</li><li>Vilka segment aktiveras för det största antalet destinationer?</li><li>Lista duplicerade segment.</li><li>Visa de segment som är aktiverade för {DESTINATION_ACCOUNT_NAME} och rangordna dem efter profilstorlek.</li><li>Hur stor procentandel av segmenten som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Lista de tre källanslutningarna som samlar in data i mina datauppsättningar.</li><li>Visa de fem vanligaste attributen som används i aktiverade segment baserat på deras förekomst.</li></ul> |
+| Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Visa de attribut som används för {SEGMENT_NAME}?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka segment har ändrats den senaste veckan?</li><li>Visa en lista över de segment som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många segment som har skapats från varje datauppsättning.</li><li>Vilka källkonton är associerade med datauppsättningen XYZ?</li><li>Visa segmentdefinitionen och ändringsdatumet för {SEGMENT_NAME}.</li></ul> |
 
 +++
 
@@ -237,56 +253,56 @@ Mer information om assistenten för Experience Platform finns i det här avsnitt
 ### Caveats and limits
 
 I följande avsnitt beskrivs aktuella kavattar och begränsningar som ska beaktas när assistenten används.
+<!-- 
+#### Conversational experience
 
-#### Konversationsupplevelser
-
-Du måste ta hänsyn till flera nyanser om konversationsupplevelsen när du frågar assistenten.
+You must consider several nuances regarding the conversational experience when querying the Assistant.
 
 >[!NOTE]
 >
->Dessa begränsningar är tillfälliga och förbättras under hela alfavärdet.
+>These limitations are temporary and are being improved upon throughout the course of the alpha.
 
 >[!BEGINTABS]
 
->[!TAB Det går inte att härleda kontext från föregående diskussion]
+>[!TAB Unable to infer context from prior discussion]
 
-Assistenten kan för närvarande inte referera till tidigare diskussioner som kontext för en given fråga. Se tabellen nedan för exempel:
+The Assistant currently cannot reference prior discussions as context for a given question. See the table below for examples:
 
-| Tvetydig fråga | Tydlig fråga | Anteckning |
+| Ambiguous question | Clear question | Note |
 | --- | --- | --- |
-| <ul><li>Första frågan:&quot;Vad är ett segment?&quot;</li><li>Följa upp frågan:&quot;Finns det olika typer av sådana?&quot;</li></ul> | <ul><li>Första frågan:&quot;Vad är ett segment?&quot;</li><li>Uppföljningsfråga:&quot;Finns det olika typer av **segment**?&quot;</li></ul> | Assistenten kan inte sluta sig till vad &quot;de&quot; betyder. |
-| <ul><li>Första frågan:&quot;Vad är ett segment?&quot;</li><li>Följa upp frågan:&quot;Kan du utveckla mer?&quot;</li></ul> | <ul><li>Första frågan:&quot;Vad är ett segment?&quot;</li><li>Fråga:&quot;Förklara vad ett segment är i detalj&quot;</li></ul> | Assistenten kan inte på ett intelligent sätt referera till dokumentation baserad på &quot;mer&quot;. |
-| <ul><li>Första frågan:&quot;Vad är ett segment?&quot;</li><li>Följa upp frågan:&quot;Kan du ge mig ett exempel på en sådan?&quot;</li></ul> | <ul><li>Första frågan:&quot;Vad är ett segment?&quot;</li><li>Följa upp frågan:&quot;Kan du ge mig ett exempel på ett segment?&quot;</li></ul> | Assistenten kan inte sluta sig till vad du vill ha ett exempel på. |
-| <ul><li>Första frågan:&quot;Vad är ett gruppsegment?&quot;</li><li>Följa frågan:&quot;Hur fungerar det jämfört med ett direktuppspelningssegment?&quot;</li></ul> | <ul><li>Första frågan:&quot;Vad är ett gruppsegment?&quot;</li><li>Följ upp frågan:&quot;Kan du jämföra ett direktuppspelningssegment med ett gruppsegment?&quot;</li></ul> | Assistenten kan inte sluta sig till vad &quot;den&quot; syftar på och kan därför inte jämföra direktuppspelningssegmentet. |
-| <ul><li>Första frågan:&quot;Hur många segment har jag?&quot;</li><li>Fråga:&quot;Hur många av dem använder Facebook som mål?&quot;</li></ul> | <ul><li>Första frågan:&quot;Hur många segment har jag?&quot;</li><li>Fråga:&quot;Hur många av de segment jag har använder Facebook som mål?&quot;</li></ul> | Assistenten kan inte sluta sig till vad &quot;de&quot; syftar på. |
+| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of them?"</li></ul>| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of **segments**?"</li></ul> | The Assistant cannot infer what "them" means. |
+| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you elaborate more?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Explain what a segment is in depth"</li></ul> | The Assistant cannot intelligently reference documentation based on "more". |
+| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of one?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of a segment?"</li></ul> | The Assistant cannot infer what you want an example of.|
+| <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "How does it compare to a streaming segment?"</li></ul> | <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "Can you compare a streaming segment to a batch segment?"</li></ul> | The Assistant cannot infer what "it" is referring to and thus cannot compare the streaming segment. |
+| <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of them use Facebook as a destination?"</li></ul> | <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of the segments that I have are using Facebook as a destination?"</li></ul> | The Assistant is cannot infer what "them" is referring to. |
 
 {style="table-layout:auto"}
 
->[!TAB Det går inte att härleda kontext från en sida]
+>[!TAB Unable to infer context from a page]
 
-När du frågar assistenten om ett visst element på användargränssnittssidan för Experience Platform som du är på, måste du tydligt definiera det specifika elementet i din fråga.
+When asking the Assistant about a particular element of the Experience Platform UI page that you are on, you must clearly define the specific element within your question. 
 
-| Tvetydig fråga | Tydlig fråga | Anteckning |
+| Ambiguous question | Clear question | Note |
 | --- | --- | --- |
-| &quot;Vad gör det här?&quot; | &quot;Vad gör {PAGE_NAME} eller hur? | Assistenten kan inte sluta sig till vad &quot;this&quot; syftar på. Du måste ange det specifika sidelementet som du frågar om. |
-| &quot;Varför sparar det inte?&quot; | &quot;Varför kan jag inte spara en ny sandlåda med namnet {NAME}?&quot; | Assistenten kan inte sluta sig till vad &quot;det&quot; syftar på och kan inte veta att du har problem med en entitet. |
+| "What does this do?" | "What does {PAGE_NAME} do? | The Assistant cannot infer what "this" is referring to. You must provide the specific page element that you are querying about. |
+| "Why won't it save?" | "Why can't I save a new sandbox called {NAME}?" | The Assistant cannot infer what "it" is referring to and cannot know that you are having issues with an entity. |
 
 {style="table-layout:auto"}
 
-Assistenten kan dessutom bara besvara frågor om felmeddelanden, eftersom felet är dokumenterat i Experience League.
+Furthermore, the Assistant can only answer questions regarding error messages, given that the error is documented in Experience League.
 
->[!TAB Tvetydighet]
+>[!TAB Ambiguity]
 
-Du måste formulera dina frågor tydligt och definiera dem i en produkt, ett program eller en domän, eftersom assistenten för närvarande inte kan tolka några frågor.
+You must phrase your questions clearly and scope them within a product, application, or domain, as the Assistant currently cannot disambiguate questions.
 
-| Tvetydig fråga | Tydlig fråga | Anteckning |
+| Ambiguous question | Clear question | Note |
 | --- | --- | --- |
-| &quot;Hur skapar jag ett filter? | Hur skapar jag ett filter i Profilfrågespråk? | Du måste ange den funktion som du filtrerar efter eftersom en mängd olika Experience Platform-funktioner stöder filtrering. |
-| &quot;Hur kommer jag igång? | Hur kommer jag igång med att använda destinationer? | Du måste ge en tydlig bild av dina mål och användningsfall eftersom alltför breda koncept kan resultera i generiska eller onödigt specifika svar. |
+| "How do I create a filter? | How do I create a filter in Profile Query Language? | You must specify the feature that which you are filtering for because a variety of Experience Platform features support filtering. |
+| "How do I get started? | How do I get started using destinations? | You must provide clarity on your goals and use case because overly broad concepts may result in generic or unnecessarily specific answers. |
 
 {style="table-layout:auto"}
 
->[!ENDTABS]
+>[!ENDTABS] -->
 
 #### Begränsat litet snack
 
