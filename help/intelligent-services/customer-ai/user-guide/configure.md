@@ -5,9 +5,9 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 973a9cae711780448e5c708622a71ba928695beb
 workflow-type: tm+mt
-source-wordcount: '2740'
+source-wordcount: '2737'
 ht-degree: 0%
 
 ---
@@ -197,15 +197,11 @@ Du kan definiera viktiga profildatauppsättningsfält (med tidsstämplar) i dina
 
 #### Välj profilattribut från export av ögonblicksbild av profil
 
-Du kan också välja att ta med profilattribut från den dagliga exporten av ögonblicksbilder. Dessa attribut synkroniseras med export av ögonblicksbilder och visar det senast tillgängliga värdet.
+Du kan också välja att ta med profilattribut från den dagliga exporten av ögonblicksbilder. Dessa attribut synkroniseras med export av ögonblicksbilder och visar det senast tillgängliga värdet. De visas automatiskt och kräver inte att en datauppsättning väljs i konfigurationssteget.
 
 >[!WARNING]
 >
-> Var noga med att inte välja ett profilattribut som uppdateras som ett resultat av förutsägelsemålet eller som är starkt korrelerat med förutsägelsemålet. Detta orsakar dataläckage och överpassning av modellen. Ett exempel på ett sådant attribut är `total_purchases_in_the_last_3_months` som förutser köpkonverteringar.
-
->[!NOTE]
->
->Stöd för att använda profilattribut från export av UPS-ögonblicksbilder finns på begäran i användargränssnittet.
+> Välj inte ett profilattribut som har uppdaterats som ett resultat av förutsägelsemålet eller som är mycket korrelerat med förutsägelsemålet. Detta resulterar i dataläckage och överpassning av modellen. Till exempel: `total_purchases_in_the_last_3_months` är ett attribut som förutser köpkonvertering.
 
 ### Lägga till ett eget händelseexempel {#custom-event}
 
@@ -264,3 +260,5 @@ Följande video är utformad för att ge dig en bättre förståelse för hur ku
 > Följande video är inaktuell. Den senaste informationen finns i dokumentationen.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32665?learn=on&quality=12)
+
+<!-- comment -->

@@ -4,18 +4,18 @@ feature: Attribution AI
 title: Styrningsprinciper för Attribution AI
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt.
 exl-id: 448b10c8-8eac-41cb-9b77-66aa283c0a9d
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: eba23d39ade399f7df058da103fbd54883dc5b65
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '193'
 ht-degree: 0%
 
 ---
 
-# Styrningspolitik
+# Styrningspolitik inom Attribution AI
 
-När du har gått igenom arbetsflödet för att skapa en modell och skicka in modellens konfiguration kan du [policytillämpning](../../../data-governance/enforcement/auto-enforcement.md) kontrollerar om det finns några överträdelser. Om en principöverträdelse inträffar visas en portfölj som anger att en eller flera profiler har överträtts. Detta för att säkerställa att era dataåtgärder och marknadsföringsåtgärder inom plattformen är kompatibla med dataanvändningsprinciper.
+När du har gått igenom arbetsflödet för att skapa en modell och skicka in modellens konfiguration kan du [policytillämpning](../../../data-governance/enforcement/auto-enforcement.md) kontrollerar om det finns några överträdelser. Om en principöverträdelse inträffar visas en portfölj som anger att en eller flera profiler har överträtts. Detta är för att säkerställa att era dataåtgärder och marknadsföringsåtgärder inom plattformen är kompatibla med dataanvändningsprinciper.
 
-## Poängbrott - posering
+## Poängbrott - poäns
 
 [En pover som visar information om policyöverträdelsen](../../attribution-ai/images/data-governance/policy-violation-popover-aai.png).
 
