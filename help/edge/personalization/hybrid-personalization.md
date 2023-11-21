@@ -3,9 +3,9 @@ title: Hybrid-personalisering med Web SDK och Edge Network Server API
 description: I den här artikeln visas hur du kan använda Web SDK i kombination med Server-API:t för att distribuera hybridanpassning på dina webbegenskaper.
 keywords: personalisering, hybrid, server-api, server-side, hybridimplementering,
 exl-id: 506991e8-701c-49b8-9d9d-265415779876
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 33e69f34934b505e2ee434bc957f278486a97642
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '838'
 ht-degree: 2%
 
 ---
@@ -70,7 +70,7 @@ När du [konfigurera ett datastream](../../datastreams/overview.md) För Analyti
 Exemplet från den här implementeringen använder två olika datastreams:
 
 * En datastream har konfigurerats för Analytics. Datastream används för Web SDK-interaktioner.
-* En andra datastream utan någon Analytics-konfiguration. Den här datastream används för Server-API-begäranden.
+* En andra datastream utan någon Analytics-konfiguration. Den här datastream används för Server-API-begäranden. Du måste konfigurera denna datastream med samma målkonfiguration som den datastream som du konfigurerade för Analytics.
 
 På så sätt registreras inga Analytics-händelser i serversidans begäran, men det gör klientsidans begäranden. Detta leder till att Analytics-förfrågningar räknas korrekt.
 
