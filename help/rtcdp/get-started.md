@@ -2,8 +2,9 @@
 keywords: RTCDP;CDP;Real-time Customer Data Platform;realtids kunddataplattform;realtids-cdp;cdp;rtcdp
 title: Komma igång med Real-time Customer Data Platform
 description: Använd det här exempelscenariot som exempel när du konfigurerar implementeringen av Adobe Real-Time Customer Data Platform.
+feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '2328'
 ht-degree: 1%
@@ -22,7 +23,7 @@ I det här exemplet visas styrkan hos Real-time Customer Data Platform, som driv
 
 ## Användningsfall
 
-Luma, ett sportklädföretag, försöker alltid förbättra sin kundupplevelse. De har ett nytt initiativ för att öka den presentrelaterade försäljningen. De vill också minska överexponering, till exempel irriterande annonser som följer kunderna runt.
+Luma, ett sportklädföretag, försöker alltid förbättra sin kundupplevelse. De har ett nytt initiativ för att öka presentförsäljningen. De vill också minska överexponering, till exempel irriterande annonser som följer kunderna runt.
 
 För närvarande spenderar de för mycket på media som återannonserar mot objekt som besökaren inte kommer att köpa längre fram. Luma vill till exempel inte omdirigera någon med ett objekt som var avsett som ett engångsköp för någon annan.
 
@@ -56,7 +57,7 @@ Den här självstudiekursen innehåller följande steg:
 1. [Samla in data](#bringing-the-data-together-for-a-specific-customer) för en viss kund.
 1. Konfigurera [segment](#segments).
 1. Konfigurera [mål](#destinations).
-1. [Välja profil för olika enheter](#cross-device-identity-stitching).
+1. [Ställa in profilen på olika enheter](#cross-device-identity-stitching).
 1. [Analysera profilen](#analyzing-the-profile).
 
 ## Kundprofil
@@ -71,7 +72,7 @@ Många besökare på webbplatsen är antagligen återkommande kunder som tidigar
 
 ### Ny kunds första besök
 
-En oidentifierad besökare går till exempel till Men&#39;s -avsnittet på Lumawebbplatsen och visar några vardagliga tröjor.
+En oidentifierad besökare går till exempel till Men&#39;s section på Luma-sajten och visar några vardagliga tröjor.
 
 ![bild](assets/luma-sweatshirts.png)
 
@@ -108,7 +109,7 @@ Hon navigerar till hemsidan och bläddrar bland fler.
 
 Sarah får en dynamisk upplevelse av en personaliserad hemsida som baseras på hennes [!DNL Real-Time Customer Profile] i Adobe Experience Platform.
 
-Hon ser relevant innehåll, tack vare Adobe Sensei-driven personalisering i Adobe Target, som tar hänsyn till hennes tidigare inköp och tillhörighet till löpande kläder och utrustning. Luma skräddarsyr även männens kataloginnehåll mot löpverk för män baserat på hennes senaste surfning.
+Hon ser relevant innehåll, tack vare Adobe Sensei-driven personalisering i Adobe Target, som tar hänsyn till hennes tidigare inköp och tillhörighet till löpande kläder och utrustning. Luma skräddarsyr även männens kataloginnehåll mot löputrustning för män baserat på hennes senaste surfning.
 
 Längre ned på sidan visas Sarah med aktuella produkter och ett nytt rekommendationsfack som bygger på hennes senast visade artiklar.
 
@@ -116,7 +117,7 @@ Det personliga innehållet hjälper Sarah att snabbt hitta relevanta objekt. Det
 
 ### Få tillbaka kunden
 
-Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till webbplatsen.
+Sarah blir distraherad och lämnar sajten. Luma kan använda sina data i Adobe Experience Platform för att ta med henne till sajten.
 
 Real-time Customer Data Platform, som drivs av Adobe Experience Platform, är byggt för kundupplevelsehantering. Med programmet kan man
 
@@ -170,7 +171,7 @@ Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen efter *C
 
    ![bild](assets/luma-source-sched.png)
 
-Klart. Du har just lagt till [!DNL Microsoft CRM] som en datakälla i [!DNL Experience Platform].
+Det är gjort. Du har just lagt till [!DNL Microsoft CRM] som en datakälla i [!DNL Experience Platform].
 
 ### Märk inkapslade data för användningsprinciper
 
@@ -203,9 +204,9 @@ Med de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan mark
 
 <!-- ![image](assets/luma-segments.png) -->
 
-I det här scenariot uppvisade Sarah nyligen interaktioner på webbplatsen ett annat beteende än hennes tidigare handlingar. Hon köper vanligtvis damkläder. Posten i kundvagnen är dock en stor tröja för män.
+I det här scenariot uppvisade Sarah nyligen interaktioner på webbplatsen ett annat beteende än hennes tidigare handlingar. Hon köper vanligtvis damkläder. Men föremålet i kundvagnen är en stor tröja för män.
 
-Lumas datavetenskap har tagit fram modeller kring benägenheten att köpa. En modell visar på en plötslig förändring i klädkategori (t.ex. kvinnor/män) eller storlek för den befintliga konsumenten. Sara ändrade inköpsbeteende tyder på att hon inte handlar för sig själv.
+Lumas datavetenskap har tagit fram modeller kring benägenheten att köpa. En modell visar på en plötslig förändring i klädkategori (t.ex. kvinnor/män) eller storlek för den befintliga konsumenten. Sara ändrade köpbeteende tyder på att hon inte handlar för sig själv.
 
 <!-- ![image](assets/luma-gift.png) -->
 
@@ -244,8 +245,7 @@ Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra l�
 I det här scenariot vill Luma återrikta målgruppen med personalisering över dessa destinationer:
 
 * Google, för visning
-
-   <!--* Facebook -->
+  <!--* Facebook -->
 * Adobe Campaign, för e-post
 
 <!-- ![image](assets/luma-sched-dest.png) -->
@@ -258,9 +258,9 @@ Du kan också schemalägga att segmentet ska börja eller sluta vid en viss tidp
 >
 >Om du markerar datumfältet kan det automatiskt schemaläggas för 90 dagar framåt.
 
-Välj **[!UICONTROL Save]** för att gå till nästa sida.
+Välj **[!UICONTROL Save]** till nästa sida.
 
-När en kund i den här målgruppen gör ett köp inaktiveras deras medlemskap i den här målgruppen i realtid. De är inte längre kvalificerade eftersom deras status har ändrats.
+När en kund i den här målgruppen gör ett köp inaktiveras deras medlemskap i den här målgruppen i realtid. De är inte kvalificerade längre eftersom deras status har ändrats.
 
 Detta sparar pengar åt Lumas mediegrupp genom att inte använda upp lager för en publik som inte är kvalificerad.
 
@@ -280,7 +280,7 @@ När du sparar visas det segment som är mappat från den enhetliga profilen til
 
 ## Enhetsidentitetssammanfogning
 
-Sarah surfar på en sajt för sociala medier på sin mobila enhet, och hon ser en Luma-annons. Det påminner henne om det hon lämnade i vagnen.
+Sarah surfar på en sajt för sociala medier på sin mobila enhet och ser en Luma-annons. Det påminner henne om det hon lämnade i vagnen.
 
 Senare öppnar hon sitt mejl och ser de omdirigerade mejlen. Hon väljer en länk till Luma i ett e-postmeddelande.
 

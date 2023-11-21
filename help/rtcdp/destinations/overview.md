@@ -2,8 +2,9 @@
 keywords: rtcdp-mål;mål rtcdp;mål för kunddataplattform i realtid
 title: Destinationer i Real-time Customer Data Platform
 description: Det här dokumentet innehåller en översikt över destinationer i Adobe Experience Platform
+feature: Destinations, Integrations
 exl-id: 82f4bad2-a0e7-4f49-ac2f-412b5c5c35f3
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '98'
 ht-degree: 0%

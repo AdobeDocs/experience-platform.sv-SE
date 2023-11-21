@@ -3,10 +3,12 @@ keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattfo
 solution: Experience Platform
 title: Komma igång med Real-time Customer Data Platform B2B Edition
 description: Använd det här exempelscenariot som exempel när du konfigurerar din implementering av Adobe Real-time Customer Data Platform B2B Edition.
+feature: Get Started, B2B
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '1195'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -56,7 +58,7 @@ Kundprofilen i realtid sammanfogar data från olika källor för att skapa konso
 
 ## Infoga data i Experience Platform
 
-Sedan använder Bodea-marknadsföraren [Marketo Engage-kontakt](../sources/connectors/adobe-applications/marketo/marketo.md) att importera data till plattformen för användning i tjänster längre fram i kedjan. Du kan även importera data genom att använda någon av de godkända källorna för Real-Time CDP B2B Edition.
+Sedan använder Bodea-marknadsföraren [Marketo Engage-kontakt](../sources/connectors/adobe-applications/marketo/marketo.md) att importera data till plattformen för användning i tjänster i senare led. Du kan även importera data genom att använda någon av de godkända källorna för Real-Time CDP B2B Edition.
 
 >[!NOTE]
 > 
@@ -84,7 +86,7 @@ I det här exemplet hittar segmentet alla personer som arbetar på försäljning
 
 >[!NOTE]
 > 
->Instruktioner om hur du skapar segment för att utvärdera data finns i [Användargränssnittsguide för segmentbyggare](../segmentation/ui/segment-builder.md). Mer specifika användningsfall för B2B-segmentering finns i [segmenteringsöversikt för Real-Time CDP B2B Edition](./segmentation/b2b.md).
+>Instruktioner om hur du skapar segment för att utvärdera dina data finns i [Användargränssnittsguide för segmentbyggare](../segmentation/ui/segment-builder.md). Mer specifika användningsfall för B2B-segmentering finns i [segmenteringsöversikt för Real-Time CDP B2B Edition](./segmentation/b2b.md).
 
 Med Segment Builder kan ni skapa en marknadsföringsbar publik utifrån kundprofildata i realtid och visa uppskattningar av er presumtiva målgrupp baserat på den kombination av attribut, händelser och befintliga målgrupper som ni har definierat.
 
@@ -100,8 +102,8 @@ I [!UICONTROL Segments] arbetsytan i plattformsgränssnittet, markeras av Bodea-
 > 
 >Se självstudiekursen om [aktivera ett segment till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) om du vill ha mer information om hur du uppnår detta.
 
-Bodea-marknadsföraren aktiverar segmentet till Marketo-destinationen, vilket gör att de kan skicka segmentdata från Platform till Marketo Engage i form av en statisk lista. Se guiden på [Marketo](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) för mer information.
+Bodea-marknadsföraren aktiverar segmentet till Marketo-destinationen, vilket gör att de kan skicka segmentdata från Platform till Marketo Engage i form av en statisk lista. Se guiden på [Marketo destination](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) för mer information.
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du lyckats utnyttja de olika Adobe Experience Platform-tjänster som används av Real-Time CDP B2B Edition. Därför har ni lärt er att importera, segmentera, utvärdera och exportera era B2B-data som användbara målgrupper som kan engageras i olika kanaler.
+Genom att följa den här självstudiekursen har du lyckats dra nytta av de olika Adobe Experience Platform-tjänster som används av Real-Time CDP B2B Edition. Därför har ni lärt er att importera, segmentera, utvärdera och exportera era B2B-data som användbara målgrupper som kan engageras i olika kanaler.

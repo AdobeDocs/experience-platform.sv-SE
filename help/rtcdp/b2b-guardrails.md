@@ -3,10 +3,12 @@ keywords: profil;kundprofil i realtid;felsökning;skyddsprofiler;riktlinjer;grä
 title: StandardguarDRAG för Real-time Customer Data Platform B2B Edition
 type: Documentation
 description: I Adobe Experience Platform används en mycket denormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen. Det här dokumentet innehåller standardgränser för användning och frekvens som hjälper dig att modellera data för optimala systemprestanda med Adobe Real-time Customer Data Platform B2B Edition.
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 6327f5e6cb64a46c502613dd6074d84ed1fdd32b
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1662'
 ht-degree: 2%
 
 ---
@@ -53,7 +55,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 | Äldre relationer för flera enheter | 20 | Mjuk | Högst 20 multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas. Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
 | Många-till-ett-relationer per XDM-klass | 2 | Mjuk | Högst 2 många-till-en-relationer per XDM-klass rekommenderas. Ytterligare relation bör inte skapas förrän en befintlig relation tas bort eller inaktiveras. Anvisningar om hur du skapar en relation mellan två scheman finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
 
-### Dimensionens skyddsräcken
+### Skyddsutkast för Dimension
 
 >[!NOTE]
 >
@@ -63,7 +65,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 | --- | --- | --- | --- |
 | Inga kapslade äldre relationer | 0 | Mjuk | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
 | Endast B2B-objekt kan ingå i många-till-ett-relationer | 0 | Hård | Systemet stöder endast många-till-ett-relationer mellan B2B-objekt. Mer information om många-till-ett-relationer finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
-| Maximalt djup för kapslade relationer mellan B2B-objekt | 3 | Hård | Det maximala djupet för kapslade relationer mellan B2B-objekt är 3. Det innebär att du inte bör ha någon relation mellan B2B-objekt som är kapslade mer än tre nivåer i ett mycket kapslat schema. |
+| Högsta antal kapslade relationer mellan B2B-objekt | 3 | Hård | Det maximala djupet för kapslade relationer mellan B2B-objekt är 3. Det innebär att du inte bör ha någon relation mellan B2B-objekt som är kapslade mer än tre nivåer i ett mycket kapslat schema. |
 
 ## Begränsningar för datastorlek
 
@@ -83,7 +85,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 | --- | --- | --- | --- |
 | Inmatade batchar per XDM-klass per dag | 45 | Mjuk | Det totala antalet batchar som intagits varje dag per XDM-klass får inte överstiga 45. Om du samlar in ytterligare batchar kan prestandan bli optimal. |
 
-### Dimensionens skyddsräcken
+### Skyddsutkast för Dimension
 
 >[!NOTE]
 >
@@ -121,7 +123,7 @@ The [!DNL Profile] lagringsdatamodellen består av två huvudenhetstyper: [prim�
 
 #### Primär entitet
 
-En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionsschemat för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
+En primär enhet, eller profilenhet, sammanfogar data till en&quot;enda källa till sanning&quot; för en individ. Dessa enhetliga data representeras med hjälp av en s.k. fackvy. En unionsvy samlar fälten för alla scheman som implementerar samma klass i ett enda unionsschema. Unionens schema för [!DNL Real-Time Customer Profile] är en denormaliserad hybriddatamodell som fungerar som behållare för alla profilattribut och beteendehändelser.
 
 Tidsoberoende attribut, som också kallas&quot;postdata&quot;, modelleras med [!DNL XDM Individual Profile], medan tidsseriedata, som också kallas&quot;händelsedata&quot;, modelleras med [!DNL XDM ExperienceEvent]. När data från register och tidsserier hämtas i Adobe Experience Platform utlöses de [!DNL Real-Time Customer Profile] för att börja inhämta data som har aktiverats för användning. Ju fler interaktioner och detaljer som är inkapslade, desto stabilare blir de enskilda profilerna.
 

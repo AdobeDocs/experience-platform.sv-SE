@@ -2,10 +2,12 @@
 title: Hantera prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: Det här dokumentet innehåller information om hur du hanterar funktionen för prediktiv lead och kontobedömning i Experience Platform CDP B2B.
+feature: Profiles, B2B
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '975'
 ht-degree: 2%
 
 ---
@@ -44,7 +46,7 @@ The **[!UICONTROL Goal value]** visas. Konfigurera sedan [!UICONTROL Goal specif
 
 >[!NOTE]
 >
->Det går att lägga till flera målvärden.
+>Flera målvärden kan läggas till.
 
 ![plas-target-specifying-field-value](../assets/../b2b-ai-ml-services/assets/plas-goal-specifics-field-value.png)
 
@@ -56,7 +58,7 @@ Om du vill konfigurera tidsramen för förutsägelse väljer du listrutepilen oc
 
 ![plas-predication-timeframe](../assets/../b2b-ai-ml-services/assets/plas-prediction-timeframe.png)
 
-Den valda sammanfogningsprincipen avgör hur fältvärdena för en personprofil väljs. Använd listrutepilen och välj önskad kopplingsprofil och välj sedan **[!UICONTROL Finish]**.
+Den valda sammanfogningsprincipen avgör hur fältvärdena för en personprofil markeras. Använd listrutepilen och välj önskad kopplingsprofil och välj sedan **[!UICONTROL Finish]**.
 
 The **[!UICONTROL Scoring setup is complete]** visas som bekräftar att det nya poängtalet har skapats. Välj **[!UICONTROL OK]**.
 
@@ -88,7 +90,7 @@ The **[!UICONTROL Edit instance]** visas där du kan redigera beskrivningen för
 
 >[!NOTE]
 >
->Det går inte att ändra poängkonfigurationen eftersom detta kommer att utlösa omskolning och ompoängtering av modellen. Det motsvarar att ta bort poängen och skapa en ny poäng. Om du vill redigera poängkonfigurationen måste du klona poängen eller skapa en ny poäng.
+>Det går inte att ändra poängkonfigurationen eftersom detta kommer att utlösa omskolning och ompoängtering av modellen. Det motsvarar att ta bort poängen och skapa en ny poäng. Om du vill redigera konfigurationen av poängen måste du klona poängen eller skapa en ny poäng.
 
 Du kommer tillbaka till **[!UICONTROL Services]** -fliken. Välj bakgrundsmusik om du vill visa den uppdaterade beskrivningsinformationen på panelen med ytterligare information till höger på skärmen.
 
@@ -131,26 +133,26 @@ Du kommer tillbaka till **[!UICONTROL Services]** där du inte längre kan se po
 | Felkod | Felmeddelande |
 | --- | --- |
 | 401 | FEL 401. Leads-AI-pipeline har stoppats: det finns inte tillräckligt med giltiga konton för kontopoängsättningen. Antal konton: {}. |
-| 402 | FEL 402. Leads-AI-pipeline har stoppats: det finns inte tillräckligt med giltiga kontakter för att göra en kontaktbedömning. Antal kontakter: {}. |
-| 403 | FEL 403. Leads-AI-pipeline har stoppats: inte tillräckligt med aktivitetsvolym för modellutbildning. Antal händelser: {}. |
-| 404 | FEL 404. Leads-AI-pipeline har stoppats: inte tillräckligt många konverteringar för modellutbildning. Antal konverteringar: {}. |
-| 405 | FEL 405. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Endast {} procent av kontona har aktivitet. |
-| 406 | FEL 406. Leads-AI-pipeline har stoppats: för låg aktivitet för giltig modellutbildning. Endast {} procent av kontakterna har aktivitet. |
+| 402 | FEL 402. Leads-AI-pipeline har stoppats: det finns inte tillräckligt med giltiga kontakter för kontaktbedömning. Antal kontakter: {}. |
+| 403 | FEL 403. Leads-AI-pipeline stoppades: det finns inte tillräckligt med aktivitetsvolym för modellutbildning. Antal händelser: {}. |
+| 404 | FEL 404. Ledarnas AI-pipeline stoppades: inte tillräckligt många konverteringar för modellutbildning. Antal konverteringar: {}. |
+| 405 | FEL 405. Leads-AI-pipeline stoppades: aktiviteten är för sparsam för giltig modellutbildning. Endast {} procent av kontona har aktivitet. |
+| 406 | FEL 406. Leads-AI-pipeline stoppades: aktiviteten är för sparsam för giltig modellutbildning. Endast {} procent av kontakterna har aktivitet. |
 | 407 | FEL 407. Leads-AI-pipeline har stoppats: typer av bedömningsdataaktiviteter matchar inte utbildningsdata. |
-| 408 | FEL 408. Leads-AI-pipeline har stoppats: Felfrekvensen är för hög för aktivitetsfunktioner. Frekvens saknas: {}. |
-| 409 | FEL 409. Leads-AI-pipeline har stoppats: för lågt test auc. Testa auc: {}. |
-| 410 | FEL 410. Leads-AI-pipeline har stoppats: test auc är för lågt efter parameterjustering. Testa auc: {}. |
-| 411 | FEL 411. Leads-AI-pipeline har stoppats: Utbildningsdata har inte tillräckligt många konverteringar för att skapa en tillförlitlig modell. Konverteringar: {}. |
+| 408 | FEL 408. Leads-AI-pipeline har stoppats: Frekvensen som saknas är för hög för aktivitetsfunktioner. Frekvens saknas: {}. |
+| 409 | FEL 409. Leads-AI-pipeline stoppades: test auc är för lågt. Testa auc: {}. |
+| 410 | FEL 410. Leads-AI-pipeline stoppades: test auc är för lågt efter parameterjustering. Testa auc: {}. |
+| 411 | FEL 411. Ledarnas AI-pipeline har stoppats: utbildningsdata har inte tillräckligt många konverteringar för att skapa en tillförlitlig modell. Konverteringar: {}. |
 | 412 | FEL 412. Leads-AI-pipeline har stoppats: testdata har ingen konvertering för att beräkna AUC-ROC. |
 
 | Varnings-/infokod | Meddelande |
 | --- | --- |
-| 100 | INFORMATION 100. Leads AI-kvalitetskontroll: Antal konton: {}. |
-| 101 | INFORMATION 101. Leads AI-kvalitetskontroll: antalet kontakter är: {}. |
+| 100 | INFORMATION 100. Leads AI-kvalitetskontroll: antalet konton är: {}. |
+| 101 | INFORMATION 101. Leads-AI-kvalitetskontroll: antalet kontakter är: {}. |
 | 102 | INFORMATION 102. Leads AI-kvalitetskontroll: antalet möjligheter är: {}. |
-| 103 | INFORMATION 103. Leads AI-kvalitetskontroll: testningen av auc är låg. Starta parameterjustering. Testljud: {}. |
+| 103 | INFORMATION 103. Leads AI-kvalitetskontroll: det är lågt att testa auc. Starta parameterjustering. Testljud: {}. |
 | 200 | VARNING 200. Leads AI-kvalitetskontroll: frekvensen av saknade firmografiska funktioner är: {}. |
-| 201 | VARNING 201. Leads AI-kvalitetskontroll: aktivitetsfunktionerna saknas: {}. |
+| 201 | VARNING 201. Leads-AI-kvalitetskontroll: antalet saknade aktivitetsfunktioner är: {}. |
 
 ## Nästa steg
 

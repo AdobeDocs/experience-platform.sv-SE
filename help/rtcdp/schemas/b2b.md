@@ -1,10 +1,12 @@
 ---
 title: Scheman i Real-time Customer Data Platform B2B Edition
 description: En översikt över XDM-schemats (Experience Data Model) roll i Adobe Real-time Customer Data Platform B2B Edition.
+feature: Get Started, Data Management, Schemas
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '248'
 ht-degree: 0%
 
 ---
@@ -32,4 +34,4 @@ Om du vill veta hur scheman passar in i ditt B2B-arbetsflöde kan du läsa [sjä
 
 Anvisningar om hur du skapar en många-till-ett-relation mellan två scheman finns i självstudiekursen om [definiera B2B-schemarelationer](../../xdm/tutorials/relationship-b2b.md).
 
-Om du använder en B2B-källanslutning kan du använda ett verktyg för att automatiskt generera nödvändiga scheman och relationerna mellan dem. Se guiden [B2B-namnutrymmen](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md) i källdokumentationen för mer information.
+Om du använder en B2B-källanslutning kan du använda ett verktyg för att automatiskt generera nödvändiga scheman och relationerna mellan dem. Se guiden på [B2B-namnutrymmen](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md) i källdokumentationen om du vill ha mer information.

@@ -1,10 +1,12 @@
 ---
 title: Källor i Real-time Customer Data Platform B2B Edition
 description: En översikt över källornas roll i Adobe Real-time Customer Data Platform B2B Edition.
+feature: Sources, Data Ingestion, Get Started, B2B
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '261'
 ht-degree: 0%
 
 ---
@@ -19,7 +21,7 @@ Med Adobe Real-time Customer Data Platform B2B Edition kan ni hämta in B2B-data
 
 Information om hur källorna passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#ingest-your-data-into-experience-platform).
 
-Se [översikt över källanslutningar](../../sources/home.md) om du vill ha mer information om de olika källtyperna i Adobe Experience Platform.
+Se [Översikt över källanslutningar](../../sources/home.md) om du vill ha mer information om de olika källtyperna i Adobe Experience Platform.
 
 >[!IMPORTANT]
 >
@@ -29,5 +31,5 @@ Följande dokument innehåller mer information om hur du använder [!DNL Marketo
 
 * Mer information om hur du ansluter [!DNL Marketo] data till plattformen, se självstudiekursen om [skapa en Marketo-källanslutning i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/marketo.md).
 * Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo]finns i dokumentationen för [B2B-namnutrymmen och scheman](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md).
-* Mer information om hur du hittar [!DNL Marketo] Munchkin-ID och generera dina autentiseringsuppgifter finns i [[!DNL Marketo] autentiseringsguide](../../sources/connectors/adobe-applications/marketo/marketo-auth.md).
+* Om du vill ha information om hur du hittar [!DNL Marketo] Munchkin-ID och generera dina autentiseringsuppgifter finns i [[!DNL Marketo] autentiseringsguide](../../sources/connectors/adobe-applications/marketo/marketo-auth.md).
 * Mer information om mappningsregler som gäller för [!DNL Marketo] datauppsättningar, se dokumentationen om [[!DNL Marketo] fältkopplingar](../../sources/connectors/adobe-applications//mapping/marketo.md).

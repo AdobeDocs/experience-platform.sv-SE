@@ -2,10 +2,12 @@
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
 title: Användargränssnittshandbok för kontoprofil
 description: Genom att använda kontoprofiler kan du använda Adobe Real-time Customer Data Platform B2B Edition för att samla kontoinformation från flera olika källor. Den här guiden innehåller information om hur du interagerar med kontoprofiler i Adobe Experience Platform användargränssnitt.
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
@@ -20,9 +22,9 @@ Med kontoprofiler kan du samla kontoinformation från flera olika källor. Denna
 
 Mer information om hur kontoprofiler skapas som en del av B2B-arbetsflödet finns i [självstudiekurs från början till slut](../b2b-tutorial.md).
 
-## Översikt över kontoprofiler {#account-profiles-overview}
+## Kontoprofiler - översikt {#account-profiles-overview}
 
-Välj **[!UICONTROL Profiles]** under [!UICONTROL Accounts] till vänster om du vill visa en översikt över kontoprofiler. Under [!UICONTROL Overview] visas en bild eller ett diagram på kontrollpanelen med widgetar på en enda startpunkt.
+Välj **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen för att visa översikten över kontoprofiler. Under [!UICONTROL Overview] visas en bild eller ett diagram på kontrollpanelen med widgetar på en enda startpunkt.
 
 ![Fliken Översikt med widgetar](images/b2b-account-profile-overview.png)
 
@@ -34,11 +36,11 @@ Läs dokumentationen på [[!UICONTROL Account Profiles]](../../dashboards/guides
 >
 > Det är bara B2B AI-administratörer som kan aktivera, inaktivera och konfigurera tjänsten lead-to-account matching. När tjänsten inaktiveras tas matchande resultat bort inom 24 timmar.
 
-Om du vill konfigurera lead till kontomatchning väljer du **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen. På **[!UICONTROL Overview]** flik, välja **[!UICONTROL Settings]** i det övre högra hörnet.
+Om du vill konfigurera lead till kontomatchning väljer du **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navigeringen. På **[!UICONTROL Overview]** flik, välja **[!UICONTROL Settings]** längst upp till höger.
 
 ![Välj inställningar](images/b2b-configuring-accounts-profile.png)
 
-The **[!UICONTROL Account settings]** öppnas. Här väljer du **[!UICONTROL Enable lead-to-account-matching]** för att aktivera funktionen. Använd listrutan för att välja **[!UICONTROL Daily]** för **[!UICONTROL Matching cadence]** inställning. Välj sedan relevant **[!UICONTROL Matching criteria]** alternativ följt av **[!UICONTROL Save]** för att bekräfta dina inställningar och gå tillbaka till **[!UICONTROL Account Profiles]** skärm.
+The **[!UICONTROL Account settings]** öppnas. Välj **[!UICONTROL Enable lead-to-account-matching]** för att aktivera funktionen. Använd listrutan för att välja **[!UICONTROL Daily]** för **[!UICONTROL Matching cadence]** inställning. Välj sedan relevant **[!UICONTROL Matching criteria]** alternativ följt av **[!UICONTROL Save]** för att bekräfta dina inställningar och gå tillbaka till **[!UICONTROL Account Profiles]** skärm.
 
 >[!NOTE]
 >
@@ -80,7 +82,7 @@ När en källa är markerad måste du nu ange **[!UICONTROL Account ID]** relate
 >
 >För Marketo konto-ID:n finns det två möjliga kontotabeller som du kan referera till. Därför måste du använda en specifik syntax för att se till att du visar rätt konto.
 >
->Den vanligaste standardsyntaxen är det konto-ID för Marketo som läggs till av `.mkto_org` (t.ex. `1234567.mkto_org`). Marketo Account-Based Marketing-kunder kan ha ytterligare värden som kan hittas med Marketo konto-ID som bifogas av `.mkto_account`. Kontakta Marketo-administratören om du är osäker på vilken syntax du ska använda.
+>Den vanligaste standardsyntaxen är det konto-ID för Marketo som läggs till av `.mkto_org` (till exempel `1234567.mkto_org`). Marketo Account-Based Marketing-kunder kan ha ytterligare värden som kan hittas med Marketo konto-ID som bifogas av `.mkto_account`. Kontakta Marketo-administratören om du är osäker på vilken syntax du ska använda.
 
 ![Val av konto-ID](images/b2b-account-browse-id.png)
 
@@ -88,11 +90,11 @@ När en källa är markerad måste du nu ange **[!UICONTROL Account ID]** relate
 
 Real-Time CDP, B2B Edition har stöd för direktsökning genom att du kan ange **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för ett konto som du vill visa. Genom att ange källnamnet och instansen direkt anger du det sammanhang som krävs för att Experience Platform ska kunna söka efter och visa korrekta kontoprofildata.
 
-Möjligheten att utföra en direktsökning är användbar under omständigheter då det inte går att ansluta direkt till data från en källa. Om din organisation till exempel har befintliga datastyrningsprinciper som förhindrar direktanslutning till CRM kan du exportera dessa data till ett molnlagringssystem och sedan importera dem till Experience Platform.
+Möjligheten att utföra en direktsökning är användbar under omständigheter då det inte går att ansluta direkt till data. Om din organisation till exempel har befintliga datastyrningsprinciper som förhindrar direktanslutning till CRM kan du exportera dessa data till ett molnlagringssystem och sedan importera dem till Experience Platform.
 
 Ett annat exempel kan vara att du utför en omvandling av data mellan den tidpunkt då de lämnar ett system och går in på plattformen. Du kan använda direktsökningsfunktionen för att skapa kontext för data (till exempel ange att det är Marketo-data, trots att det kommer från en Amazon S3-bucket) så att systemet vet var de ska sökas och hur de ska återges korrekt.
 
-Välj **[!UICONTROL Others]** från **[!UICONTROL Browse by]** nedrullningsbar listruta och ange **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för kontot som du vill visa.
+Om du vill starta en direktsökning väljer du **[!UICONTROL Others]** från **[!UICONTROL Browse by]** nedrullningsbar listruta och ange **[!UICONTROL Source name]**, **[!UICONTROL Source instance]** och **[!UICONTROL Account ID]** för kontot som du vill visa.
 
 ![Bläddra bland andra](images/b2b-account-browse-adhoc.png)
 
@@ -150,7 +152,6 @@ The **[!UICONTROL Related accounts]** -fliken innehåller information om andra k
 >
 >* En relaterad kontogrupp kan ha maximalt 30 kontoprofiler. Om fler än 30 kontoprofiler befunnits vara relaterade delas de godtyckligt i flera grupper, där var och en inte har fler än 30 medlemmar. Gruppen Relaterade konton i en kontoprofil omfattar alltid sig själv.
 >* The [!UICONTROL Related accounts] På -fliken visas för närvarande en lista med upp till 25 relaterade konton som är kopplade till kontot som du bläddrar i. Detta är en begränsning som kommer att åtgärdas i en framtida uppdatering. Trots den här gränssnittsbegränsningen används alla profiler för målgruppsanpassning när du använder relaterade konton i segmentdefinitioner för grupper med 30 relaterade kontoprofiler.
-
 
 Varje relaterat konto innehåller information om t.ex. kontoprofils-ID och namn, kontokällnyckeln och ytterligare information om hemsida, adress, överordnat konto, telefon, bransch och årsomsättning.
 

@@ -1,9 +1,10 @@
 ---
-keywords: segmentering, segmentering rtcdp;realtidssegmentering av kunddataplattform
+keywords: segmentering; segmentering rtcdp;kunddataplattformssegmentering i realtid
 title: Segmenteringstjänst i Real-time Customer Data Platform
 description: Adobe Real-Time Customer Dat Platformå bygger på Adobe Experience Platform och utnyttjar många av Experience Platform tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
+feature: Get Started, Audiences, Segments
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '537'
 ht-degree: 0%
@@ -31,7 +32,7 @@ Med Customer AI, som ingår i Real-time Customer Data Platform, kan ni generera 
 Med hjälp av inflytelserika faktorer kan kundens AI tala om för er vad en kund kan tänkas göra och varför. Dessutom kan ni dra nytta av kundernas AI-prognoser och insikter för att personalisera kundupplevelser genom att leverera de lämpligaste erbjudandena och budskapen. Kundens AI kan hjälpa till med:
 
 * Erbjuda högkvalitativa modeller för kundbenägenhet för starkare segmentering och målinriktning.
-* Förstå de inflytelserika faktorerna och sannolikheten bakom vissa kundbeteenden.
+* Förstå inflytelserika faktorer och sannolikheten bakom vissa kundbeteenden.
 * Erbjuda anpassningsbara alternativ för företagets unika användningsfall och data.
 * Förbättra kundprofilen i realtid med kundbenägenhetspoäng som bortfall och konvertering.
 * Förbättra kundprofiler med inflytelserika faktorer för benägenhetspoäng.
@@ -43,9 +44,9 @@ Kundens AI finns i **[!UICONTROL Services]** flik under **[!UICONTROL Adobe serv
 
 ### Komma igång med kundens AI
 
-För att komma igång med kundens AI måste du följa [självstudiekurs om datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indataschemat baserat på ditt användningsfall. Nästa steg är att du måste [konfigurera en AI-instans för kund](../../intelligent-services/customer-ai/user-guide/configure.md). När du har konfigurerat en instans genereras en modell där du kan [visa era insikter och resultat](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa segment för datadriven aktivering.
+För att komma igång med kundens AI måste du följa [självstudiekurs om datapreperation](../../intelligent-services/data-preparation.md) och konfigurera indataschemat baserat på ditt användningsfall. Nästa steg är att [konfigurera en AI-instans för kund](../../intelligent-services/customer-ai/user-guide/configure.md). När du har konfigurerat en instans genereras en modell där du kan [visa era insikter och resultat](../../intelligent-services/customer-ai/user-guide/discover-insights.md). Med hjälp av data som genererats från din modell kan du skapa segment för datadriven aktivering.
 
-Om du vill veta mer om kundens AI kan du börja med att besöka [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
+Om du vill veta mer om kundens AI börjar du med att besöka [Översikt över AI för kunder](../../intelligent-services/customer-ai/overview.md). I följande video visas dessutom hur kundens AI förbättrar kundprofiler med AI-baserade egenskaper och stärker kundsegmenterings- och målinriktningsarbetet.
 
 >[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)
 

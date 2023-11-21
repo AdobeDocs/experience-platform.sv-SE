@@ -2,8 +2,9 @@
 keywords: identiteter rtcdp;rtcdp identiteter;cdp-identiteter i realtid
 title: Identiteter i Real-time Customer Data Platform
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system.
+feature: Get Started, Identities
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 # Översikt över identiteter
 
-Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteenden genom att förena identiteter på olika enheter och system. Normalt interagerar era kunder med ert varumärke i flera kanaler, vilket kan innebära att ni surfar på er webbplats online, gör ett köp i butiken, går med i ert lojalitetsprogram eller ringer en supportavdelning för att nämna några. I de olika systemen har en identitet skapats för kunden, och [!DNL Identity Service] gör det möjligt att sammanföra dessa identiteter för att se hela bilden.
+Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteenden genom att förena identiteter på olika enheter och system. Normalt interagerar era kunder med ert varumärke i flera kanaler, vilket kan innebära att ni surfar på er webbplats online, gör ett köp i butiken, går med i ert lojalitetsprogram eller ringer en supportavdelning för att nämna några. I de olika systemen finns det en identitet som skapats för kunden, och [!DNL Identity Service] gör det möjligt att sammanföra dessa identiteter för att se hela bilden.
 
 I stället för att nu ha fem separata kunder som interagerar med ert varumärke i fem olika kanaler kan ni se att detta är samma kund, och ni kan se till att de får en enhetlig, personaliserad och relevant upplevelse genom varje interaktion. Efterhand som mer information om kunden (till exempel en anonym webbläsare på er webbplats bestämmer sig för att registrera sig för ett konto och logga in) sammanfogas informationen och kundens bild blir allt tydligare.
 

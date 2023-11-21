@@ -1,9 +1,10 @@
 ---
 keywords: rtcdp-profil;profiler rtcdp;rtcdp-identiteter;rtcdp-sammanslagningsprinciper;kundprofil i realtid
 title: Förstå kundprofil i realtid i Real-Time CDP
-description: Läs om hur Adobe Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med hjälp av kundprofilen i realtid.
+description: Läs om hur Adobe Real-time Customer Data Platform gör det möjligt för er att skapa samordnade, enhetliga och relevanta kundupplevelser med kundprofilen i realtid.
+feature: Get Started, Profiles
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -22,7 +23,7 @@ Real-Time CDP är byggt på Experience Platform och utnyttjar många av de vikti
 
 ## Profilförbättringar för Real-Time CDP, B2B Edition
 
-Förutom de profilfunktioner som stöds av Real-Time CDP kan du använda Real-Time CDP, B2B Edition för att bläddra bland viktig information som är kopplad till en individ, som ett konto och möjligheter. Om du vill veta mer om profilförbättringar för Real-Time CDP, B2B Edition börjar du med att läsa [bläddringsguide för profiler](profile-browse.md).
+Förutom de profilfunktioner som stöds av Real-Time CDP kan du använda Real-Time CDP, B2B Edition för att bläddra bland viktig information som är kopplad till en individ, som ett konto och möjligheter. Läs mer om profilförbättringarna för Real-Time CDP, B2B Edition. Börja med att läsa [bläddringsguide för profiler](profile-browse.md).
 
 ## Identiteter och identitetsnamnutrymmen
 

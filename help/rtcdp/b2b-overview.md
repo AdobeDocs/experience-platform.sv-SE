@@ -2,10 +2,12 @@
 keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;b2b;cdp;kundens AI
 title: Real-Time CDP B2B Edition - översikt
 description: Översikt över Real-Time Customer Data Platform B2B Edition-konto
+feature: Get Started, B2B
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '1082'
+source-wordcount: '1093'
 ht-degree: 1%
 
 ---
@@ -24,7 +26,7 @@ Med Real-Time CDP B2B Edition kan du
 
 Mer omfattande information om förbättringarna för Real-Time CDP B2B Edition finns i avsnitten nedan.
 
-## XDM
+## XML
 
 Real-Time CDP B2B Edition innehåller flera nya XDM-schemaklasser, fältgrupper och relationstyper för att hämta in och strukturera data specifikt för B2B-ändamål. Se översikten på [XDM i Real-Time CDP B2B Edition](./schemas/b2b.md) för en beskrivning av alla dessa förbättringar.
 
@@ -51,7 +53,7 @@ Matchande identifierare används för att länka samman och sammanfoga kontopost
 
 ## Profiler och segmentering
 
-När Real-Time CDP B2B Edition har inhämtat data och åtgärdat identiteter som rör människor, företag, attribut och beteenden används dessa data för att skapa profiler. Dessa profiler kan sedan segmenteras i webbläsbara målgrupper som sedan kan aktiveras för olika målgrupper.
+När Real-Time CDP B2B Edition har inhämtat data och åtgärdat identiteter som är relaterade till människor, företag, attribut och beteenden används dessa data för att skapa profiler. Dessa profiler kan sedan segmenteras i webbläsbara målgrupper som sedan kan aktiveras för olika målgrupper.
 
 När det implementeras korrekt spåras personer som använder unika primära identifierare i stället för attribut som kan ändras, till exempel e-postadresser. Det innebär att när någon ändrar jobb följer systemet dem fortfarande. Personen är fortfarande samma enhet, men i stället är de kopplade till ett nytt konto. Denna inbyggda funktionalitet är en utmärkt vektor för att expandera till nya konton eftersom systemet följer dessa personer som individer, inklusive alla deras attribut och beteenden.
 
@@ -65,13 +67,13 @@ Plattformen gör det möjligt att importera data från externa källor samtidigt
 
 Se [i Real-Time CDP B2B Edition](./sources/b2b.md) om du vill ha mer information om Marketo och hur man lägger in B2B-data i Platform.
 
-## B2B-destinationer
+## B2B-mål
 
 Experience Platform-mål som Google Customer Match, Facebook, LinkedIn, Marketo Engage, Amazon S3, Google Display &amp; Video 360, Google Ads och Google Ad Manager är tillgängliga och stöds fullt ut av Real-Time CDP B2B Edition. Marketo Engage-målet strömmar även data om segmentmedlemskap från Platform och gör dem tillgängliga som listor i Marketo.
 
 Se översikten på [Marketo Engage destination](../destinations/catalog/adobe/marketo-engage.md) för mer information.
 
-För företag med mer än en CRM kan Real-Time CDP B2B Edition konfigurera målanslutningar till separata instanser av Marketo eller CRM. Om det behövs kan du konfigurera målanslutningar för varje instans och skicka målgrupper till var och en av CRM-instanserna oberoende av varandra.
+För företag med mer än en CRM kan Real-Time CDP B2B Edition konfigurera målanslutningar till separata instanser av Marketo eller CRM. Om det behövs kan du konfigurera målanslutningar för varje instans och skicka målgrupper till var och en av CRM-instanserna separat.
 
 ## Nästa steg
 
@@ -81,7 +83,7 @@ Följande dokumentation hjälper dig att komma igång:
 
 * [Ett exempel på hur man använder Real-Time CDP B2B Edition](./b2b-use-case.md)
 * [En komplett självstudiekurs för Real-time Customer Data Platform B2B Edition](./b2b-tutorial.md)
-* [Så här importerar du data](./sources/b2b.md)
+* [Importera data](./sources/b2b.md)
 * [Åtkomst till profiler](./profile/profile-overview.md)
 * [Scheman i Real-time Customer Data Platform B2B Edition](./schemas/b2b.md)
 * [Så här skapar du segment](./segmentation/b2b.md)

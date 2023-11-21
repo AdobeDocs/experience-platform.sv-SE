@@ -2,11 +2,13 @@
 title: Relaterade konton i Real-Time CDP B2B Edition
 type: Documentation
 description: En översikt och mer information om kontofunktionen i Experience Platform Real-Time CDP B2B.
+feature: Get Started, Profiles, B2B
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: 5d1488b26391d8ac758a2968194a6d070ad5b561
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '424'
-ht-degree: 4%
+source-wordcount: '435'
+ht-degree: 3%
 
 ---
 
@@ -18,11 +20,11 @@ B2B-företag har ofta sin kundinformation lagrad i flera system, där alla bara 
 
 | ID | Namn | Webbplats | Bransch | Läge | Telefon | Har öppen affärsmöjlighet med belopp > `$1 million` |
 |---|---|---|---|---|---|---|
-| 1 | Acme | acme.com | Mjukvara | CA | (408)536-6000 |  |
-| 2 | Acme | acm.com | Mjukvara | CA | 4085366000 | x |
-| 3 | Acme Inc |  |  | CA | (408)5366000 |  |
+| 1 | Acme | acme.com | Programvara | CA | (408)536-6000 |   |
+| 2 | Acme | acm.com | Programvara | CA | 4085366000 | x |
+| 3 | Acme Inc |   |   | CA | (408)5366000 |   |
 | 4 | Acme Consulting Service | `http://www.acme.com/consulting` | Technology Consulting | NY | (212)471-0904 | x |
-| 5 | Acme IT |  |  | CA |  |  |
+| 5 | Acme IT |   |   | CA |   |   |
 
 {style="table-layout:auto"}
 

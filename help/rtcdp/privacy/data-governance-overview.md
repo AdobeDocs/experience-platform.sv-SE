@@ -2,8 +2,9 @@
 keywords: datastyrning rtcdp;rtcdp datastyrning;datastyrning i realtid för kunddataprofil
 title: Datastyrning - översikt
 description: Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning.
+feature: Get Started, Data Governance
 exl-id: eb501d85-cabd-4667-a1cd-2210ec83fb71
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 1%
@@ -19,7 +20,7 @@ Med Adobe Experience Platform Data Governance kan ni hantera kunddata och säker
 Real-Time CDP är byggt på Adobe Experience Platform och därför omfattas merparten av datastyrningsfunktionerna i [!DNL Experience Platform] dokumentation. Detta dokument är avsett att komplettera [Datastyrning - översikt](../../data-governance/home.md) for [!DNL Experience Platform]och sammanfattar de styrningsfunktioner som finns i Real-Time CDP. Följande ämnen behandlas:
 
 * [Använd användningsetiketter på dina data](#labels)
-* [Hantera dataanvändningsprinciper](#policies)
+* [Hantera dataanvändningspolicyer](#policies)
 * [Klara regelefterlevnaden](#enforce)
 
 ## Använd användningsetiketter på dina data {#labels}
@@ -40,7 +41,7 @@ Genom att definiera marknadsföringsåtgärder för destinationer kan ni se till
 
 Marknadsföringsåtgärder kan bara väljas när du ställer in ett mål för första gången. Beroende på vilken typ av mål du arbetar med visas möjligheten att konfigurera marknadsföringsåtgärder vid olika tillfällen i konfigurationsarbetsflödet. Se [destinationsdokumentation](../destinations/overview.md) för steg om hur du konfigurerar ditt särskilda mål.
 
-## Hantera dataanvändningsprinciper {#policies}
+## Hantera dataanvändningspolicyer {#policies}
 
 För att dataanvändningsetiketter effektivt ska kunna stödja regelefterlevnad måste dataanvändningsprinciper definieras och aktiveras. Dataanvändningspolicyer är regler som beskriver den typ av marknadsföringsåtgärder som du tillåts eller begränsas från att utföra på data inom Real-Time CDP. Se avsnittet &quot;Dataanvändningsprinciper&quot; i [!DNL Experience Platform] [Datastyrning - översikt](../../data-governance/home.md) för mer information.
 

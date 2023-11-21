@@ -1,7 +1,8 @@
 ---
 title: Återannonsering utanför webbplatsen av oautentiserade besökare
 description: Lär dig hur du omdirigerar oautentiserade användare genom att använda ID:n för potentiella kunder för att skapa ett beräknat attribut som kan användas för att skapa en publik med oautentiserade användare.
-source-git-commit: 99516d0923e61c8c81f1933076f2d3e73b55544c
+feature: Use Cases, Customer Acquisition
+source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
 workflow-type: tm+mt
 source-wordcount: '1344'
 ht-degree: 0%

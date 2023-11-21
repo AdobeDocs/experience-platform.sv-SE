@@ -2,10 +2,12 @@
 title: Prediktiv lead- och kontobedömning i Real-Time CDP B2B
 type: Documentation
 description: En översikt och mer information om den prediktiva lead- och kontopoängsfunktionen i Experience Platform CDP B2B.
+feature: Profiles, B2B
+badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: d3afbabb-005d-4537-831a-857c88043759
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '866'
 ht-degree: 0%
 
 ---
@@ -78,7 +80,7 @@ Flera modeller stöds, med följande fasta begränsningar:
 
 Datakvalitetskraven är följande:
 
-* Helst finns det två års senaste uppgifter för utbildningsändamål.
+* Helst finns det två års senaste data för utbildningsändamål.
 * Minimilängden data som krävs är sex månader plus förutsägelsefönstret.
 * För varje förutsägelsemål krävs minst 10 kvalificerade konverteringshändelser.
 
@@ -96,7 +98,7 @@ Efter jobbkörningen sparas resultaten i en ny systemdatauppsättning för varje
 | Procent | Det här värdet ger information om en profils prestanda i förhållande till andra profiler med liknande resultat. Percentiler varierar mellan 1 och 100. |
 | Modelltyp | Den valda modelltypen, anger om det är en person eller ett kontonummer. |
 | Resultatdatum | Det datum som poängsättningen inträffade. |
-| Influensafaktorer | Förväntade orsaker till varför en profil kan konverteras. Faktorer består av följande attribut:<ul><li>Kod: Profilen eller beteendeattributet som positivt påverkar en profils förväntade poäng.</li><li>Värde: Värdet på profilen eller beteendeattributet.</li><li>Prioritet: Anger den vikt som profilen eller beteendeattributet har på det förväntade poängvärdet (låg, medel, hög).</li></ul> |
+| Influensafaktorer | Förväntade orsaker till varför en profil kan konverteras. Faktorer består av följande attribut:<ul><li>Kod: Profilen eller beteendeattributet som positivt påverkar en profils förväntade poäng.</li><li>Värde: Värdet för profilen eller beteendeattributet.</li><li>Viktigt: Anger vilken vikt profilen eller beteendeattributet har på det förväntade poängvärdet (low, medium, high).</li></ul> |
 
 ### Visa kundprofilpoäng
 

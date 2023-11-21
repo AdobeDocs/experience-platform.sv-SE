@@ -2,8 +2,9 @@
 keywords: datastyrning rtcdp;rtcdp datastyrning;kunddataprofildatastyrning i realtid;sekretess rtcdp;rtcdp sekretess
 title: Integritet i Real-time Customer Data Platform
 description: Med Adobe Real-time Customer Data Platform kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
+feature: Get Started, Privacy
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Adobe Real-Time Customer Data Platform] ([!DNL Real-Time CDP]) hjälper marknadsförare att samla data från flera olika företagssystem så att de bättre kan identifiera, förstå och engagera sina kunder. Adobe har konsumentdatasekretess som en grundläggande designprincip och tillhandahåller olika kontroller för att hjälpa marknadsförarna att hantera sina kunders datasekretess.
 
-Huvuddelen av [!DNL Real-Time CDP] funktioner drivs av Adobe Experience Platform. Det här dokumentet innehåller information om de olika tekniker för integritetsförbättring som stöds av [!DNL Real-Time CDP], med länkar till [!DNL Experience Platform] mer information.
+Majoriteten av [!DNL Real-Time CDP] funktioner drivs av Adobe Experience Platform. Det här dokumentet innehåller information om de olika tekniker för integritetsförbättring som stöds av [!DNL Real-Time CDP], med länkar till [!DNL Experience Platform] mer information.
 
 ## Klara förfrågningar om kundåtkomst och -borttagning
 

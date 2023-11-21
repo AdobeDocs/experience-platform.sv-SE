@@ -2,8 +2,9 @@
 keywords: visa profiler rtcdp;rtcdp profilvy;rtcdp-profiler
 title: Bläddra bland profiler i Real-time Customer Data Platform
 description: Med Adobe Real-time Customer Data Platform kan du bläddra bland kundprofildata i realtid med Adobe Experience Platform användargränssnitt.
+feature: Get Started, Profiles
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: db57fa753a3980dca671d476521f9849147880f1
 workflow-type: tm+mt
 source-wordcount: '516'
 ht-degree: 0%
