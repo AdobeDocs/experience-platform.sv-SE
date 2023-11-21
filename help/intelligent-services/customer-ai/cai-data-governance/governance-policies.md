@@ -4,14 +4,14 @@ feature: Customer AI
 title: Styrningsprinciper för AI för kunder
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt.
 exl-id: be3eca3a-0ea1-4b84-9454-675a4f9ac71e
-source-git-commit: eba23d39ade399f7df058da103fbd54883dc5b65
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
 source-wordcount: '189'
 ht-degree: 0%
 
 ---
 
-# Styrningspolitik inom Attribution AI
+# Styrningspolicyer i kundens AI
 
 När du är klar med arbetsflödet för att skapa en modell och skicka in modellens konfiguration, [policytillämpning](/help/data-governance/enforcement/auto-enforcement.md) kontrollerar om det finns några överträdelser. Om en principöverträdelse inträffar visas en portfölj som anger att en eller flera profiler har överträtts. Detta är för att säkerställa att era dataåtgärder och marknadsföringsåtgärder inom plattformen är kompatibla med dataanvändningsprinciper.
 

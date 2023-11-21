@@ -3,14 +3,14 @@ keywords: insikter;kundinformation;kundinsikter;AAI-frågetjänst;kundinformatio
 title: Kundhanterade nycklar i kundens AI.
 description: Lär dig hur du ställer in kundhanterade nycklar för kundens AI.
 exl-id: 12746c5c-094a-4d49-8d3a-7641fe0ec02a
-source-git-commit: a81c3f220203d65ef810a92896edcfc489a0327a
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '173'
+source-wordcount: '176'
 ht-degree: 0%
 
 ---
 
-# Kundhanterade nycklar
+# Kundhanterade nycklar i kundens AI
 
 Kunds-AI ger möjlighet att [Hälsovårdssköld](https://www.adobe.com/trust/compliance/hipaa-ready.html) och kunder som använder skölden för skydd av privatlivet och säkerhet för att använda Azure Customer Managed Keys (CMK) som ska användas på dina kunds AI-data. Konfigurationsprocessen är densamma som [Adobe Experience Platform CMK-inställningar](../../../landing/governance-privacy-security/customer-managed-keys/overview.md) och du kan följa de steg som beskrivs däri.
 

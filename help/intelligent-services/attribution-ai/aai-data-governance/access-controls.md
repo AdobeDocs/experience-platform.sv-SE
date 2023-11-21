@@ -5,14 +5,14 @@ feature: Attribution AI
 title: Åtkomstkontroll för Attribution AI
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll för Attribution AI.
 exl-id: 3ed672bf-1fa6-4893-99e0-afc2b2179543
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '455'
-ht-degree: 1%
+source-wordcount: '458'
+ht-degree: 0%
 
 ---
 
-# Åtkomstkontroll
+# Åtkomstkontroll i Attribution AI
 
 Åtkomstkontroll för Attribution AI tillhandahålls via Adobe Experience Platform i [Adobe Admin Console](https://adminconsole.adobe.com/). Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 

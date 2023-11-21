@@ -5,14 +5,14 @@ feature: Customer AI
 title: Datastyrning i kundens AI
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
 exl-id: de0836a4-7bc2-4f9c-95a9-c01dd9e2b03f
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '300'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
 
-# Kundens AI och datastyrning
+# Kundens AI och datastyrning i kundens AI
 
 Alla datastyrningsrelaterade inställningar i Kundens AI ärvs från Adobe Experience Platform.
 

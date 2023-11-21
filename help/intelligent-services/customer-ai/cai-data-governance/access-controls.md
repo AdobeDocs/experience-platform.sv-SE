@@ -5,14 +5,14 @@ feature: Customer AI
 title: Åtkomstkontroll för kundens AI
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll för kundens AI.
 exl-id: 02e3b6a4-304a-4ac4-b07c-010531101feb
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
 
-# Attributbaserad åtkomstkontroll
+# Attributbaserad åtkomstkontroll i kundens AI
 
 >[!IMPORTANT]
 >
@@ -24,7 +24,7 @@ Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model
 
 Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas tillgång till både känsliga personuppgifter (SPD) och personligt identifierbar information (PII) i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
 
-På grund av den attributbaserade åtkomstkontrollen skulle vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa AI-tjänstmodeller. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
+På grund av den attributbaserade åtkomstkontrollen skulle vissa fält och funktioner ha begränsad åtkomst och vara otillgängliga för vissa AI-tjänstmodeller för kunder. Exempel: &quot;Identitet&quot;, &quot;Scores Definition&quot; och &quot;Clone&quot;.
 
 ![Kundens AI-arbetsyta med begränsade fält i servicemodellens resultat markerade.](../images/user-guide/unavailable-functionalities.png)
 
@@ -40,7 +40,7 @@ När du har skapat en modell med begränsad information och fortsätter till **[
 
 ![Kundens AI-arbetsyta med begränsade fält i servicemodellens resultat markerade.](../images/user-guide/information-not-displayed-save-and-exit.png)
 
-När du använder åtkomstkontroll **Visa kund-AI** och **Hantera kund-AI** ger åtkomst till olika funktioner i Customer AI. The **Hantera kund-AI** behörighet ger dig **skapa**,**uppdatera**, **delete**, **enable**, eller **disable** en modell **Visa kund-AI** gör att du kan läsa eller visa den. The **skapa**, **uppdatera** och **delete** åtgärder registreras av granskningsloggar.
+När du använder åtkomstkontroll **Visa kund-AI** och **Hantera kund-AI** ger åtkomst till olika funktioner i Customer AI. The **Hantera kund-AI** behörighet ger dig **skapa**,**uppdatera**, **delete**, **enable**, eller **disable** en modell under **Visa kund-AI** gör att du kan läsa eller visa den. The **skapa**, **uppdatera** och **delete** åtgärder registreras av granskningsloggar.
 
 Läs dokumentationen för att lära dig mer [tilldela behörigheter för åtkomstkontroll](../../../access-control/home.md) eller hur [använda granskningsloggar för att övervaka åtkomst och aktivitet](../../../landing/governance-privacy-security/audit-logs/overview.md).
 

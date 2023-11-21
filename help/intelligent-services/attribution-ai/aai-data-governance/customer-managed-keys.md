@@ -3,14 +3,14 @@ keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribue
 title: Kundhanterade nycklar
 description: Lär dig hur du ställer in kundhanterade nycklar för Attribution AI.
 exl-id: c00bf1a0-cc4c-4a34-83f1-d93829576866
-source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '168'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
 
-# Kundhanterade nycklar
+# Kundhanterade nycklar i Attribution AI
 
 Attribution AI har alternativ för [Hälsovårdssköld](https://www.adobe.com/trust/compliance/hipaa-ready.html) och kunder som använder skölden för skydd av privatlivet och säkerhet för att använda Azure Customer Managed Keys (CMK) som ska användas på dina Attribution AI. Konfigurationsprocessen är densamma som [Adobe Experience Platform CMK-inställningar](../../../landing/governance-privacy-security/customer-managed-keys/overview.md) och du kan följa de steg som beskrivs däri.
 

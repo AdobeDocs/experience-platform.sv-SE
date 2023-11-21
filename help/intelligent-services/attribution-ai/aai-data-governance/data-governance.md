@@ -5,14 +5,14 @@ feature: Attribution AI
 title: Datastyrning inom Attribution AI
 description: Adobe Experience Platform tillhandahåller flera tjänster och verktyg som gör att du kan kontrollera dina insamlade upplevelsedata på ett säkert sätt för att följa din affärspraxis, juridiska skyldigheter och utvecklingsprocess.
 exl-id: 70b04061-0cb0-4b3e-9dfa-d49cc0ef1be0
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
 
-# Attribution AI och datastyrning
+# Attribution AI och datastyrning inom Attribution AI
 
 Alla datastyrningsrelaterade inställningar i Attribution AI ärvs från Adobe Experience Platform.
 

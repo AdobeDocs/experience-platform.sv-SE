@@ -3,14 +3,14 @@ keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribue
 title: Granskningsloggar i Attribution AI Översikt
 description: Lär dig hur du visar och hanterar granskningsloggar i Attribution AI.
 exl-id: 83c55dbc-f03d-4bda-ae07-68b7914483c8
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
 workflow-type: tm+mt
-source-wordcount: '268'
+source-wordcount: '271'
 ht-degree: 0%
 
 ---
 
-# Granskningsloggar
+# Granskningsloggar i Attribution AI
 
 För att öka insynen i och synligheten för aktiviteter som utförs i systemet, hämtas användaraktiviteten i arbetsflödet nu in i granskningsloggar för att förstå användardrivna ändringar av Attribution AI. Loggarna utgör en verifieringskedja som kan hjälpa till med felsökningsproblem och hjälper ditt företag att effektivt följa företagets policyer för datahantering och lagstadgade krav.  Om ni omfattas av HIPAA (Health Insurance Portability and Accounability Act) och skapar, tar emot, underhåller eller överför tillåtna känsliga personuppgifter via Attribution AI eller kundens AI är ni ansvariga för att genomföra en BAA med Adobe och licensiera vårdsköld.
 
