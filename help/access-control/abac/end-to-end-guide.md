@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 2b3c4a7aed804a1059708a698f3ba5edfb007926
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1669'
 ht-degree: 0%
 
 ---
 
 # Attributbaserad åtkomstkontroll från början till slut
 
-Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger kunder med flera varumärken och integritet större flexibilitet när det gäller att hantera användaråtkomst. Åtkomst till enskilda objekt, t.ex. schemafält och segment, kan beviljas/nekas med profiler som baseras på objektets attribut och roll. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+Använd attributbaserad åtkomstkontroll på Adobe Experience Platform för att ge dig själv och andra kunder som är medvetna om flervarumärkets integritet större flexibilitet när det gäller att hantera användarnas åtkomst. Åtkomst till enskilda objekt, t.ex. schemafält och segment, kan beviljas med profiler som baseras på objektets attribut och roll. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
 
 Med den här funktionen kan du kategorisera schemafält, segment och så vidare med etiketter som definierar användningsområde för organisation eller data. Du kan använda samma etiketter på resor, erbjudanden och andra objekt i Adobe Journey Optimizer. Samtidigt kan administratörer definiera åtkomstprinciper runt XDM-schemafält (Experience Data Model) och bättre hantera vilka användare och grupper (interna, externa eller externa användare) som har åtkomst till dessa fält.
 

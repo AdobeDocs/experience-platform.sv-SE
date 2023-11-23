@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: ded4df4062197fb69b54b71ab19fa1684ce17a58
+source-git-commit: 866e84e5f7fe5df7444c83756a893964dcd3ed3d
 workflow-type: tm+mt
 source-wordcount: '1528'
 ht-degree: 1%
@@ -85,8 +85,8 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Alerts] | [!UICONTROL Manage Alerts] | Åtkomst för att läsa, skapa, redigera och ta bort varningshistorik. |
 | [!DNL Computed Attributes] | [!UICONTROL View Computed attributes] | Skrivskyddad åtkomst för fliken, lagret och informationen för beräknade attribut. |
 | [!DNL Computed Attributes] | [!UICONTROL Manage Computed attributes] | Åtkomst för att läsa, skapa, ta bort utkast och inaktivera beräknade attribut. |
-| [!DNL Data Hygiene] | [!UICONTROL View Data Hygiene] | Skrivskyddad åtkomst för datahygien. |
-| [!DNL Data Hygiene] | [!UICONTROL Manage Data Hygiene] | Åtkomst att läsa, skapa, redigera och ta bort datahygien. |
+| [!DNL Data Lifecycle] | [!UICONTROL View Data Lifecycle] | Skrivskyddad åtkomst för datalängd. |
+| [!DNL Data Lifecycle] | [!UICONTROL Manage Data Lifecycle] | Tillgång till att läsa, skapa, redigera och ta bort livscykeln för data. |
 | [!DNL Data Modeling] | [!UICONTROL Manage Schemas] | Åtkomst för att läsa, skapa, redigera och ta bort scheman och relaterade resurser. |
 | [!DNL Data Modeling] | [!UICONTROL View Schemas] | Skrivskyddad åtkomst till scheman och relaterade resurser. |
 | [!DNL Data Modeling] | [!UICONTROL Manage Relationships] | Åtkomst för att läsa, skapa, redigera och ta bort schemarelationer. |
@@ -123,7 +123,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | Tillgång till att skapa, acceptera och avböja partnerhandskakningar för att ansluta två organisationer och aktivera [!DNL Segment Match] flöden. |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share] | Tillgång till att läsa, skapa, redigera och publicera [!DNL Segment Match] flöden med aktiva partners. |
 | [!DNL Data Science Workspace] | [!UICONTROL Manage Data Science Workspace] | Åtkomst att läsa, skapa, redigera och ta bort i [!DNL Data Science Workspace]. |
-| Datastyrning | [!UICONTROL Apply Data Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |
+| Datastyrning | [!UICONTROL Manage Usage Labels] | Åtkomst att läsa, skapa och ta bort användningsetiketter. |
 | Datastyrning | [!UICONTROL Manage Data Usage Policies] | Åtkomst att läsa, skapa, redigera och ta bort dataanvändningsprinciper. |
 | Datastyrning | [!UICONTROL View Data Usage Policies] | Skrivskyddad åtkomst till dataanvändningsprinciper som tillhör din organisation. |
 | Datastyrning | [!UICONTROL View User Activity Log] | Skrivskyddad åtkomst till inspelad vy [granskningsloggar](../landing/governance-privacy-security/audit-logs/overview.md) av plattformsaktiviteter. |
