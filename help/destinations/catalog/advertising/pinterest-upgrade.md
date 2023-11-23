@@ -3,7 +3,8 @@ title: Pinterest målmigrering till nytt API. Kundåtgärd krävs.
 description: Pinterest har ersatt v4-annonserings-API:t som används av Pinterest-målet i Real-Time CDP. Förstå era åtgärdsobjekt för att smidigt gå över till det nya API:t utan avbrott i era Pinterest-kampanjer.
 hide: true
 hidefromtoc: true
-source-git-commit: 57097b785da3b516b5ce6670c0a376bd1d0fe479
+exl-id: c965235c-4208-4c28-9ac5-eb4c0061515d
+source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 0%

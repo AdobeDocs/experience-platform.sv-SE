@@ -1,13 +1,13 @@
 ---
 title: Använda sidhändelser uppifrån och ned
 description: I den här artikeln beskrivs hur du använder de övre och nedre delarna av sidhändelser i Web SDK.
-source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
+exl-id: 43c6d53a-6bf9-45f8-b001-d148adaff829
+source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
 workflow-type: tm+mt
 source-wordcount: '806'
 ht-degree: 0%
 
 ---
-
 
 # Använda sidhändelser i början och slutet av Web SDK
 
