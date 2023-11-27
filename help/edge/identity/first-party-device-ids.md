@@ -2,9 +2,9 @@
 title: Första parts enhets-ID i Platform Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ffcd428f84a4dcbbc95560cb4da5fd1c6d858a28
 workflow-type: tm+mt
-source-wordcount: '1772'
+source-wordcount: '1779'
 ht-degree: 0%
 
 ---
@@ -210,6 +210,10 @@ Om du migrerar till att använda FPID:n från en tidigare implementering kan det
 För att illustrera denna process bör du överväga ett scenario där en kund som tidigare besökt er webbplats deltar och vilken inverkan en FPID-migrering skulle ha på hur kunden identifieras i Adobe.
 
 ![Bild som visar hur en kunds ID-värden uppdateras mellan besök efter migrering till FPID:n](../assets/identity/tracking/visits.png)
+
+>[!IMPORTANT]
+>
+>The `ECID` cookie prioriteras alltid framför `FPID`.
 
 | Gå in på | Beskrivning |
 | --- | --- |
