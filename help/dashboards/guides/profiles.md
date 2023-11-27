@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
+source-git-commit: 57f4b365f510935f75f3ef92d71d66fe255269b4
 workflow-type: tm+mt
-source-wordcount: '4040'
+source-wordcount: '4571'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,81 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 The [!UICONTROL Browse] Med -fliken kan du söka efter och visa de skrivskyddade profiler som är inkapslade i din organisation. Härifrån kan du se viktig information som hör till profilen om deras inställningar, tidigare händelser, interaktioner och målgrupper.
 
-Mer information om profilvisningsfunktionerna i plattformsgränssnittet finns i dokumentationen om [webbläsarprofiler i Adobe Real-time Customer Data Platform](../../rtcdp/profile/profile-browse.md).
+## Profilinformation {#profile-details}
+
+Öppna [!UICONTROL Profiles] [!UICONTROL Detail] arbetsyta väljer du en [!UICONTROL Profile ID] från listan.
+
+![Fliken Profiler Bläddra med ett profil-ID markerat.](../images/profiles/profile-id.png)
+
+The [!UICONTROL Profiles] [!UICONTROL Detail] på arbetsytan visas flera förkonfigurerade widgetar som förmedlar information som är specifik för den profilen. Med den här informationen kan du snabbt förstå viktiga attribut för profilen. Du kan också anpassa [!UICONTROL Profiles] [!UICONTROL Detail] genom att skapa egna widgetar. Se avsnittet om [lägga till widgetar](#add-widgets) för mer information.
+
+![The [!UICONTROL Profiles] [!UICONTROL Detail] arbetsytan med [!UICONTROL Detail] markerad flik.](../images/profiles/profile-details-workspace.png)
+
+### Profilinformationswidgetar {#widgets}
+
+De förkonfigurerade profilinformationswidgetarna är följande:
+
+#### Kundprofil {#customer-profile}
+
+The [!UICONTROL Customer profile] widgeten visar för- och efternamnet för den användare som är associerad med profilen, samt deras [!UICONTROL Profile ID]. Ett profil-ID är en automatiskt genererad identifierare som är associerad med en identitetstyp och representerar en profil. Mer information om identiteter och identitetsnamnutrymmen finns i [identiteter, översikt](../../rtcdp/profile/identities-overview.md).
+
+![Widgeten Kundprofil.](../images/profiles/customer-profile.png)
+
+#### Grundläggande attribut {#basic-attributes}
+
+The [!UICONTROL Basic attributes] widgeten visar de vanligaste attributen som används för att definiera en enskild profil.
+
+![Widgeten Grundläggande attribut.](../images/profiles/basic-attributes.png)
+
+#### Länkade identiteter {#linked-identities}
+
+The [!UICONTROL Linked identities] widgeten visar alla andra identiteter som är associerade med profilen.
+
+Om du vill visa profilens identitetsinformation mer ingående och navigera till [!UICONTROL Identities] arbetsyta, välja **[!UICONTROL View identity graph]**.
+
+![Widgeten Länkade identiteter.](../images/profiles/linked-identities.png)
+
+#### Kanalinställningar {#channel-preferences}
+
+The [!UICONTROL Channel preferences] widgeten visar de kommunikationskanaler som användaren har godkänt för att ta emot kommunikation från. En bock markerar varje kanal som användaren har godkänt för att ta emot kommunikation från.
+
+<!-- image needs a blue tick added below -->
+
+![Widgeten Kanalinställningar.](../images/profiles/channel-preferences.png)
+
+Kundens samtycke och kontaktpreferenser är komplexa ämnen. Om du vill veta hur samtycke och sammanhangsinställningar kan samlas in, bearbetas och filtreras i Experience Platform rekommenderar vi att du läser följande dokument:
+
+* Om du vill veta mer om schemafältgrupperna som krävs för att [samla in uppgifter om samtycke enligt Adobe-standarden](../../landing/governance-privacy-security/consent/adobe/overview.md)finns i dokumentationen om dessa profilaktiverade schemafältgrupper.
+   * [[!UICONTROL Consent and Preference Details]](../../xdm/field-groups/profile/consents.md)
+   * [[!UICONTROL IdentityMap]](../../xdm/field-groups/profile/identitymap.md) (krävs om du använder Platform Web eller Mobile SDK för att skicka medgivandesignaler)
+* Mer information om hur du bearbetar kundens samtycke och inställningsdata med hjälp av Adobe-standarden finns i översikten på [behandling av samtycke i Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md).
+* En kombinerad policy för datastyrning och samtycke kan användas för att filtrera profiler för segmentering baserat på deras samtycke och dina etablerade organisationsregler. Om du vill veta mer om hur du skapar och använder dessa kombinerade profiler läser du i användarhandboken på [hantera dataanvändningsprinciper](../../data-governance/policies/user-guide.md#combine-policies).
+
+### Lägg till widgetar {#add-widgets}
+
+Lägga till anpassade widgetar i [!UICONTROL Profiles] [!UICONTROL Detail] arbetsyta, välja **[!UICONTROL Customize profile details]**.
+
+![Arbetsytan Profilinformation med [!UICONTROL Customize profile details] markerad.](../images/profiles/customize-profile-details.png)
+
+Nu kan du redigera arbetsytan genom att ändra storlek på eller flytta widgetarna. Välj **[!UICONTROL Add widget]** för att skapa en widget med anpassade attribut.
+
+![Profilerna [!UICONTROL Detail] arbetsyta med [!UICONTROL Add widget] markerad.](../images/profiles/add-widget.png)
+
+Widgetskaparen visas. Ange ett beskrivande namn för widgeten i [!UICONTROL Card title] textfält och markera **[!UICONTROL Add attributes]**.
+
+![Widgetens arbetsyta med [!UICONTROL Card title] fält och [!UICONTROL Add attributes] markerad.](../images/profiles/widget-creator.png)
+
+En dialogruta visas som innehåller en visualisering av profilens unionsschema. Använd sökfältet eller rullningen för att hitta de attribut du vill rapportera om med widgeten. Markera kryssrutan för de attribut du vill ta med. Välj **[!UICONTROL Select]** för att fortsätta skapa arbetsflöde.
+
+>[!TIP]
+>
+>En markering av kryssrutan på den översta nivån innehåller underordnade element.
+
+![Unionsschemat med kryssrutan för lojalitetsattribut och [!UICONTROL Select] markerad.](../images/profiles/union-schema-attributes.png)
+
+En förhandsvisning av den färdiga widgeten visas på arbetsytan. När du är nöjd med dina valda attribut väljer du **[!UICONTROL Save]** för att bekräfta dina val och gå tillbaka till [!UICONTROL Profiles] [!UICONTROL Detail] arbetsyta. Den nya widgeten visas nu på arbetsytan.
+
+![Widgetens skapararbetsyta med Spara markerat och visa widgetens förhandsgranskning.](../images/profiles/widget-preview.png)
 
 ## Sammanfoga profiler {#merge-policies}
 

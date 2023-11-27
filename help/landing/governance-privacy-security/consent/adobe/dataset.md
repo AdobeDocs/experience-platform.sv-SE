@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Konfigurera en datauppsättning för att samla in samtycke- och inställningsdata
 description: Lär dig hur du konfigurerar ett XDM-schema (Experience Data Model) och en datauppsättning för insamling av medgivanden och inställningsdata i Adobe Experience Platform.
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 3f559601b50293723f601960dbd56fddf0285148
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -96,8 +96,8 @@ Fältgruppen innehåller ett enda fält av objekttyp, `consents`, vars underegen
 
 För att kunna samla in data om samtycke med hjälp av Adobe-standarden måste du ha ett profilaktiverat schema som innehåller följande två fältgrupper:
 
-* [!UICONTROL Consent and Preference Details]
-* [!UICONTROL IdentityMap] (krävs om du använder Platform Web eller Mobile SDK för att skicka medgivandesignaler)
+* [[!UICONTROL Consent and Preference Details]](../../../../xdm/field-groups/profile/consents.md)
+* [[!UICONTROL IdentityMap]](../../../../xdm/field-groups/profile/identitymap.md) (krävs om du använder Platform Web eller Mobile SDK för att skicka medgivandesignaler)
 
 Välj **[!UICONTROL Schemas]** i den vänstra navigeringen väljer du **[!UICONTROL Browse]** om du vill visa en lista med befintliga scheman. Här väljer du namnet [!DNL Profile]-aktiverat schema som du vill lägga till medgivandefält i. Skärmbilderna i det här avsnittet använder schemat &quot;Bonusmedlemmar&quot; som finns i [självstudiekurs om att skapa scheman](../../../../xdm/tutorials/create-schema-ui.md) som ett exempel.
 
