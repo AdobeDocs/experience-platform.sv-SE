@@ -2,10 +2,11 @@
 keywords: Azure-händelsehubbsmål;azure-händelsehubb;azure-händelsehubb
 title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: 3e2dc51e768d6bcfeedbc26e04997dc46c852e4d
 workflow-type: tm+mt
-source-wordcount: '2045'
+source-wordcount: '2063'
 ht-degree: 0%
 
 ---
@@ -123,7 +124,8 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* [Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte i exporter till Azure Event Hubs-målet. [Läs mer](/help/destinations/ui/activate-streaming-profile-destinations.md#consent-policy-evaluation).
 
 Se [Aktivera målgruppsdata till exportmål för direktuppspelningsprofiler](../../ui/activate-streaming-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 

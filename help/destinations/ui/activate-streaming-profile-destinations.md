@@ -1,12 +1,12 @@
 ---
-keywords: aktivera profilmål;aktivera mål;aktivera data; aktivera e-postmarknadsföringsmål; aktivera molnlagringsmål
 title: Aktivera målgrupper för att direktuppspela exportmål för profiler
 type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
+badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: 37819b5a6480923686d327e30b1111ea29ae71da
+source-git-commit: 3e2dc51e768d6bcfeedbc26e04997dc46c852e4d
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I den här artikeln beskrivs det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform direktuppspelningsprofilbaserade mål, som Amazon Kinesis.
+I den här artikeln beskrivs det arbetsflöde som krävs för att aktivera målgruppsdata i Adobe Experience Platform för att direktuppspela profilbaserade mål (kallas även för [företagsmål](/help/destinations/destination-types.md#streaming-profile-export)).
+
+Denna artikel gäller följande tre destinationer:
+
+* [Amazon Kinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md)
+* [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
+* [HTTP API-mål](/help/destinations/catalog/streaming/http-destination.md).
 
 ## Förutsättningar {#prerequisites}
 
@@ -83,7 +89,15 @@ På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**, markera **[!UICONTROL View applicable consent policies]** för att se vilka regler för samtycke som tillämpas och hur många profiler som inkluderas i aktiveringen till följd av dessa. Läs om [utvärdering av godkännandepolicy](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) för mer information.
+[Principutvärdering av samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) stöds för närvarande inte vid export till de tre företagsmålen - Amazon Kinesis, Azure Event Hubs och HTTP API.
+
+Detta innebär att profiler som inte har samtyckt till att vara riktade *ingår* i exporten till dessa tre destinationer.
+
+<!--
+
+If your organization purchased **Adobe Healthcare Shield** or **Adobe Privacy & Security Shield**, select **[!UICONTROL View applicable consent policies]** to see which consent policies are applied and how many profiles are included in the activation as a result of them. Read about [consent policy evaluation](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) for more information.
+
+-->
 
 ### Kontroller av policyer för dataanvändning {#data-usage-policy-checks}
 
