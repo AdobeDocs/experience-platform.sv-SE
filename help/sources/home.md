@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7c83a946ca30f1bf016cc42245d7d52f2c034f18
+source-git-commit: a0616410da5cef51fdac928ecfb02f0b05a4cdb1
 workflow-type: tm+mt
-source-wordcount: '1407'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -59,91 +59,91 @@ Experience Platform tillåter att data kan hämtas från andra Adobe-program, in
 
 Experience Platform stöder inmatning av data från ett annonssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [Google Ads](connectors/advertising/ads.md)
+- [Google Ads](connectors/advertising/ads.md) [!BADGE Grupp]{type=Neutral}
 
 ### Analytics  {#analytics}
 
 Experience Platform stöder inmatning av data från en analysplattform från tredje part. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md)
-- [[!DNL Pendo]](connectors/analytics/pendo-webhook.md)
-- [[!DNL RainFocus]](connectors/analytics/rainfocus.md)
+- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Pendo]](connectors/analytics/pendo-webhook.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL RainFocus]](connectors/analytics/rainfocus.md) [!BADGE Direktuppspelning]{type=Caution}
 
 ### molnlagring {#cloud-storage}
 
 Lagringskällor i molnet kan hämta dina egna data till plattformen utan att du behöver hämta, formatera eller överföra dem. Inkapslade data kan formateras som XDM JSON, XDM Parquet eller avgränsade. Varje steg i processen integreras i arbetsflödet Källor med användargränssnittet. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md)
-- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md)
-- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md)
-- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md)
-- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md)
-- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md)
-- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md)
-- [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md)
-- [[!DNL FTP]](connectors/cloud-storage/ftp.md)
-- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md)
-- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md)
-- [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md)
-- [[!DNL SFTP]](connectors/cloud-storage/sftp.md)
+- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL FTP]](connectors/cloud-storage/ftp.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL SFTP]](connectors/cloud-storage/sftp.md) [!BADGE Grupp]{type=Neutral}
 
 ### Samtycke och inställningar {#consent}
 
 Experience Platform har stöd för inmatning av data från en plattform för hantering av samtycke och preferenser från tredje part. Mer information finns i följande relaterade dokument:
 
-- [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md)
+- [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md) [!BADGE Grupp]{type=Neutral}
 
 ### Kundrelationshantering (CRM) {#customer-relationship-management}
 
 CRM-system tillhandahåller data som kan hjälpa till att bygga upp kundrelationer, vilket i sin tur skapar lojalitet och driver kundlojalitet. Experience Platform har stöd för att importera CRM-data från [!DNL Microsoft Dynamics 365] och [!DNL Salesforce]. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md)
-- [[!DNL Salesforce]](connectors/crm/salesforce.md)
-- [[!DNL SugarCRM]](connectors/crm/sugarcrm.md)
-- [[!DNL Veeva CRM]](connectors/crm/veeva.md)
-- [[!DNL Zoho CRM]](connectors/crm/zoho.md)
+- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Salesforce]](connectors/crm/salesforce.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL SugarCRM]](connectors/crm/sugarcrm.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Veeva CRM]](connectors/crm/veeva.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Zoho CRM]](connectors/crm/zoho.md) [!BADGE Grupp]{type=Neutral}
 
 ### Nöjda kunder {#customer-success}
 
 Experience Platform har stöd för inhämtning av data från tredjepartsprogram. Mer information finns i följande relaterade dokument:
 
-- [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md)
-- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md)
-- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md)
-- [[!DNL Zendesk]](connectors/customer-success/zendesk.md)
+- [[!DNL Oracle Service Cloud]](connectors/customer-success/oracle-service-cloud.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Zendesk]](connectors/customer-success/zendesk.md) [!BADGE Grupp]{type=Neutral}
 
 ### Databas {#database}
 
 Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Amazon Redshift]](connectors/databases/redshift.md)
-- [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md)
-- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md)
-- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md)
-- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md)
-- [[!DNL Azure Table Storage]](connectors/databases/ats.md)
-- [[!DNL Couchbase]](connectors/databases/couchbase.md)
-- [[!DNL Google BigQuery]](connectors/databases/bigquery.md)
-- [[!DNL GreenPlum]](connectors/databases/greenplum.md)
-- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md)
-- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md)
-- [[!DNL MariaDB]](connectors/databases/mariadb.md)
-- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md)
-- [[!DNL MySQL]](connectors/databases/mysql.md)
-- [[!DNL Oracle]](connectors/databases/oracle.md)
-- [[!DNL Phoenix]](connectors/databases/phoenix.md)
-- [[!DNL PostgreSQL]](connectors/databases/postgres.md)
-- [[!DNL Snowflake (Streaming)]](connectors/databases//snowflake-streaming.md)
-- [[!DNL Snowflake]](connectors/databases/snowflake.md)
-- [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md)
+- [[!DNL Amazon Redshift]](connectors/databases/redshift.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Azure Table Storage]](connectors/databases/ats.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Couchbase]](connectors/databases/couchbase.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Google BigQuery]](connectors/databases/bigquery.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL GreenPlum]](connectors/databases/greenplum.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL MariaDB]](connectors/databases/mariadb.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL MySQL]](connectors/databases/mysql.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Oracle]](connectors/databases/oracle.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Phoenix]](connectors/databases/phoenix.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL PostgreSQL]](connectors/databases/postgres.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Snowflake]](connectors/databases/snowflake-streaming.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL Snowflake]](connectors/databases/snowflake.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Teradata Vantage]](connectors/databases/teradata-vantage.md) [!BADGE Grupp]{type=Neutral}
 
 ### eCommerce {#ecommerce}
 
 Experience Platform stöder inmatning av data från ett e-handelssystem från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md)
-- [[!DNL Shopify]](connectors/ecommerce/shopify.md)
-- [[!DNL Shopify (Streaming)]](connectors/ecommerce/shopify-streaming.md)
+- [[!DNL SAP Commerce]](connectors/ecommerce/sap-commerce.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Shopify]](connectors/ecommerce/shopify.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Shopify]](connectors/ecommerce/shopify-streaming.md) [!BADGE Direktuppspelning]{type=Caution}
 
 ### Lokalt system {#local-system}
 
@@ -155,12 +155,12 @@ Experience Platform har stöd för inmatning av data från ditt lokala system. M
 
 Experience Platform stöder inmatning av data från ett system för automatisering av marknadsföring från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md)
-- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md)
-- [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md)
-- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
-- [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md)
-- [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
+- [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) [!BADGE Direktuppspelning]{type=Caution}
+- [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) [!BADGE Grupp]{type=Neutral}
 <!-- 
 - [[!DNL Oracle Responsys]](connectors/marketing-automation/oracle-responsys.md)
 -->
@@ -169,21 +169,21 @@ Experience Platform stöder inmatning av data från ett system för automatiseri
 
 Experience Platform stöder inmatning av data från tredje parts betalningssystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL PayPal]](connectors/payments/paypal.md)
-- [[!DNL Square]](connectors/payments/square.md)
+- [[!DNL PayPal]](connectors/payments/paypal.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Square]](connectors/payments/square.md) [!BADGE Grupp]{type=Neutral}
 
 ### Direktuppspelning {#streaming}
 
 Experience Platform stöder inmatning av data från strömningskällor. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL HTTP API]](connectors/streaming/http.md)
+- [[!DNL HTTP API]](connectors/streaming/http.md) [!BADGE Direktuppspelning]{type=Caution}
 
 ### Protokoll {#protocols}
 
 Experience Platform har stöd för inmatning av data från ett tredjepartsprotokollsystem. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Generic OData]](connectors/protocols/odata.md)
-- [[!DNL Generic REST API]](connectors/protocols/generic-rest.md)
+- [[!DNL Generic OData]](connectors/protocols/odata.md) [!BADGE Grupp]{type=Neutral}
+- [[!DNL Generic REST API]](connectors/protocols/generic-rest.md) [!BADGE Grupp]{type=Neutral}
 
 ## Åtkomstkontroll för källor vid datainhämtning
 
