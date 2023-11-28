@@ -5,9 +5,9 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrda säkerhetsutkast för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 1bc770ad078f2db3199f799403d96a676b73f4de
+source-git-commit: 56ed0d777d9a7d489cde2e40340fee4ca0ad8c03
 workflow-type: tm+mt
-source-wordcount: '2226'
+source-wordcount: '2228'
 ht-degree: 2%
 
 ---
@@ -118,8 +118,8 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 | Utforma målgrupper per sandlåda | 150 | Prestandaskydd | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [kantmålgrupper](/help/segmentation/ui/edge-segmentation.md). |
 | Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelande målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
 | Gruppera målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 gruppmålgrupper totalt, förutsatt att det finns färre än 4000 gruppmålgrupper i varje enskild sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
-| Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan inte skapa fler än 50 kontomålgrupper i en sandlåda. När ni har nått 50 målgrupper i en sandlåda **[!UICONTROL Create audience]** kontrollen är inaktiverad när du försöker skapa en ny kontopublik. Läs mer om [kontomålgrupper](/help/segmentation/ui/account-audiences.md). |
-| Publicerade kompositioner per sandlåda | 10 | Prestandaskydd | Du kan inte ha fler än 10 publicerade kompositioner i en sandlåda. Läs mer om [publiksammansättning i gränssnittsguiden](/help/segmentation/ui/audience-composition.md). |
+| Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan skapa högst 50 kontomålgrupper i en sandlåda. När ni har nått 50 målgrupper i en sandlåda **[!UICONTROL Create audience]** kontrollen är inaktiverad när du försöker skapa en ny kontopublik. Läs mer om [kontomålgrupper](/help/segmentation/ui/account-audiences.md). |
+| Publicerade kompositioner per sandlåda | 10 | Prestandaskydd | Du kan ha högst 10 publicerade kompositioner i en sandlåda. Läs mer om [publiksammansättning i gränssnittsguiden](/help/segmentation/ui/audience-composition.md). |
 
 {style="table-layout:auto"}
 
