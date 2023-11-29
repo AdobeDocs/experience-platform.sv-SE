@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform, februari 2023
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
 exl-id: 1c30a646-d9f8-4749-ac25-40bc48365a40
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '1252'
 ht-degree: 3%
@@ -48,7 +48,7 @@ Mer information om Assurance finns i [Assurance-dokumentation](https://developer
 
 | Funktion | Beskrivning |
 | ----------- | ----------- |
-| [Förbättrad profil för samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) för integrering med [filbaserade (batch) mål](/help/destinations/destination-types.md#file-based) | <p> När profiler inte längre är kvalificerade för en samtyckespolicy meddelar Experience Platform nu aktivt sin policy att avsluta sina filbaserade destinationer. Detta följer [från februari 2023](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality) av samma funktionalitet för direktuppspelningsdestinationer. </p> <p> <b>Anteckning</b>: Den här funktionen är endast tillgänglig för kunder som har **[!UICONTROL Privacy and Security Shield]** och **[!UICONTROL Healthcare Shield]**. </p> |
+| [Förbättrad profil för samtycke](/help/data-governance/enforcement/auto-enforcement.md#consent-policy-enhancement) för integrering med [filbaserade (batch) mål](/help/destinations/destination-types.md#file-based) | <p> När profiler inte längre är kvalificerade för en samtyckespolicy meddelar Experience Platform nu aktivt sin policy att avsluta sina filbaserade destinationer. Detta följer [från februari 2023](/help/release-notes/2023/january-2023.md#destinations-new-updated-functionality) av samma funktionalitet för direktuppspelningsdestinationer. </p> <p> <b>Anteckning</b>: Den här funktionen är endast tillgänglig för kunder som **[!UICONTROL Privacy and Security Shield]** och **[!UICONTROL Healthcare Shield]**. </p> |
 
 {style="table-layout:auto"}
 
@@ -68,7 +68,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre fram i kedjan som refererar till fälten kommer att fungera som vanligt. |
+| Borttagning av fält via användargränssnittet | Nu kan du [ta bort fält från dina scheman efter att data har importerats](../../xdm/tutorials/field-deprecation-ui.md). Med XDM-fältborttagning kan du ta bort fält från användargränssnittsvyn samtidigt som du behåller dem för användning. Du kan visa inaktuella fält igen om det behövs, och eventuella segment, frågor eller lösningar längre ned som refererar till fälten kommer att köras som vanligt. |
 
 {style="table-layout:auto"}
 
@@ -105,7 +105,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | Aktivera datauppsättningar för profil med SQL | [Använd ETIKETTER i CTAS-frågor för att göra datauppsättningen &#39;profile enabled&#39;](../../query-service/sql/syntax.md#create-table-as-select)eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. Du kan använda den här utökade SQL-konstruktionen för att tillhandahålla sömlöst stöd för härledda attribut för dina affärssituationer med kundprofiler i realtid. Se [Sömlöst SQL-flöde för härledda attributdokument](../../query-service/data-distiller/derived-attributes/seamless-sql-flow.md) för mer information. |
 | Övervaka schemalagda frågor | Använd [Fliken Schemalagda frågor](../../query-service/ui/monitor-queries.md) om du vill hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas. |
 | Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden med [växla funktionen för automatisk komplettering av frågeredigeraren](../../query-service/ui/user-guide.md#auto-complete). Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. |
-| Datauppsättningsexempel | Ange en samplingsfrekvens i din fråga och [använda datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval](../../query-service/essential-concepts/dataset-samples.md)eller skapa villkorliga exempel baserat på specifika villkor. |
+| Datauppsättningsexempel | Ange en samplingsfrekvens i din fråga och [använda datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval](../../query-service/key-concepts/dataset-samples.md)eller skapa villkorsstyrda exempel baserat på specifika villkor. |
 
 {style="table-layout:auto"}
 

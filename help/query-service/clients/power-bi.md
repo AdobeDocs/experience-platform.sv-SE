@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Anslut Power BI till frågetjänst
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '1064'
 ht-degree: 1%
@@ -37,9 +37,9 @@ För att säkerställa att Npgsql har installerats korrekt måste du starta om d
 
 ## Anslut [!DNL Power BI] till frågetjänst {#connect-power-bi}
 
-Ansluta [!DNL Power BI] till frågetjänst, öppna [!DNL Power BI] och markera **[!DNL Get Data]** i menyfliksområdet på den översta menyn. Skriv &quot;[!DNL PostgreSQL]&quot; i sökfältet för att begränsa listan med datakällor. Välj **[!DNL PostgreSQL database]**, följt av **[!DNL Connect]**.
+Ansluta [!DNL Power BI] till frågetjänst, öppna [!DNL Power BI] och markera **[!DNL Get Data]** i menyfliksområdet överst. Skriv &quot;[!DNL PostgreSQL]&quot; i sökfältet för att begränsa listan med datakällor. Välj **[!DNL PostgreSQL database]**, följt av **[!DNL Connect]**.
 
-The [!DNL PostgreSQL] Databasdialogrutan visas där värden begärs för servern och databasen. Ytterligare instruktioner om hur man [ansluta till en PostgreSQL-databas från Power Query Desktop](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop) finns på [!DNL PowerBI] dokumentation.
+The [!DNL PostgreSQL] Databasdialogrutan visas där värden för servern och databasen efterfrågas. Ytterligare instruktioner om hur man [ansluta till en PostgreSQL-databas från Power Query Desktop](https://learn.microsoft.com/en-us/power-query/connectors/postgresql#connect-to-a-postgresql-database-from-power-query-desktop) finns på [!DNL PowerBI] dokumentation.
 
 Dessa obligatoriska värden hämtas från dina Adobe Experience Platform-uppgifter. Logga in på användargränssnittet för plattformen och välj **[!UICONTROL Queries]** från vänster navigering, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md).
 
@@ -51,7 +51,7 @@ The **[!DNL Database]** -fältet kan vara antingen&quot;all&quot; eller ett data
 
 >[!IMPORTANT]
 >
->Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../essential-concepts/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
+>Kapslade datastrukturer i BI-verktyg från tredje part kan förenklas för att förbättra användbarheten och minska den arbetsbelastning som krävs för att hämta, analysera, omvandla och rapportera data. Läs dokumentationen på[`FLATTEN` funktion](../key-concepts/flatten-nested-data.md) för instruktioner om hur du aktiverar den här inställningen vid anslutning till en databas.
 
 ### Dataanslutningsläge {#data-connectivity-mode}
 
@@ -65,7 +65,7 @@ Välj **[!DNL OK]** när du har bekräftat databasinformationen.
 
 När du har bekräftat ditt dataanslutningsläge visas en fråga om ditt användarnamn, lösenord och programinställningar. Användarnamnet är i det här fallet ditt företags-ID och lösenordet är din autentiseringstoken. Båda finns på sidan med autentiseringsuppgifter för frågetjänsten.
 
-Fyll i dessa uppgifter och välj **[!DNL Connect]** för att fortsätta till nästa steg.
+Fyll i dessa uppgifter och välj **[!DNL Connect]** fortsätta till nästa steg.
 
 ## Importera en tabell {#import}
 
@@ -97,7 +97,7 @@ The **[!DNL DirectQuery]** [!DNL Data Connectivity mode] frågar datakällan dir
 
 Mer information om [användning av [!DNL DirectQuery]](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-use-directquery) samt en omfattande diskussion om [anslutningsalternativ, användningsfall och begränsningar](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-directquery-about) finns på [!DNL PowerBI] dokumentation.
 
-Om du vill använda [!DNL Data Connectivity mode]väljer du **[!DNL DirectQuery]** växla sedan **[!DNL Advanced options]** för att ange en anpassad SQL-fråga i **[!DNL SQL statement]** -avsnitt. Kontrollera att **[!DNL Include relationship columns]** är markerat. När du har slutfört frågan väljer du **[!DNL OK]** för att fortsätta.
+Använd detta [!DNL Data Connectivity mode]väljer du **[!DNL DirectQuery]** växla sedan **[!DNL Advanced options]** för att ange en anpassad SQL-fråga i **[!DNL SQL statement]** -avsnitt. Kontrollera att **[!DNL Include relationship columns]** är markerat. När du har slutfört frågan väljer du **[!DNL OK]** för att fortsätta.
 
 En förhandsgranskning av frågan visas. Välj **[!DNL Load]** för att se resultatet av frågan.
 

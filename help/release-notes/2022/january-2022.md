@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform januari 2022
 description: Versionsinformation januari 2022 för Adobe Experience Platform.
 exl-id: 734ce1b3-e270-4c37-958c-88bcc39fbf20
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '1339'
 ht-degree: 2%
@@ -91,7 +91,7 @@ Mer allmän information om destinationer finns i [destinationer, översikt](../.
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Anonymt block | Med den anonyma SQL-blockkonstruktionen kan du dela upp stora datapresentationsjobb i Query Service till mindre uppgifter och sedan återanvända och köra dem i sekvens för inkrementell datainläsning. Mer information finns i [exempelfrågor för anonym blockdokumentation](../../query-service/essential-concepts/anonymous-block.md). |
+| Anonymt block | Med den anonyma SQL-blockkonstruktionen kan du dela upp stora datapresentationsjobb i Query Service till mindre uppgifter och sedan återanvända och köra dem i sekvens för inkrementell datainläsning. Mer information finns i [exempelfrågor för anonym blockdokumentation](../../query-service/key-concepts/anonymous-block.md). |
 | Datauppsättningsorganisation | Tillhandahåller en sammanhängande, logisk datastruktur för att organisera dina dataresurser för användning med Query Service när mängden dataresurser i sandlådan växer. Mer information finns i [ordna dokumentation för datatillgångar](../../query-service/best-practices/organize-data-assets.md). |
 
 Mer information om [!DNL Query Service], se [[!DNL Query Service] översikt](../../query-service/home.md).

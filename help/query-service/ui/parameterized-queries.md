@@ -2,7 +2,7 @@
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: a78f7499b55dcedbe379e917b94946948c66e6e5
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '723'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Innan du fortsätter med den här guiden ska du läsa [Användargränssnittshand
 
 >[!NOTE]
 >
->I Adobe Experience Platform-gränssnittet stöds parametriserade frågor bara på den överordnade nivån för textbundna mallar. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Underordnade mallar måste vara en statisk mall och får inte ha dynamiska parametrar. Se [dokumentation för infogade mallar](../essential-concepts/inline-templates.md) om du vill veta mer.
+>I Adobe Experience Platform-gränssnittet stöds parametriserade frågor bara på den överordnade nivån för textbundna mallar. Detta innebär att parametriserade frågor bara fungerar när de används i den ursprungliga mallen. Underordnade mallar måste vara en statisk mall och får inte ha dynamiska parametrar. Se [dokumentation för infogade mallar](../key-concepts/inline-templates.md) om du vill veta mer.
 
 ## Parametriserad frågesyntax {#syntax}
 

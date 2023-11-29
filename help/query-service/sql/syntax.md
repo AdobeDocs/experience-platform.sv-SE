@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: I det här dokumentet visas SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 95d1aec09477480532d4df1bdc7488d3f5a39394
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '4134'
 ht-degree: 1%
@@ -765,7 +765,7 @@ Konsolutdata visas enligt nedan.
 (1 row)
 ```
 
-Du kan sedan ställa frågor direkt till den beräknade statistiken genom att referera till `Statistics ID`. Med exempelprogramsatsen nedan kan du visa utdata i sin helhet när den används med `Statistics ID` eller aliasnamnet. Mer information om den här funktionen finns i [dokumentation för aliasnamn](../essential-concepts/dataset-statistics.md#alias-name).
+Du kan sedan ställa frågor direkt till den beräknade statistiken genom att referera till `Statistics ID`. Med exempelprogramsatsen nedan kan du visa utdata i sin helhet när den används med `Statistics ID` eller aliasnamnet. Mer information om den här funktionen finns i [dokumentation för aliasnamn](../key-concepts/dataset-statistics.md#alias-name).
 
 ```sql
 -- This statement gets the statistics generated for `alias adc_geometric_stats_1`.
@@ -788,7 +788,7 @@ demo_table_stats_1    |  demo_table   |    (*)    |       ((age > 25))          
 age_stats             | castedtitanic |   (age)   | ((age > 25) AND (age < 40)) | 25/06/2023 09:22:26
 ```
 
-Se [dokumentation om datauppsättningsstatistik](../essential-concepts/dataset-statistics.md) för mer information.
+Se [dokumentation om datauppsättningsstatistik](../key-concepts/dataset-statistics.md) för mer information.
 
 #### TABLESAMPLE {#tablesample}
 
@@ -806,7 +806,7 @@ ANALYZE TABLE tableName TABLESAMPLE SAMPLERATE 5;
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-01-01')) TABLESAMPLE SAMPLERATE 5:
 ```
 
-Se [exempeldokumentation för datauppsättning](../essential-concepts/dataset-samples.md) för mer information.
+Se [exempeldokumentation för datauppsättning](../key-concepts/dataset-samples.md) för mer information.
 
 ### BÖRJA
 

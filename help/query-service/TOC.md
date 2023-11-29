@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: 037ea8d11bb94e3b4f71ea301a535677b3cccdbd
+source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
 workflow-type: tm+mt
 source-wordcount: '310'
-ht-degree: 12%
+ht-degree: 13%
 
 ---
 
@@ -52,6 +52,15 @@ ht-degree: 12%
    - [Returnera och använda försäljningsvariabler från analysdata](use-cases/merchandising-variables.md)
    - [Visa sammanslagningsrapporten för en besökare](use-cases/roll-up-report-of-a-visitor.md)
    - [Insikter om webb- och mobilanalys](use-cases/analytics-insights.md)
+- Viktiga begrepp {#key-concepts}
+   - [Arbeta med kapslade datastrukturer](key-concepts/nested-data-structures.md)
+   - [Förenkla kapslade datastrukturer](key-concepts/flatten-nested-data.md)
+   - [Anonymt block](key-concepts/anonymous-block.md)
+   - [Textbunden mall](key-concepts/inline-templates.md)
+   - [Inkrementell inläsning](key-concepts/incremental-load.md)
+   - [Datadeduplicering](key-concepts/deduplication.md)
+   - [Datauppsättningsexempel](key-concepts/dataset-samples.md)
+   - [Datauppsättningsstatistikberäkning](key-concepts/dataset-statistics.md)
 - Anslut klienter till frågetjänsten {#clients}
    - [Översikt över klientanslutningar](clients/overview.md)
    - [SSL-läge](./clients/ssl-modes.md)
@@ -91,15 +100,6 @@ ht-degree: 12%
 - God praxis {#best-practices}
    - [Frågekörning](best-practices/writing-queries.md)
    - [Dataresursorganisation](./best-practices/organize-data-assets.md)
-- Grundläggande begrepp {#essential-concepts}
-   - [Arbeta med kapslade datastrukturer](essential-concepts/nested-data-structures.md)
-   - [Förenkla kapslade datastrukturer](essential-concepts/flatten-nested-data.md)
-   - [Anonymt block](essential-concepts/anonymous-block.md)
-   - [Textbunden mall](essential-concepts/inline-templates.md)
-   - [Inkrementell inläsning](essential-concepts/incremental-load.md)
-   - [Datadeduplicering](essential-concepts/deduplication.md)
-   - [Datauppsättningsexempel](essential-concepts/dataset-samples.md)
-   - [Datauppsättningsstatistikberäkning](essential-concepts/dataset-statistics.md)
 - SQL-referens {#sql}
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)

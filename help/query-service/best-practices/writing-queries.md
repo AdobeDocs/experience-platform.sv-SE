@@ -5,7 +5,7 @@ title: Allmänna riktlinjer för frågekörning i frågetjänsten
 type: Tutorial
 description: Det här dokumentet innehåller viktiga detaljer som du bör känna till när du skriver frågor i Adobe Experience Platform Query Service.
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: adf8da46d09c60b86df16493043efeacbdd24fe2
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '1067'
 ht-degree: 2%
@@ -20,7 +20,7 @@ Detaljerad information om SQL-syntaxen som används i [!DNL Query Service], kan 
 
 ## Frågekörningsmodeller
 
-Adobe Experience Platform [!DNL Query Service] har två modeller för frågekörning: interaktiva och icke-interaktiva. Interaktiv körning används för frågeutveckling och rapportgenerering i verktyg för affärsinformation, medan icke-interaktiv används för större jobb och operativa frågor som en del av ett arbetsflöde för databearbetning.
+Adobe Experience Platform [!DNL Query Service] har två modeller för frågekörning: interaktiv och icke-interaktiv. Interaktiv körning används för frågeutveckling och rapportgenerering i verktyg för affärsinformation, medan icke-interaktiv används för större jobb och operativa frågor som en del av ett arbetsflöde för databearbetning.
 
 ### Interaktiv frågekörning
 
@@ -40,7 +40,7 @@ Interaktiv frågekörning har följande begränsningar:
 
 Som standard returneras resultatet av interaktiva frågor till klienten och är **not** beständig. För att behålla resultaten som en datauppsättning i [!DNL Experience Platform]måste frågan använda `CREATE TABLE AS SELECT` syntax.
 
-### Icke-interaktiv frågekörning
+### Ej interaktiv frågekörning
 
 Frågor som skickats via [!DNL Query Service] API körs icke-interaktivt. Icke-interaktivt genomförande innebär att [!DNL Query Service] tar emot API-anropet och kör frågan i den ordning som den tas emot. Icke-interaktiva frågor leder alltid till att en ny datauppsättning skapas i [!DNL Experience Platform] för att ta emot resultaten eller för att infoga nya rader i en befintlig datauppsättning.
 
@@ -62,7 +62,7 @@ LIMIT 1
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{ANALYTICS_TABLE_NAME}` | Namnet på analystabellen. |
+| `{ANALYTICS_TABLE_NAME}` | Namnet på analysregistret. |
 
 Följande SQL-sats använder hakparenteser för att gå igenom `endUserIds` objektet ned till `mcid` -objekt.
 
@@ -76,7 +76,7 @@ LIMIT 1
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `{ANALYTICS_TABLE_NAME}` | Namnet på analystabellen. |
+| `{ANALYTICS_TABLE_NAME}` | Namnet på analysregistret. |
 
 >[!NOTE]
 >
@@ -271,7 +271,7 @@ I följande exempel visas ytterligare information för `web` och anropas med fö
 
 Du kan sammanfoga flera datauppsättningar för att inkludera data från andra datauppsättningar i din fråga.
 
-Följande exempel skulle ansluta till följande två datauppsättningar (`your_analytics_table` och `custom_operating_system_lookup`) och skapar `SELECT` för de 50 främsta operativsystemen efter antal sidvisningar.
+Följande exempel skulle ansluta till följande två datauppsättningar (`your_analytics_table` och `custom_operating_system_lookup`) och skapar en `SELECT` för de 50 främsta operativsystemen efter antal sidvisningar.
 
 **Fråga**
 
@@ -311,7 +311,7 @@ LIMIT 50;
 
 ## Deduplicering
 
-Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader från data. Mer information om borttagning av dubbletter finns i [Handbok för borttagning av dubbletter i frågetjänsten](../essential-concepts/deduplication.md).
+Frågetjänsten stöder datadeduplicering eller borttagning av dubblettrader från data. Mer information om borttagning av dubbletter finns i [Handbok för borttagning av dubbletter i frågetjänsten](../key-concepts/deduplication.md).
 
 ## Tidszonsberäkningar i frågetjänsten
 

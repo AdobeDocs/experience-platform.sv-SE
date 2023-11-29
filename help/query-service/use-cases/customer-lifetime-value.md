@@ -2,7 +2,7 @@
 title: Spåra datasignaler för att generera kundens livstidsvärde
 description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '1269'
 ht-degree: 0%
@@ -91,7 +91,7 @@ Kontrollera [Översikt över destinationer för e-postmarknadsföring](../../des
 
 ## Se returnerade analysdata från kampanjen {#post-campaign-data-analysis}
 
-Data från källor kan nu [inkrementellt bearbetade](../essential-concepts/incremental-load.md) som en del av en schemalagd uppdatering av din datamodell i det accelererade datalagret. Kundernas svarshändelser kan hämtas in till Adobe Experience Platform när de inträffar eller gruppvis. Datamodellen kan uppdateras en gång eller flera gånger dagligen beroende på dina inställningar eller källanslutningarna. Se [API-översikt över batchimport](../../ingestion/batch-ingestion/api-overview.md) eller [översikt över direktuppspelning](../../ingestion/streaming-ingestion/overview.md) för mer information.
+Data från källor kan nu [inkrementellt bearbetade](../key-concepts/incremental-load.md) som en del av en schemalagd uppdatering av din datamodell i det accelererade datalagret. Kundernas svarshändelser kan hämtas in till Adobe Experience Platform när de inträffar eller gruppvis. Datamodellen kan uppdateras en gång eller flera gånger dagligen beroende på dina inställningar eller källanslutningarna. Se [API-översikt över batchimport](../../ingestion/batch-ingestion/api-overview.md) eller [översikt över direktuppspelning](../../ingestion/streaming-ingestion/overview.md) för mer information.
 
 När datamodellen har uppdaterats tillhandahåller dina anpassade widgetar meningsfulla signaler som gör att du kan mäta och visualisera kundens livstidsvärde.
 

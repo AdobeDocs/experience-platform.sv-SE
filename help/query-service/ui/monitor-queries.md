@@ -2,7 +2,7 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: fa871529a4136263399bad3200ee3888049d06a5
+source-git-commit: 37aeff5131b9f67dbc99f6199918403e699478c8
 workflow-type: tm+mt
 source-wordcount: '1711'
 ht-degree: 0%
@@ -161,7 +161,7 @@ Frågor som använder anonyma block för att bilda SQL-satser separeras till sin
 >
 >Körningsinformationen för ett anonymt block som använder DROP-kommandot kommer att **not** rapporteras som en separat underfråga. Separata körningsdetaljer finns tillgängliga för CTAS-frågor, ITAS-frågor och COPY-satser som används som anonyma blockunderfrågor. Körningsinformation för DROP-kommandot stöds för närvarande inte.
 
-Anonyma block markeras med en `$$` prefix före frågan. Mer information om anonyma block i frågetjänsten finns i [anonymt blockdokument](../essential-concepts/anonymous-block.md).
+Anonyma block markeras med en `$$` prefix före frågan. Mer information om anonyma block i frågetjänsten finns i [anonymt blockdokument](../key-concepts/anonymous-block.md).
 
 Anonyma blockunderfrågor har tabbar till vänster om körningsstatusen. Välj en flik för att visa körningsinformation.
 

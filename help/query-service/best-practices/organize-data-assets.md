@@ -2,7 +2,7 @@
 title: Metodtips för dataresursorganisation i frågetjänsten
 description: I det här dokumentet beskrivs ett logiskt sätt att ordna data så att de blir lätta att använda med frågetjänsten.
 exl-id: 12d6af99-035a-4f80-b7c0-c6413aa50697
-source-git-commit: 6e2be299e3c1c0dfa2832ead22cdeaea0ca83591
+source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 0%
@@ -170,4 +170,4 @@ DROP SCHEMA databaseA.schema2;
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet får du nu en bättre förståelse för de bästa metoderna för att organisera och strukturera dina dataresurser så att de kan användas med Adobe Experience Platform Query Service. Vi rekommenderar att du fortsätter att lära dig mer om hur frågetjänsten fungerar genom att läsa om [dokumentation om datadeduplicering](../essential-concepts/deduplication.md).
+Genom att läsa det här dokumentet får du nu en bättre förståelse för de bästa metoderna för att organisera och strukturera dina dataresurser så att de kan användas med Adobe Experience Platform Query Service. Vi rekommenderar att du fortsätter att lära dig mer om hur frågetjänsten fungerar genom att läsa om [dokumentation om datadeduplicering](../key-concepts/deduplication.md).

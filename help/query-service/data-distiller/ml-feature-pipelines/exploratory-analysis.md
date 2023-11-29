@@ -2,7 +2,7 @@
 title: Analys av experimentella data
 description: Lär dig hur du använder Data Distiller för att utforska och analysera data från en bärbar Python-dator.
 exl-id: 1dd4cf6e-f7cc-4f4b-afbd-bfc1d342a2c3
-source-git-commit: f9c49dbcc1820cf70c85368114c2a1ab30b87807
+source-git-commit: 27834417a1683136a173996cff1fd422305e65b9
 workflow-type: tm+mt
 source-wordcount: '808'
 ht-degree: 14%
@@ -42,7 +42,7 @@ df
 
 ## Skapa en provversion av stora datamängder {#create-dataset-sample}
 
-Om den datauppsättning du vill fråga är mycket stor, eller om exakta resultat från undersökande frågor inte är nödvändiga, använder du [samplingsfunktion](../../essential-concepts/dataset-samples.md) finns för frågor om Data Distiller. Detta är en tvåstegsprocess:
+Om den datauppsättning du vill fråga är mycket stor, eller om exakta resultat från undersökande frågor inte är nödvändiga, använder du [samplingsfunktion](../../key-concepts/dataset-samples.md) finns för frågor om Data Distiller. Detta är en tvåstegsprocess:
 
 - Första, **analysera** datauppsättningen för att skapa en provversion med en angiven samplingsproportion
 - Fråga sedan efter den samplade versionen av datauppsättningen. Beroende på vilka funktioner du använder för den samplade datauppsättningen kanske du vill skala utdata till siffrorna i hela datauppsättningen
