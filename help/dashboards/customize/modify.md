@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Ändra plattformsinstrumentpaneler i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur du anpassar hur organisationens Adobe Experience Platform-data visas på kontrollpaneler.
 exl-id: 75e4aea7-b521-434d-9cd5-32a00d00550d
-source-git-commit: 338aa6849f58b3c0fd6c871f1e199ebf6a73d115
+source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
 workflow-type: tm+mt
-source-wordcount: '484'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 I Adobe Experience Platform användargränssnitt kan du visa och interagera med organisationens data via flera kontrollpaneler. Standardwidgetar och standardmått som visas på kontrollpanelerna kan justeras på en enskild användarnivå för att visa önskade data, och widgetar kan skapas och delas mellan användare i samma organisation.
 
-Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur instrumentpanelsdata visas i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
-
 >[!NOTE]
 >
->Widgetarna som visas på kontrollpanelen för licensanvändning kan inte anpassas. Se [dokumentation om kontrollpanelen för licensanvändning](../guides/license-usage.md) om du vill veta mer om den här unika kontrollpanelen.
+>Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
+
+Den här handboken innehåller stegvisa instruktioner för hur du anpassar hur instrumentpanelsdata visas i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
 
 ## Komma igång
 
@@ -50,7 +50,7 @@ När du har flyttat och ändrat storlek på widgetar väljer du **[!UICONTROL Sa
 
 ## Widget-bibliotek
 
-Förutom att ändra storlek på och ordna om widgetar, väljer du **[!UICONTROL Modify dashboard]** i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] på panelerna får du tillgång till **[!UICONTROL Widget library]** där du kan hitta fler widgetar att visa eller skapa anpassade widgetar för din organisation.
+Förutom att ändra storlek på och ordna om widgetar, välja **[!UICONTROL Modify dashboard]** i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] på panelerna får du tillgång till **[!UICONTROL Widget library]** där du kan hitta fler widgetar att visa eller skapa anpassade widgetar för din organisation.
 
 Stegvisa instruktioner om hur du får tillgång till och arbetar med [!UICONTROL Widget library], se [widgetbibliotekshandbok](widget-library.md).
 

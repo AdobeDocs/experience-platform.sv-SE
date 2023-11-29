@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;användargränssnitt;gränssn
 title: Skapa anpassade widgetar för instrumentpaneler
 description: Den här guiden innehåller stegvisa instruktioner för hur du skapar anpassade widgetar som kan användas i Adobe Experience Platform-kontrollpaneler.
 exl-id: 0168ab1e-0b7d-4faf-852e-7208a2b09a04
-source-git-commit: 386d805eadf335b95b6eac92c7663fcee17b4b2d
+source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
 workflow-type: tm+mt
-source-wordcount: '960'
+source-wordcount: '950'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ I Adobe Experience Platform kan du visa och interagera med organisationens data 
 
 Den här guiden innehåller stegvisa instruktioner för att skapa och lägga till anpassade widgetar i [!UICONTROL Profiles], [!UICONTROL Segments]och [!UICONTROL Destinations] kontrollpaneler i plattformsgränssnittet.
 
-Mer information om standardwidgetar finns i guiden för [lägga till standardwidgetar på dina instrumentpaneler](standard-widgets.md).
-
 >[!NOTE]
 >
->Widgetarna visas i [!UICONTROL License usage] Kontrollpanelen kan inte anpassas. Om du vill veta mer om den här unika kontrollpanelen kan du läsa [dokumentation om kontrollpanelen för licensanvändning](../guides/license-usage.md).
+>Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
+
+Om du vill veta mer om standardwidgetar kan du läsa guiden för [lägga till standardwidgetar på dina instrumentpaneler](standard-widgets.md).
 
 ## Widget-bibliotek {#widget-library}
 
@@ -67,10 +67,10 @@ Beroende på attributet rekommenderar AI olika visualiseringsalternativ. Den ful
 * Vågrätt stapeldiagram: Vågräta linjer används för att representera värden.
 * Lodrätt stapeldiagram: Lodräta linjer används för att representera värden.
 * Diagram: På samma sätt som ett cirkeldiagram visas värdena som delar eller delar av en helhet.
-* Scatterplot: En vågrät och lodrät axel används för att ange värden.
-* Linjediagram: Värden visas med en rad för att visa ändringar över en tidsperiod.
-* Nummerkort: Visar ett sammanfattningsnummer som representerar ett nyckelvärde.
-* Datatabell: Värden visas som rader i en tabell.
+* Spridningspunkt: En vågrät och lodrät axel används för att ange värden.
+* Linjediagram: Värdena visas på en rad för att visa ändringar över en tidsperiod.
+* Talkort: Visar ett sammanfattningsnummer som representerar ett nyckelvärde.
+* Datatabell: Värdena visas som rader i en tabell.
 
 >[!NOTE]
 >
@@ -104,7 +104,7 @@ Du kan redigera anpassade widgetar i widgetbiblioteket genom att markera ellipse
 
 ![Widgetens menyalternativ med ellipserna och redigeringen markerade.](../images/customization/custom-widget-edit.png)
 
-På **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivningen av widgeten samt förhandsgranska och välja olika visualiseringar. När du har redigerat **[!UICONTROL Save]** för att spara ändringarna och återgå till fliken för anpassade widgetar.
+På **[!UICONTROL Edit widget]** kan du redigera titeln och beskrivningen av widgeten samt förhandsgranska och välja olika visualiseringar. När redigeringarna är klara väljer du **[!UICONTROL Save]** för att spara ändringarna och återgå till fliken för anpassade widgetar.
 
 >[!WARNING]
 >

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Vanliga frågor
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 8f60d53c1adaf29ce2dce7c3af84f8b39998f7d0
 workflow-type: tm+mt
-source-wordcount: '4291'
+source-wordcount: '4366'
 ht-degree: 1%
 
 ---
@@ -535,6 +535,16 @@ WHERE T2.ID IS NULL
 ### Stöder frågetjänsten kommandot INSERT OVERWRITE INTO?
 
 +++Svarsnr, frågetjänsten stöder inte kommandot INSERT OVERWRITE INTO.
++++
+
+### Hur ofta uppdateras användningsdata på kontrollpanelen för licensanvändning för datatimmar för Distiller?
+
++++Besvara Kontrollpanelen för licensanvändning för datadattimmar i Distiller uppdateras fyra gånger om dagen, var sjätte timme.
++++
+
+### Kan jag använda kommandot CREATE VIEW utan åtkomst till Data Distiller?
+
++++Svar Ja, du kan använda `CREATE VIEW` utan åtkomst till Data Distiller. Det här kommandot ger en logisk vy av data men skriver inte tillbaka dem till datasjön.
 +++
 
 ## Exportera data {#exporting-data}

@@ -4,7 +4,7 @@ title: Integritet i Real-time Customer Data Platform
 description: Med Adobe Real-time Customer Data Platform kan ni effektivisera processen att se till att era dataåtgärder följer sekretessreglerna.
 feature: Get Started, Privacy
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2a0ebe1e92ea21ff45051096d5a6969839c2f947
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Visa dokumentet på [uppfylla avanmälningsbegäranden](../../segmentation/conse
 
 ## Stöd för IAB TCF 2.0
 
-[!DNL Real-Time CDP] bygger på Adobe Experience Platform, som ingår i [leverantörslista](https://iabeurope.eu/vendor-list-tcf-v2-0/) för [!DNL Transparency & Consent Framework (TCF)], enligt konturerna i [!DNL Interactive Advertising Bureau (IAB)]. I enlighet med kraven för TCF 2.0 kan du med Platform samla in detaljerade data om kundernas samtycke och integrera dem i era lagrade kundprofiler. Dessa data om samtycke kan sedan beaktas för att avgöra om vissa profiler ingår i exporterade målgruppssegment, beroende på hur de används.
+[!DNL Real-Time CDP] bygger på Adobe Experience Platform, som ingår i [leverantörslista](https://iabeurope.eu/vendor-list-tcf/) för [!DNL Transparency & Consent Framework (TCF)], enligt konturerna i [!DNL Interactive Advertising Bureau (IAB)]. I enlighet med kraven för TCF 2.0 kan du med Platform samla in detaljerade data om kundernas samtycke och integrera dem i era lagrade kundprofiler. Dessa data om samtycke kan sedan beaktas för att avgöra om vissa profiler ingår i exporterade målgruppssegment, beroende på hur de används.
 
 Se översikten på [Stöd för IAB TCF 2.0 i Experience Platform](../../landing/governance-privacy-security/consent/iab/overview.md) för mer information.
 

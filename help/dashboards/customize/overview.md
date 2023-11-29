@@ -3,9 +3,9 @@ keywords: Experience Platform;användargränssnitt;gränssnitt;instrumentpaneler
 title: Anpassning av instrumentpanel - översikt
 description: Läs mer om hur du kan anpassa de data som visas på dina Adobe Experience Platform-kontrollpaneler.
 exl-id: efabdb61-4148-4b0e-b7a1-6e788b5e43a8
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: 32dd90018c990e7013d826b29608a61022ba808b
 workflow-type: tm+mt
-source-wordcount: '468'
+source-wordcount: '458'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ De profiler, segment och målpaneler som finns i Adobe Experience Platform kan a
 
 >[!NOTE]
 >
->Widgetarna visas i [!UICONTROL License usage] Kontrollpanelen kan inte anpassas. Om du vill veta mer om den här unika kontrollpanelen kan du läsa [dokumentation om kontrollpanelen för licensanvändning](../guides/license-usage.md).
+>Alla uppdateringar som görs på kontrollpanelerna görs per organisation och per sandlåda.
 
 ## Ändra instrumentpanel
 
@@ -24,7 +24,7 @@ Markera **[!UICONTROL Modify dashboard]** på kontrollpanelerna för profiler, s
 
 ## Widgetbiblioteket
 
-Widgetbiblioteket i Experience Platform är där du kan visa alla [standard](#standard-widgets) och [anpassad](#custom-widgets) widgetar som är tillgängliga för din organisation. På dina kontrollpaneler (till exempel profilkontrollpanelen) kan du välja **[!UICONTROL Modify dashboard]** för att visa **[!UICONTROL Widget library]** -knappen.
+Widgetbiblioteket i Experience Platform är där du kan visa alla [standard](#standard-widgets) och [anpassad](#custom-widgets) tillgängliga widgetar för din organisation. På dina kontrollpaneler (till exempel profilkontrollpanelen) kan du välja **[!UICONTROL Modify dashboard]** för att visa **[!UICONTROL Widget library]** -knappen.
 
 ![Kontrollpanelen Profiler med kontrollpanelen Ändra markerad.](../images/customization/modify-dashboard.png)
 
@@ -36,7 +36,7 @@ Välj **[!UICONTROL Widget library]** för att öppna widgetbiblioteket och visa
 
 Standardwidgetar refererar till de widgetar som Adobe tillhandahåller för användning i dina instrumentpaneler. Dessa widgetar är skrivskyddade och kan inte redigeras av din organisation.
 
-I widgetbiblioteket **[!UICONTROL Standard]** -fliken innehåller alla tillgängliga standardwidgetar från Adobe. Du kan uppdatera dina instrumentpaneler med hjälp av dessa standardvärden. Om du vill veta mer om hur du lägger till standardwidgetar på din instrumentpanel kan du läsa guiden för [använda standardwidgetar i kontrollpaneler](standard-widgets.md).
+I widgetbiblioteket **[!UICONTROL Standard]** -fliken innehåller alla tillgängliga standardwidgetar från Adobe. Du kan uppdatera dina instrumentpaneler med hjälp av någon av dessa standardmått. Om du vill veta mer om hur du lägger till standardwidgetar på din instrumentpanel kan du läsa guiden för [använda standardwidgetar i kontrollpaneler](standard-widgets.md).
 
 ### Anpassade widgetar {#custom-widgets}
 
@@ -48,7 +48,7 @@ Fullständiga steg för att skapa egna widgetar finns i [anpassade widgetar för
 
 #### Redigera schema {#edit-schema}
 
-För att skapa en [anpassad widget](#custom-widgets) för dina instrumentpaneler måste du först identifiera det attribut för kundprofil i realtid som widgeten ska baseras på.
+För att skapa en [anpassad widget](#custom-widgets) för dina instrumentpaneler måste du först identifiera attributet för kundprofil i realtid som widgeten ska baseras på.
 
 Stegvisa instruktioner för hur du redigerar organisationens schema för att skapa anpassade widgetar för kontrollpaneler finns i guiden. [redigera ditt instrumentpanelsschema](edit-schema.md).
 
