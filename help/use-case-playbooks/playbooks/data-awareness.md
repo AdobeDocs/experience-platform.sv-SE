@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över datainsikt i Use Case Playbooks
 description: Lär dig hur du snabbar upp time to value genom att kopiera resurserna som genereras i den sista inspirerande sandlådan till andra sandlådor.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 5b6b69d69a088f58d10f41debde859294285360d
+source-git-commit: cbf5f2aaf9bb8113ad5eadac888e9b4f85b199b8
 workflow-type: tm+mt
-source-wordcount: '835'
+source-wordcount: '827'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Översikt över datainsikt i Use Case Playbooks
 
-Använd fallspelsböcker är marknadsföringsmallar som är utformade för att generera resurser som målgrupper, scheman eller resor för vanliga användningsfall inom marknadsföring. I Adobe Experience Platform refererar mallarna till flera standardfält och fältgrupper. I vissa fall kan du dock redan ha konfigurerat egna scheman, fält och fältgrupper. Detta kan göra att vissa resurser som genereras av ärendemallar, som resor, inte är kompatibla med dina data. I den här självstudiekursen får du lära dig hur du använder funktioner för att öka medvetenheten om data för att bättre justera och komplettera de genererade resurserna med befintliga resurser.
+Använd fallspelsböcker är marknadsföringsmallar som är utformade för att generera resurser som målgrupper, scheman eller resor för vanliga användningsfall inom marknadsföring. I Adobe Experience Platform refererar mallarna till flera standardfält och fältgrupper. I vissa fall kan du dock redan ha konfigurerat egna scheman, fält och fältgrupper. Detta kan göra att vissa resurser som genereras av ärendemallar, som resor, inte är kompatibla med dina data. Läs den här självstudiekursen om du vill veta hur du använder funktioner för att öka medvetenheten om data för att bättre anpassa och komplettera de genererade resurserna med dina befintliga resurser.
 
 ## Förutsättningar {#prerequisites}
 
@@ -31,7 +31,7 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 
    ![Ett modalt sätt att skapa ett paket](/help/use-case-playbooks/assets/playbooks/data-awareness/create-package-modal.png)
 
-3. Navigera till **Sandlådor** sida i navigeringen till vänster och välj **Paket** söker du efter ditt paket och publicerar det. Om du vill publicera ett paket som är i utkastläge följer du stegen i [sandlådeverktyg](/help/sandboxes/ui/sandbox-tooling.md#add-an-object-to-an-existing-package-and-publish) -dokument.
+3. Navigera till **Sandlådor** sida i navigeringen till vänster och välj **Paket** , hitta paketet och publicera det. Så här publicerar du ett paket som är i utkastläge: [sandlådeverktyg](/help/sandboxes/ui/sandbox-tooling.md#add-an-object-to-an-existing-package-and-publish) -dokument.
 
    ![Paket i utkastläge eller opublicerat läge](/help/use-case-playbooks/assets/playbooks/data-awareness/draft-mode.png)
 
@@ -45,7 +45,7 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
    >
    > Paketet kan inte importeras medan det fortfarande är i utkastläge, så öppna paketdetaljsidan och publicera paketet.
 
-5. Välj **+** starta arbetsflödet för att importera resurser som genererats av fallspelningsboken till **[!UICONTROL Target sandbox]**. Markera en målsandlåda och bekräfta det paketnamn du vill importera med listrutan. Lägg till jobbinformation som jobbnamn och jobbbeskrivning innan du fortsätter till nästa steg.
+5. Välj **+** styra och starta arbetsflödet för att importera resurserna som genereras av fallspelningsboken till **[!UICONTROL Target sandbox]**. Markera en målsandlåda och bekräfta det paketnamn som du vill importera med listrutan. Lägg till jobbinformation som jobbnamn och jobbbeskrivning innan du fortsätter till nästa steg.
 
    ![Starta importarbetsflöde, välj mål, bekräfta paket, lägg till jobbinformation.](/help/use-case-playbooks/assets/playbooks/data-awareness/import-package-import-settings.png)
 
@@ -59,7 +59,7 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 
 ### Kartscheman {#map-schemas}
 
-1. Mappa det första schemat. I dialogrutan för schemamappning visas en listruta där du kan välja målschema. Om källschemat är ett profilschema finns det inga andra målschemaalternativ förutom [individuellt unionsprofilschema](/help/xdm/classes/individual-profile.md). Du kan se automatiskt genererade mappningsrekommendationer mellan källdata och målfält när sidan visas första gången. Du kan redigera mappningarna genom att markera målfältet och sedan välja ett nytt fält. Om du ändrar de föreslagna mappningarna använder du **Validera** för att validera nya mappningar och visa eventuella fel som kan vara länkade till nya mappningar. Välj **Spara** när mappningen är klar.
+1. Mappa det första schemat. I dialogrutan för schemamappning visas en listruta där du kan välja målschema. Om källschemat är ett profilschema finns det inga andra målschemaalternativ förutom [individuellt unionsprofilschema](/help/xdm/classes/individual-profile.md). Du kan se automatiskt genererade mappningsrekommendationer mellan källdata och målfält när sidan visas första gången. Du kan redigera mappningarna genom att markera målfältet och sedan välja ett nytt fält. Använd kommandot **Validera** för att validera nya mappningar och visa eventuella fel som kan vara länkade till nya mappningar. Välj **Spara** när mappningen är klar.
 
    ![Dialogrutan för schemamappning med en listruta för att välja ett målschema.](/help/use-case-playbooks/assets/playbooks/data-awareness/map-to-existing-fields.png)
 
@@ -81,7 +81,7 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 
    >[!NOTE]
    >
-   > Du kan inte vidta åtgärder för några resurser förutom scheman eftersom det här är en inspirerande sandlåda, men de visas som beroende av paketet.
+   > Du kan inte ändra några resurser förutom scheman, eftersom det här är en inspirerande sandlåda, men de visas som beroende av paketet.
 
 ### Importstatus {#import-status}
 
@@ -89,7 +89,7 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 
    ![Sida som visar importförloppet](/help/use-case-playbooks/assets/playbooks/data-awareness/import-progress.png)
 
-2. När paketet importeras skapas resurserna i paketet i målsandlådan. När de är klara refererar de till de fält som du just har mappat till i importprocessen. Processen är nu klar och resurserna från den inspirerande sandlådan finns nu också i din målsandlåda så att du kan testa dem.
+2. När paketet importeras skapas resurserna i paketet i målsandlådan. När de är klara refererar de till de fält som du mappade under importprocessen. Processen är nu klar och resurserna från den inspirerande sandlådan finns nu också i din målsandlåda så att du kan testa dem.
 
    ![Genererade resurser i målsandlådan](/help/use-case-playbooks/assets/playbooks/data-awareness/packages.png)
 
