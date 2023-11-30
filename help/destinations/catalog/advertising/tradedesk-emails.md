@@ -3,9 +3,9 @@ title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3680341c5ca4012ae33df32aa901467d1048b702
 workflow-type: tm+mt
-source-wordcount: '1114'
+source-wordcount: '1096'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experie
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | E-post | E-postadresser (klartext) | Indata `email` som målidentitet när din källidentitet är ett e-postnamnutrymme eller attribut. |
-| Email_LC_SHA256 | E-postadresser måste hash-kodas med SHA256 och nedsänkt. Var noga med att följa [e-postnormalisering](https://github.com/UnifiedID2/uid2docs/tree/main/api#email-address-normalization) regler krävs. Du kan inte ändra den här inställningen senare. | Indata `hashed_email` som målidentitet när källidentiteten är ett Email_LC_SHA256-namnutrymme eller -attribut. |
+| Email_LC_SHA256 | E-postadresser måste hash-kodas med SHA256 och nedsänkt. Du kan inte ändra den här inställningen senare. | Indata `hashed_email` som målidentitet när källidentiteten är ett Email_LC_SHA256-namnutrymme eller -attribut. |
 
 {style="table-layout:auto"}
 
