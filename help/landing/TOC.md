@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
-user-guide-description: Lär dig hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med guider, dokumentation och självstudiekurser.
+user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
 source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
 source-wordcount: '289'
-ht-degree: 12%
+ht-degree: 19%
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: Användarhandbok om Observability Insights
-user-guide-description: Ta reda på hur ni kan övervaka plattformsaktiviteter med hjälp av statistik och händelsemeddelanden från Adobe Experience Platform Insights.
+user-guide-description: Se hur du kan övervaka Platform-aktiviteter med hjälp av statistiska mätvärden och händelsemeddelanden från Adobe Experience Platform Observability Insights.
 feature: Observability
 source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
 workflow-type: tm+mt
 source-wordcount: '62'
-ht-degree: 14%
+ht-degree: 46%
 
 ---
 
