@@ -2,9 +2,9 @@
 title: Anonymt block i frågetjänsten
 description: Det anonyma blocket är en SQL-syntax som stöds av Adobe Experience Platform Query Service, som gör att du effektivt kan köra en sekvens med frågor
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: b7de5d3b2ceba27f5e86d48078be484dcb6f7c4b
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---
@@ -60,8 +60,28 @@ END
 $$;
 ```
 
+## Anonym blockering med tredjepartsklienter {#third-party-clients}
+
+Vissa tredjepartsklienter kan kräva en separat identifierare före och efter ett SQL-block för att ange att en del av skriptet ska hanteras som en enskild sats. Om du får ett felmeddelande när du använder frågetjänsten med en tredjepartsklient bör du läsa tredjepartsklientens dokumentation om användningen av ett SQL-block.
+
+Till exempel: **DbVisualizer** kräver att avgränsaren måste vara den enda texten på raden. I DbVisualizer är standardvärdet för Begin Identifier `--/` och för End Identifier är det `/`. Ett exempel på ett anonymt block i DbVisualizer visas nedan:
+
+```SQL
+--/
+$$ BEGIN
+    CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
+    ....
+    CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....;
+    EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
+END
+$$;
+/
+```
+
+I synnerhet för DbVisualizer finns det också ett alternativ i användargränssnittet att &quot;[!DNL Execute the complete buffer as one SQL statement]&quot;. Se [Dokumentation för DbVisualizer](https://confluence.dbvis.com/display/UG120/Executing+Complex+Statements#ExecutingComplexStatements-UsingExecuteBuffer) för mer information.
+
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du nu en tydlig förståelse för anonyma block och hur de är strukturerade. [Mer information om frågekörning](../best-practices/writing-queries.md), läs guiden om frågekörning i Query Service.
+Genom att läsa det här dokumentet har du nu en tydlig förståelse för anonyma block och hur de är strukturerade. Läs [guide för frågekörning](../best-practices/writing-queries.md) för mer information om hur du skriver frågor.
 
-Du bör även läsa om [hur anonymt block används med det inkrementella belastningsdesignmönstret](./incremental-load.md) för att öka frågans effektivitet.
+Du bör även läsa om [hur anonyma block används med det inkrementella lastdesignmönstret](./incremental-load.md) för att öka frågans effektivitet.
