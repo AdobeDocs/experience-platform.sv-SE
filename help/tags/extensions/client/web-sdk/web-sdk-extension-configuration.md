@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ac3362fa5e8a314f85f3bb659047f77fb56c1a7c
 workflow-type: tm+mt
-source-wordcount: '1398'
+source-wordcount: '1488'
 ht-degree: 0%
 
 ---
@@ -85,13 +85,25 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller h
 
 ## Konfigurera personaliseringsinställningar {#personalization}
 
-I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in.
-
-Du kan ange vilka element som ska döljas i den fördolda formatredigeraren. Du kan sedan kopiera det fördolda standardfragmentet som du har fått och klistra in det inuti `<head>` element i webbplatsens [!DNL HTML] kod.
+I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in. Detta garanterar att besökarna bara ser den personaliserade sidan.
 
 ![Bild som visar anpassningsinställningarna för Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-personalization.png)
 
 * **[!UICONTROL Migrate Target from at.js to the Web SDK]**: Använd det här alternativet för att aktivera [!DNL Web SDK] läsa och skriva `mbox` och `mboxEdgeCluster` cookies som används av at.js `1.x` eller `2.x` bibliotek. Detta hjälper dig att behålla besökarprofilen när du går från en sida där Web SDK används till en sida där at.js används `1.x` eller `2.x` bibliotek och vice versa.
+
+### Dölja stil {#prehiding-style}
+
+Med den fördolda formatredigeraren kan du definiera anpassade CSS-regler för att dölja specifika avsnitt på en sida. När sidan har lästs in använder Web SDK den här stilen för att dölja avsnitt som behöver anpassas, hämtar personaliseringen och tar sedan bort de anpassade sidavsnitten. På så sätt kan besökarna se de sidor som redan är personaliserade, utan att se processen för hämtning av personalisering.
+
+### Dölja fragment {#prehiding-snippet}
+
+Det fördolda fragmentet är användbart när Web SDK-biblioteket läses in asynkront. För att undvika flimmer rekommenderar vi att du döljer innehållet innan Web SDK-biblioteket har lästs in.
+
+Om du vill använda det fördolda fragmentet kopierar och klistrar du in det inuti `<head>` element på sidan.
+
+>[!IMPORTANT]
+>
+>När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den som används av [fördölja stil](#prehiding-style).
 
 ## Konfigurera inställningar för datainsamling {#data-collection}
 
