@@ -3,10 +3,10 @@ title: Intelligent återanvändning
 description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: ea0f53339d8549152a54267d537b04326f9164df
 workflow-type: tm+mt
-source-wordcount: '3569'
-ht-degree: 2%
+source-wordcount: '3747'
+ht-degree: 1%
 
 ---
 
@@ -19,6 +19,8 @@ ht-degree: 2%
 Engagera kunderna på nytt som har övergett konverteringsgraden på ett intelligent och ansvarsfullt sätt. Engagera kunderna med upplevelser för att öka konverteringsgraden och öka kundens livstidsvärde.
 
 Ta hänsyn till kundernas alla egenskaper och beteenden i realtid, ta hänsyn till dem och erbjud snabb omkvalificering baserat på både online- och offlinehändelser.
+
+Nedan finns en avancerad arkitekturvy över de olika komponenterna i Real-Time CDP och Journey Optimizer. I det här diagrammet visas hur data flödar genom de två Experience Platform-apparna från datainsamling fram till den punkt där de aktiveras via resor eller kampanjer till destinationer, för att uppnå det användningsfall som beskrivs på den här sidan.
 
 ![Intelligent återengagerande visuell översikt på hög nivå.](../intelligent-re-engagement/images/step-by-step.png)
 
@@ -59,7 +61,7 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
 
 1. Du kan skapa scheman och datauppsättningar och sedan aktivera för [!UICONTROL Profile].
 2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
-3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och/eller i mobilappen via identitetsdiagram.
+3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och i mobilappar via identitetsdiagram.
 4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har gjort ett engagemang de senaste tre dagarna.
 5. Du skapar en övergiven produktbläddringsresa i [!DNL Adobe Journey Optimizer].
 6. Arbeta med **datapartner** för aktivering av målgrupper till önskade betalmediematerial.
@@ -71,7 +73,7 @@ Det övergivna kundvagnsscenariot gäller när produkter har placerats i kundvag
 
 1. Du skapar scheman och datauppsättningar, [!UICONTROL Profile].
 2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
-3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och/eller i mobilappen via identitetsdiagram.
+3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och i mobilappar via identitetsdiagram.
 4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har placerat en artikel i kundvagnen men inte slutfört köpet. The **[!UICONTROL Add to cart]** event startar en timer som väntar i 30 minuter och sedan söker efter köp. Om inget köp har gjorts **kund** läggs till i **[!UICONTROL Abandon Cart]** målgrupper.
 5. Du skapar en övergiven kundvagnsresa i [!DNL Adobe Journey Optimizer].
 6. Arbeta med **datapartner** för aktivering av målgrupper till önskade betalmediematerial.
@@ -83,7 +85,7 @@ Orderbekräftelsescenariot fokuserar på produktinköp som görs via webbplatsen
 
 1. Du kan skapa scheman och datauppsättningar och sedan aktivera för [!UICONTROL Profile].
 2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
-3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och/eller i mobilappen via identitetsdiagram.
+3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och i mobilappar via identitetsdiagram.
 4. Du skapar en bekräftelseresa i [!DNL Adobe Journey Optimizer].
 5. [!DNL Adobe Journey Optimizer] skickar ett orderbekräftelsemeddelande via den önskade kanalen.
 
@@ -109,10 +111,10 @@ Kundattributschemat representeras av en [[!UICONTROL XDM Individual Profile]](/h
 
 [Kontaktinformation, privat](/help/xdm/field-groups/profile/personal-contact-details.md) är en standardschemafältgrupp för klassen XDM Individual Profile som beskriver kontaktinformationen för en enskild person.
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `mobilePhone.number` | Obligatoriskt | Personens mobiltelefonnummer, som kommer att användas för SMS. |
-| `personalEmail.address` | Obligatoriskt | Personens e-postadress. |
+| Fält | Beskrivning |
+| --- | --- |
+| `mobilePhone.number` | Personens mobiltelefonnummer, som kommer att användas för SMS. |
+| `personalEmail.address` | Personens e-postadress. |
 
 +++
 
@@ -139,13 +141,13 @@ The [Innehåll och inställningar](/help/xdm/field-groups//profile/consents.md) 
 
 +++Profiltestinformation (fältgrupp)
 
-Den här fältgruppen används för bästa praxis.
+Med den här fältgruppen kan du testa din resa innan den publiceras med testprofiler. Mer information om hur du skapar testprofiler finns i [skapa testprofiler, genomgång](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/about-journey-building/creating-test-profiles.html) och [testa självstudiekursen om resan](https://experienceleague.adobe.com/docs/journeys/using/building-journeys/testing-the-journey.html).
 
 +++
 
 #### Kundens digitala transaktionsschema
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats och/eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via [Web SDK](/help/edge/home.md) och är nödvändigt för att kunna hänvisa till olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online och förbättrade målgruppsfunktioner.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via [Web SDK](/help/edge/home.md) och är nödvändigt för att kunna hänvisa till olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online och förbättrade målgruppsfunktioner.
 
 Kundens digitala transaktionsschema representeras av en [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) klassen.
 
@@ -153,11 +155,11 @@ Kundens digitala transaktionsschema representeras av en [[!UICONTROL XDM Experie
 
 The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `_id` | Obligatoriskt | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
-| `timestamp` | Obligatoriskt | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt RFC 3339, avsnitt 5.6. Den här tidsstämpeln måste finnas i det förflutna. |
-| `eventType` | Obligatoriskt | En sträng som anger händelsens kategorityp. |
+| Fält | Beskrivning |
+| --- | --- |
+| `_id` | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
+| `timestamp` | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt RFC 3339, avsnitt 5.6. Den här tidsstämpeln måste finnas i det förflutna. |
+| `eventType` | En sträng som anger händelsens kategorityp. |
 
 +++
 
@@ -165,14 +167,14 @@ The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -kl
 
 The [Information om slutanvändar-ID](/help/xdm/field-groups/event/enduserids.md) fältgruppen används för att beskriva en persons identitetsinformation i flera Adobe-program.
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `endUserIDs._experience.emailid.authenticatedState` | Obligatoriskt | Slutanvändarens e-postadress-ID har autentiserats. |
-| `endUserIDs._experience.emailid.id` | Obligatoriskt | Slutanvändarens e-postadress-ID. |
-| `endUserIDs._experience.emailid.namespace.code` | Obligatoriskt | ID-namnområdeskod för slutanvändarens e-postadress. |
-| `endUserIDs._experience.mcid.authenticatedState` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID) autentiserad. MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.id` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.namespace.code` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID-namnområdeskod (MCID). |
+| Fält | Beskrivning |
+| --- | --- |
+| `endUserIDs._experience.emailid.authenticatedState` | Slutanvändarens e-postadress-ID har autentiserats. |
+| `endUserIDs._experience.emailid.id` | Slutanvändarens e-postadress-ID. |
+| `endUserIDs._experience.emailid.namespace.code` | ID-namnområdeskod för slutanvändarens e-postadress. |
+| `endUserIDs._experience.mcid.authenticatedState` | [!DNL Adobe] Marketing Cloud ID (MCID) autentiserad. MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.id` | [!DNL Adobe] Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.namespace.code` | [!DNL Adobe] Marketing Cloud ID-namnområdeskod (MCID). |
 
 +++
 
@@ -192,11 +194,11 @@ Kundens offlinetransaktionsschema representeras av en [[!UICONTROL XDM Experienc
 
 The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `_id` | Obligatoriskt | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
-| `timestamp` | Obligatoriskt | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt RFC 3339, avsnitt 5.6. Den här tidsstämpeln måste finnas i det förflutna. |
-| `eventType` | Obligatoriskt | En sträng som anger händelsens kategorityp. |
+| Fält | Beskrivning |
+| --- | --- |
+| `_id` | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
+| `timestamp` | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt RFC 3339, avsnitt 5.6. Den här tidsstämpeln måste finnas i det förflutna. |
+| `eventType` | En sträng som anger händelsens kategorityp. |
 
 +++
 
@@ -204,18 +206,18 @@ The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -kl
 
 The [Handelsinformation](/help/xdm/field-groups/event/commerce-details.md) fältgrupp används för att beskriva handelsdata, t.ex. produktinformation (SKU, namn, kvantitet) och standardkundvagnsåtgärder (beställning, utcheckning, övergivna).
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `commerce.cart.cartID` | Obligatoriskt | Ett ID för kundvagnen. |
-| `commerce.order.orderType` | Obligatoriskt | Ett objekt som beskriver produktordertypen. |
-| `commerce.order.payments.paymentAmount` | Obligatoriskt | Ett objekt som beskriver betalningsbeloppet för produktorder. |
-| `commerce.order.payments.paymentType` | Obligatoriskt | Ett objekt som beskriver betalningstypen för produktorder. |
-| `commerce.order.payments.transactionID` | Obligatoriskt | Ett transaktions-ID för objektproduktorder. |
-| `commerce.order.purchaseID` | Obligatoriskt | Ett objektproduktorderns inköps-ID. |
-| `productListItems.name` | Obligatoriskt | En lista med artikelnamn som representerar de produkter som en kund har valt. |
-| `productListItems.priceTotal` | Obligatoriskt | Det totala priset på en lista med artiklar som representerar de produkter som kunden har valt. |
-| `productListItems.product` | Obligatoriskt | Produkten/produkterna som valts. |
-| `productListItems.quantity` | Obligatoriskt | Kvantiteten i en lista över artiklar som representerar de produkter som kunden har valt. |
+| Fält | Beskrivning |
+| --- | --- |
+| `commerce.cart.cartID` | Ett ID för kundvagnen. |
+| `commerce.order.orderType` | Ett objekt som beskriver produktordertypen. |
+| `commerce.order.payments.paymentAmount` | Ett objekt som beskriver betalningsbeloppet för produktorder. |
+| `commerce.order.payments.paymentType` | Ett objekt som beskriver betalningstypen för produktorder. |
+| `commerce.order.payments.transactionID` | Ett transaktions-ID för objektproduktorder. |
+| `commerce.order.purchaseID` | Ett objektproduktorderns inköps-ID. |
+| `productListItems.name` | En lista med artikelnamn som representerar de produkter som en kund har valt. |
+| `productListItems.priceTotal` | Det totala priset på en lista med artiklar som representerar de produkter som kunden har valt. |
+| `productListItems.product` | Produkten/produkterna som valts. |
+| `productListItems.quantity` | Kvantiteten i en lista över artiklar som representerar de produkter som kunden har valt. |
 
 +++
 
@@ -223,10 +225,10 @@ The [Handelsinformation](/help/xdm/field-groups/event/commerce-details.md) fält
 
 [Kontaktinformation, privat](/help/xdm/field-groups/profile/personal-contact-details.md) är en standardschemafältgrupp för klassen XDM Individual Profile som beskriver kontaktinformationen för en enskild person.
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `mobilePhone.number` | Obligatoriskt | Personens mobiltelefonnummer, som kommer att användas för SMS. |
-| `personalEmail.address` | Obligatoriskt | Personens e-postadress. |
+| Fält | Beskrivning |
+| --- | --- |
+| `mobilePhone.number` | Personens mobiltelefonnummer, som kommer att användas för SMS. |
+| `personalEmail.address` | Personens e-postadress. |
 
 +++
 
@@ -242,7 +244,7 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 >
 >Detta är en valfri implementering om du använder [[!DNL Adobe Analytics Source Connector]](/help/sources/connectors/adobe-applications/analytics.md).
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats och/eller tillhörande digitala plattformar. Det här schemat liknar kundens schema för digitala transaktioner, men skiljer sig åt på så sätt att det är avsett att användas när [Web SDK](/help/edge/home.md) är inte ett alternativ för datainsamling. Därför behövs det här schemat när du använder [!DNL Adobe Analytics Source Connector] för att skicka onlinedata till [!DNL Adobe Experience Platform] antingen som primär eller sekundär datastream.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Det här schemat liknar kundens schema för digitala transaktioner, men skiljer sig åt på så sätt att det är avsett att användas när [Web SDK](/help/edge/home.md) är inte ett alternativ för datainsamling. Därför behövs det här schemat när du använder [!DNL Adobe Analytics Source Connector] för att skicka onlinedata till [!DNL Adobe Experience Platform] antingen som primär eller sekundär datastream.
 
 The [!DNL Adobe] webbanslutningsschemat representeras av en [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) klassen.
 
@@ -250,11 +252,11 @@ The [!DNL Adobe] webbanslutningsschemat representeras av en [[!UICONTROL XDM Exp
 
 The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -klassen innehåller följande fältgrupper:
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `_id` | Obligatoriskt | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
-| `timestamp` | Obligatoriskt | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt RFC 3339, avsnitt 5.6. Den här tidsstämpeln måste finnas i det förflutna. |
-| `eventType` | Obligatoriskt | En sträng som anger händelsens kategorityp. |
+| Fält | Beskrivning |
+| --- | --- |
+| `_id` | Identifierar unikt enskilda händelser som hämtas till [!DNL Adobe Experience Platform]. |
+| `timestamp` | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt RFC 3339, avsnitt 5.6. Den här tidsstämpeln måste finnas i det förflutna. |
+| `eventType` | En sträng som anger händelsens kategorityp. |
 
 +++
 
@@ -262,14 +264,14 @@ The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -kl
 
 The [Adobe Analytics ExperienceEvent](/help/xdm/field-groups/event/analytics-full-extension.md) fältgruppen samlar in vanliga mätvärden som samlas in av Adobe Analytics.
 
-| Fält | Krav | Beskrivning |
-| --- | --- | --- |
-| `endUserIDs._experience.emailid.authenticatedState` | Obligatoriskt | Slutanvändarens e-postadress-ID har autentiserats. |
-| `endUserIDs._experience.emailid.id` | Obligatoriskt | Slutanvändarens e-postadress-ID. |
-| `endUserIDs._experience.emailid.namespace.code` | Obligatoriskt | ID-namnområdeskod för slutanvändarens e-postadress. |
-| `endUserIDs._experience.mcid.authenticatedState` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID) autentiserad. MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.id` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
-| `endUserIDs._experience.mcid.namespace.code` | Obligatoriskt | [!DNL Adobe] Marketing Cloud ID-namnområdeskod (MCID). |
+| Fält | Beskrivning |
+| --- | --- |
+| `endUserIDs._experience.emailid.authenticatedState` | Slutanvändarens e-postadress-ID har autentiserats. |
+| `endUserIDs._experience.emailid.id` | Slutanvändarens e-postadress-ID. |
+| `endUserIDs._experience.emailid.namespace.code` | ID-namnområdeskod för slutanvändarens e-postadress. |
+| `endUserIDs._experience.mcid.authenticatedState` | [!DNL Adobe] Marketing Cloud ID (MCID) autentiserad. MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.id` | [!DNL Adobe] Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
+| `endUserIDs._experience.mcid.namespace.code` | [!DNL Adobe] Marketing Cloud ID-namnområdeskod (MCID). |
 
 +++
 
@@ -344,8 +346,9 @@ Följande händelse används för det övergivna produktbläddringsscenariot dä
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `eventType: commerce.productViews`
-* Och `THEN` (sekventiell händelse) exclude `eventType: commerce.procuctListAdds` eller `application.launch` eller `web.webpagedetails.pageViews` eller `commerce.purchases` (både online och offline)
+* Och `THEN` (sekventiell händelse) exclude `eventType: commerce.productListAdds` eller `application.launch` eller `web.webpagedetails.pageViews` eller `commerce.purchases` (både online och offline)
    * `Timestamp: > 3 days after productView`
+* `Timestamp: > 4 days`
 
 +++
 
@@ -356,8 +359,10 @@ Följande händelse används för det övergivna produktbläddringsscenariot, d�
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `eventType: commerce.productViews`
-* Och `THEN` (sekventiell händelse) include `eventType: commerce.procuctListAdds` eller `application.launch` eller `web.webpagedetails.pageViews` eller `commerce.purchases` (både online och offline)
+* Och `THEN` (sekventiell händelse) include `eventType: commerce.productListAdds` eller `application.launch` eller `web.webpagedetails.pageViews` eller `commerce.purchases` (både online och offline)
    * `Timestamp: > 3 days after productView`
+* `Timestamp: > 4 days`
++++
 
 +++Engagement streaming under den senaste dagen
 
@@ -365,7 +370,7 @@ Följande händelse används för det övergivna produktbläddringsscenariot dä
 
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
-* `eventType: commerce.procuctListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `eventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
    * `Timestamp: in last 1 day` (Direktuppspelning)
 
 +++
@@ -376,7 +381,7 @@ Följande händelse används för det övergivna produktbläddringsscenariot dä
 
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
-* `EventType: commerce.procuctListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `EventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
    * `Timestamp: in last 3 days` (Gruppera)
 
 +++
@@ -422,6 +427,8 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
 
 +++Händelser
 
+Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guide till allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+
 * Händelse 1: Produktvyer
    * Schema: Digitala kundtransaktioner
    * Fält:
@@ -429,14 +436,7 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
    * Villkor:
       * `eventType = commerce.productViews`
       * Fält:
-         * `commerce.productViews.id`
-         * `commerce.productViews.value`
          * `eventType`
-         * `identityMap.authenticatedState`
-         * `identityMap.id`
-         * `identityMap.primary`
-         * `productListItems.SKU`
-         * `productListItems.currencyCode`
          * `productListItems.name`
          * `productListItems.priceTotal`
          * `productListItems.product`
@@ -515,7 +515,9 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
 
 +++
 
-+++Key Journey logic
++++Nyckellogik för arbetsytan på resan
+
+Nyckellogiken för arbetsytan på resan kräver att du identifierar specifika händelser och konfigurerar åtgärder som ska utföras efter att händelsen har inträffat.
 
 * Inmatningslogik för resebidrag
    * Produktvyhändelse
@@ -549,6 +551,8 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
 Det övergivna kundvagnsscenariot avser produkter som har placerats i kundvagnen men ännu inte köpts på både webbplatsen och mobilappen.<p>![Kundens övergivna kundvagnsscenario - en högnivåvisuell översikt.](../intelligent-re-engagement/images/abandoned-cart-journey.png "Kundens övergivna kundvagnsscenario - en högnivåvisuell översikt."){width="1920" zoomable="yes"}</p>
 
 +++Händelser
+
+Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guide till allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
 
 * Händelse 2: Lägg i kundvagnen
    * Schema: Digitala kundtransaktioner
@@ -643,7 +647,9 @@ Det övergivna kundvagnsscenariot avser produkter som har placerats i kundvagnen
 
 +++
 
-+++Key Journey Logic
++++Nyckellogik för arbetsytan på resan
+
+Nyckellogiken för arbetsytan på resan kräver att du identifierar specifika händelser och konfigurerar åtgärder som ska utföras efter att händelsen har inträffat.
 
 * Inmatningslogik för resebidrag
    * `AddToCart` Händelse
@@ -679,6 +685,8 @@ Orderbekräftelsescenariot fokuserar på produktinköp som görs via webbplatsen
 
 +++Händelser
 
+Med händelser kan ni utlösa era resor helt och hållet för att skicka meddelanden i realtid till den person som flyger in på resan. Mer information om händelser finns i [guide till allmänna händelser](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/general-events.html).
+
 * Evenemang 4: Onlineköp
    * Schema: Digitala kundtransaktioner
    * Fält:
@@ -707,7 +715,9 @@ Orderbekräftelsescenariot fokuserar på produktinköp som görs via webbplatsen
 
 +++
 
-+++Key Journey logic
++++Nyckellogik för arbetsytan på resan
+
+Nyckellogiken för arbetsytan på resan kräver att du identifierar specifika händelser och konfigurerar åtgärder som ska utföras efter att händelsen har inträffat.
 
 * Inmatningslogik för resebidrag
    * Orderhändelse
@@ -740,10 +750,16 @@ Direktuppspelande målgruppsexportdestinationer (som Facebook, Google Customer M
 * `ECID`
 * `mobilePhone.number`
 
-målgruppen för kundvagnen ska betraktas som en strömmande målgrupp och kan därför användas av målgruppsramverket för detta användningsfall.
+Du kan aktivera övergiven produktbläddring och överge kundvagnsmålgrupper till betalda mediereklam.
 
 * Strömma/utlöst
    * [Reklam](/help/destinations/catalog/advertising/overview.md)/[Betalda medier och sociala medier](/help/destinations/catalog/social/overview.md)
    * [Mobil](/help/destinations/catalog/mobile-engagement/overview.md)
    * [Direktuppspelningsmål](/help/destinations/catalog/streaming/http-destination.md)
    * [Anpassat mål som skapats med Destination SDK.](/help/destinations/destination-sdk/overview.md). Om du är kund hos Real-Time CDP Ultimate kan du även skapa en privat [anpassat mål med Destination SDK](/help/destinations/destination-sdk/overview.md#productized-and-custom-integrations)
+
+## Nästa steg {#next-steps}
+
+Genom att återengagera de kunder som övergett en konvertering på ett intelligent och ansvarsfullt sätt har ni förhoppningsvis ökat konverteringsgraden och ökat kundens livstidsvärde.
+
+Därefter kan du utforska andra användningsområden som stöds av Real-Time CDP, till exempel [visa personaliserat innehåll för oautentiserade användare](/help/rtcdp/partner-data/onsite-personalization.md) på dina webbsidor.
