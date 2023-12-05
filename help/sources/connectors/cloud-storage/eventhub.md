@@ -3,9 +3,9 @@ title: Översikt över Azure Event Hubs Source Connector
 description: Lär dig hur du ansluter Azure Event Hubs till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: 087100b23f95cef527a507fb11440467feb78c9e
+source-git-commit: 12ddf87d594b7e25a0356cd419e990b262c1734e
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '517'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ För att öka hastigheten för intag på plattformssidan måste Platform öka an
 
 ## Använd ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till plattform
 
-Du kan konfigurera ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till Platform samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till [[!DNL Event Hubs] uppsättningsdokument för nätverksregel](https://docs.microsoft.com/en-us/rest/api/eventhub/preview/namespaces-network-rule-set/create-or-update-network-rule-set#code-try-0) och följ stegen nedan:
+Du kan konfigurera ett virtuellt nätverk att ansluta till [!DNL Event Hubs] till Platform samtidigt som brandväggsåtgärderna är aktiverade. Om du vill konfigurera ett virtuellt nätverk går du till [[!DNL Event Hubs] uppsättningsdokument för nätverksregel](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) och följ stegen nedan:
 
 * Välj **Prova** från REST API-panelen,
 * Autentisera [!DNL Azure] kontot med hjälp av dina inloggningsuppgifter i samma webbläsare,
@@ -117,7 +117,7 @@ Se listan nedan för olika regioner av plattformsundernät:
 }
 ```
 
-Se följande [[!DNL Event Hubs] dokument](https://docs.microsoft.com/en-us/rest/api/eventhub/preview/namespaces-network-rule-set/create-or-update-network-rule-set) om du vill ha mer information om uppsättningar av nätverksregler.
+Se följande [[!DNL Event Hubs] dokument](https://learn.microsoft.com/en-us/azure/event-hubs/network-security) om du vill ha mer information om uppsättningar av nätverksregler.
 
 ## Anslut [!DNL Event Hubs] till plattform
 

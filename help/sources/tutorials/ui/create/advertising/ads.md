@@ -2,9 +2,9 @@
 title: Skapa en Google Ads Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Google Ads-källanslutning med Adobe Experience Platform användargränssnitt.
 exl-id: 33dd2857-aed3-4e35-bc48-1c756a8b3638
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 12ddf87d594b7e25a0356cd419e990b262c1734e
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '648'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ För att få tillgång till din Google Ads-kontoplattform måste du ange följan
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
 | Kund-ID för kund | Klientens kund-ID är det kontonummer som motsvarar det Google Ads-klientkonto som du vill hantera med API:t för Google Ads. Detta ID följer mallen för `123-456-7890`. |
-| ID för inloggningskund | Kund-ID för inloggning är det kontonummer som motsvarar ditt Google Ads Manager-konto och används för att hämta rapportdata från en viss kund. Mer information om användar-ID för inloggningskund finns i [API-dokumentation för Google Ads](https://developers.google.com/google-ads/api/docs/migration/login-customer-id). |
+| ID för inloggningskund | Kund-ID för inloggning är det kontonummer som motsvarar ditt Google Ads Manager-konto och används för att hämta rapportdata från en viss kund. Mer information om användar-ID för inloggningskund finns i [API-dokumentation för Google Ads](https://developers.google.com/search-ads/reporting/concepts/login-customer-id). |
 | Utvecklartoken | Med utvecklartoken får du tillgång till Google Ads API. Du kan använda samma utvecklartoken för att göra förfrågningar mot alla dina Google Ads-konton. Hämta din utvecklartoken från [logga in på ditt chefskonto](https://ads.google.com/home/tools/manager-accounts/) och sedan navigera till sidan API Center. |
 | Uppdatera token | Uppdateringstoken är en del av [!DNL OAuth2] autentisering. Med denna token kan du återskapa dina åtkomsttoken när de har upphört att gälla. |
 | Klient-ID | Klient-ID används tillsammans med klienthemligheten som en del av [!DNL OAuth2] autentisering. Tillsammans gör klient-ID och klienthemlighet det möjligt för programmet att agera för ditt kontos räkning genom att identifiera ditt program för Google. |
