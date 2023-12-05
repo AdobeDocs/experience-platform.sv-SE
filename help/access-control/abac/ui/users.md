@@ -3,16 +3,16 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera användare
 description: Det här dokumentet innehåller information om hur du hanterar användare och användargrupper via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: fa4786b081b46c8f3c0030282ae3900891fbd652
+source-git-commit: 44ffcc09edcfe35bdd456b509fac6f096ef8e022
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '215'
 ht-degree: 0%
 
 ---
 
 # Hantera användare
 
-Om du vill visa användarinformation och roller som de är tilldelade till väljer du **[!UICONTROL Users]** -fliken.
+Välj den **[!UICONTROL Users]** -fliken.
 
 ![flash-users-tab](../../images/flac-ui/flac-users-tab.png)
 
@@ -32,7 +32,7 @@ Välj **[!UICONTROL Roles]** för att visa de roller som användaren är tilldel
 >
 >Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
 
-Övergången till Adobe Experience Platform-behörigheter innehåller ytterligare steg som måste utföras för utvecklar-API-arbetsflödet som tidigare byggde på produktprofiler. Se guiden [API-autentisering](../../../landing/api-authentication.md) för mer information.
+Övergången till Adobe Experience Platform-behörigheter innehåller ytterligare steg som måste slutföras för det utvecklar-API-arbetsflöde som tidigare var baserat på roller. Se guiden på [API-autentisering](../../../landing/api-authentication.md) för mer information.
 
 ## Nästa steg
 

@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 36e38824963139414f2803ef4127706d1e521d1a
+source-git-commit: 44ffcc09edcfe35bdd456b509fac6f096ef8e022
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1840'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Attributbaserad åtkomstkontroll omfattar följande komponenter:
 
 >[!IMPORTANT]
 >
->När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för produktprofiler i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
+>När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för roller i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
 
 Behörigheter är det område i Experience Cloud där administratörer kan definiera användarroller och åtkomstprinciper för att hantera åtkomstbehörigheter för funktioner och objekt i ett produktprogram.
 
@@ -62,7 +62,7 @@ I följande avsnitt finns information om hur attributbaserad åtkomstkontroll ä
 
 ### Åtkomstkontroll
 
-Plattformsanvändning [Adobe Admin Console](https://adminconsole.adobe.com) produktprofiler för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för produktprofiler i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
+Plattformsanvändning [Adobe Admin Console](https://adminconsole.adobe.com) roller för att länka användare med behörigheter och sandlådor. Behörigheter styr åtkomsten till en mängd plattformsfunktioner, inklusive datamodellering, profilhantering och sandlådeadministration. När din organisation har aktiverats för attributbaserad åtkomstkontroll kan du börja använda behörigheter på Adobe Experience Cloud i stället för roller i Adobe Admin Console för att hantera behörigheter för användare, funktioner, etiketter och andra resurser i din organisation.
 
 Det finns begränsad tillgång till attributbaserad åtkomstkontroll för kunder som köper hälso- och sjukvård och/eller sekretessrutiner. Funktionerna är följande:
 
@@ -74,7 +74,7 @@ Administrationsarbetsflödena för alla Experience Platform-baserade program fr�
 
 >[!IMPORTANT]
 >
->Dina produktprofiler migreras automatiskt till behörighetsgränssnittet när din organisation är aktiverad. Produktprofilerna i Admin Console kommer att vara som tidigare. Please **inte** ändra dina produktprofiler när din organisation har aktiverats.
+>Dina roller migreras automatiskt till behörighetsgränssnittet när din organisation är aktiverad. Rollerna i Admin Console kommer att vara som de är tills vidare. Please **inte** ändra dina roller när organisationen har aktiverats.
 
 Mer information om åtkomstkontroll finns i [åtkomstkontroll - översikt](../home.md).
 
