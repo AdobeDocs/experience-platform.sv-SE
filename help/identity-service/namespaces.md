@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 98482bfdd54b70cde73c3512f8237c7862e41281
 workflow-type: tm+mt
-source-wordcount: '1682'
+source-wordcount: '1778'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,24 @@ Identitetsnamnutrymmen kräver förståelse för olika Adobe Experience Platform
 
 ## Identitetsnamnutrymmen
 
+![En illustration av dataarbetsflödet med identitetstjänsten.](images/identity-service-stitching.png)
+
 En fullständigt kvalificerad identitet innehåller två komponenter: och **identitetsvärde** och **namnutrymme för identitet**. Om värdet för en identitet till exempel är `scott@acme.com`, ger ett namnutrymme kontext till det här värdet genom att det särskiljs som en e-postadress. På samma sätt kan ett namnutrymme skilja `555-123-456` som ett telefonnummer, och `3126ABC` som ett CRM-ID. I stort sett **ett namnutrymme ger kontext till en viss identitet**. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
 
 Två profilfragment kan t.ex. innehålla olika primära ID:n, men de delar samma värde för namnutrymmet&quot;E-post&quot;. Därför kan Experience Platform se att dessa fragment faktiskt är samma individ och sammanför data i identitetsdiagrammet för individen.
 
-![](images/identity-service-stitching.png)
+>[!BEGINSHADEBOX]
+
+**Förklaring av identitetsnamnutrymme**
+
+Ett annat sätt att bättre förstå begreppet namnutrymme är att överväga verkliga exempel som städer och deras motsvarande lägen. Till exempel är Portland, Maine och Portland, Oregon två olika platser i USA. Städerna har samma namn, men läget fungerar som ett namnutrymme och ger nödvändigt sammanhang som skiljer de två städerna från varandra.
+
+Använd samma logik för identitetstjänsten:
+
+* I korthet identitetsvärdet för: `1-234-567-8900` kan se ut som ett telefonnummer. Ur ett systemperspektiv kan dock det här värdet ha konfigurerats som ett CRM-ID. Identitetstjänsten skulle inte kunna använda den nödvändiga kontexten för det här identitetsvärdet utan ett motsvarande namnutrymme.
+* Ett annat exempel är identitetsvärdet för: `john@gmail.com`. Även om det här identitetsvärdet enkelt kan antas vara ett e-postmeddelande är det helt möjligt att det har konfigurerats som ett anpassat CRM-ID för namnområde. Med namnutrymme kan du skilja `Email:john@gmail.com` från `CRM ID:john@gmail.com`.
+
+>[!ENDSHADEBOX]
 
 ### Komponenter i ett namnutrymme
 
@@ -87,7 +100,7 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 | Google Ad ID (GAID) | Ett namnutrymme som representerar ett Google Advertising ID. Se följande dokument på [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) för mer information. |
 | Google Click ID | Ett namnutrymme som representerar ett Google Click-ID. Se följande dokument på [Klickspårning i Google Ads](https://developers.google.com/adwords/api/docs/guides/click-tracking) för mer information. |
 | Telefon | Ett namnutrymme som representerar ett telefonnummer. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
-| Telefon (E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas i E.164-format. E.164-formatet innehåller ett plustecken (`+`), en internationell landskod, en lokal kod och ett telefonnummer. Exempel: `(+)(country code)(area code)(phone number)`. |
+| Telefon (E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas i E.164-format. E.164-formatet innehåller ett plustecken (`+`), en internationell landskod, en lokal kod och ett telefonnummer. Till exempel: `(+)(country code)(area code)(phone number)`. |
 | Telefon (SHA256) | Ett namnutrymme som representerar telefonnummer som behöver hashas med SHA256. Du måste ta bort symboler, bokstäver och eventuella inledande nollor. Du måste också lägga till landskoden som prefix. |
 | Telefon (SHA256_E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
 | TNTID | Ett namnutrymme som representerar Adobe Target. Se följande dokument på [Mål](https://experienceleague.adobe.com/docs/target/using/target-home.html) för mer information. |
