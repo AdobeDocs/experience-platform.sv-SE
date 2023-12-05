@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Samtyckesbearbetning i Adobe Experience Platform
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1546'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ När du har konfigurerat din CMP för att lyssna efter medgivandeändringshände
 
 Om du behöver göra inställningar för kundgodkännande i ditt mobilprogram kan du integrera Experience Platform Mobile SDK för att hämta och uppdatera inställningar för samtycke och skicka dem till plattformen när API för samtycke anropas.
 
-I Mobile SDK-dokumentationen finns mer information om [konfigurera mobiltillägget för samtycke](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/) och [med API:t för samtycke](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/). Mer information om hur du hanterar integritetsfrågor med Mobile SDK finns i avsnittet [Integritet och GDPR](https://developer.adobe.com/client-sdks/documentation/resources/privacy-and-gdpr/).
+I Mobile SDK-dokumentationen finns mer information om [konfigurera mobiltillägget för samtycke](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/) och [med API:t för samtycke](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/). Mer information om hur du hanterar integritetsfrågor med Mobile SDK finns i avsnittet [Integritet och GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/).
 
 ### Importera XDM-kompatibla data direkt {#batch}
 

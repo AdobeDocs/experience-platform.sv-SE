@@ -2,10 +2,10 @@
 title: Tillägg för vidarebefordran av Zendesk-händelse
 description: Zendesk-tillägg för händelsevidarebefordran för Adobe Experience Platform.
 exl-id: 22e94699-5b84-4a73-b007-557221d3e223
-source-git-commit: bfbad3c11df64526627e4ce2d766b527df678bca
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '1263'
-ht-degree: 4%
+source-wordcount: '1162'
+ht-degree: 2%
 
 ---
 
@@ -28,21 +28,21 @@ Du måste även samla in följande information för din Zendesk-konfiguration:
 
 {style="table-layout:auto"}
 
-Slutligen måste du skapa en händelsevidarebefordringshemlighet för API-token. Ange hemlig typ till **[!UICONTROL Token]** och ange värdet till den API-token som du hämtade från din Zendesk-konfiguration. Läs dokumentationen om [hemligheter vid vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) om du vill ha mer information om hur du konfigurerar hemligheter.
+Slutligen måste du skapa en händelsevidarebefordringshemlighet för API-token. Ange hemlig typ till **[!UICONTROL Token]** och ange värdet till den API-token som du hämtade från din Zendesk-konfiguration. Mer information finns i dokumentationen om [hemligheter vid vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) för mer information om hur du konfigurerar hemligheter.
 
 ## Installera tillägget {#install}
 
-Om du vill installera Zendesk-tillägget i användargränssnittet går du till **Vidarebefordran av händelser** och välj en egenskap som tillägget ska läggas till i eller skapa en ny egenskap i stället.
+Om du vill installera Zendesk-tillägget i gränssnittet går du till **Vidarebefordran av händelser** och välj en egenskap som tillägget ska läggas till i eller skapa en ny egenskap i stället.
 
 När du har valt eller skapat den önskade egenskapen går du till **Tillägg** > **Katalog**. Sök efter &quot;[!DNL Zendesk]&quot; och sedan markera **[!DNL Install]** på Zendesk Extension.
 
-![Installationsknappen för Zendesk-tillägget som väljs i användargränssnittet](../../../images/extensions/server/zendesk/install.png)
+![Installera-knappen för Zendesk-tillägget som väljs i användargränssnittet](../../../images/extensions/server/zendesk/install.png)
 
 ## Konfigurera tillägget {#configure}
 
 >[!IMPORTANT]
 >
->Beroende på implementeringsbehoven kan du behöva skapa ett schema, dataelement och en datauppsättning innan du konfigurerar tillägget. Granska alla konfigurationssteg innan du startar för att avgöra vilka enheter du måste konfigurera för ditt användningsfall.
+>Beroende på ditt implementeringsbehov kan du behöva skapa ett schema, dataelement och en datauppsättning innan du konfigurerar tillägget. Granska alla konfigurationssteg innan du startar för att avgöra vilka enheter du måste konfigurera för ditt användningsfall.
 
 Välj **Tillägg** i den vänstra navigeringen. Under **Installerad**, markera **Konfigurera** i Zendesk-tillägget.
 
@@ -86,18 +86,18 @@ Följande nycklar kan refereras i `event` objekt vid mappning till dataelement:
 
 ### `profile` tangenter
 
-`profile` är ett JSON-objekt som representerar användaren som utlöste händelsen. Se Zendesk-dokumentet på [en profils anatomi](https://developer.zendesk.com/documentation/custom-data/profiles/anatomy-of-a-profile/) om du vill ha information om de egenskaper som hämtats av `profile` -objekt.
+`profile` är ett JSON-objekt som representerar användaren som utlöste händelsen. Se Zendesk-dokumentet på [en profils anatomi](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/) om du vill ha information om de egenskaper som hämtats av `profile` -objekt.
 
 Följande nycklar kan refereras i `profile` objekt vid mappning till dataelement:
 
 | `profile` key | Typ | Plattformssökväg | Beskrivning | Obligatoriskt | Gränser |
 | --- | --- | --- | --- | --- | --- |
 | `source` | Sträng | `arc.event.xdm._extconndev.profile_source` | Den produkt eller tjänst som är associerad med profilen, till exempel `Support`, `CompanyName`, eller `Chat`. | Ja | (Ej tillämpligt) |
-| `type` | Sträng | `arc.event.xdm._extconndev.profile_type` | Ett namn för profiltypen. Du kan använda det här fältet för att skapa olika typer av profiler för en viss källa. Du kan till exempel skapa en uppsättning företagsprofiler för kunder och en annan för anställda. | Ja | Profiltypens längd får inte vara längre än 40 tecken. |
+| `type` | Sträng | `arc.event.xdm._extconndev.profile_type` | Ett namn för profiltypen. Du kan använda det här fältet för att skapa olika typer av profiler för en viss källa. Du kan till exempel skapa en uppsättning företagsprofiler för kunder och en annan för anställda. | Ja | Profiltypens längd får inte överstiga 40 tecken. |
 | `name` | Sträng | `arc.event.xdm._extconndev.name` | Namnet på personen från profilen | Nej | (Ej tillämpligt) |
 | `user_id` | Sträng | `arc.event.xdm._extconndev.user_id` | Personens användar-ID i Zendesk. | Nej | (Ej tillämpligt) |
-| `identifiers` | Array | `arc.event.xdm._extconndev.identifiers` | En array som innehåller minst en identifierare. Varje identifierare består av en typ och ett värde. | Ja | Se [Zendesk-dokumentation](https://developer.zendesk.com/api-reference/custom-data/profiles_api/profiles_api/#identifiers-array) för mer information om `identifiers` array. Alla fält och värden måste vara unika. |
-| `attributes` | Objekt | `arc.event.xdm._extconndev.attrbutes` | Ett objekt som innehåller användardefinierade egenskaper för personen. | Nej | Se [Zendesk-dokumentation](https://developer.zendesk.com/documentation/custom-data/profiles/anatomy-of-a-profile/#attributes) om du vill ha mer information om profilattribut. |
+| `identifiers` | Array | `arc.event.xdm._extconndev.identifiers` | En array som innehåller minst en identifierare. Varje identifierare består av en typ och ett värde. | Ja | Se [Zendesk-dokumentation](https://developer.zendesk.com/api-reference/ticketing/users/profiles_api/profiles_api/#identifiers-array) för mer information om `identifiers` array. Alla fält och värden måste vara unika. |
+| `attributes` | Objekt | `arc.event.xdm._extconndev.attrbutes` | Ett objekt som innehåller användardefinierade egenskaper för personen. | Nej | Se [Zendesk-dokumentation](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/#attributes) för mer information om profilattribut. |
 
 {style="table-layout:auto"}
 
@@ -115,7 +115,7 @@ Händelser:
 
 ## Begärandebegränsningar {#limits}
 
-Zendesk [!DNL Events API] kan hantera följande antal begäranden per minut:
+Baserat på kontotypen kan Zendesk [!DNL Events API] kan hantera följande antal begäranden per minut:
 
 | [!DNL Account Type] | Begäranden per minut |
 | --- | --- |
@@ -148,9 +148,9 @@ När tillägget används eller konfigureras kan felen nedan returneras av Zendes
 I det här dokumentet beskrivs hur du installerar och konfigurerar tillägget för vidarebefordran av Zendesk-händelser i användargränssnittet. Mer information om hur du samlar in händelsedata i Zendesk finns i den officiella dokumentationen:
 
 * [Komma igång med händelser](https://developer.zendesk.com/documentation/custom-data/events/getting-started-with-events/)
-* [Zendesk Events API](https://developer.zendesk.com/api-reference/custom-data/events-api/events-api/)
+* [Zendesk Events API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/)
 * [Om API:t för händelser](https://developer.zendesk.com/documentation/custom-data/events/about-the-events-api/)
 * [Anatomi för en händelse](https://developer.zendesk.com/documentation/custom-data/events/anatomy-of-an-event/)
-* [Zendesk-profils-API](https://developer.zendesk.com/api-reference/custom-data/events-api/events-api/#profile-object)
-* [Om Profiles API](https://developer.zendesk.com/documentation/custom-data/profiles/about-the-profiles-api/)
-* [Anatomi i en profil](https://developer.zendesk.com/documentation/custom-data/profiles/anatomy-of-a-profile/)
+* [Zendesk Profiles API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/#profile-object)
+* [Om Profiles API](https://developer.zendesk.com/documentation/ticketing/profiles/about-the-profiles-api/)
+* [Anatomi i en profil](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)

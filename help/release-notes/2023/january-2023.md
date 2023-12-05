@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Release Notes januari 2023
 description: Versionsinformation januari 2023 för Adobe Experience Platform.
 exl-id: 461898ce-5683-4ab1-9167-ac25843a1ff8
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '2334'
+source-wordcount: '2150'
 ht-degree: 3%
 
 ---
@@ -90,7 +90,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 **Nya destinationer**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [(Beta) Adobe Experience Cloud Audiences-anslutning](../../destinations/catalog/adobe/experience-cloud-audiences.md) | Använd [!UICONTROL (Beta) Adobe Experience Cloud Audiences] anslutning för att dela segment från Experience Platform till olika Experience Platform-lösningar, som Audience Manager, Analytics, Advertising Cloud, Adobe Campaign, Target eller Marketo. |
 | [Pega-profilanslutning](../../destinations/catalog/personalization/pega-profile.md) | Använd [!DNL Pega Profile Connector] i Adobe Experience Platform för att skapa en utgående liveanslutning till [!DNL Amazon] S3-lagring för att regelbundet exportera profildata till CSV-filer från Adobe Experience Platform till dina egna S3-butiker. I [!DNL Pega Customer Decision Hub]kan du schemalägga datajobb att importera profildata från S3-lagringsutrymmet för att uppdatera [!DNL Pega Customer Decision Hub] profil. |
@@ -117,7 +117,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
     </tr>
     <tr>
         <td>Verifiering av gränssnitt och API för obligatoriska mappningar och dubblettmappningar (PLAT-123316)</td>
-        <td>Valideringen genomförs nu på följande sätt i gränssnittet och API när <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#mapping">mappningsfält</a> i arbetsflödet för aktivering av mål:<ul><li><b>Obligatoriska mappningar</b>: Om målet har konfigurerats med obligatoriska mappningar av målutvecklaren (till exempel <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html">Google Ad Manager 360</a> måste dessa obligatoriska mappningar läggas till av användaren när data aktiveras till målet. </li><li><b>Duplicera mappningar</b>: I mappningssteget i aktiveringsarbetsflödet kan du lägga till dubblettvärden i källfälten, men inte i målfälten. I tabellen nedan finns ett exempel på tillåtna och förbjudna mappningskombinationer. <br><table><thead><tr><th>Tillåtet/förbjudet</th><th>Källfält</th><th>Målfält</th></tr></thead><tbody><tr><td>Tillåtet</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>emailalias1</li><li>e-postalias2</li></ul></td></tr><tr><td>Förbjuden</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>emailalias1</li><li>emailalias1</li></ul></td></tr></tbody></table> </li></ul></td>
+        <td>Valideringen genomförs nu på följande sätt i gränssnittet och API när <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#mapping">mappningsfält</a> i arbetsflödet för aktivering av mål:<ul><li><b>Obligatoriska mappningar</b>: Om målet har konfigurerats med obligatoriska mappningar av målutvecklaren (till exempel <a href="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/advertising/google-ad-manager-360-connection.html">Google Ad Manager 360</a> måste dessa obligatoriska mappningar läggas till av användaren när data aktiveras till målet. </li><li><b>Duplicera mappningar</b>: I mappningssteget i aktiveringsarbetsflödet kan du lägga till dubblettvärden i källfälten, men inte i målfälten. I tabellen nedan finns ett exempel på tillåtna och förbjudna mappningskombinationer. <br><table><thead><tr><th>Tillåtet/förbjudet</th><th>Källfält</th><th>Målfält</th></tr></thead><tbody><tr><td>Tillåtet</td><td><ul><li>email.address</li><li>email.address</li></ul></td><td><ul><li>e-postalias1</li><li>e-postalias2</li></ul></td></tr><tr><td>Förbjuden</td><td><ul><li>email.address</li><li>hashed.emails</li></ul></td><td><ul><li>e-postalias1</li><li>e-postalias1</li></ul></td></tr></tbody></table> </li></ul></td>
     </tr>    
 </table>
 
@@ -139,7 +139,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | --- | --- | --- |
 | Klass | [[!UICONTROL Conversion]](https://github.com/adobe/xdm/blob/master/components/classes/conversion.schema.json) | En klass för att spåra konverteringsdata, t.ex. valutakonverteringar. |
 | Fältgrupp | [[!UICONTROL Currency Conversion Rate Details]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/conversion/currency-conversion-details.schema.json) | En fältgrupp för [!UICONTROL Conversion] klass, hämta ytterligare information om valutakonvertering. |
-| Fältgrupp | [[!UICONTROL Consent policies evaluation results map with metadata]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResultsv2.schema.jsonn) | Fångar information om utvärderingsresultatet av flera olika medgivandeprinciper, inklusive metadatainformation om medgivandeprincipingångar och finns. |
+| Fältgrupp | [[!UICONTROL Consent policies evaluation results map with metadata]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-consentResultsv2.schema.json) | Fångar information om utvärderingsresultatet av flera olika medgivandeprinciper, inklusive metadatainformation om medgivandeprincipingångar och finns. |
 
 **Uppdaterade XDM-komponenter**
 
@@ -149,7 +149,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 | Datatyp | [[!UICONTROL Decision Proposition Details]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-detail.schema.json) | Lagt till en `selectionStrategy` fält som hämtar information om en urvalsstrategi. |
 | Fältgrupp | [[!UICONTROL Experience Event - Proposition Interactions]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/experienceevent-proposition-interaction.schema.json) | Fältgruppen är nu kompatibel med [!UICONTROL Journey Step Event] klassen. |
 | Datatyp | [[!UICONTROL Error details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/errordetails.schema.json) | The `ID` fältet har bytt namn till `name`. |
-| Datatyp | [[!UICONTROL Media information]](https://github.com/adobe/xdm/blob/master/components/datatypes/media.schema.json) | Återställde en mönsterändring till videosegmentsegenskapen. |
+| Datatyp | [[!UICONTROL Media information]](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/media.schema.json) | Återställde en mönsterändring till videosegmentsegenskapen. |
 | Datatyp | [[!UICONTROL Qoe Data details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | Borttagen `droppedFrameCount` fält. |
 | Datatyp | [[!UICONTROL Session details information]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | Bytt namn på `isAuthorized` fält till `authorized`och uppdaterade `type` till en sträng när den tidigare var ett booleskt värde. |
 | Datatyp | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | Flera nya fält har lagts till: `shipDate`, `trackingNumber`och `trackingURL`. |

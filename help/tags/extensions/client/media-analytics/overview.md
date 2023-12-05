@@ -2,10 +2,10 @@
 title: Adobe Media Analytics for Audio and Video Extension - översikt
 description: Läs mer om taggtillägget Adobe Media Analytics for Audio och Video i Adobe Experience Platform.
 exl-id: 426cfd08-aead-4b35-824c-45494bca2fc8
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
 workflow-type: tm+mt
-source-wordcount: '974'
-ht-degree: 1%
+source-wordcount: '936'
+ht-degree: 0%
 
 ---
 
@@ -35,7 +35,7 @@ När du har inkluderat alla tre av tilläggen som nämns ovan i taggprojektet ka
 
 * **Installera -** Om du vill installera MA-tillägget öppnar du tilläggsegenskapen och väljer **[!UICONTROL Extensions > Catalog]**, hovra över **[!UICONTROL Adobe Media Analytics for Audio and Video]** och markera **[!UICONTROL Install]**.
 
-* **Konfigurera -** Om du vill konfigurera MA-tillägget öppnar du [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**:
+* **Konfigurera -** Konfigurera MA-tillägget genom att öppna [!UICONTROL Extensions] hovra över tillägget och välj **[!UICONTROL Configure]**:
 
 ![Konfiguration av MA-tillägg](../../../images/ext-va-config.jpg)
 
@@ -53,13 +53,13 @@ När du har inkluderat alla tre av tilläggen som nämns ovan i taggprojektet ka
 | Exportera API:er till Window-objekt | Aktivera eller inaktivera export av Media Analytics-API:er till globalt omfång |
 | Variabelnamn | En variabel som du använder för att exportera Media Analytics-API:er under `window` object |
 
-**Påminnelse:** MA-tillägget kräver [Analyser](../analytics/overview.md) och [Experience Cloud ID](../id-service/overview.md) tillägg. Du måste också lägga till dessa tillägg i tilläggsegenskapen och konfigurera dem.
+**Påminnelse:** MA-tillägget kräver [Analyser](../analytics/overview.md) och [EXPERIENCE CLOUD ID](../id-service/overview.md) tillägg. Du måste också lägga till dessa tillägg i tilläggsegenskapen och konfigurera dem.
 
 ## Använda MA-tillägget
 
 ### Använda från en webbsida/JS-app
 
-MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet genom att aktivera inställningen &quot;Exportera API:er till Window-objekt&quot; i dialogrutan [!UICONTROL Configuration] sida. Den exporterar API:erna under det konfigurerade variabelnamnet. Om till exempel variabelnamnet är konfigurerat att `ADB` kan MediaHeartbeat användas av `window.ADB.MediaHeartbeat`.
+MA-tillägget exporterar MediaHeartbeat-API:er i det globala fönsterobjektet genom att aktivera inställningen Exportera API:er till Window-objekt i dialogrutan [!UICONTROL Configuration] sida. Den exporterar API:erna under det konfigurerade variabelnamnet. Om till exempel variabelnamnet är konfigurerat att `ADB` kan MediaHeartbeat användas av `window.ADB.MediaHeartbeat`.
 
 >[!IMPORTANT]
 >
@@ -121,18 +121,19 @@ MA-tillägget visar `get-instance` och `media-heartbeat` delade moduler till and
 
    * Ett giltigt delegatobjekt som visar dessa funktioner:
 
-      | Metod |  Beskrivning   |
-      | :--- | :--- |
-      | `getQoSObject()` | Returnerar `MediaObject` -instans som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
-      | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från mediaobjektets början. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
+     | Metod |  Beskrivning   |
+     | :--- | :--- |
+     | `getQoSObject()` | Returnerar `MediaObject` -instans som innehåller aktuell QoS-information. Den här metoden anropas flera gånger under en uppspelningssession. Spelarimplementeringen måste alltid returnera de senast tillgängliga QoS-data. |
+     | `getCurrentPlaybackTime()` | Returnerar spelhuvudets aktuella position. För VOD-spårning anges värdet i sekunder från mediaobjektets början. För LIVE/LIVE-spårning anges värdet i sekunder från programmets början. |
 
    * Ett valfritt config-objekt som visar dessa egenskaper:
 
-      | Egenskap | Beskrivning | Obligatoriskt |
-      | :--- | :--- | :--- |
-      | Onlinevideoprovider | Namnet på onlinevideoplattformen som innehållet distribueras via. | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
-      | Spelarnamn | Namnet på den mediespelare som används (t.ex. &quot;AVPlayer&quot;, &quot;HTML5 Player&quot;, &quot;My Custom VideoPlayer&quot;) | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
-      | Kanal | Egenskapen Kanalnamn | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
+     | Egenskap | Beskrivning | Obligatoriskt |
+     | :--- | :--- | :--- |
+     | Onlinevideoprovider | Namnet på onlinevideoplattformen som innehållet distribueras via. | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
+     | Spelarnamn | Namnet på den mediespelare som används (t.ex. &quot;AVPlayer&quot;, &quot;HTML5 Player&quot;, &quot;My Custom VideoPlayer&quot;) | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
+     | Kanal | Egenskapen Kanalnamn | Nej. Om det finns åsidosätter det värde som definierats under tilläggskonfigurationen. |
+
    **Returvärde:** Ett löfte som antingen löses med en `MediaHeartbeat` eller avvisar med ett felmeddelande.
 
 1. **Åtkomst till MediaHeartbeat-konstanter:** `media-heartbeat` Delad modul
@@ -173,7 +174,7 @@ MA-tillägget visar `get-instance` och `media-heartbeat` delade moduler till and
    ...
    ```
 
-1. Använd instansen Media Heartbeat för att följa [Media SDK JS-dokumentation](https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/setup/setup-javascript/set-up-js-2.html) och [JS API-dokumentation](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
+1. Använd instansen Media Heartbeat för att följa [Media SDK JS-dokumentation](https://experienceleague.adobe.com/docs/media-analytics/using/legacy-implementations/legacy-media-sdks/setup-javascript/set-up-js-2.html) och [JS API-dokumentation](https://adobe-marketing-cloud.github.io/media-sdks/reference/javascript/index.html) för att implementera mediespårning.
 
 >[!NOTE]
 >
