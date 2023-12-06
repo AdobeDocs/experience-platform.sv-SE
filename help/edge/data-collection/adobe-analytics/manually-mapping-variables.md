@@ -4,9 +4,9 @@ description: Lär dig hur du manuellt mappar variabler till Adobe Analytics med 
 seo-description: Manually map variables into Adobe Analytics using processing rules with Web SDK
 keywords: adobe analytics;analytics;variables;mapping variables;map variables;contextData;context Data;Processing rules;xdm;schema;
 exl-id: 395050c1-8d39-4da8-acea-6e618ed662dd
-source-git-commit: 9392a90b70699b79949095e178ea77dd34d313a3
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '333'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Web SDK] kan mappa vissa variabler automatiskt, men anpassade variabler måste mappas manuellt.
 
-För XDM-data som inte automatiskt mappas till [!DNL Analytics]kan du använda [kontextdata](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html) för att matcha [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html). Sedan kan den mappas till [!DNL Analytics] använda [bearbetningsregler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html) fylla i [!DNL Analytics] variabler.
+För XDM-data som inte automatiskt mappas till [!DNL Analytics]kan du använda [kontextdata](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=sv) för att matcha [schema](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html). Sedan kan den mappas till [!DNL Analytics] använda [bearbetningsregler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html) fylla i [!DNL Analytics] variabler.
 
-Du kan också använda en standarduppsättning med åtgärder och produktlistor för att skicka eller hämta data med Adobe Experience Platform Web SDK. Om du vill göra det går du till [Samla in information om handel och produkter](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html).
+Du kan också använda en standarduppsättning med åtgärder och produktlistor för att skicka eller hämta data med Adobe Experience Platform Web SDK. Om du vill göra det läser du [Samla in information om handel och produkter](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html).
 
 ## Kontextdata
 
@@ -46,14 +46,13 @@ Ska användas av [!DNL Analytics], förenklas XDM-data med punktnotation och bli
 }
 ```
 
-## Behandlingsregler
+## Bearbetar regler
 
 Alla data som samlas in via edge-nätverket kan nås via [bearbetningsregler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html). I [!DNL Analytics]kan du använda bearbetningsregler för att lägga in kontextdata i [!DNL Analytics] variabler.
 
 I följande regel är Adobe Analytics inställt på att fylla i **Interna söktermer (eVar2)** med data som är kopplade till **a.x._atag.search.term(Context Data)**.
 
-![](assets/examplerule.png)
-
+![Användargränssnittsbild för analys visar ett regelexempel.](assets/examplerule.png)
 
 ## XDM-schema
 

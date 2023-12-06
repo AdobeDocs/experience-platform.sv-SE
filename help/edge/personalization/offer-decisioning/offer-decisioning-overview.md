@@ -3,9 +3,9 @@ title: Använda Offer decisioning med Platform Web SDK
 description: Adobe Experience Platform Web SDK kan leverera och återge personaliserade erbjudanden som hanteras i Offer decisioning. Du kan skapa erbjudanden och andra relaterade objekt med hjälp av Offera decisioningens gränssnitt eller API.
 keywords: offer decisioning;beslut;Web SDK;Platform Web SDK;personaliserade erbjudanden;leverera erbjudanden;erbjudandeleverans;erbjudandepersonalisering;
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '863'
+source-wordcount: '849'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ Det är viktigt att förstå följande terminologi när du arbetar med Offer dec
   >
   >Du kan kopiera värdet för beslutsomfånget från **Översikt över aktivitet** i användargränssnittet.
 
-  ![](assets/decision-scope-copy.png)
+  ![Inställningar för beslutskopiering.](assets/decision-scope-copy.png)
 
 * **Datastreams:** Mer information finns i [datastreams](../../../datastreams/overview.md) dokumentation.
 

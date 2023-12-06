@@ -2,9 +2,9 @@
 title: Programimplementering på en sida
 description: Lär dig implementera SPA i Adobe Journey Optimizer
 exl-id: 1883251b-2d59-46d3-ac74-b8657edd0325
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '866'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ I det här avsnittet beskrivs två exempel som visar hur du anropar `sendEvent()
 
 Marknadsföringsteamet vill köra A/B-tester på hela hemsidan.
 
-![](assets/web-spa-home.png)
+![Exempelsida för enkelsidigt program.](assets/web-spa-home.png)
 
 För att köra A/B-tester på hela hemplatsen `sendEvent()` måste anropas med XDM `viewName` ange till `home`:
 
@@ -137,7 +137,7 @@ history.listen(onViewChange);
 
 Marknadsföringsteamet vill personalisera den andra produktraden genom att ändra prisetikettens färg till röd efter att användaren har klickat för att se alla Men-produkter.
 
-![](assets/web-spa-men-products.png)
+![En exempelsida med skräddarsydda produkter.](assets/web-spa-men-products.png)
 
 ```js
 function onViewChange(viewName) {

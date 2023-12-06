@@ -2,10 +2,10 @@
 title: Felhantering
 description: Lär dig mer om eventuella fel som kan uppstå när du utför API-begäranden till API:t för Adobe Experience Platform Edge Network Server.
 exl-id: f6b8435c-b163-4046-b5fb-50a13a897637
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '765'
-ht-degree: 2%
+source-wordcount: '766'
+ht-degree: 1%
 
 ---
 
@@ -52,7 +52,7 @@ Alla felobjekt har en `type`, `status`, `title`, `detail` och `report` meddeland
 | Egenskap | Typ | Beskrivning |
 | -------- | ------ | ----------- |
 | `type` | Sträng | En URI-referens (RFC3986) som identifierar problemtypen efter formatet `https://ns.adobe.com/aep/errors/<ERROR-CODE>`. |
-| `status` | Siffra | HTTP-statuskoden som servern genererat för den här förekomsten av problemet. |
+| `status` | Nummer | HTTP-statuskoden som servern genererat för den här förekomsten av problemet. |
 | `title` | Sträng | En kort, läsbar sammanfattning av problemtypen. |
 | `detail` | Sträng | En kort, läsbar beskrivning av problemtypen. |
 | `report` | Objekt | En karta över ytterligare egenskaper som är till hjälp vid felsökning, t.ex. begärande-ID eller organisation-ID. I vissa fall kan den innehålla data som är specifika för det aktuella felet, till exempel en lista med valideringsfel. |
@@ -80,7 +80,7 @@ Alla felobjekt har en `type`, `status`, `title`, `detail` och `report` meddeland
 Icke-allvarliga fel kan delas upp ytterligare i:
 
 * Fel: Problem som uppstod när begäran bearbetades, men som inte ledde till att hela begäran avvisades (t.ex. ett icke-kritiskt fel uppströms).
-* Varningar: Meddelanden från tjänster som ligger uppströms som kan signalera att en partiell bearbetning av begäran har utförts.
+* Varningar: Meddelanden från tjänster som ligger uppströms kan signalera att en partiell bearbetning av begäran har utförts.
 
 När icke-allvarliga fel (exklusive varningar) påträffas [!DNL Server API] ändrar svarsstatus till `207 Multi-Status`.
 
@@ -118,12 +118,11 @@ Icke-allvarliga fel visas i _Probleminformation_ -format, men är inbäddade dir
 
 ## Hantering `4xx` och `5xx` Svar
 
-
 | Felkod | Beskrivning |
 |---|---|
 | `4xx Bad Request` | Mest `4xx` fel, som 400, 403, 404, får inte provas igen för klientens räkning, förutom `429`. Detta är klientfel och kommer inte att lyckas. Klienten måste åtgärda felet innan den försöker utföra begäran igen. |
 | `429 Too Many Requests` | `429` HTTP-svarskoden indikerar att Adobe Experience Platform Edge Network eller en tjänst i uppströmmen hastighetsbegränsar förfrågningarna. I det här fallet måste anroparen i ett sådant fall respektera `Retry-After` svarshuvud. Alla svar som returneras måste innehålla HTTP-svarskoden med en domänspecifik felkod. |
 | `500 Internal Server Error` | `500` fel är generiska fel som fångar upp alla. `500` fel får inte provas igen, förutom `502` och `503`. Förmedlare måste svara med en `500` och kan svara med en generisk felkod/ett allmänt felmeddelande eller en mer domänspecifik felkod/ett mer domänspecifikt felmeddelande. |
-| `502 Bad Gateway` | Anger att Adobe Experience Platform Edge Network fick ett ogiltigt svar från överordnade servrar. Detta kan inträffa på grund av nätverksproblem mellan servrar. Det temporära nätverksproblemet kan lösas och därför kan ett nytt försök åtgärda problemet, så att mottagare av `502` fel kan göra om begäran efter ett tag. |
-| `503 Service Unavailable` | Felkoden anger att tjänsten inte är tillgänglig för tillfället. Detta kan inträffa under underhållsperioder. Mottagare av `503` fel kan försöka göra om begäran, men måste respektera `Retry-After` header. |
+| `502 Bad Gateway` | Anger att Adobe Experience Platform Edge Network fick ett ogiltigt svar från överordnade servrar. Detta kan inträffa på grund av nätverksproblem mellan servrar. Det temporära nätverksproblemet kan lösas och därför kan ett nytt försök åtgärda problemet, så att mottagare av `502` fel kan göra om begäran efter en stund. |
+| `503 Service Unavailable` | Felkoden anger att tjänsten inte är tillgänglig för tillfället. Detta kan inträffa under underhållsperioder. Mottagare av `503` fel kan göra ett nytt försök att utföra begäran, men måste respektera `Retry-After` header. |
 | `504 Gateway Timeout` | Anger att tidsgränsen för Adobe Experience Platform Edge Network-begäran till de överordnade servrarna har överskridits. Detta kan bero på nätverksproblem mellan servrar, DNS-problem eller andra nätverksproblem. De temporära nätverksproblemen kan lösas efter en stund och ett nytt försök kan lösa problemet. |

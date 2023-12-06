@@ -3,9 +3,9 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
-source-wordcount: '2257'
+source-wordcount: '2167'
 ht-degree: 2%
 
 ---
@@ -857,7 +857,7 @@ Analysens nyttolast (`tnta` token) bör inkluderas i Analytics-träffen med [API
 Loggning på serversidan kan aktiveras genom inställning `analyticsLogging: server_side` i at.js-inställningarna eller genom att åsidosätta `window.targetglobalSettings` -objekt.
 Data flödar sedan enligt följande:
 
-![](assets/a4t-server-side-atjs.png)
+![Diagram som visar arbetsflödet för loggning på serversidan i Analytics](assets/a4t-server-side-atjs.png)
 
 [Läs mer](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
 
@@ -872,7 +872,7 @@ Web SDK har även stöd för:
 
 Loggning på klientsidan för Analytics är aktiverat när Adobe Analytics är inaktiverat för den DataStream-konfigurationen.
 
-![](assets/analytics-disabled-datastream-config.png)
+![Diagram som visar arbetsflödet för loggning på klientsidan i Analytics](assets/analytics-disabled-datastream-config.png)
 
 Kunden har tillgång till analystoken (`tnta`) som behöver delas med Analytics med [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md)
 genom att kedja `sendEvent` och iterera genom den resulterande proposition-arrayen.
@@ -910,19 +910,19 @@ alloy("sendEvent", {
 
 Här följer ett diagram som visar hur dataflöden när Analytics Client Side är aktiverat:
 
-![](assets/analytics-client-side-logging.png)
+![Dataflödesdiagram i loggning på klientsidan i Analytics](assets/analytics-client-side-logging.png)
 
 #### Analytics Server Side Logging
 
 Loggning på analysserversidan aktiveras när Analytics är aktiverat för den DataStream-konfigurationen.
 
-![](assets/analytics-enabled-datastream-config.png)
+![Datastreams-gränssnittet som visar analysinställningarna.](assets/analytics-enabled-datastream-config.png)
 
 När loggning av analys på serversidan är aktiverat, måste A4T-nyttolasten delas med Analytics så att Analytics-rapporten visar korrekta visningar och konverteringar på Edge Network-nivå, så att kunden inte behöver göra någon ytterligare bearbetning.
 
 Så här flödar data in i våra system när loggning av serveranalys är aktiverat:
 
-![](assets/analytics-server-side-logging.png)
+![Diagram som visar dataflödet i loggning av serveranalys](assets/analytics-server-side-logging.png)
 
 ## Ange globala inställningar för mål
 
@@ -1130,9 +1130,9 @@ Web SDK har stöd för tredjeparts-ID som mål. Det kräver dock några steg til
 Med identitetskartan kan kunderna skicka flera identiteter. Alla identiteter har ett namn. Varje namnutrymme kan ha en eller flera identiteter. En viss identitet kan markeras som primär.
 Med den här kunskapen i åtanke kan vi se vilka steg som krävs för att konfigurera web sdk så att det använder tredje parts-ID som mål.
 
-1. Ange det namnutrymme som ska innehålla mål-ID:t för tredje part i dataströmskonfigurationsvyn:
+1. Ange det namnutrymme som ska innehålla mål-ID:t för tredje part på konfigurationssidan för datastream:
 
-![](assets/mbox-3-party-id-setup.png)
+![Datastreams-användargränssnitt som visar namnområdesfältet för mål-tredje parts ID](assets/mbox-3-party-id-setup.png)
 
 1. Skicka identitetsnamnutrymmet i alla sendEvent-kommandon så här:
 
@@ -1180,8 +1180,8 @@ window.targetPageParams = function() {
 
 ### Använda Web SDK
 
-Med Web SDK kan kunderna ställa in egenskapen på en högre nivå, när de ställer in dataströmskonfigurationen, under Adobe Target namnutrymme:
-![](assets/at-property-setup.png)
+Med Web SDK kan kunderna ställa in egenskapen på en högre nivå, när de ställer in datastream-konfigurationen, under Adobe Target namnutrymme:
+![Datastreams-gränssnittet som visar Adobe Target-inställningarna.](assets/at-property-setup.png)
 Det innebär att alla Target-anrop för den specifika dataströmskonfigurationen kommer att innehålla den egenskapstoken som anges.
 
 ## Hur förhämtar jag mbox-filer

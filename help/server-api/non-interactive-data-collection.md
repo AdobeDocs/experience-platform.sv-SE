@@ -2,12 +2,13 @@
 title: Icke-interaktiv datainsamling
 description: Läs om hur API:t för Adobe Experience Platform Edge Network Server utför icke-interaktiv datainsamling.
 exl-id: 1a704e8f-8900-4f56-a843-9550007088fe
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
 workflow-type: tm+mt
 source-wordcount: '217'
-ht-degree: 2%
+ht-degree: 1%
 
 ---
+
 
 # Icke-interaktiv datainsamling
 
@@ -92,7 +93,6 @@ curl -X POST "https://server.adobedc.net/ee/v2/collect?dataStreamId={DATASTREAM_
 | `dataStreamId` | `String` | Ja | ID för datastream som används av datainsamlingsslutpunkten. |
 | `requestId` | `String` | Nej | Ange ett ID för extern spårning av begäran. Om inget anges genereras ett Edge-nätverk åt dig och returneras i svarstexten/sidhuvudena. |
 | `silent` | `Boolean` | Nej | Valfri boolesk parameter som anger om Edge Network ska returnera en `204 No Content` svar med en tom nyttolast eller inte. Kritiska fel rapporteras med motsvarande HTTP-statuskod och nyttolast. |
-
 
 ### Svar {#response}
 
