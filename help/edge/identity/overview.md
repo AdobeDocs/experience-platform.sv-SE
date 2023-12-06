@@ -1,18 +1,17 @@
 ---
-title: Identitetsdata i Platform Web SDK
+title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
-keywords: Identitet;Första parts identitet;Identitetstjänst;Tredjepartsidentitet;ID-migrering;Besökar-ID;Tredjepartsidentitet;Tredje parts-cookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primär;ecid;Identity Namespace id;authenticationState;hashEnabled;
-exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1413'
+source-wordcount: '1338'
 ht-degree: 0%
 
 ---
 
-# Identitetsdata i Platform Web SDK
 
-Adobe Experience Platform Web SDK utnyttjar [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) för att spåra besökares beteende. Med hjälp av ECID:n kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
+# Identitetsdata i Web SDK
+
+Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) för att spåra besökares beteende. Med hjälp av ECID:n kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
 
 I det här dokumentet finns en översikt över hur du hanterar ECID:n med Platform Web SDK.
 
@@ -22,7 +21,7 @@ Platform Web SDK tilldelar och spårar ECID:n med hjälp av cookies, med flera t
 
 När en ny användare kommer till din webbplats försöker Adobe Experience Cloud Identity Service att ange en cookie för enhetsidentifiering för den användaren. För förstagångsbesökare genereras ett ECID som returneras i det första svaret från Adobe Experience Platform Edge Network. För återkommande besökare hämtas ECID från `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie och har lagts till i nyttolasten av Edge Network.
 
-När cookie-filen som innehåller ECID har angetts kommer varje begäran som skapas av Web SDK att innehålla ett kodat ECID i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie.
+När cookie-filen som innehåller ECID har ställts in innehåller varje efterföljande begäran som genererats av Web SDK ett kodat ECID i `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie.
 
 När du använder cookies för enhetsidentifiering har du två alternativ för att interagera med Edge Network:
 
@@ -35,9 +34,9 @@ Som förklaras i avsnitten nedan har den datainsamlingsmetod som du väljer att 
 
 Insamling av data från tredje part innebär att data skickas direkt till Edge Network-domänen `adobedc.net`.
 
-Under de senaste åren har webbläsare blivit allt mer restriktiva när det gäller hantering av cookies som fastställs av tredje part. Vissa webbläsare blockerar cookies från tredje part som standard. Om du använder cookies från tredje part för att identifiera webbplatsbesökare är livslängden för dessa cookies nästan alltid kortare än vad som annars skulle vara tillgängligt med cookies från första part i stället. I vissa fall går en cookie från tredje part ut om så lite som sju dagar.
+Under de senaste åren har webbläsare blivit allt mer restriktiva när det gäller hantering av cookies som fastställs av tredje part. Vissa webbläsare blockerar cookies från tredje part som standard. Om du använder cookies från tredje part för att identifiera webbplatsbesökare är livslängden för dessa cookies nästan alltid kortare än vad som annars skulle vara tillgängligt med cookies från första part i stället. Ibland upphör en cookie från tredje part om så lite som sju dagar.
 
-När datainsamling från tredje part används begränsar dessutom vissa annonsblockerare trafiken till slutpunkterna för datainsamling från Adobe helt och hållet.
+När datainsamling från tredje part används begränsar vissa annonsblockerare dessutom trafiken till slutpunkterna för datainsamling i Adobe helt och hållet.
 
 ### Insamling av data från första part {#first-party}
 
@@ -47,11 +46,11 @@ Webbläsare har långa behandlade cookies som anges av CNAME-slutpunkter på ung
 
 ### Effekter av livscykeln för cookies i Adobe Experience Cloud-program {#lifespans}
 
-Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på antalet besökare i Adobe Analytics och Customer Journey Analytics. Dessutom kan slutanvändare uppleva inkonsekventa personaliseringsupplevelser när Adobe Target eller Offer decisioning används på webbplatsen.
+Oavsett om du väljer datainsamling från första part eller från tredje part har den tid en cookie kan finnas kvar en direkt inverkan på antalet besökare i Adobe Analytics och Customer Journey Analytics. Slutanvändare kan dessutom uppleva inkonsekventa personaliseringsupplevelser när Adobe Target eller Offer decisioning används på webbplatsen.
 
-Tänk dig till exempel en situation där du har skapat en personaliseringsupplevelse som befordrar ett objekt till hemsidan om en användare har visat det tre gånger de senaste sju dagarna.
+Tänk dig till exempel en situation där du har skapat en personaliseringsupplevelse som befordrar ett objekt till hemsidan om en användare har visat det tre gånger under de senaste sju dagarna.
 
-Om en slutanvändare besöker webbplatsen tre gånger i veckan och sedan inte återvänder till webbplatsen på sju dagar, kan den användningen betraktas som en ny användare när de återvänder till webbplatsen eftersom deras cookies kan ha tagits bort av en webbläsarprincip (beroende på vilken webbläsare användaren använde när han/hon besökte webbplatsen). Om detta inträffar kommer analysverktyget att behandla besökaren som en ny användare även om de besökte webbplatsen för bara lite mer än sju dagar sedan. Dessutom börjar alla försök att personalisera användarupplevelsen på nytt.
+Om en slutanvändare besöker webbplatsen tre gånger i veckan och sedan inte återvänder till webbplatsen på sju dagar, kan den användaren betraktas som en ny användare när han eller hon kommer tillbaka till webbplatsen, eftersom deras cookies kan ha tagits bort av en webbläsarprincip (beroende på vilken webbläsare användaren använde när han eller hon besökte webbplatsen). Om detta inträffar behandlar analysverktyget besökaren som en ny användare även om de besökte webbplatsen för bara drygt sju dagar sedan. Alla försök att personalisera upplevelsen för användaren börjar också om.
 
 ### Enhets-ID:n från första part
 
@@ -127,11 +126,11 @@ När du migrerar från med Visitor API kan du även migrera befintliga AMCV-cook
 
 * När vissa sidor i en domän använder Visitor API och andra sidor använder denna SDK. Som stöd för detta fall läser SDK befintliga AMCV-cookies och skriver en ny cookie med befintligt ECID. Dessutom skriver SDK AMCV-cookies så att efterföljande sidor som är instrumenterade med Visitor API har samma ECID om ECID hämtas först på en sida som är instrumenterad med SDK.
 * När Adobe Experience Platform Web SDK har konfigurerats på en sida som även har Visitor API. Om AMCV-cookien inte är inställd söker SDK efter besökar-API:t på sidan och anropar den för att hämta ECID.
-* När hela webbplatsen använder Adobe Experience Platform Web SDK och inte har något Visitor-API är det bra att migrera ECID:n så att informationen om den returnerade besökaren behålls. När SDK har distribuerats med `idMigrationEnabled` under en tidsperiod så att de flesta besökarcookies migreras kan inställningen inaktiveras.
+* När hela webbplatsen använder Adobe Experience Platform Web SDK och inte har något Visitor-API är det bra att migrera ECID:n så att den returnerade besökarinformationen behålls. När SDK har distribuerats med `idMigrationEnabled` så att de flesta besökarnas cookies migreras kan inställningen inaktiveras.
 
 ### Uppdaterar egenskaper för migrering
 
-När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler när de migreras. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) som Audience Manager har skapat.
+När XDM-formaterade data skickas till Audience Manager måste dessa data konverteras till signaler vid migrering. Dina egenskaper måste uppdateras för att återspegla de nya nycklarna som finns i XDM. Den här processen blir enklare om du använder [BAAAM-verktyget](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) som Audience Manager har skapat.
 
 ## Använd vid vidarebefordran av händelse
 

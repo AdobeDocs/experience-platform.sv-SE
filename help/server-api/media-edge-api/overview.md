@@ -3,10 +3,10 @@ solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge
 exl-id: 55c952de-caab-4301-acf2-f7b64cebbb1c
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 034498e662ed55112f22751d44cf3ecf75d38d61
 workflow-type: tm+mt
-source-wordcount: '381'
-ht-degree: 2%
+source-wordcount: '331'
+ht-degree: 1%
 
 ---
 
@@ -23,7 +23,7 @@ Media Edge API:er bygger på Adobe Experience Platform för att tillhandahålla 
 
 ## Optimera dataflöden för mediespårning
 
-Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html&amp;media-tracking-data-flows) och Media Edge API:er tillhandahåller mediespårningsdata som RESTful-tjänster. Men att använda tjänsten Media Edge har följande fördelar:
+Båda [Media Collection API:er](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/streaming-media-apis/mc-api-overview.html#media-tracking-data-flows) och Media Edge API:er tillhandahåller mediespårningsdata som RESTful-tjänster. Men att använda tjänsten Media Edge har följande fördelar:
 
 * Det är det enklaste sättet att införliva XDM-scheman i dataflödet.
 

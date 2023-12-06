@@ -1,10 +1,9 @@
 ---
 title: Konfigurera åsidosättningar av dataström
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
-exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 252bda1395a2a31cd7e2e2789e5c2508fbd3fd5e
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1445'
+source-wordcount: '1429'
 ht-degree: 0%
 
 ---
@@ -13,23 +12,23 @@ ht-degree: 0%
 
 Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK.
 
-Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena, utan att du behöver skapa ett nytt datastream eller ändra dina befintliga inställningar.
+Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena, utan att skapa ett datastream eller ändra befintliga inställningar.
 
 Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
 
-1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](configure.md).
+1. Först måste du definiera åsidosättningen av din datastream-konfiguration i dialogrutan [konfigurationssida för datastream](configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network på något av följande sätt:
    * Via `sendEvent` eller `configure` [Web SDK](#send-overrides-web-sdk) kommandon.
    * Via Web SDK [taggtillägg](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
-   * Via Mobile SDK [sendEvent API](#send-overrides-mobile-sdk) ring.
+   * Via Mobile SDK [sendEvent](#send-overrides-mobile-sdk) -kommando.
 
 I den här artikeln förklaras den kompletta processen för åsidosättning av datastream-konfigurationen för alla typer av åsidosättningar som stöds.
 
 >[!IMPORTANT]
 >
->Åsidosättningar av dataström stöds endast för [Web SDK](../edge/home.md) och [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/) integreringar. [Server-API](../server-api/overview.md) integreringar stöder för närvarande inte datastream-åsidosättningar.
+>Åsidosättningar av dataström stöds endast för [Web SDK](../edge/home.md) och [Mobile SDK](https://developer.adobe.com/client-sdks/home/) integreringar. [Server-API](../server-api/overview.md) integreringar stöder för närvarande inte datastream-åsidosättningar.
 ><br>
->Åsidosättningar av datastream bör användas när du behöver olika data som skickas till olika datastreams. Du bör inte använda datastream-åsidosättningar för användningsfall för personalisering eller för medgivandedata.
+>Åsidosättningar av datastream bör användas när du behöver olika data som skickas till olika datastreams. Använd inte åsidosättningar av datastream för personaliseringsanvändningsfall eller för medgivandedata.
 
 ## Användningsfall {#use-cases}
 
@@ -41,11 +40,11 @@ Ett företag har olika webbplatser eller underdomäner för olika länder där d
 
 Genom att använda åsidosättningar av datastream kan företaget dynamiskt växla dataflödet till olika datastreams, i stället för standardbeteendet att skicka data till en datastream.
 
-Ett vanligt användningsexempel kan vara att skicka data till ett landspecifikt datastream och även skicka data till en global datastream där kunderna utför en viktig åtgärd, som att göra en beställning eller uppdatera användarprofilen.
+Ett vanligt användningsexempel kan vara att skicka data till ett landspecifikt datastream och även till ett globalt datastream där kunderna utför en viktig åtgärd, som att göra en beställning eller uppdatera användarprofilen.
 
 **Differentiera profiler och identiteter för olika affärsenheter**
 
-Ett företag med flera affärsenheter vill använda flera Experience Platform-sandlådor för att lagra data som är specifika för varje affärsenhet.
+Ett företag med flera affärsenheter vill använda flera Experience Platform sandlådor för att lagra data som är specifika för varje affärsenhet.
 
 I stället för att skicka data till en standarddatastream kan företaget använda åsidosättningar av datastream för att se till att varje affärsenhet har sin egen datastream för att ta emot data.
 
@@ -62,7 +61,7 @@ I stället för att skicka data till en standarddatastream kan företaget använ
 
 Om du vill konfigurera datastream-åsidosättningar för en Adobe Target-datastream måste du först skapa en Adobe Target datastream. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med [Adobe Target](configure.md#target) service.
 
-När du har skapat dataströmmen redigerar du [Adobe Target](configure.md#target) tjänster som du har lagt till och använder **[!UICONTROL Property Token Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan. Lägg till en egenskapstoken per rad.
+När du har skapat dataströmmen kan du redigera [Adobe Target](configure.md#target) tjänster som du har lagt till och använder **[!UICONTROL Property Token Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan. Lägg till en egenskapstoken per rad.
 
 ![Skärmbilden Datastreams UI som visar Adobe Target tjänstinställningar, med åsidosättningar av egenskapstoken markerade.](assets/overrides/override-target.png)
 
@@ -74,7 +73,7 @@ Nu bör du konfigurera Adobe Target datastream-åsidosättningar. Nu kan du [ski
 
 Om du vill konfigurera datastream-åsidosättningar för en Adobe Analytics-datastream måste du först ha en [Adobe Analytics](configure.md#analytics) datastream har skapats. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med [Adobe Analytics](configure.md#analytics) service.
 
-När du har skapat dataströmmen redigerar du [Adobe Analytics](configure.md#target) tjänster som du har lagt till och använder **[!UICONTROL Report Suite Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan.
+När du har skapat dataströmmen kan du redigera [Adobe Analytics](configure.md#target) tjänster som du har lagt till och använder **[!UICONTROL Report Suite Overrides]** för att lägga till önskade datastream-åsidosättningar, vilket visas i bilden nedan.
 
 Välj **[!UICONTROL Show Batch Mode]** om du vill aktivera gruppredigering av åsidosättningar av rapportsviten. Du kan kopiera och klistra in en lista över åsidosättningar av rapportsviter och ange en rapportsvit per rad.
 
@@ -88,7 +87,7 @@ Nu bör du konfigurera Adobe Analytics datastream-åsidosättningar. Nu kan du [
 
 Om du vill konfigurera datastream-åsidosättningar för händelsedatamängder i Experience Platform måste du först ha en [Adobe Experience Platform](configure.md#aep) datastream har skapats. Följ instruktionerna för att [konfigurera ett datastream](configure.md) med [Adobe Experience Platform](configure.md#aep) service.
 
-När du har skapat dataströmmen redigerar du [Adobe Experience Platform](configure.md#aep) som du har lagt till och väljer **[!UICONTROL Add Event Dataset]** alternativ för att lägga till en eller flera åsidosatta händelsedatamängder, vilket visas i bilden nedan.
+När du har skapat dataströmmen kan du redigera [Adobe Experience Platform](configure.md#aep) som du har lagt till och väljer **[!UICONTROL Add Event Dataset]** alternativ för att lägga till en eller flera åsidosatta händelsedatamängder, vilket visas i bilden nedan.
 
 ![Skärmbilden Datastreams UI som visar Adobe Experience Platform tjänstinställningar, med åsidosättningar av händelsedatamängd markerade.](assets/overrides/override-aep.png)
 
@@ -124,9 +123,9 @@ Efter [konfigurera åsidosättningar av datastream](#configure-overrides) i anv�
 
 Om du använder Web SDK skickar du åsidosättningarna till Edge Network via `edgeConfigOverrides` -kommandot är det andra och sista steget i att aktivera åsidosättningar av dataströmskonfigurationer.
 
-Åsidosättningar av dataströmskonfigurationer skickas till Edge-nätverket via `edgeConfigOverrides` Web SDK, kommando. Det här kommandot skapar åsidosättningar av datastream som skickas till [!DNL Edge Network] på nästa kommando eller, om `configure` kommando, för varje begäran.
+Åsidosättningar av dataströmskonfigurationer skickas till Edge-nätverket via `edgeConfigOverrides` Web SDK, kommando. Det här kommandot skapar åsidosättningar av datastream som skickas till [!DNL Edge Network] på nästa kommando. Om du använder `configure` -kommandot skickas åsidosättningarna för varje begäran.
 
-The `edgeConfigOverrides` kommandot skapar åsidosättningar av datastream som skickas vidare till [!DNL Edge Network] på nästa kommando eller, om `configure`, för varje förfrågan.
+The `edgeConfigOverrides` kommandot skapar åsidosättningar av datastream som skickas vidare till [!DNL Edge Network] på nästa kommando.
 
 När en konfigurationsåsidosättning skickas med `configure` finns det i följande Web SDK-kommandon.
 
@@ -246,7 +245,7 @@ Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) 
 }
 ```
 
->[!TAB Android (Kotlin)]
+>[!TAB Android™ (Kotlin)]
 
 I det här exemplet visas hur en åsidosättning av ett dataström-ID ser ut i en Mobile SDK [!DNL Android] integrering.
 

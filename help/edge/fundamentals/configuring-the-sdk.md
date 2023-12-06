@@ -1,17 +1,15 @@
 ---
 title: Konfigurera Adobe Experience Platform Web SDK
-description: Lär dig hur du konfigurerar Adobe Experience Platform Web SDK.
-seo-description: Learn how to configure the Experience Platform Web SDK
-keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehideStyle;opacity;cookieDestinationsEnabled;urlDestal inationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
-exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: a192a746fa227b658fcdb8caa07ea6fb4ac1a944
+description: Lär dig konfigurera Adobe Experience Platform Web SDK.
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1128'
-ht-degree: 3%
+source-wordcount: '1088'
+ht-degree: 1%
 
 ---
 
-# Konfigurera Platform Web SDK
+
+# Konfigurera Web SDK
 
 Konfigurationen för SDK görs med `configure` -kommando.
 
@@ -56,7 +54,7 @@ Anger vilka sammanhangskategorier som ska samlas in automatiskt enligt beskrivni
 
 >[!IMPORTANT]
 >
->Alla kontextegenskaper, med undantag för `highEntropyUserAgentHints`, är aktiverade som standard. Om du har angett kontextegenskaper manuellt i Web SDK-konfigurationen måste du aktivera alla kontextegenskaper för att kunna fortsätta samla in den information som behövs.
+>Alla kontextegenskaper, utom `highEntropyUserAgentHints`, aktiveras som standard. Om du har angett kontextegenskaper manuellt i Web SDK-konfigurationen måste du aktivera alla kontextegenskaper för att kunna fortsätta samla in den information som behövs.
 
 Aktivera [hög entropi-klienttips](user-agent-client-hints.md#enabling-high-entropy-client-hints) i Web SDK-distributionen måste du lägga till `highEntropyUserAgentHints` kontextalternativ, tillsammans med befintlig konfiguration.
 
@@ -73,9 +71,9 @@ Om du till exempel vill hämta klienttips för hög entropi från webbegenskaper
 
 {style="table-layout:auto"}
 
-Anger om felsökning är aktiverat. Konfigurationen anges till `true` har följande funktioner:
+Anger om felsökning är aktiverat. Anger den här konfigurationen till `true` har följande funktioner:
 
-| **Funktion** | ** -funktion** |
+| **Funktion** | **Funktion** |
 | ---------------------- | ------------------ |
 | Konsolloggning | Gör att felsökningsmeddelanden kan visas i webbläsarens JavaScript-konsol |
 
@@ -83,7 +81,7 @@ Anger om felsökning är aktiverat. Konfigurationen anges till `true` har följa
 
 ### `edgeDomain` {#edge-domain}
 
-Fyll i det här fältet med din förstahandsdomän. Mer information finns i [dokumentation](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html).
+Fyll i det här fältet med din förstahandsdomän. Mer information finns i [dokumentation](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html).
 
 Domänen liknar `data.{customerdomain.com}` på www.{customerdomain.com}.
 
@@ -123,7 +121,7 @@ Anger om data som är associerade med länkklick samlas in automatiskt. Se [Auto
 
 | Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
-|  -funktion | Nej | () => odefinierad |
+| Funktion | Nej | () => odefinierad |
 
 {style="table-layout:auto"}
 
@@ -133,7 +131,7 @@ Konfigurera ett återanrop som anropas för varje händelse precis innan den ski
 
 | Typ | Obligatoriskt | Standardvärde |
 | -------- | ------------ | ----------------- |
-|  -funktion | Nej | () => odefinierad |
+| Funktion | Nej | () => odefinierad |
 
 {style="table-layout:auto"}
 
@@ -236,4 +234,4 @@ Om Visitor API är definierat på sidan frågar SDK om Visitor API för ECID. Me
 
 {style="table-layout:auto"}
 
-Aktiverar inställningen av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på olika platser. Använd det här alternativet om du har flera webbplatser eller om du vill dela data med partners. Men ibland är det här alternativet inte önskvärt av sekretesskäl.
+Aktiverar inställningen av cookies från tredje part från Adobe. SDK:n kan behålla besökar-ID:t i ett tredjepartssammanhang för att samma besökar-ID ska kunna användas på olika platser. Använd det här alternativet om du har flera webbplatser eller om du vill dela data med partner, men ibland är det här alternativet inte önskvärt av sekretesskäl.

@@ -1,10 +1,9 @@
 ---
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
-exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 4c9abcefb279c6e8a90744b692d86746a4896d0a
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -21,7 +20,7 @@ Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, om
 >* [Funktioner för datapersonmappning](../data-prep/functions.md)
 >* [Hantera dataformat med Data Prep](../data-prep/data-handling.md)
 
-Den här guiden beskriver hur du mappar data i användargränssnittet. Om du vill följa med i stegen börjar du med att skapa en datastream upp till (och inkludera) [grundläggande konfigurationssteg](./overview.md#create).
+Den här handboken beskriver hur du mappar data i användargränssnittet. Om du vill följa med i stegen börjar du med att skapa en datastream upp till (och inkludera) [grundläggande konfigurationssteg](./overview.md#create).
 
 En snabb demonstration av datainsamlingsprocessen finns i följande video:
 
@@ -137,12 +136,12 @@ Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i
 
 The **[!UICONTROL Mapping]** visas så att du kan mappa fälten i källdata till målhändelseschemats fält i Platform. Här kan du konfigurera mappningen på två sätt:
 
-* [Skapa nya mappningsregler](#create-mapping) för denna datastream genom en manuell process.
+* [Skapa mappningsregler](#create-mapping) för denna datastream genom en manuell process.
 * [Importera mappningsregler](#import-mapping) från en befintlig datastream.
 
-### Skapa en ny mappning {#create-mapping}
+### Skapa mappningsregler {#create-mapping}
 
-För att komma igång väljer du **[!UICONTROL Add new mapping]** för att skapa en ny mappningsrad.
+Om du vill skapa en mappningsregel väljer du **[!UICONTROL Add new mapping]**.
 
 ![Lägga till en ny mappning](assets/data-prep/add-new-mapping.png)
 
@@ -166,7 +165,7 @@ Mappningssidan visas igen med den ifyllda fältmappningen. The **[!UICONTROL Map
 
 ### Importera befintliga mappningsregler {#import-mapping}
 
-Om du tidigare har skapat ett datastream kan du återanvända dess konfigurerade mappningsregler för ett nytt datastream.
+Om du tidigare har skapat en datastream kan du återanvända dess konfigurerade mappningsregler för en ny datastream.
 
 >[!WARNING]
 >
@@ -174,7 +173,7 @@ Om du tidigare har skapat ett datastream kan du återanvända dess konfigurerade
 
 Börja genom att välja **[!UICONTROL Import Mapping]**.
 
-![Bilden visar [!UICONTROL Import Mapping] knappen markeras](assets/data-prep/import-mapping-button.png)
+![Bild som visar [!UICONTROL Import Mapping] knapp som markeras](assets/data-prep/import-mapping-button.png)
 
 I den dialogruta som visas markerar du datastream vars mappningsregler du vill importera. När du har valt datastream väljer du **[!UICONTROL Preview]**.
 
@@ -194,9 +193,9 @@ På nästa skärm visas en förhandsvisning av de sparade mappningsreglerna för
 
 ### Slutför mappningen
 
-Följ stegen ovan för att mappa resten av fälten till målschemat. Även om du inte behöver mappa alla tillgängliga källfält, måste alla fält i målschemat som har angetts som obligatoriska mappas för att det här steget ska kunna slutföras. The **[!UICONTROL Required fields]** anger hur många obligatoriska fält som ännu inte har mappats i den aktuella konfigurationen.
+Följ stegen ovan för att mappa resten av fälten till målschemat. Även om du inte behöver mappa alla tillgängliga källfält, måste alla fält i målschemat som har angetts som obligatoriska mappas för att slutföra det här steget. The **[!UICONTROL Required fields]** anger hur många obligatoriska fält som ännu inte har mappats i den aktuella konfigurationen.
 
-När antalet obligatoriska fält har nått noll och du är nöjd med mappningen väljer du **[!UICONTROL Save]** för att slutföra ändringarna.
+När det obligatoriska fältantalet har nått noll och du är nöjd med mappningen väljer du **[!UICONTROL Save]** för att slutföra ändringarna.
 
 ![Mappningen är klar](assets/data-prep/mapping-complete.png)
 

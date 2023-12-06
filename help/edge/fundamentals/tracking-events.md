@@ -1,14 +1,13 @@
 ---
 title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
-keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
-exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '1192'
+source-wordcount: '1163'
 ht-degree: 0%
 
 ---
+
 
 # Spåra händelser
 
@@ -79,9 +78,9 @@ I det här exemplet klonas datalagret genom att serialisera det till JSON och se
 
 Data som inte matchar ett XDM-schema ska skickas med `data` alternativ för `sendEvent` -kommando. Den här funktionen stöds i version 2.5.0 och senare av Web SDK.
 
-Detta är användbart om du behöver uppdatera en Adobe Target-profil eller skicka Recommendations-attribut för mål. [Läs mer om dessa Target-funktioner.](../personalization/adobe-target/target-overview.md#single-profile-update)
+Detta är användbart om du måste uppdatera en Adobe Target-profil eller skicka Target Recommendations-attribut. [Läs mer om dessa Target-funktioner.](../personalization/adobe-target/target-overview.md#single-profile-update)
 
-I framtiden kommer du att kunna skicka hela datalagret under `data` och mappa det till XDM på serversidan.
+I framtiden kan du skicka hela datalagret under `data` och mappa det till XDM på serversidan.
 
 **Så här skickar du attribut för profil och Recommendations till Adobe Target:**
 
@@ -142,7 +141,7 @@ alloy("sendEvent", {
 >
 >The `datasetId` som stöds av `sendEvent` kommandot har tagits bort. Om du vill åsidosätta ett datauppsättnings-ID använder du [konfigurationsåsidosättningar](../../datastreams/overrides.md) i stället.
 
-I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. Därför måste du ange `datasetId` på `sendEvent` kommando:
+I vissa fall kanske du vill skicka en händelse till en annan datauppsättning än den som konfigurerats i konfigurationsgränssnittet. För det måste du ange `datasetId` på `sendEvent` kommando:
 
 
 
@@ -162,8 +161,9 @@ Du kan även lägga till anpassad identitetsinformation till händelsen. Se [Hä
 
 ## Använda API:t sendBeacon
 
-Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbstandard-API som kallas `sendBeacon` för att göra det enklare att samla in data under denna tid. När du använder `sendBeacon`gör webbläsaren webbförfrågan i den globala webbläsarkontexten. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Att berätta för Adobe Experience Platform [!DNL Web SDK] att använda `sendBeacon`, lägg till alternativet `"documentUnloading": true` till händelsekommandot.  Här är ett exempel:
+Det kan vara svårt att skicka händelsedata precis innan webbsidans användare har navigerat. Om begäran tar för lång tid kan webbläsaren avbryta den. Vissa webbläsare har implementerat ett webbstandard-API som kallas `sendBeacon` för att göra det enklare att samla in data under denna tid. När du använder `sendBeacon`gör webbläsaren webbförfrågan i den globala webbläsarkontexten. Det innebär att webbläsaren gör beacon-begäran i bakgrunden och inte håller upp sidnavigeringen. Att berätta för Adobe Experience Platform [!DNL Web SDK] att använda `sendBeacon`, lägg till alternativet `"documentUnloading": true` till händelsekommandot.
 
+**Exempel**
 
 ```javascript
 alloy("sendEvent", {
@@ -214,19 +214,19 @@ alloy("sendEvent", {
 
 The `sendEvent` returnerar ett löfte som lösts med ett `result` -objekt. The `result` -objektet innehåller följande egenskaper:
 
-**förslag**: Personaliseringen erbjuder som besökaren är kvalificerad för. [Läs mer om förslag.](../personalization/rendering-personalization-content.md#manually-rendering-content)
-
-**beslut**: Den här egenskapen är inaktuell. Använd `propositions` i stället.
-
-**mål**: Segment från Adobe Experience Platform som kan delas med externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser. [Läs mer om destinationer.](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/custom-personalization.html)
+| Egenskap | Beskrivning |
+|---------|----------|
+| `propositions` | Personaliseringen erbjuder som besökaren är kvalificerad för. [Läs mer om förslag.](../personalization/rendering-personalization-content.md#manually-rendering-content) |
+| `decisions` | Den här egenskapen är föråldrad. Använd `propositions` i stället. |
+| `destinations` | Målgrupper från Adobe Experience Platform som kan delas med externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser. [Läs mer om destinationer.](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/custom-personalization.html) |
 
 >[!WARNING]
 >
->`destinations` är för närvarande i Beta. Dokumentationen och funktionaliteten kan komma att ändras.
+>The `destinations` egenskapen är i betaversionen. Dokumentationen och funktionaliteten kan komma att ändras.
 
 ## Ändra händelser globalt {#modifying-events-globally}
 
-Om du vill lägga till, ta bort eller ändra fält från händelsen globalt kan du konfigurera en `onBeforeEventSend` återanrop.  Det här återanropet anropas varje gång en händelse skickas.  Det här återanropet skickas i ett händelseobjekt med ett `xdm` fält.  Ändra `content.xdm` för att ändra data som skickas med händelsen.
+Om du vill lägga till, ta bort eller ändra fält från händelsen globalt kan du konfigurera en `onBeforeEventSend` återanrop. Det här återanropet anropas varje gång en händelse skickas. Det här återanropet skickas i ett händelseobjekt med ett `xdm` fält. Om du vill ändra data som skickas med händelsen ändrar du `content.xdm`.
 
 
 ```javascript
@@ -246,8 +246,8 @@ alloy("configure", {
 
 `xdm` fält anges i den här ordningen:
 
-1. Värden som skickas som alternativ till händelsekommandot `alloy("sendEvent", { xdm: ... });`
-2. Automatiskt insamlade värden.  (Se [Automatisk information](../data-collection/automatic-information.md).)
+1. Värden som skickas som alternativ till händelsekommandot `alloy("sendEvent", { xdm: ... });`.
+2. Automatiskt insamlade värden. Se [Automatisk information](../data-collection/automatic-information.md).
 3. Ändringarna i `onBeforeEventSend` återanrop.
 
 Några anteckningar om `onBeforeEventSend` callback:
@@ -297,4 +297,4 @@ Alla andra returvärden än det booleska `false` gör att händelsen kan bearbet
 
 ## Möjliga åtgärdbara fel
 
-När du skickar en händelse kan ett fel inträffa om de data som skickas är för stora (över 32 kB för den fullständiga begäran). I det här fallet måste du minska mängden data som skickas.
+När du skickar en händelse kan ett fel inträffa om de data som skickas är för stora (över 32 kB för den fullständiga begäran). I så fall måste du minska mängden data som skickas.

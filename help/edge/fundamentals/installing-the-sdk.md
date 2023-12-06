@@ -1,18 +1,17 @@
 ---
 title: Installera Adobe Experience Platform Web SDK
 description: Lär dig installera Experience Platform Web SDK.
-keywords: web sdk-installation;installera web sdk;Internet Explorer;promise;npm-paket
-exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
 
-# Installera SDK {#installing-the-sdk}
 
-Det finns tre sätt att använda Adobe Experience Platform Web SDK som stöds:
+# Installera Web SDK {#installing-the-sdk}
+
+Det finns tre sätt att installera Adobe Experience Platform Web SDK som stöds:
 
 1. Det bästa sättet att använda Adobe Experience Platform Web SDK är via användargränssnittet för datainsamling eller användargränssnittet för Experience Platform.
 1. Adobe Experience Platform Web SDK finns också i ett leveransnätverk (CDN) som du kan använda.
@@ -29,7 +28,6 @@ Den färdiga versionen finns tillgänglig på ett CDN. Du kan referera till bibl
 URL-struktur: https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js OR alloy.js för den icke-minifierade versionen.
 
 Exempel:
-
 
 * Miniatyrbild: [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.min.js)
 * Unminified: [https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.14.0/alloy.js)
@@ -77,7 +75,7 @@ För att avgöra om du redan har `window.Promise` polyfylld:
 
 1. Öppna webbplatsen i [!DNL Internet Explorer].
 1. Öppna webbläsarens felsökningskonsol.
-1. Typ `window.Promise` till konsolen och tryck sedan på Retur.
+1. Typ `window.Promise` till konsolen och tryck på Enter.
 
 Om något annat än `undefined` visas, du har antagligen redan polyfyllt `window.Promise`. Ett annat sätt att avgöra om `window.Promise` fylls i genom att webbplatsen läses in när ovanstående installationsanvisningar är klara. Om SDK genererar ett fel som talar om något om ett löfte har du troligen inte polyfyllt `window.Promise`.
 
@@ -97,7 +95,7 @@ Den här taggen läser in ett skript som ser till att `window.Promise` är en gi
 
 Se avsnittet [Lägga till koden](#adding-the-code), kommer den baskod som du har kopierat och klistrat in på webbplatsens HTML att läsa in en extern fil. Den externa filen innehåller SDK:ns kärnfunktioner. Alla kommandon som du försöker köra när den här filen läses in är köade och bearbetas sedan när filen har lästs in. Inläsning av filen asynkront är den mest prestandametod som krävs för installationen.
 
-Under vissa omständigheter kanske du vill läsa in filen synkront \(mer information om dessa omständigheter beskrivs senare\). Om du gör det blockeras resten av HTML-dokumentet från att tolkas och återges av webbläsaren tills den externa filen har lästs in och körts. Denna ytterligare fördröjning innan primärt innehåll visas för användarna rekommenderas vanligtvis inte, men den kan vara bra beroende på omständigheterna.
+Under vissa omständigheter kanske du vill läsa in filen synkront. Om du gör det blockeras resten av HTML-dokumentet från att tolkas och återges av webbläsaren tills den externa filen har lästs in och körts. Denna ytterligare fördröjning innan primärt innehåll visas för användarna rekommenderas vanligtvis inte, men den kan vara bra beroende på omständigheterna.
 
 Om du vill läsa in filen synkront istället för asynkront tar du bort `async` attribut från andra `script` tagg enligt nedan:
 
