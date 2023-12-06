@@ -1,16 +1,40 @@
 ---
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+source-git-commit: 935881ee8c8aedb672bbd6233ea22aa7b26b28a6
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '1171'
 ht-degree: 0%
 
 ---
 
+
 # Dataförberedelse för datainsamling
 
 Data Prep är en Adobe Experience Platform-tjänst som gör att du kan mappa, omvandla och validera data till och från [Experience Data Model (XDM)](../xdm/home.md). När en plattform konfigureras [datastream](./overview.md)kan du använda Data Prep-funktioner för att mappa dina källdata till XDM när du skickar dem till Platform Edge Network.
+
+Alla data som skickas från en webbsida måste landas i Experience Platform som XDM. Det finns tre sätt att översätta data från ett datalager på en sida till den XDM som accepteras av Experience Platform:
+
+1. Formatera om datalagret till XDM på själva webbsidan.
+2. Använd funktionen för taggar för inbyggda dataelement för att formatera om en webbsidas befintliga datalagerformat till XDM.
+3. Formatera om en webbsidas befintliga datalagerformat till XDM via Edge Network med Data Prep för datainsamling.
+
+Den här guiden fokuserar på det tredje alternativet.
+
+## När dataprep ska användas för datainsamling {#when-to-use-data-prep}
+
+Det finns två användningsområden där Data Prep för datainsamling är användbart:
+
+1. Webbplatsen har ett välformat, styrt och underhållet datalager och det finns en inställning för att skicka det direkt till Edge Network i stället för att använda JavaScript-manipulering för att konvertera det till XDM på sidan (antingen via tagg-dataelement eller via manuell JavaScript-manipulering).
+2. Ett annat taggsystem än Taggar distribueras på webbplatsen.
+
+## Skicka ett befintligt datalager till Edge Network via WebSDK {#send-datalayer-via-websdk}
+
+Det befintliga datalagret måste skickas med `data` alternativ för `sendEvent` enligt beskrivningen i [Web SDK-dokumentation](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#sending-non-xdm-data).
+
+Om du använder taggar måste du använda **[!UICONTROL Data]** fält för **[!UICONTROL Send Event]** åtgärdstyp, enligt beskrivningen i [Dokumentation för SDK-taggtillägg](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/client/web-sdk/action-types.html).
+
+Resten av guiden fokuserar på hur datalagret ska mappas till XDM-standarder när det har skickats av WebSDK.
 
 >[!NOTE]
 >
@@ -131,6 +155,10 @@ Om du vill hämta egenskaper från ett XDM-objektdataelement gäller samma regle
 Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället. Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** för att fortsätta.
 
 ![JSON-exempel på förväntade inkommande data](assets/data-prep/select-data.png)
+
+>[!NOTE]
+>
+> Använd ett JSON-exempelobjekt som representerar alla datalagerelement som kan användas på alla sidor. Alla sidor använder till exempel inte lagerelement för kundvagnsdata. Men elementen i kundvagnsdatalagret bör inkluderas i det här JSON-exempelobjektet.
 
 ## [!UICONTROL Mapping]
 

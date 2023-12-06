@@ -1,9 +1,9 @@
 ---
 title: Spåra händelser med Adobe Experience Platform Web SDK
 description: Lär dig spåra Adobe Experience Platform Web SDK-händelser.
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+source-git-commit: 935881ee8c8aedb672bbd6233ea22aa7b26b28a6
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
@@ -76,11 +76,9 @@ I det här exemplet klonas datalagret genom att serialisera det till JSON och se
 
 ## Skicka data som inte är XDM
 
-Data som inte matchar ett XDM-schema ska skickas med `data` alternativ för `sendEvent` -kommando. Den här funktionen stöds i version 2.5.0 och senare av Web SDK.
+Data som inte matchar ett XDM-schema ska skickas med `data` alternativ för `sendEvent` -kommando. Den här funktionen stöds i version 2.5.0 och senare av Web SDK. När du använder det här alternativet måste data mappas till en XDM-schemaserversida som stöds via [Dataförberedelse för datainsamling](../../datastreams/data-prep.md#create-mapping).
 
-Detta är användbart om du måste uppdatera en Adobe Target-profil eller skicka Target Recommendations-attribut. [Läs mer om dessa Target-funktioner.](../personalization/adobe-target/target-overview.md#single-profile-update)
-
-I framtiden kan du skicka hela datalagret under `data` och mappa det till XDM på serversidan.
+Den här funktionen är också användbar om du behöver uppdatera en Adobe Target-profil eller skicka Target Recommendations-attribut. Läs mer om [Målgruppspersonalisering](../personalization/adobe-target/target-overview.md#single-profile-update).
 
 **Så här skickar du attribut för profil och Recommendations till Adobe Target:**
 
