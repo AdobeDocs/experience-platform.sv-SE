@@ -1,12 +1,11 @@
 ---
-keywords: Google-annonser;Google-annonser;Google-adwords;Google AdWords;Google Adwords
 title: Google Ads-anslutning
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appen.
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 1ec9559e762b44dd8d7639aba0a54af7ce221666
 workflow-type: tm+mt
-source-wordcount: '952'
-ht-degree: 1%
+source-wordcount: '930'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +28,7 @@ Observera följande information som gäller [!DNL Google Ads] mål:
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Google Ad Manager] stöder aktivering av identiteter som beskrivs i tabellen nedan.
+[!DNL Google Ads] stöder aktivering av identiteter som beskrivs i tabellen nedan.
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
