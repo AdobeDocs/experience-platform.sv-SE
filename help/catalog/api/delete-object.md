@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Ta bort ett objekt i API:t
 description: Du kan ta bort ett Catalog-objekt genom att ange dess ID i sökvägen till en DELETE-begäran.
 exl-id: 2ac9c378-2340-43e1-8279-7c365df652e4
-source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
+source-git-commit: d88336d314e767a068ef6524161baeb642a58433
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '210'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska tas bort. Giltiga objekt är: <ul><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska tas bort. Giltiga objekt är: <ul><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**

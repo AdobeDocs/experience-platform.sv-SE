@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Utveckla ETL-integreringar för Adobe Experience Platform
 description: Integreringsguiden för ETL beskriver allmänna steg för att skapa säkra anslutningar med höga prestanda för Experience Platform och inmatning av data på plattformen.
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: b80d8349fc54a955ebb3362d67a482d752871420
 workflow-type: tm+mt
-source-wordcount: '4081'
+source-wordcount: '3978'
 ht-degree: 0%
 
 ---
@@ -40,15 +40,15 @@ Det finns flera Experience Platform-komponenter som ingår i ETL-anslutningsinte
 - **Adobe Identity Management System (IMS)** - Tillhandahåller ramverk för autentisering till Adobes tjänster.
 - **IMS-organisation** - En företagsenhet som kan äga eller licensiera produkter och tjänster och ge sina medlemmar tillgång till dem.
 - **IMS-användare** - Medlemmar i en IMS-organisation. Relationen organisation till användare är många för många.
-- **[!DNL Sandbox]** - En virtuell partition en enda [!DNL Platform] till exempel för att utveckla och utveckla program för digitala upplevelser.
+- **[!DNL Sandbox]** - En virtuell partition är en enda [!DNL Platform] till exempel för att utveckla och utveckla program för digitala upplevelser.
 - **Dataidentifiering** - Registrerar metadata för importerade och transformerade data i [!DNL Experience Platform].
 - **[!DNL Data Access]** - Ger användarna ett gränssnitt för att komma åt sina data i [!DNL Experience Platform].
-- **[!DNL Data Ingestion]** - Skickar data till [!DNL Experience Platform] med [!DNL Data Ingestion] API:er.
+- **[!DNL Data Ingestion]** - Skickar data till [!DNL Experience Platform] med [!DNL Data Ingestion] API.
 - **[!DNL Schema Registry]** - Definierar och lagrar schema som beskriver strukturen för data som ska användas i [!DNL Experience Platform].
 
 ## Komma igång med [!DNL Experience Platform] API:er
 
-I följande avsnitt finns ytterligare information som du behöver känna till eller har till hands för att kunna ringa [!DNL Experience Platform] API:er.
+I följande avsnitt finns ytterligare information som du behöver känna till eller har till hands för att kunna ringa [!DNL Experience Platform] API.
 
 ### Läser exempel-API-anrop
 
@@ -72,7 +72,7 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 ## Allmänt användarflöde
 
@@ -86,13 +86,13 @@ Mallar för ett ETL-exempelverktyg och arbetsflöde finns i [ETL-arbetsflöde](.
 
 >[!NOTE]
 >
->ETL-kopplingen måste ange ett tidsstämpelfilter som markerar vilket datum data ska importeras och förskjutas (dvs. fönstret som data ska läsas för). ETL-verktyget bör ha stöd för att ta dessa två parametrar i det här eller ett annat relevant gränssnitt. I Adobe Experience Platform mappas de här parametrarna till antingen tillgängliga datum (om sådana finns) eller inhämtningsdatum i ett batchobjekt i datauppsättningen.
+>ETL-kopplingen måste ange ett tidsstämpelfilter som markerar datumet för att importera data och förskjutning (dvs. Fönstret som data ska läsas för). ETL-verktyget bör ha stöd för att ta dessa två parametrar i det här eller ett annat relevant gränssnitt. I Adobe Experience Platform mappas de här parametrarna till antingen tillgängliga datum (om sådana finns) eller inhämtningsdatum i ett batchobjekt i datauppsättningen.
 
 ### Visa lista med datauppsättningar
 
 Med datakällan för mappning kan en lista över alla tillgängliga datauppsättningar hämtas med [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
-Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`), med det bästa sättet att inkludera frågeparametrar som begränsar svarsstorleken.
+Du kan utfärda en enda API-begäran för att visa alla tillgängliga datauppsättningar (t.ex. `GET /dataSets`), med det bästa sättet att ta med frågeparametrar som begränsar svarsstorleken.
 
 Om fullständig datauppsättningsinformation begärs kan svarsnyttolasten nå över 3 GB, vilket kan försämra den totala prestandan. Om du använder frågeparametrar för att filtrera bara den information som behövs kan du därför göra [!DNL Catalog] frågor mer effektivt.
 
@@ -127,7 +127,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
   -H "x-sandbox-name: {SANDBOX_NAME}"
 ```
 
-Se [Katalogtjänst - översikt](../catalog/home.md) för detaljerade exempel på hur man anropar [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/).
+Läs mer i [Katalogtjänst - översikt](../catalog/home.md) för detaljerade exempel på hur man anropar [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
 **Svar**
 
@@ -211,7 +211,7 @@ Svarsformatet beror på vilken typ av Acceptera-huvud som skickas i begäran. Up
 
 **Svar**
 
-Det returnerade JSON-schemat beskriver struktur- och fältnivåinformationen (&quot;type&quot;, &quot;format&quot;, &quot;minimum&quot;, &quot;maximum&quot; osv.) av data, serialiserat som JSON. Om du använder ett annat serialiseringsformat än JSON för förtäring (t.ex. Parquet eller Scala), [Registerguide för schema](../xdm/tutorials/create-schema-api.md) innehåller en tabell som visar önskad JSON-typ (&quot;meta:xdmType&quot;) och dess motsvarande representation i andra format.
+Det returnerade JSON-schemat beskriver strukturen och fältnivåinformationen (&quot;type&quot;, &quot;format&quot;, &quot;minimum&quot;, &quot;maximum&quot;, etc.) av data, serialiserat som JSON. Om du använder ett annat serialiseringsformat än JSON för förtäring (t.ex. Parquet eller Scala), [Registerguide för schema](../xdm/tutorials/create-schema-api.md) innehåller en tabell som visar önskad JSON-typ (&quot;meta:xdmType&quot;) och dess motsvarande representation i andra format.
 
 Tillsammans med det här bordet [!DNL Schema Registry] Utvecklarhandboken innehåller detaljerade exempel på alla anrop som kan göras med [!DNL Schema Registry] API.
 
@@ -253,7 +253,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/xdms/context/pers
 
 **Svar**
 
-Liknar stegen för [visa dataset schema](#view-dataset-schema), innehåller svaret ett JSON-schema som beskriver strukturen och fältnivåinformationen för data, serialiserat som JSON.
+Liknar stegen för [visa datauppsättningsschema](#view-dataset-schema), innehåller svaret ett JSON-schema som beskriver strukturen och fältnivåinformationen för data, serialiserat som JSON.
 
 >[!NOTE]
 >
@@ -319,7 +319,7 @@ Svaret kommer att innehålla en datauppsättning (`limit=1`) som visar egenskape
 ```json
 {
   "5bf479a6a8c862000050e3c7": {
-    "files": "@/dataSets/5bf479a6a8c862000050e3c7/views/5bf479a654f52014cfffe7f1/files"
+    "files": "@/dataSetFiles?dataSetId=5bf479a6a8c862000050e3c7"
   }
 }
 ```
@@ -564,7 +564,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
   -H "x-api-key: {API_KEY}"
 ```
 
-Svaret på den här begäran innehåller innehållet i filen. Mer information, inklusive information om sidnumrering av svar, finns i [Fråga data via API för dataåtkomst](../data-access/tutorials/dataset-data.md) självstudiekurs.
+Svaret på den här begäran innehåller innehållet i filen. Mer information, inklusive information om sidnumrering av svar, finns i [Fråga data via API för dataåtkomst](../data-access/tutorials/dataset-data.md) självstudie.
 
 ### Validera poster för schemakompatibilitet
 
@@ -600,7 +600,7 @@ Information om hur du skapar en batch, inklusive exempelbegäranden och svar, fi
 
 ### Skriv till datauppsättning
 
-När en ny grupp har skapats kan filer sedan överföras till en viss datauppsättning. Flera filer kan publiceras i en grupp tills den befordras. Filer kan överföras med API:t för liten filöverföring; Om filerna är för stora och gatewaygränsen överskrids kan du använda API:t för stor filöverföring. Information om hur du använder både stor och liten filöverföring finns i [Översikt över batchintag](../ingestion/batch-ingestion/overview.md).
+När en ny grupp har skapats kan filer sedan överföras till en viss datauppsättning. Flera filer kan publiceras i en grupp tills den befordras. Filer kan överföras med API:t för liten filöverföring. Om filerna är för stora och gatewaygränsen överskrids kan du använda API:t för stor filöverföring. Information om hur du använder både stor och liten filöverföring finns i [Översikt över batchintag](../ingestion/batch-ingestion/overview.md).
 
 **Begäran**
 
@@ -743,13 +743,13 @@ Händelsedata är vanligtvis när det finns indexerade tidsstämpelkolumner i va
 
 Profildata är vanligtvis när det inte finns någon tidsstämpel i data och varje rad kan identifieras med en primär/sammansatt nyckel.
 
-Stegvisa data är där endast nya/uppdaterade data kommer in i systemet och läggs till i aktuella data i datauppsättningarna.
+Stegvisa data är där bara nya/uppdaterade data kommer in i systemet och läggs till i aktuella data i datauppsättningarna.
 
 Snapshot-data är när alla data kommer in i systemet och ersätter vissa eller alla tidigare data i en datauppsättning.
 
 Vid inkrementella händelser bör ETL-verktyget använda tillgängliga datum/skapa-datum för batchenheten. Om du använder en push-tjänst finns inga tillgängliga datum, så verktyget använder batchskapat/uppdaterat datum för markeringssteg. Varje grupp med stegvisa händelser måste bearbetas.
 
-För inkrementella profiler kommer ETL-verktyget att använda skapade/uppdaterade datum för batchentiteten. Vanligtvis krävs varje batch inkrementella profildata för att bearbetas.
+För inkrementella profiler kommer ETL-verktyget att använda skapade/uppdaterade datum för batchentiteten. Vanligtvis krävs varje grupp med inkrementella profildata för att bearbetas.
 
 Det är inte så troligt att händelser för ögonblicksbilder påverkas av datastorleken. Men om detta skulle behövas får ETL-verktyget bara välja den sista gruppen för bearbetning.
 
@@ -771,11 +771,11 @@ När rensningen är klar måste klientadministratörerna konfigurera om Adobe Ex
 
 Efter kundens gottfinnande kan dataadministratörer/ingenjörer besluta att extrahera, omvandla och läsa in data sekventiellt eller samtidigt beroende på egenskaperna för en viss datauppsättning. Detta kommer också att baseras på det användningsfall som klienten har som mål med de omformade data.
 
-Om klienten till exempel är beständig i ett uppdateringsbart beständigt arkiv och händelsesekvensen eller händelseordningen är viktig, kan klienten behöva bearbeta jobb med sekventiella ETL-omformningar strikt.
+Om klienten till exempel är beständig i ett uppdateringsbart beständigt arkiv och händelsesekvensen eller händelseordningen är viktig, kan klienten behöva bearbeta jobb med sekventiella ETL-omvandlingar strikt.
 
 I andra fall kan data i fel ordning bearbetas av program/processer som sorteras internt med en angiven tidsstämpel. I sådana fall kan parallella ETL-omvandlingar vara genomförbara för att förbättra bearbetningstiden.
 
-För källbatchar är den beroende av klientinställningar och kundbegränsning. Om källdata kan hämtas upp parallellt utan hänsyn till hur lång raden behöver vara/ordnas, kan omvandlingsprocessen skapa processgrupper med högre grad av parallellitet (optimering baserad på oordningsbearbetning). Men om omvandlingen måste följa tidsstämplar eller ändra prioritetsordning måste schemaläggaren/anropet för dataåtkomst eller ETL-verktyget se till att batchar inte bearbetas i fel ordning där det är möjligt.
+För källbatchar är den åter beroende av klientinställningar och kundbegränsning. Om källdata kan hämtas upp parallellt utan hänsyn till hur lång raden behöver vara/ordnas, kan omvandlingsprocessen skapa processgrupper med högre grad av parallellitet (optimering baserad på oordningsbearbetning). Men om omvandlingen måste följa tidsstämplar eller ändra prioritetsordning måste schemaläggaren/anropet för dataåtkomst eller ETL-verktyget se till att batchar inte bearbetas i fel ordning där det är möjligt.
 
 ## Uppskov
 

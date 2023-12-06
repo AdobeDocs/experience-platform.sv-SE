@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Uppdatera ett katalogobjekt
 description: Du kan uppdatera en del av ett Catalog-objekt genom att ta med dess ID i sökvägen för en PATCH-begäran. Det här dokumentet innehåller information om hur du använder fält och JSON Patch-notation för att utföra PATCH-åtgärder på katalogobjekt.
 exl-id: 315de212-bf4d-40d5-a54f-9602a26d6852
-source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
+source-git-commit: 296a988a67871933723ad0474c113cb93fdbf255
 workflow-type: tm+mt
-source-wordcount: '361'
-ht-degree: 1%
+source-wordcount: '371'
+ht-degree: 0%
 
 ---
 
@@ -34,7 +34,7 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**
@@ -69,11 +69,7 @@ Ett lyckat svar returnerar en array som innehåller ID:t för den uppdaterade da
 
 Följande exempelanrop visar hur du uppdaterar ett objekt med JSON Patch, enligt instruktionerna i [RFC-6902](https://tools.ietf.org/html/rfc6902).
 
-<!-- (Include once API fundamentals guide is published) 
-
-For more information on JSON Patch syntax, see the [API fundamentals guide](). 
-
--->
+Mer information om JSON Patch-syntaxen finns i [Grundläggande API-guide](../../landing/api-fundamentals.md#json-patch).
 
 **API-format**
 
@@ -83,7 +79,7 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska uppdateras. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill uppdatera. |
 
 **Begäran**

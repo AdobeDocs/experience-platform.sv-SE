@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Söka efter ett katalogobjekt
 description: Om du känner till den unika identifieraren för ett specifikt katalogobjekt kan du utföra en GET-förfrågan för att visa objektets information.
 exl-id: fd6fbe72-0108-4be3-a065-c753e7a19d24
-source-git-commit: 2226b1878ef3398554b6cf96ff400cc1767a9e4c
+source-git-commit: 0331b6bbd22255cab92c93070dda1ffaed5bbbcb
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 0%
@@ -28,7 +28,7 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | Typ av [!DNL Catalog] objekt som ska hämtas. Giltiga objekt är: <ul><li>`batches`</li><li>`dataSets`</li><li>`dataSetFiles`</li></ul> |
 | `{OBJECT_ID}` | Identifieraren för det specifika objekt som du vill hämta. |
 
 **Begäran**
@@ -58,7 +58,7 @@ Ett lyckat svar returnerar den angivna datauppsättningen med endast den begärd
                 "sample_dataset"
             ]
         },
-        "files": "@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"
+        "files": "@/dataSetFiles?dataSetId=5ba9452f7de80400007fc52a"
     }
 }
 ```
