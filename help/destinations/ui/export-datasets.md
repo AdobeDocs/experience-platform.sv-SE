@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 7c68b6a3b08eb47fa8c3906468dc87f3715fbe99
+source-git-commit: 9a149b86f34f5c7cae6a1bf2ae797a256e212f30
 workflow-type: tm+mt
-source-wordcount: '1699'
+source-wordcount: '1683'
 ht-degree: 0%
 
 ---
@@ -136,11 +136,11 @@ Använd kryssrutorna till vänster om datauppsättningsnamnen för att välja de
 
 I **[!UICONTROL Scheduling]** kan du ange ett startdatum och en exportgräns för datauppsättningsexporter.
 
-The **[!UICONTROL Export incremental files]** alternativet väljs automatiskt. Detta utlöser en export där den första filen är en fullständig ögonblicksbild av datauppsättningen och efterföljande filer är inkrementella tillägg till datauppsättningen sedan den föregående exporten.
+The **[!UICONTROL Export incremental files]** alternativet väljs automatiskt. Detta utlöser en export av en eller flera filer som representerar en fullständig ögonblicksbild av datauppsättningen. Efterföljande filer är inkrementella tillägg till datauppsättningen sedan föregående export.
 
 >[!IMPORTANT]
 >
->Den första exporterade stegvisa filen innehåller alla befintliga data i datauppsättningen, och fungerar som en bakgrundsfyllning.
+>Den första stegvisa filexporten innehåller alla befintliga data i datauppsättningen och fungerar som en bakgrundsfyllning. Exporten kan innehålla en eller flera filer.
 
 ![Arbetsflöde för dataexport med schemaläggningssteget.](/help/destinations/assets/ui/export-datasets/export-incremental-datasets.png)
 
@@ -167,7 +167,7 @@ På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **
 
 ## Verifiera datauppsättningsexport {#verify}
 
-När du exporterar datauppsättningar skapas en `.json` eller `.parquet` filen på lagringsplatsen som du angav. Förvänta dig att en ny fil ska placeras på din lagringsplats enligt det exportschema som du angav.
+När du exporterar datauppsättningar skapas en eller flera i Experience Platform `.json` eller `.parquet` filer på lagringsplatsen som du angav. Förvänta dig att nya filer ska placeras på din lagringsplats enligt det exportschema som du angav.
 
 Experience Platform skapar en mappstruktur på den lagringsplats du angav, där den sparar de exporterade datauppsättningsfilerna. En ny mapp skapas för varje exporttid enligt mönstret nedan:
 
