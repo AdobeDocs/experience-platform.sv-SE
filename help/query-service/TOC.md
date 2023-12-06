@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: cd97165d4e4d8ed984c4705f614c8d77eb750ed6
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '309'
 ht-degree: 13%
 
 ---
@@ -48,8 +48,9 @@ ht-degree: 13%
    - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)
    - [Visa besökarna i deras sidvy](use-cases/visitors-by-number-of-page-views.md)
    - [Propensionstest](use-cases/propensity-score.md)
-   - [SQLAlchemy](use-cases/sqlalchemy.md)
+   - [Exempel på lambda-funktion: Hämta liknande poster](use-cases/retrieve-similar-records.md)
    - [Returnera och använda försäljningsvariabler från analysdata](use-cases/merchandising-variables.md)
+   - [SQLAlchemy](use-cases/sqlalchemy.md)
    - [Visa sammanslagningsrapporten för en besökare](use-cases/roll-up-report-of-a-visitor.md)
    - [Insikter om webb- och mobilanalys](use-cases/analytics-insights.md)
 - Viktiga begrepp {#key-concepts}
