@@ -1,12 +1,11 @@
 ---
-keywords: aktivera profilmål;aktivera mål;aktivera data; aktivera e-postmarknadsföringsmål; aktivera molnlagringsmål
 title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 28578a7e852cbefd3c644259a4bffaed29501a9e
+source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
 workflow-type: tm+mt
-source-wordcount: '3620'
+source-wordcount: '3604'
 ht-degree: 0%
 
 ---
@@ -24,7 +23,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform batchprofilbaserade destinationer, som molnlagring och e-postmarknadsföring.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform till batchprofilfilsbaserade mål, som molnlagring och e-postmarknadsföringsmål.
 
 ## Förutsättningar {#prerequisites}
 
@@ -46,15 +45,15 @@ Välj önskat filformat för export när [skapa en anslutning till det filbasera
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
-   ![Färgmarkering för hur du kommer till fliken Målkatalog](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
+   ![Bild som visar hur du kommer till katalogfliken för mål.](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
 1. Välj **[!UICONTROL Activate audiences]** på kortet som motsvarar destinationen där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Markera bilden med knappen Aktivera målgrupper](../assets/ui/activate-batch-profile-destinations/activate-audiences-button.png)
+   ![Aktivera målgruppskontroll som är markerad på katalogsidan.](../assets/ui/activate-batch-profile-destinations/activate-audiences-button.png)
 
 1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
 
-   ![Bild som visar hur du väljer ett eller flera mål för att aktivera målgrupper för](../assets/ui/activate-batch-profile-destinations/select-destination.png)
+   ![Kryssrutor markerade för att välja en eller flera destinationer att aktivera målgrupper till.](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt till [välj era målgrupper](#select-audiences).
 
@@ -68,7 +67,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
 * Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
-![Bildmarkering som visar hur du väljer en eller flera målgrupper att aktivera](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
+![Kryssrutor visas när du väljer en eller flera målgrupper att aktivera.](../assets/ui/activate-batch-profile-destinations/select-audiences.png)
 
 >[!TIP]
 >
@@ -81,7 +80,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >title="Schema"
 >abstract="Använd pennikonen för att ange filexportformat (fullständiga eller stegvisa filer) och exportfrekvens."
 
-[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer i form av [!DNL CSV] filer. I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje publik som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer som [olika filtyper](#supported-file-formats-export). I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje publik som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
 
 >[!IMPORTANT]
 >
@@ -89,9 +88,9 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >
 >Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
 
-Välj **[!UICONTROL Create schedule]** som motsvarar målgruppen som du vill skicka till målet.
+Välj **[!UICONTROL Create schedule]** kontroll som motsvarar den målgrupp du vill skicka till ditt mål.
 
-![Markera bilder med knappen Skapa schema](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
+![Skapa schemakontroll markerat i schemaläggningssteget.](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### Exportera fullständiga filer {#export-full-files}
 
@@ -113,14 +112,14 @@ Välj **[!UICONTROL Create schedule]** som motsvarar målgruppen som du vill ski
 
 Välj **[!UICONTROL Export full files]** för att utlösa export av en fil som innehåller en fullständig ögonblicksbild av alla profilkvalifikationer för den valda publiken.
 
-![Bild av användargränssnittet med alternativet Exportera hela filer markerat.](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
+![Exportera hela filer växlar mellan markerade filer.](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
 1. Använd **[!UICONTROL Frequency]** för att välja exportfrekvens:
 
    * **[!UICONTROL Once]**: schemalägg en enda gång vid behov av fullständig filexport.
    * **[!UICONTROL Daily]**: schemalägg fullständig filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
 
-1. Använd **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller enligt schema, vid en viss tidpunkt. När du väljer **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
+2. Använd **[!UICONTROL Time]** för att välja om exporten ska ske omedelbart efter målgruppsutvärderingen eller enligt schema, vid en viss tidpunkt. När du väljer **[!UICONTROL Scheduled]** kan du använda väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
    >[!NOTE]
    >
@@ -135,13 +134,13 @@ Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en
 
    ![Bild som markerar alternativet Schemalagd i aktiveringsflödet för batchdestinationer och visar tidsväljaren.](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
-1. Använd **[!UICONTROL Date]** för att välja dag eller intervall när exporten ska ske. För daglig export är det bästa sättet att ställa in start- och slutdatum så att de motsvarar kampanjernas längd i era nedströmsplattformar.
+3. Använd **[!UICONTROL Date]** för att välja dag eller intervall när exporten ska ske. För daglig export är det bästa sättet att ställa in start- och slutdatum så att de motsvarar kampanjernas längd i era nedströmsplattformar.
 
    >[!IMPORTANT]
    >
    > När du väljer ett exportintervall inkluderas inte den sista dagen i intervallet i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum 10 januari.
 
-1. Välj **[!UICONTROL Create]** för att spara schemat.
+4. Välj **[!UICONTROL Create]** för att spara schemat.
 
 ### Exportera inkrementella filer {#export-incremental-files}
 
@@ -151,22 +150,22 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 >
 >Den första exporterade inkrementella filen innehåller alla profiler som kvalificerar sig för en målgrupp och fungerar som en bakgrundsfyllning.
 
-![Bild av användargränssnittet med alternativet Exportera stegvisa filer markerat.](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
+![Exportera stegvisa filer växlar mellan markerade filer.](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
 1. Använd **[!UICONTROL Frequency]** för att välja exportfrekvens:
 
    * **[!UICONTROL Daily]**: schemalägg inkrementell filexport en gång om dagen, varje dag, vid den tidpunkt du anger.
    * **[!UICONTROL Hourly]**: schemalägg stegvis filexport var 3, 6, 8 eller 12:e timme.
 
-1. Använd **[!UICONTROL Time]** väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
+2. Använd **[!UICONTROL Time]** väljaren för att välja tid på dygnet, i [!DNL UTC] format, när exporten ska ske.
 
-1. Använd **[!UICONTROL Date]** för att välja intervallet när exporten ska ske. Det bästa sättet är att ställa in start- och slutdatumet så att det passar kampanjernas längd på era nedströmsplattformar.
+3. Använd **[!UICONTROL Date]** för att välja intervallet när exporten ska ske. Det bästa sättet är att ställa in start- och slutdatumet så att det passar kampanjernas längd på era nedströmsplattformar.
 
    >[!IMPORTANT]
    >
    >Den sista dagen i intervallet inkluderas inte i exporten. Om du till exempel väljer intervallet 4-11 januari kommer den sista filexporten att äga rum 10 januari.
 
-1. Välj **[!UICONTROL Create]** för att spara schemat.
+4. Välj **[!UICONTROL Create]** för att spara schemat.
 
 ### Konfigurera filnamn {#file-names}
 
@@ -215,7 +214,7 @@ När du är klar med konfigurationen av alla målgrupper väljer du **[!UICONTRO
 
 I det här steget måste du välja de profilattribut som du vill lägga till i filerna som exporteras till målmålet. Så här väljer du profilattribut och identiteter för export:
 
-1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new field]**.
+1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new mapping]**.
 
    ![Lägg till ny fältkontroll som är markerad i mappningsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
 
@@ -434,7 +433,7 @@ Läs mer om [profilexportbeteende för filbaserade mål](/help/destinations/how-
 
 Det går inte att markera identitetsnamnutrymmen för export, vilket visas i bilden nedan. Om du väljer ett identitetsnamnutrymme för export visas ett fel i **[!UICONTROL Review]** steg.
 
-![Mappning som inte stöds visar identitetsexporter](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
+![Mappning som inte stöds visar identitetsexporter.](../assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
 
 Som en tillfällig lösning kan du antingen:
 * Använd de gamla molnlagringsmålen för dataflödena där du vill inkludera identitetsnamnutrymmen i exporter
@@ -517,7 +516,7 @@ Välj **[!UICONTROL Next]** för att gå till [Granska](#review) steg.
 
 På **[!UICONTROL Review]** kan du se en sammanfattning av markeringen. Välj **[!UICONTROL Cancel]** för att bryta upp flödet, **[!UICONTROL Back]** för att ändra dina inställningar, eller **[!UICONTROL Finish]** för att bekräfta ditt val och börja skicka data till målet.
 
-![Markeringssammanfattning i granskningssteget.](../assets/ui/activate-batch-profile-destinations/review.png)
+![Markeringssammanfattning som visas i granskningssteget.](../assets/ui/activate-batch-profile-destinations/review.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
@@ -532,7 +531,7 @@ Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy 
 
 I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
 
-![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
+![Ett exempel på dataprincipöverträdelse som visas i aktiveringsarbetsflödet.](../assets/common/data-policy-violation.png)
 
 ### Filtrera målgrupper {#filter-audiences}
 

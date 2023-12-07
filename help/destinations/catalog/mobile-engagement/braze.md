@@ -3,10 +3,10 @@ keywords: mobil; braze; messaging;
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1079'
-ht-degree: 1%
+source-wordcount: '1069'
+ht-degree: 0%
 
 ---
 
@@ -46,7 +46,7 @@ Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsd
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -152,7 +152,7 @@ Upprepa föregående steg om du vill lägga till fler mappningar.
 
 Säg ditt XDM-profilschema och ditt [!DNL Braze] -instansen innehåller följande attribut och identiteter:
 
-|  | XDM-profilschema | [!DNL Braze] Instans |
+|  | XDM-profilschema | [!DNL Braze] Instance |
 |---|---|---|
 | Attribut | <ul><li><code>person.name.firstName</code></li><li><code>person.name.lastName</code></li><li><code>mobilePhone.number</code></li></ul> | <ul><li><code>FirstName</code></li><li><code>LastName</code></li><li><code>Telefonnummer</code></li></ul> |
 | Identiteter | <ul><li><code>E-post</code></li><li><code>Google Ad ID (GAID)</code></li><li><code>Apple ID för annonsörer (IDFA)</code></li></ul> | <ul><li><code>external_id</code></li></ul> |

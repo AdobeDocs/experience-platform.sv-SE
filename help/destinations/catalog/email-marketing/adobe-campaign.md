@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;adobe-kampanj;kampanj
 title: Adobe Campaign
 description: Adobe Campaign är en uppsättning lösningar som hjälper er att personalisera och leverera kampanjer i alla kanaler, både online och offline.
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '843'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Om du vill skicka målgruppsdata till Adobe Campaign måste du först [ansluta t
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -42,7 +42,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## IP-adress tillåtelselista {#allow-list}
 
-När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall till tillåtelselista.
+När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall i tillåtelselista.
 
 Se [IP-adress tillåtelselista för SFTP-mål](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 

@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-post;e-postmål;oracle eloqua;oracle
 title: (Filer) Oraclet Eloqua-anslutning
 description: Oracle Eloqua är en SaaS-plattform (Software as a service) för automatiserad marknadsföring som erbjuds av Oraclet och som hjälper B2B-marknadsförare och organisationer att hantera marknadsföringskampanjer och generera säljleads.
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '671'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Skicka målgruppsdata till [!DNL Oracle Eloqua]måste du först [ansluta till m�
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

@@ -3,9 +3,9 @@ keywords: facebook-anslutning;facebook-anslutning;facebook-mål;facebook;instagr
 title: Facebook
 description: Aktivera profiler för era Facebook-kampanjer för målgruppsanpassning, personalisering och nedtryckning baserat på hashad-e-post.
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1900'
+source-wordcount: '1908'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Aktivera profiler för [!DNL Facebook] kampanjer för målgruppsanpassning, pers
 
 Du kan använda det här målet för målgruppsanpassning över [!DNL Facebook's] program som stöds av [!DNL Custom Audiences], inklusive [!DNL Facebook], [!DNL Instagram], [!DNL Audience Network]och [!DNL Messenger]. Det program som ni valt att köra kampanjen mot anges av placeringsnivån i [!DNL Facebook Ads Manager].
 
-![Facebook-mål i Adobe Experience Platform användargränssnitt](../../assets/catalog/social/facebook/catalog.png)
+![Facebook-mål i Adobe Experience Platform användargränssnitt.](../../assets/catalog/social/facebook/catalog.png)
 
 ## Användningsfall
 
@@ -30,7 +30,7 @@ En webbutik vill nå befintliga kunder via sociala plattformar och visa dem pers
 
 ### Använd skiftläge 2
 
-Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare företaget har för dessa kunder är medlems-ID och e-postadresser.
+Ett flygbolag har olika kundnivåer (Bronze, Silver och Gold) och vill kunna erbjuda varje nivå personaliserade erbjudanden via sociala plattformar. Alla kunder använder dock inte flygbolagets mobilapp, och vissa av dem har inte loggat in på företagets webbplats. De enda identifierare som företaget har om dessa kunder är medlems-ID och e-postadresser.
 
 För att rikta in dem på sociala medier kan de lägga in kunddata från sina CRM i Adobe Experience Platform med e-postadresserna som identifierare.
 
@@ -50,7 +50,7 @@ Därefter kan de använda sina offlinedata, inklusive tillhörande medlemskaps-I
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -74,7 +74,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Innan du kan skicka dina målgrupper till [!DNL Facebook]ska du kontrollera att du uppfyller följande krav:
 
-* Dina [!DNL Facebook] användarkontot måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger annonskontot som du kommer att använda.
+* Dina [!DNL Facebook] användarkontot måste ha fullständig åtkomst till [!DNL Facebook Business Account] som äger annonskontot som du använder.
 * Dina [!DNL Facebook] användarkontot måste ha **[!DNL Manage campaigns]** behörighet aktiverad för annonskontot som du tänker använda.
 * The **Adobe Experience Cloud** företagskonto måste läggas till som annonspartner i [!DNL Facebook Ad Account]. Använd `business ID=206617933627973`. Se [Lägg till partners i din Business Manager](https://www.facebook.com/business/help/1717412048538897) i Facebook-dokumentationen.
   >[!IMPORTANT]
@@ -123,7 +123,7 @@ Om du väljer att hash-koda e-postadresserna själv måste du se till att uppfyl
 > Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 > The **[!UICONTROL Apply transformation]** -alternativet visas bara när du väljer attribut som källfält. Den visas inte när du väljer namnutrymmen.
 
-![Transformering av identitetsmappning](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
+![Använd omformningskontroll som markeras i mappningssteget.](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
 ## Använda anpassade namnutrymmen {#custom-namespaces}
 
@@ -149,7 +149,7 @@ I videon nedan visas även hur du konfigurerar en [!DNL Facebook] destinera och 
 
 1. Hitta Facebook-målet i målkatalogen och välj **[!UICONTROL Set Up]**.
 2. Välj **[!UICONTROL Connect to destination]**.
-   ![Autentisera till Facebook](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
+   ![Autentisera till Facebook-steget som visas i aktiveringsarbetsflödet.](/help/destinations/assets/catalog/social/facebook/authenticate-facebook-destination.png)
 3. Ange dina Facebook-uppgifter och välj **Logga in**.
 
 ### Fyll i målinformation {#destination-details}
@@ -163,7 +163,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Din [!DNL Facebook Ad Account ID]. Du hittar detta ID i din [!DNL Facebook Ads Manager] konto. När du anger detta ID ska du alltid prefix det med `act_`.
+* **[!UICONTROL Account ID]**: din [!DNL Facebook Ad Account ID]. Du hittar detta ID i din [!DNL Facebook Ads Manager] konto. När du anger detta ID ska du alltid prefix det med `act_`.
 
 ### Aktivera aviseringar {#enable-alerts}
 
@@ -176,7 +176,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="Målgruppens ursprung"
->abstract="Välj hur kunddata i målgruppen ursprungligen samlades in. Data visas i Facebook när en användare anges av segmentet"
+>abstract="Välj hur kunddata i målgruppen ursprungligen samlades in. Data visas i Facebook när en användare anges i segmentet"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
@@ -202,7 +202,7 @@ Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/acti
 
 I **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL Origin of audience] när målgrupper skickas till [!DNL Facebook Custom Audiences].
 
-![Facebook Origin of Audience](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+![Ursprunget för den meny som visas i Facebook aktiveringssteg.](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
 ### Mappningsexempel: aktivera målgruppsdata i [!DNL Facebook Custom Audience] {#example-facebook}
 
@@ -231,7 +231,7 @@ Markera målfält:
 > 
 >Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 
-![Identitetsmappning](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
+![Använd omformningskontroll som markeras i mappningssteget.](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## Exporterade data {#exported-data}
 
@@ -251,4 +251,4 @@ När du konfigurerar det här målet kan du få följande fel:
 
 Det här felet inträffar när kunder använder nyligen skapade konton och [!DNL Facebook] behörigheter är ännu inte aktiva.
 
-Om du får `400 Bad Request` felmeddelande efter att ha följt stegen i [Krav för facebook-konton](#facebook-account-prerequisites), kan du vänta i några dagar för [!DNL Facebook] tillstånd att träda i kraft.
+Om du får `400 Bad Request` felmeddelande efter att ha följt stegen i [Krav för facebook-konton](#facebook-account-prerequisites), kan ta några dagar för [!DNL Facebook] tillstånd att träda i kraft.

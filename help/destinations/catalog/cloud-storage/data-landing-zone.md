@@ -3,9 +3,9 @@ title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: a1b3e59e0d5b1312b7bc22885ee679775c2a4d78
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '1442'
+source-wordcount: '1470'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Plattformen har en strikt TTL-regel (time-to-live) på sju dagar för alla filer
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -62,11 +62,11 @@ Du kan använda [[!DNL Azure Storage Explorer]](https://azure.microsoft.com/en-u
 
 I [!DNL Azure Storage Explorer] Välj anslutningsikonen i det vänstra navigeringsfältet. The **Välj resurs** visas så att du kan ansluta till dem. Välj **[!DNL Blob container]** för att ansluta till [!DNL Data Landing Zone] lagring.
 
-![select-resource](/help/sources/images/tutorials/create/dlz/select-resource.png)
+![Välj en resurs som är markerad i Azure-gränssnittet.](/help/sources/images/tutorials/create/dlz/select-resource.png)
 
 Nästa, välj **URL för delad åtkomstsignatur (SAS)** som anslutningsmetod och välj sedan **Nästa**.
 
-![select-connection-method](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
+![Välj anslutningsmetod som är markerad i Azure-gränssnittet.](/help/sources/images/tutorials/create/dlz/select-connection-method.png)
 
 När du har valt anslutningsmetod måste du ange en **visningsnamn** och **[!DNL Blob]container SAS-URL** som motsvarar dina [!DNL Data Landing Zone] behållare.
 
@@ -171,15 +171,15 @@ Följande svar returnerar uppdaterade värden för `SASToken` och `SASUri`.
 
 Ange ditt visningsnamn (`containerName`) och [!DNL Data Landing Zone] SAS-URL, som returneras i det API-anrop som beskrivs ovan, och välj sedan **Nästa**.
 
-![enter-connection-info](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
+![Ange anslutningsinformation som är markerad i Azure-gränssnittet.](/help/sources/images/tutorials/create/dlz/enter-connection-info.png)
 
 The **Sammanfattning** visas så att du får en översikt över dina inställningar, inklusive information om [!DNL Blob] slutpunkt och behörigheter. När du är klar väljer du **Anslut**.
 
-![sammanfattning](/help/sources/images/tutorials/create/dlz/summary.png)
+![Sammanfattning av inställningar som visas i Azure-gränssnittet.](/help/sources/images/tutorials/create/dlz/summary.png)
 
 Anslutningen uppdaterar [!DNL Azure Storage Explorer] Gränssnitt med [!DNL Data Landing Zone] behållare.
 
-![dlz-user-container](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
+![Sammanfattning av DLZ-användarbehållaren som är markerad i Azure-gränssnittet.](/help/sources/images/tutorials/create/dlz/dlz-user-container.png)
 
 Med [!DNL Data Landing Zone] behållare ansluten till [!DNL Azure Storage Explorer]kan du nu börja exportera filer från Experience Platform till [!DNL Data Landing Zone] behållare. Om du vill exportera filer måste du skapa en anslutning till [!DNL Data Landing Zone] mål i användargränssnittet i Experience Platform, enligt beskrivningen i avsnittet nedan.
 

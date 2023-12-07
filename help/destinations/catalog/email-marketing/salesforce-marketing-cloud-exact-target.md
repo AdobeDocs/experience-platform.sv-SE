@@ -1,12 +1,11 @@
 ---
-keywords: e-post;E-post;e-post;e-postmål;salesforce;api salesforce marketing cloud destination
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '2983'
-ht-degree: 1%
+source-wordcount: '2803'
+ht-degree: 0%
 
 ---
 
@@ -22,7 +21,7 @@ ht-degree: 1%
 
 Jämfört med [!DNL Salesforce Marketing Cloud Account Engagement] som är mer inriktad på **B2B** marknadsföring, [!DNL (API) Salesforce Marketing Cloud] målet är idealiskt för **B2C** Användningsfall med kortare handläggningstider. Ni kan konsolidera större datauppsättningar som representerar målgruppens beteende för att justera och förbättra marknadsföringskampanjer genom att prioritera och segmentera kontakter, särskilt från datauppsättningar utanför [!DNL Salesforce]. *Observera att Experience Platform också har en anslutning till [[!DNL Salesforce Marketing Cloud Account Engagement]](/help/destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md).*
 
-Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnyttjar [!DNL Salesforce Marketing Cloud] [uppdatera kontakter](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API, som gör att du kan **lägga till kontakter och uppdatera kontaktdata** efter att ha aktiverat dem i en ny [!DNL Salesforce Marketing Cloud] segment.
+Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) använder [!DNL Salesforce Marketing Cloud] [uppdatera kontakter](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/updateContacts.html) API, som gör att du kan **lägga till kontakter och uppdatera kontaktdata** efter att ha aktiverat dem i en ny [!DNL Salesforce Marketing Cloud] segment.
 
 [!DNL Salesforce Marketing Cloud] använder OAuth 2 med klientautentiseringsuppgifter som autentiseringsmekanism för att kommunicera med [!DNL Salesforce Marketing Cloud] API. Instruktioner för hur du autentiserar [!DNL Salesforce Marketing Cloud] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
@@ -94,7 +93,7 @@ Eftersom det här målet kräver åtkomst till `[!DNL data extension]`måste du 
 
 ![Användargränssnittet i Salesforce Marketing Cloud visar e-postdatatillägget med tillåtna behörigheter.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/salesforce-permisions-list.png)
 
-Om du vill begränsa åtkomstnivån kan du även åsidosätta enskilda behörigheter genom att använda detaljerade behörigheter.
+Om du vill begränsa åtkomstnivån kan du även åsidosätta individuell åtkomst genom att använda detaljerade behörigheter.
 ![Användargränssnittet i Salesforce Marketing Cloud visar e-postdatatillägget med detaljerad behörighet.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/sales-email-attribute-set-permission.png)
 
 Se [[!DNL Marketing Cloud Roles]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_marketing_cloud_roles.htm&amp;type=5) och [[!DNL Marketing Cloud Roles and Permissions]](https://help.salesforce.com/s/articleView?language=en_US&amp;id=sf.mc_overview_roles.htm&amp;type=5) sidor för detaljerad vägledning.
@@ -106,8 +105,8 @@ Anteckna nedanstående innan du autentiserar dig för [!DNL (API) Salesforce Mar
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
 | Underdomän | Se [[!DNL Salesforce Marketing Cloud domain prefix]](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/your-subdomain-tenant-specific-endpoints.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | Om [!DNL Salesforce Marketing Cloud] domänen är<br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*, <br>du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som värdet. |
-| Klient-ID | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | r23kxxxxxxxx0z05xxxxxx |
-| Klienthemlighet | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | ipxxxxxxxxxxT4xxxxxxxxxx |
+| Klient-ID | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | r23kxxxxxx0z05xxxx |
+| Klienthemlighet | Se [!DNL Salesforce Marketing Cloud] [dokumentation](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) om du vill veta hur du får fram det här värdet från [!DNL Salesforce Marketing Cloud] gränssnitt. | ipxxxxxxxxxxT4xxxxxxxx |
 
 {style="table-layout:auto"}
 
@@ -134,7 +133,7 @@ Anteckna nedanstående innan du autentiserar dig för [!DNL (API) Salesforce Mar
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -171,8 +170,8 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och
 | [!DNL (API) Salesforce Marketing Cloud] mål | [!DNL Salesforce Marketing Cloud] |
 | --- | --- |
 | **[!UICONTROL Subdomain]** | Dina [!DNL Salesforce Marketing Cloud] domänprefix. <br>Om din domän till exempel är <br> *`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com*, <br> du måste ange `mcq4jrssqdlyc4lph19nnqgzzs84` som värdet. |
-| **[!UICONTROL Client ID]** | Din [!DNL Salesforce Marketing Cloud] `Client ID`. |
-| **[!UICONTROL Client Secret]** | Din [!DNL Salesforce Marketing Cloud] `Client Secret`. |
+| **[!UICONTROL Client ID]** | Dina [!DNL Salesforce Marketing Cloud] `Client ID`. |
+| **[!UICONTROL Client Secret]** | Dina [!DNL Salesforce Marketing Cloud] `Client Secret`. |
 
 ![Skärmbild av användargränssnittet för plattformen som visar hur du autentiserar till Salesforce Marketing Cloud.](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/authenticate-destination.png)
 

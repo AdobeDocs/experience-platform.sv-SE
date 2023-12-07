@@ -1,11 +1,10 @@
 ---
-keywords: Dubbelklicka på Bid Manager;DoubleClick bid manager;DoubleClick;Display & Video 360;display 360;video 360;Video 360;Display 360;display and video
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: a7dbb5e274058a059ae1231281fd9efd509b029f
+source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
@@ -21,11 +20,11 @@ ht-degree: 0%
 Observera följande information som gäller [!DNL Google Display & Video 360] mål:
 
 * Aktiverade målgrupper skapas programmatiskt i Google.
-* aktivering av eftersläpning av målgrupper till [!DNL Google Display & Video 360] målet beräknas inträffa 24-48 timmar efter att en målgrupp först har mappats till en målanslutning. Uppdateringen är ett svar på Google policy att vänta i 24 timmar tills data har importerats och är avsedd att förbättra matchningsfrekvensen mellan Real-Time CDP och [!DNL Google Display & Video 360]. Observera att detta är en backend-konfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.
+* aktivering av eftersläpning av målgrupper till [!DNL Google Display & Video 360] målet beräknas inträffa 24-48 timmar efter att en målgrupp först har mappats till en målanslutning. Uppdateringen är ett svar på Google policy att vänta i 24 timmar tills data har importerats och är avsedd att förbättra matchningsfrekvensen mellan Real-Time CDP och [!DNL Google Display & Video 360]. Det här är en serverdelskonfiguration som endast gäller för det här målet och som inte har något samband med några schemaläggningsalternativ som kan konfigureras av kunden i användargränssnittet.
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med Google Display &amp; Video 360 och inte har aktiverat [Synkroniseringsfunktion för ID](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) tidigare i Experience Cloud ID-tjänsten (med Adobe Audience Manager eller andra program), kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager, överförs de ID-synkroniseringar du har konfigurerat till Platform.
+>Om du vill skapa ditt första mål med Google Display &amp; Video 360 och inte har aktiverat [Synkroniseringsfunktion för ID](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) tidigare i Experience Cloud ID Service (med Adobe Audience Manager eller andra program), kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du tidigare har konfigurerat Google-integreringar i Audience Manager, överförs de ID-synkroniseringar du har konfigurerat till Platform.
 
 ## Identiteter som stöds {#supported-identities}
 
@@ -43,7 +42,7 @@ Observera följande information som gäller [!DNL Google Display & Video 360] m�
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -70,7 +69,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >Du måste ange Tillåt innan du konfigurerar din första [!DNL Google Display & Video 360] mål i Platform. Se till att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
 >Undantaget till den här regeln är för [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
 
-Innan du skapar [!DNL Google Display & Video 360] mål i Platform måste du kontakta Google för att få Adobe att finnas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta Google och lämna följande information:
+Innan du skapar [!DNL Google Display & Video 360] mål i Platform måste du kontakta Google och be Adobe om att tas med i listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakta Google och lämna följande information:
 
 * **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
 * **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.

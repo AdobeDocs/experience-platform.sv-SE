@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;salesforce crm;salesforce crm destination
 title: Salesforce CRM-anslutning
 description: Med Salesforce CRM-destinationen kan du exportera dina kontodata och aktivera dem i Salesforce CRM för dina affärsbehov.
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '3010'
+source-wordcount: '2711'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-[[!DNL Salesforce CRM]](https://www.salesforce.com/crm/) är en populär CRM-plattform (Customer Relationship Management) som har stöd för följande:
+[[!DNL Salesforce CRM]](https://www.salesforce.com/crm/) är en populär CRM-plattform (Customer Relationship Management) som stöder de profiltyper som beskrivs nedan:
 
 * [Leads](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) - Ett lead är namnet på en person eller ett företag som kan (eller inte) vara intresserad av de produkter eller tjänster som du säljer.
 * [Kontakter](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contact.htm) - En kontakt är en person med vilken en av dina representanter har upprättat en relation och har kvalificerats som en potentiell kund.
@@ -27,7 +27,7 @@ När [aktivera segment](#activate)kan du välja mellan antingen leads eller kont
 
 ## Användningsfall {#use-cases}
 
-Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Du kan skapa målgrupper utifrån dina offlinedata och skicka dessa målgrupper till Salesforce CRM, för att kunna visa dem i användarens flöden så snart som målgrupper och profiler uppdateras i Adobe Experience Platform.
+Som marknadsförare kan ni leverera personaliserade upplevelser till era användare, baserat på attribut från deras Adobe Experience Platform-profiler. Du kan bygga målgrupper utifrån dina offlinedata och skicka dessa målgrupper till Salesforce CRM för att uppdatera CRM-medlemskapet så snart som målgrupper och profiler uppdateras i Adobe Experience Platform.
 
 ## Förutsättningar {#prerequisites}
 

@@ -3,9 +3,9 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '871'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization]** mål kräver att du använder [API för Edge Network Server](/help/server-api/overview.md) när målet för attributbaserad personalisering konfigureras. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../../server-api/authentication.md).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [API för Edge Network Server](/help/server-api/overview.md) när du konfigurerar **[!UICONTROL Custom Personalization]** mål för attributbaserad personalisering. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../../server-api/authentication.md).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API:t genom att lägga till en integration på serversidan.
 >
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Det här målet är ett sätt att hämta målgruppsinformation från Adobe Experience Platform till externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser.
+Konfigurera den här destinationen så att externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser kan hämta målgruppsinformation från Adobe Experience Platform.
 
 ## Förutsättningar {#prerequisites}
 
@@ -43,7 +43,7 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edg
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

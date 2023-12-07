@@ -3,9 +3,9 @@ keywords: e-post;E-post;e-postadresser;oraclets svarsmål
 title: Oraclena svarssystemanslutning
 description: Responsys är ett e-postmarknadsföringsverktyg för företag för flerkanalskampanjer som Oraclet erbjuder för att personalisera interaktioner över e-post, mobiler, displayannonsering och sociala medier.
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '658'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Skicka målgruppsdata till [!DNL Oracle Responsys]måste du först [ansluta till
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

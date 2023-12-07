@@ -1,17 +1,17 @@
 ---
-title: Översikt över mål
+title: Översikt över destinationer
 description: Destinationer är färdiga integrationer med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda Destinationer i Adobe Experience Platform för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: d3c7b416317034c8d57663e0c05c9dc4dbe6d2d4
 workflow-type: tm+mt
-source-wordcount: '909'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
 
 # [!DNL Destinations] översikt {#overview}
 
-![Översiktsbanderoll för destinationer](./assets/overview/destinations-overview-banner.png)
+![Översiktsbanderoll för destinationer.](./assets/overview/destinations-overview-banner.png)
 
 **[!DNL Destinations]** är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
@@ -29,7 +29,7 @@ En av de viktigaste funktionerna i Platform är att inhämta era egna data och a
 ## Destinationssteg {#steps}
 
 * Välj bland en [självbetjäningskatalog](./catalog/overview.md) av alla destinationer som är tillgängliga i Platform.
-* Använd destinationer för att skicka profiler eller målgrupper till automatiserade marknadsföringsplattformar, digitala annonsplattformar med mera.
+* Använd destinationer för att skicka målgrupper eller datauppsättningar till automatiserade marknadsföringsplattformar, digitala annonsnätverk med mera.
 * Schemalägg dataexport till dina önskade destinationer vid regelbundna tidpunkter.
 
 ## Kontroller {#controls}
@@ -39,8 +39,9 @@ Kontrollerna i [målarbetsyta](./ui/destinations-workspace.md) kan du:
 * Bläddra i katalogen med destinationsplattformar där du kan aktivera dina data;
 * Skapa, redigera, aktivera och inaktivera dataflöden till destinationerna i katalogen,
 * Skapa ett konto på en lagringsplats eller länkplattform till kontot på målplattformen.
-* Välj vilka målgrupper som ska aktiveras för destinationer,
-* Välj vilken [XDM-fält (Experience Data Model)](../xdm/home.md) att exportera när målgrupper aktiveras till e-postmarknadsföringsmål.
+* Välj vilka målgrupper eller datamängder som ska aktiveras för destinationer,
+* Välj vilken [XDM-fält (Experience Data Model)](../xdm/home.md) exportera när målgrupper aktiveras till vissa destinationer, som e-postmarknadsföringsmål, CRM-plattformar, molnlagringsplatser med mera.
+* Aktivera olika typer av profiler och målgrupper för destinationer - personer, konton och potentiella kunder.
 
 ## Måltyper och -kategorier {#types-and-categories}
 
@@ -54,7 +55,7 @@ För partnerskapade och underhållna anslutningar innebär detta att problem med
 
 ## Destinationer och åtkomstkontroller {#access-controls}
 
-Målfunktionerna i Platform fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns i [Åtkomstkontroll i Adobe Experience Platform](../access-control/home.md) och rulla nedåt till sidans nederkant.
+Målfunktionerna i Platform fungerar med Adobe Experience Platform åtkomstkontrollsbehörigheter. Beroende på din användares behörighetsnivå kan du visa, hantera och aktivera mål. Information om de enskilda behörigheterna finns på [åtkomstkontroll i Adobe Experience Platform](../access-control/home.md) och rulla ned till tabellen längst ned på sidan.
 
 Följande tabell visar vilka behörigheter och behörighetskombinationer som krävs för att utföra vissa åtgärder på mål:
 
@@ -81,7 +82,9 @@ Mer information om hur destinationer fungerar med attributbaserade åtkomstkontr
 
 När du har upprättat en anslutning till ett mål och slutfört aktiveringsarbetsflödet kan du övervaka dataexporten till mottagningssystemet. Läs [guide om övervakning av dataflöden till destinationer i användargränssnittet](/help/dataflows/ui/monitor-destinations.md) för mer information.
 
-Du kan också validera om data kommer fram till målet. De flesta måldokumentationssidor i katalogen har en *Avsnittet Validera dataexport*, vilket visar hur du kan kontrollera på målplattformen att data har hämtats in från Experience Platform.
+![Exempel på sida för övervakning av destinationer.](./assets/overview/monitoring-page-example.png)
+
+Du kan också validera om data kommer fram till målet. De flesta måldokumentationssidor i katalogen har en *Avsnittet Validera dataexport*, vilket visar hur du kan kontrollera på målplattformen att data har hämtats in från Experience Platform. Visa ett exempel på det här avsnittet för [Amazon Ads - mål](/help/destinations/catalog/advertising/amazon-ads.md#exported-data).
 
 ## Begränsningar för datastyrning när data aktiveras till destinationer {#data-governance}
 

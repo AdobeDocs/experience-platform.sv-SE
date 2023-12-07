@@ -3,9 +3,9 @@ keywords: mål;mål;måltyper
 title: Måltyper och -kategorier
 description: Läs mer om de olika typerna och kategorierna av destinationer i Adobe Experience Platform.
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: c6019737e93756f3f524d5a85ea57383baa1a31d
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Läs den här sidan om du vill veta mer om de olika typerna och kategorierna av 
 
 ## Måltyper {#destination-types}
 
-I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, datauppsättningsexport och tillägg. Det finns flera typer av anslutningsmål, så att du kan exportera data till API-baserade mål.
+I Adobe Experience Platform skiljer vi mellan olika måltyper - anslutningar, datauppsättningsexport och tillägg. Det finns flera typer av anslutningsmål, så att du kan exportera data till API-baserade mål, sociala mål, CRM-plattformar och många andra.
 
 Slutligen kan anslutningar även särskiljas mellan offentliga destinationer som är tillgängliga för alla organisationer i destinationskatalogen och privata destinationer som Real-Time CDP Ultimate-kunder kan skapa för att tillgodose sina specifika exportanvändningsfall.
 
@@ -68,6 +68,21 @@ Läs mer om hur [konfigurera anpassningsmål för personalisering på samma sida
 I videon nedan beskrivs de två typerna av destinationer:
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
+
+## Typer av exporterade målgrupper {#exported-audiences-types}
+
+Du kan exportera tre typer av målgrupper från Experience Platform till olika destinationer:
+
+* Målgrupper
+* Målgrupper
+* Potentiella målgrupper
+
+Läs mer om [olika typer av målgrupper](/help/segmentation/ui/account-audiences.md#terminology).
+
+En symbol på målkortet visar vilka typer av målgrupper du kan exportera till varje mål.
+
+![Exempel på målkort med symboler som visar vilka målgruppstyper som kan exporteras.](/help/destinations/assets/destination-types/types-of-audiences.png)
+
 
 ## Exportmål för datauppsättning {#dataset-export-destinations}
 

@@ -1,11 +1,10 @@
 ---
-keywords: e-post;E-post;e-post;e-postadresser;salesforce;salesforce-mål
 title: Salesforce Marketing Cloud-anslutning
 description: Salesforce Marketing Cloud är en digital marknadsföringssvit som tidigare kallades ExactTarget som gör att ni kan skapa och anpassa resor för besökare och kunder för att personalisera deras upplevelse.
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '749'
 ht-degree: 0%
 
 ---
@@ -20,7 +19,7 @@ Skicka målgruppsdata till [!DNL Salesforce Marketing Cloud]måste du först [an
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -42,7 +41,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 ## IP-adress tillåtelselista {#allow-list}
 
-När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall till tillåtelselista.
+När du konfigurerar e-postmarknadsföringsmål med SFTP-lagring rekommenderar Adobe att du lägger till vissa IP-intervall i tillåtelselista.
 
 Se [IP-adress tillåtelselista för SFTP-mål](../cloud-storage/ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i tillåtelselista.
 

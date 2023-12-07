@@ -3,9 +3,9 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: 72225ac673ed921b5857a14070660134949e7e3e
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '950'
+source-wordcount: '933'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Innan du kan skicka dina Adobe Experience Platform-målgrupper till [!DNL Airshi
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

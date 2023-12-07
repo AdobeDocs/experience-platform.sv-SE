@@ -4,9 +4,9 @@ title: Azure Event Hubs-anslutning
 description: Skapa en utgående anslutning i realtid till [!DNL Azure Event Hubs] lagring för att strömma data från Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 3e2dc51e768d6bcfeedbc26e04997dc46c852e4d
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '2031'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ En potentiell kund har till exempel laddat ned ett vitt papper som kvalificerar 
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

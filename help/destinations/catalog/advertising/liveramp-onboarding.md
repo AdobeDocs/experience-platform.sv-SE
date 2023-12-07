@@ -3,9 +3,9 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: 9122159b3facf7952e6072d0b9e6f8d8d7d7c99c
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1669'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ I [mappningssteg](#map) av aktiveringsarbetsflödet måste du definiera målmapp
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

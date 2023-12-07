@@ -2,10 +2,10 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '848'
-ht-degree: 1%
+source-wordcount: '808'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +15,7 @@ Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API
 
 I dokumentationen till Destinationen SDK finns instruktioner om hur du kan använda Adobe Experience Platform Destinationen SDK för att konfigurera, testa och släppa en produktanpassad målintegration med Adobe Experience Platform, och få destinationen att bli en del av den ständigt växande destinationskatalogen. Genom att använda Destination SDK kan du även skapa ett eget, anpassat privat mål för att exportera data som är anpassade efter dina behov.
 
-![Skärmbild från användargränssnittet i Experience Platform som visar målkatalogen](assets/destinations-catalog-overview.png)
+![Skärmbild från användargränssnittet i Experience Platform som visar målkatalogen.](assets/destinations-catalog-overview.png)
 
 ## Producerade och anpassade integreringar {#productized-custom-integrations}
 
@@ -61,7 +61,7 @@ Destinationernas SDK åtkomst varierar beroende på din status som partner eller
 | Typ av partner eller kund | Åtkomst till Destination SDK |
 ---------|----------|
 | Independent Software Vendor (ISV) | Gå med i [Adobe Technology Partner Program](https://partners.adobe.com/technologyprogram/experiencecloud.html) och begär att få en Experience Platform-sandlåda för att få åtkomst till Destination SDK. |
-| Systemintegratör | Du måste vara på antingen Guld- eller Platina-nivå i [Adobe Solution Partner Program](https://solutionpartners.adobe.com/home.html)och du får en Experience Platform-sandlåda och tillgång till Destination SDK. |
+| Systemintegratör | Du måste vara på antingen Guld- eller Platina-nivå i [Adobe Solution Partner Program](https://solutionpartners.adobe.com/home.html) för att få en Experience Platform-sandlåda etablerad och tillgång till Destination SDK. |
 | Experience Platform kund på [Real-Time CDP Ultimate-paket](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | Som standard får du tillgång till sandlådor och Destination SDK i Experience Platform, så att du kan skapa privata mål för din organisation. |
 
 {style="table-layout:auto"}
@@ -79,7 +79,7 @@ Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 7. När integreringen godkänts av Adobe visas den i [Experience Platform-katalog](../catalog/overview.md).
 8. Om du vill uppdatera integreringen följer du samma process.
 
-## Referens  {#reference}
+## Referens {#reference}
 
 Adobe rekommenderar att du läser och förstår följande Experience Platform-dokumentation:
 

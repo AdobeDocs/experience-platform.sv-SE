@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 3e2dc51e768d6bcfeedbc26e04997dc46c852e4d
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '2403'
+source-wordcount: '2398'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ HTTP-slutpunkter kan antingen vara kundernas egna system eller tredjepartslösni
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -73,7 +73,7 @@ HTTP API-målet stöder flera autentiseringstyper för HTTP-slutpunkten:
 
 * HTTP-slutpunkt utan autentisering;
 * Autentisering av innehavartoken;
-* [OAuth 2.0-klientautentiseringsuppgifter](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) autentisering med innehållsformuläret, med [!DNL client ID], [!DNL client secret] och [!DNL grant type] i HTTP-begärans brödtext, vilket visas i exemplet nedan.
+* [OAuth 2.0-klientautentiseringsuppgifter](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) autentisering med innehållsformuläret, med [!DNL client ID], [!DNL client secret]och [!DNL grant type] i HTTP-begärans brödtext, vilket visas i exemplet nedan.
 
 ```shell
 curl --location --request POST '<YOUR_API_ENDPOINT>' \
@@ -113,7 +113,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du väljer **[!UICONTROL Bearer token]** autentiseringstyp för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
 
-![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med autentisering av innehavartoken](../../assets/catalog/http/http-api-authentication-bearer.png)
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med autentisering av innehavartoken.](../../assets/catalog/http/http-api-authentication-bearer.png)
 
 * **[!UICONTROL Bearer token]**: infoga bearer-token för autentisering till din HTTP-plats.
 
@@ -121,7 +121,7 @@ Om du väljer **[!UICONTROL Bearer token]** autentiseringstyp för att ansluta t
 
 Om du väljer **[!UICONTROL None]** autentiseringstyp för att ansluta till HTTP-slutpunkten:
 
-![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet utan autentisering](../../assets/catalog/http/http-api-authentication-none.png)
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet utan autentisering.](../../assets/catalog/http/http-api-authentication-none.png)
 
 När du har valt den här autentiseringen öppen behöver du bara välja **[!UICONTROL Connect to destination]** och anslutningen till slutpunkten har upprättats.
 
@@ -129,7 +129,7 @@ När du har valt den här autentiseringen öppen behöver du bara välja **[!UIC
 
 Om du väljer **[!UICONTROL OAuth 2 Password]** autentiseringstyp för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
 
-![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med OAuth 2 med lösenordsautentisering](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med hjälp av OAuth 2 med lösenordsautentisering.](../../assets/catalog/http/http-api-authentication-oauth2-password.png)
 
 * **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
 * **[!UICONTROL Client ID]**: [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
@@ -141,7 +141,7 @@ Om du väljer **[!UICONTROL OAuth 2 Password]** autentiseringstyp för att anslu
 
 Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för att ansluta till HTTP-slutpunkten, ange fälten nedan och markera **[!UICONTROL Connect to destination]**:
 
-![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med hjälp av OAuth 2 med autentisering av klientautentiseringsuppgifter](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
+![Bild av gränssnittsskärmen där du kan ansluta till HTTP API-målet med hjälp av OAuth 2 med autentisering av klientautentiseringsuppgifter.](../../assets/catalog/http/http-api-authentication-oauth2-client-credentials.png)
 
 * **[!UICONTROL Access Token URL]**: Den URL på din sida som utfärdar åtkomsttoken och, om du vill, uppdatera tokens.
 * **[!UICONTROL Client ID]**: [!DNL client ID] som ditt system tilldelar Adobe Experience Platform.
@@ -179,7 +179,7 @@ Om du väljer **[!UICONTROL OAuth 2 Client Credentials]** autentiseringstyp för
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Bild av gränssnittsskärmen som visar slutförda fält för HTTP-målinformationen](../../assets/catalog/http/http-api-destination-details.png)
+![Bild av gränssnittsskärmen som visar slutförda fält för HTTP-målinformationen.](../../assets/catalog/http/http-api-destination-details.png)
 
 * **[!UICONTROL Name]**: Ange ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: Ange en beskrivning som hjälper dig att identifiera det här målet i framtiden.
@@ -232,7 +232,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 Tänk dig till exempel det här dataflödet till ett HTTP-mål där tre målgrupper har valts i dataflödet och fyra attribut mappas till målet.
 
-![Måldataflöde för HTTP-API](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
+![Ett exempel på ett måldataflöde för HTTP API.](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
 
 En profilexport till målet kan bestämmas av en profil som kvalificerar för eller avslutar en av *tre mappade segment*. I dataexporten kan du dock `segmentMembership` objekt (se [Exporterade data](#exported-data) nedan) kan andra omappade målgrupper visas om den aktuella profilen är medlem av dem och om dessa delar samma sammanfogningsprincip som den målgrupp som utlöste exporten. Om en profil kvalificerar sig för **Kund med DeLorean Cars** men är även medlem i **Tittat på &quot;Tillbaka till framtiden&quot;** film och **Science fiction fans** segment, så kommer dessa två andra målgrupper också att vara närvarande i `segmentMembership` dataexportens objekt, även om dessa inte är mappade i dataflödet, om dessa delar samma sammanfogningsprincip med **Kund med DeLorean Cars** segment.
 

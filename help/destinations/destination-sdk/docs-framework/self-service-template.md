@@ -2,7 +2,7 @@
 title: Självbetjäningsmall // Ersätt med namnet på destinationen
 description: Använd den här mallen för att skapa offentlig dokumentation för destinationen i Adobe Experience Platform-katalogen. // Ersätt med stycket i avsnittet Översikt
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
 source-wordcount: '1606'
 ht-degree: 0%
@@ -76,7 +76,7 @@ För att du bättre ska förstå hur och när du ska använda *DittMål* mål, h
 
 *Lägg till information i det här avsnittet om de målgrupper som stöds av ditt mål. Vi har förfyllt tabellen med några standardvärden. Använd `✓` och `X` för att markera om målgruppstypen stöds av det här målet.*
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

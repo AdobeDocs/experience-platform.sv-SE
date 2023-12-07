@@ -3,9 +3,9 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
 description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 8e37ff057ec0fb750bc7b4b6f566f732d9fe5d68
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1000'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ Innan du kan skicka dina målgrupper till [!DNL Airship]måste du:
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

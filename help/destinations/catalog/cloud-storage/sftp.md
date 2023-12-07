@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '975'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exporte
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -55,7 +55,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-![Profilbaserad SFTP-exporttyp](../../assets/catalog/cloud-storage/sftp/catalog.png)
+![SFTP-profilbaserad exporttyp markerad i målkatalogen.](../../assets/catalog/cloud-storage/sftp/catalog.png)
 
 ## Anslut till målet {#connect}
 
@@ -79,7 +79,7 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 
 Om du väljer **[!UICONTROL SFTP with password]** autentiseringstyp för att ansluta till din SFTP-plats:
 
-![Grundläggande autentisering för SFTP-mål](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
+![Grundläggande autentisering med lösenord för SFTP-mål.](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
 * **[!UICONTROL Domain]**: Adress till din SFTP-lagringsplats.
 * **[!UICONTROL Username]**: Användarnamnet som ska loggas in på din SFTP-lagringsplats;
@@ -87,12 +87,12 @@ Om du väljer **[!UICONTROL SFTP with password]** autentiseringstyp för att ans
 * **[!UICONTROL Password]**: Lösenordet för att logga in på din SFTP-lagringsplats.
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
-  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet.](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 
 Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansluta till din SFTP-plats:
 
-![SSH-nyckelautentisering för SFTP-mål](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
+![SSH-nyckelautentisering för SFTP-mål.](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
 
 * **[!UICONTROL Domain]**: Fyll i IP-adressen eller domännamnet för ditt SFTP-konto
 * **[!UICONTROL Port]**: Den port som används av SFTP-lagringsplatsen;
@@ -100,13 +100,13 @@ Om du väljer **[!UICONTROL SFTP with SSH key]** autentiseringstyp för att ansl
 * **[!UICONTROL SSH Key]**: Den privata SSH-nyckeln som används för att logga in på din SFTP-lagringsplats. Den privata nyckeln måste vara en RSA-formaterad, Base64-kodad sträng och får inte vara lösenordsskyddad.
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
-  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+  ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet.](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### Destinationsinformation {#destination-details}
 
 När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du följande information för målet:
 
-![Tillgänglig målinformation för SFTP-mål](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
+![Målinformationsfält för SFTP-målet.](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
 * **[!UICONTROL Name]**: Ange ett namn som gör det lättare att identifiera destinationen i användargränssnittet i Experience Platform;
 * **[!UICONTROL Description]**: Ange en beskrivning av destinationen;
@@ -142,4 +142,4 @@ För [!DNL SFTP] mål, Platform skapar en `.csv` filen på lagringsplatsen som d
 
 ## IP-adress tillåtelselista {#ip-address-allow-list}
 
-Se [IP-adress tillåtelselista för SFTP-mål](ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i ett tillåtelselista.
+Se [IP-adress tillåtelselista för SFTP-mål](ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i en tillåtelselista.

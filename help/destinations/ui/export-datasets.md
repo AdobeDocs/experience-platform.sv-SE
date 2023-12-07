@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 9a149b86f34f5c7cae6a1bf2ae797a256e212f30
+source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
 workflow-type: tm+mt
-source-wordcount: '1683'
+source-wordcount: '1687'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ I videon nedan finns en komplett förklaring av arbetsflödet som beskrivs på d
 
 För närvarande kan du exportera datauppsättningar till molnlagringsmål som markeras i skärmbilden och visas nedan.
 
-![Destinationer som stöder datauppsättningsexport](/help/destinations/assets/ui/export-datasets/destinations-supporting-dataset-exports.png)
+![Katalogsida för destinationer som visar vilka mål som stöder datauppsättningsexport.](/help/destinations/assets/ui/export-datasets/destinations-supporting-dataset-exports.png)
 
 * [[!DNL Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md)
 * [[!DNL Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md)
@@ -221,7 +221,7 @@ Läs produktbeskrivningsdokumenten för att ta reda på hur mycket data du har r
 
 Observera att dataexporträttigheterna för olika program inte är additiva. Det innebär att om du köper Real-Time CDP Ultimate och Adobe Journey Optimizer Ultimate blir behörigheten för profilexport det större av de två berättigandena enligt produktbeskrivningarna. Volymberättigandena beräknas genom att man räknar ut det totala antalet licensierade profiler och multiplicerar med 500 kB för Real-Time CDP Prime eller 700 kB för Real-Time CDP Ultimate för att avgöra hur mycket data ni har rätt till.
 
-Om du å andra sidan köper tillägg som Data Distiller, representerar dataexportgränsen som du är berättigad till summan av produktnivån och tillägget.
+Om du å andra sidan har köpt tillägg som Data Distiller, representerar dataexportgränsen som du är berättigad till summan av produktnivån och tillägget.
 
 Du kan visa och spåra din profilexport mot avtalsgränserna på kontrollpanelen för licensiering.
 

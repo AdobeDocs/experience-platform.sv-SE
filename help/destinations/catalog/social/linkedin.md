@@ -3,10 +3,10 @@ keywords: länkad anslutning;länkad anslutning;länkade destinationer;länkad;
 title: Länkad matchad målgruppsanslutning
 description: Aktivera profiler för era LinkedIn-kampanjer för målgruppsanpassning, personalisering och nedtryckning, baserat på hashad-e-post.
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1068'
-ht-degree: 1%
+source-wordcount: '1061'
+ht-degree: 0%
 
 ---
 
@@ -38,7 +38,7 @@ Ett programvaruföretag organiserar en konferens och vill hålla kontakt med del
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -130,7 +130,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
-* **[!UICONTROL Account ID]**: Din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i din [!DNL LinkedIn Campaign Manager] konto.
+* **[!UICONTROL Account ID]**: din [!DNL LinkedIn Campaign Manager Account ID]. Du hittar detta ID i din [!DNL LinkedIn Campaign Manager] konto.
 
 ### Aktivera aviseringar {#enable-alerts}
 

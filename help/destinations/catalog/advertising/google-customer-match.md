@@ -3,9 +3,9 @@ keywords: Google customer match;Google customer match;Google Customer Match
 title: Google Customer Match Connection
 description: Med Google Customer Match kan ni använda era online- och offlinedata för att nå ut till och återengagera era kunder via Google egna och styrda egendomar som Search, Shopping, Gmail och YouTube.
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 661ef040398a9e2ef8dd9cebdf7bd27d4268636b
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1800'
+source-wordcount: '1752'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Vissa destinationer i Experience Platform har vissa regler och skyldigheter för
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -76,13 +76,13 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 Innan du konfigurerar en [!DNL Google Customer Match] mål i Experience Platform, se till att du läser och följer Google policy för användning av [!DNL Customer Match], konturerad i [Google supportdokumentation](https://support.google.com/google-ads/answer/6299717).
 
-Se sedan till att [!DNL Google] kontot har konfigurerats för [!DNL Standard] eller högre behörighetsnivå. Se [Google Ads-dokumentation](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) för mer information.
+Kontrollera sedan att [!DNL Google] kontot har konfigurerats för [!DNL Standard] eller högre behörighetsnivå. Se [Google Ads-dokumentation](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) för mer information.
 
 ### Tillåtelselista {#allowlist}
 
-Innan du skapar [!DNL Google Customer Match] mål i Experience Platform, se till att [!DNL Google Ads] kontot följer [[!DNL Google Customer Match] policy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
+Innan du skapar [!DNL Google Customer Match] ska du se till att Experience Platform [!DNL Google Ads] kontot följer [[!DNL Google Customer Match] policy](https://support.google.com/google-ads/answer/6299717/customer-match-policy).
 
-Kunder med kompatibla konton tillåts automatiskt listade av Google.
+Kunder med kompatibla konton tillåtslista automatiskt av Google.
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
@@ -132,6 +132,12 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
+## Videoöversikt {#video-overview}
+
+Se videon nedan för en förklaring av fördelarna och hur du aktiverar data till Google Customer Match.
+
+>[!VIDEO](https://video.tv.adobe.com/v/38180/)
+
 ## Anslut till målet {#connect}
 
 >[!IMPORTANT]
@@ -169,9 +175,9 @@ Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/acti
 
 I **[!UICONTROL Segment schedule]** måste du ange [!UICONTROL App ID] när [!DNL IDFA] eller [!DNL GAID] målgrupper [!DNL Google Customer Match].
 
-![Google program-ID för kundmatchning](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
+![Google kundmatchningsfält för program-ID markeras i segmentschemagägget i aktiveringsarbetsflödet.](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-Mer information om hur du hittar [!DNL App ID], se [Google officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid).
+Mer information om hur du hittar [!DNL App ID], se [Google officiella dokumentation](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid) eller fråga Google.
 
 ### Mappningsexempel: aktivera målgruppsdata i [!DNL Google Customer Match] {#example-gcm}
 
@@ -194,17 +200,17 @@ Markera målfält:
 * Välj `IDFA` eller `GAID` namnutrymmen som målidentitet när källnamnutrymmen är `IDFA` eller `GAID`.
 * Välj `User_ID` namespace som target identity när källnamnutrymmet är ett anpassat.
 
-![Identitetsmappning](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
+![Identitetsmappning mellan käll- och målfält som visas i mappningssteget i aktiveringsarbetsflödet.](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
 
 Data från namnutrymmen utan hashning hashas automatiskt av [!DNL Platform] vid aktivering.
 
 Attributkälldata hashas inte automatiskt. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen.
 
-![Transformering av identitetsmappning](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
+![Använd omvandlingskontroll som markeras i mappningssteget i aktiveringsarbetsflödet.](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
 ## Verifiera att målgruppsaktiveringen lyckades {#verify-activation}
 
-När aktiveringsflödet är klart växlar du till **[!UICONTROL Google Ads]** konto. De aktiverade målgrupperna visas i ditt Google-konto som kundlistor. Observera att beroende på målgruppens storlek så fyller vissa målgrupper inte plats om det inte finns fler än 100 aktiva användare att betjäna.
+När aktiveringsflödet är klart växlar du till **[!UICONTROL Google Ads]** konto. De aktiverade målgrupperna visas i ditt Google-konto som kundlistor. Beroende på målgruppens storlek fyller vissa målgrupper inte plats om det inte finns fler än 100 aktiva användare att betjäna.
 
 När en målgrupp mappas till båda [!DNL IDFA] och [!DNL GAID] mobil-ID, [!DNL Google Customer Match] skapar en separat målgrupp för varje ID-mappning. Dina [!DNL Google Ads] kontot visar två olika segment, ett för [!DNL IDFA]och en för [!DNL GAID] mappning.
 
@@ -217,8 +223,3 @@ När du konfigurerar det här målet kan du få följande fel:
 `{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
 
 Det här felet inträffar när kundkonton inte uppfyller [krav](#google-account-prerequisites). Kontakta Google och kontrollera att ditt konto är godkänt och konfigurerat för en [!DNL Standard] eller högre behörighetsnivå. Se [Google Ads-dokumentation](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1) för mer information.
-
-## Ytterligare resurser {#additional-resources}
-
-* [Integrera [!DNL Google Customer Match] - Videokurs](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
-

@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '1790'
+source-wordcount: '1843'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Experience Platform använder [kantsegmentering](../../segmentation/ui/edge-segmentation.md) tillsammans med edge-mål för att kunderna ska kunna skapa och inrikta sig på målgrupper i stor skala, i realtid. Den här funktionen hjälper er att konfigurera användningen av personalisering på samma sida och nästa sida.
+Adobe Experience Platform använder [kantsegmentering](../../segmentation/ui/edge-segmentation.md) tillsammans med [kantmål](/help/destinations/destination-types.md#edge-personalization-destinations) för att kunderna ska kunna skapa och inrikta sig på målgrupper i stor skala i realtid. Den här funktionen hjälper er att konfigurera användningen av personalisering på samma sida och nästa sida.
 
 Exempel på kantmål är [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [Anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md) anslutningar.
 
 >[!NOTE]
 >
->När [konfigurera Adobe Target-anslutningen](../catalog/personalization/adobe-target-connection.md) de användningsfall som beskrivs i den här artikeln stöds inte utan ett datastream-ID. Endast nästa sessionspersonalisering stöds i frånvaro av ett datastream.
+>När [konfigurera Adobe Target-anslutningen](../catalog/personalization/adobe-target-connection.md) *utan* de användningsfall som beskrivs i den här artikeln stöds inte med ett datastream-ID. Endast nästa sessionspersonalisering stöds i frånvaro av ett datastream.
 
 >[!IMPORTANT]
 > 
@@ -31,7 +31,7 @@ Exempel på kantmål är [Adobe Target](../../destinations/catalog/personalizati
 > 
 > Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
-I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform edge-mål. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md) och valfria [profilattributsmappning](#mapping)kan dessa mål användas för personalisering på samma sida och nästa sida på ert webb- och mobilmaterial.
+I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper för Adobe Experience Platform edge-mål. Vid användning tillsammans med [kantsegmentering](../../segmentation/ui/edge-segmentation.md) och valfria [profilattributsmappning](#mapping)kan dessa mål användas för personalisering på samma sida och nästa sida på ert webb- och mobilmaterial.
 
 Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-anslutningen för kantanpassning.
 
@@ -47,7 +47,7 @@ Titta på videon nedan om du vill få en kort översikt över hur du delar målg
 
 ## Användningsfall {#use-cases}
 
-Med personaliseringsmål för Edge kan ni använda personaliseringslösningar från Adobe, som Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (t.ex. intern CMS) som ger en djupare personaliseringsupplevelse via [Anpassad personalisering](../catalog/personalization/custom-personalization.md) mål. Allt detta och utnyttja även datainsamling och segmenteringsfunktioner för Experience Platform Edge Network.
+Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (t.ex. intern CMS) som ger en djupare personaliseringsupplevelse via [Anpassad personalisering](../catalog/personalization/custom-personalization.md) mål. Allt detta och utnyttja även datainsamling och segmenteringsfunktioner för Experience Platform Edge Network.
 
 De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
@@ -55,11 +55,11 @@ För att möjliggöra detta behöver kunderna ett snabbt och smidigt sätt att h
 
 ### Personalisering på samma sida {#same-page}
 
-En användare besöker en sida på webbplatsen. Kunden kan använda den aktuella sidans besöksinformation (till exempel URL, webbläsarspråk, inbäddad produktinformation) för att välja nästa åtgärd/beslut (till exempel personalisering) med hjälp av [Anpassad personalisering](../catalog/personalization/custom-personalization.md) anslutning för andra plattformar än Adobe (till exempel [!DNL Pega], [!DNL Optimizely], osv.).
+En användare besöker en sida på webbplatsen. Du kan använda den aktuella sidans besöksinformation (till exempel URL, webbläsarspråk, inbäddad produktinformation) för att välja nästa åtgärd eller beslut (till exempel personalisering) med hjälp av [Anpassad personalisering](../catalog/personalization/custom-personalization.md) anslutning för andra plattformar än Adobe (till exempel [!DNL Pega], [!DNL Optimizely] eller andra.).
 
 ### Anpassa nästa sida {#next-page}
 
-En användare besöker Sida A på din webbplats. Utifrån denna interaktion har användaren kvalificerat sig för en uppsättning målgrupper. Användaren klickar sedan på en länk som tar dem från sida A till sida B. De målgrupper som användaren hade kvalificerat sig för under den föregående interaktionen på sida A, tillsammans med de profiluppdateringar som bestäms av det aktuella webbplatsbesöket, kommer att användas för att driva nästa åtgärd/beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
+En användare besöker Sida A på din webbplats. Utifrån denna interaktion har användaren kvalificerat sig för en uppsättning målgrupper. Användaren klickar sedan på en länk som tar dem från sida A till sida B. De målgrupper som användaren har varit berättigad till under den föregående interaktionen på sida A, tillsammans med de profiluppdateringar som bestäms av det aktuella webbplatsbesöket, kommer att användas för att driva nästa åtgärd eller beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
 
 ### Anpassa nästa session {#next-session}
 
@@ -67,9 +67,9 @@ En användare besöker flera sidor på webbplatsen. Utifrån dessa interaktioner
 
 Följande dag kommer användaren tillbaka till samma kundwebbplats. De målgrupper de hade kvalificerat sig för under den tidigare interaktionen med alla besökta webbplatser, tillsammans med de profiluppdateringar som bestäms av det aktuella webbplatsbesöket, kommer att användas för att välja nästa åtgärd/beslut (t.ex. vilken annonsbanderoll som ska visas för besökaren eller, vid A/B-testning, vilken version av sidan som ska visas).
 
-### Anpassa en startsidesbanderoll {#home-page-banner}
+### Anpassa en banner för hemsidor {#home-page-banner}
 
-Ett uthyrnings- och säljföretag vill personalisera sin hemsida med en banderoll utifrån målgruppskvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dem till Adobe Target som målinriktningskriterier för sitt Target-erbjudande.
+Ett uthyrnings- och säljföretag vill personalisera sin hemsida med en banderoll utifrån målgruppskvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dessa målgrupper till Adobe Target som målinriktningskriterier för deras Target-erbjudande.
 
 ## Förutsättningar {#prerequisites}
 
@@ -79,7 +79,7 @@ Det första steget för att konfigurera ditt personaliseringsmål är att konfig
 
 När datastream konfigureras, under **[!UICONTROL Adobe Experience Platform]** se till att båda **[!UICONTROL Edge Segmentation]** och **[!UICONTROL Personalization Destinations]** är markerade.
 
-![Datastream-konfiguration](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
+![Dataströmskonfiguration med kantsegmentering och målanpassning markerade!](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
 Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../datastreams/configure.md#aep).
 
@@ -97,7 +97,7 @@ Följ instruktionerna på [skapa en sammanfogningsprincip](../../profile/merge-p
 
 När du har skapat [!DNL Active-On-Edge] måste ni skapa en ny publik i Platform.
 
-Följ [målgruppsverktyg](../../segmentation/ui/segment-builder.md) skapa en ny målgrupp och se till att [tilldela den](../../segmentation/ui/segment-builder.md#merge-policies) den [!DNL Active-On-Edge] sammanfogningsprincip som du skapade i steg 3.
+Följ [målgruppsverktyg](../../segmentation/ui/segment-builder.md) skapa en ny målgrupp och se till att [tilldela den](../../segmentation/ui/segment-builder.md#merge-policies) den [!DNL Active-On-Edge] sammanslagningsprincip som du skapade i föregående steg.
 
 ### Skapa en målanslutning {#connect-destination}
 
@@ -116,15 +116,15 @@ När du är klar med kraven kan du nu välja vilket mål för kantanpassning som
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
-   ![Fliken Målkatalog](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
+   ![Fliken Målkatalog markerad i användargränssnittet för Experience Platform.](../assets/ui/activate-edge-personalization-destinations/catalog-tab.png)
 
 1. Välj **[!UICONTROL Activate audiences]** på det kort som motsvarar det personaliseringsmål där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Aktivera knappar](../assets/ui/activate-edge-personalization-destinations/activate-audiences-button.png)
+   ![Aktivera målgruppskontroll som är markerad på ett målkort i katalogen.](../assets/ui/activate-edge-personalization-destinations/activate-audiences-button.png)
 
 1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
 
-   ![Välj mål](../assets/ui/activate-edge-personalization-destinations/select-destination.png)
+   ![Välj målsteg i aktiveringsarbetsflödet.](../assets/ui/activate-edge-personalization-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt till [välj era målgrupper](#select-audiences).
 
@@ -140,7 +140,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
 * Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
-![Välj målgrupper](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
+![Välj målgruppssteg i aktiveringsarbetsflödet med flera målgrupper markerade.](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
 
 ## Mappningsattribut {#mapping}
 
@@ -156,13 +156,13 @@ Välj de attribut baserat på vilka du vill aktivera användningsfall för perso
 
 Det är valfritt att lägga till attribut och du kan fortsätta till nästa steg och aktivera anpassning av samma sida och nästa sida utan att välja attribut. Om du inte lägger till några attribut i det här steget sker fortfarande personalisering baserat på målgruppsmedlemskap och identitetskarta för profiler.
 
-![Bild som visar mappningssteget med ett markerat attribut](../assets/ui/activate-edge-personalization-destinations/mapping-step.png)
+![Bild som visar mappningssteget med ett markerat attribut.](../assets/ui/activate-edge-personalization-destinations/mapping-step.png)
 
 ### Välj källattribut {#select-source-attributes}
 
 Välj knappen **[!UICONTROL Add new field]** kontroll på **[!UICONTROL Source field]** kolumn och sök eller navigera till önskat XDM-attributfält, enligt nedan.
 
-![Skärminspelning som visar hur du väljer ett målattribut i mappningssteget](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-attribute.gif)
+![Skärminspelning som visar hur du väljer ett målattribut i mappningssteget.](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-attribute.gif)
 
 ### Välj målattribut {#select-target-attributes}
 
@@ -180,11 +180,11 @@ Som standard är [!UICONTROL Audience schedule] visas endast de nyvalda målgrup
 
 Om du vill se alla målgrupper som aktiveras till destinationen använder du filteralternativet och inaktiverar **[!UICONTROL Show new audiences only]** filter.
 
-![Alla mottagare](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
+![Alla målgruppsfilter är markerade.](../assets/ui/activate-edge-personalization-destinations/all-audiences.png)
 
 På **[!UICONTROL Audience schedule]** väljer du varje målgrupp och använder sedan **[!UICONTROL Start date]** och **[!UICONTROL End date]** väljare för att konfigurera tidsintervallet för att skicka data till målet.
 
-![Målgruppsschema](../assets/ui/activate-edge-personalization-destinations/audience-schedule.png)
+![Steg för målgruppsschema i aktiveringsarbetsflödet med start- och slutdatum markerat.](../assets/ui/activate-edge-personalization-destinations/audience-schedule.png)
 
 Välj **[!UICONTROL Next]** för att gå till [!UICONTROL Review] sida.
 
@@ -202,7 +202,7 @@ Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy 
 
 I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
 
-![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
+![Ett exempel på en dataprincipöverträdelse.](../assets/common/data-policy-violation.png)
 
 ### Filtrera målgrupper {#filter-audiences}
 

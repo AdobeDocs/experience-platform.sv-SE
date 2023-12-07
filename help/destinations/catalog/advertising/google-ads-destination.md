@@ -2,9 +2,9 @@
 title: Google Ads-anslutning
 description: Google Ads, som tidigare kallades Google AdWords, är en onlinereklam som gör det möjligt för företag att betala per klick för annonsering i textbaserade sökningar, bildskärmar, YouTube-videor och mobilskärmar i appen.
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 1ec9559e762b44dd8d7639aba0a54af7ce221666
+source-git-commit: c4169d9371d329e445db7c83820b870ccbba238b
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '926'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Observera följande information som gäller [!DNL Google Ads] mål:
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -79,7 +79,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >Du måste ange Tillåt innan du konfigurerar din första [!DNL Google Ads] mål i Platform. Se till att processen för att tillåta listning som beskrivs nedan har slutförts av [!DNL Google] innan du skapar ett mål.
 >Undantaget till den här regeln är för [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) kunder. Om du redan har skapat en anslutning till det här Google-målet i Audience Manager behöver du inte gå igenom processen för att tillåta listning igen och du kan fortsätta till nästa steg.
 
-Innan du skapar [!DNL Google Ads] mål i plattform måste du kontakta [!DNL Google] för att Adobe ska föras upp på listan över tillåtna dataleverantörer och för att ditt konto ska läggas till tillåtelselista. Kontakt [!DNL Google] och lämna följande information:
+Innan du skapar [!DNL Google Ads] mål i plattform måste du kontakta [!DNL Google] för att Adobe ska föras upp på listan över tillåtna dataleverantörer och för att ditt konto ska läggas till i tillåtelselista. Kontakt [!DNL Google] och lämna följande information:
 
 * **Konto-ID**: Adobe konto-ID med Google. Konto-ID: 87933855.
 * **Kund-ID**: Adobe kundkonto-ID med Google. Kund-ID: 89690775.
@@ -131,6 +131,6 @@ När du konfigurerar det här målet kan du få följande fel:
 
 Det här felet inträffar antingen när kundkonton inte uppfyller [krav](#prerequisites) eller när kunderna försöker konfigurera målet utan något befintligt [!DNL Google Ads] konto.
 
-[!DNL Google] har ersatt nytt [!DNL Google Ads] cookie-integreringar med tredjepartsleverantörer. Utför [allow-list](#allow-listing) måste du ha en befintlig integrering med [!DNL Google Ads].
+[!DNL Google] har ersatt nytt [!DNL Google Ads] cookie-integreringar med tredjepartsleverantörer. Utför [tillåtelselista](#allow-listing) måste du ha en befintlig integrering med [!DNL Google Ads].
 
 Rekommenderad metod för att använda [!DNL Google Ads] konfigurerar en [[!DNL Google Customer Match]](google-customer-match.md) integrering.

@@ -3,10 +3,10 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '1187'
-ht-degree: 0%
+source-wordcount: '1094'
+ht-degree: 1%
 
 ---
 
@@ -27,6 +27,8 @@ Adobe Target är en applikation som innehåller AI-baserade personaliserings- oc
 
 Adobe Target är en personaliseringsanslutning i Adobe Experience Platform destinationskatalog.
 
+## Videoöversikt {#video-overview}
+
 Se videon nedan för en kort översikt över hur du konfigurerar Adobe Target-anslutningen i Experience Platform.
 
 >[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
@@ -41,7 +43,7 @@ Om du konfigurerar Adobe Target-anslutningen utan att använda ett datastream-ID
 
 >[!IMPORTANT]
 >
->Innan du skapar [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. För personalisering på samma sida och nästa sida krävs att du använder ett datastream-ID när du konfigurerar Adobe Target-anslutningen.
+>Innan du skapar [!DNL Adobe Target] anslutning, läs guiden om hur man [konfigurera anpassningsmål för personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md). Den här guiden tar dig igenom de nödvändiga konfigurationsstegen för användning av samma sida och nästa sida för personalisering, i flera Experience Platform-komponenter. Om du vill använda samma sida och nästa sida som personalisering måste du använda ett datastream-ID när du konfigurerar Adobe Target-anslutningen.
 
 ### Förutsättningar i Adobe Target {#prerequisites-in-adobe-target}
 
@@ -54,7 +56,7 @@ Läs mer om att bevilja behörigheter för [Mål Premium](https://experienceleag
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|
@@ -133,7 +135,7 @@ Läs [Aktivera målgrupper för att kanalisera personaliseringsmål](../../ui/ac
 
 ## Exporterade data {#exported-data}
 
-Adobe Target läser profildata från Adobe Experience Platform Edge Network så att inga data exporteras.
+Adobe Target *läsningar* profildata från Adobe Experience Platform Edge Network, så inga data exporteras.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 

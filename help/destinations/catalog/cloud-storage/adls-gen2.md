@@ -3,9 +3,9 @@ title: Azure Data Lake Storage Gen2-anslutning
 description: Lär dig hur du ansluter till Azure Data Lake Storage Gen2 för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
-source-git-commit: 47197b745bebb6564d912d9dc045593bc076ae2a
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '839'
+source-wordcount: '835'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Läs den här sidan om du vill veta mer om hur du skapar en utgående liveanslut
 
 ## Målgrupper {#supported-audiences}
 
-I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
+I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
 ---------|----------|----------|

@@ -1,12 +1,11 @@
 ---
-keywords: aktivera målgruppsströmningsmål;aktivera målgruppsströmningsmål;aktivera data
 title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: afcb5f80edaa4d68ba167123feb2ba9060469243
+source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
 workflow-type: tm+mt
-source-wordcount: '980'
+source-wordcount: '1036'
 ht-degree: 0%
 
 ---
@@ -34,15 +33,15 @@ Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till et
 
 1. Gå till **[!UICONTROL Connections > Destinations]** och väljer **[!UICONTROL Catalog]** -fliken.
 
-   ![Fliken Målkatalog](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
+   ![Fliken Målkatalog med olika mål för direktuppspelning.](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
 1. Välj **[!UICONTROL Activate audiences]** på kortet som motsvarar destinationen där du vill aktivera målgrupperna, vilket visas i bilden nedan.
 
-   ![Aktivera knappar](../assets/ui/activate-segment-streaming-destinations/activate-audiences-button.png)
+   ![Aktivera kontroll markerad i målkatalogen.](../assets/ui/activate-segment-streaming-destinations/activate-audiences-button.png)
 
 1. Välj den målanslutning som du vill använda för att aktivera dina målgrupper och välj sedan **[!UICONTROL Next]**.
 
-   ![Välj mål](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
+   ![En målanslutning markerad i steget Välj mål.](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
 
 1. Gå till nästa avsnitt till [välj era målgrupper](#select-audiences).
 
@@ -56,7 +55,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 * **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
 * Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
-![Välj målgrupper](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
+![Flera målgrupper markeras i steget Välj målgrupper.](../assets/ui/activate-segment-streaming-destinations/select-audiences.png)
 
 ## Mappa attribut och identiteter {#mapping}
 
@@ -68,23 +67,23 @@ Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut
 
 1. I **[!UICONTROL Mapping]** sida, markera **[!UICONTROL Add new mapping]**.
 
-   ![Lägg till ny mappning](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
+   ![Lägg till ny mappningskontroll markerat.](../assets/ui/activate-segment-streaming-destinations/add-new-mapping.png)
 
 1. Markera pilen till höger om **[!UICONTROL Source field]** post.
 
-   ![Välj källfält](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
+   ![Välj kontroll för källfält markerat.](../assets/ui/activate-segment-streaming-destinations/select-source-field.png)
 
 1. I **[!UICONTROL Select source field]** sidan använder du **[!UICONTROL Select attributes]** eller **[!UICONTROL Select identity namespace]** för att växla mellan de två kategorierna med tillgängliga källfält. Från tillgängliga [!DNL XDM] profilattribut och identitetsnamnutrymmen, markera de som du vill mappa till målet och välj sedan **[!UICONTROL Select]**.
 
-   ![Välj källfältssida](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
+   ![Välj en källfältssida med flera tillgängliga källfält.](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
 
 1. Markera knappen till höger om **[!UICONTROL Target field]** post.
 
-   ![Välj målfält](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
+   ![Markera målfältet som markerat.](../assets/ui/activate-segment-streaming-destinations/select-target-field.png)
 
 1. I **[!UICONTROL Select target field]** väljer du det målidentitetsnamnutrymme som du vill mappa källfältet till och väljer **[!UICONTROL Select]**.
 
-   ![Välj målfältssida](../assets/ui/activate-segment-streaming-destinations/target-field-page.png)
+   ![Välj målfältssida med tillgängliga alternativ för målfältsmappningar.](../assets/ui/activate-segment-streaming-destinations/target-field-page.png)
 
 1. Om du vill lägga till fler mappningar upprepar du steg 1 till 5.
 
@@ -97,7 +96,7 @@ Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut
 
 När du mappar ohashade källattribut till målattribut som målet förväntar sig ska hash-kodas (till exempel: `email_lc_sha256` eller `phone_sha256`), kontrollera **Använd omformning** att Adobe Experience Platform automatiskt ska hash-koda källattributen vid aktiveringen.
 
-![Identitetsmappning](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
+![Använd omformningskontroll markerat i steget Identitetsmappning.](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## Schemalägg målgruppsexport {#scheduling}
 
@@ -114,19 +113,19 @@ Om du vill se alla målgrupper som aktiveras till destinationen använder du fil
 
 1. På **[!UICONTROL Audience schedule]** väljer du varje målgrupp och använder sedan **[!UICONTROL Start date]** och **[!UICONTROL End date]** väljare för att konfigurera tidsintervallet för att skicka data till målet.
 
-   ![Målgruppsschema](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
+   ![Målgruppsfilter är markerat.](../assets/ui/activate-segment-streaming-destinations/audience-schedule.png)
 
    * Vissa mål kräver att du väljer **[!UICONTROL Origin of audience]** för varje målgrupp med hjälp av listrutan under kalenderväljarna. Om målet inte innehåller den här väljaren hoppar du över det här steget.
 
-     ![Mappnings-ID](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
+     ![Listrutan för mappnings-ID är markerad.](../assets/ui/activate-segment-streaming-destinations/origin-of-audience.png)
 
    * Vissa mål kräver att du mappar manuellt [!DNL Platform] målgrupper till deras motsvarighet i måldestinationen. För att göra detta väljer du varje målgrupp och anger sedan motsvarande målgrupps-ID i målplattformen i dialogrutan **[!UICONTROL Mapping ID]** fält. Om målet inte innehåller det här fältet hoppar du över det här steget.
 
-     ![Mappnings-ID](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
+     ![Ursprunget för målgruppsmenyn är markerat.](../assets/ui/activate-segment-streaming-destinations/mapping-id.png)
 
    * Vissa mål kräver att du anger en **[!UICONTROL App ID]** vid aktivering [!DNL IDFA] eller [!DNL GAID] målgrupper. Om målet inte innehåller det här fältet hoppar du över det här steget.
 
-     ![Program-ID](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
+     ![Listrutan Program-ID är markerad.](../assets/ui/activate-segment-streaming-destinations/destination-appid.png)
 
 1. Välj **[!UICONTROL Next]** för att gå till [!UICONTROL Review] sida.
 
@@ -144,7 +143,7 @@ Om din organisation har köpt **Adobe Healthcare Shield** eller **Adobe Privacy 
 
 I **[!UICONTROL Review]** Experience Platform kontrollerar också om dataanvändningspolicyn har överträtts. Nedan visas ett exempel där en princip överträds. Du kan inte slutföra arbetsflödet för målgruppsaktivering förrän du har löst överträdelsen. Mer information om hur du löser policyöverträdelser finns i [brott mot dataanvändningsprinciper](/help/data-governance/enforcement/auto-enforcement.md#data-usage-violation) i dokumentationsavsnittet för datastyrning.
 
-![dataprincipöverträdelse](../assets/common/data-policy-violation.png)
+![Ett exempel på en dataprincipöverträdelse som visas i aktiveringsarbetsflödet.](../assets/common/data-policy-violation.png)
 
 ### Filtrera målgrupper {#filter-audiences}
 

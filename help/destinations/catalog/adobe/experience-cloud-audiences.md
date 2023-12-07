@@ -3,10 +3,10 @@ title: Experience Cloud-målgrupper
 description: Lär dig hur du delar målgrupper från Real-time Customer Data Platform till olika Experience Cloud-appar.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 23c4bce542bba76ea4badba43a7ce3e6f7fe9e49
+source-git-commit: 8c08b3d62d58d061f62c3b0abb23de0d826e3985
 workflow-type: tm+mt
-source-wordcount: '1748'
-ht-degree: 1%
+source-wordcount: '1643'
+ht-degree: 0%
 
 ---
 
@@ -47,7 +47,7 @@ I Audience Manager kan du använda Real-Time CDP målgrupper för datahanterings
 
 Om du vill välja vilka målgrupper du vill exportera till Audience Manager och utanför, använder du den nya självbetjäningsintegreringen för målgrupper via Experience Cloud-målgruppsmålet.  På så sätt kan ni avgöra vilka målgrupper ni vill dela med andra Experience Cloud-lösningar och vilka målgrupper ni vill behålla exklusivt i Real-Time CDP.
 
-Tack vare den äldre integrationen av målgruppsdelning gick det inte att styra vilka målgrupper som ska exporteras till Audience Manager och vidare.
+Tack vare den gamla integreringen av målgruppsdelning kunde man inte styra vilka målgrupper som skulle exporteras till Audience Manager och vidare.
 
 ### Dela Real-Time CDP-målgrupper med Adobe Analytics {#share-audiences-with-analytics}
 
@@ -78,7 +78,7 @@ Adobe rekommenderar dock starkt att du använder följande dedikerade målkort o
 > * Du *do* behöver en Audience Manager-licens för att dela Real-Time CDP-målgrupper med Adobe Analytics.
 > * Du *behöver inte* en Audience Manager-licens för att dela Real-Time CDP-målgrupper med Adobe Advertising Cloud, Adobe Target, Marketo och andra Experience Cloud-lösningar som omnämns i [avsnitt ovan](#share-segments-with-other-solutions).
 
-### För kunder som använder en äldre lösning för målgruppsdelning
+### För kunder som använder den gamla målgruppslösningen
 
 Om ni redan delar målgrupper från Real-Time CDP till Audience Manager och andra Experience Cloud via [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam)måste du kontakta kundtjänst för att inaktivera den gamla integreringen.
 
