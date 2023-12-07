@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: a3ba26fd6ee7b473d74cc3cf3d142e0f3ff069bb
 workflow-type: tm+mt
-source-wordcount: '289'
-ht-degree: 19%
+source-wordcount: '276'
+ht-degree: 18%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 19%
    * [AI Assistant](ai-assistant.md)
 * Experience Platform API:er {#platform-apis}
    * [Komma igång med plattforms-API:er](api-guide.md)
-   * [Autentisera och få åtkomst till Platform-API:er](api-authentication.md)
+   * [Autentisera och få åtkomst till plattforms-API:er](api-authentication.md)
    * [Grundläggande om API](api-fundamentals.md)
    * [Använda Postman med plattforms-API:er](postman.md)
    * [API-referensdokument](https://www.adobe.com/go/platform-api-reference-en)
@@ -74,6 +74,8 @@ ht-degree: 19%
 * Licensanvändning och skyddsräcken {#license}
    * [Bästa praxis för tillstånd till datahantering](./license-usage-and-guardrails/data-management-best-practices.md)
    * [Kontrollpanel för licensanvändning](./license-usage-and-guardrails/license-usage-dashboard.md)
+   * [Adobe Journey Optimizer skyddsräcken](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html)
+   * [Real-Time CDP skyddsräcken](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/guardrails/overview.html)
 * [Felsökningsguide](troubleshooting.md)
 * [Migrering av data från Gen2](adls2-gen2-migration.md)
 * [Ordlista](glossary.md)

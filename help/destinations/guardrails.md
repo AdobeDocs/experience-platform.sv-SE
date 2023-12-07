@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;aktivering;felsökning;skyddsförslag;riktlinjer;gräns
-title: Standardskyddsutkast för aktiveringsdata
+title: Standardskyddsutkast för dataaktivering
 solution: Experience Platform
 product: experience platform
 type: Documentation
 description: Läs mer om standardanvändning och hastighetsbegränsningar för dataaktivering.
 exl-id: a755f224-3329-42d6-b8a9-fadcf2b3ca7b
-source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
+source-git-commit: c425d1016bed80113b879a683114861d839b79eb
 workflow-type: tm+mt
 source-wordcount: '1657'
 ht-degree: 1%
 
 ---
 
-# Garantier för aktiveringsdata
+# Garantier för dataaktivering
 
 Den här sidan innehåller standardvärden för användning och hastighetsbegränsningar för aktiveringsbeteende. När du granskar följande skyddsutkast antas du ha rätt [anslutna till destinationer](/help/destinations/ui/connect-destination.md).
 

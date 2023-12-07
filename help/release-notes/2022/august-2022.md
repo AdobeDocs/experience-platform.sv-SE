@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform, augusti 2022
 description: Versionsinformation från augusti 2022 för Adobe Experience Platform.
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 7f5a1d8e50ff030b2abe04b5155f28b8c8b6fbf9
+source-git-commit: 3069bdb3592ac1cd3fd7fe4f7f9234d5be56547d
 workflow-type: tm+mt
-source-wordcount: '2035'
+source-wordcount: '1952'
 ht-degree: 3%
 
 ---
@@ -100,7 +100,7 @@ Mer information om [!DNL Data Prep], se [[!DNL Data Prep] översikt](../../data-
 
 **Nya destinationer**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL Outreach]](../..//destinations/catalog/crm/outreach.md) | [[!DNL Outreach]](https://www.outreach.io/) är en plattform för säljavdelning med de flesta interaktionsdata för B2B-köpare i världen och betydande investeringar i egna AI-tekniker för att omvandla säljdata till intelligens. [!DNL Outreach] hjälper organisationer att automatisera säljengagemanget och agera utifrån intäktsanalys för att förbättra sin effektivitet, förutsägbarhet och tillväxt. |
 
@@ -116,7 +116,7 @@ XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer o
 
 | Komponenttyp | Namn | Beskrivning |
 | --- | --- | --- |
-| Klass | [[!UICONTROL AJO Entity Class]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | En postbaserad klass för att skapa uppslagsscheman för Adobe Journey Optimizer. |
+| Klass | [[!UICONTROL AJO Entity Class]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity-class.schema.json) | En postbaserad klass för att skapa uppslagsscheman för Adobe Journey Optimizer. |
 | Fältgrupp | [[!UICONTROL Workfront Work Objects]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | En omslutningsfältgrupp som refererar till alla objektspecifika fältgrupper på den lägre nivån för Adobe Workfront. |
 
 {style="table-layout:auto"}
