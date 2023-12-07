@@ -1,25 +1,25 @@
 ---
 description: Experience Platform Debugger undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Experience Cloud-lösningar implementeras.
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension
-seo-description: Technical documentation for the Adobe Experience Platform Debugger Chrome and Firefox Extension - examine your web pages and understand problems with your Experience Cloud solution mplementations
-seo-title: Adobe Experience Platform Debugger Chrome and Firefox Extension
-title: Adobe Experience Platform Debugger Extension
+seo-description: Technical documentation for the Adobe Experience Platform Debugger Chrome Extension - examine your web pages and understand problems with your Experience Cloud solution mplementations
+seo-title: Adobe Experience Platform Debugger Chrome Extension
+title: Adobe Experience Platform Debugger-tillägg
 uuid: 42e2c8a2-548a-4a3f-b57d-532535a0e7b9
 exl-id: e02bc318-fbff-4a19-980a-d5c0a21ca300
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '259'
-ht-degree: 6%
+source-wordcount: '241'
+ht-degree: 2%
 
 ---
 
 # Adobe Experience Platform Debugger - översikt
 
-Adobe Experience Platform Debugger-tillägget för [Krom](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj) och [Firefox](https://addons.mozilla.org/sv-SE/firefox/addon/adobe-experience-platform-dbg/) undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Adobe Experience Cloud-lösningar implementeras.
+Adobe Experience Platform Debugger-tillägget för [Krom](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) undersöker dina webbsidor och hjälper dig att hitta problem med hur dina Adobe Experience Cloud-lösningar implementeras.
 
 Du kan använda Platform Debugger tillsammans med andra Adobe-aktiveringslösningar för att utföra följande:
 
-1. Använd [taggar](../tags/home.md) för att infoga kod som aktiveras [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) på sidorna.
+1. Använd [taggar](../tags/home.md) för att infoga kod som aktiveras [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) produkter på sidorna.
 1. Använd [**[!UICONTROL Auditor]**tab](./auditor/overview.md) i Platform Debugger för att testa implementeringarna.
 1. Använd händelsebaserade och lösningsspecifika verktyg i Platform Debugger för att felsöka problem som hittats av Auditor eller för att undersöka annan information om era implementeringar.
 

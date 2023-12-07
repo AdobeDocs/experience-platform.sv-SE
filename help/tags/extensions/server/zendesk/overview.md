@@ -2,7 +2,7 @@
 title: Tillägg för vidarebefordran av Zendesk-händelse
 description: Zendesk-tillägg för händelsevidarebefordran för Adobe Experience Platform.
 exl-id: 22e94699-5b84-4a73-b007-557221d3e223
-source-git-commit: d23f1cc9dd0155aceae78bf938d35463e9c38181
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # [!DNL Zendesk] Översikt över API-tillägg för händelser
 
-[Zendesk](https://www.zendesk.com) är en kundtjänstlösning och ett säljverktyg. Zendesk [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) tillägget utnyttjar [[!DNL Zendesk Events API]](https://developer.zendesk.com/api-reference/custom-data/events-api/events-api/) för att skicka händelser från Adobe Experience Platform Edge Network till Zendesk för vidare bearbetning. Du kan använda tillägget för att samla in interaktioner med kundprofiler för användning i analyser och åtgärder längre fram i kedjan.
+[Zendesk](https://www.zendesk.com) är en kundtjänstlösning och ett säljverktyg. Zendesk [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) tillägget utnyttjar [[!DNL Zendesk Events API]](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) för att skicka händelser från Adobe Experience Platform Edge Network till Zendesk för vidare bearbetning. Du kan använda tillägget för att samla in interaktioner med kundprofiler för användning i analyser och åtgärder längre fram i kedjan.
 
 Det här dokumentet beskriver hur du installerar och konfigurerar tillägget i användargränssnittet.
 
@@ -66,7 +66,7 @@ Dessa dataelement ska mappas enligt nedan.
 
 ### `event` tangenter
 
-`event` är ett JSON-objekt som representerar den händelse som utlöses av användaren. Se Zendesk-dokumentet på [anatomi för en händelse](https://developer.zendesk.com/documentation/custom-data/events/anatomy-of-an-event/) om du vill ha information om de egenskaper som hämtats av `event` -objekt.
+`event` är ett JSON-objekt som representerar den händelse som utlöses av användaren. Se Zendesk-dokumentet på [anatomi för en händelse](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/) om du vill ha information om de egenskaper som hämtats av `event` -objekt.
 
 Följande nycklar kan refereras i `event` objekt vid mappning till dataelement:
 
@@ -82,7 +82,7 @@ Följande nycklar kan refereras i `event` objekt vid mappning till dataelement:
 
 >[!NOTE]
 >
->Se [[!DNL Zendesk Events API] dokumentation](https://developer.zendesk.com/api-reference/custom-data/events-api/events-api/) om du vill ha ytterligare vägledning om händelseegenskaper.
+>Se [[!DNL Zendesk Events API] dokumentation](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/) om du vill ha ytterligare vägledning om händelseegenskaper.
 
 ### `profile` tangenter
 
@@ -147,10 +147,10 @@ När tillägget används eller konfigureras kan felen nedan returneras av Zendes
 
 I det här dokumentet beskrivs hur du installerar och konfigurerar tillägget för vidarebefordran av Zendesk-händelser i användargränssnittet. Mer information om hur du samlar in händelsedata i Zendesk finns i den officiella dokumentationen:
 
-* [Komma igång med händelser](https://developer.zendesk.com/documentation/custom-data/events/getting-started-with-events/)
+* [Komma igång med händelser](https://developer.zendesk.com/documentation/ticketing/events/getting-started-with-events/)
 * [Zendesk Events API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/)
-* [Om API:t för händelser](https://developer.zendesk.com/documentation/custom-data/events/about-the-events-api/)
-* [Anatomi för en händelse](https://developer.zendesk.com/documentation/custom-data/events/anatomy-of-an-event/)
+* [Om API:t för händelser](https://developer.zendesk.com/documentation/ticketing/events/about-the-events-api/)
+* [Anatomi för en händelse](https://developer.zendesk.com/documentation/ticketing/events/anatomy-of-an-event/)
 * [Zendesk Profiles API](https://developer.zendesk.com/api-reference/ticketing/users/events-api/events-api/#profile-object)
 * [Om Profiles API](https://developer.zendesk.com/documentation/ticketing/profiles/about-the-profiles-api/)
 * [Anatomi i en profil](https://developer.zendesk.com/documentation/ticketing/profiles/anatomy-of-a-profile/)

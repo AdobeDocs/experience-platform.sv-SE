@@ -3,9 +3,9 @@ title: Felsökning i Adobe Experience Platform Web SDK
 description: Lär dig hur du växlar felsökningsfunktioner i Experience Platform Web SDK.
 keywords: felsöka webb-sdk;felsöka;konfigurera;konfigurera kommando;felsökningskommando;edgeConfigId;setDebug;debugEnabled;debug;
 exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Felsökning är inaktiverat som standard, men kan aktiveras på fyra olika sätt
 * `configure` kommando
 * `setDebug` kommando
 * frågesträngsparameter
-* Växlar på Aktivera felsökning i Adobe Experience Platform Debugger. Adobe Experience Platform är ett kraftfullt verktyg som undersöker dina webbsidor och hjälper dig att felsöka implementeringsproblem med dina Experience Cloud-produkter. Adobe Experience Platform Debugger finns som både [Krom](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) och [Firefox](https://addons.mozilla.org/sv-SE/firefox/addon/adobe-experience-platform-dbg/) tillägg. Felsökning kan aktiveras på konfigurationsfliken i avsnittet AEP Web SDK.
+* Växlar på Aktivera felsökning i Adobe Experience Platform Debugger. Adobe Experience Platform är ett kraftfullt verktyg som undersöker dina webbsidor och hjälper dig att felsöka implementeringsproblem med dina Experience Cloud-produkter. Adobe Experience Platform Debugger finns som [Krom](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob) tillägg. Felsökning kan aktiveras på konfigurationsfliken i avsnittet AEP Web SDK.
 
 ![Användargränssnittsbild för felsökning i Experience Platform visar konfigurationsskärmen.](../assets/enable-debugging.png)
 

@@ -2,9 +2,9 @@
 title: Turbinfri variabel
 description: Lär dig mer om turbinobjektet, en kostnadsfri variabel som ger information och verktyg som är specifika för tagghanteringen i Adobe Experience Platform.
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
-source-git-commit: 27dd38cc509040ea9dc40fc7030dcdec9a182d55
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,7 @@ console.log(turbine.environment.stage);
 
 Ett booleskt värde som anger om taggfelsökning är aktiverat.
 
-Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` för att vara säker på att dina meddelanden bara skrivs ut till konsolen när taggfelsfunktionen är aktiverad.
+Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. Logga alltid meddelanden med `turbine.logger` för att vara säker på att dina meddelanden bara skrivs ut till konsolen när taggfelsfunktionen är aktiverad.
 
 ## `getDataElementValue`
 
@@ -112,7 +112,7 @@ Hämtar en modul som har delats från ett annat tillägg. Om ingen matchande mod
 turbine.logger.error('Error!');
 ```
 
-Loggningsverktyget används för att logga meddelanden till konsolen. Meddelanden visas bara i konsolen om användaren har aktiverat felsökning. Det rekommenderade sättet att aktivera felsökning är att använda [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj?src=propaganda). Användaren kan också köra följande kommando `_satellite.setDebug(true)` i webbläsarens utvecklarkonsol. Loggaren har följande metoder:
+Loggningsverktyget används för att logga meddelanden till konsolen. Meddelanden visas bara i konsolen om användaren har aktiverat felsökning. Det rekommenderade sättet att aktivera felsökning är att använda [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob). Användaren kan också köra följande kommando `_satellite.setDebug(true)` i webbläsarens utvecklarkonsol. Loggaren har följande metoder:
 
 * `logger.log(message: string)`: Loggar ett meddelande till konsolen.
 * `logger.info(message: string)`: Loggar ett informationsmeddelande till konsolen.
@@ -125,7 +125,7 @@ Loggningsverktyget används för att logga meddelanden till konsolen. Meddelande
 
 Genom att skicka en callback-funktion till `turbine.onDebugChanged`, kommer taggar att anropa återanropet när felsökning är aktiverat. Taggar skickar ett booleskt värde till återanropsfunktionen som är true om felsökning var aktiverat eller false om felsökning var inaktiverad.
 
-Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. I stället loggar du alltid meddelanden med `turbine.logger` och taggarna ser till att dina meddelanden bara skrivs ut på konsolen när taggfelsfunktionen är aktiverad.
+Om du bara försöker logga meddelanden är det osannolikt att du kommer att behöva använda detta. Logga alltid meddelanden med `turbine.logger` och taggarna ser till att dina meddelanden bara skrivs ut på konsolen när taggfelsfunktionen är aktiverad.
 
 ## `propertySettings` {#property-settings}
 
@@ -137,8 +137,8 @@ Ett objekt som innehåller följande inställningar som definieras av användare
 
 * `propertySettings.domains: Array<String>`
 
-   En array med domäner som egenskapen omfattar.
+  En array med domäner som egenskapen omfattar.
 
 * `propertySettings.undefinedVarsReturnEmpty: boolean`
 
-   Tilläggsutvecklare bör inte bry sig om den här inställningen.
+  Tilläggsutvecklare bör inte bry sig om den här inställningen.

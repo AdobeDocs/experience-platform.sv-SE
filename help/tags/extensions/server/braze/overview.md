@@ -4,9 +4,9 @@ title: Vidarekoppling av hjärnhändelse
 description: Detta Adobe Experience Platform-tillägg för händelsevidarebefordran skickar Edge Network-händelser till Braze.
 last-substantial-update: 2023-03-29T00:00:00Z
 exl-id: 297f48f8-2c3b-41c2-8820-35f4558c67b3
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '1733'
+source-wordcount: '1557'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ Tillägget använder två av [!DNL Braze]API:er och deras begränsningar beskriv
 
 ### Fakturerbara datapunkter
 
-Skicka ytterligare anpassade attribut till [!DNL Braze] kan öka din [!DNL Braze] datapunktskonsumtion. Kontakta [!DNL Braze] kontohanteraren innan ytterligare anpassade attribut skickas. Se [!DNL Braze] dokumentation om [fakturerbara datapunkter](https://www.braze.com/docs/user_guide/onboarding_with_braze/data_points/#billable-data-points) för mer information.
+Skicka ytterligare anpassade attribut till [!DNL Braze] kan öka din [!DNL Braze] datapunktskonsumtion. Kontakta [!DNL Braze] kontohanteraren innan ytterligare anpassade attribut skickas. Se [!DNL Braze] dokumentation om [fakturerbara datapunkter](https://www.braze.com/docs/user_guide/data_and_analytics/data_points/?tab=billable) för mer information.
 
 ### Samla nödvändig konfigurationsinformation {#configuration-details}
 
@@ -59,7 +59,7 @@ För att ansluta Edge Network till [!DNL Braze]krävs följande indata:
 
 | Nyckeltyp | Beskrivning | Exempel |
 | --- | --- | --- |
-| [!DNL Braze] Instans | REST-slutpunkten som är associerad med [!DNL Braze] konto. Se [!DNL Braze] dokumentation om [instanser](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) för vägledning. | `https://rest.iad-03.braze.com` |
+| [!DNL Braze] Instance | REST-slutpunkten som är associerad med [!DNL Braze] konto. Se [!DNL Braze] dokumentation om [instanser](https://www.braze.com/docs/user_guide/administrative/access_braze/sdk_endpoints) för vägledning. | `https://rest.iad-03.braze.com` |
 | API-nyckel | The [!DNL Braze] API-nyckel som är associerad med [!DNL Braze] konto. <br/>Se [!DNL Braze] dokumentation om [REST API-nyckel](https://www.braze.com/docs/api/basics/#rest-api-key) för vägledning. | `YOUR-BRAZE-REST-API-KEY` |
 
 ### Skapa en hemlighet

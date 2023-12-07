@@ -2,10 +2,10 @@
 title: Testa inbäddningskoder med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Platform Debugger för att lokalt testa olika inbäddningskoder för Adobe Experience Platform på din webbplats.
 exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: d81c4c8630598597ec4e253ef5be9f26c8987203
 workflow-type: tm+mt
-source-wordcount: '497'
-ht-degree: 3%
+source-wordcount: '478'
+ht-degree: 0%
 
 ---
 
@@ -21,10 +21,9 @@ När du gör ändringar i kodbiblioteksbyggen i Adobe Experience Platform bör d
 
 Den här självstudiekursen kräver en fungerande förståelse för hur du använder miljöer och bäddar in koder för taggar. Se [miljööversikt](./environments.md) för mer information.
 
-Den här självstudien kräver även att du har installerat webbläsartillägget Platform Debugger. Felsökningsprogrammet för plattformen är bara tillgängligt för Chrome- och Firefox-webbläsare. Använd någon av följande länkar för att installera tillägget innan du startar självstudiekursen:
+Den här självstudien kräver även att du har installerat webbläsartillägget Platform Debugger. Plattformsfelsökaren är tillgänglig för Chrome-webbläsaren. Använd följande länk för att installera tillägget innan du startar självstudiekursen:
 
 * [Felsökning för plattformen för Chrome](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob)
-* [Felsökning för plattformen i Firefox](https://addons.mozilla.org/sv-SE/firefox/addon/adobe-experience-platform-dbg/)
 
 ## Open Platform Debugger på din webbplats
 
@@ -38,7 +37,7 @@ Använd valfri webbläsare och navigera till webbplatsen och öppna tillägget f
 
 ## Ersätt inbäddningskoder
 
-När plattformsfelsökaren har anslutit till webbplatsen väljer du **[!UICONTROL Launch]** i den vänstra navigeringen. Här kan du se information om den biblioteksbygge som körs på din plats, inklusive dess miljö och tillhörande tillägg. Här väljer du **[!UICONTROL Configuration]** för att visa kontroller för hantering av inbäddningskoder.
+När plattformsfelsökaren har anslutit till webbplatsen väljer du **[!UICONTROL Launch]** i den vänstra navigeringen. Här kan du se information om den biblioteksbygge som för närvarande körs på din plats, inklusive dess miljö och tillhörande tillägg. Välj **[!UICONTROL Configuration]** för att visa kontroller för hantering av inbäddningskoder.
 
 ![](./images/embed-code-testing/launch-tab.png)
 
