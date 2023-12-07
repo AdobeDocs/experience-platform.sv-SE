@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 7f9a0965419a85894bd2cab4e78dd336874a5933
+source-git-commit: 4c8e80c5ec61aebd84064ac2a667188b8b5ddb8c
 workflow-type: tm+mt
-source-wordcount: '989'
-ht-degree: 7%
+source-wordcount: '993'
+ht-degree: 6%
 
 ---
 
@@ -35,10 +35,10 @@ ht-degree: 7%
          - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
-   - Advertising {#advertising}
+   - Reklam {#advertising}
       - [Google Ads Connector](connectors/advertising/ads.md)
       - [Pinterest Ads](connectors/advertising/pinterest-ads.md)
-   - Analytics {#analytics}
+   - Analyser {#analytics}
       - [Koppling mellan olika paneler](connectors/analytics/mixpanel.md)
       - [Pendo](connectors/analytics/pendo-webhook.md)
       - [Regnfokus](connectors/analytics/rainfocus.md)
@@ -91,6 +91,8 @@ ht-degree: 7%
       - [Snowflake-direktuppspelningskontakt](connectors/databases/snowflake-streaming.md)
       - [Snowflake-kontakt](connectors/databases/snowflake.md)
       - [Teradata Vantage-kontakt](connectors/databases/teradata-vantage.md)
+   - Datapartent {#data-partner}
+      - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
    - eCommerce {#ecommerce}
       - [SAP Commerce](connectors/ecommerce/sap-commerce.md)
       - [Förminska](connectors/ecommerce/shopify.md)
@@ -115,10 +117,10 @@ ht-degree: 7%
       - [HTTP API-anslutning](connectors/streaming/http.md)
 - API-självstudier {#api-tutorials}
    - Skapa en basanslutning {#create}
-      - Advertising {#advertising}
+      - Reklam {#advertising}
          - [Google Ads](tutorials/api/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/api/create/advertising/pinterest-ads.md)
-      - Analytics {#analytics}
+      - Analyser {#analytics}
          - [Blandpanel](tutorials/api/create/analytics/mixpanel.md)
          - [Pendo](tutorials/api/create/analytics/pendo-webhook.md)
       - molnlagring {#cloud-storage}
@@ -233,10 +235,10 @@ ht-degree: 7%
          - [Kundattribut](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
          - [Anpassade aktiviteter för Marketo](tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
-      - Advertising {#advertising}
+      - Reklam {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
          - [Pinterest Ads](tutorials/ui/create/advertising/pinterest-ads.md)
-      - Analytics {#analytics}
+      - Analyser {#analytics}
          - [Blandpanel](tutorials/ui/create/analytics/mixpanel.md)
          - [Pendo](tutorials/ui/create/analytics/pendo-webhook.md)
          - [Regnfokus](tutorials/ui/create/analytics/rainfocus.md)
@@ -289,6 +291,8 @@ ht-degree: 7%
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
          - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
+      - Datapartent {#data-partner}
+         - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
       - eCommerce {#ecommerce}
          - [SAP Commerce](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
