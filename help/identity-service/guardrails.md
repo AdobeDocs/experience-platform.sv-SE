@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 614f48e53e981e479645da9cc48c946f3af0db26
+source-git-commit: d33be97fcb935a53a8776d2a1993ad9d2b50e913
 workflow-type: tm+mt
-source-wordcount: '1509'
+source-wordcount: '1507'
 ht-degree: 0%
 
 ---
@@ -37,14 +37,18 @@ I följande tabell visas statiska gränser för identitetsdata.
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
 | Antal tecken för ett namnområdes visningsnamn eller identitetssymbol | Ingen | Det finns inga gränser för hur många tecken ett namnområdes visningsnamn eller identitetssymbol får innehålla. |
 
+{style="table-layout:auto"}
+
 ### Validering av identitetsvärde
 
 Följande tabell visar befintliga regler som du måste följa för att identitetsvärdet ska kunna valideras korrekt.
 
 | Namnutrymme | Valideringsregel | Systembeteende när regeln bryts |
 | --- | --- | --- |
-| ECID | <ul><li>Identitetsvärdet för ett ECID måste vara exakt 38 tecken.</li><li>Identitetsvärdet för ett ECID får endast bestå av siffror.</li><li>Identitetsvärden kan inte vara &quot;null&quot;, &quot;anonymous&quot;, &quot;invalid&quot; eller vara en tom sträng (t.ex. &quot;, &quot;&quot;, &quot;&quot;).</li></ul> | <ul><li>Om identitetsvärdet för ECID inte är exakt 38 tecken hoppas posten över.</li><li>Om identitetsvärdet för ECID innehåller icke-numeriska tecken hoppas posten över.</li><li>Identiteten kommer att blockeras från att förtäras.</li></ul> |
-| Ej ECID | Identitetsvärdet får inte vara längre än 1 024 tecken. | Om identitetsvärdet är längre än 1 024 tecken hoppas posten över. |
+| ECID | <ul><li>Identitetsvärdet för ett ECID måste vara exakt 38 tecken.</li><li>Identitetsvärdet för ett ECID får endast bestå av siffror.</li></ul> | <ul><li>Om identitetsvärdet för ECID inte är exakt 38 tecken hoppas posten över.</li><li>Om identitetsvärdet för ECID innehåller icke-numeriska tecken hoppas posten över.</li></ul> |
+| Ej ECID | <ul><li>Identitetsvärdet får inte vara längre än 1 024 tecken.</li><li>Identitetsvärden kan inte vara &quot;null&quot;, &quot;anonymous&quot;, &quot;invalid&quot; eller vara en tom sträng (t.ex. &quot;, &quot;&quot;, &quot;&quot;).</li></ul> | <ul><li>Om identitetsvärdet är längre än 1 024 tecken hoppas posten över.</li><li>Identiteten kommer att blockeras från att förtäras.</li></ul> |
+
+{style="table-layout:auto"}
 
 ### Inläsning av namnområde för identitet
 
