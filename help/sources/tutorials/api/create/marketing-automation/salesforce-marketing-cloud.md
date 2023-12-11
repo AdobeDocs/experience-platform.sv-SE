@@ -2,9 +2,9 @@
 title: Skapa en Salesforce Marketing Cloud Base-anslutning med API:t för flödestjänsten
 description: Lär dig hur du autentiserar ditt Salesforce Marketing Cloud-konto mot Experience Platform med API:t för Flow Service.
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 997a9dc70145a8cfd5d6da20ba788a4610e5c257
+source-git-commit: 635ab266fac9d3dc232307d7cb49f83904197782
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '491'
 ht-degree: 1%
 
 ---
@@ -38,7 +38,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Salesforce Marketing Cloud]m
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| `host` | Programmets värdserver. Detta är ofta din underdomän. **Obs!** När du anger `host` behöver du bara ange underdomänen och inte hela URL:en. Om din värd-URL till exempel är `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.auth.marketingcloudapis.com/`behöver du bara ange `acme-ab12c3d4e5fg6hijk7lmnop8qrst` som värdvärde. |
+| `host` | Programmets värdserver. Detta är ofta din underdomän. **Obs!** När du anger `host` måste du ange `{subdomain}.rest.marketingcloudapis.com`. Om din värd-URL till exempel är `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.auth.marketingcloudapis.com/`behöver du bara ange `acme-ab12c3d4e5fg6hijk7lmnop8qrstauth.marketingcloudapis.com/` som värdvärde. |
 | `clientId` | Klient-ID som är kopplat till din [!DNL Salesforce Marketing Cloud] program. |
 | `clientSecret` | Klienthemligheten som är kopplad till din [!DNL Salesforce Marketing Cloud] program. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce Marketing Cloud] är: `ea1c2a08-b722-11eb-8529-0242ac130003`. |
