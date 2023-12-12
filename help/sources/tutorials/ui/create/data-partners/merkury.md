@@ -2,9 +2,7 @@
 title: Skapa en Merkury Enterprise Identity Resolution Source Connection och Dataflow i användargränssnittet
 description: Lär dig hur du skapar en källanslutning för Merkury Enterprise Identity Resolution med hjälp av Adobe Experience Platform-gränssnittet.
 badge: Beta
-hide: true
-hidefromtoc: true
-source-git-commit: cc87bff5ea19e2ffc9958bd645b4736d05773e3c
+source-git-commit: 12f73ac2578b6c5b024cc4ebdd75cd945c7b55c9
 workflow-type: tm+mt
 source-wordcount: '1944'
 ht-degree: 0%
