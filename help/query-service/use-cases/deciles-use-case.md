@@ -1,25 +1,25 @@
 ---
-title: Använd skiftläge för dekorbaserade härledda attribut
-description: Den här guiden visar de steg som krävs för att använda frågetjänsten för att skapa decimalbaserade härledda attribut som kan användas med dina profildata.
+title: Handläggningsbaserad härledd datauppsättning - användningsfall
+description: Den här guiden visar de steg som krävs för att använda frågetjänsten för att skapa decimalbaserade härledda datauppsättningar som kan användas med dina profildata.
 exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
 workflow-type: tm+mt
-source-wordcount: '1505'
-ht-degree: 1%
+source-wordcount: '1511'
+ht-degree: 0%
 
 ---
 
-# Argumentbaserade härledda attribut använder skiftläge
+# Handläggningsbaserade härledda datauppsättningar - användningsfall
 
-Härledda attribut underlättar komplicerade användningsfall för att analysera data från datasjön som kan användas tillsammans med andra plattformstjänster längre fram i kedjan eller publiceras i kundprofildata i realtid.
+Härledda datauppsättningar underlättar komplicerade användningsfall för att analysera data från datasjön som kan användas tillsammans med andra plattformstjänster längre fram i kedjan eller publiceras i kundprofildata i realtid.
 
-I det här exemplet visas hur du skapar dekorbaserade härledda attribut som kan användas med dina kundprofildata i realtid. Om du använder ett lojalitetsscenario för ett flygbolag som exempel får du information i den här guiden om hur du skapar en datauppsättning som använder kategoriserade deciler för att segmentera och skapa målgrupper baserat på rankade attribut.
+I det här exemplet visas hur du skapar decimalbaserade härledda datauppsättningar som kan användas med dina kundprofildata i realtid. Om du använder ett lojalitetsscenario för ett flygbolag som exempel får du information i den här guiden om hur du skapar en datauppsättning som använder kategoriserade deciler för att segmentera och skapa målgrupper baserat på rankade attribut.
 
 Följande viktiga begrepp visas:
 
 * Schema skapas för dekorblockering.
 * Skapa kategorisisk decimal.
-* Skapande av komplexa härledda attribut.
+* Skapa komplexa härledda datauppsättningar.
 * Beräkning av deciler över en uppslagsperiod.
 * En exempelfråga för att demonstrera aggregering, rankning och lägga till unika identiteter så att målgrupper kan genereras baserat på dessa decimalgrupper.
 
@@ -28,15 +28,15 @@ Följande viktiga begrepp visas:
 Den här guiden kräver en fungerande förståelse av [frågekörning i frågetjänsten](../best-practices/writing-queries.md) och följande komponenter i Adobe Experience Platform:
 
 * [Översikt över kundprofiler i realtid](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
-* [Grunderna för schemakomposition](../../xdm/schema/composition.md): En introduktion till XDM-scheman (Experience Data Model) och byggstenar, principer och bästa metoder för att komponera scheman.
+* [Grunderna för schemakomposition](../../xdm/schema/composition.md): En introduktion till XDM-scheman (Experience Data Model) och byggstenar, principer och bästa praxis för dispositionsscheman.
 * [Så här aktiverar du ett schema för kundprofil i realtid](../../profile/tutorials/add-profile-data.md): I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
-* [Definiera en anpassad datatyp](../../xdm/api/data-types.md): Datatyper används som referenstypfält i klasser eller schemafältgrupper och möjliggör konsekvent användning av en flerfältstruktur som kan inkluderas var som helst i schemat.
+* [Definiera en anpassad datatyp](../../xdm/api/data-types.md): Datatyper används som referenstypfält i klasser eller schemafältgrupper och gör det möjligt att konsekvent använda en flerfältstruktur som kan inkluderas var som helst i schemat.
 
 ## Mål
 
-Exemplet i det här dokumentet använder deciler för att skapa härledda attribut för rankningsdata från ett lojalitetsschema för flygbolag. Med härledda attribut kan ni maximera dataanvändningen genom att identifiera en målgrupp baserat på de högsta &#39;n&#39; % för en vald kategori.
+Exemplet i det här dokumentet använder deciler för att skapa härledda datauppsättningar för att rangordna data från ett lojalitetsschema för flygbolag. Med härledda datauppsättningar kan ni maximera dataanvändningen genom att identifiera en målgrupp baserat på de högsta &#39;n&#39; % för en vald kategori.
 
-## Skapa decimalbaserade härledda attribut
+## Skapa decimalbaserade härledda datauppsättningar
 
 Om du vill definiera decimalernas rangordning baserat på en viss dimension och ett motsvarande mått, måste ett schema utformas så att det går att dekorera spärrning.
 
@@ -56,7 +56,7 @@ Den första datamängden för flygbolagets lojalitet i det här exemplet är&quo
 
 **Exempeldata**
 
-I följande tabell visas exempeldata i `_profilefoundationreportingstg` som används för det här exemplet. Det ger kontext för användning av decimalluckor för att skapa komplexa härledda attribut.
+I följande tabell visas exempeldata i `_profilefoundationreportingstg` som används för det här exemplet. Den ger kontext för användning av decimalluckor för att skapa komplexa härledda datauppsättningar.
 
 >[!NOTE]
 >
@@ -195,7 +195,7 @@ Datatypen decile innehåller en bucket för 1, 3, 6, 9, 12 och livstidssökninga
 >
 >Om källdata inte har någon kolumn som kan användas för att bestämma en uppslagsperiod, kommer alla decile-klassrankningar att utföras under `decileMonthAll`.
 
-#### Aggregera
+#### Aggregering
 
 Använd vanliga tabelluttryck (CTE) för att samla ihop körsträckan innan du skapar decimalluckor. Detta anger det totala antalet mil för en specifik uppslagsperiod. CTE:er finns tillfälligt och kan bara användas inom omfånget för den större frågan.
 
@@ -212,11 +212,11 @@ summed_miles_1 AS (
 
 Blocket upprepas två gånger i mallen (`summed_miles_3` och `summed_miles_6`) med en ändring i datumberäkningen för att generera data för de andra uppslagsperioderna.
 
-Det är viktigt att notera identitets-, dimension- och måttkolumnerna för frågan (`membershipNumber`, `loyaltyStatus` och `totalMiles` ).
+Det är viktigt att notera identitets-, dimension- och måttkolumnerna för frågan (`membershipNumber`, `loyaltyStatus` och `totalMiles` respektive).
 
 #### Rankning
 
-Med Deciles kan du utföra kategoriserad bucketing. Om du vill skapa ett rangordningsnummer `NTILE` -funktionen används med en parameter för `10` i ett FÖNSTER grupperat efter `loyaltyStatus` fält. Detta resulterar i en rankning från 1 till 10. Ange `ORDER BY` -satsen i `WINDOW` till `DESC` för att säkerställa att ett rankningsvärde på `1` ges till **störst** mått i dimensionen.
+Med Deciles kan du utföra kategoriserad bucketning. Om du vill skapa ett rangordningsnummer väljer du `NTILE` -funktionen används med en parameter för `10` i ett FÖNSTER grupperat efter `loyaltyStatus` fält. Detta resulterar i en rankning från 1 till 10. Ange `ORDER BY` -satsen i `WINDOW` till `DESC` för att säkerställa att rankningsvärdet `1` ges till **störst** mått i dimensionen.
 
 ```sql
 rankings_1 AS (
@@ -230,7 +230,7 @@ rankings_1 AS (
 
 #### Kartaggregering
 
-Om du har flera uppslagsperioder måste du skapa en decimal-karta i förväg med `MAP_FROM_ARRAYS` och `COLLECT_LIST` funktioner. I exempelfragmentet `MAP_FROM_ARRAYS` skapar en karta med ett par tangenter (`loyaltyStatus`) och värden (`decileBucket`) arrayer. `COLLECT_LIST` returnerar en array med alla värden i den angivna kolumnen.
+Om du har flera uppslagsperioder måste du skapa en decimal-karta i förväg med `MAP_FROM_ARRAYS` och `COLLECT_LIST` funktioner. I exempelfragmentet `MAP_FROM_ARRAYS` skapar en karta med ett par tangenter (`loyaltyStatus`) och värden (`decileBucket`). `COLLECT_LIST` returnerar en array med alla värden i den angivna kolumnen.
 
 ```sql
 map_1 AS (
@@ -299,4 +299,4 @@ Kör frågan för att fylla i decimaldatauppsättningen. Du kan också spara fr�
 
 ## Nästa steg
 
-Exemplet visar hur man gör decimalattribut tillgängliga i kundprofilen i realtid. På så sätt kan segmenteringstjänsten, antingen via ett användargränssnitt eller RESTful API, generera målgrupper baserat på dessa decimalgrupper. Se [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill ha information om hur du skapar, utvärderar och får tillgång till segment.
+Exemplet visar hur man gör decimalbaserade härledda datauppsättningar tillgängliga i kundprofilen i realtid. På så sätt kan segmenteringstjänsten, antingen via ett användargränssnitt eller RESTful API, generera målgrupper baserat på dessa decimalgrupper. Se [Översikt över segmenteringstjänsten](../../segmentation/home.md) om du vill ha information om hur du skapar, utvärderar och får tillgång till segment.

@@ -3,9 +3,9 @@ title: Personalisera upplevelser på plats för okända besökare med partnerst�
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
 workflow-type: tm+mt
-source-wordcount: '2588'
+source-wordcount: '2565'
 ht-degree: 1%
 
 ---
@@ -39,7 +39,7 @@ Detta varumärke väljer att utnyttja teknik för partnerigenkänning för att t
 När du planerar att använda attribut som tillhandahålls av partners för att leverera personaliserade upplevelser till autentiserade och oautentiserade besökare bör du tänka på följande under planeringsprocessen:
 
 * Vilka indata förväntas av din partners igenkänningsteknik så att de kan ligga på fler attribut?
-* I vilken utsträckning kan ni leverera personalisering i olika kanaler och för olika användningsområden baserat på sannolikhetshärledda attribut, jämfört med bestämningsmässigt bekräftade attribut?
+* I vilken utsträckning kan ni leverera personalisering i olika kanaler och för olika användningsområden baserat på sannolikhetshärledda datauppsättningar, jämfört med deterministiskt bekräftade attribut?
 * Hur ska upplevelsen av en förautentiserad men erkänd besökare förändras när de autentiseras?
 
 ### UI-funktionalitet, plattformskomponenter och Experience Cloud-produkter som du kommer att använda {#ui-functionality-and-elements}

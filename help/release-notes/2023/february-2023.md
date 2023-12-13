@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform, februari 2023
 description: Versionsinformation från februari 2023 för Adobe Experience Platform.
 exl-id: 1c30a646-d9f8-4749-ac25-40bc48365a40
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
 workflow-type: tm+mt
-source-wordcount: '1252'
-ht-degree: 3%
+source-wordcount: '1214'
+ht-degree: 2%
 
 ---
 
@@ -102,7 +102,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Aktivera datauppsättningar för profil med SQL | [Använd ETIKETTER i CTAS-frågor för att göra datauppsättningen &#39;profile enabled&#39;](../../query-service/sql/syntax.md#create-table-as-select)eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. Du kan använda den här utökade SQL-konstruktionen för att tillhandahålla sömlöst stöd för härledda attribut för dina affärssituationer med kundprofiler i realtid. Se [Sömlöst SQL-flöde för härledda attributdokument](../../query-service/data-distiller/derived-attributes/seamless-sql-flow.md) för mer information. |
+| Aktivera datauppsättningar för profil med SQL | [Använd ETIKETTER i CTAS-frågor för att göra datauppsättningen &#39;profile enabled&#39;](../../query-service/sql/syntax.md#create-table-as-select)eller använd ALTER för att uppdatera befintliga datauppsättningar som ska aktiveras för profilen. Du kan använda den här utökade SQL-konstruktionen för att ge sömlös support för härledda datauppsättningar för dina affärssituationer med kundprofiler i realtid. Se [Sömlöst SQL-flöde för härlett datauppsättningsdokument](../../query-service/data-distiller/derived-datasets/seamless-sql-flow.md) för mer information. |
 | Övervaka schemalagda frågor | Använd [Fliken Schemalagda frågor](../../query-service/ui/monitor-queries.md) om du vill hitta viktig information om frågekörningar och prenumerera på aviseringar. Övervaka frågor för schemainformation, status och felmeddelanden/koder om de misslyckas. |
 | Funktionen Komplettera automatiskt | Eliminera vissa metadatakommandon och förbättra bearbetningstiden med [växla funktionen för automatisk komplettering av frågeredigeraren](../../query-service/ui/user-guide.md#auto-complete). Den här funktionen föreslår automatiskt möjliga SQL-nyckelord och tabelldetaljer för frågan när du skriver den. |
 | Datauppsättningsexempel | Ange en samplingsfrekvens i din fråga och [använda datauppsättningsexempel för att skapa ett enhetligt slumpmässigt urval](../../query-service/key-concepts/dataset-samples.md)eller skapa villkorsstyrda exempel baserat på specifika villkor. |

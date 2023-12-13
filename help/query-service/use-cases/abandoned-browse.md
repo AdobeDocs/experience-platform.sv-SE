@@ -3,9 +3,9 @@ keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Exempel på användningsfall för Adobe Experience Platform Query Service
 description: Ett heltäckande exempel som demonstrerar mångsidigheten och fördelarna med Adobe Experience Platform Query Service.
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 79966442f5333363216da17342092a71335a14f0
+source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Det här dokumentet och den medföljande videopresentationen ger ett avancerat a
 * Olika sätt att bygga frågan baserat på din befintliga dataarkitektur.
 * Säkerställ den datakvalitet som uppfyller era behov och metoder för att minska eventuella brister.
 * Processen för att schemalägga en fråga att köras med en fast frekvens för användning längre fram i segmenteringen och destinationer för personalisering.
-* Det är enkelt för marknadsförarna att inkludera härledda attribut i sina målgrupper tack vare kraften hos [!DNL Query Service].
+* Det enkla för marknadsförarna att inkludera härledda datauppsättningar i sina målgrupper tack vare kraften hos [!DNL Query Service].
 
 ## Mål {#objectives}
 

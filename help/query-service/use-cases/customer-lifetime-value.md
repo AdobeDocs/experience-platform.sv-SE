@@ -2,9 +2,9 @@
 title: Spåra datasignaler för att generera kundens livstidsvärde
 description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
 workflow-type: tm+mt
-source-wordcount: '1269'
+source-wordcount: '1263'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Följande grafik visar den cykel med datainsamling, hantering, analys och aktive
 
 ![Grund-trip-grafik av data från observation till analys till åtgärd.](../images/use-cases/infographic-use-case-cycle.png)
 
-Det här heltäckande användningsexemplet visar hur datasignaler kan hämtas och ändras för att beräkna det härledda attributet för kundens livstidsvärde. Dessa härledda attribut kan sedan tillämpas på dina Real-Time CDP-profildata och kan användas med användardefinierade instrumentpaneler för att skapa en instrumentpanel för insiktsanalys. Med Data Distiller kan ni utöka datamodellen för Real-Time CDP insights och använda det CLV-härledda attributet och instrumentpanelsinsikterna för att skapa en ny målgrupp och aktivera den till önskat mål. Dessa högpresterande målgrupper kan sedan användas som stöd för nästa marknadsföringskampanj.
+Det här heltäckande användningsexemplet visar hur datasignaler kan hämtas och ändras för att beräkna det härledda attributet för kundens livstidsvärde. Dessa härledda datauppsättningar kan sedan tillämpas på dina Real-Time CDP-profildata och kan användas med användardefinierade instrumentpaneler för att skapa en instrumentpanel för insiktsanalys. Med Data Distiller kan ni utöka Real-Time CDP insiktsdatamodell och använda CLV-härledda datauppsättningar och instrumentpanelsinsikter för att skapa en ny målgrupp och aktivera den till önskat mål. Dessa högpresterande målgrupper kan sedan användas som stöd för nästa marknadsföringskampanj.
 
 Den här guiden är utformad för att hjälpa er att förstå kundupplevelsen bättre genom att mäta datasignaler över viktiga kontaktytor som driver CLV och implementerar ett liknande användningsfall i er miljö. Hela processen sammanfattas i bilden nedan.
 
@@ -34,9 +34,9 @@ Den här handboken kräver att du har en fungerande förståelse för följande 
 
 Du måste ha [Data Distiller](../data-distiller/overview.md) SKU som en del av paketerbjudandet. Om du är osäker på om du har detta eller inte kan du kontakta din Adobe-representant.
 
-## Skapa ett härlett attribut {#create-derived-attribute}
+## Skapa en härledd datauppsättning {#create-derived-dataset}
 
-Det första steget i att etablera ett CLV är att skapa ett härlett attribut utifrån de datasignaler som hämtats från användaråtgärder. Det här användningsexemplet finns i ett separat dokument om ett lojalitetsprogram för flygbolag. Läs guiden och lär dig hur du [använd frågetjänsten för att skapa decimalbaserade härledda attribut som kan användas med dina profildata](./deciles-use-case.md). Fullständiga exempel och förklaringar finns i dokumentet som förklarar följande steg:
+Det första steget i att etablera CLV är att skapa en härledd datauppsättning från datasignaler som hämtats från användaråtgärder. Det här användningsexemplet finns i ett separat dokument om ett lojalitetsprogram för flygbolag. Läs guiden och lär dig hur du [använd frågetjänsten för att skapa decimalbaserade härledda datauppsättningar som kan användas med dina profildata](./deciles-use-case.md). Fullständiga exempel och förklaringar finns i dokumentet som förklarar följande steg:
 
 * Skapa ett schema som tillåter dekorblockering.
 * Använd frågetjänsten för att skapa decimaler.

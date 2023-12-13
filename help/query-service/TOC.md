@@ -4,7 +4,7 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: cd97165d4e4d8ed984c4705f614c8d77eb750ed6
+source-git-commit: f319f05d600dfd2bc4840ff56aefb8098dbfb7aa
 workflow-type: tm+mt
 source-wordcount: '309'
 ht-degree: 13%
@@ -22,13 +22,13 @@ ht-degree: 13%
 - Data Distiller {#data-distiller}
    - [Översikt](data-distiller/overview.md)
    - [Licensanvändning](data-distiller/license-usage.md)
+   - Härledda datauppsättningar {#derived-datasets}
+      - [Översikt](data-distiller/derived-datasets/overview.md)
+      - [Sömlöst SQL-flöde](data-distiller/derived-datasets/seamless-sql-flow.md)
+      - [Skapa decimalbaserade härledda datauppsättningar](data-distiller/derived-datasets/decile-based-derived-attributes.md)
    - Query Accelerated Store {#query-accelerated-store}
       - [Skicka accelererade frågor](data-distiller/query-accelerated-store/send-accelerated-queries.md)
       - [Datamodellguide för rapportinsikter](data-distiller/query-accelerated-store/reporting-insights-data-model.md)
-   - Härledda attribut {#derived-attributes}
-      - [Översikt](data-distiller/derived-attributes/overview.md)
-      - [Sömlöst SQL-flöde](data-distiller/derived-attributes/seamless-sql-flow.md)
-      - [Skapa decimalbaserade härledda attribut](data-distiller/derived-attributes/decile-based-derived-attributes.md)
    - AI/ML-rörledningar {#ml-feature-pipelines}
       - [Översikt](data-distiller/ml-feature-pipelines/overview.md)
       - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)
@@ -43,7 +43,7 @@ ht-degree: 13%
    - [Skapa en trendrapport över händelser](use-cases/trended-report-of-events.md)
    - [Samtyckesanalys](use-cases/consent-analysis.md)
    - [Kundens livstidsvärde](use-cases/customer-lifetime-value.md)
-   - [Lövbaserade härledda attribut](use-cases/deciles-use-case.md)
+   - [Decile-baserade härledda datauppsättningar](use-cases/deciles-use-case.md)
    - [Fuzzy-matchning](use-cases/fuzzy-match.md)
    - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)
    - [Visa besökarna i deras sidvy](use-cases/visitors-by-number-of-page-views.md)
