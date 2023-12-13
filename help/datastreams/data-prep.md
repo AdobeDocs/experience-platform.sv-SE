@@ -1,13 +1,13 @@
 ---
 title: Dataförberedelse för datainsamling
 description: Lär dig hur du mappar data till ett XDM-händelseschema (Experience Data Model) när du konfigurerar ett datastam för Adobe Experience Platform Web och Mobile SDK.
-source-git-commit: 935881ee8c8aedb672bbd6233ea22aa7b26b28a6
+exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
+source-git-commit: 50dcfa41905c0d94ef764278a538c0c332eb3780
 workflow-type: tm+mt
-source-wordcount: '1171'
+source-wordcount: '1164'
 ht-degree: 0%
 
 ---
-
 
 # Dataförberedelse för datainsamling
 
@@ -154,7 +154,7 @@ Om du vill hämta egenskaper från ett XDM-objektdataelement gäller samma regle
 
 Du kan välja att överföra objektet som en fil eller klistra in raw-objektet i den angivna textrutan i stället. Om JSON är giltig visas ett förhandsgranskningsschema i den högra panelen. Välj **[!UICONTROL Next]** för att fortsätta.
 
-![JSON-exempel på förväntade inkommande data](assets/data-prep/select-data.png)
+![JSON-exempel på förväntade inkommande data.](assets/data-prep/select-data.png)
 
 >[!NOTE]
 >
@@ -171,25 +171,25 @@ The **[!UICONTROL Mapping]** visas så att du kan mappa fälten i källdata till
 
 Om du vill skapa en mappningsregel väljer du **[!UICONTROL Add new mapping]**.
 
-![Lägga till en ny mappning](assets/data-prep/add-new-mapping.png)
+![Lägger till en ny mappning.](assets/data-prep/add-new-mapping.png)
 
 Välj källikon (![Källikon](assets/data-prep/source-icon.png)) och i den dialogruta som visas väljer du det källfält som du vill mappa på den angivna arbetsytan. När du har valt ett fält använder du **[!UICONTROL Select]** för att fortsätta
 
-![Markera fältet som ska mappas i källschemat](assets/data-prep/source-mapping.png)
+![Markera fältet som ska mappas i källschemat.](assets/data-prep/source-mapping.png)
 
 Välj sedan schemaikonen (![Schemaikon](assets/data-prep/schema-icon.png)) för att öppna en liknande dialogruta för målhändelseschemat. Välj det fält som du vill mappa data till innan du bekräftar med **[!UICONTROL Select]**.
 
-![Markera fältet som ska mappas i målschemat](assets/data-prep/target-mapping.png)
+![Markera fältet som ska mappas i målschemat.](assets/data-prep/target-mapping.png)
 
 Mappningssidan visas igen med den ifyllda fältmappningen. The **[!UICONTROL Mapping progress]** avsnittsuppdateringar för att återspegla det totala antalet fält som har mappats.
 
-![Fältet har mappats med förloppet speglat](assets/data-prep/field-mapped.png)
+![Fältet har mappats med förloppet speglat.](assets/data-prep/field-mapped.png)
 
 >[!TIP]
 >
 >Om du vill mappa en array med objekt (i källfältet) till en array med olika objekt (i målfältet) lägger du till `[*]` efter arraynamnet i käll- och målfältssökvägarna, vilket visas nedan.
 >
->![Arrayobjektsmappning](assets/data-prep/array-object-mapping.png)
+>![Mappning av arrayobjekt.](assets/data-prep/array-object-mapping.png)
 
 ### Importera befintliga mappningsregler {#import-mapping}
 
@@ -201,11 +201,11 @@ Om du tidigare har skapat en datastream kan du återanvända dess konfigurerade 
 
 Börja genom att välja **[!UICONTROL Import Mapping]**.
 
-![Bild som visar [!UICONTROL Import Mapping] knapp som markeras](assets/data-prep/import-mapping-button.png)
+![Knappen Importera mappning markeras.](assets/data-prep/import-mapping-button.png)
 
 I den dialogruta som visas markerar du datastream vars mappningsregler du vill importera. När du har valt datastream väljer du **[!UICONTROL Preview]**.
 
-![Bild som visar ett befintligt datastream som markeras](assets/data-prep/select-mapping-rules.png)
+![Välja en befintlig datastream.](assets/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -213,7 +213,7 @@ I den dialogruta som visas markerar du datastream vars mappningsregler du vill i
 
 På nästa skärm visas en förhandsvisning av de sparade mappningsreglerna för det valda datastream. Kontrollera att de visade mappningarna är vad du förväntar dig och välj sedan **[!UICONTROL Import]** för att bekräfta och lägga till mappningarna i den nya datastream.
 
-![Bild som visar mappningsreglerna som ska importeras](assets/data-prep/import-mapping-rules.png)
+![Mappningsregler som ska importeras.](assets/data-prep/import-mapping-rules.png)
 
 >[!NOTE]
 >

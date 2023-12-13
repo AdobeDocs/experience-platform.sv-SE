@@ -4,9 +4,9 @@ description: Lär dig hur du konfigurerar identifieringen av robotar för datast
 hide: true
 hidefromtoc: true
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: 4881a82c0ce68d1efe85281d2a8c457a29531559
+source-git-commit: 50dcfa41905c0d94ef764278a538c0c332eb3780
 workflow-type: tm+mt
-source-wordcount: '1326'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
@@ -47,24 +47,22 @@ För att robotidentifiering ska fungera på din datastream måste du lägga till
 
 Du kan konfigurera robotidentifiering när du har skapat en datastream-konfiguration. Läs dokumentationen om hur du [skapa och konfigurera ett datastream](configure.md)följer du instruktionerna nedan för att lägga till båda identifieringsfunktioner i ditt datastream.
 
-
 Gå till datastreams-listan och välj den datastream som du vill lägga till robotidentifiering till.
 
-![Bild av användargränssnitt för datastreams](assets/bot-detection/datastream-list.png)
+![Datastreams-användargränssnitt som visar listan med datastreams.](assets/bot-detection/datastream-list.png)
 
 På informationssidan för datastream väljer du **[!UICONTROL Bot Detection]** till höger.
 
-![Bild av användargränssnittet för datastreams med alternativet Punktidentifiering markerat](assets/bot-detection/bot-detection.png)
+![Alternativet för punktidentifiering är markerat i användargränssnittet för datastreams.](assets/bot-detection/bot-detection.png)
 
 The **[!UICONTROL Bot Detection Rules]** visas.
 
-![Bild av användargränssnittet för datastreams med alternativet Punktidentifiering markerat](assets/bot-detection/bot-detection-page.png)
+![Inställningar för punktavkänning på inställningssidan för datastream.](assets/bot-detection/bot-detection-page.png)
 
 På sidan Regler för punktidentifiering kan du konfigurera robotidentifiering med följande funktioner:
 
 * Använda [!DNL [IAB/ABC International Spiders and Bots List]](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/).
 * Skapa egna identifieringsregler för robotar.
-
 
 ### Använd listan IAB/ABC International Spiders and Bots {#iab-list}
 
@@ -72,8 +70,7 @@ The [IAB/ABC International Spiders and Bots List](https://www.iab.com/guidelines
 
 Så här konfigurerar du din datastream att använda [!DNL IAB/ABC International Spiders and Bots List], växlar **[!UICONTROL Use IAB/ABC International Spiders and Bots List for bot detection on this datastream]** väljer du sedan Spara för att använda inställningarna för identifiering av robotar på ditt datastam.
 
-![Bild av inställningsskärmen för identifiering av robotar med IAB-spindlar och robotlista aktiverad.](assets/bot-detection/bot-detection-list.png)
-
+![IAB-spindlar och robotlista har aktiverats.](assets/bot-detection/bot-detection-list.png)
 
 ### Skapa identifieringsregler för robotar {#rules}
 
@@ -97,25 +94,21 @@ Om du behöver mer detaljerade regler för robotidentifiering kan du kombinera I
 | `sec-ch-ua-bitness` | Anger &quot;bitness&quot; för användaragentens underliggande processorarkitektur. Detta är storleken i bitar av ett heltal eller en minnesadress, vanligtvis 64 eller 32 bitar. |
 | `sec-ch-ua-wow64` | Anger om en användaragentbinärfil körs i 32-bitarsläge i 64-bitars Windows. |
 
-
-
-
-
 Följ stegen nedan för att skapa en regel för identifiering av robotar:
 
 1. Välj **[!UICONTROL Add New Rule]**.
 
-   ![Bild av inställningsskärmen för identifiering av robotar med knappen Lägg till ny regel markerad.](assets/bot-detection/bot-detection-new-rule.png)
+   ![Skärmen med inställningar för punktavkänning med knappen Lägg till ny regel markerad.](assets/bot-detection/bot-detection-new-rule.png)
 
 2. Ange ett namn för regeln i **[!UICONTROL Rule Name]** fält.
 
-   ![Bild av regelskärmen för robotidentifiering med regelnamnet markerat.](assets/bot-detection/rule-name.png)
+   ![Regelskärm för punktavkänning med regelnamnet markerat.](assets/bot-detection/rule-name.png)
 
 3. Välj **[!UICONTROL Add new IP condition]** om du vill lägga till en ny IP-baserad regel. Du kan definiera regeln efter IP-adress eller efter IP-adressintervall.
 
-   ![Bild av regelskärmen för robotidentifiering med IP-adressfältet markerat.](assets/bot-detection/ip-address-rule.png)
+   ![Skärm med IP-adressfältet markerat för att identifiera startregel.](assets/bot-detection/ip-address-rule.png)
 
-   ![Bild av regelskärmen för robotidentifiering med fältet IP-intervall markerat.](assets/bot-detection/ip-range-rule.png)
+   ![Skärm med regel för punktidentifiering med IP-intervallfältet markerat.](assets/bot-detection/ip-range-rule.png)
 
    >[!TIP]
    >
@@ -123,15 +116,15 @@ Följ stegen nedan för att skapa en regel för identifiering av robotar:
 
 4. Om du vill lägga till rubrikvillkor i regeln väljer du **[!UICONTROL Add header conditions group]** och markera sedan de rubriker som du vill att regeln ska använda.
 
-   ![Bild av regelskärmen för robotidentifiering med rubrikvillkoren markerade.](assets/bot-detection/header-conditions.png)
+   ![Regelskärm för punktavkänning med rubrikvillkoren markerade.](assets/bot-detection/header-conditions.png)
 
    Lägg sedan till de villkor som ska användas för den valda rubriken.
 
-   ![Bild av regelskärmen för robotidentifiering med rubrikvillkoren markerade.](assets/bot-detection/header-condition-rule.png)
+   ![Regelskärm för punktavkänning med rubrikvillkoren markerade.](assets/bot-detection/header-condition-rule.png)
 
 5. När du har konfigurerat önskade regler för robotidentifiering väljer du **[!UICONTROL Save]** om du vill att reglerna ska tillämpas på din datastream.
 
-   ![Bild av regelskärmen för robotidentifiering med rubrikvillkoren markerade.](assets/bot-detection/bot-detection-save.png)
+   ![Regelskärm för punktavkänning med rubrikvillkoren markerade.](assets/bot-detection/bot-detection-save.png)
 
 
 ## Exempel på regler för punktavkänning {#examples}
@@ -142,19 +135,19 @@ För att hjälpa dig komma igång med robotidentifiering kan du använda de exem
 
 Om du vill markera alla begäranden som kommer från en viss IP-adress som robottrafik skapar du en ny regel som utvärderar en enskild IP-adress, vilket visas i bilden nedan.
 
-![Bild av identifieringsregel för robotar baserad på en IP-adress.](assets/bot-detection/bot-detection-one-ip.png)
+![Regel för punktidentifiering som baseras på en IP-adress.](assets/bot-detection/bot-detection-one-ip.png)
 
 ### Punktidentifiering baserad på två IP-adresser {#two-ip}
 
 Om du vill markera alla begäranden som kommer från någon av de två specifika IP-adresserna som Båda-trafik skapar du en ny regel för robotidentifiering som utvärderar två IP-adresser, vilket visas i bilden nedan.
 
-![Bild av identifieringsregel för robotar baserad på två IP-adresser.](assets/bot-detection/bot-detection-two-ips.png)
+![Regel för punktavkänning som baseras på två IP-adresser.](assets/bot-detection/bot-detection-two-ips.png)
 
 ### Punktidentifiering baserad på ett intervall med IP-adresser {#range}
 
 Om du vill markera alla begäranden som kommer från en viss IP-adress i ett visst intervall som robottrafik, skapar du en ny regel för identifiering av robotar som utvärderar ett helt IP-adressintervall, vilket visas i bilden nedan.
 
-![Bild av identifieringsregel för robotar baserat på IP-intervall.](assets/bot-detection/bot-detection-range.png)
+![Regel för punktidentifiering baserad på IP-intervall.](assets/bot-detection/bot-detection-range.png)
 
 ### Punktavkänning baserad på en IP-adress och ett begärandehuvud {#ip-header}
 
@@ -162,7 +155,7 @@ Om du vill markera alla begäranden som kommer från en viss IP-adress och som i
 
 Den här regeln kontrollerar om begäran kommer från en viss IP-adress och om `referer` begäranhuvudet börjar med `www.adobe.com`.
 
-![Bild av identifieringsregel för robotar baserat på IP-adress och begärandehuvud.](assets/bot-detection/bot-detection-header-ip.png)
+![Regel för punktavkänning baserad på IP-adress och begärandehuvud.](assets/bot-detection/bot-detection-header-ip.png)
 
 ### Punktavkänning baserad på flera villkor {#multiple-conditions}
 
@@ -175,4 +168,4 @@ Regeln som visas i bilden nedan identifierar en robotursprungsbegäran om följa
 
 Begäran kommer från någon av de två IP-adresserna, `referer` sidhuvud börjar med `www.adobe.com`och `sec-ch-ua-mobile` identifierar att begäran kommer från en webbläsare på datorn.
 
-![Bild av regel för robotidentifiering som baseras på flera villkor.](assets/bot-detection/bot-detection-multiple.png)
+![Regel för punktavkänning som baseras på flera villkor.](assets/bot-detection/bot-detection-multiple.png)

@@ -2,9 +2,9 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+source-git-commit: 50dcfa41905c0d94ef764278a538c0c332eb3780
 workflow-type: tm+mt
-source-wordcount: '2542'
+source-wordcount: '2526'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Med inställningarna för geopositionering och nätverkssökning kan du definier
 
 Expandera **[!UICONTROL Geolocation and network lookup]** för att konfigurera inställningarna som beskrivs nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar konfigurationsskärmen för dataströmmen med inställningarna för geopositionering och nätverkssökning markerade.](assets/configure/geolookup.png)
+![Konfigurationsskärmen för dataström med inställningarna för geopositionering och nätverkssökning markerade.](assets/configure/geolookup.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -63,7 +63,7 @@ The **[!UICONTROL Device Lookup]** kan du välja enhetsspecifik information som 
 
 Expandera **[!UICONTROL Device Lookup]** för att konfigurera inställningarna som beskrivs nedan.
 
-![Skärmbild av användargränssnittet för plattformen som visar konfigurationsskärmen för dataströmmen med inställningarna för enhetssökning markerade.](assets/configure/device-lookup.png)
+![Konfigurationsskärmen för dataström med inställningarna för enhetssökning markerade.](assets/configure/device-lookup.png)
 
 >[!IMPORTANT]
 >
@@ -109,7 +109,7 @@ Om du konfigurerar ditt datastream för Experience Platform följer du självstu
 
 När du har konfigurerat en ny datastam eller valt en befintlig som ska visas, visas informationssidan för den datastream. Här finns mer information om datastream, inklusive dess ID.
 
-![Informationssida för ett datastream som skapats](assets/configure/view-details.png)
+![Datastream - informationssida.](assets/configure/view-details.png)
 
 På informationsskärmen för datastream kan du [lägg till tjänster](#add-services) för att aktivera funktioner från de Adobe Experience Cloud-produkter du har tillgång till. Du kan även redigera datastreams [grundläggande konfiguration](#create), uppdatera [mappningsregler](./data-prep.md), [kopiera datastream](#copy)eller ta bort den helt.
 
@@ -117,11 +117,11 @@ På informationsskärmen för datastream kan du [lägg till tjänster](#add-serv
 
 På informationssidan för ett datastream väljer du **[!UICONTROL Add Service]** för att börja lägga till tillgängliga tjänster för den aktuella datastream.
 
-![Välj Lägg till tjänst för att fortsätta](assets/configure/add-service.png)
+![Välj Lägg till tjänst för att fortsätta.](assets/configure/add-service.png)
 
 På nästa skärm använder du listrutemenyn för att välja en tjänst som ska konfigureras för det här dataflödet. Endast de tjänster som du har åtkomst till visas i den här listan.
 
-![Välj en tjänst i listan](assets/configure/service-selection.png)
+![Välj en tjänst i listan.](assets/configure/service-selection.png)
 
 Välj önskad tjänst, fyll i de konfigurationsalternativ som visas och välj sedan **[!UICONTROL Save]** för att lägga till tjänsten i datastream. Alla tillagda tjänster visas i informationsvyn för datastream.
 
@@ -137,7 +137,7 @@ Underavsnitten nedan beskriver konfigurationsalternativen för varje tjänst.
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Mer information finns i guiden på [skicka data till Analytics](../edge/data-collection/adobe-analytics/analytics-overview.md).
 
-![Adobe Analytics Settings Block](assets/configure/analytics-config.png)
+![Adobe Analytics datastream-inställningar.](assets/configure/analytics-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -148,7 +148,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Me
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Manager. Allt som behövs för att skicka data till Audience Manager är att aktivera det här avsnittet. De andra inställningarna är valfria men rekommenderas.
 
-![Inställningsblock för hantering av målgruppshantering i Adobe](assets/configure/audience-manager-config.png)
+![Adobe Audience Hantera datastream-inställningar.](assets/configure/audience-manager-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -167,7 +167,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Audience Mana
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Platform.
 
-![Adobe Experience Platform inställningsblock](assets/configure/platform-config.png)
+![Adobe Experience Platform datastream-inställningar.](assets/configure/platform-config.png)
 
 | Inställning | Beskrivning |
 |---| --- |
@@ -182,7 +182,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Pl
 
 Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 
-![Adobe Target inställningsblock](assets/configure/target-config.png)
+![Adobe Target datastream-inställningar.](assets/configure/target-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -195,7 +195,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Target.
 
 Den här tjänsten kontrollerar om och hur data skickas till [händelsevidarebefordran](../tags/ui/event-forwarding/overview.md).
 
-![Avsnittet Händelsevidarebefordran i konfigurationsgränssnittet](assets/configure/event-forwarding-config.png)
+![Avsnittet Händelsevidarebefordran i konfigurationsskärmen för datastream.](assets/configure/event-forwarding-config.png)
 
 | Inställning | Beskrivning |
 | --- | --- |
@@ -216,15 +216,15 @@ Du kan skapa en kopia av ett befintligt datastream och ändra informationen efte
 
 Från huvudsidan i [!UICONTROL Datastreams] väljer du ellips (**...**) för den aktuella datastream-filen och välj **[!UICONTROL Copy]**.
 
-![Bild som visar [!UICONTROL Copy] det alternativ som väljs i datastreams listvy](assets/configure/copy-datastream-list.png)
+![Bild som visar alternativet Kopiera som väljs i datastreams listvy.](assets/configure/copy-datastream-list.png)
 
 Du kan också välja **[!UICONTROL Copy Datastream]** från detaljvyn för en viss datastream.
 
-![Bild som visar [!UICONTROL Copy] alternativ som väljs från datastream-informationsvyn](assets/configure/copy-datastream-details.png)
+![Kopieringsalternativ väljs från datastream-informationsvyn.](assets/configure/copy-datastream-details.png)
 
 En bekräftelsedialogruta visas där du uppmanas att ange ett unikt namn för den nya datastream som ska skapas, tillsammans med information om de konfigurationsalternativ som ska kopieras. När du är klar väljer du **[!UICONTROL Copy]**.
 
-![Bild av bekräftelsedialogrutan för kopiering av ett datastream](assets/configure/copy-datastream-confirm.png)
+![Bekräftelsedialogruta för kopiering av ett datastream.](assets/configure/copy-datastream-confirm.png)
 
 Huvudsidan i [!UICONTROL Datastreams] arbetsytan visas igen med den nya datastream som visas.
 
