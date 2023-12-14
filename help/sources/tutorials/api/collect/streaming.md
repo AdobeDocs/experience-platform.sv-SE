@@ -5,9 +5,9 @@ title: Skapa ett direktuppspelat dataflöde för rådata med API:t för flödest
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta direktuppspelningsdata och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 9034cd965dff59d6c304b9a7c38d3860311614fe
+source-git-commit: 39b5a2b76c28033b9e98dcefc4cdcaa9964f4d2e
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
@@ -486,13 +486,15 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet.
 
 Se exempelnyttolasten nedan för exempel på råformat eller XDM-kompatibel json som du kan skicka för förtäring.
 
->[!TIP]
+>[!NOTE]
 >
->Följande exempel gäller alla tre:
->
->- [[!DNL Amazon Kinesis]](../create/cloud-storage/kinesis.md)
->- [[!DNL Azure Event Hubs]](../create/cloud-storage/eventhub.md)
->- [[!DNL Google PubSub]](../create/cloud-storage/google-pubsub.md)
+>Du måste lägga till en fördröjning på minst ~5 minuter mellan att dataflödet skapas och att data hämtas. Detta gör att dataflödet kan aktiveras fullständigt innan data hämtas.
+
+Följande exempel gäller för alla:
+
+- [[!DNL Amazon Kinesis]](../create/cloud-storage/kinesis.md)
+- [[!DNL Azure Event Hubs]](../create/cloud-storage/eventhub.md)
+- [[!DNL Google PubSub]](../create/cloud-storage/google-pubsub.md)
 
 >[!BEGINTABS]
 

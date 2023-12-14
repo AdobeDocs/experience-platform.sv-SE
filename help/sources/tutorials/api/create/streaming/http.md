@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: f94a51e22731977e120351c3b3598570666a624d
+source-git-commit: fe2e93b9595d9df9a088d627d696b559f259e80d
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1568'
 ht-degree: 0%
 
 ---
@@ -563,6 +563,10 @@ Ett lyckat svar returnerar HTTP-status 201 med information om ditt nya dataflöd
 ```
 
 ## Bokför data som ska importeras till plattformen {#ingest-data}
+
+>[!NOTE]
+>
+>Du måste lägga till en fördröjning på minst ~5 minuter mellan att dataflödet skapas och att data hämtas. Detta gör att dataflödet kan aktiveras fullständigt innan data hämtas.
 
 Nu när du har skapat ditt flöde kan du skicka ditt JSON-meddelande till direktuppspelningsslutpunkten som du skapade tidigare.
 
