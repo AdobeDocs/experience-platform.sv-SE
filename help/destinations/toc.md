@@ -4,17 +4,17 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: e5e9eb262df1591f91b3b23359162236f898db8c
+source-git-commit: 2e8aac316f5e5edf169181b9e371dcd91e81c40d
 workflow-type: tm+mt
-source-wordcount: '1204'
-ht-degree: 2%
+source-wordcount: '1188'
+ht-degree: 1%
 
 ---
 
 
 # Mål  {#destinations}
 
-* [Översikt över mål](./home.md)
+* [Översikt över destinationer](./home.md)
 * [Måltyper och -kategorier](./destination-types.md)
 * [Destinationsskydd (aktivering)](./guardrails.md)
 * Så fungerar destinationer {#how-destinations-work}
@@ -91,6 +91,7 @@ ht-degree: 2%
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)
       * [Uppgradering av pinterest-anslutning](./catalog/advertising/pinterest-upgrade.md)
+      * [PubMatic Connect-anslutning](./catalog/advertising/pubmatic.md)
       * [Snapchat Ads-anslutning](./catalog/advertising/snap-inc.md)
       * [The Trade Desk connection](./catalog/advertising/tradedesk.md)
       * [(Beta) The Trade Desk CRM connection](./catalog/advertising/tradedesk-emails.md)
@@ -228,7 +229,7 @@ ht-degree: 2%
          * [Krav på historisk profil](./destination-sdk/functionality/destination-configuration/historical-profile-qualifications.md)
       * [Regler för hastighetsbegränsning och återförsök för direktuppspelningsmål](./destination-sdk/functionality/rate-limiting-retry-policy.md)
       * [Hantering av målgruppsmetadata](./destination-sdk/functionality/audience-metadata-management.md)
-   * Användarhandböcker {#guides}
+   * Stödlinjer {#guides}
       * [Använd Destination SDK för att konfigurera ett direktuppspelningsmål](./destination-sdk/guides/configure-destination-instructions.md)
       * [Använd Destination SDK för att konfigurera ett filbaserat mål](./destination-sdk/guides/configure-file-based-destination-instructions.md)
       * [Skicka för granskning av ett mål som skapats i Destination SDK](./destination-sdk/guides/submit-destination.md)
