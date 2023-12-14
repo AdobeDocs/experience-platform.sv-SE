@@ -2,9 +2,9 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 251b00e0f0e063859f8d0a0e188fa805c7bf3f87
 workflow-type: tm+mt
-source-wordcount: '1159'
+source-wordcount: '1110'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Dokumentet innehåller en översikt över [!DNL Analytics] och beskriver använd
 
 ![En bild som visar hur data från olika Adobe-program, inklusive Adobe Analytics, överförs.](./images/analytics-data-experience-platform.png)
 
-På en hög nivå [!DNL Analytics] samlar in data från olika digitala kanaler och från flera datacenter över hela världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de vara klara att användas av [!DNL Real-Time Customer Profile]. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion genom [!DNL Data Science Workspace], [!DNL Query Service]och andra program för dataidentifiering.
+På en hög nivå [!DNL Analytics] samlar in data från olika digitala kanaler och från flera datacenter över hela världen. När data har samlats in tillämpas VISTA-regler (Visitor Identification, Segmentation and Transformation Architecture) och bearbetningsregler för att forma inkommande data. När rådata har genomgått den här enkla bearbetningen anses de vara klara att användas av [!DNL Real-Time Customer Profile]. I en process som är parallell med ovanstående är samma bearbetade data mikrobatchade och insamlade i plattformsdatauppsättningar för konsumtion genom [!DNL Query Service]och andra program för dataidentifiering.
 
 Se [översikt över bearbetningsregler](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=sv) för mer information om bearbetningsregler.
 
@@ -73,7 +73,7 @@ Följande tabell innehåller mer information om identitetsfält i [!DNL Analytic
 
 | Identitetsfält | Beskrivning |
 | --- | --- |
-| AAID | AAID är den primära enhetsidentifieraren i Adobe Analytics och finns garanterat för varje händelse som skickas via [!DNL Analytics] källa. Stödet kallas ibland för *ID för äldre analys* eller som `s_vi` cookie-ID. Trots detta skapas ett AAID även om `s_vi` cookie finns inte. Stödet representeras av `post_visid_high` och `post_visid_low` kolumner i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). För en given händelse innehåller AAID-fältet en enda identitet som kan vara någon av de olika typerna som beskrivs i [ordning för operationer [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **Anteckning**: Inom en hel rapportserie kan ett AAID innehålla en blandning av typer för olika händelser. |
+| STÖD | AAID är den primära enhetsidentifieraren i Adobe Analytics och finns garanterat för varje händelse som skickas via [!DNL Analytics] källa. Stödet kallas ibland för *ID för äldre analys* eller som `s_vi` cookie-ID. Trots detta skapas ett AAID även om `s_vi` cookie finns inte. Stödet representeras av `post_visid_high` och `post_visid_low` kolumner i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). För en given händelse innehåller AAID-fältet en enda identitet som kan vara någon av de olika typerna som beskrivs i [ordning för operationer [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). **Anteckning**: Inom en hel rapportserie kan ett AAID innehålla en blandning av typer för olika händelser. |
 | ECID | ECID (Experience Cloud-ID) är ett separat fält för enhetsidentifierare, som fylls i i Adobe Analytics när [!DNL Analytics] implementeras med Experience Cloud Identity Service. ECID kallas ibland även MCID (Marketing Cloud-ID). Om ett ECID finns för en händelse kan detta baseras på ECID beroende på om Analytics [respitperiod](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html) är konfigurerad. ECID representeras av `mcvisid` i Analytics-dataflöden. Mer information om ECID finns i [ECID - översikt](../../../identity-service/ecid.md). För information om hur ECID fungerar med [!DNL Analytics], se dokumentet på [Begäranden om analyser och Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/legacy-analytics.html). |
 | AACUSTOMID | AACUSTOMID är ett separat identifierarfält som fylls i i Adobe Analytics baserat på användningen av `s.VisitorID` i [!DNL Analytics] implementering. AACUSTOMID representeras av `cust_visid` kolumn i [[!DNL Analytics] dataflöden](https://experienceleague.adobe.com/docs/analytics/export/analytics-data-feed/data-feed-contents/datafeeds-reference.html). Om det finns ett AACUSTOMID kommer stödet att baseras på AACUSTOMID eftersom AACUSTOMID överför alla andra identifierare enligt definitionen i [ordning för operationer [!DNL Analytics] ID](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/analytics-order-of-operations.html). |
 
