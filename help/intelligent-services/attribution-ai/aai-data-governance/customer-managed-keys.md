@@ -3,9 +3,9 @@ keywords: insikter;attribuering;attribueringsinsikter;AAI-frågetjänst;attribue
 title: Kundhanterade nycklar
 description: Lär dig hur du ställer in kundhanterade nycklar för Attribution AI.
 exl-id: c00bf1a0-cc4c-4a34-83f1-d93829576866
-source-git-commit: f28558d5939607cabf449cbc03b7e0f5406f6326
+source-git-commit: a59c86d1f1d426d4954071032ddaff1bbc9f2781
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '158'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,6 @@ Du kan läsa dokumentationen om [Kundhanterade nycklar i Adobe Experience Platfo
 
 >[!NOTE]
 >
->[!DNL Customer Managed Keys] är för närvarande bara tillgängliga för organisationer som har köpt [[!DNL Healthcare Shield or Privacy & Security Shield]](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/vertical-blueprints/healthcare-vertical.html%3Flang%3Den) tilläggserbjudande.
+>[!DNL Customer Managed Keys] är för närvarande bara tillgängliga för organisationer som har köpt [!DNL Healthcare Shield or Privacy & Security Shield] tilläggserbjudande.
 
 Alla data som används av Platform krypteras under överföring och i vila för att skydda data, med eller utan CMK. Mer information om Adobe Experience Platform-kryptering finns i dokumentationen om [Datakryptering](../../../landing/governance-privacy-security/encryption.md).
