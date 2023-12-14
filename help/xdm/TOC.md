@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Experience Data Model-systemet (XDM)
 breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: 4f819dcbdf67dc0305b397c54de2b1149cff398d
 workflow-type: tm+mt
-source-wordcount: '531'
-ht-degree: 13%
+source-wordcount: '560'
+ht-degree: 10%
 
 ---
 
@@ -80,6 +80,7 @@ ht-degree: 13%
       * [Flygreservation](./field-groups/event/flight-reservation.md)
       * [IAB TCF 2.0-samtycke](./field-groups/event/iab.md)
       * [Bostadsreservation](./field-groups/event/lodging-reservation.md)
+      * [Interaktionsinformation för MediaAnalytics](./field-groups/event/mediaanalytics-interaction.md)
       * [Information om offertförfrågan](./field-groups/event/quote-request-details.md)
       * [Reservationsinformation](./field-groups/event/reservation-details.md)
       * [Information om Sitetool](./field-groups/event/sitetool-details.md)
@@ -104,17 +105,22 @@ ht-degree: 13%
 * Datatyper {#data-types}
    * [Kontoinformation](./data-types/account-details.md)
    * [Annonsbrytning](./data-types/ad-break.md)
+   * [Information om reklamdetaljer](./data-types/advertising-details-information.md)
+   * [Information om reklaminformation](./data-types/advertising-pod-details-information.md)
    * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
    * [B2B-källa](./data-types/b2b-source.md)
+   * [Kapitelinformation](./data-types/chapter-details-information.md)
    * [Commerce](./data-types/commerce.md)
    * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
    * [Valuta](./data-types/currency.md)
+   * [Information om anpassade metadata](./data-types/custom-metadata-details-information.md)
    * [Enhet](./data-types/device.md)
    * [E-postadress](./data-types/email-address.md)
    * [Miljö](./data-types/environment.md)
+   * [Felinformation](./data-types/error-details-information.md)
    * [Experience channel](./data-types/experience-channel.md)
    * [Granskningsattribut för externt källsystem](./data-types/external-source-system-audit-attributes.md)
    * [Finansiellt konto](./data-types/financial-account.md)
@@ -134,17 +140,22 @@ ht-degree: 13%
    * [Nyckelvärdepar](./data-types/key-value-pair.md)
    * [Marknadsföring](./data-types/marketing.md)
    * [Mät](./data-types/measure.md)
+   * [Medieinformation](./data-types/media-details-information.md)
+   * [Mediehändelseinformation](./data-types/media-event-information.md)
    * [Beställning](./data-types/order.md)
    * [Betalningsartikel](./data-types/payment-item.md)
    * [Person](./data-types/person.md)
    * [Personnamn](./data-types/person-name.md)
    * [Telefonnummer](./data-types/phone-number.md)
    * [Montera kontext](./data-types/place-context.md)
+   * [Information om spelarstatusdata](./data-types/player-state-data-information.md)
    * [POI-information](./data-types/poi-details.md)
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
    * [Produktlisteartikel](./data-types/product-list-item.md)
-   * [Sökning](./data-types/search.md)
+   * [Information om QoE-datainformation](./data-types/qoe-data-details-information.md)
+   * [Sök](./data-types/search.md)
+   * [Information om sessionsinformation](./data-types/session-details-information.md)
    * [Prenumeration](./data-types/subscription.md)
    * [Telecom Subscription](./data-types/telecom-subscription.md)
    * [Transaktion](./data-types/transaction.md)
@@ -188,7 +199,7 @@ ht-degree: 13%
    * [Ad hoc-scheman](api/ad-hoc.md)
    * [Blandningar (borttagna)](api/mixins.md)
    * [Bilaga](api/appendix.md)
-* Självstudiekurser {#tutorials}
+* Tutorials {#tutorials}
    * [Skapa ett schema i användargränssnittet](tutorials/create-schema-ui.md)
    * [Skapa ett schema i API:t](tutorials/create-schema-api.md)
    * [Lägga till specifika fält i ett schema (API)](./tutorials/specific-fields-api.md)
