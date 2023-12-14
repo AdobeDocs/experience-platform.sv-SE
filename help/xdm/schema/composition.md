@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 139d6a6632532b392fdf8d69c5c59d1fd779a6d1
+source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
 workflow-type: tm+mt
-source-wordcount: '4104'
+source-wordcount: '4106'
 ht-degree: 0%
 
 ---
@@ -222,7 +222,11 @@ Den senaste listan över tillgängliga standardfältgrupper i XDM finns i [offic
 
 Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera underfält. De kan definiera flera underfält på samma sätt som fältgrupper, men den största skillnaden är att datatyper kan inkluderas var som helst i ett schema genom att lägga till dem som&quot;datatyp&quot; för ett fält. Fältgrupper är bara kompatibla med vissa klasser, men datatyper kan inkluderas i alla överordnade klasser eller fältgrupper.
 
-[!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [!DNL Schema Registry] självstudiekurser, där det blir tydligare när du går igenom stegen för att definiera datatyper.
+>[!NOTE]
+>
+>Om ett fält definieras som en viss datatyp kan du inte skapa samma fält med en annan datatyp i ett annat schema. Begränsningen gäller för hela organisationens klientorganisation.
+
+[!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [Självstudiekurser för schemaregister](../tutorials/create-schema-api.md), där det blir tydligare när du går igenom stegen för att definiera datatyper.
 
 I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. Ett av fälten i [!UICONTROL Demographic Details] fältgruppen använder &quot;[!UICONTROL Object]&quot;, datatyp, enligt texten efter lodstreck (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
 
@@ -253,7 +257,7 @@ Giltiga intervall för dessa skalära typer kan begränsas ytterligare till viss
 * Byte
 * Datum
 * Datum-tid
-* Mappa
+* Karta
 
 >[!NOTE]
 >

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för datatyper
 description: Med slutpunkten /datatypes i API:t för schemaregister kan du programmässigt hantera XDM-datatyper i ditt upplevelseprogram.
 exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
-source-git-commit: 342da62b83d0d804b31744a580bcd3e38412ea51
+source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
 workflow-type: tm+mt
-source-wordcount: '1215'
+source-wordcount: '1247'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,17 @@ ht-degree: 0%
 
 Datatyper används som referenstypfält i klasser eller schemafältgrupper på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om datatyperna liknar fältgrupper på så sätt att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån. The `/datatypes` slutpunkt i [!DNL Schema Registry] Med API kan ni programmässigt hantera datatyper i ert upplevelseprogram.
 
+>[!NOTE]
+>
+>Om ett fält definieras som en viss datatyp kan du inte skapa samma fält med en annan datatyp i ett annat schema. Begränsningen gäller för hela organisationens klientorganisation.
+
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med datatyper {#list}
 
-Du kan visa alla datatyper under `global` eller `tenant` genom att göra en GET-förfrågan till `/global/datatypes` eller `/tenant/datatypes`, respektive.
+Du kan visa alla datatyper under `global` eller `tenant` genom att göra en GET-förfrågan till `/global/datatypes` eller `/tenant/datatypes`, respektive
 
 >[!NOTE]
 >
@@ -42,7 +46,7 @@ GET /{CONTAINER_ID}/datatypes?{QUERY_PARAMS}
 
 **Begäran**
 
-Följande begäran hämtar en lista med datatyper från `tenant` behållare, använda `orderby` frågeparameter för att sortera datatyperna efter deras `title` -attribut.
+Följande begäran hämtar en lista med datatyper från `tenant` behållare, använda en `orderby` frågeparameter för att sortera datatyperna efter deras `title` -attribut.
 
 ```shell
 curl -X GET \
@@ -235,7 +239,7 @@ POST /tenant/datatypes
 
 Till skillnad från fältgrupper krävs inte att du definierar en datatyp `meta:extends` eller `meta:intendedToExtend` fält, och fält måste inte heller kapslas för att undvika kollisioner.
 
-När det gäller att definiera fältstrukturen för själva datatypen kan du använda primitiva typer (som `string` eller `object`) eller du kan referera till andra befintliga datatyper via `$ref` attribut. Se guiden [definiera egna XDM-fält i API](../tutorials/custom-fields-api.md) för detaljerad vägledning om förväntat format för olika XDM-fälttyper.
+När det gäller att definiera fältstrukturen för själva datatypen kan du använda primitiva typer (som `string` eller `object`) eller du kan referera till andra befintliga datatyper via `$ref` attribut. Se guiden på [definiera egna XDM-fält i API](../tutorials/custom-fields-api.md) för detaljerad vägledning om förväntat format för olika XDM-fälttyper.
 
 I följande begäran skapas datatypen&quot;Property Construction&quot; med underegenskaper `yearBuilt`, `propertyType`och `location`:
 
@@ -498,7 +502,7 @@ PATCH /tenant/data type/{DATA_TYPE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` av den datatyp som du vill uppdatera. |
+| `{DATA_TYPE_ID}` | Den URL-kodade `$id` URI eller `meta:altId` av den datatyp som du vill uppdatera. |
 
 {style="table-layout:auto"}
 
@@ -536,7 +540,7 @@ curl -X PATCH \
 
 **Svar**
 
-Svaret visar att båda åtgärderna har utförts. The `description` har uppdaterats, och `floorSize` har lagts till under `definitions`.
+Svaret visar att båda åtgärderna utfördes utan fel. The `description` har uppdaterats, och `floorSize` har lagts till under `definitions`.
 
 ```JSON
 {
@@ -637,7 +641,7 @@ DELETE /tenant/datatypes/{DATA_TYPE_ID}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{DATA_TYPE_ID}` | URL-kodad `$id` URI eller `meta:altId` av den datatyp som du vill ta bort. |
+| `{DATA_TYPE_ID}` | Den URL-kodade `$id` URI eller `meta:altId` av den datatyp som du vill ta bort. |
 
 {style="table-layout:auto"}
 

@@ -2,9 +2,9 @@
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: c35c270afca57cb96228cea29fd5a39ec6615332
+source-git-commit: 6fe11b909369797e96d8fa52542ebd5761a27b03
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,10 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 Om du vill lägga till etiketter måste du först [välj ett befintligt schema att redigera](../ui/resources/schemas.md#edit) eller [skapa ett nytt schema](../ui/resources/schemas.md#create) om du vill visa dess struktur i Schemaredigeraren.
 
 Om du vill redigera etiketterna för ett enskilt fält kan du markera fältet på arbetsytan och sedan välja **[!UICONTROL Manage access]** i rätt spår.
+
+>[!IMPORTANT]
+>
+>Högst 300 etiketter kan användas i alla scheman.
 
 ![Välj ett fält på arbetsytan i Schemaredigeraren](../images/tutorials/labels/manage-access.png)
 

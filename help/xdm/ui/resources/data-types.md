@@ -5,9 +5,9 @@ title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 4214339c4a661c6bca2cd571919ae205dcb47da1
+source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
 workflow-type: tm+mt
-source-wordcount: '1300'
+source-wordcount: '1330'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,10 @@ ht-degree: 0%
 I Experience Data Model (XDM) är datatyper återanvändbara fält som innehåller flera underfält. Även om datatyperna liknar schemafältgrupper på så sätt att de medger konsekvent användning av en flerfältsstruktur, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån.
 
 Adobe Experience Platform har många standarddatatyper som kan användas för ett stort antal vanliga användningsfall för upplevelsehantering. Men du kan också definiera egna anpassade datatyper för att tillgodose dina unika affärsbehov.
+
+>[!NOTE]
+>
+>Om ett fält definieras som en viss datatyp kan du inte skapa samma fält med en annan datatyp i ett annat schema. Begränsningen gäller för hela organisationens klientorganisation.
 
 I den här självstudiekursen beskrivs stegen för att skapa och redigera anpassade datatyper i användargränssnittet för plattformen.
 

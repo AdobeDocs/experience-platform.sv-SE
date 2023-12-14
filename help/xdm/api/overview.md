@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-guide för schemaregister
 description: Med API:t för schemaregister kan utvecklare programmässigt hantera alla scheman och relaterade XDM-resurser (Experience Data Model) inom Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
 workflow-type: tm+mt
-source-wordcount: '1116'
+source-wordcount: '1141'
 ht-degree: 1%
 
 ---
@@ -21,13 +21,13 @@ Dessa slutpunkter beskrivs nedan. Mer information finns i de enskilda slutpunkts
 
 >[!IMPORTANT]
 >
->XDM använder JSON-schemaformatering för att beskriva och validera strukturen för importerade kundupplevelsedata. Innan du börjar arbeta med API:t för schemaregistret rekommenderar vi att du granskar [officiell dokumentation för JSON-schema](https://json-schema.org/) för en bättre förståelse av denna underliggande teknik.
+>XDM använder JSON-schemaformatering för att beskriva och validera strukturen för importerade kundupplevelsedata. Innan du börjar arbeta med API:t för schemaregistret bör du granska [officiell dokumentation för JSON-schema](https://json-schema.org/) för en bättre förståelse av denna underliggande teknik.
 
-Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [API-referens för schemaregister](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
+Om du vill visa alla tillgängliga slutpunkter och CRUD-åtgärder går du till [API-referens för schematabell](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 ## Scheman
 
-XDM-scheman representerar och validerar strukturen och formatet för data som hämtas till Platform. Ett schema består av en klass och noll eller flera schemafältgrupper. Du kan skapa, visa, redigera och ta bort scheman med `/schemas` slutpunkt. Om du vill lära dig hur du använder den här slutpunkten kan du läsa [slutpunktshandbok för scheman](./schemas.md).
+XDM-scheman representerar och validerar strukturen och formatet för data som hämtas till Platform. Ett schema består av en klass och noll eller flera schemafältgrupper. Med hjälp av `/schemas` slutpunkt. Om du vill lära dig hur du använder den här slutpunkten kan du läsa [slutpunktshandbok för scheman](./schemas.md).
 
 En steg-för-steg-guide om hur du skapar ett fullständigt schema i API:t för schemaregister, inklusive hur du skapar och lägger till fältgrupper och datatyper, finns i [Skapa API-schema, genomgång](../tutorials/create-schema-api.md).
 
@@ -39,7 +39,7 @@ Beteenden definierar den typ av data som ett schema beskriver. Varje XDM-klass m
 
 ## Klasser
 
-En klass definierar den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, och fastställer vilka fältgrupper som kan användas i dessa scheman. Alla klasser måste kopplas till ett befintligt beteende. Se [klassers slutpunktshandbok](./classes.md) om du vill ha mer information om hur du arbetar med klasser i API:t.
+En klass definierar den grundläggande strukturen för gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla, och fastställer vilka fältgrupper som kan användas i dessa scheman. Alla klasser måste kopplas till ett befintligt beteende. Se [stödlinje för klassers slutpunkt](./classes.md) om du vill ha mer information om hur du arbetar med klasser i API:t.
 
 ## Fältgrupper
 
@@ -48,6 +48,10 @@ Fältgrupper är återanvändbara komponenter som definierar ett eller flera fä
 ## Datatyper
 
 Datatyper används som referenstypfält i klasser eller fältgrupper på samma sätt som grundläggande litteralfält, med den största skillnaden är att datatyper kan definiera flera underfält. Även om datatyperna liknar fältgrupper på så sätt att de medger konsekvent användning av en struktur med flera fält, är datatyperna mer flexibla eftersom de kan inkluderas var som helst i schemastrukturen medan fältgrupper bara kan läggas till på rotnivån. Se [slutpunktsguide för datatyper](./data-types.md) om du vill ha mer information om hur du arbetar med datatyper i API:t.
+
+>[!NOTE]
+>
+>Om ett fält definieras som en viss datatyp kan du inte skapa samma fält med en annan datatyp i ett annat schema. Begränsningen gäller för hela organisationens klientorganisation.
 
 ## Beskrivningar
 
@@ -67,13 +71,13 @@ Se [Slutpunktshandbok för CSV-konvertering till schema](./export.md) för mer i
 
 >[!NOTE]
 >
->Du kan också använda användargränssnittet för att [mappa en CSV-fil till ett schema med hjälp av AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (för närvarande i betaversion).
+>Du kan också använda användargränssnittet för att [mappa en CSV-fil till ett schema med AI-genererade rekommendationer](../../ingestion/tutorials/map-csv/recommendations.md) (för närvarande i beta).
 
 ## Exportera {#export}
 
 Med API:t för schemaregister kan du överföra och dela XDM-resurser mellan sandlådor och organisationer. För alla scheman, fältgrupper och datatyper kan du generera en exportnyttolast som innehåller resursstrukturen och eventuella beroende resurser. Denna nyttolast kan sedan användas för att importera resursen till en målsandlåda och en målorganisation.
 
-Se [slutpunktsguide för export](./export.md) om du vill ha mer information om hur du skapar en exportnyttolast för en befintlig XDM-resurs.
+Se [slutpunktsguide för export](./export.md) för mer information om hur du skapar en exportnyttolast för en befintlig XDM-resurs.
 
 ## Import
 
