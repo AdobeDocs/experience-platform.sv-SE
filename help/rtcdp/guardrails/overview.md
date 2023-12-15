@@ -3,9 +3,9 @@ title: Real-Time CDP Guardrails
 description: Läs mer om de olika tjänsterna och områdena i Real-Time CDP.
 feature: Guardrails, Data Management, Data Ingestion, Data Export
 exl-id: 377499b4-5707-4d50-94e3-02f88ad5bf2c
-source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
+source-git-commit: af37aca17f4b365b52215b8c886e733f00c4a4e8
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '369'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ Börja här och följ länkarna nedan för att få en förståelse för alla sky
 * [Guardrails för [!DNL Identity Service] data](/help/identity-service/guardrails.md)
 * [Guardrails för [!DNL Query Service]](/help/query-service/guardrails.md)
 * [Garantier för dataaktivering via destinationer](/help/destinations/guardrails.md)
+* [Guardrails för Real-Time CDP B2B](/help/rtcdp/b2b-guardrails.md)
 
 >[!TIP]
 >
->Mer information finns i [den här sidan](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html) för information om skyddsräcken för andra Experience Platform-appar, som [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html) och [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)och [slingrande diagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+>Dessutom kan du besöka [de digitala upplevelseritningarna](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html) för ytterligare information som [slingrande diagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
+
 
 ## Skyddstyper {#guardrail-types}
 
@@ -46,6 +48,13 @@ Se även produktbeskrivningslänkarna nedan för information om licenser och til
 * [Real-time Customer Data Platform (B2C Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2P Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2B Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
+
+## Skyddsritningar för andra Experience Platform-program  {#guardrails-other-aep-apps}
+
+Det finns liknande skyddsräcken för andra Experience Platform-program. Mer information finns på länkarna nedan:
+
+* [Adobe Journey Optimizer skyddsräcken](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/guardrails.html?lang=en)
+* [Customer Journey Analytics skyddsräcken](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html)
 
 ## Nästa steg
 
