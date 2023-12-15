@@ -2,9 +2,9 @@
 title: Inmatning on demand för källdataflöden i användargränssnittet
 description: Lär dig hur du skapar dataflöden on demand för dina källanslutningar med användargränssnittet i Experience Platform.
 exl-id: e5a70044-2484-416a-8098-48e6d99c2d98
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 38da1c1d5e563ea3f66cc25a69ad726f709784d0
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '494'
 ht-degree: 1%
 
 ---
@@ -24,6 +24,10 @@ Flödeskörningar är en instans av körning av dataflöde. Om ett dataflöde ti
 >[!ENDSHADEBOX]
 
 ## Komma igång
+
+>[!NOTE]
+>
+>För att kunna skapa en flödeskörning måste du först ha flödes-ID:t för ett dataflöde som är schemalagt för engångsinmatning.
 
 Dokumentet kräver en fungerande förståelse av följande komponenter i Experience Platform:
 
