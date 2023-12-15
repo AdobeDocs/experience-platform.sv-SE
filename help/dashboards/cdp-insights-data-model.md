@@ -2,7 +2,7 @@
 title: Real-time Customer Data Platform Insights-datamodell
 description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights-datamodeller för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: e55bbba92b0e3b9c86a9962ffa0131dfb7c15e77
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
 source-wordcount: '1017'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Real-time Customer Data Platform Insights-datamodell
 
-Funktionen Real-time Customer Data Platform Insights-datamodell visar de datamodeller och SQL som används för insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa dessa SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator). Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs mer i dokumentationen om rapporter om snabbare arkiv om du vill veta mer [hur man bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler](../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md).
+Funktionen Real-time Customer Data Platform Insights-datamodell visar de datamodeller och SQL som används för insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa dessa SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator). Dessa insikter kan sedan användas som anpassade widgetar för dina användardefinierade instrumentpaneler. Läs mer i dokumentationen om rapporter om snabbare arkiv om du vill veta mer [hur man bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler](../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md).
 
 ## Förutsättningar
 

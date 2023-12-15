@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform oktober 2022
 description: Versionsinformation från oktober 2022 för Adobe Experience Platform.
 exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
-source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1122'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 **Nya eller uppdaterade destinationer** {#new-or-updated-destinations}
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL Line]](../../destinations/catalog/mobile-engagement/line.md) | Line är en populär kommunikationsplattform som knyter samman människor, tjänster och information och har växt från en chattapp till ett nav för underhållning, sociala aktiviteter och dagliga aktiviteter. |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365 är en molnbaserad plattform för affärsapplikationer som kombinerar ERP (Enterprise Resource Planning) och CRM (Customer Relationship Management) med produktivitetsapplikationer och AI-verktyg, vilket ger smidigare och mer kontrollerad drift, bättre tillväxtpotential och minskade kostnader. |
@@ -101,7 +101,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | Funktion | Beskrivning |
 | --- | --- |
 | Övervaka frågor via plattformsgränssnittet | Frågetjänsten [!UICONTROL Scheduled Queries] -fliken ger förbättrad synlighet för statusen för alla frågefunktioner via gränssnittet. Du kan nu hitta viktig information om status för dina frågekörningar, inklusive felmeddelanden och koder om de misslyckas, från [!UICONTROL Scheduled Queries] -fliken. Du kan även prenumerera på aviseringar via användargränssnittet för dessa frågor baserat på deras status. Se [Övervaka frågedokument](../../query-service/ui/monitor-queries.md) om du vill veta mer om funktionen. |
-| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Se [frågerapport för rapporter om arkiv](../../query-service/data-distiller/query-accelerated-store/reporting-insights-data-model.md) om du vill veta mer om funktionen. |
+| Frågeaccelererad datamodell för rapportinsikter | Som en del av Data Distiller SKU kan du med hjälp av det frågeaccelererade arkivet minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Med det förbättrade arkivet kan ni skapa en anpassad datamodell och/eller utöka den med befintliga Adobe Real-time Customer Data Platform datamodeller för att förbättra era rapportinsikter och deras visualiseringar. Se [frågerapport för rapporter om arkiv](../../query-service/data-distiller/customizable-insights/reporting-insights-data-model.md) om du vill veta mer om funktionen. |
 
 {style="table-layout:auto"}
 

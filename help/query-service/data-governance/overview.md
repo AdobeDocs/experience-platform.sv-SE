@@ -2,9 +2,9 @@
 title: Datastyrning i frågetjänst
 description: Den här översikten täcker de viktigaste elementen i datastyrningen i Experience Platform Query Service.
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: 260ba98f920c8006ab3ed7fb2519a8c1720916c8
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
-source-wordcount: '3121'
+source-wordcount: '3118'
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ The `CREATE VIEW` nyckelordet definierar en vy av en fråga, men vyn materialise
 
 #### Skapa fältbaserade åtkomstbegränsningar för accelererade datauppsättningar {#create-field-based-access-restrictions-on-accelerated-datasets}
 
-Med [attribueringsbaserad åtkomstkontroll](../../access-control/abac/overview.md) kan du definiera användningsomfång för organisation eller data om fakta- och dimensionsdatauppsättningar i [accelererad butik](../data-distiller/query-accelerated-store/send-accelerated-queries.md). På så sätt kan administratörer hantera åtkomsten till specifika segment och bättre hantera åtkomsten för användare eller grupper av användare.
+Med [attribueringsbaserad åtkomstkontroll](../../access-control/abac/overview.md) kan du definiera användningsomfång för organisation eller data om fakta- och dimensionsdatauppsättningar i [accelererad butik](../data-distiller/customizable-insights/send-accelerated-queries.md). På så sätt kan administratörer hantera åtkomsten till specifika segment och bättre hantera åtkomsten för användare eller grupper av användare.
 
 Om du vill skapa fältbaserade åtkomstbegränsningar för accelererade datauppsättningar kan du använda Query Service CTAS-frågor för att skapa accelererade datauppsättningar och strukturera dessa datauppsättningar baserat på befintliga XDM-scheman eller ad hoc-scheman. Administratörer kan sedan [lägga till och redigera etiketter för dataanvändning för schemat](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field) eller [ad hoc-schema](./ad-hoc-schema-labels.md#edit-governance-labels). Du kan använda, skapa och redigera etiketter i dina scheman från [!UICONTROL Labels] arbetsytan i [!UICONTROL Schemas] Gränssnitt.
 

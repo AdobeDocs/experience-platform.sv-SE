@@ -2,7 +2,7 @@
 title: Spåra datasignaler för att generera kundens livstidsvärde
 description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 38689125a43ad0b1a12a00efe6800bb310d7557c
+source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Det första steget i att etablera CLV är att skapa en härledd datauppsättning
 
 ## Utöka datamodellen för insikter och schemalägg uppdateringar {#extend-data-model-and-set-refresh-schedule}
 
-Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datamodell från Adobe Real-Time CDP för att kunna utnyttja era insikter i CLV-rapporterna. Läs dokumentationen för att lära dig mer om [skapa en datamodell med rapportinsikter via frågetjänsten som kan användas med accelererade lagringsdata och användardefinierade instrumentpaneler](../data-distiller/query-accelerated-store/reporting-insights-data-model.md#build-a-reporting-insights-data-model). Självstudiekursen innehåller följande steg:
+Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datamodell från Adobe Real-Time CDP för att kunna utnyttja era insikter i CLV-rapporterna. Läs dokumentationen för att lära dig mer om [skapa en datamodell med rapportinsikter via frågetjänsten som kan användas med accelererade lagringsdata och användardefinierade instrumentpaneler](../data-distiller/customizable-insights/reporting-insights-data-model.md#build-a-reporting-insights-data-model). Självstudiekursen innehåller följande steg:
 
 * Skapa en modell för att rapportera insikter med Data Distiller.
 * Skapa tabeller, relationer och fyll i data.

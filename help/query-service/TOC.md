@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: f319f05d600dfd2bc4840ff56aefb8098dbfb7aa
+source-git-commit: fbb627787580c6a4ffd1deb0009105f1ba821b6f
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '313'
 ht-degree: 13%
 
 ---
@@ -26,9 +26,10 @@ ht-degree: 13%
       - [Översikt](data-distiller/derived-datasets/overview.md)
       - [Sömlöst SQL-flöde](data-distiller/derived-datasets/seamless-sql-flow.md)
       - [Skapa decimalbaserade härledda datauppsättningar](data-distiller/derived-datasets/decile-based-derived-attributes.md)
-   - Query Accelerated Store {#query-accelerated-store}
-      - [Skicka accelererade frågor](data-distiller/query-accelerated-store/send-accelerated-queries.md)
-      - [Datamodellguide för rapportinsikter](data-distiller/query-accelerated-store/reporting-insights-data-model.md)
+   - Anpassningsbara insikter för utökad apprapportering {#customizable-insights}
+      - [Översikt](data-distiller/customizable-insights/overview.md)
+      - [Skicka accelererade frågor](data-distiller/customizable-insights/send-accelerated-queries.md)
+      - [Datamodellguide för rapportinsikter](data-distiller/customizable-insights/reporting-insights-data-model.md)
    - AI/ML-rörledningar {#ml-feature-pipelines}
       - [Översikt](data-distiller/ml-feature-pipelines/overview.md)
       - [Anslut till Jupyter-anteckningsböcker](data-distiller/ml-feature-pipelines/establish-connection.md)
