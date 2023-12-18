@@ -3,22 +3,26 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: c432bcb3c625b569ec5abbe4a77d683b7509e709
+source-git-commit: db6a0b45d600d16b24f7f749e414dfd0998fbf5e
 workflow-type: tm+mt
-source-wordcount: '1225'
+source-wordcount: '1242'
 ht-degree: 0%
 
 ---
 
 # Skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] använda [!DNL Data Prep]
 
+>[!WARNING]
+>
+>Inmatning i XDM-meddelanden (Experience Data Model) för entitetsuppdatering (med JSON PATCH-åtgärder) för profiluppdateringar via DCS-inloppet har tagits bort. Som ett alternativ kan du [importera rådata till DCS-ingången](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection) och ange nödvändiga datamappningar för att omvandla data till XDM-kompatibla meddelanden för profiluppdateringar.
+
 Direktuppspelande överföringar i [!DNL Data Prep] kan du skicka uppdateringar av delar av rader till [!DNL Real-Time Customer Profile] data samtidigt som nya identitetslänkar skapas och etableras med en enda API-begäran.
 
 Genom att direktuppspela uppladdningar kan du behålla dataformatet samtidigt som du översätter dessa data till [!DNL Real-Time Customer Profile] PATCH begär vid förtäring. Baserat på de indata du anger [!DNL Data Prep] gör att du kan skicka en enda API-nyttolast och översätta data till båda [!DNL Real-Time Customer Profile] PATCH och [!DNL Identity Service] SKAPA förfrågningar.
 
->[!WARNING]
+>[!NOTE]
 >
->Inmatning i XDM-meddelanden (Experience Data Model) för entitetsuppdatering (med JSON PATCH-åtgärder) för profiluppdateringar via DCS-inloppet har tagits bort. Som ett alternativ kan du [importera rådata till DCS-ingången](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection) och ange nödvändiga datamappningar för att omvandla data till XDM-kompatibla meddelanden för profiluppdateringar.
+>För att utnyttja uppgraderingsfunktionen rekommenderar vi att du inaktiverar XDM-kompatibla konfigurationer under datainmatning och mappar om inkommande nyttolast med [Data Prep Mapper](./ui/mapping.md).
 
 Det här dokumentet innehåller information om hur du direktuppspelar överföringar i [!DNL Data Prep].
 
