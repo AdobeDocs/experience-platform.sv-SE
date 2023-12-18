@@ -4,10 +4,10 @@ user-guide-title: Hjälp med Experience Data Model-systemet (XDM)
 breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
-source-git-commit: 4f819dcbdf67dc0305b397c54de2b1149cff398d
+source-git-commit: f0d437743b33818c27de94eb522227bb950e60cb
 workflow-type: tm+mt
-source-wordcount: '560'
-ht-degree: 10%
+source-wordcount: '588'
+ht-degree: 9%
 
 ---
 
@@ -58,16 +58,20 @@ ht-degree: 10%
       * [Information om sjukvårdsmedlem](./field-groups/profile/healthcare-member-details.md)
       * [Förmånsinformation](./field-groups/profile/loyalty-details.md)
       * [Kontaktinformation, privat](./field-groups/profile/personal-contact-details.md)
+      * [Profile Partner Enrichment (exempel)](./field-groups/profile/profile-partner-enrichment.md)
       * [Information om segmentmedlemskap](./field-groups/profile/segmentation.md)
       * [Telecom Subscription](./field-groups/profile/telecom-subscription.md)
       * [Kontaktinformation, arbete](./field-groups/profile/work-contact-details.md)
       * [XDM Business Person Components](./field-groups/profile/business-person-components.md)
       * [Information om XDM Business Person](./field-groups/profile/business-person-details.md)
+   * XDM-profil för enskild potentiell kund {#prospect-profile}
+      * [Information om partnerpotentiell kund (exempel)](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
       * [Reklaminformation](./field-groups/event/advertising-details.md)
       * [Programinformation](./field-groups/event/application-details.md)
       * [Saldoöverföringar](./field-groups/event/balance-transfers.md)
+      * [Punktidentifiering](./field-groups/event/bot-detection-information.md)
       * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
       * [Kortåtgärder](./field-groups/event/card-actions.md)
       * [Kanalinformation](./field-groups/event/channel-details.md)
@@ -105,14 +109,18 @@ ht-degree: 10%
 * Datatyper {#data-types}
    * [Kontoinformation](./data-types/account-details.md)
    * [Annonsbrytning](./data-types/ad-break.md)
+   * [Adress](./data-types/address.md)
    * [Information om reklamdetaljer](./data-types/advertising-details-information.md)
    * [Information om reklaminformation](./data-types/advertising-pod-details-information.md)
    * [Program](./data-types/application.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
    * [B2B-källa](./data-types/b2b-source.md)
+   * [Kundvagn](./data-types/cart.md)
+   * [Kategoridata](./data-types/category-data.md)
    * [Kapitelinformation](./data-types/chapter-details-information.md)
    * [Commerce](./data-types/commerce.md)
+   * [Handelsomfång](./data-types/commerce-scope.md)
    * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
    * [Valuta](./data-types/currency.md)
@@ -153,9 +161,14 @@ ht-degree: 10%
    * [POI-interaktion](./data-types/poi-interaction.md)
    * [Postadress](./data-types/postal-address.md)
    * [Produktlisteartikel](./data-types/product-list-item.md)
+   * [Återbetalningsartikel](./data-types/refund-item.md)
+   * [Rekvisitionslista](./data-types/requisition-list.md)
+   * [Retur](./data-types/return.md)
+   * [Returartikel](./data-types/return-item.md)
    * [Information om QoE-datainformation](./data-types/qoe-data-details-information.md)
    * [Sök](./data-types/search.md)
    * [Information om sessionsinformation](./data-types/session-details-information.md)
+   * [Leverans](./data-types/shipping.md)
    * [Prenumeration](./data-types/subscription.md)
    * [Telecom Subscription](./data-types/telecom-subscription.md)
    * [Transaktion](./data-types/transaction.md)

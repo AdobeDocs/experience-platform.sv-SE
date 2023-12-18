@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individual profile;fields;schemas;schema design;mixin;mixin;work details;profile work;
 solution: Experience Platform
-title: Fältgrupp för arbetskontaktinformation
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Arbetskontaktinformation.
+title: Schemafältgrupp för arbetskontaktinformation
+description: Läs mer om schemafältgruppen Arbetskontaktdetaljer.
 exl-id: 0133622c-e95f-4833-b2f8-3694d41751b4
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '184'
-ht-degree: 1%
+source-wordcount: '161'
+ht-degree: 0%
 
 ---
 

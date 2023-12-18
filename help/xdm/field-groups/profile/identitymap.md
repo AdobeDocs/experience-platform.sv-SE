@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individuell profil;fält;scheman;scheman;identityMap;identity map;identity map;Schema design;map;union schema;union schema
 title: Fältgrupp för IdentityMap-schema
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: Lär dig mer om klassen XDM Individual Profile.
 exl-id: c9928e85-ef1e-4739-ba1d-80505a9e60c3
-source-git-commit: 43b3b79a4d24fd92c7afbf9ca9c83b0cbf80e2c2
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---

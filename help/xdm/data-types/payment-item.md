@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;schemas;scheman;betalningsartikel;datatyp;datatyp;datatyp;
 solution: Experience Platform
-title: Betalningsobjektets datatyp
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Payment Item Experience Data Model).
+title: Typ av betalningsartikeldata
+description: Läs mer om datatypen XDM (Payment Item Experience Data Model).
 exl-id: d25a358b-73c1-468b-a9c5-808385689932
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '157'
-ht-degree: 2%
+source-wordcount: '135'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `currencyCode` | Sträng | ISO 4217-valutakoden som används för ordersummor. Alla instanser måste överensstämma med det reguljära uttrycket `^[A-Z]{3}$`. Exempel `USD` och `EUR`. |
+| `currencyCode` | Sträng | ISO 4217-valutakoden som används för ordersummor. Alla instanser måste överensstämma med det reguljära uttrycket `^[A-Z]{3}$`. Exempel: `USD` och `EUR`. |
 | `paymentAmount` | Dubbel | Betalningens värde. |
 | `paymentType` | Sträng | Betalningsmetoden för den här ordern. Godkända uppräkningsvärden är: <li> `cash` </li> <li> `credit_card` </li> <li> `debit_card` </li> <li> `gift_card` </li> <li> `check` </li> <li> `paypal` </li> <li> `wire_transfer` </li> <li> `credit_card_reference` </li> <li> `other` </li> |
 | `transactionID` | Sträng | Den unika transaktionsidentifieraren för den här betalningsartikeln. |

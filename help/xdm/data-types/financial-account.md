@@ -1,10 +1,10 @@
 ---
 title: Datatyp för finansiellt konto
-description: Det här dokumentet innehåller en översikt över datatypen XDM för det finansiella kontot.
+description: Läs mer om datatypen XDM för det finansiella kontot.
 exl-id: badf9b20-d397-4b46-b045-19c69806fe8e
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '95'
+source-wordcount: '82'
 ht-degree: 1%
 
 ---

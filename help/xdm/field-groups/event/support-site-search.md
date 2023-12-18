@@ -1,10 +1,10 @@
 ---
 title: Fältgrupp för webbplatssökningens schema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Support Site Search.
+description: Läs mer om schemafältgruppen Support Site Search.
 exl-id: 7bd442f0-f85c-491f-91ad-8b14b4b431eb
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '82'
+source-wordcount: '68'
 ht-degree: 1%
 
 ---

@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fält;scheman;scheman;scheman;adress;xdm:address;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Datatyp för postadress
-description: Det här dokumentet innehåller en översikt över datatypen XDM för postadress.
+description: Läs mer om datatypen XDM för postadress.
 exl-id: 94457fe5-80bc-4822-9f6c-48f77d56c89b
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 | `postOfficeBox` | Adressens box. |
 | `postalCode` | Postnumret för platsen. Postnummer är inte tillgängliga för alla länder. I vissa länder innehåller detta endast en del av postnumret. |
 | `primary` | Ett booleskt värde som anger om det här är personens primära adress. En profil kan bara ha en `primary` adress vid en viss tidpunkt. |
-| `region` | Regionen, distriktet eller distriktet i adressen. |
+| `region` | Region, region eller distrikt. |
 | `repositoryCreatedBy` | ID för den användare som skapade posten. |
 | `repositoryLastModifiedBy` | ID för den användare som senast ändrade posten. |
 | `stateProvince` | Delstaten eller provinsdelen av observationen. Formatet följer [ISO 3166-2 (land och delområde)](https://www.unece.org/cefact/locode/subdivisions.html) standard. |

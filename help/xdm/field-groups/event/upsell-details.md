@@ -1,10 +1,10 @@
 ---
 title: Schemafältgrupp för merförsäljning
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Upsell Details.
+description: Läs mer om schemafältgruppen Upsell Details.
 exl-id: 6b69805d-03bc-489b-945a-03e61b99842e
-source-git-commit: afdac5ce2ed967b4688d456a586c946bc2cf4179
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '122'
 ht-degree: 0%
 
 ---

@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;schemas;scheman;webbläsare;webbläsarinformation;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Datatypen Webbläsarinformation
-description: Dokumentet innehåller en översikt över XDM-datatypen Browser Details.
+description: Läs mer om datatypen XDM i webbläsarinformationen.
 exl-id: c67ff8bc-0614-4422-9bb7-689b98d7086d
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '259'
-ht-degree: 5%
+source-wordcount: '236'
+ht-degree: 0%
 
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Intern webbplatssökdatatyp
-description: Det här dokumentet innehåller en översikt över XDM-datatypen för intern webbplatssökning.
+description: Läs mer om XDM-datatypen för intern webbplatssökning.
 exl-id: 3cab9445-f641-4a44-9699-cd8a62da8a61
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -26,14 +26,14 @@ ht-degree: 0%
 | `numberOfResults` | [!UICONTROL Integer] | Det totala antalet returnerade sökresultat. |
 | `postalCode` | [!UICONTROL String] | Postnummer som används för sökningen, om tillämpligt. |
 | `productFindingMethods` | [!UICONTROL String] | Det interna söktermvärdet för webbplatsen med försäljningsbindning. Det här värdet anger vilken term som sökdes efter omedelbart innan en produkt visades. |
-| `radiusDistance` | [!UICONTROL Integer] | Kombinerat med `radiusType`anger det markerade avståndet för sökradien. |
+| `radiusDistance` | [!UICONTROL Integer] | Kombinerat med `radiusType`, anger det markerade avståndet för sökradien. |
 | `radiusType` | [!UICONTROL Integer] | Den valda avståndstypen för `radiusDistance`, antingen engelska mil eller kilometer. |
 | `refinementInstances` | [!UICONTROL Integer] | Antalet gånger som den interna webbplatssökningen har förfinats. |
 | `refinementType` | Array med strängar | Visar de förfiningstyper som använts på sökresultaten. Exempel är avdelning, varumärke, pris, butiker, recensioner, färg, material och så vidare. |
 | `refinementValue` | [!UICONTROL String] | Värdet som sökningen förfinades till. |
 | `resultsPageNumber` | [!UICONTROL Integer] | För sidnumrerade sökresultat spårar det här värdet den resultatsida som besökaren visar. |
 | `resultsPerPage` | [!UICONTROL Integer] | För sidnumrerade sökresultat spårar det här värdet antalet sökresultat som visas per sida. |
-| `searchType` | [!UICONTROL String] | Hämtar den sökmetod som körs, om tillämpligt. Exempel kan vara typsnittssökning, direkttypsökning eller någon annan typ av anpassad sökfunktion som en webbplats kan ha. |
+| `searchType` | [!UICONTROL String] | Hämtar den sökmetod som körs, om tillämpligt. Exempel kan vara typsnittssökning, direkttypssökning eller någon annan typ av anpassad sökfunktion som en webbplats kan ha. |
 | `sortOrder` | [!UICONTROL String] | Kombinerat med `sortType`, anger sorteringsordningen för sökresultaten, antingen stigande eller fallande. |
 | `term` | [!UICONTROL String] | Den interna sökterm som anges av besökaren. |
 

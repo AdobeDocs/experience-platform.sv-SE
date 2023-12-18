@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;webbinaktion;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Webbinteraktionsdatatyp
-description: Det här dokumentet innehåller en översikt över datatypen Experience Data Model (XDM) för webbinteraktion.
+description: Läs mer om datatypen Experience Data Model (XDM) för webbinteraktion.
 exl-id: 772d96c5-9fa3-4fed-8b38-16b8e7101743
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '182'
-ht-degree: 2%
+source-wordcount: '159'
+ht-degree: 0%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 2%
 | --- | --- | --- |
 | `linkClicks` | [[!UICONTROL Measure]](./measure.md) | Ett mått som spårar klickningen på en webblänk. |
 | `URL` | Sträng | Den faktiska länken eller URL-adressen som används för den här webbinteraktionen. |
-| `name` | Sträng | Det normativa namn som används för den här webblänken. Detta används i klassificeringssyfte. |
+| `name` | Sträng | Det normativa namn som används för den här webblänken. Detta används för klassificeringsändamål. |
 | `type` | Sträng | Länktypen. Den här egenskapen måste vara lika med ett av följande enum-värden: <li> `download` </li> <li> `exit` </li> <li> `other` </li> |
 
 {style="table-layout:auto"}

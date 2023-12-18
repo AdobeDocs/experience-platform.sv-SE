@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;schemadesign;fältgrupp;iab;tcf;medgivande;
 solution: Experience Platform
 title: IAB TCF 2.0-godkännandefältgrupp för profilscheman
-description: Det här dokumentet innehåller en översikt över schemafältgruppen IAB TCF 2.0 Consent för klassen XDM Individual Profile.
+description: Lär dig mer om schemafältgruppen IAB TCF 2.0 Consent för klassen XDM Individual Profile.
 exl-id: 52a4fee8-d7f4-4f27-8e26-0c132985eb84
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '307'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `identityPrivacyInfo` | Mappa | Ett mappningsobjekt som associerar en kunds individuella identitetsvärden med olika TCF-medgivandesträngar. Ett exempel på objektets struktur ges nedan. |
+| `identityPrivacyInfo` | Karta | Ett mappningsobjekt som associerar en kunds individuella identitetsvärden med olika TCF-medgivandesträngar. Ett exempel på objektets struktur ges nedan. |
 
 {style="table-layout:auto"}
 
@@ -58,7 +58,7 @@ Som exemplet visar är varje rotnivånyckel för `xdm:identityPrivacyInfo` motsv
 
 För varje identitetsvärde `identityIABConsent` egenskapen måste anges, vilket anger TCF-medgivandevärdet för identiteten. Värdet för den här egenskapen måste överensstämma med [[!UICONTROL Consent String] datatyp](../../data-types/consent-string.md).
 
-Se guiden [Stöd för IAB TCF 2.0 i Platform](../../../landing/governance-privacy-security/consent/iab/overview.md) om du vill ha mer information om hur den här fältgruppen används. Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
+Se guiden på [Stöd för IAB TCF 2.0 i Platform](../../../landing/governance-privacy-security/consent/iab/overview.md) om du vill ha mer information om hur den här fältgruppen används. Mer information om själva fältgruppen finns i den offentliga XDM-databasen:
 
 * [Populerat exempel](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.example.1.json)
 * [Fullständigt schema](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-privacy.schema.json)

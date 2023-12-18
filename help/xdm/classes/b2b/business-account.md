@@ -1,10 +1,10 @@
 ---
 title: XDM Business Account-klass
-description: Det här dokumentet innehåller en översikt över XDM Business Account-klassen i Experience Data Model (XDM).
+description: Läs mer om XDM Business Account-klassen i Experience Data Model (XDM).
 exl-id: abe4c919-a680-4aad-918e-6e56cae8bd4d
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '239'
 ht-degree: 0%
 
 ---
@@ -28,4 +28,4 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.
+Se guiden på [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

@@ -1,11 +1,11 @@
 ---
 title: Impression, datatyp
-description: Det här dokumentet innehåller en översikt över datatypen Impressions XDM.
+description: Läs mer om datatypen Impressions XDM.
 exl-id: 1e758043-a41e-45f7-ae8b-514990d0649e
-source-git-commit: afdac5ce2ed967b4688d456a586c946bc2cf4179
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '136'
-ht-degree: 2%
+source-wordcount: '113'
+ht-degree: 0%
 
 ---
 

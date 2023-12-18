@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;reservation details;
 title: Fältgrupp för reservationsdetaljschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Reservationsdetaljer.
+description: Läs mer om schemafältgruppen Reservationsdetaljer.
 exl-id: 06f9ee37-9879-4db2-af68-9336366f7521
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '322'
-ht-degree: 1%
+source-wordcount: '298'
+ht-degree: 0%
 
 ---
 

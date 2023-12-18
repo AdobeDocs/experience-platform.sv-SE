@@ -1,18 +1,18 @@
 ---
 solution: Experience Platform
 title: Samtyckessträngens datatyp
-description: Det här dokumentet innehåller en översikt över datatypen Consent String XDM.
+description: Läs mer om datatypen Consent String XDM.
 exl-id: 288ec79e-074a-4d72-9c5f-e9cd8485b804
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '194'
-ht-degree: 2%
+source-wordcount: '172'
+ht-degree: 0%
 
 ---
 
 # [!UICONTROL Consent String] datatyp
 
-[!UICONTROL Consent String] är en standard-XDM-datatyp som beskriver ett strängvärde som representerar kundens samtycke. Den innehåller sammanhangsberoende information som standarden för medgivandesträngen (t.ex. [IAB Transparency and Consent Framework (TCF) 2.0](../field-groups/profile/iab.md)).
+[!UICONTROL Consent String] är en standard-XDM-datatyp som beskriver ett strängvärde som representerar kundens samtycke. Den innehåller sammanhangsberoende information som standarden för medgivandesträngen (till exempel [IAB Transparency and Consent Framework (TCF) 2.0](../field-groups/profile/iab.md)).
 
 ![](../images/data-types/consent-string.png)
 

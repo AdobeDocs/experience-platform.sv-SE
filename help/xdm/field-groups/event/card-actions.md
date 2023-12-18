@@ -1,11 +1,11 @@
 ---
 title: Fältgrupp för kortåtgärdsschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Kortåtgärder.
+description: Läs mer om schemafältgruppen för kortåtgärder.
 exl-id: 49851544-9118-4b73-b1d1-4cf49b3f1dee
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '186'
-ht-degree: 2%
+source-wordcount: '172'
+ht-degree: 0%
 
 ---
 

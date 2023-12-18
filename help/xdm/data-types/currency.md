@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;schemas;scheman;enhet;datatyp;datatyp;datatyp;valuta;
 solution: Experience Platform
 title: Datatyp för valuta
-description: Det här dokumentet innehåller en översikt över datatypen Currency XDM.
+description: Läs mer om datatypen Currency XDM.
 exl-id: eaf4812e-32ec-4b07-82ef-60777f03623d
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '122'
-ht-degree: 1%
+source-wordcount: '102'
+ht-degree: 0%
 
 ---
 

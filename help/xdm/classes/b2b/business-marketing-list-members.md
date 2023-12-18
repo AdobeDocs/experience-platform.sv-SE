@@ -1,11 +1,11 @@
 ---
 title: Klassen XDM Business Marketing List-medlemmar
-description: Det här dokumentet innehåller en översikt över XDM Business Marketing List-medlemsklassen i Experience Data Model (XDM).
+description: Läs mer om XDM Business Marketing List-medlemsklassen i Experience Data Model (XDM).
 exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '312'
-ht-degree: 1%
+source-wordcount: '304'
+ht-degree: 0%
 
 ---
 
@@ -33,4 +33,4 @@ ht-degree: 1%
 
 {style="table-layout:auto"}
 
-Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.
+Se guiden på [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

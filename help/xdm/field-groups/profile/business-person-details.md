@@ -1,11 +1,11 @@
 ---
 title: Schemafältgrupp för XDM-affärspersonsinformation
-description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Person Details.
+description: Läs mer om schemafältgruppen XDM Business Person Details.
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '581'
-ht-degree: 2%
+source-wordcount: '553'
+ht-degree: 0%
 
 ---
 
@@ -52,7 +52,7 @@ ht-degree: 2%
 | `workAddress` | [Postadress](../../data-types/postal-address.md) | Personens arbetsadress. |
 | `workEmail` | [E-postadress](../../data-types/email-address.md) | Personens e-postadress till arbetet. |
 | `workPhone` | [Telefonnummer](../../data-types/phone-number.md) | Personens telefonnummer till arbetet. |
-| `identityMap` | Mappa | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas på rätt sätt [Kundprofil i realtid](../../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
+| `identityMap` | Karta | Ett kartfält som innehåller en uppsättning namngivna identiteter för personen. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas korrekt [Kundprofil i realtid](../../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
 | `isDeleted` | Boolean | Anger om den här personen har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 | `organizations` | Array med strängar | En lista med organisationsnamn där personen arbetar. |
 

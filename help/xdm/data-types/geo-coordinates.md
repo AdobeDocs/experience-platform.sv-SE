@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;schemas;scheman;geo;koordinater;datatyp;datatyp;datatyp;
 solution: Experience Platform
 title: Geo-koordinatens datatyp
-description: Det här dokumentet innehåller en översikt över XDM-datatypen Geo Coordinates.
+description: Läs mer om datatypen Geo Coordinates XDM.
 exl-id: 3c80eb44-852f-4a95-bd13-b6197ffe62da
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '127'
-ht-degree: 2%
+source-wordcount: '118'
+ht-degree: 0%
 
 ---
 

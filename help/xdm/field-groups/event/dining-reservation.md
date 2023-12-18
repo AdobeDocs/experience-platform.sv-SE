@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;matning;
 title: Fältgrupp för matreservationsschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Dining Reservation.
+description: Läs mer om schemafältgruppen Dining Reservation.
 exl-id: 672b7a77-c433-4502-a1ad-a17c811b253e
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '449'
-ht-degree: 2%
+source-wordcount: '425'
+ht-degree: 0%
 
 ---
 
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 [!UICONTROL Dining Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en matreservation.
 
-Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa allmänna fält [!UICONTROL Dining Reservation] innehåller `diningReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med restaurangspecifika egenskaper.
+Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa generiska fält [!UICONTROL Dining Reservation] innehåller `diningReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med restaurangspecifika egenskaper.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `diningReservations` array. För information om andra fält som anges i `reservations` objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
+>Det här dokumentet innehåller information om `diningReservations` array. För information om andra fält som anges i `reservations` -objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
 
 ![Reservationsstruktur för matning](../../images/field-groups/dining-reservation/structure.png)
 
@@ -32,9 +32,9 @@ Strukturen för varje objekt som anges under `diningReservations` anges nedan.
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `ID` | Sträng | Reservationsnumret eller identifieraren. |
+| `ID` | Sträng | Reservationsnummer eller identifierare. |
 | `cancellation` | Heltal | Det här värdet hämtas när en reservation har annullerats. |
-| `confirmationNumber` | Sträng | Reservationsbekräftelsenumret eller identifieraren. |
+| `confirmationNumber` | Sträng | Reservationsbekräftelsenummer eller identifierare. |
 | `created` | Heltal | Det här värdet hämtas när en reservation har skapats. |
 | `cuisine` | Heltal | Typ av restaurangmateri. |
 | `currencyCode` | Sträng | ISO 4217-valutakoden som användes för att göra köpet. |

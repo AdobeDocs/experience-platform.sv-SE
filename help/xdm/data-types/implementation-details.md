@@ -1,11 +1,11 @@
 ---
 title: Typ av implementeringsinformation
-description: Det här dokumentet innehåller en översikt över datatypen Experience Data Model (XDM) för implementeringsinformation.
+description: Lär dig mer om implementeringsinformation, datatypen Experience Data Model (XDM).
 exl-id: d3d16bae-196b-489d-8590-fd22150eedf1
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '120'
-ht-degree: 3%
+source-wordcount: '97'
+ht-degree: 1%
 
 ---
 

@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;
 solution: Experience Platform
 title: Fältgrupp för Commerce Details
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Commerce Details.
+description: Läs mer om schemafältgruppen Commerce Details.
 exl-id: 36aba186-fadb-4abb-a94f-7e151ff3f744
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '154'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `commerce` | [Commerce](../../data-types/commerce.md) | Ett objekt som beskriver produktreturer, garantiregistrering och kundvagns-/orderprocesser. |
+| `commerce` | [Handel](../../data-types/commerce.md) | Ett objekt som beskriver produktreturer, garantiregistrering och kundvagns-/orderprocesser. |
 | `productListItems` | Array med [Produktlistartiklar](../../data-types/product-list-item.md) | En lista med artiklar som representerar den eller de produkter som kunden har valt, med specifika alternativ och priser vid en viss tidpunkt (som kan skilja sig från produktposten). |
 
 {style="table-layout:auto"}

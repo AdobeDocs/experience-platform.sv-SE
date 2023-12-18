@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;enduserids;end user;ids;
 solution: Experience Platform
 title: Schemafältgrupp för detaljer för slutanvändar-ID
-description: Det här dokumentet innehåller en översikt över schemafältgruppen för information om slutanvändar-ID.
+description: Läs mer om schemafältgruppen för information om slutanvändar-ID.
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '192'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 | `aaid` | [Identitet](../../data-types/identity.md) | Slutanvändar-ID för Adobe Analytics Cloud. |
 | `acid` | [Identitet](../../data-types/identity.md) | Slutanvändar-ID för Adobe Campaign. |
 | `adcloud` | [Identitet](../../data-types/identity.md) | Slutanvändar-ID för Adobe Advertising Cloud. |
-| `emailid` | [Identitet](../../data-types/identity.md) | E-postadress-ID:n. |
+| `emailid` | [Identitet](../../data-types/identity.md) | E-postadress-ID. |
 | `mcid` | [Identitet](../../data-types/identity.md) | Adobe Marketing Cloud ID (MCID). MCID kallas nu Experience Cloud-ID (ECID). |
 | `phonenumberid` | [Identitet](../../data-types/identity.md) | Telefonnummer-ID. |
 | `tntid` | [Identitet](../../data-types/identity.md) | Slutanvändar-ID för Adobe Target. |

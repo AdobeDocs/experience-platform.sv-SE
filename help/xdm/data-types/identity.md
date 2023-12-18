@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;identity;datatype;data type;data type;
 solution: Experience Platform
 title: Identitetsdatatyp
-description: Det här dokumentet innehåller en översikt över datatypen Identity XDM.
+description: Läs mer om datatypen Identity XDM.
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '280'
-ht-degree: 2%
+source-wordcount: '259'
+ht-degree: 1%
 
 ---
 

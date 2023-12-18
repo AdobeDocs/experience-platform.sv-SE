@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;emailAddress;xdm:emailAddress;email;email address;data type;data type;data type;
 solution: Experience Platform
 title: Datatyp för e-postadress
-description: Det här dokumentet innehåller en översikt över XDM-datatypen för e-postadress.
+description: Läs mer om XDM-datatypen för e-postadresser.
 exl-id: 1364df42-f89f-4f48-bcda-5332f3828326
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 | `primary` | Anger om det här är personens primära e-postadress. En profil kan bara ha en `primary` e-postadress vid en viss tidpunkt. |
 | `status` | Anger om e-postadressen kan användas |
 | `statusReason` | En beskrivning av den aktuella `status`. |
-| `type` | Hur kontot är kopplat till personen (t.ex. `work` eller `personal`). |
+| `type` | Hur kontot är kopplat till personen (till exempel `work` eller `personal`). |
 
 {style="table-layout:auto"}
 

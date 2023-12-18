@@ -1,12 +1,12 @@
 ---
 solution: Experience Platform
 title: Allmänt fält för marknadsföringsinställningar med prenumerationsdatatyp
-description: Det här dokumentet innehåller en översikt över det allmänna inställningsfältet för marknadsföring med datatypen Subscriptions XDM.
+description: Läs mer om det allmänna fältet för marknadsföringsinställningar med XDM-datatypen Subscriptions.
 exl-id: 170ea6ca-77fc-4b0a-87f9-6d4b6f32d953
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '876'
-ht-degree: 1%
+source-wordcount: '857'
+ht-degree: 0%
 
 ---
 
@@ -18,14 +18,14 @@ ht-degree: 1%
 >
 >Den här datatypen är avsedd att användas för att anpassa strukturen för organisationens medgivandescheman med hjälp av [[!UICONTROL Consents and Preferences] fältgrupp](../field-groups/profile/consents.md) som en baslinje.
 >
->Om du inte behöver `subscriptions` karta för ett visst marknadsföringsinställningsfält kan du använda [datatyp för grundläggande marknadsföringsfält](./marketing-field.md) i stället.
+>Om du inte behöver en `subscriptions` karta för ett visst marknadsföringsinställningsfält kan du använda [datatyp för grundläggande marknadsföringsfält](./marketing-field.md) i stället.
 
 ![](../images/data-types/marketing-field-subscriptions.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `reason` | Sträng | När en kund väljer bort från ett marknadsföringsärende representerar det här strängfältet anledningen till varför kunden valde bort. |
-| `subscriptions` | Mappa | En karta över kundernas marknadsföringsönskemål för specifika prenumerationer. Se avsnittet om [prenumerationer](#subscriptions) för mer information. |
+| `subscriptions` | Karta | En karta över kundernas marknadsföringsönskemål för specifika prenumerationer. Se avsnittet om [prenumerationer](#subscriptions) för mer information. |
 | `time` | DateTime | En ISO 8601-tidsstämpel för när marknadsföringsinställningen ändrades, om tillämpligt. |
 | `val` | Sträng | Kundens val av preferens för detta marknadsföringsärende. Se [nästa avsnitt](#val) för godkända värden och definitioner. |
 
@@ -38,7 +38,7 @@ I följande tabell visas godkända värden för `val`:
 | Värde | Titel | Beskrivning |
 | --- | --- | --- |
 | `y` | Ja (anmälan) | Kunden har valt att göra detta. Med andra ord: **do** samtycke till att deras uppgifter används på det sätt som anges i föremålet i fråga. |
-| `n` | Nej (avanmäl dig) | Kunden har valt att inte göra det. Med andra ord: **inte** samtycke till att deras uppgifter används på det sätt som anges i föremålet i fråga. |
+| `n` | Nej (avanmälan) | Kunden har valt att inte göra det. Med andra ord: **inte** samtycke till att deras uppgifter används på det sätt som anges i föremålet i fråga. |
 | `p` | Väntande verifiering | Systemet har ännu inte fått något slutligt inställningsvärde. Detta används oftast som en del av ett samtycke som kräver tvåstegsverifiering. Om en kund till exempel väljer att ta emot e-postmeddelanden ställs detta medgivande in på `p` tills de väljer en länk i ett e-postmeddelande för att verifiera att de har angett rätt e-postadress, och då uppdateras medgivandet till `y`.<br><br>Om den här inställningen inte använder en verifieringsprocess i två uppsättningar `p` kan i stället användas för att ange att kunden ännu inte har svarat på frågan om samtycke. Du kan till exempel ställa in värdet automatiskt på `p` på första sidan av en webbplats, innan kunden har svarat på frågan om samtycke. I jurisdiktioner som inte kräver uttryckligt medgivande kan ni också använda det för att ange att kunden inte uttryckligen har avanmält sig (med andra ord antas medgivande). |
 | `u` | Okänd | Kundens inställningsinformation är okänd. |
 | `dy` | Standard för Ja (anmälan) | Kunden har inte lämnat in något medgivande i sig och behandlas som en anmälan (&quot;Ja&quot;) som standard. Med andra ord antas samtycke tills kunden anger något annat.<br><br>Observera att om lagar eller ändringar i företagets sekretesspolicy leder till ändringar av standardvärdena för vissa eller alla användare, måste du uppdatera alla profiler som innehåller standardvärden manuellt. |
@@ -97,7 +97,7 @@ Följande JSON representerar ett exempel på ett marknadsföringsfält för en m
 | `val` | The [medgivandevärde](#val) för prenumerationen. |
 | `type` | Prenumerationstypen. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken. |
 | `topics` | En array med strängar som representerar intressanta områden som en kund prenumererar på, som kan användas för att skicka relevant innehåll till dem. |
-| `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel som anger när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |
+| `subscribers` | Ett valfritt mappningsfält som representerar en uppsättning identifierare (t.ex. e-postadresser eller telefonnummer) som har prenumererat på en viss prenumeration. Varje nyckel i det här objektet representerar den aktuella identifieraren och innehåller två underegenskaper: <ul><li>`time`: En ISO 8601-tidsstämpel för när identiteten prenumererade, om tillämpligt.</li><li>`source`: Källan som prenumeranten kommer från. Detta kan vara vilken beskrivande sträng som helst, förutsatt att den är högst 15 tecken.</li></ul> |
 
 {style="table-layout:auto"}
 

@@ -1,17 +1,17 @@
 ---
 title: Medicinaklass
-description: Det här dokumentet innehåller en översikt över klassen Medication i Experience Data Model (XDM).
+description: Läs mer om klassen Medication i Experience Data Model (XDM).
 exl-id: e5786241-dd6e-450f-98c8-2de46affb3e2
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '138'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL Medication] class
 
-I Experience Data Model (XDM) är [!UICONTROL Medication] Klassen innehåller den minsta uppsättning egenskaper som definierar ett ämne som används för medicinsk behandling, särskilt ett läkemedel eller läkemedel.
+I Experience Data Model (XDM) är [!UICONTROL Medication] Klassen innehåller den minsta uppsättning egenskaper som definierar en substans som används för medicinsk behandling, särskilt ett läkemedel eller läkemedel.
 
 ![Klassstruktur](../images/classes/medication.png)
 

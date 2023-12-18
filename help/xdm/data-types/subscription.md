@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;prenumeration;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Typ av prenumerationsdata
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Subscription Experience Data Model).
+description: Läs mer om datatypen XDM (Subscription Experience Data Model).
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '412'
-ht-degree: 8%
+source-wordcount: '383'
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 8%
 | `device` | [[!UICONTROL Device]](./device.md) | Beskriver information om enheten som är länkad till prenumerationen. |
 | `environment` | [[!UICONTROL Environment]](./environment.md) | Innehåller information om den omgivande situation som händelseobservationen inträffade, med detaljerad information om övergångar, t.ex. nätverks- eller programversioner. |
 | `subscriber` | [[!UICONTROL Person]](./person.md) | Beskriver en enskild person. Detta kan även representera en person som agerar i olika roller, till exempel en kund, kontakt eller ägare. |
-| `SKU` | Sträng | Lagerhållningsenheten (SKU), en unik identifierare för en produkt. |
+| `SKU` | Sträng | Lagerhållningsenheten, en unik identifierare för en produkt. |
 | `billingPeriod` | Sträng | Varaktigheten mellan faktureringar. |
 | `billingStartDate` | Datum | Datumet då den första fakturan förfaller. Datumformatet (utan tid) ska följa [RFC 3339, avsnitt 5.6](https://tools.ietf.org/html/rfc3339#section-5.6) standard. |
 | `category` | Sträng | Huvudkategorisering på högsta nivå av den här typen av prenumeration. |
@@ -41,7 +41,7 @@ ht-degree: 8%
 | `subCategory` | Sträng | Den specifika underkategoriseringen av prenumerationen. |
 | `term` | Heltal | Det numeriska värdet för prenumerationsperioden. |
 | `termUnitOfTime` | Sträng | Tidsenhet för löptiden. |
-| `topUp` | Sträng | Beskriver de överenskomna villkoren för hur förbrukningsaspekter av en prenumeration återköps under en faktureringsperiod. |
+| `topUp` | Sträng | Beskriver de överenskomna villkoren för hur konsumerbara delar av en prenumeration återköps under en faktureringsperiod. |
 | `type` | Sträng | Rättighetens omfattning i förhållande till hur många personer som omfattas av prenumerationen. |
 
 {style="table-layout:auto"}

@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;Webbsidesinformation;datatyp;datatyp;webbsida
 solution: Experience Platform
 title: Typ av Experience Channel-data
-description: Det här dokumentet innehåller en översikt över datatypen Experience channel Experience Data Model (XDM).
+description: Läs mer om datatypen Experience channel Experience Data Model (XDM).
 exl-id: 209654f7-0bde-439a-989c-ce2e41599105
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '264'
-ht-degree: 2%
+source-wordcount: '240'
+ht-degree: 0%
 
 ---
 

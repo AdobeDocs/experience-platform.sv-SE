@@ -1,11 +1,11 @@
 ---
 title: XDM Business Person Components Schemafältgrupp
-description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Person Components.
+description: Läs mer om schemafältgruppen XDM Business Person Components.
 exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '527'
-ht-degree: 1%
+source-wordcount: '496'
+ht-degree: 0%
 
 ---
 

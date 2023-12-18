@@ -1,10 +1,10 @@
 ---
 title: XDM Business Campaign Details Schema Field Group
-description: Det här dokumentet innehåller en översikt över schemafältgruppen XDM Business Campaign Details.
+description: Läs mer om schemafältgruppen XDM Business Campaign Details.
 exl-id: 3ef6c0b9-cba1-449e-8868-46446c00465f
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 0%
 | `timeZoneDelivery` | [!UICONTROL String] | Den leveranstidszon som kampanjen körs i. |
 | `timeZoneName` | [!UICONTROL String] | Namnet på den tidszon som kampanjen körs i. |
 | `webinarHistorySyncDate` | [!UICONTROL DateTime] | En ISO 8601-tidsstämpel för den senaste webbseminariehistoriksynkroniseringen för kampanjen. |
-| `webinarHistorySyncStatus` | [!UICONTROL String] | Status för webbinariets historiksynkronisering för den här kampanjen. |
+| `webinarHistorySyncStatus` | [!UICONTROL String] | Status för webbinariets historiksynkronisering för kampanjen. |
 | `webinarSessionDescription` | [!UICONTROL String] | En beskrivning av det webbinarium som är associerat med kampanjen. |
 | `webinarSessionName` | [!UICONTROL String] | Ett namn på det webbinarium som är associerat med kampanjen. |
 

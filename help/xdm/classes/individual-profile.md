@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;individuell profil;fält;scheman;scheman;identityMap;identity map;identity map;Schema design;map;union schema;union schema
 solution: Experience Platform
 title: XDM-klass för enskild profil
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: Lär dig mer om klassen XDM Individual Profile.
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: 983682489e2c0e70069dbf495ab90fc9555aae2d
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '545'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ The [!DNL XDM Individual Profile] klassen innehåller flera systemgenererade vä
 | Egenskap | Beskrivning |
 | --- | --- |
 | `_repo` | Ett objekt som innehåller följande [!UICONTROL DateTime] fält: <ul><li>`createDate`: Datum och tid då resursen skapades i datalagret, till exempel när data först importerades.</li><li>`modifyDate`: Datum och tid då resursen senast ändrades.</li></ul> |
-| `_id` | En unik strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och söka upp posten i underordnade tjänster. I vissa fall `_id` kan vara en [Universally Unique Identifier (UUID)](https://tools.ietf.org/html/rfc4122) eller [GUID (Global Unique Identifier)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>Om du direktuppspelar data från en källanslutning eller direkt inmatning från en Parquet-fil, bör du generera det här värdet genom att sammanfoga en viss kombination av fält som gör posten unik, t.ex. ett primärt ID, en tidsstämpel, en posttyp o.s.v. Det sammanfogade värdet måste vara ett `uri-reference` formaterad sträng, vilket innebär att alla kolontecken måste tas bort. Efteråt bör det sammanfogade värdet hashas med SHA-256 eller någon annan algoritm som du väljer.<br><br>Det är viktigt att särskilja **detta fält inte representerar en identitet som relateras till en enskild person**, utan själva dataposten. Identitetsuppgifter som rör en person bör begränsas till [identitetsfält](../schema/composition.md#identity) tillhandahålls av kompatibla fältgrupper i stället. |
+| `_id` | En unik strängidentifierare för posten. Det här fältet används för att spåra en enskild posts unika karaktär, förhindra dubblering av data och söka upp posten i underordnade tjänster. I vissa fall `_id` kan vara [Universally Unique Identifier (UUID)](https://tools.ietf.org/html/rfc4122) eller [GUID (Global Unique Identifier)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>Om du direktuppspelar data från en källanslutning eller direkt inmatning från en Parquet-fil, bör du generera det här värdet genom att sammanfoga en viss kombination av fält som gör posten unik, till exempel ett primärt ID, en tidsstämpel, en posttyp och så vidare. Det sammanfogade värdet måste vara ett `uri-reference` formaterad sträng, vilket innebär att alla kolontecken måste tas bort. Efteråt bör det sammanfogade värdet hashas med SHA-256 eller någon annan algoritm som du väljer.<br><br>Det är viktigt att särskilja **det här fältet representerar inte en identitet som relateras till en enskild person**, utan själva dataposten. Identitetsuppgifter som rör en person bör begränsas till [identitetsfält](../schema/composition.md#identity) tillhandahålls av kompatibla fältgrupper i stället. |
 | `createdByBatchID` | ID:t för den inkapslade batchen som gjorde att posten skapades. |
 | `modifiedByBatchID` | ID:t för den senaste inkapslade batchen som gjorde att posten uppdaterades. |
 | `personID` | En unik identifierare för den person som den här posten är relaterad till. Det här fältet representerar inte nödvändigtvis en identitet som är relaterad till personen såvida det inte också anges som en [identitetsfält](../schema/composition.md#identity). |

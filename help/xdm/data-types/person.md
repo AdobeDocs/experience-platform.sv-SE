@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;person;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Persondatatyp
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Person Experience Data Model).
+description: Läs mer om datatypen XDM (Person Experience Data Model).
 exl-id: f28a52be-90c7-4ed0-a460-97165bb58046
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '334'
-ht-degree: 3%
+source-wordcount: '314'
+ht-degree: 0%
 
 ---
 

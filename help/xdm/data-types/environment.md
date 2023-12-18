@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;miljö;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Miljödatatyp
-description: Det här dokumentet innehåller en översikt över datatypen Environment XDM.
+description: Läs mer om datatypen Environment XDM.
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '462'
-ht-degree: 3%
+source-wordcount: '437'
+ht-degree: 0%
 
 ---
 
@@ -52,7 +52,7 @@ Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] dat
 
 ## Godkända värden för typ {#type}
 
-I följande tabell visas godkända värden för `type` och deras betydelse:
+I följande tabell visas godkända värden för `type` och deras innebörd:
 
 | Värde | Beskrivning |
 | --- | --- |

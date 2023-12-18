@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;sökning;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Sökdatatyp
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Search Experience Data Model).
+description: Läs mer om datatypen XDM (Search Experience Data Model).
 exl-id: 9893cb67-b0c7-4f91-a0d4-96f7b87d9510
-source-git-commit: 5caa4c750c9f786626f44c3578272671d85b8425
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '179'
-ht-degree: 2%
+source-wordcount: '158'
+ht-degree: 0%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 2%
 | `position` | Heltal | Listans position eller rangordning på sökresultatsidan. |
 | `searchEngine` | Sträng | Sökmotorn som används av sökningen. |
 | `searchEngineID` | Sträng | Programspecifik identifierare som används för att identifiera sökmotorn. |
-| `slot` | Sträng | Det namngivna avsnittet på sidan där sökresultatet visades. Värdet för den här egenskapen måste vara lika med ett av de kända enum-värden som du definierar, till exempel `top`, `side`, eller `bottom`. |
+| `slot` | Sträng | Det namngivna avsnittet på sidan där sökresultatet visades. Värdet för den här egenskapen måste vara lika med ett av de kända uppräkningsvärden som du definierar, till exempel `top`, `side`, eller `bottom`. |
 
 {style="table-layout:auto"}
 

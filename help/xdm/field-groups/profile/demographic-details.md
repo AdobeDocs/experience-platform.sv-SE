@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;Individuell profil;fält;scheman;scheman;schemadesign;fältgrupp;fältgrupp;person;personinformation;profilpersoninformation;person;
 solution: Experience Platform
-title: Fältgrupp för schema för demografiska detaljer
-description: Det här dokumentet innehåller en översikt över schemafältgruppen för demografiska detaljer.
+title: Fältgrupp för schemainformation för demografiska detaljer
+description: Läs mer om schemafältgruppen för demografiska detaljer.
 exl-id: 588c044c-b80d-4cb9-9f97-92f040d54bb4
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '275'
-ht-degree: 2%
+source-wordcount: '257'
+ht-degree: 0%
 
 ---
 

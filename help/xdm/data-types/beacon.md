@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;beacon;interaktionsinformation;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Beacon-datatyp
-description: Det här dokumentet innehåller en översikt över klassen XDM Individual Profile.
+description: Lär dig mer om klassen XDM Individual Profile.
 exl-id: a3767c8d-a009-49b4-81a4-b084b6e5101a
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '247'
-ht-degree: 2%
+source-wordcount: '230'
+ht-degree: 1%
 
 ---
 
@@ -37,11 +37,11 @@ Följande avsnitt innehåller ytterligare information om [!UICONTROL Beacon] dat
 
 ## Godkända värden för närhet {#proximity}
 
-I följande tabell visas godkända värden för `proximity` och deras betydelse:
+I följande tabell visas godkända värden för `proximity` och deras innebörd:
 
 | Värde | Beskrivning |
 | --- | --- |
 | `immediate` | Inom några centimeter. |
 | `near` | Mindre än 10 meter bort. |
-| `far` | Mer än 10 meter bort. |
+| `far` | Mer än tio meter bort. |
 | `unknown` | Avståndet kunde inte fastställas, troligen på grund av en svag signal. |

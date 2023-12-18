@@ -1,11 +1,11 @@
 ---
 title: XDM Business Marketing List-klass
-description: Det här dokumentet innehåller en översikt över klassen XDM Business Marketing List i Experience Data Model (XDM).
+description: Läs mer om klassen XDM Business Marketing List i Experience Data Model (XDM).
 exl-id: 510c5608-054d-4bed-91eb-22d84b5dc625
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '292'
-ht-degree: 1%
+source-wordcount: '284'
+ht-degree: 0%
 
 ---
 
@@ -27,8 +27,8 @@ ht-degree: 1%
 | `isDeleted` | Boolean | Anger om den här marknadsföringslistentiteten har tagits bort i Marketo Engage.<br><br>När du använder [Marketo källanslutning](../../../sources/connectors/adobe-applications/marketo/marketo.md), återspeglas alla poster som tas bort i Marketo automatiskt i kundprofilen i realtid. Poster som rör dessa profiler kan dock fortfarande finnas kvar i datasjön. Efter inställning `isDeleted` till `true`kan du använda fältet för att filtrera bort vilka poster som har tagits bort från dina källor när du frågar efter datasjön. |
 | `marketingListDescription` | Sträng | En beskrivning av marknadsföringslistan. |
 | `marketingListID` | Sträng | Ett unikt ID för marknadsföringslistentiteten. |
-| `marketingListName` | Sträng | Marknadsföringslistans namn. |
+| `marketingListName` | Sträng | Namnet på marknadsföringslistan. |
 
 {style="table-layout:auto"}
 
-Se guiden [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.
+Se guiden på [schemarelationer i Real-Time CDP B2B Edition](../../tutorials/relationship-b2b.md) om du vill veta hur den här klassen begreppsmässigt relaterar till de andra B2B-klasserna och hur du kan etablera dessa relationer i Adobe Experience Platform-gränssnittet.

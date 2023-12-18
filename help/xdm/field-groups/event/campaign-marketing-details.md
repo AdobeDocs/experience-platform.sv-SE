@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;
 solution: Experience Platform
 title: Fältgrupp för kampanjmarknadsföringsinformation
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Campaign Marketing Details.
+description: Läs mer om schemafältgruppen för kampanjmarknadsföringsinformation.
 exl-id: be08b38b-68a0-4a74-9b8f-0344a0637395
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '118'
 ht-degree: 0%
 
 ---

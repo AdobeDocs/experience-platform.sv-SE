@@ -1,11 +1,11 @@
 ---
 title: Fältgruppen Adobe Analytics ExperienceEvent Full Extension Schema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Adobe Analytics ExperienceEvent Full Extension.
+description: Läs mer om schemafältgruppen Adobe Analytics ExperienceEvent Full Extension.
 exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '869'
-ht-degree: 1%
+source-wordcount: '792'
+ht-degree: 0%
 
 ---
 

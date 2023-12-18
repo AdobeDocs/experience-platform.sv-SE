@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;
 solution: Experience Platform
 title: Fältgrupp för webbinformationsschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Webbinformation.
+description: Läs mer om schemafältgruppen Webbinformation.
 exl-id: eb42606b-ade4-4d72-b601-c560009c98e8
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '137'
+source-wordcount: '114'
 ht-degree: 0%
 
 ---

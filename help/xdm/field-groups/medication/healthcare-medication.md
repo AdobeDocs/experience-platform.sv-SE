@@ -1,11 +1,11 @@
 ---
 title: Fältgrupp för sjukvårdssystem
-description: Detta dokument ger en översikt över fältgruppen för hälso- och sjukvårdsmedicin.
+description: Läs mer om schemafältgruppen för sjukvårdsmedicin.
 exl-id: 3423d067-fe8c-44e5-a6f9-ce0458d26ebc
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '205'
-ht-degree: 3%
+source-wordcount: '192'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `ingredients` | Array med objekt | Listar ingredienserna som finns i medicinen. Varje objekt innehåller följande egenskaper: <ul><li>`isActive`: (Boolean) Anger om detta ämne fortfarande används aktivt i detta läkemedel.</li><li>`name`: (String) Namnet på komponenten.</li><li>`quantity`: (String) Mängden av ingrediensen som finns i medicineringen.</li></ul> |
+| `ingredients` | Array med objekt | Listar ingredienserna som finns i medicinen. Varje objekt innehåller följande egenskaper: <ul><li>`isActive`: (Boolean) Anger om denna ingrediens fortfarande används aktivt i detta läkemedel.</li><li>`name`: (String) Namnet på komponenten.</li><li>`quantity`: (String) Mängden av ingrediensen som ingår i medicineringen.</li></ul> |
 | `brandName` | Sträng | Läkemedlets varumärke. |
 | `codes` | Array med strängar | En lista med koder som identifierar detta läkemedel. |
 | `dosageUnitNumber` | Dubbel | Dosenhetsnumret för läkemedlet. |
@@ -25,7 +25,7 @@ ht-degree: 3%
 | `expiryDate` | DateTime | Utgångsdatum för läkemedlet. |
 | `genericName` | Sträng | Det generiska namnet på läkemedlet. |
 | `lotNumber` | Sträng | Unik identifierare för läkemedelsbatchen. |
-| `manufacturerName` | Sträng | Läkemedelstillverkarens namn. |
+| `manufacturerName` | Sträng | Läkemedlets namn. |
 | `quantity` | Dubbel | Mängden läkemedel i förpackningen. |
 | `status` | Sträng | En generell status som anger om läkemedlet eller läkemedlet är aktivt eller inte. |
 | `volume` | Dubbel | Läkemedlets volym. |

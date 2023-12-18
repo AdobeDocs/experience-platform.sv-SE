@@ -1,11 +1,11 @@
 ---
 title: Sjukvårdsleverantörens schemafältgrupp
-description: Dokumentet innehåller en översikt över fältgruppen för sjukvårdsleverantörens schema.
+description: Läs mer om schemafältgruppen för vårdgivare.
 exl-id: e39b4082-4b66-47b3-a8e2-951d8a96f742
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '252'
-ht-degree: 1%
+source-wordcount: '239'
+ht-degree: 0%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 1%
 | `emailAddress` | [[!UICONTROL Email address]](../../data-types/email-address.md) | Leverantörens e-postadress. |
 | `fax` | [[!UICONTROL Phone number]](../../data-types/phone-number.md) | Leverantörens faxnummer. |
 | `phoneNumber` | [[!UICONTROL Phone number]](../../data-types/phone-number.md) | Leverantörens telefonnummer. |
-| `qualifications` | Array med objekt | Visar en lista över certifikat, licenser eller utbildning som gäller vård. Varje objekt innehåller följande egenskaper: <ul><li>`issuer`: ([[!UICONTROL Account details]](../../data-types/account-details.md)): Organisationen som reglerar och utfärdar kvalifikationen.</li><li>`activePeriod`: (Heltal) Det år till vilket kvalificeringen är giltig.</li><li>`code`: (String) En kodad representation av kvalificeringen.</li></ul> |
+| `qualifications` | Array med objekt | Visar en lista över certifikat, licenser eller utbildning som gäller vård. Varje objekt innehåller följande egenskaper: <ul><li>`issuer`: ([[!UICONTROL Account details]](../../data-types/account-details.md)): Organisationen som reglerar och utfärdar kvalifikationen.</li><li>`activePeriod`: (heltal) Det år till vilket kvalificeringen är giltig.</li><li>`code`: (String) En kodad representation av kvalificeringen.</li></ul> |
 | `classification` | Sträng | Tjänsteleverantörens klassificering baserad på klass eller kategori (t.ex. patientvård, annan vård osv.). |
 | `isActive` | Boolean | Anger om providern är aktiv. |
 | `languages` | Array med strängar | En lista med språk som providern utför åtgärder under. |

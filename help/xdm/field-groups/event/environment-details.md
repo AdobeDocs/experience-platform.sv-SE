@@ -2,11 +2,11 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;environment;environment details;
 solution: Experience Platform
 title: Fältgrupp för miljöinformationsschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen ExperienceEvent Environment Details.
+description: Läs mer om schemafältgruppen ExperienceEvent Environment Details.
 exl-id: 1d25b98f-66ac-443f-9b1c-dfd20a168c59
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '185'
 ht-degree: 0%
 
 ---

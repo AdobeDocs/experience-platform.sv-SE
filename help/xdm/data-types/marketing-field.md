@@ -1,11 +1,11 @@
 ---
 solution: Experience Platform
 title: Datatyp för standardfält för allmän marknadsföring
-description: Det här dokumentet innehåller en översikt över datatypen XDM för det allmänna inställningsfältet för marknadsföring.
+description: Läs mer om datatypen XDM för det allmänna inställningsfältet för marknadsföring.
 exl-id: d4c53885-f34f-4721-aa34-1fe02dc7006f
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '634'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ I följande tabell visas godkända värden för `val`:
 | Värde | Titel | Beskrivning |
 | --- | --- | --- |
 | `y` | Ja (anmälan) | Kunden har valt att göra detta. Med andra ord: **do** samtycke till att deras uppgifter används på det sätt som anges i föremålet i fråga. |
-| `n` | Nej (avanmäl dig) | Kunden har valt att inte göra det. Med andra ord: **inte** samtycke till att deras uppgifter används på det sätt som anges i föremålet i fråga. |
+| `n` | Nej (avanmälan) | Kunden har valt att inte göra det. Med andra ord: **inte** samtycke till att deras uppgifter används på det sätt som anges i föremålet i fråga. |
 | `p` | Väntande verifiering | Systemet har ännu inte fått något slutligt inställningsvärde. Detta används oftast som en del av ett samtycke som kräver tvåstegsverifiering. Om en kund till exempel väljer att ta emot e-postmeddelanden ställs detta medgivande in på `p` tills de väljer en länk i ett e-postmeddelande för att verifiera att de har angett rätt e-postadress, och då uppdateras medgivandet till `y`.<br><br>Om den här inställningen inte använder en verifieringsprocess i två uppsättningar `p` kan i stället användas för att ange att kunden ännu inte har svarat på frågan om samtycke. Du kan till exempel ställa in värdet automatiskt på `p` på första sidan av en webbplats, innan kunden har svarat på frågan om samtycke. I jurisdiktioner som inte kräver uttryckligt medgivande kan ni också använda det för att ange att kunden inte uttryckligen har avanmält sig (med andra ord antas medgivande). |
 | `u` | Okänd | Kundens inställningsinformation är okänd. |
 | `dy` | Standard för Ja (anmälan) | Kunden har inte lämnat in något medgivande i sig och behandlas som en anmälan (&quot;Ja&quot;) som standard. Med andra ord antas samtycke tills kunden anger något annat.<br><br>Observera att om lagar eller ändringar i företagets sekretesspolicy leder till ändringar av standardvärdena för vissa eller alla användare, måste du uppdatera alla profiler som innehåller standardvärden manuellt. |

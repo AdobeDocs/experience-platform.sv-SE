@@ -1,10 +1,10 @@
 ---
 title: Providerklass
-description: Det här dokumentet innehåller en översikt över klassen Provider i Experience Data Model (XDM).
+description: Läs mer om klassen Provider i Experience Data Model (XDM).
 exl-id: acb9b8a3-f911-49c5-9d2a-3a0d6aeebef9
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '138'
 ht-degree: 0%
 
 ---
@@ -23,4 +23,4 @@ I Experience Data Model (XDM) är [!UICONTROL Provider] klassen fångar upp den 
 
 {style="table-layout:auto"}
 
-Klassen kan utökas med [[!UICONTROL Healthcare Provider] fältgrupp](../field-groups/provider/healthcare-provider.md) Beskriv närmare uppgifter om vårdgivare.
+Klassen kan utökas med [[!UICONTROL Healthcare Provider] fältgrupp](../field-groups/provider/healthcare-provider.md) Beskriv mer ingående information om en vårdgivare.

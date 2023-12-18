@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;Schemas;Webbsidesinformation;datatyp;datatyp;webbsida
 solution: Experience Platform
 title: Datatyp för webbsidesinformation
-description: Det här dokumentet innehåller en översikt över webbsidans information om datatypen Experience Data Model (XDM).
+description: Läs mer om webbsidans XDM-datatyp (Experience Data Model).
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 2%
+source-wordcount: '376'
+ht-degree: 0%
 
 ---
 

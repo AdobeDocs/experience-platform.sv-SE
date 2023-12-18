@@ -1,11 +1,11 @@
 ---
 title: Datatyp för nyckelvärdepar
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Key Value Pair Experience Data Model).
+description: Läs mer om datatypen XDM (Key Value Pair Data Model).
 exl-id: 2a1a7537-9019-4cf2-bfa1-9c760f9656dd
-source-git-commit: 1d023ce6184e54693401eb68a04ceeb1464dcaa0
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '107'
-ht-degree: 2%
+source-wordcount: '93'
+ht-degree: 1%
 
 ---
 

@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;device;data type;data type;
 solution: Experience Platform
 title: Marknadsföringsdatatyp
-description: Det här dokumentet innehåller en översikt över datatypen Marketing XDM.
+description: Läs mer om datatypen Marketing XDM.
 exl-id: b5ac0127-15fe-42b6-b7fc-2fbcda7e7e27
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 2%
+source-wordcount: '112'
+ht-degree: 0%
 
 ---
 

@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;telecom;prenumeration;datatyp;datatyp;datatyp;data type;
 solution: Experience Platform
 title: Datatypen Telecom Subscription
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Telecom Subscription Experience Data Model).
+description: Läs mer om datatypen XDM (Telecom Subscription Experience Data Model).
 exl-id: d67915b6-daaa-489f-81b4-bd3dbe0ffa44
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '597'
-ht-degree: 8%
+source-wordcount: '564'
+ht-degree: 1%
 
 ---
 
@@ -19,13 +19,13 @@ ht-degree: 8%
 >
 >Det här dokumentet beskriver datatypen. För fältgruppen med samma namn, se [[!UICONTROL Telecom Subscription] referenshandbok för fältgrupper](../field-groups/profile/telecom-subscription.md).
 >
->Om du beskriver en prenumerationstyp som inte har med telekommunikationsbranschen att göra, använd den generiska [[!UICONTROL Subscription] datatyp](./subscription.md) i stället.
+>Om du beskriver en prenumerationstyp som inte har med telekommunikationsbranschen att göra, använd den allmänna [[!UICONTROL Subscription] datatyp](./subscription.md) i stället.
 
 ![Telecom Subscription structure](../images/data-types/telecom-subscription/structure.png)
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `devices` | Array med objekt | Beskriver en lista över enheter och/eller tillbehör som är kopplade till planen. Se [avsnitt nedan](#devices) för information om den förväntade strukturen för varje arrayobjekt. |
+| `devices` | Array med objekt | Beskriver en lista över enheter och/eller tillbehör som är kopplade till planen. Se [avsnitt nedan](#devices) om du vill ha information om den förväntade strukturen för varje arrayobjekt. |
 | `subscriber` | [[!UICONTROL Person]](./person.md) | Beskriver prenumerationens ägare. |
 | `ID` | Sträng | En unik identifierare för prenumerationsinstansen. |
 | `billingPeriod` | Sträng | Varaktigheten mellan faktureringar. |
@@ -47,7 +47,7 @@ ht-degree: 8%
 | `subscriptionSubCategory` | Sträng | Den specifika underkategoriseringen av prenumerationen. |
 | `term` | Heltal | Det numeriska värdet för prenumerationsperioden. |
 | `termUnitOfTime` | Sträng | Tidsenhet för löptiden. |
-| `topUp` | Sträng | Beskriver de överenskomna villkoren för hur förbrukningsaspekter av en prenumeration återköps under en faktureringsperiod. |
+| `topUp` | Sträng | Beskriver de överenskomna villkoren för hur konsumerbara delar av en prenumeration återköps under en faktureringsperiod. |
 | `type` | Sträng | Rättighetens omfattning i förhållande till hur många personer som omfattas av prenumerationen. |
 
 {style="table-layout:auto"}
@@ -65,7 +65,7 @@ Mer information om datatypen finns i den offentliga XDM-databasen:
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `deviceFees` | Objekt | Ett objekt som fångar eventuella enhetsavgifter för objekt som routrar, modem och mottagare. Följande egenskaper förväntas:<ul><li>`amount`: Det monetära beloppet som representeras av `currencyCode`.</li><li>`conversionDate`: Datumet då valutakonverteringen gjordes.</li><li>`currencyCode`: The [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) valutakod för `amount`.</li></ul> |
+| `deviceFees` | Objekt | Ett objekt som fångar eventuella enhetsavgifter för objekt som routrar, modem och mottagare. Följande egenskaper förväntas:<ul><li>`amount`: Det monetära beloppet som representeras av `currencyCode`.</li><li>`conversionDate`: Det datum då valutakonverteringen gjordes.</li><li>`currencyCode`: [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) valutakod för `amount`.</li></ul> |
 | `ID` | Sträng | Ett unikt ID för enheten. |
 | `OS` | Sträng | Enhetens operativsystem. |
 | `deviceInsurance` | Sträng | Anger om en kund har anmält sig till försäkringen för den här enheten. |

@@ -1,11 +1,11 @@
 ---
 title: Fältgrupp för produktkategorischema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen för produktkategorier.
+description: Läs mer om fältgruppen för produktkategorischeman.
 exl-id: 80825bcf-e646-426b-a3d6-f6759f6cd5cf
-source-git-commit: f5df893260f0772ad54ccdb00d99ed8f328d35a9
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '95'
-ht-degree: 5%
+source-wordcount: '81'
+ht-degree: 1%
 
 ---
 

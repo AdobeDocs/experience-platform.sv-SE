@@ -1,11 +1,11 @@
 ---
 title: Datatyp för B2B-källa
-description: Det här dokumentet innehåller en översikt över datatypen B2B Source Experience Data Model (XDM).
+description: Läs mer om datatypen B2B Source Experience Data Model (XDM).
 exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
-source-git-commit: e602f78470fe4eeb2a42e6333ba52096d8a9fe8a
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '261'
-ht-degree: 1%
+source-wordcount: '230'
+ht-degree: 0%
 
 ---
 

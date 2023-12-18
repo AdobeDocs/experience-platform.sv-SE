@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schema design;field group;field group;reservation;placing;
 title: Fältgruppen Bokningsreservationsschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Bokningsreservation.
+description: Läs mer om schemafältgruppen Bokningsreservation.
 exl-id: f0eafc83-21f1-483d-9397-1133e3777699
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '667'
-ht-degree: 2%
+source-wordcount: '643'
+ht-degree: 0%
 
 ---
 
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 [!UICONTROL Lodging Reservation] är en standardgrupp för schemafält för [[!DNL XDM ExperienceEvent] class](../../classes/experienceevent.md) används för att samla in information om en reservation.
 
-Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa allmänna fält [!UICONTROL Lodging Reservation] innehåller `lodgingReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med egenskaper som är unika för inlämning.
+Fältgruppen är ett tillägg till [!UICONTROL Reservation Details] fältgrupp och innehåller alla samma fält under ett enda fält av objekttyp, `reservations`. Förutom dessa generiska fält [!UICONTROL Lodging Reservation] innehåller `lodgingReservations` array. Den här arrayen med objekt används för att beskriva en eller flera reservationer med egenskaper som är unika för inlämning.
 
 >[!NOTE]
 >
->Det här dokumentet innehåller information om `lodgingReservations` array. För information om andra fält som anges i `reservations` objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
+>Det här dokumentet innehåller information om `lodgingReservations` array. För information om andra fält som anges i `reservations` -objekt, se [[!UICONTROL Reservation Details] fältgruppsreferens](./reservation-details.md).
 
 ![Struktur för bokföringsreservation](../../images/field-groups/lodging-reservation/structure.png)
 
@@ -33,17 +33,17 @@ Strukturen för varje objekt som anges under `lodgingReservations` anges nedan.
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
 | `averageDailyPrice` | [[!UICONTROL Currency]](../../data-types/currency.md) | Det genomsnittliga dagspriset för hotellrummet. |
-| `lodgingCheckIn` | Objekt | Ett objekt som beskriver incheckningsdetaljer. Innehåller följande värden:<ul><li>`digitalKey`: (Heltal) Anger när en gäst väljer att använda en digital nyckel vid incheckning.</li><li>`earlyCheckInRequested`: (Heltal) Anger när en gäst begär att checkas in tidigare än de normala incheckningstimmarna.</li><li>`lateCheckInRequested`: (Heltal) Anger när en gäst begär att checkas in senare än de normala incheckningstimmarna.</li><li>`noRoomCheckIn`: (Heltal) Det här värdet hämtas när en gäst slutar checka in när det inte finns några rum tillgängliga just nu.</li><li>`oneRoomCheckIn`: (Heltal) Det här värdet hämtas när en gäst slutar checka in när det bara finns ett rum tillgängligt vid den tidpunkten.</li><li>`roomKeys`: (Heltal) Antalet standardrumstangenter som anges vid incheckning.</li><li>`userSelectedRoom`: (Boolean) Anger om gästen valde sitt rum vid incheckning.</li></ul> |
-| `rackrate` | [[!UICONTROL Currency]](../../data-types/currency.md) | Kostnaden för en bokning samma dag utan föregående bokning. |
-| `ID` | Sträng | Reservationsnumret eller identifieraren. |
+| `lodgingCheckIn` | Objekt | Ett objekt som beskriver incheckningsdetaljer. Innehåller följande värden:<ul><li>`digitalKey`: (Heltal) Anger när en gäst väljer att använda en digital nyckel vid incheckning.</li><li>`earlyCheckInRequested`: (heltal) Anger när en gäst begär att få checka in tidigare än de normala incheckningstimmarna.</li><li>`lateCheckInRequested`: (heltal) Anger när en gäst begär att checkas in senare än de normala incheckningstimmarna.</li><li>`noRoomCheckIn`: (Heltal) Det här värdet hämtas när en gäst har checkat in när det inte finns några rum tillgängliga just nu.</li><li>`oneRoomCheckIn`: (Heltal) Det här värdet hämtas när en gäst har checkat in när det bara finns ett rum tillgängligt vid den tidpunkten.</li><li>`roomKeys`: (heltal) Antalet standardrumstangenter som anges vid incheckning.</li><li>`userSelectedRoom`: (Boolean) Anger om gästen valde sitt rum vid incheckning.</li></ul> |
+| `rackrate` | [[!UICONTROL Currency]](../../data-types/currency.md) | Kostnaden för en reservation samma dag utan föregående bokningsarrangemang. |
+| `ID` | Sträng | Reservationsnummer eller identifierare. |
 | `agentID` | Sträng | Det agent-ID som är kopplat till hotellbokningen. |
-| `basePrice` | Sträng | Grundpriset innan några rabatter läggs till. |
+| `basePrice` | Sträng | Baskursen innan några rabatter läggs till. |
 | `bookingID` | Sträng | Boknings-ID som hör till hotellbokningen. |
 | `cancellation` | Heltal | Det här värdet hämtas när en reservation har annullerats. |
 | `checkInDate` | DateTime | Incheckningsdatumet för rumsreservationen. |
 | `checkOutDate` | DateTime | Utcheckningsdatumet för rumsreservationen. |
-| `confirmationNumber` | Sträng | Reservationsbekräftelsenumret eller identifieraren. |
-| `couponCode` | Sträng | En kupongkod kopplad till hotellbokningen. |
+| `confirmationNumber` | Sträng | Reservationsbekräftelsenummer eller identifierare. |
+| `couponCode` | Sträng | En kupongkod som är kopplad till hotellbokningen. |
 | `created` | Heltal | Det här värdet hämtas när en reservation har skapats. |
 | `currencyCode` | Sträng | ISO 4217-valutakoden som användes för att göra köpet. |
 | `discountPercent` | Dubbel | Rabattprocenten som är associerad med bokningen. |

@@ -1,10 +1,10 @@
 ---
 title: Klassen XDM Business Campaign-medlemmar
-description: Det här dokumentet innehåller en översikt över XDM Business Campaign-medlemsklassen i Experience Data Model (XDM).
+description: Lär dig mer om XDM Business Campaign-klassen i Experience Data Model (XDM).
 exl-id: a39eac7d-46ee-4e9c-a1c0-4dbb63f2c813
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '211'
 ht-degree: 0%
 
 ---

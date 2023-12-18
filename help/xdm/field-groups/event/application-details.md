@@ -1,10 +1,10 @@
 ---
 title: Fältgrupp för programdetaljschema
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Programinformation.
+description: Läs mer om schemafältgruppen Programinformation.
 exl-id: 5df99f9a-b36a-4c2b-a4a4-d3cf054f09b8
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '118'
 ht-degree: 0%
 
 ---

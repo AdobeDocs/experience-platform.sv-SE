@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;transaktion;datatyp;datatyp;datatyp;data type;
 title: Transaktionsdatatyp
-description: Det här dokumentet innehåller en översikt över datatypen XDM (Transaction Experience Data Model).
+description: Läs mer om datatypen XDM (Transaction Experience Data Model).
 exl-id: 47b7152f-a853-44f0-8962-e902631ad8a4
-source-git-commit: afbbdfff4346ab5240927f5703d3a06676776ea8
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '90'
+source-wordcount: '86'
 ht-degree: 1%
 
 ---

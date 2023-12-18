@@ -1,11 +1,11 @@
 ---
 title: Schemafältgrupp för systeminformation
-description: Det här dokumentet innehåller en översikt över schemafältgruppen Sektionsverktygsinformation.
+description: Lär dig mer om schemafältgruppen Sektionsverktygsinformation.
 exl-id: 472c0a3f-efda-49af-9490-f2de90b348c0
-source-git-commit: 2fd35c4ac29f43391f9dc03c636d20558b701be7
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '191'
-ht-degree: 2%
+source-wordcount: '177'
+ht-degree: 0%
 
 ---
 
@@ -17,10 +17,10 @@ ht-degree: 2%
 
 | Egenskap | Datatyp | Beskrivning |
 | --- | --- | --- |
-| `dataGatheringEvent` | Objekt | Anger om den här händelsen är en datainsamlingshändelse tillsammans med annan relaterad information. Innehåller följande egenskaper:<ul><li>`data`: (Karta) Innehåller de JSON-data som samlas in och skickas som en del av frågebatterier, enkäter eller omröstningshändelser.</li><li>`isTrue`: (Boolean) Anger om den här händelsen är en datainsamlingshändelse som frågor, undersökning eller omröstning.</li><li>`score`: (Heltal) Det poängvärde som säkras av skådespelaren baserat på händelsesvar.</li></ul> |
+| `dataGatheringEvent` | Objekt | Anger om den här händelsen är en datainsamlingshändelse tillsammans med annan relaterad information. Innehåller följande egenskaper:<ul><li>`data`: (Karta) Innehåller JSON-data som samlas in och skickas som en del av frågebatterier, enkäter eller omröstningshändelser.</li><li>`isTrue`: (Boolean) Anger om den här händelsen är en datainsamlingshändelse som frågor, undersökning eller omröstning.</li><li>`score`: (heltal) Det poängvärde som säkras av skådespelaren baserat på händelsesvar.</li></ul> |
 | `actor` | Sträng | En person/medlem som utförde åtgärden. |
 | `actorID` | Sträng | En unik identifierare för den person/medlem som utförde åtgärden. |
-| `isKeyEvent` | Boolean | Anger om den här händelsen är en nyckelhändelse. |
+| `isKeyEvent` | Boolean | Anger om händelsen är en nyckelhändelse. |
 | `name` | Sträng | Platsverktygets namn, till exempel chatbot, survey och så vidare. |
 | `section` | Sträng | Den relevanta delen av sitetool som huvud eller sub. |
 

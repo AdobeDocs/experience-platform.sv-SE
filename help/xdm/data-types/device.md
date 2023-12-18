@@ -2,12 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;XDM;fields;schemas;scheman;device;data type;data type;
 solution: Experience Platform
 title: Enhetsdatatyp
-description: Det här dokumentet innehåller en översikt över datatypen Device XDM.
+description: Läs mer om datatypen Device XDM.
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
-source-git-commit: 60c0bd62b4effaa161c61ab304718ab8c20a06e1
+source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
 workflow-type: tm+mt
-source-wordcount: '323'
-ht-degree: 3%
+source-wordcount: '302'
+ht-degree: 0%
 
 ---
 
@@ -43,7 +43,7 @@ Följande avsnitt innehåller ytterligare information om [!UICONTROL Device] dat
 
 ## Godkända värden för typeIDService {#typeIDService}
 
-I följande tabell visas godkända värden för `typeIDService` och deras betydelse:
+I följande tabell visas godkända värden för `typeIDService` och deras innebörd:
 
 | Värde | Beskrivning |
 | --- | --- |
