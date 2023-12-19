@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: b11aff782a44237e6e4ae87254163713883e3ded
+source-git-commit: e7d63ff86cdc1718129d0a8e4861b6a8c4631f75
 workflow-type: tm+mt
-source-wordcount: '2449'
+source-wordcount: '2419'
 ht-degree: 0%
 
 ---
@@ -114,6 +114,12 @@ När du skickar delade händelser måste du se till att du inkluderar ett hände
 >
 >* Snabbstartsfunktionen är tillgänglig för kunder som har köpt Real-Time CDP Prime- och Ultimate-paketet. Kontakta din Adobe-representant om du vill ha mer information.
 >* Den här funktionen är avsedd för nya implementeringar och stöder för närvarande inte automatisk installation av tillägg och konfigurationer i befintliga taggar och egenskaper för händelsevidarebefordran.
+
+>[!NOTE]
+>
+>Alla befintliga klienter kan använda snabbstartsarbetsflödena för att skapa en referensimplementering som kan användas för följande:
+>* Använd det som början på en helt ny implementering.
+>* Utnyttja det som en referensimplementering som du kan undersöka för att se hur det har konfigurerats och sedan replikera i dina nuvarande produktionsimplementationer.
 
 Med snabbstartsfunktionen blir det enklare och effektivare att konfigurera med Meta Conversions API och Meta Pixel-tilläggen. Det här verktyget automatiserar flera steg som utförs i taggar för Adobe och vidarebefordran av händelser, vilket avsevärt minskar konfigurationstiden.
 
