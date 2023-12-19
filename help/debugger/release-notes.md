@@ -4,14 +4,21 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: 5ec61e3822cf42bdb89b24a17782b40cbd9dab37
+source-git-commit: a381760d3f19e04a70581d4adbb8095c92fb2e56
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '704'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform Debugger
+
+## Version 1.5.4 - 19 december 2023
+
+### Korrigeringar och förbättringar
+
+* Ett problem där inställningarna inte sparades har korrigerats.
+* Korrigerade ett problem som gjorde att felsökaren kraschade när man visade efterbearbetade träffar i Analytics.
 
 ## Version 1.5.3 - 6 december 2023
 
@@ -25,6 +32,14 @@ ht-degree: 1%
 * Ett problem har korrigerats där Activity Map data saknades i tabellen för analysförfrågningar.
 * Ett problem har korrigerats där visning av målspårningen skulle orsaka en krasch.
 * En varning har lagts till när felsökaren inte kan konfigurera sidinfrastruktur i Firefox.
+
+## Version 1.5.2 - 10 november 2023
+
+(Endast Firefox)
+
+### Korrigeringar och förbättringar
+
+* Filernas ordning har uppdaterats.
 
 ## Version 1.5.1 - 2 november 2023
 
