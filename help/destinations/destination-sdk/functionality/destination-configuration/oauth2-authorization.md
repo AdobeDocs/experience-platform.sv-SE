@@ -2,10 +2,10 @@
 description: Den här sidan beskriver de olika OAuth 2-auktoriseringsflöden som stöds av Destinationen SDK och innehåller anvisningar om hur du ställer in OAuth 2-auktorisering för ditt mål.
 title: OAuth 2-auktorisering
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 7ba9971b44410e609c64f4dcf956a1976207353e
 workflow-type: tm+mt
-source-wordcount: '2154'
-ht-degree: 3%
+source-wordcount: '2181'
+ht-degree: 0%
 
 ---
 
@@ -33,11 +33,16 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 ### Förutsättningar i systemet {#prerequisites}
 
-Som ett första steg måste du skapa en app i ditt system för Adobe Experience Platform, eller på annat sätt registrera Experience Platform i ditt system. Målet är att generera ett klient-ID och en klienthemlighet som behövs för att autentisera Experience Platform mot målet. Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/återanrops-URL:erna för Adobe Experience Platform OAuth 2, som du kan hämta från listan nedan.
+Som ett första steg måste du skapa en app i ditt system för Adobe Experience Platform, eller på annat sätt registrera Experience Platform i ditt system. Målet är att generera ett klient-ID och en klienthemlighet som behövs för att autentisera Experience Platform mot målet.
+
+Som en del av den här konfigurationen i ditt system behöver du omdirigerings-/återanrops-URL:erna för Adobe Experience Platform OAuth 2, som du kan hämta från listan nedan.
 
 * `https://platform-va7.adobe.io/data/core/activation/oauth/api/v1/callback`
 * `https://platform-nld2.adobe.io/data/core/activation/oauth/api/v1/callback`
 * `https://platform-aus5.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-can2.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-gbr9.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback`
 
 >[!IMPORTANT]
 >
