@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Assurance
 breadcrumb-title: Användarhandbok om Assurance
 user-guide-description: Med Adobe Experience Platform Assurance kan du inspektera, korrekturläsa, simulera och validera hur du samlar in data eller levererar upplevelser i dina mobilapplikationer.
 feature: Assurance
-source-git-commit: 5778d4db27d0f57281821dc8e042a31b69745514
+source-git-commit: f707554ea89731fbd3f013d6065fde27ba7fa811
 workflow-type: tm+mt
-source-wordcount: '65'
-ht-degree: 64%
+source-wordcount: '69'
+ht-degree: 53%
 
 ---
 
@@ -25,8 +25,9 @@ ht-degree: 64%
    - [Push-felsökningsvy](./views/push-debug-view.md)
    - [Sammanfattning av validering](./views/validation-summary.md)
    - [Adobe Analytics](./views/adobe-analytics.md)
+   - [Analyshändelser 2.0 (beta)](./views/adobe-analytics-edge.md)
    - [Adobe Analytics Streaming Media](./views/adobe-analytics-streaming-media.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Implementera försäkring](./tutorials/implement-assurance.md)
    - [Använd försäkring](./tutorials/using-assurance.md)
 - [Felsökning](./troubleshooting.md)
