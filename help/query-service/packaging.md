@@ -2,9 +2,9 @@
 title: Paketering av frågetjänst
 description: I följande dokument beskrivs paketeringen av funktioner och produkter som är tillgängliga för Query Service och skillnaderna mellan ad hoc- och batchfrågor beskrivs.
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 037ea8d11bb94e3b4f71ea301a535677b3cccdbd
+source-git-commit: 47f02f6d1d4017dfe0fccddcd137487e064b3039
 workflow-type: tm+mt
-source-wordcount: '1119'
+source-wordcount: '930'
 ht-degree: 1%
 
 ---
@@ -23,18 +23,6 @@ Frågetjänstfunktionerna paketeras med följande produkter och tillägg:
 - **Plattformsbaserade program** (Adobe Real-time Customer Data Platform, Adobe Customer Journey Analytics och Adobe Journey Optimizer): Frågetjänsten ger åtkomst till tillfälliga frågor redan från början med alla varianter och nivåer av plattformsbaserade program.
 - **[!DNL Data Distiller]** (tilläggspaket som kan köpas med Adobe Real-Time CDP, Customer Journey Analytics och Adobe Journey Optimizer): Frågetjänsten har åtkomst till att köra batchfrågor [!DNL Data Distiller].
 
-## Terminologi {#terminology}
-
-I följande avsnitt finns definitioner för nyckeltermer relaterade till paketering av frågetjänsten:
-
-- **Data Lake-lagring**: Datasjön har i första hand följande syften:
-   - fungerar som mellanlagringsområde för information om introduktion på Experience Platform,
-   - fungerar som långsiktig datalagring för alla data från Experience Platform,
-   - Möjliggör användningsfall som dataanalys och datavetenskap.
-- **Dataexport**: [datauppsättning](https://experienceleague.adobe.com/docs/experience-platform/catalog/datasets/overview.html) typer som du kan exportera beroende på vilket program du använder, produktnivå och vilka tillägg du har köpt. Härledda datauppsättningar kan skapas med tillägget Query Service Data Distiller, och kan [exporterat från Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activation-overview.html) till ett stort antal destinationer, inklusive [molnlagringsdestinationer](/help/destinations/ui/export-datasets.md).
-- **Snabbare frågor**: Snabbare frågor returnerar resultat baserat på aggregerade data för att minska väntetiden för resultaten och ge ett mer interaktivt informationsutbyte. Tillståndslösa frågor som skapas i det accelererade arkivet är bara tillgängliga som en del av tillägget Data Distiller.
-- **Beräkningstimmar**: Beräkningstimmar är det mått som används för att spåra skanning och skrivning av data med batchfrågor med hjälp av API:t för frågetjänsten. Den beräknas i timmar per år och mäts i alla sandlådor. Antalet beräkningstimmar som din organisation får definieras i avtalsprocessen.
-
 ## Berättiganden {#entitlements}
 
 Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de paketeras:
@@ -47,9 +35,9 @@ Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de 
 | Maximal körningstid | 10 minuter | 24 timmar |
 | Licensmått | **Fråga om samtidighet för användare**: <ul><li>1 samtidig användare (Real-Time CDP, Adobe Journey Optimizer) &#x200B;</li><li>5 samtidiga användare (Customer Journey Analytics) &#x200B;</li></ul> **Frågesamtidighet**: <ul><li>1 fråga som körs samtidigt (alla program) &#x200B;</li></ul> **Ytterligare tillägg för ad hoc-frågeanvändare** kan köpas för att öka kundernas behörigheter för ad hoc-frågor. <ul><li>+5 ytterligare samtidiga användare per paket</li><li>+1 ytterligare fråga som körs samtidigt per paket</li></ul> | **Beräkna timmar**: <ul><li>Variabel (omfång baserad på kundens ansökningsrättigheter)</li></ul> **Beräkna timmar** är ett mått på hur lång tid det tar för Query Service-motorn att läsa, bearbeta och skriva data tillbaka till datasjön när en batchfråga körs. |
 | Snabbare användning av frågor och rapporter | Nej | Ja - Med samtidiga accelererade frågor kan du läsa data från det accelererade arkivet och visa dem på dina instrumentpaneler. Ett dedikerat berättigande för lagring av rapportmodeller och datauppsättningar i det accelererade arkivet tillhandahålls också. |
-| Lagringskapacitet för Data Lake | Ja - Ditt totala lagringsberättigande beror på era plattformsbaserade programlicenser. Exempel: Real-Time CDP, AJO, CJA och så vidare. | Ja - Ytterligare ett lagringsberättigande tillhandahålls för att behålla dina råa och härledda datauppsättningar för dataanvändning i Distiller efter ett sju dagars utgångsdatum.<br>Din datalagringskapacitet mäts i terabyte (TB) och beror på hur många beräkningstimmar du har köpt. |
-| Dataexportavdrag | Ja - Din totala exportbehörighet beror på dina plattformsbaserade programlicenser. Exempel: Real-Time CDP, AJO, CJA och så vidare. | Ja - Ytterligare exporträttigheter tillhandahålls för att tillåta export av härledda datauppsättningar som skapats med Data Distiller.<br>Din årliga dataexportersättning mäts i terabyte (TB) och beror på hur många beräkningstimmar du har köpt. |
-| Frågekörningsgränssnitt | <ul><li>Användargränssnitt för frågetjänst</li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li></ul> | <ul><li>Användargränssnitt för frågetjänst </li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li><li>REST API:er </li></ul> |
+| Lagringskapacitet för Data Lake | Ditt totala lagringsberättigande beror på era plattformsbaserade programlicenser. Exempel: Real-Time CDP, AJO, CJA och så vidare. | Ja - Ytterligare ett lagringsberättigande tillhandahålls för att behålla dina råa och härledda datauppsättningar för dataanvändning i Distiller efter ett sju dagars utgångsdatum.<br>Din datalagringskapacitet mäts i terabyte (TB) och beror på hur många beräkningstimmar du har köpt. Mer information finns i produktbeskrivningen. |
+| Dataexportavdrag | Ditt totala exportberättigande beror på era plattformsbaserade programlicenser. Exempel: Real-Time CDP, AJO, CJA och så vidare. | Ja - Ytterligare exporträttigheter tillhandahålls för att tillåta export av härledda datauppsättningar som skapats med Data Distiller.<br>Din årliga dataexportersättning mäts i terabyte (TB) och beror på hur många beräkningstimmar du har köpt. Mer information finns i produktbeskrivningen. |
+| Frågekörningsgränssnitt | <ul><li>Användargränssnitt för frågetjänst</li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li></ul> | <ul><li>Användargränssnitt för frågetjänst </li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li><li>REST API:er</li></ul> |
 | Frågeresultat returnerade via | Klientgränssnitt | Härledd datauppsättning lagrad i datasjön |
 | Resultatgräns | <ul><li>Användargränssnitt för frågetjänst - 100 rader</li><li>Tredjepartsklienter - 50 000</li><li>[!DNL PostgresSQL] klient - 50 000</li></ul> | <ul><li>Användargränssnitt för frågetjänst - antalet utdatarader kan vara [konfigurerad med en gränssnittsinställning](./ui/user-guide.md#result-count) till mellan 50 och 500 rader.</li><li>Tredjepartsklienter (ingen övre gräns för rader)</li><li>[!DNL PostgresSQL] klient (ingen övre gräns till rader)</li><li>REST API:er (ingen övre gräns för rader)</li></ul> |
 | Läs datauppsättningens kapacitet | Ja | Ja |
@@ -70,7 +58,7 @@ När du har köpt [!DNL Data Distiller] tillägg, [!DNL Write Dataset] tillstån
 
 I följande tabell visas effekterna av [!DNL Manage Queries] behörighet:
 
-| Behörighet |  -funktion |
+| Behörighet | Funktion |
 |---|---|
 | [!DNL Manage Queries] (utan skrivbehörighet) | Ger åtkomst till att köra ad hoc-frågor |
 | [!DNL Manage Queries] (med skrivbehörighet) | Ger åtkomst till att köra batchfrågor |

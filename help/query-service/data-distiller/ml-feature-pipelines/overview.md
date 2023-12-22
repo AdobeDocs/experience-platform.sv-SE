@@ -2,9 +2,9 @@
 title: AI/ML-rörledningar
 description: Lär dig hur du använder Data Distiller för att berika dina maskininlärningslinjer med funktioner som härleds från Adobe Experience Platform data. Omvandla rådata till funktioner och leverera funktionsdata för att utbilda eller poängsätta en modell som stöder era marknadsföringsexempel.
 exl-id: 3b452181-e254-4155-8bf5-0990533f202d
-source-git-commit: 8f430fa3949c19c22732ff941e8c9b07adb37e1f
+source-git-commit: 641f507210071ee8efeb3562eec78afd0468d4f2
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '473'
 ht-degree: 1%
 
 ---
@@ -25,9 +25,9 @@ Data Distiller gör det möjligt för datavetare och datatekniker att berika sin
 
 ![En infografik som beskriver AI-ML-funktionens pipeline.](../../images/data-distiller/ai-ml-feature-pipeline.png)
 
-1. Med Data Distiller kraftfulla frågefunktioner kan du extrahera meningsfulla funktioner från de omfattande beteendedata som finns i Experience Platform och lägga in data om de bearbetade funktionerna i maskininlärningsmiljön utan att behöva kopiera stora volymer händelsedata utanför Experience Platform.
-2. Läs de förberedda funktionsdatauppsättningarna i de maskininlärningsverktyg du föredrar och kombinera dem med andra funktioner som bygger på företagsdata för att utbilda, experimentera, optimera och driftsätta anpassade modeller som är anpassade efter din verksamhet.
-3. Generera resultat, prognoser eller rekommendationer från era modeller och returnera resultatet till Experience Platform för att optimera kundupplevelserna via Real-time Customer Data Platform och Adobe Journey Optimizer.
+- Med Data Distiller kraftfulla frågefunktioner kan du extrahera meningsfulla funktioner från de omfattande beteendedata som finns i Experience Platform. Du kan sedan överföra de bearbetade funktionsdata till maskininlärningsmiljön utan att behöva kopiera stora volymer händelsedata utanför Experience Platform.
+- Läs de förberedda funktionsdatauppsättningarna i de maskininlärningsverktyg du föredrar och kombinera dem med andra funktioner som bygger på företagsdata för att utbilda, experimentera, optimera och driftsätta anpassade modeller som är anpassade efter din verksamhet.
+- Generera resultat, prognoser eller rekommendationer från era modeller och returnera resultatet till Experience Platform för att optimera kundupplevelserna via Real-time Customer Data Platform och Adobe Journey Optimizer.
 
 ## Förutsättningar {#prerequisites}
 
@@ -43,10 +43,13 @@ Genom att läsa det här dokumentet har du fått en introduktion till de viktiga
 
 I dokumenten som ingår i den här serien med guider beskrivs de grundläggande stegen för att skapa funktionsledningar från Experience Platform för att mata anpassade modeller i maskininlärningsmiljön. Du kan nu upprätta en anslutning mellan Data Distiller och [!DNL Jupyter Notebook].
 
-- [Ansluta till Data Distiller från en [!DNL Python] bärbar](./establish-connection.md)
-- [Utforska och analysera datauppsättningar](./exploratory-analysis.md)
-- [Ingenjörsfunktioner för maskininlärning](./feature-engineering.md)
-- [Exportera funktionsdatamängder](./export-data.md)
+- **Konfigurera**: [Ansluta till Data Distiller från en [!DNL Python] bärbar](./establish-connection.md)
+
+Dokumentationen som är länkad nedan motsvarar de steg som anges i informationsbilden ovan.
+
+- **Steg 1**: [Utforska och analysera datauppsättningar](./exploratory-analysis.md)
+- **Steg 2**: [Ingenjörsfunktioner för maskininlärning](./feature-engineering.md)
+- **Steg 3**: [Exportera funktionsdatamängder](./export-data.md)
 
 ## Ytterligare resurser
 
