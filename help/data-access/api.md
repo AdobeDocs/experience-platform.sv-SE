@@ -4,7 +4,7 @@ solution: Experience Platform
 title: API-guide för dataåtkomst
 description: API:t för dataåtkomst stöder Adobe Experience Platform genom att ge utvecklarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i Experience Platform.
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: d8694c094ae4a7284e4a3ed0ae5bc3dc198e501a
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 1%
@@ -15,24 +15,24 @@ ht-degree: 1%
 
 API:t för dataåtkomst stöder Adobe Experience Platform genom att ge användarna ett RESTful-gränssnitt som fokuserar på att upptäcka och tillgängliggöra inkapslade datauppsättningar i [!DNL Experience Platform].
 
-![Dataåtkomst i Experience Platform](images/Data_Access_Experience_Platform.png)
+![Ett diagram över hur dataåtkomst gör det lättare att upptäcka och tillgängliggöra importerade datauppsättningar i Experience Platform.](images/Data_Access_Experience_Platform.png)
 
 ## API-specifikationsreferens
 
-Referenshandboken för Swagger API finns [här](https://www.adobe.io/experience-platform-apis/references/data-access/).
+Referenshandboken för Swagger API finns [här](https://developer.adobe.com/experience-platform-apis/references/data-access/).
 
-## Terminologi
+## Terminologi {#terminology}
 
-En beskrivning av några vanliga termer i det här dokumentet.
+Tabellen innehåller en beskrivning av några termer som används ofta i det här dokumentet.
 
 | Term | Beskrivning |
 | ----- | ------------ |
-| Datauppsättning | En samling data som innehåller schema och fält. |
+| Datauppsättning | En samling data som innehåller ett schema och fält. |
 | Grupp | En uppsättning data som samlats in under en tidsperiod och som bearbetas tillsammans som en enda enhet. |
 
-## Hämta en lista med filer i en grupp
+## Hämta en lista med filer i en grupp {#retrieve-list-of-files-in-a-batch}
 
-Genom att använda en batch-ID (batch-ID) kan API:t för dataåtkomst hämta en lista över filer som tillhör den aktuella gruppen.
+Om du vill hämta en lista med filer som tillhör en viss grupp använder du batch-ID:t (batchID) med API:t för dataåtkomst.
 
 **API-format**
 
@@ -93,7 +93,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-The `"data"` arrayen innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i `"dataSetFileId"` fält. Detta unika ID kan sedan användas för att komma åt eller hämta filen.
+The `"data"` arrayen innehåller en lista med alla filer i den angivna gruppen. Varje returnerad fil har ett eget unikt ID (`{FILE_ID}`) som finns i `"dataSetFileId"` fält. Du kan använda detta unika ID för att komma åt eller hämta filen.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
@@ -102,7 +102,7 @@ The `"data"` arrayen innehåller en lista med alla filer i den angivna gruppen. 
 
 ## Få tillgång till och ladda ned filer i en grupp
 
-Genom att använda en filidentifierare (`{FILE_ID}`) kan API:t för dataåtkomst användas för att komma åt specifik information om en fil, inklusive filens namn, storlek i byte och en länk som ska hämtas.
+Om du vill komma åt specifik information om en fil använder du en filidentifierare (`{FILE_ID}`) med API:t för dataåtkomst, inklusive namn, storlek i byte och en länk som ska hämtas.
 
 Svaret innehåller en datamatris. Beroende på om filen som ID:t pekar på är en enskild fil eller en katalog, kan den returnerade datarrayen innehålla en enda post eller en lista med filer som tillhör den katalogen. Varje filelement innehåller information om filen.
 
@@ -150,7 +150,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `data.name` | Filens namn (t.ex. profiles.csv). |
+| `data.name` | Filens namn (till exempel `profiles.csv`). |
 | `data.length` | Filens storlek (i byte). |
 | `data._links.self.href` | Den URL som filen ska hämtas från. |
 
@@ -197,12 +197,12 @@ När en katalog returneras innehåller den en array med alla filer i katalogen.
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `data.name` | Filens namn (t.ex. profiles.csv). |
+| `data.name` | Filens namn (till exempel `profiles.csv`). |
 | `data._links.self.href` | Den URL som filen ska hämtas från. |
 
-## Åtkomst till innehållet i en fil
+## Åtkomst till innehållet i en fil {#access-file-contents}
 
-The [!DNL Data Access] API kan också användas för att komma åt innehållet i en fil. Den kan sedan användas för att hämta innehållet till en extern källa.
+Du kan också använda [!DNL Data Access] API för att komma åt innehållet i en fil. Du kan sedan hämta innehållet till en extern källa.
 
 **API-format**
 
@@ -227,7 +227,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{FILE_ID}` | ID för filen i en datauppsättning. |
-| `{FILE_NAME}` | Filens fullständiga namn (t.ex. profiles.csv). |
+| `{FILE_NAME}` | Filens fullständiga namn (till exempel `profiles.csv`). |
 
 **Svar**
 
@@ -237,6 +237,6 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 Ytterligare exempel finns i [dataåtkomst, genomgång](tutorials/dataset-data.md).
 
-## Prenumerera på dataöverföringshändelser
+## Prenumerera på dataöverföringshändelser {#subscribe-to-data-ingestion-events}
 
-[!DNL Platform] gör specifika värdefulla händelser tillgängliga för prenumeration via [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Se självstudiekursen om [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md) för mer information.
+Du kan prenumerera på specifika värdefulla händelser via [Adobe Developer Console](https://developer.adobe.com/console/). Du kan t.ex. prenumerera på dataöverföringshändelser för att få meddelanden om eventuella förseningar och fel. Se självstudiekursen om [prenumerera på meddelanden om dataöverföring](../ingestion/quality/subscribe-events.md) för mer information.

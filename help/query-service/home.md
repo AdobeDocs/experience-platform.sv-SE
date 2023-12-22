@@ -2,56 +2,58 @@
 keywords: Experience Platform;hem;populära ämnen;frågetjänst;Fråga
 solution: Experience Platform
 title: Översikt över frågetjänsten
-description: Det här dokumentet innehåller en översikt över frågetjänstens roll i Experience Platform.
+description: Läs mer om frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: e59def7a05862ad880d0b6ada13b1c69c655ff90
+source-git-commit: e06519978ed9c6128be53a15cef3046a0dbc2a16
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '837'
 ht-degree: 0%
 
 ---
 
-# [!DNL Query Service] översikt
+# Översikt över frågetjänsten
 
-Adobe Experience Platform importerar data från en mängd olika källor. En stor utmaning för marknadsförarna är att förstå dessa data för att få insikter om sina kunder. Adobe Experience Platform [!DNL Query Service] gör det lättare att använda standard-SQL för att fråga data i [!DNL Platform]. Använda [!DNL Query Service]kan du ansluta till valfri datauppsättning i [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i [!DNL Real-Time Customer Profile]. Det här dokumentet innehåller en översikt över rollen för [!DNL Query Service] inom [!DNL Experience Platform].
+Adobe Experience Platform importerar data från en mängd olika källor. En stor utmaning för marknadsförarna är att förstå dessa data för att få insikter om sina kunder. Om du vill fråga efter data i plattformen kan du använda standardtjänsten för SQL och Adobe Experience Platform Query Service. Du kan använda frågetjänsten för att ansluta till valfri datauppsättning i datasjön och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, maskininlärning eller för förtäring i [!DNL Real-Time Customer Profile]. Det här dokumentet innehåller en översikt över frågetjänstens roll i Experience Platform.
 
-[!DNL Query Service] gör det möjligt för varumärken att koppla samman kundresan online-till-offline och förstå flerkanalsattribuering. I följande video visas hur ett upplevelseföretag kan utnyttja [!DNL Query Service] hantera viktiga användningsfall och hur [!DNL Query Service] fungerar.
+Med Query Service kan ni koppla samman kundresan online-till-offline och förstå flerkanalsattribueringen för ert varumärke. I följande video visas hur ett upplevelseföretag kan använda frågetjänsten för att hantera viktiga användningsfall och hur frågetjänsten fungerar.
 
 >[!VIDEO](https://video.tv.adobe.com/v/29795?quality=12&learn=on)
 
-## Använda [!DNL Query Service]
+## Använda frågetjänsten {#usage}
 
-[!DNL Query Service] innehåller ett användargränssnitt och ett RESTful API från vilket du kan skapa SQL-frågor för att bättre analysera dina data. Med användargränssnittet kan du skriva och köra frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Användargränssnittet är avsett att användas som en sandlåda för att testa dina frågor innan de körs på din bredare datauppsättning. Mer information om hur du använder den interaktiva tjänsten i [!DNL Platform] finns i [Användargränssnittshandbok för frågetjänsten](ui/overview.md). RESTful API har en liknande upplevelse, vilket gör att du kan skriva och köra frågor programmatiskt, schemalägga frågor för framtida bruk och upprepning samt skapa mallar för frågor som du vill skriva. Mer information om hur du använder [!DNL Query Service] API finns i [Handbok för frågetjänstutvecklare](api/getting-started.md).
+Om du vill analysera dina data kan du använda användargränssnittet för frågetjänsten och ett RESTful API, som du kan använda för att skapa SQL-frågor. Med användargränssnittet kan du skriva och köra frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Du kan använda Frågeredigeraren som en sandlåda för att testa dina frågor innan du kör dem på din bredare datauppsättning. Se [Användargränssnittshandbok för frågetjänsten](ui/overview.md) för mer information om hur du använder användargränssnittet. RESTful API ger en liknande upplevelse. Du kan använda API:t för frågetjänsten för att programmässigt skriva och köra frågor, schemalägga frågor för framtida användning och upprepning samt skapa mallar för frågor som du vill skriva. Mer information om hur du använder API:t för frågetjänsten finns i [Handbok för frågetjänstutvecklare](api/getting-started.md).
 
-## [!DNL Query Service] och [!DNL Experience Platform] tjänster
+## Frågetjänster och Experience Platform {#experience-platform-services}
 
-[!DNL Query Service] interagerar och kan användas tillsammans med flera [!DNL Experience Platform] tjänster. För att få ut det mesta av [!DNL Query Service's] vi rekommenderar att du bekanta dig med dessa tjänster och hur de interagerar med [!DNL Query Service].
+Frågetjänsten samverkar och kan användas med flera Experience Platform-tjänster. För att få ut så mycket som möjligt av frågetjänstens funktioner bör du känna till dessa tjänster och hur de interagerar med frågetjänsten. The [Experience Platform dokumentationslandningssida](https://experienceleague.adobe.com/docs/experience-platform.html) innehåller sammanfattningar och länkar till plattformens funktioner.
 
-### [!DNL Data Science Workspace]
+### [!DNL Data Science Workspace] {#data-science-workspace}
 
-Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i [!DNL Experience Platform]. [!DNL Data Science Workspace] gör det möjligt för datavetare att bygga recept baserat på uppgifter om register och tidsserier om kunder och deras aktiviteter, vilket underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen sannolikt kommer att uppskatta och använda. Du kan använda SQL i [!DNL Data Science Workspace] genom integrering [!DNL Query Service] till [!DNL JupyterLab]så att ni kan utforska, omvandla och analysera Adobe Analytics-data. Läs [!DNL Data Science Workspace] översikt för mer information om [!DNL Data Science Workspace]och [!DNL Query Service] integreringsguiden för mer information om hur [!DNL Data Science Workspace] interagerar med [!DNL Query Service].
+Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Datavetare kan använda [!DNL Data Science Workspace] att bygga recept som bygger på uppgifter från register och tidsserier om kunder och deras aktiviteter. Dessa recept underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder. Du kan använda SQL i [!DNL Data Science Workspace] genom att integrera Query Service i [!DNL JupyterLab] för att utforska, omvandla och analysera Adobe Analytics data. Läs [[!DNL Data Science Workspace] översikt](../data-science-workspace/home.md) och [Anslutningsguide för Jypiter Notebook](./clients/jupyter-notebook.md) för mer information om hur [!DNL Data Science Workspace] interagerar med frågetjänsten.
 
-### [!DNL Segmentation Service]
+### [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform [!DNL Segmentation Service] gör det möjligt för användare att dela upp sina kunder i mindre grupper som delar liknande egenskaper. Dessa målgrupper kan sedan utvärderas för att ge bättre analyser på [!DNL Real-Time Customer Profile] data. [!DNL Query Service] kan användas för att tillhandahålla den här analysen genom att köra frågor om dessa målgruppsdata i [!DNL Data Lake]. Läs [!DNL Segmentation Service] för mer information om segmentering och [!DNL Profile Query Language] (PQL) guide för mer information om hur ni analyserar målgrupper.
+Använd Adobe Experience Platform segmenteringstjänst för att dela upp kunderna i mindre grupper som delar liknande egenskaper. Dessa målgrupper kan sedan utvärderas för att ge en bättre analys av kundprofildata i realtid. Du kan använda frågetjänsten för att köra frågor om dessa målgruppsdata inom datavjön och tillhandahålla analysen. Läs [Översikt över segmenteringstjänsten](../segmentation/home.md) och [[!DNL Profile Query Language] (PQL) guide](../segmentation/pql/overview.md) om du vill ha mer information om hur du analyserar målgrupper.
 
-## Användningsfall
+## Användningsfall {#use-cases}
 
-[!DNL Query Service] erbjuder ett flexibelt sätt att hantera data i många syften. Det kan bland annat minska bördan av segmentering från marknadsförare och bidra till att generera åtgärdbara målgrupper och meningsfulla affärsinsikter. Följande exempel innehåller fler djupgående exempel på [!DNL Query Service].
+Med frågetjänsten får du ett flexibelt sätt att hantera data i många syften. Det kan bland annat minska bördan av segmentering från marknadsförare och bidra till att generera åtgärdbara målgrupper och meningsfulla affärsinsikter. Följande exempel innehåller fler djupgående exempel på möjligheterna med frågetjänsten.
 
-### Adobe Analytics browse-nedläggning
+### Adobe Analytics browse-nedläggning {#abandon-browse}
 
-Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics]](./use-cases/abandoned-browse.md) data för att skapa en viss användbar målgrupp. [!DNL Query Service] använder komplex logik för segmentering för att beräkna olika anpassade attribut för användning längre fram i kedjan, eller för att avsevärt förenkla hur ni bygger ut era målgrupper.
+Detta [exempel på övergivna användare centrerar sig på Adobe [!DNL Analytics]](./use-cases/abandoned-browse.md) data för att skapa en viss användbar målgrupp. Frågetjänsten har komplex logik för segmentering för att beräkna olika anpassade attribut för användning längre fram i kedjan, eller för att avsevärt förenkla hur ni bygger ut era målgrupper.
 
-### Kontrollpaneler för Looker BI
+## Generera insikter med anpassade instrumentpaneler {#custom-dashboards}
 
-Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Använda [!DNL Experience Platform's Query Service]kan ni fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. I följande video visas värdet av att bygga instrumentpaneler i BI-verktyg (Business Intelligence) med [!DNL Query Service].
-
->[!VIDEO](https://video.tv.adobe.com/v/28981?quality=12&learn=on)
+Med Adobe Experience Platform kan ni importera, lagra, strukturera och hämta in alla lagrade datauppsättningar, inklusive beteendedata, CRM-data och butiksdata. Använda [!DNL Experience Platform's Query Service]kan ni fråga om dessa datauppsättningar och besvara specifika frågor om verksamheten och sedan börja generera slagkraftiga insikter. Lär dig hur du skapar och hanterar anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden med [användardefinierade instrumentpaneler](../dashboards/user-defined-dashboards.md). Du kan till och med [anpassa dina egna Real-Time CDP-rapporter](../dashboards/cdp-insights-data-model.md) för er marknadsföring och KPI-användning genom att använda SQL-frågor med Real-time Customer Data Platform Insights-datamodeller.
 
 ## Nästa steg och ytterligare resurser
 
-Genom att läsa det här dokumentet har du introducerats till [!DNL Query Service] och hur det fungerar i större utsträckning [!DNL Experience Platform]. Mer information om interaktion med olika slutpunkter i [!DNL Query Service] API, läs [Handbok för frågetjänstutvecklare](api/getting-started.md). Mer information om hur du använder den interaktiva tjänsten i [!DNL Platform], kan du läsa [Användargränssnittshandbok för frågetjänsten](ui/overview.md). En omfattande lista över hur du ansluter externa klienter med [!DNL Query Service], kan du läsa [Översikt över frågetjänstklienter](clients/overview.md).
+Genom att läsa det här dokumentet har du lagts till i Query Service och fått veta hur det fungerar i större utsträckning i Experience Platform. Om du vill fortsätta lära dig mer om funktionerna i frågetjänsten rekommenderar vi att du läser följande dokument:
+
+- The [Handbok för frågetjänstutvecklare](api/getting-started.md): Mer information om interaktion med olika slutpunkter i API:t för frågetjänsten finns.
+- The [Användargränssnittshandbok för frågetjänsten](ui/overview.md): Mer information om hur du använder Frågeredigeraren och användargränssnittet.
+- The [Översikt över frågetjänstklienter](clients/overview.md): För en omfattande lista över externa klienter som ska anslutas till frågetjänsten.
 
 Titta på följande video om du vill förbereda dig för att köra frågor. I den här videon får du tips och tips om hur du kan köra frågor i frågeredigeringsgränssnittet, PSQL-klienter, Business Intelligence-lösningar (BI) och HTTP API.
 

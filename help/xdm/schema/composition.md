@@ -2,47 +2,47 @@
 keywords: Experience Platform;hem;populära ämnen;schema;schema;schema;enum;mixin;fältgrupp;fältgrupper;mixins;datatyp;datatyp;datatyp;datatyp;primär identitet;primär identitet;XDM-individuell profil;XDM-fält;enum datatyp;Experience event;XDM ExperienceEvent;experienceEvent;XDM ExperienceEvent;schema;design;klass;klass;klasser;klasser;datatyp;datatyp;datatyp;datatyp;datatyp;scheman;scheman;identityMap;identity map;identity map;schema design;map;union schema;union
 solution: Experience Platform
 title: Grundläggande om schemakomposition
-description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
+description: Lär dig mer om XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
+source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
 workflow-type: tm+mt
-source-wordcount: '4106'
+source-wordcount: '4187'
 ht-degree: 0%
 
 ---
 
 # Grunderna för schemakomposition
 
-Det här dokumentet innehåller en introduktion till [!DNL Experience Data Model] (XDM) scheman och de byggstenar, principer och bästa metoder för att sammanställa scheman som ska användas i Adobe Experience Platform. Allmän information om XDM och hur det används i [!DNL Platform], se [XDM - systemöversikt](../home.md).
+Lär dig mer om XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman i Adobe Experience Platform. Allmän information om XDM och hur det används i [!DNL Platform], se [XDM - systemöversikt](../home.md).
 
-## Scheman
+## Scheman {#understanding-schemas}
 
 Ett schema är en uppsättning regler som representerar och validerar datastrukturen och dataformatet. På en hög nivå ger scheman en abstrakt definition av ett objekt i verkligheten (till exempel en person) och ger en översikt över vilka data som ska inkluderas i varje instans av objektet (till exempel förnamn, efternamn, födelsedag o.s.v.).
 
 Förutom att beskriva datastrukturen, tillämpar scheman begränsningar och förväntningar på data så att de kan valideras när de flyttas mellan olika system. Med dessa standarddefinitioner kan data tolkas på ett enhetligt sätt, oavsett ursprung, och behovet av översättning mellan olika program försvinner.
 
-[!DNL Experience Platform] underhåller denna semantiska normalisering med hjälp av scheman. Scheman är standardsättet att beskriva data i [!DNL Experience Platform], vilket gör att alla data som överensstämmer med scheman kan återanvändas i en organisation utan konflikter, eller till och med delas mellan flera organisationer.
+Experience Platform underhåller denna semantiska normalisering med hjälp av scheman. Scheman är standardmetoden för att beskriva data i Experience Platform, vilket gör att alla data som överensstämmer med scheman kan återanvändas i en organisation utan konflikter, eller till och med delas mellan flera organisationer.
 
 XDM-scheman är idealiska för att lagra enorma mängder komplexa data i ett självständigt format. Se avsnitten om [inbäddade objekt](#embedded) och [big data](#big-data) i bilagan till det här dokumentet om du vill ha mer information om hur XDM gör detta.
 
-### Schemabaserade arbetsflöden i [!DNL Experience Platform]
+### Schemabaserade arbetsflöden i Experience Platform {#schema-based-workflows}
 
-Standardisering är ett nyckelbegrepp bakom [!DNL Experience Platform]. XDM, som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera standardscheman för kundupplevelsehantering.
+Standardisering är ett nyckelbegrepp bakom Experience Platform. XDM, som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera standardscheman för kundupplevelsehantering.
 
-Den infrastruktur som [!DNL Experience Platform] är byggd, kallas [!DNL XDM System], underlättar schemabaserade arbetsflöden och innehåller [!DNL Schema Registry], [!DNL Schema Editor], schemadata och tjänstekonsumtionsmönster. Se [XDM - systemöversikt](../home.md) för mer information.
+Den infrastruktur som Experience Platform bygger på, känd som [!DNL XDM System], underlättar schemabaserade arbetsflöden och innehåller [!DNL Schema Registry], [!DNL Schema Editor], schemadata och tjänstekonsumtionsmönster. Se [XDM - systemöversikt](../home.md) för mer information.
 
-Det finns flera fördelar med att utnyttja scheman i [!DNL Experience Platform]. För det första möjliggör scheman bättre datastyrning och minimering av data, vilket är särskilt viktigt med sekretessbestämmelser. För det andra gör det möjligt att bygga scheman med Adobe standardkomponenter för körklara insikter och använda AI/ML-tjänster med minimala anpassningar. Slutligen tillhandahåller scheman infrastruktur för datautbytesinsikter och effektiv samordning.
+Det finns flera fördelar med att använda scheman i Experience Platform. För det första möjliggör scheman bättre datastyrning och minimering av data, vilket är särskilt viktigt med sekretessbestämmelser. För det andra gör det möjligt att bygga scheman med Adobe standardkomponenter för körklara insikter och använda AI/ML-tjänster med minimala anpassningar. Slutligen tillhandahåller scheman infrastruktur för datautbytesinsikter och effektiv samordning.
 
-## Planera ditt schema
+## Planera ditt schema {#planning}
 
-Det första steget i att skapa ett schema är att fastställa konceptet, eller det verkliga objektet, som du försöker fånga inom schemat. När du har identifierat det koncept du försöker beskriva kan du börja planera ditt schema genom att tänka på saker som datatyp, potentiella identitetsfält och hur schemat kan utvecklas i framtiden.
+Det första steget i att skapa ett schema är att fastställa konceptet, eller det verkliga objektet, som du försöker fånga inom schemat. När du har identifierat konceptet som du försöker beskriva börjar du planera ditt schema genom att tänka på saker som datatypen, potentiella identitetsfält och hur schemat kan utvecklas i framtiden.
 
-### Databeteenden i [!DNL Experience Platform]
+### Databeteenden i Experience Platform {#data-behaviors}
 
-Uppgifter avsedda att användas i [!DNL Experience Platform] är grupperad i två beteendetyper:
+Data som är avsedda att användas i Experience Platform är grupperade i två beteendetyper:
 
 * **Registrera data**: Innehåller information om attributen för ett ämne. Ett ämne kan vara en organisation eller individ.
-* **Tidsseriedata**: Ger en ögonblicksbild av systemet när en åtgärd vidtas, antingen direkt eller indirekt, av ett postämne.
+* **Tidsseriedata**: Ger en ögonblicksbild av systemet när en åtgärd vidtas antingen direkt eller indirekt av ett postämne.
 
 Alla XDM-scheman beskriver data som kan kategoriseras som post- eller tidsserier. Databeteendet för ett schema definieras av schemats klass, som tilldelas till ett schema när det skapas första gången. XDM-klasser beskrivs mer ingående senare i det här dokumentet.
 
@@ -55,13 +55,13 @@ Scheman för både post- och tidsserier innehåller en karta över identiteter (
 >title="Identiteter i scheman"
 >abstract="Identiteter är nyckelfält i ett schema som kan användas för att identifiera ett ämne, till exempel en e-postadress eller ett marknadsförings-ID. Dessa fält används för att skapa identitetsdiagrammet för varje enskild person och för att skapa kundprofiler. Mer information om identiteter i scheman finns i dokumentationen."
 
-Scheman används för inmatning av data i [!DNL Experience Platform]. Dessa data kan användas för flera tjänster för att skapa en enda, enhetlig vy av en enskild enhet. Därför är det viktigt att tänka på scheman när det gäller kundidentiteter och vilka fält som kan användas för att identifiera ett ämne oavsett varifrån data kommer.
+Scheman används för inmatning av data i Experience Platform. Dessa data kan användas för flera tjänster för att skapa en enda, enhetlig vy av en enskild enhet. Därför är det viktigt att tänka på vilka fält som kan användas för att identifiera ett ämne när du utformar scheman för kundidentiteter, oavsett varifrån uppgifterna kommer.
 
-Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data har matats in infogas uppgifterna i dessa fält i[!UICONTROL Identity Graph]&quot; för den där individen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra [!DNL Experience Platform] för att ge en sammanslagen bild av varje enskild kund.
+Nyckelfält i dina scheman kan markeras som identiteter för att underlätta med den här processen. När data har matats in infogas uppgifterna i dessa fält i[!UICONTROL Identity Graph]&quot; för den där individen. Diagramdata kan sedan nås av [[!DNL Real-Time Customer Profile]](../../profile/home.md) och andra Experience Platform-tjänster för att ge en enhetlig bild av varje enskild kund.
 
-Fält som vanligen markeras som &quot;[!UICONTROL Identity]&quot; inkludera: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Du bör också överväga unika identifierare som är specifika för din organisation, eftersom de kan vara bra &quot;[!UICONTROL Identity]även fält.
+Fält som vanligen markeras som &quot;[!UICONTROL Identity]&quot; inkludera: e-postadress, telefonnummer, [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html), CRM-ID eller andra unika ID-fält. Överväg alla unika identifierare som är specifika för din organisation, eftersom de kan vara bra[!UICONTROL Identity]även fält.
 
-Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa en så robust profil som möjligt. Se översikten på [Adobe Experience Platform Identity Service](../../identity-service/home.md) om du vill veta mer om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder.
+Det är viktigt att tänka på kundens identiteter under schemaplaneringsfasen för att säkerställa att data samlas ihop för att skapa den mest robusta profilen som är möjlig. Mer information om hur identitetsinformation kan hjälpa er att leverera digitala upplevelser till era kunder finns i [Översikt över identitetstjänsten](../../identity-service/home.md). Läs dokumentet om god praxis för datamodellering för [tips om hur du använder identiteter när du skapar ett schema](./best-practices.md#data-validation-fields).
 
 Det finns två sätt att skicka identitetsdata till plattformen:
 
@@ -78,7 +78,7 @@ Den största nackdelen med att använda `identityMap` är att identiteter blir i
 >
 >Ett schema som använder `identityMap` kan användas som ett källschema i en relation, men kan inte användas som ett referensschema. Detta beror på att alla referensscheman måste ha en synlig identitet som kan mappas i ett referensfält i källschemat. Se användargränssnittets guide på [relationer](../tutorials/relationship-ui.md) Mer information om kraven för käll- och referensscheman.
 
-Men identitetskartor kan vara särskilt användbara om du samlar in data från källor som lagrar identiteter tillsammans (till exempel [!DNL Airship] eller Adobe Audience Manager) eller när det finns ett varierande antal identiteter för ett schema. Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/).
+Identitetskartor kan dock vara användbara om det finns ett varierande antal identiteter för ett schema, eller om du samlar in data från källor som lagrar identiteter tillsammans (till exempel [!DNL Airship] eller Adobe Audience Manager). Dessutom krävs identitetskartor om du använder [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/).
 
 Ett exempel på en enkel identitetskarta skulle se ut så här:
 
@@ -113,17 +113,17 @@ Som visas i exemplet ovan finns varje tangent i `identityMap` -objektet represen
 
 >[!NOTE]
 >
->Ett booleskt värde för om värdet är en primär identitet (`primary`) kan också anges för varje identitetsvärde. Primära identiteter behöver bara anges för scheman som är avsedda att användas i [!DNL Real-Time Customer Profile]. Se avsnittet om [unionsscheman](#union) för mer information.
+>Ett booleskt värde för om värdet är en primär identitet (`primary`) kan också anges för varje identitetsvärde. Du behöver bara ange primära identiteter för scheman som ska användas i [!DNL Real-Time Customer Profile]. Se avsnittet om [unionsscheman](#union) för mer information.
 
 ### Principer för schemautveckling {#evolution}
 
 I takt med att de digitala upplevelserna utvecklas måste även de scheman som används för att representera dem finnas kvar. Ett väldesignat schema kan därför anpassas och utvecklas efter behov, utan att det medför destruktiva ändringar i tidigare versioner av schemat.
 
-Eftersom bakåtkompatibilitet är avgörande för schemautvecklingen, [!DNL Experience Platform] har en rent additiv versionsprincip. Denna princip säkerställer att alla ändringar av schemat endast resulterar i icke-förstörande uppdateringar och ändringar. Med andra ord: **brytningsändringar stöds inte.**
+Eftersom det är viktigt att bibehålla bakåtkompatibiliteten för att kunna utveckla scheman tillämpar Experience Platform en rent additiv versionsprincip. Denna princip säkerställer att alla ändringar av schemat endast resulterar i icke-förstörande uppdateringar och ändringar. Med andra ord: **brytningsändringar stöds inte.**
 
 >[!NOTE]
 >
->Om ett schema ännu inte har använts för att importera data till [!DNL Experience Platform] och inte har aktiverats för användning i kundprofilen i realtid kan du införa en brytningsändring i det schemat. När schemat har använts i [!DNL Platform]måste den följa den additiva versionsprincipen.
+>Du kan bara göra en brytningsändring i ett schema om det ännu inte har använts för att importera data till Experience Platform och inte har aktiverats för användning i kundprofilen i realtid. När schemat har använts i [!DNL Platform]måste den följa den additiva versionsprincipen.
 
 I följande tabell visas vilka ändringar som stöds vid redigering av scheman, fältgrupper och datatyper:
 
@@ -135,7 +135,7 @@ I följande tabell visas vilka ändringar som stöds vid redigering av scheman, 
 
 ### Obligatoriska fält
 
-Enskilda schemafält kan vara [markerat som obligatoriskt](../ui/fields/required.md), vilket innebär att alla kapslade poster måste innehålla data i dessa fält för att validera. Om du till exempel anger ett schemats primära identitetsfält som obligatoriskt kan du se till att alla inkapslade poster deltar i kundprofilen i realtid, samtidigt som du anger ett tidsstämpelfält som det behövs, säkerställer att alla tidsseriehändelser bevaras kronologiskt.
+Enskilda schemafält kan vara [markerat som obligatoriskt](../ui/fields/required.md), vilket innebär att alla kapslade poster måste innehålla data i dessa fält för att validera. Om du till exempel anger ett schemats primära identitetsfält som obligatoriskt kan du se till att alla inkapslade poster deltar i kundprofilen i realtid. Om du anger ett tidsstämpelfält som obligatoriskt ser du dessutom till att alla händelser i tidsserien bevaras kronologiskt.
 
 >[!IMPORTANT]
 >
@@ -153,11 +153,11 @@ Tänk på följande när du ställer in ett tidigare valfritt fält efter behov:
 
 ### Scheman och datainmatning
 
-För att kunna importera data till [!DNL Experience Platform]måste en datauppsättning först skapas. Datauppsättningar är byggstenarna för dataomvandling och -spårning för [[!DNL Catalog Service]](../../catalog/home.md)och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Se översikten på [Adobe Experience Platform datainmatning](../../ingestion/home.md) för mer information.
+För att kunna importera data till Experience Platform måste en datauppsättning först skapas. Datauppsättningar är byggstenarna för dataomvandling och -spårning för [[!DNL Catalog Service]](../../catalog/home.md)och representerar vanligtvis tabeller eller filer som innehåller inkapslade data. Alla datauppsättningar baseras på befintliga XDM-scheman, som innehåller begränsningar för vad de inmatade data ska innehålla och hur de ska struktureras. Se översikten på [Adobe Experience Platform datainmatning](../../ingestion/home.md) för mer information.
 
-## Bygga block i ett schema
+## Bygga block i ett schema {#schema-building-blocks}
 
-[!DNL Experience Platform] använder en dispositionsmetod där standardbyggstenar kombineras för att skapa scheman. Den här metoden främjar återanvändbarheten av befintliga komponenter och driver standardisering i hela branschen för att stödja leverantörsscheman och komponenter i [!DNL Platform].
+Experience Platform använder en dispositionsmetod där standardbyggstenar kombineras för att skapa scheman. Den här metoden främjar återanvändbarheten av befintliga komponenter och driver standardisering i hela branschen för att stödja leverantörsscheman och komponenter i [!DNL Platform].
 
 Scheman består av följande formel:
 
@@ -172,15 +172,15 @@ Scheman består av följande formel:
 >title="Klass"
 >abstract="Alla scheman baseras på en enda klass. Klassen definierar schemats beteende och de gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla. Läs dokumentationen om du vill veta mer om hur klasser är inblandade i schemakomposition."
 
-Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat ska innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
+Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat kommer att innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
 
-En schemaklass avgör vilka fältgrupper som kan användas i schemat. Detta diskuteras mer ingående i [nästa avsnitt](#field-group).
+En schemaklass avgör vilka fältgrupper som är berättigade att användas i schemat. Detta diskuteras mer ingående i [nästa avsnitt](#field-group).
 
 Adobe tillhandahåller flera standardklasser (&quot;core&quot;) för XDM. Två av dessa klasser, [!DNL XDM Individual Profile] och [!DNL XDM ExperienceEvent]krävs för nästan alla plattformsprocesser längre fram i kedjan. Dessutom kan du skapa egna klasser som beskriver mer specifika användningsfall för organisationen. Anpassade klasser definieras av en organisation när det inte finns några Adobe-definierade huvudklasser tillgängliga som beskriver ett unikt användningsfall.
 
 I följande skärmbild visas hur klasser visas i användargränssnittet för plattformen. Eftersom exempelschemat som visas inte innehåller några fältgrupper, kommer alla fält som visas att tillhandahållas av schemaklassen ([!UICONTROL XDM Individual Profile]).
 
-![](../images/schema-composition/class.png)
+![The [!UICONTROL XDM Individual Profile] i Schemaredigeraren.](../images/schema-composition/class.png)
 
 Den senaste listan över tillgängliga standard-XDM-klasser finns i [officiell XDM-databas](https://github.com/adobe/xdm/tree/master/components/classes). Du kan även läsa guiden på [utforska XDM-komponenter](../ui/explore.md) om du föredrar att visa resurser i användargränssnittet.
 
@@ -198,45 +198,45 @@ Den senaste listan över tillgängliga standard-XDM-klasser finns i [officiell X
 
 En fältgrupp är en återanvändbar komponent som definierar ett eller flera fält som implementerar vissa funktioner, som personlig information, hotellinställningar eller adress. Fältgrupper är avsedda att ingå i ett schema som implementerar en kompatibel klass.
 
-Fältgrupper definierar vilka klasser de är kompatibla med baserat på beteendet hos de data de representerar (post- eller tidsserie). Det innebär att inte alla fältgrupper är tillgängliga för användning med alla klasser.
+Fältgrupper definierar vilken eller vilka klasser de är kompatibla med, baserat på beteendet för de data de representerar (post- eller tidsserie). Det innebär att inte alla fältgrupper är tillgängliga för användning med alla klasser.
 
-[!DNL Experience Platform] innehåller många standardfältgrupper för Adobe, samtidigt som leverantörer kan definiera fältgrupper för sina användare, och enskilda användare kan definiera fältgrupper för sina egna specifika koncept.
+Experience Platform innehåller många standardfältgrupper i Adobe samtidigt som leverantörer kan definiera fältgrupper för sina användare, och enskilda användare kan definiera fältgrupper för sina egna specifika koncept.
 
 Om du till exempel vill hämta information som &quot;[!UICONTROL First Name]och &quot;[!UICONTROL Home Address]&quot; för dina &quot;[!UICONTROL Loyalty Members]&quot;schema, du skulle kunna använda standardfältgrupper som definierar dessa vanliga begrepp. Begrepp som är mer specifika för din organisation (t.ex. kundens kundlojalitetsprogram eller produktattribut) som kanske inte omfattas av standardfältgrupper. I det här fallet måste du definiera en egen fältgrupp för att kunna hämta informationen.
 
 >[!NOTE]
 >
->Vi rekommenderar att du använder standardfältgrupper när det är möjligt i dina scheman, eftersom dessa fält förstås implicit av [!DNL Experience Platform] tjänster och ger större enhetlighet när de används i [!DNL Platform] -komponenter.
+>Du rekommenderas att använda standardfältgrupper när det är möjligt i dina scheman, eftersom dessa fält tolkas implicit av Experience Platform-tjänster och ger större enhetlighet när de används i alla [!DNL Platform] -komponenter.
 >
->Fält som tillhandahålls av standardkomponenter (till exempel&quot;Förnamn&quot; och&quot;E-postadress&quot;) innehåller tillägg utöver grundläggande skalära fälttyper, som anger [!DNL Platform] att fält som delar samma datatyp fungerar på samma sätt. Detta beteende kan betraktas som tillförlitligt oavsett varifrån data kommer eller i vilket [!DNL Platform] den tjänst som data används i.
+>Fält som tillhandahålls av standardkomponenter (till exempel&quot;Förnamn&quot; och&quot;E-postadress&quot;) innehåller tillagda konnoteringar utöver de grundläggande skalära fälttyperna. De säger [!DNL Platform] att fält som delar samma datatyp fungerar på samma sätt. Detta beteende kan betraktas som tillförlitligt oavsett varifrån data kommer eller i vilket [!DNL Platform] den tjänst som data används i.
 
 Kom ihåg att scheman består av fältgrupper som är &quot;noll eller fler&quot;, vilket innebär att du kan skapa ett giltigt schema utan att använda några fältgrupper alls.
 
 I följande skärmbild visas hur fältgrupper representeras i användargränssnittet för plattformen. En enda fältgrupp ([!UICONTROL Demographic Details]) läggs till i ett schema i det här exemplet, som innehåller en gruppering av fält till schemats struktur.
 
-![](../images/schema-composition/field-group.png)
+![Schemaredigeraren med [!UICONTROL Demographic Details] fältgrupp markerad i ett exempelschema.](../images/schema-composition/field-group.png)
 
 Den senaste listan över tillgängliga standardfältgrupper i XDM finns i [officiell XDM-databas](https://github.com/adobe/xdm/tree/master/components/fieldgroups). Du kan även läsa guiden på [utforska XDM-komponenter](../ui/explore.md) om du föredrar att visa resurser i användargränssnittet.
 
 ### Datatyp {#data-type}
 
-Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera underfält. De kan definiera flera underfält på samma sätt som fältgrupper, men den största skillnaden är att datatyper kan inkluderas var som helst i ett schema genom att lägga till dem som&quot;datatyp&quot; för ett fält. Fältgrupper är bara kompatibla med vissa klasser, men datatyper kan inkluderas i alla överordnade klasser eller fältgrupper.
+Datatyper används som referensfälttyper i klasser eller scheman på samma sätt som grundläggande litteralfält. Den största skillnaden är att datatyper kan definiera flera delfält på samma sätt som fältgrupper. Den största skillnaden mellan dem är att datatyper kan inkluderas var som helst i ett schema genom att lägga till den som&quot;datatyp&quot; för ett fält. Fältgrupper är bara kompatibla med vissa klasser, men datatyper kan inkluderas i alla överordnade klasser eller fältgrupper.
 
 >[!NOTE]
 >
 >Om ett fält definieras som en viss datatyp kan du inte skapa samma fält med en annan datatyp i ett annat schema. Begränsningen gäller för hela organisationens klientorganisation.
 
-[!DNL Experience Platform] innehåller ett antal vanliga datatyper som en del av [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [Självstudiekurser för schemaregister](../tutorials/create-schema-api.md), där det blir tydligare när du går igenom stegen för att definiera datatyper.
+Experience Platform tillhandahåller ett antal vanliga datatyper som en del av [!DNL Schema Registry] som stöder användning av standardmönster för att beskriva vanliga datastrukturer. Detta förklaras mer ingående i [Självstudiekurser för schemaregister](../tutorials/create-schema-api.md) och blir tydligare när du går igenom stegen för att definiera datatyper.
 
 I följande skärmbild visas hur datatyperna visas i användargränssnittet för plattformen. Ett av fälten i [!UICONTROL Demographic Details] fältgruppen använder &quot;[!UICONTROL Object]&quot;, datatyp, enligt texten efter lodstreck (`|`) bredvid fältets namn. Den här särskilda datatypen innehåller flera delfält som relaterar till namnet på en enskild person, en konstruktion som kan återanvändas för andra fält där en persons namn måste hämtas.
 
-![](../images/schema-composition/data-type.png)
+![Ett diagram i Schemaredigeraren för en enskild person med objektet Fullständigt namn och attributen markerade.](../images/schema-composition/data-type.png)
 
 Den senaste listan över tillgängliga XDM-standarddatatyper finns i [officiell XDM-databas](https://github.com/adobe/xdm/tree/master/components/datatypes). Du kan även läsa guiden på [utforska XDM-komponenter](../ui/explore.md) om du föredrar att visa resurser i användargränssnittet.
 
-### Fält
+### Fält {#field}
 
-Ett fält är den mest grundläggande byggstenen i ett schema. Fält innehåller begränsningar för vilken typ av data de kan innehålla genom att definiera en viss datatyp. Dessa grundläggande datatyper definierar ett enda fält, medan [datatyper](#data-type) kan du definiera flera delfält och återanvända samma struktur med flera fält i olika scheman. Förutom att definiera ett fälts&quot;datatyp&quot; som en av de datatyper som definieras i registret, [!DNL Experience Platform] har stöd för grundläggande skalära typer som:
+Ett fält är den mest grundläggande byggstenen i ett schema. Fält innehåller begränsningar för vilken typ av data de kan innehålla genom att definiera en viss datatyp. Dessa grundläggande datatyper definierar ett enda fält, medan [datatyper](#data-type) kan du definiera flera delfält och återanvända samma struktur med flera fält i olika scheman. Förutom att definiera ett fälts&quot;datatyp&quot; som en av de datatyper som definieras i registret, stöder Experience Platform grundläggande skalära typer som:
 
 * Sträng
 * Heltal
@@ -263,9 +263,9 @@ Giltiga intervall för dessa skalära typer kan begränsas ytterligare till viss
 >
 >Fälttypen &quot;map&quot; tillåter nyckelvärdepar, inklusive flera värden för en enskild nyckel. Kartor finns i standard-XDM-klasser och fältgrupper, men du kan också definiera anpassade kartor med API:t för schemaregister. Se självstudiekursen om [definiera egna fält](../tutorials/custom-fields-api.md#custom-maps) för mer information.
 
-## Kompositionsexempel
+## Kompositionsexempel {#composition-example}
 
-Scheman representerar format och struktur för data som ska hämtas in i [!DNL Platform]och byggs med en kompositionsmodell. Som tidigare nämnts består dessa scheman av en klass och noll eller flera fältgrupper som är kompatibla med den klassen.
+Scheman byggs med hjälp av en kompositionsmodell och representerar formatet och strukturen för de data som ska infogas i [!DNL Platform]. Som tidigare nämnts består dessa scheman av en klass och noll eller flera fältgrupper som är kompatibla med den klassen.
 
 Ett schema som beskriver inköp som görs i en butik kan till exempel kallas[!UICONTROL Store Transactions]&quot;. Schemat implementerar [!DNL XDM ExperienceEvent] klass kombinerad med standard [!UICONTROL Commerce] fältgrupp och en användardefinierad [!UICONTROL Product Info] fältgrupp.
 
@@ -273,28 +273,28 @@ Ett annat schema som spårar webbplatstrafiken kan kallas[!UICONTROL Web Visits]
 
 Diagrammet nedan visar dessa scheman och fälten från varje fältgrupp. Den innehåller även två scheman baserade på [!DNL XDM Individual Profile] -klass, inklusive[!UICONTROL Loyalty Members]schemat som nämndes tidigare i den här guiden.
 
-![](../images/schema-composition/composition.png)
+![Ett flödesdiagram över fyra scheman och de fältgrupper som bidrar till dem.](../images/schema-composition/composition.png)
 
 ### Sammanslutning {#union}
 
-while [!DNL Experience Platform] gör att du kan skapa scheman för särskilda användningsfall, så att du också kan se en &quot;union&quot; av scheman för en viss klasstyp. I föregående diagram visas två scheman baserade på klassen XDM ExperienceEvent och två scheman baserade på [!DNL XDM Individual Profile] klassen. Unionen, som visas nedan, samlar fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] och [!DNL XDM Individual Profile]).
+Med Experience Platform kan du skapa scheman för olika användningsområden, men du kan även se en &quot;union&quot; av scheman för en viss klasstyp. I föregående diagram visas två scheman baserade på klassen XDM ExperienceEvent och två scheman baserade på [!DNL XDM Individual Profile] klassen. Unionen, som visas nedan, samlar fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] och [!DNL XDM Individual Profile]).
 
-![](../images/schema-composition/union.png)
+![Ett unionsschemaflödesdiagram som visar fälten som de består av.](../images/schema-composition/union.png)
 
-Genom att aktivera ett schema för användning med [!DNL Real-Time Customer Profile], kommer den att inkluderas i unionen för den typen av klass. [!DNL Profile] ger robusta, centraliserade profiler av kundattribut samt ett tidsstämplat konto för varje händelse som kunden har haft i alla system som är integrerade med [!DNL Platform]. [!DNL Profile] använder unionsvyn för att representera dessa data och ge en helhetsbild av varje enskild kund.
+Genom att aktivera ett schema för användning med [!DNL Real-Time Customer Profile], ingår det i unionen för den typen av klass. [!DNL Profile] ger robusta, centraliserade profiler av kundattribut och en tidsstämplad översikt över alla händelser som kunden har haft i alla system som är integrerade med [!DNL Platform]. [!DNL Profile] använder unionsvyn för att representera dessa data och ge en helhetsbild av varje enskild kund.
 
 Mer information om hur du arbetar med [!DNL Profile], se [Översikt över kundprofiler i realtid](../../profile/home.md).
 
-## Mappa datafiler till XDM-scheman
+## Mappa datafiler till XDM-scheman {#mapping-datafiles}
 
-Alla datafiler som är inkapslade i [!DNL Experience Platform] måste överensstämma med strukturen i ett XDM-schema. Mer information om hur du formaterar datafiler enligt XDM-hierarkier (inklusive exempelfiler) finns i dokumentet om [exempel på ETL-omformningar](../../etl/transformations.md). Allmän information om inmatning av datafiler i [!DNL Experience Platform], se [batchvis hantering - översikt](../../ingestion/batch-ingestion/overview.md).
+Alla datafiler som importeras till Experience Platform måste överensstämma med strukturen i ett XDM-schema. Mer information om hur du formaterar datafiler enligt XDM-hierarkier (inklusive exempelfiler) finns i dokumentet om [exempel på ETL-omformningar](../../etl/transformations.md). Allmän information om hur du importerar datafiler till Experience Platform finns i [batchvis hantering - översikt](../../ingestion/batch-ingestion/overview.md).
 
 ## Scheman för externa målgrupper
 
 Om du samlar målgrupper från externa system i Platform måste du använda följande komponenter för att fånga dem i dina scheman:
 
 * [[!UICONTROL Segment definition] class](../classes/segment-definition.md): Använd den här standardklassen för att hämta nyckelattribut för en extern segmentdefinition.
-* [[!UICONTROL Segment Membership Details] fältgrupp](../field-groups/profile/segmentation.md): Lägg till den här fältgruppen i din [!UICONTROL XDM Individual Profile] för att koppla kundprofiler till specifika målgrupper.
+* [[!UICONTROL Segment Membership Details] fältgrupp](../field-groups/profile/segmentation.md): Lägg till den här fältgruppen i din [!UICONTROL XDM Individual Profile] schema för att associera kundprofiler med specifika målgrupper.
 
 ## Nästa steg
 
@@ -305,7 +305,7 @@ Om du vill granska strukturen för de två grundläggande XDM-klasserna och dera
 * [[!DNL XDM Individual Profile]](../classes/individual-profile.md)
 * [[!DNL XDM ExperienceEvent]](../classes/experienceevent.md)
 
-The [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och tillhandahåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga. The [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av [!DNL Experience Platform] partners och klasser, fältgrupper, datatyper och scheman som har disponerats av medlemmar i organisationen.
+The [!DNL Schema Registry] används för att komma åt [!DNL Schema Library] i Adobe Experience Platform och tillhandahåller ett användargränssnitt och RESTful API från vilket alla tillgängliga biblioteksresurser är tillgängliga. The [!DNL Schema Library] innehåller branschresurser som definieras av Adobe, leverantörsresurser som definieras av Experience Platform partners, och klasser, fältgrupper, datatyper och scheman som har disponerats av medlemmar i din organisation.
 
 För att börja komponera schemat med användargränssnittet följer du med [Schemaredigeraren, genomgång](../tutorials/create-schema-ui.md) att skapa schemat &quot;Lojalitetsmedlemmar&quot; som omnämns i hela det här dokumentet.
 
@@ -317,15 +317,15 @@ Följande avsnitt innehåller ytterligare information om principerna för schema
 
 ### Relationstabeller jämfört med inbäddade objekt {#embedded}
 
-När du arbetar med relationsdatabaser omfattar de effektivaste strategierna att normalisera data eller att ta en enhet och dela upp den i separata delar som sedan visas i flera tabeller. För att kunna läsa data som helhet eller uppdatera enheten måste läs- och skrivåtgärder utföras i många enskilda tabeller med JOIN.
+När du arbetar med relationsdatabaser omfattar de effektivaste strategierna att normalisera data eller att ta en enhet och dela upp den i separata delar som sedan visas i flera tabeller. Om du vill läsa data som helhet eller uppdatera entiteten måste läs- och skrivåtgärder utföras för många enskilda tabeller med JOIN.
 
 Genom att använda inbäddade objekt kan XDM-scheman representera komplexa data direkt och lagra dem i självständiga dokument med en hierarkisk struktur. En av de största fördelarna med den här strukturen är att den gör det möjligt att fråga efter data utan att behöva rekonstruera enheten med dyrbara kopplingar till flera deformerade tabeller. Det finns inga hårda begränsningar för hur många nivåer din schemahierarki kan vara.
 
 ### Scheman och big data {#big-data}
 
-Moderna digitala system genererar enorma mängder beteendesignaler (transaktionsdata, webbloggar, internet med mera). Dessa stora data ger fantastiska möjligheter att optimera upplevelser, men är svåra att använda på grund av datans storlek och variation. För att få ut mer av uppgifterna måste datastrukturen, formatet och definitionerna standardiseras så att de kan behandlas enhetligt och effektivt.
+Moderna digitala system genererar enorma mängder beteendesignaler (transaktionsdata, webbloggar, internet med mera). Dessa stora data ger fantastiska möjligheter att optimera upplevelser, men är svåra att använda på grund av datans storlek och variation. För att få ut mer av informationen måste dess struktur, format och definitioner standardiseras så att de kan behandlas på ett konsekvent och effektivt sätt.
 
-Scheman löser detta problem genom att data kan integreras från flera källor, standardiseras med gemensamma strukturer och definitioner och delas mellan olika lösningar. Detta gör att efterföljande processer och tjänster kan besvara alla typer av frågor som ställs om data, vilket innebär att man kan gå ifrån den traditionella metoden med datamodellering där alla frågor som ställs om data är kända i förväg och data är modellerade för att uppfylla dessa förväntningar.
+Scheman löser detta problem genom att data kan integreras från flera källor, standardiseras med gemensamma strukturer och definitioner och delas mellan olika lösningar. Detta gör att efterföljande processer och tjänster kan besvara alla typer av frågor som ställs om data. Det går längre än till traditionell datamodellering där alla frågor som ska ställas om data är kända i förväg och data är modellerade för att uppfylla dessa förväntningar.
 
 ### Objekt jämfört med frihandsfält {#objects-v-freeform}
 
