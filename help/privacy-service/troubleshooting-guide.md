@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Felsökningsguide för Privacy Service
 description: Det här dokumentet innehåller svar på vanliga frågor om Privacy Service samt information om vanliga fel i API:t.
 exl-id: 8afbb065-0f41-4048-9003-a22c0c839717
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c6507a39ba5ae5ca6aa2bf02cf8844a4592152ac
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '1025'
 ht-degree: 0%
 
 ---
 
 # [!DNL Privacy Service] felsökningsguide
 
-Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
+Adobe Experience Platform [!DNL Privacy Service] innehåller ett RESTful-API och användargränssnitt som hjälper företag att hantera förfrågningar om kunddata. Med [!DNL Privacy Service]kan ni skicka in förfrågningar om åtkomst till och radering av privata eller personliga kunddata, vilket underlättar automatiserad efterlevnad av organisatoriska och juridiska sekretessbestämmelser.
 
 Det här dokumentet innehåller svar på vanliga frågor om [!DNL Privacy Service]samt information om vanliga fel i API:t.
 
@@ -95,19 +95,20 @@ Mer information finns i avsnittet om [söka efter ett jobb med dess ID](api/priv
 
 ### Använda gränssnittet
 
-På [!DNL Privacy Service] Kontrollpanelen för användargränssnittet hittar du det jobb du vill hämta från **Jobbförfrågningar** widget. Välj ID för jobbet för att öppna sidan Jobbinformation. Här väljer du **Hämta** i det övre högra hörnet för att ladda ned ZIP-filen. Se [Användarhandbok för Privacy Service](ui/user-guide.md) för mer detaljerade steg.
+På [!DNL Privacy Service] Kontrollpanelen för användargränssnittet hittar du det jobb du vill hämta från **Jobbförfrågningar** widget. Välj ID för jobbet för att öppna sidan Jobbinformation. Välj **Ladda ned** i det övre högra hörnet för att ladda ned ZIP-filen. Se [Användarhandbok för Privacy Service](ui/user-guide.md) för mer detaljerade steg.
 
-## Vanliga felmeddelanden
+## Vanliga felmeddelanden {#common-error-messages}
 
 I följande tabell beskrivs några vanliga fel i [!DNL Privacy Service], med beskrivningar som hjälper till att lösa deras respektive problem.
 
 | Felmeddelande | Beskrivning |
 | --- | --- |
-| Det gick inte att hitta användar-ID:n. | Vissa användar-ID:n som angavs i begäran kunde inte hittas och hoppades över. Kontrollera att du använder rätt namnutrymme(n) och ID-värden i nyttolasten för begäran. Visa dokumentet på [tillhandahålla identitetsdata](./identity-data.md) för en mer detaljerad förklaring. |
+| Användar-ID:n hittades inte. | Vissa användar-ID:n som angavs i begäran kunde inte hittas och hoppades över. Kontrollera att du använder rätt namnutrymme(n) och ID-värden i nyttolasten för begäran. Visa dokumentet på [tillhandahålla identitetsdata](./identity-data.md) om du vill ha en mer detaljerad förklaring. |
 | Ogiltigt namnutrymme | Ett angivet ID-namnområde för ett användar-ID var ogiltigt. Se avsnittet om [standardidentitetsnamnutrymmen](./api/appendix.md#standard-namespaces) i [!DNL Privacy Service] API-guide för en lista över godkända namnutrymmen. Om du använder ett anpassat namnutrymme kontrollerar du att du anger ID:n `type` egenskapen &quot;custom&quot;. |
 | Delvis slutförd | Jobbet slutfördes, men vissa data var inte tillämpliga för den angivna begäran och hoppades över. |
 | Data har inte det format som krävs. | Ett eller flera av datavärdena för det angivna programmet var felaktigt formaterade. Mer information finns i jobbinformationen. |
 | IMS-organisationen har inte etablerats. | Det här meddelandet visas när din organisation inte har etablerats för [!DNL Privacy Service]. Kontakta administratören om du vill ha mer information. |
-| Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att använda [!DNL Privacy Service]. Kontakta administratören för att få åtkomst. |
+| Åtkomst och behörigheter krävs. | Åtkomst och behörigheter krävs för att kunna använda [!DNL Privacy Service]. Kontakta administratören för att få åtkomst. |
 | Ett problem uppstod vid överföring och arkivering av åtkomstdata. | När det här felet inträffar överför du åtkomstdata igen och försöker igen. |
-| Arbetsbelastningen har överskridits för den aktuella dokumenthastighetsgränsen. | Minska överföringshastigheten och försök igen när felet inträffar. |
+| Arbetsbelastningen har överskridits för den aktuella dokumenthastighetsgränsen. | När det här felet inträffar ska du minska överföringshastigheten och försöka igen. |
+| För många förfrågningar<br>(HTTP 429-fel) | Om dina överföringsmönster överskrider den övervakade gränsen för tillåtna datatypsjobb får du ett HTTP 429-fel som svar på fortsatt trafik från din organisation. Privacy Service är avsedd för behandling av den registrerades förfrågningar om integritet. Den ska inte användas för datarensning. Om du får HTTP 429-fel implementeras begränsnings- och begärandebegränsningar för att skydda Adobe mot missbruk som kan äventyra regelefterlevnad.<br>Alternativa metoder för att minimera dina data tillhandahålls av [ange förfallotidsplaner för datauppsättning](../hygiene/ui/dataset-expiration.md) och använder [radera post, funktion](../hygiene/ui/record-delete.md). Mer information om hur du använder funktionerna finns i respektive dokumentation. |
