@@ -2,9 +2,9 @@
 keywords: Experience Platform;hem;mappare;mappningsuppsättning;mappning;
 solution: Experience Platform
 title: Översikt över mappningsuppsättningar
-description: Lär dig hur du använder mappningsuppsättningar med Adobe Experience Platform Data Prep.
+description: Lär dig använda mappningsuppsättningar med Adobe Experience Platform Data Prep.
 exl-id: b45545b7-3ae7-400d-b6fd-b2cb76061093
-source-git-commit: d39ae3a31405b907f330f5d54c91b95c0f999eee
+source-git-commit: 660948b7a43ed3c18feb74cccf8f9c607470759c
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 0%
@@ -73,9 +73,9 @@ Följande JSON är ett exempel på en typisk mappningsuppsättning:
 | `inputSchema` | XDM-schemat för inkommande data. |
 | `outputSchema` | Det XDM-schema som indata har transformeras för att anpassas till. |
 | `mappings` | En array med fält-till-fält-mappningar från källschemat till målschemat. |
-| `sourceType` | För varje mappning i listan används `sourceType` -attribut anger vilken typ av källa som ska mappas. Kan vara en av `ATTRIBUTE`, `STATIC`, eller `EXPRESSION`: <ul><li> `ATTRIBUTE` används för alla värden som finns i källsökvägen. </li><li>`STATIC` används för värden som matas in i målsökvägen. Detta värde förblir konstant och påverkas inte av källschemat.</li><li> `EXPRESSION` används för ett uttryck som kommer att tolkas under körning. En lista med tillgängliga uttryck finns i [guide för mappningsfunktioner](./functions.md).</li> </ul> |
-| `source` | För varje mappning i listan visas `source` -attribut anger det fält som du vill mappa. Mer information om hur du konfigurerar källan finns i [källsektion](#sources). |
-| `destination` | För varje mappning i listan visas `destination` -attributet anger fältet eller sökvägen till fältet, där värdet som extraheras från `source` fältet placeras. Mer information om hur du konfigurerar dina mål finns i [målavsnitt](#destination). |
+| `sourceType` | För varje mappning i listan används `sourceType` -attribut anger vilken typ av källa som ska mappas. Kan vara en av `ATTRIBUTE`, `STATIC`, eller `EXPRESSION`: <ul><li> `ATTRIBUTE` används för alla värden som hittas i källsökvägen. </li><li>`STATIC` används för värden som injiceras i målsökvägen. Detta värde förblir konstant och påverkas inte av källschemat.</li><li> `EXPRESSION` används för ett uttryck som kommer att tolkas under körning. En lista med tillgängliga uttryck finns i [guide för mappningsfunktioner](./functions.md).</li> </ul> |
+| `source` | För varje mappning i listan visas `source` -attribut anger det fält som du vill mappa. Mer information om hur du konfigurerar källan finns i [källöversikt](../sources/home.md). |
+| `destination` | För varje mappning i listan visas `destination` -attributet anger fältet eller sökvägen till fältet, där värdet som extraheras från `source` fältet placeras. Mer information om hur du konfigurerar dina mål finns i [målöversikt](../destinations/home.md). |
 | `mappings.name` | (*Valfritt*) Ett namn för mappningen. |
 | `mappings.description` | (*Valfritt*) En beskrivning av mappningen. |
 
@@ -151,7 +151,7 @@ När du mappar ett fält i kapslade data, till exempel en JSON-fil, ska du anvä
 
 ### Fält i en array
 
-När du mappar ett fält inom en array kan du hämta ett specifikt värde med hjälp av ett index. Om du vill göra det använder du `ATTRIBUTE` källtyp och index för det värde som du vill mappa. Ett exempel på den här mappningen finns nedan:
+När du mappar ett fält inom en array kan du hämta ett specifikt värde med hjälp av ett index. Använd `ATTRIBUTE` källtyp och index för det värde som du vill mappa. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -298,7 +298,7 @@ Använda `ATTRIBUTE` källtyp kan du iterativt slinga igenom arrayer och mappa d
 
 ### Konstantvärde
 
-Om du vill mappa en konstant, eller ett statiskt värde, använder du `STATIC` källtyp.  När du använder `STATIC` källtyp, `source` representerar det hårdkodade värdet som du vill tilldela `destination`. Ett exempel på den här mappningen finns nedan:
+Om du vill mappa en konstant eller ett statiskt värde använder du `STATIC` källtyp.  När du använder `STATIC` källtyp, `source` representerar det hårdkodade värdet som du vill tilldela `destination`. Ett exempel på den här mappningen finns nedan:
 
 **JSON-exempelfil**
 
@@ -363,7 +363,7 @@ Om du vill mappa ett uttryck använder du `EXPRESSION` källtyp. En lista över 
 
 ## Konfigurerar mappningsmål
 
-I en mappning visas `destination` är platsen där värdet extraheras från `source` infogas.
+I en mappning visas `destination` är den plats där värdet extraheras från `source` infogas.
 
 ### Fält på rotnivå
 

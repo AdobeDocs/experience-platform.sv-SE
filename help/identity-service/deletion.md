@@ -2,9 +2,9 @@
 title: Borttagningar i identitetstjänsten
 description: I det här dokumentet finns en översikt över de olika mekanismer som du kan använda för att ta bort dina identitetsdata i Experience Platform och för att skapa klarhet om hur identitetsdiagram kan påverkas.
 exl-id: 0619d845-71c1-4699-82aa-c6436815d5b3
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 44e4e83d80302f64854f6c8f9531da913a2f0942
 workflow-type: tm+mt
-source-wordcount: '1194'
+source-wordcount: '1195'
 ht-degree: 0%
 
 ---
@@ -24,10 +24,10 @@ Dokumentet nedan refererar till följande funktioner i Experience Platform:
 * [Identitetstjänst](home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
    * [Identitetsdiagram](./ui/identity-graph-viewer.md): Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
    * [Identitetsnamnutrymmen](namespaces.md): Identitetsnamnutrymmen är en komponent i identitetstjänsten som fungerar som indikatorer för det sammanhang som en identitet relateras till. De skiljer till exempel på värdet &quot;name&quot;<span>@email.com som e-postadress eller 443522 som ett numeriskt CRM-ID.
-* [Katalogtjänst](../catalog/home.md): Utforska datalinjen, metadata, filbeskrivningar, kataloger och datauppsättningar i datasjön.
-* [Datahygien](../hygiene/home.md): Hantera lagrade konsumentdata genom att schemalägga utgångsdatum för automatiska datauppsättningar eller ta bort enskilda poster från en datauppsättning eller alla datauppsättningar.
+* [Katalogtjänst](../catalog/home.md): Undersök datalinje, metadata, filbeskrivningar, kataloger och datauppsättningar i sjön.
+* [Datahygien](../hygiene/home.md): Hantera lagrade konsumentdata genom att schemalägga utgångsdatum för automatiska datauppsättningar eller genom att ta bort enskilda poster från en datauppsättning eller alla datauppsättningar.
 * [Adobe Experience Platform Privacy Service](../privacy-service/home.md): Hantera kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
-* [Kundprofil i realtid](../profile/home.md): Ger en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
+* [Kundprofil i realtid](../profile/home.md): Tillhandahåller en enhetlig kundprofil i realtid baserad på aggregerade data från flera källor.
 
 ## Ta bort en identitet
 

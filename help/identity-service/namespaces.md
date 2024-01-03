@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 98482bfdd54b70cde73c3512f8237c7862e41281
+source-git-commit: 44e4e83d80302f64854f6c8f9531da913a2f0942
 workflow-type: tm+mt
-source-wordcount: '1778'
+source-wordcount: '1770'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,6 @@ Identitetsnamnutrymmen kräver förståelse för olika Adobe Experience Platform
 * [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser, som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
 
 ## Identitetsnamnutrymmen
-
-![En illustration av dataarbetsflödet med identitetstjänsten.](images/identity-service-stitching.png)
 
 En fullständigt kvalificerad identitet innehåller två komponenter: och **identitetsvärde** och **namnutrymme för identitet**. Om värdet för en identitet till exempel är `scott@acme.com`, ger ett namnutrymme kontext till det här värdet genom att det särskiljs som en e-postadress. På samma sätt kan ett namnutrymme skilja `555-123-456` som ett telefonnummer, och `3126ABC` som ett CRM-ID. I stort sett **ett namnutrymme ger kontext till en viss identitet**. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
 
