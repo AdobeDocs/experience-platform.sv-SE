@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 692cdd3d8b30c3e5187a556e4f9ec80d675cb443
+source-git-commit: 7ee39a39aecdfc0516f63e6a9c9a06c6c4b22996
 workflow-type: tm+mt
-source-wordcount: '3700'
+source-wordcount: '3723'
 ht-degree: 0%
 
 ---
@@ -72,17 +72,17 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 
 | Åtgärd | Original | Beskrivning |
 | ------ | ------- | ----------- |
-| [!UICONTROL Edit] | Segmenteringstjänst | Gör att du kan öppna Segment Builder för att redigera målgruppen. Mer information om hur du använder Segment Builder finns i [Användargränssnittsguide för segmentbyggare](./segment-builder.md). |
-| [!UICONTROL Open composition] | Målgruppskomposition | Gör att ni kan öppna Audience-kompositionen och se er målgrupp. Mer information om publikens sammansättning finns i [gränssnittsguide för målgruppskomposition](./audience-composition.md). |
-| [!UICONTROL Activate to destination] | Segmenteringstjänst | Gör att du kan aktivera målgruppen till ett mål. Mer information om hur man aktiverar en målgrupp finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md). |
-| [!UICONTROL Share with partners] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan dela din publik med andra plattformsanvändare. Mer information om den här funktionen finns i [Översikt över segmentmatchning](./segment-match/overview.md). |
-| [!UICONTROL Manage tags] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan hantera användardefinierade taggar som tillhör målgruppen. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
-| [!UICONTROL Move to folder] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Här kan du hantera vilken mapp målgruppen tillhör. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
+| [!UICONTROL Edit] | Segmenteringstjänst | Öppnar segmentbyggaren för att redigera målgruppen. Observera att om målgruppen skapades via API:t kommer du att **not** kan redigera den med hjälp av segmentbyggaren. Mer information om hur du använder Segment Builder finns i [Användargränssnittsguide för segmentbyggare](./segment-builder.md). |
+| [!UICONTROL Open composition] | Målgruppskomposition | Öppnar Audience-kompositionen för att se er målgrupp. Mer information om publikens sammansättning finns i [gränssnittsguide för målgruppskomposition](./audience-composition.md). |
+| [!UICONTROL Activate to destination] | Segmenteringstjänst | Aktiverar målgruppen till ett mål. Mer information om hur man aktiverar en målgrupp finns i [aktiveringsöversikt](../../destinations/ui/activation-overview.md). |
+| [!UICONTROL Share with partners] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Delar er målgrupp med andra plattformsanvändare. Mer information om den här funktionen finns i [Översikt över segmentmatchning](./segment-match/overview.md). |
+| [!UICONTROL Manage tags] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de användardefinierade taggar som tillhör målgruppen. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
+| [!UICONTROL Move to folder] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar den mapp som målgruppen tillhör. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | [!UICONTROL Copy] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Duplicerar den valda målgruppen. |
-| [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan hantera åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
+| [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Archive] | Anpassad överföring | Arkiverar den valda målgruppen. |
 | [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. |
-| [!UICONTROL Add to package] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Gör att du kan flytta publiken mellan sandlådor. Mer information om den här funktionen finns i [verktygshandbok för sandlådor](../../sandboxes/ui/sandbox-tooling.md). |
+| [!UICONTROL Add to package] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Flyttar publiken mellan sandlådor. Mer information om den här funktionen finns i [verktygshandbok för sandlådor](../../sandboxes/ui/sandbox-tooling.md). |
 
 >[!NOTE]
 >
@@ -142,7 +142,7 @@ När du har markerat de fält som du vill visa kan du även ändra storlek på d
 
 För att effektivisera arbetet kan du söka efter befintliga målgrupper, lägga till användardefinierade taggar till målgrupper, placera målgrupper i mappar och filtrera de visade målgrupperna.
 
-**Sökning** {#search}
+**Sök** {#search}
 
 Du kan söka bland befintliga målgrupper på upp till 9 olika språk med [!DNL Unified Search].
 
@@ -341,13 +341,13 @@ The **[!UICONTROL Audience details]** visas. Du kan lägga till information om m
 
 När du importerar den externt genererade målgruppen måste du markera en av kolumnerna som primärt identitetsfält och ange namnutrymmesvärde. Observera att alla återstående fält kommer att beaktas **nyttolastattribut**. Dessa attribut beaktas **ej hållbar**, eftersom de bara kommer att kopplas till den här målgruppen för personalisering, och **not** är ansluten till profilen.
 
-![Sidan [!UICONTROL Audience details] visas.](../images/ui/overview/import-audience-audience-details.png)
+![The [!UICONTROL Audience details] visas.](../images/ui/overview/import-audience-audience-details.png)
 
 När du fyllt i målgruppsinformationen väljer du **[!UICONTROL Next]**.
 
 ![The [!UICONTROL Next] knappen är markerad på [!UICONTROL Audience details] sida.](../images/ui/overview/import-audience-filled-details.png)
 
-Sidan **[!UICONTROL Review]** visas. Du kan granska informationen om den nyligen importerade externt genererade målgruppen.
+The **[!UICONTROL Review]** visas. Du kan granska informationen om den nyligen importerade externt genererade målgruppen.
 
 ![The [!UICONTROL Review] visas med information om den nyligen importerade externt genererade målgruppen.](../images/ui/overview/import-audience-review-details.png)
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: API-slutpunkt för segmentdefinitioner
 description: Med segmentdefinitionsslutpunkten i Adobe Experience Platform Segmentation Service API kan du programmässigt hantera segmentdefinitioner för din organisation.
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: d47ec6fca05191f532b5a2e94f1943c4337258ed
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1228'
 ht-degree: 1%
 
 ---
@@ -153,6 +153,10 @@ Ett lyckat svar returnerar HTTP-status 200 med en lista över segmentdefinitione
 
 Du kan skapa en ny segmentdefinition genom att göra en POST-förfrågan till `/segment/definitions` slutpunkt.
 
+>[!IMPORTANT]
+>
+>Segmentdefinitioner skapade med API **inte** kan redigeras med segmentbyggaren.
+
 **API-format**
 
 ```http
@@ -204,7 +208,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Till exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 
 <!-- >[!NOTE]
@@ -341,7 +345,7 @@ Ett lyckat svar returnerar HTTP-status 200 med detaljerad information om den ang
 | `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Till exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
@@ -474,7 +478,7 @@ Ett lyckat svar returnerar HTTP-status 207 med de begärda segmentdefinitionerna
 | `schema` | Det schema som är associerat med entiteterna i segmentet. Består av antingen en `id` eller `name` fält. |
 | `expression` | En entitet som innehåller fältinformation om segmentdefinitionen. |
 | `expression.type` | Anger uttryckstypen. För närvarande stöds bara PQL. |
-| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Exempel, `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
+| `expression.format` | Anger strukturen för uttrycket i värdet. Följande format stöds för närvarande: <ul><li>`pql/text`: En textbeteckning för en segmentdefinition enligt den publicerade PQL-grammatiken.  Till exempel: `workAddress.stateProvince = homeAddress.stateProvince`.</li></ul> |
 | `expression.value` | Ett uttryck som överensstämmer med typen som anges i `expression.format`. |
 | `description` | En läsbar beskrivning av definitionen. |
 | `evaluationInfo` | Ett objekt som anger vilken typ av utvärdering, batch, direktuppspelning (kallas även kontinuerlig) eller kant (kallas även synkron), kommer segmentdefinitionen att genomgå. |
