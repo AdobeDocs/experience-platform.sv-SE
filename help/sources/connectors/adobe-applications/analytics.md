@@ -2,7 +2,7 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 251b00e0f0e063859f8d0a0e188fa805c7bf3f87
+source-git-commit: 5ec22fcf0f4c48efc28a3abd343bb00a19756281
 workflow-type: tm+mt
 source-wordcount: '1110'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Den förväntade fördröjningen för Analytics Data on Platform beskrivs i tabe
 | -------------- | ---------------- |
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **not** aktiverad) | &lt; 2 minuter |
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **är** aktiverad) | upp till 30 minuter |
-| Nya data till Data Lake | &lt; 90 minuter |
+| Nya data till Data Lake | &lt; 2,25 timmar |
 | Bakgrundsfyllning av mindre än 10 miljarder händelser | &lt; 4 veckor |
 
 Analysens bakgrundsfyllning för produktionssandlådor är som standard 13 månader. För Analytics-data i icke-produktionssandlådor anges backfill till tre månader. Den gräns på 10 miljarder händelser som nämns i tabellen ovan är strikt relaterad till förväntad fördröjning.
