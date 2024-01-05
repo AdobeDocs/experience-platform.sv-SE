@@ -4,9 +4,9 @@ title: Prenumerera på händelsemeddelanden från Adobe I/O
 description: Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur man tolkar returnerade händelsedata för varje tillämplig [!DNL Platform] service.
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 0a4883cff4f8e04dd0dd62a9e01435fa302a9e54
+source-git-commit: 49f4cf07d2f002e45e27dffac4fd0049446bc68f
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '739'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Observability Insights] gör att du kan prenumerera på Adobe I/O-händelsemeddelanden om Adobe Experience Platform-aktiviteter. Dessa händelser skickas till en konfigurerad webkrok för att underlätta effektiv automatisering av aktivitetsövervakning.
 
-Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur man tolkar returnerade händelsedata för varje tillämplig [!DNL Platform] service.
+Det här dokumentet innehåller anvisningar om hur du kan prenumerera på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper finns också, tillsammans med länkar till ytterligare dokumentation om hur du kan tolka returnerade händelsedata för varje tillämplig typ [!DNL Platform] service.
 
 ## Komma igång
 
@@ -23,13 +23,13 @@ Det här dokumentet kräver en fungerande förståelse för webbhooks och hur du
 
 ## Skapa en webkrok
 
-För att kunna ta emot [!DNL I/O Event] meddelanden måste du registrera en webkrok genom att ange en unik webkroks-URL som en del av din information om händelseregistrering.
+För att få [!DNL I/O Event] meddelanden måste du registrera en webkrok genom att ange en unik webkroks-URL som en del av din information om händelseregistrering.
 
 Du kan konfigurera din webkrok med valfri klient. En temporär webbkrokadress som du kan använda som del av kursen finns på [Webkrok.webbplats](https://webhook.site/) och kopiera den unika URL-adressen som anges.
 
 ![](../images/notifications/webhook-url.png)
 
-Under den inledande valideringsprocessen [!DNL I/O Events] skickar en `challenge` frågeparameter i en GET-begäran till webkroken. Du måste konfigurera webkroken så att den returnerar värdet för den här parametern i svarsnyttolasten. Om du använder Webhook.site väljer du **[!DNL Edit]** i det övre högra hörnet och sedan ange `$request.query.challenge$` under **[!DNL Response body]** före markering **[!DNL Save]**.
+Under den inledande valideringsprocessen [!DNL I/O Events] skickar en `challenge` frågeparameter i en GET-begäran till webkroken. Du måste konfigurera webkroken så att den returnerar värdet för den här parametern i svarsnyttolasten. Om du använder Webkrok.site väljer du **[!DNL Edit]** i det övre högra hörnet och sedan ange `$request.query.challenge$` under **[!DNL Response body]** före markering **[!DNL Save]**.
 
 ![](../images/notifications/response-challenge.png)
 
@@ -39,7 +39,11 @@ Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och
 
 ## Prenumerera på event
 
-När du har skapat ett nytt projekt går du till projektets översiktsskärm. Här väljer du **[!UICONTROL Add event]**.
+>[OBS!]
+>
+>Inmatningsmeddelandet för data kommer att tas bort från Adobe IO-prenumerationen. I stället bör du använda **Körningsinformation för källflöde** I/O-händelse.
+
+När du har skapat ett nytt projekt går du till projektets översiktsskärm. Välj **[!UICONTROL Add event]**.
 
 ![](../images/notifications/add-event-button.png)
 
@@ -59,12 +63,11 @@ På nästa skärm visas en lista med händelsetyper att prenumerera på. Välj d
 >Om du är osäker på vilka händelser du ska prenumerera på för den tjänst du arbetar med kan du läsa följande dokumentation:
 >
 >* [Plattformsmeddelanden](./rules.md)
->* [Privacy Service](../../privacy-service/privacy-events.md)
-
+>* [Privacy Service-meddelanden](../../privacy-service/privacy-events.md)
 
 ![](../images/notifications/choose-event-subscriptions.png)
 
-Nästa skärm uppmanar dig att skapa en JSON Web Token (JWT). Du kan generera ett nyckelpar automatiskt eller överföra en egen offentlig nyckel som genererats i terminalen.
+Nästa skärm uppmanar dig att skapa en JSON Web Token (JWT). Du kan välja att automatiskt generera ett nyckelpar eller överföra en egen offentlig nyckel som genererats i terminalen.
 
 I den här självstudiekursen används det första alternativet. Markera alternativrutan för **[!UICONTROL Generate a key pair]** väljer du **[!UICONTROL Generate keypair]** i det nedre högra hörnet.
 
@@ -80,7 +83,7 @@ På nästa skärm anger du ett namn och en beskrivning för händelseregistrerin
 
 ![](../images/notifications/registration-details.png)
 
-Gå längre ned på samma skärm under [!UICONTROL How to receive events] kan du välja att konfigurera hur händelser ska tas emot. **[!UICONTROL Webhook]** gör att du kan ange en anpassad webbhotell för att ta emot händelser, medan **[!UICONTROL Runtime action]** gör att du kan göra samma sak med [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
+Gå längre ned på samma skärm under [!UICONTROL How to receive events] kan du välja att konfigurera hur händelser ska tas emot. **[!UICONTROL Webhook]** gör att du kan ange en anpassad webbkrosadress för att ta emot händelser, medan **[!UICONTROL Runtime action]** låter dig göra samma sak med [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html).
 
 För den här självstudiekursen väljer du **[!UICONTROL Webhook]** och ange webbadressen till den webbkrok du skapade tidigare. När du är klar väljer du **[!UICONTROL Save configured events]** för att slutföra registreringen av evenemanget.
 
