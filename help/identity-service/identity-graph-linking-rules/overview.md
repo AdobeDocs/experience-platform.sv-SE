@@ -3,11 +3,11 @@ title: Översikt över regler för länkning av identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 hide: true
 hidefromtoc: true
-badge: Alfa
+badge: Alpha
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 20b8433cee719329bce562069c328adb906697a0
+source-git-commit: 07771956c22a3fee92bd76ae061b07e1e0f98b49
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '1040'
 ht-degree: 0%
 
 ---
@@ -69,12 +69,16 @@ Mer information finns i dokumentet om [algoritm för identitetsoptimering](./ide
 >
 >Namnområdesprioriteter är för närvarande inte tillgängliga för alfa.
 
-Du kan använda namnutrymmesprioritet för att definiera vilka namnutrymmen som är viktigare än andra. Den hierarki som du anger för dina namnutrymmen används sedan för att definiera primära identiteter och lagra profilfragment. Om prioritetsinställningar har konfigurerats kommer den primära identitetsinställningen på Web SDK inte längre att användas för att avgöra vilka profilfragment som lagras.
+Du kan använda namnutrymmesprioritet för att definiera vilka namnutrymmen som är viktigare än andra. Den prioritet som du anger för dina namnutrymmen används sedan för att definiera primära identiteter, vilket är den identitet som lagrar profilfragment (attribut och händelsedata) i kundprofilen i realtid. Om prioritetsinställningar har konfigurerats kommer den primära identitetsinställningen på Web SDK inte längre att användas för att avgöra vilka profilfragment som lagras.
 
 * Gränser och prioritet är oberoende konfigurationer och gör **not** påverka varandra:
    * Gränser är en konfiguration av identitetsdiagram i identitetstjänsten.
    * Prioritet är en profilfragmentskonfiguration i kundprofilen i realtid.
    * Prioritet gör **not** påverka säkerhetsstängningar för identitetsdiagramsystem.
+* **Namnområdesprioriteten är ett numeriskt värde** som tilldelats ett namnutrymme som anger dess relativa betydelse. Detta är en egenskap för ett namnutrymme.
+* **Primär identitet är identiteten som ett profilfragment lagras mot**. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
+* Namnområdesprioriteten avgör den primära identiteten för upplevelsehändelser.
+   * För profilposter kan du använda arbetsytan för scheman i användargränssnittet i Experience Platform för att definiera identitetsfält, inklusive den primära identiteten. Läs guiden på [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) för mer information.
 
 >[!BEGINSHADEBOX]
 
