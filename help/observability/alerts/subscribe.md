@@ -4,9 +4,9 @@ title: Prenumerera på händelsemeddelanden från Adobe I/O
 description: Det här dokumentet innehåller anvisningar om hur du prenumererar på händelsemeddelanden i Adobe I/O för Adobe Experience Platform-tjänster. Referensinformation om tillgängliga händelsetyper tillhandahålls också, tillsammans med länkar till ytterligare dokumentation om hur man tolkar returnerade händelsedata för varje tillämplig [!DNL Platform] service.
 feature: Alerts
 exl-id: c0ad7217-ce84-47b0-abf6-76bcf280f026
-source-git-commit: 49f4cf07d2f002e45e27dffac4fd0049446bc68f
+source-git-commit: eccd53a8b2076fe23a65aa2e933a7cb871e97f72
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Gå till [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) och
 
 ## Prenumerera på event
 
->[OBS!]
+>[!NOTE]
 >
 >Inmatningsmeddelandet för data kommer att tas bort från Adobe IO-prenumerationen. I stället bör du använda **Körningsinformation för källflöde** I/O-händelse.
 
