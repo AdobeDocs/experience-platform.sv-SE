@@ -1,13 +1,13 @@
 ---
 title: Installera Adobe Experience Platform Web SDK
 description: Lär dig installera Experience Platform Web SDK.
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
+source-git-commit: a8b1aa87ecd85c530188e520db2f17136a63ae44
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
-
 
 # Installera Web SDK {#installing-the-sdk}
 
@@ -68,6 +68,10 @@ I det här exemplet byter den globala funktionen namn `mycustomname`, i stället
 Utöver att skapa en global funktion läser den här baskoden in ytterligare kod som finns i en extern fil \(`alloy.js`\) lagras på en server. Som standard läses den här koden in asynkront så att webbsidan kan fungera så bra som möjligt. Detta är den rekommenderade implementeringen.
 
 ### Stöd för Internet Explorer {#support-internet-explore}
+
+>[!IMPORTANT]
+>
+>I slutet av april 2024 kommer Adobe Experience Platform Web SDK att ta bort stöd för alla versioner av Internet Explorer.
 
 Denna SDK använder löften, som är ett sätt att kommunicera slutförandet av asynkrona uppgifter. The [Lova](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) implementering som används av SDK stöds internt av alla målwebbläsare utom [!DNL Internet Explorer]. Använda SDK på [!DNL Internet Explorer]måste du ha `window.Promise` [polyfylld](https://remysharp.com/2010/10/08/what-is-a-polyfill).
 
