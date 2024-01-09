@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Skapa en roll
 description: Det här dokumentet innehåller information om hur du hanterar roller via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 85699716-339d-4992-8390-95563c7ea7fe
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: d8f72bb5ae56daf5a41c763f821ca6306514bc48
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,10 @@ Den nya rollen har skapats och du omdirigeras till **[!UICONTROL Roles]** sidan 
 ![sparad med nyckelroll](../../images/flac-ui/flac-role-saved.png)
 
 Se avsnitten om [hantera behörigheter för en roll](#manage-permissions-for-a-role) om du vill ha mer information om hur du hanterar rollbehörigheter när de har skapats.
+
+Följande video är tänkt att ge stöd för din förståelse för att skapa en ny roll och hantera användare för den rollen.
+
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
 ## Duplicera en roll
 

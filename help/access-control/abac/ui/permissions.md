@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 7c44683c8110d78654baba4bc53f2c3c2daf2831
+source-git-commit: ea79ac7fecd980aba87d003c8c23f271c74ec23d
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '921'
 ht-degree: 0%
 
 ---
@@ -100,6 +100,10 @@ Tillagda användare visas under **[!UICONTROL Users]** -fliken.
 Om du vill ta bort en användare från en roll väljer du **X** -ikonen bredvid användarnamnet.
 
 ![flac-remove-users](../../images/flac-ui/flac-remove-users.png)
+
+Följande video är tänkt att ge stöd för din förståelse för att skapa en ny roll och hantera användare för den rollen.
+
+>[!VIDEO](https://video.tv.adobe.com/v/336081/?learn=on)
 
 ## Hantera API-autentiseringsuppgifter för roll {#manage-api-credentials-for-role}
 

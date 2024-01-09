@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera användare
 description: Det här dokumentet innehåller information om hur du hanterar användare och användargrupper via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: 44ffcc09edcfe35bdd456b509fac6f096ef8e022
+source-git-commit: d410e7ea635471f2bbc93c9d332ad7e2f619d054
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '252'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 Välj den **[!UICONTROL Users]** -fliken.
 
-![flash-users-tab](../../images/flac-ui/flac-users-tab.png)
+![Sidan Användare visas med [!UICONTROL Users] är markerad.](../../images/flac-ui/flac-users-tab.png)
 
 En lista över användare visas. Välj den användare du vill visa i listan. Du kan också använda sökfältet för att söka efter användaren genom att ange användarens namn eller e-postadress.
 
 Fliken Detaljer innehåller en översikt över användaren. I översikten visas användarnamn, kontotyp, e-post, autentiserings-ID, kontaktinformation och platsinformation.
 
-![flash-users-details](../../images/flac-ui/flac-users-details.png)
+![Användarinformationssida med [!UICONTROL Details] och användarprofilen är markerad.](../../images/flac-ui/flac-users-details.png)
 
 Välj **[!UICONTROL Roles]** för att visa de roller som användaren är tilldelad.
 
-![flash-users-roles](../../images/flac-ui/flac-users-roles.png)
+![Sidan Roller visas med [!UICONTROL Roles] och rollen är markerade.](../../images/flac-ui/flac-users-roles.png)
 
 ## Åtkomstkontroll för utvecklare och API med Experience Platform behörigheter
 
@@ -33,6 +33,10 @@ Välj **[!UICONTROL Roles]** för att visa de roller som användaren är tilldel
 >Det är bara systemadministratörer som kan visa och hantera API-autentiseringsuppgifter i behörigheter.
 
 Övergången till Adobe Experience Platform-behörigheter innehåller ytterligare steg som måste slutföras för det utvecklar-API-arbetsflöde som tidigare var baserat på roller. Se guiden på [API-autentisering](../../../landing/api-authentication.md) för mer information.
+
+Följande video är avsedd att ge stöd för din förståelse av utvecklares och API:s autentiseringsuppgifter.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3426407/?learn=on)
 
 ## Nästa steg
 
