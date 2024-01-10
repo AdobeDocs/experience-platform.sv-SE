@@ -2,9 +2,9 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett filbaserat mål med hjälp av Destination SDK.
 title: Använd Destination SDK för att konfigurera ett filbaserat mål
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 45ba0db386f065206f89ed30bfe7b0c1b44f6173
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '732'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med 
 
 Starta med [skapa en server- och filkonfiguration](../authoring-api/destination-server/create-destination-server.md) med `/destinations-server` slutpunkt.
 
-Nedan visas ett exempel på en konfiguration för en [!DNL Amazon S3] mål. Om du vill konfigurera andra typer av filbaserade mål läser du i motsvarande [serverkonfigurationer](../functionality/destination-server/server-specs.md).
+Nedan visas ett exempel på en konfiguration för en [!DNL Amazon S3] mål. Mer information om fälten som används i konfigurationen och för att konfigurera andra typer av filbaserade mål finns i motsvarande [serverkonfigurationer](../functionality/destination-server/server-specs.md).
 
 **API-format**
 
@@ -40,7 +40,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
     "name": "S3 destination",
     "destinationServerType": "FILE_BASED_S3",
     "fileBasedS3Destination": {
-        "bucketName": {
+        "bucket": {
             "templatingStrategy": "PEBBLE_V1",
             "value": "{{customerData.bucketName}}"
         },
@@ -116,7 +116,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 Nedan visas ett exempel på en destinationskonfiguration som skapats med `/destinations` API-slutpunkt.
 
-Om du vill ansluta server- och filkonfigurationen i steg 1 till den här målkonfigurationen lägger du till instans-ID:t för servern och mallkonfigurationen som `destinationServerId` här.
+Lägg till `instance ID` av server- och filkonfigurationen som `destinationServerId` här.
 
 **API-format**
 
@@ -124,7 +124,7 @@ Om du vill ansluta server- och filkonfigurationen i steg 1 till den här målkon
 POST platform.adobe.io/data/core/activation/authoring/destinations
 ```
 
-```json {line-numbers="true" highlight="84"}
+```json {line-numbers="true" highlight="83"}
 {
     "name": "Amazon S3 destination",
     "description": "Amazon S3 destination is a fictional destination, used for this example.",
@@ -189,7 +189,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
         }
     ],
     "uiAttributes": {
-        "documentationLink": "https://www.adobe.io/apis/experienceplatform.html",
+        "documentationLink": "https://www.adobe.com/go/destinations-YOURDESTINATION-en",
         "category": "S3",
         "connectionType": "S3",
         "flowRunsSupported": true,
@@ -232,7 +232,22 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
             "ONCE"
         ],
         "defaultFrequency": "DAILY",
-        "defaultStartTime": "00:00"
+        "defaultStartTime": "00:00",
+       "filenameConfig":{
+         "allowedFilenameAppendOptions":[
+            "SEGMENT_NAME",
+            "DESTINATION_INSTANCE_ID",
+            "DESTINATION_INSTANCE_NAME",
+            "ORGANIZATION_NAME",
+            "SANDBOX_NAME",
+            "DATETIME",
+            "CUSTOM_TEXT"
+         ],
+         "defaultFilenameAppendOptions":[
+            "DATETIME"
+         ],
+         "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
+      }
     },
     "backfillHistoricalProfileData": true
 }
@@ -244,7 +259,7 @@ För vissa destinationer kräver Destinationen SDK att du konfigurerar en målgr
 
 Om du använder en konfiguration för målgruppsmetadata måste du ansluta den till målkonfigurationen som du skapade i steg 2. Lägg till instans-ID:t för målgruppens metadatakonfiguration i målkonfigurationen som `audienceTemplateId`.
 
-```json {line-numbers="true" highlight="91"}
+```json {line-numbers="true" highlight="90"}
 {
     "name": "Amazon S3 destination",
     "description": "Amazon S3 destination is a fictional destination, used for this example.",
@@ -309,7 +324,7 @@ Om du använder en konfiguration för målgruppsmetadata måste du ansluta den t
         }
     ],
     "uiAttributes": {
-        "documentationLink": "https://www.adobe.io/apis/experienceplatform.html",
+        "documentationLink": "http://www.adobe.com/go/destinations-YOURDESTINATION-en",
         "category": "S3",
         "connectionType": "S3",
         "flowRunsSupported": true,
@@ -358,7 +373,22 @@ Om du använder en konfiguration för målgruppsmetadata måste du ansluta den t
             "ONCE"
         ],
         "defaultFrequency": "DAILY",
-        "defaultStartTime": "00:00"
+        "defaultStartTime": "00:00",
+       "filenameConfig":{
+         "allowedFilenameAppendOptions":[
+            "SEGMENT_NAME",
+            "DESTINATION_INSTANCE_ID",
+            "DESTINATION_INSTANCE_NAME",
+            "ORGANIZATION_NAME",
+            "SANDBOX_NAME",
+            "DATETIME",
+            "CUSTOM_TEXT"
+         ],
+         "defaultFilenameAppendOptions":[
+            "DATETIME"
+         ],
+         "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
+      }
     },
     "backfillHistoricalProfileData": true
 }
@@ -367,6 +397,10 @@ Om du använder en konfiguration för målgruppsmetadata måste du ansluta den t
 ## Steg 4: Konfigurera autentisering {#set-up-authentication}
 
 Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller `"authenticationRule": "PLATFORM_AUTHENTICATION"` i målkonfigurationen ovan kan du konfigurera autentisering för målet med hjälp av `/destination` eller `/credentials` slutpunkt.
+
+>[!NOTE]
+>
+>`CUSTOMER_AUTHENTICATION` är det vanligaste av de två autentiseringsreglerna och det är det som ska användas om du kräver att användarna tillhandahåller någon form av autentisering till ditt mål innan de kan konfigurera en anslutning och exportera data.
 
 * Om du valde `"authenticationRule": "CUSTOMER_AUTHENTICATION"` i målkonfigurationen, se följande avsnitt för de autentiseringstyper som stöds av Destinationen SDK för filbaserade mål:
 
@@ -384,10 +418,10 @@ Beroende på om du anger `"authenticationRule": "CUSTOMER_AUTHENTICATION"` eller
 
 När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i föregående steg kan du använda kommandot [måltestningsverktyg](../testing-api/batch-destinations/file-based-destination-testing-overview.md) för att testa integrationen mellan Adobe Experience Platform och ditt mål.
 
-Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
+Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa målgrupper, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
-* [Skapa en publikdokumentationssida](/help/segmentation/ui/overview.md#create-segment)
-* [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
+* [Skapa en målgrupp - dokumentationssida](/help/segmentation/ui/overview.md#create-segment)
+* [Skapa en målgrupp - videogenomgång](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
 ## Steg 6: Publicera destinationen {#publish-destination}
 
