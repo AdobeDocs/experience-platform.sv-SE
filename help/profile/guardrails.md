@@ -5,10 +5,10 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: c7537959b1cc53998acafbccaa2f39686afd9f15
+source-git-commit: 17aa9029dc83454133847352c21aa9ac68f23be8
 workflow-type: tm+mt
-source-wordcount: '2280'
-ht-degree: 2%
+source-wordcount: '2428'
+ht-degree: 1%
 
 ---
 
@@ -114,13 +114,27 @@ De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrup
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
 | --- | --- | --- | --- |
-| Målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om [skapa målgrupper](/help/segmentation/ui/segment-builder.md) genom segmentbyggaren. |
+| Målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Detta inkluderar grupper, strömning och gränspubliken. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om [skapa målgrupper](/help/segmentation/ui/segment-builder.md) genom segmentbyggaren. |
 | Utforma målgrupper per sandlåda | 150 | Prestandaskydd | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [kantmålgrupper](/help/segmentation/ui/edge-segmentation.md). |
-| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelande målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
+| Kantgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Edge-segmentering stöder upp till 1 500 inkommande händelser per sekund i Adobe Experience Platform Edge Network. Kantsegmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [kantmålgrupper](/help/segmentation/ui/edge-segmentation.md). |
+| Direktuppspelande målgrupper per sandlåda | 500 | Prestandaskydd | En organisation kan ha fler än 500 direktuppspelade målgrupper totalt, så länge det finns färre än 500 direktuppspelade målgrupper i varje enskild sandlåda. Detta inkluderar både strömnings- och edge-målgrupper. Försök att skapa fler direktuppspelade målgrupper kan påverka systemets prestanda. Läs mer om [direktuppspelande målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
+| Direktuppspelningsgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Direktuppspelningssegmentering stöder upp till 1 500 inkommande händelser per sekund. Det kan ta upp till 5 minuter att kvalificera en profil för segmentmedlemskap. Läs mer om [direktuppspelande målgrupper](/help/segmentation/ui/streaming-segmentation.md). |
 | Gruppera målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 gruppmålgrupper totalt, förutsatt att det finns färre än 4000 gruppmålgrupper i varje enskild sandlåda. Om du försöker skapa fler gruppmålgrupper kan det påverka systemets prestanda. |
 | Målgrupper per sandlåda | 50 | Systemstyrt skyddsräcke | Du kan skapa högst 50 kontomålgrupper i en sandlåda. När ni har nått 50 målgrupper i en sandlåda **[!UICONTROL Create audience]** kontrollen är inaktiverad när du försöker skapa en ny kontopublik. Läs mer om [kontomålgrupper](/help/segmentation/ui/account-audiences.md). |
 | Publicerade kompositioner per sandlåda | 10 | Prestandaskydd | Du kan ha högst 10 publicerade kompositioner i en sandlåda. Läs mer om [publiksammansättning i gränssnittsguiden](/help/segmentation/ui/audience-composition.md). |
 | Maximal målgruppsstorlek | 30 procent | Prestandaskydd | Rekommenderat maximalt medlemskap för en målgrupp är 30 procent av det totala antalet profiler i systemet. Det är möjligt att skapa målgrupper med över 30 % av profilerna som medlemmar eller flera stora målgrupper, men det påverkar systemets prestanda. |
+
+{style="table-layout:auto"}
+
+## Förväntad tillgänglighet
+
+I följande avsnitt beskrivs **förväntat** tillgänglighet för målgrupper och sammanslagningspolicyer för tjänster i senare led, t.ex. Real-Time CDP destinationer:
+
+| Sandlådetyp | Tid |
+| ------------ | ---- |
+| Befintliga sandlådor | 1 timme |
+| Nya sandlådor | 2 timmar |
+| Återställ sandlådor nyligen | 2 timmar |
 
 {style="table-layout:auto"}
 
