@@ -2,10 +2,10 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: 696dad52af4f927969fac38f78341f4e3c8c6607
 workflow-type: tm+mt
-source-wordcount: '1923'
-ht-degree: 1%
+source-wordcount: '2701'
+ht-degree: 0%
 
 ---
 
@@ -27,11 +27,36 @@ I nuläget stöds endast profilbaserade målgrupper. Stöd för kontobaserade m�
 
 Ja, externt genererade färdiga målgrupper stöds med Audience Portal. Nu kan du importera en externt genererad publik via en CSV-fil. I framtiden kommer ni att kunna lägga till målgrupper via batchanslutningar eller direktuppspelningsbaserade källkopplingar.
 
+### Vilka behörigheter behöver jag för att kunna överföra externt genererade målgrupper?
+
+För att kunna överföra externt genererade målgrupper måste du ha både behörigheterna Hantera målgrupper/segment och Hantera datauppsättningar. Det finns inga specifika rollbaserade kontroller som krävs för att överföra externt genererade målgrupper.
+
+### Vad händer när jag överför en externt genererad publik?
+
+När du överför en externt genererad publik skapas följande objekt:
+
+- Datauppsättning
+   - Datauppsättningen visas i datamängdslagret, och datauppsättningens namn är **samma** som namnet på den externt genererade målgrupp du överförde.
+- Batchjobb
+   - Ett batchjobb **automatiskt** körs när du överför en externt genererad publik. Det innebär att du gör det **not** måste vänta på att det dagliga segmenteringsjobbet ska köras för att den externt genererade publiken ska aktiveras.
+- Ad hoc-schema
+   - A **new** XDM-schemat skapas för användning med den externt genererade målgruppen. Fälten i det här XDM-schemat namnges för användning med den datauppsättning som också skapades.
+
+### Vad består en externt genererad publik av och vad händer med dessa data när de importeras till Platform?
+
+Under importen av det externa målgruppsarbetsflödet måste du ange vilken kolumn i CSV-filen som motsvarar **Primär identitet**. Ett exempel på en primär identitet är e-postadress, ECID eller ett organisationsspecifikt namnområde för en anpassad identitet.
+
+Data som är associerade med den här primära identitetskolumnen på **endast** data som är kopplade till profilen. Om det inte finns några befintliga profiler som matchar data i den primära identitetskolumnen skapas en ny profil. Den här profilen är dock i princip en överbliven profil eftersom **no** attribut eller upplevelsehändelser är associerade med den här profilen.
+
+Alla andra data inom den externt genererade målgruppen beaktas **nyttolastattribut**. Dessa attribut kan **endast** användas för personalisering och berikning under aktiveringen, och **not** kopplad till en profil. Dessa attribut lagras dock i datasjön.
+
+Även om den externt genererade målgruppen kan refereras när målgrupper skapas med segmentbyggaren, kan enskilda profilattribut **inte** användas.
+
 ### Kan jag stämma av externt genererade målgruppsdata med en befintlig profil i Platform?
 
 Ja, den externt genererade målgruppen sammanfogas med den befintliga profilen i plattformen om de primära identifierarna matchar. Det kan ta upp till 24 timmar att stämma av dessa data. Om det inte redan finns profildata skapas en ny profil när data hämtas.
 
-## Kan jag använda en externt genererad publik för att bygga andra målgrupper?
+### Kan jag använda en externt genererad publik för att bygga andra målgrupper?
 
 Ja, alla externt genererade målgrupper visas i målgruppslagret och kan användas när målgrupper byggs inom [Segment Builder](./ui/segment-builder.md).
 
@@ -45,13 +70,33 @@ Men när ni mappar era målgrupper till batch- eller filbaserade mål kan ni anv
 
 Om du vill veta mer om den här funktionen kan du läsa guiden på [aktivera målgruppsdata till exportmål för gruppprofiler](../destinations/ui/activate-batch-profile-destinations.md#mapping).
 
-### Kan jag aktivera externt genererade målgrupper för Adobe Journey Optimizer?
+### Finns det någon specifik kopplingsregel för externt genererade målgrupper?
 
-Vid den här tidpunkten, nej. Den här funktionen kommer dock att vara tillgänglig inom den närmaste framtiden.
+Den organisationsspecifika standardprincipen för sammanfogning tillämpas automatiskt när externt genererade målgrupper överförs. Du kan dock ändra den sammanfogningsprincip som tillämpas på den externt genererade målgruppen under importarbetsflödet.
+
+### Var kan jag aktivera externt genererade målgrupper?
+
+En externt genererad publik kan mappas till alla RTCDP-mål och kan användas i Adobe Journey Optimizer-kampanjer.
+
+### Hur snart är externt genererade målgrupper klara för aktivering?
+
+Om data från den externt genererade publiken aktiveras till ett direktuppspelningsmål är de tillgängliga inom två timmar.
+
+Om data från den externt genererade publiken aktiveras för en batchdestination synkroniseras de med nästa 24-timmarssegmenteringsjobb.
 
 ### Kan jag ta bort en externt genererad publik?
 
-Vid den här tidpunkten, nej. Du kan antingen inaktivera eller arkivera den här målgruppen istället. I det här läget, profiler **kommer** förbli aktiva för användning i nedströmstillämpningar. Stöd för att ta bort externt genererade målgrupper läggs till i en senare version.
+För närvarande kan du bara inaktivera en externt genererad publik. I det här läget, profiler **kommer** förbli aktiva för användning i nedströmstillämpningar. Stöd för att ta bort externt genererade målgrupper läggs till i en senare version.
+
+### Vad ska jag göra om jag av misstag laddade upp en externt genererad publik?
+
+Om du av misstag har överfört en externt genererad publik och vill ta bort data, kan du rensa profilerna som är kopplade till målgruppen genom att överföra en CSV-fil med en rad och utan data.
+
+### Hur länge varar externt genererade målgrupper?
+
+Det aktuella utgångsdatumet för externt genererade målgrupper är **30 dagar**. Utgångsdatumet har valts för att minska mängden överflödiga data som lagras i organisationen.
+
+När förfalloperioden för data har passerat är den tillhörande datauppsättningen fortfarande synlig i datamängdslagret, men du kommer att **not** kan aktivera målgruppen och profilantalet visas som noll.
 
 ### Vad representerar de olika livscykelstatusarna?
 
@@ -124,13 +169,13 @@ I följande avsnitt listas frågor som rör Audience Composition.
 
 Både Audience Composition och Segment Builder har en viktig roll när det gäller att skapa målgrupper i Platform.
 
-Segment Builder är bättre för publiken **skapa** (för att skapa en helt ny publik), medan Audience Composition är bättre för publiken **kuration** (för att skapa nya målgrupper baserat på en befintlig målgrupp).
+Segment Builder är bättre för publiken **skapa** (för att skapa en helt ny publik), medan Audience Composition är bättre för publiken **kurser och personalisering** (för att skapa nya målgrupper baserat på en befintlig målgrupp).
 
 I följande tabell visas skillnaden mellan de två tjänsterna:
 
 | Segment Builder | Målgruppssammansättning |
 | --------------- | -------------------- |
-| <ul><li>Generering av målgrupper i ett enda steg</li><li>Skapar de grundläggande blocken av målgrupper från profil-, tidsserie- och multientitetsdata</li><li>Används för att skapa **en** publik</li></ul> | <ul><li>Målgruppsgenerering i flera steg, med hjälp av set-baserade operationer</li><li>Använder de målgrupper som skapas i segmentbyggaren och tillämpar databerikande alternativ som rankningsprofilattribut</li><li>Används för att skapa **flera** målgrupper samtidigt</li></ul> |
+| <ul><li>Generering av målgrupper i ett enda steg</li><li>Skapar de grundläggande blocken av målgrupper från profil-, tidsserie- och multientitetsdata</li><li>Används för att skapa **en** publik</li></ul> | <ul><li>Målgruppsgenerering i flera steg, med hjälp av set-baserade operationer</li><li>Använder målgrupper som skapats av Segment Builder och tillämpar databerikande alternativ som rankningsprofilattribut och uppdelning i undermålgrupper</li><li>Används för att skapa **flera** målgrupper samtidigt</li></ul> |
 
 Läs mer om Segment Builder i [Segment Builder Guide](./ui/segment-builder.md). Läs mer om Audience Composition [Guide för målgruppssammansättning](./ui/audience-composition.md).
 
@@ -152,11 +197,35 @@ Komponentplaceringen följer en hård struktur enligt följande:
 
 1. Du **alltid** börja med [!UICONTROL Audience] -block för att välja din startaktivitet. Du kan ha högst **en** [!UICONTROL Audience] -block.
 2. Du kan lägga till en [!UICONTROL Exclude] -block som följer efter [!UICONTROL Audience] -block.
-3. Du kan lägga till en [!UICONTROL Enrich] -block som följer efter [!UICONTROL Exclude] -block.
+3. Du kan lägga till en [!UICONTROL Enrich] -block som följer efter [!UICONTROL Exclude] -block. Du kan bara använda **en** [!UICONTROL Enrich] block per disposition.
 4. Du kan lägga till en [!UICONTROL Rank] eller [!UICONTROL Split] -block. Du kan **endast** har ett av dessa block per komposition.
 5. Du **alltid** end with a [!UICONTROL Save] blockera för att rädda er målgrupp.
 
+Följande begränsningar (?) gäller när du använder dessa block:
+
+- Delat block
+   - Det här blocket stöder bara **Sträng** datatyper. Delningsblocket gör det **not** har stöd för datatypen date eller boolean.
+   - Dessutom gör det här blocket **not** stödja anrikningsattribut.
+- Exkludera block
+   - Detta block gör **not** har stöd för datatypen date eller boolean.
+- Rankningsblock
+   - Detta block gör **not** stödja anrikningsattribut.
+
 Läs mer om hur du använder Audience Composition [Användargränssnittsguide för målgruppskomposition](./ui/audience-composition.md).
+
+### När sparas och utvärderas målgrupper som skapats med Audience Composition?
+
+Publiken sparas automatiskt när de skapas i Audience Composition. Publiken skapas första gången som detta sparas automatiskt.
+
+När målgruppen har skapats kan det ta upp till 24 timmar att utvärdera den.
+
+### När kan jag använda den målgrupp jag skapat?
+
+Publiken som skapas i Audience Composition kommer att **omedelbart** visas i Audience Portal. För att kunna använda programmet i Adobe Journey Optimizer måste du dock vänta minst 24 timmar efter utvärderingen.
+
+### Är utvärderingsjobb synliga i övervakningsavsnittet?
+
+För närvarande är utvärderingsjobb **not** visas i övervakningsgränssnittet.
 
 ### Kan jag använda en Audience Composition i en annan komposition?
 
@@ -164,7 +233,11 @@ Nej, målgrupper skapade med Audience Composition **inte** användas som indata 
 
 ### Hur fungerar delning i Audience Composition?
 
-Genom att dela målgrupper kan ni ytterligare dela upp er målgrupp i mindre grupper. Denna delning tvingar fram ömsesidig exklusivitet mellan grupperna. Det innebär att om en post uppfyller villkoren för flera delade sökvägar tilldelas den **först** till vänster och **not** som tilldelats någon av de andra sökvägarna.
+Genom att dela målgrupper kan ni ytterligare dela upp er målgrupp i mindre grupper.
+
+När grupper delas upp efter attribut sker ömsesidig exklusivitet mellan grupperna. Det innebär att om en post uppfyller villkoren för flera delade sökvägar tilldelas den **först** till vänster och **not** som tilldelats någon av de andra sökvägarna.
+
+Vid uppdelning efter procent delas partitionerna **slumpmässigt** klart. Detta innebär att profilerna tilldelas slumpmässigt till varje bana. Delningen är **not** beständig så att profilen kan befinna sig i olika delar av gruppen vid varje utvärdering.
 
 Mer information om det delade blocket finns i [Användargränssnittsguide för målgruppskomposition](./ui/audience-composition.md#split).
 

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 820ba6c9cedcb85db7ff9bc199a67e56ee628c93
+source-git-commit: 5262b5e894cc6bfa2db79afcda8bfda4b496f7d5
 workflow-type: tm+mt
-source-wordcount: '1668'
+source-wordcount: '1677'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ The **[!UICONTROL Composition properties]** popover visas. Du kan infoga informa
 
 >[!NOTE]
 >
->Om du **not** ger din komposition en titel, har den titeln &quot;Disposition&quot; följt av datum och tid när den skapades som standard.
+>Om du **not** ger din komposition en titel, har den titeln &quot;Disposition&quot; följt av datum och tid när den skapades som standard. Dessutom kan varje komposition **måste** har ett eget unikt namn.
 
 När du har uppdaterat dispositionsinformationen väljer du **[!UICONTROL Save]** för att bekräfta dessa uppdateringar. Målgruppsarbetsytan visas igen.
 
