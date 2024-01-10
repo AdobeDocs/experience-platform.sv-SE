@@ -3,10 +3,10 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 8cec606849489ef1e8845254117d184d5dc3c70a
+source-git-commit: e46ac94a2328b045d7270b2498d6cb7ef5f0464b
 workflow-type: tm+mt
-source-wordcount: '1678'
-ht-degree: 1%
+source-wordcount: '1740'
+ht-degree: 0%
 
 ---
 
@@ -15,6 +15,14 @@ ht-degree: 1%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+## Version 2.19.2 - 10 januari 2024
+
+**Korrigeringar och förbättringar**
+
+* Ett problem där identitetsfel maskerade andra fel har korrigerats och identitetsfel har ändrats till varningar har åtgärdats.
+* Korrigerade ett problem där nederdelen av sidanrop aldrig skulle skickas när det fanns ett överst sidanrop med renderDecision inställt på false.
+* Korrigerade ett problem där Web SDK inte kunde läsa korsdomänsidentiteter när det fanns flera frågesträngsparametrar för adobe_mc.
 
 ## Version 2.19.1 - 10 november 2023
 
