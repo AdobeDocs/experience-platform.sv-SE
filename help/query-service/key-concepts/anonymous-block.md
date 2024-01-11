@@ -2,9 +2,9 @@
 title: Anonymt block i frågetjänsten
 description: Det anonyma blocket är en SQL-syntax som stöds av Adobe Experience Platform Query Service, som gör att du effektivt kan köra en sekvens med frågor
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: b7de5d3b2ceba27f5e86d48078be484dcb6f7c4b
+source-git-commit: 9193ba821409806cd7b4667c5de73a0cf2660c66
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -14,10 +14,6 @@ ht-degree: 0%
 Adobe Experience Platform Query Service stöder anonyma block. Med den anonyma blockfunktionen kan du kedja en eller flera SQL-satser som körs i sekvens. De gör det även möjligt att hantera undantag.
 
 Den anonyma blockfunktionen är ett effektivt sätt att utföra en sekvens av åtgärder eller frågor. Frågekedjan inom blocket kan sparas som en mall och schemaläggas för att köras vid en viss tidpunkt eller ett visst intervall. Dessa frågor kan användas för att skriva och lägga till data för att skapa en ny datauppsättning och används vanligtvis där du har ett beroende.
-
->[!IMPORTANT]
->
->Schemaläggning av frågor med anonyma block är för närvarande bara möjligt via [!DNL Query Service] API. Läs dokumentationen för [fullständiga instruktioner för schemaläggning av frågor via API](../api/scheduled-queries.md).
 
 Tabellen innehåller en beskrivning av blockets huvudavsnitt: körning och undantagshantering. Avsnitten definieras av nyckelorden `BEGIN`, `END`och `EXCEPTION`.
 
