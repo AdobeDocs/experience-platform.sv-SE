@@ -2,11 +2,10 @@
 solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
-badgeLimitedAvailability: label="Begränsad tillgänglighet" type=Caution
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: fe2bb709a7ee56323492fed381c447e6a79fd5f8
 workflow-type: tm+mt
-source-wordcount: '2086'
+source-wordcount: '2177'
 ht-degree: 0%
 
 ---
@@ -15,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Observera att lookalike-insikter och lookalike-målgrupper finns i **begränsad tillgänglighet**.
+>Insikter som liknar lookalike och lookalike-målgrupper finns bara i **B2C-utgåva**.
 
 I Adobe Experience Platform ger lookalike-målgrupper intelligenta insikter om var och en av era målgrupper och utnyttjar maskininlärningsbaserade insikter för att identifiera och inrikta sig på värdefulla kunder med era marknadsföringskampanjer.
 
@@ -29,6 +28,15 @@ Innan du börjar använda lookalike-målgrupper måste du förstå följande kon
 - **Look-alike model**: En look-alike-modell är en maskininlärningsmodell som är utbildad på alla berättigade grundmålgrupper utan några indata från kunderna. Varje look-alike-modell skapar inflytelserika faktorer och likhetsdiagram. En lookalike-modell gör **not** få poäng.
 - **Perfekta målgrupper**: En Look-alike-målgrupp är den målgrupp som skapas när en look-alike-modell med ett valt likhetströskelvärde tillämpas på basmålgruppen. Du kan skapa flera lookalike-målgrupper med samma look-alike-modell. Den lookalike-målgruppen är vad som får poäng.
 - **Total adresserbar målgrupp**: Den totala adresserbara målgruppsstorleken är det totala antalet profiler under de senaste 30 dagarna minus basmålgruppspopulationen under de senaste 30 dagarna. Om en kund t.ex. har 10 miljoner profiler under de senaste 30 dagarna, och den allmänna målgruppen har 1 miljon profiler under de senaste 30 dagarna, är den totala adresserbara storleken 9 miljoner profiler.
+
+## Kvalificering {#eligibility}
+
+För att kunna använda look-alike-insikter är det baspubliken **måste** uppfyller följande kriterier:
+
+- Baskåpubliken **måste** skapas inom plattformen.
+   - Externt genererade målgrupper **not** kan få lookalike-insikter.
+- Baskåpubliken **måste** vara i standardprincipen för sammanslagning.
+- Baskåpubliken **måste** inte använda fält som begränsas av datastyrning.
 
 ## Liknande modellinformation {#details}
 
@@ -75,7 +83,7 @@ Insikter som ser likadana ut är inbyggda i sidan med målgruppsinformation. Om 
 
 ![Knappen Publiker är markerad, liksom den baspublik som används för modellering av look-alike.](../images/ui/lookalike-audiences/browse.png)
 
-Sidan med målgruppsinformation visas. Välj **[!UICONTROL Look-alike insights]** för att visa målgruppens look-alike-insikter. Sidan **[!UICONTROL Look-alike insights]** visas. Den här sidan har tre huvudelement - likhets- och räckvidd-diagram, lookalike-målgrupper och inflytelserika faktorer.
+Sidan med målgruppsinformation visas. Välj **[!UICONTROL Look-alike insights]** för att visa målgruppens look-alike-insikter. The **[!UICONTROL Look-alike insights]** visas. Den här sidan har tre huvudelement - likhets- och räckvidd-diagram, lookalike-målgrupper och inflytelserika faktorer.
 
 ![Fliken för lookalike-insikter är markerad och visar de utseendeliknande insikterna för den grundläggande målgruppen.](../images/ui/lookalike-audiences/look-alike-insights.png)
 
@@ -177,13 +185,19 @@ Sidan med målgruppsinformation visas. Mer information finns i [målgruppsdelen 
 
 ## Uteslut datafält från look-alike-modellering {#exclude}
 
+>[!IMPORTANT]
+>
+> **Du** ansvarar för att säkerställa att data, inklusive känsliga data, märks på rätt sätt och att dataanvändningsprinciperna har definierats och möjliggjorts för att uppfylla de rättsliga och lagstadgade skyldigheter som ni tillämpar. Du bör också vara medveten om att de datafält eller segmentmedlemskap som **not** direkt korrelerad med datafält som vanligtvis är kopplade till känsliga eller skyddade datatyper kan vara en källa till potentiella avvikelser. **Du** är ansvariga för att analysera data för att identifiera, märka och tillämpa lämpliga dataanvändningsregler för data, inklusive eventuella datafält som kan användas som proxy för känsliga eller skyddade datatyper och som bör undantas från modellering.
+
 Målgrupper som ser likadana ut kan konfigureras för att exkludera datafält som är begränsade för marknadsföringsåtgärden&quot;Data Science&quot; genom att använda relevanta etiketter och policyer för dataanvändning. Data som är märkta som begränsade från användning för datavetenskap kommer att tas bort från övervägandet vid utbildning av en lookalike-målgruppsmodell och vid generering av en Look-alike-målgrupp från den utbildade modellen. 
+
+>[!NOTE]
+>
+>Det kan ta upp till 48 timmar innan ändringar i dataanvändningsetiketterna för den grundläggande målgruppen börjar gälla.
 
 Standardetiketten&quot;C9&quot; kan användas för att märka data som inte ska användas för datavetenskap och kan användas genom att aktivera standardprincipen&quot;Begränsa datavetenskap&quot;. Du kan också skapa ytterligare profiler för att begränsa data med andra etiketter, inklusive känsliga etiketter, från användning för datavetenskap. Mer information om hur du hanterar regler för dataanvändning finns i [användargränssnittshandbok för dataanvändningsprinciper](../../data-governance/policies/user-guide.md). Mer information om hur du hanterar etiketter för dataanvändning finns i [användargränssnittshandbok för dataanvändningsetiketter](../../data-governance/labels/user-guide.md).
 
 Som standard kommer modelleringsprocessen för lookalike-målgrupper att exkludera **alla** fält, datauppsättning eller målgrupp baserat på den integritetspolicy som är aktiverad för din organisation. Om baspubliken inte har några kontraktsetiketter utesluter modelleringsprocessen **alla** fält, datauppsättning eller målgrupp baserat på den integritetspolicy som är aktiverad för din organisation.
-
-Observera att **dig** ansvarar för att säkerställa att data, inklusive känsliga data, märks på rätt sätt och att dataanvändningspolicyer har definierats och möjliggjorts för att uppfylla de rättsliga och lagstadgade skyldigheter som ni tillämpar. Du bör också vara medveten om att datafält eller segmentmedlemskap som **not** direkt korrelerad med datafält som vanligtvis är kopplade till känsliga eller skyddade datatyper kan vara en källa till potentiella avvikelser. **Du** är ansvariga för att analysera data för att identifiera, märka och tillämpa lämpliga dataanvändningsregler för data, inklusive eventuella datafält som kan användas som proxy för känsliga eller skyddade datatyper och som bör undantas från modellering.
 
 ## Nästa steg
 
