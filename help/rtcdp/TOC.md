@@ -4,23 +4,24 @@ solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
-source-git-commit: c76a6267230599dfab905524e613f9721b928211
+source-git-commit: 19bde5079c8f1a916bec775b64fa743e80e4e1b1
 workflow-type: tm+mt
-source-wordcount: '323'
-ht-degree: 18%
+source-wordcount: '287'
+ht-degree: 14%
 
 ---
 
 
 # Hjälp om Real-time Customer Data Platform {#rtcdp}
 
-* [Real-Time CDP - översikt](overview.md)
-* [Real-Time CDP B2B Edition - översikt](b2b-overview.md)
-* Komma igång {#intro}
+* [Real-Time CDP-dokumentation](home.md)
+* Kom igång {#intro}
    * Real-Time CDP {#rtcdp-intro}
+      * [Real-Time CDP - översikt](overview.md)
       * [Kom igång med Real-Time CDP](get-started.md)
       * [Startsida](home-page-dashboards.md)
-   * Real-Time CDP B2B-utgåva {#rtcdpb2b-intro}
+   * Real-Time CDP B2B Edition {#rtcdpb2b-intro}
+      * [Real-Time CDP B2B Edition - översikt](b2b-overview.md)
       * [Exempel](./b2b-use-case.md)
       * [Heltäckande självstudiekurs](./b2b-tutorial.md)
       * [Real-Time CDP B2B Edition - skyddsräcken](b2b-guardrails.md)
@@ -29,13 +30,13 @@ ht-degree: 18%
 * Kontoprofiler {#account}
    * [Kontoprofilöversikt](accounts/account-profile-overview.md)
    * [Användargränssnittshandbok för kontoprofil](accounts/account-profile-ui-guide.md)
-* Administrering {#admin}
+* Administration {#admin}
    * [Administration - översikt](administration/admin-overview.md)
 * Datauppsättningar {#datasets}
    * [Datauppsättningar](datasets/dataset.md)
    * [Datakvalitet på plattform](datasets/data-quality.md)
 * Mål {#destinations}
-   * [Översikt över mål](destinations/overview.md)
+   * [Översikt över destinationer](destinations/overview.md)
    * [Destinationer i Real-Time CDP B2B Edition](destinations/b2b.md)
 * Guardrails {#guardrails}
    * [Översikt över Real-Time CDP skyddsutkast](guardrails/overview.md)
@@ -73,6 +74,7 @@ ht-degree: 18%
    * [Översikt över källor](sources/sources-overview.md)
    * [Källor i Real-Time CDP B2B Edition](sources/b2b.md)
 * Användningsfall {#use-cases}
+   * [Översikt över användningsfall som stöds](/help/rtcdp/use-case-guides/overview.md)
    * Personalisering, insikter och engagemang {#personalization-insights-engagement}
       * [Engagera era kunder på ett smart sätt](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
    * Kundförvärv {#customer-acquisition}
@@ -82,4 +84,4 @@ ht-degree: 18%
    * Profilberikning {#profile-enrichment}
       * [Komplettera förstahandsprofiler med attribut som tillhandahålls av partner](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
 * [Versionsinformation om Experience Platform](https://www.adobe.com/go/platform-release-notes-en)
-* [Ordlista för Experience Platform](https://www.adobe.com/go/platform-glossary-en)
+* [Experience Platform - ordlista](https://www.adobe.com/go/platform-glossary-en)
