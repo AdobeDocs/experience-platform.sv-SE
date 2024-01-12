@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c38e25a939319fa3b3301af36482c8efe6c3dd5f
 workflow-type: tm+mt
-source-wordcount: '2356'
+source-wordcount: '2574'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Kundprofil i realtid](../../../../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../../../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-### Viktiga termer
+### Nyckelterminologi
 
 Det är viktigt att förstå följande nyckeltermer som används i hela det här dokumentet:
 
@@ -176,6 +176,25 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >abstract="Definiera filtreringsregler på rad- och kolumnnivå när du skickar data till kundprofilen i realtid. Använd filtrering på radnivå för att tillämpa villkor och ange vilka data som ska **inkludera för profilinmatning**. Använd filtrering på kolumnnivå för att markera de datakolumner som du vill använda **exkludera för profilinmatning**. Filtreringsreglerna gäller inte för data som skickas till datasjön."
 
 När du är klar med mappningarna för [!DNL Analytics] kan ni använda filtreringsregler och filtreringsvillkor för att selektivt inkludera eller exkludera data från konsumtion i realtidskundprofilen. Stöd för filtrering finns endast för [!DNL Analytics] data och data filtreras endast innan de anges [!DNL Profile.] Alla data hämtas in i datasjön.
+
+>[!BEGINSHADEBOX]
+
+**Ytterligare information om Data Prep och filtrering av analysdata för kundprofil i realtid**
+
+* Du kan använda filterfunktionen för data som ska gå till Profil, men inte för data som ska gå till datasjön.
+* Du kan använda filtrering för livedata, men du kan inte filtrera data för bakåtfyllnad.
+   * The [!DNL Analytics] källan återfyller inte data i profilen.
+* Om du använder konfigurationer för dataförberedelser under den första konfigurationen av en [!DNL Analytics] dessa ändringar tillämpas även på den automatiska 13-månaders bakåtfyllning.
+   * Detta gäller dock inte för filtrering eftersom filtrering bara är reserverat för livedata.
+* Data Prep används för både direktuppspelning och batchingång. Om du ändrar en befintlig Data Prep-konfiguration tillämpas dessa ändringar sedan på nya inkommande data på både direktuppspelnings- och batchinförselvägar.
+   * Data Prep-konfigurationer gäller dock inte data som redan har importerats till Experience Platform, oavsett om det är direktuppspelnings- eller gruppdata.
+* Standardattribut från Analytics mappas alltid automatiskt. Därför kan du inte använda omformningar på standardattribut.
+   * Du kan dock filtrera bort standardattribut så länge de inte krävs i identitetstjänsten eller profilen.
+* Du kan inte använda filtrering på kolumnnivå för att filtrera obligatoriska fält och identitetsfält.
+* Du kan filtrera bort sekundära identiteter, särskilt AAID och AACustomID, men du kan inte filtrera bort ECID.
+* När ett omformningsfel inträffar resulterar motsvarande kolumn i NULL.
+
+>[!ENDSHADEBOX]
 
 #### Filtrering på radnivå
 
