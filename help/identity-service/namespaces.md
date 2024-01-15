@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 44e4e83d80302f64854f6c8f9531da913a2f0942
+source-git-commit: 876613610f8e3b369bc3fd41d235c214b791fd4d
 workflow-type: tm+mt
-source-wordcount: '1770'
+source-wordcount: '1860'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,19 @@ Identitetsnamnutrymmen kräver förståelse för olika Adobe Experience Platform
 * [[!DNL Identity Service]](./home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
 * [[!DNL Privacy Service]](../privacy-service/home.md): Identitetsnamnutrymmen används i förfrågningar om efterlevnad av juridiska sekretessbestämmelser, som den allmänna dataskyddsförordningen (GDPR). Varje begäran om integritet görs i förhållande till ett namnutrymme för att identifiera vilka konsumentdata som ska påverkas.
 
-## Identitetsnamnutrymmen
+## Identitetsnamnutrymmen {#understanding-identity-namespaces}
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_namespace"
+>title="Identitetsnamnutrymmen"
+>abstract="Ett identitetsnamnutrymme är kontexten för en viss identitet. Ett namnutrymme för `Email` kan motsvara **name<span>@acme.com**. På samma sätt är namnutrymmet `Phone` kan motsvara `555-555-1234`."
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_value"
+>title="Identitetsvärden"
+>abstract="Ett identitetsvärde är en identifierare som representerar en unik individ, organisation eller resurs. Kontexten eller typen av identitet som värdet representerar definieras av ett motsvarande identitetsnamnutrymme. När postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matcha. När postdata matchas mellan profilfragment måste namnutrymmet och identitetsvärdet matcha."
+>text="Learn more in documentation"
 
 En fullständigt kvalificerad identitet innehåller två komponenter: och **identitetsvärde** och **namnutrymme för identitet**. Om värdet för en identitet till exempel är `scott@acme.com`, ger ett namnutrymme kontext till det här värdet genom att det särskiljs som en e-postadress. På samma sätt kan ett namnutrymme skilja `555-123-456` som ett telefonnummer, och `3126ABC` som ett CRM-ID. I stort sett **ett namnutrymme ger kontext till en viss identitet**. När postdata matchas mellan profilfragment, som när [!DNL Real-Time Customer Profile] sammanfogar profildata, både identitetsvärdet och namnutrymmet måste matcha.
 
