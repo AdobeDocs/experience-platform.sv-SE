@@ -2,9 +2,9 @@
 title: Sandlådor
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 4cb570fbdb76e53dd0a8c4ee78c31d2a886e5dc1
+source-git-commit: 1f7b7f0486d0bb2774f16a766c4a5af6bbb8848a
 workflow-type: tm+mt
-source-wordcount: '1721'
+source-wordcount: '1731'
 ht-degree: 0%
 
 ---
@@ -67,19 +67,14 @@ Anpassade identitetstyper stöds inte som beroende objekt när en resa exportera
 >Alla exportåtgärder registreras i granskningsloggarna.
 
 >[!CONTEXTUALHELP]
->id="platform_sandbox_tooling_exit_package"
->title="Spara och avsluta paket"
->abstract="Om du vill avsluta paketet och spara kan du helt enkelt använda alternativet Bakåt."
-
->[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_remove_object"
 >title="Ta bort ett objekt"
->abstract="Användaren måste markera raden och sedan använda borttagningsalternativet (som är tillgängligt när den markeras) för att ta bort raden."
+>abstract="Om du vill ta bort ett objekt från paketet markerar du den rad som ska tas bort och använder sedan alternativet Ta bort, som är tillgängligt när du väljer alternativet. Observera att du inte kan ta bort objekt från publicerade paket."
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_package_expiry"
 >title="Förfallotid för paket"
->abstract="Datumet anges till 90 dagar från idag. Datumet ändras inte förrän paketet publiceras. Om en användare besöker paketet med utkaststatus i morgon flyttas datumet med +1 dag (om inte användaren anger det)."
+>abstract="Paket förfaller efter en tids inaktivitet i utkaststatus. Standarddatumet är 90 dagar från idag. Datumet ändras inte förrän paketet publiceras. Om du besöker paketet med statusen Utkast i morgon flyttas datumet med +1 dag, såvida du inte ställer in detta manuellt."
 
 >[!CONTEXTUALHELP]
 >id="platform_sandbox_tooling_package_status"
