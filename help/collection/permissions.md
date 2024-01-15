@@ -2,10 +2,10 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: dd0856075867b5fc226068fa856942edcbe4a7a6
 workflow-type: tm+mt
-source-wordcount: '1252'
-ht-degree: 3%
+source-wordcount: '1263'
+ht-degree: 1%
 
 ---
 
@@ -58,7 +58,8 @@ Behörigheter under Adobe Experience Platform Data Collection styr åtkomsten ti
 | Egendomsrättigheter | Hantera tillägg | Ger möjlighet att hantera [tillägg](../tags/ui/managing-resources/extensions/overview.md) för de egenskaper som en användare har åtkomst till. |
 | Egendomsrättigheter | Publicera | Ger möjlighet att publicera ett biblioteksbygge som en del av [publiceringsflöde](../tags/ui/publishing/publishing-flow.md). |
 | Företagsrättigheter | Utveckla tillägg | Ger möjlighet att skapa och ändra tilläggspaket som ägs av organisationen, inklusive privata releaser och förfrågningar om allmän spridning. |
-| Företagsrättigheter | Hantera tillägg | Detta tillstånd gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden. På så sätt kan du hantera de appar som Adobe Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification-tjänsten. |
+| Företagsrättigheter | Hantera appkonfigurationer | Detta tillstånd gäller endast om du har en licens för Adobe Journey Optimizer eller en annan lösning som ger åtkomst till mobilmeddelanden i appen och push-meddelanden. På så sätt kan du hantera de appar som Adobe Experience Cloud känner till tillsammans med de push-autentiseringsuppgifter som krävs för att kommunicera med meddelandetjänsten i Firebase Cloud och Apple Push Notification-tjänsten. |
+| Företagsrättigheter | Hantera egenskaper | Ger dig möjlighet att skapa och hantera taggar (webbegenskaper), vidarebefordra händelser (edge-egenskap) och mobila egenskaper. |
 
 {style="table-layout:auto"}
 
