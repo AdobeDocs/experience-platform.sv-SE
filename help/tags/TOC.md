@@ -5,10 +5,10 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 7b957aeff6f60665841013619d70ee962fc4c449
+source-git-commit: 30152a95a46db06948620b881092fb21df734f9d
 workflow-type: tm+mt
-source-wordcount: '1030'
-ht-degree: 13%
+source-wordcount: '770'
+ht-degree: 15%
 
 ---
 
@@ -58,7 +58,7 @@ ht-degree: 13%
    * [Komma igång](./ui/event-forwarding/getting-started.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
    * [Övervakning (beta)](./ui/event-forwarding/monitoring.md)
-* Administrering {#admin}
+* Administration {#admin}
    * [Översikt](./ui/administration/overview.md)
    * [Företag och fastigheter](./ui/administration/companies-and-properties.md)
    * [Användarbehörigheter](./ui/administration/user-permissions.md)
@@ -96,7 +96,7 @@ ht-degree: 13%
          * [Versionsinformation](./extensions/client/id-service/release-notes.md)
       * Adobe Experience Platform Demo {#platform-demo}
          * [Översikt](./extensions/client/platform-demo/overview.md)
-      * Webb-SDK för Adobe Experience Platform {#web-sdk}
+      * Adobe Experience Platform Web SDK {#web-sdk}
          * [Översikt](./extensions/client/web-sdk/overview.md)
          * [Konfigurera SDK-taggtillägget för webben](./extensions/client/web-sdk/web-sdk-extension-configuration.md)
          * [Händelsetyper](./extensions/client/web-sdk/event-types.md)
@@ -286,7 +286,7 @@ ht-degree: 13%
    * [Värdar för bibliotek från tredje part](./extension-dev/third-party-libraries.md)
    * [Turbinfri variabel](./extension-dev/turbine.md)
    * [Bakåtkompatibilitetsstandard](./extension-dev/backwards-compatibility.md)
-* Reactor API {#api}
+* Reaktors-API {#api}
    * [Översikt](./api/overview.md)
    * [Autentisera och få åtkomst till Reactor API](./api/getting-started.md)
    * Slutpunkter {#endpoints}
@@ -306,9 +306,9 @@ ht-degree: 13%
       * [Återanrop](./api/endpoints/callbacks.md)
       * [Anteckningar](./api/endpoints/notes.md)
       * [Profil](./api/endpoints/profile.md)
-      * [Sökning](./api/endpoints/search.md)
+      * [Sök](./api/endpoints/search.md)
       * [Hemligheter](./api/endpoints/secrets.md)
-   * Användarhandböcker {#guides}
+   * Stödlinjer {#guides}
       * [Delegera beskrivnings-ID:n](./api/guides/delegate-descriptor-ids.md)
       * [Krypteringsvärden](./api/guides/encrypting-values.md)
       * [Felhantering](./api/guides/error-handling.md)
@@ -321,10 +321,5 @@ ht-degree: 13%
 * [Vanliga frågor och svar](./faq.md)
 * [Uppdateringar om terminologi](./term-updates.md)
 * [Stöd för Internet Explorer 10 och 11 har tagits bort](./ie-deprecation.md)
-* Versionsinformation {#release-notes}
-   * [Senaste](./release-notes/current.md)
-   * [Versionsinformation 2021](./release-notes/2021.md)
-   * [Versionsinformation 2020](./release-notes/2020.md)
-   * [Versionsinformation 2019](./release-notes/2019.md)
-   * [Versionsinformation 2018](./release-notes/2018.md)
+* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
 
