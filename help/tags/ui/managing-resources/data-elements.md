@@ -2,10 +2,10 @@
 title: Dataelement
 description: Dataelement är byggstenarna för dataordlistan (eller datamappningen). Använd dataelement för att samla in, ordna och leverera data över marknadsförings- och annonseringsteknologier.
 exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
-source-git-commit: 9d897602c0c83d06910b8b14a87351a9c25ab5f1
+source-git-commit: 0956a28a8ff6eacb3a55f7c333293ed5b6c81cce
 workflow-type: tm+mt
-source-wordcount: '1601'
-ht-degree: 1%
+source-wordcount: '1593'
+ht-degree: 0%
 
 ---
 
@@ -91,9 +91,11 @@ När du skapar eller redigerar element kan du spara och bygga på [aktivt biblio
 
 ## Typer av dataelement {#types-of-data-elements}
 
-Dataelementtyperna bestäms av tillägget. Det finns ingen begränsning för de typer som kan skapas.
+>[!NOTE]
+>
+>Dataelementtyperna bestäms av tillägget. Det finns ingen begränsning för de typer som kan skapas.
 
-I följande avsnitt beskrivs de typer av dataelement som finns i Core-tillägget. Andra tillägg använder andra typer av dataelement.
+I följande avsnitt beskrivs de typer av dataelement som finns i **Kärntillägg**. Andra tillägg använder andra typer av dataelement.
 
 ### Cookie
 
