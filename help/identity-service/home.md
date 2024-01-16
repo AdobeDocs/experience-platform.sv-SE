@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 4d7470a15a7cc9c9a3bcc56f5f783a967021242f
+source-git-commit: 484b1c2d37291afd02fe58723121325c837061aa
 workflow-type: tm+mt
-source-wordcount: '1522'
+source-wordcount: '1524'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Läs följande tabell för att få en sammanfattning av nyckeltermerna innan du 
 | --- | --- |
 | Identitet | En identitet är data som är unika för en enhet. Vanligtvis är detta ett objekt i verkligheten, till exempel en enskild person, en maskinvaruenhet eller en webbläsare (representeras av en cookie). En fullständigt kvalificerad identitet består av två delar: en **namnutrymme för identitet** och **identitetsvärde**. |
 | Namnutrymme för identitet | Ett identitetsnamnutrymme är kontexten för en viss identitet. Ett namnutrymme för `Email` kan motsvara **julien<span>@acme.com**. På samma sätt är namnutrymmet `Phone` kan motsvara `555-555-1234`. Mer information finns i [Översikt över namnutrymmet identity](./namespaces.md) |
-| Identitetsvärde | Ett identitetsvärde är en sträng som representerar en faktisk entitet och kategoriseras i identitetstjänsten via ett namnutrymme. Till exempel e-postmeddelandet **julien<span>@acme.com** kan kategoriseras som en `Email` namnutrymme. |
+| Identitetsvärde | Ett identitetsvärde är en sträng som representerar en faktisk entitet och kategoriseras i identitetstjänsten via ett namnutrymme. Exempelvis identitetsvärdet (sträng) **julien<span>@acme.com** kan kategoriseras som en `Email` namnutrymme. |
 | Identitetstyp | En identitetstyp är en komponent i ett identitetsnamnutrymme. Identitetstypen anger om identitetsdata är länkade i ett identitetsdiagram eller inte. |
 | Länk | En länk eller en länkning är en metod för att fastställa att två olika identiteter representerar samma enhet. En länk mellan &quot;`Email` = julien<span>@acme.com och &quot;`Phone` = 555-555-1234&quot; betyder att båda identiteterna representerar samma enhet. Detta tyder på att kunden som interagerat med ert varumärke både med juliens e-postadress<span>@acme.com och telefonnumret 555-555-1234 är samma. |
 | Identitetstjänst | Identitetstjänsten är en tjänst i Experience Platform som länkar (eller bryter länkar) identiteter för att underhålla identitetsdiagram. |
@@ -91,7 +91,7 @@ Titta på följande exempel:
 * Om du sedan loggar in med samma inloggningsuppgifter på samma e-handelswebbplats, men använder webbläsaren på telefonen i stället för webbläsaren på din bärbara dator, registreras ett nytt ECID i identitetstjänsten.
 * Bakom kulisserna bearbetar Identity Service den nya händelsen som `{CRM_ID:ABC, ECID:456}`, där CRM_ID: ABC representerar ditt autentiserade kund-ID och ECID:456 representerar webbläsaren på din mobila enhet.
 
-Med tanke på scenarierna ovan upprättar identitetstjänsten en länk mellan `CRM_ID:ABC, ECID:123`, samt `{CRM_ID:ABC, ECID:456}`. Detta resulterar i ett identitetsdiagram där du&quot;äger&quot; tre identiteter: en för personidentifierare (CRM ID) och två för cookie-identifierare (ECID).
+Med tanke på scenarierna ovan upprättar identitetstjänsten en länk mellan `{CRM_ID:ABC, ECID:123}`, samt `{CRM_ID:ABC, ECID:456}`. Detta resulterar i ett identitetsdiagram där du&quot;äger&quot; tre identiteter: en för personidentifierare (CRM ID) och två för cookie-identifierare (ECID).
 
 ## Identitetsdiagram
 
