@@ -2,10 +2,10 @@
 title: Satellitobjektreferens
 description: Lär dig mer om objektet _satellit på klientsidan och de olika funktioner du kan utföra med det i taggar.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: 309f3cce82c5d6c7f10c08b05da6d9c6c44631b6
 workflow-type: tm+mt
 source-wordcount: '1290'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -62,6 +62,10 @@ var rule = _satellite.getVar('return event rule', event);
 
 ## `setVar`
 
+>[!NOTE]
+>
+>The `setVar` koden är helt skild från ett dataelement som anges i taggar.
+
 **Code**
 
 ```javascript
@@ -74,7 +78,7 @@ _satellite.setVar(name: string, value: *)
 _satellite.setVar('product', 'Circuit Pro');
 ```
 
-`setVar()` anger en anpassad variabel med ett visst namn och värde. Värdet på variabeln kan sedan nås med `_satellite.getVar()`.
+`setVar()` ställer in en anpassad variabel med ett angivet namn och värde. Värdet på variabeln kan sedan nås med `_satellite.getVar()`.
 
 Du kan också ange flera variabler samtidigt genom att skicka ett objekt där nycklarna är variabelnamn och värdena är respektive variabelvärde.
 
@@ -156,7 +160,7 @@ _satellite.cookie.set(name: string, value: string[, attributes: Object])
 
 >[!NOTE]
 >
->I gamla [`setCookie`](#setCookie) metoden för att ange cookies, var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade cookiens förfallotid i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument i stället. Om du vill ange en förfallotid för en cookie med den nya metoden måste du ange en `expires` -egenskapen i attributobjektet och ange det till det önskade värdet. Detta visas i exemplet nedan.
+>I den gamla [`setCookie`](#setCookie) metoden för att ange cookies, var det tredje (valfria) argumentet för det här funktionsanropet ett heltal som indikerade cookiens förfallotid i dagar. I den här nya metoden accepteras ett &quot;attributes&quot;-objekt som ett tredje argument. Om du vill ange en förfallotid för en cookie med den nya metoden måste du ange en `expires` -egenskapen i attributobjektet och ange det till det önskade värdet. Detta visas i exemplet nedan.
 
 **Exempel**
 
@@ -186,7 +190,7 @@ var product = _satellite.cookie.get('product');
 
 ### Ta bort en cookie {#cookie-remove}
 
-Om du vill ta bort en cookie använder du `_satellite.cookie.remove()`.
+Använd för att ta bort en cookie `_satellite.cookie.remove()`.
 
 **Code**
 
@@ -364,7 +368,7 @@ _satellite._container
 
 >[!IMPORTANT]
 >
->Den här funktionen ska inte kommas åt från produktionskoden. Den är endast avsedd för felsökning och kommer att ändras med tiden efter behov.
+>Den här funktionen ska inte nås från produktionskoden. Den är endast avsedd för felsökning och kommer att ändras med tiden efter behov.
 
 ### `monitor`
 
@@ -378,7 +382,7 @@ _satellite._monitors
 
 >[!IMPORTANT]
 >
->Den här funktionen ska inte kommas åt från produktionskoden. Den är endast avsedd för felsökning och kommer att ändras med tiden efter behov.
+>Den här funktionen ska inte nås från produktionskoden. Den är endast avsedd för felsökning och kommer att ändras med tiden efter behov.
 
 **Exempel**
 
@@ -424,7 +428,7 @@ Lägg till ett kodfragment på HTML på din webbsida som kör ett taggbibliotek.
 </html>
 ```
 
-I det första skriptelementet har det inledande `_satellite` objektet skapas och en array på `_satellite._monitors` har initierats. Skriptet lägger sedan till ett övervakarobjekt i den arrayen. Övervakningsobjektet kan ange följande metoder som senare anropas av taggbiblioteket:
+I det första skriptelementet, eftersom taggbiblioteket ännu inte har lästs in, är det `_satellite` objektet skapas och en array på `_satellite._monitors` har initierats. Skriptet lägger sedan till ett övervakarobjekt i den arrayen. Övervakningsobjektet kan ange följande metoder som senare anropas av taggbiblioteket:
 
 ### `ruleTriggered`
 
