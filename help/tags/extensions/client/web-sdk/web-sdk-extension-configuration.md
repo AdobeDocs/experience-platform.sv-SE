@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: ac3362fa5e8a314f85f3bb659047f77fb56c1a7c
+source-git-commit: dea75b92847320284e1dc1b939f3ae11a12077a8
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1522'
 ht-degree: 0%
 
 ---
@@ -83,6 +83,10 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller h
 * **[!UICONTROL Migrate ECID from VisitorAPI]**: Det här alternativet är aktiverat som standard. När den här funktionen är aktiverad kan SDK läsa `AMCV` och `s_ecid` cookies och ange `AMCV` cookie används av [!DNL Visitor.js]. Den här funktionen är viktig vid migrering till Web SDK, eftersom vissa sidor fortfarande använder [!DNL Visitor.js]. Med det här alternativet kan SDK fortsätta att använda samma [!DNL ECID] så att användare inte identifieras som två separata användare.
 * **[!UICONTROL Use third-party cookies]**: När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kanske SDK fortfarande inte kan lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller har konfigurerats av användaren så att cookies från tredje part inte tillåts. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
+  >[!IMPORTANT]
+  >>Cookies från tredje part är inte kompatibla med [enhets-ID för första part](../../../../edge/identity/first-party-device-ids.md) i Web SDK.
+Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
+  >
 ## Konfigurera personaliseringsinställningar {#personalization}
 
 I det här avsnittet kan du konfigurera hur du vill dölja vissa delar av en sida medan anpassat innehåll läses in. Detta garanterar att besökarna bara ser den personaliserade sidan.
@@ -103,7 +107,7 @@ Om du vill använda det fördolda fragmentet kopierar och klistrar du in det inu
 
 >[!IMPORTANT]
 >
->När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den som används av [fördölja stil](#prehiding-style).
+När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den som används av [fördölja stil](#prehiding-style).
 
 ## Konfigurera inställningar för datainsamling {#data-collection}
 
@@ -130,7 +134,7 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 
 >[!IMPORTANT]
 >
-> Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
+Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
 
 ![Bild som visar åsidosättningar av dataströmskonfigurationer på tilläggssidan för Web SDK-taggen.](assets/datastream-overrides.png)
 
