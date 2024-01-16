@@ -4,7 +4,7 @@ description: Versionsinformation från oktober 2023 för Adobe Experience Platfo
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: f2d0848952902d94b441566da677ef174518192e
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1046'
 ht-degree: 3%
 
 ---
@@ -58,7 +58,7 @@ Mer information om datainsamling finns i [datainsamling, översikt](../../tags/h
 
 **Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
-| Destination | Nytt eller uppdaterat | Beskrivning |
+| Mål | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
 | [[!DNL MoEngage]](/help/destinations/catalog/mobile-engagement/moengage.md) | Nytt | Använd Moengage-målet för att ansluta och mappa dina Adobe-data (användarattribut, segment och händelser) till Moengage i realtid. Sedan kan kunderna agera utifrån dessa data och leverera personaliserade, målinriktade upplevelser. |
 | [[!DNL Qualtrics Automations]](/help/destinations/catalog/survey/qualtrics-automations.md) | Nytt | Använd aggregering av flera olika källor med driftsdata i Adobe Experience Platform som indata i Qualtrics Experience ID för att bättre förstå era kunder och möjliggöra riktad utåtriktad marknadsföring för att överbrygga klyftan när det gäller att förstå avsikter, känslor och upplevelsedrivrutiner. |
