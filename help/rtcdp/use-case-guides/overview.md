@@ -2,7 +2,7 @@
 title: Exempel på användningsområden i Real-Time CDP
 description: Se exempel på olika användningsområden för olika tjänster för att få ut det mesta av er Real-Time CDP-implementering.
 feature: Use Cases
-source-git-commit: 697f785e939b9817f80a31dfd0070f9dadd48baf
+source-git-commit: f342020a0e821172a7ceca95265a9d71f64f5347
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Med cookies från tredje part inställda på att försvinna inom de närmaste å
 
 Adobe Real-Time CDP har omfattande stöd för partneridentifierare, vilket gör att ni kan skapa målgrupper av potentiella kunder, berika kända målgrupper med attribut från partners och mycket annat.
 
-Användningsexempel som stöds kan grupperas i kundvärvning och profilberikning. På dokumentationslänkarna nedan finns omfattande implementeringsinformation.
+Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationslänkarna nedan finns omfattande implementeringsinformation.
 
 ### Kundförvärv {#customer-acquisition}
 
