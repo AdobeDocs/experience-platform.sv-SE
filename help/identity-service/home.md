@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 876613610f8e3b369bc3fd41d235c214b791fd4d
+source-git-commit: 4d7470a15a7cc9c9a3bcc56f5f783a967021242f
 workflow-type: tm+mt
-source-wordcount: '1452'
+source-wordcount: '1522'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ Organisationer och företag har idag en stor mängd olika datauppsättningar: di
 Du kan lösa dessa problem med Adobe Experience Platform Identity Service och dess funktioner:
 
 * Generera en **identitetsdiagram** som knyter samman olika identiteter och därmed ger er en visuell representation av hur en kund interagerar med ert varumärke i olika kanaler.
-* Tillhandahåll verktyg för validering och felsökning.
 * Skapa ett diagram för kundprofil i realtid, som sedan används för att skapa en heltäckande bild av kunden genom att sammanfoga attribut och beteenden.
+* Utför validering och felsökning med olika verktyg.
 
 Det här dokumentet innehåller en översikt över identitetstjänsten och hur du kan använda dess funktioner i Experience Platform.
 
@@ -39,7 +39,7 @@ Läs följande tabell för att få en sammanfattning av nyckeltermerna innan du 
 | Identitetstjänst | Identitetstjänsten är en tjänst i Experience Platform som länkar (eller bryter länkar) identiteter för att underhålla identitetsdiagram. |
 | Identitetsdiagram | Identitetsdiagrammet är en samling identiteter som representerar en enskild kund. Mer information finns i guiden [med identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md). |
 | Kundprofil i realtid | Kundprofilen i realtid är en tjänst inom Adobe Experience Platform som: <ul><li>Sammanfogar profilfragment för att skapa en profil utifrån ett identitetsdiagram.</li><li>Segmentprofiler så att de sedan kan skickas till målet för aktiveringar.</li></ul> |
-| Profil | En profil är en representation av ett ämne, en organisation eller en individ. En profil består av två element: <ul><li>Attribut: attribut innehåller information som namn, ålder eller kön.</li><li>Beteende: beteenden ger information om aktiviteterna för en viss profil. Ett profilbeteende kan till exempel avgöra om en viss profil söker efter sandaler eller t-shirts.</li></ul> |
+| Profil | En profil är en representation av ett ämne, en organisation eller en individ. En profil består av fyra element: <ul><li>Attribut: attribut innehåller information som namn, ålder eller kön.</li><li>Beteende: beteenden ger information om aktiviteterna för en viss profil. Ett profilbeteende kan till exempel avgöra om en viss profil söker efter sandaler eller t-shirts.</li><li>Identiteter: För en sammanfogad profil innehåller detta information om alla identiteter som är associerade med personen. Identiteter kan klassificeras i tre kategorier: Person (CRMID, email, phone), device (IDFA, GAID) och cookie (ECID, AAID).</li><li>Målgruppsmedlemskap: De grupper där profilen tillhör (lojala användare, användare som bor i Kalifornien osv.)</li></ul> |
 
 {style="table-layout:auto"}
 
@@ -67,14 +67,10 @@ Tänk på följande kundresa:
 
 Identitetstjänsten utför följande åtgärder för att utföra sitt uppdrag:
 
-Du kan använda identitetstjänsten för att utföra följande åtgärder:
-
 * Skapa egna namnutrymmen som passar organisationens behov.
 * Skapa, uppdatera och visa identitetsdiagram.
 * Ta bort identiteter baserat på datauppsättningar.
 * Ta bort identiteter för att säkerställa efterlevnad av gällande bestämmelser.
-
->[!BEGINSHADEBOX]
 
 ## Så här länkar identitetstjänsten identiteter
 
@@ -97,8 +93,6 @@ Titta på följande exempel:
 
 Med tanke på scenarierna ovan upprättar identitetstjänsten en länk mellan `CRM_ID:ABC, ECID:123`, samt `{CRM_ID:ABC, ECID:456}`. Detta resulterar i ett identitetsdiagram där du&quot;äger&quot; tre identiteter: en för personidentifierare (CRM ID) och två för cookie-identifierare (ECID).
 
->[!ENDSHADEBOX]
-
 ## Identitetsdiagram
 
 Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen, som gör att du kan visualisera och bättre förstå vilka kundidentiteter som sammanfogas, och hur. Läs självstudiekursen om [med identitetsdiagramvisningsprogrammet](./ui/identity-graph-viewer.md) för mer information.
@@ -111,9 +105,11 @@ Följande video är avsedd att ge stöd för din förståelse av identiteter och
 
 Identitetstjänsten spelar en viktig roll inom Experience Platform. Några av dessa viktiga integreringar är:
 
-* [Kundprofil i realtid](../profile/home.md): Innan attribut och händelser för en viss profil sammanfogas kan kundprofilen i realtid referera till identitetsdiagrammet.
 * [Scheman](../xdm/home.md): I ett givet schema gör de schemafält som är markerade som identiteter att identitetsdiagram kan skapas.
 * [Datauppsättningar](../catalog/datasets/overview.md): När en datauppsättning aktiveras för inmatning i kundprofilen i realtid genereras identitetsdiagram från datauppsättningen, eftersom datauppsättningen har minst två fält som är markerade som identitet.
+* [Web SDK](../edge/home.md): Web SDK skickar upplevelsehändelser till Adobe Experience Platform, och identitetstjänsten genererar ett diagram när det finns två eller fler identiteter i händelsen.
+* [Kundprofil i realtid](../profile/home.md): Innan attribut och händelser för en viss profil sammanfogas kan kundprofilen i realtid referera till identitetsdiagrammet.
 * [Destinationer](../destinations/home.md): Destinationer kan skicka profilinformation till andra system baserat på ett identitetsnamnutrymme, t.ex. hashad e-post.
 * [Segmentmatchning](../segmentation/ui/segment-match/overview.md): Segmentmatchning matchar två profiler i två olika sandlådor som har samma id-namnutrymme och identitetsvärde.
 * [Privacy Service](../privacy-service/home.md): Om borttagningsbegäran innehåller `identity`kan den angivna kombinationen av namnutrymme och identitetsvärde tas bort från identitetstjänsten med hjälp av funktionen för behandling av sekretessförfrågningar i Privacy Servicen.
+
