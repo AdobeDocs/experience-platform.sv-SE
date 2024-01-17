@@ -2,9 +2,9 @@
 title: Identity Graph Viewer
 description: Ett identitetsdiagram är en karta över relationer mellan olika identiteter för en viss kund, vilket ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler.
 exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
-source-git-commit: 4bf939011e6246a553f67805ff99a70610782ea6
+source-git-commit: d4ed36bd036218fcc3428ef420490b68c9cdb121
 workflow-type: tm+mt
-source-wordcount: '1369'
+source-wordcount: '1374'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Med identitetsdiagramvisningsprogrammet i användargränssnittet för plattforme
 
 Följande dokument innehåller steg för hur du får åtkomst till och använder identitetsdiagramvisningsprogrammet i plattformens användargränssnitt.
 
-## Videokurs
+## Självstudievideo
 
 Följande video är avsedd att ge stöd för din förståelse av identitetsdiagramvisningsprogrammet.
 
@@ -28,7 +28,7 @@ Följande video är avsedd att ge stöd för din förståelse av identitetsdiagr
 Att arbeta med identitetsdiagramvisningsprogrammet kräver förståelse för de olika Adobe Experience Platform-tjänsterna. Innan du börjar arbeta med identitetsdiagramvisningsprogrammet bör du läsa dokumentationen för följande tjänster:
 
 - [[!DNL Identity Service]](../home.md): Få en bättre bild av enskilda kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system.
-- [Kundprofil i realtid](../../profile/home.md): Identitetsdiagram används av kundprofilen i realtid för att skapa en heltäckande och unik bild av era kundattribut och -beteenden.
+- [Kundprofil i realtid](../../profile/home.md): Identitetsdiagram används av kundprofilen i realtid för att skapa en heltäckande och unik bild av kundens attribut och beteende.
 
 ### Terminologi
 
@@ -42,7 +42,7 @@ Välj **[!UICONTROL Identities]** i den vänstra navigeringen och sedan väljer 
 
 ![Arbetsytan Identiteter i användargränssnittet i Experience Platform med fliken Identitetsdiagram markerad.](../images/graph-viewer/identity-graph.png)
 
-Om du vill visa ett identitetsdiagram anger du ett identitetsnamnutrymme och dess motsvarande värde och väljer sedan **[!UICONTROL View]**.
+Om du vill visa ett identitetsdiagram anger du ett ID-namnutrymme och dess motsvarande värde och väljer sedan **[!UICONTROL View]**.
 
 >[!TIP]
 >
@@ -60,7 +60,7 @@ I identitetsdiagrammet visas alla identiteter som är länkade till identitetsna
 
 >[!IMPORTANT]
 >
->Ett identitetsdiagram kräver minst två länkade identiteter som ska genereras och en giltig kombination av identitetsnamn och värde. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 150. Se [appendix](#appendix) för mer information.
+>Ett identitetsdiagram kräver minst två länkade identiteter som ska genereras och en giltig kombination av identitetsnamn och värde. Det maximala antalet identiteter som diagramvisningsprogrammet kan visa är 50. Se [appendix](#appendix) för mer information.
 
 ![Identitetsdiagramvisningsprogrammet med fem länkade identiteter.](../images/graph-viewer/graph.png)
 
@@ -72,7 +72,7 @@ The [!UICONTROL Identities] tabellen ger en annan vy över dina identitetsdata, 
 
 ![Identitetstabellen med listan över identiteter som är länkade i diagrammet.](../images/graph-viewer/identities-table.png)
 
-Använd listrutemenyn för att sortera diagramdata och markera information i ett visst namnområde. Välj till exempel **[!UICONTROL Email]** på menyn för att visa data som är specifika för e-postidentitetens namnutrymme.
+Använd listrutemenyn för att sortera diagramdata och markera information i ett specifikt identitetsnamnutrymme. Välj till exempel **[!UICONTROL Email]** på menyn för att visa data som är specifika för e-postidentitetens namnutrymme.
 
 ![Identitetstabellen är sorterad så att endast e-postdata visas.](../images/graph-viewer/sort-email.png)
 
@@ -115,7 +115,7 @@ Fel kan inträffa vid åtkomst till identitetsdiagramvisningsprogrammet. Nedan f
 
 - Ett identitetsvärde måste finnas i det valda namnutrymmet.
 - Identitetsdiagramvisningsprogrammet kräver minst två länkade identiteter för att kunna generera. Det är möjligt att det bara finns ett identitetsvärde och inga länkade identiteter, och i det här fallet skulle värdet bara finnas i [!DNL Profile] visningsprogram.
-- Identitetsdiagramvisningsprogrammet får inte överskrida det maximala antalet 150 identiteter.
+- Identitetsdiagramvisningsprogrammet får inte överskrida det maximala antalet 50 identiteter.
 
 ![error-screen](../images/graph-viewer/error-screen.png)
 
