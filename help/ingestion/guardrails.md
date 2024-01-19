@@ -3,9 +3,9 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Det här dokumentet innehåller riktlinjer för hur man skyddar mot dataintrång i Adobe Experience Platform
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 4debc301b930643565b25218f4822a67e88063bb
+source-git-commit: d0ee51340e1175e2820fea69269a8cb6e9d85c1c
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '571'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ I följande tabell visas skyddsutkast som du bör tänka på när du använder d
 
 | Typ av förtäring | Riktlinjer | Anteckningar |
 | --- | --- | --- |
-| Direktuppspelningskällor | <ul><li>Den maximala poststorleken är 1 MB och den rekommenderade storleken är 10 kB.</li><li>Direktuppspelningskällor har stöd för mellan 4 000 och 5 000 begäranden per sekund när en ny källanslutning skapas. **Anteckning**: Det kan ta upp till 30 minuter för strömmande data att bearbetas helt till datasjön.</li><li>Du kan bearbeta mellan 4 000 och 5 000 begäranden per sekund till en Data Lake. **Anteckning**: Det kan ta upp till 30 minuter för strömmande data att bearbetas helt till datasjön.</li></ul> | Direktuppspelningskällor som [!DNL Kafka], [!DNL Azure Event Hubs]och [!DNL Amazon Kinesis] använd inte [!DNL Data Collection Core Service] (DCCS) och kan ha olika genomströmningsgränser. Se [källöversikt](../sources/home.md) om du vill ha en katalog med källor som du kan använda för datainmatning. |
+| Direktuppspelningskällor | <ul><li>Den maximala poststorleken är 1 MB och den rekommenderade storleken är 10 kB.</li><li>Direktuppspelningskällor har stöd för mellan 4000 och 5000 begäranden per sekund vid import till sjön. Detta gäller både för nyligen skapade källanslutningar utöver befintliga källanslutningar. **Anteckning**: Det kan ta upp till 30 minuter för strömmande data att bearbetas helt till datasjön.</li><li>Direktuppspelningskällor har stöd för högst 1 500 begäranden per sekund vid import av data till profil eller direktuppspelningssegmentering.</li></ul> | Direktuppspelningskällor som [!DNL Kafka], [!DNL Azure Event Hubs]och [!DNL Amazon Kinesis] använd inte [!DNL Data Collection Core Service] (DCCS) och kan ha olika genomströmningsgränser. Se [källöversikt](../sources/home.md) om du vill ha en katalog med källor som du kan använda för datainmatning. |
 
 ## Nästa steg
 
