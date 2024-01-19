@@ -5,7 +5,7 @@ product: experience platform
 type: Documentation
 description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: ec47f07f20e0f4ccda4c791882361bdc7a77aa98
+source-git-commit: 0542e618dfb6e5571845387fed9eced4200179b6
 workflow-type: tm+mt
 source-wordcount: '2432'
 ht-degree: 1%
@@ -36,7 +36,7 @@ Följande Experience Platform-tjänster är involverade i modellering av kundpro
 Det finns två typer av standardgränser i det här dokumentet:
 
 | Typ av skyddsräcke | Beskrivning |
-|----------|---------|
+| -------------- | ----------- |
 | **Prestandaskydd (mjuk gräns)** | Prestandaskydd är användarbegränsningar som relaterar till omfattningen av dina användningsfall. När du överskrider prestandaskyddet kan du uppleva prestandaförsämringar och fördröjning. Adobe ansvarar inte för sådana prestandaförsämringar. Kunder som genomgående överskrider ett prestandaresäkerhetsskydd kan välja att licensiera ytterligare kapacitet för att undvika prestandaförsämringar. |
 | **Systemstyrda skyddsräcken (hård begränsning)** | Systemstyrda skyddsräcken används av Real-Time CDP gränssnitt eller API. Det här är begränsningar som du inte kan överskrida eftersom gränssnittet och API kommer att blockera dig från att göra det eller returnera ett fel. |
 
@@ -55,7 +55,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 ### Garantier för primära enheter
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
+| --------- | ----- | ---------- | ----------- |
 | Data för klassen XDM Individuella profiler | 20 | Prestandaskydd | Högst 20 datauppsättningar rekommenderas som utnyttjar klassen XDM Individual Profile. |
 | XDM ExperienceEvent, klassdatamängder | 20 | Prestandaskydd | Högst 20 datauppsättningar rekommenderas som utnyttjar klassen XDM ExperienceEvent. |
 | Adobe Analytics rapportuppsättningar har aktiverats för profil | 1 | Prestandaskydd | Högst en (1) datauppsättning för analysrapportsviten ska aktiveras för profilen. Om du försöker aktivera flera datauppsättningar i Analytics-rapportsviten för profilen kan det få oönskade konsekvenser för datakvaliteten. Mer information finns i avsnittet om [Adobe Analytics dataset](#aa-datasets) i tillägget. |
@@ -70,7 +70,7 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 ### Skyddsutkast för Dimension
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
+| --------- | ----- | ---------- | ----------- |
 | Inga tidsseriedata är tillåtna för icke-[!DNL XDM Individual Profile] enheter | 0 | Systemstyrt skyddsräcke | **Tidsseriedata är inte tillåtna för icke-[!DNL XDM Individual Profile] enheter i profiltjänsten.** Om en tidsseriedatauppsättning är associerad med en icke-[!DNL XDM Individual Profile] ID, datauppsättningen ska inte aktiveras för [!DNL Profile]. |
 | Inga kapslade relationer | 0 | Prestandaskydd | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
 | JSON-djup för primärt ID-fält | 4 | Prestandaskydd | Rekommenderat maximalt JSON-djup för det primära ID-fältet är 4. Det innebär att du inte ska välja ett fält som primärt ID i ett kapslat schema om det är mer än fyra nivåer djupt. Ett fält på den fjärde kapslade nivån kan användas som primärt ID. |
@@ -88,7 +88,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 ### Garantier för primära enheter
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
+| --------- | ----- | ---------- | ----------- |
 | Maximal ExperienceEvent-storlek | 10 kB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för en händelse är 10 kB.** Intag fortsätter, men alla händelser som är större än 10 kB kommer att släppas. |
 | Största profilpoststorlek | 100 kB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för en profilpost är 100 kB.** Inmatningen fortsätter, men profilposter som är större än 100 kB tas bort. |
 | Största profilfragmentstorlek | 50 MB | Systemstyrt skyddsräcke | **Den största tillåtna storleken för ett profilfragment är 50 MB.** Segmentering, export och uppslag kan misslyckas för alla [profilfragment](#profile-fragments) som är större än 50 MB. |
@@ -101,7 +101,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 ### Skyddsutkast för Dimension
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
+| --------- | ----- | ---------- | ----------- |
 | Total storlek för alla dimensionella enheter | 5 GB | Prestandaskydd | Den rekommenderade totala storleken för alla dimensionella enheter är 5 GB. Inmatning av enheter med stora dimensioner kan påverka systemets prestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
 | Datamängder per dimensionellt entitetsschema | 5 | Prestandaskydd | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
 | Inkapslade batchar för Dimension per dag | 4 per enhet | Prestandaskydd | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
@@ -113,7 +113,7 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 De skyddsutkast som beskrivs i detta avsnitt avser antalet och typen av målgrupper som en organisation kan skapa inom Experience Platform samt kartläggning och aktivering av målgrupper till destinationer.
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
+| --------- | ----- | ---------- | ----------- |
 | Målgrupper per sandlåda | 4000 | Prestandaskydd | En organisation kan ha fler än 4000 målgrupper totalt, förutsatt att det finns färre än 4000 målgrupper i varje enskild sandlåda. Detta inkluderar grupper, strömning och gränspubliken. Försök att skapa fler målgrupper kan påverka systemets prestanda. Läs mer om [skapa målgrupper](/help/segmentation/ui/segment-builder.md) genom segmentbyggaren. |
 | Utforma målgrupper per sandlåda | 150 | Prestandaskydd | En organisation kan ha fler än 150 målgrupper totalt, förutsatt att det finns färre än 150 målgrupper i varje enskild sandlåda. Om du försöker skapa fler målgrupper kan det påverka systemets prestanda. Läs mer om [kantmålgrupper](/help/segmentation/ui/edge-segmentation.md). |
 | Kantgenomströmning över alla sandlådor | 1 500 RPS | Prestandaskydd | Kantsegmentering har stöd för ett toppvärde på 1 500 inkommande händelser per sekund i Adobe Experience Platform Edge Network. Kantsegmentering kan ta upp till 350 millisekunder att bearbeta en inkommande händelse när den kommer in i Adobe Experience Platform Edge Network. Läs mer om [kantmålgrupper](/help/segmentation/ui/edge-segmentation.md). |

@@ -6,9 +6,9 @@ description: I Adobe Experience Platform används en mycket denormaliserad hybri
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Guardrails, B2B
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 7c455b546b6a98936d60e6cd481cae8610c8be17
+source-git-commit: f6cfe2de5f2f485cbd42c83b539fb458b505d260
 workflow-type: tm+mt
-source-wordcount: '1675'
+source-wordcount: '1794'
 ht-degree: 2%
 
 ---
@@ -31,9 +31,10 @@ Det här dokumentet innehåller standardgränser för användning och frekvens s
 
 Det finns två typer av standardgränser i det här dokumentet:
 
-* **Mjuk gräns:** Det går att gå längre än en mjuk gräns, men mjuka gränser ger en rekommenderad vägledning för systemprestanda.
-
-* **Hård gräns:** En hård gräns ger ett absolut maximum.
+| Typ av skyddsräcke | Beskrivning |
+| -------------- | ----------- |
+| **Prestandaskydd (mjuk gräns)** | Prestandaskydd är användarbegränsningar som relaterar till omfattningen av dina användningsfall. När du överskrider prestandaskyddet kan du uppleva prestandaförsämringar och fördröjning. Adobe ansvarar inte för sådana prestandaförsämringar. Kunder som genomgående överskrider ett prestandaresäkerhetsskydd kan välja att licensiera ytterligare kapacitet för att undvika prestandaförsämringar. |
+| **Systemstyrda skyddsräcken (hård begränsning)** | Systemstyrda skyddsräcken används av Real-Time CDP gränssnitt eller API. Det här är begränsningar som du inte kan överskrida eftersom gränssnittet och API kommer att blockera dig från att göra det eller returnera ett fel. |
 
 >[!INFO]
 >
@@ -50,10 +51,11 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 >De datamodellsbegränsningar som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsutkast för dokumentationen av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
-| Data för XDM-standardklassen i Real-Time CDP B2B Edition | 60 | Mjuk | Högst 60 datauppsättningar rekommenderas som utnyttjar XDM-klasserna (Experience Data Model) som tillhandahålls av Real-Time CDP B2B Edition. En fullständig lista över XDM-standardklasser för B2B-fall finns i [scheman i Real-Time CDP B2B Edition-dokumentation](schemas/b2b.md). <br/><br/>*Obs! På grund av karaktären hos Experience Platform standardiserade hybriddatamodell överskrider de flesta kunder inte denna gräns. Om du har frågor om hur du modellerar data, eller om du vill veta mer om anpassade begränsningar, kontaktar du kundtjänstrepresentanten.* |
-| Äldre relationer för flera enheter | 20 | Mjuk | Högst 20 multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas. Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
-| Många-till-ett-relationer per XDM-klass | 2 | Mjuk | Högst 2 många-till-en-relationer per XDM-klass rekommenderas. Ytterligare relation bör inte skapas förrän en befintlig relation tas bort eller inaktiveras. Anvisningar om hur du skapar en relation mellan två scheman finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
+| --------- | ----- | ---------- | ----------- |
+| Data för XDM-standardklassen i Real-Time CDP B2B Edition | 60 | Prestandaskydd | Högst 60 datauppsättningar rekommenderas som utnyttjar XDM-klasserna (Experience Data Model) som tillhandahålls av Real-Time CDP B2B Edition. En fullständig lista över XDM-standardklasser för B2B-fall finns i [scheman i Real-Time CDP B2B Edition-dokumentation](schemas/b2b.md). <br/><br/>*Obs! På grund av karaktären hos Experience Platform standardiserade hybriddatamodell överskrider de flesta kunder inte denna gräns. Om du har frågor om hur du modellerar data, eller om du vill veta mer om anpassade begränsningar, kontaktar du kundtjänstrepresentanten.* |
+| Identitetsantal för enskilt konto i ett identitetsdiagram | 50 | Prestandaskydd | Det högsta antalet identiteter i ett identitetsdiagram för ett enskilt konto är 50. Alla profiler med fler än 50 identiteter exkluderas från segmentering, export och uppslag. |
+| Äldre relationer för flera enheter | 20 | Prestandaskydd | Högst 20 multientitetsrelationer som definierats mellan primära entiteter och dimensionsenheter rekommenderas. Ytterligare relationsmappningar ska inte göras förrän en befintlig relation tas bort eller inaktiveras. |
+| Många-till-ett-relationer per XDM-klass | 2 | Prestandaskydd | Högst 2 många-till-en-relationer per XDM-klass rekommenderas. Ytterligare relation bör inte skapas förrän en befintlig relation tas bort eller inaktiveras. Anvisningar om hur du skapar en relation mellan två scheman finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
 
 ### Skyddsutkast för Dimension
 
@@ -62,11 +64,11 @@ Följande skyddsprofiler ger rekommenderade gränser vid modellering av kundprof
 >De datamodellsbegränsningar som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsutkast för dokumentationen av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
-| Inga kapslade äldre relationer | 0 | Mjuk | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Möjligheten att skapa relationer rekommenderas inte för scheman som inte ingår i [!DNL Profile] union-schema. |
-| Endast B2B-objekt kan ingå i många-till-ett-relationer | 0 | Hård | Systemet stöder endast många-till-ett-relationer mellan B2B-objekt. Mer information om många-till-ett-relationer finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
-| Högsta antal kapslade relationer mellan B2B-objekt | 3 | Hård | Det maximala djupet för kapslade relationer mellan B2B-objekt är 3. Det innebär att du inte bör ha någon relation mellan B2B-objekt som är kapslade mer än tre nivåer i ett mycket kapslat schema. |
-| Ett schema för varje dimensionsenhet | 1 | Hård | Varje dimensionsenhet måste ha ett enda schema. Försök att använda dimensionsenheter som skapats från mer än ett schema kan påverka segmenteringsresultaten. Olika dimensionsenheter förväntas ha separata scheman. |
+| --------- | ----- | ---------- | ----------- |
+| Inga kapslade äldre relationer | 0 | Prestandaskydd | Du bör inte skapa en relation mellan två[!DNL XDM Individual Profile] scheman. Att skapa relationer är **not** rekommenderas för alla scheman som inte ingår i [!DNL Profile] union-schema. |
+| Endast B2B-objekt kan ingå i många-till-ett-relationer | 0 | Systemstyrt skyddsräcke | Systemet stöder endast många-till-ett-relationer mellan B2B-objekt. Mer information om många-till-ett-relationer finns i självstudiekursen om [definiera B2B-schemarelationer](../xdm/tutorials/relationship-b2b.md). |
+| Högsta antal kapslade relationer mellan B2B-objekt | 3 | Systemstyrt skyddsräcke | Det maximala djupet för kapslade relationer mellan B2B-objekt är 3. Det innebär att du inte bör ha någon relation mellan B2B-objekt som är kapslade mer än tre nivåer i ett mycket kapslat schema. |
+| Ett schema för varje dimensionsenhet | 1 | Systemstyrt skyddsräcke | Varje dimensionsenhet måste ha ett enda schema. Försök att använda dimensionsenheter som skapats från mer än ett schema kan påverka segmenteringsresultaten. Olika dimensionsenheter förväntas ha separata scheman. |
 
 ## Begränsningar för datastorlek
 
@@ -83,8 +85,8 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 >De begränsningar för datastorlek som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsutkast för dokumentationen av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
-| Inmatade batchar per XDM-klass per dag | 45 | Mjuk | Det totala antalet batchar som intagits varje dag per XDM-klass får inte överstiga 45. Om du samlar in ytterligare batchar kan prestandan bli optimal. |
+| --------- | ----- | ---------- | ----------- |
+| Inmatade batchar per XDM-klass per dag | 45 | Prestandaskydd | Det totala antalet batchar som intagits varje dag per XDM-klass får inte överstiga 45. Om du samlar in ytterligare batchar kan prestandan bli optimal. |
 
 ### Skyddsutkast för Dimension
 
@@ -93,10 +95,10 @@ Följande skyddsutkast hänvisar till datastorlek och innehåller rekommenderade
 >De begränsningar för datastorlek som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsutkast för dokumentationen av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
-| Total storlek för alla dimensionella enheter | 5 GB | Mjuk | Den rekommenderade totala storleken för alla dimensionella enheter är 5 GB. Inmatning av enheter med stora dimensioner kan påverka systemets prestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
-| Datamängder per dimensionellt entitetsschema | 5 | Mjuk | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
-| Inkapslade batchar för Dimension per dag | 4 per enhet | Mjuk | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
+| --------- | ----- | ---------- | ----------- |
+| Total storlek för alla dimensionella enheter | 5 GB | Prestandaskydd | Den rekommenderade totala storleken för alla dimensionella enheter är 5 GB. Inmatning av enheter med stora dimensioner kan påverka systemets prestanda. Vi rekommenderar till exempel inte att du försöker läsa in en produktkatalog på 10 GB som en dimensionsenhet. |
+| Datamängder per dimensionellt entitetsschema | 5 | Prestandaskydd | Högst 5 datauppsättningar som är associerade med varje dimensionellt enhetsschema rekommenderas. Om du till exempel skapar ett schema för&quot;produkter&quot; och lägger till fem bidragande datauppsättningar, bör du inte skapa en sjätte datauppsättning som är kopplad till produktschemat. |
+| Inkapslade batchar för Dimension per dag | 4 per enhet | Prestandaskydd | Rekommenderat maximalt antal inkapslade dimensionsentitetsbatchar per dag är 4 per entitet. Du kan till exempel importera uppdateringar till en produktkatalog upp till 4 gånger per dag. Om ytterligare dimensionsenhetsbatchar för samma enhet anges kan det påverka systemets prestanda. |
 
 ## Skyddsritningar för segmentering
 
@@ -107,8 +109,8 @@ Skyddsförslaget som beskrivs i detta avsnitt avser antalet segment och typen av
 >De segmenteringsgränser som beskrivs i det här avsnittet representerar de ändringar som är aktiverade i Real-time Customer Data Platform B2B Edition. En fullständig lista över standardgränser för Real-Time CDP B2B Edition får du om du kombinerar dessa gränser med de allmänna Adobe Experience Platform-gränserna i [skyddsutkast för dokumentationen av kundprofildata i realtid](../profile/guardrails.md).
 
 | Guardrail | Gräns | Begränsa typ | Beskrivning |
-| --- | --- | --- | --- |
-| Segment per B2B-sandlåda | 400 | Mjuk | En organisation kan ha fler än 400 segment totalt, förutsatt att det finns färre än 400 segment i varje enskild B2B-sandlåda. Om du försöker skapa ytterligare segment kan det påverka systemets prestanda. |
+| --------- | ----- | ---------- | ----------- |
+| Segmentdefinitioner per B2B-sandlåda | 400 | Prestandaskydd | En organisation kan ha fler än 400 segmentdefinitioner totalt, förutsatt att det finns färre än 400 segmentdefinitioner i varje enskild B2B-sandlåda. Om du försöker skapa ytterligare segmentdefinitioner kan det påverka systemets prestanda. |
 
 ## Nästa steg
 
