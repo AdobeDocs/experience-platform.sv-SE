@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över frågetjänsten
 description: Läs mer om frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: e06519978ed9c6128be53a15cef3046a0dbc2a16
+source-git-commit: ad1827284b7070f73421d10c49e1e86e282839eb
 workflow-type: tm+mt
 source-wordcount: '837'
 ht-degree: 0%
@@ -29,7 +29,7 @@ Frågetjänsten samverkar och kan användas med flera Experience Platform-tjäns
 
 ### [!DNL Data Science Workspace] {#data-science-workspace}
 
-Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Datavetare kan använda [!DNL Data Science Workspace] att bygga recept som bygger på uppgifter från register och tidsserier om kunder och deras aktiviteter. Dessa recept underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder. Du kan använda SQL i [!DNL Data Science Workspace] genom att integrera Query Service i [!DNL JupyterLab] för att utforska, omvandla och analysera Adobe Analytics data. Läs [[!DNL Data Science Workspace] översikt](../data-science-workspace/home.md) och [Anslutningsguide för Jypiter Notebook](./clients/jupyter-notebook.md) för mer information om hur [!DNL Data Science Workspace] interagerar med frågetjänsten.
+Adobe Experience Platform [!DNL Data Science Workspace] använder maskininlärning och artificiell intelligens för att få insikter från data som lagras i Experience Platform. Datavetare kan använda [!DNL Data Science Workspace] att bygga recept som bygger på uppgifter från register och tidsserier om kunder och deras aktiviteter. Dessa recept underlättar prognoser som köpbenägenhet och rekommenderade erbjudanden som individen troligtvis uppskattar och använder. Du kan använda SQL i [!DNL Data Science Workspace] genom att integrera Query Service i [!DNL JupyterLab] för att utforska, omvandla och analysera Adobe Analytics data. Läs [[!DNL Data Science Workspace] översikt](../data-science-workspace/home.md) och [Anslutningsguide för Jupyter Notebook](./clients/jupyter-notebook.md) för mer information om hur [!DNL Data Science Workspace] interagerar med frågetjänsten.
 
 ### [!DNL Segmentation Service] {#segmentation}
 
