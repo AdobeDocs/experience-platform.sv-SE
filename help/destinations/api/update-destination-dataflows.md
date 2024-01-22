@@ -5,9 +5,9 @@ title: Uppdatera måldataflöden med API:t för Flow Service
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att uppdatera ett måldataflöde. Lär dig hur du aktiverar eller inaktiverar dataflödet, uppdaterar basinformationen eller lägger till och tar bort målgrupper och attribut med API:t för Flow Service.
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 9ac6b075af3805da4dad0dd6442d026ae96ab5c7
+source-git-commit: c1d4a0586111d9cd8a66f4239f67f2f7e6ac8633
 workflow-type: tm+mt
-source-wordcount: '2408'
+source-wordcount: '2404'
 ht-degree: 0%
 
 ---
@@ -543,7 +543,7 @@ curl -X PATCH \
     -d '[
 {
    "op":"remove",
-   "path":"transformations/0/params/segmentSelectors/selectors/0/",
+   "path":"/transformations/0/params/segmentSelectors/selectors/0",
    "value":{
       "type":"PLATFORM_SEGMENT",
       "value":{
@@ -552,7 +552,7 @@ curl -X PATCH \
 },
 {
    "op":"remove",
-   "path":"transformations/0/params/segmentSelectors/selectors/1/",
+   "path":"/transformations/0/params/segmentSelectors/selectors/1",
    "value":{
       "type":"PLATFORM_SEGMENT",
       "value":{
@@ -565,7 +565,7 @@ curl -X PATCH \
 | Egenskap | Beskrivning |
 | --------- | ----------- |
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Om du vill ta bort en målgrupp från ett dataflöde använder du `remove` operation. |
-| `path` | Anger vilken befintlig målgrupp som ska tas bort från måldataflödet, baserat på indexvärdet för målgruppsväljaren. Om du vill hämta ordningen för målgrupper i ett dataflöde ska du ringa ett GET-samtal till `/flows` slutpunkt och inspektera `transformations.segmentSelectors` -egenskap. Om du vill ta bort den första målgruppen i dataflödet använder du `"path":"transformations/0/params/segmentSelectors/selectors/0/"`. |
+| `path` | Anger vilken befintlig målgrupp som ska tas bort från måldataflödet, baserat på indexvärdet för målgruppsväljaren. Om du vill hämta ordningen för målgrupper i ett dataflöde ska du ringa ett GET-samtal till `/flows` slutpunkt och inspektera `transformations.segmentSelectors` -egenskap. Om du vill ta bort den första målgruppen i dataflödet använder du `"path":"/transformations/0/params/segmentSelectors/selectors/0"`. |
 
 
 **Svar**
