@@ -3,9 +3,9 @@ title: Aktivera potentiella målgrupper till destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar potentiella målgrupper till destinationer
 exl-id: 3e034a14-09d0-4b08-b171-5afb62ae4b62
-source-git-commit: fdb9d7b168d6323fddaab1ac7abc44d3a390afea
+source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välje
 
 ### Nödvändiga behörigheter {#permissions}
 
-För att aktivera potentiella målgrupper behöver ni **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+För att aktivera potentiella målgrupper behöver ni **[!UICONTROL View Destinations]** och **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Bläddra i målkatalogen för att se till att du har de behörigheter som krävs för att aktivera potentiella målgrupper. Om ett mål har en **[!UICONTROL Activate]** har du rätt behörighet.
 

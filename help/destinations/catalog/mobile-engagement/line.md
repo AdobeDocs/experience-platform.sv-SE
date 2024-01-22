@@ -4,9 +4,9 @@ title: LINJEanslutning
 description: Med LINE-destinationen kan ni lägga till profiler till era plattformar och leverera personaliserade upplevelser till anslutna användare.
 last-substantial-update: 2022-11-08T00:00:00Z
 exl-id: 9981798a-61f2-4a09-9a33-57e63eb36d43
-source-git-commit: 05e996f9e33e0d8be3d15a9ab3baaaf6d8152b5a
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Så här tillåter du att plattformen får åtkomst [!DNL LINE] behöver du *[!D
 
 | Autentiseringsuppgifter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `[!DNL Channel access token (long-lived)]` | Din [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
+| `[!DNL Channel access token (long-lived)]` | Dina [!DNL LINE Channel access token (long-lived)]. | `aaa2112XSMWqLXR7..........nyilFU=` |
 
 Se [[!DNL LINE] dokumentation](https://developers.line.biz/en/docs/messaging-api/getting-started/) om du vill ha hjälp med att skapa en kanal eller lägga till en kanal i en befintlig [!DNL LINE] via [!DNL LINE] utvecklarkonsol.
 
@@ -76,7 +76,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -111,7 +111,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 >* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
@@ -120,7 +120,7 @@ Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportd
 
 Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL LINE] mål måste du gå igenom fältmappningssteget. Mappningen består av att skapa en länk mellan XDM-schemafälten (Experience Data Model) i ditt plattformskonto och motsvarande motsvarigheter från målmålet. Mappa XDM-fälten korrekt till [!DNL LINE] målfält, följ dessa steg:
 
-Beroende på din källidentitet måste följande namnrymder för målidentitet mappas: | Målidentitet | Källfält | Målfält | | — | — | — | | ID för annonsörer (IFA) | `IDFA` eller `GAID` | `LineId` | | Användar-ID:n för RAD | `UserID` | `LineId` |
+Beroende på din källidentitet måste följande namnrymder för målidentitet mappas: | Målidentitet | Källfält | Målfält | | — | — | — | | ID för annonsörer (IFA) | `IDFA` eller `GAID` | `LineId` | | Användar-ID för RAD | `UserID` | `LineId` |
 
 Om dina målidentiteter är *Användar-ID:n för RAD* nedan:
 ![Skärmbild av användargränssnitt för plattform som visar målmappningen när LINE-användar-ID används för målidentiteter.](../../assets/catalog/mobile-engagement/line/mappings-userid.png)

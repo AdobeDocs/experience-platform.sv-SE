@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;salesforce crm;salesforce crm destination
 title: Salesforce CRM-anslutning
 description: Med Salesforce CRM-destinationen kan du exportera dina kontodata och aktivera dem i Salesforce CRM för dina affärsbehov.
 exl-id: bd9cb656-d742-4a18-97a2-546d4056d093
-source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '2711'
+source-wordcount: '2712'
 ht-degree: 0%
 
 ---
@@ -144,7 +144,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 >[!IMPORTANT]
 >
->Om du vill ansluta till målet behöver du **[!UICONTROL Manage Destinations]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för att konfigurera mål fyller du i fälten som listas i de två avsnitten nedan.
 
@@ -153,7 +153,7 @@ Inom **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]** sök efter [!DNL S
 ### Autentisera till mål {#authenticate}
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten nedan och väljer **[!UICONTROL Connect to destination]**. Se [Samla [!DNL Salesforce CRM] autentiseringsuppgifter](#gather-credentials) för vägledning.
-| Referenser | Beskrivning | | — | — | | **[!UICONTROL Username]** | Dina [!DNL Salesforce] användarnamn för konto. | | **[!UICONTROL Password]** | En sammanfogad sträng som består av [!DNL Salesforce] kontolösenordet har bifogats med [!DNL Salesforce] Säkerhetstoken.<br>Det sammanfogade värdet har formen av `{PASSWORD}{TOKEN}`.<br> Observera att du inte ska använda klammerparenteser eller mellanslag.<br>Om du till exempel [!DNL Salesforce] Lösenordet är `MyPa$$w0rd123` och [!DNL Salesforce] Säkerhetstoken är `TOKEN12345....0000`, det sammanfogade värde som du kommer att använda i **[!UICONTROL Password]** fältet är `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL Custom Domain]** | Dina [!DNL Salesforce] domänprefix. <br>Om din domän till exempel är *`d5i000000isb4eak-dev-ed`.my.salesforce.com* måste du ange `d5i000000isb4eak-dev-ed` som värdet. | | **[!UICONTROL Client ID]** | Dina [!DNL Salesforce] ansluten app `Consumer Key`. | | **[!UICONTROL Client Secret]** | Dina [!DNL Salesforce] ansluten app `Consumer Secret`. |
+| Autentiseringsuppgifter | Beskrivning | | — | — | | **[!UICONTROL Username]** | Dina [!DNL Salesforce] användarnamn för konto. | | **[!UICONTROL Password]** | En sammanfogad sträng som består av [!DNL Salesforce] kontolösenordet har bifogats med [!DNL Salesforce] Säkerhetstoken.<br>Det sammanfogade värdet har formen av `{PASSWORD}{TOKEN}`.<br> Observera att du inte ska använda klammerparenteser eller mellanslag.<br>Om du till exempel [!DNL Salesforce] Lösenordet är `MyPa$$w0rd123` och [!DNL Salesforce] Säkerhetstoken är `TOKEN12345....0000`, det sammanfogade värde som du kommer att använda i **[!UICONTROL Password]** fältet är `MyPa$$w0rd123TOKEN12345....0000`. | | **[!UICONTROL Custom Domain]** | Dina [!DNL Salesforce] domänprefix. <br>Om din domän till exempel är *`d5i000000isb4eak-dev-ed`.my.salesforce.com* måste du ange `d5i000000isb4eak-dev-ed` som värdet. | | **[!UICONTROL Client ID]** | Dina [!DNL Salesforce] ansluten app `Consumer Key`. | | **[!UICONTROL Client Secret]** | Dina [!DNL Salesforce] ansluten app `Consumer Secret`. |
 
 ![Skärmbild av användargränssnittet för plattformen som visar hur man autentiserar.](../../assets/catalog/crm/salesforce/authenticate-destination.png)
 
@@ -180,7 +180,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 >* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](/help/destinations/ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
@@ -216,7 +216,7 @@ Mappa XDM-fälten korrekt till [!DNL (API) Salesforce CRM] målfält, följ dess
    * Om du arbetar med *Leads* inom ditt segment, se objektreferensen i Salesforce för [Lead](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_lead.htm) för att definiera mappningar för de fält som ska uppdateras.
    * Du kan identifiera obligatoriska fält genom att söka efter ordet *Obligatoriskt*, som nämns i fältbeskrivningar i länken ovan.
    * Beroende på vilka fält du vill exportera eller uppdatera lägger du till mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce CRM]: |Källfält|Målfält| Anteckningar | | — | — | — | |`IdentityMap: crmID`|`Identity: SalesforceId`|`Mandatory`| |`xdm: person.name.lastName`|`Attribute: LastName`| `Mandatory`. Ledningens efternamn är högst 80 tecken. |\
-     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. Ledarens företag. | |`xdm: personalEmail.address`|`Attribute: Email`| Leads e-postadress. |
+     |`xdm: b2b.companyName`|`Attribute: Company`| `Mandatory`. Ledarens företag. | |`xdm: personalEmail.address`|`Attribute: Email`| Leadens e-postadress. |
 
    * Ett exempel på hur du använder dessa mappningar visas nedan:
      ![Exempel på skärmbild för användargränssnittet för plattformen som visar målmappningar.](../../assets/catalog/crm/salesforce/mappings-leads.png)

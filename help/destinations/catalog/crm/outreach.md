@@ -3,9 +3,9 @@ keywords: crm;CRM;crm destination;Utanför;Utanför crm-mål
 title: Utdataanslutning
 description: Med Outreach-destinationen kan du exportera dina kontodata och aktivera dem inom ramarna för ditt företags behov.
 exl-id: 7433933d-7a4e-441d-8629-a09cb77d5220
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '1683'
+source-wordcount: '1619'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,7 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 >[!IMPORTANT]
 > 
->* För att aktivera data behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+>* För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 >* Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
 Läs [Aktivera profiler och målgrupper för att strömma målgruppernas exportdestinationer](../../ui/activate-segment-streaming-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
@@ -154,7 +154,7 @@ Så här skickar du målgruppsdata från Adobe Experience Platform till [!DNL Ou
    * **[!UICONTROL Select identity namespace]**: välj det här alternativet om du vill mappa källfältet till ett identitetsnamnområde från listan.
      ![Skärmbild av användargränssnittet för plattformen som visar målmappning med OutreachId.](../../assets/catalog/crm/outreach/target-mapping.png)
 
-   * Lägg till följande mappning mellan XDM-profilschemat och [!DNL Outreach] instans: |XDM-profilschema|[!DNL Outreach] Instans| Obligatorisk| |—|—|—| |`Oid`|`OutreachId`| Ja |
+   * Lägg till följande mappning mellan XDM-profilschemat och [!DNL Outreach] instans: |XDM-profilschema|[!DNL Outreach] Instans| Obligatoriskt| |—|—|—| |`Oid`|`OutreachId`| Ja |
 
    * **[!UICONTROL Select custom attributes]**: välj det här alternativet om du vill mappa källfältet till ett anpassat attribut som du definierar i dialogrutan [!UICONTROL Attribute name] fält. Se [[!DNL Outreach] dokumentation om potentiella kunder](https://api.outreach.io/api/v2/docs#prospect) om du vill ha en omfattande lista över attribut som stöds.
      ![Skärmbild för plattformsgränssnitt som visar målmappning med hjälp av LastName.](../../assets/catalog/crm/outreach/target-mapping-lastname.png)

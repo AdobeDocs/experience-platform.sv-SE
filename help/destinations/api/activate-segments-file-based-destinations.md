@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: 9c07664873f649645db57a9a025277f515333b1e
+source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
 workflow-type: tm+mt
-source-wordcount: '4392'
+source-wordcount: '4324'
 ht-degree: 0%
 
 ---
@@ -57,7 +57,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Nödvändiga behörigheter {#permissions}
 
-Om du vill exportera profiler måste du ha **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]** och **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+Om du vill exportera profiler måste du ha **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Exportera *identiteter* behöver du **[!UICONTROL View Identity Graph]** [behörighet för åtkomstkontroll](/help/access-control/home.md#permissions). <br> ![Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål.](/help/destinations/assets/overview/export-identities-to-destination.png "Markera det identitetsnamnutrymme som är markerat i arbetsflödet för att aktivera målgrupper till mål."){width="100" zoomable="yes"}
 
@@ -99,7 +99,7 @@ Beskrivningar av termer som du kommer att stöta på i den här API-självstudie
 
 Innan du startar arbetsflödet för att exportera profiler, ska du identifiera anslutningsspec och flödesspec-ID för det mål som du tänker exportera målgrupper till. Använd tabellen nedan som referens.
 
-| Destination | Anslutningsspecifikation | Flödesspecifikation |
+| Mål | Anslutningsspecifikation | Flödesspecifikation |
 ---------|----------|---------|
 | Amazon S3 | `4fce964d-3f37-408f-9778-e597338a21ee` | `1a0514a6-33d4-4c7f-aff8-594799c47549` |
 | Azure Blob Storage | `6d6b59bf-fb58-4107-9064-4d246c0e5bb2` | `752d422f-b16f-4f0d-b1c6-26e448e3b388` |
@@ -4681,6 +4681,6 @@ API-slutpunkterna i den här självstudiekursen följer de allmänna felmeddelan
 
 Genom att följa den här självstudiekursen har du anslutit plattformen till en av dina favoritplatser för molnlagring och konfigurerat ett dataflöde till respektive mål för att exportera målgrupper. På följande sidor finns mer information, till exempel om hur du redigerar befintliga dataflöden med API:t för Flow Service:
 
-* [Översikt över mål](../home.md)
+* [Översikt över destinationer](../home.md)
 * [Översikt över destinationskatalogen](../catalog/overview.md)
 * [Uppdatera måldataflöden med API:t för Flow Service](../api/update-destination-dataflows.md)

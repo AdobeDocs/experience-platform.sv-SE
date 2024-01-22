@@ -5,9 +5,9 @@ description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Caution"
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 0a572c5fe612b8e0cc866b4e2287ea53a4022b1a
+source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '780'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och välje
 
 ### Nödvändiga behörigheter {#permissions}
 
-Om du vill aktivera kontomålgrupper behöver du **[!UICONTROL Manage Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
+Om du vill aktivera kontomålgrupper behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Activate Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Bläddra i målkatalogen för att se till att du har de behörigheter som krävs för att aktivera målgrupper. Om ett mål har en **[!UICONTROL Activate]** har du rätt behörighet.
 
