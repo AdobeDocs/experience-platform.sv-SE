@@ -2,19 +2,14 @@
 title: Pinterest Customer List Connection
 description: Skapa målgrupper utifrån kundlistor, personer som har besökt er webbplats eller personer som redan har interagerat med ert innehåll på Pinterest.
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 5cef3bbc7f2246a91ecca807825d830f240c8d45
+source-git-commit: 02110e4b4156774c2961803f78ae1c3fc9d6240a
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '697'
 ht-degree: 1%
 
 ---
 
 # [!DNL Pinterest Customer List] anslutning
-
->[!IMPORTANT]
->
->* Från och med 16 november 2023 kan du se två Pinterest-kort sida vid sida i målkatalogen. Detta beror på en uppgradering av Pinterest annonsörs-API som används för att exportera data till Pinterest. Den befintliga Pinterest-målanslutningen har bytt namn till **[!UICONTROL (Deprecating) Pinterest]** och ett nytt kort **[!UICONTROL (New) Pinterest]** är nu tillgängligt för dig.
->* Använd **[!UICONTROL (New) Pinterest]** anslutning i katalogen för alla kampanjer till Pinterest. Om du har några aktiva dataflöden till **[!UICONTROL (Deprecating) Pinterest]** mål, läs [uppgraderingsdokumentation](/help/destinations/catalog/advertising/pinterest-upgrade.md) för att förstå vad ni gör för att undvika avbrott i era kampanjer.
 
 ## Översikt {#overview}
 
