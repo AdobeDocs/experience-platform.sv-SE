@@ -4,9 +4,9 @@ title: Identiteter i Real-time Customer Data Platform
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att knyta samman identiteter mellan olika enheter och system.
 feature: Get Started, Identities
 exl-id: 2b0d84de-9710-412e-ace7-56e3977245aa
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 1d2c67a2015f57238bdbb0e14c676601e092ef5f
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '422'
 ht-degree: 0%
 
 ---
@@ -23,9 +23,9 @@ Identitetsnamnutrymmen är en komponent i [!DNL Identity Service] och fungerar s
 
 ## Identitetsdiagram
 
-Ett identitetsdiagram är en karta över relationer mellan olika identitetsnamnutrymmen, som ger dig en visuell representation av hur kunden interagerar med varumärket i olika kanaler. Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av [!DNL Identity Service] i nära realtid som svar på kundaktiviteter.
+Ett identitetsdiagram är en karta över relationer mellan olika identiteter, som ger dig en visuell representation av hur kunden interagerar med ert varumärke i olika kanaler. Alla kundidentitetsdiagram hanteras och uppdateras gemensamt av identitetstjänsten som svar på kundaktivitet.
 
-[!DNL Identity Service] hanterar ett identitetsdiagram som bara är synligt för din organisation och som bygger på dina data, kallas för det privata diagrammet. [!DNL Identity Service] förbättrar det privata diagrammet när en inkapslad datapost innehåller mer än en identitet, vilket lägger till en relation mellan de identifierade identiteterna.
+[!DNL Identity Service] hanterar ett identitetsdiagram som bara är synligt för din organisation och som bygger på dina data. [!DNL Identity Service] förbättrar diagrammet när en inkapslad datapost innehåller mer än en identitet, vilket lägger till en relation mellan de identifierade identiteterna.
 
 ## Nästa steg
 
