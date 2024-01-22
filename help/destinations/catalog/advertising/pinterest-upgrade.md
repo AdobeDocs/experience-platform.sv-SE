@@ -4,9 +4,9 @@ description: Pinterest har ersatt v4-annonserings-API:t som används av Pinteres
 hide: true
 hidefromtoc: true
 exl-id: c965235c-4208-4c28-9ac5-eb4c0061515d
-source-git-commit: 3968c8e2a0ebd2084a7047fb41e2b85c5da7a6e7
+source-git-commit: e3341ec6f62844858ecda7dd4db70d085f0bf217
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '518'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Vi har identifierat att din organisation har aktiva dataflöden som aktiverar m�
 
 ## Vad är planen?
 
-Adobe släpper ett nytt Pinterest-målkort som utnyttjar Pinterest API v5 och bevarar dina befintliga dataflöden i den nya anslutningen.
+Adobe har släppt ett nytt Pinterest-målkort som utnyttjar Pinterest API v5 och bevarar dina befintliga dataflöden i den nya anslutningen.
 
 ## Behöver jag göra något för att mina aktiverade målgrupper ska fungera?
 
@@ -45,7 +45,7 @@ Ja, före 18 januari 2024 måste du autentisera till det nya Pinterest-målet me
 
 ### Aktivera flöden till nytt mål {#disable-old-enable-new-flows}
 
-Sedan måste du aktivera dataflödena till det nya kortet **[!UICONTROL (New) Pinterest]**.
+Sedan måste du aktivera dataflödena för de nya  **[!UICONTROL Pinterest]** kort.
 
 1. Gå till **[!UICONTROL Destinations > Browse]** och använda filtret på skärmen för att filtrera **[!UICONTROL Pinterest]** endast målet.
    ![Filtrera endast Pinterest-dataflöden på fliken Bläddra](/help/destinations/assets/catalog/advertising/pinterest-migration/filter-pinterest-browse.png)
@@ -66,14 +66,18 @@ Ja, se nedan:
 
 ![Gammalt och nytt Pinterest-mål sida vid sida](/help/destinations/assets/catalog/advertising/pinterest-migration/pinterest-two-cards-side-by-side.png)
 
+<!--
+
 >[!IMPORTANT]
 >
->Efter 16 november 2023 markeras det gamla Pinterest-målet **[!UICONTROL Deprecating]**. <span class="preview">Alla ändringar som du gör i dataflöden till Pinterest-destinationen (borttagen) efter den 16 november kommer att *not* överförs automatiskt till det nya Pinterest-målet. </span>
->Vi *rekommendera inte* som ni kan aktivera nya målgrupper för den gamla målgruppen efter den 16 november. Om du gör det måste du då följa [vanliga aktiveringssteg](/help/destinations/ui/activate-segment-streaming-destinations.md) för att lägga till målgruppen på den nya målplatsen när kundens åtgärder har vidtagits.
+>After November 16th, 2023 the legacy Pinterest destination is marked **[!UICONTROL Deprecating]**. <span class="preview">Any changes that you make to dataflows to the (Deprecating) Pinterest destination after November 16th will *not* be automatically carried over to the new Pinterest destination. </span>
+>For example, we *do not recommend* that you activate new audiences to the old destination after November 16th. If you do that, you will then have to follow the [regular activation steps](/help/destinations/ui/activate-segment-streaming-destinations.md) to add the audience to the new destination once the customer actions are taken.
+
+-->
 
 **Senast 15 december 2023**: <span class="preview">Kundåtgärd 1</span>. Du måste autentisera dig på nytt för Pinterest så att det nya kortet är anslutet till Pinterest. Visa fullständiga instruktioner i [det här avsnittet](#reauthenticate).
 
-<span class="preview">Kundåtgärd 2</span>Du måste sedan inaktivera dataflödena till Pinterest på det gamla kortet och aktivera dataflödena på det nya kortet. Visa fullständiga instruktioner i [det här avsnittet](#disable-old-enable-new-flows).
+<span class="preview">Kundåtgärd 2</span>Sedan måste du aktivera dataflödena på det nya kortet. Visa fullständiga instruktioner i [det här avsnittet](#disable-old-enable-new-flows).
 
 <!--
 
@@ -83,8 +87,12 @@ Ja, se nedan:
 
 -->
 
-**Efter 18 januari 2024**: <span class="preview">Pinterest har stängt av åtkomsten till V4-annonsörens API. Alla Real-Time CDP-kunder som inte har uppgraderat till den nya destinationen kommer nu att upptäcka att dataflödena till Pinterest-destinationen inte fungerar. [Återautentisera till Pinterest](#reauthenticate) och [aktivera dataflödena](#disable-old-enable-new-flows) till den uppgraderade destinationen för att återuppta era kampanjer till Pinterest</span>.
+**Efter 18 januari 2024**: <span class="preview">Pinterest har stängt av åtkomsten till V4-annonsörens API. Alla Real-Time CDP-kunder som inte har uppgraderat till den nya destinationen kommer nu att upptäcka att dataflödena till Pinterest-destinationen inte fungerar. [Återautentisera till Pinterest](#reauthenticate) och [aktivera dataflödena](#disable-old-enable-new-flows) till den uppgraderade destinationen för att återuppta era kampanjer till Pinterest.</span>
 
-## Övriga punkter att notera
+<!--
 
-När du har aktiverat dataflödena på det nya destinationskortet och inaktiverat dataflödena på de gamla destinationskorten, bör du inte märka några avbrott i kampanjerna eller i antalet kvalificerade profiler i de målgrupper som kommer från Adobe Real-Time CDP.
+## Other items to note
+
+After you enable the dataflows on the new destination card and disable the dataflows on the old destination cards, you should see no disruption in your campaigns or in the numbers of qualified profiles in the audiences coming in from Adobe Real-Time CDP.
+
+-->
