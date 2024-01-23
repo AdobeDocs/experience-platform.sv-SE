@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Media Edge API:er
 description: Översikt över API:er för Media Edge
 exl-id: 55c952de-caab-4301-acf2-f7b64cebbb1c
-source-git-commit: 034498e662ed55112f22751d44cf3ecf75d38d61
+source-git-commit: b247790a155c04301215b03dad2f2765a1afd8fe
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 1%
@@ -42,7 +42,7 @@ I följande tabell visas en möjlig Adobe API-tjänst för olika medieanalysfall
 
 >[!NOTE]
 >
-> API-tjänsten Media Collection för Analytics tar fortfarande emot XDM-data, men den är inte optimerad i den utsträckning som tjänsten Media Edge är. Beroende på vilka data som skickas från Media Player kan vissa data som bara används för analys även slussas via API-tjänsten för Media Edge.
+> Media Collection API-tjänsten för Analytics tar fortfarande emot XDM-data, men den är inte optimerad i den utsträckning som Media Edge-tjänsten är det. Beroende på vilka data som skickas från Media Player kan vissa data som bara används för analys även slussas via API-tjänsten för Media Edge.
 
 I följande bild visas dataflödena för de två API-tjänsterna:
 
