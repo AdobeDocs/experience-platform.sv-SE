@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla klienter till frågetjänsten
 description: Det här dokumentet förklarar hur du ansluter till Query Service från ett antal klientprogram och hur du verifierar dessa anslutningar.
 exl-id: 2ba20179-5adb-4259-a120-231a40e78054
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 778c65c6310ed4a627be0fd3ae076784cfc8495b
 workflow-type: tm+mt
-source-wordcount: '112'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 # Koppla klienter till [!DNL Query Service]
 
 I det här avsnittet beskrivs hur du ansluter till [!DNL Query Service] från en mängd olika klientprogram och hur du verifierar dessa anslutningar. [!DNL Query Service] använder [!DNL PostgreSQL] så instruktionerna i det här avsnittet förklarar hur du använder [!DNL PostgreSQL] verktyg och drivrutiner för att ansluta och skriva frågor.
+
+>[!IMPORTANT]
+>
+>TLS/SSL-certifikaten i produktionsmiljöer för API:t för frågetjänsten Interactive Postgres uppdaterades onsdagen den 24 januari 2024.<br>Även om detta är ett årligt krav har rotcertifikatet i kedjan även ändrats eftersom Adobe TLS/SSL-certifikatprovidern har uppdaterat sin certifikathierarki. Detta kan påverka vissa Postgres-klienter om deras lista över certifikatutfärdare saknar rotcertifikatet. En PSQL CLI-klient kan till exempel behöva lägga till rotcertifikaten i en explicit fil `~/postgresql/root.crt`, annars kan det leda till ett fel. Till exempel: `psql: error: SSL error: certificate verify failed`. Se [officiell PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES) om du vill ha mer information om problemet.<br>Rotcertifikatet som ska läggas till kan hämtas från [https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
 Instruktioner finns för följande klienter:
 

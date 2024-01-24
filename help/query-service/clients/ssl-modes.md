@@ -3,10 +3,10 @@ keywords: Experience Platform;hem;populära ämnen;frågetjänst;frågetjänst;a
 title: SSL-alternativ för frågetjänst
 description: Lär dig mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service och hur du ansluter i SSL-läge för verifiering.
 exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
-source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
+source-git-commit: 229ce98da8f1c97e421ef413826b0d23754d16df
 workflow-type: tm+mt
-source-wordcount: '903'
-ht-degree: 1%
+source-wordcount: '1017'
+ht-degree: 0%
 
 ---
 
@@ -44,9 +44,13 @@ När du upprättar en tredjepartsanslutning till en plattformsdatabas bör du an
 
 ## Konfigurera ett rotcertifikat för serververifiering {#root-certificate}
 
+>[!IMPORTANT]
+>
+>TLS/SSL-certifikaten i produktionsmiljöer för API:t för frågetjänsten Interactive Postgres uppdaterades onsdagen den 24 januari 2024.<br>Även om detta är ett årligt krav har rotcertifikatet i kedjan även ändrats eftersom Adobe TLS/SSL-certifikatprovidern har uppdaterat sin certifikathierarki. Detta kan påverka vissa Postgres-klienter om deras lista över certifikatutfärdare saknar rotcertifikatet. En PSQL CLI-klient kan till exempel behöva lägga till rotcertifikaten i en explicit fil `~/postgresql/root.crt`, annars kan det leda till ett fel. Till exempel: `psql: error: SSL error: certificate verify failed`. Se [officiell PostgreSQL-dokumentation](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBQ-SSL-CERTIFICATES) om du vill ha mer information om problemet.<br>Rotcertifikatet som ska läggas till kan hämtas från [https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
+
 För att säkerställa en säker anslutning måste SSL-användningen konfigureras på både klienten och servern innan anslutningen görs. Om SSL bara är konfigurerat på servern kan klienten skicka känslig information, till exempel lösenord, innan det etableras att servern kräver hög säkerhet.
 
-Som standard [!DNL PostgreSQL] verifierar inte servercertifikatet. Verifiera serverns identitet och säkerställa en säker anslutning innan känsliga data skickas (som en del av SSL `verify-full` måste du placera ett rotcertifikat (självsignerat) på den lokala datorn (`root.crt`) och ett lövcertifikat som signerats av rotcertifikatet på servern.
+Som standard [!DNL PostgreSQL] utför ingen verifiering av servercertifikatet. Verifiera serverns identitet och säkerställa en säker anslutning innan känsliga data skickas (som en del av SSL `verify-full` måste du placera ett rotcertifikat (självsignerat) på den lokala datorn (`root.crt`) och ett lövcertifikat som signerats av rotcertifikatet på servern.
 
 Om `sslmode` parametern är inställd på `verify-full`, kommer libpq att verifiera att servern är tillförlitlig genom att kontrollera certifikatkedjan upp till rotcertifikatet som lagras på klienten. Sedan verifieras att värdnamnet matchar namnet som lagras i servercertifikatet.
 
@@ -61,7 +65,7 @@ Om du behöver striktare säkerhetskontroll än `sslmode=require`kan du följa d
 >Det finns många alternativ för att uppnå ett SSL-certifikat. På grund av den ökande trenden när det gäller otillåtna certifikat används DigiCert i den här guiden eftersom de är en betrodd global leverantör av TLS/SSL-, PKI-, IoT- och signeringslösningar med hög säkerhet.
 
 1. Navigera till [listan över tillgängliga DigiCert-rotcertifikat](https://www.digicert.com/kb/digicert-root-certificates.htm)
-1. Sök efter &quot;[!DNL DigiCert Global Root CA]&quot; i listan över tillgängliga certifikat.
+1. Sök efter &quot;[!DNL DigiCert Global Root G2]&quot; i listan över tillgängliga certifikat.
 1. Välj [!DNL **Hämta PEM**] för att hämta filen till din lokala dator.
    ![Listan med tillgängliga DigiCert-rotcertifikat med nedladdnings-PEM markerad.](../images/clients/ssl-modes/digicert.png)
 1. Byt namn på säkerhetscertifikatfilen till `root.crt`.
@@ -71,9 +75,9 @@ Om du behöver striktare säkerhetskontroll än `sslmode=require`kan du följa d
 
 >[!TIP]
 >
->För att hitta `%appdata%` filens plats i ett Windows-operativsystem, tryck på ⊞ **Win + R** och indata `%appdata%` i sökfältet.
+>Hitta `%appdata%` filens plats i ett Windows-operativsystem, tryck ⊞ **Win + R** och indata `%appdata%` i sökfältet.
 
-Efter [!DNL DigiCert Global Root CA] CRT-filen är tillgänglig i [!DNL PostgreSQL] mapp kan du ansluta till [!DNL Query Service] med `sslmode=verify-full` eller `sslmode=verify-ca` alternativ.
+Efter [!DNL DigiCert Global Root G2] CRT-filen är tillgänglig i [!DNL PostgreSQL] mapp kan du ansluta till [!DNL Query Service] med `sslmode=verify-full` eller `sslmode=verify-ca` alternativ.
 
 ## Nästa steg
 
