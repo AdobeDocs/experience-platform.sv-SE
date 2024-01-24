@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 696dad52af4f927969fac38f78341f4e3c8c6607
+source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
 workflow-type: tm+mt
-source-wordcount: '2701'
+source-wordcount: '2726'
 ht-degree: 0%
 
 ---
@@ -108,6 +108,7 @@ I följande diagram förklaras de olika livscykelstatusarna, vad de representera
 | Publicerad | En publik i **Publicerad** är en publik som är klar att användas i alla tjänster i senare led. | Ja | Ja | Ja | Kan importeras eller uppdateras. | Utvärderat med gruppbearbetning, direktuppspelning eller kantsegmentering. | Ja |
 | Inaktiv | En publik i **Inaktiv** är en publik som för närvarande inte används. Den finns fortfarande i plattformen, men den kommer att **not** vara användbar tills den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Platform. | Ja |
 | Borttagen | En publik i **Borttagen** status är en målgrupp som har tagits bort. Det kan ta upp till några minuter innan data tas bort. | Nej | Nej | Nej | Underliggande data tas bort. | Ingen utvärdering eller körning av data utförs efter att borttagningen har slutförts. | Nej |
+| Aktiv | Den här statusen har **inaktuell** och ersätts med **Publicerad** status. | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt |
 
 ### Hur interagerar Audience Portal och Audience Composition med Real-Time CDP Partner Data?
 

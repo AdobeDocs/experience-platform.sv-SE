@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 5262b5e894cc6bfa2db79afcda8bfda4b496f7d5
+source-git-commit: e8f838c3cf8988f6028901df76ed040e7f08cb98
 workflow-type: tm+mt
-source-wordcount: '1677'
+source-wordcount: '1732'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,10 @@ Om du utelämnar efter attribut kan du välja vilka attribut du vill utesluta ge
 En lista med profilattribut visas. Välj den attributtyp som du vill exkludera, följt av **[!UICONTROL Select]** för att lägga till dem i exkluderingsblocket.
 
 ![En lista med attribut visas.](../images/ui/audience-composition/select-attribute-exclude.png)
+
+>[!IMPORTANT]
+>
+>När du exkluderar efter attribut kan du bara ange **en** värde som ska exkluderas. Om du använder någon form av avgränsare, som ett komma eller semikolon, utesluts bara det exakta värdet. Ange till exempel värdet som `red, blue` leder till att termen utesluts `red, blue` från attributet, men **not** resulterar i att antingen termen utesluts `red` eller `blue`.
 
 ## [!UICONTROL Enrich] {#enrich-block}
 

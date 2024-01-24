@@ -2,9 +2,9 @@
 title: Användargränssnittshandbok för beräknade attribut
 description: Lär dig hur du skapar, visar och uppdaterar beräknade attribut med Adobe Experience Platform-gränssnittet.
 exl-id: bc621167-6dba-473e-90e4-aac7ceb6579a
-source-git-commit: cf01c18c8ea710492c8a2c8542c8a4580d5f0dcf
+source-git-commit: 762a7fc7dd00657e4e710eb763c5bb63b210593a
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1497'
 ht-degree: 0%
 
 ---
@@ -144,7 +144,7 @@ På den här sidan visas en sammanfattning av det beräknade attributets detalje
 
 När du väljer ett utkast till ett beräknat attribut visas **[!UICONTROL Edit computed attributes]** visas. Den här sidan liknar [!UICONTROL Create computed attributes] gör att du kan redigera det beräknade attributets grundläggande information och definition innan du låter dig uppdatera utkastet eller publicera det.
 
-![Sidan [!UICONTROL Edit computed attributes] visas.](./images/ui/edit.png)
+![The [!UICONTROL Edit computed attributes] visas.](./images/ui/edit.png)
 
 ## Använda beräknade attribut {#usage}
 
@@ -155,6 +155,10 @@ När du väljer ett utkast till ett beräknat attribut visas **[!UICONTROL Edit 
 >Om du till exempel skapar en segmentdefinition som söker efter&quot;Alla profiler som har en giltig e-postadress&quot; där e-postadressfältet fylls i med ett beräknat attribut med den senaste funktionen, kan du **måste** ta med både e-postadressens värde **och** e-postadressens tidsstämpel finns.
 
 När du har skapat ett beräknat attribut kan du använda **publicerad** beräknade attribut i andra tjänster i senare led. Eftersom beräknade attribut är profilattributfält som skapats i ditt profilunionsschema kan du söka efter beräknade attributvärden för en kundprofil i realtid, använda dem i en målgrupp, aktivera dem till ett mål eller använda dem för personalisering på resor i Adobe Journey Optimizer.
+
+>[!NOTE]
+>
+>Beräknade attribut **inte** används i publiken **kompositioner**.
 
 ![Segmentverktyget visas och visar ett beräknat attribut som en del av segmentdefinitionskompositionen.](./images/ui/use-ca.png)
 
