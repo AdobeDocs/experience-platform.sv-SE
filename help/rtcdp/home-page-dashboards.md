@@ -4,9 +4,9 @@ title: Real-time Customer Data Platform hemsida och Dashboards
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: f7f49e4158f3aa95c3e96d3687642392e237aabc
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '828'
 ht-degree: 1%
 
 ---
@@ -32,7 +32,13 @@ The [!UICONTROL Getting started with Real-Time Customer Profile] widgeten är up
 
 ![Plattformsgränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
 
-## Kontrollpanel för mått
+## Kontrollpanel för mått {#metrics-dashboard}
+
+>[!CONTEXTUALHELP]
+>id="platform_home_metrics_totalProfiles"
+>title="Totalt antal profiler"
+>abstract="Det totala antalet profiler som din organisation har i Experience Platform. Antalet baseras på organisationens kopplingsprofil och inkluderar inte profilfragment. Antalet profiler uppdateras en gång var 24:e timme."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html#profile-count" text="Läs mer i dokumentationen"
 
 Kontrollpanelen för mätvärden visar aktuell information om dina Experience Platform-data. Kontrollpanelen är uppdelad i två avsnitt:
 
@@ -44,7 +50,7 @@ På resultatlistan visas det aktuella totala antalet scheman, datamängder, prof
 
 * **Totalt antal scheman**: **Totalt antal scheman** räknaren visar antalet scheman i systemet. Räknaren uppdateras när ett schema skapas. Mer information finns i [scheman, översikt](../xdm/home.md).
 * **Totalt antal datauppsättningar**: **Totalt antal datauppsättningar** räknaren visar antalet datauppsättningar i systemet och mängden data i [!DNL Platform]. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
-* **Totalt antal profiler**: **Profiler** antal visar det totala antalet personer med profiler i [!DNL Real-Time Customer Profile]. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) enligt konfigurationen för sammanfogningsprincipen i Unified Profile. Antalet profiler uppdateras en gång var 24:e timme. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
+* **Totalt antal profiler**: **Profiler** antal visar det totala antalet profiler som din organisation har i Experience Platform. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) som anges i konfigurationen av sammanfogningsprincipen i kundprofilen i realtid. Antalet profiler uppdateras en gång var 24:e timme. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
 * **Totalt antal segment**: **Segment** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 ### Senaste objekt
