@@ -1,12 +1,11 @@
 ---
 title: Använd den senaste kvalificeringstiden för XDM-attributet i det nya betmolnlagringsmålet
-description: Lär dig hur du använder XDM-attributet för senaste kvalificeringstid i de nya betmolnlagringsmålen
-hidefromtoc: y
-hide: y
+description: Lär dig hur du använder XDM-attributet för senaste kvalificeringstid i de nya lagringsplatserna för betmolnet
+badgeBeta: label="Beta" type="Informative"
 exl-id: d077ea10-5ff2-4acc-8ee6-78ea6cd752d1
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 7130ac46a7768ea6e71bf73eb970bf2890323d0f
 workflow-type: tm+mt
-source-wordcount: '332'
+source-wordcount: '290'
 ht-degree: 0%
 
 ---
@@ -19,15 +18,20 @@ ht-degree: 0%
 
 ## Förutsättningar {#prerequisites}
 
-Använda den senaste kvalificeringstiden (`lastQualificationTime`) XDM-attribut måste du vara registrerad i [betaprogram](/help/release-notes/2022/october-2022.md#destinations) att använda den förbättrade filexportfunktionen och exportera data till någon av de sex [lagringsplatser för betmoln](/help/release-notes/2022/october-2022.md#destinations) ([[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md), [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md), [[!DNL Azure Blob]](/help/destinations/catalog/cloud-storage/azure-blob.md), [[!DNL Data Landing Zon]e](/help/destinations/catalog/cloud-storage/data-landing-zone.md), [[!DNL Google Cloud Storage]](/help/destinations/catalog/cloud-storage/google-cloud-storage.md), [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)). Du är registrerad om du kan se de nya betakorten för molnlagringsdestinationerna i katalogen, vilket visas nedan [!DNL Amazon S3].
+Använda den senaste kvalificeringstiden (`lastQualificationTime`) XDM-attribut, du måste exportera data till ett av de sex molnlagringsmålen som anges nedan:
 
-![Bild som visar det nya betakortet för Amazon S3](/help/destinations/assets/ui/activate-destinations/new-amazon-s3-beta-card.png)
+* [[!DNL ADLS Gen 2]](/help/destinations/catalog/cloud-storage/adls-gen2.md)
+* [[!DNL Amazon S3]](/help/destinations/catalog/cloud-storage/amazon-s3.md)
+* [[!DNL Azure Blob]](/help/destinations/catalog/cloud-storage/azure-blob.md)
+* [[!DNL Data Landing Zon]e](/help/destinations/catalog/cloud-storage/data-landing-zone.md)
+* [[!DNL Google Cloud Storage]](/help/destinations/catalog/cloud-storage/google-cloud-storage.md)
+* [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)
 
 ## Så här använder du XDM-attributet för senaste kvalificeringstid {#how-to-use}
 
-Om du använder en av de sex nya betatjänsterna för molnlagring kan du använda det senaste XDM-attributet för kvalificeringstid i [mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) av aktiveringsarbetsflödet för att skapa en kolumn i den exporterade filen med den senaste tidsstämpeln när en profil kvalificerar sig för ett segment. Detta kan hjälpa er med vissa mätnings- eller analysexempel och ge er en bättre uppfattning om när ni ska aktivera vissa målgrupper.
+Om du använder någon av de sex molnlagringsanslutningarna som anges ovan kan du använda det senaste kvalificeringstidsattributet för XDM i [mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) av aktiveringsarbetsflödet för att skapa en kolumn i den exporterade filen med den senaste tidsstämpeln när en profil kvalificerar sig för ett segment. Detta kan hjälpa er med vissa mätnings- eller analysexempel och ge er en bättre uppfattning om när ni ska aktivera vissa målgrupper.
 
-Observera att du ska lägga till `lastQualificationTime` vid export av filer måste du för närvarande infoga värdet manuellt `xdm: segmentMembership.ups.seg_id.lastQualificationTime` till källfältet, som visas nedan. Du kan även redigera målfältet till `lastQualificationTime` eller något annat värde som du vill namnge den här kolumnen. Observera att eftersom det här är en betafunktion är syntaxen för `xdm: segmentMembership.ups.seg_id.lastQualificationTime` värdet kan komma att ändras i framtiden.
+Lägg till `lastQualificationTime` vid export av filer måste du infoga värdet manuellt `xdm: segmentMembership.ups.seg_id.lastQualificationTime` till källfältet, som visas nedan. Du kan även redigera målfältet till `lastQualificationTime` eller något annat värde som du vill namnge den här kolumnen. Observera att eftersom det här är en betafunktion är syntaxen för `xdm: segmentMembership.ups.seg_id.lastQualificationTime` värdet kan komma att ändras i framtiden.
 
 ![Skärminspelning som visar den senaste kvalificeringstiden för XDM-attribut klistras in i mappningssteget](/help/destinations/ui/last-qualification-time.gif)
 
