@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 4c8e80c5ec61aebd84064ac2a667188b8b5ddb8c
+source-git-commit: 4d9c04909cba29b0c6685c357dbb84af9fa14b47
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '1007'
 ht-degree: 6%
 
 ---
@@ -105,6 +105,7 @@ ht-degree: 6%
       - [HubSpot-anslutning](connectors/marketing-automation/hubspot.md)
       - [Mailchimp-anslutning](connectors/marketing-automation/mailchimp.md)
       - [Oraclena Eloqua-koppling](connectors/marketing-automation/oracle-eloqua.md)
+      - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
       - [Oraclena svarssystemskontakt](connectors/marketing-automation/oracle-responsys.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
@@ -183,6 +184,8 @@ ht-degree: 6%
          - [MailChimp-kampanj](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp-medlemmar](tutorials/api/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/api/create/marketing-automation/oracle-eloqua.md)
+         - [Oraclets NetSuite-aktiviteter](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
+         - [Oraclets NetSuite-entiteter](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
          - [Oraclets svar](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
@@ -306,6 +309,8 @@ ht-degree: 6%
          - [Mailchimp-kampanjer](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
          - [Mailchimp-medlemmar](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [Oracle Eloqua](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
+         - [Oraclets NetSuite-aktiviteter](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
+         - [Oraclets NetSuite-entiteter](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
          - [Oraclets svar](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}

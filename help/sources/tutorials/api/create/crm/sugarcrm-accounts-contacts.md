@@ -2,9 +2,9 @@
 title: Skapa en källanslutning och ett dataflöde för SugarCRM-konton och kontakter med hjälp av API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till SugarCRM-konton och -kontakter med hjälp av API:t för Flow Service.
 exl-id: 2b422b39-5b86-4313-a214-725044d9812c
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 0edc7a6a68ee4dc5ea24f16a8bc12aba85af0dff
 workflow-type: tm+mt
-source-wordcount: '2160'
+source-wordcount: '2104'
 ht-degree: 0%
 
 ---
@@ -350,6 +350,8 @@ Ett lyckat svar returnerar en struktur enligt nedan.
 ```
 
 >[!TAB Kontakter]
+
+Ett lyckat svar returnerar en struktur enligt nedan.
 
 ```json
 {
