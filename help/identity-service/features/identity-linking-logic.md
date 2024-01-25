@@ -2,9 +2,9 @@
 title: Länkningslogik för identitetstjänst
 description: Läs om hur identitetstjänsten länkar olika identiteter för att skapa en heltäckande bild av en kund.
 exl-id: 1c958c0e-0777-48db-862c-eb12b2e7a03c
-source-git-commit: 45170c78b9d15c7cc9d71f2d0dab606ea988a783
+source-git-commit: 2b6700b2c19b591cf4e60006e64ebd63b87bdb2a
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '980'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,17 @@ Det finns två typer av identiteter som länkas:
 
 * **Profilposter**: Dessa identiteter kommer vanligtvis från CRM-system.
 * **Experience Events**: Dessa identiteter kommer vanligtvis från WebSDK-implementering eller Adobe Analytics-källan.
+
+## Semantisk betydelse för att skapa länkar
+
+En identitet representerar en verklighetstrogen enhet. Om det finns en länk mellan två identiteter betyder det att de två identiteterna är kopplade till varandra. Här följer några exempel som illustrerar detta koncept:
+
+| Åtgärd | Länkar upprättade | Betydelse |
+| --- | --- | --- |
+| En slutanvändare loggar in med en dator. | CRM-ID och ECID är sammankopplade. | En person (CRM-ID) äger en enhet med en webbläsare (ECID). |
+| En slutanvändare surfar anonymt med en iPhone. | IDFA är kopplat till ECID. | Apple maskinvaruenhet (IDFA), t.ex. en iPhone, är kopplad till webbläsaren (ECID). |
+| Slutanvändaren loggar in med Google Chrome och sedan Firefox. | CRM-ID är länkat till två olika ECID:n. | En person (CRM-ID) är kopplad till två webbläsare (**Anteckning**: Varje webbläsare har ett eget ECID). |
+| En datatekniker importerar en CRM-post som innehåller två fält som är markerade som en identitet: CRM-ID och E-post. | CRM-ID och e-post är länkade. | En person (CRM-ID) är kopplad till e-postadressen. |
 
 ## Länkningslogik för identitetstjänsten
 
@@ -85,10 +96,13 @@ Du har också implementerat WebSDK och importerat en WebSDK-datauppsättning (Ex
 | `t=3` | ECID:44675 | Visa hemsida |
 | `t=4` | ECID:44675, CRM ID: 31260XYZ | Visa köphistorik |
 
+Den primära identiteten för varje händelse bestäms utifrån [hur du konfigurerar dataelementtyper](../../tags/extensions/client/web-sdk/data-element-types.md).
+
 >[!NOTE]
 >
->* `*` - Anger fält som är markerade som identiteter, där ECID är markerat som primärt.
->* Som standard anges personidentifieraren (i det här fallet CRM-ID) som primär identitet. Om personidentifieraren inte finns blir cookie-identifieraren (i det här fallet ECID) den primära identiteten.
+>* Om du väljer CRM-ID som primär kommer autentiserade händelser (händelser med identitetskarta som innehåller CRM-ID och ECID) att ha den primära identiteten CRM-ID. För oautentiserade händelser (händelser som bara innehåller ECID) har identitetskartan som primär ECID. Adobe rekommenderar det här alternativet.
+>
+>* Om du väljer ECID som primär, oavsett autentiseringsstatus, blir ECID den primära identiteten.
 
 I detta exempel:
 
