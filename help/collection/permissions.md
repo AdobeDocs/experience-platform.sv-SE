@@ -2,7 +2,7 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: dd0856075867b5fc226068fa856942edcbe4a7a6
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 1%
@@ -34,7 +34,7 @@ Behörigheter under Adobe Experience Platform innefattar åtkomst till datastrea
 | Sandlådor | (Ej tillämpligt) | Beroende på [sandlådor](../sandboxes/home.md) som har skapats under din organisation kan du styra åtkomsten till var och en av dem genom den här behörighetskategorin i Admin Console. |
 | Datamodellering | Hantera scheman | Ger möjlighet att visa, skapa och redigera [XDM-scheman (Experience Data Model)](../xdm/home.md). |
 | Datamodellering | Visa scheman | Ger skrivskyddad åtkomst till scheman. |
-| Identity Management | Hantera identitetsnamnutrymmen | Ger möjlighet att visa, skapa och redigera [identitetsnamnutrymmen](../identity-service/namespaces.md). |
+| Identity Management | Hantera identitetsnamnutrymmen | Ger möjlighet att visa, skapa och redigera [identitetsnamnutrymmen](../identity-service/features/namespaces.md). |
 | Identity Management | Visa identitetsnamnutrymmen | Ger skrivskyddad åtkomst till identitetsnamnutrymmen. |
 | Datainsamling | Hantera datastreams | Ger möjlighet att visa, skapa och redigera [datastreams](../datastreams/overview.md). |
 | Datainsamling | Visa datastreams | Ger skrivskyddad åtkomst till datastreams. |

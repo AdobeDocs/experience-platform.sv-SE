@@ -1,10 +1,10 @@
 ---
 title: Ta bort poster med hjälp av API:t för datahygien
-description: Lär dig hur du programmässigt korrigerar eller tar bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
+description: Lär dig att programmässigt korrigera eller ta bort dina kunders lagrade personuppgifter i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 0%
@@ -108,7 +108,7 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `companyContexts` | En array som innehåller autentiseringsinformation för din organisation. Den måste innehålla ett enda objekt med följande egenskaper: <ul><li>`namespace`: Måste anges till `imsOrgID`.</li><li>`value`: Ditt organisations-ID. Detta är samma värde som anges i `x-gw-ims-org-id` header.</li></ul> |
-| `users` | En array som innehåller en samling med minst en användare vars information du vill ta bort. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det kan refereras till eller slås upp senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Måste innehålla ett strängvärde: `delete`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet innehåller följande egenskaper: <ul><li>`namespace`: The [identity namespace](../../identity-service/namespaces.md) som är associerad med ID:t. Detta kan vara en [standardnamnutrymme](../../privacy-service/api/appendix.md#standard-namespaces) känns igen av Platform, eller kan vara ett anpassat namnutrymme som definieras av din organisation. Den typ av namnutrymme som används måste återspeglas i `type` -egenskap.</li><li>`value`: Identitetsvärdet.</li><li>`type`: Måste anges till `standard` om ett globalt identifierat namnutrymme används, eller `custom` om du använder ett namnutrymme som definieras av din organisation.</li></ul></li></ul> |
+| `users` | En array som innehåller en samling med minst en användare vars information du vill ta bort. Varje användarobjekt innehåller följande information: <ul><li>`key`: En identifierare för en användare som används för att kvalificera separata jobb-ID:n i svarsdata. Det är bäst att välja en unik, lätt identifierbar sträng för det här värdet så att det kan refereras till eller slås upp senare.</li><li>`action`: En array som visar vilka åtgärder som önskas för användarens data. Måste innehålla ett strängvärde: `delete`.</li><li>`userIDs`: En samling identiteter för användaren. Antalet identiteter som en enskild användare kan ha är begränsat till nio. Varje identitet innehåller följande egenskaper: <ul><li>`namespace`: [namnutrymme för identitet](../../identity-service/features/namespaces.md) som är associerad med ID:t. Det här kan vara en [standardnamnutrymme](../../privacy-service/api/appendix.md#standard-namespaces) känns igen av Platform, eller kan vara ett anpassat namnutrymme som definieras av din organisation. Den typ av namnutrymme som används måste återspeglas i `type` -egenskap.</li><li>`value`: Identitetsvärdet.</li><li>`type`: Måste anges till `standard` om ett globalt identifierat namnutrymme används, eller `custom` om du använder ett namnutrymme som definieras av din organisation.</li></ul></li></ul> |
 
 {style="table-layout:auto"}
 

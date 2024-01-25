@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: 76ac65730512e589e518095f9496bb309365b0c9
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2258'
+source-wordcount: '2232'
 ht-degree: 2%
 
 ---
@@ -111,7 +111,7 @@ Mer information om plattformens datahygien finns i [datahygienöversikt](../../h
 
 **Nya eller uppdaterade destinationer** {#new-updated-destinations}
 
-| Destination | Nytt eller uppdaterat | Beskrivning |
+| Mål | Nytt eller uppdaterat | Beskrivning |
 | ----------- |----------------|----------- |
 | [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) | Nytt | Aktivera målgrupper som tidigare gått med i [!DNL LiveRamp] till förstklassiga förlag i olika medier för mobil, webb, skärm och uppkopplad TV. <br> Efter att ni startat en målgrupp [!DNL LiveRamp] via [LiveRamp - introduktion](../../destinations/catalog/advertising/liveramp-onboarding.md) anslutning, använd den nya [[!DNL LiveRamp - Distribution]](../../destinations/catalog/advertising/liveramp-distribution.md) anslutning för att aktivera målgrupperna till nedströmsdestinationer. |
 | [[!DNL HubSpot]](../../destinations/catalog/crm/hubspot.md) | Nytt | [[!DNL HubSpot]](https://www.hubspot.com) är en CRM-plattform med all programvara, alla integreringar och resurser ni behöver för att koppla samman marknadsföring, försäljning, innehållshantering och kundservice. Ni kan koppla samman data, team och kunder på en och samma CRM-plattform. |
@@ -190,7 +190,7 @@ Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era k
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Förbättringar i användargränssnittet för identitetstjänsten | Använd det förbättrade verktyget för att skapa namnutrymmen i användargränssnittet i Experience Platform för att bättre hantera dina anpassade namnutrymmen och motsvarande identitetstyper. Det förbättrade användargränssnittet för identitetstjänsten ger dig: <ul><li>Sammanhangsbaserad upplevelse: visuella indikeringar, klarhet och sammanhang för vad ett identitetsnamnutrymme är och identitetstyper är.</li><li>Noggrannhet: Bättre felhantering utan fler dubblerade identitetsnamn.</li><li>Identifiering: Åtkomst till dokumentation inifrån en produktdialogruta.</li></ul> Mer information finns i guiden [skapa anpassade namnutrymmen](../../identity-service/namespaces.md#create-namespaces). |
+| Förbättringar i användargränssnittet för identitetstjänsten | Använd det förbättrade verktyget för att skapa namnutrymmen i användargränssnittet i Experience Platform för att bättre hantera dina anpassade namnutrymmen och motsvarande identitetstyper. Det förbättrade användargränssnittet för identitetstjänsten ger dig: <ul><li>Sammanhangsbaserad upplevelse: visuella indikeringar, klarhet och sammanhang för vad ett identitetsnamnutrymme är och identitetstyper är.</li><li>Noggrannhet: Bättre felhantering utan fler dubblerade identitetsnamn.</li><li>Identifiering: Åtkomst till dokumentation inifrån en produktdialogruta.</li></ul> Mer information finns i guiden [skapa anpassade namnutrymmen](../../identity-service/features/namespaces.md#create-namespaces). |
 | Ändringar av begränsningar för identitetsdiagram | Gränsen för identitetsdiagram har ändrats från 150 identiteter till 50 identiteter. När en ny identitet har importerats till ett fullständigt diagram tas den äldsta identiteten som baseras på tidsstämpeln för inmatningen och identitetstypen bort. Cookie-identitetstyper prioriteras för borttagning. Kontakta kontoteamet på Adobe för att begära en ändring av identitetstypen om din produktionssandlåda innehåller: <ul><li>ett anpassat namnutrymme där personidentifierarna (t.ex. CRM-ID:n) är konfigurerade som cookie/enhetsidentitetstyp.</li><li>ett anpassat namnutrymme där cookie-/enhetsidentifierare har konfigurerats som identitetstyp för olika enheter.</li></ul> Dessa förfrågningar behandlas manuellt av Adobe. Mer information finns i [skyddsutkast för identitetstjänstens data](../../identity-service/guardrails.md) och [god praxis för berättigande av datahanteringslicenser](../../landing/license-usage-and-guardrails/data-management-best-practices.md). |
 
 {style="table-layout:auto"}

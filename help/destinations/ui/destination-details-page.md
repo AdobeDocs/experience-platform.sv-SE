@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '882'
+source-wordcount: '881'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ Följande tabell omfattar de kontroller och den information som tillhandahålls 
 | [!UICONTROL Category] | Anger måltypen. Se [målkatalog](../catalog/overview.md) för mer information. |
 | [!UICONTROL Connection type] | Anger det formulär som era målgrupper skickas till. Möjliga värden är [!UICONTROL Cookie] och [!UICONTROL Profile-based]. |
 | [!UICONTROL Frequency] | Anger hur ofta målgrupperna skickas till målet. Möjliga värden är [!UICONTROL Streaming] och [!UICONTROL Batch]. |
-| [!UICONTROL Identity] | Representerar det ID-namnutrymme som accepteras av målet, till exempel `GAID`, `IDFA`, eller `email`. Mer information om godkända ID-namnutrymmen finns i [Översikt över namnutrymmet identity](../../identity-service/namespaces.md). |
+| [!UICONTROL Identity] | Representerar det ID-namnutrymme som accepteras av målet, till exempel `GAID`, `IDFA`, eller `email`. Mer information om godkända ID-namnutrymmen finns i [Översikt över namnutrymmet identity](../../identity-service/features/namespaces.md). |
 | [!UICONTROL Created by] | Anger den användare som skapade det här målet. |
 | [!UICONTROL Created] | Anger UTC-datum/tid när det här målet skapades. |
 

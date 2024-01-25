@@ -1,17 +1,17 @@
 ---
 title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+exl-id: 03060cdb-becc-430a-b527-60c055c2a906
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
 source-wordcount: '1338'
 ht-degree: 0%
 
 ---
 
-
 # Identitetsdata i Web SDK
 
-Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID (ECID)](../../identity-service/ecid.md) för att spåra besökares beteende. Med hjälp av ECID:n kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
+Adobe Experience Platform Web SDK använder [Adobe Experience Cloud ID (ECID)](../../identity-service/features/ecid.md) för att spåra besökares beteende. Med hjälp av ECID:n kan du se till att varje enhet har en unik identifierare som kan finnas kvar i flera sessioner och koppla alla träffar som inträffar under och mellan webbsessioner till en viss enhet.
 
 I det här dokumentet finns en översikt över hur du hanterar ECID:n med Platform Web SDK.
 
@@ -104,7 +104,7 @@ alloy("sendEvent", {
 >Adobe rekommenderar att du skickar namnutrymmen som representerar en person, till exempel `CRMID`, som primär identitet.
 
 
-Varje egenskap i `identityMap` representerar identiteter som tillhör en viss [namnutrymme för identitet](../../identity-service/namespaces.md). Egenskapsnamnet ska vara identitetssymbolen för namnutrymmet, som du hittar i användargränssnittet i Adobe Experience Platform under &quot;[!UICONTROL Identities]&quot;. Egenskapsvärdet ska vara en array med identiteter som gäller det identitetsnamnutrymmet.
+Varje egenskap i `identityMap` representerar identiteter som tillhör en viss [namnutrymme för identitet](../../identity-service/features/namespaces.md). Egenskapsnamnet ska vara identitetssymbolen för namnutrymmet, som du hittar i användargränssnittet i Adobe Experience Platform under &quot;[!UICONTROL Identities]&quot;. Egenskapsvärdet ska vara en array med identiteter som gäller det identitetsnamnutrymmet.
 
 >[!IMPORTANT]
 >

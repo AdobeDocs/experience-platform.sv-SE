@@ -3,7 +3,7 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: d33be97fcb935a53a8776d2a1993ad9d2b50e913
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '1507'
 ht-degree: 0%
@@ -186,7 +186,7 @@ Slutligen ger borttagningsprocessen två mindre diagram.
 Mer information om [!DNL Identity Service]:
 
 * [[!DNL Identity Service] översikt](home.md)
-* [Identitetsdiagramvisningsprogram](ui/identity-graph-viewer.md)
+* [Identitetsdiagramvisningsprogram](features/identity-graph-viewer.md)
 
 Följande dokumentation innehåller mer information om andra Experience Platform-servicesäkrar, om total latenstid och licensinformation från Real-Time CDP produktbeskrivningsdokument:
 

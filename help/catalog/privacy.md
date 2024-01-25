@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Behandling av sekretessförfrågningar i datasjön
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt juridiska och organisatoriska sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kunddata som lagras i datasjön.
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: 74867f56ee13430cbfd9083a916b7167a9a24c01
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1423'
+source-wordcount: '1424'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretess
 Vi rekommenderar att du har en fungerande förståelse för följande [!DNL Experience Platform] innan du läser den här guiden:
 
 * [[!DNL Privacy Service]](../privacy-service/home.md): Hanterar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter mellan olika Adobe Experience Cloud-program.
-* [[!DNL Catalog Service]](home.md): Registreringssystemet för dataplatsen och datalinje inom [!DNL Experience Platform]. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
+* [[!DNL Catalog Service]](home.md): Registreringssystemet för dataplats och -rader inom [!DNL Experience Platform]. Tillhandahåller ett API som kan användas för att uppdatera datauppsättningsmetadata.
 * [[!DNL Experience Data Model (XDM) System]](../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
 * [[!DNL Identity Service]](../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 
@@ -38,7 +38,7 @@ Adobe Experience Platform [!DNL Identity Service] överbryggar kundidentitetsdat
 
 [!DNL Identity Service] I lagras globalt definierade (standard) och användardefinierade (anpassade) identitetsnamnutrymmen. Standardnamnutrymmen är tillgängliga för alla organisationer (till exempel&quot;E-post&quot; och&quot;ECID&quot;), medan din organisation också kan skapa anpassade namnutrymmen som passar organisationens behov.
 
-Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Översikt över namnutrymmet identity](../identity-service/namespaces.md).
+Mer information om identitetsnamnutrymmen i [!DNL Experience Platform], se [Översikt över namnutrymmet identity](../identity-service/features/namespaces.md).
 
 ## Lägga till identitetsdata i datauppsättningar
 
@@ -61,7 +61,7 @@ Det finns två metoder för att lägga till en identitetsbeskrivning i ett datas
 
 ### Använda gränssnittet {#identity-ui}
 
-I [!DNL Experience Platform ]användargränssnittet, **[!UICONTROL Schemas]** kan du redigera befintliga XDM-scheman. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat från listan och följer stegen för [ange ett schemafält som identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) i [!DNL Schema Editor] självstudiekurs.
+I [!DNL Experience Platform]användargränssnittet, **[!UICONTROL Schemas]** kan du redigera befintliga XDM-scheman. Om du vill lägga till en identitetsbeskrivning till ett schema väljer du schemat från listan och följer stegen för [ange ett schemafält som identitetsfält](../xdm/tutorials/create-schema-ui.md#identity-field) i [!DNL Schema Editor] självstudie.
 
 När du har angett rätt fält i schemat som identitetsfält kan du fortsätta till nästa avsnitt i [skicka sekretessförfrågningar](#submit).
 
@@ -108,9 +108,9 @@ curl -X POST \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `@type` | Den typ av beskrivning som skapas. För identitetsbeskrivare måste värdet vara &quot;xdm:descriptorIdentity&quot;. |
-| `xdm:sourceSchema` | Det unika URI-ID:t för datauppsättningens XDM-schema. |
+| `xdm:sourceSchema` | Unikt URI-ID för datauppsättningens XDM-schema. |
 | `xdm:sourceVersion` | Den version av XDM-schemat som anges i `xdm:sourceSchema`. |
-| `xdm:sourceProperty` | Sökvägen till schemafältet som beskrivningen tillämpas på. |
+| `xdm:sourceProperty` | Sökvägen till det schemafält som beskrivningen tillämpas på. |
 | `xdm:namespace` | En av [standardidentitetsnamnutrymmen](../privacy-service/api/appendix.md#standard-namespaces) känns igen av [!DNL Privacy Service]eller ett anpassat namnutrymme som definieras av din organisation. |
 | `xdm:property` | Antingen &quot;xdm:id&quot; eller &quot;xdm:code&quot;, beroende på vilket namnutrymme som används under `xdm:namespace`. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anger detta att fältet är en primär identitet. Scheman får endast innehålla en primär identitet. Standardvärdet är false om det inte inkluderas. |
@@ -139,7 +139,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och information om den nyska
 >
 >I det här avsnittet beskrivs hur du formaterar sekretessförfrågningar för datasjön. Vi rekommenderar att du granskar [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) eller [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) dokumentation för fullständiga steg om hur du skickar ett sekretessjobb, inklusive hur inskickade användaridentitetsdata formateras korrekt i begärandenyttolaster.
 
-I följande avsnitt beskrivs hur du gör sekretessförfrågningar för datasjön med hjälp av [!DNL Privacy Service] Gränssnitt eller API.
+I följande avsnitt beskrivs hur du gör sekretessförfrågningar för datasjön med [!DNL Privacy Service] Gränssnitt eller API.
 
 >[!IMPORTANT]
 >
@@ -153,7 +153,7 @@ När du skapar jobbförfrågningar i användargränssnittet måste du välja **[
 
 ### Använda API:et
 
-När jobbförfrågningar skapas i API:t, `userIDs` som tillhandahålls måste använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för datasjön måste använda `unregistered` för `type` och `namespace` värde som matchar ett av [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
+När jobbförfrågningar skapas i API:t, `userIDs` som tillhandahålls måste använda en specifik `namespace` och `type` beroende på vilket datalager de gäller för. ID:n för datasjön måste använda `unregistered` för `type` värde och `namespace` värde som matchar ett av [sekretessetiketter](#privacy-labels) som har lagts till i tillämpliga datauppsättningar.
 
 Dessutom är `include` arrayen med nyttolasten för begäran måste innehålla produktvärdena för de olika datalager som begäran görs till. När en begäran görs till datasjön måste arrayen innehålla värdet `aepDataLake`.
 
@@ -212,7 +212,7 @@ Om du även inkluderat `ProfileService` eller `identity` i sekretessbegäran han
 
 Genom att läsa det här dokumentet har du lagts till i de viktiga koncept som rör behandling av sekretessförfrågningar för datasjön. Vi rekommenderar att du fortsätter att läsa dokumentationen som finns i den här handboken för att få en djupare förståelse för hur du hanterar identitetsdata och skapar sekretessjobb.
 
-Visa dokumentet på [sekretessförfrågningar för kundprofil i realtid](../profile/privacy.md) för steg vid bearbetning av sekretessförfrågningar för [!DNL Profile] butik.
+Visa dokumentet på [sekretessförfrågningar för kundprofil i realtid](../profile/privacy.md) för steg för att behandla sekretessförfrågningar för [!DNL Profile] butik.
 
 ## Bilaga
 

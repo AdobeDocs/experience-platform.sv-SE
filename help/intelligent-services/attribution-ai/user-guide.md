@@ -4,9 +4,9 @@ feature: Attribution AI
 title: Användargränssnittshandbok för Attribution AI
 description: Det här dokumentet är en guide för interaktion med Attribution AI i användargränssnittet för intelligenta tjänster.
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2384'
+source-wordcount: '2392'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rä
 
 >[!NOTE]
 >
-> Om det inte finns någon giltig identitetstyp (namnutrymme) för en datauppsättning måste du ange en primär identitet och tilldela den till ett identitetsnamnutrymme med hjälp av [schemaredigerare](../../xdm/schema/composition.md#identity). Mer information om namnutrymmen och identiteter finns på [Namnutrymmen för identitetstjänst](../../identity-service/namespaces.md) dokumentation.
+> Om det inte finns någon giltig identitetstyp (namnutrymme) för en datauppsättning måste du ange en primär identitet och tilldela den till ett identitetsnamnutrymme med hjälp av [schemaredigerare](../../xdm/schema/composition.md#identity). Mer information om namnutrymmen och identiteter finns på [Namnutrymmen för identitetstjänst](../../identity-service/features/namespaces.md) dokumentation.
 
 ## Mappa mediekanal- och kampanjfält {#aai-mapping}
 

@@ -3,7 +3,7 @@ keywords: Reklam.
 title: Microsoft Bing-anslutning
 description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising Network, inklusive webbannonsering, sökning och inbyggt material.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Microsoft Bing] stöder aktivering av målgrupper baserat på de identiteter som visas i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+[!DNL Microsoft Bing] stöder aktivering av målgrupper baserat på de identiteter som visas i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Identitet | Beskrivning |
 |---|---|

@@ -2,10 +2,10 @@
 description: Lär dig hur du konfigurerar målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '836'
-ht-degree: 1%
+source-wordcount: '837'
+ht-degree: 0%
 
 ---
 
@@ -17,13 +17,13 @@ När du skapar ett mål via Destination SDK, förutom [konfigurera ett partnersc
 
 När du gör det kan användarna välja målidentiteter, förutom målprofilsattribut, utöver målprofilsattributen.
 
-Mer information om identitetsnamnutrymmen i Experience Platform finns i [dokumentation för identitetsnamnutrymmen](../../../../identity-service/namespaces.md).
+Mer information om identitetsnamnutrymmen i Experience Platform finns i [dokumentation för identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md).
 
 När du konfigurerar identitetsnamnutrymmen för målet kan du finjustera den målidentitetsmappning som stöds av målet, till exempel:
 
 * Användare kan mappa XDM-attribut till identitetsnamnutrymmen.
-* Tillåta användare att mappa [standardidentitetsnamnutrymmen](../../../../identity-service/namespaces.md#standard) till dina egna ID-namnutrymmen.
-* Tillåta användare att mappa [namnutrymmen för anpassad identitet](../../../../identity-service/namespaces.md#manage-namespaces) till dina egna ID-namnutrymmen.
+* Tillåta användare att mappa [standardidentitetsnamnutrymmen](../../../../identity-service/features/namespaces.md#standard) till dina egna ID-namnutrymmen.
+* Tillåta användare att mappa [namnutrymmen för anpassad identitet](../../../../identity-service/features/namespaces.md#manage-namespaces) till dina egna ID-namnutrymmen.
 
 Mer information om var den här komponenten passar in i en integrering som skapas med Destination SDK finns i diagrammet i [konfigurationsalternativ](../configuration-options.md) eller se guiden om hur du [använd Destination SDK för att konfigurera ett filbaserat mål](../../guides/configure-file-based-destination-instructions.md#create-server-file-configuration).
 
@@ -55,7 +55,7 @@ När du definierar de målidentiteter som målet stöder kan du använda paramet
 |---------|----------|---|------|
 | `acceptsAttributes` | Boolean | Valfritt | Anger om kunder kan mappa standardprofilattribut till identiteten som du konfigurerar. |
 | `acceptsCustomNamespaces` | Boolean | Valfritt | Anger om kunderna kan mappa anpassade ID-namnutrymmen till det ID-namnutrymme som du konfigurerar. |
-| `acceptedGlobalNamespaces` | – | Valfritt | Anger vilken [standardidentitetsnamnutrymmen](../../../../identity-service/namespaces.md#standard) (till exempel [!UICONTROL IDFA]) kan kunderna mappa till identiteten som du konfigurerar. |
+| `acceptedGlobalNamespaces` | – | Valfritt | Anger vilken [standardidentitetsnamnutrymmen](../../../../identity-service/features/namespaces.md#standard) (till exempel [!UICONTROL IDFA]) kan kunderna mappa till identiteten som du konfigurerar. |
 | `transformation` | Sträng | Valfritt | Visar [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) -kryssrutan i plattformsgränssnittet när källfältet är antingen ett XDM-attribut eller ett anpassat identitetsnamnutrymme. Använd det här alternativet om du vill att användare ska kunna hash-koda källattribut vid export. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
 | `requiredTransformation` | Sträng | Valfritt | När kunderna väljer det här namnutrymmet för källidentiteten [[!UICONTROL Apply transformation]](../../../ui/activate-segment-streaming-destinations.md#apply-transformation) kryssrutan tillämpas automatiskt på mappningen och kunderna kan inte inaktivera den. Om du vill aktivera det här alternativet anger du värdet till `sha256(lower($))`. |
 
@@ -84,7 +84,7 @@ Du måste ange vilken [!DNL Platform] identiteter som kunder kan exportera till 
 Identitetsnamnutrymmen kräver ingen 1-till-1-korrespondens mellan [!DNL Platform] och destinationen.
 Kunder kan till exempel mappa en [!DNL Platform] [!DNL IDFA] namnutrymme till ett [!DNL IDFA] namnutrymme från målet eller så kan de mappa samma [!DNL Platform] [!DNL IDFA] namnutrymme till en [!DNL Customer ID] namnutrymme i målet.
 
-Läs mer om identiteter i [Översikt över namnutrymmet identity](../../../../identity-service/namespaces.md).
+Läs mer om identiteter i [Översikt över namnutrymmet identity](../../../../identity-service/features/namespaces.md).
 
 ## Mappningsöverväganden
 

@@ -2,9 +2,9 @@
 title: Ta bort poster
 description: Lär dig hur du tar bort poster i användargränssnittet i Adobe Experience Platform.
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-source-git-commit: 6e97b3a6b3830cf88802a8dd89944b6ce8791f02
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1487'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Att ta bort poster kräver en fungerande förståelse för hur identitetsfält f
 Mer information om identiteter i Platform finns i följande dokumentation:
 
 * [Adobe Experience Platform Identity Service](../../identity-service/home.md): Överbryggar identiteter mellan enheter och system, länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-* [Identitetsnamnutrymmen](../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar olika typer of identitetsinformation som kan relatera till en person och som är en obligatorisk komponent för varje identitetsfält.
+* [Identitetsnamnutrymmen](../../identity-service/features/namespaces.md): Identitetsnamnutrymmen definierar olika typer of identitetsinformation som kan relatera till en person och som är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../profile/home.md): Använder identitetsdiagram för att tillhandahålla enhetliga konsumentprofiler baserade på aggregerade data från flera källor, som uppdateras i nära realtid.
 * [Experience Data Model (XDM)](../../xdm/home.md): Tillhandahåller standarddefinitioner och -strukturer för plattformsdata genom användning av scheman. Alla plattformsdatauppsättningar följer ett specifikt XDM-schema, och schemat definierar vilka fält som är identiteter.
 * [Identitetsfält](../../xdm/ui/fields/identity.md): Lär dig hur ett identitetsfält definieras i ett XDM-schema.

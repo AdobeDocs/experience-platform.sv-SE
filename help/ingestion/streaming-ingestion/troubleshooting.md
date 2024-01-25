@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för direktuppspelning av inmatningsproblem
 description: Det här dokumentet innehåller svar på vanliga frågor om direktuppspelning på Adobe Experience Platform.
 exl-id: 5d5deccf-25b8-44c9-ae27-9a4713ced274
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1020'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ Nedan följer en lista med svar på vanliga frågor om direktuppspelning.
 
 [!DNL Data Ingestion] hävstångar [!DNL Experience Data Model] (XDM) scheman för validering av inkommande data. Om du skickar data som inte följer strukturen i ett fördefinierat XDM-schema, kommer det att leda till att importen misslyckas. Mer information om XDM och dess användning i [!DNL Experience Platform], se [XDM - systemöversikt](../../xdm/home.md).
 
-Direktuppspelningsinmatning har stöd för två valideringslägen: synkron och asynkron. Varje verifieringsmetodhanterare misslyckades med data på olika sätt.
+Direktuppspelningsuppläsning stöder två valideringslägen: synkron och asynkron. Varje verifieringsmetodhanterare misslyckades med data på olika sätt.
 
-**Synkron validering** ska användas under utvecklingsprocessen. Poster som inte godkänns vid validering tas bort och returnerar ett felmeddelande om varför de misslyckades (till exempel: &quot;Ogiltigt XDM-meddelandeformat&quot;).
+**Synkron validering** ska användas under utvecklingsprocessen. Poster som inte godkänns vid validering tas bort och returnerar ett felmeddelande om varför de misslyckades (t.ex. &quot;Ogiltigt XML-meddelandeformat&quot;).
 
 **Asynkron validering** bör användas i produktionen. Alla felaktiga data som inte godkänns vid valideringen skickas till [!DNL Data Lake] som en misslyckad batchfil, där den kan hämtas senare för ytterligare analys.
 
@@ -39,13 +39,13 @@ Begär nyttolaster kan bara utvärderas efter att de har skickats till [!DNL Pla
 
 ### Vad händer när synkron validering begärs på en kant som inte stöder det?
 
-Om synkron validering inte stöds för den begärda platsen returneras ett 501-felsvar. Se [översikt över direktuppspelningsvalidering](../quality/streaming-validation.md) för mer information om synkron validering.
+Om synkron validering inte stöds för den begärda platsen returneras ett 501-felsvar. Se [översikt över direktuppspelningsvalidering](../quality/streaming-validation.md) om du vill ha mer information om synkron validering.
 
 ### Hur ser jag till att data bara samlas in från betrodda källor?
 
 [!DNL Experience Platform] har stöd för säker datainsamling. När autentiserad datainsamling är aktiverad måste klienterna skicka en JSON Web Token (JWT) och deras organisations-ID som begärandehuvuden. Mer information om hur du skickar autentiserade data till [!DNL Platform], se guiden på [autentiserad datainsamling](../tutorials/create-authenticated-streaming-connection.md).
 
-### Vad är fördröjningen för direktuppspelning av data till? [!DNL Real-Time Customer Profile]?
+### Vilken fördröjning har direktuppspelad data till? [!DNL Real-Time Customer Profile]?
 
 Strömmade händelser återspeglas i allmänhet i [!DNL Real-Time Customer Profile] på under 60 sekunder. Faktiska latenser kan variera beroende på datavolym, meddelandestorlek och bandbreddsbegränsningar.
 
@@ -57,13 +57,13 @@ Du kan gruppera flera meddelanden inom en enskild nyttolast och strömma dem til
 
 Alla data som skickas till [!DNL Platform] (utan fel eller på annat sätt) lagras som gruppfiler innan de sparas i datauppsättningar. Batchernas bearbetningsstatus visas i den datauppsättning de skickades till.
 
-Du kan verifiera om data har importerats korrekt genom att kontrollera datauppsättningsaktiviteten med [Experience Platform användargränssnitt](https://platform.adobe.com). Klicka **[!UICONTROL Datasets]** i den vänstra navigeringen för att visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna den **[!UICONTROL Dataset activity]** sida, visa alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar, se guiden [övervaka strömmande dataflöden](../quality/monitor-data-ingestion.md).
+Du kan verifiera om data har importerats korrekt genom att kontrollera datauppsättningsaktiviteten med [Experience Platform användargränssnitt](https://platform.adobe.com). Klicka **[!UICONTROL Datasets]** till vänster om du vill visa en lista med datauppsättningar. Markera den datauppsättning som du direktuppspelar till i den lista som visas för att öppna den **[!UICONTROL Dataset activity]** sida, visa alla batchar som har skickats under en vald tidsperiod. Mer information om hur du använder [!DNL Experience Platform] för att övervaka dataströmmar, se guiden [övervaka strömmande dataflöden](../quality/monitor-data-ingestion.md).
 
-Om dina data inte kunde importera och du vill återställa dem från [!DNL Platform]kan du hämta de misslyckade batcharna genom att skicka deras ID:n till [!DNL Data Access API]. Se guiden [hämta misslyckade batchar](../quality/retrieve-failed-batches.md) för mer information.
+Om dina data inte kunde importera och du vill återställa dem från [!DNL Platform]kan du hämta de misslyckade batcharna genom att skicka deras ID till [!DNL Data Access API]. Se guiden på [hämta misslyckade batchar](../quality/retrieve-failed-batches.md) för mer information.
 
 ### Varför är mina strömmande data inte tillgängliga i datasjön?
 
-Det finns många orsaker till att batchintagning inte når upp till [!DNL Data Lake], t.ex. ogiltig formatering, saknade data eller systemfel. Du måste hämta batchen med [!DNL Data Ingestion Service API] och visa information om den. Detaljerade steg för hur du hämtar en misslyckad batch finns i guiden [hämta misslyckade batchar](../quality/retrieve-failed-batches.md).
+Det finns många orsaker till att batchintagning inte når upp till [!DNL Data Lake], till exempel ogiltig formatering, saknade data eller systemfel. Du måste hämta batchen med [!DNL Data Ingestion Service API] och visa information om den. Detaljerade steg för hur du hämtar en misslyckad batch finns i guiden [hämta misslyckade batchar](../quality/retrieve-failed-batches.md).
 
 ### Hur tolkar jag det svar som returnerats för API-begäran?
 
@@ -97,6 +97,6 @@ Följande JSON är ett exempelsvarsobjekt för en API-begäran med två meddelan
 
 If [!DNL Real-Time Customer Profile] avvisar ett meddelande. Det beror troligtvis på felaktig identitetsinformation. Detta kan bero på att ett ogiltigt värde eller namnutrymme har angetts för en identitet.
 
-Det finns två typer av identitetsnamnutrymmen: standard och anpassad. Kontrollera att namnutrymmet har registrerats i [!DNL Identity Service]. Se [Översikt över namnutrymmet identity](../../identity-service/namespaces.md) om du vill ha mer information om hur du använder standardnamnutrymmen och anpassade namnutrymmen.
+Det finns två typer av identitetsnamnutrymmen: standard och anpassad. Kontrollera att namnutrymmet har registrerats i [!DNL Identity Service]. Se [Översikt över namnutrymmet identity](../../identity-service/features/namespaces.md) om du vill ha mer information om hur du använder standardnamnutrymmen och anpassade namnutrymmen.
 
 Du kan använda [[!DNL Experience Platform UI]](https://platform.adobe.com) om du vill ha mer information om varför ett meddelande inte kunde hämtas. Klicka **[!UICONTROL Monitoring]** i den vänstra navigeringen, visa sedan **[!UICONTROL Streaming end-to-end]** om du vill visa meddelandebatchar som direktuppspelas under en viss tidsperiod.

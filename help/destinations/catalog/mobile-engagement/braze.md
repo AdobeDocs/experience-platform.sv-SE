@@ -3,7 +3,7 @@ keywords: mobil; braze; messaging;
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1070'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsd
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| external_id | Egen [!DNL Braze] identifierare som stöder mappning av alla identiteter. | Du kan skicka alla [identity](../../../identity-service/namespaces.md) till [!DNL Braze] mål, förutsatt att du mappar det till [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
+| external_id | Egen [!DNL Braze] identifierare som stöder mappning av alla identiteter. | Du kan skicka alla [identity](../../../identity-service/features/namespaces.md) till [!DNL Braze] mål, förutsatt att du mappar det till [!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation). |
 
 {style="table-layout:auto"}
 

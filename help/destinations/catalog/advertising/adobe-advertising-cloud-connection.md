@@ -2,7 +2,7 @@
 title: Adobe Advertising Cloud DSP
 description: Adobe Advertising Cloud DSP är en integrerad målgrupp för Adobe Real-time Customer Data Platform, vilket gör att ni kan dela autentiserade förstahandsmålgrupper med godkända annonsörer och användare för kampanjaktivering.
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -41,7 +41,7 @@ En mediebyrå med ett DSP konto kör en återannonskampanj för sina kunders rä
 
 ## Identiteter som stöds {#supported-identities}
 
-Adobe Advertising Cloud DSP-målet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+Adobe Advertising Cloud DSP-målet stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Experience Platform - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1737'
+source-wordcount: '1735'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ The **[!UICONTROL Recent sources]** i listas de fem senast skapade källanslutni
 
 The **[!UICONTROL Recent segments]** i listas de fem senast skapade segmentdefinitionerna i din organisation. Listan uppdateras varje gång en ny segmentdefinition skapas. Du kan välja en segmentdefinition i listan om du vill visa mer information om den angivna segmentdefinitionen eller välja **[!UICONTROL View all]** om du vill se en lista över alla segmentdefinitioner som har skapats. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-The **[!UICONTROL Recent destinations]** i listas de fem senast skapade destinationerna inom din organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** om du vill se en lista över alla skapade mål. Mer information om destinationer finns i [destinationer, översikt](../destinations/home.md).
+The **[!UICONTROL Recent destinations]** i listas de fem senast skapade destinationerna inom din organisation. Listan uppdateras varje gång ett nytt mål skapas. Du kan välja ett mål i listan om du vill visa mer information om det angivna målet eller välja **[!UICONTROL View all]** om du vill se en lista över alla destinationer som skapats. Mer information om destinationer finns i [destinationer, översikt](../destinations/home.md).
 
 ### Rekommenderad utbildning
 
@@ -75,21 +75,21 @@ När du väljer väljaren öppnas en listruta med organisationer som du har till
 
 ### Byt program
 
-Nästa objekt till höger om den övre navigeringen är **programväljare**, som representeras av ![programväljare](./images/user-guide/app-switcher-icon.png) ikon. När du väljer den här ikonen kan du växla mellan Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics (Analyser), Assets (Resurser) och andra.
+Nästa objekt till höger om den översta navigeringen är **programväljare**, som representeras av ![programväljare](./images/user-guide/app-switcher-icon.png) -ikon. När du väljer den här ikonen kan du växla mellan Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics (Analyser), Assets (Resurser) och andra.
 
-### Hjälp om 
+### Hjälp
 
-Till höger om programväljaren finns **hjälp- och supportmeny**, som representeras av ![frågetecken/hjälp](./images/user-guide/help-icon.png) ikon. När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. The **[!UICONTROL Help]** -fliken visar en lista med relevant dokumentation för sidan som du är på. The **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. The **[!UICONTROL Feedback]** kan du skicka feedback om Platform till Adobe.
+Till höger om programväljaren finns **hjälp- och supportmeny**, som representeras av ![frågetecken/hjälp](./images/user-guide/help-icon.png) -ikon. När du väljer den här ikonen visas en snabbmeny med flera hjälp- och supportresurser. The **[!UICONTROL Help]** -fliken visar en lista med relevant dokumentation för sidan som du är på. The **[!UICONTROL Support]** kan du skapa en supportanmälan med Adobe supportteam. The **[!UICONTROL Feedback]** kan du skicka feedback om Platform till Adobe.
 
 ![](images/user-guide/homepage-help-clicked.png)
 
-### Meddelanden
+### Meddelanden och meddelanden
 
-I **meddelandesektion**, som representeras av ![klockor/meddelanden och meddelanden](images/user-guide/notification-icon.png) ikon. The **[!UICONTROL Notifications]** -fliken visar viktig information om produkten och andra relevanta uppdateringar, medan **[!UICONTROL Announcements]** -fliken visar information om serviceunderhåll.
+I **meddelandesektion**, som representeras av ![klockor/meddelanden och meddelanden](images/user-guide/notification-icon.png) -ikon. The **[!UICONTROL Notifications]** -fliken visar viktig information om produkten och andra relevanta uppdateringar, medan **[!UICONTROL Announcements]** -fliken visar information om serviceunderhåll.
 
 ### Användarprofil
 
-Det sista objektet i det övre navigeringsfältet är **användarinställningar**, som representeras av ![användarinställningar/användarprofil](images/user-guide/profile-icon.png) ikon. Välj den här ikonen om du vill redigera dina inställningar eller logga ut.
+Det sista objektet i navigeringsfältet är **användarinställningar**, som representeras av ![användarinställningar/användarprofil](images/user-guide/profile-icon.png) -ikon. Välj den här ikonen om du vill redigera dina inställningar eller logga ut.
 
 Du kan växla mellan det ljusa och mörka temat för plattformsgränssnittet med växeln som finns precis nedanför ditt namn och din e-postadress. Välj det tema du föredrar.
 
@@ -111,11 +111,11 @@ Du kan låsa navigeringen i den öppna positionen genom att klicka igen när pan
 
 >[!IMPORTANT]
 >
->Det vänstra navigeringsfältet visar bara de funktioner som du har tillgång till. I tidigare versioner av Adobe Experience Platform inaktiverades otillgängliga objekt. Kontakta systemadministratören om du anser att du bör ha åtkomst till ett avsnitt som inte visas.
+>I det vänstra navigeringsfältet visas bara de funktioner som du har tillgång till. I tidigare versioner av Adobe Experience Platform inaktiverades otillgängliga objekt. Kontakta systemadministratören om du anser att du bör ha åtkomst till ett avsnitt som inte visas.
 
 ![](images/user-guide/homepage-left.png)
 
-The **[!UICONTROL Home]** kan du gå tillbaka till startsidan för användargränssnittet.
+The **[!UICONTROL Home]** kan du gå tillbaka till startsidan för användargränssnittet för plattformen.
 
 The **[!UICONTROL Workflows]** I visas en lista med arbetsflöden i flera steg för att utföra åtgärder inom plattformen. Mer information om arbetsflöden finns i [arbetsflöden översikt](./workflows.md).
 
@@ -131,7 +131,7 @@ The **[!UICONTROL Profiles]** kan du bläddra bland kundprofiler, visa profilvä
 
 The **[!UICONTROL Segments]** kan du skapa och hantera segmentdefinitioner. Mer information om hur du använder [!UICONTROL Segments] läs [segmenteringsanvändarhandbok](../segmentation/ui/overview.md). Mer information om segmenteringstjänsten finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
-The **[!UICONTROL Identities]** I kan du skapa och hantera identitetsnamnutrymmen. Mer information om [!UICONTROL Identities] och information om identitetsnamnutrymmen och hur du använder identiteter i plattformsgränssnittet finns i [Översikt över namnutrymmet identity](../identity-service/namespaces.md).
+The **[!UICONTROL Identities]** I kan du skapa och hantera identitetsnamnutrymmen. Mer information om [!UICONTROL Identities] och information om identitetsnamnutrymmen och hur du använder identiteter i plattformsgränssnittet finns i [Översikt över namnutrymmet identity](../identity-service/features/namespaces.md).
 
 ### [!UICONTROL Privacy]
 
@@ -141,11 +141,11 @@ The **[!UICONTROL Requests]** kan du skapa och hantera sekretessförfrågningar.
 
 ### [!UICONTROL Data Science]
 
-The **[!UICONTROL Notebooks]** -avsnittet ger åtkomst till JupyterLab, en interaktiv utvecklingsmiljö där du kan utforska, analysera och modellera data. Mer information om hur du använder anteckningsböcker finns i [Användarhandbok för JupyterLab](../data-science-workspace/jupyterlab/overview.md). Mer information om arbetsytan Data Science finns i [Översikt över arbetsytan Datavetenskap](../data-science-workspace/home.md)
+The **[!UICONTROL Notebooks]** -avsnittet ger åtkomst till JupyterLab, en interaktiv utvecklingsmiljö där du kan utforska, analysera och modellera data. Mer information om hur du använder anteckningsböcker finns i [Användarhandbok för JupyterLab](../data-science-workspace/jupyterlab/overview.md). Mer information om arbetsytan Data Science finns i [Översikt över arbetsytan Data Science](../data-science-workspace/home.md)
 
 The **[!UICONTROL Models]** kan du använda maskininlärning och artificiell intelligens för att skapa, utveckla, utbilda och trimma modeller för att göra prognoser. Mer information om modellavsnittet finns i självstudiekursen om [utbilda och utvärdera en modell](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
 
-The **[!UICONTROL Services]** kan ni hantera era publicerade modeller för schemalagd utbildning och poängsättning, eller använda Adobe Intelligent Services, en uppsättning AI-tjänster som levererar personaliserade kundupplevelser i realtid. Mer information om tjänstavsnittet finns i [Publicera en modell som en självstudiekurs (tjänst)](../data-science-workspace/models-recipes/publish-model-service-ui.md).
+The **[!UICONTROL Services]** kan ni hantera era publicerade modeller för schemalagd utbildning och poängsättning, eller använda Adobe Intelligent Services, en uppsättning AI-tjänster som levererar personaliserade kundupplevelser i realtid. Mer information om tjänstavsnittet finns i [Publicera en modell som en självstudiekurs om tjänster](../data-science-workspace/models-recipes/publish-model-service-ui.md).
 
 ### [!UICONTROL Data management]
 
@@ -155,7 +155,7 @@ The **[!UICONTROL Datasets]** kan du skapa och hantera datauppsättningar. Mer i
 
 The **[!UICONTROL Queries]** kan du skapa och hantera frågor, logga SQL-frågor som har gjorts av Adobe Experience Platform Query Service och visa [!DNL PostgreSQL] autentiseringsuppgifter. Mer information om frågor finns i [Användarhandbok för frågetjänsten](../query-service/ui/overview.md).
 
-The **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper och direktuppspelning. Mer information om övervakning finns i [användarhandbok för övervakning av datainmatning](../ingestion/quality/monitor-data-ingestion.md).
+The **[!UICONTROL Monitoring]** kan du övervaka inmatning av grupper och direktuppspelning. Mer information om övervakning finns i [användarhandbok för övervakning av dataöverföring](../ingestion/quality/monitor-data-ingestion.md).
 
 ### [!UICONTROL Decisioning]
 

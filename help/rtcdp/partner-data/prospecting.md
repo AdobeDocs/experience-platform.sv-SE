@@ -3,9 +3,9 @@ title: Engagera och skaffa nya kunder utan att vara beroende av cookies från tr
 description: Lär dig hur du engagerar och skaffar nya kunder genom prospektering av användningsfall, utan att förlita dig på tredjepartscookies.
 feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2030'
+source-wordcount: '2027'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ Läs igenom avsnitten nedan som innehåller länkar till ytterligare dokumentati
 
 När du är klar med implementeringen av användningsexemplet kommer du att använda följande Real-Time CDP-funktioner och gränssnittselement (listade i den ordning som du ska använda dem). Se till att du har de nödvändiga attributbaserade behörigheterna för åtkomstkontroll i alla dessa områden eller be systemadministratören att ge dig de behörigheter som krävs.
 
-* [Identiteter](/help/identity-service/namespaces.md)
+* [Identiteter](/help/identity-service/features/namespaces.md)
 * [Scheman](/help/xdm/home.md)
 * [Dataanvändningsetiketter](/help/data-governance/labels/overview.md)
 * [Datauppsättningar](/help/catalog/datasets/overview.md)
@@ -95,7 +95,7 @@ Börja med att skapa en ny identitetstyp för de profiler som du ska ta emot fr�
 
 ![Skapa ett nytt namnområde för partner-ID.](/help/rtcdp/assets/partner-data/prospecting/create-partner-identity-namespace.png)
 
-* Läs mer om namnutrymmen för partner-ID i [Avsnitt för identitetstyper](/help/identity-service/namespaces.md).
+* Läs mer om namnutrymmen för partner-ID i [Avsnitt för identitetstyper](/help/identity-service/features/namespaces.md).
 * Läs om [definiera identitetsfält](/help/xdm/ui/fields/identity.md) i användargränssnittet i Experience Platform.
 
 #### Skapa ett nytt schema med **[!UICONTROL XDM Individual Prospect Profile]** class
@@ -126,7 +126,7 @@ Observera att schemat ännu inte har aktiverats för profilen. Aktivera det här
 
 Överväg att lägga till etiketter för datastyrning från tredje part i alla fält som utgör schemat. Detta är viktigt för att säkerställa en ansvarsfull användning av data från tredje part och minimera risken för dataläckage. Mer information om [etiketter för datastyrning från tredje part](../../data-governance/labels/reference.md#partner-ecosystem-labels).
 
-Följ stegen nedan för att göra detta:
+Gör så här:
 
 1. Navigera till schemat som du skapade och välj **[!UICONTROL Labels]** -fliken.
 2. Markera alla fält i det här schemat med kryssruteknappen högst upp och klicka sedan på pennikonen till höger för att använda datastyrningsetiketter på det här schemat.

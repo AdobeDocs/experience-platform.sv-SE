@@ -3,7 +3,7 @@ title: (Beta) Trade Desk - CRM-anslutning
 description: Aktivera profiler på ert Trade Desk-konto för målgruppsanpassning och undertryckning baserat på CRM-data.
 last-substantial-update: 2023-01-25T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -38,11 +38,11 @@ Innan du kan aktivera målgrupper för [!DNL The Trade Desk]måste du kontakta [
 
 ## Krav för ID-matchning {#id-matching-requirements}
 
-Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav. Läs [Översikt över namnområde för identitet](/help/identity-service/namespaces.md) för mer information.
+Beroende på vilken typ av ID som du importerar till Adobe Experience Platform måste du följa deras motsvarande krav. Läs [Översikt över namnområde för identitet](/help/identity-service/features/namespaces.md) för mer information.
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL The Trade Desk] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+[!DNL The Trade Desk] stöder aktivering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. Följ instruktionerna i avsnittet Krav för ID-matchning och använd lämpliga namnutrymmen för oformaterad text respektive hashade e-postadresser.
 

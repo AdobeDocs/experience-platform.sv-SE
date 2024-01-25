@@ -2,10 +2,10 @@
 description: Lär dig hur du strukturerar ett API-anrop för att skapa en målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Skapa en målkonfiguration
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1205'
-ht-degree: 1%
+source-wordcount: '1194'
+ht-degree: 0%
 
 ---
 
@@ -208,9 +208,9 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `uiAttributes.connectionType` | Sträng | Vilken typ av anslutning det är, beroende på målet. Värden som stöds: <ul><li>`Server-to-server`</li><li>`Cloud storage`</li><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li><li>`DLZ`</li></ul> |
 | `uiAttributes.frequency` | Sträng | Hänvisar till den typ av dataexport som stöds av målet. Ange till `Streaming` för API-baserade integreringar, eller `Batch` när du exporterar filer till dina mål. |
 | `identityNamespaces.externalId.acceptsAttributes` | Boolean | Anger om kunder kan mappa standardprofilattribut till identiteten som du konfigurerar. |
-| `identityNamespaces.externalId.acceptsCustomNamespaces` | Boolean | Anger om kunderna kan mappa identiteter som tillhör [anpassade namnutrymmen](/help/identity-service/namespaces.md#manage-namespaces) till identiteten som du konfigurerar. |
+| `identityNamespaces.externalId.acceptsCustomNamespaces` | Boolean | Anger om kunderna kan mappa identiteter som tillhör [anpassade namnutrymmen](/help/identity-service/features/namespaces.md#manage-namespaces) till identiteten som du konfigurerar. |
 | `identityNamespaces.externalId.transformation` | Sträng | _Visas inte i exempelkonfigurationen_. Används till exempel när [!DNL Platform] kunden har oformaterade e-postadresser som attribut och din plattform accepterar bara hashkodade e-postmeddelanden. Här anger du den omformning som ska användas (till exempel transformera e-postmeddelandet till gemener och sedan hash). |
-| `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Anger vilken [standardidentitetsnamnutrymmen](/help/identity-service/namespaces.md#standard) (till exempel IDFA)-kunder kan mappa till identiteten som du konfigurerar. <br> När du använder `acceptedGlobalNamespaces`kan du använda `"requiredTransformation":"sha256(lower($))"` till gemener och hash-adresser eller telefonnummer. |
+| `identityNamespaces.externalId.acceptedGlobalNamespaces` | – | Anger vilken [standardidentitetsnamnutrymmen](/help/identity-service/features/namespaces.md#standard) (till exempel IDFA)-kunder kan mappa till identiteten som du konfigurerar. <br> När du använder `acceptedGlobalNamespaces`kan du använda `"requiredTransformation":"sha256(lower($))"` till gemener och hash-adresser eller telefonnummer. |
 | `destinationDelivery.authenticationRule` | Sträng | Anger hur [!DNL Platform] kunderna ansluter till er destination. Godkända värden är `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>Använd `CUSTOMER_AUTHENTICATION` om plattformskunder loggar in på ditt system via ett användarnamn och lösenord, en innehavartoken eller någon annan autentiseringsmetod. Du kan t.ex. markera det här alternativet om du också har markerat `authType: OAUTH2` eller `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> Använd `PLATFORM_AUTHENTICATION` om det finns ett globalt autentiseringssystem mellan Adobe och destinationen och [!DNL Platform] Kunden behöver inte ange några autentiseringsuppgifter för att ansluta till ditt mål. I det här fallet måste du skapa ett autentiseringsobjekt med [API för autentiseringsuppgifter](../../credentials-api/create-credential-configuration.md) konfiguration. </li><li>Använd `NONE` om ingen autentisering krävs för att skicka data till målplattformen. </li></ul> |
 | `destinationDelivery.destinationServerId` | Sträng | The `instanceId` i [målservermall](../destination-server/create-destination-server.md) används för detta mål. |
 | `backfillHistoricalProfileData` | Boolean | Anger om historiska profildata exporteras när målgrupper aktiveras till målet. Ställ alltid in den här till `true`. |

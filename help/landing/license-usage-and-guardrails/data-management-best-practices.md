@@ -2,9 +2,9 @@
 title: Metodtips för tillstånd för datahantering
 description: Lär dig mer om de bästa metoderna och verktygen du kan använda för att bättre hantera dina licensrättigheter med Adobe Experience Platform.
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2283'
+source-wordcount: '2264'
 ht-degree: 1%
 
 ---
@@ -124,7 +124,7 @@ Profilarkivet består av följande komponenter:
 | Profilfragment | Varje kundprofil består av flera **profilfragment** som har sammanfogats till en enda bild av kunden. Om en kund till exempel interagerar med ert varumärke i flera kanaler har organisationen flera **profilfragment** som är relaterade till den enskilda kunden och förekommer i flera datauppsättningar. När de här fragmenten hämtas till Platform sammanfogas de med hjälp av identitetsdiagrammet för att skapa en profil för den kunden. **Profilfragment** består av ett identitetsnamnutrymme som identifierare, med tillhörande postdata och/eller tidsseriedata. |
 | Postdata (attribut) | En profil är en representation av ett ämne, en organisation eller en individ som består av många **Attribut** (kallas även **postdata**). Profilen för en produkt kan t.ex. innehålla en SKU och en beskrivning, medan profilen för en person innehåller information som förnamn, efternamn och e-postadress. **Registrera data** är vanligtvis låg/måttlig i volym, men värdefull under långa perioder. |
 | Tidsseriedata (beteende) | **Tidsseriedata** innehåller information om ett användarbeteende. Representeras av standardschemaklassen Experience Data Model (XDM) [!DNL ExperienceEvent]kan tidsseriedata beskriva händelser som objekt som läggs till i en kundvagn, länkar som klickas och videofilmer visas. Beteendevärdet kan minska med tiden. |
-| Identitetsnamnutrymme (identiteter) | När kunddata sammanställs sammanfogas de i en enda profil med hjälp av **identitetsnamnutrymmen** och möjligheten att knyta samman dessa identiteter när mer information blir känd om användaren. Se [Översikt över identitetsnamnutrymmen](../../identity-service/namespaces.md) för mer information. |
+| Identitetsnamnutrymme (identiteter) | När kunddata sammanställs sammanfogas de i en enda profil med hjälp av **identitetsnamnutrymmen** och möjligheten att knyta samman dessa identiteter när mer information blir känd om användaren. Se [Översikt över identitetsnamnutrymmen](../../identity-service/features/namespaces.md) för mer information. |
 
 {style="table-layout:auto"}
 

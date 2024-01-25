@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;förha
 title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgranskning av profil)
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2863'
+source-wordcount: '2901'
 ht-degree: 0%
 
 ---
@@ -208,7 +208,7 @@ Svaret innehåller en `data` -array, som innehåller en lista med datauppsättni
 
 Du kan göra en GET-förfrågan till `/previewsamplestatus/report/namespace` slutpunkt för att visa uppdelningen efter ID-namnutrymme för alla sammanfogade profiler i din profilbutik. Detta omfattar både standardidentiteter från Adobe och anpassade identiteter som definieras av organisationen.
 
-Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Om du vill veta mer börjar du med att läsa [Översikt över namnutrymmet identity](../../identity-service/namespaces.md).
+Identitetsnamnutrymmen är en viktig komponent i Adobe Experience Platform Identity Service som fungerar som indikatorer för det sammanhang som kunddata hör till. Om du vill veta mer börjar du med att läsa [Översikt över namnutrymmet identity](../../identity-service/features/namespaces.md).
 
 >[!NOTE]
 >
@@ -298,7 +298,7 @@ Svaret innehåller en `data` array, med enskilda objekt som innehåller informat
 | `fullIDsFragmentCount` | Det totala antalet profilfragment i namnutrymmet. |
 | `fullIDsCount` | Det totala antalet sammanfogade profiler i namnutrymmet. |
 | `fullIDsPercentage` | The `fullIDsCount` som en procentandel av det totala antalet sammanfogade profiler ( `totalRows` det returnerade värdet i [senaste exempelstatus](#view-last-sample-status)), uttryckt i decimalformat. |
-| `code` | The `code` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md) och kallas även [!UICONTROL Identity symbol] i användargränssnittet i Experience Platform. Mer information finns på [Översikt över namnutrymmet identity](../../identity-service/namespaces.md). |
+| `code` | The `code` för namnutrymmet. Detta kan du hitta när du arbetar med namnutrymmen med [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md) och kallas även [!UICONTROL Identity symbol] i användargränssnittet i Experience Platform. Mer information finns på [Översikt över namnutrymmet identity](../../identity-service/features/namespaces.md). |
 | `value` | The `id` namnutrymmets värde. Detta kan du hitta när du arbetar med namnutrymmen med [Identitetstjänstens API](../../identity-service/api/list-namespaces.md). |
 
 ## Generera överlappningsrapport för datauppsättning
@@ -444,7 +444,7 @@ En lyckad begäran returnerar HTTP-status 200 (OK) och identitetsnamnutrymmets �
 | Egenskap | Beskrivning |
 |---|---|
 | `data` | The `data` -objektet innehåller kommaavgränsade listor med unika kombinationer av ID-namnområdeskoder och deras respektive profilantal. |
-| Namnområdeskoder | The `code` är ett kort formulär för varje namn på identitetsnamn. En mappning av varje `code` till `name` kan hittas med [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md). The `code` kallas även [!UICONTROL Identity symbol] i användargränssnittet i Experience Platform. Mer information finns på [Översikt över namnutrymmet identity](../../identity-service/namespaces.md). |
+| Namnområdeskoder | The `code` är ett kort formulär för varje namn på identitetsnamn. En mappning av varje `code` till `name` kan hittas med [Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md). The `code` kallas även [!UICONTROL Identity symbol] i användargränssnittet i Experience Platform. Mer information finns på [Översikt över namnutrymmet identity](../../identity-service/features/namespaces.md). |
 | `reportTimestamp` | Rapportens tidsstämpel. Om en `date` parametern angavs under begäran, rapporten returneras för angivet datum. Om nej `date` parametern anges, den senaste rapporten returneras. |
 
 ### Tolka rapporten om namnutrymmesöverlappning

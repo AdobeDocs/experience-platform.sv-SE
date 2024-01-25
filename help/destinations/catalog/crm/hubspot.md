@@ -3,7 +3,7 @@ title: HubSpot-anslutning
 description: Med HubSpot-målet kan du hantera kontaktposter i ditt HubSpot-konto.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '1485'
 ht-degree: 1%
@@ -64,7 +64,7 @@ Om du inte har någon privat app följer du dokumentationen till [Skapa en priva
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL HubSpot] har stöd för uppdatering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+[!DNL HubSpot] har stöd för uppdatering av identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Målidentitet | Exempel | Beskrivning | Överväganden |
 |---|---|---|---|

@@ -3,7 +3,7 @@ title: Personalisera upplevelser på plats för okända besökare med partnerst�
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: 2ffb8724b2aca54019820335fb21038ec7e69a7f
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '2565'
 ht-degree: 1%
@@ -51,7 +51,7 @@ För att implementera det här användningsexemplet måste du använda flera oli
    * [Taggar](/help/tags/home.md)
    * [Dataströmmar](/help/datastreams/overview.md)
 * Datahantering i Real-Time CDP
-   * [Identiteter](/help/identity-service/namespaces.md)
+   * [Identiteter](/help/identity-service/features/namespaces.md)
    * [Scheman](/help/xdm/home.md)
    * [Dataanvändningsetiketter](/help/data-governance/labels/overview.md)
    * [Datauppsättningar](/help/catalog/datasets/overview.md)
@@ -279,7 +279,7 @@ Ni är nu redo att integrera med en personaliseringsmotor för att visa personal
 
 Observera följande begränsningar när du utforskar användningsfallet som beskrivs på den här sidan:
 
-* Om du använder partner-ID:n ska du vara medveten om att dessa ID:n inte används när du skapar dina [identitetsdiagram](/help/identity-service/ui/identity-graph-viewer.md).
+* Om du använder partner-ID:n ska du vara medveten om att dessa ID:n inte används när du skapar dina [identitetsdiagram](/help/identity-service/features/identity-graph-viewer.md).
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 

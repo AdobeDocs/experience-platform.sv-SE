@@ -2,9 +2,9 @@
 title: Identitetshantering i arbetsflödet för målaktivering
 description: Läs om hur identitetsexport hanteras i aktiveringsarbetsflödet, beroende på måltyp
 exl-id: f4894a08-c7a9-4d57-a6d3-660c49206d6a
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1134'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Varje mål i dialogrutan [katalog](/help/destinations/catalog/overview.md) är n
 
 För [filbaserade mål](/help/destinations/destination-types.md#file-based) (till exempel [!DNL Amazon S3], SFTP, de flesta e-postmarknadsföringsmål som [!DNL Adobe Campaign], [!DNL Oracle Eloqua], [!DNL Salesforce Marketing Cloud]) är identitetsinställningarna i de flesta av dessa mål öppna, vilket innebär att du inte behöver välja någon identitet i [Välj attribut](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes) steg i gruppaktiveringsarbetsflödet.
 
-Om du väljer att lägga till identiteter i din filexport bör du tänka på att det bara är en enda identitet från [namnutrymme för identitet](/help/identity-service/ui/identity-graph-viewer.md#access-identity-graph-viewer) kan markeras i en export. När du väljer en identitet för export väljs den automatiskt som [obligatoriskt attribut](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) och [dedupliceringsnyckel](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys).
+Om du väljer att lägga till identiteter i din filexport bör du tänka på att det bara är en enda identitet från [namnutrymme för identitet](/help/identity-service/features/identity-graph-viewer.md#access-identity-graph-viewer) kan markeras i en export. När du väljer en identitet för export väljs den automatiskt som [obligatoriskt attribut](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes) och [dedupliceringsnyckel](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys).
 
 ![En identitet har valts som obligatoriskt attribut och dedupliceringsnyckel.](/help/destinations/assets/how-destinations-work/selected-identity.png)
 

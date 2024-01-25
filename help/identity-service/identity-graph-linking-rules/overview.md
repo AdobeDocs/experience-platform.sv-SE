@@ -5,9 +5,9 @@ hide: true
 hidefromtoc: true
 badge: Alpha
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 07771956c22a3fee92bd76ae061b07e1e0f98b49
+source-git-commit: f21b5519440f7ffd272361954c9e32ccca2ec2bc
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1022'
 ht-degree: 0%
 
 ---
@@ -23,8 +23,6 @@ ht-degree: 0%
 * [Översikt](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempel på scenarier](./example-scenarios.md)
-* [Identitetstjänst och kundprofil i realtid](identity-and-profile.md)
-* [Identitetslänkningslogik](./identity-linking-logic.md)
 
 Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRM-ID. Det finns dock möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera profil&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.
 
@@ -114,5 +112,3 @@ Mer information om regler för länkning av identitetsdiagram finns i följande 
 
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md)
-* [Identitetstjänst och kundprofil i realtid](identity-and-profile.md)
-* [Identitetslänkningslogik](./identity-linking-logic.md)

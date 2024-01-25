@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Felsökningsguide för XDM-system
 description: Hitta svar på vanliga frågor om Experience Data Model (XDM), inklusive steg för att lösa vanliga API-fel.
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2063'
+source-wordcount: '1937'
 ht-degree: 0%
 
 ---
 
 # Felsökningsguide för XDM-system
 
-Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) och XDM System i Adobe Experience Platform, inklusive en felsökningsguide för vanliga fel. För frågor och felsökning som rör andra plattformstjänster, se [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
+Det här dokumentet innehåller svar på vanliga frågor om [!DNL Experience Data Model] (XDM) och XDM System i Adobe Experience Platform, inklusive en felsökningsguide för vanliga fel. Om du har frågor och felsökning som rör andra plattformstjänster kan du läsa [Felsökningsguide för Experience Platform](../landing/troubleshooting.md).
 
 **[!DNL Experience Data Model](XDM)** är en öppen källkodsspecifikation som definierar standardiserade scheman för kundupplevelsehantering. Den metod som [!DNL Experience Platform] är byggd, **XDM-system**, operaliserar [!DNL Experience Data Model] scheman för användning av [!DNL Platform] tjänster. The **[!DNL Schema Registry]** har ett användargränssnitt och ett RESTful API för att få åtkomst till **[!DNL Schema Library]** inom [!DNL Experience Platform]. Se [XDM-dokumentation](home.md) för mer information.
 
@@ -25,7 +25,7 @@ Nedan följer en lista med svar på vanliga frågor om XDM-systemet och användn
 
 Du kan lägga till fält i ett schema med hjälp av en schemafältgrupp. Varje fältgrupp är kompatibel med en eller flera klasser, vilket gör att fältgruppen kan användas i alla scheman som implementerar en av dessa kompatibla klasser. Adobe Experience Platform tillhandahåller flera branschfältgrupper med sina egna fördefinierade fält, men du kan lägga till egna fält i ett schema genom att skapa anpassade fältgrupper med API:t eller användargränssnittet.
 
-Mer information om hur du skapar fältgrupper i [!DNL Schema Registry] API, se [slutpunktsguide för fältgrupp](api/field-groups.md#create). Om du använder användargränssnittet läser du [Schemaredigeraren, genomgång](./tutorials/create-schema-ui.md).
+Mer information om hur du skapar fältgrupper i [!DNL Schema Registry] API, se [stödlinje för fältgruppsslutpunkt](api/field-groups.md#create). Om du använder användargränssnittet läser du [Schemaredigeraren, genomgång](./tutorials/create-schema-ui.md).
 
 ### Vilket är det bästa användningsområdet för fältgrupper jämfört med datatyper?
 
@@ -65,13 +65,13 @@ Mer information om hur du skapar identitetsbeskrivningar i API:t finns i dokumen
 
 #### Definiera identiteter i användargränssnittet
 
-När schemat är öppet i Schemaredigeraren markerar du fältet i **[!UICONTROL Structure]** i redigeraren som du vill markera som en identitet. Under **[!UICONTROL Field Properties]** till höger väljer du **[!UICONTROL Identity]** kryssrutan.
+När schemat är öppet i Schemaredigeraren markerar du fältet i **[!UICONTROL Structure]** som du vill markera som en identitet. Under **[!UICONTROL Field Properties]** till höger väljer du **[!UICONTROL Identity]** kryssrutan.
 
-Mer information om hur du hanterar identiteter i användargränssnittet finns i avsnittet om [definiera identitetsfält](./tutorials/create-schema-ui.md#identity-field) i schemaredigerarens självstudiekurs.
+Mer information om hur du hanterar identiteter i användargränssnittet finns i avsnittet om [definiera identitetsfält](./tutorials/create-schema-ui.md#identity-field) i schemaredigeraren.
 
 ### Behöver mitt schema en primär identitet?
 
-Primära identiteter är valfria eftersom scheman kan ha antingen noll eller en av dem. Ett schema måste dock ha en primär identitet för att schemat ska kunna aktiveras för användning i [!DNL Real-Time Customer Profile]. Se [identity](./tutorials/create-schema-ui.md#identity-field) för mer information.
+Primära identiteter är valfria eftersom scheman kan ha antingen noll eller en av dem. Ett schema måste dock ha en primär identitet för att schemat ska kunna aktiveras för användning i [!DNL Real-Time Customer Profile]. Se [identity](./tutorials/create-schema-ui.md#identity-field) i schemaredigerarens självstudiekurs för mer information.
 
 ### Hur aktiverar jag ett schema i [!DNL Real-Time Customer Profile]?
 
@@ -79,7 +79,7 @@ Scheman är aktiverade för användning i [[!DNL Real-Time Customer Profile]](..
 
 #### Aktivera ett befintligt schema för [!DNL Profile] med API
 
-Begär att PATCH ska uppdatera schemat och lägga till `meta:immutableTags` som en array som innehåller värdet &quot;union&quot;. Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
+Gör en förfrågan från PATCH om att uppdatera schemat och lägga till `meta:immutableTags` som en array som innehåller värdet &quot;union&quot;. Om uppdateringen lyckas visas det uppdaterade schemat som nu innehåller unionstaggen.
 
 Mer information om hur du använder API för att aktivera ett schema för användning i [!DNL Real-Time Customer Profile], se [föreningar](./api/unions.md) dokumentet [!DNL Schema Registry] utvecklarhandbok.
 
@@ -88,7 +88,7 @@ Mer information om hur du använder API för att aktivera ett schema för använ
 I [!DNL Experience Platform], markera **[!UICONTROL Schemas]** i den vänstra navigeringen och välj namnet på schemat som du vill aktivera i listan med scheman. Sedan till höger om redigeraren under **[!UICONTROL Schema Properties]**, markera **[!UICONTROL Profile]** för att aktivera det.
 
 
-Mer information finns i avsnittet om [användning i kundprofil i realtid](./tutorials/create-schema-ui.md#profile) i [!UICONTROL Schema Editor] självstudiekurs.
+Mer information finns i avsnittet om [användning i kundprofil i realtid](./tutorials/create-schema-ui.md#profile) i [!UICONTROL Schema Editor] självstudie.
 
 ### Kan jag redigera ett unionsschema direkt?
 
@@ -135,7 +135,6 @@ Det här felet visas när systemet inte kan hitta en viss resurs. Resursen kan h
 >* `http://ns.adobe.com/aep/errors/XDM-1015-404`
 >* `http://ns.adobe.com/aep/errors/XDM-1016-404`
 >* `http://ns.adobe.com/aep/errors/XDM-1017-404`
-
 
 Mer information om hur du skapar sökvägar i API:t finns i [container](./api/getting-started.md#container) och [resursidentifiering](api/getting-started.md#resource-identification) i [!DNL Schema Registry] utvecklarhandbok.
 
@@ -189,7 +188,6 @@ Resurser som definieras av din organisation måste namnge sina fält under ditt 
 >* `http://ns.adobe.com/aep/errors/XDM-1023-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1024-400`
 
-
 Detaljerade exempel på lämpliga datastrukturer för XDM-resurser finns i API-handboken för schematabellen:
 
 * [Skapa en anpassad klass](./api/classes.md#create)
@@ -215,7 +213,7 @@ Detaljerade exempel på lämpliga datastrukturer för XDM-resurser finns i API-h
 
 GET-förfrågningar i [!DNL Schema Registry] API kräver `Accept` för att systemet ska kunna avgöra hur svaret ska formateras. Det här felet inträffar när en `Accept` huvudet är ogiltigt eller saknas.
 
-Beroende på vilken slutpunkt du använder visas `detailed-message` egenskapen anger vad som är giltigt `Accept` sidhuvudet ska se ut som om det är ett lyckat svar. Kontrollera att du har angett en `Accept` som är kompatibel med den API-begäran du försöker göra innan du försöker igen.
+Beroende på vilken slutpunkt du använder visas `detailed-message` egenskapen anger vad som är giltigt `Accept` sidhuvudet ska se ut som om det är ett lyckat svar. Kontrollera att du har angett en `Accept` huvud som är kompatibelt med den API-begäran som du försöker göra innan du försöker igen.
 
 >[!NOTE]
 >
@@ -225,7 +223,6 @@ Beroende på vilken slutpunkt du använder visas `detailed-message` egenskapen a
 >* `http://ns.adobe.com/aep/errors/XDM-1007-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1008-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1009-400`
-
 
 En lista över kompatibla Acceptera rubriker för olika API-begäranden finns i motsvarande avsnitt i [Utvecklarhandbok för schemaregister](./api/overview.md).
 
@@ -275,9 +272,9 @@ Det här felmeddelandet visas när du försöker aktivera ett schema för [!DNL 
 
 För att aktivera scheman som innehåller relationsbeskrivare för användning i [!DNL Profile]måste namnutrymmet för källfältet och det primära namnutrymmet för referensfältet vara detsamma. Det här felmeddelandet visas när du försöker aktivera ett schema som innehåller ett omatchat namnutrymme för dess referensidentitetsbeskrivning.
 
-Se till att `xdm:namespace` värdet för referensschemats identitetsfält matchar det för `xdm:identityNamespace` -egenskapen i källfältets referensidentitetsbeskrivning för att lösa problemet.
+Se till att `xdm:namespace` värdet för referensschemats identitetsfält matchar det för `xdm:identityNamespace` -egenskapen i källfältets beskrivare för referens-ID för att lösa problemet.
 
-En lista med standardkoder för identitetsnamn finns i avsnittet om [standardnamnutrymmen](../identity-service/namespaces.md) i översikten över namnutrymmet identity.
+En lista med standardkoder för identitetsnamn finns i avsnittet om [standardnamnutrymmen](../identity-service/features/namespaces.md) i översikten över namnutrymmet identity.
 
 #### Schemat måste innehålla en identityMap eller primär identitet
 

@@ -5,9 +5,9 @@ description: Följ den här självstudiekursen för att lära dig hur du använd
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
 hide: true
 hidefromtoc: true
-source-git-commit: c83070d85177c72b2e4c4ae472b89c08c20ee743
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1683'
+source-wordcount: '1685'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Segmentdefinitioner innehåller information som namn, beskrivning, uttryck (om t
 
 Det första steget för att använda externa målgrupper är att skapa ett identitetsnamnutrymme. Med identitetsnamnutrymmen kan plattformen associera var en målgrupp kommer ifrån.
 
-Följ instruktionerna i dialogrutan för att skapa ett identitetsnamnutrymme [guide för identitetsnamnutrymme](../../identity-service/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
+Följ instruktionerna i dialogrutan för att skapa ett identitetsnamnutrymme [guide för identitetsnamnutrymme](../../identity-service/features/namespaces.md#manage-namespaces). När du skapar ditt identitetsnamnutrymme lägger du till källinformationen i identitetsnamnutrymmet och markerar dess [!UICONTROL Type] som **[!UICONTROL Non-people identifier]**.
 
 ![Identifieraren för icke-människa markeras på spärrformen för identitetsnamnutrymmet.](../images/tutorials/external-audiences/identity-namespace-info.png)
 

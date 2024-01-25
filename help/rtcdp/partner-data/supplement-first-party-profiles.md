@@ -3,9 +3,9 @@ title: Komplettera förstapartsprofiler med attribut som tillhandahålls av part
 description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
 feature: Use Cases, Profile Enrichment
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: 3353866aa2d52c784663f355183e940e727b2af7
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1255'
+source-wordcount: '1248'
 ht-degree: 3%
 
 ---
@@ -56,7 +56,7 @@ I videosjälvstudiekursen nedan får du en genomgång av hur du kan komplettera 
 1. Som en **kund** licensierar du attribut från **datapartner**.
 2. Som en **kund** kan ni utöka profildata och styrningsmodell för att passa **partner**-provided-attribut.
 3. Som en **kund** kan ni ta med er de målgrupper ni vill ska berikas med datapartnern. Vanligtvis är dessa målgrupper inmatade med identifierare som PII-element (Personally Identiitable Information) som e-post, namn, adress och andra.
-4. The **partner** lägger till licensierade attribut för de profiler som de kan matcha mot. Alternativt kan du [Partner-ID](/help/identity-service/namespaces.md) kan inkluderas och importeras i partneromfångets ID-namnutrymme.
+4. The **partner** lägger till licensierade attribut för de profiler som de kan matcha mot. Alternativt kan du [Partner-ID](/help/identity-service/features/namespaces.md) kan inkluderas och importeras i partneromfångets ID-namnutrymme.
 5. Som en **kund** läser du in attribut från datapartnern i kundprofiler i Real-Time CDP.
 
 ## Så här uppnår du användningsfallet: stegvisa instruktioner {#step-by-step-instructions}
@@ -99,9 +99,9 @@ I det här steget bör du också tänka på hur er datastyrningsmodell ändras n
 
 >[!TIP]
 >
->Om du väljer att komplettera dina kundprofiler med en personbaserad identifierare från dataleverantören kan du skapa en ny identitetstyp av typen **[[!UICONTROL Partner ID]](/help/identity-service/namespaces.md)**.
+>Om du väljer att komplettera dina kundprofiler med en personbaserad identifierare från dataleverantören kan du skapa en ny identitetstyp av typen **[[!UICONTROL Partner ID]](/help/identity-service/features/namespaces.md)**.
 >
->Läs mer om partner-ID i [Avsnitt för identitetstyper](/help/identity-service/namespaces.md).
+>Läs mer om partner-ID i [Avsnitt för identitetstyper](/help/identity-service/features/namespaces.md).
 >Läs om [definiera identitetsfält](/help/xdm/ui/fields/identity.md) i användargränssnittet i Experience Platform.
 
 ### Exportera målgrupper som du vill ska berikas när du stänger av Personal Identified Information (PII) eller hashed-PII {#export-audiences}
@@ -130,7 +130,7 @@ Några rekommenderade källanslutningar för detta ändamål kan vara:
 
 Observera följande begränsningar när du utforskar användningsfallet som beskrivs på den här sidan:
 
-* Om du väljer att använda partner-ID:n ska du vara medveten om att dessa ID:n inte används när du skapar dina [identitetsdiagram](/help/identity-service/ui/identity-graph-viewer.md).
+* Om du väljer att använda partner-ID:n ska du vara medveten om att dessa ID:n inte används när du skapar dina [identitetsdiagram](/help/identity-service/features/identity-graph-viewer.md).
 
 ## Andra användningsområden som uppnås genom stöd för partnerdata {#other-use-cases}
 

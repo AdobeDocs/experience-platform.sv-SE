@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över segmentmatchning
 description: Segmentmatchning är en segmentdelningstjänst i Adobe Experience Platform som gör det möjligt för två eller flera plattformsanvändare att utbyta segmentdata på ett säkert, styrt och sekretessvänligt sätt.
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
 workflow-type: tm+mt
-source-wordcount: '1915'
+source-wordcount: '1889'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Nedan följer en lista över namnutrymmen som stöds:
 | --------- | ----------- |
 | E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Platform erbjuder två metoder som stöder hashning vid datainsamling, via [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) och via [dataprestation](../../../data-prep/functions.md#hashing). |
 | Telefon (SHA256_E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas med formaten SHA256 och E.164. |
-| ECID | Ett namnutrymme som representerar ett Experience Cloud ID-värde (ECID). Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se [ECID - översikt](../../../identity-service/ecid.md) för mer information. |
+| ECID | Ett namnutrymme som representerar ett Experience Cloud ID-värde (ECID). Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se [ECID - översikt](../../../identity-service/features/ecid.md) för mer information. |
 | Apple IDFA (ID för annonsörer) | Ett namnutrymme som representerar Apple ID för annonsörer. Se följande dokument på [räntebaserade annonser](https://support.apple.com/en-us/HT202074) för mer information. |
 | Google Ad ID | Ett namnutrymme som representerar ett Google Advertising ID. Se följande dokument på [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) för mer information. |
 
@@ -183,7 +183,7 @@ Om du vill lägga till eller ta bort segment väljer du **[!UICONTROL Create fee
 
 Listan med segment visas. Härifrån kan du lägga till nya segment i din feed och du kan använda högerspåret för att ta bort segment som du inte längre behöver. När du är klar med att hantera segmenten i din feed väljer du **[!UICONTROL Next]** och följ sedan de steg som beskrivs ovan för att slutföra den uppdaterade feeden.
 
-![update](./images/update.png)
+![uppdatera](./images/update.png)
 
 >[!NOTE]
 >

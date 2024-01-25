@@ -1,9 +1,9 @@
 ---
 title: Implementeringshandbok för identitetstjänsten
 description: Lär dig hur data som tillhandahålls till Adobe Experience Platform behandlas innan de används av identitetstjänsten för att skapa identitetsdiagram.
-source-git-commit: bdda234c44b63999d7582857975afa64fdb93605
+source-git-commit: f1273c1deac32559e214d1d99d10f6ca25fe4264
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Beroende på er strategi för insamling av företagsdata avgör de datafält som
 
 ## Skapa ytterligare identitetsnamnutrymmen
 
-Experience Platform har en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter ordentligt. Mer information finns i guiden [skapa anpassade namnutrymmen för din organisation](./namespaces.md).
+Experience Platform har en mängd standardnamnutrymmen, men du kan behöva skapa ytterligare namnutrymmen för att kategorisera dina identiteter ordentligt. Mer information finns i guiden [skapa anpassade namnutrymmen för din organisation](./features/namespaces.md).
 
 >[!NOTE]
 >
@@ -45,6 +45,8 @@ Genom att till exempel märka fält med telefonnummer som identitetsfält kan id
 >
 >* Array- och mappningstypsfält stöds inte och kan inte markeras och märkas som identitetsfält.
 >* Namnutrymmet för resulterande identiteter anges när fältet etiketteras.
+
+Mer information finns i guiden [definiera identitetsfält i användargränssnittet](../xdm/ui/fields/identity.md).
 
 ## Konfigurera en datauppsättning för identitetstjänsten
 

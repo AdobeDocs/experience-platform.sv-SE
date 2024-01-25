@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa datauppsättningar för att hämta IAB TCF 2.0-medgivandedata
 description: Det här dokumentet innehåller steg för hur du konfigurerar de två datauppsättningar som krävs för att samla in IAB TCF 2.0-medgivandedata.
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
-source-git-commit: 5a14eb5938236fa7186d1a27f28cee15fe6558f6
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1566'
+source-wordcount: '1580'
 ht-degree: 0%
 
 ---
@@ -17,8 +17,8 @@ För att Adobe Experience Platform ska kunna behandla kundens medgivandedata i e
 
 Två datauppsättningar krävs för att hämta TCF 2.0-medgivandedata:
 
-* En datauppsättning som baseras på [!DNL XDM Individual Profile] klass, aktiverad för användning i [!DNL Real-Time Customer Profile].
-* En datauppsättning som baseras på [!DNL XDM ExperienceEvent] klassen.
+* En datauppsättning baserad på [!DNL XDM Individual Profile] klass, aktiverad för användning i [!DNL Real-Time Customer Profile].
+* En datauppsättning baserad på [!DNL XDM ExperienceEvent] klassen.
 
 >[!IMPORTANT]
 >
@@ -31,10 +31,10 @@ Det här dokumentet innehåller steg för hur du konfigurerar de här två datau
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
 * [Experience Data Model (XDM)](../../../../xdm/home.md): Det standardiserade ramverk som [!DNL Experience Platform] organiserar kundupplevelsedata.
-   * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundstenarna i XDM-scheman.
+   * [Grunderna för schemakomposition](../../../../xdm/schema/composition.md): Lär dig mer om grundläggande byggstenar i XDM-scheman.
 * [Adobe Experience Platform Identity Service](../../../../identity-service/home.md): Gör att ni kan kombinera kundidentiteter från olika datakällor på olika enheter och system.
-   * [Identitetsnamnutrymmen](../../../../identity-service/namespaces.md): Kundidentitetsdata måste anges under ett specifikt ID-namnområde som identifieras av identitetstjänsten.
-* [Kundprofil i realtid](../../../../profile/home.md): Utnyttja [!DNL Identity Service] så att ni kan skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
+   * [Identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md): Kundidentitetsdata måste anges under ett specifikt ID-namnområde som identifieras av identitetstjänsten.
+* [Kundprofil i realtid](../../../../profile/home.md): Leveranser [!DNL Identity Service] så att ni kan skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
 
 ## TCF 2.0-fältgrupper {#field-groups}
 
@@ -68,7 +68,7 @@ Välj **[!UICONTROL Schemas]** i den vänstra navigeringen för att öppna [!UIC
 >
 >Om du har befintliga XDM-scheman som du vill använda för att hämta medgivandedata i stället, kan du redigera dessa scheman i stället för att skapa nya. Men om ett befintligt schema har aktiverats för användning i kundprofilen i realtid, kan dess primära identitet inte vara ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, till exempel en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 >
->När du redigerar befintliga scheman kan du dessutom bara göra additiva (fasta) ändringar. Se avsnittet på [principer för schemautveckling](../../../../xdm/schema/composition.md#evolution) för mer information.
+>När du redigerar befintliga scheman kan du dessutom bara göra additiva (fasta) ändringar. Se avsnittet på sidan [principer för schemautveckling](../../../../xdm/schema/composition.md#evolution) för mer information.
 
 ### Skapa ett schema för profilgodkännande {#profile-schema}
 
@@ -76,11 +76,11 @@ Välj **[!UICONTROL Create schema]** väljer du **[!UICONTROL XDM Individual Pro
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/create-schema-profile.png)
 
-The **[!UICONTROL Add field groups]** visas så att du kan börja lägga till fältgrupper i schemat direkt. Här väljer du **[!UICONTROL IAB TCF 2.0 Consent Details]** från listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen.
+The **[!UICONTROL Add field groups]** visas så att du kan börja lägga till fältgrupper i schemat direkt. Välj **[!UICONTROL IAB TCF 2.0 Consent Details]** från listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen.
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-profile-privacy.png)
 
-Leta reda på **[!UICONTROL IdentityMap]** fältgrupp från listan och markera den också. När båda fältgrupperna är listade i den högra listen väljer du **[!UICONTROL Add field groups]**.
+Gå till **[!UICONTROL IdentityMap]** fältgrupp från listan och markera den också. När båda fältgrupperna visas i den högra listen väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-profile-identitymap.png)
 
@@ -104,7 +104,7 @@ För att Platform ska kunna koppla de data den får till specifika kundprofiler 
 
 >[!NOTE]
 >
->Exempelschemat som visas i det här avsnittet använder `identityMap` -fältet som sin primära identitet. Om du vill ange ett annat fält som primär identitet måste du se till att du använder en indirekt identifierare, som ett cookie-ID, och inte ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, som en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
+>Exempelschemat som visas i det här avsnittet använder `identityMap` som sin primära identitet. Om du vill ange ett annat fält som primär identitet måste du se till att du använder en indirekt identifierare, som ett cookie-ID, och inte ett direkt identifierbart fält som är förbjudet att använda i intressebaserad annonsering, som en e-postadress. Kontakta ditt juridiska ombud om du är osäker på vilka fält som är begränsade.
 >
 >Steg om hur du anger ett primärt identitetsfält för ett schema finns i [[!UICONTROL Schemas] Användargränssnittsguide](../../../../xdm/ui/fields/identity.md).
 
@@ -124,18 +124,18 @@ En pover visas, vilket anger att en primär identitet saknas. Markera kryssrutan
 
 >[!NOTE]
 >
->Scheman för godkännande av händelser används bara för att spåra händelser om godkännande över tiden, och deltar inte i arbetsflöden för tillsyn längre fram i kedjan. Om du inte vill spåra ändringar av ditt medgivande över tiden kan du gå vidare till nästa avsnitt på [skapa medgivandedatauppsättningar](#datasets).
+>Scheman för godkännande av händelser används bara för att spåra händelser om godkännande över tiden, och deltar inte i arbetsflöden för tillsyn längre fram. Om du inte vill spåra ändringar av ditt medgivande över tiden kan du gå vidare till nästa avsnitt på [skapa medgivandedatauppsättningar](#datasets).
 
 I **[!UICONTROL Schemas]** arbetsyta, välja **[!UICONTROL Create schema]** väljer du **[!UICONTROL XDM ExperienceEvent]** i listrutan.
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/create-schema-event.png)
 
-The **[!UICONTROL Add field groups]** visas. Här väljer du **[!UICONTROL IAB TCF 2.0 Consent Details]** från listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen.
+The **[!UICONTROL Add field groups]** visas. Välj **[!UICONTROL IAB TCF 2.0 Consent Details]** från listan. Du kan även använda sökfältet för att begränsa resultaten och enklare hitta fältgruppen.
 
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-event-privacy.png)
 
-Leta reda på **[!UICONTROL IdentityMap]** fältgrupp från listan och markera den också. När båda fältgrupperna är listade i den högra listen väljer du **[!UICONTROL Add field groups]**.
+Gå till **[!UICONTROL IdentityMap]** fältgrupp från listan och markera den också. När båda fältgrupperna visas i den högra listen väljer du **[!UICONTROL Add field groups]**.
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-event-identitymap.png)
 
@@ -157,9 +157,9 @@ När fältgrupperna som du behöver har lagts till, slutför du genom att välja
 
 ## Skapa datauppsättningar baserat på dina medgivandescheman {#datasets}
 
-För vart och ett av de obligatoriska scheman som beskrivs ovan måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas samtycke. Datauppsättningen som baseras på postschemat måste aktiveras för [!DNL Real-Time Customer Profile], medan datauppsättningen baseras på tidsseriens schema **bör inte** be [!DNL Profile]-enabled.
+För vart och ett av de obligatoriska scheman som beskrivs ovan måste du skapa en datauppsättning som i slutändan kommer att innehålla kundernas medgivandedata. Datauppsättningen som baseras på postschemat måste aktiveras för [!DNL Real-Time Customer Profile], medan datauppsättningen baseras på tidsseriens schema **bör inte** be [!DNL Profile]-enabled.
 
-Börja genom att välja **[!UICONTROL Datasets]** i den vänstra navigeringen väljer du **[!UICONTROL Create dataset]** i det övre högra hörnet.
+Börja genom att välja **[!UICONTROL Datasets]** i den vänstra navigeringen väljer du **[!UICONTROL Create dataset]** längst upp till höger.
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/dataset-create.png)
 

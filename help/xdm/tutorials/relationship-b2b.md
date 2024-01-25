@@ -2,9 +2,9 @@
 title: Definiera en relation mellan två scheman i Real-time Customer Data Platform B2B Edition
 description: Lär dig hur du definierar en många-till-ett-relation mellan två scheman i Adobe Real-time Customer Data Platform B2B Edition.
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 7021725e011a1e1d95195c6c7318ecb5afe05ac6
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1358'
+source-wordcount: '1332'
 ht-degree: 0%
 
 ---
@@ -61,7 +61,7 @@ För att ta hänsyn till detta innehåller alla standardklasser för B2B&quot;ny
 
 >[!NOTE]
 >
->När [ange ett XDM-fält som en identitet](../ui/fields/identity.md)måste du ange ett ID-namnutrymme för att definiera identiteten under. Detta kan vara ett standardnamnutrymme från Adobe eller ett anpassat namnutrymme som definieras av din organisation. I praktiken är namnutrymmet helt enkelt en kontextuell sträng och kan anges till vilket värde som helst, förutsatt att det är användbart för din organisation för att kategorisera identitetstypen. Se översikten på [identitetsnamnutrymmen](../../identity-service/namespaces.md) för mer information.
+>När [ange ett XDM-fält som en identitet](../ui/fields/identity.md)måste du ange ett ID-namnutrymme för att definiera identiteten under. Detta kan vara ett standardnamnutrymme från Adobe eller ett anpassat namnutrymme som definieras av din organisation. I praktiken är namnutrymmet helt enkelt en kontextuell sträng och kan anges till vilket värde som helst, förutsatt att det är användbart för din organisation för att kategorisera identitetstypen. Se översikten på [identitetsnamnutrymmen](../../identity-service/features/namespaces.md) för mer information.
 
 I följande avsnitt beskrivs strukturen för varje schema som används i den här självstudiekursen innan en relation har definierats. Observera var de primära identiteterna har definierats i schemastrukturen och vilka anpassade namnutrymmen de använder.
 

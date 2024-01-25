@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Fältgrupp för innehåll och inställningar
 description: Läs mer om schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -106,7 +106,7 @@ I följande JSON visas ett exempel på den datatyp som [!UICONTROL Consents and 
 >* Om kunden har valt att inte göra det på kanalnivå, finns motsvarande samtycke eller inställningar i `idSpecific` ignoreras.
 >* Om samtycke eller inställning på kanalnivå inte har angetts, eller om kunden har valt att göra det, kommer motsvarande samtycke eller inställningar i `idSpecific` är stolta.
 
-Varje tangent i `idSpecific` -objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om namnutrymmen för identiteter finns i [Översikt över namnutrymmet identity](../../../identity-service/namespaces.md) i identitetstjänstens dokumentation.
+Varje tangent i `idSpecific` -objektet representerar ett specifikt ID-namnområde som känns igen av Adobe Experience Platform Identity Service. Du kan definiera egna namnutrymmen för att kategorisera olika identifierare, men vi rekommenderar att du använder ett av de standardnamnutrymmen som ingår i identitetstjänsten för att minska lagringsstorlekarna för kundprofilen i realtid. Mer information om namnutrymmen för identiteter finns i [Översikt över namnutrymmet identity](../../../identity-service/features/namespaces.md) i identitetstjänstens dokumentation.
 
 Nycklarna för varje namnområdesobjekt representerar de unika identitetsvärden som kunden har angett inställningar för. Varje identitetsvärde kan innehålla en komplett uppsättning innehåll och inställningar, formaterade på samma sätt som `consents`.
 

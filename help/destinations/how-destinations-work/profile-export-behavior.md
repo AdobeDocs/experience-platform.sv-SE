@@ -2,9 +2,9 @@
 title: Beteende vid export av profiler
 description: Lär dig hur beteendet vid export av profiler varierar mellan de olika integreringsmönster som stöds i Experience Platform-mål.
 exl-id: 2be62843-0644-41fa-a860-ccd65472562e
-source-git-commit: e6545dfaf5c43ac854986cfdc4f5cb153a07405b
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '2924'
+source-wordcount: '2931'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ När det gäller data som exporteras för en viss profil är det viktigt att fö
 
 | Vad avgör en målexport | Vad som ingår i målexporten |
 |---------|----------|
-| <ul><li>Kopplade attribut och målgrupper fungerar som referens för en målexport. Det innebär att om någon mappad publik ändrar tillstånd (från `null` till `realized` eller från `realized` till `exiting`) eller om mappade attribut uppdateras, kommer en målexport att startas.</li><li>En ändring i identitetskartan definieras som en identitet som läggs till/tas bort för [identitetsdiagram](/help/identity-service/ui/identity-graph-viewer.md) för profilen, för identitetsnamnutrymmen som mappas för export.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, för attribut som mappas till målet.</li></ul> | <ul><li>De målgrupper som är mappade till målet och har ändrats inkluderas i `segmentMembership` -objekt. I vissa fall kan de exporteras med flera anrop. I vissa scenarier kan även vissa målgrupper som inte har ändrats inkluderas i samtalet. I vilket fall som helst exporteras bara mappade målgrupper.</li><li>Alla identiteter från de namnutrymmen som är mappade till målet i `identityMap` -objekt tas också med.</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
+| <ul><li>Kopplade attribut och målgrupper fungerar som referens för en målexport. Det innebär att om någon mappad publik ändrar tillstånd (från `null` till `realized` eller från `realized` till `exiting`) eller om mappade attribut uppdateras, kommer en målexport att startas.</li><li>En ändring i identitetskartan definieras som en identitet som läggs till/tas bort för [identitetsdiagram](/help/identity-service/features/identity-graph-viewer.md) för profilen, för identitetsnamnutrymmen som mappas för export.</li><li>En ändring för ett attribut definieras som en uppdatering för attributet, för attribut som mappas till målet.</li></ul> | <ul><li>De målgrupper som är mappade till målet och har ändrats inkluderas i `segmentMembership` -objekt. I vissa fall kan de exporteras med flera anrop. I vissa scenarier kan även vissa målgrupper som inte har ändrats inkluderas i samtalet. I vilket fall som helst exporteras bara mappade målgrupper.</li><li>Alla identiteter från de namnutrymmen som är mappade till målet i `identityMap` -objekt tas också med.</li><li>Endast de mappade attributen inkluderas i målexporten.</li></ul> |
 
 {style="table-layout:fixed"}
 
@@ -147,7 +147,7 @@ I någon av exportsituationerna ovan innehåller de exporterade filerna de profi
 
 Alla uppdateringar av en profil berättigar inte till att en profil inkluderas i stegvis filexport. Om till exempel ett attribut har lagts till i eller tagits bort från en profil, inkluderas inte profilen i exporten. Endast profiler för vilka `segmentMembership` attributet har ändrats och inkluderas i exporterade filer. Det är alltså bara om profilen blir en del av publiken eller tas bort från publiken som den inkluderas i den stegvisa filexporten.
 
-Om en ny identitet (ny e-postadress, telefonnummer, ECID och så vidare) läggs till i en profil i [identitetsdiagram](/help/identity-service/ui/identity-graph-viewer.md), som inte representerar någon anledning att inkludera profilen i en ny stegvis filexport.
+Om en ny identitet (ny e-postadress, telefonnummer, ECID och så vidare) läggs till i en profil i [identitetsdiagram](/help/identity-service/features/identity-graph-viewer.md), som inte representerar någon anledning att inkludera profilen i en ny stegvis filexport.
 
 Om en ny målgrupp läggs till i en målmappning påverkar detta inte kvalifikationer och export för ett annat segment. Exportscheman konfigureras individuellt per målgrupp och filer exporteras separat för varje segment, även om målgrupperna har lagts till i samma måldataflöde.
 

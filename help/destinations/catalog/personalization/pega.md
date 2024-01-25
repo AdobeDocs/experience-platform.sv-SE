@@ -2,7 +2,7 @@
 title: Pega-anslutning för kundens beslutshubb
 description: Använd Pega Customer Decision Hub-destinationen i Adobe Experience Platform för att skicka profilattribut och data om målgruppsmedlemskap till Pega Customer Decision Hub för beslut om nästa bästa åtgärd.
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '995'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Innan du kan använda det här målet för att exportera data från Adobe Experi
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Pega Customer Decision Hub] har stöd för aktivering av anpassade användar-ID:n som beskrivs i tabellen nedan. Mer information finns i [identiteter](/help/identity-service/namespaces.md).
+[!DNL Pega Customer Decision Hub] har stöd för aktivering av anpassade användar-ID:n som beskrivs i tabellen nedan. Mer information finns i [identiteter](/help/identity-service/features/namespaces.md).
 
 | Målidentitet | Beskrivning |
 |---|---|

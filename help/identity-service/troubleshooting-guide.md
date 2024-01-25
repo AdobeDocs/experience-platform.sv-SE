@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Felsökningsguide för identitetstjänst
 description: Det här dokumentet innehåller svar på vanliga frågor om Adobe Experience Platform Identity Service samt en felsökningsguide för vanliga fel.
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
 workflow-type: tm+mt
-source-wordcount: '2176'
+source-wordcount: '2166'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Genom att sätta etiketter på vissa datafält som identiteter i data för post-
 
 ## Vad är kända och anonyma identiteter?
 
-En känd identitet avser ett identitetsvärde som kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person. Exempel på kända identiteter kan vara e-postadresser, telefonnummer och CRM-ID:n.
+En känd identitet avser ett identitetsvärde som kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person. Exempel på kända identiteter kan vara e-postadresser, telefonnummer och CRM-ID.
 
 En anonym identitet refererar till ett identitetsvärde som inte kan användas fristående eller tillsammans med annan information för att identifiera, kontakta eller hitta en enskild person (till exempel ett cookie-ID).
 
@@ -39,13 +39,13 @@ En anonym identitet refererar till ett identitetsvärde som inte kan användas f
 
 Ett privat identitetsdiagram är en privat karta över relationer mellan sammanfogade och länkade identiteter, som bara är synlig för din organisation.
 
-När fler än en identitet ingår i data som har importerats från en direktuppspelningsslutpunkt eller skickats till en datauppsättning som är aktiverad för [!DNL Identity Service]är dessa identiteter länkade i det privata identitetsdiagrammet. [!DNL Identity Service] använder det här diagrammet för att skapa magra identiteter för en viss konsument eller enhet, vilket möjliggör identitetssammanfogning och profilsammanfogning.
+När fler än en identitet ingår i data som har importerats från en direktuppspelningsslutpunkt eller skickats till en datauppsättning som är aktiverad för [!DNL Identity Service]är dessa identiteter länkade i det privata identitetsdiagrammet. [!DNL Identity Service] använder det här diagrammet för att skapa magra identiteter för en viss konsument eller enhet, vilket möjliggör identitetssammanfogning och profilsammanslagning.
 
 ## Hur skapar jag flera identitetsfält i ett XDM-schema?
 
-[Experience Data Model (XDM)](../xdm/home.md) scheman har stöd för flera identitetsfält. Alla datafält av typen `string` i ett schema som implementerar den enskilda XDM-profilen eller XDM ExperienceEvent-klassen kan märkas som ett identitetsfält. När de har etiketterats läggs alla data i dessa fält till i profilens identitetskarta.
+[Experience Data Model (XDM)](../xdm/home.md) scheman stöder flera identitetsfält. Alla datafält av typen `string` i ett schema som implementerar den enskilda XDM-profilen eller XDM ExperienceEvent-klassen kan märkas som ett identitetsfält. När de har etiketterats läggs alla data i dessa fält till i profilens identitetskarta.
 
-Anvisningar om hur du etiketterar ett XDM-fält som ett identitetsfält med användargränssnittet finns i [Identitetsavsnittet](../xdm/tutorials/create-schema-ui.md) i schemaredigeraren. Om du använder API:t kan du läsa [Identitetsbeskrivningsavsnitt](../xdm/tutorials/create-schema-api.md) i API-självstudiekursen för schemaregistret.
+Anvisningar om hur du etiketterar ett XDM-fält som ett identitetsfält med användargränssnittet finns i [Identitetssektion](../xdm/tutorials/create-schema-ui.md) i schemaredigeraren. Om du använder API:t kan du läsa [Identitetsbeskrivningsavsnitt](../xdm/tutorials/create-schema-api.md) i API-självstudiekursen för schemaregistret.
 
 ## Finns det kontexter där vissa fält inte ska märkas som identiteter?
 
@@ -59,9 +59,9 @@ Använda [`/cluster/members` slutpunkt](./api/list-cluster-identites.md) i Ident
 
 ## Vad är ett identitetsnamnutrymme?
 
-Ett ID-namnutrymme ger kontext för hur identitetsfält relaterar till en kunds identitet. Identitetsfält under namnutrymmet&quot;E-post&quot; ska till exempel överensstämma med ett standardformat för e-post (namn)<span>@emailprovider.com) medan fält som använder namnutrymmet &quot;Phone&quot; bör överensstämma med ett standardtelefonnummer (till exempel 987-555-1234 i Nordamerika).
+Ett ID-namnutrymme ger kontext för hur identitetsfält relaterar till en kunds identitet. Identitetsfält under namnutrymmet&quot;E-post&quot; ska till exempel överensstämma med ett standardformat för e-post (namn)<span>@emailprovider.com) Fälten som använder namnutrymmet &quot;Phone&quot; bör överensstämma med ett standardtelefonnummer (till exempel 987-555-1234 i Nordamerika).
 
-Namnutrymmen skiljer på liknande identitetsvärden mellan olika CRM-system. Ta till exempel en profil som innehåller ett numeriskt lojalitets-ID som är kopplat till ditt företags belöningsprogram. Namnutrymmet&quot;Loyalty&quot; skulle skilja det här värdet från ett liknande numeriskt ID för e-handelssystemet som också visas i samma profil.
+Namnutrymmen skiljer på liknande identitetsvärden mellan olika CRM-system. Ta till exempel en profil som innehåller ett numeriskt lojalitets-ID som är kopplat till ditt företags belöningsprogram. Ett namnutrymme med &quot;Loyalty&quot; skulle separera det här värdet från ett liknande numeriskt ID för e-handelssystemet som också visas i samma profil.
 
 Se [Översikt över namnutrymmet identity](./home.md) för mer information.
 
@@ -69,11 +69,11 @@ Se [Översikt över namnutrymmet identity](./home.md) för mer information.
 
 Identitetsfält måste kopplas till ett befintligt ID-namnutrymme när de skapas. Alla nya namnutrymmen måste vara [som skapats med API](#how-do-i-create-a-custom-namespace-for-my-organization) innan de kopplas till identitetsfält.
 
-Stegvisa instruktioner för hur du definierar ett namnutrymme när du skapar en identitetsbeskrivning med API:t finns i avsnittet om [skapa en beskrivning](../xdm/tutorials/create-schema-ui.md) i Utvecklarhandbok för schemaregister. Följ stegen i [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-api.md).
+Stegvisa instruktioner för hur du definierar ett namnutrymme när du skapar en identitetsbeskrivning med API:t finns i avsnittet om [skapa en beskrivning](../xdm/tutorials/create-schema-ui.md) i Utvecklarhandbok för schemaregister. Följ stegen i dialogrutan för att markera ett schemafält som en identitet i användargränssnittet [Schemaredigeraren, genomgång](../xdm/tutorials/create-schema-api.md).
 
 ## Vilka är de vanliga ID-namnutrymmena från Experience Platform? {#standard-namespaces}
 
-Standardnamnutrymmen för identiteter är namnutrymmen som är tillgängliga för alla organisationer. Se [Översikt över namnutrymmen för identiteter](./namespaces.md) för en fullständig lista över tillgängliga standardnamnutrymmen.
+Standardnamnutrymmen för identiteter är namnutrymmen som är tillgängliga för alla organisationer. Se [Översikt över namnutrymmen för identiteter](./features/namespaces.md) för en fullständig lista över tillgängliga standardnamnutrymmen.
 
 ## Var hittar jag en lista över de identitetsnamnutrymmen som är tillgängliga för min organisation?
 
@@ -167,7 +167,7 @@ Kontrollera att du tar med den angivna parametern i sökvägen för begäran inn
 }
 ```
 
-Det här felmeddelandet visas när du försöker hämta identitetsinformation för mer än det maximala antalet [XID:n](#what-are-composite-identities-and-xids) tillåts i ett enda API-anrop. Minska antalet XID i din begäran till under den gräns som visas för att lösa problemet.
+Det här felmeddelandet visas när du försöker hämta identitetsinformation för mer än det maximala antalet [XID](#what-are-composite-identities-and-xids) tillåts i ett enda API-anrop. Minska antalet XID i din begäran till under den gräns som visas för att lösa problemet.
 
 
 ### Det finns en gräns för 1000 compositeXids i ett enskilt anrop
@@ -194,7 +194,7 @@ Det här felmeddelandet visas när du försöker hämta identitetsinformation f�
 
 Det här felmeddelandet visas när en `graph-type` frågeparametern har fått ett ogiltigt värde i begärandesökvägen. Se avsnittet om [identitetsdiagram](./home.md) i [!DNL Identity Service] översikt för att lära dig vilka diagramtyper som stöds.
 
-### Tjänsttoken har inte ett giltigt omfång
+### Tjänsttoken har inte ett giltigt scope
 
 ```json
 {
@@ -216,7 +216,7 @@ Det här felmeddelandet visas när din organisation inte har tilldelats rätt be
 }
 ```
 
-Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API:er. Se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du skapar nya åtkomsttoken.
+Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API. Se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du genererar nya åtkomsttoken.
 
 ### Autentiseringstjänsttoken är inte giltig
 
@@ -228,7 +228,7 @@ Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphö
 }
 ```
 
-Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API:er. Se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du skapar nya åtkomsttoken.
+Om det här felet inträffar är din åtkomsttoken ogiltig. Åtkomsttoken upphör att gälla var 24:e timme och måste genereras om för att du ska kunna fortsätta använda [!DNL Platform] API. Se [självstudiekurs om autentisering](https://www.adobe.com/go/platform-api-authentication-en) för instruktioner om hur du genererar nya åtkomsttoken.
 
 ### Användartoken har inte en giltig produktkontext
 
@@ -294,7 +294,7 @@ Här följer en lista med felmeddelanden som rör [!DNL Identity Service] du kan
 }
 ```
 
-[!DNL Identity Service] bara använder identiteter för post- eller tidsseriedata som uppfyller [!DNL Profile] eller [!DNL ExperienceEvent] respektive. Försöker importera data för [!DNL Identity Service] som inte följer någon klass utlöser detta fel.
+[!DNL Identity Service] bara använder identiteter för post- eller tidsseriedata som uppfyller [!DNL Profile] eller [!DNL ExperienceEvent] respektive. Försöker importera data för [!DNL Identity Service] som inte följer någon av klasserna utlöser det här felet.
 
 ### Det fanns 0 giltiga identiteter i de första 100 raderna i den bearbetade gruppen
 

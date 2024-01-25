@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 44ffcc09edcfe35bdd456b509fac6f096ef8e022
+source-git-commit: 0d111241658b4014d1ca2e6013d21a4782d81be9
 workflow-type: tm+mt
 source-wordcount: '1840'
 ht-degree: 0%
@@ -103,7 +103,7 @@ Mer information om [!DNL Destinations], se [[!DNL Destinations] översikt](../..
 
 Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
-Som en del av den attributbaserade åtkomstkontrollen har `view-identity-graph` Med -behörighet kan du avgöra vilka användare i organisationen som har tillgång till identitetsdiagrammet via användargränssnittet eller API:erna. Mer information finns i handboken [med identitetsdiagramvisningsprogrammet](../../identity-service/ui/identity-graph-viewer.md).
+Som en del av den attributbaserade åtkomstkontrollen har `view-identity-graph` Med -behörighet kan du avgöra vilka användare i organisationen som har tillgång till identitetsdiagrammet via användargränssnittet eller API:erna. Mer information finns i handboken [med identitetsdiagramvisningsprogrammet](../../identity-service/features/identity-graph-viewer.md).
 
 Mer information om [!DNL Identity Service], se [[!DNL Identity Service] översikt](../../identity-service/home.md).
 

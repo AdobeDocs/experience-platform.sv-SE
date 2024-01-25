@@ -3,11 +3,11 @@ title: Exempelscenarier för konfiguration av identitetsinställningar
 description: Lär dig mer om exempelscenarier för konfigurering av identitetsinställningar.
 hide: true
 hidefromtoc: true
-badge: Alfa
+badge: Alpha
 exl-id: bccd5b7a-3836-47d8-b976-51747b9c1803
-source-git-commit: 20b8433cee719329bce562069c328adb906697a0
+source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -70,5 +70,5 @@ Mer information om regler för länkning av identitetsdiagram finns i följande 
 
 * [Översikt över regler för länkning av identitetsdiagram](./overview.md)
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
-* [Identitetstjänst och kundprofil i realtid](identity-and-profile.md)
-* [Identitetslänkningslogik](./identity-linking-logic.md)
+* [Identitetstjänst och kundprofil i realtid](../identity-and-profile.md)
+* [Identitetslänkningslogik](../features/identity-linking-logic.md)

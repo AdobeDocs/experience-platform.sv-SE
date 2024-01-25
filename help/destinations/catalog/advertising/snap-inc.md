@@ -2,7 +2,7 @@
 title: Snap Inc-anslutning
 description: Lär dig hur du ansluter till Snapchat Ads Platform och exporterar dina målgrupper från Experience Platform.
 exl-id: 1f0f2dc0-5f3d-424b-9b22-b1a14ac30039
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '983'
 ht-degree: 1%
@@ -37,7 +37,7 @@ Om du vill använda den här destinationen måste du ha ett Snapchat Ads-konto. 
 
 ## Identiteter som stöds {#supported-identities}
 
-The *Snap Inc* målet har stöd för aktivering av de identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+The *Snap Inc* målet har stöd för aktivering av de identiteter som beskrivs i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 Alla identifierare som skickats till *Snap Inc* målet måste hash-kodas i SHA-256-format. Om du vill hash-koda identifierare av oformaterad text innan du skickar dem till målet, markerar du **[!UICONTROL Apply transformation]** när målidentifierare mappas för målet.
 

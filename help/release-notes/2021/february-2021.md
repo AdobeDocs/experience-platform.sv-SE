@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
-source-git-commit: 8f61840ad60b7d24c980b218b6f742485f5ebfdd
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1135'
+ht-degree: 1%
 
 ---
 
@@ -48,15 +48,15 @@ Data Science Workspace använder maskininlärning och artificiell intelligens f�
 
 | Funktion | Beskrivning |
 | --- | --- |
-| JupyterLab EDA-anteckningsbok | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Se självstudiekursen om [utforska webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md) för mer information. |
+| JupyterLab EDA Notebook | Den experimentella dataanalysen (EDA) Python-anteckningsboken finns nu tillgänglig i Jupyterlab. Den här bärbara datorn är utformad för att hjälpa dig att upptäcka datamönster, kontrollera datavården och sammanfatta relevanta data för prediktiva modeller. Se självstudiekursen om [undersöka webbaserade data för prediktiva modeller](../../data-science-workspace/jupyterlab/eda-notebook.md) för mer information. |
 
-Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arbetsytan Datavetenskap](../../data-science-workspace/home.md).
+Mer allmän information om arbetsytan Datavetenskap finns i [Översikt över arbetsytan Data Science](../../data-science-workspace/home.md).
 
 ## [!DNL Dataflows] {#dataflows}
 
 I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
 
-Dataflöden är en representation av datajobb som flyttar data mellan plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan den aktiveras [!DNL Destinations].
+Dataflöden är en representation av datajobb som flyttar data mellan olika plattformar. Dessa dataflöden är konfigurerade för olika tjänster, vilket hjälper dig att flytta data från källanslutningar till måldatauppsättningar, där de sedan används av [!DNL Identity Service] och [!DNL Real-Time Customer Profile] innan den aktiveras [!DNL Destinations].
 
 **Nya funktioner**
 
@@ -72,7 +72,7 @@ Mer allmän information om dataflöden finns i [dataflödesöversikt](../../data
 
 **Nya destinationer**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | The [!DNL LinkedIn Matched Audiences] kan du aktivera målgrupper i [!DNL LinkedIn] social plattform. |
 
@@ -88,7 +88,7 @@ XDM är en öppet dokumenterad specifikation som utformats för att förbättra 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu i [!UICONTROL Browse] i [!UICONTROL Schemas] arbetsytan och dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Se dokumenten på [utforska XDM-resurser](../../xdm/ui/explore.md) och [hantera scheman](../../xdm/ui/resources/schemas.md) i användargränssnittet om du vill ha mer information. |
+| Uppgraderat sökgränssnitt | Förbättrade sökfunktioner finns nu i [!UICONTROL Browse] i [!UICONTROL Schemas] arbetsytan och dialogrutan för val av schemafältgrupp i [!DNL Schema Editor].<br><br>När du söker efter en term tidigare innehåller resultatet bara XDM-resurser vars namn matchar sökfrågan. Förutom resurser vars namn matchar frågan kommer resurser som innehåller enskilda attribut som matchar termen att tas med. På så sätt kan du söka efter XDM-resurser baserat på de attribut de innehåller i stället för efter resursnamn.<br><br>Se dokumenten på [utforska XDM-resurser](../../xdm/ui/explore.md) och [hantera scheman](../../xdm/ui/resources/schemas.md) i användargränssnittet för mer information. |
 
 Mer allmän information om XDM finns i [XDM - systemöversikt](../../xdm/home.md).
 
@@ -96,13 +96,13 @@ Mer allmän information om XDM finns i [XDM - systemöversikt](../../xdm/home.md
 
 För att kunna leverera relevanta digitala upplevelser måste ni ha en fullständig förståelse för era kunder. Detta blir svårare när era kunddata fragmenteras över olika system, vilket gör att varje enskild kund ser ut att ha flera&quot;identiteter&quot;.
 
-Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+Adobe Experience Platform [!DNL Identity Service] hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter och enheter, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Se [dokument för identitetsdiagramvisningsprogram](../../identity-service/ui/identity-graph-viewer.md) för mer information. |
+| Identitetsdiagramvisningsprogram | Med identitetsdiagramvisningsprogrammet kan du validera och visualisera identiteter som sammanfogats i användargränssnittet, vilket ger förbättrad felsökning och genomskinlighet. Se [dokument för identitetsdiagramvisningsprogram](../../identity-service/features/identity-graph-viewer.md) för mer information. |
 
 Mer allmän information om [!DNL Identity Service], se [Översikt över identitetstjänsten](../../identity-service/home.md).
 
@@ -114,7 +114,7 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Beräknade attribut (alfa) | ***Obs! Den här funktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.*** <br/><br/>Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Sedan kan ni använda aggregaten för segmentering, aktivering och personalisering. Exempel på sådana funktioner är count, sum, Average, min, max, true/false. Beräknade attribut är för närvarande bara tillgängliga via API. |
+| Beräknade attribut (Alpha) | ***Obs! Den här funktionen är för närvarande alfavärden och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.*** <br/><br/>Beräknade attribut är funktioner som används för att samla data på händelsenivå i attribut på profilnivå. Sedan kan ni använda aggregaten för segmentering, aktivering och personalisering. Exempel på sådana funktioner är count, sum, Average, min, max, true/false. Beräknade attribut är för närvarande bara tillgängliga via API. |
 
 Mer information om kundprofil i realtid, inklusive självstudiekurser och bästa metoder för att arbeta med [!DNL Profile] data, kan du börja med att läsa [Översikt över kundprofiler i realtid](../../profile/home.md).
 

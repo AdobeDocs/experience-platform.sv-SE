@@ -2,9 +2,9 @@
 title: API-slutpunkt för arbetsorder
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 15f3f7c9e0efb2fe5e9a1acd39b1cf23790355cb
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1283'
+source-wordcount: '1281'
 ht-degree: 0%
 
 ---
@@ -87,7 +87,7 @@ curl -X POST \
 | `datasetId` | Om du tar bort från en enskild datauppsättning måste det här värdet vara ID:t för datauppsättningen i fråga. Om du tar bort från alla datauppsättningar anger du värdet till `ALL`.<br><br>Om du anger en enskild datauppsättning måste datamängdens associerade XDM-schema (Experience Data Model) ha en primär identitet definierad. Om datauppsättningen inte har någon primär identitet måste den ha en identitetskarta för att kunna ändras av en begäran om datatillägslivet.<br>Om det finns en identitetskarta finns den som ett fält på den översta nivån med namnet `identityMap`.<br>Observera att en datauppsättningsrad kan ha många identiteter i sin identitetskarta, men bara en kan markeras som primär. `"primary": true` måste inkluderas för att tvinga `id` som matchar en primär identitet. |
 | `displayName` | Visningsnamnet för postborttagningsbegäran. |
 | `description` | En beskrivning av postborttagningsbegäran. |
-| `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av en [namnutrymme för identitet](../../identity-service/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>If `datasetId` anger en enda datauppsättning, varje enhet under `identities` måste använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>If `datasetId` är inställd på `ALL`, `identities` arrayen är inte begränsad till ett enda namnutrymme eftersom varje datamängd kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, enligt rapporter från [Identitetstjänst](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
+| `identities` | En array som innehåller identiteterna för minst en användare vars information du vill ta bort. Varje identitet består av en [namnutrymme för identitet](../../identity-service/features/namespaces.md) och ett värde:<ul><li>`namespace`: Innehåller en enda strängegenskap, `code`, som representerar identitetsnamnutrymmet. </li><li>`id`: Identitetsvärdet.</ul>If `datasetId` anger en enda datauppsättning, varje enhet under `identities` måste använda samma identitetsnamnutrymme som schemats primära identitet.<br><br>If `datasetId` är inställd på `ALL`, `identities` arrayen är inte begränsad till ett enda namnutrymme eftersom varje datamängd kan vara olika. Dina förfrågningar är dock fortfarande begränsade till de namnutrymmen som är tillgängliga för din organisation, enligt rapporter från [Identitetstjänst](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 {style="tabellayout:auto"}
 

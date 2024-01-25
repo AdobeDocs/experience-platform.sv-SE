@@ -2,9 +2,9 @@
 title: Översikt över granskningsloggar
 description: Lär dig hur granskningsloggar gör det möjligt för dig att se vilka åtgärder som har utförts och av vem, i Adobe Experience Platform.
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
-source-wordcount: '1264'
+source-wordcount: '1261'
 ht-degree: 3%
 
 ---
@@ -50,8 +50,8 @@ Följande tabell visar vilka åtgärder som resurser registreras av granskningsl
 | [Datatyper](../../../xdm/schema/composition.md#data-type) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Destination](../../../destinations/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li><li>Aktivera</li><li>Inaktivera</li><li>Aktivera datauppsättning</li><li>Ta bort datauppsättning</li><li>Aktivera profil</li><li>Ta bort profil</li></ul> |
 | [Fältgrupp](../../../xdm/schema/composition.md#field-group) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
-| [Identitetsdiagram](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>Visa</li></ul> |
-| [Namnutrymme för identitet](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>Skapa</li><li>Uppdatera</li></ul> |
+| [Identitetsdiagram](../../../identity-service/features/identity-graph-viewer.md) | <ul><li>Visa</li></ul> |
+| [Namnutrymme för identitet](../../../identity-service/features/namespaces.md) | <ul><li>Skapa</li><li>Uppdatera</li></ul> |
 | [Kopplingsprincip](../../../profile/merge-policies/overview.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Produktprofil](../../../access-control/home.md) | <ul><li>Skapa</li><li>Uppdatera</li><li>Ta bort</li></ul> |
 | [Fråga](../../../query-service/ui/overview.md) | <ul><li>Kör</li></ul> |

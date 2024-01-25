@@ -2,7 +2,7 @@
 title: Google Display & Video 360-anslutning
 description: Display & Video 360, tidigare DoubleClick Bid Manager, är ett verktyg som används för att utföra återannonsering och målgruppsanpassade digitala kampanjer i olika källor för Display, Video och Mobile.
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 0%
@@ -28,7 +28,7 @@ Observera följande information som gäller [!DNL Google Display & Video 360] m�
 
 ## Identiteter som stöds {#supported-identities}
 
-[!DNL Google Display & Video 360] stöder aktivering av målgrupper baserat på de identiteter som visas i tabellen nedan. Läs mer om [identiteter](/help/identity-service/namespaces.md).
+[!DNL Google Display & Video 360] stöder aktivering av målgrupper baserat på de identiteter som visas i tabellen nedan. Läs mer om [identiteter](/help/identity-service/features/namespaces.md).
 
 | Identitet | Beskrivning | Överväganden |
 |---|---|---|

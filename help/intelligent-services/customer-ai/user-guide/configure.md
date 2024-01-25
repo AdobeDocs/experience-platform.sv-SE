@@ -5,9 +5,9 @@ feature: Customer AI
 title: Konfigurera en AI-instans för kund
 description: AI/ML-tjänster ger kunden AI som en lättanvänd Adobe Sensei-tjänst som kan konfigureras för olika användningsområden. I följande avsnitt beskrivs hur du konfigurerar en instans av Kundens AI.
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 973a9cae711780448e5c708622a71ba928695beb
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '2737'
+source-wordcount: '2740'
 ht-degree: 0%
 
 ---
@@ -113,7 +113,7 @@ Om fler än en identitet är tillgänglig i ett namnutrymme måste du välja rä
 
 >[!NOTE]
 >
-> Om det inte finns någon giltig identitetstyp (namnutrymme) för en datauppsättning måste du ange en primär identitet och tilldela den till ett identitetsnamnutrymme med hjälp av [schemaredigerare](../../../xdm/schema/composition.md#identity). Mer information om namnutrymmen och identiteter finns på [Namnutrymmen för identitetstjänst](../../../identity-service/namespaces.md) dokumentation.
+> Om det inte finns någon giltig identitetstyp (namnutrymme) för en datauppsättning måste du ange en primär identitet och tilldela den till ett identitetsnamnutrymme med hjälp av [schemaredigerare](../../../xdm/schema/composition.md#identity). Mer information om namnutrymmen och identiteter finns på [Namnutrymmen för identitetstjänst](../../../identity-service/features/namespaces.md) dokumentation.
 
 ## Definiera mål {#define-a-goal}
 
@@ -207,7 +207,7 @@ Du kan också välja att ta med profilattribut från den dagliga exporten av ög
 
 I följande exempel läggs ett anpassat händelse- och profilattribut till i en Kund AI-instans. Målet med kundens AI-instans är att förutsäga sannolikheten för att en kund köper en annan Luma-produkt inom de kommande 60 dagarna. Vanligtvis är produktdata länkade till en produkt-SKU. I det här fallet är SKU:n `prd1013`. När kundens AI-modell har tränats/bedömts kan denna SKU länkas till en händelse och visas som en inflytelserik faktor för en benägenhetspyts.
 
-Kundens AI tillämpar automatiskt generering av funktioner som&quot;Dagar sedan&quot; eller&quot;Antal&quot; mot anpassade händelser som **Se köpet**. Om den här händelsen ansågs vara en inflytelserik faktor för varför kunderna är höga, medelhöga eller låga, visar kundens AI det som `Days since prd1013 purchase` eller `Count of prd1013 purchase`. Genom att skapa detta som en anpassad händelse kan du ge händelsen ett nytt namn som gör resultatet mycket lättare att läsa. Exempel, `Days since Watch purchase`. Dessutom använder kundens AI den här händelsen i utbildningen och poängsättningen även om händelsen inte är en standardhändelse. Det innebär att du kan lägga till flera händelser som du tror kan vara inflytelserika och anpassa modellen ytterligare genom att inkludera data som reservationer, besöksloggar och andra händelser. Genom att lägga till dessa datapunkter ökar du noggrannheten och precisionen i kundens AI-modell ytterligare.
+Kundens AI tillämpar automatiskt generering av funktioner som&quot;Dagar sedan&quot; eller&quot;Antal&quot; mot anpassade händelser som **Se köpet**. Om den här händelsen ansågs vara en inflytelserik faktor för varför kunderna är höga, medelhöga eller låga, visar kundens AI det som `Days since prd1013 purchase` eller `Count of prd1013 purchase`. Genom att skapa detta som en anpassad händelse kan du ge händelsen ett nytt namn som gör resultatet mycket lättare att läsa. Till exempel: `Days since Watch purchase`. Dessutom använder kundens AI den här händelsen i utbildningen och poängsättningen även om händelsen inte är en standardhändelse. Det innebär att du kan lägga till flera händelser som du tror kan vara inflytelserika och anpassa modellen ytterligare genom att inkludera data som reservationer, besöksloggar och andra händelser. Genom att lägga till dessa datapunkter ökar du noggrannheten och precisionen i kundens AI-modell ytterligare.
 
 ![exempel på en anpassad händelse](../images/user-guide/custom-event-name.png)
 

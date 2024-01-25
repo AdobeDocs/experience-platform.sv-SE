@@ -5,9 +5,9 @@ title: Definiera en relation mellan två scheman med Schemaredigeraren
 description: I det här dokumentet finns en självstudiekurs för att definiera en relation mellan två scheman med hjälp av Schemaredigeraren i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 8b5c1776804bbacad5c3d72dd48c1716380cca79
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,7 @@ Referensschemat &quot;[!DNL Hotels]&quot; är baserad på en anpassad &quot;[!DN
 
 >[!NOTE]
 >
->Mer information om hur du skapar anpassade identitetsnamnutrymmen finns i [Identitetstjänstens dokumentation](../../identity-service/namespaces.md#manage-namespaces).
+>Mer information om hur du skapar anpassade identitetsnamnutrymmen finns i [Identitetstjänstens dokumentation](../../identity-service/features/namespaces.md#manage-namespaces).
 
 ## Skapa en relationsfältgrupp
 

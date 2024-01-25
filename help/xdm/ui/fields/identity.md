@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Definiera identitetsfält i användargränssnittet
 description: Lär dig hur du definierar ett identitetsfält i användargränssnittet i Experience Platform.
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
 workflow-type: tm+mt
 source-wordcount: '601'
 ht-degree: 0%
@@ -20,7 +20,7 @@ I Experience Data Model (XDM) representerar ett identitetsfält ett fält som ka
 Identitetsfält är en viktig komponent i hur kundidentitetsdiagram skapas i Platform, som i slutändan påverkar hur kundprofilen i realtid sammanfogar olika datablad för att få en fullständig bild av kunden. Innan du definierar identitetsfält i dina scheman ska du läsa följande dokumentation för att lära dig mer om de viktigaste tjänsterna och begreppen som rör identitetsfält:
 
 * [Adobe Experience Platform Identity Service](../../../identity-service/home.md): Överbryggar identiteter mellan enheter och system, länkar samman datauppsättningar baserat på de identitetsfält som definieras av XDM-scheman som de följer.
-   * [Identitetsnamnutrymmen](../../../identity-service/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en enskild person, och är en obligatorisk komponent för varje identitetsfält.
+   * [Identitetsnamnutrymmen](../../../identity-service/features/namespaces.md): Identitetsnamnutrymmen definierar de olika typerna av identitetsinformation som kan relateras till en enskild person, och är en obligatorisk komponent för varje identitetsfält.
 * [Kundprofil i realtid](../../../profile/home.md): Använder kundidentitetsdiagram för att skapa en enhetlig konsumentprofil som bygger på aggregerade data från flera källor, som uppdateras i nära realtid.
 
 ## Definiera ett identitetsfält {#define-a-identity-field}
@@ -56,6 +56,6 @@ Om du har definierat en primär identitet för schemat kan du nu fortsätta till
 
 ## Nästa steg
 
-I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden på [visningsprogram för identitetsdiagram](../../../identity-service/ui/identity-graph-viewer.md) om du vill lära dig hur du utforskar organisationens privata diagram i användargränssnittet.
+I den här handboken beskrivs hur du definierar ett identitetsfält i användargränssnittet. När data importeras med det här schemat uppdateras dina kundidentitetsdiagram så att de återspeglar schemats identitetsfält. Se guiden på [visningsprogram för identitetsdiagram](../../../identity-service/features/identity-graph-viewer.md) om du vill lära dig hur du utforskar organisationens privata diagram i användargränssnittet.
 
 Se översikten på [definiera fält i användargränssnittet](./overview.md#special) för att lära dig hur du definierar andra XDM-fälttyper i [!DNL Schema Editor].

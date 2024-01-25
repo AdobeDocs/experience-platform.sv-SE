@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingen för kundattribut
 description: Lär dig koppla kundattribut till Adobe Experience Platform med API:er eller användargränssnittet
 exl-id: 63765ecd-ddb5-4992-a3de-d53f054bfb28
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '381'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ The [!DNL Customer Attributes] source skapar automatiskt datauppsättningen för
 
 ## Identiteter
 
-Den primära identiteten för en datauppsättning finns i den första kolumnen i CSV-filen för källdata. The [!DNL Customer Attributes] källan förutsätter att identiteten alltid är mappad till [`CORE` namespace](../../../identity-service/namespaces.md), ett systemgenererat namnutrymme som stöds av [[!DNL Identity Service]](../../../identity-service/home.md).
+Den primära identiteten för en datauppsättning finns i den första kolumnen i CSV-filen för källdata. The [!DNL Customer Attributes] källan förutsätter att identiteten alltid är mappad till [`CORE` namespace](../../../identity-service/features/namespaces.md), ett systemgenererat namnutrymme som stöds av [[!DNL Identity Service]](../../../identity-service/home.md).
 
 Du kan inte välja ett befintligt namnutrymme för identiteten när du använder [!DNL Customer Attributes] källa [!DNL Customer Attributes] antar att schemats primära identitet alltid finns i identitetskartan. [!DNL Customer Attributes] skapar sedan mappningen av käll-ID:t till identitetsmappningens UUID på ett automatiskt sätt.
 

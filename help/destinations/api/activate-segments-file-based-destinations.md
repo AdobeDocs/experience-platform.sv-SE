@@ -4,7 +4,7 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
 source-wordcount: '4324'
 ht-degree: 0%
@@ -3424,7 +3424,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/idnamespace/i
 
 +++ Visa tillgängliga identiteter som ska användas i indatabchemat
 
-Svaret returnerar de identiteter som du kan använda när du skapar indatarammet. Observera att det här svaret returnerar båda [standard](/help/identity-service/namespaces.md#standard) och [anpassad](/help/identity-service/namespaces.md#manage-namespaces) identitetsnamnutrymmen som du konfigurerar i Experience Platform.
+Svaret returnerar de identiteter som du kan använda när du skapar indatarammet. Observera att det här svaret returnerar båda [standard](/help/identity-service/features/namespaces.md#standard) och [anpassad](/help/identity-service/features/namespaces.md#manage-namespaces) identitetsnamnutrymmen som du konfigurerar i Experience Platform.
 
 ```json
 [

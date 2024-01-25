@@ -2,10 +2,10 @@
 title: CSV-mall till API-slutpunkt för schemakonvertering
 description: Med slutpunkten /rpc/csv2schema i API:t för schemaregister kan du använda CSV-mallar för att automatiskt skapa XDM-scheman (Experience Data Model).
 exl-id: cf08774a-db94-4ea1-a22e-bb06385f8d0e
-source-git-commit: b4c186c8c40d1372fb5011f49979523e1201fb0b
+source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
 workflow-type: tm+mt
-source-wordcount: '854'
-ht-degree: 5%
+source-wordcount: '849'
+ht-degree: 3%
 
 ---
 
@@ -15,11 +15,11 @@ The `/rpc/csv2schema` slutpunkt i [!DNL Schema Registry] Med API kan du automati
 
 ## Komma igång
 
-The `/rpc/csv2schema` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Adobe Experience Platform-API.
+The `/rpc/csv2schema` slutpunkten är en del av [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Adobe Experience Platform-API.
 
 The `/rpc/csv2schema` slutpunkten är en del av RPC-anropen (Remote Procedure Call) som stöds av [!DNL Schema Registry]. Till skillnad från andra slutpunkter i [!DNL Schema Registry] API, RPC-slutpunkter kräver inga ytterligare rubriker som `Accept` eller `Content-Type`, och använd inte `CONTAINER_ID`. Istället måste de använda `/rpc` namespace, vilket visas i API-anropen nedan.
 
-## CSV-filkrav
+## Krav för CSV-filer
 
 Om du vill använda den här slutpunkten måste du först skapa en CSV-fil med lämpliga kolumnrubriker och motsvarande värden. Vissa kolumner är obligatoriska, medan resten är valfria. Tabellen nedan beskriver de här kolumnerna och deras roll när det gäller att skapa scheman.
 
@@ -28,15 +28,15 @@ Om du vill använda den här slutpunkten måste du först skapa en CSV-fil med l
 | 1 | `isIgnored` | Valfritt | Vid inkludering och inställd på `true`anger att fältet inte är klart för API-överföring och ska ignoreras. |
 | 2 | `isCustom` | Obligatoriskt | Anger om fältet är ett anpassat fält eller inte. |
 | 3 | `fieldGroupId` | Valfritt | ID:t för fältgruppen som ett anpassat fält ska associeras med. |
-| 4 | `fieldGroupName` | (Se beskrivning) | Namnet på fältgruppen som det här fältet ska associeras med.<br><br>Valfritt för anpassade fält som inte utökar befintliga standardfält. Om inget anges tilldelas namnet automatiskt.<br><br>Krävs för standardfält eller anpassade fält som utökar standardfältgrupper, som används för att fråga `fieldGroupId`. |
-| 5 | `fieldPath` | Obligatoriskt | Den fullständiga XED-punktnotation-sökvägen för fältet. Inkludera alla fält från en standardfältgrupp (som anges under `fieldGroupName`), ange värdet till `ALL`. |
+| 4 | `fieldGroupName` | (Se beskrivning) | Namnet på fältgruppen som det här fältet ska associeras med.<br><br>Valfritt för anpassade fält som inte utökar befintliga standardfält. Om inget anges tilldelas namnet automatiskt.<br><br>Krävs för standardfält eller anpassade fält som utökar standardfältgrupper, som används för att fråga efter `fieldGroupId`. |
+| 5 | `fieldPath` | Obligatoriskt | Den fullständiga XED-punktnotation-sökvägen för fältet. Inkludera alla fält från en standardfältgrupp (enligt vad som anges under `fieldGroupName`), ange värdet till `ALL`. |
 | 6 | `displayName` | Valfritt | Fältets rubrik eller egna visningsnamn. Kan även vara ett alias för titeln om det finns något. |
 | 7 | `fieldDescription` | Valfritt | En beskrivning av fältet. Kan även vara ett alias för beskrivningen om det finns ett sådant. |
 | 8 | `dataType` | (Se beskrivning) | Anger [grundläggande datatyp](../schema/field-constraints.md#basic-types) för fältet. Krävs för alla anpassade fält.<br><br>If `dataType` är inställd på `object`, antingen `properties` eller `$ref` måste också definieras för samma rad, men inte för båda. |
-| 9 | `isRequired` | Valfritt | Anger om fältet är obligatoriskt för datainmatning. |
+| 9 | `isRequired` | Valfritt | Anger om fältet är obligatoriskt för dataöverföring. |
 | 10 | `isArray` | Valfritt | Anger om fältet är en matris av dess angivna `dataType`. |
 | 11 | `isIdentity` | Valfritt | Anger om fältet är ett identitetsfält. |
-| 12 | `identityNamespace` | Obligatoriskt om `isIdentity` är sant | The [identity namespace](../../identity-service/namespaces.md) för identitetsfältet. |
+| 12 | `identityNamespace` | Obligatoriskt om `isIdentity` är sant | The [namnutrymme för identitet](../../identity-service/features/namespaces.md) för identitetsfältet. |
 | 13 | `isPrimaryIdentity` | Valfritt | Anger om fältet är schemats primära identitet. |
 | 14 | `minimum` | Valfritt | (Endast för numeriska fält) Det lägsta värdet för fältet. |
 | 15 | `maximum` | Valfritt | (Endast för numeriska fält) Det maximala värdet för fältet. |
@@ -84,14 +84,14 @@ curl -X POST \
 | --- | --- |
 | `csv-file` | Sökvägen till CSV-mallen som lagras på den lokala datorn. |
 | `schema-class-id` | The `$id` XDM [class](../schema/composition.md#class) som det här schemat kommer att använda. |
-| `schema-name` | Ett visningsnamn för schemat. |
+| `schema-name` | Schemats visningsnamn. |
 | `schema-description` | En beskrivning av schemat. |
 
 **Svar**
 
 Ett godkänt svar returnerar en exportnyttolast som genererades från CSV-filen. Nyttolasten har en form av en array, och varje arrayobjekt är ett objekt som representerar en beroende XDM-komponent för schemat. Markera avsnittet nedan om du vill visa ett fullständigt exempel på en exportnyttolast som genererats från en CSV-fil.
 
-+++ Exempel på svarsnyttolast
++++ Exempel på nyttolast för svar
 
 ```json
 [
