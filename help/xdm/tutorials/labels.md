@@ -2,9 +2,9 @@
 title: Hantera dataanvändningsetiketter för ett schema
 description: Lär dig hur du lägger till dataanvändningsetiketter i XDM-schemafält (Experience Data Model) i Adobe Experience Platform-gränssnittet.
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 27842e7e07b6fc5884587fb75cc89bcfb4320938
+source-git-commit: 37395e5762c8d54e6fca5c3502bdbf56f5b5472c
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -39,12 +39,6 @@ Handboken kräver en fungerande förståelse av följande komponenter i Adobe Ex
 >id="platform_schemas_editgovernancelabels"
 >title="Redigera styrningsetiketter"
 >abstract="Tillämpa en etikett på ett schemafält för att ange de användningsprinciper som gäller för data i det specifika fältet."
-
->[!CONTEXTUALHELP]
->id="platform_schemas_labelusageacknowledgement"
->title="Användning av etiketter"
->abstract="Innan du redigerar etiketterna för det här objektet bör du tänka på följande nedströmseffekter:<br>Styrningspolicyer: Använd etiketter som styr om data kan aktiveras till underordnade mål. Felaktig etikettanvändning kan förhindra att data är tillgängliga längre fram i kedjan.<br>Samtyckesprofiler: Använd etiketter för att tillämpa kundens samtycke och inställningar när profiler inkluderas i segment. Felaktig etikettanvändning kan förhindra att data är tillgängliga längre fram i kedjan.<br>Åtkomstprincip: Attributbaserad åtkomstkontroll använder etiketter för att avgöra vilka användarroller som har åtkomst till specifika resurser. Oavsiktlig etikettanvändning kan hindra vissa personer i organisationen från att använda resurser som de tidigare hade tillgång till."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/overview.html" text="Attributbaserad åtkomstkontroll - översikt"
 
 Om du vill lägga till etiketter måste du först [välj ett befintligt schema att redigera](../ui/resources/schemas.md#edit) eller [skapa ett nytt schema](../ui/resources/schemas.md#create) om du vill visa dess struktur i Schemaredigeraren.
 
