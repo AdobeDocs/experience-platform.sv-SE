@@ -1,9 +1,10 @@
 ---
 title: Konfigurera åsidosättningar av dataström
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
-source-git-commit: 68174928d3b005d1e5a31b17f3f287e475b5dc86
+exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
+source-git-commit: 11feeae0409822f0b1ccba2df263f0be466d54e3
 workflow-type: tm+mt
-source-wordcount: '1429'
+source-wordcount: '1282'
 ht-degree: 0%
 
 ---
@@ -218,154 +219,7 @@ alloy("configure", {
 
 Efter [konfigurera åsidosättningar av datastream](#configure-overrides) i användargränssnittet för datainsamling kan du nu skicka åsidosättningarna till Edge Network via Mobile SDK.
 
-Om du använder Mobile SDK skickar du åsidosättningarna till Edge Network via `sendEvent` API är det andra och sista steget för att aktivera åsidosättningar av datastream-konfiguration.
-
-Mer information om Experience Platform Mobile SDK finns i [Mobile SDK-dokumentation](https://developer.adobe.com/client-sdks/edge/edge-network/).
-
-### Åsidosättning av dataström-ID via Mobile SDK {#id-override-mobile}
-
-Exemplen nedan visar hur en åsidosättning av ett datastream-ID kan se ut i en Mobile SDK-integrering. Välj flikarna nedan för att visa [!DNL iOS] och [!DNL Android] exempel.
-
->[!BEGINTABS]
-
->[!TAB iOS (Skift)]
-
-I det här exemplet visas hur en åsidosättning av ett dataström-ID ser ut i en Mobile SDK [!DNL iOS] integrering.
-
-```swift
-// Create Experience event from dictionary
-var xdmData: [String: Any] = [
-  "eventType": "SampleXDMEvent",
-  "sample": "data",
-]
-let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamIdOverride: "SampleDatastreamId")
-
-Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
-  // Handle the Edge Network response
-}
-```
-
->[!TAB Android™ (Kotlin)]
-
-I det här exemplet visas hur en åsidosättning av ett dataström-ID ser ut i en Mobile SDK [!DNL Android] integrering.
-
-```kotlin
-// Create experience event from Map
-val xdmData = mutableMapOf < String, Any > ()
-xdmData["eventType"] = "SampleXDMEvent"
-xdmData["sample"] = "data"
-
-val experienceEvent = ExperienceEvent.Builder()
-    .setXdmSchema(xdmData)
-    .setDatastreamIdOverride("SampleDatastreamId")
-    .build()
-
-Edge.sendEvent(experienceEvent) {
-    // Handle the Edge Network response
-}
-```
-
->[!ENDTABS]
-
-### Åsidosättning av dataströmskonfiguration via Mobile SDK {#config-override-mobile}
-
-Exemplen nedan visar hur en åsidosättning av en datastream-konfiguration kan se ut i en Mobile SDK-integrering. Välj flikarna nedan för att visa [!DNL iOS] och [!DNL Android] exempel.
-
->[!BEGINTABS]
-
->[!TAB iOS (Skift)]
-
-I det här exemplet visas hur en åsidosättning av en dataströmskonfiguration ser ut i en Mobile SDK [!DNL iOS] integrering.
-
-```swift
-// Create Experience event from dictionary
-var xdmData: [String: Any] = [
-  "eventType": "SampleXDMEvent",
-  "sample": "data",
-]
-
-let configOverrides: [String: Any] = [
-  "com_adobe_experience_platform": [
-    "datasets": [
-      "event": [
-        "datasetId": "SampleEventDatasetIdOverride"
-      ]
-    ]
-  ],
-  "com_adobe_analytics": [
-  "reportSuites": [
-        "MyFirstOverrideReportSuite",
-          "MySecondOverrideReportSuite",
-          "MyThirdOverrideReportSuite"
-      ]
-  ],
-  "com_adobe_identity": [
-    "idSyncContainerId": "1234567"
-  ],
-  "com_adobe_target": [
-    "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
- ],
-]
-
-let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamConfigOverride: configOverrides)
-
-Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
-  // Handle the Edge Network response
-}
-```
-
->[!TAB Android (Kotlin)]
-
-I det här exemplet visas hur en åsidosättning av en dataströmskonfiguration ser ut i en Mobile SDK [!DNL Android] integrering.
-
-```kotlin
-// Create experience event from Map
-val xdmData = mutableMapOf < String, Any > ()
-xdmData["eventType"] = "SampleXDMEvent"
-xdmData["sample"] = "data"
-
-val configOverrides = mapOf(
-    "com_adobe_experience_platform"
-    to mapOf(
-        "datasets"
-        to mapOf(
-            "event"
-            to mapOf("datasetId"
-                to "SampleEventDatasetIdOverride")
-        )
-    ),
-    "com_adobe_analytics"
-    to mapOf(
-        "reportSuites"
-        to listOf(
-            "MyFirstOverrideReportSuite",
-            "MySecondOverrideReportSuite",
-            "MyThirdOverrideReportSuite"
-        )
-    ),
-    "com_adobe_identity"
-    to mapOf(
-        "idSyncContainerId"
-        to "1234567"
-    ),
-    "com_adobe_target"
-    to mapOf(
-        "propertyToken"
-        to "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    )
-)
-
-val experienceEvent = ExperienceEvent.Builder()
-    .setXdmSchema(xdmData)
-    .setDatastreamConfigOverride(configOverrides)
-    .build()
-
-Edge.sendEvent(experienceEvent) {
-    // Handle the Edge Network response
-}
-```
-
->[!ENDTABS]
+Läs mer om hur du skickar åsidosättningar till Edge Network i [guide för att skicka åsidosättningar med sendEvent](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/) eller [guide för att skicka åsidosättningar med regler](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/).
 
 ## Exempel på nyttolast {#payload-example}
 
