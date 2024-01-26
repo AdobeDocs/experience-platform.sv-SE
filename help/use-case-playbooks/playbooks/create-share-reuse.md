@@ -4,9 +4,9 @@ title: Skapa, dela och återanvända spelningsboksinstanser
 description: Lär dig hur du skapar, delar och återanvänder spelningsboksinstanser för att få fram ett marknadsföringsexempel.
 badgeBeta: label="Beta" type="Informative"
 exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: f477cb4d410058b8bf2692a7afde70bf23a5aac7
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '729'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,11 @@ ht-degree: 0%
 Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!UICONTROL Playbooks]**. Bläddra och använd de olika sök- och filtreringsalternativen på sidan för att välja och komma igång med en viss spelbok.
 
 ## Skapa en spelningsboksinstans {#create-playbook-instance}
+
+>[!CONTEXTUALHELP]
+>id="platform_playbooks_create"
+>title="Skapa instans"
+>abstract="Generera en lista över resurser som resor, målgrupper, scheman eller destinationer som ska användas under resan eller aktiveringsscenarier."
 
 Innan du skapar en spelboksinstans bör du utforska de tillgängliga spelböckerna för att [hitta rätt spelbok för dig](/help/use-case-playbooks/playbooks/discover.md). När du är redo att fortsätta med en spelbok och skapa en instans väljer du **[!UICONTROL Create Instance]** för att fortsätta med spelboken och generera tekniska resurser.
 

@@ -4,9 +4,9 @@ title: Upptäck rätt spelningsbok
 description: Lär dig hur du hittar rätt spelbok för dina användningsfall och aktiverar spelböcker.
 badgeBeta: label="Beta" type="Informative"
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: ba5a539603da656117c95d19c9e989ef0e252f82
+source-git-commit: f477cb4d410058b8bf2692a7afde70bf23a5aac7
 workflow-type: tm+mt
-source-wordcount: '719'
+source-wordcount: '754'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,11 @@ Mindmap börjar med en definition av vem som nås i användarresan och beskriver
 
 
 ### Sammanfattning {#summary}
+
+>[!CONTEXTUALHELP]
+>id="platform_playbooks_assets"
+>title="Assets"
+>abstract="Detta är resurserna som genereras av den här spelboken. När du har skapat en instans av spelboken kan du se resurserna i den inspirerande sandlådan och sedan befordra dem till andra sandlådor efter behov."
 
 Inspect i sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter det användningsfall som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
 
