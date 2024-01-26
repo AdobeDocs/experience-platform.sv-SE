@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfält för Adobe Analytics Source Connector
 description: Mappa Adobe Analytics-fält till XDM-fält med Analytics Source Connector.
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: bb07d45df3ca585b2ca4af07cc991ac0b1e4df12
+source-git-commit: 6cbd902c6a1159d062fb38bf124a09bb18ad1ba8
 workflow-type: tm+mt
-source-wordcount: '2367'
+source-wordcount: '2388'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Markerade fält mappas direkt från Adobe Analytics till Experience Data Model (
 | `m_keywords` | `search.keywords` | string | Variabeln som används i nyckelordsdimensionen. |
 | `m_os` | `_experience.analytics.environment.`<br/>`operatingSystemID` | heltal | Det numeriska ID som representerar besökarens operativsystem. Detta baseras på kolumnen user_agent. |
 | `m_page_url` | `web.webPageDetails.URL` | string | URL:en för sidträffen. |
-| `m_pagename_no_url` | `web.webPageDetails.name` | string | En variabel som används för att fylla siddimensionen. |
+| `m_pagename` | `web.webPageDetails.pageViews.value` | string | Lika med 1 i träffar som har ett sidnamn. Detta liknar måttet för Adobe Analytics sidvisning. |
 | `m_referrer` | `web.webReferrer.URL` | string | Föregående sidas URL. |
 | `m_search_page_num` | `search.pageDepth` | heltal | Används av dimensionen Rankning för alla söksidor. Anger vilken sida av sökresultat din webbplats hade innan användaren klickade igenom till din webbplats. |
 | `m_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | string | State-variabel. |
@@ -152,7 +152,7 @@ Markera fält som kommer från ADC måste omformas, vilket kräver logik utöver
 | `m_page_event_var1` | `web.webInteraction.URL` | string | En variabel som bara används för bildbegäran för länkspårning. Den här variabeln innehåller URL:en för den nedladdningslänk, den avslutningslänk eller anpassade länk som du klickat på. |
 | `m_page_event_var2` | `web.webInteraction.name` | string | En variabel som bara används för bildbegäran för länkspårning. Här visas länkens egna namn, om det har angetts. |
 | `m_page_type` | `web.webPageDetails.isErrorPage` | boolesk | En variabel som används för att fylla i dimensionen Sidor som inte hittades. Variabeln ska antingen vara tom eller innehålla ErrorPage. |
-| `m_pagename_no_url` | `web.webPageDetails.pageViews.value` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
+| `m_pagename_no_url` | `web.webPageDetails.name` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
 | `m_paid_search` | `search.isPaid` | boolesk | En flagga som anges om träffen matchar betalsökningsidentifiering. |
 | `m_product_list` | `productListItems[].items` | array | Produktlistan, som den skickas via variabeln products. | {SKU (sträng), quantity (heltal), priceTotal (tal)} |
 | `m_ref_type` | `web.webReferrer.type` | string | Ett numeriskt ID som representerar typen av referens för träffen.<br/>`1`: Inuti din webbplats<br/>`2`: Andra webbplatser<br/>`3`: Sökmotorer<br/>`4`: Hård<br/>`5`: USENET<br/>`6`: Typed/Bookmarked (ingen referent)<br/>`7`: e-post<br/>`8`: Inget JavaScript<br/>`9`: Sociala nätverk |
@@ -203,7 +203,7 @@ Mer information om hur du utför dessa omformningar med hjälp av frågetjänste
 | `post_first_hit_pagename` | `_experience.analytics.endUser.`<br/>`firstWeb.webPageDetails.name` | string | En variabel som används i dimensionen Ursprungligt på startsidan. Sidnamnet på besökarens startsida. |
 | `post_keywords` | `search.keywords` | string | Nyckelorden som samlades in för träffen. |
 | `post_page_url` | `web.webPageDetails.URL` | string | URL:en för sidträffen. |
-| `post_pagename_no_url` | `web.webPageDetails.name` | string | En variabel som används för att fylla siddimensionen. |
+| `post_pagename` | `web.webPageDetails.pageViews.value` | string | Lika med 1 i träffar som har ett sidnamn. Detta liknar måttet för Adobe Analytics sidvisning. |
 | `post_purchaseid` | `commerce.order.purchaseID` | string | Variabel som används för att unikt identifiera inköp. |
 | `post_referrer` | `web.webReferrer.URL` | string | Föregående sidas URL. |
 | `post_state` | `_experience.analytics.customDimensions.`<br/>`stateProvince` | string | State-variabel. |
@@ -233,11 +233,11 @@ Mer information om hur du utför dessa omformningar med hjälp av frågetjänste
 | `post_latitude` | `placeContext.geo._schema.latitude` | tal | <!-- MISSING --> |
 | `post_longitude` | `placeContext.geo._schema.longitude` | tal | <!-- MISSING --> |
 | `post_page_event` | `web.webInteraction.type` | string | Den typ av träff som skickas i bildbegäran (standardträff, nedladdningslänk, slutlänk eller anpassad länk som klickats). |
-| `post_page_event` | `web.webInteraction.linkClicks.value` | tal | Den typ av träff som skickas i bildbegäran (standardträff, nedladdningslänk, slutlänk eller anpassad länk som klickats). |
+| `post_page_event` | `web.webInteraction.linkClicks.value` | tal | Lika med 1 om träffen är ett länkklick. Detta liknar måttet för sidhändelser i Adobe Analytics. |
 | `post_page_event_var1` | `web.webInteraction.URL` | string | Den här variabeln används bara för förfrågningar om länkspårningsbilder. Det är URL:en för den nedladdningslänk, avslutningslänk eller anpassade länk som du klickar på. |
 | `post_page_event_var2` | `web.webInteraction.name` | string | Den här variabeln används bara för förfrågningar om länkspårningsbilder. Det är länkens egna namn. |
 | `post_page_type` | `web.webPageDetails.isErrorPage` | boolesk | Detta används för att fylla i dimensionen Sidor som inte hittades. Variabeln ska antingen vara tom eller innehålla &quot;ErrorPage&quot; |
-| `post_pagename_no_url` | `web.webPageDetails.pageViews.value` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
+| `post_pagename_no_url` | `web.webPageDetails.name` | tal | Namnet på sidan (om den har angetts). Om ingen sida anges lämnas värdet tom. |
 | `post_product_list` | `productListItems[].items` | array | Produktlistan, som den skickas via variabeln products. | {SKU (sträng), quantity (heltal), priceTotal (tal)} |
 | `post_search_engine` | `search.searchEngine` | string | Det numeriska ID som representerar sökmotorn som refererade besökaren till din webbplats. |
 | `mvvar1_instances` | `.list.items[]` | Objekt | Lista med variabelvärden. Innehåller en avgränsad lista med anpassade värden, beroende på implementering. |
