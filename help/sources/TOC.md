@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 4d9c04909cba29b0c6685c357dbb84af9fa14b47
+source-git-commit: 8a9cf0547720927018d728d7cecbf377a1282f6f
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1008'
 ht-degree: 6%
 
 ---
@@ -303,6 +303,7 @@ ht-degree: 6%
       - Lokalt system {#local-system}
          - [Lokal filöverföring](tutorials/ui/create/local-system/local-file-upload.md)
       - Automatisering av marknadsföring {#marketing-automation}
+         - [Braze](tutorials/ui/create/marketing-automation/braze.md)
          - [Chatlio](tutorials/ui/create/marketing-automation/chatlio-webhook.md)
          - [Customer.io](tutorials/ui/create/marketing-automation/customerio-webhook.md)
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
