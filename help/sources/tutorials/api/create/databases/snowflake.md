@@ -3,10 +3,10 @@ title: Skapa en Snowflake-basanslutning med API:t för flödestjänsten
 description: Lär dig hur du ansluter Adobe Experience Platform till Snowflake med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: 669b47753a9c9400f22aa81d08a4d25bb5e414c5
+source-git-commit: 4de2193a45fc2925af310b5e2475eabe26d13adc
 workflow-type: tm+mt
-source-wordcount: '590'
-ht-degree: 1%
+source-wordcount: '932'
+ht-degree: 0%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
-I den här självstudiekursen får du hjälp med att skapa en basanslutning för [!DNL Snowflake] med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
+Använd följande självstudiekurs för att lära dig hur du skapar en basanslutning för [!DNL Snowflake] med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
 ## Komma igång
 
@@ -35,20 +35,38 @@ Följande avsnitt innehåller ytterligare information som du behöver känna til
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange följande anslutningsegenskaper:
+Du måste ange värden för följande autentiseringsegenskaper för att kunna autentisera dina [!DNL Snowflake] källa.
+
+>[!BEGINTABS]
+
+>[!TAB Autentisering av kontonyckel]
 
 | Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, region och molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html). |
+| ---------- | ----------- |
+| `account` | Ett kontonamn identifierar unikt ett konto inom organisationen. I det här fallet måste du unikt identifiera ett konto för olika [!DNL Snowflake] organisationer. Om du vill göra det måste du lägga till ditt organisationsnamn i kontonamnet. Till exempel: `orgname-account_name`. Mer information om kontonamn finns i [!DNL Snowflake] dokumentation om [kontoidentifierare](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization). |
 | `warehouse` | The [!DNL Snowflake] dist.lager hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerstället är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
 | `database` | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | `username` | Användarnamnet för [!DNL Snowflake] konto. |
 | `password` | Lösenordet för [!DNL Snowflake] användarkonto. |
 | `role` | Den standardroll för åtkomstkontroll som ska användas i [!DNL Snowflake] session. Rollen ska vara en befintlig roll som redan har tilldelats den angivna användaren. Standardrollen är `PUBLIC`. |
 | `connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Snowflake] är `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
-Mer information om hur du kommer igång finns i [[!DNL Snowflake] dokument](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
+>[!TAB Autentisering med nyckelpar]
+
+Om du vill använda autentisering med nyckelpar måste du generera ett 2 048-bitars RSA-nyckelpar och sedan ange följande värden när du skapar ett konto för [!DNL Snowflake] källa.
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `account` | Ett kontonamn identifierar unikt ett konto inom organisationen. I det här fallet måste du unikt identifiera ett konto för olika [!DNL Snowflake] organisationer. Om du vill göra det måste du lägga till ditt organisationsnamn i kontonamnet. Till exempel: `orgname-account_name`. Mer information om kontonamn finns i [!DNL Snowflake] dokumentation om [kontoidentifierare](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization). |
+| `username` | Användarnamnet för [!DNL Snowflake] konto. |
+| `privateKey` | The [!DNL Base64-]kodad privat nyckel för din [!DNL Snowflake] konto. Du kan generera antingen krypterade eller okrypterade privata nycklar. Om du använder en krypterad privat nyckel måste du även ange en lösenfras för den privata nyckeln vid autentisering mot Experience Platform. |
+| `privateKeyPassphrase` | Lösenfrasen för den privata nyckeln är ett extra säkerhetslager som du måste använda när du autentiserar med en krypterad privat nyckel. Du behöver inte ange lösenfrasen om du använder en okrypterad privat nyckel. |
+| `database` | The [!DNL Snowflake] databas som innehåller de data som du vill importera till Experience Platform. |
+| `warehouse` | The [!DNL Snowflake] dist.lager hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerstället är oberoende av varandra och måste nås individuellt när data förs över till Experience Platform. |
+
+Mer information om dessa värden finns i [[!DNL Snowflake] autentiseringsguide för nyckelpar](https://docs.snowflake.com/en/user-guide/key-pair-auth.html).
+
+>[!ENDTABS]
 
 >[!NOTE]
 >
@@ -66,7 +84,11 @@ Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` sl
 POST /connections
 ```
 
-**Begäran**
+>[!BEGINTABS]
+
+>[!TAB ConnectionString]
+
++++Begäran
 
 Följande begäran skapar en basanslutning för [!DNL Snowflake]:
 
@@ -99,7 +121,9 @@ curl -X POST \
 | `auth.params.connectionString` | Anslutningssträngen som används för att ansluta till [!DNL Snowflake] -instans. Anslutningssträngsmönstret för [!DNL Snowflake] är `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
 | `connectionSpec.id` | The [!DNL Snowflake] anslutningsspecifikation-ID: `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
-**Svar**
++++
+
++++svar
 
 Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
 
@@ -109,6 +133,125 @@ Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unik
     "etag": "\"d403848a-0000-0200-0000-5e978f7b0000\""
 }
 ```
+
++++
+
+
+>[!TAB Autentisering med nyckelpar med krypterad privat nyckel]
+
++++Begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Snowflake base connection with encrypted private key",
+      "description": "Snowflake base connection with encrypted private key",
+      "auth": {
+        "specName": "KeyPair Authentication",
+        "params": {
+            "account": "acme-snowflake123",
+            "username": "acme-cj123",
+            "database": "ACME_DB",
+            "privateKey": "{BASE_64_ENCODED_PRIVATE_KEY}",
+            "privateKeyPassphrase": "abcd1234",
+            "warehouse": "COMPUTE_WH"
+        }
+    },
+    "connectionSpec": {
+        "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+        "version": "1.0"
+    }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.account` | Namnet på [!DNL Snowflake] konto. |
+| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Snowflake] konto. |
+| `auth.params.database` | The [!DNL Snowflake] databas från vilken data hämtas. |
+| `auth.params.privateKey` | The [!DNL Base64-]kodad krypterad privat nyckel för din [!DNL Snowflake] konto. |
+| `auth.params.privateKeyPassphrase` | Lösenfrasen som motsvarar din privata nyckel. |
+| `auth.params.warehouse` | The [!DNL Snowflake] lagerställe som du använder. |
+| `connectionSpec.id` | The [!DNL Snowflake] anslutningsspecifikation-ID: `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
+
++++
+
++++svar
+
+Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
+
+```json
+{
+    "id": "2fce94c1-9a93-4971-8e94-c19a93097129",
+    "etag": "\"d403848a-0000-0200-0000-5e978f7b0000\""
+}
+```
+
++++
+
+>[!TAB Autentisering med nyckelpar med okrypterad privat nyckel]
+
++++Begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Snowflake base connection with encrypted private key",
+      "description": "Snowflake base connection with encrypted private key",
+      "auth": {
+        "specName": "KeyPair Authentication",
+        "params": {
+            "account": "acme-snowflake123",
+            "username": "acme-cj123",
+            "database": "ACME_DB",
+            "privateKey": "{BASE_64_ENCODED_PRIVATE_KEY}",
+            "warehouse": "COMPUTE_WH"
+        }
+    },
+    "connectionSpec": {
+        "id": "b2e08744-4f1a-40ce-af30-7abac3e23cf3",
+        "version": "1.0"
+    }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.account` | Namnet på [!DNL Snowflake] konto. |
+| `auth.params.username` | Användarnamnet som är associerat med din [!DNL Snowflake] konto. |
+| `auth.params.database` | The [!DNL Snowflake] databas från vilken data hämtas. |
+| `auth.params.privateKey` | The [!DNL Base64-]kodad okrypterad privat nyckel för din [!DNL Snowflake] konto. |
+| `auth.params.warehouse` | The [!DNL Snowflake] lagerställe som du använder. |
+| `connectionSpec.id` | The [!DNL Snowflake] anslutningsspecifikation-ID: `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
+
++++
+
++++svar
+
+Ett lyckat svar returnerar den nyligen skapade anslutningen, inklusive dess unika anslutnings-ID (`id`). Detta ID krävs för att utforska dina data i nästa självstudiekurs.
+
+```json
+{
+    "id": "2fce94c1-9a93-4971-8e94-c19a93097129",
+    "etag": "\"d403848a-0000-0200-0000-5e978f7b0000\""
+}
+```
+
++++
+
+>[!ENDTABS]
 
 Genom att följa den här självstudiekursen har du skapat en [!DNL Snowflake] basanslutning med [!DNL Flow Service] API. Du kan använda detta grundläggande anslutnings-ID i följande självstudier:
 
