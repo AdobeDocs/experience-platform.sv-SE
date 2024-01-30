@@ -2,9 +2,9 @@
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 88498a1382202bed057b8dc52d09359ba02748ea
+source-git-commit: 445738f78f44ab8eb1632dbda82c4dd69dbebefd
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '884'
 ht-degree: 0%
 
 ---
@@ -41,9 +41,13 @@ Varje rad representerar loggdata för en frågekörning som är associerad med e
 
 ![Arbetsytan i frågeloggen med en markerad rad och loggdata i den högra sidofältet markerade.](../images/ui/query-log/log-details.png)
 
-På panelen med logginformation kan du välja en ny utdatamängd och se eller kopiera hela SQL-frågan som användes i körningen.
+På panelen med logginformation kan du utföra olika åtgärder. Du kan köra frågan som CTAS, vilket skapar en ny utdatamängd, se eller kopiera hela SQL-frågan som användes i körningen, eller ta bort frågan.
 
-![Arbetsytan för frågeloggen med en rad markerad och utdatamängden och SQL-frågan markerad.](../images/ui/query-log/edit-output-dataset.png)
+>[!NOTE]
+>
+>Alternativet att [!UICONTROL Run as CTAS] är bara tillgängligt för en SELECT-fråga.
+
+![Arbetsytan för frågeloggen med en rad markerad, Kör som CTAS, Ta bort fråga och ikonen för kopiering av SQL markerad.](../images/ui/query-log/edit-output-dataset.png)
 
 >[!IMPORTANT]
 >

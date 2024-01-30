@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 1a050cfb41a28053606f07931c7c97d15989ac3e
+source-git-commit: 202bd42596608d27f99baea9e0a4a6ec92cf469f
 workflow-type: tm+mt
-source-wordcount: '2251'
+source-wordcount: '2464'
 ht-degree: 0%
 
 ---
@@ -85,13 +85,13 @@ Körningen av flera frågor i en sekvens skapar varje loggpost. Endast resultate
 ### Kör markerad fråga {#execute-selected-query}
 
 Om du har skrivit flera frågor men bara behöver köra en fråga, kan du markera den valda frågan och välja
-[!UICONTROL Run selected query] -ikon. Den här ikonen är som standard inaktiverad om du inte väljer en fråga i redigeraren.
+[!UICONTROL Run selected query] -ikon. Den här ikonen är som standard inaktiverad tills du väljer frågesyntax i redigeraren.
 
 ![Frågeredigeraren med [!UICONTROL Run selected query] är markerad.](../images/ui/query-editor/run-selected-query.png)
 
 ### Resultatantal {#result-count}
 
-Frågeredigeraren har maximalt 50 000 radutdata. Endast 50 rader visas emellertid samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du **[!UICONTROL Result count]** och välj mellan värdena 50, 100, 150, 300 och 500.
+Frågeredigeraren har maximalt 50 000 radutdata. Du kan välja hur många rader som ska visas samtidigt i frågeredigeringskonsolen. Om du vill ändra antalet rader som visas i konsolen väljer du **[!UICONTROL Result count]** och välj mellan alternativen 50, 100, 150, 300 och 500.
 
 ![Frågeredigeraren med listrutan Resultatantal markerad.](../images/ui/query-editor/result-count.png)
 
@@ -101,7 +101,7 @@ Frågeredigeraren har maximalt 50 000 radutdata. Endast 50 rader visas emellerti
 
 ![Frågeredigeraren med SQL-indatafältet och uppspelning markerat.](../images/ui/query-editor/editor.png)
 
-För att minimera utvecklingstiden rekommenderar vi att du utvecklar dina frågor med begränsningar för antalet rader som returneras. Till exempel: `SELECT fields FROM table WHERE conditions LIMIT number_of_rows`. När du har verifierat att frågan ger det förväntade resultatet tar du bort gränserna och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata.
+För att minimera utvecklingstiden rekommenderar vi att du utvecklar frågor med begränsningar för antalet rader som returneras. Till exempel: `SELECT fields FROM table WHERE conditions LIMIT number_of_rows`. När du har verifierat att frågan ger det förväntade resultatet tar du bort gränserna och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata.
 
 ## Skrivverktyg i [!DNL Query Editor] {#writing-tools}
 
@@ -123,6 +123,12 @@ The [!UICONTROL Format text] gör din fråga mer läsbar genom att lägga till e
 
 ![Frågeredigeraren med [!UICONTROL Format text] och SQL-satserna är markerade.](../images/ui/query-editor/format-text.png)
 
+<!-- ### Undo text {#undo-text}
+
+If you format your SQL in the Query Editor, you can undo the formatting applied by the [!UICONTROL Format text] feature. To return your SQL back to its original form, select **[!UICONTROL Undo text]**.
+
+![The Query Editor with [!UICONTROL Undo text] and the SQL statements highlighted.](../images/ui/query-editor/undo-text.png) -->
+
 ### Kopiera SQL {#copy-sql}
 
 Välj kopieringsikonen om du vill kopiera SQL från Frågeredigeraren till Urklipp. Den här kopieringsfunktionen är tillgänglig för både frågemallar och nyskapade frågor i Frågeredigeraren.
@@ -134,6 +140,10 @@ Välj kopieringsikonen om du vill kopiera SQL från Frågeredigeraren till Urkli
 The [!DNL Query Editor] föreslår automatiskt potentiella SQL-nyckelord tillsammans med tabell- eller kolumninformation för frågan när du skriver den. Funktionen för automatisk komplettering är aktiverad som standard och kan när som helst inaktiveras eller aktiveras genom att du väljer [!UICONTROL Syntax auto-complete] till höger i Frågeredigeraren.
 
 Konfigurationsinställningen som slutförs automatiskt är per användare och sparas för den användarens efterföljande inloggningar.
+
+>[!NOTE]
+>
+>Funktionen för automatisk komplettering av syntaxen är bara tillgänglig för den äldre versionen av Frågeredigeraren.
 
 ![Frågeredigeraren med syntaxen auto-complete aktiverad.](../images/ui/query-editor/auto-complete-toggle.png)
 
@@ -159,21 +169,47 @@ Om du vill inaktivera funktionen för automatisk komplettering väljer du lämpl
 
 [!DNL Query Editor] validerar automatiskt en fråga medan du skriver den, vilket ger generisk SQL-validering och specifik körningsvalidering. Om en röd understrykning visas under frågan (som bilden nedan visar) representerar den ett fel i frågan.
 
+<!-- ... Image below needs updating couldn't replicate the effect -->
+
 ![Indata från Frågeredigeraren som visar SQL understruket i rött för att indikera ett fel.](../images/ui/query-editor/syntax-error-highlight.png)
 
 När fel upptäcks kan du visa de specifika felmeddelandena genom att hovra över SQL-koden.
+
+<!-- ... Image below needs updating couldn't replicate the effect -->
 
 ![En dialogruta med ett felmeddelande.](../images/ui/query-editor/linting-error.png)
 
 ### Frågeinformation {#query-details}
 
-Om du vill visa en fråga i Frågeredigeraren väljer du en sparad mall i dialogrutan [!UICONTROL Templates] -fliken. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan.
+Om du vill visa en fråga i Frågeredigeraren väljer du en sparad mall i dialogrutan [!UICONTROL Templates] -fliken. Panelen Frågeinformation innehåller mer information och verktyg för att hantera den valda frågan. Här visas även användbara metadata, t.ex. den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt.
+
+>[!NOTE]
+>
+>The [!UICONTROL View schedule], [!UICONTROL Add schedule] och [!UICONTROL Delete query] är bara tillgängliga när frågan har sparats som en mall. The [!UICONTROL Add schedule] går direkt till schemaläggningsverktyget från Frågeredigeraren. The [!UICONTROL View schedule] går direkt till schemalagret för den frågan. Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågescheman i användargränssnittet](./query-schedules.md#create-schedule).
 
 ![Frågeredigeraren med frågeinformationspanelen markerad.](../images/ui/query-editor/query-details.png)
 
-På den här panelen kan du generera en utdatamängd direkt från användargränssnittet, ta bort eller namnge den visade frågan och lägga till ett schema i frågan.
+På informationspanelen kan du generera en utdatauppsättning direkt från användargränssnittet, ta bort eller namnge den visade frågan, visa frågekörningsschemat och lägga till frågan i ett schema.
 
-På den här panelen visas även användbara metadata som den senaste gången frågan ändrades och vem som ändrade den, om tillämpligt. Om du vill generera en datauppsättning väljer du **[!UICONTROL Output Dataset]**. The **[!UICONTROL Output Dataset]** visas. Ange ett namn och en beskrivning och välj **[!UICONTROL Run Query]**. Den nya datauppsättningen visas i **[!UICONTROL Datasets]** på [!DNL Query Service] användargränssnitt på [!DNL Platform].
+Om du vill generera en utdatamängd väljer du **[!UICONTROL Run as CTAS]**. The **[!UICONTROL Enter output dataset details]** visas. Ange ett namn och en beskrivning och välj **[!UICONTROL Run as CTAS]**. Den nya datauppsättningen visas i **[!UICONTROL Datasets]** Fliken Bläddra. Se [visa datauppsättningsdokumentation](../../catalog/datasets/user-guide.md#view-datasets) om du vill veta mer om tillgängliga datauppsättningar för din organisation.
+
+>[!NOTE]
+>
+>The [!UICONTROL Run as CTAS] alternativet är bara tillgängligt om frågan har **not** har schemalagts.
+
+![The [!UICONTROL Enter output dataset details] -dialogrutan.](../images/ui/query-editor/output-dataset-details.png)
+
+När du har kört **[!UICONTROL Run as CTAS]** visas ett bekräftelsemeddelande som meddelar dig om åtgärden har slutförts. Det här popup-meddelandet innehåller en länk som gör det enkelt att navigera till arbetsytan för frågeloggar. Se [dokumentation för frågeloggar](./query-logs.md) om du vill ha mer information om frågeloggar.
+
+### Sparar frågor {#saving-queries}
+
+The [!DNL Query Editor] innehåller en funktion för att spara som gör att du kan spara en fråga och arbeta med den senare. Om du vill spara en fråga väljer du **[!UICONTROL Save]** i det övre högra hörnet av [!DNL Query Editor]. Innan en fråga kan sparas måste ett namn anges för frågan med hjälp av **[!UICONTROL Query Details]** -panelen.
+
+>[!NOTE]
+>
+>Frågor som namngivits och sparats i med Frågeredigeraren är tillgängliga som mallar på kontrollpanelen Fråga [!UICONTROL Templates] -fliken. Se [malldokumentation](./query-templates.md) för mer information.
+
+När du sparar en fråga i Frågeredigeraren visas ett bekräftelsemeddelande som informerar dig om den slutförda åtgärden. Det här popup-meddelandet innehåller en länk som gör det enkelt att navigera till arbetsytan för schemaläggning av frågor. Se [dokumentation för schemafrågor](./query-schedules.md) om du vill lära dig hur du kör frågor på en anpassad cadence.
 
 ### Schemalagda frågor {#scheduled-queries}
 
@@ -185,13 +221,6 @@ Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågesch
 
 Alla schemalagda frågor läggs till i listan i [!UICONTROL Scheduled queries] -fliken. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Se [Övervaka dokument för schemalagda frågor](./monitor-queries.md) för mer information.
 
-### Sparar frågor {#saving-queries}
-
-The [!DNL Query Editor] innehåller en funktion för att spara som gör att du kan spara en fråga och arbeta med den senare. Om du vill spara en fråga väljer du **[!UICONTROL Save]** i det övre högra hörnet av [!DNL Query Editor]. Innan en fråga kan sparas måste ett namn anges för frågan med hjälp av **[!UICONTROL Query Details]** -panelen.
-
->[!NOTE]
->
->Frågor som namngivits och sparats i med Frågeredigeraren är tillgängliga som mallar på kontrollpanelen Fråga [!UICONTROL Templates] -fliken. Se [malldokumentation](./query-templates.md) för mer information.
 
 ### Söka efter tidigare frågor {#previous-queries}
 
@@ -219,7 +248,7 @@ Konsolen ger information om status och funktion för [!DNL Query Service]. Konso
 
 ### Frågeresultat {#query-results}
 
-När en fråga är klar visas resultatet i **[!UICONTROL Results]** -flik, bredvid **[!UICONTROL Console]** -fliken. I den här vyn visas frågans tabellutdata med upp till 100 rader. I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se [skapa datauppsättningar, genomgång](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
+När en fråga är klar visas resultatet i **[!UICONTROL Results]** -flik, bredvid **[!UICONTROL Console]** -fliken. I den här vyn visas frågans tabellutdata, med mellan 50 och 500 resultatrader beroende på vad du väljer [antal resultat](#result-count). I den här vyn kan du verifiera att frågan ger förväntat resultat. Om du vill generera en datauppsättning med frågan tar du bort begränsningar för returnerade rader och kör frågan med `CREATE TABLE tablename AS SELECT` för att generera en datauppsättning med utdata. Se [skapa datauppsättningar, genomgång](./create-datasets.md) för instruktioner om hur du genererar en datauppsättning från frågeresultat i [!DNL Query Editor].
 
 ![Fliken Resultat i frågeredigeringskonsolen som visar resultatet av en frågekörning.](../images/ui/query-editor/query-results.png)
 

@@ -2,9 +2,9 @@
 title: Parametriserade frågor
 description: Lär dig hur du använder parametriserade frågor i Adobe Experience Platform-gränssnittet.
 exl-id: 5c5ac691-5e29-4262-ba53-84dcc56e744f
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: 9cf8dabfdf3f20f4032a79ba191bd2dc8123a369
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
@@ -47,21 +47,17 @@ SELECT
 
 Om du vill skapa en parametriserad fråga i användargränssnittet går du till Frågeredigeraren. Se avsnittet om [få åtkomst till Frågeredigeraren](./user-guide.md#accessing-query-editor) för fler instruktioner.
 
-Använd `'$'` för att ange en frågeparameter i frågan i textredigeraren. Lägg sedan till värdet som saknas för nyckeln i [!UICONTROL Query parameters] under redigeraren. Frågan kan inte utföras om du inte lägger till ett värde till någon av nycklarna. En varningsikon (![En varningsikon.](../images/ui/parameterized-queries/alert-icon.png)) visas i avsnittet Frågeparametrar bredvid eventuella tomma [!UICONTROL Value] indatafält.
+Använd `'$'` för att ange en frågeparameter i frågan i textredigeraren. Nästa steg är att välja **[!UICONTROL Query parameters]** -fliken bredvid [!UICONTROL Console] lägger till det saknade värdet för nyckeln. Frågan kan inte utföras om du inte lägger till ett värde till någon av nycklarna. En varningsikon (![En varningsikon.](../images/ui/parameterized-queries/alert-icon.png)) visas i avsnittet Frågeparametrar bredvid eventuella tomma [!UICONTROL Value] indatafält.
+
+>[!NOTE]
+>
+>Om frågan inte innehåller några parametrar kan du ändå ange onödiga parametrar i Frågeredigeraren. Frågeredigeraren ignorerar alla onödiga nyckelvärdepar och påverkar inte körningen eller resultatet av frågan.
 
 ![Frågeredigeraren med en parametriserad fråga och avsnittet Frågeparametrar markerat.](../images/ui/parameterized-queries/parameterized-query.png)
 
 >[!TIP]
 >
 >Ändra tabbar från [!UICONTROL Query parameters] till [!UICONTROL Console] för att visa konsolutdata för frågan.
-
-Om du tar bort en parameter och försöker köra frågan igen när den redan har körts visas ett felmeddelande i [!UICONTROL Query parameters] för att varna dig.
-
->[!NOTE]
->
->Om frågan inte innehåller några parametrar kan du ändå ange onödiga parametrar i Frågeredigeraren. Frågeredigeraren ignorerar alla onödiga nyckelvärdepar och påverkar inte körningen eller resultatet av frågan.
-
-![Frågeredigeraren med ett tomt värdefält och frågeparameterfelet markerat.](../images/ui/parameterized-queries/query-parameter-error.png)
 
 ## Använd frågeloggsdetaljer för att kontrollera parametervärden {#check-parameter-values}
 
