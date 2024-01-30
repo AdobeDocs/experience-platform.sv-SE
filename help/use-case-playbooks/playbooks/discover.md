@@ -2,20 +2,15 @@
 solution: Experience Platform
 title: Upptäck rätt spelningsbok
 description: Lär dig hur du hittar rätt spelbok för dina användningsfall och aktiverar spelböcker.
-badgeBeta: label="Beta" type="Informative"
 exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: f477cb4d410058b8bf2692a7afde70bf23a5aac7
+source-git-commit: 0decef848fe90e5c60352aeb42aabdd678eeb8f8
 workflow-type: tm+mt
-source-wordcount: '754'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
 
-# (Beta) Upptäck rätt spelbok
-
->[!AVAILABILITY]
->
->Den här funktionen finns för närvarande i betaversionen och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Upptäck rätt spelningsbok
 
 Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!UICONTROL Playbooks]**. Bläddra och använd de olika sök- och filtreringsalternativen på sidan för att välja och komma igång med en viss spelbok.
 
@@ -48,7 +43,6 @@ Använd mindmap-avsnittet i en spelbok för att förstå de steg i arbetsflödet
 Mindmap börjar med en definition av vem som nås i användarresan och beskriver i varje steg om något levereras av Adobe, som ett nytt meddelande eller en påminnelse, eller om det är något som målpersonen gjorde som utlöser nästa meddelande eller händelse.
 
 ![Playbook mindmap selected.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
-
 
 ### Sammanfattning {#summary}
 

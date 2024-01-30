@@ -2,20 +2,15 @@
 solution: Experience Platform
 title: Skapa, dela och återanvända spelningsboksinstanser
 description: Lär dig hur du skapar, delar och återanvänder spelningsboksinstanser för att få fram ett marknadsföringsexempel.
-badgeBeta: label="Beta" type="Informative"
 exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
-source-git-commit: f477cb4d410058b8bf2692a7afde70bf23a5aac7
+source-git-commit: bf6bcbe3314e87cd3162afe23068cfff12aa78a8
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '724'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa, dela och återanvända spelningsboksinstanser
-
->[!AVAILABILITY]
->
->Den här funktionen finns för närvarande i betaversionen och är inte tillgänglig för alla användare. Dokumentationen och funktionaliteten kan komma att ändras.
+# Skapa, dela och återanvända spelningsboksinstanser
 
 Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!UICONTROL Playbooks]**. Bläddra och använd de olika sök- och filtreringsalternativen på sidan för att välja och komma igång med en viss spelbok.
 
@@ -48,7 +43,7 @@ När du har skapat en instans baserad på en spelningsbok kan du anpassa den så
 
 Det är viktigt att förstå att de genererade resurserna skiljer sig åt beroende på vilket användningsfall du aktiverar:
 
-* Olika resurser genereras för olika typer av spelböcker. Dessa resurser skapas specifikt för det användningsfall som uppnås via spelboken. En spelningsbok genererar till exempel ett schema, ett segment, en resa och meddelanden. En annan spelningsbok genererar ett schema, ett segment och ett mål som data ska aktiveras till.
+* Olika resurser genereras för olika typer av spelböcker. Dessa resurser skapas specifikt för det användningsfall som uppnås via spelboken. En spelningsbok genererar till exempel ett schema, en målgrupp, en resa och meddelanden. En annan spelningsbok genererar ett schema, en målgrupp och ett mål som data ska aktiveras till.
 * Resurserna skiljer sig åt mellan spelböcker. För **[!UICONTROL Send A Birthday Message To Guests]** spelbok, målgruppen som skapas har regeln `birthday=today AND year=any`.
 
 Så här illustrerar du ett exempel för **[!UICONTROL Abandoned Cart: Merchandise]** spelbok, kan du se att en viss resa skapas som innehåller de meddelanden som har skapats för det här användningsfallet.
@@ -67,7 +62,7 @@ Beteendet som beskrivs ovan gäller för alla resurser som skapas, förutom sche
 >
 >Testa i utvecklingssandlådan och gå till produktion när det är klart.
 >
->När objekt har genererats kan du fortsätta att testa dem i utvecklingssandlådorna genom att lägga till data. Du kan testa resurserna så länge du vill i utvecklingssandlådan och du kan replikera resurslogiken (segmentdefinitioner, resor, scheman och så vidare) i produktionssandlådan när du är klar.
+>När objekt har genererats kan du fortsätta att testa dem i utvecklingssandlådorna genom att lägga till data. Du kan testa resurserna så länge du vill i utvecklingssandlådan och du kan replikera resurslogiken (målgruppsdefinitioner, resor, scheman och så vidare) i produktionssandlådan när du är klar. Du kan gå till utvecklingssandlådan och sedan till produktionssandlådan med [funktioner för datainlärning](/help/use-case-playbooks/playbooks/data-awareness.md).
 
 ## Återanvänd spelningsböcker {#reuse-playbooks}
 

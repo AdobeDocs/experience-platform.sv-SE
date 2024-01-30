@@ -2,18 +2,19 @@
 solution: Experience Platform
 title: Översikt över datainsikt i Use Case Playbooks
 description: Lär dig hur du snabbar upp time to value genom att kopiera resurserna som genereras i den sista inspirerande sandlådan till andra sandlådor.
-badgeBeta: label="Beta" type="Informative"
-source-git-commit: cbf5f2aaf9bb8113ad5eadac888e9b4f85b199b8
+exl-id: 537eff13-f5fe-4cc9-9769-ab47b3cecda7
+source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '905'
 ht-degree: 0%
 
 ---
 
-
 # Översikt över datainsikt i Use Case Playbooks
 
-Använd fallspelsböcker är marknadsföringsmallar som är utformade för att generera resurser som målgrupper, scheman eller resor för vanliga användningsfall inom marknadsföring. I Adobe Experience Platform refererar mallarna till flera standardfält och fältgrupper. I vissa fall kan du dock redan ha konfigurerat egna scheman, fält och fältgrupper. Detta kan göra att vissa resurser som genereras av ärendemallar, som resor, inte är kompatibla med dina data. Läs den här självstudiekursen om du vill veta hur du använder funktioner för att öka medvetenheten om data för att bättre anpassa och komplettera de genererade resurserna med dina befintliga resurser.
+Använd fallspelsböcker är marknadsföringsmallar som utformats för att generera resurser som målgrupper, scheman eller resor för vanliga användningsfall inom marknadsföring. Du kan testa de resurser som skapas av spelböcker i den inspirerande sandlådan och när du är klar kan du importera resurserna till andra utvecklingssandlådor för ytterligare testning med de data som du har tillgängliga i dessa sandlådor. När du är nöjd med testningen kan du sedan flytta resurserna från utvecklingssandlådor till produktionssandlådor.
+
+I vissa fall kan du dock redan ha konfigurerat egna scheman, fält och fältgrupper i andra utvecklingssandlådor. Detta kan göra att vissa resurser som genereras av ärendemallar, som resor, inte är kompatibla med dina data. Läs den här självstudiekursen om du vill veta hur du använder funktioner för att öka medvetenheten om data för att bättre anpassa och komplettera de genererade resurserna med dina befintliga resurser.
 
 ## Förutsättningar {#prerequisites}
 
@@ -22,6 +23,10 @@ Innan du läser den här självstudiekursen ska du gå till [använda fallspelni
 När du skapar en instans genereras en uppsättning resurser som resor, segment, scheman och meddelanden i den inspirerande sandlådan. Läs vidare för att lära dig hur du kan kopiera dessa resurser till andra sandlådor.
 
 ### Skapa och publicera ett paket {#create-publish-package}
+
+>[!NOTE]
+>
+> Du kan bara importera paket till andra utvecklingssandlådor. När du har gjort alla nödvändiga ändringar eller uppdateringar kan du importera resurserna eller paketen från dessa utvecklingssandlådor till produktion. Du kan inte importera direkt från sandlådan Använd fallspelningsböcker till produktion.
 
 1. Om du vill importera objekt från den inspirerande sandlådan till en annan sandlåda bläddrar du till önskad instans av en användningsfallspelningsbok och väljer **[!UICONTROL Publish to a different sandbox]** om du vill exportera artefakterna som ett paket.
 
@@ -48,10 +53,6 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 5. Välj **+** styra och starta arbetsflödet för att importera resurserna som genereras av fallspelningsboken till **[!UICONTROL Target sandbox]**. Markera en målsandlåda och bekräfta det paketnamn som du vill importera med listrutan. Lägg till jobbinformation som jobbnamn och jobbbeskrivning innan du fortsätter till nästa steg.
 
    ![Starta importarbetsflöde, välj mål, bekräfta paket, lägg till jobbinformation.](/help/use-case-playbooks/assets/playbooks/data-awareness/import-package-import-settings.png)
-
-   >[!NOTE]
-   >
-   > Du kan bara importera paket till andra utvecklingssandlådor. Produktionssandlådan är inaktiverad för sådan import.
 
 6. I **[!UICONTROL View dependencies]** kan du mappa scheman och kopiera andra resurser från den inspirerande sandlådan till målsandlådan. The **[!UICONTROL Finish]** knappen är inaktiverad tills du mappar varje schema.
 
@@ -96,3 +97,7 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 ## Nästa steg
 
 När du har läst den här guiden får du nu en bättre förståelse för hur du använder fallspelningsböcker tillsammans med [sandlådeverktyg](/help/sandboxes/ui/sandbox-tooling.md#monitor-import-jobs-and-view-import-objects-details) för att skapa körbara resor som refererar till dina scheman. Läs mer om vanliga [Användningsexempel för Real-Time CDP](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md).
+
+### Mer hjälp om det här avsnittet
+
+[Verktyg i sandlådan](/help/sandboxes/ui/sandbox-tooling.md)
