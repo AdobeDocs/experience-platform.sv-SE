@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för åtkomstkontrollprinciper
 description: Med slutpunkten /policies i API:t för attributbaserad åtkomstkontroll kan du programmässigt hantera principer i Adobe Experience Platform.
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: 01574f37593c707f092a8b4aa03d3d67e8c20780
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1433'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med profiler {#list}
 
@@ -135,9 +135,9 @@ Ett godkänt svar returnerar en lista över befintliga principer.
 | `id` | Det ID som motsvarar en princip. Den här identifieraren genereras automatiskt och kan användas för att söka efter, uppdatera och ta bort en princip. |
 | `imsOrgId` | Organisationen där den efterfrågade policyn är tillgänglig. |
 | `createdBy` | ID för den användare som skapade profilen. |
-| `createdAt` | Tiden då profilen skapades. The `createdAt` egenskapen visas i en Unix Epooch-tidsstämpel. |
+| `createdAt` | Tiden då profilen skapades. The `createdAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
 | `modifiedBy` | ID för den användare som senast uppdaterade profilen. |
-| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. The `modifiedAt` egenskapen visas i en Unix Epooch-tidsstämpel. |
+| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. The `modifiedAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
 | `name` | Namnet på principen. |
 | `description` | (Valfritt) En egenskap som kan läggas till för att ge mer information om en viss princip. |
 | `status` | Aktuell status för en princip. Den här egenskapen definierar om en princip används `active` eller `inactive`. |
@@ -180,35 +180,49 @@ En slutförd begäran returnerar information om det efterfrågade princip-ID:t.
 
 ```json
 {
-    "id": "13138ef6-c007-495d-837f-0a248867e219",
-    "imsOrgId": "{IMS_ORG}",
-    "createdBy": "{CREATED_BY}",
-    "createdAt": 1652859368555,
-    "modifiedBy": "{MODIFIED_BY}",
-    "modifiedAt": 1652890780206,
-    "name": "Documentation-Copy",
-    "description": "xyz",
-    "status": "active",
-    "subjectCondition": null,
-    "rules": [
+  "policies": [
+    {
+      "id": "7019068e-a3a0-48ce-b56b-008109470592",
+      "imsOrgId": "5555467B5D8013E50A494220@AdobeOrg",
+      "createdBy": "example@AdobeID",
+      "createdAt": 1652892767559,
+      "modifiedBy": "example@AdobeID",
+      "modifiedAt": 1652895736367,
+      "name": "schema-field",
+      "description": "schema-field",
+      "status": "inactive",
+      "subjectCondition": null,
+      "rules": [
         {
-            "effect": "Permit",
-            "resource": "orgs/{IMS_ORG}/sandboxes/ro-sand/schemas/*/schema-fields/*",
-            "condition": "{\"!\":[{\"or\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"and\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}]}]}",
-            "actions": [
-                "com.adobe.action.read"
-            ]
+          "effect": "Deny",
+          "resource": "/orgs/5555467B5D8013E50A494220@AdobeOrg/sandboxes/xql/schemas/*/schema-fields/*",
+          "condition": "{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}",
+          "actions": [
+            "com.adobe.action.read",
+            "com.adobe.action.write",
+            "com.adobe.action.view"
+          ]
         },
         {
-            "effect": "Deny",
-            "resource": "orgs/{IMS_ORG}/sandboxes/*/segments/*",
-            "condition": "{\"!\":[{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"custom/\",{\"var\":\"resource.labels\"}]}]}]}",
-            "actions": [
-                "com.adobe.action.read"
-            ]
+          "effect": "Permit",
+          "resource": "/orgs/5555467B5D8013E50A494220@AdobeOrg/sandboxes/*/schemas/*/schema-fields/*",
+          "condition": "{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}",
+          "actions": [
+            "com.adobe.action.delete"
+          ]
+        },
+        {
+          "effect": "Deny",
+          "resource": "/orgs/5555467B5D8013E50A494220@AdobeOrg/sandboxes/delete-sandbox-adfengine-test-8/segments/*",
+          "condition": "{\"!\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"custom/\",{\"var\":\"resource.labels\"}]}]}",
+          "actions": [
+            "com.adobe.action.write"
+          ]
         }
-    ],
-    "_etag": "\"0300d43c-0000-0200-0000-62851c9c0000\""
+      ],
+      "etag": "\"0300593f-0000-0200-0000-62852ff80000\""
+    }
+  ]
 }
 ```
 
@@ -217,9 +231,9 @@ En slutförd begäran returnerar information om det efterfrågade princip-ID:t.
 | `id` | Det ID som motsvarar en princip. Den här identifieraren genereras automatiskt och kan användas för att söka efter, uppdatera och ta bort en princip. |
 | `imsOrgId` | Organisationen där den efterfrågade policyn är tillgänglig. |
 | `createdBy` | ID för den användare som skapade profilen. |
-| `createdAt` | Tiden då profilen skapades. The `createdAt` egenskapen visas i en Unix Epooch-tidsstämpel. |
+| `createdAt` | Tiden då profilen skapades. The `createdAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
 | `modifiedBy` | ID för den användare som senast uppdaterade profilen. |
-| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. The `modifiedAt` egenskapen visas i en Unix Epooch-tidsstämpel. |
+| `modifiedAt` | Tidpunkten när profilen senast uppdaterades. The `modifiedAt` -egenskapen visas i Unix Epooch-tidsstämpeln. |
 | `name` | Namnet på principen. |
 | `description` | (Valfritt) En egenskap som kan läggas till för att ge mer information om en viss princip. |
 | `status` | Aktuell status för en princip. Den här egenskapen definierar om en princip används `active` eller `inactive`. |
@@ -261,7 +275,7 @@ curl -X POST \
           "resource": "/orgs/{IMS_ORG}/sandboxes/*",
           "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
           "actions": [
-            "read"
+            "com.adobe.action.read"
           ]
         }
       ]
@@ -301,7 +315,7 @@ En lyckad begäran returnerar den nyligen skapade principen, inklusive dess unik
             "resource": "/orgs/{IMS_ORG}/sandboxes/*",
             "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
             "actions": [
-                "read"
+                "com.adobe.action.read"
             ]
         }
     ],
@@ -322,7 +336,7 @@ En lyckad begäran returnerar den nyligen skapade principen, inklusive dess unik
 
 ## Uppdatera en princip per princip-ID {#put}
 
-Om du vill uppdatera reglerna för en enskild princip skickar du en PUT-begäran till `/policies` slutpunkten när ID för principen som du vill uppdatera anges i sökvägen till begäran.
+Om du vill uppdatera reglerna för en enskild princip skickar du en PUT-begäran till `/policies` slutpunkten när ID för den princip som du vill uppdatera anges i sökvägen till begäran.
 
 **API-format**
 
@@ -352,7 +366,7 @@ curl -X PUT \
         "resource": "/orgs/{IMS_ORG}/sandboxes/*",
         "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
         "actions": [
-          "read"
+          "com.adobe.action.read"
         ]
       }
     ]
@@ -381,7 +395,7 @@ Ett lyckat svar returnerar den uppdaterade principen.
             "resource": "/orgs/{IMS_ORG}/sandboxes/*",
             "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
             "actions": [
-                "read"
+                "com.adobe.action.read"
             ]
         }
     ],
@@ -391,7 +405,7 @@ Ett lyckat svar returnerar den uppdaterade principen.
 
 ## Uppdatera principegenskaper {#patch}
 
-Om du vill uppdatera egenskaperna för en enskild princip skickar du en PATCH-begäran till `/policies` slutpunkten när ID för principen som du vill uppdatera anges i sökvägen till begäran.
+Om du vill uppdatera egenskaperna för en enskild princip skickar du en PATCH-begäran till `/policies` slutpunkten när ID för den princip som du vill uppdatera anges i sökvägen till begäran.
 
 **API-format**
 
@@ -452,7 +466,7 @@ Ett lyckat svar returnerar det efterfrågade princip-ID:t med uppdaterad beskriv
             "resource": "/orgs/{IMS_ORG}/sandboxes/*",
             "condition": "{\"or\":[{\"adobe.match_any_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]},{\"!\":[{\"adobe.match_all_labels_by_prefix\":[{\"var\":\"subject.roles.labels\"},\"core/\",{\"var\":\"resource.labels\"}]}]}]}",
             "actions": [
-                "read"
+                "com.adobe.action.read"
             ]
         }
     ],

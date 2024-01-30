@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll Hantera rollbehörigheter
 description: Det här dokumentet innehåller information om hur du konfigurerar behörigheter för en roll via gränssnittet Behörigheter i Adobe Experience Cloud
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: ea79ac7fecd980aba87d003c8c23f271c74ec23d
+source-git-commit: c1c7a851315214e2362085d3283d144066d4dd8a
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '919'
 ht-degree: 0%
 
 ---
@@ -155,9 +155,9 @@ The **[!UICONTROL Remove user group]** visas och du uppmanas att bekräfta bortt
 
 Du kommer tillbaka till **[!UICONTROL User groups]** -fliken.
 
-## Lägga till användare i Experience Platform via en produktprofil
+## Lägga till användare i Experience Platform via en roll
 
-Om du vill lägga till en användare i en produktprofil loggar du in på Admin Console och väljer **[!UICONTROL Add users]**
+Om du vill lägga till en användare i en roll loggar du in på Admin Console och väljer **[!UICONTROL Add users]**
 
 ![product-profile-add-users](../../images/flac-ui/product-profile-add-users.png)
 
