@@ -4,9 +4,9 @@ title: Instrumentpanelshandbok för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 57f4b365f510935f75f3ef92d71d66fe255269b4
+source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
 workflow-type: tm+mt
-source-wordcount: '4571'
+source-wordcount: '4666'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika
 >
 >Ändringar eller uppdateringar som gjorts i data sedan ögonblicksbilden togs kommer inte att visas på kontrollpanelen förrän nästa ögonblicksbild tas.
 
-## Utforska kontrollpanelen Profiler
+## Utforska instrumentpanelen för profiler {#explore-dashboard}
 
 Om du vill navigera till profilkontrollpanelen i plattformsgränssnittet väljer du **[!UICONTROL Profiles]** i den vänstra listen väljer du **[!UICONTROL Overview]** för att visa kontrollpanelen.
 
@@ -37,7 +37,7 @@ Om du vill navigera till profilkontrollpanelen i plattformsgränssnittet väljer
 
 ![Kontrollpanelen för profiler i Experience Platform med profiler och översikt markerad.](../images/profiles/dashboard-overview.png)
 
-### Ändra kontrollpanelen för profiler
+### Ändra instrumentpanelen för profiler {#modify-dashboard}
 
 Du kan ändra utseendet på profilkontrollpanelen genom att välja **[!UICONTROL Modify dashboard]**. Du kan flytta, lägga till, ändra storlek på och ta bort widgetar från kontrollpanelen samt få tillgång till **[!UICONTROL Widget library]** för att utforska tillgängliga widgetar och skapa anpassade widgetar för din organisation.
 
@@ -50,6 +50,10 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 ![Panelen Profiler med widgeten markerad.](../images/profiles/profiles-overview-add-widget.png)
 
 I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade målgruppswidgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+
+### Visa SQL {#view-sql}
+
+Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på [!UICONTROL Overview] arbetsyta. Ni kan få inspiration från SQL:s av era befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information om den här funktionen finns i [Visa guide för SQL-gränssnitt](../view-sql.md).
 
 <!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 

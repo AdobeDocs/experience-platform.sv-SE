@@ -4,9 +4,9 @@ title: Guide för instrumentpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: d9ce17bbe17df175db30d283387d8fa569b97dee
+source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
 workflow-type: tm+mt
-source-wordcount: '2974'
+source-wordcount: '3046'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,10 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 ![Översikt över kontrollpanelen Destinationer med widgeten Lägg till markerad.](../images/destinations/destinations-overview-add-widget.png)
 
 I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade widgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+
+### Visa SQL {#view-sql}
+
+Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på [!UICONTROL Overview] arbetsyta. Ni kan få inspiration från SQL:s av era befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information om den här funktionen finns i [Visa guide för SQL-gränssnitt](../view-sql.md).
 
 ## Standardwidgetar {#default-widgets}
 

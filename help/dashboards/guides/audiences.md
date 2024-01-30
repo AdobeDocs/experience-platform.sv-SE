@@ -4,9 +4,9 @@ title: Publikens kontrollpanel
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om målgrupper som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: cd57ca50537d928025a5164b6a7d0ead490162ba
+source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
 workflow-type: tm+mt
-source-wordcount: '2873'
+source-wordcount: '2952'
 ht-degree: 0%
 
 ---
@@ -50,6 +50,10 @@ Välj **[!UICONTROL Add widget]** för att navigera till widgetbiblioteket och s
 ![The [!UICONTROL Audiences] instrumentpanel översikt med [!UICONTROL Add widget] markerad.](../images/audiences/audiences-overview-add-widget.png)
 
 I widgetbiblioteket kan du bläddra bland alla standardwidgetar och anpassade widgetar. Mer information om hur du lägger till widgetar finns i dokumentationen för widgetbiblioteket om hur du [lägga till en widget](../customize/widget-library.md#add-widgets).
+
+### Visa SQL {#view-sql}
+
+Du kan visa den SQL som genererar de insikter som visualiserats på din instrumentpanel med en växlingsknapp på [!UICONTROL Overview] arbetsyta. Ni kan få inspiration från SQL:s av era befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information om den här funktionen finns i [Visa guide för SQL-gränssnitt](../view-sql.md).
 
 ## Välj en målgrupp {#select-audience}
 
