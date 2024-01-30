@@ -5,10 +5,10 @@ user-guide-title: Dokumentation om Edge Network Server-API
 breadcrumb-title: Dokumentation om Edge Network Server-API
 user-guide-description: Använd Edge Network Server-API:t för datainsamling, personanpassning, annonsering och marknadsföring med Experience Cloud eller Experience Platform Edge-tjänster.
 feature: Data Collection
-source-git-commit: ef77a14eb40db490682c4615d1cbafb90c7b42c2
+source-git-commit: f7b6154166ccd7989c563115e99717937cfe9a5d
 workflow-type: tm+mt
-source-wordcount: '99'
-ht-degree: 42%
+source-wordcount: '76'
+ht-degree: 55%
 
 ---
 
@@ -23,15 +23,10 @@ ht-degree: 42%
    * [Datainsamling för batchhändelse](non-interactive-data-collection.md)
 * Samverka med andra Adobe-lösningar {#interacting-other-adobe-solutions}
    * [Interagera med Adobe Analytics](interacting-adobe-analytics.md)
-* Personalisering {#personalization}
+* Personanpassning {#personalization}
    * [Personalisering - översikt](personalization-overview.md)
    * [Personalisering via Adobe Target](personalization-target.md)
    * [Personalisering via Offer decisioning](personalization-offer-decisioning.md)
 * [Platstips](location-hints.md)
 * [Felhantering](error-handling.md)
 * [Felsökning](troubleshooting.md)
-* Media Edge API:er {#media-edge-apis}
-   * [Översikt över API för Media Edge](media-edge-api/overview.md)
-   * [Komma igång med API för Media Edge](media-edge-api/getting-started.md)
-   * [Felsökning av Media Edge API](media-edge-api/troubleshooting.md)
-   * [Media Edge API Open API-specifikationsresurs](media-edge-api/swagger.md)
