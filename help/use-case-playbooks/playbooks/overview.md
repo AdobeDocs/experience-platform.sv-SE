@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Använd översikt över fallspelningsböcker
 description: Lär dig använda funktionen Använd fallspelsböcker i Experience Platform för att komma igång med olika användningsområden för marknadsföring
 exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: c79bffdc38d269385689da64ee8e78ea60e6af92
 workflow-type: tm+mt
 source-wordcount: '522'
 ht-degree: 0%
@@ -34,7 +34,6 @@ Vad du hittar i den här handboken:
 * Skapa olika resurser som du kan använda, testa och marknadsföra till produktion när det passar.
 
 ![Visa alla spelböcker](/help/use-case-playbooks/assets/playbooks/overview/playbooks-landing-page.png)
-<!-- Replace this image with a current image -->
 
 Varje spelningsbok innehåller information om det specifika användningsfall som den löser.
 
