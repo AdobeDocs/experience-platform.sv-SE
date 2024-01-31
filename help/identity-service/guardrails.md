@@ -3,9 +3,9 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 1576405e6f1d674a75446f887c2912c4480d0e28
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ I följande tabell visas statiska gränser för identitetsdata.
 
 | Guardrail | Gräns | Anteckningar |
 | --- | --- | --- |
-| Antal identiteter i ett diagram | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att använda en&quot;första-in-ut-mekanism&quot; och tar bort den äldsta identiteten för att skapa utrymme för den senaste identiteten. Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Mer information finns i avsnittet [förstå borttagningslogiken](#deletion-logic). |
+| Antal identiteter i ett diagram | 50 | När ett diagram med 50 länkade identiteter uppdateras kommer identitetstjänsten att använda en&quot;första-in-först-ut-mekanism&quot; och tar bort den äldsta identiteten för att skapa utrymme för den senaste identiteten för det här diagrammet (**Anteckning**: Kundprofilen i realtid påverkas inte). Borttagningen baseras på identitetstyp och tidsstämpel. Gränsen tillämpas på sandlådenivå. Mer information finns i avsnittet [förstå borttagningslogiken](#deletion-logic). |
 | Antal länkar till en identitet för ett enskilt batchintag | 50 | En enda batch kan innehålla avvikande identiteter som orsakar oönskade diagramsammanfogningar. För att förhindra detta kommer identitetstjänsten inte att importera identiteter som redan är länkade till 50 eller fler identiteter. |
 | Antal identiteter i en XDM-post | 20 | Det minsta antalet XDM-poster som krävs är två. |
 | Antal anpassade namnutrymmen | Ingen | Det finns inga gränser för hur många anpassade namnutrymmen du kan skapa. |
@@ -135,7 +135,7 @@ I det här exemplet är ECID:32110 inkapslat och länkat till ett stort diagram 
 
 >[!TAB Borttagningsprocess]
 
-Därför tar identitetstjänsten bort den äldsta identiteten baserat på tidsstämpel och identitetstyp. I det här fallet raderas ECID:35577.
+Därför tar identitetstjänsten bort den äldsta identiteten baserat på tidsstämpel och identitetstyp. I det här fallet tas ECID:35577 bara bort från identitetsdiagrammet.
 
 ![](./images/guardrails/during-split.png)
 
@@ -166,7 +166,7 @@ I exemplet nedan är ECID:21011 inkapslat och länkat till diagrammet vid `times
 
 >[!TAB Borttagningsprocess]
 
-Därför tar identitetstjänsten bort den äldsta identiteten, som i det här fallet är ECID:35577. Borttagningen av ECID:35577 leder också till att följande tas bort:
+Därför tar identitetstjänsten endast bort den äldsta identiteten från identitetsdiagrammet, som i det här fallet är ECID:35577. Borttagningen av ECID:35577 leder också till att följande tas bort:
 
 * Länken mellan CRM-ID: 60013 och det nu borttagna ECID:35577, vilket resulterar i ett delat diagram.
 * IDFA: 32110, IDFA: 02383, och de återstående identiteterna som representeras av `(...)`. Dessa identiteter tas bort eftersom de inte är länkade till några andra identiteter separat och därför inte kan representeras i ett diagram.
