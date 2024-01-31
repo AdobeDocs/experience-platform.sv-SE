@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 202bd42596608d27f99baea9e0a4a6ec92cf469f
+source-git-commit: 29a33dd5823ac425cc567e948a5def948aedb44e
 workflow-type: tm+mt
-source-wordcount: '2464'
+source-wordcount: '2488'
 ht-degree: 0%
 
 ---
@@ -120,6 +120,10 @@ För att minimera utvecklingstiden rekommenderar vi att du utvecklar frågor med
 ### Formatera text {#format-text}
 
 The [!UICONTROL Format text] gör din fråga mer läsbar genom att lägga till en standardiserad syntaxformatering. Välj **[!UICONTROL Format text]** för att standardisera all text i Frågeredigeraren.
+
+>[!NOTE]
+>
+>The [!UICONTROL Format text] fungerar inte med anonyma block. Om du vill lära dig att kedja en eller flera SQL-satser sekventiellt läser du i [anonym blockdokumentation](../key-concepts/anonymous-block.md).
 
 ![Frågeredigeraren med [!UICONTROL Format text] och SQL-satserna är markerade.](../images/ui/query-editor/format-text.png)
 
