@@ -1,11 +1,10 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
+title: Adobe Experience Platform Release Notes januari 2024
 description: Versionsinformation januari 2024 för Adobe Experience Platform.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 6af6fef49e365457a1341665b09f53ee48cf26d2
 workflow-type: tm+mt
-source-wordcount: '776'
-ht-degree: 4%
+source-wordcount: '778'
+ht-degree: 3%
 
 ---
 
