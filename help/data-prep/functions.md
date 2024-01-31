@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: ff61ec7bc1e67191a46f7d9bb9af642e9d601c3a
+source-git-commit: f250d8e6e5368a785dcb154dbe0b611baed73a4c
 workflow-type: tm+mt
-source-wordcount: '5080'
+source-wordcount: '5459'
 ht-degree: 1%
 
 ---
@@ -151,6 +151,9 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | map_get_values | Tar en karta och tangentindata. Om indata är en enskild tangent returnerar funktionen det värde som är associerat med den tangenten. Om indata är en strängarray returnerar funktionen alla värden som motsvarar de angivna nycklarna. Om den inkommande kartan innehåller dubblettnycklar måste returvärdet avduplicera nycklarna och returnera unika värden. | <ul><li>MAP: **Obligatoriskt** Indatamappningsdata.</li><li>NYCKEL:  **Obligatoriskt** Nyckeln kan vara en enskild sträng eller en strängarray. Om någon annan primitiv typ (data/tal) anges behandlas den som en sträng.</li></ul> | get_values(MAP, KEY) | Se [appendix](#map_get_values) för ett kodexempel. | |
 | map_has_keys | Om en eller flera indatanycklar anges returnerar funktionen true. Om en strängarray anges som indata returnerar funktionen true för den första nyckeln som hittas. | <ul><li>MAP:  **Obligatoriskt** Indatamappningsdata</li><li>NYCKEL:  **Obligatoriskt** Nyckeln kan vara en enskild sträng eller en strängarray. Om någon annan primitiv typ (data/tal) anges behandlas den som en sträng.</li></ul> | map_has_keys(MAP, KEY) | Se [appendix](#map_has_keys) för ett kodexempel. | |
 | add_to_map | Accepterar minst två indata. Ett valfritt antal kartor kan anges som indata. Data Prep returnerar en enda karta som innehåller alla nyckelvärdepar från alla indata. Om en eller flera nycklar upprepas (på samma karta eller tvärs över kartor) deduplicerar Data Prep nycklarna så att det första nyckel/värde-paret kvarstår i den ordning som de skickades i indata. | MAP: **Obligatoriskt** Indatamappningsdata. | add_to_map(MAP 1, MAP 2, MAP 3, ...) | Se [appendix](#add_to_map) för ett kodexempel. | |
+| object_to_map (Syntax 1) | Använd den här funktionen om du vill skapa datatyperna för kartan. | <ul><li>NYCKEL: **Obligatoriskt** Nycklar måste vara en sträng. Om det finns andra primitiva värden, till exempel heltal eller datum, konverteras de automatiskt till strängar och behandlas som strängar.</li><li>ANY_TYPE: **Obligatoriskt** Avser alla XDM-datatyper som stöds utom Maps.</li></ul> | object_to_map(KEY, ANY_TYPE, KEY, ANY_TYPE, ...) | Se [appendix](#object_to_map) för ett kodexempel. | |
+| object_to_map (Syntax 2) | Använd den här funktionen om du vill skapa datatyperna för kartan. | <ul><li>OBJEKT: **Obligatoriskt** Du kan ange en inkommande objekt- eller objektarray och peka på ett attribut inuti objektet som nyckel.</li></ul> | object_to_map(OBJECT) | Se [appendix](#object_to_map) för ett kodexempel. |
+| object_to_map (Syntax 3) | Använd den här funktionen om du vill skapa datatyperna för kartan. | <ul><li>OBJEKT: **Obligatoriskt** Du kan ange en inkommande objekt- eller objektarray och peka på ett attribut inuti objektet som nyckel.</li></ul> | object_to_map(OBJECT_ARRAY, ATTRIBUTE_IN_OBJECT_TO_BE_USED_AS_A_KEY) | Se [appendix](#object_to_map) för ett kodexempel. |
 
 {style="table-layout:auto"}
 
@@ -173,6 +176,20 @@ Mer information om objektkopieringsfunktionen finns i avsnittet [nedan](#object-
 | size_of | Returnerar storleken på indata. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker hitta storleken på.</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | upsert_array_append | Den här funktionen används för att lägga till alla element i hela inmatningsarrayen i slutet av arrayen i profilen. Funktionen är **endast** som kan användas under uppdateringar. Om den används i infogningskontexten returneras indata i befintligt skick. | <ul><li>ARRAY: **Obligatoriskt** Arrayen som ska läggas till arrayen i profilen.</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
 | upsert_array_replace | Den här funktionen används för att ersätta element i en array. Funktionen är **endast** som kan användas under uppdateringar. Om den används i infogningskontexten returneras indata i befintligt skick. | <ul><li>ARRAY: **Obligatoriskt** Arrayen som ska ersätta arrayen i profilen.</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
+
+{style="table-layout:auto"}
+
+### Hierarkier - karta {#map}
+
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+
+| Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+| array_to_map | Den här funktionen tar en objektarray och en nyckel som indata och returnerar en karta över nyckelfältet med värdet key och arrayelementet som value. | <ul><li>INMATNING: **Obligatoriskt** Objektarrayen som du vill hitta det första icke-null-objektet för.</li><li>NYCKEL:  **Obligatoriskt** Nyckeln måste vara ett fältnamn i objektarrayen och objektet som värde.</li></ul> | array_to_map(OBJECT)[] INMATNINGAR, NYCKEL) | Läs [appendix](#object_to_map) för ett kodexempel. |
+| object_to_map | Den här funktionen tar ett objekt som argument och returnerar en karta över nyckelvärdepar. | <ul><li>INMATNING: **Obligatoriskt** Objektarrayen som du vill hitta det första icke-null-objektet för.</li></ul> | object_to_map(OBJECT_INPUT) | &quot;object_to_map(address) där input är &quot; + &quot;address: {line1 : \&quot;345 park ave\&quot;,line2: \&quot;bldg 2\&quot;,City : \&quot;san jose\&quot;,State : \&quot;CA\&quot;,type: \&quot;office\&quot;}&quot; | Returnerar en karta med angivet fältnamn och värde-par eller null om indata är null. Till exempel: `"{line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}"` |
+| to_map | Den här funktionen tar en lista över par med nyckelvärden och returnerar en karta med par med nyckelvärden. | | to_map(OBJECT_INPUT) | &quot;to_map(\&quot;firstName\&quot;, \&quot;John\&quot;, \&quot;lastName\&quot;, \&quot;Doe\&quot;)&quot; | Returnerar en karta med angivet fältnamn och värde-par eller null om indata är null. Till exempel: `"{\"firstName\" : \"John\", \"lastName\": \"Doe\"}"` |
 
 {style="table-layout:auto"}
 
@@ -455,3 +472,150 @@ example = "add_to_map(book_details, book_details2) where input is {\n" +
 ```
 
 +++
+
+#### object_to_map {#object_to_map}
+
+**Syntax 1**
+
++++Markera för att visa exempel
+
+```json
+example = "object_to_map(\"firstName\", \"John\", \"lastName\", \"Doe\")",
+result = "{\"firstName\" : \"John\", \"lastName\": \"Doe\"}"
+```
+
++++
+
+**Syntax 2**
+
++++Markera för att visa exempel
+
+```json
+example = "object_to_map(address) where input is " +
+  "address: {line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}",
+result = "{line1 : \"345 park ave\",line2: \"bldg 2\",City : \"san jose\",State : \"CA\",type: \"office\"}"
+```
+
++++
+
+**Syntax 3**
+
++++Markera för att visa exempel
+
+```json
+example = "object_to_map(addresses,type)" +
+        "\n" +
+        "[\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City\": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"home\"\n" +
+        "    },\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"work\"\n" +
+        "    },\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"office\"\n" +
+        "    }\n" +
+        "]" ,
+result = "{\n" +
+        "    \"home\":\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City\": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"home\"\n" +
+        "    },\n" +
+        "    \"work\":\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"work\"\n" +
+        "    },\n" +
+        "    \"office\":\n" +
+        "    {\n" +
+        "        \"line1\": \"345 park ave\",\n" +
+        "        \"line2\": \"bldg 2\",\n" +
+        "        \"City \": \"san jose\",\n" +
+        "        \"State\": \"CA\",\n" +
+        "        \"type\": \"office\"\n" +
+        "    }\n" +
+        "}" 
+```
+
++++
+
+#### array_to_map {#array_to_map}
+
++++Markera för att visa exempel
+
+```json
+example = "array_to_map(addresses, \"type\") where addresses is\n" +
+  "\n" +
+  "[\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City\": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"home\"\n" +
+  "    },\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"work\"\n" +
+  "    },\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"office\"\n" +
+  "    }\n" +
+  "]" ,
+result = "{\n" +
+  "    \"home\":\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City\": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"home\"\n" +
+  "    },\n" +
+  "    \"work\":\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"work\"\n" +
+  "    },\n" +
+  "    \"office\":\n" +
+  "    {\n" +
+  "        \"line1\": \"345 park ave\",\n" +
+  "        \"line2\": \"bldg 2\",\n" +
+  "        \"City \": \"san jose\",\n" +
+  "        \"State\": \"CA\",\n" +
+  "        \"type\": \"office\"\n" +
+  "    }\n" +
+  "}",
+returns = "Returns a map with given field name and value pairs or null if input is null"
+```
+
++++
+
