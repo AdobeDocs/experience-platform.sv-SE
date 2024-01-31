@@ -2,10 +2,11 @@
 solution: Experience Platform
 title: Kom igång
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
+role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '867'
 ht-degree: 0%
 
 ---
@@ -65,7 +66,7 @@ Om du vill skapa och hantera scheman använder du datamodelleringsbehörighetern
 
 **Tillstånd för destinationer**
 
-Om du vill skapa och hantera destinationer använder du behörigheterna Destinationer. **[!UICONTROL Manage]**, **[!UICONTROL Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL Manage and Activate Dataset Destination]**, UICONTROL Destination Authoring*.
+Om du vill skapa och hantera destinationer använder du behörigheterna Destinationer. **[!UICONTROL Manage]**, **[!UICONTROL Destinations]**, **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL Activate Segment without Mapping]**, **[!UICONTROL Manage and Activate Dataset Destination]**, **[!UICONTROL Destination Authoring]**.
 
 **Tillstånd för resor**
 

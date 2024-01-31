@@ -2,9 +2,10 @@
 solution: Experience Platform
 title: Available Use Case Playbooks for Real-time Customer Data Platform and Adobe Journey Optimizer.
 description: En lista över alla spelböcker i Real-time Customer Data Platform och Adobe Journey Optimizer.
-source-git-commit: bf6bcbe3314e87cd3162afe23068cfff12aa78a8
+role: User
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -56,15 +57,15 @@ Läs den här sidan för att få en översikt över alla tillgängliga spelböck
 | ------------- | ----------- |
 | Övergiven kundvagn: Merchandise - For Activation | Återmarknadsför fansen efter att de lämnat webbplatsen eller appen efter att ha lagt till varorna i kundvagnen. |
 | Övergiven kundvagn: Produkt - För aktivering | Återmarknadsför kunderna efter att de lämnat webbplatsen eller appen efter att ha lagt till produkterna i kundvagnen. |
-| Övergiven kundvagn: Reservering - för aktivering | Återannonsera gäster efter att de lämnat webbplatsen eller appen efter att ha lagt till en ny reservation i kundvagnen. |
+| Övergiven kundvagn: Reservation - För aktivering | Återannonsera gäster efter att de lämnat webbplatsen eller appen efter att ha lagt till en ny reservation i kundvagnen. |
 | Destinationskampanj - för aktivering | Rikta gästerna till att göra en reservation under en pågående resa till destinationen. |
 | Game Promotion - For Activation | Rikta er mot fansen att köpa biljetter till ett kommande spel. |
 | Öka köpet under spel - för aktivering | Rikta er till fansen som köper varor medan de är nära spelwebbplatsen. |
-| Öka produktinköpet under butiksbesök - För aktivering | Rikta kunderna mot att köpa varor medan de är i närheten av butiken. |
+| Öka köpet under butiksbesök - Aktivering | Rikta kunderna mot att köpa varor medan de är i närheten av butiken. |
 | Öka köp av produkter och tjänster under uppehåll - för aktivering | Rikta gästerna mot att köpa produkter och tjänster medan de är i fastigheten. |
-| Produktkampanj - För aktivering n | Rikta kunderna till att köpa produkter under en pågående produktkampanj. |
+| Produktkampanj - för aktivering | Rikta kunderna till att köpa produkter under en pågående produktkampanj. |
 | Skicka ett födelsedagsmeddelande till fans - för aktivering | Rikta fansen på sin födelsedag med meddelandet&quot;Grattis på födelsedagen&quot; och ett exklusivt erbjudande. |
-| Skicka ett födelsedagmeddelande till gäster - för aktivering | Rikta gästerna på sin födelsedag med meddelandet&quot;Grattis på födelsedagen&quot; och ett exklusivt erbjudande. |
+| Skicka ett födelsedagsmeddelande till gäster - för aktivering | Rikta gästerna på sin födelsedag med meddelandet&quot;Grattis på födelsedagen&quot; och ett exklusivt erbjudande. |
 | Skicka ett födelsedagsmeddelande till köpare - för aktivering | Rikta kunderna på deras födelsedag med meddelandet&quot;Grattis på födelsedagen&quot; och ett exklusivt erbjudande. |
 
 {style="table-layout:auto"}

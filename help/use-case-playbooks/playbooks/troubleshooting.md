@@ -2,10 +2,11 @@
 solution: Experience Platform
 title: Kända begränsningar och felsökning av problem med spelböcker
 description: Läs mer om kända problem och vanliga problem med spelböcker och hur du felsöker dem
+role: User, Developer, Admin
 exl-id: 2604ce26-bcf9-46e1-bc10-30252a113159
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '356'
+source-wordcount: '395'
 ht-degree: 0%
 
 ---
@@ -13,7 +14,11 @@ ht-degree: 0%
 
 # Felsökning och kända begränsningar {#troubleshooting-known-limitations}
 
+Lär dig felsöka när du arbetar med Use Case Playbooks och förstå de kända begränsningarna i den allmänna tillgänglighetsreleasen.
+
 ## Felsökning {#troubleshooting}
+
+Visa felsökningsförslag för vanliga fel när du arbetar med Use Case Playbooks
 
 ### Adobe Journey Optimizer-ytor har inte konfigurerats
 
@@ -35,7 +40,7 @@ Ett par kända begränsningar visas när du skapar en instans av en spelbok och 
 
 * När du använder [funktioner för datainlärning](/help/use-case-playbooks/playbooks/data-awareness.md) om du vill befordra schemat från den inspirerande sandlådan till utvecklingssandlådan kan du se några fel som liknar dem nedan:
 
-![schemafel](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png)
+![Fel som visas i arbetsflödet för schemamappning.](/help/use-case-playbooks/assets/playbooks/troubleshooting/schema-errors.png){width="1000" zoomable="yes"}
 
 Detta beror på att vissa fält som genereras från ditt schema inte finns i schemat i den utvecklingssandlåda som du kopierar till. Se vad fälten är. Gå sedan tillbaka till utvecklingssandlådan där du kan:
 

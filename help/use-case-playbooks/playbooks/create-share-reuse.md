@@ -2,10 +2,11 @@
 solution: Experience Platform
 title: Skapa, dela och återanvända spelningsboksinstanser
 description: Lär dig hur du skapar, delar och återanvänder spelningsboksinstanser för att få fram ett marknadsföringsexempel.
+role: User, Developer
 exl-id: b06d8186-c41f-4150-bac4-69c616151ef9
-source-git-commit: bf6bcbe3314e87cd3162afe23068cfff12aa78a8
+source-git-commit: c4be3864c680a569166d53f18ec0ee28a52c9ea7
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '771'
 ht-degree: 0%
 
 ---
@@ -73,6 +74,12 @@ Genom att skapa flera instanser av samma spelningsbok kan du implementera samma 
 Du kan dela den genererade instansen och resurserna med andra teammedlemmar. Om du vill göra det kopierar du URL-länken från webbläsaren och delar den med ditt team för att ge dem en översikt över de genererade resurserna.
 
 ![URL-adressen är markerad i en fallspelningsboksvy.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-url.png)
+
+## Videogenomgång av hela uppspelningsprocessen
+
+I den här videon får du lära dig hur du identifierar, skapar, publicerar och felsöker instanser av en Use Case Playbook från början till slut, samt hur du kopierar resurser som genererats av spelboken till andra sandlådor som har konfigurerats i organisationen.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3427058/?learn=on)
 
 ## Nästa steg {#next-steps}
 

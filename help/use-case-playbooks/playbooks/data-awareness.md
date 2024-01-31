@@ -2,15 +2,16 @@
 solution: Experience Platform
 title: Översikt över datainsikt i Use Case Playbooks
 description: Lär dig hur du snabbar upp time to value genom att kopiera resurserna som genereras i den sista inspirerande sandlådan till andra sandlådor.
+role: Developer
 exl-id: 537eff13-f5fe-4cc9-9769-ab47b3cecda7
-source-git-commit: d6be5d3e21ea924ff98c400b972709b1f60c25eb
+source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
 workflow-type: tm+mt
-source-wordcount: '905'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
 
-# Översikt över datainsikt i Use Case Playbooks
+# Publicera spelboksgenererade resurser till andra sandlådor {#publish-to-other-sandboxes}
 
 Använd fallspelsböcker är marknadsföringsmallar som utformats för att generera resurser som målgrupper, scheman eller resor för vanliga användningsfall inom marknadsföring. Du kan testa de resurser som skapas av spelböcker i den inspirerande sandlådan och när du är klar kan du importera resurserna till andra utvecklingssandlådor för ytterligare testning med de data som du har tillgängliga i dessa sandlådor. När du är nöjd med testningen kan du sedan flytta resurserna från utvecklingssandlådor till produktionssandlådor.
 
@@ -97,7 +98,3 @@ När du skapar en instans genereras en uppsättning resurser som resor, segment,
 ## Nästa steg
 
 När du har läst den här guiden får du nu en bättre förståelse för hur du använder fallspelningsböcker tillsammans med [sandlådeverktyg](/help/sandboxes/ui/sandbox-tooling.md#monitor-import-jobs-and-view-import-objects-details) för att skapa körbara resor som refererar till dina scheman. Läs mer om vanliga [Användningsexempel för Real-Time CDP](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md).
-
-### Mer hjälp om det här avsnittet
-
-[Verktyg i sandlådan](/help/sandboxes/ui/sandbox-tooling.md)
