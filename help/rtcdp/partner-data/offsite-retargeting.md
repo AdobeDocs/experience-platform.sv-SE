@@ -3,9 +3,9 @@ title: Återannonsering utanför webbplatsen av oautentiserade besökare
 description: Lär dig hur du omdirigerar oautentiserade användare genom att använda ID:n för potentiella kunder för att skapa ett beräknat attribut som kan användas för att skapa en publik med oautentiserade användare.
 feature: Use Cases, Customer Acquisition
 exl-id: cffa3873-d713-445a-a3e1-1edf1aa8eebb
-source-git-commit: c2e308b5e743f07062be9a34e23c4bc700b27463
+source-git-commit: 0ef76fd950ef2e82e390cb39e2cd984004a140f2
 workflow-type: tm+mt
-source-wordcount: '1344'
+source-wordcount: '1358'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,7 @@ The **[!UICONTROL Create computed attribute]** visas. På den här sidan kan du 
 
 I det här fallet kan du skapa ett beräknat attribut som, om partner-ID:t finns, hämtar det senaste värdet för partner-ID:t inom de senaste 24 timmarna.
 
-Med sökfältet kan du hitta och lägga till händelsen &quot;Partner ID&quot; på den beräknade attributarbetsytan.
+Med sökfältet kan du söka efter och lägga till händelsen &quot;Partner-ID&quot; som [som du skapade under anpassning på plats](#get-data-in) till den beräknade attributarbetsytan.
 
 ![The [!UICONTROL Events] och sökfältet markeras.](../assets/offsite-retargeting/ca-add-partner-id.png)
 
@@ -109,7 +109,7 @@ Markera den nya tillagda filen **[!UICONTROL Page View]** -händelse. Ändra upp
 
 När du har lagt till händelsen måste du lägga till ett attribut. Eftersom du arbetar med oautentiserade besökare kan du lägga till det beräknade attributet som du nyss skapade. Det nya beräknade attributet gör att du kan länka partner-ID:n till en målgrupp.
 
-Lägga till det beräknade attributet under **[!UICONTROL Attributes]**, markera **[!UICONTROL XDM Individual Profile]**, följt av **[!UICONTROL _atag]**, **[!UICONTROL SystemComputedAttributes]** och **[!UICONTROL PartnerID]**. Lägg till **[!UICONTROL Value]** av det beräknade attributet till attributavsnittet på arbetsytan.
+Lägga till det beräknade attributet under **[!UICONTROL Attributes]**, markera **[!UICONTROL XDM Individual Profile]**, följt av **[din organisations klient-ID](../../xdm/api/getting-started.md#know-your-tenant-id).**, **[!UICONTROL SystemComputedAttributes]** och **[!UICONTROL PartnerID]**. Lägg till **[!UICONTROL Value]** av det beräknade attributet till attributavsnittet på arbetsytan.
 
 ![Mappsökvägen för att komma åt det beräknade attributet visas.](../assets/offsite-retargeting/access-computed-attribute.png)
 
