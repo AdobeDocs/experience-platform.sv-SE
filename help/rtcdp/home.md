@@ -3,9 +3,9 @@ title: Real-Time CDP produktdokumentation
 description: Lär dig använda Adobe Real-Time CDP.
 solution: Real-Time Customer Data Platform
 product: Real-Time Customer Data Platform
-source-git-commit: 697f785e939b9817f80a31dfd0070f9dadd48baf
+source-git-commit: d5a8faa7b854f6d0b4ef36dc86bd78bf4e6ad6f4
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1065'
 ht-degree: 2%
 
 ---
@@ -20,17 +20,17 @@ Få en glimt av de senaste förbättringarna i Real-Time CDP-produkter och -doku
 
 >[!BEGINTABS]
 
+>[!TAB Använd fallspelningsböcker]
+
+The [!UICONTROL Use Case Playbooks] är nu allmänt tillgängliga för alla kunder som har Real-Time CDP och Adobe Journey Optimizer. [!UICONTROL Use Case Playbooks] är utformade för att hjälpa användare att klara utmaningar när de börjar med Real-time Customer Data Platform eller Adobe Journey Optimizer. När du är osäker på var du ska börja eller hur du ska skapa rätt material för dina behov kan du få inspiration med Use Case Playbooks och skapa olika resurser så att du kan testa och importera till produktionsmiljöer när du är klar.
+
+[![bild](assets/do-not-localize/learn-more-button.svg)](/help/use-case-playbooks/playbooks/overview.md)
+
 >[!TAB Verktyg i sandlådan]
 
 Använd sandlådeverktygen för att förbättra konfigurationsnoggrannheten över sandlådor och exportera och importera konfigurationer mellan sandlådor sömlöst. Du kan använda sandlådeverktygen för att markera olika objekt och exportera dem till ett paket.
 
 [![bild](assets/do-not-localize/learn-more-button.svg)](/help/sandboxes/ui/sandbox-tooling.md)
-
->[!TAB (Begränsad GA) Aktivera kontomålgrupper]
-
-Real-Time CDP B2B-kunder kan nu aktivera [kontomålgrupper](/help/segmentation/ui/account-audiences.md) till vissa destinationer.
-
-[![bild](assets/do-not-localize/learn-more-button.svg)](/help/destinations/ui/activate-account-audiences.md)
 
 >[!TAB Beräknade attribut]
 

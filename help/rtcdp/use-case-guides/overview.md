@@ -2,7 +2,7 @@
 title: Exempel på användningsområden i Real-Time CDP
 description: Se exempel på olika användningsområden för olika tjänster för att få ut det mesta av er Real-Time CDP-implementering.
 feature: Use Cases
-source-git-commit: f342020a0e821172a7ceca95265a9d71f64f5347
+source-git-commit: a58476e0a52cce763a114b2b4f4314fdb2e3f4c9
 workflow-type: tm+mt
 source-wordcount: '351'
 ht-degree: 0%
@@ -76,11 +76,11 @@ Exemplen kan grupperas i kundvärvning och profilanrikning. På dokumentationsl�
 <table style="margin-top: 0 !important">
 <tr>
   <td>
-    <a href="../partner-data/prospecting.md">
+    <a href="../partner-data/supplement-first-party-profiles.md">
       <img alt="Komplettera förstahandsprofiler med attribut som tillhandahålls av partner" src="/help/rtcdp/assets/partner-data/prospecting/prospecting-use-case-overview.png" />
     </a>
     <div>
-      <a href="../partner-data/prospecting.md">
+      <a href="../partner-data/supplement-first-party-profiles.md">
     <strong>Komplettera förstahandsprofiler med attribut som tillhandahålls av partner</strong>
     </a>
     </div>
