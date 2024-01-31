@@ -4,9 +4,9 @@ title: Real-time Customer Data Platform hemsida och Dashboards
 description: Kontrollpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: f7f49e4158f3aa95c3e96d3687642392e237aabc
+source-git-commit: d052f307d91890f89d6cb3f18525fe395c116f95
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '885'
 ht-degree: 1%
 
 ---
@@ -25,10 +25,10 @@ Det här dokumentet innehåller en översikt över Real-Time CDP hemsida och ins
 
 The [!UICONTROL Getting started with Real-Time Customer Profile] widgeten är uppdelad i fyra avsnitt:
 
-* **Importera data till plattformen**: Denna widget dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Mer information finns i [källöversikt](../sources/home.md)
-* **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för scheman för att bläddra efter befintliga scheman eller skapa byggstenar som beskriver datastrukturen. Mer information finns i [scheman, översikt](../xdm/home.md).
-* **Segmentera målgrupper**: Denna widget dirigerar dig till [!DNL Segment Builder] i användargränssnittet. Använd [!DNL Segment Builder] för att interagera med profildataelement och definiera regler för era segment. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
-* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka segment till. Mer information finns i [destinationer, översikt](../destinations/home.md)
+* **Importera data till plattformen**: Denna widget dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Välj **[Konfigurera källor]** för att navigera till källkatalogen. Mer information finns i [källöversikt](../sources/home.md).
+* **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för att bläddra efter befintliga scheman eller skapa en plan som beskriver datastrukturen. Välj **[!UICONTROL Create schema]** för att navigera till gränssnittet för att skapa scheman. Mer information finns i [scheman, översikt](../xdm/home.md).
+* **Bygg målgrupper**: Den här widgeten dirigerar dig till egment Builder i användargränssnittet. Använd Segment Builder för att interagera med profildataelement och definiera villkoren för segmentdefinitionen. Välj **[!UICONTROL Create audience]** för att navigera till segmentbyggaren. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka segment till. Välj **[!UICONTROL Set up destinations]** för att navigera till målkatalogen. Mer information finns i [destinationer, översikt](../destinations/home.md).
 
 ![Plattformsgränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
 
@@ -49,9 +49,9 @@ På resultatlistan visas det aktuella totala antalet scheman, datamängder, prof
 ![Ledpanelsavsnittet på startsidan för plattformsgränssnittet.](assets/platform-home/leaderboard.png)
 
 * **Totalt antal scheman**: **Totalt antal scheman** räknaren visar antalet scheman i systemet. Räknaren uppdateras när ett schema skapas. Mer information finns i [scheman, översikt](../xdm/home.md).
-* **Totalt antal datauppsättningar**: **Totalt antal datauppsättningar** räknaren visar antalet datauppsättningar i systemet och mängden data i [!DNL Platform]. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
-* **Totalt antal profiler**: **Profiler** antal visar det totala antalet profiler som din organisation har i Experience Platform. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) som anges i konfigurationen av sammanfogningsprincipen i kundprofilen i realtid. Antalet profiler uppdateras en gång var 24:e timme. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
-* **Totalt antal segment**: **Segment** visar det totala antalet segment som skapats för organisationen. Numret uppdateras när nya segment skapas. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Totalt antal datauppsättningar**: **Totalt antal datauppsättningar** räknaren visar antalet datauppsättningar i systemet och datamängden i Experience Platform. Den här räknaren uppdateras när en datauppsättning skapas. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
+* **Totalt antal profiler**: **Profiler** antal visar det totala antalet profiler som din organisation har i Experience Platform. Det innehåller inte profilfragment. Det här är er totala adresserbara målgrupp. Det här antalet använder standardvärdet [sammanfogningsprincip](profile/merge-policies.md) som anges i konfigurationen av sammanfogningsprincipen i kundprofilen i realtid. Antalet profiler uppdateras en gång var 24:e timme. Välj **[!UICONTROL Profiles]** om du vill navigera till sidan Profiler - översikt och visa alla dina profilmått. Mer information om profiler finns i [Översikt över kundprofiler i realtid](../profile/home.md).
+* **Totalt antal målgrupper**: **Totalt antal målgrupper** räknaren visar det totala antalet målgrupper som har skapats för din organisation. Numret uppdateras när nya målgrupper skapas. Mer information om målgrupper finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 ### Senaste objekt
 
