@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform Release Notes januari 2024
 description: Versionsinformation januari 2024 för Adobe Experience Platform.
-source-git-commit: fc7183cbc1ca3e27999d0ddd64c83ee19ccb1200
+source-git-commit: 7691e2dd434e13f3cff715fcba9431d985b2be60
 workflow-type: tm+mt
-source-wordcount: '1029'
+source-wordcount: '1469'
 ht-degree: 2%
 
 ---
@@ -18,9 +18,11 @@ Nya funktioner i Adobe Experience Platform:
 
 Uppdateringar av befintliga funktioner i Experience Platform:
 
-- [Kontrollpaneler](#dashboards)
+- [Attributbaserad åtkomstkontroll](#abac)
 - [Dataförberedelse](#data-prep)
+- [Kontrollpaneler](#dashboards)
 - [Mål ](#destinations)
+- [Identitetstjänst](#identity-service)
 - [Real-Time Customer Data Platform](#rtcdp)
 - [Kundprofil i realtid](#profile)
 - [Källor](#sources)
@@ -36,6 +38,22 @@ Så här kommer du igång med [!UICONTROL Use Case Playbooks]kan du läsa följa
 - Hämta information om alla [nödvändiga behörigheter](/help/use-case-playbooks/playbooks/get-started.md#grant-your-team-the-required-access-permissions) om du vill använda spelböcker och de resurser som spelböckerna genererar.
 - Förstå [funktioner för datainlärning](/help/use-case-playbooks/playbooks/data-awareness.md) som gör att du kan kopiera genererade resurser till andra sandlådemiljöer
 - Hämta [felsökningstips](/help/use-case-playbooks/playbooks/troubleshooting.md) om du stöter på fel eller problem när du använder Använd fallspelningsböcker.
+
+## Attributbaserad åtkomstkontroll {#abac}
+
+Attributbaserad åtkomstkontroll är en funktion hos Adobe Experience Platform som ger sekretessmedvetna varumärken större flexibilitet att hantera användaråtkomst. Enskilda objekt som schemafält och segment kan tilldelas användarroller. Med den här funktionen kan du bevilja eller återkalla åtkomst till enskilda objekt för specifika plattformsanvändare i organisationen.
+
+Tack vare attributbaserad åtkomstkontroll kan administratören styra användarnas åtkomst till, känsliga personuppgifter (SPD), personligt identifierbar information (PII) och andra anpassade typer av data i alla plattformsarbetsflöden och resurser. Administratörer kan definiera användarroller som bara har åtkomst till specifika fält och data som motsvarar dessa fält.
+
+**Ny eller uppdaterad dokumentation**
+
+| Dokumentation - uppdatering | Beskrivning |
+| --- | --- |
+| Nya API-slutpunkter dokumenteras för attributbaserad åtkomstkontroll | The [API-referensdokumentation för åtkomstkontroll](https://developer.adobe.com/experience-platform-apis/references/access-control/) innehåller nu attributbaserade API-roller, principer och produktslutpunkter för åtkomstkontroll. De här slutpunkterna kan användas för att hämta relevanta roller, principer och produkter för en användare för angivna resurser i en angiven sandlåda. |
+
+{style="table-layout:auto"}
+
+Mer information om attributbaserad åtkomstkontroll finns i [attributbaserad åtkomstkontroll - översikt](../../access-control/abac/overview.md). En omfattande guide om det attributbaserade arbetsflödet för åtkomstkontroll finns i [attribueringsbaserad åtkomstkontroll från början till slut](../../access-control/abac/end-to-end-guide.md).
 
 ## Dataförberedelse {#data-prep}
 
@@ -87,6 +105,20 @@ Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter o
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
+## Identitetstjänst {#identity-service}
+
+Adobe Experience Platform identitetstjänst ger er en heltäckande bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+**Ny eller uppdaterad dokumentation**
+
+| Dokumentation - uppdatering | Beskrivning |
+| --- | --- |
+| Omstrukturering av dokumentation | Identitetstjänstens dokumentation har omstrukturerats för att förbättra presentationen och tydligheten i begrepp inom identitetstjänsten:<ul><li>Besök [Översikt över identitetstjänsten](../../identity-service/home.md) om du vill ha en utökad terminologisk guide, ett exempel med exempel på ett typiskt kundresa, en beskrivning av hur identitetstjänsten länkar samman identiteter och en sammanfattning av den roll som identitetstjänsten har i Experience Platform-ekosystemet.</li><li>Läs guiden på [förstå relationen mellan identitetstjänsten och kundprofilen i realtid](../../identity-service/identity-and-profile.md) för en detaljerad sammanfattning av hur de två tjänsterna fungerar tillsammans och skillnaderna mellan deras syften, processer, indata och utdata.</li><li>Se [Logikguide för länkning av identitetstjänst](../../identity-service/features/identity-linking-logic.md) för förklaringar och visualiseringar av hur identitetsdiagrammet beter sig utifrån olika scenarier och tidsstämplar.</li></ul> |
+
+{style="table-layout:auto"}
+
+Läs mer om identitetstjänsten i [Översikt över identitetstjänsten](../../identity-service/home.md).
+
 ## Real-Time Customer Data Platform {#rtcdp}
 
 Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time CDP]) hjälper företag att sammanföra kända och okända data för att aktivera kundprofiler med intelligent beslutsfattande under hela kundresan. [!DNL Real-Time CDP] kombinerar flera datakällor för företag för att skapa kundprofiler i realtid. Segment som byggts utifrån dessa profiler kan sedan skickas till efterföljande destinationer för att tillhandahålla personliga kundupplevelser i alla kanaler och enheter.
@@ -96,6 +128,17 @@ Built on Experience Platform, Real-time Customer Data Platform ([!DNL Real-Time 
 | Funktion | Beskrivning |
 | --- | --- |
 | Uppdateringar av [Real-Time CDP hemsida](https://experience.adobe.com) | <ul><li>**Profiler, widget**: Du kan nu använda profilwidgeten för att navigera till sidan Profiler - översikt och visa profilmått för din organisation.</li><li>**Profilmätningskort**: Profilmätningskortet på kontrollpanelen för hemsidor visar nu det totala antalet profiler i organisationen, beroende på din respektive sammanfogningspolicy.</li><li>**Widgeten Scheman**: Du kan nu använda schemwidgeten för att navigera till arbetsflödet för att skapa scheman i användargränssnittet.</li></ul> |
+
+{style="table-layout:auto"}
+
+**Ny eller uppdaterad dokumentation**
+
+| Dokumentation - uppdatering | Beskrivning |
+| --- | --- |
+| Ny startsida för Real-Time CDP-dokumentation | Besök [ny startsida för Real-Time CDP-dokumentation](/help/rtcdp/home.md) om du vill ha snabb information om hur du kommer igång med produkten, skyddsritningar, exempel på hur du använder exempelfiler och mycket annat. |
+| Exempel på Real-Time CDP användningsexempel - översikt | Besök [ny sida med översikt över exempel](/help/rtcdp/use-case-guides/overview.md) för en samling exempel på användningsområden som din organisation kan uppnå med Real-Time CDP. |
+
+{style="table-layout:auto"}
 
 Läs mer om Real-Time CDP i [Real-Time CDP - översikt](../../rtcdp/overview.md).
 
