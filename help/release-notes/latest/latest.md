@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation januari 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6ee30e00bceb392b775d15ca2cad95b746698dc4
+source-git-commit: a4d6c72cc2c3f5f547a3c66e509d520d3fed29ea
 workflow-type: tm+mt
 source-wordcount: '965'
 ht-degree: 3%
@@ -46,7 +46,7 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nya mappningsfunktioner | <ul><li>`object_to_map`: Använd `object_to_map` funktion för att skapa mappningsdatatyper. Den här funktionen stöder flera olika syntaxer. Mer information finns i guiden [funktioner för hierarkier - objekt](../../data-prep/functions.md#objects). </li><li>`to_map`: Använd `to_map` om du vill skapa en karta med angivna fältnamn och värdepar med hjälp av objekt. Mer information finns i guiden [funktioner för hierarkier - kartor](../../data-prep/functions.md#objects). </li><li>`array_to_map`: Använd `array_to_map` om du vill skapa en karta med angivna fältnamn och värdepar med hjälp av objektarrayer. Mer information finns i guiden [funktioner för hierarkier - kartor](../../data-prep/functions.md#objects). |
+| Nya mappningsfunktioner | <ul><li>`object_to_map`: Använd `object_to_map` funktion för att skapa mappningsdatatyper. Den här funktionen stöder flera olika syntaxer. Mer information finns i guiden [funktioner för hierarkier - objekt](../../data-prep/functions.md#objects). </li><li>`to_map`: Använd `to_map` om du vill skapa en karta med angivna fältnamn och värdepar med hjälp av objekt. Mer information finns i guiden [funktioner för hierarkier - kartor](../../data-prep/functions.md#map). </li><li>`array_to_map`: Använd `array_to_map` om du vill skapa en karta med angivna fältnamn och värdepar med hjälp av objektarrayer. Mer information finns i guiden [funktioner för hierarkier - kartor](../../data-prep/functions.md#map). |
 
 {style="table-layout:auto"}
 
