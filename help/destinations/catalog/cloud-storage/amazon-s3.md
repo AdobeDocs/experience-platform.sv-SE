@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c126e6179309ccfbedfbfe2609cfcfd1ea45f870
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
@@ -13,12 +13,17 @@ ht-degree: 0%
 
 ## Destinationsändringslogg {#changelog}
 
-Med Experience Platform-versionen från juli 2023 [!DNL Amazon S3] mål har nya funktioner enligt nedan:
++++ Visa ändringslogg
 
-* [Stöd för dataexport](/help/destinations/ui/export-datasets.md).
-* Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
-* Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
-* [Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| Januari 2024 | Funktioner och dokumentation | Amazon S3-målkopplingen har nu stöd för en ny, antagen rollautentiseringstyp. Läs mer om det i [autentiseringssektion](#assumed-role-authentication). |
+| Juli 2023 | Funktioner och dokumentation | Med Experience Platform-versionen från juli 2023 [!DNL Amazon S3] mål har nya funktioner enligt nedan: <br><ul><li>[Stöd för dataexport](/help/destinations/ui/export-datasets.md)</li><li>Ytterligare [filnamnsalternativ](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).</li><li>Möjlighet att ange anpassade filhuvuden i de exporterade filerna via [förbättrat mappningssteg](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[Möjlighet att anpassa formateringen i exporterade CSV-datafiler](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> |
+
+{style="table-layout:auto"}
+
++++
 
 ## Anslut till [!DNL Amazon S3] lagring via API eller användargränssnitt {#connect-api-or-ui}
 
@@ -64,12 +69,37 @@ Om du vill ansluta till det här målet följer du stegen som beskrivs i [själv
 >title="RSA offentlig nyckel"
 >abstract="Du kan också bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering till de exporterade filerna. Visa ett exempel på en korrekt formaterad nyckel i dokumentationslänken nedan."
 
-Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
+Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**. Amazon S3-målet har stöd för två autentiseringsmetoder:
+
+* Åtkomstnyckel och autentisering av hemlig nyckel
+* Antagen rollautentisering
+
+#### Åtkomstnyckel och autentisering av hemlig nyckel
+
+Använd den här autentiseringsmetoden när du vill ange din Amazon S3-åtkomstnyckel och hemlig nyckel för att tillåta Experience Platform att exportera data till dina Amazon S3-egenskaper.
+
+![Bild av de obligatoriska fälten när du väljer åtkomstnyckel och autentisering med hemlig nyckel.](/help/destinations/assets/catalog/cloud-storage/amazon-s3/access-key-secret-key-authentication.png)
 
 * **[!DNL Amazon S3]åtkomstnyckel** och **[!DNL Amazon S3]hemlig nyckel**: I [!DNL Amazon S3], generera ett `access key - secret access key` två för att ge plattformsåtkomst till [!DNL Amazon S3] konto. Läs mer i [Amazon Web Services-dokumentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
   ![Bild som visar ett exempel på en korrekt formaterad PGP-nyckel i användargränssnittet.](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+
+#### Antagen roll {#assumed-role-authentication}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_s3_assumed_role"
+>title="Antagen rollautentisering"
+>abstract="Använd den här autentiseringstypen om du inte vill dela kontonycklar och hemliga nycklar med Adobe. I stället ansluter Experience Platform till din Amazon S3-plats med rollbaserad åtkomst. Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer` "
+
+![Bild av de obligatoriska fälten när du väljer antagen rollautentisering.](/help/destinations/assets/catalog/cloud-storage/amazon-s3/assumed-role-authentication.png)
+
+Använd den här autentiseringstypen om du inte vill dela kontonycklar och hemliga nycklar med Adobe. I stället ansluter Experience Platform till din Amazon S3-plats med rollbaserad åtkomst.
+
+Om du vill göra det måste du skapa en användare för Adobe med [rätt behörigheter](#required-s3-permission) för att skriva till era Amazon S3-program. Skapa en **[!UICONTROL Trusted entity]** i AWS med Adobe **[!UICONTROL 670664943635]**. Mer information finns i [AWS dokumentation om hur du skapar roller](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html).
+
+* **[!DNL Role]**: Klistra in ARN för rollen som du skapade i AWS för Adobe-användaren. Mönstret liknar `arn:aws:iam::800873819705:role/destinations-role-customer`.
+* **[!UICONTROL Encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
 
 ### Fyll i målinformation {#destination-details}
 

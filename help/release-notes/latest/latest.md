@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation januari 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: a4d6c72cc2c3f5f547a3c66e509d520d3fed29ea
+source-git-commit: fc7183cbc1ca3e27999d0ddd64c83ee19ccb1200
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '1027'
 ht-degree: 3%
 
 ---
@@ -75,6 +75,14 @@ Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter o
 | Mål | Beskrivning |
 | ----------- | ----------- |
 | [Allmän anslutning](../../destinations/catalog/advertising/pubmatic.md) | Använd det här målet för att skicka målgruppsdata till [!DNL PubMatic Connect] plattform. |
+
+{style="table-layout:auto"}
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Nytt **antagen roll** autentiseringstyp för Amazon S3-mål | Använd den nya rollautentiseringstypen när du ansluter Experience Platform till dina Amazon S3-bucket om du inte vill dela kontonycklar och hemliga nycklar med Experience Platform. Läs mer om den nya autentiseringsmetoden i [autentiseringssektion](/help/destinations/catalog/cloud-storage/amazon-s3.md#assumed-role-authentication) av Amazon S3-dokumentationen. |
 
 {style="table-layout:auto"}
 
