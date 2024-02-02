@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 2e8aac316f5e5edf169181b9e371dcd91e81c40d
+source-git-commit: 1d8ba11b1043fa68bf3c0205e8cecc2de8910234
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1190'
 ht-degree: 1%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 1%
       * [Datallandningszon](./catalog/cloud-storage/data-landing-zone.md)
       * [Google Cloud-lagring](./catalog/cloud-storage/google-cloud-storage.md)
       * [SFTP-anslutning](./catalog/cloud-storage/sftp.md)
-      * [IP-adress tillåtelselista för SFTP-mål](./catalog/cloud-storage/ip-address-allow-list.md)
+      * [IP-adress tillåtelselista för filbaserade molnlagringsmål](./catalog/cloud-storage/ip-address-allow-list.md)
    * CRM-mål {#crm}
       * [Delpunktsanslutning](./catalog/crm/hubspot.md)
       * [Salesforce CRM-anslutning](./catalog/crm/salesforce.md)
