@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation januari 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7691e2dd434e13f3cff715fcba9431d985b2be60
+source-git-commit: 7b694ad1b064279fcc0dd09bd1e8761e734e7556
 workflow-type: tm+mt
-source-wordcount: '1467'
+source-wordcount: '1542'
 ht-degree: 2%
 
 ---
@@ -78,7 +78,7 @@ Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan s
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Visa SQL | Nu kan du visa SQL:en bakom dina profiler, målgrupper, destinationer och anpassade insikter och sedan köra frågan på begäran via Frågeredigeraren. Hämta inspiration från SQL av över 40 befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. Mer information finns i guiden [visa insikter i SQL](../../dashboards/view-sql.md). |
+| Visa SQL | Nu kan du visa SQL bakom dina profiler, målgrupper, destinationer och anpassade insikter med växlingsknappen Visa SQL och sedan köra frågan på begäran via Frågeredigeraren. Genom att få tillgång till den SQL som ligger till grund för dina Real-time Customer Data Platform-insikter kan du förstå logiken bakom analysen av din datamodell. Denna transparens gör CDP-data i realtid i Adobe mer tillgängliga, begripliga och slagkraftiga för beslutsfattande.<br>Hämta inspiration från SQL av över 40 befintliga insikter för att skapa nya frågor som bygger på unika insikter från plattformsdata baserat på era affärsbehov. SQL är också tillgängligt för [Profiler](../../dashboards/insights/profiles.md), [Målgrupper](../../dashboards/insights/audiences.md)och [Destinationer](../../dashboards/insights/destinations.md) insikter i dokumentationen för Experience League. Dokumenten belyser de användningsfall som kan besvaras med standardinsikter. Mer information finns i guiden [visa insikter i SQL](../../dashboards/view-sql.md). |
 
 {style="table-layout:auto"}
 
