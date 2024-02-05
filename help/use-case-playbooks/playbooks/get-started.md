@@ -4,9 +4,9 @@ title: Kom igång
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: 785e32b27372cef9d23761f648bcbaa431448ce7
 workflow-type: tm+mt
-source-wordcount: '867'
+source-wordcount: '883'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,11 @@ I den här videon får du lära dig mer om hur du skapar sandlådan, konfigurera
 ## Skapa en utvecklingssandlåda {#create-development-sandbox}
 
 Använd Case Playbooks använder en särskild typ av utvecklingssandlåda. För att komma igång och få tillgång till [[!UICONTROL Use Case Playbooks]](/help/use-case-playbooks/playbooks/overview.md) funktionalitet, [skapa en ny utvecklingssandlåda](/help/sandboxes/ui/user-guide.md#create) (se till att du inte väljer en produktionssandlåda) med namnet (inte titeln) som innehåller antingen `-ucp` eller `-UCP` i suffixet enligt nedan.
+
+>[!IMPORTANT]
+>
+>När du skapar en ny utvecklingssandlåda måste du se till att namnet innehåller `-ucp` eller `-UCP` i suffixet.
+
 
 ![Skapa en utvecklingssandlåda för fallspelningsböcker](/help/use-case-playbooks/assets/playbooks/get-started/create-sandbox-ucp.png)
 
