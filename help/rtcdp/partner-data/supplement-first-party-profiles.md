@@ -3,7 +3,7 @@ title: Komplettera förstapartsprofiler med attribut som tillhandahålls av part
 description: Lär er hur ni kompletterar förstahandsprofiler med attribut från betrodda datapartners för att förbättra er datamängd, få nya insikter i er kundbas och optimera målgrupperna bättre.
 feature: Use Cases, Profile Enrichment
 exl-id: ee21b988-88f9-4c8e-bd82-7fc55c37ec24
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 9737508bd8435f4edf0e60a3559c1b4352ccb29f
 workflow-type: tm+mt
 source-wordcount: '1248'
 ht-degree: 3%
@@ -30,7 +30,7 @@ Adobe förstår att det inte finns någon strategi som passar alla och som möjl
 
 Följ till exempel de steg som beskrivs i det här användningsexemplet när du behöver förbättra dina kundregister med demografiska och avsiktliga signaler.
 
-## Förutsättningar och planering {#prerequisites-and-planning}
+## Förutsättningar och planering
 
 När du funderar på att komplettera dina egna förstahandsprofiler med attribut från datapartners, bör du diskutera och ta upp följande detaljer om dataanrikningsslingan med datapartnern:
 

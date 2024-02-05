@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: a66c4397a02da81e4b3304f3bc975f725f8f8d76
 workflow-type: tm+mt
-source-wordcount: '3604'
+source-wordcount: '3636'
 ht-degree: 0%
 
 ---
@@ -142,7 +142,12 @@ Använd **[!UICONTROL Scheduled]** möjlighet att köra aktiveringsjobbet på en
 
 4. Välj **[!UICONTROL Create]** för att spara schemat.
 
-### Exportera inkrementella filer {#export-incremental-files}
+### Exportera inkrementella filer
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_something"
+>title="Konfigurera filnamn"
+>abstract="För filbaserade mål genereras ett unikt filnamn per målgrupp. Använd filnamnsredigeraren för att skapa och redigera ett unikt filnamn eller behåll standardnamnet."
 
 Välj **[!UICONTROL Export incremental files]** för att starta en export där den första filen är en fullständig ögonblicksbild av alla profilkvalifikationer för den valda målgruppen, och efterföljande filer är stegvisa profilkvalifikationer sedan den föregående exporten.
 
@@ -167,7 +172,7 @@ Välj **[!UICONTROL Export incremental files]** för att starta en export där d
 
 4. Välj **[!UICONTROL Create]** för att spara schemat.
 
-### Konfigurera filnamn {#file-names}
+### Konfigurera filnamn
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
