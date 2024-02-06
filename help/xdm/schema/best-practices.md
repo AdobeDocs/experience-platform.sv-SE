@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Bästa praxis för datamodellering
 description: Detta dokument innehåller en introduktion till XDM-scheman (Experience Data Model) och de byggstenar, principer och bästa metoderna för att sammanställa scheman som ska användas i Adobe Experience Platform.
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 8e13918abe9a63b186970b24b87bf85d1c73c3a8
 workflow-type: tm+mt
-source-wordcount: '3083'
+source-wordcount: '3232'
 ht-degree: 0%
 
 ---
@@ -231,13 +231,27 @@ För Adobe Analytics är ECID standardidentitet. Om ett ECID-värde inte anges a
 
 ## Datavalideringsfält {#data-validation-fields}
 
-För att förhindra att felaktiga data hämtas till Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman. Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemaläggaren för att öppna [!UICONTROL Field properties] sidofält. Läs dokumentationen om [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) för exakta beskrivningar av tillgängliga fält.
+När du importerar data till datavjön framtvingas datavalidering endast för begränsade fält. Om du vill validera ett visst fält under en gruppinmatning måste du markera fältet som begränsat i XDM-schemat. För att förhindra att felaktiga data importeras till Platform rekommenderar vi att du definierar villkoren för fältnivåvalidering när du skapar dina scheman.
+
+>[!IMPORTANT]
+>
+>Validering gäller inte för kapslade kolumner. Om fältformatet finns i en arraykolumn valideras inte data.
+
+Om du vill ange begränsningar för ett visst fält väljer du fältet i Schemaläggaren för att öppna **[!UICONTROL Field properties]** sidofält. Läs dokumentationen om [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) för exakta beskrivningar av tillgängliga fält.
 
 ![Schemaredigeraren med begränsningsfälten markerade i [!UICONTROL Field properties] sidofält.](../images/best-practices/data-validation-fields.png)
 
->[!TIP]
->
->Här följer en samling förslag på datamodellering när du skapar ett schema:<br><ul><li>**Överväg primära identiteter**: För Adobe-produkter som web SDK, mobile SDK, Adobe Analytics och Adobe Journey Optimizer `identityMap` fältet fungerar ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.</li><li>**Undvik användning `_id` som en identitet**: Använd inte `_id` i Experience Event-scheman som en identitet. Den är avsedd för unikt register, inte för att användas som identitet.</li><li>**Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.</li><li>**Använd mönster för enhetliga värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda [!UICONTROL Pattern] inställning för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.</li><li>**Begränsa eVars i analysschema**: Vanligtvis ska ett Analytics-schema endast ha en eVar angiven som identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.</li><li>**Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer.</li></ul>
+### Tips för att bevara dataintegriteten {#data-integrity-tips}
+
+Följande är en samling förslag som bevarar dataintegriteten när du skapar ett schema.
+
+* **Överväg primära identiteter**: För Adobe-produkter som web SDK, mobile SDK, Adobe Analytics och Adobe Journey Optimizer `identityMap` fältet fungerar ofta som primär identitet. Undvik att ange ytterligare fält som primära identiteter för det schemat.
+* **Undvik användning `_id` som en identitet**: Använd inte `_id` i Experience Event-scheman som en identitet. Den är avsedd för unikt register, inte för att användas som identitet.
+* **Ange längdbegränsningar**: Det är bäst att ange minsta och högsta längd för fält som markerats som identiteter. En varning utlöses om du försöker tilldela ett anpassat namnutrymme till ett identitetsfält utan att uppfylla begränsningarna för minsta och högsta längd. Dessa begränsningar bidrar till att upprätthålla enhetlighet och datakvalitet.
+* **Använd mönster för enhetliga värden**: Om dina identitetsvärden följer ett specifikt mönster bör du använda **[!UICONTROL Pattern]** inställning för att framtvinga den här begränsningen. Den här inställningen kan omfatta regler som enbart siffror, versaler, gemener eller specifika teckenkombinationer. Använd reguljära uttryck för att matcha mönster i strängarna.
+* **Begränsa eVars i analysscheman**: Vanligtvis ska ett Analytics-schema endast ha en eVar angiven som identitet. Om du tänker använda mer än en eVar som identitet bör du dubbelkontrollera om datastrukturen kan optimeras.
+* **Se till att ett markerat fält är unikt**: Det valda fältet ska vara unikt jämfört med den primära identiteten i schemat. Om så inte är fallet ska du inte markera det som en identitet. Om flera kunder till exempel kan ange samma e-postadress är namnutrymmet inte en lämplig identitet. Den här principen gäller även andra ID-namnutrymmen som telefonnummer.
+* **Begränsar utlösarvarningar för anpassade namnområdesfält**: Ange begränsningar för att utlösa en varning när ett schemafält är markerat med ett anpassat namnutrymme utan att ange både minsta och högsta längd. Varningen är en viktig försiktighet för att upprätthålla dataintegriteten. Se [typspecifika fältegenskaper](../ui/fields/overview.md#type-specific-properties) dokumentation som innehåller information om hur du ställer in begränsningar för ett visst fält.
 
 ## Nästa steg
 
