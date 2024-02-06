@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 7ee39a39aecdfc0516f63e6a9c9a06c6c4b22996
+source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
 source-wordcount: '3723'
 ht-degree: 0%
@@ -331,7 +331,7 @@ The **[!UICONTROL Import audience CSV]** arbetsflödet visas. Du kan välja en C
 
 >[!NOTE]
 >
->Den externa målgruppen **måste** vara i CSV-format, har **maximum** av 11 kolumner och får vara mindre än 1 GB.
+>Den externa målgruppen **måste** vara i CSV-format, har **maximum** av 25 kolumner och får vara mindre än 1 GB.
 
 När du har valt den CSV-fil som ska importeras visas en lista med exempeldata för den externt genererade målgruppen. När du har bekräftat att exempeldata är korrekta väljer du **[!UICONTROL Next]**.
 

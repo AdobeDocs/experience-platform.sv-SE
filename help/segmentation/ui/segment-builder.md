@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: b028bf86bb8596c6fc97829d6d27eec498c4ef11
+source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
-source-wordcount: '3354'
+source-wordcount: '3484'
 ht-degree: 0%
 
 ---
@@ -255,9 +255,17 @@ Välj en kopplingsprincip för segmentdefinitionen genom att klicka på kugghjul
 >abstract="Du kan uppdatera uppskattningarna av din segmentdefinition så att du omedelbart ser en förhandsvisning av hur många profiler som skulle kvalificera sig för den föreslagna segmentdefinitionen. Målgruppsuppskattningar genereras med en provstorlek för den aktuella dagens exempeldata."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="Beräkna och förhandsgranska en målgrupp"
 
-När du skapar en segmentdefinition visas **[!UICONTROL Segment Properties]** -avsnittet till höger om arbetsytan visar en uppskattning av storleken på den resulterande segmentdefinitionen, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
+När du skapar en segmentdefinition visas **[!UICONTROL Audience properties]** -avsnittet till höger om arbetsytan visar en uppskattning av storleken på den resulterande segmentdefinitionen, så att du kan justera segmentdefinitionen efter behov innan du skapar själva målgruppen.
 
-The **[!UICONTROL Segment Properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn, beskrivning och utvärderingstyp. Segmentdefinitionsnamn används för att identifiera din segmentdefinition bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
+**[!UICONTROL Qualified Profiles]** anger **faktisk** antal profiler som matchar segmentdefinitionens regler. Antalet uppdateras var 24:e timme efter att segmentutvärderingsjobbet har körts.
+
+Tidsstämpeln för kvalificerade profiler anger den senaste **batch** segmentutvärderingsjobb och är **not** visas för segmentdefinitioner som utvärderas med hjälp av direktuppspelning eller kantsegmentering. Om du redigerar segmentdefinitionen ändras antalet kvalificerade profiler inte förrän nästa segmentutvärderingsjobb körs.
+
+**[!UICONTROL Estimated Profiles]** indikerar ett **approximera** antal profiler baserade på **samplingsjobb**. Du kan se en uppdaterad version av det här värdet när du har lagt till de nya reglerna eller villkoren och valt **[!UICONTROL Refresh estimate]**. Om du väljer informationsbubblan visas feltröskeln och den senaste samplingsjobbstiden.
+
+![Kvalificerade profiler och beräknade profiler markeras i egenskapsavsnittet för målgruppen.](../images/ui/segment-builder/audience-estimates.png)
+
+The **[!UICONTROL Audience properties]** är också där du kan ange viktig information om segmentdefinitionen, inklusive namn, beskrivning och utvärderingstyp. Segmentdefinitionsnamn används för att identifiera din segmentdefinition bland dem som definieras av organisationen och bör därför vara beskrivande, koncisa och unika.
 
 När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad förhandsvisning av målgruppen genom att välja **[!UICONTROL View Profiles]**.
 

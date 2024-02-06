@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation januari 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7b694ad1b064279fcc0dd09bd1e8761e734e7556
+source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1644'
 ht-degree: 2%
 
 ---
@@ -26,6 +26,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 - [Identitetstjänst](#identity-service)
 - [Real-Time Customer Data Platform](#rtcdp)
 - [Kundprofil i realtid](#profile)
+- [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
 ## Använd fallspelningsböcker {#use-case-playbooks}
@@ -156,6 +157,21 @@ Med Adobe Experience Platform kan ni skapa samordnade, enhetliga och relevanta u
 {style="table-layout:auto"}
 
 Läs mer om kundprofilen i realtid i [Profilöversikt](../../profile/home.md)
+
+## Segmenteringstjänst {#segmentation}
+
+[!DNL Segmentation Service] definierar en viss deluppsättning av profiler genom att beskriva kriterierna som särskiljer en säljbar grupp av personer inom kundbasen. Segment kan baseras på registerdata (t.ex. demografisk information) eller tidsseriehändelser som representerar kundinteraktioner med ert varumärke.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| ------- | ----------- |
+| Externt genererad målgruppsuppladdning | Det maximala antalet kolumner har ökats till **25**. |
+| Uppskattningar av segmentbyggaren | Uppskattningar och kvalificerade profiler visas nu i avsnittet för målgruppsegenskaper. Mer information om den här ändringen finns i [Användargränssnittsguide för segmentbyggare](../../segmentation/ui/segment-builder.md). |
+
+{style="table-layout:auto"}
+
+Mer information om [!DNL Segmentation Service], se [Översikt över segment](../../segmentation/home.md).
 
 ## Källor {#sources}
 
