@@ -2,9 +2,9 @@
 title: Adobe Campaign Managed Cloud Services
 description: Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring.
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 9757931f03f57b722c47955d83cb074629d9a883
 workflow-type: tm+mt
-source-wordcount: '1494'
+source-wordcount: '1533'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 0%
 Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med Campaign](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html)
 
 Använd Campaign för att
+
 * Driv personalisering och engagemang genom en enda lättillgänglig bild av kunden,
 * Integrera kanaler för e-post, mobiler, online och offline i kundresan,
 * Automatisera leverans av meningsfulla och aktuella meddelanden och erbjudanden.
@@ -32,6 +33,7 @@ Använd Campaign för att
 >* För varje segment kan du lägga till upp till 20 fält i [map](#map) till Adobe Campaign
 >* Datalagring på Azure Blob Storage Data Landing Zone (DLZ): 7 dagar,
 >* Aktiveringsfrekvensen är minst 3 timmar.
+>* Den maximala filnamnslängd som stöds av anslutningen är 255 tecken. När du [konfigurera det exporterade filnamnet](../../ui/activate-batch-profile-destinations.md#configure-file-names), kontrollera att filnamnet inte är längre än 255 tecken. Om du överskrider maxlängden för filnamn uppstår aktiveringsfel.
 
 ## Användningsfall {#use-cases}
 
