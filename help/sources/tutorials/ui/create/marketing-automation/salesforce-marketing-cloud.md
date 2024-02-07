@@ -2,9 +2,9 @@
 title: Anslut ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet
 description: Lär dig hur du ansluter ditt Salesforce Marketing Cloud-konto till Experience Platform via användargränssnittet.
 exl-id: 1d9bde60-31e0-489c-9c1c-b6471e0ea554
-source-git-commit: 5bb95c2823ce7baa09cbc84c2f1ccf70a0796549
+source-git-commit: 30f1e8a0424ee0f81d8e98fb24886ad1480b270c
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '476'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ För att få åtkomst till [!DNL Salesforce Marketing Cloud] på Platform måste
 
 | Autentiseringsuppgifter | Beskrivning |
 | ---------- | ----------- |
-| Värd | Programmets värdserver. Detta är ofta din underdomän. **Obs!** När du anger `host` måste du ange `{subdomain}.rest.marketingcloudapis.com`. Om din värd-URL till exempel är `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/`behöver du bara ange `acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/` som värdvärde. |
+| Värd | Programmets värdserver. Detta är ofta din underdomän. **Obs!** När du anger `host` måste du ange `{subdomain}.rest.marketingcloudapis.com`. Om din värd-URL till exempel är `https://acme-ab12c3d4e5fg6hijk7lmnop8qrst.auth.marketingcloudapis.com/`måste du ange `acme-ab12c3d4e5fg6hijk7lmnop8qrst.rest.marketingcloudapis.com/` som värdvärde. |
 | Klient-ID | Klient-ID som är kopplat till din [!DNL Salesforce Marketing Cloud] program. |
 | Klienthemlighet | Klienthemligheten som är kopplad till din [!DNL Salesforce Marketing Cloud] program. |
 
