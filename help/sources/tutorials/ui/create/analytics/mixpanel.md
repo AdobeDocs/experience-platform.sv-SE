@@ -4,7 +4,7 @@ description: Lär dig hur du skapar en källanslutning till en blandpanel med Ad
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
 source-git-commit: e300e57df998836a8c388511b446e90499185705
 workflow-type: tm+mt
-source-wordcount: '819'
+source-wordcount: '775'
 ht-degree: 1%
 
 ---

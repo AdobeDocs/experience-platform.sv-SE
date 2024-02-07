@@ -6,8 +6,8 @@ description: Det här dokumentet innehåller svar på vanliga frågor om sandlå
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
 source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
 workflow-type: tm+mt
-source-wordcount: '855'
-ht-degree: 4%
+source-wordcount: '840'
+ht-degree: 2%
 
 ---
 

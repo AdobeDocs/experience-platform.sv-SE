@@ -6,7 +6,7 @@ description: I den här användarhandboken beskrivs hur du övervakar data i Ado
 exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 source-git-commit: 9399a242b855e151e5822035bc952efa89fe4bf0
 workflow-type: tm+mt
-source-wordcount: '649'
+source-wordcount: '641'
 ht-degree: 0%
 
 ---

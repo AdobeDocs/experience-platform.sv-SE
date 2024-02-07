@@ -6,8 +6,8 @@ description: Adobe Experience Platform Query Service har ett användargränssnit
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
 source-git-commit: 74e3dc2fa5fc84b5ce4b09e2adb0093ecb94bd82
 workflow-type: tm+mt
-source-wordcount: '1470'
-ht-degree: 1%
+source-wordcount: '1457'
+ht-degree: 0%
 
 ---
 

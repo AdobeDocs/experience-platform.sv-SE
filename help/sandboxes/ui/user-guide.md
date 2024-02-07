@@ -6,8 +6,8 @@ description: Det här dokumentet innehåller steg om hur du utför olika åtgär
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
 source-git-commit: 70bbfd4e2971367c9b7b88bd4bc7985d9e6fbb1e
 workflow-type: tm+mt
-source-wordcount: '926'
-ht-degree: 2%
+source-wordcount: '913'
+ht-degree: 0%
 
 ---
 

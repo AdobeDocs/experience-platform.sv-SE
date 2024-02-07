@@ -6,7 +6,7 @@ description: Lär dig hur du skapar och redigerar klasser i användargränssnitt
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
 source-git-commit: 640d3ca0d3c227306436f2e653ef66fdc8ebd31c
 workflow-type: tm+mt
-source-wordcount: '1368'
+source-wordcount: '1369'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ När du har ett schema som använder en anpassad klass öppen i [!UICONTROL Sche
 >
 >Kom ihåg att alla fält som du lägger till i en klass används i alla scheman som använder den klassen. Du bör därför noga tänka på vilka fält som är användbara i alla schemaanvändningsfall. Om du funderar på att lägga till ett fält som bara kan se användning i vissa scheman under den här klassen, kanske du vill lägga till det i dessa scheman genom att [skapa en fältgrupp](./field-groups.md#create) i stället.
 
-An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Class]**.
+An **[!UICONTROL Untitled Field]** platshållaren visas på arbetsytan och den högra listen uppdateras för att visa kontroller för att konfigurera fältets egenskaper. Under **[!UICONTROL Assign to]**, markera **[!UICONTROL Class]**.
 
 ![Ett namnlöst fält på arbetsytan i schemaredigeraren med fältegenskapen Tilldela till klass markerad och markerad.](../../images/ui/resources/classes/assign-to-class.png)
 

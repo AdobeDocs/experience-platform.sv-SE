@@ -5,7 +5,7 @@ title: Övervaka dataflöden för strömningskällor i användargränssnittet
 exl-id: b080e398-e71f-40bd-aea1-7ea3ce86b55d
 source-git-commit: 647f2780798dcf55a68e156af3318924c352a442
 workflow-type: tm+mt
-source-wordcount: '984'
+source-wordcount: '986'
 ht-degree: 0%
 
 ---
