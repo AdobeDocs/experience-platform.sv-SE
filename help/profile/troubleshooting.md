@@ -4,9 +4,9 @@ title: Felsökningsguide för kundprofiler i realtid
 type: Documentation
 description: Det här dokumentet innehåller svar på vanliga frågor om kundprofilen i realtid samt en felsökningsguide för vanliga fel när du arbetar med profildata med Adobe Experience Platform.
 exl-id: 0b340025-093b-41e4-8053-969a8e80e889
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
@@ -122,18 +122,6 @@ Det här felet inträffar när en ogiltig nyttolast anges för ett raderingssyst
 ```
 
 Det här felet inträffar när det inte går att hitta en giltig grupp när en begäran om att ta bort profildata skapas. Kontrollera att du har angett rätt ID för en profilaktiverad datauppsättning innan du försöker igen.
-
-### Projektionsmålet har inte skapats ännu
-
-```json
-{
-  "status":404,
-  "title":"The projection destination has not yet been created.",
-  "type":"http://ns.adobe.com/adobecloud/problem/missing-entity"
-}
-```
-
-Det här felet inträffar när `destinationId` som tillhandahålls i `POST /config/projections` begäran är ogiltig. Kontrollera att du har angett ett giltigt mål-ID innan du försöker igen. Om du vill skapa ett nytt mål följer du de steg som beskrivs i [Profilutvecklarguide](./api/edge-projections.md#create-a-destination).
 
 ### Medietypen stöds inte
 

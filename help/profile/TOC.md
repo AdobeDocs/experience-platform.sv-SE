@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Profile
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiles
-source-git-commit: c630eb0e13c7d4c1b8f649816402fae0d4a79326
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 19%
+source-wordcount: '129'
+ht-degree: 20%
 
 ---
 
@@ -23,7 +23,6 @@ ht-degree: 19%
 * [!DNL Profile] API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
-   * [Kantprojektioner](api/edge-projections.md)
    * [Enheter ([!DNL Profile] åtkomst)](api/entities.md)
    * [Exportjobb ([!DNL Profile] exportera)](api/export-jobs.md)
    * [Förhandsgranska exempelstatus ([!DNL Profile] förhandsgranskning)](api/preview-sample-status.md)
@@ -45,7 +44,7 @@ ht-degree: 19%
 * Unionens system {#union-schemas}
    * [Användargränssnittshandbok för unionsschema](ui/union-schema.md)
    * [Översikt över unionens schema (video)](video/union-schemas-overview.md)
-* Självstudiekurser {#tutorials}
+* Tutorials {#tutorials}
    * [Lägg till data i kundprofilen i realtid](tutorials/add-profile-data.md)
    * [Konfigurera en datauppsättning för profil](tutorials/dataset-configuration.md)
    * [Generera överlappningsrapport för datauppsättning](tutorials/dataset-overlap-report.md)

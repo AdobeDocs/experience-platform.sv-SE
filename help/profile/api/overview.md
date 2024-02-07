@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: API-guide för kundprofil i realtid
 description: Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '881'
 ht-degree: 1%
 
 ---
@@ -31,10 +31,6 @@ Beräknade attribut är funktioner som används för att samla data på händels
 Varje beräknat attribut innehåller ett uttryck, eller &quot;rule&quot;, som utvärderar inkommande data och lagrar resultatvärdet i ett profilattribut. Med hjälp av dessa beräkningar kan du enkelt besvara frågor som rör inköpstid, tid mellan köp eller antal programöppningar, utan att behöva utföra komplexa beräkningar manuellt varje gång informationen behövs. Dessa beräknade attributvärden kan sedan visas i en profil, användas för att skapa en målgrupp eller nås via ett antal olika åtkomstmönster.
 
 Du kan skapa, visa, redigera och ta bort beräknade attribut med `ca/attributes/` slutpunkt. Mer information om hur du använder beräknade attribut finns i [översikt över beräknade attribut](../computed-attributes/overview.md). API-åtgärder finns på [API-slutpunktsguide för beräknade attribut](../computed-attributes/api.md).
-
-## Kantprojektioner {#edge-projections}
-
-Adobe Experience Platform möjliggör personalisering av kundupplevelser i realtid genom att göra data lättillgängliga på strategiskt placerade servrar som kallas&quot;kanter&quot;. The [!DNL Real-Time Customer Profile] API har slutpunkter för arbete med kanter via komponenter som kallas för &quot;projektioner&quot;. Detta inkluderar projektionskonfigurationer för att bestämma vilka data som ska projiceras för varje kant, liksom projektionsdestinationer för att definiera var projektionen ska dirigeras. Detaljerad information om hur du arbetar med kantprojektioner finns på [Projektionskonfigurationer och målslutpunkter](edge-projections.md).
 
 ## Enheter ([!DNL Profile] åtkomst) {#entities}
 

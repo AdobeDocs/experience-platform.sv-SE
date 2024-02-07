@@ -2,10 +2,10 @@
 title: Edge-profiler
 description: Lär dig mer om kantprofiler, och relaterad terminologi, tillgängliga områden för kantprofiler samt tillgängliga tjänster för kantprofiler.
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
 workflow-type: tm+mt
-source-wordcount: '837'
-ht-degree: 1%
+source-wordcount: '795'
+ht-degree: 0%
 
 ---
 
@@ -30,7 +30,7 @@ Med andra ord slussas data till en kant med en projektion, med **projektionsmål
 Följande områden kan användas med kant:
 
 - VA6
-- OR2
+- ELLER2
 - IRL1
 - AUS3
 - SGP3
@@ -61,7 +61,7 @@ Express Profile Service (XPS) hämtar profilerna i olika kanter. Den här tjäns
 
 ## Nästa steg
 
-När du har läst den här guiden bör du ha en grundläggande förståelse för kantprofiler, inklusive information om tillgängliga områden och tjänster för kantprofiler. Mer information om kantutskjutningar finns i [slutpunktsguide för kantprojektion](./api/edge-projections.md). Mer information om Adobe Experience Edge finns i [Edge overview](../edge/home.md).
+När du har läst den här guiden bör du ha en grundläggande förståelse för kantprofiler, inklusive information om tillgängliga områden och tjänster för kantprofiler. Mer information om Adobe Experience Edge finns i [Edge overview](../edge/home.md).
 
 ## Bilaga
 
@@ -77,6 +77,4 @@ Dessutom har varje edge-profil ett schemaattribut som kallas användaraktivitets
 
 ### Hur fungerar utgångsdatum med kantprofiler?
 
-För kantprofiler avgör dataförfallodatumet hur länge profilen ska vara kvar innan den tas bort. Utgångsdatum är **rullande**, vilket innebär att varje gång profilen öppnas på kanten återställs datans förfallotid.
-
-Du kan lägga till förfallodatum för data i dina kantprofiler genom att lägga till dem i [kantprojektion](./api/edge-projections.md). Som standard är utgångsdatumet för data 14 dagar, men det kan anges till minst 1 timme och högst 90 dagar.
+För kantprofiler avgör dataförfallodatumet hur länge profilen ska vara kvar innan den tas bort. Utgångsdatum är **rullande**, vilket innebär att varje gång profilen öppnas på kanten återställs datans förfallotid. Som standard är utgångsdatumet 14 dagar.
