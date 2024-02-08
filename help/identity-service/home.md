@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: ed2c9824d4c2f7bf8dd6a2f8431e93fe833c899c
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1560'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ Läs följande tabell för att få en sammanfattning av nyckeltermerna innan du 
 | Term | Definition |
 | --- | --- |
 | Identitet | En identitet är data som är unika för en enhet. Vanligtvis är detta ett objekt i verkligheten, till exempel en enskild person, en maskinvaruenhet eller en webbläsare (representeras av en cookie). En fullständigt kvalificerad identitet består av två delar: en **namnutrymme för identitet** och **identitetsvärde**. |
-| Namnutrymme för identitet | Ett identitetsnamnutrymme är kontexten för en viss identitet. Ett namnutrymme för `Email` kan motsvara **julien<span>@acme.com**. På samma sätt är namnutrymmet `Phone` kan motsvara `555-555-1234`. Mer information finns i [Översikt över namnutrymmet identity](./features/namespaces.md) |
+| Namnutrymme för identitet | Ett identitetsnamnutrymme är kontexten för en viss identitet. Ett namnutrymme för `Email` kan motsvara identitetsvärdet: **julien<span>@acme.com**. På samma sätt är namnutrymmet `Phone` kan motsvara identitetsvärdet: `555-555-1234`. Mer information finns i [Översikt över namnutrymmet identity](./features/namespaces.md). |
 | Identitetsvärde | Ett identitetsvärde är en sträng som representerar en faktisk entitet och kategoriseras i identitetstjänsten via ett namnutrymme. Exempelvis identitetsvärdet (sträng) **julien<span>@acme.com** kan kategoriseras som en `Email` namnutrymme. |
 | Identitetstyp | En identitetstyp är en komponent i ett identitetsnamnutrymme. Identitetstypen anger om identitetsdata är länkade i ett identitetsdiagram eller inte. |
 | Länk | En länk eller en länkning är en metod för att fastställa att två olika identiteter representerar samma enhet. En länk mellan &quot;`Email` = julien<span>@acme.com och &quot;`Phone` = 555-555-1234&quot; betyder att båda identiteterna representerar samma enhet. Detta tyder på att kunden som interagerat med ert varumärke både med juliens e-postadress<span>@acme.com och telefonnumret 555-555-1234 är samma. |
