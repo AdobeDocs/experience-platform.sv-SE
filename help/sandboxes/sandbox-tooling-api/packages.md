@@ -2,10 +2,10 @@
 title: API-slutpunkt för sandlådeverktygspaket
 description: Med slutpunkten /packages i sandlådeverktygets API kan du programmässigt hantera paket i Adobe Experience Platform.
 exl-id: 46efee26-d897-4941-baf4-d5ca0b8311f0
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 8ff9c50b4999a49413f8c45274815225ba58361c
 workflow-type: tm+mt
-source-wordcount: '1553'
-ht-degree: 3%
+source-wordcount: '1531'
+ht-degree: 1%
 
 ---
 
@@ -747,11 +747,11 @@ POST /packages/import
 
 **Begäran**
 
-Följande begäran hämtar paketet med {PACKAGE_ID} tillhandahålls. Nyttolasten är en karta över ersättningar där, om det finns en post, nyckeln är `artifactId` anges av paketet, och alternativet är värdet. Om kartan eller nyttolasten är **tom**, inga substitutioner utförs.
+Följande begäran hämtar paket som ska importeras. Nyttolasten är en karta över ersättningar där, om det finns en post, nyckeln är `artifactId` anges av paketet, och alternativet är värdet. Om kartan eller nyttolasten är **tom**, inga substitutioner utförs.
 
 ```shell
 curl -X POST \
-  https://platform.adobe.io/data/foundation/exim/packages/{PACKAGE_ID}/import?targetSandbox=targetSandboxName \
+  https://platform.adobe.io/data/foundation/exim/packages/import/ \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -775,7 +775,6 @@ curl -X POST \
 
 | Egenskap | Beskrivning | Typ | Obligatoriskt |
 | --- | --- | --- | --- |
-| `id` | Paketets ID. | Sträng | Ja |
 | `alternatives` | `alternatives` representerar mappningen av källsandlådeartefakter till befintliga målarsandlådeartefakter. Eftersom de redan finns där undviker importjobbet att skapa dessa artefakter i målsandlådan. | Sträng | Nej |
 
 **Svar**
