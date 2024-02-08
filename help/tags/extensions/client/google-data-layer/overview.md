@@ -2,9 +2,9 @@
 title: Google Data Layer Extension
 description: Läs mer om taggtillägget Google Client Data Layer i Adobe Experience Platform.
 exl-id: 7990351d-8669-432b-94a9-4f9db1c2b3fe
-source-git-commit: 9c608f69f6ba219f9cb4e938a77bd4838158d42c
+source-git-commit: c61afdc2c3df98a0ef815d7cb034ba2907c52908
 workflow-type: tm+mt
-source-wordcount: '864'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,7 @@ ht-degree: 0%
 
 Med Google datalagertillägg kan du använda ett Google-datalager i taggimplementeringen. Tillägget kan användas fristående eller samtidigt med Google-lösningar och med Google öppen källkod [Hjälpbibliotek för datalager](https://github.com/google/data-layer-helper).
 
-Hjälpbiblioteket har liknande händelsestyrda funktioner som Adobe Client Data Dayer (ACDL). Dataelementen, reglerna och åtgärderna i Google-datalagrets tillägg har liknande funktionalitet som i [ACDL-tillägg](../client-data-layer/overview.md).
-
-## Löptid
-
-Version 1.2.x är en sen betaversion som används i produktionen.
+Hjälpbiblioteket har liknande händelsestyrda funktioner som Adobe Client Data Layer (ACDL). Dataelementen, reglerna och åtgärderna i Google Data Layer-tillägget har liknande funktioner som i [ACDL-tillägg](../client-data-layer/overview.md).
 
 ## Installation
 
@@ -44,7 +40,6 @@ Standardnamnet för datalagret är Google standardnamn `dataLayer`.
 > - JavaScript-händelser.
 > - Data överförs till datalagret med _event_ nyckelord.
 
-
 Tillägget ger dig möjlighet att lyssna efter ändringar i datalagret.
 
 >[!NOTE]
@@ -52,13 +47,23 @@ Tillägget ger dig möjlighet att lyssna efter ändringar i datalagret.
 >Det är viktigt att förstå hur _event_ nyckelord när data skickas till ett Google-datalager, på samma sätt som datalagret Adobe Client. The _event_ nyckelordet ändrar beteendet för Google datalager och därför det här tillägget.\
 > Läs Google dokumentation eller gör en undersökning om du är osäker.
 
+### Google Event Types
+
+Google har stöd för två metoder för push-händelser: Google Tag Manager med `push()` och Google Analytics 4 med `gtag()` -metod.
+
+Tilläggsversioner för Google datalager före 1.2.1 stöds endast händelser som skapats av `push()`, vilket visas i kodexemplen på den här sidan.
+
+Versioner 1.2.1 och senare supporthändelser som skapats med `gtag()`.  Detta är valfritt och kan aktiveras i dialogrutan för tilläggskonfiguration.
+
+Mer information om `push()` och `gtag()` händelser, se [Google-dokumentation](https://developers.google.com/analytics/devguides/collection/ga4/reference/events?client_type=gtag).  Information finns också i dialogrutorna för konfiguration och regel för tillägget.
+
 ### Lyssna efter alla penslar till datalagret
 
 Om du väljer det här alternativet avlyssnar händelseavlyssnaren alla ändringar som görs i datalagret.
 
 ### Lyssna efter push-meddelanden exklusive händelser
 
-Om du väljer det här alternativet lyssnar händelseavlyssnaren på alla datapush-meddelanden till datalagret, exklusive händelser.
+Om du väljer det här alternativet avlyssnar händelseavlyssnaren alla datapush-meddelanden till datalagret, med undantag för händelser.
 
 Följande exempel på push-händelser spåras av avlyssnaren:
 
@@ -113,19 +118,19 @@ dataLayer.push({"event":"myEvent2"})
 
 ### Överför till datalager {#push-to-data-layer}
 
-Tillägget ger dig två åtgärder för att överföra JSON till datalagret. ett fritextfält som manuellt skapar den JSON som ska skjutas upp och från version 1.2.0, en dialogruta för nyckelvärdesmultifält.
+Tillägget ger dig två åtgärder för att överföra JSON till datalagret, ett fritextfält för att manuellt skapa JSON som ska skjutas upp och från version 1.2.0, en dialogruta för nyckelvärdesmultifält.
 
-#### JSON för fri text
+#### JSON för fritext
 
-Åtgärden för fri text gör det möjligt att använda dataelement direkt i JSON. I JSON-redigeraren ska dataelement refereras med procentnotation. Exempel, `%dataElementName%`.
+Åtgärden för fri text gör det möjligt att använda dataelement direkt i JSON. I JSON-redigeraren ska dataelement refereras med procentnotation. Till exempel: `%dataElementName%`.
 
 ```json
 {
-    "page": {
-        "url": "%url%",
-        "previous_url": "%previous_url%",
-        "concatenated_values": "static string %dataElement%"
-    }
+  "page": {
+    "url": "%url%",
+    "previous_url": "%previous_url%",
+    "concatenated_values": "static string %dataElement%"
+  }
 }
 ```
 
@@ -146,10 +151,10 @@ Med en växlingsväxling kan du välja om dataelementet ska returnera värden fr
 Dataelementet kan därför returnera:
 
 - Tomt fält: datalagrets beräknade läge.
-- Fält med tangent (till exempel page.previous_url i exemplet ovan): värdet för nyckeln i händelseobjektet eller det beräknade läget.
+- Fält med nyckel (t.ex. page.previous_url i exemplet ovan): värdet på nyckeln i händelseobjektet eller det beräknade läget.
 
 ## Ytterligare information
 
 Tilläggets dialogrutor för dataelement och händelser innehåller detaljerad användarinformation och exempel.
 
-Ytterligare allmän information finns i [VIKTIGT](https://github.com/adobe/reactor-extension-googledatalayer/blob/main/README.md)
+Ytterligare allmän information finns i [README för projekt](https://github.com/adobe/reactor-extension-googledatalayer/blob/main/README.md)
