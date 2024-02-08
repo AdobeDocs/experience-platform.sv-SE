@@ -1,13 +1,13 @@
 ---
 title: Assistent för Adobe Experience Platform
 description: Lär dig hur du använder Assistant för att navigera bland och förstå koncept för Experience Platform och Real-time Customer Data Platform, samt användningsinformation om dina objekt.
-badge: Alfa
+badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: a0395c4d3514693d3200571496eff47768da52ba
+source-git-commit: 5bdfc5282e71d05ff0db39c32fc02c60fd8d1c34
 workflow-type: tm+mt
-source-wordcount: '2175'
+source-wordcount: '2347'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 >
 >Assistenten för Adobe Experience Platform är för närvarande i Alpha. Funktionen och dokumentationen kan komma att ändras.
 
-Assistenten för Adobe Experience Platform är en gränssnittsfunktion som du kan använda för att navigera och förstå koncept för Experience Platform och Real-time Customer Data Platform samt för att få information om hur du använder dina objekt.
+Assistant är en gränssnittsfunktion som du kan använda för att navigera och förstå Adobe Experience Platform- och Real-time Customer Data Platform-koncept och användningsinformation om dina objekt.
 
 Du kan fråga Assistant om du vill ha information om:
 
@@ -26,7 +26,7 @@ Du kan fråga Assistant om du vill ha information om:
 * Status och mått för befintliga dataobjekt i organisationen.
 * Använd exempel och nyanser för att få en bättre förståelse för dataobjekten, inklusive attribut, datauppsättningar, destinationer, scheman, segment och källor.
 
-Det här dokumentet innehåller information om hur du kan få svar på frågor och koncept från Experience Platform och Real-Time CDP med Assistant.
+Läs guiden nedan för att lära dig mer om hur du kan använda Assistant för att navigera i och förstå dina arbetsflöden för Experience Platform och Real-Time CDP.
 
 >[!BEGINSHADEBOX]
 
@@ -55,35 +55,31 @@ Det finns två frågeklasser att tänka på innan du frågar assistenten:
 
 >[!ENDSHADEBOX]
 
-## Åtkomstassistenten för Experience Platform i användargränssnittet
+## Åtkomstassistenten i användargränssnittet i Experience Platform
 
-Du kommer åt Assistant via sidhuvudsnavigeringen i användargränssnittet för Experience Platform.
+Välj **[!UICONTROL Assistant icon]** från Experience Platform översta huvud i användargränssnittet.
 
-Välj **[!UICONTROL Assistant icon]** från sidhuvudet till startpanelen.
+![Experience Platform hemsida med assistentikonen vald och assistentgränssnittet öppet.](./images/ai-assistant/ai-assistant.png)
 
-![Experience Platform användargränssnittets hemsida med assistentikonen vald.](./images/ai-assistant/ai-assistant.png)
+Assistentgränssnittet öppnas och du får information om hur du kommer igång. Du kan använda alternativen i [!UICONTROL Ideas to get started] svara på frågor och kommandon som:
 
-<!-- +++Use immersive mode
+* [!UICONTROL Which of my segments are activated?]
+* [!UICONTROL What is a schema?]
+* [!UICONTROL Tell me some common use cases for Real-Time CDP]
 
-To use [!DNL Immersive mode] select the focus icon in the header navigation of the Assistant.
+![The &quot;ideas to get started&quot; section of Assistant.](./images/ai-assistant/ideas-to-get-started.png)
 
-![select-immersive](./images/ai-assistant/select-immersive.png)
+Om du vill interagera med Assistant använder du inmatningsrutan för att skriva in frågor eller kommandon. Du kan också använda (**`+`**) för att använda funktionen Komplettera automatiskt och bokmärkesikonen för att komma åt frågor och kommandon med bokmärken.
 
-A dedicated pop-up interface for Assistant appears at the center of your screen.
+![Inmatningsrutan Assistant är markerad.](./images/ai-assistant/interact.png)
 
-![immersive-mode](./images/ai-assistant/immersive-mode.png)
-
-+++
-
-From here, you can input your question in the text box and query Assistant for concepts regarding data or audiences. You can also ask questions about your data objects to better understand how you can use them for your respective use case.  -->
-
-### Exempel: Använd Assistant för att snabba upp skapandet av schemat {#example-use-case}
+## Exempel: Använd assistenten för att snabba upp framtagningen av scheman
 
 >[!NOTE]
 >
->I följande exempelarbetsflöde används ExperienceEvent-schemaprocessen för att illustrera hur du kan använda Assistant när du använder användargränssnittet i Experience Platform.
+>Följande arbetsflöde är ett exempel som använder processen att skapa händelseschema för att illustrera hur du kan använda Assistant när du använder användargränssnittet i Experience Platform.
 
-Tänk dig ett användningsexempel där du skapar en **Enhetshandel i händelseschema**. När du skapar ExperienceEvent-scheman stöter du på `eventType` fält. Nu kan du antingen lämna arbetsflödet och läsa dokumentationen på [grunderna i en schemakomposition](../xdm/schema/composition.md)eller så kan du använda Assistant för att få svar på dina frågor direkt.
+Tänk dig ett användningsexempel där du skapar en **Enhetshandel i händelseschema**. När upplevelsehändelsens schema skapades stöter du på `eventType` fält. &quot;Nu kan du välja att antingen avsluta arbetsflödet och se [grunderna i en schemakomposition](../xdm/schema/composition.md) eller så kan du använda Assistant för att få svar på dina frågor och hitta ytterligare resurser via de dokumentationslänkar som rekommenderas av Assistant.&quot;
 
 Börja med att ange din fråga i textrutan. I exemplet nedan ställs frågan: &quot;**Vad är fältet eventType i ett ExperienceEvent-schema?**&quot;
 
@@ -91,49 +87,61 @@ Börja med att ange din fråga i textrutan. I exemplet nedan ställs frågan: &q
 
 Assistenten frågar sedan efter sin kunskapsbas och beräknar ett svar. Efter en liten stund returnerar assistenten ett svar och relaterade förslag som du kan använda som uppföljningsuppmaningar.
 
-Ett givet svar ger hyperlänkar till alla refererade entiteter. Välj i exemplet nedan **[!UICONTROL Schemas]** för att visa en lista över de refererade scheman, eller **[!UICONTROL Segments]** om du vill visa en lista över de refererade segmenten.
-
 ![Assistent för Experience Platform med svar på föregående fråga.](./images/ai-assistant/answer.png)
 
-Assistenten ger dig ett sätt att validera svaret genom att visa dess källa. Länkar till dokumentationen tillhandahålls för konceptfrågor, medan frågor om dataanvändning kan verifieras med en SQL-fråga som visar hur svaret beräknades.
+När du har fått ett svar från assistenten kan du välja bland ett antal alternativ som avgör hur du vill fortsätta.
 
-![Alternativ som tillhandahålls av assistenten efter att ett svar har returnerats.](./images/ai-assistant/options.png)
+### Spara frågan {#save-your-query}
 
-### Uppföljningsfråga {#follow-up-question}
++++Välj för att visa ett exempel på hur du sparar en fråga
 
-+++Välj för att visa ett exempel på en uppföljningsfråga
+Om du vill spara frågan väljer du bokmärkesikonen bredvid frågan.
 
-Du kan lära dig mer om ett visst ämne genom att ställa en uppföljningsfråga. I nästa exempel tillfrågas assistenten om hur eventType kan användas i segmentering.
+![Skärmbild av ett markerat bokmärke.](./images/ai-assistant/save-your-query.png)
 
-![En uppföljningsfråga och ett svar som visas på assistenten för Experience Platform.](./images/ai-assistant/follow-up-question.png)
+Om du vill få åtkomst till dina sparade frågor väljer du bokmärkesikonen under inmatningsrutan och väljer sedan den fråga du vill köra.
 
-+++
-
-### Dataanvändningsfråga {#data-usage-question}
-
-+++Välj för att visa ett exempel på en fråga om dataanvändning
-
-Du kan även ställa frågor till assistenten om din dataanvändning. När du frågar om dataanvändning måste du vara i en aktiv sandlåda för att assistenten ska kunna svara på din fråga.
-
-För svar som innehåller information om dataanvändning tillhandahåller Assistant länkar till de berörda enheterna. Assistenten ger dig dessutom en förklaring av hur svaret beräknades.
-
-![En fråga om dataanvändning där man frågar hur många segment en användare har.](./images/ai-assistant/data-usage-question.png)
+![Skärmbild av bokmärkesikoner och en lista över sparade frågor.](./images/ai-assistant/bookmarks.png)
 
 +++
 
-### Flera svängar {#multi-turn}
+### Visa data i din sandlåda {#view-data-in-your-sandbox}
 
-+++Markera för att visa ett exempel på flera omgångar
++++Markera för att visa exempel
 
-Du kan använda Assistants multibläddringsfunktioner för att få en mer naturlig konversation under upplevelsen. Assistenten kan besvara uppföljningsfrågor eftersom sammanhanget kan härledas från en tidigare interaktion.
+Beroende på din fråga ger Assistant ytterligare information som gäller data i din sandlåda. Om du vill visa hur svaret på din fråga gäller för din sandlåda väljer du **[!UICONTROL In your sandbox].**
 
-I exemplet nedan ombeds Assistant att lista de befintliga segmenten i organisationen som en uppföljning till en tidigare fråga om totalt antal segment.
+Under det här steget kan assistenten tillhandahålla direktlänkar till gränssnittssidorna för vissa objekt i fråga. I exemplet nedan ger Assistant direktlänkar till [!UICONTROL Schemas] och [!UICONTROL Segments] Gränssnittssidor.
 
-![](./images/ai-assistant/multi-turn-one.png)
+![Skärmbild av alternativet&quot;I din sandlåda&quot;.](./images/ai-assistant/in-your-sandbox.png)
 
-Assistenten får sedan en ny uppföljningsförfrågan. Den här gången svarar Assistant genom att lista de befintliga segmenten som sorterats efter deras respektive storlekar.
++++
 
-![](./images/ai-assistant/multi-turn-two.png)
+### Verifiera svaret {#verify-the-response}
+
++++Markera för att visa ett exempel på hur du visar källor
+
+Om du vill visa citat och validera assistentens svar väljer du **[!UICONTROL Show sources]**. Assistenten tillhandahåller länkar till dokumentation som bekräftar dess svar. Du kan även använda frågor som Assistant tillhandahåller under [!UICONTROL Related suggestions] om du vill utforska ämnen som hör till den ursprungliga frågan.
+
+![Skärmbild av &quot;Visa källor&quot;.](./images/ai-assistant/show-sources.png)
+
++++
+
+### Dataanvändning och visualisering {#data-usage-and-visualization}
+
++++Välj för att visa ett exempel på frågor om dataanvändning och datavisualisering
+
+Du kan fråga Assistant om din dataanvändning. Du måste vara i en aktiv sandlåda för att assistenten ska kunna besvara en fråga om dataanvändning gällande data i organisationen.
+
+![Följ upp frågan om dataanvändning.](./images/ai-assistant/data-usage-question.png)
+
+När assistenten tillfrågas om dataanvändning ger han även en förklaring till hur svaret beräknades. I exemplet nedan visar Assistant de steg som har vidtagits för att visa segment med över 1 000 profiler och deras respektive aktiveringsstatus.
+
+![Följ upp frågan om segment som illustrerar hur Assistant beräknade svaret.](./images/ai-assistant/results-explained.png)
+
+Assistant återger diagram för att visualisera data. Du kan även lägga till filter och ändringar i dina frågor och du kan instruera Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be Assistant att visa en trend för antalet segment i den ordning som de skapades, ta bort segment utan totalprofiler och använda namn på månader i stället för heltal när data visas.
+
+![Uppföljningsfråga som illustrerar datavisualisering.](./images/ai-assistant/data-visualization.png)
 
 +++
 
@@ -143,13 +151,29 @@ Assistenten får sedan en ny uppföljningsförfrågan. Den här gången svarar A
 
 Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Det finns rekommendationer för att slutföra automatiskt för följande domäner: segment, scheman, datauppsättningar, källor och mål.
 
-Om du vill använda Fyll i automatiskt anger du ett plustecken (**`+`**) som en del av din fråga. Du kan också välja plustecknet (**`+`**) i textrutan. Sedan visas ett fönster med en lista över rekommenderade dataobjekt som finns i sandlådan.
+Du kan använda Fyll i automatiskt genom att ta med plustecknet (**`+`**) i din fråga. Du kan också välja plustecknet (**`+`**) längst ned i textrutan. Ett fönster visas med en lista över rekommenderade dataobjekt från sandlådan.
 
-![](./images/ai-assistant/autocomplete-options.png)
+![Exempel på automatisk komplettering](./images/ai-assistant/auto-complete-one.png)
 
 Sedan markerar du det dataobjekt som du vill fråga för att slutföra din fråga och skickar sedan din fråga.
 
-![](./images/ai-assistant/autocomplete-question.png)
+![Exempel på automatisk komplettering med fråga och svar](./images/ai-assistant/auto-complete-two.png)
+
++++
+
+### Använda flera omgångar {#use-multi-turn}
+
++++Markera för att visa ett exempel på flera omgångar
+
+Du kan använda Assistants multibläddringsfunktioner för att få en mer naturlig konversation under upplevelsen. Assistenten kan besvara uppföljningsfrågor. det sammanhanget kan härledas från en tidigare interaktion.
+
+I exemplet nedan tillfrågas Assistant om det totala antalet dataflöden i den aktuella organisationen.
+
+![Exempel på multisväng](./images/ai-assistant/multi-turn-one.png)
+
+Assistenten får sedan en ny uppföljningsbegäran. Den här gången svarar Assistant genom att lista de dataflöden som finns i organisationen.
+
+![Exempel på flera svarstider med fråga och svar](./images/ai-assistant/multi-turn-two.png)
 
 +++
 
@@ -195,18 +219,6 @@ Du måste logga in i en sandlåda för att få frågor om specifika data som rö
 | Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Visa de attribut som används för {SEGMENT_NAME}?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka segment har ändrats den senaste veckan?</li><li>Visa en lista över de segment som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många segment som har skapats från varje datauppsättning.</li><li>Vilka källkonton är associerade med datauppsättningen XYZ?</li><li>Visa segmentdefinitionen och ändringsdatumet för {SEGMENT_NAME}.</li></ul> |
 
 +++
-
-## Verifiera svaret {#verify-the-response}
-
-Du kan verifiera det svar som assistenten returnerar på flera olika sätt.
-
-### Citat från dokumentation {#citations}
-
-I varje svar ger Assistant dig citat som du kan referera till för verifiering eller mer information.
-
-Välj **[!UICONTROL Show source]** en lista med länkar till dokumentation som assistenten refererar till för att beräkna sitt svar. När du väljer en länk till den refererade dokumentationen, kommer du till det relevanta avsnittet på den aktuella sidan med den specifika informationen markerad.
-
-![Länkarna till källan som visas i assistenten.](./images/ai-assistant/show-sources.png)
 
 ## Ge feedback {#feedback}
 
