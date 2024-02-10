@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;frågetjänst;frågetjänst;fråga
 title: Komma igång med Adobe Experience Platform Query Service
-description: En beskrivning av de nödvändiga stegen för att fullt ut utnyttja Adobe Experience Platform Query Service
+description: En beskrivning av de steg som krävs för att fullt ut utnyttja Adobe Experience Platform Query Service
 exl-id: 36ab9354-23f9-4cb8-bcd4-00fe076386ab
-source-git-commit: 58eadaaf461ecd9598f3f508fab0c192cf058916
+source-git-commit: 705d58fad98c6c021220a4b1c5fc85541d6572bb
 workflow-type: tm+mt
-source-wordcount: '212'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,13 @@ När du har importerat dina data till Adobe Experience Platform kan du börja ar
 
 ## Nästa steg
 
-Dokumentet innehåller de krav som krävs för att kunna använda [!DNL Query Service] i Experience Platform. Mer information om hur [!DNL Query Service] fördelarna med databehandling i Platform finns i [exempel på en presentation](../use-cases/abandoned-browse.md).
+Dokumentet innehåller de krav som krävs för att kunna använda [!DNL Query Service] i Experience Platform. Du rekommenderas att läsa följande dokument för att snabbt komma igång med att använda funktionerna i frågetjänsten:
+
+- [Allmän vägledning för frågekörning](../best-practices/writing-queries.md)
+- [SQL-syntax i Query Service](../sql/syntax.md)
+- [Skapa härledda datauppsättningar med SQL](../data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
+
+Om du vill veta mer om hur Query Service hanterar data i Platform kan du titta på [övergiven presentation av bläddringsfall](../use-cases/abandoned-browse.md#video-example).
 
 Följande resurser är användbara för att förbättra dina kunskaper om [!DNL Query Service]:
 

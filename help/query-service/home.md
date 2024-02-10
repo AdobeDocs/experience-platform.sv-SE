@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över frågetjänsten
 description: Läs mer om frågetjänstens roll i Experience Platform.
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: ad1827284b7070f73421d10c49e1e86e282839eb
+source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '860'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,16 @@ Med Query Service kan ni koppla samman kundresan online-till-offline och först�
 
 ## Använda frågetjänsten {#usage}
 
-Om du vill analysera dina data kan du använda användargränssnittet för frågetjänsten och ett RESTful API, som du kan använda för att skapa SQL-frågor. Med användargränssnittet kan du skriva och köra frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Du kan använda Frågeredigeraren som en sandlåda för att testa dina frågor innan du kör dem på din bredare datauppsättning. Se [Användargränssnittshandbok för frågetjänsten](ui/overview.md) för mer information om hur du använder användargränssnittet. RESTful API ger en liknande upplevelse. Du kan använda API:t för frågetjänsten för att programmässigt skriva och köra frågor, schemalägga frågor för framtida användning och upprepning samt skapa mallar för frågor som du vill skriva. Mer information om hur du använder API:t för frågetjänsten finns i [Handbok för frågetjänstutvecklare](api/getting-started.md).
+Om du vill analysera dina data skapar och kör du SQL-frågor med antingen användargränssnittet för frågetjänsten eller RESTful API.
+Med användargränssnittet för frågetjänsten kan du skriva, köra och schemalägga frågor, visa frågor som körts tidigare och få åtkomst till frågor som sparats av användare i organisationen. Du kan också testa dina frågor innan du kör dem på din bredare datauppsättning med Frågeredigeraren. Se [Användargränssnittshandbok för frågetjänst](ui/overview.md) för en översikt över gränssnittsfunktionerna.
+
+RESTful API ger en liknande upplevelse. Du kan använda API:t för frågetjänsten för att skriva och köra frågor programmatiskt, skapa och spara mallar för frågor som du vill anpassa eller schemalägga frågor för automatiserad körning. Se [Handbok för frågetjänstutvecklare](api/getting-started.md) för mer information om hur du använder API:t för frågetjänsten.
+
+Du rekommenderas att läsa följande dokument för att snabbt komma igång med att använda funktionerna i frågetjänsten:
+
+- [Allmän vägledning för frågekörning](./best-practices/writing-queries.md)
+- [SQL-syntax i Query Service](./sql/syntax.md)
+- [Skapa härledda datauppsättningar med SQL](./data-distiller/derived-datasets/create-derived-datasets-with-sql.md)
 
 ## Frågetjänster och Experience Platform {#experience-platform-services}
 
