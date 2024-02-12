@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: 786801975dbde52b5d81a407618ef3b574a6afa3
 workflow-type: tm+mt
-source-wordcount: '1870'
+source-wordcount: '1903'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ The `/descriptors` slutpunkt i [!DNL Schema Registry] Med API kan ni programmäs
 
 ## Komma igång
 
-Slutpunkten som används i den här guiden är en del av [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Slutpunkten som används i den här guiden ingår i [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med beskrivningar {#list}
 
@@ -47,11 +47,11 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
-Svarsformatet beror på `Accept` huvud som skickades i begäran. Observera att `/descriptors` slutpunktsanvändning `Accept` huvuden som inte är samma som alla andra slutpunkter i [!DNL Schema Registry] API.
+Svarsformatet beror på `Accept` huvud som skickades i begäran. Observera att `/descriptors` slutpunktsanvändning `Accept` huvuden som skiljer sig från andra slutpunkter i [!DNL Schema Registry] API.
 
 >[!IMPORTANT]
 >
->Beskrivningar kräver unika `Accept` rubriker som ersätter `xed` med `xdm`och erbjuder `link` som är unikt för beskrivningar. Den rätta `Accept` rubrikerna har tagits med i exempelanropen nedan, men var extra försiktig för att se till att rätt rubriker används när du arbetar med beskrivningar.
+>Beskrivningar kräver unika `Accept` rubriker som ersätter `xed` med `xdm`och erbjuder `link` som är unikt för beskrivare. Den rätta `Accept` rubrikerna har tagits med i exempelanropen nedan, men var extra försiktig för att se till att rätt rubriker används när du arbetar med beskrivningar.
 
 | `Accept` header | Beskrivning |
 | -------|------------ |
@@ -248,7 +248,7 @@ Ett lyckat svar returnerar HTTP-status 201 (Skapad) och `@id` för den uppdatera
 }
 ```
 
-Utföra en [sökbegäran (GET)](#lookup) om du vill visa beskrivningen visar du att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
+Utföra en [sökbegäran (GET)](#lookup) för att visa beskrivningen visar att fälten nu har uppdaterats för att återspegla de ändringar som skickats i PUT-begäran.
 
 ## Ta bort en beskrivning {#delete}
 
@@ -291,6 +291,10 @@ I följande avsnitt finns ytterligare information om hur du arbetar med beskrivn
 
 I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inklusive de fält som krävs för att definiera en beskrivning av varje typ.
 
+>[!IMPORTANT]
+>
+>Du kan inte etikettera klientnamnområdesobjektet eftersom systemet skulle tillämpa den etiketten på alla anpassade fält i den sandlådan. I stället måste du ange den lövnod under det objektet som du vill etikettera.
+
 #### Identitetsbeskrivare
 
 En identitetsbeskrivning signalerar att[!UICONTROL sourceProperty]&quot; i &quot;[!UICONTROL sourceSchema]&quot; är en [!DNL Identity] fält enligt beskrivning [Adobe Experience Platform Identity Service](../../identity-service/home.md).
@@ -313,8 +317,8 @@ En identitetsbeskrivning signalerar att[!UICONTROL sourceProperty]&quot; i &quot
 | `@type` | Den typ av beskrivning som definieras. För en identitetsbeskrivning måste det här värdet anges till `xdm:descriptorIdentity`. |
 | `xdm:sourceSchema` | The `$id` URI för schemat där beskrivningen definieras. |
 | `xdm:sourceVersion` | Huvudversionen av källschemat. |
-| `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd t.ex. &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
-| `xdm:namespace` | The `id` eller `code` identitetsnamnutrymmets värde. En lista med namnutrymmen finns med [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). |
+| `xdm:sourceProperty` | Sökvägen till den specifika egenskap som ska vara identiteten. Sökvägen ska börja med ett &quot;/&quot; och inte sluta med ett. Ta inte med &quot;egenskaper&quot; i sökvägen (använd till exempel &quot;/personalEmail/address&quot; istället för &quot;/properties/personalEmail/properties/address&quot;) |
+| `xdm:namespace` | The `id` eller `code` identitetsnamnutrymmets värde. En lista med namnutrymmen finns med [[!DNL Identity Service API]](https://developer.adobe.com/experience-platform-apis/references/identity-service). |
 | `xdm:property` | Antingen `xdm:id` eller `xdm:code`, beroende på `xdm:namespace` används. |
 | `xdm:isPrimary` | Ett booleskt värde (tillval). När värdet är true anges fältet som primär identitet. Scheman får endast innehålla en primär identitet. |
 
@@ -357,7 +361,7 @@ Med egna namnbeskrivningar kan användaren ändra `title`, `description`och `met
 | `xdm:title` | Den nya rubriken som du vill visa för det här fältet, skriven i Inledande versal. |
 | `xdm:description` | En valfri beskrivning kan läggas till tillsammans med titeln. |
 | `meta:enum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält, `meta:enum` kan användas för att lägga till föreslagna värden för fältet i segmenteringsgränssnittet. Det är viktigt att notera att `meta:enum` deklarerar inte en uppräkning eller tillhandahåller någon datavalidering för XDM-fältet.<br><br>Detta ska endast användas för XDM-fält som definieras av Adobe. Om egenskapen source är ett anpassat fält som definieras av din organisation bör du i stället redigera fältets `meta:enum` direkt via en PATCH-begäran till fältets överordnade resurs. |
-| `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
+| `meta:excludeMetaEnum` | Om fältet anges av `xdm:sourceProperty` är ett strängfält som har befintliga föreslagna värden som anges under en `meta:enum` kan du inkludera det här objektet i en egen namnbeskrivning för att utesluta vissa eller alla värden från segmenteringen. Nyckeln och värdet för varje post måste matcha de som ingår i originalet `meta:enum` av fältet för att bidraget ska kunna uteslutas. |
 
 {style="table-layout:auto"}
 
