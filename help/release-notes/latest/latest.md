@@ -1,11 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation januari 2024 för Adobe Experience Platform.
+description: Versionsinformationen för Adobe Experience Platform i januari 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
 workflow-type: tm+mt
-source-wordcount: '1644'
-ht-degree: 2%
+source-wordcount: '1648'
+ht-degree: 3%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 Nya funktioner i Adobe Experience Platform:
 
-- [Använd fallspelningsböcker](#use-case-playbooks)
+- [Spelböcker med användningsexempel](#use-case-playbooks)
 
 Uppdateringar av befintliga funktioner i Experience Platform:
 
@@ -29,7 +29,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
-## Använd fallspelningsböcker {#use-case-playbooks}
+## Spelböcker med användningsexempel {#use-case-playbooks}
 
 The [!UICONTROL Use Case Playbooks] är nu allmänt tillgängliga för alla kunder som har Real-Time CDP och Adobe Journey Optimizer. [!UICONTROL Use Case Playbooks] är utformade för att hjälpa användare att klara utmaningar när de börjar med Real-time Customer Data Platform eller Adobe Journey Optimizer. När du är osäker på var du ska börja eller hur du ska skapa rätt material för dina behov kan du få inspiration med Use Case Playbooks och skapa olika resurser så att du kan testa och importera till produktionsmiljöer när du är klar.
 
@@ -181,8 +181,8 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative}[!DNL Oracle NetSuite] källor | Använd [!DNL Oracle NetSuite] integreringar i källkatalogen för att hämta data från [[!DNL Oracle NetSuite Activities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md) och [[!DNL Oracle NetSuite Entities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md) konton hos Experience Platform. |
-| [!BADGE Beta]{type=Informative}[!DNL Braze Currents] källa | Använd [[!DNL Braze Currents]](../../sources/tutorials/ui/create/marketing-automation/braze.md) integrering i källkatalogen för att hämta data från [!DNL Braze] konto till Experience Platform. |
+| [!BADGE Beta]{type=Informative} [!DNL Oracle NetSuite] källor | Använd [!DNL Oracle NetSuite] integreringar i källkatalogen för att hämta data från [[!DNL Oracle NetSuite Activities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md) och [[!DNL Oracle NetSuite Entities]](../../sources/tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md) konton hos Experience Platform. |
+| [!BADGE Beta]{type=Informative} [!DNL Braze Currents] källa | Använd [[!DNL Braze Currents]](../../sources/tutorials/ui/create/marketing-automation/braze.md) integrering i källkatalogen för att hämta data från [!DNL Braze] konto till Experience Platform. |
 | Stöd för autentisering med nyckelpar för [!DNL Snowflake] batchkälla | Nu kan du använda nyckelpars-autentisering när du skapar en ny [!DNL Snowflake] konto för batchdata. Mer information finns i guiden [skapa [!DNL Snowflake] konto med API](../../sources/tutorials/api/create/databases/snowflake.md) eller guiden på [skapa [!DNL Snowflake] konto med användargränssnittet](../../sources/tutorials/ui/create/databases/snowflake.md). |
 
 {style="table-layout:auto"}
