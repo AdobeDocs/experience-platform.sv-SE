@@ -3,7 +3,7 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 4d662bc8ec8729654589c8675c5e598b94957ed7
+source-git-commit: d6b3dd7de1e8b5247bf692d1654fc4506ab4a471
 workflow-type: tm+mt
 source-wordcount: '1786'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Förstå vilka datamängdstyper du kan exportera beroende på program, produktni
   <tr>
     <td>Customer Journey Analytics</td>
     <td>Alla</td>
-    <td> Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager. Läs om de behörigheter som krävs i <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/cja-access-control.html#product-admin-additional-permissions"> Customer Journey Analytics dokumentation</a>.  <br> <b>Anmärkning om tillgänglighet:</b> Möjligheten att exportera datauppsättningar till molnet är i den begränsade testfasen av releasen och är kanske inte tillgänglig än i din miljö. Den här anteckningen tas bort när funktionen är allmänt tillgänglig. Mer information om Customer Journey Analytics finns i <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/releases/releases.html"> Funktionsreleaser för Customer Journey Analytics</a>. </td>
+    <td> <p> Data för profil- och upplevelsehändelser som har skapats i användargränssnittet i Experience Platform efter att ha inhämtat eller samlat in data via Sources, Web SDK, Mobile SDK, Analytics Data Connector och Audience Manager. Läs om de behörigheter som krävs i <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/cja-access-control.html#product-admin-additional-permissions"> Customer Journey Analytics dokumentation</a>. </p> <p> <b>Anmärkning om tillgänglighet:</b> Möjligheten att exportera datauppsättningar till molnet är i den begränsade testfasen av releasen och är kanske inte tillgänglig än i din miljö. Den här anteckningen tas bort när funktionen är allmänt tillgänglig. Mer information om Customer Journey Analytics finns i <a href="https://experienceleague.adobe.com/docs/analytics-platform/using/releases/releases.html"> Funktionsreleaser för Customer Journey Analytics</a>. </p> </td>
   </tr>
   <tr>
     <td>Data Distiller</td>
