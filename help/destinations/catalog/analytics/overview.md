@@ -1,16 +1,16 @@
 ---
 keywords: analysmål;analysmål
-title: Översikt över Analytics-destinationer
+title: Översikt över Analytics-mål
 description: Analysdestinationer spårar hur besökare interagerar med innehåll på er webbplats och samlar in data för att förstå hur er målgrupp beter sig. Dessa plattformar ger unika insikter om engagemang och konvertering av era mest värdefulla besökare.
 exl-id: d7a2351b-c2ce-4776-a2b7-f8bb5e73b45b
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 7ad013cb4359f2d65e78e30bc8472f62f4505b3a
 workflow-type: tm+mt
-source-wordcount: '173'
+source-wordcount: '175'
 ht-degree: 0%
 
 ---
 
-# Översikt över Analytics-destinationer {#analytics-destinations}
+# Översikt över Analytics-mål {#analytics-destinations}
 
 ## Översikt {#overview}
 
@@ -28,6 +28,7 @@ För närvarande stöder Adobe Experience Platform de analysmål som anges nedan
 * [Decibel-tillägg](decibel.md)
 * [Demandbase-tillägg](demandbase.md)
 * [Dialogtech-tillägg](dialogtech.md)
+* [Gainsight PX](gainsight-px.md)
 * [Analystillägg för Google Global Site Tag](gtag-analytics.md)
 * [Google Universal Analytics-tillägg](google-universal-analytics.md)
 * [JW Player Analytics-tillägg (beta)](jw-player-analytics.md)
