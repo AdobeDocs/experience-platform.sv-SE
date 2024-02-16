@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Översikt över SFTP-källkoppling
 description: Lär dig hur du ansluter en SFTP-server till Adobe Experience Platform med hjälp av API:er eller användargränssnittet.
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: 6c22f8243269bb304b12a4e4978ed141ed092c67
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
 
 # SFTP-anslutning
+
+>[!IMPORTANT]
+>
+>The [!DNL SFTP] som Adobe Experience Platform ansluter till måste ha stöd för chunkning, vilket innebär flera anslutningar till en enda fil. Om [!DNL SFTP] servern stöder inte chunkning. Det kan bero på ett fel som förhindrar att filen läses in.
 
 Adobe Experience Platform erbjuder anslutningsmöjligheter för molnleverantörer som AWS, [!DNL Google Cloud Platform]och [!DNL Azure]så att ni kan hämta in data från dessa system.
 
@@ -26,11 +30,11 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 Nedan följer en lista över begränsningar som du måste ta hänsyn till när du namnger molnlagringsfilen eller -katalogen.
 
 - Katalog- och filkomponentnamn får inte innehålla fler än 255 tecken.
-- Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Om det finns kommer det att tas bort automatiskt.
+- Katalog- och filnamn får inte sluta med ett snedstreck (`/`). Den tas bort automatiskt om den anges.
 - Följande reserverade URL-tecken måste escape-konverteras: `! ' ( ) ; @ & = + $ , % # [ ]`
 - Följande tecken tillåts inte: `" \ / : | < > * ?`.
 - Ogiltiga URL-sökvägstecken tillåts inte. Kodpunkter som `\uE000`, som är giltigt i NTFS-filnamn, är inte giltiga Unicode-tecken. Dessutom tillåts inte vissa ASCII- eller Unicode-tecken, som kontrolltecken (0x00 till 0x1F, \u0081 osv.). Information om regler för Unicode-strängar i HTTP/1.1 finns i [RFC 2616, avsnitt 2.2: Grundregler](https://www.ietf.org/rfc/rfc2616.txt) och [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt).
-- Följande filnamn är inte tillåtna: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (.).
+- Följande filnamn tillåts inte: LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, PRN, AUX, NUL, CON, CLOCK$, punkttecken (.) och två punkttecken (. .).
 
 ## Konfigurera en Base64-kodad OpenSSH-privat nyckel för [!DNL SFTP]
 
@@ -42,7 +46,7 @@ Om du använder en [!DNL Windows] dator, öppna **Starta** menyn och välj **Ins
 
 ![inställningar](../../images/tutorials/create/sftp/settings.png)
 
-Från **Inställningar** meny som visas väljer **Appar**.
+Från **Inställningar** menyn som visas väljer du **Appar**.
 
 ![appar](../../images/tutorials/create/sftp/apps.png)
 
@@ -50,11 +54,11 @@ Nästa, välj **Valfria funktioner**.
 
 ![valfria funktioner](../../images/tutorials/create/sftp/optional-features.png)
 
-En lista med valfria funktioner visas. If **OpenSSH-klient** är redan förinstallerat i datorn, kommer det att ingå i **Installerade funktioner** lista under **Valfria funktioner**.
+En lista över valfria funktioner visas. If **OpenSSH-klient** är redan förinstallerat i datorn, kommer det att ingå i **Installerade funktioner** lista under **Valfria funktioner**.
 
 ![open-ssh](../../images/tutorials/create/sftp/open-ssh.png)
 
-Om den inte är installerad väljer du **Installera** och sedan öppna **[!DNL Powershell]** och kör följande kommando för att generera din privata nyckel:
+Om den inte är installerad väljer du **Installera** öppna **[!DNL Powershell]** och kör följande kommando för att generera din privata nyckel:
 
 ```shell
 PS C:\Users\lucy> ssh-keygen -t rsa -m pem
@@ -142,7 +146,7 @@ more ~/.ssh/authorized_keys
 
 >[!IMPORTANT]
 >
->Användarna måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan de ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in via en tjänst eller ett program. Se [Component Pro-dokument](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) för mer information om interaktiv tangentbordsautentisering.
+>Användarna måste inaktivera interaktiv tangentbordsautentisering i SFTP-serverkonfigurationen innan de ansluter. Om du inaktiverar inställningen kan du ange lösenord manuellt, i stället för att skriva in dem via en tjänst eller ett program. Se [Component Pro-dokument](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) för mer information om interaktiv tangentbordsautentisering.
 
 Dokumentationen nedan innehåller information om hur du ansluter en SFTP-server till [!DNL Platform] med API:er eller användargränssnittet:
 
