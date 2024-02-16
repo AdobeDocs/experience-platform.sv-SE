@@ -3,7 +3,7 @@ description: Lär dig hur du använder mallar i Adobe Experience Platform använ
 title: Skapa ett källdataflöde med mallar i användargränssnittet
 badge1: "Beta"
 exl-id: 48aa36ca-656d-4b9d-954c-48c8da9df1e9
-source-git-commit: deca8300ebbada548a409de9c6a7b7178d0032e0
+source-git-commit: 4a9cae014a8eba20f93023913f3a73103b16d944
 workflow-type: tm+mt
 source-wordcount: '2198'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >id="platform_sources_templates_accounttype"
 >title="Välj affärstyp"
 >abstract="Välj lämplig affärstyp för ditt användningsfall. Åtkomsten kan variera beroende på ditt Real-time Customer Data Platform-prenumerationskonto."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv" text="Real-Time CDP - översikt"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html" text="Real-Time CDP - översikt"
 
 Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] och se en katalog med källor i Experience Platform.
 
