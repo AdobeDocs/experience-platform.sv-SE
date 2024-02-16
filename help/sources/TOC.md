@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
 breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
-source-git-commit: 8a9cf0547720927018d728d7cecbf377a1282f6f
+source-git-commit: 345cd259cba2faa2b2b4bafd8ef9d2691d101fd1
 workflow-type: tm+mt
-source-wordcount: '1008'
+source-wordcount: '1012'
 ht-degree: 6%
 
 ---
@@ -296,6 +296,7 @@ ht-degree: 6%
          - [Teradata Vantage](tutorials/ui/create/databases/teradata-vantage.md)
       - Datapartent {#data-partner}
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
+         - [Acxiom Prospecting Data Import](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
       - eCommerce {#ecommerce}
          - [SAP Commerce](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
