@@ -2,9 +2,9 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: ae88ce6f24db669577941b59fdaf18f43e32768f
+source-git-commit: 7812cfa44e1fcbe71d7b6231dc0b31c727c93a31
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -52,11 +52,11 @@ Den förväntade fördröjningen för Analytics Data on Platform beskrivs i tabe
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **not** aktiverad) | &lt; 2 minuter |
 | Nya data till [!DNL Real-Time Customer Profile] (A4T **är** aktiverad) | upp till 30 minuter |
 | Nya data till Data Lake | &lt; 2,25 timmar |
-| Nya data i CJA utan [sammanfogning](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=en) | &lt; 3,75 timmar |
-| Nya data till CJA med sammanfogning | &lt; 7 timmar |
+| Nya data till Customer Journey Analytics utan [sammanfogning](https://experienceleague.adobe.com/docs/analytics-platform/using/stitching/overview.html?lang=en) | &lt; 3,75 timmar |
+| Nya data för Customer Journey Analytics med sammanfogning | &lt; 7 timmar |
 | Bakgrundsfyllning av mindre än 10 miljarder händelser | &lt; 4 veckor |
 
-Mer information om CJA-fördröjningar finns i: [Customer Journey Analytics Guardrails](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=en).
+Mer information om latenser för Customer Journey Analytics finns i: [Customer Journey Analytics Guardrails](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-admin/guardrails.html?lang=en).
 
 Analysens bakgrundsfyllning för produktionssandlådor är som standard 13 månader. För Analytics-data i icke-produktionssandlådor anges backfill till tre månader. Den gräns på 10 miljarder händelser som nämns i tabellen ovan är strikt relaterad till förväntad fördröjning.
 
