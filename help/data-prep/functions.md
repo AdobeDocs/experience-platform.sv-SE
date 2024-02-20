@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: f250d8e6e5368a785dcb154dbe0b611baed73a4c
+source-git-commit: 5525e81afe0945716c510ff7a0b06cc7e4d5ee6c
 workflow-type: tm+mt
-source-wordcount: '5459'
+source-wordcount: '5908'
 ht-degree: 1%
 
 ---
@@ -282,6 +282,27 @@ Mer information om enhetsfältvärden finns i [lista med enhetsfältvärden](#de
 | ua_agent_version_major | Hämtar agentnamnet och huvudversionen från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_agent_version_major &#x200B;(USER_AGENT) | ua_agent_version_major &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
 | ua_agent_name | Hämtar agentnamnet från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_agent_name &#x200B;(USER_AGENT) | ua_agent_name &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
 | ua_device_class | Hämtar enhetsklassen från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_device_class &#x200B;(USER_AGENT) | ua_device_class &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Telefon |
+
+{style="table-layout:auto"}
+
+### Analysfunktioner {#analytics}
+
+>[!NOTE]
+>
+>Rulla åt vänster/höger för att visa hela innehållet i tabellen.
+
+| Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+| get_event_id | Extraherar händelse-ID:t från en Analytics-händelsesträng. | <ul><li>EVENT_STRING: **Obligatoriskt** Den kommaseparerade Analytics-händelsesträngen.</li><li>EVENT_NAME: **Obligatoriskt** Händelsenamnet som ska extraheras och ID från.</li></ul> | get_event_id(EVENT_STRING, EVENT_NAME) | get_event_id(&quot;event101=5:123456,scOpen&quot;, &quot;event101&quot;) | 123456 |
+| get_event_value | Extraherar händelsevärdet från en Analytics-händelsesträng. Om händelsevärdet inte anges returneras 1. | <ul><li>EVENT_STRING: **Obligatoriskt** Den kommaseparerade Analytics-händelsesträngen.</li><li>EVENT_NAME: **Obligatoriskt** Händelsenamnet som ett värde ska extraheras från.</li></ul> | get_event_value(EVENT_STRING, EVENT_NAME) | get_event_value(&quot;event101=5:123456,scOpen&quot;, &quot;event101&quot;) | 5 |
+| get_product_categories | Extraherar produktkategorin från en analysproduktsträng. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li></ul> | get_product_categories(PRODUCTS_STRING) | get_product_categories(&quot;;Exempelprodukt 1;1;3.50,Exempelkategori 2;Exempelprodukt 2;1;5.99&quot;) | [null,&quot;Exempelkategori 2&quot;] |
+| get_product_names | Extraherar produktnamnet från en analysproduktsträng. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li></ul> | get_product_names(PRODUCTS_STRING) | get_product_names(&quot;;Exempelprodukt 1;1;3.50,Exempelkategori 2;Exempelprodukt 2;1;5.99&quot;) | [&quot;Exempelprodukt 1&quot;,&quot;Exempelprodukt 2&quot;] |
+| get_product_quantity | Extraherar kvantiteterna från en Analytics-produktsträng. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li></ul> | get_product_quantity(PRODUCTS_STRING) | get_product_quantity(&quot;;Exempelprodukt 1;1;3.50,Exempelkategori 2;Exempelprodukt 2&quot;) | [&quot;1&quot;, null] |
+| get_product_prices | Extraherar priset från en analysproduktsträng. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li></ul> | get_product_prices(PRODUCTS_STRING) | get_product_prices(&quot;;Exempelprodukt 1;1;3.50,Exempelkategori 2;Exempelprodukt 2&quot;) | [&quot;3.50&quot;, null] |
+| get_product_events | Extraherar en namngiven händelse från produktsträngen som en array med objekt. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li><li>EVENT_NAME: **Obligatoriskt** Händelsenamnet som värdena ska extraheras från.</li></ul> | get_product_events(PRODUCTS_STRING, EVENT_NAME) | get_product_events(&quot;;Exempel: product 1;1;4.20;event1=2.3\|event2=5:1,;Exempel: product 2;1;4.20;event1=3\|event2=2:2&quot;, &quot;event2&quot;) | [`{"id": "1","value", "5"}`, `{"id": "2","value", "1"}`] |
+| get_product_event_ids | Extraherar ID:n för den namngivna händelsen från produktsträngen som en array med strängar. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li><li>EVENT_NAME: **Obligatoriskt** Händelsenamnet som värdena ska extraheras från.</li></ul> | get_product_events_ids(PRODUCTS_STRING, EVENT_NAME) | get_product_event_ids(&quot;;Exempel: product 1;1;4.20;event1=2.3\|event2=5:1,;Exempel: product 2;1;4.20;event1=3\|event2=2:2&quot;, &quot;event2&quot;) | [&quot;1&quot;, &quot;2&quot;] |
+| get_product_event_values | Extraherar värden för den namngivna händelsen från produktsträngen som en array med strängar. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li><li>EVENT_NAME: **Obligatoriskt** Händelsenamnet som värdena ska extraheras från.</li></ul> | get_product_events_values(PRODUCTS_STRING, EVENT_NAME) | get_product_event_values(&quot;;Exempel product 1;1;4.20;event1=2.3\|event2=5:1,;Exempel product 2;1;4.20;event1=3\|event2=2:2&quot;, &quot;event1&quot;) | [&quot;2.3&quot;, &quot;3&quot;] |
+| get_product_vars | Extraherar evar-värdena för den namngivna händelsen från produktsträngen som en array med strängar. | <ul><li>PRODUCTS_STRING: **Obligatoriskt** Produktsträngen för Analytics.</li><li>EVAR_NAME: **Obligatoriskt** EVarnas namn som ska extraheras.</li></ul> | get_product_vars(PRODUCTS_STRING, EVENT_NAME) | get_product_vars(&quot;;Exempelprodukt;1;6.69;;eVar1=Merchandising value&quot;, &quot;eVar1&quot;) | [&quot;Merchandising value&quot;] |
 
 {style="table-layout:auto"}
 
