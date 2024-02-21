@@ -2,9 +2,9 @@
 title: B2B-namnutrymmen och scheman
 description: Det här dokumentet innehåller en översikt över anpassade namnutrymmen som krävs när du skapar en B2B-källkoppling.
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5e8bb04ca18159eab98b2f7f0bba8cb1488a1f26
 workflow-type: tm+mt
-source-wordcount: '1622'
+source-wordcount: '1620'
 ht-degree: 1%
 
 ---
@@ -68,7 +68,7 @@ En lyckad begäran skapar de namnutrymmen och scheman som krävs för B2B.
 
 ## B2B-namnutrymmen
 
-Identitetsnamnutrymmen är en komponent i [[!DNL Identity Service]](../../../../identity-service/home.md) som kan särskilja kontexten eller typen av identitet. En fullständigt kvalificerad identitet innehåller ett ID-värde och ett namnutrymme. Se [namnutrymmen, översikt](../../../../identity-service/features/namespaces.md) för mer information.
+Identitetsnamnutrymmen är en komponent i [[!DNL Identity Service]](../../../../identity-service/home.md) som kan särskilja sammanhanget för en identitet. En fullständigt kvalificerad identitet innehåller ett identitetsvärde och ett namnutrymme. Läs [namnutrymmen, översikt](../../../../identity-service/features/namespaces.md) för mer information.
 
 B2B-namnutrymmen används i entitetens primära identitet.
 
