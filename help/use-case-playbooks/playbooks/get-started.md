@@ -1,12 +1,12 @@
 ---
 solution: Experience Platform
-title: Kom igång
+title: Kom igång med Use Case Playbooks
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: 785e32b27372cef9d23761f648bcbaa431448ce7
+source-git-commit: fe87b8cdeaca5e4e852a8819534f4a5c4023ca52
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '887'
 ht-degree: 0%
 
 ---
