@@ -4,10 +4,10 @@ user-guide-title: Segmenteringstjänst för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
-source-git-commit: 0063f08c16ca0be629684319856bb42d0dd1536d
+source-git-commit: d0bd7990f0d77cd5f8d30da735b89c188e13c780
 workflow-type: tm+mt
-source-wordcount: '191'
-ht-degree: 23%
+source-wordcount: '183'
+ht-degree: 22%
 
 ---
 
@@ -40,6 +40,7 @@ ht-degree: 23%
    - [Kantsegmentering](ui/edge-segmentation.md)
    - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
    - [Direktuppspelningssegmentering (video)](video/streaming-segmentation-overview.md)
+   - [Ignorera uppdatering av tidsbegränsning för år](ui/ignore-year.md)
    - [Omfaktorisering av tidsbegränsningar](ui/segment-refactoring.md)
    - Segmentmatchning {#segment-match}
       - [Översikt över segmentmatchning](ui/segment-match/overview.md)
@@ -60,7 +61,7 @@ ht-degree: 23%
    - [Filterfunktioner](pql/filter-functions.md)
    - [Logiska kvantifierare](pql/logical-quantifiers.md)
    - [Diverse funktioner](pql/misc-functions.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Skapa ett segment](tutorials/create-a-segment.md)
    - [Skapa ett segment (video)](video/create-segment.md)
    - [Skapa ett dynamiskt segment (video)](video/create-a-dynamic-segment.md)

@@ -4,9 +4,9 @@ user-guide-title: Hjälp med Adobe Experience Platform Query Service
 breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
-source-git-commit: 5bf54374773fd95ae1c40dd00b5dbe633031b70e
+source-git-commit: ad3b739f300aa51f6f12c566ab49fafedb90be23
 workflow-type: tm+mt
-source-wordcount: '315'
+source-wordcount: '317'
 ht-degree: 13%
 
 ---
@@ -49,7 +49,7 @@ ht-degree: 13%
    - [Visa en användares sidvyer](use-cases/list-visitor-sessions.md)
    - [Visa besökarna i deras sidvy](use-cases/visitors-by-number-of-page-views.md)
    - [Propensionstest](use-cases/propensity-score.md)
-   - [Exempel på lambda-funktion: Hämta liknande poster](use-cases/retrieve-similar-records.md)
+   - [Hämta liknande poster med funktioner i högre ordning](use-cases/retrieve-similar-records.md)
    - [Returnera och använda försäljningsvariabler från analysdata](use-cases/merchandising-variables.md)
    - [SQLAlchemy](use-cases/sqlalchemy.md)
    - [Visa sammanslagningsrapporten för en besökare](use-cases/roll-up-report-of-a-visitor.md)
@@ -106,6 +106,7 @@ ht-degree: 13%
    - [SQL-översikt](sql/overview.md)
    - [SQL-syntax](sql/syntax.md)
    - [Funktioner som definieras av Adobe](sql/adobe-defined-functions.md)
+   - [Funktioner för högre ordning](sql/higher-order-functions.md)
    - [Spark SQL-funktioner](sql/spark-sql-functions.md)
    - [Metadata-kommandon](sql/metadata.md)
    - [Förberedda programsatser](sql/prepared-statements.md)

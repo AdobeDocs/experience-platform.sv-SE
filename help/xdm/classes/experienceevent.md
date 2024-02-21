@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Klassen XDM ExperienceEvent
 description: Lär dig mer om klassen XDM ExperienceEvent och de bästa metoderna för händelsedatamodellering.
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
+source-git-commit: f7d8cd295dd6aa11048c3cb0f9a54a3702b83473
 workflow-type: tm+mt
-source-wordcount: '2607'
+source-wordcount: '2623'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ The [!DNL XDM ExperienceEvent] klassen innehåller flera tidsserierelaterade fä
 | `eventType` | En sträng som anger händelsens typ eller kategori. Det här fältet kan användas om du vill skilja mellan olika händelsetyper inom samma schema och datauppsättning, till exempel att skilja en produkthändelse från en tilläggshändelse i kundvagnen för ett detaljhandelsföretag.<br><br>Standardvärden för den här egenskapen finns i [appendix-avsnitt](#eventType), inklusive beskrivningar av deras avsedda användningsfall. Det här fältet är en utökningsbar uppräkning, vilket innebär att du även kan använda egna händelsetypsträngar för att kategorisera de händelser som du spårar.<br><br>`eventType` begränsar dig till att endast använda en enda händelse per träff i programmet, och därför måste du använda beräkningsfält för att tala om för systemet vilken händelse som är viktigast. Mer information finns i avsnittet om [bästa praxis för beräknade fält](#calculated). |
 | `producedBy` | Ett strängvärde som beskriver producenten eller händelsens ursprung. Detta fält kan användas för att filtrera bort vissa händelseproducenter om det behövs för segmenteringsändamål.<br><br>Vissa föreslagna värden för den här egenskapen finns i [appendix-avsnitt](#producedBy). Det här fältet är en utökningsbar uppräkning, vilket innebär att du kan använda dina egna strängar för att representera olika händelseproducenter. |
 | `identityMap` | Ett kartfält som innehåller en uppsättning namngivna identiteter för den person som händelsen gäller för. Det här fältet uppdateras automatiskt av systemet när identitetsdata hämtas. För att fältet ska kunna användas [Kundprofil i realtid](../../profile/home.md)försöker du inte uppdatera fältets innehåll manuellt i dataåtgärderna.<br /><br />Se avsnittet om identitetskartor i [grunderna för schemakomposition](../schema/composition.md#identityMap) om du vill ha mer information om deras användningsfall. |
-| `timestamp`<br>**(Obligatoriskt)** | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339, avsnitt 5.6](https://datatracker.ietf.org/doc/html/rfc3339). Den här tidsstämpeln måste finnas i det förflutna. Se avsnittet nedan [tidsstämplar](#timestamps) för bästa praxis för användning av detta fält. |
+| `timestamp`<br>**(Obligatoriskt)** | En ISO 8601-tidsstämpel för när händelsen inträffade, formaterad enligt [RFC 3339, avsnitt 5.6](https://datatracker.ietf.org/doc/html/rfc3339). Den här tidsstämpeln **måste** tidigare, men **måste** äger rum från och med 1970. Se avsnittet nedan [tidsstämplar](#timestamps) för bästa praxis för användning av detta fält. |
 
 {style="table-layout:auto"}
 
@@ -38,7 +38,7 @@ I följande avsnitt beskrivs de effektivaste strategierna för att utforma händ
 
 ### Tidsstämplar {#timestamps}
 
-Roten `timestamp` fältet för ett händelseschema kan **endast** representerar själva evenemangets observation och måste inträffa tidigare. Om dina användningsfall för segmentering kräver användning av tidsstämplar som kan inträffa i framtiden, måste dessa värden begränsas någon annanstans i Experience Event-schemat.
+Roten `timestamp` fältet för ett händelseschema kan **endast** representerar själva evenemangets observation och måste inträffa tidigare. Händelsen **måste** äger rum från och med 1970. Om dina användningsfall för segmentering kräver användning av tidsstämplar som kan inträffa i framtiden, måste dessa värden begränsas någon annanstans i Experience Event-schemat.
 
 Om ett företag inom rese- och turismbranschen till exempel utformar en flygbokningshändelse, ska klassnivån `timestamp` -fältet representerar tiden då reservationshändelsen observerades. Andra tidsstämplar som är relaterade till händelsen, t.ex. startdatumet för resereservationen, ska hämtas i separata fält som tillhandahålls av standardfältgrupper eller anpassade fältgrupper.
 

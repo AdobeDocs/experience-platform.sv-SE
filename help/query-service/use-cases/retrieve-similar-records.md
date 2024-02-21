@@ -1,19 +1,21 @@
 ---
-title: Exempel på lambda-funktion - Hämta liknande poster
+title: Hämta liknande poster med funktioner för högre ordning
 description: Lär dig hur du identifierar och hämtar liknande eller relaterade poster från en eller flera datauppsättningar baserat på ett likhetsmått och likhetströskelvärde. Det här arbetsflödet kan framhäva meningsfulla relationer eller överlappningar mellan olika datauppsättningar.
 exl-id: 4810326a-a613-4e6a-9593-123a14927214
-source-git-commit: 20624b916bcb3c17e39a402d9d9df87d0585d4b8
+source-git-commit: 27eab04e409099450453a2a218659e576b8f6ab4
 workflow-type: tm+mt
-source-wordcount: '4011'
+source-wordcount: '4031'
 ht-degree: 2%
 
 ---
 
-# Exempel på lambda-funktion: Hämta liknande poster
+# Hämta liknande poster med funktioner i högre ordning
 
-Lös flera vanliga användningsfall genom att använda Data Distiller lambda-funktioner för att identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar. Du kan använda den här vägledningen när du vill identifiera produkter från olika datauppsättningar som har en betydande likhet i deras egenskaper eller attribut. Metoden i det här dokumentet innehåller bland annat lösningar för datadeduplicering, postkoppling, rekommendationssystem, informationshämtning och textanalys.
+Använd högordningsfunktionerna i Data Distiller för att lösa många vanliga användningsområden. Om du vill identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar använder du filtret, omformningen och reducerar funktioner enligt den här handboken. Om du vill veta hur funktioner för högre ordning kan användas för att bearbeta komplexa datatyper kan du läsa dokumentationen om hur du [hantera matrisdatatyper och mappa datatyper](../sql/higher-order-functions.md).
 
-Dokumentet beskriver processen att implementera en likhetskoppling och använder sedan Data Distiller lambda-funktioner för att beräkna likheten mellan datauppsättningar och filtrera dem baserat på valda attribut. SQL-kodfragment och förklaringar tillhandahålls för varje steg i processen. Arbetsflödet implementerar likhetskopplingar med Jaccards likhetsmått och tokenisering med Data Distiller lambda-funktioner. Dessa metoder används sedan för att identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar baserade på ett likhetsmått. Processens huvudavsnitt är: [tokenisering med lambda-funktioner](#data-transformation), [sammanfogning av unika element](#cross-join-unique-elements), [Beräkning av likhet med jaccard](#compute-the-jaccard-similarity-measure)och [tröskelbaserad filtrering](#similarity-threshold-filter).
+Använd den här vägledningen när du vill identifiera produkter från olika datauppsättningar som har en betydande likhet i deras egenskaper eller attribut. Den här metoden ger lösningar för bland annat: borttagning av datadubbletter, postkoppling, rekommendationssystem, informationshämtning och textanalys.
+
+Dokumentet beskriver processen att implementera en likhetskoppling, som sedan använder högre ordningsfunktioner i Data Distiller för att beräkna likheterna mellan datauppsättningar och filtrera dem baserat på valda attribut. SQL-kodfragment och förklaringar tillhandahålls för varje steg i processen. Arbetsflödet implementerar likhetskopplingar med Jaccards likhetsmått och tokenisering med Data Distiller funktioner i högre ordning. Dessa metoder används sedan för att identifiera och hämta liknande eller relaterade poster från en eller flera datauppsättningar baserade på ett likhetsmått. Processens huvudavsnitt är: [tokenisering med funktioner i högre ordning](#data-transformation), [sammanfogning av unika element](#cross-join-unique-elements), [Beräkning av likhet med jaccard](#compute-the-jaccard-similarity-measure)och [tröskelbaserad filtrering](#similarity-threshold-filter).
 
 ## Förutsättningar
 
@@ -24,11 +26,11 @@ Innan du fortsätter med det här dokumentet bör du känna till följande konce
    - **Tröskelvärde**: Ett likhetströskelvärde används för att avgöra när de två posterna anses vara tillräckligt lika för att inkluderas i kopplingsresultatet. Poster med en likhetspoäng över tröskelvärdet räknas som träffar.
 - The **Jaccard-likhet** index, eller Jaccard-likhetsmätning, är en statistik som används för att mäta likheter och mångfald hos samplingsuppsättningar. Den definieras som skärningspunktens storlek dividerad med storleken på den förening som provuppsättningarna har. Jaccards likhetsmätning varierar från noll till ett. En Jaccard-likhet på noll innebär att det inte finns någon likhet mellan uppsättningarna, och en Jaccard-likhet på ett innebär att uppsättningarna är identiska.
   ![Ett venn-diagram som illustrerar likhetsmätningen i jacard.](../images/use-cases/jaccard-similarity.png)
-- **Lambda-funktioner** i Data Distiller är anonyma, infogade funktioner som kan definieras och användas i SQL-satser. De används ofta med funktioner i högre ordning på grund av deras förmåga att skapa snabba funktioner som kan skickas som data. Lambda-funktioner används ofta med funktioner i högre ordning som `transform`, `filter`och `array_sort`. Lambda-funktioner är särskilt användbara i situationer där det inte är nödvändigt att definiera en fullständig funktion, och en kort engångsfunktion kan användas textbundet.
+- **Funktioner för högre ordning** i Data Distiller är dynamiska textbundna verktyg som bearbetar och omformar data direkt i SQL-satser. Dessa mångsidiga funktioner eliminerar behovet av flera steg vid datahantering, särskilt när [hantera komplexa typer som arrayer och kartor](../sql/higher-order-functions.md). Högre ordningsfunktioner bidrar till smidigare analys och bättre beslutsfattande i olika affärsscenarier genom att effektivisera frågeprocessen och förenkla omvandlingar.
 
 ## Komma igång
 
-Data Distiller SKU krävs för att utföra lambda-funktionerna på dina Adobe Experience Platform-data. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
+Data Distiller SKU krävs för att utföra de högre ordningsfunktionerna på dina Adobe Experience Platform-data. Om du inte har Data Distiller SKU kontaktar du Adobe kundtjänstrepresentanten för mer information.
 
 ## Fastställ likhet {#establish-similarity}
 
@@ -319,7 +321,7 @@ Resultaten visas i tabellen nedan:
 
 +++
 
-### Ange tokenlängd
+### Ange tokenlängd {#ensure-set-token-length}
 
 Ytterligare villkor kan läggas till i programsatsen för att säkerställa att de genererade sekvenserna har en viss längd. Följande SQL-sats utökas på tokengenereringslogiken genom att göra `transform` funktionen är mer komplex. Programsatsen använder `filter` funktion inom `transform` för att säkerställa att de genererade sekvenserna är sex tecken långa. Den hanterar fall där det inte är möjligt genom att tilldela NULL-värden till dessa positioner.
 
@@ -355,11 +357,11 @@ Resultaten visas i tabellen nedan:
 
 +++
 
-## Utforska lösningar med Data Distiller lambda-funktioner {#lambda-function-solutions}
+## Utforska lösningar med Data Distiller funktioner för högre ordning {#higher-order-function-solutions}
 
-Lambda-funktioner är kraftfulla konstruktioner som gör att du kan implementera&quot;programmering&quot; som syntax i Data Distiller. De kan användas för att iterera en funktion över flera värden i en array.
+Funktioner i högre ordning är kraftfulla konstruktioner som gör att du kan implementera&quot;programmering&quot; som syntax i Data Distiller. De kan användas för att iterera en funktion över flera värden i en array.
 
-I Data Distiller är lambda-funktioner idealiska för att skapa n-gram och iterera över teckensekvenser.
+I Data Distiller är funktioner med högre ordning idealiska för att skapa n-gram och iterera över teckensekvenser.
 
 The `reduce` funktion, särskilt när den används i sekvenser som genereras av `transform`, ger ett sätt att härleda kumulativa värden eller aggregat, som kan vara avgörande i olika analys- och planeringsprocesser.
 
@@ -371,7 +373,7 @@ SELECT transform(
     x -> reduce(
         sequence(1, x),  
         0,  -- Initial accumulator value
-        (acc, y) -> acc + y  -- Lambda function to add numbers
+        (acc, y) -> acc + y  -- Higher-order function to add numbers
     )
 ) AS sum_result;
 ```
@@ -381,17 +383,17 @@ Här följer en analys av SQL-satsen:
 - Rad 1: `transform` använder funktionen `x -> reduce` för varje element som genereras i sekvensen.
 - Rad 2: `sequence(1, 5)` genererar en nummersekvens från ett till fem.
 - Rad 3: `x -> reduce(sequence(1, x), 0, (acc, y) -> acc + y)` utför en reduceringsåtgärd för varje element x i sekvensen (från 1 till 5).
-   - The `reduce` funktionen har ett inledande ackumulatorvärde på 0, en sekvens från ett till det aktuella värdet för `x`och en lambda-funktion `(acc, y) -> acc + y` om du vill lägga till siffrorna.
-   - Funktionen lambda `acc + y` ackumulerar summan genom att lägga till det aktuella värdet `y` till ackumulatorn `acc`.
+   - The `reduce` funktionen har ett inledande ackumulatorvärde på 0, en sekvens från ett till det aktuella värdet för `x`och en funktion i högre ordning `(acc, y) -> acc + y` om du vill lägga till siffrorna.
+   - Funktionen för högre ordning `acc + y` ackumulerar summan genom att lägga till det aktuella värdet `y` till ackumulatorn `acc`.
 - Rad 8: `AS sum_result` byter namn på den resulterande kolumnen till sum_result.
 
-Sammanfattningsvis tar den här lambda-funktionen två parametrar (`acc` och `y`) och definierar åtgärden som ska utföras, som i det här fallet lägger till `y` till ackumulatorn `acc`. Den här lambda-funktionen körs för varje element i sekvensen under reduceringsprocessen.
+Sammanfattningsvis tar den här funktionen med högre ordning två parametrar (`acc` och `y`) och definierar åtgärden som ska utföras, som i det här fallet lägger till `y` till ackumulatorn `acc`. Den här funktionen för högre ordning körs för varje element i sekvensen under reduceringsprocessen.
 
 Utdata för den här programsatsen är en enda kolumn (`sum_result`) som innehåller de ackumulerade summorna av tal från ett till fem.
 
-### Värdet för lambda-funktioner {#value-of-lambda-functions}
+### Värdet för funktioner i högre ordning {#value-of-higher-order-functions}
 
-I det här avsnittet analyseras en nedbantad version av en SQL-sats på tre gram för att bättre förstå värdet på lambda-funktioner i Data Distiller och skapa n-gram mer effektivt.
+I det här avsnittet analyseras en nedbantad version av en SQL-sats på tre gram för att bättre förstå värdet på funktioner i högre ordning i Data Distiller och skapa n-gram mer effektivt.
 
 Programsatsen nedan fungerar på `ProductName` -kolumnen i `featurevector1` tabell. Den skapar en uppsättning treteckendelsträngar som härleds från de ändrade produktnamnen i tabellen, med hjälp av positioner som hämtas från den sekvens som genereras.
 
@@ -407,11 +409,11 @@ FROM
 
 Här följer en analys av SQL-satsen:
 
-- Rad 2: `transform` använder en lambda-funktion på varje heltal i sekvensen.
+- Rad 2: `transform` använder en funktion i högre ordning för varje heltal i sekvensen.
 - Rad 3: `sequence(1, length(lower(replace(ProductName, ' ', ''))) - 2)` genererar en serie heltal från `1` till längden på det ändrade produktnamnet minus två.
    - `length(lower(replace(ProductName, ' ', '')))` beräknar längden på `ProductName` när du har skapat den med gemener och tagit bort blanksteg.
    - `- 2` subtraherar två från längden för att säkerställa att sekvensen genererar giltiga startpositioner för delsträngar med tre tecken. Genom att subtrahera 2 ser du till att du har tillräckligt många tecken efter varje startposition för att kunna extrahera en delsträng med 3 tecken. Delsträngsfunktionen här fungerar som en lookahead-operator.
-- Rad 4: `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` är en lambda-funktion som fungerar på varje heltal `i` i den genererade sekvensen.
+- Rad 4: `i -> substring(lower(replace(ProductName, ' ', '')), i, 3)` är en funktion i högre ordning som fungerar för varje heltal `i` i den genererade sekvensen.
    - The `substring(...)` funktionen extraherar en delsträng med 3 tecken från `ProductName` kolumn.
    - Innan du extraherar delsträngen `lower(replace(ProductName, ' ', ''))` konverterar `ProductName` till gemener och tar bort blanksteg för att säkerställa konsekvens.
 
@@ -707,6 +709,10 @@ Resultatet av den här frågan ger kolumnerna för likhetskopplingen enligt neda
 
 ### Nästa steg {#next-steps}
 
-Genom att läsa det här dokumentet kan du nu använda den här logiken för att framhäva meningsfulla relationer eller överlappningar mellan olika datauppsättningar. Möjligheten att identifiera produkter från olika datauppsättningar som har en betydande likhet i egenskaper och attribut har många verkliga program. Denna logik kan användas för scenarier som produktmatchning (för att gruppera eller rekommendera liknande produkter för kunder), datarensning (för att förbättra datakvaliteten) och analys av varukorgar (för att ge insikter i kundbeteende, preferenser och potentiella möjligheter till korsförsäljning).
+Genom att läsa det här dokumentet kan du nu använda den här logiken för att framhäva meningsfulla relationer eller överlappningar mellan olika datauppsättningar. Möjligheten att identifiera produkter från olika datauppsättningar som har en betydande likhet i egenskaper och attribut har många verkliga program. Den här logiken kan användas för scenarier som:
+
+- Produktmatchning: för att gruppera eller rekommendera liknande produkter för kunder.
+- Datarensning: för att förbättra datakvaliteten.
+- Korganalys: för att ge insikter om kundbeteende, preferenser och potentiella möjligheter till korsförsäljning.
 
 Om du inte redan har gjort det bör du läsa [Översikt över AI/ML-funktioner](../data-distiller/ml-feature-pipelines/overview.md). Använd den översikten för att lära dig hur Data Distiller och den maskininlärning du föredrar kan skapa anpassade datamodeller som stöder era marknadsföringsfall med data från Experience Platform.

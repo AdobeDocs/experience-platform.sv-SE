@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: 7ad013cb4359f2d65e78e30bc8472f62f4505b3a
+source-git-commit: c2e446ed89ef8a2c4496cd1d442d0204843dab2e
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1202'
 ht-degree: 1%
 
 ---
@@ -139,6 +139,8 @@ ht-degree: 1%
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
+   * e-handelsdestinationer {#ecommerce}
+      * [SAP Commerce](./catalog/ecommerce/sap-commerce.md)
    * E-postmål {#email}
       * [Bizible-tillägg](./catalog/email/bizible.md)
       * [Marketo-tillägg](./catalog/email/marketo.md)
@@ -149,6 +151,7 @@ ht-degree: 1%
       * [Adobe Campaign](./catalog/email-marketing/adobe-campaign.md)
       * [Adobe Campaign Managed Cloud Services](./catalog/email-marketing/adobe-campaign-managed-services.md)
       * [Intressekategorier för e-postmeddelanden](./catalog/email-marketing/mailchimp-interest-categories.md)
+      * [Mailchimp-taggar](./catalog/email-marketing/mailchimp-tags.md)
       * [(API) Oraclena Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua-api.md)
       * [(Filer) Oraclet Eloqua-anslutning](./catalog/email-marketing/oracle-eloqua.md)
       * [Oraclena svarssystemanslutning](./catalog/email-marketing/oracle-responsys.md)

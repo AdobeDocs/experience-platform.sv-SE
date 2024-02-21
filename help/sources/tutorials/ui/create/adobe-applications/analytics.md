@@ -2,9 +2,9 @@
 title: Skapa en Adobe Analytics Source Connection i användargränssnittet
 description: Lär dig hur du skapar en Adobe Analytics-källanslutning i användargränssnittet för att överföra konsumentdata till Adobe Experience Platform.
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: c38e25a939319fa3b3301af36482c8efe6c3dd5f
+source-git-commit: f177a8058f6533151978bfd7b8bba4845792f5ed
 workflow-type: tm+mt
-source-wordcount: '2574'
+source-wordcount: '2631'
 ht-degree: 0%
 
 ---
@@ -168,7 +168,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
 ![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png) -->
 
-### Filtrera efter kundprofil i realtid {#filtering-for-profile}
+## Filtrera efter kundprofil i realtid {#filtering-for-profile}
 
 >[!CONTEXTUALHELP]
 >id="platform_data_prep_analytics_filtering"
@@ -196,7 +196,7 @@ När du är klar med mappningarna för [!DNL Analytics] kan ni använda filtreri
 
 >[!ENDSHADEBOX]
 
-#### Filtrering på radnivå
+### Filtrering på radnivå
 
 >[!IMPORTANT]
 >
@@ -254,7 +254,7 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 ![exclude-examples](../../../../images/tutorials/create/analytics/exclude-examples.png)
 
-#### Filtrering på kolumnnivå
+### Filtrering på kolumnnivå
 
 Välj **[!UICONTROL Column filter]** från rubriken för att använda filtrering på kolumnnivå.
 
@@ -267,6 +267,14 @@ Som standard är alla [!DNL Analytics] gå till [!DNL Profile] och den här proc
 När du är klar väljer du **[!UICONTROL Next]**.
 
 ![kolumner-markerade](../../../../images/tutorials/create/analytics/columns-selected.png)
+
+### Filtrera sekundära identiteter
+
+Använd ett kolumnfilter för att exkludera sekundära identiteter från profilåtkomsten. Om du vill filtrera sekundära identiteter väljer du **[!UICONTROL Column filter]** och sedan **[!UICONTROL _identities]**.
+
+Filtret används bara när en identitet markeras som sekundär. Om identiteter väljs, men en händelse kommer med en av identiteterna som markerats som primär, filtreras inte dessa bort.
+
+![sekundära identiteter](../../../../images/tutorials/create/analytics/secondary-identities.png)
 
 ### Ange information om dataflöde
 
