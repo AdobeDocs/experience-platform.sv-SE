@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: dbc14c639ef02b8504cc9895c6aacb6e205549b2
+source-git-commit: b129efacb077af0148a743e43ec23f9f8b8d7d3e
 workflow-type: tm+mt
-source-wordcount: '2733'
+source-wordcount: '3109'
 ht-degree: 0%
 
 ---
@@ -246,6 +246,26 @@ Mer information om det delade blocket finns i [Användargränssnittsguide för m
 
 Ja, alla segmenteringstyper ([gruppsegmentering, direktuppspelningssegmentering och kantsegmentering](./home.md#evaluate-segments)) stöds i arbetsflödet Audience Composition. Men eftersom kompositioner för närvarande bara körs en gång per dag, även om en målgrupp som är en direktuppspelnings- eller edge-utvärderad målgrupp inkluderas, kommer resultatet att baseras på målgruppsmedlemskap när kompositionen utfördes.
 
-## Hur kan jag bekräfta en profils medlemskap för en viss målgrupp?
+## Målgruppsmedlemskap
+
+I följande avsnitt listas frågor som rör medlemskap för målgrupper.
+
+### Hur kan jag bekräfta en profils medlemskap för en viss målgrupp?
 
 Om du vill bekräfta en profils målgruppsmedlemskap går du till sidan med profilinformation för den profil du vill bekräfta. Välj **[!UICONTROL Attributes]**, följt av **[!UICONTROL View JSON]** och du kan bekräfta att `segmentMembership` -objektet innehåller målgruppens ID.
+
+### Hur löser batchsegmentering profilmedlemskapet?
+
+Målgrupper som utvärderas med batchsegmentering löses dagligen, och målgruppsmedlemskapsresultaten registreras i profilens `segmentMembership` -attribut. Profilsökningar genererar en ny version av profilen vid tidpunkten för sökningen, men det gör den **not** uppdatera gruppsegmenteringsresultaten.
+
+När du gör ändringar i profilen, till exempel sammanfogar två profiler, innebär detta att dessa ändringar **kommer** visas i profilen vid sökning, men kommer att **not** återspeglas i `segmentMembership` tills segmentutvärderingsjobbet har körts igen.
+
+Låt oss till exempel säga att du har skapat två ömsesidigt uteslutande målgrupper: målgrupp A är för människor som bor i Washington och målgrupp B är för människor som gör **not** bor i Washington. Det finns två profiler - profil 1 för en person som bor i Washington och profil 2 för en person som bor i Oregon.
+
+När utvärderingsjobbet för gruppsegmentering körs går profil 1 till Audience A, medan profil 2 går till Audience B. Senare, men innan nästa dags utvärderingsjobb för gruppsegmentering körs, kommer en händelse som synkroniserar de två profilerna att gå in i Platform. Därför skapas en sammanfogad profil som innehåller profilerna 1 och 2.
+
+Tills nästa utvärderingsjobb för gruppsegment körs kommer den nya sammanfogade profilen att ha ett målgruppsmedlemskap i **båda** profil 1 och profil 2. Det innebär att den blir medlem i **båda** Målgrupp A och målgrupp B, trots att dessa målgrupper har motsägande definitioner. För slutanvändaren är detta **exakt samma situation** som innan profilerna kopplades samman, eftersom det alltid var bara den enda berörda personen, och Platform gjorde precis **not** har tillräckligt med information för att koppla ihop de två profilerna.
+
+Om du använder profilsökning för att hämta den nyligen skapade profilen och tittar på dess målgruppsmedlemskap visar det att den är medlem i **båda** Audience A och Audience B, trots att båda dessa målgrupper har motstridiga definitioner. När det dagliga utvärderingsjobbet för gruppsegmentering körs uppdateras målgruppsmedlemskapet för att återspegla det uppdaterade läget för profildata.
+
+Om ni behöver en större målgruppsupplösning i realtid använder ni strömning eller kantsegmentering.
