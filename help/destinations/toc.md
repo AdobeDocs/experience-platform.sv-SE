@@ -4,9 +4,9 @@ user-guide-title: Användarhandbok om destinationer
 user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
-source-git-commit: c2e446ed89ef8a2c4496cd1d442d0204843dab2e
+source-git-commit: 767ebd1ef693f9484e11facc7e8b73d91f632956
 workflow-type: tm+mt
-source-wordcount: '1202'
+source-wordcount: '1203'
 ht-degree: 1%
 
 ---
@@ -107,7 +107,7 @@ ht-degree: 1%
       * [Decibel-tillägg](./catalog/analytics/decibel.md)
       * [Demandbase-tillägg](./catalog/analytics/demandbase.md)
       * [DialogTech-tillägg](./catalog/analytics/dialogtech.md)
-      * [Gainsight PX](./catalog/analytics/gainsight-px.md)
+      * [Gainsight PX-anslutning](./catalog/analytics/gainsight-px.md)
       * [Tillägget Google Global Site Tag](./catalog/analytics/gtag-analytics.md)
       * [Google Universal Analytics-tillägg](./catalog/analytics/google-universal-analytics.md)
       * [JW Player Analytics-tillägg (beta)](./catalog/analytics/jw-player-analytics.md)
