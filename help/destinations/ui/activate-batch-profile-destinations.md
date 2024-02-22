@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a66c4397a02da81e4b3304f3bc975f725f8f8d76
+source-git-commit: 5e3c4f5c9a5540e0a796785c743a77c1e11821f8
 workflow-type: tm+mt
-source-wordcount: '3636'
+source-wordcount: '3716'
 ht-degree: 0%
 
 ---
@@ -73,6 +73,10 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >
 >Välja målgrupper som kommer från **[!UICONTROL Custom uploads]** aktiverar automatiskt [Välj anrikningsattribut](#select-enrichment-attributes) steg.
 
+>[!TIP]
+>
+>Du kan ta bort målgrupper från befintliga aktiveringsflöden från **[!UICONTROL Activation data]** sida. Se [dedikerad dokumentation](../ui/destination-details-page.md#bulk-remove) för mer information.
+
 ## Schemalägg målgruppsexport {#scheduling}
 
 >[!CONTEXTUALHELP]
@@ -80,17 +84,21 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >title="Schema"
 >abstract="Använd pennikonen för att ange filexportformat (fullständiga eller stegvisa filer) och exportfrekvens."
 
-[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer som [olika filtyper](#supported-file-formats-export). I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje publik som du exporterar. Det är obligatoriskt att konfigurera schemat, men det är valfritt att konfigurera filnamnet.
+[!DNL Adobe Experience Platform] exporterar data för e-postmarknadsföring och molnlagringsdestinationer som [olika filtyper](#supported-file-formats-export). I **[!UICONTROL Scheduling]** kan du konfigurera schemat och filnamnen för varje publik som du exporterar.
+
+Experience Platform anger automatiskt ett standardschema för varje filexport. Du kan ändra standardschemat efter behov genom att välja pennikonen bredvid varje schema och definiera ett anpassat schema.
+
+![Redigera schemakontroll markerat i schemaläggningssteget.](../assets/ui/activate-batch-profile-destinations/edit-default-schedule.png)
+
+>[!TIP]
+>
+>Du kan redigera målgruppsaktiveringsplaner för befintliga aktiveringsflöden från **[!UICONTROL Activation data]** sida. Läs dokumentationen om [aktiveringsplaner för massredigering](../ui/destination-details-page.md#bulk-edit-schedule) för mer information.
 
 >[!IMPORTANT]
 >
 >[!DNL Adobe Experience Platform] delar automatiskt upp exportfilerna i 5 miljoner poster (rader) per fil. Varje rad representerar en profil.
 >
 >Delade filnamn läggs till med en siffra som anger att filen är en del av en större export: `filename.csv`, `filename_2.csv`, `filename_3.csv`.
-
-Välj **[!UICONTROL Create schedule]** kontroll som motsvarar den målgrupp du vill skicka till ditt mål.
-
-![Skapa schemakontroll markerat i schemaläggningssteget.](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### Exportera fullständiga filer {#export-full-files}
 
@@ -247,6 +255,14 @@ I det här steget måste du välja de profilattribut som du vill lägga till i f
 1. Fältet som du har valt för export visas nu i mappningsvyn och det redigerade huvudet i den exporterade filen visas.
 
    ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
+
+1. [!BADGE Beta]{type=Informative}
+
+   >[!NOTE]
+   >
+   >Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+
+   ![Inspelning som visar mappningsfältens ordning genom att dra och släppa.](../assets/ui/activate-batch-profile-destinations/reorder-fields.gif)
 
 1. (Valfritt) Du kan välja att det exporterade fältet ska vara en [obligatorisk nyckel](#mandatory-keys) eller en [dedupliceringsnyckel](#deduplication-keys).
 

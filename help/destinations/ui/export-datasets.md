@@ -3,9 +3,9 @@ title: Exportera datauppsättningar till molnlagringsmål
 type: Tutorial
 description: Lär dig hur du exporterar datauppsättningar från Adobe Experience Platform till den molnlagringsplats du föredrar.
 exl-id: e89652d2-a003-49fc-b2a5-5004d149b2f4
-source-git-commit: 1881e66c795c548bac08e09b4ec00852fdbc51c3
+source-git-commit: 5d9384f57765126709f6bfcc005334ba4120595a
 workflow-type: tm+mt
-source-wordcount: '1797'
+source-wordcount: '1805'
 ht-degree: 0%
 
 ---
@@ -195,9 +195,9 @@ Observera skillnaden i filformat mellan de två filtyperna när de komprimeras:
 * När du exporterar komprimerade JSON-filer är det exporterade filformatet `json.gz`
 * Vid export av komprimerade parquet-filer är det exporterade filformatet `gz.parquet`
 
-## Ta bort datauppsättning från mål {#remove-dataset}
+## Ta bort datauppsättningar från mål {#remove-dataset}
 
-Följ stegen nedan för att ta bort en datauppsättning från ett befintligt dataflöde:
+Följ stegen nedan för att ta bort datauppsättningar från ett befintligt dataflöde:
 
 1. Logga in på [Experience Platform UI](https://experience.adobe.com/platform/) och markera **[!UICONTROL Destinations]** i det vänstra navigeringsfältet. Välj **[!UICONTROL Browse]** i det övre sidhuvudet för att visa befintliga måldataflöden.
 
@@ -211,14 +211,19 @@ Följ stegen nedan för att ta bort en datauppsättning från ett befintligt dat
 
    ![Navigeringsalternativet för tillgängliga datamängder är markerat i kolumnen Aktiveringsdata.](../assets/ui/export-datasets/go-to-datasets-data.png)
 
-1. The **[!UICONTROL Activation data]** målsidan visas. Välj **[!UICONTROL Remove dataset]** i den högra listen för att aktivera bekräftelsedialogrutan för borttagning av datauppsättning.
+1. The **[!UICONTROL Activation data]** målsidan visas. Markera den datauppsättning som du vill ta bort och välj sedan **[!UICONTROL Remove dataset]** till höger för att utlösa bekräftelsedialogrutan för borttagning av datauppsättningar.
 
    ![Dialogrutan Ta bort datauppsättning med kontrollen Ta bort datauppsättning i den högra listen.](../assets/ui/export-datasets/remove-dataset-control.png)
+
+<!-- USE THIS FOR BULK REMOVE RELEASE
+
+1. The **[!UICONTROL Activation data]** page for the destination appears. Use the checkboxes on the left side of the dataset list to select the datasets which you want to remove, then select **[!UICONTROL Remove datasets]** in the right rail to trigger the remove dataset confirmation dialog. 
+
+    ![Remove dataset dialog showing the Remove dataset control in the right rail.](../assets/ui/export-datasets/bulk-remove-datasets.png) -->
 
 1. I bekräftelsedialogrutan väljer du **[!UICONTROL Remove]** för att omedelbart ta bort datauppsättningen från exporter till destinationen.
 
    ![Dialogruta med alternativet Bekräfta borttagning av datauppsättning från dataflödet.](../assets/ui/export-datasets/remove-dataset-confirm.png)
-
 
 ## Exportberättiganden för datauppsättning {#licensing-entitlement}
 

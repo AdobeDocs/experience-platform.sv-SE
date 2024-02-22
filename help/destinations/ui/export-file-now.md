@@ -3,9 +3,9 @@ title: (Beta) Exportera filer on demand till gruppmål med hjälp av användargr
 type: Tutorial
 description: Lär dig hur du exporterar filer på begäran till gruppmål med hjälp av användargränssnittet i Experience Platform.
 exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: 64833e29d062225bc774a14ae60b102b293bb5c4
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '678'
 ht-degree: 0%
 
 ---
@@ -48,13 +48,9 @@ Om du vill exportera filer on demand till gruppmål måste du ha lyckats [anslut
 
    ![En bild som markerar ett filtrerat dataflöde.](../assets/ui/activate-on-demand/filtered-dataflow.png)
 
-3. Välj **[!UICONTROL Activation data]** och välja målgruppen som du vill exportera en fil till vid behov och markera **[!UICONTROL Export file now]** -kontroll för att aktivera en engångs-export som levererar en fil till batchdestinationen.
+3. Välj **[!UICONTROL Activation data]** och välja de målgrupper som du vill exportera filer till på begäran och välja **[!UICONTROL Export file now]** -kontroll för att aktivera en engångs-export som levererar en fil för varje vald målgrupp till batchdestinationen.
 
-   >[!IMPORTANT]
-   >
-   >Det går för närvarande inte att markera flera målgrupper för att exportera flera filer samtidigt vid behov i användargränssnittet. Använd [ad hoc-aktiverings-API](/help/destinations/api/ad-hoc-activation-api.md) för det ändamålet.
-
-   ![Bild som markerar knappen Exportera fil nu.](../assets/ui/activate-on-demand/activate-segment-on-demand.png)
+   ![Bild som markerar knappen Exportera fil nu.](../assets/ui/activate-on-demand/bulk-export-file-now.png)
 
 4. Välj **[!UICONTROL Yes]** för att bekräfta och utlösa filexporten.
 

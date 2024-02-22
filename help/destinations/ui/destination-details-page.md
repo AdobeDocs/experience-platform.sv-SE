@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5e3c4f5c9a5540e0a796785c743a77c1e11821f8
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '1049'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,32 @@ The [!UICONTROL Activation data] På -fliken visas en lista med målgrupper som 
 
 ![Mål för direktuppspelning av aktiveringsdatavy](../assets/ui/details-page/activation-data-streaming.png)
 
+<!-- ### Remove multiple audiences from activation flows {#bulk-remove}
+
+To remove multiple audiences from existing activation flows, select the audiences and then select **[!UICONTROL Remove audiences]**.
+
+![Activation data screen highlighting the Remove audiences option.](../assets/ui/details-page/bulk-remove-audiences.png) -->
+
+### [!BADGE Beta]{type=Informative} Exportera flera filer on-demand till gruppmål {#bulk-export}
+
 >[!NOTE]
 >
->Mer information om hur du utforskar en målgrupps informationssida finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
+Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+
+Du kan [exportera flera filer on demand](../ui/export-file-now.md) från **[!UICONTROL Activation data]** sida. Om du vill göra det väljer du de målgrupper som du vill exportera filer för on-demand och väljer **[!UICONTROL Export file now]** -kontroll för att aktivera en engångs-export som levererar en fil för varje vald målgrupp till batchdestinationen.
+
+![Bild som markerar knappen Exportera fil nu.](../assets/ui/details-page/bulk-export-file-now.png)
+
+### [!BADGE Beta]{type=Informative} Redigera aktiveringsscheman för flera målgrupper som exporterats till gruppmål {#bulk-edit-schedule}
+
+>[!NOTE]
+>
+Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+
+Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper samtidigt markerar du önskade målgrupper och väljer sedan **[!UICONTROL Edit schedule]**. Mer information om hur du definierar eller redigerar ett exportschema finns i [schemalägga export av målgrupper](../ui/activate-batch-profile-destinations.md#scheduling) -avsnitt.
+
+![Aktiveringsdataskärm som markerar alternativet att redigera aktiveringsplaner för flera målgrupper.](../assets/ui/details-page/bulk-edit-schedule.png)
+
+>[!NOTE]
+>
+Mer information om hur du utforskar en målgrupps informationssida finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
