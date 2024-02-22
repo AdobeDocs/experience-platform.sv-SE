@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Namnavstånd i Experience Data Model (XDM)
 description: Lär dig hur namnavstånd i Experience Data Model (XDM) gör att du kan utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs.
 exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
-source-git-commit: edd285c3d0638b606876c015dffb18309887dfb5
+source-git-commit: d26a0586a992948e1b278bae91a985fe3d9f1ee8
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '665'
 ht-degree: 0%
 
 ---
 
 # Namnavstånd i Experience Data Model (XDM)
+
+>[!IMPORTANT]
+>
+>I XDM används namnutrymmet (avsnittet på den här sidan) för att särskilja fält i ett schema. Detta skiljer sig från begreppet identitetsnamnutrymme i identitetstjänsten, där namnutrymme används för att skilja på identitetsvärden. Läs dokumentationen på [namnutrymme i identitetstjänsten](../../identity-service/features/namespaces.md) för mer information.
 
 Alla fält i XDM-scheman (Experience Data Model) har ett associerat namnutrymme. Med dessa namnutrymmen kan du utöka dina scheman och förhindra fältkollisioner när olika schemakomponenter sammanförs. Det här dokumentet innehåller en översikt över namnutrymmen i XDM och hur de visas i [API för schemaregister](../api/overview.md).
 
@@ -78,14 +82,14 @@ Följande är ett exempelschema för en produkt i standard-XDM-syntax. Med undan
 | `@id` | En unik identifierare för posten som den definieras av [JSON-LD spec](https://www.w3.org/TR/json-ld11/#node-identifiers). |
 | `xdm:sku` | Ett exempel på ett fält där ett kortskriftsprefix används för att ange ett namnutrymme. I detta fall `xdm` är namnutrymmet (`https://ns.adobe.com/xdm`), och `sku` är fältnamnet. |
 | `https://ns.adobe.com/xdm/channels/application` | Ett exempel på ett fält som använder den fullständiga namnområdes-URI:n. I detta fall `https://ns.adobe.com/xdm/channels` är namnutrymmet, och `application` är fältnamnet. |
-| `https://ns.adobe.com/vendorA/product/stockNumber` | Fält som tillhandahålls av leverantörsresurser använder sina egna unika namnutrymmen. I det här exemplet `https://ns.adobe.com/vendorA/product` är leverantörens namnutrymme, och `stockNumber` är fältnamnet. |
-| `tenantId:internalSku` | Fält som definieras av din organisation använder ditt unika klientorganisations-ID som namnutrymme. I det här exemplet `tenantId` är innehavarens namnutrymme (`https://ns.adobe.com/tenantId`), och `internalSku` är fältnamnet. |
+| `https://ns.adobe.com/vendorA/product/stockNumber` | Fält som tillhandahålls av leverantörsresurser använder sina egna unika namnutrymmen. I detta exempel `https://ns.adobe.com/vendorA/product` är leverantörens namnutrymme, och `stockNumber` är fältnamnet. |
+| `tenantId:internalSku` | Fält som definieras av din organisation använder ditt unika klientorganisations-ID som namnutrymme. I detta exempel `tenantId` är innehavarens namnutrymme (`https://ns.adobe.com/tenantId`), och `internalSku` är fältnamnet. |
 
 {style="table-layout:auto"}
 
 ### Kompatibilitetsläge {#compatibility}
 
-I Adobe Experience Platform representeras XDM-scheman i [Kompatibilitetsläge](../api/appendix.md#compatibility) syntax, som inte använder JSON-LD-syntax för att representera namnutrymmen. I stället konverterar Platform namnutrymmet till ett överordnat fält (med början med ett understreck) och kapslar fälten under det.
+I Adobe Experience Platform finns XDM-scheman [Kompatibilitetsläge](../api/appendix.md#compatibility) syntax, som inte använder JSON-LD-syntax för att representera namnutrymmen. I stället konverterar Platform namnutrymmet till ett överordnat fält (med början med ett understreck) och kapslar fälten under det.
 
 Standard-XDM `repo:createdDate` konverteras till `_repo.createdDate` och skulle visas under följande struktur i kompatibilitetsläge:
 
@@ -172,4 +176,4 @@ Följande JSON visar hur standardexemplet på XDM-syntax översätts till kompat
 
 ## Nästa steg
 
-I den här guiden finns en översikt över XDM-namnutrymmen och hur de visas i JSON. Mer information om hur du konfigurerar XDM-scheman med API:t finns i [API-guide för schemaregister](../api/overview.md).
+I den här handboken finns en översikt över XDM-namnutrymmen och hur de representeras i JSON. Mer information om hur du konfigurerar XDM-scheman med API:t finns i [API-guide för schemaregister](../api/overview.md).
