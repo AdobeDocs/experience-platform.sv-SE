@@ -3,9 +3,9 @@ title: API-händelsevidarebefordringstillägg för LinkedIn Conversions
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du mäta resultatet av din LinkedIn-marknadsföringskampanj.
 last-substantial-update: 2023-10-25T00:00:00Z
 exl-id: 411e7b77-081e-4139-ba34-04468e519ea5
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 0d6ade1a0b6c00a4f87395d476dd7e7915489ea5
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 0%
 
 ## Förutsättningar {#prerequisites}
 
-Du måste skapa en konverteringsregel i [!DNL LinkedIn] kampanjannonskonto. [!DNL Adobe] rekommenderar att du tar med&quot;CAPI&quot; i början av konversationsregelns namn så att det skiljer sig från andra typer av konverteringsregler som du har konfigurerat.
+Du måste [skapa en konverteringsregel](https://www.linkedin.com/help/lms/answer/a1657171) i [!DNL LinkedIn Campaign Manager] konto. [!DNL Adobe] rekommenderar att du tar med&quot;CAPI&quot; i början av konversationsregelns namn så att det skiljer sig från andra typer av konverteringsregler som du har konfigurerat.
 
 ### Skapa en hemlighet och ett dataelement
 
-Skapa ett nytt [!DNL LinkedIn] [hemlighet för vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) och ge den ett unikt namn som betecknar den verifierande medlemmen. Detta används för att autentisera anslutningen till ditt konto samtidigt som värdet är säkert.
+Skapa ett nytt [!DNL LinkedIn] [hemlighet för vidarebefordran av händelser](../../../ui/event-forwarding/secrets.md) och ge den ett unikt namn som betecknar den autentiserande medlemmen. Detta används för att autentisera anslutningen till ditt konto samtidigt som värdet är säkert.
 
 Nästa, [skapa ett dataelement](../../../ui/managing-resources/data-elements.md#create-a-data-element) med [!UICONTROL Core] tillägg och [!UICONTROL Secret] dataelementtyp som refererar till `LinkedIn` hemlighet du nyss skapade.
 
@@ -40,7 +40,7 @@ På nästa skärm anger du dataelementets hemlighet som du skapade tidigare i `A
 
 När alla dataelement har konfigurerats kan du börja skapa regler för vidarebefordran av händelser som bestämmer när och hur händelserna ska skickas till [!DNL LinkedIn].
 
-Skapa en ny händelsevidarebefordring [regel](../../../ui/managing-resources/rules.md) i egenskapen för vidarebefordran av händelser. Under **[!UICONTROL Actions]**, lägga till en ny åtgärd och ange tillägget till **[!UICONTROL LinkedIn]**. Nästa, välj **[!UICONTROL Send Web Conversion]** för **[!UICONTROL Action Type]**.
+Skapa en ny händelsevidarebefordring [regel](../../../ui/managing-resources/rules.md) i egenskapen för vidarebefordran av händelser. Under **[!UICONTROL Actions]**, lägga till en ny åtgärd och ange tillägget till **[!UICONTROL LinkedIn]**. Nästa, välj **[!UICONTROL Send Conversion]** för **[!UICONTROL Action Type]**.
 
 ![Vyn Egenskapsregler för händelsevidarebefordring, med fälten som krävs för att lägga till en händelsevidarebefordringsregel, markerad.](../../../images/extensions/server/linkedin/linkedin-event-action.png)
 
@@ -62,11 +62,11 @@ Efter markeringen visas ytterligare kontroller för att ytterligare konfigurera 
 
 | Indata | Beskrivning |
 | --- | --- |
-| [!UICONTROL Conversion] | ID:t för konverteringsregeln som skapades i [LinkedIn Campaign Manager](https://www.linkedin.com/help/lms/answer/a1657171) eller via [!DNL LinkedIn Campaign Manager]. |
+| [!UICONTROL Conversion] | ID:t för konverteringsregeln som skapades i [LinkedIn Campaign Manager](https://www.linkedin.com/help/lms/answer/a1657171). Välj konverteringsregel för att erhålla ID:t och kopiera sedan ID:t från webbläsarens URL (till exempel `/campaignmanager/accounts/508111232/conversions/15588877`) as `/conversions/<id>`. |
 | [!UICONTROL Conversion Time] | Varje tidsstämpel i millisekunder som konverteringshändelsen inträffade vid. <br><br> Obs! Om din källa sparar konverteringstidstämpeln i sekunder infogar du 000 i slutet för att omvandla den till millisekunder. |
 | [!UICONTROL Currency] | Valutakod i ISO-format. |
 | [!UICONTROL Amount] | Värdet för konverteringen i decimalsträng (till exempel &quot;100.05&quot;). |
-| [!UICONTROL Event ID] | Det unika ID som annonsörer genererar för att ange varje händelse. Det här är ett valfritt fält och används för borttagning av dubbletter. |
+| [!UICONTROL Event ID] | Det unika ID som annonsörer genererar för att ange varje händelse. Det här är ett valfritt fält och används för [deduplicering](https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication?view=li-lms-2024-02). |
 
 {style="table-layout:auto"}
 
@@ -74,7 +74,7 @@ Efter markeringen visas ytterligare kontroller för att ytterligare konfigurera 
 
 **[!UICONTROL Configuration Overrides]**
 
->OBS!
+>ANMÄRKNING
 >
 >The [!UICONTROL Configuration Overrides] kan användaren ange ett annat fält [!DNL LinkedIn] åtkomsttoken för alla regler, vilket gör att varje regel kan använda en åtkomsttoken som kan ha åtkomst till olika [!DNL LinkedIn] annonskonton.
 
@@ -86,4 +86,6 @@ Efter markeringen visas ytterligare kontroller för att ytterligare konfigurera 
 
 ## Nästa steg
 
-Den här guiden beskriver hur du skickar data till [!DNL LinkedIn] med [!DNL LinkedIn Conversions API] tillägg för händelsevidarebefordran. Mer information om funktioner för vidarebefordran av händelser finns i [!DNL Adobe Experience Platform], se [händelsevidarebefordring - översikt](../../../ui/event-forwarding/overview.md).
+Den här guiden beskriver hur du skickar data till [!DNL LinkedIn] med [!DNL LinkedIn Conversions API] tillägg för händelsevidarebefordran. Mer information om funktioner för vidarebefordran av händelser finns i [!DNL Adobe Experience Platform], läsa [händelsevidarebefordring - översikt](../../../ui/event-forwarding/overview.md).
+
+Mer information om hur du felsöker implementeringen med verktyget för felsökning och övervakning av händelsevidarebefordran i Experience Platform finns i [Adobe Experience Platform Debugger - översikt](../../../../debugger/home.md) och [Övervaka aktiviteter vid händelsevidarebefordran](../../../ui/event-forwarding/monitoring.md).
