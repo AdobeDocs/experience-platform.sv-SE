@@ -4,7 +4,7 @@ title: Real-time Customer Data Platform - översikt
 description: Översikt över Adobe Real-time Customer Data Platform
 feature: Get Started
 exl-id: 8be51bf0-b372-4a81-ba45-f4fe4b7e1718
-source-git-commit: ab87434b753c1231f01cde85637081eb08fce356
+source-git-commit: f89665837b75dc4305073d675c4c05b04302c85e
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 0%
@@ -49,11 +49,11 @@ Få fullständig information om de funktioner som ingår i Prime- och Ultimate-n
 * [Real-time Customer Data Platform (B2B Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html)
 * [Real-time Customer Data Platform (B2P Edition - Prime- och Ultimate-paket)](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html)
 
-### Adobe Real-time Customer Data Platform - Business-to-Consumer (B2C) Edition
+### Adobe Real-time Customer Data Platform - Business-to-Consumer (B2C) Edition {#rtcdp-b2c}
 
 Real-Time CDP B2C (Business-to-Consumer) är utformat för B2C-marknadsförare som vill kunna ena, styra och aktivera alla *konsumentdata* i olika system och kanaler för mer personaliserade kundupplevelser och fullständig datasäkerhet.
 
-### Adobe Real-time Customer Data Platform - Business-to-Business (B2B) Edition
+### Adobe Real-time Customer Data Platform - Business-to-Business (B2B) Edition {#rtcdp-b2b}
 
 Real-Time CDP Business-to-Business (B2B) är utformat för B2B-marknadsförare som kan sammanställa, styra och aktivera alla *lead- och kontodata* i olika system och kanaler för mer personaliserade kundupplevelser och fullständig datasäkerhet
 
@@ -61,7 +61,7 @@ Med Real-Time CDP B2B Edition kan marknadsförarna skapa fullständiga profiler 
 
 Se [översikten över Real-Time CDP B2B Edition](./b2b-overview.md) för mer omfattande information.
 
-### Adobe Real-time Customer Data Platform - Business-to-Person (B2P) Edition
+### Adobe Real-time Customer Data Platform - Business-to-Person (B2P) Edition {#rtcdp-b2p}
 
 Med B2P-utgåvan av Real-Time CDP kan du sammanställa, styra och aktivera *Kunddata för B2C och B2B* använda en enda CDP för att rikta sig till samma person på alla affärsområden med en sömlös upplevelse och fullständig lugn och ro för alla data.
 

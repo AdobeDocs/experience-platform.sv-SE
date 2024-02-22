@@ -2,12 +2,12 @@
 title: Aktivera målgrupper på konton för destinationer
 type: Tutorial
 description: Lär dig hur du aktiverar målgrupper för konton på destinationer
-badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Caution"
-badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
+badgeB2B: label="B2B Edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
+badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: f07eb12b4625bce117e1fe524727c00b7188aa5e
 workflow-type: tm+mt
-source-wordcount: '780'
+source-wordcount: '763'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Funktionen för att aktivera kontomålgrupper för destinationer är bara tillgänglig i [B2B Edition av Real-time Customer Data Platform](../../rtcdp/b2b-overview.md). Dessutom finns det funktioner för kontomålare **begränsad tillgänglighet**. Kontakta Adobe kundtjänst eller Adobe för att få tillgång till den här funktionen.
+>Funktionen för att aktivera målgrupper på konton är tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Personligt arbete](/help/rtcdp/overview.md#rtcdp-b2b) utgåvor av Real-time Customer Data Platform.
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [kontomålgrupper](/help/segmentation/ui/account-audiences.md) från Adobe Experience Platform till det mål du föredrar.
 
@@ -79,7 +79,7 @@ För resten av aktiveringsarbetsflödet för att exportera kontomaterial, läs s
 
 ## Viktiga hänvisningar och kända begränsningar {#important-callouts-known-limitations}
 
-Observera följande viktiga pratbubblor och kända begränsningar för den begränsade tillgänglighetsversionen av funktionaliteten för att aktivera kontomålgrupper.
+Observera följande viktiga pratbubblor och kända begränsningar för den allmänna tillgänglighetsreleasen för funktionaliteten för att aktivera kontomålgrupper.
 
 ### Obligatoriska mappningspar i mappningssteget när kontomålgrupper aktiveras till **[!UICONTROL (Companies) LinkedIn Matched Audiences]** mål {#required-mappings}
 
