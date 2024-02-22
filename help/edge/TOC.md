@@ -5,10 +5,10 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: 221a9348803e111a1842b3abf2e74f7408da5994
+source-git-commit: 82eede9e59338e8438c361d58b476960b7faa5cb
 workflow-type: tm+mt
-source-wordcount: '184'
-ht-degree: 22%
+source-wordcount: '188'
+ht-degree: 20%
 
 ---
 
@@ -41,11 +41,12 @@ ht-degree: 22%
       * [Mappningsanalysvariabler](data-collection/adobe-analytics/manually-mapping-variables.md)
       * [Automatiskt mappade variabler](data-collection/adobe-analytics/automatically-mapped-vars.md)
       * [Skicka data till Analytics](data-collection/adobe-analytics/sending-data-to-analytics.md)
-* Personalisering {#personalization}
+* Personanpassning {#personalization}
    * [Hantera visningshändelser](personalization/display-events.md)
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
    * [Personalisering via hybridimplementering](personalization/hybrid-personalization.md)
    * [Hantera flimmer](personalization/manage-flicker.md)
+
    * Adobe Target {#adobe-target}
       * [Översikt](personalization/adobe-target/target-overview.md)
       * [Programimplementering på en sida](personalization/adobe-target/spa-implementation.md)
@@ -61,6 +62,7 @@ ht-degree: 22%
    * Adobe Journey Optimizer {#ajo}
       * [Översikt](personalization/ajo/overview.md)
       * [Programimplementering på en sida](personalization/ajo/web-spa-implementation.md)
+      * [Konfigurera webb-meddelanden i appen](personalization/web-in-app-messaging.md)
 * Godkännande {#consent}
    * [Samtycke](consent/supporting-consent.md)
    * IAB Transparency och Consent Framework 2.0 {#iab-tcf}

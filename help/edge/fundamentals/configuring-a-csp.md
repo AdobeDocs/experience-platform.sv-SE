@@ -1,20 +1,20 @@
 ---
 title: Konfigurera en CSP
 seo-title: Configuring a CSP for Adobe Experience Platform Web SDK
-description: Lär dig hur du konfigurerar en CSP för Experience Platform Web SDK
+description: Lär dig konfigurera en CSP för Experience Platform Web SDK
 seo-description: Learn how to configure a CSP for the Experience Platform Web SDK
-keywords: konfigurera;konfiguration;SDK;edge;Web SDK;konfigurera;kontext;webb;enhet;miljö;web sdk-inställningar;content security policy;
+keywords: konfigurera;konfiguration;SDK;kant;Web SDK;konfigurera;kontext;webb;enhet;miljö;web sdk-inställningar;content security policy;
 exl-id: 661d0001-9e10-479e-84c1-80e58f0e9c0b
-source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
+source-git-commit: 099f87acded9eca31c31555e63c0ea49ae2d1719
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '339'
 ht-degree: 0%
 
 ---
 
 # Konfigurera en CSP
 
-A [Skyddsprofil för innehåll](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (CSP) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
+A [Skyddsprincip för innehåll](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (CSP) används för att begränsa vilka resurser en webbläsare får använda. CSP kan även begränsa funktionerna för skript och formatresurser. Adobe Experience Platform Web SDK kräver ingen CSP, men om du lägger till en kan det minska attackytan för att förhindra skadliga attacker.
 
 CSP måste återspegla hur [!DNL Platform Web SDK] distribueras och konfigureras. Följande CSP visar vilka ändringar som kan behövas för att SDK ska fungera korrekt. Ytterligare CSP-inställningar krävs troligen, beroende på din specifika miljö.
 
@@ -60,3 +60,11 @@ style-src 'unsafe-inline'
 >[!NOTE]
 >
 >Adobe gör **not** rekommendera `unsafe-inline` eftersom det tillåter att skript körs på sidan, vilket begränsar fördelarna med CSP.
+
+## Konfigurera en CSP för meddelanden i appen {#in-app-messaging}
+
+När du konfigurerar [Webb-meddelanden i appen](../personalization/web-in-app-messaging.md)måste du ta med följande direktiv i din CSP:
+
+```
+default-src  blob:;
+```
