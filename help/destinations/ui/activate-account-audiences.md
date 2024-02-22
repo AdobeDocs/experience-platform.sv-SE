@@ -5,7 +5,7 @@ description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 badgeB2B: label="B2B Edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: f07eb12b4625bce117e1fe524727c00b7188aa5e
+source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
 workflow-type: tm+mt
 source-wordcount: '763'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Funktionen för att aktivera målgrupper på konton är tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Personligt arbete](/help/rtcdp/overview.md#rtcdp-b2b) utgåvor av Real-time Customer Data Platform.
+>Funktionen för att aktivera målgrupper på konton är tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Personligt arbete](/help/rtcdp/overview.md#rtcdp-b2p) utgåvor av Real-time Customer Data Platform.
 
 I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera [kontomålgrupper](/help/segmentation/ui/account-audiences.md) från Adobe Experience Platform till det mål du föredrar.
 

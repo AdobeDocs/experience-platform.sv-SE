@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformationen för Adobe Experience Platform i januari 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b41a69244c7eb1111759b2af5c1ae6a0fb90be32
+source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 2%
@@ -17,7 +17,6 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 - [Larm](#alerts)
 - [Datainsamling](#data-collection)
-<!-- - [Data Prep](#data-prep) -->
 - [Mål ](#destinations)
 - [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
@@ -79,7 +78,7 @@ For more information on Data Prep, read the [Data Prep overview](../../data-prep
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Aktivera kontomålgrupper som är allmänt tillgängliga | Funktionen för att aktivera kontomaterial för vissa destinationer är nu allmänt tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Personligt arbete](/help/rtcdp/overview.md#rtcdp-b2b) utgåvor av Real-time Customer Data Platform. Läs självstudiekursen om [aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md) för att få fullständig information, inklusive destinationer som stöds. |
+| Aktivera kontomålgrupper som är allmänt tillgängliga | Funktionen för att aktivera kontomaterial för vissa destinationer är nu allmänt tillgänglig för företag som köper [Business-to-Business](/help/rtcdp/overview.md#rtcdp-b2b) och [Personligt arbete](/help/rtcdp/overview.md#rtcdp-b2p) utgåvor av Real-time Customer Data Platform. Läs självstudiekursen om [aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md) för att få fullständig information, inklusive destinationer som stöds. |
 | Digital Markets Act Consent Enforcement tools for Google destination | Google släpper ändringar i [Google Ads API](https://developers.google.com/google-ads/api/docs/start), [Kundmatchning](https://ads-developers.googleblog.com/2023/10/updates-to-customer-match-conversion.html)och [Display &amp; Video 360 API](https://developers.google.com/display-video/api/guides/getting-started/overview) för att stödja de krav på efterlevnad och samtycke som anges i [Digital Markets Act](https://digital-markets-act.ec.europa.eu/index_en) (DMA) i Europeiska unionen ([Policy för EU-användarsamtycke](https://www.google.com/about/company/user-consent-policy/)). Tillämpningen av dessa ändringar i medgivandekraven förväntas träda i kraft från och med den 6 mars 2024. <br/><br/> För att kunna följa EU:s policy för användargodkännande och fortsätta att skapa målgruppslistor för användare i Europeiska ekonomiska samarbetsområdet (EES) måste annonsörer och partners se till att slutanvändarnas samtycke skickas när målgruppsdata överförs. Som Google-partner tillhandahåller Adobe de verktyg som krävs för att uppfylla dessa krav på medgivande enligt DMA i Europeiska unionen.<br/><br/>Kunder som har köpt skölden för skydd och säkerhet av Adobe och konfigurerat en [samtyckespolicy](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation) om du vill filtrera bort profiler som inte är godkända behöver du inte göra något.<br/><br/>Kunder som inte har köpt Adobe Privacy &amp; Security Shield måste använda [segmentdefinition](../../segmentation/home.md#segment-definitions) funktioner inom [Segment Builder](../../segmentation/ui/segment-builder.md) för att filtrera bort profiler som inte godkänts, så att du kan fortsätta använda Real-Time CDP Google-destinationer utan avbrott. |
 | [!BADGE Beta]{type=Informative} Ändra ordning på mappningsfält för batchmål | Du kan nu ändra ordningen på kolumnerna i CSV-exporter genom att dra och släppa mappningsfälten i [mappning](../../destinations/ui/activate-batch-profile-destinations.md#mapping) steg. Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
 | [!BADGE Beta]{type=Informative} Förvalt standardexportschema för batchmål | Experience Platform anger nu automatiskt ett standardschema för varje filexport. Läs dokumentationen om [schemalägga målgruppsexport](../../destinations/ui/activate-batch-profile-destinations.md#scheduling) om du vill lära dig hur du ändrar standardschemat. <br/><br/> Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen. |
