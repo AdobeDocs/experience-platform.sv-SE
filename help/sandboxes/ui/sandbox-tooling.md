@@ -2,9 +2,9 @@
 title: Sandlådor
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 1f7b7f0486d0bb2774f16a766c4a5af6bbb8848a
+source-git-commit: 888608bdf3ccdfc56edd41c164640e258a4c5dd7
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1827'
 ht-degree: 0%
 
 ---
@@ -30,10 +30,11 @@ Tabellen nedan listar [!DNL Adobe Real-Time Customer Data Platform] objekt som f
 | Plattform | Objekt | Information |
 | --- | --- | --- |
 | Kunddataplattform | Källor | Källkontots autentiseringsuppgifter replikeras inte i målsandlådan av säkerhetsskäl och måste uppdateras manuellt. Källdataflödet kopieras som standard i utkaststatus. |
-| Kunddataplattform | Målgrupper | Endast **[!UICONTROL Customer Audience]** type **[!UICONTROL Segmentation service]** stöds. Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb. |
+| Kunddataplattform | Målgrupper | Endast **[!UICONTROL Customer Audience]** type **[!UICONTROL Segmentation service]** stöds. Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb. Systemet väljer automatiskt standardsammanslagningsprincip i målsandlådan med samma XDM-klass när kopplingsprincipberoenden kontrolleras. |
 | Kunddataplattform | Identiteter | Systemet deduplicerar Adobe standardnamnutrymmen för identiteter automatiskt när det skapas i målsandlådan. Publiker kan bara kopieras när alla attribut i målgruppsreglerna är aktiverade i unionsschemat. De scheman som behövs måste först flyttas och aktiveras för en enhetlig profil. |
-| Kunddataplattform | Scheman | Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb. Schemats enhetliga profilstatus kopieras som den är från källsandlådan. Om schemat är aktiverat för en enhetlig profil i källsandlådan flyttas alla attribut till unionsschemat. Kantfallet för schemarelationer inkluderas inte i paketet. |
+| Kunddataplattform | Scheman | Befintliga etiketter för samtycke och styrning kopieras över i samma importjobb. Användaren kan importera scheman utan att alternativet för enhetlig profil är aktiverat. Kantfallet för schemarelationer inkluderas inte i paketet. |
 | Kunddataplattform | Datauppsättningar | Datauppsättningar kopieras med den enhetliga profilinställningen inaktiverad som standard. |
+| Kunddataplattform | Samtycke- och styrningsprinciper | Lägg till anpassade profiler som skapats av en användare i ett paket och flytta dem mellan sandlådor. |
 
 Följande objekt importeras men har statusen Utkast eller Inaktiverat:
 
@@ -52,6 +53,7 @@ Tabellen nedan listar [!DNL Adobe Journey Optimizer] objekt som för närvarande
 | --- | --- | --- |
 | [!DNL Adobe Journey Optimizer] | Målgrupp | En målgrupp kan kopieras som ett beroende objekt i reseobjektet. Du kan välja att skapa en ny målgrupp eller återanvända en befintlig i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Schema | Scheman som används under resan kan kopieras som beroende objekt. Du kan välja att skapa ett nytt schema eller återanvända ett befintligt i målsandlådan. |
+| [!DNL Adobe Journey Optimizer] | Kopplingsprincip | Sammanfogningsprinciperna som används under resan kan kopieras som beroende objekt. I målsandlådan **inte** Om du skapar en ny sammanfogningsprincip kan du bara använda en befintlig. |
 | [!DNL Adobe Journey Optimizer] | Resa - arbetsytedetaljer | Återgivningen av resan på arbetsytan omfattar objekten på resan, till exempel villkor, åtgärder, händelser, läsning av målgrupper osv., som kopieras. Hoppaktiviteten tas inte med i kopian. |
 | [!DNL Adobe Journey Optimizer] | Händelse | Händelser och händelseinformation som används under resan kopieras. Den skapar alltid en ny version i målsandlådan. |
 | [!DNL Adobe Journey Optimizer] | Åtgärd | E-post och push-meddelanden som används under resan kan kopieras som beroende objekt. Kanalåtgärdsaktiviteterna som används i resefälten, som används för personalisering i meddelandet, kontrolleras inte för fullständighet. Innehållsblock kopieras inte.<br><br>Den åtgärd för att uppdatera profil som används under resan kan kopieras. Anpassade åtgärder och åtgärdsinformation som används under resan kopieras också. Den skapar alltid en ny version i målsandlådan. |
@@ -135,19 +137,23 @@ Om du vill importera paketet till en målsandlåda går du till sandlådorna **[
 
 ![Sandlådorna **[!UICONTROL Browse]** som markerar valet av importpaket.](../images/ui/sandbox-tooling/browse-sandboxes.png)
 
-Välj menyn **[!UICONTROL Package name]** du vill importera till målsandlådan. Lägg till ett valfritt **[!UICONTROL Job name]**, som kommer att användas för framtida övervakning, väljer sedan **[!UICONTROL Next]**.
+Välj menyn **[!UICONTROL Package name]** du vill importera till målsandlådan. Lägg till ett valfritt **[!UICONTROL Job name]**, som kommer att användas för framtida övervakning. Som standard inaktiveras den enhetliga profilen när paketets scheman importeras. Växla **Aktivera scheman för profil** för att aktivera detta väljer du **[!UICONTROL Next]**.
 
 ![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkering](../images/ui/sandbox-tooling/import-package-to-sandbox.png)
 
-The [!UICONTROL Package object and dependencies] sidan innehåller en lista med alla resurser som ingår i det här paketet. Systemet identifierar automatiskt beroende objekt som krävs för att importera markerade överordnade objekt.
+The [!UICONTROL Package object and dependencies] sidan innehåller en lista med alla resurser som ingår i det här paketet. Systemet identifierar automatiskt beroende objekt som krävs för att importera markerade överordnade objekt. Eventuella attribut som saknas visas högst upp på sidan. Välj **[!UICONTROL View details]** för en mer detaljerad uppdelning.
 
-![The [!UICONTROL Package object and dependencies] visas en lista med resurser som ingår i paketet.](../images/ui/sandbox-tooling/package-objects-and-dependencies.png)
+![The [!UICONTROL Package object and dependencies] sidan visar saknade attribut.](../images/ui/sandbox-tooling/missing-attributes.png)
 
 >[!NOTE]
 >
 >Beroende objekt kan ersättas med befintliga objekt i målsandlådan, vilket gör att du kan återanvända befintliga objekt i stället för att skapa en ny version. Om du till exempel importerar ett paket som innehåller scheman kan du återanvända befintliga anpassade fältgrupper och identitetsnamnutrymmen i målsandlådan. När du importerar ett paket som innehåller Journeys kan du också återanvända befintliga segment i målsandlådan.
 
-Om du vill använda ett befintligt objekt väljer du pennikonen bredvid det beroende objektet. Alternativen för att skapa nya eller använda befintliga visas. Välj **[!UICONTROL Use existing]**.
+Om du vill använda ett befintligt objekt väljer du pennikonen bredvid det beroende objektet.
+
+![The [!UICONTROL Package object and dependencies] visas en lista med resurser som ingår i paketet.](../images/ui/sandbox-tooling/package-objects-and-dependencies.png)
+
+Alternativen för att skapa nya eller använda befintliga visas. Välj **[!UICONTROL Use existing]**.
 
 ![The [!UICONTROL Package object and dependencies] sida med alternativ för beroende objekt [!UICONTROL Create new] och [!UICONTROL Use existing].](../images/ui/sandbox-tooling/use-existing-object.png)
 
