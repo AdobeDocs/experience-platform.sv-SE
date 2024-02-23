@@ -1,7 +1,7 @@
 ---
 title: Konfigurera stöd för webb-meddelanden i appen i Web SDK
 description: Lär dig hur du konfigurerar taggtillägget Web SDK så att det stöder Web In-app Messaging.
-source-git-commit: 82eede9e59338e8438c361d58b476960b7faa5cb
+source-git-commit: a020f880be2606024c6a986dc468d70a2fbdc30f
 workflow-type: tm+mt
 source-wordcount: '885'
 ht-degree: 0%
@@ -185,5 +185,5 @@ Du kan välja att visa meddelanden i appen för användarna ett visst antal gån
 
 I [Web SDK-konfiguration](../fundamentals/configuring-the-sdk.md) ange `personalizationStorageEnabled` efter behov:
 
-* `personalizationStorageEnabled: true` utlöser meddelandet i appen med den frekvens som du definierade i [Adobe Journey Optimizer - kampanj](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html#configure-inapp).
+* `personalizationStorageEnabled: true` utlöser meddelandet i appen med den frekvens som du definierade i [Adobe Journey Optimizer-kampanj](https://experienceleague.adobe.com/docs/journey-optimizer/using/in-app/create-in-app-web.html#configure-inapp).
 * `personalizationStorageEnabled: false` utlöser meddelandet i appen vid varje sidinläsning.
