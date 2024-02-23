@@ -27,7 +27,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 **Nya eller uppdaterade funktioner**
 | Funktion | Beskrivning | | — | — | | Fliken Aviseringshistorik | Som Experience Platform-administratör kan du använda funktionen Hantera aviseringsprenumeranter för att tilldela en avisering till ett Adobe-användar-ID, en extern e-postadress eller en e-postgrupplista. Mer information finns i [dokumentation för varningsgränssnitt](../../observability/alerts/ui.md) om du vill ha mer information om fliken Historik. |
 
-{style="table-layout:auto"}
+
 
 Läs mer om varningar i [[!DNL Observability Insights] översikt](../../observability/home.md).
 
