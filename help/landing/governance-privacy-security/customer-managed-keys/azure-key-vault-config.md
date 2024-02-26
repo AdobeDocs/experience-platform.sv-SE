@@ -2,9 +2,9 @@
 title: Konfigurera ett Azure Key Vault
 description: Lär dig hur du skapar ett nytt Enterprise-konto med Azure, eller använder ett befintligt Enterprise-konto och skapar nyckelvalvet.
 exl-id: 670e3ca3-a833-4b28-9ad4-73685fa5d74d
-source-git-commit: 4ec87482c5a38404217ecd910b6a27ee2d0e00eb
+source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '561'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Kundhanterade nycklar (CMK) stöder bara nycklar från en [!DNL Microsoft Azure]
 
 >[!IMPORTANT]
 >
->Endast tjänstenivåerna Premium och Standard för [!DNL Azure] Nyckelvalv stöds. [!DNL Azure Managed HSM], [!DNL Azure Dedicated HSM] och [!DNL Azure Payments HSM] stöds inte. Se [[!DNL Azure] dokumentation](https://learn.microsoft.com/en-us/azure/security/fundamentals/key-management#azure-key-management-services) för mer information om nyckelhanteringstjänster.
+>Endast nivåerna Standard, Premium och Managed HSM för [!DNL Azure] Nyckelvalv stöds. [!DNL Azure Dedicated HSM] och [!DNL Azure Payments HSM] stöds inte. Se [[!DNL Azure] dokumentation](https://learn.microsoft.com/en-us/azure/security/fundamentals/key-management#azure-key-management-services) för mer information om nyckelhanteringstjänster.
 
 >[!NOTE]
 >
@@ -63,7 +63,7 @@ När du har skapat ett nyckelvalv kan du generera en ny nyckel. Navigera till **
 
 ![The [!DNL Keys] flik för [!DNL Azure] med [!DNL Generate import] markerad.](../../images/governance-privacy-security/customer-managed-keys/view-keys.png)
 
-Använd det angivna formuläret för att ange ett namn för nyckeln och markera **RSA** för nyckeltypen. Som ett minimum är **[!DNL RSA key size]** måste vara minst **3072** bitar efter behov av [!DNL Cosmos DB]. [!DNL Azure Data Lake Storage] är också kompatibelt med RSA 3027.
+Använd det angivna formuläret för att ange ett namn för nyckeln och välj antingen **RSA** eller **RSA-HSM** för nyckeltypen. Som ett minimum är **[!DNL RSA key size]** måste vara minst **3072** bitar efter behov av [!DNL Cosmos DB]. [!DNL Azure Data Lake Storage] är också kompatibelt med RSA 3027.
 
 >[!NOTE]
 >
@@ -71,7 +71,7 @@ Använd det angivna formuläret för att ange ett namn för nyckeln och markera 
 
 Använd de återstående kontrollerna för att konfigurera nyckeln som du vill generera eller importera efter behov. När du är klar väljer du **[!DNL Create]**.
 
-![Skapa en nyckelkontrollpanel med [!DNL 3072] bitar markerade.](../../images/governance-privacy-security/customer-managed-keys/configure-key.png)
+![The [!DNL Create a key] kontrollpanel med [!DNL 3072] bitar markerade.](../../images/governance-privacy-security/customer-managed-keys/configure-key.png)
 
 Den konfigurerade nyckeln visas i listan med nycklar för valvet.
 

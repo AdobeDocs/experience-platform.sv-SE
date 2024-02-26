@@ -2,9 +2,9 @@
 title: Konfigurera och konfigurera kundhanterade nycklar med hjälp av plattformsgränssnittet
 description: Lär dig hur du konfigurerar din CMK-app med din Azure-klient och skickar ditt krypteringsnyckel-ID till Adobe Experience Platform.
 exl-id: 5f38997a-66f3-4f9d-9c2f-fb70266ec0a6
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 4f08e8fcc8d53b981af60226f1397a1d1ac4d8dc
 workflow-type: tm+mt
-source-wordcount: '1010'
+source-wordcount: '1003'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,10 @@ När autentiseringsprocessen är klar går du tillbaka till [!DNL Azure] Nyckelv
 ![The [!DNL Microsoft Azure] kontrollpanel med [!DNL Add] och [!DNL Add role assignment] markerad.](../../images/governance-privacy-security/customer-managed-keys/add-role-assignment.png)
 
 På nästa skärm får du en uppmaning om att välja en roll för uppdraget. Välj **[!DNL Key Vault Crypto Service Encryption User]** före markering **[!DNL Next]** för att fortsätta.
+
+>[!NOTE]
+>
+>Om du har [!DNL Managed-HSM Key Vault] nivå måste du välja **[!DNL Managed HSM Crypto Service Encryption User]** användarroll.
 
 ![The [!DNL Microsoft Azure] kontrollpanelen med [!DNL Key Vault Crypto Service Encryption User] markerad.](../../images/governance-privacy-security/customer-managed-keys/select-role.png)
 
