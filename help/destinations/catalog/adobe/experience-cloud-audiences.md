@@ -3,9 +3,9 @@ title: Experience Cloud-målgrupper
 description: Lär dig hur du delar målgrupper från Real-time Customer Data Platform till olika Experience Cloud-appar.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: b82bbdf7957e5a8d331d61f02293efdaf878971c
+source-git-commit: 188398e3483541ca482f5c1cfdce307160ada2da
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1669'
 ht-degree: 0%
 
 ---
@@ -95,6 +95,7 @@ Observera följande kända begränsningar och viktiga pratbubblor när du använ
 * För närvarande stöds en målgrupp på Experience Cloud. Om du försöker konfigurera en andra målanslutning uppstår ett fel.
 * När du ansluter till målet visas ett alternativ för att [aktivera dataflödesaviseringar](../../ui/alerts.md). Visas i användargränssnittet, men **alternativet aktivera aviseringar stöds inte för närvarande**.
 * **Stöd för bakgrundsfyllning**: Den första exporten till Audience Manager eller andra lösningar från Experience Cloud omfattar en historisk målgrupp. Användare av [integrering med äldre målgruppsdelning](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aep-segments-in-aam) som konfigurerar det här målet bör förvänta sig en ryggfyllningsdifferens på ungefär sex timmar.
+* Målgrupper som kommer från [Målgruppssammansättning](../../../segmentation/ui/audience-composition.md) stöds inte direkt. Om du vill aktivera sammansatta målgrupper för det här målet måste du skapa en målgruppsdefinition via [Segment Builder](../../../segmentation/ui/segment-builder.md) baserat på den sammansatta målgruppen och aktivera den nya målgruppen.
 
 ### Fördröjning vid aktivering av målgrupper {#audience-activation-latency}
 
@@ -199,4 +200,4 @@ Målgrupper och egenskaper i Audience Manager omfattas av [Rollbaserade åtkomst
 
 Målgrupper som exporteras från Real-Time CDP tilldelas en specifik datakälla i Audience Manager som kallas **[!UICONTROL Experience Platform Segments]**.
 
-Om du bara vill ge vissa användare åtkomst till målgrupperna kan du använda åtkomstkontroller för de målgrupper som tillhör datakällan. Ange nya behörigheter för åtkomstkontroll i Audience Manager för dessa målgrupper och egenskaper som skapats från Real-Time CDP segment.
+Om du bara vill ge vissa användare åtkomst till målgrupperna använder du [Rollbaserade åtkomstkontroller](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/administration/administration-overview.html) för att konfigurera användaråtkomst till målgrupper och egenskaper som skapats av Real-Time CDP målgrupper.
