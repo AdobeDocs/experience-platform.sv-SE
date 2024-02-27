@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: e8f838c3cf8988f6028901df76ed040e7f08cb98
+source-git-commit: 10079216cbfa5ace68127d1529d47e83f4448049
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 0%
@@ -220,9 +220,9 @@ En lista med profilattribut visas. I den här povern kan du välja den attributt
 
 När du har valt attributet kan du välja den ordning som det ska rangordnas efter. Detta sker antingen i stigande ordning (från lägsta till högsta) eller i fallande ordning (från högsta till lägsta).
 
-Dessutom kan du begränsa antalet returnerade målgrupper genom att aktivera **[!UICONTROL Add profile limit]** växla. När den här växeln är aktiverad kan du ange det maximala antalet målgrupper som returneras inom **[!UICONTROL Included profiles]** fält.
+Dessutom kan du begränsa antalet profiler som returneras genom att aktivera **[!UICONTROL Add profile limit]** växla. När den här växeln är aktiverad kan du ange det maximala antalet profiler som returneras inom **[!UICONTROL Included profiles]** fält.
 
-![Alternativet Lägg till profilgräns är markerat, vilket gör att du kan begränsa antalet returnerade målgrupper.](../images/ui/audience-composition/add-profile-limit.png)
+![Alternativet Lägg till profilgräns är markerat, vilket gör att du kan begränsa antalet profiler som returneras.](../images/ui/audience-composition/add-profile-limit.png)
 
 ## [!UICONTROL Split] {#split-block}
 
