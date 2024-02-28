@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;handbok för sandlådeutvecklare
+keywords: Experience Platform;startsida;populära ämnen;handbok för utvecklare av sandlådor
 solution: Experience Platform
 title: API-guide för sandlådor
 description: Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du kan testa funktioner, köra experiment och göra anpassade konfigurationer utan att påverka produktionsmiljön.
+role: Developer
 exl-id: c77e96dc-d138-4126-bbb0-b67beb0a02d6
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '327'
 ht-degree: 0%
 
 ---

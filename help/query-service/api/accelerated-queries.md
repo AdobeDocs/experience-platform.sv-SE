@@ -1,8 +1,9 @@
 ---
 title: Slutpunkt för accelererade frågor
 description: Lär dig hur du får åtkomst till frågeflödat arkiv på ett tillståndslöst sätt för att snabbt returnera resultat baserat på aggregerade data. Det här dokumentet innehåller ett exempel på HTTP-begäran och svar för frågetjänstens accelererade frågeslutpunkt.
+role: Developer
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: ea2a1cddf299bec750875c4a9125cdd065f18d8b
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 0%

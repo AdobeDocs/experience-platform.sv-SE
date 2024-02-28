@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;identiteter;klusterhistorik
 solution: Experience Platform
 title: Hämta klusterhistorik för en identitet
 description: Identiteter kan flytta kluster under olika enhetsgrafkörningar. Identitetstjänsten ger synlighet i klusterassociationerna för en viss identitet över tiden.
+role: Developer
 exl-id: e52edb15-e3d6-4085-83d5-212bbd952632
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '345'
 ht-degree: 0%
 
 ---
@@ -15,9 +16,9 @@ ht-degree: 0%
 
 Identiteter kan flytta kluster under olika enhetsgrafkörningar. [!DNL Identity Service] ger synlighet i klusterassociationerna för en viss identitet över tid.
 
-Använd valfritt `graph-type` parameter som anger vilken utdatatyp som klustret ska hämtas från. Alternativen är:
+Använd valfritt `graph-type` parameter som anger vilken utdatatyp som klustret ska hämtas från. Alternativ:
 
-- `None` - Utför ingen identitetssammanfogning.
+- `None` - Utför ingen identitetssammanslagning.
 - `Private Graph` - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om nej `graph-type` anges är detta standardvärde.
 
 ## Hämta klusterhistoriken för en enskild identitet
@@ -65,7 +66,7 @@ curl -X GET \
 
 ## Hämta klusterhistoriken för flera identiteter
 
-Använd `POST` som en batchmotsvarighet till `GET` som beskrivs ovan för att returnera klusterhistorik för flera identiteter.
+Använd `POST` metod som en batchmotsvarighet till `GET` som beskrivs ovan för att returnera klusterhistorik för flera identiteter.
 
 >[!NOTE]
 >

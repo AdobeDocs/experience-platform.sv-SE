@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;handbok för sandlådeutvecklare
+keywords: Experience Platform;startsida;populära ämnen;handbok för utvecklare av sandlådor
 solution: Experience Platform
 title: Komma igång med sandbox-API
-description: Med sandbox API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
+description: Med sandbox-API kan utvecklare programmässigt hantera sandlådor i Adobe Experience Platform. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
+role: Developer
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '375'
+source-wordcount: '372'
 ht-degree: 4%
 
 ---
@@ -39,7 +40,7 @@ Förutom autentiseringshuvuden kräver alla begäranden en rubrik som anger namn
 
 Alla begäranden som innehåller en nyttolast (POST, PUT och PATCH) kräver ytterligare en rubrik:
 
-* Innehållstyp: application/json
+* Content-Type: application/json
 
 ## Nästa steg
 

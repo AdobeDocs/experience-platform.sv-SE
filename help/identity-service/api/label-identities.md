@@ -2,9 +2,10 @@
 keywords: Experience Platform;hem;populära ämnen;etikettidentiteter
 solution: Experience Platform
 title: Märk ett fält som en identitet
-description: Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av identitetstjänsten. Identitetens namnutrymme anges som en del av fältets etikett.
+description: Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av identitetstjänsten. Identitetens namnutrymme anges som en del av etiketteringen av fältet.
+role: Developer
 exl-id: f0b3f18b-7302-4a0b-b444-2d4b59787681
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '196'
 ht-degree: 1%
@@ -13,7 +14,7 @@ ht-degree: 1%
 
 # Märk ett fält som en identitet
 
-Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av [!DNL Identity Service]. Identitetens namnutrymme anges som en del av fältets etikett.
+Fält som innehåller personligt identifierbar information (PII) kan märkas som identitetsfält. Ett värde som anges i ett identitetsfält tolkas som en identitet av [!DNL Identity Service]. Identitetens namnutrymme anges som en del av etiketteringen av fältet.
 
 Följande villkor måste vara uppfyllda för att ett fält ska kunna märkas som identitet:
 

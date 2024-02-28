@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;hemmabruk;populära ämnen;Politik;API-baserad tillämpning;datastyrning
+keywords: Experience Platform;hem;populära ämnen;Politiska åtgärder;API-baserad tillämpning;datastyrning
 solution: Experience Platform
 title: API-slutpunkt för datahanteringsprinciper
 description: Datastyrningsprinciper är regler som organisationen antar som beskriver den typ av marknadsföringsåtgärder som ni tillåts eller begränsas från att utföra på data inom Experience Platform. Slutpunkten /policies används för alla API-anrop som rör visning, skapande, uppdatering eller borttagning av datastyrningsprinciper.
+role: Developer
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1865'
+source-wordcount: '1863'
 ht-degree: 0%
 
 ---
@@ -17,15 +18,15 @@ Datastyrningspolicyer är regler som beskriver den typ av marknadsföringsåtgä
 
 >[!IMPORTANT]
 >
->Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som bestämmer vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se `/policies` slutpunktsguide för [API för åtkomstkontroll](../../access-control/abac/api/policies.md) om du vill ha information om hur du programmässigt hanterar åtkomstkontrollprinciper.
+>Styrningsprinciper ska inte blandas ihop med åtkomstkontrollprinciper, som bestämmer vilka specifika dataattribut som vissa plattformsanvändare i organisationen kan komma åt. Se `/policies` slutpunktsguide för [API för åtkomstkontroll](../../access-control/abac/api/policies.md) om du vill ha mer information om hur du programmässigt hanterar åtkomstkontrollprinciper.
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Hämta en lista med profiler {#list}
 
-Du kan visa alla `core` eller `custom` genom att göra en GET-förfrågan till `/policies/core` eller `/policies/custom`, respektive.
+Du kan visa alla `core` eller `custom` genom att göra en GET-förfrågan till `/policies/core` eller `/policies/custom`, respektive
 
 **API-format**
 
@@ -147,7 +148,7 @@ Ett lyckat svar innehåller `children` array som visar information om varje häm
 | `status` | Aktuell status för en princip. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
 | `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för en princip. |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
-| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som en princips associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) om du vill ha mer information om den här egenskapen. |
+| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som en princips associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) för mer information om den här egenskapen. |
 
 ## Söka efter en princip {#look-up}
 
@@ -228,7 +229,7 @@ Ett lyckat svar returnerar information om principen.
 | `status` | Principens aktuella status. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
 | `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
-| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) om du vill ha mer information om den här egenskapen. |
+| `deny` | Ett objekt som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) för mer information om den här egenskapen. |
 
 ## Skapa en anpassad profil {#create-policy}
 
@@ -239,7 +240,7 @@ I [!DNL Policy Service] API, en princip definieras av följande:
 
 För att uppfylla det senare kravet måste principdefinitionerna innehålla ett booleskt uttryck om förekomsten av dataanvändningsetiketter. Det här uttrycket kallas för ett principuttryck.
 
-Policyuttryck tillhandahålls i form av en `deny` i varje principdefinition. Ett exempel på en enkel `deny` objekt som bara kontrollerar om det finns en enstaka etikett ser ut så här:
+Policyuttryck tillhandahålls i form av en `deny` -egenskapen i varje principdefinition. Ett exempel på en enkel `deny` objekt som bara kontrollerar om det finns en enstaka etikett ser ut så här:
 
 ```json
 "deny": {
@@ -395,7 +396,7 @@ PUT /policies/custom/{POLICY_ID}
 
 **Begäran**
 
-I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip du skapade för att neka den här marknadsföringsåtgärden om `C1 AND C5` dataetiketter finns.
+I det här exemplet har villkoren för att exportera data till en tredje part ändrats, och nu måste du använda den princip som du skapade för att neka den här marknadsföringsåtgärden om `C1 AND C5` dataetiketter finns.
 
 Följande begäran uppdaterar den befintliga principen så att den inkluderar det nya principuttrycket. Observera att eftersom denna begäran i princip skriver om principen måste alla fält inkluderas i nyttolasten, även om vissa av deras värden inte uppdateras.
 
@@ -430,7 +431,7 @@ curl -X PUT \
 | `status` | Principens aktuella status. Det finns tre möjliga statusar: `DRAFT`, `ENABLED`, eller `DISABLED`. Som standard är endast `ENABLED` policyer deltar i utvärderingen. Se översikten på [policyutvärdering](../enforcement/overview.md) för mer information. |
 | `marketingActionRefs` | En array som listar URI:erna för alla tillämpliga marknadsföringsåtgärder för principen. URI:n för en marknadsföringsåtgärd anges i `_links.self.href` i svaret på [söka efter en marknadsföringsåtgärd](./marketing-actions.md#look-up). |
 | `description` | En valfri beskrivning som ger ytterligare kontext till principens användningsfall. |
-| `deny` | Principuttrycket som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) om du vill ha mer information om den här egenskapen. |
+| `deny` | Principuttrycket som beskriver de specifika dataanvändningsetiketter som principens associerade marknadsföringsåtgärd är begränsad från att utföras på. Se avsnittet om [skapa en profil](#create-policy) för mer information om den här egenskapen. |
 
 **Svar**
 
@@ -481,7 +482,7 @@ En viss del av en policy kan uppdateras på PATCH-begäran. Till skillnad från 
 
 >[!NOTE]
 >
->Nyttolaster för PATCH-begäranden följer JSON-korrigeringsformatering. Se [Grundläggande API-guide](../../landing/api-fundamentals.md) om du vill ha mer information om den godkända syntaxen.
+>Nyttolaster för PATCH-begäranden följer JSON-korrigeringsformatering. Se [Grundläggande API-guide](../../landing/api-fundamentals.md) för mer information om den godkända syntaxen.
 
 The [!DNL Policy Service] API har stöd för JSON Patch-åtgärder `add`, `remove`och `replace`och gör att du kan kombinera flera uppdateringar till ett enda samtal, vilket visas i exemplet nedan.
 
@@ -610,7 +611,7 @@ Du kan bekräfta borttagningen genom att försöka söka efter (GET) profilen ig
 
 ## Hämta en lista över aktiverade kärnprinciper {#list-enabled-core}
 
-Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över viktiga principer som är aktiverade av din organisation genom att göra en GET-förfrågan till `/enabledCorePolicies` slutpunkt.
+Som standard deltar endast aktiverade datastyrningsprinciper i utvärderingen. Du kan hämta en lista över viktiga principer som för närvarande är aktiverade av din organisation genom att göra en GET-förfrågan till `/enabledCorePolicies` slutpunkt.
 
 **API-format**
 

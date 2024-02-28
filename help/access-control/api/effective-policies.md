@@ -3,8 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;effektiva profiler;åtkomstko
 solution: Experience Platform
 title: API-slutpunkt för gällande principer
 description: Lär dig hur du visar effektiva åtkomstprinciper med åtkomstkontrolls-API:t för Adobe Experience Platform.
+role: Developer
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '315'
 ht-degree: 0%
@@ -27,7 +28,7 @@ POST /acl/effective-policies
 
 **Begäran**
 
-Följande förfrågningar hämtar information om &quot;[!UICONTROL Manage Datasets]&quot; behörighet och åtkomst till[!UICONTROL schemas]&quot; resurstyp för den aktuella användaren.
+Följande förfrågningar hämtar information om[!UICONTROL Manage Datasets]&quot; behörighet och åtkomst till[!UICONTROL schemas]&quot; resurstyp för den aktuella användaren.
 
 ```shell
 curl -X POST \

@@ -4,10 +4,11 @@ user-guide-title: Dataåtkomst till Adobe Experience Platform
 breadcrumb-title: Användarhandbok om dataåtkomst
 user-guide-description: Hitta och få tillgång till inmatade datauppsättningar i Experience Platform.
 feature: Data Access
-source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '38'
-ht-degree: 57%
+source-wordcount: '35'
+ht-degree: 60%
 
 ---
 
@@ -16,6 +17,6 @@ ht-degree: 57%
 
 - [Dataåtkomstöversikt](home.md)
 - [API för dataåtkomst](api.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - [Visa datauppsättningsdata](tutorials/dataset-data.md)
 - [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)

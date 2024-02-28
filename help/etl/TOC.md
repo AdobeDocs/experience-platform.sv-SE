@@ -3,9 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform ETL Guide
 breadcrumb-title: ETL Guide
 user-guide-description: Lär dig de allmänna stegen för att skapa säkra, högpresterande anslutningar för inmatning av data i plattformen.
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '43'
+source-wordcount: '40'
 ht-degree: 0%
 
 ---

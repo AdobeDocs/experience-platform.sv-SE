@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;lissandlådor
 solution: Experience Platform
 title: API-slutpunkt för sandlådetyper
 description: Du kan hämta en lista över sandlådetyper som stöds för din organisation genom att göra en GET-begäran till slutpunkten /sandboxTypes.
+role: Developer
 exl-id: eb5e1b44-37f5-4ed5-98f5-ac8db8792c7d
-source-git-commit: 59dfa862388394a68630a7136dee8e8988d0368c
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '162'
+source-wordcount: '158'
 ht-degree: 1%
 
 ---
@@ -17,7 +18,7 @@ Du kan hämta en lista över sandlådetyper som stöds för din organisation gen
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista över sandlådetyper som stöds
 

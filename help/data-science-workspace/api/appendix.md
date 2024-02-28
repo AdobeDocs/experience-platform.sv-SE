@@ -1,10 +1,11 @@
 ---
 keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;populära topics;
 solution: Experience Platform
-title: API-handbok för Sensei Machine Learning
+title: Sensei Machine Learning API Guide
 description: I följande avsnitt finns referensinformation för olika funktioner i Sensei Machine Learning API.
+role: Developer
 exl-id: 2c8d3ae8-7ad7-4ff6-8d6b-3a42d3eccdff
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '330'
 ht-degree: 0%
@@ -17,7 +18,7 @@ I följande avsnitt finns referensinformation för olika funktioner i [!DNL Sens
 
 ## Frågeparametrar för hämtning av resurser {#query}
 
-The [!DNL Sensei Machine Learning] API har stöd för frågeparametrar när resurser hämtas. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
+The [!DNL Sensei Machine Learning] API har stöd för frågeparametrar med hämtning av resurser. Tillgängliga frågeparametrar och deras användning beskrivs i följande tabell:
 
 | Frågeparameter | Beskrivning | Standardvärde |
 | --------------- | ----------- | ------- |
@@ -73,17 +74,17 @@ Följande är ett exempel på konfiguration som anger hur du använder en CPU f�
 
 ## Resurskonfigurationer för PySpark och Spark {#resource-config}
 
-Spark Engines kan modifiera dataresurser för utbildning och poängsättning. Dessa resurser beskrivs i följande tabell:
+Spark Engines har möjlighet att modifiera beräkningsresurser för utbildning och poängsättning. Dessa resurser beskrivs i följande tabell:
 
 | Resurs | Beskrivning | Typ |
 | -------- | ----------- | ---- |
-| driverMemory | Minne för drivrutin i megabyte | int |
+| driverMemory | Minne för drivrutin i MB | int |
 | driverCores | Antal kärnor som används av drivrutinen | int |
-| exutorMemory | Minne för körare i megabyte | int |
+| exutorMemory | Minne för körare i MB | int |
 | exutorCores | Antal kärnor som används av köraren | int |
 | numExecutors | Antal körare | int |
 
-Resurser kan anges på en [MLInstance](./mlinstances.md) som antingen (A) individuella utbildnings- eller poängsättningsparametrar, eller (B) inom ett ytterligare specifikationsobjekt (`specification`). Följande resurskonfigurationer är till exempel desamma för både utbildning och poängsättning:
+Resurser kan anges på en [MLInstance](./mlinstances.md) som antingen (A) individuella utbildnings- eller poängparametrar, eller (B) inom ett ytterligare specifikationsobjekt (`specification`). Följande resurskonfigurationer är till exempel desamma för både utbildning och poängsättning:
 
 ```json
 [

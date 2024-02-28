@@ -3,8 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;api;Attributbaserad åtkomstk
 solution: Experience Platform
 title: API-slutpunkt för åtkomstkontrollprinciper
 description: Med slutpunkten /policies i API:t för attributbaserad åtkomstkontroll kan du programmässigt hantera principer i Adobe Experience Platform.
+role: Developer
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 01574f37593c707f092a8b4aa03d3d67e8c20780
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '1433'
 ht-degree: 0%

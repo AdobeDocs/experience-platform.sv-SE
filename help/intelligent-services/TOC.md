@@ -4,9 +4,10 @@ audience: user
 user-guide-title: Hjälp med intelligenta tjänster
 breadcrumb-title: Användarhandbok om Intelligent Services
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, upptäcka insikter och skapa segment utifrån data över marknadsföringshändelser.
-source-git-commit: a8a721cde2ebd68e72a1ee36b6d9274792474b3d
+role: User
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '136'
 ht-degree: 23%
 
 ---
@@ -29,7 +30,7 @@ ht-degree: 23%
       - [Kundhanterade nycklar](attribution-ai/aai-data-governance/customer-managed-keys.md)
       - [Datastyrning](attribution-ai/aai-data-governance/data-governance.md)
       - [Styrningspolitik](attribution-ai/aai-data-governance/governance-policies.md)
-   - [Analysera bakgrundsmusik med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
+   - [Analysera poäng med hjälp av frågetjänsten](attribution-ai/aai-query-service.md)
    - [Fel vid felsökning](attribution-ai/troubleshooting.md)
 - Innehållstaggning {#content-commerce-ai}
    - [Översikt](content-commerce-ai/overview.md)

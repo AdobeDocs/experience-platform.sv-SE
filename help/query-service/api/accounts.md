@@ -3,10 +3,11 @@ keywords: Experience Platform;home;populära topics;query service;api guide;Quer
 solution: Experience Platform
 title: API-slutpunkt för konton
 description: Du kan skapa ett frågetjänstkonto för beständig .
+role: Developer
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '498'
 ht-degree: 1%
 
 ---
@@ -17,7 +18,7 @@ I Adobe Experience Platform Query Service används konton för att skapa autenti
 
 ## Komma igång
 
-Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten. Läs igenom [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
+Slutpunkterna som används i den här guiden ingår i API:t för frågetjänsten. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för viktig information som du behöver känna till för att kunna anropa API:t, inklusive obligatoriska rubriker och hur du läser exempel-API-anrop.
 
 ## Skapa ett konto
 

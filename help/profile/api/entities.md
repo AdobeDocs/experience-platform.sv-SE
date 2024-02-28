@@ -3,21 +3,22 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för entiteter (profilåtkomst)
 type: Documentation
 description: Med Adobe Experience Platform kan du få åtkomst till kundprofildata i realtid med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas"profiler", med hjälp av profilens API.
+role: Developer
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1734'
 ht-degree: 0%
 
 ---
 
 # Entitetens slutpunkt (profilåtkomst)
 
-Adobe Experience Platform ger dig åtkomst [!DNL Real-Time Customer Profile] data med RESTful API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
+Med Adobe Experience Platform kan du komma åt [!DNL Real-Time Customer Profile] data med RESTful-API:er eller användargränssnittet. I den här handboken beskrivs hur du får åtkomst till entiteter, som ofta kallas&quot;profiler&quot;, med API:t. Mer information om hur du får åtkomst till profiler med [!DNL Platform] Gränssnittet, se [Användarhandbok för profil](../ui/user-guide.md).
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Åtkomst till profildata via identitet
 
@@ -183,11 +184,11 @@ curl -X POST \
 | `schema.name` | ***(Obligatoriskt)*** Namnet på XDM-schemat som entiteten tillhör. |
 | `fields` | XDM-fälten som ska returneras, som en array med strängar. Som standard returneras alla fält. |
 | `identities` | ***(Obligatoriskt)*** En array som innehåller en lista med identiteter för de entiteter som du vill komma åt. |
-| `identities.entityId` | ID:t för en enhet som du vill komma åt. |
+| `identities.entityId` | ID för en enhet som du vill komma åt. |
 | `identities.entityIdNS.code` | Namnområdet för ett enhets-ID som du vill komma åt. |
 | `timeFilter.startTime` | Starttid för tidsintervallfiltret, som ingår. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet början av tillgänglig tid. |
 | `timeFilter.endTime` | Sluttid för tidsintervallfilter, exkluderad. Ska vara i millisekundens granularitet. Om inget anges är standardvärdet slutet av tillgänglig tid. |
-| `limit` | Antal poster som ska returneras. Gäller endast antalet returnerade upplevelsehändelser. Standard: 1000. |
+| `limit` | Antal poster som ska returneras. Gäller endast antalet returnerade upplevelsehändelser. Standard: 1 000. |
 | `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
 | `withCA` | Funktionsflagga för aktivering av beräknade attribut för sökning. Standard: false. |
 
@@ -345,7 +346,7 @@ GET /access/entities?{QUERY_PARAMETERS}
 
 **Begäran**
 
-Följande begäran hittar en profilentitet efter ID och hämtar värdena för egenskaperna `endUserIDs`, `web`och `channel` för alla tidsseriehändelser som är associerade med entiteten.
+Följande begäran hittar en profilentitet med ID och hämtar värdena för egenskaperna `endUserIDs`, `web`och `channel` för alla tidsseriehändelser som är associerade med entiteten.
 
 ```shell
 curl -X GET \
@@ -413,7 +414,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier och a
 
 ### Åtkomst till en efterföljande resultatsida
 
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor `_page.next` -egenskapen kommer att innehålla ett ID. Dessutom finns `_links.next.href` -egenskapen tillhandahåller en URI för begäran för hämtning av nästa sida. Om du vill hämta resultaten skickar du en ny GET-förfrågan till `/access/entities` slutpunkt, men du måste se till att ersätta `/entities` med värdet för angiven URI.
+Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor `_page.next` -egenskapen kommer att innehålla ett ID. Dessutom kan du `_links.next.href` -egenskapen tillhandahåller en URI för begäran för hämtning av nästa sida. Om du vill hämta resultaten skickar du en ny GET-förfrågan till `/access/entities` slutpunkt, men du måste se till att ersätta `/entities` med värdet för angiven URI.
 
 >[!NOTE]
 >
@@ -427,7 +428,7 @@ GET /access/{NEXT_URI}
 
 | Parameter | Beskrivning |
 |---|---|
-| `{NEXT_URI}` | URI-värdet hämtas från `_links.next.href`. |
+| `{NEXT_URI}` | URI-värdet som hämtas från `_links.next.href`. |
 
 **Begäran**
 
@@ -548,9 +549,9 @@ curl -X POST \
 |---|---|
 | `schema.name` | **(OBLIGATORISKT)** XDM-schemat för entiteten som ska hämtas |
 | `relatedSchema.name` | If `schema.name` är `_xdm.context.experienceevent` det här värdet måste ange schemat för den profilentitet som tidsseriehändelser är relaterade till. |
-| `identities` | **(OBLIGATORISKT)** En array med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) som tillhandahåller ett XID. |
-| `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.namn,person.kön |
-| `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i servicesamtalet kommer din organisations standardinställning för det schemat att användas. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. |
+| `identities` | **(OBLIGATORISKT)** En array med profiler som associerade tidsseriehändelser ska hämtas från. Varje post i arrayen anges på ett av två sätt: 1) med en fullständigt kvalificerad identitet som består av ID-värde och namnutrymme eller 2) med ett XID. |
+| `fields` | Isolerar de data som returneras till en angiven uppsättning fält. Använd detta för att filtrera vilka schemafält som ska inkluderas i hämtade data. Exempel: personalEmail,person.name,person.kön |
+| `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i servicesamtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. |
 | `orderby` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. |
 | `timeFilter.startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). |
 | `timeFilter.endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). |
@@ -883,7 +884,7 @@ Ett lyckat svar returnerar en numrerad lista över händelser i tidsserier som �
 
 ### Åtkomst till en efterföljande resultatsida
 
-Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor `_page.next` -egenskapen kommer att innehålla ett ID. Dessutom finns `_links.next.href` egenskapen innehåller en URI för begäran om att hämta efterföljande sida genom att göra ytterligare GET-begäranden till `access/entities` slutpunkt.
+Resultaten sidnumreras när tidsseriehändelser hämtas. Om det finns efterföljande resultatsidor `_page.next` -egenskapen kommer att innehålla ett ID. Dessutom kan du `_links.next.href` egenskapen innehåller en URI för begäran om att hämta efterföljande sida genom att göra ytterligare GET-begäranden till `access/entities` slutpunkt.
 
 ## Nästa steg
 
@@ -906,7 +907,7 @@ Följande parametrar används i sökvägen för GET-begäranden till `/access/en
 | `relatedEntityId` | If `schema.name` är &quot;_xdm.context.experience.event&quot;, måste det här värdet ange den relaterade profilentitetens identitetsnamnutrymme. Detta värde följer samma regler som `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
 | `relatedEntityIdNS` | If `schema.name` är &quot;_xdm.context.experienceevent&quot;, måste det här värdet ange identitetsnamnutrymmet för entiteten som anges i `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | Filtrerar de data som returneras i svaret. Använd detta för att ange vilka schemafältvärden som ska inkluderas i hämtade data. För flera fält avgränsar du värden med kommatecken utan blanksteg mellan | `fields=personalEmail,person.name,person.gender` |
-| `mergePolicyId` | Identifierar den sammanslagningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
+| `mergePolicyId` | Identifierar den sammanfogningsprincip som ska användas för att styra returnerade data. Om ingen anges i samtalet används organisationens standardvärde för det schemat. Om ingen standardprincip för sammanslagning har konfigurerats är standardinställningen ingen profilsammanslagning och ingen identitetssammanfogning. | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
 | `orderBy` | Sorteringsordningen för hämtade upplevelsehändelser efter tidsstämpel, skriven som `(+/-)timestamp` med standardvärdet `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | Ange starttid för att filtrera tidsserieobjekt (i millisekunder). | `startTime=1539838505` |
 | `endTime` | Ange sluttiden för filtrering av tidsserieobjekt (i millisekunder). | `endTime=1539838510` |

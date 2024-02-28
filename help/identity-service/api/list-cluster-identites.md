@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;lista identiteter;listkluster
 solution: Experience Platform
 title: Visa alla identiteter i ett kluster
 description: Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, anses ingå i samma kluster i det identitetsdiagrammet. Med alternativen nedan får du tillgång till alla klustermedlemmar.
+role: Developer
 exl-id: 0fb9eac9-2dc2-4881-8598-02b3053d0b31
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '365'
 ht-degree: 0%
 
 ---
@@ -19,7 +20,7 @@ Identiteter som är relaterade till ett identitetsdiagram, oavsett namnutrymme, 
 
 Hämta alla klustermedlemmar för en enda identitet.
 
-Du kan använda det valfria `graph-type` parameter som anger identitetsdiagrammet som klustret ska hämtas från. Alternativen är:
+Du kan använda det valfria `graph-type` parameter som anger identitetsdiagrammet som klustret ska hämtas från. Alternativ:
 
 - Ingen - Utför ingen identitetssammanfogning.
 - Privat diagram - Utför identitetssammanfogning baserat på ditt privata identitetsdiagram. Om nej `graph-type` anges är detta standardvärde.

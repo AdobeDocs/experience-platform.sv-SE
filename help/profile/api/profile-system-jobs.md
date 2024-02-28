@@ -3,10 +3,11 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API
 title: API-slutpunkt för profilsystemjobb
 type: Documentation
 description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
+role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1316'
+source-wordcount: '1313'
 ht-degree: 1%
 
 ---
@@ -21,7 +22,7 @@ Med Adobe Experience Platform kan ni importera data från flera olika källor oc
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Real-Time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Visa borttagningsbegäranden
 
@@ -153,7 +154,7 @@ Ett lyckat svar returnerar information om den nyligen skapade borttagningsbegär
 
 ### Ta bort en grupp
 
-Om du vill ta bort en batch måste batch-ID:t inkluderas i POSTENS innehåll. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast grupper för datauppsättningar som baseras på tidsseriescheman kan tas bort.
+Om du vill ta bort en batch måste batch-ID:t inkluderas i POSTENS innehåll. Observera att du inte kan ta bort grupper för datauppsättningar baserat på postscheman. Endast batchar för datauppsättningar som baseras på tidsseriescheman kan tas bort.
 
 >[!NOTE]
 >
@@ -285,7 +286,7 @@ DELETE /system/jobs/{DELETE_REQUEST_ID}
 
 | Parameter | Beskrivning |
 |---|---|
-| {DELETE_REQUEST_ID} | ID:t för den borttagningsbegäran som du vill ta bort. |
+| {DELETE_REQUEST_ID} | ID för den borttagningsbegäran som du vill ta bort. |
 
 **Begäran**
 

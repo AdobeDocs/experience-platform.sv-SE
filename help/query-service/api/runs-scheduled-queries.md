@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;frågetjänst;kör schemalagd
 solution: Experience Platform
 title: API-slutpunkt för schemalagda frågor körs
 description: Följande avsnitt går igenom de olika API-anrop du kan göra för att köra schemalagda frågor med API:t för frågetjänsten.
+role: Developer
 exl-id: 1e69b467-460a-41ea-900c-00348c3c923c
-source-git-commit: e9639cb90a561adc59388ac77984edaf90f4bfdd
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '782'
 ht-degree: 0%
 
 ---

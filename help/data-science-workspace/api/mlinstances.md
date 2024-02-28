@@ -3,8 +3,9 @@ keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;pop
 solution: Experience Platform
 title: API-slutpunkt för MLInstances
 description: En MLInstance är en kombination av en befintlig motor med en lämplig uppsättning konfigurationer som definierar alla utbildningsparametrar, poängsättningsparametrar eller maskinvaruresurskonfigurationer.
+role: Developer
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 0%

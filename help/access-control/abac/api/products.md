@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen;api;Attributbaserad åtkomstk
 solution: Experience Platform
 title: API-slutpunkt för produkter
 description: Med slutpunkten /products i API:t för attributbaserad åtkomstkontroll kan du programmässigt hantera produkter i Adobe Experience Platform.
+role: Developer
 exl-id: 44ee9a9d-7a13-4d59-a1a9-97764dbd3763
-source-git-commit: 16d85a2a4ee8967fc701a3fe631c9daaba9c9d70
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '513'
 ht-degree: 1%
 
 ---
@@ -21,7 +22,7 @@ The `/products` -slutpunkten i det attributbaserade API:t för åtkomstkontroll 
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av det attributbaserade API:t för åtkomstkontroll. Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista över berättigade produkter {#list}
 
@@ -140,7 +141,7 @@ Ett godkänt svar returnerar de behörighetskategorier som är associerade med d
 | Egenskap | Beskrivning |
 | --- | --- |
 | `category` | Behörighetskategorierna som är tillgängliga inom det efterfrågade produkt-ID:t. |
-| `name` | Namnet på behörighetskategorin. |
+| `name` | Namnet på behörighetsgruppen. |
 
 ## Söka efter behörighetsgrupper efter produkt-ID
 

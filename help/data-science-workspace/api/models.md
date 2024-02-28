@@ -3,8 +3,9 @@ keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;pop
 solution: Experience Platform
 title: API-slutpunkt för modeller
 description: En modell är en instans av ett maskininlärningsrecept som är utbildat med historiska data och konfigurationer för att lösa ett affärsärende.
+role: Developer
 exl-id: e66119a9-9552-497c-9b3a-b64eb3b51fcf
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '864'
 ht-degree: 1%
@@ -115,7 +116,7 @@ GET /models/?property=experimentRunID=={EXPERIMENT_RUN_ID}
 
 **Begäran**
 
-Följande begäran innehåller en fråga och hämtar en lista med tränade modeller som delar samma experimentRunID ({EXPERIMENT_RUN_ID}).
+Följande begäran innehåller en fråga och hämtar en lista över tränade modeller som delar samma experimentRunID ({EXPERIMENT_RUN_ID}).
 
 ```shell
 curl -X GET \
@@ -192,7 +193,7 @@ curl -X POST \
 | Parameter | Beskrivning |
 | --- | --- |
 | `modelArtifact` | Platsen för den fullständiga modellartefakt du vill inkludera. |
-| `model` | Formulärdata för modellobjektet som behöver skapas. |
+| `model` | Formulärdata för det Modell-objekt som ska skapas. |
 
 **Svar**
 
@@ -432,7 +433,7 @@ Ett godkänt svar returnerar en nyttolast som innehåller ett json-objekt med en
 
 ## Hämta en specifik omkodad modell {#retrieve-transcoded-model}
 
-Du kan hämta en viss omkodad modell genom att utföra en GET-förfrågan med `{MODEL_ID}` och ID:t för en omkodad modell.
+Du kan hämta en viss omkodad modell genom att utföra en GET-förfrågan med `{MODEL_ID}` och ID för en omkodad modell.
 
 **API-format**
 

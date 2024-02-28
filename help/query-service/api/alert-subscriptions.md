@@ -2,10 +2,11 @@
 keywords: Experience Platform;home;populära topics;query service;Query service;alert;
 title: Slutpunkt för aviseringsprenumerationer
 description: Den här handboken innehåller exempel på HTTP-begäranden och svar för de olika API-anrop som du kan göra till slutpunkten för aviseringsprenumerationer med hjälp av API:t för frågetjänsten.
+role: Developer
 exl-id: 30ac587a-2286-4a52-9199-7a2a8acd5362
-source-git-commit: 668b2624b7a23b570a3869f87245009379e8257c
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '2661'
+source-wordcount: '2666'
 ht-degree: 0%
 
 ---
@@ -86,7 +87,7 @@ Ett lyckat svar returnerar HTTP 200-status och `alerts` array med sidnumrering o
 
 >[!NOTE]
 >
->The `alerts._links` objekt i `alerts` arrayen har trunkerats för att vara kortfattad. Ett fullständigt exempel på `alerts._links` -objektet finns i [svar på begäran om POST](#subscribe-users).
+>The `alerts._links` -objektet i `alerts` arrayen har trunkerats för att vara kortfattad. Ett fullständigt exempel på `alerts._links` -objektet finns i [svar på begäran om POST](#subscribe-users).
 
 ```json
 {
@@ -152,7 +153,7 @@ Ett lyckat svar returnerar HTTP 200-status och `alerts` array med sidnumrering o
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `alerts.assetId` | Det fråge-ID som associerade aviseringen med en viss fråga. |
-| `alerts.id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om tillgängliga aviseringar finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `alerts.id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
 | `alerts.status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
 | `alerts.alertType` | Typ av varning. Det finns tre möjliga värden för en varning: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `alerts._links` | Tillhandahåller information om tillgängliga metoder och slutpunkter som kan användas för att hämta, uppdatera, redigera eller ta bort information om detta varnings-ID. |
@@ -189,7 +190,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **Svar**
 
-Ett godkänt svar returnerar HTTP-statusen 200 och `alerts` matris som innehåller prenumerationsinformation för tillhandahållet fråge- eller schema-ID.
+Ett lyckat svar returnerar HTTP-statusen 200 och `alerts` matris som innehåller prenumerationsinformation för tillhandahållet fråge- eller schema-ID.
 
 ```json
 {
@@ -281,7 +282,7 @@ Ett godkänt svar returnerar HTTP-statusen 200 och `alerts` matris som innehåll
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `assetId` | Varningen är kopplad till detta ID. ID:t kan vara antingen ett fråge-ID eller ett schema-ID. |
-| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om tillgängliga aviseringar finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
 | `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
 | `alertType` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `subscriptions.emailNotifications` | En matris med Adobe-registrerade e-postadresser för användare som har prenumererat på att ta emot e-postmeddelanden för aviseringen. |
@@ -300,7 +301,7 @@ GET /alert-subscriptions/{SCHEDULE_ID}/{ALERT_TYPE}
 
 | Parametrar | Beskrivning |
 | -------- | ----------- |
-| `ALERT_TYPE` | This property describes the state of query execution that trigger an alert. Svaret innehåller endast prenumerationsinformation för aviseringar av den här typen. Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
+| `ALERT_TYPE` | This property describes the state of query execution that trigger an alert. Svaret kommer endast att innehålla prenumerationsinformation för aviseringar av den här typen. Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `QUERY_ID` | Den unika identifieraren för frågan som ska uppdateras. |
 | `SCHEDULE_ID` | Den unika identifieraren för den schemalagda frågan som ska uppdateras. |
 
@@ -406,7 +407,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 och `items` med information om de aviseringar som prenumererar på `emailId` tillhandahålls.
+Ett lyckat svar returnerar HTTP-status 200 och `items` -matrisen med information om de aviseringar som prenumererar på `emailId` tillhandahålls.
 
 ```json
 {
@@ -499,7 +500,7 @@ Ett lyckat svar returnerar HTTP-status 200 och `items` med information om de avi
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `name` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om tillgängliga aviseringar finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `name` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
 | `assetId` | Det fråge-ID som associerade aviseringen med en viss fråga. |
 | `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |
 | `alertType` | Typ av varning. Det finns tre möjliga värden för en varning: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
@@ -600,7 +601,7 @@ Ett lyckat svar returnerar HTTP-status 202 (Accepterad) med information om din n
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om tillgängliga aviseringar finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
 | `_links` | Tillhandahåller information om tillgängliga metoder och slutpunkter som kan användas för att hämta, uppdatera, redigera eller ta bort information om detta varnings-ID. |
 
 ## Aktivera eller inaktivera en varning {#enable-or-disable-alert}
@@ -647,7 +648,7 @@ curl -X PATCH 'https://platform.adobe.io/data/foundation/query/alert-subscriptio
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP-status 200 med information om aviseringsstatus, typ och ID samt den fråga det gäller.
+Ett lyckat svar returnerar HTTP-status 200 med information om aviseringsstatus, typ och ID samt den fråga det är relaterat till.
 
 ```json
 {
@@ -660,7 +661,7 @@ Ett lyckat svar returnerar HTTP-status 200 med information om aviseringsstatus, 
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om tillgängliga aviseringar finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
+| `id` | Namnet på aviseringen. Det här namnet genereras av larmtjänsten och används på larmpanelen. Varningsnamnet består av den mapp som innehåller varningen, `alertType`och flödes-ID. Information om de tillgängliga varningarna finns i [Dokumentation för kontrollpanelen för plattformsaviseringar](../../observability/alerts/ui.md). |
 | `assetId` | Varningen är kopplad till detta ID. ID:t kan vara antingen ett fråge-ID eller ett schema-ID. |
 | `alertType` | Varje varning kan ha tre olika varningstyper. De är: <ul><li>`start`: Meddelar en användare när frågekörningen har börjat.</li><li>`success`: Meddelar användaren när frågan har slutförts.</li><li>`failure`: Meddelar användaren om frågan misslyckas.</li></ul> |
 | `status` | Varningen har fyra statusvärden: `enabled`, `enabling`, `disabled`och `disabling`. En varning lyssnar antingen aktivt efter händelser, pausas för framtida bruk samtidigt som alla relevanta prenumeranter och inställningar behålls, eller så sker en övergång mellan dessa lägen. |

@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;handbok för sandlådeutvecklare
+keywords: Experience Platform;startsida;populära ämnen;handbok för utvecklare av sandlådor
 solution: Experience Platform
 title: API-slutpunkt för sandlådehantering
 description: Med slutpunkten /sandbox i sandbox-API kan du programmässigt hantera sandlådor i Adobe Experience Platform.
+role: Developer
 exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
-source-git-commit: fcd44aef026c1049ccdfe5896e6199d32b4d1114
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '1488'
-ht-degree: 2%
+source-wordcount: '1474'
+ht-degree: 1%
 
 ---
 
@@ -17,7 +18,7 @@ Sandlådor i Adobe Experience Platform har isolerade utvecklingsmiljöer där du
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Hämta en lista med sandlådor {#list}
 
@@ -229,7 +230,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Värdet får inte innehålla blanksteg eller specialtecken. |
 | `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
-| `type` | Den typ av sandlåda som ska skapas. För en icke-produktionssandlåda måste det här värdet vara `development`. |
+| `type` | Den typ av sandlåda som ska skapas. För en icke-produktionssandlåda måste värdet vara `development`. |
 
 **Svar**
 
@@ -282,7 +283,7 @@ curl -X POST \
 | --- | --- |
 | `name` | Den identifierare som ska användas för att komma åt sandlådan i framtida begäranden. Detta värde måste vara unikt och det bästa sättet är att göra det så beskrivande som möjligt. Värdet får inte innehålla blanksteg eller specialtecken. |
 | `title` | Ett läsbart namn som används för visning i användargränssnittet för plattformen. |
-| `type` | Den typ av sandlåda som ska skapas. För en produktionssandlåda måste det här värdet vara `production`. |
+| `type` | Den typ av sandlåda som ska skapas. För en produktionssandlåda måste värdet vara `production`. |
 
 **Svar**
 
@@ -479,7 +480,7 @@ Ett godkänt svar returnerar informationen om den uppdaterade sandlådan, vilket
 
 >[!IMPORTANT]
 >
->Standardproduktionssandlådan kan inte tas bort.
+>Det går inte att ta bort standardproduktionssandlådan.
 
 Du kan ta bort en sandlåda genom att göra en DELETE-begäran som innehåller sandlådans `name` i sökvägen till begäran.
 

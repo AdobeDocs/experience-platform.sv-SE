@@ -2,8 +2,9 @@
 solution: Experience Platform
 title: Kantsegmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
+role: Developer
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: d3c0e5ed596661f11191bbcd8d51c888bbd4c1d2
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '1195'
 ht-degree: 0%

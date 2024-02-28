@@ -5,17 +5,18 @@ breadcrumb-title: Användarhandbok om Data Science Workspace
 user-guide-description: Använd maskininlärning för att utveckla, utbilda och poängsätta modeller och recept med Adobe Sensei och JupyterLab Notebooks.
 feature: Data Science Workspace
 solution: Experience Platform
-source-git-commit: 34e0381d40f884cd92157d08385d889b1739845f
+role: User, Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '236'
-ht-degree: 14%
+source-wordcount: '225'
+ht-degree: 15%
 
 ---
 
 
 # Arbetsyta för datavetenskap {#data-science-workspace}
 
-* [Översikt över arbetsytan Datavetenskap](home.md)
+* [Översikt över arbetsytan Data Science](home.md)
 * [Åtkomst och funktioner till arbetsytan Data Science](access-features-dsw.md)
 * [Genomgång av datavetenskapens arbetsyta](walkthrough.md)
 * JupyterLab-anteckningsböcker {#jupyterlab}
@@ -53,7 +54,7 @@ ht-degree: 14%
    * [Paketera källfiler i ett recept](models-recipes/package-source-files-recipe.md)
    * [Importera ett paketerat recept (UI)](models-recipes/import-packaged-recipe-ui.md)
    * [Importera ett paketerat recept (API)](models-recipes/import-packaged-recipe-api.md)
-   * [Utbildning och utvärdering av modell (UI)](models-recipes/train-evaluate-model-ui.md)
+   * [Utbildning och utvärdering av en modell (UI)](models-recipes/train-evaluate-model-ui.md)
    * [Utbilda och utvärdera en modell (API)](models-recipes/train-evaluate-model-api.md)
    * [Skapa en modell (UI)](models-recipes/score-model-ui.md)
    * [Posta en modell (API)](models-recipes/score-model-api.md)

@@ -3,10 +3,11 @@ keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;pop
 solution: Experience Platform
 title: API-slutpunkt för MLServices
 description: En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
+role: Developer
 exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '887'
 ht-degree: 0%
 
 ---
@@ -15,7 +16,7 @@ ht-degree: 0%
 
 En MLService är en publicerad tränad modell som ger din organisation möjlighet att komma åt och återanvända tidigare utvecklade modeller. En viktig egenskap hos MLServices är möjligheten att automatisera kurser och poängsättning på schemalagd basis. Schemalagda kurser kan bidra till att bibehålla en modells effektivitet och exakthet, medan schemalagda kurser kan säkerställa att nya insikter genereras på ett konsekvent sätt.
 
-Automatiserade kurser och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras av en [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [skapa en MLService](#create-an-mlservice) eller använt av [uppdatera en befintlig MLService](#update-an-mlservice).
+Automatiserade utbildnings- och poängscheman definieras med en starttidsstämpel, en sluttidsstämpel och en frekvens som representeras av en [cron-uttryck](https://en.wikipedia.org/wiki/Cron). Scheman kan definieras när [skapa en MLService](#create-an-mlservice) eller använt av [uppdatera en befintlig MLService](#update-an-mlservice).
 
 ## Skapa en MLService {#create-an-mlservice}
 
@@ -64,7 +65,7 @@ curl -X POST \
 | `mlInstanceId` | Ett giltigt MLInstance-ID. |
 | `trainingDataSetId` | Ett ID för utbildningsdatauppsättning som, om det anges, åsidosätter MLInstance standarddatauppsättning-ID. Om den MLInstance som används för att skapa MLService inte definierar en utbildningsdatauppsättning måste du ange ett lämpligt ID för utbildningsdatauppsättning. |
 | `trainingExperimentId` | Ett Experiment-ID som du kan ange. Om det här värdet inte anges skapas även en ny expert med standardkonfigurationerna för MLInstance när du skapar MLService. |
-| `trainingExperimentRunId` | Ett ID för utbildningskörning som du kan ange. Om det här värdet inte anges skapas och körs även en utbildningskörning med standardutbildningsparametrarna för MLInstance när du skapar MLService. |
+| `trainingExperimentRunId` | Ett ID för utbildningskörning som du kan ange. Om det här värdet inte anges skapas och körs även en utbildningskörning med standardutbildningsparametrarna för MLInstance när MLService skapas. |
 | `trainingSchedule` | Ett schema för automatiserade kurser. Om den här egenskapen definieras kommer MLService automatiskt att utföra en schemalagd utbildning. |
 | `trainingSchedule.startTime` | En tidsstämpel för vilken den schemalagda kursen börjar. |
 | `trainingSchedule.endTime` | En tidsstämpel för vilken den schemalagda utbildningen kommer att avslutas. |

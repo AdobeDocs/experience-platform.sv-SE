@@ -3,10 +3,11 @@ keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;pop
 solution: Experience Platform
 title: API-guide för Sensei Machine Learning
 description: Med Sensei Machine Learning API kan utvecklare utföra CRUD-åtgärder på olika datavetenskapliga Workspace-resurser. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
+role: Developer
 exl-id: d51d0eb2-b1e9-4cc1-889a-9487395703b0
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '232'
 ht-degree: 7%
 
 ---
@@ -15,11 +16,11 @@ ht-degree: 7%
 
 The [!DNL Sensei Machine Learning] API erbjuder en mekanism för datavetare att organisera och hantera maskininlärningstjänster, från algoritmintroduktion till experimenterande och driftsättning.
 
-I den här utvecklarhandboken får du hjälp att börja använda [Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml), och visar API-anrop för att utföra CRUD-åtgärder på olika resurser för datavetenskapen.
+Den här utvecklarhandboken innehåller steg som hjälper dig att börja använda [Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml), och visar API-anrop för att utföra CRUD-åtgärder på olika resurser för datavetenskapen.
 
 ## Komma igång
 
-Du måste ha slutfört [autentisering](https://www.adobe.com/go/platform-api-authentication-en) självstudiekurs för att få tillgång till följande begäranrubriker för att ringa [!DNL Adobe Experience Platform] API:er:
+Du måste ha slutfört [autentisering](https://www.adobe.com/go/platform-api-authentication-en) självstudiekurs för att få tillgång till följande begäranrubriker för att ringa [!DNL Adobe Experience Platform] API:
 
 * Behörighet: Bearer `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
@@ -33,7 +34,7 @@ Mer information om sandlådor i [!DNL Platform], se [översiktsdokumentation fö
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-* Innehållstyp: application/json
+* Content-Type: application/json
 
 ## Nästa steg
 

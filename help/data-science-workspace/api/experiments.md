@@ -3,8 +3,9 @@ keywords: Experience Platform;utvecklarguide;endpoint;Data Science Workspace;pop
 solution: Experience Platform
 title: API-slutpunkt för experiment
 description: Modellutveckling och utbildning sker på expertnivå, där en expert består av en MLInstance, utbildningar och poängprov.
+role: Developer
 exl-id: 6ca5106e-896d-4c03-aecc-344632d5307d
-source-git-commit: 86e6924078c115fb032ce39cd678f1d9c622e297
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '783'
 ht-degree: 1%

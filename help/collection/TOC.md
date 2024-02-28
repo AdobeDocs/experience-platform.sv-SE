@@ -5,7 +5,8 @@ user-guide-title: Datainsamling
 breadcrumb-title: Datainsamling
 user-guide-description: Läs mer om hur du aktiverar datainsamling på klientsidan för Adobe Experience Platform Edge Network och läs mer om de datainsamlingstekniker som används.
 feature: Data Collection
-source-git-commit: b6230760c1e25a3ef0901d80160fb0992578c41e
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
 source-wordcount: '49'
 ht-degree: 63%

@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för etiketter
 description: Lär dig hur du hanterar dataanvändningsetiketter i Experience Platform med hjälp av API:t för principtjänsten.
+role: Developer
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '504'
 ht-degree: 1%
 
 ---
@@ -21,11 +22,11 @@ Med etiketter för dataanvändning kan du kategorisera data enligt de användarp
 
 ## Komma igång
 
-API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkten som används i den här guiden är en del av [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Hämta en lista med etiketter {#list}
 
-Du kan visa alla `core` eller `custom` etiketter genom att göra en GET-förfrågan till `/labels/core` eller `/labels/custom`, respektive.
+Du kan visa alla `core` eller `custom` etiketter genom att göra en GET-förfrågan till `/labels/core` eller `/labels/custom`, respektive
 
 **API-format**
 
@@ -122,7 +123,7 @@ GET /labels/custom/{LABEL_NAME}
 
 **Begäran**
 
-Följande begäran hämtar den anpassade etiketten `L2`, vilket anges i sökvägen.
+Följande begäran hämtar den anpassade etiketten `L2`, enligt vad som anges i sökvägen.
 
 ```shell
 curl -X GET \
@@ -195,7 +196,7 @@ curl -X PUT \
 | Egenskap | Beskrivning |
 | --- | --- |
 | `name` | En unik strängidentifierare för etiketten. Det här värdet används för uppslagssyften och för att använda etiketten på datauppsättningar och fält, och vi rekommenderar därför att det är kort och koncist. |
-| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men vi rekommenderar att du använder `Custom` om du vill att etiketten ska visas i användargränssnittet. |
+| `category` | Etikettens kategori. Du kan skapa egna kategorier för anpassade etiketter, men du bör använda `Custom` om du vill att etiketten ska visas i användargränssnittet. |
 | `friendlyName` | Ett eget namn för etiketten som används för visning. |
 | `description` | (Valfritt) En beskrivning av etiketten som ger ytterligare kontext. |
 

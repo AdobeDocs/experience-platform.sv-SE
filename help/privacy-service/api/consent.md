@@ -3,10 +3,11 @@ keywords: Experience Platform;hem;populära ämnen
 solution: Experience Platform
 title: API-slutpunkt för samtycke
 description: Lär dig hur du hanterar förfrågningar om kundsamtycke för Experience Cloud-program med Privacy Service-API:t.
+role: Developer
 exl-id: ec505749-c0a9-4050-be56-4c0657807ec7
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -62,7 +63,7 @@ curl -X POST \
 | --- | --- |
 | `optOutOfSale` | Om värdet är true visar det att användarna som anges under `entities` vill avanmäla försäljning eller delning av personuppgifter. |
 | `entities` | En array med objekt som anger vilka användare som medgivandebegäran gäller för. Varje objekt innehåller en `namespace` och en array med `values` för att matcha enskilda användare med det namnutrymmet. |
-| `nameSpace` | Varje objekt i `entities` arrayen måste innehålla en av [standardidentitetsnamnutrymmen](./appendix.md#standard-namespaces) känns igen av Privacy Service-API:t. |
+| `nameSpace` | Varje objekt i `entities` måste innehålla en av [standardidentitetsnamnutrymmen](./appendix.md#standard-namespaces) känns igen av Privacy Service-API:t. |
 | `values` | En array med värden för varje användare, som motsvarar den angivna `nameSpace`. |
 
 {style="table-layout:auto"}

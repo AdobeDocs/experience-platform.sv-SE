@@ -4,10 +4,11 @@ user-guide-title: Hjälp med datainmatning i Adobe Experience Platform
 breadcrumb-title: Användarhandbok om datainmatning
 user-guide-description: Samla data i Experience Platform via batch- eller strömningsinmatning.
 feature: Data Ingestion
-source-git-commit: 6110bf51cbd0005428e7dab4552944c5c9b54d03
+role: Developer
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '156'
-ht-degree: 16%
+source-wordcount: '145'
+ht-degree: 17%
 
 ---
 
@@ -25,7 +26,7 @@ ht-degree: 16%
    - [Utvecklarhandbok för API](batch-ingestion/api-overview.md)
    - [Partiellt batchintag](batch-ingestion/partial.md)
    - [Felsökning](batch-ingestion/troubleshooting.md)
-- Självstudiekurser {#tutorials}
+- Tutorials {#tutorials}
    - Mappa en CSV-fil till XDM {#map-csv}
       - [Översikt](./tutorials/map-csv/overview.md)
       - [Mappa en CSV-fil till ett befintligt schema](./tutorials/map-csv/existing-schema.md)
@@ -34,7 +35,7 @@ ht-degree: 16%
    - [Skapa en autentiserad direktuppspelningsanslutning](tutorials/create-authenticated-streaming-connection.md)
    - [Skapa en direktuppspelningsanslutning (API)](tutorials/create-streaming-connection.md)
    - [Skapa en direktuppspelningsanslutning (UI)](tutorials/create-streaming-connection-ui.md)
-   - [Direktuppspelande postdata](tutorials/streaming-record-data.md)
+   - [Direktuppspelning av postdata](tutorials/streaming-record-data.md)
    - [Strömmande tidsseriedata](tutorials/streaming-time-series-data.md)
    - [Direktuppspelning av flera meddelanden](tutorials/streaming-multiple-messages.md)
 - Datakvalitet och övervakning{#quality}

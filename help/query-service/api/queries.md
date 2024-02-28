@@ -3,10 +3,11 @@ keywords: Experience Platform;home;populära topics;query service;api guide;quer
 solution: Experience Platform
 title: Frågar API-slutpunkt
 description: Följande avsnitt går igenom anrop som du kan göra med slutpunkten /queries i API:t för frågetjänsten.
+role: Developer
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 958d5c322ff26f7372f8ab694a70ac491cbff56c
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '950'
 ht-degree: 0%
 
 ---

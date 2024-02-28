@@ -2,18 +2,19 @@
 keywords: Experience Platform;hem;populära ämnen;identitet;Identitet
 solution: Experience Platform
 title: Lista identitetsmappningar
-description: En mappning är en samling med alla identiteter i ett kluster för ett angivet namnområde.
+description: En mappning är en samling med alla identiteter i ett kluster, för ett angivet namnområde.
+role: Developer
 exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
-source-git-commit: 6d01bb4c5212ed1bb69b9a04c6bfafaad4b108f9
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '278'
 ht-degree: 0%
 
 ---
 
 # Visa identitetsmappningar
 
-En mappning är en samling med alla identiteter i ett kluster för ett angivet namnområde.
+En mappning är en samling med alla identiteter i ett kluster, för ett angivet namnområde.
 
 ## Hämta en identitetsmappning för en enskild identitet
 
@@ -62,7 +63,7 @@ curl -X GET \
 
 ### Hämta identitetsmappningar för flera identiteter
 
-Använd `POST` som en batchmotsvarighet till `GET` den metod som beskrivs ovan för att hämta mappningar för flera identiteter.
+Använd `POST` metod som en batchmotsvarighet till `GET` den metod som beskrivs ovan för att hämta mappningar för flera identiteter.
 
 >[!NOTE]
 >
@@ -85,7 +86,7 @@ Alternativ 1: Ange en lista med XID:n som mappningar ska hämtas för.
 }
 ```
 
-Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje namn anger ID-värdet och namnutrymmet per namnområdes-ID. I det här exemplet visas hur du använder den här metoden när du skriver över standardmetoden `graph-type` av &quot;Private Graph&quot;.
+Alternativ 2: Ange en lista över identiteter som sammansatta ID:n, där varje namn anger ID-värdet och namnutrymmet efter namnområdes-ID. I det här exemplet visas hur du använder den här metoden när du skriver över standardmetoden `graph-type` av &quot;Private Graph&quot;.
 
 ```shell
 {

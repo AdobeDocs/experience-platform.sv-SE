@@ -3,27 +3,28 @@ keywords: Experience Platform;hemmabruk;populära ämnen;Politiska åtgärder;ma
 solution: Experience Platform
 title: API-slutpunkt för marknadsföringsåtgärder
 description: En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som en datakonsument i Experience Platform vidtar och där det finns ett behov av att kontrollera om dataanvändningspolicyer har överträtts.
+role: Developer
 exl-id: bc16b318-d89c-4fe6-bf5a-1a4255312f54
-source-git-commit: 7b15166ae12d90cbcceb9f5a71730bf91d4560e6
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '734'
 ht-degree: 0%
 
 ---
 
 # Slutpunkt för marknadsföringsåtgärder
 
-En marknadsföringsåtgärd, inom ramen för Adobe Experience Platform Data Governance, är en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera om dataanvändningsprinciper har överträtts.
+En marknadsföringsåtgärd inom ramen för Adobe Experience Platform Data Governance är en åtgärd som [!DNL Experience Platform] dataförbrukare tar, för vilka det finns ett behov av att kontrollera om dataanvändningsprinciper har överträtts.
 
 Du kan hantera marknadsföringsåtgärder för din organisation med `/marketingActions` slutpunkt i principtjänstens API.
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
+API-slutpunkterna som används i den här handboken är en del av [[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/). Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempel-API-anrop i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna ringa anrop till [!DNL Experience Platform] API.
 
 ## Hämta en lista med marknadsföringsåtgärder {#list}
 
-Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` eller `/marketingActions/custom`, respektive.
+Du kan hämta en lista över viktiga eller anpassade marknadsföringsåtgärder genom att göra en GET-förfrågan till `/marketingActions/core` eller `/marketingActions/custom`, respektive
 
 **API-format**
 
@@ -134,7 +135,7 @@ curl -X GET \
 
 **Svar**
 
-Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive sökvägen (`_links.self.href`) behövde referera till marknadsföringsåtgärderna när [definiera en dataanvändningsprincip](policies.md#create-policy) (`marketingActionsRefs`).
+Svarsobjektet innehåller information om marknadsföringsåtgärden, inklusive sökvägen (`_links.self.href`) som behövs för att hänvisa till marknadsföringsåtgärder när [definiera en dataanvändningsprincip](policies.md#create-policy) (`marketingActionsRefs`).
 
 ```JSON
 {

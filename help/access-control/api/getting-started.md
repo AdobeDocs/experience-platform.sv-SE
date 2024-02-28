@@ -2,11 +2,12 @@
 keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;api;komma igång
 solution: Experience Platform
 title: API-guide för åtkomstkontroll
-description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med Adobe Admin Console. I följande avsnitt finns ytterligare information som utvecklare behöver känna till för att kunna anropa API:t för schemaregister.
+description: Med åtkomstkontrollen i Adobe Experience Platform kan du hantera roller och behörigheter för olika plattformsfunktioner med hjälp av Adobe Admin Console. I följande avsnitt finns ytterligare information som utvecklare behöver känna till för att kunna anropa API:t för schemaregister.
+role: Developer
 exl-id: 6fd956fb-ade4-48d3-843f-4c9a605945c9
-source-git-commit: 7b197f253aa5ce04a682040814cf749407154ebc
+source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '378'
 ht-degree: 1%
 
 ---
@@ -46,7 +47,7 @@ Alla resurser i [!DNL Experience Platform] isoleras till specifika virtuella san
 
 Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en rubrik:
 
-- Innehållstyp: application/json
+- Content-Type: application/json
 
 ## Nästa steg
 
