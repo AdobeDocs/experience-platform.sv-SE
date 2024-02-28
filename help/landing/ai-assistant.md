@@ -5,9 +5,9 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: 5bdfc5282e71d05ff0db39c32fc02c60fd8d1c34
+source-git-commit: aba148f4155ff5403e89039a9c59acd4d450539e
 workflow-type: tm+mt
-source-wordcount: '2347'
+source-wordcount: '2333'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Du kan fråga Assistant om du vill ha information om:
 
 * Vägledning om hur man utför uppgifter som rör data och målgrupper.
 * Status och mått för befintliga dataobjekt i organisationen.
-* Använd exempel och nyanser för att få en bättre förståelse för dataobjekten, inklusive attribut, datauppsättningar, destinationer, scheman, segment och källor.
+* Använd exempel och nyanser för att få en bättre förståelse för dataobjekten, inklusive attribut, dataflöden, datauppsättningar, mål, scheman, segment och källor.
 
 Läs guiden nedan för att lära dig mer om hur du kan använda Assistant för att navigera i och förstå dina arbetsflöden för Experience Platform och Real-Time CDP.
 
@@ -131,17 +131,25 @@ Om du vill visa citat och validera assistentens svar väljer du **[!UICONTROL Sh
 
 +++Välj för att visa ett exempel på frågor om dataanvändning och datavisualisering
 
-Du kan fråga Assistant om din dataanvändning. Du måste vara i en aktiv sandlåda för att assistenten ska kunna besvara en fråga om dataanvändning gällande data i organisationen.
+För att assistenten ska kunna besvara en fråga om dataanvändning inom organisationen måste du vara i en aktiv sandlåda.
+
+I exemplet nedan har Assistant följande fråga: **&quot;Visa segmentdefinitioner med över 1 000 profiler och inkludera aktiveringsstatus.&quot;** Assistenten svarar sedan med ett diagram som visualiserar era segment- och profildata.
 
 ![Följ upp frågan om dataanvändning.](./images/ai-assistant/data-usage-question.png)
 
-När assistenten tillfrågas om dataanvändning ger han även en förklaring till hur svaret beräknades. I exemplet nedan visar Assistant de steg som har vidtagits för att visa segment med över 1 000 profiler och deras respektive aktiveringsstatus.
+Du kan hovra över ett enskilt fält om du vill visa specifika data. Du kan också välja ikonen för att expandera om du vill visa diagrammet i en större vy.
+
+![Uppföljningsfråga som illustrerar datavisualisering.](./images/ai-assistant/data-visualization.png)
+
+En utökad vy av visualiseringen visas. Du kan använda det utökade modala verktyget för att inspektera dina data ytterligare och det är särskilt användbart när visualisering returneras med ett stort antal kolumner.
+
+![Utökat diagram.](./images/ai-assistant/chart-expanded.png)
+
+När assistenten tillfrågas om dataanvändning ger han en förklaring till hur svaret beräknades. I exemplet nedan visar Assistant de steg som har vidtagits för att visa segmentdefinitioner med över 1 000 profiler och deras respektive aktiveringsstatus.
 
 ![Följ upp frågan om segment som illustrerar hur Assistant beräknade svaret.](./images/ai-assistant/results-explained.png)
 
-Assistant återger diagram för att visualisera data. Du kan även lägga till filter och ändringar i dina frågor och du kan instruera Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be Assistant att visa en trend för antalet segment i den ordning som de skapades, ta bort segment utan totalprofiler och använda namn på månader i stället för heltal när data visas.
-
-![Uppföljningsfråga som illustrerar datavisualisering.](./images/ai-assistant/data-visualization.png)
+Du kan även lägga till filter och ändringar i dina frågor och du kan instruera Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be Assistant att visa en trend för antalet segmentdefinitioner i den ordning som de skapades, ta bort segmentdefinitioner med noll som summaprofiler och använda namn på månader i stället för heltal när data visas.
 
 +++
 
@@ -177,27 +185,18 @@ Assistenten får sedan en ny uppföljningsbegäran. Den här gången svarar Assi
 
 +++
 
-## Omfång {#scope}
-
-Assistenten kan svara på frågor om Real-Time CDP och Experience Platform, liksom om din användarkontos dataanvändning. Assistenten kan även härleda kontext baserat på den gränssnittssida som du befinner dig i. Den kan identifiera
-
-* Användarkontot som du använder.
-* Organisationen som du tillhör.
-* Sidan som du visar på skärmen.
-* Resursen (inklusive typ och ID) som du visar på skärmen.
-* Med tanke på att du arbetar med ett visst arbetsflöde i Experience Platform eller Real-Time CDP kan Assistant ta reda på vad du tänker.
-
-### Dokumentation {#documentation}
+## Dokumentation {#documentation}
 
 Dokumentationsindexet täcker för närvarande Adobe Experience Platform (Real-Time CDP och Publiker). Indexet uppdateras regelbundet.
 
 Modellen för dokumentationsåterhämtning har utbildats i Experience Platform (Real-Time CDP och Publiker). Frågor som inte omfattas av Adobe Experience Platform, t.ex. frågor om andra Adobe-produkter som Adobe Target och Creative Cloud Suite, kan inte besvaras.
 
-### Dataanvändning {#data-usage}
+## Dataanvändning {#data-usage}
 
 Du kan även ställa frågor till assistenten om din dataanvändning i följande domäner:
 
 * Attribut
+* Dataflöden
 * Datauppsättningar
 * Destinationer _(Frågor om konton och vissa frågor om dataflöde kan inte besvaras just nu.)_
 * Scheman _(Frågor om fältgrupper kan inte besvaras just nu.)_
