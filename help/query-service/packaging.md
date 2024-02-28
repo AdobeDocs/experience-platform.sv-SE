@@ -2,10 +2,10 @@
 title: Paketering av frågetjänst
 description: I följande dokument beskrivs paketeringen av funktioner och produkter som är tillgängliga för Query Service och skillnaderna mellan ad hoc- och batchfrågor beskrivs.
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 2bea95d855d24aa9d5763ab541ec282f0d8d1d56
+source-git-commit: 0f55a836321e974b3f29d2285c38cc8461636f39
 workflow-type: tm+mt
-source-wordcount: '1004'
-ht-degree: 0%
+source-wordcount: '963'
+ht-degree: 1%
 
 ---
 
@@ -39,7 +39,7 @@ Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de 
 | Dataexportavdrag | Ditt totala exportberättigande beror på era plattformsbaserade programlicenser. Exempel: Real-Time CDP, AJO, CJA och så vidare. | Ja - Ett ytterligare exporttillstånd ges för att tillåta export av härledda datauppsättningar som skapats med Data Distiller.<br>Din årliga dataexportersättning mäts i terabyte (TB) och beror på hur många beräkningstimmar du har köpt. Mer information finns i produktbeskrivningen. |
 | Frågekörningsgränssnitt | <ul><li>Användargränssnitt för frågetjänst</li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li></ul> | <ul><li>Användargränssnitt för frågetjänst </li><li>Klientgränssnitt från tredje part</li><li>[!DNL PostgresSQL] klientgränssnitt</li><li>REST API:er</li></ul> |
 | Frågeresultat returnerade via | Klientgränssnitt | Härledd datauppsättning lagrad i datasjön |
-| Resultatgräns | <ul><li>Användargränssnitt för frågetjänst - antalet utdatarader kan vara [konfigurerad med en gränssnittsinställning](./ui/user-guide.md#result-count) till mellan 50 och 500 rader.</li><li>Tredjepartsklienter - 50 000</li><li>[!DNL PostgresSQL] klient - 50 000</li></ul> | <ul><li>Användargränssnitt för frågetjänst - antalet utdatarader kan vara [konfigurerad med en gränssnittsinställning](./ui/user-guide.md#result-count) till mellan 50 och 500 rader.<br>Obs! CTAS- och ITAS-frågor genererar endast slutförda meddelanden eftersom frågans utdata lagras i härledda datauppsättningar.</li><li>Tredjepartsklienter (ingen övre gräns för rader)</li><li>[!DNL PostgresSQL] klient (ingen övre gräns till rader)</li><li>REST API:er (ingen övre gräns för rader)</li></ul> |
+| Resultatgräns | <ul><li>Användargränssnitt för frågetjänst - antalet utdatarader kan vara [konfigurerad med en gränssnittsinställning](./ui/user-guide.md#result-count) till mellan 50 och 500 rader.</li><li>Tredjepartsklienter - 50 000</li><li>[!DNL PostgresSQL] klient - 50 000</li></ul> | CTAS- och ITAS-frågor genererar endast slutförda meddelanden eftersom frågans utdata lagras i härledda datauppsättningar. |
 | Läs datauppsättningens kapacitet | Ja | Ja |
 | Skriva datauppsättningskapacitet | Nej | Ja |
 | Planeringskapacitet | Nej | Ja |
