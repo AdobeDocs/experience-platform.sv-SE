@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: e7d63ff86cdc1718129d0a8e4861b6a8c4631f75
+source-git-commit: f7fdfbf9afcecb255668d5d6393b87918114b067
 workflow-type: tm+mt
-source-wordcount: '2419'
+source-wordcount: '2432'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 0%
 The [[!DNL Meta Conversions API]](https://developers.facebook.com/docs/marketing-api/conversions-api/) kan ni koppla marknadsföringsdata på serversidan till [!DNL Meta] för att optimera er annonsinriktning, minska kostnaden per åtgärd och mäta resultaten. Händelser är länkade till en [[!DNL Meta Pixel]](https://developers.facebook.com/docs/meta-pixel/) ID och behandlas på ett liknande sätt som händelser på klientsidan.
 
 Använda [!DNL Meta Conversions API] kan du utnyttja API:ts funktioner i [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) regler att skicka data till [!DNL Meta] från Adobe Experience Platform Edge Network. Det här dokumentet beskriver hur du installerar tillägget och använder dess funktioner vid en händelsevidarebefordring [regel](../../../ui/managing-resources/rules.md).
+
+## Demo
+
+Följande video är avsedd att ge stöd för din förståelse av [!DNL Meta Conversions API].
+
+>[!VIDEO](https://unlockmarketingdata.com/video-meta-conversions-api)
 
 ## Förutsättningar
 
