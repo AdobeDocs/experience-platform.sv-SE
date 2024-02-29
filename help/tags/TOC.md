@@ -5,9 +5,9 @@ breadcrumb-title: Taggar
 user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
-source-git-commit: 30152a95a46db06948620b881092fb21df734f9d
+source-git-commit: 1e61b2258f943a09cba30aa1c0bc1c6647b9fd16
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '773'
 ht-degree: 15%
 
 ---
@@ -53,6 +53,7 @@ ht-degree: 15%
    * [Distribuera JavaScript-taggar för att hantera kundernas samtycke](./ui/client-side/consent.md)
    * [Stöd för CSP (Content Security Policy)](./ui/client-side/content-security-policy.md)
    * [Stöd för SRI (Subresource Integrity)](./ui/client-side/sri.md)
+   * [Säkerhet för transportlager](./ui/client-side/transport-layer-security.md)
 * Vidarebefordran av händelser {#event-forwarding}
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
