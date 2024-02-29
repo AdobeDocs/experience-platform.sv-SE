@@ -4,9 +4,9 @@ description: Lär dig hur du skapar och använder kontomålgrupper för att rikt
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
+source-git-commit: 7d630c3673304060ad26375955602440a495f354
 workflow-type: tm+mt
-source-wordcount: '1021'
+source-wordcount: '1110'
 ht-degree: 0%
 
 ---
@@ -41,19 +41,29 @@ The [!UICONTROL Browse] visas, med en lista över alla kontomunkter för organis
 
 I den här vyn visas information om målgruppen, inklusive namn, antal profiler, ursprung, livscykelstatus, skapat datum och senaste uppdateringsdatum.
 
+Du kan också använda sök- och filtreringsfunktionerna för att snabbt söka efter och sortera efter specifika kontogrupper. Mer information om den här funktionen finns i [gränssnittsguide för segmentering](./overview.md#manage-audiences).
+
 ## Skapa målgrupper {#create}
+
+>[!NOTE]
+>
+>Kontomålgrupper utvärderas med **batch** segmentering och utvärderas var 24:e timme.
 
 Om du vill skapa en kontopublik väljer du **[!UICONTROL Create audience]** på [!UICONTROL Browse] sida.
 
 ![The [!UICONTROL Create audience] knappen markeras på kontomålsidans webbsida.](../images/ui/account-audiences/select-create-audience.png)
 
-Segmentbyggaren visas. Kontoattributen visas i det vänstra navigeringsfältet.
+Segmentbyggaren visas. Kontoattributen och målgrupperna visas i det vänstra navigeringsfältet. Under [!UICONTROL Attributes] kan du lägga till både plattformsskapade och anpassade attribut.
 
-![Segmentbyggaren visas. Observera att bara attributen visas.](../images/ui/account-audiences/segment-builder.png)
+![Segmentbyggaren visas. Observera att bara attributen och målgrupperna visas.](../images/ui/account-audiences/segment-builder.png)
 
 När du skapar kontomålgrupper bör du tänka på att händelser listas under **[!UICONTROL People]**, i stället för att vara deras egen flik, eftersom dessa attribut är kopplade till personer.
 
 ![Platsen där du söker efter händelser, som finns i [!UICONTROL People] , är markerad.](../images/ui/account-audiences/attributes.png)
+
+Under [!UICONTROL Audiences] kan du lägga till tidigare skapade personbaserade målgrupper som du kan bygga vidare på när du skapar en egen målgrupp.
+
+![Fliken Publiker i Segment Builder är markerad.](../images/ui/account-audiences/audiences.png)
 
 Mer information om hur du använder Segment Builder finns i [Användargränssnittsguide för segmentbyggare](./segment-builder.md).
 
