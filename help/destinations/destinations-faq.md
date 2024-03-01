@@ -3,9 +3,9 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
 workflow-type: tm+mt
-source-wordcount: '1631'
+source-wordcount: '1670'
 ht-degree: 2%
 
 ---
@@ -48,6 +48,15 @@ Du återaktiverar den uppdaterade målgruppen till samma mål, men eftersom inge
 För att vara säker på att alla profiler skickas till ditt mål måste du skapa en ny målgrupp med den nya konfigurationen och sedan aktivera den till ditt mål.
 
 +++
+
+### När en målgrupp tas bort från ett mål, finns det någon signal som skickas till målet som anger att målgruppen tas bort?
+
++++Svar
+
+Nej, det finns inget beroende mellan Experience Platform-målet och kundinstansen i målsystemet. På den mottagande sidan är det enda som tyder på att målsystemet skulle se att det slutade ta emot målgruppsdata.
+
++++
+
 <!--
 ## [!DNL Experience Cloud Audiences] {#eca-faq}
 

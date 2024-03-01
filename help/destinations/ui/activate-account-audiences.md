@@ -5,9 +5,9 @@ description: Lär dig hur du aktiverar målgrupper för konton på destinationer
 badgeB2B: label="B2B Edition" type="Informative" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 badgeB2P: label="B2P Edition" type="Positive" url=" https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=en#rtcdp-editions newtab=true"
 exl-id: ad69d0a8-bf5b-42ac-97a3-401eadda62cd
-source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
+source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '787'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,12 @@ I den här artikeln förklaras vilket arbetsflöde som krävs för att exportera
 Gå till **[!UICONTROL Connections]** > **[!UICONTROL Destinations]** och väljer **[!UICONTROL Catalog]** -fliken. Använd **[!UICONTROL Data types]** filtrera och markera **[!UICONTROL Accounts]** för att se vilka destinationer som stöder aktivering av målgrupper. För närvarande är export av kontomålgrupper bara tillgängligt för vissa molnlagringsmål ([Amazon S3](/help/destinations/catalog/cloud-storage/amazon-s3.md), [ADLS Gen 2](/help/destinations/catalog/cloud-storage/adls-gen2.md), [Azure Blob Storage](/help/destinations/catalog/cloud-storage/azure-blob.md), [Datallandningszon](/help/destinations/catalog/cloud-storage/data-landing-zone.md)och [SFTP](/help/destinations/catalog/cloud-storage/sftp.md)) och [(Företag) LinkedIn Matched Auditions](/help/destinations/catalog/social/linkedin.md) mål.
 
 ![Destinationer som stöder målgrupper på konton.](/help/destinations/assets/ui/activate-account-audiences/data-types-filter.png)
+
+## Videoöversikt
+
+I videon nedan finns en översikt över hur du skapar och aktiverar kontomålgrupper och vilka användningsfall som stöds när du aktiverar kontomålgrupper.
+
+>[!VIDEO](https://video.tv.adobe.com/v/338252/?learn=on)
 
 ## Förutsättningar {#prerequisites}
 
