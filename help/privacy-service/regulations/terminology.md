@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Sekretessregler - terminologi
 description: Det här dokumentet innehåller definitioner för nyckeltermer relaterade till sekretessregler som stöds av Adobe Experience Cloud.
 exl-id: 9c0a7d26-0571-41d4-8cf5-6356025d51ef
-source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
+source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
 workflow-type: tm+mt
-source-wordcount: '1796'
-ht-degree: 3%
+source-wordcount: '1842'
+ht-degree: 2%
 
 ---
 
@@ -91,7 +91,7 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 
 ## J
 
-##  000
+## K
 
 ## L
 
@@ -100,6 +100,8 @@ Det här dokumentet innehåller definitioner för nyckeltermer relaterade till s
 ## M
 
 **Huvudanläggning**: Den plats inom unionen där de viktigaste besluten rörande databehandling fattas, med avseende på personuppgiftsbiträdet.
+
+**MHMDAa**: [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) ger konsumenterna bättre integritetsrättigheter när det gäller deras hälsodata. Det föreskriver att personuppgifter, konsumentens samtycke och raderingsrättigheter ska offentliggöras, och förbjuder försäljning av hälsodata utan tillstånd. Lagen gör det dessutom olagligt att använda geofencing runt vårdinrättningar.
 
 ## N
 

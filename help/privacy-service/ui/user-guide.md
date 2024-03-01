@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
+source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
 workflow-type: tm+mt
-source-wordcount: '1413'
+source-wordcount: '1414'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,7 @@ Kontrollpanelen för [!DNL Privacy Service] Gränssnittet innehåller två widge
 | [!UICONTROL GDPR] | Europeiska unionens [!DNL General Data Protection Regulation] |
 | [!UICONTROL HIPAA_AUS] | The [!DNL Health Insurance Portability and Accountability Act] |
 | [!UICONTROL LGPD_BRA] | Brasilien [!DNL Lei Geral de Proteção de Dados] |
+| [!UICONTROL MHMDA] | The [!DNL Washington My Health My Data Act] |
 | [!UICONTROL NZPA_NZL] | Nya Zeeland [!DNL Privacy Act] |
 | [!UICONTROL PDPA_THA] | Thailand [!DNL Personal Data Protection Act] |
 | [!UICONTROL UCPA] | The [!DNL Utah Consumer Privacy Act] |

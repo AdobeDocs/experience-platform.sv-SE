@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform-ordlista
 description: En ordlista med viktig terminologi i Experience Platform.
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 9d05752f3db78d9d10fd91fd0d3fed924217199c
+source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
 workflow-type: tm+mt
-source-wordcount: '7973'
+source-wordcount: '7990'
 ht-degree: 0%
 
 ---
@@ -319,7 +319,7 @@ ht-degree: 0%
 
 **[!DNL Jupyter Notebook]**: Integrerat med JupyterLab gör Jupyter Notebooks att du kan rensa och omvandla data, numerisk simulering, statistisk modellering, datavisualisering, maskininlärning med mera på dina Experience Platform-data på en rad olika språk som Python, Scala och PySpark.
 
-##  000
+## K
 
 ## L
 
@@ -344,6 +344,8 @@ ht-degree: 0%
 **Kopplingsmetod**: När du definierar en sammanfogningsprincip med hjälp av användargränssnittet för plattformen anger sammanfogningsmetoden hur datafragment ska prioriteras när en konflikt uppstår. När du använder Real-Time Customer Profile API för att definiera en sammanfogningsprincip, bestäms sammanfogningsmetoden med hjälp av `attributeMerge` -objekt.
 
 **Kopplingsprincip**: Sammanslagningsprinciper är regler som Experience Platform använder för att avgöra hur kunddatafragment från flera källor kombineras för att skapa en enskild profil. När en datakonflikt inträffar avgör sammanfogningsprincipen vilka data som ska prioriteras för att inkluderas i profilen.
+
+**MHMDAa**: [[!DNL Washington My Health My Data Act]](https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&amp;full=true) ger konsumenterna bättre integritetsrättigheter när det gäller deras hälsodata. Det föreskriver att personuppgifter, konsumentens samtycke och raderingsrättigheter ska offentliggöras, och förbjuder försäljning av hälsodata utan tillstånd. Lagen gör det dessutom olagligt att använda geofencing runt vårdinrättningar.
 
 **Mixa**: Se &quot;Schemafältgrupp&quot;.
 

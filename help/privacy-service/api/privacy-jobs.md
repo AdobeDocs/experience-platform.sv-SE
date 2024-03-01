@@ -5,9 +5,9 @@ title: Sekretessjobb API-slutpunkt
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 0ffc9648fbc6e6aa3c43a7125f25a98452e8af9a
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -26,25 +26,34 @@ Du kan visa en lista över alla tillgängliga sekretessjobb inom din organisatio
 
 **API-format**
 
-Det här begärandeformatet använder en `regulation` frågeparametern på `/jobs` slutpunkten börjar därför med ett frågetecken (`?`) enligt nedan. Svaret sidnumreras så att du kan använda andra frågeparametrar (`page` och `size`) för att filtrera svaret. Du kan separera flera parametrar med hjälp av et-tecken (`&`).
+Det här begärandeformatet använder en `regulation` frågeparametern på `/jobs` slutpunkten börjar därför med ett frågetecken (`?`) enligt nedan. När resurser listas returneras upp till 1 000 jobb och Privacy Servicen numreras. Använd andra frågeparametrar (`page`, `size`och datumfilter) för att filtrera svaret. Du kan separera flera parametrar med hjälp av et-tecken (`&`).
+
+>[!TIP]
+>
+>Använd ytterligare frågeparametrar om du vill filtrera resultaten ytterligare för specifika frågor. Du kan till exempel identifiera hur många sekretessjobb som har skickats in under en viss tidsperiod och vilken status de har med hjälp av `status`, `fromDate`och `toDate` frågeparametrar.
 
 ```http
 GET /jobs?regulation={REGULATION}
 GET /jobs?regulation={REGULATION}&page={PAGE}
 GET /jobs?regulation={REGULATION}&size={SIZE}
 GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
+GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={STATUS}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
-| `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `1` och det högsta värdet är `100`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
+| `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `100` och det högsta värdet är `1000`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
+| `{status}` | Standardbeteendet är att inkludera alla statusvärden. Om du anger en statustyp returnerar begäran endast sekretessjobb som matchar den statustypen. Godkända värden är: <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
+| `{toDate}` | Den här parametern begränsar resultaten till de som bearbetas före ett angivet datum. Från och med datumet för begäran kan systemet leta upp 45 dagar. Intervallet får dock inte vara längre än 30 dagar.<br>Formatet YYY-MM-DD godkänns. Datumet du anger tolkas som avslutsdatumet uttryckt i GMT (Greenwich Mean Time).<br>Om du inte anger den här parametern (och en `fromDate`) returnerar standardbeteendet jobb som har sparats tillbaka de senaste sju dagarna. Om du `toDate`måste du också använda `fromDate` frågeparameter. Om du inte använder båda returnerar anropet ett 400-fel. |
+| `{fromDate}` | Den här parametern begränsar resultaten till de som bearbetas efter ett angivet datum. Från och med datumet för begäran kan systemet leta upp 45 dagar. Intervallet får dock inte vara längre än 30 dagar.<br>Formatet YYY-MM-DD godkänns. Datumet som du anger tolkas som begärans ursprungsdatum uttryckt i GMT (Greenwich Mean Time).<br>Om du inte anger den här parametern (och en `toDate`) returnerar standardbeteendet jobb som har sparats tillbaka de senaste sju dagarna. Om du `fromDate`måste du också använda `toDate` frågeparameter. Om du inte använder båda returnerar anropet ett 400-fel. |
+| `{filterDate}` | Den här parametern begränsar resultaten till de som bearbetas ett visst datum. Formatet YYY-MM-DD godkänns. Systemet kan titta tillbaka under de senaste 45 dagarna. |
 
 {style="table-layout:auto"}
 
 <!-- Not released yet:
-<li>`pdpd_vnm`</li>
+<li>`pdpd_vnm`</li> 
  -->
 
 **Begäran**
