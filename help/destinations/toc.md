@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 73785443a9d07dfde3ef1060f7886dfed484925b
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1209'
 ht-degree: 1%
 
 ---
@@ -247,6 +247,7 @@ ht-degree: 1%
          * [Konfigurera ett Azure Data Lake Storage-mål med anpassade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
          * [Konfigurera ett DLZ-mål (Data Landing Zone) med anpassade filformateringsalternativ och konfiguration av anpassade filnamn](../destinations/destination-sdk/guides/batch/configure-dlz-destination-with-custom-file-formatting.md)
          * [Konfigurera ett SFTP-mål med fördefinierade filformateringsalternativ och anpassad filnamnskonfiguration](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
+         * [Konfigurera ett filbaserat mål för att exportera potentiella målgrupper](/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md)
    * API-referens för målredigering {#authoring-api}
       * [API-referens för Destination SDK (målredigering)](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * Åtgärder på målservern {#server-operations}
