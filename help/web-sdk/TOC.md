@@ -5,9 +5,9 @@ user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
 breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
-source-git-commit: 567ba2c43c2dcea401911cf25ae7a6be259acb81
+source-git-commit: 6e78383b232a7b604514a4db85884372ef11d3a8
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '222'
 ht-degree: 19%
 
 ---
@@ -93,6 +93,7 @@ ht-degree: 19%
       * [Integrera utan taggar](consent/iab-tcf/without-tags.md)
 
 * Användningsfall {#use-cases}
+   * [Översikt](use-cases/overview.md)
    * [Skicka data till Adobe Analytics via Web SDK](use-cases/adobe-analytics.md)
    * [Tips för användaragentklient](use-cases/client-hints.md)
    * [Samla in e-handelsdata](use-cases/collect-commerce-data.md)
