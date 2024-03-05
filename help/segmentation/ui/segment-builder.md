@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
+source-git-commit: a16f4e8d97a3ab195bd48803980b257c9ec3bfe1
 workflow-type: tm+mt
-source-wordcount: '3484'
+source-wordcount: '3550'
 ht-degree: 0%
 
 ---
@@ -282,6 +282,8 @@ När du fortsätter att skapa en segmentdefinition kan du visa en sidnumrerad f�
 Du kan också välja en utvärderingsmetod. Om du vet vilken utvärderingsmetod du vill använda kan du välja önskad utvärderingsmetod med hjälp av listrutan. Om du vill veta vilka utvärderingstyper som den här segmentdefinitionen kvalificerar för kan du välja bläddringsikonen ![mappikon med ett förstoringsglas](../images/ui/segment-builder/segment-evaluation-select-icon.png) om du vill se en lista över tillgängliga metoder för utvärdering av segmentdefinitioner.
 
 The [!UICONTROL Evaluation method eligibility] popover visas. Den här drivrutinen visar tillgängliga utvärderingsmetoder, som batchvis, direktuppspelning och kant. Förvisaren visar vilka utvärderingsmetoder som är kvalificerade och inte berättigade. Beroende på vilka parametrar du har använt i segmentdefinitionen kanske den inte uppfyller kraven för vissa utvärderingsmetoder. Mer information om kraven för respektive utvärderingsmetod finns i [strömningssegmentering](./streaming-segmentation.md#query-types) eller [kantsegmentering](./edge-segmentation.md#query-types) översikter.
+
+Du kan också ändra utvärderingsmetoden för segmentdefinitionen när du är klar med att skapa den. Om du ändrar utvärderingsmetoden från Edge eller Streaming till Batch kommer du att **not** kan ändra tillbaka till Edge eller Streaming. Ändringen av utvärderingsmetoden kommer att **endast** börjar gälla när du har valt **[!UICONTROL Save]** i poveraren. Om du avbryter dialogrutan kommer **bibehålla** den ursprungliga utvärderingsmetoden.
 
 ![Popup-fönstret för berättigande av utvärderingsmetod visas. Här visas vilka utvärderingsmetoder som är kvalificerade och inte kan användas för segmentdefinitionen.](../images/ui/segment-builder/select-evaluation-method.png)
 
