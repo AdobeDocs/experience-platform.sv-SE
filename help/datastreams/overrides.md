@@ -2,9 +2,9 @@
 title: Konfigurera åsidosättningar av dataström
 description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: 11feeae0409822f0b1ccba2df263f0be466d54e3
+source-git-commit: 90493d179e620604337bda96cb3b7f5401ca4a81
 workflow-type: tm+mt
-source-wordcount: '1282'
+source-wordcount: '1159'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ I den här artikeln förklaras den kompletta processen för åsidosättning av d
 
 >[!IMPORTANT]
 >
->Åsidosättningar av dataström stöds endast för [Web SDK](../edge/home.md) och [Mobile SDK](https://developer.adobe.com/client-sdks/home/) integreringar. [Server-API](../server-api/overview.md) integreringar stöder för närvarande inte datastream-åsidosättningar.
+>Åsidosättningar av dataström stöds endast för [Web SDK](../web-sdk/home.md) och [Mobile SDK](https://developer.adobe.com/client-sdks/home/) integreringar. [Server-API](../server-api/overview.md) integreringar stöder för närvarande inte datastream-åsidosättningar.
 ><br>
 >Åsidosättningar av datastream bör användas när du behöver olika data som skickas till olika datastreams. Använd inte åsidosättningar av datastream för personaliseringsanvändningsfall eller för medgivandedata.
 
@@ -116,110 +116,155 @@ Nu bör åsidosättningar av ID-synkroniseringsbehållare konfigureras. Nu kan d
 
 ## Skicka åsidosättningarna till Edge Network via Web SDK {#send-overrides-web-sdk}
 
->[!NOTE]
->
->Som ett alternativ till att skicka konfigurationsåsidosättningar via Web SDK-kommandon kan du lägga till konfigurationsåsidosättningar i Web SDK [taggtillägg](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).
+När du har konfigurerat åsidosättningar av datastream i användargränssnittet för datainsamling kan du skicka åsidosättningarna till Edge-nätverket via Web SDK eller Mobile SDK.
 
-Efter [konfigurera åsidosättningar av datastream](#configure-overrides) i användargränssnittet för datainsamling kan du nu skicka åsidosättningarna till Edge Network via Web SDK.
+* **Web SDK**: Se [åsidosättningar av konfiguration av datastream](../web-sdk/commands/datastream-overrides.md#library) för instruktioner för taggtillägg och exempel på JavaScript-bibliotekskoder.
+* **Mobile SDK**: Se nedan.
 
-Om du använder Web SDK skickar du åsidosättningarna till Edge Network via `edgeConfigOverrides` -kommandot är det andra och sista steget i att aktivera åsidosättningar av dataströmskonfigurationer.
+### Åsidosättning av dataström-ID via Mobile SDK {#id-override-mobile}
 
-Åsidosättningar av dataströmskonfigurationer skickas till Edge-nätverket via `edgeConfigOverrides` Web SDK, kommando. Det här kommandot skapar åsidosättningar av datastream som skickas till [!DNL Edge Network] på nästa kommando. Om du använder `configure` -kommandot skickas åsidosättningarna för varje begäran.
+Exemplen nedan visar hur en åsidosättning av ett datastream-ID kan se ut i en Mobile SDK-integrering. Välj flikarna nedan för att visa [!DNL iOS] och [!DNL Android] exempel.
 
-The `edgeConfigOverrides` kommandot skapar åsidosättningar av datastream som skickas vidare till [!DNL Edge Network] på nästa kommando.
+>[!BEGINTABS]
 
-När en konfigurationsåsidosättning skickas med `configure` finns det i följande Web SDK-kommandon.
+>[!TAB iOS (Skift)]
 
-* [sendEvent](../edge/fundamentals/tracking-events.md)
-* [setConsent](../edge/consent/iab-tcf/overview.md)
-* [getIdentity](../edge/identity/overview.md)
-* [appendIdentityToUrl](../edge/identity/id-sharing.md#cross-domain-sharing)
-* [konfigurera](../edge/fundamentals/configuring-the-sdk.md)
+I det här exemplet visas hur en åsidosättning av ett dataström-ID ser ut i en Mobile SDK [!DNL iOS] integrering.
 
-Alternativ som anges globalt kan åsidosättas av konfigurationsalternativet för enskilda kommandon.
+```swift
+// Create Experience event from dictionary
+var xdmData: [String: Any] = [
+  "eventType": "SampleXDMEvent",
+  "sample": "data",
+]
+let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamIdOverride: "SampleDatastreamId")
 
-### Skicka konfigurationsåsidosättningar via Web SDK `sendEvent` kommando {#send-event}
-
-Exemplet nedan visar hur en konfigurationsåsidosättning kan se ut på en `sendEvent` -kommando.
-
-```js {line-numbers="true" highlight="5-25"}
-alloy("sendEvent", {
-  xdm: {
-    /* ... */
-  },
-  edgeConfigOverrides: {
-    datastreamId: "{DATASTREAM_ID}"
-    com_adobe_experience_platform: {
-      datasets: {
-        event: {
-          datasetId: "SampleEventDatasetIdOverride"
-        }
-      }
-    },
-    com_adobe_analytics: {
-      reportSuites: [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
-        ]
-    },
-    com_adobe_identity: {
-      idSyncContainerId: "1234567"
-    },
-    com_adobe_target: {
-      propertyToken: "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
-  }
-});
+Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
+  // Handle the Edge Network response
+}
 ```
 
-| Parameter | Beskrivning |
-|---|---|
-| `edgeConfigOverrides.datastreamId` | Använd den här parametern för att tillåta att en enda begäran går till en annan datastream än den som definieras av `configure` -kommando. |
+>[!TAB Android™ (Kotlin)]
 
-### Skicka konfigurationsåsidosättningar via Web SDK `configure` kommando {#send-configure}
+I det här exemplet visas hur en åsidosättning av ett dataström-ID ser ut i en Mobile SDK [!DNL Android] integrering.
 
-Exemplet nedan visar hur en konfigurationsåsidosättning kan se ut på en `configure` -kommando.
+```kotlin
+// Create experience event from Map
+val xdmData = mutableMapOf < String, Any > ()
+xdmData["eventType"] = "SampleXDMEvent"
+xdmData["sample"] = "data"
 
-```js {line-numbers="true" highlight="8-30"}
-alloy("configure", {
-  defaultConsent: "in",
-  edgeDomain: "etc",
-  edgeBasePath: "ee",
-  datastreamId: "{DATASTREAM_ID}",
-  orgId: "org",
-  debugEnabled: true,
-  edgeConfigOverrides: {
-    "com_adobe_experience_platform": {
-      "datasets": {
-        "event": {
-          datasetId: "SampleProfileDatasetIdOverride"
-        }
-      }
-    },
-    "com_adobe_analytics": {
-      "reportSuites": [
-        "MyFirstOverrideReportSuite",
-        "MySecondOverrideReportSuite",
-        "MyThirdOverrideReportSuite"
+val experienceEvent = ExperienceEvent.Builder()
+    .setXdmSchema(xdmData)
+    .setDatastreamIdOverride("SampleDatastreamId")
+    .build()
+
+Edge.sendEvent(experienceEvent) {
+    // Handle the Edge Network response
+}
+```
+
+>[!ENDTABS]
+
+### Åsidosättning av dataströmskonfiguration via Mobile SDK {#config-override-mobile}
+
+Exemplen nedan visar hur en åsidosättning av en datastream-konfiguration kan se ut i en Mobile SDK-integrering. Välj flikarna nedan för att visa [!DNL iOS] och [!DNL Android] exempel.
+
+>[!BEGINTABS]
+
+>[!TAB iOS (Skift)]
+
+I det här exemplet visas hur en åsidosättning av en dataströmskonfiguration ser ut i en Mobile SDK [!DNL iOS] integrering.
+
+```swift
+// Create Experience event from dictionary
+var xdmData: [String: Any] = [
+  "eventType": "SampleXDMEvent",
+  "sample": "data",
+]
+
+let configOverrides: [String: Any] = [
+  "com_adobe_experience_platform": [
+    "datasets": [
+      "event": [
+        "datasetId": "SampleEventDatasetIdOverride"
       ]
-    },
-    "com_adobe_identity": {
-      "idSyncContainerId": "1234567"
-    },
-    "com_adobe_target": {
-      "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
-    }
-  },
-  onBeforeEventSend: function() { /* … */ });
-};
+    ]
+  ],
+  "com_adobe_analytics": [
+  "reportSuites": [
+        "MyFirstOverrideReportSuite",
+          "MySecondOverrideReportSuite",
+          "MyThirdOverrideReportSuite"
+      ]
+  ],
+  "com_adobe_identity": [
+    "idSyncContainerId": "1234567"
+  ],
+  "com_adobe_target": [
+    "propertyToken": "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
+ ],
+]
+
+let experienceEvent = ExperienceEvent(xdm: xdmData, datastreamConfigOverride: configOverrides)
+
+Edge.sendEvent(experienceEvent: experienceEvent) { (handles: [EdgeEventHandle]) in
+  // Handle the Edge Network response
+}
 ```
 
-## Skicka åsidosättningarna till Edge Network via Mobile SDK {#send-overrides-mobile-sdk}
+>[!TAB Android (Kotlin)]
 
-Efter [konfigurera åsidosättningar av datastream](#configure-overrides) i användargränssnittet för datainsamling kan du nu skicka åsidosättningarna till Edge Network via Mobile SDK.
+I det här exemplet visas hur en åsidosättning av en dataströmskonfiguration ser ut i en Mobile SDK [!DNL Android] integrering.
 
-Läs mer om hur du skickar åsidosättningar till Edge Network i [guide för att skicka åsidosättningar med sendEvent](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-sendevent/) eller [guide för att skicka åsidosättningar med regler](https://developer.adobe.com/client-sdks/edge/edge-network/tutorials/send-overrides-rules/).
+```kotlin
+// Create experience event from Map
+val xdmData = mutableMapOf < String, Any > ()
+xdmData["eventType"] = "SampleXDMEvent"
+xdmData["sample"] = "data"
+
+val configOverrides = mapOf(
+    "com_adobe_experience_platform"
+    to mapOf(
+        "datasets"
+        to mapOf(
+            "event"
+            to mapOf("datasetId"
+                to "SampleEventDatasetIdOverride")
+        )
+    ),
+    "com_adobe_analytics"
+    to mapOf(
+        "reportSuites"
+        to listOf(
+            "MyFirstOverrideReportSuite",
+            "MySecondOverrideReportSuite",
+            "MyThirdOverrideReportSuite"
+        )
+    ),
+    "com_adobe_identity"
+    to mapOf(
+        "idSyncContainerId"
+        to "1234567"
+    ),
+    "com_adobe_target"
+    to mapOf(
+        "propertyToken"
+        to "63a46bbc-26cb-7cc3-def0-9ae1b51b6c62"
+    )
+)
+
+val experienceEvent = ExperienceEvent.Builder()
+    .setXdmSchema(xdmData)
+    .setDatastreamConfigOverride(configOverrides)
+    .build()
+
+Edge.sendEvent(experienceEvent) {
+    // Handle the Edge Network response
+}
+```
+
+>[!ENDTABS]
 
 ## Exempel på nyttolast {#payload-example}
 

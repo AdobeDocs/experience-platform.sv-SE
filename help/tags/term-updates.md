@@ -2,10 +2,10 @@
 title: Uppdateringar om terminologi
 description: En fullständig lista över termer och gränssnittselement som påverkas av Adobe Experience Platform Launch omprofilering.
 exl-id: 93dc0abf-c80d-4a67-bf0c-3fb09ca915a2
-source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
+source-git-commit: 5de1ec17b78c97be21c0d2afd6f0b119a6074b6f
 workflow-type: tm+mt
-source-wordcount: '134'
-ht-degree: 1%
+source-wordcount: '127'
+ht-degree: 0%
 
 ---
 
@@ -19,6 +19,6 @@ I följande tabell visas de termer som har uppdaterats i produktdokumentationen:
 
 | Föregående term | Uppdaterad term |
 |---|---|
-| platform launch (klientsida) | [Taggar](./home.md) |
-| platform launch Server Side | [Vidarebefordran av händelser](./ui/event-forwarding/overview.md) |
-| Edge-konfigurationer | [Dataströmmar](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html) |
+| Platform launch (klientsida) | [Taggar](./home.md) |
+| Platform launch Server Side | [Vidarebefordran av händelser](./ui/event-forwarding/overview.md) |
+| Edge-konfigurationer | [Datastreams](/help/datastreams/overview.md) |

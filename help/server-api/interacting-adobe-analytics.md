@@ -2,9 +2,9 @@
 title: Interagera med Adobe Analytics
 description: Lär dig hur du använder Edge Network Server API för att interagera med Adobe Analytics.
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: 5de1ec17b78c97be21c0d2afd6f0b119a6074b6f
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '180'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,7 @@ ht-degree: 0%
 
 ## Översikt {#overview}
 
-Adobe Analytics datainsamling fungerar genom att översätta XDM-data till ett format som Adobe Analytics kan förstå. Flera XDM-fält är [automatiskt mappad](../edge/data-collection/adobe-analytics/automatically-mapped-vars.md) till analysvariabler.
-
-Du kan också [mappa XDM-värden manuellt](../edge/data-collection/adobe-analytics/manually-mapping-variables.md) till äldre analysvariabler.
+Adobe Analytics datainsamling fungerar genom att översätta XDM-data till ett format som Adobe Analytics kan förstå. Flera XDM-fält är [automatiskt mappad](https://experienceleague.adobe.com/docs/analytics/implementation/aep-edge/variable-mapping.html) till analysvariabler. Du kan även mappa XDM-värden manuellt till äldre analysvariabler.
 
 Om du vill att Adobe Analytics ska kunna ta emot data från Server-API:t måste du [konfigurera ditt datastream](../datastreams/overview.md#adobe-analytics-settings) om du vill vidarebefordra händelser till Adobe Analytics genom att ange rapportsvitens ID på konfigurationssidan för datastream.
 

@@ -2,10 +2,10 @@
 title: Utveckling från Audience Manager till Real-Time CDP
 description: Förstå vad du bör tänka på innan du planerar en migrering från Audience Manager till Real-Time CDP.
 exl-id: 83ab9a5d-9abc-4072-b449-e2a9ecd48639
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '504'
-ht-degree: 2%
+source-wordcount: '474'
+ht-degree: 0%
 
 ---
 
@@ -33,7 +33,7 @@ Adobe rekommenderar att du kategoriserar dina segment enligt följande:
 
 ## 2. Vilka segment som är viktiga att skicka via [!UICONTROL Audience Manager Source Connector]?
 
-Baserat på sina utvärderingskriterier kan segment som inte har några databeroenden, inga mål- eller aktiveringsproblem och deras segmenteringsregler skapas genom Real-Time CDP datainsamling som [Adobe Experience Platform Web SDK](/help/edge/web-sdk-faq.md) vid ett senare datum skickas via Audience Manager Source Connector.
+Baserat på sina utvärderingskriterier kan segment som inte har några databeroenden, inga mål- eller aktiveringsproblem och deras segmenteringsregler skapas genom Real-Time CDP datainsamling som [Adobe Experience Platform Web SDK](/help/web-sdk/faq.md) vid ett senare datum skickas via Audience Manager Source Connector.
 
 ## 3. Kommer du att använda [!UICONTROL Experience Cloud Audiences] för att återföra data till Audience Manager?
 

@@ -1,7 +1,7 @@
 ---
 title: Hantering av händelseduplicering i Experience Platform
 description: Läs om hur Adobe Experience Platform hanterar händelseduplicering
-source-git-commit: 89cdb0832009bcee31b4339f021bc5a0ce254752
+source-git-commit: bc3ae849bd7fd8a9f50ba98528adc43d7282df90
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Adobe Experience Platform är ett distribuerat system som utformats för att maximera tillförlitligheten och samtidigt skalas till allt större datavolymer.
 
-För datainsamling i realtid [Experience Events](../xdm/classes/experienceevent.md) samlas in via [Edge Network](../edge/home.md#edge-network)från källor på klientsidan, som [Web SDK](../edge/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/)och levereras till Experience Platform och lager för bearbetning och lagring. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html)och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
+För datainsamling i realtid [Experience Events](../xdm/classes/experienceevent.md) samlas in via [Edge Network](../web-sdk/home.md#edge-network)från källor på klientsidan, som [Web SDK](../web-sdk/home.md) eller [Mobile SDK](https://developer.adobe.com/client-sdks/home/)och levereras till Experience Platform och lager för bearbetning och lagring. Dessa lager utgör lösningar som Experience Platform, [Real-Time CDP](../rtcdp/home.md), [Customer Journey Analytics](https://experienceleague.adobe.com/docs/analytics-platform/using/cja-overview/cja-overview.html)och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html).
 
 För att minimera Experience Event-förluster förväntar sig SDK:er på klientsidan och den interna Experience Platform-leveranstjänsten en bekräftelse på att en händelse har samlats in.
 

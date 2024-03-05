@@ -6,20 +6,20 @@ seo-description: Experience Platform Debugger Summary Screen
 seo-title: Summary Tab
 uuid: 46b17eaa-b611-43cf-8c6a-67b2e9b9d940
 exl-id: 91234125-15c4-4111-9ee4-f3af093a3c4d
-source-git-commit: f94bba7eb4763230dae6794eb70a75f53a853c53
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '909'
+source-wordcount: '711'
 ht-degree: 1%
 
 ---
 
 # Fliken Sammanfattning
 
-Om du vill köra Adobe Experience Platform Debugger öppnar du den sida du vill granska i webbläsaren och väljer sedan ikonen (![](images/start-icon.jpg)) i webbläsarfältet. Tillägget öppnas på **Sammanfattning** -fliken.
+Om du vill köra Adobe Experience Platform Debugger öppnar du sidan som du vill granska i webbläsaren och väljer sedan ikonen (![](images/start-icon.jpg)) i webbläsarfältet. Tillägget öppnas på **Sammanfattning** -fliken.
 
 ![](images/summary.jpg)
 
-På den här skärmen visas information om varje Adobe Experience Cloud-lösning. Den information som visas varierar beroende på lösning, men innehåller vanligtvis information som lösningsbiblioteket och version (till exempel&quot;AppMeasurement v2.9&quot;) och kontoidentifierare (till exempel Analytics-rapportens programpaket-ID, målklientkoden, Audience Manager partner-ID osv.)
+På den här skärmen visas information om varje Adobe Experience Cloud-lösning. Den information som visas varierar beroende på lösning, men omfattar vanligtvis information som lösningsbiblioteket och version (till exempel&quot;AppMeasurement v2.9&quot;) och kontoidentifierare (till exempel ID för Analytics-rapportsviten, målklientkoden, partner-ID för Audience Manager)
 
 ## Information som visas i felsökningsprogrammet för Experience Platform
 
@@ -66,7 +66,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>UUID </p> </td> 
-   <td colname="col2"> <p>The <a href="https://experiencecloud.adobe.com/resources/help/en_US/aam/ids-in-aam.html" format="html" scope="external"> Unikt användar-ID</a> associerad med instansen DIL </p> </td> 
+   <td colname="col2"> <p>The <a href="https://experiencecloud.adobe.com/resources/help/en_US/aam/ids-in-aam.html" format="html" scope="external"> Unikt användar-ID</a> associeras med DIL-instansen </p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -85,7 +85,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Skapad den </p> </td> 
-   <td colname="col2"> <p>Taggen <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> bibliotek</a> byggdatum </p> </td> 
+   <td colname="col2"> <p>Taggen <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/libraries.html" format="https" scope="external"> bibliotek</a> build-datum </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Miljö </p> </td> 
@@ -103,8 +103,8 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
 <table id="table_DC76D63FA6EF4891906B9E1D3E4A8A6C"> 
  <tbody> 
   <tr> 
-   <td colname="col1"> <p>Biblioteksversion </p> </td> 
-   <td colname="col2"> <p>Antalet Adobe Experience Platform Web SDK <a href="https://experienceleague.adobe.com/docs/experience-platform/edge/extension/web-sdk-ext-release-notes.html" format="html" scope="external">biblioteksversion</a> </p> </td> 
+   <td colname="col1"> <p>Library Version </p> </td> 
+   <td colname="col2"> <p>Antalet Adobe Experience Platform Web SDK <a href="https://experienceleague.adobe.com/docs/experience-platform/web-sdk/extension/web-sdk-ext-release-notes.html" format="html" scope="external">biblioteksversion</a> </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Namnutrymme</p> </td> 
@@ -124,7 +124,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Loggning aktiverad </p> </td> 
-   <td colname="col2"> <p>Anger om loggning har aktiverats för den här egenskapen</p> </td> 
+   <td colname="col2"> <p>Anger om loggning har aktiverats för egenskapen</p> </td> 
   </tr> 
  </tbody> 
 </table>
@@ -162,7 +162,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Sidinläsningshändelse </p> </td> 
-   <td colname="col2"> <p>Typ av <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/target/overview.html" format="html" scope="external">event</a> som utlöses när sidan läses in </p> </td> 
+   <td colname="col2"> <p>Typ av <a href="https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/target/overview.html" format="html" scope="external">event</a> som aktiveras när sidan läses in </p> </td> 
   </tr> 
   <tr> 
    <td colname="col1"> <p>Namn på begäran </p> </td> 
@@ -190,7 +190,7 @@ Felsökaren i Experience Platform visar följande information för varje lösnin
   </tr> 
   <tr> 
    <td colname="col1"> <p>Erbjudande-ID </p> </td> 
-   <td colname="col2"> <p>ID:t för Target-erbjudandet. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar den nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken</a> i målgränssnittet. </p> </td> 
+   <td colname="col2"> <p>ID för Target-erbjudandet. Endast tillgängligt utan autentisering om du implementerar händelseavlyssnaren för felsökning i koden eller tagghanteraren och aktiverar den nödvändiga <a href="https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html" format="html" scope="external"> svarstoken</a> i målgränssnittet. </p> </td> 
   </tr> 
  </tbody> 
 </table>

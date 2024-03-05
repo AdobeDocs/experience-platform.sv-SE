@@ -3,7 +3,7 @@ title: Personalisera upplevelser på plats för okända besökare med partnerst�
 description: Lär dig hur du använder partnerstödd igenkänning av besökare för att leverera personaliserade upplevelser på plats för besökarna.
 feature: Use Cases, Personalization, Customer Acquisition
 exl-id: 99677988-1df8-47b1-96b1-0ef6db818a1d
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '2565'
 ht-degree: 1%
@@ -47,7 +47,7 @@ När du planerar att använda attribut som tillhandahålls av partners för att 
 För att implementera det här användningsexemplet måste du använda flera olika delar av Real-time Customer Data Platform och andra Experience Cloud-lösningar. Se till att du har de nödvändiga [behörigheter för attributbaserad åtkomstkontroll](/help/access-control/abac/overview.md) för alla dessa områden, eller be systemadministratören att ge dig de behörigheter som krävs.
 
 * Datainsamling
-   * [Webb-SDK för Adobe Experience Platform](/help/edge/home.md)
+   * [Webb-SDK för Adobe Experience Platform](/help/web-sdk/home.md)
    * [Taggar](/help/tags/home.md)
    * [Dataströmmar](/help/datastreams/overview.md)
 * Datahantering i Real-Time CDP

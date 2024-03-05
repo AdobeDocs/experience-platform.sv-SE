@@ -3,9 +3,9 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '868'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ Konfigurera den här destinationen så att externa personaliseringsplattformar, 
 
 ## Förutsättningar {#prerequisites}
 
-Den här integreringen drivs av [Adobe Experience Platform Web SDK](../../../edge/home.md) eller [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/). Du måste använda någon av dessa SDK:er för att kunna använda det här målet.
+Den här integreringen drivs av [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) eller [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/). Du måste använda någon av dessa SDK:er för att kunna använda det här målet.
 
 >[!IMPORTANT]
 >
@@ -120,7 +120,7 @@ Här är ett exempelvärde för `event.destinations` variabel:
 ]
 ```
 
-Om du inte använder [Taggar](../../../tags/home.md) för att distribuera Experience Platform Web SDK använder du [hantera svar från händelser](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) för att se exporterade data.
+Om du inte använder [Taggar](/help/tags/home.md) för att distribuera Experience Platform Web SDK, använd [kommandosvar](/help/web-sdk/commands/command-responses.md) för att se exporterade data.
 
 JSON-svaret från Adobe Experience Platform kan analyseras för att hitta motsvarande integreringsalias för det program du integrerar med Adobe Experience Platform. Målgrupps-ID:n kan skickas till programmets kod som målparametrar. Nedan visas ett exempel på hur detta skulle se ut när det gäller målsvaret.
 

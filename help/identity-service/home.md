@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över identitetstjänsten
 description: Adobe Experience Platform identitetstjänst hjälper er att få en bättre bild av era kunder och deras beteende genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: ed2c9824d4c2f7bf8dd6a2f8431e93fe833c899c
+source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -109,7 +109,7 @@ Identitetstjänsten spelar en viktig roll inom Experience Platform. Några av de
 
 * [Scheman](../xdm/home.md): I ett givet schema gör de schemafält som är markerade som identiteter att identitetsdiagram kan skapas.
 * [Datauppsättningar](../catalog/datasets/overview.md): När en datauppsättning aktiveras för inmatning i kundprofilen i realtid genereras identitetsdiagram från datauppsättningen, eftersom datauppsättningen har minst två fält som är markerade som identitet.
-* [Web SDK](../edge/home.md): Web SDK skickar upplevelsehändelser till Adobe Experience Platform, och identitetstjänsten genererar ett diagram när det finns två eller fler identiteter i händelsen.
+* [Web SDK](../web-sdk/home.md): Web SDK skickar upplevelsehändelser till Adobe Experience Platform, och identitetstjänsten genererar ett diagram när det finns två eller fler identiteter i händelsen.
 * [Kundprofil i realtid](../profile/home.md): Innan attribut och händelser för en viss profil sammanfogas kan kundprofilen i realtid referera till identitetsdiagrammet. Mer information finns i guiden [förstå relationen mellan identitetstjänsten och kundprofilen i realtid](./identity-and-profile.md).
 * [Destinationer](../destinations/home.md): Destinationer kan skicka profilinformation till andra system baserat på ett identitetsnamnutrymme, t.ex. hashad e-post.
 * [Segmentmatchning](../segmentation/ui/segment-match/overview.md): Segmentmatchning matchar två profiler i två olika sandlådor som har samma id-namnutrymme och identitetsvärde.

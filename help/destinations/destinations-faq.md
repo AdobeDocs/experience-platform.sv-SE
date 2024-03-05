@@ -3,7 +3,7 @@ keywords: mål; frågor; vanliga frågor; frågor och svar; destinationer faq
 title: Frågor och svar
 description: Svar på de vanligaste frågorna om Adobe Experience Platform destinationer
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '1670'
 ht-degree: 2%
@@ -185,11 +185,11 @@ Detaljerade förklaringar av kraven för ID-matchning finns i [Krav för ID-matc
 
 ### Måste jag använda Experience Platform Web SDK för att skicka målgrupper och attribut till Adobe Target?
 
-+++svarsnr, [Web SDK](../edge/home.md) behöver inte aktivera målgrupper till [Adobe Target](catalog/personalization/adobe-target-connection.md).
++++svarsnr, [Web SDK](../web-sdk/home.md) behöver inte aktivera målgrupper till [Adobe Target](catalog/personalization/adobe-target-connection.md).
 
 Om [[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html) används i stället för Web SDK, men endast nästa sessionspersonalisering stöds.
 
-För [personalisering på samma sida och nästa sida](ui/activate-edge-personalization-destinations.md) användningsfall måste du använda antingen [Web SDK](../edge/home.md) eller [API för Edge Network Server](../server-api/overview.md). Läs dokumentationen om [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md) om du vill ha mer information om implementeringen.
+För [personalisering på samma sida och nästa sida](ui/activate-edge-personalization-destinations.md) användningsfall måste du använda antingen [Web SDK](../web-sdk/home.md) eller [API för Edge Network Server](../server-api/overview.md). Läs dokumentationen om [aktivera målgrupper mot kantmål](ui/activate-edge-personalization-destinations.md) om du vill ha mer information om implementeringen.
 +++
 
 ### Finns det någon gräns för hur många attribut jag kan skicka från Real-time Customer Data Platform till Adobe Target eller ett anpassat anpassningsmål?
@@ -208,7 +208,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 
 ### När jag har skapat en målgrupp i Experience Platform, hur lång tid tar det för den målgruppen att bli tillgänglig för kantsegmentering?
 
-+++Besvara målgruppsdefinitioner sprids till [Edge Network](../edge/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som är kvalificerade för målgruppen missas.
++++Besvara målgruppsdefinitioner sprids till [Edge Network](../web-sdk/home.md) på upp till en timme. Men om en målgrupp aktiveras inom den första timmen kan vissa besökare som är kvalificerade för målgruppen missas.
 +++
 
 ### Var kan jag se de aktiverade attributen i Adobe Target?

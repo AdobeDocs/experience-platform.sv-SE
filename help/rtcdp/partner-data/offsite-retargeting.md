@@ -3,7 +3,7 @@ title: Återannonsering utanför webbplatsen av oautentiserade besökare
 description: Lär dig hur du omdirigerar oautentiserade användare genom att använda ID:n för potentiella kunder för att skapa ett beräknat attribut som kan användas för att skapa en publik med oautentiserade användare.
 feature: Use Cases, Customer Acquisition
 exl-id: cffa3873-d713-445a-a3e1-1edf1aa8eebb
-source-git-commit: 0ef76fd950ef2e82e390cb39e2cd984004a140f2
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '1358'
 ht-degree: 0%
@@ -39,7 +39,7 @@ För att implementera användningsexemplet använder du dessutom följande Real-
 - [Målgrupper](../../segmentation/home.md)
 - [Beräknade attribut](../../profile/computed-attributes/overview.md)
 - [Mål ](../../destinations/home.md)
-- [Webb-SDK](../../edge/home.md)
+- [Webb-SDK](../../web-sdk/home.md)
 
 ## Hämta partnerdata till Real-Time CDP {#get-data-in}
 

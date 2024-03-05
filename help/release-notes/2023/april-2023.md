@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2023
 description: Versionsinformation från april 2023 för Adobe Experience Platform.
 exl-id: 7b501467-99a7-4aee-ae86-66c851250ecf
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: 5de1ec17b78c97be21c0d2afd6f0b119a6074b6f
 workflow-type: tm+mt
-source-wordcount: '2055'
+source-wordcount: '2011'
 ht-degree: 2%
 
 ---
@@ -67,7 +67,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Funktion | Beskrivning |
 | --- | --- |
 | IP-adressofuscation för datastreams | Nu kan du definiera IP-obfusionsalternativ på hel- eller partiell datastream-nivå i [användargränssnitt för konfiguration av datastream](../../datastreams/configure.md). <br><br>Inställningen för IP-förfalskning på datastream-nivå har företräde framför IP-förfalskning som har konfigurerats i Adobe Target och Audience Manager. <br><br>Data som skickas till Adobe Analytics påverkas inte av datastream-nivån [!UICONTROL IP Obfuscation] inställning. Adobe Analytics får för närvarande oantastade IP-adresser. För att Analytics ska kunna ta emot dolda IP-adresser måste du konfigurera IP-förfalskning separat i Adobe Analytics. Detta beteende kommer att uppdateras i framtida versioner.<br><br> Mer information om IP-förfalskning och instruktioner om hur du konfigurerar den finns i [konfigurationsdokumentation för datastream](../../datastreams/configure.md#advanced-options). |
-| [Åsidosättningar av dataströmskonfiguration](../../datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Att åsidosätta datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).</li></ol> |
+| [Åsidosättningar av dataströmskonfiguration](../../datastreams/overrides.md) | Nu kan du definiera ytterligare konfigurationsalternativ för datastreams, som du kan använda för att åsidosätta specifika inställningar, som händelsedatamängder, Target-egenskapstoken, ID-synkroniseringsbehållare och rapportsviter för Analytics. <br><br>Att åsidosätta datastream-konfigurationer är en tvåstegsprocess: <ol><li>Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../datastreams/configure.md).</li><li>Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via Web SDK [taggtillägg](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md).</li></ol> |
 | OAuth JWT Secret | The [OAuth JWT Secret](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/secrets.html) gör att kunder kan använda Adobe och Google Service Token för att stödja interaktioner mellan server och server vid händelsevidarebefordran. |
 | [!DNL Pinterest Conversions API] extension | The [[!DNL Pinterest Conversions API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/pinterest/overview.html) tillägg för händelsevidarebefordran gör att du kan utnyttja data som samlats in i Adobe Experience Platform Edge Network och skicka dem till [!DNL Pinterest] i form av händelser på serversidan med [!DNL Pinterest Conversions API]. |
 
@@ -79,7 +79,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 **Nya destinationer** {#new-destinations}
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL Salesforce Marketing Cloud Account Engagement] anslutning](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-account-engagement.md) | Använd Salesforce Marketing Cloud Account Engagement (tidigare Pardot) för att hämta, spåra, poängsätta och betygsätta leads. Använd den här destinationen för B2B-ärenden som omfattar flera avdelningar och beslutsfattare som kräver längre försäljnings- och beslutscykler. |
 

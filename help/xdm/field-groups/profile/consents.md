@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Fältgrupp för innehåll och inställningar
 description: Läs mer om schemafältgruppen Innehåll och inställningar.
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -185,7 +185,7 @@ Se självstudiekursen om [skapa ett schema i användargränssnittet](https://www
 
 ## Hantera samtycke och ändringar av inställningar
 
-När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med hjälp av [Adobe Experience Platform Web SDK](../../../edge/consent/supporting-consent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
+När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med hjälp av [Adobe Experience Platform Web SDK](/help/web-sdk/consent/supporting-consent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
 
 ## Nästa steg
 

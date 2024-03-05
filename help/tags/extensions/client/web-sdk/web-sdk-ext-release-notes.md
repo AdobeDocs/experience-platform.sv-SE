@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: fb2cf23f4762eec4bcab1126bdfb1aaa4144e777
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
-source-wordcount: '1978'
+source-wordcount: '1971'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
-Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](/help/web-sdk/release-notes.md).
 
 ## Version 2.21.4 - 10 januari 2024
 
@@ -81,7 +81,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 **Nya funktioner**
 
 * Innehåller version 2.16.0 av Adobe Experience Platform Web SDK.
-* Stöd för [åsidosättningar av konfiguration av datastream](../../../../datastreams/overrides.md).
+* Stöd för [åsidosättningar av konfiguration av datastream](/help/datastreams/overrides.md).
 * Lägg till borttagningsmeddelande i `datasetId` på `sendEvent` -kommando.
 
 
@@ -98,7 +98,7 @@ Innehåller version 2.19.1 av Adobe Experience Platform Web SDK.
 **Nya funktioner**
 
 * (Beta) Tillagd **[!UICONTROL Update variable]** åtgärd och **[!UICONTROL Variable]** dataelement.
-* Tillagd konfiguration för [`onBeforeLinkClickSend`](../../../../edge/fundamentals/configuring-the-sdk.md#onBeforeLinkClickSend) callback-funktion.
+* Tillagd konfiguration för [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) callback-funktion.
 
 **Korrigeringar och förbättringar**
 
@@ -176,7 +176,7 @@ Innehåller version 2.8.0 av Adobe Experience Platform Web SDK Library.
 
 Innehåller version 2.7.0 av Adobe Experience Platform Web SDK Library.
 
-* Ytterligare information från Edge Network finns i Send Event Complete-händelsen, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion. Mer information finns i [Spåra händelser.](../../../../edge/fundamentals/tracking-events.md)
+* Ytterligare information från Edge Network finns i Send Event Complete-händelsen, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion.
 
 ## Version 2.7.3 - 7 september 2021
 
@@ -223,10 +223,10 @@ Innehåller version 2.5.0 av Adobe Experience Platform Web SDK Library.
 
 Innehåller version 2.4.0 av Adobe Experience Platform Web SDK Library.
 
-* Tillagd [&quot;dokument tas bort&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html#using-the-sendbeacon-api) kryssruta för att skicka händelseåtgärdsgränssnitt.
-* Stöd för `out` alternativ när [konfigurera standardsamtycke](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent) som släpper alla händelser tills samtycke tas emot (den befintliga `pending` Alternativet placerar händelser i kö och skickar dem när de har fått sitt samtycke).
+* Tillagd [&quot;Dokumentborttagning&quot;](/help/web-sdk/commands/sendevent/documentunloading.md) kryssruta för att skicka händelseåtgärdsgränssnitt.
+* Stöd för `out` alternativ när [konfigurera standardsamtycke](/help/web-sdk/commands/configure/defaultconsent.md) som släpper alla händelser tills samtycke tas emot (den befintliga `pending` Alternativet placerar händelser i kö och skickar dem när de har fått sitt samtycke).
 * Ett verktygstips har lagts till i standardfältet för samtycke.
-* Stöd för [Adobe Consent 2.0 standard](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard).
+* Stöd för Adobe Consent 2.0-standarden har lagts till när [`setConsent`](/help/web-sdk/commands/setconsent.md) -kommando.
 * Ett bättre fel visas nu i användargränssnittet för XDM-objektets dataelement om användarens åtkomsttoken är ogiltig eller felaktigt etablerad.
 * Korsfel (som inte påverkar tilläggsprogrammets funktion) som visades på webbläsarens utvecklarkonsol när ett XDM-objektdataelement visades har åtgärdats.
 
@@ -251,7 +251,7 @@ Innehåller version 2.3.0 av Adobe Experience Platform Web SDK Library.
 ## Version 2.1.0 - 5 augusti 2020
 
 * Brytningsändring: Ta bort `syncIdentity` åtgärd och support som skickar dessa ID:n i `sendEvent` i stället. Inaktivera alla befintliga regler med den här åtgärden innan du uppgraderar tillägget.
-* Uppdatera till allokering v. 2.1.0 ([Versionsinformation](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html))
+* Uppdatera till allokering v. 2.1.0 ([Versionsinformation](/help/web-sdk/release-notes.md))
 * Stöd för IAB 2.0-standard för samtycke i `setConsent` åtgärd.
 * Stöd för att åsidosätta datauppsättnings-ID i `sendEvent` åtgärd.
 * Lägg till ett nytt dataelement av typen `IdentityMap` som kan användas för att fylla i `identityMap` i XDM-objektdataelementet som nu är aktiverat, och i `setConsent` åtgärd.

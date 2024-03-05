@@ -7,10 +7,10 @@ level: Beginner
 role: User, Developer, Admin
 topic: Integrations
 exl-id: a52870c4-10e6-45a0-a502-f48da3398f3f
-source-git-commit: 12bd4c6c1993afc438b75a3e5163ebe2fe8a8dd0
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1287'
-ht-degree: 2%
+source-wordcount: '1251'
+ht-degree: 0%
 
 ---
 
@@ -73,7 +73,7 @@ Beroende på din Mailchimp-plan och om du använder transaktionsbaserade e-postm
 >  
 >Det händelsenamn som du valde för att utlösa din automatisering eller resa i Mailchimp är samma händelsenamn som du måste skicka med det här tillägget. Anteckna händelsenamnet i din Mailchimp-automatisering och spara det för ett senare steg.
 
-## Installation och konfiguration
+## Installation och konfigurering
 
 I det här avsnittet beskrivs stegen för hur du installerar och konfigurerar tillägget. Om du vill spara API-nyckeln för Mailchimp på ett säkert sätt måste du använda vidarebefordran av händelser [hemligheter](../../../ui/event-forwarding/secrets.md).
 
@@ -105,7 +105,7 @@ Tillägget är nu installerat och konfigurerat för att användas i din egenskap
 
 När du använder det här tillägget i en [regel](../../../ui/managing-resources/rules.md), finns det flera datavärden som tillägget skickar till Mailchimp för varje händelse. För en vanlig implementering kan du konfigurera [Adobe Experience Platform Web SDK-tillägg](../../client/web-sdk/overview.md) för att skicka data till [!DNL Platform Edge Network] som används av tillägget i egenskapen för händelsens vidarebefordring.
 
-De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data eller data som inte är XDM-data. Läs mer om [skicka XDM-data](../../../../edge/fundamentals/tracking-events.md#sending-non-xdm-data).
+De data som krävs för det här tillägget kan skickas från Web SDK som antingen XDM-data (med [`xdm`](/help/web-sdk/commands/sendevent/xdm.md) objekt) eller data som inte är XDM (med [`data`](/help/web-sdk/commands/sendevent/data.md) -objekt).
 
 Om en kund till exempel gör ett köp eller registrerar sig för en händelse på din webbplats, kan du skicka ett bekräftelsemeddelande via Mailchimp med det här tillägget. När du har skickat den nödvändiga informationen från Web SDK till Edge Network utlöser tillägget e-postmeddelandet med Mailchimp.
 

@@ -2,9 +2,9 @@
 title: Översikt över datainsamling från början till slut
 description: En översikt på hög nivå över hur du skickar händelsedata till Adobe Experience Cloud-lösningar med Adobe Experience Platform datainsamlingsfunktioner.
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2539'
+source-wordcount: '2534'
 ht-degree: 0%
 
 ---
@@ -101,7 +101,7 @@ En datastream är en konfiguration som anger för Edge Network var du vill att d
 
 Välj **[!UICONTROL Datastreams]** i den vänstra navigeringen. Här kan du välja ett befintligt datastam från listan som du vill redigera eller skapa en ny konfiguration genom att välja **[!UICONTROL New Datastream]**.
 
-![Dataströmmar](./images/e2e/datastreams.png)
+![Datastreams](./images/e2e/datastreams.png)
 
 Konfigurationskraven för en datastream beror på vilka produkter och funktioner du skickar data till. Mer information om konfigurationsalternativen för respektive produkt finns i [datastreams - översikt](../datastreams/overview.md).
 
@@ -113,8 +113,8 @@ När du har skapat ett schema och ett datastream är nästa steg att installera 
 >
 >I det här avsnittet används användargränssnittet för datainsamling för att konfigurera Web SDK-taggtillägget, men du kan även installera och konfigurera det med Raw-kod i stället. Mer information finns i följande handböcker:
 >
->* [Installera SDK](../edge/fundamentals/installing-the-sdk.md)
->* [Konfigurera SDK](../edge/fundamentals/configuring-the-sdk.md)
+>* [Installera SDK](/help/web-sdk/install/overview.md)
+>* [Konfigurera SDK](/help/web-sdk/commands/configure/overview.md)
 >
 >Observera också att även om du bara vill använda händelsevidarebefordran måste du ändå installera och konfigurera SDK enligt beskrivningen innan du konfigurerar händelsevidarebefordran på en [senare steg](#event-forwarding).
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingen för kundattribut
 description: Lär dig koppla kundattribut till Adobe Experience Platform med API:er eller användargränssnittet
 exl-id: 63765ecd-ddb5-4992-a3de-d53f054bfb28
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '380'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Du kan inte välja ett befintligt namnutrymme för identiteten när du använder
 
 För [!DNL Customer Attributes] data att knyta till andra [!DNL Profile] datauppsättningar, dess data och identiteter måste kunna matchas mot ett Experience Cloud-ID.
 
-Du kan skapa `CORE` namnutrymme genom att ange Experience Cloud-ID för besökaren med [Web SDK](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html), [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/)eller [Experience Cloud ID-tjänste-API](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html).
+Du kan skapa `CORE` namnutrymme genom att ange Experience Cloud-ID för besökaren med [Web SDK](/help/web-sdk/identity/overview.md), [Mobile SDK](https://developer.adobe.com/client-sdks/documentation/mobile-core/identity/)eller [Experience Cloud ID-tjänste-API](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html).
 
 The [!DNL Customer Attributes] filen fyller inte i några andra identitetsrelationer. Exempel: om en [!DNL Customer Attributes] källdatauppsättningen innehåller en **E-post** och **Förmåns-ID** måste fälten märkas som identitetsfält i schemat för att kunna bearbetas till [!DNL Identity Service].
 

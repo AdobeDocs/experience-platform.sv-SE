@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformationen för Adobe Experience Platform i januari 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3c0b7c4eee7c790a8ffae95c05a8db6ba7c3b285
+source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 2%
@@ -28,7 +28,7 @@ Med Experience Platform kan du prenumerera på händelsebaserade aviseringar fö
 **Nya eller uppdaterade funktioner**
 | Funktion | Beskrivning | | — | — | | Fliken Aviseringshistorik | Som Experience Platform-administratör kan du använda funktionen Hantera aviseringsprenumeranter för att tilldela en avisering till ett Adobe-användar-ID, en extern e-postadress eller en e-postgrupplista. Mer information finns i [dokumentation för varningsgränssnitt](../../observability/alerts/ui.md) om du vill ha mer information om fliken Historik. |
 
-
+{style="table-layout:auto"}
 
 Läs mer om varningar i [[!DNL Observability Insights] översikt](../../observability/home.md).
 
@@ -40,7 +40,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [Stöd för webb-meddelanden i appen i Web SDK](../../edge/personalization/web-in-app-messaging.md) | Adobe Experience Platform Web SDK har nu stöd för konfiguration av Web In-App Messaging för Adobe Journey Optimizer-kampanjer. |
+| [Stöd för webb-meddelanden i appen i Web SDK](../../web-sdk/personalization/web-in-app-messaging.md) | Adobe Experience Platform Web SDK har nu stöd för konfiguration av Web In-App Messaging för Adobe Journey Optimizer-kampanjer. |
 
 {style="table-layout:auto"}
 

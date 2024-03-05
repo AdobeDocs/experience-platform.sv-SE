@@ -2,7 +2,7 @@
 title: Personalisering via Adobe Target
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target.
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '591'
 ht-degree: 1%
@@ -17,7 +17,7 @@ API:t för Edge Network Server kan leverera och återge personaliserade upplevel
 
 >[!IMPORTANT]
 >
->Personaliseringsupplevelser som skapats med [Target Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) stöds inte fullt ut av Server-API:t. Server-API:t kan **hämta** aktiviteter skapade av VEC, men Server API kan inte **återge** aktiviteter skapade av VEC. Om du vill återge aktiviteter skapade av VEC måste du implementera [hybridpersonalisering](../edge/personalization/hybrid-personalization.md) med Web SDK och Edge Network Server API.
+>Personaliseringsupplevelser som skapats med [Target Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) stöds inte fullt ut av Server-API:t. Server-API:t kan **hämta** aktiviteter skapade av VEC, men Server API kan inte **återge** aktiviteter skapade av VEC. Om du vill återge aktiviteter skapade av VEC måste du implementera [hybridpersonalisering](../web-sdk/personalization/hybrid-personalization.md) med Web SDK och Edge Network Server API.
 
 ## Konfigurera ditt datastream {#configure-your-datastream}
 

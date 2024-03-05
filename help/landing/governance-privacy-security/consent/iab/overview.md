@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i Experience Platform
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: 43b3b79a4d24fd92c7afbf9ca9c83b0cbf80e2c2
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2505'
+source-wordcount: '2477'
 ht-degree: 0%
 
 ---
@@ -37,14 +37,14 @@ Om du vill följa med i den här guiden måste du använda en CMP, antingen komm
 
 Handboken kräver även en fungerande förståelse av följande plattformstjänster:
 
-* [Experience Data Model (XDM)](../../../../xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
-* [Adobe Experience Platform Identity Service](../../../../identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
-* [Kundprofil i realtid](../../../../profile/home.md): Använder [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
-* [Adobe Experience Platform Web SDK](../../../../edge/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
-   * [Kommandon för SDK-medgivande](../../../../edge/consent/supporting-consent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
-* [Adobe Experience Platform segmenteringstjänst](../../../../segmentation/home.md): Dela upp [!DNL Real-Time Customer Profile] data till grupper av individer som delar liknande egenskaper och svarar på liknande sätt som marknadsföringsstrategier.
+* [Experience Data Model (XDM)](/help/xdm/home.md): Det standardiserade ramverk som Experience Platform använder för att ordna kundupplevelsedata.
+* [Adobe Experience Platform Identity Service](/help/identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
+* [Kundprofil i realtid](/help/profile/home.md): Använder [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
+* [Adobe Experience Platform Web SDK](/help/web-sdk/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
+   * [Kommandon för SDK-medgivande](/help/web-sdk/consent/supporting-consent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
+* [Adobe Experience Platform segmenteringstjänst](/help/segmentation/home.md): Dela upp [!DNL Real-Time Customer Profile] data till grupper av individer som delar liknande egenskaper och svarar på liknande sätt som marknadsföringsstrategier.
 
-Utöver de plattformstjänster som anges ovan bör du även känna till [mål](../../../../data-governance/home.md) och deras roll i plattformens ekosystem.
+Utöver de plattformstjänster som anges ovan bör du även känna till [mål](/help/data-governance/home.md) och deras roll i plattformens ekosystem.
 
 ## Sammanfattning av kundens godkännandeflöde {#summary}
 
@@ -102,7 +102,7 @@ Data om kundsamtycke måste skickas till datauppsättningar vars scheman innehå
 
 När du har skapat en [!DNL Profile]-aktiverade datauppsättningar för insamling av medgivandedata måste du se till att dina samkörningsprinciper alltid har konfigurerats så att de inkluderar TCF-medgivandefält i dina kundprofiler. Detta innebär att ange datauppsättningens prioritet så att din sambandsuppsättning prioriteras framför andra datauppsättningar som kan vara i konflikt.
 
-Mer information om hur du arbetar med sammanfogningsprinciper finns i [sammanfogningsprinciper - översikt](../../../../profile/merge-policies/overview.md). När du konfigurerar sammanfogningsprinciper måste du se till att dina segment innehåller alla nödvändiga attribut för samtycke som finns i [Fältgrupp för XDM-sekretesschema](./dataset.md#privacy-field-group), vilket beskrivs i guiden om förberedelse av datauppsättningar.
+Mer information om hur du arbetar med sammanfogningsprinciper finns i [sammanfogningsprinciper - översikt](/help/profile/merge-policies/overview.md). När du konfigurerar sammanfogningsprinciper måste du se till att dina segment innehåller alla nödvändiga attribut för samtycke som finns i [Fältgrupp för XDM-sekretesschema](./dataset.md#privacy-field-group), vilket beskrivs i guiden om förberedelse av datauppsättningar.
 
 ## Integrera Experience Platform Web SDK för att samla in data om kundernas samtycke {#sdk}
 
@@ -118,15 +118,15 @@ När du har konfigurerat din CMP för att generera medgivandesträngar måste du
 
 ### Skapa ett datastream
 
-För att SDK ska kunna skicka data till Experience Platform måste du först skapa ett datastream för Platform. Specifika steg för hur du skapar ett datastream finns i [SDK-dokumentation](../../../../datastreams/overview.md).
+För att SDK ska kunna skicka data till Experience Platform måste du först skapa ett datastream för Platform. Specifika steg för hur du skapar ett datastream finns i [SDK-dokumentation](/help/datastreams/overview.md).
 
 När du har angett ett unikt namn för datastream väljer du växlingsknappen bredvid **[!UICONTROL Adobe Experience Platform]**. Använd sedan följande värden för att fylla i resten av formuläret:
 
 | Datastream-fält | Värde |
 | --- | --- |
-| [!UICONTROL Sandbox] | Namnet på plattformen [sandlåda](../../../../sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
-| [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om [skapa en direktuppspelningsanslutning](../../../../ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt inlopp för direktuppspelning. |
-| [!UICONTROL Event Dataset] | Välj [!DNL XDM ExperienceEvent] datauppsättningen som skapades i [föregående steg](#datasets). Om du tog med [[!UICONTROL IAB TCF 2.0 Consent] fältgrupp](../../../../xdm/field-groups/event/iab.md) i den här datauppsättningens schema kan du spåra händelser om samtyckesändringar över tiden med hjälp av [`sendEvent`](#sendEvent) som lagrar data i den här datauppsättningen. Kom ihåg att medgivandevärdena som lagras i den här datauppsättningen **not** som används i automatiska arbetsflöden. |
+| [!UICONTROL Sandbox] | Namnet på plattformen [sandlåda](/help/sandboxes/home.md) som innehåller den strömningsanslutning och de datauppsättningar som krävs för att konfigurera dataströmmen. |
+| [!UICONTROL Streaming Inlet] | En giltig direktuppspelningsanslutning för Experience Platform. Se självstudiekursen om [skapa en direktuppspelningsanslutning](/help/ingestion/tutorials/create-streaming-connection-ui.md) om du inte har ett befintligt inlopp för direktuppspelning. |
+| [!UICONTROL Event Dataset] | Välj [!DNL XDM ExperienceEvent] datauppsättningen som skapades i [föregående steg](#datasets). Om du tog med [[!UICONTROL IAB TCF 2.0 Consent] fältgrupp](/help/xdm/field-groups/event/iab.md) i den här datauppsättningens schema kan du spåra händelser om samtyckesändringar över tiden med hjälp av [`sendEvent`](#sendEvent) som lagrar data i den här datauppsättningen. Kom ihåg att medgivandevärdena som lagras i den här datauppsättningen **not** som används i automatiska arbetsflöden. |
 | [!UICONTROL Profile Dataset] | Välj [!DNL XDM Individual Profile] datauppsättningen som skapades i [föregående steg](#datasets). När du svarar på CMP-krokar för ändring av samtycke med [`setConsent`](#setConsent) samlas insamlade data in i den här datauppsättningen. Eftersom den här datauppsättningen är profilaktiverad respekteras de medgivandevärden som lagras i den här datauppsättningen under automatiska arbetsflöden för verkställighet. |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
@@ -137,13 +137,9 @@ När du är klar väljer du **[!UICONTROL Save]** längst ned på skärmen och f
 
 När du har skapat dataströmmen som beskrivs i föregående avsnitt kan du börja använda SDK-kommandon för att skicka data om samtycke till plattformen. Avsnitten nedan innehåller exempel på hur varje SDK-kommando kan användas i olika scenarier.
 
->[!NOTE]
->
->En introduktion till den vanliga syntaxen för alla SDK-kommandon för plattformen finns i dokumentet om [köra kommandon](../../../../edge/fundamentals/executing-commands.md).
-
 #### Använda CMP-krokar för ändring av samtycke {#setConsent}
 
-Många CMP-modeller har färdiga kopplingar som lyssnar på händelser om samtycke. När dessa händelser inträffar kan du använda `setConsent` för att uppdatera kundens data om samtycke.
+Många CMP-modeller har färdiga kopplingar som lyssnar på händelser om samtycke. När dessa händelser inträffar kan du använda [`setConsent`](/help/web-sdk/commands/setconsent.md) för att uppdatera kundens data om samtycke.
 
 The `setConsent` -kommandot förväntar sig två argument:
 
@@ -226,7 +222,7 @@ alloy("sendEvent", {
 
 ### Hantera SDK-svar
 
-Alla [!DNL Platform SDK] kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se avsnittet om [hantering av lyckade eller misslyckade](../../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) i guiden om hur du kör SDK-kommandon för specifika exempel.
+Många Web SDK-kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se [Kommandosvar](/help/web-sdk/commands/command-responses.md) för mer information.
 
 ## Exportera segment {#export}
 

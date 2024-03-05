@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: dea75b92847320284e1dc1b939f3ae11a12077a8
+source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
 workflow-type: tm+mt
-source-wordcount: '1522'
+source-wordcount: '1494'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ I det här avsnittet kan du definiera hur Web SDK ska fungera när det gäller h
 * **[!UICONTROL Use third-party cookies]**: När det här alternativet är aktiverat försöker Web SDK lagra en användaridentifierare i en cookie från tredje part. Om det lyckas identifieras användaren som en enskild användare när de navigerar mellan flera domäner, i stället för att identifieras som en separat användare på varje domän. Om det här alternativet är aktiverat kanske SDK fortfarande inte kan lagra användaridentifieraren i en tredjeparts-cookie om webbläsaren inte stöder cookies från tredje part eller har konfigurerats av användaren så att cookies från tredje part inte tillåts. I det här fallet lagrar SDK bara identifieraren i förstahandsdomänen.
 
   >[!IMPORTANT]
-  >>Cookies från tredje part är inte kompatibla med [enhets-ID för första part](../../../../edge/identity/first-party-device-ids.md) i Web SDK.
+  >>Cookies från tredje part är inte kompatibla med [enhets-ID för första part](../../../../web-sdk/identity/first-party-device-ids.md) i Web SDK.
 Du kan antingen använda enhets-ID:n från en annan leverantör eller använda cookies från tredje part, men du kan inte använda båda funktionerna samtidigt.
   >
 ## Konfigurera personaliseringsinställningar {#personalization}
@@ -113,9 +113,9 @@ När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den
 
 ![Bild som visar inställningarna för datainsamling i Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-collection.png)
 
-* **[!UICONTROL Callback function]**: Återanropsfunktionen som finns i tillägget kallas också för [`onBeforeEventSend` function](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Edge Network. Mer detaljerad information om hur funktionen används finns [här](../../../../edge/fundamentals/tracking-events.md#modifying-events-globally).
+* **[!UICONTROL Callback function]**: Återanropsfunktionen som finns i tillägget kallas också för [`onBeforeEventSend` function](/help/web-sdk/commands/configure/onbeforeeventsend.md) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Edge Network.
 * **[!UICONTROL Enable click data collection]**: Web SDK kan automatiskt samla in länkklickningsinformation åt dig. Som standard är den här funktionen aktiverad men kan inaktiveras med det här alternativet. Länkarna är även märkta som nedladdningslänkar om de innehåller något av de nedladdningsuttryck som finns i [!UICONTROL Download Link Qualifier] textruta. Adobe tillhandahåller vissa standardkvalificerare för nedladdningslänk. Du kan redigera dem efter behov.
-* **[!UICONTROL Automatically collected context data]**: Som standard samlar Web SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du vill se en lista över den information som samlas in av Adobe finns den [här](../../../../edge/data-collection/automatic-information.md). Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, väljer du **[!UICONTROL Specific context information]** och markera de data som du vill samla in.
+* **[!UICONTROL Automatically collected context data]**: Som standard samlar Web SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, väljer du **[!UICONTROL Specific context information]** och markera de data som du vill samla in. Se [`context`](/help/web-sdk/commands/configure/context.md) för mer information.
 
 ## Konfigurera åsidosättningar av dataström {#datastream-overrides}
 
@@ -125,10 +125,10 @@ Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena
 
 Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
 
-1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](../../../../datastreams/configure.md).
+1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](/help/datastreams/configure.md).
 2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av taggtillägget Web SDK.
 
-Se datastream [dokumentation om åsidosättning av konfiguration](../../../../datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
+Se datastream [dokumentation om åsidosättning av konfiguration](/help/datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
 
 Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando kan du konfigurera åsidosättningarna på taggtilläggsskärmen som visas nedan.
 
@@ -136,10 +136,10 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 >
 Åsidosättningar av dataström måste konfigureras per miljö. Utvecklings-, staging- och produktionsmiljöerna har alla olika åsidosättningar. Du kan kopiera inställningarna mellan dem med hjälp av de dedikerade alternativen som visas på skärmen nedan.
 
-![Bild som visar åsidosättningar av dataströmskonfigurationer på tilläggssidan för Web SDK-taggen.](assets/datastream-overrides.png)
+![Bild som visar åsidosättningar av dataströmskonfigurationer med hjälp av tilläggssidan för Web SDK-taggen.](assets/datastream-overrides.png)
 
 ## Konfigurera avancerade inställningar
 
 Använd **[!UICONTROL Edge base path]** fält om du behöver ändra grundsökvägen som används för att interagera med Edge Network. Det här behöver inte uppdateras, men om du deltar i en beta eller alfa kan Adobe be dig att ändra det här fältet.
 
-![Bild som visar de avancerade inställningarna på tilläggssidan för Web SDK-taggar.](assets/advanced-settings.png)
+![Bild som visar de avancerade inställningarna på tilläggssidan för Web SDK-taggen.](assets/advanced-settings.png)

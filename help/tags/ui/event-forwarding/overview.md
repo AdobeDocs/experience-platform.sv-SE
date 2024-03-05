@@ -3,9 +3,9 @@ title: Översikt över vidarebefordran av händelser
 description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 2005238d2e06ed91fd4b0835be38a4b7b8ecf3b4
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1061'
+source-wordcount: '1055'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ Det här dokumentet innehåller en översikt på hög nivå över vidarebefordra
 >
 >Mer information om hur händelsevidarebefordran passar in i ekosystemet för datainsamling i Platform finns i [datainsamling - översikt](../../../collection/home.md).
 
-Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](../../../edge/home.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) ger följande fördelar:
+Vidarebefordran av händelser i kombination med Adobe Experience Platform [Web SDK](/help/web-sdk/home.md) och [Mobile SDK](https://experienceleague.adobe.com/docs/platform-learn/data-collection/mobile-sdk/overview.html) ger följande fördelar:
 
 **Prestanda**:
 

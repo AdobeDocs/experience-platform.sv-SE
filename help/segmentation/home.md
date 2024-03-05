@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '1627'
 ht-degree: 0%
@@ -92,7 +92,7 @@ Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera e
 >abstract="Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen i Edge-nätverket, vilket möjliggör användning av samma sida och nästa sida."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för kantsegmentering"
 
-Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../edge/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
+Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../web-sdk/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
 
 Läs antingen [API-dokumentation](./api/edge-segmentation.md) eller [Användargränssnittsdokumentation](./ui/edge-segmentation.md).
 

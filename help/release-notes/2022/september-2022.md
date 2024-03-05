@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Release Notes september 2022
 description: Versionsinformation för september 2022 för Adobe Experience Platform.
 exl-id: a7a4dcf8-2cf3-4e39-879d-bdfcbacb737a
-source-git-commit: 1e9d6b0c43461902c5b966aa1d0576103e872e0c
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '2887'
+source-wordcount: '2711'
 ht-degree: 2%
 
 ---
@@ -110,8 +110,8 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 | Integrering med vänster navigering i plattformsgränssnittet | Alla funktioner som tidigare var exklusiva för användargränssnittet för datainsamling (inklusive taggar, vidarebefordran av händelser och datastreams) är nu även tillgängliga via den vänstra navigeringen i Experience Platform, under kategorin **[!UICONTROL Data Collection]**. Detta eliminerar behovet av att växla mellan användargränssnitt när du arbetar med datainsamlingsfunktioner i Platform. |
 | Användarattribuering i taggar och händelsevidarebefordran | När listning är tillgänglig [!UICONTROL Properties] in-taggar och vidarebefordran av händelser, visar nu alla angivna egenskaper när de senast uppdaterades och vilken användare som gjorde uppdateringen. |
 | [[!DNL Snap Conversions API] extension](https://exchange.adobe.com/apps/ec/108550) för vidarebefordran av händelser | Nu kan du skicka data till [!DNL Snapchat Conversions API] med [händelsevidarebefordran](../../tags/ui/event-forwarding/overview.md) tillägg. Mer information om hur du autentiserar och använder API:t finns i [[!DNL Snapchat Marketing API] dokumentation](https://marketingapi.snapchat.com/docs/conversion.html). |
-| [[!DNL User-Agent Client Hints] i Web SDK](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK stöder nu [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i [!DNL User-Agent] på ett mer sekretessbelagt sätt. |
-| [Migrering av sida vid sida för Web SDK](../../edge/home.md#migrating-to-web-sdk) | Nu kan du migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, till exempel [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av Web SDK-migrering, utan att du behöver migrera alla sidor samtidigt. |
+| [Klienttips för användaragent i Web SDK](/help/web-sdk/use-cases/client-hints.md) | Web SDK stöder nu [Klienttips för användaragent](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). Klienttips gör att webbplatsägare kan komma åt mycket av den information som finns i [!DNL User-Agent] på ett mer sekretessbelagt sätt. |
+| [Migrering av sida vid sida för Web SDK](../../web-sdk/home.md#migrating-to-web-sdk) | Nu kan du migrera dina befintliga webbegenskaper från andra Experience Cloud-bibliotek, till exempel [!DNL at.js], till Web SDK, en sida i taget. Detta möjliggör en stegvis hantering av Web SDK-migrering, utan att du behöver migrera alla sidor samtidigt. |
 | [[!DNL Adobe Journey Optimizer] stöd för datastreams](../../datastreams/overview.md#aep) | Adobe Experience Platform-tjänsten för datastreams har nu stöd för [!DNL Adobe Journey Optimizer]. Med det här alternativet kan du använda webb- och appbaserade inkommande kanaler i [!DNL Adobe Journey Optimizer]. |
 
 {style="table-layout:auto"}
@@ -132,7 +132,7 @@ Mer information om datainsamling i Platform finns i [datainsamling - översikt](
 
 **Nya eller uppdaterade destinationer**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring. [Kom igång med Campaign](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). Observera att den här integreringen fungerar med [Adobe Campaign version 8.4 eller senare](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html#release-8-4-1). |
 | [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | The [!DNL Salesforce CRM] målet har uppdaterats för att stödja både kontakt- och lead-uppdateringar samt prestandaförbättringar för snabbare uppdateringar. |

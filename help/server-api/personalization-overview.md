@@ -2,10 +2,10 @@
 title: Personalisering - översikt
 description: Lär dig hur du använder API:t för Adobe Experience Platform Edge Network Server för att hämta personaliserat innehåll från personaliseringslösningar från Adobe.
 exl-id: 11be9178-54fe-49d0-b578-69e6a8e6ab90
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '739'
-ht-degree: 8%
+source-wordcount: '729'
+ht-degree: 4%
 
 ---
 
@@ -15,7 +15,7 @@ Med [!DNL Server API]kan ni hämta personaliserat innehåll från personaliserin
 
 Dessutom kan du [!DNL Server API] möjliggör personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../destinations/ui/activate-edge-personalization-destinations.md).
 
-När du använder Server-API:t måste du integrera det svar som personaliseringsmotorn ger med den logik som används för att återge innehåll på webbplatsen. Till skillnad från [Web SDK](../edge/home.md), [!DNL Server API] har ingen funktion för att automatiskt tillämpa innehåll som returneras av [!DNL Adobe Target] och [!DNL Offer Decisioning].
+När du använder Server-API:t måste du integrera det svar som personaliseringsmotorn ger med den logik som används för att återge innehåll på webbplatsen. Till skillnad från [Web SDK](../web-sdk/home.md), [!DNL Server API] har ingen funktion för att automatiskt tillämpa innehåll som returneras av [!DNL Adobe Target] och [!DNL Offer Decisioning].
 
 ## Terminologi {#terminology}
 

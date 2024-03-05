@@ -2,9 +2,9 @@
 title: Bearbeta data för kundgodkännande med Adobe Experience Platform Web SDK
 description: Lär dig hur du integrerar Adobe Experience Platform Web SDK för att bearbeta data om kundgodkännande i Adobe Experience Platform.
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '1320'
+source-wordcount: '1282'
 ht-degree: 0%
 
 ---
@@ -24,15 +24,15 @@ I den här självstudien förutsätts det att du redan har fastställt hur data 
 
 Den här guiden följer arbetsflödet för att konfigurera SDK med hjälp av taggtillägget i användargränssnittet. Om du inte vill använda tillägget och vill bädda in den fristående versionen av SDK direkt på din webbplats kan du läsa följande dokument i stället för den här handboken:
 
-* [Konfigurera ett datastream](../../../datastreams/overview.md)
-* [Installera SDK](../../../edge/fundamentals/installing-the-sdk.md)
-* [Konfigurera SDK för medgivandekommandon](../../../edge/consent/supporting-consent.md)
+* [Konfigurera ett datastream](/help/datastreams/overview.md)
+* [Installera SDK](/help/web-sdk/install/overview.md)
+* [Konfigurera SDK för medgivandekommandon](/help/web-sdk/commands/configure/defaultconsent.md)
 
 Installationsstegen i den här handboken kräver en fungerande förståelse för taggtillägg och hur de installeras i webbprogram. Mer information finns i följande dokumentation:
 
-* [Översikt över taggar](../../../tags/home.md)
-* [Snabbstartguide](../../../tags/quick-start/quick-start.md)
-* [Översikt över publicering](../../../tags/ui/publishing/overview.md)
+* [Översikt över taggar](/help/tags/home.md)
+* [Snabbstartguide](/help/tags/quick-start/quick-start.md)
+* [Översikt över publicering](/help/tags/ui/publishing/overview.md)
 
 ## Konfigurera en datastream
 
@@ -110,14 +110,7 @@ Det finns två scenarier där `setConsent` ska anropas på din webbplats:
 
 ### `setConsent` syntax
 
->[!NOTE]
->
->En introduktion till den vanliga syntaxen för SDK-kommandon för plattformar finns i dokumentet om [köra kommandon](../../../edge/fundamentals/executing-commands.md).
-
-The `setConsent` -kommandot förväntar sig två argument:
-
-1. En sträng som anger kommandotypen (i det här fallet `"setConsent"`)
-1. Ett nyttolastobjekt som innehåller en enda arraytypsegenskap: `consent`. The `consent` arrayen måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten för Adobe-standarden.
+The [`setConsent`](/help/web-sdk/commands/setconsent.md) ett nyttolastobjekt som innehåller en enda arraytypsegenskap förväntas av kommandot: `consent`. The `consent` arrayen måste innehålla minst ett objekt som innehåller de obligatoriska medgivandefälten för Adobe-standarden.
 
 De obligatoriska medgivandefälten för Adobe-standarden visas i följande exempel `setConsent` ring:
 
@@ -139,7 +132,7 @@ alloy("setConsent", {
         }
       },
       metadata: {
-        time: "2020-10-12T15:52:25+00:00"
+        time: "YYYY-10-12T15:52:25+00:00"
       }
     }
   }]
@@ -200,7 +193,7 @@ var setConsent = function () {
 
 ## Hantera SDK-svar
 
-Alla [!DNL Platform SDK] kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se avsnittet om [hantering av lyckade eller misslyckade](../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) i guiden om hur du kör SDK-kommandon för specifika exempel.
+Alla [!DNL Platform SDK] kommandon returnerar löften som anger om anropet lyckades eller misslyckades. Du kan sedan använda dessa svar för ytterligare logik, till exempel för att visa bekräftelsemeddelanden för kunden. Se [Kommandosvar](/help/web-sdk/commands/command-responses.md) för mer information.
 
 När du har gjort det `setConsent` anrop med SDK kan du använda profilvisningsprogrammet i plattformsgränssnittet för att kontrollera om data landas i profilarkivet. Se avsnittet om [söka efter profiler utifrån identitet](../../../profile/ui/user-guide.md#browse-identity) för mer information.
 

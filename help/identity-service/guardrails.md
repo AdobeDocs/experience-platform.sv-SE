@@ -3,7 +3,7 @@ keywords: Experience Platform;identitet;identitetstjänst;felsökning;skyddsräc
 title: Gardrutor för identitetstjänsten
 description: Det här dokumentet innehåller information om användning och hastighetsgränser för identitetstjänstens data som hjälper dig att optimera din användning av identitetsdiagrammet.
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: 1576405e6f1d674a75446f887c2912c4480d0e28
+source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
 workflow-type: tm+mt
 source-wordcount: '1526'
 ht-degree: 0%
@@ -101,7 +101,7 @@ Borttagning sker endast med data i identitetstjänsten och inte med kundprofilen
 Om du vill bevara dina autentiserade händelser mot CRM-ID:t rekommenderar vi att du ändrar dina primära ID:n från ECID till CRM ID. Läs följande dokument för steg om hur du implementerar den här ändringen:
 
 * [Konfigurera identitetskarta för Experience Platform-taggar](../tags/extensions/client/web-sdk/data-element-types.md#identity-map).
-* [Identitetsdata i Experience Platform Web SDK](../edge/identity/overview.md#using-identitymap)
+* [Identitetsdata i Experience Platform Web SDK](../web-sdk/identity/overview.md#using-identitymap)
 
 ### Exempel på scenarier
 

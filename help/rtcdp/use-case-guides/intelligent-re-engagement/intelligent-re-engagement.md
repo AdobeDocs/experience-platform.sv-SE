@@ -3,7 +3,7 @@ title: Intelligent återanvändning
 description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: ea0f53339d8549152a54267d537b04326f9164df
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
 source-wordcount: '3747'
 ht-degree: 1%
@@ -147,7 +147,7 @@ Med den här fältgruppen kan du testa din resa innan den publiceras med testpro
 
 #### Kundens digitala transaktionsschema
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via [Web SDK](/help/edge/home.md) och är nödvändigt för att kunna hänvisa till olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online och förbättrade målgruppsfunktioner.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via [Web SDK](/help/web-sdk/home.md) och är nödvändigt för att kunna hänvisa till olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online och förbättrade målgruppsfunktioner.
 
 Kundens digitala transaktionsschema representeras av en [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) klassen.
 
@@ -244,7 +244,7 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 >
 >Detta är en valfri implementering om du använder [[!DNL Adobe Analytics Source Connector]](/help/sources/connectors/adobe-applications/analytics.md).
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Det här schemat liknar kundens schema för digitala transaktioner, men skiljer sig åt på så sätt att det är avsett att användas när [Web SDK](/help/edge/home.md) är inte ett alternativ för datainsamling. Därför behövs det här schemat när du använder [!DNL Adobe Analytics Source Connector] för att skicka onlinedata till [!DNL Adobe Experience Platform] antingen som primär eller sekundär datastream.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Det här schemat liknar kundens schema för digitala transaktioner, men skiljer sig åt på så sätt att det är avsett att användas när [Web SDK](/help/web-sdk/home.md) är inte ett alternativ för datainsamling. Därför behövs det här schemat när du använder [!DNL Adobe Analytics Source Connector] för att skicka onlinedata till [!DNL Adobe Experience Platform] antingen som primär eller sekundär datastream.
 
 The [!DNL Adobe] webbanslutningsschemat representeras av en [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) klassen.
 

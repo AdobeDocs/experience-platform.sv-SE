@@ -3,16 +3,16 @@ title: Händelsetyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig hur du använder händelsetyper från Adobe Experience Platform Web SDK-tillägget i Adobe Experience Platform Launch.
 solution: Experience Platform
 exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
-source-git-commit: 2772660936444e39124a75deda6f78d97f7793f2
+source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '954'
 ht-degree: 0%
 
 ---
 
 # Händelsetyper
 
-Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. De här används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) och ska inte blandas ihop med [`eventType` fält i XDM](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html).
+Den här sidan beskriver de Adobe Experience Platform-händelsetyper som finns i taggtillägget Adobe Experience Platform Web SDK. De här används för att [skapa regler](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html) och ska inte blandas ihop med `eventType` fältet i [`xdm` object](/help/web-sdk/commands/sendevent/xdm.md).
 
 ## [!UICONTROL Send event complete]
 
@@ -38,7 +38,7 @@ var propositions = event.propositions;
 
 If `event.propositions` finns, är det en matris som innehåller objekt för personalisering. Förslagen i arrayen bestäms till stor del av hur händelsen skickades till servern.
 
-Anta att du inte har markerat [!UICONTROL Render decisions] kryssruta och inte har angett [!UICONTROL decision scopes] inuti [!UICONTROL Send event] åtgärd som ansvarar för att skicka händelsen.
+Anta att du inte har markerat [!UICONTROL Render decisions] kryssruta och inte har angett [!UICONTROL decision scopes] innanför [!UICONTROL Send event] åtgärd som ansvarar för att skicka händelsen.
 
 ![img.png](assets/send-event-render-unchecked-without-scopes.png)
 
@@ -89,7 +89,7 @@ När händelsen skickas [!UICONTROL Render decisions] kryssrutan har inte marker
 
 Om du istället hade markerat [!UICONTROL Render decisions] när händelsen skickades skulle SDK ha försökt att återge alla förslag som är berättigade till automatisk återgivning. Därför får vart och ett av de föreslagna objekten sin `renderAttempted` egenskap inställd på `true`. Du behöver inte återge dessa förslag manuellt i det här fallet.
 
-Hittills har du bara tittat på innehåll som är kvalificerat för automatisk återgivning (till exempel innehåll som har skapats i Adobe Target Visual Experience Composer). Så här hämtar du anpassat innehåll _not_ som kan återge automatiskt begär innehållet genom att tillhandahålla beslutsomfattningar med [!UICONTROL Decision scopes] i [!UICONTROL Send event] åtgärd. Ett omfång är en sträng som identifierar ett visst förslag som du vill hämta från servern.
+Hittills har du bara tittat på innehåll som är kvalificerat för automatisk återgivning (till exempel innehåll som har skapats i Adobe Target Visual Experience Composer). Så här hämtar du anpassat innehåll _not_ som kan återge automatiskt begär innehållet genom att tillhandahålla beslutsomfattningar med [!UICONTROL Decision scopes] fältet i [!UICONTROL Send event] åtgärd. Ett omfång är en sträng som identifierar ett visst förslag som du vill hämta från servern.
 
 The [!UICONTROL Send event] skulle se ut så här:
 
@@ -169,7 +169,7 @@ I det här exemplet, om förslag hittas på servern som matchar `salutation` ell
 ]
 ```
 
-Nu kan du återge offertinnehåll när du vill. I det här exemplet matchar förslaget `discount` omfånget är ett HTML-förslag som har skapats med Adobe Target formulärbaserade Experience Composer. Anta att du har ett element på sidan med ID:t för `daily-special` och vill återge innehållet från `discount` lägga in `daily-special` -element. Gör följande:
+Nu kan du återge offertinnehåll när du vill. I det här exemplet matchar förslaget `discount` omfånget är ett HTML-förslag som har skapats med Adobe Target formulärbaserade Experience Composer. Anta att du har ett element på sidan med ID:t för `daily-special` och vill återge innehållet från `discount` lägg in i `daily-special` -element. Gör följande:
 
 1. Extrahera förslag från `event` -objekt.
 1. Slinga igenom varje förslag och leta efter det med omfånget `discount`.
