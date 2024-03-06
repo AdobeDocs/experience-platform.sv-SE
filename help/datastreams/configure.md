@@ -2,9 +2,9 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: e82da728c86225ccb089ca5a2506d7c24f18b8f8
 workflow-type: tm+mt
-source-wordcount: '2519'
+source-wordcount: '2553'
 ht-degree: 0%
 
 ---
@@ -142,6 +142,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Analytics. Se
 | Inställning | Beskrivning |
 | --- | --- |
 | [!UICONTROL Report Suite ID] | **(Obligatoriskt)** ID:t för analysrapportsviten som du vill skicka data till. Detta ID finns i användargränssnittet i Adobe Analytics under [!UICONTROL Admin] > [!UICONTROL ReportSuites]. Om flera rapportsviter anges kopieras data till varje rapportserie. |
+| [!UICONTROL Visitor ID namespace] | (Valfritt) Det namnutrymme som du vill använda för Adobe Analytics [visitorID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html). När du skickar en händelse med ett värde som anges för namnutrymmet används den automatiskt som `visitorID` i Analytics. |
 | [!UICONTROL Report Suite Overrides] | I det här avsnittet kan du lägga till ytterligare ID:n för rapportsviten som du kan använda för att åsidosätta standarddessa. |
 
 ### Adobe Audience Manager-inställningar {#audience-manager}
