@@ -3,18 +3,18 @@ title: Skapa ett dataflöde för Braze-data i användargränssnittet
 description: Lär dig hur du skapar ett dataflöde för ditt Braze-konto med hjälp av användargränssnittet i Adobe Experience Platform.
 last-substantial-update: 2024-01-30T00:00:00Z
 badge: Beta
-source-git-commit: 632cff3ee4ca82d391e9a1df0cb38d903e8a5428
+source-git-commit: bfcea2a30a0ecadcafaddf7660eef90952dcade6
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '683'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Braze] källanslutning i användargränssnittet
+# Skapa en [!DNL Braze Currents] källanslutning i användargränssnittet
 
 >[!NOTE]
 >
->The [!DNL Braze] källan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+>The [!DNL Braze Currents] källan är i betaversion. Läs [källöversikt](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 [!DNL Braze] möjliggör kundcentrerad interaktion mellan konsumenter och varumärken i realtid. [!DNL Braze Currents] är ett dataflöde i realtid av engagemangshändelser från Braze-plattformen som är den mest robusta men detaljerade exporten från [!DNL Braze] plattform.
 
@@ -44,7 +44,7 @@ Om du redan har en [!DNL Braze] kan du hoppa över resten av dokumentet och gå 
 
 Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *Marknadsföringsautomatisering* kategori, välj **[!UICONTROL Braze]** och sedan markera **[!UICONTROL Add data]**.
+Under *Marknadsföringsautomatisering* kategori, välj **[!UICONTROL Braze Currents]** och sedan markera **[!UICONTROL Add data]**.
 
 ![Källkatalogen på användargränssnittet i Experience Platform med källan för Braze Currents markerad.](../../../../images/tutorials/create/braze/catalog.png)
 
@@ -67,16 +67,16 @@ Konfigurera sedan mappningen för dina data med mappningsgränssnittet.
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-När anslutningen har skapats måste du samla in följande värden för autentiseringsuppgifter, som du sedan anger i Braze Dashboard för att skicka data till [!DNL Platform]. Mer information finns i [!DNL Braze] [guide för att navigera till valutor](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
+När anslutningen har skapats måste du samla in följande värden för autentiseringsuppgifter, som du sedan anger i Braze Dashboard för att skicka data till Experience Platform. Mer information finns i [!DNL Braze] [guide för att navigera till valutor](https://www.braze.com/docs/user_guide/data_and_analytics/braze_currents/setting_up_currents/#step-2-navigate-to-currents).
 
 | Fält | Beskrivning |
-| ---------- | ----------- |
-| `Client ID` | Klient-ID som är kopplat till din [!DNL Platform] källa. |
-| `Client Secret` | Klienthemligheten som är kopplad till din [!DNL Platform] källa. |
-| `Tenant ID` | Klient-ID som är kopplat till din [!DNL Platform] källa. |
-| `Sandbox Name` | Sandlådan som är kopplad till din [!DNL Platform] källa. |
-| `Dataflow ID` | Det dataflödes-ID som är kopplat till din [!DNL Platform] källa. |
-| `Streaming Endpoint` | Slutpunkten för direktuppspelning som är kopplad till din [!DNL Platform] källa. Observera att Braze automatiskt konverterar detta till batchströmningsslutpunkten. |
+| --- | --- |
+| Klient-ID | Klient-ID som är kopplat till Experience Platform-källan. |
+| Klienthemlighet | Klienthemligheten som är kopplad till Experience Platform-källan. |
+| Klient-ID | Klient-ID som är kopplat till Experience Platform-källan. |
+| Namn på sandlåda | Sandlådan som är associerad med Experience Platform-källan. |
+| Dataflödes-ID | Det dataflödes-ID som är kopplat till Experience Platform-källan. |
+| Slutpunkt för direktuppspelning | Den slutpunkt för direktuppspelning som är kopplad till Experience Platform-källan. **Anteckning**: [!DNL Braze] konverterar automatiskt detta till gruppströmningsslutpunkten. |
 
 ### Konfigurera [!DNL Braze Currents] för att strömma data till datakällan
 
