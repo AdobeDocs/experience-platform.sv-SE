@@ -5,7 +5,7 @@ title: Skapa och redigera datatyper med användargränssnittet
 type: Tutorial
 description: Lär dig hur du skapar och redigerar datatyper i användargränssnittet i Experience Platform.
 exl-id: 2c917154-c425-463c-b8c8-04ba37d9247b
-source-git-commit: 6e58f070c0a25d7434f1f165543f92ec5a081e66
+source-git-commit: c04e5a49f2a4e90345ca20ecd0547d02b5004fcf
 workflow-type: tm+mt
 source-wordcount: '1330'
 ht-degree: 0%
@@ -29,7 +29,7 @@ Adobe Experience Platform har många standarddatatyper som kan användas för et
 
 I den här självstudiekursen beskrivs stegen för att skapa och redigera anpassade datatyper i användargränssnittet för plattformen.
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översikt](../../home.md) en introduktion till XDM:s roll i Experience Platform-ekosystemet, och [grunderna för schemakomposition](../../schema/composition.md) för hur datatyper bidrar till XDM-scheman.
 
@@ -105,7 +105,7 @@ Detta visar hur flexibla datatyper kan vara när det gäller att beskriva dina d
 
 När du har lagt till fält till datatypen väljer du **[!UICONTROL Save]** för att spara ändringarna och lägga till datatypen i [!DNL Schema Library].
 
-## Lägg till datatypen i ett schema
+## Lägg till datatypen i ett schema {#add-data-type}
 
 När du har skapat en datatyp kan du börja använda den i dina scheman. Eftersom XDM-scheman består av en klass och noll eller flera fältgrupper, kan fält som tillhandahålls av en datatyp inte läggas till direkt i ett schema. De måste i stället inkluderas i en klass eller en fältgrupp.
 
@@ -123,7 +123,7 @@ Arbetsytan uppdaterar fältets datatyp från[!UICONTROL Object]till den nya data
 
 ![](../../images/ui/resources/data-types/converted.png)
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 I den här handboken beskrivs hur du skapar och redigerar datatyper med hjälp av användargränssnittet för plattformen. Mer information om funktionerna i [!UICONTROL Schemas] arbetsytan, se [[!UICONTROL Schemas] arbetsyta - översikt](../overview.md).
 

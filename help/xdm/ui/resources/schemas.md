@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 5e57df3fbc22baa1c7abbb02a003ad8663aad040
+source-git-commit: 021cd2f2127dee1618335585da01ea1c5a5e9696
 workflow-type: tm+mt
 source-wordcount: '3523'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Den här guiden ger en översikt över hur du skapar, redigerar och hanterar XDM
 >
 >Om du vill få en genomgång av hur du skapar schemat följer du med [självstudiekurs om att skapa scheman](../../tutorials/create-schema-ui.md) för att skapa ett komplett exempelschema och bekanta dig med de många funktionerna i [!DNL Schema Editor].
 
-## Förutsättningar
+## Förutsättningar {#prerequisites}
 
 Handboken kräver en fungerande förståelse för XDM System. Se [XDM - översikt](../../home.md) en introduktion till XDM:s roll i Experience Platform-ekosystemet, och [grunderna för schemakomposition](../../schema/composition.md) för en översikt över hur scheman är uppbyggda.
 
@@ -350,7 +350,7 @@ En ny dialogruta öppnas där du ombeds bekräfta att du vill tilldela en ny kla
 
 När du har bekräftat klassändringen återställs arbetsytan och alla dispositionsförlopp går förlorade.
 
-## Nästa steg
+## Nästa steg {#next-steps}
 
 Det här dokumentet innehåller grunderna för att skapa och redigera scheman i plattformsgränssnittet. Vi rekommenderar att du granskar [självstudiekurs om att skapa scheman](../../tutorials/create-schema-ui.md) för ett omfattande arbetsflöde för att skapa ett komplett schema i användargränssnittet, inklusive att skapa anpassade fältgrupper och datatyper för unika användningsfall.
 

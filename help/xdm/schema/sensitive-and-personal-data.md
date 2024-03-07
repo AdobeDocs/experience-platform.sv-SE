@@ -2,14 +2,14 @@
 title: Känslig och personlig information i XDM
 description: Läs om viktiga aspekter av känslig personlig information (SPI) och personligt identifierbar information (PII) i Experience Data Model (XDM).
 exl-id: 92a8b6ad-3c45-4772-8178-60f857ab13e2
-source-git-commit: 9785b252b7c9cb3513858476753b6b4f71277ed7
+source-git-commit: 302dca9a9f834dba1fd3fdac15284ea4e2fba282
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
 
-# Känslig och personlig information i XDM
+# känslig och personlig information i XDM
 
 Experience Data Model (XDM) innehåller standarddatastrukturer för användning i Adobe Experience Platform, så att ni kan samla in data om kundupplevelser. Dessa data kan innehålla känslig personlig information (SPI) och personligt identifierbar information (PII), t.ex. kundens e-postadress, namn, konto-ID och andra datafält.
 
@@ -45,6 +45,10 @@ Med Platform kan ni definiera egna fältgrupper och datatyper, vilket ger er ful
 * Remove fields from standard field groups pre-ingestion
 * Deprecate fields post-ingestion
 -->
+
+>[!IMPORTANT]
+>
+>SPI och PII ska endast sparas i [Individuell XDM-profil](../classes/individual-profile.md) och [XDM ExperienceEvent](../classes/experienceevent.md) -klasser. Som bästa praxis för borttagning av data samt sekretess- och styrningssyften ska du inte spara SPI och PII i några andra anpassade eller vanliga XDM-klasser.
 
 ## Nästa steg
 

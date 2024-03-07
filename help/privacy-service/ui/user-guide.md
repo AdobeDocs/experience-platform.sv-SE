@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: b16eae9698de6c20022fdf1a3ff659df35e440f6
+source-git-commit: 93d9e5965e0f5556ff2b584c8b66bd7a7be15d23
 workflow-type: tm+mt
-source-wordcount: '1414'
+source-wordcount: '1465'
 ht-degree: 0%
 
 ---
@@ -143,6 +143,8 @@ The **[!UICONTROL Create Request]** öppnas och visar tillgängliga alternativ f
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
 Välj **[!UICONTROL Job Type]** av begäran (&quot;Ta bort&quot; eller&quot;Åtkomst&quot;) och en eller flera tillgängliga produkter i listan.
+
+Privacy Servicen stöder två typer av arbetsförfrågningar för personuppgifter: [!UICONTROL Access] (läs) och/eller [!UICONTROL Delete]. Du kan antingen skicka in en begäran om att få alla uppgifter som finns i produkten och som rör ämnet för förfrågan, eller begära att få ta bort alla uppgifter som rör ämnet för förfrågan.
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
