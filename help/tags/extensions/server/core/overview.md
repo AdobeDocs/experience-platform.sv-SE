@@ -3,9 +3,9 @@ title: Översikt över tillägget för vidarebefordring av kärnhändelser
 description: Läs mer om Core-tillägget för vidarebefordran av händelser i Adobe Experience Platform.
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
+source-git-commit: 2ba02f94ff20281953d74b3213033e5f0a7fa111
 workflow-type: tm+mt
-source-wordcount: '1716'
+source-wordcount: '1707'
 ht-degree: 0%
 
 ---
@@ -26,13 +26,13 @@ I det här avsnittet beskrivs de villkorstyper som finns i Core-tillägget.  Des
 
 ### Egen kod
 
-Ange eventuell anpassad kod som måste finnas som villkor för händelsen. Använd den inbyggda kodredigeraren för att ange den anpassade koden. Vidarebefordran av händelser i Adobe Experience Platform har stöd för ES6.
+Ange eventuell anpassad kod som måste finnas som villkor för händelsen. Använd den inbyggda kodredigeraren för att ange den anpassade koden. Vidarebefordran av händelser i Adobe Experience Platform stöder ES13.
 
 1. Välj **[!UICONTROL Open Editor]**.
 1. Skriv den anpassade koden.
 1. Välj **[!UICONTROL Save]**.
 
-Om du vill komma åt ett dataelement i anpassad kod använder du `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
+Använd `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
 
 ```javascript
 getDataElementValue('productName') 
@@ -89,7 +89,7 @@ module.exports = (context) => {
 }
 ```
 
-Första gången som den här åtgärden utförs är `ruleStash` är `undefined` och initieras med ett tomt objekt. Nästa gång åtgärden körs, `ruleStash` returneras av åtgärden när den anropades tidigare. Använda ett objekt som `ruleStash` Med kan du lägga till nya data utan att förlora data som tidigare angetts av andra åtgärder från tillägget.
+Första gången som den här åtgärden utförs, är `ruleStash` är `undefined` och initieras med ett tomt objekt. Nästa gång åtgärden körs, `ruleStash` returneras av åtgärden när den anropades tidigare. Använda ett objekt som `ruleStash` Med kan du lägga till nya data utan att förlora data som tidigare angetts av andra åtgärder från tillägget.
 
 Du måste vara noga med att alltid returnera det fullständiga tillägget för regelstreck i det här fallet. Om du bara returnerar ett värde (till exempel 5) ser regelstrecket ut så här:
 
@@ -111,7 +111,7 @@ Om du har en regel med flera villkor är det möjligt att det här villkoret ret
 
 Följande värdejämförelseoperatorer är tillgängliga:
 
-**Lika med:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript == -operatorn). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
+**Lika med:** Villkoret returnerar true om de två värdena är lika med en icke-strikt jämförelse (i JavaScript ==-operatorn). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
 **Är inte lika med:** Villkoret returnerar true om de två värdena inte är lika med en icke-strikt jämförelse (i JavaScript är != operator). Värdena kan vara av alla typer. När du skriver ett ord som _true_, _false_, _null_, eller _undefined_ till ett värdefält jämförs ordet som en sträng och konverteras inte till JavaScript-motsvarigheten.
 
@@ -155,13 +155,13 @@ I det här avsnittet beskrivs de åtgärdstyper som finns i Core-tillägget.
 
 ### Egen kod
 
-Ange koden som körs efter att händelsen har utlösts och villkoren har utvärderats. Vidarebefordran av händelser i Adobe Experience Platform har stöd för ES6.
+Ange koden som körs när händelsen har utlösts och villkoren utvärderas. Vidarebefordran av händelser i Adobe Experience Platform stöder ES13.
 
 1. Namnge åtgärdskoden.
 1. Välj **[!UICONTROL Open Editor]**.
 1. Redigera koden och välj **[!UICONTROL Save]**.
 
-Om du vill komma åt ett dataelement i anpassad kod använder du `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
+Använd `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
 
 ```javascript
 getDataElementValue('productName') 
@@ -187,7 +187,7 @@ Du kan ange egen JavaScript i användargränssnittet genom att välja  **[!UICON
 
 En return-programsats krävs i redigeringsfönstret för att ange vilket värde som ska användas som dataelementvärde. Om en retursats inte ingår eller om värdet `null` eller `undefined` returneras, dataelementets standardvärde återspeglar `null` eller `undefined`.
 
-Om du vill komma åt ett dataelement i anpassad kod använder du `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
+Använd `getDataElementValue` -metod. Om du till exempel vill hämta värdet för ett dataelement med namnet `productName`skriver du följande: 
 
 ```javascript
 getDataElementValue('productName') 
