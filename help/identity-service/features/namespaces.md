@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 576b17842ee1c5722332ba49e26b037537ec96ed
+source-git-commit: 6ae3626c2e0f7e58968b5582ca1895bd03ab1c32
 workflow-type: tm+mt
-source-wordcount: '1854'
+source-wordcount: '1908'
 ht-degree: 0%
 
 ---
@@ -134,6 +134,10 @@ En katalog med namnutrymmen i organisationen visas med information om namn, iden
 Beroende på dina organisationsdata och användningsfall kan du behöva anpassade namnutrymmen. Du kan skapa egna namnutrymmen med [[!DNL Identity Service]](../api/create-custom-namespace.md) API eller via gränssnittet.
 
 Om du vill skapa ett eget namnutrymme väljer du **[!UICONTROL Create identity namespace]**.
+
+>[!TIP]
+>
+>Integreringsidentiteter är namnutrymmen som används för att ansluta till andra system. De används inte i identitetsupplösning och används inte heller för att sätta ihop identiteter. Välj **[!UICONTROL View integration identities]** för att uppdatera listan och inkludera integreringsidentiteter. Integreringsidentiteter döljs som standard eftersom de är skrivskyddade och du inte behöver konfigurera dem.
 
 ![Knappen Skapa ID-namnutrymme på identitetsytan.](../images/namespace/create-identity-namespace.png)
 
