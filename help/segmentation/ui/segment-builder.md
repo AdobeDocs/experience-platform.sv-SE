@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: a16f4e8d97a3ab195bd48803980b257c9ec3bfe1
+source-git-commit: 6a17febf845d2b9566e49423fc68491315b2d4d7
 workflow-type: tm+mt
-source-wordcount: '3550'
+source-wordcount: '3554'
 ht-degree: 0%
 
 ---
@@ -103,7 +103,7 @@ När rapportsviterna har mappats kan du använda dessa nyligen mappade fält i d
 >
 >För målgrupper som skapats inom Platform är det bara målgrupper som har **samma** sammanfogningsprincipen visas.
 
-The **[!UICONTROL Audiences]** På -fliken visas alla målgrupper som importerats från externa källor, som Adobe Audience Manager, samt målgrupper som skapats i [!DNL Experience Platform].
+The **[!UICONTROL Audiences]** På -fliken visas alla målgrupper som importerats från externa källor, som Adobe Audience Manager eller Customer Journey Analytics, samt målgrupper som skapats i [!DNL Experience Platform].
 
 På **[!UICONTROL Audiences]** kan du se alla tillgängliga källor som en grupp mappar. När du markerar mapparna visas tillgängliga undermappar och målgrupper. Dessutom kan du välja mappikonen (som visas längst till höger) för att visa mappstrukturen (en bock anger den mapp du befinner dig i) och enkelt navigera tillbaka genom mapparna genom att välja namnet på en mapp i trädet.
 
