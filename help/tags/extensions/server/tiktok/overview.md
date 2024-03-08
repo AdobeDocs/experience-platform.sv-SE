@@ -2,10 +2,11 @@
 title: API-tillägg för webbhändelser i Adobe TikTok
 description: Med Adobe Experience Platform webbevent-API kan du dela webbinteraktioner direkt med TikTok.
 last-substantial-update: 2023-09-26T00:00:00Z
-source-git-commit: d8b7006ade1dc82fdd79b7ed744c021bc304bca7
+exl-id: 14b8e498-8ed5-4330-b1fa-43fd1687c201
+source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
 workflow-type: tm+mt
-source-wordcount: '1069'
-ht-degree: 2%
+source-wordcount: '1048'
+ht-degree: 1%
 
 ---
 
@@ -19,7 +20,7 @@ Konfigurera [!DNL TikTok] webbhändelsens API för att använda [!DNL TikTok] h�
 
 Du måste ha en giltig [!DNL TikTok] för företagskonto för att skapa en [!DNL TikTok] pixel med partnerinställningen. Gå till [[!DNL TikTok] för företagsregistrering](https://www.tiktok.com/business/en-US/solutions/business-account) för att registrera och skapa ett konto om du inte redan har ett.
 
-Du måste vara inloggad på ditt företagskonto för att kunna konfigurera [!DNL TikTok] Pixel med partnerkonfiguration. Följ stegen nedan för att göra detta:
+Du måste vara inloggad på ditt företagskonto för att kunna konfigurera [!DNL TikTok] Pixel med partnerkonfiguration. Gör så här:
 
 1. Navigera till **[!UICONTROL Assets]** och markera **[!UICONTROL Event]**.
 2. Under Webbhändelser väljer du **[!UICONTROL Manage]**.
@@ -64,7 +65,7 @@ Webbhändelser och parametrar innehåller allmän information om händelsen. Sta
 | Indata | Beskrivning |
 | --- | --- |
 | Händelsenamn | Namnet på händelsen. Detta är åtgärder med fördefinierade namn som skapas av [!DNL TikTok] och är ett obligatoriskt fält. Se [[!DNL TikTok] Marknadsförings-API](https://business-api.tiktok.com/portal/docs?id=1741601162187777) dokumentation för mer information om händelser som stöds. |
-| Händelsetid | Datum-tid som sträng i ISO 8601 eller i åååå-MM-dd&#39;T&#39;HH:mm:ss:SSSZ-format. Detta är ett obligatoriskt fält. |
+| Händelsetid | Datum-tid som sträng i ISO 8601 eller i `yyyy-MM-dd'T'HH:mm:ss:SSSZ` format. Detta är ett obligatoriskt fält. |
 | Händelse-ID | Det unika ID som genereras av annonsörer för att ange varje händelse. Det här är ett valfritt fält och används för borttagning av dubbletter. |
 
 {style="table-layout:auto"}

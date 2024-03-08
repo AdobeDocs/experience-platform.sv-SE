@@ -4,10 +4,10 @@ title: Vidarekoppling av twitter-händelse
 description: Med det här tillägget för vidarebefordran av Adobe Experience Platform-händelser kan du infoga händelser i Twitter efter dina affärsbehov.
 last-substantial-update: 2023-05-24T00:00:00Z
 exl-id: 54c240e5-6160-4654-ac5b-6afa8d99a765
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
 workflow-type: tm+mt
-source-wordcount: '1099'
-ht-degree: 2%
+source-wordcount: '1006'
+ht-degree: 1%
 
 ---
 
@@ -97,11 +97,11 @@ Efter markeringen visas ytterligare kontroller för att ytterligare konfigurera 
 
 | Fältnamn | Beskrivning | Exempel | Obligatoriskt |
 | --- | --- | --- | --- |
-| [!UICONTROL Conversion Time] | Datum-tid som sträng i ISO 8601 eller i åååå-MM-dd&#39;T&#39;HH:mm:ss:SSSZ-format. | 2022-02-18T01:14:00,603Z | Ja |
+| [!UICONTROL Conversion Time] | Datum-tid som sträng i ISO 8601 eller i `yyyy-MM-dd'T'HH:mm:ss:SSSZ` format. | 2022-02-18T01:14:00,603Z | Ja |
 | [!UICONTROL Event Id] | ID:t för bas-36 för en specifik händelse. Detta ID bör matcha en förkonfigurerad händelse i din [!DNL Twitter] annonskonto. Detta kallas ID för motsvarande händelse i Händelsehanteraren. | o87ne eller tw-o8z6j-o87ne (tw-pixel_id-event-id) | Ja |
 | [!UICONTROL Number of Items] | Antalet artiklar som köpts i händelsen. Detta måste vara ett positivt tal större än 0. | 4 | Nej |
 | [!UICONTROL Currency] | Valutan för de artiklar som köps in i händelsen. Detta uttrycks i ISO-4217 och om det inte anges kommer standardvärdet att vara USD. | USD | Nej |
-| [!UICONTROL Value] | Prisvärdet för artiklar som köpts i händelsen. | 100.00 | Nej |
+| [!UICONTROL Value] | Prisvärdet för artiklar som köpts i händelsen. | 100,00 | Nej |
 | [!UICONTROL Conversion ID] | En identifierare för en konverteringshändelse som kan användas för borttagning av dubbletter mellan API-konverteringar för webb-pixlar och konvertering i samma händelsetagg. | 23294827 | Nej |
 | [!UICONTROL Description] | En beskrivning med eventuell ytterligare information om konverteringarna. | Testkonvertering | Nej |
 
