@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för sandlådan
 description: Det här dokumentet innehåller steg om hur du utför olika åtgärder relaterade till sandlådor i Adobe Experience Platform användargränssnitt.
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 70bbfd4e2971367c9b7b88bd4bc7985d9e6fbb1e
+source-git-commit: 0db23e475d6546ebb886a56d5915d023ea215125
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ När en sandlåda är markerad uppdateras skärmen och uppdateras till den sandl
 
 >[!NOTE]
 >
->När en ny sandlåda skapas måste du först lägga till den nya sandlådan i din produktprofil i [Adobe Admin Console](https://adminconsole.adobe.com/) innan du kan börja använda den nya sandlådan. Läs dokumentationen om [hantera behörigheter för en produktprofil](../../access-control/ui/permissions.md) om du vill ha information om hur du distribuerar en sandlåda till en produktprofil.
+>När du skapar en ny sandlåda måste du lägga till den i en roll i [[!UICONTROL Permissions]](../../access-control/abac/ui/permissions.md) innan du kan börja använda den. Mer information om hur du etablerar en sandlåda för en roll finns i [hantera sandlådor för en roll](../../access-control/abac/ui/permissions.md#managing-sandboxes-for-role) dokumentation.
 
 Använd följande video för en snabb översikt över hur du använder sandlådor i Experience Platform.
 
