@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Query Service
 user-guide-description: Använd standard-SQL för att fråga efter data i datasjön i Experience Platform.
 feature: Queries
 role: User,Developer
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 454f485a327233ca1a5b37ea58f16b7b53255ba6
 workflow-type: tm+mt
-source-wordcount: '317'
+source-wordcount: '320'
 ht-degree: 13%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 13%
       - [Exportera data till ML-miljöer](data-distiller/ml-feature-pipelines/export-data.md)
       - [AI/ML-arbetsflöde för berikning av data från början till slut](data-distiller/ml-feature-pipelines/end-to-end-notebook-workflow.md)
 - Användningsfall {#use-cases}
+   - [Användningsexempel som stöds](use-cases/overview.md)
    - [Bläddra överges](use-cases/abandoned-browse.md)
    - [Attributanalys](use-cases/attribution-analysis.md)
    - [Punktfiltrering](use-cases/bot-filtering.md)

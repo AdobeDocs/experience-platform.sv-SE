@@ -5,9 +5,9 @@ title: Utforska schemaresurser i användargränssnittet
 description: Lär dig utforska befintliga scheman, klasser, schemafältgrupper och datatyper i användargränssnittet i Experience Platform.
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '1039'
 ht-degree: 0%
 
 ---
@@ -53,6 +53,14 @@ När du har valt en resurs öppnas dess struktur på arbetsytan.
 Alla objekttypsfält som innehåller underegenskaper komprimeras som standard när de först visas på arbetsytan. Om du vill visa underegenskaperna för ett fält markerar du ikonen bredvid namnet.
 
 ![](../images/ui/explore/field-expand.png)
+
+### Standardklass och fältgruppsindikator {#standard-class-and-field-group-indicator}
+
+I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](../images/ui/explore/padlock-icon.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+
+![Schemaredigeraren med hänglåsikonen markerad](../images/ui/explore/schema-editor-padlock-icon.png)
+
+Se [Lägga till anpassade fält i standardfältgrupper](./resources/schemas.md) dokumentation för vägledning. Du kan inte redigera en standardklass.
 
 ### Systemgenererade fält {#system-fields}
 

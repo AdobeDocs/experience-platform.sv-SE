@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 021cd2f2127dee1618335585da01ea1c5a5e9696
+source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
 workflow-type: tm+mt
-source-wordcount: '3523'
+source-wordcount: '3584'
 ht-degree: 0%
 
 ---
@@ -126,6 +126,12 @@ När du har valt fältgrupper väljer du **[!UICONTROL Add field groups]** för 
 The [!DNL Schema Editor] visas igen med fälten som tillhandahålls av fältgruppen och som visas på arbetsytan.
 
 ![The [!DNL Schema Editor] när ett exempelschema visas.](../../images/ui/resources/schemas/field-groups-added.png)
+
+>[!NOTE]
+>
+>I Schemaredigeraren visas standardklasser (som genererats av Adobe) och fältgrupper med hänglåsikonen (![En hänglåsikon.](../../images/ui/explore/padlock-icon.png). hänglåset visas i den vänstra listen bredvid namnet på klassen eller fältgruppen, samt intill ett fält i schemagrafiken som är en del av en systemgenererad resurs.
+>
+>![Schemaredigeraren med hänglåsikonen markerad](../../images/ui/explore/schema-editor-padlock-icon.png)
 
 När du har lagt till en fältgrupp i ett schema kan du välja att [ta bort befintliga fält](#remove-fields) eller [lägg till nya anpassade fält](#add-fields) till de grupperna, beroende på dina behov.
 

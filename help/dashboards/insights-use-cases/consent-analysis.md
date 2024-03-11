@@ -2,9 +2,9 @@
 title: Analys och spårning av samtycke
 description: Lär dig hur du bygger en kontrollpanel för samtyckesanalys för att spåra hur användarens samtycke har utvecklats över tid.
 exl-id: 34accae5-8b4f-4281-8333-187a91db8199
-source-git-commit: 7cde32f841497edca7de0c995cc4c14501206b1a
+source-git-commit: 454f485a327233ca1a5b37ea58f16b7b53255ba6
 workflow-type: tm+mt
-source-wordcount: '1806'
+source-wordcount: '1804'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,9 @@ De användningsfall som behandlas i den här handboken är samtyckettrender och 
 - **Konventionstrender** spårar hur användarens samtycke har utvecklats över tid. Genom att analysera ändringar i medgivandeinställningarna kan marknadsförarna planera och köra kampanjer som anpassar sig till de ändringar som görs i användarinställningarna. Ni kanske till exempel vill köra riktade utbildningskampanjer, öppenhets- och förtroendekampanjer eller stimulanskampanjer för att få till stånd samtycke. Ni kan också korrelera kampanjer som kan ha påverkat samtycke negativt för att proaktivt minska frekvensen för dessa kampanjer.
 - **Samtyckesöverlappning** använder överlappningen mellan olika kanaler för samtycke för att leverera enhetliga personaliserade meddelanden i flera kanaler för kunder som har gått med på flera kanaler. Marknadsförarna kan prioritera och tilldela resurser till vissa kanaler där ett högre grad av samtycke och personaliserade meddelanden kan få genklang hos kunderna och generera högre svarsfrekvenser.
 
-<!-- ## Build a consent dashboard {#build-a-consent-dashboard} -->
-
 ## Skapa godkända målgrupper {#create-consent-audiences}
 
 Om du vill skapa en kontrollpanel för samtycke måste du först skapa en målgrupp med alla profiler som har gett sitt samtycke till att kontakta. Om du vill navigera till Real-time Customer Data Platform Segment Builder väljer du **[!UICONTROL Audiences]** i den vänstra navigeringen i plattformsgränssnittet. På menyn [!UICONTROL Customer] -fliken i [!UICONTROL Audiences] kontrollpanel, välja **[!UICONTROL Create audience]** längst upp till höger i vyn och sedan **[!UICONTROL Build rules]**.
-
-<!-- Update screenshot below to include Create audience -->s
 
 ![The [!UICONTROL Audiences] kontrollpanel med [!UICONTROL Customer], [!UICONTROL Audiences]och [!UICONTROL Create segment] markerad.](../images/insights-use-cases/consent-analysis/create-audience.png)
 
