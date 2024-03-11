@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: cf6df4d005486aa297dcced7c8811f87f5e988c2
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '1723'
+source-wordcount: '1725'
 ht-degree: 0%
 
 ---
@@ -213,8 +213,8 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 
 ## Version 2.2.0 - oktober 2020
 
-* Felkorrigering: Objektet för anmälan blockerade Alloy från att ringa anrop när `idMigrationEnabled` är `true`.
-* Felkorrigering: Gör Alloy uppmärksam på förfrågningar som bör returnera personaliseringserbjudanden för att förhindra flimmer.
+* Felkorrigering: Opt-in-objektet blockerade Web SDK från att ringa anrop när `idMigrationEnabled` är `true`.
+* Felkorrigering: Gör Web SDK uppmärksam på förfrågningar som bör returnera personaliseringserbjudanden för att förhindra flimmer.
 
 ## Version 2.1.0 - augusti 2020
 
@@ -222,5 +222,5 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 * Stöd för IAB 2.0 Consent Standard.
 * Stöd för att skicka ytterligare ID:n i `setConsent` -kommando.
 * Stöd som åsidosätter `datasetId` i `sendEvent` -kommando.
-* Bildskärmar med stöd för legering ([Läs mer](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
+* Supporting Monitoring Hooks ([Läs mer](https://github.com/adobe/alloy/wiki/Monitoring-Hooks))
 * Godkänd `environment: browser` i implementeringens kontextdata.

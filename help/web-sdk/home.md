@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web Software Development Kit (SDK) - översikt
 description: Lär dig hur du använder Adobe Experience Platform Web SDK för att integrera plattformsfunktioner på din webbplats.
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '796'
 ht-degree: 1%
 
 ---
@@ -16,20 +16,26 @@ ht-degree: 1%
 >
 >I slutet av april 2024 kommer Adobe Experience Platform Web SDK att ta bort stöd för alla versioner av Internet Explorer.
 
-Adobe Experience Platform Web Software Development Kit (SDK) är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med sina tjänster via Adobe Experience Platform Edge Network. Adobe har två metoder för att implementera Web SDK:
+Adobe Experience Platform Web Software Development Kit (SDK) är ett JavaScript-bibliotek på klientsidan som gör att Adobe Experience Cloud kunder kan interagera med sina tjänster via Adobe Experience Platform Edge Network.
 
-* Manuell implementering med `alloy.js` JavaScript-bibliotek. Den här användarhandboken innehåller dokumentation om den här implementeringsmetoden.
-* The [SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se [Implementera Adobe Experience Cloud med Web SDK, genomgång](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) för mer information.
+Adobe har två metoder för att implementera Web SDK:
+
+* The [SDK-taggtillägg för webben](../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Se självstudiekursen om hur du [implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html) för mer information.
+* Manuell implementering med JavaScript-biblioteket för Web SDK.
+
+Den här användarhandboken innehåller anvisningar om hur du interagerar med Experience Cloud genom både Web SDK JavaScript-biblioteket och taggtillägget, där det är tillämpligt.
 
 ## Experience Platform Edge Network {#edge-network}
 
-Experience Platform Web SDK ingår i en samling verktyg som utgör Adobe Experience Platform Edge Network. Edge Network består av följande komponenter:
+Experience Platform Web SDK ingår i en samling verktyg som utgör Adobe Experience Platform Edge Network.
 
-* **[Experience Platform Web SDK](#overview):** JavaScript SDK och kodtillägg som dramatiskt förenklar driftsättningen av Adobe-tekniker.
-* **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/):** Ett tillägg till v5 Mobile SDK så att kunderna kan använda den nya distributionsmetoden
-* **[Experience Platform Edge Network Server API](../server-api/overview.md):** Ett API som kan användas för olika typer av datainsamling, personalisering, annonsering och marknadsföring. Server-API:t kan användas på servrar, IoT-enheter, digitalboxar och andra enheter.
+Edge Network består av följande komponenter:
 
-Edge Network är ett ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler. Den ger en enda konsoliderad SDK för alla kanaler (JavaScript, Mobile, Server-side), som skickar data till en gemensam Adobe-domän (`adobedc.net`) och får en enda nyttolast för data- och upplevelseleverans.
+* **[Experience Platform Web SDK](#overview):** Ett JavaScript-bibliotek och ett taggtillägg som hjälper dig att förenkla driftsättningen av Adobe-tekniker.
+* **[Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/home/):** Ett tillägg till v5 Mobile SDK som gör att du kan använda den nya distributionsmetoden.
+* **[API för Edge Network Server](../server-api/overview.md):** Ett API på serversidan som du kan använda för olika typer av datainsamling, personalisering, reklam och marknadsföring. Server-API:t kan användas på servrar, IoT-enheter, digitalboxar och andra enheter.
+
+Edge Network är ett ramverk för datainsamling med låg fördröjning, anslutningsbar datoranvändning och snabb dataaktivering i alla adresserbara kanaler. Den tillhandahåller en enda konsoliderad SDK för alla kanaler (webb, mobil, på serversidan) som skickar data till en gemensam Adobe-domän (`adobedc.net`) och får en enda nyttolast för data- och upplevelseleverans.
 
 På serversidan gör en enhetlig edge-gateway och ett gemensamt ramverk för plattformstjänster det enkelt att driftsätta nya funktioner i den här realtidsmiljön. Arkitekturen:
 
@@ -40,11 +46,11 @@ På serversidan gör en enhetlig edge-gateway och ett gemensamt ramverk för pla
 * Ökar innovationstakten
 * Skapar hållbara konkurrensfördelar för Adobe-kunder
 
-Med ett enda konsoliderat edge-system kan kunderna hantera sina annonserings-, marknadsförings- och personaliseringskampanjer i alla kanaler som en integrerad upplevelse. Adobe kan också leverera tjänster med lägre total ägandekostnad för kunderna. Kantsystemet är utformat för att rymma de flesta typer av data, så att du kan mappa din egen datamodell så att den kan hämtas av flera Experience Cloud-produkter.
+Med ett enda, konsoliderat edge-system kan ni hantera annonserings-, marknadsförings- och personaliseringskampanjer i alla kanaler som en integrerad upplevelse. Adobe kan också leverera tjänster med lägre total ägandekostnad för kunderna. Kantsystemet är utformat för att rymma de flesta typer av data, så att du kan mappa din egen datamodell så att den kan hämtas av flera Experience Cloud-produkter.
 
 ## Videoöversikt {#video}
 
-I följande videofilm visas en översikt över Adobe Experience Platform [!DNL Web SDK] och Adobe Experience Platform [!DNL Edge Network].
+I videon nedan visas en översikt över Adobe Experience Platform [!DNL Web SDK] och [!DNL Edge Network].
 
 >[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 

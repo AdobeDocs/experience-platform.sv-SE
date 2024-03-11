@@ -1,13 +1,13 @@
 ---
 title: Installera Web SDK med hjälp av taggtillägget
 description: Referera till Web SDK-biblioteket med Adobe Experience Cloud Data Collection.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: ba8348c9-f642-4230-9f7f-4496d4154d83
+source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '284'
 ht-degree: 0%
 
 ---
-
 
 # Installera Web SDK med hjälp av taggtillägget
 
@@ -23,6 +23,8 @@ När du mött [krav](overview.md)kan du distribuera taggtillägget för Web SDK 
 1. Navigera till **[!UICONTROL Extensions]** väljer du **[!UICONTROL Catalog]** -fliken.
 1. Leta rätt på och installera **[!UICONTROL Adobe Experience Platform Web SDK]** tillägg.
 1. Välj lämplig sandlåda och datastam för varje miljö och klicka sedan på **[!UICONTROL Save]**.
+
+Läs dokumentationen om hur du [konfigurera taggtillägget Web SDK](../../tags/extensions/client/web-sdk/web-sdk-extension-configuration.md) för mer information.
 
 ## Publicera koden för utveckling
 
