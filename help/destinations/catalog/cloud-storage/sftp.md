@@ -2,9 +2,9 @@
 title: SFTP-anslutning
 description: Skapa en utgående liveanslutning till SFTP-servern för att regelbundet exportera avgränsade datafiler från Adobe Experience Platform.
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '1042'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,19 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 {style="table-layout:auto"}
 
 ![SFTP-profilbaserad exporttyp markerad i målkatalogen.](../../assets/catalog/cloud-storage/sftp/catalog.png)
+
+## Exportera datauppsättningar {#export-datasets}
+
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
+
+## Filformat för exporterade data {#file-format}
+
+Vid export *målgruppsdata*, skapar Platform en `.csv`, `parquet`, eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+
+Vid export *datauppsättningar*, skapar Platform en `.parquet` eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Anslut till målet {#connect}
 
@@ -129,17 +142,10 @@ När du har upprättat autentiseringsanslutningen till SFTP-platsen anger du fö
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## Exportera datauppsättningar {#export-datasets}
+## Validera slutförd dataexport {#exported-data}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
-
-* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
-* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
-
-## Exporterade data {#exported-data}
-
-För [!DNL SFTP] mål, Platform skapar en `.csv` filen på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.
+Kontrollera SFTP-lagringen och se till att de exporterade filerna innehåller de förväntade profilpopulationerna för att kontrollera om data har exporterats.
 
 ## IP-adress tillåtelselista {#ip-address-allow-list}
 
-Se [IP-adress tillåtelselista för SFTP-mål](ip-address-allow-list.md) om du behöver lägga till IP-adresser för Adobe i en tillåtelselista.
+Se [IP-adress tillåtelselista](ip-address-allow-list.md) artikel om du behöver lägga till IP-adresser för Adobe i en tillåtelselista.

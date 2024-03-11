@@ -2,9 +2,9 @@
 title: Azure Blob-anslutning
 description: Skapa en utgående liveanslutning till ditt Azure Blob-lagringsutrymme för att regelbundet exportera CSV-datafiler från Adobe Experience Platform.
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '1004'
+source-wordcount: '1045'
 ht-degree: 0%
 
 ---
@@ -62,11 +62,18 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Filformat som stöds {#file-formats}
+## Exportera datauppsättningar {#export-datasets}
 
-[!DNL Experience Platform] stöder följande filformat som ska exporteras till [!DNL Azure Blob]:
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
 
-* Kommaavgränsade värden (CSV): Stödet för exporterade datafiler är för närvarande begränsat till kommaavgränsade värden.
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
+
+## Filformat för exporterade data {#file-format}
+
+Vid export *målgruppsdata*, skapar Platform en `.csv`, `parquet`, eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+
+Vid export *datauppsättningar*, skapar Platform en `.parquet` eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Anslut till målet {#connect}
 
@@ -123,13 +130,6 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## Exportera datauppsättningar {#export-datasets}
+## Validera slutförd dataexport {#exported-data}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
-
-* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
-* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
-
-## Exporterade data {#exported-data}
-
-För [!DNL Azure Blob Storage] destinationer, [!DNL Platform] skapar en `.csv` filen på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.
+Kontrollera dina [!DNL Azure Blob] och se till att de exporterade filerna innehåller de förväntade profilpopulationerna.

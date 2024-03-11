@@ -2,9 +2,9 @@
 title: Amazon S3-anslutning
 description: Skapa en utgående liveanslutning till din Amazon Web Services (AWS) S3-lagringsplats för att regelbundet exportera CSV-datafiler från Adobe Experience Platform till dina egna S3-butiker.
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c126e6179309ccfbedfbfe2609cfcfd1ea45f870
+source-git-commit: 8771aa0df001e8ef81d4ad712f4d1f9661b405b2
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1398'
 ht-degree: 0%
 
 ---
@@ -53,6 +53,19 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 {style="table-layout:auto"}
 
 ![Profilbaserad exporttyp i Amazon S3 är markerad i USA.](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
+
+## Exportera datauppsättningar {#export-datasets}
+
+Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+
+* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
+* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
+
+## Filformat för exporterade data {#file-format}
+
+Vid export *målgruppsdata*, skapar Platform en `.csv`, `parquet`, eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [filformat som stöds för export](../../ui/activate-batch-profile-destinations.md#supported-file-formats-export) i självstudiekursen om målgruppsaktivering.
+
+Vid export *datauppsättningar*, skapar Platform en `.parquet` eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
 ## Anslut till målet {#connect}
 
@@ -169,13 +182,10 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 Se [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
-## Exportera datauppsättningar {#export-datasets}
+## Validera slutförd dataexport {#exported-data}
 
-Detta mål stöder datauppsättningsexporter. Fullständig information om hur du ställer in datauppsättningsexporter finns i självstudiekurserna:
+Kontrollera dina [!DNL Amazon S3] och se till att de exporterade filerna innehåller de förväntade profilpopulationerna.
 
-* Så här gör du [exportera datauppsättningar med hjälp av användargränssnittet för plattformen](/help/destinations/ui/export-datasets.md).
-* Så här gör du [exportera datauppsättningar via programmering med API:t för Flow Service](/help/destinations/api/export-datasets.md).
+## IP-adress tillåtelselista {#ip-address-allow-list}
 
-## Exporterade data {#exported-data}
-
-För [!DNL Amazon S3] destinationer, [!DNL Platform] skapar en datafil på lagringsplatsen som du angav. Mer information om filerna finns i [Aktivera målgruppsdata för att batchprofilera exportmål](../../ui/activate-batch-profile-destinations.md) i självstudiekursen om målgruppsaktivering.
+Se [IP-adress tillåtelselista](ip-address-allow-list.md) artikel om du behöver lägga till IP-adresser för Adobe i en tillåtelselista.
