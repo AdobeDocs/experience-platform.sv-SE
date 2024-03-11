@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: af37aca17f4b365b52215b8c886e733f00c4a4e8
+source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '282'
 ht-degree: 18%
 
 ---
@@ -47,6 +47,7 @@ ht-degree: 18%
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
    * [Journey Orchestration](https://experienceleague.adobe.com/docs/journey-orchestration.html)
+   * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler.html)
    * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
 * Styrning, integritet och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)

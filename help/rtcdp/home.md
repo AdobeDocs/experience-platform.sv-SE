@@ -3,9 +3,10 @@ title: Real-Time CDP produktdokumentation
 description: Lär dig använda Adobe Real-Time CDP.
 solution: Real-Time Customer Data Platform
 product: Real-Time Customer Data Platform
-source-git-commit: d5a8faa7b854f6d0b4ef36dc86bd78bf4e6ad6f4
+exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
+source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1084'
 ht-degree: 2%
 
 ---
@@ -192,9 +193,11 @@ Titta på de här tre introduktionsfilmerna för att få en bättre förståelse
 
 ## Ytterligare resurser {#additional-resources}
 
+Klicka på länkarna nedan om du vill veta mer om Real-Time CDP användningsområden, tjänster och mycket annat.
+
 <table style="table-layout:fixed"><tr style="border: 0;">
 <td><strong>Real-Time CDP</strong><br/>
-<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=sv" target="_blank">Tutorials</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">Produktbeskrivning Real-Time CDP B2C Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B Edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">Säkerhetsöversikt (PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html" target="_blank">Implementeringsplaner</a>
+<a href="https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=sv" target="_blank">Tutorials</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">Produktbeskrivning Real-Time CDP B2C Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B Edition</a> - <a href="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html" target="_blank">B2B Edition</a> - <a href="https://www.adobe.com/content/dam/cc/en/trust-center/ungated/whitepapers/experience-cloud/ADB_Experience_Platform_Security_Overview.pdf" target="_blank">Säkerhetsöversikt (PDF)</a> - <a href="https://experienceleague.adobe.com/docs/blueprints-learn/architecture/overview.html" target="_blank">Implementeringsplaner</a> - <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html" target="_blank">Ordlista</a>
 </td>
 <td><strong>Adobe Experience Platform</strong><br/>
 <a href="https://experienceleague.adobe.com/docs/experience-platform/landing/home.html" target="_blank">Dokumentation</a> - <a href="https://developer.adobe.com/experience-platform-apis/" target="_blank">API-referens - <a href="https://experienceleague.adobe.com/docs/courses/using/experienceplatform-u-1-2020-1.html" target="_blank">Kurs: Introduktion till Experience Platform</a></a>
