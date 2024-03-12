@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Target v2-tillägget
 description: Den senaste versionsinformationen om taggtillägget Adobe Target v2 i Adobe Experience Platform.
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: edef000bfe6c4de69a037e2ad6871759c1404580
+source-git-commit: a062305e3ed0eb4d127f93ff37efe15e41eaa601
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,11 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i Adobe Experience Platform. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. Se följande [dokument](../../../term-updates.md) för en konsoliderad hänvisning till terminologiska förändringar.
+
+## v0.20.3 (23 januari 2024)
+
+- Uppdaterat till support `at.js` 2.11.4
+- Korrigerade ett fel för att förhindra att ogiltiga geodata skickas till leverans-API.
 
 ## v0.20.2 (29 november 2023)
 
