@@ -2,12 +2,13 @@
 title: Första parts enhets-ID i Web SDK
 description: Lär dig hur du konfigurerar FPID (First-party device ID) för Adobe Experience Platform Web SDK.
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 9f10d48357b7fb28dc54375a4d077d0a1961a746
 workflow-type: tm+mt
-source-wordcount: '1734'
+source-wordcount: '1986'
 ht-degree: 0%
 
 ---
+
 
 # Första parts enhets-ID i Web SDK
 
@@ -47,6 +48,28 @@ Om du vill skicka ett FPID för en webbplatsbesökare till Platform Edge Network
 Platform Edge Network godkänner endast ID:n som uppfyller [UUIDv4-format](https://datatracker.ietf.org/doc/html/rfc4122). Enhets-ID som inte är i UUIDv4-format kommer att avvisas.
 
 Generering av ett UUID resulterar nästan alltid i ett unikt, slumpmässigt ID, där sannolikheten för en kollision är försumbar. UUIDv4 kan inte dirigeras med IP-adresser eller någon annan personligt identifierbar information (PII). UUID är vanligt förekommande och bibliotek finns för praktiskt taget alla programmeringsspråk för att generera dem.
+
+## Ställa in cookie för första parts-ID i användargränssnittet för datastreams {#setting-cookie-datastreams}
+
+Du kan ange ett cookie-namn i användargränssnittet för datastreams, där [!DNL FPID] kan finnas i stället för att du behöver läsa cookie-värdet och inkludera FPID i identitetskartan.
+
+>[!IMPORTANT]
+>
+>Den här funktionen kräver att du har [Insamling av data från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html?lang=en) aktiverat.
+
+Se [datastreams-dokumentation](../../datastreams/configure.md) för detaljerad information om hur du konfigurerar ett datastream.
+
+Aktivera **[!UICONTROL First Party ID Cookie]** alternativ. Den här inställningen anger för Edge Network att referera till en angiven cookie när du söker efter ett enhets-ID från en annan leverantör, i stället för att leta upp det här värdet i [Identitetskarta](#identityMap).
+
+Läs dokumentationen om [cookies från första part](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-first-party.html) om du vill ha mer information om hur de arbetar med Adobe Experience Cloud.
+
+![Bild av användargränssnittet för plattformen som visar datastream-konfigurationen och som markerar cookie-inställningen för första parts-ID](../assets/first-party-id-datastreams.png)
+
+När du aktiverar den här inställningen måste du ange namnet på den cookie där ID:t ska lagras.
+
+När du använder ID:n för första part kan du inte utföra synkroniseringar av ID:n från tredje part. Synkronisering av tredje parts-ID är beroende av [!DNL Visitor ID] och `UUID` genereras av den tjänsten. När du använder funktionaliteten för första parts-ID genereras ECID utan att [!DNL Visitor ID] , vilket gör det omöjligt att synkronisera tredje parts-ID.
+
+När du använder ID:n från första part stöds inte Audience Manager-funktioner som är inriktade på aktivering på partnerplattformar, eftersom synk för Audience Manager partner-ID i huvudsak baseras på `UUIDs` eller `DIDs`. Det ECID som härleds från ett första parts-ID är inte länkat till en `UUID`, vilket gör det oadresserbart.
 
 ## Ange en cookie med din egen server
 
