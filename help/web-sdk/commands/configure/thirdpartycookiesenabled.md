@@ -1,14 +1,23 @@
 ---
 title: thirdPartyCookiesEnabled
 description: Tillåt användning av cookies från tredje part för att identifiera besökare.
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: f241a9ae-a892-46a5-b0dd-5ac72a44d4ac
+source-git-commit: bc48f45bd6b9b7f7cc446ae84d712376292718d2
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '260'
 ht-degree: 0%
 
 ---
 
+
 # `thirdPartyCookiesEnabled`
+
+>[!IMPORTANT]
+>
+>Google [har meddelats](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) planerar att upphöra med Chrome-stöd för cookies från tredje part under andra halvåret 2024. Detta innebär att cookies från tredje part inte längre stöds i någon av de större webbläsarna.
+>
+>När den här ändringen genomförs upphör Adobe stödet för `demdex` cookie som stöds i Web SDK.
+
 
 The `thirdPartyCookiesEnabled` egenskapen är ett booleskt värde som avgör om Web SDK anger cookies i en tredjepartskontext. Det här alternativet är användbart om du vill identifiera besökare mellan underdomäner eller domäner som din organisation äger. Många moderna webbläsare begränsar dock inställningen och förfallotiden för cookies från tredje part.
 

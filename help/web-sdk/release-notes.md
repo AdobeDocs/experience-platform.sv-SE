@@ -3,9 +3,9 @@ title: Versionsinformation för Adobe Experience Platform Web SDK
 description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
+source-git-commit: bc48f45bd6b9b7f7cc446ae84d712376292718d2
 workflow-type: tm+mt
-source-wordcount: '1725'
+source-wordcount: '1777'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,12 @@ ht-degree: 0%
 
 Det här dokumentet innehåller versionsinformation för Adobe Experience Platform Web SDK.
 Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinformation om tillägget för Web SDK](../tags/extensions/client/web-sdk/web-sdk-ext-release-notes.md).
+
+>[!IMPORTANT]
+>
+>Google [har meddelats](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) planerar att upphöra med Chrome-stöd för cookies från tredje part under andra halvåret 2024. Detta innebär att cookies från tredje part inte längre stöds i någon av de större webbläsarna.
+>
+>När den här ändringen genomförs upphör Adobe stödet för `demdex` cookie som stöds i Web SDK.
 
 ## Version 2.19.2 - 10 januari 2024
 
