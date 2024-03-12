@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformationen för Adobe Experience Platform i januari 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: aa33f7006b1a3abf7d19ffe3e0d5e5ee39fe9a5d
 workflow-type: tm+mt
 source-wordcount: '1241'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -25,10 +25,11 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 ## Larm {#alerts}
 
 Med Experience Platform kan du prenumerera på händelsebaserade aviseringar för olika plattformsaktiviteter. Du kan prenumerera på olika varningsregler via [!UICONTROL Alerts] -fliken i användargränssnittet för plattformen och kan välja att ta emot varningsmeddelanden i själva användargränssnittet eller via e-postmeddelanden.
+
 **Nya eller uppdaterade funktioner**
 
-| Funktion | Beskrivning | 
-| --- | --- | 
+| Funktion | Beskrivning |
+| --- | --- |
 | Fliken Aviseringshistorik | Som Experience Platform-administratör kan du använda funktionen Hantera aviseringsprenumeranter för att tilldela en avisering till ett Adobe-användar-ID, en extern e-postadress eller en e-postgrupplista. Mer information finns i [dokumentation för varningsgränssnitt](../../observability/alerts/ui.md) om du vill ha mer information om fliken Historik. |
 
 {style="table-layout:auto"}
