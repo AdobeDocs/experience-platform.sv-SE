@@ -1,9 +1,10 @@
 ---
 title: kontext
 description: Samla automatiskt in data om enheter, miljö eller plats.
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: 911cabec-2afb-4216-b413-80533f826b0e
+source-git-commit: dc2a2ecf7b602d2fcfd3b6c93cecdb6f3368a3f9
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '877'
 ht-degree: 1%
 
 ---
@@ -59,8 +60,34 @@ The `"placeContext"` nyckelordet samlar in information om användarens plats.
 | --- | --- | --- | --- |
 | Lokal tid | Lokal tidsstämpel för slutanvändaren i förenklad utökad [ISO 8601](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format. | `xdm.placeContext.localTime` | `YYYY-08-07T15:47:17.129-07:00` |
 | Lokal tidszonsförskjutning | Antalet minuter som användaren är förskjuten från GMT. | `xdm.placeContext.localTimezoneOffset` | `360` |
+| Landskod | Slutanvändarens landskod. | `xdm.placeContext.geo.countryCode` | `US` |
+| Statsprovins | Slutanvändarens landskod. | `xdm.placeContext.geo.stateProvince` | `CA` |
+| Latitude | Slutanvändarens latitud. | `xdm.placeContext.geo._schema.latitude` | `37.3307447` |
+| Longitud | Slutanvändarens longitud. | `xdm.placeContext.geo._schema.longitude` | `-121.8945965` |
 
 {style="table-layout:auto"}
+
+
+### Tidsstämpel
+
+The `timestamp` nyckelordet samlar in information om händelsens tidsstämpel. Den här delen av kontexten kan inte tas bort.
+
+| Dimension | Beskrivning | XDM-sökväg | Exempelvärde |
+| --- | --- | --- | --- |
+| Tidsstämpel för händelsen | UTC-tidsstämpel för slutanvändaren i förenklad utökad [ISO 8601](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) format. | `xdm.timestamp` | `2019-08-07T22:47:17.129Z` |
+
+{style="table-layout:auto"}
+
+### Implementeringsinformation
+
+The `implementationDetails` nyckelordet samlar in information om den SDK-version som används för att samla in händelsen.
+
+| Dimension | Beskrivning | XDM-sökväg | Exempelvärde |
+| --- | --- | --- | --- |
+| Namn | SDK-identifierare (Software Development Kit). I det här fältet används en URI för att förbättra unika identifierare som tillhandahålls av olika programbibliotek. | `xdm.implementationDetails.name` | När det fristående biblioteket används är värdet `https://ns.adobe.com/experience/alloy`. När biblioteket används som en del av taggtillägget är värdet `https://ns.adobe.com/experience/alloy+reactor`. |
+| Version | Programvaruutvecklingsverktyget (SDK). | `xdm.implementationDetails.version` | När det fristående biblioteket används är värdet biblioteksversionen. När biblioteket används som en del av taggtillägget är värdet biblioteksversionen och taggtilläggsversionen som är kopplad till en `+`. Om biblioteksversionen till exempel är `2.1.0` och taggtilläggsversionen är `2.1.3`, skulle värdet vara `2.1.0+2.1.3`. |
+| Miljö | Den miljö där data samlades in. Den här inställningen är alltid inställd på `browser`. | `xdm.implementationDetails.environment` | `browser` |
+
 
 ### Tips för hög entropi-klient
 
