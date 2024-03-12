@@ -2,7 +2,7 @@
 title: Konfigurera de övre och nedre sidhändelserna i Web SDK
 description: I den här artikeln beskrivs hur du använder de övre och nedre delarna av sidhändelser i Web SDK.
 exl-id: 43c6d53a-6bf9-45f8-b001-d148adaff829
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+source-git-commit: 4d0895c6ad38523f5527c9630931c3c0b8ef83c0
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 0%
@@ -222,4 +222,4 @@ alloy("sendEvent", {
 
 ## GitHub-exempel {#github-sample}
 
-Exemplet finns på [den här adressen](https://github.com/adobe/alloy-samples/tree/main/top-and-bottom) visar hur du kan använda Experience Platform och Web SDK för att begära personalisering överst på sidan och skicka analysdata längst ned. Du kan hämta exemplet och köra det lokalt för att förstå hur sidans övre och nedre del fungerar.
+Exemplet finns på [den här adressen](https://github.com/adobe/alloy-samples/tree/main/target/top-and-bottom) visar hur du kan använda Experience Platform och Web SDK för att begära personalisering överst på sidan och skicka analysdata längst ned. Du kan hämta exemplet och köra det lokalt för att förstå hur sidans övre och nedre del fungerar.
