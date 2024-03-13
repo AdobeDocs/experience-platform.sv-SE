@@ -3,7 +3,7 @@ title: Intelligent återanvändning
 description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 151695e348764a25f2b2e986dcbdc1970a67ad47
 workflow-type: tm+mt
 source-wordcount: '3747'
 ht-degree: 1%
@@ -60,7 +60,7 @@ Nedan visas en översikt över de tre exemplen på återengagemang.
 Det övergivna produktbläddringsscenariot avser övergiven produktbläddring på både webbplatsen och i mobilappen. Detta scenario utlöses när en produkt har visats men inte köpts eller lagts till i kundvagnen. I det här exemplet aktiveras varumärkesengagemanget efter tre dagar om det inte finns några listtillägg under de senaste 24 timmarna.<p>![Kundintelligent övergiven produktbläddringsscenario - en översikt på hög nivå.](../intelligent-re-engagement/images/re-engagement-journey.png "Kundintelligent övergiven produktbläddringsscenario - en översikt på hög nivå."){width="1920" zoomable="yes"}</p>
 
 1. Du kan skapa scheman och datauppsättningar och sedan aktivera för [!UICONTROL Profile].
-2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
+2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Källkopplingen för analyser kan också användas, men kan resultera i fördröjning för resan.
 3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och i mobilappar via identitetsdiagram.
 4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har gjort ett engagemang de senaste tre dagarna.
 5. Du skapar en övergiven produktbläddringsresa i [!DNL Adobe Journey Optimizer].
@@ -72,7 +72,7 @@ Det övergivna produktbläddringsscenariot avser övergiven produktbläddring p�
 Det övergivna kundvagnsscenariot gäller när produkter har placerats i kundvagnen men ännu inte köpts på både webbplatsen och mobilappen. Betalda mediekampanjer startas och stoppas med den här metoden.<p>![Kundens övergivna kundvagnsscenario - en högnivåvisuell översikt.](../intelligent-re-engagement/images/abandoned-cart-journey.png "Kundens övergivna kundvagnsscenario - en högnivåvisuell översikt."){width="1920" zoomable="yes"}</p>
 
 1. Du skapar scheman och datauppsättningar, [!UICONTROL Profile].
-2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
+2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Källkopplingen för analyser kan också användas, men kan resultera i fördröjning för resan.
 3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och i mobilappar via identitetsdiagram.
 4. Du bygger fokuserade målgrupper från listan med profiler för att kontrollera om en **kund** har placerat en artikel i kundvagnen men inte slutfört köpet. The **[!UICONTROL Add to cart]** event startar en timer som väntar i 30 minuter och sedan söker efter köp. Om inget köp har gjorts **kund** läggs till i **[!UICONTROL Abandon Cart]** målgrupper.
 5. Du skapar en övergiven kundvagnsresa i [!DNL Adobe Journey Optimizer].
@@ -84,7 +84,7 @@ Det övergivna kundvagnsscenariot gäller när produkter har placerats i kundvag
 Orderbekräftelsescenariot fokuserar på produktinköp som görs via webbplatsen och mobilappen.<p>![Scenario för bekräftelse av kundorder - översikt på hög nivå.](../intelligent-re-engagement/images/order-confirmation-journey.png "Scenario för bekräftelse av kundorder - översikt på hög nivå."){width="1920" zoomable="yes"}</p>
 
 1. Du kan skapa scheman och datauppsättningar och sedan aktivera för [!UICONTROL Profile].
-2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
+2. Du importerar data till Experience Platform via Web SDK, Mobile SDK eller API. Källkopplingen för analyser kan också användas, men kan resultera i fördröjning för resan.
 3. Du importerar ytterligare profilaktiverade data, som kan länkas till den autentiserade besökaren på webben och i mobilappar via identitetsdiagram.
 4. Du skapar en bekräftelseresa i [!DNL Adobe Journey Optimizer].
 5. [!DNL Adobe Journey Optimizer] skickar ett orderbekräftelsemeddelande via den önskade kanalen.
