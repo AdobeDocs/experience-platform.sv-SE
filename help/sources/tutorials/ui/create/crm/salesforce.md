@@ -2,9 +2,9 @@
 title: Anslut ditt Salesforce-konto med användargränssnittet i Experience Platform
 description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform med användargränssnittet.
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 57cdcbd5018e7f57261f09c6bddf5e2a8dcfd0d5
+source-git-commit: a5ecd4ab1c543805870b846cfe0fccc5474333d4
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '526'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ För att autentisera [!DNL Salesforce] måste du ange värden som motsvarar föl
 | `username` | Användarnamnet för [!DNL Salesforce] användarkonto. |
 | `password` | Lösenordet för [!DNL Salesforce] användarkonto. |
 | `securityToken` | Säkerhetstoken för [!DNL Salesforce] användarkonto. |
-| `apiVersion` | (Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| `apiVersion` | (Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0` Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 
 Mer information om autentisering finns i [this [!DNL Salesforce] autentiseringsguide](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm).
 

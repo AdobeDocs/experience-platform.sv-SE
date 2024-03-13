@@ -5,9 +5,9 @@ title: Skapa en Salesforce-basanslutning med API:t för flödestjänsten
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 57cdcbd5018e7f57261f09c6bddf5e2a8dcfd0d5
+source-git-commit: 27ad8812137502d0a636345852f0cae5d01c7b23
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '511'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL Salesforce]måste du an
 | `username` | Användarnamnet för [!DNL Salesforce] användarkonto. |
 | `password` | Lösenordet för [!DNL Salesforce] användarkonto. |
 | `securityToken` | Säkerhetstoken för [!DNL Salesforce] användarkonto. |
-| `apiVersion` | (Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| `apiVersion` | Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0` Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 Mer information om hur du kommer igång finns på [det här Salesforce-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
