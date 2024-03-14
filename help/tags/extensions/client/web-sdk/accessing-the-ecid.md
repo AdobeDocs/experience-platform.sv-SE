@@ -2,9 +2,9 @@
 title: Åtkomst till ECID
 description: Lär dig hur du får åtkomst till Experience Cloud-ID från Data Prep eller Taggar
 exl-id: 8e63a873-d7b5-4c6c-b14d-3c3fbc82b62f
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e01dfcf3cccea589083a23171f4b8d9ecad58233
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---
@@ -32,10 +32,10 @@ Ställ sedan in målet på en XDM-sökväg där fältet är av typen `string`.
 
 Om du behöver komma åt [!DNL ECID] på klientsidan använder du taggarna som beskrivs nedan.
 
-1. Kontrollera att egenskapen är konfigurerad med [sekvensering av regelkomponenter](../../../ui/managing-resources/rules.md#sequencing) aktiverat.
-1. Skapa en ny regel.
+1. Kontrollera att din egenskap är konfigurerad med [sekvensering av regelkomponenter](../../../ui/managing-resources/rules.md#sequencing) aktiverat.
+1. Skapa en ny regel. Den här regeln ska endast användas för att hämta [!DNL ECID] utan andra viktiga åtgärder.
 1. Lägg till en [!UICONTROL Library Loaded] till regeln.
-1. Lägg till en [!UICONTROL Custom Condition] åtgärd för regeln med följande kod (förutsatt att namnet som du har konfigurerat för SDK-instansen är `alloy`):
+1. Lägg till en [!UICONTROL Custom Code] åtgärd för regeln med följande kod (förutsatt att namnet som du har konfigurerat för SDK-instansen är `alloy` och det finns inte redan ett dataelement med samma namn):
 
    ```js
     return alloy("getIdentity")
@@ -46,4 +46,4 @@ Om du behöver komma åt [!DNL ECID] på klientsidan använder du taggarna som b
 
 1. Spara regeln.
 
-Du bör sedan kunna komma åt [!DNL ECID] i efterföljande regler använda `%ECID%` eller `_satellite.getVar("ECID")`på samma sätt som andra dataelement.
+Du bör sedan kunna komma åt [!DNL ECID] i efterföljande regler använda `%ECID%` eller `_satellite.getVar("ECID")`på samma sätt som du får åtkomst till andra dataelement.
