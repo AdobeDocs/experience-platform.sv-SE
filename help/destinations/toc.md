@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 73785443a9d07dfde3ef1060f7886dfed484925b
+source-git-commit: 5db7e1a88373dcc5dd266f6c082985f4055a1b0f
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1215'
 ht-degree: 1%
 
 ---
@@ -140,6 +140,8 @@ ht-degree: 1%
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
+   * Data &amp; Identity Partner {#data-partner}
+      * [Proportionerna för Acxiom undertryckning](./catalog/data-partner/acxiom-prospect-suppression.md)
    * e-handelsdestinationer {#ecommerce}
       * [SAP Commerce](./catalog/ecommerce/sap-commerce.md)
    * E-postmål {#email}
