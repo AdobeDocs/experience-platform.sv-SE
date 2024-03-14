@@ -3,9 +3,9 @@ title: Intelligent återanvändning
 description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: 151695e348764a25f2b2e986dcbdc1970a67ad47
+source-git-commit: 6991bad03b298373a0d55258dacc60ea8d797fd8
 workflow-type: tm+mt
-source-wordcount: '3747'
+source-wordcount: '3869'
 ht-degree: 1%
 
 ---
@@ -147,7 +147,7 @@ Med den här fältgruppen kan du testa din resa innan den publiceras med testpro
 
 #### Kundens digitala transaktionsschema
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via [Web SDK](/help/web-sdk/home.md) och är nödvändigt för att kunna hänvisa till olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online och förbättrade målgruppsfunktioner.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på din webbplats eller tillhörande digitala plattformar. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] via [Web SDK](/help/web-sdk/home.md) och är nödvändigt för att kunna hänvisa till olika bläddrings- och konverteringshändelser som används för att utlösa resor, detaljerad kundanalys online, förbättrade målgruppsfunktioner och personaliserade meddelanden.
 
 Kundens digitala transaktionsschema representeras av en [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) klassen.
 
@@ -178,6 +178,25 @@ The [Information om slutanvändar-ID](/help/xdm/field-groups/event/enduserids.md
 
 +++
 
++++Commerce Details (fältgrupp)
+
+The [Handelsinformation](/help/xdm/field-groups/event/commerce-details.md) fältgrupp används för att beskriva handelsdata, t.ex. produktinformation (SKU, namn, kvantitet) och standardkundvagnsåtgärder (beställning, utcheckning, övergivna).
+
+| Fält | Beskrivning |
+| --- | --- |
+| `commerce.cart.cartID` | Ett ID för kundvagnen. |
+| `commerce.order.orderType` | Ett objekt som beskriver produktordertypen. |
+| `commerce.order.payments.paymentAmount` | Ett objekt som beskriver betalningsbeloppet för produktorder. |
+| `commerce.order.payments.paymentType` | Ett objekt som beskriver betalningstypen för produktorder. |
+| `commerce.order.payments.transactionID` | Ett transaktions-ID för objektproduktorder. |
+| `commerce.order.purchaseID` | Ett objektproduktorderns inköps-ID. |
+| `productListItems.name` | En lista med artikelnamn som representerar de produkter som en kund har valt. |
+| `productListItems.priceTotal` | Det totala priset på en lista med artiklar som representerar de produkter som kunden har valt. |
+| `productListItems.product` | Produkten/produkterna som valts. |
+| `productListItems.quantity` | Kvantiteten i en lista över artiklar som representerar de produkter som kunden har valt. |
+
++++
+
 +++Extern källsystemsgranskningsinformation (fältgrupp)
 
 Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data Model) som samlar in granskningsinformation om ett externt källsystem.
@@ -186,7 +205,7 @@ Granskningsattribut för externt källsystem är en XDM-datatyp (Experience Data
 
 #### Schema för offlinetransaktioner för kund
 
-Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på plattformar utanför webbplatsen. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] från en POS (eller liknande system) och som oftast strömmas till plattformen via en API-anslutning. Syftet är att hänvisa till olika offlinekonverteringshändelser som används för att utlösa resor, djupgående kundanalyser online och offline samt förbättrade målgruppsfunktioner.
+Det här schemat används för att strukturera och referera till händelsedata som utgör kundaktiviteten på plattformar utanför webbplatsen. Dessa data är vanligtvis insamlade i [!DNL Adobe Experience Platform] från en POS (eller liknande system) och som oftast strömmas till plattformen via en API-anslutning. Syftet är att hänvisa till olika offlinekonverteringshändelser som används för att utlösa resor, djupgående kundanalyser online och offline, förbättrade målgruppsfunktioner och personaliserade meddelanden.
 
 Kundens offlinetransaktionsschema representeras av en [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) klassen.
 
@@ -346,7 +365,7 @@ Följande händelse används för det övergivna produktbläddringsscenariot dä
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `eventType: commerce.productViews`
-* Och `THEN` (sekventiell händelse) exclude `eventType: commerce.productListAdds` eller `application.launch` eller `web.webpagedetails.pageViews` eller `commerce.purchases` (både online och offline)
+* Och `THEN` (sekventiell händelse) exclude `eventType: commerce.productListAdds` OCH `application.launch` OCH `web.webpagedetails.pageViews` OCH `commerce.purchases` (både online och offline)
    * `Timestamp: > 3 days after productView`
 * `Timestamp: > 4 days`
 
@@ -359,7 +378,7 @@ Följande händelse används för det övergivna produktbläddringsscenariot, d�
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `eventType: commerce.productViews`
-* Och `THEN` (sekventiell händelse) include `eventType: commerce.productListAdds` eller `application.launch` eller `web.webpagedetails.pageViews` eller `commerce.purchases` (både online och offline)
+* Och `THEN` (sekventiell händelse) include `eventType: commerce.productListAdds` ELLER `application.launch` ELLER `web.webpagedetails.pageViews` ELLER `commerce.purchases` (både online och offline)
    * `Timestamp: > 3 days after productView`
 * `Timestamp: > 4 days`
 +++
@@ -370,7 +389,7 @@ Följande händelse används för det övergivna produktbläddringsscenariot dä
 
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
-* `eventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `eventType: commerce.productListAdds OR application.launch OR web.webpagedetails.pageViews OR commerce.purchases`
    * `Timestamp: in last 1 day` (Direktuppspelning)
 
 +++
@@ -381,7 +400,7 @@ Följande händelse används för det övergivna produktbläddringsscenariot dä
 
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
-* `EventType: commerce.productListAdds or application.launch or web.webpagedetails.pageViews or commerce.purchases`
+* `EventType: commerce.productListAdds OR application.launch OR web.webpagedetails.pageViews OR commerce.purchases`
    * `Timestamp: in last 3 days` (Gruppera)
 
 +++
@@ -395,7 +414,7 @@ Följande händelser används för det övergivna kundvagnsscenariot där använ
 Följande fält och villkor krävs när du konfigurerar den här målgruppen:
 
 * `eventType: commerce.productListAdds`
-   * `Timestamp: >= 1 days before now and <= 4 days before now `
+   * `Timestamp: >= 1 days before now AND <= 4 days before now `
 * `eventType: commerce.purchases`
    * `Timestamp: <= 4 days before now`
 * `eventType: commerce.productListRemovals`
