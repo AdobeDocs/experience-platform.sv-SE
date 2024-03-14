@@ -2,10 +2,10 @@
 title: Personalisering via Adobe Target
 description: Lär dig hur du använder Server-API:t för att leverera och återge personaliserade upplevelser som skapats i Adobe Target.
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: ddffe9bf30741b457f7de1099b50ac1624fca927
 workflow-type: tm+mt
-source-wordcount: '591'
-ht-degree: 1%
+source-wordcount: '664'
+ht-degree: 0%
 
 ---
 
@@ -287,3 +287,9 @@ Tabellen nedan förklarar de viktigaste elementen i den delen av svaret.
 | `items[].data.id` | ID för det föreslagna erbjudandet. | `"id": "282484"` |
 | `items[].data.format` | Formatet på innehållet som är associerat med det föreslagna erbjudandet. | `"format: "application/json` |
 | `items[].data.content` | Innehåll som är associerat med det föreslagna erbjudandet. Detta kommer att användas för personalisering av innehåll i det anropande programmet. | `"content": "<CONTENT CONFIGURED IN TARGET>"` |
+
+## Exempelprogram för personalisering på serversidan {#sample}
+
+Exempelprogrammet finns på [denna URL](https://github.com/adobe/alloy-samples/tree/main/target/personalization-server-side) visar hur du använder Adobe Experience Platform för att få personaliserat innehåll från Adobe Target. Webbsidan ändras baserat på det personaliseringsinnehåll som returneras.
+
+Detta exempel gör _not_ förlitar sig på bibliotek på klientsidan som [!DNL Web SDK] för att få personaliserat innehåll. Istället används Adobe Experience Platform API:er för att hämta personaliseringsinnehåll. Sedan genererar implementeringen serversidan på HTML baserat på det personaliseringsinnehåll som returneras.
