@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: bf7e2e08d54f113c6e2cc5060f51725555c2c049
+source-git-commit: c05bdceb5092278f6fefb2cb286bf25d97716cf7
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1499'
 ht-degree: 0%
 
 ---
@@ -141,7 +141,8 @@ Experience Platform har stöd för att importera data från en tredjepartsdataba
 
 Experience Platform har stöd för att importera data från en tredjepartsdatabas. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Acxiom Prospecting Data Import]](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md) [!BADGE Grupp]{type=Informative}
+- [[!DNL Acxiom Data Ingestion]](connectors/data-partners/acxiom-data-ingestion.md) [!BADGE Grupp]{type=Informative}
+- [[!DNL Acxiom Prospecting Data Import]](connectors/data-partners/acxiom-prospecting-data-import.md) [!BADGE Grupp]{type=Informative}
 - [[!DNL Merkury Enterprise Identity Resolution]](connectors/data-partners/merkury.md) [!BADGE Grupp]{type=Informative}
 
 ### eCommerce {#ecommerce}
@@ -162,7 +163,7 @@ Experience Platform har stöd för inmatning av data från ditt lokala system. M
 
 Experience Platform stöder inmatning av data från ett system för automatisering av marknadsföring från tredje part. Mer information om specifika källanslutningar finns i följande relaterade dokument:
 
-- [[!DNL Braze]](tutorials/ui/create/marketing-automation/braze.md) [!BADGE Direktuppspelning]{type=Positive}
+- [[!DNL Braze]](connectors/marketing-automation/braze.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Chatlio]](connectors/marketing-automation/chatlio-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL Customer.io]](connectors/marketing-automation/customerio-webhook.md) [!BADGE Direktuppspelning]{type=Positive}
 - [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md) [!BADGE Grupp]{type=Informative}

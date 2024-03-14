@@ -1,34 +1,29 @@
 ---
-title: Acxiom Prospecting Data Import
-description: Lär dig hur du ansluter Acxiom Prospecting Data till Adobe Experience Platform och Adobe Real-time Customer Data Platform med användargränssnittet.
+title: Acxiom-datainmatning
+description: Lär dig hur du importerar [!DNL Acxiom] data till Real-time Customer Data Platform, berika förstahandsprofiler, förbättra målgrupperna och aktivera i alla marknadsföringskanaler.
 badge: Beta
-exl-id: 6df674d9-c14b-42ea-a287-5377484e567d
 source-git-commit: 9419da451616ca7f087ecea7aa66a6c10a474fb3
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '469'
 ht-degree: 0%
 
 ---
 
-# [!DNL Acxiom Prospecting Data Import]
+# [!DNL Acxiom Data Ingestion]
 
 >[!NOTE]
 >
 >The [!DNL Acxiom Prospecting Data Import] källan är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
-Adobe Experience Platform har stöd för inmatning av data från ett datapartnerprogram. Stöd för data- och identitetspartners innefattar [!DNL Acxiom Prospecting Data Import].
+Använd [!DNL Acxiom Data Ingestion] källa att importera [!DNL Acxiom] till Real-time Customer Data Platform och berika förstahandsprofilerna. Sedan kan du använda [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupperna och aktivera i alla marknadsföringskanaler.
 
-[!DNL Acxiom]Prospecting Data Import for Adobe Real-time Customer Data Platform är en process för att leverera de mest produktiva målgrupperna. [!DNL Acxiom] använder Real-Time CDP förstahandsdata via säker export och kör dessa data via ett prisbelönt hygien- och identitetshanteringssystem. En datafil som kan användas som en undertryckningslista skapas. Den här datafilen matchas sedan mot [!DNL Acxiom Global] databas, som gör det möjligt att anpassa listor med potentiella kunder för import.
+![acxiom-data-inghit-workflow](../../images/tutorials/create/acxiom-data-enhancement-import/acxiom-data-ingestion.png)
 
-Du kan använda [!DNL Acxiom] källa för att hämta och mappa svar från [!DNL Acxiom] tjänst för potentiell kund med [!DNL Amazon S3] som en släpppunkt.
+Läs dokumentet nedan för information om hur du kan konfigurera [!DNL Acxiom Data Ingestion] källkonto.
 
-![acxiom-prospekting-workflow](../../images/tutorials/create/acxiom-prospect-suppression-data-sourcing/acxiom-prospecting.png)
+## Förutsättningar {#prerequisites}
 
-Läs dokumentet nedan för information om hur du kan konfigurera [!DNL Acxiom Prospecting Data Import] källkonto.
-
-## Förutsättningar
-
-För att få åtkomst till din bucket på Experience Platform måste du ange giltiga värden för följande autentiseringsuppgifter:
+För att kunna ansluta [!DNL Acxiom Data Ingestion] konto till Experience Platform måste du ange värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
@@ -43,9 +38,9 @@ En lista med IP-adresser måste läggas till tillåtelselista innan du kan arbet
 
 ### Konfigurera behörigheter i Experience Platform
 
-Du måste ha båda **[!UICONTROL View Sources]** och **[!UICONTROL Manage Sources]** behörigheter för ditt konto för att ansluta [!DNL Acxiom Prospecting Data Import] konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [gränssnittsguide för åtkomstkontroll](../../../access-control/abac/ui/permissions.md).
+Du måste ha båda **[!UICONTROL View Sources]** och **[!UICONTROL Manage Sources]** behörigheter för ditt konto för att ansluta [!DNL Acxiom Data Ingestion] konto till Experience Platform. Kontakta produktadministratören för att få den behörighet som krävs. Mer information finns i [gränssnittsguide för åtkomstkontroll](../../../access-control/ui/overview.md).
 
-## Namnbegränsningar för filer och kataloger
+### Namnbegränsningar för filer och kataloger
 
 De begränsningar som anges nedan måste beaktas när du namnger molnlagringsfilen eller -katalogen:
 
@@ -58,4 +53,4 @@ De begränsningar som anges nedan måste beaktas när du namnger molnlagringsfil
 
 ## Nästa steg
 
-Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna hämta data från [!DNL Acxiom] konto till Experience Platform. Du kan nu fortsätta med guiden på [koppla [!DNL Acxiom Prospecting Data Import] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md).
+Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna hämta data från [!DNL Acxiom] konto till Experience Platform. Du kan nu fortsätta med guiden på [koppla [!DNL Acxiom Data Ingestion] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/acxiom-data-ingestion.md).
