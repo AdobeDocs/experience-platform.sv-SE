@@ -5,7 +5,7 @@ user-guide-title: Hjälp med intelligenta tjänster
 breadcrumb-title: Användarhandbok om Intelligent Services
 user-guide-description: Använd intelligenta AI-tjänster för att generera bakgrundsmusik, upptäcka insikter och skapa segment utifrån data över marknadsföringshändelser.
 role: User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 23%
@@ -55,4 +55,4 @@ ht-degree: 23%
       - [Kundhanterade nycklar](customer-ai/cai-data-governance/customer-managed-keys.md)
       - [Datastyrning](customer-ai/cai-data-governance/data-governance.md)
       - [Styrningspolitik](customer-ai/cai-data-governance/governance-policies.md)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

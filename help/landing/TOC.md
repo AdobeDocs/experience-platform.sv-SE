@@ -3,7 +3,7 @@ audience: user
 user-guide-title: Översikt över Adobe Experience Platform
 breadcrumb-title: Översikt över Experience Platform
 user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '282'
 ht-degree: 18%
@@ -81,4 +81,4 @@ ht-degree: 18%
 * [Felsökningsguide](troubleshooting.md)
 * [Migrering av data från Gen2](adls2-gen2-migration.md)
 * [Ordlista](glossary.md)
-* [Versionsinformation](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

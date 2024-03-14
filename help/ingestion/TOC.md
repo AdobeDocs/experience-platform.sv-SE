@@ -5,7 +5,7 @@ breadcrumb-title: Användarhandbok om datainmatning
 user-guide-description: Samla data i Experience Platform via batch- eller strömningsinmatning.
 feature: Data Ingestion
 role: Developer
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '145'
 ht-degree: 17%
@@ -49,4 +49,4 @@ ht-degree: 17%
 - [Källkopplingar](source-connectors.md)
 - [API-referens för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/)
 - [API-referens för direktuppspelning](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)
-- [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+- [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

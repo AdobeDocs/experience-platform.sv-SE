@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över Adobe Experience Platform
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '434'
 ht-degree: 1%
@@ -64,7 +64,7 @@ Besök [Självstudiekurser för Experience Platform](https://www.adobe.com/go/pl
 * [**Ordlista**](glossary.md)\
   Se Adobe Experience Platform terminologi.
 
-* [**Versionsinformation**](https://www.adobe.com/go/platform-release-notes-en)\
+* [**Versionsinformation**](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)\
   Hitta information om den senaste [!DNL Experience Platform] publicera och granska tidigare versioner.
 
 * [**Felsökningsguide**](troubleshooting.md)\

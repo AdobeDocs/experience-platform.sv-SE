@@ -5,7 +5,7 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
 source-wordcount: '90'
 ht-degree: 28%
@@ -44,4 +44,4 @@ ht-degree: 28%
 * [Datamängder för frågeinstrumentpanelen](query.md)
 * [Real-time Customer Data Platform Insights-datamodell](cdp-insights-data-model.md)
 * [Visa SQL-insikter](view-sql.md)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

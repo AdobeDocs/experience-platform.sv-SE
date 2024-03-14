@@ -4,10 +4,10 @@ user-guide-title: Hjälp med sandlådor i Adobe Experience Platform
 breadcrumb-title: Användarhandbok för sandlådor
 user-guide-description: Läs om hur sandlådor fungerar och partitionera en Platform-instans i virtuella miljöer för utveckling, testning och programdistribution.
 feature: Sandboxes
-source-git-commit: 81f570f8e5401624ccac74696b2323252a4de0a9
+source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
 workflow-type: tm+mt
-source-wordcount: '77'
-ht-degree: 46%
+source-wordcount: '70'
+ht-degree: 51%
 
 ---
 
@@ -34,4 +34,4 @@ ht-degree: 46%
    * [Bilaga](sandbox-tooling-api/appendix.md)
 * [Felsökningsguide](troubleshooting-guide.md)
 * [API-referens](https://www.adobe.io/experience-platform-apis/references/sandbox)
-* [Versionsinformation för plattform](https://www.adobe.com/go/platform-release-notes-en)
+* [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
