@@ -1,11 +1,11 @@
 ---
 title: Dataförbättring i Acxiom
-description: Använd den här kopplingen för att aktivera förstahandsprofiler för Adobe i Real-Time CDP till Acxiom för berikning och användning i alla marknadsföringskanaler.
+description: Använd den här kopplingen för att aktivera förstahandsprofiler för Adobe i Real-Time CDP till Acxiom för att berika och använda data i alla marknadsföringskanaler. Du kan sedan använda Acxiom-källan för att importera profiler med förbättrade data och arbeta med dem i Real-Time CDP.
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta
-source-git-commit: 6f272ce0ad619f835920ab9d25d0946d7709d7cb
+source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
 workflow-type: tm+mt
-source-wordcount: '1275'
+source-wordcount: '1307'
 ht-degree: 1%
 
 ---
@@ -18,30 +18,29 @@ ht-degree: 1%
 
 ## Översikt {#overview}
 
-Använd Acxiom Data Enhancement-kontakten för att förse dina Adobe-profiler med ytterligare beskrivande data som kan användas i analytiska, segmenterade och målinriktade program. Med hundratals tillgängliga element kan användarna segmentera och modellera data bättre, vilket ger mer korrekt målinriktning och prediktiv modellering.
+Använd [!DNL Acxiom Data Enhancement] för att förse era kundprofiler med ytterligare beskrivande data, som kan användas för analys, segmentering och målgruppsapplikationer. Med hundratals tillgängliga element kan ni segmentera och modellera data bättre, vilket resulterar i mer korrekt målinriktning och prediktiv modellering.
 
 ![Marknadsföringsdiagram som exporterar förstahandsdata till Acxiom och sedan importerar berikade data tillbaka till Real-Time CDP](/help/destinations/assets/catalog/data-partner/acxiom/marketing-workflow-data-enhancement.png)
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Acxiom Data Enhancement] målanslutning och dataflöde med Adobe Experience Platform användargränssnitt.  Den här kopplingen används för att leverera data till Acxiom-förbättringstjänsten med Amazon S3 som utgångspunkt.
+Den här självstudiekursen innehåller steg för att skapa en [!DNL Acxiom Data Enhancement] målanslutning och dataflöde med Adobe Experience Platform användargränssnitt. Den här kopplingen används för att leverera data till Acxiom-förbättringstjänsten med Amazon S3 som utgångspunkt.
 
 ![Målkatalogen med Acxiom-målet markerat.](../../assets/catalog/data-partner/acxiom/image-destination-enhancement-catalog.png)
 
 ## Användningsfall {#use-cases}
 
-För att du bättre ska förstå hur och när du ska använda Acxiom Data Enhancement-målet finns det exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda den här destinationen.
+För att du bättre ska förstå hur och när du ska använda [!DNL Acxiom Data Enhancement] mål, här är exempel på användningsområden som Adobe Experience Platform-kunder kan lösa genom att använda denna destination.
 
 ### Förbättra kunddata {#enhance-customer-data}
 
-Denna koppling ska användas av marknadsförare som vill förbättra effektiviteten i sina utåtriktade strategier genom att lägga till utvalda beskrivande element i Adobe-profiler och använda dessa för att bättre målinrikta kampanjer.
+Denna koppling ska användas av marknadsförare som vill förbättra effektiviteten i sina utåtriktade strategier genom att lägga till utvalda beskrivande element i sina kundprofiler och använda dessa för att bättre målinrikta kampanjer.
 
 Som marknadsförare kanske du vill fördjupa din förståelse för era befintliga målgrupper genom att förbättra deras profiler med ytterligare data. Om du gör det kommer ni att förbättra era segmenterings- och målinriktningsstrategier, vilket leder till en ökad personalisering och konvertering av kampanjer.
 
 Användningsexemplet körs genom en kombination av både mål- och källanslutningar.
 
-
 Du börjar med att exportera dina befintliga kundposter för anrikning med den här målkopplingen. Acxioms tjänst skulle söka efter filen, hämta den, berika den med data från Acxiom och generera en fil.
 
-Kunden skulle sedan använda motsvarande källkort för Acxiom Data Ingakes för att importera de hydratiserade kundprofilerna tillbaka till Adobe Real-Time CDP.
+Kunden skulle sedan använda motsvarande [Acxiom-datainmatning](/help/sources/connectors/data-partners/acxiom-data-ingestion.md) källkort för att importera de hydratiserade kundprofilerna tillbaka till Adobe Real-Time CDP.
 
 ## Förutsättningar {#prerequisites}
 
@@ -79,6 +78,8 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 >
 >Om du vill ansluta till målet behöver du **[!UICONTROL View Destinations]** och **[!UICONTROL Manage and Activate Dataset Destinations]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
+Om du vill ansluta till det här målet följer du stegen som beskrivs i [självstudiekurs om destinationskonfiguration](../../ui/connect-destination.md). I arbetsflödet för målkonfiguration fyller du i fälten som listas i de två avsnitten nedan.
+
 ### Autentisera till mål {#authenticate}
 
 Om du vill autentisera mot målet fyller du i de obligatoriska fälten och väljer **[!UICONTROL Connect to destination]**.
@@ -99,7 +100,7 @@ Så här definierar du en ny plats för hanterad Acxiom S3:
 
 ### Befintligt konto
 
-Konton som redan har definierats med Acxiom Data Enhancement Card visas i en listruta och när de har valts visas information om kontot.  Detta visas nedan i exemplet från användargränssnittet när du navigerar till **Destinationer** > **Konton**;
+Konton som redan definierats med [!DNL Acxiom Data Enhancement] målet visas i ett popup-fönster med listor. När du väljer det här alternativet visas information om kontot i den högra listen. Visa exemplet från gränssnittet när du navigerar till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**;
 
 ![Befintligt konto](../../assets/catalog/data-partner/acxiom/image-destination-enhancement-account.png)
 
@@ -144,14 +145,14 @@ Mappningsförslag ges i tabellen nedan som listar de attribut på målsidan som 
 
 | Målfält | Källbeskrivning |
 |--------------|-------------------------------------------------------------|
-| name | Värdet för person.name.fullName i Experience Platform. |
-| firstName | Värdet för person.name.firstName i Experience Platform. |
-| lastName | Värdet för person.name.lastName i Experience Platform. |
-| adress1 | Värdet för mailAddress.street1 i Experience Platform. |
-| adress2 | Värdet för mailAddress.street2 i Experience Platform. |
-| stad | Värdet för mailAddress.city i Experience Platform. |
-| läge | Värdet för mailAddress.state i Experience Platform. |
-| zip | Värdet för mailingAddress.mailCode i Experience Platform. |
+| name | The `person.name.fullName` värde i Experience Platform. |
+| firstName | The `person.name.firstName` värde i Experience Platform. |
+| lastName | The `person.name.lastName` värde i Experience Platform. |
+| adress1 | The `mailingAddress.street1` värde i Experience Platform. |
+| adress2 | The `mailingAddress.street2` värde i Experience Platform. |
+| stad | The `mailingAddress.city` värde i Experience Platform. |
+| läge | The `mailingAddress.state` värde i Experience Platform. |
+| zip | The `mailingAddress.postalCode` värde i Experience Platform. |
 
 >[!NOTE]
 >

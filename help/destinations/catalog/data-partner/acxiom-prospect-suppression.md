@@ -3,9 +3,9 @@ title: Proportioner för Acxiom - undertryckning
 description: Exportera era egna målgrupper till Acxiom-destinationen så att Acxiom kan inaktivera kända eller konverterade kunder. Använd sedan källkopplingen för Acxiom för att importera och aktivera listor med potentiella kunder från Acxiom, med kända eller konverterade kunder borttagna.
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta
-source-git-commit: c881f8375bc0eccb8e64666a888735c03018421c
+source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
 workflow-type: tm+mt
-source-wordcount: '1442'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -102,7 +102,7 @@ Så här definierar du en ny plats för hanterad Acxiom S3:
 
 ### Befintligt konto
 
-Konton som redan har definierats med Acxiom Prospect-Suppression-kortet visas i en listruta och när det är markerat visas information om kontot.  Detta visas nedan i exemplet från användargränssnittet när du navigerar till **Destinationer** > **Konton**;
+Konton som redan definierats med [!DNL Acxiom Prospect Suppression] målet visas i ett popup-fönster med listor. När du väljer det här alternativet visas information om kontot i den högra listen. Visa exemplet från gränssnittet när du navigerar till **[!UICONTROL Destinations]** > **[!UICONTROL Accounts]**:
 
 ![Befintligt konto](../../assets/catalog/data-partner/acxiom/image-destination-account.png)
 
@@ -145,14 +145,14 @@ Bearbetning kräver namn- och adresselement, men alla element krävs inte, föru
 
 | Målfält | Källbeskrivning |
 |--------------|-------------------------------------------------------------|
-| name | Värdet för person.name.fullName i Experience Platform. |
-| firstName | Värdet för person.name.firstName i Experience Platform. |
-| lastName | Värdet för person.name.lastName i Experience Platform. |
-| adress1 | Värdet för mailAddress.street1 i Experience Platform. |
-| adress2 | Värdet för mailAddress.street2 i Experience Platform. |
-| stad | Värdet för mailAddress.city i Experience Platform. |
-| läge | Värdet för mailAddress.state i Experience Platform. |
-| zip | Värdet för mailingAddress.mailCode i Experience Platform. |
+| name | The `person.name.fullName` värde i Experience Platform. |
+| firstName | The `person.name.firstName` värde i Experience Platform. |
+| lastName | The `person.name.lastName` värde i Experience Platform. |
+| adress1 | The `mailingAddress.street1` värde i Experience Platform. |
+| adress2 | The `mailingAddress.street2` värde i Experience Platform. |
+| stad | The `mailingAddress.city` värde i Experience Platform. |
+| läge | The `mailingAddress.state` värde i Experience Platform. |
+| zip | The `mailingAddress.postalCode` värde i Experience Platform. |
 
 {style="table-layout:auto"}
 
