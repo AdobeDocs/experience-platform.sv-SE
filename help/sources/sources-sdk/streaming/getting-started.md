@@ -1,12 +1,10 @@
 ---
 title: Komma igång med självbetjäningskällor (Streaming SDK)
-description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med hjälp av självbetjäningskällor (Streaming SDK).
-hide: true
-hidefromtoc: true
+description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med självbetjäningskällor (Streaming SDK).
 exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
@@ -31,7 +29,7 @@ Hur du konfigurerar källan i Experience Platform beskrivs nedan:
 * Läs guiden på [med GitHub-webbgränssnittet](../documentation/github.md) för steg om hur du skapar dokumentation med GitHub.
 * Läs guiden på [använda en textredigerare](../documentation/text-editor.md) för steg om hur du skapar dokumentation med din lokala dator.
 * [Använd dokumentationsmallen för Streaming SDK API för att dokumentera källan i API:t](streaming-template-api.md).
-* [Använd dokumentationsmallen för användargränssnittet för direktuppspelning av SDK för att dokumentera källan i användargränssnittet](streaming-template-ui.md).
+* [Använd dokumentationsmallen för användargränssnittet för strömning av SDK för att dokumentera källan i användargränssnittet](streaming-template-ui.md).
 
 Du kan även hämta dokumentationsmallarna nedan:
 

@@ -1,12 +1,10 @@
 ---
 title: Testa och skicka källan
 description: I följande dokument beskrivs hur du testar och verifierar en ny källa med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor (Streaming SDK).
-hide: true
-hidefromtoc: true
 exl-id: 2ae0c3ad-1501-42ab-aaaa-319acea94ec2
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
 workflow-type: tm+mt
-source-wordcount: '1220'
+source-wordcount: '1216'
 ht-degree: 0%
 
 ---
@@ -36,9 +34,9 @@ För att kunna börja testa måste du först konfigurera samlingen och miljön p
 
 | Parameter | Beskrivning | Exempel |
 | --- | --- | --- |
-| `x-api-key` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) om du vill ha information om hur du hämtar `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `x-api-key` | En unik identifierare som används för att autentisera anrop till API:er för Experience Platform. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) för information om hur du hämtar `x-api-key`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
 | `x-gw-ims-org-id` | En företagsenhet som kan äga eller licensiera produkter och tjänster och ge åtkomst till sina medlemmar. Se självstudiekursen om [konfigurera utvecklarkonsolen och [!DNL Postman]](../../../landing/postman.md) för instruktioner om hur du hämtar `x-gw-ims-org-id` information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
-| `authorizationToken` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) om du vill ha information om hur du hämtar `authorizationToken`. | `Bearer authorizationToken` |
+| `authorizationToken` | Den auktoriseringstoken som krävs för att slutföra anrop till Experience Platform API:er. Se självstudiekursen om [autentisera och komma åt Experience Platform API:er](../../../landing/api-authentication.md) för information om hur du hämtar `authorizationToken`. | `Bearer authorizationToken` |
 | `schemaId` | För att källdata ska kunna användas i Platform måste ett målschema skapas för att strukturera källdata efter dina behov. Detaljerade anvisningar om hur du skapar ett XDM-målschema finns i självstudiekursen om [skapa ett schema med API](../../../xdm/api/schemas.md). | `https://ns.adobe.com/{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
 | `schemaVersion` | Den unika version som motsvarar ditt schema. | `application/vnd.adobe.xed-full-notext+json; version=1` |
 | `schemaAltId` | The `meta:altId` som returneras tillsammans med  `schemaId` när du skapar ett nytt schema. | `_{TENANT_ID}.schemas.0ef4ce0d390f0809fad490802f53d30b` |
@@ -51,7 +49,7 @@ För att kunna börja testa måste du först konfigurera samlingen och miljön p
 | `verifyWatTimeInSecond` | Det angivna tidsintervallet som ska följas när en flödeskörning slutförs. | `40` |
 | `startTime` | Starttiden för dataflödet. Starttiden måste formateras i unix-tid. | `1597784298` |
 
-När du har angett alla dina miljövariabler kan du börja köra samlingen med [!DNL Postman] gränssnitt. I [!DNL Postman] väljer du ellipserna (**...**) bredvid [!DNL Sources SSSs Verification Collection] och sedan markera **Kör samling**.
+När du har angett alla dina miljövariabler kan du börja köra samlingen med [!DNL Postman] gränssnitt. I [!DNL Postman] väljer du ellipserna (**...**) bredvid [!DNL Sources SSSs Verification Collection] och sedan **Kör samling**.
 
 ![runner](../assets/runner.png)
 
@@ -77,7 +75,7 @@ The [!UICONTROL Add data] visas. Om du vill testa att källan kan strömma data 
 
 The [!UICONTROL Dataflow detail] kan du välja om du vill använda en befintlig datamängd eller en ny datamängd. Under den här processen kan du även konfigurera dina data så att de hämtas till profilen och aktivera inställningar som [!UICONTROL Error diagnostics] och [!UICONTROL Partial ingestion].
 
-Välj **[!UICONTROL New dataset]** och ange ett namn på utdatauppsättningen. Under det här steget kan du även ange en valfri beskrivning för att lägga till ytterligare information till datauppsättningen. Välj sedan ett schema att mappa till med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan. När du har valt ett schema anger du ett namn och en beskrivning för dataflödet.
+För testning väljer du **[!UICONTROL New dataset]** och ange ett namn på utdatauppsättningen. Under det här steget kan du även ange en valfri beskrivning för att lägga till ytterligare information till datauppsättningen. Välj sedan ett schema att mappa till med [!UICONTROL Advanced search] eller genom att bläddra igenom listan med befintliga scheman i listrutan. När du har valt ett schema anger du ett namn och en beskrivning för dataflödet.
 
 När du är klar väljer du **[!UICONTROL Next]**.
 
@@ -100,7 +98,7 @@ När du har granskat dataflödet väljer du **[!UICONTROL Finish]** så att data
 
 ![Granskningssteget för källarbetsflödet.](../assets/testing/review-test.png)
 
-Slutligen måste du hämta dataflödets slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform. Gå till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapade och kopierar slutpunkten från nederkanten av [!UICONTROL Properties] -panelen.
+Slutligen måste du hämta dataflödets slutpunkt för direktuppspelning. Den här slutpunkten används för att prenumerera på din webkrok, vilket gör att strömningskällan kan kommunicera med Experience Platform. Om du vill hämta strömningsslutpunkten går du till [!UICONTROL Dataflow activity] sidan med dataflödet som du just skapade och kopierar slutpunkten från nederkanten av [!UICONTROL Properties] -panelen.
 
 ![Slutpunkten för direktuppspelning i dataflödesaktivitet.](../assets/testing/endpoint-test.png)
 

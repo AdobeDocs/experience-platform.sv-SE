@@ -1,10 +1,8 @@
 ---
 title: Uppdatera flödesspecifikationer för Streaming SDK med API:t för Flow Service
 description: I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med API:t för Flow Service för självbetjäningskällor (Streaming SDK).
-hide: true
-hidefromtoc: true
 exl-id: cc9dab7a-08fa-4c6c-bbac-cb658a6376fb
-source-git-commit: 05a7b73da610a30119b4719ae6b6d85f93cdc2ae
+source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
 workflow-type: tm+mt
 source-wordcount: '403'
 ht-degree: 0%
@@ -21,7 +19,7 @@ I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikation
 
 ## Komma igång
 
-Läs igenom [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+Innan du fortsätter bör du granska [komma igång-guide](./getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ## Söka efter en flödesspecifikation {#lookup}
 
@@ -365,4 +363,4 @@ Ett godkänt svar returnerar information om den efterfrågade flödesspecifikati
 
 ## Nästa steg
 
-När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden [testa och skicka en ny källa](./submit.md) för mer information.
+När den nya anslutningsspecifikationen har lagts till i rätt flödesspecifikation kan du nu testa och skicka den nya källan. Se guiden på [testa och skicka en ny källa](./submit.md) för mer information.
