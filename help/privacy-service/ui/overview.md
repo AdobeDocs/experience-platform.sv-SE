@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över användargränssnittet i Privacy Service
 description: Kom igång med användargränssnittet för Privacy Service för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
-source-git-commit: 20a737cf36bf08415a15db78599f36659207ace1
+source-git-commit: dbdeabf9036f1736a5b43d9057e77b82baf915cd
 workflow-type: tm+mt
 source-wordcount: '223'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 >title="Förfrågningar om registrerade"
 >abstract="Den här widgeten visar antalet inskickade och slutförda förfrågningar från registrerade personer som bearbetats per Privacy Service för en viss dag. Om du vill ha mer information om Privacy Servicen väljer du **Begäranden** i den vänstra navigeringen."
 
-Privacy Servicens användargränssnitt [!DNL Privacy Service] gör att ni kan samordna förfrågningar om sekretess och efterlevnad mellan olika Adobe Experience Cloud-program.
+Med Privacy Servicens användargränssnitt kan du samordna sekretess- och efterlevnadsförfrågningar i olika Adobe Experience Cloud-program.
 
 >[!NOTE]
 >

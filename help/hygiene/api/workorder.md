@@ -3,7 +3,7 @@ title: API-slutpunkt för arbetsorder
 description: Med slutpunkten /workorder i Data Hygiene API kan du programmässigt hantera borttagningsåtgärder för identiteter.
 role: Developer
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 4e92b6937c4fa383b398ec99faa6d97907c128d6
 workflow-type: tm+mt
 source-wordcount: '1281'
 ht-degree: 0%
@@ -126,9 +126,9 @@ Ett godkänt svar returnerar informationen om postborttagningen.
 
 {style="table-layout:auto"}
 
-## Hämta status för en postborttagning (#lookup)
+## Hämta status för en postborttagning {#lookup}
 
-Efter [skapa en postborttagningsbegäran](#create)kan du kontrollera status med hjälp av en GET-förfrågan.
+Efter dig [skapa en begäran om radering av post](#create)kan du kontrollera status med hjälp av en GET-förfrågan.
 
 **API-format**
 

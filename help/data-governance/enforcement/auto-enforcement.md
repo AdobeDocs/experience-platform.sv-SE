@@ -4,24 +4,24 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: f4f4deda02c96e567cbd0815783f192d1c54096c
+source-git-commit: 4e92b6937c4fa383b398ec99faa6d97907c128d6
 workflow-type: tm+mt
-source-wordcount: '1885'
+source-wordcount: '1998'
 ht-degree: 0%
 
 ---
 
 # Automatisk policytillämpning
 
+Dataanvändningsetiketter och -profiler är tillgängliga för alla Adobe Experience Platform-användare. Definiera dataanvändningspolicyer och använd etiketter för dataanvändning för att säkerställa att känsliga, identifierbara eller avtalsbaserade data hanteras korrekt. Dessa åtgärder hjälper er att tillämpa organisationens regler för datastyrning på hur data kan nås, bearbetas, lagras och delas.
+
+För att skydda organisationen från potentiella risker och förpliktelser tillämpar Platform automatiskt användarprofiler om något brott inträffar när målgrupper aktiveras till destinationer.
+
 >[!IMPORTANT]
 >
->Automatisk policystyrning är bara tillgängligt för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
+>Policy för samtycke och automatisk tillämpning av samtyckespolicy är endast tillgängligt för organisationer som har köpt **Adobe Healthcare Shield** eller **Adobe Privacy &amp; Security Shield**.
 
-När data har märkts och dataanvändningsprinciper har definierats, kan ni se till att dataanvändningsprinciperna följs. När målgrupper aktiveras till destinationer tillämpar Adobe Experience Platform automatiskt användarprofiler om något skulle inträffa.
-
->[!NOTE]
->
->I det här dokumentet fokuseras på att genomföra regler för datastyrning och samtycke. Mer information om åtkomstkontrollprinciper finns i dokumentationen om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
+I det här dokumentet fokuseras på att genomföra regler för datastyrning och samtycke. Mer information om åtkomstkontrollprinciper finns i dokumentationen om [attributbaserad åtkomstkontroll](../../access-control/abac/overview.md).
 
 ## Förutsättningar
 
@@ -71,7 +71,7 @@ Varje steg i ovanstående tidslinje representerar en enhet som kan bidra till po
 | Datauppsättning | Datauppsättningar innehåller dataanvändningsetiketter (som används på schemafältnivå eller på hela datauppsättningsnivå) som definierar vilka användningsfall som hela datauppsättningen eller specifika fält kan användas för. Policyöverträdelser inträffar om en datauppsättning eller ett fält som innehåller vissa etiketter används i ett syfte som en princip begränsar.<br><br>Alla medgivandeattribut som samlas in från dina kunder lagras också i datauppsättningar. Om du har tillgång till policyer för samtycke, kommer profiler som inte uppfyller kraven för attributet för samtycke i dina policyer att uteslutas från målgrupper som är aktiverade till en destination. |
 | Kopplingsprincip | Sammanslagningsprinciper är de regler som används i Platform för att avgöra hur data ska prioriteras när fragment från flera datauppsättningar sammanfogas. Principöverträdelser inträffar om sammanfogningsprinciperna har konfigurerats så att datauppsättningar med begränsade etiketter aktiveras till ett mål. Se [sammanfogningsprinciper - översikt](../../profile/merge-policies/overview.md) för mer information. |
 | Målgrupp | Segmenteringsregler definierar vilka attribut som ska inkluderas från kundprofiler. Beroende på vilka fält en segmentdefinition innehåller ärver målgruppen användningsetiketter som används för dessa fält. Policyöverträdelser inträffar om du aktiverar en målgrupp vars ärvda etiketter begränsas av målmålets tillämpliga policyer, baserat på dess användningsfall för marknadsföring. |
-| Destination | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du aktiverar en målgrupp vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När en målgrupp aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (som definieras i er samtyckespolicy) från den aktiva målgruppen. |
+| Mål | När man skapar en destination kan man definiera en marknadsföringsåtgärd (kallas ibland för ett marknadsföringsfall). Det här användningsexemplet korrelerar till en marknadsföringsåtgärd enligt definitionen i en policy. Det innebär att den marknadsföringsåtgärd som du definierar för ett mål avgör vilka dataanvändningsprinciper och profiler för samtycke som gäller för det målet.<br><br>Policyöverträdelser för dataanvändning inträffar om du aktiverar en målgrupp vars användningsetiketter är begränsade för målmålets marknadsföringsåtgärd.<br><br>(Beta) När en målgrupp aktiveras exkluderas alla profiler som inte innehåller de obligatoriska medgivandeattributen för marknadsföringsåtgärden (som definieras i er samtyckespolicy) från den aktiva målgruppen. |
 
 >[!IMPORTANT]
 >
@@ -94,27 +94,31 @@ Om en principöverträdelse inträffar från försök att aktivera en målgrupp 
 
 Välj en principöverträdelse i poverarens vänstra kolumn för att visa information om den överträdelsen.
 
-![](../images/enforcement/violation-policy-select.png)
+![En dialogruta som indikerar ett principfel har inträffat med profilnamnet markerat.](../images/enforcement/violation-policy-select.png)
 
 Överträdelsemeddelandet innehåller en sammanfattning av den princip som överträtts, inklusive villkoren som principen är konfigurerad att kontrollera, den specifika åtgärd som utlöste överträdelsen och en lista med möjliga lösningar på problemet.
 
-![](../images/enforcement/violation-summary.png)
+![En dialogruta för policyöverträdelse med en sammanfattning av överträdelsen markerad.](../images/enforcement/violation-summary.png)
 
 Ett datalinjediagram visas nedanför sammanfattningen av överträdelser, vilket gör att du kan se vilka datauppsättningar, sammanfogningsprinciper, målgrupper och mål som berördes av överträdelsen. Enheten som du håller på att ändra markeras i diagrammet, vilket anger vilken punkt i flödet som orsakar att överträdelsen inträffar. Du kan välja ett enhetsnamn i diagrammet för att öppna informationssidan för den aktuella entiteten.
 
-![](../images/enforcement/data-lineage.png)
+![En dialogruta där datalinjediagrammet är markerat om en princip överträds.](../images/enforcement/data-lineage.png)
 
 Du kan också använda **[!UICONTROL Filter]** ikon (![](../images/enforcement/filter.png)) för att filtrera de visade enheterna efter kategori. Minst två kategorier måste väljas för att data ska kunna visas.
 
-![](../images/enforcement/lineage-filter.png)
+![En dialogruta om policyöverträdelse där datalinjefiltret och listrutan är markerade.](../images/enforcement/lineage-filter.png)
 
 Välj **[!UICONTROL List view]** för att visa datalinjen som en lista. Om du vill växla tillbaka till det visuella diagrammet väljer du **[!UICONTROL Path view]**.
 
-![](../images/enforcement/list-view.png)
+![En dialogruta om policyöverträdelse med sökvägsvyn för datalinjen markerad.](../images/enforcement/list-view.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
-Om du har [policyer för skapat samtycke](../policies/user-guide.md#consent-policy) och aktiverar en målgrupp till ett mål, kan du se hur dina medgivandeprinciper påverkar procentandelen profiler som ingår i aktiveringen.
+När du aktiverar en målgrupp kan du se hur [medgivandeprinciper](../policies/user-guide.md#consent-policy) påverkar olika procentandelar av profiler som ingår i aktiveringen.
+
+>[!NOTE]
+>
+>Samtyckesregler är endast tillgängliga för organisationer som har köpt Adobe Healthcare Shield eller Adobe Privacy &amp; Security Shield.
 
 #### Policyförbättringar för samtycke för betalmedia {#consent-policy-enhancement}
 
