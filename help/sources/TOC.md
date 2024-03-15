@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 780d1ad0886d474d2584050ab763259ba8fb8a83
+source-git-commit: f10716ea10c4e3962cb2d4be70c34ca048d3a869
 workflow-type: tm+mt
-source-wordcount: '1027'
+source-wordcount: '1031'
 ht-degree: 6%
 
 ---
@@ -115,6 +115,7 @@ ht-degree: 6%
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
       - [Kvadratisk koppling](connectors/payments/square.md)
+      - [Stripe-kontakt](connectors/payments/stripe.md)
    - Protokoll {#protocols}
       - [Allmän OData-koppling](connectors/protocols/odata.md)
       - [Allmän REST API-koppling](connectors/protocols/generic-rest.md)
@@ -195,6 +196,7 @@ ht-degree: 6%
       - Betalningar {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
          - [Fyrkant](tutorials/api/create/payments/square.md)
+         - [Stripe](tutorials/api/create/payments/stripe.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/api/create/protocols/odata.md)
          - [Allmänt REST API](tutorials/api/create/protocols/generic-rest.md)
@@ -323,6 +325,7 @@ ht-degree: 6%
       - Betalningar {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
          - [Fyrkant](tutorials/ui/create/payments/square.md)
+         - [Stripe](tutorials/ui/create/payments/stripe.md)
       - Protokoll {#protocols}
          - [Allmän OData](tutorials/ui/create/protocols/odata.md)
       - Direktuppspelning {#streaming}
