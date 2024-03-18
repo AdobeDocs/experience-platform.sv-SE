@@ -2,7 +2,7 @@
 title: Acxiom-datainmatning
 description: Lär dig hur du importerar [!DNL Acxiom] data till Real-time Customer Data Platform, berika förstahandsprofiler, förbättra målgrupperna och aktivera i alla marknadsföringskanaler.
 badge: Beta
-source-git-commit: 9419da451616ca7f087ecea7aa66a6c10a474fb3
+source-git-commit: d841975249262fa5908a408e4c27c5f76b92d96e
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 0%
@@ -54,3 +54,4 @@ De begränsningar som anges nedan måste beaktas när du namnger molnlagringsfil
 ## Nästa steg
 
 Genom att läsa det här dokumentet har du slutfört de nödvändiga inställningarna för att kunna hämta data från [!DNL Acxiom] konto till Experience Platform. Du kan nu fortsätta med guiden på [koppla [!DNL Acxiom Data Ingestion] till Experience Platform via användargränssnittet](../../tutorials/ui/create/data-partners/acxiom-data-ingestion.md).
+
