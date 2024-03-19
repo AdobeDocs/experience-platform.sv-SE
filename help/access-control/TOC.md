@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om åtkomstkontroll
 user-guide-description: Använd produktprofiler i Adobe Admin Console för att hantera användarbehörigheter. Lär dig hur du tilldelar användare till produkter och sandlådor.
 feature: Access Control
 role: Admin
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: e27695a96d7b61e2552387611c4eb63ebc6daf47
 workflow-type: tm+mt
-source-wordcount: '117'
-ht-degree: 40%
+source-wordcount: '127'
+ht-degree: 37%
 
 ---
 
@@ -19,6 +19,7 @@ ht-degree: 40%
 * Attributbaserad åtkomstkontroll {#abac}
    * [Översikt](abac/overview.md)
    * [Handbok från början till slut](abac/end-to-end-guide.md)
+   * [Använd åtkomstetiketter för att hantera användaråtkomst till måldataflöden](/help/access-control/abac/apply-access-labels-destinations.md)
    * Behörigheter {#permissions-ui}
       * [Bläddra](abac/ui/browse.md)
       * [Etiketter](abac/ui/labels.md)
