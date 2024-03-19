@@ -1,11 +1,10 @@
 ---
-title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformationen för Adobe Experience Platform i januari 2024.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
+title: Versionsinformation om Adobe Experience Platform mars 2024
+description: Versionsinformation mars 2024 för Adobe Experience Platform.
 source-git-commit: 53424842fb93315ed71f4245f04141bccfb2a8ac
 workflow-type: tm+mt
-source-wordcount: '1040'
-ht-degree: 4%
+source-wordcount: '1042'
+ht-degree: 2%
 
 ---
 
@@ -117,3 +116,4 @@ Experience Platform tillhandahåller ett RESTful-API och ett interaktivt använd
 {style="table-layout:auto"}
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).
+
