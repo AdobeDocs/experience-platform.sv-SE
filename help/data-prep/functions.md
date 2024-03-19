@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 4ee895cb8371646fd2013e2a8f65c2ffdae95850
+source-git-commit: ac90dc055a1e4d1d8127899f668e619deab2d19e
 workflow-type: tm+mt
-source-wordcount: '5789'
+source-wordcount: '5792'
 ht-degree: 1%
 
 ---
@@ -289,7 +289,7 @@ Mer information om enhetsfältvärden finns i [lista med enhetsfältvärden](#de
 
 >[!NOTE]
 >
->Du får endast använda följande analysfunktioner för direktuppspelad inmatning.
+>Du får bara använda följande analysfunktioner för WebSDK- och Adobe Analytics-flöden.
 
 | Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |

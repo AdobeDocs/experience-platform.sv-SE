@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 859b8432986e7426b8fdcfedf1242c3269eae5f1
+source-git-commit: aee82356f1f519398f381e161be14789532561f1
 workflow-type: tm+mt
-source-wordcount: '2605'
+source-wordcount: '2748'
 ht-degree: 0%
 
 ---
@@ -41,12 +41,36 @@ Användarhandboken kräver en fungerande förståelse av följande komponenter i
 
 I [!DNL Experience Platform] Gränssnitt, välj **[!UICONTROL Datasets]** i den vänstra navigeringen för att öppna **[!UICONTROL Datasets]** kontrollpanel. Kontrollpanelen visar alla tillgängliga datauppsättningar för din organisation. Information visas för varje datamängd som anges, inklusive namn, schema som datauppsättningen följer och status för den senaste importen.
 
-![En bild som markerar datauppsättningsobjektet i det vänstra navigeringsfältet.](../images/datasets/user-guide/browse-datasets.png)
+![Plattformsgränssnittet med datauppsättningsobjektet markerat i det vänstra navigeringsfältet.](../images/datasets/user-guide/browse-datasets.png)
 
 Välj namnet på en datauppsättning på menyn [!UICONTROL Browse] flik för att komma åt **[!UICONTROL Dataset activity]** och se information om den datauppsättning du valde. Fliken Aktivitet innehåller ett diagram som visar hur många meddelanden som har förbrukats samt en lista över lyckade och misslyckade batchar.
 
-![Information om den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-1.png)
-![Exempelgrupper som tillhör den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-2.png)
+![Mätvärden och visualiseringar av den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-1.png)
+![De exempelgrupper som relaterar till den valda datauppsättningen markeras.](../images/datasets/user-guide/dataset-activity-2.png)
+
+## Fler åtgärder {#more-actions}
+
+Du kan [!UICONTROL Delete] eller [!UICONTROL Enable a dataset for Profile] från [!UICONTROL Dataset] informationsvy. Om du vill se tillgängliga åtgärder väljer du **[!UICONTROL ... More]** längst upp till höger i användargränssnittet. Listrutan visas.
+
+![Arbetsytan Datauppsättningar med [!UICONTROL ... More] listrutan är markerad.](../images/datasets/user-guide/more-actions.png)
+
+Om du väljer **[!UICONTROL Enable a dataset for Profile]** visas en bekräftelsedialogruta. Välj **[!UICONTROL Enable]** för att bekräfta ditt val.
+
+>[!NOTE]
+>
+>Om du vill aktivera en datauppsättning för profil måste schemat som datauppsättningen följer vara kompatibelt för användning i kundprofilen i realtid. Se [Aktivera en datauppsättning för profil](#enable-profile) för mer information.
+
+![Bekräftelsedialogrutan för Aktivera datauppsättning.](../images/datasets/user-guide/profile-enable-confirmation-dialog.png)
+
+Om du väljer **[!UICONTROL Delete]**, [!UICONTROL Delete dataset] bekräftelsedialogrutan visas. Välj **[!UICONTROL Delete]** för att bekräfta ditt val.
+
+>[!NOTE]
+>
+>Du kan inte ta bort systemdatauppsättningar.
+
+Du kan också ta bort en datauppsättning eller lägga till en datauppsättning för användning med kundprofilen i realtid från de infogade åtgärderna på [!UICONTROL Browse] -fliken. Se [avsnitt med infogade åtgärder](#inline-actions) för mer information.
+
+![Bekräftelsedialogrutan för Ta bort datauppsättning.](../images/datasets/user-guide/delete-confirmation-dialog.png)
 
 ## Inline-datauppsättningsåtgärder {#inline-actions}
 

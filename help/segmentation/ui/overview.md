@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: c6d471d7bb8cb9d5e376cc49c9c89c39e663d7f9
+source-git-commit: 0e8147a9e4589747b212ce1dd0f0bc215f3bab4c
 workflow-type: tm+mt
-source-wordcount: '3723'
+source-wordcount: '3808'
 ht-degree: 0%
 
 ---
@@ -212,6 +212,18 @@ Listan med tillgängliga filter visas.
 | [!UICONTROL Modified date] | Gör att du kan filtrera baserat på målgruppens senaste ändringsdatum. Du kan välja ett datumintervall som ska filtreras när målgruppen senast ändrades. |
 
 ![De tillgängliga filtren visas och markeras på sidan Bläddra bland målgrupper.](../images/ui/overview/filter-audiences.png)
+
+**Massåtgärder** {#bulk-actions}
+
+Dessutom kan ni välja upp till 25 olika målgrupper och utföra olika åtgärder på dessa målgrupper. Dessa åtgärder omfattar [flytta till en mapp](#folders), [redigera eller använda en tagg](#tags), [använda åtkomstetiketter](../../access-control/abac/ui/labels.md)och [ta bort](#browse).
+
+![De tillgängliga alternativen för gruppåtgärder är markerade.](../images/ui/overview/bulk-actions.png)
+
+När du tillämpar gruppåtgärder på dessa målgrupper gäller följande villkor:
+
+- Du **kan** välj målgrupper från olika sidor.
+- Du **inte** ta bort en målgrupp som används i en målaktivering.
+- Om du väljer ett filter, de valda målgrupperna **kommer** återställ.
 
 ### Målgruppsinformation {#audience-details}
 

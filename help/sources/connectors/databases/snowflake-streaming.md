@@ -5,7 +5,7 @@ badgeBeta: label="Beta" type="Informative"
 badgeUltimate: label="Ultimate" type="Positive"
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: ed937689-e844-487e-85fb-e3536c851fe5
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c80535cbb5dda55f1cf145f9f40bbcd40c78e63e
 workflow-type: tm+mt
 source-wordcount: '710'
 ht-degree: 0%
@@ -39,7 +39,7 @@ För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange fö
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, region och molnplattform. Exempel, `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>). |
+| `account` | Det fullständiga kontonamnet som är kopplat till ditt [!DNL Snowflake] konto. En fullständigt kvalificerad [!DNL Snowflake] kontonamnet innehåller ditt kontonamn, region och molnplattform. Till exempel: `cj12345.east-us-2.azure`. Mer information om kontonamn finns i [[!DNL Snowflake document on account identifiers]](<https://docs.snowflake.com/en/user-guide/admin-account-identifier.html>). |
 | `warehouse` | The [!DNL Snowflake] dist.lager hanterar frågekörningsprocessen för programmet. Varje [!DNL Snowflake] lagerstället är oberoende av varandra och måste nås individuellt när data överförs till plattformen. |
 | `database` | The [!DNL Snowflake] databasen innehåller de data som du vill ta med plattformen. |
 | `username` | Användarnamnet för [!DNL Snowflake] konto. |
@@ -47,7 +47,6 @@ För att [!DNL Flow Service] att ansluta till [!DNL Snowflake]måste du ange fö
 | `role` | (Valfritt) En anpassad definierad roll som kan anges för en användare för en viss anslutning. Om det inte anges används standardvärdet `public`. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Snowflake] är `51ae16c2-bdad-42fd-9fce-8d5dfddaf140`. |
 
-Mer information om autentisering finns i [[!DNL Snowflake] dokument](<https://docs.snowflake.com/en/user-guide/key-pair-auth.html>).
 
 ### Konfigurera rollinställningar {#configure-role-settings}
 
@@ -83,3 +82,4 @@ Mer information om roll- och behörighetshantering finns i [[!DNL Snowflake] API
 I följande självstudiekurs beskrivs hur du ansluter [!DNL Snowflake] direktuppspelningskälla till Experience Platform med API:
 
 * [Strömma data från en [!DNL Snowflake] databas till Experience Platform med API:t för Flow Service](../../tutorials/api/create/databases/snowflake-streaming.md)
+* [Strömma data från en [!DNL Snowflake] databas till Experience Platform med hjälp av källarbetsytan i Experience Platform användargränssnittet](../../tutorials/ui/create/databases/snowflake-streaming.md)

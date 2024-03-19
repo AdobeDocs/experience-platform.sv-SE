@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Definiera XDM-fält i användargränssnittet
 description: Lär dig hur du definierar XDM-fält i användargränssnittet för Experience Platform.
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 765079f084dce316d321fbac5aee9e387373ba00
+source-git-commit: 89519918aa830dc09365fa80449099229dc475d5
 workflow-type: tm+mt
-source-wordcount: '1430'
-ht-degree: 2%
+source-wordcount: '1636'
+ht-degree: 0%
 
 ---
 
@@ -27,7 +27,7 @@ Om du vill definiera nya XDM-fält i användargränssnittet måste du först öp
 
 När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till fält på arbetsytan. Dessa kontroller visas intill schemats namn, liksom alla objekttypsfält som har definierats under den valda klassen eller fältgruppen.
 
-![](../../images/ui/fields/overview/select-resource.png)
+![Schemaredigeraren med Lägg till-ikonerna markerade.](../../images/ui/fields/overview/select-resource.png)
 
 >[!WARNING]
 >
@@ -35,7 +35,7 @@ När du har [!DNL Schema Editor] öppna visas kontroller för att lägga till f�
 
 Om du vill lägga till ett nytt fält i resursen väljer du **plus (+)** -ikonen bredvid schemats namn på arbetsytan eller bredvid det objekttypsfält som du vill definiera fältet under.
 
-![](../../images/ui/fields/overview/plus-icon.png)
+![Schemaredigeraren med en Lägg till-ikon markerad.](../../images/ui/fields/overview/plus-icon.png)
 
 Beroende på om du lägger till ett fält direkt i ett schema eller dess klass och fältgrupper för beståndsdelar, varierar stegen som krävs för att lägga till fältet. Resten av det här dokumentet fokuserar på hur du konfigurerar ett fälts egenskaper oavsett var det fältet visas i schemat. Mer information om olika sätt att lägga till fält i ett schema finns i följande avsnitt i gränssnittshandboken för scheman:
 
@@ -46,7 +46,7 @@ Beroende på om du lägger till ett fält direkt i ett schema eller dess klass o
 
 När du har valt **plus (+)** ikon, en **[!UICONTROL Untitled field]** platshållaren visas på arbetsytan.
 
-![](../../images/ui/fields/overview/new-field.png)
+![Schemaredigeraren med ett nytt namnlöst fält markerat.](../../images/ui/fields/overview/new-field.png)
 
 I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera informationen för det nya fältet. Följande information krävs för varje fält:
 
@@ -54,11 +54,13 @@ I den högra listen under **[!UICONTROL Field properties]** kan du konfigurera i
 | --- | --- |
 | [!UICONTROL Field name] | Ett unikt, beskrivande namn för fältet. Observera att fältets namn inte kan ändras när schemat har sparats. Det här värdet används för att identifiera och referera till fältet i koden och i andra program i senare led<br><br>Namnet ska helst skrivas i camelCase. Den kan innehålla alfanumeriska tecken, bindestreck eller understreck, men den **får inte** börja med ett understreck.<ul><li>**Korrigera**: `fieldName`</li><li>**Godtagbart:** `field_name2`, `Field-Name`, `field-name_3`</li><li>**Felaktig**: `_fieldName`</li></ul> |
 | [!UICONTROL Display name] | Ett visningsnamn för fältet. Det här namnet kommer att användas för att representera fältet på arbetsytan i Schemaredigeraren. Fältnamnet kan ändras till visningsnamnet med [växla visningsnamn](../resources/schemas.md#display-name-toggle). |
-| [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja något av [standardtyper av skalärbilder](../../schema/field-constraints.md) stöds av XDM, eller ett av flera fält [datatyper](../resources/data-types.md) som tidigare har definierats i [!DNL Schema Registry].<br><br>Du kan också välja **[!UICONTROL Advanced type search]** om du vill söka efter och filtrera befintliga datatyper och hitta den önskade typen enklare. |
+| [!UICONTROL Type] | Den typ av data som fältet innehåller. I den här listrutan kan du välja något av [standardtyper av skalärbilder](../../schema/field-constraints.md) stöds av XDM, eller ett av flera fält [datatyper](../resources/data-types.md) som tidigare har definierats i [!DNL Schema Registry].<br>Obs! Om du väljer datatypen Map [!UICONTROL Map value type] visas.<br><br>Du kan också välja **[!UICONTROL Advanced type search]** om du vill söka efter och filtrera befintliga datatyper och hitta den önskade typen enklare. |
+| [!UICONTROL Map value type] | Detta värde krävs om du väljer [!UICONTROL Map] som datatyp för fältet. Tillgängliga värden för kartan är [!UICONTROL String] och [!UICONTROL Integer]. Välj ett värde i listrutan med tillgängliga alternativ.<br>Mer information om [typspecifika fältegenskaper](#type-specific-properties), se översikten över definierade fält. |
 
 {style="table-layout:auto"}
 
-Du kan även tillhandahålla ett tillval som kan läsas av människor **[!UICONTROL Description]** till fältet för att ge mer kontext till fältets avsedda användningsfall.
+Du kan också välja att ange en beskrivning och anteckningar för varje fält. Använd **[!UICONTROL Description]** för att lägga till kontext och beskriva kartdatatypen. Detta bidrar till att implementeringen blir enkel och lättläst. Du kan också lägga till anteckningar som komplement till den inledande beskrivningen. Detta bör ge mer detaljerad och specifik information för att hjälpa utvecklare att förstå, underhålla och använda kartan effektivt i kodbasen. |
+
 
 >[!NOTE]
 >
@@ -68,11 +70,11 @@ Du kan även tillhandahålla ett tillval som kan läsas av människor **[!UICONT
 
 När du har konfigurerat fältet väljer du **[!UICONTROL Apply]**.
 
-![](../../images/ui/fields/overview/field-details.png)
+![The [!UICONTROL Field properties] -avsnittet i Schemaredigeraren är markerat.](../../images/ui/fields/overview/field-details.png)
 
 Arbetsytan uppdateras för att visa det nya fältet, som finns i ett objekt som har ett namn som är kopplat till ditt unika innehavar-ID (visas som `_tenantId` i exemplet nedan). Alla anpassade fält som läggs till i ett schema placeras automatiskt i det här namnutrymmet för att förhindra konflikter med andra fält från klasser och fältgrupper som tillhandahålls av Adobe. Den högra listen visar nu fältets sökväg förutom dess andra egenskaper.
 
-![](../../images/ui/fields/overview/field-added.png)
+![Ett nytt fält i schemagrafiken och dess motsvarande sökväg i [!UICONTROL Field properties] -avsnittet är markerat.](../../images/ui/fields/overview/field-added.png)
 
 Du kan fortsätta följa stegen ovan för att lägga till fler fält i schemat. När schemat har sparats sparas även dess basklass och fältgrupper om några ändringar har gjorts i dem.
 
@@ -86,6 +88,7 @@ När du definierar ett nytt fält kan ytterligare konfigurationsalternativ visas
 
 | Fältegenskap | Kompatibla typer | Beskrivning |
 | --- | --- | --- |
+| [!UICONTROL Map value type] | [!UICONTROL Map] | The [!UICONTROL Map value type] egenskapen visas bara i användargränssnittet om du väljer värdet för kartan på menyn [!UICONTROL Type] alternativ i listrutan. Du kan välja mellan värdetyperna String och Integer för kartan.<br>![Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade.](../../images/ui/fields/overview/map-type.png "Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade."){width="100" zoomable="yes"}<br>Obs! Alla mappningsdatatyper som skapas via API som inte är antingen en sträng eller en heltalstyp visas som &#39;[!UICONTROL Complex]&#39; datatyp. Du kan inte skapa &#39;[!UICONTROL Complex]&#39; datatyper via användargränssnittet. |
 | [!UICONTROL Default value] | [!UICONTROL String], [!UICONTROL Double], [!UICONTROL Long], [!UICONTROL Integer], [!UICONTROL Short], [!UICONTROL Byte], [!UICONTROL Boolean] | Ett standardvärde som tilldelas det här fältet om inget annat värde anges vid inmatningen. Värdet måste överensstämma med fältets valda typ.<br><br>Standardvärdena sparas inte i datauppsättningen vid tidpunkten för inmatningen eftersom de kan ändras över tid. De standardvärden som anges i schemat härleds av plattformstjänster och program som är längre fram i kedjan när de läser data från datauppsättningen. Om attributet har ett NULL-värde när data efterfrågas med hjälp av tjänsten Query, men standardvärdet är inställt på `5` på schemanivå förväntas frågetjänsten returnera `5` i stället för NULL. Observera att detta för närvarande inte är enhetligt i alla AEP-tjänster. |
 | [!UICONTROL Pattern] | [!UICONTROL String] | A [reguljärt uttryck](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) att värdet för detta fält måste överensstämma med för att kunna accepteras vid förtäring. |
 | [!UICONTROL Format] | [!UICONTROL String] | Välj i en lista över fördefinierade format för strängar som värdet måste överensstämma med. Tillgängliga format: <ul><li>[[!UICONTROL date-time]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL email]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL hostname]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
@@ -104,6 +107,7 @@ Den högra listen innehåller flera kryssrutor för att ange speciella roller f�
 
 Mer information om dessa specialtyper finns i följande dokumentation:
 
+* [Karta](./map.md)
 * [[!UICONTROL Required]](./required.md)
 * [[!UICONTROL Array]](./array.md)
 * [[!UICONTROL Enum]](./enum.md)
