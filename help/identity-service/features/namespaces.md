@@ -2,9 +2,9 @@
 title: Översikt över namnområde för identitet
 description: Lär dig mer om identitetsnamnutrymmen i identitetstjänsten.
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 6ae3626c2e0f7e58968b5582ca1895bd03ab1c32
+source-git-commit: 59ac3d8b7fee0327396c990ef309ca3a4f292a77
 workflow-type: tm+mt
-source-wordcount: '1908'
+source-wordcount: '1850'
 ht-degree: 0%
 
 ---
@@ -102,13 +102,11 @@ Följande standardnamnutrymmen kan användas av alla organisationer på plattfor
 | Adobe Analytics (äldre ID) | Ett namnutrymme som representerar Adobe Analytics. Se följande dokument på [Adobe Analytics namnutrymmen](https://experienceleague.adobe.com/docs/analytics/admin/data-governance/gdpr-namespaces.html#namespaces) för mer information. |
 | Apple IDFA (ID för annonsörer) | Ett namnutrymme som representerar Apple ID för annonsörer. Se följande dokument på [räntebaserade annonser](https://support.apple.com/en-us/HT202074) för mer information. |
 | Tjänsten Apple Push Notification | Ett namnutrymme som representerar identiteter som samlats in med tjänsten Apple Push Notification. Se följande dokument på [Tjänsten Apple Push Notification](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1) för mer information. |
-| CORE | Ett namnutrymme som representerar Adobe Audience Manager. Det här namnutrymmet kan också refereras till med det äldre namnet: &quot;Adobe AudienceManager&quot;. Se följande dokument på [Audience Manager-ID](https://experienceleague.adobe.com/docs/audience-manager/user-guide/overview/data-privacy/data-privacy-reference/data-privacy-ids.html#aam-ids) för mer information. |
 | ECID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](./ecid.md) för mer information. |
 | E-post | Ett namnutrymme som representerar en e-postadress. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
 | E-post (SHA256, nedsänkt) | Ett namnutrymme för förhasrad e-postadress. Värden som anges i det här namnutrymmet konverteras till gemener innan de hash-kodas med SHA256. Radavståndsavstånd måste trimmas innan en e-postadress normaliseras. Den här inställningen kan inte ändras retroaktivt. Se följande dokument på [SHA256-hashstöd](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support) för mer information. |
 | Firebase Cloud Messaging | Ett namnutrymme som representerar identiteter som samlats in med Google Firebase Cloud Messaging för push-meddelanden. Se följande dokument på [Google Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) för mer information. |
 | Google Ad ID (GAID) | Ett namnutrymme som representerar ett Google Advertising ID. Se följande dokument på [Google Advertising ID](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en) för mer information. |
-| Google Click ID | Ett namnutrymme som representerar ett Google Click-ID. Se följande dokument på [Klickspårning i Google Ads](https://developers.google.com/adwords/api/docs/guides/click-tracking) för mer information. |
 | Telefon | Ett namnutrymme som representerar ett telefonnummer. Den här typen av namnutrymme är ofta kopplad till en person och kan därför användas för att identifiera den personen i olika kanaler. |
 | Telefon (E.164) | Ett namnutrymme som representerar råa telefonnummer som behöver hashas i E.164-format. E.164-formatet innehåller ett plustecken (`+`), en internationell landskod, en lokal kod och ett telefonnummer. Till exempel: `(+)(country code)(area code)(phone number)`. |
 | Telefon (SHA256) | Ett namnutrymme som representerar telefonnummer som behöver hashas med SHA256. Du måste ta bort symboler, bokstäver och eventuella inledande nollor. Du måste också lägga till landskoden som prefix. |
