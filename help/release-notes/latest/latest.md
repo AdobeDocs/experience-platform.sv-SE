@@ -1,11 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformationen för Adobe Experience Platform i januari 2024.
+description: Versionsinformation mars 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 53424842fb93315ed71f4245f04141bccfb2a8ac
+source-git-commit: 709bb15f75bfee5380b779d595b3487080cbb97a
 workflow-type: tm+mt
-source-wordcount: '1040'
-ht-degree: 4%
+source-wordcount: '1060'
+ht-degree: 3%
 
 ---
 
@@ -29,6 +29,10 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 ## Katalogtjänst {#catalog-service}
 
 Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i datarjön som filer och kataloger, men i Katalog finns metadata och beskrivning av dessa filer och kataloger för sökning och övervakning.
+
+>[!NOTE]
+>
+>Vi är medvetna om och arbetar med att åtgärda ett visningsproblem där onödig syntax återges bredvid bilder i tabeller.
 
 | Funktion | Beskrivning |
 | --- | --- |
