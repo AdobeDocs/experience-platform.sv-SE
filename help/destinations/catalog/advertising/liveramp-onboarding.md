@@ -3,9 +3,9 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: a235f9a66ea15fc5e72dd6ed03e4a6a384fd30a4
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -70,6 +70,9 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 ![Exempelbild som visar hur man autentiserar till målet med SFTP med lösenord](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-password.png)
 
+* **[!UICONTROL Port]**: Den port som används för [!DNL LiveRamp - Onboarding] lagringsplats.  Använd den port som motsvarar din geografiska plats enligt beskrivningen nedan:
+   * **[!UICONTROL NA]**: Använd port `22`
+   * **[!UICONTROL AU]**: Använd port `2222`
 * **[!UICONTROL Username]**: Användarnamn för [!DNL LiveRamp - Onboarding] lagringsplats.
 * **[!UICONTROL Password]**: Lösenordet för [!DNL LiveRamp - Onboarding] lagringsplats.
 * **[!UICONTROL PGP/GPG encryption key]**: Om du vill kan du bifoga den RSA-formaterade offentliga nyckeln för att lägga till kryptering i de exporterade filerna. Visa ett exempel på en korrekt formaterad krypteringsnyckel i bilden nedan.
@@ -80,6 +83,8 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 ![Exempelbild som visar hur man autentiserar till målet med SSH-tangenten](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-ssh.png)
 
+* **[!UICONTROL Port]**: Den port som används för [!DNL LiveRamp - Onboarding] lagringsplats.  Använd den port som motsvarar din geografiska plats enligt beskrivningen nedan:
+   * **[!UICONTROL EU]**: Använd port `4222`
 * **[!UICONTROL Username]**: Användarnamn för [!DNL LiveRamp - Onboarding] lagringsplats.
 * **[!UICONTROL SSH Key]**: Den privata [!DNL SSH] som används för att logga in på [!DNL LiveRamp - Onboarding] lagringsplats. Den privata nyckeln måste vara formaterad som en [!DNL Base64]-encoded string och får inte vara lösenordsskyddad.
 
@@ -99,10 +104,11 @@ Om du vill autentisera mot målet fyller du i de obligatoriska fälten och välj
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 
-![Skärmbild av användargränssnittet för plattformen som visar hur du fyller i information för ditt mål](../../assets/catalog/advertising/liveramp-onboarding/liveramp-connection-details.png)
+![Skärmbild av användargränssnittet för plattformen som visar hur du fyller i information för ditt mål](../../assets/catalog/advertising/liveramp-onboarding/liveramp-sftp-destination-details.png)
 
 * **[!UICONTROL Name]**: Ett namn som du känner igen det här målet med i framtiden.
 * **[!UICONTROL Description]**: En beskrivning som hjälper dig att identifiera det här målet i framtiden.
+* **[!UICONTROL Region]**: Geografiskt område för din instans av LiveRamp SFTP-lagringen.
 * **[!UICONTROL Folder path]**: Sökvägen till [!DNL LiveRamp] `uploads` undermapp som ska vara värd för de exporterade filerna. The `uploads` läggs automatiskt till i mappsökvägen. [!DNL LiveRamp] rekommenderar att du skapar en dedikerad undermapp för leveranser från Adobe Real-Time CDP så att filerna hålls åtskilda från andra befintliga flöden och att all automatisering fungerar smidigt.
    * Om du till exempel vill exportera filerna till `uploads/my_export_folder`, skriva in `my_export_folder` i **[!UICONTROL Folder path]** fält.
 * **[!UICONTROL Compression format]**: Välj den komprimeringstyp som Experience Platform ska använda för de exporterade filerna. Tillgängliga alternativ är **[!UICONTROL GZIP]** eller **[!UICONTROL None]**.
@@ -179,6 +185,8 @@ När du har lagt till alla mappningar du vill använda väljer du **[!UICONTROL 
 
 Dina data exporteras till [!DNL LiveRamp - Onboarding] lagringsplats som du har konfigurerat som CSV-filer.
 
+Exporterade filer har en maxstorlek på 10 miljoner rader. Experience Platform genererar flera filer per leverans om de valda målgrupperna överstiger 10 miljoner rader. Om du förväntar dig att gränsen för en fil överskrids kontaktar du [!DNL LiveRamp] -representant och be dem konfigurera batchintagning åt dig.
+
 Vid export av filer till [!DNL LiveRamp - Onboarding] mål, Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../../profile/merge-policies/overview.md).
 
 Låt oss titta på följande målgrupper:
@@ -238,3 +246,18 @@ Alla [!DNL Adobe Experience Platform] destinationerna är kompatibla med dataanv
 ## Ytterligare resurser {#additional-resources}
 
 Mer information om hur du konfigurerar [!DNL LiveRamp - Onboarding] lagring, se [officiell dokumentation](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html).
+
+## Changelog {#changelog}
+
+I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdateringar för den här målanslutningen.
+
++++ Visa ändringslogg
+
+| Releasamånad | Uppdateringstyp | Beskrivning |
+|---|---|---|
+| Mars 2024 | Funktioner och dokumentation | <ul><li>Stöd för leveranser till Europa och Australien har lagts till [!DNL LiveRamp] [!DNL SFTP] -instanser.</li><li>Uppdaterad dokumentation som beskriver specifika konfigurationer för nyligen stödda regioner.</li><li>Ökade maximal filstorlek till 10 miljoner rader (från 5 miljoner tidigare).</li><li>Uppdaterad dokumentation för att återspegla ökad filstorlek.</li></ul> |
+| Juli 2023 | Inledande version | Ursprunglig målrelease och dokumentation publicerad. |
+
+{style="table-layout:auto"}
+
++++

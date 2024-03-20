@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation mars 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7c913d0cbab0f4f9d2b7b5a476076b0c87795a0d
+source-git-commit: 33952028a4323b2292cdd313da290a5dd079c93f
 workflow-type: tm+mt
-source-wordcount: '1174'
+source-wordcount: '1208'
 ht-degree: 3%
 
 ---
@@ -82,6 +82,7 @@ Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
 | [(Beta) Acxiom Data Enhancement Connection](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | Nytt | Använd den här kopplingen för att aktivera förstahandsprofiler från Real-Time CDP till Acxiom för att berika och använda data i alla marknadsföringskanaler. Du kan sedan använda Acxiom-källan för att importera profiler med förbättrade data och arbeta med dem i Real-Time CDP. |
 | [(Beta) Anslutning till Prospect Suppression för Acxiom](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | Nytt | Exportera era egna målgrupper till Acxiom-destinationen så att Acxiom kan inaktivera kända eller konverterade kunder. Använd sedan [Import av prospekteringsdata för Acxiom](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md) källanslutning till import och aktivering av listor med potentiella kunder från Acxiom, med dina kända eller konverterade kunder borttagna. |
 | [Amazon Ads-anslutning](../../destinations/catalog/advertising/amazon-ads.md) | Uppdatera | När du exporterar data till Amazon Ads-målet kan du nu dirigera data till Amazon DSP eller Amazon Marketing Cloud (nytt). |
+| [LiveRamp Onboarding-anslutning](../../destinations/catalog/advertising/liveramp-onboarding.md) | Uppdatera | LiveRamp Onboarding-destinationen har nu stöd för leveranser till Europa och Australien [!DNL LiveRamp] [!DNL SFTP] -instanser. Den maximala storleken på den exporterade filen ökades också till 10 miljoner rader (från 5 miljoner tidigare). |
 
 {style="table-layout:auto"}
 
