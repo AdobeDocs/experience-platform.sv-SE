@@ -3,9 +3,9 @@ title: Övervaka aktiviteter i händelsevidarebefordran
 description: Lär dig hur du övervakar användning, fel och beräkningstid i egenskaperna för vidarebefordran av händelser.
 feature: Event Forwarding
 exl-id: 9d8572a3-816e-4b66-afe6-344fe8a15f22
-source-git-commit: 9313ebe6d51d5ef42915d154def9cb0612407439
+source-git-commit: f8988d08e7009cc613a00f34e8151e8560c479d4
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '548'
 ht-degree: 0%
 
 ---
@@ -40,6 +40,10 @@ Om du vill visa mätvärden för en enskild egenskap väljer du egenskapens list
 
 ## [!UICONTROL Usage]
 
+>[!NOTE]
+>
+>Användningsdata uppdateras varje månad efter föregående månads slut.
+
 The **[!UICONTROL Usage]** rapporten visar inkommande och utgående samtal för en viss tidsperiod. Inkommande samtal representerar data som skickas till händelsevidarebefordran. Utgående anrop representerar data som skickas från händelsevidarebefordran. The **[!UICONTROL Total events]** talet i den vänstra rutan är summan av inkommande och utgående samtal för den angivna tidsperioden.
 
 ## [!UICONTROL Error Events]
@@ -65,4 +69,4 @@ Följande faktorer påverkar beräkningstiden:
 1. Antalet regler
 2. Reglernas komplexitet, som vanligtvis styrs av mängden anpassad JavaScript som körs
 
-Om till exempel en åtgärd i en händelsevidarebefordring träffar en slutpunkt och slutpunkten tar två sekunder att svara, kommer denna fördröjning inte att räknas mot beräkningstiden eftersom händelsevidarebefordran bara väntar och inte aktivt beräknar någonting. Svarstiden får inte vara längre än 30 sekunder, annars kommer data att tas bort.
+Om till exempel en åtgärd i en händelsevidarebefordring träffar en slutpunkt och slutpunkten tar två sekunder att svara, kommer denna fördröjning inte att räknas mot beräkningstiden eftersom händelsevidarebefordran bara väntar och inte aktivt beräknar någonting. Svarstiden får inte vara längre än 30 sekunder, annars tas data bort.
