@@ -3,7 +3,7 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: 24f7463f7005f77f8d93e7cb2c04efc0fb4e3a0b
+source-git-commit: ba768b3148d57e9df12a34f0324c086a17a6d45a
 workflow-type: tm+mt
 source-wordcount: '1603'
 ht-degree: 1%
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [!DNL Amazon Ads] erbjuder en mängd alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer.
 
-The [!DNL Amazon Ads] integrering med Adobe Experience Platform ger nyckelfärdig integrering med [!DNL Amazon Ads] -produkter, inklusive Amazon DSP (ADSP) och Amazon Marekting Cloud (AMC).
+The [!DNL Amazon Ads] integrering med Adobe Experience Platform ger nyckelfärdig integrering med [!DNL Amazon Ads] -produkter, inklusive Amazon DSP (ADSP) och Amazon Marketing Cloud (AMC).
 
 Använda [!DNL Amazon Ads] i Adobe Experience Platform kan man definiera annonsörernas målgrupper för målgruppsanpassning och aktivering i Amazon DSP.  Dessutom kan användare överföra sina data till [!DNL Amazon Marketing Cloud] för att förstå målgruppens resultat, tillhandahåller annonsörer dimensioner, medlemskap i Amazon-segment eller andra signaler som är tillgängliga i AMC. När annonsörer har överförts till AMC kan användarna använda [!DNL Amazon Marketing Cloud] för att ändra, förbättra eller lägga till material till målgrupper med Amazon-signaler inifrån [!DNL Amazon Marketing Cloud].
 
@@ -171,7 +171,7 @@ I det här avsnittet beskrivs funktionaliteten och viktiga dokumentationsuppdate
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| Februari 2024 | Funktioner och dokumentation | Lagt till alternativet att exportera målgrupper som ska användas i [!DNL Amazon Marketing Cloud] (AMC). |
+| Mars 2024 | Funktioner och dokumentation | Lagt till alternativet att exportera målgrupper som ska användas i [!DNL Amazon Marketing Cloud] (AMC). |
 | Maj 2023 | Funktioner och dokumentation | <ul><li>Stöd för markering av reklamregion har lagts till i [arbetsflöde för målanslutning](#destination-details).</li><li>Uppdaterad dokumentation som återspeglar tillägget av Advertiser Region. Mer information om hur du väljer rätt annonsregion finns i [Amazon-dokumentation](https://advertising.amazon.com/API/docs/en-us/info/api-overview#api-endpoints).</li></ul> |
 | Mars 2023 | Inledande version | Ursprunglig målrelease och dokumentation publicerad. |
 
