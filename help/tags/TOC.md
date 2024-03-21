@@ -6,9 +6,9 @@ user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsf
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: ddf7eb620f36b6e18d7e3949e5339062edf9f9a6
+source-git-commit: 3c3863aa61a7bbdb2df585b842e55f2d7291c727
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '764'
 ht-degree: 15%
 
 ---
@@ -180,7 +180,7 @@ ht-degree: 15%
          * [Översikt](./extensions/client/marketo/overview.md)
          * [Versionsinformation](./extensions/client/marketo/release-notes.md)
       * [Huvudegenskapshanteraren](https://exchange.adobe.com/apps/ec/102992)
-      * [Merkury-taggtillägg](https://exchange.adobe.com/apps/ec/600027/merkury-tag)
+      * [Merkury-tagg](https://exchange.adobe.com/apps/ec/600027/merkury-tag)
       * [!DNL Meta Pixel] {#meta}
          * [Översikt](./extensions/client/meta/overview.md)
       * [Monita](https://exchange.adobe.com/apps/ec/106544)

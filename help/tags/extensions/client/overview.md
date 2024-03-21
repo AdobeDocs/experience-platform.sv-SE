@@ -2,9 +2,9 @@
 title: Referens för taggtillägg
 description: Hitta dokumentation för taggtillägg i Adobe Experience Platform.
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 8896ffb78ae01bfe6d7974d781acea104a6356a9
+source-git-commit: 3c3863aa61a7bbdb2df585b842e55f2d7291c727
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '472'
 ht-degree: 2%
 
 ---
@@ -27,7 +27,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Anpassa webbplatsspårning](https://exchange.adobe.com/apps/ec/103195)*
 * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)*
 * [Adobe Analytics](./analytics/overview.md)
-* [ADOBE ANALYTICS &amp; ADOBE TARGET](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)
+* [ADOBE ANALYTICS &amp; ADOBE TARGET](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)*
 * [Adobe Analytics &amp; Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)*
 * [Adobe Analytics &amp; Salesforce](https://exchange.adobe.com/apps/ec/101530)*
 * [Adobe Analytics produktsträng](./product-string/overview.md)
@@ -68,7 +68,7 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Vanliga SDK-plugin-program för webben](./web-sdk/web-sdk-plugins.md)
 * [Concat](https://exchange.adobe.com/apps/ec/104690)*
 * [ContentSquare](https://exchange.adobe.com/apps/ec/100364)*
-* [Cookie-innehållshantering av användarcentrics CMP v2](https://exchange.adobe.com/apps/ec/*107037)
+* [Cookie-innehållshantering av användarcentrics CMP v2](https://exchange.adobe.com/apps/ec/*107037)*
 * [Core](./core/overview.md)
 * [Anpassad felsökningslogg](https://exchange.adobe.com/apps/ec/104698)*
 * [Kundidentifiering](https://exchange.adobe.com/apps/ec/100688)*
@@ -84,12 +84,13 @@ Nedan följer en lista med dokumentation för taggtillägg på klientsidan. En l
 * [Gainsight PX](https://exchange.adobe.com/apps/ec/103343)*
 * [Genesys Predictive Engagement](https://exchange.adobe.com/apps/ec/106148)*
 * [Google datalager](./google-data-layer/overview.md)
-* [Google Global Site Tag (gtag)](https://exchange.adobe.com/apps/ec/101437/*google-global-site-tag-gtag)
+* [Google Global Site Tag (gtag)](https://exchange.adobe.com/apps/ec/101437/*google-global-site-tag-gtag)*
 * [InMoment](https://exchange.adobe.com/apps/ec/100847)*
 * [JSON-hjälp](https://exchange.adobe.com/apps/ec/106449)*
-* [JW Player Analytics](https://exchange.a[](https://exchange.adobe.com/apps/ec/101460/*sdi-toolkit)dobe.com/apps/ec/101523)
+* [JW Player Analytics](https://exchange.a[](https://exchange.adobe.com/apps/ec/101460/*sdi-toolkit)dobe.com/apps/ec/101523)*
 * [KickFire](https://exchange.adobe.com/apps/ec/101621)*
 * [Mappningstabell](https://exchange.adobe.com/apps/ec/103136)*
+* [Merkury-tagg](https://exchange.adobe.com/apps/ec/600027/merkury-tag)*
 * [[!DNL Marketo Munchkin]](./marketo/overview.md)
 * [Huvudegenskapshanteraren](https://exchange.adobe.com/apps/ec/102992)*
 * [Monita](https://exchange.adobe.com/apps/ec/106544)*
