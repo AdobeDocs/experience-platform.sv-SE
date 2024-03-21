@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: df24799e4644a98941b707bb216a4ad434f5ebf9
 workflow-type: tm+mt
-source-wordcount: '1536'
+source-wordcount: '1537'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Ett arbetsflöde på hög nivå för att hämta och tilldela åtkomstbehörighet
 
 - När du har licensierat Adobe Experience Platform, eller en program-/apptjänst som använder Experience Platform, skickas ett e-postmeddelande till administratören som anges under licensieringen.
 - Administratören loggar in på [Adobe Admin Console](#adobe-admin-console) och markerar **Adobe Experience Platform** i produktlistan på översiktssidan.
-- För att ge Experience Platform åtkomst måste administratören lägga till användare i standardproduktprofilen: `AEP-Default-All-Users`.
+- Om du vill ge Experience Platform åtkomst rekommenderar vi att administratören lägger till användare i standardproduktprofilen: `AEP-Default-All-Users`.
 - Administratören kan skapa nya roller eller redigera behörigheter och användare för befintliga roller i Experience Platform.
 - När administratören skapar eller redigerar en roll lägger administratören till användare i rollen med **[!UICONTROL users]** och ger behörighet till dessa användare (som[!UICONTROL Read Datasets]&quot; eller &quot;[!UICONTROL Manage Schemas]&quot;) genom att redigera rollens behörigheter. På samma sätt kan administratören tilldela åtkomst till sandlådor med samma redigeringsalternativ.
 - När användare loggar in i användargränssnittet i Experience Platform styrs deras åtkomst till Experience Platform av de behörigheter som de har fått från föregående steg. Om en användare till exempel inte har [!UICONTROL View Datasets] behörighet, **[!UICONTROL Datasets]** -fliken på sidomenyn visas inte för den användaren.
