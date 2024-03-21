@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 8ae18565937adca3596d8663f9c9e6d84b0ce95a
+source-git-commit: 8cf3771145e09aa8b59a5d569f4f3a7c4820811d
 workflow-type: tm+mt
-source-wordcount: '1929'
+source-wordcount: '2022'
 ht-degree: 0%
 
 ---
@@ -144,6 +144,12 @@ Dessa attribut kan också visas som ett JSON-objekt genom att välja **[!UICONTR
 
 ![Fliken Attribut markeras. Profilattributen visas.](../images/user-guide/attributes.png)
 
+Om du vill visa de attribut som är tillgängliga på kanten väljer du **[!UICONTROL Edge]** på dataplatsväljaren.
+
+![Dataplatsväljaren på fliken Attribut markeras.](../images/user-guide/attributes-select.png)
+
+Mer information om kantprofiler finns i [dokumentation om kantprofiler](../edge-profiles.md).
+
 ### Fliken Händelser
 
 The **[!UICONTROL Events]** -fliken innehåller data från de 100 senaste ExperienceEvents som är associerade med kunden. Dessa data kan inkludera öppning av e-post, kundvagnsaktiviteter och sidvyer. Markera **[!UICONTROL View all]** för varje enskild händelse innehåller ytterligare fält och värden som hämtas som en del av händelsen.
@@ -158,7 +164,11 @@ The **[!UICONTROL Audience membership]** I visas en lista med namn och beskrivni
 
 Mer information om segmentering i Experience Platform finns i [Adobe Experience Platform segmenteringstjänstens dokumentation](../../segmentation/home.md).
 
-![Fliken Målgruppsmedlemskap är markerad. Profilens medlemsinformation visas.](../images/user-guide/segment-membership.png)
+![Fliken Målgruppsmedlemskap är markerad. Profilens medlemsinformation visas.](../images/user-guide/audience-membership.png)
+
+Om du vill visa målgruppsmedlemskapet för de profiler som är tillgängliga på Edge väljer du **[!UICONTROL Edge]** i dataplatsväljaren. Mer information om kantsegmentering finns i [kantsegmenteringsguide](../../segmentation/ui/edge-segmentation.md).
+
+![Dataplatsväljaren på fliken för målgruppsmedlemskap markeras.](../images/user-guide/audience-membership-select.png)
 
 ## Sammanfoga profiler
 
