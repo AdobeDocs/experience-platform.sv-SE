@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: fe2e93b9595d9df9a088d627d696b559f259e80d
+source-git-commit: afe632181295cc1460b3489d9b0306ef9342abfe
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1658'
 ht-degree: 0%
 
 ---
@@ -456,9 +456,6 @@ Ett godkänt svar returnerar information om den nyligen skapade mappningen inklu
 }
 ```
 
-| Egenskap | Beskrivning |
-| --- | --- |
-
 ## Skapa ett dataflöde
 
 När käll- och målanslutningarna har skapats kan du nu skapa ett dataflöde. Dataflödet ansvarar för att schemalägga och samla in data från en källa. Du kan skapa ett dataflöde genom att göra en POST-förfrågan till `/flows` slutpunkt.
@@ -579,16 +576,16 @@ POST /collection/{INLET_URL}
 | Parameter | Beskrivning |
 | --------- | ----------- |
 | `{INLET_URL}` | URL:en för din direktuppspelande slutpunkt. Du kan hämta den här URL:en genom att göra en GET-förfrågan till `/connections` slutpunkt när du anger ditt basanslutnings-ID. |
-| `{FLOW_ID}` | ID:t för HTTP API-direktuppspelningsdataflödet. |
+| `{FLOW_ID}` | ID:t för HTTP API-direktuppspelningsdataflödet. Detta ID krävs för både XDM- och RAW-data. |
 
 **Begäran**
 
 >[!BEGINTABS]
 
->[!TAB XML]
+>[!TAB Skicka XDM-data]
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=e5895dc9-b0c8-4431-bab7-bb0d2b4be5db \
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
   -H 'Content-Type: application/json' \
   -d '{
         "header": {
@@ -625,10 +622,36 @@ curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20
       }'
 ```
 
->[!TAB Rådata]
+>[!TAB Skicka Raw-data med flödes-ID som HTTP-huvud]
+
+När du skickar rådata kan du ange ditt flödes-ID som en frågeparameter eller som en del av HTTP-huvudet. I följande exempel anges flödes-ID som HTTP-huvud.
 
 ```shell
-curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=e5895dc9-b0c8-4431-bab7-bb0d2b4be5db \
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec \
+  -H 'Content-Type: application/json' 
+  -H 'x-adobe-flow-id=f2ae0194-8bd8-4a40-a4d9-f07bdc3e6ce2' \
+  -d '{
+      "name": "Johnson Smith",
+      "location": {
+          "city": "Seattle",
+          "country": "United State of America",
+          "address": "3692 Main Street"
+      },
+      "gender": "Male",
+      "birthday": {
+          "year": 1984,
+          "month": 6,
+          "day": 9
+      }
+  }'
+```
+
+>[!TAB Skicka Raw-data med flödes-ID som frågeparameter]
+
+När du skickar rådata kan du ange ditt flödes-ID som antingen en frågeparameter eller som ett HTTP-huvud. I följande exempel anges flödes-ID som en frågeparameter.
+
+```shell
+curl -X POST https://dcs.adobedc.net/collection/667b41cf2dbf3509927da1ebf7e93c20afa727cc8d8373e51da18b62e1b985ec?x-adobe-flow-id=f2ae0194-8bd8-4a40-a4d9-f07bdc3e6ce2 \
   -H 'Content-Type: application/json' \
   -d '{
       "name": "Johnson Smith",
