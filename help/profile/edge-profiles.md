@@ -2,9 +2,9 @@
 title: Edge-profiler
 description: Lär dig mer om kantprofiler, och relaterad terminologi, tillgängliga områden för kantprofiler samt tillgängliga tjänster för kantprofiler.
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: 6a17febf845d2b9566e49423fc68491315b2d4d7
+source-git-commit: 804f87563abf36a1aa203cb675a687dd262231a7
 workflow-type: tm+mt
-source-wordcount: '827'
+source-wordcount: '656'
 ht-degree: 0%
 
 ---
@@ -13,17 +13,16 @@ ht-degree: 0%
 
 I Adobe Experience Platform är kundprofilen i realtid den enda källan till sanning för entitetsdata. Profildata ligger i ett centralt nav och tar hänsyn till fall där era data är fullständiga och går att använda. I mer realtidssituationer, där tidskänslighet är viktigare, är dock kantprofiler det bästa alternativet. Edge-profiler är enkla profiler som sitter på kanterna och hjälper till i realtidspersonalisering.
 
-Adobe-program som Adobe Target, Custom Personalization Destination och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, med en projektionsdestination som definierar den kant till vilken data ska skickas och en projektionskonfiguration som definierar den specifika information som ska göras tillgänglig på kanten.
+Adobe-program som Adobe Target, Custom Personalization Destination och Adobe Campaign använder kanter för att leverera personaliserade kundupplevelser i realtid. Data dirigeras till en kant med en projektion, där en projektionsdestination definierar den kant till vilken data ska skickas.
 
 ## Terminologi {#terminology}
 
 När du arbetar med kanter måste du känna till följande koncept:
 
 - **Kant**: En kant är en geografiskt placerad server som lagrar data och som gör den lättillgänglig för program.
-- **Projektionskonfiguration**: En projektionskonfiguration beskriver hur en viss enhet ska replikeras till kanterna för en viss kund och under vilka förhållanden. För Luma (en exempelkund) bör till exempel bara fälten ålder och kön från datauppsättningen efter profilschemat spridas till kanterna.
-- **Kantprojektion**: En kantprojektion är en tillämpning av en projektionskonfiguration på en viss kant på en datadel med ett unikt ID som överensstämmer med ett givet schema för en viss kund. En entitet som till exempel respekterar profilschemat med ID `CJsDEAMaEAHmCKwPCQYNvzxD9JGDHZ8`, besökare på Lumas webbplats, replikerad till datacentret VA6, som innehåller fälten `age = 35` och `gender = male`.
+- **Kantprojektion**: En kantprojektion är systemprojektionsvyn för en viss kant som representerar profildata med ett unikt ID som överensstämmer med ett givet schema för en viss kund. En entitet som till exempel respekterar profilschemat med ID `CJsDEAMaEAHmCKwPCQYNvzxD9JGDHZ8`, besökare på Lumas webbplats, replikerad till datacentret VA6, som innehåller fälten `age = 35` och `gender = male`.
 
-Med andra ord slussas data till en kant med en projektion, med **projektionsmål** definiera **som** den kant som data skickas till och **projektionskonfiguration** definiera **vad** data skickas till angiven kant.
+Med andra ord slussas data till en kant med en projektion, med **projektionsmål** definiera **som** den kant som data ska skickas till.
 
 ## Tillgängliga regioner {#regions}
 
@@ -43,13 +42,8 @@ Alla dessa områden är giltiga alternativ för profiler att landa i.
 
 Följande tjänster är aktiverade för profilsökning på kant:
 
-- [Konfiguration av Edge Profile Service](#edge-profile-configuration-service)
 - [Projektionsarbetare](#mepw)
 - [Express Profile Service](#xps)
-
-### Konfiguration av Edge Profile Service {#edge-profile-configuration-service}
-
-Konfigurationstjänsten för Edge Profile visar API:er för lösningar och program längre fram i kedjan för att skapa projektionskonfigurationer. Du kan använda dessa API:er för att ange attribut och målgrupper för en profil som ska skickas till kanterna, samt de kantområden där projektionen ska skickas. Nu kan du ange **alla** för kantområdena för projektioner.
 
 ### Projektionsarbetare {#mepw}
 
@@ -70,8 +64,6 @@ I följande avsnitt visas vanliga frågor om kantprofiler:
 ### Vilka områden kan kantprofilerna landa i?
 
 Kantprofiler kan landa i olika områden beroende på den aktuella situationen.
-
-För projektionskonfigurationer kommer alla ändringar av profilen att spridas till alla regioner som nämns i profilkonfigurationen.
 
 Dessutom har varje edge-profil ett schemaattribut som kallas användaraktivitetsregion (UAR). Alla kanter som den här profilen har besökt under de senaste 14 dagarna visas i det här profilattributet. När det här attributet finns i en profil skickas därför alla ändringar i profilen också till alla regioner som finns i den övre gränsen för användargränssnittet.
 
