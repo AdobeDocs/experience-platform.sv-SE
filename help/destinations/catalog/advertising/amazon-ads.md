@@ -3,7 +3,7 @@ title: Amazon Ads
 description: Amazon Ads erbjuder en rad alternativ som hjälper er att nå era annonsmål för registrerade säljare, leverantörer, bokleverantörer, KDP-författare (Kindle Direct Publishing), apputvecklare och/eller byråer. Integreringen av Amazon Ads med Adobe Experience Platform ger körklar integrering med Amazon Ads-produkter, inklusive Amazon DSP (ADSP). Med Amazon Ads-destinationen i Adobe Experience Platform kan man definiera målgrupper för annonsörer för målinriktning och aktivering i Amazon DSP.
 last-substantial-update: 2024-02-20T00:00:00Z
 exl-id: 724f3d32-65e0-4612-a882-33333e07c5af
-source-git-commit: ba768b3148d57e9df12a34f0324c086a17a6d45a
+source-git-commit: 8e34e5488ab80cd1f3c8086bf7c16d3f22527540
 workflow-type: tm+mt
 source-wordcount: '1603'
 ht-degree: 1%
@@ -38,7 +38,7 @@ Tack vare integreringen med Amazon DSP kan [!DNL Amazon Ads] annonsörer för at
 
 Integreringen med [!DNL Amazon Marketing Cloud] (AMC) tillåter [!DNL Amazon Ads] annonsörer skicka CDP-segment från Adobe Experience Platform-formulär till AMC. Annonsörer kan sedan ansluta CDP-indata med [!DNL Amazon Ads] signalera och utföra anpassade analyser i ämnen som mediernas inverkan, målgruppssegment och kundresor i sekretessformat. En annonsör kan t.ex. ladda upp en lista över sina befintliga kunder för att förstå hur den samlade marknadsföringskampanjen fungerar, eller aggregerad statistik över konverteringshändelser på Amazon, som att visa en produktinformationssida, lägga en produkt i en kundvagn eller köpa en produkt.
 
-### Annonsoptimering:
+### Annonsoptimering
 
 Integreringen med [!DNL Amazon Marketing Cloud] (AMC) tillåter annonsörer att ladda upp sina egna kundlistor och använda [!DNL Amazon Marketing Cloud] SQL, utför återkommande överlappningsanalyser, undertryckningar, tillägg eller optimeringar till målgrupper innan ni skapar en aktiveringsfärdig målgrupp i Amazon DSP för målinriktning.
 
