@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsetiketter i användargränssnittet
 description: Den här guiden innehåller steg för hur du arbetar med dataanvändningsetiketter i Adobe Experience Platform användargränssnitt.
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 663d1e20a7b8a56b1395047124fdf4b6fc3c214b
+source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
 workflow-type: tm+mt
-source-wordcount: '1408'
+source-wordcount: '1481'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,14 @@ Se guiden om hur man [konfigurera behörigheter](https://experienceleague.adobe.
 ## Hantera etiketter på schemanivå
 
 Du kan lägga till etiketter direkt i ett eller flera scheman inom det schemat. Alla fält som används på schemanivå sprids till alla datauppsättningar som baseras på det schemat.
+
+>[!NOTE]
+>
+>Om dina dataanvändningsprinciper skapades innan du gav fältet en etikett kan du stöta på en dialogruta om brott mot styrningsprinciper när du tillämpar etiketter på det nya schemat. Den här dialogrutan anger att användningen av den här etiketten bryter mot en befintlig användarprofil. Använd datalänksdiagrammet för att förstå vilka andra konfigurationsändringar som behöver göras innan du kan lägga till etiketten i schemafältet.
+>
+>![Dialogrutan med en sammanfattning av överträdelser och datalänksdiagram har markerats vid överträdelse av datahanteringsprincipen.](../images/labels/policy-violation-dialog.png)
+>
+>Se [policyöverträdelse av dataanvändning](https://experienceleague.adobe.com/en/docs/experience-platform/data-governance/enforcement/auto-enforcement#data-usage-violation) om du vill ha mer information om partiella policyöverträdelser.
 
 För att kunna hantera dataanvändningsetiketter på schemanivå måste du välja ett befintligt schema eller skapa ett nytt. När du har loggat in på Adobe Experience Platform väljer du **[!UICONTROL Schemas]** till vänster för att öppna **[!UICONTROL Schemas]** arbetsyta. På den här sidan visas alla scheman som du har skapat och användbar information om varje schema.
 

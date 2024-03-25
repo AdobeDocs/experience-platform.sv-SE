@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Automatisk policytillämpning
 description: Det här dokumentet beskriver hur dataanvändningspolicyer tillämpas automatiskt när målgrupper aktiveras till destinationer i Experience Platform.
 exl-id: c6695285-77df-48c3-9b4c-ccd226bc3f16
-source-git-commit: 4e92b6937c4fa383b398ec99faa6d97907c128d6
+source-git-commit: ea58ece75d2208ae96bd71c2f51e14279769640f
 workflow-type: tm+mt
-source-wordcount: '1998'
+source-wordcount: '2089'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ Avsnitten nedan beskriver olika policyefterlevnadsmeddelanden som visas i plattf
 
 Om en principöverträdelse inträffar från försök att aktivera en målgrupp (eller [göra ändringar i en redan aktiverad publik](#policy-enforcement-for-activated-audiences)) förhindras åtgärden och en pover visas som indikerar att en eller flera profiler har överträtts. När en överträdelse har utlösts **[!UICONTROL Save]** knappen är inaktiverad för den entitet som du ändrar tills rätt komponenter har uppdaterats för att uppfylla dataanvändningsprinciperna.
 
-Välj en principöverträdelse i poverarens vänstra kolumn för att visa information om den överträdelsen.
+Välj ett principnamn om du vill visa information om överträdelsen.
 
 ![En dialogruta som indikerar ett principfel har inträffat med profilnamnet markerat.](../images/enforcement/violation-policy-select.png)
 
@@ -104,13 +104,21 @@ Ett datalinjediagram visas nedanför sammanfattningen av överträdelser, vilket
 
 ![En dialogruta där datalinjediagrammet är markerat om en princip överträds.](../images/enforcement/data-lineage.png)
 
-Du kan också använda **[!UICONTROL Filter]** ikon (![](../images/enforcement/filter.png)) för att filtrera de visade enheterna efter kategori. Minst två kategorier måste väljas för att data ska kunna visas.
+Du kan också använda **[!UICONTROL Filter]** ikon (![En filterikon.](../images/enforcement/filter.png)) för att filtrera de visade enheterna efter kategori. Minst två kategorier måste väljas för att data ska kunna visas.
 
 ![En dialogruta om policyöverträdelse där datalinjefiltret och listrutan är markerade.](../images/enforcement/lineage-filter.png)
 
 Välj **[!UICONTROL List view]** för att visa datalinjen som en lista. Om du vill växla tillbaka till det visuella diagrammet väljer du **[!UICONTROL Path view]**.
 
 ![En dialogruta om policyöverträdelse med sökvägsvyn för datalinjen markerad.](../images/enforcement/list-view.png)
+
+#### Etiketterna har tillämpats {#labels-successfully-applied}
+
+Om du skapar dataanvändningsprinciper innan du etiketterar dina schemafält kan du stöta på en dialogruta om brott mot styrningsprinciper när du tillämpar etiketter på schemat. I det här fallet kan du etikettera en del av ditt schema. The [!UICONTROL Labels successfully applied] -fliken anger vilka etiketter som har tillämpats eftersom det inte finns några principbegränsningar för det fältet.
+
+Använd datalänksdiagrammet för att förstå vilka andra konfigurationsändringar som behöver göras innan du kan lägga till etiketten i schemafältet.
+
+![Dialogrutan Policyöverträdelse med [!UICONTROL Labels successfully applied] markerad flik.](../images/enforcement/labels-successfully-applied.png)
 
 ### Principutvärdering av samtycke {#consent-policy-evaluation}
 
