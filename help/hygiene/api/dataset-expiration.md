@@ -3,7 +3,7 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 0d59f159e12ad83900e157a3ce5ab79a2f08d0c1
+source-git-commit: 04d49282d60b2e886a6d2dae281b98b60e6ce9b3
 workflow-type: tm+mt
 source-wordcount: '2083'
 ht-degree: 0%
@@ -489,3 +489,4 @@ Följande tabell visar de tillgängliga frågeparametrarna när [ange förfallod
 | `updatedDate` / `updatedToDate` / `updatedFromDate` | Gilla `createdDate` / `createdFromDate` / `createdToDate`, men matchar en datamängds uppdateringstid i stället för skapandetid.<br><br>En förfallotid anses vara uppdaterad för varje redigering, inklusive när den skapas, avbryts eller körs. | `updatedDate=2022-01-01` |
 
 {style="table-layout:auto"}
+
