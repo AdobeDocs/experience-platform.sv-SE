@@ -3,9 +3,9 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 0d59f159e12ad83900e157a3ce5ab79a2f08d0c1
 workflow-type: tm+mt
-source-wordcount: '1726'
+source-wordcount: '2083'
 ht-degree: 0%
 
 ---
@@ -130,8 +130,6 @@ curl -X GET \
 
 Ett lyckat svar returnerar information om datauppsättningens förfallodatum.
 
-<!-- Is there a different response from making a GET request to either '/ttl/{DATASET_ID}?include=history' or '/ttl/{TTL_ID}'? If so please can you provide the response for both (or just the ttl endpoint itf it differs from teh example) -->
-
 ```json
 {
     "ttlId": "SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f",
@@ -186,29 +184,105 @@ Följande JSON representerar ett trunkerat svar för datauppsättningens informa
 }
 ```
 
-## Skapa eller uppdatera en förfallotid för en datauppsättning {#create-or-update}
+## Skapa en förfallotid för datauppsättning {#create}
 
-Skapa eller uppdatera ett förfallodatum för en datauppsättning via en PUT-begäran. I PUT-begäran används antingen `datasetId` eller `ttlId`.
+För att säkerställa att data tas bort från systemet efter en angiven period schemalägger du en förfallotid för en viss datauppsättning genom att ange datauppsättnings-ID och utgångsdatum och -tid i ISO 8601-format.
+
+Om du vill skapa en förfallotid för en datauppsättning utför du en begäran om POST enligt nedan och anger de värden som anges nedan i nyttolasten.
 
 **API-format**
 
 ```http
-PUT /ttl/{DATASET_ID}
-PUT /ttl/{TTL_ID}
+POST /ttl
 ```
-
-| Parameter | Beskrivning |
-| --- | --- |
-| `{DATASET_ID}` | ID:t för den datauppsättning som du vill schemalägga en förfallotid för. |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum. |
 
 **Begäran**
 
-Följande begäran schemalägger en datauppsättning `5b020a27e7040801dedbf46e` för borttagning i slutet av 2022 (Greenwich Mean Time). Om det inte finns något förfallodatum för datauppsättningen skapas ett nytt förfallodatum. Om datauppsättningen redan har en väntande förfallotid uppdateras den med den nya `expiry` värde.
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/core/hygiene/ttl \
+  -H `Authorization: Bearer {ACCESS_TOKEN}`
+  -H `x-gw-ims-org-id: {ORG_ID}`
+  -H `x-api-key: {API_KEY}`
+  -H `Accept: application/json`
+  -d {
+      "datasetId": "5b020a27e7040801dedbf46e",
+      "expiry": "2030-12-31T23:59:59Z"
+      "displayName": "Delete Acme Data before 2025",
+      "description": "The Acme information in this dataset is licensed for our use through the end of 2024."
+      }
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `datasetId` | **Obligatoriskt** ID:t för måldatauppsättningen som du vill schemalägga en förfallotid för. |
+| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde.<br>Obs!<ul><li>Begäran misslyckas om det redan finns en förfallotid för datauppsättningen.</li><li>Det här datumet och den här tiden måste vara minst **24 timmar i framtiden**.</li></ul> |
+| `displayName` | Ett valfritt visningsnamn för datauppsättningens förfallobegäran. |
+| `description` | En valfri beskrivning av förfallobegäran. |
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP 201-status (Skapad) och det nya tillståndet för datauppsättningens förfallodatum, om det inte fanns någon tidigare förfallotid för datauppsättningen.
+
+```json
+{
+  "ttlId":       "SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f",
+  "datasetId":   "5b020a27e7040801dedbf46e",
+  "datasetName": "Acme licensed data",
+  "sandboxName": "prod",
+  "imsOrg":      "{ORG_ID}",
+  "status":      "pending",
+  "expiry":      "2030-12-31T23:59:59Z",
+  "updatedAt":   "2021-08-19T11:14:16Z",
+  "updatedBy":   "Jane Doe <jdoe@adobe.com> 77A51F696282E48C0A494 012@64d18d6361fae88d49412d.e",
+  "displayName": "Delete Acme Data before 2031",
+  "description": "The Acme information in this dataset is licensed for our use through the end of 2030."
+}
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `ttlId` | ID:t för datauppsättningens förfallodatum. |
+| `datasetId` | ID:t för datauppsättningen som utgångsdatumet gäller för. |
+| `datasetName` | Visningsnamnet för den datauppsättning som förfallodatumet gäller för. |
+| `sandboxName` | Namnet på sandlådan som måldatauppsättningen finns under. |
+| `imsOrg` | Organisationens ID. |
+| `status` | Den aktuella statusen för datauppsättningens utgångsdatum. |
+| `expiry` | Det schemalagda datumet och den schemalagda tidpunkten när datauppsättningen tas bort. |
+| `updatedAt` | En tidsstämpel som anger när förfallodatumet senast uppdaterades. |
+| `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
+| `displayName` | Ett visningsnamn för förfallobegäran. |
+| `description` | En beskrivning av förfallobegäran. |
+
+HTTP-statusen 400 (Ogiltig begäran) inträffar om det redan finns en förfallotid för datauppsättningen. Ett misslyckat svar returnerar HTTP-statusen 404 (Hittades inte) om det inte finns någon sådan förfallotid (eller om du inte har tillgång till den).
+
+## Uppdatera utgångsdatum för en datauppsättning {#update}
+
+Om du vill uppdatera ett förfallodatum för en datauppsättning använder du en PUT-begäran och `ttlId`. Du kan uppdatera `displayName`, `description`och/eller `expiry` information.
+
+>[!NOTE]
+>
+>Om du ändrar förfallodatumet och förfallotiden måste det vara minst 24 timmar i framtiden. Denna försening ger dig möjlighet att avbryta eller schemalägga om förfallotiden och undvika oavsiktliga dataförluster.
+
+**API-format**
+
+```http
+PUT /ttl/{TTL_ID}
+```
+
+<!-- We should be avoiding usage of TTL, Can I change that to {EXPIRY_ID} or {EXPIRATION_ID} instead? -->
+
+| Parameter | Beskrivning |
+| --- | --- |
+| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum som du vill ändra. |
+
+**Begäran**
+
+Följande begäran ändrar förfallodatum för en datauppsättning `SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f` i slutet av 2024 (GMT). Om den befintliga datauppsättningens förfallodatum hittas uppdateras den med den nya `expiry` värde.
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/core/hygiene/ttl/5b020a27e7040801dedbf46e \
+  https://platform.adobe.io/data/core/hygiene/ttl/SD-c8c75921-2416-4be7-9cfd-9ab01de66c5f \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -223,7 +297,7 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `expiry` | Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde. Alla tidigare tidsstämplar för förfallodatum för samma datauppsättning ersätts med det nya utgångsvärdet som du har angett. |
+| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde. Alla tidigare tidsstämplar för förfallodatum för samma datauppsättning ersätts med det nya utgångsvärdet som du har angett. Det här datumet och den här tiden måste vara minst **24 timmar i framtiden**. |
 | `displayName` | Ett visningsnamn för förfallobegäran. |
 | `description` | En valfri beskrivning av förfallobegäran. |
 
@@ -231,7 +305,7 @@ curl -X PUT \
 
 **Svar**
 
-Ett lyckat svar returnerar information om datauppsättningens förfallodatum, med HTTP-status 200 (OK) om en befintlig förfallotid uppdaterades, eller 201 (Skapad) om det inte fanns någon tidigare förfallotid.
+Ett lyckat svar returnerar det nya tillståndet för datauppsättningens förfallodatum och HTTP-statusen 200 (OK) om en tidigare förfallotid uppdaterades.
 
 ```json
 {
@@ -258,6 +332,8 @@ Ett lyckat svar returnerar information om datauppsättningens förfallodatum, me
 | `updatedBy` | Användaren som senast uppdaterade förfallodatumet. |
 
 {style="table-layout:auto"}
+
+Ett misslyckat svar returnerar HTTP-statusen 404 (Hittades inte) om det inte finns någon sådan förfallotid för datauppsättningen.
 
 ## Avbryt förfallodatum för en datauppsättning {#delete}
 
