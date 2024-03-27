@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;direktuppspelningsanslutning;
 title: Skapa en HTTP API Streaming Connection med API:t för Flow Service
 description: I den här självstudiekursen beskrivs hur du skapar en direktuppspelningsanslutning med hjälp av HTTP API-källan för både raw- och XDM-data med API:t för Flow Service
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: afe632181295cc1460b3489d9b0306ef9342abfe
+source-git-commit: 84ffbb86e8973c2795d19122d3866e980949759d
 workflow-type: tm+mt
 source-wordcount: '1658'
 ht-degree: 0%
@@ -718,3 +718,4 @@ Om `Authorization` huvudet saknas, eller så skickas en ogiltig/utgången åtkom
     }
 }
 ```
+
