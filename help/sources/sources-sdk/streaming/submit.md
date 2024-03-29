@@ -2,14 +2,19 @@
 title: Testa och skicka källan
 description: I följande dokument beskrivs hur du testar och verifierar en ny källa med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor (Streaming SDK).
 exl-id: 2ae0c3ad-1501-42ab-aaaa-319acea94ec2
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1236'
 ht-degree: 0%
 
 ---
 
 # Testa och skicka källan
+
+>[!NOTE]
+>
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 De sista stegen för att integrera din nya källa till Adobe Experience Platform med självbetjäningskällor (Streaming SDK) är att testa och skicka den nya källan. När du har slutfört anslutningsspecifikationen och uppdaterat specifikationen för direktuppspelningsflödet kan du börja testa källans funktionalitet antingen via API:t eller gränssnittet. När det är klart kan du sedan skicka in din nya källfil genom att kontakta Adobe.
 

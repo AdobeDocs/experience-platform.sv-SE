@@ -2,14 +2,19 @@
 title: Uppdatera en anslutningsspecifikation för Streaming SDK med API:t för Flow Service
 description: Följande dokument innehåller steg om hur du använder en anslutningsspecifikation med API:t för Flow Service för självbetjäningskällor (Streaming SDK).
 exl-id: 89f96ae1-81d0-47a3-9e21-7dae810ee823
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '143'
+source-wordcount: '163'
 ht-degree: 1%
 
 ---
 
 # Uppdatera en anslutningsspecifikation med API:t för Flow Service
+
+>[!NOTE]
+>
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 Du kan uppdatera egenskaperna för en anslutningsspecifikation genom en PUT-åtgärd. När du uppdaterar en anslutningsspecifikation via en PUT-begäran, måste texten innehålla alla fält som krävs för att skapa en ny anslutningsspecifikation i en POST-begäran.
 

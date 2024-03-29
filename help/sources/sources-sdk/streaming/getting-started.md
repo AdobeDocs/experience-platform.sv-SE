@@ -2,14 +2,19 @@
 title: Komma igång med självbetjäningskällor (Streaming SDK)
 description: Det här dokumentet innehåller en introduktion till den information som krävs för att du ska kunna skapa en ny källa med självbetjäningskällor (Streaming SDK).
 exl-id: 6cc13279-ce0b-45bc-ad25-e2e6aafc2af0
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '543'
 ht-degree: 0%
 
 ---
 
 # Komma igång med självbetjäningskällor (Streaming SDK)
+
+>[!NOTE]
+>
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 Med självbetjäningskällor (Streaming SDK) kan du integrera din egen källa för att skicka strömmande data till Adobe Experience Platform. Det här dokumentet innehåller en introduktion till de centrala koncept du behöver känna innan du försöker ringa till [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 

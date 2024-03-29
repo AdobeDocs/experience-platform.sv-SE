@@ -2,14 +2,19 @@
 title: Dokumentera källan (strömmande SDK)
 description: Det sista steget innan den nya källan kan publiceras i Adobe Experience Platform är att dokumentera den nya källan.
 exl-id: 65ca7a4d-3e02-4f54-bf07-ea2c92b8dbf1
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
 
 # Dokumentera källan (Streaming SDK)
+
+>[!NOTE]
+>
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 Det sista steget innan den nya källan kan publiceras i Adobe Experience Platform är att dokumentera den nya källan.
 

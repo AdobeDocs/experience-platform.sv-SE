@@ -2,14 +2,19 @@
 title: Skapa en ny anslutningsspecifikation för Streaming SDK med API:t för Flow Service
 description: I följande dokument beskrivs hur du skapar en anslutningsspecifikation med API:t för Flow Service och integrerar en ny källa med självbetjäningskällor.
 exl-id: ad8f6004-4e82-49b5-aede-413d72a1482d
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '756'
 ht-degree: 0%
 
 ---
 
 # Skapa en ny anslutningsspecifikation med [!DNL Flow Service] API
+
+>[!NOTE]
+>
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 En anslutningsspecifikation representerar strukturen för en källa. Den innehåller information om en källas autentiseringskrav, definierar hur källdata kan utforskas och inspekteras samt ger information om attributen för en viss källa. The `/connectionSpecs` slutpunkt i [!DNL Flow Service] Med API kan du programmässigt hantera anslutningsspecifikationerna inom organisationen.
 

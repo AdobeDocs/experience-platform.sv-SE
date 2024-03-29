@@ -2,14 +2,19 @@
 title: Uppdatera flödesspecifikationer för Streaming SDK med API:t för Flow Service
 description: I följande dokument beskrivs hur du hämtar och uppdaterar flödesspecifikationer med API:t för Flow Service för självbetjäningskällor (Streaming SDK).
 exl-id: cc9dab7a-08fa-4c6c-bbac-cb658a6376fb
-source-git-commit: 36de441a68a7cb9248d058e12e6ca3ed60f899ef
+badge: Beta
+source-git-commit: 256857103b4037b2cd7b5b52d6c5385121af5a9f
 workflow-type: tm+mt
-source-wordcount: '403'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
 
 # Uppdatera flödesspecifikationer med [!DNL Flow Service] API
+
+>[!NOTE]
+>
+>SDK för självbetjäningsströmning för källor är i betaversion. Läs [källöversikt](../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
 
 När du har genererat ett nytt anslutningsspecifikations-ID måste du lägga till det här ID:t i en flödesspecifikation för att kunna skapa ett dataflöde.
 
