@@ -1,9 +1,10 @@
 ---
 title: Definiera kartfält i användargränssnittet
 description: Lär dig hur du definierar ett kartfält i användargränssnittet för Experience Platform.
-source-git-commit: 8eea73c91d0671b1ddaeb8da0dc18b3e5e306f57
+exl-id: 657428a2-f184-4d7c-b657-4fc60d77d5c6
+source-git-commit: 57a0381401c6084513ce7413b66dec56044b4492
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '435'
 ht-degree: 0%
 
 ---
@@ -25,6 +26,19 @@ A [!UICONTROL Map value type] visas. Detta värde krävs för [!UICONTROL Map] d
 När du har konfigurerat delfältet måste du tilldela det till en fältgrupp. Använd **[!UICONTROL Field Group]** nedrullningsbar meny eller sökfält och välj **[!UICONTROL Apply]**. Du kan fortsätta lägga till fält i objektet med samma process, eller välja **[!UICONTROL Save]** för att bekräfta inställningarna.
 
 ![En inspelning av fältgruppsvalet och inställningar som används.](../../images/ui/fields/special/assign-to-field-group.gif)
+
+## Användningsbegränsningar {#restrictions}
+
+XDM har följande begränsningar för användning av den här datatypen:
+
+* Karttyper MÅSTE vara av typen `object`.
+* Karttyper FÅR INTE ha egenskaper definierade (de definierar med andra ord tomma objekt).
+* Karttyper MÅSTE innehålla en `additionalProperties.type` fält som beskriver värdena som kan placeras på kartan, antingen `string` eller `integer`.
+
+Se till att du bara använder karttypsfält när det är absolut nödvändigt, eftersom de har följande prestandanackdelar:
+
+* Svarstid från [Adobe Experience Platform Query Service](../../../query-service/home.md) bryts ned från tre sekunder till tio sekunder för 100 miljoner poster.
+* Kartor måste ha färre än 16 tangenter, annars riskerar de att försämras ytterligare.
 
 >[!NOTE]
 >
