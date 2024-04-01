@@ -3,9 +3,9 @@ keywords: plattform;mål;målarbetsyta;arbetsyta;ui;destinationer ui;katalog;des
 title: Arbetsytan Destinationer
 description: 'Arbetsytan Destinationer består av fem avsnitt: Översikt, Katalog, Bläddra, Konton och Systemvy. De beskrivs i avsnitten nedan.'
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 165793619437f403045b9301ca6fa5389d55db31
+source-git-commit: dad07add8c5f9cc98a187c2e2222a51611dbd1a2
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1116'
 ht-degree: 0%
 
 ---
@@ -110,7 +110,7 @@ The **[!UICONTROL Browse]** -fliken visar de mål som du har upprättat en anslu
 | [!UICONTROL Created] | Datum och UTC-tid när aktiveringsflödet till målet skapades. Välj uppåt-/nedåtpilen för att sortera aktiveringsflödena efter det senaste först eller det äldsta först. |
 | [!UICONTROL Status] | `Enabled` eller `Disabled`. Anger om data aktiveras till det här målet. |
 
-Klicka på en målrad för att visa mer information om målet i den högra listen.
+Klicka på en målrad för att visa mer information om målet i den högra listen, t.ex. mål-ID, beskrivning, antal aktiva målgrupper med mera.
 
 ![Klicka på målraden](../assets/ui/workspace/click-destination-row.png)
 
@@ -124,4 +124,4 @@ The **[!UICONTROL System View]** I visas en grafisk representation av de aktiver
 
 Välj något av de mål som visas på sidan och klicka på **[!UICONTROL View dataflows]** om du vill visa information om alla anslutningar som du har konfigurerat för varje mål.
 
-![Data-flows2](../assets/ui/workspace/data-flows2.png)
+![Dataflöden2](../assets/ui/workspace/data-flows2.png)
