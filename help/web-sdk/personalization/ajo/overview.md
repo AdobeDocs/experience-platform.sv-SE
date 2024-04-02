@@ -3,16 +3,16 @@ title: Använda Adobe Journey Optimizer med Platform Web SDK
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Journey Optimizer
 keywords: ajo;ajo web;adobe travel optimizer;renderDecision;surfaces;Decision;propositions;scope;schema
 exl-id: 3f28e2bc-2c4b-4400-8f69-c7316449ff4f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: ae6c6d21b1eea900d01be3287827296071429d30
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '382'
 ht-degree: 0%
 
 ---
 
 # Använda [!DNL Adobe Journey Optimizer] med [!DNL Platform Web SDK]
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [WebbCampaign-gränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)för att skapa, aktivera och leverera [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Journey Optimizer] till webbkanalen. Du kan använda en WYSIWYG-redigerare, [!DNL Adobe Journey Optimizer] [Webbkanal](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html)eller ett icke-visuellt gränssnitt, [Kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) skapa, aktivera och leverera [!DNL Journey Optimizer Web] kampanjer och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## Terminologi {#terminology}
 
-**[!UICONTROL Surface]**: En webbyta är en webbegenskap som identifieras av en URL där [!DNL Adobe Journey Optimizer] upplevelseinnehåll kommer att levereras.
+**[!UICONTROL Surface]**: En webbyta är en webbsida eller plats på en sida som identifieras av en URI där [!DNL Adobe Journey Optimizer] upplevelseinnehåll kommer att levereras.
 
 **[!UICONTROL Propositions]**: I [!DNL Adobe Journey Optimizer], korrelerar förslag till upplevelsen som väljs från en [!DNL Journey Optimizer Campaign].
 

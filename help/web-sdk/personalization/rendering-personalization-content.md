@@ -3,9 +3,9 @@ title: Återge anpassat innehåll med Adobe Experience Platform Web SDK
 description: Lär dig återge personaliserat innehåll med Adobe Experience Platform Web SDK.
 keywords: personalisering;renderDecision;sendEvent;DecisionScopes;propositions;
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 6841a6f777d18845ce36e3503fbdb9698ece84bb
 workflow-type: tm+mt
-source-wordcount: '929'
+source-wordcount: '947'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Adobe Experience Platform Web SDK har stöd för att hämta personaliserat inneh
 
 Dessutom hanterar Web SDK personalisering på samma sida och nästa sida genom Adobe Experience Platform personaliseringsmål, som [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) och [anslutning för anpassad personalisering](../../destinations/catalog/personalization/custom-personalization.md). Mer information om hur du konfigurerar Experience Platform för anpassning av samma sida och nästa sida finns i [dedikerad guide](../../destinations/ui/activate-edge-personalization-destinations.md).
 
-Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) och Adobe Journey Optimizer [WebbCampaign-gränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) kan hämtas och återges automatiskt av SDK. Innehåll som skapats i Adobe Target [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
+Innehåll som skapats i Adobe Target [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) och Adobe Journey Optimizer [WebbCampaign-gränssnitt](https://experienceleague.adobe.com/docs/journey-optimizer/using/web/create-web.html) kan hämtas och återges automatiskt av SDK. Innehåll som skapats i Adobe Target [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), ADOBE JOURNEY OPTIMIZER [Kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based) eller Offer decisioning kan inte återges automatiskt av SDK. Istället måste du begära det här innehållet med SDK och sedan återge innehållet manuellt.
 
 ## Återge innehåll automatiskt {#automatic}
 
@@ -299,7 +299,7 @@ SDK erbjuder anläggningar för [hantera flimmer](../personalization/manage-flic
 
 ## Rendera utkast i ensidiga program utan att öka mätvärdena {#applypropositions}
 
-The `applyPropositions` kan du återge eller köra en array med förslag från [!DNL Target] till ensidiga program, utan att öka [!DNL Analytics] och [!DNL Target] mätvärden. Detta ökar rapporteringsnoggrannheten.
+The `applyPropositions` kan du återge eller köra en array med förslag från [!DNL Target] eller Adobe Journey Optimizer till single-page-applikationer, utan att öka [!DNL Analytics] och [!DNL Target] mätvärden. Detta ökar rapporteringsnoggrannheten.
 
 >[!IMPORTANT]
 >
@@ -338,7 +338,7 @@ alloy("applyPropositions", {
 
 ### Användningsfall 2: Återge förslag som inte har någon väljare
 
-Det här användningsexemplet gäller aktivitetserbjudanden som skapats med [!DNL Target Form-based Experience Composer].
+Det här användningsexemplet gäller upplevelser som skapats med [!DNL Target Form-based Experience Composer] eller Adobe Journey Optimizer [Kodbaserad Experience Channel](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/code-based-experience/get-started-code-based).
 
 Du måste ange väljaren, åtgärden och omfånget i `applyPropositions` ring.
 
@@ -372,16 +372,31 @@ alloy("sendEvent", {
         var renderedPropositions = applyPropositionsResult.propositions;
 
         // Send the display notifications via sendEvent command
-        alloy("sendEvent", {
-            "xdm": {
-                "eventType": "decisioning.propositionDisplay",
-                "_experience": {
-                    "decisioning": {
-                        "propositions": renderedPropositions
-                    }
-                }
-            }
-        });
+        function sendDisplayEvent(proposition) {
+            const {
+                id,
+                scope,
+                scopeDetails = {}
+            } = proposition;
+
+            alloy("sendEvent", {
+                xdm: {
+                    eventType: "decisioning.propositionDisplay",
+                    _experience: {
+                        decisioning: {
+                            propositions: [{
+                                id: id,
+                                scope: scope,
+                                scopeDetails: scopeDetails,
+                            }, ],
+                            propositionEventType: {
+                                display: 1
+                            },
+                        },
+                    },
+                },
+            });
+        }
     });
 });
 ```
