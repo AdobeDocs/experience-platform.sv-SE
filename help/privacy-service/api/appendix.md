@@ -5,9 +5,9 @@ title: API-handbok för Privacy Service
 description: Det här dokumentet innehåller ytterligare information om hur du arbetar med Privacy Service-API:t.
 role: Developer
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 644e85fe5c9b1a37f69c75755713e929736c2e89
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '496'
 ht-degree: 5%
 
 ---
@@ -62,18 +62,24 @@ När en `namespace` värdet i [!DNL Privacy Service] API, en **namnutrymmeskvali
 
 I följande tabell visas godkända värden för att ange en Adobe-produkt i `include` attribut för en jobbskapandebegäran.
 
+>[!NOTE]
+>
+>Värdena för produktlistan är skiftlägeskänsliga. Fallstudier rekommenderas men inte.
+
 | Produkt | Värde som ska användas i `include` attribute |
 | --- | --- |
 | Adobe Advertising Cloud | `adCloud` |
 | Adobe Analytics | `analytics` |
-| Adobe Audience Manager | `AudienceManager` |
+| Adobe Audience Manager | `audienceManager` |
 | Adobe Campaign | `campaign` |
 | Adobe Experience Platform (Data Lake) | `aepDataLake` |
 | Adobe Experience Platform (kundprofil i realtid) | `profileService` |
 | Adobe Pass-autentisering | `primetimeAuthentication` |
 | Adobe Target | `target` |
 | Kundattribut | `CRS` |
+| Kundresehantering | `cjm` |
 | Identitetstjänst | `identity` |
 | Marketo Engage | `marketo` |
+| Marketo Measure | `marketomeasure` |
 
 {style="table-layout:auto"}
