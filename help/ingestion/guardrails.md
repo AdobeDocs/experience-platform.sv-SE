@@ -3,9 +3,9 @@ keywords: Experience Platform;felsökning;skyddsförslag;riktlinjer;
 title: Guardsedningar för datainmatning
 description: Läs om hur du skyddar dig mot dataintrång i Adobe Experience Platform.
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: b217dd84d9be630a5097e7179af08619ebc135f8
+source-git-commit: 9d3a8aac120119ce0361685f9cb8d3bfc28dc7fd
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ I följande tabell visas skyddsutkast som ska beaktas när du använder [API fö
 
 | Typ av förtäring | Riktlinjer | Anteckningar |
 | --- | --- | --- |
-| Intag av data i sjön med hjälp av API för gruppinmatning | <ul><li>Du kan importera upp till 20 GB data per timme till en datasjön med hjälp av API:t för gruppinmatning.</li><li>Det högsta antalet filer per grupp är 1500.</li><li>Den maximala batchstorleken är 100 GB.</li><li>Det maximala antalet egenskaper eller fält per rad är 10000.</li><li>Det högsta antalet batchar per minut, per användare, är 138.</li></ul> |
+| Intag av data i sjön med hjälp av API för gruppinmatning | <ul><li>Du kan importera upp till 20 GB data per timme till en datasjön med hjälp av API:t för gruppinmatning.</li><li>Det högsta antalet filer per grupp är 1500.</li><li>Den maximala batchstorleken är 100 GB.</li><li>Det maximala antalet egenskaper eller fält per rad är 10000.</li><li>Det högsta antalet batchar per minut, per användare, är 138.</li></ul> | |
 | Intag av data i sjön med hjälp av batchkällor | <ul><li>Du kan inhämta upp till 200 GB data per timme till datasjön med hjälp av batchkällor som [!DNL Azure Blob], [!DNL Amazon S3]och [!DNL SFTP].</li><li>Batchstorleken bör vara mellan 256 MB och 100 GB. Detta gäller både okomprimerade och komprimerade data. När komprimerade data är okomprimerade i datasjön gäller dessa begränsningar.</li><li>Det högsta antalet filer per grupp är 1500.</li><li>Den minsta storleken för en fil eller mapp är 1 byte. Du kan inte importera filer eller mappar med storleken 0 byte.</li></ul> | Läs [källöversikt](../sources/home.md) om du vill ha en katalog med källor som du kan använda för datainmatning. |
-| Gruppinmatning till profil | <ul><li>Den största tillåtna storleken för en postklass är 100 kB (mjuk).</li><li>Den största tillåtna storleken för en ExperienceEvent-klass är 10 kB (mjuk).</li><li>Den största tillåtna storleken för en enstaka post är 1 MB.</li></ul> |
+| Gruppinmatning till profil | <ul><li>Den största tillåtna storleken för en postklass är 100 kB (hård).</li><li>Den största tillåtna storleken för en ExperienceEvent-klass är 10 kB (hårddisk).</li></ul> | |
 | Antal profiler eller ExperienceEvent-batchar som har importerats per dag | **Det högsta antalet profiler eller ExperienceEvent-batchar som har importerats per dag är 90.** Det innebär att den sammanlagda summan av de profiler och ExperienceEvent-batchar som hämtas varje dag inte får överstiga 90. Om ytterligare batchar registreras påverkas systemets prestanda. | Det här är en mjuk gräns. Det går att gå längre än en mjuk gräns, men mjuka gränser ger en rekommenderad vägledning för systemprestanda. |
 
 ## Gardrutor för direktuppspelad förtäring

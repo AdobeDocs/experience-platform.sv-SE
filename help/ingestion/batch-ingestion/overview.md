@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Översikt över API för gruppinmatning
 description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 76ef5638316a89aee1c6fb33370af943228b75e1
+source-git-commit: 9d3a8aac120119ce0361685f9cb8d3bfc28dc7fd
 workflow-type: tm+mt
-source-wordcount: '1387'
+source-wordcount: '1388'
 ht-degree: 4%
 
 ---
 
 # API-översikt för gruppinmatning
 
-Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil (t.ex. en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM) register.
+Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil (t.ex. en Parquet-fil) eller data som följer ett känt schema i [!DNL Experience Data Model] (XDM)-registret.
 
 The [API-referens för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) innehåller ytterligare information om dessa API-anrop.
 
@@ -23,7 +23,7 @@ I följande diagram visas batchintagsprocessen:
 
 ## Komma igång
 
-API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Läs igenom [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
+API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Innan du fortsätter bör du granska [komma igång-guide](getting-started.md) för länkar till relaterad dokumentation, en guide till hur du läser exempelanrop till API:er i det här dokumentet och viktig information om vilka huvuden som behövs för att kunna anropa ett Experience Platform-API.
 
 ### [!DNL Data Ingestion] krav
 
@@ -41,14 +41,14 @@ API-slutpunkterna som används i den här handboken är en del av [API för grup
 
 Batchdatainmatning har vissa begränsningar:
 
-- Maximalt antal filer per grupp: 1500
+- Maximalt antal filer per batch: 1 500
 - Maximal batchstorlek: 100 GB
 - Maximalt antal egenskaper eller fält per rad: 10000
-- Maximalt antal batchar per minut, per användare: 138
+- Maximalt antal batchar i sjödata per minut, per användare: 138
 
 >[!NOTE]
 >
->Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för hur du överför en stor fil finns i [stort filöverföringsavsnitt i det här dokumentet](#large-file-upload---create-file).
+>Om du vill överföra en fil som är större än 512 MB måste filen delas upp i mindre segment. Instruktioner för att överföra en stor fil finns i [stort filöverföringsavsnitt i det här dokumentet](#large-file-upload---create-file).
 
 ### Typer
 
@@ -60,18 +60,18 @@ Till exempel har varken JSON eller CSV en `date` eller `date-time` typ. Därför
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
-| Inkommande (rad) kontra mål (kol) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Mappa |
+| Inkommande (rad) kontra mål (kol) | Sträng | Byte | Kort | Heltal | Lång | Dubbel | Datum | Datum-tid | Objekt | Karta |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Sträng | X | X | X | X | X | X | X | X |  |  |
-| Byte | X | X | X | X | X | X |  |  |  |  |
-| Kort | X | X | X | X | X | X |  |  |  |  |
-| Heltal | X | X | X | X | X | X |  |  |  |  |
-| Lång | X | X | X | X | X | X | X | X |  |  |
-| Dubbel | X | X | X | X | X | X |  |  |  |  |
-| Datum |  |  |  |  |  |  | X |  |  |  |
-| Datum-tid |  |  |  |  |  |  |  | X |  |  |
-| Objekt |  |  |  |  |  |  |  |  | X | X |
-| Mappa |  |  |  |  |  |  |  |  | X | X |
+| Sträng | X | X | X | X | X | X | X | X |   |   |
+| Byte | X | X | X | X | X | X |   |   |   |   |
+| Kort | X | X | X | X | X | X |   |   |   |   |
+| Heltal | X | X | X | X | X | X |   |   |   |   |
+| Lång | X | X | X | X | X | X | X | X |   |   |
+| Dubbel | X | X | X | X | X | X |   |   |   |   |
+| Datum |   |   |   |   |   |   | X |   |   |   |
+| Datum-tid |   |   |   |   |   |   |   | X |   |   |
+| Objekt |   |   |   |   |   |   |   |   | X | X |
+| Karta |   |   |   |   |   |   |   |   | X | X |
 
 >[!NOTE]
 >
@@ -163,8 +163,8 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | `{BATCH_ID}` | Batchens ID. |
-| `{DATASET_ID}` | ID för datauppsättningen som ska överföras. |
-| `{FILE_NAME}` | Namnet på filen så som den kommer att visas i datauppsättningen. |
+| `{DATASET_ID}` | ID:t för datauppsättningen som ska överföras. |
+| `{FILE_NAME}` | Namnet på filen så som den visas i datauppsättningen. |
 
 **Begäran**
 
@@ -200,7 +200,7 @@ POST /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}?action=initiali
 | -------- | ----------- |
 | `{BATCH_ID}` | Batchens ID. |
 | `{DATASET_ID}` | ID:t för datauppsättningen som importerar filerna. |
-| `{FILE_NAME}` | Namnet på filen så som den kommer att visas i datauppsättningen. |
+| `{FILE_NAME}` | Namnet på filen så som den visas i datauppsättningen. |
 
 **Begäran**
 
@@ -403,7 +403,7 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 
 The `"status"` fält är det som visar aktuell status för den begärda batchen. Batcherna kan ha något av följande lägen:
 
-## Status för batchförbrukning
+## Status för batchförtäring
 
 | Status | Beskrivning |
 | ------ | ----------- |

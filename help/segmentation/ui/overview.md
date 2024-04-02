@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 0e8147a9e4589747b212ce1dd0f0bc215f3bab4c
+source-git-commit: dc899a4aa64b6e734322020e4c10aee687c6d8c5
 workflow-type: tm+mt
-source-wordcount: '3808'
+source-wordcount: '3804'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,7 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Share with partners] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Delar er målgrupp med andra plattformsanvändare. Mer information om den här funktionen finns i [Översikt över segmentmatchning](./segment-match/overview.md). |
 | [!UICONTROL Manage tags] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de användardefinierade taggar som tillhör målgruppen. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | [!UICONTROL Move to folder] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar den mapp som målgruppen tillhör. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
-| [!UICONTROL Copy] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Duplicerar den valda målgruppen. |
+| [!UICONTROL Copy] | Segmenteringstjänst | Duplicerar den valda målgruppen. |
 | [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Archive] | Anpassad överföring | Arkiverar den valda målgruppen. |
 | [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. |
