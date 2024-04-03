@@ -2,9 +2,9 @@
 title: Adobe Analytics produktsträngstillägg - översikt
 description: Läs mer om taggtillägget Adobe Analytics Product String i Adobe Experience Platform.
 exl-id: a49feb4e-f166-41d2-9f85-639f6ff8bb8f
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 36ca1e63c043baa776f27b627cdbe493b2ced674
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ The `products` variabeln spårar hur användare interagerar med produkter på di
 
 The `products` variabeln ska alltid anges tillsammans med en success-händelse.
 
-The [!DNL Adobe Analytics Product String Builder] tillägget anger automatiskt `products` genom att slinga igenom datalagret, hämta alla nödvändiga produktrelaterade data och formatera dem med rätt syntax som visas nedan. Du behöver inte längre skriva och underhålla anpassad JavaScript för att utföra dessa komplexa åtgärder.
+The [!DNL Adobe Analytics Product String Builder] tillägget ställer automatiskt in `products` genom att slinga igenom datalagret, hämta alla nödvändiga produktrelaterade data och formatera dem med rätt syntax som visas nedan. Du behöver inte längre skriva och underhålla anpassad JavaScript för att utföra dessa komplexa åtgärder.
 
 ## Syntax för produktvariabeln
 
@@ -82,16 +82,16 @@ The `price` -parametern i [!DNL Adobe Analytics] produktsträngen måste återsp
 Om implementeringen använder anpassade händelser eller eVars-produkter för marknadsföring gör du så här:
 
 1. Välj associerad **[!UICONTROL Add]** -knappen.
-1. Välj den händelse eller eVar som du vill ange i listrutan.
+1. Välj den händelse eller eVar som du vill ställa in i listrutan.
 1. Ange sökvägen till rätt datalagervariabel med samma syntax som beskrivs ovan.
 
 ### Åtgärdssekvens
 
 Den här åtgärden måste åtföljas av en&quot;Adobe Analytics - Ange variabler&quot;-åtgärd som anger motsvarande lyckade händelser samt en&quot;Adobe Analytics - skicka Beacon&quot;-åtgärd. En lämplig sekvens av åtgärder visas nedan.
 
-![Standardfält](./images/screenshot-price-type.png)
+![Standardfält](./images/screenshot-action-type.png)
 
 ### Krav
 
-* Ett objektbaserat [datalager](https://theblog.adobe.com/data-layers-buzzword-best-practice/) med variabler för alla produktrelaterade data (t.ex. produkt-ID, kvantitet, pris). Det här tillägget fungerar inte med arraybaserade datalager.
+* Ett objektbaserat [datalager](https://theblog.adobe.com/data-layers-buzzword-best-practice/) med variabler för alla produktrelaterade data (som produkt-ID, kvantitet, pris). Det här tillägget fungerar inte med arraybaserade datalager.
 * The [Adobe Analytics](../analytics/overview.md) tillägg måste installeras.
