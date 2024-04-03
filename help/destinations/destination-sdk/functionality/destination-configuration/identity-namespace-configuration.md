@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 20fb966c4cc8a2b09ea64da3e688688b34a0b5d1
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '887'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,11 @@ ht-degree: 0%
 
 Experience Platform använder ID-namnutrymmen för att beskriva typen av specifika identiteter. Ett identitetsnamnutrymme som till exempel kallas `Email` identifierar ett värde `name@email.com` som en e-postadress.
 
-När du skapar ett mål via Destination SDK, förutom [konfigurera ett partnerschema](schema-configuration.md) som användare kan mappa profilattribut och identiteter till, kan du även definiera de identitetsnamnutrymmen som stöds av målplattformen.
+När du skapar mål för realtidsdirektuppspelning via Destination SDK, förutom [konfigurera ett partnerschema](schema-configuration.md) som användare kan mappa profilattribut och identiteter till, måste du också definiera de identitetsnamnutrymmen som stöds av målplattformen. Om målplattformen till exempel accepterar hash-kodade e-postmeddelanden och [!DNL IDFA]måste du definiera dessa två identiteter som [beskrivs närmare i det här dokumentet](#supported-parameters).
 
-När du gör det kan användarna välja målidentiteter, förutom målprofilsattribut, utöver målprofilsattributen.
+När användare aktiverar målgrupper för direktuppspelningsmål måste de också mappa mål-ID:n, förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
+
+När du skapar ett filbaserat mål via Destination SDK är konfigurationen av identitetsnamnutrymmen valfri.
 
 Mer information om identitetsnamnutrymmen i Experience Platform finns i [dokumentation för identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md).
 
@@ -44,8 +46,8 @@ Se tabellen nedan för mer ingående information om vilka typer av integreringar
 
 | Integrationstyp | Stöder funktioner |
 |---|---|
-| Integrering i realtid (direktuppspelning) | Ja |
-| Filbaserade (batch) integreringar | Ja |
+| Integrering i realtid (direktuppspelning) | Ja (obligatoriskt) |
+| Filbaserade (batch) integreringar | Ja (valfritt) |
 
 ## parametrar som stöds {#supported-parameters}
 
