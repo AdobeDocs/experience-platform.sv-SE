@@ -2,9 +2,9 @@
 title: Paketering av frågetjänst
 description: I följande dokument beskrivs paketeringen av funktioner och produkter som är tillgängliga för Query Service och skillnaderna mellan ad hoc- och batchfrågor beskrivs.
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 0f55a836321e974b3f29d2285c38cc8461636f39
+source-git-commit: 58d961e26874bf5be421fc24cf6c9d7e8855d64b
 workflow-type: tm+mt
-source-wordcount: '963'
+source-wordcount: '980'
 ht-degree: 1%
 
 ---
@@ -52,9 +52,11 @@ Följande tabell visar nyckelfrågetjänstens berättiganden baserat på hur de 
 
 Åtkomstkontroll för Experience Platform administreras via [Adobe Admin Console](https://adminconsole.adobe.com/) där produktprofiler länkar användare med behörigheter och sandlådor. Se [åtkomstkontroll - översikt](../access-control/home.md) för mer information.
 
-Om du vill använda frågetjänsten måste du [!DNL Manage Queries] behörighet måste aktiveras i Admin Console. Med den här behörigheten kan användare köra ad hoc- och batchfrågor. Detaljerade instruktioner för att begära åtkomst till produktprofilen [!DNL Manage Queries] behörighet har angetts i [hantera behörigheter för en produktprofil](../access-control/ui/permissions.md) och [hantera användare för en produktprofil](../access-control/ui/users.md) dokument.
+Se [Hantera behörigheter för en produktprofil](../access-control/ui/permissions.md) och [Hantera användare för en produktprofil](../access-control/ui/users.md) dokument med detaljerade anvisningar om hur man begär åtkomst till produktprofilens behörigheter
 
-När du har köpt [!DNL Data Distiller] tillägg, [!DNL Write Dataset] tillstånd måste beviljas. Den här behörigheten tillåter [!DNL Data Distiller] användare för att köra gruppfrågor.
+### Behörigheter för frågetjänst {#query-service-permissions}
+
+Om du vill använda frågetjänsten **[!DNL Manage Queries]** behörighet måste aktiveras i Admin Console. Med den här behörigheten kan användare köra ad hoc- och batchfrågor.
 
 I följande tabell visas effekterna av [!DNL Manage Queries] behörighet:
 
@@ -62,6 +64,17 @@ I följande tabell visas effekterna av [!DNL Manage Queries] behörighet:
 |---|---|
 | [!DNL Manage Queries] (utan skrivbehörighet) | Ger åtkomst till att köra ad hoc-frågor |
 | [!DNL Manage Queries] (med skrivbehörighet) | Ger åtkomst till att köra batchfrågor |
+
+{style="table-layout:auto"}
+
+### Relevanta behörigheter för anpassningsbara insikter {#customizable-insights-permissions}
+
+Skapa Data Distiller [Anpassningsbara insikter](./data-distiller/customizable-insights/overview.md) på kontrollpaneler: följande behörigheter **måste** aktiveras i Admin Console.
+
+| Behörighet | Funktion |
+|---|---|
+| [!DNL View Custom Dashboard] | Ger visningsåtkomst till användardefinierade instrumentpaneler |
+| [!DNL Manage Custom Dashboard] | Ger åtkomst till användardefinierade instrumentpaneler |
 
 {style="table-layout:auto"}
 
