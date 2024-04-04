@@ -4,9 +4,9 @@ title: Skapa en segmentdefinition med hjälp av segmenteringstjänstens API
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvecklar, testar, förhandsgranskar och sparar en segmentdefinition med Adobe Experience Platform Segmentation Service API.
 exl-id: 78684ae0-3721-4736-99f1-a7d1660dc849
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: 9966385968540701f66acbb70c0810906650b7e1
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '1066'
 ht-degree: 0%
 
 ---
@@ -72,9 +72,14 @@ Det finns två nödvändiga steg för att förhandsgranska eller få en uppskatt
 
 ### Hur uppskattningar genereras
 
-Dataexempel används för att utvärdera segmentdefinitioner och uppskatta antalet kvalificerade profiler. Nya data läses in i minnet varje morgon (mellan 12AM-2AM PT, som är 7-9AM UTC), och alla segmenteringsfrågor beräknas med hjälp av den dagens exempeldata. Alla nya fält som läggs till eller ytterligare uppgifter som samlas in kommer därför att återspeglas i beräkningarna följande dag.
+När data som är aktiverade för kundprofilen i realtid hämtas till plattformen lagras de i profildatalagret. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Om profilantalet inte ändras med mer än 5 % körs provtagningsjobbet automatiskt varje vecka.
 
-Provstorleken beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
+Hur provet utlöses beror på vilken typ av intag som används:
+
+- För arbetsflöden med direktuppspelningsdata görs en timkontroll för att avgöra om tröskelvärdet på 5 % har uppnåtts eller ej. Om detta tröskelvärde har uppnåtts aktiveras ett provjobb automatiskt för att uppdatera antalet.
+- Om tröskelvärdet på 5 % ökning eller minskning uppnås, körs ett jobb för att uppdatera antalet vid batchintag inom 15 minuter efter att en batch har importerats till profilbutiken. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+
+Samplingsstorleken beror på det totala antalet enheter i din profilbutik. De här exempelstorlekarna visas i följande tabell:
 
 | Enheter i profilarkivet | Samplingsstorlek |
 | ------------------------- | ----------- |
