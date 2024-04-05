@@ -2,7 +2,7 @@
 title: Paketering av frågetjänst
 description: I följande dokument beskrivs paketeringen av funktioner och produkter som är tillgängliga för Query Service och skillnaderna mellan ad hoc- och batchfrågor beskrivs.
 exl-id: ba472d9e-afe6-423d-9abd-13ecea43f04f
-source-git-commit: 58d961e26874bf5be421fc24cf6c9d7e8855d64b
+source-git-commit: 1e18a60478e2755f49d37d4d3bf4bd3ca6dbf23b
 workflow-type: tm+mt
 source-wordcount: '980'
 ht-degree: 1%
@@ -85,3 +85,4 @@ Sandlådor är virtuella partitioner i en enda instans av Experience Platform. V
 ## Nästa steg
 
 Genom att läsa det här dokumentet bör du få en bättre förståelse för de olika paketeringstyper och funktioner för frågekörning som finns i Query Service. Läs mer om frågetjänsten, t.ex. välkända användningsfall i branschen, i [falldokumentation](./use-cases/abandoned-browse.md). Mer allmän information finns på [Översikt över frågetjänsten](./home.md).
+
