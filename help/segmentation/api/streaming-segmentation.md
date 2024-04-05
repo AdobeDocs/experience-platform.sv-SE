@@ -4,9 +4,9 @@ title: Utvärdera händelser i nära realtid med strömmande segmentering
 description: Det här dokumentet innehåller exempel på hur du använder direktuppspelningssegmentering med Adobe Experience Platform Segmentation Service API.
 role: Developer
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 2afd0ff97478938f4101e5a4b583e56a760840a2
 workflow-type: tm+mt
-source-wordcount: '1962'
+source-wordcount: '2038'
 ht-degree: 0%
 
 ---
@@ -454,3 +454,7 @@ Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediag
 ### Hur lång tid tar det innan en segmentdefinition är tillgänglig?
 
 Det tar upp till en timme innan en segmentdefinition är tillgänglig.
+
+### Finns det några begränsningar för de data som strömmas in?
+
+För att direktuppspelade data ska kunna användas vid direktuppspelningssegmentering finns det **måste** vara mellanrum mellan de händelser som direktuppspelas i. Om för många händelser direktuppspelas inom samma sekund kommer Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.

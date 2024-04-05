@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: b129efacb077af0148a743e43ec23f9f8b8d7d3e
+source-git-commit: 81e1ce90b1778bb29c770e1468461949a1ea468c
 workflow-type: tm+mt
-source-wordcount: '3109'
+source-wordcount: '3176'
 ht-degree: 0%
 
 ---
@@ -269,3 +269,10 @@ Tills nästa utvärderingsjobb för gruppsegment körs kommer den nya sammanfoga
 Om du använder profilsökning för att hämta den nyligen skapade profilen och tittar på dess målgruppsmedlemskap visar det att den är medlem i **båda** Audience A och Audience B, trots att båda dessa målgrupper har motstridiga definitioner. När det dagliga utvärderingsjobbet för gruppsegmentering körs uppdateras målgruppsmedlemskapet för att återspegla det uppdaterade läget för profildata.
 
 Om ni behöver en större målgruppsupplösning i realtid använder ni strömning eller kantsegmentering.
+
+### Hur lång tid tar det att strömma data ska vara tillgängliga i arbetsflöden för gruppsegmentering?
+
+Det kan ta upp till tre timmar innan strömmande data är tillgängliga i arbetsflöden för gruppsegmentering.
+
+Om ett batchsegmenteringsjobb till exempel körs på 9:00, är det garanterat att det innehåller direktuppspelade indata **upp till** 6:00. Direktuppspelning av inkapslade data som har importerats efter 6.00 men före 20.00 **kan** ingår.
+

@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för direktuppspelningssegmentering
 description: Med direktuppspelad segmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 23504dd0909488e2ee63bf356fba4c7f0f7320dc
+source-git-commit: 88f2c8723ef16ff5601dc7e45a9f77b25f45acfd
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1522'
 ht-degree: 0%
 
 ---
@@ -119,3 +119,7 @@ Om du ser att talet under&quot;De senaste X dagarna&quot; är noll och linjediag
 ### Hur lång tid tar det innan en segmentdefinition är tillgänglig?
 
 Det tar upp till en timme innan en segmentdefinition är tillgänglig.
+
+### Finns det några begränsningar för de data som strömmas in?
+
+För att direktuppspelade data ska kunna användas vid direktuppspelningssegmentering finns det **måste** vara mellanrum mellan de händelser som direktuppspelas i. Om för många händelser direktuppspelas inom samma sekund kommer Platform att behandla dessa händelser som robotgenererade data och de kommer att ignoreras. Som bästa praxis bör du ha **minst** fem sekunder mellan händelsedata för att säkerställa att data används på rätt sätt.
