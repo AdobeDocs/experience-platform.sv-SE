@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera sekretessjobb i Privacy Servicens användargränssnitt
 description: Lär dig hur du använder Privacy Servicens användargränssnitt för att samordna och övervaka sekretessförfrågningar i olika Experience Cloud-program.
 exl-id: aa8b9f19-3e47-4679-9679-51add1ca2ad9
-source-git-commit: 93d9e5965e0f5556ff2b584c8b66bd7a7be15d23
+source-git-commit: 8ba06a5d572310e2822a5b3c9f82ff0721540f69
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1659'
 ht-degree: 0%
 
 ---
@@ -90,17 +90,25 @@ Om du vill visa mer information om en viss datapunkt markerar du datapunkten i f
 >
 >När ett filter har tillämpats på widgeten Jobbförfrågningar kan du ta bort filtret genom att välja **X** på filterpillret. Jobbförfrågningar återgår sedan till standardspårningslistan.
 
-### Jobbförfrågningar
+### Jobbförfrågningar {#job-requests}
 
-Widgeten Jobbförfrågningar visar alla tillgängliga jobbförfrågningar i din organisation, inklusive information som typ av förfrågan, aktuell status, förfallodatum och e-postadress till begärande.
+The [!UICONTROL Job Requests] arbetsytan innehåller information om de senaste jobbförfrågningarna i din organisation. Informationen innehåller typ av begäran, aktuell status, förfallodatum, e-postadress till begärande och så vidare. Uppsättningar om 100 poster läses in samtidigt. Som standard visas de senast skapade jobben överst med fler uppsättningar poster inlästa när du bläddrar nedåt.
 
 >[!NOTE]
 >
 >Data för tidigare skapade jobb är bara tillgängliga i 30 dagar efter slutförandedatumet.
 
-Du kan filtrera listan genom att skriva nyckelord i sökfältet under rubriken Jobbförfrågningar. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Du kan också använda **[!UICONTROL Requested on]** i listrutan för att välja ett tidsintervall för de listade jobben.
+Du kan filtrera listan genom att skriva nyckelord i sökfältet nedanför [!UICONTROL Job Requests] titel. Listan filtreras automatiskt medan du skriver och visar begäranden som innehåller värden som matchar söktermerna. Sökfältet utför en snabbsökning som matchar sekretessposter-ID:n för de återgivna/inlästa jobben i användargränssnittet. Det är inte en omfattande sökning efter alla dina skickade jobb. Det är i stället ett filter som tillämpas på de inlästa resultaten. Använd Privacy Service-API:t för att [returnera jobb baserat på en viss regel, datumintervall eller ett enskilt jobb](../api/privacy-jobs.md#list).
 
-![Sökalternativ för jobbförfrågan](../images/user-guide/job-search.png)
+>[!TIP]
+>
+>Om du vill läsa in poster i användargränssnittet från de senaste 30 dagarna måste du rulla nedåt i tabellen och läsa in fler grupper med poster.
+
+![Avsnittet Sekretesskonsolens jobbbegäran med sökfältet markerat.](../images/user-guide/job-search.png)
+
+Du kan också använda sökknappen för att utföra en sekretessjobbfråga som sträcker sig över ett visst datumintervall. Den här åtgärden returnerar alla sekretessjobb som skickats in av organisationen under den angivna tidsramen. Välj **[!UICONTROL Requested on]** i listrutan för att välja ett start- och avslutsdatum för frågan. De tillgängliga alternativen omfattar [!UICONTROL Today], [!UICONTROL Last 7 Days], [!UICONTROL Last 2 Weeks], [!UICONTROL Last 30 Days], eller [!UICONTROL Custom]. Vid användning med [!UICONTROL Requested on] om du vill att sökfunktionen bara ska visa jobbförfrågningar som har skickats mellan de datumintervall du har valt.
+
+![Avsnittet Jobbbegäran med sökfältet, listrutan Begärd och knappen Sök markerad.](../images/user-guide/requested-on-dropdown-menu.png)
 
 Om du vill visa information om en viss jobbförfrågan väljer du begärans jobb-ID i listan för att öppna **[!UICONTROL Job Details]** sida.
 
