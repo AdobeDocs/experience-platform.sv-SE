@@ -2,9 +2,9 @@
 title: YouTube Video Tracking Extension - översikt
 description: Läs mer om taggtillägget YouTube Video Tracking i Adobe Experience Platform.
 exl-id: 703f7b04-f72f-415f-80d6-45583fa661bc
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 627835011784ffca8487d446c04c6948dfff059d
 workflow-type: tm+mt
-source-wordcount: '891'
+source-wordcount: '895'
 ht-degree: 1%
 
 ---
@@ -51,7 +51,7 @@ Det finns sex tillgängliga dataelement i tillägget, varav inget kräver konfig
 * **Spelhuvudsposition:** Spelhuvudspositionen spelas in i sekunder på tidslinjen när den anropas inom en tagg.
 * **Video-ID:** Anger det YouTube-ID som är associerat med videon.
 * **Videonamn:** Anger videons beskrivande eller egna namn.
-* **Video-URL:** Returnerar YouTube.com-URL:en för den inlästa/uppspelande videon.
+* **Video-URL:** Returnerar YouTube.com URL för den inlästa/uppspelande videon.
 * **Videotid:** Spelar in den totala längden (i sekunder) för videoinnehållet.
 * **Tilläggsversion:** Det här dataelementet registrerar YouTube Tracking Extension-versionen, till exempel &quot;Video Tracking_YouTube_2.0.0&quot;.
 
@@ -75,10 +75,10 @@ En taggregel kan anges för varje videohändelse (de sju händelserna ovan). Ska
 Regler har tre åtgärder:
 
 * **Ange variabler:** Ange Adobe Analytics-variabler (mappa till alla eller vissa inkluderade dataelement).
-* **Skicka fyr:** Skicka Adobe Analytics-fyren som ett anpassat länkspårningsanrop och ange ett länknamn.
+* **Skicka fyr:** Skicka Adobe Analytics-fyren som ett anpassat länkspårningsanrop och ange ett länknamnsvärde.
 * **Rensa variabler:** Rensa Adobe Analytics-variablerna.
 
-## Exempeltaggregel för&quot;Videostart&quot;
+## Exempelmärkordsregel för &quot;Videostart&quot;
 
 Följande videotilläggsobjekt ska inkluderas.
 
@@ -86,15 +86,15 @@ Följande videotilläggsobjekt ska inkluderas.
 
 * **Villkor**: Ingen
 
-* **Åtgärder**: Använd **Analystillägg** to&quot;Set Variables&quot; action, to map:
+* **Åtgärder**: Använd **Analystillägg** till åtgärden &quot;Ange variabler&quot;, för att mappa:
 
    * Händelsen för videostart,
-   * Ett prop/eVar för videovaraktighetsdataelementet
+   * Ett prop/eVar för videodataelementet Duration
    * Ett prop/eVar för Video ID-dataelementet
-   * Ett prop/eVar för videonamnets dataelement
+   * Ett prop/eVar för videoelementet Namn
    * Ett prop/eVar för Video URL-dataelementet
 
-   Inkludera sedan åtgärden&quot;Skicka signal&quot; (`s.tl`) med länknamnet&quot;videostart&quot; följt av åtgärden&quot;Rensa variabler&quot;.
+  Inkludera sedan åtgärden &quot;Skicka signal&quot; (`s.tl`) med länknamnet&quot;video start&quot;, följt av åtgärden&quot;Clear Variables&quot;.
 
 >[!TIP]
 > 
@@ -113,3 +113,5 @@ r.push(_satellite.getVar('Extension Version'));
 
 return r.join('|');
 ```
+
+Mer information om hur du skapar och utnyttjar dataelement effektivt i plattformen finns i [dataelement](../../../ui/managing-resources/data-elements.md) dokumentation.
