@@ -3,9 +3,9 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 04d49282d60b2e886a6d2dae281b98b60e6ce9b3
+source-git-commit: 0c6e6d23be42b53eaf1fca365745e6502197c329
 workflow-type: tm+mt
-source-wordcount: '2083'
+source-wordcount: '2141'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ En datamängds förfallotid är endast en tidsfördröjd borttagningsåtgärd. D
 
 Du kan när som helst innan datauppsättningsborttagningen initieras avbryta förfallotiden eller ändra dess utlösningstid. När du har avbrutit en förfallotid för en datauppsättning kan du öppna den igen genom att ange en ny förfallotid.
 
-När borttagningen av datauppsättningen initieras markeras dess förfallojobb som `executing`och får inte ändras ytterligare. Själva datauppsättningen kan återvinnas i upp till sju dagar, men endast genom en manuell process som initierats via en begäran från Adobe. När begäran verkställs startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna är förfallodatumet markerat som `executed`.
+När borttagningen av datauppsättningen initieras markeras dess förfallojobb som `executing`och får inte ändras ytterligare. Själva datauppsättningen kan återvinnas i upp till sju dagar, men endast genom en manuell process som initierats via en begäran från Adobe. När begäran verkställs startar datasjön, identitetstjänsten och kundprofilen i realtid separata processer för att ta bort datauppsättningens innehåll från sina respektive tjänster. När data har tagits bort från alla tre tjänsterna är förfallodatumet markerat som `completed`.
 
 >[!WARNING]
 >
@@ -56,7 +56,7 @@ GET /ttl?{QUERY_PARAMETERS}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/hygiene/ttl?updatedToDate=2021-08-01&author=LIKE%Jane Doe%25 \
+  https://platform.adobe.io/data/core/hygiene/ttl?updatedToDate=2021-08-01&author=LIKE%20%25Jane%20Doe%25 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -66,6 +66,10 @@ curl -X GET \
 **Svar**
 
 Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följande exempel har trunkerats för utrymme.
+
+>[!IMPORTANT]
+>
+>The `ttlId` i svaret även kallas `{DATASET_EXPIRATION_ID}`. Båda hänvisar till den unika identifieraren för datauppsättningens förfallodatum.
 
 ```json
 {
@@ -90,26 +94,30 @@ Ett lyckat svar listar de resulterande datauppsättningens förfallotider. Följ
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `totalRecords` | Antalet datauppsättningsförfallodatum som matchade listanropets parametrar. |
-| `ttlDetails` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallodatum finns i svarsavsnittet för att skapa en [uppslagsanrop](#lookup). |
+| `total_count` | Antalet datauppsättningsförfallodatum som matchade listanropets parametrar. |
+| `results` | Innehåller information om förfallodatum för returnerad datauppsättning. Mer information om egenskaperna för en datamängds förfallodatum finns i svarsavsnittet för att skapa en [uppslagsanrop](#lookup). |
 
 {style="table-layout:auto"}
 
 ## Söka efter en förfallotid för en datauppsättning {#lookup}
 
-Om du vill söka efter en förfallotid för en datauppsättning gör du en GET-förfrågan med antingen `datasetId` eller `ttlId`.
+Om du vill söka efter en förfallotid för en datauppsättning gör du en GET-förfrågan med antingen `{DATASET_ID}` eller `{DATASET_EXPIRATION_ID}`.
+
+>[!IMPORTANT]
+>
+>The `{DATASET_EXPIRATION_ID}` kallas `ttlId` i svaret. Båda hänvisar till den unika identifieraren för datauppsättningens förfallodatum.
 
 **API-format**
 
 ```http
 GET /ttl/{DATASET_ID}?include=history
-GET /ttl/{TTL_ID}
+GET /ttl/{DATASET_EXPIRATION_ID}
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
 | `{DATASET_ID}` | ID:t för den datauppsättning vars förfallodatum du vill söka efter. |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum. |
+| `{DATASET_EXPIRATION_ID}` | ID:t för datauppsättningens förfallodatum. |
 
 {style="table-layout:auto"}
 
@@ -222,7 +230,7 @@ curl -X POST \
 
 **Svar**
 
-Ett lyckat svar returnerar HTTP 201-status (Skapad) och det nya tillståndet för datauppsättningens förfallodatum, om det inte fanns någon tidigare förfallotid för datauppsättningen.
+Ett lyckat svar returnerar HTTP 201-status (Skapad) och det nya tillståndet för datauppsättningens förfallodatum.
 
 ```json
 {
@@ -254,7 +262,7 @@ Ett lyckat svar returnerar HTTP 201-status (Skapad) och det nya tillståndet fö
 | `displayName` | Ett visningsnamn för förfallobegäran. |
 | `description` | En beskrivning av förfallobegäran. |
 
-HTTP-statusen 400 (Ogiltig begäran) inträffar om det redan finns en förfallotid för datauppsättningen. Ett misslyckat svar returnerar HTTP-statusen 404 (Hittades inte) om det inte finns någon sådan förfallotid (eller om du inte har tillgång till den).
+HTTP-statusen 400 (Ogiltig begäran) inträffar om det redan finns en förfallotid för datauppsättningen. Ett misslyckat svar returnerar HTTP-statusen 404 (Hittades inte) om det inte finns någon sådan förfallotid (eller om du inte har tillgång till datauppsättningen).
 
 ## Uppdatera utgångsdatum för en datauppsättning {#update}
 
@@ -267,14 +275,12 @@ Om du vill uppdatera ett förfallodatum för en datauppsättning använder du en
 **API-format**
 
 ```http
-PUT /ttl/{TTL_ID}
+PUT /ttl/{DATASET_EXPIRATION_ID}
 ```
-
-<!-- We should be avoiding usage of TTL, Can I change that to {EXPIRY_ID} or {EXPIRATION_ID} instead? -->
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum som du vill ändra. |
+| `{DATASET_EXPIRATION_ID}` | ID:t för datauppsättningens förfallodatum som du vill ändra. Obs! Detta kallas `ttlId` i svaret. |
 
 **Begäran**
 
@@ -297,7 +303,7 @@ curl -X PUT \
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde. Alla tidigare tidsstämplar för förfallodatum för samma datauppsättning ersätts med det nya utgångsvärdet som du har angett. Det här datumet och den här tiden måste vara minst **24 timmar i framtiden**. |
+| `expiry` | **Obligatoriskt** Ett datum och en tid i ISO 8601-format. Om strängen inte har någon explicit tidszonsförskjutning antas tidszonen vara UTC. Livslängden för data i systemet anges enligt angivet utgångsvärde. Alla tidigare tidsstämplar för förfallodatum för samma datauppsättning ska ersättas med det nya utgångsvärdet som du har angett. Det här datumet och den här tiden måste vara minst **24 timmar i framtiden**. |
 | `displayName` | Ett visningsnamn för förfallobegäran. |
 | `description` | En valfri beskrivning av förfallobegäran. |
 
@@ -374,19 +380,19 @@ Ett godkänt svar returnerar HTTP-status 204 (inget innehåll) och förfallodatu
 
 ## Hämta förfallostatushistoriken för en datauppsättning {#retrieve-expiration-history}
 
-Du kan slå upp förfallostatushistoriken för en viss datauppsättning med hjälp av frågeparametern `include=history` i en sökbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, vilka uppdateringar som har gjorts och hur den avbryts eller körs (om tillämpligt). Du kan också använda `ttlId` av datauppsättningens förfallodatum.
+Använd `{DATASET_ID}` och `include=history` frågeparameter i en sökningsbegäran. Resultatet innehåller information om hur datauppsättningens förfallodatum skapas, vilka uppdateringar som har gjorts och hur den avbryts eller körs (om tillämpligt). Du kan också använda `{DATASET_EXPIRATION_ID}` för att hämta datauppsättningens förfallostatushistorik.
 
 **API-format**
 
 ```http
 GET /ttl/{DATASET_ID}?include=history
-GET /ttl/{TTL_ID}
+GET /ttl/{DATASET_EXPIRATION_ID}?include=history
 ```
 
 | Parameter | Beskrivning |
 | --- | --- |
 | `{DATASET_ID}` | ID:t för den datauppsättning vars förfallohistorik du vill söka efter. |
-| `{TTL_ID}` | ID:t för datauppsättningens förfallodatum. |
+| `{DATASET_EXPIRATION_ID}` | ID:t för datauppsättningens förfallodatum. Obs! Detta kallas `ttlId` i svaret. |
 
 {style="table-layout:auto"}
 

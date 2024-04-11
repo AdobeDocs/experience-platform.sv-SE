@@ -1,20 +1,20 @@
 ---
 title: API-slutpunkt för kvot
-description: Med slutpunkten /quota i API:t för datahygien kan du övervaka användningen av den avancerade livscykelhanteringen av data mot organisationens månatliga kvotgränser för varje jobbtyp.
+description: Med slutpunkten /quota i API:t för datahygien kan du övervaka användningen av livscykelhantering för avancerade data i förhållande till organisationens månatliga kvotgränser för varje jobbtyp.
 role: Developer
 exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 48a83e2b615fc9116a93611a5e6a8e7f78cb4dee
 workflow-type: tm+mt
-source-wordcount: '327'
-ht-degree: 1%
+source-wordcount: '437'
+ht-degree: 0%
 
 ---
 
 # Kvotslutpunkt
 
-The `/quota` -slutpunkten i API:t för datahygien gör att du kan övervaka användningen av livscykelhantering för avancerade data i förhållande till organisationens kvotgränser för varje jobbtyp.
+The `/quota` -slutpunkten i API:t för datahygien gör att du kan övervaka din avancerade livscykelhantering mot din organisations kvotgränser för varje jobbtyp.
 
-Kvoter används för varje jobbtyp i datalängd på följande sätt:
+Kvoter används för varje jobbtyp för datalifecycle på följande sätt:
 
 * Borttagningar och uppdateringar av poster begränsas till ett visst antal förfrågningar varje månad.
 * Datauppsättningens förfallodatum har en fast gräns för antalet samtidigt aktiva jobb, oavsett när förfallotiderna kommer att köras.
@@ -25,7 +25,7 @@ Slutpunkten som används i den här guiden är en del av API:t för datahygien. 
 
 * Länkar till relaterad dokumentation
 * En guide till hur du läser exempelanrop till API i det här dokumentet
-* Viktig information om obligatoriska huvuden som behövs för att kunna anropa ett Experience Platform-API
+* Viktig information om de rubriker som krävs för att anropa ett Experience Platform-API
 
 ## Listkvoter {#list}
 
@@ -40,7 +40,7 @@ GET /quota?quotaType={QUOTA_TYPE}
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{QUOTA_TYPE}` | En valfri frågeparameter som anger vilken typ av kvot som ska hämtas. Om nej `quotaType` parametern anges, alla kvotvärden returneras i API-svaret. Godkända typvärden är:<ul><li>`expirationDatasetQuota`: Giltighetstid för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li><li>`fieldUpdateWorkOrderDatasetQuota`: Postuppdateringar</li></ul> |
+| `{QUOTA_TYPE}` | En valfri frågeparameter som anger vilken typ av kvot som ska hämtas. Om nej `quotaType` parametern anges, alla kvotvärden returneras i API-svaret. Godkända typvärden är:<ul><li>`datasetExpirationQuota`: Det här objektet visar hur många datauppsättningar som förfaller samtidigt för din organisation, och din totala tillåtna förfallotid. </li><li>`dailyConsumerDeleteIdentitiesQuota`: Det här objektet visar det totala antalet begäranden om borttagning av poster som din organisation har gjort idag och din totala dagsavgift.<br>Obs! Endast accepterade begäranden räknas. Om en arbetsorder refuseras på grund av att den inte kan valideras, räknas inte dessa identitetsborttagningar mot din kvot.</li><li>`monthlyConsumerDeleteIdentitiesQuota`: Det här objektet visar det totala antalet begäranden om borttagning av poster som din organisation gjort den här månaden och din totala månadskvot.</li><li>`monthlyUpdatedFieldIdentitiesQuota`: Det här objektet visar det totala antalet postuppdateringsbegäranden som din organisation har gjort den här månaden och din totala månadskvot.</li></ul> |
 
 **Begäran**
 
@@ -61,16 +61,28 @@ Ett lyckat svar returnerar information om era livscykelkvoter för data.
 {
   "quotas": [
     {
-      "name": "expirationDatasetQuota",
-      "description": "The number of concurrently active Expiration Dataset Delete Work Order requests for the organization.",
-      "consumed": 3154,
-      "quota": 10000
+      "name": "datasetExpirationQuota",
+      "description": "The number of concurrently active Expiration Dataset Delete in all workorder requests for the organization.",
+      "consumed": 12,
+      "quota": 50
     },
     {
-      "name": "deleteIdentityWorkOrderQuota",
-      "description": "The number of Record Delete Work Order requests for the organization for this month.",
-      "consumed": 390,
-      "quota": 10000
+      "name": "dailyConsumerDeleteIdentitiesQuota",
+      "description": "The consumed number of deleted identities in all workorder requests for the organization for today.",
+      "consumed": 0,
+      "quota": 600000
+    },
+    {
+      "name": "monthlyConsumerDeleteIdentitiesQuota",
+      "description": "The consumed number of deleted identities in all workorder requests for the organization for this month.",
+      "consumed": 841,
+      "quota": 600000
+    },
+    {
+      "name": "monthlyUpdatedFieldIdentitiesQuota",
+      "description": "The consumed number of updated identities in all workorder requests for the organization for this month.",
+      "consumed": 0,
+      "quota": 0
     }
   ]
 }
@@ -78,6 +90,6 @@ Ett lyckat svar returnerar information om era livscykelkvoter för data.
 
 | Egenskap | Beskrivning |
 | --- | --- |
-| `quotas` | Visar kvotinformation för varje jobbtyp under datalängd. Varje kvotobjekt innehåller följande egenskaper:<ul><li>`name`: Datatillverkarens jobbtyp:<ul><li>`expirationDatasetQuota`: Giltighetstid för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li></ul></li><li>`description`: En beskrivning av jobbtypen för livscykeln för data.</li><li>`consumed`: Antalet jobb av den här typen som körs under den aktuella månadsperioden.</li><li>`quota`: Kvotgränsen för den här jobbtypen. För postborttagningar och uppdateringar representerar detta antalet jobb som kan köras för varje månadsperiod. För datauppsättningens förfallodatum representerar detta antalet jobb som kan vara aktiva samtidigt vid en given tidpunkt.</li></ul> |
+| `quotas` | Visar kvotinformation för varje jobbtyp under datalängd. Varje kvotobjekt innehåller följande egenskaper:<ul><li>`name`: Datatillverkarens jobbtyp:<ul><li>`expirationDatasetQuota`: Giltighetstid för datauppsättning</li><li>`deleteIdentityWorkOrderDatasetQuota`: Posten tas bort</li></ul></li><li>`description`: En beskrivning av jobbtypen för livscykeln för data.</li><li>`consumed`: Antalet jobb av den här typen som körs under den aktuella perioden. Objektnamnet anger kvotperioden.</li><li>`quota`: Tilldelningen för den här jobbtypen för din organisation. För radering och uppdatering av poster representerar kvoten antalet jobb som kan köras för varje månadsperiod. För datauppsättningens förfallodatum representerar kvoten antalet jobb som kan vara aktiva samtidigt vid en given tidpunkt.</li></ul> |
 
 {style="table-layout:auto"}
