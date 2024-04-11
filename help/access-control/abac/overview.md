@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 91631c056fc9d7ceab9eeecdba5733b64f6e869b
+source-git-commit: 900e0dc323e9055a92313788a4a191c615d0b8cd
 workflow-type: tm+mt
-source-wordcount: '1844'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 Attributbaserad åtkomstkontroll är en funktion i Adobe Experience Platform som gör att administratörer kan styra åtkomsten till specifika objekt och/eller funktioner baserat på attribut. Attribut kan läggas till i ett objekt, t.ex. en etikett som lagts till i ett schemafält eller segment. En administratör definierar åtkomstprinciper som innehåller attribut för att hantera behörigheter för användaråtkomst.
 
-Med den här funktionen kan du etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
+Använd den här funktionen för att etikettera XDM-schemafält (Experience Data Model) med etiketter som definierar användningsområde för organisationen eller data. Samtidigt kan administratörer använda användar- och rolladministrationsgränssnittet för att definiera åtkomstprinciper runt XDM-schemafält och bättre hantera åtkomsten som ges till användare eller grupper av användare (interna, externa eller externa användare). Dessutom gör attributbaserad åtkomstkontroll det möjligt för administratörer att hantera åtkomsten till specifika segment.
 
 >[!IMPORTANT]
 >
@@ -73,7 +73,7 @@ Det finns begränsad tillgång till attributbaserad åtkomstkontroll för kunder
 
 * Behörighetsgränssnitt: Tillhandahåller ett gränssnitt där du kan definiera användarroller, behörigheter och profiler för attributbaserad åtkomstkontroll.
 
-* Etikett: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper.
+* Etikett: Lägg till, redigera, ta bort etiketter till användarroller, schemafält, segment och andra objekt som stöds för att utnyttja åtkomstkontrollprinciper. **Obs!** Alla segment som använder ett etiketterat attribut måste också märkas om du vill att samma åtkomstbegränsningar ska gälla för det.
 
 Administrationsarbetsflödena för alla Experience Platform-baserade program från Admin Console till det nya behörighetsgränssnittet håller på att ändras.
 

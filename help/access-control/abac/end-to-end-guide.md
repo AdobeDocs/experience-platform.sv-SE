@@ -4,9 +4,9 @@ title: Attributbaserad åtkomstkontroll - från början till slut
 description: Det här dokumentet innehåller en komplett guide om attributbaserad åtkomstkontroll i Adobe Experience Platform
 role: Developer
 exl-id: 7e363adc-628c-4a66-a3bd-b5b898292394
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: c89ae9befa3befbffab9d6468f3c207ab8e7b74f
 workflow-type: tm+mt
-source-wordcount: '1642'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -132,6 +132,10 @@ The **[!UICONTROL Edit labels]** visas så att du kan välja de etiketter som du
 >När en etikett läggs till i ett fält används den etiketten på den överordnade resursen för det fältet (antingen en klass eller en fältgrupp). Om den överordnade klassen eller fältgruppen används av andra scheman ärver dessa scheman samma etikett.
 
 ## Använd etiketter på segment
+
+>[!NOTE]
+>
+>Alla segment som använder ett etiketterat attribut måste också märkas om du vill att samma åtkomstbegränsningar ska gälla för det.
 
 När du har etiketterat dina schemafält kan du nu börja märka segmenten.
 
