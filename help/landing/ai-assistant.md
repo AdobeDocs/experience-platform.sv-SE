@@ -5,9 +5,9 @@ badge: Alpha
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: b1f2d85f5a1cf6bb38344c87496488a919800029
+source-git-commit: f38f528c421c7cbf7116cc0ee323e8e7dcde6292
 workflow-type: tm+mt
-source-wordcount: '2567'
+source-wordcount: '2693'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Du kan fråga AI Assistant efter information som:
 
 * Vägledning om hur man utför uppgifter som rör data och målgrupper.
 * Status och mått för befintliga dataobjekt i organisationen.
-* Använd exempel och nyanser för att få en bättre förståelse för dataobjekten, inklusive attribut, dataflöden, datauppsättningar, mål, scheman, segment och källor.
+* Använd exempel och nyanser för att få en bättre förståelse för era dataobjekt, inklusive attribut, målgrupper, dataflöden, datauppsättningar, mål, scheman och källor.
 
 Läs guiden nedan för att lära dig hur du kan använda AI Assistant för att navigera i och förstå dina arbetsflöden för Experience Platform och Real-Time CDP.
 
@@ -51,7 +51,7 @@ Det finns två frågeklasser att tänka på innan du frågar AI Assistant:
 * **Användningsfrågor**: Användningsfrågor handlar om dataobjekten i organisationen. Några exempel på användningsfrågor är:
    * Hur många datauppsättningar har jag?
    * Hur många schemaattribut har aldrig använts?
-   * Vilka segment har aktiverats?
+   * Vilka målgrupper har aktiverats?
 
 >[!ENDSHADEBOX]
 
@@ -59,13 +59,14 @@ Det finns två frågeklasser att tänka på innan du frågar AI Assistant:
 
 Du kan använda AI Assistant för mål som:
 
-| Syfte | Beskrivning |
-| --- | --- |
-| Att lära sig Experience Platform och Real-Time CDP | Du kan ställa frågor om konceptuella AI Assistant så att du kan komma in på Experience Platform och Real-Time CDP. Du kan också använda AI Assistant för att lära dig mer om objekt och beteenden som du inte är bekant med. |
-| Säkerställa dataskornighet i sandlådor | Du kan använda AI Assistant för att identifiera eventuella dubbletter eller oanvända objekt så att du effektivt kan upprätthålla sandlådans renhet. |
-| Samordna värdeanalys | Du kan använda AI Assistant för att identifiera dina mest använda objekt och utvärdera eventuella prestandaindikatorer eller hitta de mest värdefulla data. |
-| Förstå effektanalys | Du kan använda AI Assistant för att identifiera objekt som har använts i vissa arbetsflöden, så att du kan utvärdera effekten av eventuella ändringar. |
-| Övervaka dina data | Du kan använda AI Assistant för att övervaka dataflöden, inmatning och utvärderingsjobb så att du kan visa eventuella avvikelser eller rapportera om förloppet. |
+| Syfte | Beskrivning | Exempel |
+| --- | --- | --- |
+| Utbildningsbegrepp och fortsatta arbetsflöden | <ul><li>Som nybörjare kan du använda AI Assistant för att lära dig Real-Time CDP- och Adobe Journey Optimizer-koncept och själv ta till vara produkter och funktioner som du inte känner till.</li><li>Som erfaren användare kan du använda AI Assistant för att lösa ett edge-fall som kan blockera ditt arbetsflöde. | <ul><li>Hur skapar jag en kontrollpanel i Journey Analytics?</li><li>Berätta några användningsfall för Real-Time CDP.</li></ul> |
+| Felsökning | Använd AI Assistant för att lära dig hur du felsöker grundläggande fel som kan uppstå i arbetsflödet. | <ul><li>Vad är felet? {ERROR_MESSAGE} menar du?</li><li>Varför kan jag inte ta bort målgruppen Luma: Email Audience?</li></ul> |
+| Sandlådehygien | Använd AI Assistant för att identifiera eventuella dubbletter eller oanvända objekt så att du effektivt kan underhålla sandlådan. | <ul><li>Kan ni visa mig målgrupper som är lika?</li><li>Finns det några scheman som inte har någon associerad datauppsättning?</li></ul> |
+| Värdeanalys | Använd AI Assistant för att identifiera dina mest använda dataobjekt och utvärdera eventuella prestandaindikatorer eller hitta de värdefullaste dataobjekten. | <ul><li>Hur många profiler finns i segmentdefinitionen&quot;Luma: Email Audience&quot;?</li><li>När aktiverades målgrupper för målgrupper i Experience Cloud?</li></ul> |
+| Sök | Använd AI Assistant för att hitta Experience Platform-objekt som stöds, som målgrupper, datauppsättningar, destinationer, scheman och källor. | <ul><li>Visa en lista över målgrupper som innehåller&quot;Luma&quot; i namnet som skapades under det senaste kvartalet.</li><li>Vilka attribut finns i XDM-schemat&quot;Luma: Custom Actions&quot;?</li></ul> |
+| Effektanalys | Använd AI Assistant för att identifiera dataobjekt som har använts i vissa arbetsflöden, så att du kan bedöma effekten av eventuella ändringar. | <ul><li>Vilka målgrupper använder `homeAddress.city` i schemat &quot;Luma: PersonProfiles&quot;?</li><li>Vilka datamängder är `consents.marketing.push.val` vilket profilattribut som lagras i?</li></ul> |
 
 ## Åtkomst till AI-assistenten i användargränssnittet i Experience Platform
 
@@ -75,7 +76,7 @@ Välj alternativet **[!UICONTROL AI Assistant icon]** från Experience Platform 
 
 Gränssnittet för AI Assistant visas och du får information om hur du kommer igång direkt. Du kan använda alternativen i [!UICONTROL Ideas to get started] svara på frågor och kommandon som:
 
-* [!UICONTROL Which of my segments are activated?]
+* [!UICONTROL Which of my audiences are activated?]
 * [!UICONTROL What is a schema?]
 * [!UICONTROL Tell me some common use cases for Real-Time CDP]
 
@@ -159,7 +160,7 @@ En utökad vy av visualiseringen visas. Du kan använda det utökade modala verk
 
 När du får en fråga om dataanvändning ger AI Assistant en förklaring av hur svaret beräknades. I exemplet nedan visar AI Assistant de steg som har utförts för att visa segmentdefinitioner med över 1 000 profiler och deras respektive aktiveringsstatus.
 
-![Uppföljningsfråga om segment som illustrerar hur AI Assistant beräknade svaret.](./images/ai-assistant/results-explained.png)
+![Uppföljningsfråga om segmentdefinitioner som illustrerar hur AI Assistant beräknade svaret.](./images/ai-assistant/results-explained.png)
 
 Du kan även lägga till filter och ändringar i dina frågor och du kan instruera AI Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be AI Assistant att visa en trend för antalet segmentdefinitioner i den ordning de skapades, ta bort segmentdefinitioner med noll som summor och använda namn på månader i stället för heltal när data visas.
 
@@ -169,7 +170,7 @@ Du kan även lägga till filter och ändringar i dina frågor och du kan instrue
 
 +++Markera för att visa ett exempel på automatisk komplettering
 
-Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Det finns rekommendationer för att slutföra automatiskt för följande domäner: segment, scheman, datauppsättningar, källor och mål.
+Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Rekommendationer som fylls i automatiskt finns tillgängliga för följande domäner: målgrupper, scheman, datamängder, källor och destinationer.
 
 Du kan använda Fyll i automatiskt genom att ta med plustecknet (**`+`**) i din fråga. Du kan också välja plustecknet (**`+`**) längst ned i textrutan. Ett fönster visas med en lista över rekommenderade dataobjekt från sandlådan.
 
@@ -208,16 +209,16 @@ Modellen för dokumentationsåterhämtning har utbildats i Experience Platform (
 Du kan även ställa frågor om din dataanvändning i följande domäner:
 
 * Attribut
+* Målgrupper
 * Dataflöden
 * Datauppsättningar
 * Destinationer _(Frågor om konton och vissa frågor om dataflöde kan inte besvaras just nu.)_
 * Scheman _(Frågor om fältgrupper kan inte besvaras just nu.)_
-* Segment
 * Källor _(Frågor om konton kan inte besvaras just nu.)_
 
-För användningsdatafrågor kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som ligger till grund för dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du kan behöva formatera dina frågor som:&quot;När var segmentet med titeln? {TITLE} skapad?&quot; istället för: &quot;När var {TITLE} segmentet skapades?&quot;
+För användningsdatafrågor kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som ligger till grund för dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du kan behöva formatera dina frågor som:&quot;När var målgruppen med titeln? {TITLE} skapad?&quot; istället för: &quot;När var {TITLE} skapad?&quot;
 
-Du måste logga in i en sandlåda för att få frågor om specifika data som rör objekt som scheman, datamängder, attribut, mål och segment.
+Du måste logga in i en sandlåda för att få frågor om specifika data som rör objekt som målgrupper, scheman, datauppsättningar, attribut och mål.
 
 ### Exempel på frågor om dataanvändning {#example-data-usage-questions}
 
@@ -225,9 +226,9 @@ Du måste logga in i en sandlåda för att få frågor om specifika data som rö
 
 | Frågetyp | Beskrivning | Exempel |
 | --- | --- | --- | 
-| Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar som används {SCHEMA_NAME} schema?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade segment?</li><li>Lista de scheman som har attribut som används i aktiverade segment.</li><li>Visa de segment som aktiveras för {DESTINATION_ACCOUNT_NAME} och har fler än 1 000 profiler.</li><li>Visa de attribut som används i aktiverade segment som har ändrats efter januari 2023.</li><li>Vilka datauppsättningar hämtas via {SOURCE_NAME}?</li><li>Vilka dataflöden som är associerade med {DATAFLOW_NAME}</li><li>Visa scheman som är relaterade till aktiverade segment och som skapades under det senaste året.</li></ul> |
-| Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiverade segmenten?</li><li>Hur många fält används vid segmentering?</li><li>Vilka segment aktiveras för det största antalet destinationer?</li><li>Lista duplicerade segment.</li><li>Visa de segment som är aktiverade för {DESTINATION_ACCOUNT_NAME} och rangordna dem efter profilstorlek.</li><li>Hur stor procentandel av segmenten som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Lista de tre källanslutningarna som samlar in data i mina datauppsättningar.</li><li>Visa de fem vanligaste attributen som används i aktiverade segment baserat på deras förekomst.</li></ul> |
-| Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Visa de attribut som används för {SEGMENT_NAME}?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka segment har ändrats den senaste veckan?</li><li>Visa en lista över de segment som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många segment som har skapats från varje datauppsättning.</li><li>Vilka källkonton är associerade med datauppsättningen XYZ?</li><li>Visa segmentdefinitionen och ändringsdatumet för {SEGMENT_NAME}.</li></ul> |
+| Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar som används {SCHEMA_NAME} schema?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade målgrupper?</li><li>Lista scheman som har attribut som används i aktiverade målgrupper.</li><li>Visa vilka målgrupper som aktiveras för {DESTINATION_ACCOUNT_NAME} och har fler än 1 000 profiler.</li><li>Visa vilka attribut som används i de aktiverade målgrupperna som har ändrats efter januari 2023.</li><li>Vilka datauppsättningar hämtas via {SOURCE_NAME}?</li><li>Vilka dataflöden som är associerade med {DATAFLOW_NAME}</li><li>Lista scheman som är relaterade till aktiverade målgrupper och som skapades under det senaste året.</li></ul> |
+| Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiva målgrupperna?</li><li>Hur många fält används vid segmentering?</li><li>Vilka målgrupper aktiveras för det största antalet destinationer?</li><li>Lista duplicerade målgrupper.</li><li>Visa vilka målgrupper som är aktiverade för {DESTINATION_ACCOUNT_NAME} och rangordna dem efter profilstorlek.</li><li>Vad är procentandelen av de målgrupper som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Lista de tre källanslutningarna som samlar in data i mina datauppsättningar.</li><li>Ange de fem vanligaste attributen som används i aktiverade målgrupper baserat på deras förekomst.</li></ul> |
+| Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Visa de attribut som används för {AUDIENCE_NAME}?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka målgrupper har ändrats den senaste veckan?</li><li>Ange de målgrupper som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många målgrupper som har skapats från varje datauppsättning.</li><li>Vilka källkonton är associerade med datauppsättningen XYZ?</li><li>Visa segmentdefinitionen och ändringsdatumet för {AUDIENCE_NAME}.</li></ul> |
 
 +++
 
@@ -276,56 +277,6 @@ Mer information om AI-assistenten för Experience Platform finns i det här avsn
 ### Caveats and limits {#caveats-and-limitations}
 
 I följande avsnitt beskrivs aktuella kavattar och begränsningar som ska beaktas när AI Assistant används.
-<!-- 
-#### Conversational experience
-
-You must consider several nuances regarding the conversational experience when querying the AI Assistant.
-
->[!NOTE]
->
->These limitations are temporary and are being improved upon throughout the course of the alpha.
-
->[!BEGINTABS]
-
->[!TAB Unable to infer context from prior discussion]
-
-The AI Assistant currently cannot reference prior discussions as context for a given question. See the table below for examples:
-
-| Ambiguous question | Clear question | Note |
-| --- | --- | --- |
-| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of them?"</li></ul>| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Are there different types of **segments**?"</li></ul> | The AI Assistant cannot infer what "them" means. |
-| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you elaborate more?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Explain what a segment is in depth"</li></ul> | The AI Assistant cannot intelligently reference documentation based on "more". |
-| <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of one?"</li></ul> | <ul><li>First question: "What is a segment?"</li><li>Follow up question: "Can you give me an example of a segment?"</li></ul> | The AI Assistant cannot infer what you want an example of.|
-| <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "How does it compare to a streaming segment?"</li></ul> | <ul><li>First question: "What is a batch segment?"</li><li>Follow up question: "Can you compare a streaming segment to a batch segment?"</li></ul> | The AI Assistant cannot infer what "it" is referring to and thus cannot compare the streaming segment. |
-| <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of them use Facebook as a destination?"</li></ul> | <ul><li>First question: "How many segments do I have?"</li><li>Follow up question: "How many of the segments that I have are using Facebook as a destination?"</li></ul> | The AI Assistant is cannot infer what "them" is referring to. |
-
-{style="table-layout:auto"}
-
->[!TAB Unable to infer context from a page]
-
-When asking the AI Assistant about a particular element of the Experience Platform UI page that you are on, you must clearly define the specific element within your question. 
-
-| Ambiguous question | Clear question | Note |
-| --- | --- | --- |
-| "What does this do?" | "What does {PAGE_NAME} do? | The AI Assistant cannot infer what "this" is referring to. You must provide the specific page element that you are querying about. |
-| "Why won't it save?" | "Why can't I save a new sandbox called {NAME}?" | The AI Assistant cannot infer what "it" is referring to and cannot know that you are having issues with an entity. |
-
-{style="table-layout:auto"}
-
-Furthermore, the AI Assistant can only answer questions regarding error messages, given that the error is documented in Experience League.
-
->[!TAB Ambiguity]
-
-You must phrase your questions clearly and scope them within a product, application, or domain, as the AI Assistant currently cannot disambiguate questions.
-
-| Ambiguous question | Clear question | Note |
-| --- | --- | --- |
-| "How do I create a filter? | How do I create a filter in Profile Query Language? | You must specify the feature that which you are filtering for because a variety of Experience Platform features support filtering. |
-| "How do I get started? | How do I get started using destinations? | You must provide clarity on your goals and use case because overly broad concepts may result in generic or unnecessarily specific answers. |
-
-{style="table-layout:auto"}
-
->[!ENDTABS] -->
 
 #### Begränsat litet snack
 
@@ -356,6 +307,6 @@ Se tabellen nedan för exempel:
 
 | Felaktig fråga | Bra fråga | Anteckningar |
 | --- | --- | --- |
-| Vad är mitt största segment? | Vad är mitt största segment? Använda data. | Tala uttryckligen om för AI-assistenten att du vill att svaret ska baseras på data. |
-| Vad är mitt största segment? | Lista mitt största segment. | Det finns tillfällen då en fråga om vad.. kan bli fel för en dokumentationsbaserad fråga. Att använda ett kommando som &quot;list&quot; är en starkare indikator på att du ställer en fråga med data i sitt sammanhang. |
-| Hur många datauppsättningar har jag? | Räkna mina datauppsättningar. | Den ursprungliga frågan fungerar för segment, men fungerar kanske inte med datauppsättningar. |
+| Vilken är min största publik? | Vilken är min största publik? Använda data. | Tala uttryckligen om för AI-assistenten att du vill att svaret ska baseras på data. |
+| Vilken är min största publik? | Visa min största publik. | Det finns tillfällen då en fråga om vad.. kan bli fel för en dokumentationsbaserad fråga. Att använda ett kommando som &quot;list&quot; är en starkare indikator på att du ställer en fråga med data i sitt sammanhang. |
+| Hur många datauppsättningar har jag? | Räkna mina datauppsättningar. | Den ursprungliga frågan fungerar för målgrupper, men fungerar kanske inte med datauppsättningar. |
