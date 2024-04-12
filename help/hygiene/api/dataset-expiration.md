@@ -3,9 +3,9 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 0c6e6d23be42b53eaf1fca365745e6502197c329
+source-git-commit: 20d616463469a4d78fe0e7b6be0ec76b293789d6
 workflow-type: tm+mt
-source-wordcount: '2141'
+source-wordcount: '2166'
 ht-degree: 0%
 
 ---
@@ -197,6 +197,10 @@ Följande JSON representerar ett trunkerat svar för datauppsättningens informa
 För att säkerställa att data tas bort från systemet efter en angiven period schemalägger du en förfallotid för en viss datauppsättning genom att ange datauppsättnings-ID och utgångsdatum och -tid i ISO 8601-format.
 
 Om du vill skapa en förfallotid för en datauppsättning utför du en begäran om POST enligt nedan och anger de värden som anges nedan i nyttolasten.
+
+>[!NOTE]
+>
+>Om du får ett 404-fel kontrollerar du att begäran inte har några ytterligare snedstreck. Ett avslutande snedstreck kan göra att en begäran om POST misslyckas.
 
 **API-format**
 

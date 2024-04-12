@@ -1,11 +1,11 @@
 ---
 title: Översikt över livscykelhantering av avancerade data
-description: Med avancerad livscykelhantering kan du hantera livscykeln för dina data genom att uppdatera eller rensa inaktuella eller felaktiga poster.
+description: Med Advanced Data Lifecycle Management kan ni hantera livscykeln för era data genom att uppdatera eller tömma inaktuella eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
+source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
 workflow-type: tm+mt
-source-wordcount: '578'
-ht-degree: 0%
+source-wordcount: '572'
+ht-degree: 1%
 
 ---
 
@@ -70,4 +70,4 @@ The following takes place when a [record delete request](./ui/record-delete.md) 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över plattformens funktioner för datalängd. Information om hur du kommer igång med att göra förfrågningar om datahygien i användargränssnittet finns i [Användargränssnittsguide](./ui/overview.md). Om du vill veta hur du skapar livscykeljobb för data programmatiskt kan du läsa [API-guide för datahygien](./api/overview.md)
+Det här dokumentet innehåller en översikt över plattformens funktioner för datalivscykel. Information om hur du kommer igång med att göra förfrågningar om datahygien i användargränssnittet finns i [Användargränssnittsguide](./ui/overview.md). Om du vill lära dig hur du skapar livscykeljobb för data programmatiskt kan du läsa [API-guide för datahygien](./api/overview.md)

@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
 workflow-type: tm+mt
-source-wordcount: '2232'
+source-wordcount: '2238'
 ht-degree: 2%
 
 ---
@@ -98,7 +98,7 @@ Experience Platform har en rad funktioner för datahygien som gör att du kan ha
 
 | Funktion | Beskrivning |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} | Hantera datalivscykeln i alla datalager för att uppfylla kundernas åtaganden och licensavtal med avancerade funktioner för livscykelhantering i Adobe Experience Platform: Automatiserad datamängdsförfallotid och borttagning av post.<br>Med ett automatiskt utgångsdatum kan du ta bort hela datauppsättningar och ange ett datum och en tidpunkt då datauppsättningen ska tas bort.<br>Med Ta bort post kan du ta bort enskilda konsumentprofiler genom att ange deras primära identiteter som mål. Du kan ange de primära identiteterna individuellt via användargränssnittet eller via CSV/JSON-filöverföring. Se [Dokumentation om borttagning av post](../../hygiene/ui/record-delete.md) för mer information |
+| [!BADGE Beta]{type=Informative} Ta bort post (begränsad version) | Hantera datalivscykeln i alla datalager för att uppfylla kundernas åtaganden och licensavtal med de avancerade funktionerna för livscykelhantering i Adobe Experience Platform: Automatiserad datamängdsförfallotid och borttagning av post.<br>Med ett automatiskt utgångsdatum kan du ta bort hela datauppsättningar och ange ett datum och en tidpunkt då datauppsättningen ska tas bort.<br>Med Ta bort post kan du ta bort enskilda konsumentprofiler genom att ange deras primära identiteter som mål. Du kan ange de primära identiteterna individuellt via användargränssnittet eller via CSV/JSON-filöverföring. Se [Dokumentation om borttagning av post](../../hygiene/ui/record-delete.md) för mer information |
 | Utgångsdatum för datauppsättning | Minimera era era data och ha full kontroll över era licensavtal med Automated Dataset Expiration. Minska datavolymer genom att ta bort hela datauppsättningar och ange datum och tid för när datauppsättningen ska tas bort. Se [dokumentation om förfallodatum för datauppsättning](../../hygiene/ui/dataset-expiration.md) för mer information. |
 
 {style="table-layout:auto"}
