@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för marknadsföringsautomatiseringskällor med API:
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett automatiserat marknadsföringssystem och föra in dem i Adobe Experience Platform med hjälp av källkopplingar och API:er.
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Den här självstudiekursen handlar om hur du hämtar data från en källa för 
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med en källa för automatiserad marknadsföring. Om du inte har detta ID kan du se [källöversikt](../../../home.md#marketing-automation) om du vill ha en lista med källor för automatiserad marknadsföring som du kan skapa en basanslutning till.
+>* För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med en källa för automatiserad marknadsföring. Om du inte har detta ID kan du se [källöversikt](../../../home.md#marketing-automation) om du vill ha en lista med källor för automatiserad marknadsföring som du kan skapa en basanslutning till.
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

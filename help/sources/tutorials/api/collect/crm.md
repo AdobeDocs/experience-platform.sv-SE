@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för CRM-källor med API:t för flödestjänsten
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett CRM-system från tredje part och föra in dem på plattformen med hjälp av källanslutningar och API:er.
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1374'
+source-wordcount: '1367'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ I den här självstudiekursen beskrivs hur du hämtar data från en CRM-källa o
 
 >[!NOTE]
 >
->Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en CRM-källa. Om du inte har detta ID kan du se [källöversikt](../../../home.md#customer-relationship-management) om du vill se en lista över CRM-källor som du kan skapa en basanslutning med.
+>* Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en CRM-källa. Om du inte har detta ID kan du se [källöversikt](../../../home.md#customer-relationship-management) om du vill se en lista över CRM-källor som du kan skapa en basanslutning med.
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

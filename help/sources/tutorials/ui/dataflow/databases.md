@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med hjälp av en datakälla i användargränssnittet
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en databaskälla med hjälp av plattformsgränssnittet.
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1396'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,9 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->Om du vill skapa ett dataflöde måste du redan ha ett autentiserat konto med en datakälla. En lista med självstudiekurser för att skapa olika datakällkonton i användargränssnittet finns i [källöversikt](../../../home.md#database).
+>* Om du vill skapa ett dataflöde måste du redan ha ett autentiserat konto med en datakälla. En lista med självstudiekurser för att skapa olika datakällkonton i användargränssnittet finns i [källöversikt](../../../home.md#database).
+>
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC. Den enda tidsstämpeln som stöds för [[!DNL Snowflake] källa](../../../connectors/databases/snowflake.md) är TIMESTAMP_NTZ med UTC-tid.
 
 ## Komma igång
 

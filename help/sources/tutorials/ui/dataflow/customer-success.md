@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med en Customer Success Source i användargränssnit
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en Customer Success Source med hjälp av plattformsgränssnittet.
 exl-id: d348a7f8-6302-45f1-9961-bab56ad0407e
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1396'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en källa för kundframgångar. En lista med självstudiekurser för att skapa olika källkonton för kundframgångar i användargränssnittet finns i [källöversikt](../../../home.md#customer-success).
+>* För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en källa för kundframgångar. En lista med självstudiekurser för att skapa olika källkonton för kundframgångar i användargränssnittet finns i [källöversikt](../../../home.md#customer-success).
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hem;populära ämnen;e-handelskontakt;e-handel
 solution: Experience Platform
-title: Skapa ett dataflöde med en e-handelskälla i användargränssnittet
+title: Skapa ett dataflöde med en e-Commerce-källa i användargränssnittet
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en e-handelskälla med hjälp av plattformsgränssnittet.
 exl-id: ee1382c5-78ac-4765-8883-0a922772bb20
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1385'
+source-wordcount: '1405'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en e-handelskälla. En lista med självstudiekurser för att skapa olika e-handelskällkonton i användargränssnittet finns i [källöversikt](../../../home.md#ecommerce).
+>* För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en e-handelskälla. En lista med självstudiekurser för att skapa olika e-handelskällkonton i användargränssnittet finns i [källöversikt](../../../home.md#ecommerce).
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

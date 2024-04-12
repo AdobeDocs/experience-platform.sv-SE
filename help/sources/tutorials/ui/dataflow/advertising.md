@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med hjälp av en annonskälla i användargränssnitt
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en annonskälla med hjälp av plattformsgränssnittet.
 exl-id: 8dd1d809-e812-4a13-8831-189726b2430e
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1386'
+source-wordcount: '1406'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en annonskälla. En lista med självstudiekurser för att skapa olika annonskällkonton i användargränssnittet finns i [källöversikt](../../../home.md#advertising).
+>* För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en annonskälla. En lista med självstudiekurser för att skapa olika annonskällkonton i användargränssnittet finns i [källöversikt](../../../home.md#advertising).
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

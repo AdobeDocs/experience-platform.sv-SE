@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med hjälp av en källa för samtycke och inställni
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för samtycke och inställningar med hjälp av plattformsgränssnittet.
 exl-id: 340b5945-baa1-4f79-88fa-2572606f6083
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->Om du vill skapa ett dataflöde måste du redan ha ett autentiserat konto hos [!DNL OneTrust Integration] källa. Se självstudiekursen om [skapa [!DNL OneTrust Integration] källanslutning i användargränssnittet](../../ui/create/consent-and-preferences/onetrust.md) för mer information.
+>* Om du vill skapa ett dataflöde måste du redan ha ett autentiserat konto hos [!DNL OneTrust Integration] källa. Se självstudiekursen om [skapa [!DNL OneTrust Integration] källanslutning i användargränssnittet](../../ui/create/consent-and-preferences/onetrust.md) för mer information.
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

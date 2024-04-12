@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för betalningskällor med API:t för flödestjänst
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett betalningsprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '1363'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ I den här självstudiekursen beskrivs stegen för att hämta data från en beta
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutning med en betalningskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#payments) om du vill se en lista över betalningskällor som du kan skapa en basanslutning med.
+>* För att kunna skapa ett dataflöde måste du redan ha ett giltigt ID för basanslutning med en betalningskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#payments) om du vill se en lista över betalningskällor som du kan skapa en basanslutning med.
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

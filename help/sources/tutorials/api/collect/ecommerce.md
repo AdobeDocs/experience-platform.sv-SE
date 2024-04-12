@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för e-handelskällor med API:t för Flow Service
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett e-handelssystem från en annan leverantör och hämta dem till plattformen med hjälp av källkopplingar och API:er.
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1304'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Den här självstudiekursen handlar om hur du hämtar data från en e-handelskä
 
 >[!NOTE]
 >
->Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en e-handelskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#ecommerce) om du vill se en lista över e-handelskällor som du kan skapa en basanslutning med.
+>* Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en e-handelskälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#ecommerce) om du vill se en lista över e-handelskällor som du kan skapa en basanslutning med.
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

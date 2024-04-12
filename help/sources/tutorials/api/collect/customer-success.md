@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för Customer Success Sources med API:t för Flow Se
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett system för kundframgångar och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1264'
+source-wordcount: '1257'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Den här självstudiekursen beskriver stegen för att hämta data från en Custo
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med en källa för lyckade kunder. Om du inte har detta ID kan du se [källöversikt](../../../home.md#customer-success) om du vill ha en lista över framgångsrika kundkällor som du kan skapa en grundläggande anslutning till.
+>* För att kunna skapa ett dataflöde måste du redan ha ett giltigt basanslutnings-ID med en källa för lyckade kunder. Om du inte har detta ID kan du se [källöversikt](../../../home.md#customer-success) om du vill ha en lista över framgångsrika kundkällor som du kan skapa en grundläggande anslutning till.
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

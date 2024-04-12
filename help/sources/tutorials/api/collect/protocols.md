@@ -5,9 +5,9 @@ title: Skapa ett dataflöde för protokollkällor med API:t för flödestjänste
 type: Tutorial
 description: Den här självstudiekursen beskriver stegen för att hämta data från ett protokollprogram och att hämta dem till plattformen med hjälp av källanslutningar och API:er.
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
-source-git-commit: 92f39f970402ab907f711d23a8f5f599668f0fe0
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1314'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ I den här självstudiekursen beskrivs stegen för att hämta data från en prot
 
 >[!NOTE]
 >
->Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en protokollkälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#protocols) om du vill se en lista med protokollkällor som du kan skapa en basanslutning med.
+>* Om du vill skapa ett dataflöde måste du redan ha ett giltigt anslutnings-ID för basen med en protokollkälla. Om du inte har detta ID kan du se [källöversikt](../../../home.md#protocols) om du vill se en lista med protokollkällor som du kan skapa en basanslutning med.
 
 ## Komma igång
 

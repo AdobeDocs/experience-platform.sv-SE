@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med en källa för marknadsföringsautomatisering i 
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en källa för automatiserad marknadsföring med hjälp av plattformsgränssnittet.
 exl-id: 8d31fc2d-b952-44f7-98e7-f51b0acc19ed
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1394'
+source-wordcount: '1414'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en källa för automatiserad marknadsföring. En lista med självstudiekurser för att skapa olika källkonton för automatiserad marknadsföring i användargränssnittet finns i [källöversikt](../../../home.md#marketing-automation).
+>* För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en källa för automatiserad marknadsföring. En lista med självstudiekurser för att skapa olika källkonton för automatiserad marknadsföring i användargränssnittet finns i [källöversikt](../../../home.md#marketing-automation).
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 

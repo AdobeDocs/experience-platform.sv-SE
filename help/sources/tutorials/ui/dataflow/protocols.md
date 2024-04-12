@@ -5,9 +5,9 @@ title: Skapa ett dataflöde med en protokollkälla i användargränssnittet
 type: Tutorial
 description: Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från en källa till en plattformsdatauppsättning. I den här självstudiekursen beskrivs hur du skapar ett dataflöde för en protokollkälla med hjälp av plattformsgränssnittet.
 exl-id: 94631a78-14ea-41d7-876c-468634dfc6c1
-source-git-commit: 62ca31bc8499e822e0da25270bd4fe8871520f9b
+source-git-commit: f5ac10980e08843f6ed9e892f7e1d4aefc8f0de7
 workflow-type: tm+mt
-source-wordcount: '1384'
+source-wordcount: '1404'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,8 @@ Ett dataflöde är en schemalagd aktivitet som hämtar och importerar data från
 
 >[!NOTE]
 >
->För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en protokollkälla. En lista med självstudiekurser för att skapa olika protokoll för källkonton i användargränssnittet finns i [källöversikt](../../../home.md#protocols).
+>* För att kunna skapa ett dataflöde måste du redan ha ett autentiserat konto med en protokollkälla. En lista med självstudiekurser för att skapa olika protokoll för källkonton i användargränssnittet finns i [källöversikt](../../../home.md#protocols).
+>* För att Experience Platform ska kunna importera data måste tidszoner för alla tabellbaserade batchkällor konfigureras till UTC.
 
 ## Komma igång
 
