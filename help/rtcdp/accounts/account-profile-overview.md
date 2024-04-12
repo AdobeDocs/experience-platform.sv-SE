@@ -5,10 +5,10 @@ description: Lär dig hur Adobe Real-Time Customer Data Platform B2B Edition gö
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: 67515fe0-975e-4ee1-b172-60bc93ba1010
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '288'
-ht-degree: 7%
+source-wordcount: '305'
+ht-degree: 6%
 
 ---
 
@@ -25,3 +25,10 @@ Genom att sammanfoga kontouppgifter från olika källor kan ni börja se en komp
 ## Visningsprogram för kontoprofil
 
 Med Real-Time CDP, B2B Edition kan du använda användargränssnittet i Experience Platform för att visa kontoprofiler och söka efter specifika konton med ett konto-ID från en ansluten företagskälla eller genom att ange källinformation direkt. Mer information om hur du visar kontoprofiler i plattformsgränssnittet finns i [gränssnittshandbok för kontoprofil](account-profile-ui-guide.md).
+
+## Skapa och aktivera kontomålgrupper
+
+Du kan skapa målgrupper som består av kontoprofiler och sedan aktivera dem för flera destinationer som är tillgängliga i Real-Time CDP destinationskatalog. Läs mer nedan:
+
+* [Målgrupper](/help/segmentation/ui/account-audiences.md)
+* [Aktivera kontomålgrupper](/help/destinations/ui/activate-account-audiences.md)

@@ -4,9 +4,9 @@ title: Datastyrning - översikt
 description: Med datastyrning kan ni hantera kunddata och säkerställa att ni följer regler, begränsningar och policyer som gäller för dataanvändning.
 feature: Get Started, Data Governance
 exl-id: eb501d85-cabd-4667-a1cd-2210ec83fb71
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '687'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ Du kan ange begränsningar för dataanvändning för ett mål genom att definier
 >
 >Mer information om marknadsföringsåtgärder och hur de används i dataanvändningspolicyer finns i [dataanvändningsprinciper - översikt](../../data-governance/policies/overview.md) i [!DNL Experience Platform] dokumentation.
 
-Genom att definiera marknadsföringsåtgärder för destinationer kan ni se till att profiler och segment som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga marknadsföringsåtgärder till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
+Genom att definiera marknadsföringsåtgärder för destinationer kan ni se till att profiler och målgrupper som skickas till dessa destinationer följer dataanvändningsprinciperna. Ni bör därför lägga till lämpliga marknadsföringsåtgärder till era destinationer baserat på organisationens behov av att tillämpa policybegränsningar för aktivering.
 
 Marknadsföringsåtgärder kan bara väljas när du ställer in ett mål för första gången. Beroende på vilken typ av mål du arbetar med visas möjligheten att konfigurera marknadsföringsåtgärder vid olika tillfällen i konfigurationsarbetsflödet. Se [destinationsdokumentation](../destinations/overview.md) för steg om hur du konfigurerar ditt särskilda mål.
 
@@ -49,7 +49,7 @@ Adobe Experience Platform har flera principer för vanliga kundupplevelsefall. D
 
 ## Klara regelefterlevnaden {#enforce}
 
-När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgruppssegment aktiveras för destinationer i Real-Time CDP, tillämpar Data Governance automatiskt användarprofiler om överträdelser inträffar.
+När data har märkts och användarprofiler har definierats kan ni se till att dataanvändningen följer reglerna. När målgrupper aktiveras till destinationer i Real-Time CDP tillämpar Data Governance automatiskt användarprofiler om överträdelser inträffar.
 
 Visa dokumentet på [automatisk policytillämpning](../../data-governance/enforcement/auto-enforcement.md) för mer information.
 

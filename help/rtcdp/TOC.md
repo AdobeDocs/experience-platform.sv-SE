@@ -3,12 +3,12 @@ product: adobe experience platform
 solution: Real-Time Customer Data Platform
 audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
-user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgruppssegment utifrån dessa profiler och aktivera dessa segment för tredjepartsdestinationer.
+user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgrupper utifrån dessa profiler och aktivera dessa målgrupper för tredjepartsmål.
 role: Admin
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
 workflow-type: tm+mt
-source-wordcount: '293'
-ht-degree: 13%
+source-wordcount: '294'
+ht-degree: 4%
 
 ---
 
@@ -33,6 +33,11 @@ ht-degree: 13%
    * [Användargränssnittshandbok för kontoprofil](accounts/account-profile-ui-guide.md)
 * Administration {#admin}
    * [Administration - översikt](administration/admin-overview.md)
+* Målgrupper och segmentering {#segmentation}
+   * [Översikt över segment](segmentation/segmentation-overview.md)
+   * [Segment Builder Guide](segmentation/segment-builder-guide.md)
+   * [Segmentering i Real-Time CDP B2B Edition](segmentation/b2b.md)
+   * [Kund-AI](segmentation/customer-ai.md)
 * Datauppsättningar {#datasets}
    * [Datauppsättningar](datasets/dataset.md)
    * [Datakvalitet på plattform](datasets/data-quality.md)
@@ -66,11 +71,6 @@ ht-degree: 13%
 * Scheman {#schemas}
    * [Schemaöversikt](schemas/overview.md)
    * [Scheman i Real-Time CDP B2B Edition](schemas/b2b.md)
-* Segment {#segmentation}
-   * [Översikt över segment](segmentation/segmentation-overview.md)
-   * [Segmentbyggarguide](segmentation/segment-builder-guide.md)
-   * [Segmentering i Real-Time CDP B2B Edition](segmentation/b2b.md)
-   * [Kund-AI](segmentation/customer-ai.md)
 * Källor {#sources}
    * [Översikt över källor](sources/sources-overview.md)
    * [Källor i Real-Time CDP B2B Edition](sources/b2b.md)

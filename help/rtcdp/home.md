@@ -1,12 +1,12 @@
 ---
 title: Real-Time CDP produktdokumentation
-description: Lär dig använda Adobe Real-Time CDP.
+description: Kom igång med Adobe Real-Time CDP, förstå de avancerade funktioner som programmet har och hur det kan hjälpa ert företag. Använd den här sidan som utgångspunkt när du lär dig mer om produkten.
 solution: Real-Time Customer Data Platform
 product: Real Time CDP
 exl-id: 92179d9a-be79-4a39-b2ab-9a85a542f53c
-source-git-commit: 882852b186779c29c5d2b46a56b73809b8611dd6
+source-git-commit: c9a954d2a78abcea67e68e5ae9563e6db1ae706c
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1108'
 ht-degree: 2%
 
 ---

@@ -4,9 +4,9 @@ title: Datakvalitet i Real-time Customer Data Platform
 description: Ett dokument om datakvalitet p책 Adobe Real-time Customer Data Platform
 feature: Get Started, Data Ingestion, Best Practices
 exl-id: 1d1b0bf9-1011-4053-8f8a-7a141febd000
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '129'
 ht-degree: 0%
 
 ---
@@ -17,4 +17,4 @@ Med Adobe Real-time Customer Data Platform (Real-Time CDP) kan ni samla data fr�
 
 Real-Time CDP bygger p책 Adobe Experience Platform och utnyttjar m책nga av Experience Platform tj채nster och funktioner. Du kan allts책 vara s채ker p책 att dina data kommer att kontrolleras och valideras n채r de importeras.
 
-Mer information om datakvalitet finns i [dokumentation om datakvalitet i Adobe I/O](../../ingestion/quality/overview.md).
+Mer detaljerad information om kontroller och b채sta praxis vid datainmatning finns i [dokumentation om datakvalitet](../../ingestion/quality/overview.md).

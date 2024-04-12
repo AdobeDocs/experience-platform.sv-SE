@@ -4,9 +4,9 @@ title: Komma igång med Real-time Customer Data Platform
 description: Använd det här exempelscenariot som exempel när du konfigurerar implementeringen av Adobe Real-Time Customer Data Platform.
 feature: Get Started, Use Cases
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
 workflow-type: tm+mt
-source-wordcount: '2328'
+source-wordcount: '2320'
 ht-degree: 1%
 
 ---
@@ -55,7 +55,7 @@ Den här självstudiekursen innehåller följande steg:
 1. Använd [flera datakällor](#using-multiple-data-sources).
 1. [Konfigurera en datakälla](#configuring-a-data-source).
 1. [Samla in data](#bringing-the-data-together-for-a-specific-customer) för en viss kund.
-1. Konfigurera [segment](#segments).
+1. Konfigurera [målgrupper](#audiences).
 1. Konfigurera [mål](#destinations).
 1. [Ställa in profilen på olika enheter](#cross-device-identity-stitching).
 1. [Analysera profilen](#analyzing-the-profile).
@@ -158,7 +158,7 @@ Om du till exempel vill importera Lumas CRM-data filtrerar du katalogen efter *C
 
    Välj till exempel **[!UICONTROL Contacts]**. En förhandsgranskning av kontaktdata läses in automatiskt så att du kan kontrollera att allt ser ut som förväntat.
 
-   Adobe Experience-plattformen tar mycket av det manuella arbetet genom att automatiskt mappa standardfält till [!DNL Experience Data Model] (XDM) profilschema.
+   Real-Time CDP tar mycket av det manuella arbetet genom att automatiskt mappa standardfält till [!DNL Experience Data Model] (XDM) profilschema.
 
 1. Granska fältmappningarna.
 
@@ -181,13 +181,15 @@ Luma har många interna policyer som begränsar användningen av vissa typer av 
 
 När dataanvändningsetiketterna har tillämpats kan Luma sedan använda datastyrning för att skapa dataanvändningsprinciper. Dataanvändningsprinciper är regler som beskriver den typ av åtgärder som du får utföra på data som innehåller vissa etiketter. När man försöker genomföra en åtgärd i Real-Time CDP som utgör en policyöverträdelse förhindras åtgärden och en varning ges om vilken policy som överträtts och varför.
 
+Dessutom, Real-Time CDP
+
 ## Sammanföra data för en viss kund
 
 I det här scenariot söker du efter profiler för Sarah Rose. Hennes profil visas med det mejl som hon använde för att logga in.
 
 <!-- ![image](assets/luma-find-profile.png) -->
 
-All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personuppgifter som adress och telefonnummer, kommunikationsinställningar och de segment hon är berättigad till.
+All profilinformation Luma har om Sarah visar. Detta inkluderar hennes personuppgifter som adress och telefonnummer, kommunikationsinställningar och vilka målgrupper hon är berättigad till.
 
 | Kategori | Beskrivning |
 |---|---|
@@ -198,9 +200,9 @@ Real-Time CDP-profilen minskar arbetsflödet för Lumas marknadsföringsteam fr�
 
 Marknadsföringsteamet kan använda den här förbättrade [!DNL Real-Time Customer Profile] för att personalisera Sarah bättre och öka varumärkeslojaliteten med Luma.
 
-## Segment
+## Målgrupper
 
-Med de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan marknadsförarna kombinera attribut, händelser och befintliga segment baserat på data som samlats in i [!DNL Real-Time Customer Profile].
+Med de kraftfulla segmenteringsfunktionerna i Adobe Experience Platform kan marknadsförarna kombinera attribut, händelser och befintliga målgrupper baserat på data som samlats in i [!DNL Real-Time Customer Profile].
 
 <!-- ![image](assets/luma-segments.png) -->
 
@@ -210,9 +212,9 @@ Lumas datavetenskap har tagit fram modeller kring benägenheten att köpa. En mo
 
 <!-- ![image](assets/luma-gift.png) -->
 
-### Definiera ett segment
+### Definiera en målgrupp
 
-Ändra eller skapa ett segment som representerar övergivna varukorgar som verkar vara på väg att köpa en gåva:
+Använd de olika alternativen för visuell komposition eller kodsbaserad uttrycksredigerare i målgruppsarbetsytan för att ändra eller skapa en målgrupp som representerar övergivna varukorgar som verkar vara på väg att köpa en gåva:
 
 ```sql
 Profile: Category != Preferred Category 
@@ -231,11 +233,11 @@ Eftersom Sarah lade till en gåva i vagnen och övergav den kan Luma rikta in si
 
 ## Mål 
 
-När du har lagt till segmentet&quot;Gift Giving Cart Abandoners&quot; kan du se ungefär hur många som ingår i det här segmentet. Ni kan vidta åtgärder för det och göra det tillgängligt för personalisering i alla kanaler.
+När ni har lagt till målgruppen&quot;Gift Giving Cart Abandoners&quot; kan ni se ungefär hur många som ingår i den här målgruppen. Ni kan vidta åtgärder för det och göra det tillgängligt för personalisering i alla kanaler.
 
 Välj **[!UICONTROL Send to destinations]**.
 
-I Real-Time CDP kan Luma agera sömlöst på sina målgruppssegment för personalisering.\
+I Real-Time CDP kan Luma agera sömlöst på sina målgrupper för personalisering.\
 Här ser vi alla destinationer som Luma kan skicka till både Adobe och andra lösningar än Adobe:
 
 ![bild](assets/luma-dest.png)
@@ -252,7 +254,7 @@ I det här scenariot vill Luma återrikta målgruppen med personalisering över 
 
 ### Schemaläggningsmål
 
-Du kan också schemalägga att segmentet ska börja eller sluta vid en viss tidpunkt. Segmentet kommer att bokföras och uppdateras automatiskt på de konfigurerade plattformarna på de schemalagda datumen.
+Du kan också schemalägga målgruppsexporten till att börja eller sluta vid en viss tidpunkt. Publiken kommer att publiceras och uppdateras automatiskt på de konfigurerade plattformarna på de schemalagda datumen.
 
 >[!NOTE]
 >
@@ -266,17 +268,21 @@ Detta sparar pengar åt Lumas mediegrupp genom att inte använda upp lager för 
 
 ### Tillämpa dataanvändningsprinciper för mål
 
-Adobe Experience Platform innehåller sekretess- och säkerhetskontroller för att avgöra om ett segment är tillgängligt för aktivering till ett visst mål. Aktiveringen är aktiverad eller begränsad baserat på det marknadsföringssyfte eller de marknadsföringssyften som var tilldelat destinationen när den skapades, samt dataanvändningsprinciper som definierats av organisationen.
+Adobe Experience Platform innehåller sekretess- och säkerhetskontroller för att avgöra om en viss målgrupp är tillgänglig för aktivering av ett visst mål. Aktiveringen är aktiverad eller begränsad baserat på det marknadsföringssyfte eller de marknadsföringssyften som var tilldelat destinationen när den skapades, samt dataanvändningsprinciper som definierats av organisationen.
 
 Om din aktivitet bryter mot reglerna visas en varning. Den här varningen innehåller information om datalänkning som kan hjälpa dig att identifiera varför policyn överträds och vad du kan göra för att åtgärda överträdelsen.
 
 Med dessa reglage [!DNL Experience Platform] hjälper Luma att följa regler och marknadsföra ansvarsfullt. Dessa reglage är flexibla och kan ändras för att uppfylla kraven från Lumas säkerhets- och styrningsteam, så att de tryggt kan uppfylla regionala och organisatoriska krav för att hantera kända och okända kunddata.
 
-### Arbetsyta för dataflöde
+<!--
 
-När du sparar visas det segment som är mappat från den enhetliga profilen till de tre valda målen i en visuell dataflödesyta.
+### Data flow canvas
 
-![bild](assets/luma-flow.png)
+When you save, a visual data flow canvas shows the segment mapped from the unified profile to the three destinations you selected.
+
+![image](assets/luma-flow.png)
+
+-->
 
 ## Enhetsidentitetssammanfogning
 
@@ -297,8 +303,8 @@ Tack vare funktioner för att hindra åhörarna kommer Sarah inte att vara inrik
 
 ## Analyserar profilen
 
-Luma-marknadsförare använder Adobe Experience Platform för att se på presentgiversegmentet på Real-Time CDP Dashboard. De ser resultaten av detta initiativ över tiden och ser att det växer. Kunderna svarar på erbjudanden och spenderar mer pengar.
+Luma-marknadsförarna använder Adobe Experience Platform för att se vilka som har fått presenterna på Real-Time CDP Dashboard. De ser resultaten av detta initiativ över tiden och ser att det växer. Kunderna svarar på erbjudanden och spenderar mer pengar.
 
-Dessa insikter gör det möjligt för marknadsförarna att agera på den här signalen, som stärktes av att informationen fanns tillgänglig i CDP och att kunder som Sarah var kopplade till segmentet.
+Dessa insikter gör det möjligt för marknadsförarna att agera på den här signalen, som stärktes av att informationen fanns tillgänglig i CDP och att kunder som Sarah var kopplade till publiken.
 
 Luma använder dessa CDP-data för att öka lojaliteten och få nöjda kunder.

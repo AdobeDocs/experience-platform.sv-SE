@@ -4,9 +4,9 @@ description: En översikt över de olika användningsområdena för Adobe Real-t
 feature: Get Started, Audiences, Segments, B2B
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
 workflow-type: tm+mt
-source-wordcount: '1346'
+source-wordcount: '1330'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ Det här dokumentet innehåller exempel på segmentdefinitioner i Adobe Real-tim
 Innan du kan använda segmenteringsattributen för B2B-klasser måste du utföra följande steg:
 
 1. Skapa scheman som använder B2B-klasserna. Klasserna för B2B Edition omfattar konto, kampanj, säljprojekt, marknadsföringslista med mera. För information om [ställa in scheman för användning med B2B-klasser](../schemas/b2b.md) finns i schemadokumentationen.
-1. Skapa relationer mellan era B2B-scheman i Experience Data Model (XDM). Segment baserade på B2B Edition-attribut kräver relationer mellan klasserna för att fullt ut kunna använda den utökade B2B-segmenteringsfunktionen. Läs dokumentationen om [definiera en relation mellan två B2B-scheman](../../xdm/tutorials/relationship-b2b.md) för mer information.
-1. Importera data med datauppsättningar baserade på era B2B-scheman. I källdokumentationen finns information om [information om hur man importerar data](../../sources/connectors/adobe-applications/marketo/marketo.md).
-1. Läs [Användarhandbok för segmentbyggaren](../../segmentation/ui/segment-builder.md) om du vill ha en mer detaljerad vägledning om hur du bygger målgrupper.
+2. Skapa relationer mellan era B2B-scheman i Experience Data Model (XDM). Målgrupper som bygger på attribut i B2B Edition kräver relationer mellan klasserna för att fullt ut kunna använda den utökade funktionen för B2B-segmentering. Läs dokumentationen om [definiera en relation mellan två B2B-scheman](../../xdm/tutorials/relationship-b2b.md) för mer information.
+3. Importera data med datauppsättningar baserade på era B2B-scheman. I källdokumentationen finns information om [information om hur man importerar data](../../sources/connectors/adobe-applications/marketo/marketo.md).
+4. Läs [Användarhandbok för Segment Builder](../../segmentation/ui/segment-builder.md) om du vill ha en mer detaljerad vägledning om hur du bygger målgrupper.
 
 När dessa krav är uppfyllda kan du kombinera dessa attribut för vanliga B2B-syften.
 
@@ -54,7 +54,7 @@ Den här relationen återspeglas i segmentbyggaren med hjälp av `Key` enligt bi
 
 Läs mer i [scheman i Real-time Customer Data Platform B2B Edition-dokumentation](../schemas/b2b.md) för mer information om tillgängliga B2B-klasser.
 
-Användningsexemplen nedan ger information om vilka klasser som används för att upprätta relationer mellan olika scheman för att uppnå dessa resultat. De här exemplen kan användas för att hjälpa dig att skapa egna segment.
+Användningsexemplen nedan ger information om vilka klasser som används för att upprätta relationer mellan olika scheman för att uppnå dessa resultat. De här exemplen kan användas för att hjälpa er att skapa egna målgrupper.
 
 ## Exempel på olika användningsområden för segmentering {#use-cases}
 

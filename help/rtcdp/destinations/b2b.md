@@ -4,9 +4,9 @@ description: Översikt över destinationernas roll i Adobe Real-time Customer Da
 feature: Destinations
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Experience Platform-destinationer som stöds fullt ut av Real-Time CDP B2B Editi
 
 Mer information om hur destinationer passar in i ert B2B-arbetsflöde finns i [självstudiekurs från början till slut](../b2b-tutorial.md#activate-your-evaluated-data-to-a-destination).
 
-Med Adobe Real-time Customer Data Platform B2B Edition kan du exportera B2B-data via Marketo Engage-målanslutningen. Genom att använda målet Marketo Engage kan du överföra segment som skapats i Adobe Experience Platform till Marketo, där de visas som statiska listor.
+Med Adobe Real-time Customer Data Platform B2B Edition kan du exportera B2B-data via Marketo Engage-målanslutningen. Genom att använda målet Marketo Engage kan du föra över målgrupper som skapats i Adobe Experience Platform till Marketo, där de visas som statiska listor.
 
 Följande dokument innehåller mer information om hur du använder Marketo Engage som mål för att exportera data:
 

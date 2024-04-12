@@ -6,9 +6,9 @@ description: Använd det här exempelscenariot som exempel när du konfigurerar 
 feature: Get Started, B2B
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: ad9ace46-9915-4b8f-913a-42e735859edf
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 8a487d948d2eb7db167298b61045ef8dd2099da6
 workflow-type: tm+mt
-source-wordcount: '1206'
+source-wordcount: '1164'
 ht-degree: 0%
 
 ---
@@ -76,33 +76,33 @@ Marketo Engage-källkopplingen har en automatisk mappningsfunktion som gör det 
 
 Bodea-markören kontrollerar att alla fältgrupper är korrekt mappade och fortsätter källkonfigurationen genom att initiera ett dataflöde. Genom att skapa ett dataflöde för att hämta in Marketo-data kan inkommande data användas av plattformstjänster längre fram i kedjan. Under den inledande intagsprocessen förs data in i Experience Platform som en sats. Därefter direktuppspelas inkapslade data till profilen med nästan realtidsuppdateringar.
 
-## Skapa ett segment för att utvärdera dina data
+## Skapa en målgrupp för att utvärdera era data
 
 Nästa uppgift är att skapa en målgrupp för Bodeas nya e-postmarknadsföringskampanj baserat på specifika attribut från relaterade enheter i källdata. I plattformsgränssnittet väljer Bodea-marknadsföraren först **[!UICONTROL Segments]** i den vänstra navigeringen och sedan **[!UICONTROL Create segment]**.
 
-I det här exemplet hittar segmentet alla personer som arbetar på försäljningsavdelningen och som är kopplade till ett konto som har minst en öppen affärsmöjlighet. Det här segmentet kräver en länk mellan klassen XDM Individual Profile, klassen XDM Business Account och klassen XDM Business Opportunity.
+I det här exemplet hittar målgruppen alla personer som arbetar på försäljningsavdelningen och som är kopplade till ett konto som har minst en öppen affärsmöjlighet. Dessa målgrupper kräver en länk mellan klassen XDM Individual Profile, klassen XDM Business Account och klassen XDM Business Opportunity.
 
 ![Använd skiftlägessegment](./assets/b2b-tutorial/use-case-segment.png)
 
 >[!NOTE]
 > 
->Instruktioner om hur du skapar segment för att utvärdera dina data finns i [Användargränssnittsguide för segmentbyggare](../segmentation/ui/segment-builder.md). Mer specifika användningsfall för B2B-segmentering finns i [segmenteringsöversikt för Real-Time CDP B2B Edition](./segmentation/b2b.md).
+>Instruktioner om hur du skapar målgrupper för att utvärdera dina data finns i [Användargränssnittsguide för segmentbyggare](../segmentation/ui/segment-builder.md). Mer specifika användningsfall för B2B-segmentering finns i [segmenteringsöversikt för Real-Time CDP B2B Edition](./segmentation/b2b.md).
 
 Med Segment Builder kan ni skapa en marknadsföringsbar publik utifrån kundprofildata i realtid och visa uppskattningar av er presumtiva målgrupp baserat på den kombination av attribut, händelser och befintliga målgrupper som ni har definierat.
 
 ## Aktivera utvärderade data till ett mål
 
-När segmentet har skapats visas en sammanfattning i [!UICONTROL Details] i arbetsytan. Eftersom inga destinationer är aktiverade för segmentet måste Bodea-marknadsföraren exportera målgruppen till en datauppsättning där den kan nås och hanteras.
+När målgruppen har skapats visas en sammanfattning i [!UICONTROL Details] i arbetsytan. Eftersom inga destinationer för närvarande är aktiverade för segmentdefinitionen måste Bodea-marknadsföraren exportera målgruppen till en datauppsättning där den kan nås och hanteras.
 
 I [!UICONTROL Segments] arbetsytan i plattformsgränssnittet, markeras av Bodea-marknadsföraren **[!UICONTROL Activate to destination]**.
 
-![Aktivera segmentet till ett mål](./assets/b2b-tutorial/activate-to-destination.png)
+![Aktivera målgruppen för ett mål](./assets/b2b-tutorial/activate-to-destination.png)
 
 >[!NOTE]
 > 
->Se självstudiekursen om [aktivera ett segment till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) om du vill ha mer information om hur du uppnår detta.
+>Se självstudiekursen om [aktivera en målgrupp till ett mål](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html) om du vill ha mer information om hur du uppnår detta.
 
-Bodea-marknadsföraren aktiverar segmentet till Marketo-destinationen, vilket gör att de kan skicka segmentdata från Platform till Marketo Engage i form av en statisk lista. Se guiden på [Marketo destination](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) för mer information.
+Bodea-marknadsföraren aktiverar målgruppen till Marketo-destinationen, vilket gör att de kan skicka målgruppsdata från Platform till Marketo Engage i form av en statisk lista. Se guiden på [Marketo destination](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html) för mer information.
 
 ## Nästa steg
 

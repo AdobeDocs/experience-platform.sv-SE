@@ -1,12 +1,12 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform;kunddataplattform i realtid;cdp i realtid;kundens AI
 title: Real-time Customer Data Platform - översikt
-description: Översikt över Adobe Real-time Customer Data Platform
+description: Läs om hur Adobe Real-time Customer Data Platform kan hjälpa er att samla in kända och anonyma data från flera olika företagskällor för att skapa kundprofiler som kan användas för att leverera personaliserade kundupplevelser över alla kanaler och enheter i realtid.
 feature: Get Started
 exl-id: 8be51bf0-b372-4a81-ba45-f4fe4b7e1718
-source-git-commit: 8838fc59685f287a3e66a37c87b0b9c55e29c71e
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '718'
 ht-degree: 0%
 
 ---

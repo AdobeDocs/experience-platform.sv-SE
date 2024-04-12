@@ -3,7 +3,7 @@ title: Real-Time CDP Guardrails
 description: Läs mer om de olika tjänsterna och områdena i Real-Time CDP.
 feature: Guardrails, Data Management, Data Ingestion, Data Export
 exl-id: 377499b4-5707-4d50-94e3-02f88ad5bf2c
-source-git-commit: af37aca17f4b365b52215b8c886e733f00c4a4e8
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
 source-wordcount: '369'
 ht-degree: 0%
@@ -27,7 +27,6 @@ Börja här och följ länkarna nedan för att få en förståelse för alla sky
 >[!TIP]
 >
 >Dessutom kan du besöka [de digitala upplevelseritningarna](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html) för ytterligare information som [slingrande diagram](https://experienceleague.adobe.com/docs/blueprints-learn/architecture/architecture-overview/deployment/guardrails.html?lang=en#end-to-end-latency-diagrams) för olika Experience Platform-tjänster.
-
 
 ## Skyddstyper {#guardrail-types}
 

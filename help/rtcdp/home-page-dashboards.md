@@ -1,13 +1,13 @@
 ---
 keywords: metrisk översikt; översikt över rtcdp-mått
 title: Real-time Customer Data Platform hemsida och Dashboards
-description: Kontrollpaneler, startsidan och förstagångsupplevelsen i Adobe Experience Platform
+description: Förstå olika instrumentpaneler, hemsidan och förstagångsupplevelsen av Adobe Real-Time CDP.
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: d052f307d91890f89d6cb3f18525fe395c116f95
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '885'
-ht-degree: 1%
+source-wordcount: '889'
+ht-degree: 0%
 
 ---
 
@@ -27,8 +27,8 @@ The [!UICONTROL Getting started with Real-Time Customer Profile] widgeten är up
 
 * **Importera data till plattformen**: Denna widget dirigerar dig till källkatalogen. Använd källkatalogen för att välja en källa och importera data till Experience Platform. Välj **[Konfigurera källor]** för att navigera till källkatalogen. Mer information finns i [källöversikt](../sources/home.md).
 * **Modelldatastrukturer**: Den här widgeten dirigerar dig till översikten över scheman. Använd översikten för att bläddra efter befintliga scheman eller skapa en plan som beskriver datastrukturen. Välj **[!UICONTROL Create schema]** för att navigera till gränssnittet för att skapa scheman. Mer information finns i [scheman, översikt](../xdm/home.md).
-* **Bygg målgrupper**: Den här widgeten dirigerar dig till egment Builder i användargränssnittet. Använd Segment Builder för att interagera med profildataelement och definiera villkoren för segmentdefinitionen. Välj **[!UICONTROL Create audience]** för att navigera till segmentbyggaren. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
-* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka segment till. Välj **[!UICONTROL Set up destinations]** för att navigera till målkatalogen. Mer information finns i [destinationer, översikt](../destinations/home.md).
+* **Bygg målgrupper**: Den här widgeten dirigerar dig till segmentbyggaren i användargränssnittet. Använd Segment Builder för att interagera med profildataelement och definiera villkoren för segmentdefinitionen. Välj **[!UICONTROL Create audience]** för att navigera till segmentbyggaren. Mer information finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Skicka data till mål**: Den här widgeten dirigerar dig till målkatalogen. Använd målkatalogen för att välja en destination som du sedan kan ansluta till och skicka målgrupper till. Välj **[!UICONTROL Set up destinations]** för att navigera till målkatalogen. Mer information finns i [destinationer, översikt](../destinations/home.md).
 
 ![Plattformsgränssnittets startsida med widgeten Komma igång](assets/platform-home/getting-started-widget.png)
 
@@ -44,7 +44,7 @@ Kontrollpanelen för mätvärden visar aktuell information om dina Experience Pl
 
 ### The leaderboard
 
-På resultatlistan visas det aktuella totala antalet scheman, datamängder, profiler och segment i organisationen samt deras senaste uppdateringsdatum.
+På resultatlistan visas det aktuella totala antalet scheman, datamängder, profiler och målgrupper i organisationen samt deras senaste uppdateringsdatum.
 
 ![Ledpanelsavsnittet på startsidan för plattformsgränssnittet.](assets/platform-home/leaderboard.png)
 
@@ -55,13 +55,13 @@ På resultatlistan visas det aktuella totala antalet scheman, datamängder, prof
 
 ### Senaste objekt
 
-Senaste objekt listar de senaste ändringarna i organisationen. I exemplet nedan gäller de senaste ändringarna datamängder, källor, segment och mål.
+Senaste objekt listar de senaste ändringarna i organisationen. I exemplet nedan gäller de senaste ändringarna datamängder, källor, målgrupper och destinationer.
 
 ![Avsnittet med de senaste objekten på startsidan för plattformsgränssnittet.](assets/platform-home/recent-items.png)
 
 * **Senaste datauppsättningar**: **[!UICONTROL Recent datasets]** visar de fem senaste datauppsättningarna som skapats inom organisationen. Listan uppdateras när en ny datauppsättning skapas. Välj en datauppsättning om du vill visa information om objektet eller markera **[!UICONTROL View all]** för en lista med datauppsättningar. Därifrån kan du välja en specifik källa för information. Mer information om datauppsättningar finns i [datauppsättningar, översikt](../catalog/datasets/overview.md).
 * **Senaste källor**: **[!UICONTROL Recent sources]** med ett metriskt kort visas de fem senaste källorna som skapats inom organisationen. Listan uppdateras när en ny källa skapas. Välj en källa för att visa information om objektet eller välj **[!UICONTROL View all]** för en lista över källor. Därifrån kan du välja en specifik källa för information. Mer information om källor finns i [Översikt över källor](../sources/home.md).
-* **Senaste segment**: **[!UICONTROL Recent segments]** med ett metriskt kort visas de fem senaste segmenten som har skapats inom organisationen. Listan uppdateras när ett nytt segment skapas. Välj ett segment om du vill visa information om objektet eller markera **[!UICONTROL View all]** för en lista med segment. Mer information om segment finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+* **Senaste målgrupper**: **[!UICONTROL Recent audiences]** med ett metriskt kort visas de fem senaste målgrupperna som skapats inom organisationen. Listan uppdateras när en ny målgrupp skapas. Välj en målgrupp om du vill visa information om objektet eller välj **[!UICONTROL View all]** för en lista över målgrupper. Mer information om målgrupper finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 * **Senaste destinationer**: **[!UICONTROL Recent destinations]** med ett metriskt kort visas de fem senaste destinationerna som skapats inom organisationen. Listan uppdateras när ett nytt mål skapas. Välj ett mål om du vill visa information om det objektet eller välj **[!UICONTROL View all]** för en lista över destinationer. Mer information finns i [destinationer, översikt](../destinations/home.md).
 
 ## Resurser

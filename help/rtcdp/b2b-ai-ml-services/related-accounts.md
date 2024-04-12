@@ -5,10 +5,10 @@ description: En översikt och mer information om kontofunktionen i Experience Pl
 feature: Get Started, Profiles, B2B
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 82535ec3ac2dd27e685bb591fdf661d3ab5dd2c9
 workflow-type: tm+mt
-source-wordcount: '435'
-ht-degree: 3%
+source-wordcount: '429'
+ht-degree: 2%
 
 ---
 
@@ -32,7 +32,7 @@ Med relaterade konton [!DNL Real-Time CDP B2B] visar nu en lista över konton so
 
 ![Skärm som visar relaterade konton i användargränssnittet för Experience Platform.](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 
-Använd den här funktionen om du vill visa relaterade kontoprofiler för en kontoprofil i användargränssnittet för Experience Platform och sedan inkludera de relaterade kontona i segmentdefinitionerna för att bredda din räckvidd eller tillämpa bredare kriterier i dina segment.
+Använd den här funktionen om du vill visa relaterade kontoprofiler för en kontoprofil i användargränssnittet i Experience Platform och sedan inkludera de relaterade kontona i segmentdefinitionerna för att bredda din räckvidd eller tillämpa bredare kriterier i dina målgrupper.
 
 ## Aktivera tjänsten för relaterade konton {#enable}
 

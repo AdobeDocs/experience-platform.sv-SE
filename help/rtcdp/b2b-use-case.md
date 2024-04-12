@@ -5,9 +5,9 @@ description: Det här exempelscenariot är ett exempel på hur du konfigurerar i
 feature: Get Started, Use Cases, B2B
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1151'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 Real-time Customer Data Platform B2B Edition utökar de befintliga erbjudandena från Real-Time CDP och Adobe Experience Platform med stöd för B2B-data och arbetsflöden. Det här dokumentet innehåller ett exempel på hur man kan använda B2B-versionen för att demonstrera de ytterligare fördelarna. De omfattar följande:
 
 - Kombinera person- och kontodata från olika externa datakällor för att skapa en heltäckande bild som ger en bättre förståelse för kunderna och mer korrekt segmentering. Läs dokumentationen om [skapa XDM-schemarelationer](./schemas/b2b.md) för användning med olika B2B-källor för mer information.
-- Segmentera en målgrupp baserat på attribut för relaterade enheter. Detta inkluderar konton, säljprojekt, kampanjer och marknadsföringslistor. Segment begränsas inte längre till bara personattribut och upplevelsehändelser. Se [Dokumentation för B2B-segmentering](./segmentation/b2b.md) för fler exempel på hur man skapar B2B-specifika målgrupper.
+- Segmentera en målgrupp baserat på attribut för relaterade enheter. Detta inkluderar konton, säljprojekt, kampanjer och marknadsföringslistor. Publiken begränsas inte längre till bara personattribut och upplevelsehändelser. Se [Dokumentation för B2B-segmentering](./segmentation/b2b.md) för fler exempel på hur man skapar B2B-specifika målgrupper.
 - Inbyggt stöd för användning av en person som är relaterad till flera konton.
 
 ## Användningsfall
@@ -50,9 +50,9 @@ Eftersom relevant Townsend-information registreras som Konto 1 i Marketo 1 och K
 
 Det förhindrar Bodeas marknadsföringsteam från att effektivt rikta in specifika affärskontakter på dessa företag med denna nya möjlighet.
 
-Till dags dato har Townsend spenderat över en miljon dollar på Bodea-produkter på alla sina konton. Ett segment som skapats med det gamla systemet skulle dock inte omfatta någon från Townsend om inte den totala kostnaden inom ett enda försäljningssystem uppgick till mer än en miljon dollar. Detta beror på att intäktsinformationen är indelad i konton i olika försäljningssystem.
+Till dags dato har Townsend spenderat över en miljon dollar på Bodea-produkter på alla sina konton. Men en målgrupp som skapats med sitt gamla system skulle inte inkludera någon från Townsend om inte totalsumman för ett enda försäljningssystem uppgick till mer än en miljon dollar. Detta beror på att intäktsinformationen är indelad i konton i olika försäljningssystem.
 
-Eftersom Townsend utgifter delas upp i olika försäljningssystem och inte totalt mer än en miljon per styck, hittar segmentet inte någon som är kvalificerad i Marketo 1 eller Marketo 2.
+Eftersom Townsend utgifter är fördelade över olika försäljningssystem och inte totalt mer än en miljon per styck, skulle segmentdefinitionen inte hitta någon som är kvalificerad i antingen Marketo 1 eller Marketo 2.
 
 ### Hur Real-Time CDP B2B Edition löser problemet
 
@@ -66,7 +66,7 @@ B2B-data (personer, konton, säljprojekt och aktiviteter) från CRM1 synkroniser
 
 För enkelhetens skull och i det här exemplet identifieras människor av sina e-postmeddelanden. De kombinerade kontouppgifterna för det här exemplet ser ut så här:
 
-| Personer |
+| Folk |
 |---|
 | p1@townsend.com |
 | p2@townsend.com (som besökte den nya produktsidan den senaste månaden) |
@@ -77,7 +77,7 @@ För enkelhetens skull och i det här exemplet identifieras människor av sina e
 | Möjligheter 1, 200 000 dollar |
 | Möjlighet 2, 900 000 dollar |
 
-- Skapa unika segment med hjälp av denna sammanställda information för olika marknadsföringssatsningar. I det här exemplet hittar segmentet alla personer som:
+- Skapa unika målgrupper med hjälp av denna sammanställda information för olika marknadsföringssatsningar. I det här exemplet hittar segmentdefinitionen alla personer som:
 
    - Har associerade möjligheter (mellan ALLA konton) som överstiger 1 miljon dollar i värde
    - OCH
