@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM-klass för enskild profil
 description: Lär dig mer om klassen XDM Individual Profile.
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: de8e944cfec3b52d25bb02bcfebe57d6a2a35e39
+source-git-commit: ce937f1335283382189fa40f65aa268735c02715
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,7 @@ ht-degree: 0%
 
 Profilerna kan omfatta allt från anonyma beteendesignaler (t.ex. cookies i webbläsare) till välidentifierade profiler med detaljerad information som namn, födelsedatum, plats och e-postadress. När en profil växer blir den ett robust arkiv med personuppgifter, identiteter, kontaktuppgifter och kommunikationsinställningar för en individ. Mer högnivåinformation om användning av den här klassen i plattformens ekosystem finns i [XDM - översikt](../home.md#data-behaviors).
 
-The [!DNL XDM Individual Profile] klassen innehåller flera systemgenererade värden som fylls i automatiskt när data hämtas, medan alla andra fält måste läggas till med hjälp av [kompatibla schemafältgrupper](#field-groups):
-
-![](../images/classes/individual-profile.png)
+![Ett schemadiagram över klassen XDM Individual Profile.](../images/classes/individual-profile.png)
 
 | Egenskap | Beskrivning |
 | --- | --- |
