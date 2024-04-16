@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 81e1ce90b1778bb29c770e1468461949a1ea468c
+source-git-commit: f9235763746e12bd62f19094372dcff41cb41d65
 workflow-type: tm+mt
-source-wordcount: '3176'
+source-wordcount: '3148'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ Om data från den externt genererade publiken aktiveras för en batchdestination
 
 ### Kan jag ta bort en externt genererad publik?
 
-För närvarande kan du bara inaktivera en externt genererad publik. I det här läget, profiler **kommer** förbli aktiva för användning i nedströmstillämpningar. Stöd för att ta bort externt genererade målgrupper läggs till i en senare version.
+Ja! Externt genererade målgrupper kan tas bort i Audience Portal.
 
 ### Vad ska jag göra om jag av misstag laddade upp en externt genererad publik?
 
