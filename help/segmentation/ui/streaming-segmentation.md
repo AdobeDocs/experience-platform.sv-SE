@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för direktuppspelningssegmentering
 description: Med direktuppspelad segmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 88f2c8723ef16ff5601dc7e45a9f77b25f45acfd
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '1522'
+source-wordcount: '1534'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,7 @@ En segmentdefinition **not** aktiveras för direktuppspelningssegmentering i fö
 - Segmentdefinitionen innehåller flera enheter (frågor om flera enheter).
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
    - Om segmentdefinitionen i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för direktuppspelningssegmentering.
+- I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 Observera att följande riktlinjer gäller vid direktuppspelningssegmentering:
 

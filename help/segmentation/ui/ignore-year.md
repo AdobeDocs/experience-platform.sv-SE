@@ -2,13 +2,13 @@
 solution: Experience Platform
 title: Ignorera uppdatering av begränsning för årstid
 description: Lär dig hur du löser ett problem med den ignorerade årstidsbegränsningen.
-source-git-commit: d0bd7990f0d77cd5f8d30da735b89c188e13c780
+exl-id: 44bb8817-e32d-4806-ad4e-b1840313e768
+source-git-commit: 006950092f69d378b064c795b117166343e5d8f2
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '246'
 ht-degree: 0%
 
 ---
-
 
 # Ignorera uppdatering av tidsbegränsning för år {#ignore-year}
 
@@ -16,6 +16,10 @@ ht-degree: 0%
 >id="platform_audiences_segmentBuilder_ignoreYear"
 >title="Ignorera årsuppdatering"
 >abstract="Årets ignoreringsbegränsning har uppdaterats. Spara era målgrupper på nytt, tack."
+
+>[!IMPORTANT]
+>
+>Du kan bara använda tidsbegränsningen&quot;ignorera år&quot; i en segmentdefinition som utvärderas med **gruppsegmentering**. Om du lägger till tidsbegränsningen&quot;ignorera år&quot; i din segmentdefinition blir den resulterande målgruppen **ej berättigade** för strömning eller kantsegmentering.
 
 I februari 2024-utgåvan av Adobe Experience Platform har ändringar gjorts i Adobe Experience Platform Segmentation Service, vilket löser ett problem med alternativet&quot;ignorera år&quot; när det gäller att skapa och utvärdera målgrupper.
 

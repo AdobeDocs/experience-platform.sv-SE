@@ -4,9 +4,9 @@ title: Kantsegmentering med API
 description: Det här dokumentet innehåller exempel på hur du använder kantsegmentering med Adobe Experience Platform Segmentation Service API.
 role: Developer
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '1195'
+source-wordcount: '1207'
 ht-degree: 0%
 
 ---
@@ -64,6 +64,7 @@ En segmentdefinition **not** aktiveras för kantsegmentering i följande scenari
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
    - Om segmentet i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
+- I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 ## Hämta alla segment aktiverade för kantsegmentering
 
@@ -279,6 +280,6 @@ Om du vill veta hur du utför liknande åtgärder och arbetar med segment med Ad
 
 I följande avsnitt visas vanliga frågor om kantsegmentering:
 
-### Hur lång tid tar det innan ett segment blir tillgängligt i Edge Network?
+### Hur lång tid tar det innan ett segment blir tillgängligt på Edge Network?
 
 Det tar upp till en timme för ett segment att vara tillgängligt på Edge Network.

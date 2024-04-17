@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för kantsegmentering
 description: Lär dig hur du använder kantsegmentering för att utvärdera segmentdefinitioner i plattformar direkt, vilket möjliggör användning av samma sida och nästa sidpersonalisering.
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
 workflow-type: tm+mt
-source-wordcount: '958'
+source-wordcount: '970'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ En segmentdefinition **not** aktiveras för kantsegmentering i följande scenari
 
 - Segmentdefinitionen innehåller en kombination av en enda händelse och en `inSegment` -händelse.
    - Om segmentdefinitionen i `inSegment` -händelsen är bara profil, segmentdefinitionen **kommer** aktiveras för kantsegmentering.
+- I segmentdefinitionen används&quot;Ignorera år&quot; som en del av tidsbegränsningarna.
 
 ## Nästa steg
 
@@ -64,6 +65,6 @@ Den här guiden förklarar hur du utvärderar segmentdefinitioner med kantsegmen
 
 I följande avsnitt visas vanliga frågor om kantsegmentering:
 
-### Hur lång tid tar det innan en segmentdefinition är tillgänglig i Edge Network?
+### Hur lång tid tar det innan en segmentdefinition är tillgänglig på Edge Network?
 
-Det tar upp till en timme innan en segmentdefinition är tillgänglig i Edge Network.
+Det tar upp till en timme innan en segmentdefinition är tillgänglig på Edge Network.
