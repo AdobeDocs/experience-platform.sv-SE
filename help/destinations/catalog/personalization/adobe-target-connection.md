@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 92238ee94149b3cb4293d726d08dc4927e2dedb5
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1165'
 ht-degree: 1%
 
 ---
@@ -106,6 +106,11 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
 * **Namn**: Fyll i det önskade namnet för det här målet.
 * **Beskrivning**: Ange en beskrivning för destinationen. Du kan till exempel ange vilken kampanj du använder det här målet för. Det här fältet är valfritt.
 * **Dataström-ID**: Detta avgör i vilken datainsamling som målgrupperna inkluderas. I den nedrullningsbara menyn visas endast datastreams som har tjänsterna Target och Adobe Experience Platform aktiverade. Se [konfigurera ett datastream](../../../datastreams/configure.md#aep) för detaljerad information om hur du konfigurerar ett datastam för Adobe Experience Platform och Adobe Target.
+
+  >[!IMPORTANT]
+  >
+  >DataStream-ID:t är unikt för varje Adobe Target-målanslutning. Om du behöver mappa samma målgrupper till flera datastreams måste du [skapa en ny målanslutning](../../ui/connect-destination.md) för varje datastream ID och gå igenom [målgruppsaktiveringsflöde](#activate).
+
    * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](/help/web-sdk/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Se tabellen nedan för mer information.
 
   | Implementering av Adobe Target (utan Web SDK) | Web SDK-implementering |
@@ -136,7 +141,7 @@ Läs [Aktivera målgrupper för att kanalisera personaliseringsmål](../../ui/ac
 
 ## Exporterade data {#exported-data}
 
-Adobe Target *läsningar* profildata från Adobe Experience Platform Edge Network, så inga data exporteras.
+Adobe Target *läsningar* profildata från Adobe Experience Platform Edge Network, så att inga data exporteras.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
