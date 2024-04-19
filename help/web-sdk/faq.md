@@ -2,7 +2,7 @@
 title: Vanliga frågor om Adobe Experience Platform Web SDK
 description: Få svar på vanliga frågor om Adobe Experience Platform Web SDK.
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 58cd6300307881c3de7c52e07c401bf2ed908517
+source-git-commit: 002a57d1d5cfb2e7bdbd9b587e77ca4487a28f65
 workflow-type: tm+mt
 source-wordcount: '2268'
 ht-degree: 1%
@@ -18,7 +18,7 @@ Den här guiden ger svar på frågor om Adobe Experience Platform Web SDK.
 
 Adobe Experience Platform Web SDK är ett JavaScript-bibliotek på klientsidan som gör att du kan interagera med de olika tjänsterna i Adobe Experience Cloud.
 
-Web SDK skickar data på ett lösningsagnostiskt sätt (XDM) till Experience Platform Edge Network, som sedan mappar data till lösningsspecifika format och mål och skickar dem i realtid.
+Web SDK skickar data på ett lösningsagnostiskt sätt (XDM) till Experience Platform Edge Network, som sedan mappar data till lösningsspecifika format och destinationer och skickar dem i realtid.
 
 I följande video finns mer information om Web SDK: [Möt Alloy.js och Aldrig tagg för en eVar eller Mbox Igen](https://www.adobe.com/summit/2020/with-alloy-js-never-tag-for-an-evar-or-mbox-again.html).
 
@@ -62,7 +62,7 @@ Adobe Experience Platform Web SDK kan även skicka data direkt till Adobe Experi
 
 **Prestanda:** SDK för webben är mindre än för alla Adobe-bibliotek och ger avsevärt snabbare sidinläsning.
 
-**Enkelt:** Kombinationen av XDM, Web SDK, taggar, Edge Network, Adobe Experience Cloud och Adobe Experience Platform skapar en lättförståelig och lättanvänd datainsamlingsberättelse.
+**Enkelt:** Kombinationen av XDM, Web SDK, taggar, Edge Network, Adobe Experience Cloud och Adobe Experience Platform skapar en lättbegriplig och lättanvänd datainsamlingsberättelse.
 
 * **XDM** Det lösningsagnostiska schema som du använder för att skicka data till Adobe. Ingen mer taggning för variabler eller rutor.
 * **Web SDK:** Gör det enkelt att skicka och ta emot data till Adobe Experience Platform Edge Network.
@@ -159,9 +159,9 @@ Ja, för närvarande använder Web SDK var som helst mellan en och sju cookies b
 | **Namn** | **maxAge** | **Egen ålder** | **Beskrivning** |
 |---|---|---|---|
 | **kndct_orgid_identity** | 34128000 | 395 dagar | I identitetscookie lagras ECID och annan information om ECID. |
-| **kndctr_original_medgivande_check** | 7200 | 2 timmar | Denna cookie lagrar användarens medgivandeinställning för webbplatsen. |
-| **kndctr_orgid_medgivande** | 15552000 | 180 dagar | Denna sessionsbaserade cookie signalerar till servern att leta upp serversidan för medgivandeinställningar. |
-| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar den Edge Network-region som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Edge Network kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
+| **kndctr_original_medgivande_check** | 7200 | 2 timmar | Denna sessionsbaserade cookie signalerar till servern att leta upp serversidan för medgivandeinställningar. |
+| **kndctr_orgid_medgivande** | 15552000 | 180 dagar | Denna cookie lagrar användarens medgivandeinställning för webbplatsen. |
+| **kndctr_orgid_Cluster** | 1800 | 30 minuter | Denna cookie lagrar det Edge Network-område som betjänar den aktuella användarens begäran. Regionen används i URL-sökvägen så att Edge Network kan dirigera begäran till rätt region. Denna cookie har en livslängd på 30 minuter, så om en användare ansluter till en annan IP-adress kan begäran dirigeras till närmaste region. |
 | **mbox** | 63072000 | 2 år | Den här cookien visas när inställningen för målmigrering är true. Detta tillåter att målet [mbox cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) anges av Web SDK. |
 | **mboxEdgeCluster** | 1800 | 30 minuter | Den här cookien visas när inställningen för målmigrering är true. Med denna cookie kan Web SDK kommunicera rätt edge-kluster till at.js så att Target-profiler kan vara synkroniserade när användare navigerar på en webbplats. |
 | **AMCV_###@AdobeOrg** | 34128000 | 395 dagar | Denna cookie visas bara när ID-migrering på Adobe Experience Platform Web SDK är aktiverat. Denna cookie är användbar vid övergång till Web SDK medan vissa delar av webbplatsen fortfarande använder visitor.js. Se [`idMigrationEnabled`](/help/web-sdk/commands/configure/idmigrationenabled.md) för mer information. |
