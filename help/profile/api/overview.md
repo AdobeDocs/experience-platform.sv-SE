@@ -4,9 +4,9 @@ title: API-guide för kundprofil i realtid
 description: Med Real-Time Customer Profile API kan utvecklare utforska och arbeta med profildata, inklusive visa profiler, skapa och uppdatera sammanfogningsprinciper, exportera eller sampla profildata och ta bort profildata som inte längre behövs eller som har lagts till av misstag. Följ den här användarhandboken om du vill lära dig hur du utför viktiga åtgärder med API:t.
 role: Developer
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: b033f96002ed6da25cd6eb7012c397405dd85896
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '883'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ När data hämtas till Platform körs ett exempeljobb för att uppdatera profila
 
 ## Profilsystemjobb {#profile-system-jobs}
 
-Profilaktiverade data som är inkapslade i [!DNL Platform] lagras i [!DNL Data Lake] och [!DNL Real-Time Customer Profile] datalager. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en sats från [!DNL Profile] lagra för att ta bort data som du inte längre behöver eller som har lagts till av misstag. Detta kräver att API används för att skapa en [!DNL Profile System Job], som också kallas[!DNL delete request]&quot;, som vid behov kan ändras, övervakas eller tas bort. Så här lär du dig arbeta med borttagningsbegäranden med `/system/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API: följ stegen som beskrivs i [slutpunktsguide för profilsystemjobb](profile-system-jobs.md).
+Profilaktiverade data som är inkapslade i [!DNL Platform] lagras i [!DNL Data Lake] och [!DNL Real-Time Customer Profile] datalager. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att API används för att skapa en [!DNL Profile System Job], som också kallas[!DNL delete request]&quot;, som vid behov kan ändras, övervakas eller tas bort. Så här lär du dig arbeta med borttagningsbegäranden med `/system/jobs` slutpunkt i [!DNL Real-Time Customer Profile] API: följ stegen som beskrivs i [slutpunktsguide för profilsystemjobb](profile-system-jobs.md).
 
 ## Uppdatera profilattribut {#update-profile}
 

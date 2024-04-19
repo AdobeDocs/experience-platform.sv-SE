@@ -5,16 +5,16 @@ type: Documentation
 description: Med Adobe Experience Platform kan du ta bort en datauppsättning eller batch från profilbutiken för att ta bort kundprofildata i realtid som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder profil-API:t för att skapa ett profilsystemjobb eller för att ta bort en begäran.
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 42c83c7449a14eec5b91f82811bce4234e47cb51
 workflow-type: tm+mt
-source-wordcount: '1313'
+source-wordcount: '1327'
 ht-degree: 1%
 
 ---
 
 # Slutpunkt för profilsystemjobb (Delete-begäranden)
 
-Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data insamlade i [!DNL Platform] lagras i [!DNL Data Lake]och om datauppsättningarna har aktiverats för profilen lagras dessa data i [!DNL Real-Time Customer Profile] även datalagring. Ibland kan det vara nödvändigt att ta bort en datauppsättning eller en batch från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-Time Customer Profile] API för att skapa en [!DNL Profile] systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
+Med Adobe Experience Platform kan ni importera data från flera olika källor och skapa robusta profiler för enskilda kunder. Data insamlade i [!DNL Platform] lagras i [!DNL Data Lake]och om datauppsättningarna har aktiverats för profilen lagras dessa data i [!DNL Real-Time Customer Profile] även datalagring. Ibland kan det vara nödvändigt att ta bort profildata som är kopplade till en datauppsättning från profilarkivet för att ta bort data som inte längre behövs eller som har lagts till av misstag. Detta kräver att du använder [!DNL Real-Time Customer Profile] API för att skapa en [!DNL Profile] systemjobb, eller `delete request`, som också kan ändras, övervakas eller tas bort vid behov.
 
 >[!NOTE]
 >
@@ -102,9 +102,9 @@ Svaret innehåller en &quot;children&quot;-array med ett objekt för varje bortt
 
 En ny borttagningsbegäran initieras via en POST till `/systems/jobs` slutpunkt, där ID:t för den datauppsättning eller batch som ska tas bort anges i förfrågningens brödtext.
 
-### Ta bort en datauppsättning
+### Ta bort en datauppsättning och associerade profildata
 
-Om du vill ta bort en datauppsättning från profilarkivet måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
+Om du vill ta bort en datauppsättning och alla profildata som är associerade med datauppsättningen från profilarkivet måste datauppsättnings-ID:t inkluderas i POSTENS innehåll. Den här åtgärden tar bort ALLA data för en viss datauppsättning. [!DNL Experience Platform] Med kan du ta bort datauppsättningar baserat på både schema för post- och tidsserier.
 
 **API-format**
 
