@@ -4,7 +4,7 @@ description: Lär dig hur du konfigurerar identifieringen av robotar för datast
 hide: true
 hidefromtoc: true
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: 7757cd869607bf25bff1e9861732cf4b80b38966
+source-git-commit: c7853855ade1867cf33ea935a8a776080be2e5ab
 workflow-type: tm+mt
 source-wordcount: '1331'
 ht-degree: 0%
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 Trafik som härrör från icke-mänskliga enheter, som automatiserade program, webbskrapor, spindlar, skriptskannrar, kan göra det svårare att identifiera händelser som inträffar från mänskliga besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig trafikrapportering.
 
-Med punktidentifiering kan du identifiera händelser som genereras av[Web SDK](../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../server-api/overview.md) som om de genererats av kända spindlar och botar.
+Med punktidentifiering kan du identifiera händelser som genereras av [Web SDK](../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../server-api/overview.md) som om de genererats av kända spindlar och botar.
 
 Genom att konfigurera robotidentifiering för dina datastreams kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som du vill klassificera som båda händelser.
 
 Identifiering av robottrafiken kan ge en mer exakt mätning av användaraktiviteten på er webbplats eller i mobilapplikationen.
 
-När en begäran till Edge Network matchar någon av robotidentifieringsreglerna uppdateras XDM-schemat med en robotbedömning (alltid inställd på 1), vilket visas nedan.
+När en begäran till Edge Network överensstämmer med någon av robotidentifieringsreglerna uppdateras XDM-schemat med en bockpoäng (alltid inställt på 1), vilket visas nedan.
 
 ```json
 {
@@ -37,9 +37,9 @@ Denna robotbedömning hjälper de lösningar som tar emot begäran att identifie
 >
 >Punktavkänning tar inte bort några robotförfrågningar. Det uppdaterar bara XDM-schemat med robotpoängen och vidarebefordrar händelsen till [datastream-tjänst](configure.md) som du har konfigurerat.
 >
->Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [filtreringstjänst för robotar](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html) och använder inte de poäng som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
+>Adobe lösningar kan hantera båda poängen på olika sätt. Adobe Analytics använder till exempel sin egen [filtreringstjänst för robotar](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html) och använder inte bakgrundsmusiken som angetts av Edge Network. De två tjänsterna använder samma [IAB-robotlista](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), så robotpoängen är identiska.
 
-Det kan ta upp till 15 minuter att sprida reglerna för punktidentifiering i hela Edge-nätverket efter att de har skapats.
+Det kan ta upp till 15 minuter att sprida regler för punktidentifiering över hela Edge Network efter att de har skapats.
 
 ## Förutsättningar {#prerequisites}
 
