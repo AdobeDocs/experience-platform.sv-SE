@@ -1,13 +1,13 @@
 ---
 keywords: metrisk översikt; översikt över rtcdp-mått
 title: Real-time Customer Data Platform hemsida och Dashboards
-description: Förstå olika instrumentpaneler, hemsidan och förstagångsupplevelsen av Adobe Real-Time CDP.
+description: Förstå olika instrumentpaneler, startsidan och förstagångsupplevelsen för användare av Adobe Real-Time CDP.
 feature: Dashboards, Get Started
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
 source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
 workflow-type: tm+mt
 source-wordcount: '889'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
