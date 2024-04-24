@@ -2,9 +2,9 @@
 title: Använd Adobe Target med Web SDK för personalisering
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 0b662b4c1801a6d6f6fc2c6ade92d259b821ab23
 workflow-type: tm+mt
-source-wordcount: '1151'
+source-wordcount: '1166'
 ht-degree: 2%
 
 ---
@@ -35,17 +35,18 @@ Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
 Följande diagram hjälper dig att förstå arbetsflödet i [!DNL Target] och [!DNL Web SDK] kantbeslut.
 
-![Diagram över Adobe Target edge-beslut med Platform Web SDK](./assets/target-platform-web-sdk.png)
+![Diagram över Adobe Target edge-beslut med Platform Web SDK](assets/target-platform-web-sdk-new.png)
 
 | Utlysning | Information |
 | --- | --- |
-| 1 | Enheten läser in [!DNL Web SDK]. The [!DNL Web SDK] skickar en begäran till edge-nätverket med XDM-data, DataStreams Environment ID, inskickade parametrar och Customer ID (valfritt). Sidan (eller behållarna) är fördold. |
-| 2 | edge-nätverket skickar begäran till edge-tjänsterna för att berika den med besökar-ID, samtycke och annan kontextinformation för besökare, som geopositionering och enhetsvänliga namn. |
-| 3 | edge-nätverket skickar den berikade personaliseringsbegäran till [!DNL Target] kant med besökar-ID och inskickade parametrar. |
+| 1 | Enheten läser in [!DNL Web SDK]. The [!DNL Web SDK] skickar en begäran till Edge Network med XDM-data, DataStreams Environment ID, överförda parametrar och Kund-ID (valfritt). Sidan (eller behållarna) är fördold. |
+| 2 | Edge Network skickar begäran till edge services för att berika den med besökar-ID, samtycke och annan kontextinformation för besökare, som geopositionering och enhetsvänliga namn. |
+| 3 | Edge Network skickar den berikade personaliseringsbegäran till [!DNL Target] kant med besökar-ID och inskickade parametrar. |
 | 4 | Profilskript körs och matas sedan in i [!DNL Target] profillagring. Profillagring hämtar segment från [!UICONTROL Audience Library] (till exempel segment som delas från [!DNL Adobe Analytics], [!DNL Adobe Audience Manager], [!DNL Adobe Experience Platform]). |
-| 5 | Baserat på parametrar för URL-begäran och profildata, [!DNL Target] avgör vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka detta till gränsnätverket. |
-| 6 | a. Edge-nätverket skickar personaliseringssvaret tillbaka till sidan, eventuellt inklusive profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyer aktiveras. <br>. Edge Network skickar besökar-ID:t och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll och personalisering. |
-| 7 | Edge-nätverket framåt [!UICONTROL Analytics for Target] (A4T) information (aktivitets-, upplevelse- och konverteringsmetadata) till [!DNL Analytics] kant. |
+| 5 | Baserat på parametrar för URL-begäran och profildata, [!DNL Target] avgör vilka aktiviteter och upplevelser som ska visas för besökaren för den aktuella sidvyn och för framtida förhämtade vyer. [!DNL Target] skickar sedan tillbaka den till Edge Network. |
+| 6 | a. Edge Network skickar personaliseringssvaret tillbaka till sidan, eventuellt med profilvärden för ytterligare personalisering. Personaliserat innehåll på den aktuella sidan visas så snabbt som möjligt utan att man behöver flimra standardinnehållet.<br>b. Personanpassat innehåll för vyer som visas som ett resultat av användaråtgärder i ett Single Page-program (SPA) cachelagras så att det kan tillämpas direkt utan ett extra serveranrop när vyer aktiveras. <br>c. Edge Network skickar besökar-ID och andra värden i cookies, som samtycke, sessions-ID, identitet, cookie-kontroll och personalisering. |
+| 7 | Web SDK skickar meddelandet från enheten till Edge Network. |
+| 8 | Edge Network framåt [!UICONTROL Analytics for Target] (A4T) information (aktivitets-, upplevelse- och konverteringsmetadata) till [!DNL Analytics] kant. |
 
 ## Aktivering [!DNL Adobe Target]
 
