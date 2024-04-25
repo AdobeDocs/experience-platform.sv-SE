@@ -1,11 +1,11 @@
 ---
 title: AI Assistant för Adobe Experience Platform
 description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept för Experience Platform och Real-time Customer Data Platform, samt användningsinformation om dina objekt.
-badge: Alpha
+badge: Beta
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: f38f528c421c7cbf7116cc0ee323e8e7dcde6292
+source-git-commit: 2bf445144789a05e8a789994d30b884be7a8843d
 workflow-type: tm+mt
 source-wordcount: '2693'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> AI Assistant för Adobe Experience Platform ligger i Alpha. Funktionen och dokumentationen kan komma att ändras.
+> AI Assistant för Adobe Experience Platform är för närvarande i Beta. Funktionen och dokumentationen kan komma att ändras.
 
 AI Assistant är en gränssnittsfunktion som du kan använda för att navigera bland och förstå Adobe Experience Platform- och Real-time Customer Data Platform-koncept och användarinformation om dina objekt.
 
