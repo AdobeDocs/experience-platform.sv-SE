@@ -2,10 +2,10 @@
 title: Interaktiv datainsamling
 description: Lär dig hur Adobe Experience Platform Edge Network Server API utför interaktiv datainsamling.
 exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
-source-git-commit: 3272db15283d427eb4741708dffeb8141f61d5ff
+source-git-commit: f8434746c4a023ec895d23a59e04fca4baecfc36
 workflow-type: tm+mt
-source-wordcount: '138'
-ht-degree: 3%
+source-wordcount: '179'
+ht-degree: 2%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 3%
 ## Översikt {#overview}
 
 Slutpunkter för interaktiv datainsamling tar emot en enda händelse och används när klienten förväntar sig att ett svar returneras av Adobe Experience Platform Edge Network-servern. Dessa slutpunkter kan också returnera innehåll från andra Edge Network-tjänster när datainsamling utförs.
+
+>[!IMPORTANT]
+>
+>The `/interact` Slutpunkten är främst avsedd att användas av Experience Platform SDK:er. Den här slutpunkten kan ändras ytterligare och beteendet kan utvecklas utan föregående meddelande. Nya objekt kan till exempel läggas till i svarsnyttolasten i framtiden.
 
 Serversvaret innehåller en eller flera `Handle` objekt, enligt nedan.
 
