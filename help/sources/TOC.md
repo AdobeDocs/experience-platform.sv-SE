@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 0d85f37ee2da4857205819a3a4dea3f25eaad26e
+source-git-commit: 18f6c253aec6815cf84272cbce340a9aa7ed8ab9
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1036'
 ht-degree: 6%
 
 ---
@@ -97,7 +97,7 @@ ht-degree: 6%
       - [Acxiom Prospecting Data Import](connectors/data-partners/acxiom-prospecting-data-import.md)
       - [Merkury Enterprise Identity Resolution](connectors/data-partners/merkury.md)
    - eCommerce {#ecommerce}
-      - [SAP Commerce](connectors/ecommerce/sap-commerce.md)
+      - [SAP COMMERCE](connectors/ecommerce/sap-commerce.md)
       - [Förminska](connectors/ecommerce/shopify.md)
       - [Förminska strömning](connectors/ecommerce/shopify-streaming.md)
    - Lokalt system {#local-system}
@@ -111,6 +111,7 @@ ht-degree: 6%
       - [Oraclena Eloqua-koppling](connectors/marketing-automation/oracle-eloqua.md)
       - [Oracle NetSuite](connectors/marketing-automation/oracle-netsuite.md)
       - [Oraclena svarssystemskontakt](connectors/marketing-automation/oracle-responsys.md)
+      - [PathFactory](connectors/marketing-automation/pathfactory.md)
       - [Salesforce Marketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - Betalningar {#payments}
       - [PayPal-anslutning](connectors/payments/paypal.md)
@@ -179,7 +180,7 @@ ht-degree: 6%
          - [Teradata Vantage](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - eCommerce {#ecommerce}
-         - [SAP Commerce](tutorials/api/create/ecommerce/sap-commerce.md)
+         - [SAP COMMERCE](tutorials/api/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/api/create/ecommerce/shopify.md)
          - [Förminska strömning](tutorials/api/create/ecommerce/shopify-streaming.md)
       - Automatisering av marknadsföring {#marketing-automation}
@@ -192,6 +193,7 @@ ht-degree: 6%
          - [Oraclets NetSuite-aktiviteter](tutorials/api/create/marketing-automation/oracle-netsuite-activities.md)
          - [Oraclets NetSuite-entiteter](tutorials/api/create/marketing-automation/oracle-netsuite-entities.md)
          - [Oraclets svar](tutorials/api/create/marketing-automation/oracle-responsys.md)
+         - [PathFactory](tutorials/api/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
@@ -306,7 +308,7 @@ ht-degree: 6%
          - [Acxiom Prospecting Data Import](tutorials/ui/create/data-partners/acxiom-prospecting-data-import.md)
          - [Merkury Enterprise Identity Resolution](tutorials/ui/create/data-partners/merkury.md)
       - eCommerce {#ecommerce}
-         - [SAP Commerce](tutorials/ui/create/ecommerce/sap-commerce.md)
+         - [SAP COMMERCE](tutorials/ui/create/ecommerce/sap-commerce.md)
          - [Förminska](tutorials/ui/create/ecommerce/shopify.md)
          - [Förminska strömning](tutorials/ui/create/ecommerce/shopify-streaming.md)
       - Lokalt system {#local-system}
@@ -322,6 +324,7 @@ ht-degree: 6%
          - [Oraclets NetSuite-aktiviteter](tutorials/ui/create/marketing-automation/oracle-netsuite-activities.md)
          - [Oraclets NetSuite-entiteter](tutorials/ui/create/marketing-automation/oracle-netsuite-entities.md)
          - [Oraclets svar](tutorials/ui/create/marketing-automation/oracle-responsys.md)
+         - [PathFactory](tutorials/ui/create/marketing-automation/pathfactory.md)
          - [Salesforce Marketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - Betalningar {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
