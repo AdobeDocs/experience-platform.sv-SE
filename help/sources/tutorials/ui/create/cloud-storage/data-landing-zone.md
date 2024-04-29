@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;Data Landing Zone;datalandnin
 title: Anslut datalandningszonen till plattformen med användargränssnittet
 description: Lär dig hur du skapar en källanslutning för en Data Landing Zone med hjälp av användargränssnittet för plattformen.
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: 9cffd508c1bff7ce133f84ca686c414e997343b8
+source-git-commit: 9372e6f961015c989bfcb0d1e2b0129da965c522
 workflow-type: tm+mt
-source-wordcount: '649'
+source-wordcount: '721'
 ht-degree: 0%
 
 ---
@@ -60,23 +60,41 @@ När du är klar väljer du **[!UICONTROL Next]**.
 
 En detaljerad steg-för-steg-guide om hur du skapar ett dataflöde för en molnlagringskälla finns i självstudiekursen om [skapa ett molnlagringsdataflöde för att överföra data till plattformen](../../dataflow/batch/cloud-storage.md).
 
-## Hämta och uppdatera dina [!DNL Data Landing Zone] autentiseringsuppgifter
+## Hämta din [!DNL Data Landing Zone] autentiseringsuppgifter
 
-[!DNL Data Landing Zone] är en körklar källa som medföljer din Adobe Experience Platform Sources-licens. [!DNL Data Landing Zone] använder en SAS-URI och SAS-tokenbaserad autentisering. Du kan hämta och uppdatera dina autentiseringsuppgifter från [!UICONTROL Sources catalog] sida.
+[!DNL Data Landing Zone] är en källa som medföljer din Adobe Experience Platform Sources-licens. [!DNL Data Landing Zone] använder en SAS-URI och SAS-tokenbaserad autentisering. Du kan hämta dina autentiseringsuppgifter från [!UICONTROL Sources catalog] sida.
 
-I [!UICONTROL Sources catalog], under [!UICONTROL Cloud storage] väljer du ellipserna (**...**) från **[!UICONTROL Data Landing Zone]** kort. I listrutan som visas väljer du **[!UICONTROL View credentials]**.
+Om du vill hämta dina inloggningsuppgifter väljer du **[!UICONTROL Data Landing Zone]** och sedan kopiera dina inloggningsuppgifter från den högra listen som visas.
 
-![En lista med visningsalternativ för Data Landing Zone.](../../../../images/tutorials/create/dlz/options.png)
+![En lista med visningsalternativ för Data Landing Zone.](../../../../images/tutorials/create/dlz/view-credentials.png)
 
 En pover visas med ditt behållarnamn, SAS-token, lagringskontonamn, SAS-URI och förfallodatum.
 
-Välj **[!UICONTROL Refresh credentials]** och under några sekunder kan de uppdaterade inloggningsuppgifterna behandlas.
+## Uppdatera dina [!DNL Data Landing Zone] autentiseringsuppgifter
 
->[!TIP]
->
->Dina [!DNL Data Landing Zone] inloggningsuppgifterna är inställda på att automatiskt upphöra att gälla efter 90 dagar och du måste använda nya autentiseringsuppgifter för att återansluta till [!DNL Data Landing Zone] efter förfallodatum. Dina dataflöden i Platform påverkas inte av att autentiseringsuppgifterna har upphört att gälla och du kan fortfarande arbeta med nya och befintliga dataflöden med dina nya autentiseringsuppgifter.
+Dina [!DNL Data Landing Zone] inloggningsuppgifterna är inställda på att automatiskt upphöra att gälla efter 90 dagar och du måste använda nya autentiseringsuppgifter för att återansluta till [!DNL Data Landing Zone] efter förfallodatum. Dina dataflöden i Experience Platform påverkas inte av att inloggningsuppgifterna har upphört att gälla och du kan fortfarande arbeta med nya och befintliga dataflöden med dina nya inloggningsuppgifter.
 
-![De autentiseringsuppgifter som är associerade med ett visst Data Landing Zone-konto.](../../../../images/tutorials/create/dlz/view-credentials.png)
+Det finns två sätt att uppdatera [!DNL Data Landing Zone] autentiseringsuppgifter:
+
+>[!BEGINTABS]
+
+>[!TAB Använd källkortet]
+
+Om du vill uppdatera dina inloggningsuppgifter från källkatalogsidan markerar du ellipserna (**`...`**) i [!DNL Data Landing Zone] och välj **[!UICONTROL Refresh credentials]**.
+
+![Uppdatera autentiseringsuppgifter med källkortet.](../../../../images/tutorials/create/dlz/refresh-with-card.png)
+
+Ett popup-fönster visas där du uppmanas bekräfta åtgärden innan du kan fortsätta. När du är klar väljer du **[!UICONTROL Refresh credentials]**.
+
+![Bekräftelsefönstret för uppdatering av autentiseringsuppgifter.](../../../../images/tutorials/create/dlz/confirm.png)
+
+>[!TAB Använd rätt spår]
+
+Om du vill uppdatera dina inloggningsuppgifter med rätt spår väljer du **[!UICONTROL Data Landing Zone]** källkort och välj **[!UICONTROL More actions]**. Nästa, välj **[!UICONTROL Refresh Credentials]** och sedan bekräfta med hjälp av popup-fönstret som visas.
+
+![Uppdatera autentiseringsuppgifter med rätt spår.](../../../../images/tutorials/create/dlz/refresh-with-right-rail.png)
+
+>[!ENDTABS]
 
 ## Nästa steg
 
