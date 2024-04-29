@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om Source Connectors
 user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
 feature: Sources
 role: Developer
-source-git-commit: 18f6c253aec6815cf84272cbce340a9aa7ed8ab9
+source-git-commit: 58239a1d2db7be48cedd4467cb2f94913e387031
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1039'
 ht-degree: 6%
 
 ---
@@ -348,6 +348,7 @@ ht-degree: 6%
       - [Dataflöde för betalningsanslutning](tutorials/ui/dataflow/payments.md)
       - [Dataflöde för protokollanslutning](tutorials/ui/dataflow/protocols.md)
    - [Skapa ett källdataflöde med mallar i användargränssnittet](tutorials/ui/templates.md)
+   - [Filtrera källobjekt](tutorials/ui/filter.md)
    - [On demand-intag](tutorials/ui/on-demand-ingestion.md)
    - [Övervaka batchdataflöden](tutorials/ui/monitor.md)
    - [Övervaka strömmande dataflöden](tutorials/ui/monitor-streaming.md)
