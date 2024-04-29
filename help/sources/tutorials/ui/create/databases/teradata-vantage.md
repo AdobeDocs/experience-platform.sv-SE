@@ -3,18 +3,14 @@ keywords: Experience Platform;hem;populära ämnen;Teradata Vantage
 title: Skapa en Teradata Vantage-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Teradata Vantage-källanslutning med Adobe Experience Platform-gränssnittet.
 exl-id: 3fdb09fa-128a-477b-9144-d4ef3ed18ea6
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 625a7959f48a0b16c3228d4555e046b5f67c51b7
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '394'
 ht-degree: 1%
 
 ---
 
-# (Beta) Skapa en [!DNL Teradata Vantage] källanslutning i användargränssnittet
-
->[!NOTE]
->
-> The [!DNL Teradata Vantage] källan är i betaversion. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en [!DNL Teradata Vantage] källanslutning i användargränssnittet
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Teradata Vantage] källanslutning med Adobe Experience Platform användargränssnitt.
 
@@ -37,13 +33,15 @@ Mer information om hur du kommer igång finns i [[!DNL Teradata Vantage] dokumen
 
 ## Koppla samman [!DNL Teradata Vantage] konto
 
-Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. The [!UICONTROL Catalog] I visas en mängd olika källor som du kan skapa ett konto med.
+Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också använda sökfältet till att hitta den källa du vill arbeta med.
+Under [!UICONTROL Databases] kategori, välj **[!UICONTROL Teradata Vantage]** och sedan **[!UICONTROL Set up]**.
 
-Under [!UICONTROL Databases] kategori, välj **[!UICONTROL Teradata Vantage]** och sedan **[!UICONTROL Add data]**.
+>[!TIP]
+>
+>Källor i källkatalogen visas **[!UICONTROL Set up]** när en viss källa ännu inte har något autentiserat konto. När det finns ett autentiserat konto ändras det här alternativet till **[!UICONTROL Add data]**.
 
-![](../../../../images/tutorials/create/teradata/catalog.png)
+![Källkatalogen med Teradata Vantage-källan markerad.](../../../../images/tutorials/create/teradata/catalog.png)
 
 The **[!UICONTROL Connect to Teradata Vantage]** visas. På den här sidan kan du antingen använda nya autentiseringsuppgifter eller befintliga.
 
@@ -51,13 +49,13 @@ The **[!UICONTROL Connect to Teradata Vantage]** visas. På den här sidan kan d
 
 Välj [!DNL Teradata Vantage] konto som du vill ansluta till och välj **[!UICONTROL Next]** för att fortsätta.
 
-![](../../../../images/tutorials/create/teradata/existing.png)
+![Den befintliga kontosidan på arbetsytan för källor.](../../../../images/tutorials/create/teradata/existing.png)
 
 ### Nytt konto
 
 Om du använder nya autentiseringsuppgifter väljer du **[!UICONTROL New account]**. Ange ett namn, en valfri beskrivning och din [!DNL Teradata Vantage] autentiseringsuppgifter. När du är klar väljer du **[!UICONTROL Connect]** och tillåt sedan lite tid för att upprätta den nya anslutningen.
 
-![](../../../../images/tutorials/create/teradata/new.png)
+![Det nya gränssnittet för att skapa konton i källarbetsytan.](../../../../images/tutorials/create/teradata/new.png)
 
 ## Nästa steg
 

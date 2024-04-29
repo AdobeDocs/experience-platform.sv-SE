@@ -3,18 +3,14 @@ keywords: Experience Platform;hem;populära ämnen;Teradata Vantage
 title: Skapa en Teradata Vantage-basanslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till Teradata Vantage med API:t för Flow Service.
 exl-id: 88707dca-3c7a-43c7-9d71-473ad9715fc6
-source-git-commit: e37c00863249e677f1645266859bf40fe6451827
+source-git-commit: 625a7959f48a0b16c3228d4555e046b5f67c51b7
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '450'
 ht-degree: 0%
 
 ---
 
-# (Beta) Skapa en [!DNL Teradata Vantage] basanslutning med [!DNL Flow Service] API
-
->[!NOTE]
->
->The [!DNL Teradata Vantage] källan är i betaversion. Se [Översikt över källor](../../../../home.md#terms-and-conditions) om du vill ha mer information om hur du använder betamärkta källor.
+# Skapa en [!DNL Teradata Vantage] basanslutning med [!DNL Flow Service] API
 
 En basanslutning representerar den autentiserade anslutningen mellan en källa och Adobe Experience Platform.
 
