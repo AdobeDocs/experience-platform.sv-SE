@@ -1,14 +1,11 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;övervaka konton;övervaka dataflöden;dataflöden;källor
-description: I den här självstudiekursen beskrivs hur du övervakar dataflödet med hjälp av både aggregerad övervakningsvy och övervakning mellan tjänster.
-solution: Experience Platform
+description: Lär dig hur du använder kontrollpanelen för övervakning för att övervaka data som hämtas från källor.
 title: Övervaka dataflöden för källor i användargränssnittet
-type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 1a7ba52b48460d77d0b7695aa0ab2d5be127d921
+source-git-commit: 51f8a8c77518a0b2e9e4b914c891f97433db1ef2
 workflow-type: tm+mt
-source-wordcount: '1014'
-ht-degree: 0%
+source-wordcount: '1229'
+ht-degree: 1%
 
 ---
 
@@ -18,13 +15,9 @@ ht-degree: 0%
 >
 >Direktuppspelningskällor, som [HTTP-API-källa](../../sources/connectors/streaming/http.md) stöds för närvarande inte av kontrollpanelen för övervakning. För tillfället kan du bara använda kontrollpanelen för att övervaka batchkällor.
 
-I Adobe Experience Platform hämtas data från en mängd olika källor, som analyseras i Experience Platform och aktiveras till en mängd olika destinationer. Plattformen gör processen att spåra detta potentiellt icke-linjära dataflöde enklare genom att tillhandahålla genomskinlighet med dataflöden.
+Läs det här dokumentet för att lära dig hur du använder kontrollpanelen för att övervaka dina källdata i användargränssnittet i Experience Platform.
 
-Kontrollpanelen ger dig en visuell representation av resan för ett dataflöde. Du kan använda en aggregerad övervakningsvy och navigera lodrätt från källnivån, till ett dataflöde och till ett dataflöde, så att du kan visa motsvarande mått som bidrar till ett dataflödes framgång eller fel. Du kan också använda kontrollpanelens kapacitet för övervakning över flera tjänster för att övervaka ett dataflödes resa från en källa till [!DNL Identity Service]och till [!DNL Profile].
-
-I den här självstudiekursen beskrivs hur du övervakar dataflödet med hjälp av både aggregerad övervakningsvy och övervakning mellan tjänster.
-
-## Komma igång {#getting-started}
+## Kom igång {#get-started}
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
@@ -35,7 +28,7 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 * [Kundprofil i realtid](../../profile/home.md): Ger en enhetlig konsumentprofil i realtid baserad på aggregerade data från flera källor.
 * [Sandlådor](../../sandboxes/home.md): Experience Platform tillhandahåller virtuella sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
 
-## Sammanställd övervakningsvy {#aggregated-monitoring-view}
+## Övervaka källdata med kontrollpanelen
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
@@ -49,89 +42,101 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 >abstract="Källhanteringen innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
-I [Plattformsgränssnitt](https://platform.adobe.com), markera **[!UICONTROL Monitoring]** från vänster navigering för att komma åt [!UICONTROL Monitoring] kontrollpanel. The [!UICONTROL Monitoring] Instrumentpanelen innehåller mätvärden och information om alla källdata, dataflöden, inklusive insikter om datatrafikens hälsa från en källa till [!DNL Identity Service]och till [!DNL Profile].
+<!-- In the [Platform UI](https://platform.adobe.com), select **[!UICONTROL Monitoring]** from the left navigation to access the [!UICONTROL Monitoring] dashboard. The [!UICONTROL Monitoring] dashboard contains metrics and information on all sources dataflows, including insights into the health of data traffic from a source to [!DNL Identity Service], and to [!DNL Profile].
 
-Mitten av kontrollpanelen är [!UICONTROL Source ingestion] som innehåller mått och diagram som visar data för inmatade poster och poster misslyckades.
+At the center of the dashboard is the [!UICONTROL Source ingestion] panel, which contains metrics and graphs that display data on records ingested and records failed. -->
 
-![monitor-dashboard](../assets/ui/monitor-sources/monitoring-dashboard.png)
+Välj [!UICONTROL Sources] från huvudrubriken för att uppdatera din instrumentpanel med en visning av källornas dataflödeshastighet.
 
-Som standard innehåller de data som visas mängder av konsumtion från de senaste 24 timmarna. Välj **[!UICONTROL Last 24 hours]** för att justera tidsramen för de poster som visas.
+![Kontrollpanelen med källkortet valt.](../assets/ui/monitor-sources/sources.png)
 
-![ändringsdatum](../assets/ui/monitor-sources/change-date.png)
+The [!UICONTROL Ingestion rate] diagram visar dataöverföringshastigheten baserat på den konfigurerade tidsramen. Som standard visar kontrollpanelen hur många gånger de senaste 24 timmarna har fått i sig det. Anvisningar om hur du konfigurerar tidsramen finns i guiden [konfigurera övervakningens tidsram](monitor.md#configure-monitoring-time-frame).
 
-Ett kalender-popup-fönster visas med alternativ för alternativa tidsramar för inmatning. Välj **[!UICONTROL Last 30 days]** och sedan **[!UICONTROL Apply]**
+Diagrammet är aktiverat för visning som standard. Om du vill dölja diagrammet markerar du **[!UICONTROL Metrics and graphs]** om du vill inaktivera växlingen och dölja diagrammet.
 
-![adjust-time-frame](../assets/ui/monitor-sources/adjust-timeframe.png)
+![Diagram över matningsfrekvens.](../assets/ui/monitor-sources/metrics-graph.png)
 
-Diagrammen är aktiverade som standard och du kan inaktivera dem för att utöka listan med källor nedan. Välj **[!UICONTROL Metrics and graphs]** om du vill inaktivera diagrammen.
+I den nedre delen av kontrollpanelen visas en tabell som visar den aktuella mätrapporten för alla befintliga källdata.
 
-![mätvärden](../assets/ui/monitor-sources/metrics-graphs.png)
+![Kontrollpanelens metatabell.](../assets/ui/monitor-sources/metrics-table.png)
 
-| Intag av källa | Beskrivning |
-| ---------------- | ----------- |
-| [!UICONTROL Records ingested] | Det totala antalet poster som har importerats. |
-| [!UICONTROL Records failed] | Det totala antalet poster som inte har importerats på grund av fel i data. |
-| [!UICONTROL Total failed dataflows] | Det totala antalet dataflöden med en `failed` status. |
+| Mätvärden | Beskrivning |
+| --- | --- |
+| Mottagna poster | Det totala antalet poster som tagits emot från källan. |
+| Insamlade poster | Det totala antalet poster som har importerats till datasjön. |
+| Överhoppade poster | Det totala antalet poster som hoppats över. |
+| Misslyckade poster | Det totala antalet poster som inte kunde importeras på grund av fel. |
+| Fakturerad frekvens | Procentandelen poster som har importerats baserat på det totala antalet mottagna poster. |
+| Totalt antal misslyckade dataflöden | Totalt antal misslyckade dataflöden. |
 
-I listan över källinmatningar visas alla källor som innehåller minst ett befintligt konto. Listan innehåller även information om varje källas intag, antalet misslyckade poster och det totala antalet misslyckade dataflöden baserat på den tidsram som du tillämpade.
+{style="table-layout:auto"}
 
-![källintag](../assets/ui/monitor-sources/source-ingestion.png)
+Du kan filtrera dina data ytterligare med hjälp av alternativen ovan i mättabellen:
 
-Om du vill sortera igenom listan med källor väljer du **[!UICONTROL My sources]** och välj sedan önskad kategori i listrutan. Om du till exempel vill fokusera på molnlagring väljer du  **[!UICONTROL Cloud storage]**
+| Filtreringsalternativ | Beskrivning |
+| --- | --- |
+| Sök | Använd sökfältet för att filtrera vyn till en enda källtyp. |
+| Källor | Välj **[!UICONTROL Sources]** för att filtrera vyn och visa mätdata per källtyp. Det här är standardvisningen som kontrollpanelen använder. |
+| Dataflöden | Välj **[!UICONTROL Dataflows]** för att filtrera visningen och visa mätdata per dataflöde. |
+| Visa endast fel | Välj **[!UICONTROL Show failures only]** för att filtrera vyn och bara visa dataflöden som rapporterade misslyckade inmatningar. |
+| Mina källor | Du kan filtrera vyn ytterligare genom att använda [!UICONTROL My sources] listrutemeny. Använd listrutan för att filtrera vyn efter kategori. Du kan också välja **[!UICONTROL All sources]** för att visa mätvärden på alla eller källor, eller välja **[!UICONTROL My sources]** om du bara vill visa de källor som du har ett motsvarande konto med. |
 
-![sortera efter kategori](../assets/ui/monitor-sources/sort-by-category.png)
+{style="table-layout:auto"}
 
-Om du vill visa alla befintliga dataflöden för alla källor väljer du **[!UICONTROL Dataflows]**.
+Om du vill övervaka data som hämtas i ett visst dataflöde väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid en källa.
 
-![view-all-dataflows](../assets/ui/monitor-sources/view-all-dataflows.png)
+![Övervaka ett specifikt dataflöde genom att välja filterikonen bredvid en viss källa.](../assets/ui/monitor-sources/monitor-dataflow.png)
 
-Du kan också ange en källa i sökfältet för att isolera en källa. När du har identifierat källan väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid den och se en lista över de aktiva dataflödena.
+Måtttabellen uppdateras till en tabell med aktiva dataflöden som motsvarar den källa du valde. Under det här steget kan du visa ytterligare information om dataflödena, inklusive deras motsvarande datauppsättning och datatyp, samt en tidsstämpel som anger när de senast var aktiva.
 
-![sök](../assets/ui/monitor-sources/search.png)
+Om du vill inspektera ett dataflöde ytterligare väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid ett dataflöde.
 
-En lista över dataflöden visas. Om du vill begränsa listan och fokusera på dataflöden med fel väljer du **[!UICONTROL Show failures only]**.
+![Tabellen för dataflöden i kontrollpanelen för övervakning.](../assets/ui/monitor-sources/select-dataflow.png)
 
-![endast visa-fel](../assets/ui/monitor-sources/show-failures-only.png)
+Därefter kommer du till ett gränssnitt som visar alla dataflödeskörningsiterationer för det dataflöde som du har valt.
 
-Leta reda på det dataflöde som du vill övervaka och välj sedan filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid det om du vill ha mer information om körningsstatus.
+Körningar av dataflöde representerar en instans av körning av dataflöde. Om ett dataflöde till exempel är schemalagt att köras varje timme kl. 9.00, 10.00 och 11.00 har du tre instanser av en flödeskörning. Flödeskörningar är specifika för just din organisation.
 
-![dataflöde](../assets/ui/monitor-sources/dataflow.png)
+Om du vill inspektera mätvärden för ett specifikt dataflödeskörningsiterationer väljer du filterikonen ![filter](../assets/ui/monitor-sources/filter.png) förutom dataflödet.
 
-På dataflödets körningssida visas information om startdatum, datastorlek, status samt behandlingstid för dataflödet. Markera filterikonen ![filter](../assets/ui/monitor-sources/filter.png) bredvid starttiden för dataflödet för att se information om dataflödets körning.
+![Dataflödets metriska körningssida.](../assets/ui/monitor-sources/dataflow-page.png)
 
-![dataflow-run-start](../assets/ui/monitor-sources/dataflow-run-start.png)
+Använd informationssidan för dataflödeskörning för att visa mått och information om den valda körningen.
 
-The [!UICONTROL Dataflow run details] på sidan visas information om dataflödets metadata, partiell inmatningsstatus och felsammanfattning. Felsammanfattningen innehåller det specifika felet på den översta nivån som visar i vilket steg som inmatningsprocessen påträffade ett fel.
+![Detaljsidan för dataflödeskörningen.](../assets/ui/monitor-sources/dataflow-run-details.png)
 
-Bläddra nedåt om du vill se mer specifik information om felet.
+| Information om dataflödeskörning | Beskrivning |
+| --- | --- |
+| Insamlade poster | Det totala antalet poster som har importerats från dataflödeskörningen. |
+| Misslyckade poster | Det totala antalet poster som inte har importerats på grund av fel i dataflödeskörningen. |
+| Totalt antal filer | Det totala antalet filer i dataflödeskörningen. |
+| Storlek på data | Den totala datastorleken i dataflödeskörningen. |
+| Körnings-ID för dataflöde | ID för dataflödets körningsiteration. |
+| Organisations-ID | ID:t för organisationen där dataflödeskörningen skapades. |
+| Status | Status för dataflödeskörningen. |
+| Start för dataflödeskörning | En tidsstämpel som anger när dataflödet startades. |
+| Dataflödeskörning - slut | En tidsstämpel som anger när dataflödets körning avslutades. |
+| Datauppsättning | Den datauppsättning som används för att skapa dataflödet. |
+| Datatyp | Den typ av data som fanns i dataflödet. |
+| Delvis intag | Partiell batchförbrukning är möjligheten att importera data som innehåller fel, upp till ett visst konfigurerbart tröskelvärde. Med den här funktionen kan du importera alla korrekta data till Experience Platform, medan alla felaktiga data batchas separat med information om varför de är ogiltiga. Du kan aktivera partiell inmatning när dataflödet skapas. |
+| Feldiagnostik | Feldiagnostik instruerar källan att skapa feldiagnostik som du kan referera till senare när du övervakar datauppsättningsaktiviteten och dataflödesstatusen. Du kan aktivera feldiagnostik när dataflödet skapas. |
+| Sammanfattning av fel | Om ett dataflöde inte kan köras visas en felkod och en beskrivning i felsammanfattningen för att sammanfatta varför körningen misslyckades. |
 
-![data-low-run-details](../assets/ui/monitor-sources/dataflow-run-details.png)
+{style="table-layout:auto"}
 
-The [!UICONTROL Dataflow run errors] visas det specifika fel- och felkoden som resulterade i att dataflödet inte kunde hämtas. I det här scenariot uppstod ett transformeringsfel för mapparen, vilket resulterade i ett fel på 24 poster.
+Om det uppstår fel i dataflödet kan du rulla nedåt till sidans slut med hjälp av [!UICONTROL Dataflow run errors] gränssnitt.
 
-Välj **[!UICONTROL Files]** för mer information.
+Använd [!UICONTROL Records failed] om du vill visa mätvärden för poster som inte har importerats på grund av fel. Om du vill visa en omfattande felrapport väljer du **[!UICONTROL Preview error diagnostics]**. Om du vill hämta en kopia av feldiagnostiken och ditt filmanifest väljer du **[!UICONTROL Download]** och sedan kopiera exempel-API-anropet som ska användas med [!DNL Data Access] API.
 
-![dataflow-run-errors](../assets/ui/monitor-sources/dataflow-run-errors.png)
+>[!NOTE]
+>
+>Du kan bara använda feldiagnostik om funktionen aktiverades när du skapade källanslutningen.
 
-The [!UICONTROL Files] -panelen innehåller information om filens namn och sökväg.
-
-Om du vill få en mer detaljerad representation av felet väljer du **[!UICONTROL Preview error diagnostics]**.
-
-![filer](../assets/ui/monitor-sources/files.png)
-
-The [!UICONTROL Error diagnostics preview] visas och en förhandsgranskning av upp till 100 fel i dataflödet visas. Du kan välja **[!UICONTROL Download]** för att hämta ett skrivkommando, som sedan gör att du kan hämta feldiagnostiken.
-
-När du är klar väljer du **[!UICONTROL Close]**
-
-![feldiagnostik](../assets/ui/monitor-sources/error-diagnostics.png)
-
-Du kan använda det synliga systemet i det övre huvudet för att navigera tillbaka till [!UICONTROL Monitoring] kontrollpanel. Välj **[!UICONTROL Run start: 2/14/2021, 9:47 PM]** för att gå tillbaka till föregående sida och sedan markera **[!UICONTROL Dataflow: Loyalty Data Ingestion Demo - Failed]** för att återgå till dataflödessidan.
-
-![breadcrumbs](../assets/ui/monitor-sources/breadcrumbs.png)
+![Dataflödets felpanel körs.](../assets/ui/monitor-sources/errors.png)
 
 ## Nästa steg {#next-steps}
 
 Genom att följa den här självstudiekursen har du övervakat inmatningsdataflödet från källnivån med hjälp av **[!UICONTROL Monitoring]** kontrollpanel. Du har också identifierat fel som bidrog till att dataflödena misslyckades under importen. Mer information finns i följande dokument:
 
-* [Övervaka identiteter i dataflöden](./monitor-identities.md)
-* [Övervaka profiler i dataflöden](./monitor-profiles.md)
+* [Övervaka identitetsdata](./monitor-identities.md).
+* [Övervaka profildata](./monitor-profiles.md).
