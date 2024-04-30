@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: ce937f1335283382189fa40f65aa268735c02715
+source-git-commit: 02ecc6bd2ff85d2d837ffe25b090fd65043779a9
 workflow-type: tm+mt
-source-wordcount: '2573'
+source-wordcount: '2700'
 ht-degree: 0%
 
 ---
@@ -88,6 +88,16 @@ Om du har skrivit flera frågor men bara behöver köra en fråga, kan du marker
 [!UICONTROL Run selected query] -ikon. Den här ikonen är som standard inaktiverad tills du väljer frågesyntax i redigeraren.
 
 ![Frågeredigeraren med [!UICONTROL Run selected query] är markerad.](../images/ui/query-editor/run-selected-query.png)
+
+### Avbryt frågeredigeringssession {#cancel-query}
+
+Ta kontroll över frågekörningen och förbättra produktiviteten genom att avbryta frågor som körs länge. Den här åtgärden rensar frågeredigeraren under en frågekörning. Frågan fortsätter att köras i bakgrunden. Om det är en CTAS-fråga kommer den fortfarande att generera en utdatamängd. Om du vill avbryta körningen i redigeraren och fortsätta att komponera en SQL-sats väljer du **[!UICONTROL Cancel query]** efter att en fråga har körts.
+
+![Frågeredigeraren med [!UICONTROL Cancel query] markerad.](../images/ui/query-editor/cancel-query-run.png)
+
+En bekräftelsedialogruta visas. Välj **[!UICONTROL Confirm]** för att avbryta frågekörningen.
+
+![Bekräftelsedialogrutan för Avbryt fråga med Bekräfta markerat.](../images/ui/query-editor/cancel-query-confirmation-dialog.png)
 
 ### Resultatantal {#result-count}
 
@@ -219,7 +229,11 @@ När du sparar en fråga i Frågeredigeraren visas ett bekräftelsemeddelande so
 
 Frågor som har sparats som en mall kan schemaläggas från Frågeredigeraren. Med schemaläggningsfrågor kan du automatisera frågekörningar på en anpassad cache. Du kan schemalägga frågor baserat på frekvens, datum och tid och även välja en utdatamängd för dina resultat om det behövs. Frågescheman kan även inaktiveras eller tas bort via användargränssnittet.
 
-Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Samma begränsning gäller inte för [!DNL Query Service] API:
+Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Samma begränsning gäller inte för [!DNL Query Service] API.
+
+>[!NOTE]
+>
+>Schemalagda frågor som misslyckas tio på varandra följande körningar placeras automatiskt i en [!UICONTROL Quarantined] status. En fråga med den här statusen kräver att du gör något innan fler körningar kan utföras. Se [frågor i karantän](./monitor-queries.md#quarantined-queries) mer information.
 
 Läs dokumentationen om frågescheman för att lära dig mer om [skapa frågescheman i användargränssnittet](./query-schedules.md). Du kan även läsa mer om hur du lägger till scheman med API:t i [slutpunktsguide för schemalagda frågor](../api/scheduled-queries.md).
 

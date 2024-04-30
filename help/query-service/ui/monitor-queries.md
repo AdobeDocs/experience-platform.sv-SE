@@ -2,9 +2,9 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: 7e0259f8807e96118dbcd1085d8b3b3186fc8317
+source-git-commit: e63e3344dd530fc9111f29948f2dfbd4daedf28c
 workflow-type: tm+mt
-source-wordcount: '1711'
+source-wordcount: '1916'
 ht-degree: 0%
 
 ---
@@ -32,12 +32,12 @@ Tabellen nedan beskriver varje tillgänglig kolumn.
 | **[!UICONTROL Name]** | Namnfältet är antingen mallnamnet eller de första tecknen i SQL-frågan. Alla frågor som skapas via gränssnittet med Frågeredigeraren får i början ett namn. Om frågan skapades med API:t blir dess namn ett fragment av den ursprungliga SQL-kod som användes för att skapa frågan. Om du vill visa en lista över alla körningar som är associerade med frågan väljer du ett objekt i [!UICONTROL Name] kolumn. Mer information finns i [fråga kör schemadetaljer](#query-runs) -avsnitt. |
 | **[!UICONTROL Template]** | Frågans mallnamn. Välj ett mallnamn för att gå till Frågeredigeraren. Frågemallen visas i Frågeredigeraren. Om det inte finns något mallnamn markeras raden med ett bindestreck och det går inte att omdirigera till Frågeredigeraren för att visa frågan. |
 | **[!UICONTROL SQL]** | Ett fragment av SQL-frågan. |
-| **[!UICONTROL Run frequency]** | Den gräns som frågan är inställd på att köras vid. De tillgängliga värdena är `Run once` och `Scheduled`. Frågor kan filtreras utifrån deras körningsfrekvens. |
+| **[!UICONTROL Run frequency]** | Den gräns som frågan är inställd på att köras vid. De tillgängliga värdena är `Run once` och `Scheduled`. |
 | **[!UICONTROL Created by]** | Namnet på den användare som skapade frågan. |
 | **[!UICONTROL Created]** | Tidsstämpeln när frågan skapades, i UTC-format. |
 | **[!UICONTROL Last run timestamp]** | Den senaste tidsstämpeln när frågan kördes. Den här kolumnen visar om en fråga har körts enligt det aktuella schemat. |
 | **[!UICONTROL Last run status]** | Status för den senaste frågekörningen. Statusvärdena är: `Success`, `Failed`, `In progress`och `No runs`. |
-| **[!UICONTROL Schedule Status]** | Den schemalagda frågans aktuella status. Det finns fem möjliga värden, [!UICONTROL Registering], [!UICONTROL Active], [!UICONTROL Inactive], [!UICONTROL Deleted]och ett bindestreck. <ul><li>Avstavningen anger att den schemalagda frågan är en enstaka, icke återkommande fråga.</li><li>The [!UICONTROL Registering] status anger att systemet fortfarande bearbetar skapandet av det nya schemat för frågan. Observera att du inte kan inaktivera eller ta bort en schemalagd fråga medan den registreras.</li><li>The [!UICONTROL Active] status anger att den schemalagda frågan har **ännu inte godkänt** datum och tid för slutförande.</li><li>The [!UICONTROL Inactive] status anger att den schemalagda frågan har **passerad** datum och tid för slutförande.</li><li>The [!UICONTROL Deleted] status anger att frågeschemat har tagits bort.</li></ul> |
+| **[!UICONTROL Schedule Status]** | Den schemalagda frågans aktuella status. Det finns sex möjliga värden, [!UICONTROL Registering], [!UICONTROL Active], [!UICONTROL Inactive], [!UICONTROL Deleted], ett bindestreck och [!UICONTROL Quarantined].<ul><li>The **[!UICONTROL Registering]** status anger att systemet fortfarande bearbetar skapandet av det nya schemat för frågan. Observera att du inte kan inaktivera eller ta bort en schemalagd fråga medan den registreras.</li><li>The **[!UICONTROL Active]** status anger att den schemalagda frågan har **ännu inte godkänt** datum och tid för slutförande.</li><li>The **[!UICONTROL Inactive]** status anger att den schemalagda frågan har **passerad** datum och tid för slutförande eller har markerats av en användare som inaktiv.</li><li>The **[!UICONTROL Deleted]** status anger att frågeschemat har tagits bort.</li><li>Avstavningen anger att den schemalagda frågan är en enstaka, icke återkommande fråga.</li><li>The **[!UICONTROL Quarantined]** status anger att frågan har misslyckats tio gånger i följd och kräver att du gör något innan fler körningar kan utföras.</li></ul> |
 
 >[!TIP]
 >
@@ -63,15 +63,19 @@ Växla mellan de relevanta kryssrutorna för att ta bort eller lägga till en ta
 
 ## Hantera schemalagda frågor med infogade åtgärder {#inline-actions}
 
-The [!UICONTROL Scheduled Queries] I vyn finns olika textbundna åtgärder för att hantera alla schemalagda frågor från en och samma plats. Textbundna åtgärder anges på varje rad med ellips. Markera ellipsen för en schemalagd fråga som du vill hantera för att se de tillgängliga alternativen på en snabbmeny. De tillgängliga alternativen omfattar [[!UICONTROL Disable schedule]](#disable) eller [!UICONTROL Enable schedule], [[!UICONTROL Delete schedule]](#delete)och [[!UICONTROL Subscribe]](#alert-subscription) för att fråga efter varningar.
+The [!UICONTROL Scheduled Queries] I vyn finns olika textbundna åtgärder för att hantera alla schemalagda frågor från en och samma plats. Textbundna åtgärder anges på varje rad med ellips. Markera ellipsen för en schemalagd fråga som du vill hantera för att se de tillgängliga alternativen på en snabbmeny. De tillgängliga alternativen omfattar [[!UICONTROL Disable schedule]](#disable) eller [!UICONTROL Enable schedule], [[!UICONTROL Delete schedule]](#delete), [[!UICONTROL Subscribe]](#alert-subscription) för att fråga efter varningar, och [Aktivera eller [!UICONTROL Disable quarantine]](#quarantined-queries).
 
-![Fliken Schemalagda frågor med de infogade åtgärdsellipserna och popup-menyn markerade.](../images/ui/monitor-queries/disable-inline.png)
+![Fliken Schemalagda frågor med de infogade åtgärdsellipserna och popup-menyn markerade.](../images/ui/monitor-queries/inline-actions.png)
 
 ### Inaktivera eller aktivera en schemalagd fråga {#disable}
 
 Om du vill inaktivera en schemalagd fråga markerar du ellipsen för en schemalagd fråga som du vill hantera och väljer sedan **[!UICONTROL Disable schedule]** från alternativen på snabbmenyn. En dialogruta visas där du kan bekräfta åtgärden. Välj **[!UICONTROL Disable]** för att bekräfta inställningen.
 
 När en schemalagd fråga har inaktiverats kan du aktivera schemat via samma process. Markera ellipsen och välj **[!UICONTROL Enable schedule]** bland de tillgängliga alternativen.
+
+>[!NOTE]
+>
+>Om en fråga har placerats i karantän bör du granska mallens SQL innan du aktiverar dess schema. Detta förhindrar slöseri med beräkningstimmar om mallfrågan fortfarande har problem.
 
 ### Ta bort en schemalagd fråga {#delete}
 
@@ -91,6 +95,10 @@ The [!UICONTROL Alerts] öppnas. The [!UICONTROL Alerts] prenumererar på både 
 
 ![Dialogrutan med aviseringsprenumerationer.](../images/ui/monitor-queries/alert-subscription-dialog.png)
 
+>[!NOTE]
+>
+>Om du vill få meddelanden om att en fråga hamnar i karantän måste du först registrera körningarna av den schemalagda frågan i [karantänfunktion](#quarantined-queries).
+
 Se [API-dokumentation för aviseringsprenumerationer](../api/alert-subscriptions.md) för mer information.
 
 ### Visa frågedetaljer {#query-details}
@@ -98,6 +106,16 @@ Se [API-dokumentation för aviseringsprenumerationer](../api/alert-subscriptions
 Välj informationsikonen (![En informationsikon.](../images/ui/monitor-queries/information-icon.png)) om du vill visa informationspanelen för frågan. Panelen Detaljer innehåller all relevant information om frågan utöver de fakta som finns i tabellen med schemalagda frågor. Ytterligare information omfattar fråge-ID, senaste ändringsdatum, frågans SQL, schema-ID och aktuellt uppsättningsschema.
 
 ![Fliken Schemalagda frågor med informationsikonen och informationspanelen markerad.](../images/ui/monitor-queries/details-panel.png)
+
+### Frågor i karantän {#quarantined-queries}
+
+När en schemalagd fråga som misslyckas tio på varandra följande körningar registreras i en [!UICONTROL Quarantined] status. En fråga med den här statusen blir inaktiv och körs inte vid den schemalagda tidpunkten. Sedan måste du ingripa innan fler exekveringar kan utföras. Detta skyddar systemresurser eftersom du måste granska och korrigera problemen med din SQL innan fler körningar utförs.
+
+Om du vill aktivera en schemalagd fråga för karantänfunktionen markerar du ellipserna (`...`) följt av [!UICONTROL Enable quarantine] i listrutan som visas.
+
+![Fliken för schemalagda frågor med ellipserna och Aktivera karantän markerat i listrutan för infogade åtgärder.](../images/ui/monitor-queries/inline-enable.png)
+
+Frågor kan också registreras i karantänfunktionen när schemat skapas. Se [dokumentation för frågescheman](./query-schedules.md#quarantine) för mer information.
 
 ## Filtrera frågor {#filter}
 
@@ -128,7 +146,7 @@ Den här informationen finns i en tabell med fem kolumner. Varje rad betecknar e
 | **[!UICONTROL Query run ID]** | Frågekörnings-ID för daglig körning. Välj **[!UICONTROL Query run ID]** navigera till [!UICONTROL Query run overview]. |
 | **[!UICONTROL Query run start]** | Tidsstämpeln när frågan kördes. Tidsstämpeln är i UTC-format. |
 | **[!UICONTROL Query run complete]** | Tidsstämpeln när frågan slutfördes. Tidsstämpeln är i UTC-format. |
-| **[!UICONTROL Status]** | Status för den senaste frågekörningen. De tre statusvärdena är: `successful` `failed` eller `in progress`. |
+| **[!UICONTROL Status]** | Status för den senaste frågekörningen. Statusvärdena är: `Success`, `Failed`, `In progress`, eller `Quarantined`. |
 | **[!UICONTROL Dataset]** | Den datauppsättning som ingår i körningen. |
 
 Information om frågan som schemaläggs finns i [!UICONTROL Properties] -panelen. Panelen innehåller det inledande fråge-ID:t, klienttyp, mallnamn, frågans SQL-kod och schemats avslutning.
