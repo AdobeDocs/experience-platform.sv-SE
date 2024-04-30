@@ -2,10 +2,10 @@
 description: Lär dig hur du skapar indatafält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 title: Kunddatafält
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 6366686e3b3f656d200aa245fc148f00e623713c
 workflow-type: tm+mt
-source-wordcount: '1560'
-ht-degree: 1%
+source-wordcount: '1722'
+ht-degree: 0%
 
 ---
 
@@ -340,6 +340,56 @@ Om du vill skapa en dynamisk nedrullningsbar väljare måste du konfigurera två
 
 Ange `destinationServerId` parameter till ID:t för målservern som du skapade i steg 1. Du kan se målserverns ID i svaret från [hämta en målserverkonfiguration](../../authoring-api/destination-server/retrieve-destination-server.md) API-anrop.
 
+## Skapa kapslade kunddatafält {#nested-fields}
+
+Du kan skapa kapslade kunddatafält för komplexa integreringsmönster. På så sätt kan du kedja en serie markeringar för kunden.
+
+Du kan t.ex. lägga till kapslade kunddatafält för att kräva att kunderna väljer en integreringstyp med målet, omedelbart följt av ett annat val. Den andra markeringen är ett kapslat fält inom integrationstypen.
+
+Om du vill lägga till ett kapslat fält använder du `properties` enligt nedan. I konfigurationsexemplet nedan kan du se tre separata kapslade fält i **Din destination - Integrationsspecifika inställningar** kunddatafält
+
+>[!TIP]
+>
+>Från och med versionen från april 2024 kan du ange en `isRequired` parameter i kapslade fält. I konfigurationsfragmentet nedan markeras de två första kapslade fälten som obligatoriska (markerad rad xxx) och kunderna kan inte fortsätta såvida de inte väljer ett värde för fältet. Läs mer om obligatoriska fält i [parametrar som stöds](#supported-parameters) -avsnitt.
+
+```json {line-numbers="true" highlight="10,19"}
+    {
+      "name": "yourdestination",
+      "title": "Yourdestination - Integration Specific Settings",
+      "type": "object",
+      "properties": [
+        {
+          "name": "agreement",
+          "title": "Advertiser data destination terms agreement. Enter I AGREE.",
+          "type": "string",
+          "isRequired": true,
+          "pattern": "I AGREE",
+          "readOnly": false,
+          "hidden": false
+        },
+        {
+          "name": "account-name",
+          "title": "Account name",
+          "type": "string",
+          "isRequired": true,
+          "readOnly": false,
+          "hidden": false
+        },
+        {
+          "name": "email",
+          "title": "Email address",
+          "type": "string",
+          "isRequired": false,
+          "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
+          "readOnly": false,
+          "hidden": false
+        }
+      ],
+      "isRequired": false,
+      "readOnly": false,
+      "hidden": false,
+```
+
 ## Skapa villkorliga kunddatafält {#conditional-options}
 
 Du kan skapa villkorsstyrda kunddatafält, som bara visas i aktiveringsarbetsflödet när användarna väljer ett visst alternativ.
@@ -358,7 +408,7 @@ Om du vill ange ett fält som villkorligt använder du `conditional` enligt neda
 }
 ```
 
-I ett större sammanhang kan du se `conditional` fält som används i målkonfigurationen nedan, tillsammans med `fileType` strängen och `csvOptions` det objekt som det är definierat i.
+I ett större sammanhang kan du se `conditional` fält som används i målkonfigurationen nedan, tillsammans med `fileType` strängen och `csvOptions` det objekt som det är definierat i. Villkorsfälten definieras i `properties` parameter.
 
 ```json {line-numbers="true" highlight="3-15, 21-25"}
 "customerDataFields":[
