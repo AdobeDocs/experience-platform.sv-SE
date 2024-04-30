@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över källkopplingar
 description: Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f8df3ddb96ad0810a7a46b0a55125336c427aebd
+source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
 workflow-type: tm+mt
-source-wordcount: '1500'
+source-wordcount: '1501'
 ht-degree: 0%
 
 ---
@@ -170,6 +170,7 @@ Experience Platform stöder inmatning av data från ett system för automatiseri
 - [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md) [!BADGE Grupp]{type=Informative}
 - [[!DNL Oracle Eloqua]](connectors/marketing-automation/oracle-eloqua.md) [!BADGE Grupp]{type=Informative}
 - [[!DNL Oracle NetSuite]](connectors/marketing-automation/oracle-netsuite.md) [!BADGE Grupp]{type=Informative}
+- [[!DNL PathFactory]](connectors/marketing-automation/pathfactory.md) [!BADGE Grupp]{type=Informative}
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md) [!BADGE Grupp]{type=Informative}
 <!-- 
 - [[!DNL Oracle Responsys]](connectors/marketing-automation/oracle-responsys.md)
