@@ -2,9 +2,9 @@
 title: Regler
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
 exl-id: 2beca2c9-72b7-4ea0-a166-50a3b8edb9cd
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 77190e4acf7aad448bbfdebd8ada4dbe9a55f8e0
 workflow-type: tm+mt
-source-wordcount: '1952'
+source-wordcount: '2007'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Om en angiven händelse inträffar utvärderas villkoren och de angivna åtgärd
 
 * **Händelser**: Ange en eller flera händelser som måste äga rum för att aktivera regeln. Flera händelser förenas med en OR. Alla angivna händelser utlöser regeln.
 
-* **Villkor**: Begränsa händelsen genom att konfigurera alla villkor som måste vara sanna för att en händelse ska aktivera regeln. Ett undantag definieras som ett NOT-villkor. Flera villkor förenas med en AND.
+* **Villkor**: Begränsa händelsen genom att konfigurera alla villkor som måste vara true för att en händelse ska aktivera regeln. Ett undantag definieras som ett NOT-villkor. Flera villkor förenas med en AND.
 
 Vilka händelser som är tillgängliga beror på vilka tillägg som är installerade. Mer information om händelserna i Core-tillägget finns i [Huvudtilläggshändelsetyper](../../extensions/client/core/overview.md#core-extension-event-types).
 
@@ -51,27 +51,31 @@ Vilka händelser som är tillgängliga beror på vilka tillägg som är installe
 
 Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor uppfylls.
 
-1. Öppna [!UICONTROL Rules] tabbtangenten och sedan **[!UICONTROL Create New Rule]**.
+>[!TIP]
+>
+>Du kan visa ytterligare tillgängliga resurser om du vill veta mer om den här funktionen genom att välja ![om](../../images/ui/event-forwarding/overview/about.png) från den högra panelen.
 
-   ![](../../images/launch-rule-builder.jpg)
+1. Öppna [!UICONTROL Rules] tabbtangenten och sedan välja **[!UICONTROL Create New Rule]**.
+
+   ![Fliken Regler som markerar namnfältet.](../../images/launch-rule-builder.png)
 
 1. Namnge regeln.
-1. Välj händelser **[!UICONTROL Add]** ikon.
-1. Välj ditt tillägg och en av de händelsetyper som är tillgängliga för tillägget och konfigurera sedan inställningarna för händelsen.
+1. Välj händelser **[!UICONTROL Add]** -ikon.
+1. Välj tillägget och en av de händelsetyper som är tillgängliga för tillägget och konfigurera sedan inställningarna för händelsen.
 
-   ![](../../images/rule-event-config.png)
+   ![Konfigurationssida för regelhändelser.](../../images/rule-event-config.png)
 
    Vilka händelsetyper som är tillgängliga beror på vilket tillägg du har valt. Händelseinställningarna skiljer sig åt beroende på händelsetyp. Vissa händelser har inga inställningar som behöver konfigureras.
 
    >[!IMPORTANT]
    >
-   >I en klientregel tokeniseras dataelement med en `%` i början och slutet av dataelementnamnet. Exempel, `%viewportHeight%`. I en regel för vidarebefordran av händelser tokeniseras dataelement med `{{` i början och `}}` i slutet av dataelementnamnet. Exempel, `{{viewportHeight}}`.
+   >I en klientregel tokeniseras dataelement med en `%` i början och slutet av dataelementnamnet. Till exempel: `%viewportHeight%`. I en regel för vidarebefordran av händelser tokeniseras dataelement med `{{` i början och `}}` i slutet av dataelementnamnet. Till exempel: `{{viewportHeight}}`.
 
    Om du vill referera till data från Edge-nätverket måste sökvägen till dataelementet vara `arc.event._<element>_`.
 
    `arc` står för Adobe Response Context.
 
-   Exempel: `arc.event.xdm.web.webPageDetails.URL`
+   Till exempel: `arc.event.xdm.web.webPageDetails.URL`
 
    >[!IMPORTANT]
    >
@@ -81,15 +85,15 @@ Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor u
 
    Standardordningen för alla regelkomponenter är 50. Om du vill att en ska köras tidigare, ger du den en siffra som är lägre än 50.
 
-   * Körningsordningen är nummerordning. 1 kommer före 3. 3 kommer före 10. 10 kommer före 100, osv.
+   * Körningsordningen är nummerordning. 1 kommer före 3. 3 kommer före tio. 10 kommer före 100, osv.
    * Regler som har samma ordning körs i ingen speciell ordning.
    * Regler aktiveras i ordning, men avslutas inte nödvändigtvis i samma ordning. Om regel A och regel B delar en händelse och du tilldelar ordning så att regel A kommer först, så finns det ingen garanti för att regel A avslutas innan regel B börjar om regel A gör något asynkront.
 
-      Om du vill att den ska köras senare ger du den ett tal som är högre än 50. Mer information om beställning finns i [Regelordning](rules.md#rule-ordering).
+     Om du vill att den ska köras senare ger du den ett tal som är högre än 50. Mer information om beställning finns i [Regelordning](rules.md#rule-ordering).
 
 1. Välj villkor **[!UICONTROL Add]** väljer du sedan en logiktyp, ett tillägg, en villkorstyp och konfigurerar inställningarna för villkoret. Nästa, välj **[!UICONTROL Keep Changes]**.
 
-   ![](../../images/condition-settings.png)
+   ![Konfigurationssida för regelvillkor.](../../images/condition-settings.png)
 
    Vilka villkorstyper som är tillgängliga beror på vilket tillägg du har valt. Villkorsinställningarna varierar beroende på villkorstypen.
 
@@ -98,24 +102,24 @@ Skapa en regel genom att ange vilka åtgärder som ska utföras om ett villkor u
    * Med en vanlig logiktyp kan åtgärder utföras om villkoret är uppfyllt
    * Undantagslogiktypen förhindrar att åtgärder körs om villkoret uppfylls
 
-   (Avancerat) Tidsgräns: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. Det här attributet definierar den maximala tid som tillåts för villkoret att köras. Om tidsgränsen nås misslyckas villkoret och resten av regelns villkor och åtgärder tas bort från behandlingskön. Standardvärdet är 2 000 ms.
+   (Avancerat) Timeout: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. Det här attributet definierar den maximala tid som tillåts för villkoret att köras. Om tidsgränsen nås misslyckas villkoret och resten av regelns villkor och åtgärder tas bort från behandlingskön. Standardvärdet är 2 000 ms.
 
    Du kan lägga till så många villkor du vill. Flera villkor i samma regel förenas med AND.
 
-1. Välj funktionsmakron **[!UICONTROL Add]** -ikonen, välj sedan ditt tillägg och en av de tillgängliga åtgärdstyperna för tillägget, konfigurera inställningarna för åtgärden och välj sedan **[!UICONTROL Keep Changes]**.
+1. Välj funktionsmakron **[!UICONTROL Add]** och sedan välja tillägg och en av åtgärdstyperna som är tillgängliga för tillägget, konfigurera inställningarna för åtgärden och sedan välja **[!UICONTROL Keep Changes]**.
 
-   ![](../../images/action-settings.png)
+   ![Konfigurationssida för regelåtgärd.](../../images/action-settings.png)
 
    Vilka åtgärder som är tillgängliga beror på vilket tillägg du har valt. Åtgärdsinställningarna skiljer sig åt beroende på åtgärdstyp.
 
-   (Avancerat) Vänta tills nästa åtgärd körs: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. När det här alternativet är markerat kommer taggarna inte att anropa nästa åtgärd förrän den här åtgärden har slutförts. När alternativet är avmarkerat börjar nästa åtgärd att utföras omedelbart. Standardvärdet är **[!UICONTROL Checked]**.
+   (Avancerat) Vänta tills nästa åtgärd körs: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. När det här alternativet är markerat kommer taggarna inte att anropa nästa åtgärd förrän den här åtgärden är slutförd. När alternativet är avmarkerat börjar nästa åtgärd att utföras omedelbart. Standardvärdet är **[!UICONTROL Checked]**.
 
-   (Avancerat) Tidsgräns: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. Den definierar den maximala tiden som åtgärden kan slutföras. Om tidsgränsen nås misslyckas åtgärden och alla efterföljande åtgärder för den här regeln tas bort från arbetskön. Standardvärdet är 2 000 ms.
+   (Avancerat) Timeout: Det här alternativet är tillgängligt när regelkomponentsekvensering är aktiverat på din egenskap. Den definierar den maximala tiden som åtgärden kan slutföras. Om tidsgränsen nås misslyckas åtgärden och alla efterföljande åtgärder för den här regeln tas bort från arbetskön. Standardvärdet är 2 000 ms.
 
 
 1. Granska din regel och välj sedan **[!UICONTROL Save Rule]**.
 
-   Senare när du [publicera](../publishing/overview.md)lägger du till den här regeln i ett bibliotek och distribuerar den.
+   Senare, när du [publicera](../publishing/overview.md)lägger du till den här regeln i ett bibliotek och distribuerar den.
 
 När du skapar eller redigerar regler kan du spara och bygga enligt [aktivt bibliotek](../publishing/libraries.md#active-library). Ändringen sparas omedelbart i biblioteket och en bygge körs. Byggets status visas.
 

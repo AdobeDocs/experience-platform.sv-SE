@@ -2,9 +2,9 @@
 title: Översikt över taggar
 description: Taggar i Adobe Experience Platform är nästa generation av tagghanteringsfunktioner från Adobe. Taggar ger kunderna ett enkelt sätt att driftsätta och hantera alla analys-, marknadsförings- och annonstaggar som behövs för att driva relevanta kundupplevelser.
 exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
-source-git-commit: 81f25e74931354003d89a57adedb578ddfe00704
+source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '588'
 ht-degree: 1%
 
 ---
@@ -28,6 +28,10 @@ Taggar erbjuds [!DNL Adobe Experience Cloud] kunderna som en inkluderad mervärd
 * Engagerande upplevelser genom integrering av data- och marknadsföringsteknologi med regelbyggaren.
 
 ## Viktiga funktioner {#key-features}
+
+Använd hjälpen för In-produkten i den högra panelen för att lära dig mer om taggar och visa ytterligare tillgängliga resurser.
+
+![Taggar egenskaper i användargränssnittet för datainsamling.](./images/ui/tags-overview/tags-properties.png)
 
 ### Tillägg {#extensions}
 

@@ -2,9 +2,9 @@
 title: Tillägg
 description: Lär dig hur taggtillägg fungerar i Adobe Experience Platform.
 exl-id: e911bedd-6c67-4339-91d7-839c8b00c153
-source-git-commit: 88939d674c0002590939004e0235d3da8b072118
+source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -43,13 +43,13 @@ Sidan Tillägg innehåller tre vyer:
 
 * Installerad
 
-   Visar alla installerade tillägg.
+  Visar alla installerade tillägg.
 
 * Katalog
 * Visar alla tillgängliga tillägg
 * Uppdateringar
 
-   Visar uppdateringar av installerade tillägg.
+  Visar uppdateringar av installerade tillägg.
 
 Välj **[!UICONTROL Extensions]** för att se alla installerade tillägg. Du kan också använda katalogen för att visa en lista över alla tillgängliga tillägg och vilka tillägg som har tillgängliga uppdateringar.
 
@@ -59,10 +59,14 @@ Se [Referens för tillägg](../../../extensions/client/overview.md) om du vill h
 
 Taggar är mycket utökningsbara. Tillägg lägger till kärnfunktioner i taggar. Ett vanligt användningsområde för tillägg är att skapa integreringar med andra program.
 
+>[!TIP]
+>
+>Använd hjälpen för produkten i den högra panelen för att lära dig mer om tillägg och visa ytterligare tillgängliga resurser.
+
 1. Från en egenskaps översiktssida öppnar du **[!UICONTROL Extensions]** -fliken.
 1. Välj ett tillägg.
 
-   ![Kärntillägg](../../../images/extensions.png)
+   ![Fliken Katalog med huvudtillägg på fliken Tillägg.](../../../images/extensions.png)
 
    * Om tillägget finns väljer du det i tilläggskatalogen.
    * För musen över ett tillägg i listan för att konfigurera eller inaktivera det.
