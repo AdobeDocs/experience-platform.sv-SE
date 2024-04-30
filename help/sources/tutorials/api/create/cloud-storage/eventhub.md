@@ -3,9 +3,9 @@ title: Skapa en källanslutning för Azure Event Hubs med API:t för Flow Servic
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: d22c71fb77655c401f4a336e339aaf8b3125d1b6
+source-git-commit: e4ea21af3f0d9e810959330488dc06bc559cf72c
 workflow-type: tm+mt
-source-wordcount: '1005'
+source-wordcount: '1473'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,29 @@ För att [!DNL Flow Service] för att få kontakt med [!DNL Event Hubs] måste d
 | `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
 | `eventHubName` | Namnet på [!DNL Event Hubs] källa. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+
+Mer information om SAS-autentisering (shared access signatures) för [!DNL Event Hubs], läsa [[!DNL Azure] guide om användning av SAS](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+
+>[!TAB Azure Active Directory-autentisering för händelsehubb]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `tenantId` | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| `clientId` | Program-ID som tilldelats din app. Du kan hämta detta ID från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| `clientSecretValue` | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+
+Mer information om [!DNL Azure Active Directory], läsa [Azure-guide om användning av Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!TAB Händelsehubben omfattade Azure Active Directory-autentisering]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `tenantId` | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| `clientId` | Program-ID som tilldelats din app. Du kan hämta detta ID från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| `clientSecretValue` | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| `eventHubName` | Namnet på [!DNL Event Hubs] källa. |
 
 >[!ENDTABS]
 
@@ -171,6 +194,120 @@ curl -X POST \
 | `auth.params.sasKey` | Den genererade signaturen för delad åtkomst. |
 | `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
 | `params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
+| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+
++++
+
++++svar
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
+
+```json
+{
+    "id": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+}
+```
+
++++
+
+>[!TAB Azure Active Directory-autentisering för händelsehubb]
+
+Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections` slutpunkt när du anger värden för `tenantId`, `clientId`,`clientSecretValue`och `namespace`.
+
++++Begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Azure Event Hubs connection",
+      "description": "Connector for Azure Event Hubs",
+      "auth": {
+          "specName": "Event Hub Azure Active Directory Auth",
+          "params": {
+              "tenantId": "{TENANT_ID}",
+              "clientId": "{CLIENT_ID}",
+              "clientSecretValue": "{CLIENT_SECRET_VALUE}",
+              "namespace": "{NAMESPACE}" 
+          }
+      },
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.tenantId` | Klient-ID för ditt program. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| `auth.params.clientId` | Klient-ID för din organisation. |
+| `auth.params.clientSecretValue` | Klientens hemliga värde för din organisation. |
+| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
+| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+
++++
+
++++svar
+
+Ett godkänt svar returnerar information om den nya basanslutningen, inklusive dess unika identifierare (`id`). Detta anslutnings-ID krävs i nästa steg för att skapa en källanslutning.
+
+```json
+{
+    "id": "4cdbb15c-fb1e-46ee-8049-0f55b53378fe",
+    "etag": "\"6507cfd8-0000-0200-0000-5e18fc600000\""
+}
+```
+
++++
+
+>[!TAB Händelsehubben omfattade Azure Active Directory-autentisering]
+
+Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections` slutpunkt när du anger värden för `tenantId`, `clientId`,`clientSecretValue`, `namespace`och `eventHubName`.
+
++++Begäran
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Azure Event Hubs connection",
+      "description": "Connector for Azure Event Hubs",
+      "auth": {
+          "specName": "Event Hub Scoped Azure Active Directory Auth",
+          "params": {
+              "tenantId": "{TENANT_ID}",
+              "clientId": "{CLIENT_ID}",
+              "clientSecretValue": "{CLIENT_SECRET_VALUE}",
+              "namespace": "{NAMESPACE}",
+              "eventHubName": "{EVENT_HUB_NAME}" 
+          }
+      },
+      "connectionSpec": {
+          "id": "bf9f5905-92b7-48bf-bf20-455bc6b60a4e",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| -------- | ----------- |
+| `auth.params.tenantId` | Klient-ID för ditt program. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| `auth.params.clientId` | Klient-ID för din organisation. |
+| `auth.params.clientSecretValue` | Klientens hemliga värde för din organisation. |
+| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
+| `auth.params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
 | `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 +++

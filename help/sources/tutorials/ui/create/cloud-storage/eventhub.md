@@ -3,9 +3,9 @@ title: Skapa en Azure Event Hubs-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Azure Event Hubs-källanslutning med Adobe Experience Platform-gränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: 1680cc4e1d5c1576767053a74e560bc2eb8c24cb
+source-git-commit: e4ea21af3f0d9e810959330488dc06bc559cf72c
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
@@ -52,9 +52,32 @@ För att autentisera [!DNL Event Hubs] källkoppling måste du ange värden för
 | Namnutrymme | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
 | Händelsehubbens namn | Namnet på [!DNL Event Hubs] källa. |
 
->[!ENDTABS]
+Mer information om SAS-autentisering (shared access signatures) för [!DNL Event Hubs], läsa [[!DNL Azure] guide om användning av SAS](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
-Mer information om dessa värden finns i [det här händelsehubbsdokumentet](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+>[!TAB Azure Active Directory-autentisering för händelsehubb]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| Klient-ID | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| Klient-ID | Program-ID som tilldelats din app. Du kan hämta detta ID från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| Värde för klienthemlighet | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| Namnutrymme | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+
+Mer information om [!DNL Azure Active Directory], läsa [Azure-guide om användning av Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!TAB Händelsehubben omfattade Azure Active Directory-autentisering]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| Klient-ID | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| Klient-ID | Program-ID som tilldelats din app. Du kan hämta detta ID från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| Värde för klienthemlighet | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
+| Namnutrymme | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| Händelsehubbens namn | Namnet på [!DNL Event Hubs] källa. |
+
+Mer information om [!DNL Azure Active Directory], läsa [Azure-guide om användning av Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!ENDTABS]
 
 När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för att länka dina [!DNL Event Hubs] konto till Experience Platform.
 
@@ -90,7 +113,7 @@ Om du vill skapa ett nytt konto väljer du **[!UICONTROL New account]** och ange
 
 >[!TAB Standardautentisering]
 
-Skapa en [!DNL Event Hubs] konto med standardautentisering, välj **[!UICONTROL Standard authentication]** och sedan ange värden för [!UICONTROL SAS key name], [!UICONTROL SAS key]och [!UICONTROL Namespace].
+Skapa en [!DNL Event Hubs] konto med standardautentisering, använd [!UICONTROL Account authentication] listrutemeny och välj **[!UICONTROL Standard authentication]**. Ange sedan värden för [!UICONTROL SAS key name], [!UICONTROL SAS key]och [!UICONTROL Namespace].
 
 När du har angett dina autentiseringsuppgifter väljer du **[!UICONTROL Connect to source]**.
 
@@ -98,11 +121,23 @@ När du har angett dina autentiseringsuppgifter väljer du **[!UICONTROL Connect
 
 >[!TAB SAS-autentisering]
 
-Skapa en [!DNL Event Hubs] konto med SAS-autentisering, välj **[!UICONTROL SAS authentication]** och sedan ange värden för [!UICONTROL SAS key name], [!UICONTROL SAS key], [!UICONTROL Namespace]och [!UICONTROL Event Hubs name].
+Skapa en [!DNL Event Hubs] konto med SAS-autentisering, använd [!UICONTROL Account authentication] listrutemeny och välj **[!UICONTROL SAS authentication]**. Ange sedan värden för [!UICONTROL SAS key name], [!UICONTROL SAS key], [!UICONTROL Namespace]och [!UICONTROL Event Hubs name].
 
 När du har angett dina autentiseringsuppgifter väljer du **[!UICONTROL Connect to source]**.
 
 ![SAS-autentiseringsgränssnittet för Azure Event Hubs.](../../../../images/tutorials/create/eventhub/sas.png)
+
+>[!TAB Azure Active Directory-autentisering för händelsehubb]
+
+Skapa en [!DNL Event Hubs] konto med Event Hub Azure Active Directory-autentisering, använd [!UICONTROL Account authentication] listrutemeny och välj **[!UICONTROL Event Hub Azure Active Directory]**. Ange sedan värden för [!UICONTROL Tenant ID], [!UICONTROL Client ID], [!UICONTROL Client Secret Value]och [!UICONTROL Namespace].
+
+![Azure Event Hub Azure Active Directory-autentisering](../../../../images/tutorials/create/eventhub/active-directory.png)
+
+>[!TAB Händelsehubben omfattade Azure Active Directory-autentisering]
+
+Skapa en [!DNL Event Hubs] konto med Event Hub-omfattande Azure Active Directory-autentisering, använd [!UICONTROL Account authentication] listrutemeny och välj **[!UICONTROL Event Hub Scoped Azure Active Directory]**. Ange sedan värden för [!UICONTROL Tenant ID], [!UICONTROL Client ID], [!UICONTROL Client Secret Value], [!UICONTROL Namespace]och [!UICONTROL Event Hub Name].
+
+![Azure Event Hub omfattade Azure Activity Directory-autentisering](../../../../images/tutorials/create/eventhub/scoped.png)
 
 >[!ENDTABS]
 
