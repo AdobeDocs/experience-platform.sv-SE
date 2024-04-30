@@ -2,16 +2,16 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformationen för Adobe Experience Platform i mars 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d698bf0b8b0dbdb85909008bb3b60efb0575accc
+source-git-commit: 6ad7d55ca0a544879db9738c0a4ab914fdc363bd
 workflow-type: tm+mt
-source-wordcount: '1188'
+source-wordcount: '1726'
 ht-degree: 3%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform
 
-**Releasedatum: 19 mars 2024**
+**Releasedatum: 30 april 2024**
 
 >[!TIP]
 >
@@ -19,117 +19,168 @@ ht-degree: 3%
 
 Uppdateringar av befintliga funktioner i Experience Platform:
 
-- [Katalogtjänst](#catalog-service)
+- [Kontrollpaneler](#dashboards)
 - [Datainsamling](#data-collection)
-- [Dataförberedelse](#data-prep)
 - [Mål ](#destinations)
-- [Experience Data Model (XDM)](#xdm)
+- [Identitetstjänst](#identity-service)
+- [Övervakning](#monitoring)
+- [Frågetjänst](#query-service)
+- [Sandlådor](#sandboxes)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
 
-## Katalogtjänst {#catalog-service}
+## Kontrollpaneler {#dashboards}
 
-Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Experience Platform. Alla data som importeras till Experience Platform lagras i datarjön som filer och kataloger, men i Katalog finns metadata och beskrivning av dessa filer och kataloger för sökning och övervakning.
-
-| Funktion | Beskrivning |
-| --- | --- |
-| Fler åtgärder | Om du vill göra åtgärderna mer flexibla och hjälpa dig att hantera dina data kan du nu använda funktionen&quot;Fler åtgärder&quot; från detaljvyn för att utföra ytterligare uppgifter på en datauppsättning. Du kan antingen ta bort datauppsättningen eller aktivera den för användning med kundprofilen i realtid från informationssidan för en vald datauppsättning.<br>**Obs!** Om du aktiverar en datauppsättning för profilinmatning måste datauppsättningens schema vara kompatibelt med kundprofilen i realtid.<br>![Arbetsytan Datauppsättningar med [!UICONTROL ... More] listrutan är markerad.](../2024/assets/march/more-actions.png "Arbetsytan Datauppsättningar med listrutan Mer markerad."){width="100" zoomable="yes"}.<br>Läs [användarhandbok för datauppsättningar](../../catalog/datasets/user-guide.md) dokumentation för tilläggsinformation. |
-
-{style="table-layout:auto"}
-
-Mer information om katalogtjänsten finns i [Katalogtjänst - översikt](../../catalog/home.md).
-
-## Dataförberedelse {#data-prep}
-
-Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
+Adobe Experience Platform har flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har tagits med vid dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Nya mappningsfunktioner för Adobe Analytics | Nu kan du använda följande funktioner för att extrahera händelsedata från Adobe Analytics: <ul><li>`aa_get_event_id`</li><li>`aa_get_event_value`</li><li>`aa_get_product_categories`</li><li>`aa_get_product_names`</li><li>`aa_get_product_quantities`</li><li>`aa_get_product_prices`</li><li>`aa_get_product_event_values`</li><li>`aa_get_product_evars`</li></ul> Mer information om dessa funktioner finns i [Handbok för dataprefixfunktioner](../../data-prep/functions.md#analytics-functions) |
+| Real-time Customer Data Platform B2B-insikter | Utforska förkonfigurerade Real-Time CDP B2B-datainsikter om konton och möjligheter för att hjälpa er att förstå era data och informera om era affärsbeslut. Du kan också skapa egna insikter med Real-Time CDP B2B-datamodell för att visualisera och utforska dina data och spara anpassade visualiseringar på din kontrollpanel. |
 
-{style="table-layout:auto"}
+{style=“table-layout:auto”}
 
-Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).
+Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
 
 ## Datainsamling {#data-collection}
 
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
 
-**Nya funktioner**
+**Nya eller uppdaterade funktioner**
 
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
-| Tillägg | [!DNL Merkury] Taggtillägg | The [[!DNL Merkury] taggtillägg](https://exchange.adobe.com/apps/ec/600027/merkury-tag) ger branschledande matchningsfrekvenser för anonyma webbplatsbesökare till en [!DNL Merkury] ID. Varumärken kan utnyttja [!DNL Merkury] tagga och Adobe för att leverera personaliserade webbplatsupplevelser i realtid. Dessutom kan du [!DNL Merkury] -taggen gör det möjligt att utöka digitala data från första part tillsammans med anslutna kundprofiler online och offline. |
+| Insikter | [!DNL Acxiom] Anonyma insikter om besökare | Upptäck var era besökare kommer ifrån [!DNL Acxiom's] Insikter om besökare. Genom att använda geoIP-sökningsteknik kan vi identifiera var anonyma webbläsare finns. När en snabbsökning har identifierats i vår organiserade databas får du ytterligare insikter som skickas tillbaka till webbläsaren. För innehållsskapare innebär detta en utmärkt möjlighet att skräddarsy innehållet så att det matchar dessa datapunkter, vilket ger en mer personaliserad och engagerande upplevelse för besökarna, även om de började som främlingar. |
+| Dataströmmar | [Identifiering av robotar i Edge Network](../../datastreams/bot-detection.md) | Trafik som härrör från icke-mänskliga enheter, som automatiserade program, webbskrapor, spindlar, skriptskannrar, kan göra det svårare att identifiera händelser som inträffar från mänskliga besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig trafikrapportering. <br>Med punktidentifiering kan du identifiera händelser som genereras av [Web SDK](../../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../../server-api/overview.md) som om de genererats av kända spindlar och botar. Genom att konfigurera robotidentifiering för dina datastreams kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som du vill klassificera som båda händelser. <br> Identifiering av robottrafiken kan ge en mer exakt mätning av användaraktiviteten på er webbplats eller i mobilapplikationen. |
+| Mobil-SDK | Huvudversion | Nya större versioner av Mobile SDK har släppts för följande plattformar: iOS Mobile Core 5.x och kompatibla iOS-tillägg, Android Mobile Core 3.x och kompatibla Android-tillägg, React Native Core 6.x och kompatibla React Native-tillägg, Flutter Core 4.x och kompatibla Flutter-tillägg. Den här versionen innehåller flera nya funktioner och förbättringar, bland annat stöd för Android SDK för Jetpack Compose, stöd för Adobe Journey Optimizer kodbaserade upplevelser och allmän tillgänglighet för Adobe Journey Optimizer Messaging-tillägget för Flutter. Mer detaljerad versionsinformation finns i [Versionsinformation för Mobile SDK](https://developer.adobe.com/client-sdks/home/release-notes/). |
+| Mobil-SDK | Sekretess | På grund av Apple policyuppdatering, som börjar 1 maj 2024, måste utvecklare implementera nya sekretessfunktioner för att kunna skicka in till App Store. Alla Adobe-kunder som använder Mobile SDK måste uppgradera till version 5.x av SDK om de vill ha App Store-godkännande efter 1 maj. |
+| Roku SDK | Roku SDK | Den första större versionen av Roku SDK har släppts med stöd för Streaming Media för Platform Edge Network. |
+| Taggar och händelsevidarebefordran | Produktvägledning | Experience Platform [Taggar](../../tags/home.md) och [Vidarebefordran av händelser](../../tags/ui/event-forwarding/overview.md) erbjuder en ny uppsättning upplevelser som hjälper er att komma igång snabbt och få ett snabbt värde. De här upplevelserna omfattar nya startskärmar, självstudiekurser i produkten och verktygstips. <br>![Händelsevidarebefordran med produktvägledning markerad.](../2024/assets/april/event-forwarding.png "Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade."){width="100" zoomable="yes"}<br> |
+| Webb-SDK | Förenklad användning av Web SDK för Audience Manager-kunder | Flera Web SDK-uppdateringar förenklar nu användningen av Web SDK utan att använda Experience Data Model (XDM) för Experience Cloud-lösningar, till exempel Audience Manager, Analytics och Target. Läs mer om användning av Audience Manager Web SDK i följande handböcker: <ul><li><a href="https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/migrate-to-web-sdk/dil-extension-to-web-sdk">Uppdatera datainsamlingsbiblioteket för Audience Manager från taggtillägget Audience Manager till Web SDK-taggtillägget</li><li><a href="https://experienceleague.adobe.com/en/docs/audience-manager/user-guide/migrate-to-web-sdk/appmeasurement-to-web-sdk">Uppdatera datainsamlingsbiblioteket för Audience Manager från AppMeasurementets JavaScript-bibliotek till Web SDK JavaScript-biblioteket</li></ul> |
 
 {style="table-layout:auto"}
 
-Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
+<!--| Web SDK | [Streaming Media Collection support in Web SDK](../../web-sdk/commands/configure/streamingmedia.md) | You can now use Experience Platform Web SDK to collect data related to media sessions on your website. The collected data can include information about media playbacks, pauses, completions, and other related events. Once collected, you can send this data to Adobe Experience Platform and/or Adobe Analytics, to generate reports. This feature provides a comprehensive solution for tracking and understanding media consumption behavior on your website. <br>See the [Web SDK](../../web-sdk/commands/configure/streamingmedia.md) documentation to learn how to configure the `streamingMedia` component. <br>See the guide on [migrating your Analytics for Streaming Media implementation from Media JS to Web SDK](https://experienceleague.adobe.com/en/docs/media-analytics/using/implementation/edge-recommended/media-edge-sdk/edge-web-sdk) for more details.|-->
+
+Läs mer om datainsamlingar i [datainsamling - översikt](../../collection/home.md).
 
 ## Mål  {#destinations}
 
 [!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
 
-**Nya och uppdaterade destinationer** {#new-updated-destinations}
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
 
-| Mål | Typ | Beskrivning |
-| ----------- | --------- | ----------- |
-| [(Beta) Acxiom Data Enhancement Connection](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | Nytt | Använd den här kopplingen för att aktivera förstahandsprofiler från Real-Time CDP till Acxiom för att berika och använda data i alla marknadsföringskanaler. Du kan sedan använda Acxiom-källan för att importera profiler med förbättrade data och arbeta med dem i Real-Time CDP. |
-| [(Beta) Anslutning till Prospect Suppression för Acxiom](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | Nytt | Exportera era egna målgrupper till Acxiom-destinationen så att Acxiom kan inaktivera kända eller konverterade kunder. Använd sedan [Import av prospekteringsdata för Acxiom](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md) källanslutning till import och aktivering av listor med potentiella kunder från Acxiom, med dina kända eller konverterade kunder borttagna. |
-| [Amazon Ads-anslutning](../../destinations/catalog/advertising/amazon-ads.md) | Uppdatera | När du exporterar data till Amazon Ads-målet kan du nu dirigera data till Amazon DSP eller Amazon Marketing Cloud (nytt). |
-| [LiveRamp Onboarding-anslutning](../../destinations/catalog/advertising/liveramp-onboarding.md) | Uppdatera | LiveRamp Onboarding-destinationen har nu stöd för leveranser till Europa och Australien [!DNL LiveRamp] [!DNL SFTP] -instanser. Den maximala storleken på den exporterade filen ökades också till 10 miljoner rader (från 5 miljoner tidigare). |
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| `isRequired` parameter är nu tillgänglig för kapslade kunddatafält i Destinationen SDK | När du konfigurerar ett mål i Destination SDK kan du nu [ange kapslade kunddatafält som obligatoriska](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields). På så sätt kan användare som ställer in målet inte fortsätta med sitt aktiveringsflöde förrän de väljer ett värde för det fältet. |
 
 {style="table-layout:auto"}
-
-<!--
-
-**New or updated functionality** {#destinations-new-updated-functionality}
-
--->
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
-## Experience Data Model (XDM) {#xdm}
+<!--| [!BADGE Beta]{type=Informative} Remove multiple audiences and datasets from activation flows | You can now select and remove multiple audiences and datasets from destination activation flows. See the [destination details](../../destinations/ui/destination-details-page.md#bulk-remove) and [dataset export](../../destinations/ui/export-datasets.md) documentation for more details. |-->
 
-XDM är en öppen källkodsspecifikation som innehåller gemensamma strukturer och definitioner (scheman) för data som hämtas till Adobe Experience Platform. Genom att följa XDM-standarder kan alla kundupplevelsedata införlivas i en gemensam representation för att ge insikter på ett snabbare och mer integrerat sätt. Ni kan få värdefulla insikter från kundåtgärder, definiera kundmålgrupper genom segment och använda kundattribut i personaliseringssyfte.
+## Identitetstjänst {#identity-service}
 
-**Nya funktioner**
+Använd Adobe Experience Platform identitetstjänst för att skapa en heltäckande bild av era kunder och deras beteenden genom att skapa en bro mellan identiteter på olika enheter och system, så att ni kan leverera slagkraftiga, personliga digitala upplevelser i realtid.
+
+**Uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Stöd för datatypen Experience Platform UI map | Anpassa XDM-datastrukturen (Experience Data Model) ytterligare genom att definiera kartfält i plattformens användargränssnitt. Nu kan du skapa mappningsfält i Schemaredigeraren för att modellera flexibla datastrukturer eller effektivt lagra nyckelvärdepar. Välj &quot;Karta&quot; i listrutan Typ när du definierar ett nytt fält för att konfigurera delfält och tilldela dem till fältgrupper. Värdetyper som stöds är sträng och heltal.<br>![Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade.](../2024/assets/march/maps.png "Schemaredigeraren med fälten för typ och mappningsvärdetyp markerade."){width="100" zoomable="yes"}<br> Så här lär du dig hur [definiera kartfält i användargränssnittet](../../xdm/ui/fields/map.md), se användargränssnittsguiden. |
+| Borttagning av `/orgs/{ORG}/` slutpunkter i API | Följande slutpunkter i [[!DNL Identity Service] API](https://developer.adobe.com/experience-platform-apis/references/identity-service/) har tagits bort:<ul><li>`https://platform.adobe.io/data/core/idnamespace/orgs/{ORG}/identities`</li><li>`https://platform.adobe.io/data/core/idnamespace/orgs/{ORG}/identities/{ID}`</li></ul> Du kan använda `/idnamespace/identities` och `/idnamespace/identities/{ID}` slutpunkter för att utföra samma uppgifter och hämta antingen alla namnutrymmen i en organisation eller ett specifikt namnutrymme i en organisation. |
 
 {style="table-layout:auto"}
 
-Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home.md).
+Mer information om identitetstjänsten finns i [Översikt över identitetstjänsten](../../identity-service/home.md).
+
+## Övervakning {#monitoring}
+
+Använd kontrollpanelen i användargränssnittet i Experience Platform för att övervaka hur dina data överförs från Sources, Identity Service, Real-Time Customer Profile, Audiences och Destinations.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Övervaka utökning av instrumentpanelen | Du kan nu använda kontrollpanelen för övervakning för olika datatyper baserat på ditt affärsexempel. Använd kontrollpanelen för att övervaka datatypsaktiviteter för personer, konton och potentiella kunder i källor, målgrupper och destinationer. |
+
+{style="table-layout:auto"}
+
+Mer information finns i guiden [använda kontrollpanelen för övervakning](../../dataflows/ui/monitor.md).
+
+## Frågetjänst {#query-service}
+
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+
+**Uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Frågekarantän | Isolera automatiskt misslyckade frågekörningar för att förhindra avbrott och upprätthålla konsekventa prestanda. |
+| Avbryt fråga | Ta kontroll över frågekörningen och förbättra produktiviteten genom att avbryta frågor som körs länge. |
+| Schemalagda frågemeddelanden | Håll dig informerad med proaktiva meddelanden när du schemalägger frågor, vilket säkerställer effektiv och snabb uppgiftshantering. Du kan prenumerera på aviseringar antingen när du skapar en fråga eller när du använder de infogade åtgärderna för befintliga schemalagda frågor. |
+| Förbättrad navigering i schemalagda frågor | Navigera enkelt mellan frågemallar och schemalagda körningar för ökad produktivitet. |
+| Utdata för utökad fråga | Få tillgång till upp till 500 rader frågeresultat i konsolen för djupare analys av dina data. |
+| Äldre frågeredigerare - solnedgång | Från och med den 30 april 2024 har den förbättrade frågeredigeraren blivit standardredigerare för alla användare. Den äldre redigeraren kommer att bli inaktuell den 30-maj-2024 och inte längre vara tillgänglig för användning. |
+
+{style=“table-layout:auto”}
+
+Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
+
+## Sandlådor {#sandboxes}
+
+Adobe Experience Platform är utvecklat för att berika applikationer för digitala upplevelser på global nivå. Företagen kör ofta flera program för digitala upplevelser parallellt och måste ta hänsyn till utveckling, testning och driftsättning av dessa applikationer samtidigt som man ser till att de uppfyller gällande krav. För att tillgodose detta behov tillhandahåller Experience Platform sandlådor som partitionerar en enda plattformsinstans i separata virtuella miljöer för att utveckla och utveckla program för digitala upplevelser.
+
+**Nya eller uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| [Verktyg i sandlådan](../../sandboxes/ui/sandbox-tooling.md) | Använda sandlådeverktyg för att [export](../../sandboxes/ui/sandbox-tooling.md#export-entire-sandbox) alla objekttyper som stöds till ett fullständigt sandlådepaket, och sedan [import](../../sandboxes/ui/sandbox-tooling.md#import-entire-sandbox) paketet i olika sandlådor för att replikera objektkonfigurationer. |
+
+{style="table-layout:auto"}
+
+Mer information om sandlådor finns i [översikt över sandlådor](../../sandboxes/home.md).
 
 ## Segmenteringstjänst {#segmentation}
 
 [!DNL Segmentation Service] gör att du kan segmentera data som lagras i [!DNL Experience Platform] som rör enskilda (t.ex. kunder, prospects, användare eller organisationer) till målgrupper. Du kan skapa målgrupper genom segmentdefinitioner eller andra källor från [!DNL Real-Time Customer Profile] data. Dessa målgrupper är centralt konfigurerade och underhållna på [!DNL Platform]och är lätt tillgängliga för alla Adobe-lösningar.
 
-**Ny funktion**
+**Uppdaterad funktion**
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Massåtgärder | Målgruppslagret har nu stöd för massåtgärder. Med gruppåtgärder kan du snabbt markera flera målgrupper för att flytta dem till en mapp, lägga till taggar, använda etiketter eller ta bort. <br> ![Massåtgärder på arbetsytan Publikens användargränssnitt.](../2024/assets/march/bulk-actions.png "Massåtgärder på arbetsytan Publikens användargränssnitt."){width="100" zoomable="yes"} <br>Mer information om den här funktionen finns i [Användargränssnittsguide för segmenteringstjänst](../../segmentation/ui/overview.md#bulk-actions). |
+| Målgruppsstadier | Målgruppslivscykeln har strömlinjeformats för att förenkla livscykelhanteringen. Läs mer om dessa livscykeltillstånd i [Vanliga frågor om segmenteringstjänster](../../segmentation/faq.md#lifecycle-states). |
 
 {style="table-layout:auto"}
 
-Mer information om segmenteringstjänsten finns i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
+Mer information om [!DNL Segmentation Service], se [Översikt över segment](../../segmentation/home.md).
 
 ## Källor {#sources}
 
 Experience Platform tillhandahåller ett RESTful-API och ett interaktivt användargränssnitt som gör att du enkelt kan konfigurera källanslutningar för olika dataleverantörer. Dessa källanslutningar gör att du kan autentisera och ansluta till externa lagringssystem och CRM-tjänster, ange tider för matning och hantera dataöverföringshastigheter.
 
-**Nya och uppdaterade källor**
+Använd källor i Experience Platform för att importera data från ett Adobe-program eller en datakälla från tredje part.
 
-| Funktion | Typ | Beskrivning |
-| --- | --- | --- |
-| [!BADGE Beta]{type=Informative} [!DNL Acxiom Data Ingestion] | Nytt | Använd [[!DNL Acxiom Data Ingestion] källa](../../sources/tutorials/ui/create/data-partners/acxiom-data-ingestion.md) till inmatning [!DNL Acxiom] till Real-time Customer Data Platform och berika förstahandsprofilerna. Sedan kan du använda [!DNL Acxiom]-berikade förstahandsprofiler för att förbättra målgrupperna och aktivera i alla marknadsföringskanaler. <br> ![Acxiom-källan för datainmatning.](../2024/assets/march/acxiom-data-ingestion.png "Ny Acxiom-källa för datainmatning."){width="100" zoomable="yes"} <br> Läs [[!DNL Acxiom Data Ingestion] översikt](../../sources/connectors/data-partners/acxiom-data-ingestion.md) för information om hur du kommer igång. |
-| [!BADGE Beta]{type=Informative} [!DNL Stripe] | Nytt | Använd [[!DNL Stripe] källa](../../sources/connectors/payments/stripe.md) att importera data som era kunder tagit in i Experience Platform under köpflödet. När ni väl har inhämtat data kan ni använda dessa data för att skapa personaliserade erbjudanden och få bättre affärsinsikter. <br> ![Stripe-källan.](../2024/assets/march/stripe.png "Ny Stripe-källa."){width="100" zoomable="yes"} <br> Läs [[!DNL Stripe] översikt](../../sources/connectors/payments/stripe.md) för information om hur du kommer igång. |
-| Stöd för användargränssnitt [!DNL Snowflake Streaming] | Nytt | Nu kan du använda [[!DNL Snowflake Streaming] källa](../../sources/tutorials/ui/create/databases/snowflake-streaming.md) i användargränssnittet i Experience Platform, för att strömma data från [!DNL Snowflake] databas. <br> ![Direktuppspelningskällan Snowflake.](../2024/assets/march/snowflake-streaming.png "Ny Snowflake-strömningskälla."){width="100" zoomable="yes"} <br> Läs [[!DNL Snowflake Streaming] översikt](../../sources/connectors/databases/snowflake-streaming.md) för information om hur du kommer igång. |
+**Nya källor**
+
+| Nya källor | Beskrivning |
+| --- | --- |
+| [!BADGE Beta]{type=Informative} [!DNL PathFactory] | Använd [[!DNL PathFactory] källa](../../sources/tutorials/ui/create/marketing-automation/pathfactory.md) för att integrera besökar-, sessions- och sidvydata från [!DNL PathFactory] till Experience Platform. Läs [[!DNL PathFactory] översikt](../../sources/connectors/marketing-automation/pathfactory.md) för information om hur du kommer igång. |
+| [!DNL Teradata Vantage] | Använd [[!DNL Teradata Vantage] källa](../../sources/tutorials/ui/create/databases/teradata-vantage.md) att importera data från hybridmiljöer med flera moln till Experience Platform. Läs [[!DNL Teradata Vantage] översikt](../../sources/connectors/databases/teradata-vantage.md) för information om hur du kommer igång. |
 
 {style="table-layout:auto"}
+
+**Nya och uppdaterade funktioner**
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Uppdateringar av IP-adresser som gör att de kan listas i VA7 | Följande IP-adresser har lagts till i listan över IP-adresser som ska läggas till i din tillåtelselista för VA7 (Nordamerika): <ul><li>`20.98.198.224/29`</li><li>`20.119.28.57/32`</li><li>`20.232.89.104/29`</li><li>`20.98.195.172/32`</li><li>`172.210.218.144/28`</li></ul> En omfattande lista över IP-adresser som ska läggas till i tillåtelselista finns i [TILLÅTELSELISTA-dokument för IP-adress](../../sources/ip-address-allow-list.md). |
+| Stöd för nya autentiseringstyper med [!DNL Azure Event Hubs] källa | Nu kan du ansluta [!DNL Event Hubs] källa till Experience Platform med [!DNL Azure Active Directory Authentication] eller [!DNL Scoped Azure Active Directory Authentication]. Läs guiden på [koppla [!DNL Event Hubs] till Experience Platform](../../sources/tutorials/ui/create/cloud-storage/eventhub.md) för mer information. |
+| Uppdateringar till [!DNL Data Landing Zone] hämtning av autentiseringsuppgifter | Nu kan du använda rätt spår i källarbetsytan för att hämta [!DNL Data Landing Zone] autentiseringsuppgifter. Nu kan du även använda rätt spår för att uppdatera dina inloggningsuppgifter. Läs [[!DNL Data Landing Zone] Användargränssnittsguide](../../sources/tutorials/ui/create/cloud-storage/data-landing-zone.md) för mer information. |
+
+{style="table-layout:auto"}
+
+<!--| Enhanced filtering and navigation in the sources UI workspace | Use the enhanced filtering, search, and inline action tools in the sources UI workspace to streamline your workflow. <ul><li>Use filtering and search capabilities to navigate your way through sources accounts and dataflows in your organization.</li><li>Use inline actions to modify configuration settings applied to your dataflows and improve organizational workflows. You can use inline actions to apply tags, set up alerts, or create ingestion jobs on demand.</li></ul> For more information, read the guide on [filtering sources objects in the UI](../../sources/tutorials/ui/filter.md).|-->
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).

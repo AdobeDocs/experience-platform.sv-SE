@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform mars 2024
 description: Versionsinformationen för Adobe Experience Platform i mars 2024.
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
-source-git-commit: d698bf0b8b0dbdb85909008bb3b60efb0575accc
+source-git-commit: 708bb791ad85b6ee8f3671ffc574e4f27fdddd0a
 workflow-type: tm+mt
 source-wordcount: '1190'
 ht-degree: 3%
@@ -39,20 +39,6 @@ Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Expe
 
 Mer information om katalogtjänsten finns i [Katalogtjänst - översikt](../../catalog/home.md).
 
-## Datainsamling {#data-collection}
-
-Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
-
-**Nya funktioner**
-
-| Typ | Funktion | Beskrivning |
-| --- | --- | --- |
-| Tillägg | [!DNL Merkury] Taggtillägg | The [[!DNL Merkury] taggtillägg](https://exchange.adobe.com/apps/ec/600027/merkury-tag) ger branschledande matchningsfrekvenser för anonyma webbplatsbesökare till en [!DNL Merkury] ID. Varumärken kan utnyttja [!DNL Merkury] tagga och Adobe för att leverera personaliserade webbplatsupplevelser i realtid. Dessutom kan du [!DNL Merkury] -taggen gör det möjligt att utöka digitala data från första part tillsammans med anslutna kundprofiler online och offline. |
-
-{style="table-layout:auto"}
-
-Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
-
 ## Dataförberedelse {#data-prep}
 
 Med Data Prep kan datatekniker mappa, omvandla och validera data till och från Experience Data Model (XDM).
@@ -66,6 +52,20 @@ Med Data Prep kan datatekniker mappa, omvandla och validera data till och från 
 {style="table-layout:auto"}
 
 Mer information om Data Prep finns i [Översikt över datapreflight](../../data-prep/home.md).
+
+## Datainsamling {#data-collection}
+
+Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+
+**Nya funktioner**
+
+| Typ | Funktion | Beskrivning |
+| --- | --- | --- |
+| Tillägg | [!DNL Merkury] Taggtillägg | The [[!DNL Merkury] taggtillägg](https://exchange.adobe.com/apps/ec/600027/merkury-tag) ger branschledande matchningsfrekvenser för anonyma webbplatsbesökare till en [!DNL Merkury] ID. Varumärken kan utnyttja [!DNL Merkury] tagga och Adobe för att leverera personaliserade webbplatsupplevelser i realtid. Dessutom kan du [!DNL Merkury] -taggen gör det möjligt att utöka digitala data från första part tillsammans med anslutna kundprofiler online och offline. |
+
+{style="table-layout:auto"}
+
+Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
 
 ## Mål  {#destinations}
 
