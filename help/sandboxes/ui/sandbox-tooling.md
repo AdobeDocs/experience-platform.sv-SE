@@ -2,9 +2,9 @@
 title: Sandlådor
 description: Exportera och importera sömlöst sandlådekonfigurationer mellan sandlådor.
 exl-id: f1199ab7-11bf-43d9-ab86-15974687d182
-source-git-commit: 888608bdf3ccdfc56edd41c164640e258a4c5dd7
+source-git-commit: 1a474fa0947cb930bad95f94c1901fffb7e23e7b
 workflow-type: tm+mt
-source-wordcount: '1827'
+source-wordcount: '2074'
 ht-degree: 0%
 
 ---
@@ -165,6 +165,52 @@ Du kommer tillbaka till [!UICONTROL Package object and dependencies] sida. Välj
 
 ![The [!UICONTROL Package object and dependencies] sidan visar en lista med resurser som ingår i paketet, med markering [!UICONTROL Finish].](../images/ui/sandbox-tooling/finish-object-dependencies.png)
 
+## Exportera och importera en hel sandlåda
+
+>[!NOTE]
+>
+>Endast plattformsobjekt för kunddata i realtid stöds för export/import av fullständiga sandlådor. Reseobjekt tas inte med.
+
+### Exportera en hel sandlåda {#export-entire-sandbox}
+
+Om du vill exportera en hel sandlåda går du till [!UICONTROL Sandboxes] **[!UICONTROL Packages]** och markera **[!UICONTROL Create package]**.
+
+![The [!UICONTROL Sandboxes] **[!UICONTROL Packages]** tabbmarkering [!UICONTROL Create package].](../images/ui/sandbox-tooling/create-sandbox-package.png)
+
+Välj **[!UICONTROL Entire sandbox]** för [!UICONTROL Type of package] i [!UICONTROL Create package] -dialogrutan. Ange en [!UICONTROL Package name] för ditt nya paket och väljer **[!UICONTROL Sandbox]** i listrutan. Äntligen väljer du **[!UICONTROL Create]** för att bekräfta tävlingsbidragen.
+
+![The [!UICONTROL Create package] dialogruta med ifyllda fält och markering [!UICONTROL Create].](../images/ui/sandbox-tooling/create-package-dialog.png)
+
+Paketet har skapats. Välj **[!UICONTROL Publish]** för att publicera paketet.
+
+![Lista över sandlådepaket som markerar det nya publicerade paketet.](../images/ui/sandbox-tooling/publish-entire-sandbox-packages.png)
+
+Du kommer tillbaka till **[!UICONTROL Packages]** i [!UICONTROL Sandboxes] -miljö, där du kan se det nya publicerade paketet.
+
+### Importera hela sandlådepaketet {#import-entire-sandbox-package}
+
+>[!NOTE]
+>
+>Alla objekt importeras till målsandlådan som nya objekt. Det är bäst att importera ett fullständigt sandlådepaket till en tom sandlåda.
+
+Om du vill importera paketet till en målsandlåda går du till [!UICONTROL Sandboxes] **[!UICONTROL Browse]** och välj plustecknet (+) bredvid namnet på sandlådan.
+
+![Sandlådorna **[!UICONTROL Browse]** som markerar valet av importpaket.](../images/ui/sandbox-tooling/browse-entire-package-sandboxes.png)
+
+Använd listrutemenyn och markera den fullständiga sandlådan med **[!UICONTROL Package name]** nedrullningsbar meny. Lägg till en **[!UICONTROL Job name]**, som kommer att användas för framtida övervakning och ett valfritt **[!UICONTROL Job description]** väljer **[!UICONTROL Next]**.
+
+![Sidan med importinformation som visar [!UICONTROL Package name] listrutemarkering](../images/ui/sandbox-tooling/import-full-sandbox-package.png)
+
+>[!NOTE]
+>
+>Du måste ha fullständig behörighet till alla objekt som ingår i paketet. Om du inte har behörighet kommer importen att misslyckas och felmeddelanden visas.
+
+Du kommer till [!UICONTROL Package object and dependencies] sida där du kan se antalet objekt och beroenden som är importerade och exkluderade objekt. Välj **[!UICONTROL Import]** för att slutföra paketimporten.
+
+![The [!UICONTROL Package object and dependencies] sidan visar det textbundna meddelandet om objekttyper som inte stöds, markering [!UICONTROL Import].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
+
+Tillåt en tid för importen att slutföras. Tiden det tar att slutföra kan variera beroende på antalet objekt i paketet. Du kan övervaka importjobbet från [!UICONTROL Sandboxes] **[!UICONTROL Jobs]** -fliken.
+
 <!--
 ## Export and import an entire sandbox 
 
@@ -207,37 +253,37 @@ You are taken to the [!UICONTROL Package object and dependencies] page where you
  ![The [!UICONTROL Package object and dependencies] page shows the inline message of object types not supported, highlighting [!UICONTROL Import].](../images/ui/sandbox-tooling/finish-dependencies-entire-sandbox.png)
 -->
 
-## Övervaka importjobb och visa information om importobjekt
+## Importinformation för bildskärm {#view-import-details}
 
-Om du vill visa importerade objekt och importerad information går du till [!UICONTROL Sandboxes] **[!UICONTROL Imports]** och väljer paketet i listan. Du kan också använda sökfältet för att söka efter paketet.
+Om du vill visa importerad information går du till [!UICONTROL Sandboxes] **[!UICONTROL Jobs]** och väljer paketet i listan. Du kan också använda sökfältet för att söka efter paketet.
 
-![Sandlådorna [!UICONTROL Imports] -fliken markerar valet av importpaket.](../images/ui/sandbox-tooling/imports-tab.png)
+![Sandlådorna [!UICONTROL Jobs] -fliken markerar valet av importpaket.](../images/ui/sandbox-tooling/imports-tab.png)
 
-### Visa importerade objekt {#view-imported-objects}
+<!--### View imported objects {#view-imported-objects}
 
-På **[!UICONTROL Imports]** i [!UICONTROL Sandboxes] miljö, välja **[!UICONTROL View imported objects]** från den högra informationsrutan.
+On the **[!UICONTROL Jobs]** tab in the [!UICONTROL Sandboxes] environment, select **[!UICONTROL View imported objects]** from the right details pane.
 
-Välj **[!UICONTROL View imported objects]** från höger informationsruta på sidan **[!UICONTROL Imports]** i [!UICONTROL Sandboxes] miljö.
+Select **[!UICONTROL View imported objects]** from the right details pane on the **[!UICONTROL Jobs]** tab in the [!UICONTROL Sandboxes] environment.
 
-![Sandlådorna [!UICONTROL Imports] tabbmarkeringar i [!UICONTROL View imported objects] i den högra rutan.](../images/ui/sandbox-tooling/view-imported-objects.png)
+![The sandboxes [!UICONTROL Imports] tab highlights the [!UICONTROL View imported objects] selection in the right pane.](../images/ui/sandbox-tooling/view-imported-objects.png)
 
-Använd pilarna för att expandera objekt och visa den fullständiga listan med fält som har importerats till paketet.
+Use the arrows to expand objects to view the full list of fields that have been imported into the package.
 
-![Sandlådorna [!UICONTROL Imported objects] med en lista över objekt som importerats till paketet.](../images/ui/sandbox-tooling/expand-imported-objects.png)
+![The sandboxes [!UICONTROL Imported objects] showing a list of objects imported into the package.](../images/ui/sandbox-tooling/expand-imported-objects.png)-->
 
-### Visa importinformation {#view-import-details}
-
-Välj **[!UICONTROL View import details]** från den högra informationsrutan i **[!UICONTROL Imports]** i sandlådemiljön.
+Välj **[!UICONTROL View import summary]** från den högra informationsrutan i **[!UICONTROL Jobs]** i sandlådemiljön.
 
 ![Sandlådorna [!UICONTROL Imports] tabbmarkeringar i [!UICONTROL View import details] i den högra rutan.](../images/ui/sandbox-tooling/view-import-details.png)
 
-The **[!UICONTROL Import details]** visas en detaljerad beskrivning av importen.
-
-![The [!UICONTROL Import details] en detaljerad beskrivning av importen.](../images/ui/sandbox-tooling/import-details.png)
+The **[!UICONTROL Import summary]** visas en fördelning av importen med förlopp i procent.
 
 >[!NOTE]
 >
->När en import är klar får du meddelanden i plattformsgränssnittet. Du kommer åt dessa meddelanden via varningsikonen. Du kan navigera till felsökning härifrån om ett jobb misslyckas.
+>Du kan visa en lista med objekt genom att navigera till specifika lagersidor.
+
+![The [!UICONTROL Import details] en detaljerad beskrivning av importen.](../images/ui/sandbox-tooling/import-details.png)
+
+När importen är klar visas ett meddelande i användargränssnittet för plattformen. Du kommer åt dessa meddelanden via varningsikonen. Du kan navigera till felsökning härifrån om ett jobb misslyckas.
 
 ## Videosjälvstudiekurs
 
