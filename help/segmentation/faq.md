@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: f9235763746e12bd62f19094372dcff41cb41d65
+source-git-commit: 27571f3ed57399eb588865e1a52e7569957ffbff
 workflow-type: tm+mt
-source-wordcount: '3148'
+source-wordcount: '3956'
 ht-degree: 0%
 
 ---
@@ -98,18 +98,6 @@ Det aktuella utgångsdatumet för externt genererade målgrupper är **30 dagar*
 
 När förfalloperioden för data har passerat är den tillhörande datauppsättningen fortfarande synlig i datamängdslagret, men du kommer att **not** kan aktivera målgruppen och profilantalet visas som noll.
 
-### Vad representerar de olika livscykelstatusarna?
-
-I följande diagram förklaras de olika livscykelstatusarna, vad de representerar, där målgrupper med den statusen kan användas samt påverkan på segmenteringsskyddsutkast.
-
-| Läge | Definition | Synligt i Audience Portal? | Synligt i destinationer? | Påverkar segmenteringsgränser? | Påverkan på filbaserade målgrupper | Effekter på publikutvärderingen | Kan användas inom andra målgrupper? |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Utkast | En publik i **Utkast** är en publik som fortfarande är under utveckling och ännu inte är redo att användas i andra tjänster. | Ja, men kan vara dold. | Nej | Ja | Kan importeras eller uppdateras under förfiningsprocessen. | Kan utvärderas för att få korrekta publiceringsvärden. | Ja, men rekommenderas inte. |
-| Publicerad | En publik i **Publicerad** är en publik som är klar att användas i alla tjänster i senare led. | Ja | Ja | Ja | Kan importeras eller uppdateras. | Utvärderat med gruppbearbetning, direktuppspelning eller kantsegmentering. | Ja |
-| Inaktiv | En publik i **Inaktiv** är en publik som för närvarande inte används. Den finns fortfarande i plattformen, men den kommer att **not** vara användbar tills den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Platform. | Ja |
-| Borttagen | En publik i **Borttagen** status är en målgrupp som har tagits bort. Det kan ta upp till några minuter innan data tas bort. | Nej | Nej | Nej | Underliggande data tas bort. | Ingen utvärdering eller körning av data utförs efter att borttagningen har slutförts. | Nej |
-| Aktiv | Den här statusen har **inaktuell** och ersätts med **Publicerad** status. | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt | Ej tillämpligt |
-
 ### Hur interagerar Audience Portal och Audience Composition med Real-Time CDP Partner Data?
 
 Målportalen och målgruppskompositionen samverkar med partnerdata på två sätt:
@@ -129,6 +117,105 @@ Enrichment-attribut är attribut som kommer från en datauppsättning och som f�
 | --- | --- | --- |
 | Real-Time CDP Destinations | Både nyttolastattributen och målgrupperna kan aktiveras. | Bara målgruppen kan aktiveras. Attribut för berikning **inte** aktiveras. |
 | Adobe Journey Optimizer Campaigns | Varken målgruppen eller nyttolastattributen kan aktiveras. | Både målgrupps- och anrikningsattributen kan aktiveras. |
+
+## Livscykeltillstånd {#lifecycle-states}
+
+I följande avsnitt listas frågor som rör livscykeltillstånd och livscykelstatushantering i Audience Portal.
+
+### Vad representerar de olika livscykelstatusarna?
+
+I följande diagram förklaras de olika livscykelstatusarna, vad de representerar, där målgrupper med den statusen kan användas samt påverkan på segmenteringsskyddsutkast.
+
+| Läge | Definition | Synligt i Audience Portal? | Synligt i destinationer? | Påverkar segmenteringsgränser? | Påverkan på filbaserade målgrupper | Effekter på publikutvärderingen | Kan användas inom andra målgrupper? | Redigerbar |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Utkast | En publik i **Utkast** är en publik som fortfarande är under utveckling och ännu inte är redo att användas i andra tjänster. | Ja, men kan vara dold. | Nej | Ja | Kan importeras eller uppdateras under förfiningsprocessen. | Kan utvärderas för att få korrekta publiceringsvärden. | Ja, men rekommenderas inte. | Ja |
+| Publicerad | En publik i **Publicerad** är en publik som är klar att användas i alla tjänster i senare led. | Ja | Ja | Ja | Kan importeras eller uppdateras. | Utvärderat med gruppbearbetning, direktuppspelning eller kantsegmentering. | Ja | Ja |
+| Inaktiv | En publik i **Inaktiv** är en publik som för närvarande inte används. Den finns fortfarande i plattformen, men den kommer att **not** vara användbar tills den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Platform. | Ja | Ja |
+| Borttagen | En publik i **Borttagen** status är en målgrupp som har tagits bort. Det kan ta upp till några minuter innan data tas bort. | Nej | Nej | Nej | Underliggande data tas bort. | Ingen utvärdering eller körning av data utförs efter att borttagningen har slutförts. | Nej | Nej |
+
+### I vilka lägen kan jag redigera mina målgrupper i?
+
+Publiker kan redigeras i följande livscykelsteg:
+
+- **Utkast**: Om en målgrupp redigeras i utkastläget förblir den i utkastläget såvida den inte uttryckligen publiceras.
+- **Publicerad**: Om en målgrupp redigeras i det publicerade läget förblir den publicerad och målgruppen uppdateras automatiskt.
+- **Inaktiv**: Om en målgrupp redigeras i ett inaktivt läge förblir den inaktiv. Detta innebär att det inte kommer att utvärderas eller uppdateras. Om ni behöver uppdatera målgruppen måste ni publicera målgruppen.
+
+När en målgrupp har tagits bort är det **inte** redigeras.
+
+### Vilka livscykeltillstånd kan jag flytta en målgrupp till?
+
+Möjliga livscykeltillstånd som en målgrupp kan flyttas till beror på målgruppens aktuella tillstånd.
+
+![Ett diagram som visar de möjliga övergångarna för livscykeltillstånd som är tillgängliga för målgrupper.](./images/faq/lifecycle-state-transition.png)
+
+Om målgruppen är i utkastläget kan du antingen publicera eller ta bort den om målgruppen inte har några beroenden.
+
+Om målgruppen är i publicerat läge kan du antingen inaktivera eller ta bort den om målgruppen inte har några beroenden.
+
+Om publiken är i inaktivt läge kan du antingen publicera om eller ta bort den om publiken inte har några beroenden.
+
+### Finns det några kavattar för målgrupper i vissa livscykeltillstånd?
+
+Målgrupper i det publicerade läget kan bara flyttas till ett annat läge om målgruppen gör det **not** har underordnade objekt. Det innebär att om målgruppen används i en tjänst längre fram i kedjan kan den inte inaktiveras eller tas bort.
+
+Om en målgrupp som utvärderas med batchsegmentering publiceras på nytt, det vill säga när en målgrupp går från inaktiv till publicerad, kommer målgruppen att uppdateras **efter** det dagliga batchjobbet. När det publiceras på nytt blir profilerna och informationen **samma** som när publiken blev inaktiv.
+
+### Hur sätter jag en publik i utkastläget?
+
+Vilken metod som ska användas för att sätta en målgrupp i utkastläget beror på målgruppens ursprung.
+
+För målgrupper som skapats med Segment Builder kan du ange målgruppen som utkastläget genom att välja &quot;[!UICONTROL Save as draft]&quot; i Segment Builder.
+
+För målgrupper som skapats i Audience Composition sparas målgrupperna automatiskt som ett utkast tills de publiceras.
+
+För externa målgrupper publiceras målgrupper automatiskt.
+
+När en publik är i publicerat skick **inte** ändra tillbaka den ursprungliga målgruppen till utkastläget. Om du kopierar målgruppen kommer den kopierade målgruppen att vara i utkastläget.
+
+### Hur sätter jag en publik i det publicerade läget?
+
+För målgrupper som har skapats med Segment Builder eller Audience Composition kan du ange målgruppen som publicerad genom att välja &quot;[!UICONTROL Publish]&quot; i sina respektive användargränssnitt.
+
+Externa målgrupper anges automatiskt till publicerade.
+
+### Hur sätter jag en publik i det inaktiva läget?
+
+Du kan försätta en publicerad publik i inaktivt läge genom att öppna snabbåtgärdsmenyn i Audience Portal och välja &quot;[!UICONTROL Deactivate]&quot;.
+
+### Hur återpublicerar jag en publik?
+
+>[!NOTE]
+>
+>Det ompublicerade läget är samma som det publicerade läget för målgruppsbeteenden.
+
+Du kan publicera en publik på nytt genom att välja en publik som är inaktiv, öppna snabbåtgärdsmenyn på Audience Portal och välja [!UICONTROL Publish].
+
+### Hur placerar jag en målgrupp i borttaget läge?
+
+>[!IMPORTANT]
+>
+>Du kan bara ta bort målgrupper som **not** används i alla aktiveringar i senare led. Dessutom kan du inte ta bort en målgrupp som refereras till av en annan målgrupp. Om du inte kan ta bort din publik måste du vara säker på att du **not** använda det i alla tjänster i senare led eller som en byggsten för en annan publik.
+
+Du kan placera en målgrupp i borttagningsläget genom att öppna snabbåtgärdsmenyn i målportalen och välja [!UICONTROL Delete].
+
+### Påverkar användningen av en målgrupp som underordnad målgrupp övergångar i livscykeln?
+
+>[!NOTE]
+>
+>En överordnad publik är en publik som **använder** en annan målgrupp som ett beroende för målgruppen.
+>
+>En barnpublik är en publik som **använd som** ett beroende för publiken.
+
+Ja, att använda en målgrupp som underordnad målgrupp påverkar vilka livscykelsteg som den underordnade och överordnade målgruppen kan genomföra.
+
+För att en underordnad publik ska kunna flyttas till det publicerade läget måste alla dess överordnade målgrupper **måste** vara i publicerat läge. Överordnade målgrupper kan antingen publiceras innan den underordnade målgruppen publiceras eller, om användaren bekräftar det, kan publiceras automatiskt när den underordnade målgruppen publiceras.
+
+För att den överordnade målgruppen ska kunna flyttas till det inaktiva eller borttagna läget måste alla dess underordnade målgrupper **måste** inaktiveras eller tas bort.
+
+### Kan jag hänvisa till en målgrupp som befinner sig i ett annat livscykeltillstånd?
+
+Ja! Om målgruppen för närvarande är i utkastläget kan du referera till målgrupper i antingen det publicerade eller inaktiva läget. Men för att kunna publicera den här målgruppen **måste** publicera de andra överordnade målgrupperna.
 
 ## Målgruppslager
 

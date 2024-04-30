@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: dc899a4aa64b6e734322020e4c10aee687c6d8c5
+source-git-commit: c1a2d55cb99a1f66698289751a967f8c5f80a7bf
 workflow-type: tm+mt
-source-wordcount: '3804'
+source-wordcount: '3896'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,8 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Move to folder] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar den mapp som målgruppen tillhör. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | [!UICONTROL Copy] | Segmenteringstjänst | Duplicerar den valda målgruppen. |
 | [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
-| [!UICONTROL Archive] | Anpassad överföring | Arkiverar den valda målgruppen. |
+| [!UICONTROL Publish] | Anpassad överföring, segmenteringstjänst | Publicerar den valda målgruppen. Mer information om hantering av livscykelstatus finns i [livscykelstatusavsnittet i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
+| [!UICONTROL Deactivate] | Anpassad överföring, segmenteringstjänst | Inaktiverar den valda målgruppen. Mer information om hantering av livscykelstatus finns i [livscykelstatusavsnittet i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
 | [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. |
 | [!UICONTROL Add to package] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Flyttar publiken mellan sandlådor. Mer information om den här funktionen finns i [verktygshandbok för sandlådor](../../sandboxes/ui/sandbox-tooling.md). |
 
@@ -102,9 +103,9 @@ Du kan välja **[!UICONTROL Update frequency summary]** om du vill visa ett cirk
 
 ![Knappen Uppdatera frekvenssammanfattning är markerad.](../images/ui/overview/browse-audience-update-frequency-summary.png)
 
-Cirkeldiagrammet visas med en uppdelning av målgrupperna efter uppdateringsfrekvens. Diagrammet visar det totala antalet målgrupper i mitten. Om du hovrar över de olika delarna av publiken visas antalet målgrupper som tillhör varje uppdateringsfrekvenstyp.
+Cirkeldiagrammet visas med en uppdelning av målgrupperna efter uppdateringsfrekvens. Diagrammet visar det totala antalet målgrupper i mitten och den dagliga batchutvärderingstiden i UTC längst ned. Om du hovrar över de olika delarna av publiken visas antalet målgrupper som tillhör varje uppdateringsfrekvenstyp.
 
-![Diagrammet för uppdateringsfrekvens visas.](../images/ui/overview/update-frequency-chart.png)
+![Diagrammet för uppdateringsfrekvens är markerat och utvärderingstiden för gruppsegmentering visas också.](../images/ui/overview/update-frequency-chart.png)
 
 ### Anpassa {#customize}
 
@@ -115,7 +116,7 @@ Du kan lägga till fler fält i [!UICONTROL Browse] sida genom att markera ![fil
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
 | [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
-| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
+| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Inactive`, `Published`och `Archived`. Mer information om livscykelstadier, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd finns i [livscykelstatusavsnittet i Frågor och svar om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge]och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
 | [!UICONTROL Created] | Datum och tid, i UTC, då målgruppen skapades. |
@@ -205,7 +206,7 @@ Listan med tillgängliga filter visas.
 | ------ | ----------- |
 | [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. De tillgängliga alternativen är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** är markerat kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** är markerat måste de filtrerade målgrupperna innehålla **alla** av de taggar som du har lagt till. |
-| [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. Tillgängliga alternativ inkluderar [!UICONTROL Active], [!UICONTROL Archived], [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive]och [!UICONTROL Published]. |
+| [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. Tillgängliga alternativ inkluderar [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive]och [!UICONTROL Published]. |
 | [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens. Tillgängliga alternativ inkluderar [!UICONTROL Scheduled], [!UICONTROL Continuous]och [!UICONTROL On Demand]. |
 | [!UICONTROL Created by] | Gör att du kan filtrera baserat på den person som skapade målgruppen. |
 | [!UICONTROL Creation date] | Gör att du kan filtrera baserat på målgruppens skapandedatum. Du kan välja ett datumintervall att filtrera när målgruppen skapades. |
@@ -408,7 +409,7 @@ En pover visas med en lista över alla fält som kan visas i tabellen.
 | Fält | Beskrivning |
 | ----- | ----------- | 
 | [!UICONTROL Name] | Namnet på publiken. |
-| [!UICONTROL Status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Published`och `Archived`. |
+| [!UICONTROL Status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Inactive`, `Published`och `Archived`. |
 | [!UICONTROL Created] | Tid och datum då målgruppen skapades. |
 | [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
 | [!UICONTROL Updated] | Tid och datum då målgruppen senast uppdaterades. |
