@@ -1,9 +1,10 @@
 ---
 title: Målgruppsinsikt
 description: Upptäck den SQL som ger er målgruppsinsikter och använder dessa frågor för att generera anpassade insikter för att ytterligare utforska målgruppsdata från Adobe Experience Platform.
-source-git-commit: ee9ef2cf777c72fbd19cfccd80a37ea66591216d
+exl-id: 99624234-c4e1-44bb-9567-505bc0c4723e
+source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
 workflow-type: tm+mt
-source-wordcount: '1076'
+source-wordcount: '1118'
 ht-degree: 0%
 
 ---
@@ -14,8 +15,7 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Cu
 
 Förstå era målgruppsinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska de identiteter och profiler som era målgrupper består av. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI.  -->
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
 
 Du kan använda följande insikter som en del av [Auditions dashboard](../guides/audiences.md) eller en egen [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
 
@@ -583,7 +583,6 @@ Se [Dokumentation för widgeten för schemalagda aktiveringar](../guides/audienc
 
 Genom att läsa det här dokumentet förstår du nu vilken SQL-kod som genererar instrumentpanelsinsikter och vilka vanliga frågor som analysen löser. Nu kan du redigera och iterera på SQL för att generera egna insikter.
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI. -->
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md) och [Destinationer](./destinations.md) instrumentpaneler.
+Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md), [Kontoprofiler](./account-profiles.md) och [Destinationer](./destinations.md) instrumentpaneler.

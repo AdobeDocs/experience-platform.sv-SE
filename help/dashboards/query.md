@@ -4,9 +4,9 @@ title: Utforska, verifiera och bearbeta Dashboard-datauppsättningar med hjälp 
 type: Documentation
 description: Lär dig hur du använder frågetjänsten för att utforska och bearbeta rådatauppsättningar som ger möjlighet att skapa profiler, målgrupper och målpaneler i Experience Platform.
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: e808af41b0df7603ce6f44464d1e6e883d3f6208
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe Experience Platform tillhandahåller viktig information om organisationens profil, målgrupp och destinationsdata via kontrollpaneler som är tillgängliga i användargränssnittet för Experience Platform. Du kan sedan använda Adobe Experience Platform [!DNL Query Service] för att utforska, verifiera och bearbeta de rådatauppsättningar som ligger till grund för dessa instrumentpaneler i datasjön.
 
-## Komma igång med [!DNL Query Service]
+## Kom igång med [!DNL Query Service]
 
 Adobe Experience Platform [!DNL Query Service] stöder marknadsförare i att få insikter från sina data genom att aktivera användningen av standard-SQL för att fråga efter data i sjön. [!DNL Query Service] har ett användargränssnitt och ett API som kan användas för att ansluta till valfri datauppsättning i datasjön och samla in frågeresultaten som nya datauppsättningar som kan användas för rapportering, maskininlärning eller för att matas in i kundprofilen i realtid.
 
@@ -45,7 +45,7 @@ En sidospalt med två växlar visas, [!UICONTROL Included in Profile] och [!UICO
 
 Insikter på profilkontrollpanelen är knutna till sammanslagningsprinciper som har definierats av din organisation. För varje aktiv sammanfogningsprincip finns det en profilattributdatauppsättning tillgänglig i datasjön.
 
-Namnkonventionen för dessa datauppsättningar är **Profile-Snapshot-Export** följt av ett systemgenererat slumpmässigt alfanumeriskt värde. Exempel: `Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`.
+Namnkonventionen för dessa datauppsättningar är **Profile-Snapshot-Export** följt av ett systemgenererat slumpmässigt alfanumeriskt värde. Till exempel: `Profile-Snapshot-Export-abbc7093-80f4-4b49-b96e-e743397d763f`.
 
 Om du vill förstå det fullständiga schemat för varje ögonblicksbildsexportdatauppsättning kan du förhandsgranska och utforska datauppsättningarna [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
 
@@ -68,7 +68,7 @@ Den här datauppsättningen kan utforskas med hjälp av användargränssnittet i
 
 Det finns en samling metadata för målgrupper i datasjön som innehåller metadata för alla era målgrupper.
 
-Namnkonventionen för den här datauppsättningen är **Segmentdefinition-Snapshot-Export** följt av ett alfanumeriskt värde. Exempel: `Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
+Namnkonventionen för den här datauppsättningen är **Segmentdefinition-Snapshot-Export** följt av ett alfanumeriskt värde. Till exempel: `Segmentdefinition-Snapshot-Export-acf28952-2b6c-47ed-8f7f-016ac3c6b4e7`
 
 Om du vill förstå det fullständiga schemat för varje segmentdefinitionsögonblicksbilds exportdatauppsättning kan du förhandsgranska och utforska datauppsättningarna [med datamängdsvisningsprogrammet](../catalog/datasets/user-guide.md) i användargränssnittet i Experience Platform.
 
@@ -86,7 +86,7 @@ Om du vill förstå det fullständiga schemat för DIM-måldatauppsättningen ka
 
 CDP Insights Data Models-funktionen visar SQL som ger insikter om olika profil-, mål- och segmenteringswidgetar. Du kan anpassa de här SQL-frågemallarna för att skapa CDP-rapporter för marknadsförings- och KPI-användningsfall.
 
-CDP-rapportering ger insikter i era profildata och dess relation till målgrupper och destinationer. Mer information om hur du gör det finns i dokumentationen om CDP Insights-datamodellen [tillämpa CDP Insights-datamodeller på dina specifika KPI-användningsfall](./cdp-insights-data-model.md).
+CDP-rapportering ger insikter i era profildata och dess relation till målgrupper och destinationer. Mer information om hur du gör det finns i dokumentationen om CDP Insights-datamodellen [tillämpa CDP Insights-datamodeller på dina specifika KPI-användningsfall](./data-models/cdp-insights-data-model-b2c.md).
 
 ## Exempelfrågor
 

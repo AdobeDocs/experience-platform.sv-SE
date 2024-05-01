@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;anpassning;profilpanel;instrumentpanel
-title: Guide för instrumentpanel för destinationer
+title: Kontrollpanel för destinationer
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om organisationens aktiva destinationer.
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
+source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
 workflow-type: tm+mt
-source-wordcount: '3046'
+source-wordcount: '3045'
 ht-degree: 0%
 
 ---

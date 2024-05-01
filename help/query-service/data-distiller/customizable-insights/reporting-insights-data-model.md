@@ -2,7 +2,7 @@
 title: Query Accelerated Store Reporting Insights Guide
 description: Lär dig hur du bygger en datamodell med rapportinsikter med hjälp av frågetjänsten för användning med accelererade lagringsdata och användardefinierade instrumentpaneler.
 exl-id: 216d76a3-9ea3-43d3-ab6f-23d561831048
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '1034'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Med det frågeaccelererade arkivet kan du minska den tid och processorkraft som krävs för att få viktiga insikter från dina data. Vanligtvis behandlas data med regelbundna intervall (t.ex. varje timme eller dag) där aggregerade vyer skapas och rapporteras. Analysen av dessa rapporter som genereras utifrån aggregerade data ger insikter som är avsedda att förbättra affärsresultatet. Det frågeaccelererade arkivet tillhandahåller en cachetjänst, samtidighet, en interaktiv upplevelse och ett tillståndslöst API. Det förutsätter dock att data är förbearbetade och optimerade för aggregerad fråga och inte för rådatafrågor.
 
-Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../../dashboards/cdp-insights-data-model.md).
+Med det frågeaccelererade arkivet kan du skapa en anpassad datamodell och/eller utöka en befintlig Adobe Real-time Customer Data Platform datamodell. Sedan kan ni interagera med eller bädda in era rapportinsikter i ett rapporterings-/visualiseringsramverk som ni väljer. Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../../dashboards/data-models/cdp-insights-data-model-b2c.md).
 
 Real-Time CDP datamodell från Adobe Experience Platform ger insikter om profiler, målgrupper och destinationer och möjliggör Real-Time CDP insiktspaneler. I det här dokumentet får du hjälp med att skapa datamodellen för dina rapportinsikter och hur du kan utöka Real-Time CDP datamodeller efter behov.
 

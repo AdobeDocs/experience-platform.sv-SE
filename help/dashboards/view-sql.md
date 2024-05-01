@@ -1,7 +1,8 @@
 ---
 title: Visa Insight SQL
 description: Visa SQL bakom din profil, målgrupp, destination och anpassade insikter och kör frågan på begäran via Frågeredigeraren.
-source-git-commit: be90cf38970a54431f48799bf506fb0a20ec0166
+exl-id: fd728926-c113-4593-92b1-916a02d09d41
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '384'
 ht-degree: 0%
@@ -58,4 +59,4 @@ Frågeredigeraren visas. Nu kan du redigera satsen och fråga dina plattformsdat
 
 ## Nästa steg
 
-När du har läst det här dokumentet kan du nu förstå hur du får åtkomst till SQL för att få information antingen i standardkontrollpanelerna eller i en användardefinierad kontrollpanel. Om du inte redan har gjort det bör du läsa [Real-time Customer Data Platform Insights - datamodelldokument](./cdp-insights-data-model.md). Det dokumentet innehåller insikter om hur du anpassar SQL-mallar för Real-Time CDP-rapporter som är skräddarsydda efter dina marknadsförings- och KPI-behov.
+När du har läst det här dokumentet kan du nu förstå hur du får åtkomst till SQL för att få information antingen i standardkontrollpanelerna eller i en användardefinierad kontrollpanel. Om du inte redan har gjort det bör du läsa [Real-time Customer Data Platform Insights - datamodelldokument](./data-models/cdp-insights-data-model-b2c.md). Det dokumentet innehåller insikter om hur du anpassar SQL-mallar för Real-Time CDP-rapporter som är skräddarsydda efter dina marknadsförings- och KPI-behov.

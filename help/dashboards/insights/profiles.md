@@ -1,9 +1,10 @@
 ---
 title: Profilinsikter
 description: Upptäck den SQL som ger er profilinsikter och använder dessa frågor för att generera anpassade insikter som ytterligare utforskar era kunder och deras kundupplevelser.
-source-git-commit: ee9ef2cf777c72fbd19cfccd80a37ea66591216d
+exl-id: f3792076-3e01-4e26-8788-32927202a2e5
+source-git-commit: 34eb9151cc6bb8551553b0a8427e58871acb4dbb
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1655'
 ht-degree: 0%
 
 ---
@@ -14,12 +15,9 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Cu
 
 Förstå era profilinsikter genom att få tillgång till den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska era kunder och deras kundupplevelser som tillsammans utgör era profiler. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI.  -->
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via plattformsgränssnittet.
 
 Du kan använda följande insikter som en del av [Kontrollpanel för profiler](../guides/profiles.md) eller en egen [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
-
-Du kan använda följande insikter som en del av [Kontrollpanel för profil](../guides/profiles.md) eller en anpassad kontrollpanel.
 
 ## Målgruppsöverlappning efter sammanfogningspolicy {#audience-overlap-by-merge-policy}
 
@@ -781,7 +779,6 @@ Se [Dokumentation för widgeten Osegmenterade profiler](../guides/profiles.md#un
 
 Genom att läsa det här dokumentet förstår du nu vilken SQL-kod som genererar instrumentpanelsinsikter och vilka vanliga frågor som analysen löser. Nu kan du redigera och iterera på SQL för att generera egna insikter.
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI. -->
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Målgrupper](./audiences.md) och [Destinationer](./destinations.md) instrumentpaneler.
+Du kan även läsa och förstå den SQL som genererar insikter för [Målgrupper](./audiences.md), [Kontoprofiler](./account-profiles.md)och [Destinationer](./destinations.md) instrumentpaneler.

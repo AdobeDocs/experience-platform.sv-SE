@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profil;målgrupp;målgrupper;segmentering;användargränssnitt;gränssnitt;anpassning;målgruppspanel;instrumentpanel
-title: Publikens kontrollpanel
+title: Auditions Dashboard
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om målgrupper som din organisation har skapat.
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 78cf435f506a21ddd2348642c07380ad810bc693
+source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
 workflow-type: tm+mt
-source-wordcount: '2952'
+source-wordcount: '2951'
 ht-degree: 0%
 
 ---

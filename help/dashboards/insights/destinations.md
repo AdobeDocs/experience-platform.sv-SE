@@ -1,9 +1,10 @@
 ---
 title: Destinationsinsikter
 description: Upptäck den SQL som ger er målgruppsinsikter och använder dessa frågor för att generera anpassade insikter för att ytterligare utforska aktiveringen av data från Adobe Experience Platform.
-source-git-commit: 3d5dd6300952409e2dddb32eb11547fb43a5feac
+exl-id: 762a9960-e7a5-4796-80c7-ef745157cc04
+source-git-commit: d4baf6cfaa772e5d46cef470fb35818c7af868b1
 workflow-type: tm+mt
-source-wordcount: '1097'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -14,8 +15,7 @@ De insikter som bygger på analysen av er datamodell gör era Adobe Real-time Cu
 
 Förstå era målinsikter genom att använda den SQL som ligger till grund för dem och generera sedan egna insikter för att ytterligare utforska aktiveringen av data från Adobe Experience Platform till målplattformarna. Omvandla era rådata till nya användbara insikter genom att använda Real-Time CDP datamodell SQL som inspiration för att skapa frågor som passar just era affärsbehov.
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI.  -->
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
 
 Du kan använda följande insikter som en del av [Kontrollpanel för destinationer](../guides/destinations.md) eller en egen [användardefinierad kontrollpanel](../user-defined-dashboards.md). Se [anpassningsöversikt](../customize/overview.md) för instruktioner om hur du anpassar kontrollpanelen eller [skapa och redigera nya widgetar](../customize/custom-widgets.md) i widgetbiblioteket och [användardefinierad kontrollpanel](../user-defined-dashboards.md#create-widget).
 
@@ -511,13 +511,6 @@ See the [Unmapped audiences by identity widget documentation](../guides/destinat
 
 Genom att läsa det här dokumentet förstår du nu vilken SQL-kod som genererar instrumentpanelsinsikter och vilka vanliga frågor som analysen löser. Nu kan du redigera och iterera igenom dessa SQL-frågor för att generera egna insikter.
 
-<!-- This link will go in during the January release.
-See the [View SQL documentation]() for more information on how to adapt your insights' SQL directly through the PLatform UI. -->
+Se [Visa SQL-dokumentation](../view-sql.md) om du vill ha mer information om hur du anpassar dina insikter i SQL direkt via användargränssnittet i PLatform.
 
-Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md) och [Målgrupper](./audiences.md) instrumentpaneler.
-
-<!-- 
-SQL MISSING FROM WIKI:
-Unmapped audiences by identity
-Mapped audiences by identity 
--->
+Du kan även läsa och förstå den SQL som genererar insikter för [Profiler](./profiles.md), [Kontoprofiler](./account-profiles.md) och [Målgrupper](./audiences.md) instrumentpaneler.

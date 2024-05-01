@@ -2,7 +2,7 @@
 title: Spåra datasignaler för att generera kundens livstidsvärde
 description: Den här guiden ger en heltäckande demonstration av hur man använder Data Distiller och användardefinierade dashboards med Real-time Customer Data Platform för att mäta och visualisera kundens livstidsvärde.
 exl-id: c74b5bff-feb2-4e21-9ee4-1e0973192570
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+source-git-commit: e0af1f0110ceb514a5b249c42a05bf780ea834c6
 workflow-type: tm+mt
 source-wordcount: '1263'
 ht-degree: 0%
@@ -56,7 +56,7 @@ Därefter måste ni skapa en anpassad datamodell eller utöka en befintlig datam
 * Skapa dimensionstabeller för att utöka er modell för rapportinsikter.
 * Fråga om datamodell för utökad accelererad butiksrapportering
 
-Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../dashboards/cdp-insights-data-model.md).
+Läs dokumentationen om Real-time Customer Data Platform Insights-datamodellen om du vill veta mer om [anpassa dina SQL-frågemallar för att skapa Real-Time CDP-rapporter för dina KPI-fall (Marketing and Key Performance Indicator)](../../dashboards/data-models/cdp-insights-data-model-b2c.md).
 
 Se till att du ställer in ett schema för att uppdatera din anpassade datamodell med en vanlig stängsel. Detta garanterar att data kommer in igen som en del av din inmatningsprocess efter behov och fyller i dina användardefinierade instrumentpaneler. Se [guide för schemafrågor](../ui/query-schedules.md#create-schedule) om du vill veta hur du ställer in ditt schema.
 
