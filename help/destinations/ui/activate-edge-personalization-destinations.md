@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: c113d9615a276af67714f38b8325e69737b23964
 workflow-type: tm+mt
-source-wordcount: '1843'
+source-wordcount: '1878'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ Titta på videon nedan om du vill få en kort översikt över hur du delar målg
 
 ## Användningsfall {#use-cases}
 
-Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (t.ex. intern CMS) som ger en djupare personaliseringsupplevelse via [Anpassad personalisering](../catalog/personalization/custom-personalization.md) mål. Allt detta och utnyttja även datainsamling och segmenteringsfunktioner för Experience Platform Edge Network.
+Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (t.ex. intern CMS) som ger en djupare personaliseringsupplevelse via [Anpassad personalisering](../catalog/personalization/custom-personalization.md) mål. Allt detta och utnyttja även datainsamling och segmentering från Experience Platform Edge Network.
 
 De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
@@ -78,6 +78,10 @@ Ett uthyrnings- och säljföretag vill personalisera sin hemsida med en banderol
 Det första steget för att konfigurera ditt personaliseringsmål är att konfigurera ett datastream för Experience Platform Web SDK. Detta görs i användargränssnittet för datainsamling.
 
 När datastream konfigureras, under **[!UICONTROL Adobe Experience Platform]** se till att båda **[!UICONTROL Edge Segmentation]** och **[!UICONTROL Personalization Destinations]** är markerade.
+
+>[!TIP]
+>
+>Från och med versionen från april 2024 behöver du inte markera kryssrutan Kantsegmentering när [konfigurera anslutningen till Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md). I detta fall [anpassning av nästa session](#next-session) är det enda tillgängliga användningsexemplet för personalisering.
 
 ![Dataströmskonfiguration med kantsegmentering och målanpassning markerade!](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
@@ -146,7 +150,7 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization]** mål kräver att du använder [API för Edge Network Server](../../server-api/overview.md) när målet för attributbaserad personalisering konfigureras. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../server-api/authentication.md).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data **[!UICONTROL Custom Personalization]** mål kräver att du använder [Edge Network Server-API](../../server-api/overview.md) när målet för attributbaserad personalisering konfigureras. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../server-api/authentication.md).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API:t genom att lägga till en integration på serversidan.
 >

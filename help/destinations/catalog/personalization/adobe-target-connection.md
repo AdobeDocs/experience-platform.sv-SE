@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 92238ee94149b3cb4293d726d08dc4927e2dedb5
+source-git-commit: c113d9615a276af67714f38b8325e69737b23964
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1286'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,8 @@ ht-degree: 1%
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| Januari 2024 | Funktionalitet och dokumentationsuppdatering. | Nu kan du dela målgrupper och profilattribut med Adobe Target-anslutningen för standardproduktionssandlådan och andra icke-standardsandlådor. |
+| April 2024 | Funktioner och dokumentation | När du ansluter till målmålet med ett datastream-ID *behöver inte* för att nödvändigtvis aktivera datastream för kantsegmentering. Det innebär att måldestinationen fungerar med grupper och direktuppspelade målgrupper, även om de användningsfall som du kan uppnå skiljer sig åt. Visa tabellen i [anslutningsparametrar](#parameters) för mer information. |
+| Januari 2024 | Funktioner och dokumentation | Nu kan du dela målgrupper och profilattribut med Adobe Target-anslutningen för standardproduktionssandlådan och andra icke-standardsandlådor. |
 | Juni 2023 | Funktioner och dokumentation | Från och med juni 2023 kan du välja den Adobe Target-arbetsyta som du vill dela målgrupper med när du konfigurerar en ny Adobe Target-målanslutning. Se [anslutningsparametrar](#parameters) för mer information. Se även självstudiekursen om [konfigurera arbetsytor](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html) i Adobe Target om du vill ha mer information om arbetsytor. |
 | Maj 2023 | Funktioner och dokumentation | Från maj 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
 
@@ -111,11 +112,11 @@ while [konfigurera](../../ui/connect-destination.md) Om du vill ange destination
   >
   >DataStream-ID:t är unikt för varje Adobe Target-målanslutning. Om du behöver mappa samma målgrupper till flera datastreams måste du [skapa en ny målanslutning](../../ui/connect-destination.md) för varje datastream ID och gå igenom [målgruppsaktiveringsflöde](#activate).
 
-   * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](/help/web-sdk/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Se tabellen nedan för mer information.
+   * **[!UICONTROL None]**: Välj det här alternativet om du behöver konfigurera Adobe Target-personalisering men inte kan implementera [Experience Platform Web SDK](/help/web-sdk/home.md). När du använder det här alternativet har målgrupper som exporterats från Experience Platform till Target endast stöd för nästa sessionspersonalisering, och kantsegmentering är inaktiverat. Se tabellen nedan för en jämförelse av tillgängliga användningsfall per implementeringstyp.
 
-  | Implementering av Adobe Target (utan Web SDK) | Web SDK-implementering |
-  |---|---|
-  | <ul><li>Datastream krävs inte. Adobe Target kan driftsättas via [at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html), [server-side](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation), eller [hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation) implementeringsmetoder.</li><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds inte.</li><li>Du kan dela målgrupper och profilattribut med Adobe Target-anslutningen för *standardproduktionssandlåda* och icke-standardsandlådor.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html).</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> |
+  | Implementering av Adobe Target *utan* Web SDK | Implementering av Adobe Target *med* Web SDK | Implementering av Adobe Target *med* Web SDK *och* kantsegmentering bort |
+  |---|---|---|
+  | <ul><li>Datastream krävs inte. Adobe Target kan driftsättas via [at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html), [server-side](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation), eller [hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation) implementeringsmetoder.</li><li>[Kantsegmentering](../../../segmentation/ui/edge-segmentation.md) stöds inte.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md) stöds inte.</li><li>Du kan dela målgrupper och profilattribut med Adobe Target-anslutningen för *standardproduktionssandlåda* och icke-standardsandlådor.</li><li>Om du vill konfigurera nästa sessionspersonalisering utan att använda ett datastream-ID använder du [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html).</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>Kantsegmentering fungerar som förväntat.</li><li>[Personalisering på samma sida och nästa sida](../../ui/activate-edge-personalization-destinations.md#use-cases) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> | <ul><li>Ett datastream med Adobe Target och Experience Platform konfigurerat som tjänster krävs.</li><li>När [konfigurera datastream](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)markerar du inte **Kantsegmentering** kryssrutan.</li><li>[Anpassa nästa session](../../ui/activate-edge-personalization-destinations.md#next-session) stöds.</li><li>Det finns stöd för att dela målgrupper och profilattribut från andra sandlådor.</li></ul> |
 
 * **Arbetsyta**: Välj Adobe Target [arbetsyta](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html) till vilka målgrupper ska delas. Du kan välja en arbetsyta för varje Adobe Target-anslutning. Vid aktivering dirigeras målgrupper till den valda arbetsytan enligt tillämpliga [Experience Platform-dataanvändningsetiketter](../../../data-governance/labels/overview.md).
 
