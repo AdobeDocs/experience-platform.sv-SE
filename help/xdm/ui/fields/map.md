@@ -2,9 +2,9 @@
 title: Definiera kartfält i användargränssnittet
 description: Lär dig hur du definierar ett kartfält i användargränssnittet för Experience Platform.
 exl-id: 657428a2-f184-4d7c-b657-4fc60d77d5c6
-source-git-commit: 57a0381401c6084513ce7413b66dec56044b4492
+source-git-commit: ee27fc42a1ee23ef650d320df64e5970a84d0d38
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '434'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan ni helt anpassa strukturen för era anpassade Experience Data Model-klasser (XDM), schemafältgrupper och datatyper.
 
-Du kan också definiera mappningsfält i Schemaredigeraren för att modellera flexibla och dynamiska datastrukturer eller lagra en samling nyckelvärdepar. Kartdatastrukturen gör det möjligt att snabbt och effektivt söka efter, infoga och ta bort information som är ordnad och tillgänglig baserat på unika identifierare.
+Du kan också definiera mappningsfält i Schemaredigeraren för att modellera flexibla och dynamiska datastrukturer eller lagra en samling nyckelvärdepar.
 
 När du definierar ett nytt fält i användargränssnittet för plattformen använder du **[!UICONTROL Type]** listruta och välj &quot;**[!UICONTROL Map]**&quot; i listan.
 
@@ -34,6 +34,8 @@ XDM har följande begränsningar för användning av den här datatypen:
 * Karttyper MÅSTE vara av typen `object`.
 * Karttyper FÅR INTE ha egenskaper definierade (de definierar med andra ord tomma objekt).
 * Karttyper MÅSTE innehålla en `additionalProperties.type` fält som beskriver värdena som kan placeras på kartan, antingen `string` eller `integer`.
+* Segmentering för flera enheter kan bara definieras baserat på kartnycklarna och inte på värdena.
+* Kartor stöds inte för kontomålgrupper.
 
 Se till att du bara använder karttypsfält när det är absolut nödvändigt, eftersom de har följande prestandanackdelar:
 
