@@ -3,9 +3,9 @@ title: Skapa en Azure Event Hubs-källanslutning i användargränssnittet
 description: Lär dig hur du skapar en Azure Event Hubs-källanslutning med Adobe Experience Platform-gränssnittet.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
-source-git-commit: e4ea21af3f0d9e810959330488dc06bc559cf72c
+source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1015'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 >The [!DNL Azure Event Hubs] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-Den här självstudiekursen innehåller steg för att skapa en [!DNL Azure Event Hubs] med Adobe Experience Platform användargränssnitt.
+Läs den här självstudiekursen för att lära dig hur du skapar en [!DNL Azure Event Hubs] med Adobe Experience Platform användargränssnitt.
 
 ## Komma igång
 
