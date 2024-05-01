@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2024
 description: Versionsinformation från april 2024 för Adobe Experience Platform.
 exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
-source-git-commit: 4ec4335d19695e8d6e26390358356dedd048594e
+source-git-commit: fea62a2aa3c7d175afbfa808f392c3a93a0d31a0
 workflow-type: tm+mt
-source-wordcount: '1851'
+source-wordcount: '1843'
 ht-degree: 2%
 
 ---
@@ -51,7 +51,7 @@ Adobe Experience Platform erbjuder en serie teknologier som gör att ni kan saml
 
 | Typ | Funktion | Beskrivning |
 | --- | --- | --- |
-| Insikter | [!DNL Acxiom] Anonyma insikter om besökare | Upptäck var era besökare kommer ifrån [!DNL Acxiom's] Insikter om besökare. Genom att använda geoIP-sökningsteknik kan vi identifiera var anonyma webbläsare finns. När en snabbsökning har identifierats i vår organiserade databas får du ytterligare insikter som skickas tillbaka till webbläsaren. För innehållsskapare innebär detta en utmärkt möjlighet att skräddarsy innehållet så att det matchar dessa datapunkter, vilket ger en mer personaliserad och engagerande upplevelse för besökarna, även om de började som främlingar. |
+| Tillägg | [!DNL Acxiom Anonymous Visitor Insights] Tillägg för taggar | Upptäck var era besökare kommer ifrån [!DNL Acxiom's Visitor Insights]. Genom att använda geoIP-sökningsteknik kan Acxiom identifiera var anonyma webbläsare finns. När sökningen i den organiserade databasen har identifierats får den ytterligare information som skickas tillbaka till webbläsaren. Innehållsskapare kan skräddarsy sitt innehåll så att det matchar dessa datapunkter och ger besökarna en mer personaliserad och engagerande upplevelse, även om de började som främlingar. |
 | Dataströmmar | [Identifiering av robotar i Edge Network](../../datastreams/bot-detection.md) | Trafik som härrör från icke-mänskliga enheter, som automatiserade program, webbskrapor, spindlar, skriptskannrar, kan göra det svårare att identifiera händelser som inträffar från mänskliga besökare. Den här typen av trafik kan påverka viktiga affärsvärden negativt, vilket leder till felaktig trafikrapportering. <br>Med punktidentifiering kan du identifiera händelser som genereras av [Web SDK](../../web-sdk/home.md), [Mobile SDK](https://developer.adobe.com/client-sdks/home/) och [[!DNL Server API]](../../server-api/overview.md) som om de genererats av kända spindlar och botar. Genom att konfigurera robotidentifiering för dina datastreams kan du identifiera specifika IP-adresser, IP-intervall och begäranrubriker som du vill klassificera som båda händelser. <br> Identifiering av robottrafiken kan ge en mer exakt mätning av användaraktiviteten på er webbplats eller i mobilapplikationen. |
 | Mobil-SDK | Huvudversion | Nya större versioner av Mobile SDK har släppts för följande plattformar: iOS Mobile Core 5.x och kompatibla iOS-tillägg, Android Mobile Core 3.x och kompatibla Android-tillägg, React Native Core 6.x och kompatibla React Native-tillägg, Flutter Core 4.x och kompatibla Flutter-tillägg. Den här versionen innehåller flera nya funktioner och förbättringar, bland annat stöd för Android SDK för Jetpack Compose, stöd för Adobe Journey Optimizer kodbaserade upplevelser och allmän tillgänglighet för Adobe Journey Optimizer Messaging-tillägget för Flutter. Mer detaljerad versionsinformation finns i [Versionsinformation för Mobile SDK](https://developer.adobe.com/client-sdks/home/release-notes/). |
 | Mobil-SDK | Sekretess | På grund av Apple policyuppdatering, som börjar 1 maj 2024, måste utvecklare implementera nya sekretessfunktioner för att kunna skicka in till App Store. Alla Adobe-kunder som använder Mobile SDK måste uppgradera till version 5.x av SDK om de vill ha App Store-godkännande efter 1 maj. |
