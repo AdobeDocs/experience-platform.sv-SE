@@ -2,7 +2,7 @@
 description: Lär dig hur du skapar indatafält i användargränssnittet i Experience Platform som gör att dina användare kan ange olika typer av information som är relevant för att ansluta och exportera data till ditt mål.
 title: Kunddatafält
 exl-id: 7f5b8278-175c-4ab8-bf67-8132d128899e
-source-git-commit: 6366686e3b3f656d200aa245fc148f00e623713c
+source-git-commit: b35f584d13fb241c06b4045b525d84775ef8317c
 workflow-type: tm+mt
 source-wordcount: '1722'
 ht-degree: 0%
@@ -352,7 +352,7 @@ Om du vill lägga till ett kapslat fält använder du `properties` enligt nedan.
 >
 >Från och med versionen från april 2024 kan du ange en `isRequired` parameter i kapslade fält. I konfigurationsfragmentet nedan markeras de två första kapslade fälten som obligatoriska (markerad rad xxx) och kunderna kan inte fortsätta såvida de inte väljer ett värde för fältet. Läs mer om obligatoriska fält i [parametrar som stöds](#supported-parameters) -avsnitt.
 
-```json {line-numbers="true" highlight="10,19"}
+```json {line-numbers="true" highlight="11,20"}
     {
       "name": "yourdestination",
       "title": "Yourdestination - Integration Specific Settings",

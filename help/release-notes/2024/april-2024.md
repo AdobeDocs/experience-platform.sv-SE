@@ -1,9 +1,10 @@
 ---
 title: Versionsinformation om Adobe Experience Platform april 2024
 description: Versionsinformation från april 2024 för Adobe Experience Platform.
-source-git-commit: 6ad7d55ca0a544879db9738c0a4ab914fdc363bd
+exl-id: 86d72fd8-a464-4715-abc9-4177236e423c
+source-git-commit: 4ec4335d19695e8d6e26390358356dedd048594e
 workflow-type: tm+mt
-source-wordcount: '1728'
+source-wordcount: '1851'
 ht-degree: 2%
 
 ---
@@ -73,12 +74,12 @@ Läs mer om datainsamlingar i [datainsamling - översikt](../../collection/home.
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
 | `isRequired` parameter är nu tillgänglig för kapslade kunddatafält i Destinationen SDK | När du konfigurerar ett mål i Destination SDK kan du nu [ange kapslade kunddatafält som obligatoriska](/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md#nested-fields). På så sätt kan användare som ställer in målet inte fortsätta med sitt aktiveringsflöde förrän de väljer ett värde för det fältet. |
+| Kantsegmentering är inte längre något obligatoriskt krav när du ställer in ett Adobe Target-mål med Web SDK | Tidigare, när en [Adobe Target destination](/help/destinations/catalog/personalization/adobe-target-connection.md) med Web SDK måste datastream aktiveras för personalisering och kantsegmentering. Kravet att datastream ska aktiveras för kantsegmentering [har nu tagits bort](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream). Observera att det här integreringsmönstret bara gör att du kan dra nytta av en delmängd av användningsexempel för personalisering när du använder Adobe Target med Real-Time CDP. Läs mer om [användningsfall aktiverade av integreringstyp](/help/destinations/catalog/personalization/adobe-target-connection.md#parameters). |
+| [!BADGE Beta]{type=Informative} Ta bort flera målgrupper och datauppsättningar från aktiveringsflöden | Nu kan du markera och ta bort flera målgrupper och datauppsättningar från målaktiveringsflöden. Se [målinformation](../../destinations/ui/destination-details-page.md#bulk-remove) och [datauppsättningsexport](../../destinations/ui/export-datasets.md) mer information. |
 
 {style="table-layout:auto"}
 
 Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
-
-<!--| [!BADGE Beta]{type=Informative} Remove multiple audiences and datasets from activation flows | You can now select and remove multiple audiences and datasets from destination activation flows. See the [destination details](../../destinations/ui/destination-details-page.md#bulk-remove) and [dataset export](../../destinations/ui/export-datasets.md) documentation for more details. |-->
 
 ## Identitetstjänst {#identity-service}
 
