@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: c1a2d55cb99a1f66698289751a967f8c5f80a7bf
+source-git-commit: 795b76465c59fc375542b92cdd3deefce8c000ca
 workflow-type: tm+mt
-source-wordcount: '3896'
+source-wordcount: '4065'
 ht-degree: 0%
 
 ---
@@ -82,12 +82,8 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Publish] | Anpassad överföring, segmenteringstjänst | Publicerar den valda målgruppen. Mer information om hantering av livscykelstatus finns i [livscykelstatusavsnittet i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
 | [!UICONTROL Deactivate] | Anpassad överföring, segmenteringstjänst | Inaktiverar den valda målgruppen. Mer information om hantering av livscykelstatus finns i [livscykelstatusavsnittet i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
-| [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. |
+| [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. Målgrupper som används i senare led eller som är beroende i andra målgrupper **inte** tas bort. Mer information om borttagning av målgrupper finns i [segmentering - frågor och svar](../faq.md#lifecycle-states). |
 | [!UICONTROL Add to package] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Flyttar publiken mellan sandlådor. Mer information om den här funktionen finns i [verktygshandbok för sandlådor](../../sandboxes/ui/sandbox-tooling.md). |
-
->[!NOTE]
->
-> Du kommer att **not** kan ta bort en målgrupp som används i en målaktivering.
 
 Överst på sidan finns alternativ för att lägga till alla målgrupper i ett schema, importera en målgrupp, skapa en ny målgrupp och visa en uppdelning av uppdateringsfrekvensen.
 
@@ -356,6 +352,15 @@ När du importerar den externt genererade målgruppen måste du markera en av ko
 
 ![The [!UICONTROL Audience details] visas.](../images/ui/overview/import-audience-audience-details.png)
 
+Du kan också lägga till ytterligare information till den externt genererade målgruppen, som att ge den ett ID, definiera dess sammanfogningsprincip eller redigera dess kolumndatatyp.
+
+>[!NOTE]
+>
+>Om du använder ett anpassat externt målgrupps-ID måste det följa följande riktlinjer:
+>
+> - Den **måste** börja med en bokstav (a-z eller A-Z), ett understreck (_) eller ett dollartecken ($).
+> - Alla efterföljande tecken kan vara alfanumeriska (a-z, A-Z, 0-9), understreck (_) eller dollartecken ($).
+
 När du fyllt i målgruppsinformationen väljer du **[!UICONTROL Next]**.
 
 ![The [!UICONTROL Next] knappen är markerad på [!UICONTROL Audience details] sida.](../images/ui/overview/import-audience-filled-details.png)
@@ -397,6 +402,14 @@ Välj **[!UICONTROL Compositions]** om du vill visa en lista över alla målgrup
 ![En lista över målgrupper som skapats i Audience Composition för din organisation.](../images/ui/overview/compositions.png)
 
 Som standard visar den här vyn information om målgrupperna inklusive namn, status, skapad den, skapad av, senaste uppdateringsdatum och senast uppdaterad av.
+
+Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet visas en lista med tillgängliga snabbåtgärder för målgruppen.
+
+| Åtgärd | Beskrivning |
+| ------ | ----------- |
+| Duplicera | Kopierar den valda målgruppen. |
+| Hantera åtkomst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
+| Ta bort | Tar bort den valda målgruppen. Målgrupper som används i senare led eller som är beroende i andra målgrupper **inte** tas bort. Mer information om borttagning av målgrupper finns i [segmentering - frågor och svar](../faq.md#lifecycle-states). |
 
 Du kan välja ![Anpassa tabell](../images/ui/overview/customize-table.png) om du vill ändra vilka fält som visas.
 

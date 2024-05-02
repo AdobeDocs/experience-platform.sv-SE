@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: fe2bb709a7ee56323492fed381c447e6a79fd5f8
+source-git-commit: 36fffcddb09444dd6e010a4b5afeec6bf0b5c3bf
 workflow-type: tm+mt
-source-wordcount: '2177'
+source-wordcount: '2158'
 ht-degree: 0%
 
 ---
@@ -197,7 +197,7 @@ Målgrupper som ser likadana ut kan konfigureras för att exkludera datafält so
 
 Standardetiketten&quot;C9&quot; kan användas för att märka data som inte ska användas för datavetenskap och kan användas genom att aktivera standardprincipen&quot;Begränsa datavetenskap&quot;. Du kan också skapa ytterligare profiler för att begränsa data med andra etiketter, inklusive känsliga etiketter, från användning för datavetenskap. Mer information om hur du hanterar regler för dataanvändning finns i [användargränssnittshandbok för dataanvändningsprinciper](../../data-governance/policies/user-guide.md). Mer information om hur du hanterar etiketter för dataanvändning finns i [användargränssnittshandbok för dataanvändningsetiketter](../../data-governance/labels/user-guide.md).
 
-Som standard kommer modelleringsprocessen för lookalike-målgrupper att exkludera **alla** fält, datauppsättning eller målgrupp baserat på den integritetspolicy som är aktiverad för din organisation. Om baspubliken inte har några kontraktsetiketter utesluter modelleringsprocessen **alla** fält, datauppsättning eller målgrupp baserat på den integritetspolicy som är aktiverad för din organisation.
+Om en baspublik inte har några kontraktsetiketter kommer modelleringsprocessen för lookalike-målgrupper som standard att exkludera **alla** fält, datauppsättning eller målgrupp baserat på den integritetspolicy som är aktiverad för din organisation.
 
 ## Nästa steg
 
