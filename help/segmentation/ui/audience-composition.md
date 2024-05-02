@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för målgrupper
 description: Audience Composition i Adobe Experience Platform UI har en omfattande arbetsyta där du kan interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera målgrupper för din organisation.
 exl-id: 0dda0cb1-49e0-478b-8004-84572b6cf625
-source-git-commit: 10079216cbfa5ace68127d1529d47e83f4448049
+source-git-commit: d22f8b4a39cb76dab4c976d8ea883d5170ee34e4
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1777'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,8 @@ Lägga till målgrupper i Audience-blocket. välj **[!UICONTROL Add Audience]**.
 >[!IMPORTANT]
 >
 >Observera att **endast** Målgrupper som definierats med standardprincipen för sammanslagning visas.
+>
+>Dessutom, endast **publicerad** Målgrupper som skapats med Segment Builder kan användas. Målgrupper som skapats med Audience Composition och externt genererade målgrupper är **not** tillgängliga.
 
 En lista över målgrupper visas. Välj vilka målgrupper du vill inkludera, följt av **[!UICONTROL Add]** för att lägga in dem i era målgruppsblock.
 
@@ -101,6 +103,10 @@ The **[!UICONTROL Exclude]** -block läggs till. När det här blocket är marke
 Om du utesluter utifrån målgrupp kan du välja vilka målgrupper du vill utesluta genom att välja **[!UICONTROL Add Audience]**.
 
 ![The [!UICONTROL Add audience] knappen är markerad, vilket gör att du kan välja vilken målgrupp du vill utesluta.](../images/ui/audience-composition/add-excluded-audience.png)
+
+>[!IMPORTANT]
+>
+>Endast **publicerad** Målgrupper som skapats med Segment Builder kan användas. Målgrupper som skapats med Audience Composition och externt genererade målgrupper är **not** tillgängliga.
 
 En lista över målgrupper visas. Välj **[!UICONTROL Add]** för att lägga till de målgrupper du vill utesluta i exkluderingsblocket.
 
