@@ -3,9 +3,10 @@ title: Real-time Customer Data Platform Insights - datamodell B2B Edition
 description: Lär dig hur du använder SQL-frågor med Real-time Customer Data Platform Insights-datamodeller (B2B Edition) för att anpassa dina egna Real-Time CDP-rapporter för din marknadsföring och dina KPI-användningsfall.
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: 52f67037756af97bac97908d4736a3cbafce6844
+exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '452'
 ht-degree: 0%
 
 ---
@@ -49,15 +50,15 @@ I diagrammet nedan visas de relevanta datafälten i varje datauppsättning, dera
 
 ![Entitetsrelationsdiagrammet för kontoprofilmodellen.](../images/data-models/account-profile-model.png)
 
-#### Användningsexempel för konton efter bransch {#accounts-by-industry}
+#### De nya kontona efter bransch {#accounts-by-industry}
 
-Den logik som används för [!UICONTROL Accounts By Industry] insight returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Se [[!UICONTROL Accounts By Industry] widgetdokumentation](../guides/account-profiles.md#accounts-by-industry) för mer information.
+Den logik som används för [!UICONTROL New accounts by industry] insight returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Se [[!UICONTROL Accounts By Industry] widgetdokumentation](../guides/account-profiles.md#accounts-by-industry) för mer information.
 
 >[!TIP]
 >
 >Du kan anpassa den här SQL-frågan så att den returnerar mer eller mindre än de fem främsta branscherna.
 
-Den SQL som genererar [!UICONTROL Accounts By Industry] finns i det infällbara avsnittet nedan.
+Den SQL som genererar [!UICONTROL New accounts by industry] finns i det infällbara avsnittet nedan.
 
 +++SQL-fråga
 
@@ -94,11 +95,11 @@ LIMIT 5000;
 
 +++
 
-#### Användningsexempel för konton efter typ {#accounts-by-type}
+#### De nya kontona efter typ av användningsfall {#accounts-by-type}
 
-Den logik som används för [!UICONTROL Accounts By Type] insight returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Se [[!UICONTROL Accounts By Type] widgetdokumentation](../guides/account-profiles.md#accounts-by-type) för mer information.
+Den logik som används för [!UICONTROL New accounts by type] insight returnerar den numeriska uppdelningen av konton efter typ. Denna insikt kan hjälpa till att vägleda affärsstrategier och -åtgärder, inklusive resursallokering och marknadsföringsstrategier. Se [[!UICONTROL New accounts by type] widgetdokumentation](../guides/account-profiles.md#accounts-by-type) för mer information.
 
-Den SQL som genererar [!UICONTROL Accounts By Type] finns i det infällbara avsnittet nedan.
+Den SQL som genererar [!UICONTROL New accounts by type] finns i det infällbara avsnittet nedan.
 
 +++SQL-fråga
 

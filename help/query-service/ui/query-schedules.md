@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 8d307b9c1c80c7b1672f2bf6b7acb4b85c4dae1b
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1495'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ Du kan automatisera frågekörningar genom att skapa frågescheman. Schemalagda 
 
 >[!IMPORTANT]
 >
->Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts.
+>Du kan bara lägga till ett schema i en fråga som redan har skapats och sparats.
 
 Alla schemalagda frågor läggs till i listan i [!UICONTROL Scheduled queries] -fliken. Från den arbetsytan kan du övervaka statusen för alla schemalagda frågejobb via gränssnittet. På [!UICONTROL Scheduled queries] kan du hitta viktig information om frågekörningar och prenumerera på aviseringar. Den tillgängliga informationen omfattar status, schemainformation och felmeddelanden/koder om en körning misslyckas. Se [Övervaka dokument för schemalagda frågor](./monitor-queries.md) för mer information.
 

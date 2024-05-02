@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation från april 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fea62a2aa3c7d175afbfa808f392c3a93a0d31a0
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '1841'
+source-wordcount: '1895'
 ht-degree: 2%
 
 ---
@@ -31,15 +31,15 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 
 ## Kontrollpaneler {#dashboards}
 
-Adobe Experience Platform har flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har tagits med vid dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Real-time Customer Data Platform B2B-insikter | Utforska förkonfigurerade Real-Time CDP B2B-datainsikter om konton och möjligheter för att hjälpa er att förstå era data och informera om era affärsbeslut. Du kan också skapa egna insikter med Real-Time CDP B2B-datamodell för att visualisera och utforska dina data och spara anpassade visualiseringar på din kontrollpanel. |
+| Real-time Customer Data Platform B2B-insikter | Utforska förkonfigurerade [Real-Time CDP B2B-datainsikter om konton och affärsmöjligheter](../../dashboards/insights/account-profiles.md) för att hjälpa er att förstå era data och informera om era affärsbeslut. Du kan också [skapa egna insikter med Real-Time CDP B2B-datamodell](../../dashboards/data-models/cdp-insights-data-model-b2c.md) för att visualisera och utforska dina data och spara dina anpassade visualiseringar på din kontrollpanel. |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 Mer information om kontrollpaneler, inklusive hur du ger åtkomstbehörigheter och skapar anpassade widgetar, får du genom att läsa [översikt över instrumentpaneler](../../dashboards/home.md).
 
@@ -117,14 +117,14 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 
 | Funktion | Beskrivning |
 | --- | --- |
-| Frågekarantän | Isolera automatiskt misslyckade frågekörningar för att förhindra avbrott och upprätthålla konsekventa prestanda. |
-| Avbryt fråga | Ta kontroll över frågekörningen och förbättra produktiviteten genom att avbryta frågor som körs länge. |
-| Schemalagda frågemeddelanden | Håll dig informerad med proaktiva meddelanden när du schemalägger frågor, vilket säkerställer effektiv och snabb uppgiftshantering. Du kan prenumerera på aviseringar antingen när du skapar en fråga eller när du använder de infogade åtgärderna för befintliga schemalagda frågor. |
-| Förbättrad navigering i schemalagda frågor | Navigera enkelt mellan frågemallar och schemalagda körningar för ökad produktivitet. |
-| Utdata för utökad fråga | Få tillgång till upp till 500 rader frågeresultat i konsolen för djupare analys av dina data. |
-| Äldre frågeredigerare - solnedgång | Från och med den 30 april 2024 har den förbättrade frågeredigeraren blivit standardredigerare för alla användare. Den äldre redigeraren kommer att bli inaktuell den 30-maj-2024 och inte längre vara tillgänglig för användning. |
+| Frågekarantän | Isolera automatiskt misslyckade frågekörningar för att förhindra avbrott och upprätthålla konsekventa prestanda. Se [frågekarantän](../../query-service/ui/query-schedules.md#quarantine) mer information. |
+| Avbryt fråga | Ta kontroll över frågekörningen och förbättra produktiviteten genom att avbryta frågor som körs länge.Se [avbryt fråga](../../query-service/ui/user-guide.md#cancel-query) mer information. |
+| Schemalagda frågemeddelanden | Håll dig informerad med proaktiva meddelanden när du schemalägger frågor, vilket säkerställer effektiv och snabb uppgiftshantering. Du kan [prenumerera på aviseringar när du skapar en fråga](../../query-service/ui/query-schedules.md#alerts-for-query-status) eller använda textbundna åtgärder för befintliga schemalagda frågor. Se [prenumerera på aviseringar med textbundna åtgärder](../../query-service/ui/monitor-queries.md#alert-subscription) mer information. |
+| Förbättrad navigering i schemalagda frågor | Navigera enkelt mellan frågemallar och schemalagda körningar för ökad produktivitet. Läs dokumentationen om [visa schemalagda frågekörningar](../../query-service/ui/query-schedules.md#scheduled-query-runs) för mer information. |
+| Utdata för utökad fråga | Få tillgång till upp till 500 rader frågeresultat i konsolen för djupare analys av dina data.Se [antal resultat](../../query-service/ui/user-guide.md#result-count) mer information. |
+| Äldre frågeredigerare - solnedgång | Från och med den 30 april 2024 har den förbättrade frågeredigeraren blivit standardredigerare för alla användare. Den äldre redigeraren kommer att bli inaktuell den 30-maj-2024 och inte längre vara tillgänglig för användning. Se [Användarhandbok för Frågeredigeraren](../../query-service/ui/user-guide.md) för mer information. |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 Mer information om frågetjänster finns i [Översikt över frågetjänsten](../../query-service/home.md).
 

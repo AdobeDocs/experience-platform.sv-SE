@@ -2,9 +2,9 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: b7875128592b17044b068d8064de082bf00a8309
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '1647'
+source-wordcount: '1727'
 ht-degree: 0%
 
 ---
@@ -67,16 +67,20 @@ Kontoprofilinformationen som visas på [!UICONTROL Details] har sammanfogats fr�
 
 Adobe tillhandahåller standardwidgetar som du kan använda för att visualisera olika mätvärden för dina kontoprofiler.
 
+>[!IMPORTANT]
+>
+>Om du inte anger något datumfilter analyserar standardbeteendet för insikter data som lagts till från föregående år fram till idag.
+
 Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på en widget i följande lista:
 
 * [Kontoprofiler har lagts till](#account-profiles-added)
-* [Konton per bransch](#accounts-by-industry)
-* [Konton efter typ](#accounts-by-type)
+* [Nya konton efter bransch](#accounts-by-industry)
+* [Nya konton efter typ](#accounts-by-type)
 * [Möjligheter har lagts till](#opportunities-added)
-* [Affärsmöjligheter per personroll](#opportunities-by-person-role)
-* [Affärsmöjligheter efter intäkt](#opportunities-by-revenue)
-* [Affärsmöjligheter efter status och fas](#opportunities-by-status-&-stage)
-* [Vunna affärsmöjligheter](#opportunities-won)
+* [Nya möjligheter per personroll](#opportunities-by-person-role)
+* [Nya möjligheter per intäkt](#opportunities-by-revenue)
+* [Nya möjligheter per status och fas](#opportunities-by-status-&-stage)
+* [Nya möjligheter](#opportunities-won)
 * [Förutsägbar poängfördelning](#predictive-scoring-distribution)
 * [Prediktiv bedömning av viktiga faktorer](#predictive-scoring-top-influential-factors)
 * [Totalt antal konton per bransch](#total-accounts-by-industry)
@@ -87,17 +91,17 @@ The [!UICONTROL Account profiles added] används ett linjediagram för att visa 
 
 ![Kontoprofilerna har lagt till widget.](../images/account-profiles/account-profiles-added.png)
 
-### Konton per bransch {#accounts-by-industry}
+### Nya konton efter bransch {#accounts-by-industry}
 
-The [!UICONTROL Accounts by industry] widgeten visar det totala antalet konton i ett enskilt mätresultat i ett dondiagram. Nötdiagram illustrerar den relativa sammansättningen av olika branscher som utgör denna summa. En färgkodad nyckel ger en beskrivning av alla inkluderade branscher. Individuella värden för varje bransch visas i en dialog när markören förs över respektive avsnitt i donatabellen.
+The [!UICONTROL New accounts by industry] widgeten visar det totala antalet konton i ett enskilt mätresultat i ett dondiagram. Nötdiagram illustrerar den relativa sammansättningen av olika branscher som utgör denna summa. En färgkodad nyckel ger en beskrivning av alla inkluderade branscher. Individuella värden för varje bransch visas i en dialog när markören förs över respektive avsnitt i donatabellen.
 
-![Widgeten Konton per bransch.](../images/account-profiles/accounts-by-industry.png)
+![The New accounts by industry widget.](../images/account-profiles/new-accounts-by-industry.png)
 
-### Konton efter typ {#accounts-by-type}
+### Nya konton efter typ {#accounts-by-type}
 
-The [!UICONTROL Accounts by type] widgeten visar det totala antalet konton i ett enskilt mätresultat i ett dondiagram. I donutdiagrammet visas den relativa strukturen av olika kontotyper som utgör denna summa. En färgkodad nyckel ger en beskrivning av alla inkluderade kontotyper. Individuella antal för varje typ av konto visas i en dialogruta när markören förs över respektive avsnitt i donatabellen.
+The [!UICONTROL New accounts by type] widgeten visar det totala antalet konton i ett enskilt mätresultat i ett dondiagram. I donutdiagrammet visas den relativa strukturen av olika kontotyper som utgör denna summa. En färgkodad nyckel ger en beskrivning av alla inkluderade kontotyper. Individuella antal för varje typ av konto visas i en dialogruta när markören förs över respektive avsnitt i donatabellen.
 
-![Konton efter typ-widget.](../images/account-profiles/accounts-by-type.png)
+![Nya konton efter typ-widget.](../images/account-profiles/new-accounts-by-type.png)
 
 ### Möjligheter har lagts till {#opportunities-added}
 
@@ -107,35 +111,35 @@ The [!UICONTROL Opportunities added] widgeten använder ett linjediagram för at
 
 ![Widgeten för affärsmöjligheter har lagts till.](../images/account-profiles/opportunities-added.png)
 
-### Affärsmöjligheter per personroll {#opportunities-by-person-role}
+### Nya möjligheter per personroll {#opportunities-by-person-role}
 
-The [!UICONTROL Opportunities by person role] visar det totala antalet affärsmöjligheter i ett enda mätresultat i ett mundiagram. I donutdiagrammet illustreras den relativa strukturen av roller som utgör det totala antalet möjligheter. En färgkodad nyckel ger en beskrivning av alla inkluderade roller. Enskilda värden för varje roll visas i en dialogruta när markören hålls över respektive avsnitt i donatabellen.
+The [!UICONTROL New opportunities by person role] visar det totala antalet affärsmöjligheter i ett enda mätresultat i ett mundiagram. I donutdiagrammet illustreras den relativa strukturen av roller som utgör det totala antalet möjligheter. En färgkodad nyckel ger en beskrivning av alla inkluderade roller. Enskilda värden för varje roll visas i en dialogruta när markören hålls över respektive avsnitt i donatabellen.
 
 >[!NOTE]
 >
 >The [!UICONTROL No data found] eller [!UICONTROL Unable to load] felet orsakas när bryggan säljprojekt-person inte används i ditt schema. Om dina insikter visar något av dessa fel bör du kontrollera ditt unionsschema och se till att fältgruppen &#39;Opportunity-Person&#39; samlar in data.
 
-![Widgeten för affärsmöjligheter per person.](../images/account-profiles/opportunities-by-person-role.png)
+![Widgeten Nya möjligheter per person-roll.](../images/account-profiles/new-opportunities-by-person-role.png)
 
-### Affärsmöjligheter efter intäkt {#opportunities-by-revenue}
+### Nya möjligheter per intäkt {#opportunities-by-revenue}
 
-The [!UICONTROL Opportunities by revenue] widgeten använder ett stapeldiagram för att illustrera den totala beräknade intäkten som dina affärsmöjligheter genererar. Widgeten har stöd för upp till sex möjligheter.
+The [!UICONTROL New opportunities by revenue] widgeten använder ett stapeldiagram för att illustrera den totala beräknade intäkten som dina affärsmöjligheter genererar. Widgeten har stöd för upp till sex möjligheter.
 
 Om du vill visa en dialogruta som innehåller den specifika intäktssumman för en affärsmöjlighet, håller du pekaren över enskilda fält.
 
-![Widgeten Affärsmöjligheter per intäkt.](../images/account-profiles/opportunities-by-revenue.png)
+![Widgeten Nya möjligheter per intäkt.](../images/account-profiles/new-opportunities-by-revenue.png)
 
-### Affärsmöjligheter efter status och fas {#opportunities-by-status-&-stage}
+### Nya möjligheter per status och fas {#opportunities-by-status-&-stage}
 
 Den här widgeten använder ett stapeldiagram för att illustrera antalet möjligheter som antingen är öppna eller stängda i alla stadier av marknadsförings-/säljprocessen. Widgeten använder färger för att särskilja affärsmöjligheterna. En färgkodad nyckel anger tillgängliga stadier för affärsmöjligheter.
 
-![Widgeten Möjligheter efter status och scen.](../images/account-profiles/opportunities-by-status-&-stage.png)
+![Nya möjligheter per status och scen-widget.](../images/account-profiles/new-opportunities-by-status-&-stage.png)
 
-### Vunna affärsmöjligheter {#opportunities-won}
+### Nya möjligheter {#opportunities-won}
 
-The [!UICONTROL Opportunities won] widgeten visar det totala antalet affärsmöjligheter som har slutförts i ett enda mätresultat i ett mundiagram. I donutdiagrammet visas den relativa strukturen av möjligheter som antingen vunnits eller inte. En färgkodad nyckel skiljer mellan vunna och ej vunna affärsmöjligheter. Enskilda värden för varje roll visas i en dialogruta när markören hålls över respektive avsnitt i donatabellen.
+The [!UICONTROL New opportunities won] widgeten visar det totala antalet affärsmöjligheter som har slutförts i ett enda mätresultat i ett mundiagram. I donutdiagrammet visas den relativa strukturen av möjligheter som antingen vunnits eller inte. En färgkodad nyckel skiljer mellan vunna och ej vunna affärsmöjligheter. Enskilda värden för varje roll visas i en dialogruta när markören hålls över respektive avsnitt i donatabellen.
 
-![Widgeten för affärsmöjligheter.](../images/account-profiles/opportunities-won.png)
+![De nya möjligheterna får widgeten.](../images/account-profiles/new-opportunities-won.png)
 
 ### Förutsägbar poängfördelning {#predictive-scoring-distribution}
 
@@ -170,6 +174,10 @@ I listrutan i widgeten kan du välja kontobedömningsmodellen.
 ### Totalt antal konton per bransch {#total-accounts-by-industry}
 
 Den här widgeten visar det totala antalet konton i ett enskilt mätresultat och använder ett dondiagram för att illustrera de proportionella räkningsstorlekarna för de branscher som utgör det totala antalet. Nyckeln ger färgkodningsinformation för de olika branscherna som donationsdiagrammet består av.
+
+>[!NOTE]
+>
+>Den information som visas av den här insikten beror på det datumintervall som du har angett. Om du inte anger något datumfilter analyserar standardbeteendet för insikterna data som lagts till från föregående år fram till idag.
 
 Individuella värden för de olika branscherna visas i en dialogruta när markören hålls över respektive avsnitt i mundiagrammet.
 

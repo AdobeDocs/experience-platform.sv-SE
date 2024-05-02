@@ -3,9 +3,10 @@ title: Kontoprofilsinsikter
 description: Upptäck den SQL som ger er insikter om er kontoprofil och använd dessa frågor för att generera anpassade insikter som ytterligare utforskar era kunder och deras kundupplevelser.
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
-source-git-commit: b7875128592b17044b068d8064de082bf00a8309
+exl-id: a953dd56-7dd8-4cd0-baa0-85f92d192789
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '549'
 ht-degree: 0%
 
 ---
@@ -46,7 +47,7 @@ ORDER BY date_key limit 5000;
 
 +++
 
-## Konton per bransch {#accounts-by-industry}
+## Nya konton efter bransch {#accounts-by-industry}
 
 Frågor som besvaras av den här insikten:
 
@@ -82,7 +83,7 @@ ORDER BY total_accounts DESC limit 5000;
 
 +++
 
-## Konton efter typ {#accounts-by-type}
+## Nya konton efter typ {#accounts-by-type}
 
 Frågor som besvaras av den här insikten:
 
@@ -128,7 +129,7 @@ LIMIT  5000;
 
 +++
 
-## Affärsmöjligheter per personroll {#opportunities-by-person-role}
+## Nya möjligheter per personroll {#opportunities-by-person-role}
 
 Frågor som besvaras av den här insikten:
 
@@ -150,7 +151,7 @@ LIMIT  5000;
 
 +++
 
-## Affärsmöjligheter efter intäkt {#opportunities-by-revenue}
+## Nya möjligheter per intäkt {#opportunities-by-revenue}
 
 Frågor som besvaras av den här insikten:
 
@@ -190,7 +191,7 @@ ORDER BY total_expected_revenue DESC limit 5000;
 
 +++
 
-## Affärsmöjligheter efter status och fas {#opportunities-by-status-and-stage}
+## Nya möjligheter per status och fas {#opportunities-by-status-and-stage}
 
 Frågor som besvaras av den här insikten:
 
@@ -223,7 +224,7 @@ FROM   opportunities_by_isclosed limit 5000;
 
 +++
 
-## Vunna affärsmöjligheter {#opportunities-won}
+## Nya möjligheter {#opportunities-won}
 
 Frågor som besvaras av den här insikten:
 

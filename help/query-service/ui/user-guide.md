@@ -4,14 +4,18 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 02ecc6bd2ff85d2d837ffe25b090fd65043779a9
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '2700'
+source-wordcount: '2731'
 ht-degree: 0%
 
 ---
 
 # [!DNL Query Editor] Användargränssnittsguide
+
+>[!NOTE]
+>
+>30-4-2024 [Förbättrad frågeredigerare](#enhanced-editor-toggle) har blivit standardredigerare för alla användare. Den äldre redigeraren kommer att bli inaktuell den 30-maj-2024 och inte längre vara tillgänglig för användning.
 
 [!DNL Query Editor] är ett interaktivt verktyg från Adobe Experience Platform [!DNL Query Service]som gör det möjligt att skriva, validera och köra frågor om kundupplevelsedata i [!DNL Experience Platform] användargränssnitt. [!DNL Query Editor] har stöd för utveckling av frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
@@ -229,7 +233,7 @@ När du sparar en fråga i Frågeredigeraren visas ett bekräftelsemeddelande so
 
 Frågor som har sparats som en mall kan schemaläggas från Frågeredigeraren. Med schemaläggningsfrågor kan du automatisera frågekörningar på en anpassad cache. Du kan schemalägga frågor baserat på frekvens, datum och tid och även välja en utdatamängd för dina resultat om det behövs. Frågescheman kan även inaktiveras eller tas bort via användargränssnittet.
 
-Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Samma begränsning gäller inte för [!DNL Query Service] API.
+Scheman ställs in i Frågeredigeraren. När du använder Frågeredigeraren kan du bara lägga till ett schema i en fråga som redan har skapats och sparats. Samma begränsning gäller inte för [!DNL Query Service] API.
 
 >[!NOTE]
 >

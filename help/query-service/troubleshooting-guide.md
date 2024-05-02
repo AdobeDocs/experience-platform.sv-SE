@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Vanliga frågor
 description: Det här dokumentet innehåller vanliga frågor och svar relaterade till frågetjänsten. Här finns ämnen som export av data, verktyg från tredje part och PSQL-fel.
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 006b693c71cd45408bccb7c051f367f140260370
+source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
-source-wordcount: '4432'
-ht-degree: 1%
+source-wordcount: '4407'
+ht-degree: 0%
 
 ---
 
@@ -277,7 +277,7 @@ SELECT count(1) FROM myTableName
 
 Du bör även läsa dokumentationen om hur du utför [schemalagda frågor i användargränssnittet](./ui/user-guide.md#scheduled-queries) och via [API](./api/scheduled-queries.md).
 
-Tänk på det när du använder [!DNL Query Editor] Du kan bara lägga till ett schema i en fråga som redan har skapats, sparats och körts. Detta gäller inte för [!DNL Query Service] API.
+Tänk på det när du använder [!DNL Query Editor] Du kan bara lägga till ett schema i en fråga som redan har skapats och sparats. Detta gäller inte för [!DNL Query Service] API.
 +++
 
 ### Vad betyder felet &quot;Sessionsgräns nådd&quot;?
@@ -457,7 +457,7 @@ WHERE T2.ID IS NULL
 
 +++
 
-### Kan jag skapa en datauppsättning med en CTAS-fråga med ett namn med dubbla understreck som de som visas i gränssnittet? Exempel: `test_table_001`.
+### Kan jag skapa en datauppsättning med en CTAS-fråga med ett namn med dubbla understreck som de som visas i gränssnittet? Till exempel: `test_table_001`.
 
 +++Svarsnr. Detta är en avsiktlig begränsning i Experience Platform som gäller för alla Adobe-tjänster, inklusive frågetjänsten. Ett namn med två understreck accepteras som ett schema- och datauppsättningsnamn, men tabellnamnet för datauppsättningen får bara innehålla ett understreck.
 +++
@@ -655,7 +655,7 @@ Följande tabell innehåller PSQL-felkoder och deras möjliga orsaker.
 | **53400** | Fråga | LIMIT överskrider maxvärdet | Användaren angav en LIMIT-sats som är högre än 100 000 |
 | **53400** | Fråga | Tidsgräns för instruktion | Den inskickade livebeskrivningen tog mer än maximalt 10 minuter |
 | **58000** | Fråga | Systemfel | Internt systemfel |
-| **0A000** | Fråga/kommando | Stöds inte | Funktionen/funktionen i frågan/kommandot stöds inte |
+| **000** | Fråga/kommando | Stöds inte | Funktionen/funktionen i frågan/kommandot stöds inte |
 | **42501** | DROP TABLE Query | Släpptabellen har inte skapats av frågetjänsten | Tabellen som tas bort skapades inte av frågetjänsten med `CREATE TABLE` programsats |
 | **42501** | DROP TABLE Query | Tabellen har inte skapats av den autentiserade användaren | Tabellen som tas bort skapades inte av den inloggade användaren |
 | **42P01** | DROP TABLE Query | Tabellen hittades inte | Det gick inte att hitta tabellen som angavs i frågan |
