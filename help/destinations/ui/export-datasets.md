@@ -215,7 +215,7 @@ Följ stegen nedan för att ta bort datauppsättningar från ett befintligt data
 
    >[!NOTE]
    >
-Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+   >Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
 
    ![Dialogrutan Ta bort datauppsättning med kontrollen Ta bort datauppsättning i den högra listen.](../assets/ui/export-datasets/bulk-remove-datasets.png)
 
