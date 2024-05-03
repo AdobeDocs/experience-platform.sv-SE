@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: ea3df4f05850547c75358fb15bf7a1e6a1d19dbf
 workflow-type: tm+mt
-source-wordcount: '1971'
+source-wordcount: '2012'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,15 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.2.0 - 3 maj 2024
+
+**Nya funktioner**
+
+* Utöka variabeldataelementet så att det stöder dataobjekt.
+* Uppdateringsåtgärden för variabeln har nu stöd för att ändra genomströmningsdata för Adobe Analytics, Adobe Audience Manager och Adobe Target.
+
+Innehåller version 2.19.2 av Adobe Experience Platform Web SDK.
 
 ## Version 2.21.4 - 10 januari 2024
 
