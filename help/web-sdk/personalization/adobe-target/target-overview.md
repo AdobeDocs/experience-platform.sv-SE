@@ -2,9 +2,9 @@
 title: Använd Adobe Target med Web SDK för personalisering
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 0b662b4c1801a6d6f6fc2c6ade92d259b821ab23
+source-git-commit: a34204eb58ed935831d26caf062ebb486039669f
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1347'
 ht-degree: 2%
 
 ---
@@ -184,6 +184,58 @@ Uppdatera en [!DNL Target] kontrollerar du att profildata skickas med följande:
 | `data` | Objekt | Godtyckliga nyckel-/värdepar skickade till [!DNL Target] lösningar under målklassen. |
 
 Normal [!DNL Web SDK] koden som använder det här kommandot ser ut så här:
+
+**Fördröj sparandet av profil- eller enhetsparametrar tills innehållet visas för slutanvändaren**
+
+Om du vill fördröja inspelningsattributen i profilen tills innehållet visas anger du `data.adobe.target._save=false` på din begäran.
+
+Till exempel innehåller din webbplats tre beslutsomfattningar som motsvarar tre kategorilänkar på webbplatsen (Män, Kvinnor och barn) och du vill spåra den kategori som användaren slutligen besökte. Skicka dessa förfrågningar med `__save` flaggan är inställd på `false` för att undvika att kategorin behålls när innehållet begärs. När innehållet har visualiserats skickar du rätt nyttolast (inklusive `eventToken` och `stateToken`) för motsvarande attribut som ska registreras.
+
+<!--Save profile or entity attributes by default with:
+
+```js
+alloy ( "sendEvent" , {
+  renderDecisions : true,
+  data : {
+    __adobe : {
+      target : {
+        "__save" : true // Optional. __save=true is the default 
+        "profile.gender" : "female",
+        "profile.age" : 30,
+        "entity.name" : "T-shirt",
+        "entity.id" : "1234",
+      }
+    }
+  }
+} ) ; 
+```
+-->
+
+Exemplet nedan skickar ett trackEvent-liknande meddelande, kör profilskript, sparar attribut och registrerar omedelbart händelsen.
+
+```js
+alloy ( "sendEvent" , {
+  renderDecisions : true,
+  data : {
+    __adobe : {
+      target : {
+        "profile.gender" : "female",
+        "profile.age" : 30,
+        "entity.name" : "T-shirt" ,
+        "entity.id" : "1234" ,
+        "track": {
+          "scopes": [ "mbox1", "mbox2"],
+          "type": "display|click|..."
+        }
+      }
+    }
+  }
+} ) ;
+```
+
+>[!NOTE]
+>
+>Om `__save` direktivet utelämnas, och då sparas profil- och entitetsattributen omedelbart, som om begäran har körts, även om resten av begäran är en förhämtning av personalisering. The `__save` -direktivet är bara relevant för profil- och entitetsattribut. Om spårobjektet finns visas `__save` -direktivet ignoreras. Data sparas omedelbart och meddelandet registreras.
 
 **`sendEvent`med profildata**
 
