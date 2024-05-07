@@ -2,9 +2,9 @@
 title: Använd Adobe Target med Web SDK för personalisering
 description: Lär dig hur du återger anpassat innehåll med Experience Platform Web SDK med Adobe Target
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: a34204eb58ed935831d26caf062ebb486039669f
+source-git-commit: 69406293dce5fdfc832adff801f1991626dafae0
 workflow-type: tm+mt
-source-wordcount: '1347'
+source-wordcount: '1338'
 ht-degree: 2%
 
 ---
@@ -183,7 +183,7 @@ Uppdatera en [!DNL Target] kontrollerar du att profildata skickas med följande:
 | `xdm` | Objekt | Data som är formaterade i XDM och som markeras i Web SDK som en upplevelsehändelse |
 | `data` | Objekt | Godtyckliga nyckel-/värdepar skickade till [!DNL Target] lösningar under målklassen. |
 
-Normal [!DNL Web SDK] koden som använder det här kommandot ser ut så här:
+<!--Typical [!DNL Web SDK] code using this command looks like the following:-->
 
 **Fördröj sparandet av profil- eller enhetsparametrar tills innehållet visas för slutanvändaren**
 
