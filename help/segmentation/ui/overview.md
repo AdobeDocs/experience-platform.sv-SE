@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 795b76465c59fc375542b92cdd3deefce8c000ca
+source-git-commit: bc501b96a9ec6b723f4598d048b399fef82d54b2
 workflow-type: tm+mt
 source-wordcount: '4065'
 ht-degree: 0%
@@ -23,7 +23,7 @@ Att arbeta med målgrupper och segmentdefinitioner kräver en förståelse för 
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md): Gör det möjligt att skapa kundprofiler genom att överbrygga identiteter från olika datakällor som hämtas in till [!DNL Platform].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md): Det standardiserade ramverk som [!DNL Platform] organiserar kundupplevelsedata. För att utnyttja segmenteringen på bästa sätt bör du se till att dina data är inmatade som profiler och händelser enligt [bästa praxis för datamodellering](../../xdm/schema/best-practices.md).
 
-Du bör också förstå två nyckeltermer som används i det här dokumentet och förstå skillnaden mellan dem:
+Du bör också förstå tre nyckeltermer som används i det här dokumentet och förstå skillnaden mellan dem:
 
 - **Målgrupp**: En uppsättning personer som har liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med segmentdefinitioner eller målgruppskomposition (plattformsgenererad publik) eller från externa källor som anpassade uppladdningar (externt genererade målgrupper).
 - **Segmentdefinition**: De regler som Adobe Experience Platform använder för att beskriva viktiga egenskaper eller beteenden hos en målgrupp.
