@@ -1,17 +1,17 @@
 ---
 title: Konfigurera åsidosättningar av dataström
-description: Lär dig hur du konfigurerar datastream-åsidosättningar i användargränssnittet för datastreams och aktiverar dem via Web SDK.
+description: Lär dig hur du konfigurerar åsidosättningar av dataströmmar i användargränssnittet för dataströmmar och aktiverar dem via Web SDK eller Mobile SDK.
 exl-id: 3f17a83a-dbea-467b-ac67-5462c07c884c
-source-git-commit: b9b6320b15ee93807ebf8b48f31be7386a6f4a19
+source-git-commit: 17ed5f3c14d4787352f72d3d7721cbb6416d533e
 workflow-type: tm+mt
-source-wordcount: '1046'
+source-wordcount: '1060'
 ht-degree: 0%
 
 ---
 
 # Konfigurera åsidosättningar av dataström
 
-Med åsidosättningar av dataström kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK.
+Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK eller Mobile SDK.
 
 Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena, utan att skapa ett datastream eller ändra befintliga inställningar.
 
@@ -68,7 +68,7 @@ När du har skapat dataströmmen kan du redigera [Adobe Target](configure.md#tar
 
 När du har lagt till önskade åsidosättningar sparar du datastream-inställningarna.
 
-Nu bör du konfigurera Adobe Target datastream-åsidosättningar. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK](#send-overrides).
+Nu bör du konfigurera Adobe Target datastream-åsidosättningar. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK eller Mobile SDK](#send-overrides).
 
 ### Datastream overrides for Adobe Analytics {#analytics-overrides}
 
@@ -82,7 +82,7 @@ Välj **[!UICONTROL Show Batch Mode]** om du vill aktivera gruppredigering av å
 
 När du har lagt till önskade åsidosättningar sparar du datastream-inställningarna.
 
-Nu bör du konfigurera Adobe Analytics datastream-åsidosättningar. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK](#send-overrides).
+Nu bör du konfigurera Adobe Analytics datastream-åsidosättningar. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK eller Mobile SDK](#send-overrides).
 
 ### Datastream overrides for Experience Platform event datasets {#event-dataset-overrides}
 
@@ -94,7 +94,7 @@ När du har skapat dataströmmen kan du redigera [Adobe Experience Platform](con
 
 När du har lagt till önskade åsidosättningar sparar du datastream-inställningarna.
 
-Nu bör du konfigurera Adobe Experience Platform datastream-åsidosättningar. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK](#send-overrides).
+Nu bör du konfigurera Adobe Experience Platform datastream-åsidosättningar. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK eller Mobile SDK](#send-overrides).
 
 ### Åsidosättningar av dataström för synkroniseringsbehållare för ID från tredje part {#container-overrides}
 
@@ -112,9 +112,9 @@ Använd sedan **[!UICONTROL Container ID Overrides]** för att lägga till behå
 
 När du har lagt till önskade åsidosättningar sparar du datastream-inställningarna.
 
-Nu bör åsidosättningar av ID-synkroniseringsbehållare konfigureras. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK](#send-overrides).
+Nu bör åsidosättningar av ID-synkroniseringsbehållare konfigureras. Nu kan du [skicka åsidosättningarna till Edge Network via Web SDK eller Mobile SDK](#send-overrides).
 
-## Skicka åsidosättningarna till Edge Network via Web SDK {#send-overrides}
+## Skicka åsidosättningarna till Edge Network {#send-overrides}
 
 När du har konfigurerat åsidosättningar av datastream i användargränssnittet för datainsamling kan du skicka åsidosättningarna till Edge Network via Web SDK eller Mobile SDK.
 
