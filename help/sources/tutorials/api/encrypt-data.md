@@ -2,16 +2,16 @@
 title: Krypterad datainmatning
 description: Lär dig hur du importerar krypterade filer via molnlagringsbatchkällor med API:t.
 exl-id: 83a7a154-4f55-4bf0-bfef-594d5d50f460
-source-git-commit: a92a3d4ce16e50d9eec97448e677ca603931fa44
+source-git-commit: adb48b898c85561efb2d96b714ed98a0e3e4ea9b
 workflow-type: tm+mt
-source-wordcount: '1473'
+source-wordcount: '1736'
 ht-degree: 0%
 
 ---
 
 # Krypterad dataöverföring
 
-Med Adobe Experience Platform kan du importera krypterade filer via batchkällor i molnet. Med krypterad datainmatning kan ni utnyttja asymmetriska krypteringsmekanismer för att på ett säkert sätt överföra batchdata till Experience Platform. För närvarande stöds PGP och GPG för asymmetrisk kryptering.
+Du kan importera krypterade datafiler till Adobe Experience Platform med hjälp av batchkällor i molnet. Med krypterad datainmatning kan ni utnyttja asymmetriska krypteringsmekanismer för att på ett säkert sätt överföra batchdata till Experience Platform. För närvarande stöds PGP och GPG för asymmetrisk kryptering.
 
 Processen för krypterad datainmatning är följande:
 
@@ -27,7 +27,7 @@ Processen för krypterad datainmatning är följande:
 
 Det här dokumentet innehåller anvisningar om hur du genererar ett krypteringsnyckelpar för att kryptera dina data och importerar krypterade data till Experience Platform med hjälp av molnlagringskällor.
 
-## Komma igång
+## Kom igång {#get-started}
 
 Den här självstudiekursen kräver att du har en fungerande förståelse för följande komponenter i Adobe Experience Platform:
 
@@ -39,9 +39,9 @@ Den här självstudiekursen kräver att du har en fungerande förståelse för f
 
 Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../landing/api-guide.md).
 
-### Filtillägg som stöds för krypterade filer
+### Filtillägg som stöds för krypterade filer {#supported-file-extensions-for-encrypted-files}
 
-Listan över filtillägg som stöds för krypterade filer är följande:
+Listan över filtillägg som stöds för krypterade filer är:
 
 * .csv
 * .tsv
@@ -74,6 +74,8 @@ POST /data/foundation/connectors/encryption/keys
 
 **Begäran**
 
++++Visa exempelbegäran
+
 Följande begäran genererar ett krypteringsnyckelpar med PGP-krypteringsalgoritmen.
 
 ```shell
@@ -97,7 +99,11 @@ curl -X POST \
 | `encryptionAlgorithm` | Den typ av krypteringsalgoritm som du använder. Krypteringstyperna som stöds är `PGP` och `GPG`. |
 | `params.passPhrase` | Lösenfrasen ger ytterligare ett lager av skydd för dina krypteringsnycklar. När lösenordet skapas lagrar Experience Platform den i ett annat säkert valv än den offentliga nyckeln. Du måste ange en sträng som inte är tom som lösenfras. |
 
++++
+
 **Svar**
+
++++Visa exempelsvar
 
 Ett lyckat svar returnerar din Base64-kodade offentliga nyckel, ditt offentliga nyckel-ID och nycklarnas förfallotid. Utgångsdatumet är automatiskt 180 dagar efter datumet för nyckelgenereringen. Förfallotid kan för närvarande inte konfigureras.
 
@@ -115,9 +121,93 @@ Ett lyckat svar returnerar din Base64-kodade offentliga nyckel, ditt offentliga 
 | `publicKeyId` | Det offentliga nyckel-ID:t används för att skapa ett dataflöde och importera dina krypterade molnlagringsdata till Experience Platform. |
 | `expiryTime` | Utgångsdatumet anger förfallodatumet för ditt krypteringsnyckelpar. Det här datumet anges automatiskt till 180 dagar efter datumet för nyckelgenereringen och visas i ett enhetligt tidsstämpelformat. |
 
-+++(Valfritt) Skapa nyckelpar för signaturverifiering för signerade data
++++
 
-### Skapa kundstyrt nyckelpar
+### Hämta krypteringsnycklar {#retrieve-encryption-keys}
+
+Om du vill hämta alla krypteringsnycklar i organisationen skickar du en GET-förfrågan till `/encryption/keys` endpoit=not.
+
+**API-format**
+
+```http
+GET /data/foundation/connectors/encryption/keys
+```
+
+**Begäran**
+
++++Visa exempelbegäran
+
+Följande begäran hämtar alla krypteringsnycklar i organisationen.
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**Svar**
+
++++Visa exempelsvar
+
+Ett lyckat svar returnerar krypteringsalgoritmen, den offentliga nyckeln, ID:t för den offentliga nyckeln och motsvarande förfallotid för nycklarna.
+
+```json
+{
+    "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "publicKey": "{PUBLIC_KEY}",
+    "expiryTime": "{EXPIRY_TIME}"
+}
+```
+
++++
+
+### Hämta krypteringsnycklar med ID {#retrieve-encryption-keys-by-id}
+
+Om du vill hämta en viss uppsättning krypteringsnycklar skickar du en GET-förfrågan till `/encryption/keys` slutpunkt och ange ditt offentliga nyckel-ID som rubrikparameter.
+
+**API-format**
+
+```http
+GET /data/foundation/connectors/encryption/keys/{PUBLIC_KEY_ID}
+```
+
+**Begäran**
+
++++Visa exempelbegäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys/{publicKeyId}' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**Svar**
+
++++Visa exempelsvar
+
+Ett lyckat svar returnerar krypteringsalgoritmen, den offentliga nyckeln, ID:t för den offentliga nyckeln och motsvarande förfallotid för nycklarna.
+
+```json
+{
+    "encryptionAlgorithm": "{ENCRYPTION_ALGORITHM}",
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "publicKey": "{PUBLIC_KEY}",
+    "expiryTime": "{EXPIRY_TIME}"
+}
+```
+
++++
+
+### Skapa kundstyrt nyckelpar {#create-customer-managed-key-pair}
 
 Du kan också skapa ett nyckelpar för signaturverifiering för att signera och importera dina krypterade data.
 
@@ -134,6 +224,8 @@ POST /data/foundation/connectors/encryption/customer-keys
 ```
 
 **Begäran**
+
++++Visa exempelbegäran
 
 ```shell
 curl -X POST \
@@ -154,7 +246,11 @@ curl -X POST \
 | `encryptionAlgorithm` | Den typ av krypteringsalgoritm som du använder. Krypteringstyperna som stöds är `PGP` och `GPG`. |
 | `publicKey` | Den offentliga nyckel som motsvarar dina kundhanterade nycklar som används för att signera din krypterade nyckel. Nyckeln måste vara Base64-kodad. |
 
++++
+
 **Svar**
+
++++Visa exempelsvar
 
 ```json
 {    
@@ -206,11 +302,13 @@ Om du vill skapa ett dataflöde skickar du en POST till `/flows` slutpunkt för 
 POST /flows
 ```
 
-**Begäran**
-
 >[!BEGINTABS]
 
 >[!TAB Skapa ett dataflöde för krypterad datainmatning]
+
+**Begäran**
+
++++Visa exempelbegäran
 
 Följande begäran skapar ett dataflöde för att importera krypterade data för en molnlagringskälla.
 
@@ -268,8 +366,28 @@ curl -X POST \
 | `scheduleParams.frequency` | Frekvensen med vilken dataflödet samlar in data. Godtagbara värden är: `once`, `minute`, `hour`, `day`, eller `week`. |
 | `scheduleParams.interval` | Intervallet anger perioden mellan två på varandra följande flödeskörningar. Intervallets värde ska vara ett heltal som inte är noll. Intervall krävs inte när frekvens har angetts som `once` och ska vara större än eller lika med `15` för andra frekvensvärden. |
 
++++
+
+**Svar**
+
++++Visa exempelsvar
+
+Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet för dina krypterade data.
+
+```json
+{
+    "id": "dbc5c132-bc2a-4625-85c1-32bc2a262558",
+    "etag": "\"8e000533-0000-0200-0000-5f3c40fd0000\""
+}
+```
+
++++
 
 >[!TAB Skapa ett dataflöde för att importera krypterade och signerade data]
+
+**Begäran**
+
++++Visa exempelbegäran
 
 ```shell
 curl -X POST \
@@ -318,9 +436,11 @@ curl -X POST \
 | --- | --- |
 | `params.signVerificationKeyId` | Signeringsverifieringsnyckelns ID är samma som det offentliga nyckel-ID som hämtades efter att din Base64-kodade offentliga nyckel delats med Experience Platform. |
 
->[!ENDTABS]
++++
 
 **Svar**
+
++++Visa exempelsvar
 
 Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet för dina krypterade data.
 
@@ -331,10 +451,92 @@ Ett godkänt svar returnerar ID:t (`id`) av det nya dataflödet för dina krypte
 }
 ```
 
++++
 
->[!BEGINSHADEBOX]
+>[!ENDTABS]
 
-**Begränsningar för återkommande intag**
+### Ta bort krypteringsnycklar {#delete-encryption-keys}
+
+Om du vill ta bort dina krypteringsnycklar skickar du en DELETE-begäran till `/encryption/keys` slutpunkt och ange ditt offentliga nyckel-ID som rubrikparameter.
+
+**API-format**
+
+```http
+DELETE /data/foundation/connectors/encryption/keys/{PUBLIC_KEY_ID}
+```
+
+**Begäran**
+
++++Visa exempelbegäran
+
+```shell
+curl -X DELETE \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys/{publicKeyId}' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**Svar**
+
+Ett lyckat svar returnerar HTTP-status 204 (inget innehåll) och en tom brödtext.
+
+### Validera krypteringsnycklar {#validate-encryption-keys}
+
+Gör en GET-förfrågan till `/encryption/keys/validate/` slutpunkt och ange det offentliga nyckel-ID som du vill validera som en rubrikparameter.
+
+```http
+GET /data/foundation/connectors/encryption/keys/validate/{PUBLIC_KEY_ID}
+```
+
+**Begäran**
+
++++Visa exempelbegäran
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/connectors/encryption/keys/validate/{publicKeyId}' \
+  -H 'Authorization: Bearer {{ACCESS_TOKEN}}' \
+  -H 'x-api-key: {{API_KEY}}' \
+  -H 'x-gw-ims-org-id: {{ORG_ID}}' \
+```
+
++++
+
+**Svar**
+
+Ett godkänt svar returnerar antingen en bekräftelse på att dina ID:n är giltiga eller ogiltiga.
+
+>[!BEGINTABS]
+
+>[!TAB Giltig]
+
+Ett giltigt ID för offentlig nyckel returnerar statusen `Active` tillsammans med ditt offentliga nyckel-ID.
+
+```json
+{
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "status": "Active"
+}
+```
+
+>[!TAB Ogiltig]
+
+Ett ogiltigt ID för offentlig nyckel returnerar statusen `Expired` tillsammans med ditt offentliga nyckel-ID.
+
+```json
+{
+    "publicKeyId": "{PUBLIC_KEY_ID}",
+    "status": "Expired"
+}
+```
+
+>[!ENDTABS]
+
+
+## Begränsningar för återkommande intag {#restrictions-on-recurring-ingestion}
 
 Krypterad datainmatning stöder inte inmatning av återkommande mappar eller mappar på flera nivåer i källor. Alla krypterade filer måste finnas i en enda mapp. Jokertecken med flera mappar i en enda källsökväg stöds inte heller.
 
@@ -356,14 +558,13 @@ I det här scenariot misslyckas flödeskörningen och returnerar ett felmeddelan
 * ACME-kunder
    * File1.csv.gpg
    * File2.json.gpg
-   * Subfolder1
+   * Undermapp1
       * File3.csv.gpg
       * File4.json.gpg
       * File5.csv.gpg
 * ACME-lojalitet
    * File6.csv.gpg
 
->[!ENDSHADEBOX]
 
 ## Nästa steg
 
