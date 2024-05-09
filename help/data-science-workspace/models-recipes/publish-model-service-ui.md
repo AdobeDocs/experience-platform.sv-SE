@@ -5,7 +5,7 @@ title: Publicera en modell som en tjänst i gränssnittet för datavetenskapen
 type: Tutorial
 description: Med Adobe Experience Platform Data Science Workspace kan du publicera din utbildade och utvärderade modell som en tjänst, vilket gör att användare i organisationen kan få sina data poäng utan att behöva skapa egna modeller.
 exl-id: ebbec1b1-20d3-43b5-82d3-89c79757625a
-source-git-commit: 74dd4cb786cb96c04d15005fe869ff861093edc3
+source-git-commit: d6a4b149b911cd6e7dbbd6c1289fce64be76b506
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 # Publicera en modell som en tjänst i gränssnittet för datavetenskapen {#publish-a-model-as-a-service}
 
 >[!CONTEXTUALHELP]
->id="platform_intelligent-services_publishmodel"
+>id="platform_intelligentservices_publishmodel"
 >title="Publicera en modell som en tjänst"
 >abstract=""
 
