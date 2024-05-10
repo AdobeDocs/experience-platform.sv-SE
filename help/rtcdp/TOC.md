@@ -5,9 +5,9 @@ audience: user
 user-guide-title: Användarhandbok om Real-Time Customer Data Platform
 user-guide-description: Samla in kända och anonyma data från flera olika källor för att skapa kundprofiler, skapa målgrupper utifrån dessa profiler och aktivera dessa målgrupper för tredjepartsdestinationer.
 role: Admin
-source-git-commit: b35f584d13fb241c06b4045b525d84775ef8317c
+source-git-commit: 9327cf8545caa306acd8077d089041d50a30e556
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '301'
 ht-degree: 13%
 
 ---
@@ -83,6 +83,7 @@ ht-degree: 13%
    * Profilberikning {#profile-enrichment}
       * [Komplettera förstahandsprofiler med attribut som tillhandahålls av partner](/help/rtcdp/partner-data/supplement-first-party-profiles.md)
    * Personaliserade insikter och engagemang {#personalization-insights-engagement}
+      * [Utveckla kundvärdet en gång till livstidsvärdet](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/evolve-one-time-value-to-lifetime-value.md)
       * [Engagera era kunder på ett smart sätt](/help/rtcdp/use-case-guides/intelligent-re-engagement/intelligent-re-engagement.md)
       * [Engagera era kunder på ett smart sätt: Luma-exempel](/help/rtcdp/use-case-guides/intelligent-re-engagement/use-cases-luma.md)
 * [Versionsinformation om Experience Platform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
