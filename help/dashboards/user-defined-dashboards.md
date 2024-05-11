@@ -1,17 +1,18 @@
 ---
-title: Användardefinierade kontrollpaneler
+title: Anpassade instrumentpaneler
 description: Lär dig hur du skapar och hanterar anpassade instrumentpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera nyckelvärden.
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: b3bd7a5ba1847518beafd12240c0d3a433a891d0
+source-git-commit: 17ad52864bbca09844c0241b6451e6811bd8f413
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1552'
 ht-degree: 0%
 
 ---
 
-# Användardefinierade kontrollpaneler
+# Anpassade instrumentpaneler
 
-Adobe Experience Platform Dashboards hjälper er att få insikter och anpassa visualisering med den användardefinierade funktionen för kontrollpaneler. Med den här funktionen kan du skapa och hantera anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen.
+Använd Adobe Experience Platform Dashboards för att få bättre insikter och anpassa visualiseringen via funktionen Dashboards. Använd den här funktionen för att skapa och hantera anpassade kontrollpaneler där du kan skapa, lägga till och redigera anpassade widgetar för att visualisera viktiga nyckeltal som är relevanta för organisationen.
+
 
 <!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
@@ -25,15 +26,18 @@ Om du vill skapa en anpassad kontrollpanel navigerar du först till instrumentpa
 
 ![Kontrollpanelens lager med kontrollpaneler i den vänstra navigeringen och&quot;Skapa kontrollpanel&quot; markerat.](./images/user-defined-dashboards/create-dashboard.png)
 
-Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tomt och en&quot;Inga kontrollpaneler hittades&quot; visas. meddelande. När du har skapat en kontrollpanel visas alla dina användardefinierade kontrollpaneler i kontrollpanelens lager.
+Innan du lägger till en anpassad kontrollpanel är kontrollpanelernas lager tomt och en&quot;Inga kontrollpaneler hittades&quot; visas. meddelande. När du har skapat en kontrollpanel visas alla kontrollpaneler i kontrollpanelens lager.
 
->[!NOTE]
+<!-- >[!NOTE]
 >
->Om du vill redigera en befintlig kontrollpanel väljer du instrumentpanelens namn i lagerlistan följt av pennikonen (![En pennikon.](./images/user-defined-dashboards/edit-icon.png))
+>To edit an existing dashboard, select the dashboard name from the inventory list followed by the pencil icon (![A pencil icon.](./images/user-defined-dashboards/edit-icon.png))
+>![A custom inventory listed in the dashboard inventory.](./images/user-defined-dashboards/dashbaord-inventory.png "A custom inventory listed in the dashboard inventory."){width="100" zoomable="yes"} -->
 
 The [!UICONTROL Create dashboard] visas. Ange ett användarvänligt, beskrivande namn för den samling widgetar som du vill skapa och välj **[!UICONTROL Save]**.
 
 ![Dialogrutan Skapa kontrollpanel.](./images/user-defined-dashboards/create-dashboard-dialog.png)
+
+Användare som har köpt Data Distiller SKU kan använda anpassade SQL-frågor för att skapa sina insikter. Se [Customizable Insight creation guide](./data-distiller/customizable-insights/overview.md) för instruktioner om det här arbetsflödet.
 
 Den nya tomma kontrollpanelen visas med ditt valda namn i vyns övre vänstra hörn.
 
@@ -42,13 +46,13 @@ Den nya tomma kontrollpanelen visas med ditt valda namn i vyns övre vänstra h�
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_udd_maxwidgets"
 >title="Maximalt antal widgetar"
->abstract="Användardefinierade kontrollpaneler har stöd för upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått."
+>abstract="Instrumentpanelstjänsten stöder upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått."
 
 Välj **[!UICONTROL Add new widget]** för att börja skapa widgeten.
 
 >[!IMPORTANT]
 >
->Användardefinierade kontrollpaneler har stöd för upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått.
+>Varje kontrollpanel stöder upp till tio widgetar. När du har lagt till tio widgetar på din instrumentpanel visas [!UICONTROL Add new widget] är inaktiverat och visas som grått.
 
 ![Den nya tomma instrumentpanelen med Lägg till ny widget markerad.](./images/user-defined-dashboards/add-new-widget.png)
 
@@ -150,21 +154,25 @@ Du kan ordna om widgetar och ändra storlek på dem i den här arbetsytan. Välj
 
 För att säkerställa att varje fråga för en Adobe Real-time Customer Data Platform insights-instrumentpanel har tillräckligt med resurser för att kunna köras effektivt, spårar API:t resursanvändningen genom att tilldela varje fråga kortplatser för samtidig användning. Systemet kan bearbeta upp till fyra samtidiga frågor, och därför är fyra samtidiga frågeplatser tillgängliga vid en given tidpunkt. Frågor placeras i en kö baserat på kortplatser för samtidig användning och väntar sedan i kön tills det finns tillräckligt med kortplatser för samtidig användning.
 
-### Duplicera en widget
+### Redigera, duplicera eller ta bort en widget {#duplicate}
 
-När du har skapat en widget kan du duplicera hela widgeten och anpassa dess attribut för att skapa en unik widget utan att behöva börja från början. Om du vill duplicera en widget navigerar du först till instrumentpanelsinventeringen. Välj sedan instrumentpanelens namn i lagerlistan. Din anpassade kontrollpanel visas.
+När du har skapat en widget kan du redigera, duplicera eller ta bort hela widgetar från den anpassade instrumentpanelen.
 
-![Plattformsgränssnittet med instrumentpaneler och ett anpassat instrumentpanelsnamn markerat.](./images/user-defined-dashboards/dashbaord-inventory.png)
+>[!TIP]
+>
+>Om du vill växla mellan dina befintliga anpassade kontrollpaneler väljer du Kontrollpaneler i det vänstra navigeringsfältet och sedan instrumentpanelens namn i lagerlistan.
 
 Välj pennikonen (![En pennikon.](./images/user-defined-dashboards/edit-icon.png)) längst upp till höger på din anpassade kontrollpanel för att gå till redigeringsläget.
 
 ![En anpassad kontrollpanel med pennikonen markerad.](./images/user-defined-dashboards/edit-mode.png)
 
-Sedan markerar du ellipserna i det övre högra hörnet i widgeten som du vill kopiera, följt av **[!UICONTROL Duplicate]** i listan med tillgängliga alternativ.
+Markera sedan ellipserna i det övre högra hörnet av widgeten som du vill redigera, kopiera eller ta bort. Välj lämplig åtgärd i listrutan.
 
-![En widget i en användardefinierad kontrollpanel med ellipserna och widgeten Duplicera markerad.](./images/user-defined-dashboards/duplicate.png)
+![En widget i en anpassad kontrollpanel där ellipserna och dubblettwidgeten är markerade.](./images/user-defined-dashboards/duplicate.png)
 
-En dubblettwidget visas på den användardefinierade kontrollpanelen. Markera ellipserna för den nya widgeten, följt av **[!UICONTROL Edit]**, för att anpassa din nya widget.
+>[!NOTE]
+>
+>Med duplicering kan du anpassa attributen för en insikt för att skapa en unik widget utan att behöva börja från början. Om du duplicerar en widget visas den på din anpassade kontrollpanel. Du kan sedan markera ellipserna för din nya widget, följt av **[!UICONTROL Edit]**, för att anpassa dina insikter.
 
 ## Nästa steg och ytterligare resurser
 
@@ -172,6 +180,6 @@ Genom att läsa det här dokumentet får du en bättre förståelse för hur du 
 
 Identifiera tillgängliga förkonfigurerade mått och visualiseringar för [profiler](./guides/profiles.md#standard-widgets), [segment](./guides/audiences.md#standard-widgets)och [mål](./guides/destinations.md#standard-widgets) på kontrollpaneler, se listan över standardwidgetar i deras respektive dokumentation.
 
-Titta på följande video för att få en bättre förståelse för användardefinierade instrumentpaneler i Experience Platform:
+Titta på följande video för att få en bättre förståelse för instrumentpaneler i Experience Platform:
 
 >[!VIDEO](https://video.tv.adobe.com/v/3409637?quality=12&learn=on)

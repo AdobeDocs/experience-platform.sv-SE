@@ -1,9 +1,10 @@
 ---
 title: Anpassningsbara insikter
 description: Lär dig mer om användningsexempel, grundläggande funktioner och nödvändiga steg för att utveckla en anpassningsbar insiktspanel med Data Distiller. Upptäck hur funktionen för anpassningsbara insikter inom Data Distiller kan förbättra transparensen och få operativa insikter i olika dimensioner, som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke.
-source-git-commit: 18c1d32bbc2732c38a9c37ee8fb9d36a23d4e515
+exl-id: f807d0fd-c8ec-42d4-96a0-5ffc5681943b
+source-git-commit: bb95e0aa8ee92aee5a2f126d85e78308e652a061
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '941'
 ht-degree: 0%
 
 ---
@@ -11,6 +12,8 @@ ht-degree: 0%
 # Anpassningsbara insikter
 
 Skapa skräddarsydda rapportdatamodeller för att få djupare insikter, optimera strategier och anpassa analyser efter specifika affärsbehov med Data Distiller Customizable Insights. Använd funktionen för anpassningsbara insikter för att förbättra transparensen och få operativa insikter från era Adobe Experience Platform-data i olika dimensioner, som profiler, målgrupper, kampanjer, resor, berättiganden och samtycke. Denna funktion är en flexibel, anpassningsbar lösning som skräddarsyr organisationens rapporteringsdatamodeller för att passa just era affärsbehov.
+
+Till [visualisera dina anpassningsbara insikter](../../../dashboards/data-distiller/overview.md) du kan använda [frågeproffsläge](../../../dashboards/data-distiller/customizable-insights/query-pro-mode.md) för att utföra komplexa analyser med anpassade SQL-frågor och omvandla data till lätttolkade diagram. Använd frågeproffsläget för att skapa skräddarsydda insikter och visualiseringar på kontrollpanelerna och ta hänsyn till både tekniska och icke-tekniska målgrupper genom att ladda ned insikter som CSV-filer.
 
 Det här dokumentet innehåller användningsexempel, viktiga funktioner och nödvändiga steg för att utveckla en anpassningsbar insiktspanel med Data Distiller.
 

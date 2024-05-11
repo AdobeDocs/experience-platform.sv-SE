@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om instrumentpaneler
 user-guide-description: Lär dig visualisera data i Experience Platform via anpassningsbara instrumentpaneler.
 feature: Dashboards
 role: Developer,User
-source-git-commit: 8daa1c190f4c868fc12a46c66f6970704c8de8fa
+source-git-commit: 3ebd17eced73424135fc93a90f05d758912eb7d0
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 24%
+source-wordcount: '132'
+ht-degree: 21%
 
 ---
 
@@ -18,8 +18,19 @@ ht-degree: 24%
 * [Översikt över instrumentpaneler](home.md)
 * [Åtkomstbehörigheter för instrumentpanel](permissions.md)
 * [Instrumentpaneler](inventory.md)
-* [Användardefinierade instrumentpaneler](user-defined-dashboards.md)
+* [Kontrollpaneler](user-defined-dashboards.md)
 * [Hämta instrumentpaneler till PDF](download.md)
+* Data Distiller {#data-distiller}
+   * [Översikt](data-distiller/overview.md)
+   * Anpassningsbara insikter för utökad apprapportering {#customizable-insights}
+      * [Översikt](data-distiller/customizable-insights/overview.md)
+      * [Frågepro-läge (skapa SQL-diagram)](data-distiller/customizable-insights/query-pro-mode.md)
+      * Filter {#filters}
+         * [Datumfilter](data-distiller/customizable-insights/filters/date-filter.md)
+         * [Globalt filter](data-distiller/customizable-insights/filters/global-filter.md)
+      * [Visa mer](data-distiller/customizable-insights/view-more.md)
+      * [Visa SQL](data-distiller/customizable-insights/view-sql.md)
+      * [Hämta som CSV](data-distiller/customizable-insights/download-csv.md)
 * Tillgängliga instrumentpaneler {#guides}
    * [Profiler](guides/profiles.md)
    * [Kontoprofiler](guides/account-profiles.md)
