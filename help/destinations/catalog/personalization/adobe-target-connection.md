@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: c113d9615a276af67714f38b8325e69737b23964
+source-git-commit: e9777960f347e32ff6288227ef95cec9cc4c55e7
 workflow-type: tm+mt
-source-wordcount: '1286'
+source-wordcount: '1433'
 ht-degree: 1%
 
 ---
@@ -139,6 +139,16 @@ När du är klar med informationen för målanslutningen väljer du **[!UICONTRO
 >För att aktivera data behöver du **[!UICONTROL View Destinations]**, **[!UICONTROL Activate Destinations]**, **[!UICONTROL View Profiles]** och **[!UICONTROL View Segments]** [behörigheter för åtkomstkontroll](/help/access-control/home.md#permissions). Läs [åtkomstkontroll - översikt](/help/access-control/ui/overview.md) eller kontakta produktadministratören för att få de behörigheter som krävs.
 
 Läs [Aktivera målgrupper för att kanalisera personaliseringsmål](../../ui/activate-edge-personalization-destinations.md) för instruktioner om hur du aktiverar målgrupper till det här målet.
+
+## Ta bort målgrupper från ett målmål {#remove}
+
+Det krävs ytterligare steg för att ta bort en målgrupp från en befintlig Adobe Target-anslutning när målgruppen redan används i en Adobe Target [aktivitet](https://experienceleague.adobe.com/en/docs/target/using/activities/activities). Om du försöker ta bort en målgrupp från en Adobe Target-anslutning uppstår ett fel om målgruppen används av en Adobe Target-aktivitet.
+
+![Bild på användargränssnittet för plattformen visar ett fel som orsakats av ett försök att ta bort en målgrupp som används av en målaktivitet.](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
+
+Om du vill ta bort en målgrupp från ett målmål när målgruppen används i en aktivitet måste du först ta bort målgruppen från den målaktivitet som använder den, eller ta bort aktiviteten helt och hållet. Sedan kan du ta bort målgruppen från din Target-anslutning.
+
+Om målgruppen inte används i en aktivitet går du till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** > **[!UICONTROL Select destination dataflow]** > **[!UICONTROL Activation data]**, väljer de målgrupper som du vill ta bort och väljer sedan **[!UICONTROL Remove audiences]**.
 
 ## Exporterade data {#exported-data}
 
