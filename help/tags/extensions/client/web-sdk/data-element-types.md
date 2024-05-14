@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 44fac57a30295b476910c0b37314eaebba175157
+source-git-commit: 8c652e96fa79b587c7387a4053719605df012908
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '574'
 ht-degree: 0%
 
 ---
@@ -52,11 +52,14 @@ Observera att när du öppnar vissa fält i schemat, som `web.webPageDetails.URL
 
 ## Variabel {#variable}
 
-Ett annat sätt att skapa XDM-objekt är att använda **[!UICONTROL Variable]** dataelement. När XDM-objektets dataelement skapas när det refereras, till exempel inuti en `sendEvent` kommando, **[!UICONTROL Variable]** dataelement kan uppdateras via [!UICONTROL Update variable] åtgärder. Om du vill använda dataelementet markerar du rätt Adobe Experience Platform-sandlåda och -schema.
+Du kan skapa nyttolastobjekt med **[!UICONTROL Variable]** dataelement. Båda [!UICONTROL XDM] och [!UICONTROL Data] objekt stöds.
 
-![Användargränssnittsbild som visar skärmen Skapa dataelement.](assets/variable-data-element.png)
+* När du väljer [!UICONTROL XDM]markerar du [!UICONTROL Sandbox] och [!UICONTROL Schema].
+* När du väljer [!UICONTROL Data]väljer du önskade lösningar. Tillgängliga lösningar inkluderar [!UICONTROL Adobe Analytics] och [!UICONTROL Adobe Target].
 
-När du har skapat detta dataelement kan du använda [Uppdatera variabel](./action-types.md#update-variable) åtgärder för att ändra dataelementet. Använd sedan variabeldataelementet för XDM-alternativet i skicka-händelseåtgärder.
+![Bild av tagggränssnittet som visar dataelementalternativen.](assets/variable-data-element.png)
+
+När du har skapat detta dataelement kan du använda [Uppdatera variabel](./action-types.md#update-variable) åtgärd för att ändra den. När det är klart kan du inkludera det här dataelementet i [Skicka händelse](./action-types.md#send-event) åtgärd för att skicka data till en datastream.
 
 ## Nästa steg {#next-steps}
 

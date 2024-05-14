@@ -1,9 +1,10 @@
 ---
 title: xdm
-description: Det schemajusterade objekt som skickas till Adobe.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+description: Lär dig hur du skickar data till Adobe via det schemajusterade XDM-objektet.
+exl-id: 1d8ef191-aed6-4c8b-a1fd-614bd8ed73da
+source-git-commit: 8c652e96fa79b587c7387a4053719605df012908
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -14,11 +15,11 @@ The `xdm` -objektet innehåller datanyttolasten som skickas till Adobe. Fält so
 
 Adobe Experience Platform använder scheman för att beskriva datastrukturen på ett konsekvent och återanvändbart sätt. Genom att definiera data på ett enhetligt sätt i olika system blir det enklare att behålla sin betydelse och därmed få värde av data.
 
-Det här fältet har en maxgräns på 32 kB.
+Det här objektet har en maxgräns på 32 kB.
 
 ## Konfigurera XDM-objektet med Web SDK-tillägget
 
-Ange **[!UICONTROL XDM]** -fält inom åtgärderna för en taggregel. The [XDM-objekt](/help/tags/extensions/client/web-sdk/data-element-types.md#xdm-object) har ett intuitivt gränssnitt för att mappa andra dataelement till sina respektive XDM-fält.
+Ange **[!UICONTROL XDM]** -objekt inom åtgärderna för en taggregel. The [XDM-objekt](/help/tags/extensions/client/web-sdk/data-element-types.md#xdm-object) har ett intuitivt gränssnitt för att mappa andra dataelement till sina respektive XDM-fält.
 
 1. Logga in på [experience.adobe.com](https://experience.adobe.com) med dina Adobe ID-uppgifter.
 1. Navigera till **[!UICONTROL Data Collection]** > **[!UICONTROL Tags]**.
@@ -39,7 +40,7 @@ alloy("sendEvent", {
 });
 ```
 
-I följande exempel används [Schemafältgrupp för handelsinformation](/help/xdm/field-groups/event/commerce-details.md):
+I följande exempel används [Schemafältgrupp för Commerce Details](/help/xdm/field-groups/event/commerce-details.md):
 
 ```javascript
 alloy("sendEvent",{
