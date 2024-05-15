@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla tabell till frågetjänst
 description: Det här dokumentet går igenom de olika stegen för att ansluta Tableau till Adobe Experience Platform Query Service.
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 26f0725f0f239707bd719ed46929648f8d557155
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '468'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,10 @@ Instruktioner om hur du [ansluta till en PostgreSQL-server med Tableau](https://
 | **[!DNL Password]** | Den här alfanumeriska strängen är Experience Platform **[!UICONTROL Password]** autentiseringsuppgifter. Om du vill använda icke-förfallande autentiseringsuppgifter är det här värdet det sammanfogade argumentet från `technicalAccountID` och `credential` hämtas i JSON-konfigurationsfilen. Lösenordsvärdet har följande format: {technicalAccountId}:{credential}. Konfigurations-JSON-filen för icke-förfallande autentiseringsuppgifter är en engångshämtning under initieringen som Adobe inte har någon kopia av. |
 
 Mer information om hur du hittar ditt användarnamn, lösenord och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md). Logga in på [!DNL Platform]väljer **[!UICONTROL Queries]**, följt av **[!UICONTROL Credentials]**.
+
+>[!IMPORTANT]
+>
+>Som Tableau- eller Power BI-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från fliken med autentiseringsuppgifter för frågetjänsten. Instruktioner om hur du gör det finns i dokumentationen för inloggningsuppgifterna [koppla dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).
 
 Kontrollera att du har markerat **[!UICONTROL Require SSL]** innan du försöker ansluta. Se [Dokumentation för SSL-lägen](./ssl-modes.md) om du vill veta mer om SSL-stöd för tredjepartsanslutningar till Adobe Experience Platform Query Service.
 

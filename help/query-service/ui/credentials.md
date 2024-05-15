@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Handbok för autentiseringsuppgifter för frågetjänst
 description: Adobe Experience Platform Query Service har ett användargränssnitt som kan användas för att skriva och köra frågor, visa frågor som har körts tidigare samt få åtkomst till frågor som har sparats av användare i organisationen.
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 74e3dc2fa5fc84b5ce4b09e2adb0093ecb94bd82
+source-git-commit: ba4ff2715d4e3eb71377542ab2361b967cd3ac11
 workflow-type: tm+mt
-source-wordcount: '1457'
+source-wordcount: '1759'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,28 @@ The **[!UICONTROL Expiring credentials]** innehåller följande information:
 >![Inställningsfliken på Admin Console med sekretess och säkerhet, autentiseringsinställningar och maximal sessionstid markerade.](../images/ui/credentials/max-session-life.png)
 >
 >Mer information om Adobe finns i hjälpdokumentationen [Avancerade inställningar](https://helpx.adobe.com/enterprise/using/authentication-settings.html#advanced-settings) som finns i Admin Console.
+
+### Ansluta data från Customer Journey Analytics i frågesessioner {#connect-to-customer-journey-analytics}
+
+Använd Customer Journey Analytics BI-tillägget med Power BI eller Tableau för att komma åt Customer Journey Analytics [datavyer](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/data-views) med SQL. Genom att integrera frågetjänsten med BI-tillägget kan du komma åt dina datavyer direkt i sessioner med frågetjänsten. Den här integreringen effektiviserar funktionaliteten för BI-verktyg som använder Query Service som PostgreSQL-gränssnitt. Den här funktionen eliminerar behovet av att duplicera datavyer i BI-verktyg, säkerställer enhetlig rapportering på olika plattformar och förenklar integrering av Customer Journey Analytics-data med andra källor i BI-plattformar.
+
+Läs dokumentationen för att lära dig mer om [ansluta Query Service till ett antal klientprogram](../clients/overview.md) som [Power BI](../clients/power-bi.md) eller [Tableau](../clients/tableau.md)
+
+>[!IMPORTANT]
+>
+>Ett Customer Journey Analytics-arbetsyteprojekt och en datavy krävs för att den här funktionen ska kunna användas.
+
+Om du vill få åtkomst till dina Customer Journey Analytics-data i Power BI eller Tableau väljer du [!UICONTROL Database] rullgardinsmeny och välj `prod:cja` bland de tillgängliga alternativen. Kopiera sedan [!DNL Postgres] autentiseringsparametrar (Host, Port, Database, Username med flera) som kan användas i din Power BI- eller Tableau-konfiguration.
+
+![Fliken med autentiseringsuppgifter för frågetjänsten med listrutan Databas markerad.](../images/ui/credentials/database-dropdown.png)
+
+>[!NOTE]
+>
+>När du ansluter Power BI eller Tableau till Customer Journey Analytics förbrukas behörigheten för frågetjänsten &#39;concurrent sessions&#39;. Om ytterligare sessioner och frågor krävs kan ytterligare ett tillägg för ad hoc-frågeanvändarpaket köpas för att erhålla ytterligare fem samtidiga sessioner och ytterligare en samtidiga fråga.
+
+Du kan även komma åt dina Customer Journey Analytics-data direkt från Frågeredigeraren eller Postgres CLI. Om du vill göra det refererar du till `cja` när du skriver din fråga. Se Frågeredigeraren [guide för frågeskapande](./user-guide.md#query-authoring) om du vill ha mer information om hur du skriver, kör och sparar frågor.
+
+Se [BI-tilläggsguide](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-dataviews/bi-extension) om du vill ha fullständiga anvisningar om hur du får åtkomst till datavyer i Customer Journey Analytics med SQL.
 
 ## Ej förfallande autentiseringsuppgifter {#non-expiring-credentials}
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Koppla klienter till frågetjänsten
 description: Det här dokumentet förklarar hur du ansluter till Query Service från ett antal klientprogram och hur du verifierar dessa anslutningar.
 exl-id: 2ba20179-5adb-4259-a120-231a40e78054
-source-git-commit: 778c65c6310ed4a627be0fd3ae076784cfc8495b
+source-git-commit: 26f0725f0f239707bd719ed46929648f8d557155
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '269'
 ht-degree: 0%
 
 ---
@@ -29,3 +29,7 @@ Instruktioner finns för följande klienter:
 - [[!DNL PSQL]](./psql.md)
 - [[!DNL RStudio]](./rstudio.md)
 - [[!DNL Tableau]](./tableau.md)
+
+>[!IMPORTANT]
+>
+>Som Power BI- och Tableau-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från fliken med autentiseringsuppgifter för frågetjänsten. Instruktioner om hur du gör det finns i dokumentationen för inloggningsuppgifterna [koppla dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).

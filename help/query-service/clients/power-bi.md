@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Anslut Power BI till frågetjänst
 description: Det här dokumentet går igenom stegen för att ansluta Power BI med Adobe Experience Platform Query Service.
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 99cd69234006e6424be604556829b77236e92ad7
+source-git-commit: 26f0725f0f239707bd719ed46929648f8d557155
 workflow-type: tm+mt
-source-wordcount: '1064'
-ht-degree: 1%
+source-wordcount: '1070'
+ht-degree: 0%
 
 ---
 
@@ -43,11 +43,15 @@ The [!DNL PostgreSQL] Databasdialogrutan visas där värden för servern och dat
 
 Dessa obligatoriska värden hämtas från dina Adobe Experience Platform-uppgifter. Logga in på användargränssnittet för plattformen och välj **[!UICONTROL Queries]** från vänster navigering, följt av **[!UICONTROL Credentials]**. Mer information om hur du hittar databasnamn, värd, port och inloggningsuppgifter finns i [inloggningsguide](../ui/credentials.md).
 
+>[!IMPORTANT]
+>
+>Som Power BI- eller Tableau-användare kan du ansluta Customer Journey Analytics till dina BI-verktyg från fliken med autentiseringsuppgifter för frågetjänsten. Instruktioner om hur du gör det finns i dokumentationen för inloggningsuppgifterna [koppla dina BI-verktyg till Customer Journey Analytics](../ui/credentials.md#connect-to-customer-journey-analytics).
+
 ![Arbetsytan Experience Platform Queries med fliken Credentials och inloggningsuppgifterna som förfaller är markerade.](../images/clients/power-bi/query-service-credentials-page.png)
 
-I **[!DNL Server]** fält för [!DNL PostgreSQL database] anger du värdet för värddatorn som finns i frågetjänsten [!UICONTROL Credentials] -avsnitt. Lägg till port för produktion `:80` till slutet av värdsträngen. Exempel, `made-up.platform-query.adobe.io:80`.
+I **[!DNL Server]** fält för [!DNL PostgreSQL database] anger du värdet för värddatorn som finns i frågetjänsten [!UICONTROL Credentials] -avsnitt. Lägg till port för produktion `:80` till slutet av värdsträngen. Till exempel: `made-up.platform-query.adobe.io:80`.
 
-The **[!DNL Database]** -fältet kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn. Exempel, `prod:all`.
+The **[!DNL Database]** -fältet kan vara antingen&quot;all&quot; eller ett datamängdstabellnamn. Till exempel: `prod:all`.
 
 >[!IMPORTANT]
 >
