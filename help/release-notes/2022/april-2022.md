@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 4bdbb987905b6010f4b4f75bee060828d0e07368
+source-git-commit: 710fa6930b27f95d34539a18881c0f9d23e1debd
 workflow-type: tm+mt
-source-wordcount: '2781'
+source-wordcount: '2547'
 ht-degree: 4%
 
 ---
@@ -69,7 +69,7 @@ Dataflöden är en representation av jobb som flyttar data över plattformen. De
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Kontrollpanel för segment | Nu kan du använda kontrollpanelen för övervakning för att övervaka dataflöden för segment. Mer information finns i guiden [övervaka segment i användargränssnittet](../../dataflows/ui/monitor-segments.md) |
+| Kontrollpanel för segment | Nu kan du använda kontrollpanelen för övervakning för att övervaka dataflöden för segment. Mer information finns i guiden [övervaka segment i användargränssnittet](../../dataflows/ui/monitor-audiences.md) |
 
 Mer allmän information om dataflöden finns i [dataflödesöversikt](../../dataflows/home.md). Mer information om segmentering finns i [segmenteringsöversikt](../../segmentation/home.md).
 
@@ -109,7 +109,7 @@ Observera följande om du har använt dessa destinationer under betafasen:
 
 **Nya destinationer**
 
-| Destination | Beskrivning |
+| Mål | Beskrivning |
 | ----------- | ----------- |
 | [!DNL Criteo] | Koppla samman och aktivera data till [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) annonsplattform. |
 | [!DNL Sendgrid] | Koppla samman och aktivera data till [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) plattform för transaktions- och marknadsföringsmeddelanden. |

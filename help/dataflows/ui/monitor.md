@@ -1,7 +1,8 @@
 ---
 title: Översikt över kontrollpanelen för övervakning
 description: Lär dig hur du använder kontrollpanelen för övervakning i användargränssnittet i Adobe Experience Platform
-source-git-commit: 21c69ff834dbd0e32831c5c9071e4255fd8258e1
+exl-id: 06ea5380-d66e-45ae-aa02-c8060667da4e
+source-git-commit: 710fa6930b27f95d34539a18881c0f9d23e1debd
 workflow-type: tm+mt
 source-wordcount: '994'
 ht-degree: 0%
@@ -100,7 +101,7 @@ Välj **[!UICONTROL Profiles]** för att visa hur framgångsrik bearbetningen av
 
 >[!TAB Publiker]
 
-Välj **[!UICONTROL Audiences]** för att visa mätvärden för era målgrupper och segmenteringsjobb. Läs guiden på [övervaka målgruppsdata](monitor-segments.md) för mer information.
+Välj **[!UICONTROL Audiences]** för att visa mätvärden för era målgrupper och segmenteringsjobb. Läs guiden på [övervaka målgruppsdata](monitor-audiences.md) för mer information.
 
 ![Kontrollpanelen i gränssnittet med ett målgruppskort valt.](../assets/ui/monitor-overview/audiences.png)
 
@@ -135,5 +136,5 @@ Genom att läsa det här dokumentet kan du nu navigera genom kontrollpanelen i a
 * [Övervaka källdata](monitor-sources.md).
 * [Övervaka identitetsdata](monitor-identities.md).
 * [Övervaka profildata](monitor-profiles.md).
-* [Övervaka målgruppsdata](monitor-segments.md).
+* [Övervaka målgruppsdata](monitor-audiences.md).
 * [Övervaka måldata](monitor-destinations.md).

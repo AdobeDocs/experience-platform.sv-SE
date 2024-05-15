@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: bc501b96a9ec6b723f4598d048b399fef82d54b2
+source-git-commit: 5182ee22ae7952f74c29969c0d484397a2850a4c
 workflow-type: tm+mt
 source-wordcount: '4065'
 ht-degree: 0%
@@ -112,7 +112,7 @@ Du kan lägga till fler fält i [!UICONTROL Browse] sida genom att markera ![fil
 | [!UICONTROL Name] | Namnet på publiken. |
 | [!UICONTROL Profile count] | Det totala antalet profiler som är kvalificerade för målgruppen. |
 | [!UICONTROL Origin] | Målgruppens ursprung. Det är här som publiken kommer ifrån. Möjliga värden är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
-| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Inactive`, `Published`och `Archived`. Mer information om livscykelstadier, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd finns i [livscykelstatusavsnittet i Frågor och svar om segmentering](../faq.md#lifecycle-status). |
+| [!UICONTROL Lifecycle status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Inactive`och `Published`. Mer information om livscykelstadier, inklusive vad de olika stadierna innebär och hur du flyttar målgrupper till olika livscykeltillstånd finns i [livscykelstatusavsnittet i Frågor och svar om segmentering](../faq.md#lifecycle-status). |
 | [!UICONTROL Update frequency] | Ett värde som anger hur ofta målgruppens data uppdateras. Möjliga värden för det här fältet är [!UICONTROL Batch], [!UICONTROL Streaming], [!UICONTROL Edge]och [!UICONTROL Not Scheduled]. |
 | [!UICONTROL Last updated by] | Namnet på den person som senast uppdaterade målgruppen. |
 | [!UICONTROL Created] | Datum och tid, i UTC, då målgruppen skapades. |
@@ -422,7 +422,7 @@ En pover visas med en lista över alla fält som kan visas i tabellen.
 | Fält | Beskrivning |
 | ----- | ----------- | 
 | [!UICONTROL Name] | Namnet på publiken. |
-| [!UICONTROL Status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Inactive`, `Published`och `Archived`. |
+| [!UICONTROL Status] | Publiken. Möjliga värden för det här fältet är `Draft`, `Inactive`och `Published`. |
 | [!UICONTROL Created] | Tid och datum då målgruppen skapades. |
 | [!UICONTROL Created by] | Namnet på den person som skapade målgruppen. |
 | [!UICONTROL Updated] | Tid och datum då målgruppen senast uppdaterades. |
