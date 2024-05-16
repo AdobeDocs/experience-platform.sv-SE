@@ -2,9 +2,9 @@
 title: Testa en Adobe Target-implementering med Adobe Experience Platform Debugger
 description: Lär dig hur du använder Adobe Experience Platform Debugger för att testa och felsöka en webbplats som är aktiverad med Adobe Target.
 exl-id: f99548ff-c6f2-4e99-920b-eb981679de2d
-source-git-commit: e300e57df998836a8c388511b446e90499185705
+source-git-commit: bc6069f2cfa4459860fe98588b293ffeed7fb1f1
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1035'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,7 @@ Välj **[!DNL Configuration]** om du vill aktivera eller inaktivera ett urval av
 | Felsökningsverktyg | Beskrivning |
 | --- | --- |
 | [!DNL Target Console Logging] | När det här alternativet är aktiverat kan du komma åt loggarna at.js på konsolfliken i webbläsaren. Den här funktionen kan även aktiveras genom att en `mboxDebug` query param (med valfritt värde) to the browser URL. |
-| [!DNL Target Diable] | När det här alternativet är aktiverat inaktiveras alla Target-funktioner på sidan. Detta kan användas för att avgöra om ett Target-specifikt erbjudande är orsaken till problemet på sidan. |
+| [!DNL Target Disable] | När det här alternativet är aktiverat inaktiveras alla Target-funktioner på sidan. Detta kan användas för att avgöra om ett Target-specifikt erbjudande är orsaken till problemet på sidan. |
 | [!DNL Target Trace] | **Anteckning**: Du måste vara inloggad för att kunna aktivera den här funktionen.<br><br>När det här alternativet är aktiverat skickas spårningstoken med varje begäran och ett spårningsobjekt returneras i varje svar. `at.js` tolkar svaret `window.__targetTraces`. Varje trace-objekt innehåller samma information som [[!DNL Network Requests] tab], with the following additions:<ul><li>En ögonblicksbild av en profil som gör att du kan se attribut före och efter en begäran.</li><li>Matchade och omatchade [verksamhet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html), som visar varför den aktuella profilen var eller inte var kvalificerad för vissa aktiviteter.<ul><li>Detta kan hjälpa till att identifiera vilka målgrupper en profil kvalificerar sig för vid en viss tidpunkt och varför.</li><li>Måldokumenten innehåller mer information om olika aktivitetstyper</li></ul></li></ul> |
 
 {style="table-layout:auto"}
