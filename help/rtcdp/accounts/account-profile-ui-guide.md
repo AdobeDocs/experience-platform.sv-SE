@@ -5,9 +5,9 @@ description: Genom att använda kontoprofiler kan du använda Adobe Real-time Cu
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 feature: Profiles, B2B
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: db57fa753a3980dca671d476521f9849147880f1
+source-git-commit: bbcc056e416e2c1a8b6fd1a411c0fba4c0ff8dbb
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1593'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Välj **[!UICONTROL Profiles]** under [!UICONTROL Accounts] i den vänstra navig
 
 ![Fliken Översikt med widgetar](images/b2b-account-profile-overview.png)
 
-Läs dokumentationen på [[!UICONTROL Account Profiles]](../../dashboards/guides/account-profiles.md) instrumentpanel för mer information.
+Läs dokumentationen på [[!UICONTROL Account Profiles]](../../dashboards/guides/account-profiles.md) instrumentpanel för mer information. Läs dokumentationen om [Real-time Customer Data Platform Insights, datamodell B2B Edition](../../dashboards/data-models/cdp-insights-data-model-b2b.md) om du vill ha mer information om hur dina insikter datamodeller kan användas för att skapa anpassade diagram för dina instrumentpaneler.
 
 ## Konfigurera kontomatchning för lead {#configure-lead-to-account-matching}
 
