@@ -3,10 +3,10 @@ title: Jämföra at.js med Experience Platform Web SDK
 description: Jämför at.js-funktionerna med Experience Platform Web SDK
 keywords: mål;adobe target;activity.id;experience.id;renderDecision;DecisionScopes;prehide snippet;vec;Form Based Experience Composer;xdm;audiences;Decision;scope;schema;system chart;chart
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+source-git-commit: ca1574f3f95840fce246fb4ed8845583fa0ff093
 workflow-type: tm+mt
-source-wordcount: '2136'
-ht-degree: 1%
+source-wordcount: '2175'
+ht-degree: 2%
 
 ---
 
@@ -607,6 +607,27 @@ alloy("sendEvent", {
 ```
 
 [Läs mer](../rendering-personalization-content.md#manually-rendering-content)
+
+**Exempel 3 - Spåra en händelse som utlösts efter en åtgärd**
+
+I det här exemplet spåras en händelse som utlöstes när en viss åtgärd utfördes, till exempel när en knapp klickades.
+Du kan lägga till ytterligare anpassade parametrar via `__adobe.target` dataobjekt.
+
+```js
+//replicates an at.js trackEvent call
+alloy("sendEvent", {
+    "type": "decisioning.propositionDisplay",
+    "xdm": {
+        "_experience": {
+            "decisioning": {
+                "propositions": [{
+                    "scope": "sumbitButtonClick" // Or any mbox/location name you want to use in Adobe Target
+                }]
+            }
+        }
+    }
+});
+```
 
 ## Så här utlöser du en vyändring i ett enkelsidigt program
 
