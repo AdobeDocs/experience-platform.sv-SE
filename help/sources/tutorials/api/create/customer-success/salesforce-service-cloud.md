@@ -5,9 +5,9 @@ title: Skapa en Salesforce Service Cloud-källanslutning med API:t för flödest
 type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till Salesforce Service Cloud med API:t för flödestjänst.
 exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
-source-git-commit: 5d28db34edd377269e8710b1741098a08616ae5f
+source-git-commit: 1f13b5fcad683b4c0ede96654e35d6f0c64d9eb7
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '498'
 ht-degree: 1%
 
 ---
@@ -32,12 +32,13 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 För att [!DNL Flow Service] att ansluta till [!DNL Salesforce Service Cloud]måste du ange värden för följande anslutningsegenskaper:
 
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
+| --- | ---|
+| `environmentUrl` | URL:en för [!DNL Salesforce] källinstans. |
 | `username` | Användarnamnet för [!DNL Salesforce Service Cloud] användarkonto. |
 | `password` | Lösenordet för [!DNL Salesforce Service Cloud] konto. |
 | `securityToken` | Säkerhetstoken för din [!DNL Salesforce Service Cloud] konto. |
 | `apiVersion` | (Valfritt) REST API-versionen av [!DNL Salesforce Service Cloud] -instans som du använder. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce Service Cloud] är: `b66ab34-8619-49cb-96d1-39b37ede86ea`. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce Service Cloud] är: `cb66ab34-8619-49cb-96d1-39b37ede86ea`. |
 
 Mer information om hur du kommer igång finns i [det här Salesforce Service Cloud-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_iot.meta/api_iot/qs_auth_access_token.htm).
 
@@ -75,24 +76,26 @@ curl -X POST \
       "auth": {
           "specName": "Basic Authentication",
           "params": {
-              "username": "{USERNAME}",
+              "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+              "username": "acme-salesforce-service-cloud",
               "password": "{PASSWORD}",
               "securityToken": "{SECURITY_TOKEN}"
           }
       },
       "connectionSpec": {
-          "id": "b66ab34-8619-49cb-96d1-39b37ede86ea",
+          "id": "cb66ab34-8619-49cb-96d1-39b37ede86ea",
           "version": "1.0"
       }
   }'
 ```
 
 | Parameter | Beskrivning |
-| --------- | ----------- |
+| ---| --- |
+| `auth.params.environmentUrl` | URL:en till [!DNL Salesforce Service Cloud] -instans. |
 | `auth.params.username` | Användarnamnet som är associerat med din [!DNL Salesforce Service Cloud] konto. |
 | `auth.params.password` | Lösenordet som är kopplat till [!DNL Salesforce Service Cloud] konto. |
 | `auth.params.securityToken` | Säkerhetstoken som är kopplad till din [!DNL Salesforce Service Cloud] konto. |
-| `connectionSpec.id` | The [!DNL Salesforce Service Cloud] anslutningsspecifikation-ID: `b66ab34-8619-49cb-96d1-39b37ede86ea` |
+| `connectionSpec.id` | The [!DNL Salesforce Service Cloud] anslutningsspecifikation-ID: `cb66ab34-8619-49cb-96d1-39b37ede86ea` |
 
 **Svar**
 

@@ -1,13 +1,10 @@
 ---
-keywords: Experience Platform;hem;populära ämnen;Salesforce;salesforce
-solution: Experience Platform
 title: Skapa en Salesforce-basanslutning med API:t för flödestjänsten
-type: Tutorial
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Salesforce-konto med API:t för Flow Service.
 exl-id: 43dd9ee5-4b87-4c8a-ac76-01b83c1226f6
-source-git-commit: 27ad8812137502d0a636345852f0cae5d01c7b23
+source-git-commit: 8d62cf4ca0071e84baa9399e0a25f7ebfb096c1a
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '785'
 ht-degree: 1%
 
 ---
@@ -29,18 +26,40 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] för att ansluta till [!DNL Salesforce]måste du ange värden för följande anslutningsegenskaper:
+The [!DNL Salesforce] source stöder grundläggande autentisering och OAuth2-klientautentiseringsuppgifter.
+
+>[!BEGINTABS]
+
+>[!TAB Grundläggande autentisering]
+
+Koppla samman [!DNL Salesforce] konto till [!DNL Flow Service] med grundläggande autentisering anger du värden för följande autentiseringsuppgifter:
 
 | Autentiseringsuppgifter | Beskrivning |
-| ---------- | ----------- |
+| --- | --- |
 | `environmentUrl` | URL:en för [!DNL Salesforce] källinstans. |
 | `username` | Användarnamnet för [!DNL Salesforce] användarkonto. |
 | `password` | Lösenordet för [!DNL Salesforce] användarkonto. |
 | `securityToken` | Säkerhetstoken för [!DNL Salesforce] användarkonto. |
-| `apiVersion` | Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0` Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
+| `apiVersion` | Valfritt) REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. |
 | `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
 
 Mer information om hur du kommer igång finns på [det här Salesforce-dokumentet](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
+
+>[!TAB Autentiseringsuppgifter för OAuth 2-klient]
+
+Koppla samman [!DNL Salesforce] konto till [!DNL Flow Service] Ange värden för följande autentiseringsuppgifter med hjälp av OAuth 2-klientautentiseringsuppgifter:
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `environmentUrl` | URL:en för [!DNL Salesforce] källinstans. |
+| `clientId` | Klient-ID används tillsammans med klienthemligheten som en del av OAuth2-autentisering. Tillsammans möjliggör klient-ID och klienthemlighet att ditt program arbetar för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
+| `clientSecret` | Klienthemligheten används tillsammans med klient-ID som en del av OAuth2-autentiseringen. Tillsammans möjliggör klient-ID och klienthemlighet att ditt program arbetar för ditt kontos räkning genom att identifiera ditt program för [!DNL Salesforce]. |
+| `apiVersion` | REST API-versionen av [!DNL Salesforce] -instans som du använder. Värdet för API-versionen måste formateras med ett decimaltecken. Om du till exempel använder API-version `52`måste du ange värdet som `52.0`. Om det här fältet lämnas tomt kommer Experience Platform automatiskt att använda den senaste tillgängliga versionen. Det här värdet är obligatoriskt för autentisering av OAuth2-klientautentiseringsuppgifter. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID för [!DNL Salesforce] är: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+Mer information om OAuth för [!DNL Salesforce], läsa [[!DNL Salesforce] guide om OAuth Authorization Flows](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&amp;type=5).
+
+>[!ENDTABS]
 
 ### Använda plattforms-API:er
 
@@ -60,7 +79,11 @@ POST /connections
 
 **Begäran**
 
-Följande begäran skapar en basanslutning för [!DNL Salesforce]:
+>[!BEGINTABS]
+
+>[!TAB Grundläggande autentisering]
+
+Följande begäran skapar en basanslutning för [!DNL Salesforce] med grundläggande autentisering:
 
 ```shell
 curl -X POST \
@@ -71,14 +94,15 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-      "name": "Salesforce Connection",
-      "description": "Connection for Salesforce account",
+      "name": "ACME Salesforce account",
+      "description": "Salesforce account using basic authentication",
       "auth": {
           "specName": "Basic Authentication",
-          "params": {****
-              "username": "{USERNAME}",
-              "password": "{PASSWORD}",
-              "securityToken": "{SECURITY_TOKEN}"
+          "params":
+              "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+              "username": "acme-salesforce",
+              "password": "xxxx",
+              "securityToken": "xxxx"
           }
       },
       "connectionSpec": {
@@ -89,11 +113,53 @@ curl -X POST \
 ```
 
 | Egenskap | Beskrivning |
-| -------- | ----------- |
+| --- | --- |
+| `auth.params.environmentUrl` | URL:en till [!DNL Salesforce] -instans. |
 | `auth.params.username` | Användarnamnet som är associerat med din [!DNL Salesforce] konto. |
 | `auth.params.password` | Lösenordet som är kopplat till [!DNL Salesforce] konto. |
 | `auth.params.securityToken` | Säkerhetstoken som är kopplad till din [!DNL Salesforce] konto. |
 | `connectionSpec.id` | The [!DNL Salesforce] anslutningsspecifikation-ID: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+>[!TAB Autentiseringsuppgifter för OAuth 2-klient]
+
+Följande begäran skapar en basanslutning för [!DNL Salesforce] med OAuth 2 Client Credential:
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/connections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "ACME Salesforce account",
+      "description": "Salesforce account using OAuth 2",
+      "auth": {
+          "specName": "OAuth2 Client Credential",
+          "params":
+            "environmentUrl": "https://acme-enterprise-3126.my.salesforce.com",
+            "clientId": "xxxx",
+            "clientSecret": "xxxx",
+            "apiVersion": "60.0"
+        }
+      },
+      "connectionSpec": {
+          "id": "cfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
+          "version": "1.0"
+      }
+  }'
+```
+
+| Egenskap | Beskrivning |
+| --- | --- |
+| `auth.params.environmentUrl` | URL:en till [!DNL Salesforce] -instans. |
+| `auth.params.clientId` | Klient-ID som är kopplat till din [!DNL Salesforce] konto. |
+| `auth.params.clientSecret` | Klienthemligheten som är kopplad till din [!DNL Salesforce] konto. |
+| `auth.params.apiVersion` | REST API-versionen av [!DNL Salesforce] -instans som du använder. |
+| `connectionSpec.id` | The [!DNL Salesforce] anslutningsspecifikation-ID: `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`. |
+
+>[!ENDTABS]
 
 **Svar**
 
