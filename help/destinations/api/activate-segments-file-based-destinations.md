@@ -4,7 +4,7 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: b94828381da56fa957b44b77aefa00a8ddd4bbd6
+source-git-commit: 8cd0da12784d8fac3f0ce9afeb881d7a3916795f
 workflow-type: tm+mt
 source-wordcount: '4393'
 ht-degree: 0%
@@ -745,7 +745,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-++[!DNL Amazon S3] - Bas anslutningsbegäran med autentisering med en antagen roll
++++[!DNL Amazon S3] - Bas anslutningsbegäran med autentisering med en antagen roll
 
 >[!TIP]
 >

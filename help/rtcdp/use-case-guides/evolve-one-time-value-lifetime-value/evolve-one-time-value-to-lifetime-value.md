@@ -3,7 +3,7 @@ title: Utveckla kundvärdet en gång till livstidsvärdet
 description: Lär dig hur du skapar personaliserade kampanjer för att erbjuda de bästa kompletterande produkterna eller tjänsterna baserat på en viss kunds attribut, beteende och tidigare köp.
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: 2f1008791a35f33a0379cba14b90334aebf83187
+source-git-commit: 8cd0da12784d8fac3f0ce9afeb881d7a3916795f
 workflow-type: tm+mt
 source-wordcount: '3154'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Personerna som ni riktar in er på är de ovanliga besökarna av era egendomar s
 * Skapa målgrupper
 * Skapa resor för att inrikta er på dessa målgrupper i Adobe Journey Optimizer och aktivera dem i Real-Time CDP.
 
-![Steg för steg Utveckla ett engångs- till livstidsvärde - en visuell översikt på hög nivå.](../evolve-one-time-value-lifetime-value/images/diagram-business-use-case.png){width="500" zoomable="yes"}
+![Steg för steg Utveckla ett engångs- till livstidsvärde - en visuell översikt på hög nivå.](../evolve-one-time-value-lifetime-value/images/diagram-business-use-case.png){zoomable="yes"}
 
 ## Förutsättningar och planering {#prerequisites-and-planning}
 
@@ -54,7 +54,7 @@ För att uppnå detta består tekniken av de två Experience Platform-apparna [R
 
 Nedan finns en avancerad arkitekturvy över de olika komponenterna i Real-Time CDP och Journey Optimizer. I det här diagrammet visas hur data flödar genom de två Experience Platform-apparna från datainsamling fram till den punkt där de aktiveras via resor eller kampanjer till destinationer för att uppnå det användningsfall som beskrivs på den här sidan.
 
-![Arkitektur - en överblick på hög nivå.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/architecture-diagram.png){width="600" zoomable="yes"}
+![Arkitektur - en överblick på hög nivå.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/architecture-diagram.png){zoomable="yes"}
 
 ## Så här uppnår du användningsfallet: översikt på hög nivå {#achieve-the-use-case-high-level}
 
@@ -70,7 +70,7 @@ Börja med att skicka ett budskap till er målgrupp med högvärderade och lågf
 
 >[!BEGINSHADEBOX]
 
-![Steg för steg Utveckla ett engångs- till livstidsvärde - en visuell översikt på hög nivå.](../evolve-one-time-value-lifetime-value/images/step-by-step.png){width="600" zoomable="yes"}
+![Steg för steg Utveckla ett engångs- till livstidsvärde - en visuell översikt på hög nivå.](../evolve-one-time-value-lifetime-value/images/step-by-step.png){zoomable="yes"}
 
 1. Du skapar scheman och datauppsättningar och markerar dem sedan för [!UICONTROL Profile].
 2. Data samlas in och integreras i Experience Platform via Web SDK, Mobile Edge SDK eller API. Analytics Data Connector kan också användas, men kan resultera i fördröjning för resan.
@@ -304,7 +304,7 @@ Det här användningsexemplet kräver att du skapar två målgrupper för att de
 
 Du måste skapa och använda två målgrupper i olika steg av användningsfallet, vilket visas i bilden nedan.
 
-![Målgrupper markerade.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/audiences-highlighted-in-diagram.png){width="600" zoomable="yes"}
+![Målgrupper markerade.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/audiences-highlighted-in-diagram.png){zoomable="yes"}
 
 >[!BEGINTABS]
 
@@ -351,7 +351,7 @@ För att uppnå detta måste du skapa två separata resor:
 * Livslängdsresan, som innehåller det budskap du skickar till dina värdefulla lågfrekventa kunder
 * Beställningsbekräftelseresan för användare som svarar på ditt samtal och köper en prenumeration.
 
-![Resor markerade.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/journeys-highlighted-in-diagram.png){width="600" zoomable="yes"}
+![Resor markerade.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/journeys-highlighted-in-diagram.png){zoomable="yes"}
 
 Nedan finns de exakta data som behövs för varje resegren.
 
@@ -361,7 +361,7 @@ Nedan finns de exakta data som behövs för varje resegren.
 
 Livslängden riktar sig till kunder med högt värde och låg frekvens som inte var målinriktade de senaste 30 dagarna. Ett meddelande visas för dessa kunder och om de fortfarande inte köper något efter 7 dagar kan ni inkludera de icke-köpare i en publik som ni kan visa betalda mediereklam för. Om de faktiskt köper kan du ställa in köparna på en orderbekräftelseresa, som anges på den separata fliken.
 
-![Livslängd - en överblick på hög nivå.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/lifetime-journey.png "Etttidsvärde till heltidsresans högklassiga visuella översikt."){width="600" zoomable="yes"}
+![Livslängd - en överblick på hög nivå.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/lifetime-journey.png "Etttidsvärde till heltidsresans högklassiga visuella översikt."){zoomable="yes"}
 
 +++Detaljerad reselogik
 
@@ -383,7 +383,7 @@ Den resa som visas ovan följer följande logik.
 
 Beställningsbekräftelseresan fokuserar på om ett köp gjordes via webbplatsen eller mobilappen. När en kund har slutfört köpet av t.ex. en prenumeration hos ditt företag, kan du ställa in dem på en orderbekräftelseresa.
 
-![Kundorderbekräftelseresan - en överblick på hög nivå.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/order-confirmation-journey.png "Kundorderbekräftelseresan - en överblick på hög nivå."){width="600" zoomable="yes"}
+![Kundorderbekräftelseresan - en överblick på hög nivå.](/help/rtcdp/use-case-guides/evolve-one-time-value-lifetime-value/images/order-confirmation-journey.png "Kundorderbekräftelseresan - en överblick på hög nivå."){zoomable="yes"}
 
 +++Reselogik
 
