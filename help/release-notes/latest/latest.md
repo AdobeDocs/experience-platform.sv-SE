@@ -1,11 +1,11 @@
 ---
 title: Versionsinformation om Adobe Experience Platform
-description: Versionsinformation från april 2024 för Adobe Experience Platform.
+description: Versionsinformationen för Adobe Experience Platform från april 2024.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
 source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
 workflow-type: tm+mt
 source-wordcount: '1895'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
