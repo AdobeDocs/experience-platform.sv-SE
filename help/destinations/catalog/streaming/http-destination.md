@@ -4,9 +4,9 @@ title: HTTP API-anslutning
 description: Använd HTTP API-målet i Adobe Experience Platform för att skicka profildata till HTTP-slutpunkter från tredje part för att köra egna analyser eller utföra andra åtgärder som du kan behöva för profildata som exporteras utanför Experience Platform.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: e9ed96a15d6bba16165c67e53467b7f51a866014
 workflow-type: tm+mt
-source-wordcount: '2399'
+source-wordcount: '2555'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ HTTP API-målet är en [!DNL Adobe Experience Platform] direktuppspelningsmål s
 
 Om du vill skicka profildata till HTTP-slutpunkter måste du först [ansluta till målet](#connect-destination) in [!DNL Adobe Experience Platform].
 
-## Användningsfall {#use-cases}
+## Användningsexempel {#use-cases}
 
 Med HTTP API-målet kan du exportera XDM-profildata och målgrupper till generiska HTTP-slutpunkter. Där kan du köra dina egna analyser eller utföra andra åtgärder du kan behöva för profildata som exporterats från Experience Platform.
 
@@ -62,6 +62,20 @@ Om du vill använda HTTP API-målet för att exportera data från Experience Pla
 >[!TIP]
 >
 > Du kan också använda [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) för att konfigurera en integrering och skicka Experience Platform-profildata till en HTTP-slutpunkt.
+
+## Stöd och certifikat för mTLS-protokoll {#mtls-protocol-support}
+
+Du kan använda [!DNL Mutual Transport Layer Security] ([!DNL mTLS]) för att säkerställa förbättrad säkerhet vid utgående anslutningar till HTTP API-målanslutningar.
+
+[!DNL mTLS] är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. [!DNL mTLS] innehåller ytterligare ett steg jämfört med [!DNL TLS], där servern också frågar efter klientens certifikat och verifierar det i slutet.
+
+Om du vill använda [!DNL mTLS] med [!DNL HTTP API] mål, den serveradress du anger i [målinformation](#destination-details) sidan måste ha [!DNL TLS] endast inaktiverade protokoll [!DNL mTLS] aktiverat. Om [!DNL TLS] 1.2-protokollet är fortfarande aktiverat på slutpunkten, inget certifikat skickas för klientautentiseringen. Det innebär att [!DNL mTLS] med [!DNL HTTP API] mål, din &quot;mottagande&quot; serverslutpunkt måste vara en [!DNL mTLS]-only aktiverad slutpunkt för anslutning.
+
+### Hämta certifikat {#certificate}
+
+Om du vill kontrollera [!DNL Common Name] (CN) och [!DNL Subject Alternative Names] (SAN) Om du vill göra ytterligare validering från tredje part kan du hämta certifikatet nedan:
+
+* [Allmänt certifikat för HTTP API mTLS](../../../landing/images/governance-privacy-security/encryption/destinations-public-certificate.zip)
 
 ## IP-adress tillåtelselista {#ip-address-allowlist}
 
