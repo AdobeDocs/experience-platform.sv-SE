@@ -3,9 +3,9 @@ title: Skapa en Google PubSub Source-anslutning i användargränssnittet
 description: Lär dig hur du skapar en Google PubSub-källanslutning med hjälp av användargränssnittet för plattformen.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-source-git-commit: 563ad16304894cab1ee1ead06f63a5b3f65c4ec2
+source-git-commit: fcac805e151d6142886eb8e05da0eb1babad2f69
 workflow-type: tm+mt
-source-wordcount: '1062'
+source-wordcount: '1061'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Den här självstudiekursen innehåller steg för att skapa en [!DNL Google PubSub] (nedan kallad[!DNL PubSub]&quot;) med användargränssnittet för plattformen.
 
-## Komma igång
+## Kom igång
 
 Den här självstudiekursen kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
@@ -29,7 +29,8 @@ Om du redan har en giltig [!DNL PubSub] kan du hoppa över resten av dokumentet 
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att kunna ansluta [!DNL PubSub] till Platform måste du ange ett giltigt värde för följande autentiseringsuppgifter:
+Du måste ange värden för anslutningsegenskaperna som beskrivs nedan för att kunna ansluta dina [!DNL PubSub] konto till Experience Platform. Mer information om autentisering och nödvändig konfiguration finns i [[!DNL PubSub source] översikt](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
+
 
 >[!BEGINTABS]
 

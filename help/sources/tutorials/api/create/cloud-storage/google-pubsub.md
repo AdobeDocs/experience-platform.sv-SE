@@ -3,9 +3,9 @@ title: Skapa en Google PubSub Source-anslutning med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Google PubSub-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: a826bda356a7205f3d4c0e0836881530dbaaf54e
+source-git-commit: fcac805e151d6142886eb8e05da0eb1babad2f69
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1147'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 I den här självstudiekursen får du hjälp med att koppla samman [!DNL Google PubSub] (nedan kallad[!DNL PubSub]&quot;) till Experience Platform med [[!DNL Flow Service] API](<https://www.adobe.io/experience-platform-apis/references/flow-service/>).
 
-## Komma igång
+## Kom igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
@@ -29,7 +29,7 @@ I följande avsnitt finns ytterligare information som du behöver känna till f�
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] för att ansluta till [!DNL PubSub]måste du ange värden för följande anslutningsegenskaper:
+Du måste ange värden för anslutningsegenskaperna som beskrivs nedan för att kunna ansluta dina [!DNL PubSub] konto till [!DNL Flow Service]. Mer information om autentisering och nödvändig konfiguration finns i [[!DNL PubSub source] översikt](../../../../connectors/cloud-storage/google-pubsub.md#prerequisites).
 
 >[!BEGINTABS]
 
@@ -52,7 +52,7 @@ För att [!DNL Flow Service] för att ansluta till [!DNL PubSub]måste du ange v
 
 >[!ENDTABS]
 
-Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Om du vill använda tjänstkontobaserad autentisering läser du följande [[!DNL PubSub] guide om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
+Mer information om dessa värden finns i [[!DNL PubSub] autentisering](https://cloud.google.com/pubsub/docs/authentication) -dokument. Läs det här om du vill använda tjänstkontobaserad autentisering [[!DNL PubSub] guide om hur du skapar tjänstkonton](https://cloud.google.com/docs/authentication/production#create_service_account) för steg om hur du genererar dina autentiseringsuppgifter.
 
 >[!TIP]
 >
