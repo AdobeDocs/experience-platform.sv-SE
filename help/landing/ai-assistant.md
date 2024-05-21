@@ -5,9 +5,9 @@ badge: Beta
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: ca17854830edabaf2bd74265258d6f0096f2888e
+source-git-commit: 6beaefb23f4deb382b7844fcf58efbd72b1da2ec
 workflow-type: tm+mt
-source-wordcount: '2693'
+source-wordcount: '3085'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ Det finns två frågeklasser att tänka på innan du frågar AI Assistant:
 
 >[!ENDSHADEBOX]
 
-## Mål som du kan uppnå med AI Assistant
+## Mål som du kan uppnå med AI Assistant {#objectives}
 
 Du kan använda AI Assistant för mål som:
 
@@ -140,15 +140,15 @@ Om du vill visa citat och validera AI Assistants svar väljer du **[!UICONTROL S
 
 +++
 
-### Dataanvändning och visualisering {#data-usage-and-visualization}
+### Användningsdata och visualisering {#usage-data-and-visualization}
 
-+++Välj för att visa ett exempel på frågor om dataanvändning och datavisualisering
++++Välj för att visa ett exempel på frågor om användningsdata och datavisualisering
 
-För att AI Assistant ska kunna svara på en fråga om dataanvändning inom organisationen måste du vara i en aktiv sandlåda.
+För att AI Assistant ska kunna svara på en fråga om användningsdata inom organisationen måste du vara i en aktiv sandlåda.
 
 I exemplet nedan har AI Assistant följande fråga: **&quot;Visa segmentdefinitioner med över 1 000 profiler och inkludera aktiveringsstatus.&quot;** AI Assistant svarar sedan med ett diagram som visualiserar era segment- och profildata.
 
-![Följ upp frågan om dataanvändning.](./images/ai-assistant/data-usage-question.png)
+![Följ upp frågan om användningsdata.](./images/ai-assistant/data-usage-question.png)
 
 Du kan hovra över ett enskilt fält om du vill visa specifika data. Du kan också välja ikonen för att expandera om du vill visa diagrammet i en större vy.
 
@@ -158,7 +158,7 @@ En utökad vy av visualiseringen visas. Du kan använda det utökade modala verk
 
 ![Utökat diagram.](./images/ai-assistant/chart-expanded.png)
 
-När du får en fråga om dataanvändning ger AI Assistant en förklaring av hur svaret beräknades. I exemplet nedan visar AI Assistant de steg som har utförts för att visa segmentdefinitioner med över 1 000 profiler och deras respektive aktiveringsstatus.
+När en fråga om användningsdata visas ger AI Assistant en förklaring av hur svaret beräknades. I exemplet nedan visar AI Assistant de steg som har utförts för att visa segmentdefinitioner med över 1 000 profiler och deras respektive aktiveringsstatus.
 
 ![Uppföljningsfråga om segmentdefinitioner som illustrerar hur AI Assistant beräknade svaret.](./images/ai-assistant/results-explained.png)
 
@@ -204,9 +204,9 @@ Dokumentationsindexet täcker för närvarande Adobe Experience Platform (Real-T
 
 Modellen för dokumentationsåterhämtning har utbildats i Experience Platform (Real-Time CDP och Publiker). Frågor som inte omfattas av Adobe Experience Platform, t.ex. frågor om andra Adobe-produkter som Adobe Target och Creative Cloud Suite, kan inte besvaras.
 
-## Dataanvändning {#data-usage}
+## Användningsdata {#usage-date}
 
-Du kan även ställa frågor om din dataanvändning i följande domäner:
+Du kan även ställa frågor om AI Assistant om dina användningsdata i följande domäner:
 
 * Attribut
 * Målgrupper
@@ -216,21 +216,50 @@ Du kan även ställa frågor om din dataanvändning i följande domäner:
 * Scheman _(Frågor om fältgrupper kan inte besvaras just nu.)_
 * Källor _(Frågor om konton kan inte besvaras just nu.)_
 
-För användningsdatafrågor kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som ligger till grund för dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du kan behöva formatera dina frågor som:&quot;När var målgruppen med titeln? {TITLE} skapad?&quot; istället för: &quot;När var {TITLE} skapad?&quot;
+För användningsdatafrågor kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som ligger till grund för dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Dessutom måste du logga in i en sandlåda för att få frågor om specifika data som rör objekt som målgrupper, scheman, datamängder, attribut och mål.
 
-Du måste logga in i en sandlåda för att få frågor om specifika data som rör objekt som målgrupper, scheman, datauppsättningar, attribut och mål.
+### Exempel på frågor om användningsdata {#example-usage-data-questions}
 
-### Exempel på frågor om dataanvändning {#example-data-usage-questions}
++++Välj om du vill se en lista över användningsdatafrågor
 
-+++Välj för att visa en lista med exempelfrågor om dataanvändning
+I tabellen nedan finns exempel på användningsdatafrågor och användningsexempel:
 
-| Frågetyp | Beskrivning | Exempel |
+| Frågetyp | Användningsfall | Exempel |
 | --- | --- | --- | 
-| Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar som används {SCHEMA_NAME} schema?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade målgrupper?</li><li>Lista scheman som har attribut som används i aktiverade målgrupper.</li><li>Visa vilka målgrupper som aktiveras för {DESTINATION_ACCOUNT_NAME} och har fler än 1 000 profiler.</li><li>Visa vilka attribut som används i de aktiverade målgrupperna som har ändrats efter januari 2023.</li><li>Vilka datauppsättningar hämtas via {SOURCE_NAME}?</li><li>Vilka dataflöden som är associerade med {DATAFLOW_NAME}</li><li>Lista scheman som är relaterade till aktiverade målgrupper och som skapades under det senaste året.</li></ul> |
-| Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiva målgrupperna?</li><li>Hur många fält används vid segmentering?</li><li>Vilka målgrupper aktiveras för det största antalet destinationer?</li><li>Lista duplicerade målgrupper.</li><li>Visa vilka målgrupper som är aktiverade för {DESTINATION_ACCOUNT_NAME} och rangordna dem efter profilstorlek.</li><li>Vad är procentandelen av de målgrupper som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Lista de tre källanslutningarna som samlar in data i mina datauppsättningar.</li><li>Ange de fem vanligaste attributen som används i aktiverade målgrupper baserat på deras förekomst.</li></ul> |
-| Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Visa de attribut som används för {AUDIENCE_NAME}?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka målgrupper har ändrats den senaste veckan?</li><li>Ange de målgrupper som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många målgrupper som har skapats från varje datauppsättning.</li><li>Vilka källkonton är associerade med datauppsättningen XYZ?</li><li>Visa segmentdefinitionen och ändringsdatumet för {AUDIENCE_NAME}.</li></ul> |
+| Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar använder schemat &quot;ACME schema&quot;?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade målgrupper?</li><li>Lista scheman som har attribut som används i aktiverade målgrupper.</li><li>Visa vilka målgrupper som är aktiverade för&quot;ACME Destinations&quot; och som har fler än 1 000 profiler.</li><li>Visa vilka attribut som används i de aktiverade målgrupperna som har ändrats efter januari 2023.</li><li>Vilka datauppsättningar hämtas via källan&quot;ACME Amazon S3&quot;?</li><li>Vilka dataflöden är kopplade till&quot;ACME Loyalty Dataflow&quot;?</li><li>Lista scheman som är relaterade till aktiverade målgrupper och som skapades under det senaste året.</li></ul> |
+| Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiva målgrupperna?</li><li>Hur många fält används vid segmentering?</li><li>Vilka målgrupper aktiveras för det största antalet destinationer?</li><li>Lista duplicerade målgrupper.</li><li>Visa vilka målgrupper som är aktiverade för&quot;ACME-mål&quot; och rangordna dem efter profilstorlek.</li><li>Vad är procentandelen av de målgrupper som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Lista de tre källanslutningarna som samlar in data i mina datauppsättningar.</li><li>Ange de fem vanligaste attributen som används i aktiverade målgrupper baserat på deras förekomst.</li></ul> |
+| Objektsökning | Hämta eller få åtkomst till ett Experience Platform-objekt eller dess egenskaper. | <ul><li>Vilka datamängder har inget associerat schema</li><li>Vill du lista attributen som används för&quot;ACME Audience&quot;?</li><li>Ge mig listan över scheman som är aktiverade för profiler, men som inte har ändrats sedan de skapades.</li><li>Vilka målgrupper har ändrats den senaste veckan?</li><li>Ange de målgrupper som har samma segmentdefinitioner tillsammans med deras skapandedatum.</li><li>Vilka datauppsättningar är profilaktiverade och innehåller även hur många målgrupper som har skapats från varje datauppsättning.</li><li>Vilka källkonton är associerade med datauppsättningen XYZ?</li><li>Visa segmentdefinitionen och ändringsdatumet för &quot;ACME Audience&quot;.</li></ul> |
+| Objektjämförelse | Identifiera duplicerade målgrupper. | <ul><li>Baserat på segmentdefinitionen kan du lista de målgrupper som är dubbletter.</li><li>Vilka duplicerade målgrupper som aktiveras för &quot;ACME Destinations&quot;.</li></ul> |
 
 +++
+
+## Tar hand om dina frågor {#phrasing-your-questions}
+
+Du måste ge AI Assistant tydliga och kontextuella uppgifter för att få ett så korrekt svar som möjligt. Se följande lista med tips om hur du ställer en tydlig fråga i sitt sammanhang:
+
+* Ange din uppgift och/eller fråga kortfattat.
+* Undvik tvetydigt språk och alltför komplex syntax för att underlätta förståelsen.
+* Ange relevant sammanhang för dina uppgifter och/eller frågor eftersom kontexten kan hjälpa AI Assistant att generera mer relevanta svar.
+
+Läs tabellen nedan för mer information om de effektivaste strategierna när du ställer frågor till AI Assistant:
+
+| Gör | Exempel |
+| --- | --- |
+| <ul><li>Var tydlig med objektet eller informationen som du vill hämta eller analysera.</li><li>Försök att ange dataobjektens namn inom citattecken. Om du bara känner till en del av objektnamnet kan du även ange det i frågan.</li><li>Använd [objekt som slutförs automatiskt](./ui-guide.md#use-auto-complete) för att hjälpa AI Assistant att bättre förstå sammanhanget i din fråga.</li></ul> | <ul><li>Vilka datauppsättningar använder schemat&quot;Luma - Loyalty&quot;?</li><li>Visa de aktiverade segmenten som har &quot;Luma&quot; i sina namn. Rangordna dem efter antal profiler.</li></ul> |
+| <ul><li>Undvik tvetydighet och använd tydligt språk</li><li>Använd exakt terminologi för att få bättre tydlighet i frågan.</li><li>När du ställer frågor om Adobe Experience Platform kan du försöka använda terminologi som är specifik för Experience Platform för att förbättra relevansen i svaren.</li></ul> | <ul><li>Hur många profiler har jag i&quot;ACME Audience&quot;.</li><li>Visa de fem främsta XDM-attributen som används i aktiverade målgrupper.</li></ul> |
+| <ul><li>Ange sammanhang eller ange ett villkor för att filtrera resultaten.</li><li>Använd ett filtervillkor i frågorna för att begränsa mängden data i svaret.</li></ul> | <ul><li>Visa målgrupper som inte har aktiverats och skapats för mer än sex månader sedan och som aldrig har ändrats.</li><li>Visa att målgrupper är aktiverade för&quot;ACME Destination&quot; och har fler än 10 000 profiler.</li></ul> |
+
+{style="table-layout:auto"}
+
+| Gör det inte | Exempel |
+| --- | --- |
+| Använd oklart eller tvetydigt språk. | <ul><li>Ge mig information om datauppsättningar.</li><li>Hur många användare har jag i&quot;ACME Audience&quot;?</li><li>Visa segment.</li><li>Listattribut.</li></ul> |
+| Gör ofullständiga förfrågningar. | &quot;Luma - lojalitetsdatauppsättning&quot; |
+| Anta kunskap utan sammanhang. | <ul><li>Målgrupper de senaste sex månaderna.</li><li>Bygg en fråga åt mig.</li></ul> |
+| Formge alltför komplexa frågor. | Gör en omfattande analys av datalinjer för alla objekt och deras beroenden. |
+| Utelämna villkor eller parametrar. | Visa datauppsättningar. |
+
+{style="table-layout:auto"}
 
 ## Ge feedback {#feedback}
 
