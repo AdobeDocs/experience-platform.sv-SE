@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Översikt över åtkomstkontroll
 description: Åtkomstkontroll för Adobe Experience Platform tillhandahålls via Adobe Admin Console. Den här funktionen utnyttjar produktprofiler i Admin Console, som länkar användare med behörigheter och sandlådor.
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: df24799e4644a98941b707bb216a4ad434f5ebf9
+source-git-commit: 16313e2109152329a427be9f13fcbd6382353797
 workflow-type: tm+mt
-source-wordcount: '1537'
+source-wordcount: '1546'
 ht-degree: 1%
 
 ---
@@ -100,6 +100,7 @@ I följande tabell visas de behörigheter som är tillgängliga för Experience 
 | [!DNL Profile Management] | [!UICONTROL View Segments] | Skrivskyddad åtkomst till tillgängliga segment. |
 | [!DNL Profile Management] | [!UICONTROL Manage Merge Policies] | Åtkomst för att läsa, skapa, redigera och ta bort sammanfogningsprinciper. |
 | [!DNL Profile Management] | [!UICONTROL View Merge Policies] | Skrivskyddad åtkomst till tillgängliga kopplingsprofiler. |
+| [!DNL Profile Management] | [!UICONTROL Import Audiences] | Tillgång till att läsa, skapa, redigera och ta bort importerade målgrupper. |
 | [!DNL Profile Management] | [!UICONTROL Export Audience for Segment] | Möjlighet att exportera ett utvärderat målgruppssegment till en datauppsättning. |
 | [!DNL Profile Management] | [!UICONTROL Evaluate a Segment to an Audience] | Möjlighet att generera profiler för en viss målgrupp genom att utvärdera en segmentdefinition. |
 | [!DNL Profile Management] | [!UICONTROL View B2B AI] | Skrivskyddad åtkomst till inställningar och konfigurationer för alla B2B AI/ML-tjänster. |
