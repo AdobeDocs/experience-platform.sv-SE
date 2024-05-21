@@ -2,9 +2,9 @@
 title: Frågeloggar
 description: Frågeloggar genereras automatiskt varje gång en fråga körs och är tillgängliga via användargränssnittet som hjälp vid felsökning. I det här dokumentet beskrivs hur du använder och navigerar i avsnittet Loggar för frågetjänst i användargränssnittet.
 exl-id: 929e9fba-a9ba-4bf9-a363-ca8657a84f75
-source-git-commit: 445738f78f44ab8eb1632dbda82c4dd69dbebefd
+source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
 workflow-type: tm+mt
-source-wordcount: '884'
+source-wordcount: '962'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,13 @@ Adobe Experience Platform har en logg över alla frågehändelser som inträffar
 
 Loggfilerna genereras automatiskt av en frågehändelse och innehåller information om t.ex. vilken SQL som används, status för frågan, hur lång tid det tog och senaste körningstid. Du kan använda frågeloggdata som ett kraftfullt verktyg för felsökning av ineffektiva frågor eller problemfrågor. Mer omfattande logginformation finns i loggen i [granskningsloggens dokumentation](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-## Kontrollera frågeloggar
+## Kontrollera frågeloggar {#check-query-logs}
 
 Om du vill kontrollera frågeloggarna väljer du [!UICONTROL Queries] för att gå till arbetsytan för frågetjänsten och välja [!UICONTROL Log] bland de tillgängliga alternativen.
+
+>[!NOTE]
+>
+>Både systemfrågor och kontrollpanelfrågor är exkluderade som standard. Se [filter](#filter-logs) om du vill ha information om hur du förfinar de visade loggarna baserat på dina inställningar.
 
 ![Plattformsgränssnittet med frågor och logg markerat.](../images/ui/query-log/logs.png)
 
@@ -77,11 +81,12 @@ Listan med tillgängliga filter visas.
 
 ![Arbetsytan för frågeloggen med filteralternativen visade och markerade.](../images/ui/query-log/log-filter-settings.png)
 
-I följande tabell visas en beskrivning av varje filter.
+Följande tabell innehåller en beskrivning av varje filter.
 
 | Filter | Beskrivning |
 | ------ | ----------- |
 | [!UICONTROL Exclude dashboard queries] | Den här kryssrutan är aktiverad som standard och utesluter loggar som genereras av frågor som används för att generera insikter. Dessa frågor genereras av systemet och döljer posterna för användargenererade loggar som krävs för övervakning, administration och felsökning. Om du vill visa systemgenererade loggar avmarkerar du kryssrutan. |
+| [!UICONTROL Exclude system queries] | Den här kryssrutan är aktiverad som standard och utesluter loggar som genereras av systemet. Systemgenererade frågor innehåller ofta bakgrundsuppgifter eller underhållsåtgärder som kanske inte är relevanta för användarövervakning, administration eller felsökning. Om du behöver inspektera systemgenererade loggar avmarkerar du den här kryssrutan för att inkludera dem i loggvyn. |
 | [!UICONTROL Start date] | Om du vill filtrera loggarna efter frågor som skapats under en viss period anger du [!UICONTROL Start] och [!UICONTROL End] datum i [!UICONTROL Start date] -avsnitt. |
 | [!UICONTROL Completed date] | Om du vill filtrera loggarna efter frågor som har slutförts under en viss period anger du [!UICONTROL Start] och [!UICONTROL End] datum i [!UICONTROL Completed date] -avsnitt. |
 | [!UICONTROL Status] | Filtrera loggar baserat på [!UICONTROL Status] Välj lämplig alternativknapp för frågan. De tillgängliga alternativen omfattar [!UICONTROL Submitted], [!UICONTROL In progress], [!UICONTROL Success]och [!UICONTROL Failed]. Du kan bara filtrera loggar baserat på ett statusvillkor åt gången. |

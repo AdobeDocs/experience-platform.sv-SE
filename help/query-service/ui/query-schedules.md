@@ -2,9 +2,9 @@
 title: Frågescheman
 description: Lär dig hur du automatiserar schemalagda frågekörningar, tar bort eller inaktiverar ett frågeschema och använder tillgängliga schemaläggningsalternativ via Adobe Experience Platform-gränssnittet.
 exl-id: 984d5ddd-16e8-4a86-80e4-40f51f37a975
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
 workflow-type: tm+mt
-source-wordcount: '1495'
+source-wordcount: '1741'
 ht-degree: 0%
 
 ---
@@ -93,9 +93,23 @@ Du kan även registrera en schemalagd fråga i karantänfunktionen från de info
 
 ### Ange aviseringar för status för en schemalagd fråga {#alerts-for-query-status}
 
-Du kan även prenumerera på frågeararm som en del av inställningarna för den schemalagda frågan. Det innebär att du får meddelanden om statusändringar för din fråga. Varningar kan tas emot som popup-meddelanden eller e-postmeddelanden. De tillgängliga varningsalternativen för frågans tillstånd är bland annat start, lyckad och misslyckad. Markera kryssrutan om du vill prenumerera på aviseringar om den schemalagda frågans status.
+Du kan även prenumerera på frågeararm som en del av inställningarna för den schemalagda frågan. Du kan konfigurera dina inställningar så att du får meddelanden om olika situationer. Varningar kan ställas in för ett karantänläge, fördröjd frågebearbetning eller en statusändring för frågan. De tillgängliga varningsalternativen för frågans tillstånd är bland annat start, lyckad och misslyckad. Varningar kan tas emot antingen som popup-meddelanden eller e-postmeddelanden. Markera kryssrutan om du vill prenumerera på aviseringar om den schemalagda frågans status.
 
 ![Panelen Schemaläggningsinformation med varningsalternativen markerade.](../images/ui/query-editor/alerts.png)
+
+Tabellen nedan förklarar vilka frågeartikeltyper som stöds:
+
+| Aviseringstyp | Beskrivning |
+|---|---|
+| `start` | Den här varningen meddelar dig när en schemalagd frågekörning initieras eller börjar bearbetas. |
+| `success` | Den här varningen informerar dig när en schemalagd frågekörning har slutförts, vilket anger att frågan har körts utan fel. |
+| `failed` | Den här varningen utlöses när en schemalagd frågekörning påträffar ett fel eller misslyckas med att köras. Det hjälper er att snabbt identifiera och åtgärda problem. |
+| `quarantine` | Den här varningen aktiveras när en schemalagd frågekörning sätts i karantän. När en fråga har [registrerad i karantänfunktionen](#quarantine), kommer alla schemalagda frågor som misslyckas tio på varandra följande körningar automatiskt att placeras i [!UICONTROL Quarantined] tillstånd. En fråga i karantän kräver sedan att du gör något innan fler körningar kan utföras. Obs! Frågor måste registreras för karantänfunktionen för att du ska kunna prenumerera på karantänaviseringar. |
+| `delay` | Den här varningen meddelar dig om det finns en [fördröjning av resultatet av en schemalagd frågekörning](./monitor-queries.md#query-run-delay) över ett angivet tröskelvärde. Du kan ange en anpassad tid som utlöser varningen när frågan körs för den aktuella varaktigheten utan att slutföras eller misslyckas. Standardbeteendet anger en varning i 150 minuter efter att frågan börjar bearbetas. |
+
+>[!NOTE]
+>
+>Om du väljer att ställa in en [!UICONTROL Query Run Delay] måste du ange önskad fördröjningstid i minuter i plattformsgränssnittet. Ange längden i minuter. Maximal fördröjning är 24 timmar (1 440 minuter).
 
 En översikt över varningar i Adobe Experience Platform, inklusive strukturen för hur varningsregler definieras, finns i [varningsöversikt](../../observability/alerts/overview.md). Vägledning om hur du hanterar aviseringar och varningsregler i Adobe Experience Platform-gränssnittet finns i [Användargränssnittshandbok för aviseringar](../../observability/alerts/ui.md).
 

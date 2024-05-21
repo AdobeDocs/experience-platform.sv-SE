@@ -2,9 +2,9 @@
 title: Övervaka schemalagda frågor
 description: Lär dig hur du övervakar frågor med hjälp av gränssnittet för frågetjänsten.
 exl-id: 4640afdd-b012-4768-8586-32f1b8232879
-source-git-commit: e63e3344dd530fc9111f29948f2dfbd4daedf28c
+source-git-commit: 41c069ef1c0a19f34631e77afd7a80b8967c5060
 workflow-type: tm+mt
-source-wordcount: '1916'
+source-wordcount: '2333'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Tabellen nedan beskriver varje tillgänglig kolumn.
 
 >[!NOTE]
 >
->Varningssymbolen för prenumerationer finns på varje rad i en namnlös kolumn. Se [aviseringsprenumerationer](#alert-subscription) för mer information.
+>Varningskopian (![En prenumerationsikon för aviseringar.](../images/ui/monitor-queries/alert-subscription-icon.png)) finns i varje rad i en namnlös kolumn. Se [aviseringsprenumerationer](#alert-subscription) för mer information.
 
 | Kolumn | Beskrivning |
 |---|---|
@@ -69,7 +69,7 @@ The [!UICONTROL Scheduled Queries] I vyn finns olika textbundna åtgärder för 
 
 ### Inaktivera eller aktivera en schemalagd fråga {#disable}
 
-Om du vill inaktivera en schemalagd fråga markerar du ellipsen för en schemalagd fråga som du vill hantera och väljer sedan **[!UICONTROL Disable schedule]** från alternativen på snabbmenyn. En dialogruta visas där du kan bekräfta åtgärden. Välj **[!UICONTROL Disable]** för att bekräfta inställningen.
+Om du vill inaktivera en schemalagd fråga markerar du ellipsen för den schemalagda fråga som du vill hantera och väljer sedan **[!UICONTROL Disable schedule]** från alternativen på snabbmenyn. En dialogruta visas där du kan bekräfta åtgärden. Välj **[!UICONTROL Disable]** för att bekräfta inställningen.
 
 När en schemalagd fråga har inaktiverats kan du aktivera schemat via samma process. Markera ellipsen och välj **[!UICONTROL Enable schedule]** bland de tillgängliga alternativen.
 
@@ -79,21 +79,33 @@ När en schemalagd fråga har inaktiverats kan du aktivera schemat via samma pro
 
 ### Ta bort en schemalagd fråga {#delete}
 
-Om du vill ta bort en schemalagd fråga markerar du ellipsen för en schemalagd fråga som du vill hantera och väljer sedan **[!UICONTROL Delete schedule]** från alternativen på snabbmenyn. En dialogruta visas där du kan bekräfta åtgärden. Välj **[!UICONTROL Delete]** för att bekräfta inställningen.
+Om du vill ta bort en schemalagd fråga markerar du ellipsen för den schemalagda fråga som du vill hantera och väljer sedan **[!UICONTROL Delete schedule]** från alternativen på snabbmenyn. En dialogruta visas där du kan bekräfta åtgärden. Välj **[!UICONTROL Delete]** för att bekräfta inställningen.
 
-När en schemalagd fråga har tagits bort är den **not** som tagits bort från listan med schemalagda frågor. De infogade åtgärder som tillhandahålls av ellipserna tas bort och ersätts av den nedtonade ikonen för att lägga till varning. Du kan inte prenumerera på aviseringar för det borttagna schemat. Raden finns kvar i användargränssnittet för att ge information om körningar som utförts som en del av den schemalagda frågan.
+När en schemalagd fråga har tagits bort är den **not** som tagits bort från listan med schemalagda frågor. De infogade åtgärder som tillhandahålls av ellipserna tas bort och ersätts av den nedtonade prenumerationsikonen för att lägga till aviseringar. Du kan inte prenumerera på aviseringar för det borttagna schemat. Raden finns kvar i användargränssnittet för att ge information om körningar som utförts som en del av den schemalagda frågan.
 
-![Fliken Schemalagda frågor med en borttagen schemalagd fråga och en nedtonad varningsikon markerad.](../images/ui/monitor-queries/post-delete.png)
+![Fliken Schemalagda frågor med en borttagen schemalagd fråga och en nedtonad aviseringsprenumerationsikon markerad.](../images/ui/monitor-queries/post-delete.png)
 
 Om du vill schemalägga körningar för den frågemallen väljer du mallnamnet på lämplig rad för att navigera till Frågeredigeraren och följer sedan [instruktioner för att lägga till ett schema i en fråga](./query-schedules.md#create-schedule) enligt beskrivningen i dokumentationen.
 
 ### Prenumerera på aviseringar {#alert-subscription}
 
-Om du vill prenumerera på aviseringar för schemalagda frågekörningar markerar du ellipsen för en schemalagd fråga som du vill hantera och väljer sedan **[!UICONTROL Subscribe]** från alternativen på snabbmenyn.
+Om du vill prenumerera på aviseringar för schemalagda frågekörningar väljer du antingen `...` (ellips) eller aviseringsprenumerationsikon (![En aviseringsprenumerationsikon.](../images/ui/monitor-queries/alert-subscription-icon.png)) för den schemalagda fråga som du vill hantera. Listrutan för textbundna åtgärder visas. Nästa, välj **[!UICONTROL Subscribe]** bland de tillgängliga alternativen.
 
-The [!UICONTROL Alerts] öppnas. The [!UICONTROL Alerts] prenumererar på både UI-meddelanden och e-postaviseringar. Varningar baseras på frågans status. Det finns tre alternativ: `start`, `success`och `failure`. Markera lämplig ruta eller rutor och välj **[!UICONTROL Save]** prenumerera. Du kan prenumerera på aviseringar så länge de inte har en [!UICONTROL Last Run Timestamp] värde.
+![Arbetsytan för schemalagda frågor med en ellips, en aviseringsprenumerationsikon och listrutan för textbundna åtgärder markerad.](../images/ui/monitor-queries/subscribe.png)
+
+The [!UICONTROL Alerts] öppnas. The [!UICONTROL Alerts] prenumererar på både UI-meddelanden och e-postaviseringar. Det finns flera olika prenumerationsalternativ: `start`, `success`, `failure`, `quarantine`och `delay`. Markera lämplig ruta eller rutor och välj **[!UICONTROL Save]** prenumerera.
 
 ![Dialogrutan med aviseringsprenumerationer.](../images/ui/monitor-queries/alert-subscription-dialog.png)
+
+Tabellen nedan förklarar vilka frågeartikeltyper som stöds:
+
+| Aviseringstyp | Beskrivning |
+|---|---|
+| `start` | Den här varningen meddelar dig när en schemalagd frågekörning initieras eller börjar bearbetas. |
+| `success` | Den här varningen informerar dig när en schemalagd frågekörning har slutförts, vilket anger att frågan har körts utan fel. |
+| `failed` | Den här varningen utlöses när en schemalagd frågekörning påträffar ett fel eller misslyckas med att köras. Det hjälper er att snabbt identifiera och åtgärda problem. |
+| `quarantine` | Den här varningen aktiveras när en schemalagd frågekörning sätts i karantän. När frågor registreras i [karantänfunktion](#quarantined-queries), kommer alla schemalagda frågor som misslyckas tio på varandra följande körningar automatiskt att placeras i [!UICONTROL Quarantined] tillstånd. De måste sedan ingripa innan fler avrättningar kan utföras. |
+| `delay` | Den här varningen meddelar dig om det finns en [fördröjning av resultatet av en frågekörning](#query-run-delay) över ett angivet tröskelvärde. Du kan ange en anpassad tid som utlöser varningen när frågan körs för den tidslängden utan att slutföra eller misslyckas. |
 
 >[!NOTE]
 >
@@ -107,7 +119,11 @@ Välj informationsikonen (![En informationsikon.](../images/ui/monitor-queries/i
 
 ![Fliken Schemalagda frågor med informationsikonen och informationspanelen markerad.](../images/ui/monitor-queries/details-panel.png)
 
-### Frågor i karantän {#quarantined-queries}
+## Frågor i karantän {#quarantined-queries}
+
+>[!NOTE]
+>
+>Karantänsvarningen är inte tillgänglig för ad hoc-frågor som körs en gång. Karantänsvarningen gäller endast för schemalagda batchfrågor (CTAS och ITAS).
 
 När en schemalagd fråga som misslyckas tio på varandra följande körningar registreras i en [!UICONTROL Quarantined] status. En fråga med den här statusen blir inaktiv och körs inte vid den schemalagda tidpunkten. Sedan måste du ingripa innan fler exekveringar kan utföras. Detta skyddar systemresurser eftersom du måste granska och korrigera problemen med din SQL innan fler körningar utförs.
 
@@ -116,6 +132,22 @@ Om du vill aktivera en schemalagd fråga för karantänfunktionen markerar du el
 ![Fliken för schemalagda frågor med ellipserna och Aktivera karantän markerat i listrutan för infogade åtgärder.](../images/ui/monitor-queries/inline-enable.png)
 
 Frågor kan också registreras i karantänfunktionen när schemat skapas. Se [dokumentation för frågescheman](./query-schedules.md#quarantine) för mer information.
+
+## Fördröjning för frågekörning {#query-run-delay}
+
+Ha full kontroll över beräkningstiden genom att ange varningar för fördröjning av frågor. Du kan övervaka frågeprestanda och få meddelanden om en frågas status inte ändras efter en viss period. Använd[!UICONTROL Query Run Delay]&#39; ska meddelas om en fråga fortsätter att bearbetas efter en viss tidsperiod utan att slutföras.
+
+När du [prenumerera på aviseringar](#alert-subscription) för schemalagda frågekörningar är en av de tillgängliga varningarna [!UICONTROL Query Run Delay]. Den här varningen kräver att du anger en tröskel för hur lång tid som har ägnats åt att köra. Då får du ett meddelande om fördröjningen i bearbetningen.
+
+Om du vill välja en tröskelvaraktighet som utlöser meddelandet anger du antingen ett tal i textinmatningsfältet eller använder upp- och nedpilarna för att öka i steg om en minut. Eftersom tröskelvärdet anges i minuter är den längsta tiden för att observera en fördröjning av frågekörning 1 440 minuter (24 timmar). Standardtidsperioden för en körningsfördröjning är 150 minuter.
+
+>[!NOTE]
+>
+>En frågekörning kan bara ha en körfördröjningstid. Om du ändrar fördröjningströskeln ändras den för användaren som prenumererar på aviseringen och för hela organisationen.
+
+![Dialogrutan Varningar på fliken för schemalagda frågor med inmatningsfältet för fördröjning av frågekörning markerat.](../images/ui/monitor-queries/query-run-delay-input.png)
+
+Se avsnittet om prenumerationer på aviseringar om du vill veta mer om [prenumerera på [!UICONTROL Query Run Delay] varningar](#alert-subscription).
 
 ## Filtrera frågor {#filter}
 
