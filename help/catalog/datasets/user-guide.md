@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för datauppsättningar
 description: Lär dig hur du utför vanliga åtgärder när du arbetar med datauppsättningar i Adobe Experience Platform användargränssnitt.
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: b033f96002ed6da25cd6eb7012c397405dd85896
+source-git-commit: ed0a259c72832e4fb219855e2a2fc49b3381b85d
 workflow-type: tm+mt
-source-wordcount: '2759'
+source-wordcount: '2896'
 ht-degree: 0%
 
 ---
@@ -74,9 +74,66 @@ Du kan också ta bort en datauppsättning eller lägga till en datauppsättning 
 
 ## Inline-datauppsättningsåtgärder {#inline-actions}
 
-Användargränssnittet för datauppsättningar erbjuder nu en samling infogade åtgärder för varje tillgänglig datauppsättning. Markera ellipsen (..) för en datauppsättning som du vill hantera för att visa de tillgängliga alternativen på en snabbmeny. De tillgängliga åtgärderna omfattar följande: [[!UICONTROL Preview dataset]](#preview), [[!UICONTROL Manage data and access labels]](#manage-and-enforce-data-governance), [[!UICONTROL Enable unified profile]](#enable-profile), [[!UICONTROL Manage tags]](#add-tags), [[!UICONTROL Move to folders]](#move-to-folders)och [[!UICONTROL Delete]](#delete). Mer information om de här tillgängliga åtgärderna finns i respektive avsnitt.
+Användargränssnittet för datauppsättningar erbjuder nu en samling infogade åtgärder för varje tillgänglig datauppsättning. Markera ellipsen (..) för en datauppsättning som du vill hantera för att visa de tillgängliga alternativen på en snabbmeny. De tillgängliga åtgärderna omfattar följande:
 
-### Lägg till datauppsättningstaggar {#add-tags}
+* [[!UICONTROL Preview dataset]](#preview),
+* [[!UICONTROL Manage data and access labels]](#manage-and-enforce-data-governance)
+* [[!UICONTROL Enable unified profile]](#enable-profile)
+* [[!UICONTROL Manage tags]](#manage-tags)
+* [[!UICONTROL Move to folders]](#move-to-folders)
+* [[!UICONTROL Delete]](#delete).
+
+Mer information om de här tillgängliga åtgärderna finns i respektive avsnitt. Om du vill veta hur du hanterar ett stort antal datauppsättningar samtidigt läser du i [massåtgärder](#bulk-actions) -avsnitt.
+
+### Förhandsgranska en datauppsättning {#preview}
+
+Du kan förhandsgranska exempeldata för datauppsättningen utifrån båda de infogade alternativen i [!UICONTROL Browse] och [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] markerar du ellipserna (..) bredvid datauppsättningsnamnet som du vill förhandsgranska. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Preview dataset]** i listan med tillgängliga alternativ. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället att förhandsvisningen inte är tillgänglig.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Förhandsgranska datauppsättning markerat för den valda datauppsättningen.](../images/datasets/user-guide/preview-dataset-option.png)
+
+Då öppnas förhandsgranskningsfönstret, där den hierarkiska vyn av datasetet visas till höger.
+
+![Dialogrutan för förhandsgranskning av datauppsättningar med information om strukturen samt exempelvärden för datauppsättningen visas.](../images/datasets/user-guide/preview-dataset.png)
+
+Alternativt kan du **[!UICONTROL Dataset activity]** skärm, välja **[!UICONTROL Preview dataset]** i skärmens övre högra hörn om du vill förhandsgranska upp till 100 rader med data.
+
+![Knappen Förhandsgranska datauppsättning är markerad.](../images/datasets/user-guide/select-preview.png)
+
+För mer robusta metoder att få tillgång till dina data [!DNL Experience Platform] tillhandahåller tjänster längre fram i kedjan som [!DNL Query Service] och [!DNL JupyterLab] för att utforska och analysera data. Mer information finns i följande dokument:
+
+* [Översikt över frågetjänsten](../../query-service/home.md)
+* [Användarhandbok för JupyterLab](../../data-science-workspace/jupyterlab/overview.md)
+
+### Hantera och tillämpa datastyrning på en datauppsättning {#manage-and-enforce-data-governance}
+
+Du kan hantera etiketter för datastyrning för en datauppsättning genom att välja de infogade alternativen i [!UICONTROL Browse] -fliken. Markera ellipserna (..) bredvid datauppsättningsnamnet som du vill hantera, följt av **[!UICONTROL Manage data and access labels]** i listrutan.
+
+Dataanvändningsetiketter, som används på schemanivå, gör att du kan kategorisera datamängder och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på scheman för spridning till datauppsättningar.
+
+## Aktivera en datauppsättning för kundprofil i realtid {#enable-profile}
+
+Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapslade data. Det gör du genom att schemat som datauppsättningen följer måste vara kompatibelt för användning i [!DNL Real-Time Customer Profile]. Ett kompatibelt schema uppfyller följande krav:
+
+* Schemat har minst ett attribut angivet som en identitetsegenskap.
+* Schemat har en identitetsegenskap definierad som primär identitet.
+
+Mer information om hur du aktiverar ett schema för [!DNL Profile], se [Användarhandbok för Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
+
+Du kan aktivera en datauppsättning för profil från båda de infogade alternativen i [!UICONTROL Browse] och [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] -fliken i [!UICONTROL Datasets] markerar du ellipsen för en datauppsättning som du vill aktivera för profil. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Enable unified profile]** i listan med tillgängliga alternativ.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med ellipserna och Aktivera enhetlig profil markerat.](../images/datasets/user-guide/enable-for-profile.png)
+
+Du kan även välja från datauppsättningens **[!UICONTROL Dataset activity]** väljer du **[!UICONTROL Profile]** växla i **[!UICONTROL Properties]** kolumn. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
+
+>[!NOTE]
+>
+>Om en datauppsättning redan innehåller data och sedan aktiveras för [!DNL Profile], används befintliga data inte automatiskt av [!DNL Profile]. När en datauppsättning har aktiverats för [!DNL Profile]rekommenderar vi att du återimporterar befintliga data så att de bidrar till kundprofilerna.
+
+![Profilväxlingen är markerad på sidan med datauppsättningsinformation.](../images/datasets/user-guide/enable-dataset-profiles.png)
+
+Datauppsättningar som har aktiverats för profilen kan också filtreras enligt det här villkoret. Se avsnittet om hur du [filterprofilaktiverade datauppsättningar](#filter-profile-enabled-datasets) för mer information.
+
+### Hantera datauppsättningstaggar {#manage-tags}
 
 Lägg till egna taggar för att ordna datauppsättningar och förbättra sök-, filtrerings- och sorteringsfunktionerna. Från [!UICONTROL Browse] -fliken i [!UICONTROL Datasets] väljer du ellipsen för en datauppsättning som du vill hantera följt av **[!UICONTROL Manage tags]** i listrutan.
 
@@ -91,6 +148,52 @@ The [!UICONTROL Manage tags] kan även ta bort befintliga taggar från en dataup
 När en tagg har lagts till i en datauppsättning kan datauppsättningarna filtreras baserat på motsvarande tagg. Se avsnittet om hur du [filtrera datamängder efter taggar](#enable-profile) för mer information.
 
 Mer information om hur du klassificerar affärsobjekt för enklare identifiering och kategorisering finns i handboken [hantera metadatatataxonomier](../../administrative-tags/ui/managing-tags.md). I den här guiden beskrivs hur en användare med lämplig behörighet kan skapa fördefinierade taggar, tilldela kategorier till taggar och utföra alla relaterade CRUD-åtgärder för taggar och taggkategorier i plattformens användargränssnitt.
+
+### Flytta till mappar {#move-to-folders}
+
+Du kan placera datauppsättningar i mappar för bättre hantering av datauppsättningar. Om du vill flytta en datauppsättning till en mapp markerar du ellipserna (...) bredvid datauppsättningsnamnet som du vill hantera, följt av **[!UICONTROL Move to folder]** i listrutan.
+
+![The [!UICONTROL Datasets] kontrollpanelen med ellipserna och [!UICONTROL Move to folder] markerad.](../images/datasets/user-guide/move-to-folder.png)
+
+The [!UICONTROL Move] Dialogrutan för datauppsättning till mapp visas. Markera mappen som du vill flytta målgruppen till och välj sedan **[!UICONTROL Move]**. Ett popup-meddelande informerar dig om att datauppsättningsflyttningen har slutförts.
+
+![The [!UICONTROL Move] datauppsättningsdialogruta med [!UICONTROL Move] markerad.](../images/datasets/user-guide/move-dialog.png)
+
+>[!TIP]
+>
+>Du kan också skapa mappar direkt från dialogrutan Flytta datauppsättning. Om du vill skapa en mapp väljer du ikonen Skapa mapp (![Ikonen Skapa mapp.](../images/datasets/user-guide/create-folder-icon.png)) i dialogrutans övre högra hörn.
+>
+>![The [!UICONTROL Move] Datauppsättningsdialogrutan med ikonen för att skapa mapp markerad.](/help/catalog/images/datasets/user-guide/create-folder.png)
+
+När datauppsättningen finns i en mapp kan du välja att bara visa datauppsättningar som tillhör en viss mapp. Om du vill öppna mappstrukturen väljer du ikonen Visa mappar (![Ikonen Visa mappar](../images/datasets/user-guide/show-folders-icon.png)). Välj sedan den valda mappen för att se alla associerade datauppsättningar.
+
+![The [!UICONTROL Datasets] Kontrollpaneler där mappstrukturen för datauppsättningar visas, ikonen för att visa mappar och en markerad mapp visas.](../images/datasets/user-guide/folder-structure.png)
+
+### Ta bort en datauppsättning {#delete}
+
+Du kan ta bort en datauppsättning från någon av datauppsättningens infogade åtgärder i [!UICONTROL Browse] eller längst upp till höger på fliken [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] markerar du ellipserna (..) bredvid datauppsättningsnamnet som du vill ta bort. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Delete]** i listrutan.
+
+![Fliken Bläddra på arbetsytan Datauppsättningar med ellipsen och alternativet Ta bort markerat för den valda datauppsättningen.](../images/datasets/user-guide/inline-delete-dataset.png)
+
+En bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för att bekräfta.
+
+Du kan också välja **[!UICONTROL Delete dataset]** från **[!UICONTROL Dataset activity]** skärm.
+
+>[!NOTE]
+>
+>Datauppsättningar som skapas och används av program och tjänster från Adobe (t.ex. Adobe Analytics, Adobe Audience Manager eller [!DNL Offer Decisioning]) kan inte tas bort.
+
+![Knappen Ta bort datauppsättning markeras på sidan med datauppsättningsinformation.](../images/datasets/user-guide/delete-dataset.png)
+
+En bekräftelseruta visas. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av datauppsättningen.
+
+![Bekräftelsetalet för borttagning visas med knappen Ta bort markerad.](../images/datasets/user-guide/confirm-delete.png)
+
+### Ta bort en profilaktiverad datauppsättning
+
+Om en datauppsättning är aktiverad för Profil tas den bort från datasjön, identitetstjänsten och alla profildata som är associerade med datauppsättningen i profilarkivet om du tar bort datauppsättningen via användargränssnittet.
+
+Du kan ta bort profildata som är kopplade till en datauppsättning från [!DNL Profile] lagra (data lämnas kvar i datasjön) med hjälp av kundprofils-API:t i realtid. Mer information finns i [API-slutpunktsguide för profilsystemjobb](../../profile/api/profile-system-jobs.md).
 
 ## Söka efter och filtrera datamängder {#search-and-filter}
 
@@ -132,30 +235,24 @@ På samma sätt som filtret för skapandedatum kan du filtrera dina datauppsätt
 
 Du kan filtrera datauppsättningar baserat på det schema som definierar deras struktur. Välj listruteikonen eller ange schemanamnet i textfältet. En lista över möjliga matchningar visas. Välj lämpligt schema i listan.
 
+## Massåtgärder {#bulk-actions}
+
+Använd gruppåtgärder för att förbättra effektiviteten och utföra flera åtgärder samtidigt på flera datauppsättningar. Du kan spara tid och underhålla en strukturerad datastruktur med gruppåtgärder som [Flytta till mapp](#move-to-folders), [Redigera taggar](#manage-tags)och [Ta bort](#delete) datauppsättningar.
+
+Om du vill agera på mer än en datauppsättning i taget markerar du enskilda datauppsättningar med kryssrutan för varje rad, eller markerar en hel sida med kryssrutan för kolumnrubriken. När du har valt gruppåtgärdsfältet visas det.
+
+![Fliken Bläddra bland datauppsättningar med flera datauppsättningar markerade och gruppåtgärdsfältet markerat.](../images/datasets/user-guide/bulk-actions.png)
+
+När du tillämpar gruppåtgärder på datauppsättningar gäller följande villkor:
+
+* Du kan välja datauppsättningar från olika sidor i användargränssnittet.
+* Om du väljer ett filter återställs de markerade datauppsättningarna.
+
 ## Sortera datauppsättningar efter skapad den {#sort}
 
 Datauppsättningar i [!UICONTROL Browse] kan sorteras efter stigande eller fallande datum. Välj [!UICONTROL Created] eller [!UICONTROL Last updated] kolumnrubriker som växlar mellan stigande och fallande. När du har valt det här alternativet visas det i kolumnen med antingen upp- eller nedpilen till sidan av kolumnrubriken.
 
 ![Fliken Bläddra på arbetsytan Datauppsättningar där kolumnen Skapat och Senast uppdaterad är markerad.](../images/datasets/user-guide/ascending-descending-columns.png)
-
-## Förhandsgranska en datauppsättning {#preview}
-
-Du kan förhandsgranska exempeldata för datauppsättningen utifrån båda de infogade alternativen i [!UICONTROL Browse] och [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] markerar du ellipserna (..) bredvid datauppsättningsnamnet som du vill förhandsgranska. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Preview dataset]** i listan med tillgängliga alternativ. Om datauppsättningen är tom inaktiveras förhandsgranskningslänken och det står i stället att förhandsvisningen inte är tillgänglig.
-
-![Fliken Bläddra på arbetsytan Datauppsättningar med alternativet ellips och Förhandsgranska datauppsättning markerat för den valda datauppsättningen.](../images/datasets/user-guide/preview-dataset-option.png)
-
-Då öppnas förhandsgranskningsfönstret, där den hierarkiska vyn av datasetet visas till höger.
-
-![Dialogrutan för förhandsgranskning av datauppsättningar med information om strukturen samt exempelvärden för datauppsättningen visas.](../images/datasets/user-guide/preview-dataset.png)
-
-Alternativt kan du **[!UICONTROL Dataset activity]** skärm, välja **[!UICONTROL Preview dataset]** i skärmens övre högra hörn om du vill förhandsgranska upp till 100 rader med data.
-
-![Knappen Förhandsgranska datauppsättning är markerad.](../images/datasets/user-guide/select-preview.png)
-
-För mer robusta metoder att få tillgång till dina data [!DNL Experience Platform] tillhandahåller tjänster längre fram i kedjan som [!DNL Query Service] och [!DNL JupyterLab] för att utforska och analysera data. Mer information finns i följande dokument:
-
-* [Översikt över frågetjänsten](../../query-service/home.md)
-* [Användarhandbok för JupyterLab](../../data-science-workspace/jupyterlab/overview.md)
 
 ## Skapa en datauppsättning {#create}
 
@@ -201,81 +298,6 @@ The **[!UICONTROL Add data]** visas. Överför CSV-filen genom att antingen dra 
 >CSV-kolumnnamn måste börja med alfanumeriska tecken och får bara innehålla bokstäver, siffror och understreck.
 
 ![Skärmen Lägg till data visas. Platsen där du kan överföra CSV-filen för datauppsättningen markeras.](../images/datasets/user-guide/add-csv-data.png)
-
-## Aktivera en datauppsättning för kundprofil i realtid {#enable-profile}
-
-Alla datauppsättningar har möjlighet att förbättra kundprofiler med inkapslade data. Det gör du genom att schemat som datauppsättningen följer måste vara kompatibelt för användning i [!DNL Real-Time Customer Profile]. Ett kompatibelt schema uppfyller följande krav:
-
-* Schemat har minst ett attribut angivet som en identitetsegenskap.
-* Schemat har en identitetsegenskap definierad som primär identitet.
-
-Mer information om hur du aktiverar ett schema för [!DNL Profile], se [Användarhandbok för Schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
-
-Du kan aktivera en datauppsättning för profil från båda de infogade alternativen i [!UICONTROL Browse] och [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] -fliken i [!UICONTROL Datasets] markerar du ellipsen för en datauppsättning som du vill aktivera för profil. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Enable unified profile]** i listan med tillgängliga alternativ.
-
-![Fliken Bläddra på arbetsytan Datauppsättningar med ellipserna och Aktivera enhetlig profil markerat.](../images/datasets/user-guide/enable-for-profile.png)
-
-Du kan även välja från datauppsättningens **[!UICONTROL Dataset activity]** väljer du **[!UICONTROL Profile]** växla i **[!UICONTROL Properties]** kolumn. När den är aktiverad används även data som är inkapslade i datauppsättningen för att fylla i kundprofiler.
-
->[!NOTE]
->
->Om en datauppsättning redan innehåller data och sedan aktiveras för [!DNL Profile], används befintliga data inte automatiskt av [!DNL Profile]. När en datauppsättning har aktiverats för [!DNL Profile]rekommenderar vi att du återimporterar befintliga data så att de bidrar till kundprofilerna.
-
-![Profilväxlingen är markerad på sidan med datauppsättningsinformation.](../images/datasets/user-guide/enable-dataset-profiles.png)
-
-Datauppsättningar som har aktiverats för profilen kan också filtreras enligt det här villkoret. Se avsnittet om hur du [filterprofilaktiverade datauppsättningar](#filter-profile-enabled-datasets) för mer information.
-
-## Hantera och tillämpa datastyrning på en datauppsättning {#manage-and-enforce-data-governance}
-
-Du kan hantera etiketter för datastyrning för en datauppsättning genom att välja de infogade alternativen i [!UICONTROL Browse] -fliken. Markera ellipserna (..) bredvid datauppsättningsnamnet som du vill hantera, följt av **[!UICONTROL Manage data and access labels]** i listrutan.
-
-Dataanvändningsetiketter, som används på schemanivå, gör att du kan kategorisera datamängder och fält enligt de användarprofiler som gäller för dessa data. Se [Datastyrning - översikt](../../data-governance/home.md) om du vill veta mer om etiketter eller se [användarhandbok för dataanvändningsrubriker](../../data-governance/labels/overview.md) för instruktioner om hur du använder etiketter på scheman för spridning till datauppsättningar.
-
-## Flytta till mappar {#move-to-folders}
-
-Du kan placera datauppsättningar i mappar för bättre hantering av datauppsättningar. Om du vill flytta en datauppsättning till en mapp markerar du ellipserna (...) bredvid datauppsättningsnamnet som du vill hantera, följt av **[!UICONTROL Move to folder]** i listrutan.
-
-![The [!UICONTROL Datasets] kontrollpanelen med ellipserna och [!UICONTROL Move to folder] markerad.](../images/datasets/user-guide/move-to-folder.png)
-
-The [!UICONTROL Move] Dialogrutan för datauppsättning till mapp visas. Markera mappen som du vill flytta målgruppen till och välj sedan **[!UICONTROL Move]**. Ett popup-meddelande informerar dig om att datauppsättningsflyttningen har slutförts.
-
-![The [!UICONTROL Move] datauppsättningsdialogruta med [!UICONTROL Move] markerad.](../images/datasets/user-guide/move-dialog.png)
-
->[!TIP]
->
->Du kan också skapa mappar direkt från dialogrutan Flytta datauppsättning. Om du vill skapa en mapp väljer du ikonen Skapa mapp (![Ikonen Skapa mapp.](../images/datasets/user-guide/create-folder-icon.png)) i dialogrutans övre högra hörn.
->
->![The [!UICONTROL Move] Datauppsättningsdialogrutan med ikonen för att skapa mapp markerad.](/help/catalog/images/datasets/user-guide/create-folder.png)
-
-När datauppsättningen finns i en mapp kan du välja att bara visa datauppsättningar som tillhör en viss mapp. Om du vill öppna mappstrukturen väljer du ikonen Visa mappar (![Ikonen Visa mappar](../images/datasets/user-guide/show-folders-icon.png)). Välj sedan den valda mappen för att se alla associerade datauppsättningar.
-
-![The [!UICONTROL Datasets] Kontrollpaneler där mappstrukturen för datauppsättningar visas, ikonen för att visa mappar och en markerad mapp visas.](../images/datasets/user-guide/folder-structure.png)
-
-## Ta bort en datauppsättning {#delete}
-
-Du kan ta bort en datauppsättning från någon av datauppsättningens infogade åtgärder i [!UICONTROL Browse] eller längst upp till höger på fliken [!UICONTROL Dataset activity] vy. Från [!UICONTROL Browse] markerar du ellipserna (..) bredvid datauppsättningsnamnet som du vill ta bort. En menylista med alternativ visas. Nästa, välj **[!UICONTROL Delete]** i listrutan.
-
-![Fliken Bläddra på arbetsytan Datauppsättningar med ellipsen och alternativet Ta bort markerat för den valda datauppsättningen.](../images/datasets/user-guide/inline-delete-dataset.png)
-
-En bekräftelsedialogruta visas. Välj **[!UICONTROL Delete]** för att bekräfta.
-
-Du kan också välja **[!UICONTROL Delete dataset]** från **[!UICONTROL Dataset activity]** skärm.
-
->[!NOTE]
->
->Datauppsättningar som skapas och används av program och tjänster från Adobe (t.ex. Adobe Analytics, Adobe Audience Manager eller [!DNL Offer Decisioning]) kan inte tas bort.
-
-![Knappen Ta bort datauppsättning markeras på sidan med datauppsättningsinformation.](../images/datasets/user-guide/delete-dataset.png)
-
-En bekräftelseruta visas. Välj **[!UICONTROL Delete]** för att bekräfta borttagningen av datauppsättningen.
-
-![Bekräftelsetalet för borttagning visas med knappen Ta bort markerad.](../images/datasets/user-guide/confirm-delete.png)
-
-## Ta bort en profilaktiverad datauppsättning
-
-Om en datauppsättning är aktiverad för Profil tas den bort från datasjön, identitetstjänsten och alla profildata som är associerade med datauppsättningen i profilarkivet om du tar bort datauppsättningen via användargränssnittet.
-
-Du kan ta bort profildata som är kopplade till en datauppsättning från [!DNL Profile] lagra (data lämnas kvar i datasjön) med hjälp av kundprofils-API:t i realtid. Mer information finns i [API-slutpunktsguide för profilsystemjobb](../../profile/api/profile-system-jobs.md).
 
 ## Övervaka datainmatning
 
