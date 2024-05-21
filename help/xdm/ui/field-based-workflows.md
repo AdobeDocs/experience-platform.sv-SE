@@ -1,21 +1,17 @@
 ---
-title: Fältbaserade arbetsflöden i Schemaredigeraren (beta)
+title: Fältbaserade arbetsflöden i Schemaredigeraren
 description: Lär dig hur du lägger till fält från befintliga fältgrupper individuellt i XDM-scheman (Experience Data Model).
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: 07faf4dd749219a955df720a8c740427113a5de2
+source-git-commit: b224783922c3b6c5e2045134be2512748ca2575b
 workflow-type: tm+mt
-source-wordcount: '1176'
+source-wordcount: '1135'
 ht-degree: 0%
 
 ---
 
-# Fältbaserade arbetsflöden i Schemaredigeraren (beta)
-
->[!IMPORTANT]
->
->De arbetsflöden som beskrivs i det här betadokumentet är nu allmänt tillgängliga i Adobe Experience Platform. Den senaste vägledningen om fältbaserade arbetsflöden i Schemaredigeraren finns i [gränssnittshandbok för scheman](./resources/schemas.md) i stället. Den här guiden kommer snart att tas bort.
+# Fältbaserade arbetsflöden i Schemaredigeraren
 
 Adobe Experience Platform har en robust uppsättning standardiserade [fältgrupper](../schema/composition.md#field-group) för användning i XDM-scheman (Experience Data Model). Strukturen och semantiken bakom dessa fältgrupper är noga anpassade för att uppfylla ett stort antal användningsfall för segmentering och andra applikationer längre fram i kedjan av plattformar. Du kan också definiera egna fältgrupper för att tillgodose unika affärsbehov.
 
@@ -25,7 +21,7 @@ Den här guiden beskriver olika metoder för att lägga till enskilda fält i et
 
 ## Förutsättningar
 
-I den här självstudiekursen förutsätts det att du är bekant med [XDM-schemats sammansättning](../schema/composition.md) och hur du använder schemaredigeraren i plattformsgränssnittet. För att följa med i utvecklingen bör du påbörja [skapa ett nytt schema](./resources/schemas.md) och tilldela den till en standardklass innan du fortsätter med den här guiden.
+I den här självstudiekursen förutsätts det att du känner till [XDM-schemats sammansättning](../schema/composition.md) och hur du använder schemaredigeraren i plattformsgränssnittet. För att följa med i utvecklingen bör du påbörja [skapa ett nytt schema](./resources/schemas.md) och tilldela den till en standardklass innan du fortsätter med den här guiden.
 
 ## Ta bort fält som lagts till från standardfältgrupper {#remove-field-group}
 
@@ -83,7 +79,7 @@ Börja skriva in namnet på det fält som du vill lägga till så börjar system
 
 ![Nytt fält](../images/ui/field-based-workflows/custom-field-search.png)
 
-Här anger du ett visningsnamn och en datatyp för fältet. Under **[!UICONTROL Assign field group]** måste du välja en fältgrupp för det nya fältet som ska associeras med. Börja skriva in namnet på fältgruppen och om du tidigare har [skapade anpassade fältgrupper](./resources/field-groups.md#create) visas i listrutan. Du kan också skriva ett unikt namn i fältet för att skapa en ny fältgrupp i stället.
+Här anger du ett visningsnamn och en datatyp för fältet. Under **[!UICONTROL Assign field group]** måste du välja en fältgrupp för det nya fältet som ska kopplas. Börja skriva in namnet på fältgruppen och om du tidigare har [skapade anpassade fältgrupper](./resources/field-groups.md#create) visas i listrutan. Du kan också skriva ett unikt namn i fältet för att skapa en ny fältgrupp i stället.
 
 ![Välj fältgrupp](../images/ui/field-based-workflows/select-field-group.png)
 
@@ -95,7 +91,7 @@ När du är klar väljer du **[!UICONTROL Apply]**.
 
 ![Använd fält](../images/ui/field-based-workflows/apply-field.png)
 
-Det nya fältet läggs till på arbetsytan och får ett namn under [klient-ID](../api/getting-started.md#know-your-tenant_id) för att undvika konflikter med XDM-standardfält. Fältgruppen som du kopplade det nya fältet till visas också under **[!UICONTROL Field groups]** till vänster.
+Det nya fältet läggs till på arbetsytan och får ett namn under [klient-ID](../api/getting-started.md#know-your-tenant_id) för att undvika konflikter med XDM-standardfält. Fältgruppen som du har associerat det nya fältet med visas också under **[!UICONTROL Field groups]** till vänster.
 
 ![Klient-ID](../images/ui/field-based-workflows/tenantId.png)
 
@@ -105,7 +101,7 @@ Det nya fältet läggs till på arbetsytan och får ett namn under [klient-ID](.
 
 ### Lägga till anpassade fält i strukturen för standardfältgrupper
 
-Om schemat du arbetar med har ett objekttypsfält från en standardfältgrupp, kan du lägga till egna anpassade fält till det standardobjektet. Markera plustecknet (**+**) bredvid objektets rot och ange information om det anpassade fältet i den högra listen.
+Om schemat du arbetar med har ett objekttypsfält från en standardfältgrupp, kan du lägga till egna anpassade fält till det standardobjektet. Markera plustecknet (**+**) bredvid objektets rot och ange information om det anpassade fältet till höger.
 
 ![Lägg till fält i standardobjekt](../images/ui/field-based-workflows/add-field-to-standard-object.png)
 

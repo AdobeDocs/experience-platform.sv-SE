@@ -2,9 +2,9 @@
 title: Klassen XDM Individual Prospect Profile
 description: Läs mer om klassen XDM Individual Prospect Profile i Experience Data Model (XDM).
 exl-id: 10fd9d16-4123-4ad4-971f-b715231ee6a9
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: f4ddcf14de7a5cec42b5ebc521203cfdd1498a9f
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '374'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # [!UICONTROL XDM Individual Prospect Profile] class
 
 I Experience Data Model (XDM) är [!UICONTROL XDM Individual Prospect Profile] klassen samlar in profiler för potentiella kunder som vanligen kommer från datapartners för att kunna användas vid kundvärvning.
+
+>[!NOTE]
+>
+>Om du vill ange ett fält i XDM-profilen för enskild potentiell kund som en identitet måste du först skapa minst ett namnområde för partner-ID. Läs mer om namnutrymmen för partner-ID i [Avsnitt för identitetstyper](../../identity-service/features/namespaces.md).
 
 ![Schemagrafiken för klassen XDM Prospect.](../images/classes/individual-prospect-profile.png)
 

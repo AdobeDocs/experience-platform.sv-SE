@@ -4,9 +4,9 @@ solution: Experience Platform
 title: API-slutpunkt för beskrivare
 description: Med slutpunkten /descriptors i API:t för schemaregister kan du programmässigt hantera XDM-beskrivningar i ditt upplevelseprogram.
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 786801975dbde52b5d81a407618ef3b574a6afa3
+source-git-commit: 44355aa2ddf03b20aca64c6675414b73682bc2b5
 workflow-type: tm+mt
-source-wordcount: '1903'
+source-wordcount: '1917'
 ht-degree: 0%
 
 ---
@@ -288,6 +288,10 @@ Om du vill bekräfta att beskrivningen har tagits bort kan du utföra en [sökf�
 I följande avsnitt finns ytterligare information om hur du arbetar med beskrivningar i [!DNL Schema Registry] API.
 
 ### Definiera beskrivningar {#defining-descriptors}
+
+>[!NOTE]
+>
+>Det maximala antalet beskrivningar som kan tillämpas på ett schema är 4 000.
 
 I följande avsnitt ges en översikt över tillgängliga beskrivningstyper, inklusive de fält som krävs för att definiera en beskrivning av varje typ.
 
