@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 5182ee22ae7952f74c29969c0d484397a2850a4c
+source-git-commit: 4c1f29e61ee716a9655bc389bbe08b386ddd643b
 workflow-type: tm+mt
-source-wordcount: '4065'
+source-wordcount: '4120'
 ht-degree: 0%
 
 ---
@@ -85,7 +85,11 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Delete] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Tar bort den valda målgruppen. Målgrupper som används i senare led eller som är beroende i andra målgrupper **inte** tas bort. Mer information om borttagning av målgrupper finns i [segmentering - frågor och svar](../faq.md#lifecycle-states). |
 | [!UICONTROL Add to package] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Flyttar publiken mellan sandlådor. Mer information om den här funktionen finns i [verktygshandbok för sandlådor](../../sandboxes/ui/sandbox-tooling.md). |
 
-Överst på sidan finns alternativ för att lägga till alla målgrupper i ett schema, importera en målgrupp, skapa en ny målgrupp och visa en uppdelning av uppdateringsfrekvensen.
+>[!IMPORTANT]
+>
+>Innan du tar bort målgruppen bör du kontrollera att målgruppen **not** används som en komponent i en kontobaserad målgrupp eller används i Adobe Journey Optimizer.
+
+Överst på sidan finns alternativ för att lägga till alla målgrupper i ett schema, importera en målgrupp, skapa en ny målgrupp och visa en sammanfattning av målgruppsutvärderingen.
 
 Växlar **[!UICONTROL Schedule all audiences]** möjliggör schemalagd segmentering. Mer information om schemalagd segmentering finns i [avsnittet med schemalagd segmentering i den här användarhandboken](#scheduled-segmentation).
 
@@ -95,13 +99,13 @@ Markera **[!UICONTROL Create audience]** kan ni skapa en målgrupp. Läs mer om 
 
 ![Det övre navigeringsfältet på målgruppens webbsida är markerat. Det här fältet innehåller en knapp för att skapa en målgrupp och en knapp för att importera en målgrupp.](../images/ui/overview/browse-audiences-top.png)
 
-Du kan välja **[!UICONTROL Update frequency summary]** om du vill visa ett cirkeldiagram som visar uppdateringsfrekvensen.
+Du kan välja **[!UICONTROL Evaluation summary]** för att visa ett cirkeldiagram som visar en sammanfattning av publikens utvärderingar.
 
-![Knappen Uppdatera frekvenssammanfattning är markerad.](../images/ui/overview/browse-audience-update-frequency-summary.png)
+![Knappen Utvärderingssammanfattning är markerad.](../images/ui/overview/browse-audience-evaluation-summary.png)
 
-Cirkeldiagrammet visas med en uppdelning av målgrupperna efter uppdateringsfrekvens. Diagrammet visar det totala antalet målgrupper i mitten och den dagliga batchutvärderingstiden i UTC längst ned. Om du hovrar över de olika delarna av publiken visas antalet målgrupper som tillhör varje uppdateringsfrekvenstyp.
+Cirkeldiagrammet visas med en uppdelning av målgrupperna efter målgruppsutvärdering. Diagrammet visar det totala antalet målgrupper i mitten och den dagliga batchutvärderingstiden i UTC längst ned. Om du hovrar över de olika delarna av publiken visas antalet målgrupper som tillhör varje uppdateringsfrekvenstyp.
 
-![Diagrammet för uppdateringsfrekvens är markerat och utvärderingstiden för gruppsegmentering visas också.](../images/ui/overview/update-frequency-chart.png)
+![Pajerdiagrammet för målgruppsutvärdering är markerat och utvärderingstiden för gruppsegmentering visas också.](../images/ui/overview/evaluation-summary.png)
 
 ### Anpassa {#customize}
 
@@ -203,7 +207,7 @@ Listan med tillgängliga filter visas.
 | [!UICONTROL Origin] | Gör att du kan filtrera baserat på målgruppens ursprung. De tillgängliga alternativen är Segmenteringstjänst, Anpassad överföring, Målgruppskomposition och Audience Manager. |
 | [!UICONTROL Has any tag] | Gör att du kan filtrera efter taggar. Du kan välja mellan **[!UICONTROL Has any tag]** och **[!UICONTROL Has all tags]**. När **[!UICONTROL Has any tag]** är markerat kommer de filtrerade målgrupperna att inkludera **alla** av de taggar som du har lagt till. När **[!UICONTROL Has all tags]** är markerat måste de filtrerade målgrupperna innehålla **alla** av de taggar som du har lagt till. |
 | [!UICONTROL Lifecycle status] | Gör att du kan filtrera baserat på målgruppens livscykelstatus. Tillgängliga alternativ inkluderar [!UICONTROL Deleted], [!UICONTROL Draft], [!UICONTROL Inactive]och [!UICONTROL Published]. |
-| [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens. Tillgängliga alternativ inkluderar [!UICONTROL Scheduled], [!UICONTROL Continuous]och [!UICONTROL On Demand]. |
+| [!UICONTROL Update frequency] | Gör att du kan filtrera baserat på målgruppens uppdateringsfrekvens (utvärderingsmetod). Tillgängliga alternativ inkluderar [!UICONTROL Scheduled], [!UICONTROL Continuous]och [!UICONTROL On Demand]. |
 | [!UICONTROL Created by] | Gör att du kan filtrera baserat på den person som skapade målgruppen. |
 | [!UICONTROL Creation date] | Gör att du kan filtrera baserat på målgruppens skapandedatum. Du kan välja ett datumintervall att filtrera när målgruppen skapades. |
 | [!UICONTROL Modified date] | Gör att du kan filtrera baserat på målgruppens senaste ändringsdatum. Du kan välja ett datumintervall som ska filtreras när målgruppen senast ändrades. |
@@ -329,6 +333,10 @@ Markera **[!UICONTROL Build rule]** tar dig till segmentbyggaren. Den här arbet
 ![Arbetsytan Segment Builder visas.](../images/ui/overview/segment-builder.png)
 
 ### Importera en målgrupp {#import-audience}
+
+>[!IMPORTANT]
+>
+>Om du vill importera en externt genererad publik **måste** har följande behörigheter: [!UICONTROL View segments], [!UICONTROL Manage segments]och [!UICONTROL Import audience]. Mer information om dessa behörigheter finns i [åtkomstkontroll - översikt](../../access-control/home.md#permissions).
 
 Du kan välja **[!UICONTROL Import audience]** för att importera en externt genererad publik.
 

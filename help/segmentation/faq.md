@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: d4fc95532a82fe32b4172870a5521e41ce313bab
+source-git-commit: 6088dc06af6db2ce1a86a9638df23453184864b2
 workflow-type: tm+mt
-source-wordcount: '3956'
+source-wordcount: '4036'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Ja, externt genererade färdiga målgrupper stöds med Audience Portal. Nu kan d
 
 ### Vilka behörigheter behöver jag för att kunna överföra externt genererade målgrupper?
 
-För att kunna överföra externt genererade målgrupper måste du ha behörigheterna Visa målgrupper/segment, Hantera målgrupper/segment, Visa datauppsättningar, Hantera datauppsättningar, Visa källor och Hantera källor. Det finns inga specifika rollbaserade kontroller som krävs för att överföra externt genererade målgrupper.
+För att kunna överföra externt genererade målgrupper måste du ha behörigheterna Visa segment, Hantera segment och Importera målgrupper. Det finns inga specifika rollbaserade kontroller som krävs för att överföra externt genererade målgrupper.
 
 ### Vad händer när jag överför en externt genererad publik?
 
@@ -198,6 +198,14 @@ Du kan publicera en publik på nytt genom att välja en publik som är inaktiv, 
 >Du kan bara ta bort målgrupper som **not** används i alla aktiveringar i senare led. Dessutom kan du inte ta bort en målgrupp som refereras till av en annan målgrupp. Om du inte kan ta bort din publik måste du vara säker på att du **not** använda det i alla tjänster i senare led eller som en byggsten för en annan publik.
 
 Du kan placera en målgrupp i borttagningsläget genom att öppna snabbåtgärdsmenyn i målportalen och välja [!UICONTROL Delete].
+
+### Finns det några kavattar för övergångar i livscykeltillstånd?
+
+Ja, det finns en del kavajer att vara medveten om när ni använder målgrupper i tjänster längre fram i kedjan som Adobe Journey Optimizer eller icke-kundbaserade målgrupper som kontobaserade målgrupper.
+
+Nu kan du **måste** Kontrollera manuellt om målgruppen används längre fram i Adobe Journey Optimizer, eftersom denna status för närvarande inte kontrolleras automatiskt.
+
+Dessutom kan du **måste** Kontrollera manuellt om målgruppen används som en komponent i en kontobaserad målgrupp, eftersom den här statusen inte heller kontrolleras automatiskt.
 
 ### Påverkar användningen av en målgrupp som underordnad målgrupp övergångar i livscykeln?
 
