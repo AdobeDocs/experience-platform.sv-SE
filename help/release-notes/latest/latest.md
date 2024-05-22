@@ -1,9 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, maj 2024
 description: Versionsinformation från maj 2024 för Adobe Experience Platform.
-source-git-commit: 85acffec03986cf56aeba6b8973ac1edf56a9cd6
+source-git-commit: 58de22b51bc721ec584b11e3f87c0ee210c0add5
 workflow-type: tm+mt
-source-wordcount: '1546'
+source-wordcount: '1594'
 ht-degree: 2%
 
 ---
@@ -71,9 +71,9 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 
 | Funktionalitet | Beskrivning |
 | ----------- | ----------- |
-| Ändra ordning på mappningsfält för batchmål | Du kan nu ändra ordningen på kolumnerna i CSV-exporter genom att dra och släppa mappningsfälten i [mappningssteg](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. |
+| Ändra ordning på mappningsfält för batchmål | Du kan nu ändra ordningen på kolumnerna i CSV-exporter genom att dra och släppa mappningsfälten i [mappningssteg](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. <br> ![Visa hur mappningar kan ordnas om.](../2024/assets/may/reorder-mappings.gif "Visa hur mappningar kan ordnas om."){width="100" zoomable="yes"} |
 | Förinställda exportscheman för batchdestinationer | Experience Platform anger nu automatiskt ett standardschema för varje filexport. Läs dokumentationen om [schemalägga målgruppsexport](../../destinations/ui/activate-batch-profile-destinations.md#scheduling) om du vill lära dig hur du ändrar standardschemat. |
-| Redigera flera målgruppsaktiveringsplaner för batchdestinationer | Du kan nu redigera aktiveringsschemat för flera målgrupper från [målinformationssida](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). |
+| Redigera flera målgruppsaktiveringsplaner för batchdestinationer | Du kan nu redigera aktiveringsschemat för flera målgrupper som exporterats till batchbaserade (filbaserade) mål från **[!UICONTROL Activation data]** -fliken i [målinformationssida](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). <br> ![Se hur du väljer flera målgrupper och redigerar filexportschemat.](../2024/assets/may/bulk-edit-schedule.gif "Se hur du väljer flera målgrupper och redigerar filexportschemat."){width="100" zoomable="yes"} |
 | Exportera flera målgrupper on demand till batchdestinationer | Nu kan du välja och exportera flera målgrupper till gruppmål via [exportera filer on demand](../../destinations/ui/export-file-now.md) funktionalitet. |
 
 {style="table-layout:auto"}
