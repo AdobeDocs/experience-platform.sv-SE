@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Analytics Extension
 description: Den senaste versionsinformationen om taggtillägget Adobe Analytics i Adobe Experience Platform.
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: a49e0fe6c99f2874a9ca8403c4b69428826a6365
+source-git-commit: fbb8e2e7944fc6ef5be6fb0c6dc0ef256ca65b77
 workflow-type: tm+mt
-source-wordcount: '1416'
-ht-degree: 5%
+source-wordcount: '1438'
+ht-degree: 0%
 
 ---
 
@@ -16,6 +16,14 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 >[!NOTE]
 >
 >Tillägget Analytics-taggen uppdateras ofta som svar på uppdateringar av [AppMeasurementets JavaScript-bibliotek](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html). Se [Versionsinformation om AppMeasurement](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html) för närmare information om de specifika versioner som nämns nedan.
+
+## 4 mars 2024
+
+**Adobe Analytics Extension 1.9.4**
+
+**Funktioner**:
+
+* Uppgraderat till [AppMeasurement till v2.26.0](https://github.com/adobe/appmeasurement/releases/tag/v2.26.0).
 
 ## 15 september 2023
 
@@ -36,6 +44,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 * En valfri konfiguration har lagts till (`decodeLinkParameters` standard `false`) som avkodar URL-adresser som innehåller dubbelbyte-kodade tecken.
 
 **Felkorrigeringar**:
+
 * Ytterligare felhantering har lagts till för webbläsare med felaktig hög entropi [Tips för användaragent-klient](https://experienceleague.adobe.com/docs/analytics/technotes/client-hints.html) API.
 * Ändrad [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) Content-Type header to use `x-www-form-urlencoded` som standard.
 
@@ -82,7 +91,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 * Uppgraderad [AppMeasurement till v2.2.1](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html).
 * Uppdaterade reservlinkName för att spegla logiken i Activity Map i stället för att använda innerHTML.
 
-## 6 augusti 2020
+## 6 augusti 2020
 
 **Adobe Analytics Extension 1.8.5**
 
@@ -210,7 +219,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 * Korrigerade ett fel i användargränssnittet som visade att fel var togs bort från en lista
 * Korrigerade ett fel som krävde en SSL-spårningsserver när flera rapportsviter skulle läggas till. När du lägger till flera rapportsviter krävs en spårningsserver, men SSL-spårningsserverfältet är valfritt.
 
-## 15 apr 2019
+## 15 april 2019
 
 **Adobe Analytics Extension 1.7.4**
 
@@ -218,7 +227,7 @@ Nedan följer en lista över versionsinformation för Adobe Analytics-taggtillä
 
 * Återrullade tillägg efter att ett fel påträffats i appMeasurement 2.13.0. appMeasurement 2.13.0 orsakade ett fel som inte skickade ECID, så om du installerade 1.7.3 rekommenderar vi att du uppgraderar till 1.7.4 för att undvika det här problemet. Observera att clearVars fortsätter tills en uppdaterad version av appMeasurement släpps
 
-## 12 apr 2019
+## 12 april 2019
 
 **Adobe Analytics Extension 1.7.3**
 
