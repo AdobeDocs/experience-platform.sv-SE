@@ -3,9 +3,9 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: 9d3b6409013edc38ef41dd2a184ccbdcf7ab9edd
+source-git-commit: f206ea853d44410c93463e1e515279b39afd1fd9
 workflow-type: tm+mt
-source-wordcount: '1101'
+source-wordcount: '1053'
 ht-degree: 0%
 
 ---
@@ -125,21 +125,13 @@ Om du vill ta bort flera målgrupper från befintliga aktiveringsflöden markera
 
 ![Markering av alternativet Ta bort målgrupper i fönstret Aktiveringsdata.](../assets/ui/details-page/bulk-remove-audiences.png)
 
-### [!BADGE Beta]{type=Informative} Exportera flera filer on-demand till gruppmål {#bulk-export}
-
->[!NOTE]
->
-Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+### Exportera flera filer on demand till batchmål {#bulk-export}
 
 Du kan [exportera flera filer on demand](../ui/export-file-now.md) från **[!UICONTROL Activation data]** sida. Om du vill göra det väljer du de målgrupper som du vill exportera filer för on-demand och väljer **[!UICONTROL Export file now]** -kontroll för att aktivera en engångs-export som levererar en fil för varje vald målgrupp till batchdestinationen.
 
 ![Bild som markerar knappen Exportera fil nu.](../assets/ui/details-page/bulk-export-file-now.png)
 
-### [!BADGE Beta]{type=Informative} Redigera aktiveringsscheman för flera målgrupper som exporterats till gruppmål {#bulk-edit-schedule}
-
->[!NOTE]
->
-Den här funktionen är i betaversion och endast tillgänglig för vissa kunder. Kontakta din Adobe-representant om du vill få tillgång till den här funktionen.
+### Redigera aktiveringsscheman för flera målgrupper som exporterats till batchdestinationer {#bulk-edit-schedule}
 
 Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper samtidigt markerar du önskade målgrupper och väljer sedan **[!UICONTROL Edit schedule]**. Mer information om hur du definierar eller redigerar ett exportschema finns i [schemalägga export av målgrupper](../ui/activate-batch-profile-destinations.md#scheduling) -avsnitt.
 

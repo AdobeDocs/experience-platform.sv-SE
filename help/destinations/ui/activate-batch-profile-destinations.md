@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 5e3c4f5c9a5540e0a796785c743a77c1e11821f8
+source-git-commit: f206ea853d44410c93463e1e515279b39afd1fd9
 workflow-type: tm+mt
-source-wordcount: '3716'
+source-wordcount: '3774'
 ht-degree: 0%
 
 ---
@@ -256,7 +256,7 @@ I det här steget måste du välja de profilattribut som du vill lägga till i f
 
    ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
 
-1. [!BADGE Beta]{type=Informative}
+1. (Valfritt) Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. Du kan ändra ordningen på mappade fält på vilket sätt du vill genom att dra och släppa mappningsraderna enligt nedan.
 
    >[!NOTE]
    >
