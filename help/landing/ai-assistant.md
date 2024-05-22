@@ -5,9 +5,9 @@ badge: Beta
 hide: true
 hidefromtoc: true
 exl-id: 8be1c222-3ccd-4a41-978e-33ac9b730f8c
-source-git-commit: 6beaefb23f4deb382b7844fcf58efbd72b1da2ec
+source-git-commit: 65714e2b18dc787abe074e8448aa1d640c867338
 workflow-type: tm+mt
-source-wordcount: '3085'
+source-wordcount: '3009'
 ht-degree: 0%
 
 ---
@@ -80,13 +80,7 @@ Gränssnittet för AI Assistant visas och du får information om hur du kommer i
 * [!UICONTROL What is a schema?]
 * [!UICONTROL Tell me some common use cases for Real-Time CDP]
 
-![The &quot;ideas to get started&quot; section of AI Assistant.](./images/ai-assistant/ideas-to-get-started.png)
-
-Om du vill interagera med AI Assistant använder du inmatningsrutan för att skriva in frågor eller kommandon. Du kan också använda (**`+`**) för att använda funktionen Komplettera automatiskt och bokmärkesikonen för att komma åt frågor och kommandon med bokmärken.
-
-![Inmatningsrutan för AI Assistant är markerad.](./images/ai-assistant/interact.png)
-
-## Exempel: Använd AI Assistant för att skapa scheman snabbare
+## Användargränssnittshandbok för AI Assistant
 
 >[!NOTE]
 >
@@ -104,97 +98,137 @@ AI Assistant frågar sedan efter sin kunskapsbas och beräknar ett svar. Efter e
 
 När du har fått ett svar från AI Assistant kan du välja bland ett antal alternativ som avgör hur du vill fortsätta.
 
-### Spara frågan {#save-your-query}
+### AI Assistant-funktioner {#features}
 
-+++Välj för att visa ett exempel på hur du sparar en fråga
+I det här avsnittet beskrivs de olika funktionerna i AI Assistant som du kan använda i dina arbetsflöden på Experience Platform.
 
-Om du vill spara frågan väljer du bokmärkesikonen bredvid frågan.
+<!-- 
+### Save your query {#save-your-query}
 
-![Skärmbild av ett markerat bokmärke.](./images/ai-assistant/save-your-query.png)
++++Select to view an example of how to save a query
 
-Om du vill få åtkomst till dina sparade frågor väljer du bokmärkesikonen under inmatningsrutan och väljer sedan den fråga du vill köra.
+To save your query, select the bookmark icon beside your question.
 
-![Skärmbild av bokmärkesikoner och en lista över sparade frågor.](./images/ai-assistant/bookmarks.png)
+![Screenshot of a selected bookmark.](./images/ai-assistant/save-your-query.png)
 
-+++
+To access your saved queries, select the bookmark icon below the input box, then select the query you would like to run.
+
+![Screenshot of bookmark icon and a list of saved queries.](./images/ai-assistant/bookmarks.png)
+
++++ -->
 
 ### Visa data i din sandlåda {#view-data-in-your-sandbox}
 
+Beroende på din fråga innehåller AI Assistant ytterligare information om data i din sandlåda. Om du vill visa hur svaret på frågan gäller för din specifika sandlåda väljer du **[!UICONTROL In your sandbox].**
+
+När du visar data som gäller din sandlåda kan AI Assistant tillhandahålla direktlänkar till specifika UI-sidor som visar dina efterfrågade data.
+
 +++Markera för att visa exempel
 
-Beroende på din fråga innehåller AI Assistant ytterligare information om data i din sandlåda. Om du vill visa hur svaret på din fråga gäller för din sandlåda väljer du **[!UICONTROL In your sandbox].**
+I det här exemplet returnerar AI Assistant ytterligare information om befintliga XDM-scheman i sandlådan, inklusive totalt antal och de fem vanligaste fälten.
 
-Under det här steget kan AI Assistant tillhandahålla direktlänkar till gränssnittssidorna för vissa objekt i fråga. I exemplet nedan innehåller AI Assistant direkta länkar till [!UICONTROL Schemas] och [!UICONTROL Segments] Gränssnittssidor.
-
-![Skärmbild av alternativet&quot;I din sandlåda&quot;.](./images/ai-assistant/in-your-sandbox.png)
+![Listrutan&quot;i din sandlåda&quot; öppnas och ytterligare information om dina scheman visas.](./images/ai-assistant/in-your-sandbox.png)
 
 +++
 
-### Verifiera svaret {#verify-the-response}
+### Visa citat {#view-citations}
+
+Du kan verifiera svar som skickats tillbaka till dig av AI Assistant genom att granska de citat som finns i varje svar.
 
 +++Markera för att visa ett exempel på hur du visar källor
 
-Om du vill visa citat och validera AI Assistants svar väljer du **[!UICONTROL Show sources]**. AI Assistant tillhandahåller länkar till dokumentation som bekräftar dess svar. Du kan även använda frågor som AI Assistant tillhandahåller under [!UICONTROL Related suggestions] om du vill utforska ämnen som hör till den ursprungliga frågan.
+Om du vill visa citat och validera AI Assistants svar väljer du **[!UICONTROL Show sources]**.
 
-![Skärmbild av &quot;Visa källor&quot;.](./images/ai-assistant/show-sources.png)
+![AI Assistant-svaret med Visa källor markerat.](./images/ai-assistant/show-sources.png)
+
+AI Assistant uppdaterar gränssnittet och ger dig länkar till dokumentation som bekräftar det ursprungliga svaret. När citat är aktiverat uppdaterar AI Assistant svaret så att det innehåller fotnoter som anger vilka delar av svaret som refererar till den angivna dokumentationen.
+
+![En listruta med de citat som AI Assistant tillhandahåller för konceptfrågor.](./images/ai-assistant/citations.png)
+
+Du kan även använda frågor som AI Assistant tillhandahåller under **[!UICONTROL Related suggestions]** om du vill utforska ämnen som hör till den ursprungliga frågan.
+
+![En lista med frågor från AI Assistant som relaterade förslag.](./images/ai-assistant/related-suggestions.png)
 
 +++
 
 ### Användningsdata och visualisering {#usage-data-and-visualization}
 
+Du måste vara i en aktiv sandlåda för att AI Assistant ska kunna svara tillräckligt på en fråga om dina användningsdata.
+
 +++Välj för att visa ett exempel på frågor om användningsdata och datavisualisering
 
-För att AI Assistant ska kunna svara på en fråga om användningsdata inom organisationen måste du vara i en aktiv sandlåda.
+I exemplet nedan tillfrågas följande om AI Assistant: **&quot;Visa dataflöden som har skapats med Amazon S3-källa&quot;**, svarar AI Assistant sedan med en tabell över dina dataflöden och deras motsvarande ID:n. Om du vill visa hela datatabellen väljer du ikonen Expandera högst upp till höger.
 
-I exemplet nedan har AI Assistant följande fråga: **&quot;Visa segmentdefinitioner med över 1 000 profiler och inkludera aktiveringsstatus.&quot;** AI Assistant svarar sedan med ett diagram som visualiserar era segment- och profildata.
+![Följ upp frågan om användningsdata.](./images/ai-assistant/usage-data-question.png)
 
-![Följ upp frågan om användningsdata.](./images/ai-assistant/data-usage-question.png)
+En utökad vy av tabellen visas med en mer omfattande lista över dataflöden baserat på parametrarna för frågan.
 
-Du kan hovra över ett enskilt fält om du vill visa specifika data. Du kan också välja ikonen för att expandera om du vill visa diagrammet i en större vy.
+![En vy av den utökade tabellen.](./images/ai-assistant/table.png)
 
-![Uppföljningsfråga som illustrerar datavisualisering.](./images/ai-assistant/data-visualization.png)
+När en fråga om användningsdata visas ger AI Assistant en förklaring av hur svaret beräknades. I exemplet nedan beskriver AI Assistant de steg som har vidtagits för att identifiera de dataflöden som har skapats med [!DNL Amazon S3] källa.
 
-En utökad vy av visualiseringen visas. Du kan använda det utökade modala verktyget för att inspektera dina data ytterligare och det är särskilt användbart när visualisering returneras med ett stort antal kolumner.
+![Uppföljningsfråga om segmentdefinitioner som illustrerar hur AI Assistant beräknade svaret.](./images/ai-assistant/answer-explained.png)
 
-![Utökat diagram.](./images/ai-assistant/chart-expanded.png)
-
-När en fråga om användningsdata visas ger AI Assistant en förklaring av hur svaret beräknades. I exemplet nedan visar AI Assistant de steg som har utförts för att visa segmentdefinitioner med över 1 000 profiler och deras respektive aktiveringsstatus.
-
-![Uppföljningsfråga om segmentdefinitioner som illustrerar hur AI Assistant beräknade svaret.](./images/ai-assistant/results-explained.png)
-
-Du kan även lägga till filter och ändringar i dina frågor och du kan instruera AI Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be AI Assistant att visa en trend för antalet segmentdefinitioner i den ordning de skapades, ta bort segmentdefinitioner med noll som summor och använda namn på månader i stället för heltal när data visas.
+Du kan även lägga till filter och ändringar i dina frågor och du kan instruera AI Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be AI Assistant att visa en trend för antalet segmentdefinitioner i den ordning som de skapades, ta bort segmentdefinitioner med noll som summor och använda namn på månader i stället för heltal när data visas.
 
 +++
 
 ### Använd automatisk komplettering {#use-auto-complete}
 
-+++Markera för att visa ett exempel på automatisk komplettering
-
 Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Rekommendationer som fylls i automatiskt finns tillgängliga för följande domäner: målgrupper, scheman, datamängder, källor och destinationer.
+
++++Markera för att visa ett exempel på automatisk komplettering
 
 Du kan använda Fyll i automatiskt genom att ta med plustecknet (**`+`**) i din fråga. Du kan också välja plustecknet (**`+`**) längst ned i textrutan. Ett fönster visas med en lista över rekommenderade dataobjekt från sandlådan.
 
-![Exempel på automatisk komplettering](./images/ai-assistant/auto-complete-one.png)
-
-Sedan markerar du det dataobjekt som du vill fråga för att slutföra din fråga och skickar sedan din fråga.
-
-![Exempel på automatisk komplettering med fråga och svar](./images/ai-assistant/auto-complete-two.png)
+![Exempel på automatisk komplettering](./images/ai-assistant/autocomplete.png)
 
 +++
 
 ### Använda flera omgångar {#use-multi-turn}
 
-+++Markera för att visa ett exempel på flera omgångar
-
 Du kan använda AI Assistants multibläddringsfunktioner för att få en mer naturlig konversation under upplevelsen. AI Assistant kan besvara uppföljningsfrågor. det sammanhanget kan härledas från en tidigare interaktion.
 
-I exemplet nedan tillfrågas AI Assistant om det totala antalet dataflöden i den aktuella organisationen.
++++Markera för att visa ett exempel på flera omgångar
 
-![Exempel på multisväng](./images/ai-assistant/multi-turn-one.png)
+I exemplet nedan ombeds AI Assistant först att ange det totala antalet dataflöden och sedan ombeds att ange en lista över de 10 senaste dataflödena.
 
-Därefter får AI Assistant en ny uppföljningsbegäran. Den här gången svarar AI Assistant genom att lista de dataflöden som finns i organisationen.
+![Exempel på multisväng](./images/ai-assistant/multi-turn.png)
 
-![Exempel på flera svarstider med fråga och svar](./images/ai-assistant/multi-turn-two.png)
++++
+
+## Ge feedback {#feedback}
+
+Du kan ge återkoppling om din upplevelse med AI Assistant med hjälp av alternativen i svaret.
+
+Om du vill ge feedback väljer du antingen tummen uppåt, tummen nedåt eller en flagga när du har fått ett svar från AI-assistenten och anger sedan din feedback i textrutan.
+
+![Feedback-alternativet i AI Assistant.](./images/ai-assistant/provide-feedback.png)
+
+
++++Markera för att visa fler exempel
+
+>[!BEGINTABS]
+
+>[!TAB Tummen upp]
+
+Välj ikonen med tummen uppåt för att ge feedback på vad som gick bra med din upplevelse av AI-assistenten.
+
+![Fönstret för positiv feedback.](./images/ai-assistant/thumbs-up.png)
+
+>[!TAB Tummen ned]
+
+Välj ikonen med reglaget nedåt för att ge feedback på vad som kan förbättras baserat på din erfarenhet av AI Assistant. Under det här steget kan du även ge specifika kommentarer om din upplevelse. Synpunkter i kommentarerna granskas dagligen.
+
+![Fönstret för negativ feedback.](./images/ai-assistant/thumbs-down.png)
+
+>[!TAB Flagga]
+
+Välj flaggikonen om du vill visa fler rapporter om din upplevelse med hjälp av AI-assistenten.
+
+![Rapportresultatfönstret.](./images/ai-assistant/flag.png)
+
+>[!ENDTABS]
 
 +++
 
@@ -224,7 +258,7 @@ För användningsdatafrågor kanske svaren inte speglar det aktuella läget för
 
 I tabellen nedan finns exempel på användningsdatafrågor och användningsexempel:
 
-| Frågetyp | Användningsfall | Exempel |
+| Frågetyp | Använd skiftläge | Exempel |
 | --- | --- | --- | 
 | Datalinje | Spåra användningen av ett eller flera objekt över andra Experience Platform-objekt | <ul><li>Vilka datauppsättningar använder schemat &quot;ACME schema&quot;?</li><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilka datauppsättningar har använts i aktiverade målgrupper?</li><li>Lista scheman som har attribut som används i aktiverade målgrupper.</li><li>Visa vilka målgrupper som är aktiverade för&quot;ACME Destinations&quot; och som har fler än 1 000 profiler.</li><li>Visa vilka attribut som används i de aktiverade målgrupperna som har ändrats efter januari 2023.</li><li>Vilka datauppsättningar hämtas via källan&quot;ACME Amazon S3&quot;?</li><li>Vilka dataflöden är kopplade till&quot;ACME Loyalty Dataflow&quot;?</li><li>Lista scheman som är relaterade till aktiverade målgrupper och som skapades under det senaste året.</li></ul> |
 | Distribution och aggregering | Sammanfattningsbaserade frågor om objektanvändning i Experience Platform | <ul><li>Hur många procent av de aktiva målgrupperna?</li><li>Hur många fält används vid segmentering?</li><li>Vilka målgrupper aktiveras för det största antalet destinationer?</li><li>Lista duplicerade målgrupper.</li><li>Visa vilka målgrupper som är aktiverade för&quot;ACME-mål&quot; och rangordna dem efter profilstorlek.</li><li>Vad är procentandelen av de målgrupper som inte har aktiverats men som har fler än 100 profiler. Visa mig deras namn.</li><li>Lista de tre källanslutningarna som samlar in data i mina datauppsättningar.</li><li>Ange de fem vanligaste attributen som används i aktiverade målgrupper baserat på deras förekomst.</li></ul> |
@@ -261,44 +295,6 @@ Läs tabellen nedan för mer information om de effektivaste strategierna när du
 
 {style="table-layout:auto"}
 
-## Ge feedback {#feedback}
-
->[!BEGINSHADEBOX]
-
-**Din feedback har begärts**
-
-Under det här Alpha-steget uppmanas du att ge feedback på de svar du får från AI-assistenten. Alla svar och inskickade kommentarer granskas för att fortsätta förbättra AI Assistant-upplevelsen.
-
-Om du vill ge feedback väljer du antingen tummen uppåt eller tummen nedåt när du fått ett svar från AI-assistenten och anger sedan din feedback i textrutan. Nästa, välj **[!UICONTROL Submit feedback]** att skicka in.
-
->[!ENDSHADEBOX]
-
-+++Ge feedback
-
->[!BEGINTABS]
-
->[!TAB Tummen upp]
-
-Välj ikonen med tummen uppåt för att ge feedback på vad som gick bra med din upplevelse av AI-assistenten.
-
-![Fönstret för positiv feedback.](./images/ai-assistant/thumbs-up.png)
-
->[!TAB Tummen ned]
-
-Välj ikonen med reglaget nedåt för att ge feedback på vad som kan förbättras baserat på din erfarenhet av AI Assistant. Under det här steget kan du även ge specifika kommentarer om din upplevelse. Synpunkter i kommentarerna granskas dagligen.
-
-![Fönstret för negativ feedback.](./images/ai-assistant/thumbs-down.png)
-
->[!TAB Flagga]
-
-Välj flaggikonen om du vill visa fler rapporter om din upplevelse med hjälp av AI-assistenten.
-
-![Rapportresultatfönstret.](./images/ai-assistant/flag.png)
-
->[!ENDTABS]
-
-+++
-
 ## Ytterligare information {#additional-information}
 
 Mer information om AI-assistenten för Experience Platform finns i det här avsnittet.
@@ -321,21 +317,26 @@ AI-assistenten kan ge ett felaktigt intryck av vad den kan göra. Följande type
 | &quot;Vet ni **x** språk?&quot; | AI-assistenten har för närvarande bara stöd för engelska, men kan svara&quot;ja&quot; på grund av att den underliggande modellen kan stödja den. |
 | &quot;Kan du göra..?&quot; | AI-assistenten kan svara ja, även om den inte kan det. |
 
-### Tips {#tips}
+## Vanliga frågor och svar {#faq}
 
-I följande avsnitt beskrivs några tips och tillfälliga lösningar som du bör tänka på när du använder AI Assistant.
+Nedan följer en lista med svar på vanliga frågor om AI Assistant.
 
-#### Frågor kan besvaras med fel informationskälla
+### Tillhandahålls information från AI Assistant i realtid?
 
-Det finns tillfällen när din fråga om dina användningsdata kan resultera i ett svar baserat på dokumentationen. Detta beror på att AI-assistenten felaktigt kan dirigera din fråga till fel informationskälla. Du kan förhindra detta genom att:
+Data som presenteras i AI Assistant-svar uppdateras dagligen. Detta innebär att data i svar kan vara upp till 24 timmar äldre än de data som du kan se i användargränssnittet i Experience Platform vid tidpunkten för svaret.
 
-* Reparera frågan för att använda mer SQL-liknande språk
-* Uttryckligen anropa informationskällan som ska användas.
+### Vilka Adobe-program stöder AI Assistant?
 
-Se tabellen nedan för exempel:
+AI Assistant stöder konceptfrågor i Adobe Experience Platform, Real-time Customer Data Platform och Adobe Journey Optimizer. AI Assistant har för närvarande bara stöd för dataobjekt från Real-Time CDP när det gäller frågor om dataanvändning.
 
-| Felaktig fråga | Bra fråga | Anteckningar |
-| --- | --- | --- |
-| Vilken är min största publik? | Vilken är min största publik? Använda data. | Tala uttryckligen om för AI-assistenten att du vill att svaret ska baseras på data. |
-| Vilken är min största publik? | Visa min största publik. | Det finns tillfällen då en fråga om vad.. kan bli fel för en dokumentationsbaserad fråga. Att använda ett kommando som &quot;list&quot; är en starkare indikator på att du ställer en fråga med data i sitt sammanhang. |
-| Hur många datauppsättningar har jag? | Räkna mina datauppsättningar. | Den ursprungliga frågan fungerar för målgrupper, men fungerar kanske inte med datauppsättningar. |
+### Vilka funktioner har AI Assistant?
+
+AI Assistant kan hantera Adobe konceptfrågor och svara på frågor som rör användningen av Experience Platform-objekt. (Exempel:&quot;Hur många målgrupper aktiveras?&quot;).
+
+### Kan AI Assistant tillhandahålla information om profildata?
+
+Nej. AI Assistant har inte åtkomst till data på profilnivå.
+
+### Kommer mina personuppgifter att användas i AI Assistants utbildningsdata?
+
+AI Assistant använder inte personuppgifter för utbildningsändamål. Lämna inga personuppgifter om dig själv (ditt namn eller din kontaktinformation) eller andra parter i AI Assistant.
