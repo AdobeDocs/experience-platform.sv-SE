@@ -1,10 +1,9 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, maj 2024
 description: Versionsinformation från maj 2024 för Adobe Experience Platform.
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 2bdac588114236c6f314217112b9afa805c1f58c
+source-git-commit: 85acffec03986cf56aeba6b8973ac1edf56a9cd6
 workflow-type: tm+mt
-source-wordcount: '1337'
+source-wordcount: '1546'
 ht-degree: 2%
 
 ---
@@ -22,6 +21,7 @@ Uppdateringar av befintliga funktioner i Experience Platform:
 - [Katalogtjänst](#catalog-service)
 - [Kontrollpaneler](#dashboards)
 - [Datastyrning](#governance)
+- [Mål ](#destinations)
 - [Frågetjänst](#query-service)
 - [Segmenteringstjänst](#segmentation)
 - [Källor](#sources)
@@ -40,16 +40,16 @@ Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Expe
 | --- | --- |
 | Massåtgärder | Datamängdens lager har nu stöd för massåtgärder. Effektivisera datahanteringsprocesserna och se till att datauppsättningarna hanteras effektivt med gruppåtgärder. Använd massåtgärder för att spara tid genom att utföra flera åtgärder på flera datauppsättningar samtidigt.  Massåtgärder omfattar [Flytta till mapp](../../catalog/datasets/user-guide.md#move-to-folders), [Redigera taggar](../../catalog/datasets/user-guide.md#manage-tags)och [Ta bort](../../catalog/datasets/user-guide.md#delete) datauppsättningar. <br> ![Massåtgärder på arbetsytan i användargränssnittet för datauppsättningar.](../2024/assets/may/bulk-actions.png "Massåtgärder på arbetsytan i användargränssnittet för datauppsättningar."){width="100" zoomable="yes"} <br> Mer information om den här funktionen finns i [Användargränssnittshandbok för datauppsättningar](../../catalog/datasets/user-guide.md#bulk-actions). |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 ## Kontrollpaneler {#dashboards}
 
-Adobe Experience Platform har flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har tagits med vid dagliga ögonblicksbilder.
+Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
 | Funktion | Beskrivning | | — | — | | Anpassningsbara insikter för utökad apprapportering | Smidigt [överför resultatet från SQL-analysen till begripliga, affärsvänliga visuella format](../../dashboards/data-distiller/customizable-insights/overview.md). Använd anpassade SQL-frågor för exakt datahantering och för att skapa dynamiska diagram från olika strukturerade datauppsättningar. Du kan använda frågeproffsläget för att utföra komplexa analyser med SQL och sedan dela analysen med icke-tekniska användare via diagram på din anpassade kontrollpanel eller exportera dem i CSV-filer. |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 ## Datastyrning {#governance}
 
@@ -61,7 +61,24 @@ Adobe Experience Platform Data Governance är en serie strategier och tekniker s
 | --- | --- |
 | mTLS-stöd för HTTP API-mål och anpassade Adobe Journey Optimizer-åtgärder | Bygg upp kundförtroendet med de stärkta säkerhetsåtgärderna i protokollet mTLS (Mutual Transport Layer Security). The [Experience Platform HTTP API-mål](../../destinations/catalog/streaming/http-destination.md#mtls-protocol-support) och [Anpassade åtgärder från Adobe Journey Optimizer](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions) har nu stöd för mTLS-protokollet när data skickas till konfigurerade slutpunkter. Ingen ytterligare konfiguration krävs i din anpassade åtgärd eller för HTTP API-målet för att aktivera mTLS. Den här processen sker automatiskt när en mTLS-aktiverad slutpunkt identifieras. Du kan [ladda ned Adobe Journey Optimizer publika certifikat här](../../landing/governance-privacy-security/encryption.md#download-certificates) och [Offentligt certifikat för destinationstjänsten här](../../landing/governance-privacy-security/encryption.md#download-certificates).<br>Se [Experience Platform-dokumentation för datakryptering](../../landing/governance-privacy-security/encryption.md#mtls-protocol-support) om du vill ha mer information om nätverksanslutningsprotokoll när du exporterar data till tredjepartssystem. |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
+
+## Mål  {#destinations}
+
+[!DNL Destinations] är färdiga integreringar med målplattformar som möjliggör smidig aktivering av data från Adobe Experience Platform. Ni kan använda destinationer för att aktivera kända och okända data för flerkanalskampanjer, e-postkampanjer, riktad reklam och många andra användningsfall.
+
+**Ny eller uppdaterad funktionalitet** {#destinations-new-updated-functionality}
+
+| Funktionalitet | Beskrivning |
+| ----------- | ----------- |
+| Ändra ordning på mappningsfält för batchmål | Du kan nu ändra ordningen på kolumnerna i CSV-exporter genom att dra och släppa mappningsfälten i [mappningssteg](../../destinations/ui/activate-batch-profile-destinations.md#mapping). Ordningen på de mappade fälten i användargränssnittet återspeglas i ordningen på kolumnerna i den exporterade CSV-filen, uppifrån och ned, där den översta raden är den vänstra kolumnen i CSV-filen. |
+| Förinställda exportscheman för batchdestinationer | Experience Platform anger nu automatiskt ett standardschema för varje filexport. Läs dokumentationen om [schemalägga målgruppsexport](../../destinations/ui/activate-batch-profile-destinations.md#scheduling) om du vill lära dig hur du ändrar standardschemat. |
+| Redigera flera målgruppsaktiveringsplaner för batchdestinationer | Du kan nu redigera aktiveringsschemat för flera målgrupper från [målinformationssida](../../destinations/ui/destination-details-page.md#bulk-edit-schedule). |
+| Exportera flera målgrupper on demand till batchdestinationer | Nu kan du välja och exportera flera målgrupper till gruppmål via [exportera filer on demand](../../destinations/ui/export-file-now.md) funktionalitet. |
+
+{style="table-layout:auto"}
+
+Mer allmän information om destinationer finns i [destinationer, översikt](../../destinations/home.md).
 
 ## Frågetjänst {#query-service}
 
@@ -76,7 +93,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | Effektivt frågelogglager | Nu kan du använda en förbättrad felsökningseffektivitet och uppgiftskontroll med en [användargränssnitt för anpassade frågeloggar](../../query-service/ui/query-logs.md#filter-logs): <ul><li> Plattformsgränssnittet utesluter nu alla systemfrågor från fliken Loggar som standard. </li><li> Visa systemfrågor genom att avmarkera **Exkludera systemfrågor**. </li></ul> <br> ![Fliken Loggar på arbetsytan i användargränssnittet för frågor.](../2024/assets/may/query-log.png "Fliken Loggar på arbetsytan i användargränssnittet för frågor."){width="100" zoomable="yes"} <br> Använd det strömlinjeformade användargränssnittet för frågeloggar för att få en mer fokuserad vy som hjälper dig att snabbt identifiera och analysera relevanta loggar. |
 | Databasväljare | Använd den nya listrutan Databasväljare för att [enkelt komma åt datavyer från Customer Journey Analytics från Power BI eller Tableau](../../query-service/ui/credentials.md#connect-to-customer-journey-analytics). Du kan nu välja önskad databas direkt från plattformsgränssnittet för en smidigare integrering av dina BI-verktyg. <br> ![Fliken Autentiseringsuppgifter på arbetsytan i användargränssnittet för frågor.](../2024/assets/may/database-selector.png "Fliken Autentiseringsuppgifter på arbetsytan i användargränssnittet för frågor."){width="100" zoomable="yes"} <br> |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 ## Segmenteringstjänst {#segmentation}
 
@@ -88,7 +105,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | --- | --- |
 | Importera externt genererade målgrupper | För import av externt genererade målgrupper krävs nu behörigheten Importera målgrupp. Läs mer om behörigheter i [Användargränssnittshandbok för behörigheter](../../access-control/home.md#permissions). |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 ## Källor {#sources}
 
@@ -104,7 +121,7 @@ Använd källor i Experience Platform för att importera data från ett Adobe-pr
 | Stöd för exempeldataflöde för [!DNL Marketo Engage] källa | The [!DNL Marketo Engage] source har nu stöd för exempeldataflöden. Aktivera exempeldataflödeskonfigurationen för att begränsa ditt intag och testa sedan Experience Platform-funktionerna utan att behöva importera stora mängder data. Mer information finns i guiden [skapa ett dataflöde för [!DNL Marketo Engage] i användargränssnittet](../../sources/tutorials/ui/create/adobe-applications/marketo.md). |
 | Uppdateringar till IP-adressen tillåtelselista | Beroende på var du befinner dig måste du lägga till en uppsättning nya IP-adresser till tillåtelselista för att kunna använda strömningskällor. En fullständig lista över de nya IP-adresserna finns i [TILLÅTELSELISTA-guide för IP-adress](../../sources/ip-address-allow-list.md). |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 **Ny eller uppdaterad dokumentation**
 
@@ -112,7 +129,7 @@ Använd källor i Experience Platform för att importera data från ett Adobe-pr
 | --- | --- |
 | Dokumentationsuppdateringar för [!DNL Google PubSub] | The [!DNL Google PubSub] källdokumentationen har uppdaterats med en omfattande kravguide. Använd det nya avsnittet med förutsättningar för att lära dig hur du skapar ett tjänstkonto, ger behörigheter på ämnes- eller prenumerationsnivå och ställer in konfigurationer för att optimera din användning av [!DNL Google PubSub] källa. Läs [[!DNL Google PubSub] översikt](../../sources/connectors/cloud-storage/google-pubsub.md) för mer information. |
 
-{style=“table-layout:auto”}
+{style="table-layout:auto"}
 
 Mer information om källor finns i [källöversikt](../../sources/home.md).
 
