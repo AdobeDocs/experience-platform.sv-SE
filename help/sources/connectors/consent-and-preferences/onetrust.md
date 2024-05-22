@@ -5,9 +5,9 @@ title: OneTrust Integration Source Connector - översikt
 description: Lär dig hur du ansluter OneTrust Integration till Adobe Experience Platform med API:er eller användargränssnittet.
 last-substantial-update: 2023-04-26T00:00:00Z
 exl-id: f2229d4d-8aa6-483a-9156-403309f80007
-source-git-commit: cfe5f34316e9db072f0a320143354f2771b4a3a9
+source-git-commit: 71b64894f6a08941b62bf8c6990d6bf0295afdd0
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '186'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->The [!DNL OneTrust Integration] Källan stöder endast konsumtion av medgivanden och inställningsdata och inte cookies.
+>The [!DNL OneTrust Integration] Källan stöder endast konsumtion av medgivanden och inställningsdata och inte cookies. Kontakta OneTrust-supporten på https://support.onetrust.com om du har problem med källkopplingen
 
 Med Adobe Experience Platform kan data hämtas från externa källor samtidigt som du kan strukturera, märka och förbättra inkommande data med hjälp av plattformstjänster. Du kan importera data från en mängd olika källor, till exempel Adobe-program, molnbaserad lagring, databaser och många andra.
 
