@@ -47,7 +47,10 @@ Katalogtjänsten är arkivsystemet för dataplatser och -länkar inom Adobe Expe
 Adobe Experience Platform tillhandahåller flera instrumentpaneler där du kan se viktiga insikter om organisationens data, som de har hämtats in under dagliga ögonblicksbilder.
 
 **Nya eller uppdaterade funktioner**
-| Funktion | Beskrivning | | — | — | | Anpassningsbara insikter för utökad apprapportering | Smidigt [överför resultatet från SQL-analysen till begripliga, affärsvänliga visuella format](../../dashboards/data-distiller/customizable-insights/overview.md). Använd anpassade SQL-frågor för exakt datahantering och för att skapa dynamiska diagram från olika strukturerade datauppsättningar. Du kan använda frågeproffsläget för att utföra komplexa analyser med SQL och sedan dela analysen med icke-tekniska användare via diagram på din anpassade kontrollpanel eller exportera dem i CSV-filer. |
+
+| Funktion | Beskrivning |
+| --- | --- |
+| Anpassningsbara insikter för utökad apprapportering | Smidigt [överför resultatet från SQL-analysen till begripliga, affärsvänliga visuella format](../../dashboards/data-distiller/customizable-insights/overview.md). Använd anpassade SQL-frågor för exakt datahantering och för att skapa dynamiska diagram från olika strukturerade datauppsättningar. Du kan använda frågeproffsläget för att utföra komplexa analyser med SQL och sedan dela analysen med icke-tekniska användare via diagram på din anpassade kontrollpanel eller exportera dem i CSV-filer. |
 
 {style="table-layout:auto"}
 
