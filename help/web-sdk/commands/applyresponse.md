@@ -1,7 +1,8 @@
 ---
 title: applyResponse
 description: Använd ett svar från Edge Network för att initiera Web SDK.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 0653b8f7-33f0-43a1-97f5-59a51270f660
+source-git-commit: 74725546163f0807d3188aff5b5ffda9b8d6350b
 workflow-type: tm+mt
 source-wordcount: '291'
 ht-degree: 0%
@@ -35,7 +36,7 @@ Kör `applyResponse` när du anropar den konfigurerade instansen av Web SDK. Obj
 * **`personalization.sendDisplayEvent`**: Ett booleskt värde som fungerar likadant som [`personalization.sendDisplayEvent`](sendevent/personalization.md) i `sendEvent` -kommando.
 
 ```js
-allow("applyResponse",{
+alloy("applyResponse",{
   "renderDecisions": true,
   "responseHeaders": {},
   "responseBody": {},
