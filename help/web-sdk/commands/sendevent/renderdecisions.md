@@ -1,10 +1,11 @@
 ---
 title: renderDecision
 description: Återge anpassat innehåll som är kvalificerat för automatisk återgivning.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 6f7a3531-c2b6-4e90-a7ad-9f0fe4dc39e9
+source-git-commit: f12d222e81a39a26bd71ab4bede05aa992889605
 workflow-type: tm+mt
-source-wordcount: '140'
-ht-degree: 1%
+source-wordcount: '155'
+ht-degree: 0%
 
 ---
 
@@ -28,6 +29,10 @@ Välj **[!UICONTROL Render visual personalization decisions]** -kryssrutan i åt
 ## Återge anpassat innehåll med JavaScript-biblioteket för Web SDK
 
 Ange `renderDecisions` boolesk när `sendEvent` -kommando. Om det utelämnas blir den här egenskapen som standard `false`. Ange den här egenskapen som `true` om ni automatiskt vill återge personaliserat innehåll.
+
+>[!IMPORTANT]
+>
+>The `renderDecisions` egenskapen är inte kompatibel med [`documentUnloading`](documentunloading.md) -egenskap. Du bör inte ange båda egenskaperna till `true` samtidigt.
 
 ```js
 alloy("sendEvent", {

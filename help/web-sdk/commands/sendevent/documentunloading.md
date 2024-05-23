@@ -1,9 +1,10 @@
 ---
 title: documentUnloading
 description: Använd JavaScript-API:t sendBeacon för att skicka data till Adobe.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 7683c0c4-ae2e-46ec-8471-628a10e17afc
+source-git-commit: f12d222e81a39a26bd71ab4bede05aa992889605
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '244'
 ht-degree: 0%
 
 ---
@@ -30,6 +31,10 @@ Aktivera **[!UICONTROL Document will unload]** -kryssrutan i åtgärderna för e
 ## Konfigurera dokumentborttagning med JavaScript-biblioteket för Web SDK
 
 Ange `documentUnloading` boolesk när `sendEvent` -kommando. Standardvärdet är `false`. Ange den här egenskapen som `true` om du vill använda `sendBeacon` metod för att skicka data till Adobe.
+
+>[!IMPORTANT]
+>
+>The `documentUnloading` egenskapen är inte kompatibel med [`renderDecisions`](renderdecisions.md) -egenskap. Du bör inte ange båda egenskaperna till `true` samtidigt.
 
 ```js
 alloy("sendEvent", {
