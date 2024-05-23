@@ -3,10 +3,10 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: e9777960f347e32ff6288227ef95cec9cc4c55e7
+source-git-commit: ddc15a36e83ebe059f3b4f81f3feccb2d3a4a4f0
 workflow-type: tm+mt
-source-wordcount: '1433'
-ht-degree: 1%
+source-wordcount: '1502'
+ht-degree: 0%
 
 ---
 
@@ -60,8 +60,15 @@ Läs mer om att bevilja behörigheter för [Mål Premium](https://experienceleag
 
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
+>[!IMPORTANT]
+>
+>Publiker som du aktiverar till det här målet måste använda [Active-on-Edge Merge Policy](../../../segmentation/ui/segment-builder.md#merge-policies). The [!DNL Active-On-Edge] sammanfogningspolicy säkerställer att målgrupper utvärderas kontinuerligt [på kanten](../../../segmentation/ui/edge-segmentation.md) och finns tillgängliga för användning av personalisering i realtid och på nästa sida.
+> Om du mappar målgrupper som använder en annan sammanfogningsprincip till kantmål utvärderas inte dessa målgrupper.
+> Följ instruktionerna på [skapa en sammanfogningsprincip](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy)och se till att aktivera **[!UICONTROL Active-On-Edge Merge Policy]** växla.
+
+
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
 | Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
 
@@ -72,7 +79,7 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
----------|----------|---------|
+|---------|----------|---------|
 | Exporttyp | **[!DNL Profile request]** | Du begär alla målgrupper som är mappade i Adobe Target-målet för en enda profil. |
 | Exportfrekvens | **[!UICONTROL Streaming]** | Direktuppspelningsmål är alltid på API-baserade anslutningar. Så snart en profil uppdateras i Experience Platform baserat på målgruppsutvärdering skickar anslutningsprogrammet uppdateringen nedströms till målplattformen. Läs mer om [mål för direktuppspelning](/help/destinations/destination-types.md#streaming-destinations). |
 
