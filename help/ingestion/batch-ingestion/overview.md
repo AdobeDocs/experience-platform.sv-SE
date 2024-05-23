@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Översikt över API för gruppinmatning
 description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 9d3a8aac120119ce0361685f9cb8d3bfc28dc7fd
+source-git-commit: 6cd4bff07d042401d4ebc90d6fc2e70a1f8a7cb0
 workflow-type: tm+mt
 source-wordcount: '1388'
-ht-degree: 4%
+ht-degree: 0%
 
 ---
 
@@ -56,7 +56,7 @@ När data hämtas är det viktigt att förstå hur [!DNL Experience Data Model] 
 
 Det finns viss flexibilitet vid inmatning av data - om en typ inte matchar vad som finns i målschemat konverteras data till den angivna måltypen. Om så inte är fallet misslyckas batchen med `TypeCompatibilityException`.
 
-Till exempel har varken JSON eller CSV en `date` eller `date-time` typ. Därför uttrycks dessa värden med [Formaterade strängar enligt ISO 8061](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix-tid i millisekunder (1531263959000) och konverteras vid importen till mål-XDM-typen.
+Till exempel har varken JSON eller CSV en `date` eller `date-time` typ. Därför uttrycks dessa värden med [Formaterade strängar enligt ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15:05:59.000-08:00&quot;) eller Unix-tid i millisekunder (1531263959000) och konverteras vid importen till mål-XDM-typen.
 
 Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 
@@ -77,7 +77,7 @@ Tabellen nedan visar de konverteringar som stöds vid inmatning av data.
 >
 >Booleaner och arrayer kan inte konverteras till andra typer.
 
-## Använda API:et
+## Använda API
 
 The [!DNL Data Ingestion] Med API kan du importera data som grupper (en dataenhet som består av en eller flera filer som ska importeras som en enda enhet) till [!DNL Experience Platform] tre grundläggande steg:
 

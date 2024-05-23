@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Användarhandbok om Real-Time Customer Profile
+user-guide-title: Kundprofilguide i realtid
 user-guide-description: Sammanfoga kunddata för att skapa en enhetlig bild av kundinteraktioner över alla kanaler.
 feature: Profiles
 role: User
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: e7af4992b1a2d4c9ada89dea474ce8e5412313f9
 workflow-type: tm+mt
-source-wordcount: '129'
-ht-degree: 20%
+source-wordcount: '132'
+ht-degree: 4%
 
 ---
 
@@ -21,6 +21,7 @@ ht-degree: 20%
 * [Edge-profiler](edge-profiles.md)
 * [Förfallodatum för upplevelsehändelser](event-expirations.md)
 * [Förfallodatum för pseudonym profil](pseudonymous-profiles.md)
+* [Kundens tidsstämpelordning](customer-timestamp-ordering.md)
 * [!DNL Profile] API {#api}
    * [Översikt](api/overview.md)
    * [Komma igång](api/getting-started.md)
