@@ -1,12 +1,12 @@
 ---
 audience: user
-user-guide-title: Översikt över Adobe Experience Platform
-breadcrumb-title: Översikt över Experience Platform
-user-guide-description: Läs mer om hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med användarhandböcker, dokumentation och självstudiekurser.
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+user-guide-title: Adobe Experience Platform - översikt
+breadcrumb-title: Experience Platform - översikt
+user-guide-description: Lär dig hur Experience Platform kan leverera personaliserade upplevelser till era kunder i realtid med guider, dokumentation och självstudiekurser.
+source-git-commit: cb37eda87b8fcc0d0284db7a0bab8d48eab5aae6
 workflow-type: tm+mt
-source-wordcount: '282'
-ht-degree: 18%
+source-wordcount: '281'
+ht-degree: 6%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 18%
 * Plattformsdokumentation {#documentation}
    * [Översikt](documentation/overview.md)
    * [Språkstöd](documentation/language-support.md)
-* Programtjänster som bygger på plattform {#ecosystem}
+* Applikationer som bygger på plattform {#ecosystem}
    * [Översikt](application-services.md)
    * [Adobe Real-time Customer Data Platform (alla utgåvor)](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [Program och intelligenta tjänster (video)](video/application-intelligent-services.md)
@@ -51,7 +51,7 @@ ht-degree: 18%
    * [Plattformsintegrering med Experience Cloud (video)](video/experience-cloud-integrations.md)
 * Styrning, integritet och säkerhet {#governance-privacy-security}
    * [Översikt](./governance-privacy-security/overview.md)
-   * Medgivandehantering {#consent}
+   * Hantering av samtycke {#consent}
       * Adobe standard {#adobe}
          * [Översikt](./governance-privacy-security/consent/adobe/overview.md)
          * [Konfigurera en datauppsättning för inhämtning av samtycke och inställningsdata](./governance-privacy-security/consent/adobe/dataset.md)

@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundreseanalys;kampanjsamordning;orkestrering;kundresa;resa;resesamordning;kapacitet;region
 solution: Experience Platform
-title: Översikt över Adobe Experience Platform
+title: Adobe Experience Platform - översikt
 description: Med Adobe Experience Platform kan man centralisera och standardisera kunddata innan man använder datavetenskap och maskininlärning för att dramatiskt förbättra utformningen och leveransen av avancerade, personaliserade upplevelser.
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: ca38a2d72681e4a69304cc765ab6b95d3527d336
 workflow-type: tm+mt
-source-wordcount: '434'
-ht-degree: 1%
+source-wordcount: '431'
+ht-degree: 0%
 
 ---
 
@@ -28,13 +28,13 @@ Bygger på RESTful API:er, [!DNL Experience Platform] ger utvecklarna tillgång 
 
 ## [!DNL Experience Platform] dokumentation
 
-[!DNL Experience Platform] finns i flera format för olika funktioner och tjänster. Mer information om vilka typer av dokumentation som är tillgängliga finns på [Översikt över plattformsdokumentation](documentation/overview.md).
+[!DNL Experience Platform] finns i flera format för olika funktioner och program. Mer information om vilka typer av dokumentation som är tillgängliga finns på [Översikt över plattformsdokumentation](documentation/overview.md).
 
 Börja lära dig mer om en viss [!DNL Platform] service, gå tillbaka till [landningssida för dokumentation](https://experienceleague.adobe.com/docs/experience-platform.html) och välj lämplig guide.
 
-### Dokumentation för programtjänster som bygger på [!DNL Experience Platform]
+### Dokumentation för applikationer som bygger på [!DNL Experience Platform]
 
-Adobe har byggt flera applikationstjänster ovanpå Experience Platform. Dokumentation till dessa program finns i deras egna handböcker, som är länkade nedan:
+Adobe har byggt flera applikationer ovanpå Experience Platform. Dokumentation till dessa program finns i deras egna handböcker, som är länkade nedan:
 
 * [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
 * [[!DNL Real-Time Customer Data Platform (Real-Time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
@@ -43,11 +43,11 @@ Adobe har byggt flera applikationstjänster ovanpå Experience Platform. Dokumen
 * [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
 * [[!DNL Adobe Mix Modeler]](https://experienceleague.adobe.com/docs/mix-modeler/using/overview.html?lang=en)
 
-I videon nedan beskrivs användningsexemplen för varje programtjänst som är byggd ovanpå Experience Platform.
+I videon nedan beskrivs användningsexemplen för varje program som är byggt på Experience Platform.
 
 >[!VIDEO](https://video.tv.adobe.com/v/32554/?learn=on)
 
-## Självstudiekurser om [!DNL Experience Platform]
+## [!DNL Experience Platform] självstudier
 
 Du kan komma igång med [!DNL Platform] snabbt och enkelt genom att följa med i de stegvisa självstudiekurserna som täcker allt från iordningställande av data för intag till avancerade algoritmer för maskininlärning. Dessa självstudiekurser har utformats för att komplettera informationen i [!DNL Experience Platform] så att du får bästa möjliga resultat om du sparar dokumentationen medan du slutför självstudiekurserna.
 
