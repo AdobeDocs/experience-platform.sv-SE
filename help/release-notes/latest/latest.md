@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation om Adobe Experience Platform, maj 2024
 description: Versionsinformation från maj 2024 för Adobe Experience Platform.
-source-git-commit: 58de22b51bc721ec584b11e3f87c0ee210c0add5
+source-git-commit: e02892a2cbf5f65a1b9a0eec49722896bd061084
 workflow-type: tm+mt
 source-wordcount: '1594'
 ht-degree: 2%
