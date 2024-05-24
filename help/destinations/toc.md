@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Användarhandbok om destinationer
-user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
+user-guide-title: Destinationshandbok
+user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och mycket annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
+source-git-commit: e872d8f8a0c73fe3375e538260d23da1f145621c
 workflow-type: tm+mt
-source-wordcount: '1218'
-ht-degree: 1%
+source-wordcount: '1224'
+ht-degree: 0%
 
 ---
 
@@ -83,6 +83,7 @@ ht-degree: 1%
       * [Google Ad Manager-anslutning](./catalog/advertising/google-ad-manager.md)
       * [(Beta) Google Ad Manager 360-anslutning](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google Customer Match Connection](./catalog/advertising/google-customer-match.md)
+      * [(Beta) Google Customer Match + DV360 connection](./catalog/advertising/google-customer-match-dv360.md)
       * [Google Display &amp; Video 360-anslutning](./catalog/advertising/google-dv360.md)
       * [Google Gtag-tillägg](./catalog/advertising/gtag-advertising.md)
       * [LinkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
@@ -144,7 +145,7 @@ ht-degree: 1%
       * [Proportionerna för Acxiom undertryckning](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Dataförbättring i Acxiom](./catalog/data-partner/acxiom-data-enhancement.md)
    * e-handelsdestinationer {#ecommerce}
-      * [SAP Commerce](./catalog/ecommerce/sap-commerce.md)
+      * [SAP COMMERCE](./catalog/ecommerce/sap-commerce.md)
    * E-postmål {#email}
       * [Bizible-tillägg](./catalog/email/bizible.md)
       * [Marketo-tillägg](./catalog/email/marketo.md)
