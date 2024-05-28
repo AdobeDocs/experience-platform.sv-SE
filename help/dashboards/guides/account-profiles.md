@@ -2,9 +2,9 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: 4f67df5d3667218c79504535534de57f871b0650
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1602'
 ht-degree: 0%
 
 ---
@@ -76,14 +76,13 @@ Om du vill veta mer om de tillgängliga standardwidgetarna väljer du namnet på
 * [Kontoprofiler har lagts till](#account-profiles-added)
 * [Nya konton efter bransch](#accounts-by-industry)
 * [Nya konton efter typ](#accounts-by-type)
-* [Möjligheter har lagts till](#opportunities-added)
 * [Nya möjligheter per personroll](#opportunities-by-person-role)
 * [Nya möjligheter per intäkt](#opportunities-by-revenue)
 * [Nya möjligheter per status och fas](#opportunities-by-status-&-stage)
 * [Nya möjligheter](#opportunities-won)
+* [Möjligheter har lagts till](#opportunities-added)
 * [Förutsägbar poängfördelning](#predictive-scoring-distribution)
 * [Prediktiv bedömning av viktiga faktorer](#predictive-scoring-top-influential-factors)
-* [Totalt antal konton per bransch](#total-accounts-by-industry)
 
 ### Kontoprofiler har lagts till {#account-profiles-added}
 
@@ -102,14 +101,6 @@ The [!UICONTROL New accounts by industry] widgeten visar det totala antalet kont
 The [!UICONTROL New accounts by type] widgeten visar det totala antalet konton i ett enskilt mätresultat i ett dondiagram. I donutdiagrammet visas den relativa strukturen av olika kontotyper som utgör denna summa. En färgkodad nyckel ger en beskrivning av alla inkluderade kontotyper. Individuella antal för varje typ av konto visas i en dialogruta när markören förs över respektive avsnitt i donatabellen.
 
 ![Nya konton efter typ-widget.](../images/account-profiles/new-accounts-by-type.png)
-
-### Möjligheter har lagts till {#opportunities-added}
-
-The [!UICONTROL Opportunities added] widgeten använder ett linjediagram för att visa antalet möjligheter som läggs till varje dag under en tidsperiod. Använd det globala datumfiltret längst upp på kontrollpanelen för att fastställa analysperioden. Om inget datumfilter anges listas de möjligheter som lagts till för året före i standardbeteendet. Resultatet kan användas för att skapa en trend i antalet tillagda möjligheter.
-
-<!-- Link to date filter documentation from Annamalai -->
-
-![Widgeten för affärsmöjligheter har lagts till.](../images/account-profiles/opportunities-added.png)
 
 ### Nya möjligheter per personroll {#opportunities-by-person-role}
 
@@ -141,6 +132,14 @@ The [!UICONTROL New opportunities won] widgeten visar det totala antalet affärs
 
 ![De nya möjligheterna får widgeten.](../images/account-profiles/new-opportunities-won.png)
 
+### Möjligheter har lagts till {#opportunities-added}
+
+The [!UICONTROL Opportunities added] widgeten använder ett linjediagram för att visa antalet möjligheter som läggs till varje dag under en tidsperiod. Använd det globala datumfiltret längst upp på kontrollpanelen för att fastställa analysperioden. Om inget datumfilter anges listas de möjligheter som lagts till för året före i standardbeteendet. Resultatet kan användas för att skapa en trend i antalet tillagda möjligheter.
+
+<!-- Link to date filter documentation from Annamalai -->
+
+![Widgeten för affärsmöjligheter har lagts till.](../images/account-profiles/opportunities-added.png)
+
 ### Förutsägbar poängfördelning {#predictive-scoring-distribution}
 
 The [!UICONTROL Predictive scoring distribution] widgeten visar poängdistributionen för alla kontoprofiler så att du snabbt kan förstå hur din säljpipeline mår. Poängdata förmedlas via ett mundiagram och ett kolumndiagram.
@@ -170,18 +169,6 @@ I listrutan i widgeten kan du välja kontobedömningsmodellen.
 >Globala datumintervallfilter gäller inte för prediktiva poängsättningsinsikter. Prediktiva bedömningswidgetar analyserar data baserat på den kontobedömningsmodell som valts i listrutan.
 
 ![Widgeten Predictive scoring top influential factor.](../images/account-profiles/predictive-scoring-top-influential-factors.png)
-
-### Totalt antal konton per bransch {#total-accounts-by-industry}
-
-Den här widgeten visar det totala antalet konton i ett enskilt mätresultat och använder ett dondiagram för att illustrera de proportionella räkningsstorlekarna för de branscher som utgör det totala antalet. Nyckeln ger färgkodningsinformation för de olika branscherna som donationsdiagrammet består av.
-
->[!NOTE]
->
->Den information som visas av den här insikten beror på det datumintervall som du har angett. Om du inte anger något datumfilter analyserar standardbeteendet för insikterna data som lagts till från föregående år fram till idag.
-
-Individuella värden för de olika branscherna visas i en dialogruta när markören hålls över respektive avsnitt i mundiagrammet.
-
-![Det totala antalet konton per bransch-widget.](../images/account-profiles/total-accounts-by-industry-widget.png)
 
 ## Nästa steg
 

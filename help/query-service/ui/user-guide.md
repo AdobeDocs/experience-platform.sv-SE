@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för frågeredigeraren
 description: Frågeredigeraren är ett interaktivt verktyg som tillhandahålls av Adobe Experience Platform Query Service, som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i användargränssnittet i Experience Platform. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i Experience Platform.
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 5189e8bbe4cd93c4e1f355f09da9667f5eb5708d
+source-git-commit: 45eab8f894819eea36465ea0b8f3f3dd8f91fbe0
 workflow-type: tm+mt
 source-wordcount: '2351'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Den gamla redigeraren togs bort den 30 maj 2024. Det är inte längre tillgängligt för användning. Nu kan du använda [Förbättrad frågeredigerare](#enhanced-editor-toggle) skriva, validera och köra frågor
+>Den gamla redigeraren togs bort den 24 maj 2024. Det är inte längre tillgängligt för användning. Nu kan du använda [Förbättrad frågeredigerare](#enhanced-editor-toggle) skriva, validera och köra frågor
 
 Frågeredigeraren är ett interaktivt verktyg från Adobe Experience Platform Query Service som gör att du kan skriva, validera och köra frågor för kundupplevelsedata i [!DNL Experience Platform] användargränssnitt. Frågeredigeraren har stöd för att utveckla frågor för analys och datautforskande, och gör att du kan köra interaktiva frågor i utvecklingssyfte samt icke-interaktiva frågor för att fylla i datauppsättningar i [!DNL Experience Platform].
 
@@ -45,7 +45,7 @@ Frågor som körs i Frågeredigeraren körs interaktivt, vilket innebär att fr�
 
 >[!NOTE]
 >
->Den gamla redigeraren togs bort den 30 maj 2024. Det är inte längre tillgängligt för användning. Nu kan du använda den förbättrade frågeredigeraren för att skriva, validera och köra frågor.
+>Den gamla redigeraren togs bort den 24 maj 2024. Det är inte längre tillgängligt för användning. Nu kan du använda den förbättrade frågeredigeraren för att skriva, validera och köra frågor.
 
 Med Frågeredigeraren kan du skriva, köra och spara frågor om kundupplevelsedata. Alla frågor som körs eller sparas i Frågeredigeraren är tillgängliga för alla användare i organisationen som har tillgång till Frågetjänsten.
 

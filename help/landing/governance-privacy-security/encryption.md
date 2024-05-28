@@ -2,9 +2,9 @@
 title: Datakryptering i Adobe Experience Platform
 description: Läs om hur data krypteras under överföring och i vila i Adobe Experience Platform.
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: fd31d54339b8d87b80799a9c0fa167cc9a07a33f
+source-git-commit: 4f67df5d3667218c79504535534de57f871b0650
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -34,21 +34,21 @@ När data har hämtats in i systemet och [krypterad i vila](#at-rest), plattform
 
 ### Stöd för mTLS-protokoll {#mtls-protocol-support}
 
-Nu kan du använda mTLS (Mutual Transport Layer Security) för att förbättra säkerheten för utgående anslutningar till HTTP API-mål och anpassade Adobe Journey Optimizer-åtgärder. mTLS är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. mTLS innehåller ytterligare ett steg jämfört med TLS, där servern också frågar efter klientens certifikat och verifierar det i slutet.
+Nu kan du använda mTLS (Mutual Transport Layer Security) för att förbättra säkerheten vid utgående anslutningar till [HTTP API-mål](../../destinations/catalog/streaming/http-destination.md) och Adobe Journey Optimizer [anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions). mTLS är en heltäckande säkerhetsmetod för ömsesidig autentisering som ser till att båda parter delar information är de som gör anspråk på att vara innan data delas. mTLS innehåller ytterligare ett steg jämfört med TLS, där servern också frågar efter klientens certifikat och verifierar det i slutet.
 
-#### mTLS i Adobe Journey Optimizer {#mtls-in-adobe-journey-optimizer}
-
-I Adobe Journey Optimizer används mTLS tillsammans med [anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/orchestrate-journeys/about-journey-building/using-custom-actions). Ingen ytterligare [konfiguration för Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) krävs från din sida för att aktivera mTLS. När slutpunkten för en anpassad åtgärd är mTLS-aktiverad hämtar systemet certifikatet från Adobe Experience Platform nyckelbehållare och skickar det automatiskt till slutpunkten (vilket krävs för mTLS-anslutningar).
-
-Om du vill använda mTLS med dessa Adobe Journey Optimizer och Experience Platform HTTP API-målarbetsflöden måste den serveradress som du placerar i Adobe Journey Optimizer kundåtgärdsgränssnitt eller målgränssnittet ha TLS-protokoll inaktiverade och endast mTLS aktiverade. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med dessa arbetsflöden måste den&quot;mottagande&quot; serverslutpunkten vara en mTLS **endast** aktiverad slutpunkt för anslutning.
+Om du vill [använda mTLS med Adobe Journey Optimizer anpassade åtgärder](https://experienceleague.adobe.com/en/docs/journey-optimizer/using/configuration/configure-journeys/action-journeys/about-custom-action-configuration) och målarbetsflödena för Experience Platform HTTP API måste TLS-protokoll vara inaktiverade för den serveradress som du angav i Adobe Journey Optimizer kundåtgärdsgränssnitt eller i målgränssnittet, och endast mTLS är aktiverat. Om TLS 1.2-protokollet fortfarande är aktiverat på den slutpunkten skickas inget certifikat för klientautentisering. Det innebär att om du vill använda mTLS med dessa arbetsflöden måste den&quot;mottagande&quot; serverslutpunkten vara en mTLS **endast** aktiverad slutpunkt för anslutning.
 
 >[!IMPORTANT]
 >
->Ingen ytterligare konfiguration krävs i din anpassade Adobe Journey Optimizer-åtgärd eller -resa för att aktivera mTLS. Den här processen sker automatiskt när en mTLS-aktiverad slutpunkt identifieras. Det gemensamma namnet (CN) och SAN (Subject Alternative Names) för varje certifikat finns i dokumentationen som en del av certifikatet och kan användas som ett ytterligare lager av ägarskapsvalidering om du vill.
+>Ingen ytterligare konfiguration krävs i din anpassade Adobe Journey Optimizer-åtgärd eller i HTTP API-målet för att aktivera mTLS. Den här processen sker automatiskt när en mTLS-aktiverad slutpunkt identifieras. Det gemensamma namnet (CN) och SAN (Subject Alternative Names) för varje certifikat finns i dokumentationen som en del av certifikatet och kan användas som ett ytterligare lager av ägarskapsvalidering om du vill.
 >
 >RFC 2818, som publicerades i maj 2000, tar bort användningen av fältet Gemensamt namn (CN) i HTTPS-certifikat för verifiering av ämnesnamn. Du bör i stället använda tillägget&quot;Alternativt ämnesnamn&quot; (SAN) av typen&quot;DNS-namn&quot;.
 
 ### Hämta certifikat {#download-certificates}
+
+>[!NOTE]
+>
+>Det är ditt ansvar att hålla det offentliga certifikatet uppdaterat. Se till att du regelbundet granskar certifikatet, särskilt när dess förfallodatum närmar sig. Du bör skapa ett bokmärke för den här sidan för att kunna behålla den senaste kopian i din miljö.
 
 Om du vill kontrollera KN eller SAN för att göra ytterligare validering från tredje part, kan ladda ned relevanta certifikat här:
 

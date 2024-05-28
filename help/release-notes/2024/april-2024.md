@@ -1,7 +1,7 @@
 ---
 title: Versionsinformation för Adobe Experience Platform
 description: Versionsinformation från april 2024 för Adobe Experience Platform.
-source-git-commit: 2bddb4963ba0bd10485efe0351d854c01c9a5a3a
+source-git-commit: 45eab8f894819eea36465ea0b8f3f3dd8f91fbe0
 workflow-type: tm+mt
 source-wordcount: '1895'
 ht-degree: 2%
@@ -121,7 +121,7 @@ Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Ex
 | Schemalagda frågemeddelanden | Håll dig informerad med proaktiva meddelanden när du schemalägger frågor, vilket säkerställer effektiv och snabb uppgiftshantering. Du kan [prenumerera på aviseringar när du skapar en fråga](../../query-service/ui/query-schedules.md#alerts-for-query-status) eller använda textbundna åtgärder för befintliga schemalagda frågor. Se [prenumerera på aviseringar med textbundna åtgärder](../../query-service/ui/monitor-queries.md#alert-subscription) mer information. |
 | Förbättrad navigering i schemalagda frågor | Navigera enkelt mellan frågemallar och schemalagda körningar för ökad produktivitet. Läs dokumentationen om [visa schemalagda frågekörningar](../../query-service/ui/query-schedules.md#scheduled-query-runs) för mer information. |
 | Utdata för utökad fråga | Få tillgång till upp till 500 rader frågeresultat i konsolen för djupare analys av dina data.Se [antal resultat](../../query-service/ui/user-guide.md#result-count) mer information. |
-| Äldre frågeredigerare - solnedgång | Från och med den 30 april 2024 har den förbättrade frågeredigeraren blivit standardredigerare för alla användare. Den äldre redigeraren kommer att bli inaktuell den 30-maj-2024 och inte längre vara tillgänglig för användning. Se [Användarhandbok för Frågeredigeraren](../../query-service/ui/user-guide.md) för mer information. |
+| Äldre frågeredigerare - solnedgång | Från och med den 30 april 2024 har den förbättrade frågeredigeraren blivit standardredigerare för alla användare. Den äldre redigeraren kommer att bli inaktuell den 24 maj-2024 och inte längre vara tillgänglig för användning. Se [Användarhandbok för Frågeredigeraren](../../query-service/ui/user-guide.md) för mer information. |
 
 {style="table-layout:auto"}
 
