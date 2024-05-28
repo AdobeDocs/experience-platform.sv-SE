@@ -2,9 +2,9 @@
 title: Anslut ditt Salesforce-konto med användargränssnittet i Experience Platform
 description: Lär dig hur du ansluter ditt Salesforce-konto och överför dina CRM-data till Experience Platform med användargränssnittet.
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 8d62cf4ca0071e84baa9399e0a25f7ebfb096c1a
+source-git-commit: 7930a869627130a5db34780e64b809cda0c1e5f4
 workflow-type: tm+mt
-source-wordcount: '802'
+source-wordcount: '801'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ När du har samlat in dina inloggningsuppgifter kan du följa stegen nedan för 
 
 Välj **[!UICONTROL Sources]** från vänster navigering för att komma åt [!UICONTROL Sources] arbetsyta. Du kan välja lämplig kategori i katalogen till vänster på skärmen. Du kan också hitta den källa du vill arbeta med med med sökalternativet.
 
-Under *CRM* kategori, välj **[!DNL Salesforce]** och sedan markera **[!UICONTROL Add data]**.
+Välj **[!DNL Salesforce]** under *[!UICONTROL CRM]* och välj **[!UICONTROL Add data]**.
 
 >[!TIP]
 >
