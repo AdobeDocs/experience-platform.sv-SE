@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 6088dc06af6db2ce1a86a9638df23453184864b2
+source-git-commit: 3852fc4eca8ea4b6b3fdcfb6aaa54315d83038b4
 workflow-type: tm+mt
-source-wordcount: '4036'
+source-wordcount: '4044'
 ht-degree: 0%
 
 ---
@@ -333,7 +333,11 @@ Genom att dela målgrupper kan ni ytterligare dela upp er målgrupp i mindre gru
 
 När grupper delas upp efter attribut sker ömsesidig exklusivitet mellan grupperna. Det innebär att om en post uppfyller villkoren för flera delade sökvägar tilldelas den **först** till vänster och **not** som tilldelats någon av de andra sökvägarna.
 
-Vid uppdelning efter procent delas partitionerna **slumpmässigt** klart. Detta innebär att profilerna tilldelas slumpmässigt till varje bana. Delningen är **not** beständig så att profilen kan befinna sig i olika delar av gruppen vid varje utvärdering.
+Vid uppdelning efter procent delas partitionerna **slumpmässigt** klart. Detta innebär att profilerna tilldelas slumpmässigt till varje bana. Delningen **är** beständig, vilket innebär att profilen kommer att finnas på samma målgrupp vid varje utvärdering.
+
+>[!NOTE]
+>
+>Tidigare delades Audience Composition **not** beständig.
 
 Mer information om det delade blocket finns i [Användargränssnittsguide för målgruppskomposition](./ui/audience-composition.md#split).
 
