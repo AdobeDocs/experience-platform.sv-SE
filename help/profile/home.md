@@ -2,7 +2,7 @@
 title: Kundprofilöversikt i realtid
 description: Kundprofilen i realtid sammanfogar data från olika källor och ger åtkomst till dessa data i form av enskilda kundprofiler och relaterade tidsseriehändelser. Med den här funktionen kan marknadsförarna skapa samordnade, enhetliga och relevanta upplevelser med sina målgrupper i flera kanaler.
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: dde38e230a6bcb10cd38a12f644f2dd03f0cebaf
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1821'
 ht-degree: 0%
@@ -117,9 +117,9 @@ Realtidsinmatning är möjlig genom en process som kallas direktuppspelning. Nä
 
 Med Insikter om observerbarhet kan ni visa nyckeltal i Adobe Experience Platform. Förutom [!DNL Experience Platform] användningsstatistik och resultatindikatorer för olika [!DNL Platform] finns det specifika profilrelaterade mätvärden som gör att du kan få insikt i hur många begäranden som kommer in, hur många som har passerat, hur stora poster som har importerats, och mycket mer. Om du vill veta mer börjar du med att läsa [API-översikt över observationsinsikter](../observability/api/overview.md)och en fullständig lista över kundprofilsmått i realtid finns i dokumentationen om [tillgängliga mätvärden](../observability/api/metrics.md#available-metrics).
 
-## Uppdatera profilarkivdata
+## Uppdatera data i profilarkivet
 
-Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batchinmatning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivera en datauppsättning för profil och upsert](../catalog/datasets/enable-upsert.md).
+Ibland kan det vara nödvändigt att uppdatera data i din organisations profilarkiv. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batchinmatning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivera en datauppsättning för profil och upsert](../catalog/datasets/enable-upsert.md).
 
 ## Datastyrning och [!DNL Privacy]
 

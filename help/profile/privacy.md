@@ -5,7 +5,7 @@ title: Behandling av sekretessförfrågningar i kundprofil i realtid
 type: Documentation
 description: Adobe Experience Platform Privacy Service behandlar kundförfrågningar om åtkomst, avanmälan eller radering av personuppgifter enligt ett flertal sekretessbestämmelser. Det här dokumentet innehåller viktiga begrepp som rör behandling av sekretessförfrågningar för kundprofil i realtid.
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Avsnitten nedan beskriver hur du gör sekretessförfrågningar för [!DNL Real-T
 >Observera att förfrågningar om sekretess behandlas asynkront i de lagstadgade kraven, och hur lång tid det tar att slutföra kan variera. Om ändringar inträffar i [!DNL Profile] data medan en begäran fortfarande bearbetas, är det inte säkert att dessa inkommande poster också kommer att bearbetas i den begäran. Det är bara profiler som finns i datasjön eller profilarkivet när sekretessjobbet begärs som kan tas bort. Om du importerar profildata som är relaterade till ämnet för en borttagningsbegäran under borttagningsjobbet är det inte säkert att alla profilfragment tas bort.
 >Det är ditt ansvar att vara medveten om inkommande data i plattforms- eller profiltjänsten vid tidpunkten för en borttagningsbegäran, eftersom dessa data kommer att infogas i dina postarkiv. Du måste vara försiktig med att ta in data som har tagits bort eller håller på att tas bort.
 
-### Använda API:et
+### Använda API
 
 När du skapar jobbförfrågningar i API:t, anges alla ID:n i `userIDs` måste använda en specifik `namespace` och `type`. Ett giltigt [namnutrymme för identitet](#namespaces) känns igen av [!DNL Identity Service] måste anges för `namespace` värde, medan `type` måste vara antingen `standard` eller `unregistered` (för standardnamnutrymmen respektive anpassade namnutrymmen).
 

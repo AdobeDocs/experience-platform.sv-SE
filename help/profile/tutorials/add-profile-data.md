@@ -4,7 +4,7 @@ title: Lägg till data i kundprofilen i realtid
 type: Tutorial
 description: I den här självstudien beskrivs de steg som krävs för att lägga till data i kundprofilen i realtid.
 exl-id: c2df224b-bf3d-4994-aa3a-9e9f4a6a726c
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%
@@ -18,7 +18,7 @@ I den här självstudien beskrivs de steg som krävs för att lägga till data i
 
 ## Aktivera ett schema för [!DNL Real-Time Customer Profile]
 
-Data som hämtas in till [!DNL Experience Platform] för användning av [!DNL Real-Time Customer Profile] måste överensstämma med [!DNL Experience Data Model] (XDM) schema som är aktiverat för [!DNL Profile]. För att ett schema ska kunna aktiveras för profilen måste det implementera antingen [!DNL XDM Individual Profile] eller [!DNL XDM ExperienceEvent] klassen.
+Data som hämtas in till [!DNL Experience Platform] för [!DNL Real-Time Customer Profile] måste överensstämma med [!DNL Experience Data Model] (XDM) schema som är aktiverat för [!DNL Profile]. För att ett schema ska kunna aktiveras för profilen måste det implementera antingen [!DNL XDM Individual Profile] eller [!DNL XDM ExperienceEvent] klassen.
 
 Du kan aktivera ett schema för användning i [!DNL Real-Time Customer Profile] med [!DNL Schema Registry] API eller [!DNL Schema Editor] användargränssnitt. Kom igång genom att följa självstudiekurserna för [skapa ett schema med API:er](../../xdm/tutorials/create-schema-api.md) eller [skapa ett schema med hjälp av gränssnittet i schemaredigeraren](../../xdm/tutorials/create-schema-ui.md).
 
@@ -40,6 +40,6 @@ Använda [!DNL Real-Time Customer Profile] Med åtkomst-API kan du hämta batchd
 
 Detaljerade instruktioner om hur du får åtkomst till enheter med [!DNL Real-Time Customer Profile] API, se [slutpunktsguide för enheter](../api/entities.md), som också kallas[!DNL Profile Access] API&quot;.
 
-## Uppdatera profilarkivdata
+## Uppdatera data i profilarkivet
 
-Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batchinmatning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivera en datauppsättning för profil och upsert](../../catalog/datasets/enable-upsert.md).
+Ibland kan det vara nödvändigt att uppdatera data i din organisations profilarkiv. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Detta kan göras via batchinmatning och kräver en profilaktiverad datauppsättning som konfigurerats med en upsert-tagg. Mer information om hur du konfigurerar en datauppsättning för attributuppdateringar finns i självstudiekursen för [aktivera en datauppsättning för profil och upsert](../../catalog/datasets/enable-upsert.md).

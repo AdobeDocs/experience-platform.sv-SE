@@ -4,7 +4,7 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a8b5ed09e8e28075a3a4f37ad30f01c1cc389b9c
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '4665'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Se [Användargränssnittsguide för kundprofil i realtid](../../profile/ui/user-
 
 ## Data för kontrollpanel för profil
 
-På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform. Ögonblicksbilden innehåller inga händelsedata (tidsserier).
+På kontrollpanelen Profiler visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform. Ögonblicksbilden innehåller inga händelsedata (tidsserier).
 
 Attributdata i ögonblicksbilden visar data exakt som de visas vid den specifika tidpunkten när ögonblicksbilden togs. Ögonblicksbilden är alltså inte en uppskattning eller ett urval av data och kontrollpanelen för profiler uppdateras inte i realtid.
 
@@ -195,7 +195,7 @@ En standardinläsning av widgetar tillhandahålls för alla nya instanser av Ado
 
 ## AI-widgetar för kunder {#customer-ai-profiles-widgets}
 
-Kund-AI används för att generera anpassade benägenhetspoäng som omsättning och konvertering för enskilda profiler i stor skala. Kunden gör detta genom att analysera befintliga data om kundupplevelsehändelser för att förutsäga **poängtal för bortfall eller konverteringsbenägenhet**. Dessa högkvalitativa kundbenägenhetsmodeller möjliggör mer exakt segmentering och målinriktning. The [fördelning av poäng](#customer-ai-distribution-of-scores) och [poängsammanfattning](#customer-ai-scoring-summary) insikter visar hur er målgrupp skiljer sig från mängden. Panelerna sätter fokus på vilka profiler som är de höga/låga/medelstora och hur de fördelas över dina profilantal.
+Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Kunden gör detta genom att analysera befintliga data om kundupplevelsehändelser för att förutsäga **poängtal för bortfall eller konverteringsbenägenhet**. Dessa högkvalitativa kundbenägenhetsmodeller möjliggör mer exakt segmentering och målinriktning. The [fördelning av poäng](#customer-ai-distribution-of-scores) och [poängsammanfattning](#customer-ai-scoring-summary) insikter visar hur er målgrupp skiljer sig från mängden. Panelerna sätter fokus på vilka profiler som är de höga/låga/medelstora och hur de fördelas över dina profilantal.
 
 * [[!UICONTROL Customer AI scoring summary]](#customer-ai-scoring-summary)
 * [[!UICONTROL Customer AI distribution of scores]](#customer-ai-distribution-of-scores)
@@ -312,7 +312,7 @@ The **[!UICONTROL Profile count change]** visar antalet sammanfogade profiler so
 
 >[!NOTE]
 >
->The [!UICONTROL Profile count change] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profile count change] widgeten ställs in på 0. Den här beräkningsmetoden görs för att undvika en spik som är kopplad till det initiala intaget av profiler i systemet. Under de kommande 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till Profilarkivet. När nästa ögonblicksbild tagits visas [!UICONTROL Profile count change] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] skulle visa totalt 5 000 000 profiler.
+>The [!UICONTROL Profile count change] widgeten visar antalet tillagda profiler **efter** det första profilintaget och konfigurationen av profilarkivet. Med andra ord: om din organisation konfigurerade profilarkivet och importerade 4 000 000 Dag 1 är kontrollpanelen tillgänglig inom 24 timmar, men [!UICONTROL Profile count change] widgeten ställs in på 0. Den här beräkningsmetoden görs för att undvika en spik som är kopplad till det initiala intaget av profiler i systemet. Under de närmaste 30 dagarna har din organisation importerat ytterligare 1 000 000 profiler till profilbutiken. När nästa ögonblicksbild tagits visas [!UICONTROL Profile count change] visar totalt 1 000 000 profiler, medan [!UICONTROL Profile count] skulle visa totalt 5 000 000 profiler.
 
 ![Kontrollpanelen för användargränssnittsprofiler för plattformen med widgeten för ändring av profilantal markerad.](../images/profiles/profile-count-change.png)
 
@@ -321,9 +321,9 @@ The **[!UICONTROL Profile count change]** visar antalet sammanfogade profiler so
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesaddedtrend"
 >title="trender för antal ändringar av profiler"
->abstract="Den här widgeten visar antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Talet beror också på vilken sammanfogningsprincip som används för profildata."
+>abstract="Den här widgeten visar antalet sammanfogade profiler som har lagts till i profilbutiken dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. Talet beror också på vilken sammanfogningsprincip som används för profildata."
 
-The **[!UICONTROL Profiles count change trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
+The **[!UICONTROL Profiles count change trend]** visar det totala antalet sammanfogade profiler som har lagts till i profilbutiken dagligen de senaste 30 dagarna, 90 dagar eller 12 månaderna. Detta nummer uppdateras varje dag som ögonblicksbilden tas, och om du vill importera profiler till Platform kommer antalet profiler inte att visas förrän nästa ögonblicksbild tas. Antalet tillagda profiler är resultatet av att den valda sammanfogningsprincipen tillämpas på dina profildata för att sammanfoga profilfragment till en enda profil för varje enskild person.
 
 Mer information finns i [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies).
 
@@ -352,7 +352,7 @@ Denna widget hjälper dig att hantera dina behov av målaktivering genom att vis
 >title="Profiler efter identitet"
 >abstract="Den här widgeten visar en uppdelning av alla sammanfogade profiler i din profilbutik efter identiteter."
 
-The **[!UICONTROL Profiles by identity]** widgeten visar en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik. Det totala antalet profiler per identitet (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kan vara högre än det totala antalet sammanfogade profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal, skulle flera namnutrymmen kopplas till den enskilda kunden.
+The **[!UICONTROL Profiles by identity]** widgeten visar hur identiteterna är fördelade över alla sammanfogade profiler i din profilbutik. Det totala antalet profiler per identitet (med andra ord, om de värden som visas för varje namnutrymme läggs ihop) kan vara högre än det totala antalet sammanfogade profiler, eftersom en profil kan ha flera namnutrymmen kopplade till sig. Om en kund till exempel interagerar med varumärket i mer än en kanal, skulle flera namnutrymmen kopplas till den enskilda kunden.
 
 Mer information finns i [avsnittet om sammanfogningsprinciper tidigare i det här dokumentet](#merge-policies).
 

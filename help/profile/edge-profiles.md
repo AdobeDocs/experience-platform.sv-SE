@@ -2,7 +2,7 @@
 title: Edge-profiler
 description: Lär dig mer om kantprofiler, och relaterad terminologi, tillgängliga områden för kantprofiler samt tillgängliga tjänster för kantprofiler.
 exl-id: dcae267f-1d5a-4e90-b634-afd42b0d4edc
-source-git-commit: 804f87563abf36a1aa203cb675a687dd262231a7
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '656'
 ht-degree: 0%
@@ -73,4 +73,4 @@ För kantprofiler avgör dataförfallodatumet hur länge profilen ska vara kvar 
 
 ### Vilka data lagras i kantprofilen?
 
-Edge-profilen lagrar profilattributen, profil-ID:n och kvalificerade målgrupps-ID:n. Som standard är utgångsdatumet 14 dagar.
+Edge Profile lagrar profilattributen, profil-ID:n och kvalificerade målgrupps-ID:n. Som standard är utgångsdatumet 14 dagar.

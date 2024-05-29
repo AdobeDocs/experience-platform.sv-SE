@@ -5,7 +5,7 @@ type: Documentation
 description: Med kundprofilen i realtid kan ni skapa en enda bild av enskilda kunder inom Adobe Experience Platform genom att samla data från flera olika källor, både attributdata och beteendedata. Profildata kan sedan exporteras till en datauppsättning för vidare bearbetning.
 role: Developer
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: fd5042bee9b09182ac643bcc69482a0a2b3f8faa
 workflow-type: tm+mt
 source-wordcount: '1512'
 ht-degree: 0%
@@ -53,8 +53,7 @@ POST /dataSets
 Följande begäran skapar en ny datauppsättning med konfigurationsparametrar i nyttolasten.
 
 ```shell
-curl -X POST \
-  https://platform.adobe.io/data/foundation/catalog/dataSets \
+curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -99,8 +98,7 @@ POST /export/jobs
 Följande begäran skapar ett nytt exportjobb med konfigurationsparametrar i nyttolasten.
 
 ```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/ups/export/jobs \
+curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -119,7 +117,7 @@ curl -X POST \
           "fromIngestTimestamp": "2018-10-25T13:22:04-07:00"
         }
       }
-    }
+    },
     "destination": {
       "datasetId": "5b020a27e7040801dedba61b",
       "segmentPerBatch": false
@@ -200,8 +198,7 @@ GET /export/jobs?{QUERY_PARAMETERS}
 **Begäran**
 
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/export/jobs/ \
+curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/ \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}'
@@ -342,8 +339,7 @@ GET /export/jobs/{EXPORT_JOB_ID}
 **Begäran**
 
 ```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/ups/export/jobs/24115 \
+curl -X GET https://platform.adobe.io/data/core/ups/export/jobs/24115 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -419,8 +415,7 @@ DELETE /export/jobs/{EXPORT_JOB_ID}
 **Begäran**
 
 ```shell
-curl -X POST \
-  https://platform.adobe.io/data/core/ups/export/jobs/726 \
+curl -X POST https://platform.adobe.io/data/core/ups/export/jobs/726 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \

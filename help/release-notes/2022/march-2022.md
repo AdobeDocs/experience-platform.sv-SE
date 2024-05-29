@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform mars 2022
 description: Versionsinformation mars 2022 för Adobe Experience Platform.
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 3d0f2823dcf63f25c3136230af453118c83cdc7e
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '1175'
-ht-degree: 2%
+source-wordcount: '1171'
+ht-degree: 1%
 
 ---
 
@@ -77,7 +77,7 @@ Adobe Experience Platform erbjuder flera [!DNL dashboards] genom vilken ni kan v
 
 ### Profilinstrumentpaneler
 
-På profilpanelen visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform.
+På kontrollpanelen Profiler visas en ögonblicksbild av attributdata (postdata) som din organisation har i profilarkivet i Experience Platform.
 
 **Uppdaterade funktioner**
 
@@ -108,14 +108,14 @@ Mer information om kontrollpaneler för destinationer i plattformen finns i [Öv
 
 ## Datainsamling {#data-collection}
 
-Plattformen innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till Adobe eller andra destinationer än Adobe.
+Platform innehåller en serie teknologier som gör att ni kan samla in kundupplevelsedata på klientsidan och skicka dem till Adobe Experience Platform Edge Network där de kan berikas, omformas och distribueras till destinationer som Adobe eller inte är Adobe.
 
 **Nya funktioner**
 
 | Funktion | Beskrivning |
 | --- | --- |
 | Globala datastream-inställningar | Du kan nu konfigurera flera nya globala inställningar när du konfigurerar ett datastream: geografisk plats, cookie för första parts-ID och synkronisering med tredje parts-ID. Se avsnittet om [konfigurera ett datastream](../../datastreams/overview.md#create) i användargränssnittsguiden för datastreams om du vill ha mer information. |
-| [Server-API för Edge Network](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt som stöder en rad olika fall av datainsamling, personalisering, annonsering och marknadsföring. |
+| [Edge Network Server-API](../../server-api/overview.md) | Server-API:t gör det möjligt för kunder att interagera med Experience Platform Edge Network med en ny autentiserad slutpunkt för att driva en mängd olika fall av datainsamling, personalisering, reklam och marknadsföring. |
 
 Mer information om datainsamling i Platform finns i [datainsamling - översikt](../../collection/home.md).
 

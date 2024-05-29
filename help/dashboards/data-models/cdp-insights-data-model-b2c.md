@@ -4,7 +4,7 @@ description: Lär dig hur du använder SQL-frågor med Real-time Customer Data P
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: ee27fc42a1ee23ef650d320df64e5970a84d0d38
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1061'
 ht-degree: 0%
@@ -98,7 +98,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Profiler efter användningsfall för identitet {#profiles-by-identity}
 
-The [!UICONTROL Profiles by identity] widgeten visar en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik. Se [[!UICONTROL Profiles by identity] widgetdokumentation](../guides/profiles.md#profiles-by-identity) för mer information.
+The [!UICONTROL Profiles by identity] widgeten visar hur identiteterna är fördelade över alla sammanfogade profiler i din profilbutik. Se [[!UICONTROL Profiles by identity] widgetdokumentation](../guides/profiles.md#profiles-by-identity) för mer information.
 
 Den SQL som genererar [!UICONTROL Profiles by identity] visas i det infällbara avsnittet nedan.
 
@@ -291,7 +291,7 @@ Bilden nedan innehåller de relevanta datafälten i varje datauppsättning.
 
 #### Profiler per identitet för ett målgruppsärende {#audience-profiles-by-identity}
 
-Den logik som används i [!UICONTROL Profiles by identity] widgeten innehåller en beskrivning av identiteterna för alla sammanfogade profiler i din profilbutik för en viss målgrupp. Se [[!UICONTROL Profiles by identity] widgetdokumentation](../guides/audiences.md#profiles-by-identity) för mer information.
+Den logik som används i [!UICONTROL Profiles by identity] widgeten innehåller en beskrivning av identiteter för alla sammanfogade profiler i din profilbutik för en viss målgrupp. Se [[!UICONTROL Profiles by identity] widgetdokumentation](../guides/audiences.md#profiles-by-identity) för mer information.
 
 Den SQL som genererar [!UICONTROL Profiles by identity] visas i det infällbara avsnittet nedan.
 

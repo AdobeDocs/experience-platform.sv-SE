@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6a17febf845d2b9566e49423fc68491315b2d4d7
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3554'
 ht-degree: 0%
@@ -77,8 +77,8 @@ Tänk dig till exempel en situation där du har två rapportsviter med följande
 | eVar2 | Sidnamn | Medlemmens lojalitets-ID |
 | eVar3 | URL | Sidnamn |
 | eVar4 | Sökvillkor | Produktnamn |
-| event1 | Klickningar | Sidvisningar |
-| event2 | Sidvisningar | Cart Additions |
+| event1 | Klickningar | Sidvyer |
+| event2 | Sidvyer | Cart Additions |
 | event3 | Cart Additions | Utcheckningar |
 | event4 | Inköp | Inköp |
 

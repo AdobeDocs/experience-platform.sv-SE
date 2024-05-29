@@ -4,16 +4,16 @@ solution: Experience Platform
 title: API-guide för gruppinmatning
 description: Det här dokumentet innehåller en omfattande guide för utvecklare som arbetar med API:er för gruppimport för Adobe Experience Platform.
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 81f48de908b274d836f551bec5693de13c5edaf1
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '2411'
+source-wordcount: '2383'
 ht-degree: 1%
 
 ---
 
 # Utvecklarhandbok för batchintag
 
-Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för batchimport](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du om du börjar med att läsa [API-översikt över batchimport](overview.md).
+Det här dokumentet innehåller en omfattande guide till hur du använder [API-slutpunkter för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/) i Adobe Experience Platform. En översikt över API:er för gruppinmatning, inklusive förutsättningar och bästa praxis, får du genom att läsa [API-översikt över batchimport](overview.md).
 
 I bilagan till det här dokumentet finns information om [formatera data som ska användas för förtäring](#data-transformation-for-batch-ingestion), inklusive exempel på CSV- och JSON-datafiler.
 
@@ -21,7 +21,7 @@ I bilagan till det här dokumentet finns information om [formatera data som ska 
 
 API-slutpunkterna som används i den här handboken är en del av [API för gruppinmatning](https://developer.adobe.com/experience-platform-apis/references/batch-ingestion/). Gruppinmatning tillhandahålls via en RESTful API där du kan utföra grundläggande CRUD-åtgärder mot de objekttyper som stöds.
 
-Läs igenom [API-översikt över batchimport](overview.md) och [komma igång-guide](getting-started.md).
+Innan du fortsätter bör du granska [API-översikt över batchimport](overview.md) och [komma igång-guide](getting-started.md).
 
 ## Importera JSON-filer
 
@@ -35,7 +35,7 @@ För det första måste du skapa en batch med JSON som indataformat. När du ska
 
 >[!NOTE]
 >
->Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON, `isMultiLineJson` flagga måste anges. Mer information finns i [felsökningsguide för batchöverföring](./troubleshooting.md).
+>Exemplen nedan är för enradig JSON. Om du vill importera flerradig JSON, `isMultiLineJson` flagga måste anges. Mer information finns i [felsökningsguide för batchmatning](./troubleshooting.md).
 
 **API-format**
 
@@ -750,7 +750,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## Laga en batch
 
-Ibland kan det vara nödvändigt att uppdatera data i din organisations Profile Store. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Adobe Experience Platform stöder uppdatering eller korrigering av data i Profile Store genom en upsert-åtgärd eller&quot;patching a batch&quot;.
+Ibland kan det vara nödvändigt att uppdatera data i din organisations profilarkiv. Du kan till exempel behöva korrigera poster eller ändra ett attributvärde. Adobe Experience Platform har stöd för uppdatering eller korrigering av data i Profile Store genom en upsert-åtgärd eller&quot;patching a batch&quot;.
 
 >[!NOTE]
 >

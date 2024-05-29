@@ -1,12 +1,12 @@
 ---
 title: Engagera och skaffa nya kunder utan att vara beroende av cookies från tredje part
-description: Lär dig hur du engagerar och skaffar nya kunder genom prospektering av användningsfall, utan att förlita dig på tredjepartscookies.
+description: Lär dig hur ni engagerar och förvärvar nya kunder genom prospektering av användningsfall, utan att förlita er på cookies från tredje part.
 feature: Use Cases, Customer Acquisition
 exl-id: b9e7b3af-2a13-4904-bd12-e3ed05a1988e
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2027'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 

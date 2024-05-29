@@ -3,7 +3,7 @@ keywords: Experience Platform;hemmabruk;populära ämnen;CJA;reseanalys;kundrese
 title: Adobe Experience Platform kompletta exempelarbetsflöde
 description: Lär dig det grundläggande arbetsflödet från början till slut för Adobe Experience Platform på en hög nivå.
 exl-id: 0a4d3b68-05a5-43ef-bf0d-5738a148aa77
-source-git-commit: f9917d6a6de81f98b472cff9b41f1526ea51cdae
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1831'
 ht-degree: 0%

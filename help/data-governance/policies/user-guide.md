@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Hantera dataanvändningsprinciper i användargränssnittet
 description: Adobe Experience Platform Data Governance har ett användargränssnitt där du kan skapa och hantera dataanvändningspolicyer. Det här dokumentet innehåller en översikt över de åtgärder som du kan utföra på arbetsytan Profiler i användargränssnittet för Experience Platform.
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: ed9ab1f2a4b4466841b3bedef48a6e0a07ec3d10
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1704'
 ht-degree: 0%
 
 ---
@@ -151,7 +151,7 @@ När du väljer medgivandeattributet väljer du värdena för attributet som du 
 
 ![](../images/policies/select-schema-field.png)
 
-När du har valt minst ett medgivandeattribut, **[!UICONTROL Policy properties]** Panelen uppdateras för att visa det uppskattade antalet profiler som tillåts enligt den här principen, inklusive procentandelen av det totala profilarkivet. Den här uppskattningen uppdateras automatiskt när du justerar principkonfigurationen.
+När du har valt minst ett medgivandeattribut, **[!UICONTROL Policy properties]** Panelen uppdateras för att visa det beräknade antalet profiler som tillåts enligt den här principen, inklusive procentandelen av det totala profilarkivet. Den här uppskattningen uppdateras automatiskt när du justerar principkonfigurationen.
 
 ![](../images/policies/audience-preview.png)
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över API för gruppinmatning
 description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 6cd4bff07d042401d4ebc90d6fc2e70a1f8a7cb0
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1388'
 ht-degree: 0%
@@ -146,7 +146,7 @@ Du kan överföra filer med hjälp av API:t för liten filöverföring. Om filer
 
 >[!NOTE]
 >
->Batchmatning kan användas för att stegvis uppdatera data i profilarkivet. Mer information finns i avsnittet om [uppdatera en batch](#patch-a-batch) i [Utvecklarhandbok för batchintag](api-overview.md).
+>Batchinmatning kan användas för att stegvis uppdatera data i profilarkivet. Mer information finns i avsnittet om [uppdatera en batch](#patch-a-batch) i [Utvecklarhandbok för batchintag](api-overview.md).
 
 >[!INFO]
 >

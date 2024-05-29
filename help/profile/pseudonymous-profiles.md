@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Pseudonymt utgångsdatum för profildata
 description: Det här dokumentet innehåller allmän vägledning om hur du konfigurerar förfallodatum för pseudonyma profiler inom Adobe Experience Platform.
 exl-id: e8d31718-0b50-44b5-a15b-17668a063a9c
-source-git-commit: 63ea5f112a304259cbf2aee1cc8e4ae01f002a17
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1004'
 ht-degree: 0%
@@ -85,4 +85,4 @@ I ett typiskt fall kan du ange att Experience Event-data ska upphöra att gälla
 ### Hur interagerar Pseudonymous profiler med utgångsdatum för data som skyddas av identitetstjänstdata?
 
 - Identitetstjänsten [första-in-först-ut-system för borttagning](../identity-service/guardrails.md) kan ta bort ECID:n från identitetsdiagrammet som lagras i identitetstjänsten.
-- Om raderingsbeteendet resulterar i att en ECID-profil lagras i kundprofilen i realtid (profilarkivet), kommer pseudonyma profildata att ta bort profilen från profilarkivet.
+- Om raderingsbeteendet resulterar i att en ECID-profil lagras i kundprofilen i realtid (profilarkivet), kommer pseudonym utgångsinformation att ta bort profilen från profilarkivet.

@@ -5,7 +5,7 @@ title: Anslut till gruppmål och aktivera data med API:t för Flow Service
 description: Stegvisa instruktioner om hur du använder API:t för Flow Service för att skapa ett batchmolnlagringsutrymme eller ett marknadsföringsmål för e-post i Experience Platform och aktivera data
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3396'
 ht-degree: 0%
@@ -173,7 +173,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `name` | Ange ett namn för basanslutningen till Experience Platform [!DNL Profile Store]. |
+| `name` | Ange ett namn för basanslutningen till Experience Platform [!DNL Profile store]. |
 | `description` | Du kan också ange en beskrivning för basanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 
@@ -207,7 +207,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-            "name": "Connecting to Profile Store",
+            "name": "Connecting to Profile store",
             "description": "Optional",
             "connectionSpec": {
                 "id": "{CONNECTION_SPEC_ID}",
@@ -224,7 +224,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | Egenskap | Beskrivning |
 | --------- | ----------- |
-| `name` | Ange ett namn för källanslutningen till Experience Platform [!DNL Profile Store]. |
+| `name` | Ange ett namn för källanslutningen till Experience Platform [!DNL Profile store]. |
 | `description` | Du kan också ange en beskrivning för källanslutningen. |
 | `connectionSpec.id` | Använd anslutningsspec-ID för [Experience Platform Profile Store](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 | `baseConnectionId` | Använd det grundläggande anslutnings-ID som du fick i föregående steg. |
@@ -234,7 +234,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 **Svar**
 
-Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Profile Store]. Detta bekräftar att du har anslutit till [!DNL Experience Platform] data. Lagra det här värdet som det behövs i ett senare steg.
+Ett godkänt svar returnerar den unika identifieraren (`id`) för den nyligen skapade källanslutningen till [!DNL Profile store]. Detta bekräftar att du har anslutit till [!DNL Experience Platform] data. Lagra det här värdet som det behövs i ett senare steg.
 
 ```json
 {
@@ -1030,7 +1030,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `{DATAFLOW_ID}` | Använd ID:t för dataflödet som du skapade i föregående steg i URL-adressen. |
 | `{ETAG}` | Skaffa `{ETAG}` från svaret i föregående steg, [Skapa ett dataflöde](#create-dataflow). Svarsformatet i föregående steg har escape-citattecken. Du måste använda värdena för unescape-konvertering i huvudet i begäran. Se exemplet nedan: <br> <ul><li>Exempel på svar: `"etag":""7400453a-0000-1a00-0000-62b1c7a90000""`</li><li>Värde att använda i din begäran: `"etag": "7400453a-0000-1a00-0000-62b1c7a90000"`</li></ul> <br> Värdet för etag uppdateras med varje lyckad uppdatering av ett dataflöde. |
 | `{SEGMENT_ID}` | Ange det målgrupps-ID som du vill exportera till det här målet. Information om hur du hämtar målgrupps-ID:n för de målgrupper du vill aktivera finns i [hämta en publikdefinition](https://www.adobe.io/experience-platform-apis/references/segmentation/#operation/retrieveSegmentDefinitionById) i API-referensen för Experience Platform. |
-| `{PROFILE_ATTRIBUTE}` | Exempel: `"person.lastName"` |
+| `{PROFILE_ATTRIBUTE}` | Till exempel: `"person.lastName"` |
 | `op` | Åtgärdsanropet som används för att definiera den åtgärd som krävs för att uppdatera dataflödet. Åtgärderna omfattar: `add`, `replace`och `remove`. Använd kommandot `add` operation. |
 | `path` | Definierar den del av flödet som ska uppdateras. När du lägger till en målgrupp i ett dataflöde använder du den sökväg som anges i exemplet. |
 | `value` | Det nya värdet som du vill uppdatera parametern med. |

@@ -3,7 +3,7 @@ title: Utveckla kundvärdet en gång till livstidsvärdet
 description: Lär dig hur du skapar personaliserade kampanjer för att erbjuda de bästa kompletterande produkterna eller tjänsterna baserat på en viss kunds attribut, beteende och tidigare köp.
 feature: Use Cases
 exl-id: 45f72b5e-a63b-44ac-a186-28bac9cdd442
-source-git-commit: 8cd0da12784d8fac3f0ce9afeb881d7a3916795f
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3154'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Personerna som ni riktar in er på är de ovanliga besökarna av era egendomar s
 
 Med tanke på att ni internt har definierat ett affärsmål och mål att öka varumärkeslojaliteten. Detta kan leda till att man implementerar ett användningsexempel som kan öka kundengagemanget och lojaliteten.
 
-För att uppnå detta består tekniken av de två Experience Platform-apparna [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=sv) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html). Nedan visas olika funktioner och gränssnittselement från de två programmen som du använder när du implementerar användningsexemplet.
+För att uppnå detta består tekniken av de två Experience Platform-apparna [Real-Time CDP](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html) och [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/get-started/get-started.html). Nedan visas olika funktioner och gränssnittselement från de två programmen som du använder när du implementerar användningsexemplet.
 
 >[!TIP]
 >
@@ -296,7 +296,7 @@ Det finns inga [marknadsföringspolicyer](/help/data-governance/policies/overvie
 
 ### Skapa målgrupper {#create-audiences}
 
-Det här användningsexemplet kräver att du skapar två målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att särskilja en marknadsföringsbar grupp av människor. Målgrupper kan skapas på flera sätt i Adobe Experience Platform:
+Det här användningsexemplet kräver att du skapar två målgrupper för att definiera specifika attribut eller beteenden som delas av en deluppsättning profiler från din profilbutik för att särskilja en marknadsföringsbar grupp av personer. Målgrupper kan skapas på flera sätt i Adobe Experience Platform:
 
 * Mer information om hur du skapar en målgrupp finns i [Användargränssnittsguide för målgruppstjänst](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#create-audience).
 * Mer information om disposition [målgrupper](/help/segmentation/home.md), läsa [Användargränssnittsguide för målgruppskomposition](/help/segmentation/ui/audience-composition.md).

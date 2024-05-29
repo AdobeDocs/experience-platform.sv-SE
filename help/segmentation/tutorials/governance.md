@@ -4,9 +4,9 @@ title: Tvinga regelefterlevnad för dataanvändning för ett målgruppssegment m
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för att implementera segmentdefinitioner för dataanvändning med API:er.
 exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1348'
 ht-degree: 0%
 
 ---

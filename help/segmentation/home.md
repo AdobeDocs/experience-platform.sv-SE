@@ -3,7 +3,7 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1627'
 ht-degree: 0%
@@ -16,7 +16,7 @@ Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssni
 
 Dokumentet innehåller en översikt över [!DNL Segmentation Service] och den roll den spelar i Adobe Experience Platform.
 
-## Kom igång med [!DNL Segmentation Service]
+## Komma igång med [!DNL Segmentation Service]
 
 Du bör förstå följande nyckeltermer som används i det här dokumentet:
 

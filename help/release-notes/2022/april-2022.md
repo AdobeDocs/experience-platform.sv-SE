@@ -2,10 +2,10 @@
 title: Versionsinformation om Adobe Experience Platform april 2022
 description: Versionsinformation från april 2022 för Adobe Experience Platform.
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 710fa6930b27f95d34539a18881c0f9d23e1debd
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2547'
-ht-degree: 4%
+ht-degree: 1%
 
 ---
 
@@ -36,7 +36,7 @@ Följande widgetar är tillgängliga via widgetbiblioteket på deras respektive 
 
 | Widget | Kontrollpanel | Beskrivning |
 | ------ | --------- | ----------- |
-| [!UICONTROL Profiles added trend] | Profiler | Den här widgeten använder ett linjediagram för att illustrera det totala antalet sammanfogade profiler som har lagts till i profilarkivet dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. |
+| [!UICONTROL Profiles added trend] | Profiler | Den här widgeten använder ett linjediagram för att illustrera det totala antalet sammanfogade profiler som har lagts till i profilbutiken dagligen under de senaste 30 dagarna, 90 dagar eller 12 månaderna. |
 | [!UICONTROL Audiences mapped to destination status] | Profiler | Den här widgeten visar det totala antalet både mappade och omappade målgrupper i ett enda mätresultat och använder ett ringdiagram för att illustrera den proportionella skillnaden mellan deras summor. |
 | [!UICONTROL Audiences size] | Profiler | Den här widgeten innehåller en tabell med två kolumner som visar upp till 20 segment och det totala antalet målgrupper i varje segment. Listan är beroende av vilken sammanfogningspolicy som tillämpas och ordnas från hög till låg enligt det totala antalet målgrupper. |
 | [!UICONTROL Profile count trend] | Profiler | Den här widgeten använder ett linjediagram för att illustrera trenden i det totala antalet profiler som finns i systemet över tiden. Data kan visualiseras under 30 dagar, 90 dagar och 12 månader. |
@@ -177,7 +177,7 @@ AI/ML-tjänster ger marknadsföringsanalytiker och yrkesverksamma möjlighet att
 
 ### Attribution AI
 
-Attribution AI används för att attribuera krediter till kontaktpunkter som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktpunkt för marknadsföring över kundresor.
+Attribution AI används för att attribuera krediter till kontaktytor som leder till konverteringshändelser. Detta kan användas av marknadsförare för att kvantifiera marknadsföringseffekten av varje enskild kontaktyta för marknadsföring över kundresor.
 
 **Uppdaterade funktioner**
 
@@ -189,7 +189,7 @@ Mer information om [!DNL Intelligent Services], se [[!DNL Intelligent Services] 
 
 ### Kund-AI
 
-Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, utbilda eller distribuera.
+Customer AI available in Real-time Customer Data Platform, is used to generate custom bensipensity scores such as churn and conversion for individual profiles at scale. Detta uppnås utan att man behöver omvandla affärsbehoven till maskininlärningsproblem, välja en algoritm, träna eller driftsätta.
 
 **Uppdaterade funktioner**
 

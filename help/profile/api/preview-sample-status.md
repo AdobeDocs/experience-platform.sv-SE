@@ -4,7 +4,7 @@ title: API-slutpunkt för exempelstatus för förhandsgranskning (förhandsgrans
 description: Med slutpunkten för förhandsgranskning av exempelstatus i API:t för kundprofiler i realtid kan du förhandsgranska det senaste framgångsrika exemplet av dina profildata, lista profildistribution per datauppsättning och identitet och generera rapporter som visar dataset överlappning, identitetsöverlappning och icke sammansatta profiler.
 role: Developer
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '2901'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Med Adobe Experience Platform kan ni importera kunddata från flera olika källor för att skapa en robust, enhetlig profil för varje enskild kund. När data hämtas till Platform körs ett exempeljobb för att uppdatera profilantalet och andra datarelaterade mått för kundprofiler i realtid.
 
-Resultaten av det här exempeljobbet kan visas med `/previewsamplestatus` slutpunkt, som ingår i Real-Time Customer Profile API. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättning och identitetsnamnområde, samt för att generera flera rapporter för att få synlighet i sammansättningen av organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa måtten med hjälp av `/previewsamplestatus` API-slutpunkt.
+Resultaten av det här exempeljobbet kan visas med `/previewsamplestatus` slutpunkt, som ingår i Real-Time Customer Profile API. Den här slutpunkten kan också användas för att lista profildistributioner av både datauppsättningen och identitetsnamnutrymmet, samt för att generera flera rapporter för att få synlighet i kompositionen för organisationens profilarkiv. Den här guiden går igenom de steg som krävs för att visa måtten med hjälp av `/previewsamplestatus` API-slutpunkt.
 
 >[!NOTE]
 >
@@ -37,10 +37,10 @@ Om du vill veta mer om profiler och deras roll i Experience Platform börjar du 
 
 ## Hur exempeljobbet utlöses
 
-Som data som är aktiverade för kundprofilen i realtid hämtas till [!DNL Platform]lagras den i datalagret Profil. När intaget av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
+Som data som är aktiverade för kundprofilen i realtid hämtas till [!DNL Platform]lagras den i datalagret Profil. När inmatningen av poster i profilarkivet ökar eller minskar det totala antalet profiler med mer än 5 %, utlöses ett samplingsjobb för att uppdatera antalet. Hur provet utlöses beror på vilken typ av intag som används:
 
 * För **arbetsflöden för strömmande data** kontrolleras dock timvis för att avgöra om tröskelvärdet på 5 % har uppnåtts. Om den har det utlöses ett exempeljobb automatiskt för att uppdatera antalet.
-* För **batchintag**, inom 15 minuter efter att en batch har importerats till profilarkivet, körs ett jobb för att uppdatera antalet om tröskelvärdet på 5 % har uppnåtts. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
+* För **batchintag**, inom 15 minuter efter att en batch har importerats till profilbutiken, körs ett jobb för att uppdatera antalet om tröskelvärdet på 5 % har uppnåtts. Med hjälp av profil-API:t kan du förhandsgranska det senaste framgångsrika exempeljobbet samt lista profildistributionen per datauppsättning och per identitetsnamnområde.
 
 Profilantal och profiler efter namnutrymmesmått är också tillgängliga i [!UICONTROL Profiles] i användargränssnittet i Experience Platform. Mer information om hur du får åtkomst till profildata via användargränssnittet finns på [[!DNL Profile] Användargränssnittsguide](../ui/user-guide.md).
 
@@ -304,7 +304,7 @@ Svaret innehåller en `data` array, med enskilda objekt som innehåller informat
 
 ## Generera överlappningsrapport för datauppsättning
 
-Rapporten om överlappning av datauppsättningar ger synlighet i sammansättningen av organisationens profilarkiv genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, som att ange förfallodatum för vissa datauppsättningar.
+Rapporten om överlappning av datauppsättningar ger synlighet i kompositionen för organisationens profilbutik genom att visa de datauppsättningar som bidrar mest till den adresserbara målgruppen (sammanslagna profiler). Förutom att ge insikter om era data kan den här rapporten hjälpa er att vidta åtgärder för att optimera licensanvändningen, som att ange förfallodatum för vissa datauppsättningar.
 
 Du kan generera en överlappningsrapport för datauppsättningen genom att utföra en GET-förfrågan till `/previewsamplestatus/report/dataset/overlap` slutpunkt.
 
@@ -468,7 +468,7 @@ Den här rapporten innehåller följande information:
 
 ## Generera rapport över profiler som inte sammanställts
 
-Du kan få mer insyn i hur din organisations profilarkiv är uppbyggd genom den sammansatta profilrapporten. En &quot;sammanfogad&quot; profil är en profil som bara innehåller ett profilfragment. En&quot;okänd&quot; profil är en profil som associeras med pseudonyma identitetsnamnutrymmen som `ECID` och `AAID`. Okända profiler är inaktiva, vilket innebär att de inte har lagt till nya händelser under den angivna tidsperioden. I rapporten för icke sammansatta profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
+Du kan få mer insyn i hur din organisations profilbutik är uppbyggd genom rapporten för icke sammansatta profiler. En &quot;sammanfogad&quot; profil är en profil som bara innehåller ett profilfragment. En&quot;okänd&quot; profil är en profil som associeras med pseudonyma identitetsnamnutrymmen som `ECID` och `AAID`. Okända profiler är inaktiva, vilket innebär att de inte har lagt till nya händelser under den angivna tidsperioden. I rapporten för icke sammansatta profiler finns en beskrivning av profilerna för en period på 7, 30, 60, 90 och 120 dagar.
 
 Du kan generera rapporten för icke sammansatta profiler genom att göra en GET-förfrågan till `/previewsamplestatus/report/unstitchedProfiles` slutpunkt.
 
@@ -559,7 +559,7 @@ En slutförd begäran returnerar HTTP-status 200 (OK) och rapporten för icke-sa
 
 ### Tolka rapporten över icke sammansatta profiler
 
-Resultaten av rapporten ger insikt i hur många icke-sammansatta och inaktiva profiler din organisation har i sin Profile Store.
+Resultaten av rapporten ger insikt i hur många icke-sammansatta och inaktiva profiler din organisation har i sin profilbutik.
 
 Titta på följande utdrag från `data` objekt:
 

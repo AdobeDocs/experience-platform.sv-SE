@@ -3,7 +3,7 @@ keywords: Experience Platform;hem;populära ämnen;dataförberedelse;Dataprep;st
 title: Skicka uppdateringar av delar av rader till kundprofil i realtid med hjälp av Data Prep
 description: Lär dig hur du skickar uppdateringar av delar av rader till kundprofilen i realtid med Data Prep.
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 0%
@@ -130,7 +130,7 @@ Följande åtgärder stöds av [!DNL Real-Time Customer Profile]:
 | --- | --- | 
 | `create` | Standardåtgärden. Detta genererar en XDM-metod för att skapa en enhet för [!DNL Real-Time Customer Profile]. |
 | `merge` | Detta genererar en XDM-entitetsuppdateringsmetod för [!DNL Real-Time Customer Profile]. |
-| `delete` | Detta genererar en XDM-metod för entitetsborttagning för [!DNL Real-Time Customer Profile] och permanent tar bort data från [!DNL Profile Store]. |
+| `delete` | Detta genererar en XDM-metod för entitetsborttagning för [!DNL Real-Time Customer Profile] och permanent tar bort data från [!DNL Profile store]. |
 
 Följande åtgärder stöds av [!DNL Identity Service]:
 

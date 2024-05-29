@@ -1,12 +1,12 @@
 ---
 title: Intelligent återanvändning
-description: Leverera övertygande och uppkopplade upplevelser under de viktiga konverteringsögonblicken för att på ett intelligent sätt engagera sällsynta kunder på nytt.
+description: Leverera övertygande och sammanhängande upplevelser under de viktiga konverteringstunderna för att på ett intelligent sätt engagera ovanliga kunder.
 feature: Use Cases
 exl-id: 13f6dbc9-7471-40bf-824d-27922be0d879
-source-git-commit: 6991bad03b298373a0d55258dacc60ea8d797fd8
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '3869'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -178,9 +178,9 @@ The [Information om slutanvändar-ID](/help/xdm/field-groups/event/enduserids.md
 
 +++
 
-+++Commerce Details (fältgrupp)
++++Commerce Details (Field Group)
 
-The [Handelsinformation](/help/xdm/field-groups/event/commerce-details.md) fältgrupp används för att beskriva handelsdata, t.ex. produktinformation (SKU, namn, kvantitet) och standardkundvagnsåtgärder (beställning, utcheckning, övergivna).
+The [Information om Commerce](/help/xdm/field-groups/event/commerce-details.md) fältgrupp används för att beskriva handelsdata, t.ex. produktinformation (SKU, namn, kvantitet) och standardkundvagnsåtgärder (beställning, utcheckning, övergivna).
 
 | Fält | Beskrivning |
 | --- | --- |
@@ -221,9 +221,9 @@ The [[!UICONTROL XDM ExperienceEvent]](/help/xdm/classes/experienceevent.md) -kl
 
 +++
 
-+++Commerce Details (fältgrupp)
++++Commerce Details (Field Group)
 
-The [Handelsinformation](/help/xdm/field-groups/event/commerce-details.md) fältgrupp används för att beskriva handelsdata, t.ex. produktinformation (SKU, namn, kvantitet) och standardkundvagnsåtgärder (beställning, utcheckning, övergivna).
+The [Information om Commerce](/help/xdm/field-groups/event/commerce-details.md) fältgrupp används för att beskriva handelsdata, t.ex. produktinformation (SKU, namn, kvantitet) och standardkundvagnsåtgärder (beställning, utcheckning, övergivna).
 
 | Fält | Beskrivning |
 | --- | --- |

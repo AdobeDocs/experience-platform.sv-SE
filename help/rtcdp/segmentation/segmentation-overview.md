@@ -4,7 +4,7 @@ title: Segmenteringstjänst i Real-time Customer Data Platform
 description: Adobe Real-time Customer Data Platform bygger på Adobe Experience Platform och utnyttjar många av Experience Platform tjänster och funktioner. Med hjälp av segmenteringstjänsten kan ni erbjuda skräddarsydd marknadsföring genom att dela upp kunderna i mindre grupper med liknande egenskaper.
 feature: Get Started, Audiences, Segments
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
+source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
 workflow-type: tm+mt
 source-wordcount: '540'
 ht-degree: 0%
