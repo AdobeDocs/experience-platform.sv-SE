@@ -2,9 +2,9 @@
 title: Identitetsdata i Web SDK
 description: Lär dig hur du hämtar och hanterar Adobe Experience Cloud ID:n (ECID) med Adobe Experience Platform Web SDK.
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: 6b58d72628b58b75a950892e7c16d397e3c107e2
 workflow-type: tm+mt
-source-wordcount: '1338'
+source-wordcount: '1480'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ När cookie-filen som innehåller ECID har ställts in innehåller varje efterf�
 
 När du använder cookies för enhetsidentifiering har du två alternativ för att interagera med Edge Network:
 
-1. Skicka data direkt till Edge Network-domänen `adobedc.net`. Den här metoden kallas [datainsamling från tredje part](#third-party).
+1. Skicka data direkt till Edge Network `adobedc.net`. Den här metoden kallas [datainsamling från tredje part](#third-party).
 1. Skapa en CNAME på din egen domän som pekar på `adobedc.net`. Den här metoden kallas [datainsamling från första part](#first-party).
 
 Som förklaras i avsnitten nedan har den datainsamlingsmetod som du väljer att använda en direkt inverkan på cookie-livstiden i olika webbläsare.
@@ -56,9 +56,36 @@ Om en slutanvändare besöker webbplatsen tre gånger i veckan och sedan inte å
 
 Om du vill ta hänsyn till effekterna av cookie-livscykler enligt ovan kan du välja att ställa in och hantera dina egna enhetsidentifierare i stället. Se guiden på [enhets-ID:n från första part](./first-party-device-ids.md) för mer information.
 
-## Hämtar ECID och region för den aktuella användaren
+## Hämta ECID och region för den aktuella användaren {#retrieve-ecid}
 
-Om du vill hämta den aktuella besökarens unika ECID använder du `getIdentity` -kommando. För förstagångsbesökare som ännu inte har ett ECID genereras ett nytt ECID med det här kommandot. `getIdentity` returnerar också region-ID för besökaren.
+Beroende på ditt sätt att arbeta finns det två sätt att komma åt [!DNL ECID]:
+
+* [Hämta [!DNL ECID] via Data Prep för datainsamling](#retrieve-ecid-data-prep): Det här är den rekommenderade metod som du bör använda.
+* [Hämta [!DNL ECID] via `getIdentity()` kommando](#retrieve-ecid-getidentity): Använd bara den här metoden när du behöver [!DNL ECID] information på klientsidan.
+
+### Hämta [!DNL ECID] via Data Prep för datainsamling {#retrieve-ecid-data-prep}
+
+Använd [Dataförberedelse för datainsamling](../../datastreams/data-prep.md) för att mappa [!DNL ECID] till [!DNL XDM] fält. Det här är det rekommenderade sättet att komma åt [!DNL ECID].
+
+Om du vill göra det anger du följande sökväg i källfältet:
+
+```js
+xdm.identityMap.ECID[0].id
+```
+
+Ställ sedan in målfältet på en XDM-sökväg där fältet är av typen `string`.
+
+![](../../tags/extensions/client/web-sdk/assets/access-ecid-data-prep.png)
+
+
+### Hämta [!DNL ECID] via `getIdentity()` kommando {#retrieve-ecid-getidentity}
+
+
+>[!IMPORTANT]
+>
+>Du bör bara hämta ECID via `getIdentity()` om du behöver [!DNL ECID] på klientsidan. Om du bara vill mappa ECID till ett XDM-fält använder du [Dataförberedelse för datainsamling](#retrieve-ecid-data-prep) i stället.
+
+Om du vill hämta den aktuella besökarens unika ECID använder du `getIdentity` -kommando. För förstagångsbesökare som inte har [!DNL ECID] ännu skapar det här kommandot ett nytt [!DNL ECID]. `getIdentity` returnerar också region-ID för besökaren.
 
 >[!NOTE]
 >
