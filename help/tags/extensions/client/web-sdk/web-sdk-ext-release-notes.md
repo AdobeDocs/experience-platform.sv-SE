@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: ea3df4f05850547c75358fb15bf7a1e6a1d19dbf
+source-git-commit: 2e1ea70496b8e379d5a9be0f2f321b21da86cf4d
 workflow-type: tm+mt
-source-wordcount: '2012'
+source-wordcount: '2083'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,21 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.23.1 - 28 maj 2024
+
+**Nya funktioner**
+
+* Stöd för [`Streaming Media Collection`](web-sdk-extension-configuration.md#streaming-media) i tilläggskonfigurationen.
+* Lagt till [`Send Media Event`](action-types.md#send-media-event) åtgärd för [!DNL Streaming Media Collection] funktionalitet.
+* Lagt till [`Media: Quality of Experience`](data-element-types.md#quality-experience) dataelement för [!DNL Streaming Media Collection] funktionalitet.
+
+Innehåller version 2.20.0 av Adobe Experience Platform Web SDK.
+
+**Korrigeringar och förbättringar**
+
+* Ett fel som uppstod vid sökning efter dataelement i [Uppdatera variabel](action-types.md#update-variable) åtgärd.
+* Borttagen [!UICONTROL Media] händelsetyper från de händelsetyper som föreslås användas i `sendEvent` åtgärd.
 
 ## Version 2.2.0 - 3 maj 2024
 

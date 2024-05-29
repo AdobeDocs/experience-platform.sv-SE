@@ -1,11 +1,11 @@
 ---
 title: Versionsinformation för Adobe Experience Platform Web SDK
-description: Den senaste versionsinformationen om webb-SDK för Adobe Experience Platform.
+description: Den senaste versionsinformationen för Adobe Experience Platform Web SDK.
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;versionsinformation;
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: bc48f45bd6b9b7f7cc446ae84d712376292718d2
+source-git-commit: 060f6bb0ff6f57a84698a27bd9f640c0178e5b51
 workflow-type: tm+mt
-source-wordcount: '1777'
+source-wordcount: '1811'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,16 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 >Google [har meddelats](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout) planerar att upphöra med Chrome-stöd för cookies från tredje part under andra halvåret 2024. Detta innebär att cookies från tredje part inte längre stöds i någon av de större webbläsarna.
 >
 >När den här ändringen genomförs upphör Adobe stödet för `demdex` cookie som stöds i Web SDK.
+
+## Version 2.20.0 - 21 maj 2024
+
+**Nya funktioner**
+
+* Stöd för [Direktuppspelad mediainsamling](../web-sdk/commands/configure/streamingmedia.md).
+
+**Korrigeringar och förbättringar**
+
+* Korrigerade ett fel som gjorde att standardinnehållet doldes av det föregående fragmentet när samtycke valdes ut.
 
 ## Version 2.19.2 - 10 januari 2024
 
@@ -92,7 +102,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 **Korrigeringar och förbättringar**
 
 * Ett problem med anpassade kodåtgärder för Adobe Target VEC där koden infogades på en alternativ plats har korrigerats [!DNL at.js].
-* Ett problem har korrigerats där refererhuvudet i vissa kantfall inte var korrekt inställt på begäranden till Edge-nätverket.
+* Ett problem har korrigerats där refererhuvudet i vissa kantfall inte var korrekt inställt på begäranden till Edge Network.
 * Ett problem där [klienttips för användaragent](/help/web-sdk/use-cases/client-hints.md) kan anges till en felaktig typ.
 * Ett problem där `placeContext.localTime` matchade inte schemat.
 
@@ -107,7 +117,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 
 * Stöd för [Page by Page Full Migration](home.md#migrating-to-web-sdk). Adobe Target-profilen bevaras nu när en besökare förflyttar sig mellan at.js- och Web SDK-sidor.
 * Utökat konfigurerbart stöd för [klienttips för hög entropi-användaragent](/help/web-sdk/use-cases/client-hints.md).
-* Stöd för [`applyResponse`](/help/web-sdk/commands/applyresponse.md) -kommando. Detta möjliggör hybridpersonalisering via [API för Edge Network Server](../server-api/overview.md).
+* Stöd för [`applyResponse`](/help/web-sdk/commands/applyresponse.md) -kommando. Detta möjliggör hybridpersonalisering via [Edge Network Server-API](../server-api/overview.md).
 * QA-lägeslänkar fungerar nu på flera sidor.
 
 **Korrigeringar och förbättringar**
@@ -164,7 +174,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 
 ## Version 2.7.0 - 26 oktober 2021
 
-* Exponera ytterligare information från Edge Network i returvärdet från `sendEvent`, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion.
+* Visa ytterligare information från Edge Network i returvärdet från `sendEvent`, inklusive `inferences` och `destinations`. Formatet på dessa egenskaper kan ändras eftersom dessa funktioner för närvarande lanseras som en del av en betaversion.
 
 ## Version 2.6.4 - 7 september 2021
 
@@ -202,7 +212,7 @@ Den senaste versionsinformationen om taggtillägget Web SDK finns i [Versionsinf
 * The [`getIdentity`](/help/web-sdk/commands/getidentity.md) -kommandot returnerar nu kantområdes-ID:t bredvid identiteten.
 * Varningar och fel som tagits emot från servern har förbättrats och hanteras på ett mer lämpligt sätt.
 * Stöd för Adobe Consent 2.0-standarden för [`setConsent`](/help/web-sdk/commands/setconsent.md) -kommando.
-* Inställningarna för samtycke, när de tas emot, hashas och lagras i lokal lagring för en optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` på varje sida som läses in.
+* Inställningarna för samtycke, när de tas emot, hashas och lagras i lokala lager för en optimerad integrering mellan CMP, Platform Web SDK och Platform Edge Network. Om du samlar in medgivandeinställningar får du nu gärna ringa `setConsent` på varje sida som läses in.
 * Två [övervaka kopplingar](https://github.com/adobe/alloy/wiki/Monitoring-Hooks), `onCommandResolved` och `onCommandRejected`, har lagts till.
 * Felkorrigering: Meddelandehändelser för anpassningsinteraktion innehåller dubblettinformation om samma aktivitet när en användare navigerade till en ny enkelsidig programvy, tillbaka till den ursprungliga vyn och klickade på ett element som är kvalificerat för konvertering.
 * Felkorrigering: Om den första händelsen som skickades av SDK hade `documentUnloading` ange till `true`, [`sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) används för att skicka händelsen, vilket resulterar i ett fel som rör en identitet som inte har etablerats.
