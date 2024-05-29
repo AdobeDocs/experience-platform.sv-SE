@@ -3,9 +3,9 @@ title: Åtgärdstyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika åtgärdstyperna i taggtillägget Adobe Experience Platform Web SDK.
 solution: Experience Platform
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: 377be6d97e6da9b4aaacfa23a188131bd38e66f4
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '987'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,33 @@ Det XDM-schema som används för redigeraren är det schema som har valts på [!
 ![](assets/update-variable-set-property.png)
 
 Det finns vissa skillnader mellan redigeraren i uppdateringen av variabelåtgärden och redigeraren i XDM-objektdataelementet. Först har uppdateringsvariabelåtgärden ett rotnivåobjekt med namnet&quot;xdm&quot;. Om du klickar på det här objektet kan du ange ett dataelement som ska användas för att ställa in hela objektet. För det andra har åtgärden för att uppdatera variabeln kryssrutor för att rensa data från xdm-objektet. Klicka på en av egenskaperna till vänster och markera sedan kryssrutan till höger för att ta bort värdet. Detta rensar det aktuella värdet innan du anger värden för variabeln.
+
+## Skicka mediahändelse {#send-media-event}
+
+Skickar en mediehändelse till Adobe Experience Platform och/eller Adobe Analytics. Den här åtgärden är användbar när du spårar mediahändelser på webbplatsen. Markera en instans (om du har fler än en). Åtgärden kräver en `playerId` som representerar en unik identifierare för en spårad mediesession. Den kräver också en **[!UICONTROL Quality of Experience]** och `playhead` dataelement när en mediesession startas.
+
+![Bild av användargränssnittet för plattformen som visar skärmen för händelsen skicka media.](assets/send-media-event.png)
+
+The **[!UICONTROL Send media event]** åtgärdstypen stöder följande egenskaper:
+
+- **[!UICONTROL Instance]**: Den Web SDK-instans som används.
+- **[!UICONTROL Media Event Type]**: Den typ av mediahändelse som spåras.
+- **[!UICONTROL Player ID]**: Unik identifierare för mediesessionen.
+- **[!UICONTROL Playhead]**: Medieuppspelningens aktuella position i sekunder.
+- **[!UICONTROL Media session details]**: När du skickar en mediesändningshändelse måste du ange nödvändig information om mediesessionen.
+- **[!UICONTROL Chapter details]**: I det här avsnittet kan du ange kapitelinformation när du skickar en kapitelmediahändelse.
+- **[!UICONTROL Advertising details]**: När en `AdBreakStart` måste du ange den obligatoriska reklaminformationen.
+- **[!UICONTROL Advertising pod details]**: Information om reklamfönstret när en `AdStart` -händelse.
+- **[!UICONTROL Error details]**: Information om det uppspelningsfel som spåras.
+- **[!UICONTROL State Update Details]**: Det spelartillstånd som uppdateras.
+- **[!UICONTROL Custom Metadata]**: Anpassade metadata om mediahändelsen som spåras.
+- **[!UICONTROL Quality of Experience]**: Mediekvaliteten för upplevelsedata som spåras.
+
+## Hämta Media Analytics Tracker {#get-media-analytics-tracker}
+
+Den här åtgärden används för att hämta det gamla API:t för Media Analytics. När åtgärden konfigureras och ett objektnamn anges, exporteras det gamla Media Analytics-API:t till det fönsterobjektet. Om ingen anges exporteras den till `window.Media` som det aktuella Media JS-biblioteket gör.
+
+![Plattformsgränssnittsbild som visar åtgärdstypen Get Media Analytics Tracker.](assets/get-media-analytics-tracker.png)
 
 ## Nästa steg {#next-steps}
 

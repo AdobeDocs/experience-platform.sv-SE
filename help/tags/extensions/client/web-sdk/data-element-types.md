@@ -2,9 +2,9 @@
 title: Dataelementtyper i Adobe Experience Platform Web SDK-tillägget
 description: Lär dig mer om de olika dataelementtyperna i taggtillägget Adobe Experience Platform Web SDK.
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 8c652e96fa79b587c7387a4053719605df012908
+source-git-commit: fbca8a47c500e89d82cf636e8cb639f2bb59c2e6
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '625'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,12 @@ Du kan skapa nyttolastobjekt med **[!UICONTROL Variable]** dataelement. Båda [!
 ![Bild av tagggränssnittet som visar dataelementalternativen.](assets/variable-data-element.png)
 
 När du har skapat detta dataelement kan du använda [Uppdatera variabel](./action-types.md#update-variable) åtgärd för att ändra den. När det är klart kan du inkludera det här dataelementet i [Skicka händelse](./action-types.md#send-event) åtgärd för att skicka data till en datastream.
+
+## Media: Experience Quality {#quality-experience}
+
+A **[!UICONTROL Quality of Experience]** dataelement är användbart när du skickar direktuppspelade mediehändelser till Adobe Experience Platform. Du kan lägga till det här elementet när du skapar en mediesession och följande mediahändelser kommer att innehålla uppdaterade kvalitetsdata för upplevelsen.
+
+![Användargränssnittsbild som visar skärmen Skapa kvalitetsdataelement för upplevelse.](assets/qoe-data-element.png)
 
 ## Nästa steg {#next-steps}
 

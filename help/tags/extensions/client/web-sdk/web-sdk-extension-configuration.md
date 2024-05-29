@@ -2,16 +2,16 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 16e49628df73d5ce97ef890dbc0a6f2c8e7de346
+source-git-commit: 1d1bb754769defd122faaa2160e06671bf02c974
 workflow-type: tm+mt
-source-wordcount: '1494'
+source-wordcount: '1665'
 ht-degree: 0%
 
 ---
 
 # Konfigurera SDK-taggtillägget för webben
 
-The [!DNL Web SDK] taggtillägget skickar data till Adobe Experience Cloud från webbegenskaper via Experience Platform Edge-nätverket.
+The [!DNL Web SDK] -taggtillägget skickar data till Adobe Experience Cloud från webbegenskaper via Experience Platform Edge Network.
 
 Tillägget gör att ni kan strömma data till plattformen, synkronisera identiteter, bearbeta kundens medgivandesignaler och automatiskt samla in kontextdata.
 
@@ -23,7 +23,7 @@ För Web SDK-taggtillägget krävs en egenskap som ska installeras på. Om du in
 
 När du har skapat en egenskap öppnar du den och väljer **[!UICONTROL Extensions]** till vänster.
 
-Klicka på fliken **[!UICONTROL Catalog]**.  I listan med tillgängliga tillägg hittar du [!DNL Web SDK] tillägg och markera **[!UICONTROL Install]**.
+Välj **[!UICONTROL Catalog]** -fliken. I listan med tillgängliga tillägg hittar du [!DNL Web SDK] tillägg och markera **[!UICONTROL Install]**.
 
 ![Bild som visar användargränssnittet för taggar med tillägget Web SDK markerat](assets/web-sdk-install.png)
 
@@ -47,7 +47,7 @@ Konfigurationsalternativen högst upp på sidan anger för Adobe Experience Plat
 
 I det här avsnittet kan du välja de datastreams som ska användas för var och en av de tre tillgängliga miljöerna (produktion, mellanlagring och utveckling).
 
-När en begäran skickas till Edge Network, används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
+När en begäran skickas till Edge Network används ett datastream-ID för att referera till konfigurationen på serversidan. Du kan uppdatera konfigurationen utan att behöva göra kodändringar på webbplatsen.
 
 Se guiden på [datastreams](../../../../datastreams/overview.md) för att lära dig hur du konfigurerar ett datastream.
 
@@ -117,16 +117,31 @@ När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den
 * **[!UICONTROL Enable click data collection]**: Web SDK kan automatiskt samla in länkklickningsinformation åt dig. Som standard är den här funktionen aktiverad men kan inaktiveras med det här alternativet. Länkarna är även märkta som nedladdningslänkar om de innehåller något av de nedladdningsuttryck som finns i [!UICONTROL Download Link Qualifier] textruta. Adobe tillhandahåller vissa standardkvalificerare för nedladdningslänk. Du kan redigera dem efter behov.
 * **[!UICONTROL Automatically collected context data]**: Som standard samlar Web SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, väljer du **[!UICONTROL Specific context information]** och markera de data som du vill samla in. Se [`context`](/help/web-sdk/commands/configure/context.md) för mer information.
 
+## Konfigurera inställningar för mediesamling {#media-collection}
+
+Funktionen för mediainsamling hjälper dig att samla in data relaterade till mediesessioner på din webbplats.
+
+De insamlade data kan innehålla information om medieuppspelningar, pauser, slutföranden och andra relaterade händelser. När de samlats in kan du skicka dessa data till Adobe Experience Platform och/eller Adobe Analytics för att generera rapporter. Den här funktionen är en heltäckande lösning för att spåra och förstå hur medieanvändningen fungerar på din webbplats.
+
+![Bild som visar inställningarna för mediesamlingen för Web SDK-taggtillägget i tagggränssnittet](assets/media-collection.png)
+
+
+* **[!UICONTROL Channel]**: Namnet på den kanal där mediesamlingen sker. Exempel: `Video channel`.
+* **[!UICONTROL Player Name]**: Namnet på mediespelaren.
+* **[!UICONTROL Application Version]**: Mediespelarprogrammets version.
+* **[!UICONTROL Main ping interval]**: Fästfrekvens för huvudinnehållet, i sekunder. Standardvärdet är `10`. Värdena kan variera från `10` till `50` sekunder.  Om inget värde anges används standardvärdet när du använder [automatiskt spårade sessioner](../../../../web-sdk/commands/createmediasession.md#automatic).
+* **[!UICONTROL Ad ping interval]**: Frekvens för pingingar för annonsinnehåll, i sekunder. Standardvärdet är `10`. Värdena kan variera från `1` till `10` sekunder. Om inget värde anges används standardvärdet när du använder [automatiskt spårade sessioner](../../../../web-sdk/commands/createmediasession.md#automatic)
+
 ## Konfigurera åsidosättningar av dataström {#datastream-overrides}
 
-Med åsidosättningar av dataströmmar kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK.
+Med åsidosättningar av dataström kan du definiera ytterligare konfigurationer för dina dataströmmar, som skickas till Edge Network via Web SDK.
 
 Detta hjälper dig att utlösa andra datastream-beteenden än standardbeteendena, utan att du behöver skapa ett nytt datastream eller ändra dina befintliga inställningar.
 
 Åsidosättning av dataströmskonfiguration är en tvåstegsprocess:
 
 1. Först måste du definiera åsidosättningar av dataströmskonfigurationer i [konfigurationssida för datastream](/help/datastreams/configure.md).
-2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller med hjälp av taggtillägget Web SDK.
+2. Sedan måste du skicka åsidosättningarna till Edge Network antingen via ett Web SDK-kommando eller via taggtillägget Web SDK.
 
 Se datastream [dokumentation om åsidosättning av konfiguration](/help/datastreams/overrides.md) om du vill ha detaljerade anvisningar om hur du åsidosätter datastream-konfigurationer.
 
@@ -140,6 +155,6 @@ Som ett alternativ till att skicka åsidosättningarna via ett Web SDK-kommando 
 
 ## Konfigurera avancerade inställningar
 
-Använd **[!UICONTROL Edge base path]** fält om du behöver ändra grundsökvägen som används för att interagera med Edge Network. Det här behöver inte uppdateras, men om du deltar i en beta eller alfa kan Adobe be dig att ändra det här fältet.
+Använd **[!UICONTROL Edge base path]** om du behöver ändra den grundsökväg som används för att interagera med Edge Network. Det här behöver inte uppdateras, men om du deltar i en beta eller alfa kan Adobe be dig att ändra det här fältet.
 
 ![Bild som visar de avancerade inställningarna på tilläggssidan för Web SDK-taggen.](assets/advanced-settings.png)

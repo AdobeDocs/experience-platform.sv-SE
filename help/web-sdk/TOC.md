@@ -1,15 +1,15 @@
 ---
 solution: Data Collection
 audience: user
-user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
-breadcrumb-title: Användarhandbok om webb-SDK
-user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
+user-guide-title: Hjälp för Adobe Experience Platform Web SDK
+breadcrumb-title: Web SDK Guide
+user-guide-description: Interagera med Experience Cloud via Edge-nätverket.
 feature: Web SDK
 role: Developer
-source-git-commit: 091aee1a5bb81d86925cbcde7c2ae3b354a3aebe
+source-git-commit: ec801c550740c4cba3481a961599f548518bb032
 workflow-type: tm+mt
-source-wordcount: '222'
-ht-degree: 19%
+source-wordcount: '226'
+ht-degree: 9%
 
 ---
 
@@ -35,6 +35,7 @@ ht-degree: 19%
       * [edgeConfigId](commands/configure/edgeconfigid.md)
       * [edgeDomain](commands/configure/edgedomain.md)
       * [idMigrationEnabled](commands/configure/idmigrationenabled.md)
+      * [streamingMedia](commands/configure/streamingmedia.md)
       * [onBeforeEventSend](commands/configure/onbeforeeventsend.md)
       * [onBeforeLinkClickSend](commands/configure/onbeforelinkclicksend.md)
       * [orgId](commands/configure/orgid.md)
@@ -52,19 +53,22 @@ ht-degree: 19%
    * [appendIdentityToUrl](commands/appendidentitytourl.md)
    * [applyPropositions](commands/applypropositions.md)
    * [applyResponse](commands/applyresponse.md)
+   * [createMediaSession](commands/createmediasession.md)
    * [getIdentity](commands/getidentity.md)
    * [getLibraryInfo](commands/getlibraryinfo.md)
    * [setConsent](commands/setconsent.md)
    * [setDebug](commands/setdebug.md)
+   * [sendMediaEvent](commands/sendmediaevent.md)
    * [Konfigurera åsidosättningar av datastream](commands/datastream-overrides.md)
    * [Kommandosvar](commands/command-responses.md)
+   * [getMediaAnalyticsTracker](commands/getmediaanalyticstracker.md)
 
 * Identitet {#identity}
    * [Översikt](identity/overview.md)
    * [Enhets-ID:n från första part](identity/first-party-device-ids.md)
    * [Delning av mobil-till-webb och domänövergripande ID](identity/id-sharing.md)
 
-* Personanpassning {#personalization}
+* Personalisering {#personalization}
    * [Hantera visningshändelser](personalization/display-events.md)
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
    * [Personalisering via hybridimplementering](personalization/hybrid-personalization.md)
@@ -93,7 +97,7 @@ ht-degree: 19%
       * [Integrera med taggar](consent/iab-tcf/with-tags.md)
       * [Integrera utan taggar](consent/iab-tcf/without-tags.md)
 
-* Användningsfall {#use-cases}
+* Användningsexempel {#use-cases}
    * [Översikt](use-cases/overview.md)
    * [Skicka data till Adobe Analytics via Web SDK](use-cases/adobe-analytics.md)
    * [Tips för användaragentklient](use-cases/client-hints.md)
