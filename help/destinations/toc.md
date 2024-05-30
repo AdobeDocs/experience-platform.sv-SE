@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: e872d8f8a0c73fe3375e538260d23da1f145621c
+source-git-commit: a6bc9c5d2b4ec9032c70dcf625075e5d3e0442cc
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1223'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
    * [Aktivera data till filbaserade mål med API:t för Flow Service](/help/destinations/api/activate-segments-file-based-destinations.md)
    * [Ansluta till direktuppspelningsmål och aktivera data med API:t för Flow Service](./api/streaming-destinations.md)
    * [Ansluta till filbaserade mål för e-postmarknadsföring och aktivera data med API:t för Flow Service](./api/connect-activate-batch-destinations.md)
-   * [(Beta) Aktivera målgrupper till batchmål via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
+   * [Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API](./api/ad-hoc-activation-api.md)
    * [Redigera mål](./api/edit-destination.md)
    * [Uppdatera måldataflöden](./api/update-destination-dataflows.md)
    * [Ta bort destinationskonton](./api/delete-destination-account.md)
