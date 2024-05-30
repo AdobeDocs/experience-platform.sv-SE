@@ -2,9 +2,9 @@
 title: Skapa och konfigurera datastreams
 description: Lär dig hur du ansluter Web SDK-integreringen på klientsidan till andra Adobe-produkter och tredjepartsmål.
 exl-id: 4924cd0f-5ec6-49ab-9b00-ec7c592397c8
-source-git-commit: 370ab0b2a575cc2b5d17f3ae2b3b0b6a6999c462
+source-git-commit: 43d97ea4d850a36d350894d70a082464a21e449d
 workflow-type: tm+mt
-source-wordcount: '2554'
+source-wordcount: '2569'
 ht-degree: 0%
 
 ---
@@ -175,7 +175,7 @@ Den här tjänsten kontrollerar om och hur data skickas till Adobe Experience Pl
 | [!UICONTROL Event Dataset] | **(Obligatoriskt)** Välj den plattformsdatauppsättning som kundhändelsedata ska direktuppspelas till. Det här schemat måste använda [Klassen XDM ExperienceEvent](../xdm/classes/experienceevent.md). Om du vill lägga till fler datauppsättningar väljer du **[!UICONTROL Add Event Dataset]**. |
 | [!UICONTROL Profile Dataset] | Välj den plattformsdatauppsättning som kundattributdata ska skickas till. Det här schemat måste använda [Klassen XDM Individuell profil](../xdm/classes/individual-profile.md). |
 | [!UICONTROL Offer Decisioning] | Aktiverar Offer decisioning för Web SDK-implementeringar. Se guiden på [använda Offer decisioning med Web SDK](../web-sdk/personalization/offer-decisioning/offer-decisioning-overview.md) om du vill ha mer information om implementeringen.<br><br>Mer information om Offer decisioning finns i [Adobe Journey Optimizer-dokumentation](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioning/get-started-decision/starting-offer-decisioning.html). |
-| [!UICONTROL Edge Segmentation] | Aktiverar [kantsegmentering](../segmentation/ui/edge-segmentation.md) för denna datastream. När SDK skickar data via en datastam som är aktiverad för kantsegmentering, skickas alla uppdaterade segmentmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Det här alternativet kan användas i kombination med [!UICONTROL Personalization Destinations] for [exempel på användning av personalisering på nästa sida](../destinations/ui/activate-edge-personalization-destinations.md). |
+| [!UICONTROL Edge Segmentation] | Aktiverar [kantsegmentering](../segmentation/ui/edge-segmentation.md) för denna datastream. När [Web SDK](../web-sdk/home.md) eller [Edge Network Server-API](../server-api/overview.md) skickar data via en datastam med kantsegmentering aktiverat, skickas alla uppdaterade målgruppsmedlemskap för den aktuella profilen tillbaka som svar.<br><br>Du kan använda det här alternativet i kombination med **[!UICONTROL Personalization Destinations]** för personalisering på samma sida och nästa sida genom [kantmål](../destinations/ui/activate-edge-personalization-destinations.md) eller [!DNL Offer Decisioning]. |
 | [!UICONTROL Personalization Destinations] | När du har aktiverat detta efter att du har aktiverat [!UICONTROL Edge Segmentation] kryssrutan tillåter det här alternativet att datastream ansluter till personaliseringsmål, som [Anpassad personalisering](../destinations/catalog/personalization/custom-personalization.md).<br><br>Se måldokumentationen för specifika steg om [konfigurera personaliseringsmål](../destinations/ui/activate-edge-personalization-destinations.md). |
 | [!UICONTROL Adobe Journey Optimizer] | Aktiverar [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html) för denna datastream. <br><br> Om du aktiverar det här alternativet kan datastream returnera personaliserat innehåll från webb- och appbaserade inkommande kampanjer i [!DNL Adobe Journey Optimizer]. Det här alternativet kräver [!UICONTROL Edge Segmentation] att vara aktiv. If [!UICONTROL Edge Segmentation] är avmarkerat, är det här alternativet nedtonat. |
 
