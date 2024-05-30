@@ -2,10 +2,10 @@
 title: Behörighetshantering för datainsamling i Experience Platform
 description: En översikt på hög nivå över hur du hanterar behörigheter och styr åtkomsten till datainsamlingsfunktioner i Adobe Experience Platform.
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 60590a77859320891717244eec58b556935354b5
 workflow-type: tm+mt
-source-wordcount: '1263'
-ht-degree: 1%
+source-wordcount: '1315'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ I den här handboken visas hur du hanterar behörigheter för datainsamlingsfunk
 
 Om du vill konfigurera åtkomstkontroll för datainsamling måste du ha administratörsbehörighet för en organisation som har en produktintegrering med Adobe Experience Platform Data Collection. Minimirollen som kan bevilja eller återkalla behörigheter är en **produktprofiladministratör**. Andra administratörsroller som kan hantera behörigheter är **produktadministratörer** (kan hantera alla profiler i en produkt) och **systemadministratörer** (inga begränsningar). Läs artikeln om [administrativa roller](https://helpx.adobe.com/enterprise/using/admin-roles.html) i administrationshandboken för Adobe Enterprise om du vill ha mer information.
 
-I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i [Användarhandbok för Admin Console](https://helpx.adobe.com/se/enterprise/using/admin-console.html).
+I den här handboken förutsätts det att du är bekant med grundläggande produktkoncept som produktprofiler och hur du tilldelar produktbehörigheter till enskilda användare och grupper. Mer information finns i [Användarhandbok för Admin Console](https://helpx.adobe.com/enterprise/using/admin-console.html).
 
 ## Tillgängliga behörigheter
 
@@ -78,7 +78,15 @@ Se underavsnitten nedan för steg om hur du hanterar behörigheter för respekti
 
 ### Hantera behörigheter i Adobe Experience Platform {#manage-platform}
 
-Från **[!UICONTROL Permissions]** i Adobe Experience Platform väljer du den roll du vill redigera.
+>[!NOTE]
+>
+>Om du vill hantera behörigheter för en roll måste du ha administratörsbehörighet. Kontakta systemadministratören om du inte har administratörsbehörighet.
+
+Experience Cloud **[!UICONTROL Permissions]** kan du definiera användarroller och profiler för att hantera åtkomst för funktioner och objekt i ett produktprogram.
+
+Via [!UICONTROL Permissions]kan du skapa och hantera roller och tilldela önskade resursbehörigheter för dessa roller.
+
+![Adobe Experience Cloud markerar produkten Permissions.](./images/permissions/permissions-product.png)
 
 För att få åtkomst till datainsamlingsfunktionerna måste du aktivera alla behörigheter i **[!UICONTROL Sandboxes]**, **[!UICONTROL Data Modeling]**, **[!UICONTROL Identity Management]** och **[!UICONTROL Data Collection]** kategorier.
 
