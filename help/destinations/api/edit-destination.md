@@ -4,9 +4,9 @@ title: Redigera målanslutningar med API:t för Flow Service
 type: Tutorial
 description: Lär dig hur du redigerar olika komponenter i en målanslutning med API:t för Flow Service.
 exl-id: d6d27d5a-e50c-4170-bb3a-c4cbf2b46653
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 2a72f6886f7a100d0a1bf963eedaed8823a7b313
 workflow-type: tm+mt
-source-wordcount: '1572'
+source-wordcount: '1597'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ Alla resurser i Experience Platform, inklusive sådana som tillhör [!DNL Flow S
 >
 >Om `x-sandbox-name` ingen rubrik har angetts, begäranden har lösts under `prod` sandlåda.
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (`POST`, `PUT`, `PATCH`) kräver ytterligare en medietypsrubrik:
 
 * `Content-Type: application/json`
 
@@ -177,17 +177,19 @@ Ett godkänt svar returnerar aktuell information om dataflödet, inklusive versi
 
 Komponenterna för en målanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] -mål kan du uppdatera den bucket och sökväg dit filerna exporteras. För [!DNL Pinterest] mål kan du uppdatera [!DNL Pinterest Advertiser ID] och for [!DNL Google Customer Match] du kan uppdatera [!DNL Pinterest Account ID].
 
-Om du vill uppdatera komponenter för en målanslutning utför du en PATCH-begäran till `/targetConnections/{TARGET_CONNECTION_ID}` slutpunkt när du anger ditt anslutnings-ID, version och de nya värden som du vill använda. Kom ihåg att du fick ditt målanslutnings-ID i föregående steg när du inspekterade ett befintligt dataflöde till önskat mål.
+Om du vill uppdatera komponenter för en målanslutning utför du en `PATCH` begäran till `/targetConnections/{TARGET_CONNECTION_ID}` slutpunkt när du anger ditt anslutnings-ID, version och de nya värden som du vill använda. Kom ihåg att du fick ditt målanslutnings-ID i föregående steg när du inspekterade ett befintligt dataflöde till önskat mål.
 
 >[!IMPORTANT]
 >
->The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av målanslutningen som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
+>The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av målanslutningen som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
 >
 > Om du vill hämta den senaste versionen av taggvärdet gör du en GET-förfrågan till `/targetConnections/{TARGET_CONNECTION_ID}` slutpunkt, där `{TARGET_CONNECTION_ID}` är det målanslutnings-ID som du vill uppdatera.
+>
+> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
 
 Nedan visas några exempel på hur du uppdaterar parametrar i målanslutningsspecifikationen för olika typer av destinationer. Men den allmänna regeln för uppdatering av parametrar för alla mål är följande:
 
-Hämta dataflödes-ID för anslutningen > hämta målanslutnings-ID > PATCH för målanslutningen med uppdaterade värden för de önskade parametrarna.
+Hämta anslutningens dataflödes-ID > hämta målanslutnings-ID > `PATCH` målanslutningen med uppdaterade värden för de önskade parametrarna.
 
 >[!BEGINSHADEBOX]
 
@@ -332,19 +334,21 @@ Ett lyckat svar returnerar ditt målanslutnings-ID och en uppdaterad tagg. Du ka
 
 Redigera basanslutningen när du vill uppdatera autentiseringsuppgifterna för ett mål. Komponenterna i en basanslutning skiljer sig åt beroende på mål. Till exempel [!DNL Amazon S3] mål kan du uppdatera åtkomstnyckeln och den hemliga nyckeln till [!DNL Amazon S3] plats.
 
-Om du vill uppdatera komponenterna för en basanslutning utför du en PATCH-förfrågan till `/connections` slutpunkt när du anger ditt grundläggande anslutnings-ID, version och de nya värden som du vill använda.
+Om du vill uppdatera komponenter för en basanslutning utför du en `PATCH` begäran till `/connections` slutpunkt när du anger ditt grundläggande anslutnings-ID, version och de nya värden som du vill använda.
 
 Kom ihåg att du fick ditt grundläggande anslutnings-ID i en [föregående steg](#look-up-dataflow-details)när du inspekterade ett befintligt dataflöde till det önskade målet för parametern `baseConnection`.
 
 >[!IMPORTANT]
 >
->The `If-Match` måste anges när du gör en PATCH-begäran. Värdet för den här rubriken är den unika versionen av basanslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av en flödenhet, till exempel dataflöde, basanslutning och andra.
+>The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av basanslutningen som du vill uppdatera. Värdet för etag uppdateras med varje lyckad uppdatering av en flödenhet, till exempel dataflöde, basanslutning och andra.
 >
 > Om du vill hämta den senaste versionen av Etag-värdet gör du en GET-förfrågan till `/connections/{BASE_CONNECTION_ID}` slutpunkt, där `{BASE_CONNECTION_ID}` är det grundläggande anslutnings-ID som du vill uppdatera.
+>
+> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
 
 Nedan visas några exempel på hur du uppdaterar parametrar i basanslutningsspecifikationen för olika typer av destinationer. Men den allmänna regeln för uppdatering av parametrar för alla mål är följande:
 
-Hämta dataflödes-ID för anslutningen > hämta basanslutnings-ID > PATCH för basanslutningen med uppdaterade värden för de önskade parametrarna.
+Hämta anslutningens dataflödes-ID > hämta basanslutnings-ID > `PATCH` basanslutningen med uppdaterade värden för de önskade parametrarna.
 
 >[!BEGINSHADEBOX]
 

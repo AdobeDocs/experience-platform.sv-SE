@@ -4,9 +4,9 @@ title: Aktivera målgrupper för filbaserade mål med API:t för Flow Service
 description: Lär dig hur du använder API:t för Flow Service för att exportera filer med kvalificerade profiler till molnlagringsmål.
 type: Tutorial
 exl-id: 62028c7a-3ea9-4004-adb7-5e27bbe904fc
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: df7b9bb0c5dc4348e8be7a0ea93296e24bc0fb1d
 workflow-type: tm+mt
-source-wordcount: '4393'
+source-wordcount: '4749'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ Resurser i [!DNL Experience Platform] kan isoleras till specifika virtuella sand
 >
 >Mer information om sandlådor i [!DNL Experience Platform], se [översiktsdokumentation för sandlåda](../../sandboxes/home.md).
 
-Alla begäranden som innehåller en nyttolast (POST, PUT, PATCH) kräver ytterligare en medietypsrubrik:
+Alla begäranden som innehåller en nyttolast (`POST`, `PUT`, `PATCH`) kräver ytterligare en medietypsrubrik:
 
 * Innehållstyp: `application/json`
 
@@ -4454,7 +4454,7 @@ Se [hämta information om ett måldataflöde](https://developer.adobe.com/experi
 
 >[!ENDSHADEBOX]
 
-Slutligen måste du PATCH dataflödet med den mappningsuppsättningsinformation som du nyss skapade.
+Äntligen måste du `PATCH` dataflödet med den mappningsuppsättningsinformation som du nyss skapade.
 
 >[!BEGINSHADEBOX]
 
@@ -4504,11 +4504,88 @@ Svaret från API:t för Flow Service returnerar ID:t för det uppdaterade datafl
 
 ![Steg för att aktivera målgrupper och markera det aktuella steget som användaren är på](/help/destinations/assets/api/file-based-segment-export/step7.png)
 
-Använd `PATCH` operation.Du kan till exempel uppdatera dina dataflöden och välja fält som obligatoriska nycklar eller dedupliceringsnycklar.
+Använd `PATCH` operation. Du kan till exempel lägga till en marknadsföringsåtgärd i dataflödena. Du kan även uppdatera dina dataflöden och välja fält som obligatoriska nycklar eller dedupliceringsnycklar.
+
+### Lägg till en marknadsföringsåtgärd {#add-marketing-action}
+
+Lägga till en [marknadsföringsåtgärd](/help/data-governance/api/marketing-actions.md), se exemplen nedan med begäran och svar.
+
+>[!IMPORTANT]
+>
+>The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
+>
+> Om du vill hämta den senaste versionen av taggvärdet gör du en GET-förfrågan till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}` slutpunkt, där `{ID}` är det dataflödes-ID som du vill uppdatera.
+>
+> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
+
+>[!BEGINSHADEBOX]
+
+**Begäran**
+
+>[!TIP]
+>
+>Innan ni lägger till en marknadsföringsåtgärd i ett dataflöde kan ni slå upp era befintliga centrala och anpassade marknadsföringsåtgärder. Visa [hämta en lista över befintliga marknadsföringsåtgärder](/help/data-governance/api/marketing-actions.md#list).
+
++++Lägg till en marknadsföringsåtgärd i ett måldataflöde - Begäran
+
+```shell
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
+--header 'accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-api-key: {API_KEY}' \
+--header 'x-gw-ims-org-id: {ORG_ID}' \
+--header 'x-sandbox-name: {SANDBOX_NAME}' \
+--header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
+--data-raw '[
+   {
+      "op":"add",
+      "path":"/policy",
+      "value":{
+         "enforcementRefs":[
+            
+         ]
+      }
+   },
+   {
+      "op":"add",
+      "path":"/policy/enforcementRefs/-",
+      "value":"/dulepolicy/marketingActions/custom/6b935bc8-bb9e-451b-a327-0ffddfb91e66/constraints"
+   }
+]'
+```
+
++++
+
+
+**Svar**
+
++++Lägg till en marknadsföringsåtgärd - Svar
+
+Ett godkänt svar returnerar svarskod `200` tillsammans med ID:t för det uppdaterade dataflödet och den uppdaterade e-taggen.
+
+```json
+{
+    "id": "eb54b3b3-3949-4f12-89c8-64eafaba858f",
+    "etag": "\"0000d781-0000-0200-0000-63e29f420000\""
+}
+```
+
++++
+
+>[!ENDSHADEBOX]
 
 ### Lägg till en obligatorisk nyckel {#add-mandatory-key}
 
-Lägga till en [obligatorisk nyckel](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes), se exemplen på begäran och svar nedan
+Lägga till en [obligatorisk nyckel](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes), se exemplen nedan med begäran och svar.
+
+>[!IMPORTANT]
+>
+>The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
+>
+> Om du vill hämta den senaste versionen av taggvärdet gör du en GET-förfrågan till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}` slutpunkt, där `{ID}` är det dataflödes-ID som du vill uppdatera.
+>
+> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
 
 >[!BEGINSHADEBOX]
 
@@ -4517,12 +4594,13 @@ Lägga till en [obligatorisk nyckel](/help/destinations/ui/activate-batch-profil
 +++Lägg till en identitet som obligatoriskt fält - Begäran
 
 ```shell
-curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
 --header 'x-gw-ims-org-id: {ORG_ID}' \
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
 --data-raw '
 [
   {
@@ -4540,12 +4618,13 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 +++Lägg till ett XDM-attribut som obligatoriskt fält - Begäran
 
 ```shell
-curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
 --header 'x-gw-ims-org-id: {ORG_ID}' \
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
 --data-raw '
 [
   {
@@ -4579,6 +4658,14 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 Lägga till en [dedupliceringsnyckel](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys), se exemplen på begäran och svar nedan
 
+>[!IMPORTANT]
+>
+>The `If-Match` måste anges när du skapar en `PATCH` begäran. Värdet för den här rubriken är den unika versionen av dataflödet som du vill uppdatera. Taggen-värdet uppdateras med alla lyckade uppdateringar av en flödenhet som dataflöde, målanslutning och andra.
+>
+> Om du vill hämta den senaste versionen av taggvärdet gör du en GET-förfrågan till `https://platform.adobe.io/data/foundation/flowservice/flows/{ID}` slutpunkt, där `{ID}` är det dataflödes-ID som du vill uppdatera.
+>
+> Se till att radbryta värdet för `If-Match` rubrik inom dubbla citattecken, som i exemplen nedan, när du skapar `PATCH` förfrågningar.
+
 >[!BEGINSHADEBOX]
 
 **Begäran**
@@ -4586,12 +4673,13 @@ Lägga till en [dedupliceringsnyckel](/help/destinations/ui/activate-batch-profi
 +++Lägg till en identitet som dedupliceringsnyckel - begäran
 
 ```shell
-curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
 --header 'x-gw-ims-org-id: {ORG_ID}' \
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
 --data-raw '
 [
   {
@@ -4612,12 +4700,13 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 +++Lägg till ett XDM-attribut som dedupliceringsnyckel - begäran
 
 ```shell
-curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==eb54b3b3-3949-4f12-89c8-64eafaba858f' \
+curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
 --header 'x-gw-ims-org-id: {ORG_ID}' \
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
+--header 'If-Match: "{ETAG_HERE}"' \
 --data-raw '
 [
   {
