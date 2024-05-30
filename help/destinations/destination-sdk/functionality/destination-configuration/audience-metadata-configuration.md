@@ -2,10 +2,10 @@
 description: Lär dig konfigurera inställningar för målgruppsmetadata för mål som skapats med Destination SDK.
 title: Konfiguration av målgruppsmetadata
 exl-id: ae71df4f-b753-4084-835f-03559b4986cb
-source-git-commit: 82ba4e62d5bb29ba4fef22c5add864a556e62c12
+source-git-commit: 20cb2dbfbfc8e73c765073818c8e7e561d4e6629
 workflow-type: tm+mt
 source-wordcount: '399'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -57,7 +57,7 @@ När du skapar din konfiguration för målgruppsmetadata kan du använda de para
 | `mapExperiencePlatformSegmentName` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgruppsnamnet. |
 | `mapExperiencePlatformSegmentId` | Boolean | Anger om [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) värdet i målaktiveringsarbetsflödet ska vara Experience Platform målgrupps-ID. |
 | `mapUserInput` | Boolean | Aktiverar eller inaktiverar användarindata för [[!UICONTROL Mapping ID]](../../../ui/activate-segment-streaming-destinations.md#scheduling) i målaktiveringsarbetsflödet. Om inställt på `true`, `audienceTemplateId` kan inte finnas. |
-| `audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för ditt mål. |
+| `audienceTemplateId` | Sträng | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för ditt mål. |
 
 {style="table-layout:auto"}
 

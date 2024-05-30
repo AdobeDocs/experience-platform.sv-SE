@@ -2,7 +2,7 @@
 description: Lär dig hur du strukturerar ett API-anrop för att skapa en målkonfiguration via Adobe Experience Platform Destination SDK.
 title: Skapa en målkonfiguration
 exl-id: aae4aaa8-1dd0-4041-a86c-5c86f04d7d13
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: 20cb2dbfbfc8e73c765073818c8e7e561d4e6629
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 0%
@@ -217,7 +217,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `segmentMappingConfig.mapUserInput` | Boolean | Kontrollerar om målgruppsmappnings-ID:t i målaktiveringsarbetsflödet anges av användaren. |
 | `segmentMappingConfig.mapExperiencePlatformSegmentId` | Boolean | Styr om målgruppsmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform målgrupps-ID:t. |
 | `segmentMappingConfig.mapExperiencePlatformSegmentName` | Boolean | Styr om målgruppsmappnings-ID:t i målaktiveringsarbetsflödet är Experience Platform målgruppsnamnet. |
-| `segmentMappingConfig.audienceTemplateId` | Boolean | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för detta mål. |
+| `segmentMappingConfig.audienceTemplateId` | Sträng | The `instanceId` i [metadatamall för målgrupper](../../metadata-api/create-audience-template.md) används för detta mål. |
 | `schemaConfig.profileFields` | Array | När du lägger till fördefinierade `profileFields` som visas i konfigurationen ovan, kan användare mappa Experience Platform-attribut till de fördefinierade attributen på målsidan. |
 | `schemaConfig.profileRequired` | Boolean | Använd `true` om användare ska kunna mappa profilattribut från Experience Platform till anpassade attribut på målsidan, vilket visas i exempelkonfigurationen ovan. |
 | `schemaConfig.segmentRequired` | Boolean | Använd alltid `segmentRequired:true`. |
