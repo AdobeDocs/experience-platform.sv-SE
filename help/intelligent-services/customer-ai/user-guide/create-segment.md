@@ -5,7 +5,7 @@ feature: Customer AI
 title: Skapa kundsegment med prediktiva poäng
 description: När en förutsägelsekörning är klar används automatiskt förväntade benägenhetspoäng av profiler. Genom att förbättra profiler med kundens AI-poäng kan man skapa kundsegment för att hitta målgrupper baserat på deras benägenhetspoäng. I det här avsnittet beskrivs stegen för hur du skapar segment med hjälp av segmentverktyget.
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
-source-git-commit: 07a110f6d293abff38804b939014e28f308e3b30
+source-git-commit: 68aa226395e8dcbf98a851134332f31303a8c710
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -22,21 +22,21 @@ När en förutsägelsekörning är klar används automatiskt förväntade benäg
 
 I plattformsgränssnittet klickar du på **[!UICONTROL Segments]** i den vänstra navigeringen och klicka sedan på **[!UICONTROL Create segment]**.
 
-![](../images/user-guide/segments.png)
+![](../images/user-guide/segments_new.png)
 
 The **Segment Builder** visas. Från vänster **[!UICONTROL Fields]** kolumn och under **[!UICONTROL Attributes]** klickar du på mappen med namnet **[!UICONTROL XDM Individual Profile]** och klicka sedan på mappen med organisationens namnområde. Mappen med namnet **[!UICONTROL Customer AI]** innehåller resultatet av prediktionskörningar och namnges efter den instans som poängen tillhör. Klicka på en instansmapp för att komma åt resultatet av den önskade instansen.
 
-![](../images/user-guide/results.png)
+![](../images/user-guide/results_new.png)
 
 I mitten av Segment Builder drar och släpper du **[!UICONTROL Score]** på *arbetsyta för regelbyggaren* för att definiera en regel.
 
 Under höger hand *Segmentegenskaper* anger du ett namn för segmentet.
 
-![](../images/user-guide/properties.png)
+![](../images/user-guide/properties_new.png)
 
 Ovanför vänster hand *Fält* klickar du på **växel** -ikonen och välj en *Kopplingsprincip* i listrutan. Klicka **[!UICONTROL Save]** för att skapa segmentet.
 
-![](../images/user-guide/merge_policy.png)
+![](../images/user-guide/merge_policy_new.png)
 
 ## Nästa steg
 
