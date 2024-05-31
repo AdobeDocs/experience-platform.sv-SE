@@ -4,7 +4,7 @@ description: Lär dig hur du lägger till kundens tidsstämpelordning i dataupps
 badgePrivateBeta: label="Privat beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: f73b7ac38c681ec5161e2b5e7075f31946a6563e
+source-git-commit: dffbdafc3f063906c8c8fb648ace59b2f1aedab8
 workflow-type: tm+mt
 source-wordcount: '410'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 I Adobe Experience Platform garanteras inte dataordningen som standard när data hämtas via direktuppspelning till profilarkivet. Med tidsstämpelsortering kan ni garantera att det senaste meddelandet, enligt den angivna kundtidsstämpeln, kommer att behållas i profilbutiken. Alla inaktuella meddelanden tas sedan bort och kommer att **not** vara tillgängliga för användning i tjänster i senare led som använder profildata som segmentering och destinationer. Detta gör att profildata blir konsekventa och att profildata förblir synkroniserade med källsystemen.
 
-Använd kommandot `extSourceSystemAudit.lastUpdatedDate` fält i [Datatypen External Source System Audit Attributes](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/shared/external-source-system-audit-details.schema.md) och kontakta Adobe Technical Account Manager eller Adobe Customer Care med information om din sandlåda och datauppsättning.
+Använd kommandot `extSourceSystemAudit.lastUpdatedDate` fält i [Fältgruppen Granskningsattribut för externt källsystem](https://github.com/adobe/xdm/blob/master/docs/reference/fieldgroups/shared/external-source-system-audit-details.schema.md) och kontakta Adobe Technical Account Manager eller Adobe Customer Care med information om din sandlåda och datauppsättning.
 
 ## Begränsningar
 
