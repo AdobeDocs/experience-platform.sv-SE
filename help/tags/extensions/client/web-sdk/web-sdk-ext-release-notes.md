@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform Web SDK Extension
 description: Adobe Experience Platform Web SDK Tag Extension
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 2e1ea70496b8e379d5a9be0f2f321b21da86cf4d
+source-git-commit: e96477882beceb6e370d53df3cc65e8dfb28745f
 workflow-type: tm+mt
-source-wordcount: '2083'
+source-wordcount: '2145'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,17 @@ ht-degree: 0%
 # Versionsinformation om Adobe Experience Platform Web SDK-tillägg
 
 Det här dokumentet innehåller versionsinformation för taggtillägget Adobe Experience Platform Web SDK. Information om den senaste versionen av SDK:n finns i [Versionsinformation för Platform Web SDK](/help/web-sdk/release-notes.md).
+
+## Version 2.23.2 - 3 juni 2024
+
+**Korrigeringar och förbättringar**
+
+* Korrigerade ett fel som uppstod när tilläggskonfigurationen ändrades när config overrides definierades.
+* Tillåt att tomma värden anges för ping-intervall för mediainsamling.
+* Ett fel som uppstod när en åtgärd för uppdateringsvariabel ändrades har åtgärdats.
+* Tillåt återställning av ID-synkroniseringsbehållaren i config overrides.
+
+Innehåller version 2.20.0 av Adobe Experience Platform Web SDK.
 
 ## Version 2.23.1 - 28 maj 2024
 
