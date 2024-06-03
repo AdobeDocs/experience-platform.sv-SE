@@ -5,9 +5,9 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: c8c8e8b8571c215cb470dd5bdb9e9172d564f9d8
 workflow-type: tm+mt
-source-wordcount: '4454'
+source-wordcount: '4567'
 ht-degree: 0%
 
 ---
@@ -353,11 +353,36 @@ Välj **[!UICONTROL Enable]** för att bekräfta ditt val. Du kan välja **[!UIC
 
 ## Fler åtgärder {#more}
 
-I Schemaredigeraren kan du även utföra snabba åtgärder för att kopiera JSON-strukturen för schemat eller ta bort schemat om det inte har aktiverats för kundprofilen i realtid eller har associerade datauppsättningar. Välj [!UICONTROL More] längst upp i vyn om du vill visa en listruta med snabbåtgärder.
-
-Med strukturfunktionen Kopiera JSON kan du se hur en exempelnyttolast skulle se ut när du fortfarande skapar schemat och dina dataledningar. Det är särskilt användbart i situationer där det finns komplexa objektmappningsstrukturer i schemat, till exempel en identitetskarta.
+I Schemaredigeraren kan du också utföra snabba åtgärder för att kopiera JSON-strukturen för schemat eller ta bort schemat. Välj [!UICONTROL More] längst upp i vyn om du vill visa en listruta med snabbåtgärder.
 
 ![Schemaredigeraren med knappen Mer markerad och alternativen i listrutan visas.](../images/tutorials/create-schema/more-actions.png)
+
+### Ta bort ett schema {#delete-a-schema}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_profileenabledwithdatasets"
+>title="Kan inte ta bort schema"
+>abstract="Det går inte att ta bort schemat eftersom det har aktiverats för profilen och har associerade datauppsättningar."
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_profileenablednodatasets"
+>title="Kan inte ta bort schema"
+>abstract="Det går inte att ta bort schemat eftersom det har aktiverats för profilen."
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_delete_withdatasetsnotprofileenabled"
+>title="Kan inte ta bort schema"
+>abstract="Schemat kan inte tas bort eftersom det har associerade datauppsättningar."
+
+Ett schema kan tas bort i användargränssnittet från Schemaredigeraren med [!UICONTROL More] och även från schemainformationen i [!UICONTROL Browse] -fliken. Det finns vissa villkor som förhindrar att ett schema tas bort. Ett schema kan inte tas bort om:
+
+* Schemat är aktiverat för profilen.
+* Schemat är aktiverat för profilen och har associerade datauppsättningar.
+* Schemat har associerade datauppsättningar men har inte aktiverats för profilen.
+
+### Kopiera JSON-struktur {#copy-json-structure}
+
+Välj **[!UICONTROL Copy JSON structure]** för att generera en exportnyttolast för ett schema i schemabiblioteket. Den här åtgärden kopierar JSON-strukturen till Urklipp. Din exporterade JSON kan sedan användas för att importera schemat och alla relaterade resurser till en annan sandlåda eller organisation. Detta gör det enkelt och effektivt att dela och återanvända scheman mellan olika miljöer.
 
 ## Nästa steg och ytterligare resurser
 

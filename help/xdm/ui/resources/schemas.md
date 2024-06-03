@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Skapa och redigera scheman i användargränssnittet
 description: Lär dig grunderna i hur du skapar och redigerar scheman i användargränssnittet i Experience Platform.
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 0e1fb15cfa56fb4c2a4a645578327f0a4bd22e68
+source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
 workflow-type: tm+mt
 source-wordcount: '3584'
 ht-degree: 0%
 
 ---
 
-# Skapa och redigera scheman i användargränssnittet
+# Skapa och redigera scheman i användargränssnittet {#create-edit-schemas-in-ui}
 
 Den här guiden ger en översikt över hur du skapar, redigerar och hanterar XDM-scheman (Experience Data Model) för din organisation i Adobe Experience Platform användargränssnitt.
 
@@ -217,7 +217,7 @@ När du har angett ett visningsnamn och en datatyp för fältet är nästa steg 
 >
 >I det här avsnittet beskrivs bara hur du tilldelar fältet till en anpassad fältgrupp. Om du i stället vill utöka en standardfältgrupp med det nya anpassade fältet läser du avsnittet om [lägga till anpassade fält i standardfältgrupper](#custom-fields-for-standard-groups).
 
-Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Field Group]**. Om schemat använder en standardklass är detta det enda tillgängliga alternativet och markeras som standard.
+Under **[!UICONTROL Assign to]**, markera **[!UICONTROL Field Group]**. Om schemat använder en standardklass är detta det enda tillgängliga alternativet och markeras som standard.
 
 Sedan måste du välja en fältgrupp för det nya fältet som ska kopplas. Börja skriva in namnet på fältgruppen i den angivna textinmatningen. Om du har befintliga anpassade fältgrupper som matchar indata visas de i listrutan. Du kan också skriva ett unikt namn för att skapa en ny fältgrupp i stället.
 
@@ -241,7 +241,7 @@ Det nya fältet läggs till på arbetsytan och får ett namn under [klient-ID](.
 
 #### Tilldela fältet till en anpassad klass {#add-to-class}
 
-Under **[!UICONTROL Assign to]** väljer du **[!UICONTROL Class]**. Indatafältet nedan ersätts med namnet på det aktuella schemats anpassade klass, vilket anger att det nya fältet kommer att tilldelas den här klassen.
+Under **[!UICONTROL Assign to]**, markera **[!UICONTROL Class]**. Indatafältet nedan ersätts med namnet på det aktuella schemats anpassade klass, vilket anger att det nya fältet kommer att tilldelas den här klassen.
 
 ![The [!UICONTROL Class] som väljs för den nya fälttilldelningen.](../../images/ui/resources/schemas/assign-field-to-class.png)
 

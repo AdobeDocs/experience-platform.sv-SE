@@ -4,14 +4,19 @@ title: Exportera XDM-scheman i användargränssnittet
 description: Lär dig hur du exporterar ett befintligt schema till en annan sandlåda eller organisation i Adobe Experience Platform användargränssnitt.
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: d25042e80ca5f655a50deac6a65ce9168225d6e6
+source-git-commit: 0f0842c1d14ce42453b09bf97e1f3690448f6e9a
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '634'
 ht-degree: 0%
 
 ---
 
-# Exportera XDM-scheman i användargränssnittet
+# Exportera XDM-scheman i användargränssnittet {#export-xdm-schemas-in-the-UI}
+
+>[!CONTEXTUALHELP]
+>id="platform_xdm_copyjsonstructure"
+>title="Kopiera JSON-struktur"
+>abstract="Generera en exportnyttolast för det valda schemat genom att kopiera JSON-strukturen till Urklipp. Använd den här funktionen för att exportera information om scheman i schemabiblioteket. Denna exporterade JSON kan sedan användas för att importera schemat och alla relaterade resurser till en annan sandlåda eller organisation. Detta gör det enkelt och effektivt att dela och återanvända scheman mellan olika miljöer."
 
 Alla resurser i schemabiblioteket finns i en specifik sandlåda i en organisation. I vissa fall kanske du vill dela XDM-resurser (Experience Data Model) mellan sandlådor och organisationer.
 
@@ -40,6 +45,8 @@ Nästa steg är att välja **[!UICONTROL Copy JSON]** ikon (![Kopiera ikon](../i
 ![Arbetsytan Scheman med en schemarad och [!UICONTROL Copy to JSON] markerad.](../images/ui/export/copy-json.png)
 
 Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemastrukturen. För &quot;[!DNL Loyalty Members]&quot; som visas ovan genereras följande JSON:
+
++++Välj för att expandera en exempelnyttolast för JSON
 
 ```json
 [
@@ -203,6 +210,8 @@ Detta kopierar en JSON-nyttolast till Urklipp, som genereras baserat på schemas
 ]
 ```
 
++++
+
 Nyttolasten kan också kopieras genom att välja [!UICONTROL More] i det övre högra hörnet i Schemaredigeraren. Det finns två alternativ i en listruta: [!UICONTROL Copy JSON structure] och [!UICONTROL Delete schema].
 
 >[!NOTE]
@@ -215,7 +224,7 @@ Nyttolasten består av en array där varje arrayobjekt är ett objekt som repres
 
 Observera att varje instans av organisationens klientorganisations-ID visas som `<XDM_TENANTID_PLACEHOLDER>` i nyttolasten. Dessa platshållare ersätts automatiskt med rätt innehavar-ID-värde beroende på var du importerar schemat i nästa steg.
 
-## Importera resursen med API:t
+## Importera resursen med API:t {#import-resource-with-api}
 
 När du har kopierat export-JSON för schemat kan du använda det som nyttolast för en POST-förfrågan till `/rpc/import` slutpunkt i API:t för schemaregistret. Se [importera slutpunktsguide](../api/import.md) om du vill ha information om hur du konfigurerar anropet för att skicka schemat till önskad organisation och sandlåda.
 
