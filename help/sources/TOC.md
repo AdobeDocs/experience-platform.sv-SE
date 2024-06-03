@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Hjälp med Adobe Experience Platform Source Connectors
-breadcrumb-title: Användarhandbok om Source Connectors
-user-guide-description: Mata in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatad data.
+user-guide-title: Hjälp om Adobe Experience Platform Source Connectors
+breadcrumb-title: Source Connectors Guide
+user-guide-description: Hämta in data från olika källor. Lär dig strukturera, etikettera och förbättra inmatade data.
 feature: Sources
 role: Developer
-source-git-commit: 58239a1d2db7be48cedd4467cb2f94913e387031
+source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
 workflow-type: tm+mt
-source-wordcount: '1039'
-ht-degree: 6%
+source-wordcount: '1043'
+ht-degree: 0%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 6%
          - [Marketo Engage-kontakt](connectors/adobe-applications/marketo/marketo.md)
          - [Autentiseringsguide för Marketo Engage](connectors/adobe-applications/marketo/marketo-auth.md)
          - [B2B-namnutrymmen och scheman](connectors/adobe-applications/marketo/marketo-namespaces.md)
+         - [Migreringsguide för ECID-mappning](connectors/adobe-applications/marketo/migration.md)
    - Reklam {#advertising}
       - [Google Ads Connector](connectors/advertising/ads.md)
       - [Pinterest Ads](connectors/advertising/pinterest-ads.md)
@@ -61,7 +62,7 @@ ht-degree: 6%
    - Samtycke och inställningar {#consent}
       - [OneTrust-integrering](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
-      - [Microsoft Dynamics-koppling](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics-anslutning](connectors/crm/ms-dynamics.md)
       - [Salesforce-koppling](connectors/crm/salesforce.md)
       - [SugarCRM-koppling](connectors/crm/sugarcrm.md)
       - [Veeva CRM-koppling](connectors/crm/veeva.md)

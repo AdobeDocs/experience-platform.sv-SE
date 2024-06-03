@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Mappningsfält för Marketo Engage-källan
 description: Tabellerna nedan innehåller mappningarna mellan fälten i Marketo datamängder och deras motsvarande XDM-fält.
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: ec42cf27c082611acb1a08500b7bbd23fc34d730
+source-git-commit: 9399ac0e2e0a284799874af15188bbf4a4a380a7
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '887'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,11 @@ Tabellerna nedan innehåller mappningarna mellan fälten i de nio [!DNL Marketo]
 
 The [!DNL Marketo] finns nu stöd för ytterligare standardaktiviteter. Om du vill använda standardaktiviteter måste du uppdatera schemat med [program för automatisk generering av schema](../marketo/marketo-namespaces.md) därför att om du skapar nya `activities` utan att uppdatera schemat, kommer mappningsmallarna att misslyckas eftersom de nya målfälten inte kommer att finnas i schemat. Om du väljer att inte uppdatera schemat kan du fortfarande skapa ett nytt dataflöde och ignorera eventuella fel. Nya eller uppdaterade fält kommer dock inte att kapslas in i Platform.
 
-Läs dokumentationen om [Klassen XDM Experience Event](../../../../xdm/classes/experienceevent.md) för mer information om XDM-klassen och XDM-fältgrupper.
+Läs dokumentationen på [Klassen XDM Experience Event](../../../../xdm/classes/experienceevent.md) för mer information om XDM-klassen och XDM-fältgrupper.
+
+>[!NOTE]
+>
+>The `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` källfält är ett beräkningsfält som måste läggas till med **[!UICONTROL Add calculated field]** i användargränssnittet i Experience Platform. Läs självstudiekursen om [lägga till beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) för mer information.
 
 | Källdatauppsättning | XDM-målfält | Anteckningar |
 | -------------- | ---------------- | ----- |
@@ -127,6 +131,7 @@ Läs dokumentationen om [Klassen XDM Experience Event](../../../../xdm/classes/e
 | `directMarketing.emailSent.testVariantID` | `directMarketing.emailSent.testVariantID` |
 | `directMarketing.emailSent.testVariantName` | `directMarketing.emailSent.testVariantName` |
 | `directMarketing.emailSent.automationRunID` | `directMarketing.emailSent.automationRunID` |
+| `iif(${web\.ecid} != null, to_object('ECID', arrays_to_objects('id', explode(last(split(${web\.ecid}, ":")), " "))), null)` | `identityMap` | Detta är ett beräkningsfält. |
 
 {style="table-layout:auto"}
 
@@ -402,16 +407,11 @@ Läs [Översikt över enskilda XDM-profiler](../../../../xdm/classes/individual-
 | `iif(id != null && id != "", to_object("sourceType", "Marketo", "sourceInstanceID", "${MUNCHKIN_ID}","sourceID", id, "sourceKey", concat(id,"@${MUNCHKIN_ID}.Marketo")), null)` | `personComponents.sourcePersonKey` |
 | `email` | `personComponents.workEmail.address` |
 | `email` | `workEmail.address` |
-| `iif(ecids != null, to_object('ECID',arrays_to_objects('id',explode(ecids))), null)` | `identityMap` | Detta är ett beräkningsfält. |
 | `marketoIsDeleted` | `isDeleted` |
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | Detta är ett beräkningsfält. |
 | `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | Detta är ett beräkningsfält. |
 
 {style="table-layout:auto"}
-
->[!NOTE]
->
->The `to_object('ECID',arrays_to_objects('id',explode(ecids)))` källfält är ett beräkningsfält som måste läggas till med [!UICONTROL Add calculated field] i användargränssnittet för plattformen. Se självstudiekursen om [lägga till beräknade fält](../../../../data-prep/ui/mapping.md#calculated-fields) för mer information.
 
 ## Nästa steg
 

@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Marketo Engage-kontakt
 description: Det här dokumentet innehåller en översikt över Marketo Engage-källkopplingen, inklusive information om autentisering, mappning och datalatens.
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 50b97ebb8496636a0fccd64d57d7829b1342f87c
+source-git-commit: 0c695e11e7d7c14ef7e047cd007668e1099bf127
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '683'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Mer information om fältmappningsreglerna mellan [!DNL Marketo Engage] dataupps�
 
 I följande tabell visas den förväntade fördröjningen för hämtning [!DNL Marketo Engage] data till plattformen, baserat på typen av förtäring och önskat mål:
 
-| Destination | Förväntad svarstid |
+| Mål | Förväntad svarstid |
 | ----------- | ---------------- |
 | [!DNL Real-Time Customer Profile] | &lt; 10 minuter |
 | Data Lake | &lt; 60 minuter |
@@ -83,6 +83,7 @@ I följande dokumentation finns mer information om hur du skapar en [!DNL Market
 
 * Mer information om hur du ansluter [!DNL Marketo Engage] data till plattformen, läs självstudiekursen om [skapa [!DNL Marketo Engage] källanslutning i användargränssnittet](../../../tutorials/ui/create/adobe-applications/marketo.md).
    * Mer information om hur du ställer in scheman och importerar anpassade aktivitetsdata finns i självstudiekursen om [skapa en källanslutning och ett dataflöde för [!DNL Marketo Engage] anpassade aktivitetsdata](../../../tutorials/ui/create/adobe-applications/marketo-custom-activities.md)
+   * För information om hur du migrerar din ECID-mappning från [!DNL Person] datauppsättning till [!DNL Activity] datauppsättning, läs [Migreringsguide för ECID-mappning](./migration.md).
 * Mer information om de underliggande inställningarna för B2B-namnutrymmen och scheman som används med [!DNL Marketo Engage], läs dokumentationen för [B2B-namnutrymmen och scheman](./marketo-namespaces.md).
 * Om du vill ha information om hur du hittar [!DNL Marketo Engage] munchkin-ID och generera dina inloggningsuppgifter, läs [[!DNL Marketo Engage] autentiseringsguide](./marketo-auth.md).
 * Mer information om mappningsregler som gäller för [!DNL Marketo Engage] datauppsättningar, läsa dokumentationen om [[!DNL Marketo Engage] fältkopplingar](../mapping/marketo.md).
