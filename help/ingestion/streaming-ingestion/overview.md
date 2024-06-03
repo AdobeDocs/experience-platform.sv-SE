@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Direktuppspelning - översikt
 description: Direktuppspelning för Adobe Experience Platform ger användare en metod för att skicka data från klient- och serverenheter till Experience Platform i realtid.
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: c6cff4d30815d3f7bfb61d1672a5d0228a0da60d
+source-git-commit: d6424e2a9afc046f4bff329797954fd43939a819
 workflow-type: tm+mt
-source-wordcount: '357'
+source-wordcount: '424'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,11 @@ När du är säker på att dina data är rena kan du aktivera dina datauppsättn
 
 Mer information om hur du aktiverar en datauppsättning för [!DNL Profile] och [!DNL Identity Service], kan du läsa [konfigurera en datauppsättningsguide](../../profile/tutorials/dataset-configuration.md).
 
-## Vad är den förväntade fördröjningen för direktuppspelad inmatning på? [!DNL Platform]?
+## Vilken fördröjning förväntas för direktuppspelad förtäring på Experience Platform?
+
+>[!IMPORTANT]
+>
+>Guardrails för direktuppspelning beräknas på organisationsnivå och inte på sandlådenivå. Detta innebär att din dataanvändning per sandlåda är bunden till det totala licensanvändningsberättigande som motsvarar hela din organisation. Dessutom är dataanvändningen i utvecklingssandlådor begränsad till 10 % av det totala antalet profiler. Mer information om berättigande för licensanvändning finns i [metodguide för datahantering](../../landing/license-usage-and-guardrails/data-management-best-practices.md).
 
 | Mål | Förväntad fördröjning |
 | --------- | ---------------- |
