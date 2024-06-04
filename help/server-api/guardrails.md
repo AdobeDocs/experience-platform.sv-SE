@@ -2,10 +2,10 @@
 title: Prestandaskydd för Edge Network Server API
 description: Lär dig hur du använder server-API:t med optimala prestandaresäkerhetsprofiler.
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 3bf13c3f5ac0506ac88effc56ff68758deb5f566
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '508'
-ht-degree: 2%
+source-wordcount: '531'
+ht-degree: 1%
 
 ---
 
@@ -18,14 +18,18 @@ Prestandaskydd definierar användningsgränser som relaterar till användningsfa
 
 Adobe ansvarar inte för prestandaförsämringar orsakade av överskridna användningsgränser. Kunder som genomgående överskrider prestandaskyddsrutinerna kan begära ytterligare bearbetningskapacitet för att undvika prestandaförsämringar.
 
+>[!IMPORTANT]
+>
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [Produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) på faktiska användningsbegränsningar utöver denna garantisida.
+
 ## Definitioner
 
-* **Tillgänglighet** beräknas för varje femminutersintervall som procentandelen begäranden som bearbetas av Experience Platform Edge Network som inte misslyckas med fel och som endast gäller de tilldelade Edge Network API:erna. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
+* **Tillgänglighet** beräknas för varje femminutersintervall som den procentandel av begäranden som behandlas av Experience Platform Edge Network som inte misslyckas med fel och som endast gäller de tilldelade Edge Network-API:erna. Om en klientorganisation inte har gjort några förfrågningar under ett givet femminutersintervall anses det intervallet vara 100 % tillgängligt.
 * **Procentvärde för månatlig drifttid** för ett givet område beräknas som medelvärdet av tillgängligheten för alla femminutersintervall under en månad.
-* An **uppströms** är en tjänst bakom Edge Network, som är aktiverad för ett specifikt datastream, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
+* An **uppströms** är en tjänst bakom Edge Network som aktiveras för ett specifikt datastream, till exempel Adobe Server Side Forwarding, Adobe Edge Segmentation eller Adobe Target.
 * A **begärandeenhet** motsvarar ett 8 kB-fragment av en begäran och ett uppströms konfigurerat för ett datastream.
 * A **förfrågan** är ett enda meddelande som skickas av ett kundägt program till [!DNL Server API]. En begäran kan innehålla en eller flera begärandeenheter.
-* An **fel** är en begäran som misslyckas på grund av ett Edge Network [internt tjänstfel](error-handling.md).
+* An **fel** är en begäran som misslyckas på grund av Edge Network [internt tjänstfel](error-handling.md).
 
 ## Tjänstbegränsningar
 

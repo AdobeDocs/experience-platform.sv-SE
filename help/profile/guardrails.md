@@ -3,11 +3,11 @@ title: Standardgurkor för kundprofildata och segmentering i realtid
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: Läs om prestanda och systemstyrd säkerhet för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
+description: Läs om prestanda och systemstyrda säkerhetsutkast för profildata och segmentering för att säkerställa en optimal användning av Real-Time CDP-funktionalitet.
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: 0542e618dfb6e5571845387fed9eced4200179b6
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '2432'
+source-wordcount: '2455'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 1%
 # Standardstödlinjer för [!DNL Real-Time Customer Profile] data och segmentering
 
 Med Adobe Experience Platform kan ni leverera personaliserade flerkanalsupplevelser baserat på beteendeinsikter och kundattribut i form av kundprofiler i realtid. För att stödja den nya metoden för profiler använder Experience Platform en högdenormaliserad hybriddatamodell som skiljer sig från den traditionella relationsdatamodellen.
+
+>[!IMPORTANT]
+>
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [Produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) på faktiska användningsbegränsningar utöver denna garantisida.
 
 Det här dokumentet innehåller standardbegränsningar för användning och frekvens som hjälper dig att modellera profildata för optimala systemprestanda. När du granskar följande skyddsutkast förutsätts det att du har modellerat data korrekt. Om du har frågor om hur du modellerar data kan du kontakta kundtjänstrepresentanten.
 

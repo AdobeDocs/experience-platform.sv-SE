@@ -3,18 +3,21 @@ keywords: Experience Platform;fråga;frågetjänst;felsökning;skyddsförslag;ri
 title: Guardsutkast för frågetjänsten
 description: Det här dokumentet innehåller information om användningsgränser för frågetjänstdata som hjälper dig att optimera användningen av frågan.
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: ab2bb6f4cafe60aec7d8745cca9d2f7f0227a938
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '1177'
-ht-degree: 1%
+source-wordcount: '1181'
+ht-degree: 0%
 
 ---
 
 # Guardsutkast för frågetjänsten
 
 Garantier är trösklar som vägleder användning av data och system, prestandaoptimering och undvikande av fel och oväntade resultat i Adobe Experience Platform.
-
 Det här dokumentet innehåller standardanvändningsgränser för frågetjänstdata som hjälper dig att optimera systemprestanda när du frågar efter data i relation till dina licensrättigheter.
+
+>[!IMPORTANT]
+>
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [Produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) på faktiska användningsbegränsningar utöver denna garantisida.
 
 ## Förutsättningar
 

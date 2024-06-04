@@ -3,9 +3,9 @@ title: Real-Time CDP Guardrails
 description: Läs mer om de olika tjänsterna och områdena i Real-Time CDP.
 feature: Guardrails, Data Management, Data Ingestion, Data Export
 exl-id: 377499b4-5707-4d50-94e3-02f88ad5bf2c
-source-git-commit: 2704184446f7945c744e7e2d2a8c3cda3fc12527
+source-git-commit: 5d6b70e397a252e037589c3200053ebcb7eb8291
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 0%
 # Real-Time CDP Guardrails
 
 Garantier är trösklar som ger vägledning för data- och systemanvändning, prestandaoptimering och undvikande av fel eller oväntade resultat i Real-Time CDP. Garantier kan avse din användning eller konsumtion av data och bearbetning i relation till dina licensrättigheter.
+
+>[!IMPORTANT]
+>
+>Kontrollera dina licensrättigheter i din försäljningsorder och motsvarande [Produktbeskrivning](https://helpx.adobe.com/legal/product-descriptions.html) på faktiska användningsbegränsningar utöver denna garantisida.
 
 Börja här och följ länkarna nedan för att få en förståelse för alla skyddsprofiler för de olika tjänsterna och områdena i Real-Time CDP:
 
