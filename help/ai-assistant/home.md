@@ -1,11 +1,9 @@
 ---
 title: AI Assistant i Adobe Experience Platform - översikt
 description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
-hide: true
-hidefromtoc: true
-source-git-commit: fe87a487079f5154f238b2d425cdd249a4724762
+source-git-commit: dd3a7d07c0c78d76c552affef892d5e5c0f0bfb5
 workflow-type: tm+mt
-source-wordcount: '2294'
+source-wordcount: '2371'
 ht-degree: 0%
 
 ---
@@ -72,6 +70,13 @@ Du kan ställa frågor till AI Assistant om dina operativa insikter i följande 
 * Källor _(Frågor om konton kan inte besvaras just nu.)_
 
 När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som stödjer dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du måste logga in i en sandlåda för att få veta mer om specifika data som är relaterade till objekt.
+
+### Funktionsomfång {#feature-scope}
+
+För närvarande har AI Assistant följande omfattning:
+
+* [Produktkunskap](./home.md#product-knowledge): AI Assistant kan besvara produktkunskapsfrågor för Experience Platform, Real-time Customer Data Platform och Adobe Journey Optimizer. Du kan också gå in i produktinformationsämnen för Customer Journey Analytics, men bara via användargränssnittet i Customer Journey Analytics.
+* [Driftsinsikter](./home.md#operational-insights): Du kan ställa frågor till AI Assistant om driftsinsikter för följande dataobjekt: attribut, målgrupper, dataflöden, datauppsättningar, destinationer, resor, scheman och källor.
 
 ## Funktionsåtkomst {#feature-access}
 
