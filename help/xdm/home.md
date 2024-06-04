@@ -4,9 +4,9 @@ solution: Experience Platform
 title: XDM - systemöversikt
 description: Standardisering och interoperabilitet är viktiga begrepp bakom Adobe Experience Platform. Experience Data Model (XDM), som drivs av Adobe, är ett försök att standardisera kundupplevelsedata och definiera scheman för kundupplevelsehantering.
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 8113b5298120f710f43c5a02504f19ca3af67c5a
+source-git-commit: 48caa318f0e951979db4fd2c94624a73311422d6
 workflow-type: tm+mt
-source-wordcount: '2075'
+source-wordcount: '2061'
 ht-degree: 0%
 
 ---
@@ -118,10 +118,6 @@ Se [Översikt över frågetjänsten](../query-service/home.md) om du vill ha mer
 Kundprofilen i realtid är en centraliserad konsumentprofil för riktad och personaliserad upplevelsehantering. Varje profil innehåller data som sammanställs i alla system och innehåller användbara tidsstämplade konton med händelser som berör profilmotivet. Dessa händelser kan ha inträffat i något av de system du använder med Experience Platform.
 
 Kundprofilen i realtid förbrukar schemaformaterade data baserat på [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent] och svarar på frågor som baseras på dessa data.
-
->[!NOTE]
->
->Det gör kundprofilen i realtid **not** stödscheman baserade på andra klasser än [!UICONTROL XDM ExperienceEvent] klassen.
 
 Systemet upprätthåller en instans av varje kundprofil och sammanfogar data till en&quot;enda källa till sanning&quot; för den enskilda personen. Dessa enhetliga data representeras med hjälp av ett så kallat fackschema (kallas ibland för en fackvy). Ett unionsschema samlar fälten för alla scheman som implementerar samma klass i ett enda schema. När du komponerar ett schema med användargränssnittet eller API kan du aktivera schemat för användning med kundprofilen i realtid och tagga det för inkludering i unionen. Det taggade schemat kommer sedan att ingå i den schemadefinition som matas in i profilen.
 
