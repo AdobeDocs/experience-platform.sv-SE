@@ -1,9 +1,10 @@
 ---
 title: Integritet, säkerhet och styrning i AI Assistant
 description: Läs mer om sekretess-, säkerhets- och styrningsrutiner för AI Assistant.
-source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
+exl-id: 371e065d-c2dd-4233-b78e-a42757fce853
+source-git-commit: 1762fcbcc730ccb08340a71383c90404c3fea614
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
@@ -17,7 +18,6 @@ Läs det här dokumentet om du vill veta mer om funktioner som är inriktade på
 * Inga personuppgifter används av AI Assistant idag, inte ens i utbildningssyfte.
 * AI Assistant känner inte till konsumentdata.
 * Alla befintliga [åtkomstkontroll](../access-control/home.md) profiler respekteras av AI Assistant.
-   * Åtkomstkontroll på objektnivå stöds för objekt. Stöd för åtkomstkontroll på objektnivå för attribut kommer snart.
    * Alla nya attributbaserade åtkomstkontrollprinciper återspeglas i AI Assistant efter högst 24 timmar*
 * Du måste ha explicit behörighet att interagera med AI Assistant.
    * Du kan ange olika behörigheter för Experience Platform och Journey Optimizer med [Behörighetsgränssnitt](../access-control/abac/ui/permissions.md) och du kan använda [Admin Console](../access-control/ui/browse.md) om du vill tilldela behörigheter till Customer Journey Analytics.
