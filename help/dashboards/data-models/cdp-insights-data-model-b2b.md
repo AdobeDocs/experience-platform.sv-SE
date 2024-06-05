@@ -4,7 +4,7 @@ description: Lär dig hur du använder SQL-frågor med Real-time Customer Data P
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 7b77ca19-e4c6-4e93-b9e7-c4ef77d6d6d1
-source-git-commit: 8b6cd84a31f9cdccef9f342df7f7b8450c2405dc
+source-git-commit: e94343e61e98f69fa28ecd61aec9267460a7f616
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 0%
@@ -52,7 +52,7 @@ I diagrammet nedan visas de relevanta datafälten i varje datauppsättning, dera
 
 #### De nya kontona efter bransch {#accounts-by-industry}
 
-Den logik som används för [!UICONTROL New accounts by industry] insight returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Se [[!UICONTROL Accounts By Industry] widgetdokumentation](../guides/account-profiles.md#accounts-by-industry) för mer information.
+Den logik som används för [!UICONTROL New accounts by industry] insight returnerar de fem främsta branscherna utifrån deras antal kontoprofiler och deras relativa storlek till varandra. Se [[!UICONTROL New accounts By Industry] widgetdokumentation](../guides/account-profiles.md#accounts-by-industry) för mer information.
 
 >[!TIP]
 >

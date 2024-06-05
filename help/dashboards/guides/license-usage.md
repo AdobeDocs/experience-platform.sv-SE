@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 0613a0c713ea3559e03d2228e2b9e6be7232a1f0
+source-git-commit: b1fac3d523ebdf765bec038cde6a667d9af71243
 workflow-type: tm+mt
-source-wordcount: '2007'
+source-wordcount: '2041'
 ht-degree: 0%
 
 ---
@@ -158,6 +158,10 @@ Kontrollpanelen för licensanvändning rapporterar om flera unika mätvärden so
 | [!UICONTROL Streaming Segmentation No of Packs] | Paketuppdateringssegmentmedlemskapet för en personprofil när nya data matas in i segmenteringstjänsten via ett strömningsflöde. Segmentmedlemskap utvärderas baserat på attributen för den aktuella personprofilen och värdet för den aktuella händelsen, utan hänsyn till historiskt beteende. Direktuppspelningssegmentering är en delad funktion. |
 
 <!-- |  [!UICONTROL Sandbox No of Packs] |  A logical separation within your instance of any Adobe On-demand Service that accesses Adobe Experience Platform isolating data and operations | -->
+
+>[!TIP]
+>
+>Du kan kontrollera dina licensrättigheter i din försäljningsorder för att beräkna mått som din &#39;Lagringsersättning&#39;.<br>Till exempel:<ul><li>Lagringsutrymme = Antalet &quot;auktoriserade profiler&quot; i ditt kontrakt X Genomsnittlig profilnoggrannhet</li></ul>
 
 Vilka mätvärden som är tillgängliga och vilken definition som finns för varje mätvärde varierar beroende på vilken licensiering din organisation har köpt. Detaljerade definitioner av mätvärdena finns i produktbeskrivningsdokumentationen:
 
