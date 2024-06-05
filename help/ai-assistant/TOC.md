@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: AI Assistant i Adobe Experience Platform Guide
-user-guide-description: AI Assistant i Adobe Experience Platform är en samtalsupplevelse som du kan använda för att snabba upp arbetsflödena i Adobe-program. Du kan använda AI Assistant för att få en bättre förståelse för produktkunskaper, felsöka problem eller söka i information och hitta operativa insikter.
+user-guide-description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
 description: I det här dokumentet visas innehållsförteckningen för AI Assistant i Adobe Experience Platform.
 role: Admin,User,Developer,Leader
-source-git-commit: a1092e21940c5e4ba9b598bc51ba1243b57a0051
+source-git-commit: 9b8d2422d3b5e13b980002a21f02dbbb6de8c6c6
 workflow-type: tm+mt
-source-wordcount: '87'
+source-wordcount: '74'
 ht-degree: 1%
 
 ---
