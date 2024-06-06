@@ -1,9 +1,10 @@
 ---
 title: AI Assistant i Adobe Experience Platform
 description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept för Experience Platform och Real-time Customer Data Platform, samt användningsinformation om dina objekt.
-source-git-commit: 0820ba0f14e9eae5d89cd48490b1af5f9afcda70
+exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
+source-git-commit: 1c228eb95075d4302ab6d3544fff8766087411bf
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1343'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ Läs den här guiden och lär dig hur du kan använda AI Assistant i Adobe Exper
 
 Välj alternativet **[!UICONTROL AI Assistant icon]** från Experience Platform översta huvud i användargränssnittet.
 
-![Experience Platform hemsida med ikonen AI Assistant vald och gränssnittet AI Assistant öppet.](./images/ai-assistant.png)
+![Experience Platform hemsida med ikonen AI Assistant vald och gränssnittet AI Assistant öppet.](./images/ai-assistant-full-icon.png)
 
 Gränssnittet för AI Assistant visas och du får information om hur du kommer igång direkt. Du kan använda alternativen i [!UICONTROL Ideas to get started] svara på frågor och kommandon som:
 
@@ -86,9 +87,13 @@ Du måste vara i en aktiv sandlåda för att AI Assistant ska kunna svara tillr�
 
 +++Välj för att visa ett exempel på en fråga om driftsinsikter
 
-I exemplet nedan tillfrågas följande om AI Assistant: **&quot;Visa dataflöden som har skapats med Amazon S3-källa&quot;**, svarar AI Assistant sedan med en tabell över dina dataflöden och deras motsvarande ID:n. Om du vill visa hela datatabellen väljer du ikonen Expandera högst upp till höger.
+I exemplet nedan tillfrågas följande om AI Assistant: **&quot;Visa dataflöden som har skapats med Amazon S3-källa&quot;**.
 
-![Uppföljningsfråga om operativa insikter.](./images/usage-data-question.png)
+![En fråga om driftsinsikter.](./images/op-insights-question.png)
+
+AI Assistant svarar sedan med en tabell över dina dataflöden och deras motsvarande ID:n. Om du vill visa hela datatabellen väljer du ikonen Expandera högst upp till höger.
+
+![Svar på användbara insikter](./images/op-insights-answer.png)
 
 En utökad vy av tabellen visas med en mer omfattande lista över dataflöden baserat på parametrarna för frågan.
 
@@ -96,9 +101,13 @@ En utökad vy av tabellen visas med en mer omfattande lista över dataflöden ba
 
 När AI Assistant tillfrågas om driftsinsikter kan den förklara hur svaret har beräknats. I exemplet nedan beskriver AI Assistant de steg som har vidtagits för att identifiera de dataflöden som har skapats med [!DNL Amazon S3] källa.
 
-![Uppföljningsfråga om segmentdefinitioner som illustrerar hur AI Assistant beräknade svaret.](./images/answer-explained.png)
+![AI Assistant som förklarar hur det beräknade sitt svar.](./images/answer-explained.png)
 
 Du kan även lägga till filter och ändringar i dina frågor och du kan instruera AI Assistant att återge resultatet baserat på de filter som du inkluderar. Du kan till exempel be AI Assistant att visa en trend för antalet segmentdefinitioner i den ordning som de skapades, ta bort segmentdefinitioner med noll som summor och använda namn på månader i stället för heltal när data visas.
+
+**Obs!** Svar på frågor om driftsinsikter finns för närvarande i betaversion. Välj verktygstipsikonen i AI Assistant-användargränssnittet för att visa betameddelandet och för en länk till dokumentationen.
+
+![AI Assistant-verktygstipsikonen har valts.](./images/op-insights-beta-note.png)
 
 +++
 
@@ -122,7 +131,27 @@ Du kan använda AI Assistants multibläddringsfunktioner för att få en mer nat
 
 I exemplet nedan ombeds AI Assistant först att ange det totala antalet dataflöden och sedan ombeds att ange en lista över de 10 senaste dataflödena.
 
-![Exempel på multisväng](./images/multi-turn.png)
+![Exempel på multisväng](./images/multiturn.png)
+
+Om du vill återställa väljer du ellipserna (**`...`**) i AI Assistant-gränssnittet och välj **[!UICONTROL Start new conversation]**. Detta informerar AI Assistant om att du avser att ändra ämnen och kan vara särskilt användbart vid felsökning av frågor som antingen är felaktiga eller refererar till felaktig information.
+
+![De markerade ellipserna och alternativet för att starta ny konversation har valts.](./images/reset.png)
+
++++
+
+### Använd identifiering {#use-discoverability}
+
+Du kan använda AI Assistants identifieringsfunktion för att visa en lista över allmänna ämnen, grupperade i entiteter, som AI Assistant stöder.
+
++++Markera för att visa exempel på identifierbarhet
+
+Om du vill visa upptäckbarhet väljer du glödlampsikonen i det övre huvudet i AI Assistant-gränssnittet.
+
+![AI Assistant-funktionen för upptäckt.](./images/lightbulb.png)
+
+Välj sedan en kategori och välj en fråga i listan. Du kan använda den här funktionen för att få en bättre uppfattning om vilka typer av frågor som AI Assistant kan svara på. Du kan även uppdatera befintliga uppmaningar med specifik information som gäller din sandlåda med fritext eller [autocomplete](#use-auto-complete).
+
+![AI Assistant ber om upptäckt.](./images/prompt.png)
 
 +++
 
@@ -133,8 +162,6 @@ Du kan ge återkoppling om din upplevelse med AI Assistant med hjälp av alterna
 Om du vill ge feedback väljer du antingen tummen uppåt, tummen nedåt eller en flagga när du har fått ett svar från AI-assistenten och anger sedan din feedback i textrutan.
 
 ![Feedback-alternativet i AI Assistant.](./images/provide-feedback.png)
-
-Om du vill återställa väljer du ellipserna (**`...`**) i AI Assistant-gränssnittet och välj **[!UICONTROL Start new conversation]**. Detta informerar AI Assistant om att du avser att ändra ämnen och kan vara särskilt användbart vid felsökning av frågor som antingen är felaktiga eller refererar till felaktig information.
 
 +++Markera för att visa fler exempel
 

@@ -2,7 +2,7 @@
 title: AI Assistant i Adobe Experience Platform - översikt
 description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: b51291e6c3663c6d6e6d416f0d2c37563c852155
+source-git-commit: 9ee39ee1f877fa13acdca8a1d8549cf4692b39aa
 workflow-type: tm+mt
 source-wordcount: '679'
 ht-degree: 0%
@@ -15,7 +15,7 @@ Läs det här dokumentet om du vill veta mer om AI Assistant i Adobe Experience 
 
 AI Assistant i Adobe Experience Platform är en samtalsupplevelse som du kan använda för att snabba upp arbetsflödena i Adobe-program. Du kan använda AI Assistant för att få en bättre förståelse för produktkunskaper, felsöka problem eller söka i information och hitta operativa insikter. AI Assistant har stöd för Experience Platform, Real-time Customer Data Platform, Adobe Journey Optimizer och Customer Journey Analytics.
 
-![AI Assistant-gränssnittet med förstagångsupplevelsen aktiveras.](./images/blank.png)
+![AI Assistant-gränssnittet med förstagångsupplevelsen aktiveras.](./images/ai-assistant-full.png)
 
 >[!IMPORTANT]
 >
