@@ -2,9 +2,9 @@
 title: Översikt över API-tillägg för metakonvertering
 description: Läs mer om Meta Conversions API-tillägget för händelsevidarebefordran i Adobe Experience Platform.
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: f7fdfbf9afcecb255668d5d6393b87918114b067
+source-git-commit: 3cd937f49f27006e3cab60df1692d33138944ce2
 workflow-type: tm+mt
-source-wordcount: '2432'
+source-wordcount: '2437'
 ht-degree: 0%
 
 ---
@@ -53,15 +53,15 @@ När du är klar väljer du **[!UICONTROL Save]**
 
 Tillägget är installerat och du kan nu använda dess funktioner i reglerna för vidarebefordran av händelser.
 
-## Integrering med Meta Business Extension (MBE) {#mbe}
+## Integrering med Facebook och Instagram {#facebook}
 
-Tack vare integreringen med MBE (Meta Business Extensions) kan du snabbt autentisera med ditt Meta Business Account. Detta fyller sedan i [!UICONTROL Pixel ID] och Meta Conversions API [!UICONTROL Access Token], vilket gör det enklare att installera och konfigurera API:t för metakonvertering.
+Tack vare integreringen med Facebook och Instagram kan du snabbt autentisera dig i ditt Meta Business Account. Detta fyller sedan i [!UICONTROL Pixel ID] och Meta Conversions API [!UICONTROL Access Token], vilket gör det enklare att installera och konfigurera API:t för metakonvertering.
 
-En dialogruta för autentisering i MBE visas när du installerar [!UICONTROL Meta Conversions API] tillägg.
+En dialogruta för autentisering i Facebook och Instagram visas när du installerar [!UICONTROL Meta Conversions API] tillägg.
 
 ![The [!UICONTROL Meta Conversions API Extension] markering av installationssidor [!UICONTROL Connect to Meta].](../../../images/extensions/server/meta/mbe-extension-install.png)
 
-En dialogruta för att autentisera i MBE visas också i snabbstartsgränssnittet vid vidarebefordran av händelser.
+En dialogruta för att autentisera i Facebook och Instagram visas också i snabbstartsgränssnittet vid vidarebefordran av händelser.
 
 ![Gränssnittet för snabbstartsarbetsflödet [!UICONTROL Connect to Meta].](../../../images/extensions/server/meta/mbe-extension-quick-start.png)
 
@@ -129,7 +129,7 @@ När du skickar delade händelser måste du se till att du inkluderar ett hände
 
 Med snabbstartsfunktionen blir det enklare och effektivare att konfigurera med Meta Conversions API och Meta Pixel-tilläggen. Det här verktyget automatiserar flera steg som utförs i taggar för Adobe och vidarebefordran av händelser, vilket avsevärt minskar konfigurationstiden.
 
-Den här funktionen installerar och konfigurerar automatiskt både Meta Conversion API och Meta Pixel-tilläggen på en nyligen genererad tagg och händelsevidarebefordringsegenskap med nödvändiga regler och dataelement. Dessutom installeras och konfigureras Experience Platform Web SDK och Datastream automatiskt. Slutligen publicerar snabbstartsfunktionen automatiskt biblioteket till den angivna URL:en i en utvecklingsmiljö, vilket möjliggör datainsamling på klientsidan och vidarebefordran av händelser på serversidan i realtid via händelsevidarebefordring och Experience Platform Edge Network.
+Den här funktionen installerar och konfigurerar automatiskt både Meta Conversion API och Meta Pixel-tilläggen på en nyligen genererad tagg och händelsevidarebefordringsegenskap med nödvändiga regler och dataelement. Dessutom installeras och konfigureras Experience Platform Web SDK och Datastream automatiskt. Slutligen publicerar snabbstartsfunktionen automatiskt biblioteket till den angivna URL:en i en utvecklingsmiljö, vilket möjliggör datainsamling på klientsidan och vidarebefordran av händelser på serversidan i realtid via Event Forwarding och Experience Platform Edge Network.
 
 I följande video visas en introduktion till snabbstartsfunktionen.
 
@@ -190,7 +190,7 @@ Lägg till en händelse genom att välja **[!UICONTROL Add]** under [!UICONTROL 
 
 ![Taggegenskapssida som inte visar några händelser](../../../images/extensions/server/meta/edit-rule.png)
 
-Markera [!UICONTROL Event Type]. I det här exemplet har vi valt [!UICONTROL Click] -händelsen och konfigurerade den att utlösas när **.add-to-cart-button** är markerat. Välj **[!UICONTROL Keep Changes]**.
+Välj [!UICONTROL Event Type]. I det här exemplet har vi valt [!UICONTROL Click] -händelsen och konfigurerade den att utlösas när **.add-to-cart-button** är markerat. Välj **[!UICONTROL Keep Changes]**.
 
 ![Händelsekonfigurationsskärmen visar klickningshändelse](../../../images/extensions/server/meta/event-configuration.png)
 
