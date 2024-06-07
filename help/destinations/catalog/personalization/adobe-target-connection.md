@@ -3,9 +3,9 @@ keywords: målanpassning; mål; mål för upplevelseplattform; mål för uppleve
 title: Adobe Target
 description: Adobe Target är en applikation som innehåller AI-baserade personaliserings- och experimenteringsfunktioner i realtid för alla inkommande kundinteraktioner på webbplatser, i mobilappar med mera.
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: ddc15a36e83ebe059f3b4f81f3feccb2d3a4a4f0
+source-git-commit: e5c34ffb9b27ddad0c6523a7279fdf712c84f3ff
 workflow-type: tm+mt
-source-wordcount: '1502'
+source-wordcount: '1526'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 | Releasamånad | Uppdateringstyp | Beskrivning |
 |---|---|---|
-| April 2024 | Funktioner och dokumentation | När du ansluter till målmålet med ett datastream-ID *behöver inte* för att nödvändigtvis aktivera datastream för kantsegmentering. Det innebär att måldestinationen fungerar med grupper och direktuppspelade målgrupper, även om de användningsfall som du kan uppnå skiljer sig åt. Visa tabellen i [anslutningsparametrar](#parameters) för mer information. |
+| April 2024 | Funktioner och dokumentation | När du ansluter till målmålet och använder ett datastream-ID är du nu *behöver inte* för att nödvändigtvis aktivera datastream för kantsegmentering. Det innebär att måldestinationen fungerar med grupper och direktuppspelade målgrupper, även om de användningsfall som du kan uppnå skiljer sig åt. Visa tabellen i [anslutningsparametrar](#parameters) för mer information. |
 | Januari 2024 | Funktioner och dokumentation | Nu kan du dela målgrupper och profilattribut med Adobe Target-anslutningen för standardproduktionssandlådan och andra icke-standardsandlådor. |
 | Juni 2023 | Funktioner och dokumentation | Från och med juni 2023 kan du välja den Adobe Target-arbetsyta som du vill dela målgrupper med när du konfigurerar en ny Adobe Target-målanslutning. Se [anslutningsparametrar](#parameters) för mer information. Se även självstudiekursen om [konfigurera arbetsytor](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html) i Adobe Target om du vill ha mer information om arbetsytor. |
 | Maj 2023 | Funktioner och dokumentation | Från maj 2023 **[!UICONTROL Adobe Target]** anslutningsstöd [attributbaserad personalisering](../../ui/activate-edge-personalization-destinations.md#map-attributes) och är allmänt tillgängligt för alla kunder. |
@@ -62,9 +62,9 @@ I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till d
 
 >[!IMPORTANT]
 >
->Publiker som du aktiverar till det här målet måste använda [Active-on-Edge Merge Policy](../../../segmentation/ui/segment-builder.md#merge-policies). The [!DNL Active-On-Edge] sammanfogningspolicy säkerställer att målgrupper utvärderas kontinuerligt [på kanten](../../../segmentation/ui/edge-segmentation.md) och finns tillgängliga för användning av personalisering i realtid och på nästa sida.
-> Om du mappar målgrupper som använder en annan sammanfogningsprincip till kantmål utvärderas inte dessa målgrupper.
-> Följ instruktionerna på [skapa en sammanfogningsprincip](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy)och se till att aktivera **[!UICONTROL Active-On-Edge Merge Policy]** växla.
+>Vid aktivering *målgrupper för personalisering på samma sida och nästa sida*, målgrupperna *måste* använda [policy för aktiv-på-edge-sammanfogning](../../../segmentation/ui/segment-builder.md#merge-policies). The [!DNL active-on-edge] sammanfogningspolicy säkerställer att målgrupper utvärderas kontinuerligt [på kanten](../../../segmentation/ui/edge-segmentation.md) och finns tillgängliga för användning av personalisering i realtid och på nästa sida.  Läs om [alla tillgängliga användningsfall](#parameter), baserat på implementeringstyp.
+>Om du kopplar ut målgrupper som använder en annan sammanfogningspolicy till Adobe Target-destinationer, kommer dessa målgrupper inte att utvärderas för användning i realtid och på nästa sida.
+>Följ instruktionerna på [skapa en sammanfogningsprincip](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy)och se till att aktivera **[!UICONTROL Active-On-Edge Merge Policy]** växla.
 
 
 | Målgruppsursprung | Stöds | Beskrivning |
