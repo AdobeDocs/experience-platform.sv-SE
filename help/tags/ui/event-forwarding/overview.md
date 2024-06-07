@@ -1,12 +1,12 @@
 ---
 title: Översikt över vidarebefordran av händelser
-description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra uppgifter utan att ändra taggimplementeringen.
+description: Lär dig mer om vidarebefordran av händelser i Adobe Experience Platform, där du kan använda Platform Edge Network för att utföra åtgärder utan att ändra taggimplementeringen.
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 31811b7448a285ee5d25872641354a6981c64471
+source-git-commit: 16f9ee9d14326f857b444c2361b894aca06b04d6
 workflow-type: tm+mt
-source-wordcount: '1151'
-ht-degree: 2%
+source-wordcount: '1169'
+ht-degree: 0%
 
 ---
 
@@ -112,6 +112,12 @@ The [!UICONTROL Actions] -avsnittet i en regel för vidarebefordran av händelse
 ## Hemligheter {#secrets}
 
 Med händelsevidarebefordran kan du skapa, hantera och lagra hemligheter som kan användas för att autentisera till de servrar som du skickar data till. Se guiden på [hemligheter](./secrets.md) på olika typer av tillgängliga hemliga typer och hur de implementeras i användargränssnittet.
+
+## Videoöversikt {#video}
+
+Följande video är tänkt att hjälpa dig att förstå händelsevidarebefordran och Real-Time CDP-anslutningar bättre.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3429308)
 
 ## Nästa steg
 
