@@ -3,11 +3,10 @@ title: Innehålls-API-slutpunkt
 description: Lär dig hur du hämtar åtkomstdata med Privacy Services-API:t.
 role: Developer
 badgePrivateBeta: label="Privat beta" type="Informative"
-hide: true
-hidefromtoc: true
-source-git-commit: c527771e051d39032642afae33945a45e5183a5f
+exl-id: b3b7ea0f-957d-4e51-bf92-121e9ae795f5
+source-git-commit: e3a453ad166fe244b82bd1f90e669579fcf09d17
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '696'
 ht-degree: 0%
 
 ---
@@ -18,15 +17,13 @@ ht-degree: 0%
 >
 >The `/content` slutpunkten finns för närvarande i betaversion och din organisation har kanske inte åtkomst till den än. Funktionen och dokumentationen kan komma att ändras.
 
-<!-- Q) Should this be called 'access information' or 'customer content'? -->
-
-Få bättre säkerhet när du hämtar &#39;åtkomstinformation&#39; (den information som en privatperson kan begära åtkomst till). Hämtnings-URL:en som anges i svaret på en `/jobs/{JOB_ID}` GET-förfrågan pekar nu på en Adobe-tjänstslutpunkt. Du kan sedan göra en GET-förfrågan till `/jobs/:JOB_ID/content` för att returnera kunddata i JSON-format. Den här åtkomstmetoden implementerar flera lager av autentisering och åtkomstkontroll för att förbättra säkerheten.
+Använd `/content` slutpunkt för säker hämtning *åtkomstinformation* (den information som en privatperson kan begära åtkomst till) för dina kunder. Hämtnings-URL:en som anges i svaret på en `/jobs/{JOB_ID}` GET-förfrågan pekar på en Adobe-tjänstslutpunkt. Du kan sedan göra en GET-förfrågan till `/jobs/:JOB_ID/content` för att returnera kunddata i JSON-format. Den här åtkomstmetoden implementerar flera lager av autentisering och åtkomstkontroll för att förbättra säkerheten.
 
 Innan du använder den här handboken bör du läsa [komma igång-guide](./getting-started.md) om du vill ha information om de autentiseringshuvuden som visas i exemplet på API-anrop nedan.
 
 >[!TIP]
 >
->Om du inte känner till jobb-ID:t för den åtkomstinformation du behöver kan du ringa `/jobs`slutpunkt och använd ytterligare frågeparametrar för att filtrera resultatet. En fullständig lista över tillgängliga frågeparametrar finns i [slutpunktshandbok för sekretessjobb](./privacy-jobs.md).
+>Om du inte känner till jobb-ID:t för den åtkomstinformation du behöver kan du ringa `/jobs` slutpunkt och använd ytterligare frågeparametrar för att filtrera resultatet. En fullständig lista över tillgängliga frågeparametrar finns i [slutpunktshandbok för sekretessjobb](./privacy-jobs.md).
 
 ## Hämta information om sekretessjobb
 
@@ -81,7 +78,7 @@ Ett lyckat svar returnerar information om det angivna jobbet.
         "processedDate":"04/12/2024 04:08 PM GMT",
         "productStatusResponse":{"status":"submitted"
         }}],
-    "downloadUrl":"https://platform-stage.adobe.io/data/core/privacy/jobs/dbe3a6a6-f8e6-11ee-a365-8d1d6df81cc5/content",
+    "downloadUrl":"https://platform.adobe.io/data/core/privacy/jobs/dbe3a6a6-f8e6-11ee-a365-8d1d6df81cc5/content",
     "regulation":"gdpr"
 }
 ```
@@ -144,10 +141,3 @@ curl -X GET \
 
 Svaret är en zip-fil (*.zip). Informationen returneras vanligtvis i JSON-format, men det kan inte garanteras. Extraherade data kan returneras i vilket format som helst.
 
-<!-- ## Constraints {#constraints}
-
-During this private beta, the following constraints apply when using the `/content` endpoint:
-
-- The new `/content` download URL is only available in STAGE environments. It is not yet available in PROD environments
-- The `downloadUrl` should not be present in the JSON response unless the job has a `complete` status. Within the beta, the `downloadUrl` appears before a privacy job is complete.
-- The `downloadUrl` is also currently provided for `delete` jobs (which should never have a download URL). -->
