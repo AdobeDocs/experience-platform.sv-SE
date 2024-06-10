@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Mappningsfunktioner för dataförinställningar
 description: I det här dokumentet introduceras de mappningsfunktioner som används med Data Prep.
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: ac90dc055a1e4d1d8127899f668e619deab2d19e
+source-git-commit: 6509447ff2e67eac7b6b41754981cd18eb52562e
 workflow-type: tm+mt
-source-wordcount: '5792'
-ht-degree: 1%
+source-wordcount: '5805'
+ht-degree: 0%
 
 ---
 
@@ -25,11 +25,13 @@ Om ett fältnamn inte följer den här regeln måste fältnamnet omslutas med `$
 >
 >Vid interaktion med hierarkier, om ett underordnat attribut har en punkt (`.`) måste du använda ett omvänt snedstreck (`\`) för att undvika specialtecken. Mer information finns i guiden [ta bort specialtecken](home.md#escape-special-characters).
 
-Om ett fältnamn dessutom är **alla** av följande reserverade nyckelord måste omslutas med `${}`:
+Om ett fältnamn är **alla** av följande reserverade nyckelord måste omslutas med `${}{}`:
 
 ```console
-new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return, _errors
+new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return, _errors, do, function, empty, size
 ```
+
+Dessutom innehåller reserverade nyckelord alla mappningsfunktioner som listas på den här sidan.
 
 Du kan komma åt data i underfält genom att använda punktnotation. Om det till exempel finns en `name` -objekt, för att komma åt `firstName` fält, använda `name.firstName`.
 
@@ -60,9 +62,9 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | höger | Hämtar de sista n-tecknen i den angivna strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du hämtar de sista n-tecknen för.</li><li>ANTAL: **Obligatoriskt** De n-tecken som du vill hämta från strängen.</li></ul> | right(STRING, COUNT) | right(&quot;abcde&quot;, 2) | &quot;de&quot; |
 | ltrim | Tar bort mellanrummet från början av strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | ltrim(STRING) | ltrim(&quot; hello&quot;) | &quot;hello&quot; |
 | rtrim | Tar bort mellanrummet från strängens slut. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | rtrim(STRING) | rtrim(&quot;hello &quot;) | &quot;hello&quot; |
-| trim | Tar bort mellanrummet från början och slutet av strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | trim(STRING) | trim(&quot; hello &quot;) | &quot;hello&quot; |
-| är lika med | Jämför två strängar för att bekräfta om de är lika. Den här funktionen är skiftlägeskänslig. | <ul><li>STRING1: **Obligatoriskt** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatoriskt** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equals( &#x200B; STRING2) | &quot;string1&quot;. &#x200B;equals &#x200B;(&quot;STRING1&quot;) | falskt |
-| equalsIgnoreCase | Jämför två strängar för att bekräfta om de är lika. Funktionen är **not** skiftlägeskänslig. | <ul><li>STRING1: **Obligatoriskt** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatoriskt** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equalsIgnoreCase &#x200B;(STRING2) | &quot;string1&quot;. &#x200B;equalsIgnoreCase &#x200B;(&quot;STRING1) | sant |
+| trimma | Tar bort mellanrummet från början och slutet av strängen. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill ta bort mellanrummet från.</li></ul> | trim(STRING) | trim(&quot; hello &quot;) | &quot;hello&quot; |
+| är lika med | Jämför två strängar för att bekräfta om de är lika. Den här funktionen är skiftlägeskänslig. | <ul><li>STRING1: **Obligatoriskt** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatoriskt** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equals( &#x200B; STRING2) | &quot;string1&quot;. &#x200B;equals &#x200B;(&quot;STRING1&quot;) | false |
+| equalsIgnoreCase | Jämför två strängar för att bekräfta om de är lika. Funktionen är **not** skiftlägeskänslig. | <ul><li>STRING1: **Obligatoriskt** Den första strängen som du vill jämföra.</li><li>STRING2: **Obligatoriskt** Den andra strängen som du vill jämföra.</li></ul> | STRING1. &#x200B;equalsIgnoreCase &#x200B;(STRING2) | &quot;string1&quot;. &#x200B;equalsIgnoreCase &#x200B;(&quot;STRING1) | true |
 
 {style="table-layout:auto"}
 
@@ -71,7 +73,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 | Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | extract_regex | Extraherar grupper från indatasträngen baserat på ett reguljärt uttryck. | <ul><li>STRING: **Obligatoriskt** Strängen som du extraherar grupperna från.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du vill att gruppen ska matcha.</li></ul> | extract_regex(STRING, REGEX) | extract_regex &#x200B;(&quot;E259,E259B_009,1_1&quot; &#x200B;, &quot;([^,]+),[^,]*,([^,]+)&quot; | [&quot;E259,E259B_009,1_1&quot;, &quot;E259&quot;, &quot;1_1&quot;] |
-| match_regex | Kontrollerar om strängen matchar det inmatade reguljära uttrycket. | <ul><li>STRING: **Obligatoriskt** Strängen som du kontrollerar matchar det reguljära uttrycket.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du jämför med.</li></ul> | match_regex(STRING, REGEX) | match_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot; | sant |
+| match_regex | Kontrollerar om strängen matchar det inmatade reguljära uttrycket. | <ul><li>STRING: **Obligatoriskt** Strängen som du kontrollerar matchar det reguljära uttrycket.</li><li>REGEX: **Obligatoriskt** Det reguljära uttryck som du jämför med.</li></ul> | match_regex(STRING, REGEX) | match_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot; | true |
 
 {style="table-layout:auto"}
 
@@ -117,7 +119,7 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 | Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| now | Hämtar aktuell tid. | | now() | now() | `2021-10-26T10:10:24Z` |
+| nu | Hämtar aktuell tid. | | now() | now() | `2021-10-26T10:10:24Z` |
 | tidsstämpel | Hämtar aktuell Unix-tid. | | timestamp() | timestamp() | 1571850624571 |
 | format | Formaterar indatadatum enligt ett angivet format. | <ul><li>DATUM: **Obligatoriskt** Indatadatum, som ett ZonedDateTime-objekt, som du vill formatera.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att datumet ska ändras till.</li></ul> | format(DATE, FORMAT) | format(2019-10-23T11):24:00+00:00, &quot;`yyyy-MM-dd HH:mm:ss`&quot;) | `2019-10-23 11:24:35` |
 | dformat | Konverterar en tidsstämpel till en datumsträng enligt ett angivet format. | <ul><li>TIDSSTÄMPEL: **Obligatoriskt** Tidsstämpeln som du vill formatera. Detta skrivs i millisekunder.</li><li>FORMAT: **Obligatoriskt** Det format som du vill att tidsstämpeln ska bli.</li></ul> | dformat(TIMESTAMP, FORMAT) | dformat(1571829875000, &quot;`yyyy-MM-dd'T'HH:mm:ss.SSSX`&quot;) | `2019-10-23T11:24:35.000Z` |
@@ -140,11 +142,11 @@ I följande tabeller visas alla mappningsfunktioner som stöds, inklusive exempe
 
 | Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | falskt |
+| is_empty | Kontrollerar om ett objekt är tomt eller inte. | <ul><li>INMATNING: **Obligatoriskt** Objektet som du försöker kontrollera är tomt.</li></ul> | is_empty(INPUT) | `is_empty([1, null, 2, 3])` | false |
 | arrayer_to_object | Skapar en lista med objekt. | <ul><li>INMATNING: **Obligatoriskt** En gruppering av nyckel- och matrispar.</li></ul> | arrayer_to_object(INPUT) | `arrays_to_objects('sku', explode("id1\|id2", '\\\|'), 'price', [22.5,14.35])` | ```[{ "sku": "id1", "price": 22.5 }, { "sku": "id2", "price": 14.35 }]``` |
 | to_object | Skapar ett objekt baserat på de platta nyckel-/värdepar som anges. | <ul><li>INMATNING: **Obligatoriskt** En platt lista med nyckel/värde-par.</li></ul> | to_object(INPUT) | to_object &#x200B;(&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
 | str_to_object | Skapar ett objekt från indatasträngen. | <ul><li>STRING: **Obligatoriskt** Strängen som tolkas för att skapa ett objekt.</li><li>VALUE_DELIMITER: *Valfritt* Avgränsaren som skiljer ett fält från värdet. Standardavgränsaren är `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fältvärdepar. Standardavgränsaren är `,`.</li></ul> | str_to_object &#x200B;(STRING, VALUE_DELIMITER, FIELD_DELIMITER) **Anteckning**: Du kan använda `get()` fungerar tillsammans med `str_to_object()` om du vill hämta värden för nycklarna i strängen. | <ul><li>Exempel 1: str_to_object(&quot;firstName - John ; lastName - ; - 123 345 7890&quot;, &quot;-&quot;, &quot;;&quot;)</li><li>Exempel 2: str_to_object(&quot;firstName - John ; lastName - ; phone - 123 456 7890&quot;, &quot;-&quot;, &quot;;&quot;).get(&quot;firstName&quot;)</li></ul> | <ul><li>Exempel 1:`{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}`</li><li>Exempel 2: &quot;John&quot;</li></ul> |
-| contains_key | Kontrollerar om objektet finns i källdata. **Obs!** Den här funktionen ersätter den borttagna `is_set()` funktion. | <ul><li>INMATNING: **Obligatoriskt** Sökvägen som ska kontrolleras om den finns i källdata.</li></ul> | contains_key(INPUT) | contains_key(&quot;evar.evar.field1&quot;) | sant |
+| contains_key | Kontrollerar om objektet finns i källdata. **Obs!** Den här funktionen ersätter den borttagna `is_set()` funktion. | <ul><li>INMATNING: **Obligatoriskt** Sökvägen som ska kontrolleras om den finns i källdata.</li></ul> | contains_key(INPUT) | contains_key(&quot;evar.evar.field1&quot;) | true |
 | null | Anger värdet för attributet till `null`. Detta bör användas när du inte vill kopiera fältet till målschemat. | | nullify() | nullify() | `null` |
 | get_keys | Tolkar nyckel/värde-paren och returnerar alla nycklar. | <ul><li>OBJEKT: **Obligatoriskt** Det objekt som nycklarna ska extraheras från.</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;: &quot;Pride and Prekurce&quot;, &quot;book2&quot;: &quot;1984&quot;}) | `["book1", "book2"]` |
 | get_values | Tolkar nyckel/värde-paren och returnerar värdet för strängen baserat på den angivna nyckeln. | <ul><li>STRING: **Obligatoriskt** Strängen som du vill tolka.</li><li>NYCKEL: **Obligatoriskt** Nyckeln som värdet ska extraheras för.</li><li>VALUE_DELIMITER: **Obligatoriskt** Avgränsaren som avgränsar fältet och värdet. Om någon av `null` eller en tom sträng anges, är värdet `:`.</li><li>FIELD_DELIMITER: *Valfritt* Avgränsaren som avgränsar fält- och värdepar. Om någon av `null` eller en tom sträng anges, är värdet `,`.</li></ul> | get_values(STRING, KEY, VALUE_DELIMITER, FIELD_DELIMITER) | get_values(\&quot;firstName - John, lastName - Cena, phone - 555 420 8692\&quot;, \&quot;firstName\&quot;, \&quot;-\&quot;, \&quot;,\&quot;) | John |
@@ -275,7 +277,7 @@ Mer information om enhetsfältvärden finns i [lista med enhetsfältvärden](#de
 | Funktion | Beskrivning | Parametrar | Syntax | Uttryck | Exempelutdata |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | ua_os_name | Extraherar operativsystemets namn från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_os_name &#x200B;(USER_AGENT) | ua_os_name &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
-| ua_os_version_major | Extraherar operativsystemets huvudversion från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_os_version_major &#x200B;(USER_AGENT) | ua_os_version_major &#x200B; s(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
+| ua_os_version_major | Extraherar operativsystemets huvudversion från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_os_version_major &#x200B;(USER_AGENT) | ua_os_version_major &#x200B; s(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | IOS 5 |
 | ua_os_version | Hämtar operativsystemets version från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_os_version &#x200B;(USER_AGENT) | ua_os_version &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
 | ua_os_name_version | Hämtar operativsystemets namn och version från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_os_name_version &#x200B;(USER_AGENT) | ua_os_name_version &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
 | ua_agent_version | Hämtar agentversionen från användaragentsträngen. | <ul><li>USER_AGENT: **Obligatoriskt** Användaragentsträngen.</li></ul> | ua_agent_version &#x200B;(USER_AGENT) | ua_agent_version &#x200B;(&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5,1 |
