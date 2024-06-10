@@ -5,9 +5,9 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: a6bc9c5d2b4ec9032c70dcf625075e5d3e0442cc
+source-git-commit: e0f4ee0ae0f14df43bfe36375d8fe8e9eac79369
 workflow-type: tm+mt
-source-wordcount: '1223'
+source-wordcount: '1224'
 ht-degree: 0%
 
 ---
@@ -216,6 +216,7 @@ ht-degree: 0%
    * [Översikt](./destination-sdk/overview.md)
    * [Krav för integrering](./destination-sdk/integration-prerequisites.md)
    * [Komma igång med Destination SDK](./destination-sdk/getting-started.md)
+   * [Ordlista](/help/destinations/destination-sdk/glossary.md)
    * Funktionalitet {#functionality}
       * [Konfigurationsalternativ](./destination-sdk/functionality/configuration-options.md)
       * Målserverkomponenter {#destination-server}

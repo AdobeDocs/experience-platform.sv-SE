@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API:er som gör att du kan konfigurera målintegreringsmönster så att Experience Platform kan leverera målgrupps- och profildata till din slutpunkt eller lagringsplats, baserat på vilka data- och autentiseringsformat du väljer. Konfigurationerna lagras i Experience Platform och kan hämtas via API för ytterligare uppdateringar.
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 34ae6f0f791a40584c2d476ed715bb7c5b733c42
+source-git-commit: 9c59f6edd51c61c1fe2ff69e0adea49e6efb8745
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,88 @@ Adobe Experience Platform Destination SDK är en uppsättning konfigurations-API
 I dokumentationen till Destinationen SDK finns instruktioner om hur du kan använda Adobe Experience Platform Destinationen SDK för att konfigurera, testa och släppa en produktanpassad målintegration med Adobe Experience Platform, och få destinationen att bli en del av den ständigt växande destinationskatalogen. Genom att använda Destination SDK kan du även skapa ett eget, anpassat privat mål för att exportera data som är anpassade efter dina behov.
 
 ![Skärmbild från användargränssnittet i Experience Platform som visar målkatalogen.](assets/destinations-catalog-overview.png)
+
+## Snabbstart - utforska viktig information {#quick-start}
+
+Läs igenom dokumentationen på länkarna nedan för att snabbt komma igång med att konfigurera och skicka ditt mål via Destination SDK.
+
+>[!BEGINSHADEBOX]
+
+<table style="border: 0;">
+  <tbody>
+    <tr>
+        <td>
+            <p><b>Konfigurationssidor</b></p>
+            <ul>
+                <li><a href="/help/destinations/destination-sdk/functionality/configuration-options.md">Alla konfigurationsalternativ förklaras</a></li>
+                <li> Målserverkonfiguration - <a href="/help/destinations/destination-sdk/functionality/destination-server/server-specs.md">serverspecifikationer</a> och <a href="/help/destinations/destination-sdk/functionality/destination-server/templating-specs.md">mallange specifikationer</a></li>
+                <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/customer-data-fields.md">Kunddatafält och andra målkonfigurationskomponenter</a></li>
+                <li><a href="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">Mallar och makron</a></li>
+            </ul>
+        </td>
+        <td>
+            <p><b>Användarhandböcker</b></p>
+            <ul>
+                <li><a href="/help/destinations/destination-sdk/overview.md#process">Integrationsprocess på hög nivå</a></li>
+                <li><a href="/help/destinations/destination-sdk/guides/configure-destination-instructions.md">Konfigurera ett mål för direktuppspelning</a></li>
+                <li><a href="/help/destinations/destination-sdk/guides/configure-file-based-destination-instructions.md">Konfigurera ett filbaserat mål</a></li>
+                <li><a href="/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md">Konfigurera ett mål för att exportera profiler för potentiella kunder</a></li>
+                <li><a href="/help/destinations/destination-sdk/guides/submit-destination.md">Skicka mål för publicering</a></li>
+            </ul>
+        </td>
+                <td>
+            <p><b>API-referenser</b></p>
+            <ul>
+                <li><a href="https://developer.adobe.com/experience-platform-apis/references/destination-authoring/#tag/Destination-servers-and-templates">API-referens för målserverns slutpunkt</a></li>
+                <li><a href="https://developer.adobe.com/experience-platform-apis/references/destination-authoring/#tag/Destination-configurations">API-referens för målslutpunkt</a></li>
+                <li><a href="https://developer.adobe.com/experience-platform-apis/references/destination-authoring/#tag/Audience-metadata-templates">API-referens för målgruppsmetadata</a></li>
+                <li><a href="https://developer.adobe.com/experience-platform-apis/references/destination-authoring/#tag/Destination-testing">Testa API-referens</a></li>
+                <li><a href="https://developer.adobe.com/experience-platform-apis/references/destination-authoring/#tag/Destination-publishing">API-referens för målpublicering</a></li>
+            </ul>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="border: 0;">
+  <tbody>
+    <tr>
+        <td>
+            <p><b>Konfigurera ett mål för direktuppspelning - kalkylblad</b></p>
+            <ul>
+                <li><a href="/help/destinations/destination-sdk/guides/configure-destination-instructions.md">Konfigurera en guide för direktuppspelningsmål från början till slut</a></li>
+                <li><a href="/help/destinations/destination-sdk/functionality/destination-server/message-format.md">Förstå dataomvandling via mallar</a> och <a href="/help/destinations/destination-sdk/functionality/destination-server/supported-functions.md">visa mallfunktioner som stöds</a></li>
+                <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/aggregation-policy.md">Förstå policyer för dataaggregering</a></li>
+                <li><a href="https://experienceleague.adobe.com/en/docs/experience-platform/destinations/destination-sdk/functionality/destination-server/message-format">Exempel på Live-konfiguration</a></li>
+                <li><a href="/help/destinations/destination-sdk/testing-api/streaming-destinations/streaming-destination-testing-overview.md">Testa strömningsmålet</a></li>
+            </ul>
+        </td>
+        <td>
+            <p><b>Konfigurera ett filbaserat mål - kalkylblad</b></p>
+            <ul>
+                <li><a href="/help/destinations/destination-sdk/guides/configure-file-based-destination-instructions.md">Konfigurera en filbaserad målguide från början till slut</a></li>
+                <li><a href="/help/destinations/destination-sdk/guides/batch/configure-file-formatting-options.md">Konfigurera filformat för de exporterade filerna</a></li>
+                <li><a href="/help/destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md">Exempel på Live-konfiguration för ett Amazon S3-mål</a></li>
+                <li><a href="/help/destinations/destination-sdk/functionality/destination-configuration/batch-configuration.md">Batchkonfiguration</a> för filexportschema och filnamn</li>
+                <li><a href="/help/destinations/destination-sdk/testing-api/batch-destinations/file-based-destination-testing-overview.md">Testa ditt filbaserade mål</a></li>
+            </ul>
+        </td>
+        <td>
+            <p><b>Annan viktig information</b></p>
+            <ul>
+                <li><a href="/help/destinations/destination-sdk/getting-started.md#obtain-authentication-credentials">Hämta nödvändiga autentiseringsuppgifter för att använda API:t</a></li>
+                <li><a href="/help/destinations/destination-sdk/integration-prerequisites.md">Krav för integrering</a></li>
+                <li><a href="/help/destinations/destination-sdk/glossary.md">Destinationens SDK ordlista</a></li>                
+                <li><a href="/help/destinations/destination-sdk/functionality/rate-limiting-retry-policy.md">Klassificeringsgränser och återförsöksprincip</a></li>
+                <li><a href="/help/destinations/destination-sdk/docs-framework/self-service-template.md">Självbetjäningsmall för att dokumentera destinationen</a></li>
+            </ul>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+
+>[!ENDSHADEBOX]
 
 ## Producerade och anpassade integreringar {#productized-custom-integrations}
 
@@ -83,6 +165,6 @@ Hur du konfigurerar ditt mål i Experience Platform beskrivs nedan:
 
 Adobe rekommenderar att du läser och förstår följande Experience Platform-dokumentation:
 
-* [Översikt över Adobe Experience Platform destinationer](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.htmll?lang=sv)
+* [Översikt över Adobe Experience Platform destinationer](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html)
 * [Grundläggande om XDM-schemakomposition](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html)
-* [Översikt över namnområde för identitet](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv)
+* [Översikt över namnområde för identitet](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html)

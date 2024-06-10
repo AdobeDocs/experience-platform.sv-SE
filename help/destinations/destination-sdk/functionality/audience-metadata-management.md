@@ -2,9 +2,9 @@
 description: Använd metadatamallar för att programmässigt skapa, uppdatera eller ta bort målgrupper i er målgrupp. Adobe tillhandahåller en utbyggbar metadatamall för målgrupper, som du kan konfigurera baserat på specifikationerna för ditt marknadsförings-API. När du har definierat, testat och skickat in mallen används den av Adobe för att strukturera API-anropen till ditt mål.
 title: Hantering av målgruppsmetadata
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: 3660c3a342af07268d2ca2c907145df8237872a1
 workflow-type: tm+mt
-source-wordcount: '1037'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
@@ -523,7 +523,7 @@ Observera att i vissa exempel kan makrofält som `{{authData.accessToken}}` elle
 
 Hitta beskrivningar av alla parametrar i mallen i [Skapa en målgruppsmall](../metadata-api/create-audience-template.md) API-referens.
 
-## Makron som används i mallar för målgruppsmetadata
+## Makron som används i mallar för målgruppsmetadata {#macros}
 
 För att skicka information som målgrupps-ID:n, åtkomsttoken, felmeddelanden med mera mellan Experience Platform och ditt API innehåller målgruppsmallarna makron som du kan använda. Läs nedan en beskrivning av makrona som används i de tre konfigurationsexemplen på den här sidan:
 
