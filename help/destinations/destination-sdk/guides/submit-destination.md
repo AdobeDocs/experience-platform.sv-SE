@@ -2,9 +2,9 @@
 description: På den här sidan finns all information du behöver för att kunna granska en produkterad målplats som skapats med Destination SDK.
 title: Skicka för granskning av ett produkterat mål som skapats i Destination SDK
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: b66a50e40aaac8df312a2c9a977fb8d4f1fb0c80
+source-git-commit: 2c778f98815af87453e84f24ba8bf077774349a1
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1032'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,8 @@ ht-degree: 0%
 >* Om Adobe-teamet frågar om du vill göra några uppdateringar av dina konfigurationer efter ditt ursprungliga inskick, måste du skicka in en ny begäran om destinationspublicering när du har gjort uppdateringarna.
 >
 >* Även efter att målet finns i Experience Platform-katalogen måste du, om du behöver göra några uppdateringar av dina konfigurationer, skicka en ny begäran om målpublicering för att uppdateringarna ska återspeglas i konfigurationerna.
+>
+>* Tidslinjen för granskningen och nödvändiga artefakter är desamma för nya destinationer och befintliga destinationer som du uppdaterar.
 
 Innan destinationen kan publiceras på [Experience Platform destinationskatalog](/help/destinations/catalog/overview.md)måste du ge Adobe viss information om destinationen och testningen du utförde för att säkerställa att användarna får bästa möjliga upplevelse när de aktiverar data till din plattform.
 
@@ -57,7 +59,7 @@ Ge en kort beskrivning av problemet som ditt bidrag löser för det befintliga m
 
 ## Testresultat efter användning av testmåls-API {#testing-api-response}
 
-Tillhandahåll testresultat efter användning av [API för testmål](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) slutpunkt för att utföra ett HTTP-anrop till målet. Det inkluderar:
+Tillhandahåll testresultat efter användning av [API för testmål](../testing-api/streaming-destinations/streaming-destination-testing-overview.md) slutpunkt för att utföra ett HTTP-anrop till målet. Detta omfattar följande:
 
 * Den fullständiga API-begäran (huvuden och brödtext) som görs till målslutpunkten med hjälp av testnings-API:t.
 * API-svaret som togs emot från målslutpunkten.
