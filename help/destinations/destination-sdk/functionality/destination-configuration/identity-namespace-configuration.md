@@ -2,9 +2,9 @@
 description: Lär dig hur du konfigurerar målidentiteter som stöds för mål som skapats med Destination SDK.
 title: Konfiguration av namnutrymme för identitet
 exl-id: 30c0939f-b968-43db-b09b-ce5b34349c6e
-source-git-commit: 20fb966c4cc8a2b09ea64da3e688688b34a0b5d1
+source-git-commit: 606685c1f0b607ca586e477cb9825ec551d537cc
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '913'
 ht-degree: 0%
 
 ---
@@ -13,11 +13,15 @@ ht-degree: 0%
 
 Experience Platform använder ID-namnutrymmen för att beskriva typen av specifika identiteter. Ett identitetsnamnutrymme som till exempel kallas `Email` identifierar ett värde `name@email.com` som en e-postadress.
 
-När du skapar mål för realtidsdirektuppspelning via Destination SDK, förutom [konfigurera ett partnerschema](schema-configuration.md) som användare kan mappa profilattribut och identiteter till, måste du också definiera de identitetsnamnutrymmen som stöds av målplattformen. Om målplattformen till exempel accepterar hash-kodade e-postmeddelanden och [!DNL IDFA]måste du definiera dessa två identiteter som [beskrivs närmare i det här dokumentet](#supported-parameters).
+Beroende på vilken typ av mål du skapar (direktuppspelning eller filbaserad) bör du tänka på följande krav för identitetsnamnutrymme:
 
-När användare aktiverar målgrupper för direktuppspelningsmål måste de också mappa mål-ID:n, förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
+* När du skapar mål för realtidsdirektuppspelning via Destination SDK, förutom [konfigurera ett partnerschema](schema-configuration.md) till vilka användare kan mappa profilattribut och identiteter måste du också definiera *minst en* Identitetsnamnutrymmen som stöds av målplattformen. Om målplattformen till exempel accepterar hash-kodade e-postmeddelanden och [!DNL IDFA]måste du definiera dessa två identiteter som [beskrivs närmare i det här dokumentet](#supported-parameters).
 
-När du skapar ett filbaserat mål via Destination SDK är konfigurationen av identitetsnamnutrymmen valfri.
+  >[!IMPORTANT]
+  >
+  >När målgrupper aktiveras för direktuppspelningsmål måste användarna också mappa _minst en målidentitet_ förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
+
+* När du skapar filbaserade mål via Destination SDK är konfigurationen för identitetsnamnutrymmen _valfri_.
 
 Mer information om identitetsnamnutrymmen i Experience Platform finns i [dokumentation för identitetsnamnutrymmen](../../../../identity-service/features/namespaces.md).
 

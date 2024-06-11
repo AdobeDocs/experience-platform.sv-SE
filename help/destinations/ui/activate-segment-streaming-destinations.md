@@ -3,9 +3,9 @@ title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: f741e62b3340b743e465edf3f7a007580b3f61be
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1079'
 ht-degree: 0%
 
 ---
@@ -62,6 +62,10 @@ Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 >[!IMPORTANT]
 >
 >Det här steget gäller endast vissa målgruppsmål för direktuppspelning. Om målet inte har en **[!UICONTROL Mapping]** steg, hoppa till [målgruppsplanering](#scheduling).
+>
+>När du aktiverar målgrupper till direktuppspelningsmål måste du också mappa *minst ett namnutrymme för målidentitet*förutom målprofilsattribut. Annars aktiveras inte målgrupperna till målplattformen.
+> ![Bild av mappningssteg som visar en obligatorisk namnutrymmesmappning för identitet.](../assets/ui/activate-segment-streaming-destinations/identity-mapping-mandatory.png) {zoomable="yes"}
+
 
 Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut eller identitetsnamnutrymmen som ska mappas som målidentiteter i målet.
 
