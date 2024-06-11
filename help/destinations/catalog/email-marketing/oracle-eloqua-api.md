@@ -3,9 +3,9 @@ title: (API) Oraclena Eloqua-anslutning
 description: Med API-Oraclet Eloqua kan du exportera dina kontouppgifter och aktivera dem i Oracle Eloqua efter dina affärsbehov.
 last-substantial-update: 2023-03-14T00:00:00Z
 exl-id: 97ff41a2-2edd-4608-9557-6b28e74c4480
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: cf7ad18fa3d8f074371a0f03e09e218d37be5e01
 workflow-type: tm+mt
-source-wordcount: '1965'
+source-wordcount: '1956'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Detta [!DNL Adobe Experience Platform] [mål](/help/destinations/home.md) utnytt
 
 [!DNL Oracle Eloqua] använder [Grundläggande autentisering](https://docs.oracle.com/en/cloud/saas/marketing/eloqua-rest-api/Authentication_Basic.html) att kommunicera med [!DNL Oracle Eloqua] REST API. Instruktioner för hur du autentiserar [!DNL Oracle Eloqua] -instansen är längre ned, i [Autentisera till mål](#authenticate) -avsnitt.
 
-## Användningsfall {#use-cases}
+## Användningsexempel {#use-cases}
 
 Marknadsföringsavdelningen på en onlineplattform vill sända en e-postbaserad marknadsföringskampanj till en välstrukturerad publik med leads. Plattformens marknadsföringsteam kan uppdatera befintlig huvudinformation via Adobe Experience Platform, bygga målgrupper utifrån sina egna offlinedata och skicka dessa målgrupper till [!DNL Oracle Eloqua]som sedan kan användas för att skicka marknadsföringskampanjens e-post.
 
@@ -114,7 +114,8 @@ Om den angivna informationen är giltig visas en **[!UICONTROL Connected]** stat
 >id="platform_destinations_apioracleeloqua_pod"
 >title="Pod"
 >abstract="Logga in på Oracle Eloqua för att hitta ditt podnummer. Anteckna URL-adressen i webbläsaren när du har loggat in. "
->additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge Base - ta reda på ditt Pod-nummer"
+
+<!-- >additional-url="https://support.oracle.com/knowledge/Oracle%20Cloud/2307176_1.html" text="Oracle Knowledge base - find out your Pod number" -->
 
 Om du vill konfigurera information för målet fyller du i de obligatoriska och valfria fälten nedan. En asterisk bredvid ett fält i användargränssnittet anger att fältet är obligatoriskt.
 ![Skärmbild för användargränssnittet för plattformen som visar målinformationen.](../../assets/catalog/email-marketing/oracle-eloqua-api/destination-details.png)

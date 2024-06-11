@@ -1,22 +1,20 @@
 ---
 title: Översikt över regler för länkning av identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
-hide: true
-hidefromtoc: true
-badge: Alpha
+badge: Beta
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: f21b5519440f7ffd272361954c9e32ccca2ec2bc
+source-git-commit: 67b08acaecb4adf4d30d6d4aa7b8c24b30dfac2e
 workflow-type: tm+mt
-source-wordcount: '1022'
+source-wordcount: '1114'
 ht-degree: 0%
 
 ---
 
 # Översikt över regler för länkning av identitetsdiagram
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->Länkningsregler för identitetsdiagram finns för närvarande i Alpha. Funktionen och dokumentationen kan komma att ändras.
+>Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
 
 ## Innehållsförteckning
 
@@ -24,9 +22,9 @@ ht-degree: 0%
 * [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
 * [Exempel på scenarier](./example-scenarios.md)
 
-Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRM-ID. Det finns dock möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera profil&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.
+Med Adobe Experience Platform Identity Service och Real-Time Customer Profile är det enkelt att anta att dina data är perfekt insamlade och att alla sammanfogade profiler representerar en enskild person via en personidentifierare, till exempel ett CRM-ID. Det finns emellertid möjliga scenarier där vissa data kan försöka sammanfoga flera olika profiler till en enda profil (&quot;komprimera diagram&quot;). För att förhindra dessa oönskade sammanfogningar kan du använda konfigurationer som tillhandahålls via länkningsregler för identitetsdiagram och tillåta korrekt personalisering för dina användare.
 
-## Exempel på scenarier där profilkomprimering kan inträffa
+## Exempel på scenarier där komprimering av diagram kan inträffa
 
 * **Delad enhet**: Delad enhet avser enheter som används av flera personer. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer.
 * **Felaktiga e-post- och telefonnummer**: Felaktiga e-postadresser och telefonnummer hänvisar till slutanvändare som registrerar ogiltig kontaktinformation, till exempel&quot;test&quot;<span>@test.com för e-post och +1-111-111-1111 för telefonnummer.
@@ -34,81 +32,67 @@ Med Adobe Experience Platform Identity Service och Real-Time Customer Profile ä
 
 Mer information om användningsscenarier för länkningsregler för identitetsdiagram finns i dokumentet om [exempelscenarier](./example-scenarios.md).
 
-## Mål för länkningsregler för identitetsdiagram
+## Länkningsregler för identitetsdiagram {#identity-graph-linking-rules}
 
 Med länkningsregler för identitetsdiagram kan du:
 
-* Skapa ett enskilt identitetsdiagram/sammanfogad profil för varje användare genom att konfigurera unika namnutrymmen (gränser), vilket förhindrar att två olika personidentifierare sammanfogas i ett identitetsdiagram.
+* Skapa ett enskilt identitetsdiagram/sammanfogad profil för varje användare genom att konfigurera unika namnutrymmen, vilket förhindrar att två olika personidentifierare sammanfogas i ett identitetsdiagram.
 * Associera online-autentiserade händelser med personen genom att konfigurera prioriteringar
 
-### Gränser
+### Terminologi {#terminology}
 
-Ett unikt namnutrymme är en identifierare som representerar en individ, till exempel CRM-ID, inloggnings-ID och hashade e-post. Om ett namnutrymme har angetts som unikt kan ett diagram bara ha en identitet med det namnutrymmet (`limit=1`). Detta förhindrar sammanfogning av två olika personidentifierare i samma diagram.
+| Terminologi | Beskrivning |
+| --- | --- |
+| Unikt namnutrymme | Ett unikt namnutrymme är ett identitetsnamnutrymme som har ställts in för att vara distinkt i sammanhanget för ett identitetsdiagram. Du kan konfigurera ett namnutrymme så att det är unikt med användargränssnittet. När ett namnutrymme definieras som unikt kan ett diagram bara ha en identitet som innehåller det namnutrymmet. |
+| Namnområdesprioritet | Namnområdesprioritet avser den relativa vikten av namnutrymmen jämfört med varandra. Namnområdesprioriteten kan konfigureras via användargränssnittet. Du kan rangordna namnutrymmen i ett givet identitetsdiagram. När den är aktiverad används namnprioritet i olika scenarier, t.ex. indata för identitetsoptimeringsalgoritm och fastställande av primär identitet för upplevelsehändelsefragment. |
+| Identitetsoptimeringsalgoritm | Identitetsoptimeringsalgoritmen ser till att riktlinjer som skapas genom att konfigurera en unik namnområdes- och namnområdesprioritet används i ett givet identitetsdiagram. |
 
-* Om en gräns inte är konfigurerad kan det leda till oönskade diagramsammanfogningar, till exempel två identiteter med ett CRM ID-namnutrymme i ett diagram.
-* Om ingen gräns är konfigurerad kan diagrammet lägga till så många namnutrymmen som behövs så länge diagrammet finns inom skyddsritningarna (50 identiteter/diagram).
-* Om en gräns är konfigurerad ser identitetsoptimeringsalgoritmen till att gränsen upprätthålls.
+### Unikt namnutrymme {#unique-namespace}
 
-### Identitetsoptimeringsalgoritm
+Du kan konfigurera ett namnutrymme så att det blir unikt med hjälp av arbetsytan för identitetsinställningar i användargränssnittet. Om du gör det informeras identitetsoptimeringsalgoritmen om att ett visst diagram bara kan ha en identitet som innehåller det unika namnutrymmet. Detta förhindrar sammanfogning av två olika personidentifierare i samma diagram.
 
-Identitetsoptimeringsalgoritmen är en regel som ser till att begränsningarna upprätthålls. Algoritmen respekterar de senaste länkarna och tar bort de äldsta länkarna för att säkerställa att ett visst diagram hålls inom de gränser som du har definierat.
+Tänk på följande scenario:
 
-Nedan följer en lista över algoritmens konsekvenser för hur anonyma händelser kopplas till kända identifierare:
+* Scott använder en surfplatta och öppnar sin webbläsare Google Chrome för att gå till<span>.com, där han loggar in och bläddrar efter nya basketskor.
+   * Bakom scenerna loggar det här scenariot följande identiteter:
+      * Ett ECID-namnutrymme och -värde som representerar webbläsarens användning
+      * Ett CRM ID-namnutrymme och värde som representerar den autentiserade användaren (Scott loggade in med kombinationen användarnamn och lösenord).
+* Hans son Peter använder sedan samma surfplatta och använder också Google Chrome för att gå till Nike<span>.com, där han loggar in med sitt eget konto för att söka efter fotbollsutrustning.
+   * Bakom scenerna loggar det här scenariot följande identiteter:
+      * Samma ECID-namnutrymme och värde som representerar webbläsaren.
+      * Ett nytt CRM ID-namnutrymme och värde som representerar den autentiserade användaren.
 
-* ECID kopplas till den senast autentiserade användaren om följande villkor uppfylls:
-   * Om CRM-ID sammanfogas med ECID (delad enhet).
-   * Om begränsningar bara är konfigurerade till ett CRM-ID.
+Om CRM-ID har konfigurerats som ett unikt namnområde delas CRM-ID:n upp i två separata identitetsdiagram i identitetoptimeringsalgoritmen, i stället för att sammanfoga dem.
 
-Mer information finns i dokumentet om [algoritm för identitetsoptimering](./identity-optimization-algorithm.md).
+Om du inte konfigurerar ett unikt namnutrymme kan du få oönskade diagramsammanfogningar, till exempel två identiteter med samma CRM ID-namnutrymme, men olika identitetsvärden (scenarier som dessa representerar ofta två olika personenheter i samma diagram).
 
-### Prioritet
+Du måste konfigurera ett unikt namnutrymme för att informera algoritmen för identitetsoptimering om du vill tillämpa begränsningar för identitetsdata som hämtas till ett givet identitetsdiagram.
 
->[!IMPORTANT]
->
->Namnområdesprioriteter är för närvarande inte tillgängliga för alfa.
+### Namnområdesprioritet {#namespace-priority}
 
-Du kan använda namnutrymmesprioritet för att definiera vilka namnutrymmen som är viktigare än andra. Den prioritet som du anger för dina namnutrymmen används sedan för att definiera primära identiteter, vilket är den identitet som lagrar profilfragment (attribut och händelsedata) i kundprofilen i realtid. Om prioritetsinställningar har konfigurerats kommer den primära identitetsinställningen på Web SDK inte längre att användas för att avgöra vilka profilfragment som lagras.
+Namnområdesprioritet avser den relativa vikten av namnutrymmen jämfört med varandra. Namnområdesprioriteten kan konfigureras via användargränssnittet och du kan rangordna namnutrymmen i ett givet identitetsdiagram.
 
-* Gränser och prioritet är oberoende konfigurationer och gör **not** påverka varandra:
-   * Gränser är en konfiguration av identitetsdiagram i identitetstjänsten.
-   * Prioritet är en profilfragmentskonfiguration i kundprofilen i realtid.
-   * Prioritet gör **not** påverka säkerhetsstängningar för identitetsdiagramsystem.
+Ett sätt som namnområdesprioriteten används på är att fastställa den primära identiteten för händelsefragment (användarbeteende) i kundprofilen i realtid. Om prioritetsinställningar har konfigurerats kommer den primära identitetsinställningen på Web SDK inte längre att användas för att avgöra vilka profilfragment som lagras.
+
+Både unika namnutrymmen och namnområdesprioriteter kan konfigureras på arbetsytan för identitetsinställningar. Effekterna av deras konfigurationer är dock annorlunda:
+
+| | Identitetstjänst | Kundprofil i realtid |
+| --- | --- | --- |
+| Unikt namnutrymme | I identitetstjänsten refererar algoritmen för identitetsoptimering till unika namnutrymmen för att bestämma vilka identitetsdata som importeras till ett visst identitetsdiagram. | Unika namnutrymmen påverkar inte kundprofilen i realtid. |
+| Namnområdesprioritet | I identitetstjänsten avgör namnområdesprioriteten att rätt länkar tas bort för diagram som har flera lager. | När en upplevelsehändelse kapslas in i en profil blir det namnutrymme som har högst prioritet den primära identiteten för profilfragmentet. |
+
+* Namnområdesprioriteten påverkar inte diagrambeteendet när gränsen på 50 identiteter per diagram nås.
 * **Namnområdesprioriteten är ett numeriskt värde** som tilldelats ett namnutrymme som anger dess relativa betydelse. Detta är en egenskap för ett namnutrymme.
 * **Primär identitet är identiteten som ett profilfragment lagras mot**. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
-* Namnområdesprioriteten avgör den primära identiteten för upplevelsehändelser.
+* Namnområdesprioriteten avgör den primära identiteten för händelsesegment för upplevelser.
    * För profilposter kan du använda arbetsytan för scheman i användargränssnittet i Experience Platform för att definiera identitetsfält, inklusive den primära identiteten. Läs guiden på [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) för mer information.
 
->[!BEGINSHADEBOX]
-
-**Exempel på namnområdesprioritet**
-
-Anta att du har konfigurerat följande prioritet för dina namnutrymmen:
-
-1. CRM-ID: Representerar en användare.
-2. IDFA: Representerar en maskinvaruenhet från Apple, till exempel en iPhone och iPad.
-3. GAID: Representerar en maskinvaruenhet från Google, till exempel Google Pixel.
-4. ECID: Representerar en webbläsare, till exempel Firefox, Safari och Chrome.
-5. AAID: Representerar en webbläsare.
-Om ECID och AAID skickas samtidigt representerar båda identiteterna samma webbläsare (dubblett).
-
-Om följande upplevelsehändelser är inkapslade i Experience Platform lagras profilfragmenten mot namnutrymmet med högre prioritet.
-
-**Autentiserade händelser:**
-
-* Om identitetskartan innehåller ett ECID, ett GAID och ett CRM ID, lagras händelseinformationen mot CRM ID:t (primär identitet).
-   * GAID representerar en maskinvaruenhet från Google (t.ex. Google Pixel), ECID representerar en webbläsare (t.ex. Google Chrome) och CRM ID representerar en autentiserad användare.
-   * Om identitetskartan innehåller ett CRM-ID, ett ECID och ett AAID, lagras händelseinformationen mot CRM-ID:t (primär identitet).
-
-**Oautentiserade händelser:**
-
-* Om identitetskartan innehåller ett ECID, IDFA och AAID, lagras händelseinformationen mot IDFA (primär identitet).
-   * IDFA representerar en maskinvaruenhet från Apple (t.ex. iPhone), ECID och AAID representerar båda en webbläsare (Safari).
-
->[!ENDSHADEBOX]
+Mer information finns i guiden [namnområdesprioritet](./namespace-priority.md).
 
 ## Nästa steg
 
 Mer information om regler för länkning av identitetsdiagram finns i följande dokumentation:
 
-* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md)
-* [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md)
+* [Identitetsoptimeringsalgoritm](./identity-optimization-algorithm.md).
+* [Namnområdesprioritet](./namespace-priority.md).
+* [Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram](./example-scenarios.md).

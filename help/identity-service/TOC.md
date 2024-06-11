@@ -1,14 +1,14 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform Identity Service
-breadcrumb-title: Användarhandbok om Platform Identity Service
-user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personanpassade digitala upplevelser.
+breadcrumb-title: Handbok för Platform Identity Service
+user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personaliserade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 2afdfd54b420bcf59423ea64048d928422ea61c9
 workflow-type: tm+mt
-source-wordcount: '124'
-ht-degree: 23%
+source-wordcount: '126'
+ht-degree: 1%
 
 ---
 
@@ -40,6 +40,7 @@ ht-degree: 23%
 - [Länkningsregler för identitetsdiagram] {#identity-graph-linking-rules}
    - [Översikt över funktioner](./identity-graph-linking-rules/overview.md)
    - [Identitetsoptimeringsalgoritm](./identity-graph-linking-rules/identity-optimization-algorithm.md)
+   - [Namnområdesprioritet](./identity-graph-linking-rules/namespace-priority.md)
    - [Exempel på scenarier](./identity-graph-linking-rules/example-scenarios.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)
