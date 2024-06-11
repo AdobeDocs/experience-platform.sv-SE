@@ -1,9 +1,10 @@
 ---
 title: Frågeguide för AI Assistant
 description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
-source-git-commit: a1092e21940c5e4ba9b598bc51ba1243b57a0051
+exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
+source-git-commit: 26e27e7a62731fe43ef203741121b22226078b28
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1206'
 ht-degree: 0%
 
 ---
@@ -33,20 +34,56 @@ Följande exempelfrågor grupperas efter mål som du kan uppnå med AI Assistant
 
 Följande frågor grupperas efter dataobjekt och klassificeras som antingen [operativa insikter](./home.md#operational-insights) eller [produktkunskap](./home.md#product-knowledge).
 
-| Objekt | Beskrivning |
-| --- | --- |
-| Målgrupper - operativa insikter | <ul><li>Vilka målgrupper använder andra målgrupper?</li><li>Vilken är fördelningen av antalet profiler mellan olika målgrupper?</li><li>Visa vilka målgrupper som senast ändrades innan {RELATIVE_DATE}.</li><li>Vilka målgrupper har 0 profiler?</li><li>Är {USE_AUTOCOMPLETE_TO_FILL_AUDIENCE_NAME} används i andra målgrupper?</li></ul> |
-| Attribut - driftsinsikter | <ul><li>Vilka målgrupper som har XDM-attribut {ATTRIBUTE_PATH} i segmentdefinitionen?</li><li>Hur många XDM-schemaattribut används inte i någon målgrupp?</li><li>Vilka scheman har XDM-attribut {ATTRIBUTE_PATH} i dem?</li><li>Vilka XDM-attribut aktiveras?</li><li>Vilka XDM-attribut som används i målgrupper med fler än 10 profiler</li></ul> |
-| Dataflöden - driftsinsikter | <ul><li>Vilka dataflöden bidrar till {DATASET_NAME} datauppsättning?</li><li>Vilka källdataflöden används inte eller har inga data längre?</li><li> |
-| Datauppsättningar - driftsinsikter | <ul><li>Hur många datauppsättningar har importerats med samma schema?</li><li>Vilken källkoppling är associerad med {DATASET_NAME} datauppsättning></li><li>Vilka datauppsättningar används för varje målgrupp?</li><li>Vilka scheman används inte i några datauppsättningar?</li><li>Hur många datauppsättningar har jag?</li></ul> |
-| Destinationer - driftsinsikter | <ul><li>Vilka destinationer befinner sig i ett aktivt läge?</li><li>Vilka målkonton har 0 målgrupper aktiverade?</li><li> |
-| Resor - operativa insikter | <ul><li>Hur många resor har jag?</li><li>Vilka resor som har skapats i {RELATIVE_DATE} (t.ex. förra veckan) eller {RELATIVE_DATE} (t.ex. före/efter/på ett visst datum)?</li><li>Visa listan över resor som har ändrats i {RELATIVE_DATE} (t.ex. förra veckan) eller {RELATIVE_DATE} (t.ex. före/efter/på ett visst datum)?</li><li>Lista de resor jag har.</li><li>Ange de målgrupper som används i direktresor.</li></ul> |
-| Scheman - operativa insikter | <ul><li>Vilka schemafält har bidragit till de flesta målgrupper?</li><li>Hur många scheman är profiler aktiverade?</li><li>Visa alla scheman som har ändrats under den senaste veckan.</li><li>Vilka scheman används inte i några datauppsättningar?</li><li>Visa alla scheman som skapats den senaste veckan.</li></ul> |
-| Källor - driftsinsikter | <ul><li>Vilka källor är i ett aktivt läge?</li><li>Vilken källanslutning som är associerad med datauppsättningen {DATASET_NAME}?</li><li>Vilken källanslutning har det högsta antalet associerade konton?</li><li>Visa dataflödena och tillhörande källanslutningar.</li></ul> |
-| Lär dig mer - Produktkunskap (Real-Time CDP och Journey Optimizer) | <ul><li>Vad kan AI Assistant hjälpa till med?</li><li>Vad är lookalike-målgrupper?</li><li>Hur är användargrupper relaterade till roller?</li><li>När ska jag använda en datatyp jämfört med en fältgrupp?</li><li>Vad är skillnaden mellan en identitet och en primär eller extern nyckel?</li><li>Hur beräknas profilrikedomen?</li></ul> |
-| Felsökning - produktkunskap (Real-Time CDP och Journey Optimizer) | <ul><li>Vad kan AI Assistant hjälpa till med?</li><li>Kan jag ta bort ett profilaktiverat schema efter att data har importerats?</li><li>Varför kan jag inte ta bort en publik?</li><li>Hur lång tid tar det för målgrupperna att utvärderas och för att resultaten ska vara tillgängliga för målinriktning?</li></ul> |
-
-{style="table-layout:auto"}
+* **Målgrupper - operativa insikter**
+   * Vilka målgrupper använder andra målgrupper?
+   * Vilken är fördelningen av antalet profiler mellan olika målgrupper?
+   * Visa målgrupper som senast ändrades innan {RELATIVE_DATE}.
+   * Vilka målgrupper har 0 profiler?
+   * Är {USE_AUTO_COMPLETE_TO_FILL_AUDIENCE_NAME} används i andra målgrupper?
+* **Attribut - driftsinsikter**
+   * Vilka målgrupper som har xdm-attribut {ATTRIBUTE_PATH} i segmentdefinitionen?
+   * Hur många XDM-schemaattribut används inte i någon målgrupp?
+   * Vilka scheman har xdm-attribut {ATTRIBUTE_PATH} i dem?
+   * Vilka XDM-attribut aktiveras?
+   * Vilka XDM-attribut används i målgrupper med fler än 10 profiler?
+* **Dataflöden - driftsinsikter**
+   * Vilka dataflöden bidrar till {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME} datauppsättning?
+   * Vilka källdataflöden används inte eller har inga data längre?
+   * Ange de källdataflöden jag har.
+   * Vilka dataflöden har konfigurerats för varje källanslutning?
+* **Datauppsättningar - driftsinsikter**
+   * Hur många datauppsättningar har importerats med samma schema?
+   * Vilken källkoppling är associerad med {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME} datauppsättning?
+   * Vilka datauppsättningar används för varje målgrupp?
+   * Vilka scheman används inte i några datauppsättningar?
+   * Hur många datauppsättningar har jag?
+* **Destinationer - driftsinsikter**
+   * Vilka destinationer befinner sig i ett aktivt läge?
+   * Vilka målkonton har 0 målgrupper aktiverade?
+   * Hur många målgrupper aktiveras för varje mål?
+   * Vilka destinationer har det högsta antalet aktiva målgrupper?
+* **Resor - operativa insikter**
+   * Hur många resor har jag?
+   * Vilka resor som har skapats i {RELATIVE_DATE} (t.ex. sista veckan) eller {RELATIVE_DATE} (t.ex. före/efter/på ett visst datum)?
+   * Visa listan över resor som har ändrats i {RELATIVE_DATE} (t.ex. sista veckan) eller {RELATIVE_DATE} (t.ex. före/efter/på ett visst datum)?
+   * Ange de resor jag har.
+   * Ange de målgrupper som används i direktresor.
+* **Källor - driftsinsikter**
+   * Vilka källor är i ett aktivt läge?
+   * Vilken källanslutning som är associerad med datauppsättningen {USE_AUTO_COMPLETE_TO_FILL_DATASET_NAME}.
+   * Vilken källanslutning har det högsta antalet associerade konton?
+   * Visa dataflödena och tillhörande källanslutningar.
+* **Lär dig mer - Produktkunskap (Real-Time CDP och Journey Optimizer)**
+   * Vad är lookalike-målgrupper?
+   * Hur är användargrupper relaterade till roller?
+   * När ska jag använda en datatyp jämfört med en fältgrupp?
+   * Vad är skillnaden mellan en identitet och en primär eller extern nyckel?
+   * Hur beräknas profilrikedomen?
+* **Felsökning - produktkunskap (Real-Time CDP och Journey Optimizer)**
+   * Vad kan AI Assistant hjälpa till med?
+   * Kan jag ta bort ett profilaktiverat schema efter att data har importerats?
+   * Varför kan jag inte ta bort en publik?
+   * Hur lång tid tar det för målgrupperna att utvärderas och resultaten blir tillgängliga för målinriktning?
 
 ## Tar hand om dina frågor {#phrasing-your-questions}
 
