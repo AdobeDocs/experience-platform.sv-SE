@@ -5,7 +5,7 @@ breadcrumb-title: Handbok för Platform Identity Service
 user-guide-description: Kombinera kundidentiteter över olika enheter och system för att leverera personaliserade digitala upplevelser.
 feature: Identities
 role: Admin,Developer
-source-git-commit: 2afdfd54b420bcf59423ea64048d928422ea61c9
+source-git-commit: f04587fe325c1515545e4067845976aafc7d68ed
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 1%
@@ -22,6 +22,11 @@ ht-degree: 1%
    - [Identitetslänkningslogik](./features/identity-linking-logic.md)
    - [Identitetsdiagramvisningsprogram](./features/identity-graph-viewer.md)
    - [Borttagningar i identitetstjänsten](./features/deletion.md)
+   - Länkningsregler för identitetsdiagram {#identity-graph-linking-rules}
+      - [Översikt över funktioner](./identity-graph-linking-rules/overview.md)
+      - [Identitetsoptimeringsalgoritm](./identity-graph-linking-rules/identity-optimization-algorithm.md)
+      - [Namnområdesprioritet](./identity-graph-linking-rules/namespace-priority.md)
+      - [Exempel på scenarier](./identity-graph-linking-rules/example-scenarios.md)
    - [ECID - översikt](./features/ecid.md)
 - [Implementeringsguide](implementation.md)
 - [Gardrutor för identitetsdata](guardrails.md)
@@ -37,11 +42,6 @@ ht-degree: 1%
    - [API-referens](https://www.adobe.io/experience-platform-apis/references/identity-service)
 - [Delad enhetsidentifiering](shared-device-detection.md)
 - [Definiera identitetsfält i användargränssnittet](label-identities.md)
-- [Länkningsregler för identitetsdiagram] {#identity-graph-linking-rules}
-   - [Översikt över funktioner](./identity-graph-linking-rules/overview.md)
-   - [Identitetsoptimeringsalgoritm](./identity-graph-linking-rules/identity-optimization-algorithm.md)
-   - [Namnområdesprioritet](./identity-graph-linking-rules/namespace-priority.md)
-   - [Exempel på scenarier](./identity-graph-linking-rules/example-scenarios.md)
 - [Behandling av sekretessförfrågningar](privacy.md)
 - [Felsökningsguide](troubleshooting-guide.md)
 - [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
