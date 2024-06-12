@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Översikt över API för gruppinmatning
 description: Med API:t för Adobe Experience Platform Batch Ingclosure kan du importera data till Platform som gruppfiler. Data som importeras kan vara profildata från en platt fil i ett CRM-system (till exempel en Parquet-fil) eller data som följer ett känt schema i XDM-registret (Experience Data Model).
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 583eb70235174825dd542b95463784638bdef235
 workflow-type: tm+mt
 source-wordcount: '1388'
 ht-degree: 0%
@@ -44,7 +44,7 @@ Batchdatainmatning har vissa begränsningar:
 - Maximalt antal filer per batch: 1 500
 - Maximal batchstorlek: 100 GB
 - Maximalt antal egenskaper eller fält per rad: 10000
-- Maximalt antal batchar i sjödata per minut, per användare: 138
+- Maximalt antal batchar i sjödata per minut, per användare: 2000
 
 >[!NOTE]
 >
