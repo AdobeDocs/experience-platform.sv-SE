@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 3852fc4eca8ea4b6b3fdcfb6aaa54315d83038b4
+source-git-commit: b41a60942460e22556714699975f9eb281d76335
 workflow-type: tm+mt
-source-wordcount: '4044'
+source-wordcount: '4040'
 ht-degree: 0%
 
 ---
@@ -128,9 +128,9 @@ I följande diagram förklaras de olika livscykelstatusarna, vad de representera
 
 | Läge | Definition | Synligt i Audience Portal? | Synligt i destinationer? | Påverkar segmenteringsgränser? | Påverkan på filbaserade målgrupper | Effekter på publikutvärderingen | Kan användas inom andra målgrupper? | Redigerbar |
 | --- | --- | --- | --- | --- | --- | --- | --- | -- |
-| Utkast | En publik i **Utkast** är en publik som fortfarande är under utveckling och ännu inte är redo att användas i andra tjänster. | Ja, men kan vara dold. | Nej | Ja | Kan importeras eller uppdateras under förfiningsprocessen. | Kan utvärderas för att få korrekta publiceringsvärden. | Ja, men rekommenderas inte. | Ja |
+| Utkast | En publik i **Utkast** är en publik som fortfarande är under utveckling och ännu inte är redo att användas i andra tjänster. | Ja, men kan vara dold. | Nej | Ja | Kan importeras eller uppdateras under förfiningsprocessen. | Utvärderad för korrekt publiceringsantal. | Ja, men rekommenderas inte. | Ja |
 | Publicerad | En publik i **Publicerad** är en publik som är klar att användas i alla tjänster i senare led. | Ja | Ja | Ja | Kan importeras eller uppdateras. | Utvärderat med gruppbearbetning, direktuppspelning eller kantsegmentering. | Ja | Ja |
-| Inaktiv | En publik i **Inaktiv** är en publik som för närvarande inte används. Den finns fortfarande i plattformen, men den kommer att **not** vara användbar tills den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Platform. | Ja | Ja |
+| Inaktiv | En publik i **Inaktiv** är en publik som för närvarande inte används. Den finns fortfarande i plattformen, men den kommer att **not** vara användbar tills den markeras som utkast eller publicerad. | Nej, men kan visas. | Nej | Nej | Uppdaterades inte längre. | Inte längre utvärderat eller uppdaterat av Platform. | Nej | Ja |
 | Borttagen | En publik i **Borttagen** status är en målgrupp som har tagits bort. Det kan ta upp till några minuter innan data tas bort. | Nej | Nej | Nej | Underliggande data tas bort. | Ingen utvärdering eller körning av data utförs efter att borttagningen har slutförts. | Nej | Nej |
 
 ### I vilka lägen kan jag redigera mina målgrupper i?
@@ -223,7 +223,7 @@ För att den överordnade målgruppen ska kunna flyttas till det inaktiva eller 
 
 ### Kan jag hänvisa till en målgrupp som befinner sig i ett annat livscykeltillstånd?
 
-Ja! Om målgruppen för närvarande är i utkastläget kan du referera till målgrupper i antingen det publicerade eller inaktiva läget. Men för att kunna publicera den här målgruppen **måste** publicera de andra överordnade målgrupperna.
+Ja! Om målgruppen för närvarande är i utkastläget kan du referera till målgrupper i antingen utkastläget eller publiceringsläget. Men för att kunna publicera den här målgruppen **måste** publicera de andra överordnade målgrupperna.
 
 ## Målgruppslager
 
