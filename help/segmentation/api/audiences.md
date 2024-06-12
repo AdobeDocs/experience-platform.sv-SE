@@ -3,7 +3,7 @@ title: Målgrupps-API-slutpunkt
 description: Använd målgruppsslutpunkten i Adobe Experience Platform Segmentation Service API för att skapa, hantera och uppdatera målgrupper för er organisation programmatiskt.
 role: Developer
 exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
-source-git-commit: c16ce1020670065ecc5415bc3e9ca428adbbd50c
+source-git-commit: 87b491339469e69653cad79b657bd1edfbca1de9
 workflow-type: tm+mt
 source-wordcount: '1879'
 ht-degree: 0%
@@ -49,7 +49,7 @@ Följande begäran hämtar de två sista målgrupperna som skapats i din organis
 +++En exempelbegäran om att hämta en lista över målgrupper.
 
 ```shell
-curl -X GET https: //platform.adobe.io/data/core/ups/audiences?limit=2 \
+curl -X GET https://platform.adobe.io/data/core/ups/audiences?limit=2 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \
  -H 'x-api-key: {API_KEY}' \
