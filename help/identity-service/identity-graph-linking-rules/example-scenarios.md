@@ -1,22 +1,20 @@
 ---
 title: Exempelscenarier för konfiguration av identitetsinställningar
 description: Lär dig mer om exempelscenarier för konfigurering av identitetsinställningar.
-hide: true
-hidefromtoc: true
-badge: Alpha
+badge: Beta
 exl-id: bccd5b7a-3836-47d8-b976-51747b9c1803
-source-git-commit: 3fe94be9f50d64fc893b16555ab9373604b62e59
+source-git-commit: f1779ee75c877649a69f9fa99f3872aea861beca
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '455'
 ht-degree: 0%
 
 ---
 
 # Exempelscenarier för konfiguration av länkningsregler för identitetsdiagram
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
->Länkningsregler för identitetsdiagram finns för närvarande i Alpha. Funktionen och dokumentationen kan komma att ändras.
+>Den här funktionen är inte tillgänglig ännu. Betaprogrammet för länkningsregler för identitetsdiagram förväntas starta i juli för utvecklingssandlådor. Kontakta ditt Adobe-kontoteam för att få information om deltagandekriterierna.
 
 Det här dokumentet innehåller exempel på scenarier som du kan överväga när du konfigurerar länkningsregler för identitetsdiagram.
 
