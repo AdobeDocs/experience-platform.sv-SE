@@ -5,7 +5,7 @@ title: Skapa ett schema med Schemaredigeraren
 type: Tutorial
 description: I den här självstudiekursen beskrivs stegen för hur du skapar ett schema med Schemaredigeraren i Experience Platform.
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
-source-git-commit: c8c8e8b8571c215cb470dd5bdb9e9172d564f9d8
+source-git-commit: df0912bcb7122152da127c4e6b625cff73f7fa72
 workflow-type: tm+mt
 source-wordcount: '4567'
 ht-degree: 0%
@@ -49,10 +49,6 @@ Börja skapa ett schema genom att välja **[!UICONTROL Create schema]** i det ö
 The [!UICONTROL Create schema] arbetsflödet visas. Välj sedan en basklass för schemat. Du kan välja mellan huvudklasserna i [!UICONTROL XDM Individual Profile] och [!UICONTROL XDM ExperienceEvent], eller [!UICONTROL Other] om dessa klasser inte passar dina syften. The [!UICONTROL Other] kan du antingen [skapa en ny klass](#create-new-class) eller välj bland andra befintliga klasser.
 
 Se [XDM-individuell profil](../classes/individual-profile.md) och [XDM ExperienceEvent](../classes/experienceevent.md) mer information om dessa klasser. I den här självstudiekursen väljer du **[!UICONTROL XDM Individual Profile]** följt av **[!UICONTROL Next]**.
-
-
-
-<!--  -->
 
 <!-- You can  by selecting either **[!UICONTROL Individual Profile]**, **[!UICONTROL Experience Event]**, or **[!UICONTROL Other]**, followed by **[!UICONTROL Next]** to confirm your choice.  -->
 

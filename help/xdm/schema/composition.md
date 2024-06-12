@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Grundläggande om schemakomposition
 description: Lär dig mer om XDM-scheman (Experience Data Model) och byggstenarna, principerna och de bästa sätten att komponera scheman i Adobe Experience Platform.
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 1b3d20610a48fc48c84dc4901d7b09db4bb8fa1f
+source-git-commit: 42038ecfeecc774b3a57e05d961bbd80f3178c21
 workflow-type: tm+mt
-source-wordcount: '4194'
+source-wordcount: '4251'
 ht-degree: 0%
 
 ---
@@ -172,6 +172,11 @@ Scheman består av följande formel:
 >title="Klass"
 >abstract="Alla scheman baseras på en enda klass. Klassen definierar schemats beteende och de gemensamma egenskaper som alla scheman baserade på den klassen måste innehålla. Läs dokumentationen om du vill veta mer om hur klasser är inblandade i schemakomposition."
 
+>[!CONTEXTUALHELP]
+>id="platform_schemas_class_industries"
+>title="Branschtyp"
+>abstract="Om du väljer en relevant bransch för din verksamhet kan maskininlärningsmodellen ge bättre datahantering genom att mappa källfälten mer exakt med standardfältgrupper som följer branschstandarder. Detta garanterar att dataintegreringen är anpassad efter era branschspecifika behov och ger mer exakta och relevanta datainsikter."
+
 Dispositionen av ett schema börjar med att tilldela en klass. Klasser definierar de beteendeaspekter av data som schemat kommer att innehålla (post- eller tidsserie). Förutom detta beskriver klasser det minsta antalet gemensamma egenskaper som alla scheman baserade på den klassen behöver innehålla och tillhandahåller ett sätt för att sammanfoga flera kompatibla datamängder.
 
 En schemaklass avgör vilka fältgrupper som är berättigade att användas i schemat. Detta diskuteras mer ingående i [nästa avsnitt](#field-group).
@@ -275,7 +280,7 @@ Diagrammet nedan visar dessa scheman och fälten från varje fältgrupp. Den inn
 
 ![Ett flödesdiagram över fyra scheman och de fältgrupper som bidrar till dem.](../images/schema-composition/composition.png)
 
-### Sammanslutning {#union}
+### Union {#union}
 
 Med Experience Platform kan du skapa scheman för olika användningsområden, men du kan även se en &quot;union&quot; av scheman för en viss klasstyp. I föregående diagram visas två scheman baserade på klassen XDM ExperienceEvent och två scheman baserade på [!DNL XDM Individual Profile] klassen. Unionen, som visas nedan, samlar fälten för alla scheman som delar samma klass ([!DNL XDM ExperienceEvent] och [!DNL XDM Individual Profile]).
 

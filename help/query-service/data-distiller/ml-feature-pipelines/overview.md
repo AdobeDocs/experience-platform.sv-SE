@@ -2,10 +2,10 @@
 title: AI/ML-rörledningar
 description: Lär dig hur du använder Data Distiller för att berika dina maskininlärningslinjer med funktioner som härleds från Adobe Experience Platform data. Omvandla rådata till funktioner och leverera funktionsdata för att utbilda eller poängsätta en modell som stöder era marknadsföringsexempel.
 exl-id: 3b452181-e254-4155-8bf5-0990533f202d
-source-git-commit: 641f507210071ee8efeb3562eec78afd0468d4f2
+source-git-commit: df0912bcb7122152da127c4e6b625cff73f7fa72
 workflow-type: tm+mt
 source-wordcount: '473'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -14,8 +14,6 @@ ht-degree: 1%
 <!-- This guide illustrates a new workflow to enrich your preferred machine learning (ML) data pipelines with curated data from Adobe Experience Platform. The use case demonstrates how to transform raw data into features, and deliver the feature data to train or score a model that supports your marketing use cases. Use the provided [!DNL Python] notebooks in your machine learning environments to leverage Data Distiller capabilities and explore, curate, and access customer data from Adobe Experience Platform to enrich and enhance your AI/ML models.
 
 This document provides an overview of the AI/ML feature pipelines use case and details the steps required to get started with the cloud machine learning environment (CMLE) notebooks. -->
-
-<!--  -->
 
 Data Distiller gör det möjligt för datavetare och datatekniker att berika sina maskininlärningslinjer med värdefulla kundupplevelsedata som har samlats in och kuraterats i Adobe Experience Platform. Från en [!DNL Python] i vilken miljö som helst kan du interaktivt utforska kunddata i Experience Platform, definiera och beräkna funktioner från data och läsa de beräknade funktionerna i maskininlärningsmiljön för modellering.
 
