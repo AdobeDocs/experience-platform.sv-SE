@@ -2,9 +2,9 @@
 title: Integritet, säkerhet och styrning i AI Assistant
 description: Läs mer om sekretess-, säkerhets- och styrningsrutiner för AI Assistant.
 exl-id: 371e065d-c2dd-4233-b78e-a42757fce853
-source-git-commit: 1762fcbcc730ccb08340a71383c90404c3fea614
+source-git-commit: e14bf4191319d646c6c4bfd55656fc6de141e9ca
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,9 @@ Läs det här dokumentet om du vill veta mer om funktioner som är inriktade på
 * Du måste ha explicit behörighet att interagera med AI Assistant.
    * Du kan ange olika behörigheter för Experience Platform och Journey Optimizer med [Behörighetsgränssnitt](../access-control/abac/ui/permissions.md) och du kan använda [Admin Console](../access-control/ui/browse.md) om du vill tilldela behörigheter till Customer Journey Analytics.
    * Behörigheterna är detaljerade och din sandlådeadministratör kan konfigurera vilka av dina användare som kan ställa olika frågekategorier (produktkunskapsbaserade frågor med AI Assistant eller frågor om driftsinsikter).
-* AI Assistant är en HIPAA-klar funktion som uppfyller HIPAA-kraven för bearbetning och användning av PHI (Protected Health Information).
+* AI Assistant är en HIPAA-klar funktion när den används i kombination med Adobe Experience Platform Healthcare Shield.
 * Du kan visa en logg över dina tidigare interaktioner med AI Assistant med en 30-dagars bevarandeprincip.
 * AI-assistenten omges av sandlådespecifika data och allmän Adobe-dokumentation när användaren besvarar uppmaningar. Data delas inte över sandlådor.
 * Frågar som du anger för AI Assistant delas inte med andra kunder.
-
 
 **Det innebär att om nya etiketter läggs till i fält och objekt eller om nya profiler skapas, tar det upp till 24 timmar för AI Assistant att efterleva dem. Under dessa 24 timmar har användare med nyligen begränsad åtkomst fortfarande åtkomst till dessa fält och objekt.*
