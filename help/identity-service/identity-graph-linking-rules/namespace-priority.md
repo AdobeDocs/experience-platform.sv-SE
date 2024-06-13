@@ -2,9 +2,10 @@
 title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 badge: Beta
-source-git-commit: 85da193f422a1708999fb59b7ea095f4447d6bdf
+exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
+source-git-commit: 5674309e4e8f17ad4c951ec4a5cb0cbc0a15ab03
 workflow-type: tm+mt
-source-wordcount: '1460'
+source-wordcount: '1515'
 ht-degree: 1%
 
 ---
@@ -50,9 +51,9 @@ Personnamnutrymmen är relativt oföränderliga jämfört med maskinvaruenheter 
 
 Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRM-ID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet **lägre kardinalitet anger ett namnutrymme med ett högre värde**.
 
-<!-- ## Step 2: Validate your namespace priority settings
+## Validera inställningarna för namnområdesprioritet
 
-Once you have an idea of how you will prioritize your namespaces, you can use the Graph Simulation tool to test out various graph collapse scenarios and ensure that your priority configurations are returning the expected graph results. For more information, read the guide on using the [Graph Simulation tool](./graph-simulation.md). -->
+När du har fått en uppfattning om hur du ska prioritera namnutrymmen kan du använda verktyget Diagramsimulering för att testa olika scenarier för komprimering av diagram och se till att dina prioritetskonfigurationer returnerar de förväntade diagramresultaten. Mer information finns i handboken om hur du använder [Graph Simulation tool](./graph-simulation.md).
 
 ## Konfigurera namnområdesprioritet
 
