@@ -1,15 +1,15 @@
 ---
 audience: user
-user-guide-title: Hjälp med taggar
+user-guide-title: Hjälp om taggar
 breadcrumb-title: Taggar
-user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
+user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 3c3863aa61a7bbdb2df585b842e55f2d7291c727
+source-git-commit: 8000bbf36e6763b8fca17c2ae0d5c2fe53bc6964
 workflow-type: tm+mt
-source-wordcount: '764'
-ht-degree: 15%
+source-wordcount: '765'
+ht-degree: 12%
 
 ---
 
@@ -39,7 +39,7 @@ ht-degree: 15%
       * [Översikt](./ui/publishing/hosts/hosts-overview.md)
       * [Värdar som hanteras av Adobe](./ui/publishing/hosts/managed-by-adobe-host.md)
       * [SFTP-värdar](./ui/publishing/hosts/sftp-host.md)
-   * Miljöer {#environments}
+   * Miljö {#environments}
       * [Översikt](./ui/publishing/environments.md)
       * [Testa inbäddningskoder med Adobe Experience Platform Debugger](./ui/publishing/embed-code-testing.md)
    * [Bygger](./ui/publishing/builds.md)
@@ -251,6 +251,8 @@ ht-degree: 15%
          * [Översikt](./extensions/server/twitter/overview.md)
       * [!DNL Tiktok] API för webbhändelser {#tiktok}
          * [Översikt](./extensions/server/tiktok/overview.md)
+      * [!DNL The Trade Desk] {#thetradedesk}
+         * [Översikt](./extensions/server/tradedesk/overview.md)
       * [!DNL Zendesk] Händelse-API {#zendesk}
          * [Översikt](./extensions/server/zendesk/overview.md)
 * Tilläggsutveckling {#extension-dev}
@@ -300,7 +302,7 @@ ht-degree: 15%
       * [Tillägg](./api/endpoints/extensions.md)
       * [Bibliotek](./api/endpoints/libraries.md)
       * [Bygger](./api/endpoints/builds.md)
-      * [Miljöer](./api/endpoints/environments.md)
+      * [Miljö](./api/endpoints/environments.md)
       * [Värdar](./api/endpoints/hosts.md)
       * [Appkonfigurationer](./api/endpoints/app-configurations.md)
       * [Granskningshändelser](./api/endpoints/audit-events.md)
