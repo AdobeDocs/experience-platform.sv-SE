@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för segmenteringstjänst
 description: Lär dig hur du skapar och hanterar målgrupper och segmentdefinitioner i Adobe Experience Platform användargränssnitt.
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 147dded9f5eb6c2e153a80fa80b18e9fe96a6faa
 workflow-type: tm+mt
-source-wordcount: '4120'
+source-wordcount: '4132'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,7 @@ Bredvid varje publik finns en ellips-ikon. Om du väljer det här alternativet v
 | [!UICONTROL Share with partners] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Delar er målgrupp med andra plattformsanvändare. Mer information om den här funktionen finns i [Översikt över segmentmatchning](./segment-match/overview.md). |
 | [!UICONTROL Manage tags] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de användardefinierade taggar som tillhör målgruppen. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
 | [!UICONTROL Move to folder] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar den mapp som målgruppen tillhör. Mer information om funktionen finns i avsnittet om [filtrering och taggning](#manage-audiences). |
-| [!UICONTROL Copy] | Segmenteringstjänst | Duplicerar den valda målgruppen. |
+| [!UICONTROL Copy] | Segmenteringstjänst | Duplicerar den valda målgruppen. Mer information om den här funktionen finns i [Vanliga frågor om segmentering](../faq.md#copy). |
 | [!UICONTROL Apply access labels] | Målgruppskomposition, anpassad överföring, segmenteringstjänst | Hanterar de åtkomstetiketter som tillhör målgruppen. Mer information om åtkomstetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md). |
 | [!UICONTROL Publish] | Anpassad överföring, segmenteringstjänst | Publicerar den valda målgruppen. Mer information om hantering av livscykelstatus finns i [livscykelstatusavsnittet i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |
 | [!UICONTROL Deactivate] | Anpassad överföring, segmenteringstjänst | Inaktiverar den valda målgruppen. Mer information om hantering av livscykelstatus finns i [livscykelstatusavsnittet i Vanliga frågor om segmentering](../faq.md#lifecycle-states). |

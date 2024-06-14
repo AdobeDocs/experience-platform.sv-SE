@@ -2,9 +2,9 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: b41a60942460e22556714699975f9eb281d76335
+source-git-commit: 147dded9f5eb6c2e153a80fa80b18e9fe96a6faa
 workflow-type: tm+mt
-source-wordcount: '4040'
+source-wordcount: '4076'
 ht-degree: 0%
 
 ---
@@ -206,6 +206,10 @@ Ja, det finns en del kavajer att vara medveten om när ni använder målgrupper 
 Nu kan du **måste** Kontrollera manuellt om målgruppen används längre fram i Adobe Journey Optimizer, eftersom denna status för närvarande inte kontrolleras automatiskt.
 
 Dessutom kan du **måste** Kontrollera manuellt om målgruppen används som en komponent i en kontobaserad målgrupp, eftersom den här statusen inte heller kontrolleras automatiskt.
+
+### Vad händer när jag kopierar en publik? {#copy}
+
+När du kopierar en målgrupp är den nya målgruppen i utkastläget och behåller samma mappar, taggar och etiketter som tillämpades på den ursprungliga målgruppen.
 
 ### Påverkar användningen av en målgrupp som underordnad målgrupp övergångar i livscykeln?
 
