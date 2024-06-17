@@ -3,18 +3,16 @@ title: The Trade Desk Real-Time Conversions API Extension Overview
 description: Läs mer om API-tillägget Trade Desk Real-Time Conversions för händelsevidarebefordran i Adobe Experience Platform.
 hide: true
 hidefromtoc: true
-source-git-commit: 8000bbf36e6763b8fca17c2ae0d5c2fe53bc6964
+source-git-commit: d9d185685106ac160dcbefc5e9567a85c8302a73
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
 
 # [!DNL The Trade Desk Real-Time Conversions API] tilläggsöversikt
 
-[[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) gör att du kan skicka händelser till [!DNL The Trade Desk] för att utnyttja återmarknadsföring och attribuering.
-
-Du kan använda [!DNL The Trade Desk Real-Time Conversions API] för att skicka data från Adobe Experience Platform Edge Network till [!DNL The Trade Desk] genom att använda API:ts funktioner i [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) regler.
+Du kan använda [[!DNL The Trade Desk Real-Time Conversions API]](https://partner.thetradedesk.com/v3/portal/data/doc/DataConversionEventsApi) för att skicka data från Adobe Experience Platform Edge Network till [!DNL The Trade Desk] genom att använda API:ts funktioner i [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) regler.
 
 Använda [!DNL The Trade Desk Real-Time Conversions API] kan du utnyttja API:ts funktioner i [händelsevidarebefordran](../../../ui/event-forwarding/overview.md) regler att skicka data till [!DNL The Trade Desk] från Adobe Experience Platform Edge Network.
 
@@ -91,7 +89,8 @@ Se [!DNL The Trade Desk] utvecklardokumentation för mer information om [egenska
 
 **[!UICONTROL Object Request Parameters]**
 
-Läs följande avsnitt om du vill veta mer om JSON-formaterade frågeparametrar som Objekt, Sekretess och Databearbetning.
+Ett JSON-objekt som innehåller mer information. Du kan välja att använda en reducerad uppsättning indata för nyckelvärden eller att ange JSON i Raw-format. Dessutom kan du hämta dynamiska data från ett dataelement genom att välja diskarna (![Diskikon](../../../images/extensions/server/tradedesk/disk-icon.png)) till höger.
+
 
 ![The [!DNL Object Request Parameters] -sektion som visar tillgängliga fält.](../../../images/extensions/server/tradedesk/configure-object-request-params.png)
 
@@ -99,14 +98,14 @@ Se [Händelse för konvertering i realtid](https://partner.thetradedesk.com/v3/p
 
 **[!UICONTROL Configuration Overrides]**
 
->ANMÄRKNING
+>[!NOTE]
 >
 >The [!UICONTROL Configuration Overrides] kan du ange ett annat [!DNL Advertiser ID] och/eller [!DNL Merchant ID] på alla regler.
 
 | Indata | Beskrivning |
 | --- | --- |
-| Annonsörs-ID | Det Advertiser-ID som du vill åsidosätta det Advertiser-ID som anges i tilläggskonfigurationen. |
-| Affärs-ID | Det handels-ID som du vill åsidosätta det handels-ID som anges i tilläggskonfigurationen. |
+| Annonsörs-ID | Unik identifierare för annonsören som den här händelsen är associerad med. Ett annat annonsörs-ID kan anges för att åsidosätta det ID som du angav i tilläggskonfigurationen. |
+| Affärs-ID | Den unika identifierare som varje handlare anges av [!DNL The Trade Desk] under introduktionsprocessen. Ett annat handels-ID kan anges för att åsidosätta det ID som du angav i tilläggskonfigurationen. |
 
 ![The [!DNL Configuration Overrides] -sektion som visar tillgängliga fält.](../../../images/extensions/server/tradedesk/configure-overrides.png)
 
