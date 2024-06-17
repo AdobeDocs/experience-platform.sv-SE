@@ -1,7 +1,8 @@
 ---
 title: appendIdentityToUrl
 description: Leverera personaliserade upplevelser mer exakt mellan appar, webben och olika domäner.
-source-git-commit: f75dcfc945be2f45c1638bdd4d670288aef6e1e6
+exl-id: 09dd03bd-66d8-4d53-bda8-84fc4caadea6
+source-git-commit: 153c5bae42c027c25a38a8b63070249d1b1a8f01
 workflow-type: tm+mt
 source-wordcount: '368'
 ht-degree: 1%
@@ -18,7 +19,7 @@ Frågesträngen som genereras och läggs till i URL:en är `adobe_mc`. Om Web SD
 >
 >Om samtycke inte har angetts returneras URL:en från den här metoden oförändrad. Det här kommandot körs omedelbart, det väntar inte på någon uppdatering av medgivandet.
 
-## Lägg till identitet i URL med hjälp av Web SDK-tillägget
+## Lägg till identitet i URL med hjälp av Web SDK-tillägget {#extension}
 
 En URL-adress läggs till som en åtgärd i en regel i tagggränssnittet för Adobe Experience Platform Data Collection.
 
