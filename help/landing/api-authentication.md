@@ -4,10 +4,10 @@ title: Autentisera och få åtkomst till Experience Platform API:er
 type: Tutorial
 description: Det här dokumentet innehåller en stegvis självstudiekurs för att få tillgång till ett Adobe Experience Platform-utvecklarkonto för att ringa anrop till Experience Platform API:er.
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: f598c6dabe9296044055d8e961cf5177a655f5fa
+source-git-commit: 2fb0da385baeb96d5665ecc25bf353c7516ef9f7
 workflow-type: tm+mt
-source-wordcount: '2124'
-ht-degree: 1%
+source-wordcount: '2063'
+ht-degree: 0%
 
 ---
 
@@ -88,15 +88,15 @@ The **[!UICONTROL Add an API]** visas. Markera produktikonen för Adobe Experien
 >
 >Välj **[!UICONTROL View docs]** alternativ för att navigera i ett separat webbläsarfönster till det fullständiga [Referenshandbok för Experience Platform API](https://developer.adobe.com/experience-platform-apis/).
 
-### Välj autentiseringstypen OAuth Server-till-server {#select-oauth-server-to-server}
+### Välj [!UICONTROL OAuth Server-to-Server] autentiseringstyp {#select-oauth-server-to-server}
 
-Välj sedan autentiseringstypen för att generera åtkomsttoken och få åtkomst till Experience Platform-API:t.
+Nästa steg är att välja [!UICONTROL OAuth Server-to-Server] autentiseringstyp för att generera åtkomsttoken och få åtkomst till Experience Platform API.
 
 >[!IMPORTANT]
 >
->Välj **[!UICONTROL OAuth Server-to-Server]** eftersom det här är den enda metod som stöds för att gå framåt. The **[!UICONTROL Service Account (JWT)]** -metoden är inaktuell. Även om integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025 rekommenderar Adobe starkt att du migrerar befintliga integreringar till den nya OAuth Server-till-Server-metoden före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Generera en JSON-webbtoken (JWT)](#jwt).
+>The **[!UICONTROL OAuth Server-to-Server]** är den enda tokengenereringsmetoden som stöds för att gå framåt. Det tidigare stödet **[!UICONTROL Service Account (JWT)]** -metoden är föråldrad och kan inte väljas för nya integreringar. Befintliga integreringar med JWT-autentiseringsmetoden fortsätter att fungera fram till 1 januari 2025, men Adobe rekommenderar starkt att du migrerar befintliga integreringar till nya [!UICONTROL OAuth Server-to-Server] före detta datum. Hämta mer information i avsnittet [!BADGE Föråldrat]{type=negative}[Generera en JSON-webbtoken (JWT)](#jwt).
 
-![Välj Experience Platform API.](./images/api-authentication/oauth-authentication-method.png)
+![Välj autentiseringsmetoden OAuth Server-till-Server för Experience Platform API:t.](./images/api-authentication/oauth-authentication-method.png)
 
 ### Välj produktprofiler för integreringen {#select-product-profiles}
 
@@ -154,7 +154,7 @@ Du kan också använda en Postman-miljö och en samling för att generera åtkom
 
 >[!WARNING]
 >
-JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med [OAuth Server-till-Server-autentiseringsmetod](#select-oauth-server-to-server). Adobe rekommenderar också att du migrerar dina befintliga integreringar till OAuth-metoden. Läs följande viktiga dokumentation:
+JWT-metoden för att generera åtkomsttoken har tagits bort. Alla nya integreringar måste skapas med [OAuth Server-till-Server-autentiseringsmetod](#select-oauth-server-to-server). Adobe kräver också att du migrerar dina befintliga integreringar till OAuth-metoden senast 1 januari 2025 för att dina integreringar ska fortsätta fungera. Läs följande viktiga dokumentation:
 > 
 * [Migreringsguide för program från JWT till OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/)
 * [Implementeringsguide för nya och gamla program med OAuth](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
@@ -319,7 +319,7 @@ Välj **[!UICONTROL Products]** väljer **[!UICONTROL Adobe Experience Platform]
 
 ![Produktlista på Admin Console](././images/api-authentication/products.png)
 
-På fliken **[!UICONTROL Product Profiles]** väljer du **[!UICONTROL AEP-Default-All-Users]**. Du kan också använda sökfältet för att söka efter produktprofilen genom att ange namnet.
+Från **[!UICONTROL Product Profiles]** flik, välja **[!UICONTROL AEP-Default-All-Users]**. Du kan också använda sökfältet för att söka efter produktprofilen genom att ange namnet.
 
 ![Sök efter produktprofilen](././images/api-authentication/select-product-profile.png)
 
