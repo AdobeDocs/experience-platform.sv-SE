@@ -1,85 +1,74 @@
 ---
 solution: Experience Platform
-title: Upptäck rätt spelningsbok
-description: Lär dig hur du hittar rätt spelbok för dina användningsfall och aktiverar spelböcker.
+title: Upptäck spelningsböcker
+description: Lär dig hur du hittar ett galleri med spelböcker och kommer igång med en inspirerande sandlåda.
 role: User
-exl-id: 3dae6ad6-adb3-4606-ad63-c0d4ef6beeba
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: ad3f746580f85e77cba390208d147b35b6854e10
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
 
-# Upptäck rätt spelningsbok
+# Upptäck spelningsböcker
 
-Om du vill använda en spelbok går du till **[!UICONTROL Use Case Playbooks]>[!UICONTROL Playbooks]**. Bläddra och använd de olika sök- och filtreringsalternativen på sidan för att välja och komma igång med en viss spelbok.
+Använd fallspelsböcker är tillgängliga utan extra kostnad för alla Adobe Experience Platform-kunder. Om du vill få tillgång till ett omfattande galleri med fallspelningsböcker i användargränssnittet för Experience Platform väljer du **[!UICONTROL Playbooks]** från vänster navigering.
 
-## Söka och filtrera {#search-and-filter}
+![Använd galleri för fallspelningsböcker.](/help/use-case-playbooks/assets/playbooks/discover/playbooks-gallery.png)
 
-Använd sökfönstret och filtren som finns på sidan för att hitta rätt spelbok för ditt användningssätt.
+![Direktåtkomst för att använda fallspelningsböcker i det vänstra navigeringsfältet.](/help/use-case-playbooks/assets/playbooks/discover/left-nav-playbooks.png)
 
-Du kan till exempel filtrera spelböcker som du kan använda baserat på den fas i marknadsföringstratten som du vill ha som mål - konvertering, engagemang eller lojalitet. Du kan också filtrera de visade spelböckerna efter vilken bransch du befinner dig i eller vilka produktberättigande du har tillgång till - Adobe Journey Optimizer eller Real-Time CDP.
+Välj en spelbok att gå till informationssidan för och välj sedan **[!UICONTROL Go to an inspirational sandbox]**. En bekräftelse visas. Välj **Bekräfta** för att gå till den inspirerande sandlådan där du kan utforska och experimentera med olika användningsfall.
 
-![Filtrera spelböcker efter marknadsföringstratt, bransch eller produkt](/help/use-case-playbooks/assets/playbooks/ui-guide/filter-by-funnel-industry-product.gif)
+Om du inte har behörighet att skapa sandlådor kontaktar du administratören för att få hjälp med att skapa en inspirerande sandlåda.
 
-Du kan också använda sökfunktionen för att hitta rätt spelbok för dig. Nedan visas ett exempel på hur du kan hitta en spelbok som hjälper dig att interagera med användare som kanske har övergett sin kundvagn.
+>[!TIP]
+>
+>En inspirerande sandlåda är en utvecklingssandlåda i Adobe Experience Platform där du kan skapa, testa och experimentera med olika användningsfall innan du implementerar dem i en liveproduktionsmiljö.
 
-![Engagera med användare som kanske har övergett sin kundvagn.](/help/use-case-playbooks/assets/playbooks/ui-guide/engage-abandoned-cart.gif)
+![Gå till inspirerande sandlåda.](/help/use-case-playbooks/assets/playbooks/discover/inspirational-sandbox.png)
 
-Eller så kan du filtrera de tillgängliga spelböckerna efter de kanaler som du tänker använda för att nå dina kunder, vilket visas nedan:
+Om du inte redan har konfigurerat några inspirerande sandlådor väljer du **[!UICONTROL Create an inspirational Sandbox]**. En modal visas. Ange **Namn** och **Titel** i de obligatoriska fältrutorna och välj **Skapa**. När du har skapat en inspirerande sandlåda kan du se till att [definiera behörigheter](/help/access-control/home.md) innan du navigerar tillbaka till informationssidan för användningsfallsspelböcker för att skapa en instans.
 
-![Filtrera efter kanal](/help/use-case-playbooks/assets/playbooks/ui-guide/channel-select-filter.gif)
+![Skapa en inspirerande sandlåda.](/help/use-case-playbooks/assets/playbooks/discover/create-inspirational-sandbox.png)
 
-Experimentera med filter och sökalternativ och hitta rätt spelbok för dig.
+![Ange namn och titel för att skapa en inspirerande sandlåda.](/help/use-case-playbooks/assets/playbooks/discover/create-inspirational-sandbox-modal.png)
 
-## Visa spelbok och generera resurser {#view-playbook-generate-assets}
+Om du väljer en fallspelningsbok utanför en inspirerande sandlåda kan du inte skapa en instans. Välj på informationssidan **Gå till inspirerande sandlåda** för att gå till en befintlig inspirerande sandlåda och sedan välja **[!UICONTROL Create instance]**.
 
-Innan du slutför en spelbok och skapar instanser av den bör du kontrollera att den passar dina behov. För att du bättre ska förstå vilka användningsområden de omfattar innehåller alla spelböcker avsnitten som listas nedan. När du är redo att fortsätta och generera resurser väljer du **[!UICONTROL Create Instance]**.
+Om du inte har behörighet att skapa sandlådor kontaktar du administratören för att få hjälp med att skapa en inspirerande sandlåda.
 
-### Mindmap {#mindmap}
+![Inga behörigheter för att skapa sandlådan.](/help/use-case-playbooks/assets/playbooks/discover/no-permissions-to-create-sandbox.png)
 
-Använd mindmap-avsnittet i en spelbok för att förstå de steg i arbetsflödet som spelboken kan hjälpa dig att lösa. Visualisera flödet av hur alla genererade objekt kan hjälpa dig att uppnå användningsfallet, utifrån den personlighet som är vald i användningsfallet.
+Om du har nått gränsen för hur många sandlådor som har tilldelats dig visas ett meddelande där du ombeds kontakta organisationens administratör för att öka gränsen eller inaktivera eller ta bort några aktiva sandlådor. När din sandlådegräns har justerats eller antalet aktiva sandlådor har reducerats kan du fortsätta att skapa den inspirerande sandlådan.
 
-Mindmap börjar med en definition av vem som nås i användarresan och beskriver i varje steg om något levereras av Adobe, som ett nytt meddelande eller en påminnelse, eller om det är något som målpersonen gjorde som utlöser nästa meddelande eller händelse.
+![Sandlådegränsen har nåtts.](/help/use-case-playbooks/assets/playbooks/discover/sandbox-limit-reached.png)
 
-![Playbook mindmap selected.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-mindmap.png)
+Observera att kanalytor för e-post, push och SMS-meddelanden inte skapas automatiskt när du skapar en inspirerande sandlåda. Kontakta din IT-administratör för att konfigurera dem manuellt, annars kan det hända att instansen inte kan skapas.
 
-### Sammanfattning {#summary}
+![Konfigurera kanalförinställningar.](/help/use-case-playbooks/assets/playbooks/discover/configure-channel-presets.png)
 
->[!CONTEXTUALHELP]
->id="platform_playbooks_assets"
->title="Assets"
->abstract="Detta är resurserna som genereras av den här spelboken. När du har skapat en instans av spelboken kan du se resurserna i den inspirerande sandlådan och sedan befordra dem till andra sandlådor efter behov."
+## Konfigurera sandbox- och kanalytor i Journey Optimizer {#configure-channel-surfaces}
 
-Inspect i sammanfattningsavsnittet för att förstå vilka resurser som genereras när du skapar instanser från spelboken. Resurserna som genereras för varje spelningsbok är anpassade efter det användningsfall som spelningsboken aktiverar. Hämta mer information nedan om alla objekt i sammanfattningsavsnittet.
+Om din organisation har licens för [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/ajo-home.html), och du vill använda de spelböcker som är utformade för Journey Optimizer, måste du konfigurera kanalförinställningarna i sandlådan, som definierar de tekniska parametrar som krävs för dina meddelanden. [Lär dig hur du ställer in kanalytor i Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer/using/configuration/channel-surfaces.html).
 
-| Objekt | Beskrivning |
----------|----------|
-| **[!UICONTROL Target audience]** | Beskriver de profiler som du vill nå genom den här användningsfallsspelboken. |
-| **[!UICONTROL Marketing Channels]** | Beskriver de kanaler som används för att nå de profiler som spelboken riktar sig till. |
-| **[!UICONTROL Technical assets]** | En lista med tekniska resurser som genereras när du har skapat instanser av spelboken. De genererade resurserna skiljer sig åt i spelboken, beroende på användningsfallet. Vissa spelböcker kan generera scheman, segment och resor. Andra kan generera destinationer. Se [Förstå de genererade tillgångarna](/help/use-case-playbooks/playbooks/create-share-reuse.md#understand-assets) mer information om hur du kan använda och återanvända genererade resurser finns i guiden om hur du skapar och återanvänder instanser. |
+Om du vill skapa instanser av spelböcker i Journey Optimizer måste du konfigurera kanalytor för e-post-, push- och SMS-meddelanden.
 
-{style="table-layout:auto"}
+### E-postkanalens yta
 
-![Spelbokssammanfattning markerad](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-summary.png)
+Gå till `Channels` i Journey Optimizer gränssnitt. Konfigurera separata underdomäner och IP-pooler för marknadsföringsmeddelanden och transaktionsmeddelanden, om de inte redan har konfigurerats. Det här är de bästa sätten att se till att transaktionsmeddelanden, som e-postmeddelanden med orderbekräftelse, når fram till dina kunder. Ange namn, e-postadresser och andra inställningar. Välj **Skicka** längst upp till höger på sidan för att skapa marknadsföringskanalens yta. Läs dokumentationen på [hur du konfigurerar e-postkanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/email/configure-email/email-settings.html).
 
-### Instanser {#instances}
+### SMS-kanalsyta
 
-Bläddra ned till avsnittet med instanser för att få en översikt över de instanser av den här spelboken som du eller medlemmar i ditt team redan har skapat. Du kan använda olika kontroller för att sortera och filtrera de förekomster som visas, t.ex. för att endast visa de som du har skapat. Du kan även se olika information om varje instans enligt nedan.
+Om du vill skapa en SMS-kanalyta skapar du först en SMS API-autentiseringsuppgift och väljer önskad leverantör (till exempel Sinch). Ge SMS-kanalen ett namn (till exempel SMS Marketing), markera konfigurationen och ange ett avsändarnummer. Välj **Skicka** längst upp till höger på sidan för att spara SMS-kanalens yta. Läs dokumentationen på [konfigurera SMS-kanalsytor](https://experienceleague.adobe.com/docs/journey-optimizer/using/sms/sms-configuration.html?lang=en#message-preset-sms).
 
-| Objekt | Beskrivning |
-|---------|----------|
-| **[!UICONTROL Name]** | Namnet på instansen baserat på spelningsboken. Du kan anpassa namnet och beskrivningen för en instans. Läs avsnittet om [redigera instansmetadata](/help/use-case-playbooks/playbooks/create-share-reuse.md#edit-instance-metadata) för mer information. |
-| **[!UICONTROL Status]** | Anger instansens status. A **[!UICONTROL submitted]** -instansen är klar att användas. |
-| **[!UICONTROL Created]** | Anger när instansen skapades. |
-| **[!UICONTROL Created By]** | Anger vem som skapade instansen. |
-| **[!UICONTROL Last Modified]** | Anger när instansen senast ändrades. |
+Konfigurera även kanaler för spelböcker som innehåller transaktionsmeddelanden som orderbekräftelser.
 
-{style="table-layout:auto"}
+### Tryck kanalyta
 
-![Playbook-instansen är markerad.](/help/use-case-playbooks/assets/playbooks/ui-guide/playbook-instances.png)
+Bekräfta att appytorna är konfigurerade från Experience Platform eller datainsamlingsgränssnittet. Så här ser appytorna ut i datainsamlingsmiljön.
 
-## Nästa steg - Skapa en spelboksinstans {#next-steps-create-instance}
+## Nästa steg {#next-steps}
 
-När du är redo att fortsätta med en spelbok och skapa en instans väljer du **[!UICONTROL Create Instance]** för att fortsätta med spelboken och generera tekniska resurser. Läs guiden på [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) för ytterligare information.
+Nu när du har läst det här dokumentet bör du veta hur du konfigurerar en inspirerande sandlåda och känna till olika sätt att komma åt fallspelsböcker inom Platform. Läs om hur du [sök](/help/use-case-playbooks/playbooks/find.md) rätt spelbok.
+

@@ -4,9 +4,9 @@ title: Kom igång med Use Case Playbooks
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: fe87b8cdeaca5e4e852a8819534f4a5c4023ca52
+source-git-commit: dfb4549a09628f2fed947ddf76167db28354eb92
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '893'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Kom igång
 
-Lär dig hur du konfigurerar ditt konto för Use Case Playbooks, utformat för Real-time Customer Data Platform och Adobe Journey Optimizer. De tre huvudsakliga konfigurationsstegen är:
+Lär dig hur du konfigurerar ditt konto för Use Case Playbooks, som är utformat för Real-time Customer Data Platform och Adobe Journey Optimizer om det inte konfigureras automatiskt. De tre huvudsakliga konfigurationsstegen är:
 
 * Skapa en sandlåda
 * Konfigurera användarbehörigheter
