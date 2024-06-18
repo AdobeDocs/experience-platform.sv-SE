@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för Segment Builder
 description: Segmentbyggaren i Adobe Experience Platform-användargränssnittet har en omfattande arbetsyta som du kan använda för att interagera med profildataelement. Arbetsytan innehåller intuitiva kontroller för att skapa och redigera regler, till exempel dra-och-släpp-paneler som används för att representera dataegenskaper.
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: 305aa7f44cd64d9a0ae704fe9aa01d2d1c536ade
 workflow-type: tm+mt
-source-wordcount: '3554'
+source-wordcount: '3664'
 ht-degree: 0%
 
 ---
@@ -114,6 +114,14 @@ Du kan hovra över ⓘ bredvid en målgrupp för att visa information om målgru
 Du kan också söka efter målgrupper med hjälp av sökfältet som använder [Lucenes söksyntax](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). På **[!UICONTROL Audiences]** om du väljer en mapp på den översta nivån visas sökfältet så att du kan söka i den mappen. Sökresultaten fylls bara i när hela ord anges. Om du till exempel vill hitta en publik med namnet `Online Shoppers`börjar du skriva &quot;Online&quot; i sökfältet. När ordet &quot;Online&quot; har skrivits in fullständigt visas sökresultat som innehåller ordet &quot;Online&quot;.
 
 ## Regelbyggarens arbetsyta {#rule-builder-canvas}
+
+>[!IMPORTANT]
+>
+>Från och med versionen från juni 2024 representerar tidsbegränsningarna&quot;Den här månaden&quot; och&quot;Det här året&quot; både&quot;månad till datum&quot; och&quot;år till datum&quot;. Om du till exempel skapade en målgrupp den 18 juli som letade efter&quot;alla kunder vars födelsedag inträffar den här månaden&quot;, skulle målgruppen få alla kunder vars födelsedagar inträffade mellan 1 juli och 31 juli. Den 1 augusti får den här publiken alla kunder vars födelsedag inträffar från den 1 augusti till den 31 augusti.
+>
+>Tidigare representerade &quot;Den här månaden&quot; och &quot;det här året&quot; 30 dagar respektive 365 dagar, som inte kunde räkna med månader med 31 dagar respektive skottår.
+>
+>För att uppdatera era målgruppers logik måste ni spara om era målgrupper som ni skapat tidigare.
 
 En segmentdefinition är en samling regler som används för att beskriva viktiga egenskaper eller beteenden hos en målgrupp. Dessa regler skapas med hjälp av regelbyggararbetsytan, som finns i mitten av [!DNL Segment Builder].
 
