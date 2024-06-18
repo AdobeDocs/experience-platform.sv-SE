@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du använder beräkningsfält för att exportera arrayer i platta schemafiler från Real-Time CDP till molnlagringsmål.
 badge: Beta
 exl-id: ff13d8b7-6287-4315-ba71-094e2270d039
-source-git-commit: b6bdfef8b9ac5ef03ea726d668477b8629b70b6c
+source-git-commit: 787aaef26fab5ca3acff8303f928efa299cafa93
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,13 @@ Få omfattande information om beräkningsfält - vad dessa är och varför de sp
 * [Användargränssnittsguide och översikt](/help/data-prep/ui/mapping.md#calculated-fields)
 * [Förinställningsfunktioner för data](/help/data-prep/functions.md)
 
+<!--
+
 >[!IMPORTANT]
 >
->Alla funktioner ovan stöds inte *vid export av fält till molnlagringsmål* med funktionen för beräknade fält. Se [funktionsavsnitt som stöds](#supported-functions) mer information nedan.
+>Not all functions listed above are supported *when exporting fields to cloud storage destinations* using the calculated fields functionality. See the [supported functions section](#supported-functions) further below for more information.
+
+-->
 
 ## Arrayer och andra objekttyper i Platform {#arrays-strings-other-objects}
 
@@ -48,7 +52,7 @@ Observera följande kända begränsningar för betaversionen av den här funktio
 * Export till JSON- eller Parquet-filer med hierarkiska scheman stöds inte just nu. Du kan bara exportera arrayer till platta CSV-, JSON- och Parquet-schemafiler.
 * För närvarande *du kan bara exportera enkla matriser (eller matriser med primitiva värden) till molnlagringsmål*. Det innebär att du kan exportera arrayobjekt som innehåller strängar, int eller booleska värden. Det går inte att exportera kartor eller arrayer med kartor eller objekt. Det modala fönstret för beräknade fält visar bara de arrayer som du kan exportera.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 [Anslut](/help/destinations/ui/connect-destination.md) till önskat molnlagringsmål, gå igenom [aktiveringssteg för molnlagringsmål](/help/destinations/ui/activate-batch-profile-destinations.md) och kom till [mappning](/help/destinations/ui/activate-batch-profile-destinations.md#mapping) steg.
 
@@ -86,7 +90,9 @@ När du är klar väljer du **[!UICONTROL Next]** för att gå vidare till näst
 
 ## Funktioner som stöds {#supported-functions}
 
-Observera att endast följande funktioner stöds i betaversionen av beräkningsfält och matrisstöd för destinationer:
+Alla dokumenterade [Förinställningsfunktioner för data](/help/data-prep/functions.md) stöds när data aktiveras till filbaserade mål.
+
+Observera dock att omfattande fallbeskrivningar och exempelutdata för närvarande endast tillhandahålls för följande funktioner i betaversionen av beräknade fält och stöd för matriser för destinationer:
 
 * `join`
 * `coalesce`
@@ -224,7 +230,7 @@ Du kan hash-koda strängvärden direkt, till exempel `md5(personalEmail.address)
 
 De hash-funktioner som stöds är:
 
-|  -funktion | Exempeluttryck |
+| Funktion | Exempeluttryck |
 |---------|----------|
 | `sha1` | `sha1(organizations[0])` |
 | `sha256` | `sha256(organizations[0])` |
