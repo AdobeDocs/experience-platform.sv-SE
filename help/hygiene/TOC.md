@@ -5,10 +5,10 @@ breadcrumb-title: Guide för hantering av avancerad datalivscykel
 user-guide-description: Ta bort enskilda poster och schemalägg förfallodatum för datauppsättningar i Experience Platform för datarensning, borttagning av anonyma data och datamängdsminimering.
 feature: Data Hygiene
 role: User, Developer, Admin
-source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
+source-git-commit: 9885c0d75ac28cfd73179b63b3d54da9b0ccf967
 workflow-type: tm+mt
-source-wordcount: '65'
-ht-degree: 47%
+source-wordcount: '67'
+ht-degree: 49%
 
 ---
 
@@ -27,3 +27,4 @@ ht-degree: 47%
    * [Posten tas bort](./api/jobs.md)
    * [(Beta) Posten tas bort](./api/workorder.md)
    * [Kvot](./api/quota.md)
+* [Bästa praxis](./best-practices.md)
