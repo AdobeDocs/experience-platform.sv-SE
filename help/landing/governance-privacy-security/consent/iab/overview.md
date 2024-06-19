@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Stöd för IAB TCF 2.0 i Experience Platform
 description: Lär dig hur du konfigurerar dataåtgärder och scheman för att förmedla val av kundsamtycke när du aktiverar segment till mål i Adobe Experience Platform.
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
 source-wordcount: '2477'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Adobe Experience Platform ingår i [IAB TCF 2.0-leverantörslista](https://iabeu
 
 Det här dokumentet innehåller en översikt över hur du konfigurerar dataåtgärder och profilscheman för att acceptera data om kundgodkännande som genererats av din CMP (Consent Management Platform). Det handlar också om hur Platform förmedlar val av användarsamtycke vid export av segment.
 
-## Förutsättningar
+## Förhandskrav
 
 Om du vill följa med i den här guiden måste du använda en CMP, antingen kommersiell eller egen, som är integrerad och kompatibel med IAB TCF. Se [lista över kompatibla CMP:er](https://iabeurope.eu/cmp-list/) för mer information.
 
@@ -41,7 +41,7 @@ Handboken kräver även en fungerande förståelse av följande plattformstjäns
 * [Adobe Experience Platform Identity Service](/help/identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 * [Kundprofil i realtid](/help/profile/home.md): Använder [!DNL Identity Service] för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. [!DNL Real-Time Customer Profile] hämtar data från Data Lake och behåller kundprofiler i sitt eget separata datalager.
 * [Adobe Experience Platform Web SDK](/help/web-sdk/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
-   * [Kommandon för SDK-medgivande](/help/web-sdk/consent/supporting-consent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
+   * [Kommandon för SDK-medgivande](../../../../web-sdk/commands/setconsent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](/help/segmentation/home.md): Dela upp [!DNL Real-Time Customer Profile] data till grupper av individer som delar liknande egenskaper och svarar på liknande sätt som marknadsföringsstrategier.
 
 Utöver de plattformstjänster som anges ovan bör du även känna till [mål](/help/data-governance/home.md) och deras roll i plattformens ekosystem.

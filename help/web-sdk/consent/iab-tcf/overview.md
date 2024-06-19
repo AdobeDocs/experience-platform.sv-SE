@@ -3,9 +3,9 @@ title: Stöd för IAB TCF 2.0 i Adobe Experience Platform Web SDK
 description: Lär dig hur du stöder IAB TCF 2.0-medgivanden med Adobe Experience Platform Web SDK
 keywords: samtycke;setConsent;Profile Privacy Field group;Experience Event Privacy Field group;Privacy Field group;IAB TCF 2.0;Real-Time CDP;
 exl-id: 78e728f4-1604-40bf-9e21-a056024bbc98
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '862'
 ht-degree: 0%
 
 ---
@@ -69,16 +69,16 @@ Om du till exempel har en kund som inte omfattas av den allmänna dataskyddsför
 
 ### Ange samtycke när det ändras
 
-Adobe Experience Platform Web SDK har en `setConsent` som meddelar dina kunders samtycke till alla Adobes tjänster med IAB TCF 2.0. Om du integrerar med Real-Time CDP uppdateras kundens profil. Om du integrerar med Audience Manager uppdateras kundinformationen. Om du anropar detta anges även en cookie med en medgivandeinställning som helt eller inte alls som kontrollerar om framtida Experience Events får skickas. Den här åtgärden anropas när medgivandet ändras. Vid framtida sidinläsningar läses cookien för Edge Network-samtycke in för att avgöra om Experience Events kan skickas och om en identitetscookie kan anges.
+Adobe Experience Platform Web SDK har en `setConsent` som meddelar dina kunders samtycke till alla Adobes tjänster med IAB TCF 2.0. Om du integrerar med Real-Time CDP uppdateras kundens profil. Om du integrerar med Audience Manager uppdateras kundinformationen. Om du anropar detta anges även en cookie med en medgivandeinställning som helt eller inte alls som kontrollerar om framtida Experience Events får skickas. Den här åtgärden anropas när medgivandet ändras. När en framtida sida läses in läses cookien för Edge Network samtycke in för att avgöra om Experience Events kan skickas och om en identitetscookie kan anges.
 
-På samma sätt som för integreringen med Audience Manager IAB TCF 2.0 ger Edge Network sitt samtycke när en kund har gett sitt uttryckliga medgivande för följande syften:
+På samma sätt som integreringen av Audience Manager IAB TCF 2.0 ger Edge Network sitt samtycke när en kund uttryckligen har gett sitt samtycke till följande:
 
 - **Syfte 1:** Lagra och/eller få åtkomst till information på en enhet
 - **Syfte 10:** Utveckla och förbättra produkter
 - **Specialsyfte 1:** Säkerställ säkerhet, förhindra bedrägeri och felsökning. (Enligt reglerna för IAB TCF godkänner detta alltid)
 - **Tillstånd från Adobe:** Godkännande för Adobe (leverantör 565)
 
-Mer information om `setConsent` -kommando, läsa dokumentationen om [Stöd för samtycke](../../consent/supporting-consent.md).
+Mer information om `setConsent` kan du läsa dedikerad Web SDK-dokumentation på [setConsent](../../../web-sdk/commands/setconsent.md).
 
 ### Lägga till samtycke till upplevelsehändelser
 

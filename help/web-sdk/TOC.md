@@ -1,15 +1,15 @@
 ---
 solution: Data Collection
 audience: user
-user-guide-title: Hjälp för Adobe Experience Platform Web SDK
-breadcrumb-title: Web SDK Guide
-user-guide-description: Interagera med Experience Cloud via Edge-nätverket.
+user-guide-title: Hjälp med webb-SDK för Adobe Experience Platform
+breadcrumb-title: Användarhandbok om webb-SDK
+user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: ec801c550740c4cba3481a961599f548518bb032
+source-git-commit: b8c38108e7481a5c4e94e4122e0093fa6f00b96c
 workflow-type: tm+mt
-source-wordcount: '226'
-ht-degree: 9%
+source-wordcount: '224'
+ht-degree: 19%
 
 ---
 
@@ -91,13 +91,12 @@ ht-degree: 9%
       * [Konfigurera stöd för webb-meddelanden i appen i Web SDK](personalization/web-in-app-messaging.md)
 
 * Godkännande {#consent}
-   * [Samtycke](consent/supporting-consent.md)
    * IAB Transparency och Consent Framework 2.0 {#iab-tcf}
       * [Översikt](consent/iab-tcf/overview.md)
       * [Integrera med taggar](consent/iab-tcf/with-tags.md)
       * [Integrera utan taggar](consent/iab-tcf/without-tags.md)
 
-* Användningsexempel {#use-cases}
+* Användningsfall {#use-cases}
    * [Översikt](use-cases/overview.md)
    * [Skicka data till Adobe Analytics via Web SDK](use-cases/adobe-analytics.md)
    * [Tips för användaragentklient](use-cases/client-hints.md)

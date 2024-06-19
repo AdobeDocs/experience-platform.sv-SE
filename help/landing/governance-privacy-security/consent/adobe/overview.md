@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Samtyckesbearbetning i Adobe Experience Platform
 description: Lär dig hur du bearbetar kundens medgivandesignaler i Adobe Experience Platform med standarden Adobe 2.0.
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
 source-wordcount: '1546'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Detta dokument ger en översikt över hur ni konfigurerar era plattformsdataåtg
 >
 >Det här dokumentet fokuserar på behandling av data om samtycke med hjälp av Adobe-standarden. Om du bearbetar medgivandedata i enlighet med IAB Transparency and Consent Framework (TCF) 2.0, se guiden på [Stöd för TCF 2.0 i Adobe Real-time Customer Data Platform](../iab/overview.md).
 
-## Förutsättningar
+## Förhandskrav
 
 Handboken kräver en arbetsförståelse av de olika Experience Platform-tjänster som arbetar med behandling av data om samtycke:
 
@@ -29,7 +29,7 @@ Handboken kräver en arbetsförståelse av de olika Experience Platform-tjänste
 * [Adobe Experience Platform Identity Service](/help/identity-service/home.md): Lös den grundläggande utmaning som fragmenteringen av kundupplevelsedata innebär genom att överbrygga identiteter mellan olika enheter och system.
 * [Kundprofil i realtid](/help/profile/home.md): Använder [!DNL Identity Service] funktioner för att skapa detaljerade kundprofiler utifrån era datauppsättningar i realtid. Kundprofilen i realtid hämtar data från datasjön och bevarar kundprofiler i sitt eget separata datalager.
 * [Adobe Experience Platform Web SDK](/help/web-sdk/home.md): Ett JavaScript-bibliotek på klientsidan som gör att du kan integrera olika plattformstjänster i kundens webbplats.
-   * [Kommandon för SDK-medgivande](/help/web-sdk/consent/supporting-consent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
+   * [Kommandon för SDK-medgivande](../../../../web-sdk/commands/setconsent.md): En översikt över de SDK-kommandon som är relaterade till samtycke visas i den här handboken.
 * [Adobe Experience Platform segmenteringstjänst](/help/segmentation/home.md): Gör att ni kan dela in kundprofildata i realtid i grupper av individer som delar liknande egenskaper och som reagerar på liknande sätt som marknadsföringsstrategier.
 
 ## Sammanfattning av godkännandebearbetningsflöde {#summary}
@@ -51,7 +51,7 @@ I den aktuella versionen av stöd för behandling av samtycke i Platform är det
 >
 >Mer information om strukturen för de XDM-medgivandefält som nämns ovan finns i handboken på [[!UICONTROL Consents and Preferences] datatyp](/help/xdm/data-types/consents.md).
 
-När systemet har konfigurerats tolkar Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, släppas från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
+När systemet har konfigurerats tolkar Platform Web SDK datainsamlingsvärdet för den aktuella användaren för att avgöra om data ska skickas till Adobe Experience Platform Edge Network, tas bort från klienten eller bevaras tills datainsamlingsbehörigheten är inställd på ja eller nej.
 
 ## Bestäm hur ni genererar data om kundsamtycke i er CMP {#consent-data}
 

@@ -3,7 +3,7 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;samtyc
 title: Datatypen Innehåll och inställningar
 description: Datatypen Godkännande av sekretess, personalisering och marknadsföringsinställningar är avsedd att stödja insamling av kundbehörigheter och preferenser som genereras av CMP (Consent Management Platforms) och andra källor från era dataåtgärder.
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
 source-wordcount: '2235'
 ht-degree: 0%
@@ -16,7 +16,7 @@ The [!UICONTROL Consent for Privacy, Personalization and Marketing Preferences] 
 
 Detta dokument omfattar strukturen och den avsedda användningen av de fält som tillhandahålls av [!UICONTROL Consents and Preferences] datatyp.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Det här dokumentet kräver en fungerande förståelse av XDM och användning av scheman i [!DNL Experience Platform]. Läs följande dokumentation innan du fortsätter:
 
@@ -267,7 +267,7 @@ Se självstudiekursen om [skapa ett schema i användargränssnittet](https://www
 
 ## Hantera samtycke och ändringar av inställningar
 
-När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med hjälp av [Adobe Experience Platform Web SDK](/help/web-sdk/consent/supporting-consent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
+När en kund ändrar sitt samtycke eller sina inställningar på webbplatsen bör dessa ändringar samlas in och tillämpas omedelbart med hjälp av [Adobe Experience Platform Web SDK](../../web-sdk/commands/setconsent.md). Om en kund väljer bort från datainsamlingen måste all datainsamling omedelbart upphöra. Om en kund väljer bort personalisering bör det inte finnas någon personalisering på nästa sida de besöker.
 
 ## Bilaga {#appendix}
 

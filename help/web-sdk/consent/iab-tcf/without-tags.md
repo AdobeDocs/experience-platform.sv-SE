@@ -3,9 +3,9 @@ title: Integrera stödet för IAB TCF 2.0 med Adobe Experience Platform Web SDK
 description: Lär dig hur du ställer in stöd för IAB TCF 2.0 för din webbplats utan att använda taggar.
 seo-description: Learn how to set up IAB TCF 2.0 consent with Adobe Experience Platform Web SDK
 exl-id: 14f1802a-0f8d-487f-ae17-5daaaab05162
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+source-git-commit: b08c6cf12a38f79e019544dea91913a77bd6490a
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '615'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,7 @@ window.__tcfapi('addEventListener', 2, function (tcData, success) {
 });
 ```
 
-Det här kodblocket lyssnar efter `useractioncomplete` -händelsen och anger sedan medgivandet, skickar medgivandesträngen och `gdprApplies` flagga. Om ni har anpassade identiteter för era kunder måste ni fylla i `identityMap` variabel. Se guiden på [stödjande samtycke](../../consent/supporting-consent.md) för mer information om telefonsamtal `setConsent`.
+Det här kodblocket lyssnar efter `useractioncomplete` -händelsen och anger sedan medgivandet, skickar medgivandesträngen och `gdprApplies` flagga. Om ni har anpassade identiteter för era kunder måste ni fylla i `identityMap` variabel. Se guiden på [setConsent](../../../web-sdk/commands/setconsent.md) för mer information.
 
 ## Inkludera medgivandeinformation i sendEvent
 
