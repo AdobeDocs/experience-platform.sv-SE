@@ -3,9 +3,9 @@ title: Aktivera målgruppsdata för direktuppspelningsmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att mappa dem till direktuppspelningsmål.
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: f741e62b3340b743e465edf3f7a007580b3f61be
+source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1098'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform direktuppspelningsmål.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
@@ -79,7 +79,9 @@ Vissa målgruppsmål för direktuppspelning kräver att du väljer källattribut
 
 1. I **[!UICONTROL Select source field]** sidan använder du **[!UICONTROL Select attributes]** eller **[!UICONTROL Select identity namespace]** för att växla mellan de två kategorierna med tillgängliga källfält. Från tillgängliga [!DNL XDM] profilattribut och identitetsnamnutrymmen, markera de som du vill mappa till målet och välj sedan **[!UICONTROL Select]**.
 
-   ![Välj en källfältssida med flera tillgängliga källfält.](../assets/ui/activate-segment-streaming-destinations/source-field-page.png)
+   Använd **[!UICONTROL Show only fields with data]** växla till att endast visa schemafält med värden. Som standard visas endast ifyllda schemafält.
+
+   ![Välj en källfältssida med flera tillgängliga källfält.](../assets/ui/activate-segment-streaming-destinations/select-source-field-modal.png)
 
 1. Markera knappen till höger om **[!UICONTROL Target field]** post.
 

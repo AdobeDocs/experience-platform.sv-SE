@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: f206ea853d44410c93463e1e515279b39afd1fd9
+source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
 workflow-type: tm+mt
-source-wordcount: '3774'
+source-wordcount: '3793'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 I den här artikeln förklaras det arbetsflöde som krävs för att aktivera målgrupper i Adobe Experience Platform till batchprofilfilsbaserade mål, som molnlagring och e-postmarknadsföringsmål.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Om du vill aktivera målgrupper till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
@@ -240,6 +240,8 @@ I det här steget måste du välja de profilattribut som du vill lägga till i f
    >[!TIP]
    > 
    >Du kan använda sökfältet för att begränsa urvalet, vilket visas i bilden nedan.
+
+   Använd **[!UICONTROL Show only fields with data]** växla till att endast visa schemafält med värden. Som standard visas endast ifyllda schemafält.
 
    ![Modalt fönster med profilattribut som kan exporteras till målet.](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
 
@@ -519,7 +521,7 @@ Anrikningsattribut motsvarar anpassade överförda målgrupper som importerats i
 Följ stegen nedan för att välja anrikningsattribut för varje extern målgrupp:
 
 1. I **[!UICONTROL Enrichment attributes]** kolumn väljer du ![Knappen Redigera](../assets/ui/activate-batch-profile-destinations/edit-button.svg) (Redigera).
-2. Välj **[!UICONTROL Add enrichment attribute]**. Ett nytt tomt schemafält visas.
+2. Välj **[!UICONTROL Add enrichment attribute]**.  Ett nytt tomt schemafält visas.
    ![Gränssnittsbild som visar modala skärmar för anrikningsattribut.](../assets/ui/activate-batch-profile-destinations/add-enrichment-attribute.png)
 3. Klicka på knappen till höger om det tomma fältet för att öppna fältvalsskärmen.
 4. Välj de attribut du vill exportera för målgruppen.
