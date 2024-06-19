@@ -2,10 +2,10 @@
 title: AI Assistant i Adobe Experience Platform - översikt
 description: Lär dig mer om AI Assistant, dess nyanser och användningsexempel, och hur du kan använda det för att snabba upp arbetsflödet med Adobe Experience Platform och Real-time Customer Data Platform.
 exl-id: cfd4ac22-fff3-4b50-bbc2-85b6328f603c
-source-git-commit: 9ee39ee1f877fa13acdca8a1d8549cf4692b39aa
+source-git-commit: e8939132c1508e1dfc4028e6c8ff23662d6c2b2b
 workflow-type: tm+mt
-source-wordcount: '679'
-ht-degree: 0%
+source-wordcount: '820'
+ht-degree: 1%
 
 ---
 
@@ -69,14 +69,18 @@ Användningsinsikter hänvisar till svar på AI Assistant genererar om dina meta
 
 Du kan ställa frågor till AI Assistant om dina operativa insikter i följande domäner:
 
-* Attribut
-* Målgrupper
-* Dataflöden
-* Datauppsättningar
-* Destinationer _(Frågor om konton och vissa frågor om dataflöde kan inte besvaras just nu.)_
-* Resor
-* Scheman _(Frågor om fältgrupper kan inte besvaras just nu.)_
-* Källor _(Frågor om konton kan inte besvaras just nu.)_
+| Domän | Metadata som stöds |
+| --- | --- |
+| Attribut | <ul><li>Attributnamn söker upp</li><li>Attribut - schemarelation</li><li>Attribut - datauppsättningsrelation</li><li>Attribut - målgruppsrelation</li><li>Attribut - målrelation</li><li>Oanvända attribut</li></ul> |
+| Målgrupper | <ul><li>Antal målgrupper</li><li>Målgruppstyp (direktuppspelning eller batch)</li><li>Skapande-/ändringsdatum</li><li>Aktiveringsstatus</li><li>Profilantal</li><li>Duplicera målgrupper</li><li>Målgruppsdefinitionssökningar</li><li>Målgrupp - attributrelation</li><li>Målgrupp - datauppsättningsrelation</li><li>Målgrupp - målrelation</li><li>InSegment-regler</li><li>Namnsökningar</li><li>Namn- och ID-sökningar |
+| Dataflöden | <ul><li>Antal dataflöden</li><li>Dataflödesstatus</li><li>Dataflöde - Datauppsättningsrelation</li><li>Dataflöd - källrelation</li></ul> |
+| Datauppsättningar | <ul><li>Antal data</li><li>Aktivera profilstatus</li><li>Skapad/ändrad den</li><li>Datauppsättning - schemarelation</li><li>Datauppsättning - målgruppsrelation</li><li>Datauppsättning - attributrelation</li><li>Datauppsättning - dataflödesrelation</li><li>Namnsökningar </li><li>Namn- och ID-sökningar</li></ul> |
+| Mål  | <ul><li>Konfigurerade destinationsantal</li><li>Mål - målgruppsrelation</li><li>Destinationsattributrelation</li></ul> |
+| Resor | <ul><li>Antal</li><li>Namnsökningar</li><li>Namn- och ID-sökningar</li><li>Resestatus</li><li>Utlöst status (målgrupp kontra händelse)</li><li>Skapande-/ändringsdatum</li><li>Återkommande frekvens</li></ul> |
+| Scheman | <ul><li>Antal scheman</li><li>Skapad/ändrad den</li><li>Typ av schemaklass</li><li>Schema - attributrelation</li><li>Schema - datauppsättningsrelation</li><li>Schema - målgruppsrelation</li><li>Aktivera profilstatus</li><li>Namnsökningar</li><li>Namn- och ID-sökningar</li></ul> |
+| Källor | <ul><li>Konton</li><li>Kontostatus</li><li>Aktiva/inaktiva dataflöden för varje konto</li><li>Källkoppling - dataflödesrelation</li><li>Källkonto - dataflödesrelation</li></ul> |
+
+{style="table-layout:auto"}
 
 När det gäller frågor om driftsinsikter kanske svaren inte speglar det aktuella läget för användargränssnittet. De data som stödjer dessa frågor uppdateras en gång var 24:e timme. De ändringar som användare gör i Real-Time CDP under dagtid synkroniseras till exempel med datalager på natten och blir sedan tillgängliga för användarfrågor på morgonen. Du måste logga in i en sandlåda för att få veta mer om specifika data som är relaterade till objekt.
 

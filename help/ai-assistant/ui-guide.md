@@ -2,9 +2,9 @@
 title: AI Assistant i Adobe Experience Platform
 description: Lär dig hur du använder AI Assistant för att navigera bland och förstå koncept för Experience Platform och Real-time Customer Data Platform, samt användningsinformation om dina objekt.
 exl-id: 3fed2b1d-75fc-47ce-98d1-a811eb8a1d8e
-source-git-commit: 1c228eb95075d4302ab6d3544fff8766087411bf
+source-git-commit: 94245fe25828025b60ea57ddebede2b3ccf890eb
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1476'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # Användargränssnittshandbok för AI Assistant
 
 Läs den här guiden och lär dig hur du kan använda AI Assistant i Adobe Experience Platform-gränssnittet.
+
+Följande video är avsedd att ge stöd för din förståelse av AI Assistant.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3429845?learn=on)
 
 ## Åtkomst till AI-assistenten i användargränssnittet i Experience Platform
 
@@ -111,6 +115,22 @@ Du kan även lägga till filter och ändringar i dina frågor och du kan instrue
 
 +++
 
+### Verifiera svar från operativa insikter {#verify-responses}
+
+Du kan verifiera varje svar som rör frågor om driftsinsikter med hjälp av en SQL-fråga som AI Assistant tillhandahåller.
+
++++Välj för att visa exempel på verifiering av svar på operativa insikter
+
+När du har fått ett svar på en fråga om driftsinsikter väljer du **[!UICONTROL Show sources]** och sedan **[!UICONTROL View source query]**.
+
+![fråga för vykälla](./images/view-source-query.png)
+
+När AI Assistant får en fråga om driftsinsikter kan du använda den för att verifiera processen som tog att beräkna svaret. Den här källfrågan är endast avsedd för verifiering och stöds inte av frågetjänsten.
+
+![exempel på källfråga](./images/source-query.png)
+
++++
+
 ### Använd automatisk komplettering {#use-auto-complete}
 
 Du kan använda funktionen för automatisk komplettering för att ta emot en lista med dataobjekt som finns i din sandlåda. Rekommendationer som fylls i automatiskt finns tillgängliga för följande domäner: målgrupper, scheman, datamängder, källor och destinationer.
@@ -132,6 +152,14 @@ Du kan använda AI Assistants multibläddringsfunktioner för att få en mer nat
 I exemplet nedan ombeds AI Assistant först att ange det totala antalet dataflöden och sedan ombeds att ange en lista över de 10 senaste dataflödena.
 
 ![Exempel på multisväng](./images/multiturn.png)
+
++++
+
+### Starta en ny konversation
+
+Du kan ändra ämnen med AI Assistant genom att återställa och starta en ny konversation.
+
++++Välj för att visa ett exempel på hur du återställer konversationen
 
 Om du vill återställa väljer du ellipserna (**`...`**) i AI Assistant-gränssnittet och välj **[!UICONTROL Start new conversation]**. Detta informerar AI Assistant om att du avser att ändra ämnen och kan vara särskilt användbart vid felsökning av frågor som antingen är felaktiga eller refererar till felaktig information.
 
