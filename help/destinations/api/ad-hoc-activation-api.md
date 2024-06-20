@@ -5,9 +5,9 @@ title: Aktivera målgrupper för batchdestinationer via ad hoc-aktiverings-API
 description: I den här artikeln illustreras det kompletta arbetsflödet för att aktivera målgrupper via ad hoc-aktiverings-API:t, inklusive segmenteringsjobben som utförs före aktiveringen.
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 6304dabb6125b7eddcac16bcbf8abcc36a4c9dc2
+source-git-commit: deecaf0af269b64af507126dba0523d2b16a5721
 workflow-type: tm+mt
-source-wordcount: '1544'
+source-wordcount: '1606'
 ht-degree: 0%
 
 ---
@@ -167,15 +167,19 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/d
 | Egenskap | Beskrivning |
 | -------- | ----------- |
 | <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | ID:n för de målinstanser som du vill aktivera målgrupper för. Du kan hämta dessa ID:n från plattformsgränssnittet genom att navigera till **[!UICONTROL Destinations]** > **[!UICONTROL Browse]** och klicka på önskad målrad för att visa mål-ID:t i den högra listen. Mer information finns i [dokumentation om målarbetsyta](/help/destinations/ui/destinations-workspace.md#browse). |
-| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgrupper som du vill aktivera till det valda målet. |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | ID:n för de målgrupper som du vill aktivera till det valda målet. Du kan använda ad hoc-API:t för att exportera plattformsgenererade målgrupper och externa (anpassade uppladdningar) målgrupper. När du aktiverar externa målgrupper ska du använda det systemgenererade ID:t i stället för målgrupps-ID:t. Du hittar det systemgenererade ID:t i målgruppsvyn i användargränssnittet. <br> ![Vy över det målgrupps-ID som inte ska väljas.](/help/destinations/assets/api/ad-hoc-activation/audience-id-do-not-use.png "Vy över det målgrupps-ID som inte ska väljas."){width="100" zoomable="yes"} <br> ![Visa det systemgenererade målgrupps-ID som ska användas.](/help/destinations/assets/api/ad-hoc-activation/system-generated-id-to-use.png "Visa det systemgenererade målgrupps-ID som ska användas."){width="100" zoomable="yes"} |
 
 {style="table-layout:auto"}
 
-### Begäran med export-ID:n (ska bli inaktuell) {#request-deprecated}
+### Begäran med export-ID {#request-export-ids}
+
+<!--
 
 >[!IMPORTANT]
 >
->**Undertryckt begärandetyp**. Den här exempeltypen beskriver begärandetypen för API-version 1. I version 2 av API:t för ad hoc-aktivering behöver du inte inkludera det senaste ID:t för målgruppsexportjobbet.
+>**Deprecated request type**. This example type describes the request type for the API version 1. In the v2 of the ad-hoc activation API, you do not need to include the latest audience export job ID.
+
+-->
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adhocrun \
