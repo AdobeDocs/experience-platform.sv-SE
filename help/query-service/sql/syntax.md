@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 42f4d8d7a03173aec703cf9bc7cccafb21df0b69
+source-git-commit: 4b1d17afa3d9c7aac81ae869e2743a5def81cf83
 workflow-type: tm+mt
-source-wordcount: '4111'
+source-wordcount: '4256'
 ht-degree: 1%
 
 ---
@@ -104,20 +104,34 @@ Den här satsen kan användas för att stegvis läsa data i en tabell baserat p�
 #### Exempel
 
 ```sql
-SELECT * FROM Customers SNAPSHOT SINCE 123;
+SELECT * FROM table_to_be_queried SNAPSHOT SINCE start_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT AS OF 345;
+SELECT * FROM table_to_be_queried SNAPSHOT AS OF end_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT BETWEEN 123 AND 345;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN start_snapshot_id AND end_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT BETWEEN HEAD AND 123;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN HEAD AND start_snapshot_id;
 
-SELECT * FROM Customers SNAPSHOT BETWEEN 345 AND TAIL;
+SELECT * FROM table_to_be_queried SNAPSHOT BETWEEN end_snapshot_id AND TAIL;
 
-SELECT * FROM (SELECT id FROM CUSTOMERS BETWEEN 123 AND 345) C 
+SELECT * FROM (SELECT id FROM table_to_be_queried BETWEEN start_snapshot_id AND end_snapshot_id) C 
 
-SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Customers.id = Inventory.id;
+(SELECT * FROM table_to_be_queried SNAPSHOT SINCE start_snapshot_id) a
+  INNER JOIN 
+(SELECT * from table_to_be_joined SNAPSHOT AS OF your_chosen_snapshot_id) b 
+  ON a.id = b.id;
 ```
+
+Tabellen nedan förklarar innebörden av varje syntaxalternativ i SNAPSHOT-satsen.
+
+| Syntax | Betydelse |
+|-------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| `SINCE start_snapshot_id` | Läser data med början från det angivna ID:t för ögonblicksbild (exklusivt). |
+| `AS OF end_snapshot_id` | Läser data som de var vid det angivna ögonblicksbild-ID:t (inklusive). |
+| `BETWEEN start_snapshot_id AND end_snapshot_id` | Läser data mellan de angivna ID:n för ögonblicksbilder av start och slut. Den är exklusiv för `start_snapshot_id` och innehåller `end_snapshot_id`. |
+| `BETWEEN HEAD AND start_snapshot_id` | Läser data från början (före den första ögonblicksbilden) till det angivna ID:t för ögonblicksbild (inklusive). Obs! Detta returnerar endast rader i `start_snapshot_id`. |
+| `BETWEEN end_snapshot_id AND TAIL` | Läser data från strax efter den angivna `end-snapshot_id` till slutet av datauppsättningen (exklusive ögonblicksbilds-ID). Detta innebär att om `end_snapshot_id` är den sista ögonblicksbilden i datauppsättningen. Frågan returnerar nollrader eftersom det inte finns några ögonblicksbilder utöver den senaste ögonblicksbilden. |
+| `SINCE start_snapshot_id INNER JOIN table_to_be_joined AS OF your_chosen_snapshot_id ON table_to_be_queried.id = table_to_be_joined.id` | Läser data med början från det angivna ögonblicksbilds-ID:t från `table_to_be_queried` och sammanfogar den med data från `table_to_be_joined` som den var `your_chosen_snapshot_id`. Kopplingen baseras på matchande ID:n från ID-kolumnerna i de två tabellerna som kopplas. |
 
 A `SNAPSHOT` -satsen fungerar med en tabell eller ett tabellalias men inte ovanpå en underfråga eller vy. A `SNAPSHOT` -satsen fungerar var som helst `SELECT` fråga i en tabell kan tillämpas.
 
@@ -128,8 +142,6 @@ Du kan också använda `HEAD` och `TAIL` som särskilda förskjutningsvärden f�
 >Om du frågar mellan två ögonblicksbild-ID:n kan följande två scenarier inträffa om startögonblicksbilden har gått ut och den valfria reservbeteendeflaggan (`resolve_fallback_snapshot_on_failure`) är inställt:
 >
 >- Om den valfria reservbeteendeflaggan är inställd väljer frågetjänsten den tidigaste tillgängliga ögonblicksbilden, anger den som startögonblicksbild och returnerar data mellan den tidigaste tillgängliga ögonblicksbilden och den angivna slutögonblicksbilden. Dessa data **inkluderande** av den tidigaste tillgängliga ögonblicksbilden.
->
->- Om den valfria reservbeteendeflaggan inte är inställd returneras ett fel.
 
 ### WHERE-sats
 
