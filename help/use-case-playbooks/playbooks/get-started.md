@@ -4,7 +4,7 @@ title: Kom igång med Use Case Playbooks
 description: Lär dig hur du kommer igång med funktionen Använd fallspelningsböcker.
 role: Admin
 exl-id: 1c39792e-49fe-4c5f-9796-fa29f60b7461
-source-git-commit: dfb4549a09628f2fed947ddf76167db28354eb92
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
 source-wordcount: '893'
 ht-degree: 0%
@@ -113,4 +113,4 @@ Läs dokumentationen på [hur du ställer in push-kanalsytor](https://experience
 
 ## Nästa steg {#next-steps}
 
-Nu när du har följt alla steg i det här dokumentet bör du ha skapat en utvecklingssandlåda med Använd fallspelningsböcker i den vänstra navigeringen. Nu vet du också hur du ger teammedlemmarna de behörigheter som krävs för att visa och hantera spelböcker och generera resurser. Som ett nästa steg ska du läsa hur [hitta rätt spelbok](/help/use-case-playbooks/playbooks/discover.md) för dig och sedan [skapa instanser av den](/help/use-case-playbooks/playbooks/create-share-reuse.md).
+Nu när du har följt alla steg i det här dokumentet bör du ha skapat en utvecklingssandlåda med Använd fallspelningsböcker i den vänstra navigeringen. Nu vet du också hur du ger teammedlemmarna de behörigheter som krävs för att visa och hantera spelböcker och generera resurser. Som ett nästa steg ska du läsa hur [välj rätt spelbok](/help/use-case-playbooks/playbooks/choose.md) för dig och sedan [skapa instanser av den](/help/use-case-playbooks/playbooks/create-share-reuse.md).

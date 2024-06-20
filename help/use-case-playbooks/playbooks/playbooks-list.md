@@ -4,9 +4,9 @@ title: Available Use Case Playbooks for Real-time Customer Data Platform and Ado
 description: En lista över alla spelböcker i Real-time Customer Data Platform och Adobe Journey Optimizer.
 role: User
 exl-id: 00f16761-3759-4de0-882d-b77e18f7c1fe
-source-git-commit: 6573fdede3bd25bac556531e45f8abefc576f857
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '776'
 ht-degree: 0%
 
 ---
@@ -77,4 +77,4 @@ Läs den här sidan för att få en översikt över alla tillgängliga spelböck
 
 ## Nästa steg
 
-Nu när du är medveten om de tillgängliga spelböckerna kan du läsa [guide](/help/use-case-playbooks/playbooks/discover.md) för att förstå hur du kommer igång med spelböcker i användargränssnittet.
+Nu när du är medveten om de tillgängliga spelböckerna kan du läsa detta [stödlinje](/help/use-case-playbooks/playbooks/choose.md) om du vill veta hur du kommer igång med spelböckerna och välja rätt för dig i användargränssnittet.

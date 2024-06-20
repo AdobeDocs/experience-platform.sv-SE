@@ -4,10 +4,10 @@ title: Använd översikt över fallspelningsböcker
 description: Lär dig använda funktionen Spelböcker med användningsexempel i Experience Platform för att komma igång med olika användningsområden för marknadsföring
 role: Developer, User, Admin, Leader
 exl-id: 9c5c4f61-ea99-4f54-9b77-d486be29813c
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
-source-wordcount: '522'
-ht-degree: 4%
+source-wordcount: '527'
+ht-degree: 3%
 
 ---
 
@@ -20,7 +20,7 @@ Vad du hittar i den här handboken:
 * **[Översikt över användningsfall för spelböcker](#overview)**
 * [Kom igång med de konfigurationer och behörigheter som krävs](/help/use-case-playbooks/playbooks/get-started.md)
 * [Available Use Case Playbooks](/help/use-case-playbooks/playbooks/playbooks-list.md)
-* [Upptäck rätt spelningsbok](/help/use-case-playbooks/playbooks/discover.md)
+* [Välj bland ett urval av spelböcker](/help/use-case-playbooks/playbooks/choose.md)
 * [Skapa, dela och återanvända spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md)
 * [Kopiera spelboksgenererade resurser till andra miljöer med hjälp av funktioner för datakunskap](/help/use-case-playbooks/playbooks/data-awareness.md)
 * [Felsökning och kända begränsningar](troubleshooting.md)
@@ -54,7 +54,7 @@ Några [!UICONTROL Use Case Playbooks] är skräddarsydda för Real-Time CDP med
 
 ## Användargränssnittsguider {#ui-guides}
 
-När du har bestämt dig för vilken spelbok du vill använda väljer du den i användargränssnittet och börjar med den. Läs användargränssnittets riktlinjer på [hur du identifierar rätt spelbok](/help/use-case-playbooks/playbooks/discover.md) för dig och [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) om du vill ha fullständig information om hur du skapar instanser och får ut det mesta av en spelbok. Om du vill lära dig att marknadsföra olika resurser från den inspirerande sandlådan till andra utvecklingssandlådor, och sedan till produktion, kan du läsa dokumentationen om [datakunskap](/help/use-case-playbooks/playbooks/data-awareness.md).
+När du har bestämt dig för vilken spelbok du vill använda väljer du den i användargränssnittet och börjar med den. Läs användargränssnittets riktlinjer på [välja rätt spelbok från en markering](/help/use-case-playbooks/playbooks/choose.md) för dig och [hur du skapar, delar och återanvänder spelningsboksinstanser](/help/use-case-playbooks/playbooks/create-share-reuse.md) om du vill ha fullständig information om hur du skapar instanser och får ut det mesta av en spelbok. Om du vill lära dig att marknadsföra olika resurser från den inspirerande sandlådan till andra utvecklingssandlådor, och sedan till produktion, kan du läsa dokumentationen om [datakunskap](/help/use-case-playbooks/playbooks/data-awareness.md).
 
 ## Felsökning och kända begränsningar {#trouble-shooting-known-limitations}
 

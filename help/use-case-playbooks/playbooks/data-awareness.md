@@ -4,22 +4,22 @@ title: Översikt över datainsikt i Use Case Playbooks
 description: Lär dig hur du snabbar upp time to value genom att kopiera resurserna som genereras i den sista inspirerande sandlådan till andra sandlådor.
 role: Developer
 exl-id: 537eff13-f5fe-4cc9-9769-ab47b3cecda7
-source-git-commit: ecce42e2c759bda31bc37d0aae1da2c7b3d141fc
+source-git-commit: 54b3d2ef22f7afb47fa8c9430c5c1645c94c837d
 workflow-type: tm+mt
 source-wordcount: '896'
 ht-degree: 0%
 
 ---
 
-# Publicera spelboksgenererade resurser till andra sandlådor {#publish-to-other-sandboxes}
+# Publish spelboksgenererade resurser till andra sandlådor {#publish-to-other-sandboxes}
 
 Använd fallspelsböcker är marknadsföringsmallar som utformats för att generera resurser som målgrupper, scheman eller resor för vanliga användningsfall inom marknadsföring. Du kan testa de resurser som skapas av spelböcker i den inspirerande sandlådan och när du är klar kan du importera resurserna till andra utvecklingssandlådor för ytterligare testning med de data som du har tillgängliga i dessa sandlådor. När du är nöjd med testningen kan du sedan flytta resurserna från utvecklingssandlådor till produktionssandlådor.
 
 I vissa fall kan du dock redan ha konfigurerat egna scheman, fält och fältgrupper i andra utvecklingssandlådor. Detta kan göra att vissa resurser som genereras av ärendemallar, som resor, inte är kompatibla med dina data. Läs den här självstudiekursen om du vill veta hur du använder funktioner för att öka medvetenheten om data för att bättre anpassa och komplettera de genererade resurserna med dina befintliga resurser.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
-Innan du läser den här självstudiekursen ska du gå till [använda fallspelningsboksmallar](/help/use-case-playbooks/playbooks/discover.md#search-and-filter) och [skapa en instans](/help/use-case-playbooks/playbooks/create-share-reuse.md) för en önskad spelbok.
+Innan du läser den här självstudiekursen ska du gå till [använda fallspelningsboksmallar](/help/use-case-playbooks/playbooks/choose.md#search-and-filter) och [skapa en instans](/help/use-case-playbooks/playbooks/create-share-reuse.md) för en önskad spelbok.
 
 När du skapar en instans genereras en uppsättning resurser som resor, segment, scheman och meddelanden i den inspirerande sandlådan. Läs vidare för att lära dig hur du kan kopiera dessa resurser till andra sandlådor.
 

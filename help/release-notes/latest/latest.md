@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Versionsinformation juni 2024
 description: Versionsinformation juni 2024 för Adobe Experience Platform.
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b9707c40beec3000456510a8a384a0af58d6d9fa
+source-git-commit: b2b38c1b540d074998e96712465ff52c68371004
 workflow-type: tm+mt
-source-wordcount: '1356'
+source-wordcount: '1357'
 ht-degree: 2%
 
 ---
@@ -127,7 +127,7 @@ Mer information om [!DNL Segmentation Service], se [Översikt över segment](../
 
 Läs mer i [Använd fallspelningsböcker - översikt](/help/use-case-playbooks/playbooks/overview.md), som ger en översikt över spelbokens funktion, syfte och en heltäckande demonstration, inklusive hur du skapar instanser och importerar genererade resurser till andra sandlådemiljöer.
 
-Om du vill veta hur du kan komma åt och konfigurera en inspirerande sandlåda för att experimentera och utforska olika fallspelningsböcker kan du läsa [Upptäck rätt spelningsbok](/help/use-case-playbooks/playbooks/discover.md) -dokument.
+Om du vill veta hur du kan komma åt och konfigurera en inspirerande sandlåda för att experimentera och utforska olika fallspelningsböcker kan du läsa [Navigera till Använd fallspelningsböcker](/help/use-case-playbooks/playbooks/navigate.md) -dokument.
 
 Mer information om [!DNL Use Case Playbooks]kan du läsa följande dokumentationssidor:
 
