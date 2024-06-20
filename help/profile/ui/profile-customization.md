@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;användargränssnitt;g
 title: Anpassning av profildetaljer i användargränssnittet
 description: Den här guiden innehåller stegvisa instruktioner för hur kundprofildata i realtid visas i Adobe Experience Platform användargränssnitt.
 exl-id: 76cf8420-cc50-4a56-9f6d-5bfc01efcdb3
-source-git-commit: 0f7ef438db5e7141197fb860a5814883d31ca545
+source-git-commit: 69ac6d3f98675df11183082ecbbb49d18ddb57af
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1315'
 ht-degree: 0%
 
 ---
@@ -50,13 +50,17 @@ Från **[!UICONTROL Edit widget]** skärm, välja **[!UICONTROL Add attributes]*
 
 ![Knappen Lägg till attribut på Basic-attributkortet markeras.](../images/profile-customization/add-attributes.png)
 
-När **[!UICONTROL Select union schema field]** öppnas visas hela [!UICONTROL XDM Individual Profile] union-schema, med kapslade fält under. Mer information om fackliga scheman finns i [union av scheman i [!DNL Profile] användarhandbok](user-guide.md#union-schema).
+När **[!UICONTROL Select union schema field]** öppnas visas hela dialogrutan till vänster [!UICONTROL XDM Individual Profile] union-schema, med kapslade fält under. Mer information om fackliga scheman finns i [union av scheman i [!DNL Profile] användarhandbok](user-guide.md#union-schema).
 
 The **[!UICONTROL Selected Attributes]** till höger i dialogrutan visar de attribut som finns på kortet som du redigerar. Du kan även ta bort och ändra ordning på attribut här. Det totala antalet valda attribut visas, liksom det maximala antalet attribut (20) som kan läggas till på ett kort.
 
 ![De attribut som för närvarande utgör attributen på kortet markeras.](../images/profile-customization/select-before.png)
 
-Du kan välja något av de tillgängliga fackliga schemafälten för att anpassa attributen på kortet som du redigerar. Markerade fält visas med en bockmarkering bredvid sig och läggs automatiskt till i listan med valda attribut. När du har lagt till alla attribut som du vill visa på kortet väljer du **[!UICONTROL Select]** för att gå tillbaka till **[!UICONTROL Edit widget]** skärm.
+Du kan välja något av de tillgängliga fackliga schemafälten för att anpassa attributen på kortet som du redigerar. När du markerar fälten kan du välja att visa antingen filsökvägsnamnet eller visningsnamnet. Om du vill växla mellan dessa två bildskärmar väljer du **[!UICONTROL Show display names]** växla.
+
+![The [!UICONTROL Show display names] växlingsknappen är markerad på sidan Profilinformation.](../images/profile-customization/show-display-names.png)
+
+Markerade fält visas med en bockmarkering bredvid sig och läggs automatiskt till i listan med valda attribut. När du har lagt till alla attribut som du vill visa på kortet väljer du **[!UICONTROL Select]** för att gå tillbaka till **[!UICONTROL Edit widget]** skärm.
 
 ![De nya attributen markeras.](../images/profile-customization/select-after.png)
 
@@ -64,7 +68,7 @@ När du återgår till **[!UICONTROL Edit widget]** visas listan med attribut p�
 
 ![De nya attributen visas på det redigerade kortet.](../images/profile-customization/new-attributes.png)
 
-När du har sparat programmet återgår du till **[!UICONTROL Detail]** där det uppdaterade kortet och attributen visas.
+När du har sparat visas **[!UICONTROL Detail]** fliken där det uppdaterade kortet och attributen visas.
 
 ![De nya attributen visas på kortet på kontrollpanelen Profil.](../images/profile-customization/added-attributes.png)
 
@@ -78,11 +82,11 @@ Nästa, välj **[!UICONTROL Add widget]** i det övre vänstra hörnet av kontro
 
 ![Knappen Lägg till widget är markerad.](../images/profile-customization/add-widget.png)
 
-Om du väljer att lägga till ett nytt kort öppnas **[!UICONTROL Edit widget]** där du kan ange en titel för det nya kortet och välja de attribut som du vill att kortet ska visas. Om du vill lägga till attribut till kortet väljer du **[!UICONTROL Add attributes]**.
+Om du väljer att lägga till ett nytt kort öppnas **[!UICONTROL Edit widget]** på skärmen där du kan ange en titel för det nya kortet och välja de attribut som du vill att kortet ska visas. Om du vill lägga till attribut till kortet väljer du **[!UICONTROL Add attributes]**.
 
 ![Ett tomt nytt widgetkort visas i fönstret Redigera widget.](../images/profile-customization/edit-widget.png)
 
-När **[!UICONTROL Select union schema field]** öppnas visas hela [!UICONTROL XDM Individual Profile] union och **[!UICONTROL Selected Attributes]** till höger i dialogrutan visar de attribut du väljer för kortet. Mer information om hur du lägger till attribut finns i [avsnitt om att lägga till attribut](#add-attributes) som visas tidigare i det här dokumentet.
+När **[!UICONTROL Select union schema field]** öppnas, den vänstra sidan av dialogrutan innehåller hela [!UICONTROL XDM Individual Profile] union och **[!UICONTROL Selected Attributes]** till höger i dialogrutan visar de attribut du väljer för kortet. Mer information om hur du lägger till attribut finns i [avsnitt om att lägga till attribut](#add-attributes) som visas tidigare i dokumentet.
 
 Det totala antalet valda attribut visas, liksom det maximala antalet attribut (20) som kan läggas till på ett kort. Du kan också ta bort och ändra ordning på de valda attributen från den här skärmen. När du har lagt till alla attribut som du vill visa på kortet väljer du **[!UICONTROL Select]** för att gå tillbaka till **[!UICONTROL Edit widget]** skärm.
 
@@ -94,16 +98,16 @@ Om du vill spara ditt nya kort måste du först ange en **[!UICONTROL Card title
 
 ![Den nya widgeten förhandsvisas i fönstret Redigera widget.](../images/profile-customization/new-widget.png)
 
-När du har sparat programmet återgår du till **[!UICONTROL Detail]** där ditt nya kort och attribut visas.
+När du har sparat visas **[!UICONTROL Detail]** fliken där ditt nya kort och attribut visas.
 
 ![Den nya widgeten läggs till på profilkontrollpanelen.](../images/profile-customization/added-widget.png)
 
 ## Återställ standardkort
 
-Om du någon gång bestämmer dig för att du vill återställa standardkort som sedan dess har tagits bort, kan du snabbt och enkelt göra det. Välj först **[!UICONTROL Modify dashboard]** väljer **[!UICONTROL Restore default cards]**. När standardkorten visas kan du välja **[!UICONTROL Save]** för att spara ändringarna eller välja **[!UICONTROL Cancel]** om du inte vill återställa standardkorten.
+Om du någon gång bestämmer dig för att du vill återställa standardkort som sedan dess har tagits bort, kan du snabbt och enkelt göra det. Först väljer du **[!UICONTROL Modify dashboard]** väljer **[!UICONTROL Restore default cards]**. När standardkorten visas kan du välja **[!UICONTROL Save]** för att spara ändringarna eller välja **[!UICONTROL Cancel]** om du inte vill återställa standardkorten.
 
 ![Knappen Återställ standardkort är markerad på kontrollpanelen Profil.](../images/profile-customization/restore-default.png)
 
 ## Nästa steg
 
-Genom att följa det här dokumentet bör du nu kunna uppdatera profilvyn för din organisation, inklusive lägga till och ta bort kort, redigera kortinformation och attribut samt ändra ordning på och storlek på kort. Mer information om att arbeta med [!DNL Profile] data i användargränssnittet för Experience Platform, se [[!DNL Profile] användarhandbok](user-guide.md).
+Genom att följa det här dokumentet bör du nu kunna uppdatera profilvyn för din organisation, inklusive lägga till och ta bort kort, redigera kortinformation och attribut samt ändra ordning på och storlek på kort. Mer information om hur du arbetar med [!DNL Profile] data i användargränssnittet för Experience Platform, se [[!DNL Profile] användarhandbok](user-guide.md).

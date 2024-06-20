@@ -3,9 +3,9 @@ keywords: Experience Platform;profil;kundprofil i realtid;felsökning;API;enhetl
 title: Användargränssnittshandbok för kundprofil i realtid
 description: Kundprofilen i realtid skapar en helhetsbild av varje enskild kund och kombinerar data från flera kanaler, inklusive online-, offline-, CRM- och tredjepartsdata. Det här dokumentet är en guide för interaktion med kundprofilen i realtid i Adobe Experience Platform användargränssnitt.
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: e6c64ebbde0301c796a4d681d962f1edb3d79a12
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2071'
 ht-degree: 0%
 
 ---
@@ -132,9 +132,13 @@ När du har valt en **[!UICONTROL Profile ID]**, **[!UICONTROL Detail]** -fliken
 
 Standardfälten som visas kan också ändras på organisationsnivå för att visa de önskade profilattributen. Läs mer om hur du anpassar dessa fält, inklusive steg-för-steg-instruktioner om hur du lägger till och tar bort attribut och ändrar storlek på kontrollpaneler i [guide för anpassning av profildetaljer](profile-customization.md).
 
-![Fliken Detaljer är markerad. Profilinformationen visas.](../images/user-guide/profile-detail.png)
+![Fliken Detaljer är markerad. Profilinformationen visas.](../images/user-guide/profile-detail-row-name.png)
 
-Du kan visa ytterligare information om den enskilda kundprofilen genom att välja en annan av de tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för målgruppsmedlemskap som visar vilka målgrupper profilen är kvalificerad för.
+Du kan också växla mellan att visa attributnamnen som visningsnamn och fältsökvägsnamn. Om du vill växla mellan dessa två bildskärmar väljer du **[!UICONTROL Show display names]** växla.
+
+![Växlingen Visa visningsnamn är markerad och visningsnamnen visas under attributen.](../images/user-guide/profile-detail.png)
+
+Om du vill visa ytterligare information om den enskilda kundprofilen väljer du någon av de andra tillgängliga flikarna. Dessa flikar innehåller attribut, händelser och fliken för målgruppsmedlemskap som visar vilka målgrupper profilen är kvalificerad för.
 
 ### Fliken Attribut
 
