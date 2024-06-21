@@ -4,9 +4,9 @@ title: Kontrollpanel för licensanvändning
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations licensanvändning.
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: b1fac3d523ebdf765bec038cde6a667d9af71243
+source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
 workflow-type: tm+mt
-source-wordcount: '2041'
+source-wordcount: '2009'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,6 @@ ht-degree: 0%
 >abstract="Kontrollpanelen för licensanvändning ger dig insikt i vilka Adobe Experience Platform-produkter du har köpt. I översikten på kontrollpanelen visas de primära mätvärdena för dina produkter, inklusive din användning för var och en av de primära mätvärdena och ditt avtalade licensbelopp. På arbetsytan Detaljer visas en beskrivning av dina mätvärden för varje produkt i specifika sandlådor."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-lifecycle/ui/dataset-expiration.html" text="Utgångsdatum för datauppsättning"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Förfallodatum för pseudonyma profiler"
-
->[!CONTEXTUALHELP]
->id="platform_dashboards_licenseUsage_reduction"
->title="Hur man minskar användningen"
->abstract="För att minska användningen kan du konfigurera datauppsättningar eller pseudonyma utgångsdatum för profildata för sandlådor och datauppsättningar."
->additional-url="https://experienceleague.adobe.com/en/docs/platform-learn/tutorials/data-hygiene/pseudonymous-profile-and-event-expiration" text="Video om pseudonyma profiler, förfallodatum för data"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/profile/pseudonymous-profiles.html" text="Dokumentation om pseudonyma profildata som förfaller"
 
 Du kan visa viktig information om din organisations licensanvändning via Adobe Experience Platform [!UICONTROL License usage] kontrollpanel. Den information som visas här fångas in under en daglig ögonblicksbild av din Platform-instans.
 

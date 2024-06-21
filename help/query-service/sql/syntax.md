@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL-syntax i frågetjänst
 description: Det här dokumentet innehåller information om och förklarar den SQL-syntax som stöds av Adobe Experience Platform Query Service.
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 4b1d17afa3d9c7aac81ae869e2743a5def81cf83
+source-git-commit: d2cb7c3d1968a33300d480e63c4cb007df3cce7b
 workflow-type: tm+mt
-source-wordcount: '4256'
+source-wordcount: '4305'
 ht-degree: 1%
 
 ---
@@ -312,7 +312,9 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 | `RESTRICT` | Standardvärdet för läget. Om det anges, kommer schemat endast att släppas om det gör det **not** innehåller alla tabeller. |
 | `CASCADE` | Om du anger det tas schemat bort tillsammans med alla tabeller som finns i schemat. |
 
-## SKAPA VY
+## SKAPA VY {#create-view}
+
+En SQL-vy är en virtuell tabell som baseras på resultatet av en SQL-sats. Skapa en vy med `CREATE VIEW` och ge den ett namn. Du kan sedan använda det namnet för att referera tillbaka till resultatet av frågan. Det gör det enklare att återanvända komplexa frågor.
 
 Följande syntax definierar en `CREATE VIEW` fråga efter en datauppsättning. Den här datauppsättningen kan vara en ADLS- eller accelererad butiksdatauppsättning.
 

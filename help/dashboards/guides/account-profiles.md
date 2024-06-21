@@ -2,7 +2,7 @@
 title: Kontrollpanel för kontoprofiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om din organisations B2B-kontoprofiler.
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 8e05b0ae06250f8cd55b361a8176963e0dce8e92
+source-git-commit: b6811d447f76a671adc98bddef6e760c8be8cd9b
 workflow-type: tm+mt
 source-wordcount: '1675'
 ht-degree: 0%
@@ -170,7 +170,7 @@ I listrutan i widgeten kan du välja kontobedömningsmodellen.
 
 ![Widgeten Predictive scoring top influential factor.](../images/account-profiles/predictive-scoring-top-influential-factors.png)
 
-### Det gick inte att läsa in datafel {#errors}
+## Det gick inte att läsa in datafel {#errors}
 
 Om en widget visas *[!UICONTROL Unable to load. Try again.]* Detta beror på att det inte finns några tillgängliga data för B2B-enheten. Widgeten som visas nedan [!UICONTROL New opportunities by person role], visas meddelandet &quot;[!UICONTROL Unable to load. Try again.]&quot; eftersom den här sandlådan inte har tillgängliga affärsmöjlighetsdata.
 
