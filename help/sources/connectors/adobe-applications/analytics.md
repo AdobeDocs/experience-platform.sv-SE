@@ -2,9 +2,9 @@
 title: Adobe Analytics Source Connector for Report-Suite Data
 description: Det här dokumentet innehåller en översikt över Analytics och en beskrivning av användningsfall för Analytics-data.
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 7812cfa44e1fcbe71d7b6231dc0b31c727c93a31
+source-git-commit: d56a37c5b1c5768b3f6811be9d30d45628fdabca
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -89,11 +89,17 @@ The [!DNL Analytics] source skickar dessa identiteter till Experience Platform i
 * `endUserIDs._experience.mcid.id`
 * `endUserIDs._experience.aacustomid.id`
 
-Dessa fält är inte markerade som identiteter. I stället kopieras samma identiteter till XDM:er `identityMap` som nyckelvärdepar:
+Dessa fält är inte markerade som identiteter. I stället kopieras samma identiteter (om sådana finns i händelsen) till XDM:er `identityMap` som nyckelvärdepar:
 
 * `{ "key": "AAID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "ECID", "value": [ { "id": "<identity>", "primary": <true or false> } ] }`
 * `{ "key": "AACUSTOMID", "value": [ { "id": "<identity>", "primary": false } ] }`
+
+När identiteten eller identiteterna kopieras till `identityMap`, `endUserIDs._experience.mcid.namespace.code` anges också för samma händelse:
+
+* Om det finns stöd för detta, `endUserIDs._experience.aaid.namespace.code` är inställd på&quot;AAID&quot;.
+* Om det finns ECID, `endUserIDs._experience.mcid.namespace.code` är inställd på &quot;ECID&quot;.
+* Om AACUSTOMID finns, `endUserIDs._experience.aacustomid.namespace.code` är inställt på &quot;AACUSTOMID&quot;.
 
 Om det finns ECID på identitetskartan markeras den som händelsens primära identitet. I detta fall kan stödet baseras på ECID på grund av [Giltighetsperiod för identitetstjänst](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). I annat fall markeras AID som händelsens primära identitet. AACUSTOMID markeras aldrig som händelsens primära ID. Om det finns ett AACUSTOMID, baseras emellertid AAID på AACUSTOMID på grund av att åtgärderna utförs i Experience Cloud.
 
