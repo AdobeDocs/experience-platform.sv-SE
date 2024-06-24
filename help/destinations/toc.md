@@ -1,14 +1,14 @@
 ---
 audience: user
-user-guide-title: Destinationshandbok
-user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och mycket annat.
+user-guide-title: Användarhandbok om destinationer
+user-guide-description: Aktivera kända och okända data för marknadsföringskampanjer över flera kanaler, e-postkampanjer, riktad reklam och annat.
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: e0f4ee0ae0f14df43bfe36375d8fe8e9eac79369
+source-git-commit: 791d854599cf1476f1ebb9584198433c91765efa
 workflow-type: tm+mt
-source-wordcount: '1224'
-ht-degree: 0%
+source-wordcount: '1227'
+ht-degree: 1%
 
 ---
 
@@ -141,6 +141,7 @@ ht-degree: 0%
    * Plattformsmål för datahantering {#data-management}
       * [Översikt över mål för datahanteringsplattformen (DMP)](./catalog/data-management/overview.md)
       * [Audience Manager DIL utökningen](./catalog/data-management/aam-dil-extension.md)
+      * [Zeta Marketing Platform](/help/destinations/catalog/data-management/zeta-marketing-platform.md)
    * Data &amp; Identity Partner {#data-partner}
       * [Proportionerna för Acxiom undertryckning](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Dataförbättring i Acxiom](./catalog/data-partner/acxiom-data-enhancement.md)
@@ -298,5 +299,5 @@ ht-degree: 0%
       * [Skapa en måldokumentationssida med en textredigerare i den lokala miljön](./destination-sdk/docs-framework/work-in-local-environment.md)
       * [Självbetjäningsmall för dokumentation](./destination-sdk/docs-framework/self-service-template.md)
       * [Bästa tillvägagångssätt](./destination-sdk/docs-framework/authoring-best-practices.md)
-* [Frågor och svar](./destinations-faq.md)
+* [Vanliga frågor och svar](./destinations-faq.md)
 * [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)
