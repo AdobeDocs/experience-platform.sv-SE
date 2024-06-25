@@ -5,9 +5,9 @@ title: Sekretessjobb API-slutpunkt
 description: Lär dig hur du hanterar sekretessjobb för Experience Cloud-program med Privacy Service-API:t.
 role: Developer
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
-source-git-commit: 0ffc9648fbc6e6aa3c43a7125f25a98452e8af9a
+source-git-commit: e8e8a9267ddcf7ee9d1d199da8d157ed5f36d344
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1821'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ GET /jobs?regulation={REGULATION}&fromDate={FROMDATE}&toDate={TODATE}&status={ST
 
 | Parameter | Beskrivning |
 | --- | --- |
-| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpa`</li><li>`cpra_usa`</li><li>`ctdpa`</li><li>`ctdpa_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
+| `{REGULATION}` | Regeltypen som ska sökas efter. Godkända värden är: <ul><li>`apa_aus`</li><li>`cpa_usa`</li><li>`cpra_usa`</li><li>`ctdpa_usa`</li><li>`gdpr` - Obs! Detta används även för begäranden som rör **ccpa** regler.</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`mhmda_usa`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`ucpa_usa`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
 | `{PAGE}` | Sidan med data som ska visas med nollbaserad numrering. Standardvärdet är `0`. |
 | `{SIZE}` | Antalet resultat som ska visas på varje sida. Standardvärdet är `100` och det högsta värdet är `1000`. Om det maximala värdet överskrids returneras ett 400-kodfel. |
 | `{status}` | Standardbeteendet är att inkludera alla statusvärden. Om du anger en statustyp returnerar begäran endast sekretessjobb som matchar den statustypen. Godkända värden är: <ul><li>`processing`</li><li>`complete`</li><li>`error`</li></ul> |
@@ -165,7 +165,6 @@ curl -X POST \
     "include": ["Analytics", "AudienceManager","profileService"],
     "expandIds": false,
     "priority": "normal",
-    "analyticsDeleteMethod": "anonymize",
     "mergePolicyId": 124,
     "regulation": "ccpa"
 }'
@@ -178,7 +177,6 @@ curl -X POST \
 | `include` **(Obligatoriskt)** | En uppsättning Adobe-produkter som ska ingå i bearbetningen. Om det här värdet saknas eller är tomt på annat sätt, kommer begäran att avvisas. Inkludera endast produkter som din organisation är integrerad med. Se avsnittet om [godkända produktvärden](appendix.md) i bilagan för mer information. |
 | `expandIDs` | En valfri egenskap som, när den anges till `true`, representerar en optimering för bearbetning av ID:n i programmen (stöds för närvarande endast av [!DNL Analytics]). Om det utelämnas används standardvärdet `false`. |
 | `priority` | En valfri egenskap som används av Adobe Analytics och som anger prioriteten för bearbetning av begäranden. Godkända värden är `normal` och `low`. If `priority` utelämnas, standardbeteendet är `normal`. |
-| `analyticsDeleteMethod` | En valfri egenskap som anger hur Adobe Analytics ska hantera personuppgifter. Två möjliga värden accepteras för det här attributet: <ul><li>`anonymize`: Alla data som refereras av den angivna samlingen med användar-ID görs anonyma. If `analyticsDeleteMethod` utelämnas är detta standardbeteende.</li><li>`purge`: Alla data tas bort helt.</li></ul> |
 | `mergePolicyId` | När sekretessförfrågningar görs för kundprofil i realtid (`profileService`) kan du också ange ID:t för [sammanfogningsprincip](../../profile/merge-policies/overview.md) som du vill använda för ID-sammanfogning. Genom att ange en kopplingsprofil kan sekretessförfrågningar inkludera målgruppsinformation när data returneras till en kund. Endast en sammanfogningsprincip kan anges per begäran. Om det inte finns någon sammanfogningspolicy inkluderas inte segmenteringsinformation i svaret. |
 | `regulation` **(Obligatoriskt)** | Reglerna för sekretessarbetet. Följande värden accepteras: <ul><li>`apa_aus`</li><li>`ccpa`</li><li>`cpra_usa`</li><li>`gdpr`</li><li>`hipaa_usa`</li><li>`lgpd_bra`</li><li>`nzpa_nzl`</li><li>`pdpa_tha`</li><li>`vcdpa_usa`</li></ul><br>Se översikten på [kompatibla regler](../regulations/overview.md) om du vill ha mer information om sekretessreglerna som dessa värden representerar. |
 
