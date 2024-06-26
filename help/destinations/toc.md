@@ -5,10 +5,10 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 791d854599cf1476f1ebb9584198433c91765efa
+source-git-commit: 60bd377c87fe301985193c50cbfc4b44b734dd78
 workflow-type: tm+mt
-source-wordcount: '1227'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -145,6 +145,8 @@ ht-degree: 1%
    * Data &amp; Identity Partner {#data-partner}
       * [Proportionerna för Acxiom undertryckning](./catalog/data-partner/acxiom-prospect-suppression.md)
       * [Dataförbättring i Acxiom](./catalog/data-partner/acxiom-data-enhancement.md)
+      * [Merkury Enterprise Connections](/help/destinations/catalog/data-partners/merkury-enterprise-connections.md)
+      * [Merkury Enterprise Identity](/help/destinations/catalog/data-partners/merkury-enterprise-identity.md)
    * e-handelsdestinationer {#ecommerce}
       * [SAP COMMERCE](./catalog/ecommerce/sap-commerce.md)
    * E-postmål {#email}
