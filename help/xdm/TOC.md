@@ -5,10 +5,10 @@ breadcrumb-title: Användarhandbok om XDM (Experience Data Model)
 user-guide-description: Utforska en översikt över XDM-systemet (Experience Data Model) i Experience Platform och läs mer om hur du använder klasser och schemafältgrupper för att standardisera upplevelsedata.
 feature: Schemas
 role: Developer
-source-git-commit: fe239bee3c853d43c04200092f59537dfeb00c87
+source-git-commit: 948a86f78ca6a6305adaf3232ca98a5437d701a6
 workflow-type: tm+mt
-source-wordcount: '626'
-ht-degree: 9%
+source-wordcount: '632'
+ht-degree: 8%
 
 ---
 
@@ -69,14 +69,14 @@ ht-degree: 9%
       * [Information om partnerpotentiell kund (exempel)](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics Full Extension](./field-groups/event/analytics-full-extension.md)
-      * [Reklaminformation](./field-groups/event/advertising-details.md)
+      * [Information om Advertising](./field-groups/event/advertising-details.md)
       * [Programinformation](./field-groups/event/application-details.md)
       * [Saldoöverföringar](./field-groups/event/balance-transfers.md)
       * [Punktidentifiering](./field-groups/event/bot-detection-information.md)
       * [Information om kampanjmarknadsföring](./field-groups/event/campaign-marketing-details.md)
       * [Kortåtgärder](./field-groups/event/card-actions.md)
       * [Kanalinformation](./field-groups/event/channel-details.md)
-      * [Handelsinformation](./field-groups/event/commerce-details.md)
+      * [Information om Commerce](./field-groups/event/commerce-details.md)
       * [Insättningsinformation](./field-groups/event/deposit-details.md)
       * [Information om enhetshandel](./field-groups/event/device-trade-in-details.md)
       * [Gruvreservation](./field-groups/event/dining-reservation.md)
@@ -106,24 +106,26 @@ ht-degree: 9%
       * [Produktkategori](./field-groups/product/product-category.md)
    * Provider {#provider}
       * [Vårdgivare](./field-groups/provider/healthcare-provider.md)
+   * Delad {#shared}
+      * [Extern granskning av Source-system](./field-groups/shared/external-source-system-audit-details.md)
    * [Uppdateringar av fältgruppnamn](./field-groups/name-updates.md)
 * Datatyper {#data-types}
    * [Kontoinformation](./data-types/account-details.md)
    * [Annonsbrytning](./data-types/ad-break.md)
    * [Adress](./data-types/address.md)
-   * [Insamling av reklaminformation](./data-types/advertising-details-collection.md)
-   * [Reklaminformationsrapportering](./data-types/advertising-details-reporting.md)
+   * [Advertising Details Collection](./data-types/advertising-details-collection.md)
+   * [Advertising Details Reporting](./data-types/advertising-details-reporting.md)
    * [Advertising Pod Details Collection](./data-types/advertising-pod-details-collection.md)
    * [Advertising Pod Details Reporting](./data-types/advertising-pod-details-reporting.md)
    * [Program](./data-types/application.md)
-   * [B2B-källa](./data-types/b2b-source.md)
+   * [B2B Source](./data-types/b2b-source.md)
    * [Beacon](./data-types/beacon.md)
    * [Webbläsarinformation](./data-types/browser-details.md)
    * [Kundvagn](./data-types/cart.md)
    * [Kategoridata](./data-types/category-data.md)
    * [Kapitelinformationsinsamling](./data-types/chapter-details-collection.md)
    * [Rapportering av kapiteldetaljer](./data-types/chapter-details-reporting.md)
-   * [Handelsomfång](./data-types/commerce-scope.md)
+   * [Commerce Scope](./data-types/commerce-scope.md)
    * [Commerce](./data-types/commerce.md)
    * [Samtyckessträng](./data-types/consent-string.md)
    * [Innehåll och inställningar](./data-types/consents.md)
@@ -135,12 +137,12 @@ ht-degree: 9%
    * [Miljö](./data-types/environment.md)
    * [Samling med felinformation](./data-types/error-details-collection.md)
    * [Experience Channel](./data-types/experience-channel.md)
-   * [Granskningsattribut för externt källsystem](./data-types/external-source-system-audit-attributes.md)
+   * [Externa systemgranskningsattribut för Source](./data-types/external-source-system-audit-attributes.md)
    * [Finansiellt konto](./data-types/financial-account.md)
    * [Allmänt fält för samtycke](./data-types/consent-field.md)
    * [Allmänt fält för marknadsföringsinställningar med prenumerationer](./data-types/marketing-field-subscriptions.md)
    * [Allmänt inställningsfält för marknadsföring](./data-types/marketing-field.md)
-   * [Allmänt inställningsfält för personalisering](./data-types/personalization-field.md)
+   * [Allmänt Personalization-inställningsfält](./data-types/personalization-field.md)
    * [Geo Circle](./data-types/geo-circle.md)
    * [Geo-koordinater](./data-types/geo-coordinates.md)
    * [Geo Shape](./data-types/geo-shape.md)
