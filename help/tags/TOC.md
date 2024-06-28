@@ -1,15 +1,15 @@
 ---
 audience: user
-user-guide-title: Hjälp om taggar
+user-guide-title: Hjälp med taggar
 breadcrumb-title: Taggar
-user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att ge bättre kundupplevelser.
+user-guide-description: Lär dig att driftsätta och hantera analyser, marknadsföring och annonstaggar för att förbättra kundupplevelser.
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: 8000bbf36e6763b8fca17c2ae0d5c2fe53bc6964
+source-git-commit: aca7597d524633e86d88cc3b40f292c8d1673839
 workflow-type: tm+mt
-source-wordcount: '765'
-ht-degree: 12%
+source-wordcount: '769'
+ht-degree: 15%
 
 ---
 
@@ -59,7 +59,7 @@ ht-degree: 12%
    * [Översikt](./ui/event-forwarding/overview.md)
    * [Komma igång](./ui/event-forwarding/getting-started.md)
    * [Konfigurera hemligheter](./ui/event-forwarding/secrets.md)
-   * [Övervakning (beta)](./ui/event-forwarding/monitoring.md)
+   * [Övervakning (Beta)](./ui/event-forwarding/monitoring.md)
 * Administration {#admin}
    * [Översikt](./ui/administration/overview.md)
    * [Företag och fastigheter](./ui/administration/companies-and-properties.md)
@@ -142,7 +142,7 @@ ht-degree: 12%
          * [Översikt](./extensions/client/brightcove/overview.md)
          * [Versionsinformation](./extensions/client/brightcove/release-notes.md)
       * [CallTrackingMetrics](https://exchange.adobe.com/apps/ec/107695)
-      * [Kanalkällidentifierare](https://exchange.adobe.com/apps/ec/101412)
+      * [Channel Source Identifier](https://exchange.adobe.com/apps/ec/101412)
       * [Cheetah Experiences](https://exchange.adobe.com/apps/ec/102759)
       * [Clicktale](https://exchange.adobe.com/apps/ec/100082)
       * Plugin-program för vanlig analys {#plugins}
@@ -231,7 +231,7 @@ ht-degree: 12%
          * [Översikt](./extensions/server/google-cloud-platform/overview.md)
       * [!DNL LinkedIn Conversions API] {#linkedin}
          * [Översikt](./extensions/server/linkedin/overview.md)
-      * [!DNL Mailchimp] Kant {#mailchimp}
+      * [!DNL Mailchimp] Edge {#mailchimp}
          * [Översikt](./extensions/server/mailchimp/overview.md)
       * [!DNL Meta Conversions API] {#meta}
          * [Översikt](./extensions/server/meta/overview.md)
@@ -299,10 +299,11 @@ ht-degree: 12%
       * [Regler](./api/endpoints/rules.md)
       * [Regelkomponenter](./api/endpoints/rule-components.md)
       * [Tilläggspaket](./api/endpoints/extension-packages.md)
+      * [Användningsbehörighet för tilläggspaket](./api/endpoints/extension-package-usage-authorizations.md)
       * [Tillägg](./api/endpoints/extensions.md)
       * [Bibliotek](./api/endpoints/libraries.md)
       * [Bygger](./api/endpoints/builds.md)
-      * [Miljö](./api/endpoints/environments.md)
+      * [Miljöer](./api/endpoints/environments.md)
       * [Värdar](./api/endpoints/hosts.md)
       * [Appkonfigurationer](./api/endpoints/app-configurations.md)
       * [Granskningshändelser](./api/endpoints/audit-events.md)
