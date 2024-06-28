@@ -5,10 +5,10 @@ user-guide-description: Aktivera kända och okända data för marknadsföringska
 description: I det här dokumentet visas innehållsförteckningen för Adobe Experience Platform-destinationer
 feature: Destinations
 role: Admin,User
-source-git-commit: 60bd377c87fe301985193c50cbfc4b44b734dd78
+source-git-commit: c7eaea9c98dc51f75b5abafd8296eadb384d9ce2
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1237'
+ht-degree: 1%
 
 ---
 
@@ -47,7 +47,7 @@ ht-degree: 0%
       * [Aktivera målgrupper på konton för destinationer](./ui/activate-account-audiences.md)
       * [(Beta) Exportera filer on demand till gruppmål med hjälp av användargränssnittet i Experience Platform](./ui/export-file-now.md)
       * [Exportera datauppsättningar med användargränssnittet i Experience Platform](./ui/export-datasets.md)
-      * [(Beta) Använd XDM-attributet för senaste kvalificeringstid i det nya betmolnlagringsmålet](./ui/activate-last-qualification-time.md)
+      * [(Beta) Använd den senaste kvalificeringstiden för XDM-attributet i det nya betmolnlagringsmålet](./ui/activate-last-qualification-time.md)
       * [(Beta) Använd beräkningsfält för att exportera arrayer i platta schemafiler](/help/destinations/ui/export-arrays-calculated-fields.md)
    * [Visa målinformation](./ui/destination-details-page.md)
    * [Uppdatera destinationskonton](./ui/update-accounts.md)
@@ -65,8 +65,8 @@ ht-degree: 0%
       * [Marketo Engage-anslutning](./catalog/adobe/marketo-engage.md)
       * [Marketo Measure Ultimate-anslutning](./catalog/adobe/marketo-measure-ultimate.md)
       * [Experience Platform](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
-   * Annonsmål{#advertising}
-      * [Översikt över reklamdestinationer](./catalog/advertising/overview.md)
+   * Advertising destinationer{#advertising}
+      * [Översikt över Advertising destinationer](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud-tillägg](./catalog/advertising/adobe-advertising-cloud.md)
       * [(Beta) Amazon Ads-anslutning](./catalog/advertising/amazon-ads.md)
@@ -75,7 +75,7 @@ ht-degree: 0%
       * [Bing Ads UET-tillägg (Universal Event Tracking)](./catalog/advertising/bing-ads.md)
       * [Förgreningstillägg](./catalog/advertising/branch.md)
       * [(Beta) Kriterieanslutning](./catalog/advertising/criteo.md)
-      * [Dubbelklicka på FlöLjus-tillägget (beta)](./catalog/advertising/doubleclick-floodlight.md)
+      * [DoubleClick Floodlight-tillägg (Beta)](./catalog/advertising/doubleclick-floodlight.md)
       * [Facebook Pixel-tillägg](./catalog/advertising/facebook-pixel.md)
       * [Flashtalk OneTag-tillägg](./catalog/advertising/flashtalking.md)
       * [Google Ads-anslutning](./catalog/advertising/google-ads-destination.md)
@@ -83,12 +83,13 @@ ht-degree: 0%
       * [Google Ad Manager-anslutning](./catalog/advertising/google-ad-manager.md)
       * [(Beta) Google Ad Manager 360-anslutning](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google Customer Match Connection](./catalog/advertising/google-customer-match.md)
-      * [(Beta) Google Customer Match + DV360 connection](./catalog/advertising/google-customer-match-dv360.md)
+      * [(Beta) Google kundmatchning + DV360-anslutning](./catalog/advertising/google-customer-match-dv360.md)
       * [Google Display &amp; Video 360-anslutning](./catalog/advertising/google-dv360.md)
       * [Google Gtag-tillägg](./catalog/advertising/gtag-advertising.md)
       * [LinkedIn Insight Tag Extension](./catalog/advertising/linkedin.md)
       * [LiveRamp - Onboarding-anslutning](./catalog/advertising/liveramp-onboarding.md)
       * [LiveRamp - Distribution Connection](./catalog/advertising/liveramp-distribution.md)
+      * [Realtidsanslutning för Magnite Streaming](/help/destinations/catalog/advertising/magnite-streaming.md)
       * [Microsoft Bing-anslutning](./catalog/advertising/bing.md)
       * [Pinterest Conversion Tracking-tillägg](./catalog/advertising/pinterest-extension.md)
       * [Pinterest Customer List Connection](./catalog/advertising/pinterest.md)
@@ -112,7 +113,7 @@ ht-degree: 0%
       * [Gainsight PX-anslutning](./catalog/analytics/gainsight-px.md)
       * [Tillägget Google Global Site Tag](./catalog/analytics/gtag-analytics.md)
       * [Google Universal Analytics-tillägg](./catalog/analytics/google-universal-analytics.md)
-      * [JW Player Analytics-tillägg (beta)](./catalog/analytics/jw-player-analytics.md)
+      * [JW Player Analytics-tillägg (Beta)](./catalog/analytics/jw-player-analytics.md)
       * [Nielsen BSDK-tillägg](./catalog/analytics/nielsen-bsdk.md)
       * [Nielsen IMA Handler Extension](./catalog/analytics/nielsen-ima.md)
       * [Nielsen VideoJS Player Handler Extension](./catalog/analytics/nielsen-videojs.md)
@@ -176,8 +177,8 @@ ht-degree: 0%
       * [Braze connection](./catalog/mobile-engagement/braze.md)
       * [Radanslutning](./catalog/mobile-engagement/line.md)
       * [Moengage connection](./catalog/mobile-engagement/moengage.md)
-   * Destinationer för anpassning {#personalization}
-      * [Översikt över destinationer för personalisering](./catalog/personalization/overview.md)
+   * Personalization destinationer {#personalization}
+      * [Översikt över Personalization destinationer](./catalog/personalization/overview.md)
       * [(Begränsad tillgänglighet) Målgruppsanalys](./catalog/personalization/audience-analysis.md)
       * [Adobe Commerce](./catalog/personalization/adobe-commerce.md)
       * [Adobe Target](./catalog/personalization/adobe-target-connection.md)
