@@ -77,9 +77,11 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 ## Exportera typ och frekvens
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
-|**Målgrupp**|**Stöds**|**Beskrivning av ursprung**|\
-|—|—|—|\
-|Segmenteringstjänst|✓|Målgrupper som genererats via Experience Platform [[Segmenteringstjänst]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).| Anpassade uppladdningar|X|Målgrupper [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer.
+
+|**Målgrupp**|**Stöds**|**Beskrivning av ursprung**|
+|---|---|---|
+|Segmenteringstjänst|✓|Målgrupper som genererats via Experience Platform [[Segmenteringstjänst]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).|
+|Anpassade uppladdningar|X|Målgrupper [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer.|
 
 {style="table-layout:auto"}
 
