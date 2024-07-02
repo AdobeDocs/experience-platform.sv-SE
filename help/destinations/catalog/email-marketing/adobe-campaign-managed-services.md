@@ -2,9 +2,9 @@
 title: Adobe Campaign Managed Cloud Services
 description: Adobe Campaign Managed Cloud Services är en plattform för att designa flerkanaliga kundupplevelser och en miljö för visuell kampanjsamordning, interaktionshantering i realtid och flerkanalsmarknadsföring.
 exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
-source-git-commit: 9757931f03f57b722c47955d83cb074629d9a883
+source-git-commit: 299868e5ca1b8fde667c4c0ec9a7435634a1717d
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1571'
 ht-degree: 0%
 
 ---
@@ -25,15 +25,21 @@ Använd Campaign för att
 * Integrera kanaler för e-post, mobiler, online och offline i kundresan,
 * Automatisera leverans av meningsfulla och aktuella meddelanden och erbjudanden.
 
->[!IMPORTANT]
->
->Tänk på följande skyddsräcken när du använder Adobe Campaign Managed Cloud Services-anslutningen:
->
->* Högst 50 segment kan vara [aktiverad](#activate) för destinationen,
->* För varje segment kan du lägga till upp till 20 fält i [map](#map) till Adobe Campaign
->* Datalagring på Azure Blob Storage Data Landing Zone (DLZ): 7 dagar,
->* Aktiveringsfrekvensen är minst 3 timmar.
->* Den maximala filnamnslängd som stöds av anslutningen är 255 tecken. När du [konfigurera det exporterade filnamnet](../../ui/activate-batch-profile-destinations.md#configure-file-names), kontrollera att filnamnet inte är längre än 255 tecken. Om du överskrider maxlängden för filnamn uppstår aktiveringsfel.
+## Guardrails {#guardrails}
+
+Tänk på följande skyddsräcken när du använder Adobe Campaign Managed Cloud Services-anslutningen:
+
+* Du kan [activate](#activate) högst 25 målgrupper till detta mål.
+
+  Du kan ändra den här gränsen genom att uppdatera värdet för **NmsCdp_AEP_Audience_List_Limit** i **[!UICONTROL Administration]** > **[!UICONTROL Platform]** > **[!UICONTROL Options]** mapp för Campaign Explorer.
+
+* För varje målgrupp kan du lägga till upp till 20 fält till [map](#map) till Adobe Campaign.
+
+  Du kan ändra den här gränsen genom att uppdatera värdet för **NmsCdp_ap_Destinations_Max_Columns** i **[!UICONTROL Administration]** > **[!UICONTROL Platform]** > **[!UICONTROL Options]** mapp för Campaign Explorer.
+
+* Datalagring på DLZ (Azure Blob Storage Data Landing Zone): 7 dagar.
+* Aktiveringsfrekvensen är minst 3 timmar.
+* Den maximala filnamnslängd som stöds av anslutningen är 255 tecken. När du [konfigurera det exporterade filnamnet](../../ui/activate-batch-profile-destinations.md#configure-file-names), kontrollera att filnamnet inte är längre än 255 tecken. Om du överskrider maxlängden för filnamn uppstår aktiveringsfel.
 
 ## Användningsfall {#use-cases}
 
@@ -41,12 +47,12 @@ För att du bättre ska kunna förstå hur och när du ska använda Adobe Campai
 
 * Adobe Experience Platform skapar en kundprofil som innehåller information som identitetsdiagram, beteendedata från analyser, sammanfogar offline- och onlinedata osv. Med den här integreringen kan ni utöka de segmenteringsfunktioner som redan finns i Adobe Campaign med de målgrupper som drivs av Adobe Experience Platform, och ni kan därför aktivera dessa data i Campaign.
 
-  Ett sportklädföretag vill t.ex. utnyttja de smarta segmenten som drivs av Adobe Experience Platform och aktivera dem med Adobe Campaign för att nå ut till sina kunder via de olika kanaler som stöds av Adobe Campaign. När meddelandena har skickats vill de förbättra kundprofilen på Adobe Experience-plattformen med upplevelsedata från Adobe Campaign, till exempel skicka, öppna och klicka.
+  Ett sportklädföretag vill till exempel utnyttja de målgrupper som Adobe Experience Platform har och aktivera dem med Adobe Campaign för att nå ut till sina kunder via de olika kanaler som Adobe Campaign stöder. När meddelandena har skickats vill de förbättra kundprofilen på Adobe Experience-plattformen med upplevelsedata från Adobe Campaign, till exempel skicka, öppna och klicka.
 
   Resultatet är flerkanalskampanjer som är mer enhetliga över hela Adobe Experience Cloud-ekosystemet och en rik kundprofil som snabbt anpassar sig och lär sig.
 
 
-* Förutom segmentaktivering i Campaign kan ni utnyttja Adobe Campaign Managed Services-destinationen för att ta in ytterligare profilattribut som är kopplade till en profil i Adobe Experience Platform och har en synkroniseringsprocess på plats så att de uppdateras i Adobe Campaign-databasen.
+* Förutom målgruppsaktivering i Campaign kan ni utnyttja Adobe Campaign Managed Services-destinationen för att ta in ytterligare profilattribut som är kopplade till en profil i Adobe Experience Platform och har en synkroniseringsprocess på plats så att de uppdateras i Adobe Campaign-databasen.
 
   Anta till exempel att du hämtar värden för anmälan och avanmälan i Adobe Experience Platform. Med den här anslutningen kan du föra över dessa värden till Adobe Campaign och ha en synkroniseringsprocess så att de uppdateras regelbundet.
 
@@ -66,7 +72,7 @@ För att du bättre ska kunna förstå hur och när du ska använda Adobe Campai
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/features/ecid.md) för mer information. |
 | email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade e-postadresser stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
-| GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
+| GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 
 {style="table-layout:auto"}
@@ -77,7 +83,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 | Objekt | Typ | Anteckningar |
 ---------|----------|---------|
-| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i ett segment tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som du har valt på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| Exporttyp | **[!UICONTROL Profile-based]** | Du exporterar alla medlemmar i en målgrupp tillsammans med de önskade schemafälten (t.ex. e-postadress, telefonnummer, efternamn), som de har valts på skärmen Välj profilattribut i [arbetsflöde för målaktivering](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | Exportfrekvens | **[!UICONTROL Batch]** | Batchdestinationer exporterar filer till efterföljande plattformar i steg om tre, sex, åtta, tolv eller tjugofyra timmar. Läs mer om [gruppfilsbaserade mål](/help/destinations/destination-types.md#file-based). |
 
 {style="table-layout:auto"}
@@ -117,7 +123,7 @@ Välj de marknadsföringsåtgärder som gäller för de data som du vill exporte
 
 Mer information om marknadsföringsåtgärder finns i [dataanvändningsprinciper - översikt](/help/data-governance/policies/overview.md) sida.
 
-## Aktivera segment till den här destinationen {#activate}
+## Aktivera målgrupper till det här målet {#activate}
 
 >[!IMPORTANT]
 > 
@@ -172,7 +178,7 @@ För **[!UICONTROL Audience sync]** kan du kontrollera den exporterade publiken 
 
 ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/campaign-audiences.png)
 
-För **[!UICONTROL Profile sync (Update only)]** uppdateras data automatiskt till Campaign-databasen för varje profil som är mål för det segment som är aktiverat i målet.
+För **[!UICONTROL Profile sync (Update only)]** uppdateras data automatiskt till Campaign-databasen för varje profil som målgruppen har aktiverat i målet.
 
 ## Dataanvändning och styrning {#data-usage-governance}
 
