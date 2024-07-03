@@ -3,9 +3,9 @@ title: Aktivera målgrupper för att batchprofilera exportmål
 type: Tutorial
 description: Lär dig hur du aktiverar de målgrupper du har i Adobe Experience Platform genom att skicka dem till batchprofilbaserade destinationer.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 30ad6c32d8ae8a2a68dfafd78f306209ce49b6d5
+source-git-commit: f0f66146bc65a9c5a1bcfee21aba44546cda6900
 workflow-type: tm+mt
-source-wordcount: '3793'
+source-wordcount: '3807'
 ht-degree: 0%
 
 ---
@@ -442,13 +442,22 @@ Den nya **[!UICONTROL Mapping]** sidan har följande kända begränsningar:
 
 #### Målgruppsmedlemskapsattributet kan inte väljas via mappningsarbetsflödet
 
-På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.seg_namespace.seg_id.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.seg_namespace.seg_id.status` till schemafältet, som visas nedan.
 
 ![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
 
-Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och nyligen **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
-* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+
+>[!NOTE]
+>
+För molnlagringsmål läggs följande attribut till i mappningen som standard:
+>
+* `segmentMembership.seg_namespace.seg_id.status`
+* `segmentMembership.seg_namespace.seg_id.lastQualificationTime`
+
+Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg_namespace.seg_id.status` är markerat:
+
+* Om `segmentMembership.seg_namespace.seg_id.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och nyligen **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
+* Om `segmentMembership.seg_namespace.seg_id.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
 Läs mer om [profilexportbeteende för filbaserade mål](/help/destinations/how-destinations-work/profile-export-behavior.md#file-based-destinations).
 
@@ -488,19 +497,19 @@ För profilbaserade mål måste du välja de profilattribut som du vill skicka t
 
 >[!NOTE]
 >
-Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+Adobe Experience Platform fyller markeringen i förväg med fyra rekommenderade attribut från ditt schema: `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.seg_namespace.seg_id.status`.
 
 ![Bild som visar förifyllda rekommenderade attribut i mappningssteget i målgruppsaktiveringsarbetsflödet.](../assets/ui/activate-batch-profile-destinations/prefilled-fields.png)
 
 >[!IMPORTANT]
 >
-På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.status` till schemafältet, som visas nedan.
+På grund av en känd begränsning kan du inte använda **[!UICONTROL Select field]** fönster att lägga till `segmentMembership.seg_namespace.seg_id.status` till din filexport. I stället måste du klistra in värdet manuellt `xdm: segmentMembership.seg_namespace.seg_id.status` till schemafältet, som visas nedan.
 >
 ![Skärminspelning som visar hur man kan komma runt ett publikmedlemskap i mappningssteget i aktiveringsarbetsflödet.](..//assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
-Filexporter varierar på följande sätt, beroende på om `segmentMembership.status` är markerat:
-* Om `segmentMembership.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
-* Om `segmentMembership.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
+Filexporter varierar på följande sätt, beroende på om `segmentMembership.seg_namespace.seg_id.status` är markerat:
+* Om `segmentMembership.seg_namespace.seg_id.status` fältet är markerat, exporterade filer innehåller **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och **[!UICONTROL Active]** och **[!UICONTROL Expired]** medlemmar i efterföljande stegvisa exporter.
+* Om `segmentMembership.seg_namespace.seg_id.status` fältet är inte markerat, exporterade filer innehåller endast **[!UICONTROL Active]** medlemmar i den första fullständiga ögonblicksbilden och i efterföljande stegvisa exporter.
 
 ## Välj anrikningsattribut {#select-enrichment-attributes}
 
