@@ -3,9 +3,9 @@ title: API-slutpunkt för förfallodatum för datauppsättning
 description: Med slutpunkten /ttl i Data Hygiene API kan du schemalägga datauppsättningens förfallodatum i Adobe Experience Platform.
 role: Developer
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 20d616463469a4d78fe0e7b6be0ec76b293789d6
+source-git-commit: 4fb8313f8209b68acef1484fc873b9bd014492be
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2217'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,12 @@ När borttagningen av datauppsättningen initieras markeras dess förfallojobb s
 >[!WARNING]
 >
 >Om en datauppsättning är inställd på att förfalla måste du manuellt ändra alla dataflöden som kan inhämta data till datauppsättningen så att dina efterföljande arbetsflöden inte påverkas negativt.
+
+Advanced Data Lifecycle Management stöder borttagning av datauppsättningar via datamängdens utgångsslutpunkt och ID-borttagningar (data på radnivå) med hjälp av primära identiteter via [arbetsorderslutpunkt](./workorder.md). Du kan också hantera [förfallodatum för datauppsättning](../ui/dataset-expiration.md) och [postborttagningar](../ui/record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen.
+
+>[!NOTE]
+>
+>Datalifecycle stöder inte batchborttagning.
 
 ## Komma igång
 

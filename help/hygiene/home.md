@@ -1,15 +1,15 @@
 ---
-title: Översikt över livscykelhantering av avancerade data
-description: Med Advanced Data Lifecycle Management kan ni hantera livscykeln för era data genom att uppdatera eller tömma inaktuella eller felaktiga poster.
+title: Översikt över avancerad hantering av datalivscykel
+description: Med avancerad hantering av datalivscykel kan du hantera livscykeln för dina data genom att uppdatera eller rensa bort föråldrade eller felaktiga poster.
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
+source-git-commit: 1f82403d4f8f5639f6a9181a7ea98bd27af54904
 workflow-type: tm+mt
-source-wordcount: '572'
-ht-degree: 1%
+source-wordcount: '625'
+ht-degree: 0%
 
 ---
 
-# Avancerad livscykelhantering av data i Adobe Experience Platform
+# Advanced Data Lifecycle Management i Adobe Experience Platform
 
 Adobe Experience Platform har en robust uppsättning verktyg för hantering av stora, komplicerade dataåtgärder för att samordna kundupplevelser. När data hämtas in till systemet över tid blir det allt viktigare att hantera dina datalager så att data används som förväntat, uppdateras när felaktiga data behöver korrigeras och tas bort när organisationsprofiler anser det nödvändigt.
 
@@ -24,15 +24,19 @@ Adobe Experience Platform har en robust uppsättning verktyg för hantering av s
 
 Dessa aktiviteter kan utföras med [[!UICONTROL Data Lifecycle] Arbetsyta i användargränssnittet](#ui) eller [API för datahygien](#api). När ett datatillverkarsjobb körs får systemet genomskinlighetsuppdateringar vid varje steg i processen. Se avsnittet om [tidslinjer och genomskinlighet](#timelines-and-transparency) om du vill ha mer information om hur varje jobbtyp visas i systemet.
 
-## [!UICONTROL Data Lifecycle] Arbetsyta i användargränssnittet {#ui}
+>[!NOTE]
+>
+>Advanced Data Lifecycle Management stöder borttagning av datauppsättningar via [datauppsättningens förfalloslutpunkt](./api/dataset-expiration.md) och ID-borttagningar (radnivådata) med primära identiteter via [arbetsorderslutpunkt](./api/workorder.md). Du kan också hantera [förfallodatum för datauppsättning](./ui/dataset-expiration.md) och [postborttagningar](./ui/record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen. Observera att datalifecycle inte stöder batchborttagning.
 
-The [!UICONTROL Data Lifecycle] Med hjälp av arbetsytan i användargränssnittet för plattformen kan du konfigurera och schemalägga datalivscykelåtgärder så att du kan vara säker på att dina poster bevaras som förväntat.
+## [!UICONTROL Data Lifecycle] Arbetsyta för användargränssnitt {#ui}
 
-Detaljerade anvisningar om hur du hanterar uppgifter i användargränssnittets livscykel finns i [användargränssnittshandbok för datalängd](./ui/overview.md).
+Inställningen [!UICONTROL Data Lifecycle] -arbetsytan i plattformsgränssnittet gör att du kan konfigurera och schemalägga datalivscykelåtgärder, vilket hjälper dig att se till att dina poster bevaras som förväntat.
 
-## API för datahygien {#api}
+Detaljerade steg om hur du hanterar uppgifter i datalivscykeln i användargränssnittet finns i [användargränssnittshandbok för datalivscykel](./ui/overview.md).
 
-The [!UICONTROL Data Lifecycle] Gränssnittet är byggt ovanpå API:t för datahygien, vars slutpunkter är tillgängliga för dig att använda direkt om du föredrar att automatisera dina datalivscykelaktiviteter. Se [API-guide för datahygien](./api/overview.md) för mer information.
+## Data Hygiene API {#api}
+
+Inställningen [!UICONTROL Data Lifecycle] Användargränssnittet byggs ovanpå Data Hygiene API, vars slutpunkter är tillgängliga så att du kan använda dem direkt om du föredrar att automatisera din datalivscykelaktivitet. Se [API-guide för datahygien](./api/overview.md) för mer information.
 
 ## Tidslinjer och genomskinlighet
 
@@ -44,11 +48,11 @@ Följande sker när en [förfallobegäran för datauppsättning](./ui/dataset-ex
 
 | Stadie | Tid efter schemalagd förfallotid | Beskrivning |
 | --- | --- | --- |
-| Begäran har skickats | 0 timmar | En datahanterare eller integritetsanalytiker skickar en begäran om att en datauppsättning ska upphöra att gälla vid en viss tidpunkt. Förfrågan visas i [!UICONTROL Data Lifecycle UI] efter att den har skickats och har en väntande status fram till den schemalagda förfallotiden, efter vilken begäran kommer att köras. |
-| Datauppsättningen tas bort | 1 timme | Datauppsättningen tas bort från [lagersida för datauppsättning](../catalog/datasets/user-guide.md) i användargränssnittet. Data i datasjön tas bara bort på ett mjukt sätt, och kommer att finnas kvar tills processen är slut, varefter de kommer att tas bort. |
+| Begäran har skickats | 0 timmar | En dataförvaltare eller integritetsanalytiker skickar en begäran om att en datauppsättning ska upphöra att gälla vid en viss tidpunkt. Förfrågan visas i [!UICONTROL Data Lifecycle UI] efter att den har skickats in och behåller statusen Väntande till den schemalagda förfallotiden, efter vilken begäran kommer att köras. |
+| Datauppsättningen har släppts | 1 timme | Datauppsättningen tas bort från [lagersida för datauppsättning](../catalog/datasets/user-guide.md) i användargränssnittet. Data i datasjön tas bara bort på ett mjukt sätt, och kommer att finnas kvar tills processen är slut, varefter de kommer att tas bort. |
 | Profilantalet har uppdaterats | 30 timmar | Beroende på innehållet i den datauppsättning som tas bort kan vissa profiler tas bort från systemet om alla deras komponentattribut är kopplade till den datauppsättningen. 30 timmar efter att datauppsättningen har tagits bort återspeglas eventuella förändringar i det totala antalet profiler i [widgetar för instrumentpanel](../dashboards/guides/profiles.md#profile-count-trend) och andra rapporter. |
-| Målgrupper uppdaterade | 48 timmar | När alla profiler som påverkas har uppdaterats, är alla relaterade [målgrupper](../segmentation/home.md) uppdateras för att återspegla deras nya storlek. Beroende på vilken datauppsättning som har tagits bort och vilka attribut du segmenterar på, kan storleken på varje målgrupp öka eller minska till följd av borttagningen. |
-| Uppdaterade resor och destinationer | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)och [mål](../destinations/home.md) uppdateras enligt förändringar i relaterade segment. |
+| Målgrupper har uppdaterats | 48 timmar | När alla berörda profiler har uppdaterats är alla relaterade [målgrupper](../segmentation/home.md) uppdateras för att återspegla den nya storleken. Beroende på vilken datauppsättning som togs bort och vilka attribut du segmenterar på kan storleken på varje målgrupp öka eller minska som ett resultat av borttagningen. |
+| Resor och destinationer uppdaterade | 50 timmar | [Resor](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [kampanjer](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)och [mål](../destinations/home.md) uppdateras enligt förändringar i relaterade segment. |
 | Borttagningen har slutförts | 15 dagar | Alla data som rör datauppsättningen tas bort från datasjön. The [status för livscykeljobbet för data](./ui/browse.md#view-details) som tog bort datauppsättningen uppdateras för att återspegla detta. |
 
 {style="table-layout:auto"}
@@ -70,4 +74,4 @@ The following takes place when a [record delete request](./ui/record-delete.md) 
 
 ## Nästa steg
 
-Det här dokumentet innehåller en översikt över plattformens funktioner för datalivscykel. Information om hur du kommer igång med att göra förfrågningar om datahygien i användargränssnittet finns i [Användargränssnittsguide](./ui/overview.md). Om du vill lära dig hur du skapar livscykeljobb för data programmatiskt kan du läsa [API-guide för datahygien](./api/overview.md)
+Det här dokumentet innehåller en översikt över funktionerna i Platform för datalivscykel. Om du vill komma igång med att göra datahygienbegäranden i användargränssnittet, se [Användargränssnittsguide](./ui/overview.md). Mer information om hur du skapar programmässigt jobb i Data Lifecycle finns i [API-guide för datahygien](./api/overview.md)

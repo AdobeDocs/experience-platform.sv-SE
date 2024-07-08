@@ -1,9 +1,10 @@
 ---
 title: Bästa praxis för avancerad livscykelhantering av data
 description: Lär dig hur du effektivt hanterar förfrågningar om datahygien i Adobe Experience Platform med hjälp av API:t Advanced Data Lifecycle Management (Advanced Data Lifecycle Management) och API:t Data Hygiene. Den här guiden beskriver bästa praxis, till exempel maximering av identiteter per begäran, specificering av enskilda datauppsättningar och anpassning efter API-begränsning för att förhindra flaskhalsar. Dokumentet innehåller riktlinjer för att ställa in automatisk rensning av datauppsättningar, hur arbetsorderstatus ska övervakas samt detaljerade metoder för hämtning av svar. Följ dessa rutiner för att effektivisera behandlingen av begäranden och optimera svarstiderna.
-source-git-commit: 92667fd4da093e56dcf06ae1696484671d9fdd38
+exl-id: 75e2a97b-ce6c-4ebd-8fc8-597887f77037
+source-git-commit: 5174529d606ac0186ff3193790ada70a46c7e274
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '769'
 ht-degree: 0%
 
 ---
@@ -26,10 +27,9 @@ Du kan använda `/workorder` slutpunkt i Data Hygiene API för att programmässi
 
 Följ de här riktlinjerna för att optimera dina inskickade rensningsbegäranden:
 
-1. **Maximera identiteter per begäran:** Inkludera upp till 100 000 identiteter per rensningsförfrågan för att öka effektiviteten. Genom att gruppera flera identiteter i en enda begäran kan du minska antalet API-anrop och minimera risken för prestandaproblem på grund av överdrivna förfrågningar om en identitet.
+1. **Maximera identiteter per begäran:** Inkludera upp till 100 000 identiteter per rensningsförfrågan för att öka effektiviteten. Genom att gruppera flera identiteter i en enda begäran kan du minska antalet API-anrop och minimera risken för prestandaproblem på grund av överdrivna förfrågningar om en identitet. Skicka in förfrågningar med maximalt antal identiteter för att få snabbare behandling, eftersom arbetsorder batchas för att bli effektiva.
 2. **Ange enskilda datauppsättningar:** För maximal effektivitet anger du den enskilda datauppsättning som ska bearbetas.
-3. **Skicka flera förfrågningar:** Skicka in flera förfrågningar med maximalt antal identiteter för att få snabbare behandling, eftersom arbetsorder batchas för att bli effektiva.
-4. **Tänk på API-begränsning:** Tänk på API-begränsning för att förhindra långsamma driftstopp. Mindre förfrågningar (&lt; 100 ID:n) med högre frekvens kan resultera i 429 svar och kräva att de skickas in igen med acceptabel frekvens.
+3. **Tänk på API-begränsning:** Tänk på API-begränsning för att förhindra långsamma driftstopp. Mindre förfrågningar (&lt; 100 ID:n) med högre frekvens kan resultera i 429 svar och kräva att de skickas in igen med acceptabel frekvens.
 
 ### Hantera 429 fel {#manage-429-errors}
 
@@ -41,7 +41,7 @@ Om du får ett 429-fel anger det att du har överskridit det tillåtna antalet b
 
 ## Utgångsdatum för datauppsättning {#dataset-expiration}
 
-Ställ in automatisk rensning av datauppsättningar för kortlivade data. Använd `/ttl` slutpunkt i Data Hygiene API för att schemalägga förfallodatum för datauppsättningar. Använd `/ttl` slutpunkt som utlöser en rensning av en datauppsättning baserat på en angiven tid eller ett angivet datum. Läs slutpunktshandboken för datauppsättningens förfallodatum om du vill veta hur du [skapa en förfallotid för datauppsättning](./api/dataset-expiration.md) och [godkända frågeparametrar](./api/dataset-expiration.md#query-params).
+Ställ in automatisk rensning av datauppsättningar för kortlivade data. Använd `/ttl` slutpunkt i Data Hygiene API för att schemalägga förfallodatum för datamängder för rensning baserat på en angiven tid eller ett angivet datum. Läs slutpunktshandboken för datauppsättningens förfallodatum om du vill veta hur du [skapa en förfallotid för datauppsättning](./api/dataset-expiration.md) och [godkända frågeparametrar](./api/dataset-expiration.md#query-params).
 
 ## Övervaka arbetsorder och utgångsstatus för datauppsättning {#monitor}
 
@@ -63,7 +63,7 @@ För att effektivt kunna övervaka förloppet för dina uppgifter under datans l
 
 Använd följande tillvägagångssätt för att få detaljerad information om enskilda arbetsorder:
 
-- Gör en GET-förfrågan till `/workorder{work_order_id}` slutpunkt för detaljerade svarsdata.
+- Gör en GET-förfrågan till `/workorder/{work_order_id}` slutpunkt för detaljerade svarsdata.
 - Hämta produktspecifika svar och framgångsmeddelanden.
 - Undvik att använda den här metoden för vanliga avsökningsaktiviteter.
 

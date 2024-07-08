@@ -2,9 +2,9 @@
 title: Förfallodatum för automatiserade datauppsättningar
 description: Lär dig hur du schemalägger en förfallotid för en datauppsättning i Adobe Experience Platform-gränssnittet.
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 45dac5647e44ac35d9821d407eddeee72523faf9
+source-git-commit: 2aba88ac657e73a12be14d2c3a67dd5714513c97
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '835'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,13 @@ Det här dokumentet beskriver hur du schemalägger och automatiserar förfalloda
 
 >[!NOTE]
 >
->Datamängdens förfallodatum tar för närvarande inte bort data från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data finns kvar i Edge Network när datauppsättningen har satts till att upphöra. Detta beror på att 15-dagars servicelicensavtalet för förfallodatum för datauppsättning överlappar den 14-dagarsperiod då data finns i Edge Network innan de tas bort.
+>När datauppsättningen förfaller tas inga data bort från Adobe Experience Platform Edge Network. Det finns dock ingen möjlighet att data stannar kvar i Edge Network efter att datauppsättningen har satts till förfallodatum. Detta beror på att 15-dagars servicelicensavtalet för förfallodatum för datauppsättning överlappar den 14-dagarsperiod då data finns i Edge Network innan de kasseras.
+
+Advanced Data Lifecycle Management stöder borttagning av datauppsättningar via [datauppsättningens förfalloslutpunkt](../api/dataset-expiration.md) och ID-borttagningar (radnivådata) med primära identiteter via [arbetsorderslutpunkt](../api/workorder.md). Du kan också hantera förfallodatum för datauppsättningar och [postborttagningar](./record-delete.md) via plattformsgränssnittet. Mer information finns i den länkade dokumentationen.
+
+>[!NOTE]
+>
+>Datalifecycle stöder inte batchborttagning.
 
 ## Schemalägg ett förfallodatum för datauppsättning {#schedule-dataset-expiration}
 
@@ -39,7 +45,7 @@ Om du vill skapa en förfrågan väljer du **[!UICONTROL Create request]** från
 
 >[!IMPORTANT]
 >
-Användare av Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics har 20 väntande arbetsorder för schemalagda datauppsättningar. Användare av hälso- och sjukvårdsskölden och skölden för skydd av privatlivet och privatlivet har 50 väntande schemalagda arbetsorder för förfallodatum. Det innebär att du kan ha 20 eller 50 datauppsättningar schemalagda att tas bort när som helst.<br>Om du t.ex. har 20 schemalagda förfallodatum för datauppsättningar och en datauppsättning ska tas bort i morgon, kan du inte ange fler förfallodatum förrän den datauppsättningen har tagits bort.
+>Användare av Real-Time CDP, Adobe Journey Optimizer och Customer Journey Analytics har 20 väntande arbetsorder för schemalagda datauppsättningar. Användare av hälso- och sjukvårdsskölden och skölden för skydd av privatlivet och privatlivet har 50 väntande schemalagda arbetsorder för förfallodatum. Det innebär att du kan ha 20 eller 50 datauppsättningar schemalagda att tas bort när som helst.<br>Om du t.ex. har 20 schemalagda förfallodatum för datauppsättningar och en datauppsättning ska tas bort i morgon, kan du inte ange fler förfallodatum förrän den datauppsättningen har tagits bort.
 
 ![The [!UICONTROL Data Lifecycle] arbetsyta med [!UICONTROL Create request] markerad.](../images/ui/ttl/create-request-button.png)
 
@@ -59,7 +65,7 @@ Nästa, under **[!UICONTROL Dataset Details]**, markerar du databasikonen (![Dat
 
 >[!NOTE]
 >
-Endast datauppsättningar som tillhör den aktuella sandlådan visas.
+>Endast datauppsättningar som tillhör den aktuella sandlådan visas.
 
 ### Skicka begäran {#submit-request}
 
@@ -73,7 +79,7 @@ När begäran har skickats skapas en arbetsorder och visas på huvudfliken i [!U
 
 >[!NOTE]
 >
-Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#dataset-expiration-transparency) om du vill ha information om hur datauppsättningens förfallodatum behandlas när de har körts.
+>Se översiktsavsnittet i [tidslinjer och genomskinlighet](../home.md#dataset-expiration-transparency) om du vill ha information om hur datauppsättningens förfallodatum behandlas när de har körts.
 
 ## Redigera eller avbryta en förfallotid för en datauppsättning {#edit-or-cancel}
 
