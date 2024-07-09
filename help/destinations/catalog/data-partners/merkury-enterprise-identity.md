@@ -1,11 +1,9 @@
 ---
 title: Merkury Enterprise Identity Destination
 description: Lär dig hur du skapar en Merkury Enterprise Identity-målanslutning med Adobe Experience Platform-gränssnittet.
-hide: true
-hidefromtoc: true
-source-git-commit: 66a0a085e696dbe13d0368da395f655c7ca01a97
+source-git-commit: 01ce38d26cf61706de84ec143e3dd8af720d0591
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1465'
 ht-degree: 0%
 
 ---
@@ -15,33 +13,33 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Målanslutningen och dokumentationssidan skapas och underhålls av Merkury-teamet. Om du har frågor eller uppdateringsfrågor kontaktar du din kontorepresentant för Merkury.
+>Målanslutnings- och dokumentationssidan skapas och underhålls av [!DNL Merkury] team. Om du har frågor eller uppdateringsfrågor kontaktar du [!DNL Merkury] kontorepresentant.
 
 ## Översikt
 
-Använd Merkury Enterprise Identity-destinationen för att skapa mer korrekta, omfattande och insiktsfulla konsumentprofiler. Med förbättrade profildata kan marknadsförarna ge bättre insikter, segment och modeller, vilket ger exaktare målinriktning och prediktiv modellering.
+Använd [!DNL Merkury Enterprise Identity] målgruppsanpassning för att skapa mer korrekta, heltäckande och insiktsfulla konsumentprofiler. Med förbättrade profildata kan marknadsförarna ge bättre insikter, segment och modeller, vilket ger exaktare målinriktning och prediktiv modellering.
 
 ![Ett diagram som visar kopplingen mellan Merkury och Experience Platform, inklusive intag och aktivering](../../assets/catalog/data-partners/merkury-identity/media/image1.png)
 
-Följ stegen på den här dokumentationssidan för att skapa en Merkury Identity-målanslutning och aktivera målgrupper för identifiering och berikning med Adobe Experience Platform användargränssnitt.
+Följ stegen på den här dokumentationssidan för att skapa en [!DNL Merkury Identity] målanslutning och aktivera målgrupper för identifiering och berikning med Adobe Experience Platform användargränssnitt.
 
 >[!NOTE]
 >
->Om du vill aktivera målgrupper för mediedestinationer med ditt Merkury Connect-konto ska du använda vårt mål för Merkury Connections i stället.
+>Om du vill aktivera målgrupper till mediematerial med [!DNL Merkury Connect] konto, använd [!DNL Merkury Connections] mål i stället.
 
 ![Det Merkury Enterprise Identity-målkort som markeras i Experience Platform-målkatalogen.](../../assets/catalog/data-partners/merkury-identity/media/image2.png)
 
 ## Användningsfall
 
-Merkury Enterprise Identity Destination ger möjlighet att på ett säkert sätt överföra konsumentens PII för följande Merkury-funktioner:
+The [!DNL Merkury Enterprise Identity] mål ger möjlighet att på ett säkert sätt överföra konsument-PII för följande [!DNL Merkury] funktioner:
 
-* **Datakvalitet**: Förbättra kvaliteten på konsumentprofildata med datahygien och standardisering. Merkury inkluderar amerikansk posthygien och flyttidentifiering för att stödja de mest avancerade användningsområdena för direktreklam.
-* **Identitetsupplösning**: Skapa en korrekt och heltäckande bild av kunden utifrån Merkury Individual- och Household ID:n. Merkury ID:n är en nära nivå av profillänkning som bygger på Merkurys omfattande amerikanska foto för vuxenkonsumentidentitet på över 268 miljoner människor.
-* **Berikning**: Få bättre insikter och personalisering med Merkury Data. Merkury Data innehåller över 10 000 tillgängliga dataattribut, från demografi, livsstil, ekonomi, livshändelser och köpdata från Merkury Data Suite.
+* **Datakvalitet**: Förbättra kvaliteten på konsumentprofildata med datahygien och standardisering. [!DNL Merkury] innehåller amerikansk posthygien och flyttbar identifiering för att stödja de mest avancerade användningsområdena för direktreklam.
+* **Identitetsupplösning**: Skapa en korrekt och heltäckande bild av kunden utifrån [!DNL Merkury] Individuella ID:n och hushåll ID:n. Merkury ID:n ger en djup nivå av profillänkning som bygger på [!DNL Merkury]USA:s omfattande foto för vuxenkonsumenter med över 268 miljoner människor.
+* **Berikning**: Få bättre insikter och personalisering med [!DNL Merkury Data]. [!DNL Merkury Data] innehåller över 10 000 tillgängliga dataattribut, från demografi, livsstil, ekonomi, livshändelser och köpdata från [!DNL Merkury Data Suite].
 
 >[!NOTE]
 >
->De här användningsexemplen körs genom en kombination av både mål- och källanslutningar. Kunden skulle börja med att exportera sina befintliga kundposter för anrikning med den här målkopplingen. Merkurys tjänst skulle söka efter filen, hämta den, berika den med Merkurys data och generera en fil. Kunden skulle sedan använda motsvarande källkort för Merkury Source-anslutningen för att importera de hydratiserade kundprofilerna tillbaka till Adobe Real-Time CDP.
+>De här användningsexemplen körs genom en kombination av både mål- och källanslutningar. Kunden skulle börja med att exportera sina befintliga kundposter för anrikning med den här målkopplingen. [!DNL Merkury]tjänsten skulle söka efter filen, hämta den, berika den med [!DNL Merkury]data och generera en fil. Kunden skulle sedan använda motsvarande [!DNL Merkury] Source Connector-källkort för att importera de hydrerade kundprofilerna tillbaka till Adobe Real-Time CDP.
 
 ## Förhandskrav
 
@@ -54,7 +52,7 @@ Merkury Enterprise Identity Destination ger möjlighet att på ett säkert sätt
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
+| GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/features/ecid.md) för mer information. |
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
@@ -77,11 +75,9 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 ## Exportera typ och frekvens
 
 Se tabellen nedan för information om exporttyp och frekvens för destinationen.
-
-|**Målgrupp**|**Stöds**|**Beskrivning av ursprung**|
-|---|---|---|
-|Segmenteringstjänst|✓|Målgrupper som genererats via Experience Platform [[Segmenteringstjänst]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).|
-|Anpassade uppladdningar|X|Målgrupper [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer.|
+|**Målgrupp**|**Stöds**|**Beskrivning av ursprung**|\
+|—|—|—|\
+|Segmenteringstjänst|✓|Målgrupper som genererats via Experience Platform [[Segmenteringstjänst]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/home).| Anpassade uppladdningar|X|Målgrupper [[importerad]](https://experienceleague.adobe.com/en/docs/experience-platform/segmentation/ui/overview#import-audience) till Experience Platform från CSV-filer.
 
 {style="table-layout:auto"}
 
@@ -124,7 +120,7 @@ Om du vill konfigurera information för målet fyller du i de obligatoriska och 
 
 >[!NOTE]
 >
->När du väljer CSV-alternativet, Avgränsare, Offerttecken, Escape-tecken, Tomt värde, Null-värde, Komprimeringsformat och Inkludera manifestfil visas, kan du kontakta ditt Merkury-team och be om lämpliga inställningar för ditt konto.
+>När du väljer CSV-alternativet, Avgränsare, Offerttecken, Escape-tecken, Tomt värde, Null-värde, Komprimeringsformat och Inkludera manifestfil visas kontaktar du ditt Merkury-team för att få lämpliga inställningar för ditt konto.
 
 ![bild av alternativet csv](../../assets/catalog/data-partners/merkury-identity/media/image8.png)
 
@@ -145,20 +141,20 @@ När du är klar med informationen för målanslutningen väljer du **Nästa**.
 
 >[!IMPORTANT]
 >
->* Om du vill aktivera data måste du ha behörigheterna Visa mål, Aktivera mål, Visa profiler och Visa segment. Läs översikten över åtkomstkontrollen eller kontakta produktadministratören för att få den behörighet som krävs.
->* Om du vill exportera identiteter måste du ha behörigheten Visa identitetsdiagram.
+>* För att aktivera data behöver du **Visa mål**, **Aktivera destinationer**, **Visa profiler** och **Visa segment** behörigheter för åtkomstkontroll. Läs översikten över åtkomstkontrollen eller kontakta produktadministratören för att få den behörighet som krävs.
+>* Om du vill exportera identiteter behöver du **Visa identitetsdiagram** behörighet för åtkomstkontroll.
 
 Läs [Aktivera målgruppsdata för att batchprofilera exportmål](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations) för instruktioner om hur du aktiverar målgrupper till det här målet.
 
 ## Mappningsförslag
 
-Korrekt bearbetning av filer på Merkury-sidan kräver name- och address-element. Även om det inte krävs alla element, kommer det att vara till hjälp att matchningen blir så framgångsrik som möjligt om alla delar anges.
+Korrekt bearbetning av filer på [!DNL Merkury] side kräver name- och address-element. Även om det inte krävs alla element, kommer det att vara till hjälp att matchningen blir så framgångsrik som möjligt om alla delar anges.
 
-Mappningsförslag ges i tabellen nedan med en lista över de attribut på målsidan som används av Merkury-bearbetning som kunder kan mappa profilattribut till. Behandla dessa element som förslag eftersom inte alla element är obligatoriska, och källvärdena beror på kontots behov.
+Mappningsförslag finns i tabellen nedan som listar de attribut på målsidan som används av [!DNL Merkury] bearbetning som kunder kan mappa profilattribut till. Behandla dessa element som förslag eftersom inte alla element är obligatoriska, och källvärdena beror på kontots behov.
 
-| Målfält | Källbeskrivning |
+| Målfält | Source Description |
 |---|---|
-| id | Identitetsfält som ska användas för att mappa merkury-data till Experience Platform via kopplingen för Merkury Enterprise Identity Resolution Source |
+| id | Identitetsfält som ska användas för mappning [!DNL Merkury] data till Experience Platform via [!DNL Merkury Enterprise Identity] Source Connector |
 | Input_First_Name | The `person.name.firstName` värde i Experience Platform. |
 | Input_Last_Name | The `person.name.lastName` värde i Experience Platform. |
 | Input_Address_Line_1 | The `mailingAddress.street` värde i Experience Platform. |
@@ -181,4 +177,4 @@ Alla Adobe Experience Platform-destinationer följer dataanvändningsprinciper n
 
 ## Nästa steg
 
-I den här självstudiekursen har du skapat ett dataflöde för att exportera profildata från Experience Platform till din Merkury-hanterade S3-plats. Därefter kontaktar du Merkury-representanten med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.
+Genom att följa den här självstudiekursen har du skapat ett dataflöde för att exportera profildata från Experience Platform till [!DNL Merkury] hanterad S3-plats. Därefter måste du kontakta [!DNL Merkury] -representant med namnet på kontot, filnamnen och bucket-sökvägen så att bearbetningen kan konfigureras.
