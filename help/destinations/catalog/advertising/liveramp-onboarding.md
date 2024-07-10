@@ -3,7 +3,7 @@ title: LiveRamp - Onboarding-anslutning
 description: Lär dig använda LiveRamp-kontakten för att ta in målgrupper från Adobe Real-time Customer Data Platform till LiveRamp Connect.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: b8ce7ec2-7af9-4d26-b12f-d38c85ba488a
-source-git-commit: a235f9a66ea15fc5e72dd6ed03e4a6a384fd30a4
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1846'
 ht-degree: 0%
@@ -20,7 +20,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL LiveRamp - O
 
 Som marknadsförare vill jag skicka målgrupper från Adobe Experience Platform till inbyggda identiteter i [!DNL LiveRamp Connect] så att jag kan inrikta mig på användare på mobilen, öppna webben, sociala medier och [!DNL CTV] plattformar, använda [!DNL Ramp ID] identifierare.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 The [!DNL LiveRamp - Onboarding] anslutningsexporterar filer med [LiveRamp&#39;s SFTP](https://docs.liveramp.com/connect/en/upload-a-file-via-liveramp-s-sftp.html) lagring.
 
@@ -37,9 +37,9 @@ I [mappningssteg](#map) av aktiveringsarbetsflödet måste du definiera målmapp
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -211,7 +211,7 @@ Profilerna som ingår i de exporterade filerna kan matcha ett av följande kvali
 * `Expired`: Profilen är inte längre kvalificerad för målgruppen, men har tidigare kvalificerats.
 * `""`(tom sträng): Profilen är aldrig kvalificerad för målgruppen.
 
-Till exempel en exporterad CSV-fil med en `email` attribut, två målgrupper som kommer från Experience Platform [Segmenteringstjänst](../../../segmentation/home.md)och en [importerad](../../../segmentation/ui/overview.md#importing-an-audience) extern publik, skulle kunna se ut så här:
+Till exempel en exporterad CSV-fil med en `email` attribut, två målgrupper som kommer från Experience Platform [Segmenteringstjänst](../../../segmentation/home.md)och en [importerad](../../../segmentation/ui/audience-portal.md#import-audience) extern publik, skulle kunna se ut så här:
 
 ```csv
 email,ups_aa2e3d98-974b-4f8b-9507-59f65b6442df,ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f,CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e
@@ -223,7 +223,7 @@ abc107@testemailabc.com,active,expired,active
 abc101@testemailabc.com,active,active,
 ```
 
-I exemplet ovan är `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` beskriver målgrupper som härrör från segmenteringstjänsten, medan `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en publik som importerats till Platform som [anpassad överföring](../../../segmentation/ui/overview.md#importing-an-audience).
+I exemplet ovan är `ups_aa2e3d98-974b-4f8b-9507-59f65b6442df` och `ups_45d4e762-6e57-4f2f-a3e0-2d1893bcdd7f` beskriver målgrupper som härrör från segmenteringstjänsten, medan `CustomerAudienceUpload_7729e537-4e42-418e-be3b-dce5e47aaa1e` beskriver en publik som importerats till Platform som [anpassad överföring](../../../segmentation/ui/audience-portal.md#import-audience).
 
 Eftersom Platform genererar en CSV-fil för varje [princip-ID för sammanslagning](../../../profile/merge-policies/overview.md)genererar det också en separat dataflödeskörning för varje ID för sammanfogningsprincip.
 

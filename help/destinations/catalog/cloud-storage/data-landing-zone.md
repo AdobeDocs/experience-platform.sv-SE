@@ -3,7 +3,7 @@ title: Data Landing Zone-mål
 description: Lär dig hur du ansluter till Data Landing Zone för att aktivera målgrupper och exportera datamängder.
 last-substantial-update: 2023-07-26T00:00:00Z
 exl-id: 40b20faa-cce6-41de-81a0-5f15e6c00e64
-source-git-commit: cb37eda87b8fcc0d0284db7a0bab8d48eab5aae6
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1544'
 ht-degree: 0%
@@ -35,9 +35,9 @@ Plattformen har en strikt TTL-regel (time-to-live) på sju dagar för alla filer
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -65,7 +65,7 @@ Vid export *målgruppsdata*, skapar Platform en `.csv`, `parquet`, eller `.json`
 
 Vid export *datauppsättningar*, skapar Platform en `.parquet` eller `.json` filen på lagringsplatsen som du angav. Mer information om filerna finns i [verifiera lyckad datauppsättningsexport](../../ui/export-datasets.md#verify) i självstudiekursen om exportdatamängder.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Observera följande krav som måste vara uppfyllda innan du kan använda [!DNL Data Landing Zone] mål.
 

@@ -3,7 +3,7 @@ keywords: mobil; braze; messaging;
 title: Braze connection
 description: Braze är en heltäckande plattform för kundengagemang som driver relevanta och minnesvärda upplevelser mellan kunder och de varumärken de älskar.
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1070'
 ht-degree: 0%
@@ -49,9 +49,9 @@ Som marknadsförare vill jag rikta in mig på användare i en mobil engagemangsd
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -117,16 +117,16 @@ I [!UICONTROL Mapping] klicka **[!UICONTROL Add new mapping]**.
 
 I [!UICONTROL Source Field] klickar du på pilknappen bredvid det tomma fältet.
 
-![Mappning av Braze-målkälla](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
+![Braze Destination Source Mapping](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
 I [!UICONTROL Select source field] kan du välja mellan två kategorier med XDM-fält:
 * [!UICONTROL Select attributes]: använd det här alternativet för att mappa ett specifikt fält från XDM-schemat till ett [!DNL Braze] -attribut.
 
-![Källattribut för Braze Destination Mapping](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
+![Attribut för Braze Destination Mapping Source](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
 * [!UICONTROL Select identity namespace]: Använd det här alternativet om du vill mappa en [!DNL Platform] identity namespace to a [!DNL Braze] namnutrymme.
 
-![Namnområde för Braze Destination Source](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
+![Braze Destination Mapping Source Namespace](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
 Välj källfält och klicka sedan på **[!UICONTROL Select]**.
 

@@ -2,10 +2,11 @@
 title: Målgruppsanalys
 description: Se vilka målgrupper kunderna är berättigade till i Customer Journey Analytics.
 badgeLimitedAvailability: label="Begränsad tillgänglighet" type="Informative"
-source-git-commit: 83b3d40e17f444555769020526bb723265a09eb9
+exl-id: 81437237-d746-4ce9-b938-7d2541f0ed32
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '760'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -17,7 +18,7 @@ The [!UICONTROL Audience Analysis] kan ni berika Adobe Experience Platform målg
 >
 >Den här destinationen är i en begränsad testfas. Om du är intresserad av att använda det här målet kontaktar du kontoteamet på Adobe.
 
-## Förutsättningar
+## Förhandskrav
 
 Du måste ange följande innan du kan använda det här målet:
 
@@ -31,7 +32,7 @@ Målgruppsanalys stöder aktivering av identiteter som beskrivs i tabellen nedan
 
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
-| GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
+| GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/features/ecid.md) för mer information. |
 | phone_sha256 | Telefonnummer hashas med SHA256-algoritmen | Både oformaterad text och SHA256-hashade telefonnummer stöds av Adobe Experience Platform. När källfältet innehåller ohash-kodade attribut markerar du **[!UICONTROL Apply transformation]** alternativ, att ha [!DNL Platform] automatiskt hash-koda data vid aktiveringen. |
@@ -45,9 +46,9 @@ Målgruppsanalys stöder aktivering av identiteter som beskrivs i tabellen nedan
 Följande typer av målgrupper stöds när du använder det här målet:
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

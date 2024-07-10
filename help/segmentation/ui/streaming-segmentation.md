@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Användargränssnittshandbok för direktuppspelningssegmentering
 description: Med direktuppspelad segmentering på Adobe Experience Platform kan ni segmentera i nära realtid samtidigt som ni fokuserar på datamöjligheter. Med direktuppspelningssegmentering sker nu segmentkvalificering allt eftersom data når plattformen, vilket minskar behovet av att schemalägga och köra segmenteringsjobb. Med den här funktionen kan de flesta segmentregler utvärderas när data överförs till plattformen, vilket innebär att segmentmedlemskapet hålls uppdaterat utan att schemalagda segmenteringsjobb körs.
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: c14c6b8037993b3696b4a99633c80c6ee9679399
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
-source-wordcount: '1534'
+source-wordcount: '1530'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Direktuppspelningssegmentering på [!DNL Adobe Experience Platform] gör det mö
 
 >[!NOTE]
 >
->För att direktuppspelningssegmenteringen ska fungera måste du aktivera schemalagd segmentering för organisationen. Mer information om att aktivera schemalagd segmentering finns i [avsnittet för direktuppspelningssegmentering i användarhandboken för segmentering](./overview.md#scheduled-segmentation).
+>För att direktuppspelningssegmenteringen ska fungera måste du aktivera schemalagd segmentering för organisationen. Mer information om att aktivera schemalagd segmentering finns i [Översikt över Audience Portal](./audience-portal.md#scheduled-segmentation).
 
 En fråga utvärderas automatiskt med direktuppspelningssegmentering om den uppfyller något av följande kriterier:
 
@@ -75,7 +75,7 @@ Underliggande är ett linjediagram som visar antalet nya målgrupper som uppdate
 >
 >En segmentdefinition anses vara kvalificerad om den går från att ha ingen status till att realisera eller om den går från avslutad till realiserad. En segmentdefinition anses vara okvalificerad om den går från realiserad till avslutad.
 >
->Mer information om de här statusvärdena finns i statustabellen i [segmenteringsöversikt](./overview.md#browse).
+>Mer information om de här statusvärdena finns i statustabellen i [Översikt över målgruppsportalen](./audience-portal.md#customize).
 
 ![Profilerna över tidskortet markeras och visar ett linjediagram över profilerna över tiden.](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 

@@ -3,7 +3,7 @@ keywords: luftfartygets etikett;luftfartygets destination
 title: Ansluta till luftfartygets taggar
 description: Skicka smidigt data från Adobe till Airship som målgruppstaggar för målinriktning inom Airship.
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Mer information om [!DNL Airship], se [Airship Docs](https://docs.airship.com).
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Airship] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [support.airship.com](https://support.airship.com/).
 
-## Förutsättningar
+## Förhandskrav
 
 Innan du kan skicka dina Adobe Experience Platform-målgrupper till [!DNL Airship]måste du:
 
@@ -41,9 +41,9 @@ Innan du kan skicka dina Adobe Experience Platform-målgrupper till [!DNL Airshi
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -136,7 +136,7 @@ Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/acti
 
 ![Mappning av namngivna användare](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 
-För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till lämplig kanal baserat på källan. Följande bilder visar hur du mappar ett Google Advertising ID till ett [!DNL Airship] Android-kanal.
+För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till lämplig kanal baserat på källan. I följande bilder visas hur du mappar ett Google Advertising ID till ett [!DNL Airship] Android channel.
 
 ![Anslut till luftfartygets taggar](../../assets/catalog/mobile-engagement/airship-tags/select-source-identity.png)
 ![Anslut till luftfartygets taggar](../../assets/catalog/mobile-engagement/airship-tags/select-target-identity.png)

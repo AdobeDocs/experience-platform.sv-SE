@@ -2,13 +2,13 @@
 title: Gainsight PX Connection
 description: Använd Gainsight PX-destinationen för att skicka segmenteringsinformation till Gainsight PX-plattformen.
 last-substantial-update: 2024-02-20T00:00:00Z
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+exl-id: 0ca0d34f-f866-4f59-80f8-60198fbb86be
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '856'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
-
 
 # Gainsight PX-anslutning {#gainsight-px}
 
@@ -28,7 +28,7 @@ För att du bättre ska förstå hur och när du ska använda *Gainsight PX* må
 
 Ett SaaS-företag vill engagera sina kunder via en guide i appen som konstruerats på Gainsight PX. En målgrupp som vill få detta engagemang har byggts på Adobe Experience Platform. Gainsight PX-destinationen tar emot målgruppen och gör den tillgänglig i Gainsight PX-miljön.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 * Kontakta [!DNL Gainsight] supportteamet och begär aktivering av externa segmentfunktioner för din prenumeration.
 * Generera ett OAuth Secret-värde för din PX-prenumeration med **[!UICONTROL Generate New Secret]** längst ned på [Sidan Företagsinformation](https://app.aptrinsic.com/settings/subscription)
@@ -51,7 +51,7 @@ I det här avsnittet beskrivs vilken typ av målgrupp du kan exportera till det 
 | Målgruppsursprung | Stöds | Beskrivning |
 |---|---|---|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

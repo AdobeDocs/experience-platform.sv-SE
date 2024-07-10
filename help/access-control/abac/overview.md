@@ -3,9 +3,9 @@ keywords: Experience Platform;hem;populära ämnen;åtkomstkontroll;attributbase
 title: Attributbaserad åtkomstkontroll - översikt
 description: Det här dokumentet innehåller information om attributbaserad åtkomstkontroll i Adobe Experience Platform
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 900e0dc323e9055a92313788a4a191c615d0b8cd
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1864'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ Som administratör kan du använda attributbaserade åtkomstkontrollsfunktioner 
 >
 >Sammanfattningsvis bör du tänka på följande när du arbetar med mål och attributbaserad åtkomstkontroll:
 >
->* Du kan bara aktivera segment som du har behörighet att komma åt och visa i [bläddringsvy för segment](/help/segmentation/ui/overview.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) av aktiveringsarbetsflödet.
+>* Du kan bara aktivera målgrupper som du har behörighet att komma åt och visa i [Målgruppsportal](/help/segmentation/ui/audience-portal.md#browse) och [välj segmentsteg](/help/destinations/ui/activate-batch-profile-destinations.md#select-segments) av aktiveringsarbetsflödet.
 >* I [mappningssteg för aktiveringsarbetsflödet](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)kan du bara visa och välja de fält som du har behörighet till för aktivering.
 >* När du vill aktivera ytterligare segment till ett befintligt mål där du inte har tillgång till alla fält som är mappade för export, blockeras aktiveringsarbetsflödet.
 

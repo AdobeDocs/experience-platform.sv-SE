@@ -5,9 +5,9 @@ breadcrumb-title: Användarhandbok om segmenteringstjänst
 user-guide-description: Bygg målgrupper utifrån dina kundprofildata i realtid med segmentdefinitioner som har genererats av Adobe Experience Platform eller externa källor.
 feature: Segments
 role: User
-source-git-commit: e828485ad5b0904c9dc66b43d1cdb3c4707885b1
+source-git-commit: 62a174e6f3b1bd1b0bc518ff7e5f236893e9e5d3
 workflow-type: tm+mt
-source-wordcount: '183'
+source-wordcount: '185'
 ht-degree: 22%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 22%
    - [Översikt](api/overview.md)
    - [Komma igång](api/getting-started.md)
    - [Målgrupper](api/audiences.md)
-   - [Kantsegmentering](api/edge-segmentation.md)
+   - [Edge segmentering](api/edge-segmentation.md)
    - [Exportera jobb](api/export-jobs.md)
    - [Förhandsvisningar och uppskattningar](api/previews-and-estimates.md)
    - [Scheman](api/schedules.md)
@@ -33,12 +33,13 @@ ht-degree: 22%
 - Segmenteringsgränssnitt {#ui}
    - [Översikt](ui/overview.md)
    - [Audience dashboard](ui/audience-dashboard.md)
+   - [Målgruppsportal](ui/audience-portal.md)
    - [Målgruppssammansättning](ui/audience-composition.md)
    - [Segment Builder](ui/segment-builder.md)
    - [Målgrupper](ui/account-audiences.md)
    - [Målgrupper som ser likadana ut](ui/lookalike-audiences.md)
    - [Potentiella målgrupper](ui/prospect-audience.md)
-   - [Kantsegmentering](ui/edge-segmentation.md)
+   - [Edge segmentering](ui/edge-segmentation.md)
    - [Direktuppspelningssegmentering](ui/streaming-segmentation.md)
    - [Direktuppspelningssegmentering (video)](video/streaming-segmentation-overview.md)
    - [Ignorera uppdatering av tidsbegränsning för år](ui/ignore-year.md)
@@ -48,7 +49,7 @@ ht-degree: 22%
       - [Felsökning](ui/segment-match/troubleshooting.md)
 - [Godkännande](consents.md)
 - [Segmentering för flera enheter](multi-entity-segmentation.md)
-- Profilfrågespråk {#pql}
+- Profile Query Language {#pql}
    - [Översikt](pql/overview.md)
    - [Booleska funktioner](pql/boolean-functions.md)
    - [Jämförelsefunktioner](pql/comparison-functions.md)
@@ -71,6 +72,6 @@ ht-degree: 22%
    - [Importera och använda externa målgrupper](tutorials/using-external-audiences.md)
    - [Skapa en datauppsättning för att exportera data](tutorials/create-dataset-export-segment.md)
    - [Stärk regelefterlevnaden för datasegment](tutorials/governance.md)
-- [Frågor och svar](./faq.md)
+- [Vanliga frågor och svar](./faq.md)
 - [API-referens](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [Versionsinformation för plattform](https://experienceleague.adobe.com/en/docs/experience-platform/release-notes/latest)

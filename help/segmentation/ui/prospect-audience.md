@@ -3,9 +3,9 @@ title: Potentiella målgrupper
 description: Lär dig hur du skapar och använder potentiella målgrupper för att nå okända kunder med hjälp av tredjepartsinformation.
 type: Documentation
 exl-id: b48cc0cf-f1c4-46fe-bb1d-cad53a9439dc
-source-git-commit: b4334b4f73428f94f5a7e5088f98e2459afcaf3c
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '385'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ I den här vyn visas information om målgruppen, inklusive namn, antal profiler,
 
 Du kan lägga till fler fält till den här visningen genom att välja ![filterattributsikonen](../images/ui/prospect-audience/filter-attribute.png). Dessa extrafält innehåller uppdateringsfrekvens och den senaste uppdateringsfrekvensen från.
 
-Mer information om bläddringssidan, inklusive detaljerad information om fälten i listan, finns i [bläddringsavsnitt i guiden Segmenteringsgränssnitt](./overview.md#browse).
+Mer information om bläddringssidan, inklusive detaljerad information om fälten i listan, finns i [Översikt över målgruppsportalen](./audience-portal.md#list).
 
 ## Målgruppsinformation {#details}
 
@@ -40,7 +40,7 @@ Sidan med information om potentiell kund visas. Information, inklusive en samman
 
 ![Sidan med information om potentiell kund visas.](../images/ui/prospect-audience/audience-details.png)
 
-Mer information om målgruppsinformation finns i [målgruppsdelen i segmenteringsgränssnittsguiden](./overview.md).
+Mer information om målgruppsinformation finns i [målgruppsdelen i översikten över målgruppsportalen](./audience-portal.md#audience-details).
 
 ## Skapa målgrupper {#create}
 

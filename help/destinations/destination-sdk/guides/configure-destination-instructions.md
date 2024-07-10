@@ -2,7 +2,7 @@
 description: På den här sidan visas och beskrivs stegen för hur du konfigurerar ett mål för direktuppspelning med Destination SDK.
 title: Använd Destination SDK för att konfigurera ett direktuppspelningsmål
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 52be44ece950ee57a66a13ab7962907b2b7c0fb1
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '865'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Den här sidan beskriver hur du använder informationen i [Konfigurationsalternativ i mål-SDK](../functionality/configuration-options.md) och i andra Destinationer SDK och API-referensdokument för att konfigurera [direktuppspelningsmål](../../destination-types.md#streaming-destinations). Stegen beskrivs i sekventiell ordning nedan.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Innan du går vidare till stegen som visas nedan ska du läsa [Komma igång med Destination SDK](../getting-started.md) för information om hur du får de autentiseringsuppgifter för Adobe I/O och andra krav som krävs för att arbeta med Destination SDK-API:er. Detta förutsätter att du har slutfört villkoren för partnerskap och behörighet och är redo att börja utveckla ditt mål.
 
@@ -279,10 +279,10 @@ När du har konfigurerat målet med hjälp av konfigurationsslutpunkterna i för
 
 Som en del av processen för att testa destinationen måste du använda användargränssnittet i Experience Platform för att skapa segment, som du aktiverar för destinationen. Se de två resurserna nedan för instruktioner om hur du skapar målgrupper i Experience Platform:
 
-* [Skapa en publikdokumentationssida](/help/segmentation/ui/overview.md#create-segment)
+* [Skapa en publikdokumentationssida](/help/segmentation/ui/audience-portal.md#create-audience)
 * [Skapa en videopresentation](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html)
 
-## Steg 7: Publicera destinationen {#publish-destination}
+## Steg 7: Publish ditt mål {#publish-destination}
 
 >[!NOTE]
 >

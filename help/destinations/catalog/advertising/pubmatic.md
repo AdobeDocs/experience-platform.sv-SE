@@ -2,13 +2,13 @@
 title: PubMatic Connect
 description: PubMatic maximerar kundvärdet genom att leverera framtidens programstyrda digitala marknadsföringskedja. PubMatic Connect kombinerar plattformsteknik och dedikerad tjänst för att förbättra hur lager och data paketeras och hanteras.
 last-substantial-update: 2023-12-14T00:00:00Z
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+exl-id: 21e07d2c-9a6a-4cfa-a4b8-7ca48613956c
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '886'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
-
 
 # Mål för PubMatic Connect {#pubmatic-connect}
 
@@ -30,7 +30,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL PubMatic Con
 
 Utgivare eller dataleverantörer vill skicka målgrupper från Adobe Experience Platform till [!DNL PubMatic Connect] målgruppsanpassning för användare på mobil-, webb- och CTV-plattformar med ett stort antal identifierare.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Tala med [!DNL PubMatic] Account Manager för att säkerställa att ditt konto är korrekt konfigurerat och har stöd för att introducera målgruppssegment. De ser också till att du har all information som behövs för att använda destinationen och för att ge dig support under installationen.
 
@@ -40,7 +40,7 @@ Tala med [!DNL PubMatic] Account Manager för att säkerställa att ditt konto �
 
 | Målidentitet | Beskrivning | Överväganden |
 | --------------- | ------ | --- |
-| GAID | Google Advertising ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
+| GAID | GOOGLE ADVERTISING ID | Välj målidentiteten för GAID när källidentiteten är ett GAID-namnområde. |
 | IDFA | Apple ID för annonsörer | Välj IDFA-målidentitet när din källidentitet är ett IDFA-namnutrymme. |
 | extern_id | Anpassade användar-ID:n | Välj den här målidentiteten när källidentiteten är ett anpassat namnutrymme. |
 
@@ -53,7 +53,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 | --- | --------- | ------ |
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

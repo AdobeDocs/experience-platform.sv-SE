@@ -3,7 +3,7 @@ title: Zeta Marketing Platform
 description: Zeta Marketing Platform (ZMP) är ett molnbaserat system som hjälper er att anskaffa, utöka och behålla kunder på ett effektivare sätt, med hjälp av intelligens (egna data och AI).
 hide: true
 hidefromtoc: true
-source-git-commit: bf553371316d9d9cb368fc4d1be14196201ef680
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1324'
 ht-degree: 0%
@@ -62,9 +62,9 @@ En annonsör siktar på att nå ut till användare inom specifika målgrupper vi
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

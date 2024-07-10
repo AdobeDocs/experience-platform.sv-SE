@@ -3,7 +3,8 @@ title: Proportioner för Acxiom - undertryckning
 description: Exportera era egna målgrupper till Acxiom-destinationen så att Acxiom kan inaktivera kända eller konverterade kunder. Använd sedan källkopplingen för Acxiom för att importera och aktivera listor med potentiella kunder från Acxiom, med kända eller konverterade kunder borttagna.
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta
-source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
+exl-id: d82e8cd3-970c-44af-99b0-ea154eb3655e
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1430'
 ht-degree: 0%
@@ -44,7 +45,7 @@ Du börjar först med att exportera dina befintliga kundprofiler med den här m�
 
 Acxioms tjänst skulle söka efter filen, hämta den och använda den tillsammans med andra urvalskriterier och generera en potentiell fil. Sedan använder du motsvarande [[!DNL Acxiom Prospecting Data Import]](/help/sources/connectors/data-partners/acxiom-prospecting-data-import.md) källanslutning för att importera profiler för potentiella kunder till Adobe Real-Time CDP.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 >[!IMPORTANT]
 >
@@ -58,7 +59,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|-----------|---------------------------------------------------------------------------------------------------------------------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | x | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | x | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -143,7 +144,7 @@ Läs [Aktivera målgruppsdata för att batchprofilera exportmål](/help/destinat
 
 Bearbetning kräver namn- och adresselement, men alla element krävs inte, förutsatt att så mycket som möjligt hjälper till med matchningen.  Mappningsförslag ges i tabellen nedan som listar de attribut på målsidan som används av Acxiom-bearbetning som kunder kan mappa profilattribut till.  Detta bör behandlas som förslag eftersom inte alla element är obligatoriska och källvärdena beror på kontots behov.
 
-| Målfält | Källbeskrivning |
+| Målfält | Source Description |
 |--------------|-------------------------------------------------------------|
 | name | The `person.name.fullName` värde i Experience Platform. |
 | firstName | The `person.name.firstName` värde i Experience Platform. |

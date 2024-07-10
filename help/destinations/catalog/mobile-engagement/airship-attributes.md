@@ -3,7 +3,7 @@ keywords: luftfartygsattribut;luftfartygets destination
 title: Luftfartygsattribut, anslutning
 description: Skicka smidigt data från Adobe till Airship som målgruppsattribut för målinriktning inom Airship.
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: c3ef732ee82f6c0d56e89e421da0efc4fbea2c17
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1001'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Mer information om [!DNL Airship], se [Airship Docs](https://docs.airship.com).
 >
 >Målanslutningen och dokumentationssidan skapas och underhålls av [!DNL Airship] team. Om du har frågor eller uppdateringsfrågor kontaktar du dem direkt på [support.airship.com](https://support.airship.com/).
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Innan du kan skicka dina målgrupper till [!DNL Airship]måste du:
 
@@ -40,9 +40,9 @@ Innan du kan skicka dina målgrupper till [!DNL Airship]måste du:
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -130,7 +130,7 @@ Se [Aktivera målgruppsdata för direktuppspelad målgruppsexport](../../ui/acti
 
 För identifierare som ska mappas till en kanal, d.v.s. en enhet, mappar du till lämplig kanal baserat på källan. Följande bilder visar hur två mappningar skapas:
 
-* IDFA iOS Advertising ID to an [!DNL Airship] iOS
+* IDFA iOS Advertising ID till en [!DNL Airship] iOS
 * Adobe `fullName` attribut till [!DNL Airship] Attributet &quot;Fullständigt namn&quot;
 
 >[!NOTE]

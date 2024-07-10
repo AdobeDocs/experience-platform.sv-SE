@@ -3,10 +3,10 @@ keywords: anpassad personalisering; mål; upplevelseplattform anpassad destinati
 title: Anpassad personaliseringsanslutning
 description: Det här målet innehåller extern personalisering, innehållshanteringssystem, annonsservrar och andra applikationer som körs på din webbplats för att hämta målgruppsinformation från Adobe Experience Platform. Det här målet ger personalisering i realtid baserat på målgruppsmedlemskap i användarprofiler.
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 5b37b51308dc2097c05b0e763293467eb12a2f21
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '868'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [API för Edge Network Server](/help/server-api/overview.md) när du konfigurerar **[!UICONTROL Custom Personalization]** mål för attributbaserad personalisering. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../../server-api/authentication.md).
+>Profilattribut kan innehålla känsliga data. För att skydda dessa data måste du använda [Edge Network Server-API](/help/server-api/overview.md) när du konfigurerar **[!UICONTROL Custom Personalization]** mål för attributbaserad personalisering. Alla Server-API-anrop måste göras i en [autentiserad kontext](../../../server-api/authentication.md).
 >
 ><br>Om du redan använder Web SDK eller Mobile SDK för din integrering kan du hämta attribut via Server-API:t genom att lägga till en integration på serversidan.
 >
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 Konfigurera den här destinationen så att externa personaliseringsplattformar, content management-system, annonsservrar och andra applikationer som körs på kundens webbplatser kan hämta målgruppsinformation från Adobe Experience Platform.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Den här integreringen drivs av [Adobe Experience Platform Web SDK](/help/web-sdk/home.md) eller [Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/). Du måste använda någon av dessa SDK:er för att kunna använda det här målet.
 
@@ -46,9 +46,9 @@ Den här integreringen drivs av [Adobe Experience Platform Web SDK](/help/web-sd
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

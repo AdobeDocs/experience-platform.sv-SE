@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Experience Platform - översikt
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1735'
 ht-degree: 0%
@@ -75,7 +75,7 @@ När du väljer väljaren öppnas en listruta med organisationer som du har till
 
 ### Byt program
 
-Nästa objekt till höger om den översta navigeringen är **programväljare**, som representeras av ![programväljare](./images/user-guide/app-switcher-icon.png) -ikon. När du väljer den här ikonen kan du växla mellan Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics (Analyser), Assets (Resurser) och andra.
+Nästa objekt till höger om den översta navigeringen är **programväljare**, som representeras av ![programväljare](./images/user-guide/app-switcher-icon.png) -ikon. När du väljer den här ikonen kan du växla mellan olika Adobe-program som din organisation har tillgång till, till exempel Experience Platform, Analytics, Assets och andra.
 
 ### Hjälp
 
@@ -129,7 +129,7 @@ The **[!UICONTROL Destinations]** kan du skapa, uppdatera och ta bort mål, så 
 
 The **[!UICONTROL Profiles]** kan du bläddra bland kundprofiler, visa profilvärden, skapa och hantera sammanfogningspolicyer och visa unionens scheman. Mer information om hur du använder [!UICONTROL Profiles] läs [[!DNL Profile] användarhandbok](../profile/ui/user-guide.md). Mer information om kundprofilen i realtid finns i [Översikt över kundprofiler i realtid](../profile/home.md).
 
-The **[!UICONTROL Segments]** kan du skapa och hantera segmentdefinitioner. Mer information om hur du använder [!UICONTROL Segments] läs [segmenteringsanvändarhandbok](../segmentation/ui/overview.md). Mer information om segmenteringstjänsten finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
+The **[!UICONTROL Audiences]** kan du skapa och hantera segmentdefinitioner. Mer information om hur du använder [!UICONTROL Audiences] läs [segmenteringsanvändarhandbok](../segmentation/ui/overview.md). Mer information om segmenteringstjänsten finns i [Översikt över segmenteringstjänsten](../segmentation/home.md).
 
 The **[!UICONTROL Identities]** I kan du skapa och hantera identitetsnamnutrymmen. Mer information om [!UICONTROL Identities] och information om identitetsnamnutrymmen och hur du använder identiteter i plattformsgränssnittet finns i [Översikt över namnutrymmet identity](../identity-service/features/namespaces.md).
 
@@ -141,7 +141,7 @@ The **[!UICONTROL Requests]** kan du skapa och hantera sekretessförfrågningar.
 
 ### [!UICONTROL Data Science]
 
-The **[!UICONTROL Notebooks]** -avsnittet ger åtkomst till JupyterLab, en interaktiv utvecklingsmiljö där du kan utforska, analysera och modellera data. Mer information om hur du använder anteckningsböcker finns i [Användarhandbok för JupyterLab](../data-science-workspace/jupyterlab/overview.md). Mer information om arbetsytan Data Science finns i [Översikt över arbetsytan Data Science](../data-science-workspace/home.md)
+The **[!UICONTROL Notebooks]** -avsnittet ger åtkomst till JupyterLab, en interaktiv utvecklingsmiljö där du kan utforska, analysera och modellera data. Mer information om hur du använder anteckningsböcker finns i [Användarhandbok för JupyterLab](../data-science-workspace/jupyterlab/overview.md). Mer information om Data Science Workspace finns i [Data Science Workspace - översikt](../data-science-workspace/home.md)
 
 The **[!UICONTROL Models]** kan du använda maskininlärning och artificiell intelligens för att skapa, utveckla, utbilda och trimma modeller för att göra prognoser. Mer information om modellavsnittet finns i självstudiekursen om [utbilda och utvärdera en modell](../data-science-workspace/models-recipes/train-evaluate-model-ui.md).
 

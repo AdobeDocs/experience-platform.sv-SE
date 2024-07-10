@@ -4,7 +4,7 @@ description: Använd den här destinationen för att leverera Adobe CDP-målgrup
 badgeBeta: label="Beta" type="Informative"
 hide: true
 hidefromtoc: true
-source-git-commit: c61907768f6d3cfdae3d07291bb25ff4a5229a89
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1265'
 ht-degree: 0%
@@ -63,7 +63,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

@@ -3,10 +3,10 @@ title: HubSpot-anslutning
 description: Med HubSpot-målet kan du hantera kontaktposter i ditt HubSpot-konto.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: e2114bde-b7c3-43da-9f3a-919322000ef4
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1485'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -24,7 +24,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL HubSpot] må
 
 [!DNL HubSpot] kontakter lagrar information om de personer som interagerar med ert företag. Ditt team använder de kontakter som finns i [!DNL HubSpot] för att bygga målgrupper i Experience Platform. När dessa målgrupper har skickats till [!DNL HubSpot], uppdateras deras information och varje kontakt tilldelas en egenskap med ett värde som målgruppsnamn som anger vilken målgrupp kontakten tillhör.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 I avsnitten nedan finns information om alla krav som du måste ställa in i Experience Platform och [!DNL HubSpot] och för information som du måste samla in innan du arbetar med [!DNL HubSpot] mål.
 
@@ -79,8 +79,8 @@ Detta mål stöder aktivering av alla målgrupper som genererats via Experience 
 Detta mål stöder även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
 | Målgruppstyp | Beskrivning |
----------|----------|
-| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+|---------|----------|
+| Anpassade överföringar | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -153,7 +153,7 @@ The `Email` Identitet är en obligatorisk mappning för det här målet. Följ s
 1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select attributes]** och markera `email`.
    ![Skärmbild för plattformsgränssnitt som väljer e-post som ett målattribut att mappa som identitet.](../../assets/catalog/crm/hubspot/mapping-select-target-identity.png)
 
-| Källfält | Målfält | Obligatoriskt |
+| Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `IdentityMap: Email` | `Identity: email` | Ja |
 
@@ -172,7 +172,7 @@ Lägga till andra attribut som du vill uppdatera mellan XDM-profilschemat och [!
 
 Några tillgängliga mappningar mellan XDM-profilschemat och [!DNL Hubspot] visas nedan:
 
-| Källfält | Målfält |
+| Source Field | Målfält |
 | --- | --- |
 | `xdm: person.name.firstName` | `Attribute: firstname` |
 | `xdm: person.name.lastName` | `Attribute: lastname` |

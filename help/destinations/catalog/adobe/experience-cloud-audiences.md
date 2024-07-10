@@ -3,7 +3,7 @@ title: Experience Cloud-målgrupper
 description: Lär dig hur du delar målgrupper från Real-time Customer Data Platform till olika Experience Cloud-appar.
 last-substantial-update: 2023-09-28T00:00:00Z
 exl-id: 2bdbcda3-2efb-4a4e-9702-4fd9991e9461
-source-git-commit: 188398e3483541ca482f5c1cfdce307160ada2da
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1669'
 ht-degree: 0%
@@ -70,7 +70,7 @@ Adobe rekommenderar dock starkt att du använder följande dedikerade målkort o
 * [Advertising Cloud](../advertising/adobe-advertising-cloud-connection.md)
 * [Marketo](../adobe/marketo-engage.md)
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 >[!IMPORTANT]
 >
@@ -112,7 +112,7 @@ De profiler som exporteras till [!UICONTROL Experience Cloud Audiences] målet m
 | Målidentitet | Beskrivning | Överväganden |
 |---|---|---|
 | ECID | EXPERIENCE CLOUD ID | Ett namnutrymme som representerar ECID. Detta namnutrymme kan även refereras av följande alias:&quot;Adobe Marketing Cloud ID&quot;,&quot;Adobe Experience Cloud ID&quot;,&quot;Adobe Experience Platform ID&quot;. Se följande dokument på [ECID](/help/identity-service/features/ecid.md) för mer information. |
-| GAID | Google Advertising ID | Profiler som inhämtas till Real-Time CDP med den primära identiteten Google Advertising ID (GAID) kan exporteras till den här destinationen. |
+| GAID | GOOGLE ADVERTISING ID | Profiler som inhämtas till Real-Time CDP med den primära identiteten Google Advertising ID (GAID) kan exporteras till det här målet. |
 | IDFA | Apple ID för annonsörer | Profiler som inhämtas till Real-Time CDP med den primära identiteten Apple ID for Advertisers (IDFA) kan exporteras till den här destinationen. |
 | email_lc_sha256 | E-postadresser som hashas med SHA256-algoritmen | Profiler som inhämtas till Real-Time CDP med en primär identitet för hash-e-postadresser kan exporteras till det här målet. |
 
@@ -123,9 +123,9 @@ De profiler som exporteras till [!UICONTROL Experience Cloud Audiences] målet m
 I det här avsnittet beskrivs vilken typ av målgrupp du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+| ---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

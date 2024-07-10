@@ -2,13 +2,13 @@
 title: Google Customer Match + Display & Video 360 connection
 description: Med Google kundmatchning + Display & Video 360-destinationskoppling kan du använda online- och offlinedata från Experience Platform för att nå och återengagera dina kunder i Google egna och driftsatta egendomar, som Search, Shopping, Gmail och YouTube.
 badgeBeta: label="Beta" type="Informative"
-source-git-commit: 7a9312a3722e205de3d11e17f6f079709b20237c
+exl-id: f6da3eae-bf3f-401a-99a1-2cca9a9058d2
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1896'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Google Customer Match + Display & Video 360] anslutning
 
@@ -44,7 +44,7 @@ Flera integreringar med Google finns i målkatalogen och det kan vara svårt att
 |---------|----------|---------|
 | Exportera era PII-baserade målgrupper och nå dem på det tillgängliga lagret i [!DNL Google Customer Match]. | Nå cookie-baserade målgrupper i alla lager via [!DNL Google Display & Video 360], på Google egna och styrda egendomar som Youtube och [!DNL Search]och mer därtill. | Skapa PII-baserade målgrupper i [!DNL Google Customer Match] och nå dem i det tillgängliga lagret i [!DNL Google Display & Video 360], endast på Google egna och styrda fastigheter. |
 
-## Användningsexempel {#use-cases}
+## Användningsfall {#use-cases}
 
 För att du bättre ska förstå hur och när du ska använda den här destinationen finns exempel på användningsområden som Adobe Experience Platform-kunder kan lösa med den här funktionen.
 
@@ -82,9 +82,9 @@ För att befordra releasen överför de e-postadresser från sin CRM-databas til
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 

@@ -4,9 +4,9 @@ title: Utvärdera och få åtkomst till segmentresultat
 type: Tutorial
 description: Följ den här självstudiekursen för att lära dig hur du utvärderar segmentdefinitioner och får tillgång till segmenteringsresultat med Adobe Experience Platform Segmentation Service API.
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: dbb7e0987521c7a2f6512f05eaa19e0121aa34c6
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1594'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ När du har utvecklat, testat och sparat din segmentdefinition kan du sedan utv�
 
 [Schemalagd utvärdering](#scheduled-evaluation) (kallas även&quot;schemalagd segmentering&quot;) kan du skapa ett återkommande schema för att köra ett exportjobb vid en viss tidpunkt, medan [on-demand-utvärdering](#on-demand-evaluation) innebär att skapa ett segmentjobb för att omedelbart bygga upp målgruppen. Stegen för varje steg beskrivs nedan.
 
-Om du ännu inte har slutfört [skapa en segmentdefinition med segmenterings-API](./create-a-segment.md) självstudiekurs eller skapa en segmentdefinition med [Segment Builder](../ui/overview.md)gör du det innan du fortsätter med kursen.
+Om du ännu inte har slutfört [skapa en segmentdefinition med segmenterings-API](./create-a-segment.md) självstudiekurs eller skapa en segmentdefinition med [Segment Builder](../ui/segment-builder.md)gör du det innan du fortsätter med kursen.
 
 ## Schemalagd utvärdering {#scheduled-evaluation}
 

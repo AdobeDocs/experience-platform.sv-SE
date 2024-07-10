@@ -2,7 +2,7 @@
 title: (Beta) [!DNL Google Ad Manager 360] anslutning
 description: Google Ad Manager 360 är en annonseringsplattform från Google som ger utgivare möjlighet att hantera annonser på sina webbplatser, via video och i mobilappar.
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: 153b827d385b4a3f86a2432bf533ec543f12ea4e
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1149'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Mer information om hur utgivarens identifierare fungerar i Google Ad Manager 360
 
 >[!IMPORTANT]
 >
->Den här destinationen finns för närvarande i betaversionen och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Ad Manager 360] kontakta din Adobe-representant och uppge [!DNL organization ID].
+>Den här destinationen finns för närvarande i Beta och är endast tillgänglig för ett begränsat antal kunder. Om du vill begära åtkomst till [!DNL Google Ad Manager 360] kontakta din Adobe-representant och uppge [!DNL organization ID].
 
 The [!DNL Google Ad Manager 360] destinationsexport [!DNL CSV] filer till [!DNL Google Cloud Storage] bucket. När du har exporterat [!DNL CSV] -filer måste du importera dem till [!DNL Google Ad Manager 360] konto.
 
@@ -52,9 +52,9 @@ Observera följande information som gäller [!DNL Google Ad Manager 360] destina
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -69,7 +69,7 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 ### Tillåt listning {#allow-listing}
 

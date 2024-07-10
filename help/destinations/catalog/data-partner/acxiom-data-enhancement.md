@@ -3,10 +3,11 @@ title: Dataförbättring i Acxiom
 description: Använd den här kopplingen för att aktivera förstahandsprofiler för Adobe i Real-Time CDP till Acxiom för att berika och använda data i alla marknadsföringskanaler. Du kan sedan använda Acxiom-källan för att importera profiler med förbättrade data och arbeta med dem i Real-Time CDP.
 last-substantial-update: 2024-03-14T00:00:00Z
 badge: Beta
-source-git-commit: c35eec2b83f92a7fb165bad13213ec50a6c9863e
+exl-id: 59edc43d-ae8e-4c3d-820c-b5be1c4483f9
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1307'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -42,7 +43,7 @@ Du börjar med att exportera dina befintliga kundposter för anrikning med den h
 
 Kunden skulle sedan använda motsvarande [Acxiom-datainmatning](/help/sources/connectors/data-partners/acxiom-data-ingestion.md) källkort för att importera de hydratiserade kundprofilerna tillbaka till Adobe Real-Time CDP.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 >[!IMPORTANT]
 >
@@ -56,7 +57,7 @@ I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till de
 | Målgruppsursprung | Stöds | Beskrivning |
 |-----------------------------|-----------|---------------------------------------------------------------------------------------------------------------------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | x | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | x | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -143,7 +144,7 @@ För att filerna på Acxiom-sidan ska kunna bearbetas på rätt sätt krävs nam
 
 Mappningsförslag ges i tabellen nedan som listar de attribut på målsidan som används av Acxiom-bearbetning som kunder kan mappa profilattribut till. Behandla dessa element som förslag eftersom inte alla element är obligatoriska och källvärdena beror på kontots behov.
 
-| Målfält | Källbeskrivning |
+| Målfält | Source Description |
 |--------------|-------------------------------------------------------------|
 | name | The `person.name.fullName` värde i Experience Platform. |
 | firstName | The `person.name.firstName` värde i Experience Platform. |

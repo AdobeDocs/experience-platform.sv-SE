@@ -4,7 +4,7 @@ description: Lär dig hur du skapar och använder kontomålgrupper för att rikt
 badgeB2B: label="B2B Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2b-edition-prime-and-ultimate-packages.html newtab=true"
 badgeB2P: label="B2P Edition" type="Informative" url="https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2p-edition-prime-and-ultimate-packages.html newtab=true"
 exl-id: 047930d6-939f-4418-bbcb-8aafd2cf43ba
-source-git-commit: 7d630c3673304060ad26375955602440a495f354
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
 source-wordcount: '1110'
 ht-degree: 0%
@@ -41,7 +41,7 @@ The [!UICONTROL Browse] visas, med en lista över alla kontomunkter för organis
 
 I den här vyn visas information om målgruppen, inklusive namn, antal profiler, ursprung, livscykelstatus, skapat datum och senaste uppdateringsdatum.
 
-Du kan också använda sök- och filtreringsfunktionerna för att snabbt söka efter och sortera efter specifika kontogrupper. Mer information om den här funktionen finns i [gränssnittsguide för segmentering](./overview.md#manage-audiences).
+Du kan också använda sök- och filtreringsfunktionerna för att snabbt söka efter och sortera efter specifika kontogrupper. Mer information om den här funktionen finns i [Översikt över målgruppsportalen](./audience-portal.md#manage-audiences).
 
 ## Skapa målgrupper {#create}
 

@@ -1,10 +1,11 @@
 ---
-title: SAP Commerce Connection
+title: SAP Commerce-anslutning
 description: Använd SAP Commerce-målkopplingen för att uppdatera kundposter i SAP-kontot.
 last-substantial-update: 2024-02-20T00:00:00Z
-source-git-commit: 9bb2cf5adcd48f9d111ba04b8c93129367dd12f8
+exl-id: 3bd1a2a7-fb56-472d-b9bd-603b94a8937e
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '2154'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -23,7 +24,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL SAP Commerce
 
 [!DNL SAP Commerce] kunder lagrar information om enskilda personer eller enheter som interagerar med ert företag. Ditt team använder de kunder som finns i [!DNL SAP Commerce] för att bygga målgrupper i Experience Platform. När dessa målgrupper har skickats till [!DNL SAP Commerce], uppdateras deras information och varje kund tilldelas en egenskap med sitt värde som målgruppsnamn som anger vilken målgrupp kunden tillhör.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Se avsnitten nedan för alla krav som du måste ställa in i Experience Platform och [!DNL SAP Commerce] och för information som du måste samla in innan du arbetar med [!DNL SAP Commerce] mål.
 
@@ -118,10 +119,10 @@ Detta mål stöder aktivering av alla målgrupper som genererats via Experience 
 
 Detta mål stöder även aktivering av målgrupperna som beskrivs i tabellen nedan.
 
-| Målgruppstyp | Beskrivning |
----------|----------|
+| Målgruppstyp | Stöds | Beskrivning |
+| ------------- | --------- | ----------- |
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -200,7 +201,7 @@ The `customerNumberSAP` Identitet är en obligatorisk mappning för det här må
 1. I **[!UICONTROL Select target field]** väljer du **[!UICONTROL Select identity namespace]** och väljer `customerNumber` identitet.
    ![Skärmbild för plattformsgränssnitt som väljer e-post som ett målattribut att mappa som identitet.](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-identity.png)
 
-| Källfält | Målfält | Obligatoriskt |
+| Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `IdentityMap: customerNumberSAP` | `Identity: customerNumber` | Ja |
 
@@ -229,14 +230,14 @@ Obligatoriska attributmappningar är beroende av **[!UICONTROL Type of Customer]
 
 >[!TAB Enskild kund]
 
-| Källfält | Målfält | Obligatoriskt |
+| Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `xdm: person.lastName` | `Attribute: lastName` | Ja |
 | `xdm: workAddress.countryCode` | `Attribute: countryCode` | Ja |
 
 >[!TAB Företagskund]
 
-| Källfält | Målfält | Obligatoriskt |
+| Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `xdm: b2b.companyName` | `Attribute: company` | Ja |
 | `xdm: workAddress.countryCode` | `Attribute: countryCode` | Ja |
@@ -251,7 +252,7 @@ Du kan sedan lägga till ytterligare mappningar mellan XDM-profilschemat och [!D
 
 >[!TAB Enskild kund]
 
-| Källfält | Målfält | Obligatoriskt |
+| Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `xdm: person.name.firstName` | `Attribute: firstName` | Nej |
 | `xdm: workAddress.street1` | `Attribute: street` | Nej |
@@ -262,7 +263,7 @@ Ett exempel med både obligatoriska och valfria attributmappningar där kunden �
 
 >[!TAB Företagskund]
 
-| Källfält | Målfält | Obligatoriskt |
+| Source Field | Målfält | Obligatoriskt |
 | --- | --- | --- |
 | `xdm: workAddress.street1` | `Attribute: street` | Nej |
 | `xdm: workAddress.city` | `Attribute: city` | Nej |

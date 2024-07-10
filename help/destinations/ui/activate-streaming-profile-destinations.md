@@ -4,9 +4,9 @@ type: Tutorial
 description: Lär dig hur du aktiverar målgruppsdata som du har i Adobe Experience Platform genom att skicka målgrupper till direktuppspelade profilbaserade mål.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: fbc2a6c81682797af4674adabff358a62d973007
+source-git-commit: 6b186030c66598cddcdfcf509b8863e10d4fd0a7
 workflow-type: tm+mt
-source-wordcount: '716'
+source-wordcount: '717'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Denna artikel gäller följande tre destinationer:
 * [Azure Event Hubs](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)
 * [HTTP API-mål](/help/destinations/catalog/streaming/http-destination.md).
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 Om du vill aktivera data till mål måste du ha lyckats [ansluten till ett mål](./connect-destination.md). Om du inte redan har gjort det går du till [målkatalog](../catalog/overview.md), bläddra bland de mål som stöds och konfigurera det mål som du vill använda.
 
@@ -57,8 +57,8 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
-* **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [segmenteringsdokumentation](../../segmentation/ui/overview.md) för mer information.
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
+* **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [Målgruppsportalens dokumentation](../../segmentation/ui/audience-portal.md) för mer information.
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/audience-portal.md#import-audience).
 * Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
 ![Markera kryssrutorna i steget Välj målgrupper i aktiveringsarbetsflödet.](../assets/ui/activate-streaming-profile-destinations/select-audiences.png)

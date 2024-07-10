@@ -1,9 +1,9 @@
 ---
 keywords: Reklam.
 title: Microsoft Bing-anslutning
-description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising Network, inklusive webbannonsering, sökning och inbyggt material.
+description: Med anslutningsmålet Microsoft Bing kan ni genomföra återannonsering och riktade digitala kampanjer för målgrupper i hela Microsoft Advertising-nätverket, inklusive webbannonsering, sökannonsering och inbyggt webbmaterial.
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 1%
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Använd [!DNL Microsoft Bing] mål för att skicka profildata till hela [!DNL Microsoft Advertising Network], inklusive [!DNL Display Advertising], [!DNL Search]och [!DNL Native].
 
-The [!DNL Microsoft Bing] mål skapar *[!DNL Custom Audiences]* i Microsoft. Dessa finns tillgängliga båda i [!DNL Microsoft Search Network] och [!DNL Audience Network] ([!DNL Native] /[!DNL Display] /[!DNL Programmatic]) enligt listan i [Microsoft Advertising-dokumentation](https://help.ads.microsoft.com/#apex/ads/en/56892/1-500).
+The [!DNL Microsoft Bing] mål skapar *[!DNL Custom Audiences]* i Microsoft. Dessa finns tillgängliga båda i [!DNL Microsoft Search Network] och [!DNL Audience Network] ([!DNL Native] /[!DNL Display] /[!DNL Programmatic]) enligt listan i [Dokumentation för Microsoft Advertising](https://help.ads.microsoft.com/#apex/ads/en/56892/1-500).
 
 Skicka profildata till [!DNL Microsoft Bing]måste du först ansluta till målet.
 
@@ -30,7 +30,7 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 
 | Identitet | Beskrivning |
 |---|---|
-| MAID | Microsoft Advertising ID |
+| MAID | MICROSOFT ADVERTISING ID |
 
 {style="table-layout:auto"}
 
@@ -39,9 +39,9 @@ Som marknadsförare vill jag kunna använda målgrupper som är inbyggda i [!DNL
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -58,11 +58,11 @@ Se tabellen nedan för information om exporttyp och frekvens för destinationen.
 
 {style="table-layout:auto"}
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 >[!IMPORTANT]
 >
->Om du vill skapa ditt första mål med [!DNL Microsoft Bing] och har inte aktiverat [Synkroniseringsfunktion för ID](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) tidigare i Experience Cloud ID-tjänsten (med Adobe Audience Manager eller andra program), kontakta Adobe Consulting eller Kundtjänst för att aktivera ID-synkronisering. Om du redan har konfigurerat [!DNL Microsoft Bing] integreringar i Audience Manager, de ID-synkroniseringar du har konfigurerat överförs till Platform.
+>Om du vill skapa ditt första mål med [!DNL Microsoft Bing] och har inte aktiverat [Synkroniseringsfunktion för ID](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) tidigare i Experience Cloud ID Service (med Adobe Audience Manager eller andra program), kontakta Adobe Consulting eller kundtjänst för att aktivera ID-synkronisering. Om du redan har konfigurerat [!DNL Microsoft Bing] integreringar i Audience Manager, de ID-synkroniseringar du har konfigurerat överförs till Platform.
 
 När du konfigurerar målet måste du ange följande information:
 

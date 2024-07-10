@@ -3,7 +3,7 @@ title: Aktivera målgrupper för att kanalisera personaliseringsmål
 description: Lär dig hur du kan aktivera målgrupper från Adobe Experience Platform för att kanalisera personaliseringsmål för samma sida och nästa sida.
 type: Tutorial
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: c113d9615a276af67714f38b8325e69737b23964
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1878'
 ht-degree: 0%
@@ -47,11 +47,11 @@ Titta på videon nedan om du vill få en kort översikt över hur du delar målg
 
 ## Användningsfall {#use-cases}
 
-Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (t.ex. intern CMS) som ger en djupare personaliseringsupplevelse via [Anpassad personalisering](../catalog/personalization/custom-personalization.md) mål. Allt detta och utnyttja även datainsamling och segmentering från Experience Platform Edge Network.
+Använd personaliseringslösningar från Adobe, till exempel Adobe Target, eller egna partnerplattformar för personalisering (till exempel [!DNL Optimizely], [!DNL Pega]), liksom egna system (t.ex. intern CMS) som ger en djupare personaliseringsupplevelse via [Anpassad Personalization](../catalog/personalization/custom-personalization.md) mål. Allt detta och utnyttja även datainsamling och segmentering från Experience Platform Edge Network.
 
 De användningsexempel som beskrivs nedan omfattar både webbplatspersonalisering och riktad webbannonsering.
 
-För att möjliggöra detta behöver kunderna ett snabbt och smidigt sätt att hämta information om både målgrupper och profilattribut från Experience Platform och skicka informationen till [Adobe Target](../catalog/personalization/adobe-target-connection.md) eller [Anpassad personalisering](../catalog/personalization/custom-personalization.md) Anslutningar i användargränssnittet i Experience Platform.
+För att möjliggöra detta behöver kunderna ett snabbt och smidigt sätt att hämta information om både målgrupper och profilattribut från Experience Platform och skicka informationen till [Adobe Target](../catalog/personalization/adobe-target-connection.md) eller [Anpassad Personalization](../catalog/personalization/custom-personalization.md) Anslutningar i användargränssnittet i Experience Platform.
 
 ### Personalisering på samma sida {#same-page}
 
@@ -71,7 +71,7 @@ Följande dag kommer användaren tillbaka till samma kundwebbplats. De målgrupp
 
 Ett uthyrnings- och säljföretag vill personalisera sin hemsida med en banderoll utifrån målgruppskvalifikationer i Adobe Experience Platform. Företaget kan välja vilka målgrupper som ska få en personaliserad upplevelse och skicka dessa målgrupper till Adobe Target som målinriktningskriterier för deras Target-erbjudande.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 ### Konfigurera ett datastream i användargränssnittet för datainsamling {#configure-datastream}
 
@@ -81,9 +81,9 @@ När datastream konfigureras, under **[!UICONTROL Adobe Experience Platform]** s
 
 >[!TIP]
 >
->Från och med versionen från april 2024 behöver du inte markera kryssrutan Kantsegmentering när [konfigurera anslutningen till Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md). I detta fall [anpassning av nästa session](#next-session) är det enda tillgängliga användningsexemplet för personalisering.
+>Från och med versionen från april 2024 behöver du inte markera kryssrutan Edge Segmentation när [konfigurera anslutningen till Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md). I detta fall [anpassning av nästa session](#next-session) är det enda tillgängliga användningsexemplet för personalisering.
 
-![Dataströmskonfiguration med kantsegmentering och målanpassning markerade!](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
+![Dataströmskonfiguration med Edge Segmentation och Personalization Destinations markerade!](../assets/ui/activate-edge-personalization-destinations/datastream-config.png)
 
 Mer information om hur du konfigurerar ett dataflöde finns i instruktionerna i [Dokumentation för Platform Web SDK](../../datastreams/configure.md#aep).
 
@@ -141,7 +141,7 @@ Om du vill välja vilka målgrupper du vill aktivera för målet använder du kr
 Du kan välja mellan flera typer av målgrupper, beroende på deras ursprung:
 
 * **[!UICONTROL Segmentation Service]**: Målgrupper som genererats i Experience Platform av segmenteringstjänsten. Se [segmenteringsdokumentation](../../segmentation/ui/overview.md) för mer information.
-* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/overview.md#import-audience).
+* **[!UICONTROL Custom upload]**: Publiker som genererats utanför Experience Platform och överförts till Platform som CSV-filer. Mer information om externa målgrupper finns i dokumentationen om [importera en publik](../../segmentation/ui/audience-portal.md#import-audience).
 * Andra typer av målgrupper som härrör från andra Adobe-lösningar, t.ex. [!DNL Audience Manager].
 
 ![Välj målgruppssteg i aktiveringsarbetsflödet med flera målgrupper markerade.](../assets/ui/activate-edge-personalization-destinations/select-audiences.png)
@@ -174,7 +174,7 @@ Om du vill lägga till målattribut väljer du **[!UICONTROL Add new field]** ko
 
 >[!NOTE]
 >
->Markeringen av målattribut gäller bara för [Anpassad personalisering](../catalog/personalization/custom-personalization.md) aktiveringsarbetsflöde för att ge stöd för fältmappning med egna namn på målplattformen.
+>Markeringen av målattribut gäller bara för [Anpassad Personalization](../catalog/personalization/custom-personalization.md) aktiveringsarbetsflöde för att ge stöd för fältmappning med egna namn på målplattformen.
 
 ![Skärminspelning som visar hur du väljer ett XDM-attribut i mappningssteget](../assets/ui/activate-edge-personalization-destinations/mapping-step-select-target-attribute.gif)
 

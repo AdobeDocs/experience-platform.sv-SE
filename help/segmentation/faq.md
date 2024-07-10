@@ -2,14 +2,14 @@
 title: Frågor och svar
 description: Få svar på vanliga frågor om målgrupper och andra segmenteringsrelaterade koncept.
 exl-id: 79d54105-a37d-43f7-adcb-97f2b8e4249c
-source-git-commit: 147dded9f5eb6c2e153a80fa80b18e9fe96a6faa
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '4076'
 ht-degree: 0%
 
 ---
 
-# Frågor och svar
+# Vanliga frågor och svar
 
 Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssnitt och RESTful API som gör att du kan skapa målgrupper genom segmentdefinitioner eller andra källor från ditt [!DNL Real-Time Customer Profile] data. Dessa målgrupper är centralt konfigurerade och underhållna på Platform och är tillgängliga för alla Adobe-lösningar. Nedan följer en lista med vanliga frågor om målgrupper och segmentering.
 
@@ -239,11 +239,11 @@ Nej, det gör du inte. Så länge du har redigeringsbehörighet för målgrupper
 
 ### Finns det någon gräns för hur många mappar jag kan skapa?
 
-Nej, det finns ingen gräns för hur många mappar du kan skapa. Mer information om mappar finns i [mållagersektion](./ui/overview.md#folders) i översikten över segmenteringstjänstens gränssnitt.
+Nej, det finns ingen gräns för hur många mappar du kan skapa. Mer information om mappar finns i [mållagersektion](./ui/audience-portal.md#folders) i översikten över segmenteringstjänstens gränssnitt.
 
 ### Finns det någon gräns för hur många taggar som kan läggas till en viss målgrupp?
 
-Nej, det finns ingen gräns för hur många taggar som kan läggas till en målgrupp. Mer information om taggar finns i [mållagersektion](./ui/overview.md#tags) i översikten över segmenteringstjänstens gränssnitt.
+Nej, det finns ingen gräns för hur många taggar som kan läggas till en målgrupp. Mer information om taggar finns i [mållagersektion](./ui/audience-portal.md#tags) i översikten över segmenteringstjänstens gränssnitt.
 
 ### Finns det någon gräns för hur många taggar jag kan skapa?
 
@@ -251,7 +251,7 @@ Nej, det finns ingen gräns för hur många taggar du kan skapa. Du kan dock ska
 
 ### När jag söker efter en målgrupp efter namn eller tagg i en överordnad mapp, kan jag då söka i de relaterade undermapparna?
 
-Nej, det här beteendet stöds inte. Du kan dock ändra målgruppslagervyn så att den tittar på **Alla målgrupper** söker du sedan i alla mappar. Mer information om hur du använder sökning i målgruppslager finns i [sökavsnitt](./ui/overview.md#search) i översikten över segmenteringstjänstens gränssnitt.
+Nej, det här beteendet stöds inte. Du kan dock ändra målgruppslagervyn så att den tittar på **Alla målgrupper** söker du sedan i alla mappar. Mer information om hur du använder sökning i målgruppslager finns i [sökavsnitt](./ui/audience-portal.md#search) i översikten över segmenteringstjänstens gränssnitt.
 
 ### Kan jag automatiskt tilldela en målgrupp till en mapp när den skapas?
 

@@ -2,7 +2,7 @@
 title: (API) Salesforce Marketing Cloud-anslutning
 description: Med Salesforce Marketing Cloud (tidigare ExactTarget) kan du exportera dina kontodata och aktivera dem i Salesforce Marketing Cloud för dina affärsbehov.
 exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
-source-git-commit: ba39f62cd77acedb7bfc0081dbb5f59906c9b287
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '2803'
 ht-degree: 0%
@@ -33,7 +33,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL (API) Salesf
 
 Försäljningsavdelningen på en uthyrningsplattform vill sända ett marknadsföringsmejl till en målgrupp. Plattformens marknadsföringsteam kan lägga till nya kontakter/uppdatera befintliga kontakter *(och deras e-postadresser)* via Adobe Experience Platform, bygga målgrupper utifrån deras egna offlinedata och skicka dessa målgrupper till [!DNL Salesforce Marketing Cloud]som sedan kan användas för att skicka marknadsföringskampanjens e-post.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 ### Förutsättningar i Experience Platform {#prerequisites-in-experience-platform}
 
@@ -136,9 +136,9 @@ Anteckna nedanstående innan du autentiserar dig för [!DNL (API) Salesforce Mar
 I det här avsnittet beskrivs vilka typer av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | X | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -219,7 +219,7 @@ Mappa XDM-fälten korrekt till [!DNL (API) Salesforce Marketing Cloud] målfält
 
    * Upprepa dessa steg för att lägga till följande mappningar mellan XDM-profilschemat och [!DNL (API) Salesforce Marketing Cloud]:
 
-     | Källfält | Målfält | Obligatoriskt |
+     | Source Field | Målfält | Obligatoriskt |
      |---|---|---|
      | `IdentityMap: contactKey` | `Identity: salesforceContactKey` | `Mandatory` |
      | `xdm: personalEmail.address` | `Attribute: Email Address` från [!DNL Salesforce Marketing Cloud] [!DNL Email Addresses] datatillägg. | `Mandatory`när nya kontakter läggs till. |

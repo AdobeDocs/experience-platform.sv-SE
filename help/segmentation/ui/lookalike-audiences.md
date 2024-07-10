@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Look-Alike Audiences
 description: Lär dig målinrikta nya värdefulla målgrupper i Adobe Experience Platform med lookalike-målgrupper.
 exl-id: c43dac6c-18a0-482f-803e-b75e1b211e98
-source-git-commit: 36fffcddb09444dd6e010a4b5afeec6bf0b5c3bf
+source-git-commit: c2f9bcd9aeb0073b8b26413ec29e2dff1ee5c80d
 workflow-type: tm+mt
-source-wordcount: '2158'
+source-wordcount: '2157'
 ht-degree: 0%
 
 ---
@@ -137,7 +137,7 @@ Dessa luckor beräknas regelbundet om för att säkerställa att data hålls akt
 | Typ | Den typ av data som den inflytelserika faktorn härleds från. Detta kan vara ett profilattribut, en upplevelsehändelse eller ett målgruppsmedlemskap. |
 | Nyckel | Datafältets namn. För nycklar av typen målgruppsmedlemskap representerar det här värdet **namespace** för den målgrupp som data kommer från. Möjliga värden är `ups` (Segmenteringstjänst) och `AO` (Målgruppssamordning). För nycklar av andra typer representerar det här värdet sökvägen till XDM-fältet. Om företaget Luma t.ex. har ett anpassat fält som kallas inkomst blir nyckeln `_luma.income` |
 | Värde | Värdet varierar beroende på vilken inflytelserik faktor det representerar. För profilattribut eller upplevelsehändelser representerar det här fältet värdet eller värdeintervallet för datafältet som anger likheten med medlemmarna i basmålgruppen. Värdeintervallet skrivs i formuläret `[A -> B]`, där `A` representerar det nedre intervallet medan `B` representerar det högre intervallet. För målgruppsmedlemskap är det här fältet namnet på målgruppen. |
-| Viktighetsgrad | Den inflytelserika faktorens relativa betydelse. Detta kan vara högt, medelstort eller lågt. |
+| Prioritet | Den inflytelserika faktorens relativa betydelse. Detta kan vara högt, medelstort eller lågt. |
 
 ## Skapa en lookalike-målgrupp {#create}
 
@@ -179,7 +179,7 @@ Om du vill visa information om en lookalike-målgrupp väljer du den lookalike-m
 
 ![Avsnittet om lookalike-målgrupper är markerat.](../images/ui/lookalike-audiences/select-laa.png)
 
-Sidan med målgruppsinformation visas. Mer information finns i [målgruppsdelen i gränssnittsguiden för segmenteringstjänsten](./overview.md#audience-details).
+Sidan med målgruppsinformation visas. Mer information finns i [målgruppsdelen i översikten över målgruppsportalen](./audience-portal.md#audience-details).
 
 ![Information om den lookalike-liknande publiken visas.](../images/ui/lookalike-audiences/laa-details.png)
 

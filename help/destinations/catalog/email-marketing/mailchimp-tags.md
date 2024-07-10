@@ -2,7 +2,8 @@
 title: Mailchimp-taggar
 description: Med Mailchimp Tags-målet kan du exportera dina kontodata och aktivera dem i Mailchimp för att interagera med kontakterna.
 last-substantial-update: 2024-02-20T00:00:00Z
-source-git-commit: dff460f0b0d365d3d643744544642d9f9488e18a
+exl-id: 0f278ca8-4fcf-4c47-b538-9cffa45a3d90
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1590'
 ht-degree: 0%
@@ -27,7 +28,7 @@ För att du bättre ska förstå hur och när du ska använda [!DNL Mailchimp Ta
 
 Försäljningsavdelningen i en organisation vill sända en e-postbaserad marknadsföringskampanj till en välstrukturerad lista med kontakter. Kontaktlistorna tas emot i grupper från olika offlinekällor och måste därför spåras. Teamet identifierar en befintlig [!DNL Mailchimp] målgruppen och börjar bygga upp de Experience Platform-målgrupper i vilka kontakterna från varje lista läggs till. När dessa målgrupper har skickats till [!DNL Mailchimp Tags], om det inte finns några kontakter i det markerade [!DNL Mailchimp] , läggs de till med en associerad tagg som innehåller det målgruppsnamn som kontakten tillhör. Om det redan finns kontakter i [!DNL Mailchimp] målgruppen läggs en ny tagg med målgruppens namn till. Som etiketterna visas i [!DNL Mailchimp] offlinekällorna är lätt att identifiera. När data har skickats till [!DNL Mailchimp] skickar de marknadsföringskampanjens e-post till målgruppen.
 
-## Förutsättningar {#prerequisites}
+## Förhandskrav {#prerequisites}
 
 I avsnitten nedan finns information om alla krav som du måste ställa in i Experience Platform och [!DNL Mailchimp] och för information som du behöver samla in innan du arbetar med [!DNL Mailchimp Tags] mål.
 
@@ -86,9 +87,9 @@ Se [!DNL Mailchimp] [hastighetsbegränsningar](https://mailchimp.com/developer/m
 I det här avsnittet beskrivs vilken typ av målgrupper du kan exportera till det här målet.
 
 | Målgruppsursprung | Stöds | Beskrivning |
----------|----------|----------|
+|---------|----------|----------|
 | [!DNL Segmentation Service] | ✓ | Målgrupper som skapats genom Experience Platform [Segmenteringstjänst](../../../segmentation/home.md). |
-| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/overview.md#import-audience) till Experience Platform från CSV-filer. |
+| Anpassade överföringar | ✓ | Målgrupper [importerad](../../../segmentation/ui/audience-portal.md#import-audience) till Experience Platform från CSV-filer. |
 
 {style="table-layout:auto"}
 
@@ -167,13 +168,13 @@ Mappa XDM-fälten korrekt till [!DNL Mailchimp Tags] målfält, följ stegen ned
 1. I **[!UICONTROL Mapping]** steg, välja **[!UICONTROL Add new mapping]**. En ny mappningsrad visas på skärmen.
 1. I **[!UICONTROL Select source field]** fönster, välja **[!UICONTROL Select identity namespace]** och väljer `Email` identity namespace.
 
-   ![Skärmbild för plattformsgränssnitt med källfält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
+   ![Skärmbild för plattformsgränssnitt med Source-fält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/source-field.png)
 
 1. I **[!UICONTROL Select target field]** fönster, välja **[!UICONTROL Select identity namespace]** och väljer `Email` identity namespace.
 
    ![Skärmbild för plattformsgränssnitt med målfält som e-post från identitetsnamnområdet.](../../assets/catalog/email-marketing/mailchimp-tags/target-field.png)
 
-   Mappningarna mellan XDM-profilschemat och [!DNL Mailchimp Tags] kommer att vara som nedan: | Källfält | Målfält | Obligatoriskt | | — | — | — | |`IdentityMap: Email`|`Identity: Email`| Ja |
+   Mappningarna mellan XDM-profilschemat och [!DNL Mailchimp Tags] kommer att vara som nedan: | Source Field | Målfält | Obligatoriskt | | — | — | — | |`IdentityMap: Email`|`Identity: Email`| Ja |
 
    Ett exempel med de slutförda mappningarna visas nedan:
    ![Exempel på skärmbild för användargränssnittet för plattformen som visar fältmappningar.](../../assets/catalog/email-marketing/mailchimp-tags/mappings.png)

@@ -2,9 +2,9 @@
 title: Versionsinformation om Adobe Experience Platform mars 2024
 description: Versionsinformationen för Adobe Experience Platform i mars 2024.
 exl-id: cab47a76-04f3-48ec-82aa-d17645e4eb15
-source-git-commit: 708bb791ad85b6ee8f3671ffc574e4f27fdddd0a
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '1190'
+source-wordcount: '1189'
 ht-degree: 3%
 
 ---
@@ -76,7 +76,7 @@ Läs mer om datainsamling i [datainsamling - översikt](../../tags/home.md).
 | Mål | Typ | Beskrivning |
 | ----------- | --------- | ----------- |
 | [(Beta) Acxiom Data Enhancement Connection](../../destinations/catalog/data-partner/acxiom-data-enhancement.md) | Nytt | Använd den här kopplingen för att aktivera förstahandsprofiler från Real-Time CDP till Acxiom för att berika och använda data i alla marknadsföringskanaler. Du kan sedan använda Acxiom-källan för att importera profiler med förbättrade data och arbeta med dem i Real-Time CDP. |
-| [(Beta) Anslutning till Prospect Suppression för Acxiom](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | Nytt | Exportera era egna målgrupper till Acxiom-destinationen så att Acxiom kan inaktivera kända eller konverterade kunder. Använd sedan [Import av prospekteringsdata för Acxiom](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md) källanslutning till import och aktivering av listor med potentiella kunder från Acxiom, med dina kända eller konverterade kunder borttagna. |
+| [(Beta) Anslutning för Prospect Suppression i Acxiom](../../destinations/catalog/data-partner/acxiom-prospect-suppression.md) | Nytt | Exportera era egna målgrupper till Acxiom-destinationen så att Acxiom kan inaktivera kända eller konverterade kunder. Använd sedan [Import av prospekteringsdata för Acxiom](../../sources/connectors/data-partners/acxiom-prospecting-data-import.md) källanslutning till import och aktivering av listor med potentiella kunder från Acxiom, med dina kända eller konverterade kunder borttagna. |
 | [Amazon Ads-anslutning](../../destinations/catalog/advertising/amazon-ads.md) | Uppdatera | När du exporterar data till Amazon Ads-målet kan du nu dirigera data till Amazon DSP eller Amazon Marketing Cloud (nytt). |
 | [LiveRamp Onboarding-anslutning](../../destinations/catalog/advertising/liveramp-onboarding.md) | Uppdatera | LiveRamp Onboarding-destinationen har nu stöd för leveranser till Europa och Australien [!DNL LiveRamp] [!DNL SFTP] -instanser. Den maximala storleken på den exporterade filen ökades också till 10 miljoner rader (från 5 miljoner tidigare). |
 
@@ -112,7 +112,7 @@ Mer information om XDM i Platform finns i [XDM - systemöversikt](../../xdm/home
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Massåtgärder | Målgruppslagret har nu stöd för massåtgärder. Med gruppåtgärder kan du snabbt markera flera målgrupper för att flytta dem till en mapp, lägga till taggar, använda etiketter eller ta bort. <br> ![Massåtgärder på arbetsytan Publikens användargränssnitt.](../2024/assets/march/bulk-actions.png "Massåtgärder på arbetsytan Publikens användargränssnitt."){width="100" zoomable="yes"} <br>Mer information om den här funktionen finns i [Användargränssnittsguide för segmenteringstjänst](../../segmentation/ui/overview.md#bulk-actions). |
+| Massåtgärder | Målgruppslagret har nu stöd för massåtgärder. Med gruppåtgärder kan du snabbt markera flera målgrupper för att flytta dem till en mapp, lägga till taggar, använda etiketter eller ta bort. <br> ![Massåtgärder på arbetsytan Publikens användargränssnitt.](../2024/assets/march/bulk-actions.png "Massåtgärder på arbetsytan Publikens användargränssnitt."){width="100" zoomable="yes"} <br>Mer information om den här funktionen finns i [Översikt över målgruppsportalen](../../segmentation/ui/audience-portal.md#bulk-actions). |
 
 {style="table-layout:auto"}
 

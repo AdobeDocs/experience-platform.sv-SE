@@ -3,7 +3,7 @@ keywords: mål;mål;destinationsdetaljsida;målinformationssida
 title: Visa målinformation
 description: På informationssidan för ett enskilt mål finns en översikt över målinformationen. Målinformationen innehåller målnamn, ID, målgrupper mappade till målet och kontroller för att redigera aktiveringen och aktivera och inaktivera dataflödet.
 exl-id: e44e2b2d-f477-4516-8a47-3e95c2d85223
-source-git-commit: f206ea853d44410c93463e1e515279b39afd1fd9
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -139,4 +139,4 @@ Om du vill redigera det befintliga aktiveringsschemat för flera målgrupper sam
 
 >[!NOTE]
 >
-Mer information om hur du utforskar en målgrupps informationssida finns i [Översikt över segmenteringsgränssnittet](../../segmentation/ui/overview.md#segment-details).
+Mer information om hur du utforskar en målgrupps informationssida finns i [Översikt över målgruppsportalen](../../segmentation/ui/audience-portal.md#segment-details).

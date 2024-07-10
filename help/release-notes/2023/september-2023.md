@@ -2,7 +2,7 @@
 title: Versionsinformation om Adobe Experience Platform
 description: Versionsinformation för september 2023 för Adobe Experience Platform.
 exl-id: ff7fb0c1-6941-4339-8648-58f9b9e9a91f
-source-git-commit: fc55e9a0849767d43c7f2a3bc3c540e776c8a072
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
 source-wordcount: '2238'
 ht-degree: 2%
@@ -199,7 +199,7 @@ Läs mer om identitetstjänsten i [Översikt över identitetstjänsten](../../id
 
 ## Frågetjänst {#query-service}
 
-Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, datavetenskapen eller för förtäring i kundprofilen i realtid.
+Med frågetjänsten kan du använda standard-SQL för att fråga data i Adobe Experience Platform [!DNL Data Lake]. Du kan koppla alla datauppsättningar från [!DNL Data Lake] och samla in frågeresultaten som en ny datauppsättning som kan användas för rapportering, Data Science Workspace eller för att matas in i kundprofilen i realtid.
 
 **Uppdaterade funktioner**
 
@@ -220,7 +220,7 @@ Mer information om frågetjänster finns i [Översikt över frågetjänsten](../
 
 | Funktion | Beskrivning |
 | ------- | ----------- |
-| Anpassningsbara kolumner | Nu kan du anpassa layouten för Audience Portal med kolumner som kan storleksändras. Mer information om den här funktionen finns i [gränssnittsguide för segmentering](../../segmentation/ui/overview.md#customize). |
+| Anpassningsbara kolumner | Nu kan du anpassa layouten för Audience Portal med kolumner som kan storleksändras. Mer information om den här funktionen finns i [Översikt över målgruppsportalen](../../segmentation/ui/audience-portal.md#customize). |
 | Uppdatera frekvensuppdelning | Du kan nu visa en beskrivning av uppdateringsfrekvenserna för målgrupperna i din organisation. Mer information om den här funktionen finns i [gränssnittsguide för segmentering](../../segmentation/ui/overview.md#browse). |
 
 Läs mer om segmenteringstjänsten i [Översikt över segmenteringstjänsten](../../segmentation/home.md).
