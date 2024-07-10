@@ -1,9 +1,9 @@
 ---
 title: Översikt över målportalen
 description: Lär dig hur du använder Audience Portal för att visa, hantera och skapa målgrupper i Adobe Experience Platform.
-source-git-commit: 6b186030c66598cddcdfcf509b8863e10d4fd0a7
+source-git-commit: 531bee643c14ad407a1207cca9093e210e5227a5
 workflow-type: tm+mt
-source-wordcount: '3450'
+source-wordcount: '3478'
 ht-degree: 0%
 
 ---
@@ -387,7 +387,7 @@ När du har bekräftat att informationen är korrekt väljer du **[!UICONTROL Fi
 >
 >Som standard har externt genererade målgrupper en dataförfallotid på 30 dagar. Förfallodatumet för data återställs om målgruppen uppdateras eller ändras på något sätt.
 >
->Om den externt genererade publiken dessutom innehåller känslig och/eller vårdrelaterad information, **måste** lägga till nödvändiga etiketter för dataanvändning innan den aktiveras för alla destinationer. Mer information om användning av dataetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md).
+>Om den externt genererade publiken dessutom innehåller känslig och/eller vårdrelaterad information, **måste** lägga till nödvändiga etiketter för dataanvändning innan den aktiveras för alla destinationer. Eftersom variabler från externt genererade målgrupper lagras i datasjön i stället för i kundprofilen i realtid bör du **not** inkludera medgivandedata i din CSV-fil. Mer information om användning av dataetiketter finns i dokumentationen om [hantera etiketter](../../access-control/abac/ui/labels.md).
 
 ## Nästa steg
 
