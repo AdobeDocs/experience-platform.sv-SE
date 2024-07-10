@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_export_arrays_flat_files"
->title="(Beta) Stöd för exportarrayer"
+>title="(Beta) Stöd för Exportera arrayer"
 >abstract="Använd **Lägg till beräknat fält** kan du exportera enkla matriser med int-, string- eller booleska värden från Experience Platform till önskat molnlagringsmål. Vissa begränsningar gäller. I dokumentationen finns omfattande exempel och funktioner som stöds."
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#examples" text="Exempel"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/export-arrays-calculated-fields.html#known-limitations" text="Kända begränsningar"

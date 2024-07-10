@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Översikt över segmenteringstjänsten
 description: Läs om Adobe Experience Platform segmenteringstjänst och vilken roll den spelar i plattformens ekosystem.
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '1627'
+source-wordcount: '1607'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ Adobe Experience Platform [!DNL Segmentation Service] har ett användargränssni
 
 Dokumentet innehåller en översikt över [!DNL Segmentation Service] och den roll den spelar i Adobe Experience Platform.
 
-## Komma igång med [!DNL Segmentation Service]
+## Kom igång med [!DNL Segmentation Service]
 
 Du bör förstå följande nyckeltermer som används i det här dokumentet:
 
-- **Segmentering**: Att dela upp en stor grupp individer (t.ex. kunder, prospects, användare eller organisationer) i mindre grupper som delar liknande egenskaper och kommer att svara på liknande sätt som marknadsföringsstrategier.
 - **Målgrupp**: En samling personer som delar liknande beteenden och/eller egenskaper. Den här mängden personer kan antingen genereras av Adobe Experience Platform med hjälp av segmentdefinitioner (plattformsgenererad publik) eller från externa källor (externt genererad publik).
 - **Segmentdefinition**: Den regeluppsättning som Adobe Experience Platform använder för att beskriva nyckelegenskaper eller beteenden hos en målgrupp.
+- **Segment**: Att separera profiler i målgrupper.
 
 ## Så här fungerar segmentering
 
@@ -40,9 +40,9 @@ När du skapar en målgrupp direkt på en plattform kan du använda Audience Com
 
 ### Segmentdefinitioner
 
-Om det skapas med API:t eller med [!DNL Segment Builder], definieras segmentdefinitioner i slutändan med [!DNL Profile Query Language] (PQL). Här beskrivs definitionen av konceptuellt segment i det språk som har byggts för att hämta profiler som uppfyller kriterierna. Mer information finns i [PQL - översikt](./pql/overview.md).
+Om det skapas med API:t eller med [!DNL Segment Builder], definieras segmentdefinitioner i slutändan med [!DNL Profile Query Language] (PQL) Här beskrivs definitionen av konceptuellt segment i det språk som har byggts för att hämta profiler som uppfyller kriterierna. Mer information finns i [PQL - översikt](./pql/overview.md).
 
-Så här skapar och använder du segment i [!DNL Segment Builder] (användargränssnittets genomförande av [!DNL Segmentation Service]), se [Segment Builder Guide](./ui/overview.md).
+Så här skapar och använder du segment i [!DNL Segment Builder] (användargränssnittets genomförande av [!DNL Segmentation Service]), se [Segment Builder Guide](./ui/segment-builder.md).
 
 Mer information om hur du skapar segmentdefinitioner med API:t finns i självstudiekursen om [skapa segmentdefinitioner med API](./tutorials/create-a-segment.md).
 
@@ -84,15 +84,15 @@ Som ett alternativ till en pågående dataurvalsprocess flyttar gruppsegmenterin
 
 Batchmålgrupper utvärderas automatiskt var 24:e timme. Om du vill utvärdera en batchmålgrupp på begäran kan du använda ett segmentjobb. Läs mer om segmentjobb i [dokumentation för segmentjobb](./api/segment-jobs.md).
 
-### Kantsegmentering {#edge}
+### Edge segmentering {#edge}
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_edge"
->title="Kantutvärdering"
->abstract="Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen i Edge-nätverket, vilket möjliggör användning av samma sida och nästa sida."
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för kantsegmentering"
+>title="Edge-utvärdering"
+>abstract="Edge segmentering är möjligheten att omedelbart utvärdera segment i Platform på Edge Network, vilket möjliggör användning av samma sida och nästa sida."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="Användargränssnittsguide för Edge-segmentering"
 
-Kantsegmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../web-sdk/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
+Edge segmentering är möjligheten att omedelbart utvärdera segment i plattformen [på Edge Network](../web-sdk/home.md), vilket möjliggör användning av personalisering på samma sida och nästa sida.
 
 Läs antingen [API-dokumentation](./api/edge-segmentation.md) eller [Användargränssnittsdokumentation](./ui/edge-segmentation.md).
 

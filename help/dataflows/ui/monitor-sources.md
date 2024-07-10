@@ -5,7 +5,7 @@ exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
 source-git-commit: 51f8a8c77518a0b2e9e4b914c891f97433db1ef2
 workflow-type: tm+mt
 source-wordcount: '1229'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -32,8 +32,8 @@ Den här självstudiekursen kräver en fungerande förståelse av följande komp
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
->title="Intag av källa"
->abstract="Vyn för källinläsning innehåller information om dataaktivitetsstatus och mått i Data Lake Service, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
+>title="Source-intag"
+>abstract="Inmatningsvyn i Source innehåller information om dataaktivitetsstatus och mått i sjödatatjänsten, inklusive inmatade och misslyckade poster. Läs måttdefinitionsguiden om du vill veta mer om mått och diagram."
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]

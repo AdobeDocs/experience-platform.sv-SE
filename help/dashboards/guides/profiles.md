@@ -4,9 +4,9 @@ title: Kontrollpanel för profiler
 description: Adobe Experience Platform tillhandahåller en kontrollpanel där du kan visa viktig information om kundprofildata i realtid för din organisation.
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: e52eb90b64ae9142e714a46017cfd14156c78f8b
+source-git-commit: c35b43654d31f0f112258e577a1bb95e72f0a971
 workflow-type: tm+mt
-source-wordcount: '4665'
+source-wordcount: '4669'
 ht-degree: 0%
 
 ---
@@ -195,7 +195,7 @@ En standardinläsning av widgetar tillhandahålls för alla nya instanser av Ado
 
 ## AI-widgetar för kunder {#customer-ai-profiles-widgets}
 
-Kundens AI används för att generera anpassade benägenhetspoäng som bortfall och konvertering för enskilda profiler i stor skala. Kunden gör detta genom att analysera befintliga data om kundupplevelsehändelser för att förutsäga **poängtal för bortfall eller konverteringsbenägenhet**. Dessa högkvalitativa kundbenägenhetsmodeller möjliggör mer exakt segmentering och målinriktning. The [fördelning av poäng](#customer-ai-distribution-of-scores) och [poängsammanfattning](#customer-ai-scoring-summary) insikter visar hur er målgrupp skiljer sig från mängden. Panelerna sätter fokus på vilka profiler som är de höga/låga/medelstora och hur de fördelas över dina profilantal.
+Kund-AI används för att generera anpassade benägenhetspoäng som omsättning och konvertering för enskilda profiler i stor skala. Kunden gör detta genom att analysera befintliga data om kundupplevelsehändelser för att förutsäga **poängtal för bortfall eller konverteringsbenägenhet**. Dessa högkvalitativa kundbenägenhetsmodeller möjliggör mer exakt segmentering och målinriktning. The [fördelning av poäng](#customer-ai-distribution-of-scores) och [poängsammanfattning](#customer-ai-scoring-summary) insikter visar hur er målgrupp skiljer sig från mängden. Panelerna sätter fokus på vilka profiler som är de höga/låga/medelstora och hur de fördelas över dina profilantal.
 
 * [[!UICONTROL Customer AI scoring summary]](#customer-ai-scoring-summary)
 * [[!UICONTROL Customer AI distribution of scores]](#customer-ai-distribution-of-scores)
@@ -506,7 +506,7 @@ Om du vill visa omfattande information om en viss målgrupp väljer du ett målg
 
 ![Storlekswidgeten Publiker med ett publiknamn och texten Visa alla målgrupper markerad.](../images/profiles/audiences-size-view-all-audiences.png)
 
-Mer information om [[!UICONTROL Audiences] [!UICONTROL  Browse] tab](../../segmentation/ui/overview.md#browse).
+Mer information om målgruppsinformation finns i [Målgruppsportalens dokumentation](../../segmentation/ui/audience-portal.md).
 
 ### [!UICONTROL Audience overlap by merge policy] {#audience-overlap-by-merge-policy}
 
