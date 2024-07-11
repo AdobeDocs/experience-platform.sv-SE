@@ -1,24 +1,30 @@
 ---
 title: onBeforeLinkClickSend
 description: Återanrop som körs precis innan data för länkspårning skickas.
-source-git-commit: b6e084d2beed58339191b53d0f97b93943154f7c
+exl-id: 8c73cb25-2648-4cf7-b160-3d06aecde9b4
+source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # `onBeforeLinkClickSend`
+
+>[!IMPORTANT]
+>
+>Det här återanropet är föråldrat. Använd [`filterClickDetails`](clickcollection.md) i stället.
 
 The `onBeforeLinkClickSend` Med callback kan du registrera en JavaScript-funktion som kan ändra länkspårningsdata som du skickar precis innan dessa data skickas till Adobe. Med det här återanropet kan du ändra `xdm` eller `data` -objekt, inklusive möjligheten att lägga till, redigera eller ta bort element. Du kan också villkorligt avbryta sändningen av data helt och hållet, t.ex. med identifierad robottrafik på klientsidan. Den stöds i Web SDK 2.15.0 eller senare.
 
-Det här återanropet körs bara när [`clickCollectionEnabled`](clickcollectionenabled.md) är aktiverat. If `clickCollectionEnabled` är inaktiverat, det här återanropet körs inte. Om båda `onBeforeEventSend` och `onBeforeLinkClickSend` innehåller registrerade funktioner, `onBeforeLinkClickSend` funktionen körs först. När `onBeforeLinkClickSend` funktionen är klar, `onBeforeEventSend` funktionen körs sedan.
+Det här återanropet körs bara när [`clickCollectionEnabled`](clickcollectionenabled.md) är aktiverat och [`filterClickDetails`](clickcollection.md) innehåller ingen registrerad funktion. If `clickCollectionEnabled` är inaktiverat, eller om `filterClickDetails` innehåller en registrerad funktion, kommer denna återanrop inte att köras. If `onBeforeEventSend` och `onBeforeLinkClickSend` båda innehåller registrerade funktioner, `onBeforeLinkClickSend` körs först.
 
 >[!WARNING]
 >
 >Det här återanropet tillåter användning av anpassad kod. Om kod som du inkluderar i återanropet genererar ett ej infångat undantag avbryts bearbetningen för händelsen. Data skickas inte till Adobe.
 
-## Klicka på Skicka återanrop före länken med hjälp av taggtillägget Web SDK
+## Konfigurera före länk genom att klicka på Skicka återanrop med tillägget Web SDK-tagg {#tag-extension}
 
 Välj **[!UICONTROL Provide on before link click event send callback code]** knapp när [konfigurera taggtillägget](/help/tags/extensions/client/web-sdk/web-sdk-extension-configuration.md). Med den här kommandoknappen öppnas ett modalt fönster där du kan infoga den önskade koden.
 
@@ -31,19 +37,15 @@ Välj **[!UICONTROL Provide on before link click event send callback code]** kna
 1. Den här knappen öppnar ett modalt fönster med en kodredigerare. Infoga den önskade koden och klicka sedan på **[!UICONTROL Save]** för att stänga det modala fönstret.
 1. Klicka **[!UICONTROL Save]** publicera ändringarna under tilläggsinställningarna.
 
-I kodredigeraren kan du lägga till, redigera och ta bort element i `content` -objekt. Det här objektet innehåller nyttolasten som skickas till Adobe. Du behöver inte definiera `content` eller kapsla in kod i en funktion. Alla variabler som definierats utanför `content` kan användas, men ingår inte i nyttolasten som skickas till Adobe.
+I kodredigeraren har du tillgång till följande variabler:
 
->[!TIP]
->
->Objekten `content.xdm`, `content.data`och `content.clickedElement` definieras alltid i det här sammanhanget, så du behöver inte kontrollera om de finns. Vissa variabler i dessa objekt är beroende av implementeringen och datalagret. Adobe rekommenderar att du kontrollerar om det finns odefinierade värden i dessa objekt för att förhindra JavaScript-fel.
+* **`content.clickedElement`**: Det DOM-element som du klickade på.
+* **`content.xdm`**: XDM-nyttolasten för händelsen.
+* **`content.data`**: Dataobjektets nyttolast för händelsen.
+* **`return true`**: Avsluta återanropet omedelbart med de aktuella variabelvärdena. The `onBeforeEventSend` callback-funktionen körs om den innehåller en registrerad funktion.
+* **`return false`**: Avsluta omedelbart återanropet och avbryt överföringen av data till Adobe. The `onBeforeEventSend` återanrop körs inte.
 
-Anta att du vill utföra följande åtgärder:
-
-* Ändra den aktuella sidans URL
-* Fånga det klickade elementet i en Adobe Analytics-eVar
-* Ändra länktypen från &quot;other&quot; till &quot;download&quot;
-
-Motsvarande kod i det modala fönstret skulle vara följande:
+Alla variabler som definierats utanför `content` kan användas, men ingår inte i nyttolasten som skickas till Adobe.
 
 ```js
 // Set an already existing value to something else
@@ -63,26 +65,26 @@ content.xdm._experience.analytics.customDimensions.eVars.eVar1 = content.clicked
 if(content.xdm.web?.webInteraction?.type === "other") content.xdm.web.webInteraction.type = "download";
 ```
 
-Lika med [`onBeforeEventSend`](onbeforeeventsend.md)kan du `return true` för att omedelbart slutföra funktionen, eller `return false` för att omedelbart avbryta sändning av data. Om du avbryter sändningen av data i `onBeforeLinkClickSend` när båda `onBeforeEventSend` och `onBeforeLinkClickSend` innehåller registrerade funktioner, `onBeforeEventSend` funktionen körs inte.
+Lika med [`onBeforeEventSend`](onbeforeeventsend.md)kan du `return true` för att slutföra funktionen omedelbart, eller `return false` för att avbryta sändning av data till Adobe. Om du avbryter sändningen av data i `onBeforeLinkClickSend` när båda `onBeforeEventSend` och `onBeforeLinkClickSend` innehåller registrerade funktioner, `onBeforeEventSend` funktionen körs inte.
 
-## On before link click send callback using the Web SDK JavaScript library
+## Konfigurera före länk genom att klicka på Skicka återanrop med Web SDK JavaScript-biblioteket {#library}
 
 Registrera `onBeforeLinkClickSend` återanrop när programmet körs `configure` -kommando. Du kan ändra `content` variabelnamn till ett värde som du vill ha genom att ändra parametervariabeln inuti den infogade funktionen.
 
 ```js
 alloy("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "onBeforeLinkClickSend": function(content) {
+  edgeConfigId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+  onBeforeLinkClickSend: function(content) {
     // Add, modify, or delete values
     content.xdm.web.webPageDetails.URL = "https://example.com/current.html";
     
-    // Return true to immediately complete the function
+    // Return true to complete the function immediately
     if (sendImmediate == true) {
       return true;
     }
     
-    // Return false to immediately cancel sending data
+    // Return false to cancel sending data immediately
     if(myBotDetector.isABot()){
       return false;
     }
@@ -99,8 +101,8 @@ function lastChanceLinkLogic(content) {
 }
 
 alloy("configure", {
-  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
-  "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "onBeforeLinkClickSend": lastChanceLinkLogic
+  edgeConfigId: "ebebf826-a01f-4458-8cec-ef61de241c93",
+  orgId: "ADB3LETTERSANDNUMBERS@AdobeOrg",
+  onBeforeLinkClickSend: lastChanceLinkLogic
 });    
 ```

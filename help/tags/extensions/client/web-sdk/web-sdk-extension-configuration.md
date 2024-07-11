@@ -2,9 +2,9 @@
 title: Konfigurera SDK-taggtillägget för webben
 description: Lär dig hur du konfigurerar taggtillägget Experience Platform Web SDK i tagggränssnittet.
 exl-id: 22425daa-10bd-4f06-92de-dff9f48ef16e
-source-git-commit: 1d1bb754769defd122faaa2160e06671bf02c974
+source-git-commit: 660d4e72bd93ca65001092520539a249eae23bfc
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1878'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ För Web SDK-taggtillägget krävs en egenskap som ska installeras på. Om du in
 
 När du har skapat en egenskap öppnar du den och väljer **[!UICONTROL Extensions]** till vänster.
 
-Välj **[!UICONTROL Catalog]** -fliken. I listan med tillgängliga tillägg hittar du [!DNL Web SDK] tillägg och markera **[!UICONTROL Install]**.
+Klicka på fliken **[!UICONTROL Catalog]**.  I listan med tillgängliga tillägg hittar du [!DNL Web SDK] tillägg och markera **[!UICONTROL Install]**.
 
 ![Bild som visar användargränssnittet för taggar med tillägget Web SDK markerat](assets/web-sdk-install.png)
 
@@ -111,11 +111,29 @@ När du använder det fördolda fragmentet bör du använda samma [!DNL CSS] den
 
 ## Konfigurera inställningar för datainsamling {#data-collection}
 
-![Bild som visar inställningarna för datainsamling i Web SDK-taggtillägget i tagggränssnittet](assets/web-sdk-ext-collection.png)
+Hantera konfigurationsinställningar för datainsamling. Liknande inställningar i JavaScript-biblioteket finns i [`configure`](/help/web-sdk/commands/configure/overview.md) -kommando.
 
-* **[!UICONTROL Callback function]**: Återanropsfunktionen som finns i tillägget kallas också för [`onBeforeEventSend` function](/help/web-sdk/commands/configure/onbeforeeventsend.md) i biblioteket. Med den här funktionen kan du ändra händelser globalt innan de skickas till Edge Network.
-* **[!UICONTROL Enable click data collection]**: Web SDK kan automatiskt samla in länkklickningsinformation åt dig. Som standard är den här funktionen aktiverad men kan inaktiveras med det här alternativet. Länkarna är även märkta som nedladdningslänkar om de innehåller något av de nedladdningsuttryck som finns i [!UICONTROL Download Link Qualifier] textruta. Adobe tillhandahåller vissa standardkvalificerare för nedladdningslänk. Du kan redigera dem efter behov.
-* **[!UICONTROL Automatically collected context data]**: Som standard samlar Web SDK in vissa kontextdata för enhet, webb, miljö och platskontext. Om du inte vill att dessa data ska samlas in, eller om du bara vill att vissa kategorier av data ska samlas in, väljer du **[!UICONTROL Specific context information]** och markera de data som du vill samla in. Se [`context`](/help/web-sdk/commands/configure/context.md) för mer information.
+![Bild som visar inställningarna för datainsamling i Web SDK-taggtillägget i tagggränssnittet.](assets/web-sdk-ext-collection.png)
+
+* **[!UICONTROL On before event send callback]**: En callback-funktion som utvärderar och ändrar nyttolasten som skickas till Adobe. Använd `content` -variabeln i callback-funktionen för att ändra nyttolasten. Det här återanropet motsvarar taggen [`onBeforeEventSend`](/help/web-sdk/commands/configure/onbeforeeventsend.md) i JavaScript bibliotek.
+* **[!UICONTROL Collect internal link clicks]**: En kryssruta som aktiverar insamling av länkspårningsdata internt till din webbplats eller egenskap. När du markerar den här kryssrutan visas alternativ för händelsegruppering:
+   * **[!UICONTROL No event grouping]**: Länkspårningsdata skickas till Adobe i olika händelser. Länkklickningar som skickas i olika händelser kan öka den avtalsenliga användningen av data som skickas till Adobe Experience Platform.
+   * **[!UICONTROL Event grouping using session storage]**: Lagra länkspårningsdata i sessionslager fram till nästa sidhändelse. På följande sida skickas data för den lagrade länkspårningen och sidvisningsdata till Adobe samtidigt. Adobe rekommenderar att den här inställningen aktiveras när interna länkar spåras.
+   * **[!UICONTROL Event grouping using local object]**: Lagra länkspårningsdata i ett lokalt objekt fram till nästa sidhändelse. Om en besökare navigerar till en ny sida, försvinner länkspårningsdata. Den här inställningen är mest användbar för enkelsidiga program.
+* **[!UICONTROL Collect external link clicks]**: En kryssruta som aktiverar samlingen av externa länkar.
+* **[!UICONTROL Collect download link clicks]**: En kryssruta som aktiverar samlingen med nedladdningslänkar.
+* **[!UICONTROL Download link qualifier]**: Ett reguljärt uttryck som kvalificerar en länk-URL som en nedladdningslänk.
+* **[!UICONTROL Filter click properties]**: En callback-funktion som utvärderar och ändrar klickrelaterade egenskaper före samlingen. Den här funktionen körs före [!UICONTROL On before event send callback].
+* **Kontextinställningar**: Samla in besöksinformation automatiskt, vilket fyller i specifika XDM-fält åt dig. Du kan **[!UICONTROL All default context information]** eller **[!UICONTROL Specific context information]**. Det är taggen som motsvarar [`context`](/help/web-sdk/commands/configure/context.md) i JavaScript bibliotek.
+   * **[!UICONTROL Web]**: Samlar in information om den aktuella sidan.
+   * **[!UICONTROL Device]**: Samlar in information om användarens enhet.
+   * **[!UICONTROL Environment]**: Samlar in information om användarens webbläsare.
+   * **[!UICONTROL Place context]**: Samlar in information om användarens plats.
+   * **[!UICONTROL High entropy user-agent hints]**: Samlar in mer detaljerad information om användarens enhet.
+
+>[!TIP]
+>
+The **[!UICONTROL On before link click send]** fältet är ett föråldrat återanrop som bara är synligt för egenskaper som redan har det konfigurerat. Det är taggen som motsvarar [`onBeforeLinkClickSend`](/help/web-sdk/commands/configure/onbeforelinkclicksend.md) i JavaScript bibliotek. Använd **[!UICONTROL Filter click properties]** återanrop för att filtrera eller justera klickdata eller använda **[!UICONTROL On before event send callback]** om du vill filtrera eller justera den totala nyttolasten som skickas till Adobe. Om båda **[!UICONTROL Filter click properties]** callback och **[!UICONTROL On before link click send]** återanrop är inställda, endast **[!UICONTROL Filter click properties]** återanrop körs.
 
 ## Konfigurera inställningar för mediesamling {#media-collection}
 

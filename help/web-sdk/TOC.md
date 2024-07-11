@@ -6,9 +6,9 @@ breadcrumb-title: Användarhandbok om webb-SDK
 user-guide-description: Interagera med Experience Cloud-tjänsterna via Edge Network.
 feature: Web SDK
 role: Developer
-source-git-commit: b8c38108e7481a5c4e94e4122e0093fa6f00b96c
+source-git-commit: 14f9c2240d1a650cc267bd997ea35d7923f71b2b
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '225'
 ht-degree: 19%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 19%
    * konfigurera {#configure}
       * [Översikt](commands/configure/overview.md)
       * [clickCollectionEnabled](commands/configure/clickcollectionenabled.md)
+      * [clickCollection](commands/configure/clickcollection.md)
       * [kontext](commands/configure/context.md)
       * [debugEnabled](commands/configure/debugenabled.md)
       * [defaultConsent](commands/configure/defaultconsent.md)
@@ -56,12 +57,12 @@ ht-degree: 19%
    * [createMediaSession](commands/createmediasession.md)
    * [getIdentity](commands/getidentity.md)
    * [getLibraryInfo](commands/getlibraryinfo.md)
+   * [getMediaAnalyticsTracker](commands/getmediaanalyticstracker.md)
    * [setConsent](commands/setconsent.md)
    * [setDebug](commands/setdebug.md)
    * [sendMediaEvent](commands/sendmediaevent.md)
    * [Konfigurera åsidosättningar av datastream](commands/datastream-overrides.md)
    * [Kommandosvar](commands/command-responses.md)
-   * [getMediaAnalyticsTracker](commands/getmediaanalyticstracker.md)
 
 * Identitet {#identity}
    * [Översikt](identity/overview.md)
@@ -71,7 +72,7 @@ ht-degree: 19%
 * Personalisering {#personalization}
    * [Hantera visningshändelser](personalization/display-events.md)
    * [Återge personaliserat innehåll](personalization/rendering-personalization-content.md)
-   * [Personalisering via hybridimplementering](personalization/hybrid-personalization.md)
+   * [Personalization via hybridimplementering](personalization/hybrid-personalization.md)
    * [Hantera flimmer](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
       * [Översikt](personalization/adobe-target/target-overview.md)
