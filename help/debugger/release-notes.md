@@ -4,21 +4,34 @@ description: Den senaste versionsinformationen om Adobe Experience Platform Debu
 keywords: felsökning;Experience Platform Debugger extension;chrome;extension;release notes
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: a381760d3f19e04a70581d4adbb8095c92fb2e56
+source-git-commit: c99234cf3f5af9abe590c90fbdefc7d50c1539da
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '758'
 ht-degree: 1%
 
 ---
 
 # Versionsinformation för Adobe Experience Platform Debugger
 
+## Version 1.6.0 - 11 juli 2024
+
+### Nya funktioner
+
+* Tillåt användare att välja att inte ta del av/ta del av teknisk och personlig datainsamling.
+
+### Korrigeringar och förbättringar
+
+* Åtgärda länken Firefox-skriptinjektion och sekretesspolicy.
+* Hämta saknade Analytics-begäranden.
+* Åtgärda krascher på sidor med många komplexa konsolmeddelanden.
+* Uppdatera Adobe Experience Platform Debugger till ett Manifest v3-tillägg.
+
 ## Version 1.5.4 - 19 december 2023
 
 ### Korrigeringar och förbättringar
 
 * Ett problem där inställningarna inte sparades har korrigerats.
-* Korrigerade ett problem som gjorde att felsökaren kraschade när man visade efterbearbetade träffar i Analytics.
+* Korrigerade ett problem som gjorde att felsökaren kraschade när Analytics Post-Procsed-träffar visades.
 
 ## Version 1.5.3 - 6 december 2023
 
@@ -47,7 +60,7 @@ ht-degree: 1%
 
 * Korrigerade problem där Analytics-händelser skulle ignoreras eller dupliceras.
 * Ett problem där den maximala lagringsstorleken för tillstånd överskreds har korrigerats.
-* Ett problem har korrigerats där Edge Logs-sökningen inte filtrerade händelser.
+* Korrigerade ett problem där Edge Logs-sökningen inte kunde filtrera händelser.
 
 ## Version 1.5.0 - 19 oktober 2023
 
@@ -62,7 +75,7 @@ ht-degree: 1%
 * Ett problem som gjorde att målspårning inte kunde visas har åtgärdats.
 * Korrigerade knappen Skicka feedback.
 * Korrigerade det saknade &quot;Datastream ID&quot; i Web SDK-sammanfattningen för version ≥2.18.0.
-* Korrigerade ett problem där Edge-loggar inte var sökbara.
+* Ett problem har korrigerats där Edge loggar inte var sökbara.
 * En anteckning om ytterligare profiler för vissa kontotyper har lagts till.
 
 ## Version 1.4.1 - 1 november 2022
@@ -100,7 +113,7 @@ ht-degree: 1%
 * Länken Om har lagts till för att visa aktuell version och information.
 * Tillagd växel för att visa efterbearbetade träffar för Analytics-begäranden. Växeln är tillgänglig i avsnittet Analytics (Analyser).
 * Ett problem med fjärrfelsökningssession när sessionen stängdes utanför felsökaren har åtgärdats.
-* Ett felmeddelande som var synligt på fliken Web SDK Edge Transactions har korrigerats.
+* Ett felmeddelande som visades på fliken Edge-transaktioner för Web SDK har korrigerats.
 * Adobe-taggar på sidborttagningsvarning har åtgärdats när felsökaren använde _satellit-objektet.
 * Korrigerade vissa fall där det inte gick att hitta en AppMeasurementen instans på sidan.
 * Ett problem med sidanslutningen som uppstod när felsökningsfönstret öppnades för första gången har åtgärdats.
@@ -112,9 +125,9 @@ ht-degree: 1%
 
 ## Version 1.1.0 - 5 oktober 2021
 
-* Visualisering av fjärrfelsökning - Ordna fjärrfelsökningshändelserna i ett visuellt flödesschema i Adobe Experience Platform Web SDK > Edge Transactions.
+* Visualisering av fjärrfelsökning - Ordna fjärrfelsökningshändelserna i ett visuellt flödesschema i avsnittet Adobe Experience Platform Web SDK > Edge Transactions.
 * Kräv att den Adobe Experience Platform Web SDK-organisation som används på sidan matchar den inloggade organisationen när en ny fjärrfelsökningssession startas.
-* Visa endast kanttransaktioner för den anslutna fliken. Målspårningsloggar är fortfarande tillgängliga i avsnittet Loggar > Edge.
+* Visa endast kanttransaktioner för den anslutna fliken. Målspårningsloggar finns fortfarande i avsnittet Loggar > Edge.
 * Tillåt att olika ID-konfigurationer för dataström åsidosätts för varje instans av Adobe Experience Platform Web SDK på sidan. Växla till Lägg till felsökning aktiverat.
 * Ett problem har korrigerats där Adobe Target trace-token inte alltid skickades med fjärrfelsökningssessioner för Adobe Experience Platform Web SDK.
 
