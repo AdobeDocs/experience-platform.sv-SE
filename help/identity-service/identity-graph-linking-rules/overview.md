@@ -3,9 +3,9 @@ title: Översikt över regler för länkning av identitetsdiagram
 description: Lär dig mer om länkningsregler för identitetsdiagram i identitetstjänsten.
 badge: Beta
 exl-id: 317df52a-d3ae-4c21-bcac-802dceed4e53
-source-git-commit: 67b08acaecb4adf4d30d6d4aa7b8c24b30dfac2e
+source-git-commit: 72773f9ba5de4387c631bd1aa0c4e76b74e5f1dc
 workflow-type: tm+mt
-source-wordcount: '1114'
+source-wordcount: '1173'
 ht-degree: 0%
 
 ---
@@ -26,8 +26,8 @@ Med Adobe Experience Platform Identity Service och Real-Time Customer Profile ä
 
 ## Exempel på scenarier där komprimering av diagram kan inträffa
 
-* **Delad enhet**: Delad enhet avser enheter som används av flera personer. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer.
-* **Felaktiga e-post- och telefonnummer**: Felaktiga e-postadresser och telefonnummer hänvisar till slutanvändare som registrerar ogiltig kontaktinformation, till exempel&quot;test&quot;<span>@test.com för e-post och +1-111-111-1111 för telefonnummer.
+* **Delad enhet**: Delad enhet avser enheter som används av mer än en person. Exempel på delade enheter är surfplattor, biblioteksdatorer och kioskdatorer.
+* **Felaktiga e-post- och telefonnummer**: Felaktiga e-post- och telefonnummer hänvisar till att slutanvändare registrerar ogiltig kontaktinformation, till exempel&quot;test<span>@test.com&quot; för e-post och&quot;+1-111-1111&quot; för telefonnummer.
 * **Felaktiga eller felaktiga identitetsvärden**: Felaktiga eller felaktiga identitetsvärden refererar till icke-unika identitetsvärden som kan sammanfoga CRM-ID:n. IDFA:er måste till exempel ha 36 tecken (32 alfanumeriska tecken och fyra bindestreck), men det finns scenarier där en IDFA med identitetsvärdet &quot;user_null&quot; kan importeras. Telefonnummer har på liknande sätt bara stöd för numeriska tecken, men ett telefonnamnutrymme med identitetsvärdet &quot;inte specificerat&quot; kan kapslas.
 
 Mer information om användningsscenarier för länkningsregler för identitetsdiagram finns i dokumentet om [exempelscenarier](./example-scenarios.md).
@@ -53,11 +53,11 @@ Du kan konfigurera ett namnutrymme så att det blir unikt med hjälp av arbetsyt
 
 Tänk på följande scenario:
 
-* Scott använder en surfplatta och öppnar sin webbläsare Google Chrome för att gå till<span>.com, där han loggar in och bläddrar efter nya basketskor.
+* Scott använder en surfplatta och öppnar sin webbläsare Google Chrome för att gå till nike<span>.com, där han loggar in och bläddrar efter nya basketskor.
    * Bakom scenerna loggar det här scenariot följande identiteter:
       * Ett ECID-namnutrymme och -värde som representerar webbläsarens användning
       * Ett CRM ID-namnutrymme och värde som representerar den autentiserade användaren (Scott loggade in med kombinationen användarnamn och lösenord).
-* Hans son Peter använder sedan samma surfplatta och använder också Google Chrome för att gå till Nike<span>.com, där han loggar in med sitt eget konto för att söka efter fotbollsutrustning.
+* Hans son Peter använder sedan samma surfplatta och även Google Chrome för att gå till nike<span>.com, där han loggar in med sitt eget konto för att söka efter fotbollsutrustning.
    * Bakom scenerna loggar det här scenariot följande identiteter:
       * Samma ECID-namnutrymme och värde som representerar webbläsaren.
       * Ett nytt CRM ID-namnutrymme och värde som representerar den autentiserade användaren.
@@ -82,12 +82,13 @@ Både unika namnutrymmen och namnområdesprioriteter kan konfigureras på arbets
 | Namnområdesprioritet | I identitetstjänsten avgör namnområdesprioriteten att rätt länkar tas bort för diagram som har flera lager. | När en upplevelsehändelse kapslas in i en profil blir det namnutrymme som har högst prioritet den primära identiteten för profilfragmentet. |
 
 * Namnområdesprioriteten påverkar inte diagrambeteendet när gränsen på 50 identiteter per diagram nås.
-* **Namnområdesprioriteten är ett numeriskt värde** som tilldelats ett namnutrymme som anger dess relativa betydelse. Detta är en egenskap för ett namnutrymme.
-* **Primär identitet är identiteten som ett profilfragment lagras mot**. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
+* **Namnområdesprioriteten är ett numeriskt värde** som tilldelats ett namnutrymme och anger dess relativa betydelse. Detta är en egenskap för ett namnutrymme.
+* **Primär identitet är den identitet i vilken ett profilfragment lagras mot**. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
 * Namnområdesprioriteten avgör den primära identiteten för händelsesegment för upplevelser.
-   * För profilposter kan du använda arbetsytan för scheman i användargränssnittet i Experience Platform för att definiera identitetsfält, inklusive den primära identiteten. Läs guiden på [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) för mer information.
+   * För profilposter kan du använda arbetsytan för scheman i användargränssnittet i Experience Platform för att definiera identitetsfält, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md).
+* Om en upplevelsehändelse har två eller flera identiteter med den högsta namnområdesprioriteten i identityMap, kommer den att nekas att matas in eftersom den betraktas som &quot;felaktiga data&quot;. Om identityMap till exempel innehåller `{ECID: 111, CRMID: John, CRMID: Jane}` kommer hela händelsen att avvisas som felaktiga data eftersom det betyder att händelsen är kopplad till både `CRMID: John` och `CRMID: Jane` samtidigt.
 
-Mer information finns i guiden [namnområdesprioritet](./namespace-priority.md).
+Mer information finns i handboken om [namnområdesprioritet](./namespace-priority.md).
 
 ## Nästa steg
 

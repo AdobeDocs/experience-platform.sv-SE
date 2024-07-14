@@ -3,9 +3,9 @@ title: Namnområdesprioritet
 description: Läs om namnområdesprioritet i identitetstjänsten.
 badge: Beta
 exl-id: bb04f02e-3826-45af-b935-752ea7e6ed7c
-source-git-commit: 5674309e4e8f17ad4c951ec4a5cb0cbc0a15ab03
+source-git-commit: 5d19a22dc8d1b7f0151008d14b2f5bf89c85c638
 workflow-type: tm+mt
-source-wordcount: '1515'
+source-wordcount: '1570'
 ht-degree: 1%
 
 ---
@@ -49,15 +49,15 @@ En identitet representerar ett objekt i verkligheten. Det finns tre objekt som v
 
 Personnamnutrymmen är relativt oföränderliga jämfört med maskinvaruenheter (som IDFA, GAID), som är relativt oföränderliga jämfört med webbläsare. I princip är du (människa) alltid en enda enhet som kan ha flera maskinvaruenheter (telefon, bärbar dator, surfplatta osv.) och använda flera webbläsare (Google Chrome, Safari, FireFox osv.)
 
-Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRM-ID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet **lägre kardinalitet anger ett namnutrymme med ett högre värde**.
+Ett annat sätt att se på det här ämnet är genom kardinalitet. Hur många identiteter kommer att skapas för en viss person? I de flesta fall har en person ett CRM-ID, en handfull identifierare för hårdvaruenheter (IDFA/GAID-återställningar bör inte ske så ofta) och ännu fler cookies (en person kan navigera på flera enheter, använda inkogenläge eller återställa cookies när som helst). I allmänhet anger **lägre kardinalitet ett namnutrymme med ett högre värde**.
 
 ## Validera inställningarna för namnområdesprioritet
 
-När du har fått en uppfattning om hur du ska prioritera namnutrymmen kan du använda verktyget Diagramsimulering för att testa olika scenarier för komprimering av diagram och se till att dina prioritetskonfigurationer returnerar de förväntade diagramresultaten. Mer information finns i handboken om hur du använder [Graph Simulation tool](./graph-simulation.md).
+När du har fått en uppfattning om hur du ska prioritera namnutrymmen kan du använda verktyget Diagramsimulering för att testa olika scenarier för komprimering av diagram och se till att dina prioritetskonfigurationer returnerar de förväntade diagramresultaten. Mer information finns i handboken om hur du använder verktyget [Diagramsimulering](./graph-simulation.md).
 
 ## Konfigurera namnområdesprioritet
 
-Namnområdesprioriteten kan konfigureras med [!UICONTROL Identity Settings]. I [!UICONTROL Identity Settings] kan du dra och släppa ett namnutrymme för att avgöra dess relativa betydelse.
+Namnområdesprioriteten kan konfigureras med [!UICONTROL Identity Settings]. I gränssnittet [!UICONTROL Identity Settings] kan du dra och släppa ett namnutrymme för att fastställa dess relativa betydelse.
 
 >[!IMPORTANT]
 >
@@ -65,28 +65,28 @@ Namnområdesprioriteten kan konfigureras med [!UICONTROL Identity Settings]. I [
 
 ## Användning av namnområdesprioritet
 
-För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
+För närvarande påverkar namnområdesprioriteten systembeteendet för kundprofilen i realtid. Bilden nedan visar detta koncept. Mer information finns i guiden om [Adobe Experience Platform och programarkitekturdiagram](https://experienceleague.adobe.com/en/docs/blueprints-learn/architecture/architecture-overview/platform-applications).
 
 ![Ett diagram över programomfånget för namnområdesprioritet](../images/namespace-priority/application-scope.png)
 
 ### Identitetstjänst: Identitetsoptimeringsalgoritm
 
-För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en viktig roll när det gäller att säkerställa att rätt länkar tas bort när diagramkomprimeringsscenarier inträffar. Mer information finns i [[!DNL Identity Optimization Algorithm] översikt](../identity-graph-linking-rules/identity-optimization-algorithm.md).
+För relativt komplexa diagramstrukturer spelar namnområdesprioriteten en viktig roll när det gäller att säkerställa att rätt länkar tas bort när diagramkomprimeringsscenarier inträffar. Mer information finns i [översikten över algoritmen för identitetsoptimering](../identity-graph-linking-rules/identity-optimization-algorithm.md).
 
 ### Kundprofil i realtid: primär identitetsbestämning för upplevelsehändelser
 
 * För upplevelsehändelser bestäms den primära identiteten av den högsta namnområdesprioriteten när du har konfigurerat identitetsinställningar för en viss sandlåda.
    * Det beror på att upplevelsehändelser är dynamiska till sin natur. En identitetskarta kan innehålla tre eller fler identiteter, och namnområdesprioriteten ser till att det viktigaste namnutrymmet är kopplat till upplevelsehändelsen.
-* Detta resulterar i följande konfigurationer **används inte längre av kundprofilen i realtid**:
+* Därför kommer följande konfigurationer **inte längre att användas av kundprofilen i realtid**:
    * Kryssrutan &quot;Primär&quot; för dataelementtyp i WebSDK.
    * Alla fält som markerats som primär identitet i ett XDM Experience Event Class-schema.
    * Standardinställningar för primär identitet i Adobe Analytics-källkopplingen (ECID eller AAID).
-* Å andra sidan **namnområdesprioriteten avgör inte den primära identiteten för profilposter**.
-   * För profilposter kan du använda arbetsytan för scheman i användargränssnittet för Experience Platform för att definiera dina identitetsfält, inklusive den primära identiteten. Läs guiden på [definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md) för mer information.
+* Å andra sidan bestämmer inte namnområdesprioriteten **den primära identiteten för profilposter**.
+   * För profilposter kan du använda arbetsytan för scheman i användargränssnittet för Experience Platform för att definiera dina identitetsfält, inklusive den primära identiteten. Mer information finns i guiden [Definiera identitetsfält i användargränssnittet](../../xdm/ui/fields/identity.md).
 
 >[!NOTE]
 >
->* Namnområdesprioriteten är **en egenskap för ett namnutrymme**. Det är ett numeriskt värde som tilldelas ett namnutrymme för att ange dess relativa betydelse.
+>* Namnområdesprioriteten är **en egenskap för ett namnområde**. Det är ett numeriskt värde som tilldelas ett namnutrymme för att ange dess relativa betydelse.
 >
 >* Primär identitet är den identitet som ett profilfragment lagras mot. Ett profilfragment är en datapost som lagrar information om en viss användare: attribut (som vanligtvis hämtas via CRM-poster) eller händelser (som vanligtvis hämtas från upplevelsehändelser eller onlinedata).
 
@@ -141,14 +141,20 @@ I det här avsnittet beskrivs hur namnområdesprioriteten kan påverka andra Exp
 
 Funktioner för borttagning av datahygienpost på följande sätt för en viss identitet:
 
-* Kundprofil i realtid: Tar bort alla profilfragment med angiven identitet som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioriteten.**
+* Kundprofil i realtid: Tar bort alla profilfragment med angiven identitet som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioritet.**
 * Datasjön: Tar bort alla poster med den angivna identiteten som primär identitet.
 
-Mer information finns i [avancerad livscykelhantering - översikt](../../hygiene/home.md).
+Mer information finns i [Översikt över avancerad livscykelhantering](../../hygiene/home.md).
+
+### Beräknade attribut
+
+Beräknade attribut använder inte namnområdesprioritet för att beräkna värden. Om du använder beräknade attribut måste du se till att CRM-ID är angivet som din primära identitet för WebSDK. Denna begränsning förväntas bli löst i augusti 2024.
+
+Mer information finns i användargränssnittshandboken för [beräknade attribut](../../profile/computed-attributes/ui.md).
 
 ### Data Lake
 
-Inmatning av data till sjön fortsätter att följa de primära identitetsinställningarna som konfigurerats för [Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map) och scheman.
+Inmatningen av data i sjön fortsätter att följa de primära identitetsinställningarna som konfigurerats för [Web SDK](../../tags/extensions/client/web-sdk/data-element-types.md#identity-map) och scheman.
 
 Datasjön kommer inte att fastställa den primära identiteten baserat på namnområdesprioriteten. Adobe Customer Journey Analytics kommer till exempel att fortsätta använda värden i identitetskartan även efter det att namnområdesprioriteten har aktiverats (till exempel när en datauppsättning läggs till i en ny anslutning), eftersom Customer Journey Analytics använder data från datavjön.
 
@@ -156,7 +162,7 @@ Datasjön kommer inte att fastställa den primära identiteten baserat på namno
 
 Alla scheman som inte är en XDM Experience Event, till exempel enskilda XDM-profiler, fortsätter att respektera alla [fält som du markerar som en identitet](../../xdm/ui/fields/identity.md).
 
-Mer information om XDM-scheman finns i [scheman, översikt](../../xdm/home.md).
+Mer information om XDM-scheman finns i översikten [scheman](../../xdm/home.md).
 
 ### Intelligenta tjänster
 
@@ -167,13 +173,13 @@ När du väljer data måste du ange ett namnutrymme, som används för att avgö
 
 Den här konfigurationen resulterar endast i beräkning av bakgrundsmusik med hjälp av autentiserade händelser.
 
-Mer information om finns i dokumenten på [Attribution AI](../../intelligent-services/attribution-ai/overview.md) och [Kund-AI](../../intelligent-services/customer-ai/overview.md).
+Mer information finns i dokumenten på [Attribution AI](../../intelligent-services/attribution-ai/overview.md) och [Kund-AI](../../intelligent-services/customer-ai/overview.md).
 
 ### Integritetstjänst
 
-[Begäran om borttagning av Privacy Service](../privacy.md) fungerar på följande sätt för en viss identitet:
+[Borttagningsbegäranden](../privacy.md) för Privacy Service fungerar på följande sätt, för en viss identitet:
 
-* Kundprofil i realtid: Tar bort alla profilfragment med angivet identitetsvärde som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioriteten.**
+* Kundprofil i realtid: Tar bort alla profilfragment med angivet identitetsvärde som primär identitet. **Den primära identiteten i profilen bestäms nu utifrån namnområdesprioritet.**
 * Datasjön: Tar bort alla poster med den angivna identiteten som primär eller sekundär identitet.
 
 Mer information finns i [Översikt över sekretesstjänsten](../../privacy-service/home.md).
