@@ -2,9 +2,9 @@
 title: Frågeguide för AI Assistant
 description: Läs det här dokumentet om du vill veta mer om exempelfrågor som du kan använda när du frågar i AI Assistant.
 exl-id: d16d1262-cc2d-45c9-94c4-b86132183442
-source-git-commit: 6860e1dc03920feaf0dfa83d09c4fca8f85a2ac2
+source-git-commit: 196a39edd493dcc8296f4b6d2904393dd6f6cdd4
 workflow-type: tm+mt
-source-wordcount: '1694'
+source-wordcount: '1524'
 ht-degree: 0%
 
 ---
@@ -85,30 +85,6 @@ Följande frågor grupperas efter dataobjekt och klassificeras antingen som [ope
    * Varför kan jag inte ta bort en publik?
    * Hur lång tid tar det för målgrupperna att utvärderas och resultaten blir tillgängliga för målinriktning?
 
-+++Välj för att visa ytterligare en lista med förslag
-
-* Kan jag ta bort ett profilaktiverat schema efter att data har importerats?
-* Hur är användargrupper relaterade till roller?
-* När ska jag använda en datatyp jämfört med en fältgrupp?&#39;
-* Vad är skillnaden mellan en identitet och en primär eller främmande nyckel?&#39;
-* Hur lång tid tar det för segment att utvärderas och resultaten blir tillgängliga för målinriktning?
-* Hur beräknas profilrikedomen?&#39;
-* Berätta några vanliga användningsexempel för Real-Time CDP.
-* Varför kan jag inte ta bort ett segment?
-* Vilken typ av ändringar kan jag göra efter att ett schema har aktiverats för profilen?
-* Varför kan jag inte komma åt Dashboards i AEP?
-* Hur många segment använder xdm-attributet {FIELD_PATH}
-* Har jag några segment som används i andra segment?
-* Vilka fält i {SCHEMA_NAME}-schemat innehåller {STRING}?
-* Vilka målgrupper har xdm-attributet {FULL_ATTRIBUTE_PATH} i sin segmentdefinition?
-* Vilka scheman innehåller xdm-attributet {FULL_ATTRIBUTE_PATH}?
-* Vilka källdataflöden används inte eller har inga data längre?
-* Ange de resor jag har.
-* Ange de målgrupper som används i direktresor.
-* Vilka källor är i ett aktivt läge?
-
-+++
-
 ## Tar hand om dina frågor {#phrasing-your-questions}
 
 Du måste ge AI Assistant tydliga och kontextuella uppgifter för att få ett så korrekt svar som möjligt. Se följande lista med tips om hur du ställer en tydlig fråga i sitt sammanhang:
@@ -147,7 +123,7 @@ Nedan följer ett antal exempel på frågor som för närvarande inte stöds av 
 
 ### Driftsinsikter
 
-* Hur många profiler i den här sandlådan [uppfyller ett specifikt villkor, till exempel&quot;live in California&quot;]?
+* Hur många profiler finns det i den här sandlådan i Kalifornien? (**Obs!**: för liknande frågor måste du ange ett specifikt villkor för att ge tillräckligt med innehåll för din begäran. I det här fallet är det specifika villkoret&quot;live in California&quot;).
 * Vilka segment finns den här profilen i {PROFILE_INFO/ATTRIBUTE_VALUE}?
 * Hur många profiler i datauppsättningen har ett e-postmeddelande?
 * Vilken datauppsättning utgör det maximala antalet profiler i den här sandlådan?
