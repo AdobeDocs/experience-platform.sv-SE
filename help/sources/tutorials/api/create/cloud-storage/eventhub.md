@@ -1,35 +1,35 @@
 ---
-title: Skapa en källanslutning för Azure Event Hubs med API:t för Flow Service
+title: Skapa en Azure Event Hubs Source Connection med API:t för Flow Service
 description: Lär dig hur du ansluter Adobe Experience Platform till ett Azure Event Hubs-konto med API:t för Flow Service.
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 22f3b76c02e641d2f4c0dd7c0e5cc93038782836
+source-git-commit: 1256f0c76b29edad4808fc4be1d61399bfbae8fa
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1492'
 ht-degree: 0%
 
 ---
 
-# Skapa en [!DNL Azure Event Hubs] källanslutning med [!DNL Flow Service] API
+# Skapa en [!DNL Azure Event Hubs]-källanslutning med API:t [!DNL Flow Service]
 
 >[!IMPORTANT]
 >
->The [!DNL Azure Event Hubs] Källan är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
+>Källan [!DNL Azure Event Hubs] är tillgänglig i källkatalogen för användare som har köpt Real-time Customer Data Platform Ultimate.
 
-Läs den här självstudiekursen för att lära dig hur du ansluter [!DNL Azure Event Hubs] (nedan kallad[!DNL Event Hubs]&quot;) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+I den här självstudiekursen får du lära dig hur du ansluter [!DNL Azure Event Hubs] (kallas nedan [!DNL Event Hubs]) till Experience Platform med [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## Komma igång
 
 Handboken kräver en fungerande förståelse av följande komponenter i Adobe Experience Platform:
 
-- [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform] tjänster.
-- [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enda [!DNL Platform] till separata virtuella miljöer för att utveckla och utveckla applikationer för digitala upplevelser.
+- [Källor](../../../../home.md): [!DNL Experience Platform] tillåter att data kan hämtas från olika källor samtidigt som du kan strukturera, etikettera och förbättra inkommande data med [!DNL Platform]-tjänster.
+- [Sandlådor](../../../../../sandboxes/home.md): [!DNL Experience Platform] innehåller virtuella sandlådor som partitionerar en enskild [!DNL Platform]-instans till separata virtuella miljöer för att hjälpa till att utveckla och utveckla program för digitala upplevelser.
 
-I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Event Hubs] till plattform med [!DNL Flow Service] API.
+I följande avsnitt finns ytterligare information som du behöver känna till för att kunna ansluta [!DNL Event Hubs] till plattformen med API:t [!DNL Flow Service].
 
 ### Samla in nödvändiga inloggningsuppgifter
 
-För att [!DNL Flow Service] för att få kontakt med [!DNL Event Hubs] måste du ange värden för följande anslutningsegenskaper:
+För att [!DNL Flow Service] ska kunna ansluta till ditt [!DNL Event Hubs]-konto måste du ange värden för följande anslutningsegenskaper:
 
 >[!BEGINTABS]
 
@@ -38,42 +38,42 @@ För att [!DNL Flow Service] för att få kontakt med [!DNL Event Hubs] måste d
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
 | `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
-| `sasKey` | Primärnyckeln för [!DNL Event Hubs] namnutrymme. The `sasPolicy` som `sasKey` motsvarar måste ha `manage` rättigheter som konfigurerats för [!DNL Event Hubs] lista som ska fyllas i. |
-| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+| `sasKey` | Primärnyckeln för namnområdet [!DNL Event Hubs]. `sasPolicy` som `sasKey` motsvarar måste ha `manage` rättigheter konfigurerade för att [!DNL Event Hubs]-listan ska kunna fyllas i. |
+| `namespace` | Namnområdet för [!DNL Event Hub] som du använder. Ett [!DNL Event Hub]-namnområde innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
 
 >[!TAB SAS-autentisering]
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
 | `sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
-| `sasKey` | Primärnyckeln för [!DNL Event Hubs] namnutrymme. The `sasPolicy` som `sasKey` motsvarar måste ha `manage` rättigheter som konfigurerats för [!DNL Event Hubs] lista som ska fyllas i. |
-| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
-| `eventHubName` | Namnet på [!DNL Event Hubs] källa. |
-| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+| `sasKey` | Primärnyckeln för namnområdet [!DNL Event Hubs]. `sasPolicy` som `sasKey` motsvarar måste ha `manage` rättigheter konfigurerade för att [!DNL Event Hubs]-listan ska kunna fyllas i. |
+| `namespace` | Namnområdet för [!DNL Event Hub] som du använder. Ett [!DNL Event Hub]-namnområde innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| `eventHubName` | Fyll i ditt [!DNL Azure Event Hub]-namn. Läs [Microsoft-dokumentationen](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) om du vill ha mer information om [!DNL Event Hub]-namn. |
+| `connectionSpec.id` | Anslutningsspecifikationen returnerar en källas kopplingsegenskaper, inklusive autentiseringsspecifikationer för att skapa bas- och källanslutningarna. Anslutningsspecifikations-ID [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
 
-Mer information om SAS-autentisering (shared access signatures) för [!DNL Event Hubs], läsa [[!DNL Azure] guide om användning av SAS](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+Mer information om SAS-autentisering (Shared Access Signatures) för [!DNL Event Hubs] finns i [[!DNL Azure] handboken om användning av SAS](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
->[!TAB Azure Active Directory-autentisering för händelsehubb]
-
-| Autentiseringsuppgifter | Beskrivning |
-| --- | --- |
-| `tenantId` | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
-| `clientId` | Program-ID som tilldelats din app. Du kan hämta detta ID från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
-| `clientSecretValue` | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
-| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
-
-Mer information om [!DNL Azure Active Directory], läsa [Azure-guide om användning av Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
-
->[!TAB Händelsehubben omfattade Azure Active Directory-autentisering]
+>[!TAB Händelsehubben Azure Active Directory-autentisering]
 
 | Autentiseringsuppgifter | Beskrivning |
 | --- | --- |
-| `tenantId` | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
-| `clientId` | Program-ID som tilldelats din app. Du kan hämta detta ID från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
-| `clientSecretValue` | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från [!DNL Microsoft Entra ID] portal där du registrerade dina [!DNL Azure Active Directory]. |
-| `namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. An [!DNL Event Hubs] namespace innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
-| `eventHubName` | Namnet på [!DNL Event Hubs] källa. |
+| `tenantId` | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Obs!** Klient-ID kallas för &quot;katalog-ID&quot; i gränssnittet [!DNL Microsoft Azure]. |
+| `clientId` | Program-ID som tilldelats din app. Du kan hämta detta ID från portalen [!DNL Microsoft Entra ID] där du registrerade din [!DNL Azure Active Directory]. |
+| `clientSecretValue` | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från portalen [!DNL Microsoft Entra ID] där du registrerade din [!DNL Azure Active Directory]. |
+| `namespace` | Namnområdet för [!DNL Event Hub] som du använder. Ett [!DNL Event Hub]-namnområde innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+
+Mer information om [!DNL Azure Active Directory] finns i [Azure-guiden om hur du använder Microsoft Entra ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application).
+
+>[!TAB Händelsehubben har omfattat Azure Active Directory Auth]
+
+| Autentiseringsuppgifter | Beskrivning |
+| --- | --- |
+| `tenantId` | Klient-ID som du vill begära behörighet från. Ditt klient-ID kan formateras som ett GUID eller som ett eget namn. **Obs!** Klient-ID kallas för &quot;katalog-ID&quot; i gränssnittet [!DNL Microsoft Azure]. |
+| `clientId` | Program-ID som tilldelats din app. Du kan hämta detta ID från portalen [!DNL Microsoft Entra ID] där du registrerade din [!DNL Azure Active Directory]. |
+| `clientSecretValue` | Klienthemligheten som används tillsammans med klient-ID för att autentisera din app. Du kan hämta din klienthemlighet från portalen [!DNL Microsoft Entra ID] där du registrerade din [!DNL Azure Active Directory]. |
+| `namespace` | Namnområdet för [!DNL Event Hub] som du använder. Ett [!DNL Event Hub]-namnområde innehåller en unik omfångsbehållare där du kan skapa en eller flera [!DNL Event Hubs]. |
+| `eventHubName` | Fyll i ditt [!DNL Azure Event Hub]-namn. Läs [Microsoft-dokumentationen](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) om du vill ha mer information om [!DNL Event Hub]-namn. |
 
 >[!ENDTABS]
 
@@ -81,17 +81,17 @@ Mer information om dessa värden finns i [det här händelsehubbsdokumentet](htt
 
 ### Använda plattforms-API:er
 
-Mer information om hur du kan anropa API:er för plattformar finns i handboken [komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
+Mer information om hur du kan anropa plattforms-API:er finns i guiden [Komma igång med plattforms-API:er](../../../../../landing/api-guide.md).
 
 ## Skapa en basanslutning
 
 >[!TIP]
 >
->När du har skapat en fil kan du inte ändra autentiseringstypen för en [!DNL Event Hubs] basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
+>När du väl har skapat den kan du inte ändra autentiseringstypen för en [!DNL Event Hubs]-basanslutning. Om du vill ändra autentiseringstypen måste du skapa en ny basanslutning.
 
-Det första steget i att skapa en källanslutning är att autentisera [!DNL Event Hubs] och generera ett anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
+Det första steget i att skapa en källanslutning är att autentisera [!DNL Event Hubs]-källan och generera ett grundläggande anslutnings-ID. Med ett grundläggande anslutnings-ID kan du utforska och navigera bland filer inifrån källan och identifiera specifika objekt som du vill importera, inklusive information om deras datatyper och format.
 
-Om du vill skapa ett basanslutnings-ID skickar du en POST till `/connections` slutpunkt när du ger [!DNL Event Hubs] autentiseringsuppgifter som en del av parametrarna för begäran.
+Om du vill skapa ett grundläggande anslutnings-ID skickar du en POST till slutpunkten `/connections` och anger dina autentiseringsuppgifter för [!DNL Event Hubs] som en del av parametrarna för begäran.
 
 **API-format**
 
@@ -103,7 +103,7 @@ POST /connections
 
 >[!TAB Standardautentisering]
 
-Om du vill skapa ett konto med standardautentisering skickar du en POST till `/connections` slutpunkt när du anger värden för `sasKeyName`, `sasKey`och `namespace`.
+Om du vill skapa ett konto med standardautentisering skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `sasKeyName`, `sasKey` och `namespace`.
 
 +++Begäran
 
@@ -137,8 +137,8 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `auth.params.sasKey` | Den genererade signaturen för delad åtkomst. |
-| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
-| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `auth.params.namespace` | Namnområdet för [!DNL Event Hubs] som du använder. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 +++
 
@@ -157,7 +157,7 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 >[!TAB SAS-autentisering]
 
-Om du vill skapa ett konto med SAS-autentisering skickar du en POST till `/connections` slutpunkt när du anger värden för `sasKeyName`, `sasKey`,`namespace`och `eventHubName`.
+Om du vill skapa ett konto med SAS-autentisering skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `sasKeyName`, `sasKey`, `namespace` och `eventHubName`.
 
 +++Begäran
 
@@ -192,9 +192,9 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.sasKeyName` | Auktoriseringsregelns namn, som också kallas SAS-nyckelnamn. |
 | `auth.params.sasKey` | Den genererade signaturen för delad åtkomst. |
-| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
-| `params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
-| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `auth.params.namespace` | Namnområdet för [!DNL Event Hubs] som du använder. |
+| `params.eventHubName` | Namnet på [!DNL Event Hubs]-källan. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 +++
 
@@ -211,9 +211,9 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 +++
 
->[!TAB Azure Active Directory-autentisering för händelsehubb]
+>[!TAB Händelsehubben Azure Active Directory-autentisering]
 
-Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections` slutpunkt när du anger värden för `tenantId`, `clientId`,`clientSecretValue`och `namespace`.
+Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `tenantId`, `clientId`, `clientSecretValue` och `namespace`.
 
 +++Begäran
 
@@ -246,11 +246,11 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.tenantId` | Klient-ID för ditt program. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| `auth.params.tenantId` | Klient-ID för ditt program. **Obs!** Klient-ID kallas för &quot;katalog-ID&quot; i gränssnittet [!DNL Microsoft Azure]. |
 | `auth.params.clientId` | Klient-ID för din organisation. |
 | `auth.params.clientSecretValue` | Klientens hemliga värde för din organisation. |
-| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
-| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `auth.params.namespace` | Namnområdet för [!DNL Event Hubs] som du använder. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 +++
 
@@ -267,9 +267,9 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 +++
 
->[!TAB Händelsehubben omfattade Azure Active Directory-autentisering]
+>[!TAB Händelsehubben har omfattat Azure Active Directory Auth]
 
-Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections` slutpunkt när du anger värden för `tenantId`, `clientId`,`clientSecretValue`, `namespace`och `eventHubName`.
+Om du vill skapa ett konto med Azure Active Directory Auth skickar du en POST till `/connections`-slutpunkten samtidigt som du anger värden för `tenantId`, `clientId`, `clientSecretValue`, `namespace` och `eventHubName`.
 
 +++Begäran
 
@@ -303,12 +303,12 @@ curl -X POST \
 
 | Egenskap | Beskrivning |
 | -------- | ----------- |
-| `auth.params.tenantId` | Klient-ID för ditt program. **Anteckning**: Klient-ID kallas för &quot;katalog-ID&quot; i [!DNL Microsoft Azure] gränssnitt. |
+| `auth.params.tenantId` | Klient-ID för ditt program. **Obs!** Klient-ID kallas för &quot;katalog-ID&quot; i gränssnittet [!DNL Microsoft Azure]. |
 | `auth.params.clientId` | Klient-ID för din organisation. |
 | `auth.params.clientSecretValue` | Klientens hemliga värde för din organisation. |
-| `auth.params.namespace` | Namnutrymmet för [!DNL Event Hubs] du försöker komma åt. |
-| `auth.params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
-| `connectionSpec.id` | The [!DNL Event Hubs] anslutningsspecifikation-ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `auth.params.namespace` | Namnområdet för [!DNL Event Hubs] som du använder. |
+| `auth.params.eventHubName` | Namnet på [!DNL Event Hubs]-källan. |
+| `connectionSpec.id` | Anslutningsspecifikations-ID [!DNL Event Hubs] är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 +++
 
@@ -331,11 +331,11 @@ Ett godkänt svar returnerar information om den nya basanslutningen, inklusive d
 
 >[!TIP]
 >
->An [!DNL Event Hubs] konsumentgrupp kan bara användas för ett enda flöde vid en given tidpunkt.
+>En [!DNL Event Hubs]-konsumentgrupp kan bara användas för ett enda flöde vid en given tidpunkt.
 
 En källanslutning skapar och hanterar anslutningen till den externa källan som data importeras från. En källanslutning består av information som datakälla, dataformat och ett källanslutnings-ID som behövs för att skapa ett dataflöde. En källanslutningsinstans är specifik för en klientorganisation och organisation.
 
-Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections` slutpunkt för [!DNL Flow Service] API.
+Om du vill skapa en källanslutning skickar du en POST till `/sourceConnections`-slutpunkten för [!DNL Flow Service] API:t.
 
 **API-format**
 
@@ -377,14 +377,14 @@ curl -X POST \
 | --- | --- |
 | `name` | Namnet på källanslutningen. Kontrollera att namnet på källanslutningen är beskrivande, eftersom du kan använda det här för att söka efter information om källanslutningen. |
 | `description` | Ett valfritt värde som du kan ange för att inkludera mer information om din källanslutning. |
-| `baseConnectionId` | Anslutnings-ID för din [!DNL Event Hubs] källa som genererades i föregående steg. |
-| `connectionSpec.id` | ID för fast anslutningsspecifikation för [!DNL Event Hubs]. Detta ID är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
-| `data.format` | Formatet på [!DNL Event Hubs] data som du vill importera. För närvarande är det enda dataformatet som stöds `json`. |
-| `params.eventHubName` | Namnet på [!DNL Event Hubs] källa. |
+| `baseConnectionId` | Anslutnings-ID för källan [!DNL Event Hubs] som skapades i föregående steg. |
+| `connectionSpec.id` | Det fasta anslutningsspecifikations-ID:t för [!DNL Event Hubs]. Detta ID är: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+| `data.format` | Formatet på de [!DNL Event Hubs]-data som du vill importera. För närvarande är det enda dataformat som stöds `json`. |
+| `params.eventHubName` | Namnet på [!DNL Event Hubs]-källan. |
 | `params.dataType` | Den här parametern definierar vilken typ av data som importeras. Datatyper som stöds är: `raw` och `xdm`. |
-| `params.reset` | Den här parametern definierar hur data läses. Använd `latest` för att börja läsa från de senaste data och använda `earliest` för att börja läsa från de första tillgängliga data i strömmen. Den här parametern är valfri och används som standard `earliest` om ej tillhandahållet. |
-| `params.consumerGroup` | Publicerings- eller prenumerationsmekanismen som ska användas för [!DNL Event Hubs]. Den här parametern är valfri och används som standard `$Default` om ej tillhandahållet. Se detta [[!DNL Event Hubs] guide om händelsekonsumenter](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers) för mer information. **Anteckning**: An [!DNL Event Hubs] konsumentgrupp kan bara användas för ett enda flöde vid en given tidpunkt. |
+| `params.reset` | Den här parametern definierar hur data läses. Använd `latest` för att börja läsa från de senaste data och använd `earliest` för att börja läsa från de första tillgängliga data i strömmen. Den här parametern är valfri och standardvärdet är `earliest` om den inte anges. |
+| `params.consumerGroup` | Publicerings- eller prenumerationsmekanismen som ska användas för [!DNL Event Hubs]. Den här parametern är valfri och standardvärdet är `$Default` om den inte anges. Mer information finns i [[!DNL Event Hubs] handboken om händelsekonsumenter](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers). **Obs!**: En [!DNL Event Hubs]-konsumentgrupp kan bara användas för ett enda flöde vid en given tidpunkt. |
 
 ## Nästa steg
 
-Genom att följa den här självstudiekursen har du skapat en [!DNL Event Hubs] källanslutning med [!DNL Flow Service] API. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med [!DNL Flow Service] API](../../collect/streaming.md).
+Genom att följa den här självstudiekursen har du skapat en [!DNL Event Hubs]-källanslutning med API:t [!DNL Flow Service]. Du kan använda det här källanslutnings-ID:t i nästa självstudie för att [skapa ett direktuppspelat dataflöde med  [!DNL Flow Service] API](../../collect/streaming.md).
